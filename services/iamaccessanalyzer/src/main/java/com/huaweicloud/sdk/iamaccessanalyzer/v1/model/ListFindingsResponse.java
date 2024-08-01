@@ -17,19 +17,19 @@ public class ListFindingsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "findings")
 
-    private List<Finding> findings = null;
+    private List<FindingSummary> findings = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
 
     private PageInfo pageInfo;
 
-    public ListFindingsResponse withFindings(List<Finding> findings) {
+    public ListFindingsResponse withFindings(List<FindingSummary> findings) {
         this.findings = findings;
         return this;
     }
 
-    public ListFindingsResponse addFindingsItem(Finding findingsItem) {
+    public ListFindingsResponse addFindingsItem(FindingSummary findingsItem) {
         if (this.findings == null) {
             this.findings = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListFindingsResponse extends SdkResponse {
         return this;
     }
 
-    public ListFindingsResponse withFindings(Consumer<List<Finding>> findingsSetter) {
+    public ListFindingsResponse withFindings(Consumer<List<FindingSummary>> findingsSetter) {
         if (this.findings == null) {
             this.findings = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ListFindingsResponse extends SdkResponse {
      * 访问分析结果列表。
      * @return findings
      */
-    public List<Finding> getFindings() {
+    public List<FindingSummary> getFindings() {
         return findings;
     }
 
-    public void setFindings(List<Finding> findings) {
+    public void setFindings(List<FindingSummary> findings) {
         this.findings = findings;
     }
 

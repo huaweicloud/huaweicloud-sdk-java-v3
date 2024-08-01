@@ -94,7 +94,7 @@ public class ConnectionEndpoints {
     }
 
     /**
-     * 终端节点的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
+     * 终端节点的创建时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {
@@ -111,7 +111,7 @@ public class ConnectionEndpoints {
     }
 
     /**
-     * 终端节点的更新时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
+     * 终端节点的更新时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
      * @return updatedAt
      */
     public OffsetDateTime getUpdatedAt() {

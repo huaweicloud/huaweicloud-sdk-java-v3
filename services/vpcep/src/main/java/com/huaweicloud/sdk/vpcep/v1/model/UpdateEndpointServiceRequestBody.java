@@ -209,7 +209,7 @@ public class UpdateEndpointServiceRequestBody {
     }
 
     /**
-     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally UniqueIdentifier，下文简称UUID）。 取值为：  - LB类型：负载均衡器内网IP对应的端口ID。  - VM类型：弹性云服务器IP地址对应的网卡ID。  - VIP类型：虚拟资源所在物理服务器对应的网卡ID。（该字段已废弃，请优先使用LB类型） 说明： 当后端资源为“LB类型”时，仅支持修改为同类型后端资源。 例如，共享型负载均衡仅支持更换为共享型负载均衡，不支持更换为独享型负载均衡。
+     * 弹性云服务器IP地址对应的网卡ID
      * @return portId
      */
     public String getPortId() {

@@ -121,6 +121,11 @@ public class CreateEndpointResponse extends SdkResponse {
     private List<PolicyStatement> policyStatement = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_document")
+
+    private Object policyDocument;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_status")
 
     private String enableStatus;
@@ -577,6 +582,23 @@ public class CreateEndpointResponse extends SdkResponse {
         this.policyStatement = policyStatement;
     }
 
+    public CreateEndpointResponse withPolicyDocument(Object policyDocument) {
+        this.policyDocument = policyDocument;
+        return this;
+    }
+
+    /**
+     * iam 5.0 策略
+     * @return policyDocument
+     */
+    public Object getPolicyDocument() {
+        return policyDocument;
+    }
+
+    public void setPolicyDocument(Object policyDocument) {
+        this.policyDocument = policyDocument;
+    }
+
     public CreateEndpointResponse withEnableStatus(String enableStatus) {
         this.enableStatus = enableStatus;
         return this;
@@ -669,6 +691,7 @@ public class CreateEndpointResponse extends SdkResponse {
             && Objects.equals(this.specificationName, that.specificationName)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.policyStatement, that.policyStatement)
+            && Objects.equals(this.policyDocument, that.policyDocument)
             && Objects.equals(this.enableStatus, that.enableStatus)
             && Objects.equals(this.endpointPoolId, that.endpointPoolId)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
@@ -698,6 +721,7 @@ public class CreateEndpointResponse extends SdkResponse {
             specificationName,
             description,
             policyStatement,
+            policyDocument,
             enableStatus,
             endpointPoolId,
             publicBorderGroup,
@@ -729,6 +753,7 @@ public class CreateEndpointResponse extends SdkResponse {
         sb.append("    specificationName: ").append(toIndentedString(specificationName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyStatement: ").append(toIndentedString(policyStatement)).append("\n");
+        sb.append("    policyDocument: ").append(toIndentedString(policyDocument)).append("\n");
         sb.append("    enableStatus: ").append(toIndentedString(enableStatus)).append("\n");
         sb.append("    endpointPoolId: ").append(toIndentedString(endpointPoolId)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");

@@ -40,6 +40,16 @@ public class Finding {
     private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "finding_details")
+
+    private List<FindingDetails> findingDetails = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "finding_type")
+
+    private FindingType findingType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -85,7 +95,7 @@ public class Finding {
     private List<FindingSourceType> sources = null;
 
     /**
-     * 结果的当前状态。
+     * 访问分析结果当前状态。
      */
     public static final class StatusEnum {
 
@@ -268,6 +278,56 @@ public class Finding {
 
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Finding withFindingDetails(List<FindingDetails> findingDetails) {
+        this.findingDetails = findingDetails;
+        return this;
+    }
+
+    public Finding addFindingDetailsItem(FindingDetails findingDetailsItem) {
+        if (this.findingDetails == null) {
+            this.findingDetails = new ArrayList<>();
+        }
+        this.findingDetails.add(findingDetailsItem);
+        return this;
+    }
+
+    public Finding withFindingDetails(Consumer<List<FindingDetails>> findingDetailsSetter) {
+        if (this.findingDetails == null) {
+            this.findingDetails = new ArrayList<>();
+        }
+        findingDetailsSetter.accept(this.findingDetails);
+        return this;
+    }
+
+    /**
+     * 访问分析结果的详细信息。
+     * @return findingDetails
+     */
+    public List<FindingDetails> getFindingDetails() {
+        return findingDetails;
+    }
+
+    public void setFindingDetails(List<FindingDetails> findingDetails) {
+        this.findingDetails = findingDetails;
+    }
+
+    public Finding withFindingType(FindingType findingType) {
+        this.findingType = findingType;
+        return this;
+    }
+
+    /**
+     * Get findingType
+     * @return findingType
+     */
+    public FindingType getFindingType() {
+        return findingType;
+    }
+
+    public void setFindingType(FindingType findingType) {
+        this.findingType = findingType;
     }
 
     public Finding withId(String id) {
@@ -454,7 +514,7 @@ public class Finding {
     }
 
     /**
-     * 结果的当前状态。
+     * 访问分析结果当前状态。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -493,9 +553,10 @@ public class Finding {
         Finding that = (Finding) obj;
         return Objects.equals(this.action, that.action) && Objects.equals(this.analyzedAt, that.analyzedAt)
             && Objects.equals(this.condition, that.condition) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.isPublic, that.isPublic)
-            && Objects.equals(this.principal, that.principal) && Objects.equals(this.resource, that.resource)
-            && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.findingDetails, that.findingDetails)
+            && Objects.equals(this.findingType, that.findingType) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.isPublic, that.isPublic) && Objects.equals(this.principal, that.principal)
+            && Objects.equals(this.resource, that.resource) && Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.resourceOwnerAccount, that.resourceOwnerAccount)
             && Objects.equals(this.resourceProjectId, that.resourceProjectId)
             && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.sources, that.sources)
@@ -508,6 +569,8 @@ public class Finding {
             analyzedAt,
             condition,
             createdAt,
+            findingDetails,
+            findingType,
             id,
             isPublic,
             principal,
@@ -529,6 +592,8 @@ public class Finding {
         sb.append("    analyzedAt: ").append(toIndentedString(analyzedAt)).append("\n");
         sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    findingDetails: ").append(toIndentedString(findingDetails)).append("\n");
+        sb.append("    findingType: ").append(toIndentedString(findingType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    isPublic: ").append(toIndentedString(isPublic)).append("\n");
         sb.append("    principal: ").append(toIndentedString(principal)).append("\n");

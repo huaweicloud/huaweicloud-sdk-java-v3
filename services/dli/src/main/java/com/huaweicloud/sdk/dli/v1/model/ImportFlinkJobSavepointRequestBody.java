@@ -43,7 +43,7 @@ public class ImportFlinkJobSavepointRequestBody {
     }
 
     /**
-     * Savepoint路径
+     * Savepoint路径。需指定到_metaData文件的上级目录 例：\"obs://bucket_name/file_name/\"
      * @return savepointPath
      */
     public String getSavepointPath() {

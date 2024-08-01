@@ -136,6 +136,11 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
     private List<PolicyStatement> policyStatement = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_document")
+
+    private Object policyDocument;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint_pool_id")
 
     private String endpointPoolId;
@@ -663,6 +668,23 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         this.policyStatement = policyStatement;
     }
 
+    public ListEndpointInfoDetailsResponse withPolicyDocument(Object policyDocument) {
+        this.policyDocument = policyDocument;
+        return this;
+    }
+
+    /**
+     * iam 5.0 策略
+     * @return policyDocument
+     */
+    public Object getPolicyDocument() {
+        return policyDocument;
+    }
+
+    public void setPolicyDocument(Object policyDocument) {
+        this.policyDocument = policyDocument;
+    }
+
     public ListEndpointInfoDetailsResponse withEndpointPoolId(String endpointPoolId) {
         this.endpointPoolId = endpointPoolId;
         return this;
@@ -703,7 +725,7 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 访问所连接的终端节点服务的IPv6的地址。 创建终端节点时，可以指定访问所连接的终端节点服务的IP，不指定的情况下，会使用系统生成的一个地址。 仅专业型终端节点支持此参数。
+     * 访问所连接的终端节点服务的IPv6的地址。  创建终端节点时，可以指定访问所连接的终端节点服务的IP，不指定的情况下，会使用系统生成的一个地址。  仅专业型终端节点支持此参数。
      * @return ipv6Address
      */
     public String getIpv6Address() {
@@ -739,6 +761,7 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
             && Objects.equals(this.enableWhitelist, that.enableWhitelist)
             && Objects.equals(this.routetables, that.routetables) && Objects.equals(this.description, that.description)
             && Objects.equals(this.policyStatement, that.policyStatement)
+            && Objects.equals(this.policyDocument, that.policyDocument)
             && Objects.equals(this.endpointPoolId, that.endpointPoolId)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
             && Objects.equals(this.ipv6Address, that.ipv6Address);
@@ -770,6 +793,7 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
             routetables,
             description,
             policyStatement,
+            policyDocument,
             endpointPoolId,
             publicBorderGroup,
             ipv6Address);
@@ -803,6 +827,7 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         sb.append("    routetables: ").append(toIndentedString(routetables)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyStatement: ").append(toIndentedString(policyStatement)).append("\n");
+        sb.append("    policyDocument: ").append(toIndentedString(policyDocument)).append("\n");
         sb.append("    endpointPoolId: ").append(toIndentedString(endpointPoolId)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("    ipv6Address: ").append(toIndentedString(ipv6Address)).append("\n");

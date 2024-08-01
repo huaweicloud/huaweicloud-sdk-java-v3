@@ -14,6 +14,11 @@ import java.util.function.Consumer;
 public class CreateAnalyzerReqBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "configuration")
+
+    private AnalyzerConfiguration _configuration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -27,6 +32,32 @@ public class CreateAnalyzerReqBody {
     @JsonProperty(value = "type")
 
     private AnalyzerType type;
+
+    public CreateAnalyzerReqBody withConfiguration(AnalyzerConfiguration _configuration) {
+        this._configuration = _configuration;
+        return this;
+    }
+
+    public CreateAnalyzerReqBody withConfiguration(Consumer<AnalyzerConfiguration> _configurationSetter) {
+        if (this._configuration == null) {
+            this._configuration = new AnalyzerConfiguration();
+            _configurationSetter.accept(this._configuration);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get _configuration
+     * @return _configuration
+     */
+    public AnalyzerConfiguration getConfiguration() {
+        return _configuration;
+    }
+
+    public void setConfiguration(AnalyzerConfiguration _configuration) {
+        this._configuration = _configuration;
+    }
 
     public CreateAnalyzerReqBody withName(String name) {
         this.name = name;
@@ -104,19 +135,20 @@ public class CreateAnalyzerReqBody {
             return false;
         }
         CreateAnalyzerReqBody that = (CreateAnalyzerReqBody) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.type, that.type);
+        return Objects.equals(this._configuration, that._configuration) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, tags, type);
+        return Objects.hash(_configuration, name, tags, type);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAnalyzerReqBody {\n");
+        sb.append("    _configuration: ").append(toIndentedString(_configuration)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

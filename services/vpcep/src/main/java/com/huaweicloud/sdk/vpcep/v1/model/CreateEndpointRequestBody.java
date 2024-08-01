@@ -73,8 +73,13 @@ public class CreateEndpointRequestBody {
 
     private List<PolicyStatement> policyStatement = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_document")
+
+    private Object policyDocument;
+
     /**
-     * 指定终端节点的IP版本，仅专业型终端节点支持此参数。 ● ipv4,  IPv4 ● dualstack, 双栈
+     * 指定终端节点的IP版本，仅专业型终端节点支持此参数。  - ipv4,  IPv4 - dualstack, 双栈
      */
     public static final class IpVersionEnum {
 
@@ -404,13 +409,30 @@ public class CreateEndpointRequestBody {
         this.policyStatement = policyStatement;
     }
 
+    public CreateEndpointRequestBody withPolicyDocument(Object policyDocument) {
+        this.policyDocument = policyDocument;
+        return this;
+    }
+
+    /**
+     * iam 5.0 策略
+     * @return policyDocument
+     */
+    public Object getPolicyDocument() {
+        return policyDocument;
+    }
+
+    public void setPolicyDocument(Object policyDocument) {
+        this.policyDocument = policyDocument;
+    }
+
     public CreateEndpointRequestBody withIpVersion(IpVersionEnum ipVersion) {
         this.ipVersion = ipVersion;
         return this;
     }
 
     /**
-     * 指定终端节点的IP版本，仅专业型终端节点支持此参数。 ● ipv4,  IPv4 ● dualstack, 双栈
+     * 指定终端节点的IP版本，仅专业型终端节点支持此参数。  - ipv4,  IPv4 - dualstack, 双栈
      * @return ipVersion
      */
     public IpVersionEnum getIpVersion() {
@@ -427,7 +449,7 @@ public class CreateEndpointRequestBody {
     }
 
     /**
-     * 访问所连接的终端节点服务的IPv6的地址。 创建终端节点时，可以指定访问所连接的终端节点服务的IP，不指定的情况下，会使用系统生成的一个地址。 仅专业型终端节点支持此参数。
+     * 访问所连接的终端节点服务的IPv6的地址。  创建终端节点时，可以指定访问所连接的终端节点服务的IP，不指定的情况下，会使用系统生成的一个地址。  仅专业型终端节点支持此参数。
      * @return ipv6Address
      */
     public String getIpv6Address() {
@@ -455,6 +477,7 @@ public class CreateEndpointRequestBody {
             && Objects.equals(this.enableWhitelist, that.enableWhitelist)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.policyStatement, that.policyStatement)
+            && Objects.equals(this.policyDocument, that.policyDocument)
             && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.ipv6Address, that.ipv6Address);
     }
 
@@ -471,6 +494,7 @@ public class CreateEndpointRequestBody {
             enableWhitelist,
             description,
             policyStatement,
+            policyDocument,
             ipVersion,
             ipv6Address);
     }
@@ -490,6 +514,7 @@ public class CreateEndpointRequestBody {
         sb.append("    enableWhitelist: ").append(toIndentedString(enableWhitelist)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyStatement: ").append(toIndentedString(policyStatement)).append("\n");
+        sb.append("    policyDocument: ").append(toIndentedString(policyDocument)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    ipv6Address: ").append(toIndentedString(ipv6Address)).append("\n");
         sb.append("}");

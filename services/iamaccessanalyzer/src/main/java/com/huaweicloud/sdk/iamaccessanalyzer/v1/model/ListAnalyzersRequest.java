@@ -40,12 +40,24 @@ public class ListAnalyzersRequest {
          */
         public static final TypeEnum ORGANIZATION = new TypeEnum("organization");
 
+        /**
+         * Enum ACCOUNT_UNUSED_ACCESS for value: "account_unused_access"
+         */
+        public static final TypeEnum ACCOUNT_UNUSED_ACCESS = new TypeEnum("account_unused_access");
+
+        /**
+         * Enum ORGANIZATION_UNUSED_ACCESS for value: "organization_unused_access"
+         */
+        public static final TypeEnum ORGANIZATION_UNUSED_ACCESS = new TypeEnum("organization_unused_access");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("account", ACCOUNT);
             map.put("organization", ORGANIZATION);
+            map.put("account_unused_access", ACCOUNT_UNUSED_ACCESS);
+            map.put("organization_unused_access", ORGANIZATION_UNUSED_ACCESS);
             return Collections.unmodifiableMap(map);
         }
 

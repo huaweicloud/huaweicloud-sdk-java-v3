@@ -8,6 +8,11 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.lts.v2.model.AomMappingRequestInfo;
 import com.huaweicloud.sdk.lts.v2.model.AomMappingRuleResp;
 import com.huaweicloud.sdk.lts.v2.model.ChangeAlarmRuleStatus;
+import com.huaweicloud.sdk.lts.v2.model.ConsumerCheckpointInfo;
+import com.huaweicloud.sdk.lts.v2.model.ConsumerGroupHeartBeatRequest;
+import com.huaweicloud.sdk.lts.v2.model.ConsumerGroupHeartBeatResponse;
+import com.huaweicloud.sdk.lts.v2.model.ConsumerGroupInfo;
+import com.huaweicloud.sdk.lts.v2.model.ConsumerShardCheckpointInfo;
 import com.huaweicloud.sdk.lts.v2.model.CreateAccessConfigRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateAccessConfigRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.CreateAccessConfigResponse;
@@ -15,6 +20,8 @@ import com.huaweicloud.sdk.lts.v2.model.CreateAgencyAccessRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateAgencyAccessResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateAomMappingRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.CreateConsumerGroupRequest;
+import com.huaweicloud.sdk.lts.v2.model.CreateConsumerGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateDashBoardReqBody;
 import com.huaweicloud.sdk.lts.v2.model.CreateDashBoardRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateDashBoardResponse;
@@ -68,6 +75,8 @@ import com.huaweicloud.sdk.lts.v2.model.DeleteActiveAlarmsRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.DeleteActiveAlarmsResponse;
 import com.huaweicloud.sdk.lts.v2.model.DeleteAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.DeleteAomMappingRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.DeleteConsumerGroupRequest;
+import com.huaweicloud.sdk.lts.v2.model.DeleteConsumerGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.DeleteDashboardRequest;
 import com.huaweicloud.sdk.lts.v2.model.DeleteDashboardResponse;
 import com.huaweicloud.sdk.lts.v2.model.DeleteHostGroupRequest;
@@ -112,8 +121,12 @@ import com.huaweicloud.sdk.lts.v2.model.ListBreifStructTemplateRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListBreifStructTemplateResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListChartsRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListChartsResponse;
+import com.huaweicloud.sdk.lts.v2.model.ListConsumerGroupRequest;
+import com.huaweicloud.sdk.lts.v2.model.ListConsumerGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListCriteriasRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListCriteriasResponse;
+import com.huaweicloud.sdk.lts.v2.model.ListDetailsConsumerGroupRequest;
+import com.huaweicloud.sdk.lts.v2.model.ListDetailsConsumerGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListHistorySqlRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListHistorySqlResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListHostGroupRequest;
@@ -170,8 +183,14 @@ import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRuleRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRuleResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.ShowCursorByTimeRequest;
+import com.huaweicloud.sdk.lts.v2.model.ShowCursorByTimeResponse;
+import com.huaweicloud.sdk.lts.v2.model.ShowCursorTimeRequest;
+import com.huaweicloud.sdk.lts.v2.model.ShowCursorTimeResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowLogConvergeConfigRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowLogConvergeConfigResponse;
+import com.huaweicloud.sdk.lts.v2.model.ShowLogStreamShardsRequest;
+import com.huaweicloud.sdk.lts.v2.model.ShowLogStreamShardsResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowMemberGroupAndStreamRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowMemberGroupAndStreamResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowNotificationTemplateRequest;
@@ -189,6 +208,8 @@ import com.huaweicloud.sdk.lts.v2.model.UpdateAlarmRuleStatusResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateAomMappingRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateAomMappingRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.UpdateCheckPointRequest;
+import com.huaweicloud.sdk.lts.v2.model.UpdateCheckPointResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateHostGroupRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateHostGroupRequestBody;
 import com.huaweicloud.sdk.lts.v2.model.UpdateHostGroupResponse;
@@ -2322,6 +2343,356 @@ public class LtsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAomMappingRequest.class),
             f -> f.withMarshaller(UpdateAomMappingRulesRequest::getBody, UpdateAomMappingRulesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConsumerGroupHeartBeatRequest, ConsumerGroupHeartBeatResponse> consumerGroupHeartBeat =
+        genForConsumerGroupHeartBeat();
+
+    private static HttpRequestDef<ConsumerGroupHeartBeatRequest, ConsumerGroupHeartBeatResponse> genForConsumerGroupHeartBeat() {
+        // basic
+        HttpRequestDef.Builder<ConsumerGroupHeartBeatRequest, ConsumerGroupHeartBeatResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ConsumerGroupHeartBeatRequest.class, ConsumerGroupHeartBeatResponse.class)
+            .withName("ConsumerGroupHeartBeat")
+            .withUri(
+                "/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}/heartbeat")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConsumerGroupHeartBeatRequest::getGroupId,
+                ConsumerGroupHeartBeatRequest::setGroupId));
+        builder.<String>withRequestField("stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConsumerGroupHeartBeatRequest::getStreamId,
+                ConsumerGroupHeartBeatRequest::setStreamId));
+        builder.<String>withRequestField("consumer_group_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConsumerGroupHeartBeatRequest::getConsumerGroupName,
+                ConsumerGroupHeartBeatRequest::setConsumerGroupName));
+        builder.<String>withRequestField("consumer_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConsumerGroupHeartBeatRequest::getConsumerName,
+                ConsumerGroupHeartBeatRequest::setConsumerName));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ConsumerGroupHeartBeatRequest::getBody, ConsumerGroupHeartBeatRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+        builder.<List<String>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ConsumerGroupHeartBeatResponse::getBody, ConsumerGroupHeartBeatResponse::setBody)
+                .withInnerContainerType(String.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateConsumerGroupRequest, CreateConsumerGroupResponse> createConsumerGroup =
+        genForCreateConsumerGroup();
+
+    private static HttpRequestDef<CreateConsumerGroupRequest, CreateConsumerGroupResponse> genForCreateConsumerGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateConsumerGroupRequest, CreateConsumerGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateConsumerGroupRequest.class, CreateConsumerGroupResponse.class)
+                .withName("CreateConsumerGroup")
+                .withUri("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateConsumerGroupRequest::getGroupId, CreateConsumerGroupRequest::setGroupId));
+        builder.<String>withRequestField("stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateConsumerGroupRequest::getStreamId, CreateConsumerGroupRequest::setStreamId));
+        builder.<ConsumerGroupInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConsumerGroupInfo.class),
+            f -> f.withMarshaller(CreateConsumerGroupRequest::getBody, CreateConsumerGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse> deleteConsumerGroup =
+        genForDeleteConsumerGroup();
+
+    private static HttpRequestDef<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse> genForDeleteConsumerGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteConsumerGroupRequest.class, DeleteConsumerGroupResponse.class)
+            .withName("DeleteConsumerGroup")
+            .withUri("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConsumerGroupRequest::getGroupId, DeleteConsumerGroupRequest::setGroupId));
+        builder.<String>withRequestField("stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConsumerGroupRequest::getStreamId, DeleteConsumerGroupRequest::setStreamId));
+        builder.<String>withRequestField("consumer_group_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConsumerGroupRequest::getConsumerGroupName,
+                DeleteConsumerGroupRequest::setConsumerGroupName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConsumerGroupRequest, ListConsumerGroupResponse> listConsumerGroup =
+        genForListConsumerGroup();
+
+    private static HttpRequestDef<ListConsumerGroupRequest, ListConsumerGroupResponse> genForListConsumerGroup() {
+        // basic
+        HttpRequestDef.Builder<ListConsumerGroupRequest, ListConsumerGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConsumerGroupRequest.class, ListConsumerGroupResponse.class)
+                .withName("ListConsumerGroup")
+                .withUri("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConsumerGroupRequest::getGroupId, ListConsumerGroupRequest::setGroupId));
+        builder.<String>withRequestField("stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConsumerGroupRequest::getStreamId, ListConsumerGroupRequest::setStreamId));
+
+        // response
+        builder.<List<ConsumerGroupInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListConsumerGroupResponse::getBody, ListConsumerGroupResponse::setBody)
+                .withInnerContainerType(ConsumerGroupInfo.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDetailsConsumerGroupRequest, ListDetailsConsumerGroupResponse> listDetailsConsumerGroup =
+        genForListDetailsConsumerGroup();
+
+    private static HttpRequestDef<ListDetailsConsumerGroupRequest, ListDetailsConsumerGroupResponse> genForListDetailsConsumerGroup() {
+        // basic
+        HttpRequestDef.Builder<ListDetailsConsumerGroupRequest, ListDetailsConsumerGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListDetailsConsumerGroupRequest.class, ListDetailsConsumerGroupResponse.class)
+                .withName("ListDetailsConsumerGroup")
+                .withUri(
+                    "/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDetailsConsumerGroupRequest::getGroupId,
+                ListDetailsConsumerGroupRequest::setGroupId));
+        builder.<String>withRequestField("stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDetailsConsumerGroupRequest::getStreamId,
+                ListDetailsConsumerGroupRequest::setStreamId));
+        builder.<String>withRequestField("consumer_group_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDetailsConsumerGroupRequest::getConsumerGroupName,
+                ListDetailsConsumerGroupRequest::setConsumerGroupName));
+
+        // response
+        builder.<List<ConsumerCheckpointInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDetailsConsumerGroupResponse::getBody, ListDetailsConsumerGroupResponse::setBody)
+                .withInnerContainerType(ConsumerCheckpointInfo.class));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCursorByTimeRequest, ShowCursorByTimeResponse> showCursorByTime =
+        genForShowCursorByTime();
+
+    private static HttpRequestDef<ShowCursorByTimeRequest, ShowCursorByTimeResponse> genForShowCursorByTime() {
+        // basic
+        HttpRequestDef.Builder<ShowCursorByTimeRequest, ShowCursorByTimeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCursorByTimeRequest.class, ShowCursorByTimeResponse.class)
+                .withName("ShowCursorByTime")
+                .withUri("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards/{shard_id}/cursor")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCursorByTimeRequest::getGroupId, ShowCursorByTimeRequest::setGroupId));
+        builder.<String>withRequestField("stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCursorByTimeRequest::getStreamId, ShowCursorByTimeRequest::setStreamId));
+        builder.<String>withRequestField("shard_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCursorByTimeRequest::getShardId, ShowCursorByTimeRequest::setShardId));
+        builder.<String>withRequestField("from",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCursorByTimeRequest::getFrom, ShowCursorByTimeRequest::setFrom));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCursorTimeRequest, ShowCursorTimeResponse> showCursorTime =
+        genForShowCursorTime();
+
+    private static HttpRequestDef<ShowCursorTimeRequest, ShowCursorTimeResponse> genForShowCursorTime() {
+        // basic
+        HttpRequestDef.Builder<ShowCursorTimeRequest, ShowCursorTimeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowCursorTimeRequest.class, ShowCursorTimeResponse.class)
+                .withName("ShowCursorTime")
+                .withUri("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards/{shard_id}/time")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCursorTimeRequest::getGroupId, ShowCursorTimeRequest::setGroupId));
+        builder.<String>withRequestField("stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCursorTimeRequest::getStreamId, ShowCursorTimeRequest::setStreamId));
+        builder.<String>withRequestField("shard_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCursorTimeRequest::getShardId, ShowCursorTimeRequest::setShardId));
+        builder.<String>withRequestField("cursor",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCursorTimeRequest::getCursor, ShowCursorTimeRequest::setCursor));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLogStreamShardsRequest, ShowLogStreamShardsResponse> showLogStreamShards =
+        genForShowLogStreamShards();
+
+    private static HttpRequestDef<ShowLogStreamShardsRequest, ShowLogStreamShardsResponse> genForShowLogStreamShards() {
+        // basic
+        HttpRequestDef.Builder<ShowLogStreamShardsRequest, ShowLogStreamShardsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLogStreamShardsRequest.class, ShowLogStreamShardsResponse.class)
+                .withName("ShowLogStreamShards")
+                .withUri("/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/shards")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLogStreamShardsRequest::getGroupId, ShowLogStreamShardsRequest::setGroupId));
+        builder.<String>withRequestField("stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLogStreamShardsRequest::getStreamId, ShowLogStreamShardsRequest::setStreamId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCheckPointRequest, UpdateCheckPointResponse> updateCheckPoint =
+        genForUpdateCheckPoint();
+
+    private static HttpRequestDef<UpdateCheckPointRequest, UpdateCheckPointResponse> genForUpdateCheckPoint() {
+        // basic
+        HttpRequestDef.Builder<UpdateCheckPointRequest, UpdateCheckPointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateCheckPointRequest.class, UpdateCheckPointResponse.class)
+                .withName("UpdateCheckPoint")
+                .withUri(
+                    "/v1.0/{project_id}/groups/{group_id}/streams/{stream_id}/consumer-groups/{consumer_group_name}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCheckPointRequest::getGroupId, UpdateCheckPointRequest::setGroupId));
+        builder.<String>withRequestField("stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCheckPointRequest::getStreamId, UpdateCheckPointRequest::setStreamId));
+        builder.<String>withRequestField("consumer_group_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCheckPointRequest::getConsumerGroupName,
+                UpdateCheckPointRequest::setConsumerGroupName));
+        builder.<String>withRequestField("consumer_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCheckPointRequest::getConsumerName, UpdateCheckPointRequest::setConsumerName));
+        builder.<List<ConsumerShardCheckpointInfo>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(UpdateCheckPointRequest::getBody, UpdateCheckPointRequest::setBody)
+                .withInnerContainerType(ConsumerShardCheckpointInfo.class));
 
         // response
 

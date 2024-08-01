@@ -122,6 +122,16 @@ public class FindingFilter {
          */
         public static final KeyEnum CONDITION_G_SOURCEVPC = new KeyEnum("condition.g:SourceVpc");
 
+        /**
+         * Enum CONDITION_G_SOURCEVPCE for value: "condition.g:SourceVpce"
+         */
+        public static final KeyEnum CONDITION_G_SOURCEVPCE = new KeyEnum("condition.g:SourceVpce");
+
+        /**
+         * Enum FINDING_TYPE for value: "finding_type"
+         */
+        public static final KeyEnum FINDING_TYPE = new KeyEnum("finding_type");
+
         private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, KeyEnum> createStaticFields() {
@@ -145,6 +155,8 @@ public class FindingFilter {
             map.put("condition.g:PrincipalOrgManagementAccountId", CONDITION_G_PRINCIPALORGMANAGEMENTACCOUNTID);
             map.put("condition.g:SourceIp", CONDITION_G_SOURCEIP);
             map.put("condition.g:SourceVpc", CONDITION_G_SOURCEVPC);
+            map.put("condition.g:SourceVpce", CONDITION_G_SOURCEVPCE);
+            map.put("finding_type", FINDING_TYPE);
             return Collections.unmodifiableMap(map);
         }
 

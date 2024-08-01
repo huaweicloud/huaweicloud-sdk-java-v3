@@ -18,6 +18,11 @@ public class UpdateEndpointPolicyRequestBody {
 
     private List<PolicyStatement> policyStatement = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_document")
+
+    private Object policyDocument;
+
     public UpdateEndpointPolicyRequestBody withPolicyStatement(List<PolicyStatement> policyStatement) {
         this.policyStatement = policyStatement;
         return this;
@@ -51,6 +56,23 @@ public class UpdateEndpointPolicyRequestBody {
         this.policyStatement = policyStatement;
     }
 
+    public UpdateEndpointPolicyRequestBody withPolicyDocument(Object policyDocument) {
+        this.policyDocument = policyDocument;
+        return this;
+    }
+
+    /**
+     * iam 5.0 策略
+     * @return policyDocument
+     */
+    public Object getPolicyDocument() {
+        return policyDocument;
+    }
+
+    public void setPolicyDocument(Object policyDocument) {
+        this.policyDocument = policyDocument;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -60,12 +82,13 @@ public class UpdateEndpointPolicyRequestBody {
             return false;
         }
         UpdateEndpointPolicyRequestBody that = (UpdateEndpointPolicyRequestBody) obj;
-        return Objects.equals(this.policyStatement, that.policyStatement);
+        return Objects.equals(this.policyStatement, that.policyStatement)
+            && Objects.equals(this.policyDocument, that.policyDocument);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyStatement);
+        return Objects.hash(policyStatement, policyDocument);
     }
 
     @Override
@@ -73,6 +96,7 @@ public class UpdateEndpointPolicyRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateEndpointPolicyRequestBody {\n");
         sb.append("    policyStatement: ").append(toIndentedString(policyStatement)).append("\n");
+        sb.append("    policyDocument: ").append(toIndentedString(policyDocument)).append("\n");
         sb.append("}");
         return sb.toString();
     }

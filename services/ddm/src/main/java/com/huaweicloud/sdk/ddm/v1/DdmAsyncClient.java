@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CreateGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CreateGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersRequest;
@@ -15,6 +17,10 @@ import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillPhysicalProcessesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillPhysicalProcessesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ExpandInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ExpandInstanceNodesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListRequest;
@@ -25,6 +31,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ListEnginesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListEnginesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListNodesRequest;
@@ -51,8 +59,14 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowLogicalProcessesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowLogicalProcessesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowNodeRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowNodeResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoRequest;
@@ -112,6 +126,34 @@ public class DdmAsyncClient {
     public AsyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> createDatabaseAsyncInvoker(
         CreateDatabaseRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.createDatabase, hcClient);
+    }
+
+    /**
+     * 创建组
+     *
+     * 创建组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGroupRequest 请求对象
+     * @return CompletableFuture<CreateGroupResponse>
+     */
+    public CompletableFuture<CreateGroupResponse> createGroupAsync(CreateGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.createGroup);
+    }
+
+    /**
+     * 创建组
+     *
+     * 创建组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGroupRequest 请求对象
+     * @return AsyncInvoker<CreateGroupRequest, CreateGroupResponse>
+     */
+    public AsyncInvoker<CreateGroupRequest, CreateGroupResponse> createGroupAsyncInvoker(CreateGroupRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.createGroup, hcClient);
     }
 
     /**
@@ -262,6 +304,66 @@ public class DdmAsyncClient {
     }
 
     /**
+     * kill逻辑会话
+     *
+     * kill逻辑会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteKillLogicalProcessesRequest 请求对象
+     * @return CompletableFuture<ExecuteKillLogicalProcessesResponse>
+     */
+    public CompletableFuture<ExecuteKillLogicalProcessesResponse> executeKillLogicalProcessesAsync(
+        ExecuteKillLogicalProcessesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.executeKillLogicalProcesses);
+    }
+
+    /**
+     * kill逻辑会话
+     *
+     * kill逻辑会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteKillLogicalProcessesRequest 请求对象
+     * @return AsyncInvoker<ExecuteKillLogicalProcessesRequest, ExecuteKillLogicalProcessesResponse>
+     */
+    public AsyncInvoker<ExecuteKillLogicalProcessesRequest, ExecuteKillLogicalProcessesResponse> executeKillLogicalProcessesAsyncInvoker(
+        ExecuteKillLogicalProcessesRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.executeKillLogicalProcesses, hcClient);
+    }
+
+    /**
+     * kill物理会话
+     *
+     * kill物理会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteKillPhysicalProcessesRequest 请求对象
+     * @return CompletableFuture<ExecuteKillPhysicalProcessesResponse>
+     */
+    public CompletableFuture<ExecuteKillPhysicalProcessesResponse> executeKillPhysicalProcessesAsync(
+        ExecuteKillPhysicalProcessesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.executeKillPhysicalProcesses);
+    }
+
+    /**
+     * kill物理会话
+     *
+     * kill物理会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteKillPhysicalProcessesRequest 请求对象
+     * @return AsyncInvoker<ExecuteKillPhysicalProcessesRequest, ExecuteKillPhysicalProcessesResponse>
+     */
+    public AsyncInvoker<ExecuteKillPhysicalProcessesRequest, ExecuteKillPhysicalProcessesResponse> executeKillPhysicalProcessesAsyncInvoker(
+        ExecuteKillPhysicalProcessesRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.executeKillPhysicalProcesses, hcClient);
+    }
+
+    /**
      * DDM实例节点扩容
      *
      * 对指定的DDM实例的节点个数进行扩容，支持按需实例与包周期实例。
@@ -403,6 +505,34 @@ public class DdmAsyncClient {
      */
     public AsyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsAsyncInvoker(ListFlavorsRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.listFlavors, hcClient);
+    }
+
+    /**
+     * 获取实例组信息列表
+     *
+     * 获取实例组信息列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupRequest 请求对象
+     * @return CompletableFuture<ListGroupResponse>
+     */
+    public CompletableFuture<ListGroupResponse> listGroupAsync(ListGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.listGroup);
+    }
+
+    /**
+     * 获取实例组信息列表
+     *
+     * 获取实例组信息列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupRequest 请求对象
+     * @return AsyncInvoker<ListGroupRequest, ListGroupResponse>
+     */
+    public AsyncInvoker<ListGroupRequest, ListGroupResponse> listGroupAsyncInvoker(ListGroupRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.listGroup, hcClient);
     }
 
     /**
@@ -780,6 +910,36 @@ public class DdmAsyncClient {
     }
 
     /**
+     * 查询逻辑会话列表
+     *
+     * 查询逻辑会话列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogicalProcessesRequest 请求对象
+     * @return CompletableFuture<ShowLogicalProcessesResponse>
+     */
+    public CompletableFuture<ShowLogicalProcessesResponse> showLogicalProcessesAsync(
+        ShowLogicalProcessesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.showLogicalProcesses);
+    }
+
+    /**
+     * 查询逻辑会话列表
+     *
+     * 查询逻辑会话列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogicalProcessesRequest 请求对象
+     * @return AsyncInvoker<ShowLogicalProcessesRequest, ShowLogicalProcessesResponse>
+     */
+    public AsyncInvoker<ShowLogicalProcessesRequest, ShowLogicalProcessesResponse> showLogicalProcessesAsyncInvoker(
+        ShowLogicalProcessesRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.showLogicalProcesses, hcClient);
+    }
+
+    /**
      * 查询DDM实例节点详情
      *
      * 查询DDM实例节点详情。
@@ -805,6 +965,66 @@ public class DdmAsyncClient {
      */
     public AsyncInvoker<ShowNodeRequest, ShowNodeResponse> showNodeAsyncInvoker(ShowNodeRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.showNode, hcClient);
+    }
+
+    /**
+     * 查询物理会话列表
+     *
+     * 查询物理会话列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPhysicalProcessesRequest 请求对象
+     * @return CompletableFuture<ShowPhysicalProcessesResponse>
+     */
+    public CompletableFuture<ShowPhysicalProcessesResponse> showPhysicalProcessesAsync(
+        ShowPhysicalProcessesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.showPhysicalProcesses);
+    }
+
+    /**
+     * 查询物理会话列表
+     *
+     * 查询物理会话列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPhysicalProcessesRequest 请求对象
+     * @return AsyncInvoker<ShowPhysicalProcessesRequest, ShowPhysicalProcessesResponse>
+     */
+    public AsyncInvoker<ShowPhysicalProcessesRequest, ShowPhysicalProcessesResponse> showPhysicalProcessesAsyncInvoker(
+        ShowPhysicalProcessesRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.showPhysicalProcesses, hcClient);
+    }
+
+    /**
+     * 查询kill会话审计日志
+     *
+     * 查询kill会话审计日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProcessesAuditLogRequest 请求对象
+     * @return CompletableFuture<ShowProcessesAuditLogResponse>
+     */
+    public CompletableFuture<ShowProcessesAuditLogResponse> showProcessesAuditLogAsync(
+        ShowProcessesAuditLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.showProcessesAuditLog);
+    }
+
+    /**
+     * 查询kill会话审计日志
+     *
+     * 查询kill会话审计日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProcessesAuditLogRequest 请求对象
+     * @return AsyncInvoker<ShowProcessesAuditLogRequest, ShowProcessesAuditLogResponse>
+     */
+    public AsyncInvoker<ShowProcessesAuditLogRequest, ShowProcessesAuditLogResponse> showProcessesAuditLogAsyncInvoker(
+        ShowProcessesAuditLogRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.showProcessesAuditLog, hcClient);
     }
 
     /**

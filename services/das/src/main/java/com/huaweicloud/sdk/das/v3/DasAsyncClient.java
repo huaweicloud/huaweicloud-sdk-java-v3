@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTrendDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTrendDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSqlStatementsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSqlStatementsResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportTopRiskInstancesRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportTopRiskInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTemplatesDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTemplatesDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsRequest;
@@ -659,6 +661,36 @@ public class DasAsyncClient {
     public AsyncInvoker<ExportSqlStatementsRequest, ExportSqlStatementsResponse> exportSqlStatementsAsyncInvoker(
         ExportSqlStatementsRequest request) {
         return new AsyncInvoker<>(request, DasMeta.exportSqlStatements, hcClient);
+    }
+
+    /**
+     * 导出TOP风险实例列表
+     *
+     * 导出TOP风险实例列表，支持查看最近24小时数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportTopRiskInstancesRequest 请求对象
+     * @return CompletableFuture<ExportTopRiskInstancesResponse>
+     */
+    public CompletableFuture<ExportTopRiskInstancesResponse> exportTopRiskInstancesAsync(
+        ExportTopRiskInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.exportTopRiskInstances);
+    }
+
+    /**
+     * 导出TOP风险实例列表
+     *
+     * 导出TOP风险实例列表，支持查看最近24小时数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportTopRiskInstancesRequest 请求对象
+     * @return AsyncInvoker<ExportTopRiskInstancesRequest, ExportTopRiskInstancesResponse>
+     */
+    public AsyncInvoker<ExportTopRiskInstancesRequest, ExportTopRiskInstancesResponse> exportTopRiskInstancesAsyncInvoker(
+        ExportTopRiskInstancesRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.exportTopRiskInstances, hcClient);
     }
 
     /**

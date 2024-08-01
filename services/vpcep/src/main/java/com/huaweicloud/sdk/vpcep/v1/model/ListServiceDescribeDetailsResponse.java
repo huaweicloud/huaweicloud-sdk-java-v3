@@ -104,7 +104,7 @@ public class ListServiceDescribeDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MMDDTHH:MM:SSZ
+     * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {

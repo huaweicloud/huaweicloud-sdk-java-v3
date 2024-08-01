@@ -110,6 +110,11 @@ public class StatusReason {
 
     private CodeEnum code;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "details")
+
+    private String details;
+
     public StatusReason withCode(CodeEnum code) {
         this.code = code;
         return this;
@@ -127,6 +132,23 @@ public class StatusReason {
         this.code = code;
     }
 
+    public StatusReason withDetails(String details) {
+        this.details = details;
+        return this;
+    }
+
+    /**
+     * 分析器当前状态的详细原因。
+     * @return details
+     */
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -136,12 +158,12 @@ public class StatusReason {
             return false;
         }
         StatusReason that = (StatusReason) obj;
-        return Objects.equals(this.code, that.code);
+        return Objects.equals(this.code, that.code) && Objects.equals(this.details, that.details);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code);
+        return Objects.hash(code, details);
     }
 
     @Override
@@ -149,6 +171,7 @@ public class StatusReason {
         StringBuilder sb = new StringBuilder();
         sb.append("class StatusReason {\n");
         sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    details: ").append(toIndentedString(details)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -41,11 +41,6 @@ public class PeriodProductRatingResult {
 
     private Integer measureId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
-
     public PeriodProductRatingResult withId(String id) {
         this.id = id;
         return this;
@@ -150,25 +145,6 @@ public class PeriodProductRatingResult {
         this.measureId = measureId;
     }
 
-    public PeriodProductRatingResult withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * |参数名称：每页数量| |参数的约束及描述：该参数非必填，且只允许1-100数字，默认10，最多100|
-     * minimum: 1
-     * maximum: 100
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -182,12 +158,12 @@ public class PeriodProductRatingResult {
             && Objects.equals(this.amount, that.amount)
             && Objects.equals(this.officialWebsiteAmount, that.officialWebsiteAmount)
             && Objects.equals(this.discountAmount, that.discountAmount)
-            && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.measureId, that.measureId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, productId, amount, officialWebsiteAmount, discountAmount, measureId, limit);
+        return Objects.hash(id, productId, amount, officialWebsiteAmount, discountAmount, measureId);
     }
 
     @Override
@@ -200,7 +176,6 @@ public class PeriodProductRatingResult {
         sb.append("    officialWebsiteAmount: ").append(toIndentedString(officialWebsiteAmount)).append("\n");
         sb.append("    discountAmount: ").append(toIndentedString(discountAmount)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

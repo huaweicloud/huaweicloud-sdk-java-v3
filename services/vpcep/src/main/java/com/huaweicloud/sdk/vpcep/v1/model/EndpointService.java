@@ -120,7 +120,7 @@ public class EndpointService {
     }
 
     /**
-     * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYYMM-DDTHH:MM:SSZ
+     * 终端节点服务的创建时间。 采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
      * @return createdAt
      */
     public OffsetDateTime getCreatedAt() {

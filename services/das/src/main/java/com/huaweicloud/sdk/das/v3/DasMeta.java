@@ -47,6 +47,8 @@ import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTrendDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlTrendDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSqlStatementsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSqlStatementsResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportTopRiskInstancesRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportTopRiskInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTemplatesDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTemplatesDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsRequest;
@@ -792,6 +794,52 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExportSqlStatementsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ExportSqlStatementsRequest::getXLanguage, ExportSqlStatementsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportTopRiskInstancesRequest, ExportTopRiskInstancesResponse> exportTopRiskInstances =
+        genForExportTopRiskInstances();
+
+    private static HttpRequestDef<ExportTopRiskInstancesRequest, ExportTopRiskInstancesResponse> genForExportTopRiskInstances() {
+        // basic
+        HttpRequestDef.Builder<ExportTopRiskInstancesRequest, ExportTopRiskInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ExportTopRiskInstancesRequest.class, ExportTopRiskInstancesResponse.class)
+            .withName("ExportTopRiskInstances")
+            .withUri("/v3/{project_id}/instances/top-risk")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ExportTopRiskInstancesRequest::getStartAt,
+                ExportTopRiskInstancesRequest::setStartAt));
+        builder.<Long>withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ExportTopRiskInstancesRequest::getEndAt, ExportTopRiskInstancesRequest::setEndAt));
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportTopRiskInstancesRequest::getDatastoreType,
+                ExportTopRiskInstancesRequest::setDatastoreType));
+        builder.<ExportTopRiskInstancesRequest.NumEnum>withRequestField("num",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportTopRiskInstancesRequest.NumEnum.class),
+            f -> f.withMarshaller(ExportTopRiskInstancesRequest::getNum, ExportTopRiskInstancesRequest::setNum));
+        builder.<ExportTopRiskInstancesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportTopRiskInstancesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExportTopRiskInstancesRequest::getXLanguage,
+                ExportTopRiskInstancesRequest::setXLanguage));
 
         // response
 

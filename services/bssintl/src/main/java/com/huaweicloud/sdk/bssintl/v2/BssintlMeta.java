@@ -108,6 +108,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerOrderDetailsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerOrderDetailsResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowPartnerConsumptionQuotaRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowPartnerConsumptionQuotaResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowRealnameAuthenticationReviewResultRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowRealnameAuthenticationReviewResultResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowRefundOrderDetailsRequest;
@@ -1533,6 +1535,27 @@ public class BssintlMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCustomerOrderDetailsRequest::getXLanguage,
                 ShowCustomerOrderDetailsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPartnerConsumptionQuotaRequest, ShowPartnerConsumptionQuotaResponse> showPartnerConsumptionQuota =
+        genForShowPartnerConsumptionQuota();
+
+    private static HttpRequestDef<ShowPartnerConsumptionQuotaRequest, ShowPartnerConsumptionQuotaResponse> genForShowPartnerConsumptionQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowPartnerConsumptionQuotaRequest, ShowPartnerConsumptionQuotaResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPartnerConsumptionQuotaRequest.class,
+                    ShowPartnerConsumptionQuotaResponse.class)
+                .withName("ShowPartnerConsumptionQuota")
+                .withUri("/v2/partners/credit/consumption-quota")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

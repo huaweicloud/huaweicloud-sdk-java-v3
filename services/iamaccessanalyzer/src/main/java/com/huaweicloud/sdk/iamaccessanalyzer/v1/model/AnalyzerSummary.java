@@ -20,6 +20,11 @@ import java.util.function.Consumer;
 public class AnalyzerSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "configuration")
+
+    private AnalyzerConfiguration _configuration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
@@ -155,6 +160,32 @@ public class AnalyzerSummary {
     @JsonProperty(value = "urn")
 
     private String urn;
+
+    public AnalyzerSummary withConfiguration(AnalyzerConfiguration _configuration) {
+        this._configuration = _configuration;
+        return this;
+    }
+
+    public AnalyzerSummary withConfiguration(Consumer<AnalyzerConfiguration> _configurationSetter) {
+        if (this._configuration == null) {
+            this._configuration = new AnalyzerConfiguration();
+            _configurationSetter.accept(this._configuration);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get _configuration
+     * @return _configuration
+     */
+    public AnalyzerConfiguration getConfiguration() {
+        return _configuration;
+    }
+
+    public void setConfiguration(AnalyzerConfiguration _configuration) {
+        this._configuration = _configuration;
+    }
 
     public AnalyzerSummary withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
@@ -377,7 +408,8 @@ public class AnalyzerSummary {
             return false;
         }
         AnalyzerSummary that = (AnalyzerSummary) obj;
-        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.id, that.id)
+        return Objects.equals(this._configuration, that._configuration)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.id, that.id)
             && Objects.equals(this.lastAnalyzedResource, that.lastAnalyzedResource)
             && Objects.equals(this.lastResourceAnalyzedAt, that.lastResourceAnalyzedAt)
             && Objects.equals(this.name, that.name) && Objects.equals(this.organizationId, that.organizationId)
@@ -388,7 +420,8 @@ public class AnalyzerSummary {
 
     @Override
     public int hashCode() {
-        return Objects.hash(createdAt,
+        return Objects.hash(_configuration,
+            createdAt,
             id,
             lastAnalyzedResource,
             lastResourceAnalyzedAt,
@@ -405,6 +438,7 @@ public class AnalyzerSummary {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AnalyzerSummary {\n");
+        sb.append("    _configuration: ").append(toIndentedString(_configuration)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    lastAnalyzedResource: ").append(toIndentedString(lastAnalyzedResource)).append("\n");

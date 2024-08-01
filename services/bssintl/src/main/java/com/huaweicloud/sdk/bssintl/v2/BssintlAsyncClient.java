@@ -84,6 +84,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerOrderDetailsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerOrderDetailsResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowPartnerConsumptionQuotaRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowPartnerConsumptionQuotaResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowRealnameAuthenticationReviewResultRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowRealnameAuthenticationReviewResultResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowRefundOrderDetailsRequest;
@@ -1359,6 +1361,36 @@ public class BssintlAsyncClient {
     public AsyncInvoker<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> showCustomerOrderDetailsAsyncInvoker(
         ShowCustomerOrderDetailsRequest request) {
         return new AsyncInvoker<>(request, BssintlMeta.showCustomerOrderDetails, hcClient);
+    }
+
+    /**
+     * 查询消费配额
+     *
+     * 功能描述：合作伙伴可以查询消费配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPartnerConsumptionQuotaRequest 请求对象
+     * @return CompletableFuture<ShowPartnerConsumptionQuotaResponse>
+     */
+    public CompletableFuture<ShowPartnerConsumptionQuotaResponse> showPartnerConsumptionQuotaAsync(
+        ShowPartnerConsumptionQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.showPartnerConsumptionQuota);
+    }
+
+    /**
+     * 查询消费配额
+     *
+     * 功能描述：合作伙伴可以查询消费配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPartnerConsumptionQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowPartnerConsumptionQuotaRequest, ShowPartnerConsumptionQuotaResponse>
+     */
+    public AsyncInvoker<ShowPartnerConsumptionQuotaRequest, ShowPartnerConsumptionQuotaResponse> showPartnerConsumptionQuotaAsyncInvoker(
+        ShowPartnerConsumptionQuotaRequest request) {
+        return new AsyncInvoker<>(request, BssintlMeta.showPartnerConsumptionQuota, hcClient);
     }
 
     /**

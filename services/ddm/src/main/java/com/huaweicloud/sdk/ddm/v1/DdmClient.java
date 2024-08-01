@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CreateGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CreateGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersRequest;
@@ -15,6 +17,10 @@ import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillPhysicalProcessesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillPhysicalProcessesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ExpandInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ExpandInstanceNodesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListRequest;
@@ -25,6 +31,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ListEnginesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListEnginesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListNodesRequest;
@@ -51,8 +59,14 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowLogicalProcessesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowLogicalProcessesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowNodeRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowNodeResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoRequest;
@@ -110,6 +124,34 @@ public class DdmClient {
     public SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> createDatabaseInvoker(
         CreateDatabaseRequest request) {
         return new SyncInvoker<>(request, DdmMeta.createDatabase, hcClient);
+    }
+
+    /**
+     * 创建组
+     *
+     * 创建组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGroupRequest 请求对象
+     * @return CreateGroupResponse
+     */
+    public CreateGroupResponse createGroup(CreateGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.createGroup);
+    }
+
+    /**
+     * 创建组
+     *
+     * 创建组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGroupRequest 请求对象
+     * @return SyncInvoker<CreateGroupRequest, CreateGroupResponse>
+     */
+    public SyncInvoker<CreateGroupRequest, CreateGroupResponse> createGroupInvoker(CreateGroupRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.createGroup, hcClient);
     }
 
     /**
@@ -260,6 +302,65 @@ public class DdmClient {
     }
 
     /**
+     * kill逻辑会话
+     *
+     * kill逻辑会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteKillLogicalProcessesRequest 请求对象
+     * @return ExecuteKillLogicalProcessesResponse
+     */
+    public ExecuteKillLogicalProcessesResponse executeKillLogicalProcesses(ExecuteKillLogicalProcessesRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.executeKillLogicalProcesses);
+    }
+
+    /**
+     * kill逻辑会话
+     *
+     * kill逻辑会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteKillLogicalProcessesRequest 请求对象
+     * @return SyncInvoker<ExecuteKillLogicalProcessesRequest, ExecuteKillLogicalProcessesResponse>
+     */
+    public SyncInvoker<ExecuteKillLogicalProcessesRequest, ExecuteKillLogicalProcessesResponse> executeKillLogicalProcessesInvoker(
+        ExecuteKillLogicalProcessesRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.executeKillLogicalProcesses, hcClient);
+    }
+
+    /**
+     * kill物理会话
+     *
+     * kill物理会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteKillPhysicalProcessesRequest 请求对象
+     * @return ExecuteKillPhysicalProcessesResponse
+     */
+    public ExecuteKillPhysicalProcessesResponse executeKillPhysicalProcesses(
+        ExecuteKillPhysicalProcessesRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.executeKillPhysicalProcesses);
+    }
+
+    /**
+     * kill物理会话
+     *
+     * kill物理会话
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteKillPhysicalProcessesRequest 请求对象
+     * @return SyncInvoker<ExecuteKillPhysicalProcessesRequest, ExecuteKillPhysicalProcessesResponse>
+     */
+    public SyncInvoker<ExecuteKillPhysicalProcessesRequest, ExecuteKillPhysicalProcessesResponse> executeKillPhysicalProcessesInvoker(
+        ExecuteKillPhysicalProcessesRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.executeKillPhysicalProcesses, hcClient);
+    }
+
+    /**
      * DDM实例节点扩容
      *
      * 对指定的DDM实例的节点个数进行扩容，支持按需实例与包周期实例。
@@ -399,6 +500,34 @@ public class DdmClient {
      */
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
         return new SyncInvoker<>(request, DdmMeta.listFlavors, hcClient);
+    }
+
+    /**
+     * 获取实例组信息列表
+     *
+     * 获取实例组信息列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupRequest 请求对象
+     * @return ListGroupResponse
+     */
+    public ListGroupResponse listGroup(ListGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.listGroup);
+    }
+
+    /**
+     * 获取实例组信息列表
+     *
+     * 获取实例组信息列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGroupRequest 请求对象
+     * @return SyncInvoker<ListGroupRequest, ListGroupResponse>
+     */
+    public SyncInvoker<ListGroupRequest, ListGroupResponse> listGroupInvoker(ListGroupRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.listGroup, hcClient);
     }
 
     /**
@@ -771,6 +900,35 @@ public class DdmClient {
     }
 
     /**
+     * 查询逻辑会话列表
+     *
+     * 查询逻辑会话列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogicalProcessesRequest 请求对象
+     * @return ShowLogicalProcessesResponse
+     */
+    public ShowLogicalProcessesResponse showLogicalProcesses(ShowLogicalProcessesRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.showLogicalProcesses);
+    }
+
+    /**
+     * 查询逻辑会话列表
+     *
+     * 查询逻辑会话列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogicalProcessesRequest 请求对象
+     * @return SyncInvoker<ShowLogicalProcessesRequest, ShowLogicalProcessesResponse>
+     */
+    public SyncInvoker<ShowLogicalProcessesRequest, ShowLogicalProcessesResponse> showLogicalProcessesInvoker(
+        ShowLogicalProcessesRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.showLogicalProcesses, hcClient);
+    }
+
+    /**
      * 查询DDM实例节点详情
      *
      * 查询DDM实例节点详情。
@@ -796,6 +954,64 @@ public class DdmClient {
      */
     public SyncInvoker<ShowNodeRequest, ShowNodeResponse> showNodeInvoker(ShowNodeRequest request) {
         return new SyncInvoker<>(request, DdmMeta.showNode, hcClient);
+    }
+
+    /**
+     * 查询物理会话列表
+     *
+     * 查询物理会话列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPhysicalProcessesRequest 请求对象
+     * @return ShowPhysicalProcessesResponse
+     */
+    public ShowPhysicalProcessesResponse showPhysicalProcesses(ShowPhysicalProcessesRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.showPhysicalProcesses);
+    }
+
+    /**
+     * 查询物理会话列表
+     *
+     * 查询物理会话列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPhysicalProcessesRequest 请求对象
+     * @return SyncInvoker<ShowPhysicalProcessesRequest, ShowPhysicalProcessesResponse>
+     */
+    public SyncInvoker<ShowPhysicalProcessesRequest, ShowPhysicalProcessesResponse> showPhysicalProcessesInvoker(
+        ShowPhysicalProcessesRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.showPhysicalProcesses, hcClient);
+    }
+
+    /**
+     * 查询kill会话审计日志
+     *
+     * 查询kill会话审计日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProcessesAuditLogRequest 请求对象
+     * @return ShowProcessesAuditLogResponse
+     */
+    public ShowProcessesAuditLogResponse showProcessesAuditLog(ShowProcessesAuditLogRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.showProcessesAuditLog);
+    }
+
+    /**
+     * 查询kill会话审计日志
+     *
+     * 查询kill会话审计日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowProcessesAuditLogRequest 请求对象
+     * @return SyncInvoker<ShowProcessesAuditLogRequest, ShowProcessesAuditLogResponse>
+     */
+    public SyncInvoker<ShowProcessesAuditLogRequest, ShowProcessesAuditLogResponse> showProcessesAuditLogInvoker(
+        ShowProcessesAuditLogRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.showProcessesAuditLog, hcClient);
     }
 
     /**

@@ -121,7 +121,7 @@ public class PreviewFinding {
     private String existingFindingId;
 
     /**
-     * 分析结果的当前状态。
+     * 访问分析结果当前状态。
      */
     public static final class ExistingFindingStatusEnum {
 
@@ -440,7 +440,7 @@ public class PreviewFinding {
     }
 
     /**
-     * 分析结果的当前状态。
+     * 访问分析结果当前状态。
      * @return existingFindingStatus
      */
     public ExistingFindingStatusEnum getExistingFindingStatus() {

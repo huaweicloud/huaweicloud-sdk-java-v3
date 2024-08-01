@@ -84,6 +84,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerOrderDetailsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerOrderDetailsResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowPartnerConsumptionQuotaRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowPartnerConsumptionQuotaResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowRealnameAuthenticationReviewResultRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowRealnameAuthenticationReviewResultResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowRefundOrderDetailsRequest;
@@ -1337,6 +1339,35 @@ public class BssintlClient {
     public SyncInvoker<ShowCustomerOrderDetailsRequest, ShowCustomerOrderDetailsResponse> showCustomerOrderDetailsInvoker(
         ShowCustomerOrderDetailsRequest request) {
         return new SyncInvoker<>(request, BssintlMeta.showCustomerOrderDetails, hcClient);
+    }
+
+    /**
+     * 查询消费配额
+     *
+     * 功能描述：合作伙伴可以查询消费配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPartnerConsumptionQuotaRequest 请求对象
+     * @return ShowPartnerConsumptionQuotaResponse
+     */
+    public ShowPartnerConsumptionQuotaResponse showPartnerConsumptionQuota(ShowPartnerConsumptionQuotaRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.showPartnerConsumptionQuota);
+    }
+
+    /**
+     * 查询消费配额
+     *
+     * 功能描述：合作伙伴可以查询消费配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPartnerConsumptionQuotaRequest 请求对象
+     * @return SyncInvoker<ShowPartnerConsumptionQuotaRequest, ShowPartnerConsumptionQuotaResponse>
+     */
+    public SyncInvoker<ShowPartnerConsumptionQuotaRequest, ShowPartnerConsumptionQuotaResponse> showPartnerConsumptionQuotaInvoker(
+        ShowPartnerConsumptionQuotaRequest request) {
+        return new SyncInvoker<>(request, BssintlMeta.showPartnerConsumptionQuota, hcClient);
     }
 
     /**

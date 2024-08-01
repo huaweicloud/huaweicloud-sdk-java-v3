@@ -531,7 +531,7 @@ public class HcClient implements CustomizationConfigure {
             return null;
         } catch (SdkException e) {
             logger.error("can not parse json result to response object", e);
-            throw new ServerResponseException(httpResponse.getStatusCode(), null, "json parse error",
+            throw new ServerResponseException(httpResponse.getStatusCode(), null, "json parse error: " + e.getMessage(),
                     httpResponse.getHeader("X-Request-Id"));
         }
     }

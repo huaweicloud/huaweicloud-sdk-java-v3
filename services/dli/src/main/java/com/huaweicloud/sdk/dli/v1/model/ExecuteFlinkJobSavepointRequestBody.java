@@ -112,7 +112,7 @@ public class ExecuteFlinkJobSavepointRequestBody {
     }
 
     /**
-     * Savepoint路径
+     * obs桶路径.例 \"bucket_name/file_name/\"
      * @return savepointPath
      */
     public String getSavepointPath() {

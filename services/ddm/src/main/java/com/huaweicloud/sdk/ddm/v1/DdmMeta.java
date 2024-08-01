@@ -9,6 +9,9 @@ import com.huaweicloud.sdk.ddm.v1.model.AdminUserInfoReq;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseReq;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CreateGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CreateGroupRequestBody;
+import com.huaweicloud.sdk.ddm.v1.model.CreateGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceReq;
 import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceResponse;
@@ -22,8 +25,13 @@ import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserResponse;
 import com.huaweicloud.sdk.ddm.v1.model.EnlargeRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillPhysicalProcessesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillPhysicalProcessesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ExpandInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ExpandInstanceNodesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.KillProcessesOpenRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesRequest;
@@ -32,6 +40,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ListEnginesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListEnginesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListGroupRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListInstancesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListNodesRequest;
@@ -65,8 +75,14 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowLogicalProcessesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowLogicalProcessesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowNodeRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowNodeResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoRequest;
@@ -112,6 +128,33 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateDatabaseReq.class),
             f -> f.withMarshaller(CreateDatabaseRequest::getBody, CreateDatabaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateGroupRequest, CreateGroupResponse> createGroup = genForCreateGroup();
+
+    private static HttpRequestDef<CreateGroupRequest, CreateGroupResponse> genForCreateGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateGroupRequest, CreateGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateGroupRequest.class, CreateGroupResponse.class)
+                .withName("CreateGroup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/groups")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGroupRequest::getInstanceId, CreateGroupRequest::setInstanceId));
+        builder.<CreateGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateGroupRequestBody.class),
+            f -> f.withMarshaller(CreateGroupRequest::getBody, CreateGroupRequest::setBody));
 
         // response
 
@@ -255,6 +298,72 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteUserRequest::getUsername, DeleteUserRequest::setUsername));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteKillLogicalProcessesRequest, ExecuteKillLogicalProcessesResponse> executeKillLogicalProcesses =
+        genForExecuteKillLogicalProcesses();
+
+    private static HttpRequestDef<ExecuteKillLogicalProcessesRequest, ExecuteKillLogicalProcessesResponse> genForExecuteKillLogicalProcesses() {
+        // basic
+        HttpRequestDef.Builder<ExecuteKillLogicalProcessesRequest, ExecuteKillLogicalProcessesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    ExecuteKillLogicalProcessesRequest.class,
+                    ExecuteKillLogicalProcessesResponse.class)
+                .withName("ExecuteKillLogicalProcesses")
+                .withUri("/v3/{project_id}/instances/{instance_id}/logical-processes")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteKillLogicalProcessesRequest::getInstanceId,
+                ExecuteKillLogicalProcessesRequest::setInstanceId));
+        builder.<KillProcessesOpenRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(KillProcessesOpenRequest.class),
+            f -> f.withMarshaller(ExecuteKillLogicalProcessesRequest::getBody,
+                ExecuteKillLogicalProcessesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteKillPhysicalProcessesRequest, ExecuteKillPhysicalProcessesResponse> executeKillPhysicalProcesses =
+        genForExecuteKillPhysicalProcesses();
+
+    private static HttpRequestDef<ExecuteKillPhysicalProcessesRequest, ExecuteKillPhysicalProcessesResponse> genForExecuteKillPhysicalProcesses() {
+        // basic
+        HttpRequestDef.Builder<ExecuteKillPhysicalProcessesRequest, ExecuteKillPhysicalProcessesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    ExecuteKillPhysicalProcessesRequest.class,
+                    ExecuteKillPhysicalProcessesResponse.class)
+                .withName("ExecuteKillPhysicalProcesses")
+                .withUri("/v3/{project_id}/instances/{instance_id}/physical-processes")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteKillPhysicalProcessesRequest::getInstanceId,
+                ExecuteKillPhysicalProcessesRequest::setInstanceId));
+        builder.<KillProcessesOpenRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(KillProcessesOpenRequest.class),
+            f -> f.withMarshaller(ExecuteKillPhysicalProcessesRequest::getBody,
+                ExecuteKillPhysicalProcessesRequest::setBody));
 
         // response
 
@@ -410,6 +519,38 @@ public class DdmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListFlavorsRequest::getLimit, ListFlavorsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGroupRequest, ListGroupResponse> listGroup = genForListGroup();
+
+    private static HttpRequestDef<ListGroupRequest, ListGroupResponse> genForListGroup() {
+        // basic
+        HttpRequestDef.Builder<ListGroupRequest, ListGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGroupRequest.class, ListGroupResponse.class)
+                .withName("ListGroup")
+                .withUri("/v3/{project_id}/instances/{instance_id}/groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGroupRequest::getInstanceId, ListGroupRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGroupRequest::getOffset, ListGroupRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGroupRequest::getLimit, ListGroupRequest::setLimit));
 
         // response
 
@@ -824,6 +965,45 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowLogicalProcessesRequest, ShowLogicalProcessesResponse> showLogicalProcesses =
+        genForShowLogicalProcesses();
+
+    private static HttpRequestDef<ShowLogicalProcessesRequest, ShowLogicalProcessesResponse> genForShowLogicalProcesses() {
+        // basic
+        HttpRequestDef.Builder<ShowLogicalProcessesRequest, ShowLogicalProcessesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowLogicalProcessesRequest.class, ShowLogicalProcessesResponse.class)
+            .withName("ShowLogicalProcesses")
+            .withUri("/v3/{project_id}/instances/{instance_id}/logical-processes")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLogicalProcessesRequest::getInstanceId,
+                ShowLogicalProcessesRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowLogicalProcessesRequest::getOffset, ShowLogicalProcessesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowLogicalProcessesRequest::getLimit, ShowLogicalProcessesRequest::setLimit));
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLogicalProcessesRequest::getKeyword, ShowLogicalProcessesRequest::setKeyword));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowNodeRequest, ShowNodeResponse> showNode = genForShowNode();
 
     private static HttpRequestDef<ShowNodeRequest, ShowNodeResponse> genForShowNode() {
@@ -845,6 +1025,90 @@ public class DdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNodeRequest::getNodeId, ShowNodeRequest::setNodeId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPhysicalProcessesRequest, ShowPhysicalProcessesResponse> showPhysicalProcesses =
+        genForShowPhysicalProcesses();
+
+    private static HttpRequestDef<ShowPhysicalProcessesRequest, ShowPhysicalProcessesResponse> genForShowPhysicalProcesses() {
+        // basic
+        HttpRequestDef.Builder<ShowPhysicalProcessesRequest, ShowPhysicalProcessesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPhysicalProcessesRequest.class, ShowPhysicalProcessesResponse.class)
+            .withName("ShowPhysicalProcesses")
+            .withUri("/v3/{project_id}/instances/{instance_id}/physical-processes")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPhysicalProcessesRequest::getInstanceId,
+                ShowPhysicalProcessesRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowPhysicalProcessesRequest::getOffset, ShowPhysicalProcessesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowPhysicalProcessesRequest::getLimit, ShowPhysicalProcessesRequest::setLimit));
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPhysicalProcessesRequest::getKeyword, ShowPhysicalProcessesRequest::setKeyword));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowProcessesAuditLogRequest, ShowProcessesAuditLogResponse> showProcessesAuditLog =
+        genForShowProcessesAuditLog();
+
+    private static HttpRequestDef<ShowProcessesAuditLogRequest, ShowProcessesAuditLogResponse> genForShowProcessesAuditLog() {
+        // basic
+        HttpRequestDef.Builder<ShowProcessesAuditLogRequest, ShowProcessesAuditLogResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowProcessesAuditLogRequest.class, ShowProcessesAuditLogResponse.class)
+            .withName("ShowProcessesAuditLog")
+            .withUri("/v3/{project_id}/instances/{instance_id}/processes-audit-log")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProcessesAuditLogRequest::getInstanceId,
+                ShowProcessesAuditLogRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowProcessesAuditLogRequest::getOffset, ShowProcessesAuditLogRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowProcessesAuditLogRequest::getLimit, ShowProcessesAuditLogRequest::setLimit));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProcessesAuditLogRequest::getStartTime,
+                ShowProcessesAuditLogRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowProcessesAuditLogRequest::getEndTime, ShowProcessesAuditLogRequest::setEndTime));
 
         // response
 

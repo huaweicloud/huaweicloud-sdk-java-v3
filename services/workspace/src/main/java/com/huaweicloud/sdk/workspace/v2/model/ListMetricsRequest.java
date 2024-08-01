@@ -119,7 +119,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 开始时间, UTC时间
+     * 开始时间, UTC时间, 格式为：yyyy-MM-ddTHH:mm:ssZ
      * @return startTime
      */
     public String getStartTime() {
@@ -136,7 +136,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 结束时间,UTC时间
+     * 结束时间 ,UTC时间, 格式为：yyyy-MM-ddTHH:mm:ssZ
      * @return endTime
      */
     public String getEndTime() {

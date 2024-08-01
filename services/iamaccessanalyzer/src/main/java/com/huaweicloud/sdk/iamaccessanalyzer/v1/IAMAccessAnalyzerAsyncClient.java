@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ApplyArchiveRuleRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ApplyArchiveRuleResponse;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.CheckNoNewAccessRequest;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.CheckNoNewAccessResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.CreateAccessPreviewRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.CreateAccessPreviewResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.CreateAnalyzerRequest;
@@ -639,6 +641,35 @@ public class IAMAccessAnalyzerAsyncClient {
     public AsyncInvoker<UntagResourceRequest, UntagResourceResponse> untagResourceAsyncInvoker(
         UntagResourceRequest request) {
         return new AsyncInvoker<>(request, IAMAccessAnalyzerMeta.untagResource, hcClient);
+    }
+
+    /**
+     * 校验策略是否有新访问权限
+     *
+     * 校验策略是否有新访问权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckNoNewAccessRequest 请求对象
+     * @return CompletableFuture<CheckNoNewAccessResponse>
+     */
+    public CompletableFuture<CheckNoNewAccessResponse> checkNoNewAccessAsync(CheckNoNewAccessRequest request) {
+        return hcClient.asyncInvokeHttp(request, IAMAccessAnalyzerMeta.checkNoNewAccess);
+    }
+
+    /**
+     * 校验策略是否有新访问权限
+     *
+     * 校验策略是否有新访问权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckNoNewAccessRequest 请求对象
+     * @return AsyncInvoker<CheckNoNewAccessRequest, CheckNoNewAccessResponse>
+     */
+    public AsyncInvoker<CheckNoNewAccessRequest, CheckNoNewAccessResponse> checkNoNewAccessAsyncInvoker(
+        CheckNoNewAccessRequest request) {
+        return new AsyncInvoker<>(request, IAMAccessAnalyzerMeta.checkNoNewAccess, hcClient);
     }
 
     /**

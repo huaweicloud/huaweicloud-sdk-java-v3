@@ -3,12 +3,16 @@ package com.huaweicloud.sdk.lts.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.lts.v2.model.ConsumerGroupHeartBeatRequest;
+import com.huaweicloud.sdk.lts.v2.model.ConsumerGroupHeartBeatResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateAccessConfigRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateAccessConfigResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateAgencyAccessRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateAgencyAccessResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateAomMappingRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.CreateConsumerGroupRequest;
+import com.huaweicloud.sdk.lts.v2.model.CreateConsumerGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateDashBoardRequest;
 import com.huaweicloud.sdk.lts.v2.model.CreateDashBoardResponse;
 import com.huaweicloud.sdk.lts.v2.model.CreateDashboardGroupRequest;
@@ -47,6 +51,8 @@ import com.huaweicloud.sdk.lts.v2.model.DeleteActiveAlarmsRequest;
 import com.huaweicloud.sdk.lts.v2.model.DeleteActiveAlarmsResponse;
 import com.huaweicloud.sdk.lts.v2.model.DeleteAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.DeleteAomMappingRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.DeleteConsumerGroupRequest;
+import com.huaweicloud.sdk.lts.v2.model.DeleteConsumerGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.DeleteDashboardRequest;
 import com.huaweicloud.sdk.lts.v2.model.DeleteDashboardResponse;
 import com.huaweicloud.sdk.lts.v2.model.DeleteHostGroupRequest;
@@ -81,8 +87,12 @@ import com.huaweicloud.sdk.lts.v2.model.ListBreifStructTemplateRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListBreifStructTemplateResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListChartsRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListChartsResponse;
+import com.huaweicloud.sdk.lts.v2.model.ListConsumerGroupRequest;
+import com.huaweicloud.sdk.lts.v2.model.ListConsumerGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListCriteriasRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListCriteriasResponse;
+import com.huaweicloud.sdk.lts.v2.model.ListDetailsConsumerGroupRequest;
+import com.huaweicloud.sdk.lts.v2.model.ListDetailsConsumerGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListHistorySqlRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListHistorySqlResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListHostGroupRequest;
@@ -131,8 +141,14 @@ import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRuleRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRuleResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowAomMappingRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.ShowCursorByTimeRequest;
+import com.huaweicloud.sdk.lts.v2.model.ShowCursorByTimeResponse;
+import com.huaweicloud.sdk.lts.v2.model.ShowCursorTimeRequest;
+import com.huaweicloud.sdk.lts.v2.model.ShowCursorTimeResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowLogConvergeConfigRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowLogConvergeConfigResponse;
+import com.huaweicloud.sdk.lts.v2.model.ShowLogStreamShardsRequest;
+import com.huaweicloud.sdk.lts.v2.model.ShowLogStreamShardsResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowMemberGroupAndStreamRequest;
 import com.huaweicloud.sdk.lts.v2.model.ShowMemberGroupAndStreamResponse;
 import com.huaweicloud.sdk.lts.v2.model.ShowNotificationTemplateRequest;
@@ -145,6 +161,8 @@ import com.huaweicloud.sdk.lts.v2.model.UpdateAlarmRuleStatusRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateAlarmRuleStatusResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateAomMappingRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateAomMappingRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.UpdateCheckPointRequest;
+import com.huaweicloud.sdk.lts.v2.model.UpdateCheckPointResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateHostGroupRequest;
 import com.huaweicloud.sdk.lts.v2.model.UpdateHostGroupResponse;
 import com.huaweicloud.sdk.lts.v2.model.UpdateKeywordsAlarmRuleRequest;
@@ -2404,6 +2422,267 @@ public class LtsClient {
     public SyncInvoker<UpdateAomMappingRulesRequest, UpdateAomMappingRulesResponse> updateAomMappingRulesInvoker(
         UpdateAomMappingRulesRequest request) {
         return new SyncInvoker<>(request, LtsMeta.updateAomMappingRules, hcClient);
+    }
+
+    /**
+     * 消费者发送心跳到服务端
+     *
+     * 消费者发送心跳到服务端
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConsumerGroupHeartBeatRequest 请求对象
+     * @return ConsumerGroupHeartBeatResponse
+     */
+    public ConsumerGroupHeartBeatResponse consumerGroupHeartBeat(ConsumerGroupHeartBeatRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.consumerGroupHeartBeat);
+    }
+
+    /**
+     * 消费者发送心跳到服务端
+     *
+     * 消费者发送心跳到服务端
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConsumerGroupHeartBeatRequest 请求对象
+     * @return SyncInvoker<ConsumerGroupHeartBeatRequest, ConsumerGroupHeartBeatResponse>
+     */
+    public SyncInvoker<ConsumerGroupHeartBeatRequest, ConsumerGroupHeartBeatResponse> consumerGroupHeartBeatInvoker(
+        ConsumerGroupHeartBeatRequest request) {
+        return new SyncInvoker<>(request, LtsMeta.consumerGroupHeartBeat, hcClient);
+    }
+
+    /**
+     * 创建消费组
+     *
+     * 创建消费组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateConsumerGroupRequest 请求对象
+     * @return CreateConsumerGroupResponse
+     */
+    public CreateConsumerGroupResponse createConsumerGroup(CreateConsumerGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.createConsumerGroup);
+    }
+
+    /**
+     * 创建消费组
+     *
+     * 创建消费组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateConsumerGroupRequest 请求对象
+     * @return SyncInvoker<CreateConsumerGroupRequest, CreateConsumerGroupResponse>
+     */
+    public SyncInvoker<CreateConsumerGroupRequest, CreateConsumerGroupResponse> createConsumerGroupInvoker(
+        CreateConsumerGroupRequest request) {
+        return new SyncInvoker<>(request, LtsMeta.createConsumerGroup, hcClient);
+    }
+
+    /**
+     * 删除消费组
+     *
+     * 删除消费组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConsumerGroupRequest 请求对象
+     * @return DeleteConsumerGroupResponse
+     */
+    public DeleteConsumerGroupResponse deleteConsumerGroup(DeleteConsumerGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.deleteConsumerGroup);
+    }
+
+    /**
+     * 删除消费组
+     *
+     * 删除消费组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConsumerGroupRequest 请求对象
+     * @return SyncInvoker<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse>
+     */
+    public SyncInvoker<DeleteConsumerGroupRequest, DeleteConsumerGroupResponse> deleteConsumerGroupInvoker(
+        DeleteConsumerGroupRequest request) {
+        return new SyncInvoker<>(request, LtsMeta.deleteConsumerGroup, hcClient);
+    }
+
+    /**
+     * 查询消费组列表
+     *
+     * 查询消费组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConsumerGroupRequest 请求对象
+     * @return ListConsumerGroupResponse
+     */
+    public ListConsumerGroupResponse listConsumerGroup(ListConsumerGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listConsumerGroup);
+    }
+
+    /**
+     * 查询消费组列表
+     *
+     * 查询消费组列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConsumerGroupRequest 请求对象
+     * @return SyncInvoker<ListConsumerGroupRequest, ListConsumerGroupResponse>
+     */
+    public SyncInvoker<ListConsumerGroupRequest, ListConsumerGroupResponse> listConsumerGroupInvoker(
+        ListConsumerGroupRequest request) {
+        return new SyncInvoker<>(request, LtsMeta.listConsumerGroup, hcClient);
+    }
+
+    /**
+     * 查询消费组详情
+     *
+     * 查询消费组详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDetailsConsumerGroupRequest 请求对象
+     * @return ListDetailsConsumerGroupResponse
+     */
+    public ListDetailsConsumerGroupResponse listDetailsConsumerGroup(ListDetailsConsumerGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.listDetailsConsumerGroup);
+    }
+
+    /**
+     * 查询消费组详情
+     *
+     * 查询消费组详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDetailsConsumerGroupRequest 请求对象
+     * @return SyncInvoker<ListDetailsConsumerGroupRequest, ListDetailsConsumerGroupResponse>
+     */
+    public SyncInvoker<ListDetailsConsumerGroupRequest, ListDetailsConsumerGroupResponse> listDetailsConsumerGroupInvoker(
+        ListDetailsConsumerGroupRequest request) {
+        return new SyncInvoker<>(request, LtsMeta.listDetailsConsumerGroup, hcClient);
+    }
+
+    /**
+     * 通过时间获取消费游标
+     *
+     * 通过时间查询cursor
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCursorByTimeRequest 请求对象
+     * @return ShowCursorByTimeResponse
+     */
+    public ShowCursorByTimeResponse showCursorByTime(ShowCursorByTimeRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.showCursorByTime);
+    }
+
+    /**
+     * 通过时间获取消费游标
+     *
+     * 通过时间查询cursor
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCursorByTimeRequest 请求对象
+     * @return SyncInvoker<ShowCursorByTimeRequest, ShowCursorByTimeResponse>
+     */
+    public SyncInvoker<ShowCursorByTimeRequest, ShowCursorByTimeResponse> showCursorByTimeInvoker(
+        ShowCursorByTimeRequest request) {
+        return new SyncInvoker<>(request, LtsMeta.showCursorByTime, hcClient);
+    }
+
+    /**
+     * 通过消费游标获取时间
+     *
+     * 通过cursor查询服务端时间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCursorTimeRequest 请求对象
+     * @return ShowCursorTimeResponse
+     */
+    public ShowCursorTimeResponse showCursorTime(ShowCursorTimeRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.showCursorTime);
+    }
+
+    /**
+     * 通过消费游标获取时间
+     *
+     * 通过cursor查询服务端时间
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCursorTimeRequest 请求对象
+     * @return SyncInvoker<ShowCursorTimeRequest, ShowCursorTimeResponse>
+     */
+    public SyncInvoker<ShowCursorTimeRequest, ShowCursorTimeResponse> showCursorTimeInvoker(
+        ShowCursorTimeRequest request) {
+        return new SyncInvoker<>(request, LtsMeta.showCursorTime, hcClient);
+    }
+
+    /**
+     * 流消费获取Shards
+     *
+     * 流消费获取所有的query shards
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogStreamShardsRequest 请求对象
+     * @return ShowLogStreamShardsResponse
+     */
+    public ShowLogStreamShardsResponse showLogStreamShards(ShowLogStreamShardsRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.showLogStreamShards);
+    }
+
+    /**
+     * 流消费获取Shards
+     *
+     * 流消费获取所有的query shards
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogStreamShardsRequest 请求对象
+     * @return SyncInvoker<ShowLogStreamShardsRequest, ShowLogStreamShardsResponse>
+     */
+    public SyncInvoker<ShowLogStreamShardsRequest, ShowLogStreamShardsResponse> showLogStreamShardsInvoker(
+        ShowLogStreamShardsRequest request) {
+        return new SyncInvoker<>(request, LtsMeta.showLogStreamShards, hcClient);
+    }
+
+    /**
+     * 更新消费组位点
+     *
+     * 更新消费组位点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCheckPointRequest 请求对象
+     * @return UpdateCheckPointResponse
+     */
+    public UpdateCheckPointResponse updateCheckPoint(UpdateCheckPointRequest request) {
+        return hcClient.syncInvokeHttp(request, LtsMeta.updateCheckPoint);
+    }
+
+    /**
+     * 更新消费组位点
+     *
+     * 更新消费组位点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCheckPointRequest 请求对象
+     * @return SyncInvoker<UpdateCheckPointRequest, UpdateCheckPointResponse>
+     */
+    public SyncInvoker<UpdateCheckPointRequest, UpdateCheckPointResponse> updateCheckPointInvoker(
+        UpdateCheckPointRequest request) {
+        return new SyncInvoker<>(request, LtsMeta.updateCheckPoint, hcClient);
     }
 
     /**

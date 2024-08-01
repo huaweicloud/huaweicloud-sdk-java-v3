@@ -111,6 +111,11 @@ public class DeleteEndpointPolicyResponse extends SdkResponse {
     private List<PolicyStatement> policyStatement = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_document")
+
+    private Object policyDocument;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint_pool_id")
 
     private String endpointPoolId;
@@ -539,6 +544,23 @@ public class DeleteEndpointPolicyResponse extends SdkResponse {
         this.policyStatement = policyStatement;
     }
 
+    public DeleteEndpointPolicyResponse withPolicyDocument(Object policyDocument) {
+        this.policyDocument = policyDocument;
+        return this;
+    }
+
+    /**
+     * iam 5.0 策略
+     * @return policyDocument
+     */
+    public Object getPolicyDocument() {
+        return policyDocument;
+    }
+
+    public void setPolicyDocument(Object policyDocument) {
+        this.policyDocument = policyDocument;
+    }
+
     public DeleteEndpointPolicyResponse withEndpointPoolId(String endpointPoolId) {
         this.endpointPoolId = endpointPoolId;
         return this;
@@ -562,7 +584,7 @@ public class DeleteEndpointPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 终端节点关联的Public Border Group信息，只有当终端节点和边缘Pool相关联时才会返回改字段
+     * 终端节点关联的Public Border Group信息，只有当终端节点和边缘Pool相关联时才会返回该字段
      * @return publicBorderGroup
      */
     public String getPublicBorderGroup() {
@@ -594,6 +616,7 @@ public class DeleteEndpointPolicyResponse extends SdkResponse {
             && Objects.equals(this.enableWhitelist, that.enableWhitelist)
             && Objects.equals(this.routetables, that.routetables) && Objects.equals(this.description, that.description)
             && Objects.equals(this.policyStatement, that.policyStatement)
+            && Objects.equals(this.policyDocument, that.policyDocument)
             && Objects.equals(this.endpointPoolId, that.endpointPoolId)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
@@ -619,6 +642,7 @@ public class DeleteEndpointPolicyResponse extends SdkResponse {
             routetables,
             description,
             policyStatement,
+            policyDocument,
             endpointPoolId,
             publicBorderGroup);
     }
@@ -646,6 +670,7 @@ public class DeleteEndpointPolicyResponse extends SdkResponse {
         sb.append("    routetables: ").append(toIndentedString(routetables)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyStatement: ").append(toIndentedString(policyStatement)).append("\n");
+        sb.append("    policyDocument: ").append(toIndentedString(policyDocument)).append("\n");
         sb.append("    endpointPoolId: ").append(toIndentedString(endpointPoolId)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("}");

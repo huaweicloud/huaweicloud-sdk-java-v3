@@ -46,6 +46,11 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
 
     private String enable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "frequency")
+
+    private String frequency;
+
     public ShowAutoCreatePolicyResponse withKeepday(Integer keepday) {
         this.keepday = keepday;
         return this;
@@ -165,6 +170,23 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         this.enable = enable;
     }
 
+    public ShowAutoCreatePolicyResponse withFrequency(String frequency) {
+        this.frequency = frequency;
+        return this;
+    }
+
+    /**
+     * 自动创建快照的执行频次。
+     * @return frequency
+     */
+    public String getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -177,12 +199,12 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         return Objects.equals(this.keepday, that.keepday) && Objects.equals(this.period, that.period)
             && Objects.equals(this.prefix, that.prefix) && Objects.equals(this.bucket, that.bucket)
             && Objects.equals(this.basePath, that.basePath) && Objects.equals(this.agency, that.agency)
-            && Objects.equals(this.enable, that.enable);
+            && Objects.equals(this.enable, that.enable) && Objects.equals(this.frequency, that.frequency);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keepday, period, prefix, bucket, basePath, agency, enable);
+        return Objects.hash(keepday, period, prefix, bucket, basePath, agency, enable, frequency);
     }
 
     @Override
@@ -196,6 +218,7 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
         sb.append("    basePath: ").append(toIndentedString(basePath)).append("\n");
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
+        sb.append("    frequency: ").append(toIndentedString(frequency)).append("\n");
         sb.append("}");
         return sb.toString();
     }

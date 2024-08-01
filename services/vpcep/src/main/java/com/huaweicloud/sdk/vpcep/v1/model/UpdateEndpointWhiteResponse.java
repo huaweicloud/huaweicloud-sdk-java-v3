@@ -105,6 +105,11 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
 
     private Boolean enableWhitelist;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_document")
+
+    private Object policyDocument;
+
     public UpdateEndpointWhiteResponse withId(String id) {
         this.id = id;
         return this;
@@ -475,6 +480,23 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
         this.enableWhitelist = enableWhitelist;
     }
 
+    public UpdateEndpointWhiteResponse withPolicyDocument(Object policyDocument) {
+        this.policyDocument = policyDocument;
+        return this;
+    }
+
+    /**
+     * iam 5.0 策略
+     * @return policyDocument
+     */
+    public Object getPolicyDocument() {
+        return policyDocument;
+    }
+
+    public void setPolicyDocument(Object policyDocument) {
+        this.policyDocument = policyDocument;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -495,7 +517,8 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.whitelist, that.whitelist)
-            && Objects.equals(this.enableWhitelist, that.enableWhitelist);
+            && Objects.equals(this.enableWhitelist, that.enableWhitelist)
+            && Objects.equals(this.policyDocument, that.policyDocument);
     }
 
     @Override
@@ -517,7 +540,8 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
             projectId,
             tags,
             whitelist,
-            enableWhitelist);
+            enableWhitelist,
+            policyDocument);
     }
 
     @Override
@@ -542,6 +566,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    whitelist: ").append(toIndentedString(whitelist)).append("\n");
         sb.append("    enableWhitelist: ").append(toIndentedString(enableWhitelist)).append("\n");
+        sb.append("    policyDocument: ").append(toIndentedString(policyDocument)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -7,6 +7,9 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ApplyArchiveRuleRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.ApplyArchiveRuleResponse;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.CheckNoNewAccessReqBody;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.CheckNoNewAccessRequest;
+import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.CheckNoNewAccessResponse;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.CreateAccessPreviewReqBody;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.CreateAccessPreviewRequest;
 import com.huaweicloud.sdk.iamaccessanalyzer.v1.model.CreateAccessPreviewResponse;
@@ -643,6 +646,29 @@ public class IAMAccessAnalyzerMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UntagResourceReqBody.class),
             f -> f.withMarshaller(UntagResourceRequest::getBody, UntagResourceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckNoNewAccessRequest, CheckNoNewAccessResponse> checkNoNewAccess =
+        genForCheckNoNewAccess();
+
+    private static HttpRequestDef<CheckNoNewAccessRequest, CheckNoNewAccessResponse> genForCheckNoNewAccess() {
+        // basic
+        HttpRequestDef.Builder<CheckNoNewAccessRequest, CheckNoNewAccessResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckNoNewAccessRequest.class, CheckNoNewAccessResponse.class)
+                .withName("CheckNoNewAccess")
+                .withUri("/v5/policies/check-no-new-access")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CheckNoNewAccessReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckNoNewAccessReqBody.class),
+            f -> f.withMarshaller(CheckNoNewAccessRequest::getBody, CheckNoNewAccessRequest::setBody));
 
         // response
 
