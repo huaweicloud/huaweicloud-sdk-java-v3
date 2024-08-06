@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class ElbRegion {
 
-    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://elb.eu-west-101.myhuaweicloud.com");
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://elb.eu-west-101.myhuaweicloud.eu");
 
     public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://elb.af-south-1.myhuaweicloud.com");
 

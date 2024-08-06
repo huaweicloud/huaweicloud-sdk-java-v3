@@ -65,7 +65,7 @@ public class ImsRegion {
 
     public static final Region CN_EAST_4 = new Region("cn-east-4", "https://ims.cn-east-4.myhuaweicloud.com");
 
-    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://ims.eu-west-101.myhuaweicloud.com");
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://ims.eu-west-101.myhuaweicloud.eu");
 
     public static final Region CN_EAST_5 = new Region("cn-east-5", "https://ims.cn-east-5.myhuaweicloud.com");
 

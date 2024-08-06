@@ -66,7 +66,7 @@ public class CssRegion {
     public static final Region MY_KUALALUMPUR_1 =
         new Region("my-kualalumpur-1", "https://css.my-kualalumpur-1.myhuaweicloud.com");
 
-    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://css.eu-west-101.myhuaweicloud.com");
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://css.eu-west-101.myhuaweicloud.eu");
 
     public static final Region AF_NORTH_1 = new Region("af-north-1", "https://css.af-north-1.myhuaweicloud.com");
 
