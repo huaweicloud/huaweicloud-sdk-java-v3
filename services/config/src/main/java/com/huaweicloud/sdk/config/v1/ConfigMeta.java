@@ -2202,12 +2202,6 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRemediationExceptionsRequest::getResourceId,
                 ListRemediationExceptionsRequest::setResourceId));
-        builder.<String>withRequestField("resource_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListRemediationExceptionsRequest::getResourceName,
-                ListRemediationExceptionsRequest::setResourceName));
 
         // response
 

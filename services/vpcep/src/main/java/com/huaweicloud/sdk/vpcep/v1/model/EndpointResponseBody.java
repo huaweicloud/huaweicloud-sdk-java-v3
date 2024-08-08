@@ -127,7 +127,7 @@ public class EndpointResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_document")
 
-    private Object policyDocument;
+    private String policyDocument;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint_pool_id")
@@ -614,7 +614,7 @@ public class EndpointResponseBody {
     }
 
     /**
-     * 终端节点策略信息
+     * Gateway类型终端节点策略信息，仅限OBS、SFS的终端节点服务的enable_policy值为true时支持该参数。
      * @return policyStatement
      */
     public List<PolicyStatement> getPolicyStatement() {
@@ -625,20 +625,20 @@ public class EndpointResponseBody {
         this.policyStatement = policyStatement;
     }
 
-    public EndpointResponseBody withPolicyDocument(Object policyDocument) {
+    public EndpointResponseBody withPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
         return this;
     }
 
     /**
-     * iam 5.0 策略
+     * 终端节点策略信息，仅当终端节点服务的enable_policy值为true时支持该参数，默认值为完全访问权限。（OBS、SFS的终端节点服务暂不支持该参数）
      * @return policyDocument
      */
-    public Object getPolicyDocument() {
+    public String getPolicyDocument() {
         return policyDocument;
     }
 
-    public void setPolicyDocument(Object policyDocument) {
+    public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
 

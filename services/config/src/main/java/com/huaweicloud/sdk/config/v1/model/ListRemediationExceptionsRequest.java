@@ -30,11 +30,6 @@ public class ListRemediationExceptionsRequest {
 
     private String resourceId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_name")
-
-    private String resourceName;
-
     public ListRemediationExceptionsRequest withPolicyAssignmentId(String policyAssignmentId) {
         this.policyAssignmentId = policyAssignmentId;
         return this;
@@ -105,23 +100,6 @@ public class ListRemediationExceptionsRequest {
         this.resourceId = resourceId;
     }
 
-    public ListRemediationExceptionsRequest withResourceName(String resourceName) {
-        this.resourceName = resourceName;
-        return this;
-    }
-
-    /**
-     * 资源名称
-     * @return resourceName
-     */
-    public String getResourceName() {
-        return resourceName;
-    }
-
-    public void setResourceName(String resourceName) {
-        this.resourceName = resourceName;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -133,12 +111,12 @@ public class ListRemediationExceptionsRequest {
         ListRemediationExceptionsRequest that = (ListRemediationExceptionsRequest) obj;
         return Objects.equals(this.policyAssignmentId, that.policyAssignmentId)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName);
+            && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyAssignmentId, limit, marker, resourceId, resourceName);
+        return Objects.hash(policyAssignmentId, limit, marker, resourceId);
     }
 
     @Override
@@ -149,7 +127,6 @@ public class ListRemediationExceptionsRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
-        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

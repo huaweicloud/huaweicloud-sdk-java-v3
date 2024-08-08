@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.corebson.SdkBsonDocResponse;
 
 import org.bson.BsonReader;
+import org.bson.codecs.Codec;
 import org.bson.codecs.DecoderContext;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.annotations.BsonProperty;
@@ -30,6 +31,8 @@ public class ListTableResponse extends SdkBsonDocResponse {
     @BsonProperty(value = "table_names")
 
     private List<String> tableNames = null;
+
+    private static Codec<ListTableResponse> codec;
 
     public ListTableResponse withCursorName(String cursorName) {
         this.cursorName = cursorName;
@@ -121,6 +124,9 @@ public class ListTableResponse extends SdkBsonDocResponse {
 
     @Override
     protected Object decodeBody(CodecRegistry codecRegistry, BsonReader reader) {
-        return codecRegistry.get(ListTableResponse.class).decode(reader, DecoderContext.builder().build());
+        if (codec == null) {
+            codec = codecRegistry.get(ListTableResponse.class);
+        }
+        return codec.decode(reader, DecoderContext.builder().build());
     }
 }

@@ -106,9 +106,14 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     private Boolean enableWhitelist;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_statement")
+
+    private List<PolicyStatement> policyStatement = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_document")
 
-    private Object policyDocument;
+    private String policyDocument;
 
     public UpdateEndpointWhiteResponse withId(String id) {
         this.id = id;
@@ -480,20 +485,53 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
         this.enableWhitelist = enableWhitelist;
     }
 
-    public UpdateEndpointWhiteResponse withPolicyDocument(Object policyDocument) {
+    public UpdateEndpointWhiteResponse withPolicyStatement(List<PolicyStatement> policyStatement) {
+        this.policyStatement = policyStatement;
+        return this;
+    }
+
+    public UpdateEndpointWhiteResponse addPolicyStatementItem(PolicyStatement policyStatementItem) {
+        if (this.policyStatement == null) {
+            this.policyStatement = new ArrayList<>();
+        }
+        this.policyStatement.add(policyStatementItem);
+        return this;
+    }
+
+    public UpdateEndpointWhiteResponse withPolicyStatement(Consumer<List<PolicyStatement>> policyStatementSetter) {
+        if (this.policyStatement == null) {
+            this.policyStatement = new ArrayList<>();
+        }
+        policyStatementSetter.accept(this.policyStatement);
+        return this;
+    }
+
+    /**
+     * Gateway类型终端节点策略信息，仅限OBS、SFS的终端节点服务的enable_policy值为true时支持该参数。
+     * @return policyStatement
+     */
+    public List<PolicyStatement> getPolicyStatement() {
+        return policyStatement;
+    }
+
+    public void setPolicyStatement(List<PolicyStatement> policyStatement) {
+        this.policyStatement = policyStatement;
+    }
+
+    public UpdateEndpointWhiteResponse withPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
         return this;
     }
 
     /**
-     * iam 5.0 策略
+     * 终端节点策略信息，仅当终端节点服务的enable_policy值为true时支持该参数，默认值为完全访问权限。（OBS、SFS的终端节点服务暂不支持该参数）
      * @return policyDocument
      */
-    public Object getPolicyDocument() {
+    public String getPolicyDocument() {
         return policyDocument;
     }
 
-    public void setPolicyDocument(Object policyDocument) {
+    public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
 
@@ -518,6 +556,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.whitelist, that.whitelist)
             && Objects.equals(this.enableWhitelist, that.enableWhitelist)
+            && Objects.equals(this.policyStatement, that.policyStatement)
             && Objects.equals(this.policyDocument, that.policyDocument);
     }
 
@@ -541,6 +580,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
             tags,
             whitelist,
             enableWhitelist,
+            policyStatement,
             policyDocument);
     }
 
@@ -566,6 +606,7 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    whitelist: ").append(toIndentedString(whitelist)).append("\n");
         sb.append("    enableWhitelist: ").append(toIndentedString(enableWhitelist)).append("\n");
+        sb.append("    policyStatement: ").append(toIndentedString(policyStatement)).append("\n");
         sb.append("    policyDocument: ").append(toIndentedString(policyDocument)).append("\n");
         sb.append("}");
         return sb.toString();

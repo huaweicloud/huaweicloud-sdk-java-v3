@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.corebson.SdkBsonDocResponse;
 
 import org.bson.BsonReader;
+import org.bson.codecs.Codec;
 import org.bson.codecs.DecoderContext;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.annotations.BsonProperty;
@@ -24,6 +25,8 @@ public class BatchWriteKvResponse extends SdkBsonDocResponse {
     @BsonProperty(value = "unprocessed_opers")
 
     private List<TableOperIds> unprocessedOpers = null;
+
+    private static Codec<BatchWriteKvResponse> codec;
 
     public BatchWriteKvResponse withUnprocessedOpers(List<TableOperIds> unprocessedOpers) {
         this.unprocessedOpers = unprocessedOpers;
@@ -97,6 +100,9 @@ public class BatchWriteKvResponse extends SdkBsonDocResponse {
 
     @Override
     protected Object decodeBody(CodecRegistry codecRegistry, BsonReader reader) {
-        return codecRegistry.get(BatchWriteKvResponse.class).decode(reader, DecoderContext.builder().build());
+        if (codec == null) {
+            codec = codecRegistry.get(BatchWriteKvResponse.class);
+        }
+        return codec.decode(reader, DecoderContext.builder().build());
     }
 }

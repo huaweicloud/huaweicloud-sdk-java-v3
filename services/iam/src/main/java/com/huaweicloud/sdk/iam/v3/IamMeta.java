@@ -2024,33 +2024,6 @@ public class IamMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> keystoneListUsersForGroupByAdmin =
-        genForKeystoneListUsersForGroupByAdmin();
-
-    private static HttpRequestDef<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> genForKeystoneListUsersForGroupByAdmin() {
-        // basic
-        HttpRequestDef.Builder<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    KeystoneListUsersForGroupByAdminRequest.class,
-                    KeystoneListUsersForGroupByAdminResponse.class)
-                .withName("KeystoneListUsersForGroupByAdmin")
-                .withUri("/v3/groups/{group_id}/users")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("group_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(KeystoneListUsersForGroupByAdminRequest::getGroupId,
-                KeystoneListUsersForGroupByAdminRequest::setGroupId));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<KeystoneListVersionsRequest, KeystoneListVersionsResponse> keystoneListVersions =
         genForKeystoneListVersions();
 
@@ -4370,6 +4343,33 @@ public class IamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(KeystoneListUsersRequest::getPasswordExpiresAt,
                 KeystoneListUsersRequest::setPasswordExpiresAt));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> keystoneListUsersForGroupByAdmin =
+        genForKeystoneListUsersForGroupByAdmin();
+
+    private static HttpRequestDef<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> genForKeystoneListUsersForGroupByAdmin() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    KeystoneListUsersForGroupByAdminRequest.class,
+                    KeystoneListUsersForGroupByAdminResponse.class)
+                .withName("KeystoneListUsersForGroupByAdmin")
+                .withUri("/v3/groups/{group_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(KeystoneListUsersForGroupByAdminRequest::getGroupId,
+                KeystoneListUsersForGroupByAdminRequest::setGroupId));
 
         // response
 

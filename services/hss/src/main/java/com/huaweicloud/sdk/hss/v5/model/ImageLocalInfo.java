@@ -90,6 +90,26 @@ public class ImageLocalInfo {
 
     private String scanFailedDesc;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "severity_level")
+
+    private String severityLevel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_name")
+
+    private String hostName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_id")
+
+    private String hostId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_id")
+
+    private String agentId;
+
     public ImageLocalInfo withImageName(String imageName) {
         this.imageName = imageName;
         return this;
@@ -380,6 +400,74 @@ public class ImageLocalInfo {
         this.scanFailedDesc = scanFailedDesc;
     }
 
+    public ImageLocalInfo withSeverityLevel(String severityLevel) {
+        this.severityLevel = severityLevel;
+        return this;
+    }
+
+    /**
+     * 镜像风险程度，在镜像扫描完成后展示，包含如下：   - Security：安全   - Low：低危   - Medium：中危   - High：高危
+     * @return severityLevel
+     */
+    public String getSeverityLevel() {
+        return severityLevel;
+    }
+
+    public void setSeverityLevel(String severityLevel) {
+        this.severityLevel = severityLevel;
+    }
+
+    public ImageLocalInfo withHostName(String hostName) {
+        this.hostName = hostName;
+        return this;
+    }
+
+    /**
+     * 服务器名称
+     * @return hostName
+     */
+    public String getHostName() {
+        return hostName;
+    }
+
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
+
+    public ImageLocalInfo withHostId(String hostId) {
+        this.hostId = hostId;
+        return this;
+    }
+
+    /**
+     * 主机ID
+     * @return hostId
+     */
+    public String getHostId() {
+        return hostId;
+    }
+
+    public void setHostId(String hostId) {
+        this.hostId = hostId;
+    }
+
+    public ImageLocalInfo withAgentId(String agentId) {
+        this.agentId = agentId;
+        return this;
+    }
+
+    /**
+     * Agent ID
+     * @return agentId
+     */
+    public String getAgentId() {
+        return agentId;
+    }
+
+    public void setAgentId(String agentId) {
+        this.agentId = agentId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -400,7 +488,9 @@ public class ImageLocalInfo {
             && Objects.equals(this.maliciousFileNum, that.maliciousFileNum)
             && Objects.equals(this.hostNum, that.hostNum) && Objects.equals(this.containerNum, that.containerNum)
             && Objects.equals(this.componentNum, that.componentNum)
-            && Objects.equals(this.scanFailedDesc, that.scanFailedDesc);
+            && Objects.equals(this.scanFailedDesc, that.scanFailedDesc)
+            && Objects.equals(this.severityLevel, that.severityLevel) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.agentId, that.agentId);
     }
 
     @Override
@@ -420,7 +510,11 @@ public class ImageLocalInfo {
             hostNum,
             containerNum,
             componentNum,
-            scanFailedDesc);
+            scanFailedDesc,
+            severityLevel,
+            hostName,
+            hostId,
+            agentId);
     }
 
     @Override
@@ -443,6 +537,10 @@ public class ImageLocalInfo {
         sb.append("    containerNum: ").append(toIndentedString(containerNum)).append("\n");
         sb.append("    componentNum: ").append(toIndentedString(componentNum)).append("\n");
         sb.append("    scanFailedDesc: ").append(toIndentedString(scanFailedDesc)).append("\n");
+        sb.append("    severityLevel: ").append(toIndentedString(severityLevel)).append("\n");
+        sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
+        sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
+        sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

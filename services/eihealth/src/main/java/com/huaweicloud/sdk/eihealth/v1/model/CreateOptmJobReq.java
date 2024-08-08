@@ -54,6 +54,11 @@ public class CreateOptmJobReq {
     private Float samplerMixinWeight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "base_model_id")
+
+    private String baseModelId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_ids")
 
     private List<String> modelIds = null;
@@ -276,6 +281,23 @@ public class CreateOptmJobReq {
         this.samplerMixinWeight = samplerMixinWeight;
     }
 
+    public CreateOptmJobReq withBaseModelId(String baseModelId) {
+        this.baseModelId = baseModelId;
+        return this;
+    }
+
+    /**
+     * 基模型id
+     * @return baseModelId
+     */
+    public String getBaseModelId() {
+        return baseModelId;
+    }
+
+    public void setBaseModelId(String baseModelId) {
+        this.baseModelId = baseModelId;
+    }
+
     public CreateOptmJobReq withModelIds(List<String> modelIds) {
         this.modelIds = modelIds;
         return this;
@@ -344,7 +366,8 @@ public class CreateOptmJobReq {
             && Objects.equals(this.weakConstraints, that.weakConstraints)
             && Objects.equals(this.strongConstraints, that.strongConstraints)
             && Objects.equals(this.samplerMixinWeight, that.samplerMixinWeight)
-            && Objects.equals(this.modelIds, that.modelIds) && Objects.equals(this.numTrials, that.numTrials);
+            && Objects.equals(this.baseModelId, that.baseModelId) && Objects.equals(this.modelIds, that.modelIds)
+            && Objects.equals(this.numTrials, that.numTrials);
     }
 
     @Override
@@ -357,6 +380,7 @@ public class CreateOptmJobReq {
             weakConstraints,
             strongConstraints,
             samplerMixinWeight,
+            baseModelId,
             modelIds,
             numTrials);
     }
@@ -373,6 +397,7 @@ public class CreateOptmJobReq {
         sb.append("    weakConstraints: ").append(toIndentedString(weakConstraints)).append("\n");
         sb.append("    strongConstraints: ").append(toIndentedString(strongConstraints)).append("\n");
         sb.append("    samplerMixinWeight: ").append(toIndentedString(samplerMixinWeight)).append("\n");
+        sb.append("    baseModelId: ").append(toIndentedString(baseModelId)).append("\n");
         sb.append("    modelIds: ").append(toIndentedString(modelIds)).append("\n");
         sb.append("    numTrials: ").append(toIndentedString(numTrials)).append("\n");
         sb.append("}");

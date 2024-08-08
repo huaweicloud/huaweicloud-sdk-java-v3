@@ -60,6 +60,11 @@ public class ShowOptmJobResponse extends SdkResponse {
     private Float samplerMixinWeight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "base_model")
+
+    private BaseModel baseModel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "models")
 
     private List<BasicDrugModel> models = null;
@@ -299,6 +304,32 @@ public class ShowOptmJobResponse extends SdkResponse {
         this.samplerMixinWeight = samplerMixinWeight;
     }
 
+    public ShowOptmJobResponse withBaseModel(BaseModel baseModel) {
+        this.baseModel = baseModel;
+        return this;
+    }
+
+    public ShowOptmJobResponse withBaseModel(Consumer<BaseModel> baseModelSetter) {
+        if (this.baseModel == null) {
+            this.baseModel = new BaseModel();
+            baseModelSetter.accept(this.baseModel);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get baseModel
+     * @return baseModel
+     */
+    public BaseModel getBaseModel() {
+        return baseModel;
+    }
+
+    public void setBaseModel(BaseModel baseModel) {
+        this.baseModel = baseModel;
+    }
+
     public ShowOptmJobResponse withModels(List<BasicDrugModel> models) {
         this.models = models;
         return this;
@@ -374,7 +405,8 @@ public class ShowOptmJobResponse extends SdkResponse {
             && Objects.equals(this.weakConstraints, that.weakConstraints)
             && Objects.equals(this.strongConstraints, that.strongConstraints)
             && Objects.equals(this.samplerMixinWeight, that.samplerMixinWeight)
-            && Objects.equals(this.models, that.models) && Objects.equals(this.clusterResult, that.clusterResult);
+            && Objects.equals(this.baseModel, that.baseModel) && Objects.equals(this.models, that.models)
+            && Objects.equals(this.clusterResult, that.clusterResult);
     }
 
     @Override
@@ -388,6 +420,7 @@ public class ShowOptmJobResponse extends SdkResponse {
             weakConstraints,
             strongConstraints,
             samplerMixinWeight,
+            baseModel,
             models,
             clusterResult);
     }
@@ -405,6 +438,7 @@ public class ShowOptmJobResponse extends SdkResponse {
         sb.append("    weakConstraints: ").append(toIndentedString(weakConstraints)).append("\n");
         sb.append("    strongConstraints: ").append(toIndentedString(strongConstraints)).append("\n");
         sb.append("    samplerMixinWeight: ").append(toIndentedString(samplerMixinWeight)).append("\n");
+        sb.append("    baseModel: ").append(toIndentedString(baseModel)).append("\n");
         sb.append("    models: ").append(toIndentedString(models)).append("\n");
         sb.append("    clusterResult: ").append(toIndentedString(clusterResult)).append("\n");
         sb.append("}");

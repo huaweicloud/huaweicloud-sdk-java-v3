@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.workspaceapp.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -50,6 +52,11 @@ public class CreateServerGroupReq {
     @JsonProperty(value = "product_id")
 
     private String productId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_id")
+
+    private String flavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -110,6 +117,26 @@ public class CreateServerGroupReq {
     @JsonProperty(value = "extra_session_size")
 
     private Integer extraSessionSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TmsTag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "primary_server_group_id")
+
+    private String primaryServerGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_group_status")
+
+    private Boolean serverGroupStatus;
 
     public CreateServerGroupReq withName(String name) {
         this.name = name;
@@ -254,6 +281,23 @@ public class CreateServerGroupReq {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public CreateServerGroupReq withFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+        return this;
+    }
+
+    /**
+     * 规格ID。
+     * @return flavorId
+     */
+    public String getFlavorId() {
+        return flavorId;
+    }
+
+    public void setFlavorId(String flavorId) {
+        this.flavorId = flavorId;
     }
 
     public CreateServerGroupReq withVpcId(String vpcId) {
@@ -472,6 +516,90 @@ public class CreateServerGroupReq {
         this.extraSessionSize = extraSessionSize;
     }
 
+    public CreateServerGroupReq withTags(List<TmsTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateServerGroupReq addTagsItem(TmsTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateServerGroupReq withTags(Consumer<List<TmsTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签信息，最多包含20个key,不允许重复
+     * @return tags
+     */
+    public List<TmsTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TmsTag> tags) {
+        this.tags = tags;
+    }
+
+    public CreateServerGroupReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID,仅企业项目需配置(字段为空或者0表示使用默认default企业项目)
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public CreateServerGroupReq withPrimaryServerGroupId(String primaryServerGroupId) {
+        this.primaryServerGroupId = primaryServerGroupId;
+        return this;
+    }
+
+    /**
+     * 主服务器组id,绑定主服务器组，则创建的是备服务器。
+     * @return primaryServerGroupId
+     */
+    public String getPrimaryServerGroupId() {
+        return primaryServerGroupId;
+    }
+
+    public void setPrimaryServerGroupId(String primaryServerGroupId) {
+        this.primaryServerGroupId = primaryServerGroupId;
+    }
+
+    public CreateServerGroupReq withServerGroupStatus(Boolean serverGroupStatus) {
+        this.serverGroupStatus = serverGroupStatus;
+        return this;
+    }
+
+    /**
+     * 是否启用服务器组。
+     * @return serverGroupStatus
+     */
+    public Boolean getServerGroupStatus() {
+        return serverGroupStatus;
+    }
+
+    public void setServerGroupStatus(Boolean serverGroupStatus) {
+        this.serverGroupStatus = serverGroupStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -485,15 +613,19 @@ public class CreateServerGroupReq {
             && Objects.equals(this.imageProductId, that.imageProductId)
             && Objects.equals(this.imageType, that.imageType) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.description, that.description) && Objects.equals(this.routePolicy, that.routePolicy)
-            && Objects.equals(this.productId, that.productId) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.systemDiskType, that.systemDiskType)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.flavorId, that.flavorId)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.systemDiskType, that.systemDiskType)
             && Objects.equals(this.systemDiskSize, that.systemDiskSize) && Objects.equals(this.ouName, that.ouName)
             && Objects.equals(this.clusterId, that.clusterId)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
             && Objects.equals(this.ipVirtual, that.ipVirtual) && Objects.equals(this.isVdi, that.isVdi)
             && Objects.equals(this.appType, that.appType)
             && Objects.equals(this.extraSessionType, that.extraSessionType)
-            && Objects.equals(this.extraSessionSize, that.extraSessionSize);
+            && Objects.equals(this.extraSessionSize, that.extraSessionSize) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.primaryServerGroupId, that.primaryServerGroupId)
+            && Objects.equals(this.serverGroupStatus, that.serverGroupStatus);
     }
 
     @Override
@@ -506,6 +638,7 @@ public class CreateServerGroupReq {
             description,
             routePolicy,
             productId,
+            flavorId,
             vpcId,
             subnetId,
             systemDiskType,
@@ -517,7 +650,11 @@ public class CreateServerGroupReq {
             isVdi,
             appType,
             extraSessionType,
-            extraSessionSize);
+            extraSessionSize,
+            tags,
+            enterpriseProjectId,
+            primaryServerGroupId,
+            serverGroupStatus);
     }
 
     @Override
@@ -532,6 +669,7 @@ public class CreateServerGroupReq {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    routePolicy: ").append(toIndentedString(routePolicy)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    systemDiskType: ").append(toIndentedString(systemDiskType)).append("\n");
@@ -544,6 +682,10 @@ public class CreateServerGroupReq {
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    extraSessionType: ").append(toIndentedString(extraSessionType)).append("\n");
         sb.append("    extraSessionSize: ").append(toIndentedString(extraSessionSize)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    primaryServerGroupId: ").append(toIndentedString(primaryServerGroupId)).append("\n");
+        sb.append("    serverGroupStatus: ").append(toIndentedString(serverGroupStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

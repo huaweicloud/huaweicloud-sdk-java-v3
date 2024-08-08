@@ -37,6 +37,11 @@ public class WeakConstraintType {
      */
     public static final WeakConstraintType MAXIMIZE = new WeakConstraintType("maximize");
 
+    /**
+     * Enum INTERACTION for value: "interaction"
+     */
+    public static final WeakConstraintType INTERACTION = new WeakConstraintType("interaction");
+
     private static final Map<String, WeakConstraintType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, WeakConstraintType> createStaticFields() {
@@ -46,6 +51,7 @@ public class WeakConstraintType {
         map.put("struct", STRUCT);
         map.put("minimize", MINIMIZE);
         map.put("maximize", MAXIMIZE);
+        map.put("interaction", INTERACTION);
         return Collections.unmodifiableMap(map);
     }
 

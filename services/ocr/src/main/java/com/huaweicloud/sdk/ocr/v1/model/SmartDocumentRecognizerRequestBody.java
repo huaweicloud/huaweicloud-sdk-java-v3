@@ -21,6 +21,11 @@ public class SmartDocumentRecognizerRequestBody {
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "single_orientation_mode")
+
+    private Boolean singleOrientationMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kv")
 
     private Boolean kv;
@@ -92,6 +97,23 @@ public class SmartDocumentRecognizerRequestBody {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public SmartDocumentRecognizerRequestBody withSingleOrientationMode(Boolean singleOrientationMode) {
+        this.singleOrientationMode = singleOrientationMode;
+        return this;
+    }
+
+    /**
+     * 单朝向模式开关。可选值包括： - true：打开单朝向模式 - false：关闭单朝向模式  未传入该参数时默认为false，既默认图片中的字段为多朝向 
+     * @return singleOrientationMode
+     */
+    public Boolean getSingleOrientationMode() {
+        return singleOrientationMode;
+    }
+
+    public void setSingleOrientationMode(Boolean singleOrientationMode) {
+        this.singleOrientationMode = singleOrientationMode;
     }
 
     public SmartDocumentRecognizerRequestBody withKv(Boolean kv) {
@@ -240,6 +262,7 @@ public class SmartDocumentRecognizerRequestBody {
         }
         SmartDocumentRecognizerRequestBody that = (SmartDocumentRecognizerRequestBody) obj;
         return Objects.equals(this.data, that.data) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.singleOrientationMode, that.singleOrientationMode)
             && Objects.equals(this.kv, that.kv) && Objects.equals(this.table, that.table)
             && Objects.equals(this.layout, that.layout) && Objects.equals(this.returnExcel, that.returnExcel)
             && Objects.equals(this.form, that.form) && Objects.equals(this.formula, that.formula)
@@ -248,7 +271,17 @@ public class SmartDocumentRecognizerRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, url, kv, table, layout, returnExcel, form, formula, kvMap, pdfPageNumber);
+        return Objects.hash(data,
+            url,
+            singleOrientationMode,
+            kv,
+            table,
+            layout,
+            returnExcel,
+            form,
+            formula,
+            kvMap,
+            pdfPageNumber);
     }
 
     @Override
@@ -257,6 +290,7 @@ public class SmartDocumentRecognizerRequestBody {
         sb.append("class SmartDocumentRecognizerRequestBody {\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    singleOrientationMode: ").append(toIndentedString(singleOrientationMode)).append("\n");
         sb.append("    kv: ").append(toIndentedString(kv)).append("\n");
         sb.append("    table: ").append(toIndentedString(table)).append("\n");
         sb.append("    layout: ").append(toIndentedString(layout)).append("\n");

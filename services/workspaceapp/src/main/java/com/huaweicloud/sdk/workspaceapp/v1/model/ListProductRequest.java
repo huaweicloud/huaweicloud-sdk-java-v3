@@ -16,6 +16,11 @@ public class ListProductRequest {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_id")
+
+    private String flavorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
 
     private String availabilityZone;
@@ -55,6 +60,23 @@ public class ListProductRequest {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public ListProductRequest withFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+        return this;
+    }
+
+    /**
+     * 如果不为空，将按规格ID进行过滤后返回。
+     * @return flavorId
+     */
+    public String getFlavorId() {
+        return flavorId;
+    }
+
+    public void setFlavorId(String flavorId) {
+        this.flavorId = flavorId;
     }
 
     public ListProductRequest withAvailabilityZone(String availabilityZone) {
@@ -151,7 +173,7 @@ public class ListProductRequest {
             return false;
         }
         ListProductRequest that = (ListProductRequest) obj;
-        return Objects.equals(this.productId, that.productId)
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.flavorId, that.flavorId)
             && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.architecture, that.architecture)
             && Objects.equals(this.packageType, that.packageType);
@@ -159,7 +181,7 @@ public class ListProductRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId, availabilityZone, osType, chargeMode, architecture, packageType);
+        return Objects.hash(productId, flavorId, availabilityZone, osType, chargeMode, architecture, packageType);
     }
 
     @Override
@@ -167,6 +189,7 @@ public class ListProductRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListProductRequest {\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");

@@ -23,6 +23,11 @@ public class UpdateSubNetworkInterfaceOption {
 
     private List<String> securityGroups = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allowed_address_pairs")
+
+    private List<AllowedAddressPair> allowedAddressPairs = null;
+
     public UpdateSubNetworkInterfaceOption withDescription(String description) {
         this.description = description;
         return this;
@@ -73,6 +78,40 @@ public class UpdateSubNetworkInterfaceOption {
         this.securityGroups = securityGroups;
     }
 
+    public UpdateSubNetworkInterfaceOption withAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+        return this;
+    }
+
+    public UpdateSubNetworkInterfaceOption addAllowedAddressPairsItem(AllowedAddressPair allowedAddressPairsItem) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        this.allowedAddressPairs.add(allowedAddressPairsItem);
+        return this;
+    }
+
+    public UpdateSubNetworkInterfaceOption withAllowedAddressPairs(
+        Consumer<List<AllowedAddressPair>> allowedAddressPairsSetter) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        allowedAddressPairsSetter.accept(this.allowedAddressPairs);
+        return this;
+    }
+
+    /**
+     * 1. 扩展属性：IP/Mac对列表，allowed_address_pair参见“allowed_address_pair对象” 2. 使用说明: IP地址不允许为 “0.0.0.0”如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组硬件SDN环境不支持ip_address属性配置为CIDR格式。
+     * @return allowedAddressPairs
+     */
+    public List<AllowedAddressPair> getAllowedAddressPairs() {
+        return allowedAddressPairs;
+    }
+
+    public void setAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +122,13 @@ public class UpdateSubNetworkInterfaceOption {
         }
         UpdateSubNetworkInterfaceOption that = (UpdateSubNetworkInterfaceOption) obj;
         return Objects.equals(this.description, that.description)
-            && Objects.equals(this.securityGroups, that.securityGroups);
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, securityGroups);
+        return Objects.hash(description, securityGroups, allowedAddressPairs);
     }
 
     @Override
@@ -97,6 +137,7 @@ public class UpdateSubNetworkInterfaceOption {
         sb.append("class UpdateSubNetworkInterfaceOption {\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
+        sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

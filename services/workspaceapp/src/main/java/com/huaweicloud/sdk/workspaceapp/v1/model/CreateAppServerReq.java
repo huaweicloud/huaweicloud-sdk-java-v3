@@ -49,6 +49,11 @@ public class CreateAppServerReq {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_id")
+
+    private String flavorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_type")
 
     private String osType;
@@ -220,6 +225,23 @@ public class CreateAppServerReq {
         this.productId = productId;
     }
 
+    public CreateAppServerReq withFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+        return this;
+    }
+
+    /**
+     * 规格ID。
+     * @return flavorId
+     */
+    public String getFlavorId() {
+        return flavorId;
+    }
+
+    public void setFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+    }
+
     public CreateAppServerReq withOsType(String osType) {
         this.osType = osType;
         return this;
@@ -380,7 +402,8 @@ public class CreateAppServerReq {
             && Objects.equals(this.availabilityZone, that.availabilityZone)
             && Objects.equals(this.subscriptionNum, that.subscriptionNum) && Objects.equals(this.nics, that.nics)
             && Objects.equals(this.ouName, that.ouName) && Objects.equals(this.productId, that.productId)
-            && Objects.equals(this.osType, that.osType) && Objects.equals(this.rootVolume, that.rootVolume)
+            && Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.rootVolume, that.rootVolume)
             && Objects.equals(this.schedulerHints, that.schedulerHints) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.updateAccessAgent, that.updateAccessAgent)
             && Objects.equals(this.createServerExtendParam, that.createServerExtendParam);
@@ -395,6 +418,7 @@ public class CreateAppServerReq {
             nics,
             ouName,
             productId,
+            flavorId,
             osType,
             rootVolume,
             schedulerHints,
@@ -415,6 +439,7 @@ public class CreateAppServerReq {
         sb.append("    nics: ").append(toIndentedString(nics)).append("\n");
         sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    rootVolume: ").append(toIndentedString(rootVolume)).append("\n");
         sb.append("    schedulerHints: ").append(toIndentedString(schedulerHints)).append("\n");

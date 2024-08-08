@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * server的任务状态: * &#x60;scheduling&#x60; - 实例处于创建中，正在进行调度 * &#x60;block_device_mapping&#x60; - 实例处于创建中，正在准备磁盘 * &#x60;networking&#x60; - 实例处于创建中，正在准备网络 * &#x60;spawning&#x60; - 实例处于创建中，正在内部创建 * &#x60;rebooting&#x60; - 实例处于重启中 * &#x60;reboot_pending&#x60; - 实例处于重启中，正在下发重启。 * &#x60;reboot_started&#x60; - 实例处于重启中，开始内部重启 * &#x60;rebooting_hard&#x60; - 实例处于强制重启中 * &#x60;reboot_pending_hard&#x60; - 实例处于强制重启中，正在下发重启 * &#x60;reboot_started_hard&#x60; - 实例处于强制重启中，开始内部重启。 * &#x60;rebuilding&#x60; - 实例处于重建中。 * &#x60;rebuild_fail&#x60; - 实例重建失败。 * &#x60;updating_tsvi&#x60; - 实例处于虚拟会话IP更新中。 * &#x60;updating_tsvi_failed&#x60; - 实例虚拟会话IP更新失败。 * &#x60;rebuild_block_device_mapping&#x60; - 实例处于重建中，正在准备磁盘。 * &#x60;rebuild_spawning&#x60; - 实例处于重建中，正在内部重建。 * &#x60;migrating&#x60; - 实例处于热迁移中。 * &#x60;resize_prep&#x60; - 实例处于调整规格中，正在准备阶段。 * &#x60;resize_migrating&#x60; - 实例处于调整规格中，正在迁移阶段。 * &#x60;resize_migrated&#x60; - 实例处于调整规格中，已经完成迁移。 * &#x60;resize_finish&#x60; - 实例处于调整规格中，正在完成调整。 * &#x60;resize_reverting&#x60; - 实例处于调整规格中，正在回退调整。 * &#x60;powering-off&#x60; - 实例处于停止中。 * &#x60;powering-on&#x60; - 实例处于启动中。 * &#x60;deleting&#x60; - 实例处于删除中。 * &#x60;source_locking&#x60; - 资源锁定中 * &#x60;rejoining_domain&#x60; - 实例正在重新加域 * &#x60;delete_failed&#x60; - 实例删除失败 * &#x60;upgrading_access_agent&#x60; - 实例正在升级AccessAgent * &#x60;upgrad_access_agent_fail&#x60; - 实例升级AccessAgent失败 * &#x60;upgrad_access_agent_success&#x60; - 实例升级AccessAgent成功 * &#x60;updating_sid&#x60; - 实例处于创建中，等待更新SID * &#x60;migrate_failed&#x60; - 实例迁移失败 * &#x60;build_image&#x60; - 生成镜像中 * &#x60;null&#x60; - 未设置
+ * server的任务状态: * &#x60;scheduling&#x60; - 实例处于创建中，正在进行调度 * &#x60;block_device_mapping&#x60; - 实例处于创建中，正在准备磁盘 * &#x60;networking&#x60; - 实例处于创建中，正在准备网络 * &#x60;spawning&#x60; - 实例处于创建中，正在内部创建 * &#x60;rebooting&#x60; - 实例处于重启中 * &#x60;reboot_pending&#x60; - 实例处于重启中，正在下发重启。 * &#x60;reboot_started&#x60; - 实例处于重启中，开始内部重启 * &#x60;rebooting_hard&#x60; - 实例处于强制重启中 * &#x60;reboot_pending_hard&#x60; - 实例处于强制重启中，正在下发重启 * &#x60;reboot_started_hard&#x60; - 实例处于强制重启中，开始内部重启。 * &#x60;rebuilding&#x60; - 实例处于重建中。 * &#x60;rebuild_fail&#x60; - 实例重建失败。 * &#x60;updating_tsvi&#x60; - 实例处于虚拟会话IP更新中。 * &#x60;updating_tsvi_failed&#x60; - 实例虚拟会话IP更新失败。 * &#x60;rebuild_block_device_mapping&#x60; - 实例处于重建中，正在准备磁盘。 * &#x60;rebuild_spawning&#x60; - 实例处于重建中，正在内部重建。 * &#x60;migrating&#x60; - 实例处于热迁移中。 * &#x60;resize_prep&#x60; - 实例处于调整规格中，正在准备阶段。 * &#x60;resize_migrating&#x60; - 实例处于调整规格中，正在迁移阶段。 * &#x60;resize_migrated&#x60; - 实例处于调整规格中，已经完成迁移。 * &#x60;resize_finish&#x60; - 实例处于调整规格中，正在完成调整。 * &#x60;resize_reverting&#x60; - 实例处于调整规格中，正在回退调整。 * &#x60;powering-off&#x60; - 实例处于停止中。 * &#x60;powering-on&#x60; - 实例处于启动中。 * &#x60;deleting&#x60; - 实例处于删除中。 * &#x60;source_locking&#x60; - 资源锁定中 * &#x60;rejoining_domain&#x60; - 实例正在重新加域 * &#x60;delete_failed&#x60; - 实例删除失败 * &#x60;upgrading_access_agent&#x60; - 实例正在升级AccessAgent * &#x60;upgrad_access_agent_fail&#x60; - 实例升级AccessAgent失败 * &#x60;upgrad_access_agent_success&#x60; - 实例升级AccessAgent成功 * &#x60;updating_sid&#x60; - 实例处于创建中，等待更新SID * &#x60;migrate_failed&#x60; - 实例迁移失败 * &#x60;build_image&#x60; - 生成镜像中 * &#x60;build_snapshot&#x60; - 生成快照中 * &#x60;restore_snapshot&#x60; - 恢复快照中 * &#x60;null&#x60; - 未设置
  */
 public class AppServerTaskStatus {
 
@@ -181,6 +181,16 @@ public class AppServerTaskStatus {
     public static final AppServerTaskStatus BUILD_IMAGE = new AppServerTaskStatus("build_image");
 
     /**
+     * Enum BUILD_SNAPSHOT for value: "build_snapshot"
+     */
+    public static final AppServerTaskStatus BUILD_SNAPSHOT = new AppServerTaskStatus("build_snapshot");
+
+    /**
+     * Enum RESTORE_SNAPSHOT for value: "restore_snapshot"
+     */
+    public static final AppServerTaskStatus RESTORE_SNAPSHOT = new AppServerTaskStatus("restore_snapshot");
+
+    /**
      * Enum NULL for value: "null"
      */
     public static final AppServerTaskStatus NULL = new AppServerTaskStatus("null");
@@ -222,6 +232,8 @@ public class AppServerTaskStatus {
         map.put("upgrad_access_agent_success", UPGRAD_ACCESS_AGENT_SUCCESS);
         map.put("migrate_failed", MIGRATE_FAILED);
         map.put("build_image", BUILD_IMAGE);
+        map.put("build_snapshot", BUILD_SNAPSHOT);
+        map.put("restore_snapshot", RESTORE_SNAPSHOT);
         map.put("null", NULL);
         return Collections.unmodifiableMap(map);
     }

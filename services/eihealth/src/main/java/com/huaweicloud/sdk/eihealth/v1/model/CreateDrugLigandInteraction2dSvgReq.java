@@ -21,6 +21,11 @@ public class CreateDrugLigandInteraction2dSvgReq {
 
     private DrugFile ligandFile;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
     public CreateDrugLigandInteraction2dSvgReq withReceptorFile(ReceptorDrugFileReq receptorFile) {
         this.receptorFile = receptorFile;
         return this;
@@ -73,6 +78,23 @@ public class CreateDrugLigandInteraction2dSvgReq {
         this.ligandFile = ligandFile;
     }
 
+    public CreateDrugLigandInteraction2dSvgReq withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 小分子名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +104,13 @@ public class CreateDrugLigandInteraction2dSvgReq {
             return false;
         }
         CreateDrugLigandInteraction2dSvgReq that = (CreateDrugLigandInteraction2dSvgReq) obj;
-        return Objects.equals(this.receptorFile, that.receptorFile) && Objects.equals(this.ligandFile, that.ligandFile);
+        return Objects.equals(this.receptorFile, that.receptorFile) && Objects.equals(this.ligandFile, that.ligandFile)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(receptorFile, ligandFile);
+        return Objects.hash(receptorFile, ligandFile, name);
     }
 
     @Override
@@ -96,6 +119,7 @@ public class CreateDrugLigandInteraction2dSvgReq {
         sb.append("class CreateDrugLigandInteraction2dSvgReq {\n");
         sb.append("    receptorFile: ").append(toIndentedString(receptorFile)).append("\n");
         sb.append("    ligandFile: ").append(toIndentedString(ligandFile)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -304,9 +304,9 @@ public class VpcepAsyncClient {
     }
 
     /**
-     * 删除网关型终端节点policy
+     * 删除网关型终端节点策略（待下线）
      *
-     * 删除网关型终端节点policy。
+     * 删除网关型终端节点策略，该接口待下线，不建议使用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -319,9 +319,9 @@ public class VpcepAsyncClient {
     }
 
     /**
-     * 删除网关型终端节点policy
+     * 删除网关型终端节点策略（待下线）
      *
-     * 删除网关型终端节点policy。
+     * 删除网关型终端节点策略，该接口待下线，不建议使用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -725,9 +725,9 @@ public class VpcepAsyncClient {
     }
 
     /**
-     * 修改网关型终端节点policy
+     * 修改终端节点策略
      *
-     * 修改网关型终端节点policy。
+     * 修改终端节点策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -740,9 +740,9 @@ public class VpcepAsyncClient {
     }
 
     /**
-     * 修改网关型终端节点policy
+     * 修改终端节点策略
      *
-     * 修改网关型终端节点policy。
+     * 修改终端节点策略。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

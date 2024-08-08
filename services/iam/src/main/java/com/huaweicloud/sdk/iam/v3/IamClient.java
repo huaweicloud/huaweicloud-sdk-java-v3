@@ -417,7 +417,7 @@ public class IamClient {
     }
 
     /**
-     * application/json
+     * 基于委托为企业项目授权
      *
      * 该接口可以基于委托为企业项目授权
      * 
@@ -432,7 +432,7 @@ public class IamClient {
     }
 
     /**
-     * application/json
+     * 基于委托为企业项目授权
      *
      * 该接口可以基于委托为企业项目授权
      * 
@@ -2073,40 +2073,6 @@ public class IamClient {
     }
 
     /**
-     * 管理员查询用户组所包含的IAM用户
-     *
-     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
-     * 
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request KeystoneListUsersForGroupByAdminRequest 请求对象
-     * @return KeystoneListUsersForGroupByAdminResponse
-     */
-    public KeystoneListUsersForGroupByAdminResponse keystoneListUsersForGroupByAdmin(
-        KeystoneListUsersForGroupByAdminRequest request) {
-        return hcClient.syncInvokeHttp(request, IamMeta.keystoneListUsersForGroupByAdmin);
-    }
-
-    /**
-     * 管理员查询用户组所包含的IAM用户
-     *
-     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
-     * 
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request KeystoneListUsersForGroupByAdminRequest 请求对象
-     * @return SyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse>
-     */
-    public SyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> keystoneListUsersForGroupByAdminInvoker(
-        KeystoneListUsersForGroupByAdminRequest request) {
-        return new SyncInvoker<>(request, IamMeta.keystoneListUsersForGroupByAdmin, hcClient);
-    }
-
-    /**
      * 查询版本信息列表
      *
      * 该接口用于查询Keystone API的版本信息。
@@ -3308,7 +3274,7 @@ public class IamClient {
     }
 
     /**
-     * 
+     * 删除企业项目关联委托的权限
      *
      * 该接口可以删除企业项目委托上的授权
      * 
@@ -3323,7 +3289,7 @@ public class IamClient {
     }
 
     /**
-     * 
+     * 删除企业项目关联委托的权限
      *
      * 该接口可以删除企业项目委托上的授权
      * 
@@ -4724,6 +4690,40 @@ public class IamClient {
     public SyncInvoker<KeystoneListUsersRequest, KeystoneListUsersResponse> keystoneListUsersInvoker(
         KeystoneListUsersRequest request) {
         return new SyncInvoker<>(request, IamMeta.keystoneListUsers, hcClient);
+    }
+
+    /**
+     * 管理员查询用户组所包含的IAM用户
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request KeystoneListUsersForGroupByAdminRequest 请求对象
+     * @return KeystoneListUsersForGroupByAdminResponse
+     */
+    public KeystoneListUsersForGroupByAdminResponse keystoneListUsersForGroupByAdmin(
+        KeystoneListUsersForGroupByAdminRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.keystoneListUsersForGroupByAdmin);
+    }
+
+    /**
+     * 管理员查询用户组所包含的IAM用户
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request KeystoneListUsersForGroupByAdminRequest 请求对象
+     * @return SyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse>
+     */
+    public SyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> keystoneListUsersForGroupByAdminInvoker(
+        KeystoneListUsersForGroupByAdminRequest request) {
+        return new SyncInvoker<>(request, IamMeta.keystoneListUsersForGroupByAdmin, hcClient);
     }
 
     /**

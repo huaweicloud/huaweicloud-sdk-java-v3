@@ -52,7 +52,7 @@ public class BindSiteDto {
     }
 
     /**
-     * 靶点名称
+     * 靶点名称，只能设置为target1或者target2。
      * @return name
      */
     public String getName() {

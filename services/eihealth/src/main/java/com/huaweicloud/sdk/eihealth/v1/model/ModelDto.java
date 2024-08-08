@@ -88,6 +88,16 @@ public class ModelDto {
 
     private List<ModelMetric> metrics = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "base_model_id")
+
+    private String baseModelId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "base_model_name")
+
+    private String baseModelName;
+
     public ModelDto withName(String name) {
         this.name = name;
         return this;
@@ -393,6 +403,40 @@ public class ModelDto {
         this.metrics = metrics;
     }
 
+    public ModelDto withBaseModelId(String baseModelId) {
+        this.baseModelId = baseModelId;
+        return this;
+    }
+
+    /**
+     * 基模型id
+     * @return baseModelId
+     */
+    public String getBaseModelId() {
+        return baseModelId;
+    }
+
+    public void setBaseModelId(String baseModelId) {
+        this.baseModelId = baseModelId;
+    }
+
+    public ModelDto withBaseModelName(String baseModelName) {
+        this.baseModelName = baseModelName;
+        return this;
+    }
+
+    /**
+     * 基模型名称
+     * @return baseModelName
+     */
+    public String getBaseModelName() {
+        return baseModelName;
+    }
+
+    public void setBaseModelName(String baseModelName) {
+        this.baseModelName = baseModelName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -409,7 +453,8 @@ public class ModelDto {
             && Objects.equals(this.dataQuantity, that.dataQuantity) && Objects.equals(this.file, that.file)
             && Objects.equals(this.valueRange, that.valueRange) && Objects.equals(this.description, that.description)
             && Objects.equals(this.failedMessage, that.failedMessage) && Objects.equals(this.losses, that.losses)
-            && Objects.equals(this.metrics, that.metrics);
+            && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.baseModelId, that.baseModelId)
+            && Objects.equals(this.baseModelName, that.baseModelName);
     }
 
     @Override
@@ -428,7 +473,9 @@ public class ModelDto {
             description,
             failedMessage,
             losses,
-            metrics);
+            metrics,
+            baseModelId,
+            baseModelName);
     }
 
     @Override
@@ -450,6 +497,8 @@ public class ModelDto {
         sb.append("    failedMessage: ").append(toIndentedString(failedMessage)).append("\n");
         sb.append("    losses: ").append(toIndentedString(losses)).append("\n");
         sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
+        sb.append("    baseModelId: ").append(toIndentedString(baseModelId)).append("\n");
+        sb.append("    baseModelName: ").append(toIndentedString(baseModelName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -72,7 +72,7 @@ public class SubNetworkInterface {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<String> tags = null;
+    private List<ResourceTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -83,6 +83,31 @@ public class SubNetworkInterface {
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allowed_address_pairs")
+
+    private List<AllowedAddressPair> allowedAddressPairs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "state")
+
+    private String state;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_type")
+
+    private String instanceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scope")
+
+    private String scope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_enabled")
@@ -292,12 +317,12 @@ public class SubNetworkInterface {
         this.securityGroups = securityGroups;
     }
 
-    public SubNetworkInterface withTags(List<String> tags) {
+    public SubNetworkInterface withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public SubNetworkInterface addTagsItem(String tagsItem) {
+    public SubNetworkInterface addTagsItem(ResourceTag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -305,7 +330,7 @@ public class SubNetworkInterface {
         return this;
     }
 
-    public SubNetworkInterface withTags(Consumer<List<String>> tagsSetter) {
+    public SubNetworkInterface withTags(Consumer<List<ResourceTag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -317,11 +342,11 @@ public class SubNetworkInterface {
      * 功能说明：辅助弹性网卡的标签列表
      * @return tags
      */
-    public List<String> getTags() {
+    public List<ResourceTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<String> tags) {
+    public void setTags(List<ResourceTag> tags) {
         this.tags = tags;
     }
 
@@ -359,6 +384,107 @@ public class SubNetworkInterface {
         this.createdAt = createdAt;
     }
 
+    public SubNetworkInterface withAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+        return this;
+    }
+
+    public SubNetworkInterface addAllowedAddressPairsItem(AllowedAddressPair allowedAddressPairsItem) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        this.allowedAddressPairs.add(allowedAddressPairsItem);
+        return this;
+    }
+
+    public SubNetworkInterface withAllowedAddressPairs(Consumer<List<AllowedAddressPair>> allowedAddressPairsSetter) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        allowedAddressPairsSetter.accept(this.allowedAddressPairs);
+        return this;
+    }
+
+    /**
+     * 1. 扩展属性：IP/Mac对列表，allowed_address_pair参见“allowed_address_pair对象” 2. 使用说明: IP地址不允许为 “0.0.0.0”如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组硬件SDN环境不支持ip_address属性配置为CIDR
+     * @return allowedAddressPairs
+     */
+    public List<AllowedAddressPair> getAllowedAddressPairs() {
+        return allowedAddressPairs;
+    }
+
+    public void setAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+    }
+
+    public SubNetworkInterface withState(String state) {
+        this.state = state;
+        return this;
+    }
+
+    /**
+     * 功能说明：辅助弹性网卡当前状态
+     * @return state
+     */
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public SubNetworkInterface withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 功能说明：辅助弹性网卡所属实例ID，例如RDS实例ID
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public SubNetworkInterface withInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+        return this;
+    }
+
+    /**
+     * 功能说明：辅助弹性网卡所属实例类型，例如“RDS”
+     * @return instanceType
+     */
+    public String getInstanceType() {
+        return instanceType;
+    }
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    public SubNetworkInterface withScope(String scope) {
+        this.scope = scope;
+        return this;
+    }
+
+    /**
+     * 功能说明：辅助弹性网卡所在站点的公网出口信息
+     * @return scope
+     */
+    public String getScope() {
+        return scope;
+    }
+
+    public void setScope(String scope) {
+        this.scope = scope;
+    }
+
     public SubNetworkInterface withSecurityEnabled(Boolean securityEnabled) {
         this.securityEnabled = securityEnabled;
         return this;
@@ -394,6 +520,9 @@ public class SubNetworkInterface {
             && Objects.equals(this.vlanId, that.vlanId) && Objects.equals(this.securityGroups, that.securityGroups)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.instanceType, that.instanceType) && Objects.equals(this.scope, that.scope)
             && Objects.equals(this.securityEnabled, that.securityEnabled);
     }
 
@@ -413,6 +542,11 @@ public class SubNetworkInterface {
             tags,
             projectId,
             createdAt,
+            allowedAddressPairs,
+            state,
+            instanceId,
+            instanceType,
+            scope,
             securityEnabled);
     }
 
@@ -434,6 +568,11 @@ public class SubNetworkInterface {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
+        sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
         sb.append("    securityEnabled: ").append(toIndentedString(securityEnabled)).append("\n");
         sb.append("}");
         return sb.toString();

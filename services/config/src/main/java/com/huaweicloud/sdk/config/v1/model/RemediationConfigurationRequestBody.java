@@ -321,7 +321,7 @@ public class RemediationConfigurationRequestBody {
     }
 
     /**
-     * 指定时间内自动修正的最大尝试次数。
+     * 指定时间内修正的最大尝试次数。
      * minimum: 1
      * maximum: 25
      * @return maximumAttempts

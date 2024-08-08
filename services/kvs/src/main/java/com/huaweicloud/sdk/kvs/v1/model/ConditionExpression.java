@@ -19,6 +19,18 @@ public class ConditionExpression {
 
     private SingleFieldExpression singleFieldExpression;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "multi_field_expression")
+    @BsonProperty(value = "multi_field_expression")
+
+    private MultiFieldExpression multiFieldExpression;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "composed_expression")
+    @BsonProperty(value = "composed_expression")
+
+    private ComposedExpression composedExpression;
+
     public ConditionExpression withSingleFieldExpression(SingleFieldExpression singleFieldExpression) {
         this.singleFieldExpression = singleFieldExpression;
         return this;
@@ -45,6 +57,58 @@ public class ConditionExpression {
         this.singleFieldExpression = singleFieldExpression;
     }
 
+    public ConditionExpression withMultiFieldExpression(MultiFieldExpression multiFieldExpression) {
+        this.multiFieldExpression = multiFieldExpression;
+        return this;
+    }
+
+    public ConditionExpression withMultiFieldExpression(Consumer<MultiFieldExpression> multiFieldExpressionSetter) {
+        if (this.multiFieldExpression == null) {
+            this.multiFieldExpression = new MultiFieldExpression();
+            multiFieldExpressionSetter.accept(this.multiFieldExpression);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get multiFieldExpression
+     * @return multiFieldExpression
+     */
+    public MultiFieldExpression getMultiFieldExpression() {
+        return multiFieldExpression;
+    }
+
+    public void setMultiFieldExpression(MultiFieldExpression multiFieldExpression) {
+        this.multiFieldExpression = multiFieldExpression;
+    }
+
+    public ConditionExpression withComposedExpression(ComposedExpression composedExpression) {
+        this.composedExpression = composedExpression;
+        return this;
+    }
+
+    public ConditionExpression withComposedExpression(Consumer<ComposedExpression> composedExpressionSetter) {
+        if (this.composedExpression == null) {
+            this.composedExpression = new ComposedExpression();
+            composedExpressionSetter.accept(this.composedExpression);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get composedExpression
+     * @return composedExpression
+     */
+    public ComposedExpression getComposedExpression() {
+        return composedExpression;
+    }
+
+    public void setComposedExpression(ComposedExpression composedExpression) {
+        this.composedExpression = composedExpression;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -54,12 +118,14 @@ public class ConditionExpression {
             return false;
         }
         ConditionExpression that = (ConditionExpression) obj;
-        return Objects.equals(this.singleFieldExpression, that.singleFieldExpression);
+        return Objects.equals(this.singleFieldExpression, that.singleFieldExpression)
+            && Objects.equals(this.multiFieldExpression, that.multiFieldExpression)
+            && Objects.equals(this.composedExpression, that.composedExpression);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(singleFieldExpression);
+        return Objects.hash(singleFieldExpression, multiFieldExpression, composedExpression);
     }
 
     @Override
@@ -67,6 +133,8 @@ public class ConditionExpression {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConditionExpression {\n");
         sb.append("    singleFieldExpression: ").append(toIndentedString(singleFieldExpression)).append("\n");
+        sb.append("    multiFieldExpression: ").append(toIndentedString(multiFieldExpression)).append("\n");
+        sb.append("    composedExpression: ").append(toIndentedString(composedExpression)).append("\n");
         sb.append("}");
         return sb.toString();
     }

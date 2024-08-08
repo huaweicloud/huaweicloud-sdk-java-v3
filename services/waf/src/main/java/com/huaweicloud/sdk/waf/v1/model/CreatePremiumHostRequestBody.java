@@ -56,6 +56,26 @@ public class CreatePremiumHostRequestBody {
     private Map<String, String> forwardHeaderMap = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "loadbalancer_id")
+
+    private String loadbalancerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "listener_id")
+
+    private String listenerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocol_port")
+
+    private Integer protocolPort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -237,6 +257,74 @@ public class CreatePremiumHostRequestBody {
         this.forwardHeaderMap = forwardHeaderMap;
     }
 
+    public CreatePremiumHostRequestBody withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 添加云模式elb接入域名时，请输入elb-shared，否则不输入
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    public CreatePremiumHostRequestBody withLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+        return this;
+    }
+
+    /**
+     * 负载均衡器（ELB）id,可以在ELB侧查询其id，添加云模式elb接入域名时，此为必须输入的值
+     * @return loadbalancerId
+     */
+    public String getLoadbalancerId() {
+        return loadbalancerId;
+    }
+
+    public void setLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+    }
+
+    public CreatePremiumHostRequestBody withListenerId(String listenerId) {
+        this.listenerId = listenerId;
+        return this;
+    }
+
+    /**
+     * 监听器id，可在ELB侧监听器页签下查询其id；不输入时，负载均衡器（ELB）下的所有监听器都将接入WAF防护，包括该ELB下未来新增的符合条件的监听器，添加云模式elb接入域名时，可考虑输入此项id
+     * @return listenerId
+     */
+    public String getListenerId() {
+        return listenerId;
+    }
+
+    public void setListenerId(String listenerId) {
+        this.listenerId = listenerId;
+    }
+
+    public CreatePremiumHostRequestBody withProtocolPort(Integer protocolPort) {
+        this.protocolPort = protocolPort;
+        return this;
+    }
+
+    /**
+     * 业务端口，添加云模式elb接入域名时，此为必须输入的值（0 - 65535）
+     * @return protocolPort
+     */
+    public Integer getProtocolPort() {
+        return protocolPort;
+    }
+
+    public void setProtocolPort(Integer protocolPort) {
+        this.protocolPort = protocolPort;
+    }
+
     public CreatePremiumHostRequestBody withDescription(String description) {
         this.description = description;
         return this;
@@ -268,7 +356,9 @@ public class CreatePremiumHostRequestBody {
             && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.proxy, that.proxy)
             && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.server, that.server)
             && Objects.equals(this.blockPage, that.blockPage)
-            && Objects.equals(this.forwardHeaderMap, that.forwardHeaderMap)
+            && Objects.equals(this.forwardHeaderMap, that.forwardHeaderMap) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.loadbalancerId, that.loadbalancerId)
+            && Objects.equals(this.listenerId, that.listenerId) && Objects.equals(this.protocolPort, that.protocolPort)
             && Objects.equals(this.description, that.description);
     }
 
@@ -282,6 +372,10 @@ public class CreatePremiumHostRequestBody {
             server,
             blockPage,
             forwardHeaderMap,
+            mode,
+            loadbalancerId,
+            listenerId,
+            protocolPort,
             description);
     }
 
@@ -297,6 +391,10 @@ public class CreatePremiumHostRequestBody {
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
         sb.append("    blockPage: ").append(toIndentedString(blockPage)).append("\n");
         sb.append("    forwardHeaderMap: ").append(toIndentedString(forwardHeaderMap)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
+        sb.append("    listenerId: ").append(toIndentedString(listenerId)).append("\n");
+        sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

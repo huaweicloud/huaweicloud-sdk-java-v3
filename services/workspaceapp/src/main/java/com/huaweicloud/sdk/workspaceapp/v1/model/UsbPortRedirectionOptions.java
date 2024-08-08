@@ -226,7 +226,7 @@ public class UsbPortRedirectionOptions {
     }
 
     /**
-     * 是否开启网路设备（如：无线网卡）。取值为： - false：表示关闭。 - true：表示开启。
+     * 是否开启网络设备（如：无线网卡）。取值为： - false：表示关闭。 - true：表示开启。
      * @return networkDevicesEnable
      */
     public Boolean getNetworkDevicesEnable() {

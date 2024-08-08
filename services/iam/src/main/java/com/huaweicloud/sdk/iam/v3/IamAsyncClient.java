@@ -419,7 +419,7 @@ public class IamAsyncClient {
     }
 
     /**
-     * application/json
+     * 基于委托为企业项目授权
      *
      * 该接口可以基于委托为企业项目授权
      * 
@@ -434,7 +434,7 @@ public class IamAsyncClient {
     }
 
     /**
-     * application/json
+     * 基于委托为企业项目授权
      *
      * 该接口可以基于委托为企业项目授权
      * 
@@ -2098,40 +2098,6 @@ public class IamAsyncClient {
     }
 
     /**
-     * 管理员查询用户组所包含的IAM用户
-     *
-     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
-     * 
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request KeystoneListUsersForGroupByAdminRequest 请求对象
-     * @return CompletableFuture<KeystoneListUsersForGroupByAdminResponse>
-     */
-    public CompletableFuture<KeystoneListUsersForGroupByAdminResponse> keystoneListUsersForGroupByAdminAsync(
-        KeystoneListUsersForGroupByAdminRequest request) {
-        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneListUsersForGroupByAdmin);
-    }
-
-    /**
-     * 管理员查询用户组所包含的IAM用户
-     *
-     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
-     * 
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request KeystoneListUsersForGroupByAdminRequest 请求对象
-     * @return AsyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse>
-     */
-    public AsyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> keystoneListUsersForGroupByAdminAsyncInvoker(
-        KeystoneListUsersForGroupByAdminRequest request) {
-        return new AsyncInvoker<>(request, IamMeta.keystoneListUsersForGroupByAdmin, hcClient);
-    }
-
-    /**
      * 查询版本信息列表
      *
      * 该接口用于查询Keystone API的版本信息。
@@ -3342,7 +3308,7 @@ public class IamAsyncClient {
     }
 
     /**
-     * 
+     * 删除企业项目关联委托的权限
      *
      * 该接口可以删除企业项目委托上的授权
      * 
@@ -3357,7 +3323,7 @@ public class IamAsyncClient {
     }
 
     /**
-     * 
+     * 删除企业项目关联委托的权限
      *
      * 该接口可以删除企业项目委托上的授权
      * 
@@ -4780,6 +4746,40 @@ public class IamAsyncClient {
     public AsyncInvoker<KeystoneListUsersRequest, KeystoneListUsersResponse> keystoneListUsersAsyncInvoker(
         KeystoneListUsersRequest request) {
         return new AsyncInvoker<>(request, IamMeta.keystoneListUsers, hcClient);
+    }
+
+    /**
+     * 管理员查询用户组所包含的IAM用户
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request KeystoneListUsersForGroupByAdminRequest 请求对象
+     * @return CompletableFuture<KeystoneListUsersForGroupByAdminResponse>
+     */
+    public CompletableFuture<KeystoneListUsersForGroupByAdminResponse> keystoneListUsersForGroupByAdminAsync(
+        KeystoneListUsersForGroupByAdminRequest request) {
+        return hcClient.asyncInvokeHttp(request, IamMeta.keystoneListUsersForGroupByAdmin);
+    }
+
+    /**
+     * 管理员查询用户组所包含的IAM用户
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询用户组中所包含的IAM用户。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request KeystoneListUsersForGroupByAdminRequest 请求对象
+     * @return AsyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse>
+     */
+    public AsyncInvoker<KeystoneListUsersForGroupByAdminRequest, KeystoneListUsersForGroupByAdminResponse> keystoneListUsersForGroupByAdminAsyncInvoker(
+        KeystoneListUsersForGroupByAdminRequest request) {
+        return new AsyncInvoker<>(request, IamMeta.keystoneListUsersForGroupByAdmin, hcClient);
     }
 
     /**

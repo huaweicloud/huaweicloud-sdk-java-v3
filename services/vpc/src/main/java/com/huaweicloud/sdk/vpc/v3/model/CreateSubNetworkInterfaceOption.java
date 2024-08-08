@@ -58,6 +58,26 @@ public class CreateSubNetworkInterfaceOption {
 
     private String projectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allowed_address_pairs")
+
+    private List<AllowedAddressPair> allowedAddressPairs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_type")
+
+    private String instanceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
+
     public CreateSubNetworkInterfaceOption withVirsubnetId(String virsubnetId) {
         this.virsubnetId = virsubnetId;
         return this;
@@ -227,6 +247,107 @@ public class CreateSubNetworkInterfaceOption {
         this.projectId = projectId;
     }
 
+    public CreateSubNetworkInterfaceOption withAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+        return this;
+    }
+
+    public CreateSubNetworkInterfaceOption addAllowedAddressPairsItem(AllowedAddressPair allowedAddressPairsItem) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        this.allowedAddressPairs.add(allowedAddressPairsItem);
+        return this;
+    }
+
+    public CreateSubNetworkInterfaceOption withAllowedAddressPairs(
+        Consumer<List<AllowedAddressPair>> allowedAddressPairsSetter) {
+        if (this.allowedAddressPairs == null) {
+            this.allowedAddressPairs = new ArrayList<>();
+        }
+        allowedAddressPairsSetter.accept(this.allowedAddressPairs);
+        return this;
+    }
+
+    /**
+     * 1. 扩展属性：IP/Mac对列表，allowed_address_pair参见“allowed_address_pair对象” 2. 使用说明: IP地址不允许为 “0.0.0.0”如果allowed_address_pairs配置地址池较大的CIDR（掩码小于24位），建议为该port配置一个单独的安全组硬件SDN环境不支持ip_address属性配置为CIDR格式。
+     * @return allowedAddressPairs
+     */
+    public List<AllowedAddressPair> getAllowedAddressPairs() {
+        return allowedAddressPairs;
+    }
+
+    public void setAllowedAddressPairs(List<AllowedAddressPair> allowedAddressPairs) {
+        this.allowedAddressPairs = allowedAddressPairs;
+    }
+
+    public CreateSubNetworkInterfaceOption withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 功能说明：辅助弹性网卡所属实例ID，例如RDS实例ID 约束： 1-64个字符
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public CreateSubNetworkInterfaceOption withInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+        return this;
+    }
+
+    /**
+     * 功能说明：辅助弹性网卡所属实例类型，例如“RDS” 约束：1-64个字符
+     * @return instanceType
+     */
+    public String getInstanceType() {
+        return instanceType;
+    }
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    public CreateSubNetworkInterfaceOption withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateSubNetworkInterfaceOption addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateSubNetworkInterfaceOption withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 辅助弹性网卡资源标签
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -242,7 +363,10 @@ public class CreateSubNetworkInterfaceOption {
             && Objects.equals(this.privateIpAddress, that.privateIpAddress)
             && Objects.equals(this.ipv6IpAddress, that.ipv6IpAddress)
             && Objects.equals(this.securityGroups, that.securityGroups)
-            && Objects.equals(this.projectId, that.projectId);
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -255,7 +379,11 @@ public class CreateSubNetworkInterfaceOption {
             privateIpAddress,
             ipv6IpAddress,
             securityGroups,
-            projectId);
+            projectId,
+            allowedAddressPairs,
+            instanceId,
+            instanceType,
+            tags);
     }
 
     @Override
@@ -271,6 +399,10 @@ public class CreateSubNetworkInterfaceOption {
         sb.append("    ipv6IpAddress: ").append(toIndentedString(ipv6IpAddress)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    allowedAddressPairs: ").append(toIndentedString(allowedAddressPairs)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

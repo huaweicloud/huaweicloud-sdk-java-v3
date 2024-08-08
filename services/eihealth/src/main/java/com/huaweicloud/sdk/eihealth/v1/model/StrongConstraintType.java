@@ -27,6 +27,11 @@ public class StrongConstraintType {
      */
     public static final StrongConstraintType STRUCT = new StrongConstraintType("struct");
 
+    /**
+     * Enum INTERACTION for value: "interaction"
+     */
+    public static final StrongConstraintType INTERACTION = new StrongConstraintType("interaction");
+
     private static final Map<String, StrongConstraintType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, StrongConstraintType> createStaticFields() {
@@ -34,6 +39,7 @@ public class StrongConstraintType {
         map.put("bool", BOOL);
         map.put("range", RANGE);
         map.put("struct", STRUCT);
+        map.put("interaction", INTERACTION);
         return Collections.unmodifiableMap(map);
     }
 

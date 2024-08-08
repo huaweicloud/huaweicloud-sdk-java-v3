@@ -208,6 +208,26 @@ public class PoliciesFileAndClipboardClipboardRedirectionOptions {
 
     private FileClipboardRedirectionEnum fileClipboardRedirection;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clipboard_length_limit_cts_enable")
+
+    private Boolean clipboardLengthLimitCtsEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clipboard_length_limit_cts")
+
+    private Integer clipboardLengthLimitCts;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clipboard_length_limit_stc_enable")
+
+    private Boolean clipboardLengthLimitStcEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clipboard_length_limit_stc")
+
+    private Integer clipboardLengthLimitStc;
+
     public PoliciesFileAndClipboardClipboardRedirectionOptions withRichTextRedirectionEnable(
         Boolean richTextRedirectionEnable) {
         this.richTextRedirectionEnable = richTextRedirectionEnable;
@@ -280,6 +300,78 @@ public class PoliciesFileAndClipboardClipboardRedirectionOptions {
         this.fileClipboardRedirection = fileClipboardRedirection;
     }
 
+    public PoliciesFileAndClipboardClipboardRedirectionOptions withClipboardLengthLimitCtsEnable(
+        Boolean clipboardLengthLimitCtsEnable) {
+        this.clipboardLengthLimitCtsEnable = clipboardLengthLimitCtsEnable;
+        return this;
+    }
+
+    /**
+     * 本地到虚拟机长度限制开关。取值为： false: 标识关闭。 ture: 标识开启。
+     * @return clipboardLengthLimitCtsEnable
+     */
+    public Boolean getClipboardLengthLimitCtsEnable() {
+        return clipboardLengthLimitCtsEnable;
+    }
+
+    public void setClipboardLengthLimitCtsEnable(Boolean clipboardLengthLimitCtsEnable) {
+        this.clipboardLengthLimitCtsEnable = clipboardLengthLimitCtsEnable;
+    }
+
+    public PoliciesFileAndClipboardClipboardRedirectionOptions withClipboardLengthLimitCts(
+        Integer clipboardLengthLimitCts) {
+        this.clipboardLengthLimitCts = clipboardLengthLimitCts;
+        return this;
+    }
+
+    /**
+     * 本地到虚拟机长度限制。
+     * @return clipboardLengthLimitCts
+     */
+    public Integer getClipboardLengthLimitCts() {
+        return clipboardLengthLimitCts;
+    }
+
+    public void setClipboardLengthLimitCts(Integer clipboardLengthLimitCts) {
+        this.clipboardLengthLimitCts = clipboardLengthLimitCts;
+    }
+
+    public PoliciesFileAndClipboardClipboardRedirectionOptions withClipboardLengthLimitStcEnable(
+        Boolean clipboardLengthLimitStcEnable) {
+        this.clipboardLengthLimitStcEnable = clipboardLengthLimitStcEnable;
+        return this;
+    }
+
+    /**
+     * 虚拟机到本地到长度限制开关。取值为： false: 标识关闭。 ture: 标识开启。
+     * @return clipboardLengthLimitStcEnable
+     */
+    public Boolean getClipboardLengthLimitStcEnable() {
+        return clipboardLengthLimitStcEnable;
+    }
+
+    public void setClipboardLengthLimitStcEnable(Boolean clipboardLengthLimitStcEnable) {
+        this.clipboardLengthLimitStcEnable = clipboardLengthLimitStcEnable;
+    }
+
+    public PoliciesFileAndClipboardClipboardRedirectionOptions withClipboardLengthLimitStc(
+        Integer clipboardLengthLimitStc) {
+        this.clipboardLengthLimitStc = clipboardLengthLimitStc;
+        return this;
+    }
+
+    /**
+     * 虚拟机到本地长度限制。
+     * @return clipboardLengthLimitStc
+     */
+    public Integer getClipboardLengthLimitStc() {
+        return clipboardLengthLimitStc;
+    }
+
+    public void setClipboardLengthLimitStc(Integer clipboardLengthLimitStc) {
+        this.clipboardLengthLimitStc = clipboardLengthLimitStc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -293,7 +385,11 @@ public class PoliciesFileAndClipboardClipboardRedirectionOptions {
         return Objects.equals(this.richTextRedirectionEnable, that.richTextRedirectionEnable)
             && Objects.equals(this.richTextClipboardRedirection, that.richTextClipboardRedirection)
             && Objects.equals(this.clipboardFileRedirectionEnable, that.clipboardFileRedirectionEnable)
-            && Objects.equals(this.fileClipboardRedirection, that.fileClipboardRedirection);
+            && Objects.equals(this.fileClipboardRedirection, that.fileClipboardRedirection)
+            && Objects.equals(this.clipboardLengthLimitCtsEnable, that.clipboardLengthLimitCtsEnable)
+            && Objects.equals(this.clipboardLengthLimitCts, that.clipboardLengthLimitCts)
+            && Objects.equals(this.clipboardLengthLimitStcEnable, that.clipboardLengthLimitStcEnable)
+            && Objects.equals(this.clipboardLengthLimitStc, that.clipboardLengthLimitStc);
     }
 
     @Override
@@ -301,7 +397,11 @@ public class PoliciesFileAndClipboardClipboardRedirectionOptions {
         return Objects.hash(richTextRedirectionEnable,
             richTextClipboardRedirection,
             clipboardFileRedirectionEnable,
-            fileClipboardRedirection);
+            fileClipboardRedirection,
+            clipboardLengthLimitCtsEnable,
+            clipboardLengthLimitCts,
+            clipboardLengthLimitStcEnable,
+            clipboardLengthLimitStc);
     }
 
     @Override
@@ -316,6 +416,14 @@ public class PoliciesFileAndClipboardClipboardRedirectionOptions {
             .append(toIndentedString(clipboardFileRedirectionEnable))
             .append("\n");
         sb.append("    fileClipboardRedirection: ").append(toIndentedString(fileClipboardRedirection)).append("\n");
+        sb.append("    clipboardLengthLimitCtsEnable: ")
+            .append(toIndentedString(clipboardLengthLimitCtsEnable))
+            .append("\n");
+        sb.append("    clipboardLengthLimitCts: ").append(toIndentedString(clipboardLengthLimitCts)).append("\n");
+        sb.append("    clipboardLengthLimitStcEnable: ")
+            .append(toIndentedString(clipboardLengthLimitStcEnable))
+            .append("\n");
+        sb.append("    clipboardLengthLimitStc: ").append(toIndentedString(clipboardLengthLimitStc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

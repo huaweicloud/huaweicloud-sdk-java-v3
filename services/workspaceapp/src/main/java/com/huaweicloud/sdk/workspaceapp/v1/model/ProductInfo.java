@@ -130,6 +130,11 @@ public class ProductInfo {
     private String packageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "series_type")
+
+    private String seriesType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
     private OffsetDateTime expireTime;
@@ -562,6 +567,23 @@ public class ProductInfo {
         this.packageType = packageType;
     }
 
+    public ProductInfo withSeriesType(String seriesType) {
+        this.seriesType = seriesType;
+        return this;
+    }
+
+    /**
+     * 系列类型
+     * @return seriesType
+     */
+    public String getSeriesType() {
+        return seriesType;
+    }
+
+    public void setSeriesType(String seriesType) {
+        this.seriesType = seriesType;
+    }
+
     public ProductInfo withExpireTime(OffsetDateTime expireTime) {
         this.expireTime = expireTime;
         return this;
@@ -620,7 +642,7 @@ public class ProductInfo {
             && Objects.equals(this.condOperationAz, that.condOperationAz)
             && Objects.equals(this.subProductList, that.subProductList)
             && Objects.equals(this.domainIds, that.domainIds) && Objects.equals(this.packageType, that.packageType)
-            && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.seriesType, that.seriesType) && Objects.equals(this.expireTime, that.expireTime)
             && Objects.equals(this.supportGpuType, that.supportGpuType);
     }
 
@@ -649,6 +671,7 @@ public class ProductInfo {
             subProductList,
             domainIds,
             packageType,
+            seriesType,
             expireTime,
             supportGpuType);
     }
@@ -680,6 +703,7 @@ public class ProductInfo {
         sb.append("    subProductList: ").append(toIndentedString(subProductList)).append("\n");
         sb.append("    domainIds: ").append(toIndentedString(domainIds)).append("\n");
         sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
+        sb.append("    seriesType: ").append(toIndentedString(seriesType)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    supportGpuType: ").append(toIndentedString(supportGpuType)).append("\n");
         sb.append("}");

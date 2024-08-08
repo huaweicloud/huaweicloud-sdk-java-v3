@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.corebson.SdkBsonDocRequest;
 
 import org.bson.BsonWriter;
+import org.bson.codecs.Codec;
 import org.bson.codecs.EncoderContext;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.annotations.BsonProperty;
@@ -28,6 +29,8 @@ public class DescribeTableRequest extends SdkBsonDocRequest {
     @BsonProperty(value = "body")
 
     private DescribeTableRequestBody body;
+
+    private static Codec<DescribeTableRequestBody> codec;
 
     public DescribeTableRequest withStoreName(String storeName) {
         this.storeName = storeName;
@@ -112,7 +115,9 @@ public class DescribeTableRequest extends SdkBsonDocRequest {
 
     @Override
     protected void encodeBody(CodecRegistry codecRegistry, BsonWriter writer) {
-        codecRegistry.get(DescribeTableRequestBody.class)
-            .encode(writer, this.getBody(), EncoderContext.builder().build());
+        if (codec == null) {
+            codec = codecRegistry.get(DescribeTableRequestBody.class);
+        }
+        codec.encode(writer, this.getBody(), EncoderContext.builder().build());
     }
 }

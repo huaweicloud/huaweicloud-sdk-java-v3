@@ -73,6 +73,11 @@ public class ListDrugModelRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "base_model_list")
+
+    private List<String> baseModelList = null;
+
     public ListDrugModelRequest withSearchKey(String searchKey) {
         this.searchKey = searchKey;
         return this;
@@ -195,7 +200,7 @@ public class ListDrugModelRequest {
     }
 
     /**
-     * 排序规则 目前默认时间降序，支持根据create_time|finish_time
+     * 排序规则 目前默认时间降序，支持根据create_time|finish_time|base_model_name
      * @return sortKey
      */
     public String getSortKey() {
@@ -337,6 +342,39 @@ public class ListDrugModelRequest {
         this.offset = offset;
     }
 
+    public ListDrugModelRequest withBaseModelList(List<String> baseModelList) {
+        this.baseModelList = baseModelList;
+        return this;
+    }
+
+    public ListDrugModelRequest addBaseModelListItem(String baseModelListItem) {
+        if (this.baseModelList == null) {
+            this.baseModelList = new ArrayList<>();
+        }
+        this.baseModelList.add(baseModelListItem);
+        return this;
+    }
+
+    public ListDrugModelRequest withBaseModelList(Consumer<List<String>> baseModelListSetter) {
+        if (this.baseModelList == null) {
+            this.baseModelList = new ArrayList<>();
+        }
+        baseModelListSetter.accept(this.baseModelList);
+        return this;
+    }
+
+    /**
+     * 基模型id列表
+     * @return baseModelList
+     */
+    public List<String> getBaseModelList() {
+        return baseModelList;
+    }
+
+    public void setBaseModelList(List<String> baseModelList) {
+        this.baseModelList = baseModelList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -353,7 +391,7 @@ public class ListDrugModelRequest {
             && Objects.equals(this.createEndTime, that.createEndTime)
             && Objects.equals(this.finishStartTime, that.finishStartTime)
             && Objects.equals(this.finishEndTime, that.finishEndTime) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.baseModelList, that.baseModelList);
     }
 
     @Override
@@ -369,7 +407,8 @@ public class ListDrugModelRequest {
             finishStartTime,
             finishEndTime,
             limit,
-            offset);
+            offset,
+            baseModelList);
     }
 
     @Override
@@ -388,6 +427,7 @@ public class ListDrugModelRequest {
         sb.append("    finishEndTime: ").append(toIndentedString(finishEndTime)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    baseModelList: ").append(toIndentedString(baseModelList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

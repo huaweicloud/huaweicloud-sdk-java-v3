@@ -55,11 +55,6 @@ public class UpdateTrafficMirrorSessionOption {
 
     private String enabled;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private String type;
-
     public UpdateTrafficMirrorSessionOption withName(String name) {
         this.name = name;
         return this;
@@ -213,23 +208,6 @@ public class UpdateTrafficMirrorSessionOption {
         this.enabled = enabled;
     }
 
-    public UpdateTrafficMirrorSessionOption withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * 功能说明：支持的镜像源类型 取值范围：     eni：弹性网卡
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -245,7 +223,7 @@ public class UpdateTrafficMirrorSessionOption {
             && Objects.equals(this.trafficMirrorTargetType, that.trafficMirrorTargetType)
             && Objects.equals(this.virtualNetworkId, that.virtualNetworkId)
             && Objects.equals(this.packetLength, that.packetLength) && Objects.equals(this.priority, that.priority)
-            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.type, that.type);
+            && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override
@@ -258,8 +236,7 @@ public class UpdateTrafficMirrorSessionOption {
             virtualNetworkId,
             packetLength,
             priority,
-            enabled,
-            type);
+            enabled);
     }
 
     @Override
@@ -275,7 +252,6 @@ public class UpdateTrafficMirrorSessionOption {
         sb.append("    packetLength: ").append(toIndentedString(packetLength)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

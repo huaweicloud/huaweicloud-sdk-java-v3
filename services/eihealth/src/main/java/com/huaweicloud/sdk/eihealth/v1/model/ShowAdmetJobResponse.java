@@ -35,6 +35,11 @@ public class ShowAdmetJobResponse extends SdkResponse {
     private List<FailedReasonRecord> partFailedReason = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "base_model")
+
+    private BaseModel baseModel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "models")
 
     private List<BasicDrugModel> models = null;
@@ -43,6 +48,11 @@ public class ShowAdmetJobResponse extends SdkResponse {
     @JsonProperty(value = "cluster_result")
 
     private ClusterJobRsp clusterResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "save_fingerprint")
+
+    private Boolean saveFingerprint;
 
     public ShowAdmetJobResponse withBasicInfo(DrugJobDto basicInfo) {
         this.basicInfo = basicInfo;
@@ -155,6 +165,32 @@ public class ShowAdmetJobResponse extends SdkResponse {
         this.partFailedReason = partFailedReason;
     }
 
+    public ShowAdmetJobResponse withBaseModel(BaseModel baseModel) {
+        this.baseModel = baseModel;
+        return this;
+    }
+
+    public ShowAdmetJobResponse withBaseModel(Consumer<BaseModel> baseModelSetter) {
+        if (this.baseModel == null) {
+            this.baseModel = new BaseModel();
+            baseModelSetter.accept(this.baseModel);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get baseModel
+     * @return baseModel
+     */
+    public BaseModel getBaseModel() {
+        return baseModel;
+    }
+
+    public void setBaseModel(BaseModel baseModel) {
+        this.baseModel = baseModel;
+    }
+
     public ShowAdmetJobResponse withModels(List<BasicDrugModel> models) {
         this.models = models;
         return this;
@@ -214,6 +250,23 @@ public class ShowAdmetJobResponse extends SdkResponse {
         this.clusterResult = clusterResult;
     }
 
+    public ShowAdmetJobResponse withSaveFingerprint(Boolean saveFingerprint) {
+        this.saveFingerprint = saveFingerprint;
+        return this;
+    }
+
+    /**
+     * 是否输出表征
+     * @return saveFingerprint
+     */
+    public Boolean getSaveFingerprint() {
+        return saveFingerprint;
+    }
+
+    public void setSaveFingerprint(Boolean saveFingerprint) {
+        this.saveFingerprint = saveFingerprint;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -225,13 +278,22 @@ public class ShowAdmetJobResponse extends SdkResponse {
         ShowAdmetJobResponse that = (ShowAdmetJobResponse) obj;
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.moleculeFile, that.moleculeFile)
             && Objects.equals(this.jobResult, that.jobResult)
-            && Objects.equals(this.partFailedReason, that.partFailedReason) && Objects.equals(this.models, that.models)
-            && Objects.equals(this.clusterResult, that.clusterResult);
+            && Objects.equals(this.partFailedReason, that.partFailedReason)
+            && Objects.equals(this.baseModel, that.baseModel) && Objects.equals(this.models, that.models)
+            && Objects.equals(this.clusterResult, that.clusterResult)
+            && Objects.equals(this.saveFingerprint, that.saveFingerprint);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, moleculeFile, jobResult, partFailedReason, models, clusterResult);
+        return Objects.hash(basicInfo,
+            moleculeFile,
+            jobResult,
+            partFailedReason,
+            baseModel,
+            models,
+            clusterResult,
+            saveFingerprint);
     }
 
     @Override
@@ -242,8 +304,10 @@ public class ShowAdmetJobResponse extends SdkResponse {
         sb.append("    moleculeFile: ").append(toIndentedString(moleculeFile)).append("\n");
         sb.append("    jobResult: ").append(toIndentedString(jobResult)).append("\n");
         sb.append("    partFailedReason: ").append(toIndentedString(partFailedReason)).append("\n");
+        sb.append("    baseModel: ").append(toIndentedString(baseModel)).append("\n");
         sb.append("    models: ").append(toIndentedString(models)).append("\n");
         sb.append("    clusterResult: ").append(toIndentedString(clusterResult)).append("\n");
+        sb.append("    saveFingerprint: ").append(toIndentedString(saveFingerprint)).append("\n");
         sb.append("}");
         return sb.toString();
     }

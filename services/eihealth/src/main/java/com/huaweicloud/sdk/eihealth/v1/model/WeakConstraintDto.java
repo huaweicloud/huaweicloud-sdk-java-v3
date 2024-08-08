@@ -48,6 +48,11 @@ public class WeakConstraintDto {
 
     private List<Float> quantiles = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "interaction")
+
+    private InteractionConstraintDto interaction;
+
     public WeakConstraintDto withId(String id) {
         this.id = id;
         return this;
@@ -208,6 +213,32 @@ public class WeakConstraintDto {
         this.quantiles = quantiles;
     }
 
+    public WeakConstraintDto withInteraction(InteractionConstraintDto interaction) {
+        this.interaction = interaction;
+        return this;
+    }
+
+    public WeakConstraintDto withInteraction(Consumer<InteractionConstraintDto> interactionSetter) {
+        if (this.interaction == null) {
+            this.interaction = new InteractionConstraintDto();
+            interactionSetter.accept(this.interaction);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get interaction
+     * @return interaction
+     */
+    public InteractionConstraintDto getInteraction() {
+        return interaction;
+    }
+
+    public void setInteraction(InteractionConstraintDto interaction) {
+        this.interaction = interaction;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -220,12 +251,12 @@ public class WeakConstraintDto {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.type, that.type) && Objects.equals(this.bool, that.bool)
             && Objects.equals(this.range, that.range) && Objects.equals(this.struct, that.struct)
-            && Objects.equals(this.quantiles, that.quantiles);
+            && Objects.equals(this.quantiles, that.quantiles) && Objects.equals(this.interaction, that.interaction);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, bool, range, struct, quantiles);
+        return Objects.hash(id, name, type, bool, range, struct, quantiles, interaction);
     }
 
     @Override
@@ -239,6 +270,7 @@ public class WeakConstraintDto {
         sb.append("    range: ").append(toIndentedString(range)).append("\n");
         sb.append("    struct: ").append(toIndentedString(struct)).append("\n");
         sb.append("    quantiles: ").append(toIndentedString(quantiles)).append("\n");
+        sb.append("    interaction: ").append(toIndentedString(interaction)).append("\n");
         sb.append("}");
         return sb.toString();
     }

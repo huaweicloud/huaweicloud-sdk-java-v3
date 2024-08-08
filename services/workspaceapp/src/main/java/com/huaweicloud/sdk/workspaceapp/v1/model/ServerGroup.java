@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -93,6 +95,36 @@ public class ServerGroup {
     private StorageFolderMountType storageMountPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "primary_server_group_ids")
+
+    private List<String> primaryServerGroupIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secondary_server_group_ids")
+
+    private List<String> secondaryServerGroupIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_group_status")
+
+    private Boolean serverGroupStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "site_type")
+
+    private String siteType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "site_id")
+
+    private String siteId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_server_flavor_count")
 
     private Integer appServerFlavorCount;
@@ -126,6 +158,11 @@ public class ServerGroup {
     @JsonProperty(value = "scaling_policy")
 
     private ScalingPolicy scalingPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TmsTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ou_name")
@@ -404,6 +441,140 @@ public class ServerGroup {
         this.storageMountPolicy = storageMountPolicy;
     }
 
+    public ServerGroup withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID(0表示默认企业项目Id)
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ServerGroup withPrimaryServerGroupIds(List<String> primaryServerGroupIds) {
+        this.primaryServerGroupIds = primaryServerGroupIds;
+        return this;
+    }
+
+    public ServerGroup addPrimaryServerGroupIdsItem(String primaryServerGroupIdsItem) {
+        if (this.primaryServerGroupIds == null) {
+            this.primaryServerGroupIds = new ArrayList<>();
+        }
+        this.primaryServerGroupIds.add(primaryServerGroupIdsItem);
+        return this;
+    }
+
+    public ServerGroup withPrimaryServerGroupIds(Consumer<List<String>> primaryServerGroupIdsSetter) {
+        if (this.primaryServerGroupIds == null) {
+            this.primaryServerGroupIds = new ArrayList<>();
+        }
+        primaryServerGroupIdsSetter.accept(this.primaryServerGroupIds);
+        return this;
+    }
+
+    /**
+     * 主服务器组id列表。
+     * @return primaryServerGroupIds
+     */
+    public List<String> getPrimaryServerGroupIds() {
+        return primaryServerGroupIds;
+    }
+
+    public void setPrimaryServerGroupIds(List<String> primaryServerGroupIds) {
+        this.primaryServerGroupIds = primaryServerGroupIds;
+    }
+
+    public ServerGroup withSecondaryServerGroupIds(List<String> secondaryServerGroupIds) {
+        this.secondaryServerGroupIds = secondaryServerGroupIds;
+        return this;
+    }
+
+    public ServerGroup addSecondaryServerGroupIdsItem(String secondaryServerGroupIdsItem) {
+        if (this.secondaryServerGroupIds == null) {
+            this.secondaryServerGroupIds = new ArrayList<>();
+        }
+        this.secondaryServerGroupIds.add(secondaryServerGroupIdsItem);
+        return this;
+    }
+
+    public ServerGroup withSecondaryServerGroupIds(Consumer<List<String>> secondaryServerGroupIdsSetter) {
+        if (this.secondaryServerGroupIds == null) {
+            this.secondaryServerGroupIds = new ArrayList<>();
+        }
+        secondaryServerGroupIdsSetter.accept(this.secondaryServerGroupIds);
+        return this;
+    }
+
+    /**
+     * 备服务器组id列表。
+     * @return secondaryServerGroupIds
+     */
+    public List<String> getSecondaryServerGroupIds() {
+        return secondaryServerGroupIds;
+    }
+
+    public void setSecondaryServerGroupIds(List<String> secondaryServerGroupIds) {
+        this.secondaryServerGroupIds = secondaryServerGroupIds;
+    }
+
+    public ServerGroup withServerGroupStatus(Boolean serverGroupStatus) {
+        this.serverGroupStatus = serverGroupStatus;
+        return this;
+    }
+
+    /**
+     * 服务器是否处于启用状态，true表示处于启用状态 false表示处于禁用状态。
+     * @return serverGroupStatus
+     */
+    public Boolean getServerGroupStatus() {
+        return serverGroupStatus;
+    }
+
+    public void setServerGroupStatus(Boolean serverGroupStatus) {
+        this.serverGroupStatus = serverGroupStatus;
+    }
+
+    public ServerGroup withSiteType(String siteType) {
+        this.siteType = siteType;
+        return this;
+    }
+
+    /**
+     * 站点类型 - CENTER/IES
+     * @return siteType
+     */
+    public String getSiteType() {
+        return siteType;
+    }
+
+    public void setSiteType(String siteType) {
+        this.siteType = siteType;
+    }
+
+    public ServerGroup withSiteId(String siteId) {
+        this.siteId = siteId;
+        return this;
+    }
+
+    /**
+     * 站点id
+     * @return siteId
+     */
+    public String getSiteId() {
+        return siteId;
+    }
+
+    public void setSiteId(String siteId) {
+        this.siteId = siteId;
+    }
+
     public ServerGroup withAppServerFlavorCount(Integer appServerFlavorCount) {
         this.appServerFlavorCount = appServerFlavorCount;
         return this;
@@ -541,6 +712,39 @@ public class ServerGroup {
         this.scalingPolicy = scalingPolicy;
     }
 
+    public ServerGroup withTags(List<TmsTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ServerGroup addTagsItem(TmsTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ServerGroup withTags(Consumer<List<TmsTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签信息
+     * @return tags
+     */
+    public List<TmsTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TmsTag> tags) {
+        this.tags = tags;
+    }
+
     public ServerGroup withOuName(String ouName) {
         this.ouName = ouName;
         return this;
@@ -577,11 +781,17 @@ public class ServerGroup {
             && Objects.equals(this.appType, that.appType) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.storageMountPolicy, that.storageMountPolicy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.primaryServerGroupIds, that.primaryServerGroupIds)
+            && Objects.equals(this.secondaryServerGroupIds, that.secondaryServerGroupIds)
+            && Objects.equals(this.serverGroupStatus, that.serverGroupStatus)
+            && Objects.equals(this.siteType, that.siteType) && Objects.equals(this.siteId, that.siteId)
             && Objects.equals(this.appServerFlavorCount, that.appServerFlavorCount)
             && Objects.equals(this.appServerCount, that.appServerCount)
             && Objects.equals(this.appGroupCount, that.appGroupCount) && Objects.equals(this.imageName, that.imageName)
             && Objects.equals(this.productInfo, that.productInfo) && Objects.equals(this.subnetName, that.subnetName)
-            && Objects.equals(this.scalingPolicy, that.scalingPolicy) && Objects.equals(this.ouName, that.ouName);
+            && Objects.equals(this.scalingPolicy, that.scalingPolicy) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.ouName, that.ouName);
     }
 
     @Override
@@ -602,6 +812,12 @@ public class ServerGroup {
             createTime,
             updateTime,
             storageMountPolicy,
+            enterpriseProjectId,
+            primaryServerGroupIds,
+            secondaryServerGroupIds,
+            serverGroupStatus,
+            siteType,
+            siteId,
             appServerFlavorCount,
             appServerCount,
             appGroupCount,
@@ -609,6 +825,7 @@ public class ServerGroup {
             productInfo,
             subnetName,
             scalingPolicy,
+            tags,
             ouName);
     }
 
@@ -632,6 +849,12 @@ public class ServerGroup {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    storageMountPolicy: ").append(toIndentedString(storageMountPolicy)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    primaryServerGroupIds: ").append(toIndentedString(primaryServerGroupIds)).append("\n");
+        sb.append("    secondaryServerGroupIds: ").append(toIndentedString(secondaryServerGroupIds)).append("\n");
+        sb.append("    serverGroupStatus: ").append(toIndentedString(serverGroupStatus)).append("\n");
+        sb.append("    siteType: ").append(toIndentedString(siteType)).append("\n");
+        sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
         sb.append("    appServerFlavorCount: ").append(toIndentedString(appServerFlavorCount)).append("\n");
         sb.append("    appServerCount: ").append(toIndentedString(appServerCount)).append("\n");
         sb.append("    appGroupCount: ").append(toIndentedString(appGroupCount)).append("\n");
@@ -639,6 +862,7 @@ public class ServerGroup {
         sb.append("    productInfo: ").append(toIndentedString(productInfo)).append("\n");
         sb.append("    subnetName: ").append(toIndentedString(subnetName)).append("\n");
         sb.append("    scalingPolicy: ").append(toIndentedString(scalingPolicy)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
         sb.append("}");
         return sb.toString();

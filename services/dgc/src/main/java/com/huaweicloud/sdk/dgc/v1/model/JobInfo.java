@@ -43,6 +43,21 @@ public class JobInfo {
 
     private String directory;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cleanOverdueDays")
+
+    private Integer cleanOverdueDays;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cleanWaitingJob")
+
+    private String cleanWaitingJob;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "emptyRunningJob")
+
+    private String emptyRunningJob;
+
     /**
      * 作业类型，REAL_TIME： 实时处理，BATCH：批处理
      */
@@ -503,6 +518,57 @@ public class JobInfo {
         this.directory = directory;
     }
 
+    public JobInfo withCleanOverdueDays(Integer cleanOverdueDays) {
+        this.cleanOverdueDays = cleanOverdueDays;
+        return this;
+    }
+
+    /**
+     * 设置作业的最大超时时间。
+     * @return cleanOverdueDays
+     */
+    public Integer getCleanOverdueDays() {
+        return cleanOverdueDays;
+    }
+
+    public void setCleanOverdueDays(Integer cleanOverdueDays) {
+        this.cleanOverdueDays = cleanOverdueDays;
+    }
+
+    public JobInfo withCleanWaitingJob(String cleanWaitingJob) {
+        this.cleanWaitingJob = cleanWaitingJob;
+        return this;
+    }
+
+    /**
+     * 清除等待的作业。
+     * @return cleanWaitingJob
+     */
+    public String getCleanWaitingJob() {
+        return cleanWaitingJob;
+    }
+
+    public void setCleanWaitingJob(String cleanWaitingJob) {
+        this.cleanWaitingJob = cleanWaitingJob;
+    }
+
+    public JobInfo withEmptyRunningJob(String emptyRunningJob) {
+        this.emptyRunningJob = emptyRunningJob;
+        return this;
+    }
+
+    /**
+     * 取值为0和1，1表示空跑，0表示：取消空跑，不设置该参数时，默认为0。
+     * @return emptyRunningJob
+     */
+    public String getEmptyRunningJob() {
+        return emptyRunningJob;
+    }
+
+    public void setEmptyRunningJob(String emptyRunningJob) {
+        this.emptyRunningJob = emptyRunningJob;
+    }
+
     public JobInfo withProcessType(ProcessTypeEnum processType) {
         this.processType = processType;
         return this;
@@ -675,7 +741,11 @@ public class JobInfo {
         JobInfo that = (JobInfo) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.nodes, that.nodes)
             && Objects.equals(this.schedule, that.schedule) && Objects.equals(this.params, that.params)
-            && Objects.equals(this.directory, that.directory) && Objects.equals(this.processType, that.processType)
+            && Objects.equals(this.directory, that.directory)
+            && Objects.equals(this.cleanOverdueDays, that.cleanOverdueDays)
+            && Objects.equals(this.cleanWaitingJob, that.cleanWaitingJob)
+            && Objects.equals(this.emptyRunningJob, that.emptyRunningJob)
+            && Objects.equals(this.processType, that.processType)
             && Objects.equals(this.singleNodeJobFlag, that.singleNodeJobFlag)
             && Objects.equals(this.singleNodeJobType, that.singleNodeJobType)
             && Objects.equals(this.lastUpdateUser, that.lastUpdateUser) && Objects.equals(this.logPath, that.logPath)
@@ -690,6 +760,9 @@ public class JobInfo {
             schedule,
             params,
             directory,
+            cleanOverdueDays,
+            cleanWaitingJob,
+            emptyRunningJob,
             processType,
             singleNodeJobFlag,
             singleNodeJobType,
@@ -709,6 +782,9 @@ public class JobInfo {
         sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    directory: ").append(toIndentedString(directory)).append("\n");
+        sb.append("    cleanOverdueDays: ").append(toIndentedString(cleanOverdueDays)).append("\n");
+        sb.append("    cleanWaitingJob: ").append(toIndentedString(cleanWaitingJob)).append("\n");
+        sb.append("    emptyRunningJob: ").append(toIndentedString(emptyRunningJob)).append("\n");
         sb.append("    processType: ").append(toIndentedString(processType)).append("\n");
         sb.append("    singleNodeJobFlag: ").append(toIndentedString(singleNodeJobFlag)).append("\n");
         sb.append("    singleNodeJobType: ").append(toIndentedString(singleNodeJobType)).append("\n");

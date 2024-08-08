@@ -16,6 +16,11 @@ public class CheckQuotaRequest {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_id")
+
+    private String flavorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subscription_num")
 
     private Integer subscriptionNum;
@@ -60,6 +65,23 @@ public class CheckQuotaRequest {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public CheckQuotaRequest withFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+        return this;
+    }
+
+    /**
+     * 规格id。
+     * @return flavorId
+     */
+    public String getFlavorId() {
+        return flavorId;
+    }
+
+    public void setFlavorId(String flavorId) {
+        this.flavorId = flavorId;
     }
 
     public CheckQuotaRequest withSubscriptionNum(Integer subscriptionNum) {
@@ -179,7 +201,7 @@ public class CheckQuotaRequest {
             return false;
         }
         CheckQuotaRequest that = (CheckQuotaRequest) obj;
-        return Objects.equals(this.productId, that.productId)
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.flavorId, that.flavorId)
             && Objects.equals(this.subscriptionNum, that.subscriptionNum)
             && Objects.equals(this.diskSize, that.diskSize) && Objects.equals(this.diskNum, that.diskNum)
             && Objects.equals(this.isPeriod, that.isPeriod) && Objects.equals(this.dehId, that.dehId)
@@ -188,7 +210,7 @@ public class CheckQuotaRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId, subscriptionNum, diskSize, diskNum, isPeriod, dehId, clusterId);
+        return Objects.hash(productId, flavorId, subscriptionNum, diskSize, diskNum, isPeriod, dehId, clusterId);
     }
 
     @Override
@@ -196,6 +218,7 @@ public class CheckQuotaRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class CheckQuotaRequest {\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    subscriptionNum: ").append(toIndentedString(subscriptionNum)).append("\n");
         sb.append("    diskSize: ").append(toIndentedString(diskSize)).append("\n");
         sb.append("    diskNum: ").append(toIndentedString(diskNum)).append("\n");

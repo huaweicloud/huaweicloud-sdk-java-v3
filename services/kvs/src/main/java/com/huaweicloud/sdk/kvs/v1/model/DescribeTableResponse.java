@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.corebson.SdkBsonDocResponse;
 
 import org.bson.BsonReader;
+import org.bson.codecs.Codec;
 import org.bson.codecs.DecoderContext;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.annotations.BsonProperty;
@@ -48,6 +49,8 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
     @BsonProperty(value = "run_time_info")
 
     private RunTimeInfo runTimeInfo;
+
+    private static Codec<DescribeTableResponse> codec;
 
     public DescribeTableResponse withTableName(String tableName) {
         this.tableName = tableName;
@@ -235,6 +238,9 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
 
     @Override
     protected Object decodeBody(CodecRegistry codecRegistry, BsonReader reader) {
-        return codecRegistry.get(DescribeTableResponse.class).decode(reader, DecoderContext.builder().build());
+        if (codec == null) {
+            codec = codecRegistry.get(DescribeTableResponse.class);
+        }
+        return codec.decode(reader, DecoderContext.builder().build());
     }
 }

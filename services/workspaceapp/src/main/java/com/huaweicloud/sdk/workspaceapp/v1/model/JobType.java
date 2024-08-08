@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * job类型： * &#x60;CREATE_SERVER&#x60; - 创建服务器 * &#x60;DELETE_SERVER&#x60; - 删除服务器 * &#x60;UPDATE_FREEZE_STATUS&#x60; - 修改服务器冻结状态 * &#x60;CREATE_SERVER_IMAGE&#x60; - 构建镜像 * &#x60;REINSTALL_OS&#x60; - 重装操作系统 * &#x60;CHANGE_SERVER_IMAGE&#x60; - 更换镜像 * &#x60;REJOIN_DOMAIN&#x60; - 重新加域 * &#x60;MIGRATE_SERVER&#x60; - 迁移服务器 * &#x60;UPGRADE_ACCESS_AGENT&#x60; - hda升级 * &#x60;UPDATE_SERVER_TSVI&#x60; - 更新虚拟会话IP * &#x60;SCHEDULED_TASK&#x60; - 定时任务job * &#x60;COLLECT_HDA_LOG&#x60; - 收集hda日志 * &#x60;COLLECT_APS_LOG&#x60; - 收集aps日志
+ * job类型： * &#x60;CREATE_SERVER&#x60; - 创建服务器 * &#x60;DELETE_SERVER&#x60; - 删除服务器 * &#x60;UPDATE_FREEZE_STATUS&#x60; - 修改服务器冻结状态 * &#x60;CREATE_SERVER_IMAGE&#x60; - 构建镜像 * &#x60;REINSTALL_OS&#x60; - 重装操作系统 * &#x60;CHANGE_SERVER_IMAGE&#x60; - 更换镜像 * &#x60;REJOIN_DOMAIN&#x60; - 重新加域 * &#x60;MIGRATE_SERVER&#x60; - 迁移服务器 * &#x60;UPGRADE_ACCESS_AGENT&#x60; - hda升级 * &#x60;UPDATE_SERVER_TSVI&#x60; - 更新虚拟会话IP * &#x60;SCHEDULED_TASK&#x60; - 定时任务job * &#x60;COLLECT_HDA_LOG&#x60; - 收集hda日志 * &#x60;COLLECT_APS_LOG&#x60; - 收集aps日志 * &#x60;CREATE_SERVER_SNAPSHOT&#x60; - 创建服务器快照 * &#x60;DELETE_SERVER_SNAPSHOT&#x60; - 删除服务器快照 * &#x60;RESTORE_SERVER_SNAPSHOT&#x60; - 恢复服务器快照
  */
 public class JobType {
 
@@ -77,6 +77,21 @@ public class JobType {
      */
     public static final JobType COLLECT_APS_LOG = new JobType("COLLECT_APS_LOG");
 
+    /**
+     * Enum CREATE_SERVER_SNAPSHOT for value: "CREATE_SERVER_SNAPSHOT"
+     */
+    public static final JobType CREATE_SERVER_SNAPSHOT = new JobType("CREATE_SERVER_SNAPSHOT");
+
+    /**
+     * Enum DELETE_SERVER_SNAPSHOT for value: "DELETE_SERVER_SNAPSHOT"
+     */
+    public static final JobType DELETE_SERVER_SNAPSHOT = new JobType("DELETE_SERVER_SNAPSHOT");
+
+    /**
+     * Enum RESTORE_SERVER_SNAPSHOT for value: "RESTORE_SERVER_SNAPSHOT"
+     */
+    public static final JobType RESTORE_SERVER_SNAPSHOT = new JobType("RESTORE_SERVER_SNAPSHOT");
+
     private static final Map<String, JobType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, JobType> createStaticFields() {
@@ -94,6 +109,9 @@ public class JobType {
         map.put("SCHEDULED_TASK", SCHEDULED_TASK);
         map.put("COLLECT_HDA_LOG", COLLECT_HDA_LOG);
         map.put("COLLECT_APS_LOG", COLLECT_APS_LOG);
+        map.put("CREATE_SERVER_SNAPSHOT", CREATE_SERVER_SNAPSHOT);
+        map.put("DELETE_SERVER_SNAPSHOT", DELETE_SERVER_SNAPSHOT);
+        map.put("RESTORE_SERVER_SNAPSHOT", RESTORE_SERVER_SNAPSHOT);
         return Collections.unmodifiableMap(map);
     }
 

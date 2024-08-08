@@ -24,9 +24,19 @@ public class CreateAdmetJobReq {
     private MoleculeFileDto moleculeFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "base_model_id")
+
+    private String baseModelId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "model_ids")
 
     private List<String> modelIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "save_fingerprint")
+
+    private Boolean saveFingerprint;
 
     public CreateAdmetJobReq withBasicInfo(CreateDrugJobBasicInfo basicInfo) {
         this.basicInfo = basicInfo;
@@ -80,6 +90,23 @@ public class CreateAdmetJobReq {
         this.moleculeFile = moleculeFile;
     }
 
+    public CreateAdmetJobReq withBaseModelId(String baseModelId) {
+        this.baseModelId = baseModelId;
+        return this;
+    }
+
+    /**
+     * 基模型id
+     * @return baseModelId
+     */
+    public String getBaseModelId() {
+        return baseModelId;
+    }
+
+    public void setBaseModelId(String baseModelId) {
+        this.baseModelId = baseModelId;
+    }
+
     public CreateAdmetJobReq withModelIds(List<String> modelIds) {
         this.modelIds = modelIds;
         return this;
@@ -113,6 +140,23 @@ public class CreateAdmetJobReq {
         this.modelIds = modelIds;
     }
 
+    public CreateAdmetJobReq withSaveFingerprint(Boolean saveFingerprint) {
+        this.saveFingerprint = saveFingerprint;
+        return this;
+    }
+
+    /**
+     * 是否输出表征，仅专业版平台支持
+     * @return saveFingerprint
+     */
+    public Boolean getSaveFingerprint() {
+        return saveFingerprint;
+    }
+
+    public void setSaveFingerprint(Boolean saveFingerprint) {
+        this.saveFingerprint = saveFingerprint;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -123,12 +167,13 @@ public class CreateAdmetJobReq {
         }
         CreateAdmetJobReq that = (CreateAdmetJobReq) obj;
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.moleculeFile, that.moleculeFile)
-            && Objects.equals(this.modelIds, that.modelIds);
+            && Objects.equals(this.baseModelId, that.baseModelId) && Objects.equals(this.modelIds, that.modelIds)
+            && Objects.equals(this.saveFingerprint, that.saveFingerprint);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, moleculeFile, modelIds);
+        return Objects.hash(basicInfo, moleculeFile, baseModelId, modelIds, saveFingerprint);
     }
 
     @Override
@@ -137,7 +182,9 @@ public class CreateAdmetJobReq {
         sb.append("class CreateAdmetJobReq {\n");
         sb.append("    basicInfo: ").append(toIndentedString(basicInfo)).append("\n");
         sb.append("    moleculeFile: ").append(toIndentedString(moleculeFile)).append("\n");
+        sb.append("    baseModelId: ").append(toIndentedString(baseModelId)).append("\n");
         sb.append("    modelIds: ").append(toIndentedString(modelIds)).append("\n");
+        sb.append("    saveFingerprint: ").append(toIndentedString(saveFingerprint)).append("\n");
         sb.append("}");
         return sb.toString();
     }

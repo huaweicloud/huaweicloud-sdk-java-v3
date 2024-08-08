@@ -12,6 +12,12 @@ import com.huaweicloud.sdk.aos.v1.model.ContinueRollbackStackResponse;
 import com.huaweicloud.sdk.aos.v1.model.CreateExecutionPlanRequest;
 import com.huaweicloud.sdk.aos.v1.model.CreateExecutionPlanRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.CreateExecutionPlanResponse;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateHookRequest;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateHookRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateHookResponse;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateHookVersionRequest;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateHookVersionRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateHookVersionResponse;
 import com.huaweicloud.sdk.aos.v1.model.CreatePrivateProviderRequest;
 import com.huaweicloud.sdk.aos.v1.model.CreatePrivateProviderRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.CreatePrivateProviderResponse;
@@ -29,6 +35,10 @@ import com.huaweicloud.sdk.aos.v1.model.CreateStackSetRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.CreateStackSetResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteExecutionPlanRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeleteExecutionPlanResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateHookRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateHookResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateHookVersionRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateHookVersionResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedResponse;
@@ -84,6 +94,10 @@ import com.huaweicloud.sdk.aos.v1.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.aos.v1.model.ParseTemplateVariablesRequest;
 import com.huaweicloud.sdk.aos.v1.model.ParseTemplateVariablesRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.ParseTemplateVariablesResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackSetMetadataRequest;
@@ -98,6 +112,9 @@ import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionContentRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionContentResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateHookMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateHookMetadataRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateHookMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesRequest;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesResponse;
@@ -483,6 +500,270 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListExecutionPlansRequest::getClientRequestId,
                 ListExecutionPlansRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePrivateHookRequest, CreatePrivateHookResponse> createPrivateHook =
+        genForCreatePrivateHook();
+
+    private static HttpRequestDef<CreatePrivateHookRequest, CreatePrivateHookResponse> genForCreatePrivateHook() {
+        // basic
+        HttpRequestDef.Builder<CreatePrivateHookRequest, CreatePrivateHookResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePrivateHookRequest.class, CreatePrivateHookResponse.class)
+                .withName("CreatePrivateHook")
+                .withUri("/v1/private-hooks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePrivateHookRequest::getClientRequestId,
+                CreatePrivateHookRequest::setClientRequestId));
+        builder.<CreatePrivateHookRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePrivateHookRequestBody.class),
+            f -> f.withMarshaller(CreatePrivateHookRequest::getBody, CreatePrivateHookRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePrivateHookVersionRequest, CreatePrivateHookVersionResponse> createPrivateHookVersion =
+        genForCreatePrivateHookVersion();
+
+    private static HttpRequestDef<CreatePrivateHookVersionRequest, CreatePrivateHookVersionResponse> genForCreatePrivateHookVersion() {
+        // basic
+        HttpRequestDef.Builder<CreatePrivateHookVersionRequest, CreatePrivateHookVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreatePrivateHookVersionRequest.class, CreatePrivateHookVersionResponse.class)
+                .withName("CreatePrivateHookVersion")
+                .withUri("/v1/private-hooks/{hook_name}/versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("hook_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePrivateHookVersionRequest::getHookName,
+                CreatePrivateHookVersionRequest::setHookName));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePrivateHookVersionRequest::getClientRequestId,
+                CreatePrivateHookVersionRequest::setClientRequestId));
+        builder.<CreatePrivateHookVersionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePrivateHookVersionRequestBody.class),
+            f -> f.withMarshaller(CreatePrivateHookVersionRequest::getBody, CreatePrivateHookVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePrivateHookRequest, DeletePrivateHookResponse> deletePrivateHook =
+        genForDeletePrivateHook();
+
+    private static HttpRequestDef<DeletePrivateHookRequest, DeletePrivateHookResponse> genForDeletePrivateHook() {
+        // basic
+        HttpRequestDef.Builder<DeletePrivateHookRequest, DeletePrivateHookResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePrivateHookRequest.class, DeletePrivateHookResponse.class)
+                .withName("DeletePrivateHook")
+                .withUri("/v1/private-hooks/{hook_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("hook_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateHookRequest::getHookName, DeletePrivateHookRequest::setHookName));
+        builder.<String>withRequestField("hook_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateHookRequest::getHookId, DeletePrivateHookRequest::setHookId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateHookRequest::getClientRequestId,
+                DeletePrivateHookRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePrivateHookVersionRequest, DeletePrivateHookVersionResponse> deletePrivateHookVersion =
+        genForDeletePrivateHookVersion();
+
+    private static HttpRequestDef<DeletePrivateHookVersionRequest, DeletePrivateHookVersionResponse> genForDeletePrivateHookVersion() {
+        // basic
+        HttpRequestDef.Builder<DeletePrivateHookVersionRequest, DeletePrivateHookVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeletePrivateHookVersionRequest.class,
+                    DeletePrivateHookVersionResponse.class)
+                .withName("DeletePrivateHookVersion")
+                .withUri("/v1/private-hooks/{hook_name}/versions/{hook_version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("hook_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateHookVersionRequest::getHookName,
+                DeletePrivateHookVersionRequest::setHookName));
+        builder.<String>withRequestField("hook_version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateHookVersionRequest::getHookVersion,
+                DeletePrivateHookVersionRequest::setHookVersion));
+        builder.<String>withRequestField("hook_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateHookVersionRequest::getHookId,
+                DeletePrivateHookVersionRequest::setHookId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateHookVersionRequest::getClientRequestId,
+                DeletePrivateHookVersionRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPrivateHookMetadataRequest, ShowPrivateHookMetadataResponse> showPrivateHookMetadata =
+        genForShowPrivateHookMetadata();
+
+    private static HttpRequestDef<ShowPrivateHookMetadataRequest, ShowPrivateHookMetadataResponse> genForShowPrivateHookMetadata() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivateHookMetadataRequest, ShowPrivateHookMetadataResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPrivateHookMetadataRequest.class, ShowPrivateHookMetadataResponse.class)
+            .withName("ShowPrivateHookMetadata")
+            .withUri("/v1/private-hooks/{hook_name}/metadata")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("hook_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateHookMetadataRequest::getHookName,
+                ShowPrivateHookMetadataRequest::setHookName));
+        builder.<String>withRequestField("hook_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateHookMetadataRequest::getHookId,
+                ShowPrivateHookMetadataRequest::setHookId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateHookMetadataRequest::getClientRequestId,
+                ShowPrivateHookMetadataRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPrivateHookVersionMetadataRequest, ShowPrivateHookVersionMetadataResponse> showPrivateHookVersionMetadata =
+        genForShowPrivateHookVersionMetadata();
+
+    private static HttpRequestDef<ShowPrivateHookVersionMetadataRequest, ShowPrivateHookVersionMetadataResponse> genForShowPrivateHookVersionMetadata() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivateHookVersionMetadataRequest, ShowPrivateHookVersionMetadataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPrivateHookVersionMetadataRequest.class,
+                    ShowPrivateHookVersionMetadataResponse.class)
+                .withName("ShowPrivateHookVersionMetadata")
+                .withUri("/v1/private-hooks/{hook_name}/versions/{hook_version}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("hook_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateHookVersionMetadataRequest::getHookName,
+                ShowPrivateHookVersionMetadataRequest::setHookName));
+        builder.<String>withRequestField("hook_version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateHookVersionMetadataRequest::getHookVersion,
+                ShowPrivateHookVersionMetadataRequest::setHookVersion));
+        builder.<String>withRequestField("hook_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateHookVersionMetadataRequest::getHookId,
+                ShowPrivateHookVersionMetadataRequest::setHookId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateHookVersionMetadataRequest::getClientRequestId,
+                ShowPrivateHookVersionMetadataRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePrivateHookMetadataRequest, UpdatePrivateHookMetadataResponse> updatePrivateHookMetadata =
+        genForUpdatePrivateHookMetadata();
+
+    private static HttpRequestDef<UpdatePrivateHookMetadataRequest, UpdatePrivateHookMetadataResponse> genForUpdatePrivateHookMetadata() {
+        // basic
+        HttpRequestDef.Builder<UpdatePrivateHookMetadataRequest, UpdatePrivateHookMetadataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PATCH,
+                    UpdatePrivateHookMetadataRequest.class,
+                    UpdatePrivateHookMetadataResponse.class)
+                .withName("UpdatePrivateHookMetadata")
+                .withUri("/v1/private-hooks/{hook_name}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("hook_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrivateHookMetadataRequest::getHookName,
+                UpdatePrivateHookMetadataRequest::setHookName));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrivateHookMetadataRequest::getClientRequestId,
+                UpdatePrivateHookMetadataRequest::setClientRequestId));
+        builder.<UpdatePrivateHookMetadataRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePrivateHookMetadataRequestBody.class),
+            f -> f.withMarshaller(UpdatePrivateHookMetadataRequest::getBody,
+                UpdatePrivateHookMetadataRequest::setBody));
 
         // response
 

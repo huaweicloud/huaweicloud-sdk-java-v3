@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 服务器组。
@@ -90,6 +93,36 @@ public class BaseServerGroup {
     @JsonProperty(value = "storage_mount_policy")
 
     private StorageFolderMountType storageMountPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "primary_server_group_ids")
+
+    private List<String> primaryServerGroupIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secondary_server_group_ids")
+
+    private List<String> secondaryServerGroupIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_group_status")
+
+    private Boolean serverGroupStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "site_type")
+
+    private String siteType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "site_id")
+
+    private String siteId;
 
     public BaseServerGroup withId(String id) {
         this.id = id;
@@ -363,6 +396,140 @@ public class BaseServerGroup {
         this.storageMountPolicy = storageMountPolicy;
     }
 
+    public BaseServerGroup withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID(0表示默认企业项目Id)
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public BaseServerGroup withPrimaryServerGroupIds(List<String> primaryServerGroupIds) {
+        this.primaryServerGroupIds = primaryServerGroupIds;
+        return this;
+    }
+
+    public BaseServerGroup addPrimaryServerGroupIdsItem(String primaryServerGroupIdsItem) {
+        if (this.primaryServerGroupIds == null) {
+            this.primaryServerGroupIds = new ArrayList<>();
+        }
+        this.primaryServerGroupIds.add(primaryServerGroupIdsItem);
+        return this;
+    }
+
+    public BaseServerGroup withPrimaryServerGroupIds(Consumer<List<String>> primaryServerGroupIdsSetter) {
+        if (this.primaryServerGroupIds == null) {
+            this.primaryServerGroupIds = new ArrayList<>();
+        }
+        primaryServerGroupIdsSetter.accept(this.primaryServerGroupIds);
+        return this;
+    }
+
+    /**
+     * 主服务器组id列表。
+     * @return primaryServerGroupIds
+     */
+    public List<String> getPrimaryServerGroupIds() {
+        return primaryServerGroupIds;
+    }
+
+    public void setPrimaryServerGroupIds(List<String> primaryServerGroupIds) {
+        this.primaryServerGroupIds = primaryServerGroupIds;
+    }
+
+    public BaseServerGroup withSecondaryServerGroupIds(List<String> secondaryServerGroupIds) {
+        this.secondaryServerGroupIds = secondaryServerGroupIds;
+        return this;
+    }
+
+    public BaseServerGroup addSecondaryServerGroupIdsItem(String secondaryServerGroupIdsItem) {
+        if (this.secondaryServerGroupIds == null) {
+            this.secondaryServerGroupIds = new ArrayList<>();
+        }
+        this.secondaryServerGroupIds.add(secondaryServerGroupIdsItem);
+        return this;
+    }
+
+    public BaseServerGroup withSecondaryServerGroupIds(Consumer<List<String>> secondaryServerGroupIdsSetter) {
+        if (this.secondaryServerGroupIds == null) {
+            this.secondaryServerGroupIds = new ArrayList<>();
+        }
+        secondaryServerGroupIdsSetter.accept(this.secondaryServerGroupIds);
+        return this;
+    }
+
+    /**
+     * 备服务器组id列表。
+     * @return secondaryServerGroupIds
+     */
+    public List<String> getSecondaryServerGroupIds() {
+        return secondaryServerGroupIds;
+    }
+
+    public void setSecondaryServerGroupIds(List<String> secondaryServerGroupIds) {
+        this.secondaryServerGroupIds = secondaryServerGroupIds;
+    }
+
+    public BaseServerGroup withServerGroupStatus(Boolean serverGroupStatus) {
+        this.serverGroupStatus = serverGroupStatus;
+        return this;
+    }
+
+    /**
+     * 服务器是否处于启用状态，true表示处于启用状态 false表示处于禁用状态。
+     * @return serverGroupStatus
+     */
+    public Boolean getServerGroupStatus() {
+        return serverGroupStatus;
+    }
+
+    public void setServerGroupStatus(Boolean serverGroupStatus) {
+        this.serverGroupStatus = serverGroupStatus;
+    }
+
+    public BaseServerGroup withSiteType(String siteType) {
+        this.siteType = siteType;
+        return this;
+    }
+
+    /**
+     * 站点类型 - CENTER/IES
+     * @return siteType
+     */
+    public String getSiteType() {
+        return siteType;
+    }
+
+    public void setSiteType(String siteType) {
+        this.siteType = siteType;
+    }
+
+    public BaseServerGroup withSiteId(String siteId) {
+        this.siteId = siteId;
+        return this;
+    }
+
+    /**
+     * 站点id
+     * @return siteId
+     */
+    public String getSiteId() {
+        return siteId;
+    }
+
+    public void setSiteId(String siteId) {
+        this.siteId = siteId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -381,7 +548,12 @@ public class BaseServerGroup {
             && Objects.equals(this.extraSessionSize, that.extraSessionSize)
             && Objects.equals(this.appType, that.appType) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.storageMountPolicy, that.storageMountPolicy);
+            && Objects.equals(this.storageMountPolicy, that.storageMountPolicy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.primaryServerGroupIds, that.primaryServerGroupIds)
+            && Objects.equals(this.secondaryServerGroupIds, that.secondaryServerGroupIds)
+            && Objects.equals(this.serverGroupStatus, that.serverGroupStatus)
+            && Objects.equals(this.siteType, that.siteType) && Objects.equals(this.siteId, that.siteId);
     }
 
     @Override
@@ -401,7 +573,13 @@ public class BaseServerGroup {
             appType,
             createTime,
             updateTime,
-            storageMountPolicy);
+            storageMountPolicy,
+            enterpriseProjectId,
+            primaryServerGroupIds,
+            secondaryServerGroupIds,
+            serverGroupStatus,
+            siteType,
+            siteId);
     }
 
     @Override
@@ -424,6 +602,12 @@ public class BaseServerGroup {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    storageMountPolicy: ").append(toIndentedString(storageMountPolicy)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    primaryServerGroupIds: ").append(toIndentedString(primaryServerGroupIds)).append("\n");
+        sb.append("    secondaryServerGroupIds: ").append(toIndentedString(secondaryServerGroupIds)).append("\n");
+        sb.append("    serverGroupStatus: ").append(toIndentedString(serverGroupStatus)).append("\n");
+        sb.append("    siteType: ").append(toIndentedString(siteType)).append("\n");
+        sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

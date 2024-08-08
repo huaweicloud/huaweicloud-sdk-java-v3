@@ -28,6 +28,11 @@ public class CreateDockJobReq {
 
     private List<LigandDto> ligands = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "engine")
+
+    private String engine;
+
     public CreateDockJobReq withBasicInfo(CreateDrugJobBasicInfo basicInfo) {
         this.basicInfo = basicInfo;
         return this;
@@ -120,6 +125,23 @@ public class CreateDockJobReq {
         this.ligands = ligands;
     }
 
+    public CreateDockJobReq withEngine(String engine) {
+        this.engine = engine;
+        return this;
+    }
+
+    /**
+     * 引擎，默认为AUTODOCK_VINA
+     * @return engine
+     */
+    public String getEngine() {
+        return engine;
+    }
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -130,12 +152,12 @@ public class CreateDockJobReq {
         }
         CreateDockJobReq that = (CreateDockJobReq) obj;
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.receptors, that.receptors)
-            && Objects.equals(this.ligands, that.ligands);
+            && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.engine, that.engine);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, receptors, ligands);
+        return Objects.hash(basicInfo, receptors, ligands, engine);
     }
 
     @Override
@@ -145,6 +167,7 @@ public class CreateDockJobReq {
         sb.append("    basicInfo: ").append(toIndentedString(basicInfo)).append("\n");
         sb.append("    receptors: ").append(toIndentedString(receptors)).append("\n");
         sb.append("    ligands: ").append(toIndentedString(ligands)).append("\n");
+        sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("}");
         return sb.toString();
     }

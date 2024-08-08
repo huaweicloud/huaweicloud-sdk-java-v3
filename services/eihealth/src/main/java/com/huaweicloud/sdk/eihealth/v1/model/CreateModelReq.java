@@ -36,6 +36,11 @@ public class CreateModelReq {
 
     private Boolean shareable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "base_model_id")
+
+    private String baseModelId;
+
     public CreateModelReq withName(String name) {
         this.name = name;
         return this;
@@ -130,6 +135,23 @@ public class CreateModelReq {
         this.shareable = shareable;
     }
 
+    public CreateModelReq withBaseModelId(String baseModelId) {
+        this.baseModelId = baseModelId;
+        return this;
+    }
+
+    /**
+     * 基模型id
+     * @return baseModelId
+     */
+    public String getBaseModelId() {
+        return baseModelId;
+    }
+
+    public void setBaseModelId(String baseModelId) {
+        this.baseModelId = baseModelId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -141,12 +163,12 @@ public class CreateModelReq {
         CreateModelReq that = (CreateModelReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.type, that.type) && Objects.equals(this.file, that.file)
-            && Objects.equals(this.shareable, that.shareable);
+            && Objects.equals(this.shareable, that.shareable) && Objects.equals(this.baseModelId, that.baseModelId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, type, file, shareable);
+        return Objects.hash(name, description, type, file, shareable, baseModelId);
     }
 
     @Override
@@ -158,6 +180,7 @@ public class CreateModelReq {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    file: ").append(toIndentedString(file)).append("\n");
         sb.append("    shareable: ").append(toIndentedString(shareable)).append("\n");
+        sb.append("    baseModelId: ").append(toIndentedString(baseModelId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

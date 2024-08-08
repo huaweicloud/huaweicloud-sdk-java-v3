@@ -30,6 +30,11 @@ public class ShowDockingJobResponse extends SdkResponse {
     private List<LigandDto> ligands = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "engine")
+
+    private String engine;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_result")
 
     private JobResult jobResult;
@@ -136,6 +141,23 @@ public class ShowDockingJobResponse extends SdkResponse {
         this.ligands = ligands;
     }
 
+    public ShowDockingJobResponse withEngine(String engine) {
+        this.engine = engine;
+        return this;
+    }
+
+    /**
+     * 引擎
+     * @return engine
+     */
+    public String getEngine() {
+        return engine;
+    }
+
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+
     public ShowDockingJobResponse withJobResult(JobResult jobResult) {
         this.jobResult = jobResult;
         return this;
@@ -231,14 +253,15 @@ public class ShowDockingJobResponse extends SdkResponse {
         }
         ShowDockingJobResponse that = (ShowDockingJobResponse) obj;
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.receptors, that.receptors)
-            && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.jobResult, that.jobResult)
+            && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.jobResult, that.jobResult)
             && Objects.equals(this.partFailedReason, that.partFailedReason)
             && Objects.equals(this.clusterResult, that.clusterResult);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, receptors, ligands, jobResult, partFailedReason, clusterResult);
+        return Objects.hash(basicInfo, receptors, ligands, engine, jobResult, partFailedReason, clusterResult);
     }
 
     @Override
@@ -248,6 +271,7 @@ public class ShowDockingJobResponse extends SdkResponse {
         sb.append("    basicInfo: ").append(toIndentedString(basicInfo)).append("\n");
         sb.append("    receptors: ").append(toIndentedString(receptors)).append("\n");
         sb.append("    ligands: ").append(toIndentedString(ligands)).append("\n");
+        sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    jobResult: ").append(toIndentedString(jobResult)).append("\n");
         sb.append("    partFailedReason: ").append(toIndentedString(partFailedReason)).append("\n");
         sb.append("    clusterResult: ").append(toIndentedString(clusterResult)).append("\n");

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 更新网关型终端节点policy请求结构体
+ * 更新终端节点policy请求结构体
  */
 public class UpdateEndpointPolicyRequestBody {
 
@@ -21,7 +21,7 @@ public class UpdateEndpointPolicyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_document")
 
-    private Object policyDocument;
+    private String policyDocument;
 
     public UpdateEndpointPolicyRequestBody withPolicyStatement(List<PolicyStatement> policyStatement) {
         this.policyStatement = policyStatement;
@@ -45,7 +45,7 @@ public class UpdateEndpointPolicyRequestBody {
     }
 
     /**
-     * 终端节点策略信息
+     * Gateway类型终端节点策略信息，仅限OBS、SFS的终端节点服务的enable_policy值为true时支持该参数。
      * @return policyStatement
      */
     public List<PolicyStatement> getPolicyStatement() {
@@ -56,20 +56,20 @@ public class UpdateEndpointPolicyRequestBody {
         this.policyStatement = policyStatement;
     }
 
-    public UpdateEndpointPolicyRequestBody withPolicyDocument(Object policyDocument) {
+    public UpdateEndpointPolicyRequestBody withPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
         return this;
     }
 
     /**
-     * iam 5.0 策略
+     * 终端节点策略信息，仅当终端节点服务的enable_policy值为true时支持该参数，默认值为完全访问权限。（OBS、SFS的终端节点服务暂不支持该参数）
      * @return policyDocument
      */
-    public Object getPolicyDocument() {
+    public String getPolicyDocument() {
         return policyDocument;
     }
 
-    public void setPolicyDocument(Object policyDocument) {
+    public void setPolicyDocument(String policyDocument) {
         this.policyDocument = policyDocument;
     }
 

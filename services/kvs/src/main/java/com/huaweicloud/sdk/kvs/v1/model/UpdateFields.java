@@ -40,7 +40,7 @@ public class UpdateFields {
     }
 
     /**
-     * 新增字段或覆盖某字段的值1个或多个字段。 > 禁止修改sortkey的字段。
+     * 新增或覆盖更新1个或多个字段的值。 > 禁止修改sortkey的字段。
      * @return set
      */
     public Document getSet() {
@@ -57,7 +57,7 @@ public class UpdateFields {
     }
 
     /**
-     * 对某个字段做加法运算，并更新为运算后的值1个或多个字段。
+     * 对1个或多个字段做加法运算，并更新为运算后的值。
      * @return add
      */
     public Document getAdd() {

@@ -61,6 +61,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingResourceResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateCpiJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateCpiJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCpiTaskRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCpiTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCssClusterRequest;
@@ -91,6 +93,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateFepJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateFepJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateGenJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateGenJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateGenerationTaskRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateGenerationTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateImageRequest;
@@ -135,6 +139,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisTaskRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateSynthesisTaskResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateTargetOptJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateTargetOptJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateTemplateRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateTemplateResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateUserRequest;
@@ -249,6 +255,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListAutoJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListAutoJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBackupRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBackupResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListBaseModelRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListBaseModelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBucketRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBucketResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListCheckpointRequest;
@@ -393,6 +401,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.RunDrugLigandToSmilesConversionRequ
 import com.huaweicloud.sdk.eihealth.v1.model.RunDrugLigandToSmilesConversionResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.RunDrugReceptorPreprocessRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.RunDrugReceptorPreprocessResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.RunFastaPreprocessRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.RunFastaPreprocessResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.Show3dStructureContentRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.Show3dStructureContentResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAdmetJobRequest;
@@ -413,6 +423,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowBmsDevicesRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowBmsDevicesResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowBucketStorageRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowBucketStorageResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowCpiJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowCpiJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowCpiTaskResultRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowCpiTaskResultResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowCustomPropsTaskResultRequest;
@@ -439,6 +451,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowExtremumInfoRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowExtremumInfoResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowFepJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowFepJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowGenJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowGenJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowGenerationTaskResultRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowGenerationTaskResultResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowInstanceRequest;
@@ -513,6 +527,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowSynthesisJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowSynthesisJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowSynthesisTaskResultRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowSynthesisTaskResultResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowTargetOptJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowTargetOptJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowTaskEventsRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowTaskEventsResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowTaskInstanceEventsRequest;
@@ -1626,6 +1642,34 @@ public class EiHealthClient {
     }
 
     /**
+     * 创建分子生成作业
+     *
+     * 创建分子生成作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGenJobRequest 请求对象
+     * @return CreateGenJobResponse
+     */
+    public CreateGenJobResponse createGenJob(CreateGenJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createGenJob);
+    }
+
+    /**
+     * 创建分子生成作业
+     *
+     * 创建分子生成作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGenJobRequest 请求对象
+     * @return SyncInvoker<CreateGenJobRequest, CreateGenJobResponse>
+     */
+    public SyncInvoker<CreateGenJobRequest, CreateGenJobResponse> createGenJobInvoker(CreateGenJobRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.createGenJob, hcClient);
+    }
+
+    /**
      * 创建镜像
      *
      * 创建镜像
@@ -2053,6 +2097,35 @@ public class EiHealthClient {
     public SyncInvoker<CreateSynthesisJobRequest, CreateSynthesisJobResponse> createSynthesisJobInvoker(
         CreateSynthesisJobRequest request) {
         return new SyncInvoker<>(request, EiHealthMeta.createSynthesisJob, hcClient);
+    }
+
+    /**
+     * 创建靶点优化作业
+     *
+     * 创建靶点优化作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTargetOptJobRequest 请求对象
+     * @return CreateTargetOptJobResponse
+     */
+    public CreateTargetOptJobResponse createTargetOptJob(CreateTargetOptJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createTargetOptJob);
+    }
+
+    /**
+     * 创建靶点优化作业
+     *
+     * 创建靶点优化作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTargetOptJobRequest 请求对象
+     * @return SyncInvoker<CreateTargetOptJobRequest, CreateTargetOptJobResponse>
+     */
+    public SyncInvoker<CreateTargetOptJobRequest, CreateTargetOptJobResponse> createTargetOptJobInvoker(
+        CreateTargetOptJobRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.createTargetOptJob, hcClient);
     }
 
     /**
@@ -3451,6 +3524,34 @@ public class EiHealthClient {
      */
     public SyncInvoker<ListBackupRequest, ListBackupResponse> listBackupInvoker(ListBackupRequest request) {
         return new SyncInvoker<>(request, EiHealthMeta.listBackup, hcClient);
+    }
+
+    /**
+     * 获取基模型列表
+     *
+     * 获取基模型列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBaseModelRequest 请求对象
+     * @return ListBaseModelResponse
+     */
+    public ListBaseModelResponse listBaseModel(ListBaseModelRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.listBaseModel);
+    }
+
+    /**
+     * 获取基模型列表
+     *
+     * 获取基模型列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBaseModelRequest 请求对象
+     * @return SyncInvoker<ListBaseModelRequest, ListBaseModelResponse>
+     */
+    public SyncInvoker<ListBaseModelRequest, ListBaseModelResponse> listBaseModelInvoker(ListBaseModelRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.listBaseModel, hcClient);
     }
 
     /**
@@ -5071,6 +5172,35 @@ public class EiHealthClient {
     }
 
     /**
+     * 受体预处理（Fasta格式）
+     *
+     * 受体预处理（Fasta格式），用于前端计算预期扣费次数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunFastaPreprocessRequest 请求对象
+     * @return RunFastaPreprocessResponse
+     */
+    public RunFastaPreprocessResponse runFastaPreprocess(RunFastaPreprocessRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.runFastaPreprocess);
+    }
+
+    /**
+     * 受体预处理（Fasta格式）
+     *
+     * 受体预处理（Fasta格式），用于前端计算预期扣费次数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunFastaPreprocessRequest 请求对象
+     * @return SyncInvoker<RunFastaPreprocessRequest, RunFastaPreprocessResponse>
+     */
+    public SyncInvoker<RunFastaPreprocessRequest, RunFastaPreprocessResponse> runFastaPreprocessInvoker(
+        RunFastaPreprocessRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.runFastaPreprocess, hcClient);
+    }
+
+    /**
      * 获取生成study作业3D结构的内容
      *
      * 获取生成study作业3D结构的内容
@@ -5581,6 +5711,34 @@ public class EiHealthClient {
      */
     public SyncInvoker<ShowFepJobRequest, ShowFepJobResponse> showFepJobInvoker(ShowFepJobRequest request) {
         return new SyncInvoker<>(request, EiHealthMeta.showFepJob, hcClient);
+    }
+
+    /**
+     * 查询分子生成作业详情
+     *
+     * 查询分子生成作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGenJobRequest 请求对象
+     * @return ShowGenJobResponse
+     */
+    public ShowGenJobResponse showGenJob(ShowGenJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showGenJob);
+    }
+
+    /**
+     * 查询分子生成作业详情
+     *
+     * 查询分子生成作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGenJobRequest 请求对象
+     * @return SyncInvoker<ShowGenJobRequest, ShowGenJobResponse>
+     */
+    public SyncInvoker<ShowGenJobRequest, ShowGenJobResponse> showGenJobInvoker(ShowGenJobRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.showGenJob, hcClient);
     }
 
     /**
@@ -6238,6 +6396,35 @@ public class EiHealthClient {
     public SyncInvoker<ShowSynthesisJobRequest, ShowSynthesisJobResponse> showSynthesisJobInvoker(
         ShowSynthesisJobRequest request) {
         return new SyncInvoker<>(request, EiHealthMeta.showSynthesisJob, hcClient);
+    }
+
+    /**
+     * 查询靶点优化作业详情
+     *
+     * 查询靶点优化作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTargetOptJobRequest 请求对象
+     * @return ShowTargetOptJobResponse
+     */
+    public ShowTargetOptJobResponse showTargetOptJob(ShowTargetOptJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showTargetOptJob);
+    }
+
+    /**
+     * 查询靶点优化作业详情
+     *
+     * 查询靶点优化作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTargetOptJobRequest 请求对象
+     * @return SyncInvoker<ShowTargetOptJobRequest, ShowTargetOptJobResponse>
+     */
+    public SyncInvoker<ShowTargetOptJobRequest, ShowTargetOptJobResponse> showTargetOptJobInvoker(
+        ShowTargetOptJobRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.showTargetOptJob, hcClient);
     }
 
     /**
@@ -7844,6 +8031,34 @@ public class EiHealthClient {
     }
 
     /**
+     * 创建CPI作业
+     *
+     * 创建CPI作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCpiJobRequest 请求对象
+     * @return CreateCpiJobResponse
+     */
+    public CreateCpiJobResponse createCpiJob(CreateCpiJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.createCpiJob);
+    }
+
+    /**
+     * 创建CPI作业
+     *
+     * 创建CPI作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCpiJobRequest 请求对象
+     * @return SyncInvoker<CreateCpiJobRequest, CreateCpiJobResponse>
+     */
+    public SyncInvoker<CreateCpiJobRequest, CreateCpiJobResponse> createCpiJobInvoker(CreateCpiJobRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.createCpiJob, hcClient);
+    }
+
+    /**
      * 新建CPI任务接口
      *
      * 输入蛋白序列、小分子库，创建分子-蛋白互作预测任务。
@@ -7869,6 +8084,34 @@ public class EiHealthClient {
      */
     public SyncInvoker<CreateCpiTaskRequest, CreateCpiTaskResponse> createCpiTaskInvoker(CreateCpiTaskRequest request) {
         return new SyncInvoker<>(request, EiHealthMeta.createCpiTask, hcClient);
+    }
+
+    /**
+     * 查询CPI作业详情
+     *
+     * 查询CPI作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCpiJobRequest 请求对象
+     * @return ShowCpiJobResponse
+     */
+    public ShowCpiJobResponse showCpiJob(ShowCpiJobRequest request) {
+        return hcClient.syncInvokeHttp(request, EiHealthMeta.showCpiJob);
+    }
+
+    /**
+     * 查询CPI作业详情
+     *
+     * 查询CPI作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCpiJobRequest 请求对象
+     * @return SyncInvoker<ShowCpiJobRequest, ShowCpiJobResponse>
+     */
+    public SyncInvoker<ShowCpiJobRequest, ShowCpiJobResponse> showCpiJobInvoker(ShowCpiJobRequest request) {
+        return new SyncInvoker<>(request, EiHealthMeta.showCpiJob, hcClient);
     }
 
     /**

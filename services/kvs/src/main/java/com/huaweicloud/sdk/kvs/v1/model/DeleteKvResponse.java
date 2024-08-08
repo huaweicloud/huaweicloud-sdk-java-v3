@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.kvs.v1.model;
 import com.huaweicloud.sdk.corebson.SdkBsonDocResponse;
 
 import org.bson.BsonReader;
+import org.bson.codecs.Codec;
 import org.bson.codecs.DecoderContext;
 import org.bson.codecs.configuration.CodecRegistry;
 
@@ -12,6 +13,8 @@ import java.util.Objects;
  * Response Object
  */
 public class DeleteKvResponse extends SdkBsonDocResponse {
+
+    private static Codec<DeleteKvResponse> codec;
 
     @Override
     public boolean equals(java.lang.Object obj) {
@@ -39,6 +42,9 @@ public class DeleteKvResponse extends SdkBsonDocResponse {
 
     @Override
     protected Object decodeBody(CodecRegistry codecRegistry, BsonReader reader) {
-        return codecRegistry.get(DeleteKvResponse.class).decode(reader, DecoderContext.builder().build());
+        if (codec == null) {
+            codec = codecRegistry.get(DeleteKvResponse.class);
+        }
+        return codec.decode(reader, DecoderContext.builder().build());
     }
 }

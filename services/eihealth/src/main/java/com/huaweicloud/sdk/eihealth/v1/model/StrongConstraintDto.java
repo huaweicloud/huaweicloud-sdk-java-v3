@@ -43,6 +43,11 @@ public class StrongConstraintDto {
 
     private StructureConstraintParamsDto struct;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "interaction")
+
+    private InteractionConstraintDto interaction;
+
     public StrongConstraintDto withId(String id) {
         this.id = id;
         return this;
@@ -170,6 +175,32 @@ public class StrongConstraintDto {
         this.struct = struct;
     }
 
+    public StrongConstraintDto withInteraction(InteractionConstraintDto interaction) {
+        this.interaction = interaction;
+        return this;
+    }
+
+    public StrongConstraintDto withInteraction(Consumer<InteractionConstraintDto> interactionSetter) {
+        if (this.interaction == null) {
+            this.interaction = new InteractionConstraintDto();
+            interactionSetter.accept(this.interaction);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get interaction
+     * @return interaction
+     */
+    public InteractionConstraintDto getInteraction() {
+        return interaction;
+    }
+
+    public void setInteraction(InteractionConstraintDto interaction) {
+        this.interaction = interaction;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -181,12 +212,13 @@ public class StrongConstraintDto {
         StrongConstraintDto that = (StrongConstraintDto) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.type, that.type) && Objects.equals(this.bool, that.bool)
-            && Objects.equals(this.range, that.range) && Objects.equals(this.struct, that.struct);
+            && Objects.equals(this.range, that.range) && Objects.equals(this.struct, that.struct)
+            && Objects.equals(this.interaction, that.interaction);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, bool, range, struct);
+        return Objects.hash(id, name, type, bool, range, struct, interaction);
     }
 
     @Override
@@ -199,6 +231,7 @@ public class StrongConstraintDto {
         sb.append("    bool: ").append(toIndentedString(bool)).append("\n");
         sb.append("    range: ").append(toIndentedString(range)).append("\n");
         sb.append("    struct: ").append(toIndentedString(struct)).append("\n");
+        sb.append("    interaction: ").append(toIndentedString(interaction)).append("\n");
         sb.append("}");
         return sb.toString();
     }

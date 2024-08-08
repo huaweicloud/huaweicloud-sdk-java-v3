@@ -27,6 +27,11 @@ public class PocketFragment {
     private String format;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
     private String data;
@@ -90,6 +95,23 @@ public class PocketFragment {
 
     public void setFormat(String format) {
         this.format = format;
+    }
+
+    public PocketFragment withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 原始配体名称，仅RAW类型时用于配体名称标识
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public PocketFragment withData(String data) {
@@ -171,13 +193,14 @@ public class PocketFragment {
         }
         PocketFragment that = (PocketFragment) obj;
         return Objects.equals(this.source, that.source) && Objects.equals(this.url, that.url)
-            && Objects.equals(this.format, that.format) && Objects.equals(this.data, that.data)
-            && Objects.equals(this.edited, that.edited) && Objects.equals(this.labelSites, that.labelSites);
+            && Objects.equals(this.format, that.format) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.edited, that.edited)
+            && Objects.equals(this.labelSites, that.labelSites);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(source, url, format, data, edited, labelSites);
+        return Objects.hash(source, url, format, name, data, edited, labelSites);
     }
 
     @Override
@@ -187,6 +210,7 @@ public class PocketFragment {
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    edited: ").append(toIndentedString(edited)).append("\n");
         sb.append("    labelSites: ").append(toIndentedString(labelSites)).append("\n");

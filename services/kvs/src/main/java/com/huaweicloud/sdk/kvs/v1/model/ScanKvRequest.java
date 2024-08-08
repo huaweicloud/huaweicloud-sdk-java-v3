@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.corebson.SdkBsonDocRequest;
 
 import org.bson.BsonWriter;
+import org.bson.codecs.Codec;
 import org.bson.codecs.EncoderContext;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.annotations.BsonProperty;
@@ -28,6 +29,8 @@ public class ScanKvRequest extends SdkBsonDocRequest {
     @BsonProperty(value = "body")
 
     private ScanKvRequestBody body;
+
+    private static Codec<ScanKvRequestBody> codec;
 
     public ScanKvRequest withStoreName(String storeName) {
         this.storeName = storeName;
@@ -112,6 +115,9 @@ public class ScanKvRequest extends SdkBsonDocRequest {
 
     @Override
     protected void encodeBody(CodecRegistry codecRegistry, BsonWriter writer) {
-        codecRegistry.get(ScanKvRequestBody.class).encode(writer, this.getBody(), EncoderContext.builder().build());
+        if (codec == null) {
+            codec = codecRegistry.get(ScanKvRequestBody.class);
+        }
+        codec.encode(writer, this.getBody(), EncoderContext.builder().build());
     }
 }

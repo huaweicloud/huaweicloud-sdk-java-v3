@@ -26,6 +26,11 @@ public class CreateLigandPreviewTaskReq {
 
     private Integer countLimit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "generate_3d")
+
+    private Boolean generate3d;
+
     public CreateLigandPreviewTaskReq withLigandFile(DrugFile ligandFile) {
         this.ligandFile = ligandFile;
         return this;
@@ -90,6 +95,23 @@ public class CreateLigandPreviewTaskReq {
         this.countLimit = countLimit;
     }
 
+    public CreateLigandPreviewTaskReq withGenerate3d(Boolean generate3d) {
+        this.generate3d = generate3d;
+        return this;
+    }
+
+    /**
+     * 是否生成3D构象，默认为true
+     * @return generate3d
+     */
+    public Boolean getGenerate3d() {
+        return generate3d;
+    }
+
+    public void setGenerate3d(Boolean generate3d) {
+        this.generate3d = generate3d;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -100,12 +122,12 @@ public class CreateLigandPreviewTaskReq {
         }
         CreateLigandPreviewTaskReq that = (CreateLigandPreviewTaskReq) obj;
         return Objects.equals(this.ligandFile, that.ligandFile) && Objects.equals(this.previewCount, that.previewCount)
-            && Objects.equals(this.countLimit, that.countLimit);
+            && Objects.equals(this.countLimit, that.countLimit) && Objects.equals(this.generate3d, that.generate3d);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ligandFile, previewCount, countLimit);
+        return Objects.hash(ligandFile, previewCount, countLimit, generate3d);
     }
 
     @Override
@@ -115,6 +137,7 @@ public class CreateLigandPreviewTaskReq {
         sb.append("    ligandFile: ").append(toIndentedString(ligandFile)).append("\n");
         sb.append("    previewCount: ").append(toIndentedString(previewCount)).append("\n");
         sb.append("    countLimit: ").append(toIndentedString(countLimit)).append("\n");
+        sb.append("    generate3d: ").append(toIndentedString(generate3d)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -6,6 +6,7 @@ import com.huaweicloud.sdk.corebson.SdkBsonDocResponse;
 
 import org.bson.BsonReader;
 import org.bson.Document;
+import org.bson.codecs.Codec;
 import org.bson.codecs.DecoderContext;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.annotations.BsonProperty;
@@ -43,6 +44,8 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
     @BsonProperty(value = "returned_kv_items")
 
     private List<ReturnedKvItem> returnedKvItems = null;
+
+    private static Codec<ScanSkeyKvResponse> codec;
 
     public ScanSkeyKvResponse withReturnedCount(Integer returnedCount) {
         this.returnedCount = returnedCount;
@@ -173,6 +176,9 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
 
     @Override
     protected Object decodeBody(CodecRegistry codecRegistry, BsonReader reader) {
-        return codecRegistry.get(ScanSkeyKvResponse.class).decode(reader, DecoderContext.builder().build());
+        if (codec == null) {
+            codec = codecRegistry.get(ScanSkeyKvResponse.class);
+        }
+        return codec.decode(reader, DecoderContext.builder().build());
     }
 }

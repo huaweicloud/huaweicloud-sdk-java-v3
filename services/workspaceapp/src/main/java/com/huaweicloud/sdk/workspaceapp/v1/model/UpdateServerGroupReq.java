@@ -66,6 +66,11 @@ public class UpdateServerGroupReq {
 
     private AppTypeEnum appType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_group_status")
+
+    private Boolean serverGroupStatus;
+
     public UpdateServerGroupReq withName(String name) {
         this.name = name;
         return this;
@@ -264,6 +269,23 @@ public class UpdateServerGroupReq {
         this.appType = appType;
     }
 
+    public UpdateServerGroupReq withServerGroupStatus(Boolean serverGroupStatus) {
+        this.serverGroupStatus = serverGroupStatus;
+        return this;
+    }
+
+    /**
+     * 服务器是否处于禁用状态： * `true` - 启用状态 * `false` - 禁用状态
+     * @return serverGroupStatus
+     */
+    public Boolean getServerGroupStatus() {
+        return serverGroupStatus;
+    }
+
+    public void setServerGroupStatus(Boolean serverGroupStatus) {
+        this.serverGroupStatus = serverGroupStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -280,7 +302,8 @@ public class UpdateServerGroupReq {
             && Objects.equals(this.imageType, that.imageType)
             && Objects.equals(this.systemDiskType, that.systemDiskType)
             && Objects.equals(this.systemDiskSize, that.systemDiskSize) && Objects.equals(this.ouName, that.ouName)
-            && Objects.equals(this.appType, that.appType);
+            && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.serverGroupStatus, that.serverGroupStatus);
     }
 
     @Override
@@ -295,7 +318,8 @@ public class UpdateServerGroupReq {
             systemDiskType,
             systemDiskSize,
             ouName,
-            appType);
+            appType,
+            serverGroupStatus);
     }
 
     @Override
@@ -313,6 +337,7 @@ public class UpdateServerGroupReq {
         sb.append("    systemDiskSize: ").append(toIndentedString(systemDiskSize)).append("\n");
         sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
+        sb.append("    serverGroupStatus: ").append(toIndentedString(serverGroupStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }
