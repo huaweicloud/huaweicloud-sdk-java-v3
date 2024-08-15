@@ -48,7 +48,7 @@ public class UploadMediaRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 文件类型。 - PUB_LOGO：上传服务号LOGO。支持jpg、bmp、png和jpeg格式，分辨率大于等于240*240且比例为1:1，大小不超过100K。 - BG_IMAGE：上传服务号主页背景图。分辨率大于等于1440*810。 - FASTAPP_LOGO：上传快应用LOGO。上传快应用LOGO。支持jpg、bmp和jpeg格式，分辨率大于等于192*192，大小不超过4M。 - OTHER：上传授权证明和营业执照等 
+     * 文件类型。 - PUB_LOGO：上传服务号LOGO。支持jpg、bmp、png和jpeg格式，分辨率大于等于240*240且比例为1:1，大小不超过100K。 - BG_IMAGE：上传服务号主页背景图。支持jpg、bmp、png和jpeg格式，分辨率大于等于1440*810且比例为16:9，大小不超过4M。 - FASTAPP_LOGO：上传快应用LOGO。支持jpg、bmp、png和jpeg格式，分辨率大于等于192*192且比例为1:1，大小不超过4M。 - OTHER：上传授权证明和营业执照等 
      * @return fileType
      */
     public String getFileType() {

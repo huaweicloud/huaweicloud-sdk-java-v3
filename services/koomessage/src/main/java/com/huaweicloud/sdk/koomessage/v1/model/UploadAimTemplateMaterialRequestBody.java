@@ -141,7 +141,7 @@ public class UploadAimTemplateMaterialRequestBody {
     }
 
     /**
-     * 图像比例。 - oneToOne：指1:1比例 - sixteenToNine：指16:9比例 - threeToOne：指3:1比例 - fortyEightToSixtyFive：指48:65比例 - twentyOneToNine：指21:9比例  > resource type=image时，image_rate必填。 
+     * 图像比例。 - oneToOne：指1:1比例 - sixteenToNine：指16:9比例 - threeToOne：指3:1比例 - fortyEightToSixtyFive：指48:65比例 - twentyOneToNine：指21:9比例 - threeToFour：指3:4比例  > resource type=image时，image_rate必填。 
      * @return imageRate
      */
     public String getImageRate() {

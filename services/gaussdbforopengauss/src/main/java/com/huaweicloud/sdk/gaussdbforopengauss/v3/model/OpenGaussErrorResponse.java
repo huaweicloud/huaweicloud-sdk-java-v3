@@ -26,7 +26,7 @@ public class OpenGaussErrorResponse {
     }
 
     /**
-     * 错误码
+     * 错误码。
      * @return errorCode
      */
     public String getErrorCode() {

@@ -90,6 +90,16 @@ public class PubDetail {
 
     private String pubRemark;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "approve_state")
+
+    private Integer approveState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "areas_for_auto_get_port")
+
+    private List<String> areasForAutoGetPort = null;
+
     public PubDetail withPubId(String pubId) {
         this.pubId = pubId;
         return this;
@@ -377,6 +387,56 @@ public class PubDetail {
         this.pubRemark = pubRemark;
     }
 
+    public PubDetail withApproveState(Integer approveState) {
+        this.approveState = approveState;
+        return this;
+    }
+
+    /**
+     * 审核状态。 - 1：审核中 - 2：审核通过 - 3：驳回 
+     * @return approveState
+     */
+    public Integer getApproveState() {
+        return approveState;
+    }
+
+    public void setApproveState(Integer approveState) {
+        this.approveState = approveState;
+    }
+
+    public PubDetail withAreasForAutoGetPort(List<String> areasForAutoGetPort) {
+        this.areasForAutoGetPort = areasForAutoGetPort;
+        return this;
+    }
+
+    public PubDetail addAreasForAutoGetPortItem(String areasForAutoGetPortItem) {
+        if (this.areasForAutoGetPort == null) {
+            this.areasForAutoGetPort = new ArrayList<>();
+        }
+        this.areasForAutoGetPort.add(areasForAutoGetPortItem);
+        return this;
+    }
+
+    public PubDetail withAreasForAutoGetPort(Consumer<List<String>> areasForAutoGetPortSetter) {
+        if (this.areasForAutoGetPort == null) {
+            this.areasForAutoGetPort = new ArrayList<>();
+        }
+        areasForAutoGetPortSetter.accept(this.areasForAutoGetPort);
+        return this;
+    }
+
+    /**
+     * 自动收集端口生效的地区列表。地区取值见《地区名称列表》。 
+     * @return areasForAutoGetPort
+     */
+    public List<String> getAreasForAutoGetPort() {
+        return areasForAutoGetPort;
+    }
+
+    public void setAreasForAutoGetPort(List<String> areasForAutoGetPort) {
+        this.areasForAutoGetPort = areasForAutoGetPort;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -394,7 +454,9 @@ public class PubDetail {
             && Objects.equals(this.autoGetPort, that.autoGetPort) && Objects.equals(this.industry, that.industry)
             && Objects.equals(this.pubAbstract, that.pubAbstract)
             && Objects.equals(this.signsForAutoGetPort, that.signsForAutoGetPort)
-            && Objects.equals(this.companyId, that.companyId) && Objects.equals(this.pubRemark, that.pubRemark);
+            && Objects.equals(this.companyId, that.companyId) && Objects.equals(this.pubRemark, that.pubRemark)
+            && Objects.equals(this.approveState, that.approveState)
+            && Objects.equals(this.areasForAutoGetPort, that.areasForAutoGetPort);
     }
 
     @Override
@@ -413,7 +475,9 @@ public class PubDetail {
             pubAbstract,
             signsForAutoGetPort,
             companyId,
-            pubRemark);
+            pubRemark,
+            approveState,
+            areasForAutoGetPort);
     }
 
     @Override
@@ -435,6 +499,8 @@ public class PubDetail {
         sb.append("    signsForAutoGetPort: ").append(toIndentedString(signsForAutoGetPort)).append("\n");
         sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
         sb.append("    pubRemark: ").append(toIndentedString(pubRemark)).append("\n");
+        sb.append("    approveState: ").append(toIndentedString(approveState)).append("\n");
+        sb.append("    areasForAutoGetPort: ").append(toIndentedString(areasForAutoGetPort)).append("\n");
         sb.append("}");
         return sb.toString();
     }

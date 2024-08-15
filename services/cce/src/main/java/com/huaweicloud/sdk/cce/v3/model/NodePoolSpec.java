@@ -127,7 +127,7 @@ public class NodePoolSpec {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extensionScaleGroups")
 
-    private ExtensionScaleGroup extensionScaleGroups;
+    private List<ExtensionScaleGroup> extensionScaleGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "customSecurityGroups")
@@ -279,29 +279,36 @@ public class NodePoolSpec {
         this.podSecurityGroups = podSecurityGroups;
     }
 
-    public NodePoolSpec withExtensionScaleGroups(ExtensionScaleGroup extensionScaleGroups) {
+    public NodePoolSpec withExtensionScaleGroups(List<ExtensionScaleGroup> extensionScaleGroups) {
         this.extensionScaleGroups = extensionScaleGroups;
         return this;
     }
 
-    public NodePoolSpec withExtensionScaleGroups(Consumer<ExtensionScaleGroup> extensionScaleGroupsSetter) {
+    public NodePoolSpec addExtensionScaleGroupsItem(ExtensionScaleGroup extensionScaleGroupsItem) {
         if (this.extensionScaleGroups == null) {
-            this.extensionScaleGroups = new ExtensionScaleGroup();
-            extensionScaleGroupsSetter.accept(this.extensionScaleGroups);
+            this.extensionScaleGroups = new ArrayList<>();
         }
+        this.extensionScaleGroups.add(extensionScaleGroupsItem);
+        return this;
+    }
 
+    public NodePoolSpec withExtensionScaleGroups(Consumer<List<ExtensionScaleGroup>> extensionScaleGroupsSetter) {
+        if (this.extensionScaleGroups == null) {
+            this.extensionScaleGroups = new ArrayList<>();
+        }
+        extensionScaleGroupsSetter.accept(this.extensionScaleGroups);
         return this;
     }
 
     /**
-     * Get extensionScaleGroups
+     * 节点池扩展伸缩组配置列表，详情参见ExtensionScaleGroup类型定义
      * @return extensionScaleGroups
      */
-    public ExtensionScaleGroup getExtensionScaleGroups() {
+    public List<ExtensionScaleGroup> getExtensionScaleGroups() {
         return extensionScaleGroups;
     }
 
-    public void setExtensionScaleGroups(ExtensionScaleGroup extensionScaleGroups) {
+    public void setExtensionScaleGroups(List<ExtensionScaleGroup> extensionScaleGroups) {
         this.extensionScaleGroups = extensionScaleGroups;
     }
 

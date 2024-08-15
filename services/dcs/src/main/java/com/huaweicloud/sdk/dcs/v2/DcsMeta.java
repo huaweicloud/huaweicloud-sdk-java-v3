@@ -15,6 +15,9 @@ import com.huaweicloud.sdk.dcs.v2.model.BatchCreateOrDeleteTagsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.BatchDeleteBody;
 import com.huaweicloud.sdk.dcs.v2.model.BatchDeleteInstancesRequest;
 import com.huaweicloud.sdk.dcs.v2.model.BatchDeleteInstancesResponse;
+import com.huaweicloud.sdk.dcs.v2.model.BatchRestartOnlineMigrationTasksBody;
+import com.huaweicloud.sdk.dcs.v2.model.BatchRestartOnlineMigrationTasksRequest;
+import com.huaweicloud.sdk.dcs.v2.model.BatchRestartOnlineMigrationTasksResponse;
 import com.huaweicloud.sdk.dcs.v2.model.BatchShowNodesInformationRequest;
 import com.huaweicloud.sdk.dcs.v2.model.BatchShowNodesInformationResponse;
 import com.huaweicloud.sdk.dcs.v2.model.BatchStopMigrationTasksBody;
@@ -343,6 +346,33 @@ public class DcsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(BatchDeleteBody.class),
             f -> f.withMarshaller(BatchDeleteInstancesRequest::getBody, BatchDeleteInstancesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchRestartOnlineMigrationTasksRequest, BatchRestartOnlineMigrationTasksResponse> batchRestartOnlineMigrationTasks =
+        genForBatchRestartOnlineMigrationTasks();
+
+    private static HttpRequestDef<BatchRestartOnlineMigrationTasksRequest, BatchRestartOnlineMigrationTasksResponse> genForBatchRestartOnlineMigrationTasks() {
+        // basic
+        HttpRequestDef.Builder<BatchRestartOnlineMigrationTasksRequest, BatchRestartOnlineMigrationTasksResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchRestartOnlineMigrationTasksRequest.class,
+                    BatchRestartOnlineMigrationTasksResponse.class)
+                .withName("BatchRestartOnlineMigrationTasks")
+                .withUri("/v2/{project_id}/migration-tasks/batch-restart")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchRestartOnlineMigrationTasksBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchRestartOnlineMigrationTasksBody.class),
+            f -> f.withMarshaller(BatchRestartOnlineMigrationTasksRequest::getBody,
+                BatchRestartOnlineMigrationTasksRequest::setBody));
 
         // response
 

@@ -35,7 +35,7 @@ public class ListListenersResponse extends SdkResponse {
     }
 
     /**
-     * 请求ID。  注：自动生成 。
+     * 参数解释：请求ID。  注：自动生成 。
      * @return requestId
      */
     public String getRequestId() {
@@ -94,7 +94,7 @@ public class ListListenersResponse extends SdkResponse {
     }
 
     /**
-     * Listener的列表。
+     * 参数解释：Listener的列表。
      * @return listeners
      */
     public List<Listener> getListeners() {

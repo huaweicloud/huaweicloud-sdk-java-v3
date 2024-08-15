@@ -355,7 +355,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查的管理状态。  取值： - true：表示开启健康检查，默认为true。 - false表示关闭健康检查。
+     * 参数解释：健康检查的管理状态。  取值范围： - true：表示开启健康检查。 - false表示关闭健康检查。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -438,7 +438,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。  支持多值查询，查询条件格式：*****type=xxx&type=xxx*****。
+     * 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和gRPC。  支持多值查询，查询条件格式：*****type=xxx&type=xxx*****。
      * @return type
      */
     public List<String> getType() {
@@ -471,7 +471,7 @@ public class ListHealthMonitorsRequest {
     }
 
     /**
-     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：200。  仅支持HTTP/HTTPS/GRPC设置该字段，其他协议设置不会生效。  支持多值查询，查询条件格式：****expected_codes=xxx&expected_codes=xxx****。
+     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：200。  仅支持HTTP/HTTPS/gRPC设置该字段，其他协议设置不会生效。  支持多值查询，查询条件格式：****expected_codes=xxx&expected_codes=xxx****。
      * @return expectedCodes
      */
     public List<String> getExpectedCodes() {

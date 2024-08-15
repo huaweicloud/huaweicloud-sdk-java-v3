@@ -4,6 +4,7 @@ import com.huaweicloud.sdk.cdm.v1.model.CdmCreateAndUpdateLinkReq;
 import com.huaweicloud.sdk.cdm.v1.model.CdmCreateClusterReq;
 import com.huaweicloud.sdk.cdm.v1.model.CdmCreateJobJsonReq;
 import com.huaweicloud.sdk.cdm.v1.model.CdmDeleteClusterReq;
+import com.huaweicloud.sdk.cdm.v1.model.CdmModifyClusterReq;
 import com.huaweicloud.sdk.cdm.v1.model.CdmRandomCreateAndStartJobJsonReq;
 import com.huaweicloud.sdk.cdm.v1.model.CdmRestartClusterReq;
 import com.huaweicloud.sdk.cdm.v1.model.CdmStartClusterReq;
@@ -26,10 +27,26 @@ import com.huaweicloud.sdk.cdm.v1.model.DeleteLinkRequest;
 import com.huaweicloud.sdk.cdm.v1.model.DeleteLinkResponse;
 import com.huaweicloud.sdk.cdm.v1.model.ListClustersRequest;
 import com.huaweicloud.sdk.cdm.v1.model.ListClustersResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ModifyClusterRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ModifyClusterResponse;
 import com.huaweicloud.sdk.cdm.v1.model.RestartClusterRequest;
 import com.huaweicloud.sdk.cdm.v1.model.RestartClusterResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowAvailabilityZonesRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowAvailabilityZonesResponse;
 import com.huaweicloud.sdk.cdm.v1.model.ShowClusterDetailRequest;
 import com.huaweicloud.sdk.cdm.v1.model.ShowClusterDetailResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowClusterEnterpriseProjectsRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowClusterEnterpriseProjectsResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowDatastoresRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowDatastoresResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowEnterpriseProjectsRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowEnterpriseProjectsResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowFlavorDetailRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowFlavorDetailResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowFlavorsRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowFlavorsResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowInstanceDetailRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowInstanceDetailResponse;
 import com.huaweicloud.sdk.cdm.v1.model.ShowJobStatusRequest;
 import com.huaweicloud.sdk.cdm.v1.model.ShowJobStatusResponse;
 import com.huaweicloud.sdk.cdm.v1.model.ShowJobsRequest;
@@ -278,6 +295,39 @@ public class CdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyClusterRequest, ModifyClusterResponse> modifyCluster =
+        genForModifyCluster();
+
+    private static HttpRequestDef<ModifyClusterRequest, ModifyClusterResponse> genForModifyCluster() {
+        // basic
+        HttpRequestDef.Builder<ModifyClusterRequest, ModifyClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ModifyClusterRequest.class, ModifyClusterResponse.class)
+                .withName("ModifyCluster")
+                .withUri("/v1.1/{project_id}/cluster/modify/{cluster_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyClusterRequest::getClusterId, ModifyClusterRequest::setClusterId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyClusterRequest::getXLanguage, ModifyClusterRequest::setXLanguage));
+        builder.<CdmModifyClusterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CdmModifyClusterReq.class),
+            f -> f.withMarshaller(ModifyClusterRequest::getBody, ModifyClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RestartClusterRequest, RestartClusterResponse> restartCluster =
         genForRestartCluster();
 
@@ -306,6 +356,30 @@ public class CdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAvailabilityZonesRequest, ShowAvailabilityZonesResponse> showAvailabilityZones =
+        genForShowAvailabilityZones();
+
+    private static HttpRequestDef<ShowAvailabilityZonesRequest, ShowAvailabilityZonesResponse> genForShowAvailabilityZones() {
+        // basic
+        HttpRequestDef.Builder<ShowAvailabilityZonesRequest, ShowAvailabilityZonesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAvailabilityZonesRequest.class, ShowAvailabilityZonesResponse.class)
+            .withName("ShowAvailabilityZones")
+            .withUri("/v1.1/{project_id}/regions/{region_id}/availability_zones")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAvailabilityZonesRequest::getRegionId,
+                ShowAvailabilityZonesRequest::setRegionId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowClusterDetailRequest, ShowClusterDetailResponse> showClusterDetail =
         genForShowClusterDetail();
 
@@ -323,6 +397,137 @@ public class CdmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterDetailRequest::getClusterId, ShowClusterDetailRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClusterEnterpriseProjectsRequest, ShowClusterEnterpriseProjectsResponse> showClusterEnterpriseProjects =
+        genForShowClusterEnterpriseProjects();
+
+    private static HttpRequestDef<ShowClusterEnterpriseProjectsRequest, ShowClusterEnterpriseProjectsResponse> genForShowClusterEnterpriseProjects() {
+        // basic
+        HttpRequestDef.Builder<ShowClusterEnterpriseProjectsRequest, ShowClusterEnterpriseProjectsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowClusterEnterpriseProjectsRequest.class,
+                    ShowClusterEnterpriseProjectsResponse.class)
+                .withName("ShowClusterEnterpriseProjects")
+                .withUri("/v1.1/{project_id}/clusters/{cluster_id}/enterprise-projects")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusterEnterpriseProjectsRequest::getClusterId,
+                ShowClusterEnterpriseProjectsRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDatastoresRequest, ShowDatastoresResponse> showDatastores =
+        genForShowDatastores();
+
+    private static HttpRequestDef<ShowDatastoresRequest, ShowDatastoresResponse> genForShowDatastores() {
+        // basic
+        HttpRequestDef.Builder<ShowDatastoresRequest, ShowDatastoresResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDatastoresRequest.class, ShowDatastoresResponse.class)
+                .withName("ShowDatastores")
+                .withUri("/v1.1/{project_id}/datastores")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEnterpriseProjectsRequest, ShowEnterpriseProjectsResponse> showEnterpriseProjects =
+        genForShowEnterpriseProjects();
+
+    private static HttpRequestDef<ShowEnterpriseProjectsRequest, ShowEnterpriseProjectsResponse> genForShowEnterpriseProjects() {
+        // basic
+        HttpRequestDef.Builder<ShowEnterpriseProjectsRequest, ShowEnterpriseProjectsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowEnterpriseProjectsRequest.class, ShowEnterpriseProjectsResponse.class)
+            .withName("ShowEnterpriseProjects")
+            .withUri("/v1.1/{project_id}/enterprise-projects")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlavorDetailRequest, ShowFlavorDetailResponse> showFlavorDetail =
+        genForShowFlavorDetail();
+
+    private static HttpRequestDef<ShowFlavorDetailRequest, ShowFlavorDetailResponse> genForShowFlavorDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowFlavorDetailRequest, ShowFlavorDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlavorDetailRequest.class, ShowFlavorDetailResponse.class)
+                .withName("ShowFlavorDetail")
+                .withUri("/v1.1/{project_id}/flavors/{flavor_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flavor_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlavorDetailRequest::getFlavorId, ShowFlavorDetailRequest::setFlavorId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFlavorsRequest, ShowFlavorsResponse> showFlavors = genForShowFlavors();
+
+    private static HttpRequestDef<ShowFlavorsRequest, ShowFlavorsResponse> genForShowFlavors() {
+        // basic
+        HttpRequestDef.Builder<ShowFlavorsRequest, ShowFlavorsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFlavorsRequest.class, ShowFlavorsResponse.class)
+                .withName("ShowFlavors")
+                .withUri("/v1.1/{project_id}/datastores/{datastore_id}/flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("datastore_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFlavorsRequest::getDatastoreId, ShowFlavorsRequest::setDatastoreId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceDetailRequest, ShowInstanceDetailResponse> showInstanceDetail =
+        genForShowInstanceDetail();
+
+    private static HttpRequestDef<ShowInstanceDetailRequest, ShowInstanceDetailResponse> genForShowInstanceDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceDetailRequest, ShowInstanceDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceDetailRequest.class, ShowInstanceDetailResponse.class)
+                .withName("ShowInstanceDetail")
+                .withUri("/v1.1/{project_id}/instances/{instance_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceDetailRequest::getInstanceId, ShowInstanceDetailRequest::setInstanceId));
 
         // response
 

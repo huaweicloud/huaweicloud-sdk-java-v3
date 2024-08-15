@@ -96,7 +96,7 @@ public class Quota {
     }
 
     /**
-     * 项目ID。
+     * 参数解释：项目ID。
      * @return projectId
      */
     public String getProjectId() {

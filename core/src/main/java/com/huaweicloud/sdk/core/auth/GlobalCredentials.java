@@ -70,7 +70,7 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
     Map<String, Object> getPathParams() {
         Map<String, Object> pathParam = new LinkedHashMap<>();
-        if (Objects.nonNull(domainId)) {
+        if (!StringUtils.isEmpty(domainId)) {
             pathParam.put(Constants.DOMAIN_ID, domainId);
         }
         return pathParam;
@@ -96,9 +96,9 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
 
             // Confirm if current ak has been cached in AuthCache, key of authMap when searching domain info is ak
             String akWithName = getAk();
-            if (Objects.nonNull(AuthCache.getAuth(akWithName))
-                    && !StringUtils.isEmpty(AuthCache.getAuth(akWithName))) {
-                domainId = AuthCache.getAuth(akWithName);
+            String cachedDomainId = AuthCache.getAuth(akWithName);
+            if (!StringUtils.isEmpty(cachedDomainId)) {
+                domainId = cachedDomainId;
                 return this;
             }
 
@@ -144,16 +144,16 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
             updateSecurityTokenFromMetadata();
         }
 
-        if (Objects.nonNull(getDomainId())) {
+        if (!StringUtils.isEmpty(getDomainId())) {
             builder.addHeader(Constants.X_DOMAIN_ID, getDomainId());
         }
 
-        if (Objects.nonNull(authToken)) {
+        if (!StringUtils.isEmpty(authToken)) {
             builder.addHeader(Constants.X_AUTH_TOKEN, authToken);
             return builder.build();
         }
 
-        if (Objects.nonNull(getSecurityToken())) {
+        if (!StringUtils.isEmpty(getSecurityToken())) {
             builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
         }
 

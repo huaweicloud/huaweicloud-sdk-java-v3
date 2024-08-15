@@ -92,7 +92,7 @@ public class BatchUpdateMembersOption {
     }
 
     /**
-     * 后端服务器端口号。
+     * 后端服务器端口。  在开启端口透传的pool下的member，该字段无法更新。  [网关型LB，即pool协议为IP时，protocol_port必须设置为0。](tag:hws_eu)
      * minimum: 1
      * maximum: 65535
      * @return protocolPort

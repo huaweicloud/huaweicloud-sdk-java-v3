@@ -31,7 +31,7 @@ public class GlobalEipInfo {
     }
 
     /**
-     * global eip的id
+     * 参数解释：global eip的id
      * @return globalEipId
      */
     public String getGlobalEipId() {
@@ -48,7 +48,7 @@ public class GlobalEipInfo {
     }
 
     /**
-     * global eip的ip地址
+     * 参数解释：global eip的ip地址
      * @return globalEipAddress
      */
     public String getGlobalEipAddress() {
@@ -65,7 +65,7 @@ public class GlobalEipInfo {
     }
 
     /**
-     * IP版本信息。 取值范围：4和6 4：IPv4 6：IPv6 [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+     * 参数解释：IP版本信息。  取值范围： - 4，表示IPv4 - 6，表示IPv6  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
      * @return ipVersion
      */
     public Integer getIpVersion() {

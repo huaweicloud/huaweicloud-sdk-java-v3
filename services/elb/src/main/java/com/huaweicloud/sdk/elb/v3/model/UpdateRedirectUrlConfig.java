@@ -12,12 +12,12 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 转发到的url配置。  当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。  当action为REDIRECT_TO_URL时生效，且为必选字段，其他action不可指定，否则报错。  格式：protocol://host:port/path?query  protocol、host、port、path不允许同时不传或同时传${xxx} （${xxx}表示原值，如${host}表示被转发的请求URL的host部分）。 protocol和port传入的值不能与l7policy关联的监听器一致且host、path同时不传或同时传${xxx}。   [共享型负载均衡器下的转发策略不支持该字段，传入会报错。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt)  [不支持该字段，请勿使用。](tag:hcso_dt) [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
+ * 参数解释：转发到的url配置。  约束限制： - 当监听器的高级转发策略功能（enhance_l7policy_enable）开启后才会生效，未开启传入该字段会报错。 - 当转发策略的action为REDIRECT_TO_URL时生效，且为必选字段，其他action不可指定，否则报错。 [- 共享型负载均衡器下的转发策略不支持该字段，传入会报错。](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt)  取值范围：格式：protocol://host:port/path?query  protocol、host、port、path不允许同时不传或同时传${xxx} （${xxx}表示原值，如${host}表示被转发的请求URL的host部分）。 protocol和port传入的值不能与l7policy关联的监听器一致且host、path同时不传或同时传${xxx}。  [不支持该字段，请勿使用。](tag:hcso_dt)  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
  */
 public class UpdateRedirectUrlConfig {
 
     /**
-     * 重定向的协议。默认值${protocol}表示继承原值（即与被转发请求保持一致）。  取值范围： - HTTP - HTTPS - ${protocol}
+     * 参数解释：重定向的协议。  取值范围： - HTTP - HTTPS - ${protocol}，表示继承原值（即与被转发请求保持一致）。
      */
     public static final class ProtocolEnum {
 
@@ -118,7 +118,7 @@ public class UpdateRedirectUrlConfig {
     private String query;
 
     /**
-     * 重定向后的返回码。  取值范围： - 301 - 302 - 303 - 307 - 308
+     * 参数解释：重定向后的返回码。  取值范围： - 301 - 302 - 303 - 307 - 308
      */
     public static final class StatusCodeEnum {
 
@@ -226,7 +226,7 @@ public class UpdateRedirectUrlConfig {
     }
 
     /**
-     * 重定向的协议。默认值${protocol}表示继承原值（即与被转发请求保持一致）。  取值范围： - HTTP - HTTPS - ${protocol}
+     * 参数解释：重定向的协议。  取值范围： - HTTP - HTTPS - ${protocol}，表示继承原值（即与被转发请求保持一致）。
      * @return protocol
      */
     public ProtocolEnum getProtocol() {
@@ -243,7 +243,7 @@ public class UpdateRedirectUrlConfig {
     }
 
     /**
-     * 重定向的主机名。字符串只能包含英文字母、数字、“-”、“.”，必须以字母、数字开头。 默认值${host}表示继承原值（即与被转发请求保持一致）。
+     * 参数解释：重定向的主机名。  取值范围：字符串只能包含英文字母、数字、“-”、“.”，必须以字母、数字开头。  默认取值：${host}，表示继承原值（即与被转发请求保持一致）。
      * @return host
      */
     public String getHost() {
@@ -260,7 +260,7 @@ public class UpdateRedirectUrlConfig {
     }
 
     /**
-     * 重定向到的端口。默认值${port}表示继承原值（即与被转发请求保持一致）。
+     * 参数解释：重定向到的端口。  默认取值：${port}表示继承原值（即与被转发请求保持一致）。
      * @return port
      */
     public String getPort() {
@@ -277,7 +277,7 @@ public class UpdateRedirectUrlConfig {
     }
 
     /**
-     * 重定向的路径。默认值${path}表示继承原值（即与被转发请求保持一致）。  只能包含英文字母、数字、_~';@^-%#&$.*+?,=!:|\\/()\\[\\]{}，且必须以\"/\"开头
+     * 参数解释：重定向的路径。  取值范围：只能包含英文字母、数字、_~';@^-%#&$.\\*+?,=!:|\\/()\\[\\]{}，且必须以\"/\"开头。  默认取值：${path}，表示继承原值（即与被转发请求保持一致）。
      * @return path
      */
     public String getPath() {
@@ -294,7 +294,7 @@ public class UpdateRedirectUrlConfig {
     }
 
     /**
-     * 重定向的查询字符串。默认${query}表示继承原值（即与被转发请求保持一致）。举例如下：  若该字段被设置为：${query}&name=my_name，则在转发符合条件的URL （如https://www.example.com:8080/elb?type=loadbalancer， 此时${query}表示type=loadbalancer）时，将会重定向到 https://www.example.com:8080/elb?type=loadbalancer&name=my_name。其中$1，$2会匹配请求url通配符星号（*）。  只能包含英文字母、数字和特殊字符：!$&'()*+,-./:;=?@^_`。字母区分大小写。
+     * 参数解释：重定向的查询字符串。举例如下：  将query设置为：${query}&name=my_name，则在转发符合条件的URL （如https://www.example.com:8080/elb?type=loadbalancer）时，将会重定向到 https://www.example.com:8080/elb?type=loadbalancer&name=my_name。在例子中${query}表示type=loadbalancer。  取值范围：只能包含英文字母、数字和特殊字符：!$&'()\\*+,-./:;=?@^_`。字母区分大小写。其中$1，$2会匹配请求url通配符星号（\\*）  默认取值：${query}表示继承原值（即与被转发请求保持一致）
      * @return query
      */
     public String getQuery() {
@@ -311,7 +311,7 @@ public class UpdateRedirectUrlConfig {
     }
 
     /**
-     * 重定向后的返回码。  取值范围： - 301 - 302 - 303 - 307 - 308
+     * 参数解释：重定向后的返回码。  取值范围： - 301 - 302 - 303 - 307 - 308
      * @return statusCode
      */
     public StatusCodeEnum getStatusCode() {

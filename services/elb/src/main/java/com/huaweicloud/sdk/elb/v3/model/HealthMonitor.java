@@ -104,7 +104,7 @@ public class HealthMonitor {
     }
 
     /**
-     * 健康检查的管理状态。  取值： - true：表示开启健康检查，默认为true。 - false表示关闭健康检查。
+     * 健康检查的管理状态。  取值范围： - true：表示开启健康检查。 - false表示关闭健康检查。  默认取值：true。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -157,7 +157,7 @@ public class HealthMonitor {
     }
 
     /**
-     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：若健康检查type为gRPC，则默认值为0,；其他为200。  仅支持HTTP/HTTPS/GRPC设置该字段，其他协议设置不会生效。
+     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：若健康检查type为gRPC，则默认值为0,；其他为200。  仅支持HTTP/HTTPS/gRPC设置该字段，其他协议设置不会生效。
      * @return expectedCodes
      */
     public String getExpectedCodes() {
@@ -246,7 +246,7 @@ public class HealthMonitor {
     }
 
     /**
-     * 健康检查端口号。取值：1-65535，默认为空，表示使用后端云服务器端口号。
+     * 健康检查端口号。取值：1-65535，默认为空，表示使用后端云服务器端口号。[当pool协议为IP时，monitor_port必须指定为非0值。](tag:hws_eu)
      * minimum: 1
      * maximum: 65535
      * @return monitorPort
@@ -351,7 +351,7 @@ public class HealthMonitor {
     }
 
     /**
-     * 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和GRPC。  使用说明： - 若pool的protocol为QUIC，则type只能是UDP_CONNECT。 - 若pool的protocol为UDP，则type只能UDP_CONNECT。 - 若pool的protocol为TCP，则type可以是TCP、HTTP、HTTPS。 - 若pool的protocol为HTTP，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 - 若pool的protocol为HTTPS，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 - 若pool的protocol为GRPC，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。 - 若pool的protocol为TLS，则type可以是TCP、HTTP、HTTPS、TLS、GRPC。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
+     * 健康检查请求协议。  取值：TCP、UDP_CONNECT、HTTP、HTTPS、TLS和gRPC。  使用说明： - 若pool的protocol为QUIC，则type只能是UDP_CONNECT。 - 若pool的protocol为UDP，则type只能UDP_CONNECT。 - 若pool的protocol为TCP，则type可以是TCP、HTTP、HTTPS。 [- 若pool的protocol为IP，则type可以是TCP、HTTP、HTTPS。](tag:hws_eu) - 若pool的protocol为HTTP，则type可以是TCP、HTTP、HTTPS、TLS、gRPC。 - 若pool的protocol为HTTPS，则type可以是TCP、HTTP、HTTPS、TLS、gRPC。 - 若pool的protocol为gRPC，则type可以是TCP、HTTP、HTTPS、TLS、gRPC。 - 若pool的protocol为TLS，则type可以是TCP、HTTP、HTTPS、TLS、gRPC。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
      * @return type
      */
     public String getType() {

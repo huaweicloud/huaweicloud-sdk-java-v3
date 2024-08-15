@@ -21,7 +21,7 @@ public class RuleRef {
     }
 
     /**
-     * 规则ID。
+     * 参数解释：规则ID。
      * @return id
      */
     public String getId() {

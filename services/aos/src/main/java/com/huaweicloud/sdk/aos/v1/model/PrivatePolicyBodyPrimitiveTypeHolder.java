@@ -21,7 +21,7 @@ public class PrivatePolicyBodyPrimitiveTypeHolder {
     }
 
     /**
-     * 策略内容。仅支持OPA开源引擎识别的，以rego（https://www.openpolicyagent.org/docs/latest/policy-language/）语言编写的策略模板。  policy_body和policy_uri 必须有且只有一个存在
+     * 策略内容。仅支持OPA开源引擎识别的，以Rego（https://www.openpolicyagent.org/docs/latest/policy-language/）语言编写的策略模板。  policy_body和policy_uri 必须有且只有一个存在
      * @return policyBody
      */
     public String getPolicyBody() {

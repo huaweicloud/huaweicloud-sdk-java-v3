@@ -348,7 +348,7 @@ public class ListMasterSlavePoolsRequest {
     }
 
     /**
-     * 后端云服务器组的后端协议。  取值：TCP、UDP、[IP、](tag:hws_eu)TLS、GRPC、HTTP、HTTPS和QUIC。 IP类型为网关型LB独有的后端服务器组协议。  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
+     * 后端云服务器组的后端协议。  取值：TCP、UDP、[IP、](tag:hws_eu)TLS、gRPC、HTTP、HTTPS和QUIC。 [IP类型为网关型LB独有的后端服务器组协议。](tag:hws_eu)  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
      * @return protocol
      */
     public List<String> getProtocol() {

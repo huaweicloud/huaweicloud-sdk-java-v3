@@ -54,6 +54,11 @@ public class UpdatePubInfoRequestBody {
     private List<String> signsForAutoGetPort = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "areas_for_auto_get_port")
+
+    private List<String> areasForAutoGetPort = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "industry")
 
     private Integer industry;
@@ -165,7 +170,7 @@ public class UpdatePubInfoRequestBody {
     }
 
     /**
-     * 服务号摘要。
+     * 服务号备注。
      * @return pubRemark
      */
     public String getPubRemark() {
@@ -228,6 +233,39 @@ public class UpdatePubInfoRequestBody {
         this.signsForAutoGetPort = signsForAutoGetPort;
     }
 
+    public UpdatePubInfoRequestBody withAreasForAutoGetPort(List<String> areasForAutoGetPort) {
+        this.areasForAutoGetPort = areasForAutoGetPort;
+        return this;
+    }
+
+    public UpdatePubInfoRequestBody addAreasForAutoGetPortItem(String areasForAutoGetPortItem) {
+        if (this.areasForAutoGetPort == null) {
+            this.areasForAutoGetPort = new ArrayList<>();
+        }
+        this.areasForAutoGetPort.add(areasForAutoGetPortItem);
+        return this;
+    }
+
+    public UpdatePubInfoRequestBody withAreasForAutoGetPort(Consumer<List<String>> areasForAutoGetPortSetter) {
+        if (this.areasForAutoGetPort == null) {
+            this.areasForAutoGetPort = new ArrayList<>();
+        }
+        areasForAutoGetPortSetter.accept(this.areasForAutoGetPort);
+        return this;
+    }
+
+    /**
+     * 自动收集端口生效的地区列表。地区取值见《地区名称列表》。  > auto_get_port为1时，该字段有效。不填则默认全国，不允许传入重叠地区。 
+     * @return areasForAutoGetPort
+     */
+    public List<String> getAreasForAutoGetPort() {
+        return areasForAutoGetPort;
+    }
+
+    public void setAreasForAutoGetPort(List<String> areasForAutoGetPort) {
+        this.areasForAutoGetPort = areasForAutoGetPort;
+    }
+
     public UpdatePubInfoRequestBody withIndustry(Integer industry) {
         this.industry = industry;
         return this;
@@ -261,6 +299,7 @@ public class UpdatePubInfoRequestBody {
             && Objects.equals(this.pubName, that.pubName) && Objects.equals(this.pubAbstract, that.pubAbstract)
             && Objects.equals(this.pubRemark, that.pubRemark) && Objects.equals(this.autoGetPort, that.autoGetPort)
             && Objects.equals(this.signsForAutoGetPort, that.signsForAutoGetPort)
+            && Objects.equals(this.areasForAutoGetPort, that.areasForAutoGetPort)
             && Objects.equals(this.industry, that.industry);
     }
 
@@ -274,6 +313,7 @@ public class UpdatePubInfoRequestBody {
             pubRemark,
             autoGetPort,
             signsForAutoGetPort,
+            areasForAutoGetPort,
             industry);
     }
 
@@ -289,6 +329,7 @@ public class UpdatePubInfoRequestBody {
         sb.append("    pubRemark: ").append(toIndentedString(pubRemark)).append("\n");
         sb.append("    autoGetPort: ").append(toIndentedString(autoGetPort)).append("\n");
         sb.append("    signsForAutoGetPort: ").append(toIndentedString(signsForAutoGetPort)).append("\n");
+        sb.append("    areasForAutoGetPort: ").append(toIndentedString(areasForAutoGetPort)).append("\n");
         sb.append("    industry: ").append(toIndentedString(industry)).append("\n");
         sb.append("}");
         return sb.toString();

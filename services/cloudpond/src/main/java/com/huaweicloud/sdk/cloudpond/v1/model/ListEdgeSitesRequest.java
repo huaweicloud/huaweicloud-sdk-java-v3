@@ -34,6 +34,11 @@ public class ListEdgeSitesRequest {
     private List<String> sortDir = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private List<String> enterpriseProjectId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private List<String> id = null;
@@ -153,6 +158,39 @@ public class ListEdgeSitesRequest {
 
     public void setSortDir(List<String> sortDir) {
         this.sortDir = sortDir;
+    }
+
+    public ListEdgeSitesRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    public ListEdgeSitesRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
+    }
+
+    public ListEdgeSitesRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
+
+    /**
+     * 企业项目ID。可以使用该字段过滤某个企业项目下的边缘小站。 最大长度36字节，带“-”连字符的UUID格式，或者是字符串“0”。“0”表示默认企业项目。 若需要查询当前用户所有企业项目绑定的边缘小站，请传参all_granted_eps。 不传则查询全部。
+     * @return enterpriseProjectId
+     */
+    public List<String> getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public ListEdgeSitesRequest withId(List<String> id) {
@@ -298,14 +336,14 @@ public class ListEdgeSitesRequest {
         ListEdgeSitesRequest that = (ListEdgeSitesRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
             && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
             && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, sortKey, sortDir, id, name, availabilityZoneId, status);
+        return Objects.hash(limit, marker, sortKey, sortDir, enterpriseProjectId, id, name, availabilityZoneId, status);
     }
 
     @Override
@@ -316,6 +354,7 @@ public class ListEdgeSitesRequest {
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");

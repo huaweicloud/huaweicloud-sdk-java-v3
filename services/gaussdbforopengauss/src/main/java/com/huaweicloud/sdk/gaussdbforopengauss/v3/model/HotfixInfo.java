@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 热补丁信息
+ * 热补丁信息。
  */
 public class HotfixInfo {
 
@@ -21,7 +21,7 @@ public class HotfixInfo {
     private String version;
 
     /**
-     * 通用非通用信息,common=通用补丁,certain=定制补丁
+     * 通用非通用信息,common=通用补丁,certain=定制补丁。
      */
     public static final class CommonPatchEnum {
 
@@ -111,7 +111,7 @@ public class HotfixInfo {
     }
 
     /**
-     * 热补丁版本
+     * 热补丁版本。
      * @return version
      */
     public String getVersion() {
@@ -128,7 +128,7 @@ public class HotfixInfo {
     }
 
     /**
-     * 通用非通用信息,common=通用补丁,certain=定制补丁
+     * 通用非通用信息,common=通用补丁,certain=定制补丁。
      * @return commonPatch
      */
     public CommonPatchEnum getCommonPatch() {
@@ -145,7 +145,7 @@ public class HotfixInfo {
     }
 
     /**
-     * 是否和备份相关
+     * 是否和备份相关。
      * @return backupSensitive
      */
     public Boolean getBackupSensitive() {
@@ -162,7 +162,7 @@ public class HotfixInfo {
     }
 
     /**
-     * 补丁的描述信息
+     * 补丁的描述信息。
      * @return descripition
      */
     public String getDescripition() {

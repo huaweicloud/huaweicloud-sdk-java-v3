@@ -52,6 +52,11 @@ public class ComponentActionType {
      */
     public static final ComponentActionType MODIFY_GRAY_RULE = new ComponentActionType("modify_gray_rule");
 
+    /**
+     * Enum ROLLBACK_CURRENT for value: "rollback_current"
+     */
+    public static final ComponentActionType ROLLBACK_CURRENT = new ComponentActionType("rollback_current");
+
     private static final Map<String, ComponentActionType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, ComponentActionType> createStaticFields() {
@@ -64,6 +69,7 @@ public class ComponentActionType {
         map.put("continue_deploy", CONTINUE_DEPLOY);
         map.put("check_gray_release", CHECK_GRAY_RELEASE);
         map.put("modify_gray_rule", MODIFY_GRAY_RULE);
+        map.put("rollback_current", ROLLBACK_CURRENT);
         return Collections.unmodifiableMap(map);
     }
 

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 要移除的请求头参数列表。
+ * 参数解释：要移除的请求头参数列表。
  */
 public class RemoveHeadersConfig {
 
@@ -40,7 +40,7 @@ public class RemoveHeadersConfig {
     }
 
     /**
-     * 要移除的请求头参数列表。
+     * 参数解释：要移除的请求头参数列表。
      * @return configs
      */
     public List<RemoveHeaderConfig> getConfigs() {

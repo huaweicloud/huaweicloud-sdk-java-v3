@@ -26,7 +26,7 @@ public class MemberStatus {
     }
 
     /**
-     * 监听器ID
+     * 参数解释：监听器ID
      * @return listenerId
      */
     public String getListenerId() {
@@ -43,7 +43,7 @@ public class MemberStatus {
     }
 
     /**
-     * 后端云服务器的健康状态。  取值： - ONLINE：后端云服务器正常。 - NO_MONITOR：后端云服务器所在的服务器组没有健康检查器。 - OFFLINE：后端云服务器关联的ECS服务器不存在或已关机。
+     * 参数解释：后端云服务器的健康状态。  取值范围： - ONLINE：后端云服务器正常。 - NO_MONITOR：后端云服务器所在的服务器组没有健康检查器。 - OFFLINE：后端云服务器关联的ECS服务器不存在或已关机。
      * @return operatingStatus
      */
     public String getOperatingStatus() {

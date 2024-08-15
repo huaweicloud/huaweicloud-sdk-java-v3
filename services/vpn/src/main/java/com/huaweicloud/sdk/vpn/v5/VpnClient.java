@@ -117,6 +117,8 @@ import com.huaweicloud.sdk.vpn.v5.model.UpdateClientCaRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateClientCaResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateP2cVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateP2cVgwResponse;
+import com.huaweicloud.sdk.vpn.v5.model.UpdatePostpaidVgwSpecificationRequest;
+import com.huaweicloud.sdk.vpn.v5.model.UpdatePostpaidVgwSpecificationResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwCertificateRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwCertificateResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwRequest;
@@ -1292,6 +1294,36 @@ public class VpnClient {
      */
     public SyncInvoker<ShowVgwRequest, ShowVgwResponse> showVgwInvoker(ShowVgwRequest request) {
         return new SyncInvoker<>(request, VpnMeta.showVgw, hcClient);
+    }
+
+    /**
+     * 修改网关规格
+     *
+     * 对单个网关规格进行修改，可以升配或降配
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePostpaidVgwSpecificationRequest 请求对象
+     * @return UpdatePostpaidVgwSpecificationResponse
+     */
+    public UpdatePostpaidVgwSpecificationResponse updatePostpaidVgwSpecification(
+        UpdatePostpaidVgwSpecificationRequest request) {
+        return hcClient.syncInvokeHttp(request, VpnMeta.updatePostpaidVgwSpecification);
+    }
+
+    /**
+     * 修改网关规格
+     *
+     * 对单个网关规格进行修改，可以升配或降配
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePostpaidVgwSpecificationRequest 请求对象
+     * @return SyncInvoker<UpdatePostpaidVgwSpecificationRequest, UpdatePostpaidVgwSpecificationResponse>
+     */
+    public SyncInvoker<UpdatePostpaidVgwSpecificationRequest, UpdatePostpaidVgwSpecificationResponse> updatePostpaidVgwSpecificationInvoker(
+        UpdatePostpaidVgwSpecificationRequest request) {
+        return new SyncInvoker<>(request, VpnMeta.updatePostpaidVgwSpecification, hcClient);
     }
 
     /**

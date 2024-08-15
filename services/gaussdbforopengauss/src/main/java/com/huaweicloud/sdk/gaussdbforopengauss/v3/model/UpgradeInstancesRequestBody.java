@@ -40,7 +40,7 @@ public class UpgradeInstancesRequestBody {
     }
 
     /**
-     * 批量实例ID
+     * 批量实例ID。
      * @return instanceIds
      */
     public List<String> getInstanceIds() {

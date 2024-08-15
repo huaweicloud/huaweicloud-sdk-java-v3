@@ -58,6 +58,11 @@ public class EdgeSiteDetail {
     private LocationDetail location;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
@@ -229,6 +234,23 @@ public class EdgeSiteDetail {
         this.location = location;
     }
 
+    public EdgeSiteDetail withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * [边缘小站](tag:hws)[分布式微型专属小站](tag:cmcc)所属企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public EdgeSiteDetail withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -277,6 +299,7 @@ public class EdgeSiteDetail {
             && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
             && Objects.equals(this.status, that.status) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
@@ -291,6 +314,7 @@ public class EdgeSiteDetail {
             availabilityZoneId,
             status,
             location,
+            enterpriseProjectId,
             createdAt,
             updatedAt);
     }
@@ -308,6 +332,7 @@ public class EdgeSiteDetail {
         sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");

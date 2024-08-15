@@ -24,7 +24,7 @@ public class GaussDBUpgradeInstancesVersionRequest {
     private List<String> instanceIds = null;
 
     /**
-     * 实例升级类型，包括就地升级，灰度升级、热补丁升级三种
+     * 实例升级类型，包括就地升级，灰度升级、热补丁升级三种。
      */
     public static final class UpgradeTypeEnum {
 
@@ -218,7 +218,7 @@ public class GaussDBUpgradeInstancesVersionRequest {
     }
 
     /**
-     * 批量实例ID
+     * 批量实例ID。
      * @return instanceIds
      */
     public List<String> getInstanceIds() {
@@ -235,7 +235,7 @@ public class GaussDBUpgradeInstancesVersionRequest {
     }
 
     /**
-     * 实例升级类型，包括就地升级，灰度升级、热补丁升级三种
+     * 实例升级类型，包括就地升级，灰度升级、热补丁升级三种。
      * @return upgradeType
      */
     public UpgradeTypeEnum getUpgradeType() {

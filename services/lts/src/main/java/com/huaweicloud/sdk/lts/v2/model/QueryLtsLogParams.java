@@ -146,6 +146,16 @@ public class QueryLtsLogParams {
 
     private Boolean isIterative;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "query")
+
+    private String query;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_analysis_query")
+
+    private Boolean isAnalysisQuery;
+
     public QueryLtsLogParams withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -370,6 +380,40 @@ public class QueryLtsLogParams {
         this.isIterative = isIterative;
     }
 
+    public QueryLtsLogParams withQuery(String query) {
+        this.query = query;
+        return this;
+    }
+
+    /**
+     * 使用带管道符的sql分析语句进行查询，需要query参数is_analysis_query为true时生效。
+     * @return query
+     */
+    public String getQuery() {
+        return query;
+    }
+
+    public void setQuery(String query) {
+        this.query = query;
+    }
+
+    public QueryLtsLogParams withIsAnalysisQuery(Boolean isAnalysisQuery) {
+        this.isAnalysisQuery = isAnalysisQuery;
+        return this;
+    }
+
+    /**
+     * 是否为带管道符的sql分析语句。当该参数为true时，将依照body体中的query参数内容进行查询，且body体中除start_time与end_time以外的参数失效，分页、排序、查询结果条数等功能请依照sql语法规则实现。查询结果的响应体不同于未启用时的查询方式，将以默认列存的形式返回查询结果。当前仅对内测用户开放。响应示例：{\"analysisLogs\":[{\"field1\":\"1\",\"field2\":\"2\",\"field3\":\"3\"},{\"field1\":\"1\",\"field2\":\"2\",\"field3\":\"3\"},{\"field1\":\"1\",\"field2\":\"2\",\"field3\":\"3\"}]}
+     * @return isAnalysisQuery
+     */
+    public Boolean getIsAnalysisQuery() {
+        return isAnalysisQuery;
+    }
+
+    public void setIsAnalysisQuery(Boolean isAnalysisQuery) {
+        this.isAnalysisQuery = isAnalysisQuery;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -384,7 +428,8 @@ public class QueryLtsLogParams {
             && Objects.equals(this.keywords, that.keywords) && Objects.equals(this.lineNum, that.lineNum)
             && Objects.equals(this.time, that.time) && Objects.equals(this.isDesc, that.isDesc)
             && Objects.equals(this.searchType, that.searchType) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.highlight, that.highlight) && Objects.equals(this.isIterative, that.isIterative);
+            && Objects.equals(this.highlight, that.highlight) && Objects.equals(this.isIterative, that.isIterative)
+            && Objects.equals(this.query, that.query) && Objects.equals(this.isAnalysisQuery, that.isAnalysisQuery);
     }
 
     @Override
@@ -400,7 +445,9 @@ public class QueryLtsLogParams {
             searchType,
             limit,
             highlight,
-            isIterative);
+            isIterative,
+            query,
+            isAnalysisQuery);
     }
 
     @Override
@@ -419,6 +466,8 @@ public class QueryLtsLogParams {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    highlight: ").append(toIndentedString(highlight)).append("\n");
         sb.append("    isIterative: ").append(toIndentedString(isIterative)).append("\n");
+        sb.append("    query: ").append(toIndentedString(query)).append("\n");
+        sb.append("    isAnalysisQuery: ").append(toIndentedString(isAnalysisQuery)).append("\n");
         sb.append("}");
         return sb.toString();
     }

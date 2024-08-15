@@ -911,9 +911,9 @@ public class CaeAsyncClient {
     }
 
     /**
-     * 修改带宽
+     * 修改出入网带宽以及开闭状态
      *
-     * 修改带宽。
+     * 修改出入网带宽以及开闭状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -925,9 +925,9 @@ public class CaeAsyncClient {
     }
 
     /**
-     * 修改带宽
+     * 修改出入网带宽以及开闭状态
      *
-     * 修改带宽。
+     * 修改出入网带宽以及开闭状态。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 存储类型。 - SAS：高IO - SSD：超高IO
+ * 存储类型。 - SAS：高IO - SSD：超高IO - SAS_SD：高IO(软件定义型专用) - SSD_SD：超高IO(软件定义型专用) - SAS_ARM：高IO（鲲鹏） - SSD_ARM：超高IO（鲲鹏） [- VS_SMALL_CAP：视图存储-小容量型](tag:cmcc) [- VS_MEDIUM_CAP：视图存储-中容量型](tag:cmcc) [- VS_LARGE_CAP：视图存储-大容量型](tag:cmcc)
  */
 public class StorageType {
 
@@ -21,6 +21,26 @@ public class StorageType {
      * Enum SSD for value: "SSD"
      */
     public static final StorageType SSD = new StorageType("SSD");
+
+    /**
+     * Enum SAS_SD for value: "SAS_SD"
+     */
+    public static final StorageType SAS_SD = new StorageType("SAS_SD");
+
+    /**
+     * Enum SSD_SD for value: "SSD_SD"
+     */
+    public static final StorageType SSD_SD = new StorageType("SSD_SD");
+
+    /**
+     * Enum SAS_ARM for value: "SAS_ARM"
+     */
+    public static final StorageType SAS_ARM = new StorageType("SAS_ARM");
+
+    /**
+     * Enum SSD_ARM for value: "SSD_ARM"
+     */
+    public static final StorageType SSD_ARM = new StorageType("SSD_ARM");
 
     /**
      * Enum VS_SMALL_CAP for value: "VS_SMALL_CAP"
@@ -43,6 +63,10 @@ public class StorageType {
         Map<String, StorageType> map = new HashMap<>();
         map.put("SAS", SAS);
         map.put("SSD", SSD);
+        map.put("SAS_SD", SAS_SD);
+        map.put("SSD_SD", SSD_SD);
+        map.put("SAS_ARM", SAS_ARM);
+        map.put("SSD_ARM", SSD_ARM);
         map.put("VS_SMALL_CAP", VS_SMALL_CAP);
         map.put("VS_MEDIUM_CAP", VS_MEDIUM_CAP);
         map.put("VS_LARGE_CAP", VS_LARGE_CAP);

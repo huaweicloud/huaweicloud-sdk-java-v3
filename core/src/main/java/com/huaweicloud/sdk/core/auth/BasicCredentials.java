@@ -72,9 +72,9 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
         return this;
     }
 
-    Map<String, Object> getPathParams() {
+    public Map<String, Object> getPathParams() {
         Map<String, Object> pathParam = new LinkedHashMap<>();
-        if (Objects.nonNull(projectId)) {
+        if (!StringUtils.isEmpty(projectId)) {
             pathParam.put(Constants.PROJECT_ID, projectId);
         }
         return pathParam;
@@ -100,9 +100,9 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
 
             // Confirm if current ak has been cached in AuthCache, key of authMap is ak+regionId
             String akWithName = getAk() + regionId;
-            if (Objects.nonNull(AuthCache.getAuth(akWithName))
-                    && !StringUtils.isEmpty(AuthCache.getAuth(akWithName))) {
-                projectId = AuthCache.getAuth(akWithName);
+            String cachedProjectId = AuthCache.getAuth(akWithName);
+            if (!StringUtils.isEmpty(cachedProjectId)) {
+                projectId = cachedProjectId;
                 return this;
             }
 
@@ -165,16 +165,16 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
             updateSecurityTokenFromMetadata();
         }
 
-        if (Objects.nonNull(getProjectId())) {
+        if (!StringUtils.isEmpty(getProjectId())) {
             builder.addHeader(Constants.X_PROJECT_ID, projectId);
         }
 
-        if (Objects.nonNull(authToken)) {
+        if (!StringUtils.isEmpty(authToken)) {
             builder.addHeader(Constants.X_AUTH_TOKEN, authToken);
             return builder.build();
         }
 
-        if (Objects.nonNull(getSecurityToken())) {
+        if (!StringUtils.isEmpty(getSecurityToken())) {
             builder.addHeader(Constants.X_SECURITY_TOKEN, getSecurityToken());
         }
 

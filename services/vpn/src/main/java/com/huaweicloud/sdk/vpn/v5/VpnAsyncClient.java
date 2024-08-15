@@ -117,6 +117,8 @@ import com.huaweicloud.sdk.vpn.v5.model.UpdateClientCaRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateClientCaResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateP2cVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateP2cVgwResponse;
+import com.huaweicloud.sdk.vpn.v5.model.UpdatePostpaidVgwSpecificationRequest;
+import com.huaweicloud.sdk.vpn.v5.model.UpdatePostpaidVgwSpecificationResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwCertificateRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwCertificateResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwRequest;
@@ -1311,6 +1313,36 @@ public class VpnAsyncClient {
      */
     public AsyncInvoker<ShowVgwRequest, ShowVgwResponse> showVgwAsyncInvoker(ShowVgwRequest request) {
         return new AsyncInvoker<>(request, VpnMeta.showVgw, hcClient);
+    }
+
+    /**
+     * 修改网关规格
+     *
+     * 对单个网关规格进行修改，可以升配或降配
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePostpaidVgwSpecificationRequest 请求对象
+     * @return CompletableFuture<UpdatePostpaidVgwSpecificationResponse>
+     */
+    public CompletableFuture<UpdatePostpaidVgwSpecificationResponse> updatePostpaidVgwSpecificationAsync(
+        UpdatePostpaidVgwSpecificationRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.updatePostpaidVgwSpecification);
+    }
+
+    /**
+     * 修改网关规格
+     *
+     * 对单个网关规格进行修改，可以升配或降配
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePostpaidVgwSpecificationRequest 请求对象
+     * @return AsyncInvoker<UpdatePostpaidVgwSpecificationRequest, UpdatePostpaidVgwSpecificationResponse>
+     */
+    public AsyncInvoker<UpdatePostpaidVgwSpecificationRequest, UpdatePostpaidVgwSpecificationResponse> updatePostpaidVgwSpecificationAsyncInvoker(
+        UpdatePostpaidVgwSpecificationRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.updatePostpaidVgwSpecification, hcClient);
     }
 
     /**

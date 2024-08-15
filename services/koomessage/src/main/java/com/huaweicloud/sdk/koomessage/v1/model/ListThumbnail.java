@@ -55,6 +55,26 @@ public class ListThumbnail {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "obs_bucket_name")
+
+    private String obsBucketName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "size")
+
+    private Integer size;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "obs_file_url")
+
+    private String obsFileUrl;
+
     public ListThumbnail withId(String id) {
         this.id = id;
         return this;
@@ -163,7 +183,7 @@ public class ListThumbnail {
     }
 
     /**
-     * 图像比例。 - oneToOne：指1:1比例 - sixteenToNine：指16:9比例 - threeToOne：指3:1比例 - fortyEightToSixtyFive：指48:65比例 - twentyOneToNine：指21:9比例 
+     * 图像比例。 - oneToOne：指1:1比例 - sixteenToNine：指16:9比例 - threeToOne：指3:1比例 - fortyEightToSixtyFive：指48:65比例 - twentyOneToNine：指21:9比例 - threeToFour：指3:4比例 
      * @return imageRate
      */
     public String getImageRate() {
@@ -208,6 +228,74 @@ public class ListThumbnail {
         this.description = description;
     }
 
+    public ListThumbnail withObsBucketName(String obsBucketName) {
+        this.obsBucketName = obsBucketName;
+        return this;
+    }
+
+    /**
+     * OBS桶名称。
+     * @return obsBucketName
+     */
+    public String getObsBucketName() {
+        return obsBucketName;
+    }
+
+    public void setObsBucketName(String obsBucketName) {
+        this.obsBucketName = obsBucketName;
+    }
+
+    public ListThumbnail withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * 租户ID。
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    public ListThumbnail withSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+
+    /**
+     * 素材所占空间大小。
+     * @return size
+     */
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
+    public ListThumbnail withObsFileUrl(String obsFileUrl) {
+        this.obsFileUrl = obsFileUrl;
+        return this;
+    }
+
+    /**
+     * 文件访问路径。
+     * @return obsFileUrl
+     */
+    public String getObsFileUrl() {
+        return obsFileUrl;
+    }
+
+    public void setObsFileUrl(String obsFileUrl) {
+        this.obsFileUrl = obsFileUrl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -221,13 +309,26 @@ public class ListThumbnail {
             && Objects.equals(this.isPrimary, that.isPrimary) && Objects.equals(this.fileName, that.fileName)
             && Objects.equals(this.aimResourceId, that.aimResourceId)
             && Objects.equals(this.obsObjectKey, that.obsObjectKey) && Objects.equals(this.imageRate, that.imageRate)
-            && Objects.equals(this.isAutoGen, that.isAutoGen) && Objects.equals(this.description, that.description);
+            && Objects.equals(this.isAutoGen, that.isAutoGen) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.obsBucketName, that.obsBucketName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.obsFileUrl, that.obsFileUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, createdAt, isPrimary, fileName, aimResourceId, obsObjectKey, imageRate, isAutoGen, description);
+        return Objects.hash(id,
+            createdAt,
+            isPrimary,
+            fileName,
+            aimResourceId,
+            obsObjectKey,
+            imageRate,
+            isAutoGen,
+            description,
+            obsBucketName,
+            domainId,
+            size,
+            obsFileUrl);
     }
 
     @Override
@@ -243,6 +344,10 @@ public class ListThumbnail {
         sb.append("    imageRate: ").append(toIndentedString(imageRate)).append("\n");
         sb.append("    isAutoGen: ").append(toIndentedString(isAutoGen)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    obsBucketName: ").append(toIndentedString(obsBucketName)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    obsFileUrl: ").append(toIndentedString(obsFileUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

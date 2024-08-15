@@ -28,7 +28,7 @@ public class ShowL7RuleResponse extends SdkResponse {
     }
 
     /**
-     * 请求ID。  注：自动生成 。
+     * 参数解释：请求ID。  注：自动生成 。
      * @return requestId
      */
     public String getRequestId() {

@@ -25,6 +25,11 @@ public class FactoryInfo {
 
     private String version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tpl_id")
+
+    private String tplId;
+
     public FactoryInfo withFactoryType(String factoryType) {
         this.factoryType = factoryType;
         return this;
@@ -76,6 +81,23 @@ public class FactoryInfo {
         this.version = version;
     }
 
+    public FactoryInfo withTplId(String tplId) {
+        this.tplId = tplId;
+        return this;
+    }
+
+    /**
+     * 智能信息模板ID
+     * @return tplId
+     */
+    public String getTplId() {
+        return tplId;
+    }
+
+    public void setTplId(String tplId) {
+        this.tplId = tplId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class FactoryInfo {
         }
         FactoryInfo that = (FactoryInfo) obj;
         return Objects.equals(this.factoryType, that.factoryType) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.version, that.version);
+            && Objects.equals(this.version, that.version) && Objects.equals(this.tplId, that.tplId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(factoryType, state, version);
+        return Objects.hash(factoryType, state, version, tplId);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class FactoryInfo {
         sb.append("    factoryType: ").append(toIndentedString(factoryType)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    tplId: ").append(toIndentedString(tplId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

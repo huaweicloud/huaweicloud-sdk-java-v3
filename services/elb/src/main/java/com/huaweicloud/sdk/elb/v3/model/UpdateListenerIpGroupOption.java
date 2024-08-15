@@ -26,7 +26,7 @@ public class UpdateListenerIpGroupOption {
     private Boolean enableIpgroup;
 
     /**
-     * 访问控制组的类型。 white:白名单，只允许指定ip访问； black:黑名单，不允许指定ip访问；
+     * 参数解释：访问控制组的类型。  取值范围： - white:白名单，只允许指定ip访问。 - black:黑名单，不允许指定ip访问。
      */
     public static final class TypeEnum {
 
@@ -106,7 +106,7 @@ public class UpdateListenerIpGroupOption {
     }
 
     /**
-     * 监听器关联的访问控制组的id。 创建时必选，更新时非必选。 指定的ipgroup必须已存在，不能指定为null，否则与enable_ipgroup冲突。
+     * 参数解释：监听器关联的访问控制组的id。 创建时必选，更新时非必选。  约束限制：指定的ipgroup必须已存在，不能指定为null，否则与enable_ipgroup冲突。
      * @return ipgroupId
      */
     public String getIpgroupId() {
@@ -123,7 +123,7 @@ public class UpdateListenerIpGroupOption {
     }
 
     /**
-     * 访问控制组的状态。 True:开启访问控制； Flase：关闭访问控制； 开启访问控制的监听器，允许直接删除。
+     * 参数解释：访问控制组的状态。 开启访问控制的监听器，允许直接删除。  取值范围： - true:开启访问控制。 - flase：关闭访问控制。
      * @return enableIpgroup
      */
     public Boolean getEnableIpgroup() {
@@ -140,7 +140,7 @@ public class UpdateListenerIpGroupOption {
     }
 
     /**
-     * 访问控制组的类型。 white:白名单，只允许指定ip访问； black:黑名单，不允许指定ip访问；
+     * 参数解释：访问控制组的类型。  取值范围： - white:白名单，只允许指定ip访问。 - black:黑名单，不允许指定ip访问。
      * @return type
      */
     public TypeEnum getType() {

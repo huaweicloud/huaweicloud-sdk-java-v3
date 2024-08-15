@@ -37,7 +37,8 @@ public class KvsAsyncClient {
     }
 
     public static ClientBuilder<KvsAsyncClient> newBuilder() {
-        ClientBuilder<KvsAsyncClient> clientBuilder = new ClientBuilder<>(KvsAsyncClient::new);
+        ClientBuilder<KvsAsyncClient> clientBuilder =
+            new ClientBuilder<>(KvsAsyncClient::new, "BasicCredentials,KvsCredentials");
         try {
             Class<?> exceptionHandler = Class.forName("com.huaweicloud.sdk.core.exception.ExceptionHandler");
             clientBuilder.getClass()

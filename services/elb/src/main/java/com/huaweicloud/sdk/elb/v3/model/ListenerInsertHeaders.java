@@ -66,7 +66,7 @@ public class ListenerInsertHeaders {
     }
 
     /**
-     * X-Forwarded-ELB-IP设为true可以将ELB实例的eip地址从报文的http头中带到后端云服务器。
+     * 参数解释：X-Forwarded-ELB-IP设为true可以将ELB实例的eip地址从报文的http头中带到后端云服务器。
      * @return xForwardedELBIP
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -85,7 +85,7 @@ public class ListenerInsertHeaders {
     }
 
     /**
-     * X-Forwarded-Port设为true可以将ELB实例的监听端口从报文的http头中带到后端云服务器。
+     * 参数解释：X-Forwarded-Port设为true可以将ELB实例的监听端口从报文的http头中带到后端云服务器。
      * @return xForwardedPort
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -123,7 +123,7 @@ public class ListenerInsertHeaders {
     }
 
     /**
-     * X-Forwarded-Host设为true可以将客户请求头的X-Forwarded-Host设置为请求头的Host带到后端云服务器。
+     * 参数解释：X-Forwarded-Host设为true可以将客户请求头的X-Forwarded-Host设置为请求头的Host带到后端云服务器。
      * @return xForwardedHost
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -142,7 +142,7 @@ public class ListenerInsertHeaders {
     }
 
     /**
-     * X-Forwarded-Proto设为true可以将负载均衡器实例的监听协议通过报文的http头带到后端云服务器。
+     * 参数解释：X-Forwarded-Proto设为true可以将负载均衡器实例的监听协议通过报文的http头带到后端云服务器。
      * @return xForwardedProto
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -161,7 +161,7 @@ public class ListenerInsertHeaders {
     }
 
     /**
-     * X-Real-IP设为true可以将客户端的IP通过报文的http头带到后端云服务器。
+     * 参数解释：X-Real-IP设为true可以将客户端的IP通过报文的http头带到后端云服务器。
      * @return xRealIP
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -180,7 +180,7 @@ public class ListenerInsertHeaders {
     }
 
     /**
-     * X-Forwarded-ELB-ID设为true可以将负载均衡器实例的ID通过报文的http头带到后端云服务器。
+     * 参数解释：X-Forwarded-ELB-ID设为true可以将负载均衡器实例的ID通过报文的http头带到后端云服务器。
      * @return xForwardedELBID
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -199,7 +199,7 @@ public class ListenerInsertHeaders {
     }
 
     /**
-     * X-Forwarded-TLS-Certificate-ID设为true可以将负载均衡器实例的证书ID通过报文的http头带到后端云服务器。
+     * 参数解释：X-Forwarded-TLS-Certificate-ID设为true可以将负载均衡器实例的证书ID通过报文的http头带到后端云服务器。
      * @return xForwardedTLSCertificateID
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -218,7 +218,7 @@ public class ListenerInsertHeaders {
     }
 
     /**
-     * X-Forwarded-TLS-Protocol设为true可以将负载均衡器实例的算法协议通过报文的http头带到后端云服务器。
+     * 参数解释：X-Forwarded-TLS-Protocol设为true可以将负载均衡器实例的算法协议通过报文的http头带到后端云服务器。
      * @return xForwardedTLSProtocol
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -237,7 +237,7 @@ public class ListenerInsertHeaders {
     }
 
     /**
-     * X-Forwarded-TLS-Cipher设为true可以将负载均衡器实例的算法套件通过报文的http头带到后端云服务器。
+     * 参数解释：X-Forwarded-TLS-Cipher设为true可以将负载均衡器实例的算法套件通过报文的http头带到后端云服务器。
      * @return xForwardedTLSCipher
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

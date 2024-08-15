@@ -14,12 +14,12 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 升级类型信息
+ * 升级类型信息。
  */
 public class UpgradeTypeInfo {
 
     /**
-     * 升级类型,grey=灰度升级,inplace=就地升级,hotfix=热补丁升级
+     * 升级类型,grey=灰度升级,inplace=就地升级,hotfix=热补丁升级。
      */
     public static final class UpgradeTypeEnum {
 
@@ -120,7 +120,7 @@ public class UpgradeTypeInfo {
     }
 
     /**
-     * 升级类型,grey=灰度升级,inplace=就地升级,hotfix=热补丁升级
+     * 升级类型,grey=灰度升级,inplace=就地升级,hotfix=热补丁升级。
      * @return upgradeType
      */
     public UpgradeTypeEnum getUpgradeType() {
@@ -137,7 +137,7 @@ public class UpgradeTypeInfo {
     }
 
     /**
-     * 可用，不可用
+     * 可用，不可用。
      * @return enable
      */
     public Boolean getEnable() {
@@ -170,7 +170,7 @@ public class UpgradeTypeInfo {
     }
 
     /**
-     * 升级操作列表
+     * 升级操作列表。
      * @return upgradeActionList
      */
     public List<UpgradeActionInfo> getUpgradeActionList() {

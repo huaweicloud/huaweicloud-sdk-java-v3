@@ -31,6 +31,11 @@ public class CreateEdgeSite {
 
     private CreateLocation location;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CreateEdgeSite withName(String name) {
         this.name = name;
         return this;
@@ -108,6 +113,23 @@ public class CreateEdgeSite {
         this.location = location;
     }
 
+    public CreateEdgeSite withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目Id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -118,12 +140,13 @@ public class CreateEdgeSite {
         }
         CreateEdgeSite that = (CreateEdgeSite) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.regionId, that.regionId)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.location, that.location);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, regionId, description, location);
+        return Objects.hash(name, regionId, description, location, enterpriseProjectId);
     }
 
     @Override
@@ -134,6 +157,7 @@ public class CreateEdgeSite {
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

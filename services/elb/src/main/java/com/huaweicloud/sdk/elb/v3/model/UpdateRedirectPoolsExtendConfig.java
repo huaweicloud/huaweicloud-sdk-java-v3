@@ -42,7 +42,7 @@ public class UpdateRedirectPoolsExtendConfig {
     }
 
     /**
-     * 是否开启url重定向
+     * 参数解释：是否开启url重定向
      * @return rewriteUrlEnable
      */
     public Boolean getRewriteUrlEnable() {

@@ -44,6 +44,11 @@ public class PubInfoRequestBody {
     private List<String> signsForAutoGetPort = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "areas_for_auto_get_port")
+
+    private List<String> areasForAutoGetPort = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "industry")
 
     private Integer industry;
@@ -173,6 +178,39 @@ public class PubInfoRequestBody {
         this.signsForAutoGetPort = signsForAutoGetPort;
     }
 
+    public PubInfoRequestBody withAreasForAutoGetPort(List<String> areasForAutoGetPort) {
+        this.areasForAutoGetPort = areasForAutoGetPort;
+        return this;
+    }
+
+    public PubInfoRequestBody addAreasForAutoGetPortItem(String areasForAutoGetPortItem) {
+        if (this.areasForAutoGetPort == null) {
+            this.areasForAutoGetPort = new ArrayList<>();
+        }
+        this.areasForAutoGetPort.add(areasForAutoGetPortItem);
+        return this;
+    }
+
+    public PubInfoRequestBody withAreasForAutoGetPort(Consumer<List<String>> areasForAutoGetPortSetter) {
+        if (this.areasForAutoGetPort == null) {
+            this.areasForAutoGetPort = new ArrayList<>();
+        }
+        areasForAutoGetPortSetter.accept(this.areasForAutoGetPort);
+        return this;
+    }
+
+    /**
+     * 自动收集端口生效的地区列表。地区取值见《地区名称列表》。  > auto_get_port为1时，该字段有效。不填则默认全国，不允许传入重叠地区。 
+     * @return areasForAutoGetPort
+     */
+    public List<String> getAreasForAutoGetPort() {
+        return areasForAutoGetPort;
+    }
+
+    public void setAreasForAutoGetPort(List<String> areasForAutoGetPort) {
+        this.areasForAutoGetPort = areasForAutoGetPort;
+    }
+
     public PubInfoRequestBody withIndustry(Integer industry) {
         this.industry = industry;
         return this;
@@ -214,7 +252,7 @@ public class PubInfoRequestBody {
     }
 
     /**
-     * 授权证明图片ID，最多支持6张。  > 参数值为上传智能信息服务号图片资源API返回的resource_id。 
+     * 授权证明图片ID，支持jpg、bmp、png和jpeg格式，全部图片总大小不超过4M，最多支持6张。  > 参数值为上传智能信息服务号图片资源API返回的resource_id。 
      * @return authorizationFiles
      */
     public List<String> getAuthorizationFiles() {
@@ -238,6 +276,7 @@ public class PubInfoRequestBody {
             && Objects.equals(this.pubAbstract, that.pubAbstract) && Objects.equals(this.pubRemark, that.pubRemark)
             && Objects.equals(this.autoGetPort, that.autoGetPort)
             && Objects.equals(this.signsForAutoGetPort, that.signsForAutoGetPort)
+            && Objects.equals(this.areasForAutoGetPort, that.areasForAutoGetPort)
             && Objects.equals(this.industry, that.industry)
             && Objects.equals(this.authorizationFiles, that.authorizationFiles);
     }
@@ -250,6 +289,7 @@ public class PubInfoRequestBody {
             pubRemark,
             autoGetPort,
             signsForAutoGetPort,
+            areasForAutoGetPort,
             industry,
             authorizationFiles);
     }
@@ -264,6 +304,7 @@ public class PubInfoRequestBody {
         sb.append("    pubRemark: ").append(toIndentedString(pubRemark)).append("\n");
         sb.append("    autoGetPort: ").append(toIndentedString(autoGetPort)).append("\n");
         sb.append("    signsForAutoGetPort: ").append(toIndentedString(signsForAutoGetPort)).append("\n");
+        sb.append("    areasForAutoGetPort: ").append(toIndentedString(areasForAutoGetPort)).append("\n");
         sb.append("    industry: ").append(toIndentedString(industry)).append("\n");
         sb.append("    authorizationFiles: ").append(toIndentedString(authorizationFiles)).append("\n");
         sb.append("}");

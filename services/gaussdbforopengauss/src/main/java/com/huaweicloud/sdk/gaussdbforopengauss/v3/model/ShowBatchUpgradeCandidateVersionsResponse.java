@@ -34,6 +34,11 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
 
     private List<HotfixInfo> hotfixUpgradeInfos = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hotfix_rollback_infos")
+
+    private List<HotfixInfo> hotfixRollbackInfos = null;
+
     public ShowBatchUpgradeCandidateVersionsResponse withUpgradeTypeList(List<UpgradeTypeInfo> upgradeTypeList) {
         this.upgradeTypeList = upgradeTypeList;
         return this;
@@ -57,7 +62,7 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
     }
 
     /**
-     * 升级类型信息列表
+     * 升级类型信息列表。
      * @return upgradeTypeList
      */
     public List<UpgradeTypeInfo> getUpgradeTypeList() {
@@ -74,7 +79,7 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
     }
 
     /**
-     * 升级目标版本，没有在滚动升级中返回null
+     * 升级目标版本，没有在滚动升级中返回null。
      * @return targetVersion
      */
     public String getTargetVersion() {
@@ -110,7 +115,7 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
     }
 
     /**
-     * 可以升级的版本，包括大小版本
+     * 可以升级的版本，包括大小版本。
      * @return upgradeCandidateVersions
      */
     public List<String> getUpgradeCandidateVersions() {
@@ -144,7 +149,7 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
     }
 
     /**
-     * 可以升级的热补丁信息
+     * 可以升级的热补丁信息。
      * @return hotfixUpgradeInfos
      */
     public List<HotfixInfo> getHotfixUpgradeInfos() {
@@ -153,6 +158,40 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
 
     public void setHotfixUpgradeInfos(List<HotfixInfo> hotfixUpgradeInfos) {
         this.hotfixUpgradeInfos = hotfixUpgradeInfos;
+    }
+
+    public ShowBatchUpgradeCandidateVersionsResponse withHotfixRollbackInfos(List<HotfixInfo> hotfixRollbackInfos) {
+        this.hotfixRollbackInfos = hotfixRollbackInfos;
+        return this;
+    }
+
+    public ShowBatchUpgradeCandidateVersionsResponse addHotfixRollbackInfosItem(HotfixInfo hotfixRollbackInfosItem) {
+        if (this.hotfixRollbackInfos == null) {
+            this.hotfixRollbackInfos = new ArrayList<>();
+        }
+        this.hotfixRollbackInfos.add(hotfixRollbackInfosItem);
+        return this;
+    }
+
+    public ShowBatchUpgradeCandidateVersionsResponse withHotfixRollbackInfos(
+        Consumer<List<HotfixInfo>> hotfixRollbackInfosSetter) {
+        if (this.hotfixRollbackInfos == null) {
+            this.hotfixRollbackInfos = new ArrayList<>();
+        }
+        hotfixRollbackInfosSetter.accept(this.hotfixRollbackInfos);
+        return this;
+    }
+
+    /**
+     * 可以回滚的热补丁信息。
+     * @return hotfixRollbackInfos
+     */
+    public List<HotfixInfo> getHotfixRollbackInfos() {
+        return hotfixRollbackInfos;
+    }
+
+    public void setHotfixRollbackInfos(List<HotfixInfo> hotfixRollbackInfos) {
+        this.hotfixRollbackInfos = hotfixRollbackInfos;
     }
 
     @Override
@@ -167,12 +206,14 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
         return Objects.equals(this.upgradeTypeList, that.upgradeTypeList)
             && Objects.equals(this.targetVersion, that.targetVersion)
             && Objects.equals(this.upgradeCandidateVersions, that.upgradeCandidateVersions)
-            && Objects.equals(this.hotfixUpgradeInfos, that.hotfixUpgradeInfos);
+            && Objects.equals(this.hotfixUpgradeInfos, that.hotfixUpgradeInfos)
+            && Objects.equals(this.hotfixRollbackInfos, that.hotfixRollbackInfos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(upgradeTypeList, targetVersion, upgradeCandidateVersions, hotfixUpgradeInfos);
+        return Objects
+            .hash(upgradeTypeList, targetVersion, upgradeCandidateVersions, hotfixUpgradeInfos, hotfixRollbackInfos);
     }
 
     @Override
@@ -183,6 +224,7 @@ public class ShowBatchUpgradeCandidateVersionsResponse extends SdkResponse {
         sb.append("    targetVersion: ").append(toIndentedString(targetVersion)).append("\n");
         sb.append("    upgradeCandidateVersions: ").append(toIndentedString(upgradeCandidateVersions)).append("\n");
         sb.append("    hotfixUpgradeInfos: ").append(toIndentedString(hotfixUpgradeInfos)).append("\n");
+        sb.append("    hotfixRollbackInfos: ").append(toIndentedString(hotfixRollbackInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

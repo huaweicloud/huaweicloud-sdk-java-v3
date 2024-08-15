@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 创建负载均衡器实例的预付费计费配置，若传入该结构体，则创建预付费类型的负载均衡器实例。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+ * 参数解释：创建负载均衡器实例的预付费计费配置。若传入该结构体，则创建预付费类型的负载均衡器实例。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
  */
 public class PrepaidCreateOption {
 
@@ -128,7 +128,7 @@ public class PrepaidCreateOption {
     }
 
     /**
-     * 参数解释：预付费实例的订购周期数，取值会随运营策略变化。  约束限制： - period_type为month时，为[1,9]。 - period_type为year时，为[1,3]。
+     * 参数解释：预付费实例的订购周期数。  取值范围： - period_type为month时，为[1,9]。 - period_type为year时，为[1,3]。
      * minimum: 1
      * maximum: 9
      * @return periodNum

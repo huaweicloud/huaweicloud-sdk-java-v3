@@ -163,7 +163,7 @@ public class EipBandwidthResponseBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
 
-    private UUID tenantId;
+    private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -452,7 +452,7 @@ public class EipBandwidthResponseBody {
         this.size = size;
     }
 
-    public EipBandwidthResponseBody withTenantId(UUID tenantId) {
+    public EipBandwidthResponseBody withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
@@ -461,11 +461,11 @@ public class EipBandwidthResponseBody {
      * - 功能说明：用户所属项目ID
      * @return tenantId
      */
-    public UUID getTenantId() {
+    public String getTenantId() {
         return tenantId;
     }
 
-    public void setTenantId(UUID tenantId) {
+    public void setTenantId(String tenantId) {
         this.tenantId = tenantId;
     }
 

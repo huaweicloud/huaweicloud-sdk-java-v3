@@ -21,7 +21,7 @@ public class PoolRef {
     }
 
     /**
-     * 后端服务器组ID。
+     * 参数解释：后端服务器组ID。
      * @return id
      */
     public String getId() {

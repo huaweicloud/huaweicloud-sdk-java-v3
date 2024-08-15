@@ -27,7 +27,7 @@ public class UpdateL7PolicyRequest {
     }
 
     /**
-     * 转发策略ID。
+     * 参数解释：转发策略ID。
      * @return l7policyId
      */
     public String getL7policyId() {

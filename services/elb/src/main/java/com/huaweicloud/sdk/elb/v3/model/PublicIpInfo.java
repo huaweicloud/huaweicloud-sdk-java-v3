@@ -31,7 +31,7 @@ public class PublicIpInfo {
     }
 
     /**
-     * 弹性公网ip配置id
+     * 参数解释：弹性公网ip配置id
      * @return publicipId
      */
     public String getPublicipId() {
@@ -48,7 +48,7 @@ public class PublicIpInfo {
     }
 
     /**
-     * IP地址
+     * 参数解释：IP地址
      * @return publicipAddress
      */
     public String getPublicipAddress() {
@@ -65,7 +65,7 @@ public class PublicIpInfo {
     }
 
     /**
-     * IP版本信息。 取值范围：4和6 4：IPv4 6：IPv6  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+     * 参数解释：IP版本信息。  取值范围：4和6 4：IPv4 6：IPv6  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
      * @return ipVersion
      */
     public Integer getIpVersion() {

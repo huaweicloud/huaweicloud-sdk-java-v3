@@ -87,7 +87,7 @@ public class AutoClassificationResult {
     }
 
     /**
-     * 对应票证的类别。         
+     * 对应票证的类别。 
      * @return type
      */
     public String getType() {

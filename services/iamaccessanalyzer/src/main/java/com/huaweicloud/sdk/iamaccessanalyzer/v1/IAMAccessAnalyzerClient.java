@@ -57,8 +57,7 @@ public class IAMAccessAnalyzerClient {
     }
 
     public static ClientBuilder<IAMAccessAnalyzerClient> newBuilder() {
-        ClientBuilder<IAMAccessAnalyzerClient> clientBuilder =
-            new ClientBuilder<>(IAMAccessAnalyzerClient::new, "GlobalCredentials");
+        ClientBuilder<IAMAccessAnalyzerClient> clientBuilder = new ClientBuilder<>(IAMAccessAnalyzerClient::new);
         return clientBuilder;
     }
 

@@ -76,6 +76,21 @@ public class CreateComponentWithConfigurationRequestBodySpec {
          */
         public static final RuntimeEnum PHP7 = new RuntimeEnum("Php7");
 
+        /**
+         * Enum DOTNET6 for value: "Dotnet6"
+         */
+        public static final RuntimeEnum DOTNET6 = new RuntimeEnum("Dotnet6");
+
+        /**
+         * Enum DOTNET7 for value: "Dotnet7"
+         */
+        public static final RuntimeEnum DOTNET7 = new RuntimeEnum("Dotnet7");
+
+        /**
+         * Enum DOTNET8 for value: "Dotnet8"
+         */
+        public static final RuntimeEnum DOTNET8 = new RuntimeEnum("Dotnet8");
+
         private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuntimeEnum> createStaticFields() {
@@ -91,6 +106,9 @@ public class CreateComponentWithConfigurationRequestBodySpec {
             map.put("Nodejs14", NODEJS14);
             map.put("Nodejs16", NODEJS16);
             map.put("Php7", PHP7);
+            map.put("Dotnet6", DOTNET6);
+            map.put("Dotnet7", DOTNET7);
+            map.put("Dotnet8", DOTNET8);
             return Collections.unmodifiableMap(map);
         }
 

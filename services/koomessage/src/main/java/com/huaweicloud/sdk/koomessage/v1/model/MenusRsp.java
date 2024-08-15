@@ -61,6 +61,16 @@ public class MenusRsp {
 
     private String operTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "company_id")
+
+    private String companyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "company_name")
+
+    private String companyName;
+
     public MenusRsp withMenuId(String menuId) {
         this.menuId = menuId;
         return this;
@@ -240,6 +250,40 @@ public class MenusRsp {
         this.operTime = operTime;
     }
 
+    public MenusRsp withCompanyId(String companyId) {
+        this.companyId = companyId;
+        return this;
+    }
+
+    /**
+     * 企业ID。
+     * @return companyId
+     */
+    public String getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(String companyId) {
+        this.companyId = companyId;
+    }
+
+    public MenusRsp withCompanyName(String companyName) {
+        this.companyName = companyName;
+        return this;
+    }
+
+    /**
+     * 企业名称。
+     * @return companyName
+     */
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -253,13 +297,24 @@ public class MenusRsp {
             && Objects.equals(this.pubName, that.pubName) && Objects.equals(this.logoImg, that.logoImg)
             && Objects.equals(this.logoUrl, that.logoUrl) && Objects.equals(this.menu, that.menu)
             && Objects.equals(this.menuState, that.menuState) && Objects.equals(this.approveState, that.approveState)
-            && Objects.equals(this.onlineTime, that.onlineTime) && Objects.equals(this.operTime, that.operTime);
+            && Objects.equals(this.onlineTime, that.onlineTime) && Objects.equals(this.operTime, that.operTime)
+            && Objects.equals(this.companyId, that.companyId) && Objects.equals(this.companyName, that.companyName);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(menuId, pubId, pubName, logoImg, logoUrl, menu, menuState, approveState, onlineTime, operTime);
+        return Objects.hash(menuId,
+            pubId,
+            pubName,
+            logoImg,
+            logoUrl,
+            menu,
+            menuState,
+            approveState,
+            onlineTime,
+            operTime,
+            companyId,
+            companyName);
     }
 
     @Override
@@ -276,6 +331,8 @@ public class MenusRsp {
         sb.append("    approveState: ").append(toIndentedString(approveState)).append("\n");
         sb.append("    onlineTime: ").append(toIndentedString(onlineTime)).append("\n");
         sb.append("    operTime: ").append(toIndentedString(operTime)).append("\n");
+        sb.append("    companyId: ").append(toIndentedString(companyId)).append("\n");
+        sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

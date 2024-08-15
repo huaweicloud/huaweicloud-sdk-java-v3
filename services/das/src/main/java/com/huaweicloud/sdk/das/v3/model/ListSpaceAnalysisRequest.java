@@ -135,12 +135,18 @@ public class ListSpaceAnalysisRequest {
          */
         public static final DatastoreTypeEnum GAUSSDB_FOR_MYSQL_ = new DatastoreTypeEnum("GaussDB(for MySQL)");
 
+        /**
+         * Enum SQLSERVER for value: "SQLServer"
+         */
+        public static final DatastoreTypeEnum SQLSERVER = new DatastoreTypeEnum("SQLServer");
+
         private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DatastoreTypeEnum> createStaticFields() {
             Map<String, DatastoreTypeEnum> map = new HashMap<>();
             map.put("MySQL", MYSQL);
             map.put("GaussDB(for MySQL)", GAUSSDB_FOR_MYSQL_);
+            map.put("SQLServer", SQLSERVER);
             return Collections.unmodifiableMap(map);
         }
 

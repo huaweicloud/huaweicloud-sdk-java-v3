@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.cce.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -29,7 +31,7 @@ public class NodePoolSpecUpdate {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extensionScaleGroups")
 
-    private ExtensionScaleGroup extensionScaleGroups;
+    private List<ExtensionScaleGroup> extensionScaleGroups = null;
 
     public NodePoolSpecUpdate withNodeTemplate(NodeSpecUpdate nodeTemplate) {
         this.nodeTemplate = nodeTemplate;
@@ -100,29 +102,36 @@ public class NodePoolSpecUpdate {
         this.autoscaling = autoscaling;
     }
 
-    public NodePoolSpecUpdate withExtensionScaleGroups(ExtensionScaleGroup extensionScaleGroups) {
+    public NodePoolSpecUpdate withExtensionScaleGroups(List<ExtensionScaleGroup> extensionScaleGroups) {
         this.extensionScaleGroups = extensionScaleGroups;
         return this;
     }
 
-    public NodePoolSpecUpdate withExtensionScaleGroups(Consumer<ExtensionScaleGroup> extensionScaleGroupsSetter) {
+    public NodePoolSpecUpdate addExtensionScaleGroupsItem(ExtensionScaleGroup extensionScaleGroupsItem) {
         if (this.extensionScaleGroups == null) {
-            this.extensionScaleGroups = new ExtensionScaleGroup();
-            extensionScaleGroupsSetter.accept(this.extensionScaleGroups);
+            this.extensionScaleGroups = new ArrayList<>();
         }
+        this.extensionScaleGroups.add(extensionScaleGroupsItem);
+        return this;
+    }
 
+    public NodePoolSpecUpdate withExtensionScaleGroups(Consumer<List<ExtensionScaleGroup>> extensionScaleGroupsSetter) {
+        if (this.extensionScaleGroups == null) {
+            this.extensionScaleGroups = new ArrayList<>();
+        }
+        extensionScaleGroupsSetter.accept(this.extensionScaleGroups);
         return this;
     }
 
     /**
-     * Get extensionScaleGroups
+     * 节点池扩展伸缩组配置列表，详情参见ExtensionScaleGroup类型定义
      * @return extensionScaleGroups
      */
-    public ExtensionScaleGroup getExtensionScaleGroups() {
+    public List<ExtensionScaleGroup> getExtensionScaleGroups() {
         return extensionScaleGroups;
     }
 
-    public void setExtensionScaleGroups(ExtensionScaleGroup extensionScaleGroups) {
+    public void setExtensionScaleGroups(List<ExtensionScaleGroup> extensionScaleGroups) {
         this.extensionScaleGroups = extensionScaleGroups;
     }
 

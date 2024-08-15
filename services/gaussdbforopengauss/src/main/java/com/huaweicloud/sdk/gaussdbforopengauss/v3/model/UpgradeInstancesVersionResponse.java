@@ -78,7 +78,7 @@ public class UpgradeInstancesVersionResponse extends SdkResponse {
     }
 
     /**
-     * 下发成功的实例数量
+     * 下发成功的实例数量。
      * @return succeededNum
      */
     public Integer getSucceededNum() {
@@ -95,7 +95,7 @@ public class UpgradeInstancesVersionResponse extends SdkResponse {
     }
 
     /**
-     * 下发失败的实例数量
+     * 下发失败的实例数量。
      * @return failedNum
      */
     public Integer getFailedNum() {
@@ -128,7 +128,7 @@ public class UpgradeInstancesVersionResponse extends SdkResponse {
     }
 
     /**
-     * 下发失败的实例ID列表
+     * 下发失败的实例ID列表。
      * @return failedInstanceIds
      */
     public List<String> getFailedInstanceIds() {
@@ -161,7 +161,7 @@ public class UpgradeInstancesVersionResponse extends SdkResponse {
     }
 
     /**
-     * 下发失败错误信息列表
+     * 下发失败错误信息列表。
      * @return errorMessages
      */
     public List<String> getErrorMessages() {

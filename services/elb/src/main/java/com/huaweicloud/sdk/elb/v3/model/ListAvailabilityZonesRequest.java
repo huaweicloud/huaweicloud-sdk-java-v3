@@ -21,7 +21,7 @@ public class ListAvailabilityZonesRequest {
     }
 
     /**
-     * AZ组。
+     * 参数解释：AZ组。
      * @return publicBorderGroup
      */
     public String getPublicBorderGroup() {

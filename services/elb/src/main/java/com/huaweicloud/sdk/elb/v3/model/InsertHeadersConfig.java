@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 要添加的请求头参数列表。
+ * 参数解释：要添加的请求头参数列表。
  */
 public class InsertHeadersConfig {
 
@@ -40,7 +40,7 @@ public class InsertHeadersConfig {
     }
 
     /**
-     * 要添加请求头参数列表。
+     * 参数解释：要添加请求头参数列表。
      * @return configs
      */
     public List<InsertHeaderConfig> getConfigs() {

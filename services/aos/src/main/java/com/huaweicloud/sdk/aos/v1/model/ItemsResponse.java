@@ -29,6 +29,11 @@ public class ItemsResponse {
     private String index;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "module_address")
+
+    private String moduleAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "supported")
 
     private Boolean supported;
@@ -92,6 +97,23 @@ public class ItemsResponse {
 
     public void setIndex(String index) {
         this.index = index;
+    }
+
+    public ItemsResponse withModuleAddress(String moduleAddress) {
+        this.moduleAddress = moduleAddress;
+        return this;
+    }
+
+    /**
+     * 该资源的模块地址
+     * @return moduleAddress
+     */
+    public String getModuleAddress() {
+        return moduleAddress;
+    }
+
+    public void setModuleAddress(String moduleAddress) {
+        this.moduleAddress = moduleAddress;
     }
 
     public ItemsResponse withSupported(Boolean supported) {
@@ -172,14 +194,15 @@ public class ItemsResponse {
         ItemsResponse that = (ItemsResponse) obj;
         return Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.index, that.index)
-            && Objects.equals(this.supported, that.supported)
+            && Objects.equals(this.moduleAddress, that.moduleAddress) && Objects.equals(this.supported, that.supported)
             && Objects.equals(this.unsupportedMessage, that.unsupportedMessage)
             && Objects.equals(this.resourcePrice, that.resourcePrice);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType, resourceName, index, supported, unsupportedMessage, resourcePrice);
+        return Objects
+            .hash(resourceType, resourceName, index, moduleAddress, supported, unsupportedMessage, resourcePrice);
     }
 
     @Override
@@ -189,6 +212,7 @@ public class ItemsResponse {
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    index: ").append(toIndentedString(index)).append("\n");
+        sb.append("    moduleAddress: ").append(toIndentedString(moduleAddress)).append("\n");
         sb.append("    supported: ").append(toIndentedString(supported)).append("\n");
         sb.append("    unsupportedMessage: ").append(toIndentedString(unsupportedMessage)).append("\n");
         sb.append("    resourcePrice: ").append(toIndentedString(resourcePrice)).append("\n");

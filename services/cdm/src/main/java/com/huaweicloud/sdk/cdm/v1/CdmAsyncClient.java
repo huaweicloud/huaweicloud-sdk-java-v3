@@ -16,10 +16,26 @@ import com.huaweicloud.sdk.cdm.v1.model.DeleteLinkRequest;
 import com.huaweicloud.sdk.cdm.v1.model.DeleteLinkResponse;
 import com.huaweicloud.sdk.cdm.v1.model.ListClustersRequest;
 import com.huaweicloud.sdk.cdm.v1.model.ListClustersResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ModifyClusterRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ModifyClusterResponse;
 import com.huaweicloud.sdk.cdm.v1.model.RestartClusterRequest;
 import com.huaweicloud.sdk.cdm.v1.model.RestartClusterResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowAvailabilityZonesRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowAvailabilityZonesResponse;
 import com.huaweicloud.sdk.cdm.v1.model.ShowClusterDetailRequest;
 import com.huaweicloud.sdk.cdm.v1.model.ShowClusterDetailResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowClusterEnterpriseProjectsRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowClusterEnterpriseProjectsResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowDatastoresRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowDatastoresResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowEnterpriseProjectsRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowEnterpriseProjectsResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowFlavorDetailRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowFlavorDetailResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowFlavorsRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowFlavorsResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowInstanceDetailRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowInstanceDetailResponse;
 import com.huaweicloud.sdk.cdm.v1.model.ShowJobStatusRequest;
 import com.huaweicloud.sdk.cdm.v1.model.ShowJobStatusResponse;
 import com.huaweicloud.sdk.cdm.v1.model.ShowJobsRequest;
@@ -289,6 +305,35 @@ public class CdmAsyncClient {
     }
 
     /**
+     * 修改集群
+     *
+     * 修改CDM集群配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyClusterRequest 请求对象
+     * @return CompletableFuture<ModifyClusterResponse>
+     */
+    public CompletableFuture<ModifyClusterResponse> modifyClusterAsync(ModifyClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdmMeta.modifyCluster);
+    }
+
+    /**
+     * 修改集群
+     *
+     * 修改CDM集群配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyClusterRequest 请求对象
+     * @return AsyncInvoker<ModifyClusterRequest, ModifyClusterResponse>
+     */
+    public AsyncInvoker<ModifyClusterRequest, ModifyClusterResponse> modifyClusterAsyncInvoker(
+        ModifyClusterRequest request) {
+        return new AsyncInvoker<>(request, CdmMeta.modifyCluster, hcClient);
+    }
+
+    /**
      * 重启集群
      *
      * 重启集群接口。
@@ -318,6 +363,36 @@ public class CdmAsyncClient {
     }
 
     /**
+     * 查询所有可用区
+     *
+     * 查询CDM集群的所有可用区。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailabilityZonesRequest 请求对象
+     * @return CompletableFuture<ShowAvailabilityZonesResponse>
+     */
+    public CompletableFuture<ShowAvailabilityZonesResponse> showAvailabilityZonesAsync(
+        ShowAvailabilityZonesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdmMeta.showAvailabilityZones);
+    }
+
+    /**
+     * 查询所有可用区
+     *
+     * 查询CDM集群的所有可用区。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailabilityZonesRequest 请求对象
+     * @return AsyncInvoker<ShowAvailabilityZonesRequest, ShowAvailabilityZonesResponse>
+     */
+    public AsyncInvoker<ShowAvailabilityZonesRequest, ShowAvailabilityZonesResponse> showAvailabilityZonesAsyncInvoker(
+        ShowAvailabilityZonesRequest request) {
+        return new AsyncInvoker<>(request, CdmMeta.showAvailabilityZones, hcClient);
+    }
+
+    /**
      * 查询集群详情
      *
      * 查询集群详情接口。
@@ -344,6 +419,181 @@ public class CdmAsyncClient {
     public AsyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse> showClusterDetailAsyncInvoker(
         ShowClusterDetailRequest request) {
         return new AsyncInvoker<>(request, CdmMeta.showClusterDetail, hcClient);
+    }
+
+    /**
+     * 查询集群的企业项目ID
+     *
+     * 查询指定集群的企业项目ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterEnterpriseProjectsRequest 请求对象
+     * @return CompletableFuture<ShowClusterEnterpriseProjectsResponse>
+     */
+    public CompletableFuture<ShowClusterEnterpriseProjectsResponse> showClusterEnterpriseProjectsAsync(
+        ShowClusterEnterpriseProjectsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdmMeta.showClusterEnterpriseProjects);
+    }
+
+    /**
+     * 查询集群的企业项目ID
+     *
+     * 查询指定集群的企业项目ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterEnterpriseProjectsRequest 请求对象
+     * @return AsyncInvoker<ShowClusterEnterpriseProjectsRequest, ShowClusterEnterpriseProjectsResponse>
+     */
+    public AsyncInvoker<ShowClusterEnterpriseProjectsRequest, ShowClusterEnterpriseProjectsResponse> showClusterEnterpriseProjectsAsyncInvoker(
+        ShowClusterEnterpriseProjectsRequest request) {
+        return new AsyncInvoker<>(request, CdmMeta.showClusterEnterpriseProjects, hcClient);
+    }
+
+    /**
+     * 查询支持的版本
+     *
+     * 查询CDM集群支持的版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDatastoresRequest 请求对象
+     * @return CompletableFuture<ShowDatastoresResponse>
+     */
+    public CompletableFuture<ShowDatastoresResponse> showDatastoresAsync(ShowDatastoresRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdmMeta.showDatastores);
+    }
+
+    /**
+     * 查询支持的版本
+     *
+     * 查询CDM集群支持的版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDatastoresRequest 请求对象
+     * @return AsyncInvoker<ShowDatastoresRequest, ShowDatastoresResponse>
+     */
+    public AsyncInvoker<ShowDatastoresRequest, ShowDatastoresResponse> showDatastoresAsyncInvoker(
+        ShowDatastoresRequest request) {
+        return new AsyncInvoker<>(request, CdmMeta.showDatastores, hcClient);
+    }
+
+    /**
+     * 查询所有集群的企业项目ID
+     *
+     * 查询当前项目下的所有集群的企业项目ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEnterpriseProjectsRequest 请求对象
+     * @return CompletableFuture<ShowEnterpriseProjectsResponse>
+     */
+    public CompletableFuture<ShowEnterpriseProjectsResponse> showEnterpriseProjectsAsync(
+        ShowEnterpriseProjectsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdmMeta.showEnterpriseProjects);
+    }
+
+    /**
+     * 查询所有集群的企业项目ID
+     *
+     * 查询当前项目下的所有集群的企业项目ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEnterpriseProjectsRequest 请求对象
+     * @return AsyncInvoker<ShowEnterpriseProjectsRequest, ShowEnterpriseProjectsResponse>
+     */
+    public AsyncInvoker<ShowEnterpriseProjectsRequest, ShowEnterpriseProjectsResponse> showEnterpriseProjectsAsyncInvoker(
+        ShowEnterpriseProjectsRequest request) {
+        return new AsyncInvoker<>(request, CdmMeta.showEnterpriseProjects, hcClient);
+    }
+
+    /**
+     * 查询规格详情
+     *
+     * 查询指定规格ID的规格详请。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlavorDetailRequest 请求对象
+     * @return CompletableFuture<ShowFlavorDetailResponse>
+     */
+    public CompletableFuture<ShowFlavorDetailResponse> showFlavorDetailAsync(ShowFlavorDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdmMeta.showFlavorDetail);
+    }
+
+    /**
+     * 查询规格详情
+     *
+     * 查询指定规格ID的规格详请。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlavorDetailRequest 请求对象
+     * @return AsyncInvoker<ShowFlavorDetailRequest, ShowFlavorDetailResponse>
+     */
+    public AsyncInvoker<ShowFlavorDetailRequest, ShowFlavorDetailResponse> showFlavorDetailAsyncInvoker(
+        ShowFlavorDetailRequest request) {
+        return new AsyncInvoker<>(request, CdmMeta.showFlavorDetail, hcClient);
+    }
+
+    /**
+     * 查询版本规格
+     *
+     * 按版本ID查询所有兼容规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlavorsRequest 请求对象
+     * @return CompletableFuture<ShowFlavorsResponse>
+     */
+    public CompletableFuture<ShowFlavorsResponse> showFlavorsAsync(ShowFlavorsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdmMeta.showFlavors);
+    }
+
+    /**
+     * 查询版本规格
+     *
+     * 按版本ID查询所有兼容规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlavorsRequest 请求对象
+     * @return AsyncInvoker<ShowFlavorsRequest, ShowFlavorsResponse>
+     */
+    public AsyncInvoker<ShowFlavorsRequest, ShowFlavorsResponse> showFlavorsAsyncInvoker(ShowFlavorsRequest request) {
+        return new AsyncInvoker<>(request, CdmMeta.showFlavors, hcClient);
+    }
+
+    /**
+     * 查询集群实例信息
+     *
+     * 查询集群实例信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceDetailRequest 请求对象
+     * @return CompletableFuture<ShowInstanceDetailResponse>
+     */
+    public CompletableFuture<ShowInstanceDetailResponse> showInstanceDetailAsync(ShowInstanceDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CdmMeta.showInstanceDetail);
+    }
+
+    /**
+     * 查询集群实例信息
+     *
+     * 查询集群实例信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceDetailRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceDetailRequest, ShowInstanceDetailResponse>
+     */
+    public AsyncInvoker<ShowInstanceDetailRequest, ShowInstanceDetailResponse> showInstanceDetailAsyncInvoker(
+        ShowInstanceDetailRequest request) {
+        return new AsyncInvoker<>(request, CdmMeta.showInstanceDetail, hcClient);
     }
 
     /**

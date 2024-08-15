@@ -234,6 +234,87 @@ public class OpenGaussHa {
 
     private ReplicationModeEnum replicationMode;
 
+    /**
+     * 指定创建实例的产品类型，创建企业版实例时传空值或者enterprise，创建基础版实例时需要指定instance_mode的值为basic，创建生态版实例时需要指定instance_mode的值为ecology。
+     */
+    public static final class InstanceModeEnum {
+
+        /**
+         * Enum ENTERPRISE for value: "enterprise"
+         */
+        public static final InstanceModeEnum ENTERPRISE = new InstanceModeEnum("enterprise");
+
+        /**
+         * Enum BASIC for value: "basic"
+         */
+        public static final InstanceModeEnum BASIC = new InstanceModeEnum("basic");
+
+        /**
+         * Enum ECOLOGY for value: "ecology"
+         */
+        public static final InstanceModeEnum ECOLOGY = new InstanceModeEnum("ecology");
+
+        private static final Map<String, InstanceModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InstanceModeEnum> createStaticFields() {
+            Map<String, InstanceModeEnum> map = new HashMap<>();
+            map.put("enterprise", ENTERPRISE);
+            map.put("basic", BASIC);
+            map.put("ecology", ECOLOGY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        InstanceModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static InstanceModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceModeEnum(value));
+        }
+
+        public static InstanceModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof InstanceModeEnum) {
+                return this.value.equals(((InstanceModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_mode")
+
+    private InstanceModeEnum instanceMode;
+
     public OpenGaussHa withMode(ModeEnum mode) {
         this.mode = mode;
         return this;
@@ -285,6 +366,23 @@ public class OpenGaussHa {
         this.replicationMode = replicationMode;
     }
 
+    public OpenGaussHa withInstanceMode(InstanceModeEnum instanceMode) {
+        this.instanceMode = instanceMode;
+        return this;
+    }
+
+    /**
+     * 指定创建实例的产品类型，创建企业版实例时传空值或者enterprise，创建基础版实例时需要指定instance_mode的值为basic，创建生态版实例时需要指定instance_mode的值为ecology。
+     * @return instanceMode
+     */
+    public InstanceModeEnum getInstanceMode() {
+        return instanceMode;
+    }
+
+    public void setInstanceMode(InstanceModeEnum instanceMode) {
+        this.instanceMode = instanceMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -295,12 +393,13 @@ public class OpenGaussHa {
         }
         OpenGaussHa that = (OpenGaussHa) obj;
         return Objects.equals(this.mode, that.mode) && Objects.equals(this.consistency, that.consistency)
-            && Objects.equals(this.replicationMode, that.replicationMode);
+            && Objects.equals(this.replicationMode, that.replicationMode)
+            && Objects.equals(this.instanceMode, that.instanceMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mode, consistency, replicationMode);
+        return Objects.hash(mode, consistency, replicationMode, instanceMode);
     }
 
     @Override
@@ -310,6 +409,7 @@ public class OpenGaussHa {
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    consistency: ").append(toIndentedString(consistency)).append("\n");
         sb.append("    replicationMode: ").append(toIndentedString(replicationMode)).append("\n");
+        sb.append("    instanceMode: ").append(toIndentedString(instanceMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

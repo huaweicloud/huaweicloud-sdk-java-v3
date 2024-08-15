@@ -26,7 +26,7 @@ public class RedirectPoolsConfig {
     }
 
     /**
-     * 所在后端服务器组ID。
+     * 参数解释：所在后端服务器组ID。
      * @return poolId
      */
     public String getPoolId() {
@@ -43,7 +43,7 @@ public class RedirectPoolsConfig {
     }
 
     /**
-     * 转发策略主机组的权重，范围为[0,100], 请求将根据该权重进行负载分发到不同的主机组。 权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。
+     * 参数解释：转发策略主机组的权重。请求将根据该权重进行负载分发到不同的主机组。权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。  取值范围：0-100
      * minimum: 0
      * maximum: 100
      * @return weight

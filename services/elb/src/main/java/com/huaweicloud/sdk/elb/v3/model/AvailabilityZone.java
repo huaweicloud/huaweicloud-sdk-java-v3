@@ -44,7 +44,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * 可用区唯一编码。
+     * 参数解释：可用区唯一编码。
      * @return code
      */
     public String getCode() {
@@ -61,7 +61,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * 可用区状态。  取值：ACTIVE。
+     * 参数解释：可用区状态。  取值范围：ACTIVE。
      * @return state
      */
     public String getState() {
@@ -94,7 +94,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * [未售罄的LB规格类别。  取值：L4 表示网络型LB未售罄；L7 表示应用型LB未售罄。](tag:hws,hk,hws_eu,otc,tlf,ctc,sbc,g42,cmcc,hk_g42,dt_test,mix,hk_sbc,hws_ocb,dt) [LB规格类别。取值：L4 表示网络型LB；L7 表示应用型LB。](tag:ocb,tm,fcs,fcs_dt,hcso,hcso_dt,hk_vdf)
+     * [参数解释：未售罄的LB规格类别。  取值范围：L4 表示网络型LB未售罄；L7 表示应用型LB未售罄。](tag:hws,hk,hws_eu,otc,tlf,ctc,sbc,g42,cmcc,hk_g42,dt_test,mix,hk_sbc,hws_ocb,dt) [参数解释：LB规格类别。  取值范围：L4 表示网络型LB；L7 表示应用型LB。](tag:ocb,tm,fcs,fcs_dt,hcso,hcso_dt,hk_vdf)
      * @return protocol
      */
     public List<String> getProtocol() {
@@ -111,7 +111,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * 可用区组，如：center
+     * 参数解释：可用区组，如：center
      * @return publicBorderGroup
      */
     public String getPublicBorderGroup() {
@@ -128,7 +128,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * 范围编码，0表示center，21表示homezone
+     * 参数解释：范围编码。  取值范围：0表示center，21表示homezone。
      * @return category
      */
     public Integer getCategory() {

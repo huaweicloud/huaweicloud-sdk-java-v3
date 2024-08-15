@@ -891,7 +891,7 @@ public class UpdateImageResponse extends SdkResponse {
     private Integer virtualSize;
 
     /**
-     * 是否被其他租户可见，取值为private或public
+     * 是否被其他租户可见，取值为private、public或shared
      */
     public static final class VisibilityEnum {
 
@@ -905,12 +905,18 @@ public class UpdateImageResponse extends SdkResponse {
          */
         public static final VisibilityEnum PUBLIC = new VisibilityEnum("public");
 
+        /**
+         * Enum SHARED for value: "shared"
+         */
+        public static final VisibilityEnum SHARED = new VisibilityEnum("shared");
+
         private static final Map<String, VisibilityEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VisibilityEnum> createStaticFields() {
             Map<String, VisibilityEnum> map = new HashMap<>();
             map.put("private", PRIVATE);
             map.put("public", PUBLIC);
+            map.put("shared", SHARED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -2056,7 +2062,7 @@ public class UpdateImageResponse extends SdkResponse {
     }
 
     /**
-     * 是否被其他租户可见，取值为private或public
+     * 是否被其他租户可见，取值为private、public或shared
      * @return visibility
      */
     public VisibilityEnum getVisibility() {

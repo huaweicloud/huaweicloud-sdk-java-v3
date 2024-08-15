@@ -118,6 +118,12 @@ public class CloudPondMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListEdgeSitesRequest::getSortDir, ListEdgeSitesRequest::setSortDir));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEdgeSitesRequest::getEnterpriseProjectId,
+                ListEdgeSitesRequest::setEnterpriseProjectId));
         builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

@@ -104,7 +104,7 @@ public class ShowUpgradeCandidateVersionsResponse extends SdkResponse {
     }
 
     /**
-     * 是否可以回滚，true可以回滚，false不可以回滚
+     * 是否可以回滚，true可以回滚，false不可以回滚。
      * @return rollbackEnabled
      */
     public Boolean getRollbackEnabled() {
@@ -138,7 +138,7 @@ public class ShowUpgradeCandidateVersionsResponse extends SdkResponse {
     }
 
     /**
-     * 升级目标版本，没有在滚动升级中返回null
+     * 升级目标版本，没有在滚动升级中返回null。
      * @return targetVersion
      */
     public String getTargetVersion() {
@@ -199,7 +199,7 @@ public class ShowUpgradeCandidateVersionsResponse extends SdkResponse {
     }
 
     /**
-     * 可以升级的版本，包括大小版本，滚动升级中返回空数组
+     * 可以升级的版本，包括大小版本，滚动升级中返回空数组。
      * @return upgradeCandidateVersions
      */
     public List<String> getUpgradeCandidateVersions() {
@@ -235,7 +235,7 @@ public class ShowUpgradeCandidateVersionsResponse extends SdkResponse {
     }
 
     /**
-     * 可以升级的热补丁版本，滚动升级中返回空数组
+     * 可以升级的热补丁版本，滚动升级中返回空数组。
      * @return hotfixUpgradeCandidateVersions
      */
     public List<String> getHotfixUpgradeCandidateVersions() {
@@ -271,7 +271,7 @@ public class ShowUpgradeCandidateVersionsResponse extends SdkResponse {
     }
 
     /**
-     * 可以回滚的热补丁版本，滚动升级中返回空数组
+     * 可以回滚的热补丁版本，滚动升级中返回空数组。
      * @return hotfixRollbackCandidateVersions
      */
     public List<String> getHotfixRollbackCandidateVersions() {

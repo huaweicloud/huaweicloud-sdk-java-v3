@@ -95,6 +95,16 @@ public class StopMigrationTaskResult {
 
     private String taskId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_msg")
+
+    private String errorMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
     public StopMigrationTaskResult withResult(ResultEnum result) {
         this.result = result;
         return this;
@@ -129,6 +139,40 @@ public class StopMigrationTaskResult {
         this.taskId = taskId;
     }
 
+    public StopMigrationTaskResult withErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+
+    /**
+     * 错误信息
+     * @return errorMsg
+     */
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+
+    public StopMigrationTaskResult withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
+     * 错误码
+     * @return errorCode
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -138,12 +182,13 @@ public class StopMigrationTaskResult {
             return false;
         }
         StopMigrationTaskResult that = (StopMigrationTaskResult) obj;
-        return Objects.equals(this.result, that.result) && Objects.equals(this.taskId, that.taskId);
+        return Objects.equals(this.result, that.result) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(result, taskId);
+        return Objects.hash(result, taskId, errorMsg, errorCode);
     }
 
     @Override
@@ -152,6 +197,8 @@ public class StopMigrationTaskResult {
         sb.append("class StopMigrationTaskResult {\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

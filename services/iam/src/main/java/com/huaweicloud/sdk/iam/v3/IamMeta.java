@@ -747,6 +747,29 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateBindingDeviceRequest, CreateBindingDeviceResponse> createBindingDevice =
+        genForCreateBindingDevice();
+
+    private static HttpRequestDef<CreateBindingDeviceRequest, CreateBindingDeviceResponse> genForCreateBindingDevice() {
+        // basic
+        HttpRequestDef.Builder<CreateBindingDeviceRequest, CreateBindingDeviceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CreateBindingDeviceRequest.class, CreateBindingDeviceResponse.class)
+                .withName("CreateBindingDevice")
+                .withUri("/v3.0/OS-MFA/mfa-devices/bind")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BindMfaDevice>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BindMfaDevice.class),
+            f -> f.withMarshaller(CreateBindingDeviceRequest::getBody, CreateBindingDeviceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCloudServiceCustomPolicyRequest, CreateCloudServiceCustomPolicyResponse> createCloudServiceCustomPolicy =
         genForCreateCloudServiceCustomPolicy();
 
@@ -830,6 +853,29 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateMetadataRequestBody.class),
             f -> f.withMarshaller(CreateMetadataRequest::getBody, CreateMetadataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMfaDeviceRequest, CreateMfaDeviceResponse> createMfaDevice =
+        genForCreateMfaDevice();
+
+    private static HttpRequestDef<CreateMfaDeviceRequest, CreateMfaDeviceResponse> genForCreateMfaDevice() {
+        // basic
+        HttpRequestDef.Builder<CreateMfaDeviceRequest, CreateMfaDeviceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMfaDeviceRequest.class, CreateMfaDeviceResponse.class)
+                .withName("CreateMfaDevice")
+                .withUri("/v3.0/OS-MFA/virtual-mfa-devices")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateMfaDeviceReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateMfaDeviceReq.class),
+            f -> f.withMarshaller(CreateMfaDeviceRequest::getBody, CreateMfaDeviceRequest::setBody));
 
         // response
 
@@ -970,6 +1016,29 @@ public class IamMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> deleteBindingDevice =
+        genForDeleteBindingDevice();
+
+    private static HttpRequestDef<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> genForDeleteBindingDevice() {
+        // basic
+        HttpRequestDef.Builder<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, DeleteBindingDeviceRequest.class, DeleteBindingDeviceResponse.class)
+                .withName("DeleteBindingDevice")
+                .withUri("/v3.0/OS-MFA/mfa-devices/unbind")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<UnbindMfaDevice>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UnbindMfaDevice.class),
+            f -> f.withMarshaller(DeleteBindingDeviceRequest::getBody, DeleteBindingDeviceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteCustomPolicyRequest, DeleteCustomPolicyResponse> deleteCustomPolicy =
         genForDeleteCustomPolicy();
 
@@ -1026,6 +1095,34 @@ public class IamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDomainGroupInheritedRoleRequest::getRoleId,
                 DeleteDomainGroupInheritedRoleRequest::setRoleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> deleteMfaDevice =
+        genForDeleteMfaDevice();
+
+    private static HttpRequestDef<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> genForDeleteMfaDevice() {
+        // basic
+        HttpRequestDef.Builder<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteMfaDeviceRequest.class, DeleteMfaDeviceResponse.class)
+                .withName("DeleteMfaDevice")
+                .withUri("/v3.0/OS-MFA/virtual-mfa-devices")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMfaDeviceRequest::getUserId, DeleteMfaDeviceRequest::setUserId));
+        builder.<String>withRequestField("serial_number",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMfaDeviceRequest::getSerialNumber, DeleteMfaDeviceRequest::setSerialNumber));
 
         // response
 
@@ -4118,52 +4215,6 @@ public class IamMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateBindingDeviceRequest, CreateBindingDeviceResponse> createBindingDevice =
-        genForCreateBindingDevice();
-
-    private static HttpRequestDef<CreateBindingDeviceRequest, CreateBindingDeviceResponse> genForCreateBindingDevice() {
-        // basic
-        HttpRequestDef.Builder<CreateBindingDeviceRequest, CreateBindingDeviceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, CreateBindingDeviceRequest.class, CreateBindingDeviceResponse.class)
-                .withName("CreateBindingDevice")
-                .withUri("/v3.0/OS-MFA/mfa-devices/bind")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<BindMfaDevice>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BindMfaDevice.class),
-            f -> f.withMarshaller(CreateBindingDeviceRequest::getBody, CreateBindingDeviceRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateMfaDeviceRequest, CreateMfaDeviceResponse> createMfaDevice =
-        genForCreateMfaDevice();
-
-    private static HttpRequestDef<CreateMfaDeviceRequest, CreateMfaDeviceResponse> genForCreateMfaDevice() {
-        // basic
-        HttpRequestDef.Builder<CreateMfaDeviceRequest, CreateMfaDeviceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateMfaDeviceRequest.class, CreateMfaDeviceResponse.class)
-                .withName("CreateMfaDevice")
-                .withUri("/v3.0/OS-MFA/virtual-mfa-devices")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<CreateMfaDeviceReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateMfaDeviceReq.class),
-            f -> f.withMarshaller(CreateMfaDeviceRequest::getBody, CreateMfaDeviceRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateUserRequest, CreateUserResponse> createUser = genForCreateUser();
 
     private static HttpRequestDef<CreateUserRequest, CreateUserResponse> genForCreateUser() {
@@ -4180,57 +4231,6 @@ public class IamMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateUserRequestBody.class),
             f -> f.withMarshaller(CreateUserRequest::getBody, CreateUserRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> deleteBindingDevice =
-        genForDeleteBindingDevice();
-
-    private static HttpRequestDef<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> genForDeleteBindingDevice() {
-        // basic
-        HttpRequestDef.Builder<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, DeleteBindingDeviceRequest.class, DeleteBindingDeviceResponse.class)
-                .withName("DeleteBindingDevice")
-                .withUri("/v3.0/OS-MFA/mfa-devices/unbind")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<UnbindMfaDevice>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UnbindMfaDevice.class),
-            f -> f.withMarshaller(DeleteBindingDeviceRequest::getBody, DeleteBindingDeviceRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> deleteMfaDevice =
-        genForDeleteMfaDevice();
-
-    private static HttpRequestDef<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> genForDeleteMfaDevice() {
-        // basic
-        HttpRequestDef.Builder<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteMfaDeviceRequest.class, DeleteMfaDeviceResponse.class)
-                .withName("DeleteMfaDevice")
-                .withUri("/v3.0/OS-MFA/virtual-mfa-devices")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("user_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMfaDeviceRequest::getUserId, DeleteMfaDeviceRequest::setUserId));
-        builder.<String>withRequestField("serial_number",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteMfaDeviceRequest::getSerialNumber, DeleteMfaDeviceRequest::setSerialNumber));
 
         // response
 

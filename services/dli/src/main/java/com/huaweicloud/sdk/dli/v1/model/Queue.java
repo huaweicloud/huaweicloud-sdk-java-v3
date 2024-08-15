@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.dli.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 查询所有队列的响应参数。
@@ -124,6 +127,46 @@ public class Queue {
     @JsonProperty(value = "elastic_resource_pool_name")
 
     private String elasticResourcePoolName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_spark_versions")
+
+    private List<String> supportSparkVersions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_spark_version")
+
+    private String defaultSparkVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_hetu_engine_versions")
+
+    private List<String> supportHetuEngineVersions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_hetu_engine_version")
+
+    private String defaultHetuEngineVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_flink_sql_versions")
+
+    private List<String> supportFlinkSqlVersions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_flink_sql_version")
+
+    private String defaultFlinkSqlVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_flink_jar_versions")
+
+    private List<String> supportFlinkJarVersions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_flink_jar_version")
+
+    private String defaultFlinkJarVersion;
 
     public Queue withQueueId(Long queueId) {
         this.queueId = queueId;
@@ -516,6 +559,206 @@ public class Queue {
         this.elasticResourcePoolName = elasticResourcePoolName;
     }
 
+    public Queue withSupportSparkVersions(List<String> supportSparkVersions) {
+        this.supportSparkVersions = supportSparkVersions;
+        return this;
+    }
+
+    public Queue addSupportSparkVersionsItem(String supportSparkVersionsItem) {
+        if (this.supportSparkVersions == null) {
+            this.supportSparkVersions = new ArrayList<>();
+        }
+        this.supportSparkVersions.add(supportSparkVersionsItem);
+        return this;
+    }
+
+    public Queue withSupportSparkVersions(Consumer<List<String>> supportSparkVersionsSetter) {
+        if (this.supportSparkVersions == null) {
+            this.supportSparkVersions = new ArrayList<>();
+        }
+        supportSparkVersionsSetter.accept(this.supportSparkVersions);
+        return this;
+    }
+
+    /**
+     * 队列支持的Spark版本。
+     * @return supportSparkVersions
+     */
+    public List<String> getSupportSparkVersions() {
+        return supportSparkVersions;
+    }
+
+    public void setSupportSparkVersions(List<String> supportSparkVersions) {
+        this.supportSparkVersions = supportSparkVersions;
+    }
+
+    public Queue withDefaultSparkVersion(String defaultSparkVersion) {
+        this.defaultSparkVersion = defaultSparkVersion;
+        return this;
+    }
+
+    /**
+     * 队列默认的Spark版本。
+     * @return defaultSparkVersion
+     */
+    public String getDefaultSparkVersion() {
+        return defaultSparkVersion;
+    }
+
+    public void setDefaultSparkVersion(String defaultSparkVersion) {
+        this.defaultSparkVersion = defaultSparkVersion;
+    }
+
+    public Queue withSupportHetuEngineVersions(List<String> supportHetuEngineVersions) {
+        this.supportHetuEngineVersions = supportHetuEngineVersions;
+        return this;
+    }
+
+    public Queue addSupportHetuEngineVersionsItem(String supportHetuEngineVersionsItem) {
+        if (this.supportHetuEngineVersions == null) {
+            this.supportHetuEngineVersions = new ArrayList<>();
+        }
+        this.supportHetuEngineVersions.add(supportHetuEngineVersionsItem);
+        return this;
+    }
+
+    public Queue withSupportHetuEngineVersions(Consumer<List<String>> supportHetuEngineVersionsSetter) {
+        if (this.supportHetuEngineVersions == null) {
+            this.supportHetuEngineVersions = new ArrayList<>();
+        }
+        supportHetuEngineVersionsSetter.accept(this.supportHetuEngineVersions);
+        return this;
+    }
+
+    /**
+     * 队列支持的HetuEngine版本。
+     * @return supportHetuEngineVersions
+     */
+    public List<String> getSupportHetuEngineVersions() {
+        return supportHetuEngineVersions;
+    }
+
+    public void setSupportHetuEngineVersions(List<String> supportHetuEngineVersions) {
+        this.supportHetuEngineVersions = supportHetuEngineVersions;
+    }
+
+    public Queue withDefaultHetuEngineVersion(String defaultHetuEngineVersion) {
+        this.defaultHetuEngineVersion = defaultHetuEngineVersion;
+        return this;
+    }
+
+    /**
+     * 队列默认的HetuEngine版本。
+     * @return defaultHetuEngineVersion
+     */
+    public String getDefaultHetuEngineVersion() {
+        return defaultHetuEngineVersion;
+    }
+
+    public void setDefaultHetuEngineVersion(String defaultHetuEngineVersion) {
+        this.defaultHetuEngineVersion = defaultHetuEngineVersion;
+    }
+
+    public Queue withSupportFlinkSqlVersions(List<String> supportFlinkSqlVersions) {
+        this.supportFlinkSqlVersions = supportFlinkSqlVersions;
+        return this;
+    }
+
+    public Queue addSupportFlinkSqlVersionsItem(String supportFlinkSqlVersionsItem) {
+        if (this.supportFlinkSqlVersions == null) {
+            this.supportFlinkSqlVersions = new ArrayList<>();
+        }
+        this.supportFlinkSqlVersions.add(supportFlinkSqlVersionsItem);
+        return this;
+    }
+
+    public Queue withSupportFlinkSqlVersions(Consumer<List<String>> supportFlinkSqlVersionsSetter) {
+        if (this.supportFlinkSqlVersions == null) {
+            this.supportFlinkSqlVersions = new ArrayList<>();
+        }
+        supportFlinkSqlVersionsSetter.accept(this.supportFlinkSqlVersions);
+        return this;
+    }
+
+    /**
+     * 队列支持的Flink SQL版本。
+     * @return supportFlinkSqlVersions
+     */
+    public List<String> getSupportFlinkSqlVersions() {
+        return supportFlinkSqlVersions;
+    }
+
+    public void setSupportFlinkSqlVersions(List<String> supportFlinkSqlVersions) {
+        this.supportFlinkSqlVersions = supportFlinkSqlVersions;
+    }
+
+    public Queue withDefaultFlinkSqlVersion(String defaultFlinkSqlVersion) {
+        this.defaultFlinkSqlVersion = defaultFlinkSqlVersion;
+        return this;
+    }
+
+    /**
+     * 队列默认的Flink SQL版本。
+     * @return defaultFlinkSqlVersion
+     */
+    public String getDefaultFlinkSqlVersion() {
+        return defaultFlinkSqlVersion;
+    }
+
+    public void setDefaultFlinkSqlVersion(String defaultFlinkSqlVersion) {
+        this.defaultFlinkSqlVersion = defaultFlinkSqlVersion;
+    }
+
+    public Queue withSupportFlinkJarVersions(List<String> supportFlinkJarVersions) {
+        this.supportFlinkJarVersions = supportFlinkJarVersions;
+        return this;
+    }
+
+    public Queue addSupportFlinkJarVersionsItem(String supportFlinkJarVersionsItem) {
+        if (this.supportFlinkJarVersions == null) {
+            this.supportFlinkJarVersions = new ArrayList<>();
+        }
+        this.supportFlinkJarVersions.add(supportFlinkJarVersionsItem);
+        return this;
+    }
+
+    public Queue withSupportFlinkJarVersions(Consumer<List<String>> supportFlinkJarVersionsSetter) {
+        if (this.supportFlinkJarVersions == null) {
+            this.supportFlinkJarVersions = new ArrayList<>();
+        }
+        supportFlinkJarVersionsSetter.accept(this.supportFlinkJarVersions);
+        return this;
+    }
+
+    /**
+     * 队列支持的Flink JAR版本。
+     * @return supportFlinkJarVersions
+     */
+    public List<String> getSupportFlinkJarVersions() {
+        return supportFlinkJarVersions;
+    }
+
+    public void setSupportFlinkJarVersions(List<String> supportFlinkJarVersions) {
+        this.supportFlinkJarVersions = supportFlinkJarVersions;
+    }
+
+    public Queue withDefaultFlinkJarVersion(String defaultFlinkJarVersion) {
+        this.defaultFlinkJarVersion = defaultFlinkJarVersion;
+        return this;
+    }
+
+    /**
+     * 队列默认的Flink JAR版本。
+     * @return defaultFlinkJarVersion
+     */
+    public String getDefaultFlinkJarVersion() {
+        return defaultFlinkJarVersion;
+    }
+
+    public void setDefaultFlinkJarVersion(String defaultFlinkJarVersion) {
+        this.defaultFlinkJarVersion = defaultFlinkJarVersion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -539,7 +782,15 @@ public class Queue {
             && Objects.equals(this.feature, that.feature) && Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.cuSpec, that.cuSpec) && Objects.equals(this.cuScaleOutLimit, that.cuScaleOutLimit)
             && Objects.equals(this.cuScaleInLimit, that.cuScaleInLimit)
-            && Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName);
+            && Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName)
+            && Objects.equals(this.supportSparkVersions, that.supportSparkVersions)
+            && Objects.equals(this.defaultSparkVersion, that.defaultSparkVersion)
+            && Objects.equals(this.supportHetuEngineVersions, that.supportHetuEngineVersions)
+            && Objects.equals(this.defaultHetuEngineVersion, that.defaultHetuEngineVersion)
+            && Objects.equals(this.supportFlinkSqlVersions, that.supportFlinkSqlVersions)
+            && Objects.equals(this.defaultFlinkSqlVersion, that.defaultFlinkSqlVersion)
+            && Objects.equals(this.supportFlinkJarVersions, that.supportFlinkJarVersions)
+            && Objects.equals(this.defaultFlinkJarVersion, that.defaultFlinkJarVersion);
     }
 
     @Override
@@ -566,7 +817,15 @@ public class Queue {
             cuSpec,
             cuScaleOutLimit,
             cuScaleInLimit,
-            elasticResourcePoolName);
+            elasticResourcePoolName,
+            supportSparkVersions,
+            defaultSparkVersion,
+            supportHetuEngineVersions,
+            defaultHetuEngineVersion,
+            supportFlinkSqlVersions,
+            defaultFlinkSqlVersion,
+            supportFlinkJarVersions,
+            defaultFlinkJarVersion);
     }
 
     @Override
@@ -596,6 +855,14 @@ public class Queue {
         sb.append("    cuScaleOutLimit: ").append(toIndentedString(cuScaleOutLimit)).append("\n");
         sb.append("    cuScaleInLimit: ").append(toIndentedString(cuScaleInLimit)).append("\n");
         sb.append("    elasticResourcePoolName: ").append(toIndentedString(elasticResourcePoolName)).append("\n");
+        sb.append("    supportSparkVersions: ").append(toIndentedString(supportSparkVersions)).append("\n");
+        sb.append("    defaultSparkVersion: ").append(toIndentedString(defaultSparkVersion)).append("\n");
+        sb.append("    supportHetuEngineVersions: ").append(toIndentedString(supportHetuEngineVersions)).append("\n");
+        sb.append("    defaultHetuEngineVersion: ").append(toIndentedString(defaultHetuEngineVersion)).append("\n");
+        sb.append("    supportFlinkSqlVersions: ").append(toIndentedString(supportFlinkSqlVersions)).append("\n");
+        sb.append("    defaultFlinkSqlVersion: ").append(toIndentedString(defaultFlinkSqlVersion)).append("\n");
+        sb.append("    supportFlinkJarVersions: ").append(toIndentedString(supportFlinkJarVersions)).append("\n");
+        sb.append("    defaultFlinkJarVersion: ").append(toIndentedString(defaultFlinkJarVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

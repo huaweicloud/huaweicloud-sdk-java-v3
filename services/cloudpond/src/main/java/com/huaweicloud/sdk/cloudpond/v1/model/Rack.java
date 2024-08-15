@@ -99,6 +99,11 @@ public class Rack {
 
     private RackInfo rackInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_info")
+
+    private ProductInfo productInfo;
+
     public Rack withId(String id) {
         this.id = id;
         return this;
@@ -431,6 +436,32 @@ public class Rack {
         this.rackInfo = rackInfo;
     }
 
+    public Rack withProductInfo(ProductInfo productInfo) {
+        this.productInfo = productInfo;
+        return this;
+    }
+
+    public Rack withProductInfo(Consumer<ProductInfo> productInfoSetter) {
+        if (this.productInfo == null) {
+            this.productInfo = new ProductInfo();
+            productInfoSetter.accept(this.productInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get productInfo
+     * @return productInfo
+     */
+    public ProductInfo getProductInfo() {
+        return productInfo;
+    }
+
+    public void setProductInfo(ProductInfo productInfo) {
+        this.productInfo = productInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -451,7 +482,7 @@ public class Rack {
             && Objects.equals(this.effectedAt, that.effectedAt)
             && Objects.equals(this.marketOptions, that.marketOptions)
             && Objects.equals(this.computeUnit, that.computeUnit) && Objects.equals(this.storageUnit, that.storageUnit)
-            && Objects.equals(this.rackInfo, that.rackInfo);
+            && Objects.equals(this.rackInfo, that.rackInfo) && Objects.equals(this.productInfo, that.productInfo);
     }
 
     @Override
@@ -472,7 +503,8 @@ public class Rack {
             marketOptions,
             computeUnit,
             storageUnit,
-            rackInfo);
+            rackInfo,
+            productInfo);
     }
 
     @Override
@@ -496,6 +528,7 @@ public class Rack {
         sb.append("    computeUnit: ").append(toIndentedString(computeUnit)).append("\n");
         sb.append("    storageUnit: ").append(toIndentedString(storageUnit)).append("\n");
         sb.append("    rackInfo: ").append(toIndentedString(rackInfo)).append("\n");
+        sb.append("    productInfo: ").append(toIndentedString(productInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

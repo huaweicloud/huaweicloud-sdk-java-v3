@@ -1103,7 +1103,7 @@ public class ListImagesRequest {
     private VirtualEnvTypeEnum virtualEnvType;
 
     /**
-     * 是否被其他租户可见，取值为public或private
+     * 是否被其他租户可见，取值为public、private或shared
      */
     public static final class VisibilityEnum {
 
@@ -1117,12 +1117,18 @@ public class ListImagesRequest {
          */
         public static final VisibilityEnum PRIVATE = new VisibilityEnum("private");
 
+        /**
+         * Enum SHARED for value: "shared"
+         */
+        public static final VisibilityEnum SHARED = new VisibilityEnum("shared");
+
         private static final Map<String, VisibilityEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, VisibilityEnum> createStaticFields() {
             Map<String, VisibilityEnum> map = new HashMap<>();
             map.put("public", PUBLIC);
             map.put("private", PRIVATE);
+            map.put("shared", SHARED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -1835,7 +1841,7 @@ public class ListImagesRequest {
     }
 
     /**
-     * 是否被其他租户可见，取值为public或private
+     * 是否被其他租户可见，取值为public、private或shared
      * @return visibility
      */
     public VisibilityEnum getVisibility() {

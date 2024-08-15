@@ -35,7 +35,7 @@ public class ListL7PoliciesResponse extends SdkResponse {
     }
 
     /**
-     * 请求ID。  注：自动生成 。
+     * 参数解释：请求ID。  注：自动生成 。
      * @return requestId
      */
     public String getRequestId() {
@@ -94,7 +94,7 @@ public class ListL7PoliciesResponse extends SdkResponse {
     }
 
     /**
-     * 转发策略对象列表。
+     * 参数解释：转发策略对象列表。
      * @return l7policies
      */
     public List<L7Policy> getL7policies() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 弹性ip，同publicips
+ * 参数解释：弹性IP，同publicips。
  */
 public class EipInfo {
 
@@ -31,7 +31,7 @@ public class EipInfo {
     }
 
     /**
-     * eip_id
+     * 参数解释：弹性IP的ID。
      * @return eipId
      */
     public String getEipId() {
@@ -48,7 +48,7 @@ public class EipInfo {
     }
 
     /**
-     * eip_address
+     * 参数解释：弹性IP的IP地址。
      * @return eipAddress
      */
     public String getEipAddress() {
@@ -65,7 +65,7 @@ public class EipInfo {
     }
 
     /**
-     * IP版本号。  取值：4表示IPv4,6表示IPv6。  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+     * 参数解释：IP版本号。  取值范围： - 4表示IPv4。 - 6表示IPv6。  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
      * @return ipVersion
      */
     public Integer getIpVersion() {

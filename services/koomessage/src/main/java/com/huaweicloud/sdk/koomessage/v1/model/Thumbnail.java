@@ -46,6 +46,11 @@ public class Thumbnail {
     private String obsObjectKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "obs_file_url")
+
+    private String obsFileUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_rate")
 
     private String imageRate;
@@ -59,6 +64,11 @@ public class Thumbnail {
     @JsonProperty(value = "description")
 
     private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "size")
+
+    private Integer size;
 
     public Thumbnail withId(String id) {
         this.id = id;
@@ -179,13 +189,30 @@ public class Thumbnail {
         this.obsObjectKey = obsObjectKey;
     }
 
+    public Thumbnail withObsFileUrl(String obsFileUrl) {
+        this.obsFileUrl = obsFileUrl;
+        return this;
+    }
+
+    /**
+     * 文件访问路径。
+     * @return obsFileUrl
+     */
+    public String getObsFileUrl() {
+        return obsFileUrl;
+    }
+
+    public void setObsFileUrl(String obsFileUrl) {
+        this.obsFileUrl = obsFileUrl;
+    }
+
     public Thumbnail withImageRate(String imageRate) {
         this.imageRate = imageRate;
         return this;
     }
 
     /**
-     * 图像比例。 - oneToOne：指1:1比例 - sixteenToNine：指16:9比例 - threeToOne：指3:1比例 - fortyEightToSixtyFive：指48:65比例 - twentyOneToNine：指21:9比例 
+     * 图像比例。 - oneToOne：指1:1比例 - sixteenToNine：指16:9比例 - threeToOne：指3:1比例 - fortyEightToSixtyFive：指48:65比例 - twentyOneToNine：指21:9比例 - threeToFour：指3:4比例 
      * @return imageRate
      */
     public String getImageRate() {
@@ -230,6 +257,23 @@ public class Thumbnail {
         this.description = description;
     }
 
+    public Thumbnail withSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+
+    /**
+     * 缩略图所占空间大小。
+     * @return size
+     */
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -242,8 +286,9 @@ public class Thumbnail {
         return Objects.equals(this.id, that.id) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.isPrimary, that.isPrimary) && Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.aimResourceId, that.aimResourceId)
-            && Objects.equals(this.obsObjectKey, that.obsObjectKey) && Objects.equals(this.imageRate, that.imageRate)
-            && Objects.equals(this.isAutoGen, that.isAutoGen) && Objects.equals(this.description, that.description);
+            && Objects.equals(this.obsObjectKey, that.obsObjectKey) && Objects.equals(this.obsFileUrl, that.obsFileUrl)
+            && Objects.equals(this.imageRate, that.imageRate) && Objects.equals(this.isAutoGen, that.isAutoGen)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.size, that.size);
     }
 
     @Override
@@ -255,9 +300,11 @@ public class Thumbnail {
             fileName,
             aimResourceId,
             obsObjectKey,
+            obsFileUrl,
             imageRate,
             isAutoGen,
-            description);
+            description,
+            size);
     }
 
     @Override
@@ -271,9 +318,11 @@ public class Thumbnail {
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("    aimResourceId: ").append(toIndentedString(aimResourceId)).append("\n");
         sb.append("    obsObjectKey: ").append(toIndentedString(obsObjectKey)).append("\n");
+        sb.append("    obsFileUrl: ").append(toIndentedString(obsFileUrl)).append("\n");
         sb.append("    imageRate: ").append(toIndentedString(imageRate)).append("\n");
         sb.append("    isAutoGen: ").append(toIndentedString(isAutoGen)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("}");
         return sb.toString();
     }

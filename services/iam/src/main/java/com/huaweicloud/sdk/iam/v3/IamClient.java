@@ -680,6 +680,39 @@ public class IamClient {
     }
 
     /**
+     * 绑定MFA设备
+     *
+     * 该接口可以用于绑定MFA设备。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateBindingDeviceRequest 请求对象
+     * @return CreateBindingDeviceResponse
+     */
+    public CreateBindingDeviceResponse createBindingDevice(CreateBindingDeviceRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.createBindingDevice);
+    }
+
+    /**
+     * 绑定MFA设备
+     *
+     * 该接口可以用于绑定MFA设备。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateBindingDeviceRequest 请求对象
+     * @return SyncInvoker<CreateBindingDeviceRequest, CreateBindingDeviceResponse>
+     */
+    public SyncInvoker<CreateBindingDeviceRequest, CreateBindingDeviceResponse> createBindingDeviceInvoker(
+        CreateBindingDeviceRequest request) {
+        return new SyncInvoker<>(request, IamMeta.createBindingDevice, hcClient);
+    }
+
+    /**
      * 创建云服务自定义策略
      *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建云服务自定义策略。
@@ -785,6 +818,39 @@ public class IamClient {
     public SyncInvoker<CreateMetadataRequest, CreateMetadataResponse> createMetadataInvoker(
         CreateMetadataRequest request) {
         return new SyncInvoker<>(request, IamMeta.createMetadata, hcClient);
+    }
+
+    /**
+     * 创建MFA设备
+     *
+     * 该接口可以用于创建MFA设备。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateMfaDeviceRequest 请求对象
+     * @return CreateMfaDeviceResponse
+     */
+    public CreateMfaDeviceResponse createMfaDevice(CreateMfaDeviceRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.createMfaDevice);
+    }
+
+    /**
+     * 创建MFA设备
+     *
+     * 该接口可以用于创建MFA设备。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateMfaDeviceRequest 请求对象
+     * @return SyncInvoker<CreateMfaDeviceRequest, CreateMfaDeviceResponse>
+     */
+    public SyncInvoker<CreateMfaDeviceRequest, CreateMfaDeviceResponse> createMfaDeviceInvoker(
+        CreateMfaDeviceRequest request) {
+        return new SyncInvoker<>(request, IamMeta.createMfaDevice, hcClient);
     }
 
     /**
@@ -908,6 +974,39 @@ public class IamClient {
     }
 
     /**
+     * 解绑MFA设备
+     *
+     * 该接口可以用于解绑MFA设备
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBindingDeviceRequest 请求对象
+     * @return DeleteBindingDeviceResponse
+     */
+    public DeleteBindingDeviceResponse deleteBindingDevice(DeleteBindingDeviceRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.deleteBindingDevice);
+    }
+
+    /**
+     * 解绑MFA设备
+     *
+     * 该接口可以用于解绑MFA设备
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteBindingDeviceRequest 请求对象
+     * @return SyncInvoker<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse>
+     */
+    public SyncInvoker<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> deleteBindingDeviceInvoker(
+        DeleteBindingDeviceRequest request) {
+        return new SyncInvoker<>(request, IamMeta.deleteBindingDevice, hcClient);
+    }
+
+    /**
      * 删除自定义策略
      *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除自定义策略。
@@ -972,6 +1071,39 @@ public class IamClient {
     public SyncInvoker<DeleteDomainGroupInheritedRoleRequest, DeleteDomainGroupInheritedRoleResponse> deleteDomainGroupInheritedRoleInvoker(
         DeleteDomainGroupInheritedRoleRequest request) {
         return new SyncInvoker<>(request, IamMeta.deleteDomainGroupInheritedRole, hcClient);
+    }
+
+    /**
+     * 删除MFA设备
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除MFA设备。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMfaDeviceRequest 请求对象
+     * @return DeleteMfaDeviceResponse
+     */
+    public DeleteMfaDeviceResponse deleteMfaDevice(DeleteMfaDeviceRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.deleteMfaDevice);
+    }
+
+    /**
+     * 删除MFA设备
+     *
+     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除MFA设备。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMfaDeviceRequest 请求对象
+     * @return SyncInvoker<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse>
+     */
+    public SyncInvoker<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> deleteMfaDeviceInvoker(
+        DeleteMfaDeviceRequest request) {
+        return new SyncInvoker<>(request, IamMeta.deleteMfaDevice, hcClient);
     }
 
     /**
@@ -2972,7 +3104,7 @@ public class IamClient {
     }
 
     /**
-     * 查询用户关联的企业项目
+     * 查询用户直接关联的企业项目
      *
      * 该接口可用于查询用户所关联的企业项目。
      * 
@@ -2989,7 +3121,7 @@ public class IamClient {
     }
 
     /**
-     * 查询用户关联的企业项目
+     * 查询用户直接关联的企业项目
      *
      * 该接口可用于查询用户所关联的企业项目。
      * 
@@ -3074,7 +3206,7 @@ public class IamClient {
     }
 
     /**
-     * 查询企业项目已关联用户组的权限
+     * 查询企业项目关联用户组的权限
      *
      * 该接口可用于查询企业项目已关联用户组的权限。
      * 
@@ -3091,7 +3223,7 @@ public class IamClient {
     }
 
     /**
-     * 查询企业项目已关联用户组的权限
+     * 查询企业项目关联用户组的权限
      *
      * 该接口可用于查询企业项目已关联用户组的权限。
      * 
@@ -4397,72 +4529,6 @@ public class IamClient {
     }
 
     /**
-     * 绑定MFA设备
-     *
-     * 该接口可以用于绑定MFA设备。
-     * 
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateBindingDeviceRequest 请求对象
-     * @return CreateBindingDeviceResponse
-     */
-    public CreateBindingDeviceResponse createBindingDevice(CreateBindingDeviceRequest request) {
-        return hcClient.syncInvokeHttp(request, IamMeta.createBindingDevice);
-    }
-
-    /**
-     * 绑定MFA设备
-     *
-     * 该接口可以用于绑定MFA设备。
-     * 
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateBindingDeviceRequest 请求对象
-     * @return SyncInvoker<CreateBindingDeviceRequest, CreateBindingDeviceResponse>
-     */
-    public SyncInvoker<CreateBindingDeviceRequest, CreateBindingDeviceResponse> createBindingDeviceInvoker(
-        CreateBindingDeviceRequest request) {
-        return new SyncInvoker<>(request, IamMeta.createBindingDevice, hcClient);
-    }
-
-    /**
-     * 创建MFA设备
-     *
-     * 该接口可以用于创建MFA设备。
-     * 
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateMfaDeviceRequest 请求对象
-     * @return CreateMfaDeviceResponse
-     */
-    public CreateMfaDeviceResponse createMfaDevice(CreateMfaDeviceRequest request) {
-        return hcClient.syncInvokeHttp(request, IamMeta.createMfaDevice);
-    }
-
-    /**
-     * 创建MFA设备
-     *
-     * 该接口可以用于创建MFA设备。
-     * 
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateMfaDeviceRequest 请求对象
-     * @return SyncInvoker<CreateMfaDeviceRequest, CreateMfaDeviceResponse>
-     */
-    public SyncInvoker<CreateMfaDeviceRequest, CreateMfaDeviceResponse> createMfaDeviceInvoker(
-        CreateMfaDeviceRequest request) {
-        return new SyncInvoker<>(request, IamMeta.createMfaDevice, hcClient);
-    }
-
-    /**
      * 管理员创建IAM用户（推荐）
      *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)创建IAM用户。
@@ -4492,72 +4558,6 @@ public class IamClient {
      */
     public SyncInvoker<CreateUserRequest, CreateUserResponse> createUserInvoker(CreateUserRequest request) {
         return new SyncInvoker<>(request, IamMeta.createUser, hcClient);
-    }
-
-    /**
-     * 解绑MFA设备
-     *
-     * 该接口可以用于解绑MFA设备
-     * 
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteBindingDeviceRequest 请求对象
-     * @return DeleteBindingDeviceResponse
-     */
-    public DeleteBindingDeviceResponse deleteBindingDevice(DeleteBindingDeviceRequest request) {
-        return hcClient.syncInvokeHttp(request, IamMeta.deleteBindingDevice);
-    }
-
-    /**
-     * 解绑MFA设备
-     *
-     * 该接口可以用于解绑MFA设备
-     * 
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteBindingDeviceRequest 请求对象
-     * @return SyncInvoker<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse>
-     */
-    public SyncInvoker<DeleteBindingDeviceRequest, DeleteBindingDeviceResponse> deleteBindingDeviceInvoker(
-        DeleteBindingDeviceRequest request) {
-        return new SyncInvoker<>(request, IamMeta.deleteBindingDevice, hcClient);
-    }
-
-    /**
-     * 删除MFA设备
-     *
-     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除MFA设备。
-     * 
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteMfaDeviceRequest 请求对象
-     * @return DeleteMfaDeviceResponse
-     */
-    public DeleteMfaDeviceResponse deleteMfaDevice(DeleteMfaDeviceRequest request) {
-        return hcClient.syncInvokeHttp(request, IamMeta.deleteMfaDevice);
-    }
-
-    /**
-     * 删除MFA设备
-     *
-     * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)删除MFA设备。
-     * 
-     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteMfaDeviceRequest 请求对象
-     * @return SyncInvoker<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse>
-     */
-    public SyncInvoker<DeleteMfaDeviceRequest, DeleteMfaDeviceResponse> deleteMfaDeviceInvoker(
-        DeleteMfaDeviceRequest request) {
-        return new SyncInvoker<>(request, IamMeta.deleteMfaDevice, hcClient);
     }
 
     /**
@@ -4859,7 +4859,7 @@ public class IamClient {
     }
 
     /**
-     * 该接口可以用于获取MFA设备。
+     * 查询IAM用户的MFA绑定信息列表
      *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的MFA绑定信息列表。
      * 
@@ -4875,7 +4875,7 @@ public class IamClient {
     }
 
     /**
-     * 该接口可以用于获取MFA设备。
+     * 查询IAM用户的MFA绑定信息列表
      *
      * 该接口可以用于[管理员](https://support.huaweicloud.com/usermanual-iam/iam_01_0001.html)查询IAM用户的MFA绑定信息列表。
      * 

@@ -26,7 +26,7 @@ public class CreateListenerIpGroupOption {
     private Boolean enableIpgroup;
 
     /**
-     * 访问控制组的类型。 - white：白名单，只允许指定ip访问，默认值。 - black：黑名单，不允许指定ip访问。
+     * 参数解释：访问控制组的类型。  取值范围： - white：白名单，只允许指定ip访问。 - black：黑名单，不允许指定ip访问。  默认取值：white
      */
     public static final class TypeEnum {
 
@@ -106,7 +106,7 @@ public class CreateListenerIpGroupOption {
     }
 
     /**
-     * 监听器关联的访问控制组的id。  当关联的ipgroup中的ip_list为[]，且类型为白名单时，表示禁止所有ip的访问。  当关联的ipgroup中的ip_list为[]，且类型为黑名单时，表示允许所有ip的访问。
+     * 参数解释：监听器关联的访问控制组的id。  约束限制： - 当关联的ipgroup中的ip_list为[]，且类型为白名单时，表示禁止所有ip的访问。 - 当关联的ipgroup中的ip_list为[]，且类型为黑名单时，表示允许所有ip的访问。
      * @return ipgroupId
      */
     public String getIpgroupId() {
@@ -123,7 +123,7 @@ public class CreateListenerIpGroupOption {
     }
 
     /**
-     * 访问控制组的状态。  取值： - true：开启访问控制，默认值。 - flase：关闭访问控制。
+     * 参数解释：访问控制组的状态。  取值范围： - true：开启访问控制，默认值。 - flase：关闭访问控制。
      * @return enableIpgroup
      */
     public Boolean getEnableIpgroup() {
@@ -140,7 +140,7 @@ public class CreateListenerIpGroupOption {
     }
 
     /**
-     * 访问控制组的类型。 - white：白名单，只允许指定ip访问，默认值。 - black：黑名单，不允许指定ip访问。
+     * 参数解释：访问控制组的类型。  取值范围： - white：白名单，只允许指定ip访问。 - black：黑名单，不允许指定ip访问。  默认取值：white
      * @return type
      */
     public TypeEnum getType() {

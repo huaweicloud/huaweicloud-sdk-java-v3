@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class PolicyStatement {
 
     /**
-     * Allow允许或Refuse拒绝，控制访问权限
+     * Allow允许或Deny拒绝，控制访问权限
      */
     public static final class EffectEnum {
 
@@ -29,16 +29,16 @@ public class PolicyStatement {
         public static final EffectEnum ALLOW = new EffectEnum("Allow");
 
         /**
-         * Enum REFUSE for value: "Refuse"
+         * Enum DENY for value: "Deny"
          */
-        public static final EffectEnum REFUSE = new EffectEnum("Refuse");
+        public static final EffectEnum DENY = new EffectEnum("Deny");
 
         private static final Map<String, EffectEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EffectEnum> createStaticFields() {
             Map<String, EffectEnum> map = new HashMap<>();
             map.put("Allow", ALLOW);
-            map.put("Refuse", REFUSE);
+            map.put("Deny", DENY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -109,7 +109,7 @@ public class PolicyStatement {
     }
 
     /**
-     * Allow允许或Refuse拒绝，控制访问权限
+     * Allow允许或Deny拒绝，控制访问权限
      * @return effect
      */
     public EffectEnum getEffect() {

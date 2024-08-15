@@ -24,13 +24,18 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
 
     private List<List<AvailabilityZone>> availabilityZones = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spec_code")
+
+    private String specCode;
+
     public ListAvailabilityZonesResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
     }
 
     /**
-     * 请求ID。  注：自动生成。
+     * 参数解释：请求ID。  注：自动生成。
      * @return requestId
      */
     public String getRequestId() {
@@ -64,7 +69,7 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     }
 
     /**
-     * 返回创建LB时可使用的可用区集合列表。如：[[az1,az2],[az2,az3]] , 则在创建LB时，只能从其中的一个子列表中选择一个或多个可用区，不能跨列表选择。在上述例子中，不能选择az1和az3。
+     * 参数解释：返回创建LB时可使用的可用区集合列表。如：[[az1,az2],[az2,az3]] ,则在创建LB时，只能从其中的一个子列表中选择一个或多个可用区，不能跨列表选择。在上述例子中，不能选择az1和az3。
      * @return availabilityZones
      */
     public List<List<AvailabilityZone>> getAvailabilityZones() {
@@ -73,6 +78,23 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
 
     public void setAvailabilityZones(List<List<AvailabilityZone>> availabilityZones) {
         this.availabilityZones = availabilityZones;
+    }
+
+    public ListAvailabilityZonesResponse withSpecCode(String specCode) {
+        this.specCode = specCode;
+        return this;
+    }
+
+    /**
+     * 可用区的产品编码，仅边缘场景有效。
+     * @return specCode
+     */
+    public String getSpecCode() {
+        return specCode;
+    }
+
+    public void setSpecCode(String specCode) {
+        this.specCode = specCode;
     }
 
     @Override
@@ -85,12 +107,13 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
         }
         ListAvailabilityZonesResponse that = (ListAvailabilityZonesResponse) obj;
         return Objects.equals(this.requestId, that.requestId)
-            && Objects.equals(this.availabilityZones, that.availabilityZones);
+            && Objects.equals(this.availabilityZones, that.availabilityZones)
+            && Objects.equals(this.specCode, that.specCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, availabilityZones);
+        return Objects.hash(requestId, availabilityZones, specCode);
     }
 
     @Override
@@ -99,6 +122,7 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
         sb.append("class ListAvailabilityZonesResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    availabilityZones: ").append(toIndentedString(availabilityZones)).append("\n");
+        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

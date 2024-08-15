@@ -48,7 +48,7 @@ public class InstanceVnicResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vni")
 
-    private Integer vni;
+    private String vni;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_id")
@@ -184,22 +184,20 @@ public class InstanceVnicResp {
         this.vtep = vtep;
     }
 
-    public InstanceVnicResp withVni(Integer vni) {
+    public InstanceVnicResp withVni(String vni) {
         this.vni = vni;
         return this;
     }
 
     /**
      * port的vni
-     * minimum: 0
-     * maximum: 999999
      * @return vni
      */
-    public Integer getVni() {
+    public String getVni() {
         return vni;
     }
 
-    public void setVni(Integer vni) {
+    public void setVni(String vni) {
         this.vni = vni;
     }
 

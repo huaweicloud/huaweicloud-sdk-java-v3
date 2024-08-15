@@ -83,6 +83,26 @@ public class AIMTemplate {
 
     private List<FactoryInfo> factoryInfo = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "match_type")
+
+    private Integer matchType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "card_id")
+
+    private String cardId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_type")
+
+    private Integer subType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "preview_url")
+
+    private String previewUrl;
+
     public AIMTemplate withTplId(String tplId) {
         this.tplId = tplId;
         return this;
@@ -353,6 +373,74 @@ public class AIMTemplate {
         this.factoryInfo = factoryInfo;
     }
 
+    public AIMTemplate withMatchType(Integer matchType) {
+        this.matchType = matchType;
+        return this;
+    }
+
+    /**
+     * 审核状态。 - 1：短链解析模板 - 2：文本识别模板 - 4：一体化模板 
+     * @return matchType
+     */
+    public Integer getMatchType() {
+        return matchType;
+    }
+
+    public void setMatchType(Integer matchType) {
+        this.matchType = matchType;
+    }
+
+    public AIMTemplate withCardId(String cardId) {
+        this.cardId = cardId;
+        return this;
+    }
+
+    /**
+     * 布局类型。
+     * @return cardId
+     */
+    public String getCardId() {
+        return cardId;
+    }
+
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
+    }
+
+    public AIMTemplate withSubType(Integer subType) {
+        this.subType = subType;
+        return this;
+    }
+
+    /**
+     * sub_type。
+     * @return subType
+     */
+    public Integer getSubType() {
+        return subType;
+    }
+
+    public void setSubType(Integer subType) {
+        this.subType = subType;
+    }
+
+    public AIMTemplate withPreviewUrl(String previewUrl) {
+        this.previewUrl = previewUrl;
+        return this;
+    }
+
+    /**
+     * 模板二维码预览地址。
+     * @return previewUrl
+     */
+    public String getPreviewUrl() {
+        return previewUrl;
+    }
+
+    public void setPreviewUrl(String previewUrl) {
+        this.previewUrl = previewUrl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -369,7 +457,9 @@ public class AIMTemplate {
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.creationTime, that.creationTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.pages, that.pages) && Objects.equals(this.params, that.params)
-            && Objects.equals(this.factoryInfo, that.factoryInfo);
+            && Objects.equals(this.factoryInfo, that.factoryInfo) && Objects.equals(this.matchType, that.matchType)
+            && Objects.equals(this.cardId, that.cardId) && Objects.equals(this.subType, that.subType)
+            && Objects.equals(this.previewUrl, that.previewUrl);
     }
 
     @Override
@@ -387,7 +477,11 @@ public class AIMTemplate {
             updateTime,
             pages,
             params,
-            factoryInfo);
+            factoryInfo,
+            matchType,
+            cardId,
+            subType,
+            previewUrl);
     }
 
     @Override
@@ -408,6 +502,10 @@ public class AIMTemplate {
         sb.append("    pages: ").append(toIndentedString(pages)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    factoryInfo: ").append(toIndentedString(factoryInfo)).append("\n");
+        sb.append("    matchType: ").append(toIndentedString(matchType)).append("\n");
+        sb.append("    cardId: ").append(toIndentedString(cardId)).append("\n");
+        sb.append("    subType: ").append(toIndentedString(subType)).append("\n");
+        sb.append("    previewUrl: ").append(toIndentedString(previewUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

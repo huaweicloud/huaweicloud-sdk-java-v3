@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.dcs.v2.model.BatchCreateOrDeleteTagsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.BatchCreateOrDeleteTagsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.BatchDeleteInstancesRequest;
 import com.huaweicloud.sdk.dcs.v2.model.BatchDeleteInstancesResponse;
+import com.huaweicloud.sdk.dcs.v2.model.BatchRestartOnlineMigrationTasksRequest;
+import com.huaweicloud.sdk.dcs.v2.model.BatchRestartOnlineMigrationTasksResponse;
 import com.huaweicloud.sdk.dcs.v2.model.BatchShowNodesInformationRequest;
 import com.huaweicloud.sdk.dcs.v2.model.BatchShowNodesInformationResponse;
 import com.huaweicloud.sdk.dcs.v2.model.BatchStopMigrationTasksRequest;
@@ -307,6 +309,36 @@ public class DcsClient {
     public SyncInvoker<BatchDeleteInstancesRequest, BatchDeleteInstancesResponse> batchDeleteInstancesInvoker(
         BatchDeleteInstancesRequest request) {
         return new SyncInvoker<>(request, DcsMeta.batchDeleteInstances, hcClient);
+    }
+
+    /**
+     * 批量重启在线迁移任务
+     *
+     * 批量重启在线迁移任务，接口响应成功，返回重启在线迁移任务下发结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRestartOnlineMigrationTasksRequest 请求对象
+     * @return BatchRestartOnlineMigrationTasksResponse
+     */
+    public BatchRestartOnlineMigrationTasksResponse batchRestartOnlineMigrationTasks(
+        BatchRestartOnlineMigrationTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, DcsMeta.batchRestartOnlineMigrationTasks);
+    }
+
+    /**
+     * 批量重启在线迁移任务
+     *
+     * 批量重启在线迁移任务，接口响应成功，返回重启在线迁移任务下发结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRestartOnlineMigrationTasksRequest 请求对象
+     * @return SyncInvoker<BatchRestartOnlineMigrationTasksRequest, BatchRestartOnlineMigrationTasksResponse>
+     */
+    public SyncInvoker<BatchRestartOnlineMigrationTasksRequest, BatchRestartOnlineMigrationTasksResponse> batchRestartOnlineMigrationTasksInvoker(
+        BatchRestartOnlineMigrationTasksRequest request) {
+        return new SyncInvoker<>(request, DcsMeta.batchRestartOnlineMigrationTasks, hcClient);
     }
 
     /**

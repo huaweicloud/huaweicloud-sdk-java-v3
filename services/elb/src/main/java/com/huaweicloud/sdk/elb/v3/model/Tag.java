@@ -26,7 +26,7 @@ public class Tag {
     }
 
     /**
-     * 标签键
+     * 参数解释：标签键
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class Tag {
     }
 
     /**
-     * 标签值
+     * 参数解释：标签值
      * @return value
      */
     public String getValue() {

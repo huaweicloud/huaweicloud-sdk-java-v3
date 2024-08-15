@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 滚动升级信息
+ * 滚动升级信息。
  */
 public class RollUpgradeProgress {
 
@@ -44,7 +44,7 @@ public class RollUpgradeProgress {
     }
 
     /**
-     * 已升级分片数，非独立部署返回null
+     * 已升级分片数，非独立部署返回null。
      * @return upgradedDnGroupNumbers
      */
     public String getUpgradedDnGroupNumbers() {
@@ -61,7 +61,7 @@ public class RollUpgradeProgress {
     }
 
     /**
-     * 总分片数，非独立部署返回null
+     * 总分片数，非独立部署返回null。
      * @return totalDnGroupNumbers
      */
     public String getTotalDnGroupNumbers() {
@@ -78,7 +78,7 @@ public class RollUpgradeProgress {
     }
 
     /**
-     * 未完成升级的az，以“,”隔开，独立部署返回null
+     * 未完成升级的az，以“,”隔开，独立部署返回null。
      * @return notFullyUpgradedAz
      */
     public String getNotFullyUpgradedAz() {
@@ -95,7 +95,7 @@ public class RollUpgradeProgress {
     }
 
     /**
-     * 已升级az，以“,”隔开，独立部署返回null
+     * 已升级az，以“,”隔开，独立部署返回null。
      * @return alreadyUpgradedAz
      */
     public String getAlreadyUpgradedAz() {
@@ -128,7 +128,7 @@ public class RollUpgradeProgress {
     }
 
     /**
-     * az描述键值对Map<String,String>
+     * az描述键值对Map<String,String>。
      * @return azDescriptionMap
      */
     public Map<String, String> getAzDescriptionMap() {

@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 升级操作信息
+ * 升级操作信息。
  */
 public class UpgradeActionInfo {
 
     /**
-     * 升级操作,upgrade=升级,upgradeAutoCommit=升级自动提交,commit=提交,rollback=回滚
+     * 升级操作,upgrade=升级,upgradeAutoCommit=升级自动提交,commit=提交,rollback=回滚。
      */
     public static final class UpgradeActionEnum {
 
@@ -113,7 +113,7 @@ public class UpgradeActionInfo {
     }
 
     /**
-     * 升级操作,upgrade=升级,upgradeAutoCommit=升级自动提交,commit=提交,rollback=回滚
+     * 升级操作,upgrade=升级,upgradeAutoCommit=升级自动提交,commit=提交,rollback=回滚。
      * @return upgradeAction
      */
     public UpgradeActionEnum getUpgradeAction() {
@@ -130,7 +130,7 @@ public class UpgradeActionInfo {
     }
 
     /**
-     * 可用，不可用
+     * 可用，不可用。
      * @return enable
      */
     public Boolean getEnable() {

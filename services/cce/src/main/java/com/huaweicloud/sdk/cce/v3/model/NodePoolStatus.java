@@ -136,6 +136,11 @@ public class NodePoolStatus {
 
     private List<NodePoolCondition> conditions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scaleGroupStatuses")
+
+    private List<ScaleGroupStatus> scaleGroupStatuses = null;
+
     public NodePoolStatus withCurrentNode(Integer currentNode) {
         this.currentNode = currentNode;
         return this;
@@ -254,6 +259,39 @@ public class NodePoolStatus {
         this.conditions = conditions;
     }
 
+    public NodePoolStatus withScaleGroupStatuses(List<ScaleGroupStatus> scaleGroupStatuses) {
+        this.scaleGroupStatuses = scaleGroupStatuses;
+        return this;
+    }
+
+    public NodePoolStatus addScaleGroupStatusesItem(ScaleGroupStatus scaleGroupStatusesItem) {
+        if (this.scaleGroupStatuses == null) {
+            this.scaleGroupStatuses = new ArrayList<>();
+        }
+        this.scaleGroupStatuses.add(scaleGroupStatusesItem);
+        return this;
+    }
+
+    public NodePoolStatus withScaleGroupStatuses(Consumer<List<ScaleGroupStatus>> scaleGroupStatusesSetter) {
+        if (this.scaleGroupStatuses == null) {
+            this.scaleGroupStatuses = new ArrayList<>();
+        }
+        scaleGroupStatusesSetter.accept(this.scaleGroupStatuses);
+        return this;
+    }
+
+    /**
+     * 伸缩组当前详细状态信息，详情参见ScaleGroupStatus类型定义
+     * @return scaleGroupStatuses
+     */
+    public List<ScaleGroupStatus> getScaleGroupStatuses() {
+        return scaleGroupStatuses;
+    }
+
+    public void setScaleGroupStatuses(List<ScaleGroupStatus> scaleGroupStatuses) {
+        this.scaleGroupStatuses = scaleGroupStatuses;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -266,12 +304,13 @@ public class NodePoolStatus {
         return Objects.equals(this.currentNode, that.currentNode)
             && Objects.equals(this.creatingNode, that.creatingNode)
             && Objects.equals(this.deletingNode, that.deletingNode) && Objects.equals(this.phase, that.phase)
-            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.conditions, that.conditions);
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.scaleGroupStatuses, that.scaleGroupStatuses);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(currentNode, creatingNode, deletingNode, phase, jobId, conditions);
+        return Objects.hash(currentNode, creatingNode, deletingNode, phase, jobId, conditions, scaleGroupStatuses);
     }
 
     @Override
@@ -284,6 +323,7 @@ public class NodePoolStatus {
         sb.append("    phase: ").append(toIndentedString(phase)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+        sb.append("    scaleGroupStatuses: ").append(toIndentedString(scaleGroupStatuses)).append("\n");
         sb.append("}");
         return sb.toString();
     }

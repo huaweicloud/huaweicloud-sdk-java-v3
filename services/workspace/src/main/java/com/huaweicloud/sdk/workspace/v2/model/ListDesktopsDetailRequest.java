@@ -465,7 +465,7 @@ public class ListDesktopsDetailRequest {
     }
 
     /**
-     * 桌面类型，为空时查所有桌面。 - DEDICATED：普通桌面，包括专享桌面、专属桌面等 - POOLED：池桌面，即桌面池里的桌面
+     * 桌面类型，为空时查所有桌面。 - DEDICATED：普通桌面，包括专享桌面、专属桌面等 - POOLED：池桌面，即桌面池里的桌面 - SHARED: 多用户共享桌面。
      * @return desktopType
      */
     public String getDesktopType() {

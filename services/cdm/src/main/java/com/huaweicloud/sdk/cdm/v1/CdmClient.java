@@ -16,10 +16,26 @@ import com.huaweicloud.sdk.cdm.v1.model.DeleteLinkRequest;
 import com.huaweicloud.sdk.cdm.v1.model.DeleteLinkResponse;
 import com.huaweicloud.sdk.cdm.v1.model.ListClustersRequest;
 import com.huaweicloud.sdk.cdm.v1.model.ListClustersResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ModifyClusterRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ModifyClusterResponse;
 import com.huaweicloud.sdk.cdm.v1.model.RestartClusterRequest;
 import com.huaweicloud.sdk.cdm.v1.model.RestartClusterResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowAvailabilityZonesRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowAvailabilityZonesResponse;
 import com.huaweicloud.sdk.cdm.v1.model.ShowClusterDetailRequest;
 import com.huaweicloud.sdk.cdm.v1.model.ShowClusterDetailResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowClusterEnterpriseProjectsRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowClusterEnterpriseProjectsResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowDatastoresRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowDatastoresResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowEnterpriseProjectsRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowEnterpriseProjectsResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowFlavorDetailRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowFlavorDetailResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowFlavorsRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowFlavorsResponse;
+import com.huaweicloud.sdk.cdm.v1.model.ShowInstanceDetailRequest;
+import com.huaweicloud.sdk.cdm.v1.model.ShowInstanceDetailResponse;
 import com.huaweicloud.sdk.cdm.v1.model.ShowJobStatusRequest;
 import com.huaweicloud.sdk.cdm.v1.model.ShowJobStatusResponse;
 import com.huaweicloud.sdk.cdm.v1.model.ShowJobsRequest;
@@ -284,6 +300,34 @@ public class CdmClient {
     }
 
     /**
+     * 修改集群
+     *
+     * 修改CDM集群配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyClusterRequest 请求对象
+     * @return ModifyClusterResponse
+     */
+    public ModifyClusterResponse modifyCluster(ModifyClusterRequest request) {
+        return hcClient.syncInvokeHttp(request, CdmMeta.modifyCluster);
+    }
+
+    /**
+     * 修改集群
+     *
+     * 修改CDM集群配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyClusterRequest 请求对象
+     * @return SyncInvoker<ModifyClusterRequest, ModifyClusterResponse>
+     */
+    public SyncInvoker<ModifyClusterRequest, ModifyClusterResponse> modifyClusterInvoker(ModifyClusterRequest request) {
+        return new SyncInvoker<>(request, CdmMeta.modifyCluster, hcClient);
+    }
+
+    /**
      * 重启集群
      *
      * 重启集群接口。
@@ -313,6 +357,35 @@ public class CdmClient {
     }
 
     /**
+     * 查询所有可用区
+     *
+     * 查询CDM集群的所有可用区。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailabilityZonesRequest 请求对象
+     * @return ShowAvailabilityZonesResponse
+     */
+    public ShowAvailabilityZonesResponse showAvailabilityZones(ShowAvailabilityZonesRequest request) {
+        return hcClient.syncInvokeHttp(request, CdmMeta.showAvailabilityZones);
+    }
+
+    /**
+     * 查询所有可用区
+     *
+     * 查询CDM集群的所有可用区。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailabilityZonesRequest 请求对象
+     * @return SyncInvoker<ShowAvailabilityZonesRequest, ShowAvailabilityZonesResponse>
+     */
+    public SyncInvoker<ShowAvailabilityZonesRequest, ShowAvailabilityZonesResponse> showAvailabilityZonesInvoker(
+        ShowAvailabilityZonesRequest request) {
+        return new SyncInvoker<>(request, CdmMeta.showAvailabilityZones, hcClient);
+    }
+
+    /**
      * 查询集群详情
      *
      * 查询集群详情接口。
@@ -339,6 +412,180 @@ public class CdmClient {
     public SyncInvoker<ShowClusterDetailRequest, ShowClusterDetailResponse> showClusterDetailInvoker(
         ShowClusterDetailRequest request) {
         return new SyncInvoker<>(request, CdmMeta.showClusterDetail, hcClient);
+    }
+
+    /**
+     * 查询集群的企业项目ID
+     *
+     * 查询指定集群的企业项目ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterEnterpriseProjectsRequest 请求对象
+     * @return ShowClusterEnterpriseProjectsResponse
+     */
+    public ShowClusterEnterpriseProjectsResponse showClusterEnterpriseProjects(
+        ShowClusterEnterpriseProjectsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdmMeta.showClusterEnterpriseProjects);
+    }
+
+    /**
+     * 查询集群的企业项目ID
+     *
+     * 查询指定集群的企业项目ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClusterEnterpriseProjectsRequest 请求对象
+     * @return SyncInvoker<ShowClusterEnterpriseProjectsRequest, ShowClusterEnterpriseProjectsResponse>
+     */
+    public SyncInvoker<ShowClusterEnterpriseProjectsRequest, ShowClusterEnterpriseProjectsResponse> showClusterEnterpriseProjectsInvoker(
+        ShowClusterEnterpriseProjectsRequest request) {
+        return new SyncInvoker<>(request, CdmMeta.showClusterEnterpriseProjects, hcClient);
+    }
+
+    /**
+     * 查询支持的版本
+     *
+     * 查询CDM集群支持的版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDatastoresRequest 请求对象
+     * @return ShowDatastoresResponse
+     */
+    public ShowDatastoresResponse showDatastores(ShowDatastoresRequest request) {
+        return hcClient.syncInvokeHttp(request, CdmMeta.showDatastores);
+    }
+
+    /**
+     * 查询支持的版本
+     *
+     * 查询CDM集群支持的版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDatastoresRequest 请求对象
+     * @return SyncInvoker<ShowDatastoresRequest, ShowDatastoresResponse>
+     */
+    public SyncInvoker<ShowDatastoresRequest, ShowDatastoresResponse> showDatastoresInvoker(
+        ShowDatastoresRequest request) {
+        return new SyncInvoker<>(request, CdmMeta.showDatastores, hcClient);
+    }
+
+    /**
+     * 查询所有集群的企业项目ID
+     *
+     * 查询当前项目下的所有集群的企业项目ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEnterpriseProjectsRequest 请求对象
+     * @return ShowEnterpriseProjectsResponse
+     */
+    public ShowEnterpriseProjectsResponse showEnterpriseProjects(ShowEnterpriseProjectsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdmMeta.showEnterpriseProjects);
+    }
+
+    /**
+     * 查询所有集群的企业项目ID
+     *
+     * 查询当前项目下的所有集群的企业项目ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowEnterpriseProjectsRequest 请求对象
+     * @return SyncInvoker<ShowEnterpriseProjectsRequest, ShowEnterpriseProjectsResponse>
+     */
+    public SyncInvoker<ShowEnterpriseProjectsRequest, ShowEnterpriseProjectsResponse> showEnterpriseProjectsInvoker(
+        ShowEnterpriseProjectsRequest request) {
+        return new SyncInvoker<>(request, CdmMeta.showEnterpriseProjects, hcClient);
+    }
+
+    /**
+     * 查询规格详情
+     *
+     * 查询指定规格ID的规格详请。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlavorDetailRequest 请求对象
+     * @return ShowFlavorDetailResponse
+     */
+    public ShowFlavorDetailResponse showFlavorDetail(ShowFlavorDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CdmMeta.showFlavorDetail);
+    }
+
+    /**
+     * 查询规格详情
+     *
+     * 查询指定规格ID的规格详请。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlavorDetailRequest 请求对象
+     * @return SyncInvoker<ShowFlavorDetailRequest, ShowFlavorDetailResponse>
+     */
+    public SyncInvoker<ShowFlavorDetailRequest, ShowFlavorDetailResponse> showFlavorDetailInvoker(
+        ShowFlavorDetailRequest request) {
+        return new SyncInvoker<>(request, CdmMeta.showFlavorDetail, hcClient);
+    }
+
+    /**
+     * 查询版本规格
+     *
+     * 按版本ID查询所有兼容规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlavorsRequest 请求对象
+     * @return ShowFlavorsResponse
+     */
+    public ShowFlavorsResponse showFlavors(ShowFlavorsRequest request) {
+        return hcClient.syncInvokeHttp(request, CdmMeta.showFlavors);
+    }
+
+    /**
+     * 查询版本规格
+     *
+     * 按版本ID查询所有兼容规格。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFlavorsRequest 请求对象
+     * @return SyncInvoker<ShowFlavorsRequest, ShowFlavorsResponse>
+     */
+    public SyncInvoker<ShowFlavorsRequest, ShowFlavorsResponse> showFlavorsInvoker(ShowFlavorsRequest request) {
+        return new SyncInvoker<>(request, CdmMeta.showFlavors, hcClient);
+    }
+
+    /**
+     * 查询集群实例信息
+     *
+     * 查询集群实例信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceDetailRequest 请求对象
+     * @return ShowInstanceDetailResponse
+     */
+    public ShowInstanceDetailResponse showInstanceDetail(ShowInstanceDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CdmMeta.showInstanceDetail);
+    }
+
+    /**
+     * 查询集群实例信息
+     *
+     * 查询集群实例信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceDetailRequest 请求对象
+     * @return SyncInvoker<ShowInstanceDetailRequest, ShowInstanceDetailResponse>
+     */
+    public SyncInvoker<ShowInstanceDetailRequest, ShowInstanceDetailResponse> showInstanceDetailInvoker(
+        ShowInstanceDetailRequest request) {
+        return new SyncInvoker<>(request, CdmMeta.showInstanceDetail, hcClient);
     }
 
     /**

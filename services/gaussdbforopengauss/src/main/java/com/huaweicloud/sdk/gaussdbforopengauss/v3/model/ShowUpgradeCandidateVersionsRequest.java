@@ -21,7 +21,7 @@ public class ShowUpgradeCandidateVersionsRequest {
     private String instanceId;
 
     /**
-     * 语言[zh-cn, en-us]
+     * 语言[zh-cn, en-us]。
      */
     public static final class XLanguageEnum {
 
@@ -118,7 +118,7 @@ public class ShowUpgradeCandidateVersionsRequest {
     }
 
     /**
-     * 语言[zh-cn, en-us]
+     * 语言[zh-cn, en-us]。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

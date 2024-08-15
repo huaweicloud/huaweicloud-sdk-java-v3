@@ -138,12 +138,15 @@ import com.huaweicloud.sdk.vpn.v5.model.UpdateClientCaResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateP2cVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateP2cVgwRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateP2cVgwResponse;
+import com.huaweicloud.sdk.vpn.v5.model.UpdatePostpaidVgwSpecificationRequest;
+import com.huaweicloud.sdk.vpn.v5.model.UpdatePostpaidVgwSpecificationResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateServerRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwCertificateRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwCertificateResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwResponse;
+import com.huaweicloud.sdk.vpn.v5.model.UpdateVgwSpecificationRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnAccessPolicyRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnAccessPolicyRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnAccessPolicyResponse;
@@ -1370,6 +1373,45 @@ public class VpnMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePostpaidVgwSpecificationRequest, UpdatePostpaidVgwSpecificationResponse> updatePostpaidVgwSpecification =
+        genForUpdatePostpaidVgwSpecification();
+
+    private static HttpRequestDef<UpdatePostpaidVgwSpecificationRequest, UpdatePostpaidVgwSpecificationResponse> genForUpdatePostpaidVgwSpecification() {
+        // basic
+        HttpRequestDef.Builder<UpdatePostpaidVgwSpecificationRequest, UpdatePostpaidVgwSpecificationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdatePostpaidVgwSpecificationRequest.class,
+                    UpdatePostpaidVgwSpecificationResponse.class)
+                .withName("UpdatePostpaidVgwSpecification")
+                .withUri("/v5/{project_id}/vpn-gateways/{vgw_id}/update-specification")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vgw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePostpaidVgwSpecificationRequest::getVgwId,
+                UpdatePostpaidVgwSpecificationRequest::setVgwId));
+        builder.<UpdateVgwSpecificationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateVgwSpecificationRequestBody.class),
+            f -> f.withMarshaller(UpdatePostpaidVgwSpecificationRequest::getBody,
+                UpdatePostpaidVgwSpecificationRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("header-response-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePostpaidVgwSpecificationResponse::getHeaderResponseToken,
+                UpdatePostpaidVgwSpecificationResponse::setHeaderResponseToken));
         return builder.build();
     }
 

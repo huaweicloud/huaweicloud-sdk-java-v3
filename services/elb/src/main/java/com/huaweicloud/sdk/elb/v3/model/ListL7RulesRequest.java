@@ -270,7 +270,7 @@ public class ListL7RulesRequest {
     }
 
     /**
-     * 转发规则的管理状态，默认为true。  不支持该字段，请勿使用。
+     * 转发规则的管理状态。  不支持该字段，请勿使用。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {

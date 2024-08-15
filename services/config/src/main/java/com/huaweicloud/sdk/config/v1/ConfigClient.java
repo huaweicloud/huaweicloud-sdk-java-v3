@@ -8,6 +8,8 @@ import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryResponse;
+import com.huaweicloud.sdk.config.v1.model.CollectRemediationExecutionStatusesSummaryRequest;
+import com.huaweicloud.sdk.config.v1.model.CollectRemediationExecutionStatusesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CountAllResourcesRequest;
@@ -1406,6 +1408,36 @@ public class ConfigClient {
     public SyncInvoker<BatchDeleteRemediationExceptionsRequest, BatchDeleteRemediationExceptionsResponse> batchDeleteRemediationExceptionsInvoker(
         BatchDeleteRemediationExceptionsRequest request) {
         return new SyncInvoker<>(request, ConfigMeta.batchDeleteRemediationExceptions, hcClient);
+    }
+
+    /**
+     * 列举修正最新记录
+     *
+     * 列举合规规则修正最新记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectRemediationExecutionStatusesSummaryRequest 请求对象
+     * @return CollectRemediationExecutionStatusesSummaryResponse
+     */
+    public CollectRemediationExecutionStatusesSummaryResponse collectRemediationExecutionStatusesSummary(
+        CollectRemediationExecutionStatusesSummaryRequest request) {
+        return hcClient.syncInvokeHttp(request, ConfigMeta.collectRemediationExecutionStatusesSummary);
+    }
+
+    /**
+     * 列举修正最新记录
+     *
+     * 列举合规规则修正最新记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CollectRemediationExecutionStatusesSummaryRequest 请求对象
+     * @return SyncInvoker<CollectRemediationExecutionStatusesSummaryRequest, CollectRemediationExecutionStatusesSummaryResponse>
+     */
+    public SyncInvoker<CollectRemediationExecutionStatusesSummaryRequest, CollectRemediationExecutionStatusesSummaryResponse> collectRemediationExecutionStatusesSummaryInvoker(
+        CollectRemediationExecutionStatusesSummaryRequest request) {
+        return new SyncInvoker<>(request, ConfigMeta.collectRemediationExecutionStatusesSummary, hcClient);
     }
 
     /**

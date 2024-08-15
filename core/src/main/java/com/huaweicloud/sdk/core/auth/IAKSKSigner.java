@@ -25,6 +25,6 @@ import com.huaweicloud.sdk.core.http.HttpRequest;
 
 import java.util.Map;
 
-interface IAKSKSigner {
+public interface IAKSKSigner {
     <T extends AbstractCredentials<T>> Map<String, String> sign(HttpRequest request, T credentials);
 }

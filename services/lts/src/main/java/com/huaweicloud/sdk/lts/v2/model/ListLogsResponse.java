@@ -6,6 +6,7 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -28,6 +29,11 @@ public class ListLogsResponse extends SdkResponse {
     @JsonProperty(value = "isQueryComplete")
 
     private Boolean isQueryComplete;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "analysisLogs")
+
+    private List<Map<String, String>> analysisLogs = null;
 
     public ListLogsResponse withCount(Integer count) {
         this.count = count;
@@ -96,6 +102,39 @@ public class ListLogsResponse extends SdkResponse {
         this.isQueryComplete = isQueryComplete;
     }
 
+    public ListLogsResponse withAnalysisLogs(List<Map<String, String>> analysisLogs) {
+        this.analysisLogs = analysisLogs;
+        return this;
+    }
+
+    public ListLogsResponse addAnalysisLogsItem(Map<String, String> analysisLogsItem) {
+        if (this.analysisLogs == null) {
+            this.analysisLogs = new ArrayList<>();
+        }
+        this.analysisLogs.add(analysisLogsItem);
+        return this;
+    }
+
+    public ListLogsResponse withAnalysisLogs(Consumer<List<Map<String, String>>> analysisLogsSetter) {
+        if (this.analysisLogs == null) {
+            this.analysisLogs = new ArrayList<>();
+        }
+        analysisLogsSetter.accept(this.analysisLogs);
+        return this;
+    }
+
+    /**
+     * 分析日志返回响应体
+     * @return analysisLogs
+     */
+    public List<Map<String, String>> getAnalysisLogs() {
+        return analysisLogs;
+    }
+
+    public void setAnalysisLogs(List<Map<String, String>> analysisLogs) {
+        this.analysisLogs = analysisLogs;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -106,12 +145,13 @@ public class ListLogsResponse extends SdkResponse {
         }
         ListLogsResponse that = (ListLogsResponse) obj;
         return Objects.equals(this.count, that.count) && Objects.equals(this.logs, that.logs)
-            && Objects.equals(this.isQueryComplete, that.isQueryComplete);
+            && Objects.equals(this.isQueryComplete, that.isQueryComplete)
+            && Objects.equals(this.analysisLogs, that.analysisLogs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, logs, isQueryComplete);
+        return Objects.hash(count, logs, isQueryComplete, analysisLogs);
     }
 
     @Override
@@ -121,6 +161,7 @@ public class ListLogsResponse extends SdkResponse {
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    logs: ").append(toIndentedString(logs)).append("\n");
         sb.append("    isQueryComplete: ").append(toIndentedString(isQueryComplete)).append("\n");
+        sb.append("    analysisLogs: ").append(toIndentedString(analysisLogs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

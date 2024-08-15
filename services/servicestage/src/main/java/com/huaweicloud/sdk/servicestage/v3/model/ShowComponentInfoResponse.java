@@ -86,6 +86,11 @@ public class ShowComponentInfoResponse extends SdkResponse {
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "swimlane_id")
+
+    private String swimlaneId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "envs")
 
     private List<ComponentEnvironment> envs = null;
@@ -454,6 +459,23 @@ public class ShowComponentInfoResponse extends SdkResponse {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public ShowComponentInfoResponse withSwimlaneId(String swimlaneId) {
+        this.swimlaneId = swimlaneId;
+        return this;
+    }
+
+    /**
+     * 泳道id
+     * @return swimlaneId
+     */
+    public String getSwimlaneId() {
+        return swimlaneId;
+    }
+
+    public void setSwimlaneId(String swimlaneId) {
+        this.swimlaneId = swimlaneId;
     }
 
     public ShowComponentInfoResponse withEnvs(List<ComponentEnvironment> envs) {
@@ -950,14 +972,14 @@ public class ShowComponentInfoResponse extends SdkResponse {
             && Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.limitCpu, that.limitCpu)
             && Objects.equals(this.limitMemory, that.limitMemory) && Objects.equals(this.requestCpu, that.requestCpu)
             && Objects.equals(this.requestMemory, that.requestMemory) && Objects.equals(this.replica, that.replica)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.envs, that.envs)
-            && Objects.equals(this.storages, that.storages) && Objects.equals(this.command, that.command)
-            && Objects.equals(this.postStart, that.postStart) && Objects.equals(this.preStop, that.preStop)
-            && Objects.equals(this.timezone, that.timezone) && Objects.equals(this.mesher, that.mesher)
-            && Objects.equals(this.deployStrategy, that.deployStrategy) && Objects.equals(this.jvmOpts, that.jvmOpts)
-            && Objects.equals(this.tomcatOpts, that.tomcatOpts) && Objects.equals(this.logs, that.logs)
-            && Objects.equals(this.customMetric, that.customMetric) && Objects.equals(this.affinity, that.affinity)
-            && Objects.equals(this.antiAffinity, that.antiAffinity)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.swimlaneId, that.swimlaneId)
+            && Objects.equals(this.envs, that.envs) && Objects.equals(this.storages, that.storages)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.postStart, that.postStart)
+            && Objects.equals(this.preStop, that.preStop) && Objects.equals(this.timezone, that.timezone)
+            && Objects.equals(this.mesher, that.mesher) && Objects.equals(this.deployStrategy, that.deployStrategy)
+            && Objects.equals(this.jvmOpts, that.jvmOpts) && Objects.equals(this.tomcatOpts, that.tomcatOpts)
+            && Objects.equals(this.logs, that.logs) && Objects.equals(this.customMetric, that.customMetric)
+            && Objects.equals(this.affinity, that.affinity) && Objects.equals(this.antiAffinity, that.antiAffinity)
             && Objects.equals(this.livenessProbe, that.livenessProbe)
             && Objects.equals(this.readinessProbe, that.readinessProbe)
             && Objects.equals(this.referResources, that.referResources) && Objects.equals(this.status, that.status);
@@ -979,6 +1001,7 @@ public class ShowComponentInfoResponse extends SdkResponse {
             requestMemory,
             replica,
             version,
+            swimlaneId,
             envs,
             storages,
             command,
@@ -1017,6 +1040,7 @@ public class ShowComponentInfoResponse extends SdkResponse {
         sb.append("    requestMemory: ").append(toIndentedString(requestMemory)).append("\n");
         sb.append("    replica: ").append(toIndentedString(replica)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    swimlaneId: ").append(toIndentedString(swimlaneId)).append("\n");
         sb.append("    envs: ").append(toIndentedString(envs)).append("\n");
         sb.append("    storages: ").append(toIndentedString(storages)).append("\n");
         sb.append("    command: ").append(toIndentedString(command)).append("\n");

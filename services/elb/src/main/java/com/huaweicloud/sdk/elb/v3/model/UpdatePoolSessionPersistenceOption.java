@@ -112,7 +112,7 @@ public class UpdatePoolSessionPersistenceOption {
     }
 
     /**
-     * cookie名称。  [共享型LB，支持字母、数字、中划线(-)和下划线(_)，最大长度64个字符。 独享型LB，支持字母、数字、中划线(-)、下划线(_)和点号(.)，最大长度255个字符。](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm) [支持字母、数字、中划线(-)、下划线(_)和点号(.)，最大长度255个字符。](tag:hws_eu,hcso_dt) 使用说明： - 只有当type为APP_COOKIE时才有效。其他情况下传该字段会报错。  [不支持该字段，请勿使用。](tag:hws_eu,hcso_dt)
+     * cookie名称。  [共享型LB，支持字母、数字、中划线(-)和下划线(_)，最大长度64个字符。 独享型LB，支持字母、数字、中划线(-)、下划线(_)和点号(.)，最大长度255个字符。](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm) [支持字母、数字、中划线(-)、下划线(_)和点号(.)，最大长度255个字符。](tag:hws_eu,hcso_dt) 使用说明： - 只有当type为APP_COOKIE时才有效。其他情况下传该字段会报错。 [网关型LB，不支持该特性，请勿使用。](tag:hws_eu) [不支持该字段，请勿使用。](tag:hws_eu,hcso_dt)
      * @return cookieName
      */
     public String getCookieName() {

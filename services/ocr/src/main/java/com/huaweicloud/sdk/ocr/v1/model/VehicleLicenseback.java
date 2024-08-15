@@ -251,7 +251,7 @@ public class VehicleLicenseback {
     }
 
     /**
-     * 条码号。           
+     * 条码号。 
      * @return codeNumber
      */
     public String getCodeNumber() {

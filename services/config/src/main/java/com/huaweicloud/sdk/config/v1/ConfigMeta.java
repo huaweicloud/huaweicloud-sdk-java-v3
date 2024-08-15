@@ -18,6 +18,8 @@ import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectAllResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectConformancePackComplianceSummaryResponse;
+import com.huaweicloud.sdk.config.v1.model.CollectRemediationExecutionStatusesSummaryRequest;
+import com.huaweicloud.sdk.config.v1.model.CollectRemediationExecutionStatusesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryRequest;
 import com.huaweicloud.sdk.config.v1.model.CollectTrackedResourcesSummaryResponse;
 import com.huaweicloud.sdk.config.v1.model.ConfigurationAggregatorRequest;
@@ -140,6 +142,7 @@ import com.huaweicloud.sdk.config.v1.model.PolicyAssignmentRequestBody;
 import com.huaweicloud.sdk.config.v1.model.PolicyStateRequestBody;
 import com.huaweicloud.sdk.config.v1.model.QueryRunRequestBody;
 import com.huaweicloud.sdk.config.v1.model.RemediationConfigurationRequestBody;
+import com.huaweicloud.sdk.config.v1.model.RemediationExecutionStatusesSummaryRequestBody;
 import com.huaweicloud.sdk.config.v1.model.RemediationRunRequestBody;
 import com.huaweicloud.sdk.config.v1.model.ResourceInstancesReq;
 import com.huaweicloud.sdk.config.v1.model.ResourceSummaryResponseItem;
@@ -1666,6 +1669,52 @@ public class ConfigMeta {
             TypeCasts.uncheckedConversion(BatchDeleteRemediationExceptionsRequestBody.class),
             f -> f.withMarshaller(BatchDeleteRemediationExceptionsRequest::getBody,
                 BatchDeleteRemediationExceptionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CollectRemediationExecutionStatusesSummaryRequest, CollectRemediationExecutionStatusesSummaryResponse> collectRemediationExecutionStatusesSummary =
+        genForCollectRemediationExecutionStatusesSummary();
+
+    private static HttpRequestDef<CollectRemediationExecutionStatusesSummaryRequest, CollectRemediationExecutionStatusesSummaryResponse> genForCollectRemediationExecutionStatusesSummary() {
+        // basic
+        HttpRequestDef.Builder<CollectRemediationExecutionStatusesSummaryRequest, CollectRemediationExecutionStatusesSummaryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CollectRemediationExecutionStatusesSummaryRequest.class,
+                    CollectRemediationExecutionStatusesSummaryResponse.class)
+                .withName("CollectRemediationExecutionStatusesSummary")
+                .withUri(
+                    "/v1/resource-manager/domains/{domain_id}/policy-assignments/{policy_assignment_id}/remediation-execution-statuses/summary")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_assignment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectRemediationExecutionStatusesSummaryRequest::getPolicyAssignmentId,
+                CollectRemediationExecutionStatusesSummaryRequest::setPolicyAssignmentId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CollectRemediationExecutionStatusesSummaryRequest::getLimit,
+                CollectRemediationExecutionStatusesSummaryRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CollectRemediationExecutionStatusesSummaryRequest::getMarker,
+                CollectRemediationExecutionStatusesSummaryRequest::setMarker));
+        builder.<RemediationExecutionStatusesSummaryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RemediationExecutionStatusesSummaryRequestBody.class),
+            f -> f.withMarshaller(CollectRemediationExecutionStatusesSummaryRequest::getBody,
+                CollectRemediationExecutionStatusesSummaryRequest::setBody));
 
         // response
 

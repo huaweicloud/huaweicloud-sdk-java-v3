@@ -23,8 +23,8 @@ package com.huaweicloud.sdk.core.auth;
 
 import com.huaweicloud.sdk.core.exception.SdkException;
 
-class AKSKSignerFactory {
-    static IAKSKSigner getSigner(SigningAlgorithm algorithm) {
+public class AKSKSignerFactory {
+    public static IAKSKSigner getSigner(SigningAlgorithm algorithm) {
         switch (algorithm) {
             case HMAC_SHA256:
                 return AKSKSigner.getInstance();

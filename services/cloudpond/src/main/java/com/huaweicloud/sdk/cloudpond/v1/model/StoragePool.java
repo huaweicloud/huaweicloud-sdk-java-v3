@@ -48,6 +48,11 @@ public class StoragePool {
     private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_info")
+
+    private ProductInfo productInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capacity")
 
     private Integer capacity;
@@ -191,6 +196,32 @@ public class StoragePool {
         this.resourceSpecCode = resourceSpecCode;
     }
 
+    public StoragePool withProductInfo(ProductInfo productInfo) {
+        this.productInfo = productInfo;
+        return this;
+    }
+
+    public StoragePool withProductInfo(Consumer<ProductInfo> productInfoSetter) {
+        if (this.productInfo == null) {
+            this.productInfo = new ProductInfo();
+            productInfoSetter.accept(this.productInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get productInfo
+     * @return productInfo
+     */
+    public ProductInfo getProductInfo() {
+        return productInfo;
+    }
+
+    public void setProductInfo(ProductInfo productInfo) {
+        this.productInfo = productInfo;
+    }
+
     public StoragePool withCapacity(Integer capacity) {
         this.capacity = capacity;
         return this;
@@ -298,9 +329,9 @@ public class StoragePool {
             && Objects.equals(this.edgeSiteId, that.edgeSiteId) && Objects.equals(this.storageType, that.storageType)
             && Objects.equals(this.status, that.status) && Objects.equals(this.assignedSize, that.assignedSize)
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
-            && Objects.equals(this.capacity, that.capacity) && Objects.equals(this.marketOptions, that.marketOptions)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.effectedAt, that.effectedAt);
+            && Objects.equals(this.productInfo, that.productInfo) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.marketOptions, that.marketOptions) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.effectedAt, that.effectedAt);
     }
 
     @Override
@@ -312,6 +343,7 @@ public class StoragePool {
             status,
             assignedSize,
             resourceSpecCode,
+            productInfo,
             capacity,
             marketOptions,
             createdAt,
@@ -330,6 +362,7 @@ public class StoragePool {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    assignedSize: ").append(toIndentedString(assignedSize)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
+        sb.append("    productInfo: ").append(toIndentedString(productInfo)).append("\n");
         sb.append("    capacity: ").append(toIndentedString(capacity)).append("\n");
         sb.append("    marketOptions: ").append(toIndentedString(marketOptions)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

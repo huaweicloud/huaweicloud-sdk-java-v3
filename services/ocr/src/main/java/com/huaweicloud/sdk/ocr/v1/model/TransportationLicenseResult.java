@@ -71,6 +71,21 @@ public class TransportationLicenseResult {
     private String businessScope;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expiry_date")
+
+    private String expiryDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "review_expiry_date")
+
+    private String reviewExpiryDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "assessed_technical_level")
+
+    private String assessedTechnicalLevel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "confidence")
 
     private Object confidence;
@@ -183,7 +198,7 @@ public class TransportationLicenseResult {
     }
 
     /**
-     * 核发机关（非必有，依赖对应运输证板式）。 
+     * 核发机关。 
      * @return issuingAuthority
      */
     public String getIssuingAuthority() {
@@ -200,7 +215,7 @@ public class TransportationLicenseResult {
     }
 
     /**
-     * 发证日期（非必有，依赖对应运输证板式）。 
+     * 发证日期。 
      * @return issueDate
      */
     public String getIssueDate() {
@@ -217,7 +232,7 @@ public class TransportationLicenseResult {
     }
 
     /**
-     * 业户地址（非必有，依赖对应运输证板式）。 
+     * 业户地址。 
      * @return ownerAddress
      */
     public String getOwnerAddress() {
@@ -234,7 +249,7 @@ public class TransportationLicenseResult {
     }
 
     /**
-     * 经济类型（非必有，依赖对应运输证板式）。 
+     * 经济类型。 
      * @return economicType
      */
     public String getEconomicType() {
@@ -251,7 +266,7 @@ public class TransportationLicenseResult {
     }
 
     /**
-     * 经营许可证号（非必有，依赖对应运输证板式）。 
+     * 经营许可证号。 
      * @return businessCertificate
      */
     public String getBusinessCertificate() {
@@ -268,7 +283,7 @@ public class TransportationLicenseResult {
     }
 
     /**
-     * 经营范围（非必有，依赖对应运输证板式）。 
+     * 经营范围。 
      * @return businessScope
      */
     public String getBusinessScope() {
@@ -277,6 +292,57 @@ public class TransportationLicenseResult {
 
     public void setBusinessScope(String businessScope) {
         this.businessScope = businessScope;
+    }
+
+    public TransportationLicenseResult withExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
+        return this;
+    }
+
+    /**
+     * 有效期。 
+     * @return expiryDate
+     */
+    public String getExpiryDate() {
+        return expiryDate;
+    }
+
+    public void setExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
+    }
+
+    public TransportationLicenseResult withReviewExpiryDate(String reviewExpiryDate) {
+        this.reviewExpiryDate = reviewExpiryDate;
+        return this;
+    }
+
+    /**
+     * 审验有效期。 
+     * @return reviewExpiryDate
+     */
+    public String getReviewExpiryDate() {
+        return reviewExpiryDate;
+    }
+
+    public void setReviewExpiryDate(String reviewExpiryDate) {
+        this.reviewExpiryDate = reviewExpiryDate;
+    }
+
+    public TransportationLicenseResult withAssessedTechnicalLevel(String assessedTechnicalLevel) {
+        this.assessedTechnicalLevel = assessedTechnicalLevel;
+        return this;
+    }
+
+    /**
+     * 技术等级评定。 
+     * @return assessedTechnicalLevel
+     */
+    public String getAssessedTechnicalLevel() {
+        return assessedTechnicalLevel;
+    }
+
+    public void setAssessedTechnicalLevel(String assessedTechnicalLevel) {
+        this.assessedTechnicalLevel = assessedTechnicalLevel;
     }
 
     public TransportationLicenseResult withConfidence(Object confidence) {
@@ -315,6 +381,9 @@ public class TransportationLicenseResult {
             && Objects.equals(this.economicType, that.economicType)
             && Objects.equals(this.businessCertificate, that.businessCertificate)
             && Objects.equals(this.businessScope, that.businessScope)
+            && Objects.equals(this.expiryDate, that.expiryDate)
+            && Objects.equals(this.reviewExpiryDate, that.reviewExpiryDate)
+            && Objects.equals(this.assessedTechnicalLevel, that.assessedTechnicalLevel)
             && Objects.equals(this.confidence, that.confidence);
     }
 
@@ -332,6 +401,9 @@ public class TransportationLicenseResult {
             economicType,
             businessCertificate,
             businessScope,
+            expiryDate,
+            reviewExpiryDate,
+            assessedTechnicalLevel,
             confidence);
     }
 
@@ -351,6 +423,9 @@ public class TransportationLicenseResult {
         sb.append("    economicType: ").append(toIndentedString(economicType)).append("\n");
         sb.append("    businessCertificate: ").append(toIndentedString(businessCertificate)).append("\n");
         sb.append("    businessScope: ").append(toIndentedString(businessScope)).append("\n");
+        sb.append("    expiryDate: ").append(toIndentedString(expiryDate)).append("\n");
+        sb.append("    reviewExpiryDate: ").append(toIndentedString(reviewExpiryDate)).append("\n");
+        sb.append("    assessedTechnicalLevel: ").append(toIndentedString(assessedTechnicalLevel)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("}");
         return sb.toString();

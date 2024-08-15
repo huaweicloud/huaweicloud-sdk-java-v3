@@ -46,7 +46,7 @@ public class FlavorInfo {
     }
 
     /**
-     * 并发数。单位：个
+     * 参数解释：并发数。单位：个。
      * @return connection
      */
     public Integer getConnection() {
@@ -63,7 +63,7 @@ public class FlavorInfo {
     }
 
     /**
-     * 新建数。单位：个
+     * 参数解释：新建数。单位：个。
      * @return cps
      */
     public Integer getCps() {
@@ -80,7 +80,7 @@ public class FlavorInfo {
     }
 
     /**
-     * 每秒查询数。单位：个。仅7层LB有该指标。
+     * 参数解释：每秒查询数。单位：个。  约束限制：仅7层LB有该指标。
      * @return qps
      */
     public Integer getQps() {
@@ -97,7 +97,7 @@ public class FlavorInfo {
     }
 
     /**
-     * 带宽。单位：Kbit/s。
+     * 参数解释：带宽。单位：Kbit/s。
      * @return bandwidth
      */
     public Integer getBandwidth() {
@@ -114,7 +114,7 @@ public class FlavorInfo {
     }
 
     /**
-     * 当前flavor对应的lcu数量。 LCU是用来衡量独享型ELB处理性能综合指标，LCU值越大，性能越好。单位：个
+     * 参数解释：当前flavor对应的lcu数量。单位：个。  > LCU是用来衡量独享型ELB处理性能综合指标，LCU值越大，性能越好。
      * @return lcu
      */
     public Integer getLcu() {
@@ -131,7 +131,7 @@ public class FlavorInfo {
     }
 
     /**
-     * https新建连接数。单位：个。仅7层LB有该指标。
+     * 参数解释：https新建连接数。单位：个。  约束限制：仅7层LB有该指标。
      * @return httpsCps
      */
     public Integer getHttpsCps() {
