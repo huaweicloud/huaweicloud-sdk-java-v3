@@ -101,6 +101,81 @@ public class NoticeRuleNotification {
 
     private String endpoint;
 
+    /**
+     * 通知的模板语言。 ZH，中文。 EN，英文。
+     */
+    public static final class TemplateEnum {
+
+        /**
+         * Enum ZH for value: "ZH"
+         */
+        public static final TemplateEnum ZH = new TemplateEnum("ZH");
+
+        /**
+         * Enum EN for value: "EN"
+         */
+        public static final TemplateEnum EN = new TemplateEnum("EN");
+
+        private static final Map<String, TemplateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TemplateEnum> createStaticFields() {
+            Map<String, TemplateEnum> map = new HashMap<>();
+            map.put("ZH", ZH);
+            map.put("EN", EN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TemplateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TemplateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TemplateEnum(value));
+        }
+
+        public static TemplateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TemplateEnum) {
+                return this.value.equals(((TemplateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template")
+
+    private TemplateEnum template;
+
     public NoticeRuleNotification withProtocol(ProtocolEnum protocol) {
         this.protocol = protocol;
         return this;
@@ -135,6 +210,23 @@ public class NoticeRuleNotification {
         this.endpoint = endpoint;
     }
 
+    public NoticeRuleNotification withTemplate(TemplateEnum template) {
+        this.template = template;
+        return this;
+    }
+
+    /**
+     * 通知的模板语言。 ZH，中文。 EN，英文。
+     * @return template
+     */
+    public TemplateEnum getTemplate() {
+        return template;
+    }
+
+    public void setTemplate(TemplateEnum template) {
+        this.template = template;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -144,12 +236,13 @@ public class NoticeRuleNotification {
             return false;
         }
         NoticeRuleNotification that = (NoticeRuleNotification) obj;
-        return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.endpoint, that.endpoint);
+        return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.endpoint, that.endpoint)
+            && Objects.equals(this.template, that.template);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(protocol, endpoint);
+        return Objects.hash(protocol, endpoint, template);
     }
 
     @Override
@@ -158,6 +251,7 @@ public class NoticeRuleNotification {
         sb.append("class NoticeRuleNotification {\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
+        sb.append("    template: ").append(toIndentedString(template)).append("\n");
         sb.append("}");
         return sb.toString();
     }

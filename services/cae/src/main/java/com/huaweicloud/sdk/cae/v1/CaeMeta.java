@@ -68,8 +68,6 @@ import com.huaweicloud.sdk.cae.v1.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListCertificatesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentConfigurationsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentConfigurationsResponse;
-import com.huaweicloud.sdk.cae.v1.model.ListComponentEventsRequest;
-import com.huaweicloud.sdk.cae.v1.model.ListComponentEventsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentInstancesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentInstancesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentSnapshotsRequest;
@@ -612,48 +610,6 @@ public class CaeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExecuteActionRequestBody.class),
             f -> f.withMarshaller(ExecuteActionRequest::getBody, ExecuteActionRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListComponentEventsRequest, ListComponentEventsResponse> listComponentEvents =
-        genForListComponentEvents();
-
-    private static HttpRequestDef<ListComponentEventsRequest, ListComponentEventsResponse> genForListComponentEvents() {
-        // basic
-        HttpRequestDef.Builder<ListComponentEventsRequest, ListComponentEventsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListComponentEventsRequest.class, ListComponentEventsResponse.class)
-                .withName("ListComponentEvents")
-                .withUri("/v1/{project_id}/cae/applications/{application_id}/components/{component_id}/events")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("application_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentEventsRequest::getApplicationId,
-                ListComponentEventsRequest::setApplicationId));
-        builder.<String>withRequestField("component_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentEventsRequest::getComponentId,
-                ListComponentEventsRequest::setComponentId));
-        builder.<String>withRequestField("X-Enterprise-Project-ID",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentEventsRequest::getXEnterpriseProjectID,
-                ListComponentEventsRequest::setXEnterpriseProjectID));
-        builder.<String>withRequestField("X-Environment-ID",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListComponentEventsRequest::getXEnvironmentID,
-                ListComponentEventsRequest::setXEnvironmentID));
 
         // response
 

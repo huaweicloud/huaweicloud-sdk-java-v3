@@ -21,7 +21,7 @@ public class UpdateEndpointPolicyRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_document")
 
-    private String policyDocument;
+    private Object policyDocument;
 
     public UpdateEndpointPolicyRequestBody withPolicyStatement(List<PolicyStatement> policyStatement) {
         this.policyStatement = policyStatement;
@@ -56,7 +56,7 @@ public class UpdateEndpointPolicyRequestBody {
         this.policyStatement = policyStatement;
     }
 
-    public UpdateEndpointPolicyRequestBody withPolicyDocument(String policyDocument) {
+    public UpdateEndpointPolicyRequestBody withPolicyDocument(Object policyDocument) {
         this.policyDocument = policyDocument;
         return this;
     }
@@ -65,11 +65,11 @@ public class UpdateEndpointPolicyRequestBody {
      * 终端节点策略信息，仅当终端节点服务的enable_policy值为true时支持该参数，默认值为完全访问权限。（OBS、SFS的终端节点服务暂不支持该参数）
      * @return policyDocument
      */
-    public String getPolicyDocument() {
+    public Object getPolicyDocument() {
         return policyDocument;
     }
 
-    public void setPolicyDocument(String policyDocument) {
+    public void setPolicyDocument(Object policyDocument) {
         this.policyDocument = policyDocument;
     }
 

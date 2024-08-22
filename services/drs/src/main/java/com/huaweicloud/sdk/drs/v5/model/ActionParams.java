@@ -49,6 +49,11 @@ public class ActionParams {
     private Boolean isSyncReEdit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_only_init_task")
+
+    private Boolean isOnlyInitTask;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "force_delete")
 
     private Boolean forceDelete;
@@ -216,6 +221,23 @@ public class ActionParams {
         this.isSyncReEdit = isSyncReEdit;
     }
 
+    public ActionParams withIsOnlyInitTask(Boolean isOnlyInitTask) {
+        this.isOnlyInitTask = isOnlyInitTask;
+        return this;
+    }
+
+    /**
+     * 是否支持只初始化任务。仅支持白名单用户使用，需要提交工单申请才能使用。
+     * @return isOnlyInitTask
+     */
+    public Boolean getIsOnlyInitTask() {
+        return isOnlyInitTask;
+    }
+
+    public void setIsOnlyInitTask(Boolean isOnlyInitTask) {
+        this.isOnlyInitTask = isOnlyInitTask;
+    }
+
     public ActionParams withForceDelete(Boolean forceDelete) {
         this.forceDelete = forceDelete;
         return this;
@@ -299,6 +321,7 @@ public class ActionParams {
             && Objects.equals(this.pauseMode, that.pauseMode) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.compareTaskParam, that.compareTaskParam)
             && Objects.equals(this.isSyncReEdit, that.isSyncReEdit)
+            && Objects.equals(this.isOnlyInitTask, that.isOnlyInitTask)
             && Objects.equals(this.forceDelete, that.forceDelete)
             && Objects.equals(this.publicIpConfig, that.publicIpConfig)
             && Objects.equals(this.replayConfig, that.replayConfig);
@@ -313,6 +336,7 @@ public class ActionParams {
             startTime,
             compareTaskParam,
             isSyncReEdit,
+            isOnlyInitTask,
             forceDelete,
             publicIpConfig,
             replayConfig);
@@ -329,6 +353,7 @@ public class ActionParams {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    compareTaskParam: ").append(toIndentedString(compareTaskParam)).append("\n");
         sb.append("    isSyncReEdit: ").append(toIndentedString(isSyncReEdit)).append("\n");
+        sb.append("    isOnlyInitTask: ").append(toIndentedString(isOnlyInitTask)).append("\n");
         sb.append("    forceDelete: ").append(toIndentedString(forceDelete)).append("\n");
         sb.append("    publicIpConfig: ").append(toIndentedString(publicIpConfig)).append("\n");
         sb.append("    replayConfig: ").append(toIndentedString(replayConfig)).append("\n");

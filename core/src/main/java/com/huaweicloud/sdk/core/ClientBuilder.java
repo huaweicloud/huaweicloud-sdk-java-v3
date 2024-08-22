@@ -50,6 +50,10 @@ public class ClientBuilder<T> {
 
     private HttpConfig httpConfig;
 
+    protected Region getRegion() {
+        return region;
+    }
+
     private Region region;
 
     private List<String> endpoints;

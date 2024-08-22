@@ -25,6 +25,11 @@ public class ShowFepJobResponse extends SdkResponse {
     private ReceptorDrugFile receptor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "add_membrane")
+
+    private Boolean addMembrane;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ligands")
 
     private List<LigandPreviewDto> ligands = null;
@@ -99,6 +104,23 @@ public class ShowFepJobResponse extends SdkResponse {
 
     public void setReceptor(ReceptorDrugFile receptor) {
         this.receptor = receptor;
+    }
+
+    public ShowFepJobResponse withAddMembrane(Boolean addMembrane) {
+        this.addMembrane = addMembrane;
+        return this;
+    }
+
+    /**
+     * 是否加膜处理
+     * @return addMembrane
+     */
+    public Boolean getAddMembrane() {
+        return addMembrane;
+    }
+
+    public void setAddMembrane(Boolean addMembrane) {
+        this.addMembrane = addMembrane;
     }
 
     public ShowFepJobResponse withLigands(List<LigandPreviewDto> ligands) {
@@ -255,14 +277,15 @@ public class ShowFepJobResponse extends SdkResponse {
         }
         ShowFepJobResponse that = (ShowFepJobResponse) obj;
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.receptor, that.receptor)
-            && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.graph, that.graph)
-            && Objects.equals(this.params, that.params) && Objects.equals(this.jobResult, that.jobResult)
+            && Objects.equals(this.addMembrane, that.addMembrane) && Objects.equals(this.ligands, that.ligands)
+            && Objects.equals(this.graph, that.graph) && Objects.equals(this.params, that.params)
+            && Objects.equals(this.jobResult, that.jobResult)
             && Objects.equals(this.partFailedReason, that.partFailedReason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, receptor, ligands, graph, params, jobResult, partFailedReason);
+        return Objects.hash(basicInfo, receptor, addMembrane, ligands, graph, params, jobResult, partFailedReason);
     }
 
     @Override
@@ -271,6 +294,7 @@ public class ShowFepJobResponse extends SdkResponse {
         sb.append("class ShowFepJobResponse {\n");
         sb.append("    basicInfo: ").append(toIndentedString(basicInfo)).append("\n");
         sb.append("    receptor: ").append(toIndentedString(receptor)).append("\n");
+        sb.append("    addMembrane: ").append(toIndentedString(addMembrane)).append("\n");
         sb.append("    ligands: ").append(toIndentedString(ligands)).append("\n");
         sb.append("    graph: ").append(toIndentedString(graph)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");

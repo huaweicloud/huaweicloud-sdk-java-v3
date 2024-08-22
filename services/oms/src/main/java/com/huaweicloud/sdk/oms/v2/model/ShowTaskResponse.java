@@ -615,6 +615,87 @@ public class ShowTaskResponse extends SdkResponse {
 
     private Boolean enableRequesterPays;
 
+    /**
+     * HIGH：高优先级 MEDIUM：中优先级 LOW：低优先级
+     */
+    public static final class TaskPriorityEnum {
+
+        /**
+         * Enum HIGH for value: "HIGH"
+         */
+        public static final TaskPriorityEnum HIGH = new TaskPriorityEnum("HIGH");
+
+        /**
+         * Enum MEDIUM for value: "MEDIUM"
+         */
+        public static final TaskPriorityEnum MEDIUM = new TaskPriorityEnum("MEDIUM");
+
+        /**
+         * Enum LOW for value: "LOW"
+         */
+        public static final TaskPriorityEnum LOW = new TaskPriorityEnum("LOW");
+
+        private static final Map<String, TaskPriorityEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TaskPriorityEnum> createStaticFields() {
+            Map<String, TaskPriorityEnum> map = new HashMap<>();
+            map.put("HIGH", HIGH);
+            map.put("MEDIUM", MEDIUM);
+            map.put("LOW", LOW);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TaskPriorityEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TaskPriorityEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskPriorityEnum(value));
+        }
+
+        public static TaskPriorityEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TaskPriorityEnum) {
+                return this.value.equals(((TaskPriorityEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_priority")
+
+    private TaskPriorityEnum taskPriority;
+
     public ShowTaskResponse withBandwidthPolicy(List<BandwidthPolicyDto> bandwidthPolicy) {
         this.bandwidthPolicy = bandwidthPolicy;
         return this;
@@ -1361,6 +1442,23 @@ public class ShowTaskResponse extends SdkResponse {
         this.enableRequesterPays = enableRequesterPays;
     }
 
+    public ShowTaskResponse withTaskPriority(TaskPriorityEnum taskPriority) {
+        this.taskPriority = taskPriority;
+        return this;
+    }
+
+    /**
+     * HIGH：高优先级 MEDIUM：中优先级 LOW：低优先级
+     * @return taskPriority
+     */
+    public TaskPriorityEnum getTaskPriority() {
+        return taskPriority;
+    }
+
+    public void setTaskPriority(TaskPriorityEnum taskPriority) {
+        this.taskPriority = taskPriority;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1395,7 +1493,8 @@ public class ShowTaskResponse extends SdkResponse {
             && Objects.equals(this.objectOverwriteMode, that.objectOverwriteMode)
             && Objects.equals(this.dstStoragePolicy, that.dstStoragePolicy)
             && Objects.equals(this.consistencyCheck, that.consistencyCheck)
-            && Objects.equals(this.enableRequesterPays, that.enableRequesterPays);
+            && Objects.equals(this.enableRequesterPays, that.enableRequesterPays)
+            && Objects.equals(this.taskPriority, that.taskPriority);
     }
 
     @Override
@@ -1437,7 +1536,8 @@ public class ShowTaskResponse extends SdkResponse {
             objectOverwriteMode,
             dstStoragePolicy,
             consistencyCheck,
-            enableRequesterPays);
+            enableRequesterPays,
+            taskPriority);
     }
 
     @Override
@@ -1484,6 +1584,7 @@ public class ShowTaskResponse extends SdkResponse {
         sb.append("    dstStoragePolicy: ").append(toIndentedString(dstStoragePolicy)).append("\n");
         sb.append("    consistencyCheck: ").append(toIndentedString(consistencyCheck)).append("\n");
         sb.append("    enableRequesterPays: ").append(toIndentedString(enableRequesterPays)).append("\n");
+        sb.append("    taskPriority: ").append(toIndentedString(taskPriority)).append("\n");
         sb.append("}");
         return sb.toString();
     }

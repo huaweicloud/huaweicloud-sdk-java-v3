@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -13,34 +12,113 @@ import java.util.function.Consumer;
 public class CreateJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "job")
+    @JsonProperty(value = "id")
 
-    private CreateJobResp job;
+    private String id;
 
-    public CreateJobResponse withJob(CreateJobResp job) {
-        this.job = job;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
 
-    public CreateJobResponse withJob(Consumer<CreateJobResp> jobSetter) {
-        if (this.job == null) {
-            this.job = new CreateJobResp();
-            jobSetter.accept(this.job);
-        }
+    private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private String createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_clone_job")
+
+    private String isCloneJob;
+
+    public CreateJobResponse withId(String id) {
+        this.id = id;
         return this;
     }
 
     /**
-     * Get job
-     * @return job
+     * 任务ID。
+     * @return id
      */
-    public CreateJobResp getJob() {
-        return job;
+    public String getId() {
+        return id;
     }
 
-    public void setJob(CreateJobResp job) {
-        this.job = job;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public CreateJobResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 任务名称。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public CreateJobResponse withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 任务状态。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public CreateJobResponse withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * 任务创建时间。
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public CreateJobResponse withIsCloneJob(String isCloneJob) {
+        this.isCloneJob = isCloneJob;
+        return this;
+    }
+
+    /**
+     * 是否为克隆任务。
+     * @return isCloneJob
+     */
+    public String getIsCloneJob() {
+        return isCloneJob;
+    }
+
+    public void setIsCloneJob(String isCloneJob) {
+        this.isCloneJob = isCloneJob;
     }
 
     @Override
@@ -52,19 +130,25 @@ public class CreateJobResponse extends SdkResponse {
             return false;
         }
         CreateJobResponse that = (CreateJobResponse) obj;
-        return Objects.equals(this.job, that.job);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.isCloneJob, that.isCloneJob);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(job);
+        return Objects.hash(id, name, status, createTime, isCloneJob);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateJobResponse {\n");
-        sb.append("    job: ").append(toIndentedString(job)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    isCloneJob: ").append(toIndentedString(isCloneJob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

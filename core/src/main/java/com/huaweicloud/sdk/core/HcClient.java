@@ -93,6 +93,10 @@ public class HcClient implements CustomizationConfigure {
 
     private ExceptionHandler exceptionHandler = new DefaultExceptionHandler();
 
+    public List<String> getEndpoints() {
+        return endpoints;
+    }
+
     private List<String> endpoints;
 
     private ICredential credential;

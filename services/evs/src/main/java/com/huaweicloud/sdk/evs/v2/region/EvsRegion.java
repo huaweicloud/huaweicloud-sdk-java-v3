@@ -72,6 +72,17 @@ public class EvsRegion {
     public static final Region MY_KUALALUMPUR_1 =
         new Region("my-kualalumpur-1", "https://evs.my-kualalumpur-1.myhuaweicloud.com");
 
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://evs.cn-east-4.myhuaweicloud.com");
+
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://evs.cn-east-5.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://evs.cn-north-11.myhuaweicloud.com");
+
+    public static final Region RU_NORTHWEST_2 =
+        new Region("ru-northwest-2", "https://evs.ru-northwest-2.myhuaweicloud.com");
+
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://evs.af-north-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("EVS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -104,6 +115,11 @@ public class EvsRegion {
         map.put("cn-south-4", CN_SOUTH_4);
         map.put("ru-moscow-1", RU_MOSCOW_1);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
+        map.put("cn-east-4", CN_EAST_4);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("cn-north-11", CN_NORTH_11);
+        map.put("ru-northwest-2", RU_NORTHWEST_2);
+        map.put("af-north-1", AF_NORTH_1);
         return Collections.unmodifiableMap(map);
     }
 

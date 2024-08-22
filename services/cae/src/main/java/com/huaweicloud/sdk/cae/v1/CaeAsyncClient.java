@@ -56,8 +56,6 @@ import com.huaweicloud.sdk.cae.v1.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListCertificatesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentConfigurationsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentConfigurationsResponse;
-import com.huaweicloud.sdk.cae.v1.model.ListComponentEventsRequest;
-import com.huaweicloud.sdk.cae.v1.model.ListComponentEventsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentInstancesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentInstancesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentSnapshotsRequest;
@@ -528,35 +526,6 @@ public class CaeAsyncClient {
     public AsyncInvoker<ExecuteActionRequest, ExecuteActionResponse> executeActionAsyncInvoker(
         ExecuteActionRequest request) {
         return new AsyncInvoker<>(request, CaeMeta.executeAction, hcClient);
-    }
-
-    /**
-     * 获取组件事件列表
-     *
-     * 获取组件事件列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListComponentEventsRequest 请求对象
-     * @return CompletableFuture<ListComponentEventsResponse>
-     */
-    public CompletableFuture<ListComponentEventsResponse> listComponentEventsAsync(ListComponentEventsRequest request) {
-        return hcClient.asyncInvokeHttp(request, CaeMeta.listComponentEvents);
-    }
-
-    /**
-     * 获取组件事件列表
-     *
-     * 获取组件事件列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListComponentEventsRequest 请求对象
-     * @return AsyncInvoker<ListComponentEventsRequest, ListComponentEventsResponse>
-     */
-    public AsyncInvoker<ListComponentEventsRequest, ListComponentEventsResponse> listComponentEventsAsyncInvoker(
-        ListComponentEventsRequest request) {
-        return new AsyncInvoker<>(request, CaeMeta.listComponentEvents, hcClient);
     }
 
     /**

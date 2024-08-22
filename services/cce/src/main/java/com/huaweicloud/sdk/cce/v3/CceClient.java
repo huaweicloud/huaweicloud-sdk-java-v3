@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.cce.v3.model.BatchDeleteAutopilotClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteAutopilotClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchSyncNodesRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchSyncNodesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ContinueUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.ContinueUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateAddonInstanceRequest;
@@ -236,6 +238,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionResponse;
 import com.huaweicloud.sdk.cce.v3.model.SyncNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.SyncNodePoolResponse;
+import com.huaweicloud.sdk.cce.v3.model.SyncNodeRequest;
+import com.huaweicloud.sdk.cce.v3.model.SyncNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotAddonInstanceRequest;
@@ -447,6 +451,35 @@ public class CceClient {
     public SyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> batchDeleteClusterTagsInvoker(
         BatchDeleteClusterTagsRequest request) {
         return new SyncInvoker<>(request, CceMeta.batchDeleteClusterTags, hcClient);
+    }
+
+    /**
+     * 批量同步节点
+     *
+     * 该API用于批量同步节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSyncNodesRequest 请求对象
+     * @return BatchSyncNodesResponse
+     */
+    public BatchSyncNodesResponse batchSyncNodes(BatchSyncNodesRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.batchSyncNodes);
+    }
+
+    /**
+     * 批量同步节点
+     *
+     * 该API用于批量同步节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSyncNodesRequest 请求对象
+     * @return SyncInvoker<BatchSyncNodesRequest, BatchSyncNodesResponse>
+     */
+    public SyncInvoker<BatchSyncNodesRequest, BatchSyncNodesResponse> batchSyncNodesInvoker(
+        BatchSyncNodesRequest request) {
+        return new SyncInvoker<>(request, CceMeta.batchSyncNodes, hcClient);
     }
 
     /**
@@ -2527,6 +2560,34 @@ public class CceClient {
     public SyncInvoker<ShowUserChartsQuotasRequest, ShowUserChartsQuotasResponse> showUserChartsQuotasInvoker(
         ShowUserChartsQuotasRequest request) {
         return new SyncInvoker<>(request, CceMeta.showUserChartsQuotas, hcClient);
+    }
+
+    /**
+     * 同步节点
+     *
+     * 该API用于同步节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncNodeRequest 请求对象
+     * @return SyncNodeResponse
+     */
+    public SyncNodeResponse syncNode(SyncNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.syncNode);
+    }
+
+    /**
+     * 同步节点
+     *
+     * 该API用于同步节点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncNodeRequest 请求对象
+     * @return SyncInvoker<SyncNodeRequest, SyncNodeResponse>
+     */
+    public SyncInvoker<SyncNodeRequest, SyncNodeResponse> syncNodeInvoker(SyncNodeRequest request) {
+        return new SyncInvoker<>(request, CceMeta.syncNode, hcClient);
     }
 
     /**

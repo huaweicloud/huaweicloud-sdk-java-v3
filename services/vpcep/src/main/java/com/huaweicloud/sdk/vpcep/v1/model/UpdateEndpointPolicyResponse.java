@@ -113,7 +113,7 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_document")
 
-    private String policyDocument;
+    private Object policyDocument;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endpoint_pool_id")
@@ -544,7 +544,7 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
         this.policyStatement = policyStatement;
     }
 
-    public UpdateEndpointPolicyResponse withPolicyDocument(String policyDocument) {
+    public UpdateEndpointPolicyResponse withPolicyDocument(Object policyDocument) {
         this.policyDocument = policyDocument;
         return this;
     }
@@ -553,11 +553,11 @@ public class UpdateEndpointPolicyResponse extends SdkResponse {
      * 终端节点策略信息，仅当终端节点服务的enable_policy值为true时支持该参数，默认值为完全访问权限。（OBS、SFS的终端节点服务暂不支持该参数）
      * @return policyDocument
      */
-    public String getPolicyDocument() {
+    public Object getPolicyDocument() {
         return policyDocument;
     }
 
-    public void setPolicyDocument(String policyDocument) {
+    public void setPolicyDocument(Object policyDocument) {
         this.policyDocument = policyDocument;
     }
 

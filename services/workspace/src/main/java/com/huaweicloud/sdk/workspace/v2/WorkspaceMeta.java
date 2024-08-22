@@ -143,6 +143,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsConnectStatusRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsConnectStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsRequest;
@@ -1002,6 +1004,51 @@ public class WorkspaceMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDesktopsRequest::getSubnetId, ListDesktopsRequest::setSubnetId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDesktopsConnectStatusRequest, ListDesktopsConnectStatusResponse> listDesktopsConnectStatus =
+        genForListDesktopsConnectStatus();
+
+    private static HttpRequestDef<ListDesktopsConnectStatusRequest, ListDesktopsConnectStatusResponse> genForListDesktopsConnectStatus() {
+        // basic
+        HttpRequestDef.Builder<ListDesktopsConnectStatusRequest, ListDesktopsConnectStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDesktopsConnectStatusRequest.class,
+                    ListDesktopsConnectStatusResponse.class)
+                .withName("ListDesktopsConnectStatus")
+                .withUri("/v2/{project_id}/connect-desktops")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("user_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDesktopsConnectStatusRequest::getUserNames,
+                ListDesktopsConnectStatusRequest::setUserNames));
+        builder.<String>withRequestField("connect_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopsConnectStatusRequest::getConnectStatus,
+                ListDesktopsConnectStatusRequest::setConnectStatus));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopsConnectStatusRequest::getOffset,
+                ListDesktopsConnectStatusRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopsConnectStatusRequest::getLimit,
+                ListDesktopsConnectStatusRequest::setLimit));
 
         // response
 

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -25,6 +26,11 @@ public class ShowMolBatchDownloadTaskResponse extends SdkResponse {
     @JsonProperty(value = "out_dir")
 
     private String outDir;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "progress")
+
+    private TaskProgress progress;
 
     public ShowMolBatchDownloadTaskResponse withStatus(String status) {
         this.status = status;
@@ -77,6 +83,32 @@ public class ShowMolBatchDownloadTaskResponse extends SdkResponse {
         this.outDir = outDir;
     }
 
+    public ShowMolBatchDownloadTaskResponse withProgress(TaskProgress progress) {
+        this.progress = progress;
+        return this;
+    }
+
+    public ShowMolBatchDownloadTaskResponse withProgress(Consumer<TaskProgress> progressSetter) {
+        if (this.progress == null) {
+            this.progress = new TaskProgress();
+            progressSetter.accept(this.progress);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get progress
+     * @return progress
+     */
+    public TaskProgress getProgress() {
+        return progress;
+    }
+
+    public void setProgress(TaskProgress progress) {
+        this.progress = progress;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +119,12 @@ public class ShowMolBatchDownloadTaskResponse extends SdkResponse {
         }
         ShowMolBatchDownloadTaskResponse that = (ShowMolBatchDownloadTaskResponse) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.filename, that.filename)
-            && Objects.equals(this.outDir, that.outDir);
+            && Objects.equals(this.outDir, that.outDir) && Objects.equals(this.progress, that.progress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, filename, outDir);
+        return Objects.hash(status, filename, outDir, progress);
     }
 
     @Override
@@ -102,6 +134,7 @@ public class ShowMolBatchDownloadTaskResponse extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
         sb.append("    outDir: ").append(toIndentedString(outDir)).append("\n");
+        sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

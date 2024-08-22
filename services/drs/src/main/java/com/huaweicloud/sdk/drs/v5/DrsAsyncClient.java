@@ -39,6 +39,8 @@ import com.huaweicloud.sdk.drs.v5.model.DeleteJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.DeleteUserJdbcDriverRequest;
+import com.huaweicloud.sdk.drs.v5.model.DeleteUserJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.DownloadBatchCreateTemplateRequest;
 import com.huaweicloud.sdk.drs.v5.model.DownloadBatchCreateTemplateResponse;
 import com.huaweicloud.sdk.drs.v5.model.DownloadDbObjectTemplateRequest;
@@ -73,6 +75,8 @@ import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsRequest;
@@ -131,6 +135,8 @@ import com.huaweicloud.sdk.drs.v5.model.StopJobActionRequest;
 import com.huaweicloud.sdk.drs.v5.model.StopJobActionResponse;
 import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverResponse;
+import com.huaweicloud.sdk.drs.v5.model.SyncUserJdbcDriverRequest;
+import com.huaweicloud.sdk.drs.v5.model.SyncUserJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateComparePolicyRequest;
@@ -147,6 +153,8 @@ import com.huaweicloud.sdk.drs.v5.model.UploadDbObjectTemplateRequest;
 import com.huaweicloud.sdk.drs.v5.model.UploadDbObjectTemplateResponse;
 import com.huaweicloud.sdk.drs.v5.model.UploadJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.UploadJdbcDriverResponse;
+import com.huaweicloud.sdk.drs.v5.model.UploadUserJdbcDriverRequest;
+import com.huaweicloud.sdk.drs.v5.model.UploadUserJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.ValidateJobNameRequest;
 import com.huaweicloud.sdk.drs.v5.model.ValidateJobNameResponse;
 
@@ -702,6 +710,36 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 删除驱动文件
+     *
+     * 删除驱动文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteUserJdbcDriverRequest 请求对象
+     * @return CompletableFuture<DeleteUserJdbcDriverResponse>
+     */
+    public CompletableFuture<DeleteUserJdbcDriverResponse> deleteUserJdbcDriverAsync(
+        DeleteUserJdbcDriverRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.deleteUserJdbcDriver);
+    }
+
+    /**
+     * 删除驱动文件
+     *
+     * 删除驱动文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteUserJdbcDriverRequest 请求对象
+     * @return AsyncInvoker<DeleteUserJdbcDriverRequest, DeleteUserJdbcDriverResponse>
+     */
+    public AsyncInvoker<DeleteUserJdbcDriverRequest, DeleteUserJdbcDriverResponse> deleteUserJdbcDriverAsyncInvoker(
+        DeleteUserJdbcDriverRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.deleteUserJdbcDriver, hcClient);
+    }
+
+    /**
      * 下载批量导入任务模板
      *
      * 下载批量导入任务模板
@@ -1197,6 +1235,35 @@ public class DrsAsyncClient {
      */
     public AsyncInvoker<ListTagsRequest, ListTagsResponse> listTagsAsyncInvoker(ListTagsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listTags, hcClient);
+    }
+
+    /**
+     * 查询驱动文件列表
+     *
+     * 查询驱动文件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserJdbcDriversRequest 请求对象
+     * @return CompletableFuture<ListUserJdbcDriversResponse>
+     */
+    public CompletableFuture<ListUserJdbcDriversResponse> listUserJdbcDriversAsync(ListUserJdbcDriversRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.listUserJdbcDrivers);
+    }
+
+    /**
+     * 查询驱动文件列表
+     *
+     * 查询驱动文件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserJdbcDriversRequest 请求对象
+     * @return AsyncInvoker<ListUserJdbcDriversRequest, ListUserJdbcDriversResponse>
+     */
+    public AsyncInvoker<ListUserJdbcDriversRequest, ListUserJdbcDriversResponse> listUserJdbcDriversAsyncInvoker(
+        ListUserJdbcDriversRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.listUserJdbcDrivers, hcClient);
     }
 
     /**
@@ -2066,6 +2133,35 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 同步驱动文件
+     *
+     * 同步驱动文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncUserJdbcDriverRequest 请求对象
+     * @return CompletableFuture<SyncUserJdbcDriverResponse>
+     */
+    public CompletableFuture<SyncUserJdbcDriverResponse> syncUserJdbcDriverAsync(SyncUserJdbcDriverRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.syncUserJdbcDriver);
+    }
+
+    /**
+     * 同步驱动文件
+     *
+     * 同步驱动文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncUserJdbcDriverRequest 请求对象
+     * @return AsyncInvoker<SyncUserJdbcDriverRequest, SyncUserJdbcDriverResponse>
+     */
+    public AsyncInvoker<SyncUserJdbcDriverRequest, SyncUserJdbcDriverResponse> syncUserJdbcDriverAsyncInvoker(
+        SyncUserJdbcDriverRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.syncUserJdbcDriver, hcClient);
+    }
+
+    /**
      * 更新指定ID批量异步任务详情
      *
      * 更新租户指定ID批量异步任务详情。
@@ -2303,6 +2399,36 @@ public class DrsAsyncClient {
     public AsyncInvoker<UploadJdbcDriverRequest, UploadJdbcDriverResponse> uploadJdbcDriverAsyncInvoker(
         UploadJdbcDriverRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.uploadJdbcDriver, hcClient);
+    }
+
+    /**
+     * 上传驱动文件
+     *
+     * 上传驱动文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadUserJdbcDriverRequest 请求对象
+     * @return CompletableFuture<UploadUserJdbcDriverResponse>
+     */
+    public CompletableFuture<UploadUserJdbcDriverResponse> uploadUserJdbcDriverAsync(
+        UploadUserJdbcDriverRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.uploadUserJdbcDriver);
+    }
+
+    /**
+     * 上传驱动文件
+     *
+     * 上传驱动文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadUserJdbcDriverRequest 请求对象
+     * @return AsyncInvoker<UploadUserJdbcDriverRequest, UploadUserJdbcDriverResponse>
+     */
+    public AsyncInvoker<UploadUserJdbcDriverRequest, UploadUserJdbcDriverResponse> uploadUserJdbcDriverAsyncInvoker(
+        UploadUserJdbcDriverRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.uploadUserJdbcDriver, hcClient);
     }
 
     /**

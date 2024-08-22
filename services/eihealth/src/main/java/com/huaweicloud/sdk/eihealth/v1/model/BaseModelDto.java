@@ -26,11 +26,6 @@ public class BaseModelDto {
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "creator")
-
-    private String creator;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -86,23 +81,6 @@ public class BaseModelDto {
         this.createTime = createTime;
     }
 
-    public BaseModelDto withCreator(String creator) {
-        this.creator = creator;
-        return this;
-    }
-
-    /**
-     * 创建模型的用户名称
-     * @return creator
-     */
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
     public BaseModelDto withDescription(String description) {
         this.description = description;
         return this;
@@ -130,13 +108,12 @@ public class BaseModelDto {
         }
         BaseModelDto that = (BaseModelDto) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.creator, that.creator)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, id, createTime, creator, description);
+        return Objects.hash(name, id, createTime, description);
     }
 
     @Override
@@ -146,7 +123,6 @@ public class BaseModelDto {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

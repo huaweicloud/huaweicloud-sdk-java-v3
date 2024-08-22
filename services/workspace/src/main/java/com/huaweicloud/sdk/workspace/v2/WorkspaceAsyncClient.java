@@ -107,6 +107,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsConnectStatusRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsConnectStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsRequest;
@@ -960,6 +962,36 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ListDesktopsRequest, ListDesktopsResponse> listDesktopsAsyncInvoker(
         ListDesktopsRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.listDesktops, hcClient);
+    }
+
+    /**
+     * 查询桌面登录状态列表
+     *
+     * 查询桌面登录状态列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopsConnectStatusRequest 请求对象
+     * @return CompletableFuture<ListDesktopsConnectStatusResponse>
+     */
+    public CompletableFuture<ListDesktopsConnectStatusResponse> listDesktopsConnectStatusAsync(
+        ListDesktopsConnectStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopsConnectStatus);
+    }
+
+    /**
+     * 查询桌面登录状态列表
+     *
+     * 查询桌面登录状态列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopsConnectStatusRequest 请求对象
+     * @return AsyncInvoker<ListDesktopsConnectStatusRequest, ListDesktopsConnectStatusResponse>
+     */
+    public AsyncInvoker<ListDesktopsConnectStatusRequest, ListDesktopsConnectStatusResponse> listDesktopsConnectStatusAsyncInvoker(
+        ListDesktopsConnectStatusRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopsConnectStatus, hcClient);
     }
 
     /**

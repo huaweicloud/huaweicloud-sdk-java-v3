@@ -76,7 +76,7 @@ public class CreateEndpointRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_document")
 
-    private String policyDocument;
+    private Object policyDocument;
 
     /**
      * 指定终端节点的IP版本，仅专业型终端节点支持此参数。  - ipv4,  IPv4 - dualstack, 双栈
@@ -409,7 +409,7 @@ public class CreateEndpointRequestBody {
         this.policyStatement = policyStatement;
     }
 
-    public CreateEndpointRequestBody withPolicyDocument(String policyDocument) {
+    public CreateEndpointRequestBody withPolicyDocument(Object policyDocument) {
         this.policyDocument = policyDocument;
         return this;
     }
@@ -418,11 +418,11 @@ public class CreateEndpointRequestBody {
      * 终端节点策略信息，仅当终端节点服务的enable_policy值为true时支持该参数，默认值为完全访问权限。（OBS、SFS的终端节点服务暂不支持该参数）
      * @return policyDocument
      */
-    public String getPolicyDocument() {
+    public Object getPolicyDocument() {
         return policyDocument;
     }
 
-    public void setPolicyDocument(String policyDocument) {
+    public void setPolicyDocument(Object policyDocument) {
         this.policyDocument = policyDocument;
     }
 

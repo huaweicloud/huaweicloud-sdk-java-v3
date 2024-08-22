@@ -107,6 +107,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsConnectStatusRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsConnectStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsRequest;
@@ -944,6 +946,35 @@ public class WorkspaceClient {
      */
     public SyncInvoker<ListDesktopsRequest, ListDesktopsResponse> listDesktopsInvoker(ListDesktopsRequest request) {
         return new SyncInvoker<>(request, WorkspaceMeta.listDesktops, hcClient);
+    }
+
+    /**
+     * 查询桌面登录状态列表
+     *
+     * 查询桌面登录状态列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopsConnectStatusRequest 请求对象
+     * @return ListDesktopsConnectStatusResponse
+     */
+    public ListDesktopsConnectStatusResponse listDesktopsConnectStatus(ListDesktopsConnectStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listDesktopsConnectStatus);
+    }
+
+    /**
+     * 查询桌面登录状态列表
+     *
+     * 查询桌面登录状态列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopsConnectStatusRequest 请求对象
+     * @return SyncInvoker<ListDesktopsConnectStatusRequest, ListDesktopsConnectStatusResponse>
+     */
+    public SyncInvoker<ListDesktopsConnectStatusRequest, ListDesktopsConnectStatusResponse> listDesktopsConnectStatusInvoker(
+        ListDesktopsConnectStatusRequest request) {
+        return new SyncInvoker<>(request, WorkspaceMeta.listDesktopsConnectStatus, hcClient);
     }
 
     /**

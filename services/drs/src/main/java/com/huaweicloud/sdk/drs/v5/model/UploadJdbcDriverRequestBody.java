@@ -25,7 +25,7 @@ public class UploadJdbcDriverRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 驱动文件，驱动文件名称长度5-64，以jar结尾，name相同会替换远程驱动文件
+     * 驱动文件，驱动文件名称长度5-64，以jar结尾，文件名相同会替换远程驱动文件
      * @return file
      */
     public FormDataFilePart getFile() {

@@ -310,7 +310,7 @@ public class ShowSimCardResponse extends SdkResponse {
     }
 
     /**
-     * 设备状态
+     * 设备状态：1.注册 2.重启 3.在线 4.离线 (该参数只有ESIM、VSIM返回, 实体卡返回null)
      * @return deviceStatus
      */
     public Integer getDeviceStatus() {
@@ -327,7 +327,7 @@ public class ShowSimCardResponse extends SdkResponse {
     }
 
     /**
-     * 设备模组
+     * 设备模组 (该参数只有ESIM、VSIM返回, 实体卡返回null)
      * @return deviceModel
      */
     public String getDeviceModel() {
@@ -361,7 +361,7 @@ public class ShowSimCardResponse extends SdkResponse {
     }
 
     /**
-     * 设备状态变更时间 例如2020-01-31T16:00:00.000Z
+     * 设备状态变更时间 例如2020-01-31T16:00:00.000Z (该参数只有ESIM、VSIM返回, 实体卡返回null)
      * @return deviceStatusDate
      */
     public OffsetDateTime getDeviceStatusDate() {
@@ -429,7 +429,7 @@ public class ShowSimCardResponse extends SdkResponse {
     }
 
     /**
-     * 信号强度
+     * 信号强度 (该参数只有ESIM、VSIM返回, 实体卡返回null)
      * @return dbm
      */
     public String getDbm() {
@@ -446,7 +446,7 @@ public class ShowSimCardResponse extends SdkResponse {
     }
 
     /**
-     * 信号等级:1.差  2.良  3.良 4.优（该参数只有eSIM,vSIM返回，实体卡不返回）
+     * 信号等级:1.差  2.良  3.良  4.优 (该参数只有ESIM、VSIM返回, 实体卡返回null)
      * @return signalLevel
      */
     public String getSignalLevel() {

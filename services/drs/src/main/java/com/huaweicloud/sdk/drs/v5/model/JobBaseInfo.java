@@ -110,7 +110,7 @@ public class JobBaseInfo {
     private Boolean multiWrite;
 
     /**
-     * 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。
+     * 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。 - mysql-to-mysql：MySQL同步到MySQL，实时同步场景使用。
      */
     public static final class EngineTypeEnum {
 
@@ -130,6 +130,11 @@ public class JobBaseInfo {
         public static final EngineTypeEnum REDISCLUSTER_TO_GAUSSREDIS =
             new EngineTypeEnum("rediscluster-to-gaussredis");
 
+        /**
+         * Enum MYSQL_TO_MYSQL for value: "mysql-to-mysql"
+         */
+        public static final EngineTypeEnum MYSQL_TO_MYSQL = new EngineTypeEnum("mysql-to-mysql");
+
         private static final Map<String, EngineTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EngineTypeEnum> createStaticFields() {
@@ -137,6 +142,7 @@ public class JobBaseInfo {
             map.put("oracle-to-gaussdbv5", ORACLE_TO_GAUSSDBV5);
             map.put("redis-to-gaussredis", REDIS_TO_GAUSSREDIS);
             map.put("rediscluster-to-gaussredis", REDISCLUSTER_TO_GAUSSREDIS);
+            map.put("mysql-to-mysql", MYSQL_TO_MYSQL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -596,7 +602,7 @@ public class JobBaseInfo {
     }
 
     /**
-     * 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。
+     * 引擎类型。取值： - oracle-to-gaussdbv5：Oracle同步到GaussDB分布式版，实时同步场景使用。 - redis-to-gaussredis：Redis同步到GeminiDB Redis，实时迁移场景使用。 - rediscluster-to-gaussredis：Redis集群同步到GeminiDB Redis，实时迁移场景使用。 - mysql-to-mysql：MySQL同步到MySQL，实时同步场景使用。
      * @return engineType
      */
     public EngineTypeEnum getEngineType() {

@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.meeting.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.meeting.v1.model.AddAppIdRequest;
+import com.huaweicloud.sdk.meeting.v1.model.AddAppIdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.AddCorpAdminRequest;
 import com.huaweicloud.sdk.meeting.v1.model.AddCorpAdminResponse;
 import com.huaweicloud.sdk.meeting.v1.model.AddCorpRequest;
@@ -45,6 +47,8 @@ import com.huaweicloud.sdk.meeting.v1.model.BatchDeleteUsersRequest;
 import com.huaweicloud.sdk.meeting.v1.model.BatchDeleteUsersResponse;
 import com.huaweicloud.sdk.meeting.v1.model.BatchHandRequest;
 import com.huaweicloud.sdk.meeting.v1.model.BatchHandResponse;
+import com.huaweicloud.sdk.meeting.v1.model.BatchSearchAppIdRequest;
+import com.huaweicloud.sdk.meeting.v1.model.BatchSearchAppIdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.BatchShowUserDetailsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.BatchShowUserDetailsResponse;
 import com.huaweicloud.sdk.meeting.v1.model.BatchUpdateDevicesStatusRequest;
@@ -85,6 +89,8 @@ import com.huaweicloud.sdk.meeting.v1.model.CreateWebSocketTokenRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CreateWebSocketTokenResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CreateWebinarRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CreateWebinarResponse;
+import com.huaweicloud.sdk.meeting.v1.model.DeleteAppIdRequest;
+import com.huaweicloud.sdk.meeting.v1.model.DeleteAppIdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteAttendeesRequest;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteAttendeesResponse;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteCorpRequest;
@@ -151,6 +157,8 @@ import com.huaweicloud.sdk.meeting.v1.model.RenameParticipantRequest;
 import com.huaweicloud.sdk.meeting.v1.model.RenameParticipantResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ResetActivecodeRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ResetActivecodeResponse;
+import com.huaweicloud.sdk.meeting.v1.model.ResetAppKeyRequest;
+import com.huaweicloud.sdk.meeting.v1.model.ResetAppKeyResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ResetPwdByAdminRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ResetPwdByAdminResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ResetPwdRequest;
@@ -327,6 +335,8 @@ import com.huaweicloud.sdk.meeting.v1.model.StopMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.StopMeetingResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SwitchModeRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SwitchModeResponse;
+import com.huaweicloud.sdk.meeting.v1.model.UpdateAppIdRequest;
+import com.huaweicloud.sdk.meeting.v1.model.UpdateAppIdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.UpdateContactRequest;
 import com.huaweicloud.sdk.meeting.v1.model.UpdateContactResponse;
 import com.huaweicloud.sdk.meeting.v1.model.UpdateCorpBasicInfoRequest;
@@ -383,6 +393,34 @@ public class MeetingClient {
     public static ClientBuilder<MeetingClient> newBuilder() {
         ClientBuilder<MeetingClient> clientBuilder = new ClientBuilder<>(MeetingClient::new, "MeetingCredentials");
         return clientBuilder;
+    }
+
+    /**
+     * 添加企业应用
+     *
+     * 企业默认管理员添加应用，添加应用后，记录返回信息，后续可通过[[执行App ID鉴权](https://support.huaweicloud.com/api-meeting/meeting_21_0311.html)](tag:hws) [[执行App ID鉴权](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0311.html)](tag:hk)获取accessToken
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddAppIdRequest 请求对象
+     * @return AddAppIdResponse
+     */
+    public AddAppIdResponse addAppId(AddAppIdRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.addAppId);
+    }
+
+    /**
+     * 添加企业应用
+     *
+     * 企业默认管理员添加应用，添加应用后，记录返回信息，后续可通过[[执行App ID鉴权](https://support.huaweicloud.com/api-meeting/meeting_21_0311.html)](tag:hws) [[执行App ID鉴权](https://support.huaweicloud.com/intl/zh-cn/api-meeting/meeting_21_0311.html)](tag:hk)获取accessToken
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddAppIdRequest 请求对象
+     * @return SyncInvoker<AddAppIdRequest, AddAppIdResponse>
+     */
+    public SyncInvoker<AddAppIdRequest, AddAppIdResponse> addAppIdInvoker(AddAppIdRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.addAppId, hcClient);
     }
 
     /**
@@ -989,6 +1027,35 @@ public class MeetingClient {
     }
 
     /**
+     * 分页查询企业应用
+     *
+     * 企业默认管理员分页查询企业应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSearchAppIdRequest 请求对象
+     * @return BatchSearchAppIdResponse
+     */
+    public BatchSearchAppIdResponse batchSearchAppId(BatchSearchAppIdRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.batchSearchAppId);
+    }
+
+    /**
+     * 分页查询企业应用
+     *
+     * 企业默认管理员分页查询企业应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSearchAppIdRequest 请求对象
+     * @return SyncInvoker<BatchSearchAppIdRequest, BatchSearchAppIdResponse>
+     */
+    public SyncInvoker<BatchSearchAppIdRequest, BatchSearchAppIdResponse> batchSearchAppIdInvoker(
+        BatchSearchAppIdRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.batchSearchAppId, hcClient);
+    }
+
+    /**
      * 批量查询用户详情
      *
      * 批量查询用户详情，支持指定第三方账号查询详情。
@@ -1563,6 +1630,34 @@ public class MeetingClient {
      */
     public SyncInvoker<CreateWebinarRequest, CreateWebinarResponse> createWebinarInvoker(CreateWebinarRequest request) {
         return new SyncInvoker<>(request, MeetingMeta.createWebinar, hcClient);
+    }
+
+    /**
+     * 删除企业应用
+     *
+     * 企业管理员删除企业应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAppIdRequest 请求对象
+     * @return DeleteAppIdResponse
+     */
+    public DeleteAppIdResponse deleteAppId(DeleteAppIdRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.deleteAppId);
+    }
+
+    /**
+     * 删除企业应用
+     *
+     * 企业管理员删除企业应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAppIdRequest 请求对象
+     * @return SyncInvoker<DeleteAppIdRequest, DeleteAppIdResponse>
+     */
+    public SyncInvoker<DeleteAppIdRequest, DeleteAppIdResponse> deleteAppIdInvoker(DeleteAppIdRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.deleteAppId, hcClient);
     }
 
     /**
@@ -2515,6 +2610,34 @@ public class MeetingClient {
     public SyncInvoker<ResetActivecodeRequest, ResetActivecodeResponse> resetActivecodeInvoker(
         ResetActivecodeRequest request) {
         return new SyncInvoker<>(request, MeetingMeta.resetActivecode, hcClient);
+    }
+
+    /**
+     * 重置企业应用appkey
+     *
+     * 企业默认管理员重置企业应用appkey
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetAppKeyRequest 请求对象
+     * @return ResetAppKeyResponse
+     */
+    public ResetAppKeyResponse resetAppKey(ResetAppKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.resetAppKey);
+    }
+
+    /**
+     * 重置企业应用appkey
+     *
+     * 企业默认管理员重置企业应用appkey
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetAppKeyRequest 请求对象
+     * @return SyncInvoker<ResetAppKeyRequest, ResetAppKeyResponse>
+     */
+    public SyncInvoker<ResetAppKeyRequest, ResetAppKeyResponse> resetAppKeyInvoker(ResetAppKeyRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.resetAppKey, hcClient);
     }
 
     /**
@@ -4788,6 +4911,34 @@ public class MeetingClient {
      */
     public SyncInvoker<SwitchModeRequest, SwitchModeResponse> switchModeInvoker(SwitchModeRequest request) {
         return new SyncInvoker<>(request, MeetingMeta.switchMode, hcClient);
+    }
+
+    /**
+     * 修改企业应用
+     *
+     * 企业默认管理员修改企业应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAppIdRequest 请求对象
+     * @return UpdateAppIdResponse
+     */
+    public UpdateAppIdResponse updateAppId(UpdateAppIdRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.updateAppId);
+    }
+
+    /**
+     * 修改企业应用
+     *
+     * 企业默认管理员修改企业应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAppIdRequest 请求对象
+     * @return SyncInvoker<UpdateAppIdRequest, UpdateAppIdResponse>
+     */
+    public SyncInvoker<UpdateAppIdRequest, UpdateAppIdResponse> updateAppIdInvoker(UpdateAppIdRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.updateAppId, hcClient);
     }
 
     /**

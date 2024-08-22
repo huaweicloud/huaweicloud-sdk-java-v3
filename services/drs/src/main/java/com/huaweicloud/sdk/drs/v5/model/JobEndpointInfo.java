@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class JobEndpointInfo {
 
     /**
-     * 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。
+     * 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。 - mysql：MySQL。
      */
     public static final class DbTypeEnum {
 
@@ -46,6 +46,11 @@ public class JobEndpointInfo {
          */
         public static final DbTypeEnum GAUSSREDIS = new DbTypeEnum("gaussredis");
 
+        /**
+         * Enum MYSQL for value: "mysql"
+         */
+        public static final DbTypeEnum MYSQL = new DbTypeEnum("mysql");
+
         private static final Map<String, DbTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DbTypeEnum> createStaticFields() {
@@ -55,6 +60,7 @@ public class JobEndpointInfo {
             map.put("redis", REDIS);
             map.put("rediscluster", REDISCLUSTER);
             map.put("gaussredis", GAUSSREDIS);
+            map.put("mysql", MYSQL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -301,7 +307,7 @@ public class JobEndpointInfo {
     }
 
     /**
-     * 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。
+     * 数据库类型。取值：  - oracle：Oracle。 - gaussdbv5：GaussDB分布式版。 - redis：Redis。 - rediscluster：Redis集群版。 - gaussredis: GeminiDB Redis。 - mysql：MySQL。
      * @return dbType
      */
     public DbTypeEnum getDbType() {

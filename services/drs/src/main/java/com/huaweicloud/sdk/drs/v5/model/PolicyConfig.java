@@ -382,6 +382,11 @@ public class PolicyConfig {
 
     private String dmlTypes;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_create_table_with_index")
+
+    private Boolean isCreateTableWithIndex;
+
     public PolicyConfig withFilterDdlPolicy(FilterDdlPolicyEnum filterDdlPolicy) {
         this.filterDdlPolicy = filterDdlPolicy;
         return this;
@@ -535,6 +540,23 @@ public class PolicyConfig {
         this.dmlTypes = dmlTypes;
     }
 
+    public PolicyConfig withIsCreateTableWithIndex(Boolean isCreateTableWithIndex) {
+        this.isCreateTableWithIndex = isCreateTableWithIndex;
+        return this;
+    }
+
+    /**
+     * 索引与表结构是否同时建立。
+     * @return isCreateTableWithIndex
+     */
+    public Boolean getIsCreateTableWithIndex() {
+        return isCreateTableWithIndex;
+    }
+
+    public void setIsCreateTableWithIndex(Boolean isCreateTableWithIndex) {
+        this.isCreateTableWithIndex = isCreateTableWithIndex;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -551,7 +573,8 @@ public class PolicyConfig {
             && Objects.equals(this.supportDdlInfo, that.supportDdlInfo)
             && Objects.equals(this.syncTypePolicy, that.syncTypePolicy)
             && Objects.equals(this.incrementReadMode, that.incrementReadMode)
-            && Objects.equals(this.dmlTypes, that.dmlTypes);
+            && Objects.equals(this.dmlTypes, that.dmlTypes)
+            && Objects.equals(this.isCreateTableWithIndex, that.isCreateTableWithIndex);
     }
 
     @Override
@@ -564,7 +587,8 @@ public class PolicyConfig {
             supportDdlInfo,
             syncTypePolicy,
             incrementReadMode,
-            dmlTypes);
+            dmlTypes,
+            isCreateTableWithIndex);
     }
 
     @Override
@@ -580,6 +604,7 @@ public class PolicyConfig {
         sb.append("    syncTypePolicy: ").append(toIndentedString(syncTypePolicy)).append("\n");
         sb.append("    incrementReadMode: ").append(toIndentedString(incrementReadMode)).append("\n");
         sb.append("    dmlTypes: ").append(toIndentedString(dmlTypes)).append("\n");
+        sb.append("    isCreateTableWithIndex: ").append(toIndentedString(isCreateTableWithIndex)).append("\n");
         sb.append("}");
         return sb.toString();
     }

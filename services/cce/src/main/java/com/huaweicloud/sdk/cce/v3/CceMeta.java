@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.cce.v3.model.BatchDeleteAutopilotClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsResponse;
+import com.huaweicloud.sdk.cce.v3.model.BatchSyncNodesRequest;
+import com.huaweicloud.sdk.cce.v3.model.BatchSyncNodesResponse;
 import com.huaweicloud.sdk.cce.v3.model.CertDuration;
 import com.huaweicloud.sdk.cce.v3.model.ChartResp;
 import com.huaweicloud.sdk.cce.v3.model.Cluster;
@@ -268,6 +270,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionResponse;
 import com.huaweicloud.sdk.cce.v3.model.SyncNodePoolRequest;
 import com.huaweicloud.sdk.cce.v3.model.SyncNodePoolResponse;
+import com.huaweicloud.sdk.cce.v3.model.SyncNodeRequest;
+import com.huaweicloud.sdk.cce.v3.model.SyncNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotAddonInstanceRequest;
@@ -475,6 +479,34 @@ public class CceMeta {
             f -> f.withMarshaller(BatchDeleteClusterTagsRequest::getBody, BatchDeleteClusterTagsRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchSyncNodesRequest, BatchSyncNodesResponse> batchSyncNodes =
+        genForBatchSyncNodes();
+
+    private static HttpRequestDef<BatchSyncNodesRequest, BatchSyncNodesResponse> genForBatchSyncNodes() {
+        // basic
+        HttpRequestDef.Builder<BatchSyncNodesRequest, BatchSyncNodesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchSyncNodesRequest.class, BatchSyncNodesResponse.class)
+                .withName("BatchSyncNodes")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/sync")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchSyncNodesRequest::getClusterId, BatchSyncNodesRequest::setClusterId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchSyncNodesResponse::getBody, BatchSyncNodesResponse::setBody));
 
         return builder.build();
     }
@@ -2489,6 +2521,38 @@ public class CceMeta {
         // requests
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SyncNodeRequest, SyncNodeResponse> syncNode = genForSyncNode();
+
+    private static HttpRequestDef<SyncNodeRequest, SyncNodeResponse> genForSyncNode() {
+        // basic
+        HttpRequestDef.Builder<SyncNodeRequest, SyncNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, SyncNodeRequest.class, SyncNodeResponse.class)
+                .withName("SyncNode")
+                .withUri("/api/v2/projects/{project_id}/clusters/{cluster_id}/nodes/{node_id}/sync")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncNodeRequest::getClusterId, SyncNodeRequest::setClusterId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SyncNodeRequest::getNodeId, SyncNodeRequest::setNodeId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(SyncNodeResponse::getBody, SyncNodeResponse::setBody));
 
         return builder.build();
     }

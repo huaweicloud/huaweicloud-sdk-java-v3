@@ -12,9 +12,6 @@ public class KvsCredentials extends BasicCredentials {
 
     private boolean enableBodySignature = true;
 
-    public KvsCredentials() {
-    }
-
     @Override
     public KvsCredentials withProjectId(String projectId) {
         this.projectId = projectId;

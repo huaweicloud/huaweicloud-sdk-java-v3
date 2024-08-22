@@ -6,6 +6,9 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.meeting.v1.model.ActiveDTO;
+import com.huaweicloud.sdk.meeting.v1.model.AddAppIdRequest;
+import com.huaweicloud.sdk.meeting.v1.model.AddAppIdRequestBody;
+import com.huaweicloud.sdk.meeting.v1.model.AddAppIdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.AddCorpAdminRequest;
 import com.huaweicloud.sdk.meeting.v1.model.AddCorpAdminResponse;
 import com.huaweicloud.sdk.meeting.v1.model.AddCorpDTO;
@@ -55,6 +58,8 @@ import com.huaweicloud.sdk.meeting.v1.model.BatchDeleteUsersRequest;
 import com.huaweicloud.sdk.meeting.v1.model.BatchDeleteUsersResponse;
 import com.huaweicloud.sdk.meeting.v1.model.BatchHandRequest;
 import com.huaweicloud.sdk.meeting.v1.model.BatchHandResponse;
+import com.huaweicloud.sdk.meeting.v1.model.BatchSearchAppIdRequest;
+import com.huaweicloud.sdk.meeting.v1.model.BatchSearchAppIdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.BatchShowUserDetailsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.BatchShowUserDetailsResponse;
 import com.huaweicloud.sdk.meeting.v1.model.BatchUpdateDevicesStatusRequest;
@@ -99,6 +104,8 @@ import com.huaweicloud.sdk.meeting.v1.model.CreateWebSocketTokenRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CreateWebSocketTokenResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CreateWebinarRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CreateWebinarResponse;
+import com.huaweicloud.sdk.meeting.v1.model.DeleteAppIdRequest;
+import com.huaweicloud.sdk.meeting.v1.model.DeleteAppIdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteAttendeesRequest;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteAttendeesResponse;
 import com.huaweicloud.sdk.meeting.v1.model.DeleteCorpRequest;
@@ -181,6 +188,8 @@ import com.huaweicloud.sdk.meeting.v1.model.RenameParticipantRequest;
 import com.huaweicloud.sdk.meeting.v1.model.RenameParticipantResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ResetActivecodeRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ResetActivecodeResponse;
+import com.huaweicloud.sdk.meeting.v1.model.ResetAppKeyRequest;
+import com.huaweicloud.sdk.meeting.v1.model.ResetAppKeyResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ResetPwdByAdminRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ResetPwdByAdminResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ResetPwdReqDTOV1;
@@ -400,6 +409,9 @@ import com.huaweicloud.sdk.meeting.v1.model.StopMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.StopMeetingResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SwitchModeRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SwitchModeResponse;
+import com.huaweicloud.sdk.meeting.v1.model.UpdateAppIdRequest;
+import com.huaweicloud.sdk.meeting.v1.model.UpdateAppIdRequestBody;
+import com.huaweicloud.sdk.meeting.v1.model.UpdateAppIdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.UpdateContactRequest;
 import com.huaweicloud.sdk.meeting.v1.model.UpdateContactResponse;
 import com.huaweicloud.sdk.meeting.v1.model.UpdateCorpBasicInfoRequest;
@@ -463,6 +475,33 @@ import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class MeetingMeta {
+
+    public static final HttpRequestDef<AddAppIdRequest, AddAppIdResponse> addAppId = genForAddAppId();
+
+    private static HttpRequestDef<AddAppIdRequest, AddAppIdResponse> genForAddAppId() {
+        // basic
+        HttpRequestDef.Builder<AddAppIdRequest, AddAppIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddAppIdRequest.class, AddAppIdResponse.class)
+                .withName("AddAppId")
+                .withUri("/v2/usg/acs/corp/app")
+                .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddAppIdRequest::getXRequestId, AddAppIdRequest::setXRequestId));
+        builder.<AddAppIdRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddAppIdRequestBody.class),
+            f -> f.withMarshaller(AddAppIdRequest::getBody, AddAppIdRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<AddCorpRequest, AddCorpResponse> addCorp = genForAddCorp();
 
@@ -1205,6 +1244,45 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestBatchHandsUpReqBody.class),
             f -> f.withMarshaller(BatchHandRequest::getBody, BatchHandRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchSearchAppIdRequest, BatchSearchAppIdResponse> batchSearchAppId =
+        genForBatchSearchAppId();
+
+    private static HttpRequestDef<BatchSearchAppIdRequest, BatchSearchAppIdResponse> genForBatchSearchAppId() {
+        // basic
+        HttpRequestDef.Builder<BatchSearchAppIdRequest, BatchSearchAppIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, BatchSearchAppIdRequest.class, BatchSearchAppIdResponse.class)
+                .withName("BatchSearchAppId")
+                .withUri("/v2/usg/acs/corp/apps")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchSearchAppIdRequest::getOffset, BatchSearchAppIdRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(BatchSearchAppIdRequest::getLimit, BatchSearchAppIdRequest::setLimit));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchSearchAppIdRequest::getXRequestId, BatchSearchAppIdRequest::setXRequestId));
+        builder.<String>withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchSearchAppIdRequest::getAcceptLanguage,
+                BatchSearchAppIdRequest::setAcceptLanguage));
 
         // response
 
@@ -1992,6 +2070,38 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(OpenScheduleConfReq.class),
             f -> f.withMarshaller(CreateWebinarRequest::getBody, CreateWebinarRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAppIdRequest, DeleteAppIdResponse> deleteAppId = genForDeleteAppId();
+
+    private static HttpRequestDef<DeleteAppIdRequest, DeleteAppIdResponse> genForDeleteAppId() {
+        // basic
+        HttpRequestDef.Builder<DeleteAppIdRequest, DeleteAppIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppIdRequest.class, DeleteAppIdResponse.class)
+                .withName("DeleteAppId")
+                .withUri("/v2/usg/acs/corp/app/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppIdRequest::getAppId, DeleteAppIdRequest::setAppId));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppIdRequest::getXRequestId, DeleteAppIdRequest::setXRequestId));
+        builder.<String>withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppIdRequest::getAcceptLanguage, DeleteAppIdRequest::setAcceptLanguage));
 
         // response
 
@@ -3201,6 +3311,38 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ActiveDTO.class),
             f -> f.withMarshaller(ResetActivecodeRequest::getBody, ResetActivecodeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetAppKeyRequest, ResetAppKeyResponse> resetAppKey = genForResetAppKey();
+
+    private static HttpRequestDef<ResetAppKeyRequest, ResetAppKeyResponse> genForResetAppKey() {
+        // basic
+        HttpRequestDef.Builder<ResetAppKeyRequest, ResetAppKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ResetAppKeyRequest.class, ResetAppKeyResponse.class)
+                .withName("ResetAppKey")
+                .withUri("/v2/usg/acs/corp/app/{app_id}/reset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetAppKeyRequest::getAppId, ResetAppKeyRequest::setAppId));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetAppKeyRequest::getXRequestId, ResetAppKeyRequest::setXRequestId));
+        builder.<String>withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetAppKeyRequest::getAcceptLanguage, ResetAppKeyRequest::setAcceptLanguage));
 
         // response
 
@@ -6458,6 +6600,43 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestSwitchModeReqBody.class),
             f -> f.withMarshaller(SwitchModeRequest::getBody, SwitchModeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAppIdRequest, UpdateAppIdResponse> updateAppId = genForUpdateAppId();
+
+    private static HttpRequestDef<UpdateAppIdRequest, UpdateAppIdResponse> genForUpdateAppId() {
+        // basic
+        HttpRequestDef.Builder<UpdateAppIdRequest, UpdateAppIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAppIdRequest.class, UpdateAppIdResponse.class)
+                .withName("UpdateAppId")
+                .withUri("/v2/usg/acs/corp/app/{app_id}")
+                .withContentType("application/json;charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAppIdRequest::getAppId, UpdateAppIdRequest::setAppId));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAppIdRequest::getXRequestId, UpdateAppIdRequest::setXRequestId));
+        builder.<String>withRequestField("Accept-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAppIdRequest::getAcceptLanguage, UpdateAppIdRequest::setAcceptLanguage));
+        builder.<UpdateAppIdRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAppIdRequestBody.class),
+            f -> f.withMarshaller(UpdateAppIdRequest::getBody, UpdateAppIdRequest::setBody));
 
         // response
 

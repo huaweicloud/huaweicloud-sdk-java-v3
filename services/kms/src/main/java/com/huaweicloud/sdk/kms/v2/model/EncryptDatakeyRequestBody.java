@@ -26,6 +26,11 @@ public class EncryptDatakeyRequestBody {
     private String datakeyPlainLength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "additional_authenticated_data")
+
+    private String additionalAuthenticatedData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sequence")
 
     private String sequence;
@@ -81,6 +86,23 @@ public class EncryptDatakeyRequestBody {
         this.datakeyPlainLength = datakeyPlainLength;
     }
 
+    public EncryptDatakeyRequestBody withAdditionalAuthenticatedData(String additionalAuthenticatedData) {
+        this.additionalAuthenticatedData = additionalAuthenticatedData;
+        return this;
+    }
+
+    /**
+     * 身份验证的非敏感额外数据。任意字符串，长度不超过128字节。
+     * @return additionalAuthenticatedData
+     */
+    public String getAdditionalAuthenticatedData() {
+        return additionalAuthenticatedData;
+    }
+
+    public void setAdditionalAuthenticatedData(String additionalAuthenticatedData) {
+        this.additionalAuthenticatedData = additionalAuthenticatedData;
+    }
+
     public EncryptDatakeyRequestBody withSequence(String sequence) {
         this.sequence = sequence;
         return this;
@@ -109,12 +131,13 @@ public class EncryptDatakeyRequestBody {
         EncryptDatakeyRequestBody that = (EncryptDatakeyRequestBody) obj;
         return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.plainText, that.plainText)
             && Objects.equals(this.datakeyPlainLength, that.datakeyPlainLength)
+            && Objects.equals(this.additionalAuthenticatedData, that.additionalAuthenticatedData)
             && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keyId, plainText, datakeyPlainLength, sequence);
+        return Objects.hash(keyId, plainText, datakeyPlainLength, additionalAuthenticatedData, sequence);
     }
 
     @Override
@@ -124,6 +147,9 @@ public class EncryptDatakeyRequestBody {
         sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
         sb.append("    plainText: ").append(toIndentedString(plainText)).append("\n");
         sb.append("    datakeyPlainLength: ").append(toIndentedString(datakeyPlainLength)).append("\n");
+        sb.append("    additionalAuthenticatedData: ")
+            .append(toIndentedString(additionalAuthenticatedData))
+            .append("\n");
         sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
         sb.append("}");
         return sb.toString();

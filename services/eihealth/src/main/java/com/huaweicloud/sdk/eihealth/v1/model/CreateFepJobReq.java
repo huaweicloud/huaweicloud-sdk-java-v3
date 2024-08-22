@@ -24,6 +24,11 @@ public class CreateFepJobReq {
     private ReceptorDrugFile receptor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "add_membrane")
+
+    private Boolean addMembrane;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ligands")
 
     private List<LigandPreviewDto> ligands = null;
@@ -88,6 +93,23 @@ public class CreateFepJobReq {
 
     public void setReceptor(ReceptorDrugFile receptor) {
         this.receptor = receptor;
+    }
+
+    public CreateFepJobReq withAddMembrane(Boolean addMembrane) {
+        this.addMembrane = addMembrane;
+        return this;
+    }
+
+    /**
+     * 是否加膜处理
+     * @return addMembrane
+     */
+    public Boolean getAddMembrane() {
+        return addMembrane;
+    }
+
+    public void setAddMembrane(Boolean addMembrane) {
+        this.addMembrane = addMembrane;
     }
 
     public CreateFepJobReq withLigands(List<LigandPreviewDto> ligands) {
@@ -185,13 +207,13 @@ public class CreateFepJobReq {
         }
         CreateFepJobReq that = (CreateFepJobReq) obj;
         return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.receptor, that.receptor)
-            && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.graph, that.graph)
-            && Objects.equals(this.params, that.params);
+            && Objects.equals(this.addMembrane, that.addMembrane) && Objects.equals(this.ligands, that.ligands)
+            && Objects.equals(this.graph, that.graph) && Objects.equals(this.params, that.params);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicInfo, receptor, ligands, graph, params);
+        return Objects.hash(basicInfo, receptor, addMembrane, ligands, graph, params);
     }
 
     @Override
@@ -200,6 +222,7 @@ public class CreateFepJobReq {
         sb.append("class CreateFepJobReq {\n");
         sb.append("    basicInfo: ").append(toIndentedString(basicInfo)).append("\n");
         sb.append("    receptor: ").append(toIndentedString(receptor)).append("\n");
+        sb.append("    addMembrane: ").append(toIndentedString(addMembrane)).append("\n");
         sb.append("    ligands: ").append(toIndentedString(ligands)).append("\n");
         sb.append("    graph: ").append(toIndentedString(graph)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
