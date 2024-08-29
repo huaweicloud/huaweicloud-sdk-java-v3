@@ -36,7 +36,7 @@ public class VoiceConfig {
     }
 
     /**
-     * 音色资产ID。
+     * 音色资产ID，可以从资产库中查询。
      * @return voiceAssetId
      */
     public String getVoiceAssetId() {

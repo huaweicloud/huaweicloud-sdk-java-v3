@@ -35,7 +35,7 @@ public class ListDigitalHumanBusinessCardResponse extends SdkResponse {
     }
 
     /**
-     * 数字人名片制作任总数。
+     * 数字人名片制作任务总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count

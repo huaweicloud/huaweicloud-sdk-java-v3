@@ -161,7 +161,7 @@ public class LayerConfig {
     }
 
     /**
-     * 图层所需资产的资产id，外部资产信息无需填写
+     * 图层所需资产的资产id，外部资产信息无需填写。 若填写，可以从资产库中查询。
      * @return assetId
      */
     public String getAssetId() {

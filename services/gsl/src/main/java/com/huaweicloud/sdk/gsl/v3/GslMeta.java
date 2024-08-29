@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.gsl.v3.model.AddNetworkSwitchPolicyRequest;
+import com.huaweicloud.sdk.gsl.v3.model.AddNetworkSwitchPolicyResponse;
 import com.huaweicloud.sdk.gsl.v3.model.AddOrModifyAttributeReq;
 import com.huaweicloud.sdk.gsl.v3.model.AddOrModifyTagReq;
 import com.huaweicloud.sdk.gsl.v3.model.BatchSetAttributesReq;
@@ -40,10 +42,14 @@ import com.huaweicloud.sdk.gsl.v3.model.ListBackPoolsResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListFlowBySimCardsReq;
 import com.huaweicloud.sdk.gsl.v3.model.ListFlowBySimCardsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListFlowBySimCardsResponse;
+import com.huaweicloud.sdk.gsl.v3.model.ListNetworkSwitchPoliciesRequest;
+import com.huaweicloud.sdk.gsl.v3.model.ListNetworkSwitchPoliciesResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListProPricePlansRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListProPricePlansResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimCardsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimCardsResponse;
+import com.huaweicloud.sdk.gsl.v3.model.ListSimDeviceMultiplyRequest;
+import com.huaweicloud.sdk.gsl.v3.model.ListSimDeviceMultiplyResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimPoolMembersRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimPoolMembersResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimPoolsRequest;
@@ -58,6 +64,9 @@ import com.huaweicloud.sdk.gsl.v3.model.ListWorkOrderDetailsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListWorkOrderDetailsResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListWorkOrdersRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListWorkOrdersResponse;
+import com.huaweicloud.sdk.gsl.v3.model.NetworkSwitchPolicyDTO;
+import com.huaweicloud.sdk.gsl.v3.model.NetworkSwitchPolicyReq;
+import com.huaweicloud.sdk.gsl.v3.model.NetworkSwitchReq;
 import com.huaweicloud.sdk.gsl.v3.model.RegisterImeiReq;
 import com.huaweicloud.sdk.gsl.v3.model.RegisterImeiRequest;
 import com.huaweicloud.sdk.gsl.v3.model.RegisterImeiResponse;
@@ -67,6 +76,8 @@ import com.huaweicloud.sdk.gsl.v3.model.SendSmsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.SendSmsResponse;
 import com.huaweicloud.sdk.gsl.v3.model.SetExceedCutNetRequest;
 import com.huaweicloud.sdk.gsl.v3.model.SetExceedCutNetResponse;
+import com.huaweicloud.sdk.gsl.v3.model.SetNetworkSwitchPolicyRequest;
+import com.huaweicloud.sdk.gsl.v3.model.SetNetworkSwitchPolicyResponse;
 import com.huaweicloud.sdk.gsl.v3.model.SetSpeedValueReq;
 import com.huaweicloud.sdk.gsl.v3.model.SetSpeedValueRequest;
 import com.huaweicloud.sdk.gsl.v3.model.SetSpeedValueResponse;
@@ -83,6 +94,8 @@ import com.huaweicloud.sdk.gsl.v3.model.StartStopNetRequest;
 import com.huaweicloud.sdk.gsl.v3.model.StartStopNetResponse;
 import com.huaweicloud.sdk.gsl.v3.model.StopSimCardRequest;
 import com.huaweicloud.sdk.gsl.v3.model.StopSimCardResponse;
+import com.huaweicloud.sdk.gsl.v3.model.SwitchNetworkRequest;
+import com.huaweicloud.sdk.gsl.v3.model.SwitchNetworkResponse;
 import com.huaweicloud.sdk.gsl.v3.model.UpdateAttributeRequest;
 import com.huaweicloud.sdk.gsl.v3.model.UpdateAttributeResponse;
 
@@ -352,6 +365,79 @@ public class GslMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListBackPoolsRequest::getAllBillingCycle, ListBackPoolsRequest::setAllBillingCycle));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddNetworkSwitchPolicyRequest, AddNetworkSwitchPolicyResponse> addNetworkSwitchPolicy =
+        genForAddNetworkSwitchPolicy();
+
+    private static HttpRequestDef<AddNetworkSwitchPolicyRequest, AddNetworkSwitchPolicyResponse> genForAddNetworkSwitchPolicy() {
+        // basic
+        HttpRequestDef.Builder<AddNetworkSwitchPolicyRequest, AddNetworkSwitchPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AddNetworkSwitchPolicyRequest.class, AddNetworkSwitchPolicyResponse.class)
+            .withName("AddNetworkSwitchPolicy")
+            .withUri("/v1/network-switch-policies")
+            .withContentType("application/json");
+
+        // requests
+        builder.<NetworkSwitchPolicyDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NetworkSwitchPolicyDTO.class),
+            f -> f.withMarshaller(AddNetworkSwitchPolicyRequest::getBody, AddNetworkSwitchPolicyRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddNetworkSwitchPolicyResponse::getBody, AddNetworkSwitchPolicyResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNetworkSwitchPoliciesRequest, ListNetworkSwitchPoliciesResponse> listNetworkSwitchPolicies =
+        genForListNetworkSwitchPolicies();
+
+    private static HttpRequestDef<ListNetworkSwitchPoliciesRequest, ListNetworkSwitchPoliciesResponse> genForListNetworkSwitchPolicies() {
+        // basic
+        HttpRequestDef.Builder<ListNetworkSwitchPoliciesRequest, ListNetworkSwitchPoliciesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListNetworkSwitchPoliciesRequest.class,
+                    ListNetworkSwitchPoliciesResponse.class)
+                .withName("ListNetworkSwitchPolicies")
+                .withUri("/v1/network-switch-policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNetworkSwitchPoliciesRequest::getPolicyName,
+                ListNetworkSwitchPoliciesRequest::setPolicyName));
+        builder.<Integer>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNetworkSwitchPoliciesRequest::getVersion,
+                ListNetworkSwitchPoliciesRequest::setVersion));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListNetworkSwitchPoliciesRequest::getLimit,
+                ListNetworkSwitchPoliciesRequest::setLimit));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListNetworkSwitchPoliciesRequest::getOffset,
+                ListNetworkSwitchPoliciesRequest::setOffset));
 
         // response
 
@@ -864,6 +950,113 @@ public class GslMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DownUpTimeForSimCardReq.class),
             f -> f.withMarshaller(StopSimCardRequest::getBody, StopSimCardRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSimDeviceMultiplyRequest, ListSimDeviceMultiplyResponse> listSimDeviceMultiply =
+        genForListSimDeviceMultiply();
+
+    private static HttpRequestDef<ListSimDeviceMultiplyRequest, ListSimDeviceMultiplyResponse> genForListSimDeviceMultiply() {
+        // basic
+        HttpRequestDef.Builder<ListSimDeviceMultiplyRequest, ListSimDeviceMultiplyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSimDeviceMultiplyRequest.class, ListSimDeviceMultiplyResponse.class)
+            .withName("ListSimDeviceMultiply")
+            .withUri("/v1/sim-cards-multiply")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cid",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSimDeviceMultiplyRequest::getCid, ListSimDeviceMultiplyRequest::setCid));
+        builder.<Integer>withRequestField("online_carrier",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSimDeviceMultiplyRequest::getOnlineCarrier,
+                ListSimDeviceMultiplyRequest::setOnlineCarrier));
+        builder.<Long>withRequestField("sim_card_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSimDeviceMultiplyRequest::getSimCardId,
+                ListSimDeviceMultiplyRequest::setSimCardId));
+        builder.<Integer>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSimDeviceMultiplyRequest::getVersion, ListSimDeviceMultiplyRequest::setVersion));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSimDeviceMultiplyRequest::getLimit, ListSimDeviceMultiplyRequest::setLimit));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSimDeviceMultiplyRequest::getOffset, ListSimDeviceMultiplyRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetNetworkSwitchPolicyRequest, SetNetworkSwitchPolicyResponse> setNetworkSwitchPolicy =
+        genForSetNetworkSwitchPolicy();
+
+    private static HttpRequestDef<SetNetworkSwitchPolicyRequest, SetNetworkSwitchPolicyResponse> genForSetNetworkSwitchPolicy() {
+        // basic
+        HttpRequestDef.Builder<SetNetworkSwitchPolicyRequest, SetNetworkSwitchPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SetNetworkSwitchPolicyRequest.class, SetNetworkSwitchPolicyResponse.class)
+            .withName("SetNetworkSwitchPolicy")
+            .withUri("/v1/sim-cards/{sim_card_id}/network-switch-policy/set")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("sim_card_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(SetNetworkSwitchPolicyRequest::getSimCardId,
+                SetNetworkSwitchPolicyRequest::setSimCardId));
+        builder.<NetworkSwitchPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NetworkSwitchPolicyReq.class),
+            f -> f.withMarshaller(SetNetworkSwitchPolicyRequest::getBody, SetNetworkSwitchPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchNetworkRequest, SwitchNetworkResponse> switchNetwork =
+        genForSwitchNetwork();
+
+    private static HttpRequestDef<SwitchNetworkRequest, SwitchNetworkResponse> genForSwitchNetwork() {
+        // basic
+        HttpRequestDef.Builder<SwitchNetworkRequest, SwitchNetworkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SwitchNetworkRequest.class, SwitchNetworkResponse.class)
+                .withName("SwitchNetwork")
+                .withUri("/v1/sim-cards-multiply/{sim_card_id}/switch-network")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("sim_card_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(SwitchNetworkRequest::getSimCardId, SwitchNetworkRequest::setSimCardId));
+        builder.<NetworkSwitchReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(NetworkSwitchReq.class),
+            f -> f.withMarshaller(SwitchNetworkRequest::getBody, SwitchNetworkRequest::setBody));
 
         // response
 

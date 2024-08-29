@@ -95,6 +95,11 @@ public class TrainingJobInfo {
 
     private String phone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dhtms_job_id")
+
+    private String dhtmsJobId;
+
     public TrainingJobInfo withJobType(JobType jobType) {
         this.jobType = jobType;
         return this;
@@ -390,6 +395,23 @@ public class TrainingJobInfo {
         this.phone = phone;
     }
 
+    public TrainingJobInfo withDhtmsJobId(String dhtmsJobId) {
+        this.dhtmsJobId = dhtmsJobId;
+        return this;
+    }
+
+    /**
+     * 形象制作任务id
+     * @return dhtmsJobId
+     */
+    public String getDhtmsJobId() {
+        return dhtmsJobId;
+    }
+
+    public void setDhtmsJobId(String dhtmsJobId) {
+        this.dhtmsJobId = dhtmsJobId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -409,7 +431,7 @@ public class TrainingJobInfo {
             && Objects.equals(this.lastupdateTime, that.lastupdateTime)
             && Objects.equals(this.voiceAuthorizationUrl, that.voiceAuthorizationUrl)
             && Objects.equals(this.createType, that.createType) && Objects.equals(this.tag, that.tag)
-            && Objects.equals(this.phone, that.phone);
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId);
     }
 
     @Override
@@ -430,7 +452,8 @@ public class TrainingJobInfo {
             voiceAuthorizationUrl,
             createType,
             tag,
-            phone);
+            phone,
+            dhtmsJobId);
     }
 
     @Override
@@ -454,6 +477,7 @@ public class TrainingJobInfo {
         sb.append("    createType: ").append(toIndentedString(createType)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+        sb.append("    dhtmsJobId: ").append(toIndentedString(dhtmsJobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

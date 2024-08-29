@@ -34,7 +34,7 @@ public class ModelInfo {
     }
 
     /**
-     * 模型资产ID
+     * 模型资产ID，可以从资产库中查询。
      * @return modelAssetId
      */
     public String getModelAssetId() {
@@ -84,7 +84,7 @@ public class ModelInfo {
     }
 
     /**
-     * 主播轮换时备选主播数字人资产ID（仅形象资产，不包含音色）。
+     * 主播轮换时备选主播数字人资产ID（仅形象资产，不包含音色），可以从资产库中查询。
      * @return backupModelAssetIds
      */
     public List<String> getBackupModelAssetIds() {

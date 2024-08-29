@@ -275,7 +275,7 @@ public class VideoScriptsShowInfo {
     }
 
     /**
-     * 数字人模型资产ID。
+     * 数字人模型资产ID，可以从资产库中查询。
      * @return modelAssetId
      */
     public String getModelAssetId() {
@@ -361,7 +361,7 @@ public class VideoScriptsShowInfo {
     }
 
     /**
-     * 场景资产ID。 > * 分身数字人视频制作不需要填写该参数。
+     * 场景资产ID。 > * 分身数字人视频制作不需要填写该参数。 > * 若填写，可以从资产库中查询。
      * @return sceneAssetId
      */
     public String getSceneAssetId() {

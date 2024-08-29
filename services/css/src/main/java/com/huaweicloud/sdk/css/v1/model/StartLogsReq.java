@@ -25,6 +25,21 @@ public class StartLogsReq {
 
     private String logBucket;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "index_prefix")
+
+    private String indexPrefix;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "keep_days")
+
+    private Integer keepDays;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_cluster_id")
+
+    private String targetClusterId;
+
     public StartLogsReq withAgency(String agency) {
         this.agency = agency;
         return this;
@@ -76,6 +91,59 @@ public class StartLogsReq {
         this.logBucket = logBucket;
     }
 
+    public StartLogsReq withIndexPrefix(String indexPrefix) {
+        this.indexPrefix = indexPrefix;
+        return this;
+    }
+
+    /**
+     * 保存日志的索引前缀。action等于real_time_log_collect时必选
+     * @return indexPrefix
+     */
+    public String getIndexPrefix() {
+        return indexPrefix;
+    }
+
+    public void setIndexPrefix(String indexPrefix) {
+        this.indexPrefix = indexPrefix;
+    }
+
+    public StartLogsReq withKeepDays(Integer keepDays) {
+        this.keepDays = keepDays;
+        return this;
+    }
+
+    /**
+     * 日志保存时间。action等于real_time_log_collect时必选
+     * minimum: 1
+     * maximum: 3650
+     * @return keepDays
+     */
+    public Integer getKeepDays() {
+        return keepDays;
+    }
+
+    public void setKeepDays(Integer keepDays) {
+        this.keepDays = keepDays;
+    }
+
+    public StartLogsReq withTargetClusterId(String targetClusterId) {
+        this.targetClusterId = targetClusterId;
+        return this;
+    }
+
+    /**
+     * 保存日志的目标集群。action等于real_time_log_collect时必选
+     * @return targetClusterId
+     */
+    public String getTargetClusterId() {
+        return targetClusterId;
+    }
+
+    public void setTargetClusterId(String targetClusterId) {
+        this.targetClusterId = targetClusterId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +154,14 @@ public class StartLogsReq {
         }
         StartLogsReq that = (StartLogsReq) obj;
         return Objects.equals(this.agency, that.agency) && Objects.equals(this.logBasePath, that.logBasePath)
-            && Objects.equals(this.logBucket, that.logBucket);
+            && Objects.equals(this.logBucket, that.logBucket) && Objects.equals(this.indexPrefix, that.indexPrefix)
+            && Objects.equals(this.keepDays, that.keepDays)
+            && Objects.equals(this.targetClusterId, that.targetClusterId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(agency, logBasePath, logBucket);
+        return Objects.hash(agency, logBasePath, logBucket, indexPrefix, keepDays, targetClusterId);
     }
 
     @Override
@@ -101,6 +171,9 @@ public class StartLogsReq {
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
         sb.append("    logBasePath: ").append(toIndentedString(logBasePath)).append("\n");
         sb.append("    logBucket: ").append(toIndentedString(logBucket)).append("\n");
+        sb.append("    indexPrefix: ").append(toIndentedString(indexPrefix)).append("\n");
+        sb.append("    keepDays: ").append(toIndentedString(keepDays)).append("\n");
+        sb.append("    targetClusterId: ").append(toIndentedString(targetClusterId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

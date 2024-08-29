@@ -141,6 +141,94 @@ public class VideoAssetMeta {
 
     private ModeEnum mode;
 
+    /**
+     * 视频转码状态。 * WAITING：等待 * TRANSCODING：转码中 * FAILED：失败 * SUCCEEDED：成功
+     */
+    public static final class VideoTranscodingStatusEnum {
+
+        /**
+         * Enum WAITING for value: "WAITING"
+         */
+        public static final VideoTranscodingStatusEnum WAITING = new VideoTranscodingStatusEnum("WAITING");
+
+        /**
+         * Enum TRANSCODING for value: "TRANSCODING"
+         */
+        public static final VideoTranscodingStatusEnum TRANSCODING = new VideoTranscodingStatusEnum("TRANSCODING");
+
+        /**
+         * Enum FAILED for value: "FAILED"
+         */
+        public static final VideoTranscodingStatusEnum FAILED = new VideoTranscodingStatusEnum("FAILED");
+
+        /**
+         * Enum SUCCEEDED for value: "SUCCEEDED"
+         */
+        public static final VideoTranscodingStatusEnum SUCCEEDED = new VideoTranscodingStatusEnum("SUCCEEDED");
+
+        private static final Map<String, VideoTranscodingStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VideoTranscodingStatusEnum> createStaticFields() {
+            Map<String, VideoTranscodingStatusEnum> map = new HashMap<>();
+            map.put("WAITING", WAITING);
+            map.put("TRANSCODING", TRANSCODING);
+            map.put("FAILED", FAILED);
+            map.put("SUCCEEDED", SUCCEEDED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        VideoTranscodingStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VideoTranscodingStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new VideoTranscodingStatusEnum(value));
+        }
+
+        public static VideoTranscodingStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof VideoTranscodingStatusEnum) {
+                return this.value.equals(((VideoTranscodingStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "video_transcoding_status")
+
+    private VideoTranscodingStatusEnum videoTranscodingStatus;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_info")
 
@@ -347,6 +435,23 @@ public class VideoAssetMeta {
         this.mode = mode;
     }
 
+    public VideoAssetMeta withVideoTranscodingStatus(VideoTranscodingStatusEnum videoTranscodingStatus) {
+        this.videoTranscodingStatus = videoTranscodingStatus;
+        return this;
+    }
+
+    /**
+     * 视频转码状态。 * WAITING：等待 * TRANSCODING：转码中 * FAILED：失败 * SUCCEEDED：成功
+     * @return videoTranscodingStatus
+     */
+    public VideoTranscodingStatusEnum getVideoTranscodingStatus() {
+        return videoTranscodingStatus;
+    }
+
+    public void setVideoTranscodingStatus(VideoTranscodingStatusEnum videoTranscodingStatus) {
+        this.videoTranscodingStatus = videoTranscodingStatus;
+    }
+
     public VideoAssetMeta withErrorInfo(ErrorResponse errorInfo) {
         this.errorInfo = errorInfo;
         return this;
@@ -387,7 +492,9 @@ public class VideoAssetMeta {
             && Objects.equals(this.videoBitRate, that.videoBitRate) && Objects.equals(this.duration, that.duration)
             && Objects.equals(this.audioCodec, that.audioCodec) && Objects.equals(this.audioBitRate, that.audioBitRate)
             && Objects.equals(this.audioChannels, that.audioChannels) && Objects.equals(this.sample, that.sample)
-            && Objects.equals(this.mode, that.mode) && Objects.equals(this.errorInfo, that.errorInfo);
+            && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.videoTranscodingStatus, that.videoTranscodingStatus)
+            && Objects.equals(this.errorInfo, that.errorInfo);
     }
 
     @Override
@@ -403,6 +510,7 @@ public class VideoAssetMeta {
             audioChannels,
             sample,
             mode,
+            videoTranscodingStatus,
             errorInfo);
     }
 
@@ -421,6 +529,7 @@ public class VideoAssetMeta {
         sb.append("    audioChannels: ").append(toIndentedString(audioChannels)).append("\n");
         sb.append("    sample: ").append(toIndentedString(sample)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    videoTranscodingStatus: ").append(toIndentedString(videoTranscodingStatus)).append("\n");
         sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("}");
         return sb.toString();

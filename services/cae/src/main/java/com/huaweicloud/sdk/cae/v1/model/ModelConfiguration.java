@@ -166,6 +166,11 @@ public class ModelConfiguration {
 
     private Boolean isActivated;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_using")
+
+    private Boolean isUsing;
+
     public ModelConfiguration withData(ListComponentConfigurationsResponseData data) {
         this.data = data;
         return this;
@@ -249,7 +254,7 @@ public class ModelConfiguration {
     }
 
     /**
-     * 配置是否生效。
+     * 配置是否生效过。
      * @return isActivated
      */
     public Boolean getIsActivated() {
@@ -258,6 +263,23 @@ public class ModelConfiguration {
 
     public void setIsActivated(Boolean isActivated) {
         this.isActivated = isActivated;
+    }
+
+    public ModelConfiguration withIsUsing(Boolean isUsing) {
+        this.isUsing = isUsing;
+        return this;
+    }
+
+    /**
+     * 配置是否正在使用。
+     * @return isUsing
+     */
+    public Boolean getIsUsing() {
+        return isUsing;
+    }
+
+    public void setIsUsing(Boolean isUsing) {
+        this.isUsing = isUsing;
     }
 
     @Override
@@ -271,12 +293,12 @@ public class ModelConfiguration {
         ModelConfiguration that = (ModelConfiguration) obj;
         return Objects.equals(this.data, that.data) && Objects.equals(this.operatedAt, that.operatedAt)
             && Objects.equals(this.operationId, that.operationId) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.isActivated, that.isActivated);
+            && Objects.equals(this.isActivated, that.isActivated) && Objects.equals(this.isUsing, that.isUsing);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, operatedAt, operationId, type, isActivated);
+        return Objects.hash(data, operatedAt, operationId, type, isActivated, isUsing);
     }
 
     @Override
@@ -288,6 +310,7 @@ public class ModelConfiguration {
         sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    isActivated: ").append(toIndentedString(isActivated)).append("\n");
+        sb.append("    isUsing: ").append(toIndentedString(isUsing)).append("\n");
         sb.append("}");
         return sb.toString();
     }

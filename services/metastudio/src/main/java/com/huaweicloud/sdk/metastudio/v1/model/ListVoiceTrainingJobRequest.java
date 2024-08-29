@@ -55,6 +55,11 @@ public class ListVoiceTrainingJobRequest {
 
     private String tag;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_type")
+
+    private String jobType;
+
     public ListVoiceTrainingJobRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -214,6 +219,23 @@ public class ListVoiceTrainingJobRequest {
         this.tag = tag;
     }
 
+    public ListVoiceTrainingJobRequest withJobType(String jobType) {
+        this.jobType = jobType;
+        return this;
+    }
+
+    /**
+     * 训练类型。 * BASIC: 基础版(20句话) * MIDDLE: 进阶版(100句话) * ADVANCE: 高级版 * THIRD_PARTY: 第三方出门问问训练版 * THIRD_PARTY_LJZN: 第三方逻辑智能训练版 * FLEXUS: Flexus版---用的是大模型特征提取
+     * @return jobType
+     */
+    public String getJobType() {
+        return jobType;
+    }
+
+    public void setJobType(String jobType) {
+        this.jobType = jobType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -227,12 +249,12 @@ public class ListVoiceTrainingJobRequest {
             && Objects.equals(this.createUntil, that.createUntil) && Objects.equals(this.createSince, that.createSince)
             && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.state, that.state)
             && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.voiceName, that.voiceName)
-            && Objects.equals(this.tag, that.tag);
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.jobType, that.jobType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, createUntil, createSince, xAppUserId, state, jobId, voiceName, tag);
+        return Objects.hash(offset, limit, createUntil, createSince, xAppUserId, state, jobId, voiceName, tag, jobType);
     }
 
     @Override
@@ -248,6 +270,7 @@ public class ListVoiceTrainingJobRequest {
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    voiceName: ").append(toIndentedString(voiceName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

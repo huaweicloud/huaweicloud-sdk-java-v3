@@ -229,6 +229,11 @@ public class MonthlyBillRes {
 
     private List<AzCodeInfo> azCodeInfos = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "payer_account_id")
+
+    private String payerAccountId;
+
     public MonthlyBillRes withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -976,6 +981,23 @@ public class MonthlyBillRes {
         this.azCodeInfos = azCodeInfos;
     }
 
+    public MonthlyBillRes withPayerAccountId(String payerAccountId) {
+        this.payerAccountId = payerAccountId;
+        return this;
+    }
+
+    /**
+     * |参数名称：支付账号ID。| |参数的约束及描述：如果是普通客户或者财务独立企业子客户或者企业主客户查询消费记录，此处为客户自己的客户ID。如果是财务托管企业子查询消费记录，此处为企业主客户ID或自己的客户ID。|
+     * @return payerAccountId
+     */
+    public String getPayerAccountId() {
+        return payerAccountId;
+    }
+
+    public void setPayerAccountId(String payerAccountId) {
+        this.payerAccountId = payerAccountId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1018,7 +1040,8 @@ public class MonthlyBillRes {
             && Objects.equals(this.subResourceTypeName, that.subResourceTypeName)
             && Objects.equals(this.subResourceId, that.subResourceId)
             && Objects.equals(this.subResourceName, that.subResourceName)
-            && Objects.equals(this.preOrderId, that.preOrderId) && Objects.equals(this.azCodeInfos, that.azCodeInfos);
+            && Objects.equals(this.preOrderId, that.preOrderId) && Objects.equals(this.azCodeInfos, that.azCodeInfos)
+            && Objects.equals(this.payerAccountId, that.payerAccountId);
     }
 
     @Override
@@ -1065,7 +1088,8 @@ public class MonthlyBillRes {
             subResourceId,
             subResourceName,
             preOrderId,
-            azCodeInfos);
+            azCodeInfos,
+            payerAccountId);
     }
 
     @Override
@@ -1115,6 +1139,7 @@ public class MonthlyBillRes {
         sb.append("    subResourceName: ").append(toIndentedString(subResourceName)).append("\n");
         sb.append("    preOrderId: ").append(toIndentedString(preOrderId)).append("\n");
         sb.append("    azCodeInfos: ").append(toIndentedString(azCodeInfos)).append("\n");
+        sb.append("    payerAccountId: ").append(toIndentedString(payerAccountId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

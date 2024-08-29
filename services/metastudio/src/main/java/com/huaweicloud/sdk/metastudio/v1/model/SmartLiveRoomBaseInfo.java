@@ -419,6 +419,11 @@ public class SmartLiveRoomBaseInfo {
 
     private LastJobStatusEnum lastJobStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priv_data")
+
+    private String privData;
+
     public SmartLiveRoomBaseInfo withRoomId(String roomId) {
         this.roomId = roomId;
         return this;
@@ -742,6 +747,23 @@ public class SmartLiveRoomBaseInfo {
         this.lastJobStatus = lastJobStatus;
     }
 
+    public SmartLiveRoomBaseInfo withPrivData(String privData) {
+        this.privData = privData;
+        return this;
+    }
+
+    /**
+     * 私有数据，用户填写，原样带回。
+     * @return privData
+     */
+    public String getPrivData() {
+        return privData;
+    }
+
+    public void setPrivData(String privData) {
+        this.privData = privData;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -761,7 +783,7 @@ public class SmartLiveRoomBaseInfo {
             && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.lastJobStartTime, that.lastJobStartTime)
             && Objects.equals(this.lastJobEndTime, that.lastJobEndTime)
-            && Objects.equals(this.lastJobStatus, that.lastJobStatus);
+            && Objects.equals(this.lastJobStatus, that.lastJobStatus) && Objects.equals(this.privData, that.privData);
     }
 
     @Override
@@ -782,7 +804,8 @@ public class SmartLiveRoomBaseInfo {
             updateTime,
             lastJobStartTime,
             lastJobEndTime,
-            lastJobStatus);
+            lastJobStatus,
+            privData);
     }
 
     @Override
@@ -806,6 +829,7 @@ public class SmartLiveRoomBaseInfo {
         sb.append("    lastJobStartTime: ").append(toIndentedString(lastJobStartTime)).append("\n");
         sb.append("    lastJobEndTime: ").append(toIndentedString(lastJobEndTime)).append("\n");
         sb.append("    lastJobStatus: ").append(toIndentedString(lastJobStatus)).append("\n");
+        sb.append("    privData: ").append(toIndentedString(privData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

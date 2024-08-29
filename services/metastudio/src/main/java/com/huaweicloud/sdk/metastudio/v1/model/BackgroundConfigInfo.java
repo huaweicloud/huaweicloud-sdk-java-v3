@@ -180,7 +180,7 @@ public class BackgroundConfigInfo {
     }
 
     /**
-     * 背景资产ID。 > * 背景是背景图片时，填图片资产ID。
+     * 背景资产ID。 > * 背景是背景图片时，填图片资产ID，可以从资产库中查询。
      * @return backgroundAssetId
      */
     public String getBackgroundAssetId() {

@@ -11,6 +11,11 @@ import java.util.Objects;
 public class VoiceCapability {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_phoneme_en")
+
+    private Boolean isSupportPhonemeEn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_support_phoneme")
 
     private Boolean isSupportPhoneme;
@@ -49,6 +54,23 @@ public class VoiceCapability {
     @JsonProperty(value = "is_support_word")
 
     private Boolean isSupportWord;
+
+    public VoiceCapability withIsSupportPhonemeEn(Boolean isSupportPhonemeEn) {
+        this.isSupportPhonemeEn = isSupportPhonemeEn;
+        return this;
+    }
+
+    /**
+     * 支持英文音标。
+     * @return isSupportPhonemeEn
+     */
+    public Boolean getIsSupportPhonemeEn() {
+        return isSupportPhonemeEn;
+    }
+
+    public void setIsSupportPhonemeEn(Boolean isSupportPhonemeEn) {
+        this.isSupportPhonemeEn = isSupportPhonemeEn;
+    }
 
     public VoiceCapability withIsSupportPhoneme(Boolean isSupportPhoneme) {
         this.isSupportPhoneme = isSupportPhoneme;
@@ -195,7 +217,8 @@ public class VoiceCapability {
             return false;
         }
         VoiceCapability that = (VoiceCapability) obj;
-        return Objects.equals(this.isSupportPhoneme, that.isSupportPhoneme)
+        return Objects.equals(this.isSupportPhonemeEn, that.isSupportPhonemeEn)
+            && Objects.equals(this.isSupportPhoneme, that.isSupportPhoneme)
             && Objects.equals(this.isSupportBreakTime, that.isSupportBreakTime)
             && Objects.equals(this.isSupportBreakStrength, that.isSupportBreakStrength)
             && Objects.equals(this.isSupportSpeed, that.isSupportSpeed)
@@ -207,7 +230,8 @@ public class VoiceCapability {
 
     @Override
     public int hashCode() {
-        return Objects.hash(isSupportPhoneme,
+        return Objects.hash(isSupportPhonemeEn,
+            isSupportPhoneme,
             isSupportBreakTime,
             isSupportBreakStrength,
             isSupportSpeed,
@@ -221,6 +245,7 @@ public class VoiceCapability {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VoiceCapability {\n");
+        sb.append("    isSupportPhonemeEn: ").append(toIndentedString(isSupportPhonemeEn)).append("\n");
         sb.append("    isSupportPhoneme: ").append(toIndentedString(isSupportPhoneme)).append("\n");
         sb.append("    isSupportBreakTime: ").append(toIndentedString(isSupportBreakTime)).append("\n");
         sb.append("    isSupportBreakStrength: ").append(toIndentedString(isSupportBreakStrength)).append("\n");

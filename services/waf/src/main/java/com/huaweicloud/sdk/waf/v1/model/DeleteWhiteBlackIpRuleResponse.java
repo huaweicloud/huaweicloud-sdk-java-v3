@@ -53,6 +53,11 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
     private Integer white;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_mode")
+
+    private String timeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_group")
 
     private IpGroup ipGroup;
@@ -193,6 +198,23 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         this.white = white;
     }
 
+    public DeleteWhiteBlackIpRuleResponse withTimeMode(String timeMode) {
+        this.timeMode = timeMode;
+        return this;
+    }
+
+    /**
+     * 生效模式，默认为permanent（立即生效）
+     * @return timeMode
+     */
+    public String getTimeMode() {
+        return timeMode;
+    }
+
+    public void setTimeMode(String timeMode) {
+        this.timeMode = timeMode;
+    }
+
     public DeleteWhiteBlackIpRuleResponse withIpGroup(IpGroup ipGroup) {
         this.ipGroup = ipGroup;
         return this;
@@ -232,12 +254,12 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
             && Objects.equals(this.name, that.name) && Objects.equals(this.timestamp, that.timestamp)
             && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
             && Objects.equals(this.addr, that.addr) && Objects.equals(this.white, that.white)
-            && Objects.equals(this.ipGroup, that.ipGroup);
+            && Objects.equals(this.timeMode, that.timeMode) && Objects.equals(this.ipGroup, that.ipGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, policyid, name, timestamp, description, status, addr, white, ipGroup);
+        return Objects.hash(id, policyid, name, timestamp, description, status, addr, white, timeMode, ipGroup);
     }
 
     @Override
@@ -252,6 +274,7 @@ public class DeleteWhiteBlackIpRuleResponse extends SdkResponse {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
+        sb.append("    timeMode: ").append(toIndentedString(timeMode)).append("\n");
         sb.append("    ipGroup: ").append(toIndentedString(ipGroup)).append("\n");
         sb.append("}");
         return sb.toString();

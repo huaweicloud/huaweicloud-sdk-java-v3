@@ -26,7 +26,7 @@ public class ResourceTag {
     }
 
     /**
-     * 键。最大长度128个字符。  key需要满足3.1 KEY字符集规范。
+     * 键。最大长度128个字符。
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class ResourceTag {
     }
 
     /**
-     * 值。每个值最大长度255个字符， value需要满足3.2 VALUE字符集规范。
+     * 值。每个值最大长度255个字符。
      * @return value
      */
     public String getValue() {

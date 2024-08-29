@@ -193,6 +193,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListJobOperationLogRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListJobOperationLogResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeQuestionRequest;
@@ -233,6 +235,7 @@ import com.huaweicloud.sdk.metastudio.v1.model.PictureModelingByUrlReq;
 import com.huaweicloud.sdk.metastudio.v1.model.ProductAssetReleation;
 import com.huaweicloud.sdk.metastudio.v1.model.ReplicationAssetInfo;
 import com.huaweicloud.sdk.metastudio.v1.model.ReportLiveEventReq;
+import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeReq;
 import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
@@ -301,6 +304,7 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SmartChatJobsReq;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveReq;
@@ -566,6 +570,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResetActiveCodeRequest::getXAppUserId, ResetActiveCodeRequest::setXAppUserId));
+        builder.<ResetActiveCodeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ResetActiveCodeReq.class),
+            f -> f.withMarshaller(ResetActiveCodeRequest::getBody, ResetActiveCodeRequest::setBody));
 
         // response
 
@@ -916,6 +925,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartSmartChatJobRequest::getXAppUserId, StartSmartChatJobRequest::setXAppUserId));
+        builder.<SmartChatJobsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SmartChatJobsReq.class),
+            f -> f.withMarshaller(StartSmartChatJobRequest::getBody, StartSmartChatJobRequest::setBody));
 
         // response
 
@@ -1247,6 +1261,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetsRequest::getTag, ListAssetsRequest::setTag));
+        builder.<ListAssetsRequest.TagCombinationTypeEnum>withRequestField("tag_combination_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAssetsRequest.TagCombinationTypeEnum.class),
+            f -> f.withMarshaller(ListAssetsRequest::getTagCombinationType, ListAssetsRequest::setTagCombinationType));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1287,6 +1306,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetsRequest::getStyleId, ListAssetsRequest::setStyleId));
+        builder.<List<String>>withRequestField("accurate_query_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAssetsRequest::getAccurateQueryField, ListAssetsRequest::setAccurateQueryField));
         builder.<String>withRequestField("render_engine",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1317,6 +1341,12 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListAssetsRequest::getActionEditable, ListAssetsRequest::setActionEditable));
+        builder.<Boolean>withRequestField("is_with_action_library",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAssetsRequest::getIsWithActionLibrary,
+                ListAssetsRequest::setIsWithActionLibrary));
         builder.<Boolean>withRequestField("is_movable",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1353,6 +1383,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetsRequest::getExcludeDeviceName, ListAssetsRequest::setExcludeDeviceName));
+        builder.<ListAssetsRequest.SupportedServiceEnum>withRequestField("supported_service",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAssetsRequest.SupportedServiceEnum.class),
+            f -> f.withMarshaller(ListAssetsRequest::getSupportedService, ListAssetsRequest::setSupportedService));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1944,6 +1979,12 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDigitalHumanVideoRequest::getCreateSince,
                 ListDigitalHumanVideoRequest::setCreateSince));
+        builder.<List<String>>withRequestField("fuzzy_query_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListDigitalHumanVideoRequest::getFuzzyQueryField,
+                ListDigitalHumanVideoRequest::setFuzzyQueryField));
         builder.<String>withRequestField("script_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -5068,6 +5109,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRobotRequest::getRoomId, ListRobotRequest::setRoomId));
+        builder.<ListRobotRequest.RobotTypeEnum>withRequestField("robot_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListRobotRequest.RobotTypeEnum.class),
+            f -> f.withMarshaller(ListRobotRequest::getRobotType, ListRobotRequest::setRobotType));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -6838,6 +6884,39 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListJobOperationLogRequest, ListJobOperationLogResponse> listJobOperationLog =
+        genForListJobOperationLog();
+
+    private static HttpRequestDef<ListJobOperationLogRequest, ListJobOperationLogResponse> genForListJobOperationLog() {
+        // basic
+        HttpRequestDef.Builder<ListJobOperationLogRequest, ListJobOperationLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobOperationLogRequest.class, ListJobOperationLogResponse.class)
+                .withName("ListJobOperationLog")
+                .withUri("/v1/{project_id}/voice-training-manage/user/jobs/{job_id}/op-logs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobOperationLogRequest::getJobId, ListJobOperationLogRequest::setJobId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobOperationLogRequest::getOffset, ListJobOperationLogRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobOperationLogRequest::getLimit, ListJobOperationLogRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListVoiceTrainingJobRequest, ListVoiceTrainingJobResponse> listVoiceTrainingJob =
         genForListVoiceTrainingJob();
 
@@ -6893,6 +6972,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVoiceTrainingJobRequest::getTag, ListVoiceTrainingJobRequest::setTag));
+        builder.<String>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getJobType, ListVoiceTrainingJobRequest::setJobType));
         builder.<String>withRequestField("X-App-UserId",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

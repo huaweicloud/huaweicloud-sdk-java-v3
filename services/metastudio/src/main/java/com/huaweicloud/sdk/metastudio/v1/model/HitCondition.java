@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class HitCondition {
 
     /**
-     * 条件关系；取值And或者Or RESERVED 为兜底回复不会去判断其他命中条件
+     * 条件关系 * AND ：表示多个条件同时满足 * OR：表示多个条件满足其一即可 * RESERVED: 兜底回复不会去判断其他命中条件
      */
     public static final class RelationEnum {
 
@@ -115,7 +115,7 @@ public class HitCondition {
     }
 
     /**
-     * 条件关系；取值And或者Or RESERVED 为兜底回复不会去判断其他命中条件
+     * 条件关系 * AND ：表示多个条件同时满足 * OR：表示多个条件满足其一即可 * RESERVED: 兜底回复不会去判断其他命中条件
      * @return relation
      */
     public RelationEnum getRelation() {

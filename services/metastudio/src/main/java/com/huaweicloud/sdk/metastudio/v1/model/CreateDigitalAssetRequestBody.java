@@ -210,6 +210,16 @@ public class CreateDigitalAssetRequestBody {
 
     private Boolean isNeedGenerateCover;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asset_order")
+
+    private Integer assetOrder;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supported_service")
+
+    private List<SupportedServiceEnum> supportedService = null;
+
     public CreateDigitalAssetRequestBody withAssetName(String assetName) {
         this.assetName = assetName;
         return this;
@@ -326,7 +336,7 @@ public class CreateDigitalAssetRequestBody {
     }
 
     /**
-     * 标签列表。
+     * 标签列表。 > 分身形象系统资产的tag定义如下： > - 行业：NEWS,BUSINESS,E-COMMERCE,MARKETING,KNOWLEDGE,EDUCATION,SPORTS > - 性别：MALE,FEMALE > - 姿势：FULL-BODY,HALF-BODY,STANDING,SITTING,WALKING > - 区域：ASIAN,WESTERN,MIDDLE-EASTERNER,AFRICAN,LATINO
      * @return tags
      */
     public List<String> getTags() {
@@ -439,6 +449,59 @@ public class CreateDigitalAssetRequestBody {
         this.isNeedGenerateCover = isNeedGenerateCover;
     }
 
+    public CreateDigitalAssetRequestBody withAssetOrder(Integer assetOrder) {
+        this.assetOrder = assetOrder;
+        return this;
+    }
+
+    /**
+     * 展示顺序
+     * minimum: 0
+     * maximum: 32767
+     * @return assetOrder
+     */
+    public Integer getAssetOrder() {
+        return assetOrder;
+    }
+
+    public void setAssetOrder(Integer assetOrder) {
+        this.assetOrder = assetOrder;
+    }
+
+    public CreateDigitalAssetRequestBody withSupportedService(List<SupportedServiceEnum> supportedService) {
+        this.supportedService = supportedService;
+        return this;
+    }
+
+    public CreateDigitalAssetRequestBody addSupportedServiceItem(SupportedServiceEnum supportedServiceItem) {
+        if (this.supportedService == null) {
+            this.supportedService = new ArrayList<>();
+        }
+        this.supportedService.add(supportedServiceItem);
+        return this;
+    }
+
+    public CreateDigitalAssetRequestBody withSupportedService(
+        Consumer<List<SupportedServiceEnum>> supportedServiceSetter) {
+        if (this.supportedService == null) {
+            this.supportedService = new ArrayList<>();
+        }
+        supportedServiceSetter.accept(this.supportedService);
+        return this;
+    }
+
+    /**
+     * 支持的业务类型。： * VIDEO_2D：分身数字人视频制作 * LIVE_2D：分身数字人直播 * CHAT_2D：分身数字人智能交互
+     * @return supportedService
+     */
+    public List<SupportedServiceEnum> getSupportedService() {
+        return supportedService;
+    }
+
+    public void setSupportedService(List<SupportedServiceEnum> supportedService) {
+        this.supportedService = supportedService;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -455,7 +518,9 @@ public class CreateDigitalAssetRequestBody {
             && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
             && Objects.equals(this.systemProperties, that.systemProperties)
             && Objects.equals(this.sharedConfig, that.sharedConfig)
-            && Objects.equals(this.isNeedGenerateCover, that.isNeedGenerateCover);
+            && Objects.equals(this.isNeedGenerateCover, that.isNeedGenerateCover)
+            && Objects.equals(this.assetOrder, that.assetOrder)
+            && Objects.equals(this.supportedService, that.supportedService);
     }
 
     @Override
@@ -469,7 +534,9 @@ public class CreateDigitalAssetRequestBody {
             assetExtraMeta,
             systemProperties,
             sharedConfig,
-            isNeedGenerateCover);
+            isNeedGenerateCover,
+            assetOrder,
+            supportedService);
     }
 
     @Override
@@ -486,6 +553,8 @@ public class CreateDigitalAssetRequestBody {
         sb.append("    systemProperties: ").append(toIndentedString(systemProperties)).append("\n");
         sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("    isNeedGenerateCover: ").append(toIndentedString(isNeedGenerateCover)).append("\n");
+        sb.append("    assetOrder: ").append(toIndentedString(assetOrder)).append("\n");
+        sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");
         sb.append("}");
         return sb.toString();
     }

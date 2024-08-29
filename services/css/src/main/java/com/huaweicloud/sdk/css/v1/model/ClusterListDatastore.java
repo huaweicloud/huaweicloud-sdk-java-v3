@@ -20,6 +20,11 @@ public class ClusterListDatastore {
 
     private String version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supportSecuritymode")
+
+    private Boolean supportSecuritymode;
+
     public ClusterListDatastore withType(String type) {
         this.type = type;
         return this;
@@ -54,6 +59,23 @@ public class ClusterListDatastore {
         this.version = version;
     }
 
+    public ClusterListDatastore withSupportSecuritymode(Boolean supportSecuritymode) {
+        this.supportSecuritymode = supportSecuritymode;
+        return this;
+    }
+
+    /**
+     * 是否支持安全模式
+     * @return supportSecuritymode
+     */
+    public Boolean getSupportSecuritymode() {
+        return supportSecuritymode;
+    }
+
+    public void setSupportSecuritymode(Boolean supportSecuritymode) {
+        this.supportSecuritymode = supportSecuritymode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class ClusterListDatastore {
             return false;
         }
         ClusterListDatastore that = (ClusterListDatastore) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version);
+        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.supportSecuritymode, that.supportSecuritymode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, version);
+        return Objects.hash(type, version, supportSecuritymode);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class ClusterListDatastore {
         sb.append("class ClusterListDatastore {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    supportSecuritymode: ").append(toIndentedString(supportSecuritymode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

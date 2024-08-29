@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ExternalVoiceAssetMeta {
 
     /**
-     * 第三方TTS供应商类型。 * XIMALAYA：喜马拉雅TTS * HUAWEI_EI: 华为云EI TTS * MOBVOI: 出门问问 TTSS * AUDIOX: 逻辑智能 TTSS * SINOVOICE: 捷通华声 TTSS * DATABACK: 标贝 TTSS * AISPEECH: 思必驰 TTSS
+     * 第三方TTS供应商类型。 * XIMALAYA：喜马拉雅TTS * HUAWEI_EI：华为云EI TTS * MOBVOI：出门问问 TTS * AUDIOX：逻辑智能 TTS * SINOVOICE：捷通华声 TTS * DATABAKER：标贝 TTS * AISPEECH：思必驰 TTS
      */
     public static final class ProviderEnum {
 
@@ -46,9 +46,9 @@ public class ExternalVoiceAssetMeta {
         public static final ProviderEnum SINOVOICE = new ProviderEnum("SINOVOICE");
 
         /**
-         * Enum DATABACK for value: "DATABACK"
+         * Enum DATABAKER for value: "DATABAKER"
          */
-        public static final ProviderEnum DATABACK = new ProviderEnum("DATABACK");
+        public static final ProviderEnum DATABAKER = new ProviderEnum("DATABAKER");
 
         /**
          * Enum AISPEECH for value: "AISPEECH"
@@ -64,7 +64,7 @@ public class ExternalVoiceAssetMeta {
             map.put("MOBVOI", MOBVOI);
             map.put("AUDIOX", AUDIOX);
             map.put("SINOVOICE", SINOVOICE);
-            map.put("DATABACK", DATABACK);
+            map.put("DATABAKER", DATABAKER);
             map.put("AISPEECH", AISPEECH);
             return Collections.unmodifiableMap(map);
         }
@@ -126,7 +126,7 @@ public class ExternalVoiceAssetMeta {
     }
 
     /**
-     * 第三方TTS供应商类型。 * XIMALAYA：喜马拉雅TTS * HUAWEI_EI: 华为云EI TTS * MOBVOI: 出门问问 TTSS * AUDIOX: 逻辑智能 TTSS * SINOVOICE: 捷通华声 TTSS * DATABACK: 标贝 TTSS * AISPEECH: 思必驰 TTSS
+     * 第三方TTS供应商类型。 * XIMALAYA：喜马拉雅TTS * HUAWEI_EI：华为云EI TTS * MOBVOI：出门问问 TTS * AUDIOX：逻辑智能 TTS * SINOVOICE：捷通华声 TTS * DATABAKER：标贝 TTS * AISPEECH：思必驰 TTS
      * @return provider
      */
     public ProviderEnum getProvider() {

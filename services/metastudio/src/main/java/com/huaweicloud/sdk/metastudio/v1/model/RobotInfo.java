@@ -41,6 +41,11 @@ public class RobotInfo {
     private String appKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "robot_type")
+
+    private RobotTypeEnum robotType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
     private LanguageEnum language;
@@ -217,6 +222,23 @@ public class RobotInfo {
 
     public void setAppKey(String appKey) {
         this.appKey = appKey;
+    }
+
+    public RobotInfo withRobotType(RobotTypeEnum robotType) {
+        this.robotType = robotType;
+        return this;
+    }
+
+    /**
+     * Get robotType
+     * @return robotType
+     */
+    public RobotTypeEnum getRobotType() {
+        return robotType;
+    }
+
+    public void setRobotType(RobotTypeEnum robotType) {
+        this.robotType = robotType;
     }
 
     public RobotInfo withLanguage(LanguageEnum language) {
@@ -494,10 +516,11 @@ public class RobotInfo {
         return Objects.equals(this.robotId, that.robotId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.appId, that.appId)
             && Objects.equals(this.appType, that.appType) && Objects.equals(this.appKey, that.appKey)
-            && Objects.equals(this.language, that.language) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.region, that.region)
-            && Objects.equals(this.cbsProjectId, that.cbsProjectId) && Objects.equals(this.llmUrl, that.llmUrl)
-            && Objects.equals(this.isStream, that.isStream) && Objects.equals(this.chatRounds, that.chatRounds)
+            && Objects.equals(this.robotType, that.robotType) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.cbsProjectId, that.cbsProjectId)
+            && Objects.equals(this.llmUrl, that.llmUrl) && Objects.equals(this.isStream, that.isStream)
+            && Objects.equals(this.chatRounds, that.chatRounds)
             && Objects.equals(this.isIflyProduction, that.isIflyProduction)
             && Objects.equals(this.tailSilenceTime, that.tailSilenceTime) && Objects.equals(this.roleId, that.roleId)
             && Objects.equals(this.sisRegion, that.sisRegion) && Objects.equals(this.sisProjectId, that.sisProjectId)
@@ -513,6 +536,7 @@ public class RobotInfo {
             appId,
             appType,
             appKey,
+            robotType,
             language,
             createTime,
             updateTime,
@@ -540,6 +564,7 @@ public class RobotInfo {
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
+        sb.append("    robotType: ").append(toIndentedString(robotType)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

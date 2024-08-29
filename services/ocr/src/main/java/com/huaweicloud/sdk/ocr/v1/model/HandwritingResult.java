@@ -29,7 +29,7 @@ public class HandwritingResult {
     }
 
     /**
-     * 代表检测识别出来的文字块数目。 \"segment_digit\" 和\"segment\"默认为1。 
+     * 代表检测识别出来的文字块数目。 \"segment_digit\" 和\"segment\"默认为1。       
      * @return wordsBlockCount
      */
     public Integer getWordsBlockCount() {

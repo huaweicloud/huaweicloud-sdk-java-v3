@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.hss.v5.model.AddHostsGroupRequest;
 import com.huaweicloud.sdk.hss.v5.model.AddHostsGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.AssociatePolicyGroupRequest;
 import com.huaweicloud.sdk.hss.v5.model.AssociatePolicyGroupResponse;
+import com.huaweicloud.sdk.hss.v5.model.BatchAddAccountsRequest;
+import com.huaweicloud.sdk.hss.v5.model.BatchAddAccountsResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchCreateTagsRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchCreateTagsResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchScanSwrImageRequest;
@@ -29,10 +31,16 @@ import com.huaweicloud.sdk.hss.v5.model.CreateQuotasOrderRequest;
 import com.huaweicloud.sdk.hss.v5.model.CreateQuotasOrderResponse;
 import com.huaweicloud.sdk.hss.v5.model.CreateVulnerabilityScanTaskRequest;
 import com.huaweicloud.sdk.hss.v5.model.CreateVulnerabilityScanTaskResponse;
+import com.huaweicloud.sdk.hss.v5.model.DeleteAccountRequest;
+import com.huaweicloud.sdk.hss.v5.model.DeleteAccountResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteHostsGroupRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteHostsGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteResourceInstanceTagRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteResourceInstanceTagResponse;
+import com.huaweicloud.sdk.hss.v5.model.ExportVulsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ExportVulsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAccountsRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAccountsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAppChangeHistoriesRequest;
@@ -53,6 +61,8 @@ import com.huaweicloud.sdk.hss.v5.model.ListContainerNodesRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListContainerNodesResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListContainersRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListContainersResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListDownloadExportedFileRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListDownloadExportedFileResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListHostGroupsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListHostGroupsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListHostProtectHistoryInfoRequest;
@@ -77,6 +87,8 @@ import com.huaweicloud.sdk.hss.v5.model.ListJarPackageHostInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageHostInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageStatisticsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListOrganizationTreeRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListOrganizationTreeResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListPasswordComplexityRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListPasswordComplexityResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListPolicyGroupRequest;
@@ -95,6 +107,8 @@ import com.huaweicloud.sdk.hss.v5.model.ListProtectionPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListProtectionPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListProtectionServerRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListProtectionServerResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListQueryExportTaskRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListQueryExportTaskResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListQuotasDetailRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListQuotasDetailResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListRiskConfigCheckRulesRequest;
@@ -230,6 +244,35 @@ public class HssClient {
     public SyncInvoker<AssociatePolicyGroupRequest, AssociatePolicyGroupResponse> associatePolicyGroupInvoker(
         AssociatePolicyGroupRequest request) {
         return new SyncInvoker<>(request, HssMeta.associatePolicyGroup, hcClient);
+    }
+
+    /**
+     * 批量添加账号
+     *
+     * 批量添加账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddAccountsRequest 请求对象
+     * @return BatchAddAccountsResponse
+     */
+    public BatchAddAccountsResponse batchAddAccounts(BatchAddAccountsRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.batchAddAccounts);
+    }
+
+    /**
+     * 批量添加账号
+     *
+     * 批量添加账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddAccountsRequest 请求对象
+     * @return SyncInvoker<BatchAddAccountsRequest, BatchAddAccountsResponse>
+     */
+    public SyncInvoker<BatchAddAccountsRequest, BatchAddAccountsResponse> batchAddAccountsInvoker(
+        BatchAddAccountsRequest request) {
+        return new SyncInvoker<>(request, HssMeta.batchAddAccounts, hcClient);
     }
 
     /**
@@ -551,6 +594,34 @@ public class HssClient {
     }
 
     /**
+     * 删除账号
+     *
+     * 删除账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAccountRequest 请求对象
+     * @return DeleteAccountResponse
+     */
+    public DeleteAccountResponse deleteAccount(DeleteAccountRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.deleteAccount);
+    }
+
+    /**
+     * 删除账号
+     *
+     * 删除账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAccountRequest 请求对象
+     * @return SyncInvoker<DeleteAccountRequest, DeleteAccountResponse>
+     */
+    public SyncInvoker<DeleteAccountRequest, DeleteAccountResponse> deleteAccountInvoker(DeleteAccountRequest request) {
+        return new SyncInvoker<>(request, HssMeta.deleteAccount, hcClient);
+    }
+
+    /**
      * 删除服务器组
      *
      * 删除服务器组
@@ -606,6 +677,62 @@ public class HssClient {
     public SyncInvoker<DeleteResourceInstanceTagRequest, DeleteResourceInstanceTagResponse> deleteResourceInstanceTagInvoker(
         DeleteResourceInstanceTagRequest request) {
         return new SyncInvoker<>(request, HssMeta.deleteResourceInstanceTag, hcClient);
+    }
+
+    /**
+     * 导出漏洞及漏洞影响的主机的相关信息
+     *
+     * 导出漏洞及漏洞影响的主机的相关信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportVulsRequest 请求对象
+     * @return ExportVulsResponse
+     */
+    public ExportVulsResponse exportVuls(ExportVulsRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.exportVuls);
+    }
+
+    /**
+     * 导出漏洞及漏洞影响的主机的相关信息
+     *
+     * 导出漏洞及漏洞影响的主机的相关信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportVulsRequest 请求对象
+     * @return SyncInvoker<ExportVulsRequest, ExportVulsResponse>
+     */
+    public SyncInvoker<ExportVulsRequest, ExportVulsResponse> exportVulsInvoker(ExportVulsRequest request) {
+        return new SyncInvoker<>(request, HssMeta.exportVuls, hcClient);
+    }
+
+    /**
+     * 多账号列表
+     *
+     * 多账号列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAccountsRequest 请求对象
+     * @return ListAccountsResponse
+     */
+    public ListAccountsResponse listAccounts(ListAccountsRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listAccounts);
+    }
+
+    /**
+     * 多账号列表
+     *
+     * 多账号列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAccountsRequest 请求对象
+     * @return SyncInvoker<ListAccountsRequest, ListAccountsResponse>
+     */
+    public SyncInvoker<ListAccountsRequest, ListAccountsResponse> listAccountsInvoker(ListAccountsRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listAccounts, hcClient);
     }
 
     /**
@@ -895,6 +1022,35 @@ public class HssClient {
     public SyncInvoker<ListContainersRequest, ListContainersResponse> listContainersInvoker(
         ListContainersRequest request) {
         return new SyncInvoker<>(request, HssMeta.listContainers, hcClient);
+    }
+
+    /**
+     * 下载导出文件
+     *
+     * 下载导出文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDownloadExportedFileRequest 请求对象
+     * @return ListDownloadExportedFileResponse
+     */
+    public ListDownloadExportedFileResponse listDownloadExportedFile(ListDownloadExportedFileRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listDownloadExportedFile);
+    }
+
+    /**
+     * 下载导出文件
+     *
+     * 下载导出文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDownloadExportedFileRequest 请求对象
+     * @return SyncInvoker<ListDownloadExportedFileRequest, ListDownloadExportedFileResponse>
+     */
+    public SyncInvoker<ListDownloadExportedFileRequest, ListDownloadExportedFileResponse> listDownloadExportedFileInvoker(
+        ListDownloadExportedFileRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listDownloadExportedFile, hcClient);
     }
 
     /**
@@ -1246,6 +1402,35 @@ public class HssClient {
     }
 
     /**
+     * 多账号列表
+     *
+     * List organization tree
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrganizationTreeRequest 请求对象
+     * @return ListOrganizationTreeResponse
+     */
+    public ListOrganizationTreeResponse listOrganizationTree(ListOrganizationTreeRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listOrganizationTree);
+    }
+
+    /**
+     * 多账号列表
+     *
+     * List organization tree
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOrganizationTreeRequest 请求对象
+     * @return SyncInvoker<ListOrganizationTreeRequest, ListOrganizationTreeResponse>
+     */
+    public SyncInvoker<ListOrganizationTreeRequest, ListOrganizationTreeResponse> listOrganizationTreeInvoker(
+        ListOrganizationTreeRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listOrganizationTree, hcClient);
+    }
+
+    /**
      * 查询口令复杂度策略检测报告
      *
      * 查询口令复杂度策略检测报告
@@ -1502,6 +1687,35 @@ public class HssClient {
     public SyncInvoker<ListProtectionServerRequest, ListProtectionServerResponse> listProtectionServerInvoker(
         ListProtectionServerRequest request) {
         return new SyncInvoker<>(request, HssMeta.listProtectionServer, hcClient);
+    }
+
+    /**
+     * 查询导出任务信息
+     *
+     * 查询导出任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListQueryExportTaskRequest 请求对象
+     * @return ListQueryExportTaskResponse
+     */
+    public ListQueryExportTaskResponse listQueryExportTask(ListQueryExportTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.listQueryExportTask);
+    }
+
+    /**
+     * 查询导出任务信息
+     *
+     * 查询导出任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListQueryExportTaskRequest 请求对象
+     * @return SyncInvoker<ListQueryExportTaskRequest, ListQueryExportTaskResponse>
+     */
+    public SyncInvoker<ListQueryExportTaskRequest, ListQueryExportTaskResponse> listQueryExportTaskInvoker(
+        ListQueryExportTaskRequest request) {
+        return new SyncInvoker<>(request, HssMeta.listQueryExportTask, hcClient);
     }
 
     /**

@@ -17,14 +17,14 @@ public class ShowInstanceTagsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<Tags> tags = null;
+    private List<ResourceTag> tags = null;
 
-    public ShowInstanceTagsResponse withTags(List<Tags> tags) {
+    public ShowInstanceTagsResponse withTags(List<ResourceTag> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ShowInstanceTagsResponse addTagsItem(Tags tagsItem) {
+    public ShowInstanceTagsResponse addTagsItem(ResourceTag tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ShowInstanceTagsResponse extends SdkResponse {
         return this;
     }
 
-    public ShowInstanceTagsResponse withTags(Consumer<List<Tags>> tagsSetter) {
+    public ShowInstanceTagsResponse withTags(Consumer<List<ResourceTag>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class ShowInstanceTagsResponse extends SdkResponse {
      * 标签列表。
      * @return tags
      */
-    public List<Tags> getTags() {
+    public List<ResourceTag> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tags> tags) {
+    public void setTags(List<ResourceTag> tags) {
         this.tags = tags;
     }
 

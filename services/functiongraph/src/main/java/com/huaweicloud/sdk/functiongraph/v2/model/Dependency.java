@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -282,7 +281,7 @@ public class Dependency {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "last_modified")
 
-    private OffsetDateTime lastModified;
+    private Long lastModified;
 
     public Dependency withId(String id) {
         this.id = id;
@@ -471,20 +470,20 @@ public class Dependency {
         this.depId = depId;
     }
 
-    public Dependency withLastModified(OffsetDateTime lastModified) {
+    public Dependency withLastModified(Long lastModified) {
         this.lastModified = lastModified;
         return this;
     }
 
     /**
-     * 函数最后一次更新时间。
+     * 依赖包最后一次更新时间。
      * @return lastModified
      */
-    public OffsetDateTime getLastModified() {
+    public Long getLastModified() {
         return lastModified;
     }
 
-    public void setLastModified(OffsetDateTime lastModified) {
+    public void setLastModified(Long lastModified) {
         this.lastModified = lastModified;
     }
 

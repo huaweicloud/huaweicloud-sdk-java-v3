@@ -45,6 +45,11 @@ public class NodeSpecUpdate {
 
     private String serverEnterpriseProjectID;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nodeNicSpecUpdate")
+
+    private NodeSpecUpdateNodeNicSpecUpdate nodeNicSpecUpdate;
+
     public NodeSpecUpdate withTaints(List<Taint> taints) {
         this.taints = taints;
         return this;
@@ -220,6 +225,32 @@ public class NodeSpecUpdate {
         this.serverEnterpriseProjectID = serverEnterpriseProjectID;
     }
 
+    public NodeSpecUpdate withNodeNicSpecUpdate(NodeSpecUpdateNodeNicSpecUpdate nodeNicSpecUpdate) {
+        this.nodeNicSpecUpdate = nodeNicSpecUpdate;
+        return this;
+    }
+
+    public NodeSpecUpdate withNodeNicSpecUpdate(Consumer<NodeSpecUpdateNodeNicSpecUpdate> nodeNicSpecUpdateSetter) {
+        if (this.nodeNicSpecUpdate == null) {
+            this.nodeNicSpecUpdate = new NodeSpecUpdateNodeNicSpecUpdate();
+            nodeNicSpecUpdateSetter.accept(this.nodeNicSpecUpdate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get nodeNicSpecUpdate
+     * @return nodeNicSpecUpdate
+     */
+    public NodeSpecUpdateNodeNicSpecUpdate getNodeNicSpecUpdate() {
+        return nodeNicSpecUpdate;
+    }
+
+    public void setNodeNicSpecUpdate(NodeSpecUpdateNodeNicSpecUpdate nodeNicSpecUpdate) {
+        this.nodeNicSpecUpdate = nodeNicSpecUpdate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -233,12 +264,19 @@ public class NodeSpecUpdate {
             && Objects.equals(this.userTags, that.userTags)
             && Objects.equals(this.initializedConditions, that.initializedConditions)
             && Objects.equals(this.login, that.login)
-            && Objects.equals(this.serverEnterpriseProjectID, that.serverEnterpriseProjectID);
+            && Objects.equals(this.serverEnterpriseProjectID, that.serverEnterpriseProjectID)
+            && Objects.equals(this.nodeNicSpecUpdate, that.nodeNicSpecUpdate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taints, k8sTags, userTags, initializedConditions, login, serverEnterpriseProjectID);
+        return Objects.hash(taints,
+            k8sTags,
+            userTags,
+            initializedConditions,
+            login,
+            serverEnterpriseProjectID,
+            nodeNicSpecUpdate);
     }
 
     @Override
@@ -251,6 +289,7 @@ public class NodeSpecUpdate {
         sb.append("    initializedConditions: ").append(toIndentedString(initializedConditions)).append("\n");
         sb.append("    login: ").append(toIndentedString(login)).append("\n");
         sb.append("    serverEnterpriseProjectID: ").append(toIndentedString(serverEnterpriseProjectID)).append("\n");
+        sb.append("    nodeNicSpecUpdate: ").append(toIndentedString(nodeNicSpecUpdate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

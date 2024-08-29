@@ -125,6 +125,8 @@ import com.huaweicloud.sdk.css.v1.model.StartPipelineRequest;
 import com.huaweicloud.sdk.css.v1.model.StartPipelineResponse;
 import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistRequest;
 import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistResponse;
+import com.huaweicloud.sdk.css.v1.model.StartTargetClusterConnectivityTestRequest;
+import com.huaweicloud.sdk.css.v1.model.StartTargetClusterConnectivityTestResponse;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpRequest;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpResponse;
 import com.huaweicloud.sdk.css.v1.model.StopHotPipelineRequest;
@@ -1586,6 +1588,36 @@ public class CssAsyncClient {
     public AsyncInvoker<StartPublicWhitelistRequest, StartPublicWhitelistResponse> startPublicWhitelistAsyncInvoker(
         StartPublicWhitelistRequest request) {
         return new AsyncInvoker<>(request, CssMeta.startPublicWhitelist, hcClient);
+    }
+
+    /**
+     * 连通性测试。
+     *
+     * 该接口用于连通性测试。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartTargetClusterConnectivityTestRequest 请求对象
+     * @return CompletableFuture<StartTargetClusterConnectivityTestResponse>
+     */
+    public CompletableFuture<StartTargetClusterConnectivityTestResponse> startTargetClusterConnectivityTestAsync(
+        StartTargetClusterConnectivityTestRequest request) {
+        return hcClient.asyncInvokeHttp(request, CssMeta.startTargetClusterConnectivityTest);
+    }
+
+    /**
+     * 连通性测试。
+     *
+     * 该接口用于连通性测试。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartTargetClusterConnectivityTestRequest 请求对象
+     * @return AsyncInvoker<StartTargetClusterConnectivityTestRequest, StartTargetClusterConnectivityTestResponse>
+     */
+    public AsyncInvoker<StartTargetClusterConnectivityTestRequest, StartTargetClusterConnectivityTestResponse> startTargetClusterConnectivityTestAsyncInvoker(
+        StartTargetClusterConnectivityTestRequest request) {
+        return new AsyncInvoker<>(request, CssMeta.startTargetClusterConnectivityTest, hcClient);
     }
 
     /**

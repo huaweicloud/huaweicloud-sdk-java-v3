@@ -16,7 +16,7 @@ import java.util.Objects;
 public class CreateAgencyWithRoleTypeRequest {
 
     /**
-     * 委托授权类型 * CBS:对话机器人服务（CBS）访客 * SIS:语音交互服务(SIS)调用
+     * 委托授权类型 * CBS:对话机器人服务(CBS)访客 * SIS:语音交互服务(SIS)调用
      */
     public static final class RoleTypeEnum {
 
@@ -96,7 +96,7 @@ public class CreateAgencyWithRoleTypeRequest {
     }
 
     /**
-     * 委托授权类型 * CBS:对话机器人服务（CBS）访客 * SIS:语音交互服务(SIS)调用
+     * 委托授权类型 * CBS:对话机器人服务(CBS)访客 * SIS:语音交互服务(SIS)调用
      * @return roleType
      */
     public RoleTypeEnum getRoleType() {

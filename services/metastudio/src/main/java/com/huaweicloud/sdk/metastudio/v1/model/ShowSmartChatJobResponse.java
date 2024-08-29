@@ -159,12 +159,22 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chat_subtitle_config")
 
-    private ChatSubtitleConfig chatSubtitleConfig;
+    private SmartChatSubtitleConfig chatSubtitleConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_config")
 
-    private ChatVideoConfigRsp videoConfig;
+    private SmartChatVideoConfig videoConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_state")
+
+    private Integer chatState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private LanguageEnum language;
 
     /**
      * 智能交互对话端配置。 * COMPUTER: 电脑端 * MOBILE: 手机端 * HUB: 大屏
@@ -246,6 +256,16 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     @JsonProperty(value = "chat_video_type")
 
     private ChatVideoTypeEnum chatVideoType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_access_address")
+
+    private String chatAccessAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_transparent")
+
+    private Boolean isTransparent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -425,14 +445,14 @@ public class ShowSmartChatJobResponse extends SdkResponse {
         this.rtcRoomInfo = rtcRoomInfo;
     }
 
-    public ShowSmartChatJobResponse withChatSubtitleConfig(ChatSubtitleConfig chatSubtitleConfig) {
+    public ShowSmartChatJobResponse withChatSubtitleConfig(SmartChatSubtitleConfig chatSubtitleConfig) {
         this.chatSubtitleConfig = chatSubtitleConfig;
         return this;
     }
 
-    public ShowSmartChatJobResponse withChatSubtitleConfig(Consumer<ChatSubtitleConfig> chatSubtitleConfigSetter) {
+    public ShowSmartChatJobResponse withChatSubtitleConfig(Consumer<SmartChatSubtitleConfig> chatSubtitleConfigSetter) {
         if (this.chatSubtitleConfig == null) {
-            this.chatSubtitleConfig = new ChatSubtitleConfig();
+            this.chatSubtitleConfig = new SmartChatSubtitleConfig();
             chatSubtitleConfigSetter.accept(this.chatSubtitleConfig);
         }
 
@@ -443,22 +463,22 @@ public class ShowSmartChatJobResponse extends SdkResponse {
      * Get chatSubtitleConfig
      * @return chatSubtitleConfig
      */
-    public ChatSubtitleConfig getChatSubtitleConfig() {
+    public SmartChatSubtitleConfig getChatSubtitleConfig() {
         return chatSubtitleConfig;
     }
 
-    public void setChatSubtitleConfig(ChatSubtitleConfig chatSubtitleConfig) {
+    public void setChatSubtitleConfig(SmartChatSubtitleConfig chatSubtitleConfig) {
         this.chatSubtitleConfig = chatSubtitleConfig;
     }
 
-    public ShowSmartChatJobResponse withVideoConfig(ChatVideoConfigRsp videoConfig) {
+    public ShowSmartChatJobResponse withVideoConfig(SmartChatVideoConfig videoConfig) {
         this.videoConfig = videoConfig;
         return this;
     }
 
-    public ShowSmartChatJobResponse withVideoConfig(Consumer<ChatVideoConfigRsp> videoConfigSetter) {
+    public ShowSmartChatJobResponse withVideoConfig(Consumer<SmartChatVideoConfig> videoConfigSetter) {
         if (this.videoConfig == null) {
-            this.videoConfig = new ChatVideoConfigRsp();
+            this.videoConfig = new SmartChatVideoConfig();
             videoConfigSetter.accept(this.videoConfig);
         }
 
@@ -469,12 +489,48 @@ public class ShowSmartChatJobResponse extends SdkResponse {
      * Get videoConfig
      * @return videoConfig
      */
-    public ChatVideoConfigRsp getVideoConfig() {
+    public SmartChatVideoConfig getVideoConfig() {
         return videoConfig;
     }
 
-    public void setVideoConfig(ChatVideoConfigRsp videoConfig) {
+    public void setVideoConfig(SmartChatVideoConfig videoConfig) {
         this.videoConfig = videoConfig;
+    }
+
+    public ShowSmartChatJobResponse withChatState(Integer chatState) {
+        this.chatState = chatState;
+        return this;
+    }
+
+    /**
+     * 数字人智能交互对话的状态。 0: 等待建链 1: 等待关闭链路 2: 建链成功 3: 进入休眠 4: 等待休眠
+     * minimum: 0
+     * maximum: 32
+     * @return chatState
+     */
+    public Integer getChatState() {
+        return chatState;
+    }
+
+    public void setChatState(Integer chatState) {
+        this.chatState = chatState;
+    }
+
+    public ShowSmartChatJobResponse withLanguage(LanguageEnum language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * Get language
+     * @return language
+     */
+    public LanguageEnum getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(LanguageEnum language) {
+        this.language = language;
     }
 
     public ShowSmartChatJobResponse withChatVideoType(ChatVideoTypeEnum chatVideoType) {
@@ -492,6 +548,40 @@ public class ShowSmartChatJobResponse extends SdkResponse {
 
     public void setChatVideoType(ChatVideoTypeEnum chatVideoType) {
         this.chatVideoType = chatVideoType;
+    }
+
+    public ShowSmartChatJobResponse withChatAccessAddress(String chatAccessAddress) {
+        this.chatAccessAddress = chatAccessAddress;
+        return this;
+    }
+
+    /**
+     * 智能交互接入地址。
+     * @return chatAccessAddress
+     */
+    public String getChatAccessAddress() {
+        return chatAccessAddress;
+    }
+
+    public void setChatAccessAddress(String chatAccessAddress) {
+        this.chatAccessAddress = chatAccessAddress;
+    }
+
+    public ShowSmartChatJobResponse withIsTransparent(Boolean isTransparent) {
+        this.isTransparent = isTransparent;
+        return this;
+    }
+
+    /**
+     * 是否透明背景
+     * @return isTransparent
+     */
+    public Boolean getIsTransparent() {
+        return isTransparent;
+    }
+
+    public void setIsTransparent(Boolean isTransparent) {
+        this.isTransparent = isTransparent;
     }
 
     public ShowSmartChatJobResponse withXRequestId(String xRequestId) {
@@ -529,8 +619,10 @@ public class ShowSmartChatJobResponse extends SdkResponse {
             && Objects.equals(this.lastupdateTime, that.lastupdateTime)
             && Objects.equals(this.rtcRoomInfo, that.rtcRoomInfo)
             && Objects.equals(this.chatSubtitleConfig, that.chatSubtitleConfig)
-            && Objects.equals(this.videoConfig, that.videoConfig)
-            && Objects.equals(this.chatVideoType, that.chatVideoType)
+            && Objects.equals(this.videoConfig, that.videoConfig) && Objects.equals(this.chatState, that.chatState)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.chatVideoType, that.chatVideoType)
+            && Objects.equals(this.chatAccessAddress, that.chatAccessAddress)
+            && Objects.equals(this.isTransparent, that.isTransparent)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
@@ -547,7 +639,11 @@ public class ShowSmartChatJobResponse extends SdkResponse {
             rtcRoomInfo,
             chatSubtitleConfig,
             videoConfig,
+            chatState,
+            language,
             chatVideoType,
+            chatAccessAddress,
+            isTransparent,
             xRequestId);
     }
 
@@ -566,7 +662,11 @@ public class ShowSmartChatJobResponse extends SdkResponse {
         sb.append("    rtcRoomInfo: ").append(toIndentedString(rtcRoomInfo)).append("\n");
         sb.append("    chatSubtitleConfig: ").append(toIndentedString(chatSubtitleConfig)).append("\n");
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");
+        sb.append("    chatState: ").append(toIndentedString(chatState)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    chatVideoType: ").append(toIndentedString(chatVideoType)).append("\n");
+        sb.append("    chatAccessAddress: ").append(toIndentedString(chatAccessAddress)).append("\n");
+        sb.append("    isTransparent: ").append(toIndentedString(isTransparent)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

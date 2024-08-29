@@ -53,6 +53,81 @@ public class ListAssetsRequest {
 
     private String tag;
 
+    /**
+     * 标签查询组合方式 INTERSECTION：交集 UNION_SET：并集
+     */
+    public static final class TagCombinationTypeEnum {
+
+        /**
+         * Enum INTERSECTION for value: "INTERSECTION"
+         */
+        public static final TagCombinationTypeEnum INTERSECTION = new TagCombinationTypeEnum("INTERSECTION");
+
+        /**
+         * Enum UNION_SET for value: "UNION_SET"
+         */
+        public static final TagCombinationTypeEnum UNION_SET = new TagCombinationTypeEnum("UNION_SET");
+
+        private static final Map<String, TagCombinationTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TagCombinationTypeEnum> createStaticFields() {
+            Map<String, TagCombinationTypeEnum> map = new HashMap<>();
+            map.put("INTERSECTION", INTERSECTION);
+            map.put("UNION_SET", UNION_SET);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TagCombinationTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TagCombinationTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TagCombinationTypeEnum(value));
+        }
+
+        public static TagCombinationTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TagCombinationTypeEnum) {
+                return this.value.equals(((TagCombinationTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag_combination_type")
+
+    private TagCombinationTypeEnum tagCombinationType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
@@ -170,6 +245,11 @@ public class ListAssetsRequest {
     private String styleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "accurate_query_field")
+
+    private List<String> accurateQueryField = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "render_engine")
 
     private String renderEngine;
@@ -198,6 +278,11 @@ public class ListAssetsRequest {
     @JsonProperty(value = "action_editable")
 
     private Boolean actionEditable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_with_action_library")
+
+    private Boolean isWithActionLibrary;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_movable")
@@ -303,6 +388,87 @@ public class ListAssetsRequest {
     @JsonProperty(value = "exclude_device_name")
 
     private String excludeDeviceName;
+
+    /**
+     * 资产支持的业务类型。默认查询所有资产。 * VIDEO_2D：分身数字人视频制作 * LIVE_2D：分身数字人直播 * CHAT_2D：分身数字人智能交互
+     */
+    public static final class SupportedServiceEnum {
+
+        /**
+         * Enum VIDEO_2D for value: "VIDEO_2D"
+         */
+        public static final SupportedServiceEnum VIDEO_2D = new SupportedServiceEnum("VIDEO_2D");
+
+        /**
+         * Enum LIVE_2D for value: "LIVE_2D"
+         */
+        public static final SupportedServiceEnum LIVE_2D = new SupportedServiceEnum("LIVE_2D");
+
+        /**
+         * Enum CHAT_2D for value: "CHAT_2D"
+         */
+        public static final SupportedServiceEnum CHAT_2D = new SupportedServiceEnum("CHAT_2D");
+
+        private static final Map<String, SupportedServiceEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SupportedServiceEnum> createStaticFields() {
+            Map<String, SupportedServiceEnum> map = new HashMap<>();
+            map.put("VIDEO_2D", VIDEO_2D);
+            map.put("LIVE_2D", LIVE_2D);
+            map.put("CHAT_2D", CHAT_2D);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SupportedServiceEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SupportedServiceEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SupportedServiceEnum(value));
+        }
+
+        public static SupportedServiceEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SupportedServiceEnum) {
+                return this.value.equals(((SupportedServiceEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supported_service")
+
+    private SupportedServiceEnum supportedService;
 
     public ListAssetsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
@@ -431,13 +597,30 @@ public class ListAssetsRequest {
         this.tag = tag;
     }
 
+    public ListAssetsRequest withTagCombinationType(TagCombinationTypeEnum tagCombinationType) {
+        this.tagCombinationType = tagCombinationType;
+        return this;
+    }
+
+    /**
+     * 标签查询组合方式 INTERSECTION：交集 UNION_SET：并集
+     * @return tagCombinationType
+     */
+    public TagCombinationTypeEnum getTagCombinationType() {
+        return tagCombinationType;
+    }
+
+    public void setTagCombinationType(TagCombinationTypeEnum tagCombinationType) {
+        this.tagCombinationType = tagCombinationType;
+    }
+
     public ListAssetsRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
-     * 起始时间。格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 最近直播任务起始时间。格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
      * @return startTime
      */
     public String getStartTime() {
@@ -454,7 +637,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 结束时间。格式遵循：RFC 3339 如\"2021-01-10T10:43:17Z\"。
+     * 最近直播任务结束时间。格式遵循：RFC 3339 如\"2021-01-10T10:43:17Z\"。
      * @return endTime
      */
     public String getEndTime() {
@@ -488,7 +671,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 排序字段，目前只支持create_time。
+     * 排序字段，支持的排序方式有： - 按创建时间排序：create_time - 按更新时间排序：update_time - 按资产排序：asset_order
      * @return sortKey
      */
     public String getSortKey() {
@@ -565,6 +748,39 @@ public class ListAssetsRequest {
 
     public void setStyleId(String styleId) {
         this.styleId = styleId;
+    }
+
+    public ListAssetsRequest withAccurateQueryField(List<String> accurateQueryField) {
+        this.accurateQueryField = accurateQueryField;
+        return this;
+    }
+
+    public ListAssetsRequest addAccurateQueryFieldItem(String accurateQueryFieldItem) {
+        if (this.accurateQueryField == null) {
+            this.accurateQueryField = new ArrayList<>();
+        }
+        this.accurateQueryField.add(accurateQueryFieldItem);
+        return this;
+    }
+
+    public ListAssetsRequest withAccurateQueryField(Consumer<List<String>> accurateQueryFieldSetter) {
+        if (this.accurateQueryField == null) {
+            this.accurateQueryField = new ArrayList<>();
+        }
+        accurateQueryFieldSetter.accept(this.accurateQueryField);
+        return this;
+    }
+
+    /**
+     * 使用精确查询的字段
+     * @return accurateQueryField
+     */
+    public List<String> getAccurateQueryField() {
+        return accurateQueryField;
+    }
+
+    public void setAccurateQueryField(List<String> accurateQueryField) {
+        this.accurateQueryField = accurateQueryField;
     }
 
     public ListAssetsRequest withRenderEngine(String renderEngine) {
@@ -683,6 +899,23 @@ public class ListAssetsRequest {
 
     public void setActionEditable(Boolean actionEditable) {
         this.actionEditable = actionEditable;
+    }
+
+    public ListAssetsRequest withIsWithActionLibrary(Boolean isWithActionLibrary) {
+        this.isWithActionLibrary = isWithActionLibrary;
+        return this;
+    }
+
+    /**
+     * 分身数字人是否带原子动作库。 > * 带原子动作库的分身数字人可做动作编排。
+     * @return isWithActionLibrary
+     */
+    public Boolean getIsWithActionLibrary() {
+        return isWithActionLibrary;
+    }
+
+    public void setIsWithActionLibrary(Boolean isWithActionLibrary) {
+        this.isWithActionLibrary = isWithActionLibrary;
     }
 
     public ListAssetsRequest withIsMovable(Boolean isMovable) {
@@ -804,6 +1037,23 @@ public class ListAssetsRequest {
         this.excludeDeviceName = excludeDeviceName;
     }
 
+    public ListAssetsRequest withSupportedService(SupportedServiceEnum supportedService) {
+        this.supportedService = supportedService;
+        return this;
+    }
+
+    /**
+     * 资产支持的业务类型。默认查询所有资产。 * VIDEO_2D：分身数字人视频制作 * LIVE_2D：分身数字人直播 * CHAT_2D：分身数字人智能交互
+     * @return supportedService
+     */
+    public SupportedServiceEnum getSupportedService() {
+        return supportedService;
+    }
+
+    public void setSupportedService(SupportedServiceEnum supportedService) {
+        this.supportedService = supportedService;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -816,19 +1066,23 @@ public class ListAssetsRequest {
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.tag, that.tag) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.assetType, that.assetType)
-            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.assetSource, that.assetSource) && Objects.equals(this.assetState, that.assetState)
-            && Objects.equals(this.styleId, that.styleId) && Objects.equals(this.renderEngine, that.renderEngine)
-            && Objects.equals(this.assetId, that.assetId) && Objects.equals(this.sex, that.sex)
-            && Objects.equals(this.language, that.language) && Objects.equals(this.systemProperty, that.systemProperty)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.tagCombinationType, that.tagCombinationType)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.assetSource, that.assetSource)
+            && Objects.equals(this.assetState, that.assetState) && Objects.equals(this.styleId, that.styleId)
+            && Objects.equals(this.accurateQueryField, that.accurateQueryField)
+            && Objects.equals(this.renderEngine, that.renderEngine) && Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.sex, that.sex) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.systemProperty, that.systemProperty)
             && Objects.equals(this.actionEditable, that.actionEditable)
+            && Objects.equals(this.isWithActionLibrary, that.isWithActionLibrary)
             && Objects.equals(this.isMovable, that.isMovable) && Objects.equals(this.voiceProvider, that.voiceProvider)
             && Objects.equals(this.role, that.role) && Objects.equals(this.isRealtimeVoice, that.isRealtimeVoice)
             && Objects.equals(this.humanModel2dVersion, that.humanModel2dVersion)
             && Objects.equals(this.includeDeviceName, that.includeDeviceName)
-            && Objects.equals(this.excludeDeviceName, that.excludeDeviceName);
+            && Objects.equals(this.excludeDeviceName, that.excludeDeviceName)
+            && Objects.equals(this.supportedService, that.supportedService);
     }
 
     @Override
@@ -840,6 +1094,7 @@ public class ListAssetsRequest {
             offset,
             name,
             tag,
+            tagCombinationType,
             startTime,
             endTime,
             assetType,
@@ -848,19 +1103,22 @@ public class ListAssetsRequest {
             assetSource,
             assetState,
             styleId,
+            accurateQueryField,
             renderEngine,
             assetId,
             sex,
             language,
             systemProperty,
             actionEditable,
+            isWithActionLibrary,
             isMovable,
             voiceProvider,
             role,
             isRealtimeVoice,
             humanModel2dVersion,
             includeDeviceName,
-            excludeDeviceName);
+            excludeDeviceName,
+            supportedService);
     }
 
     @Override
@@ -874,6 +1132,7 @@ public class ListAssetsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    tagCombinationType: ").append(toIndentedString(tagCombinationType)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
@@ -882,12 +1141,14 @@ public class ListAssetsRequest {
         sb.append("    assetSource: ").append(toIndentedString(assetSource)).append("\n");
         sb.append("    assetState: ").append(toIndentedString(assetState)).append("\n");
         sb.append("    styleId: ").append(toIndentedString(styleId)).append("\n");
+        sb.append("    accurateQueryField: ").append(toIndentedString(accurateQueryField)).append("\n");
         sb.append("    renderEngine: ").append(toIndentedString(renderEngine)).append("\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    systemProperty: ").append(toIndentedString(systemProperty)).append("\n");
         sb.append("    actionEditable: ").append(toIndentedString(actionEditable)).append("\n");
+        sb.append("    isWithActionLibrary: ").append(toIndentedString(isWithActionLibrary)).append("\n");
         sb.append("    isMovable: ").append(toIndentedString(isMovable)).append("\n");
         sb.append("    voiceProvider: ").append(toIndentedString(voiceProvider)).append("\n");
         sb.append("    role: ").append(toIndentedString(role)).append("\n");
@@ -895,6 +1156,7 @@ public class ListAssetsRequest {
         sb.append("    humanModel2dVersion: ").append(toIndentedString(humanModel2dVersion)).append("\n");
         sb.append("    includeDeviceName: ").append(toIndentedString(includeDeviceName)).append("\n");
         sb.append("    excludeDeviceName: ").append(toIndentedString(excludeDeviceName)).append("\n");
+        sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");
         sb.append("}");
         return sb.toString();
     }

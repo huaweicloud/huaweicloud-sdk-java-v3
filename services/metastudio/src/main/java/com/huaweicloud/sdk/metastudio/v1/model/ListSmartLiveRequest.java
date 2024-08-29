@@ -222,7 +222,7 @@ public class ListSmartLiveRequest {
     }
 
     /**
-     * 排序字段，目前只支持create_time。
+     * 排序字段，支持的排序方式有： - 按创建时间排序：create_time - 按更新时间排序：update_time - 按资产排序：asset_order
      * @return sortKey
      */
     public String getSortKey() {

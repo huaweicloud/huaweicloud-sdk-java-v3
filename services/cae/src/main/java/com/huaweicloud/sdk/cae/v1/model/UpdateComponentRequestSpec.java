@@ -77,6 +77,11 @@ public class UpdateComponentRequestSpec {
         public static final RuntimeEnum PHP7 = new RuntimeEnum("Php7");
 
         /**
+         * Enum PHP8 for value: "Php8"
+         */
+        public static final RuntimeEnum PHP8 = new RuntimeEnum("Php8");
+
+        /**
          * Enum DOTNET6 for value: "Dotnet6"
          */
         public static final RuntimeEnum DOTNET6 = new RuntimeEnum("Dotnet6");
@@ -106,6 +111,7 @@ public class UpdateComponentRequestSpec {
             map.put("Nodejs14", NODEJS14);
             map.put("Nodejs16", NODEJS16);
             map.put("Php7", PHP7);
+            map.put("Php8", PHP8);
             map.put("Dotnet6", DOTNET6);
             map.put("Dotnet7", DOTNET7);
             map.put("Dotnet8", DOTNET8);

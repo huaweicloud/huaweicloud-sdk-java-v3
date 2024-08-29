@@ -3960,6 +3960,11 @@ public class WafMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateIpGroupRequest::getEnterpriseProjectId,
                 UpdateIpGroupRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIpGroupRequest::getAction, UpdateIpGroupRequest::setAction));
         builder.<UpdateIpGroupRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

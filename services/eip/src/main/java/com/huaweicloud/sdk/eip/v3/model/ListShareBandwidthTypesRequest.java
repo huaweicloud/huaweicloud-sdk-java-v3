@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.eip.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -13,7 +16,7 @@ public class ListShareBandwidthTypesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fields")
 
-    private String fields;
+    private List<String> fields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -65,8 +68,24 @@ public class ListShareBandwidthTypesRequest {
 
     private Integer offset;
 
-    public ListShareBandwidthTypesRequest withFields(String fields) {
+    public ListShareBandwidthTypesRequest withFields(List<String> fields) {
         this.fields = fields;
+        return this;
+    }
+
+    public ListShareBandwidthTypesRequest addFieldsItem(String fieldsItem) {
+        if (this.fields == null) {
+            this.fields = new ArrayList<>();
+        }
+        this.fields.add(fieldsItem);
+        return this;
+    }
+
+    public ListShareBandwidthTypesRequest withFields(Consumer<List<String>> fieldsSetter) {
+        if (this.fields == null) {
+            this.fields = new ArrayList<>();
+        }
+        fieldsSetter.accept(this.fields);
         return this;
     }
 
@@ -74,11 +93,11 @@ public class ListShareBandwidthTypesRequest {
      * 形式为\\\"fields=id&fields=bandwidth_type&...\\\"，支持字段：id/bandwidth_type/name_en/name_zh/created_at/update_at/public_border_group/description
      * @return fields
      */
-    public String getFields() {
+    public List<String> getFields() {
         return fields;
     }
 
-    public void setFields(String fields) {
+    public void setFields(List<String> fields) {
         this.fields = fields;
     }
 

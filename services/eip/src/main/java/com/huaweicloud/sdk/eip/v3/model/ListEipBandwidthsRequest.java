@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.eip.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -19,6 +22,11 @@ public class ListEipBandwidthsRequest {
     @JsonProperty(value = "marker")
 
     private String marker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fields")
+
+    private List<String> fields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -127,6 +135,39 @@ public class ListEipBandwidthsRequest {
 
     public void setMarker(String marker) {
         this.marker = marker;
+    }
+
+    public ListEipBandwidthsRequest withFields(List<String> fields) {
+        this.fields = fields;
+        return this;
+    }
+
+    public ListEipBandwidthsRequest addFieldsItem(String fieldsItem) {
+        if (this.fields == null) {
+            this.fields = new ArrayList<>();
+        }
+        this.fields.add(fieldsItem);
+        return this;
+    }
+
+    public ListEipBandwidthsRequest withFields(Consumer<List<String>> fieldsSetter) {
+        if (this.fields == null) {
+            this.fields = new ArrayList<>();
+        }
+        fieldsSetter.accept(this.fields);
+        return this;
+    }
+
+    /**
+     * display in the form \"fields=id&fields=name&...\"  Supported fields：id/name/tenant_id/size/ratio_95peak_plus/ingress_size/bandwidth_type/admin_state/billing_info/charge_mode/type/publicip_info/enable_bandwidth_rules/rule_quota/bandwidth_rules/public_border_group/created_at/updated_at/lock_infos
+     * @return fields
+     */
+    public List<String> getFields() {
+        return fields;
+    }
+
+    public void setFields(List<String> fields) {
+        this.fields = fields;
     }
 
     public ListEipBandwidthsRequest withId(String id) {
@@ -394,11 +435,11 @@ public class ListEipBandwidthsRequest {
         }
         ListEipBandwidthsRequest that = (ListEipBandwidthsRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.bandwidthType, that.bandwidthType)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.nameLike, that.nameLike)
-            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.ingressSize, that.ingressSize)
-            && Objects.equals(this.adminState, that.adminState) && Objects.equals(this.billingInfo, that.billingInfo)
-            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.fields, that.fields) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.bandwidthType, that.bandwidthType) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.nameLike, that.nameLike) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.ingressSize, that.ingressSize) && Objects.equals(this.adminState, that.adminState)
+            && Objects.equals(this.billingInfo, that.billingInfo) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.enableBandwidthRules, that.enableBandwidthRules)
             && Objects.equals(this.ruleQuota, that.ruleQuota)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
@@ -410,6 +451,7 @@ public class ListEipBandwidthsRequest {
     public int hashCode() {
         return Objects.hash(limit,
             marker,
+            fields,
             id,
             bandwidthType,
             name,
@@ -433,6 +475,7 @@ public class ListEipBandwidthsRequest {
         sb.append("class ListEipBandwidthsRequest {\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    bandwidthType: ").append(toIndentedString(bandwidthType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

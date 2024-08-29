@@ -99,6 +99,11 @@ public class EipMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBandwidthRequest::getId, ListBandwidthRequest::setId));
+        builder.<List<String>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListBandwidthRequest::getFields, ListBandwidthRequest::setFields));
         builder.<String>withRequestField("bandwidth_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -234,10 +239,10 @@ public class EipMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("fields",
+        builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCommonPoolsRequest::getFields, ListCommonPoolsRequest::setFields));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
@@ -288,6 +293,11 @@ public class EipMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEipBandwidthsRequest::getMarker, ListEipBandwidthsRequest::setMarker));
+        builder.<List<String>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEipBandwidthsRequest::getFields, ListEipBandwidthsRequest::setFields));
         builder.<String>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -417,10 +427,10 @@ public class EipMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPublicipPoolRequest::getLimit, ListPublicipPoolRequest::setLimit));
-        builder.<String>withRequestField("fields",
+        builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPublicipPoolRequest::getFields, ListPublicipPoolRequest::setFields));
         builder.<String>withRequestField("sort_key",
             LocationType.Query,
@@ -486,10 +496,10 @@ public class EipMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("fields",
+        builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListShareBandwidthTypesRequest::getFields,
                 ListShareBandwidthTypesRequest::setFields));
         builder.<String>withRequestField("id",
@@ -574,10 +584,10 @@ public class EipMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPublicipPoolRequest::getPublicipPoolId,
                 ShowPublicipPoolRequest::setPublicipPoolId));
-        builder.<String>withRequestField("fields",
+        builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowPublicipPoolRequest::getFields, ShowPublicipPoolRequest::setFields));
 
         // response
@@ -597,10 +607,10 @@ public class EipMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("fields",
+        builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListProjectGeipBindingsRequest::getFields,
                 ListProjectGeipBindingsRequest::setFields));
         builder.<String>withRequestField("geip_id",
@@ -764,10 +774,10 @@ public class EipMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
-        builder.<String>withRequestField("fields",
+        builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CreateTenantVpcIgwRequest::getFields, CreateTenantVpcIgwRequest::setFields));
         builder.<CreateTenantVpcIgwRequestBody>withRequestField("body",
             LocationType.Body,
@@ -815,10 +825,10 @@ public class EipMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("fields",
+        builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListTenantVpcIgwsRequest::getFields, ListTenantVpcIgwsRequest::setFields));
         builder.<String>withRequestField("id",
             LocationType.Query,
@@ -883,10 +893,10 @@ public class EipMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInternalVpcIgwRequest::getVpcIgwId, ShowInternalVpcIgwRequest::setVpcIgwId));
-        builder.<String>withRequestField("fields",
+        builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowInternalVpcIgwRequest::getFields, ShowInternalVpcIgwRequest::setFields));
 
         // response
@@ -911,10 +921,10 @@ public class EipMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateTenantVpcIgwRequest::getVpcIgwId, UpdateTenantVpcIgwRequest::setVpcIgwId));
-        builder.<String>withRequestField("fields",
+        builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(UpdateTenantVpcIgwRequest::getFields, UpdateTenantVpcIgwRequest::setFields));
         builder.<UpdateTenantVpcIgwRequestBody>withRequestField("body",
             LocationType.Body,

@@ -23,6 +23,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDbInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDbInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDbUserRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDbUserResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateGaussDbInstanceRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateGaussDbInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupRequest;
@@ -505,6 +507,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<CreateDbUserRequest, CreateDbUserResponse> createDbUserAsyncInvoker(
         CreateDbUserRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.createDbUser, hcClient);
+    }
+
+    /**
+     * 创建数据库实例
+     *
+     * 创建数据库实例，仅支持IAM5的新平面认证方式（AK/SK认证方式）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGaussDbInstanceRequest 请求对象
+     * @return CompletableFuture<CreateGaussDbInstanceResponse>
+     */
+    public CompletableFuture<CreateGaussDbInstanceResponse> createGaussDbInstanceAsync(
+        CreateGaussDbInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.createGaussDbInstance);
+    }
+
+    /**
+     * 创建数据库实例
+     *
+     * 创建数据库实例，仅支持IAM5的新平面认证方式（AK/SK认证方式）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGaussDbInstanceRequest 请求对象
+     * @return AsyncInvoker<CreateGaussDbInstanceRequest, CreateGaussDbInstanceResponse>
+     */
+    public AsyncInvoker<CreateGaussDbInstanceRequest, CreateGaussDbInstanceResponse> createGaussDbInstanceAsyncInvoker(
+        CreateGaussDbInstanceRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.createGaussDbInstance, hcClient);
     }
 
     /**

@@ -120,6 +120,11 @@ public class CreateTrainingJobReq {
 
     private String phone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dhtms_job_id")
+
+    private String dhtmsJobId;
+
     public CreateTrainingJobReq withTag(JobTag tag) {
         this.tag = tag;
         return this;
@@ -239,6 +244,23 @@ public class CreateTrainingJobReq {
         this.phone = phone;
     }
 
+    public CreateTrainingJobReq withDhtmsJobId(String dhtmsJobId) {
+        this.dhtmsJobId = dhtmsJobId;
+        return this;
+    }
+
+    /**
+     * 形象制作任务id
+     * @return dhtmsJobId
+     */
+    public String getDhtmsJobId() {
+        return dhtmsJobId;
+    }
+
+    public void setDhtmsJobId(String dhtmsJobId) {
+        this.dhtmsJobId = dhtmsJobId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -251,12 +273,12 @@ public class CreateTrainingJobReq {
         return Objects.equals(this.tag, that.tag) && Objects.equals(this.description, that.description)
             && Objects.equals(this.sex, that.sex) && Objects.equals(this.voiceName, that.voiceName)
             && Objects.equals(this.language, that.language) && Objects.equals(this.createType, that.createType)
-            && Objects.equals(this.phone, that.phone);
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tag, description, sex, voiceName, language, createType, phone);
+        return Objects.hash(tag, description, sex, voiceName, language, createType, phone, dhtmsJobId);
     }
 
     @Override
@@ -270,6 +292,7 @@ public class CreateTrainingJobReq {
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    createType: ").append(toIndentedString(createType)).append("\n");
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+        sb.append("    dhtmsJobId: ").append(toIndentedString(dhtmsJobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

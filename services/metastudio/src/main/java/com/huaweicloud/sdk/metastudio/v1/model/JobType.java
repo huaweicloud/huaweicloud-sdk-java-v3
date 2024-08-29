@@ -8,19 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 训练类型。 * LLM_MAJOR: 大模型中英文版 * LLM_MINOR: 大模型中小语种版 * BASIC: 基础版(20句话) * MIDDLE: 进阶版(100句话) * ADVANCE: 高级版 * THIRD_PARTY: 第三方出门问问训练版
+ * 训练类型。 * BASIC: 基础版(20句话) * MIDDLE: 进阶版(100句话) * ADVANCE: 高级版 * THIRD_PARTY: 第三方出门问问训练版 * THIRD_PARTY_LJZN: 第三方逻辑智能训练版 * FLEXUS: Flexus版---用的是大模型特征提取
  */
 public class JobType {
-
-    /**
-     * Enum LLM_MAJOR for value: "LLM_MAJOR"
-     */
-    public static final JobType LLM_MAJOR = new JobType("LLM_MAJOR");
-
-    /**
-     * Enum LLM_MINOR for value: "LLM_MINOR"
-     */
-    public static final JobType LLM_MINOR = new JobType("LLM_MINOR");
 
     /**
      * Enum BASIC for value: "BASIC"
@@ -42,16 +32,26 @@ public class JobType {
      */
     public static final JobType THIRD_PARTY = new JobType("THIRD_PARTY");
 
+    /**
+     * Enum THIRD_PARTY_LJZN for value: "THIRD_PARTY_LJZN"
+     */
+    public static final JobType THIRD_PARTY_LJZN = new JobType("THIRD_PARTY_LJZN");
+
+    /**
+     * Enum FLEXUS for value: "FLEXUS"
+     */
+    public static final JobType FLEXUS = new JobType("FLEXUS");
+
     private static final Map<String, JobType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, JobType> createStaticFields() {
         Map<String, JobType> map = new HashMap<>();
-        map.put("LLM_MAJOR", LLM_MAJOR);
-        map.put("LLM_MINOR", LLM_MINOR);
         map.put("BASIC", BASIC);
         map.put("MIDDLE", MIDDLE);
         map.put("ADVANCE", ADVANCE);
         map.put("THIRD_PARTY", THIRD_PARTY);
+        map.put("THIRD_PARTY_LJZN", THIRD_PARTY_LJZN);
+        map.put("FLEXUS", FLEXUS);
         return Collections.unmodifiableMap(map);
     }
 

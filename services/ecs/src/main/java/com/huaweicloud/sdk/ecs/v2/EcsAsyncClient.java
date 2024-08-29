@@ -59,6 +59,8 @@ import com.huaweicloud.sdk.ecs.v2.model.DetachServerVolumeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.DetachServerVolumeResponse;
 import com.huaweicloud.sdk.ecs.v2.model.DisassociateServerVirtualIpRequest;
 import com.huaweicloud.sdk.ecs.v2.model.DisassociateServerVirtualIpResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListCloudServersRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListCloudServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsRequest;
@@ -1107,6 +1109,35 @@ public class EcsAsyncClient {
     public AsyncInvoker<DisassociateServerVirtualIpRequest, DisassociateServerVirtualIpResponse> disassociateServerVirtualIpAsyncInvoker(
         DisassociateServerVirtualIpRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.disassociateServerVirtualIp, hcClient);
+    }
+
+    /**
+     * 查询云服务器列表接口
+     *
+     * 查询云服务器列表接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudServersRequest 请求对象
+     * @return CompletableFuture<ListCloudServersResponse>
+     */
+    public CompletableFuture<ListCloudServersResponse> listCloudServersAsync(ListCloudServersRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.listCloudServers);
+    }
+
+    /**
+     * 查询云服务器列表接口
+     *
+     * 查询云服务器列表接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudServersRequest 请求对象
+     * @return AsyncInvoker<ListCloudServersRequest, ListCloudServersResponse>
+     */
+    public AsyncInvoker<ListCloudServersRequest, ListCloudServersResponse> listCloudServersAsyncInvoker(
+        ListCloudServersRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.listCloudServers, hcClient);
     }
 
     /**

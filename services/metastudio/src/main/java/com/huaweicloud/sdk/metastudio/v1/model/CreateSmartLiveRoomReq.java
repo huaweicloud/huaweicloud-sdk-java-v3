@@ -244,6 +244,11 @@ public class CreateSmartLiveRoomReq {
 
     private CoStreamerConfig coStreamerConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priv_data")
+
+    private String privData;
+
     public CreateSmartLiveRoomReq withRoomName(String roomName) {
         this.roomName = roomName;
         return this;
@@ -502,7 +507,7 @@ public class CreateSmartLiveRoomReq {
     }
 
     /**
-     * 主播轮换时备选主播数字人资产ID（仅形象资产，不包含音色）。
+     * 主播轮换时备选主播数字人资产ID（仅形象资产，不包含音色），可以从资产库中查询。
      * @return backupModelAssetIds
      */
     public List<String> getBackupModelAssetIds() {
@@ -661,6 +666,23 @@ public class CreateSmartLiveRoomReq {
         this.coStreamerConfig = coStreamerConfig;
     }
 
+    public CreateSmartLiveRoomReq withPrivData(String privData) {
+        this.privData = privData;
+        return this;
+    }
+
+    /**
+     * 私有数据，用户填写，原样带回。
+     * @return privData
+     */
+    public String getPrivData() {
+        return privData;
+    }
+
+    public void setPrivData(String privData) {
+        this.privData = privData;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -681,7 +703,8 @@ public class CreateSmartLiveRoomReq {
             && Objects.equals(this.rtcCallbackConfig, that.rtcCallbackConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig)
             && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.viewMode, that.viewMode)
-            && Objects.equals(this.coStreamerConfig, that.coStreamerConfig);
+            && Objects.equals(this.coStreamerConfig, that.coStreamerConfig)
+            && Objects.equals(this.privData, that.privData);
     }
 
     @Override
@@ -701,7 +724,8 @@ public class CreateSmartLiveRoomReq {
             reviewConfig,
             sharedConfig,
             viewMode,
-            coStreamerConfig);
+            coStreamerConfig,
+            privData);
     }
 
     @Override
@@ -724,6 +748,7 @@ public class CreateSmartLiveRoomReq {
         sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");
         sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
+        sb.append("    privData: ").append(toIndentedString(privData)).append("\n");
         sb.append("}");
         return sb.toString();
     }

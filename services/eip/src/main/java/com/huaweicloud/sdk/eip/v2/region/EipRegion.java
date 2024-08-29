@@ -73,6 +73,16 @@ public class EipRegion {
 
     public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://vpc.ru-moscow-1.myhuaweicloud.com");
 
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://vpc.cn-east-5.myhuaweicloud.com");
+
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://vpc.cn-east-4.myhuaweicloud.com");
+
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://vpc.af-north-1.myhuaweicloud.com");
+
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://vpc.cn-north-11.myhuaweicloud.com");
+
+    public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://vpc.cn-south-2.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("EIP");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -105,6 +115,11 @@ public class EipRegion {
         map.put("ru-northwest-2", RU_NORTHWEST_2);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("ru-moscow-1", RU_MOSCOW_1);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("cn-east-4", CN_EAST_4);
+        map.put("af-north-1", AF_NORTH_1);
+        map.put("cn-north-11", CN_NORTH_11);
+        map.put("cn-south-2", CN_SOUTH_2);
         return Collections.unmodifiableMap(map);
     }
 

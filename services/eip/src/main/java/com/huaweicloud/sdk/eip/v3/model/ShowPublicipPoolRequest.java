@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.eip.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -18,7 +21,7 @@ public class ShowPublicipPoolRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fields")
 
-    private String fields;
+    private List<String> fields = null;
 
     public ShowPublicipPoolRequest withPublicipPoolId(String publicipPoolId) {
         this.publicipPoolId = publicipPoolId;
@@ -37,8 +40,24 @@ public class ShowPublicipPoolRequest {
         this.publicipPoolId = publicipPoolId;
     }
 
-    public ShowPublicipPoolRequest withFields(String fields) {
+    public ShowPublicipPoolRequest withFields(List<String> fields) {
         this.fields = fields;
+        return this;
+    }
+
+    public ShowPublicipPoolRequest addFieldsItem(String fieldsItem) {
+        if (this.fields == null) {
+            this.fields = new ArrayList<>();
+        }
+        this.fields.add(fieldsItem);
+        return this;
+    }
+
+    public ShowPublicipPoolRequest withFields(Consumer<List<String>> fieldsSetter) {
+        if (this.fields == null) {
+            this.fields = new ArrayList<>();
+        }
+        fieldsSetter.accept(this.fields);
         return this;
     }
 
@@ -46,11 +65,11 @@ public class ShowPublicipPoolRequest {
      * 显示，形式为\"fields=id&fields=name&...\"  支持字段：id/name/size/used/project_id/status/billing_info/created_at/updated_at/type/shared/is_common/description/tags/enterprise_project_id/allow_share_bandwidth_types/public_border_group
      * @return fields
      */
-    public String getFields() {
+    public List<String> getFields() {
         return fields;
     }
 
-    public void setFields(String fields) {
+    public void setFields(List<String> fields) {
         this.fields = fields;
     }
 

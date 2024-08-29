@@ -27,6 +27,11 @@ public class CreateRobotReq {
     private String roomId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "robot_type")
+
+    private RobotTypeEnum robotType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "language")
 
     private LanguageEnum language;
@@ -117,6 +122,23 @@ public class CreateRobotReq {
 
     public void setRoomId(String roomId) {
         this.roomId = roomId;
+    }
+
+    public CreateRobotReq withRobotType(RobotTypeEnum robotType) {
+        this.robotType = robotType;
+        return this;
+    }
+
+    /**
+     * Get robotType
+     * @return robotType
+     */
+    public RobotTypeEnum getRobotType() {
+        return robotType;
+    }
+
+    public void setRobotType(RobotTypeEnum robotType) {
+        this.robotType = robotType;
     }
 
     public CreateRobotReq withLanguage(LanguageEnum language) {
@@ -312,7 +334,8 @@ public class CreateRobotReq {
         }
         CreateRobotReq that = (CreateRobotReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.appType, that.appType)
-            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.robotType, that.robotType)
+            && Objects.equals(this.language, that.language)
             && Objects.equals(this.tailSilenceTime, that.tailSilenceTime)
             && Objects.equals(this.enableQuestionAudit, that.enableQuestionAudit)
             && Objects.equals(this.huaweiEiCbs, that.huaweiEiCbs)
@@ -327,6 +350,7 @@ public class CreateRobotReq {
         return Objects.hash(name,
             appType,
             roomId,
+            robotType,
             language,
             tailSilenceTime,
             enableQuestionAudit,
@@ -344,6 +368,7 @@ public class CreateRobotReq {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
+        sb.append("    robotType: ").append(toIndentedString(robotType)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    tailSilenceTime: ").append(toIndentedString(tailSilenceTime)).append("\n");
         sb.append("    enableQuestionAudit: ").append(toIndentedString(enableQuestionAudit)).append("\n");

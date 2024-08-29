@@ -34,7 +34,7 @@ public class UnfreezeSubCustomersReq {
     private String indirectPartnerId;
 
     /**
-     * |参数名称：解冻类型| |参数的约束及描述：该参数非必填，解冻类型，支持枚举| |ACCOUNT：冻结账户，ACCOUNT_AND_RESOURCE：冻结账户与资源|
+     * |参数名称：解冻类型| |参数的约束及描述：该参数非必填，解冻类型，支持枚举| |ACCOUNT：解冻账号，ACCOUNT_AND_RESOURCE：解冻账号与资源|
      */
     public static final class UnfreezeTypeEnum {
 
@@ -181,7 +181,7 @@ public class UnfreezeSubCustomersReq {
     }
 
     /**
-     * |参数名称：解冻类型| |参数的约束及描述：该参数非必填，解冻类型，支持枚举| |ACCOUNT：冻结账户，ACCOUNT_AND_RESOURCE：冻结账户与资源|
+     * |参数名称：解冻类型| |参数的约束及描述：该参数非必填，解冻类型，支持枚举| |ACCOUNT：解冻账号，ACCOUNT_AND_RESOURCE：解冻账号与资源|
      * @return unfreezeType
      */
     public UnfreezeTypeEnum getUnfreezeType() {

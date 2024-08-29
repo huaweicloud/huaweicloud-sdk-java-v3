@@ -34,7 +34,7 @@ public class GeneralTableResult {
     }
 
     /**
-     * 文字区域数目。 
+     * 文字区域数目。          
      * @return wordsRegionCount
      */
     public Integer getWordsRegionCount() {

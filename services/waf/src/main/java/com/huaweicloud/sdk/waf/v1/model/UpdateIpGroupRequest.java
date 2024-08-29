@@ -22,6 +22,11 @@ public class UpdateIpGroupRequest {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action")
+
+    private String action;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private UpdateIpGroupRequestBody body;
@@ -60,6 +65,23 @@ public class UpdateIpGroupRequest {
         this.id = id;
     }
 
+    public UpdateIpGroupRequest withAction(String action) {
+        this.action = action;
+        return this;
+    }
+
+    /**
+     * 增量修改ip地址组时，此为必传字段，传入“add”;删除一个或者多个ip时传入“delete”
+     * @return action
+     */
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
     public UpdateIpGroupRequest withBody(UpdateIpGroupRequestBody body) {
         this.body = body;
         return this;
@@ -96,12 +118,12 @@ public class UpdateIpGroupRequest {
         }
         UpdateIpGroupRequest that = (UpdateIpGroupRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.action, that.action) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, id, body);
+        return Objects.hash(enterpriseProjectId, id, action, body);
     }
 
     @Override
@@ -110,6 +132,7 @@ public class UpdateIpGroupRequest {
         sb.append("class UpdateIpGroupRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

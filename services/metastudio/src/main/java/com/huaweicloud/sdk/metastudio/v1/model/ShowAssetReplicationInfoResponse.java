@@ -28,6 +28,11 @@ public class ShowAssetReplicationInfoResponse extends SdkResponse {
     private ReplicationEncInfo encryptionInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_time")
+
+    private Long expireTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -92,6 +97,25 @@ public class ShowAssetReplicationInfoResponse extends SdkResponse {
         this.encryptionInfo = encryptionInfo;
     }
 
+    public ShowAssetReplicationInfoResponse withExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+        return this;
+    }
+
+    /**
+     * 过期时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return expireTime
+     */
+    public Long getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+    }
+
     public ShowAssetReplicationInfoResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -122,12 +146,12 @@ public class ShowAssetReplicationInfoResponse extends SdkResponse {
         ShowAssetReplicationInfoResponse that = (ShowAssetReplicationInfoResponse) obj;
         return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetInfo, that.assetInfo)
             && Objects.equals(this.encryptionInfo, that.encryptionInfo)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(assetId, assetInfo, encryptionInfo, xRequestId);
+        return Objects.hash(assetId, assetInfo, encryptionInfo, expireTime, xRequestId);
     }
 
     @Override
@@ -137,6 +161,7 @@ public class ShowAssetReplicationInfoResponse extends SdkResponse {
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    assetInfo: ").append(toIndentedString(assetInfo)).append("\n");
         sb.append("    encryptionInfo: ").append(toIndentedString(encryptionInfo)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

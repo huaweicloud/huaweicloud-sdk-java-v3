@@ -48,7 +48,7 @@ public class ChangeInstanceTypeRequest {
     }
 
     /**
-     * 可用分区名称。  可参考[地区和终端节点](https://developer.huaweicloud.com/endpoint)获取
+     * 可用分区名称。  可参考接口\"获取服务可用区\"获取
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

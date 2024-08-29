@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -39,6 +40,11 @@ public class StartSmartChatJobRequest {
     @JsonProperty(value = "robot_id")
 
     private String robotId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private SmartChatJobsReq body;
 
     public StartSmartChatJobRequest withAuthorization(String authorization) {
         this.authorization = authorization;
@@ -148,6 +154,32 @@ public class StartSmartChatJobRequest {
         this.robotId = robotId;
     }
 
+    public StartSmartChatJobRequest withBody(SmartChatJobsReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public StartSmartChatJobRequest withBody(Consumer<SmartChatJobsReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new SmartChatJobsReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public SmartChatJobsReq getBody() {
+        return body;
+    }
+
+    public void setBody(SmartChatJobsReq body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -159,12 +191,13 @@ public class StartSmartChatJobRequest {
         StartSmartChatJobRequest that = (StartSmartChatJobRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
-            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.robotId, that.robotId);
+            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.robotId, that.robotId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, roomId, robotId);
+        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, roomId, robotId, body);
     }
 
     @Override
@@ -177,6 +210,7 @@ public class StartSmartChatJobRequest {
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

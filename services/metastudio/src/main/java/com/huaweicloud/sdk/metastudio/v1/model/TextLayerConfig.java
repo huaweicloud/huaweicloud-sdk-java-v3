@@ -53,7 +53,7 @@ public class TextLayerConfig {
     }
 
     /**
-     * 字体。当前支持的字体： * HarmonyOS_Sans_SC_Black：鸿蒙粗体 * HarmonyOS_Sans_SC_Regular：鸿蒙常规 * HarmonyOS_Sans_SC_Thin：鸿蒙细体 * fzyouh：方正瘦体
+     * 字体。当前支持的字体请参考[服务支持的字体](metastudio_02_0041.xml)。
      * @return fontName
      */
     public String getFontName() {

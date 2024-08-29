@@ -155,6 +155,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListJobOperationLogRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListJobOperationLogResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeQuestionRequest;
@@ -3761,6 +3763,35 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<DeleteVoiceTrainingJobRequest, DeleteVoiceTrainingJobResponse> deleteVoiceTrainingJobAsyncInvoker(
         DeleteVoiceTrainingJobRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.deleteVoiceTrainingJob, hcClient);
+    }
+
+    /**
+     * 查询任务操作日志
+     *
+     * 查询任务操作日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobOperationLogRequest 请求对象
+     * @return CompletableFuture<ListJobOperationLogResponse>
+     */
+    public CompletableFuture<ListJobOperationLogResponse> listJobOperationLogAsync(ListJobOperationLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listJobOperationLog);
+    }
+
+    /**
+     * 查询任务操作日志
+     *
+     * 查询任务操作日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobOperationLogRequest 请求对象
+     * @return AsyncInvoker<ListJobOperationLogRequest, ListJobOperationLogResponse>
+     */
+    public AsyncInvoker<ListJobOperationLogRequest, ListJobOperationLogResponse> listJobOperationLogAsyncInvoker(
+        ListJobOperationLogRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.listJobOperationLog, hcClient);
     }
 
     /**

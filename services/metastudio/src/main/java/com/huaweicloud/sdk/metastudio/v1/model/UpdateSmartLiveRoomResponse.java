@@ -246,6 +246,11 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     private CoStreamerConfig coStreamerConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priv_data")
+
+    private String privData;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "room_id")
 
     private String roomId;
@@ -619,7 +624,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * 主播轮换时备选主播数字人资产ID（仅形象资产，不包含音色）。
+     * 主播轮换时备选主播数字人资产ID（仅形象资产，不包含音色），可以从资产库中查询。
      * @return backupModelAssetIds
      */
     public List<String> getBackupModelAssetIds() {
@@ -777,6 +782,23 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
 
     public void setCoStreamerConfig(CoStreamerConfig coStreamerConfig) {
         this.coStreamerConfig = coStreamerConfig;
+    }
+
+    public UpdateSmartLiveRoomResponse withPrivData(String privData) {
+        this.privData = privData;
+        return this;
+    }
+
+    /**
+     * 私有数据，用户填写，原样带回。
+     * @return privData
+     */
+    public String getPrivData() {
+        return privData;
+    }
+
+    public void setPrivData(String privData) {
+        this.privData = privData;
     }
 
     public UpdateSmartLiveRoomResponse withRoomId(String roomId) {
@@ -946,7 +968,8 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
             && Objects.equals(this.rtcCallbackConfig, that.rtcCallbackConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig)
             && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.viewMode, that.viewMode)
-            && Objects.equals(this.coStreamerConfig, that.coStreamerConfig) && Objects.equals(this.roomId, that.roomId)
+            && Objects.equals(this.coStreamerConfig, that.coStreamerConfig)
+            && Objects.equals(this.privData, that.privData) && Objects.equals(this.roomId, that.roomId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.thumbnail, that.thumbnail)
             && Objects.equals(this.roomState, that.roomState) && Objects.equals(this.errorInfo, that.errorInfo)
@@ -971,6 +994,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
             sharedConfig,
             viewMode,
             coStreamerConfig,
+            privData,
             roomId,
             createTime,
             updateTime,
@@ -1001,6 +1025,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
         sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");
         sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
+        sb.append("    privData: ").append(toIndentedString(privData)).append("\n");
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

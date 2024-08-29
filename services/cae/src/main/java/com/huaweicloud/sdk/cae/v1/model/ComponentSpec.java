@@ -79,6 +79,11 @@ public class ComponentSpec {
         public static final RuntimeEnum PHP7 = new RuntimeEnum("Php7");
 
         /**
+         * Enum PHP8 for value: "Php8"
+         */
+        public static final RuntimeEnum PHP8 = new RuntimeEnum("Php8");
+
+        /**
          * Enum DOTNET6 for value: "Dotnet6"
          */
         public static final RuntimeEnum DOTNET6 = new RuntimeEnum("Dotnet6");
@@ -108,6 +113,7 @@ public class ComponentSpec {
             map.put("Nodejs14", NODEJS14);
             map.put("Nodejs16", NODEJS16);
             map.put("Php7", PHP7);
+            map.put("Php8", PHP8);
             map.put("Dotnet6", DOTNET6);
             map.put("Dotnet7", DOTNET7);
             map.put("Dotnet8", DOTNET8);
@@ -215,10 +221,92 @@ public class ComponentSpec {
 
     private String buildId;
 
+    /**
+     * 组件状态。
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum CREATED for value: "created"
+         */
+        public static final StatusEnum CREATED = new StatusEnum("created");
+
+        /**
+         * Enum RUNNING for value: "running"
+         */
+        public static final StatusEnum RUNNING = new StatusEnum("running");
+
+        /**
+         * Enum PAUSED for value: "paused"
+         */
+        public static final StatusEnum PAUSED = new StatusEnum("paused");
+
+        /**
+         * Enum NOTREADY for value: "notReady"
+         */
+        public static final StatusEnum NOTREADY = new StatusEnum("notReady");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("created", CREATED);
+            map.put("running", RUNNING);
+            map.put("paused", PAUSED);
+            map.put("notReady", NOTREADY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "build_log_id")
@@ -460,7 +548,7 @@ public class ComponentSpec {
         this.buildId = buildId;
     }
 
-    public ComponentSpec withStatus(String status) {
+    public ComponentSpec withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -469,11 +557,11 @@ public class ComponentSpec {
      * 组件状态。
      * @return status
      */
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 

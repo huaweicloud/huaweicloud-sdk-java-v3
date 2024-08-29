@@ -727,6 +727,16 @@ public class CaeMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListComponentsRequest::getOffset, ListComponentsRequest::setOffset));
+        builder.<ListComponentsRequest.SortKeyEnum>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListComponentsRequest.SortKeyEnum.class),
+            f -> f.withMarshaller(ListComponentsRequest::getSortKey, ListComponentsRequest::setSortKey));
+        builder.<ListComponentsRequest.SortEnum>withRequestField("sort",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListComponentsRequest.SortEnum.class),
+            f -> f.withMarshaller(ListComponentsRequest::getSort, ListComponentsRequest::setSort));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

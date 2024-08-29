@@ -95,6 +95,11 @@ public class QueryResRecordsDetailReq {
 
     private String billCycleEnd;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "payer_account_id")
+
+    private String payerAccountId;
+
     public QueryResRecordsDetailReq withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -394,6 +399,23 @@ public class QueryResRecordsDetailReq {
         this.billCycleEnd = billCycleEnd;
     }
 
+    public QueryResRecordsDetailReq withPayerAccountId(String payerAccountId) {
+        this.payerAccountId = payerAccountId;
+        return this;
+    }
+
+    /**
+     * |参数名称：支付账号ID。| |参数的约束及描述：普通客户、财务独立企业子客户查询消费记录，只能查询到客户自己的消费记录，该参数不携带或携带为自身ID时，查询的都只是自身的消费记录； 企业主客户查询消费记录，不携带时，查询的是自身的、财务托管企业子、财务独立企业子的消费记录；入参自身ID时，查询的是自身的、财务托管企业子的消费记录；也可入参其名下财务独立企业子的客户ID，只查询该财务独立企业子的消费记录； 财务托管企业子查询消费记录，入参自身ID时，查询的是未与企业主关联时的消费记录；入参企业主客户ID时，查询的是与企业主关联后的消费记录；不携带时查询以上全部消费记录|
+     * @return payerAccountId
+     */
+    public String getPayerAccountId() {
+        return payerAccountId;
+    }
+
+    public void setPayerAccountId(String payerAccountId) {
+        this.payerAccountId = payerAccountId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -413,7 +435,8 @@ public class QueryResRecordsDetailReq {
             && Objects.equals(this.method, that.method) && Objects.equals(this.subCustomerId, that.subCustomerId)
             && Objects.equals(this.statisticType, that.statisticType) && Objects.equals(this.queryType, that.queryType)
             && Objects.equals(this.billCycleBegin, that.billCycleBegin)
-            && Objects.equals(this.billCycleEnd, that.billCycleEnd);
+            && Objects.equals(this.billCycleEnd, that.billCycleEnd)
+            && Objects.equals(this.payerAccountId, that.payerAccountId);
     }
 
     @Override
@@ -434,7 +457,8 @@ public class QueryResRecordsDetailReq {
             statisticType,
             queryType,
             billCycleBegin,
-            billCycleEnd);
+            billCycleEnd,
+            payerAccountId);
     }
 
     @Override
@@ -458,6 +482,7 @@ public class QueryResRecordsDetailReq {
         sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
         sb.append("    billCycleBegin: ").append(toIndentedString(billCycleBegin)).append("\n");
         sb.append("    billCycleEnd: ").append(toIndentedString(billCycleEnd)).append("\n");
+        sb.append("    payerAccountId: ").append(toIndentedString(payerAccountId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

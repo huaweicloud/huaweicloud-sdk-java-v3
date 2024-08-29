@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * ChatVideoConfigRsp
+ * SmartChatVideoConfig
  */
-public class ChatVideoConfigRsp {
+public class SmartChatVideoConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "width")
@@ -20,13 +20,13 @@ public class ChatVideoConfigRsp {
 
     private Integer height;
 
-    public ChatVideoConfigRsp withWidth(Integer width) {
+    public SmartChatVideoConfig withWidth(Integer width) {
         this.width = width;
         return this;
     }
 
     /**
-     * 视频宽度。  单位：像素。  最小值320，最大值2560。 > * clip_mode=RESIZE时，当前支持1920x1080、1080x1920、1280x720、720x1280四种分辨率。
+     * 视频宽度。  单位：像素。  最小值320，最大值2560。 > * clip_mode=RESIZE时，当前支持1920x1080、1080x1920、1280x720、720x1280、3840x2160、2160x3840六种分辨率。4K分辨率视频需要分身数字人模型支持4K的情况下才能使用。 > * clip_mode=CROP，裁剪后视频，（dx,dy）为原点，保留视频像宽度为width。 > * 分身数字人直播目前只支持1080x1920。
      * minimum: 0
      * maximum: 3840
      * @return width
@@ -39,13 +39,13 @@ public class ChatVideoConfigRsp {
         this.width = width;
     }
 
-    public ChatVideoConfigRsp withHeight(Integer height) {
+    public SmartChatVideoConfig withHeight(Integer height) {
         this.height = height;
         return this;
     }
 
     /**
-     * 视频高度。  单位：像素。  最小值320，最大值2560。 > * clip_mode=RESIZE时，当前支持1920x1080、1080x1920、1280x720、720x1280四种分辨率。
+     * 视频高度。  单位：像素。  最小值320，最大值2560。 > * clip_mode=RESIZE时，当前支持1920x1080、1080x1920、1280x720、720x1280、3840x2160、2160x3840六种分辨率分辨率。 > * clip_mode=CROP，裁剪后视频，（dx,dy）为原点，保留视频像高度为height。 > * 分身数字人直播目前只支持1080x1920。
      * minimum: 0
      * maximum: 3840
      * @return height
@@ -66,7 +66,7 @@ public class ChatVideoConfigRsp {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChatVideoConfigRsp that = (ChatVideoConfigRsp) obj;
+        SmartChatVideoConfig that = (SmartChatVideoConfig) obj;
         return Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height);
     }
 
@@ -78,7 +78,7 @@ public class ChatVideoConfigRsp {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ChatVideoConfigRsp {\n");
+        sb.append("class SmartChatVideoConfig {\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("}");

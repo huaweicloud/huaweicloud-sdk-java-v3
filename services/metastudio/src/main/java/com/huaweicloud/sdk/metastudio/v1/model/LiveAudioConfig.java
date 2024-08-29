@@ -31,7 +31,7 @@ public class LiveAudioConfig {
     }
 
     /**
-     * 插入音频资产的资产id，外部资产信息无需填写
+     * 插入音频资产的资产id，外部资产信息无需填写。若填写，可以从资产库中查询。
      * @return assetId
      */
     public String getAssetId() {

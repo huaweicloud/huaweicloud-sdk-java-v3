@@ -38,6 +38,11 @@ public class CreateWhiteblackipRuleResponse extends SdkResponse {
     private Integer white;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_mode")
+
+    private String timeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_group")
 
     private IpGroup ipGroup;
@@ -142,6 +147,23 @@ public class CreateWhiteblackipRuleResponse extends SdkResponse {
         this.white = white;
     }
 
+    public CreateWhiteblackipRuleResponse withTimeMode(String timeMode) {
+        this.timeMode = timeMode;
+        return this;
+    }
+
+    /**
+     * 生效模式，默认为permanent（立即生效）
+     * @return timeMode
+     */
+    public String getTimeMode() {
+        return timeMode;
+    }
+
+    public void setTimeMode(String timeMode) {
+        this.timeMode = timeMode;
+    }
+
     public CreateWhiteblackipRuleResponse withIpGroup(IpGroup ipGroup) {
         this.ipGroup = ipGroup;
         return this;
@@ -230,14 +252,14 @@ public class CreateWhiteblackipRuleResponse extends SdkResponse {
         CreateWhiteblackipRuleResponse that = (CreateWhiteblackipRuleResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.addr, that.addr)
-            && Objects.equals(this.white, that.white) && Objects.equals(this.ipGroup, that.ipGroup)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.timestamp, that.timestamp);
+            && Objects.equals(this.white, that.white) && Objects.equals(this.timeMode, that.timeMode)
+            && Objects.equals(this.ipGroup, that.ipGroup) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, policyid, addr, white, ipGroup, status, description, timestamp);
+        return Objects.hash(id, name, policyid, addr, white, timeMode, ipGroup, status, description, timestamp);
     }
 
     @Override
@@ -249,6 +271,7 @@ public class CreateWhiteblackipRuleResponse extends SdkResponse {
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
+        sb.append("    timeMode: ").append(toIndentedString(timeMode)).append("\n");
         sb.append("    ipGroup: ").append(toIndentedString(ipGroup)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

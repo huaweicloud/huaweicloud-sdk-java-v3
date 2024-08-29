@@ -427,6 +427,16 @@ public class VoiceModelAssetMeta {
 
     private ExternalVoiceAssetMeta externalVoiceMeta;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_vc_process")
+
+    private Boolean isSupportVcProcess;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_flexus")
+
+    private Boolean isFlexus;
+
     public VoiceModelAssetMeta withOrder(Integer order) {
         this.order = order;
         return this;
@@ -604,6 +614,40 @@ public class VoiceModelAssetMeta {
         this.externalVoiceMeta = externalVoiceMeta;
     }
 
+    public VoiceModelAssetMeta withIsSupportVcProcess(Boolean isSupportVcProcess) {
+        this.isSupportVcProcess = isSupportVcProcess;
+        return this;
+    }
+
+    /**
+     * 是否支持vc。
+     * @return isSupportVcProcess
+     */
+    public Boolean getIsSupportVcProcess() {
+        return isSupportVcProcess;
+    }
+
+    public void setIsSupportVcProcess(Boolean isSupportVcProcess) {
+        this.isSupportVcProcess = isSupportVcProcess;
+    }
+
+    public VoiceModelAssetMeta withIsFlexus(Boolean isFlexus) {
+        this.isFlexus = isFlexus;
+        return this;
+    }
+
+    /**
+     * 是否是Flexus版本声音。
+     * @return isFlexus
+     */
+    public Boolean getIsFlexus() {
+        return isFlexus;
+    }
+
+    public void setIsFlexus(Boolean isFlexus) {
+        this.isFlexus = isFlexus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -618,7 +662,9 @@ public class VoiceModelAssetMeta {
             && Objects.equals(this.speedRatio, that.speedRatio) && Objects.equals(this.volumeRatio, that.volumeRatio)
             && Objects.equals(this.isRealtimeVoice, that.isRealtimeVoice)
             && Objects.equals(this.voiceCapability, that.voiceCapability)
-            && Objects.equals(this.externalVoiceMeta, that.externalVoiceMeta);
+            && Objects.equals(this.externalVoiceMeta, that.externalVoiceMeta)
+            && Objects.equals(this.isSupportVcProcess, that.isSupportVcProcess)
+            && Objects.equals(this.isFlexus, that.isFlexus);
     }
 
     @Override
@@ -631,7 +677,9 @@ public class VoiceModelAssetMeta {
             volumeRatio,
             isRealtimeVoice,
             voiceCapability,
-            externalVoiceMeta);
+            externalVoiceMeta,
+            isSupportVcProcess,
+            isFlexus);
     }
 
     @Override
@@ -647,6 +695,8 @@ public class VoiceModelAssetMeta {
         sb.append("    isRealtimeVoice: ").append(toIndentedString(isRealtimeVoice)).append("\n");
         sb.append("    voiceCapability: ").append(toIndentedString(voiceCapability)).append("\n");
         sb.append("    externalVoiceMeta: ").append(toIndentedString(externalVoiceMeta)).append("\n");
+        sb.append("    isSupportVcProcess: ").append(toIndentedString(isSupportVcProcess)).append("\n");
+        sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

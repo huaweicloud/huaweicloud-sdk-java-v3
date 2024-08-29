@@ -223,7 +223,7 @@ public class PlayPolicy {
     }
 
     /**
-     * 是否自动播放剧本。 true: 服务完成任务初始化后，自动播放剧本 false: 服务完成任务初始化后，等待信号后再开始播放剧本
+     * 是否启动推理，自动播放剧本。 如果不启动推理，数字人为静默状态。 true: 服务完成任务初始化后，自动播放剧本 false: 服务完成任务初始化后，等待信号后再开始播放剧本
      * @return autoPlayScript
      */
     public Boolean getAutoPlayScript() {

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.cae.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -34,6 +39,156 @@ public class ListComponentsRequest {
     @JsonProperty(value = "offset")
 
     private String offset;
+
+    /**
+     * 排序字段。
+     */
+    public static final class SortKeyEnum {
+
+        /**
+         * Enum CREATED_AT for value: "created_at"
+         */
+        public static final SortKeyEnum CREATED_AT = new SortKeyEnum("created_at");
+
+        /**
+         * Enum UPDATED_AT for value: "updated_at"
+         */
+        public static final SortKeyEnum UPDATED_AT = new SortKeyEnum("updated_at");
+
+        private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortKeyEnum> createStaticFields() {
+            Map<String, SortKeyEnum> map = new HashMap<>();
+            map.put("created_at", CREATED_AT);
+            map.put("updated_at", UPDATED_AT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SortKeyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortKeyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
+        }
+
+        public static SortKeyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SortKeyEnum) {
+                return this.value.equals(((SortKeyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_key")
+
+    private SortKeyEnum sortKey;
+
+    /**
+     * 升降序规则。
+     */
+    public static final class SortEnum {
+
+        /**
+         * Enum ASC for value: "asc"
+         */
+        public static final SortEnum ASC = new SortEnum("asc");
+
+        /**
+         * Enum DESC for value: "desc"
+         */
+        public static final SortEnum DESC = new SortEnum("desc");
+
+        private static final Map<String, SortEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortEnum> createStaticFields() {
+            Map<String, SortEnum> map = new HashMap<>();
+            map.put("asc", ASC);
+            map.put("desc", DESC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SortEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortEnum(value));
+        }
+
+        public static SortEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SortEnum) {
+                return this.value.equals(((SortEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort")
+
+    private SortEnum sort;
 
     public ListComponentsRequest withApplicationId(String applicationId) {
         this.applicationId = applicationId;
@@ -124,6 +279,40 @@ public class ListComponentsRequest {
         this.offset = offset;
     }
 
+    public ListComponentsRequest withSortKey(SortKeyEnum sortKey) {
+        this.sortKey = sortKey;
+        return this;
+    }
+
+    /**
+     * 排序字段。
+     * @return sortKey
+     */
+    public SortKeyEnum getSortKey() {
+        return sortKey;
+    }
+
+    public void setSortKey(SortKeyEnum sortKey) {
+        this.sortKey = sortKey;
+    }
+
+    public ListComponentsRequest withSort(SortEnum sort) {
+        this.sort = sort;
+        return this;
+    }
+
+    /**
+     * 升降序规则。
+     * @return sort
+     */
+    public SortEnum getSort() {
+        return sort;
+    }
+
+    public void setSort(SortEnum sort) {
+        this.sort = sort;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -136,12 +325,13 @@ public class ListComponentsRequest {
         return Objects.equals(this.applicationId, that.applicationId)
             && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
             && Objects.equals(this.xEnvironmentID, that.xEnvironmentID) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sort, that.sort);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(applicationId, xEnterpriseProjectID, xEnvironmentID, limit, offset);
+        return Objects.hash(applicationId, xEnterpriseProjectID, xEnvironmentID, limit, offset, sortKey, sort);
     }
 
     @Override
@@ -153,6 +343,8 @@ public class ListComponentsRequest {
         sb.append("    xEnvironmentID: ").append(toIndentedString(xEnvironmentID)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
+        sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
         sb.append("}");
         return sb.toString();
     }

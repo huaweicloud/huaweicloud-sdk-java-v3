@@ -124,6 +124,21 @@ public class HumanModel2DAssetMeta {
 
     private List<String> deviceNames = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_with_action_library")
+
+    private Boolean isWithActionLibrary;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_tag_map")
+
+    private List<ActionTagInfo> actionTagMap = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_flexus")
+
+    private Boolean isFlexus;
+
     public HumanModel2DAssetMeta withIsActionEditable(Boolean isActionEditable) {
         this.isActionEditable = isActionEditable;
         return this;
@@ -242,6 +257,73 @@ public class HumanModel2DAssetMeta {
         this.deviceNames = deviceNames;
     }
 
+    public HumanModel2DAssetMeta withIsWithActionLibrary(Boolean isWithActionLibrary) {
+        this.isWithActionLibrary = isWithActionLibrary;
+        return this;
+    }
+
+    /**
+     * 分身数字人是否带原子动作库。 > * 带原子动作库的分身数字人可做动作编排。
+     * @return isWithActionLibrary
+     */
+    public Boolean getIsWithActionLibrary() {
+        return isWithActionLibrary;
+    }
+
+    public void setIsWithActionLibrary(Boolean isWithActionLibrary) {
+        this.isWithActionLibrary = isWithActionLibrary;
+    }
+
+    public HumanModel2DAssetMeta withActionTagMap(List<ActionTagInfo> actionTagMap) {
+        this.actionTagMap = actionTagMap;
+        return this;
+    }
+
+    public HumanModel2DAssetMeta addActionTagMapItem(ActionTagInfo actionTagMapItem) {
+        if (this.actionTagMap == null) {
+            this.actionTagMap = new ArrayList<>();
+        }
+        this.actionTagMap.add(actionTagMapItem);
+        return this;
+    }
+
+    public HumanModel2DAssetMeta withActionTagMap(Consumer<List<ActionTagInfo>> actionTagMapSetter) {
+        if (this.actionTagMap == null) {
+            this.actionTagMap = new ArrayList<>();
+        }
+        actionTagMapSetter.accept(this.actionTagMap);
+        return this;
+    }
+
+    /**
+     * 动作标签映射。
+     * @return actionTagMap
+     */
+    public List<ActionTagInfo> getActionTagMap() {
+        return actionTagMap;
+    }
+
+    public void setActionTagMap(List<ActionTagInfo> actionTagMap) {
+        this.actionTagMap = actionTagMap;
+    }
+
+    public HumanModel2DAssetMeta withIsFlexus(Boolean isFlexus) {
+        this.isFlexus = isFlexus;
+        return this;
+    }
+
+    /**
+     * 是否是Flexus版本分身数字人。
+     * @return isFlexus
+     */
+    public Boolean getIsFlexus() {
+        return isFlexus;
+    }
+
+    public void setIsFlexus(Boolean isFlexus) {
+        this.isFlexus = isFlexus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -256,13 +338,22 @@ public class HumanModel2DAssetMeta {
             && Objects.equals(this.supportLive, that.supportLive)
             && Objects.equals(this.modelVersion, that.modelVersion)
             && Objects.equals(this.modelResolution, that.modelResolution)
-            && Objects.equals(this.deviceNames, that.deviceNames);
+            && Objects.equals(this.deviceNames, that.deviceNames)
+            && Objects.equals(this.isWithActionLibrary, that.isWithActionLibrary)
+            && Objects.equals(this.actionTagMap, that.actionTagMap) && Objects.equals(this.isFlexus, that.isFlexus);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(isActionEditable, isRealBackground, supportLive, modelVersion, modelResolution, deviceNames);
+        return Objects.hash(isActionEditable,
+            isRealBackground,
+            supportLive,
+            modelVersion,
+            modelResolution,
+            deviceNames,
+            isWithActionLibrary,
+            actionTagMap,
+            isFlexus);
     }
 
     @Override
@@ -275,6 +366,9 @@ public class HumanModel2DAssetMeta {
         sb.append("    modelVersion: ").append(toIndentedString(modelVersion)).append("\n");
         sb.append("    modelResolution: ").append(toIndentedString(modelResolution)).append("\n");
         sb.append("    deviceNames: ").append(toIndentedString(deviceNames)).append("\n");
+        sb.append("    isWithActionLibrary: ").append(toIndentedString(isWithActionLibrary)).append("\n");
+        sb.append("    actionTagMap: ").append(toIndentedString(actionTagMap)).append("\n");
+        sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

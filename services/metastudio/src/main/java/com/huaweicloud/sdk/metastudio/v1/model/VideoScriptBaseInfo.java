@@ -192,7 +192,7 @@ public class VideoScriptBaseInfo {
     }
 
     /**
-     * 数字人模型资产ID。
+     * 数字人模型资产ID，可以从资产库中查询。
      * @return modelAssetId
      */
     public String getModelAssetId() {

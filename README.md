@@ -32,6 +32,8 @@ Java project.
 
 Please choose a specific version number when specifying dependencies, otherwise it may cause unforeseen issues at build time.
 
+You can get the SDK version information through [SDK center](https://console-intl.huaweicloud.com/apiexplorer/#/sdkcenter?language=Java) or [Maven central repository](https://search.maven.org/search?q=huaweicloud-sdk).
+
 ### Individual Services
 
 You can add depenencies for the specific services only. Take using ECS and VPC SDK for example, you need to
@@ -264,7 +266,7 @@ public class Application {
 
 ## Online Debugging
 
-[API Explorer](https://apiexplorer.developer.intl.huaweicloud.com/apiexplorer/overview) provides api retrieval and online debugging, supports full fast retrieval, visual debugging, help document viewing, and online consultation.
+[API Explorer](https://apiexplorer.developer.intl.huaweicloud.com/apiexplorer/overview) provides api retrieval, SDK samples and online debugging, supports full fast retrieval, visual debugging, help document viewing, and online consultation.
 
 ## Changelog
 

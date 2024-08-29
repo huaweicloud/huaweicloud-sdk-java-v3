@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.eip.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -13,7 +16,7 @@ public class ListTenantVpcIgwsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fields")
 
-    private String fields;
+    private List<String> fields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -55,8 +58,24 @@ public class ListTenantVpcIgwsRequest {
 
     private String marker;
 
-    public ListTenantVpcIgwsRequest withFields(String fields) {
+    public ListTenantVpcIgwsRequest withFields(List<String> fields) {
         this.fields = fields;
+        return this;
+    }
+
+    public ListTenantVpcIgwsRequest addFieldsItem(String fieldsItem) {
+        if (this.fields == null) {
+            this.fields = new ArrayList<>();
+        }
+        this.fields.add(fieldsItem);
+        return this;
+    }
+
+    public ListTenantVpcIgwsRequest withFields(Consumer<List<String>> fieldsSetter) {
+        if (this.fields == null) {
+            this.fields = new ArrayList<>();
+        }
+        fieldsSetter.accept(this.fields);
         return this;
     }
 
@@ -64,11 +83,11 @@ public class ListTenantVpcIgwsRequest {
      * 形式为\\\"fields=id&fields=project_id&...\\\"，支持字段：id/project_id/vpc_id/created_at/updated_at/name
      * @return fields
      */
-    public String getFields() {
+    public List<String> getFields() {
         return fields;
     }
 
-    public void setFields(String fields) {
+    public void setFields(List<String> fields) {
         this.fields = fields;
     }
 

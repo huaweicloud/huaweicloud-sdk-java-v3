@@ -33,6 +33,11 @@ public class CreateManualBackupRequestBody {
 
     private List<BackupDatabase> databases = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_database_individually")
+
+    private Boolean backupDatabaseIndividually;
+
     public CreateManualBackupRequestBody withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -117,6 +122,23 @@ public class CreateManualBackupRequestBody {
         this.databases = databases;
     }
 
+    public CreateManualBackupRequestBody withBackupDatabaseIndividually(Boolean backupDatabaseIndividually) {
+        this.backupDatabaseIndividually = backupDatabaseIndividually;
+        return this;
+    }
+
+    /**
+     * 是否分库备份，只适用于SQLServer，默认为false
+     * @return backupDatabaseIndividually
+     */
+    public Boolean getBackupDatabaseIndividually() {
+        return backupDatabaseIndividually;
+    }
+
+    public void setBackupDatabaseIndividually(Boolean backupDatabaseIndividually) {
+        this.backupDatabaseIndividually = backupDatabaseIndividually;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -127,12 +149,13 @@ public class CreateManualBackupRequestBody {
         }
         CreateManualBackupRequestBody that = (CreateManualBackupRequestBody) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.databases, that.databases);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.databases, that.databases)
+            && Objects.equals(this.backupDatabaseIndividually, that.backupDatabaseIndividually);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, name, description, databases);
+        return Objects.hash(instanceId, name, description, databases, backupDatabaseIndividually);
     }
 
     @Override
@@ -143,6 +166,7 @@ public class CreateManualBackupRequestBody {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    databases: ").append(toIndentedString(databases)).append("\n");
+        sb.append("    backupDatabaseIndividually: ").append(toIndentedString(backupDatabaseIndividually)).append("\n");
         sb.append("}");
         return sb.toString();
     }

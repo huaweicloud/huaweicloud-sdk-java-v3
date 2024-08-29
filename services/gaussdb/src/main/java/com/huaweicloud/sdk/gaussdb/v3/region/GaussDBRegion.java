@@ -47,6 +47,9 @@ public class GaussDBRegion {
     public static final Region AP_SOUTHEAST_2 =
         new Region("ap-southeast-2", "https://gaussdbformysql.ap-southeast-2.myhuaweicloud.com");
 
+    public static final Region AF_SOUTH_1 =
+        new Region("af-south-1", "https://gaussdb-mysql.af-south-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("GAUSSDB");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -66,6 +69,7 @@ public class GaussDBRegion {
         map.put("sa-brazil-1", SA_BRAZIL_1);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
+        map.put("af-south-1", AF_SOUTH_1);
         return Collections.unmodifiableMap(map);
     }
 

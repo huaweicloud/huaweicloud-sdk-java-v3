@@ -26,7 +26,7 @@ public class BackgroundMusicConfig {
     }
 
     /**
-     * 音乐资产ID。
+     * 音乐资产ID，可以从资产库中查询。
      * @return musicAssetId
      */
     public String getMusicAssetId() {

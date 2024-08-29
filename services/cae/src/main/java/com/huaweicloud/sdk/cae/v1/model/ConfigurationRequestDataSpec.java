@@ -215,6 +215,11 @@ public class ConfigurationRequestDataSpec {
     private List<String> logPaths = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cloud_storage_log_paths")
+
+    private List<CloudStorageLogPathInfo> cloudStorageLogPaths = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instrumentation")
 
     private String instrumentation;
@@ -768,7 +773,7 @@ public class ConfigurationRequestDataSpec {
     }
 
     /**
-     * 自定义日志路径数组。  ConfigurationItem.type为\"log\"时，配置此参数。 
+     * 自定义本地磁盘日志路径数组。  ConfigurationItem.type为\"log\"时，配置此参数。 
      * @return logPaths
      */
     public List<String> getLogPaths() {
@@ -777,6 +782,40 @@ public class ConfigurationRequestDataSpec {
 
     public void setLogPaths(List<String> logPaths) {
         this.logPaths = logPaths;
+    }
+
+    public ConfigurationRequestDataSpec withCloudStorageLogPaths(List<CloudStorageLogPathInfo> cloudStorageLogPaths) {
+        this.cloudStorageLogPaths = cloudStorageLogPaths;
+        return this;
+    }
+
+    public ConfigurationRequestDataSpec addCloudStorageLogPathsItem(CloudStorageLogPathInfo cloudStorageLogPathsItem) {
+        if (this.cloudStorageLogPaths == null) {
+            this.cloudStorageLogPaths = new ArrayList<>();
+        }
+        this.cloudStorageLogPaths.add(cloudStorageLogPathsItem);
+        return this;
+    }
+
+    public ConfigurationRequestDataSpec withCloudStorageLogPaths(
+        Consumer<List<CloudStorageLogPathInfo>> cloudStorageLogPathsSetter) {
+        if (this.cloudStorageLogPaths == null) {
+            this.cloudStorageLogPaths = new ArrayList<>();
+        }
+        cloudStorageLogPathsSetter.accept(this.cloudStorageLogPaths);
+        return this;
+    }
+
+    /**
+     * 自定义云存储日志路径数组。  ConfigurationItem.type为\"log\"时，配置此参数。 
+     * @return cloudStorageLogPaths
+     */
+    public List<CloudStorageLogPathInfo> getCloudStorageLogPaths() {
+        return cloudStorageLogPaths;
+    }
+
+    public void setCloudStorageLogPaths(List<CloudStorageLogPathInfo> cloudStorageLogPaths) {
+        this.cloudStorageLogPaths = cloudStorageLogPaths;
     }
 
     public ConfigurationRequestDataSpec withInstrumentation(String instrumentation) {
@@ -887,6 +926,7 @@ public class ConfigurationRequestDataSpec {
             && Objects.equals(this.readinessProbe, that.readinessProbe)
             && Objects.equals(this.postStart, that.postStart) && Objects.equals(this.preStop, that.preStop)
             && Objects.equals(this.logPaths, that.logPaths)
+            && Objects.equals(this.cloudStorageLogPaths, that.cloudStorageLogPaths)
             && Objects.equals(this.instrumentation, that.instrumentation) && Objects.equals(this.path, that.path)
             && Objects.equals(this.port, that.port) && Objects.equals(this.metrics, that.metrics);
     }
@@ -917,6 +957,7 @@ public class ConfigurationRequestDataSpec {
             postStart,
             preStop,
             logPaths,
+            cloudStorageLogPaths,
             instrumentation,
             path,
             port,
@@ -951,6 +992,7 @@ public class ConfigurationRequestDataSpec {
         sb.append("    postStart: ").append(toIndentedString(postStart)).append("\n");
         sb.append("    preStop: ").append(toIndentedString(preStop)).append("\n");
         sb.append("    logPaths: ").append(toIndentedString(logPaths)).append("\n");
+        sb.append("    cloudStorageLogPaths: ").append(toIndentedString(cloudStorageLogPaths)).append("\n");
         sb.append("    instrumentation: ").append(toIndentedString(instrumentation)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");

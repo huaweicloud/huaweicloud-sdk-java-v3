@@ -158,6 +158,9 @@ import com.huaweicloud.sdk.css.v1.model.StartPipelineResponse;
 import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistReq;
 import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistRequest;
 import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistResponse;
+import com.huaweicloud.sdk.css.v1.model.StartTargetClusterConnectivityTestReq;
+import com.huaweicloud.sdk.css.v1.model.StartTargetClusterConnectivityTestRequest;
+import com.huaweicloud.sdk.css.v1.model.StartTargetClusterConnectivityTestResponse;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpReq;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpRequest;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpResponse;
@@ -1465,6 +1468,11 @@ public class CssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartLogsRequest::getClusterId, StartLogsRequest::setClusterId));
+        builder.<StartLogsRequest.ActionEnum>withRequestField("action",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StartLogsRequest.ActionEnum.class),
+            f -> f.withMarshaller(StartLogsRequest::getAction, StartLogsRequest::setAction));
         builder.<StartLogsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1501,6 +1509,45 @@ public class CssMeta {
             f -> f.withMarshaller(StartPublicWhitelistRequest::getBody, StartPublicWhitelistRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartTargetClusterConnectivityTestRequest, StartTargetClusterConnectivityTestResponse> startTargetClusterConnectivityTest =
+        genForStartTargetClusterConnectivityTest();
+
+    private static HttpRequestDef<StartTargetClusterConnectivityTestRequest, StartTargetClusterConnectivityTestResponse> genForStartTargetClusterConnectivityTest() {
+        // basic
+        HttpRequestDef.Builder<StartTargetClusterConnectivityTestRequest, StartTargetClusterConnectivityTestResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    StartTargetClusterConnectivityTestRequest.class,
+                    StartTargetClusterConnectivityTestResponse.class)
+                .withName("StartTargetClusterConnectivityTest")
+                .withUri("/v1.0/{project_id}/clusters/{cluster_id}/logs/connectivity")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartTargetClusterConnectivityTestRequest::getClusterId,
+                StartTargetClusterConnectivityTestRequest::setClusterId));
+        builder.<StartTargetClusterConnectivityTestReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StartTargetClusterConnectivityTestReq.class),
+            f -> f.withMarshaller(StartTargetClusterConnectivityTestRequest::getBody,
+                StartTargetClusterConnectivityTestRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(StartTargetClusterConnectivityTestResponse::getBody,
+                StartTargetClusterConnectivityTestResponse::setBody));
 
         return builder.build();
     }

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.metastudio.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -44,6 +49,81 @@ public class ListRobotRequest {
     @JsonProperty(value = "room_id")
 
     private String roomId;
+
+    /**
+     * 交互对接类型  * LIVE:直播交互  * CHAT:智能交互
+     */
+    public static final class RobotTypeEnum {
+
+        /**
+         * Enum LIVE for value: "LIVE"
+         */
+        public static final RobotTypeEnum LIVE = new RobotTypeEnum("LIVE");
+
+        /**
+         * Enum CHAT for value: "CHAT"
+         */
+        public static final RobotTypeEnum CHAT = new RobotTypeEnum("CHAT");
+
+        private static final Map<String, RobotTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RobotTypeEnum> createStaticFields() {
+            Map<String, RobotTypeEnum> map = new HashMap<>();
+            map.put("LIVE", LIVE);
+            map.put("CHAT", CHAT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RobotTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RobotTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RobotTypeEnum(value));
+        }
+
+        public static RobotTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RobotTypeEnum) {
+                return this.value.equals(((RobotTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "robot_type")
+
+    private RobotTypeEnum robotType;
 
     public ListRobotRequest withAuthorization(String authorization) {
         this.authorization = authorization;
@@ -174,6 +254,23 @@ public class ListRobotRequest {
         this.roomId = roomId;
     }
 
+    public ListRobotRequest withRobotType(RobotTypeEnum robotType) {
+        this.robotType = robotType;
+        return this;
+    }
+
+    /**
+     * 交互对接类型  * LIVE:直播交互  * CHAT:智能交互
+     * @return robotType
+     */
+    public RobotTypeEnum getRobotType() {
+        return robotType;
+    }
+
+    public void setRobotType(RobotTypeEnum robotType) {
+        this.robotType = robotType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -186,12 +283,12 @@ public class ListRobotRequest {
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.roomId, that.roomId);
+            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.robotType, that.robotType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, offset, limit, roomId);
+        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, offset, limit, roomId, robotType);
     }
 
     @Override
@@ -205,6 +302,7 @@ public class ListRobotRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
+        sb.append("    robotType: ").append(toIndentedString(robotType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

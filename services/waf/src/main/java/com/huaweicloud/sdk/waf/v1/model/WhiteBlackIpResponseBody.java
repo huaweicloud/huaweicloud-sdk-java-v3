@@ -56,6 +56,11 @@ public class WhiteBlackIpResponseBody {
 
     private IpGroup ipGroup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_mode")
+
+    private String timeMode;
+
     public WhiteBlackIpResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -218,6 +223,23 @@ public class WhiteBlackIpResponseBody {
         this.ipGroup = ipGroup;
     }
 
+    public WhiteBlackIpResponseBody withTimeMode(String timeMode) {
+        this.timeMode = timeMode;
+        return this;
+    }
+
+    /**
+     * 生效模式，默认为permanent（立即生效）
+     * @return timeMode
+     */
+    public String getTimeMode() {
+        return timeMode;
+    }
+
+    public void setTimeMode(String timeMode) {
+        this.timeMode = timeMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -231,12 +253,12 @@ public class WhiteBlackIpResponseBody {
             && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.timestamp, that.timestamp)
             && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
             && Objects.equals(this.addr, that.addr) && Objects.equals(this.white, that.white)
-            && Objects.equals(this.ipGroup, that.ipGroup);
+            && Objects.equals(this.ipGroup, that.ipGroup) && Objects.equals(this.timeMode, that.timeMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, policyid, timestamp, description, status, addr, white, ipGroup);
+        return Objects.hash(id, name, policyid, timestamp, description, status, addr, white, ipGroup, timeMode);
     }
 
     @Override
@@ -252,6 +274,7 @@ public class WhiteBlackIpResponseBody {
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
         sb.append("    ipGroup: ").append(toIndentedString(ipGroup)).append("\n");
+        sb.append("    timeMode: ").append(toIndentedString(timeMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

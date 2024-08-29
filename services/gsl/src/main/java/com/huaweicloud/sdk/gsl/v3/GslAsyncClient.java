@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.gsl.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.gsl.v3.model.AddNetworkSwitchPolicyRequest;
+import com.huaweicloud.sdk.gsl.v3.model.AddNetworkSwitchPolicyResponse;
 import com.huaweicloud.sdk.gsl.v3.model.BatchSetAttributesRequest;
 import com.huaweicloud.sdk.gsl.v3.model.BatchSetAttributesResponse;
 import com.huaweicloud.sdk.gsl.v3.model.BatchSetTagsRequest;
@@ -29,10 +31,14 @@ import com.huaweicloud.sdk.gsl.v3.model.ListBackPoolsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListBackPoolsResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListFlowBySimCardsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListFlowBySimCardsResponse;
+import com.huaweicloud.sdk.gsl.v3.model.ListNetworkSwitchPoliciesRequest;
+import com.huaweicloud.sdk.gsl.v3.model.ListNetworkSwitchPoliciesResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListProPricePlansRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListProPricePlansResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimCardsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimCardsResponse;
+import com.huaweicloud.sdk.gsl.v3.model.ListSimDeviceMultiplyRequest;
+import com.huaweicloud.sdk.gsl.v3.model.ListSimDeviceMultiplyResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimPoolMembersRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimPoolMembersResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimPoolsRequest;
@@ -55,6 +61,8 @@ import com.huaweicloud.sdk.gsl.v3.model.SendSmsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.SendSmsResponse;
 import com.huaweicloud.sdk.gsl.v3.model.SetExceedCutNetRequest;
 import com.huaweicloud.sdk.gsl.v3.model.SetExceedCutNetResponse;
+import com.huaweicloud.sdk.gsl.v3.model.SetNetworkSwitchPolicyRequest;
+import com.huaweicloud.sdk.gsl.v3.model.SetNetworkSwitchPolicyResponse;
 import com.huaweicloud.sdk.gsl.v3.model.SetSpeedValueRequest;
 import com.huaweicloud.sdk.gsl.v3.model.SetSpeedValueResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ShowMonthUsagesRequest;
@@ -67,6 +75,8 @@ import com.huaweicloud.sdk.gsl.v3.model.StartStopNetRequest;
 import com.huaweicloud.sdk.gsl.v3.model.StartStopNetResponse;
 import com.huaweicloud.sdk.gsl.v3.model.StopSimCardRequest;
 import com.huaweicloud.sdk.gsl.v3.model.StopSimCardResponse;
+import com.huaweicloud.sdk.gsl.v3.model.SwitchNetworkRequest;
+import com.huaweicloud.sdk.gsl.v3.model.SwitchNetworkResponse;
 import com.huaweicloud.sdk.gsl.v3.model.UpdateAttributeRequest;
 import com.huaweicloud.sdk.gsl.v3.model.UpdateAttributeResponse;
 
@@ -315,6 +325,66 @@ public class GslAsyncClient {
     public AsyncInvoker<ListBackPoolsRequest, ListBackPoolsResponse> listBackPoolsAsyncInvoker(
         ListBackPoolsRequest request) {
         return new AsyncInvoker<>(request, GslMeta.listBackPools, hcClient);
+    }
+
+    /**
+     * 新增网络切换策略
+     *
+     * 新增网络切换策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddNetworkSwitchPolicyRequest 请求对象
+     * @return CompletableFuture<AddNetworkSwitchPolicyResponse>
+     */
+    public CompletableFuture<AddNetworkSwitchPolicyResponse> addNetworkSwitchPolicyAsync(
+        AddNetworkSwitchPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.addNetworkSwitchPolicy);
+    }
+
+    /**
+     * 新增网络切换策略
+     *
+     * 新增网络切换策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddNetworkSwitchPolicyRequest 请求对象
+     * @return AsyncInvoker<AddNetworkSwitchPolicyRequest, AddNetworkSwitchPolicyResponse>
+     */
+    public AsyncInvoker<AddNetworkSwitchPolicyRequest, AddNetworkSwitchPolicyResponse> addNetworkSwitchPolicyAsyncInvoker(
+        AddNetworkSwitchPolicyRequest request) {
+        return new AsyncInvoker<>(request, GslMeta.addNetworkSwitchPolicy, hcClient);
+    }
+
+    /**
+     * 查询策略列表
+     *
+     * 查询策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNetworkSwitchPoliciesRequest 请求对象
+     * @return CompletableFuture<ListNetworkSwitchPoliciesResponse>
+     */
+    public CompletableFuture<ListNetworkSwitchPoliciesResponse> listNetworkSwitchPoliciesAsync(
+        ListNetworkSwitchPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.listNetworkSwitchPolicies);
+    }
+
+    /**
+     * 查询策略列表
+     *
+     * 查询策略列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNetworkSwitchPoliciesRequest 请求对象
+     * @return AsyncInvoker<ListNetworkSwitchPoliciesRequest, ListNetworkSwitchPoliciesResponse>
+     */
+    public AsyncInvoker<ListNetworkSwitchPoliciesRequest, ListNetworkSwitchPoliciesResponse> listNetworkSwitchPoliciesAsyncInvoker(
+        ListNetworkSwitchPoliciesRequest request) {
+        return new AsyncInvoker<>(request, GslMeta.listNetworkSwitchPolicies, hcClient);
     }
 
     /**
@@ -690,6 +760,95 @@ public class GslAsyncClient {
      */
     public AsyncInvoker<StopSimCardRequest, StopSimCardResponse> stopSimCardAsyncInvoker(StopSimCardRequest request) {
         return new AsyncInvoker<>(request, GslMeta.stopSimCard, hcClient);
+    }
+
+    /**
+     * 查询三网卡列表
+     *
+     * 通过cid或全量查询三网卡列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSimDeviceMultiplyRequest 请求对象
+     * @return CompletableFuture<ListSimDeviceMultiplyResponse>
+     */
+    public CompletableFuture<ListSimDeviceMultiplyResponse> listSimDeviceMultiplyAsync(
+        ListSimDeviceMultiplyRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.listSimDeviceMultiply);
+    }
+
+    /**
+     * 查询三网卡列表
+     *
+     * 通过cid或全量查询三网卡列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSimDeviceMultiplyRequest 请求对象
+     * @return AsyncInvoker<ListSimDeviceMultiplyRequest, ListSimDeviceMultiplyResponse>
+     */
+    public AsyncInvoker<ListSimDeviceMultiplyRequest, ListSimDeviceMultiplyResponse> listSimDeviceMultiplyAsyncInvoker(
+        ListSimDeviceMultiplyRequest request) {
+        return new AsyncInvoker<>(request, GslMeta.listSimDeviceMultiply, hcClient);
+    }
+
+    /**
+     * SIM卡设置网络切换策略
+     *
+     * SIM卡设置网络切换策略，接口仅支持三网卡调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetNetworkSwitchPolicyRequest 请求对象
+     * @return CompletableFuture<SetNetworkSwitchPolicyResponse>
+     */
+    public CompletableFuture<SetNetworkSwitchPolicyResponse> setNetworkSwitchPolicyAsync(
+        SetNetworkSwitchPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.setNetworkSwitchPolicy);
+    }
+
+    /**
+     * SIM卡设置网络切换策略
+     *
+     * SIM卡设置网络切换策略，接口仅支持三网卡调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetNetworkSwitchPolicyRequest 请求对象
+     * @return AsyncInvoker<SetNetworkSwitchPolicyRequest, SetNetworkSwitchPolicyResponse>
+     */
+    public AsyncInvoker<SetNetworkSwitchPolicyRequest, SetNetworkSwitchPolicyResponse> setNetworkSwitchPolicyAsyncInvoker(
+        SetNetworkSwitchPolicyRequest request) {
+        return new AsyncInvoker<>(request, GslMeta.setNetworkSwitchPolicy, hcClient);
+    }
+
+    /**
+     * 切换网络
+     *
+     * 切换网络
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchNetworkRequest 请求对象
+     * @return CompletableFuture<SwitchNetworkResponse>
+     */
+    public CompletableFuture<SwitchNetworkResponse> switchNetworkAsync(SwitchNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, GslMeta.switchNetwork);
+    }
+
+    /**
+     * 切换网络
+     *
+     * 切换网络
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchNetworkRequest 请求对象
+     * @return AsyncInvoker<SwitchNetworkRequest, SwitchNetworkResponse>
+     */
+    public AsyncInvoker<SwitchNetworkRequest, SwitchNetworkResponse> switchNetworkAsyncInvoker(
+        SwitchNetworkRequest request) {
+        return new AsyncInvoker<>(request, GslMeta.switchNetwork, hcClient);
     }
 
     /**

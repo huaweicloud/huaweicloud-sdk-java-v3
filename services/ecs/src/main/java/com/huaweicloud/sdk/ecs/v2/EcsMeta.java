@@ -85,6 +85,8 @@ import com.huaweicloud.sdk.ecs.v2.model.DetachServerVolumeResponse;
 import com.huaweicloud.sdk.ecs.v2.model.DisassociateServerVirtualIpRequest;
 import com.huaweicloud.sdk.ecs.v2.model.DisassociateServerVirtualIpRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.DisassociateServerVirtualIpResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListCloudServersRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListCloudServersResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorSellPoliciesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsRequest;
@@ -193,6 +195,8 @@ import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerResponse;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class EcsMeta {
@@ -973,6 +977,123 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(DisassociateServerVirtualIpRequestBody.class),
             f -> f.withMarshaller(DisassociateServerVirtualIpRequest::getBody,
                 DisassociateServerVirtualIpRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCloudServersRequest, ListCloudServersResponse> listCloudServers =
+        genForListCloudServers();
+
+    private static HttpRequestDef<ListCloudServersRequest, ListCloudServersResponse> genForListCloudServers() {
+        // basic
+        HttpRequestDef.Builder<ListCloudServersRequest, ListCloudServersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCloudServersRequest.class, ListCloudServersResponse.class)
+                .withName("ListCloudServers")
+                .withUri("/v1.1/{project_id}/cloudservers/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getId, ListCloudServersRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getName, ListCloudServersRequest::setName));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getStatus, ListCloudServersRequest::setStatus));
+        builder.<Boolean>withRequestField("in_recycle_bin",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getInRecycleBin, ListCloudServersRequest::setInRecycleBin));
+        builder.<String>withRequestField("spod_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getSpodId, ListCloudServersRequest::setSpodId));
+        builder.<String>withRequestField("flavor_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getFlavorName, ListCloudServersRequest::setFlavorName));
+        builder.<String>withRequestField("image_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getImageId, ListCloudServersRequest::setImageId));
+        builder.<String>withRequestField("metadata",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getMetadata, ListCloudServersRequest::setMetadata));
+        builder.<String>withRequestField("metadata-key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getMetadataKey, ListCloudServersRequest::setMetadataKey));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getTags, ListCloudServersRequest::setTags));
+        builder.<String>withRequestField("not-tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getNotTags, ListCloudServersRequest::setNotTags));
+        builder.<String>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getAvailabilityZone,
+                ListCloudServersRequest::setAvailabilityZone));
+        builder.<String>withRequestField("availability_zone_eq",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getAvailabilityZoneEq,
+                ListCloudServersRequest::setAvailabilityZoneEq));
+        builder.<String>withRequestField("charging_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getChargingMode, ListCloudServersRequest::setChargingMode));
+        builder.<String>withRequestField("key_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getKeyName, ListCloudServersRequest::setKeyName));
+        builder.<String>withRequestField("launched_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getLaunchedSince,
+                ListCloudServersRequest::setLaunchedSince));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getEnterpriseProjectId,
+                ListCloudServersRequest::setEnterpriseProjectId));
+        builder.<List<String>>withRequestField("expect-fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getExpectFields, ListCloudServersRequest::setExpectFields));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getLimit, ListCloudServersRequest::setLimit));
 
         // response
 

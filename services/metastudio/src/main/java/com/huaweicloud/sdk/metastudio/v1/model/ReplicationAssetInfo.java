@@ -26,6 +26,11 @@ public class ReplicationAssetInfo {
 
     private ReplicationEncInfo encryptionInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_time")
+
+    private Long expireTime;
+
     public ReplicationAssetInfo withAssetId(String assetId) {
         this.assetId = assetId;
         return this;
@@ -86,6 +91,25 @@ public class ReplicationAssetInfo {
         this.encryptionInfo = encryptionInfo;
     }
 
+    public ReplicationAssetInfo withExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+        return this;
+    }
+
+    /**
+     * 过期时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return expireTime
+     */
+    public Long getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -96,12 +120,13 @@ public class ReplicationAssetInfo {
         }
         ReplicationAssetInfo that = (ReplicationAssetInfo) obj;
         return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetInfo, that.assetInfo)
-            && Objects.equals(this.encryptionInfo, that.encryptionInfo);
+            && Objects.equals(this.encryptionInfo, that.encryptionInfo)
+            && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(assetId, assetInfo, encryptionInfo);
+        return Objects.hash(assetId, assetInfo, encryptionInfo, expireTime);
     }
 
     @Override
@@ -111,6 +136,7 @@ public class ReplicationAssetInfo {
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
         sb.append("    assetInfo: ").append(toIndentedString(assetInfo)).append("\n");
         sb.append("    encryptionInfo: ").append(toIndentedString(encryptionInfo)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

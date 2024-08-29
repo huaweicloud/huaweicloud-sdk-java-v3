@@ -172,7 +172,7 @@ public class Port {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_dhcp_opts")
 
-    private List<Object> extraDhcpOpts = null;
+    private List<ExtraDhcpOpt> extraDhcpOpts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "position_type")
@@ -753,12 +753,12 @@ public class Port {
         this.bindingMigrationInfo = bindingMigrationInfo;
     }
 
-    public Port withExtraDhcpOpts(List<Object> extraDhcpOpts) {
+    public Port withExtraDhcpOpts(List<ExtraDhcpOpt> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
         return this;
     }
 
-    public Port addExtraDhcpOptsItem(Object extraDhcpOptsItem) {
+    public Port addExtraDhcpOptsItem(ExtraDhcpOpt extraDhcpOptsItem) {
         if (this.extraDhcpOpts == null) {
             this.extraDhcpOpts = new ArrayList<>();
         }
@@ -766,7 +766,7 @@ public class Port {
         return this;
     }
 
-    public Port withExtraDhcpOpts(Consumer<List<Object>> extraDhcpOptsSetter) {
+    public Port withExtraDhcpOpts(Consumer<List<ExtraDhcpOpt>> extraDhcpOptsSetter) {
         if (this.extraDhcpOpts == null) {
             this.extraDhcpOpts = new ArrayList<>();
         }
@@ -775,14 +775,14 @@ public class Port {
     }
 
     /**
-     * 1、功能描述：DHCP的扩展属性 2、取值范围：N/A 3、约束：N/A 4、默认值：N/A 5、权限：N/A
+     * 功能说明：DHCP的扩展属性
      * @return extraDhcpOpts
      */
-    public List<Object> getExtraDhcpOpts() {
+    public List<ExtraDhcpOpt> getExtraDhcpOpts() {
         return extraDhcpOpts;
     }
 
-    public void setExtraDhcpOpts(List<Object> extraDhcpOpts) {
+    public void setExtraDhcpOpts(List<ExtraDhcpOpt> extraDhcpOpts) {
         this.extraDhcpOpts = extraDhcpOpts;
     }
 

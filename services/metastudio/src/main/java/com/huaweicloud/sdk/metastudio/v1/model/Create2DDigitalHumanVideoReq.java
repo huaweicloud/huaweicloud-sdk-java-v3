@@ -81,7 +81,7 @@ public class Create2DDigitalHumanVideoReq {
     }
 
     /**
-     * 分身数字人模型资产ID。
+     * 分身数字人模型资产ID，可以从资产库中查询。
      * @return modelAssetId
      */
     public String getModelAssetId() {

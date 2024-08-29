@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 任务状态。 * CREATING: 创建中 * SYSTEM_AUDITING: 系统审核中 * AUDITING: 人工审核中 * WAITING: 等待训练 * PROCESSING: 任务训练中 * RESULT_REVIEW: 审核结果 * AUDIT_FAILED: 审核失败,等待用户重传数据 * FAILED: 失败 * SUCCEED: 成功
+ * 任务状态。 * CREATING: 创建中 * SYSTEM_AUDITING: 系统审核中 * AUDITING: 人工审核中 * WAITING_SPLIT: 等待切割 * SPLITTING: 切割中 * SPLIT_FAILED: 切割失败 * ANNOTATING: 标注中 * WAITING: 等待训练 * PROCESSING: 任务训练中 * RESULT_REVIEW: 审核结果 * AUDIT_FAILED: 审核失败,等待用户重传数据 * FAILED: 失败 * SUCCEED: 成功
  */
 public class JobState {
 
@@ -26,6 +26,26 @@ public class JobState {
      * Enum AUDITING for value: "AUDITING"
      */
     public static final JobState AUDITING = new JobState("AUDITING");
+
+    /**
+     * Enum WAITING_SPLIT for value: "WAITING_SPLIT"
+     */
+    public static final JobState WAITING_SPLIT = new JobState("WAITING_SPLIT");
+
+    /**
+     * Enum SPLITTING for value: "SPLITTING"
+     */
+    public static final JobState SPLITTING = new JobState("SPLITTING");
+
+    /**
+     * Enum SPLIT_FAILED for value: "SPLIT_FAILED"
+     */
+    public static final JobState SPLIT_FAILED = new JobState("SPLIT_FAILED");
+
+    /**
+     * Enum ANNOTATING for value: "ANNOTATING"
+     */
+    public static final JobState ANNOTATING = new JobState("ANNOTATING");
 
     /**
      * Enum WAITING for value: "WAITING"
@@ -74,6 +94,10 @@ public class JobState {
         map.put("CREATING", CREATING);
         map.put("SYSTEM_AUDITING", SYSTEM_AUDITING);
         map.put("AUDITING", AUDITING);
+        map.put("WAITING_SPLIT", WAITING_SPLIT);
+        map.put("SPLITTING", SPLITTING);
+        map.put("SPLIT_FAILED", SPLIT_FAILED);
+        map.put("ANNOTATING", ANNOTATING);
         map.put("WAITING", WAITING);
         map.put("PROCESSING", PROCESSING);
         map.put("RESULT_REVIEW", RESULT_REVIEW);

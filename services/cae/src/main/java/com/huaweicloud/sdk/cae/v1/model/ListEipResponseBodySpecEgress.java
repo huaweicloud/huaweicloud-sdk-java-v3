@@ -19,6 +19,11 @@ public class ListEipResponseBodySpecEgress {
     private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enabled")
+
+    private Boolean enabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_list")
 
     private List<String> ipList = null;
@@ -38,6 +43,23 @@ public class ListEipResponseBodySpecEgress {
 
     public void setBandwidthSize(Integer bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
+    }
+
+    public ListEipResponseBodySpecEgress withEnabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+
+    /**
+     * 是否关闭出网IP。
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
     public ListEipResponseBodySpecEgress withIpList(List<String> ipList) {
@@ -82,12 +104,13 @@ public class ListEipResponseBodySpecEgress {
             return false;
         }
         ListEipResponseBodySpecEgress that = (ListEipResponseBodySpecEgress) obj;
-        return Objects.equals(this.bandwidthSize, that.bandwidthSize) && Objects.equals(this.ipList, that.ipList);
+        return Objects.equals(this.bandwidthSize, that.bandwidthSize) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.ipList, that.ipList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthSize, ipList);
+        return Objects.hash(bandwidthSize, enabled, ipList);
     }
 
     @Override
@@ -95,6 +118,7 @@ public class ListEipResponseBodySpecEgress {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEipResponseBodySpecEgress {\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    ipList: ").append(toIndentedString(ipList)).append("\n");
         sb.append("}");
         return sb.toString();

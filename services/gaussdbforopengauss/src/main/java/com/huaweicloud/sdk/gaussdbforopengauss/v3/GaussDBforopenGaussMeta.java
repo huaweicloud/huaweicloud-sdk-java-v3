@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDbInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDbInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDbUserRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDbUserResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateGaussDbInstanceRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateGaussDbInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupRequest;
@@ -563,6 +565,41 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GaussDBforOpenGaussUserForCreation.class),
             f -> f.withMarshaller(CreateDbUserRequest::getBody, CreateDbUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateGaussDbInstanceRequest, CreateGaussDbInstanceResponse> createGaussDbInstance =
+        genForCreateGaussDbInstance();
+
+    private static HttpRequestDef<CreateGaussDbInstanceRequest, CreateGaussDbInstanceResponse> genForCreateGaussDbInstance() {
+        // basic
+        HttpRequestDef.Builder<CreateGaussDbInstanceRequest, CreateGaussDbInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateGaussDbInstanceRequest.class, CreateGaussDbInstanceResponse.class)
+            .withName("CreateGaussDbInstance")
+            .withUri("/v5/{project_id}/instances")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGaussDbInstanceRequest::getXLanguage,
+                CreateGaussDbInstanceRequest::setXLanguage));
+        builder.<String>withRequestField("Subscription-Agency",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGaussDbInstanceRequest::getSubscriptionAgency,
+                CreateGaussDbInstanceRequest::setSubscriptionAgency));
+        builder.<OpenGaussInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OpenGaussInstanceRequestBody.class),
+            f -> f.withMarshaller(CreateGaussDbInstanceRequest::getBody, CreateGaussDbInstanceRequest::setBody));
 
         // response
 

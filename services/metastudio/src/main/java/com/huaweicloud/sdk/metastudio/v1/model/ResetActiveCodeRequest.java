@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -34,6 +35,11 @@ public class ResetActiveCodeRequest {
     @JsonProperty(value = "active_code_id")
 
     private String activeCodeId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private ResetActiveCodeReq body;
 
     public ResetActiveCodeRequest withAuthorization(String authorization) {
         this.authorization = authorization;
@@ -126,6 +132,32 @@ public class ResetActiveCodeRequest {
         this.activeCodeId = activeCodeId;
     }
 
+    public ResetActiveCodeRequest withBody(ResetActiveCodeReq body) {
+        this.body = body;
+        return this;
+    }
+
+    public ResetActiveCodeRequest withBody(Consumer<ResetActiveCodeReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new ResetActiveCodeReq();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public ResetActiveCodeReq getBody() {
+        return body;
+    }
+
+    public void setBody(ResetActiveCodeReq body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -137,12 +169,12 @@ public class ResetActiveCodeRequest {
         ResetActiveCodeRequest that = (ResetActiveCodeRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
-            && Objects.equals(this.activeCodeId, that.activeCodeId);
+            && Objects.equals(this.activeCodeId, that.activeCodeId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, activeCodeId);
+        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, activeCodeId, body);
     }
 
     @Override
@@ -154,6 +186,7 @@ public class ResetActiveCodeRequest {
         sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    activeCodeId: ").append(toIndentedString(activeCodeId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

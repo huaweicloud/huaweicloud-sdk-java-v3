@@ -28,13 +28,18 @@ public class NicSpec {
 
     private String ipBlock;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnetList")
+
+    private List<String> subnetList = null;
+
     public NicSpec withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
 
     /**
-     * 网卡所在子网的网络ID。主网卡创建时若未指定subnetId,将使用集群子网。扩展网卡创建时必须指定subnetId。  
+     * 网卡所在子网的网络ID。主网卡创建时若未指定subnetId,将使用集群子网。若节点池同时配置了subnetList，则节点池扩容子网以subnetList字段为准。扩展网卡创建时必须指定subnetId。  
      * @return subnetId
      */
     public String getSubnetId() {
@@ -95,6 +100,39 @@ public class NicSpec {
         this.ipBlock = ipBlock;
     }
 
+    public NicSpec withSubnetList(List<String> subnetList) {
+        this.subnetList = subnetList;
+        return this;
+    }
+
+    public NicSpec addSubnetListItem(String subnetListItem) {
+        if (this.subnetList == null) {
+            this.subnetList = new ArrayList<>();
+        }
+        this.subnetList.add(subnetListItem);
+        return this;
+    }
+
+    public NicSpec withSubnetList(Consumer<List<String>> subnetListSetter) {
+        if (this.subnetList == null) {
+            this.subnetList = new ArrayList<>();
+        }
+        subnetListSetter.accept(this.subnetList);
+        return this;
+    }
+
+    /**
+     * 网卡所在子网的网络ID列表，支持节点池配置多个子网，最多支持配置20个子网。
+     * @return subnetList
+     */
+    public List<String> getSubnetList() {
+        return subnetList;
+    }
+
+    public void setSubnetList(List<String> subnetList) {
+        this.subnetList = subnetList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -105,12 +143,12 @@ public class NicSpec {
         }
         NicSpec that = (NicSpec) obj;
         return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.fixedIps, that.fixedIps)
-            && Objects.equals(this.ipBlock, that.ipBlock);
+            && Objects.equals(this.ipBlock, that.ipBlock) && Objects.equals(this.subnetList, that.subnetList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subnetId, fixedIps, ipBlock);
+        return Objects.hash(subnetId, fixedIps, ipBlock, subnetList);
     }
 
     @Override
@@ -120,6 +158,7 @@ public class NicSpec {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    fixedIps: ").append(toIndentedString(fixedIps)).append("\n");
         sb.append("    ipBlock: ").append(toIndentedString(ipBlock)).append("\n");
+        sb.append("    subnetList: ").append(toIndentedString(subnetList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

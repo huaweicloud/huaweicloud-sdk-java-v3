@@ -53,7 +53,7 @@ public class ChangeInstanceRequestBody {
     }
 
     /**
-     * 待变更云堡垒机规格ID，例如： - cbh.basic.50 - cbh.enhance.50  已上线的规格请参见《云堡垒机产品介绍》的[服务版本差异](https://support.huaweicloud.com/productdesc-cbh/cbh_01_0010.html)章节。
+     * 待变更云堡垒机规格ID，例如： - cbh.basic.50 - cbh.enhance.50  可参考接口\"查询云堡垒机规格信息\"获取
      * @return newResourceSpecCode
      */
     public String getNewResourceSpecCode() {

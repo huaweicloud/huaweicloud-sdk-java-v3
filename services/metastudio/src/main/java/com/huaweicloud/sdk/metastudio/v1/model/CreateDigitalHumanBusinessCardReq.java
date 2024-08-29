@@ -304,7 +304,7 @@ public class CreateDigitalHumanBusinessCardReq {
     }
 
     /**
-     * 数字人名片模板资产ID。
+     * 数字人名片模板资产ID，可以从资产库中查询。
      * @return cardTempletAssetId
      */
     public String getCardTempletAssetId() {
@@ -408,7 +408,7 @@ public class CreateDigitalHumanBusinessCardReq {
     }
 
     /**
-     * 音色资产ID。
+     * 音色资产ID，可以从资产库中查询。
      * @return voiceAssetId
      */
     public String getVoiceAssetId() {
@@ -425,7 +425,7 @@ public class CreateDigitalHumanBusinessCardReq {
     }
 
     /**
-     * 自我介绍语音资产ID，用于驱动数字人口型。 > * 介绍语音需要作为asset_type=AUDIO资产先上传至资产库。
+     * 自我介绍语音资产ID，用于驱动数字人口型。 > * 介绍语音需要作为asset_type=AUDIO资产先上传至资产库。 > * 使用时从资产库中查询。
      * @return introductionAudioAssetId
      */
     public String getIntroductionAudioAssetId() {

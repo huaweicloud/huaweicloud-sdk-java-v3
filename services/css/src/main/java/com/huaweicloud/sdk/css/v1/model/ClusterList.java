@@ -143,6 +143,11 @@ public class ClusterList {
 
     private String bandwidthResourceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6Endpoint")
+
+    private String ipv6Endpoint;
+
     public ClusterList withDatastore(ClusterListDatastore datastore) {
         this.datastore = datastore;
         return this;
@@ -669,6 +674,23 @@ public class ClusterList {
         this.bandwidthResourceId = bandwidthResourceId;
     }
 
+    public ClusterList withIpv6Endpoint(String ipv6Endpoint) {
+        this.ipv6Endpoint = ipv6Endpoint;
+        return this;
+    }
+
+    /**
+     * 集群内网访问IPv6地址和端口号。
+     * @return ipv6Endpoint
+     */
+    public String getIpv6Endpoint() {
+        return ipv6Endpoint;
+    }
+
+    public void setIpv6Endpoint(String ipv6Endpoint) {
+        this.ipv6Endpoint = ipv6Endpoint;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -695,7 +717,8 @@ public class ClusterList {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.failedReason, that.failedReason)
             && Objects.equals(this.period, that.period)
-            && Objects.equals(this.bandwidthResourceId, that.bandwidthResourceId);
+            && Objects.equals(this.bandwidthResourceId, that.bandwidthResourceId)
+            && Objects.equals(this.ipv6Endpoint, that.ipv6Endpoint);
     }
 
     @Override
@@ -725,7 +748,8 @@ public class ClusterList {
             tags,
             failedReason,
             period,
-            bandwidthResourceId);
+            bandwidthResourceId,
+            ipv6Endpoint);
     }
 
     @Override
@@ -758,6 +782,7 @@ public class ClusterList {
         sb.append("    failedReason: ").append(toIndentedString(failedReason)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
         sb.append("    bandwidthResourceId: ").append(toIndentedString(bandwidthResourceId)).append("\n");
+        sb.append("    ipv6Endpoint: ").append(toIndentedString(ipv6Endpoint)).append("\n");
         sb.append("}");
         return sb.toString();
     }

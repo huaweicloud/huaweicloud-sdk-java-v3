@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.metastudio.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -64,6 +67,11 @@ public class ListDigitalHumanVideoRequest {
     @JsonProperty(value = "create_since")
 
     private String createSince;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fuzzy_query_field")
+
+    private List<String> fuzzyQueryField = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "script_id")
@@ -220,7 +228,7 @@ public class ListDigitalHumanVideoRequest {
     }
 
     /**
-     * 排序字段，目前只支持create_time。
+     * 排序字段，支持的排序方式有： - 按创建时间排序：create_time - 按更新时间排序：update_time - 按资产排序：asset_order
      * @return sortKey
      */
     public String getSortKey() {
@@ -280,6 +288,39 @@ public class ListDigitalHumanVideoRequest {
 
     public void setCreateSince(String createSince) {
         this.createSince = createSince;
+    }
+
+    public ListDigitalHumanVideoRequest withFuzzyQueryField(List<String> fuzzyQueryField) {
+        this.fuzzyQueryField = fuzzyQueryField;
+        return this;
+    }
+
+    public ListDigitalHumanVideoRequest addFuzzyQueryFieldItem(String fuzzyQueryFieldItem) {
+        if (this.fuzzyQueryField == null) {
+            this.fuzzyQueryField = new ArrayList<>();
+        }
+        this.fuzzyQueryField.add(fuzzyQueryFieldItem);
+        return this;
+    }
+
+    public ListDigitalHumanVideoRequest withFuzzyQueryField(Consumer<List<String>> fuzzyQueryFieldSetter) {
+        if (this.fuzzyQueryField == null) {
+            this.fuzzyQueryField = new ArrayList<>();
+        }
+        fuzzyQueryFieldSetter.accept(this.fuzzyQueryField);
+        return this;
+    }
+
+    /**
+     * 使用模糊查询的字段
+     * @return fuzzyQueryField
+     */
+    public List<String> getFuzzyQueryField() {
+        return fuzzyQueryField;
+    }
+
+    public void setFuzzyQueryField(List<String> fuzzyQueryField) {
+        this.fuzzyQueryField = fuzzyQueryField;
     }
 
     public ListDigitalHumanVideoRequest withScriptId(String scriptId) {
@@ -364,9 +405,10 @@ public class ListDigitalHumanVideoRequest {
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.state, that.state) && Objects.equals(this.sortKey, that.sortKey)
             && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.createUntil, that.createUntil)
-            && Objects.equals(this.createSince, that.createSince) && Objects.equals(this.scriptId, that.scriptId)
-            && Objects.equals(this.assetName, that.assetName) && Objects.equals(this.jobType, that.jobType)
-            && Objects.equals(this.jobId, that.jobId);
+            && Objects.equals(this.createSince, that.createSince)
+            && Objects.equals(this.fuzzyQueryField, that.fuzzyQueryField)
+            && Objects.equals(this.scriptId, that.scriptId) && Objects.equals(this.assetName, that.assetName)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
@@ -382,6 +424,7 @@ public class ListDigitalHumanVideoRequest {
             sortDir,
             createUntil,
             createSince,
+            fuzzyQueryField,
             scriptId,
             assetName,
             jobType,
@@ -403,6 +446,7 @@ public class ListDigitalHumanVideoRequest {
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    createUntil: ").append(toIndentedString(createUntil)).append("\n");
         sb.append("    createSince: ").append(toIndentedString(createSince)).append("\n");
+        sb.append("    fuzzyQueryField: ").append(toIndentedString(fuzzyQueryField)).append("\n");
         sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
         sb.append("    assetName: ").append(toIndentedString(assetName)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");

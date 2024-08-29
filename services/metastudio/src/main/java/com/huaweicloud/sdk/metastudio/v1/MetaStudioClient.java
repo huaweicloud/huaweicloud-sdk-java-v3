@@ -155,6 +155,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListHotWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListInteractionRuleGroupsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListJobOperationLogRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListJobOperationLogResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeIntentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeQuestionRequest;
@@ -3711,6 +3713,35 @@ public class MetaStudioClient {
     public SyncInvoker<DeleteVoiceTrainingJobRequest, DeleteVoiceTrainingJobResponse> deleteVoiceTrainingJobInvoker(
         DeleteVoiceTrainingJobRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.deleteVoiceTrainingJob, hcClient);
+    }
+
+    /**
+     * 查询任务操作日志
+     *
+     * 查询任务操作日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobOperationLogRequest 请求对象
+     * @return ListJobOperationLogResponse
+     */
+    public ListJobOperationLogResponse listJobOperationLog(ListJobOperationLogRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listJobOperationLog);
+    }
+
+    /**
+     * 查询任务操作日志
+     *
+     * 查询任务操作日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobOperationLogRequest 请求对象
+     * @return SyncInvoker<ListJobOperationLogRequest, ListJobOperationLogResponse>
+     */
+    public SyncInvoker<ListJobOperationLogRequest, ListJobOperationLogResponse> listJobOperationLogInvoker(
+        ListJobOperationLogRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listJobOperationLog, hcClient);
     }
 
     /**

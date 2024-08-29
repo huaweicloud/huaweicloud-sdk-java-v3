@@ -15,6 +15,11 @@ public class UpdateEipRequestBodySpecEgress {
 
     private Integer bandwidthSize;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enabled")
+
+    private Boolean enabled;
+
     public UpdateEipRequestBodySpecEgress withBandwidthSize(Integer bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
         return this;
@@ -32,6 +37,23 @@ public class UpdateEipRequestBodySpecEgress {
         this.bandwidthSize = bandwidthSize;
     }
 
+    public UpdateEipRequestBodySpecEgress withEnabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+
+    /**
+     * 是否关闭出网IP。
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class UpdateEipRequestBodySpecEgress {
             return false;
         }
         UpdateEipRequestBodySpecEgress that = (UpdateEipRequestBodySpecEgress) obj;
-        return Objects.equals(this.bandwidthSize, that.bandwidthSize);
+        return Objects.equals(this.bandwidthSize, that.bandwidthSize) && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthSize);
+        return Objects.hash(bandwidthSize, enabled);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class UpdateEipRequestBodySpecEgress {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateEipRequestBodySpecEgress {\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.eip.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -13,7 +16,7 @@ public class ListCommonPoolsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fields")
 
-    private String fields;
+    private List<String> fields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -35,20 +38,36 @@ public class ListCommonPoolsRequest {
 
     private String publicBorderGroup;
 
-    public ListCommonPoolsRequest withFields(String fields) {
+    public ListCommonPoolsRequest withFields(List<String> fields) {
         this.fields = fields;
         return this;
     }
 
+    public ListCommonPoolsRequest addFieldsItem(String fieldsItem) {
+        if (this.fields == null) {
+            this.fields = new ArrayList<>();
+        }
+        this.fields.add(fieldsItem);
+        return this;
+    }
+
+    public ListCommonPoolsRequest withFields(Consumer<List<String>> fieldsSetter) {
+        if (this.fields == null) {
+            this.fields = new ArrayList<>();
+        }
+        fieldsSetter.accept(this.fields);
+        return this;
+    }
+
     /**
-     * 显示，形式为\"fields=id&fields=name&...\"  支持字段：id/name/status/type/used/allow_share_bandwidth_types/public_border_group
+     * 显示，形式为\"fields=id&fields=name&...\"  支持字段：id/name/status/type/used/allow_share_bandwidth_types/public_border_group/description
      * @return fields
      */
-    public String getFields() {
+    public List<String> getFields() {
         return fields;
     }
 
-    public void setFields(String fields) {
+    public void setFields(List<String> fields) {
         this.fields = fields;
     }
 

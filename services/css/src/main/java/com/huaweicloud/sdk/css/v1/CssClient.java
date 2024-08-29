@@ -125,6 +125,8 @@ import com.huaweicloud.sdk.css.v1.model.StartPipelineRequest;
 import com.huaweicloud.sdk.css.v1.model.StartPipelineResponse;
 import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistRequest;
 import com.huaweicloud.sdk.css.v1.model.StartPublicWhitelistResponse;
+import com.huaweicloud.sdk.css.v1.model.StartTargetClusterConnectivityTestRequest;
+import com.huaweicloud.sdk.css.v1.model.StartTargetClusterConnectivityTestResponse;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpRequest;
 import com.huaweicloud.sdk.css.v1.model.StartVpecpResponse;
 import com.huaweicloud.sdk.css.v1.model.StopHotPipelineRequest;
@@ -1570,6 +1572,36 @@ public class CssClient {
     public SyncInvoker<StartPublicWhitelistRequest, StartPublicWhitelistResponse> startPublicWhitelistInvoker(
         StartPublicWhitelistRequest request) {
         return new SyncInvoker<>(request, CssMeta.startPublicWhitelist, hcClient);
+    }
+
+    /**
+     * 连通性测试。
+     *
+     * 该接口用于连通性测试。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartTargetClusterConnectivityTestRequest 请求对象
+     * @return StartTargetClusterConnectivityTestResponse
+     */
+    public StartTargetClusterConnectivityTestResponse startTargetClusterConnectivityTest(
+        StartTargetClusterConnectivityTestRequest request) {
+        return hcClient.syncInvokeHttp(request, CssMeta.startTargetClusterConnectivityTest);
+    }
+
+    /**
+     * 连通性测试。
+     *
+     * 该接口用于连通性测试。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartTargetClusterConnectivityTestRequest 请求对象
+     * @return SyncInvoker<StartTargetClusterConnectivityTestRequest, StartTargetClusterConnectivityTestResponse>
+     */
+    public SyncInvoker<StartTargetClusterConnectivityTestRequest, StartTargetClusterConnectivityTestResponse> startTargetClusterConnectivityTestInvoker(
+        StartTargetClusterConnectivityTestRequest request) {
+        return new SyncInvoker<>(request, CssMeta.startTargetClusterConnectivityTest, hcClient);
     }
 
     /**

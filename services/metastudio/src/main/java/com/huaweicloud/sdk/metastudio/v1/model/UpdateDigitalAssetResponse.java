@@ -407,6 +407,16 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
     private List<AssetFileInfo> files = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asset_order")
+
+    private Integer assetOrder;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supported_service")
+
+    private List<SupportedServiceEnum> supportedService = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -620,7 +630,7 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
     }
 
     /**
-     * 标签列表。
+     * 标签列表。 > 分身形象系统资产的tag定义如下： > - 行业：NEWS,BUSINESS,E-COMMERCE,MARKETING,KNOWLEDGE,EDUCATION,SPORTS > - 性别：MALE,FEMALE > - 姿势：FULL-BODY,HALF-BODY,STANDING,SITTING,WALKING > - 区域：ASIAN,WESTERN,MIDDLE-EASTERNER,AFRICAN,LATINO
      * @return tags
      */
     public List<String> getTags() {
@@ -723,6 +733,59 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
         this.files = files;
     }
 
+    public UpdateDigitalAssetResponse withAssetOrder(Integer assetOrder) {
+        this.assetOrder = assetOrder;
+        return this;
+    }
+
+    /**
+     * 展示顺序
+     * minimum: 0
+     * maximum: 32767
+     * @return assetOrder
+     */
+    public Integer getAssetOrder() {
+        return assetOrder;
+    }
+
+    public void setAssetOrder(Integer assetOrder) {
+        this.assetOrder = assetOrder;
+    }
+
+    public UpdateDigitalAssetResponse withSupportedService(List<SupportedServiceEnum> supportedService) {
+        this.supportedService = supportedService;
+        return this;
+    }
+
+    public UpdateDigitalAssetResponse addSupportedServiceItem(SupportedServiceEnum supportedServiceItem) {
+        if (this.supportedService == null) {
+            this.supportedService = new ArrayList<>();
+        }
+        this.supportedService.add(supportedServiceItem);
+        return this;
+    }
+
+    public UpdateDigitalAssetResponse withSupportedService(
+        Consumer<List<SupportedServiceEnum>> supportedServiceSetter) {
+        if (this.supportedService == null) {
+            this.supportedService = new ArrayList<>();
+        }
+        supportedServiceSetter.accept(this.supportedService);
+        return this;
+    }
+
+    /**
+     * 支持的业务类型。： * VIDEO_2D：分身数字人视频制作 * LIVE_2D：分身数字人直播 * CHAT_2D：分身数字人智能交互
+     * @return supportedService
+     */
+    public List<SupportedServiceEnum> getSupportedService() {
+        return supportedService;
+    }
+
+    public void setSupportedService(List<SupportedServiceEnum> supportedService) {
+        this.supportedService = supportedService;
+    }
+
     public UpdateDigitalAssetResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -760,6 +823,8 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
             && Objects.equals(this.reason, that.reason) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
             && Objects.equals(this.systemProperties, that.systemProperties) && Objects.equals(this.files, that.files)
+            && Objects.equals(this.assetOrder, that.assetOrder)
+            && Objects.equals(this.supportedService, that.supportedService)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
@@ -780,6 +845,8 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
             assetExtraMeta,
             systemProperties,
             files,
+            assetOrder,
+            supportedService,
             xRequestId);
     }
 
@@ -802,6 +869,8 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
         sb.append("    assetExtraMeta: ").append(toIndentedString(assetExtraMeta)).append("\n");
         sb.append("    systemProperties: ").append(toIndentedString(systemProperties)).append("\n");
         sb.append("    files: ").append(toIndentedString(files)).append("\n");
+        sb.append("    assetOrder: ").append(toIndentedString(assetOrder)).append("\n");
+        sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

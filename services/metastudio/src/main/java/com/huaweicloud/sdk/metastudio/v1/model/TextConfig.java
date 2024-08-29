@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 台词脚本。 &gt; * 最长2000个字符，不含SSML标签字符数。
+ * 台词脚本。 &gt; * 最长10000个字符，不含SSML标签字符数。
  */
 public class TextConfig {
 

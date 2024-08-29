@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -929,6 +930,41 @@ public class TriggerEventDataRequestBody {
 
     private Boolean sslEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "Key_encode")
+
+    private Boolean keyEncode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency")
+
+    private String agency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "channel_name")
+
+    private String channelName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_name")
+
+    private String sourceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_time")
+
+    private OffsetDateTime createdTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trigger_name")
+
+    private String triggerName;
+
     public TriggerEventDataRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -1821,6 +1857,125 @@ public class TriggerEventDataRequestBody {
         this.sslEnable = sslEnable;
     }
 
+    public TriggerEventDataRequestBody withKeyEncode(Boolean keyEncode) {
+        this.keyEncode = keyEncode;
+        return this;
+    }
+
+    /**
+     * EG obs触发器是否对对象加密。
+     * @return keyEncode
+     */
+    public Boolean getKeyEncode() {
+        return keyEncode;
+    }
+
+    public void setKeyEncode(Boolean keyEncode) {
+        this.keyEncode = keyEncode;
+    }
+
+    public TriggerEventDataRequestBody withAgency(String agency) {
+        this.agency = agency;
+        return this;
+    }
+
+    /**
+     * 使用的代理
+     * @return agency
+     */
+    public String getAgency() {
+        return agency;
+    }
+
+    public void setAgency(String agency) {
+        this.agency = agency;
+    }
+
+    public TriggerEventDataRequestBody withChannelName(String channelName) {
+        this.channelName = channelName;
+        return this;
+    }
+
+    /**
+     * 通道名称
+     * @return channelName
+     */
+    public String getChannelName() {
+        return channelName;
+    }
+
+    public void setChannelName(String channelName) {
+        this.channelName = channelName;
+    }
+
+    public TriggerEventDataRequestBody withSourceName(String sourceName) {
+        this.sourceName = sourceName;
+        return this;
+    }
+
+    /**
+     * 事件源名称
+     * @return sourceName
+     */
+    public String getSourceName() {
+        return sourceName;
+    }
+
+    public void setSourceName(String sourceName) {
+        this.sourceName = sourceName;
+    }
+
+    public TriggerEventDataRequestBody withCreatedTime(OffsetDateTime createdTime) {
+        this.createdTime = createdTime;
+        return this;
+    }
+
+    /**
+     * 创建时间
+     * @return createdTime
+     */
+    public OffsetDateTime getCreatedTime() {
+        return createdTime;
+    }
+
+    public void setCreatedTime(OffsetDateTime createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    public TriggerEventDataRequestBody withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 触发器状态
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public TriggerEventDataRequestBody withTriggerName(String triggerName) {
+        this.triggerName = triggerName;
+        return this;
+    }
+
+    /**
+     * 触发器名称
+     * @return triggerName
+     */
+    public String getTriggerName() {
+        return triggerName;
+    }
+
+    public void setTriggerName(String triggerName) {
+        this.triggerName = triggerName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1859,7 +2014,10 @@ public class TriggerEventDataRequestBody {
             && Objects.equals(this.accessUser, that.accessUser)
             && Objects.equals(this.connectAddress, that.connectAddress)
             && Objects.equals(this.exchangeName, that.exchangeName) && Objects.equals(this.vhost, that.vhost)
-            && Objects.equals(this.sslEnable, that.sslEnable);
+            && Objects.equals(this.sslEnable, that.sslEnable) && Objects.equals(this.keyEncode, that.keyEncode)
+            && Objects.equals(this.agency, that.agency) && Objects.equals(this.channelName, that.channelName)
+            && Objects.equals(this.sourceName, that.sourceName) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.triggerName, that.triggerName);
     }
 
     @Override
@@ -1912,7 +2070,14 @@ public class TriggerEventDataRequestBody {
             connectAddress,
             exchangeName,
             vhost,
-            sslEnable);
+            sslEnable,
+            keyEncode,
+            agency,
+            channelName,
+            sourceName,
+            createdTime,
+            status,
+            triggerName);
     }
 
     @Override
@@ -1968,6 +2133,13 @@ public class TriggerEventDataRequestBody {
         sb.append("    exchangeName: ").append(toIndentedString(exchangeName)).append("\n");
         sb.append("    vhost: ").append(toIndentedString(vhost)).append("\n");
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
+        sb.append("    keyEncode: ").append(toIndentedString(keyEncode)).append("\n");
+        sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
+        sb.append("    channelName: ").append(toIndentedString(channelName)).append("\n");
+        sb.append("    sourceName: ").append(toIndentedString(sourceName)).append("\n");
+        sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    triggerName: ").append(toIndentedString(triggerName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

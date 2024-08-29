@@ -59,6 +59,9 @@ import com.huaweicloud.sdk.evs.v2.model.ModifyVolumeQoSResponse;
 import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.ResizeVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.RetypeVolumeRequest;
+import com.huaweicloud.sdk.evs.v2.model.RetypeVolumeRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.RetypeVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.RollbackSnapshotResponse;
@@ -754,6 +757,33 @@ public class EvsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeVolumeRequestBody.class),
             f -> f.withMarshaller(ResizeVolumeRequest::getBody, ResizeVolumeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetypeVolumeRequest, RetypeVolumeResponse> retypeVolume = genForRetypeVolume();
+
+    private static HttpRequestDef<RetypeVolumeRequest, RetypeVolumeResponse> genForRetypeVolume() {
+        // basic
+        HttpRequestDef.Builder<RetypeVolumeRequest, RetypeVolumeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RetypeVolumeRequest.class, RetypeVolumeResponse.class)
+                .withName("RetypeVolume")
+                .withUri("/v2/{project_id}/volumes/{volume_id}/retype")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("volume_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetypeVolumeRequest::getVolumeId, RetypeVolumeRequest::setVolumeId));
+        builder.<RetypeVolumeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RetypeVolumeRequestBody.class),
+            f -> f.withMarshaller(RetypeVolumeRequest::getBody, RetypeVolumeRequest::setBody));
 
         // response
 
