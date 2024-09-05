@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 /**
  * 
  */
-public class PolicyRoleResult {
+public class ShowPolicyRoleResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_id")
@@ -76,7 +76,7 @@ public class PolicyRoleResult {
 
     private CustomPolicy policy;
 
-    public PolicyRoleResult withDomainId(String domainId) {
+    public ShowPolicyRoleResult withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
@@ -93,7 +93,7 @@ public class PolicyRoleResult {
         this.domainId = domainId;
     }
 
-    public PolicyRoleResult withReferences(Integer references) {
+    public ShowPolicyRoleResult withReferences(Integer references) {
         this.references = references;
         return this;
     }
@@ -110,7 +110,7 @@ public class PolicyRoleResult {
         this.references = references;
     }
 
-    public PolicyRoleResult withUpdatedTime(String updatedTime) {
+    public ShowPolicyRoleResult withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
         return this;
     }
@@ -127,7 +127,7 @@ public class PolicyRoleResult {
         this.updatedTime = updatedTime;
     }
 
-    public PolicyRoleResult withCreatedTime(String createdTime) {
+    public ShowPolicyRoleResult withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
     }
@@ -144,7 +144,7 @@ public class PolicyRoleResult {
         this.createdTime = createdTime;
     }
 
-    public PolicyRoleResult withDescriptionCn(String descriptionCn) {
+    public ShowPolicyRoleResult withDescriptionCn(String descriptionCn) {
         this.descriptionCn = descriptionCn;
         return this;
     }
@@ -161,7 +161,7 @@ public class PolicyRoleResult {
         this.descriptionCn = descriptionCn;
     }
 
-    public PolicyRoleResult withCatalog(String catalog) {
+    public ShowPolicyRoleResult withCatalog(String catalog) {
         this.catalog = catalog;
         return this;
     }
@@ -178,7 +178,7 @@ public class PolicyRoleResult {
         this.catalog = catalog;
     }
 
-    public PolicyRoleResult withName(String name) {
+    public ShowPolicyRoleResult withName(String name) {
         this.name = name;
         return this;
     }
@@ -195,7 +195,7 @@ public class PolicyRoleResult {
         this.name = name;
     }
 
-    public PolicyRoleResult withDescription(String description) {
+    public ShowPolicyRoleResult withDescription(String description) {
         this.description = description;
         return this;
     }
@@ -212,12 +212,12 @@ public class PolicyRoleResult {
         this.description = description;
     }
 
-    public PolicyRoleResult withLinks(LinksSelf links) {
+    public ShowPolicyRoleResult withLinks(LinksSelf links) {
         this.links = links;
         return this;
     }
 
-    public PolicyRoleResult withLinks(Consumer<LinksSelf> linksSetter) {
+    public ShowPolicyRoleResult withLinks(Consumer<LinksSelf> linksSetter) {
         if (this.links == null) {
             this.links = new LinksSelf();
             linksSetter.accept(this.links);
@@ -238,7 +238,7 @@ public class PolicyRoleResult {
         this.links = links;
     }
 
-    public PolicyRoleResult withId(String id) {
+    public ShowPolicyRoleResult withId(String id) {
         this.id = id;
         return this;
     }
@@ -255,7 +255,7 @@ public class PolicyRoleResult {
         this.id = id;
     }
 
-    public PolicyRoleResult withDisplayName(String displayName) {
+    public ShowPolicyRoleResult withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
@@ -272,7 +272,7 @@ public class PolicyRoleResult {
         this.displayName = displayName;
     }
 
-    public PolicyRoleResult withType(String type) {
+    public ShowPolicyRoleResult withType(String type) {
         this.type = type;
         return this;
     }
@@ -289,12 +289,12 @@ public class PolicyRoleResult {
         this.type = type;
     }
 
-    public PolicyRoleResult withPolicy(CustomPolicy policy) {
+    public ShowPolicyRoleResult withPolicy(CustomPolicy policy) {
         this.policy = policy;
         return this;
     }
 
-    public PolicyRoleResult withPolicy(Consumer<CustomPolicy> policySetter) {
+    public ShowPolicyRoleResult withPolicy(Consumer<CustomPolicy> policySetter) {
         if (this.policy == null) {
             this.policy = new CustomPolicy();
             policySetter.accept(this.policy);
@@ -323,7 +323,7 @@ public class PolicyRoleResult {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyRoleResult that = (PolicyRoleResult) obj;
+        ShowPolicyRoleResult that = (ShowPolicyRoleResult) obj;
         return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.references, that.references)
             && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.createdTime, that.createdTime)
             && Objects.equals(this.descriptionCn, that.descriptionCn) && Objects.equals(this.catalog, that.catalog)
@@ -353,7 +353,7 @@ public class PolicyRoleResult {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class PolicyRoleResult {\n");
+        sb.append("class ShowPolicyRoleResult {\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    references: ").append(toIndentedString(references)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");

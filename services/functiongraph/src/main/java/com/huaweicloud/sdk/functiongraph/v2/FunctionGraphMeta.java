@@ -244,6 +244,12 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AsyncInvokeFunctionRequest::getFunctionUrn,
                 AsyncInvokeFunctionRequest::setFunctionUrn));
+        builder.<String>withRequestField("X-Cff-Instance-Memory",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AsyncInvokeFunctionRequest::getXCffInstanceMemory,
+                AsyncInvokeFunctionRequest::setXCffInstanceMemory));
         builder.<Map<String, Object>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1017,6 +1023,12 @@ public class FunctionGraphMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(InvokeFunctionRequest::getXCFFRequestVersion,
                 InvokeFunctionRequest::setXCFFRequestVersion));
+        builder.<String>withRequestField("X-Cff-Instance-Memory",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InvokeFunctionRequest::getXCffInstanceMemory,
+                InvokeFunctionRequest::setXCffInstanceMemory));
         builder.<Map<String, Object>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

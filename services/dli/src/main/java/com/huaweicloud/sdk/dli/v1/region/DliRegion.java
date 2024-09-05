@@ -71,6 +71,8 @@ public class DliRegion {
 
     public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://dli.ru-moscow-1.myhuaweicloud.com");
 
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://dli.cn-east-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DLI");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -102,6 +104,7 @@ public class DliRegion {
         map.put("eu-west-0", EU_WEST_0);
         map.put("me-east-1", ME_EAST_1);
         map.put("ru-moscow-1", RU_MOSCOW_1);
+        map.put("cn-east-5", CN_EAST_5);
         return Collections.unmodifiableMap(map);
     }
 

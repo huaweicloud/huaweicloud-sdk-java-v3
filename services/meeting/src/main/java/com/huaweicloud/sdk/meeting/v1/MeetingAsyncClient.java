@@ -75,6 +75,8 @@ import com.huaweicloud.sdk.meeting.v1.model.CheckVerifyCodeRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CheckVerifyCodeResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CreateAnonymousAuthRandomRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CreateAnonymousAuthRandomResponse;
+import com.huaweicloud.sdk.meeting.v1.model.CreateAuthRandomRequest;
+import com.huaweicloud.sdk.meeting.v1.model.CreateAuthRandomResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CreateConfTokenRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CreateConfTokenResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CreateMeetingRequest;
@@ -5631,6 +5633,35 @@ public class MeetingAsyncClient {
      */
     public AsyncInvoker<UploadFileRequest, UploadFileResponse> uploadFileAsyncInvoker(UploadFileRequest request) {
         return new AsyncInvoker<>(request, MeetingMeta.uploadFile, hcClient);
+    }
+
+    /**
+     * 获取会议鉴权随机数
+     *
+     * 根据会议ID + 密码鉴权返回鉴权随机数，如果是小程序调用时，需要企业支持小程序功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuthRandomRequest 请求对象
+     * @return CompletableFuture<CreateAuthRandomResponse>
+     */
+    public CompletableFuture<CreateAuthRandomResponse> createAuthRandomAsync(CreateAuthRandomRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.createAuthRandom);
+    }
+
+    /**
+     * 获取会议鉴权随机数
+     *
+     * 根据会议ID + 密码鉴权返回鉴权随机数，如果是小程序调用时，需要企业支持小程序功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuthRandomRequest 请求对象
+     * @return AsyncInvoker<CreateAuthRandomRequest, CreateAuthRandomResponse>
+     */
+    public AsyncInvoker<CreateAuthRandomRequest, CreateAuthRandomResponse> createAuthRandomAsyncInvoker(
+        CreateAuthRandomRequest request) {
+        return new AsyncInvoker<>(request, MeetingMeta.createAuthRandom, hcClient);
     }
 
     /**

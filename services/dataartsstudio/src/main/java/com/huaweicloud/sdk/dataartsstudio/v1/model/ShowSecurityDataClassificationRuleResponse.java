@@ -122,7 +122,7 @@ public class ShowSecurityDataClassificationRuleResponse extends SdkResponse {
     private Boolean enable;
 
     /**
-     * 规则方式, REGULAR, NONE, DEFAULT
+     * 规则方式, REGULAR, NONE, DEFAULT, COMBINE
      */
     public static final class MethodEnum {
 
@@ -141,6 +141,11 @@ public class ShowSecurityDataClassificationRuleResponse extends SdkResponse {
          */
         public static final MethodEnum DEFAULT = new MethodEnum("DEFAULT");
 
+        /**
+         * Enum COMBINE for value: "COMBINE"
+         */
+        public static final MethodEnum COMBINE = new MethodEnum("COMBINE");
+
         private static final Map<String, MethodEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, MethodEnum> createStaticFields() {
@@ -148,6 +153,7 @@ public class ShowSecurityDataClassificationRuleResponse extends SdkResponse {
             map.put("REGULAR", REGULAR);
             map.put("NONE", NONE);
             map.put("DEFAULT", DEFAULT);
+            map.put("COMBINE", COMBINE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -216,6 +222,11 @@ public class ShowSecurityDataClassificationRuleResponse extends SdkResponse {
     @JsonProperty(value = "commit_expression")
 
     private String commitExpression;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "combine_expression")
+
+    private String combineExpression;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
@@ -394,7 +405,7 @@ public class ShowSecurityDataClassificationRuleResponse extends SdkResponse {
     }
 
     /**
-     * 规则方式, REGULAR, NONE, DEFAULT
+     * 规则方式, REGULAR, NONE, DEFAULT, COMBINE
      * @return method
      */
     public MethodEnum getMethod() {
@@ -454,6 +465,23 @@ public class ShowSecurityDataClassificationRuleResponse extends SdkResponse {
 
     public void setCommitExpression(String commitExpression) {
         this.commitExpression = commitExpression;
+    }
+
+    public ShowSecurityDataClassificationRuleResponse withCombineExpression(String combineExpression) {
+        this.combineExpression = combineExpression;
+        return this;
+    }
+
+    /**
+     * 条件表达式
+     * @return combineExpression
+     */
+    public String getCombineExpression() {
+        return combineExpression;
+    }
+
+    public void setCombineExpression(String combineExpression) {
+        this.combineExpression = combineExpression;
     }
 
     public ShowSecurityDataClassificationRuleResponse withProjectId(String projectId) {
@@ -647,6 +675,7 @@ public class ShowSecurityDataClassificationRuleResponse extends SdkResponse {
             && Objects.equals(this.contentExpression, that.contentExpression)
             && Objects.equals(this.columnExpression, that.columnExpression)
             && Objects.equals(this.commitExpression, that.commitExpression)
+            && Objects.equals(this.combineExpression, that.combineExpression)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.description, that.description)
             && Objects.equals(this.createdBy, that.createdBy) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.updatedBy, that.updatedBy) && Objects.equals(this.updatedAt, that.updatedAt)
@@ -668,6 +697,7 @@ public class ShowSecurityDataClassificationRuleResponse extends SdkResponse {
             contentExpression,
             columnExpression,
             commitExpression,
+            combineExpression,
             projectId,
             description,
             createdBy,
@@ -695,6 +725,7 @@ public class ShowSecurityDataClassificationRuleResponse extends SdkResponse {
         sb.append("    contentExpression: ").append(toIndentedString(contentExpression)).append("\n");
         sb.append("    columnExpression: ").append(toIndentedString(columnExpression)).append("\n");
         sb.append("    commitExpression: ").append(toIndentedString(commitExpression)).append("\n");
+        sb.append("    combineExpression: ").append(toIndentedString(combineExpression)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");

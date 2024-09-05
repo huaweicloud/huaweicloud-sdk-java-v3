@@ -3,8 +3,8 @@ package com.huaweicloud.sdk.ecs.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -39,19 +39,14 @@ public class FlavorQuasar {
     private Integer disk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "root_gb")
+    @JsonProperty(value = "gpus")
 
-    private Integer rootGb;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ephemeral_gb")
-
-    private Integer ephemeralGb;
+    private List<GpuInfo> gpus = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extra_specs")
+    @JsonProperty(value = "asic_accelerators")
 
-    private Map<String, String> extraSpecs = null;
+    private List<ASICAcceleratorInfo> asicAccelerators = null;
 
     public FlavorQuasar withId(String id) {
         this.id = id;
@@ -138,71 +133,70 @@ public class FlavorQuasar {
         this.disk = disk;
     }
 
-    public FlavorQuasar withRootGb(Integer rootGb) {
-        this.rootGb = rootGb;
+    public FlavorQuasar withGpus(List<GpuInfo> gpus) {
+        this.gpus = gpus;
         return this;
     }
 
-    /**
-     * Get rootGb
-     * @return rootGb
-     */
-    public Integer getRootGb() {
-        return rootGb;
-    }
-
-    public void setRootGb(Integer rootGb) {
-        this.rootGb = rootGb;
-    }
-
-    public FlavorQuasar withEphemeralGb(Integer ephemeralGb) {
-        this.ephemeralGb = ephemeralGb;
-        return this;
-    }
-
-    /**
-     * Get ephemeralGb
-     * @return ephemeralGb
-     */
-    public Integer getEphemeralGb() {
-        return ephemeralGb;
-    }
-
-    public void setEphemeralGb(Integer ephemeralGb) {
-        this.ephemeralGb = ephemeralGb;
-    }
-
-    public FlavorQuasar withExtraSpecs(Map<String, String> extraSpecs) {
-        this.extraSpecs = extraSpecs;
-        return this;
-    }
-
-    public FlavorQuasar putExtraSpecsItem(String key, String extraSpecsItem) {
-        if (this.extraSpecs == null) {
-            this.extraSpecs = new HashMap<>();
+    public FlavorQuasar addGpusItem(GpuInfo gpusItem) {
+        if (this.gpus == null) {
+            this.gpus = new ArrayList<>();
         }
-        this.extraSpecs.put(key, extraSpecsItem);
+        this.gpus.add(gpusItem);
         return this;
     }
 
-    public FlavorQuasar withExtraSpecs(Consumer<Map<String, String>> extraSpecsSetter) {
-        if (this.extraSpecs == null) {
-            this.extraSpecs = new HashMap<>();
+    public FlavorQuasar withGpus(Consumer<List<GpuInfo>> gpusSetter) {
+        if (this.gpus == null) {
+            this.gpus = new ArrayList<>();
         }
-        extraSpecsSetter.accept(this.extraSpecs);
+        gpusSetter.accept(this.gpus);
         return this;
     }
 
     /**
-     * flavor扩展字段。
-     * @return extraSpecs
+     * Get gpus
+     * @return gpus
      */
-    public Map<String, String> getExtraSpecs() {
-        return extraSpecs;
+    public List<GpuInfo> getGpus() {
+        return gpus;
     }
 
-    public void setExtraSpecs(Map<String, String> extraSpecs) {
-        this.extraSpecs = extraSpecs;
+    public void setGpus(List<GpuInfo> gpus) {
+        this.gpus = gpus;
+    }
+
+    public FlavorQuasar withAsicAccelerators(List<ASICAcceleratorInfo> asicAccelerators) {
+        this.asicAccelerators = asicAccelerators;
+        return this;
+    }
+
+    public FlavorQuasar addAsicAcceleratorsItem(ASICAcceleratorInfo asicAcceleratorsItem) {
+        if (this.asicAccelerators == null) {
+            this.asicAccelerators = new ArrayList<>();
+        }
+        this.asicAccelerators.add(asicAcceleratorsItem);
+        return this;
+    }
+
+    public FlavorQuasar withAsicAccelerators(Consumer<List<ASICAcceleratorInfo>> asicAcceleratorsSetter) {
+        if (this.asicAccelerators == null) {
+            this.asicAccelerators = new ArrayList<>();
+        }
+        asicAcceleratorsSetter.accept(this.asicAccelerators);
+        return this;
+    }
+
+    /**
+     * Get asicAccelerators
+     * @return asicAccelerators
+     */
+    public List<ASICAcceleratorInfo> getAsicAccelerators() {
+        return asicAccelerators;
+    }
+
+    public void setAsicAccelerators(List<ASICAcceleratorInfo> asicAccelerators) {
+        this.asicAccelerators = asicAccelerators;
     }
 
     @Override
@@ -216,13 +210,13 @@ public class FlavorQuasar {
         FlavorQuasar that = (FlavorQuasar) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
-            && Objects.equals(this.disk, that.disk) && Objects.equals(this.rootGb, that.rootGb)
-            && Objects.equals(this.ephemeralGb, that.ephemeralGb) && Objects.equals(this.extraSpecs, that.extraSpecs);
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.gpus, that.gpus)
+            && Objects.equals(this.asicAccelerators, that.asicAccelerators);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, vcpus, ram, disk, rootGb, ephemeralGb, extraSpecs);
+        return Objects.hash(id, name, vcpus, ram, disk, gpus, asicAccelerators);
     }
 
     @Override
@@ -234,9 +228,8 @@ public class FlavorQuasar {
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("    disk: ").append(toIndentedString(disk)).append("\n");
-        sb.append("    rootGb: ").append(toIndentedString(rootGb)).append("\n");
-        sb.append("    ephemeralGb: ").append(toIndentedString(ephemeralGb)).append("\n");
-        sb.append("    extraSpecs: ").append(toIndentedString(extraSpecs)).append("\n");
+        sb.append("    gpus: ").append(toIndentedString(gpus)).append("\n");
+        sb.append("    asicAccelerators: ").append(toIndentedString(asicAccelerators)).append("\n");
         sb.append("}");
         return sb.toString();
     }

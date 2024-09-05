@@ -73,12 +73,12 @@ public class ShowDomainRoleAssignmentsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
-    private String page;
+    private Integer page;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "per_page")
 
-    private String perPage;
+    private Integer perPage;
 
     public ShowDomainRoleAssignmentsRequest withDomainId(String domainId) {
         this.domainId = domainId;
@@ -284,7 +284,7 @@ public class ShowDomainRoleAssignmentsRequest {
         this.includeGroup = includeGroup;
     }
 
-    public ShowDomainRoleAssignmentsRequest withPage(String page) {
+    public ShowDomainRoleAssignmentsRequest withPage(Integer page) {
         this.page = page;
         return this;
     }
@@ -293,15 +293,15 @@ public class ShowDomainRoleAssignmentsRequest {
      * 分页查询时数据的页数，查询值最小为1。需要与per_page同时存在。
      * @return page
      */
-    public String getPage() {
+    public Integer getPage() {
         return page;
     }
 
-    public void setPage(String page) {
+    public void setPage(Integer page) {
         this.page = page;
     }
 
-    public ShowDomainRoleAssignmentsRequest withPerPage(String perPage) {
+    public ShowDomainRoleAssignmentsRequest withPerPage(Integer perPage) {
         this.perPage = perPage;
         return this;
     }
@@ -310,11 +310,11 @@ public class ShowDomainRoleAssignmentsRequest {
      * 分页查询时每页的数据个数，取值范围为[1,50]。需要与page同时存在。
      * @return perPage
      */
-    public String getPerPage() {
+    public Integer getPerPage() {
         return perPage;
     }
 
-    public void setPerPage(String perPage) {
+    public void setPerPage(Integer perPage) {
         this.perPage = perPage;
     }
 

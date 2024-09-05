@@ -71,11 +71,6 @@ public class AgencyPolicyRoleResult {
 
     private String createdTime;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "references")
-
-    private String references;
-
     public AgencyPolicyRoleResult withCatalog(String catalog) {
         this.catalog = catalog;
         return this;
@@ -298,23 +293,6 @@ public class AgencyPolicyRoleResult {
         this.createdTime = createdTime;
     }
 
-    public AgencyPolicyRoleResult withReferences(String references) {
-        this.references = references;
-        return this;
-    }
-
-    /**
-     * 自定义策略的引用次数。
-     * @return references
-     */
-    public String getReferences() {
-        return references;
-    }
-
-    public void setReferences(String references) {
-        this.references = references;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -329,8 +307,7 @@ public class AgencyPolicyRoleResult {
             && Objects.equals(this.policy, that.policy) && Objects.equals(this.descriptionCn, that.descriptionCn)
             && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.createdTime, that.createdTime)
-            && Objects.equals(this.references, that.references);
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override
@@ -346,8 +323,7 @@ public class AgencyPolicyRoleResult {
             id,
             name,
             updatedTime,
-            createdTime,
-            references);
+            createdTime);
     }
 
     @Override
@@ -366,7 +342,6 @@ public class AgencyPolicyRoleResult {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
-        sb.append("    references: ").append(toIndentedString(references)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1094,6 +1094,11 @@ public class EcsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListCloudServersRequest::getLimit, ListCloudServersRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudServersRequest::getMarker, ListCloudServersRequest::setMarker));
 
         // response
 

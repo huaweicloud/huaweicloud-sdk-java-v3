@@ -363,7 +363,7 @@ public class UpdatePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 主从模式中，从DNS服务器用以获取DNS信息。
+     * 主从模式中，从DNS服务器获取DNS信息。
      * @return masters
      */
     public List<String> getMasters() {
@@ -396,7 +396,7 @@ public class UpdatePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 内网Zone关联的Router(VPC)信息
+     * 与该zone关联的Router(VPC)列表。
      * @return routers
      */
     public List<RouterWithStatus> getRouters() {

@@ -258,7 +258,7 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 内网Zone的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前Zone不进行递归解析 RECURSIVE：开启递归解析代理
+     * 内网Zone的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前Zone未开启递归解析代理 RECURSIVE：当前Zone已开启递归解析代理
      * @return proxyPattern
      */
     public String getProxyPattern() {
@@ -385,7 +385,7 @@ public class CreatePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 主从模式中，从DNS服务器用以获取DNS信息。
+     * 主从模式中，从DNS服务器获取DNS信息。
      * @return masters
      */
     public List<String> getMasters() {

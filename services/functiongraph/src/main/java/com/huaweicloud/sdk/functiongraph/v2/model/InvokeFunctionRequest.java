@@ -29,6 +29,11 @@ public class InvokeFunctionRequest {
     private String xCFFRequestVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Cff-Instance-Memory")
+
+    private String xCffInstanceMemory;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private Map<String, Object> body = null;
@@ -88,6 +93,25 @@ public class InvokeFunctionRequest {
         this.xCFFRequestVersion = xCFFRequestVersion;
     }
 
+    public InvokeFunctionRequest withXCffInstanceMemory(String xCffInstanceMemory) {
+        this.xCffInstanceMemory = xCffInstanceMemory;
+        return this;
+    }
+
+    /**
+     * 设置本次执行函数使用的内存规格,取值： 128、256、512、768、1024、1280、1536、1792、2048、2560、3072、3584、4096、8192、10240
+     * @return xCffInstanceMemory
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Cff-Instance-Memory")
+    public String getXCffInstanceMemory() {
+        return xCffInstanceMemory;
+    }
+
+    public void setXCffInstanceMemory(String xCffInstanceMemory) {
+        this.xCffInstanceMemory = xCffInstanceMemory;
+    }
+
     public InvokeFunctionRequest withBody(Map<String, Object> body) {
         this.body = body;
         return this;
@@ -131,12 +155,13 @@ public class InvokeFunctionRequest {
         }
         InvokeFunctionRequest that = (InvokeFunctionRequest) obj;
         return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.xCffLogType, that.xCffLogType)
-            && Objects.equals(this.xCFFRequestVersion, that.xCFFRequestVersion) && Objects.equals(this.body, that.body);
+            && Objects.equals(this.xCFFRequestVersion, that.xCFFRequestVersion)
+            && Objects.equals(this.xCffInstanceMemory, that.xCffInstanceMemory) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, xCffLogType, xCFFRequestVersion, body);
+        return Objects.hash(functionUrn, xCffLogType, xCFFRequestVersion, xCffInstanceMemory, body);
     }
 
     @Override
@@ -146,6 +171,7 @@ public class InvokeFunctionRequest {
         sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
         sb.append("    xCffLogType: ").append(toIndentedString(xCffLogType)).append("\n");
         sb.append("    xCFFRequestVersion: ").append(toIndentedString(xCFFRequestVersion)).append("\n");
+        sb.append("    xCffInstanceMemory: ").append(toIndentedString(xCffInstanceMemory)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

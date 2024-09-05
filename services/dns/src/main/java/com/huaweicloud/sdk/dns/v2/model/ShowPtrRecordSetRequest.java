@@ -43,7 +43,7 @@ public class ShowPtrRecordSetRequest {
     }
 
     /**
-     * 弹性IP的ID。
+     * 弹性公网IP（EIP）的ID。
      * @return floatingipId
      */
     public String getFloatingipId() {

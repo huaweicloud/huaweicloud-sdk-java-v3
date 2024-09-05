@@ -110,6 +110,11 @@ public class NetworkAddresses {
 
     private String osEXTIPSType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "primary")
+
+    private Boolean primary;
+
     public NetworkAddresses withAddr(String addr) {
         this.addr = addr;
         return this;
@@ -195,6 +200,23 @@ public class NetworkAddresses {
         this.osEXTIPSType = osEXTIPSType;
     }
 
+    public NetworkAddresses withPrimary(Boolean primary) {
+        this.primary = primary;
+        return this;
+    }
+
+    /**
+     * 是否是主网卡。  true：主网卡。 false：辅助网卡。
+     * @return primary
+     */
+    public Boolean getPrimary() {
+        return primary;
+    }
+
+    public void setPrimary(Boolean primary) {
+        this.primary = primary;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -207,12 +229,12 @@ public class NetworkAddresses {
         return Objects.equals(this.addr, that.addr) && Objects.equals(this.version, that.version)
             && Objects.equals(this.osEXTIPSPortId, that.osEXTIPSPortId)
             && Objects.equals(this.osEXTIPSMACMacAddr, that.osEXTIPSMACMacAddr)
-            && Objects.equals(this.osEXTIPSType, that.osEXTIPSType);
+            && Objects.equals(this.osEXTIPSType, that.osEXTIPSType) && Objects.equals(this.primary, that.primary);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(addr, version, osEXTIPSPortId, osEXTIPSMACMacAddr, osEXTIPSType);
+        return Objects.hash(addr, version, osEXTIPSPortId, osEXTIPSMACMacAddr, osEXTIPSType, primary);
     }
 
     @Override
@@ -224,6 +246,7 @@ public class NetworkAddresses {
         sb.append("    osEXTIPSPortId: ").append(toIndentedString(osEXTIPSPortId)).append("\n");
         sb.append("    osEXTIPSMACMacAddr: ").append(toIndentedString(osEXTIPSMACMacAddr)).append("\n");
         sb.append("    osEXTIPSType: ").append(toIndentedString(osEXTIPSType)).append("\n");
+        sb.append("    primary: ").append(toIndentedString(primary)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -12,47 +12,25 @@ import java.util.Objects;
 public class ExecuteScriptResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_code")
+    @JsonProperty(value = "data")
 
-    private String errorCode;
+    private String data;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_msg")
-
-    private String errorMsg;
-
-    public ExecuteScriptResponse withErrorCode(String errorCode) {
-        this.errorCode = errorCode;
+    public ExecuteScriptResponse withData(String data) {
+        this.data = data;
         return this;
     }
 
     /**
-     * 错误码
-     * @return errorCode
+     * execute_uuid
+     * @return data
      */
-    public String getErrorCode() {
-        return errorCode;
+    public String getData() {
+        return data;
     }
 
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-    }
-
-    public ExecuteScriptResponse withErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-        return this;
-    }
-
-    /**
-     * 错误描述
-     * @return errorMsg
-     */
-    public String getErrorMsg() {
-        return errorMsg;
-    }
-
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
+    public void setData(String data) {
+        this.data = data;
     }
 
     @Override
@@ -64,20 +42,19 @@ public class ExecuteScriptResponse extends SdkResponse {
             return false;
         }
         ExecuteScriptResponse that = (ExecuteScriptResponse) obj;
-        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
+        return Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(errorCode, errorMsg);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExecuteScriptResponse {\n");
-        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

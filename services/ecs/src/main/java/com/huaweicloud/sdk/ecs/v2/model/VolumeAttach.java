@@ -30,6 +30,11 @@ public class VolumeAttach {
 
     private String bootIndex;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "size")
+
+    private Integer size;
+
     public VolumeAttach withId(String id) {
         this.id = id;
         return this;
@@ -98,6 +103,23 @@ public class VolumeAttach {
         this.bootIndex = bootIndex;
     }
 
+    public VolumeAttach withSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+
+    /**
+     * 云盘大小（单位：GB）。
+     * @return size
+     */
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class VolumeAttach {
         }
         VolumeAttach that = (VolumeAttach) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.deleteOnTermination, that.deleteOnTermination)
-            && Objects.equals(this.device, that.device) && Objects.equals(this.bootIndex, that.bootIndex);
+            && Objects.equals(this.device, that.device) && Objects.equals(this.bootIndex, that.bootIndex)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, deleteOnTermination, device, bootIndex);
+        return Objects.hash(id, deleteOnTermination, device, bootIndex, size);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class VolumeAttach {
         sb.append("    deleteOnTermination: ").append(toIndentedString(deleteOnTermination)).append("\n");
         sb.append("    device: ").append(toIndentedString(device)).append("\n");
         sb.append("    bootIndex: ").append(toIndentedString(bootIndex)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("}");
         return sb.toString();
     }

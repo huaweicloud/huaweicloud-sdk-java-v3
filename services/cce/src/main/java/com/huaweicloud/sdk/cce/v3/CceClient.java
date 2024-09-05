@@ -150,6 +150,8 @@ import com.huaweicloud.sdk.cce.v3.model.RetryAutopilotUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.RetryAutopilotUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.RevokeKubernetesClusterCertRequest;
+import com.huaweicloud.sdk.cce.v3.model.RevokeKubernetesClusterCertResponse;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAutopilotAddonInstanceRequest;
@@ -1761,6 +1763,39 @@ public class CceClient {
     public SyncInvoker<RetryUpgradeClusterTaskRequest, RetryUpgradeClusterTaskResponse> retryUpgradeClusterTaskInvoker(
         RetryUpgradeClusterTaskRequest request) {
         return new SyncInvoker<>(request, CceMeta.retryUpgradeClusterTask, hcClient);
+    }
+
+    /**
+     * 吊销用户的集群证书
+     *
+     * 该API用于吊销指定集群的用户证书
+     * 
+     * &gt; 吊销操作完成后，此证书申请人之前下载的证书和 kubectl 配置文件无法再用于连接集群。此证书申请人可以重新下载证书或 kubectl 配置文件，并使用新下载的文件连接集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RevokeKubernetesClusterCertRequest 请求对象
+     * @return RevokeKubernetesClusterCertResponse
+     */
+    public RevokeKubernetesClusterCertResponse revokeKubernetesClusterCert(RevokeKubernetesClusterCertRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.revokeKubernetesClusterCert);
+    }
+
+    /**
+     * 吊销用户的集群证书
+     *
+     * 该API用于吊销指定集群的用户证书
+     * 
+     * &gt; 吊销操作完成后，此证书申请人之前下载的证书和 kubectl 配置文件无法再用于连接集群。此证书申请人可以重新下载证书或 kubectl 配置文件，并使用新下载的文件连接集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RevokeKubernetesClusterCertRequest 请求对象
+     * @return SyncInvoker<RevokeKubernetesClusterCertRequest, RevokeKubernetesClusterCertResponse>
+     */
+    public SyncInvoker<RevokeKubernetesClusterCertRequest, RevokeKubernetesClusterCertResponse> revokeKubernetesClusterCertInvoker(
+        RevokeKubernetesClusterCertRequest request) {
+        return new SyncInvoker<>(request, CceMeta.revokeKubernetesClusterCert, hcClient);
     }
 
     /**

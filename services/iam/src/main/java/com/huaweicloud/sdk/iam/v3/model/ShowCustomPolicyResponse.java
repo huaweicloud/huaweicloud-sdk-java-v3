@@ -15,16 +15,16 @@ public class ShowCustomPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "role")
 
-    private PolicyRoleResult role;
+    private ShowPolicyRoleResult role;
 
-    public ShowCustomPolicyResponse withRole(PolicyRoleResult role) {
+    public ShowCustomPolicyResponse withRole(ShowPolicyRoleResult role) {
         this.role = role;
         return this;
     }
 
-    public ShowCustomPolicyResponse withRole(Consumer<PolicyRoleResult> roleSetter) {
+    public ShowCustomPolicyResponse withRole(Consumer<ShowPolicyRoleResult> roleSetter) {
         if (this.role == null) {
-            this.role = new PolicyRoleResult();
+            this.role = new ShowPolicyRoleResult();
             roleSetter.accept(this.role);
         }
 
@@ -35,11 +35,11 @@ public class ShowCustomPolicyResponse extends SdkResponse {
      * Get role
      * @return role
      */
-    public PolicyRoleResult getRole() {
+    public ShowPolicyRoleResult getRole() {
         return role;
     }
 
-    public void setRole(PolicyRoleResult role) {
+    public void setRole(ShowPolicyRoleResult role) {
         this.role = role;
     }
 

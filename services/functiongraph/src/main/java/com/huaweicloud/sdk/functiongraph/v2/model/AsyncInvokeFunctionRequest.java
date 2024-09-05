@@ -19,6 +19,11 @@ public class AsyncInvokeFunctionRequest {
     private String functionUrn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Cff-Instance-Memory")
+
+    private String xCffInstanceMemory;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private Map<String, Object> body = null;
@@ -38,6 +43,25 @@ public class AsyncInvokeFunctionRequest {
 
     public void setFunctionUrn(String functionUrn) {
         this.functionUrn = functionUrn;
+    }
+
+    public AsyncInvokeFunctionRequest withXCffInstanceMemory(String xCffInstanceMemory) {
+        this.xCffInstanceMemory = xCffInstanceMemory;
+        return this;
+    }
+
+    /**
+     * 设置本次执行函数使用的内存规格,取值： 128、256、512、768、1024、1280、1536、1792、2048、2560、3072、3584、4096、8192、10240
+     * @return xCffInstanceMemory
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Cff-Instance-Memory")
+    public String getXCffInstanceMemory() {
+        return xCffInstanceMemory;
+    }
+
+    public void setXCffInstanceMemory(String xCffInstanceMemory) {
+        this.xCffInstanceMemory = xCffInstanceMemory;
     }
 
     public AsyncInvokeFunctionRequest withBody(Map<String, Object> body) {
@@ -82,12 +106,13 @@ public class AsyncInvokeFunctionRequest {
             return false;
         }
         AsyncInvokeFunctionRequest that = (AsyncInvokeFunctionRequest) obj;
-        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.functionUrn, that.functionUrn)
+            && Objects.equals(this.xCffInstanceMemory, that.xCffInstanceMemory) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(functionUrn, body);
+        return Objects.hash(functionUrn, xCffInstanceMemory, body);
     }
 
     @Override
@@ -95,6 +120,7 @@ public class AsyncInvokeFunctionRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class AsyncInvokeFunctionRequest {\n");
         sb.append("    functionUrn: ").append(toIndentedString(functionUrn)).append("\n");
+        sb.append("    xCffInstanceMemory: ").append(toIndentedString(xCffInstanceMemory)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

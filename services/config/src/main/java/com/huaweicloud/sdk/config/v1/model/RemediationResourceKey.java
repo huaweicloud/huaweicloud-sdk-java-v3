@@ -48,7 +48,7 @@ public class RemediationResourceKey {
     }
 
     /**
-     * 云服务名称。
+     * 云服务名称，为兼容部分合规结果中云服务名称为空的场景，可为空字符串。
      * @return resourceProvider
      */
     public String getResourceProvider() {
@@ -65,7 +65,7 @@ public class RemediationResourceKey {
     }
 
     /**
-     * 资源类型。
+     * 资源类型，为兼容部分合规结果中资源类型为空的场景，可为空字符串。
      * @return resourceType
      */
     public String getResourceType() {

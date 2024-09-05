@@ -25,6 +25,11 @@ public class ShowJobRequest {
 
     private Integer version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dependencies")
+
+    private Boolean dependencies;
+
     public ShowJobRequest withWorkspace(String workspace) {
         this.workspace = workspace;
         return this;
@@ -76,6 +81,23 @@ public class ShowJobRequest {
         this.version = version;
     }
 
+    public ShowJobRequest withDependencies(Boolean dependencies) {
+        this.dependencies = dependencies;
+        return this;
+    }
+
+    /**
+     * 返回下游依赖当前作业的作业，只返回第一层。
+     * @return dependencies
+     */
+    public Boolean getDependencies() {
+        return dependencies;
+    }
+
+    public void setDependencies(Boolean dependencies) {
+        this.dependencies = dependencies;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class ShowJobRequest {
         }
         ShowJobRequest that = (ShowJobRequest) obj;
         return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.jobName, that.jobName)
-            && Objects.equals(this.version, that.version);
+            && Objects.equals(this.version, that.version) && Objects.equals(this.dependencies, that.dependencies);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, jobName, version);
+        return Objects.hash(workspace, jobName, version, dependencies);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class ShowJobRequest {
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
         sb.append("    jobName: ").append(toIndentedString(jobName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -184,7 +184,7 @@ public class ChangeBaremetalNameResponsesServers {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hostId")
 
-    private UUID hostId;
+    private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addresses")
@@ -900,7 +900,7 @@ public class ChangeBaremetalNameResponsesServers {
         this.metadata = metadata;
     }
 
-    public ChangeBaremetalNameResponsesServers withHostId(UUID hostId) {
+    public ChangeBaremetalNameResponsesServers withHostId(String hostId) {
         this.hostId = hostId;
         return this;
     }
@@ -909,11 +909,11 @@ public class ChangeBaremetalNameResponsesServers {
      * 裸金属服务器的主机ID
      * @return hostId
      */
-    public UUID getHostId() {
+    public String getHostId() {
         return hostId;
     }
 
-    public void setHostId(UUID hostId) {
+    public void setHostId(String hostId) {
         this.hostId = hostId;
     }
 

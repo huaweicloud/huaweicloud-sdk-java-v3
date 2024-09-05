@@ -108,6 +108,11 @@ public class ListCloudServersRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     public ListCloudServersRequest withId(String id) {
         this.id = id;
         return this;
@@ -148,7 +153,7 @@ public class ListCloudServersRequest {
     }
 
     /**
-     * 云服务器状态。  取值范围：  ACTIVE， BUILD，DELETED，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
+     * 云服务器状态。  取值范围：  ACTIVE， BUILD，ERROR，HARD_REBOOT，MIGRATING，REBOOT，RESIZE，REVERT_RESIZE，SHELVED，SHELVED_OFFLOADED，SHUTOFF，UNKNOWN，VERIFY_RESIZE  弹性云服务器状态说明请参考[云服务器状态](https://support.huaweicloud.com/api-ecs/ecs_08_0002.html)
      * @return status
      */
     public String getStatus() {
@@ -419,7 +424,7 @@ public class ListCloudServersRequest {
     }
 
     /**
-     * 控制查询输出的字段。在默认字段的基础上选择是否查询，有管理员字段。
+     * 控制查询输出的字段。在默认字段的基础上选择是否查询。   launched_at：云服务器启动时间。   key_name：云服务器使用的密钥对名称。   locked：云服务器是否为锁定状态。   root_device_name：云服务器系统盘的设备名称。   tenancy：在专属主机或共享池中创建云服务器。   dedicated_host_id：专属主机ID。   enterprise_project_id：查询绑定某个企业项目的云服务器。   tags：云服务器的标签列表。   metadata：云服务器元数据。   addresses：云服务器对应的网络地址信息。   security_groups：云服务器的安全组信息。   volumes_attached：云服务器挂载磁盘信息。   image：云服务器镜像信息。   power_state：云服务器电源状态。   cpu_options：自定义CPU选项。   market_info：云服务器计费信息，包含计费类型、到期时间等字段。
      * @return expectFields
      */
     public List<String> getExpectFields() {
@@ -449,6 +454,23 @@ public class ListCloudServersRequest {
         this.limit = limit;
     }
 
+    public ListCloudServersRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 以单页最后一条server的ID作为分页标记。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -469,7 +491,8 @@ public class ListCloudServersRequest {
             && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.keyName, that.keyName)
             && Objects.equals(this.launchedSince, that.launchedSince)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.expectFields, that.expectFields) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.expectFields, that.expectFields) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
@@ -492,7 +515,8 @@ public class ListCloudServersRequest {
             launchedSince,
             enterpriseProjectId,
             expectFields,
-            limit);
+            limit,
+            marker);
     }
 
     @Override
@@ -518,6 +542,7 @@ public class ListCloudServersRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    expectFields: ").append(toIndentedString(expectFields)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

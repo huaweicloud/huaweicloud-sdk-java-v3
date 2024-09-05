@@ -19,11 +19,6 @@ public class ShowResourceTagResponse extends SdkResponse {
 
     private List<Tag> tags = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterpriseProjectOrDefault")
-
-    private String enterpriseProjectOrDefault;
-
     public ShowResourceTagResponse withTags(List<Tag> tags) {
         this.tags = tags;
         return this;
@@ -57,23 +52,6 @@ public class ShowResourceTagResponse extends SdkResponse {
         this.tags = tags;
     }
 
-    public ShowResourceTagResponse withEnterpriseProjectOrDefault(String enterpriseProjectOrDefault) {
-        this.enterpriseProjectOrDefault = enterpriseProjectOrDefault;
-        return this;
-    }
-
-    /**
-     * 企业项目或默认项目
-     * @return enterpriseProjectOrDefault
-     */
-    public String getEnterpriseProjectOrDefault() {
-        return enterpriseProjectOrDefault;
-    }
-
-    public void setEnterpriseProjectOrDefault(String enterpriseProjectOrDefault) {
-        this.enterpriseProjectOrDefault = enterpriseProjectOrDefault;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,13 +61,12 @@ public class ShowResourceTagResponse extends SdkResponse {
             return false;
         }
         ShowResourceTagResponse that = (ShowResourceTagResponse) obj;
-        return Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.enterpriseProjectOrDefault, that.enterpriseProjectOrDefault);
+        return Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tags, enterpriseProjectOrDefault);
+        return Objects.hash(tags);
     }
 
     @Override
@@ -97,7 +74,6 @@ public class ShowResourceTagResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowResourceTagResponse {\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-        sb.append("    enterpriseProjectOrDefault: ").append(toIndentedString(enterpriseProjectOrDefault)).append("\n");
         sb.append("}");
         return sb.toString();
     }

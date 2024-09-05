@@ -31,7 +31,7 @@ public class Router {
     }
 
     /**
-     * Router(VPC)所属VPC的ID。
+     * 关联VPC的ID。
      * @return routerId
      */
     public String getRouterId() {
@@ -48,7 +48,7 @@ public class Router {
     }
 
     /**
-     * Router(VPC)所在的region。
+     * 关联VPC所在的region。
      * @return routerRegion
      */
     public String getRouterRegion() {

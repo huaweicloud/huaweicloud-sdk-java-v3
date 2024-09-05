@@ -159,6 +159,16 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
 
     private String createdBy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_type")
+
+    private String targetType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_id")
+
+    private String targetId;
+
     public CreatePolicyAssignmentsResponse withPolicyAssignmentType(PolicyAssignmentTypeEnum policyAssignmentType) {
         this.policyAssignmentType = policyAssignmentType;
         return this;
@@ -448,6 +458,40 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         this.createdBy = createdBy;
     }
 
+    public CreatePolicyAssignmentsResponse withTargetType(String targetType) {
+        this.targetType = targetType;
+        return this;
+    }
+
+    /**
+     * 合规规则修正方式。
+     * @return targetType
+     */
+    public String getTargetType() {
+        return targetType;
+    }
+
+    public void setTargetType(String targetType) {
+        this.targetType = targetType;
+    }
+
+    public CreatePolicyAssignmentsResponse withTargetId(String targetId) {
+        this.targetId = targetId;
+        return this;
+    }
+
+    /**
+     * 修正执行的目标id。
+     * @return targetId
+     */
+    public String getTargetId() {
+        return targetId;
+    }
+
+    public void setTargetId(String targetId) {
+        this.targetId = targetId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -464,7 +508,8 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
             && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.policyDefinitionId, that.policyDefinitionId)
             && Objects.equals(this.customPolicy, that.customPolicy) && Objects.equals(this.parameters, that.parameters)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.createdBy, that.createdBy);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.createdBy, that.createdBy)
+            && Objects.equals(this.targetType, that.targetType) && Objects.equals(this.targetId, that.targetId);
     }
 
     @Override
@@ -482,7 +527,9 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
             customPolicy,
             parameters,
             tags,
-            createdBy);
+            createdBy,
+            targetType,
+            targetId);
     }
 
     @Override
@@ -503,6 +550,8 @@ public class CreatePolicyAssignmentsResponse extends SdkResponse {
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+        sb.append("    targetType: ").append(toIndentedString(targetType)).append("\n");
+        sb.append("    targetId: ").append(toIndentedString(targetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

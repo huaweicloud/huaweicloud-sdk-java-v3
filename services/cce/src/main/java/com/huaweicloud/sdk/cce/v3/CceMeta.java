@@ -24,6 +24,7 @@ import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchSyncNodesRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchSyncNodesResponse;
 import com.huaweicloud.sdk.cce.v3.model.CertDuration;
+import com.huaweicloud.sdk.cce.v3.model.CertRevokeConfigRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.ChartResp;
 import com.huaweicloud.sdk.cce.v3.model.Cluster;
 import com.huaweicloud.sdk.cce.v3.model.ClusterInformation;
@@ -180,6 +181,8 @@ import com.huaweicloud.sdk.cce.v3.model.RetryAutopilotUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.RetryAutopilotUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.RetryUpgradeClusterTaskResponse;
+import com.huaweicloud.sdk.cce.v3.model.RevokeKubernetesClusterCertRequest;
+import com.huaweicloud.sdk.cce.v3.model.RevokeKubernetesClusterCertResponse;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.RollbackAutopilotAddonInstanceRequest;
@@ -1739,6 +1742,39 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RetryUpgradeClusterTaskRequest::getClusterId,
                 RetryUpgradeClusterTaskRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RevokeKubernetesClusterCertRequest, RevokeKubernetesClusterCertResponse> revokeKubernetesClusterCert =
+        genForRevokeKubernetesClusterCert();
+
+    private static HttpRequestDef<RevokeKubernetesClusterCertRequest, RevokeKubernetesClusterCertResponse> genForRevokeKubernetesClusterCert() {
+        // basic
+        HttpRequestDef.Builder<RevokeKubernetesClusterCertRequest, RevokeKubernetesClusterCertResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RevokeKubernetesClusterCertRequest.class,
+                    RevokeKubernetesClusterCertResponse.class)
+                .withName("RevokeKubernetesClusterCert")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/clustercertrevoke")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RevokeKubernetesClusterCertRequest::getClusterId,
+                RevokeKubernetesClusterCertRequest::setClusterId));
+        builder.<CertRevokeConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CertRevokeConfigRequestBody.class),
+            f -> f.withMarshaller(RevokeKubernetesClusterCertRequest::getBody,
+                RevokeKubernetesClusterCertRequest::setBody));
 
         // response
 

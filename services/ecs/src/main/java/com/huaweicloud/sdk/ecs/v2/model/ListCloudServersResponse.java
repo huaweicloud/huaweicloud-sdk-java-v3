@@ -15,11 +15,6 @@ import java.util.function.Consumer;
 public class ListCloudServersResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "count")
-
-    private Integer count;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "servers")
 
     private List<CloudServer> servers = null;
@@ -33,23 +28,6 @@ public class ListCloudServersResponse extends SdkResponse {
     @JsonProperty(value = "request_id")
 
     private String requestId;
-
-    public ListCloudServersResponse withCount(Integer count) {
-        this.count = count;
-        return this;
-    }
-
-    /**
-     * 查询云服务器个数。
-     * @return count
-     */
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
 
     public ListCloudServersResponse withServers(List<CloudServer> servers) {
         this.servers = servers;
@@ -143,20 +121,19 @@ public class ListCloudServersResponse extends SdkResponse {
             return false;
         }
         ListCloudServersResponse that = (ListCloudServersResponse) obj;
-        return Objects.equals(this.count, that.count) && Objects.equals(this.servers, that.servers)
-            && Objects.equals(this.serversLinks, that.serversLinks) && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.servers, that.servers) && Objects.equals(this.serversLinks, that.serversLinks)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, servers, serversLinks, requestId);
+        return Objects.hash(servers, serversLinks, requestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCloudServersResponse {\n");
-        sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    servers: ").append(toIndentedString(servers)).append("\n");
         sb.append("    serversLinks: ").append(toIndentedString(serversLinks)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");

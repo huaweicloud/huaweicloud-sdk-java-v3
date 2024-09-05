@@ -1055,6 +1055,11 @@ public class DgcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowJobRequest::getVersion, ShowJobRequest::setVersion));
+        builder.<Boolean>withRequestField("dependencies",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowJobRequest::getDependencies, ShowJobRequest::setDependencies));
         builder.<String>withRequestField("workspace",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

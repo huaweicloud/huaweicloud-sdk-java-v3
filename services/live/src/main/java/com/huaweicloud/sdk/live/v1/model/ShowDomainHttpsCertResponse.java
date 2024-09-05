@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -100,6 +101,16 @@ public class ShowDomainHttpsCertResponse extends SdkResponse {
 
     private Boolean forceRedirect;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gm_certificate")
+
+    private GmCertificateInfo gmCertificate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tls_certificate")
+
+    private TlsCertificateInfo tlsCertificate;
+
     public ShowDomainHttpsCertResponse withCertificateFormat(CertificateFormatEnum certificateFormat) {
         this.certificateFormat = certificateFormat;
         return this;
@@ -168,6 +179,58 @@ public class ShowDomainHttpsCertResponse extends SdkResponse {
         this.forceRedirect = forceRedirect;
     }
 
+    public ShowDomainHttpsCertResponse withGmCertificate(GmCertificateInfo gmCertificate) {
+        this.gmCertificate = gmCertificate;
+        return this;
+    }
+
+    public ShowDomainHttpsCertResponse withGmCertificate(Consumer<GmCertificateInfo> gmCertificateSetter) {
+        if (this.gmCertificate == null) {
+            this.gmCertificate = new GmCertificateInfo();
+            gmCertificateSetter.accept(this.gmCertificate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get gmCertificate
+     * @return gmCertificate
+     */
+    public GmCertificateInfo getGmCertificate() {
+        return gmCertificate;
+    }
+
+    public void setGmCertificate(GmCertificateInfo gmCertificate) {
+        this.gmCertificate = gmCertificate;
+    }
+
+    public ShowDomainHttpsCertResponse withTlsCertificate(TlsCertificateInfo tlsCertificate) {
+        this.tlsCertificate = tlsCertificate;
+        return this;
+    }
+
+    public ShowDomainHttpsCertResponse withTlsCertificate(Consumer<TlsCertificateInfo> tlsCertificateSetter) {
+        if (this.tlsCertificate == null) {
+            this.tlsCertificate = new TlsCertificateInfo();
+            tlsCertificateSetter.accept(this.tlsCertificate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get tlsCertificate
+     * @return tlsCertificate
+     */
+    public TlsCertificateInfo getTlsCertificate() {
+        return tlsCertificate;
+    }
+
+    public void setTlsCertificate(TlsCertificateInfo tlsCertificate) {
+        this.tlsCertificate = tlsCertificate;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,12 +243,15 @@ public class ShowDomainHttpsCertResponse extends SdkResponse {
         return Objects.equals(this.certificateFormat, that.certificateFormat)
             && Objects.equals(this.certificate, that.certificate)
             && Objects.equals(this.certificateKey, that.certificateKey)
-            && Objects.equals(this.forceRedirect, that.forceRedirect);
+            && Objects.equals(this.forceRedirect, that.forceRedirect)
+            && Objects.equals(this.gmCertificate, that.gmCertificate)
+            && Objects.equals(this.tlsCertificate, that.tlsCertificate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(certificateFormat, certificate, certificateKey, forceRedirect);
+        return Objects
+            .hash(certificateFormat, certificate, certificateKey, forceRedirect, gmCertificate, tlsCertificate);
     }
 
     @Override
@@ -196,6 +262,8 @@ public class ShowDomainHttpsCertResponse extends SdkResponse {
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
         sb.append("    certificateKey: ").append(toIndentedString(certificateKey)).append("\n");
         sb.append("    forceRedirect: ").append(toIndentedString(forceRedirect)).append("\n");
+        sb.append("    gmCertificate: ").append(toIndentedString(gmCertificate)).append("\n");
+        sb.append("    tlsCertificate: ").append(toIndentedString(tlsCertificate)).append("\n");
         sb.append("}");
         return sb.toString();
     }

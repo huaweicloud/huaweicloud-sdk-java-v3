@@ -15,6 +15,11 @@ public class SecurityGroup {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
     public SecurityGroup withName(String name) {
         this.name = name;
         return this;
@@ -32,6 +37,23 @@ public class SecurityGroup {
         this.name = name;
     }
 
+    public SecurityGroup withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 安全组ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class SecurityGroup {
             return false;
         }
         SecurityGroup that = (SecurityGroup) obj;
-        return Objects.equals(this.name, that.name);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, id);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class SecurityGroup {
         StringBuilder sb = new StringBuilder();
         sb.append("class SecurityGroup {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }

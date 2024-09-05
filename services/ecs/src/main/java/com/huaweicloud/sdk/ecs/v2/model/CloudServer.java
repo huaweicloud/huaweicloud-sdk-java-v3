@@ -86,9 +86,9 @@ public class CloudServer {
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "launched")
+    @JsonProperty(value = "launched_at")
 
-    private String launched;
+    private String launchedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -417,21 +417,21 @@ public class CloudServer {
         this.updated = updated;
     }
 
-    public CloudServer withLaunched(String launched) {
-        this.launched = launched;
+    public CloudServer withLaunchedAt(String launchedAt) {
+        this.launchedAt = launchedAt;
         return this;
     }
 
     /**
-     * 云服务器启动时间。时间格式例如：2020-05-22T07:48:53Z。
-     * @return launched
+     * 云服务器启动时间。时间格式例如：2020-05-22T07:48:53.000000。
+     * @return launchedAt
      */
-    public String getLaunched() {
-        return launched;
+    public String getLaunchedAt() {
+        return launchedAt;
     }
 
-    public void setLaunched(String launched) {
-        this.launched = launched;
+    public void setLaunchedAt(String launchedAt) {
+        this.launchedAt = launchedAt;
     }
 
     public CloudServer withDescription(String description) {
@@ -838,7 +838,7 @@ public class CloudServer {
             && Objects.equals(this.vmState, that.vmState) && Objects.equals(this.taskState, that.taskState)
             && Objects.equals(this.powerState, that.powerState) && Objects.equals(this.created, that.created)
             && Objects.equals(this.inRecycleBin, that.inRecycleBin) && Objects.equals(this.spodId, that.spodId)
-            && Objects.equals(this.updated, that.updated) && Objects.equals(this.launched, that.launched)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.launchedAt, that.launchedAt)
             && Objects.equals(this.description, that.description) && Objects.equals(this.keyName, that.keyName)
             && Objects.equals(this.locked, that.locked) && Objects.equals(this.rootDeviceName, that.rootDeviceName)
             && Objects.equals(this.tenancy, that.tenancy) && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
@@ -867,7 +867,7 @@ public class CloudServer {
             inRecycleBin,
             spodId,
             updated,
-            launched,
+            launchedAt,
             description,
             keyName,
             locked,
@@ -904,7 +904,7 @@ public class CloudServer {
         sb.append("    inRecycleBin: ").append(toIndentedString(inRecycleBin)).append("\n");
         sb.append("    spodId: ").append(toIndentedString(spodId)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
-        sb.append("    launched: ").append(toIndentedString(launched)).append("\n");
+        sb.append("    launchedAt: ").append(toIndentedString(launchedAt)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
         sb.append("    locked: ").append(toIndentedString(locked)).append("\n");

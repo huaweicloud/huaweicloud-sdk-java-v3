@@ -88,6 +88,8 @@ import com.huaweicloud.sdk.meeting.v1.model.ConferenceInfo;
 import com.huaweicloud.sdk.meeting.v1.model.CorpAdminDTO;
 import com.huaweicloud.sdk.meeting.v1.model.CreateAnonymousAuthRandomRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CreateAnonymousAuthRandomResponse;
+import com.huaweicloud.sdk.meeting.v1.model.CreateAuthRandomRequest;
+import com.huaweicloud.sdk.meeting.v1.model.CreateAuthRandomResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CreateConfTokenRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CreateConfTokenResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CreateMeetingRequest;
@@ -7470,6 +7472,39 @@ public class MeetingMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UploadFileRequestBody.class),
             f -> f.withMarshaller(UploadFileRequest::getBody, UploadFileRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAuthRandomRequest, CreateAuthRandomResponse> createAuthRandom =
+        genForCreateAuthRandom();
+
+    private static HttpRequestDef<CreateAuthRandomRequest, CreateAuthRandomResponse> genForCreateAuthRandom() {
+        // basic
+        HttpRequestDef.Builder<CreateAuthRandomRequest, CreateAuthRandomResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CreateAuthRandomRequest.class, CreateAuthRandomResponse.class)
+                .withName("CreateAuthRandom")
+                .withUri("/v2/mms/ncms/conferences/auth/random")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conf_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAuthRandomRequest::getConfId, CreateAuthRandomRequest::setConfId));
+        builder.<Integer>withRequestField("guest_waiting",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(CreateAuthRandomRequest::getGuestWaiting, CreateAuthRandomRequest::setGuestWaiting));
+        builder.<String>withRequestField("X-Password",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAuthRandomRequest::getXPassword, CreateAuthRandomRequest::setXPassword));
 
         // response
 

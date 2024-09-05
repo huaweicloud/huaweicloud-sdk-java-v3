@@ -2742,6 +2742,16 @@ public class IamMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAgenciesRequest::getName, ListAgenciesRequest::setName));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAgenciesRequest::getPage, ListAgenciesRequest::setPage));
+        builder.<Integer>withRequestField("per_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAgenciesRequest::getPerPage, ListAgenciesRequest::setPerPage));
 
         // response
 
@@ -3564,16 +3574,16 @@ public class IamMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getIncludeGroup,
                 ShowDomainRoleAssignmentsRequest::setIncludeGroup));
-        builder.<String>withRequestField("page",
+        builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getPage,
                 ShowDomainRoleAssignmentsRequest::setPage));
-        builder.<String>withRequestField("per_page",
+        builder.<Integer>withRequestField("per_page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowDomainRoleAssignmentsRequest::getPerPage,
                 ShowDomainRoleAssignmentsRequest::setPerPage));
 

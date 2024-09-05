@@ -49,7 +49,7 @@ public class UpdatePtrRecordRequest {
     }
 
     /**
-     * 待修改弹性IP的PTR记录ID信息。
+     * 弹性公网IP（EIP）的ID。
      * @return floatingipId
      */
     public String getFloatingipId() {

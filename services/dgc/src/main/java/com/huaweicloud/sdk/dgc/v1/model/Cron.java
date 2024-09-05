@@ -37,6 +37,11 @@ public class Cron {
     private Boolean dependPrePeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "intervalType")
+
+    private String intervalType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dependJobs")
 
     private DependJob dependJobs;
@@ -126,6 +131,23 @@ public class Cron {
         this.dependPrePeriod = dependPrePeriod;
     }
 
+    public Cron withIntervalType(String intervalType) {
+        this.intervalType = intervalType;
+        return this;
+    }
+
+    /**
+     * 调度间隔类型： - minutes：分钟 - hours：小时 - days：天 - weeks： 周 - months：月 - seasons： 季 - years：年
+     * @return intervalType
+     */
+    public String getIntervalType() {
+        return intervalType;
+    }
+
+    public void setIntervalType(String intervalType) {
+        this.intervalType = intervalType;
+    }
+
     public Cron withDependJobs(DependJob dependJobs) {
         this.dependJobs = dependJobs;
         return this;
@@ -165,12 +187,13 @@ public class Cron {
             && Objects.equals(this.expression, that.expression)
             && Objects.equals(this.expressionTimeZone, that.expressionTimeZone)
             && Objects.equals(this.dependPrePeriod, that.dependPrePeriod)
-            && Objects.equals(this.dependJobs, that.dependJobs);
+            && Objects.equals(this.intervalType, that.intervalType) && Objects.equals(this.dependJobs, that.dependJobs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, expression, expressionTimeZone, dependPrePeriod, dependJobs);
+        return Objects
+            .hash(startTime, endTime, expression, expressionTimeZone, dependPrePeriod, intervalType, dependJobs);
     }
 
     @Override
@@ -182,6 +205,7 @@ public class Cron {
         sb.append("    expression: ").append(toIndentedString(expression)).append("\n");
         sb.append("    expressionTimeZone: ").append(toIndentedString(expressionTimeZone)).append("\n");
         sb.append("    dependPrePeriod: ").append(toIndentedString(dependPrePeriod)).append("\n");
+        sb.append("    intervalType: ").append(toIndentedString(intervalType)).append("\n");
         sb.append("    dependJobs: ").append(toIndentedString(dependJobs)).append("\n");
         sb.append("}");
         return sb.toString();

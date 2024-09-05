@@ -22,7 +22,7 @@ public class ListCustomPoliciesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roles")
 
-    private List<PolicyRoleResult> roles = null;
+    private List<ListPolicyRoleResult> roles = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_number")
@@ -55,12 +55,12 @@ public class ListCustomPoliciesResponse extends SdkResponse {
         this.links = links;
     }
 
-    public ListCustomPoliciesResponse withRoles(List<PolicyRoleResult> roles) {
+    public ListCustomPoliciesResponse withRoles(List<ListPolicyRoleResult> roles) {
         this.roles = roles;
         return this;
     }
 
-    public ListCustomPoliciesResponse addRolesItem(PolicyRoleResult rolesItem) {
+    public ListCustomPoliciesResponse addRolesItem(ListPolicyRoleResult rolesItem) {
         if (this.roles == null) {
             this.roles = new ArrayList<>();
         }
@@ -68,7 +68,7 @@ public class ListCustomPoliciesResponse extends SdkResponse {
         return this;
     }
 
-    public ListCustomPoliciesResponse withRoles(Consumer<List<PolicyRoleResult>> rolesSetter) {
+    public ListCustomPoliciesResponse withRoles(Consumer<List<ListPolicyRoleResult>> rolesSetter) {
         if (this.roles == null) {
             this.roles = new ArrayList<>();
         }
@@ -80,11 +80,11 @@ public class ListCustomPoliciesResponse extends SdkResponse {
      * 自定义策略信息列表。
      * @return roles
      */
-    public List<PolicyRoleResult> getRoles() {
+    public List<ListPolicyRoleResult> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<PolicyRoleResult> roles) {
+    public void setRoles(List<ListPolicyRoleResult> roles) {
         this.roles = roles;
     }
 
