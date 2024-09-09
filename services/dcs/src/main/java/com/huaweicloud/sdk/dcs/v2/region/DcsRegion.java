@@ -62,7 +62,7 @@ public class DcsRegion {
     public static final Region AP_SOUTHEAST_4 =
         new Region("ap-southeast-4", "https://dcs.ap-southeast-4.myhuaweicloud.com");
 
-    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://dcs.eu-west-101.myhuaweicloud.com");
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://dcs.eu-west-101.myhuaweicloud.eu");
 
     public static final Region ME_EAST_1 = new Region("me-east-1", "https://dcs.me-east-1.myhuaweicloud.com");
 
