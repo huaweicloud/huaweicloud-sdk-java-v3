@@ -24,7 +24,7 @@ public class TriggerProcess {
     private Integer timeWindow;
 
     /**
-     * 回复类型。 * SYSTEM_REPLY：系统自动回复设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SHOW_LAYER: 显示叠加图层，不影响话术。 * INTELLIGENT_REPLY: 智能交互回复话术。
+     * **参数解释**： 回复类型。 **约束限制**： 不涉及 **取值范围**： * SYSTEM_REPLY：系统自动回复预先设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SHOW_LAYER：仅显示叠加图层，不影响话术。 * INTELLIGENT_REPLY：使用配置的大模型生成回复话术。  **默认取值**： 不涉及
      */
     public static final class ReplyModeEnum {
 
@@ -131,7 +131,7 @@ public class TriggerProcess {
     private List<ReplyAudioInfo> replyAudios = null;
 
     /**
-     * 回复次序 - RANDOM：随机 - ORDER：顺序循环
+     * **参数解释**： 回复话术选择次序。 **约束限制**： 不涉及 **取值范围**： * RANDOM：随机 * ORDER：顺序循环  **默认取值**： 不涉及
      */
     public static final class ReplyOrderEnum {
 
@@ -206,7 +206,7 @@ public class TriggerProcess {
     private ReplyOrderEnum replyOrder;
 
     /**
-     * 回复角色。默认为主播 * STREAMER：主播 * CO_STREAMER：助播
+     * **参数解释**： 回复角色。 **约束限制**： 不涉及 **取值范围**： * STREAMER：主播 * CO_STREAMER：助播，仅声音。
      */
     public static final class ReplyRoleEnum {
 
@@ -291,7 +291,7 @@ public class TriggerProcess {
     }
 
     /**
-     * 处理抑制时长。单位秒。 -1 表示整场直播 0 表示无抑制，每次都触发
+     * **参数解释**： 处理抑制时长。单位秒。 - -1：表示整场直播仅触发一次。 - 0：表示无抑制，每次都触发。 - 其他值n：表示n秒内仅触发一次。  **约束限制**： 不涉及 **默认取值**： 不涉及
      * minimum: -1
      * maximum: 7200
      * @return timeWindow
@@ -310,7 +310,7 @@ public class TriggerProcess {
     }
 
     /**
-     * 回复类型。 * SYSTEM_REPLY：系统自动回复设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SHOW_LAYER: 显示叠加图层，不影响话术。 * INTELLIGENT_REPLY: 智能交互回复话术。
+     * **参数解释**： 回复类型。 **约束限制**： 不涉及 **取值范围**： * SYSTEM_REPLY：系统自动回复预先设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SHOW_LAYER：仅显示叠加图层，不影响话术。 * INTELLIGENT_REPLY：使用配置的大模型生成回复话术。  **默认取值**： 不涉及
      * @return replyMode
      */
     public ReplyModeEnum getReplyMode() {
@@ -395,7 +395,7 @@ public class TriggerProcess {
     }
 
     /**
-     * 回复话术集
+     * **参数解释**： 回复话术集。 **约束限制**： 不涉及 **取值范围**： 最大支持5条预置话术。 单条话术字符长度0-1024位。 **默认取值**： 不涉及
      * @return replyTexts
      */
     public List<String> getReplyTexts() {
@@ -428,7 +428,7 @@ public class TriggerProcess {
     }
 
     /**
-     * 回复音频集。填写audio_url。
+     * **参数解释**： 回复音频集。填写audio_url。 **约束限制**： 不涉及 **取值范围**： 最大支持5条预置音频。 **默认取值**： 不涉及
      * @return replyAudios
      */
     public List<ReplyAudioInfo> getReplyAudios() {
@@ -445,7 +445,7 @@ public class TriggerProcess {
     }
 
     /**
-     * 回复次序 - RANDOM：随机 - ORDER：顺序循环
+     * **参数解释**： 回复话术选择次序。 **约束限制**： 不涉及 **取值范围**： * RANDOM：随机 * ORDER：顺序循环  **默认取值**： 不涉及
      * @return replyOrder
      */
     public ReplyOrderEnum getReplyOrder() {
@@ -462,7 +462,7 @@ public class TriggerProcess {
     }
 
     /**
-     * 回复角色。默认为主播 * STREAMER：主播 * CO_STREAMER：助播
+     * **参数解释**： 回复角色。 **约束限制**： 不涉及 **取值范围**： * STREAMER：主播 * CO_STREAMER：助播，仅声音。
      * @return replyRole
      */
     public ReplyRoleEnum getReplyRole() {
@@ -479,7 +479,7 @@ public class TriggerProcess {
     }
 
     /**
-     * 机器人ID。
+     * **参数解释**： 机器人ID。 **约束限制**： reply_mode为INTELLIGENT_REPLY时必填，智能交互配置的大模型机器人ID。 获取方法请参考[创建应用](CreateRobot.xml)。 **取值范围**： 字符长度0-64位。 **默认取值**： 不涉及
      * @return robotId
      */
     public String getRobotId() {

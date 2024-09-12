@@ -16,7 +16,7 @@ import java.util.Objects;
 public class PhotoVideoConfig {
 
     /**
-     * 视频编码格式及视频文件格式。 * H264: h264编码，输出mp4文件
+     * 视频编码格式及视频文件格式。 * H264：h264编码，输出mp4文件
      */
     public static final class CodecEnum {
 
@@ -176,7 +176,7 @@ public class PhotoVideoConfig {
     }
 
     /**
-     * 视频编码格式及视频文件格式。 * H264: h264编码，输出mp4文件
+     * 视频编码格式及视频文件格式。 * H264：h264编码，输出mp4文件
      * @return codec
      */
     public CodecEnum getCodec() {
@@ -193,7 +193,7 @@ public class PhotoVideoConfig {
     }
 
     /**
-     * 输出平均码率。  单位：kbps。  最小值40，最大值30000。
+     * **参数解释**： 输出平均码率。  单位：kbps。  最小值40，最大值30000。
      * minimum: 40
      * maximum: 30000
      * @return bitrate

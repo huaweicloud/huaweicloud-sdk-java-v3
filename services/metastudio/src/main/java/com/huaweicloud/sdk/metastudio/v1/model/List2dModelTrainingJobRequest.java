@@ -95,6 +95,11 @@ public class List2dModelTrainingJobRequest {
 
     private String modelResolution;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_flexus")
+
+    private Boolean isFlexus;
+
     public List2dModelTrainingJobRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -394,6 +399,23 @@ public class List2dModelTrainingJobRequest {
         this.modelResolution = modelResolution;
     }
 
+    public List2dModelTrainingJobRequest withIsFlexus(Boolean isFlexus) {
+        this.isFlexus = isFlexus;
+        return this;
+    }
+
+    /**
+     * 是否是flexus任务
+     * @return isFlexus
+     */
+    public Boolean getIsFlexus() {
+        return isFlexus;
+    }
+
+    public void setIsFlexus(Boolean isFlexus) {
+        this.isFlexus = isFlexus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -411,7 +433,8 @@ public class List2dModelTrainingJobRequest {
             && Objects.equals(this.state, that.state) && Objects.equals(this.queryProjectId, that.queryProjectId)
             && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.tag, that.tag)
             && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.modelResolution, that.modelResolution);
+            && Objects.equals(this.modelResolution, that.modelResolution)
+            && Objects.equals(this.isFlexus, that.isFlexus);
     }
 
     @Override
@@ -432,7 +455,8 @@ public class List2dModelTrainingJobRequest {
             tag,
             jobId,
             name,
-            modelResolution);
+            modelResolution,
+            isFlexus);
     }
 
     @Override
@@ -456,6 +480,7 @@ public class List2dModelTrainingJobRequest {
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    modelResolution: ").append(toIndentedString(modelResolution)).append("\n");
+        sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

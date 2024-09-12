@@ -126,7 +126,7 @@ public class ListVideoScriptsRequest {
     private ScriptCatalogEnum scriptCatalog;
 
     /**
-     * 横竖屏类型（内部参数，不对外开放）。默认值是LANDSCAPE。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     * 横竖屏类型（内部参数，不对外开放）。默认值是LANDSCAPE。 * LANDSCAPE：横屏。 * VERTICAL：竖屏。
      */
     public static final class ViewModeEnum {
 
@@ -352,7 +352,7 @@ public class ListVideoScriptsRequest {
     }
 
     /**
-     * 横竖屏类型（内部参数，不对外开放）。默认值是LANDSCAPE。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     * 横竖屏类型（内部参数，不对外开放）。默认值是LANDSCAPE。 * LANDSCAPE：横屏。 * VERTICAL：竖屏。
      * @return viewMode
      */
     public ViewModeEnum getViewMode() {

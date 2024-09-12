@@ -76,6 +76,9 @@ import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcDsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcDsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcPointRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcPointResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcPointsReqDTO;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcPointsRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcPointsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDeviceRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDeviceResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteEdgeAppRequest;
@@ -1564,6 +1567,39 @@ public class IoTEdgeMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteDcPointResponse::getBody, DeleteDcPointResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDcPointsRequest, DeleteDcPointsResponse> deleteDcPoints =
+        genForDeleteDcPoints();
+
+    private static HttpRequestDef<DeleteDcPointsRequest, DeleteDcPointsResponse> genForDeleteDcPoints() {
+        // basic
+        HttpRequestDef.Builder<DeleteDcPointsRequest, DeleteDcPointsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteDcPointsRequest.class, DeleteDcPointsResponse.class)
+                .withName("DeleteDcPoints")
+                .withUri("/v2/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/points/batch-delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDcPointsRequest::getEdgeNodeId, DeleteDcPointsRequest::setEdgeNodeId));
+        builder.<String>withRequestField("ds_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDcPointsRequest::getDsId, DeleteDcPointsRequest::setDsId));
+        builder.<DeleteDcPointsReqDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteDcPointsReqDTO.class),
+            f -> f.withMarshaller(DeleteDcPointsRequest::getBody, DeleteDcPointsRequest::setBody));
+
+        // response
 
         return builder.build();
     }

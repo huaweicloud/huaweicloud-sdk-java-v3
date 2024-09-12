@@ -11,9 +11,31 @@ import java.util.Objects;
 public class NetworkSwitchPolicyReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cid")
+
+    private String cid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_switch_policy_id")
 
     private Long networkSwitchPolicyId;
+
+    public NetworkSwitchPolicyReq withCid(String cid) {
+        this.cid = cid;
+        return this;
+    }
+
+    /**
+     * 容器ID
+     * @return cid
+     */
+    public String getCid() {
+        return cid;
+    }
+
+    public void setCid(String cid) {
+        this.cid = cid;
+    }
 
     public NetworkSwitchPolicyReq withNetworkSwitchPolicyId(Long networkSwitchPolicyId) {
         this.networkSwitchPolicyId = networkSwitchPolicyId;
@@ -41,18 +63,20 @@ public class NetworkSwitchPolicyReq {
             return false;
         }
         NetworkSwitchPolicyReq that = (NetworkSwitchPolicyReq) obj;
-        return Objects.equals(this.networkSwitchPolicyId, that.networkSwitchPolicyId);
+        return Objects.equals(this.cid, that.cid)
+            && Objects.equals(this.networkSwitchPolicyId, that.networkSwitchPolicyId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(networkSwitchPolicyId);
+        return Objects.hash(cid, networkSwitchPolicyId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NetworkSwitchPolicyReq {\n");
+        sb.append("    cid: ").append(toIndentedString(cid)).append("\n");
         sb.append("    networkSwitchPolicyId: ").append(toIndentedString(networkSwitchPolicyId)).append("\n");
         sb.append("}");
         return sb.toString();

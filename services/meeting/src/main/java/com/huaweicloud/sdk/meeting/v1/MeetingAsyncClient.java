@@ -311,6 +311,8 @@ import com.huaweicloud.sdk.meeting.v1.model.ShowQosThresholdRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ShowQosThresholdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowRealTimeInfoOfMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ShowRealTimeInfoOfMeetingResponse;
+import com.huaweicloud.sdk.meeting.v1.model.ShowRecordInfoRequest;
+import com.huaweicloud.sdk.meeting.v1.model.ShowRecordInfoResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowRecordingDetailRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ShowRecordingDetailResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowRecordingFileDownloadUrlsRequest;
@@ -1450,6 +1452,35 @@ public class MeetingAsyncClient {
     public AsyncInvoker<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse> createAnonymousAuthRandomAsyncInvoker(
         CreateAnonymousAuthRandomRequest request) {
         return new AsyncInvoker<>(request, MeetingMeta.createAnonymousAuthRandom, hcClient);
+    }
+
+    /**
+     * 获取会议鉴权随机数
+     *
+     * 根据会议ID + 密码鉴权返回鉴权随机数，如果是小程序调用时，需要企业支持小程序功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuthRandomRequest 请求对象
+     * @return CompletableFuture<CreateAuthRandomResponse>
+     */
+    public CompletableFuture<CreateAuthRandomResponse> createAuthRandomAsync(CreateAuthRandomRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.createAuthRandom);
+    }
+
+    /**
+     * 获取会议鉴权随机数
+     *
+     * 根据会议ID + 密码鉴权返回鉴权随机数，如果是小程序调用时，需要企业支持小程序功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuthRandomRequest 请求对象
+     * @return AsyncInvoker<CreateAuthRandomRequest, CreateAuthRandomResponse>
+     */
+    public AsyncInvoker<CreateAuthRandomRequest, CreateAuthRandomResponse> createAuthRandomAsyncInvoker(
+        CreateAuthRandomRequest request) {
+        return new AsyncInvoker<>(request, MeetingMeta.createAuthRandom, hcClient);
     }
 
     /**
@@ -4584,6 +4615,35 @@ public class MeetingAsyncClient {
     }
 
     /**
+     * 查询单会议录制文件信息
+     *
+     * 查询单会议录制文件信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecordInfoRequest 请求对象
+     * @return CompletableFuture<ShowRecordInfoResponse>
+     */
+    public CompletableFuture<ShowRecordInfoResponse> showRecordInfoAsync(ShowRecordInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.showRecordInfo);
+    }
+
+    /**
+     * 查询单会议录制文件信息
+     *
+     * 查询单会议录制文件信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecordInfoRequest 请求对象
+     * @return AsyncInvoker<ShowRecordInfoRequest, ShowRecordInfoResponse>
+     */
+    public AsyncInvoker<ShowRecordInfoRequest, ShowRecordInfoResponse> showRecordInfoAsyncInvoker(
+        ShowRecordInfoRequest request) {
+        return new AsyncInvoker<>(request, MeetingMeta.showRecordInfo, hcClient);
+    }
+
+    /**
      * 查询录制详情
      *
      * 改接口用于查询某个会议录制的详情。
@@ -5633,35 +5693,6 @@ public class MeetingAsyncClient {
      */
     public AsyncInvoker<UploadFileRequest, UploadFileResponse> uploadFileAsyncInvoker(UploadFileRequest request) {
         return new AsyncInvoker<>(request, MeetingMeta.uploadFile, hcClient);
-    }
-
-    /**
-     * 获取会议鉴权随机数
-     *
-     * 根据会议ID + 密码鉴权返回鉴权随机数，如果是小程序调用时，需要企业支持小程序功能
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAuthRandomRequest 请求对象
-     * @return CompletableFuture<CreateAuthRandomResponse>
-     */
-    public CompletableFuture<CreateAuthRandomResponse> createAuthRandomAsync(CreateAuthRandomRequest request) {
-        return hcClient.asyncInvokeHttp(request, MeetingMeta.createAuthRandom);
-    }
-
-    /**
-     * 获取会议鉴权随机数
-     *
-     * 根据会议ID + 密码鉴权返回鉴权随机数，如果是小程序调用时，需要企业支持小程序功能
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAuthRandomRequest 请求对象
-     * @return AsyncInvoker<CreateAuthRandomRequest, CreateAuthRandomResponse>
-     */
-    public AsyncInvoker<CreateAuthRandomRequest, CreateAuthRandomResponse> createAuthRandomAsyncInvoker(
-        CreateAuthRandomRequest request) {
-        return new AsyncInvoker<>(request, MeetingMeta.createAuthRandom, hcClient);
     }
 
     /**

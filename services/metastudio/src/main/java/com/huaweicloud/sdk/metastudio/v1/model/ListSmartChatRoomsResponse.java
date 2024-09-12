@@ -40,7 +40,7 @@ public class ListSmartChatRoomsResponse extends SdkResponse {
     }
 
     /**
-     * 智能交互对话总数。
+     * **参数解释**： 智能交互对话总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count
@@ -59,7 +59,7 @@ public class ListSmartChatRoomsResponse extends SdkResponse {
     }
 
     /**
-     * 智能交互对话总并发路数。
+     * **参数解释**： 智能交互对话总并发路数。
      * minimum: 0
      * maximum: 1024000
      * @return countConcurrency

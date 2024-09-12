@@ -25,6 +25,16 @@ public class Create2dModelTrainingJobResponse extends SdkResponse {
     private List<String> trainingVideoUploadUrl = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_video_upload_url")
+
+    private List<String> actionVideoUploadUrl = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_upload_url")
+
+    private String audioUploadUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cover_upload_url")
 
     private String coverUploadUrl;
@@ -98,6 +108,57 @@ public class Create2dModelTrainingJobResponse extends SdkResponse {
 
     public void setTrainingVideoUploadUrl(List<String> trainingVideoUploadUrl) {
         this.trainingVideoUploadUrl = trainingVideoUploadUrl;
+    }
+
+    public Create2dModelTrainingJobResponse withActionVideoUploadUrl(List<String> actionVideoUploadUrl) {
+        this.actionVideoUploadUrl = actionVideoUploadUrl;
+        return this;
+    }
+
+    public Create2dModelTrainingJobResponse addActionVideoUploadUrlItem(String actionVideoUploadUrlItem) {
+        if (this.actionVideoUploadUrl == null) {
+            this.actionVideoUploadUrl = new ArrayList<>();
+        }
+        this.actionVideoUploadUrl.add(actionVideoUploadUrlItem);
+        return this;
+    }
+
+    public Create2dModelTrainingJobResponse withActionVideoUploadUrl(
+        Consumer<List<String>> actionVideoUploadUrlSetter) {
+        if (this.actionVideoUploadUrl == null) {
+            this.actionVideoUploadUrl = new ArrayList<>();
+        }
+        actionVideoUploadUrlSetter.accept(this.actionVideoUploadUrl);
+        return this;
+    }
+
+    /**
+     * 分身数字人训练视频上传URL。该url在文件上传成功后失效，只能上传一次。注意：视频必须是1080p或者4K分辨率（横、竖屏皆可）的mp4格式，视频长度须大于等于3分钟且小于等于10分钟，否则审核会不通过。
+     * @return actionVideoUploadUrl
+     */
+    public List<String> getActionVideoUploadUrl() {
+        return actionVideoUploadUrl;
+    }
+
+    public void setActionVideoUploadUrl(List<String> actionVideoUploadUrl) {
+        this.actionVideoUploadUrl = actionVideoUploadUrl;
+    }
+
+    public Create2dModelTrainingJobResponse withAudioUploadUrl(String audioUploadUrl) {
+        this.audioUploadUrl = audioUploadUrl;
+        return this;
+    }
+
+    /**
+     * 音频数据训练上传URL。该url在文件上传成功后失效，只能上传一次
+     * @return audioUploadUrl
+     */
+    public String getAudioUploadUrl() {
+        return audioUploadUrl;
+    }
+
+    public void setAudioUploadUrl(String audioUploadUrl) {
+        this.audioUploadUrl = audioUploadUrl;
     }
 
     public Create2dModelTrainingJobResponse withCoverUploadUrl(String coverUploadUrl) {
@@ -198,6 +259,8 @@ public class Create2dModelTrainingJobResponse extends SdkResponse {
         Create2dModelTrainingJobResponse that = (Create2dModelTrainingJobResponse) obj;
         return Objects.equals(this.jobId, that.jobId)
             && Objects.equals(this.trainingVideoUploadUrl, that.trainingVideoUploadUrl)
+            && Objects.equals(this.actionVideoUploadUrl, that.actionVideoUploadUrl)
+            && Objects.equals(this.audioUploadUrl, that.audioUploadUrl)
             && Objects.equals(this.coverUploadUrl, that.coverUploadUrl)
             && Objects.equals(this.idCardImage1UploadUrl, that.idCardImage1UploadUrl)
             && Objects.equals(this.idCardImage2UploadUrl, that.idCardImage2UploadUrl)
@@ -209,6 +272,8 @@ public class Create2dModelTrainingJobResponse extends SdkResponse {
     public int hashCode() {
         return Objects.hash(jobId,
             trainingVideoUploadUrl,
+            actionVideoUploadUrl,
+            audioUploadUrl,
             coverUploadUrl,
             idCardImage1UploadUrl,
             idCardImage2UploadUrl,
@@ -222,6 +287,8 @@ public class Create2dModelTrainingJobResponse extends SdkResponse {
         sb.append("class Create2dModelTrainingJobResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    trainingVideoUploadUrl: ").append(toIndentedString(trainingVideoUploadUrl)).append("\n");
+        sb.append("    actionVideoUploadUrl: ").append(toIndentedString(actionVideoUploadUrl)).append("\n");
+        sb.append("    audioUploadUrl: ").append(toIndentedString(audioUploadUrl)).append("\n");
         sb.append("    coverUploadUrl: ").append(toIndentedString(coverUploadUrl)).append("\n");
         sb.append("    idCardImage1UploadUrl: ").append(toIndentedString(idCardImage1UploadUrl)).append("\n");
         sb.append("    idCardImage2UploadUrl: ").append(toIndentedString(idCardImage2UploadUrl)).append("\n");

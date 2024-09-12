@@ -48,7 +48,7 @@ public class UpdateElasticResourcePoolRequestBody {
     }
 
     /**
-     * 弹性资源池的最大CU数
+     * max_cu大于等于该弹性资源池下任意一个队列的最大CU。标准版弹性资源池最小值为64，最大值为32000；基础版弹性资源池最小值为16，最大值为64。
      * @return maxCu
      */
     public Integer getMaxCu() {
@@ -65,7 +65,7 @@ public class UpdateElasticResourcePoolRequestBody {
     }
 
     /**
-     * 弹性资源池的最小CU数
+     * min_cu大于等于该弹性资源池下所有队列最小CU之和，且小于等于max_cu。标准版弹性资源池最小值为64，最大值为32000；基础版弹性资源池最小值为16，最大值为64。
      * @return minCu
      */
     public Integer getMinCu() {

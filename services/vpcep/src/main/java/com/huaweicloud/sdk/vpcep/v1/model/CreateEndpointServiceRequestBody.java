@@ -195,6 +195,11 @@ public class CreateEndpointServiceRequestBody {
     private ServerTypeEnum serverType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
 
     private List<PortList> ports = null;
@@ -479,6 +484,23 @@ public class CreateEndpointServiceRequestBody {
         this.serverType = serverType;
     }
 
+    public CreateEndpointServiceRequestBody withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * 接口型VLAN场景服务端IPv4地址或域名
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
     public CreateEndpointServiceRequestBody withPorts(List<PortList> ports) {
         this.ports = ports;
         return this;
@@ -551,7 +573,7 @@ public class CreateEndpointServiceRequestBody {
     }
 
     /**
-     * 资源标签列表。同一个终端节点服务最多可添加10个标签。
+     * 资源标签列表。同一个终端节点服务最多可添加20个标签。
      * @return tags
      */
     public List<TagList> getTags() {
@@ -608,9 +630,9 @@ public class CreateEndpointServiceRequestBody {
         return Objects.equals(this.portId, that.portId) && Objects.equals(this.serviceName, that.serviceName)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.approvalEnabled, that.approvalEnabled)
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.serverType, that.serverType)
-            && Objects.equals(this.ports, that.ports) && Objects.equals(this.tcpProxy, that.tcpProxy)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.ipVersion, that.ipVersion);
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.ports, that.ports)
+            && Objects.equals(this.tcpProxy, that.tcpProxy) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.ipVersion, that.ipVersion);
     }
 
     @Override
@@ -621,6 +643,7 @@ public class CreateEndpointServiceRequestBody {
             approvalEnabled,
             serviceType,
             serverType,
+            ip,
             ports,
             tcpProxy,
             tags,
@@ -638,6 +661,7 @@ public class CreateEndpointServiceRequestBody {
         sb.append("    approvalEnabled: ").append(toIndentedString(approvalEnabled)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    serverType: ").append(toIndentedString(serverType)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    tcpProxy: ").append(toIndentedString(tcpProxy)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

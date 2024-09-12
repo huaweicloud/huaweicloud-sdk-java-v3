@@ -46,6 +46,8 @@ import com.huaweicloud.sdk.gsl.v3.model.ListNetworkSwitchPoliciesRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListNetworkSwitchPoliciesResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListProPricePlansRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListProPricePlansResponse;
+import com.huaweicloud.sdk.gsl.v3.model.ListSimCardFlowPerDayRequest;
+import com.huaweicloud.sdk.gsl.v3.model.ListSimCardFlowPerDayResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimCardsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimCardsResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimDeviceMultiplyRequest;
@@ -88,6 +90,8 @@ import com.huaweicloud.sdk.gsl.v3.model.ShowRealNamedRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ShowRealNamedResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ShowSimCardRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ShowSimCardResponse;
+import com.huaweicloud.sdk.gsl.v3.model.SimCardFlowPerDayReq;
+import com.huaweicloud.sdk.gsl.v3.model.SimCardFlowPerDayRsp;
 import com.huaweicloud.sdk.gsl.v3.model.SimCardsFlowVO;
 import com.huaweicloud.sdk.gsl.v3.model.SimPricePlanVO;
 import com.huaweicloud.sdk.gsl.v3.model.StartStopNetRequest;
@@ -556,6 +560,35 @@ public class GslMeta {
             f -> f.withMarshaller(EnableSimCardRequest::getIccid, EnableSimCardRequest::setIccid));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSimCardFlowPerDayRequest, ListSimCardFlowPerDayResponse> listSimCardFlowPerDay =
+        genForListSimCardFlowPerDay();
+
+    private static HttpRequestDef<ListSimCardFlowPerDayRequest, ListSimCardFlowPerDayResponse> genForListSimCardFlowPerDay() {
+        // basic
+        HttpRequestDef.Builder<ListSimCardFlowPerDayRequest, ListSimCardFlowPerDayResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListSimCardFlowPerDayRequest.class, ListSimCardFlowPerDayResponse.class)
+            .withName("ListSimCardFlowPerDay")
+            .withUri("/v1/sim-cards/batch-daily-flow")
+            .withContentType("application/json");
+
+        // requests
+        builder.<SimCardFlowPerDayReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SimCardFlowPerDayReq.class),
+            f -> f.withMarshaller(ListSimCardFlowPerDayRequest::getBody, ListSimCardFlowPerDayRequest::setBody));
+
+        // response
+        builder.<List<SimCardFlowPerDayRsp>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSimCardFlowPerDayResponse::getBody, ListSimCardFlowPerDayResponse::setBody)
+                .withInnerContainerType(SimCardFlowPerDayRsp.class));
 
         return builder.build();
     }

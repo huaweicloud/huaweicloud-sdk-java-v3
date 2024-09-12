@@ -88,6 +88,8 @@ public class CtsRegion {
 
     public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://cts.ru-moscow-1.myhuaweicloud.com");
 
+    public static final Region AE_AD_1 = new Region("ae-ad-1", "https://cts.ae-ad-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CTS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -120,6 +122,7 @@ public class CtsRegion {
         map.put("eu-west-0", EU_WEST_0);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("ru-moscow-1", RU_MOSCOW_1);
+        map.put("ae-ad-1", AE_AD_1);
         return Collections.unmodifiableMap(map);
     }
 

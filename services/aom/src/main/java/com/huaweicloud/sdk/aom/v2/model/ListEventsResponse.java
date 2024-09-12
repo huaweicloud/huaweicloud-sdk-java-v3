@@ -19,6 +19,11 @@ public class ListEventsResponse extends SdkResponse {
 
     private List<EventModel> events = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListEventsResponse withEvents(List<EventModel> events) {
         this.events = events;
         return this;
@@ -52,6 +57,32 @@ public class ListEventsResponse extends SdkResponse {
         this.events = events;
     }
 
+    public ListEventsResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListEventsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +92,12 @@ public class ListEventsResponse extends SdkResponse {
             return false;
         }
         ListEventsResponse that = (ListEventsResponse) obj;
-        return Objects.equals(this.events, that.events);
+        return Objects.equals(this.events, that.events) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(events);
+        return Objects.hash(events, pageInfo);
     }
 
     @Override
@@ -74,6 +105,7 @@ public class ListEventsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEventsResponse {\n");
         sb.append("    events: ").append(toIndentedString(events)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -34,7 +34,7 @@ public class ReportLiveEventReq {
     }
 
     /**
-     * 事件条目数。
+     * **参数解释**： 事件条目数。
      * minimum: 1
      * maximum: 1000
      * @return total

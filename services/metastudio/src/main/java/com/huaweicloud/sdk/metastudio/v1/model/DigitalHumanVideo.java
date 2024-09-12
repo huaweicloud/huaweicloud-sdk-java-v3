@@ -321,7 +321,7 @@ public class DigitalHumanVideo {
     }
 
     /**
-     * 数字人视频内容时长。
+     * **参数解释**： 数字人视频内容时长。
      * minimum: 0
      * maximum: 2147483647
      * @return duration

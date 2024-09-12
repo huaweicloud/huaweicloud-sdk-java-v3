@@ -35,7 +35,7 @@ public class ListDigitalHumanVideoResponse extends SdkResponse {
     }
 
     /**
-     * 视频制作任务总数。
+     * **参数解释**： 视频制作任务总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count

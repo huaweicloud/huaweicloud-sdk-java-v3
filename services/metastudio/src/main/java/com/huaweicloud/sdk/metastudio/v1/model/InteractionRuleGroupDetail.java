@@ -112,7 +112,7 @@ public class InteractionRuleGroupDetail {
     }
 
     /**
-     * 创建时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 创建时间，格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return createTime
      */
     public String getCreateTime() {
@@ -129,7 +129,7 @@ public class InteractionRuleGroupDetail {
     }
 
     /**
-     * 更新时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 更新时间，格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return updateTime
      */
     public String getUpdateTime() {

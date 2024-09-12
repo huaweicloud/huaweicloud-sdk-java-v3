@@ -46,7 +46,7 @@ public class SubtitleConfig {
     }
 
     /**
-     * 字幕框左下角像素点坐标。  > *横屏（16:9）视频像素为1920x1080；竖屏（9:16）视频像素为1080x1920。
+     * **参数解释**： 字幕框左下角像素点坐标。 **约束限制**： 不涉及。 **默认取值**： 不涉及。
      * minimum: 0
      * maximum: 1920
      * @return dx
@@ -65,7 +65,7 @@ public class SubtitleConfig {
     }
 
     /**
-     * 字幕框左下角像素点坐标。  > *横屏（16:9）视频像素为1920x1080；竖屏（9:16）视频像素为1080x1920。
+     * **参数解释**： 字幕框左下角像素点坐标。 **约束限制**： 不涉及。 **默认取值**： 不涉及。
      * minimum: 0
      * maximum: 1920
      * @return dy
@@ -84,7 +84,7 @@ public class SubtitleConfig {
     }
 
     /**
-     * 字体。当前支持的字体： * HarmonyOS_Sans_SC_Black：鸿蒙粗体 * HarmonyOS_Sans_SC_Regular：鸿蒙常规 * HarmonyOS_Sans_SC_Thin：鸿蒙细体
+     * **参数解释**： 字体。当前支持的字体： * HarmonyOS_Sans_SC_Black：鸿蒙粗体 * HarmonyOS_Sans_SC_Regular：鸿蒙常规 * HarmonyOS_Sans_SC_Thin：鸿蒙细体。  **约束限制**： 不涉及。 **取值范围**： 字符长度0-64位
      * @return fontName
      */
     public String getFontName() {
@@ -101,7 +101,7 @@ public class SubtitleConfig {
     }
 
     /**
-     * 字体大小。  取值范围：[4, 120]
+     * **参数解释**： 字体大小。接口的取值范围为0-120，实际业务使用的取值范围要求为4-120，请以业务实际使用要求为准。 **约束限制**： 不涉及。
      * minimum: 0
      * maximum: 120
      * @return fontSize
@@ -120,7 +120,7 @@ public class SubtitleConfig {
     }
 
     /**
-     * 字幕框高度 > * 参数h用于方便前端计算字幕框左上角坐标，后台不使用该参数
+     * **参数解释**： 字幕框高度。 **约束限制**： 参数h用于方便前端计算字幕框左上角坐标，后台不使用该参数。
      * minimum: 0
      * maximum: 1920
      * @return h
@@ -139,7 +139,7 @@ public class SubtitleConfig {
     }
 
     /**
-     * 字幕框宽度 > * 字幕框宽度固定为屏幕宽度的80% > * 参数w用于方便前端计算字幕框左上角坐标，后台不使用该参数
+     * **参数解释**： 字幕框宽度。 **约束限制**： * 字幕框宽度固定为屏幕宽度的80% * 参数w用于方便前端计算字幕框左上角坐标，后台不使用该参数
      * minimum: 0
      * maximum: 1920
      * @return w

@@ -50,6 +50,18 @@ public class ScanKvRequestBody {
 
     private ConditionExpression filterExpression;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sample_segments_count")
+    @BsonProperty(value = "sample_segments_count")
+
+    private Integer sampleSegmentsCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_count_only")
+    @BsonProperty(value = "return_count_only")
+
+    private Boolean returnCountOnly;
+
     public ScanKvRequestBody withTableName(String tableName) {
         this.tableName = tableName;
         return this;
@@ -162,6 +174,42 @@ public class ScanKvRequestBody {
         this.filterExpression = filterExpression;
     }
 
+    public ScanKvRequestBody withSampleSegmentsCount(Integer sampleSegmentsCount) {
+        this.sampleSegmentsCount = sampleSegmentsCount;
+        return this;
+    }
+
+    /**
+     * 对表进行采样，尽最大努力保证返回的段列表均分整张表。举例：sample_segments_count=4，返回的段列表[MinKey, KV1)、[KV1,KV2)、[KV2,KV3)和[KV3,MaxKey)。用户可以使用scan-kv对这四个分区执行并发扫描，提高遍历效率。 - 范围: [1, 10000]。默认值：不执行采样。 - sample_segments_count仅能和table_name、start_key和end_key字段配合使用。Range分区模式下支持全表采样和范围采样；Hash分区模式仅支持全表扫描。 - 仅支持对Primary key进行采样，不支持本地/全局二级索引。 - 返回的段列表仅包含主键，不包含键值；且段列表是编码后的数据 ，不可修改。
+     * minimum: 1
+     * maximum: 10000
+     * @return sampleSegmentsCount
+     */
+    public Integer getSampleSegmentsCount() {
+        return sampleSegmentsCount;
+    }
+
+    public void setSampleSegmentsCount(Integer sampleSegmentsCount) {
+        this.sampleSegmentsCount = sampleSegmentsCount;
+    }
+
+    public ScanKvRequestBody withReturnCountOnly(Boolean returnCountOnly) {
+        this.returnCountOnly = returnCountOnly;
+        return this;
+    }
+
+    /**
+     * 返回查询条件对应的KV总数. - 当KV总数小于limit条件时，返回KV查询结果和KV总数。 - 当KV总数多于limit条件时，只返回KV总数。
+     * @return returnCountOnly
+     */
+    public Boolean getReturnCountOnly() {
+        return returnCountOnly;
+    }
+
+    public void setReturnCountOnly(Boolean returnCountOnly) {
+        this.returnCountOnly = returnCountOnly;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -173,12 +221,21 @@ public class ScanKvRequestBody {
         ScanKvRequestBody that = (ScanKvRequestBody) obj;
         return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.hintIndexName, that.hintIndexName)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.startKey, that.startKey)
-            && Objects.equals(this.endKey, that.endKey) && Objects.equals(this.filterExpression, that.filterExpression);
+            && Objects.equals(this.endKey, that.endKey) && Objects.equals(this.filterExpression, that.filterExpression)
+            && Objects.equals(this.sampleSegmentsCount, that.sampleSegmentsCount)
+            && Objects.equals(this.returnCountOnly, that.returnCountOnly);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableName, hintIndexName, limit, startKey, endKey, filterExpression);
+        return Objects.hash(tableName,
+            hintIndexName,
+            limit,
+            startKey,
+            endKey,
+            filterExpression,
+            sampleSegmentsCount,
+            returnCountOnly);
     }
 
     @Override
@@ -191,6 +248,8 @@ public class ScanKvRequestBody {
         sb.append("    startKey: ").append(toIndentedString(startKey)).append("\n");
         sb.append("    endKey: ").append(toIndentedString(endKey)).append("\n");
         sb.append("    filterExpression: ").append(toIndentedString(filterExpression)).append("\n");
+        sb.append("    sampleSegmentsCount: ").append(toIndentedString(sampleSegmentsCount)).append("\n");
+        sb.append("    returnCountOnly: ").append(toIndentedString(returnCountOnly)).append("\n");
         sb.append("}");
         return sb.toString();
     }

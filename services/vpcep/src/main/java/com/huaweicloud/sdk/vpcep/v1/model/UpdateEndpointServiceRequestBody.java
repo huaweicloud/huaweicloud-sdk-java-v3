@@ -136,6 +136,11 @@ public class UpdateEndpointServiceRequestBody {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
     public UpdateEndpointServiceRequestBody withApprovalEnabled(Boolean approvalEnabled) {
         this.approvalEnabled = approvalEnabled;
         return this;
@@ -254,6 +259,23 @@ public class UpdateEndpointServiceRequestBody {
         this.description = description;
     }
 
+    public UpdateEndpointServiceRequestBody withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * 接口型VLAN场景服务端IPv4地址或域名
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -266,12 +288,12 @@ public class UpdateEndpointServiceRequestBody {
         return Objects.equals(this.approvalEnabled, that.approvalEnabled)
             && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.ports, that.ports)
             && Objects.equals(this.portId, that.portId) && Objects.equals(this.tcpProxy, that.tcpProxy)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.ip, that.ip);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(approvalEnabled, serviceName, ports, portId, tcpProxy, description);
+        return Objects.hash(approvalEnabled, serviceName, ports, portId, tcpProxy, description, ip);
     }
 
     @Override
@@ -284,6 +306,7 @@ public class UpdateEndpointServiceRequestBody {
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
         sb.append("    tcpProxy: ").append(toIndentedString(tcpProxy)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("}");
         return sb.toString();
     }

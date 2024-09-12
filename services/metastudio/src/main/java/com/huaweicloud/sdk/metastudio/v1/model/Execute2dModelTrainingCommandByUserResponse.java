@@ -105,6 +105,11 @@ public class Execute2dModelTrainingCommandByUserResponse extends SdkResponse {
     private List<MultipartUploadInfo> multipartData = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "excute_failed_msg")
+
+    private String excuteFailedMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -194,6 +199,23 @@ public class Execute2dModelTrainingCommandByUserResponse extends SdkResponse {
         this.multipartData = multipartData;
     }
 
+    public Execute2dModelTrainingCommandByUserResponse withExcuteFailedMsg(String excuteFailedMsg) {
+        this.excuteFailedMsg = excuteFailedMsg;
+        return this;
+    }
+
+    /**
+     * 命令执行失败原因描述
+     * @return excuteFailedMsg
+     */
+    public String getExcuteFailedMsg() {
+        return excuteFailedMsg;
+    }
+
+    public void setExcuteFailedMsg(String excuteFailedMsg) {
+        this.excuteFailedMsg = excuteFailedMsg;
+    }
+
     public Execute2dModelTrainingCommandByUserResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -225,12 +247,13 @@ public class Execute2dModelTrainingCommandByUserResponse extends SdkResponse {
         return Objects.equals(this.commondResult, that.commondResult)
             && Objects.equals(this.attachmentUploadUrl, that.attachmentUploadUrl)
             && Objects.equals(this.multipartData, that.multipartData)
+            && Objects.equals(this.excuteFailedMsg, that.excuteFailedMsg)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(commondResult, attachmentUploadUrl, multipartData, xRequestId);
+        return Objects.hash(commondResult, attachmentUploadUrl, multipartData, excuteFailedMsg, xRequestId);
     }
 
     @Override
@@ -240,6 +263,7 @@ public class Execute2dModelTrainingCommandByUserResponse extends SdkResponse {
         sb.append("    commondResult: ").append(toIndentedString(commondResult)).append("\n");
         sb.append("    attachmentUploadUrl: ").append(toIndentedString(attachmentUploadUrl)).append("\n");
         sb.append("    multipartData: ").append(toIndentedString(multipartData)).append("\n");
+        sb.append("    excuteFailedMsg: ").append(toIndentedString(excuteFailedMsg)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -80,6 +80,11 @@ public class ServiceList {
     private List<PortList> ports = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<TagList> tags = null;
@@ -351,6 +356,23 @@ public class ServiceList {
         this.ports = ports;
     }
 
+    public ServiceList withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * 接口型VLAN场景服务端IPv4地址或域名
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
     public ServiceList withTags(List<TagList> tags) {
         this.tags = tags;
         return this;
@@ -518,8 +540,8 @@ public class ServiceList {
             && Objects.equals(this.status, that.status) && Objects.equals(this.serviceType, that.serviceType)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.domainId, that.domainId)
-            && Objects.equals(this.ports, that.ports) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.connectionCount, that.connectionCount)
+            && Objects.equals(this.ports, that.ports) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.connectionCount, that.connectionCount)
             && Objects.equals(this.tcpProxy, that.tcpProxy) && Objects.equals(this.error, that.error)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
@@ -541,6 +563,7 @@ public class ServiceList {
             projectId,
             domainId,
             ports,
+            ip,
             tags,
             connectionCount,
             tcpProxy,
@@ -567,6 +590,7 @@ public class ServiceList {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    connectionCount: ").append(toIndentedString(connectionCount)).append("\n");
         sb.append("    tcpProxy: ").append(toIndentedString(tcpProxy)).append("\n");

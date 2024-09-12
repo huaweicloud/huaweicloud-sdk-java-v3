@@ -279,7 +279,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
     }
 
     /**
-     * 数字人直播时长，单位秒。
+     * **参数解释**： 数字人直播时长，单位秒。
      * minimum: 0
      * maximum: 2147483647
      * @return duration
@@ -298,7 +298,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
     }
 
     /**
-     * 数字人直播任务开始时间。格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 数字人直播任务开始时间。格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return startTime
      */
     public String getStartTime() {
@@ -315,7 +315,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
     }
 
     /**
-     * 数字人直播任务结束时间。格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 数字人直播任务结束时间。格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return endTime
      */
     public String getEndTime() {
@@ -358,7 +358,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
     }
 
     /**
-     * 数字人直播任务创建时间。格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 数字人直播任务创建时间。格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return createTime
      */
     public String getCreateTime() {
@@ -375,7 +375,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
     }
 
     /**
-     * 数字人直播任务最后更新时间。格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 数字人直播任务最后更新时间。格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return lastupdateTime
      */
     public String getLastupdateTime() {
@@ -488,7 +488,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
     }
 
     /**
-     * 数字人直播推流时长，单位秒
+     * **参数解释**： 数字人直播推流时长，单位秒。
      * minimum: 0
      * maximum: 2147483647
      * @return streamDuration

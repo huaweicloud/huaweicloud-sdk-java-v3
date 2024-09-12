@@ -7362,6 +7362,12 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(List2dModelTrainingJobRequest::getModelResolution,
                 List2dModelTrainingJobRequest::setModelResolution));
+        builder.<Boolean>withRequestField("is_flexus",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(List2dModelTrainingJobRequest::getIsFlexus,
+                List2dModelTrainingJobRequest::setIsFlexus));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

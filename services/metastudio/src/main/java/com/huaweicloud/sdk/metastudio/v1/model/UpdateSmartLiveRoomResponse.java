@@ -30,7 +30,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     private String roomDescription;
 
     /**
-     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。 * TEMPLATE: 直播间模板。
+     * **参数解释**： 直播间类型。 **约束限制**： 不涉及。 **取值范围**： * NORMAL：普通直播间，直播间一直存在，可以反复开播 * TEMP：临时直播间，直播任务结束后自动清理直播间。 * TEMPLATE：直播间模板。
      */
     public static final class RoomTypeEnum {
 
@@ -166,7 +166,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     private SharedConfig sharedConfig;
 
     /**
-     * 横竖屏类型。默认值为：VERTICAL。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     * **参数解释**： 横竖屏类型。 **约束限制**： 用户无需填写，通过video_config中分辨率判断 **取值范围**： * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
      */
     public static final class ViewModeEnum {
 
@@ -372,7 +372,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * 直播间名称
+     * **参数解释**： 直播间名称。 **约束限制**： 不涉及。 **取值范围**： 字符长度1-256位。 **默认取值**： 不涉及。
      * @return roomName
      */
     public String getRoomName() {
@@ -389,7 +389,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * 直播间描述。
+     * **参数解释**： 直播间描述。 **约束限制**： 不涉及。 **取值范围**： 字符长度0-1024位。 **默认取值**： 不涉及。
      * @return roomDescription
      */
     public String getRoomDescription() {
@@ -406,7 +406,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。 * TEMPLATE: 直播间模板。
+     * **参数解释**： 直播间类型。 **约束限制**： 不涉及。 **取值范围**： * NORMAL：普通直播间，直播间一直存在，可以反复开播 * TEMP：临时直播间，直播任务结束后自动清理直播间。 * TEMPLATE：直播间模板。
      * @return roomType
      */
     public RoomTypeEnum getRoomType() {
@@ -558,7 +558,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * RTMP视频推流第三方直播平台地址。
+     * **参数解释**： RTMP视频推流第三方直播平台地址。 > 直播过程中刷新地址，需要调用COMMAND命令REFRESH_OUTPUT_URL。  **约束限制**： 不涉及 **取值范围**： 当前仅支持一条RTMP出流地址。 **默认取值**： 不涉及。
      * @return outputUrls
      */
     public List<String> getOutputUrls() {
@@ -591,7 +591,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * RTMP视频推流第三方直播平台流秘钥，与推流地址对应。
+     * **参数解释**： RTMP视频推流第三方直播平台流密钥，与推流地址对应。 > 直播过程中刷新地址，需要调用COMMAND命令REFRESH_OUTPUT_URL。  **约束限制**： 不涉及 **取值范围**： 当前仅支持一条RTMP出流地址。 **默认取值**： 不涉及。
      * @return streamKeys
      */
     public List<String> getStreamKeys() {
@@ -624,7 +624,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * 主播轮换时备选主播数字人资产ID（仅形象资产，不包含音色），可以从资产库中查询。
+     * **参数解释**： 主播轮换时备选主播数字人资产ID（仅形象资产，不包含声音）。  **约束限制**： 不涉及 **取值范围**： 当前最大支持5个备选主播。 数字人资产ID，字符长度0-64位。 **默认取值**： 不涉及
      * @return backupModelAssetIds
      */
     public List<String> getBackupModelAssetIds() {
@@ -747,7 +747,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * 横竖屏类型。默认值为：VERTICAL。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     * **参数解释**： 横竖屏类型。 **约束限制**： 用户无需填写，通过video_config中分辨率判断 **取值范围**： * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
      * @return viewMode
      */
     public ViewModeEnum getViewMode() {
@@ -790,7 +790,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * 私有数据，用户填写，原样带回。
+     * **参数解释**： 匹配值私有数据，用户填写，原样带回。 **约束限制**： 不涉及 **取值范围**： 字符长度0-8192 **默认取值**： 不涉及。
      * @return privData
      */
     public String getPrivData() {
@@ -824,7 +824,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * 直播间创建时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 直播间创建时间，格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return createTime
      */
     public String getCreateTime() {
@@ -841,7 +841,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     }
 
     /**
-     * 直播间更新时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 直播间更新时间，格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return updateTime
      */
     public String getUpdateTime() {

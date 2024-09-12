@@ -29,7 +29,7 @@ public class TagValuesList {
     }
 
     /**
-     * 键。 最大长度127个unicode字符。key不能为空。(搜索时不对此参数做字符集校)， key不能为空或者空字符串，不能为空格，校验和使用之前先trim前后半角空格。
+     * 键。 最大长度128个unicode字符。key不能为空。(搜索时不对此参数做字符集校)， key不能为空或者空字符串，不能为空格，校验和使用之前先trim前后半角空格。
      * @return key
      */
     public String getKey() {

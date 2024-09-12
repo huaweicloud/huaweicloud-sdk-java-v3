@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class HitCondition {
 
     /**
-     * 条件关系 * AND ：表示多个条件同时满足 * OR：表示多个条件满足其一即可 * RESERVED: 兜底回复不会去判断其他命中条件
+     * **参数解释**： 条件关系。对于多个条件的逻辑运算关系。 **约束限制**： 不涉及。 **取值范围**： * AND：表示多个条件同时满足。 * OR：表示多个条件满足其一即可。 * RESERVED：兜底回复不会去判断其他命中条件。  **默认取值**： 不涉及。
      */
     public static final class RelationEnum {
 
@@ -115,7 +115,7 @@ public class HitCondition {
     }
 
     /**
-     * 条件关系 * AND ：表示多个条件同时满足 * OR：表示多个条件满足其一即可 * RESERVED: 兜底回复不会去判断其他命中条件
+     * **参数解释**： 条件关系。对于多个条件的逻辑运算关系。 **约束限制**： 不涉及。 **取值范围**： * AND：表示多个条件同时满足。 * OR：表示多个条件满足其一即可。 * RESERVED：兜底回复不会去判断其他命中条件。  **默认取值**： 不涉及。
      * @return relation
      */
     public RelationEnum getRelation() {
@@ -132,7 +132,7 @@ public class HitCondition {
     }
 
     /**
-     * 优先级，数值越低优先级越高；取值0-999，默认值为500，为可选值
+     * **参数解释**： 优先级，数值越低优先级越高；取值0-999，默认值为500，为可选值 **约束限制**： 不涉及
      * minimum: 0
      * maximum: 999
      * @return priority

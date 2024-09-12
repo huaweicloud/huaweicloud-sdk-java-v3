@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class ShootScriptDetail {
 
     /**
-     * 脚本类型，即视频制作的驱动方式。默认TEXT * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动
+     * **参数解释**： 脚本类型，即视频制作的驱动方式 **约束限制**： 不涉及 **取值范围** * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动
      */
     public static final class ScriptTypeEnum {
 
@@ -99,6 +99,11 @@ public class ShootScriptDetail {
     private TextConfig textConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_drive_action_config")
+
+    private List<AudioDriveActionConfig> audioDriveActionConfig = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "background_config")
 
     private List<BackgroundConfigInfo> backgroundConfig = null;
@@ -119,7 +124,7 @@ public class ShootScriptDetail {
     }
 
     /**
-     * 脚本类型，即视频制作的驱动方式。默认TEXT * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动
+     * **参数解释**： 脚本类型，即视频制作的驱动方式 **约束限制**： 不涉及 **取值范围** * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动
      * @return scriptType
      */
     public ScriptTypeEnum getScriptType() {
@@ -154,6 +159,40 @@ public class ShootScriptDetail {
 
     public void setTextConfig(TextConfig textConfig) {
         this.textConfig = textConfig;
+    }
+
+    public ShootScriptDetail withAudioDriveActionConfig(List<AudioDriveActionConfig> audioDriveActionConfig) {
+        this.audioDriveActionConfig = audioDriveActionConfig;
+        return this;
+    }
+
+    public ShootScriptDetail addAudioDriveActionConfigItem(AudioDriveActionConfig audioDriveActionConfigItem) {
+        if (this.audioDriveActionConfig == null) {
+            this.audioDriveActionConfig = new ArrayList<>();
+        }
+        this.audioDriveActionConfig.add(audioDriveActionConfigItem);
+        return this;
+    }
+
+    public ShootScriptDetail withAudioDriveActionConfig(
+        Consumer<List<AudioDriveActionConfig>> audioDriveActionConfigSetter) {
+        if (this.audioDriveActionConfig == null) {
+            this.audioDriveActionConfig = new ArrayList<>();
+        }
+        audioDriveActionConfigSetter.accept(this.audioDriveActionConfig);
+        return this;
+    }
+
+    /**
+     * 语音驱动时的动作配置。
+     * @return audioDriveActionConfig
+     */
+    public List<AudioDriveActionConfig> getAudioDriveActionConfig() {
+        return audioDriveActionConfig;
+    }
+
+    public void setAudioDriveActionConfig(List<AudioDriveActionConfig> audioDriveActionConfig) {
+        this.audioDriveActionConfig = audioDriveActionConfig;
     }
 
     public ShootScriptDetail withBackgroundConfig(List<BackgroundConfigInfo> backgroundConfig) {
@@ -228,7 +267,7 @@ public class ShootScriptDetail {
     }
 
     /**
-     * 剧本场景缩略图url。
+     * **参数解释**： 剧本场景缩略图url。 **约束限制**： 不涉及。 **取值范围**： 字符长度1-2048位。 **默认取值**： 不涉及。
      * @return thumbnailUrl
      */
     public String getThumbnailUrl() {
@@ -249,6 +288,7 @@ public class ShootScriptDetail {
         }
         ShootScriptDetail that = (ShootScriptDetail) obj;
         return Objects.equals(this.scriptType, that.scriptType) && Objects.equals(this.textConfig, that.textConfig)
+            && Objects.equals(this.audioDriveActionConfig, that.audioDriveActionConfig)
             && Objects.equals(this.backgroundConfig, that.backgroundConfig)
             && Objects.equals(this.layerConfig, that.layerConfig)
             && Objects.equals(this.thumbnailUrl, that.thumbnailUrl);
@@ -256,7 +296,8 @@ public class ShootScriptDetail {
 
     @Override
     public int hashCode() {
-        return Objects.hash(scriptType, textConfig, backgroundConfig, layerConfig, thumbnailUrl);
+        return Objects
+            .hash(scriptType, textConfig, audioDriveActionConfig, backgroundConfig, layerConfig, thumbnailUrl);
     }
 
     @Override
@@ -265,6 +306,7 @@ public class ShootScriptDetail {
         sb.append("class ShootScriptDetail {\n");
         sb.append("    scriptType: ").append(toIndentedString(scriptType)).append("\n");
         sb.append("    textConfig: ").append(toIndentedString(textConfig)).append("\n");
+        sb.append("    audioDriveActionConfig: ").append(toIndentedString(audioDriveActionConfig)).append("\n");
         sb.append("    backgroundConfig: ").append(toIndentedString(backgroundConfig)).append("\n");
         sb.append("    layerConfig: ").append(toIndentedString(layerConfig)).append("\n");
         sb.append("    thumbnailUrl: ").append(toIndentedString(thumbnailUrl)).append("\n");

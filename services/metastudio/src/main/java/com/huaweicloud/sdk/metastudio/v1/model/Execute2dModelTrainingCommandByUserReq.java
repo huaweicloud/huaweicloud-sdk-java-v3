@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class Execute2dModelTrainingCommandByUserReq {
 
     /**
-     * 命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取已上传分片信息 * CONFIRM_MULTIPART_UPLOADED：确认视频所有分片文件已上传 > * CONFIRM_ACCEPT/CONFIRM_REJECT/CONFIRM_ANSWER/CONFIRM_PENDING/CONFIRM_ACTIVE命令仅NA白名单用户可用。
+     * 命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取训练视频分片上传地址 * CONFIRM_REPAIR:用户发起优化模型请求 * GET_MULTIPART_UPLOADED：获取训练视频已上传分片信息 * CONFIRM_MULTIPART_UPLOADED：确认训练视频所有分片文件已上传 * GET_ACTION_VIDEO_MULTIPART_UPLOADED：获取动作编排视频分片上传地址 * CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED：确认动作编排视频所有分片文件已上传 > * CONFIRM_ACCEPT/CONFIRM_REJECT/CONFIRM_ANSWER/CONFIRM_PENDING/CONFIRM_ACTIVE命令仅NA白名单用户可用。
      */
     public static final class CommandEnum {
 
@@ -57,9 +57,26 @@ public class Execute2dModelTrainingCommandByUserReq {
         public static final CommandEnum GET_MULTIPART_UPLOADED = new CommandEnum("GET_MULTIPART_UPLOADED");
 
         /**
+         * Enum CONFIRM_REPAIR for value: "CONFIRM_REPAIR"
+         */
+        public static final CommandEnum CONFIRM_REPAIR = new CommandEnum("CONFIRM_REPAIR");
+
+        /**
          * Enum CONFIRM_MULTIPART_UPLOADED for value: "CONFIRM_MULTIPART_UPLOADED"
          */
         public static final CommandEnum CONFIRM_MULTIPART_UPLOADED = new CommandEnum("CONFIRM_MULTIPART_UPLOADED");
+
+        /**
+         * Enum GET_ACTION_VIDEO_MULTIPART_UPLOADED for value: "GET_ACTION_VIDEO_MULTIPART_UPLOADED"
+         */
+        public static final CommandEnum GET_ACTION_VIDEO_MULTIPART_UPLOADED =
+            new CommandEnum("GET_ACTION_VIDEO_MULTIPART_UPLOADED");
+
+        /**
+         * Enum CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED for value: "CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED"
+         */
+        public static final CommandEnum CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED =
+            new CommandEnum("CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED");
 
         private static final Map<String, CommandEnum> STATIC_FIELDS = createStaticFields();
 
@@ -72,7 +89,10 @@ public class Execute2dModelTrainingCommandByUserReq {
             map.put("CONFIRM_PENDING", CONFIRM_PENDING);
             map.put("CONFIRM_ACTIVE", CONFIRM_ACTIVE);
             map.put("GET_MULTIPART_UPLOADED", GET_MULTIPART_UPLOADED);
+            map.put("CONFIRM_REPAIR", CONFIRM_REPAIR);
             map.put("CONFIRM_MULTIPART_UPLOADED", CONFIRM_MULTIPART_UPLOADED);
+            map.put("GET_ACTION_VIDEO_MULTIPART_UPLOADED", GET_ACTION_VIDEO_MULTIPART_UPLOADED);
+            map.put("CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED", CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -128,7 +148,7 @@ public class Execute2dModelTrainingCommandByUserReq {
     private CommandEnum command;
 
     /**
-     * 命令类型： * UPDATE_VIDEO: 更新视频 * UPLOAD_VIDEO: 上传视频
+     * 命令类型： * UPDATE_VIDEO: 更新视频 * UPLOAD_VIDEO: 上传视频 * CONFIRM_ACTION_VIDEO: 确认动作编排视频 * GET_ACTION_VIDEO_MULTIPART: 获取动作编排视频分片
      */
     public static final class CommandMessageEnum {
 
@@ -142,12 +162,25 @@ public class Execute2dModelTrainingCommandByUserReq {
          */
         public static final CommandMessageEnum UPLOAD_VIDEO = new CommandMessageEnum("UPLOAD_VIDEO");
 
+        /**
+         * Enum CONFIRM_ACTION_VIDEO for value: "CONFIRM_ACTION_VIDEO"
+         */
+        public static final CommandMessageEnum CONFIRM_ACTION_VIDEO = new CommandMessageEnum("CONFIRM_ACTION_VIDEO");
+
+        /**
+         * Enum GET_ACTION_VIDEO_MULTIPART for value: "GET_ACTION_VIDEO_MULTIPART"
+         */
+        public static final CommandMessageEnum GET_ACTION_VIDEO_MULTIPART =
+            new CommandMessageEnum("GET_ACTION_VIDEO_MULTIPART");
+
         private static final Map<String, CommandMessageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CommandMessageEnum> createStaticFields() {
             Map<String, CommandMessageEnum> map = new HashMap<>();
             map.put("UPDATE_VIDEO", UPDATE_VIDEO);
             map.put("UPLOAD_VIDEO", UPLOAD_VIDEO);
+            map.put("CONFIRM_ACTION_VIDEO", CONFIRM_ACTION_VIDEO);
+            map.put("GET_ACTION_VIDEO_MULTIPART", GET_ACTION_VIDEO_MULTIPART);
             return Collections.unmodifiableMap(map);
         }
 
@@ -213,7 +246,7 @@ public class Execute2dModelTrainingCommandByUserReq {
     }
 
     /**
-     * 命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取已上传分片信息 * CONFIRM_MULTIPART_UPLOADED：确认视频所有分片文件已上传 > * CONFIRM_ACCEPT/CONFIRM_REJECT/CONFIRM_ANSWER/CONFIRM_PENDING/CONFIRM_ACTIVE命令仅NA白名单用户可用。
+     * 命令类型。 * SUBMITVERIFYING: 提交审核 * CONFIRM_ACCEPT：用户确认训练效果 * CONFIRM_REJECT：用户驳回训练效果 * CONFIRM_ANSWER：用户答复 * CONFIRM_PENDING：用户挂起任务 * CONFIRM_ACTIVE：用户激活任务 * GET_MULTIPART_UPLOADED：获取训练视频分片上传地址 * CONFIRM_REPAIR:用户发起优化模型请求 * GET_MULTIPART_UPLOADED：获取训练视频已上传分片信息 * CONFIRM_MULTIPART_UPLOADED：确认训练视频所有分片文件已上传 * GET_ACTION_VIDEO_MULTIPART_UPLOADED：获取动作编排视频分片上传地址 * CONFIRM_ACTION_VIDEO_MULTIPART_UPLOADED：确认动作编排视频所有分片文件已上传 > * CONFIRM_ACCEPT/CONFIRM_REJECT/CONFIRM_ANSWER/CONFIRM_PENDING/CONFIRM_ACTIVE命令仅NA白名单用户可用。
      * @return command
      */
     public CommandEnum getCommand() {
@@ -230,7 +263,7 @@ public class Execute2dModelTrainingCommandByUserReq {
     }
 
     /**
-     * 命令类型： * UPDATE_VIDEO: 更新视频 * UPLOAD_VIDEO: 上传视频
+     * 命令类型： * UPDATE_VIDEO: 更新视频 * UPLOAD_VIDEO: 上传视频 * CONFIRM_ACTION_VIDEO: 确认动作编排视频 * GET_ACTION_VIDEO_MULTIPART: 获取动作编排视频分片
      * @return commandMessage
      */
     public CommandMessageEnum getCommandMessage() {

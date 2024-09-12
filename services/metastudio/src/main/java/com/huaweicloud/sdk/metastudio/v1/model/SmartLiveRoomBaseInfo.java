@@ -34,7 +34,7 @@ public class SmartLiveRoomBaseInfo {
     private String roomName;
 
     /**
-     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。 * TEMPLATE: 直播间模板。
+     * 直播间类型。 * NORMAL：普通直播间，直播间一直存在，可以反复开播 * TEMP：临时直播间，直播任务结束后自动清理直播间。 * TEMPLATE：直播间模板。
      */
     public static final class RoomTypeEnum {
 
@@ -481,7 +481,7 @@ public class SmartLiveRoomBaseInfo {
     }
 
     /**
-     * 直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。 * TEMPLATE: 直播间模板。
+     * 直播间类型。 * NORMAL：普通直播间，直播间一直存在，可以反复开播 * TEMP：临时直播间，直播任务结束后自动清理直播间。 * TEMPLATE：直播间模板。
      * @return roomType
      */
     public RoomTypeEnum getRoomType() {
@@ -668,7 +668,7 @@ public class SmartLiveRoomBaseInfo {
     }
 
     /**
-     * 创建时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 创建时间，格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return createTime
      */
     public String getCreateTime() {
@@ -685,7 +685,7 @@ public class SmartLiveRoomBaseInfo {
     }
 
     /**
-     * 更新时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 更新时间，格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -702,7 +702,7 @@ public class SmartLiveRoomBaseInfo {
     }
 
     /**
-     * 开始直播时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 开始直播时间，格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return lastJobStartTime
      */
     public String getLastJobStartTime() {
@@ -719,7 +719,7 @@ public class SmartLiveRoomBaseInfo {
     }
 
     /**
-     * 结束直播时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 结束直播时间，格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return lastJobEndTime
      */
     public String getLastJobEndTime() {

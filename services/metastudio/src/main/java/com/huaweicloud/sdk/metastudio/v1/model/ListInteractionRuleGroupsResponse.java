@@ -35,7 +35,7 @@ public class ListInteractionRuleGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 互动规则总数。
+     * **参数解释**： 互动规则总数。
      * minimum: 0
      * maximum: 1000
      * @return count

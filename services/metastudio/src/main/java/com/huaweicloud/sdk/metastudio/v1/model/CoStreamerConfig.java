@@ -22,7 +22,7 @@ public class CoStreamerConfig {
     private VoiceConfig voiceConfig;
 
     /**
-     * 助播出声时主播行为。 * SILENCE：静默 * VOLUME_DOWN：音量降低
+     * **参数解释**： 助播出声时主播行为设置。 **约束限制**： 不涉及 **取值范围**： * SILENCE：静默 * VOLUME_DOWN：音量降低  **默认取值**： 不涉及。
      */
     public static final class StreamerActionEnum {
 
@@ -128,7 +128,7 @@ public class CoStreamerConfig {
     }
 
     /**
-     * 助播出声时主播行为。 * SILENCE：静默 * VOLUME_DOWN：音量降低
+     * **参数解释**： 助播出声时主播行为设置。 **约束限制**： 不涉及 **取值范围**： * SILENCE：静默 * VOLUME_DOWN：音量降低  **默认取值**： 不涉及。
      * @return streamerAction
      */
     public StreamerActionEnum getStreamerAction() {

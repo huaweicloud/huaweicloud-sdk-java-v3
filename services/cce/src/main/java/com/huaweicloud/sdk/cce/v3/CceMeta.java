@@ -3,6 +3,9 @@ package com.huaweicloud.sdk.cce.v3;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeList;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.AddNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.AddNodesToNodePoolList;
+import com.huaweicloud.sdk.cce.v3.model.AddNodesToNodePoolRequest;
+import com.huaweicloud.sdk.cce.v3.model.AddNodesToNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.AddonInstanceRollbackRequest;
 import com.huaweicloud.sdk.cce.v3.model.AutopilotCluster;
 import com.huaweicloud.sdk.cce.v3.model.AutopilotClusterInformation;
@@ -13,9 +16,6 @@ import com.huaweicloud.sdk.cce.v3.model.BatchCreateAutopilotClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.BatchCreateClusterTagsResponse;
-import com.huaweicloud.sdk.cce.v3.model.BatchCreateDeleteResourceTags;
-import com.huaweicloud.sdk.cce.v3.model.BatchCreateDeleteResourceTagsRequest;
-import com.huaweicloud.sdk.cce.v3.model.BatchCreateDeleteResourceTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteAutopilotClusterTagsRequest;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteAutopilotClusterTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.BatchDeleteClusterTagsRequest;
@@ -236,8 +236,6 @@ import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterSupportConfigurationResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowClusterUpgradeInfoResponse;
-import com.huaweicloud.sdk.cce.v3.model.ShowCustomizeClusterTagsByProjectIdRequest;
-import com.huaweicloud.sdk.cce.v3.model.ShowCustomizeClusterTagsByProjectIdResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowJobResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowNodePoolConfigurationDetailsRequest;
@@ -258,11 +256,6 @@ import com.huaweicloud.sdk.cce.v3.model.ShowReleaseHistoryRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseHistoryResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowReleaseResponse;
-import com.huaweicloud.sdk.cce.v3.model.ShowResourceInstances;
-import com.huaweicloud.sdk.cce.v3.model.ShowResourceInstancesRequest;
-import com.huaweicloud.sdk.cce.v3.model.ShowResourceInstancesResponse;
-import com.huaweicloud.sdk.cce.v3.model.ShowResourceTagsRequest;
-import com.huaweicloud.sdk.cce.v3.model.ShowResourceTagsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeClusterTaskResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowUpgradeWorkFlowRequest;
@@ -367,6 +360,39 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddNodesToNodePoolRequest, AddNodesToNodePoolResponse> addNodesToNodePool =
+        genForAddNodesToNodePool();
+
+    private static HttpRequestDef<AddNodesToNodePoolRequest, AddNodesToNodePoolResponse> genForAddNodesToNodePool() {
+        // basic
+        HttpRequestDef.Builder<AddNodesToNodePoolRequest, AddNodesToNodePoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddNodesToNodePoolRequest.class, AddNodesToNodePoolResponse.class)
+                .withName("AddNodesToNodePool")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodepools/{nodepool_id}/nodes/add")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddNodesToNodePoolRequest::getClusterId, AddNodesToNodePoolRequest::setClusterId));
+        builder.<String>withRequestField("nodepool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddNodesToNodePoolRequest::getNodepoolId, AddNodesToNodePoolRequest::setNodepoolId));
+        builder.<AddNodesToNodePoolList>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddNodesToNodePoolList.class),
+            f -> f.withMarshaller(AddNodesToNodePoolRequest::getBody, AddNodesToNodePoolRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AwakeClusterRequest, AwakeClusterResponse> awakeCluster = genForAwakeCluster();
 
     private static HttpRequestDef<AwakeClusterRequest, AwakeClusterResponse> genForAwakeCluster() {
@@ -412,45 +438,6 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateClusterTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateClusterTagsRequest::getBody, BatchCreateClusterTagsRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchCreateDeleteResourceTagsRequest, BatchCreateDeleteResourceTagsResponse> batchCreateDeleteResourceTags =
-        genForBatchCreateDeleteResourceTags();
-
-    private static HttpRequestDef<BatchCreateDeleteResourceTagsRequest, BatchCreateDeleteResourceTagsResponse> genForBatchCreateDeleteResourceTags() {
-        // basic
-        HttpRequestDef.Builder<BatchCreateDeleteResourceTagsRequest, BatchCreateDeleteResourceTagsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    BatchCreateDeleteResourceTagsRequest.class,
-                    BatchCreateDeleteResourceTagsResponse.class)
-                .withName("BatchCreateDeleteResourceTags")
-                .withUri("/cce/v1/{project_id}/{resource_type}/{resource_id}/tags/action")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateDeleteResourceTagsRequest::getResourceType,
-                BatchCreateDeleteResourceTagsRequest::setResourceType));
-        builder.<String>withRequestField("resource_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateDeleteResourceTagsRequest::getResourceId,
-                BatchCreateDeleteResourceTagsRequest::setResourceId));
-        builder.<BatchCreateDeleteResourceTags>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchCreateDeleteResourceTags.class),
-            f -> f.withMarshaller(BatchCreateDeleteResourceTagsRequest::getBody,
-                BatchCreateDeleteResourceTagsRequest::setBody));
 
         // response
 
@@ -2106,33 +2093,6 @@ public class CceMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowCustomizeClusterTagsByProjectIdRequest, ShowCustomizeClusterTagsByProjectIdResponse> showCustomizeClusterTagsByProjectId =
-        genForShowCustomizeClusterTagsByProjectId();
-
-    private static HttpRequestDef<ShowCustomizeClusterTagsByProjectIdRequest, ShowCustomizeClusterTagsByProjectIdResponse> genForShowCustomizeClusterTagsByProjectId() {
-        // basic
-        HttpRequestDef.Builder<ShowCustomizeClusterTagsByProjectIdRequest, ShowCustomizeClusterTagsByProjectIdResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowCustomizeClusterTagsByProjectIdRequest.class,
-                    ShowCustomizeClusterTagsByProjectIdResponse.class)
-                .withName("ShowCustomizeClusterTagsByProjectId")
-                .withUri("/cce/v1/{project_id}/{resource_type}/tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowCustomizeClusterTagsByProjectIdRequest::getResourceType,
-                ShowCustomizeClusterTagsByProjectIdRequest::setResourceType));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForShowJob();
 
     private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForShowJob() {
@@ -2423,63 +2383,6 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ShowReleaseHistoryResponse::getBody, ShowReleaseHistoryResponse::setBody)
                 .withInnerContainerType(ReleaseResp.class));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowResourceInstancesRequest, ShowResourceInstancesResponse> showResourceInstances =
-        genForShowResourceInstances();
-
-    private static HttpRequestDef<ShowResourceInstancesRequest, ShowResourceInstancesResponse> genForShowResourceInstances() {
-        // basic
-        HttpRequestDef.Builder<ShowResourceInstancesRequest, ShowResourceInstancesResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, ShowResourceInstancesRequest.class, ShowResourceInstancesResponse.class)
-            .withName("ShowResourceInstances")
-            .withUri("/cce/v1/{project_id}/{resource_type}/resource_instances/action")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceInstancesRequest::getResourceType,
-                ShowResourceInstancesRequest::setResourceType));
-        builder.<ShowResourceInstances>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ShowResourceInstances.class),
-            f -> f.withMarshaller(ShowResourceInstancesRequest::getBody, ShowResourceInstancesRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> showResourceTags =
-        genForShowResourceTags();
-
-    private static HttpRequestDef<ShowResourceTagsRequest, ShowResourceTagsResponse> genForShowResourceTags() {
-        // basic
-        HttpRequestDef.Builder<ShowResourceTagsRequest, ShowResourceTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagsRequest.class, ShowResourceTagsResponse.class)
-                .withName("ShowResourceTags")
-                .withUri("/cce/v1/{project_id}/{resource_type}/{resource_id}/tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceType, ShowResourceTagsRequest::setResourceType));
-        builder.<String>withRequestField("resource_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagsRequest::getResourceId, ShowResourceTagsRequest::setResourceId));
-
-        // response
 
         return builder.build();
     }

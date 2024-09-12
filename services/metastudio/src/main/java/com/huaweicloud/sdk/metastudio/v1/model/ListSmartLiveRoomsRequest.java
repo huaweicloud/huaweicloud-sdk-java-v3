@@ -266,7 +266,7 @@ public class ListSmartLiveRoomsRequest {
     }
 
     /**
-     * 最近直播任务起始时间。格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 最近直播任务起始时间。格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return startTime
      */
     public String getStartTime() {
@@ -283,7 +283,7 @@ public class ListSmartLiveRoomsRequest {
     }
 
     /**
-     * 最近直播任务结束时间。格式遵循：RFC 3339 如\"2021-01-10T10:43:17Z\"。
+     * 最近直播任务结束时间。格式遵循：RFC 3339 如“2021-01-10T10:43:17Z”。
      * @return endTime
      */
     public String getEndTime() {
@@ -300,7 +300,7 @@ public class ListSmartLiveRoomsRequest {
     }
 
     /**
-     * 按直播间类型查询。直播间类型。 * NORMAL: 普通直播间，直播间一直存在，可以反复开播 * TEMP: 临时直播间,直播任务结束后自动清理直播间。 * TEMPLATE: 直播间模板。
+     * 按直播间类型查询。直播间类型。 * NORMAL：普通直播间，直播间一直存在，可以反复开播 * TEMP：临时直播间，直播任务结束后自动清理直播间。 * TEMPLATE：直播间模板。
      * @return roomType
      */
     public String getRoomType() {

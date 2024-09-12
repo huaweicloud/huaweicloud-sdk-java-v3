@@ -37,7 +37,7 @@ public class LiveShootScriptItem {
     }
 
     /**
-     * 剧本序号。
+     * **参数解释**： 剧本序号。 **约束限制**： 不涉及
      * minimum: 0
      * maximum: 2147483647
      * @return sequenceNo
@@ -56,7 +56,7 @@ public class LiveShootScriptItem {
     }
 
     /**
-     * 段落标题。
+     * **参数解释**： 段落标题。 **约束限制**： 不涉及 **取值范围**： 字符长度0-256位。 **默认取值**： 不涉及。
      * @return title
      */
     public String getTitle() {

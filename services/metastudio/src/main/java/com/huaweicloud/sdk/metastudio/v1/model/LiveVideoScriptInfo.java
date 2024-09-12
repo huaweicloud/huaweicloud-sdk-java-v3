@@ -64,7 +64,7 @@ public class LiveVideoScriptInfo {
     }
 
     /**
-     * 剧本ID。
+     * **参数解释**： 剧本ID。 **约束限制**： 该字段无需填写。 **取值范围**： 字符长度1-64位。 **默认取值**： 不涉及。
      * @return scriptId
      */
     public String getScriptId() {
@@ -81,7 +81,7 @@ public class LiveVideoScriptInfo {
     }
 
     /**
-     * 剧本名称
+     * **参数解释**： 剧本名称。 **约束限制**： 该字段必须填写。 **取值范围**： 字符长度1-256位。 **默认取值**： 不涉及。
      * @return scriptName
      */
     public String getScriptName() {
@@ -98,7 +98,7 @@ public class LiveVideoScriptInfo {
     }
 
     /**
-     * 剧本描述。
+     * **参数解释**： 剧本描述。 **约束限制**： 该字段无需填写。 **取值范围**： 字符长度0-1024位。 **默认取值**： 不涉及。
      * @return scriptDescription
      */
     public String getScriptDescription() {
@@ -115,7 +115,7 @@ public class LiveVideoScriptInfo {
     }
 
     /**
-     * 数字人ID。对应形象和音色组合。
+     * **参数解释**： 数字人ID。对应形象和音色组合。 **约束限制**： 该字段暂未启用，无需填写。 **取值范围**： 字符长度0-64位。 **默认取值**： 不涉及。
      * @return dhId
      */
     public String getDhId() {
@@ -132,7 +132,7 @@ public class LiveVideoScriptInfo {
     }
 
     /**
-     * 数字人模型资产ID，可以从资产库中查询。
+     * **参数解释**： 数字人模型资产ID，可以从资产库中查询。 **约束限制**： 不涉及 **取值范围**： 字符长度0-64位。 **默认取值**： 不涉及
      * @return modelAssetId
      */
     public String getModelAssetId() {

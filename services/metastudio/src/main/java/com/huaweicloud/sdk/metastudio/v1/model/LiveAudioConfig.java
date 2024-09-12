@@ -31,7 +31,7 @@ public class LiveAudioConfig {
     }
 
     /**
-     * 插入音频资产的资产id，外部资产信息无需填写。若填写，可以从资产库中查询。
+     * **参数解释**： 插入音频资产的资产id，外部资产信息无需填写。若填写，可以从资产库中查询。 **约束限制**： 不涉及 **取值范围**： 字符长度0-64位。 **默认取值**： 不涉及。
      * @return assetId
      */
     public String getAssetId() {
@@ -48,7 +48,7 @@ public class LiveAudioConfig {
     }
 
     /**
-     * 音频URL。仅支持MP3格式，大小<100MB。输出会自动转化为单声道16KHZ采样。
+     * **参数解释**： 音频URL。 **约束限制**： 仅支持MP3格式，大小<100MB。输出会自动转化为单声道16KHZ采样。 **取值范围**： 字符长度0-2048位。 **默认取值**： 不涉及。
      * @return audioUrl
      */
     public String getAudioUrl() {
@@ -65,7 +65,7 @@ public class LiveAudioConfig {
     }
 
     /**
-     * 音频对应的字幕文件URL。仅SRT格式，大小<1MB。
+     * **参数解释**： 音频对应的字幕文件URL。 **约束限制**： 仅SRT格式，大小<1MB。 **取值范围**： 字符长度0-2048位。 **默认取值**： 不涉及。
      * @return subtitleUrl
      */
     public String getSubtitleUrl() {

@@ -81,6 +81,11 @@ public class CreateEndpointServiceResponse extends SdkResponse {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
 
     private List<PortList> ports = null;
@@ -384,6 +389,23 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
+    public CreateEndpointServiceResponse withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * 接口型VLAN场景服务端IPv4地址或域名
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
     public CreateEndpointServiceResponse withPorts(List<PortList> ports) {
         this.ports = ports;
         return this;
@@ -533,8 +555,9 @@ public class CreateEndpointServiceResponse extends SdkResponse {
             && Objects.equals(this.approvalEnabled, that.approvalEnabled) && Objects.equals(this.status, that.status)
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.ports, that.ports) && Objects.equals(this.tcpProxy, that.tcpProxy)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.ports, that.ports)
+            && Objects.equals(this.tcpProxy, that.tcpProxy) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.description, that.description)
             && Objects.equals(this.enablePolicy, that.enablePolicy) && Objects.equals(this.ipVersion, that.ipVersion);
     }
 
@@ -552,6 +575,7 @@ public class CreateEndpointServiceResponse extends SdkResponse {
             createdAt,
             updatedAt,
             projectId,
+            ip,
             ports,
             tcpProxy,
             tags,
@@ -576,6 +600,7 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    tcpProxy: ").append(toIndentedString(tcpProxy)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

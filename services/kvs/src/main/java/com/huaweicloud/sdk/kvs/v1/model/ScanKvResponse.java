@@ -45,6 +45,12 @@ public class ScanKvResponse extends SdkBsonDocResponse {
 
     private List<ReturnedKvItem> returnedKvItems = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "returned_segment_items")
+    @BsonProperty(value = "returned_segment_items")
+
+    private List<ReturnedSegmentItem> returnedSegmentItems = null;
+
     private static Codec<ScanKvResponse> codec;
 
     public ScanKvResponse withReturnedCount(Integer returnedCount) {
@@ -131,6 +137,39 @@ public class ScanKvResponse extends SdkBsonDocResponse {
         this.returnedKvItems = returnedKvItems;
     }
 
+    public ScanKvResponse withReturnedSegmentItems(List<ReturnedSegmentItem> returnedSegmentItems) {
+        this.returnedSegmentItems = returnedSegmentItems;
+        return this;
+    }
+
+    public ScanKvResponse addReturnedSegmentItemsItem(ReturnedSegmentItem returnedSegmentItemsItem) {
+        if (this.returnedSegmentItems == null) {
+            this.returnedSegmentItems = new ArrayList<>();
+        }
+        this.returnedSegmentItems.add(returnedSegmentItemsItem);
+        return this;
+    }
+
+    public ScanKvResponse withReturnedSegmentItems(Consumer<List<ReturnedSegmentItem>> returnedSegmentItemsSetter) {
+        if (this.returnedSegmentItems == null) {
+            this.returnedSegmentItems = new ArrayList<>();
+        }
+        returnedSegmentItemsSetter.accept(this.returnedSegmentItems);
+        return this;
+    }
+
+    /**
+     * 采样段区间列表。
+     * @return returnedSegmentItems
+     */
+    public List<ReturnedSegmentItem> getReturnedSegmentItems() {
+        return returnedSegmentItems;
+    }
+
+    public void setReturnedSegmentItems(List<ReturnedSegmentItem> returnedSegmentItems) {
+        this.returnedSegmentItems = returnedSegmentItems;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -142,12 +181,13 @@ public class ScanKvResponse extends SdkBsonDocResponse {
         ScanKvResponse that = (ScanKvResponse) obj;
         return Objects.equals(this.returnedCount, that.returnedCount)
             && Objects.equals(this.filteredCount, that.filteredCount) && Objects.equals(this.cursorKey, that.cursorKey)
-            && Objects.equals(this.returnedKvItems, that.returnedKvItems);
+            && Objects.equals(this.returnedKvItems, that.returnedKvItems)
+            && Objects.equals(this.returnedSegmentItems, that.returnedSegmentItems);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(returnedCount, filteredCount, cursorKey, returnedKvItems);
+        return Objects.hash(returnedCount, filteredCount, cursorKey, returnedKvItems, returnedSegmentItems);
     }
 
     @Override
@@ -158,6 +198,7 @@ public class ScanKvResponse extends SdkBsonDocResponse {
         sb.append("    filteredCount: ").append(toIndentedString(filteredCount)).append("\n");
         sb.append("    cursorKey: ").append(toIndentedString(cursorKey)).append("\n");
         sb.append("    returnedKvItems: ").append(toIndentedString(returnedKvItems)).append("\n");
+        sb.append("    returnedSegmentItems: ").append(toIndentedString(returnedSegmentItems)).append("\n");
         sb.append("}");
         return sb.toString();
     }

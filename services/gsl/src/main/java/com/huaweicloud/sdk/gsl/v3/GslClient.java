@@ -35,6 +35,8 @@ import com.huaweicloud.sdk.gsl.v3.model.ListNetworkSwitchPoliciesRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListNetworkSwitchPoliciesResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListProPricePlansRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListProPricePlansResponse;
+import com.huaweicloud.sdk.gsl.v3.model.ListSimCardFlowPerDayRequest;
+import com.huaweicloud.sdk.gsl.v3.model.ListSimCardFlowPerDayResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimCardsRequest;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimCardsResponse;
 import com.huaweicloud.sdk.gsl.v3.model.ListSimDeviceMultiplyRequest;
@@ -466,6 +468,35 @@ public class GslClient {
      */
     public SyncInvoker<EnableSimCardRequest, EnableSimCardResponse> enableSimCardInvoker(EnableSimCardRequest request) {
         return new SyncInvoker<>(request, GslMeta.enableSimCard, hcClient);
+    }
+
+    /**
+     * 批量查询SIM卡日用量
+     *
+     * 批量查询SIM卡日用量接口，支持按天或按月查询。SIM卡标识和容器ID只能选一个参数，天和月也只能选一个参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSimCardFlowPerDayRequest 请求对象
+     * @return ListSimCardFlowPerDayResponse
+     */
+    public ListSimCardFlowPerDayResponse listSimCardFlowPerDay(ListSimCardFlowPerDayRequest request) {
+        return hcClient.syncInvokeHttp(request, GslMeta.listSimCardFlowPerDay);
+    }
+
+    /**
+     * 批量查询SIM卡日用量
+     *
+     * 批量查询SIM卡日用量接口，支持按天或按月查询。SIM卡标识和容器ID只能选一个参数，天和月也只能选一个参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSimCardFlowPerDayRequest 请求对象
+     * @return SyncInvoker<ListSimCardFlowPerDayRequest, ListSimCardFlowPerDayResponse>
+     */
+    public SyncInvoker<ListSimCardFlowPerDayRequest, ListSimCardFlowPerDayResponse> listSimCardFlowPerDayInvoker(
+        ListSimCardFlowPerDayRequest request) {
+        return new SyncInvoker<>(request, GslMeta.listSimCardFlowPerDay, hcClient);
     }
 
     /**

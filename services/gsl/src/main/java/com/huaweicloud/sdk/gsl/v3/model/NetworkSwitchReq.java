@@ -11,9 +11,31 @@ import java.util.Objects;
 public class NetworkSwitchReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cid")
+
+    private String cid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "carrier_type")
 
     private Integer carrierType;
+
+    public NetworkSwitchReq withCid(String cid) {
+        this.cid = cid;
+        return this;
+    }
+
+    /**
+     * 容器ID
+     * @return cid
+     */
+    public String getCid() {
+        return cid;
+    }
+
+    public void setCid(String cid) {
+        this.cid = cid;
+    }
 
     public NetworkSwitchReq withCarrierType(Integer carrierType) {
         this.carrierType = carrierType;
@@ -41,18 +63,19 @@ public class NetworkSwitchReq {
             return false;
         }
         NetworkSwitchReq that = (NetworkSwitchReq) obj;
-        return Objects.equals(this.carrierType, that.carrierType);
+        return Objects.equals(this.cid, that.cid) && Objects.equals(this.carrierType, that.carrierType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(carrierType);
+        return Objects.hash(cid, carrierType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NetworkSwitchReq {\n");
+        sb.append("    cid: ").append(toIndentedString(cid)).append("\n");
         sb.append("    carrierType: ").append(toIndentedString(carrierType)).append("\n");
         sb.append("}");
         return sb.toString();

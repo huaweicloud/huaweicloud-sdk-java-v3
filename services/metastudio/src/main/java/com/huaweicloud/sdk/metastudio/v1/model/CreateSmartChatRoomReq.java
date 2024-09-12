@@ -280,7 +280,7 @@ public class CreateSmartChatRoomReq {
     }
 
     /**
-     * 并发路数。
+     * **参数解释**： 并发路数。
      * minimum: 0
      * maximum: 1024
      * @return concurrency

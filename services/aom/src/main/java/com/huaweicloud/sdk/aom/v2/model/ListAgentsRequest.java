@@ -26,7 +26,7 @@ public class ListAgentsRequest {
     }
 
     /**
-     * - 查询集群主机时，填写集群id。 - 查询用户自定义主机时，填写“apm”。
+     * - 查询集群主机时，填写集群id。 - 查询用户自定义主机时，填写“APM”。
      * @return clusterId
      */
     public String getClusterId() {
@@ -43,7 +43,7 @@ public class ListAgentsRequest {
     }
 
     /**
-     * - 查询集群主机时，填写命名空间。 - 查询用户自定义主机时，填写“apm”。
+     * - 查询集群主机时，填写命名空间。 - 查询用户自定义主机时，填写“APM”。
      * @return namespace
      */
     public String getNamespace() {

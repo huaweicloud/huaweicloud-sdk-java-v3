@@ -21,7 +21,7 @@ public class ImageLayerConfig {
     }
 
     /**
-     * 图片文件的URL。
+     * **参数解释**： 图片文件的URL。 **约束限制**： 不涉及。 **取值范围**： 字符长度1-2048位。 **默认取值**： 不涉及
      * @return imageUrl
      */
     public String getImageUrl() {

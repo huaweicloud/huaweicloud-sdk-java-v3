@@ -29,7 +29,7 @@ public class TrainingJobBasicInfo {
     private String name;
 
     /**
-     * 任务的状态。 * WAIT_FILE_UPLOAD：待上传文件 * AUTO_VERIFYING：自动审核中 * AUTO_VERIFY_FAILED：自动审核失败 * MANUAL_VERIFYING：人工审核中 * MANUAL_VERIFY_FAILED：人工审核失败 * MANUAL_VERIFY_SUCCESS：审核通过，等待预处理资源 * TRAINING_DATA_PREPROCESSING：训练数据预处理中 * TRAINING_DATA_PREPROCESS_FAILED：训练数据预处理失败 * TRAINING_DATA_PREPROCESS_SUCCESS：训练数据预处理完成，等待训练资源中 * TRAINING：训练中 * TRAIN_FAILED：训练失败 * TRAIN_SUCCESS：训练完成，等待预处理资源 * INFERENCE_DATA_PREPROCESSING：推理数据预处理中 * INFERENCE_DATA_PREPROCESS_FAILED：推理数据预处理失败 * WAIT_MASK_UPLOAD：等待遮罩上传 * WAIT_MAIN_FILE_UPLOAD：等待主文件上传 * JOB_SUCCESS：训练任务完成 * WAIT_USER_CONFIRM：等待用户确认训练效果 * JOB_REJECT：驳回任务 * JOB_PENDING：挂起任务 * JOB_FINISH：任务结束，是最终状态，不支持修改此状态。
+     * 任务的状态。 * WAIT_FILE_UPLOAD: 待上传文件 * AUTO_VERIFYING: 自动审核中 * AUTO_VERIFY_FAILED: 自动审核失败 * MANUAL_VERIFYING: 人工审核中 * WAIT_TRAINING_DATA_PREPROCESS: 人工审核中 * MANUAL_VERIFY_FAILED: 人工审核失败 * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源 * TRAINING_DATA_PREPROCESSING: 训练数据预处理中 * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败 * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中 * TRAINING: 训练中 * TRAIN_FAILED: 训练失败 * TRAIN_SUCCESS: 训练完成，等待预处理资源 * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中 * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败 * WAIT_MASK_UPLOAD: 等待遮罩上传 * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传 * JOB_SUCCESS: 训练任务完成 * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理 * MANUAL_STOP_TRAIN: 人工中止训练 * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理 * WAIT_USER_CONFIRM: 等待用户确认训练效果 * JOB_REJECT: 驳回任务 * JOB_PENDING: 挂起任务 * WAIT_ADMIN_CONFIRM: 等待管理员审核 * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态。 * COMPILING: 转编译中 * WAIT_COMPILE: 等待转编译 * COMPILE_FAILED: 转编译失败 * WAIT_GENERATE_ACTION: 等待原子动作生成 * WAIT_ARRANGE: 等待编排 * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中 * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成 * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排 * ACTION_GENERATE_ORI_PROCESSING: 动作编排中 * ACTION_GENERATE_DATA_FAILED: 动作生成失败 * ACTION_GENERATE_ORI_FAILED: 动作编排失败 * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功 * GENERATE_ACTION_PREPROCESS_FAILED: 动作编排失败 * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息
      */
     public static final class StateEnum {
 
@@ -52,6 +52,11 @@ public class TrainingJobBasicInfo {
          * Enum MANUAL_VERIFYING for value: "MANUAL_VERIFYING"
          */
         public static final StateEnum MANUAL_VERIFYING = new StateEnum("MANUAL_VERIFYING");
+
+        /**
+         * Enum WAIT_TRAINING_DATA_PREPROCESS for value: "WAIT_TRAINING_DATA_PREPROCESS"
+         */
+        public static final StateEnum WAIT_TRAINING_DATA_PREPROCESS = new StateEnum("WAIT_TRAINING_DATA_PREPROCESS");
 
         /**
          * Enum MANUAL_VERIFY_FAILED for value: "MANUAL_VERIFY_FAILED"
@@ -122,6 +127,28 @@ public class TrainingJobBasicInfo {
         public static final StateEnum JOB_SUCCESS = new StateEnum("JOB_SUCCESS");
 
         /**
+         * Enum MANUAL_STOP_INFERENCE_DATA_PREPROCESS for value: "MANUAL_STOP_INFERENCE_DATA_PREPROCESS"
+         */
+        public static final StateEnum MANUAL_STOP_INFERENCE_DATA_PREPROCESS =
+            new StateEnum("MANUAL_STOP_INFERENCE_DATA_PREPROCESS");
+
+        /**
+         * Enum MANUAL_STOP_TRAIN for value: "MANUAL_STOP_TRAIN"
+         */
+        public static final StateEnum MANUAL_STOP_TRAIN = new StateEnum("MANUAL_STOP_TRAIN");
+
+        /**
+         * Enum MANUAL_STOP_TRAINING_DATA_PREPROCESS for value: "MANUAL_STOP_TRAINING_DATA_PREPROCESS"
+         */
+        public static final StateEnum MANUAL_STOP_TRAINING_DATA_PREPROCESS =
+            new StateEnum("MANUAL_STOP_TRAINING_DATA_PREPROCESS");
+
+        /**
+         * Enum MANUAL_STOP_BEAUTY_PREPROCESS for value: "MANUAL_STOP_BEAUTY_PREPROCESS"
+         */
+        public static final StateEnum MANUAL_STOP_BEAUTY_PREPROCESS = new StateEnum("MANUAL_STOP_BEAUTY_PREPROCESS");
+
+        /**
          * Enum WAIT_USER_CONFIRM for value: "WAIT_USER_CONFIRM"
          */
         public static final StateEnum WAIT_USER_CONFIRM = new StateEnum("WAIT_USER_CONFIRM");
@@ -137,9 +164,118 @@ public class TrainingJobBasicInfo {
         public static final StateEnum JOB_PENDING = new StateEnum("JOB_PENDING");
 
         /**
+         * Enum WAIT_ADMIN_CONFIRM for value: "WAIT_ADMIN_CONFIRM"
+         */
+        public static final StateEnum WAIT_ADMIN_CONFIRM = new StateEnum("WAIT_ADMIN_CONFIRM");
+
+        /**
          * Enum JOB_FINISH for value: "JOB_FINISH"
          */
         public static final StateEnum JOB_FINISH = new StateEnum("JOB_FINISH");
+
+        /**
+         * Enum COMPILING for value: "COMPILING"
+         */
+        public static final StateEnum COMPILING = new StateEnum("COMPILING");
+
+        /**
+         * Enum WAIT_COMPILE for value: "WAIT_COMPILE"
+         */
+        public static final StateEnum WAIT_COMPILE = new StateEnum("WAIT_COMPILE");
+
+        /**
+         * Enum COMPILE_FAILED for value: "COMPILE_FAILED"
+         */
+        public static final StateEnum COMPILE_FAILED = new StateEnum("COMPILE_FAILED");
+
+        /**
+         * Enum WAIT_BEAUTY for value: "WAIT_BEAUTY"
+         */
+        public static final StateEnum WAIT_BEAUTY = new StateEnum("WAIT_BEAUTY");
+
+        /**
+         * Enum WAIT_GENERATE_ACTION for value: "WAIT_GENERATE_ACTION"
+         */
+        public static final StateEnum WAIT_GENERATE_ACTION = new StateEnum("WAIT_GENERATE_ACTION");
+
+        /**
+         * Enum WAIT_ARRANGE for value: "WAIT_ARRANGE"
+         */
+        public static final StateEnum WAIT_ARRANGE = new StateEnum("WAIT_ARRANGE");
+
+        /**
+         * Enum ACTION_GENERATE_DATA_PROCESSING for value: "ACTION_GENERATE_DATA_PROCESSING"
+         */
+        public static final StateEnum ACTION_GENERATE_DATA_PROCESSING =
+            new StateEnum("ACTION_GENERATE_DATA_PROCESSING");
+
+        /**
+         * Enum MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING for value: "MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING"
+         */
+        public static final StateEnum MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING =
+            new StateEnum("MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING");
+
+        /**
+         * Enum MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING for value: "MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING"
+         */
+        public static final StateEnum MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING =
+            new StateEnum("MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING");
+
+        /**
+         * Enum ACTION_GENERATE_ORI_PROCESSING for value: "ACTION_GENERATE_ORI_PROCESSING"
+         */
+        public static final StateEnum ACTION_GENERATE_ORI_PROCESSING = new StateEnum("ACTION_GENERATE_ORI_PROCESSING");
+
+        /**
+         * Enum ACTION_GENERATE_DATA_FAILED for value: "ACTION_GENERATE_DATA_FAILED"
+         */
+        public static final StateEnum ACTION_GENERATE_DATA_FAILED = new StateEnum("ACTION_GENERATE_DATA_FAILED");
+
+        /**
+         * Enum ACTION_GENERATE_ORI_FAILED for value: "ACTION_GENERATE_ORI_FAILED"
+         */
+        public static final StateEnum ACTION_GENERATE_ORI_FAILED = new StateEnum("ACTION_GENERATE_ORI_FAILED");
+
+        /**
+         * Enum ACTION_GENERATE_ORI_SUCCESS for value: "ACTION_GENERATE_ORI_SUCCESS"
+         */
+        public static final StateEnum ACTION_GENERATE_ORI_SUCCESS = new StateEnum("ACTION_GENERATE_ORI_SUCCESS");
+
+        /**
+         * Enum GENERATE_ACTION_PREPROCESS_FAILED for value: "GENERATE_ACTION_PREPROCESS_FAILED"
+         */
+        public static final StateEnum GENERATE_ACTION_PREPROCESS_FAILED =
+            new StateEnum("GENERATE_ACTION_PREPROCESS_FAILED");
+
+        /**
+         * Enum WAIT_ADMIN_CALIBRATION for value: "WAIT_ADMIN_CALIBRATION"
+         */
+        public static final StateEnum WAIT_ADMIN_CALIBRATION = new StateEnum("WAIT_ADMIN_CALIBRATION");
+
+        /**
+         * Enum BEAUTY_VIDEO_FILE_UPLOADED for value: "BEAUTY_VIDEO_FILE_UPLOADED"
+         */
+        public static final StateEnum BEAUTY_VIDEO_FILE_UPLOADED = new StateEnum("BEAUTY_VIDEO_FILE_UPLOADED");
+
+        /**
+         * Enum BEAUTYFACE_SUCCESS for value: "BEAUTYFACE_SUCCESS"
+         */
+        public static final StateEnum BEAUTYFACE_SUCCESS = new StateEnum("BEAUTYFACE_SUCCESS");
+
+        /**
+         * Enum BEAUTYFACE_FAILED for value: "BEAUTYFACE_FAILED"
+         */
+        public static final StateEnum BEAUTYFACE_FAILED = new StateEnum("BEAUTYFACE_FAILED");
+
+        /**
+         * Enum WAIT_BEAUTY_VIDEO_FILE_UPLOAD for value: "WAIT_BEAUTY_VIDEO_FILE_UPLOAD"
+         */
+        public static final StateEnum WAIT_BEAUTY_VIDEO_FILE_UPLOAD = new StateEnum("WAIT_BEAUTY_VIDEO_FILE_UPLOAD");
+
+        /**
+         * Enum BEAUTYFACE_ROCESSING for value: "BEAUTYFACE_ROCESSING"
+         */
+        public static final StateEnum BEAUTYFACE_ROCESSING = new StateEnum("BEAUTYFACE_ROCESSING");
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -149,6 +285,7 @@ public class TrainingJobBasicInfo {
             map.put("AUTO_VERIFYING", AUTO_VERIFYING);
             map.put("AUTO_VERIFY_FAILED", AUTO_VERIFY_FAILED);
             map.put("MANUAL_VERIFYING", MANUAL_VERIFYING);
+            map.put("WAIT_TRAINING_DATA_PREPROCESS", WAIT_TRAINING_DATA_PREPROCESS);
             map.put("MANUAL_VERIFY_FAILED", MANUAL_VERIFY_FAILED);
             map.put("MANUAL_VERIFY_SUCCESS", MANUAL_VERIFY_SUCCESS);
             map.put("TRAINING_DATA_PREPROCESSING", TRAINING_DATA_PREPROCESSING);
@@ -162,10 +299,35 @@ public class TrainingJobBasicInfo {
             map.put("WAIT_MASK_UPLOAD", WAIT_MASK_UPLOAD);
             map.put("WAIT_MAIN_FILE_UPLOAD", WAIT_MAIN_FILE_UPLOAD);
             map.put("JOB_SUCCESS", JOB_SUCCESS);
+            map.put("MANUAL_STOP_INFERENCE_DATA_PREPROCESS", MANUAL_STOP_INFERENCE_DATA_PREPROCESS);
+            map.put("MANUAL_STOP_TRAIN", MANUAL_STOP_TRAIN);
+            map.put("MANUAL_STOP_TRAINING_DATA_PREPROCESS", MANUAL_STOP_TRAINING_DATA_PREPROCESS);
+            map.put("MANUAL_STOP_BEAUTY_PREPROCESS", MANUAL_STOP_BEAUTY_PREPROCESS);
             map.put("WAIT_USER_CONFIRM", WAIT_USER_CONFIRM);
             map.put("JOB_REJECT", JOB_REJECT);
             map.put("JOB_PENDING", JOB_PENDING);
+            map.put("WAIT_ADMIN_CONFIRM", WAIT_ADMIN_CONFIRM);
             map.put("JOB_FINISH", JOB_FINISH);
+            map.put("COMPILING", COMPILING);
+            map.put("WAIT_COMPILE", WAIT_COMPILE);
+            map.put("COMPILE_FAILED", COMPILE_FAILED);
+            map.put("WAIT_BEAUTY", WAIT_BEAUTY);
+            map.put("WAIT_GENERATE_ACTION", WAIT_GENERATE_ACTION);
+            map.put("WAIT_ARRANGE", WAIT_ARRANGE);
+            map.put("ACTION_GENERATE_DATA_PROCESSING", ACTION_GENERATE_DATA_PROCESSING);
+            map.put("MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING", MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING);
+            map.put("MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING", MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING);
+            map.put("ACTION_GENERATE_ORI_PROCESSING", ACTION_GENERATE_ORI_PROCESSING);
+            map.put("ACTION_GENERATE_DATA_FAILED", ACTION_GENERATE_DATA_FAILED);
+            map.put("ACTION_GENERATE_ORI_FAILED", ACTION_GENERATE_ORI_FAILED);
+            map.put("ACTION_GENERATE_ORI_SUCCESS", ACTION_GENERATE_ORI_SUCCESS);
+            map.put("GENERATE_ACTION_PREPROCESS_FAILED", GENERATE_ACTION_PREPROCESS_FAILED);
+            map.put("WAIT_ADMIN_CALIBRATION", WAIT_ADMIN_CALIBRATION);
+            map.put("BEAUTY_VIDEO_FILE_UPLOADED", BEAUTY_VIDEO_FILE_UPLOADED);
+            map.put("BEAUTYFACE_SUCCESS", BEAUTYFACE_SUCCESS);
+            map.put("BEAUTYFACE_FAILED", BEAUTYFACE_FAILED);
+            map.put("WAIT_BEAUTY_VIDEO_FILE_UPLOAD", WAIT_BEAUTY_VIDEO_FILE_UPLOAD);
+            map.put("BEAUTYFACE_ROCESSING", BEAUTYFACE_ROCESSING);
             return Collections.unmodifiableMap(map);
         }
 
@@ -426,6 +588,11 @@ public class TrainingJobBasicInfo {
 
     private String appUserId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_flexus")
+
+    private Boolean isFlexus;
+
     public TrainingJobBasicInfo withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -466,7 +633,7 @@ public class TrainingJobBasicInfo {
     }
 
     /**
-     * 任务的状态。 * WAIT_FILE_UPLOAD：待上传文件 * AUTO_VERIFYING：自动审核中 * AUTO_VERIFY_FAILED：自动审核失败 * MANUAL_VERIFYING：人工审核中 * MANUAL_VERIFY_FAILED：人工审核失败 * MANUAL_VERIFY_SUCCESS：审核通过，等待预处理资源 * TRAINING_DATA_PREPROCESSING：训练数据预处理中 * TRAINING_DATA_PREPROCESS_FAILED：训练数据预处理失败 * TRAINING_DATA_PREPROCESS_SUCCESS：训练数据预处理完成，等待训练资源中 * TRAINING：训练中 * TRAIN_FAILED：训练失败 * TRAIN_SUCCESS：训练完成，等待预处理资源 * INFERENCE_DATA_PREPROCESSING：推理数据预处理中 * INFERENCE_DATA_PREPROCESS_FAILED：推理数据预处理失败 * WAIT_MASK_UPLOAD：等待遮罩上传 * WAIT_MAIN_FILE_UPLOAD：等待主文件上传 * JOB_SUCCESS：训练任务完成 * WAIT_USER_CONFIRM：等待用户确认训练效果 * JOB_REJECT：驳回任务 * JOB_PENDING：挂起任务 * JOB_FINISH：任务结束，是最终状态，不支持修改此状态。
+     * 任务的状态。 * WAIT_FILE_UPLOAD: 待上传文件 * AUTO_VERIFYING: 自动审核中 * AUTO_VERIFY_FAILED: 自动审核失败 * MANUAL_VERIFYING: 人工审核中 * WAIT_TRAINING_DATA_PREPROCESS: 人工审核中 * MANUAL_VERIFY_FAILED: 人工审核失败 * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源 * TRAINING_DATA_PREPROCESSING: 训练数据预处理中 * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败 * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中 * TRAINING: 训练中 * TRAIN_FAILED: 训练失败 * TRAIN_SUCCESS: 训练完成，等待预处理资源 * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中 * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败 * WAIT_MASK_UPLOAD: 等待遮罩上传 * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传 * JOB_SUCCESS: 训练任务完成 * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理 * MANUAL_STOP_TRAIN: 人工中止训练 * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理 * WAIT_USER_CONFIRM: 等待用户确认训练效果 * JOB_REJECT: 驳回任务 * JOB_PENDING: 挂起任务 * WAIT_ADMIN_CONFIRM: 等待管理员审核 * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态。 * COMPILING: 转编译中 * WAIT_COMPILE: 等待转编译 * COMPILE_FAILED: 转编译失败 * WAIT_GENERATE_ACTION: 等待原子动作生成 * WAIT_ARRANGE: 等待编排 * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中 * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成 * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排 * ACTION_GENERATE_ORI_PROCESSING: 动作编排中 * ACTION_GENERATE_DATA_FAILED: 动作生成失败 * ACTION_GENERATE_ORI_FAILED: 动作编排失败 * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功 * GENERATE_ACTION_PREPROCESS_FAILED: 动作编排失败 * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息
      * @return state
      */
     public StateEnum getState() {
@@ -697,6 +864,23 @@ public class TrainingJobBasicInfo {
         this.appUserId = appUserId;
     }
 
+    public TrainingJobBasicInfo withIsFlexus(Boolean isFlexus) {
+        this.isFlexus = isFlexus;
+        return this;
+    }
+
+    /**
+     * 是否是基础版的形象训练
+     * @return isFlexus
+     */
+    public Boolean getIsFlexus() {
+        return isFlexus;
+    }
+
+    public void setIsFlexus(Boolean isFlexus) {
+        this.isFlexus = isFlexus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -716,7 +900,7 @@ public class TrainingJobBasicInfo {
             && Objects.equals(this.modelVersion, that.modelVersion)
             && Objects.equals(this.mattingType, that.mattingType)
             && Objects.equals(this.modelResolution, that.modelResolution)
-            && Objects.equals(this.appUserId, that.appUserId);
+            && Objects.equals(this.appUserId, that.appUserId) && Objects.equals(this.isFlexus, that.isFlexus);
     }
 
     @Override
@@ -735,7 +919,8 @@ public class TrainingJobBasicInfo {
             modelVersion,
             mattingType,
             modelResolution,
-            appUserId);
+            appUserId,
+            isFlexus);
     }
 
     @Override
@@ -757,6 +942,7 @@ public class TrainingJobBasicInfo {
         sb.append("    mattingType: ").append(toIndentedString(mattingType)).append("\n");
         sb.append("    modelResolution: ").append(toIndentedString(modelResolution)).append("\n");
         sb.append("    appUserId: ").append(toIndentedString(appUserId)).append("\n");
+        sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

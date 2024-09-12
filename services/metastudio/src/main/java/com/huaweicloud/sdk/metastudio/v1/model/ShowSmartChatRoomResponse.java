@@ -306,7 +306,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
     }
 
     /**
-     * 并发路数。
+     * **参数解释**： 并发路数。
      * minimum: 0
      * maximum: 1024
      * @return concurrency
@@ -470,7 +470,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
     }
 
     /**
-     * 智能交互对话创建时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 智能交互对话创建时间，格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return createTime
      */
     public String getCreateTime() {
@@ -487,7 +487,7 @@ public class ShowSmartChatRoomResponse extends SdkResponse {
     }
 
     /**
-     * 智能交互对话更新时间，格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * 智能交互对话更新时间，格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
      * @return updateTime
      */
     public String getUpdateTime() {

@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -52,6 +54,11 @@ public class CreateElasticResourcePoolRequestBody {
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "label")
+
+    private Map<String, String> label = null;
 
     public CreateElasticResourcePoolRequestBody withElasticResourcePoolName(String elasticResourcePoolName) {
         this.elasticResourcePoolName = elasticResourcePoolName;
@@ -110,8 +117,8 @@ public class CreateElasticResourcePoolRequestBody {
     }
 
     /**
-     * 最大CU大于等于该资源池下任意一个队列的最大CU之和且大于min_cu。最小值为64
-     * minimum: 64
+     * max_cu大于等于该弹性资源池下任意一个队列的最大CU。标准版弹性资源池最小值为64，最大值为32000；基础版弹性资源池最小值为16，最大值为64。
+     * minimum: 16
      * maximum: 32000
      * @return maxCu
      */
@@ -148,8 +155,8 @@ public class CreateElasticResourcePoolRequestBody {
     }
 
     /**
-     * 最小CU大于等于该资源池下所有队列最小CU之和,最小值为64
-     * minimum: 64
+     * min_cu大于等于该弹性资源池下所有队列最小CU之和，且小于等于max_cu。标准版弹性资源池最小值为64，最大值为32000；基础版弹性资源池最小值为16，最大值为64。
+     * minimum: 16
      * maximum: 32000
      * @return minCu
      */
@@ -211,6 +218,39 @@ public class CreateElasticResourcePoolRequestBody {
         this.tags = tags;
     }
 
+    public CreateElasticResourcePoolRequestBody withLabel(Map<String, String> label) {
+        this.label = label;
+        return this;
+    }
+
+    public CreateElasticResourcePoolRequestBody putLabelItem(String key, String labelItem) {
+        if (this.label == null) {
+            this.label = new HashMap<>();
+        }
+        this.label.put(key, labelItem);
+        return this;
+    }
+
+    public CreateElasticResourcePoolRequestBody withLabel(Consumer<Map<String, String>> labelSetter) {
+        if (this.label == null) {
+            this.label = new HashMap<>();
+        }
+        labelSetter.accept(this.label);
+        return this;
+    }
+
+    /**
+     * 弹性资源池属性字段。默认为标准版弹性资源池；{\"spec\":\"basic\"}标识基础版弹性资源池；{\"billing_spec_code\":\"developer\"}标识开发者弹性资源池。目前不支持其它属性设置。
+     * @return label
+     */
+    public Map<String, String> getLabel() {
+        return label;
+    }
+
+    public void setLabel(Map<String, String> label) {
+        this.label = label;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -225,7 +265,7 @@ public class CreateElasticResourcePoolRequestBody {
             && Objects.equals(this.maxCu, that.maxCu) && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.minCu, that.minCu)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.label, that.label);
     }
 
     @Override
@@ -237,7 +277,8 @@ public class CreateElasticResourcePoolRequestBody {
             chargingMode,
             minCu,
             enterpriseProjectId,
-            tags);
+            tags,
+            label);
     }
 
     @Override
@@ -252,6 +293,7 @@ public class CreateElasticResourcePoolRequestBody {
         sb.append("    minCu: ").append(toIndentedString(minCu)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    label: ").append(toIndentedString(label)).append("\n");
         sb.append("}");
         return sb.toString();
     }

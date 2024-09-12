@@ -16,7 +16,7 @@ import java.util.Objects;
 public class SmartTextLayerConfig {
 
     /**
-     * 文本类型。 * DYNAMIC: 动态文本，需要进行关键字替换。 * STATIC: 静态文本。
+     * **参数解释**： 文本类型。 * DYNAMIC：动态文本，需要进行关键字替换。 * STATIC：静态文本。
      */
     public static final class TextTypeEnum {
 
@@ -121,7 +121,7 @@ public class SmartTextLayerConfig {
     }
 
     /**
-     * 文本类型。 * DYNAMIC: 动态文本，需要进行关键字替换。 * STATIC: 静态文本。
+     * **参数解释**： 文本类型。 * DYNAMIC：动态文本，需要进行关键字替换。 * STATIC：静态文本。
      * @return textType
      */
     public TextTypeEnum getTextType() {
@@ -155,7 +155,7 @@ public class SmartTextLayerConfig {
     }
 
     /**
-     * 字体。当前支持的字体： * HarmonyOS_Sans_SC_Black：鸿蒙粗体 * HarmonyOS_Sans_SC_Regular：鸿蒙常规 * HarmonyOS_Sans_SC_Thin：鸿蒙细体 * fzyouh：方正瘦体
+     * **参数解释**： 字体。当前支持的字体： * HarmonyOS_Sans_SC_Black：鸿蒙粗体 * HarmonyOS_Sans_SC_Regular：鸿蒙常规 * HarmonyOS_Sans_SC_Thin：鸿蒙细体 * fzyouh：方正瘦体
      * @return fontName
      */
     public String getFontName() {
@@ -172,7 +172,7 @@ public class SmartTextLayerConfig {
     }
 
     /**
-     * 字体大小（像素）。  取值范围：[4, 120]
+     * **参数解释**： 字体大小（像素）。  业务取值范围：[4, 120]，请以业务取值范围为准。
      * minimum: 0
      * maximum: 120
      * @return fontSize
@@ -191,7 +191,7 @@ public class SmartTextLayerConfig {
     }
 
     /**
-     * 字体颜色。RGB颜色值。
+     * **参数解释**： 字体颜色。RGB颜色值。
      * @return fontColor
      */
     public String getFontColor() {
@@ -208,7 +208,7 @@ public class SmartTextLayerConfig {
     }
 
     /**
-     * 文本显示时长。单位s * 0 显示时长规则：若携带reply_texts，reply_audios，与播放语音内容时长保持一致； 未携带场景，与匹配的关键词语音内容时长保持一致
+     * **参数解释**： 文本显示时长，单位s。 显示时长规则为，若携带reply_texts、reply_audios，则与播放语音内容时长保持一致；若未携带，则与匹配的关键词语音内容时长保持一致。
      * minimum: 0
      * maximum: 3600
      * @return displayDuration

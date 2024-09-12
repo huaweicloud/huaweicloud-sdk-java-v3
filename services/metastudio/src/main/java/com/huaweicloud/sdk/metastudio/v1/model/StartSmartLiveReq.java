@@ -54,7 +54,7 @@ public class StartSmartLiveReq {
     private RTCLiveEventCallBackConfig rtcCallbackConfig;
 
     /**
-     * 横竖屏类型。默认值为：VERTICAL。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     * **参数解释**： 横竖屏类型。 **约束限制**： 用户无需填写，通过video_config中分辨率判断 **取值范围**： * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
      */
     public static final class ViewModeEnum {
 
@@ -207,7 +207,7 @@ public class StartSmartLiveReq {
     }
 
     /**
-     * RTMP视频推流第三方直播平台地址。
+     * **参数解释**： RTMP视频推流第三方直播平台地址。 > 直播过程中刷新地址，需要调用COMMAND命令REFRESH_OUTPUT_URL。  **约束限制**： 不涉及 **取值范围**： 当前仅支持一条RTMP出流地址。 **默认取值**： 不涉及。
      * @return outputUrls
      */
     public List<String> getOutputUrls() {
@@ -240,7 +240,7 @@ public class StartSmartLiveReq {
     }
 
     /**
-     * RTMP视频推流第三方直播平台流秘钥，与推流地址对应。
+     * **参数解释**： RTMP视频推流第三方直播平台流密钥，与推流地址对应。 > 直播过程中刷新地址，需要调用COMMAND命令REFRESH_OUTPUT_URL。  **约束限制**： 不涉及 **取值范围**： 当前仅支持一条RTMP出流地址。 **默认取值**： 不涉及。
      * @return streamKeys
      */
     public List<String> getStreamKeys() {
@@ -257,7 +257,7 @@ public class StartSmartLiveReq {
     }
 
     /**
-     * 互动回调URL，含鉴权信息。
+     * **参数解释**： 互动回调URL，含鉴权信息。 互动规则trigger.reply_mode配置为CALLBACK时填写 **约束限制**： 不涉及 **取值范围**： 字符长度0-2048位 **默认取值**： 不涉及。
      * @return interactionCallbackUrl
      */
     public String getInteractionCallbackUrl() {
@@ -327,7 +327,7 @@ public class StartSmartLiveReq {
     }
 
     /**
-     * 横竖屏类型。默认值为：VERTICAL。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     * **参数解释**： 横竖屏类型。 **约束限制**： 用户无需填写，通过video_config中分辨率判断 **取值范围**： * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
      * @return viewMode
      */
     public ViewModeEnum getViewMode() {

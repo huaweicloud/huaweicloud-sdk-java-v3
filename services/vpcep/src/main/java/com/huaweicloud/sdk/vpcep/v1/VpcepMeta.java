@@ -407,6 +407,11 @@ public class VpcepMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEndpointServiceRequest::getPublicBorderGroup,
                 ListEndpointServiceRequest::setPublicBorderGroup));
+        builder.<ListEndpointServiceRequest.NetTypeEnum>withRequestField("net_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListEndpointServiceRequest.NetTypeEnum.class),
+            f -> f.withMarshaller(ListEndpointServiceRequest::getNetType, ListEndpointServiceRequest::setNetType));
 
         // response
 

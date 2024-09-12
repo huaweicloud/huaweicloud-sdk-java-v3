@@ -59,6 +59,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcDsRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcDsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcPointRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcPointResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcPointsRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.DeleteDcPointsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDeviceRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteDeviceResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.DeleteEdgeAppRequest;
@@ -1327,6 +1329,35 @@ public class IoTEdgeClient {
      */
     public SyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse> deleteDcPointInvoker(DeleteDcPointRequest request) {
         return new SyncInvoker<>(request, IoTEdgeMeta.deleteDcPoint, hcClient);
+    }
+
+    /**
+     * 批量删除点位表配置
+     *
+     * 批量删除点位表配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDcPointsRequest 请求对象
+     * @return DeleteDcPointsResponse
+     */
+    public DeleteDcPointsResponse deleteDcPoints(DeleteDcPointsRequest request) {
+        return hcClient.syncInvokeHttp(request, IoTEdgeMeta.deleteDcPoints);
+    }
+
+    /**
+     * 批量删除点位表配置
+     *
+     * 批量删除点位表配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDcPointsRequest 请求对象
+     * @return SyncInvoker<DeleteDcPointsRequest, DeleteDcPointsResponse>
+     */
+    public SyncInvoker<DeleteDcPointsRequest, DeleteDcPointsResponse> deleteDcPointsInvoker(
+        DeleteDcPointsRequest request) {
+        return new SyncInvoker<>(request, IoTEdgeMeta.deleteDcPoints, hcClient);
     }
 
     /**

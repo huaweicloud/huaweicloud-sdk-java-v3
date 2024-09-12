@@ -27,7 +27,7 @@ public class VideoScriptsSimpleInfo {
     private String scriptDescription;
 
     /**
-     * 横竖屏类型。默认值是LANDSCAPE。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     * **参数解释**： 横竖屏类型。 **约束限制**： 不涉及。 **取值范围**： * LANDSCAPE：横屏。 * VERTICAL：竖屏。
      */
     public static final class ViewModeEnum {
 
@@ -107,7 +107,7 @@ public class VideoScriptsSimpleInfo {
     private String modelAssetId;
 
     /**
-     * 数字人模型类型。  * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人
+     * **参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人  **默认取值**： 不涉及
      */
     public static final class ModelAssetTypeEnum {
 
@@ -217,7 +217,7 @@ public class VideoScriptsSimpleInfo {
     }
 
     /**
-     * 剧本名称
+     * **参数解释**： 剧本名称。 **约束限制**： 不涉及。 **取值范围**： 只能使用中英文字符，字符长度1-256位。 **默认取值**： 不涉及。
      * @return scriptName
      */
     public String getScriptName() {
@@ -234,7 +234,7 @@ public class VideoScriptsSimpleInfo {
     }
 
     /**
-     * 剧本描述。
+     * **参数解释**： 剧本描述。 **约束限制**： 不涉及。 **取值范围**： 字符长度0-1024位。 **默认取值**： 不涉及。
      * @return scriptDescription
      */
     public String getScriptDescription() {
@@ -251,7 +251,7 @@ public class VideoScriptsSimpleInfo {
     }
 
     /**
-     * 横竖屏类型。默认值是LANDSCAPE。 * LANDSCAPE：横屏。 * VERTICAL： 竖屏。
+     * **参数解释**： 横竖屏类型。 **约束限制**： 不涉及。 **取值范围**： * LANDSCAPE：横屏。 * VERTICAL：竖屏。
      * @return viewMode
      */
     public ViewModeEnum getViewMode() {
@@ -268,7 +268,7 @@ public class VideoScriptsSimpleInfo {
     }
 
     /**
-     * 数字人模型资产ID，可以从资产库中查询。
+     * **参数解释**： 数字人模型资产ID。 **约束限制**： 不涉及 **取值范围**： 字符长度0-64位。 **默认取值**： 不涉及
      * @return modelAssetId
      */
     public String getModelAssetId() {
@@ -285,7 +285,7 @@ public class VideoScriptsSimpleInfo {
     }
 
     /**
-     * 数字人模型类型。  * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人
+     * **参数解释**： 数字人模型类型。 **约束限制**： 不涉及 **取值范围**： * HUMAN_MODEL_2D：分身数字人 * HUMAN_MODEL_3D：3D数字人  **默认取值**： 不涉及
      * @return modelAssetType
      */
     public ModelAssetTypeEnum getModelAssetType() {
@@ -354,7 +354,7 @@ public class VideoScriptsSimpleInfo {
     }
 
     /**
-     * 场景资产ID。 > * 分身数字人视频制作不需要填写该参数。 > * 若填写，可以从资产库中查询。
+     * **参数解释**： 场景资产ID。 **约束限制**： 分身数字人视频制作不需要填写该参数。 **取值范围**： 字符长度0-64位 **默认取值**： 不涉及
      * @return sceneAssetId
      */
     public String getSceneAssetId() {
@@ -371,7 +371,7 @@ public class VideoScriptsSimpleInfo {
     }
 
     /**
-     * 私有数据，用户填写，原样带回。
+     * **参数解释**： 私有数据，用户填写，原样带回。 **约束限制**： 不涉及 **取值范围**： 字符长度0-8192位 **默认取值**： 不涉及
      * @return privData
      */
     public String getPrivData() {

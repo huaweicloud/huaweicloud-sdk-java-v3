@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class ShootScript {
 
     /**
-     * 脚本类型，即视频制作的驱动方式。默认TEXT * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动
+     * **参数解释**： 脚本类型，即视频制作的驱动方式 **约束限制**： 不涉及 **取值范围** * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动
      */
     public static final class ScriptTypeEnum {
 
@@ -99,6 +99,11 @@ public class ShootScript {
     private TextConfig textConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_drive_action_config")
+
+    private List<AudioDriveActionConfig> audioDriveActionConfig = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "background_config")
 
     private List<BackgroundConfigInfo> backgroundConfig = null;
@@ -114,7 +119,7 @@ public class ShootScript {
     }
 
     /**
-     * 脚本类型，即视频制作的驱动方式。默认TEXT * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动
+     * **参数解释**： 脚本类型，即视频制作的驱动方式 **约束限制**： 不涉及 **取值范围** * TEXT: 文本驱动，即通过TTS合成语音 * AUDIO: 语音驱动
      * @return scriptType
      */
     public ScriptTypeEnum getScriptType() {
@@ -149,6 +154,39 @@ public class ShootScript {
 
     public void setTextConfig(TextConfig textConfig) {
         this.textConfig = textConfig;
+    }
+
+    public ShootScript withAudioDriveActionConfig(List<AudioDriveActionConfig> audioDriveActionConfig) {
+        this.audioDriveActionConfig = audioDriveActionConfig;
+        return this;
+    }
+
+    public ShootScript addAudioDriveActionConfigItem(AudioDriveActionConfig audioDriveActionConfigItem) {
+        if (this.audioDriveActionConfig == null) {
+            this.audioDriveActionConfig = new ArrayList<>();
+        }
+        this.audioDriveActionConfig.add(audioDriveActionConfigItem);
+        return this;
+    }
+
+    public ShootScript withAudioDriveActionConfig(Consumer<List<AudioDriveActionConfig>> audioDriveActionConfigSetter) {
+        if (this.audioDriveActionConfig == null) {
+            this.audioDriveActionConfig = new ArrayList<>();
+        }
+        audioDriveActionConfigSetter.accept(this.audioDriveActionConfig);
+        return this;
+    }
+
+    /**
+     * 语音驱动时的动作配置。
+     * @return audioDriveActionConfig
+     */
+    public List<AudioDriveActionConfig> getAudioDriveActionConfig() {
+        return audioDriveActionConfig;
+    }
+
+    public void setAudioDriveActionConfig(List<AudioDriveActionConfig> audioDriveActionConfig) {
+        this.audioDriveActionConfig = audioDriveActionConfig;
     }
 
     public ShootScript withBackgroundConfig(List<BackgroundConfigInfo> backgroundConfig) {
@@ -227,13 +265,14 @@ public class ShootScript {
         }
         ShootScript that = (ShootScript) obj;
         return Objects.equals(this.scriptType, that.scriptType) && Objects.equals(this.textConfig, that.textConfig)
+            && Objects.equals(this.audioDriveActionConfig, that.audioDriveActionConfig)
             && Objects.equals(this.backgroundConfig, that.backgroundConfig)
             && Objects.equals(this.layerConfig, that.layerConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scriptType, textConfig, backgroundConfig, layerConfig);
+        return Objects.hash(scriptType, textConfig, audioDriveActionConfig, backgroundConfig, layerConfig);
     }
 
     @Override
@@ -242,6 +281,7 @@ public class ShootScript {
         sb.append("class ShootScript {\n");
         sb.append("    scriptType: ").append(toIndentedString(scriptType)).append("\n");
         sb.append("    textConfig: ").append(toIndentedString(textConfig)).append("\n");
+        sb.append("    audioDriveActionConfig: ").append(toIndentedString(audioDriveActionConfig)).append("\n");
         sb.append("    backgroundConfig: ").append(toIndentedString(backgroundConfig)).append("\n");
         sb.append("    layerConfig: ").append(toIndentedString(layerConfig)).append("\n");
         sb.append("}");

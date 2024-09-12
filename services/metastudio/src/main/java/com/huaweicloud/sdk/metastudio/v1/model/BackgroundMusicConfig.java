@@ -26,7 +26,7 @@ public class BackgroundMusicConfig {
     }
 
     /**
-     * 音乐资产ID，可以从资产库中查询。
+     * **参数解释**： 音乐资产ID。 **约束限制**： 不涉及。 **取值范围**： 字符长度0-64位。 **默认取值**： 不涉及。
      * @return musicAssetId
      */
     public String getMusicAssetId() {
@@ -43,7 +43,7 @@ public class BackgroundMusicConfig {
     }
 
     /**
-     * 音乐音量。如100，表示音量100%，50表示音量50%。  默认值100，最小值0，最大值100。
+     * **参数解释**： 音乐音量。如100，表示音量100%，50表示音量50%。 **约束限制**： 不涉及。
      * minimum: 0
      * maximum: 100
      * @return volume

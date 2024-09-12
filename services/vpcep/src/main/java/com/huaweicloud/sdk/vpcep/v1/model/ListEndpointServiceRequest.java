@@ -277,6 +277,87 @@ public class ListEndpointServiceRequest {
 
     private String publicBorderGroup;
 
+    /**
+     * 后端类型
+     */
+    public static final class NetTypeEnum {
+
+        /**
+         * Enum VLAN for value: "vlan"
+         */
+        public static final NetTypeEnum VLAN = new NetTypeEnum("vlan");
+
+        /**
+         * Enum VXLAN for value: "vxlan"
+         */
+        public static final NetTypeEnum VXLAN = new NetTypeEnum("vxlan");
+
+        /**
+         * Enum ALL for value: "all"
+         */
+        public static final NetTypeEnum ALL = new NetTypeEnum("all");
+
+        private static final Map<String, NetTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, NetTypeEnum> createStaticFields() {
+            Map<String, NetTypeEnum> map = new HashMap<>();
+            map.put("vlan", VLAN);
+            map.put("vxlan", VXLAN);
+            map.put("all", ALL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        NetTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static NetTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetTypeEnum(value));
+        }
+
+        public static NetTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof NetTypeEnum) {
+                return this.value.equals(((NetTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "net_type")
+
+    private NetTypeEnum netType;
+
     public ListEndpointServiceRequest withEndpointServiceName(String endpointServiceName) {
         this.endpointServiceName = endpointServiceName;
         return this;
@@ -416,6 +497,23 @@ public class ListEndpointServiceRequest {
         this.publicBorderGroup = publicBorderGroup;
     }
 
+    public ListEndpointServiceRequest withNetType(NetTypeEnum netType) {
+        this.netType = netType;
+        return this;
+    }
+
+    /**
+     * 后端类型
+     * @return netType
+     */
+    public NetTypeEnum getNetType() {
+        return netType;
+    }
+
+    public void setNetType(NetTypeEnum netType) {
+        this.netType = netType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -429,12 +527,14 @@ public class ListEndpointServiceRequest {
             && Objects.equals(this.status, that.status) && Objects.equals(this.sortKey, that.sortKey)
             && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.netType, that.netType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(endpointServiceName, id, status, sortKey, sortDir, limit, offset, publicBorderGroup);
+        return Objects
+            .hash(endpointServiceName, id, status, sortKey, sortDir, limit, offset, publicBorderGroup, netType);
     }
 
     @Override
@@ -449,6 +549,7 @@ public class ListEndpointServiceRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    netType: ").append(toIndentedString(netType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -311,6 +311,8 @@ import com.huaweicloud.sdk.meeting.v1.model.ShowQosThresholdRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ShowQosThresholdResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowRealTimeInfoOfMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ShowRealTimeInfoOfMeetingResponse;
+import com.huaweicloud.sdk.meeting.v1.model.ShowRecordInfoRequest;
+import com.huaweicloud.sdk.meeting.v1.model.ShowRecordInfoResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowRecordingDetailRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ShowRecordingDetailResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ShowRecordingFileDownloadUrlsRequest;
@@ -1431,6 +1433,35 @@ public class MeetingClient {
     public SyncInvoker<CreateAnonymousAuthRandomRequest, CreateAnonymousAuthRandomResponse> createAnonymousAuthRandomInvoker(
         CreateAnonymousAuthRandomRequest request) {
         return new SyncInvoker<>(request, MeetingMeta.createAnonymousAuthRandom, hcClient);
+    }
+
+    /**
+     * 获取会议鉴权随机数
+     *
+     * 根据会议ID + 密码鉴权返回鉴权随机数，如果是小程序调用时，需要企业支持小程序功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuthRandomRequest 请求对象
+     * @return CreateAuthRandomResponse
+     */
+    public CreateAuthRandomResponse createAuthRandom(CreateAuthRandomRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.createAuthRandom);
+    }
+
+    /**
+     * 获取会议鉴权随机数
+     *
+     * 根据会议ID + 密码鉴权返回鉴权随机数，如果是小程序调用时，需要企业支持小程序功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuthRandomRequest 请求对象
+     * @return SyncInvoker<CreateAuthRandomRequest, CreateAuthRandomResponse>
+     */
+    public SyncInvoker<CreateAuthRandomRequest, CreateAuthRandomResponse> createAuthRandomInvoker(
+        CreateAuthRandomRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.createAuthRandom, hcClient);
     }
 
     /**
@@ -4534,6 +4565,35 @@ public class MeetingClient {
     }
 
     /**
+     * 查询单会议录制文件信息
+     *
+     * 查询单会议录制文件信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecordInfoRequest 请求对象
+     * @return ShowRecordInfoResponse
+     */
+    public ShowRecordInfoResponse showRecordInfo(ShowRecordInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.showRecordInfo);
+    }
+
+    /**
+     * 查询单会议录制文件信息
+     *
+     * 查询单会议录制文件信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecordInfoRequest 请求对象
+     * @return SyncInvoker<ShowRecordInfoRequest, ShowRecordInfoResponse>
+     */
+    public SyncInvoker<ShowRecordInfoRequest, ShowRecordInfoResponse> showRecordInfoInvoker(
+        ShowRecordInfoRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.showRecordInfo, hcClient);
+    }
+
+    /**
      * 查询录制详情
      *
      * 改接口用于查询某个会议录制的详情。
@@ -5570,35 +5630,6 @@ public class MeetingClient {
      */
     public SyncInvoker<UploadFileRequest, UploadFileResponse> uploadFileInvoker(UploadFileRequest request) {
         return new SyncInvoker<>(request, MeetingMeta.uploadFile, hcClient);
-    }
-
-    /**
-     * 获取会议鉴权随机数
-     *
-     * 根据会议ID + 密码鉴权返回鉴权随机数，如果是小程序调用时，需要企业支持小程序功能
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAuthRandomRequest 请求对象
-     * @return CreateAuthRandomResponse
-     */
-    public CreateAuthRandomResponse createAuthRandom(CreateAuthRandomRequest request) {
-        return hcClient.syncInvokeHttp(request, MeetingMeta.createAuthRandom);
-    }
-
-    /**
-     * 获取会议鉴权随机数
-     *
-     * 根据会议ID + 密码鉴权返回鉴权随机数，如果是小程序调用时，需要企业支持小程序功能
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateAuthRandomRequest 请求对象
-     * @return SyncInvoker<CreateAuthRandomRequest, CreateAuthRandomResponse>
-     */
-    public SyncInvoker<CreateAuthRandomRequest, CreateAuthRandomResponse> createAuthRandomInvoker(
-        CreateAuthRandomRequest request) {
-        return new SyncInvoker<>(request, MeetingMeta.createAuthRandom, hcClient);
     }
 
     /**

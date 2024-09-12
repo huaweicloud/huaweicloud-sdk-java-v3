@@ -76,6 +76,11 @@ public class ListServiceDetailsResponse extends SdkResponse {
     private String cidrType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
 
     private List<PortList> ports = null;
@@ -309,6 +314,23 @@ public class ListServiceDetailsResponse extends SdkResponse {
         this.cidrType = cidrType;
     }
 
+    public ListServiceDetailsResponse withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * 接口型VLAN场景服务端IPv4地址或域名
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
     public ListServiceDetailsResponse withPorts(List<PortList> ports) {
         this.ports = ports;
         return this;
@@ -474,9 +496,9 @@ public class ListServiceDetailsResponse extends SdkResponse {
             && Objects.equals(this.status, that.status) && Objects.equals(this.serviceType, that.serviceType)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.cidrType, that.cidrType)
-            && Objects.equals(this.ports, that.ports) && Objects.equals(this.tcpProxy, that.tcpProxy)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.error, that.error)
-            && Objects.equals(this.enablePolicy, that.enablePolicy)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.ports, that.ports)
+            && Objects.equals(this.tcpProxy, that.tcpProxy) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.enablePolicy, that.enablePolicy)
             && Objects.equals(this.description, that.description);
     }
 
@@ -494,6 +516,7 @@ public class ListServiceDetailsResponse extends SdkResponse {
             updatedAt,
             projectId,
             cidrType,
+            ip,
             ports,
             tcpProxy,
             tags,
@@ -518,6 +541,7 @@ public class ListServiceDetailsResponse extends SdkResponse {
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    cidrType: ").append(toIndentedString(cidrType)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    tcpProxy: ").append(toIndentedString(tcpProxy)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
