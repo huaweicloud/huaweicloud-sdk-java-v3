@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListOrganizationalUnitsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
 
     private String parentId;
@@ -24,6 +29,25 @@ public class ListOrganizationalUnitsRequest {
     @JsonProperty(value = "marker")
 
     private String marker;
+
+    public ListOrganizationalUnitsRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public ListOrganizationalUnitsRequest withParentId(String parentId) {
         this.parentId = parentId;
@@ -87,19 +111,20 @@ public class ListOrganizationalUnitsRequest {
             return false;
         }
         ListOrganizationalUnitsRequest that = (ListOrganizationalUnitsRequest) obj;
-        return Objects.equals(this.parentId, that.parentId) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.marker, that.marker);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(parentId, limit, marker);
+        return Objects.hash(xSecurityToken, parentId, limit, marker);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListOrganizationalUnitsRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");

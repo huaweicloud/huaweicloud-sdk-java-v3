@@ -171,7 +171,7 @@ public class ProductMediaDetailInfo {
     }
 
     /**
-     * 资产次序。不设置或者0表示按照加入时间先后排序。业务上将次序最靠前的图片设置为商品封面。
+     * **参数解释**： 资产次序。不设置或者0表示按照加入时间先后排序。业务上将次序最靠前的图片设置为商品封面。
      * minimum: 0
      * maximum: 300
      * @return order

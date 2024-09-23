@@ -11,9 +11,33 @@ import java.util.Objects;
 public class ShowCreateAccountStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_account_status_id")
 
     private String createAccountStatusId;
+
+    public ShowCreateAccountStatusRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public ShowCreateAccountStatusRequest withCreateAccountStatusId(String createAccountStatusId) {
         this.createAccountStatusId = createAccountStatusId;
@@ -41,18 +65,20 @@ public class ShowCreateAccountStatusRequest {
             return false;
         }
         ShowCreateAccountStatusRequest that = (ShowCreateAccountStatusRequest) obj;
-        return Objects.equals(this.createAccountStatusId, that.createAccountStatusId);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
+            && Objects.equals(this.createAccountStatusId, that.createAccountStatusId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(createAccountStatusId);
+        return Objects.hash(xSecurityToken, createAccountStatusId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowCreateAccountStatusRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    createAccountStatusId: ").append(toIndentedString(createAccountStatusId)).append("\n");
         sb.append("}");
         return sb.toString();

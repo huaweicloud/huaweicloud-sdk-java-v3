@@ -15,8 +15,13 @@ import java.util.Objects;
  */
 public class ListResourceTagsRequest {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
     /**
-     * 资源类型 organizations:policies服务策略 organizations:ous组织OU organizations:accounts账号信息 organizations:roots根
+     * 资源类型。枚举值：organizations:policies（服务策略）、organizations:ous（组织OU）、organizations:accounts（账号信息） 、organizations:roots：（根）。
      */
     public static final class ResourceTypeEnum {
 
@@ -102,13 +107,32 @@ public class ListResourceTagsRequest {
 
     private ResourceTypeEnum resourceType;
 
+    public ListResourceTagsRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
+
     public ListResourceTagsRequest withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
     /**
-     * 资源类型 organizations:policies服务策略 organizations:ous组织OU organizations:accounts账号信息 organizations:roots根
+     * 资源类型。枚举值：organizations:policies（服务策略）、organizations:ous（组织OU）、organizations:accounts（账号信息） 、organizations:roots：（根）。
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {
@@ -128,18 +152,20 @@ public class ListResourceTagsRequest {
             return false;
         }
         ListResourceTagsRequest that = (ListResourceTagsRequest) obj;
-        return Objects.equals(this.resourceType, that.resourceType);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
+            && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceType);
+        return Objects.hash(xSecurityToken, resourceType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResourceTagsRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("}");
         return sb.toString();

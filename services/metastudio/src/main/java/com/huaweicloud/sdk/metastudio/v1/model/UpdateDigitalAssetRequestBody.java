@@ -29,7 +29,7 @@ public class UpdateDigitalAssetRequestBody {
     private String assetDescription;
 
     /**
-     * 资产类型。  公共资产类型： * VOICE_MODEL：音色模型（仅系统管理员可上传，普通租户仅可查询） * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MUSIC: 音乐 * AUDIO: 音频 * COMMON_FILE：通用文件  分身数字人资产： * HUMAN_MODEL_2D: 分身数字人模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板  3D数字人资产： * HUMAN_MODEL：3D数字人模型 * SCENE：场景模型 * ANIMATION：动作动画 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型
+     * **参数解释**： 资产类型。 **约束限制**： VOICE_MODEL，HUMAN_MODEL_2D 普通用户均无法上传。 **取值范围**： 公共资产类型： * VOICE_MODEL：音色模型 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MUSIC: 音乐 * AUDIO: 音频 * COMMON_FILE：通用文件  分身数字人资产： * HUMAN_MODEL_2D: 分身数字人模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板  3D数字人资产： * HUMAN_MODEL：3D数字人模型 * SCENE：场景模型 * ANIMATION：动作动画 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型。  **默认取值**： 不涉及。
      */
     public static final class AssetTypeEnum {
 
@@ -176,7 +176,7 @@ public class UpdateDigitalAssetRequestBody {
     private AssetTypeEnum assetType;
 
     /**
-     * 资产状态。 * UNACTIVED：取消激活。未激活的资产不可用于其他业务 * ACTIVED：激活。激活后的资产可用于其他业务
+     * **参数解释**： 资产状态。 **约束限制**： 租户仅能激活或取消激活资产，其他状态由系统自动更新。 **取值范围**： * UNACTIVED：取消激活。未激活的资产不可用于其他业务 * ACTIVED：激活。激活后的资产可用于其他业务 * WAITING_DELETE：资产将被下线(激活状态资产可用、管理员可用)  **默认取值**： 不涉及。
      */
     public static final class AssetStateEnum {
 
@@ -190,12 +190,18 @@ public class UpdateDigitalAssetRequestBody {
          */
         public static final AssetStateEnum ACTIVED = new AssetStateEnum("ACTIVED");
 
+        /**
+         * Enum WAITING_DELETE for value: "WAITING_DELETE"
+         */
+        public static final AssetStateEnum WAITING_DELETE = new AssetStateEnum("WAITING_DELETE");
+
         private static final Map<String, AssetStateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AssetStateEnum> createStaticFields() {
             Map<String, AssetStateEnum> map = new HashMap<>();
             map.put("UNACTIVED", UNACTIVED);
             map.put("ACTIVED", ACTIVED);
+            map.put("WAITING_DELETE", WAITING_DELETE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -251,11 +257,6 @@ public class UpdateDigitalAssetRequestBody {
     private AssetStateEnum assetState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "asset_owner")
-
-    private String assetOwner;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "review_config")
 
     private ReviewConfig reviewConfig;
@@ -296,7 +297,7 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     /**
-     * 资产名称。
+     * **参数解释**： 资产名称。 **约束限制**： 不涉及。 **取值范围**： 只能使用中英文字符，字符长度0-256位。 **默认取值**： 不涉及。
      * @return assetName
      */
     public String getAssetName() {
@@ -313,7 +314,7 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     /**
-     * 资产描述。
+     * **参数解释**： 资产描述。 **约束限制**： 不涉及。 **取值范围**： 只能使用中英文字符，字符长度0-4096位。 **默认取值**： 不涉及。
      * @return assetDescription
      */
     public String getAssetDescription() {
@@ -330,7 +331,7 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     /**
-     * 资产类型。  公共资产类型： * VOICE_MODEL：音色模型（仅系统管理员可上传，普通租户仅可查询） * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MUSIC: 音乐 * AUDIO: 音频 * COMMON_FILE：通用文件  分身数字人资产： * HUMAN_MODEL_2D: 分身数字人模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板  3D数字人资产： * HUMAN_MODEL：3D数字人模型 * SCENE：场景模型 * ANIMATION：动作动画 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型
+     * **参数解释**： 资产类型。 **约束限制**： VOICE_MODEL，HUMAN_MODEL_2D 普通用户均无法上传。 **取值范围**： 公共资产类型： * VOICE_MODEL：音色模型 * VIDEO：视频文件 * IMAGE：图片文件 * PPT：幻灯片文件 * MUSIC: 音乐 * AUDIO: 音频 * COMMON_FILE：通用文件  分身数字人资产： * HUMAN_MODEL_2D: 分身数字人模型 * BUSINESS_CARD_TEMPLET: 数字人名片模板  3D数字人资产： * HUMAN_MODEL：3D数字人模型 * SCENE：场景模型 * ANIMATION：动作动画 * MATERIAL：风格化素材 * NORMAL_MODEL: 普通模型。  **默认取值**： 不涉及。
      * @return assetType
      */
     public AssetTypeEnum getAssetType() {
@@ -347,7 +348,7 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     /**
-     * 资产状态。 * UNACTIVED：取消激活。未激活的资产不可用于其他业务 * ACTIVED：激活。激活后的资产可用于其他业务
+     * **参数解释**： 资产状态。 **约束限制**： 租户仅能激活或取消激活资产，其他状态由系统自动更新。 **取值范围**： * UNACTIVED：取消激活。未激活的资产不可用于其他业务 * ACTIVED：激活。激活后的资产可用于其他业务 * WAITING_DELETE：资产将被下线(激活状态资产可用、管理员可用)  **默认取值**： 不涉及。
      * @return assetState
      */
     public AssetStateEnum getAssetState() {
@@ -356,23 +357,6 @@ public class UpdateDigitalAssetRequestBody {
 
     public void setAssetState(AssetStateEnum assetState) {
         this.assetState = assetState;
-    }
-
-    public UpdateDigitalAssetRequestBody withAssetOwner(String assetOwner) {
-        this.assetOwner = assetOwner;
-        return this;
-    }
-
-    /**
-     * 项目ID。 > * 仅管理员账号可设置此参数。
-     * @return assetOwner
-     */
-    public String getAssetOwner() {
-        return assetOwner;
-    }
-
-    public void setAssetOwner(String assetOwner) {
-        this.assetOwner = assetOwner;
     }
 
     public UpdateDigitalAssetRequestBody withReviewConfig(ReviewConfig reviewConfig) {
@@ -423,7 +407,7 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     /**
-     * 标签列表。 > 分身形象系统资产的tag定义如下： > - 行业：NEWS,BUSINESS,E-COMMERCE,MARKETING,KNOWLEDGE,EDUCATION,SPORTS > - 性别：MALE,FEMALE > - 姿势：FULL-BODY,HALF-BODY,STANDING,SITTING,WALKING > - 区域：ASIAN,WESTERN,MIDDLE-EASTERNER,AFRICAN,LATINO
+     * **参数解释**： 标签列表。 > 分身形象系统资产的tag定义如下： > - 行业：NEWS,BUSINESS,E-COMMERCE,MARKETING,KNOWLEDGE,EDUCATION,SPORTS > - 性别：MALE,FEMALE > - 姿势：FULL-BODY,HALF-BODY,STANDING,SITTING,WALKING > - 区域：ASIAN,WESTERN,MIDDLE-EASTERNER,AFRICAN,LATINO  **约束限制**： 不涉及 **取值范围**： 标签个数最大为50个。 标签内容为中英文，字符长度0-128位。 **默认取值**： 不涉及
      * @return tags
      */
     public List<String> getTags() {
@@ -525,7 +509,7 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     /**
-     * 展示顺序
+     * **参数解释**： 用于console控制台展示顺序。 如果取值相同，则默认最新的排在前面。 **约束限制**： 不涉及 **默认取值**： 不涉及
      * minimum: 0
      * maximum: 32767
      * @return assetOrder
@@ -584,8 +568,8 @@ public class UpdateDigitalAssetRequestBody {
         return Objects.equals(this.assetName, that.assetName)
             && Objects.equals(this.assetDescription, that.assetDescription)
             && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.assetState, that.assetState)
-            && Objects.equals(this.assetOwner, that.assetOwner) && Objects.equals(this.reviewConfig, that.reviewConfig)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
+            && Objects.equals(this.reviewConfig, that.reviewConfig) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
             && Objects.equals(this.systemProperties, that.systemProperties)
             && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.assetOrder, that.assetOrder)
             && Objects.equals(this.supportedService, that.supportedService);
@@ -597,7 +581,6 @@ public class UpdateDigitalAssetRequestBody {
             assetDescription,
             assetType,
             assetState,
-            assetOwner,
             reviewConfig,
             tags,
             assetExtraMeta,
@@ -615,7 +598,6 @@ public class UpdateDigitalAssetRequestBody {
         sb.append("    assetDescription: ").append(toIndentedString(assetDescription)).append("\n");
         sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
         sb.append("    assetState: ").append(toIndentedString(assetState)).append("\n");
-        sb.append("    assetOwner: ").append(toIndentedString(assetOwner)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    assetExtraMeta: ").append(toIndentedString(assetExtraMeta)).append("\n");

@@ -18,6 +18,11 @@ import java.util.function.Consumer;
  */
 public class ListCreateAccountStatusesRequest {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
     /**
      * 创建账号的状态，in_progress处理中，succeeded成功，failed失败
      */
@@ -109,6 +114,25 @@ public class ListCreateAccountStatusesRequest {
 
     private String marker;
 
+    public ListCreateAccountStatusesRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
+
     public ListCreateAccountStatusesRequest withStates(List<StatesEnum> states) {
         this.states = states;
         return this;
@@ -187,19 +211,20 @@ public class ListCreateAccountStatusesRequest {
             return false;
         }
         ListCreateAccountStatusesRequest that = (ListCreateAccountStatusesRequest) obj;
-        return Objects.equals(this.states, that.states) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.marker, that.marker);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.states, that.states)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(states, limit, marker);
+        return Objects.hash(xSecurityToken, states, limit, marker);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCreateAccountStatusesRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    states: ").append(toIndentedString(states)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");

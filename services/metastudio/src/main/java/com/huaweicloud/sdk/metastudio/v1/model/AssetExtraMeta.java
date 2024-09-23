@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 资产元数据。根据资产类型选择其中一个填写。
+ * **参数解释**： 资产额外元数据。  **约束限制**： 根据asset_type选择对应结构填写，填写其他不匹配的结构会被忽略。 * HUMAN_MODEL: 填写human_model_meta * HUMAN_MODEL_2D: 填写human_model_2d_meta * SCENE：填写scene_meta * ANIMATION：填写animation_meta * MATERIAL：填写material_meta * VOICE_MODEL：填写voice_model_meta * VIDEO：填写video_meta * IMAGE：填写image_meta * PPT：填写ppt_meta * AUDIO: 填写audio_meta
  */
 public class AssetExtraMeta {
 

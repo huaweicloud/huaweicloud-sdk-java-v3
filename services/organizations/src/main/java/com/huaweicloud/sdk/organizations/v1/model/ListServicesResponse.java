@@ -41,7 +41,7 @@ public class ListServicesResponse extends SdkResponse {
     }
 
     /**
-     * Get services
+     * 云服务名称。
      * @return services
      */
     public List<String> getServices() {

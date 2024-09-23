@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class UpdateOrganizationalUnitRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "organizational_unit_id")
 
     private String organizationalUnitId;
@@ -20,6 +25,25 @@ public class UpdateOrganizationalUnitRequest {
     @JsonProperty(value = "body")
 
     private UpdateOrganizationalUnitReqBody body;
+
+    public UpdateOrganizationalUnitRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public UpdateOrganizationalUnitRequest withOrganizationalUnitId(String organizationalUnitId) {
         this.organizationalUnitId = organizationalUnitId;
@@ -73,19 +97,21 @@ public class UpdateOrganizationalUnitRequest {
             return false;
         }
         UpdateOrganizationalUnitRequest that = (UpdateOrganizationalUnitRequest) obj;
-        return Objects.equals(this.organizationalUnitId, that.organizationalUnitId)
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
+            && Objects.equals(this.organizationalUnitId, that.organizationalUnitId)
             && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(organizationalUnitId, body);
+        return Objects.hash(xSecurityToken, organizationalUnitId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateOrganizationalUnitRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    organizationalUnitId: ").append(toIndentedString(organizationalUnitId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

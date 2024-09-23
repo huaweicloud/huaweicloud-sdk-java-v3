@@ -16,6 +16,11 @@ import java.util.Objects;
 public class ListPoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attached_entity_id")
 
     private String attachedEntityId;
@@ -105,6 +110,25 @@ public class ListPoliciesRequest {
 
     private XLanguageEnum xLanguage;
 
+    public ListPoliciesRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
+
     public ListPoliciesRequest withAttachedEntityId(String attachedEntityId) {
         this.attachedEntityId = attachedEntityId;
         return this;
@@ -186,19 +210,21 @@ public class ListPoliciesRequest {
             return false;
         }
         ListPoliciesRequest that = (ListPoliciesRequest) obj;
-        return Objects.equals(this.attachedEntityId, that.attachedEntityId) && Objects.equals(this.limit, that.limit)
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
+            && Objects.equals(this.attachedEntityId, that.attachedEntityId) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.marker, that.marker) && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(attachedEntityId, limit, marker, xLanguage);
+        return Objects.hash(xSecurityToken, attachedEntityId, limit, marker, xLanguage);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPoliciesRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    attachedEntityId: ").append(toIndentedString(attachedEntityId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");

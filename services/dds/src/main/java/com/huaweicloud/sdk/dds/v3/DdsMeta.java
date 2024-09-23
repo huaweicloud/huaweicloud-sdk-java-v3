@@ -113,6 +113,8 @@ import com.huaweicloud.sdk.dds.v3.model.ListDatabaseRolesRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListDatabaseRolesResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListDatabaseUsersRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListDatabaseUsersResponse;
+import com.huaweicloud.sdk.dds.v3.model.ListDatabasesRequest;
+import com.huaweicloud.sdk.dds.v3.model.ListDatabasesResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListDatastoreVersionsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListDatastoreVersionsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListErrorLogsRequest;
@@ -1423,6 +1425,39 @@ public class DdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDatabaseUsersRequest::getLimit, ListDatabaseUsersRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> listDatabases =
+        genForListDatabases();
+
+    private static HttpRequestDef<ListDatabasesRequest, ListDatabasesResponse> genForListDatabases() {
+        // basic
+        HttpRequestDef.Builder<ListDatabasesRequest, ListDatabasesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDatabasesRequest.class, ListDatabasesResponse.class)
+                .withName("ListDatabases")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getInstanceId, ListDatabasesRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getOffset, ListDatabasesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDatabasesRequest::getLimit, ListDatabasesRequest::setLimit));
 
         // response
 

@@ -41,6 +41,26 @@ public class AccountDto {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mobile_phone")
+
+    private String mobilePhone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "intl_number_prefix")
+
+    private String intlNumberPrefix;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "email")
+
+    private String email;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public AccountDto withId(String id) {
         this.id = id;
         return this;
@@ -81,7 +101,7 @@ public class AccountDto {
     }
 
     /**
-     * 账号加入组织的方式,invited：邀请加入，created：创建加入。
+     * 账号加入组织的方式。invited：邀请加入，created：创建加入。
      * @return joinMethod
      */
     public String getJoinMethod() {
@@ -98,7 +118,7 @@ public class AccountDto {
     }
 
     /**
-     * 账号当前的状态,ACTIVE 有效| SUSPENDED 静默| PENDING_CLOSURE 关闭中
+     * 账号当前的状态。active：有效； suspended：已关闭； pending_closure：关闭中。
      * @return status
      */
     public String getStatus() {
@@ -143,6 +163,74 @@ public class AccountDto {
         this.name = name;
     }
 
+    public AccountDto withMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+        return this;
+    }
+
+    /**
+     * 手机号码
+     * @return mobilePhone
+     */
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+    }
+
+    public AccountDto withIntlNumberPrefix(String intlNumberPrefix) {
+        this.intlNumberPrefix = intlNumberPrefix;
+        return this;
+    }
+
+    /**
+     * 手机号前缀。
+     * @return intlNumberPrefix
+     */
+    public String getIntlNumberPrefix() {
+        return intlNumberPrefix;
+    }
+
+    public void setIntlNumberPrefix(String intlNumberPrefix) {
+        this.intlNumberPrefix = intlNumberPrefix;
+    }
+
+    public AccountDto withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    /**
+     * 与此账号关联的电子邮件地址。
+     * @return email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public AccountDto withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述信息。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -154,12 +242,16 @@ public class AccountDto {
         AccountDto that = (AccountDto) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.urn, that.urn)
             && Objects.equals(this.joinMethod, that.joinMethod) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.joinedAt, that.joinedAt) && Objects.equals(this.name, that.name);
+            && Objects.equals(this.joinedAt, that.joinedAt) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.mobilePhone, that.mobilePhone)
+            && Objects.equals(this.intlNumberPrefix, that.intlNumberPrefix) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, urn, joinMethod, status, joinedAt, name);
+        return Objects
+            .hash(id, urn, joinMethod, status, joinedAt, name, mobilePhone, intlNumberPrefix, email, description);
     }
 
     @Override
@@ -172,6 +264,10 @@ public class AccountDto {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    joinedAt: ").append(toIndentedString(joinedAt)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    mobilePhone: ").append(toIndentedString(mobilePhone)).append("\n");
+        sb.append("    intlNumberPrefix: ").append(toIndentedString(intlNumberPrefix)).append("\n");
+        sb.append("    email: ").append(toIndentedString(email)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

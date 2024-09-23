@@ -34,7 +34,7 @@ public class HumanModel2DAssetMeta {
     private Boolean supportLive;
 
     /**
-     * 分身数字人模型版本。默认是V2版本模型。 * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型
+     * **参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型
      */
     public static final class ModelVersionEnum {
 
@@ -145,7 +145,7 @@ public class HumanModel2DAssetMeta {
     }
 
     /**
-     * 分身数字人的动作是否可编辑。默认不可编辑。
+     * **参数解释**： 分身数字人的动作是否可编辑 **约束限制**： 不涉及 **取值范围**： * true: 动作可编辑 * false: 动作不可编辑
      * @return isActionEditable
      */
     public Boolean getIsActionEditable() {
@@ -162,7 +162,7 @@ public class HumanModel2DAssetMeta {
     }
 
     /**
-     * 是否是实景分身数字人。实景分身数字人不做背景替换。
+     * **参数解释**： 是否是实景分身数字人 **约束限制**： 实景分身数字人不做背景替换。 **取值范围**： * true: 实景分身数字人 * false: 普通分身数字人，不带背景。
      * @return isRealBackground
      */
     public Boolean getIsRealBackground() {
@@ -179,7 +179,7 @@ public class HumanModel2DAssetMeta {
     }
 
     /**
-     * 是否支持直播
+     * **参数解释**： 是否支持直播 **约束限制**： 不涉及 **取值范围**： * true: 支持直播 * false: 不支持直播。
      * @return supportLive
      */
     public Boolean getSupportLive() {
@@ -196,7 +196,7 @@ public class HumanModel2DAssetMeta {
     }
 
     /**
-     * 分身数字人模型版本。默认是V2版本模型。 * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型
+     * **参数解释**： 分身数字人模型版本 **约束限制**： 不涉及 **取值范围**： * V2: V2版本模型 * V3：V3版本模型 * V3_2：V3.2版本模型
      * @return modelVersion
      */
     public ModelVersionEnum getModelVersion() {
@@ -213,7 +213,7 @@ public class HumanModel2DAssetMeta {
     }
 
     /**
-     * 分身数字人模型分辨率。默认是1080P。 * 1080P：1080P。支持1080P及720P的视频输出。 * 4K：4K。支持4K、1080P及720P的视频输出。
+     * **参数解释**： 分身数字人模型分辨率。 **约束限制**： 不涉及 **取值范围**： * 1080P：1080P。支持1080P及720P的视频输出。 * 4K：4K。支持4K、1080P及720P的视频输出。
      * @return modelResolution
      */
     public String getModelResolution() {
@@ -246,7 +246,7 @@ public class HumanModel2DAssetMeta {
     }
 
     /**
-     * 已执行编译任务
+     * **参数解释**： 已执行编译任务设备类型列表。 **约束限制**： 支持走动的数字人，当前仅用于视频制作，不能用于直播和智能交互 **取值范围**： 设备名称列表最多16个。 设备名称字符长度1-64位。 **默认取值**： false
      * @return deviceNames
      */
     public List<String> getDeviceNames() {

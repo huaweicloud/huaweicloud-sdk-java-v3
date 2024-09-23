@@ -67,7 +67,7 @@ public class VideoAssetMeta {
     private Integer sample;
 
     /**
-     * Horizontal=横向；Vertical=纵向
+     * **参数解释**： 横向画面或纵向画面。 **约束限制**： 用户无需填写，系统自行提取。 **取值范围**： * Horizontal：横向 * Vertical：纵向  **默认取值**： 不涉及
      */
     public static final class ModeEnum {
 
@@ -142,7 +142,7 @@ public class VideoAssetMeta {
     private ModeEnum mode;
 
     /**
-     * 视频转码状态。 * WAITING：等待 * TRANSCODING：转码中 * FAILED：失败 * SUCCEEDED：成功
+     * **参数解释**： 视频转码状态。 **约束限制**： 用户无需填写，系统自行填写。 **取值范围**： * WAITING：等待 * TRANSCODING：转码中 * FAILED：失败 * SUCCEEDED：成功  **默认取值**： 不涉及
      */
     public static final class VideoTranscodingStatusEnum {
 
@@ -240,7 +240,7 @@ public class VideoAssetMeta {
     }
 
     /**
-     * 视频编码格式
+     * **参数解释**： 视频编码格式。 **约束限制**： 用户无需填写，系统自行提取。 **取值范围**： 字符长度0-32位。 **默认取值**： 不涉及
      * @return videoCodec
      */
     public String getVideoCodec() {
@@ -257,7 +257,7 @@ public class VideoAssetMeta {
     }
 
     /**
-     * 视频宽度
+     * **参数解释**： 视频画面宽度。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及
      * minimum: 0
      * maximum: 8196
      * @return width
@@ -276,7 +276,7 @@ public class VideoAssetMeta {
     }
 
     /**
-     * 视频高度
+     * **参数解释**： 视频画面高度。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及
      * minimum: 0
      * maximum: 8196
      * @return height
@@ -295,7 +295,7 @@ public class VideoAssetMeta {
     }
 
     /**
-     * 帧率
+     * **参数解释**： 视频帧率。 **约束限制**： 用户无需填写，系统自行提取。 **取值范围**： 字符长度0-32位。 **默认取值**： 不涉及
      * @return frameRate
      */
     public String getFrameRate() {
@@ -312,7 +312,7 @@ public class VideoAssetMeta {
     }
 
     /**
-     * 视频平均码率,单位kbps
+     * **参数解释**： 视频平均码率,单位kbps。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及
      * minimum: 0
      * maximum: 104857600
      * @return videoBitRate
@@ -331,7 +331,7 @@ public class VideoAssetMeta {
     }
 
     /**
-     * 时长,单位秒
+     * **参数解释**： 时长,单位秒。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及
      * minimum: 0
      * maximum: 86400
      * @return duration
@@ -350,7 +350,7 @@ public class VideoAssetMeta {
     }
 
     /**
-     * 音频编码格式
+     * **参数解释**： 音频编码格式。 **约束限制**： 用户无需填写，系统自行提取。 **取值范围**： 字符长度0-32位。 **默认取值**： 不涉及
      * @return audioCodec
      */
     public String getAudioCodec() {
@@ -367,7 +367,7 @@ public class VideoAssetMeta {
     }
 
     /**
-     * 音频平均码率,单位kbps
+     * **参数解释**： 音频平均码率,单位kbps。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及
      * minimum: 0
      * maximum: 16384
      * @return audioBitRate
@@ -386,7 +386,7 @@ public class VideoAssetMeta {
     }
 
     /**
-     * 音频声道数
+     * **参数解释**： 音频声道数。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及
      * minimum: 0
      * maximum: 100
      * @return audioChannels
@@ -405,7 +405,7 @@ public class VideoAssetMeta {
     }
 
     /**
-     * 采样率,HZ
+     * **参数解释**： 采样率,HZ。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及
      * minimum: 0
      * maximum: 100000
      * @return sample
@@ -424,7 +424,7 @@ public class VideoAssetMeta {
     }
 
     /**
-     * Horizontal=横向；Vertical=纵向
+     * **参数解释**： 横向画面或纵向画面。 **约束限制**： 用户无需填写，系统自行提取。 **取值范围**： * Horizontal：横向 * Vertical：纵向  **默认取值**： 不涉及
      * @return mode
      */
     public ModeEnum getMode() {
@@ -441,7 +441,7 @@ public class VideoAssetMeta {
     }
 
     /**
-     * 视频转码状态。 * WAITING：等待 * TRANSCODING：转码中 * FAILED：失败 * SUCCEEDED：成功
+     * **参数解释**： 视频转码状态。 **约束限制**： 用户无需填写，系统自行填写。 **取值范围**： * WAITING：等待 * TRANSCODING：转码中 * FAILED：失败 * SUCCEEDED：成功  **默认取值**： 不涉及
      * @return videoTranscodingStatus
      */
     public VideoTranscodingStatusEnum getVideoTranscodingStatus() {

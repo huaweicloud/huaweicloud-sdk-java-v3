@@ -11,9 +11,33 @@ import java.util.Objects;
 public class CancelHandshakeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handshake_id")
 
     private String handshakeId;
+
+    public CancelHandshakeRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public CancelHandshakeRequest withHandshakeId(String handshakeId) {
         this.handshakeId = handshakeId;
@@ -41,18 +65,20 @@ public class CancelHandshakeRequest {
             return false;
         }
         CancelHandshakeRequest that = (CancelHandshakeRequest) obj;
-        return Objects.equals(this.handshakeId, that.handshakeId);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
+            && Objects.equals(this.handshakeId, that.handshakeId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(handshakeId);
+        return Objects.hash(xSecurityToken, handshakeId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CancelHandshakeRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    handshakeId: ").append(toIndentedString(handshakeId)).append("\n");
         sb.append("}");
         return sb.toString();

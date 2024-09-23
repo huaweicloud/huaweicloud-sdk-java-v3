@@ -26,7 +26,7 @@ public class TargetDto {
     }
 
     /**
-     * 目标类型，account：账户，email：邮箱。
+     * 目标类型，account：账户id，name：账户名称。
      * @return type
      */
     public String getType() {
@@ -43,7 +43,7 @@ public class TargetDto {
     }
 
     /**
-     * 如果指定 \"type:account\"，则必须提供账号ID作为实体。如果指定\"type:email\"，则必须指定与账号关联的电子邮件地址。
+     * 如果指定 'type:account'，则必须提供账号ID作为实体。如果指定 'type:name'，则必须指定账号名称作为实体。
      * @return entity
      */
     public String getEntity() {

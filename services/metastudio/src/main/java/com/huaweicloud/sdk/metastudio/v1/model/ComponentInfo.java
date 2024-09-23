@@ -31,7 +31,7 @@ public class ComponentInfo {
     }
 
     /**
-     * 组件名称。
+     * **参数解释**： 组件名称。 **约束限制**： 不涉及。 **取值范围**： 字符长度1-256位。 **默认取值**： 不涉及。
      * @return componentName
      */
     public String getComponentName() {
@@ -48,7 +48,7 @@ public class ComponentInfo {
     }
 
     /**
-     * 组件类型。
+     * **参数解释**： 组件类型。 **约束限制**： 不涉及。 **取值范围**： 字符长度1-256位。 **默认取值**： 不涉及。
      * @return componentType
      */
     public String getComponentType() {
@@ -65,7 +65,7 @@ public class ComponentInfo {
     }
 
     /**
-     * 组件描述。
+     * **参数解释**： 组件描述。 **约束限制**： 不涉及。 **取值范围**： 字符长度0-512位。 **默认取值**： 不涉及。
      * @return componentDesc
      */
     public String getComponentDesc() {

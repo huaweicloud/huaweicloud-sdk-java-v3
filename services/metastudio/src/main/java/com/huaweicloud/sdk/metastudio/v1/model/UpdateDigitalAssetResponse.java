@@ -202,7 +202,7 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
     private AssetTypeEnum assetType;
 
     /**
-     * 资产状态。 * CREATING：资产创建中，主文件尚未上传 * FAILED：主文件上传失败 * UNACTIVED：主文件上传成功，资产未激活，资产不可用于其他业务（用户可更新状态） * ACTIVED：主文件上传成功，资产激活，资产可用于其他业务（用户可更新状态） * DELETING：资产删除中，资产不可用，资产可恢复 * DELETED：资产文件已删除，资产不可用，资产不可恢复 * BLOCK: 资产被冻结，资产不可用，不可查看文件。
+     * 资产状态。 * CREATING：资产创建中，主文件尚未上传 * FAILED：主文件上传失败 * UNACTIVED：主文件上传成功，资产未激活，资产不可用于其他业务（用户可更新状态） * ACTIVED：主文件上传成功，资产激活，资产可用于其他业务（用户可更新状态） * DELETING：资产删除中，资产不可用，资产可恢复 * DELETED：资产文件已删除，资产不可用，资产不可恢复 * BLOCK: 资产被冻结，资产不可用，不可查看文件。 * WAITING_DELETE：资产将被下线
      */
     public static final class AssetStateEnum {
 
@@ -241,6 +241,11 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
          */
         public static final AssetStateEnum BLOCK = new AssetStateEnum("BLOCK");
 
+        /**
+         * Enum WAITING_DELETE for value: "WAITING_DELETE"
+         */
+        public static final AssetStateEnum WAITING_DELETE = new AssetStateEnum("WAITING_DELETE");
+
         private static final Map<String, AssetStateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AssetStateEnum> createStaticFields() {
@@ -252,6 +257,7 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
             map.put("DELETING", DELETING);
             map.put("DELETED", DELETED);
             map.put("BLOCK", BLOCK);
+            map.put("WAITING_DELETE", WAITING_DELETE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -563,7 +569,7 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
     }
 
     /**
-     * 资产状态。 * CREATING：资产创建中，主文件尚未上传 * FAILED：主文件上传失败 * UNACTIVED：主文件上传成功，资产未激活，资产不可用于其他业务（用户可更新状态） * ACTIVED：主文件上传成功，资产激活，资产可用于其他业务（用户可更新状态） * DELETING：资产删除中，资产不可用，资产可恢复 * DELETED：资产文件已删除，资产不可用，资产不可恢复 * BLOCK: 资产被冻结，资产不可用，不可查看文件。
+     * 资产状态。 * CREATING：资产创建中，主文件尚未上传 * FAILED：主文件上传失败 * UNACTIVED：主文件上传成功，资产未激活，资产不可用于其他业务（用户可更新状态） * ACTIVED：主文件上传成功，资产激活，资产可用于其他业务（用户可更新状态） * DELETING：资产删除中，资产不可用，资产可恢复 * DELETED：资产文件已删除，资产不可用，资产不可恢复 * BLOCK: 资产被冻结，资产不可用，不可查看文件。 * WAITING_DELETE：资产将被下线
      * @return assetState
      */
     public AssetStateEnum getAssetState() {

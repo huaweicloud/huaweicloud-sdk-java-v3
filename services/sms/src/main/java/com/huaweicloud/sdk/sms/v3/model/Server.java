@@ -204,11 +204,6 @@ public class Server {
     private Long memory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "disks")
-
-    private List<Disk> disks = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "btrfs_list")
 
     private List<BtrfsFileSystem> btrfsList = null;
@@ -495,39 +490,6 @@ public class Server {
         this.memory = memory;
     }
 
-    public Server withDisks(List<Disk> disks) {
-        this.disks = disks;
-        return this;
-    }
-
-    public Server addDisksItem(Disk disksItem) {
-        if (this.disks == null) {
-            this.disks = new ArrayList<>();
-        }
-        this.disks.add(disksItem);
-        return this;
-    }
-
-    public Server withDisks(Consumer<List<Disk>> disksSetter) {
-        if (this.disks == null) {
-            this.disks = new ArrayList<>();
-        }
-        disksSetter.accept(this.disks);
-        return this;
-    }
-
-    /**
-     * 源端服务器的磁盘信息
-     * @return disks
-     */
-    public List<Disk> getDisks() {
-        return disks;
-    }
-
-    public void setDisks(List<Disk> disks) {
-        this.disks = disks;
-    }
-
     public Server withBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
@@ -793,9 +755,9 @@ public class Server {
             && Objects.equals(this.name, that.name) && Objects.equals(this.hostname, that.hostname)
             && Objects.equals(this.osType, that.osType) && Objects.equals(this.osVersion, that.osVersion)
             && Objects.equals(this.firmware, that.firmware) && Objects.equals(this.cpuQuantity, that.cpuQuantity)
-            && Objects.equals(this.memory, that.memory) && Objects.equals(this.disks, that.disks)
-            && Objects.equals(this.btrfsList, that.btrfsList) && Objects.equals(this.networks, that.networks)
-            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.hasRsync, that.hasRsync)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.btrfsList, that.btrfsList)
+            && Objects.equals(this.networks, that.networks) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.hasRsync, that.hasRsync)
             && Objects.equals(this.paravirtualization, that.paravirtualization)
             && Objects.equals(this.rawDevices, that.rawDevices) && Objects.equals(this.driverFiles, that.driverFiles)
             && Objects.equals(this.systemServices, that.systemServices)
@@ -815,7 +777,6 @@ public class Server {
             firmware,
             cpuQuantity,
             memory,
-            disks,
             btrfsList,
             networks,
             domainId,
@@ -843,7 +804,6 @@ public class Server {
         sb.append("    firmware: ").append(toIndentedString(firmware)).append("\n");
         sb.append("    cpuQuantity: ").append(toIndentedString(cpuQuantity)).append("\n");
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
-        sb.append("    disks: ").append(toIndentedString(disks)).append("\n");
         sb.append("    btrfsList: ").append(toIndentedString(btrfsList)).append("\n");
         sb.append("    networks: ").append(toIndentedString(networks)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * A quota of organization.
+ * 被添加到标签策略强制执行的资源类型。
  */
 public class TagPolicyServiceDto {
 
@@ -34,7 +34,7 @@ public class TagPolicyServiceDto {
     }
 
     /**
-     * The service name of the service.
+     * 服务名称。
      * @return serviceName
      */
     public String getServiceName() {
@@ -67,7 +67,7 @@ public class TagPolicyServiceDto {
     }
 
     /**
-     * Get resourceTypes
+     * 资源类型。
      * @return resourceTypes
      */
     public List<String> getResourceTypes() {

@@ -38,7 +38,7 @@ public class ImageAssetMeta {
     private BigDecimal size;
 
     /**
-     * Horizontal=横向；Vertical=纵向
+     * **参数解释**： 图片形态。 **约束限制**： 用户无需填写，系统自行提取。 **取值范围**： * Horizontal：横向 * Vertical：纵向  **默认取值**： 不涉及。
      */
     public static final class ModeEnum {
 
@@ -123,7 +123,7 @@ public class ImageAssetMeta {
     }
 
     /**
-     * 图片编码格式，自动提取。
+     * **参数解释**： 图片编码格式。 **约束限制**： 用户无需填写，系统自行提取。 **取值范围**： 字符长度0-32位。 **默认取值**： 不涉及。
      * @return codec
      */
     public String getCodec() {
@@ -140,7 +140,7 @@ public class ImageAssetMeta {
     }
 
     /**
-     * 图片宽度，自动提取
+     * **参数解释**： 图片宽度。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及。
      * minimum: 0
      * maximum: 8196
      * @return width
@@ -159,7 +159,7 @@ public class ImageAssetMeta {
     }
 
     /**
-     * 图片高度，自动提取
+     * **参数解释**： 图片高度。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及。
      * minimum: 0
      * maximum: 8196
      * @return height
@@ -178,7 +178,7 @@ public class ImageAssetMeta {
     }
 
     /**
-     * 大小
+     * **参数解释**： 图片大小。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及。
      * minimum: 0
      * maximum: 9223372036854775807
      * @return size
@@ -197,7 +197,7 @@ public class ImageAssetMeta {
     }
 
     /**
-     * Horizontal=横向；Vertical=纵向
+     * **参数解释**： 图片形态。 **约束限制**： 用户无需填写，系统自行提取。 **取值范围**： * Horizontal：横向 * Vertical：纵向  **默认取值**： 不涉及。
      * @return mode
      */
     public ModeEnum getMode() {

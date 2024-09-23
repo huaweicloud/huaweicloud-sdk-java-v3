@@ -41,7 +41,7 @@ public class QuotaDto {
     }
 
     /**
-     * 配额类型，account账户，organizational_unit组织单元，policy策略。
+     * 配额类型。account：账号；organizational_unit：组织单元；policy：策略。
      * @return type
      */
     public String getType() {

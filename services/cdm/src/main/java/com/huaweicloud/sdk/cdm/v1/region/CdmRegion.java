@@ -57,6 +57,8 @@ public class CdmRegion {
 
     public static final Region TR_WEST_1 = new Region("tr-west-1", "https://cdm.tr-west-1.myhuaweicloud.com");
 
+    public static final Region AE_AD_1 = new Region("ae-ad-1", "https://cdm.ae-ad-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CDM");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -82,6 +84,7 @@ public class CdmRegion {
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("tr-west-1", TR_WEST_1);
+        map.put("ae-ad-1", AE_AD_1);
         return Collections.unmodifiableMap(map);
     }
 

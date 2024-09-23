@@ -17,19 +17,19 @@ public class ListEventsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "events")
 
-    private List<EventModel> events = null;
+    private List<ListEventModel> events = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
 
     private PageInfo pageInfo;
 
-    public ListEventsResponse withEvents(List<EventModel> events) {
+    public ListEventsResponse withEvents(List<ListEventModel> events) {
         this.events = events;
         return this;
     }
 
-    public ListEventsResponse addEventsItem(EventModel eventsItem) {
+    public ListEventsResponse addEventsItem(ListEventModel eventsItem) {
         if (this.events == null) {
             this.events = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListEventsResponse extends SdkResponse {
         return this;
     }
 
-    public ListEventsResponse withEvents(Consumer<List<EventModel>> eventsSetter) {
+    public ListEventsResponse withEvents(Consumer<List<ListEventModel>> eventsSetter) {
         if (this.events == null) {
             this.events = new ArrayList<>();
         }
@@ -49,11 +49,11 @@ public class ListEventsResponse extends SdkResponse {
      * 事件或者告警详情。
      * @return events
      */
-    public List<EventModel> getEvents() {
+    public List<ListEventModel> getEvents() {
         return events;
     }
 
-    public void setEvents(List<EventModel> events) {
+    public void setEvents(List<ListEventModel> events) {
         this.events = events;
     }
 

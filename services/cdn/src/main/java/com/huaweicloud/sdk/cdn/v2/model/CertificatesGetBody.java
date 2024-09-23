@@ -11,6 +11,16 @@ import java.util.Objects;
 public class CertificatesGetBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "certificate_source")
+
+    private Integer certificateSource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scm_certificate_id")
+
+    private String scmCertificateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_type")
 
     private String certificateType;
@@ -34,6 +44,40 @@ public class CertificatesGetBody {
     @JsonProperty(value = "expire_time")
 
     private Long expireTime;
+
+    public CertificatesGetBody withCertificateSource(Integer certificateSource) {
+        this.certificateSource = certificateSource;
+        return this;
+    }
+
+    /**
+     * 证书来源,0：自有证书。2：SCM证书。
+     * @return certificateSource
+     */
+    public Integer getCertificateSource() {
+        return certificateSource;
+    }
+
+    public void setCertificateSource(Integer certificateSource) {
+        this.certificateSource = certificateSource;
+    }
+
+    public CertificatesGetBody withScmCertificateId(String scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
+        return this;
+    }
+
+    /**
+     * SCM证书id
+     * @return scmCertificateId
+     */
+    public String getScmCertificateId() {
+        return scmCertificateId;
+    }
+
+    public void setScmCertificateId(String scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
+    }
 
     public CertificatesGetBody withCertificateType(String certificateType) {
         this.certificateType = certificateType;
@@ -129,7 +173,9 @@ public class CertificatesGetBody {
             return false;
         }
         CertificatesGetBody that = (CertificatesGetBody) obj;
-        return Objects.equals(this.certificateType, that.certificateType)
+        return Objects.equals(this.certificateSource, that.certificateSource)
+            && Objects.equals(this.scmCertificateId, that.scmCertificateId)
+            && Objects.equals(this.certificateType, that.certificateType)
             && Objects.equals(this.certificateName, that.certificateName)
             && Objects.equals(this.certificateValue, that.certificateValue)
             && Objects.equals(this.encCertificateValue, that.encCertificateValue)
@@ -138,13 +184,21 @@ public class CertificatesGetBody {
 
     @Override
     public int hashCode() {
-        return Objects.hash(certificateType, certificateName, certificateValue, encCertificateValue, expireTime);
+        return Objects.hash(certificateSource,
+            scmCertificateId,
+            certificateType,
+            certificateName,
+            certificateValue,
+            encCertificateValue,
+            expireTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CertificatesGetBody {\n");
+        sb.append("    certificateSource: ").append(toIndentedString(certificateSource)).append("\n");
+        sb.append("    scmCertificateId: ").append(toIndentedString(scmCertificateId)).append("\n");
         sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
         sb.append("    certificateName: ").append(toIndentedString(certificateName)).append("\n");
         sb.append("    certificateValue: ").append(toIndentedString(certificateValue)).append("\n");

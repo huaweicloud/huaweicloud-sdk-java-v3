@@ -229,7 +229,7 @@ public class ListSmartChatRoomsRequest {
     }
 
     /**
-     * 最近智能交互对话任务结束时间。格式遵循：RFC 3339 如“2021-01-10T10:43:17Z”。
+     * 结束时间。格式遵循：RFC 3339 如\"2021-01-10T10:43:17Z\"。
      * @return endTime
      */
     public String getEndTime() {

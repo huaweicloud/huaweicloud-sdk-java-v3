@@ -127,6 +127,9 @@ import com.huaweicloud.sdk.organizations.v1.model.TrustedServiceReqBody;
 import com.huaweicloud.sdk.organizations.v1.model.UntagResourceReqBody;
 import com.huaweicloud.sdk.organizations.v1.model.UntagResourceRequest;
 import com.huaweicloud.sdk.organizations.v1.model.UntagResourceResponse;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateAccountReqBody;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateAccountRequest;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateAccountResponse;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateOrganizationalUnitReqBody;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateOrganizationalUnitRequest;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateOrganizationalUnitResponse;
@@ -155,6 +158,11 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CloseAccountRequest::getAccountId, CloseAccountRequest::setAccountId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CloseAccountRequest::getXSecurityToken, CloseAccountRequest::setXSecurityToken));
 
         // response
 
@@ -173,6 +181,11 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAccountRequest::getXSecurityToken, CreateAccountRequest::setXSecurityToken));
         builder.<CreateAccountReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -196,6 +209,11 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(InviteAccountRequest::getXSecurityToken, InviteAccountRequest::setXSecurityToken));
         builder.<InviteAccountReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -223,6 +241,12 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAccountsRequest::getParentId, ListAccountsRequest::setParentId));
+        builder.<Boolean>withRequestField("with_register_contact_info",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAccountsRequest::getWithRegisterContactInfo,
+                ListAccountsRequest::setWithRegisterContactInfo));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -233,6 +257,11 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAccountsRequest::getMarker, ListAccountsRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAccountsRequest::getXSecurityToken, ListAccountsRequest::setXSecurityToken));
 
         // response
 
@@ -258,6 +287,12 @@ public class OrganizationsMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCloseAccountStatusesRequest::getStates,
                 ListCloseAccountStatusesRequest::setStates));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloseAccountStatusesRequest::getXSecurityToken,
+                ListCloseAccountStatusesRequest::setXSecurityToken));
 
         // response
 
@@ -297,6 +332,12 @@ public class OrganizationsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCreateAccountStatusesRequest::getMarker,
                 ListCreateAccountStatusesRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCreateAccountStatusesRequest::getXSecurityToken,
+                ListCreateAccountStatusesRequest::setXSecurityToken));
 
         // response
 
@@ -319,6 +360,11 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(MoveAccountRequest::getAccountId, MoveAccountRequest::setAccountId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MoveAccountRequest::getXSecurityToken, MoveAccountRequest::setXSecurityToken));
         builder.<MoveAccountReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -347,6 +393,11 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RemoveAccountRequest::getAccountId, RemoveAccountRequest::setAccountId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveAccountRequest::getXSecurityToken, RemoveAccountRequest::setXSecurityToken));
 
         // response
 
@@ -369,6 +420,17 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAccountRequest::getAccountId, ShowAccountRequest::setAccountId));
+        builder.<Boolean>withRequestField("with_register_contact_info",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowAccountRequest::getWithRegisterContactInfo,
+                ShowAccountRequest::setWithRegisterContactInfo));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAccountRequest::getXSecurityToken, ShowAccountRequest::setXSecurityToken));
 
         // response
 
@@ -393,6 +455,45 @@ public class OrganizationsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCreateAccountStatusRequest::getCreateAccountStatusId,
                 ShowCreateAccountStatusRequest::setCreateAccountStatusId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCreateAccountStatusRequest::getXSecurityToken,
+                ShowCreateAccountStatusRequest::setXSecurityToken));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAccountRequest, UpdateAccountResponse> updateAccount =
+        genForUpdateAccount();
+
+    private static HttpRequestDef<UpdateAccountRequest, UpdateAccountResponse> genForUpdateAccount() {
+        // basic
+        HttpRequestDef.Builder<UpdateAccountRequest, UpdateAccountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, UpdateAccountRequest.class, UpdateAccountResponse.class)
+                .withName("UpdateAccount")
+                .withUri("/v1/organizations/accounts/{account_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("account_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAccountRequest::getAccountId, UpdateAccountRequest::setAccountId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAccountRequest::getXSecurityToken, UpdateAccountRequest::setXSecurityToken));
+        builder.<UpdateAccountReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAccountReqBody.class),
+            f -> f.withMarshaller(UpdateAccountRequest::getBody, UpdateAccountRequest::setBody));
 
         // response
 
@@ -414,6 +515,12 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeregisterDelegatedAdministratorRequest::getXSecurityToken,
+                DeregisterDelegatedAdministratorRequest::setXSecurityToken));
         builder.<DelegatedAdministratorReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -459,6 +566,12 @@ public class OrganizationsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDelegatedAdministratorsRequest::getMarker,
                 ListDelegatedAdministratorsRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDelegatedAdministratorsRequest::getXSecurityToken,
+                ListDelegatedAdministratorsRequest::setXSecurityToken));
 
         // response
 
@@ -493,6 +606,12 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDelegatedServicesRequest::getMarker, ListDelegatedServicesRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDelegatedServicesRequest::getXSecurityToken,
+                ListDelegatedServicesRequest::setXSecurityToken));
 
         // response
 
@@ -514,6 +633,12 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RegisterDelegatedAdministratorRequest::getXSecurityToken,
+                RegisterDelegatedAdministratorRequest::setXSecurityToken));
         builder.<DelegatedAdministratorReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -543,6 +668,12 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AcceptHandshakeRequest::getHandshakeId, AcceptHandshakeRequest::setHandshakeId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptHandshakeRequest::getXSecurityToken,
+                AcceptHandshakeRequest::setXSecurityToken));
 
         // response
 
@@ -566,6 +697,12 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelHandshakeRequest::getHandshakeId, CancelHandshakeRequest::setHandshakeId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelHandshakeRequest::getXSecurityToken,
+                CancelHandshakeRequest::setXSecurityToken));
 
         // response
 
@@ -589,6 +726,12 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeclineHandshakeRequest::getHandshakeId, DeclineHandshakeRequest::setHandshakeId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeclineHandshakeRequest::getXSecurityToken,
+                DeclineHandshakeRequest::setXSecurityToken));
 
         // response
 
@@ -617,6 +760,11 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHandshakesRequest::getMarker, ListHandshakesRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHandshakesRequest::getXSecurityToken, ListHandshakesRequest::setXSecurityToken));
 
         // response
 
@@ -645,6 +793,12 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListReceivedHandshakesRequest::getMarker, ListReceivedHandshakesRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReceivedHandshakesRequest::getXSecurityToken,
+                ListReceivedHandshakesRequest::setXSecurityToken));
 
         // response
 
@@ -668,6 +822,11 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowHandshakeRequest::getHandshakeId, ShowHandshakeRequest::setHandshakeId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowHandshakeRequest::getXSecurityToken, ShowHandshakeRequest::setXSecurityToken));
 
         // response
 
@@ -705,6 +864,11 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEntitiesRequest::getMarker, ListEntitiesRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEntitiesRequest::getXSecurityToken, ListEntitiesRequest::setXSecurityToken));
 
         // response
 
@@ -722,6 +886,11 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQuotasRequest::getXSecurityToken, ListQuotasRequest::setXSecurityToken));
 
         // response
 
@@ -739,6 +908,11 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServicesRequest::getXSecurityToken, ListServicesRequest::setXSecurityToken));
 
         // response
 
@@ -757,6 +931,12 @@ public class OrganizationsMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagPolicyServicesRequest::getXSecurityToken,
+                ListTagPolicyServicesRequest::setXSecurityToken));
 
         // response
 
@@ -787,6 +967,12 @@ public class OrganizationsMeta {
             TypeCasts.uncheckedConversion(ShowEffectivePoliciesRequest.PolicyTypeEnum.class),
             f -> f.withMarshaller(ShowEffectivePoliciesRequest::getPolicyType,
                 ShowEffectivePoliciesRequest::setPolicyType));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEffectivePoliciesRequest::getXSecurityToken,
+                ShowEffectivePoliciesRequest::setXSecurityToken));
 
         // response
 
@@ -805,6 +991,12 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOrganizationRequest::getXSecurityToken,
+                CreateOrganizationRequest::setXSecurityToken));
 
         // response
 
@@ -823,6 +1015,12 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOrganizationRequest::getXSecurityToken,
+                DeleteOrganizationRequest::setXSecurityToken));
 
         // response
 
@@ -841,6 +1039,12 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(LeaveOrganizationRequest::getXSecurityToken,
+                LeaveOrganizationRequest::setXSecurityToken));
 
         // response
 
@@ -868,6 +1072,11 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRootsRequest::getMarker, ListRootsRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRootsRequest::getXSecurityToken, ListRootsRequest::setXSecurityToken));
 
         // response
 
@@ -886,6 +1095,12 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOrganizationRequest::getXSecurityToken,
+                ShowOrganizationRequest::setXSecurityToken));
 
         // response
 
@@ -905,6 +1120,12 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOrganizationalUnitRequest::getXSecurityToken,
+                CreateOrganizationalUnitRequest::setXSecurityToken));
         builder.<CreateOrganizationalUnitReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -937,6 +1158,12 @@ public class OrganizationsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteOrganizationalUnitRequest::getOrganizationalUnitId,
                 DeleteOrganizationalUnitRequest::setOrganizationalUnitId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOrganizationalUnitRequest::getXSecurityToken,
+                DeleteOrganizationalUnitRequest::setXSecurityToken));
 
         // response
 
@@ -972,6 +1199,12 @@ public class OrganizationsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOrganizationalUnitsRequest::getMarker,
                 ListOrganizationalUnitsRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOrganizationalUnitsRequest::getXSecurityToken,
+                ListOrganizationalUnitsRequest::setXSecurityToken));
 
         // response
 
@@ -996,6 +1229,12 @@ public class OrganizationsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowOrganizationalUnitRequest::getOrganizationalUnitId,
                 ShowOrganizationalUnitRequest::setOrganizationalUnitId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOrganizationalUnitRequest::getXSecurityToken,
+                ShowOrganizationalUnitRequest::setXSecurityToken));
 
         // response
 
@@ -1023,6 +1262,12 @@ public class OrganizationsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateOrganizationalUnitRequest::getOrganizationalUnitId,
                 UpdateOrganizationalUnitRequest::setOrganizationalUnitId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateOrganizationalUnitRequest::getXSecurityToken,
+                UpdateOrganizationalUnitRequest::setXSecurityToken));
         builder.<UpdateOrganizationalUnitReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1050,6 +1295,11 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AttachPolicyRequest::getPolicyId, AttachPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AttachPolicyRequest::getXSecurityToken, AttachPolicyRequest::setXSecurityToken));
         builder.<PolicyTachReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1072,6 +1322,11 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePolicyRequest::getXSecurityToken, CreatePolicyRequest::setXSecurityToken));
         builder.<CreatePolicyRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1104,6 +1359,11 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePolicyRequest::getPolicyId, DeletePolicyRequest::setPolicyId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePolicyRequest::getXSecurityToken, DeletePolicyRequest::setXSecurityToken));
 
         // response
 
@@ -1126,6 +1386,11 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DetachPolicyRequest::getPolicyId, DetachPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DetachPolicyRequest::getXSecurityToken, DetachPolicyRequest::setXSecurityToken));
         builder.<PolicyTachReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1149,6 +1414,12 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisablePolicyTypeRequest::getXSecurityToken,
+                DisablePolicyTypeRequest::setXSecurityToken));
         builder.<PolicyTypeReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1172,6 +1443,12 @@ public class OrganizationsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnablePolicyTypeRequest::getXSecurityToken,
+                EnablePolicyTypeRequest::setXSecurityToken));
         builder.<PolicyTypeReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1211,6 +1488,12 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEntitiesForPolicyRequest::getMarker, ListEntitiesForPolicyRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEntitiesForPolicyRequest::getXSecurityToken,
+                ListEntitiesForPolicyRequest::setXSecurityToken));
 
         // response
 
@@ -1243,6 +1526,11 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPoliciesRequest::getMarker, ListPoliciesRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPoliciesRequest::getXSecurityToken, ListPoliciesRequest::setXSecurityToken));
         builder.<ListPoliciesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1270,6 +1558,11 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPolicyRequest::getPolicyId, ShowPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPolicyRequest::getXSecurityToken, ShowPolicyRequest::setXSecurityToken));
         builder.<ShowPolicyRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1297,6 +1590,11 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdatePolicyRequest::getPolicyId, UpdatePolicyRequest::setPolicyId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePolicyRequest::getXSecurityToken, UpdatePolicyRequest::setXSecurityToken));
         builder.<UpdatePolicyRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1336,6 +1634,12 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateTagResourceRequest::getResourceId, CreateTagResourceRequest::setResourceId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTagResourceRequest::getXSecurityToken,
+                CreateTagResourceRequest::setXSecurityToken));
         builder.<TagResourceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1370,6 +1674,12 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTagResourceRequest::getResourceId, DeleteTagResourceRequest::setResourceId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTagResourceRequest::getXSecurityToken,
+                DeleteTagResourceRequest::setXSecurityToken));
         builder.<TagResourceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1409,6 +1719,12 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceInstancesRequest::getOffset, ListResourceInstancesRequest::setOffset));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceInstancesRequest::getXSecurityToken,
+                ListResourceInstancesRequest::setXSecurityToken));
         builder.<ResourceInstanceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1437,6 +1753,12 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListResourceTagsRequest.ResourceTypeEnum.class),
             f -> f.withMarshaller(ListResourceTagsRequest::getResourceType, ListResourceTagsRequest::setResourceType));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceTagsRequest::getXSecurityToken,
+                ListResourceTagsRequest::setXSecurityToken));
 
         // response
 
@@ -1475,6 +1797,12 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTagResourcesRequest::getMarker, ListTagResourcesRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagResourcesRequest::getXSecurityToken,
+                ListTagResourcesRequest::setXSecurityToken));
 
         // response
 
@@ -1509,6 +1837,12 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTagsForResourceRequest::getMarker, ListTagsForResourceRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagsForResourceRequest::getXSecurityToken,
+                ListTagsForResourceRequest::setXSecurityToken));
 
         // response
 
@@ -1536,6 +1870,12 @@ public class OrganizationsMeta {
             TypeCasts.uncheckedConversion(ShowResourceInstancesCountRequest.ResourceTypeEnum.class),
             f -> f.withMarshaller(ShowResourceInstancesCountRequest::getResourceType,
                 ShowResourceInstancesCountRequest::setResourceType));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceInstancesCountRequest::getXSecurityToken,
+                ShowResourceInstancesCountRequest::setXSecurityToken));
         builder.<ResourceInstanceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1564,6 +1904,11 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(TagResourceRequest::getResourceId, TagResourceRequest::setResourceId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(TagResourceRequest::getXSecurityToken, TagResourceRequest::setXSecurityToken));
         builder.<TagResourceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1592,6 +1937,11 @@ public class OrganizationsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UntagResourceRequest::getResourceId, UntagResourceRequest::setResourceId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UntagResourceRequest::getXSecurityToken, UntagResourceRequest::setXSecurityToken));
         builder.<UntagResourceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1615,6 +1965,12 @@ public class OrganizationsMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableTrustedServiceRequest::getXSecurityToken,
+                DisableTrustedServiceRequest::setXSecurityToken));
         builder.<TrustedServiceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1638,6 +1994,12 @@ public class OrganizationsMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableTrustedServiceRequest::getXSecurityToken,
+                EnableTrustedServiceRequest::setXSecurityToken));
         builder.<TrustedServiceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1671,6 +2033,12 @@ public class OrganizationsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTrustedServicesRequest::getMarker, ListTrustedServicesRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTrustedServicesRequest::getXSecurityToken,
+                ListTrustedServicesRequest::setXSecurityToken));
 
         // response
 

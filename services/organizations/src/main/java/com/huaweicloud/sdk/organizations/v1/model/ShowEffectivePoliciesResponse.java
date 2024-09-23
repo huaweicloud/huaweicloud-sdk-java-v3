@@ -28,7 +28,7 @@ public class ShowEffectivePoliciesResponse extends SdkResponse {
     private String policyContent;
 
     /**
-     * 策略类型的名称，tag_policy标签策略。
+     * 策略类型的名称。tag_policy标签策略。
      */
     public static final class PolicyTypeEnum {
 
@@ -141,7 +141,7 @@ public class ShowEffectivePoliciesResponse extends SdkResponse {
     }
 
     /**
-     * 策略类型的名称，tag_policy标签策略。
+     * 策略类型的名称。tag_policy标签策略。
      * @return policyType
      */
     public PolicyTypeEnum getPolicyType() {

@@ -48,26 +48,6 @@ public class EventModel {
 
     private String id;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "event_sn")
-
-    private String eventSn;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "arrives_at")
-
-    private Long arrivesAt;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
-
-    private String enterpriseProjectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "policy")
-
-    private Map<String, Object> policy = null;
-
     public EventModel withStartsAt(Long startsAt) {
         this.startsAt = startsAt;
         return this;
@@ -235,90 +215,6 @@ public class EventModel {
         this.id = id;
     }
 
-    public EventModel withEventSn(String eventSn) {
-        this.eventSn = eventSn;
-        return this;
-    }
-
-    /**
-     * 告警流水号。
-     * @return eventSn
-     */
-    public String getEventSn() {
-        return eventSn;
-    }
-
-    public void setEventSn(String eventSn) {
-        this.eventSn = eventSn;
-    }
-
-    public EventModel withArrivesAt(Long arrivesAt) {
-        this.arrivesAt = arrivesAt;
-        return this;
-    }
-
-    /**
-     * 事件到达系统时间，CST毫秒级时间戳。
-     * @return arrivesAt
-     */
-    public Long getArrivesAt() {
-        return arrivesAt;
-    }
-
-    public void setArrivesAt(Long arrivesAt) {
-        this.arrivesAt = arrivesAt;
-    }
-
-    public EventModel withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    /**
-     * 事件或告警所属企业项目id。
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
-    public EventModel withPolicy(Map<String, Object> policy) {
-        this.policy = policy;
-        return this;
-    }
-
-    public EventModel putPolicyItem(String key, Object policyItem) {
-        if (this.policy == null) {
-            this.policy = new HashMap<>();
-        }
-        this.policy.put(key, policyItem);
-        return this;
-    }
-
-    public EventModel withPolicy(Consumer<Map<String, Object>> policySetter) {
-        if (this.policy == null) {
-            this.policy = new HashMap<>();
-        }
-        policySetter.accept(this.policy);
-        return this;
-    }
-
-    /**
-     * 开放告警策略
-     * @return policy
-     */
-    public Map<String, Object> getPolicy() {
-        return policy;
-    }
-
-    public void setPolicy(Map<String, Object> policy) {
-        this.policy = policy;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -331,25 +227,12 @@ public class EventModel {
         return Objects.equals(this.startsAt, that.startsAt) && Objects.equals(this.endsAt, that.endsAt)
             && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.metadata, that.metadata)
             && Objects.equals(this.annotations, that.annotations) && Objects.equals(this.attachRule, that.attachRule)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.eventSn, that.eventSn)
-            && Objects.equals(this.arrivesAt, that.arrivesAt)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.policy, that.policy);
+            && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startsAt,
-            endsAt,
-            timeout,
-            metadata,
-            annotations,
-            attachRule,
-            id,
-            eventSn,
-            arrivesAt,
-            enterpriseProjectId,
-            policy);
+        return Objects.hash(startsAt, endsAt, timeout, metadata, annotations, attachRule, id);
     }
 
     @Override
@@ -363,10 +246,6 @@ public class EventModel {
         sb.append("    annotations: ").append(toIndentedString(annotations)).append("\n");
         sb.append("    attachRule: ").append(toIndentedString(attachRule)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    eventSn: ").append(toIndentedString(eventSn)).append("\n");
-        sb.append("    arrivesAt: ").append(toIndentedString(arrivesAt)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

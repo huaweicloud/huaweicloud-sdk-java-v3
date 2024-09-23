@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListTrustedServicesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -19,6 +24,25 @@ public class ListTrustedServicesRequest {
     @JsonProperty(value = "marker")
 
     private String marker;
+
+    public ListTrustedServicesRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public ListTrustedServicesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -65,18 +89,20 @@ public class ListTrustedServicesRequest {
             return false;
         }
         ListTrustedServicesRequest that = (ListTrustedServicesRequest) obj;
-        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker);
+        return Objects.hash(xSecurityToken, limit, marker);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTrustedServicesRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");

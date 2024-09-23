@@ -29,6 +29,11 @@ public class HttpPutBody {
     private Integer certificateSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scm_certificate_id")
+
+    private String scmCertificateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_name")
 
     private String certificateName;
@@ -113,7 +118,7 @@ public class HttpPutBody {
     }
 
     /**
-     * 证书来源，0：自有证书，默认值0。  > 证书开启时必传
+     * 证书来源，0：自有证书。2：SCM证书。  > 证书开启时必传
      * @return certificateSource
      */
     public Integer getCertificateSource() {
@@ -122,6 +127,23 @@ public class HttpPutBody {
 
     public void setCertificateSource(Integer certificateSource) {
         this.certificateSource = certificateSource;
+    }
+
+    public HttpPutBody withScmCertificateId(String scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
+        return this;
+    }
+
+    /**
+     * SCM证书id
+     * @return scmCertificateId
+     */
+    public String getScmCertificateId() {
+        return scmCertificateId;
+    }
+
+    public void setScmCertificateId(String scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
     }
 
     public HttpPutBody withCertificateName(String certificateName) {
@@ -305,6 +327,7 @@ public class HttpPutBody {
         return Objects.equals(this.httpsStatus, that.httpsStatus)
             && Objects.equals(this.certificateType, that.certificateType)
             && Objects.equals(this.certificateSource, that.certificateSource)
+            && Objects.equals(this.scmCertificateId, that.scmCertificateId)
             && Objects.equals(this.certificateName, that.certificateName)
             && Objects.equals(this.certificateValue, that.certificateValue)
             && Objects.equals(this.privateKey, that.privateKey)
@@ -320,6 +343,7 @@ public class HttpPutBody {
         return Objects.hash(httpsStatus,
             certificateType,
             certificateSource,
+            scmCertificateId,
             certificateName,
             certificateValue,
             privateKey,
@@ -338,6 +362,7 @@ public class HttpPutBody {
         sb.append("    httpsStatus: ").append(toIndentedString(httpsStatus)).append("\n");
         sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
         sb.append("    certificateSource: ").append(toIndentedString(certificateSource)).append("\n");
+        sb.append("    scmCertificateId: ").append(toIndentedString(scmCertificateId)).append("\n");
         sb.append("    certificateName: ").append(toIndentedString(certificateName)).append("\n");
         sb.append("    certificateValue: ").append(toIndentedString(certificateValue)).append("\n");
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");

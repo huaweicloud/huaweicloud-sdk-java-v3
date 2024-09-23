@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class UntagResourceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
     private String resourceId;
@@ -20,6 +25,25 @@ public class UntagResourceRequest {
     @JsonProperty(value = "body")
 
     private UntagResourceReqBody body;
+
+    public UntagResourceRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public UntagResourceRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -73,18 +97,20 @@ public class UntagResourceRequest {
             return false;
         }
         UntagResourceRequest that = (UntagResourceRequest) obj;
-        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, body);
+        return Objects.hash(xSecurityToken, resourceId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UntagResourceRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

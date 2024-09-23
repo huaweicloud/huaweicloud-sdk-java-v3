@@ -17,6 +17,11 @@ import java.util.function.Consumer;
 public class UpdatePolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
     private String policyId;
@@ -101,6 +106,25 @@ public class UpdatePolicyRequest {
 
     private UpdatePolicyReqBody body;
 
+    public UpdatePolicyRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
+
     public UpdatePolicyRequest withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
@@ -172,19 +196,20 @@ public class UpdatePolicyRequest {
             return false;
         }
         UpdatePolicyRequest that = (UpdatePolicyRequest) obj;
-        return Objects.equals(this.policyId, that.policyId) && Objects.equals(this.xLanguage, that.xLanguage)
-            && Objects.equals(this.body, that.body);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.policyId, that.policyId)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId, xLanguage, body);
+        return Objects.hash(xSecurityToken, policyId, xLanguage, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdatePolicyRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");

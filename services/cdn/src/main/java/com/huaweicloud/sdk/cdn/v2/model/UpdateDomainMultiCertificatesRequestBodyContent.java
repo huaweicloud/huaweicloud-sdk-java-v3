@@ -61,6 +61,11 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
 
     private Integer certificateType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scm_certificate_id")
+
+    private String scmCertificateId;
+
     public UpdateDomainMultiCertificatesRequestBodyContent withDomainName(String domainName) {
         this.domainName = domainName;
         return this;
@@ -230,7 +235,7 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
     }
 
     /**
-     * 证书类型（0为自有证书 ；1为托管证书，此时不必不传入证书内容和私钥，自动根据证书名称匹配；不传默认为自有证书）
+     * 证书类型（0为自有证书；2为SCM证书；不传默认为自有证书）
      * @return certificateType
      */
     public Integer getCertificateType() {
@@ -239,6 +244,23 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
 
     public void setCertificateType(Integer certificateType) {
         this.certificateType = certificateType;
+    }
+
+    public UpdateDomainMultiCertificatesRequestBodyContent withScmCertificateId(String scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
+        return this;
+    }
+
+    /**
+     * SCM证书id
+     * @return scmCertificateId
+     */
+    public String getScmCertificateId() {
+        return scmCertificateId;
+    }
+
+    public void setScmCertificateId(String scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
     }
 
     @Override
@@ -256,7 +278,8 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
             && Objects.equals(this.forceRedirectConfig, that.forceRedirectConfig)
             && Objects.equals(this.http2, that.http2) && Objects.equals(this.certName, that.certName)
             && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.privateKey, that.privateKey)
-            && Objects.equals(this.certificateType, that.certificateType);
+            && Objects.equals(this.certificateType, that.certificateType)
+            && Objects.equals(this.scmCertificateId, that.scmCertificateId);
     }
 
     @Override
@@ -270,7 +293,8 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
             certName,
             certificate,
             privateKey,
-            certificateType);
+            certificateType,
+            scmCertificateId);
     }
 
     @Override
@@ -287,6 +311,7 @@ public class UpdateDomainMultiCertificatesRequestBodyContent {
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
         sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
+        sb.append("    scmCertificateId: ").append(toIndentedString(scmCertificateId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

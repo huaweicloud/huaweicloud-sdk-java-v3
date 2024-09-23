@@ -13,7 +13,7 @@ public class PageInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_count")
 
-    private String currentCount;
+    private Integer currentCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "previous_marker")
@@ -25,7 +25,7 @@ public class PageInfo {
 
     private String nextMarker;
 
-    public PageInfo withCurrentCount(String currentCount) {
+    public PageInfo withCurrentCount(Integer currentCount) {
         this.currentCount = currentCount;
         return this;
     }
@@ -34,11 +34,11 @@ public class PageInfo {
      * 当前页事件、告警总数
      * @return currentCount
      */
-    public String getCurrentCount() {
+    public Integer getCurrentCount() {
         return currentCount;
     }
 
-    public void setCurrentCount(String currentCount) {
+    public void setCurrentCount(Integer currentCount) {
         this.currentCount = currentCount;
     }
 

@@ -83,6 +83,8 @@ import com.huaweicloud.sdk.dds.v3.model.ListDatabaseRolesRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListDatabaseRolesResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListDatabaseUsersRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListDatabaseUsersResponse;
+import com.huaweicloud.sdk.dds.v3.model.ListDatabasesRequest;
+import com.huaweicloud.sdk.dds.v3.model.ListDatabasesResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListDatastoreVersionsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListDatastoreVersionsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListErrorLogsRequest;
@@ -1365,6 +1367,34 @@ public class DdsClient {
     public SyncInvoker<ListDatabaseUsersRequest, ListDatabaseUsersResponse> listDatabaseUsersInvoker(
         ListDatabaseUsersRequest request) {
         return new SyncInvoker<>(request, DdsMeta.listDatabaseUsers, hcClient);
+    }
+
+    /**
+     * 查询数据库列表
+     *
+     * 查询数据库列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabasesRequest 请求对象
+     * @return ListDatabasesResponse
+     */
+    public ListDatabasesResponse listDatabases(ListDatabasesRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.listDatabases);
+    }
+
+    /**
+     * 查询数据库列表
+     *
+     * 查询数据库列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabasesRequest 请求对象
+     * @return SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>
+     */
+    public SyncInvoker<ListDatabasesRequest, ListDatabasesResponse> listDatabasesInvoker(ListDatabasesRequest request) {
+        return new SyncInvoker<>(request, DdsMeta.listDatabases, hcClient);
     }
 
     /**

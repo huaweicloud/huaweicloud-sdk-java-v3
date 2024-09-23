@@ -204,11 +204,6 @@ public class TargetServer {
     private Long memory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "disks")
-
-    private List<TargetDisk> disks = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "btrfs_list")
 
     private List<String> btrfsList = null;
@@ -349,6 +344,11 @@ public class TargetServer {
     private String flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disks")
+
+    private List<TargetDisk> disks = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_disk_id")
 
     private String imageDiskId;
@@ -403,7 +403,7 @@ public class TargetServer {
     }
 
     /**
-     * 目的端服务器名称
+     * 用来区分不同源端服务器的名称
      * @return name
      */
     public String getName() {
@@ -518,39 +518,6 @@ public class TargetServer {
 
     public void setMemory(Long memory) {
         this.memory = memory;
-    }
-
-    public TargetServer withDisks(List<TargetDisk> disks) {
-        this.disks = disks;
-        return this;
-    }
-
-    public TargetServer addDisksItem(TargetDisk disksItem) {
-        if (this.disks == null) {
-            this.disks = new ArrayList<>();
-        }
-        this.disks.add(disksItem);
-        return this;
-    }
-
-    public TargetServer withDisks(Consumer<List<TargetDisk>> disksSetter) {
-        if (this.disks == null) {
-            this.disks = new ArrayList<>();
-        }
-        disksSetter.accept(this.disks);
-        return this;
-    }
-
-    /**
-     * 目的端磁盘信息，一般和源端保持一致
-     * @return disks
-     */
-    public List<TargetDisk> getDisks() {
-        return disks;
-    }
-
-    public void setDisks(List<TargetDisk> disks) {
-        this.disks = disks;
     }
 
     public TargetServer withBtrfsList(List<String> btrfsList) {
@@ -794,7 +761,7 @@ public class TargetServer {
     }
 
     /**
-     * lvm信息，一般和源端保持一致
+     * Linux必选，如果没有卷组，输入[]
      * @return volumeGroups
      */
     public List<VolumeGroups> getVolumeGroups() {
@@ -837,6 +804,39 @@ public class TargetServer {
 
     public void setFlavor(String flavor) {
         this.flavor = flavor;
+    }
+
+    public TargetServer withDisks(List<TargetDisk> disks) {
+        this.disks = disks;
+        return this;
+    }
+
+    public TargetServer addDisksItem(TargetDisk disksItem) {
+        if (this.disks == null) {
+            this.disks = new ArrayList<>();
+        }
+        this.disks.add(disksItem);
+        return this;
+    }
+
+    public TargetServer withDisks(Consumer<List<TargetDisk>> disksSetter) {
+        if (this.disks == null) {
+            this.disks = new ArrayList<>();
+        }
+        disksSetter.accept(this.disks);
+        return this;
+    }
+
+    /**
+     * 目的端磁盘信息，一般和源端保持一致
+     * @return disks
+     */
+    public List<TargetDisk> getDisks() {
+        return disks;
+    }
+
+    public void setDisks(List<TargetDisk> disks) {
+        this.disks = disks;
     }
 
     public TargetServer withImageDiskId(String imageDiskId) {
@@ -903,17 +903,17 @@ public class TargetServer {
             && Objects.equals(this.name, that.name) && Objects.equals(this.hostname, that.hostname)
             && Objects.equals(this.osType, that.osType) && Objects.equals(this.osVersion, that.osVersion)
             && Objects.equals(this.firmware, that.firmware) && Objects.equals(this.cpuQuantity, that.cpuQuantity)
-            && Objects.equals(this.memory, that.memory) && Objects.equals(this.disks, that.disks)
-            && Objects.equals(this.btrfsList, that.btrfsList) && Objects.equals(this.networks, that.networks)
-            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.hasRsync, that.hasRsync)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.btrfsList, that.btrfsList)
+            && Objects.equals(this.networks, that.networks) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.hasRsync, that.hasRsync)
             && Objects.equals(this.paravirtualization, that.paravirtualization)
             && Objects.equals(this.rawDevices, that.rawDevices) && Objects.equals(this.driverFiles, that.driverFiles)
             && Objects.equals(this.systemServices, that.systemServices)
             && Objects.equals(this.accountRights, that.accountRights)
             && Objects.equals(this.bootLoader, that.bootLoader) && Objects.equals(this.systemDir, that.systemDir)
             && Objects.equals(this.volumeGroups, that.volumeGroups) && Objects.equals(this.vmId, that.vmId)
-            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.imageDiskId, that.imageDiskId)
-            && Objects.equals(this.snapshotIds, that.snapshotIds)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.disks, that.disks)
+            && Objects.equals(this.imageDiskId, that.imageDiskId) && Objects.equals(this.snapshotIds, that.snapshotIds)
             && Objects.equals(this.cutoveredSnapshotIds, that.cutoveredSnapshotIds);
     }
 
@@ -928,7 +928,6 @@ public class TargetServer {
             firmware,
             cpuQuantity,
             memory,
-            disks,
             btrfsList,
             networks,
             domainId,
@@ -943,6 +942,7 @@ public class TargetServer {
             volumeGroups,
             vmId,
             flavor,
+            disks,
             imageDiskId,
             snapshotIds,
             cutoveredSnapshotIds);
@@ -961,7 +961,6 @@ public class TargetServer {
         sb.append("    firmware: ").append(toIndentedString(firmware)).append("\n");
         sb.append("    cpuQuantity: ").append(toIndentedString(cpuQuantity)).append("\n");
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
-        sb.append("    disks: ").append(toIndentedString(disks)).append("\n");
         sb.append("    btrfsList: ").append(toIndentedString(btrfsList)).append("\n");
         sb.append("    networks: ").append(toIndentedString(networks)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
@@ -976,6 +975,7 @@ public class TargetServer {
         sb.append("    volumeGroups: ").append(toIndentedString(volumeGroups)).append("\n");
         sb.append("    vmId: ").append(toIndentedString(vmId)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
+        sb.append("    disks: ").append(toIndentedString(disks)).append("\n");
         sb.append("    imageDiskId: ").append(toIndentedString(imageDiskId)).append("\n");
         sb.append("    snapshotIds: ").append(toIndentedString(snapshotIds)).append("\n");
         sb.append("    cutoveredSnapshotIds: ").append(toIndentedString(cutoveredSnapshotIds)).append("\n");

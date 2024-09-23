@@ -65,7 +65,7 @@ public class EntityDto {
     }
 
     /**
-     * 实体的类型，account:账户，organizational_unit:组织单元，root:根。
+     * 实体的类型。account：账号；organizational_unit：组织单元；root：根。
      * @return type
      */
     public String getType() {

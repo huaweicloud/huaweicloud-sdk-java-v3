@@ -113,6 +113,8 @@ import com.huaweicloud.sdk.organizations.v1.model.TagResourceRequest;
 import com.huaweicloud.sdk.organizations.v1.model.TagResourceResponse;
 import com.huaweicloud.sdk.organizations.v1.model.UntagResourceRequest;
 import com.huaweicloud.sdk.organizations.v1.model.UntagResourceResponse;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateAccountRequest;
+import com.huaweicloud.sdk.organizations.v1.model.UpdateAccountResponse;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateOrganizationalUnitRequest;
 import com.huaweicloud.sdk.organizations.v1.model.UpdateOrganizationalUnitResponse;
 import com.huaweicloud.sdk.organizations.v1.model.UpdatePolicyRequest;
@@ -423,6 +425,35 @@ public class OrganizationsAsyncClient {
     public AsyncInvoker<ShowCreateAccountStatusRequest, ShowCreateAccountStatusResponse> showCreateAccountStatusAsyncInvoker(
         ShowCreateAccountStatusRequest request) {
         return new AsyncInvoker<>(request, OrganizationsMeta.showCreateAccountStatus, hcClient);
+    }
+
+    /**
+     * 更新账号信息
+     *
+     * 更新指定的账号信息。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAccountRequest 请求对象
+     * @return CompletableFuture<UpdateAccountResponse>
+     */
+    public CompletableFuture<UpdateAccountResponse> updateAccountAsync(UpdateAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, OrganizationsMeta.updateAccount);
+    }
+
+    /**
+     * 更新账号信息
+     *
+     * 更新指定的账号信息。此操作只能由组织的管理账号调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAccountRequest 请求对象
+     * @return AsyncInvoker<UpdateAccountRequest, UpdateAccountResponse>
+     */
+    public AsyncInvoker<UpdateAccountRequest, UpdateAccountResponse> updateAccountAsyncInvoker(
+        UpdateAccountRequest request) {
+        return new AsyncInvoker<>(request, OrganizationsMeta.updateAccount, hcClient);
     }
 
     /**
@@ -839,7 +870,7 @@ public class OrganizationsAsyncClient {
     /**
      * 查询有效的策略
      *
-     * 查询指定策略类型和账户的有效策略信息。当前此接口不支持查询服务控制策略（service_control_policy）。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+     * 查询指定策略类型和账号的有效策略信息。当前此接口不支持查询服务控制策略（service_control_policy）。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -854,7 +885,7 @@ public class OrganizationsAsyncClient {
     /**
      * 查询有效的策略
      *
-     * 查询指定策略类型和账户的有效策略信息。当前此接口不支持查询服务控制策略（service_control_policy）。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+     * 查询指定策略类型和账号的有效策略信息。当前此接口不支持查询服务控制策略（service_control_policy）。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -927,7 +958,7 @@ public class OrganizationsAsyncClient {
     /**
      * 离开当前组织
      *
-     * 此操作只能由组织的成员账号调用。只有当组织账号配置了作为独立账号运行所需的信息时，您才能作为成员账户离开组织。要离开的账号不能是组织启用的任何服务的委托管理员账号。
+     * 此操作只能由组织的成员账号调用。只有当组织账号配置了作为独立账号运行所需的信息时，您才能作为成员账号离开组织。要离开的账号不能是组织启用的任何服务的委托管理员账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -941,7 +972,7 @@ public class OrganizationsAsyncClient {
     /**
      * 离开当前组织
      *
-     * 此操作只能由组织的成员账号调用。只有当组织账号配置了作为独立账号运行所需的信息时，您才能作为成员账户离开组织。要离开的账号不能是组织启用的任何服务的委托管理员账号。
+     * 此操作只能由组织的成员账号调用。只有当组织账号配置了作为独立账号运行所需的信息时，您才能作为成员账号离开组织。要离开的账号不能是组织启用的任何服务的委托管理员账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1163,7 +1194,7 @@ public class OrganizationsAsyncClient {
     /**
      * 将策略跟实体绑定
      *
-     * 绑定策略到根、组织单元或个人账户。此操作只能由组织的管理账号调用。
+     * 绑定策略到根、组织单元或个人账号。此操作只能由组织的管理账号调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1177,7 +1208,7 @@ public class OrganizationsAsyncClient {
     /**
      * 将策略跟实体绑定
      *
-     * 绑定策略到根、组织单元或个人账户。此操作只能由组织的管理账号调用。
+     * 绑定策略到根、组织单元或个人账号。此操作只能由组织的管理账号调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1451,9 +1482,9 @@ public class OrganizationsAsyncClient {
     }
 
     /**
-     * 为指定资源添加标签
+     * 为指定资源类型添加标签
      *
-     * 向指定的资源添加一个或多个标签。目前，您可以将标签附加到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号调用。
+     * 向指定的资源类型添加一个或多个标签。目前，您可以将标签附加到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1465,9 +1496,9 @@ public class OrganizationsAsyncClient {
     }
 
     /**
-     * 为指定资源添加标签
+     * 为指定资源类型添加标签
      *
-     * 向指定的资源添加一个或多个标签。目前，您可以将标签附加到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号调用。
+     * 向指定的资源类型添加一个或多个标签。目前，您可以将标签附加到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1480,9 +1511,9 @@ public class OrganizationsAsyncClient {
     }
 
     /**
-     * 从指定资源中删除指定主键标签
+     * 从指定资源类型中删除指定主键标签
      *
-     * 从指定资源中删除具有指定主键的任何标签。您可以将标签绑定到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号调用。
+     * 从指定资源类型中删除具有指定主键的任何标签。您可以将标签绑定到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1494,9 +1525,9 @@ public class OrganizationsAsyncClient {
     }
 
     /**
-     * 从指定资源中删除指定主键标签
+     * 从指定资源类型中删除指定主键标签
      *
-     * 从指定资源中删除具有指定主键的任何标签。您可以将标签绑定到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号调用。
+     * 从指定资源类型中删除具有指定主键的任何标签。您可以将标签绑定到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1568,9 +1599,9 @@ public class OrganizationsAsyncClient {
     }
 
     /**
-     * 列出绑定到指定资源的标签
+     * 列出绑定到指定资源类型的标签
      *
-     * 列出绑定到指定资源的标签。您可以将标签附加到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+     * 列出绑定到指定资源类型的标签。您可以将标签附加到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1582,9 +1613,9 @@ public class OrganizationsAsyncClient {
     }
 
     /**
-     * 列出绑定到指定资源的标签
+     * 列出绑定到指定资源类型的标签
      *
-     * 列出绑定到指定资源的标签。您可以将标签附加到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
+     * 列出绑定到指定资源类型的标签。您可以将标签附加到组织中的账号、组织单元、根和策略。此操作只能由组织的管理账号或作为服务委托管理员的成员账号调用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

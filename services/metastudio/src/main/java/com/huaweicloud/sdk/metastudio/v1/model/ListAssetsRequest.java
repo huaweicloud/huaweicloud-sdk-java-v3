@@ -637,7 +637,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 最近直播任务结束时间。格式遵循：RFC 3339 如“2021-01-10T10:43:17Z”。
+     * 结束时间。格式遵循：RFC 3339 如\"2021-01-10T10:43:17Z\"。
      * @return endTime
      */
     public String getEndTime() {
@@ -722,7 +722,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 资产状态。多个资产状态使用英文逗号分割。 * CREATING：资产创建中，主文件尚未上传 * FAILED：主文件上传失败 * UNACTIVED：主文件上传成功，资产未激活，资产不可用于其他业务（用户可更新状态） * ACTIVED：主文件上传成功，资产激活，资产可用于其他业务（用户可更新状态） * DELETING：资产删除中，资产不可用，资产可恢复 * DELETED：资产文件已删除，资产不可用，资产不可恢复 * BLOCK：资产被冻结，资产不可用，不可查看文件。 默认查询所有状态的资产。
+     * 资产状态。多个资产状态使用英文逗号分割。 * CREATING：资产创建中，主文件尚未上传 * FAILED：主文件上传失败 * UNACTIVED：主文件上传成功，资产未激活，资产不可用于其他业务（用户可更新状态） * ACTIVED：主文件上传成功，资产激活，资产可用于其他业务（用户可更新状态） * DELETING：资产删除中，资产不可用，资产可恢复 * DELETED：资产文件已删除，资产不可用，资产不可恢复 * BLOCK：资产被冻结，资产不可用，不可查看文件。 * WAITING_DELETE：资产将被下线 默认查询所有状态的资产。
      * @return assetState
      */
     public String getAssetState() {

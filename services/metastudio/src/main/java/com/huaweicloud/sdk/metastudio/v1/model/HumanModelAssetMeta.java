@@ -24,7 +24,7 @@ public class HumanModelAssetMeta {
     private String styleId;
 
     /**
-     * 数字人模型建模类型。 * UPLOADED：租户上传的模型 * PICTURE_MODELING：照片建模生成的模型 * CHARACTER_CUSTOMIZATION_MODELING：捏脸生成的模型
+     * **参数解释**： 数字人模型建模类型。 **约束限制**： 不涉及 **取值范围**： * UPLOADED：租户上传的模型 * PICTURE_MODELING：照片建模生成的模型 * CHARACTER_CUSTOMIZATION_MODELING：捏脸生成的模型
      */
     public static final class ModelingTypeEnum {
 
@@ -126,7 +126,7 @@ public class HumanModelAssetMeta {
     }
 
     /**
-     * 数字人模型风格ID。 * system_male_001：男性风格01 * system_female_001：女性风格01 * system_male_002：男性风格02  * system_female_002：女性风格02
+     * **参数解释**： 数字人模型风格ID。 **约束限制**： 当前仅支持系统提供的几种风格。 **取值范围**： * system_male_001：男性风格01 * system_female_001：女性风格01 * system_male_002：男性风格02  * system_female_002：女性风格02  **默认取值**： 不涉及
      * @return styleId
      */
     public String getStyleId() {
@@ -143,7 +143,7 @@ public class HumanModelAssetMeta {
     }
 
     /**
-     * 数字人模型建模类型。 * UPLOADED：租户上传的模型 * PICTURE_MODELING：照片建模生成的模型 * CHARACTER_CUSTOMIZATION_MODELING：捏脸生成的模型
+     * **参数解释**： 数字人模型建模类型。 **约束限制**： 不涉及 **取值范围**： * UPLOADED：租户上传的模型 * PICTURE_MODELING：照片建模生成的模型 * CHARACTER_CUSTOMIZATION_MODELING：捏脸生成的模型
      * @return modelingType
      */
     public ModelingTypeEnum getModelingType() {
@@ -160,7 +160,7 @@ public class HumanModelAssetMeta {
     }
 
     /**
-     * 建模任务ID。
+     * **参数解释**： 建模任务ID。 **约束限制**： 仅由MetaStudio服务生成的模型系统自行填写 **取值范围**： 字符长度0-64位。 **默认取值**： 不涉及。
      * @return modelingJobId
      */
     public String getModelingJobId() {

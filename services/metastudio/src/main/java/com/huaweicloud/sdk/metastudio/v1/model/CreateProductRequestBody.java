@@ -213,7 +213,7 @@ public class CreateProductRequestBody {
     }
 
     /**
-     * 自动激活商品
+     * **参数解释**： 自动激活商品
      * @return autoActive
      */
     public Boolean getAutoActive() {

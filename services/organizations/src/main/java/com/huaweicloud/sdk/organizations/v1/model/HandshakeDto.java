@@ -33,6 +33,11 @@ public class HandshakeDto {
     private OffsetDateTime createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expired_at")
+
+    private OffsetDateTime expiredAt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "management_account_id")
 
     private String managementAccountId;
@@ -128,6 +133,23 @@ public class HandshakeDto {
 
     public void setCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public HandshakeDto withExpiredAt(OffsetDateTime expiredAt) {
+        this.expiredAt = expiredAt;
+        return this;
+    }
+
+    /**
+     * 邀请（握手）过期的日期和时间。
+     * @return expiredAt
+     */
+    public OffsetDateTime getExpiredAt() {
+        return expiredAt;
+    }
+
+    public void setExpiredAt(OffsetDateTime expiredAt) {
+        this.expiredAt = expiredAt;
     }
 
     public HandshakeDto withManagementAccountId(String managementAccountId) {
@@ -252,6 +274,7 @@ public class HandshakeDto {
         HandshakeDto that = (HandshakeDto) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.urn, that.urn)
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.expiredAt, that.expiredAt)
             && Objects.equals(this.managementAccountId, that.managementAccountId)
             && Objects.equals(this.managementAccountName, that.managementAccountName)
             && Objects.equals(this.organizationId, that.organizationId) && Objects.equals(this.notes, that.notes)
@@ -264,6 +287,7 @@ public class HandshakeDto {
             urn,
             updatedAt,
             createdAt,
+            expiredAt,
             managementAccountId,
             managementAccountName,
             organizationId,
@@ -280,6 +304,7 @@ public class HandshakeDto {
         sb.append("    urn: ").append(toIndentedString(urn)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+        sb.append("    expiredAt: ").append(toIndentedString(expiredAt)).append("\n");
         sb.append("    managementAccountId: ").append(toIndentedString(managementAccountId)).append("\n");
         sb.append("    managementAccountName: ").append(toIndentedString(managementAccountName)).append("\n");
         sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");

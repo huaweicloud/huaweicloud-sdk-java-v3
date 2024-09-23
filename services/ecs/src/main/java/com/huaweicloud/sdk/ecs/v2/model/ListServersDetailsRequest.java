@@ -70,6 +70,11 @@ public class ListServersDetailsRequest {
 
     private String serverId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     public ListServersDetailsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -276,6 +281,23 @@ public class ListServersDetailsRequest {
         this.serverId = serverId;
     }
 
+    public ListServersDetailsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 以单页最后一条server的id作为分页标记。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -291,7 +313,7 @@ public class ListServersDetailsRequest {
             && Objects.equals(this.notTags, that.notTags) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.reservationId, that.reservationId) && Objects.equals(this.status, that.status)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.ipEq, that.ipEq)
-            && Objects.equals(this.serverId, that.serverId);
+            && Objects.equals(this.serverId, that.serverId) && Objects.equals(this.marker, that.marker);
     }
 
     @Override
@@ -307,7 +329,8 @@ public class ListServersDetailsRequest {
             status,
             tags,
             ipEq,
-            serverId);
+            serverId,
+            marker);
     }
 
     @Override
@@ -326,6 +349,7 @@ public class ListServersDetailsRequest {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    ipEq: ").append(toIndentedString(ipEq)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

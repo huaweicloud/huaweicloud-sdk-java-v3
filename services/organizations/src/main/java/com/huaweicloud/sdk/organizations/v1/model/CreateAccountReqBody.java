@@ -34,6 +34,11 @@ public class CreateAccountReqBody {
     private String agencyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<TagDto> tags = null;
@@ -106,6 +111,23 @@ public class CreateAccountReqBody {
         this.agencyName = agencyName;
     }
 
+    public CreateAccountReqBody withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 描述信息。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public CreateAccountReqBody withTags(List<TagDto> tags) {
         this.tags = tags;
         return this;
@@ -150,12 +172,12 @@ public class CreateAccountReqBody {
         CreateAccountReqBody that = (CreateAccountReqBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.email, that.email)
             && Objects.equals(this.phone, that.phone) && Objects.equals(this.agencyName, that.agencyName)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, email, phone, agencyName, tags);
+        return Objects.hash(name, email, phone, agencyName, description, tags);
     }
 
     @Override
@@ -166,6 +188,7 @@ public class CreateAccountReqBody {
         sb.append("    email: ").append(toIndentedString(email)).append("\n");
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();

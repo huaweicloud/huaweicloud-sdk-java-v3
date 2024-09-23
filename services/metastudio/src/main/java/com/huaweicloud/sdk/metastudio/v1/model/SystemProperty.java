@@ -16,7 +16,7 @@ import java.util.Objects;
 public class SystemProperty {
 
     /**
-     * 操作。 - ADD：增加 - DELETE：删除
+     * **参数解释**： 操作。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： * ADD：增加 * DELETE：删除  **默认取值**： 不涉及
      */
     public static final class ActionEnum {
 
@@ -91,7 +91,7 @@ public class SystemProperty {
     private ActionEnum action;
 
     /**
-     * 系统属性。  公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频。 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_IMG：视频制作的2D背景图片。value设置成Yes * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏） * CREATED_BY_PLATFORM: 是否平台生成 * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频(过期) * BUSINESS_CARD_VIDEO：名片视频 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes * LAYER_CONFIG_ENABLE: 可用前景图层配置
+     * **参数解释**： 系统属性条目。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： 公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频。 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_IMG：视频制作的2D背景图片。value设置成Yes * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏） * CREATED_BY_PLATFORM: 是否平台生成 * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频(过期) * BUSINESS_CARD_VIDEO：名片视频 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes * LAYER_CONFIG_ENABLE: 可用前景图层配置  **默认取值**： 不涉及
      */
     public static final class KeyEnum {
 
@@ -242,7 +242,7 @@ public class SystemProperty {
     }
 
     /**
-     * 操作。 - ADD：增加 - DELETE：删除
+     * **参数解释**： 操作。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： * ADD：增加 * DELETE：删除  **默认取值**： 不涉及
      * @return action
      */
     public ActionEnum getAction() {
@@ -259,7 +259,7 @@ public class SystemProperty {
     }
 
     /**
-     * 系统属性。  公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频。 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_IMG：视频制作的2D背景图片。value设置成Yes * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏） * CREATED_BY_PLATFORM: 是否平台生成 * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频(过期) * BUSINESS_CARD_VIDEO：名片视频 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes * LAYER_CONFIG_ENABLE: 可用前景图层配置
+     * **参数解释**： 系统属性条目。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： 公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频。 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_IMG：视频制作的2D背景图片。value设置成Yes * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏） * CREATED_BY_PLATFORM: 是否平台生成 * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频(过期) * BUSINESS_CARD_VIDEO：名片视频 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes * LAYER_CONFIG_ENABLE: 可用前景图层配置  **默认取值**： 不涉及
      * @return key
      */
     public KeyEnum getKey() {
@@ -276,7 +276,7 @@ public class SystemProperty {
     }
 
     /**
-     * 属性值。
+     * **参数解释**： 系统属性属性值。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： 字符长度1-1024位 **默认取值** 不涉及
      * @return value
      */
     public String getValue() {

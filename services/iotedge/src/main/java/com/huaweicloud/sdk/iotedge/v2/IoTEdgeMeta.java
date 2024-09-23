@@ -1579,7 +1579,7 @@ public class IoTEdgeMeta {
         HttpRequestDef.Builder<DeleteDcPointsRequest, DeleteDcPointsResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, DeleteDcPointsRequest.class, DeleteDcPointsResponse.class)
                 .withName("DeleteDcPoints")
-                .withUri("/v2/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/points/batch-delete")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/ots/data-sources/{ds_id}/points/batch-delete")
                 .withContentType("application/json;charset=UTF-8");
 
         // requests

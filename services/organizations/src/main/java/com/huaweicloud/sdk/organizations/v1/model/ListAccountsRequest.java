@@ -11,9 +11,19 @@ import java.util.Objects;
 public class ListAccountsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
 
     private String parentId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "with_register_contact_info")
+
+    private Boolean withRegisterContactInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -24,6 +34,25 @@ public class ListAccountsRequest {
     @JsonProperty(value = "marker")
 
     private String marker;
+
+    public ListAccountsRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public ListAccountsRequest withParentId(String parentId) {
         this.parentId = parentId;
@@ -40,6 +69,23 @@ public class ListAccountsRequest {
 
     public void setParentId(String parentId) {
         this.parentId = parentId;
+    }
+
+    public ListAccountsRequest withWithRegisterContactInfo(Boolean withRegisterContactInfo) {
+        this.withRegisterContactInfo = withRegisterContactInfo;
+        return this;
+    }
+
+    /**
+     * 是否返回账号邮箱、手机号信息。若此参数为True，Limit最多200。
+     * @return withRegisterContactInfo
+     */
+    public Boolean getWithRegisterContactInfo() {
+        return withRegisterContactInfo;
+    }
+
+    public void setWithRegisterContactInfo(Boolean withRegisterContactInfo) {
+        this.withRegisterContactInfo = withRegisterContactInfo;
     }
 
     public ListAccountsRequest withLimit(Integer limit) {
@@ -87,20 +133,23 @@ public class ListAccountsRequest {
             return false;
         }
         ListAccountsRequest that = (ListAccountsRequest) obj;
-        return Objects.equals(this.parentId, that.parentId) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.marker, that.marker);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.withRegisterContactInfo, that.withRegisterContactInfo)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(parentId, limit, marker);
+        return Objects.hash(xSecurityToken, parentId, withRegisterContactInfo, limit, marker);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAccountsRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+        sb.append("    withRegisterContactInfo: ").append(toIndentedString(withRegisterContactInfo)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");

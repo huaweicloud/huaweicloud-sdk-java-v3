@@ -50,6 +50,11 @@ public class AgencyResult {
 
     private String trustDomainName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agency_urn")
+
+    private String agencyUrn;
+
     public AgencyResult withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -186,6 +191,23 @@ public class AgencyResult {
         this.trustDomainName = trustDomainName;
     }
 
+    public AgencyResult withAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
+        return this;
+    }
+
+    /**
+     * 委托URN。
+     * @return agencyUrn
+     */
+    public String getAgencyUrn() {
+        return agencyUrn;
+    }
+
+    public void setAgencyUrn(String agencyUrn) {
+        this.agencyUrn = agencyUrn;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -199,12 +221,14 @@ public class AgencyResult {
             && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.expireTime, that.expireTime)
             && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.trustDomainId, that.trustDomainId)
-            && Objects.equals(this.trustDomainName, that.trustDomainName);
+            && Objects.equals(this.trustDomainName, that.trustDomainName)
+            && Objects.equals(this.agencyUrn, that.agencyUrn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(createTime, description, domainId, expireTime, id, name, trustDomainId, trustDomainName);
+        return Objects
+            .hash(createTime, description, domainId, expireTime, id, name, trustDomainId, trustDomainName, agencyUrn);
     }
 
     @Override
@@ -219,6 +243,7 @@ public class AgencyResult {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    trustDomainId: ").append(toIndentedString(trustDomainId)).append("\n");
         sb.append("    trustDomainName: ").append(toIndentedString(trustDomainName)).append("\n");
+        sb.append("    agencyUrn: ").append(toIndentedString(agencyUrn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

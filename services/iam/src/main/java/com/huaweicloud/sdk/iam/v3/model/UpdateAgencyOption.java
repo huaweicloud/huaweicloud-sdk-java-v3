@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.iam.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -30,80 +25,10 @@ public class UpdateAgencyOption {
 
     private String description;
 
-    /**
-     * 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。四个参数至少填写一个。
-     */
-    public static final class DurationEnum {
-
-        /**
-         * Enum FOREVER for value: "FOREVER"
-         */
-        public static final DurationEnum FOREVER = new DurationEnum("FOREVER");
-
-        /**
-         * Enum ONEDAY for value: "ONEDAY"
-         */
-        public static final DurationEnum ONEDAY = new DurationEnum("ONEDAY");
-
-        private static final Map<String, DurationEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, DurationEnum> createStaticFields() {
-            Map<String, DurationEnum> map = new HashMap<>();
-            map.put("FOREVER", FOREVER);
-            map.put("ONEDAY", ONEDAY);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        DurationEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static DurationEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DurationEnum(value));
-        }
-
-        public static DurationEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof DurationEnum) {
-                return this.value.equals(((DurationEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
-    private DurationEnum duration;
+    private String duration;
 
     public UpdateAgencyOption withTrustDomainId(String trustDomainId) {
         this.trustDomainId = trustDomainId;
@@ -156,20 +81,20 @@ public class UpdateAgencyOption {
         this.description = description;
     }
 
-    public UpdateAgencyOption withDuration(DurationEnum duration) {
+    public UpdateAgencyOption withDuration(String duration) {
         this.duration = duration;
         return this;
     }
 
     /**
-     * 委托的期限。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天。四个参数至少填写一个。
+     * 委托的期限，单位为“天”。默认为FOREVER。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天,取值为自定义天数表示委托的期限为有限天数，如20。四个参数至少填写一个。
      * @return duration
      */
-    public DurationEnum getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(DurationEnum duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 

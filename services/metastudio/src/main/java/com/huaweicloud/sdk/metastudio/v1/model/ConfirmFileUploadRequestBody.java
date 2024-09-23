@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ConfirmFileUploadRequestBody {
 
     /**
-     * 文件上传状态。 - CREATED：上传完成 - FAILED：上传失败 - CANCELLED：取消上传
+     * **参数解释**： 文件上传状态。 **约束限制**： 不涉及 **取值范围**： * CREATED：上传完成 * FAILED：上传失败 * CANCELLED：取消上传  **默认取值**： 不涉及
      */
     public static final class StateEnum {
 
@@ -96,18 +96,13 @@ public class ConfirmFileUploadRequestBody {
 
     private StateEnum state;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "auto_meta_analysis")
-
-    private Boolean autoMetaAnalysis;
-
     public ConfirmFileUploadRequestBody withState(StateEnum state) {
         this.state = state;
         return this;
     }
 
     /**
-     * 文件上传状态。 - CREATED：上传完成 - FAILED：上传失败 - CANCELLED：取消上传
+     * **参数解释**： 文件上传状态。 **约束限制**： 不涉及 **取值范围**： * CREATED：上传完成 * FAILED：上传失败 * CANCELLED：取消上传  **默认取值**： 不涉及
      * @return state
      */
     public StateEnum getState() {
@@ -116,23 +111,6 @@ public class ConfirmFileUploadRequestBody {
 
     public void setState(StateEnum state) {
         this.state = state;
-    }
-
-    public ConfirmFileUploadRequestBody withAutoMetaAnalysis(Boolean autoMetaAnalysis) {
-        this.autoMetaAnalysis = autoMetaAnalysis;
-        return this;
-    }
-
-    /**
-     * 元数据自动解析,仅支持图片，视频，音频主文件
-     * @return autoMetaAnalysis
-     */
-    public Boolean getAutoMetaAnalysis() {
-        return autoMetaAnalysis;
-    }
-
-    public void setAutoMetaAnalysis(Boolean autoMetaAnalysis) {
-        this.autoMetaAnalysis = autoMetaAnalysis;
     }
 
     @Override
@@ -144,12 +122,12 @@ public class ConfirmFileUploadRequestBody {
             return false;
         }
         ConfirmFileUploadRequestBody that = (ConfirmFileUploadRequestBody) obj;
-        return Objects.equals(this.state, that.state) && Objects.equals(this.autoMetaAnalysis, that.autoMetaAnalysis);
+        return Objects.equals(this.state, that.state);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(state, autoMetaAnalysis);
+        return Objects.hash(state);
     }
 
     @Override
@@ -157,7 +135,6 @@ public class ConfirmFileUploadRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class ConfirmFileUploadRequestBody {\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
-        sb.append("    autoMetaAnalysis: ").append(toIndentedString(autoMetaAnalysis)).append("\n");
         sb.append("}");
         return sb.toString();
     }

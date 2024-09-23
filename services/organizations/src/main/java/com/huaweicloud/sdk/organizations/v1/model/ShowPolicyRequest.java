@@ -16,6 +16,11 @@ import java.util.Objects;
 public class ShowPolicyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
     private String policyId;
@@ -95,6 +100,25 @@ public class ShowPolicyRequest {
 
     private XLanguageEnum xLanguage;
 
+    public ShowPolicyRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
+
     public ShowPolicyRequest withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
@@ -140,18 +164,20 @@ public class ShowPolicyRequest {
             return false;
         }
         ShowPolicyRequest that = (ShowPolicyRequest) obj;
-        return Objects.equals(this.policyId, that.policyId) && Objects.equals(this.xLanguage, that.xLanguage);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.policyId, that.policyId)
+            && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId, xLanguage);
+        return Objects.hash(xSecurityToken, policyId, xLanguage);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPolicyRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("}");

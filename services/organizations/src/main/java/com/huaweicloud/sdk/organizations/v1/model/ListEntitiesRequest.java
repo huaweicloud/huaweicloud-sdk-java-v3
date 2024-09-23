@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListEntitiesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_id")
 
     private String parentId;
@@ -29,6 +34,25 @@ public class ListEntitiesRequest {
     @JsonProperty(value = "marker")
 
     private String marker;
+
+    public ListEntitiesRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public ListEntitiesRequest withParentId(String parentId) {
         this.parentId = parentId;
@@ -53,7 +77,7 @@ public class ListEntitiesRequest {
     }
 
     /**
-     * 子节点（根或组织单元）的唯一标识符（ID）。
+     * 子节点（组织单元）的唯一标识符（ID）。
      * @return childId
      */
     public String getChildId() {
@@ -109,19 +133,21 @@ public class ListEntitiesRequest {
             return false;
         }
         ListEntitiesRequest that = (ListEntitiesRequest) obj;
-        return Objects.equals(this.parentId, that.parentId) && Objects.equals(this.childId, that.childId)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.childId, that.childId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(parentId, childId, limit, marker);
+        return Objects.hash(xSecurityToken, parentId, childId, limit, marker);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListEntitiesRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
         sb.append("    childId: ").append(toIndentedString(childId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

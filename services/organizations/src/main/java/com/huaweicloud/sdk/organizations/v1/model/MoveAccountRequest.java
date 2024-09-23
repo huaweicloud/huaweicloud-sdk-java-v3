@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class MoveAccountRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_id")
 
     private String accountId;
@@ -20,6 +25,25 @@ public class MoveAccountRequest {
     @JsonProperty(value = "body")
 
     private MoveAccountReqBody body;
+
+    public MoveAccountRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public MoveAccountRequest withAccountId(String accountId) {
         this.accountId = accountId;
@@ -73,18 +97,20 @@ public class MoveAccountRequest {
             return false;
         }
         MoveAccountRequest that = (MoveAccountRequest) obj;
-        return Objects.equals(this.accountId, that.accountId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
+            && Objects.equals(this.accountId, that.accountId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountId, body);
+        return Objects.hash(xSecurityToken, accountId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class MoveAccountRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

@@ -11,9 +11,33 @@ import java.util.Objects;
 public class DeleteOrganizationalUnitRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "organizational_unit_id")
 
     private String organizationalUnitId;
+
+    public DeleteOrganizationalUnitRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public DeleteOrganizationalUnitRequest withOrganizationalUnitId(String organizationalUnitId) {
         this.organizationalUnitId = organizationalUnitId;
@@ -41,18 +65,20 @@ public class DeleteOrganizationalUnitRequest {
             return false;
         }
         DeleteOrganizationalUnitRequest that = (DeleteOrganizationalUnitRequest) obj;
-        return Objects.equals(this.organizationalUnitId, that.organizationalUnitId);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
+            && Objects.equals(this.organizationalUnitId, that.organizationalUnitId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(organizationalUnitId);
+        return Objects.hash(xSecurityToken, organizationalUnitId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteOrganizationalUnitRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    organizationalUnitId: ").append(toIndentedString(organizationalUnitId)).append("\n");
         sb.append("}");
         return sb.toString();

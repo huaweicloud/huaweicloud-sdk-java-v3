@@ -100,6 +100,11 @@ public class ListVolumesRequest {
 
     private String serverId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "snapshot_policy_id")
+
+    private String snapshotPolicyId;
+
     public ListVolumesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -408,6 +413,23 @@ public class ListVolumesRequest {
         this.serverId = serverId;
     }
 
+    public ListVolumesRequest withSnapshotPolicyId(String snapshotPolicyId) {
+        this.snapshotPolicyId = snapshotPolicyId;
+        return this;
+    }
+
+    /**
+     * 自动快照策略ID
+     * @return snapshotPolicyId
+     */
+    public String getSnapshotPolicyId() {
+        return snapshotPolicyId;
+    }
+
+    public void setSnapshotPolicyId(String snapshotPolicyId) {
+        this.snapshotPolicyId = snapshotPolicyId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -427,7 +449,8 @@ public class ListVolumesRequest {
             && Objects.equals(this.dedicatedStorageName, that.dedicatedStorageName)
             && Objects.equals(this.volumeTypeId, that.volumeTypeId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.ids, that.ids) && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.serverId, that.serverId);
+            && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.snapshotPolicyId, that.snapshotPolicyId);
     }
 
     @Override
@@ -449,7 +472,8 @@ public class ListVolumesRequest {
             id,
             ids,
             enterpriseProjectId,
-            serverId);
+            serverId,
+            snapshotPolicyId);
     }
 
     @Override
@@ -474,6 +498,7 @@ public class ListVolumesRequest {
         sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
+        sb.append("    snapshotPolicyId: ").append(toIndentedString(snapshotPolicyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

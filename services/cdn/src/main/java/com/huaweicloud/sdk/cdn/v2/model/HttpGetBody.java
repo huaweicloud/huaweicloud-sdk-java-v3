@@ -29,6 +29,11 @@ public class HttpGetBody {
     private Integer certificateSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scm_certificate_id")
+
+    private String scmCertificateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_name")
 
     private String certificateName;
@@ -108,7 +113,7 @@ public class HttpGetBody {
     }
 
     /**
-     * 证书来源，1：华为云托管证书，0：自有证书。
+     * 证书来源，1：华为云托管证书，0：自有证书。2：SCM证书。
      * @return certificateSource
      */
     public Integer getCertificateSource() {
@@ -117,6 +122,23 @@ public class HttpGetBody {
 
     public void setCertificateSource(Integer certificateSource) {
         this.certificateSource = certificateSource;
+    }
+
+    public HttpGetBody withScmCertificateId(String scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
+        return this;
+    }
+
+    /**
+     * SCM证书id
+     * @return scmCertificateId
+     */
+    public String getScmCertificateId() {
+        return scmCertificateId;
+    }
+
+    public void setScmCertificateId(String scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
     }
 
     public HttpGetBody withCertificateName(String certificateName) {
@@ -283,6 +305,7 @@ public class HttpGetBody {
         return Objects.equals(this.httpsStatus, that.httpsStatus)
             && Objects.equals(this.certificateType, that.certificateType)
             && Objects.equals(this.certificateSource, that.certificateSource)
+            && Objects.equals(this.scmCertificateId, that.scmCertificateId)
             && Objects.equals(this.certificateName, that.certificateName)
             && Objects.equals(this.certificateValue, that.certificateValue)
             && Objects.equals(this.expireTime, that.expireTime)
@@ -297,6 +320,7 @@ public class HttpGetBody {
         return Objects.hash(httpsStatus,
             certificateType,
             certificateSource,
+            scmCertificateId,
             certificateName,
             certificateValue,
             expireTime,
@@ -314,6 +338,7 @@ public class HttpGetBody {
         sb.append("    httpsStatus: ").append(toIndentedString(httpsStatus)).append("\n");
         sb.append("    certificateType: ").append(toIndentedString(certificateType)).append("\n");
         sb.append("    certificateSource: ").append(toIndentedString(certificateSource)).append("\n");
+        sb.append("    scmCertificateId: ").append(toIndentedString(scmCertificateId)).append("\n");
         sb.append("    certificateName: ").append(toIndentedString(certificateName)).append("\n");
         sb.append("    certificateValue: ").append(toIndentedString(certificateValue)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");

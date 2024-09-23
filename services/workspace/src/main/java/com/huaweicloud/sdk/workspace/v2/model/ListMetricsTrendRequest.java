@@ -186,7 +186,7 @@ public class ListMetricsTrendRequest {
     }
 
     /**
-     * 指标名称列表
+     * 指标名称，支持的指标名称参考[Workspace运维监控指标](https://support.huaweicloud.com/usermanual-workspace/workspace_06_1032.html)
      * @return metricNames
      */
     public List<String> getMetricNames() {

@@ -31,7 +31,7 @@ public class PPTPageInfo {
     }
 
     /**
-     * 页面编号。
+     * **参数解释**： 页面编号。 **约束限制**： 不涉及
      * minimum: 1
      * maximum: 256
      * @return pageNo
@@ -50,7 +50,7 @@ public class PPTPageInfo {
     }
 
     /**
-     * 页面对应图片文件ID。
+     * **参数解释**： 页面对应图片文件ID。 **约束限制**： 不涉及 **取值范围**： 字符长度1-64位 **默认取值**： 不涉及
      * @return fileId
      */
     public String getFileId() {
@@ -67,7 +67,7 @@ public class PPTPageInfo {
     }
 
     /**
-     * 讲解词（从备注中提取）。
+     * **参数解释**： 页面对应图片文件ID **约束限制**： 不涉及 **取值范围**： 字符长度0-2048位 **默认取值**： 不涉及。
      * @return pageContent
      */
     public String getPageContent() {

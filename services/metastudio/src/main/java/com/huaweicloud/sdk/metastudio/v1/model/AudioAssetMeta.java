@@ -47,7 +47,7 @@ public class AudioAssetMeta {
     }
 
     /**
-     * 时长,单位秒
+     * **参数解释**： 时长,单位秒。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及
      * minimum: 0
      * maximum: 86400
      * @return duration
@@ -66,7 +66,7 @@ public class AudioAssetMeta {
     }
 
     /**
-     * 音频编码格式
+     * **参数解释**： 音频编码格式。 **约束限制**： 用户无需填写，系统自行提取。 **取值范围**： 字符长度0-32位。 **默认取值**： 不涉及
      * @return audioCodec
      */
     public String getAudioCodec() {
@@ -83,7 +83,7 @@ public class AudioAssetMeta {
     }
 
     /**
-     * 音频平均码率,单位kbps
+     * **参数解释**： 音频平均码率,单位kbps。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及
      * minimum: 0
      * maximum: 16384
      * @return audioBitRate
@@ -102,7 +102,7 @@ public class AudioAssetMeta {
     }
 
     /**
-     * 音频声道数
+     * **参数解释**： 音频声道数。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及
      * minimum: 0
      * maximum: 100
      * @return audioChannels
@@ -121,7 +121,7 @@ public class AudioAssetMeta {
     }
 
     /**
-     * 采样率,HZ
+     * **参数解释**： 采样率,HZ。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及
      * minimum: 0
      * maximum: 100000
      * @return sample

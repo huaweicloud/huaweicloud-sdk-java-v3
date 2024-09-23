@@ -11,9 +11,33 @@ import java.util.Objects;
 public class CloseAccountRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "account_id")
 
     private String accountId;
+
+    public CloseAccountRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public CloseAccountRequest withAccountId(String accountId) {
         this.accountId = accountId;
@@ -41,18 +65,20 @@ public class CloseAccountRequest {
             return false;
         }
         CloseAccountRequest that = (CloseAccountRequest) obj;
-        return Objects.equals(this.accountId, that.accountId);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
+            && Objects.equals(this.accountId, that.accountId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accountId);
+        return Objects.hash(xSecurityToken, accountId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CloseAccountRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
         sb.append("}");
         return sb.toString();

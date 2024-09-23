@@ -1455,6 +1455,11 @@ public class EcsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersDetailsRequest::getServerId, ListServersDetailsRequest::setServerId));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServersDetailsRequest::getMarker, ListServersDetailsRequest::setMarker));
 
         // response
 

@@ -16,6 +16,11 @@ import java.util.Objects;
 public class ShowEffectivePoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "entity_id")
 
     private String entityId;
@@ -89,6 +94,25 @@ public class ShowEffectivePoliciesRequest {
 
     private PolicyTypeEnum policyType;
 
+    public ShowEffectivePoliciesRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
+
     public ShowEffectivePoliciesRequest withEntityId(String entityId) {
         this.entityId = entityId;
         return this;
@@ -132,18 +156,20 @@ public class ShowEffectivePoliciesRequest {
             return false;
         }
         ShowEffectivePoliciesRequest that = (ShowEffectivePoliciesRequest) obj;
-        return Objects.equals(this.entityId, that.entityId) && Objects.equals(this.policyType, that.policyType);
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.entityId, that.entityId)
+            && Objects.equals(this.policyType, that.policyType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(entityId, policyType);
+        return Objects.hash(xSecurityToken, entityId, policyType);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowEffectivePoliciesRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
         sb.append("    policyType: ").append(toIndentedString(policyType)).append("\n");
         sb.append("}");

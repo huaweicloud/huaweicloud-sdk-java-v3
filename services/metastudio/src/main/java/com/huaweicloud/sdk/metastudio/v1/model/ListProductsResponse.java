@@ -35,7 +35,7 @@ public class ListProductsResponse extends SdkResponse {
     }
 
     /**
-     * 商品信息总数
+     * **参数解释**： 商品信息总数
      * minimum: 0
      * maximum: 2147483647
      * @return count

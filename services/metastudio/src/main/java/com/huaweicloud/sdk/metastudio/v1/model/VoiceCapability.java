@@ -55,13 +55,18 @@ public class VoiceCapability {
 
     private Boolean isSupportWord;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_voice_cache")
+
+    private Boolean isSupportVoiceCache;
+
     public VoiceCapability withIsSupportPhonemeEn(Boolean isSupportPhonemeEn) {
         this.isSupportPhonemeEn = isSupportPhonemeEn;
         return this;
     }
 
     /**
-     * 支持英文音标。
+     * **参数解释**： 该声音是否支持英文音标。 **约束限制**： 不涉及 **取值范围**： * true: 支持英文音标 * false: 不支持英文音标
      * @return isSupportPhonemeEn
      */
     public Boolean getIsSupportPhonemeEn() {
@@ -78,7 +83,7 @@ public class VoiceCapability {
     }
 
     /**
-     * 是否支持多音字。
+     * **参数解释**： 该声音是否支持中文多音字。 **约束限制**： 不涉及 **取值范围**： * true: 支持中文多音字 * false: 不支持中文多音字
      * @return isSupportPhoneme
      */
     public Boolean getIsSupportPhoneme() {
@@ -95,7 +100,7 @@ public class VoiceCapability {
     }
 
     /**
-     * 是否支持停顿。
+     * **参数解释**： 该声音是否支持停顿。 **约束限制**： 不涉及 **取值范围**： * true: 支持停顿 * false: 不支持停顿
      * @return isSupportBreakTime
      */
     public Boolean getIsSupportBreakTime() {
@@ -112,7 +117,7 @@ public class VoiceCapability {
     }
 
     /**
-     * 是否支持韵律。
+     * **参数解释**： 该声音是否支持韵律。 **约束限制**： 不涉及 **取值范围**： * true: 支持韵律 * false: 不支持韵律
      * @return isSupportBreakStrength
      */
     public Boolean getIsSupportBreakStrength() {
@@ -129,7 +134,7 @@ public class VoiceCapability {
     }
 
     /**
-     * 是否支持全局语速。
+     * **参数解释**： 该声音是否支持全局语速。 **约束限制**： 不涉及 **取值范围**： * true: 支持全局语速 * false: 不支持全局语速
      * @return isSupportSpeed
      */
     public Boolean getIsSupportSpeed() {
@@ -146,7 +151,7 @@ public class VoiceCapability {
     }
 
     /**
-     * 是否支持局部语速。
+     * **参数解释**： 该声音是否支持局部语速。 **约束限制**： 不涉及 **取值范围**： * true: 支持局部语速 * false: 不支持局部语速
      * @return isSupportProsody
      */
     public Boolean getIsSupportProsody() {
@@ -163,7 +168,7 @@ public class VoiceCapability {
     }
 
     /**
-     * 是否支持SSML的say-as标签。
+     * **参数解释**： 该声音是否支持SSML的say-as标签。 **约束限制**： 不涉及 **取值范围**： * true: 支持SSML的say-as标签 * false: 不支持SSML的say-as标签
      * @return isSupportSsmlSayAs
      */
     public Boolean getIsSupportSsmlSayAs() {
@@ -180,7 +185,7 @@ public class VoiceCapability {
     }
 
     /**
-     * 是否支持SSML的sub标签。
+     * **参数解释**： 该声音是否支持SSML的sub标签。 **约束限制**： 不涉及 **取值范围**： * true: 支持SSML的sub标签 * false: 不支持SSML的sub标签
      * @return isSupportSsmlSub
      */
     public Boolean getIsSupportSsmlSub() {
@@ -197,7 +202,7 @@ public class VoiceCapability {
     }
 
     /**
-     * 是否支持连读。
+     * **参数解释**： 该声音是否支持连读。 **约束限制**： 不涉及 **取值范围**： * true: 支持连读 * false: 不支持连读
      * @return isSupportWord
      */
     public Boolean getIsSupportWord() {
@@ -206,6 +211,23 @@ public class VoiceCapability {
 
     public void setIsSupportWord(Boolean isSupportWord) {
         this.isSupportWord = isSupportWord;
+    }
+
+    public VoiceCapability withIsSupportVoiceCache(Boolean isSupportVoiceCache) {
+        this.isSupportVoiceCache = isSupportVoiceCache;
+        return this;
+    }
+
+    /**
+     * 是否支持缓存。
+     * @return isSupportVoiceCache
+     */
+    public Boolean getIsSupportVoiceCache() {
+        return isSupportVoiceCache;
+    }
+
+    public void setIsSupportVoiceCache(Boolean isSupportVoiceCache) {
+        this.isSupportVoiceCache = isSupportVoiceCache;
     }
 
     @Override
@@ -225,7 +247,8 @@ public class VoiceCapability {
             && Objects.equals(this.isSupportProsody, that.isSupportProsody)
             && Objects.equals(this.isSupportSsmlSayAs, that.isSupportSsmlSayAs)
             && Objects.equals(this.isSupportSsmlSub, that.isSupportSsmlSub)
-            && Objects.equals(this.isSupportWord, that.isSupportWord);
+            && Objects.equals(this.isSupportWord, that.isSupportWord)
+            && Objects.equals(this.isSupportVoiceCache, that.isSupportVoiceCache);
     }
 
     @Override
@@ -238,7 +261,8 @@ public class VoiceCapability {
             isSupportProsody,
             isSupportSsmlSayAs,
             isSupportSsmlSub,
-            isSupportWord);
+            isSupportWord,
+            isSupportVoiceCache);
     }
 
     @Override
@@ -254,6 +278,7 @@ public class VoiceCapability {
         sb.append("    isSupportSsmlSayAs: ").append(toIndentedString(isSupportSsmlSayAs)).append("\n");
         sb.append("    isSupportSsmlSub: ").append(toIndentedString(isSupportSsmlSub)).append("\n");
         sb.append("    isSupportWord: ").append(toIndentedString(isSupportWord)).append("\n");
+        sb.append("    isSupportVoiceCache: ").append(toIndentedString(isSupportVoiceCache)).append("\n");
         sb.append("}");
         return sb.toString();
     }

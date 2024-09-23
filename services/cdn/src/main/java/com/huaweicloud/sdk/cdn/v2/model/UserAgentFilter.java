@@ -24,6 +24,11 @@ public class UserAgentFilter {
     private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "include_empty")
+
+    private Boolean includeEmpty;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ua_list")
 
     private List<String> uaList = null;
@@ -60,6 +65,23 @@ public class UserAgentFilter {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public UserAgentFilter withIncludeEmpty(Boolean includeEmpty) {
+        this.includeEmpty = includeEmpty;
+        return this;
+    }
+
+    /**
+     * 是否包含空User-Agent，true:包含，false：不包含。空User-Agent是指没有User-Agent字段或者该字段的值为空。如果黑名单且该字段值为true，则表示空User-Agent不允许访问，如果是白名单且该字段值为true，则表示空User-Agent允许访问。设置User-Agent黑名单时，默认值为false，设置User-Agent白名单时，默认值为true。
+     * @return includeEmpty
+     */
+    public Boolean getIncludeEmpty() {
+        return includeEmpty;
+    }
+
+    public void setIncludeEmpty(Boolean includeEmpty) {
+        this.includeEmpty = includeEmpty;
     }
 
     public UserAgentFilter withUaList(List<String> uaList) {
@@ -105,12 +127,12 @@ public class UserAgentFilter {
         }
         UserAgentFilter that = (UserAgentFilter) obj;
         return Objects.equals(this.type, that.type) && Objects.equals(this.value, that.value)
-            && Objects.equals(this.uaList, that.uaList);
+            && Objects.equals(this.includeEmpty, that.includeEmpty) && Objects.equals(this.uaList, that.uaList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, value, uaList);
+        return Objects.hash(type, value, includeEmpty, uaList);
     }
 
     @Override
@@ -119,6 +141,7 @@ public class UserAgentFilter {
         sb.append("class UserAgentFilter {\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    includeEmpty: ").append(toIndentedString(includeEmpty)).append("\n");
         sb.append("    uaList: ").append(toIndentedString(uaList)).append("\n");
         sb.append("}");
         return sb.toString();
