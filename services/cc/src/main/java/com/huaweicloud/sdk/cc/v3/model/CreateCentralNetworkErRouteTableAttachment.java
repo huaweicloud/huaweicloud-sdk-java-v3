@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * CreateCentralNetworkErRouteTableAttachment
+ * 创建中心网络ER附件的请求体。
  */
 public class CreateCentralNetworkErRouteTableAttachment {
 
@@ -39,6 +39,11 @@ public class CreateCentralNetworkErRouteTableAttachment {
     @JsonProperty(value = "enterprise_router_region_id")
 
     private String enterpriseRouterRegionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "central_network_plane_id")
+
+    private String centralNetworkPlaneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attachment_id")
@@ -69,11 +74,6 @@ public class CreateCentralNetworkErRouteTableAttachment {
     @JsonProperty(value = "attached_er_table_id")
 
     private String attachedErTableId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "central_network_plane_id")
-
-    private String centralNetworkPlaneId;
 
     /**
      * - HWCloud (华为云) - Ireland (爱尔兰)
@@ -190,7 +190,7 @@ public class CreateCentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 企业路由器的ID。
      * @return enterpriseRouterId
      */
     public String getEnterpriseRouterId() {
@@ -207,7 +207,7 @@ public class CreateCentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 实例所属项目ID。
+     * 企业路由器的项目ID。
      * @return enterpriseRouterProjectId
      */
     public String getEnterpriseRouterProjectId() {
@@ -224,7 +224,7 @@ public class CreateCentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * RegionID。
+     * ER路由器的regionID。
      * @return enterpriseRouterRegionId
      */
     public String getEnterpriseRouterRegionId() {
@@ -235,13 +235,30 @@ public class CreateCentralNetworkErRouteTableAttachment {
         this.enterpriseRouterRegionId = enterpriseRouterRegionId;
     }
 
+    public CreateCentralNetworkErRouteTableAttachment withCentralNetworkPlaneId(String centralNetworkPlaneId) {
+        this.centralNetworkPlaneId = centralNetworkPlaneId;
+        return this;
+    }
+
+    /**
+     * 中心网络平面ID。
+     * @return centralNetworkPlaneId
+     */
+    public String getCentralNetworkPlaneId() {
+        return centralNetworkPlaneId;
+    }
+
+    public void setCentralNetworkPlaneId(String centralNetworkPlaneId) {
+        this.centralNetworkPlaneId = centralNetworkPlaneId;
+    }
+
     public CreateCentralNetworkErRouteTableAttachment withAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
         return this;
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络附件对端实例的连接ID，企业路由器的连接ID或者GDGW的连接ID。
      * @return attachmentId
      */
     public String getAttachmentId() {
@@ -258,7 +275,7 @@ public class CreateCentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 企业路由器的路由表ID。
      * @return enterpriseRouterTableId
      */
     public String getEnterpriseRouterTableId() {
@@ -309,7 +326,7 @@ public class CreateCentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return attachedErId
      */
     public String getAttachedErId() {
@@ -326,7 +343,7 @@ public class CreateCentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return attachedErTableId
      */
     public String getAttachedErTableId() {
@@ -335,23 +352,6 @@ public class CreateCentralNetworkErRouteTableAttachment {
 
     public void setAttachedErTableId(String attachedErTableId) {
         this.attachedErTableId = attachedErTableId;
-    }
-
-    public CreateCentralNetworkErRouteTableAttachment withCentralNetworkPlaneId(String centralNetworkPlaneId) {
-        this.centralNetworkPlaneId = centralNetworkPlaneId;
-        return this;
-    }
-
-    /**
-     * 资源ID标识符。
-     * @return centralNetworkPlaneId
-     */
-    public String getCentralNetworkPlaneId() {
-        return centralNetworkPlaneId;
-    }
-
-    public void setCentralNetworkPlaneId(String centralNetworkPlaneId) {
-        this.centralNetworkPlaneId = centralNetworkPlaneId;
     }
 
     public CreateCentralNetworkErRouteTableAttachment withHostedCloud(HostedCloudEnum hostedCloud) {
@@ -384,13 +384,13 @@ public class CreateCentralNetworkErRouteTableAttachment {
             && Objects.equals(this.enterpriseRouterId, that.enterpriseRouterId)
             && Objects.equals(this.enterpriseRouterProjectId, that.enterpriseRouterProjectId)
             && Objects.equals(this.enterpriseRouterRegionId, that.enterpriseRouterRegionId)
+            && Objects.equals(this.centralNetworkPlaneId, that.centralNetworkPlaneId)
             && Objects.equals(this.attachmentId, that.attachmentId)
             && Objects.equals(this.enterpriseRouterTableId, that.enterpriseRouterTableId)
             && Objects.equals(this.attachedErTableProjectId, that.attachedErTableProjectId)
             && Objects.equals(this.attachedErTableRegionId, that.attachedErTableRegionId)
             && Objects.equals(this.attachedErId, that.attachedErId)
             && Objects.equals(this.attachedErTableId, that.attachedErTableId)
-            && Objects.equals(this.centralNetworkPlaneId, that.centralNetworkPlaneId)
             && Objects.equals(this.hostedCloud, that.hostedCloud);
     }
 
@@ -401,13 +401,13 @@ public class CreateCentralNetworkErRouteTableAttachment {
             enterpriseRouterId,
             enterpriseRouterProjectId,
             enterpriseRouterRegionId,
+            centralNetworkPlaneId,
             attachmentId,
             enterpriseRouterTableId,
             attachedErTableProjectId,
             attachedErTableRegionId,
             attachedErId,
             attachedErTableId,
-            centralNetworkPlaneId,
             hostedCloud);
     }
 
@@ -420,13 +420,13 @@ public class CreateCentralNetworkErRouteTableAttachment {
         sb.append("    enterpriseRouterId: ").append(toIndentedString(enterpriseRouterId)).append("\n");
         sb.append("    enterpriseRouterProjectId: ").append(toIndentedString(enterpriseRouterProjectId)).append("\n");
         sb.append("    enterpriseRouterRegionId: ").append(toIndentedString(enterpriseRouterRegionId)).append("\n");
+        sb.append("    centralNetworkPlaneId: ").append(toIndentedString(centralNetworkPlaneId)).append("\n");
         sb.append("    attachmentId: ").append(toIndentedString(attachmentId)).append("\n");
         sb.append("    enterpriseRouterTableId: ").append(toIndentedString(enterpriseRouterTableId)).append("\n");
         sb.append("    attachedErTableProjectId: ").append(toIndentedString(attachedErTableProjectId)).append("\n");
         sb.append("    attachedErTableRegionId: ").append(toIndentedString(attachedErTableRegionId)).append("\n");
         sb.append("    attachedErId: ").append(toIndentedString(attachedErId)).append("\n");
         sb.append("    attachedErTableId: ").append(toIndentedString(attachedErTableId)).append("\n");
-        sb.append("    centralNetworkPlaneId: ").append(toIndentedString(centralNetworkPlaneId)).append("\n");
         sb.append("    hostedCloud: ").append(toIndentedString(hostedCloud)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -43,6 +43,98 @@ public class ListGlobalConnectionBandwidthsRequest {
 
     private List<String> enterpriseProjectId = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private List<String> instanceId = null;
+
+    /**
+     * Gets or Sets instanceType
+     */
+    public static final class InstanceTypeEnum {
+
+        /**
+         * Enum CC for value: "CC"
+         */
+        public static final InstanceTypeEnum CC = new InstanceTypeEnum("CC");
+
+        /**
+         * Enum GEIP for value: "GEIP"
+         */
+        public static final InstanceTypeEnum GEIP = new InstanceTypeEnum("GEIP");
+
+        /**
+         * Enum GCN for value: "GCN"
+         */
+        public static final InstanceTypeEnum GCN = new InstanceTypeEnum("GCN");
+
+        /**
+         * Enum GSN for value: "GSN"
+         */
+        public static final InstanceTypeEnum GSN = new InstanceTypeEnum("GSN");
+
+        private static final Map<String, InstanceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InstanceTypeEnum> createStaticFields() {
+            Map<String, InstanceTypeEnum> map = new HashMap<>();
+            map.put("CC", CC);
+            map.put("GEIP", GEIP);
+            map.put("GCN", GCN);
+            map.put("GSN", GSN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        InstanceTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static InstanceTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceTypeEnum(value));
+        }
+
+        public static InstanceTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof InstanceTypeEnum) {
+                return this.value.equals(((InstanceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_type")
+
+    private List<InstanceTypeEnum> instanceType = null;
+
     /**
      * Gets or Sets bindingService
      */
@@ -218,6 +310,81 @@ public class ListGlobalConnectionBandwidthsRequest {
     private List<TypeEnum> type = null;
 
     /**
+     * Gets or Sets adminState
+     */
+    public static final class AdminStateEnum {
+
+        /**
+         * Enum NORMAL for value: "NORMAL"
+         */
+        public static final AdminStateEnum NORMAL = new AdminStateEnum("NORMAL");
+
+        /**
+         * Enum FREEZED for value: "FREEZED"
+         */
+        public static final AdminStateEnum FREEZED = new AdminStateEnum("FREEZED");
+
+        private static final Map<String, AdminStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AdminStateEnum> createStaticFields() {
+            Map<String, AdminStateEnum> map = new HashMap<>();
+            map.put("NORMAL", NORMAL);
+            map.put("FREEZED", FREEZED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AdminStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AdminStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AdminStateEnum(value));
+        }
+
+        public static AdminStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AdminStateEnum) {
+                return this.value.equals(((AdminStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "admin_state")
+
+    private List<AdminStateEnum> adminState = null;
+
+    /**
      * Gets or Sets chargeMode
      */
     public static final class ChargeModeEnum {
@@ -232,12 +399,18 @@ public class ListGlobalConnectionBandwidthsRequest {
          */
         public static final ChargeModeEnum _95 = new ChargeModeEnum("95");
 
+        /**
+         * Enum _95AVR for value: "95avr"
+         */
+        public static final ChargeModeEnum _95AVR = new ChargeModeEnum("95avr");
+
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ChargeModeEnum> createStaticFields() {
             Map<String, ChargeModeEnum> map = new HashMap<>();
             map.put("bwd", BWD);
             map.put("95", _95);
+            map.put("95avr", _95AVR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -428,6 +601,72 @@ public class ListGlobalConnectionBandwidthsRequest {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public ListGlobalConnectionBandwidthsRequest withInstanceId(List<String> instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    public ListGlobalConnectionBandwidthsRequest addInstanceIdItem(String instanceIdItem) {
+        if (this.instanceId == null) {
+            this.instanceId = new ArrayList<>();
+        }
+        this.instanceId.add(instanceIdItem);
+        return this;
+    }
+
+    public ListGlobalConnectionBandwidthsRequest withInstanceId(Consumer<List<String>> instanceIdSetter) {
+        if (this.instanceId == null) {
+            this.instanceId = new ArrayList<>();
+        }
+        instanceIdSetter.accept(this.instanceId);
+        return this;
+    }
+
+    /**
+     * 根据绑定实例id过滤全域互联带宽列表。
+     * @return instanceId
+     */
+    public List<String> getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(List<String> instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public ListGlobalConnectionBandwidthsRequest withInstanceType(List<InstanceTypeEnum> instanceType) {
+        this.instanceType = instanceType;
+        return this;
+    }
+
+    public ListGlobalConnectionBandwidthsRequest addInstanceTypeItem(InstanceTypeEnum instanceTypeItem) {
+        if (this.instanceType == null) {
+            this.instanceType = new ArrayList<>();
+        }
+        this.instanceType.add(instanceTypeItem);
+        return this;
+    }
+
+    public ListGlobalConnectionBandwidthsRequest withInstanceType(Consumer<List<InstanceTypeEnum>> instanceTypeSetter) {
+        if (this.instanceType == null) {
+            this.instanceType = new ArrayList<>();
+        }
+        instanceTypeSetter.accept(this.instanceType);
+        return this;
+    }
+
+    /**
+     * 根据绑定实例类型过滤全域互联带宽列表。实例类型： - CC: 云连接 - GEIP: 全域弹性公网IP - GCN: 中心网络 - GSN: 分支网络
+     * @return instanceType
+     */
+    public List<InstanceTypeEnum> getInstanceType() {
+        return instanceType;
+    }
+
+    public void setInstanceType(List<InstanceTypeEnum> instanceType) {
+        this.instanceType = instanceType;
+    }
+
     public ListGlobalConnectionBandwidthsRequest withBindingService(List<BindingServiceEnum> bindingService) {
         this.bindingService = bindingService;
         return this;
@@ -495,6 +734,39 @@ public class ListGlobalConnectionBandwidthsRequest {
         this.type = type;
     }
 
+    public ListGlobalConnectionBandwidthsRequest withAdminState(List<AdminStateEnum> adminState) {
+        this.adminState = adminState;
+        return this;
+    }
+
+    public ListGlobalConnectionBandwidthsRequest addAdminStateItem(AdminStateEnum adminStateItem) {
+        if (this.adminState == null) {
+            this.adminState = new ArrayList<>();
+        }
+        this.adminState.add(adminStateItem);
+        return this;
+    }
+
+    public ListGlobalConnectionBandwidthsRequest withAdminState(Consumer<List<AdminStateEnum>> adminStateSetter) {
+        if (this.adminState == null) {
+            this.adminState = new ArrayList<>();
+        }
+        adminStateSetter.accept(this.adminState);
+        return this;
+    }
+
+    /**
+     * 根据带宽状态过滤全域互联带宽列表： - NORMAL: 正常 - FREEZED: 冻结
+     * @return adminState
+     */
+    public List<AdminStateEnum> getAdminState() {
+        return adminState;
+    }
+
+    public void setAdminState(List<AdminStateEnum> adminState) {
+        this.adminState = adminState;
+    }
+
     public ListGlobalConnectionBandwidthsRequest withChargeMode(List<ChargeModeEnum> chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -517,7 +789,7 @@ public class ListGlobalConnectionBandwidthsRequest {
     }
 
     /**
-     * 根据计费方式过滤全域互联带宽列表： - bwd: 按带宽计费 - 95: 按传统型95计费
+     * 根据计费方式过滤全域互联带宽列表： - bwd: 按带宽计费 - 95: 按传统型95计费 - 95avr (日95计费)
      * @return chargeMode
      */
     public List<ChargeModeEnum> getChargeMode() {
@@ -540,13 +812,24 @@ public class ListGlobalConnectionBandwidthsRequest {
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
             && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType)
             && Objects.equals(this.bindingService, that.bindingService) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.chargeMode, that.chargeMode);
+            && Objects.equals(this.adminState, that.adminState) && Objects.equals(this.chargeMode, that.chargeMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, id, name, enterpriseProjectId, bindingService, type, chargeMode);
+        return Objects.hash(limit,
+            marker,
+            id,
+            name,
+            enterpriseProjectId,
+            instanceId,
+            instanceType,
+            bindingService,
+            type,
+            adminState,
+            chargeMode);
     }
 
     @Override
@@ -558,8 +841,11 @@ public class ListGlobalConnectionBandwidthsRequest {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
         sb.append("    bindingService: ").append(toIndentedString(bindingService)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    adminState: ").append(toIndentedString(adminState)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("}");
         return sb.toString();

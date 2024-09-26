@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,123 +13,131 @@ import java.util.function.Consumer;
 public class BatchUpdateVersionTestCasesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
+    @JsonProperty(value = "status")
 
-    private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "success_list")
+    @JsonProperty(value = "result")
 
-    private List<String> successList = null;
+    private ResultValueUpdateTestCaseListVo result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "failed_list")
+    @JsonProperty(value = "error")
 
-    private List<String> failedList = null;
+    private ApiError error;
 
-    public BatchUpdateVersionTestCasesResponse withId(String id) {
-        this.id = id;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_address")
+
+    private String serverAddress;
+
+    public BatchUpdateVersionTestCasesResponse withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * CTS需要返回资源id
-     * @return id
+     * 对外时：success|error; 对内时：ok|failed
+     * @return status
      */
-    public String getId() {
-        return id;
+    public String getStatus() {
+        return status;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public BatchUpdateVersionTestCasesResponse withName(String name) {
-        this.name = name;
+    public BatchUpdateVersionTestCasesResponse withResult(ResultValueUpdateTestCaseListVo result) {
+        this.result = result;
+        return this;
+    }
+
+    public BatchUpdateVersionTestCasesResponse withResult(Consumer<ResultValueUpdateTestCaseListVo> resultSetter) {
+        if (this.result == null) {
+            this.result = new ResultValueUpdateTestCaseListVo();
+            resultSetter.accept(this.result);
+        }
+
         return this;
     }
 
     /**
-     * CTS需要返回资源name
-     * @return name
+     * Get result
+     * @return result
      */
-    public String getName() {
-        return name;
+    public ResultValueUpdateTestCaseListVo getResult() {
+        return result;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setResult(ResultValueUpdateTestCaseListVo result) {
+        this.result = result;
     }
 
-    public BatchUpdateVersionTestCasesResponse withSuccessList(List<String> successList) {
-        this.successList = successList;
+    public BatchUpdateVersionTestCasesResponse withError(ApiError error) {
+        this.error = error;
         return this;
     }
 
-    public BatchUpdateVersionTestCasesResponse addSuccessListItem(String successListItem) {
-        if (this.successList == null) {
-            this.successList = new ArrayList<>();
+    public BatchUpdateVersionTestCasesResponse withError(Consumer<ApiError> errorSetter) {
+        if (this.error == null) {
+            this.error = new ApiError();
+            errorSetter.accept(this.error);
         }
-        this.successList.add(successListItem);
-        return this;
-    }
 
-    public BatchUpdateVersionTestCasesResponse withSuccessList(Consumer<List<String>> successListSetter) {
-        if (this.successList == null) {
-            this.successList = new ArrayList<>();
-        }
-        successListSetter.accept(this.successList);
         return this;
     }
 
     /**
-     * 成功批量更新用例的id列表
-     * @return successList
+     * Get error
+     * @return error
      */
-    public List<String> getSuccessList() {
-        return successList;
+    public ApiError getError() {
+        return error;
     }
 
-    public void setSuccessList(List<String> successList) {
-        this.successList = successList;
+    public void setError(ApiError error) {
+        this.error = error;
     }
 
-    public BatchUpdateVersionTestCasesResponse withFailedList(List<String> failedList) {
-        this.failedList = failedList;
-        return this;
-    }
-
-    public BatchUpdateVersionTestCasesResponse addFailedListItem(String failedListItem) {
-        if (this.failedList == null) {
-            this.failedList = new ArrayList<>();
-        }
-        this.failedList.add(failedListItem);
-        return this;
-    }
-
-    public BatchUpdateVersionTestCasesResponse withFailedList(Consumer<List<String>> failedListSetter) {
-        if (this.failedList == null) {
-            this.failedList = new ArrayList<>();
-        }
-        failedListSetter.accept(this.failedList);
+    public BatchUpdateVersionTestCasesResponse withRequestId(String requestId) {
+        this.requestId = requestId;
         return this;
     }
 
     /**
-     * 没有批量更新用例的id列表
-     * @return failedList
+     * 由接口调用方传入，建议使用UUID保证请求的唯一性。
+     * @return requestId
      */
-    public List<String> getFailedList() {
-        return failedList;
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setFailedList(List<String> failedList) {
-        this.failedList = failedList;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public BatchUpdateVersionTestCasesResponse withServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
+        return this;
+    }
+
+    /**
+     * 对内接口才有此属性
+     * @return serverAddress
+     */
+    public String getServerAddress() {
+        return serverAddress;
+    }
+
+    public void setServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
     }
 
     @Override
@@ -143,23 +149,25 @@ public class BatchUpdateVersionTestCasesResponse extends SdkResponse {
             return false;
         }
         BatchUpdateVersionTestCasesResponse that = (BatchUpdateVersionTestCasesResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.successList, that.successList) && Objects.equals(this.failedList, that.failedList);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.serverAddress, that.serverAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, successList, failedList);
+        return Objects.hash(status, result, error, requestId, serverAddress);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchUpdateVersionTestCasesResponse {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    successList: ").append(toIndentedString(successList)).append("\n");
-        sb.append("    failedList: ").append(toIndentedString(failedList)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    serverAddress: ").append(toIndentedString(serverAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

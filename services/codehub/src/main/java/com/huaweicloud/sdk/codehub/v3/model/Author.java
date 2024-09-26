@@ -30,6 +30,21 @@ public class Author {
 
     private String username;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name_cn")
+
+    private String nameCn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "avatar_url")
+
+    private String avatarUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "email")
+
+    private String email;
+
     public Author withId(Double id) {
         this.id = id;
         return this;
@@ -98,6 +113,57 @@ public class Author {
         this.username = username;
     }
 
+    public Author withNameCn(String nameCn) {
+        this.nameCn = nameCn;
+        return this;
+    }
+
+    /**
+     * 用户别名
+     * @return nameCn
+     */
+    public String getNameCn() {
+        return nameCn;
+    }
+
+    public void setNameCn(String nameCn) {
+        this.nameCn = nameCn;
+    }
+
+    public Author withAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+        return this;
+    }
+
+    /**
+     * 头像url
+     * @return avatarUrl
+     */
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    public Author withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    /**
+     * 邮箱
+     * @return email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +174,14 @@ public class Author {
         }
         Author that = (Author) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.state, that.state) && Objects.equals(this.username, that.username);
+            && Objects.equals(this.state, that.state) && Objects.equals(this.username, that.username)
+            && Objects.equals(this.nameCn, that.nameCn) && Objects.equals(this.avatarUrl, that.avatarUrl)
+            && Objects.equals(this.email, that.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, state, username);
+        return Objects.hash(id, name, state, username, nameCn, avatarUrl, email);
     }
 
     @Override
@@ -124,6 +192,9 @@ public class Author {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
+        sb.append("    nameCn: ").append(toIndentedString(nameCn)).append("\n");
+        sb.append("    avatarUrl: ").append(toIndentedString(avatarUrl)).append("\n");
+        sb.append("    email: ").append(toIndentedString(email)).append("\n");
         sb.append("}");
         return sb.toString();
     }

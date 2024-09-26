@@ -62,10 +62,18 @@ import com.huaweicloud.sdk.codehub.v3.model.ListFilesRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ListFilesResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ListHooksRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ListHooksResponse;
+import com.huaweicloud.sdk.codehub.v3.model.ListMergeChangesRequest;
+import com.huaweicloud.sdk.codehub.v3.model.ListMergeChangesResponse;
+import com.huaweicloud.sdk.codehub.v3.model.ListMergeChangesTreesRequest;
+import com.huaweicloud.sdk.codehub.v3.model.ListMergeChangesTreesResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ListMergeRequestRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ListMergeRequestResponse;
+import com.huaweicloud.sdk.codehub.v3.model.ListMergeRequestReviewersRequest;
+import com.huaweicloud.sdk.codehub.v3.model.ListMergeRequestReviewersResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ListProductTwoTemplatesRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ListProductTwoTemplatesResponse;
+import com.huaweicloud.sdk.codehub.v3.model.ListRelatedCommitsRequest;
+import com.huaweicloud.sdk.codehub.v3.model.ListRelatedCommitsResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ListRepoMembersRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ListRepoMembersResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ListRepositoryStatusRequest;
@@ -128,6 +136,8 @@ import com.huaweicloud.sdk.codehub.v3.model.ShowStatisticCommitV3Request;
 import com.huaweicloud.sdk.codehub.v3.model.ShowStatisticCommitV3Response;
 import com.huaweicloud.sdk.codehub.v3.model.ShowStatisticalDataRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ShowStatisticalDataResponse;
+import com.huaweicloud.sdk.codehub.v3.model.UpdateMergeRequestApprovalStateRequest;
+import com.huaweicloud.sdk.codehub.v3.model.UpdateMergeRequestApprovalStateResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ValidateHttpsInfoRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ValidateHttpsInfoResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ValidateHttpsInfoV2Request;
@@ -1028,6 +1038,64 @@ public class CodeHubClient {
     }
 
     /**
+     * 获取变更文件
+     *
+     * 获取变更文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMergeChangesRequest 请求对象
+     * @return ListMergeChangesResponse
+     */
+    public ListMergeChangesResponse listMergeChanges(ListMergeChangesRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.listMergeChanges);
+    }
+
+    /**
+     * 获取变更文件
+     *
+     * 获取变更文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMergeChangesRequest 请求对象
+     * @return SyncInvoker<ListMergeChangesRequest, ListMergeChangesResponse>
+     */
+    public SyncInvoker<ListMergeChangesRequest, ListMergeChangesResponse> listMergeChangesInvoker(
+        ListMergeChangesRequest request) {
+        return new SyncInvoker<>(request, CodeHubMeta.listMergeChanges, hcClient);
+    }
+
+    /**
+     * 获取变更文件列表
+     *
+     * 获取变更文件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMergeChangesTreesRequest 请求对象
+     * @return ListMergeChangesTreesResponse
+     */
+    public ListMergeChangesTreesResponse listMergeChangesTrees(ListMergeChangesTreesRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.listMergeChangesTrees);
+    }
+
+    /**
+     * 获取变更文件列表
+     *
+     * 获取变更文件列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMergeChangesTreesRequest 请求对象
+     * @return SyncInvoker<ListMergeChangesTreesRequest, ListMergeChangesTreesResponse>
+     */
+    public SyncInvoker<ListMergeChangesTreesRequest, ListMergeChangesTreesResponse> listMergeChangesTreesInvoker(
+        ListMergeChangesTreesRequest request) {
+        return new SyncInvoker<>(request, CodeHubMeta.listMergeChangesTrees, hcClient);
+    }
+
+    /**
      * 获取仓库合并请求列表
      *
      * 获取仓库合并请求列表
@@ -1054,6 +1122,64 @@ public class CodeHubClient {
     public SyncInvoker<ListMergeRequestRequest, ListMergeRequestResponse> listMergeRequestInvoker(
         ListMergeRequestRequest request) {
         return new SyncInvoker<>(request, CodeHubMeta.listMergeRequest, hcClient);
+    }
+
+    /**
+     * 根据仓库短ID和合并请求短ID获取检视人信息
+     *
+     * 根据仓库短ID和合并请求短ID获取检视人信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMergeRequestReviewersRequest 请求对象
+     * @return ListMergeRequestReviewersResponse
+     */
+    public ListMergeRequestReviewersResponse listMergeRequestReviewers(ListMergeRequestReviewersRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.listMergeRequestReviewers);
+    }
+
+    /**
+     * 根据仓库短ID和合并请求短ID获取检视人信息
+     *
+     * 根据仓库短ID和合并请求短ID获取检视人信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMergeRequestReviewersRequest 请求对象
+     * @return SyncInvoker<ListMergeRequestReviewersRequest, ListMergeRequestReviewersResponse>
+     */
+    public SyncInvoker<ListMergeRequestReviewersRequest, ListMergeRequestReviewersResponse> listMergeRequestReviewersInvoker(
+        ListMergeRequestReviewersRequest request) {
+        return new SyncInvoker<>(request, CodeHubMeta.listMergeRequestReviewers, hcClient);
+    }
+
+    /**
+     * 获取关联工作项信息
+     *
+     * 获取关联工作项信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRelatedCommitsRequest 请求对象
+     * @return ListRelatedCommitsResponse
+     */
+    public ListRelatedCommitsResponse listRelatedCommits(ListRelatedCommitsRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.listRelatedCommits);
+    }
+
+    /**
+     * 获取关联工作项信息
+     *
+     * 获取关联工作项信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRelatedCommitsRequest 请求对象
+     * @return SyncInvoker<ListRelatedCommitsRequest, ListRelatedCommitsResponse>
+     */
+    public SyncInvoker<ListRelatedCommitsRequest, ListRelatedCommitsResponse> listRelatedCommitsInvoker(
+        ListRelatedCommitsRequest request) {
+        return new SyncInvoker<>(request, CodeHubMeta.listRelatedCommits, hcClient);
     }
 
     /**
@@ -1635,6 +1761,36 @@ public class CodeHubClient {
     public SyncInvoker<ShowStatisticalDataRequest, ShowStatisticalDataResponse> showStatisticalDataInvoker(
         ShowStatisticalDataRequest request) {
         return new SyncInvoker<>(request, CodeHubMeta.showStatisticalData, hcClient);
+    }
+
+    /**
+     * 合并请求代码审核
+     *
+     * 合并请求代码审核
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMergeRequestApprovalStateRequest 请求对象
+     * @return UpdateMergeRequestApprovalStateResponse
+     */
+    public UpdateMergeRequestApprovalStateResponse updateMergeRequestApprovalState(
+        UpdateMergeRequestApprovalStateRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeHubMeta.updateMergeRequestApprovalState);
+    }
+
+    /**
+     * 合并请求代码审核
+     *
+     * 合并请求代码审核
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMergeRequestApprovalStateRequest 请求对象
+     * @return SyncInvoker<UpdateMergeRequestApprovalStateRequest, UpdateMergeRequestApprovalStateResponse>
+     */
+    public SyncInvoker<UpdateMergeRequestApprovalStateRequest, UpdateMergeRequestApprovalStateResponse> updateMergeRequestApprovalStateInvoker(
+        UpdateMergeRequestApprovalStateRequest request) {
+        return new SyncInvoker<>(request, CodeHubMeta.updateMergeRequestApprovalState, hcClient);
     }
 
     /**

@@ -21,14 +21,14 @@ public class DisassociateGlobalConnectionBandwidthInstanceRequestInfo {
     private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
-
-    private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
 
     private String regionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
 
     public DisassociateGlobalConnectionBandwidthInstanceRequestInfo withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -64,23 +64,6 @@ public class DisassociateGlobalConnectionBandwidthInstanceRequestInfo {
         this.resourceType = resourceType;
     }
 
-    public DisassociateGlobalConnectionBandwidthInstanceRequestInfo withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 功能说明：实例所在region对应的projectId。
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
-
     public DisassociateGlobalConnectionBandwidthInstanceRequestInfo withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
@@ -98,6 +81,23 @@ public class DisassociateGlobalConnectionBandwidthInstanceRequestInfo {
         this.regionId = regionId;
     }
 
+    public DisassociateGlobalConnectionBandwidthInstanceRequestInfo withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 功能说明：实例所在region对应的projectId。
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +109,12 @@ public class DisassociateGlobalConnectionBandwidthInstanceRequestInfo {
         DisassociateGlobalConnectionBandwidthInstanceRequestInfo that =
             (DisassociateGlobalConnectionBandwidthInstanceRequestInfo) obj;
         return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId);
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, resourceType, projectId, regionId);
+        return Objects.hash(resourceId, resourceType, regionId, projectId);
     }
 
     @Override
@@ -123,8 +123,8 @@ public class DisassociateGlobalConnectionBandwidthInstanceRequestInfo {
         sb.append("class DisassociateGlobalConnectionBandwidthInstanceRequestInfo {\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

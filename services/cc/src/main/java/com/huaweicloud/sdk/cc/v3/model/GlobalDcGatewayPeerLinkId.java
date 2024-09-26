@@ -21,7 +21,7 @@ public class GlobalDcGatewayPeerLinkId {
     }
 
     /**
-     * 资源ID标识符。
+     * GDGW的连接ID。
      * @return globalDcGatewayPeerLinkId
      */
     public String getGlobalDcGatewayPeerLinkId() {

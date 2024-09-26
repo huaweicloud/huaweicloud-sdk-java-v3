@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * evs盘的匹配字段，支持DataVolume中的size、volumeType、metadataEncrypted、metadataCmkid、count五个字段。 
+ * evs盘的匹配字段，支持DataVolume中的size、volumeType、[iops、throughput、](tag:hws)metadataEncrypted、metadataCmkid、count字段。 
  */
 public class StorageSelectorsMatchLabels {
 
@@ -19,6 +19,16 @@ public class StorageSelectorsMatchLabels {
     @JsonProperty(value = "volumeType")
 
     private String volumeType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private String iops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throughput")
+
+    private String throughput;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadataEncrypted")
@@ -67,6 +77,40 @@ public class StorageSelectorsMatchLabels {
 
     public void setVolumeType(String volumeType) {
         this.volumeType = volumeType;
+    }
+
+    public StorageSelectorsMatchLabels withIops(String iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    /**
+     * 匹配的磁盘iops大小，不填则无磁盘iops大小限制。当需要选择GPSSD2或ESSD2类型磁盘时，配置iops来准确选择磁盘。例如：3000.
+     * @return iops
+     */
+    public String getIops() {
+        return iops;
+    }
+
+    public void setIops(String iops) {
+        this.iops = iops;
+    }
+
+    public StorageSelectorsMatchLabels withThroughput(String throughput) {
+        this.throughput = throughput;
+        return this;
+    }
+
+    /**
+     * 匹配的磁盘吞吐量大小，不填则无磁盘吞吐量大小限制。当需要选择GPSSD2类型磁盘时，配置throughput来准确选择磁盘。例如：125.
+     * @return throughput
+     */
+    public String getThroughput() {
+        return throughput;
+    }
+
+    public void setThroughput(String throughput) {
+        this.throughput = throughput;
     }
 
     public StorageSelectorsMatchLabels withMetadataEncrypted(String metadataEncrypted) {
@@ -130,13 +174,14 @@ public class StorageSelectorsMatchLabels {
         }
         StorageSelectorsMatchLabels that = (StorageSelectorsMatchLabels) obj;
         return Objects.equals(this.size, that.size) && Objects.equals(this.volumeType, that.volumeType)
+            && Objects.equals(this.iops, that.iops) && Objects.equals(this.throughput, that.throughput)
             && Objects.equals(this.metadataEncrypted, that.metadataEncrypted)
             && Objects.equals(this.metadataCmkid, that.metadataCmkid) && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, volumeType, metadataEncrypted, metadataCmkid, count);
+        return Objects.hash(size, volumeType, iops, throughput, metadataEncrypted, metadataCmkid, count);
     }
 
     @Override
@@ -145,6 +190,8 @@ public class StorageSelectorsMatchLabels {
         sb.append("class StorageSelectorsMatchLabels {\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    volumeType: ").append(toIndentedString(volumeType)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
+        sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("    metadataEncrypted: ").append(toIndentedString(metadataEncrypted)).append("\n");
         sb.append("    metadataCmkid: ").append(toIndentedString(metadataCmkid)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");

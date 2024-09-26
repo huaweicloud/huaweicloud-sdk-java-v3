@@ -112,7 +112,7 @@ public class RecycleDatastore {
     }
 
     /**
-     * 数据库版本。支持3.4、3.2和4.0版本。取值为“3.4”、“3.2”或“4.0”。
+     * 数据库版本。支持3.4及以上版本。取值为“3.4”、“4.0”、“4.2”、“4.4”或“5.0”。
      * @return version
      */
     public String getVersion() {

@@ -43,7 +43,7 @@ public class DatastoreResult {
     }
 
     /**
-     * version数据库版本。DDS引擎取值为3.2, 3.4, 4.0。
+     * version数据库版本。
      * @return version
      */
     public String getVersion() {

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,25 +13,131 @@ import java.util.Objects;
 public class BatchDeleteTestCasesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "value")
+    @JsonProperty(value = "status")
 
-    private String value;
+    private String status;
 
-    public BatchDeleteTestCasesResponse withValue(String value) {
-        this.value = value;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "result")
+
+    private ResultValueString result;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error")
+
+    private ApiError error;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_address")
+
+    private String serverAddress;
+
+    public BatchDeleteTestCasesResponse withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * Get value
-     * @return value
+     * success|error
+     * @return status
      */
-    public String getValue() {
-        return value;
+    public String getStatus() {
+        return status;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public BatchDeleteTestCasesResponse withResult(ResultValueString result) {
+        this.result = result;
+        return this;
+    }
+
+    public BatchDeleteTestCasesResponse withResult(Consumer<ResultValueString> resultSetter) {
+        if (this.result == null) {
+            this.result = new ResultValueString();
+            resultSetter.accept(this.result);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get result
+     * @return result
+     */
+    public ResultValueString getResult() {
+        return result;
+    }
+
+    public void setResult(ResultValueString result) {
+        this.result = result;
+    }
+
+    public BatchDeleteTestCasesResponse withError(ApiError error) {
+        this.error = error;
+        return this;
+    }
+
+    public BatchDeleteTestCasesResponse withError(Consumer<ApiError> errorSetter) {
+        if (this.error == null) {
+            this.error = new ApiError();
+            errorSetter.accept(this.error);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get error
+     * @return error
+     */
+    public ApiError getError() {
+        return error;
+    }
+
+    public void setError(ApiError error) {
+        this.error = error;
+    }
+
+    public BatchDeleteTestCasesResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 由接口调用方传入，建议使用UUID保证请求的唯一性。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public BatchDeleteTestCasesResponse withServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
+        return this;
+    }
+
+    /**
+     * 对内接口才有此属性
+     * @return serverAddress
+     */
+    public String getServerAddress() {
+        return serverAddress;
+    }
+
+    public void setServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
     }
 
     @Override
@@ -42,19 +149,25 @@ public class BatchDeleteTestCasesResponse extends SdkResponse {
             return false;
         }
         BatchDeleteTestCasesResponse that = (BatchDeleteTestCasesResponse) obj;
-        return Objects.equals(this.value, that.value);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.serverAddress, that.serverAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
+        return Objects.hash(status, result, error, requestId, serverAddress);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchDeleteTestCasesResponse {\n");
-        sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    serverAddress: ").append(toIndentedString(serverAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -382,6 +382,11 @@ public class CreateEndpointServiceRequestBody {
 
     private IpVersionEnum ipVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "snat_network_id")
+
+    private String snatNetworkId;
+
     public CreateEndpointServiceRequestBody withPortId(String portId) {
         this.portId = portId;
         return this;
@@ -618,6 +623,23 @@ public class CreateEndpointServiceRequestBody {
         this.ipVersion = ipVersion;
     }
 
+    public CreateEndpointServiceRequestBody withSnatNetworkId(String snatNetworkId) {
+        this.snatNetworkId = snatNetworkId;
+        return this;
+    }
+
+    /**
+     * 接口型snat的地址段，ip_version为ipv6时必选。创建服务时使用的VPC内的任意一个网络ID。当服务类型为VIP、VM、ELBV2类型时使用
+     * @return snatNetworkId
+     */
+    public String getSnatNetworkId() {
+        return snatNetworkId;
+    }
+
+    public void setSnatNetworkId(String snatNetworkId) {
+        this.snatNetworkId = snatNetworkId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -632,7 +654,8 @@ public class CreateEndpointServiceRequestBody {
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.serverType, that.serverType)
             && Objects.equals(this.ip, that.ip) && Objects.equals(this.ports, that.ports)
             && Objects.equals(this.tcpProxy, that.tcpProxy) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.ipVersion, that.ipVersion);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.snatNetworkId, that.snatNetworkId);
     }
 
     @Override
@@ -648,7 +671,8 @@ public class CreateEndpointServiceRequestBody {
             tcpProxy,
             tags,
             description,
-            ipVersion);
+            ipVersion,
+            snatNetworkId);
     }
 
     @Override
@@ -667,6 +691,7 @@ public class CreateEndpointServiceRequestBody {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
+        sb.append("    snatNetworkId: ").append(toIndentedString(snatNetworkId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

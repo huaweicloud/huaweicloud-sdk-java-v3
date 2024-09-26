@@ -18,6 +18,7 @@ import com.huaweicloud.sdk.codehub.v3.model.AddSshKeyResponse;
 import com.huaweicloud.sdk.codehub.v3.model.AddTagV2Request;
 import com.huaweicloud.sdk.codehub.v3.model.AddTagV2Response;
 import com.huaweicloud.sdk.codehub.v3.model.AddTagsRequest;
+import com.huaweicloud.sdk.codehub.v3.model.ApprovalActionTypeDto;
 import com.huaweicloud.sdk.codehub.v3.model.AssociateIssuesRequest;
 import com.huaweicloud.sdk.codehub.v3.model.AssociateIssuesRequestBody;
 import com.huaweicloud.sdk.codehub.v3.model.AssociateIssuesResponse;
@@ -75,10 +76,18 @@ import com.huaweicloud.sdk.codehub.v3.model.ListFilesRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ListFilesResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ListHooksRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ListHooksResponse;
+import com.huaweicloud.sdk.codehub.v3.model.ListMergeChangesRequest;
+import com.huaweicloud.sdk.codehub.v3.model.ListMergeChangesResponse;
+import com.huaweicloud.sdk.codehub.v3.model.ListMergeChangesTreesRequest;
+import com.huaweicloud.sdk.codehub.v3.model.ListMergeChangesTreesResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ListMergeRequestRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ListMergeRequestResponse;
+import com.huaweicloud.sdk.codehub.v3.model.ListMergeRequestReviewersRequest;
+import com.huaweicloud.sdk.codehub.v3.model.ListMergeRequestReviewersResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ListProductTwoTemplatesRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ListProductTwoTemplatesResponse;
+import com.huaweicloud.sdk.codehub.v3.model.ListRelatedCommitsRequest;
+import com.huaweicloud.sdk.codehub.v3.model.ListRelatedCommitsResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ListRepoMembersRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ListRepoMembersResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ListRepositoryStatusRequest;
@@ -148,6 +157,8 @@ import com.huaweicloud.sdk.codehub.v3.model.ShowStatisticCommitV3Request;
 import com.huaweicloud.sdk.codehub.v3.model.ShowStatisticCommitV3Response;
 import com.huaweicloud.sdk.codehub.v3.model.ShowStatisticalDataRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ShowStatisticalDataResponse;
+import com.huaweicloud.sdk.codehub.v3.model.UpdateMergeRequestApprovalStateRequest;
+import com.huaweicloud.sdk.codehub.v3.model.UpdateMergeRequestApprovalStateResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ValidateHttpsInfoRequest;
 import com.huaweicloud.sdk.codehub.v3.model.ValidateHttpsInfoResponse;
 import com.huaweicloud.sdk.codehub.v3.model.ValidateHttpsInfoV2Request;
@@ -1182,6 +1193,102 @@ public class CodeHubMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListMergeChangesRequest, ListMergeChangesResponse> listMergeChanges =
+        genForListMergeChanges();
+
+    private static HttpRequestDef<ListMergeChangesRequest, ListMergeChangesResponse> genForListMergeChanges() {
+        // basic
+        HttpRequestDef.Builder<ListMergeChangesRequest, ListMergeChangesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListMergeChangesRequest.class, ListMergeChangesResponse.class)
+                .withName("ListMergeChanges")
+                .withUri("/v2/repositories/{repository_id}/merge-requests/{merge_request_iid}/changes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeChangesRequest::getRepositoryId, ListMergeChangesRequest::setRepositoryId));
+        builder.<String>withRequestField("merge_request_iid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMergeChangesRequest::getMergeRequestIid,
+                ListMergeChangesRequest::setMergeRequestIid));
+        builder.<String>withRequestField("file_path",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMergeChangesRequest::getFilePath, ListMergeChangesRequest::setFilePath));
+        builder.<Boolean>withRequestField("ignore_whitespace_change",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListMergeChangesRequest::getIgnoreWhitespaceChange,
+                ListMergeChangesRequest::setIgnoreWhitespaceChange));
+        builder.<Boolean>withRequestField("force_encode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListMergeChangesRequest::getForceEncode, ListMergeChangesRequest::setForceEncode));
+        builder.<ListMergeChangesRequest.ViewEnum>withRequestField("view",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListMergeChangesRequest.ViewEnum.class),
+            f -> f.withMarshaller(ListMergeChangesRequest::getView, ListMergeChangesRequest::setView));
+        builder.<String>withRequestField("commit_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMergeChangesRequest::getCommitId, ListMergeChangesRequest::setCommitId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMergeChangesTreesRequest, ListMergeChangesTreesResponse> listMergeChangesTrees =
+        genForListMergeChangesTrees();
+
+    private static HttpRequestDef<ListMergeChangesTreesRequest, ListMergeChangesTreesResponse> genForListMergeChangesTrees() {
+        // basic
+        HttpRequestDef.Builder<ListMergeChangesTreesRequest, ListMergeChangesTreesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListMergeChangesTreesRequest.class, ListMergeChangesTreesResponse.class)
+            .withName("ListMergeChangesTrees")
+            .withUri("/v2/repositories/{repository_id}/merge-requests/{merge_request_iid}/changes-trees")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeChangesTreesRequest::getRepositoryId,
+                ListMergeChangesTreesRequest::setRepositoryId));
+        builder.<String>withRequestField("merge_request_iid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMergeChangesTreesRequest::getMergeRequestIid,
+                ListMergeChangesTreesRequest::setMergeRequestIid));
+        builder.<ListMergeChangesTreesRequest.ViewEnum>withRequestField("view",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListMergeChangesTreesRequest.ViewEnum.class),
+            f -> f.withMarshaller(ListMergeChangesTreesRequest::getView, ListMergeChangesTreesRequest::setView));
+        builder.<String>withRequestField("commit_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMergeChangesTreesRequest::getCommitId,
+                ListMergeChangesTreesRequest::setCommitId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListMergeRequestRequest, ListMergeRequestResponse> listMergeRequest =
         genForListMergeRequest();
 
@@ -1219,6 +1326,95 @@ public class CodeHubMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListMergeRequestRequest::getSearch, ListMergeRequestRequest::setSearch));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMergeRequestReviewersRequest, ListMergeRequestReviewersResponse> listMergeRequestReviewers =
+        genForListMergeRequestReviewers();
+
+    private static HttpRequestDef<ListMergeRequestReviewersRequest, ListMergeRequestReviewersResponse> genForListMergeRequestReviewers() {
+        // basic
+        HttpRequestDef.Builder<ListMergeRequestReviewersRequest, ListMergeRequestReviewersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListMergeRequestReviewersRequest.class,
+                    ListMergeRequestReviewersResponse.class)
+                .withName("ListMergeRequestReviewers")
+                .withUri("/v2/repositories/{repository_id}/merge-requests/{merge_request_iid}/approval-reviewers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMergeRequestReviewersRequest::getRepositoryId,
+                ListMergeRequestReviewersRequest::setRepositoryId));
+        builder.<Integer>withRequestField("merge_request_iid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeRequestReviewersRequest::getMergeRequestIid,
+                ListMergeRequestReviewersRequest::setMergeRequestIid));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeRequestReviewersRequest::getPage,
+                ListMergeRequestReviewersRequest::setPage));
+        builder.<Integer>withRequestField("per_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMergeRequestReviewersRequest::getPerPage,
+                ListMergeRequestReviewersRequest::setPerPage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRelatedCommitsRequest, ListRelatedCommitsResponse> listRelatedCommits =
+        genForListRelatedCommits();
+
+    private static HttpRequestDef<ListRelatedCommitsRequest, ListRelatedCommitsResponse> genForListRelatedCommits() {
+        // basic
+        HttpRequestDef.Builder<ListRelatedCommitsRequest, ListRelatedCommitsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRelatedCommitsRequest.class, ListRelatedCommitsResponse.class)
+                .withName("ListRelatedCommits")
+                .withUri("/v2/repositories/{repository_uuid}/related-commits")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("repository_uuid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRelatedCommitsRequest::getRepositoryUuid,
+                ListRelatedCommitsRequest::setRepositoryUuid));
+        builder.<Integer>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRelatedCommitsRequest::getType, ListRelatedCommitsRequest::setType));
+        builder.<String>withRequestField("search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRelatedCommitsRequest::getSearch, ListRelatedCommitsRequest::setSearch));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRelatedCommitsRequest::getPage, ListRelatedCommitsRequest::setPage));
+        builder.<Integer>withRequestField("per_page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRelatedCommitsRequest::getPerPage, ListRelatedCommitsRequest::setPerPage));
 
         // response
 
@@ -1910,6 +2106,45 @@ public class CodeHubMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowStatisticalDataRequest::getRepositoryUuid,
                 ShowStatisticalDataRequest::setRepositoryUuid));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateMergeRequestApprovalStateRequest, UpdateMergeRequestApprovalStateResponse> updateMergeRequestApprovalState =
+        genForUpdateMergeRequestApprovalState();
+
+    private static HttpRequestDef<UpdateMergeRequestApprovalStateRequest, UpdateMergeRequestApprovalStateResponse> genForUpdateMergeRequestApprovalState() {
+        // basic
+        HttpRequestDef.Builder<UpdateMergeRequestApprovalStateRequest, UpdateMergeRequestApprovalStateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateMergeRequestApprovalStateRequest.class,
+                    UpdateMergeRequestApprovalStateResponse.class)
+                .withName("UpdateMergeRequestApprovalState")
+                .withUri("/v2/repositories/{repository_id}/merge-requests/{merge_request_iid}/approval")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("repository_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMergeRequestApprovalStateRequest::getRepositoryId,
+                UpdateMergeRequestApprovalStateRequest::setRepositoryId));
+        builder.<Integer>withRequestField("merge_request_iid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UpdateMergeRequestApprovalStateRequest::getMergeRequestIid,
+                UpdateMergeRequestApprovalStateRequest::setMergeRequestIid));
+        builder.<ApprovalActionTypeDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApprovalActionTypeDto.class),
+            f -> f.withMarshaller(UpdateMergeRequestApprovalStateRequest::getBody,
+                UpdateMergeRequestApprovalStateRequest::setBody));
 
         // response
 

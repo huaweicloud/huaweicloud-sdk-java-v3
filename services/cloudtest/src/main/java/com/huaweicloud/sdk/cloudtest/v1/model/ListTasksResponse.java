@@ -13,144 +13,131 @@ import java.util.function.Consumer;
 public class ListTasksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
+    @JsonProperty(value = "status")
 
-    private Integer total;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "value")
-
-    private TaskListVo value;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "reason")
+    @JsonProperty(value = "result")
 
-    private String reason;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
-
-    private Integer pageSize;
+    private ResultValueTaskListVo result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_no")
+    @JsonProperty(value = "error")
 
-    private Integer pageNo;
+    private ApiError error;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "has_more")
+    @JsonProperty(value = "request_id")
 
-    private Boolean hasMore;
+    private String requestId;
 
-    public ListTasksResponse withTotal(Integer total) {
-        this.total = total;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_address")
+
+    private String serverAddress;
+
+    public ListTasksResponse withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * 起始记录数 大于 实际总条数时， 值为0， 分页请求才有此值
-     * @return total
+     * 对外时：success|error; 对内时：ok|failed
+     * @return status
      */
-    public Integer getTotal() {
-        return total;
+    public String getStatus() {
+        return status;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public ListTasksResponse withValue(TaskListVo value) {
-        this.value = value;
+    public ListTasksResponse withResult(ResultValueTaskListVo result) {
+        this.result = result;
         return this;
     }
 
-    public ListTasksResponse withValue(Consumer<TaskListVo> valueSetter) {
-        if (this.value == null) {
-            this.value = new TaskListVo();
-            valueSetter.accept(this.value);
+    public ListTasksResponse withResult(Consumer<ResultValueTaskListVo> resultSetter) {
+        if (this.result == null) {
+            this.result = new ResultValueTaskListVo();
+            resultSetter.accept(this.result);
         }
 
         return this;
     }
 
     /**
-     * Get value
-     * @return value
+     * Get result
+     * @return result
      */
-    public TaskListVo getValue() {
-        return value;
+    public ResultValueTaskListVo getResult() {
+        return result;
     }
 
-    public void setValue(TaskListVo value) {
-        this.value = value;
+    public void setResult(ResultValueTaskListVo result) {
+        this.result = result;
     }
 
-    public ListTasksResponse withReason(String reason) {
-        this.reason = reason;
+    public ListTasksResponse withError(ApiError error) {
+        this.error = error;
+        return this;
+    }
+
+    public ListTasksResponse withError(Consumer<ApiError> errorSetter) {
+        if (this.error == null) {
+            this.error = new ApiError();
+            errorSetter.accept(this.error);
+        }
+
         return this;
     }
 
     /**
-     * 业务失败的提示内容，对内接口才有此值
-     * @return reason
+     * Get error
+     * @return error
      */
-    public String getReason() {
-        return reason;
+    public ApiError getError() {
+        return error;
     }
 
-    public void setReason(String reason) {
-        this.reason = reason;
+    public void setError(ApiError error) {
+        this.error = error;
     }
 
-    public ListTasksResponse withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public ListTasksResponse withRequestId(String requestId) {
+        this.requestId = requestId;
         return this;
     }
 
     /**
-     * Get pageSize
-     * @return pageSize
+     * 由接口调用方传入，建议使用UUID保证请求的唯一性。
+     * @return requestId
      */
-    public Integer getPageSize() {
-        return pageSize;
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
-    public ListTasksResponse withPageNo(Integer pageNo) {
-        this.pageNo = pageNo;
+    public ListTasksResponse withServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
         return this;
     }
 
     /**
-     * Get pageNo
-     * @return pageNo
+     * 对内接口才有此属性
+     * @return serverAddress
      */
-    public Integer getPageNo() {
-        return pageNo;
+    public String getServerAddress() {
+        return serverAddress;
     }
 
-    public void setPageNo(Integer pageNo) {
-        this.pageNo = pageNo;
-    }
-
-    public ListTasksResponse withHasMore(Boolean hasMore) {
-        this.hasMore = hasMore;
-        return this;
-    }
-
-    /**
-     * Get hasMore
-     * @return hasMore
-     */
-    public Boolean getHasMore() {
-        return hasMore;
-    }
-
-    public void setHasMore(Boolean hasMore) {
-        this.hasMore = hasMore;
+    public void setServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
     }
 
     @Override
@@ -162,26 +149,25 @@ public class ListTasksResponse extends SdkResponse {
             return false;
         }
         ListTasksResponse that = (ListTasksResponse) obj;
-        return Objects.equals(this.total, that.total) && Objects.equals(this.value, that.value)
-            && Objects.equals(this.reason, that.reason) && Objects.equals(this.pageSize, that.pageSize)
-            && Objects.equals(this.pageNo, that.pageNo) && Objects.equals(this.hasMore, that.hasMore);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.serverAddress, that.serverAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, value, reason, pageSize, pageNo, hasMore);
+        return Objects.hash(status, result, error, requestId, serverAddress);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTasksResponse {\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    value: ").append(toIndentedString(value)).append("\n");
-        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    pageNo: ").append(toIndentedString(pageNo)).append("\n");
-        sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    serverAddress: ").append(toIndentedString(serverAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

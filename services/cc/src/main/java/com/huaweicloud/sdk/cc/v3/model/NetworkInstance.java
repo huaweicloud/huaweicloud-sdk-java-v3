@@ -229,7 +229,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return id
      */
     public String getId() {
@@ -280,7 +280,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 实例所属账号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -331,7 +331,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 资源ID标识符。
+     * 云连接实例ID。
      * @return cloudConnectionId
      */
     public String getCloudConnectionId() {
@@ -348,7 +348,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 资源ID标识符。
+     * 网络实例（VPC，VGW）的ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -365,7 +365,7 @@ public class NetworkInstance {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 网络实例（VPC，VGW）所属账号ID。
      * @return instanceDomainId
      */
     public String getInstanceDomainId() {

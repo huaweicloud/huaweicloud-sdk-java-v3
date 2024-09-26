@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -17,26 +14,10 @@ public class ShowEchoTestPackageUsingResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<EchoTestPackageCheckResult> body = null;
+    private Object body;
 
-    public ShowEchoTestPackageUsingResponse withBody(List<EchoTestPackageCheckResult> body) {
+    public ShowEchoTestPackageUsingResponse withBody(Object body) {
         this.body = body;
-        return this;
-    }
-
-    public ShowEchoTestPackageUsingResponse addBodyItem(EchoTestPackageCheckResult bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        this.body.add(bodyItem);
-        return this;
-    }
-
-    public ShowEchoTestPackageUsingResponse withBody(Consumer<List<EchoTestPackageCheckResult>> bodySetter) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        bodySetter.accept(this.body);
         return this;
     }
 
@@ -44,11 +25,11 @@ public class ShowEchoTestPackageUsingResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public List<EchoTestPackageCheckResult> getBody() {
+    public Object getBody() {
         return body;
     }
 
-    public void setBody(List<EchoTestPackageCheckResult> body) {
+    public void setBody(Object body) {
         this.body = body;
     }
 

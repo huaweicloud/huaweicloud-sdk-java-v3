@@ -11,9 +11,6 @@ import com.huaweicloud.sdk.hss.v5.model.AddHostsGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.AssociatePolicyGroupRequest;
 import com.huaweicloud.sdk.hss.v5.model.AssociatePolicyGroupRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.AssociatePolicyGroupResponse;
-import com.huaweicloud.sdk.hss.v5.model.BatchAddAccountsRequest;
-import com.huaweicloud.sdk.hss.v5.model.BatchAddAccountsRequestInfo;
-import com.huaweicloud.sdk.hss.v5.model.BatchAddAccountsResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchCreateTagsRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchCreateTagsRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.BatchCreateTagsResponse;
@@ -47,9 +44,6 @@ import com.huaweicloud.sdk.hss.v5.model.CreateQuotasOrderRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.CreateQuotasOrderResponse;
 import com.huaweicloud.sdk.hss.v5.model.CreateVulnerabilityScanTaskRequest;
 import com.huaweicloud.sdk.hss.v5.model.CreateVulnerabilityScanTaskResponse;
-import com.huaweicloud.sdk.hss.v5.model.DeleteAccountRequest;
-import com.huaweicloud.sdk.hss.v5.model.DeleteAccountRequestInfo;
-import com.huaweicloud.sdk.hss.v5.model.DeleteAccountResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteHostsGroupRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteHostsGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteResourceInstanceTagRequest;
@@ -57,8 +51,6 @@ import com.huaweicloud.sdk.hss.v5.model.DeleteResourceInstanceTagResponse;
 import com.huaweicloud.sdk.hss.v5.model.ExportVulRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.ExportVulsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ExportVulsResponse;
-import com.huaweicloud.sdk.hss.v5.model.ListAccountsRequest;
-import com.huaweicloud.sdk.hss.v5.model.ListAccountsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAppChangeHistoriesRequest;
@@ -105,8 +97,6 @@ import com.huaweicloud.sdk.hss.v5.model.ListJarPackageHostInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageHostInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageStatisticsResponse;
-import com.huaweicloud.sdk.hss.v5.model.ListOrganizationTreeRequest;
-import com.huaweicloud.sdk.hss.v5.model.ListOrganizationTreeResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListPasswordComplexityRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListPasswordComplexityResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListPolicyGroupRequest;
@@ -273,51 +263,6 @@ public class HssMeta {
 
         // response
 
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchAddAccountsRequest, BatchAddAccountsResponse> batchAddAccounts =
-        genForBatchAddAccounts();
-
-    private static HttpRequestDef<BatchAddAccountsRequest, BatchAddAccountsResponse> genForBatchAddAccounts() {
-        // basic
-        HttpRequestDef.Builder<BatchAddAccountsRequest, BatchAddAccountsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchAddAccountsRequest.class, BatchAddAccountsResponse.class)
-                .withName("BatchAddAccounts")
-                .withUri("/v5/setting/account/accounts")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddAccountsRequest::getEnterpriseProjectId,
-                BatchAddAccountsRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddAccountsRequest::getXSecurityToken,
-                BatchAddAccountsRequest::setXSecurityToken));
-        builder.<String>withRequestField("region",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchAddAccountsRequest::getRegion, BatchAddAccountsRequest::setRegion));
-        builder.<BatchAddAccountsRequestInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchAddAccountsRequestInfo.class),
-            f -> f.withMarshaller(BatchAddAccountsRequest::getBody, BatchAddAccountsRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(BatchAddAccountsResponse::getXRequestId, BatchAddAccountsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -697,45 +642,6 @@ public class HssMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAccountRequest, DeleteAccountResponse> deleteAccount =
-        genForDeleteAccount();
-
-    private static HttpRequestDef<DeleteAccountRequest, DeleteAccountResponse> genForDeleteAccount() {
-        // basic
-        HttpRequestDef.Builder<DeleteAccountRequest, DeleteAccountResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAccountRequest.class, DeleteAccountResponse.class)
-                .withName("DeleteAccount")
-                .withUri("/v5/setting/account/accounts")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAccountRequest::getEnterpriseProjectId,
-                DeleteAccountRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAccountRequest::getXSecurityToken, DeleteAccountRequest::setXSecurityToken));
-        builder.<String>withRequestField("region",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteAccountRequest::getRegion, DeleteAccountRequest::setRegion));
-        builder.<DeleteAccountRequestInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeleteAccountRequestInfo.class),
-            f -> f.withMarshaller(DeleteAccountRequest::getBody, DeleteAccountRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeleteHostsGroupRequest, DeleteHostsGroupResponse> deleteHostsGroup =
         genForDeleteHostsGroup();
 
@@ -908,54 +814,6 @@ public class HssMeta {
 
         // response
 
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListAccountsRequest, ListAccountsResponse> listAccounts = genForListAccounts();
-
-    private static HttpRequestDef<ListAccountsRequest, ListAccountsResponse> genForListAccounts() {
-        // basic
-        HttpRequestDef.Builder<ListAccountsRequest, ListAccountsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAccountsRequest.class, ListAccountsResponse.class)
-                .withName("ListAccounts")
-                .withUri("/v5/setting/account/accounts")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccountsRequest::getLimit, ListAccountsRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAccountsRequest::getOffset, ListAccountsRequest::setOffset));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountsRequest::getEnterpriseProjectId,
-                ListAccountsRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountsRequest::getXSecurityToken, ListAccountsRequest::setXSecurityToken));
-        builder.<String>withRequestField("region",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAccountsRequest::getRegion, ListAccountsRequest::setRegion));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListAccountsResponse::getXRequestId, ListAccountsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -2671,53 +2529,6 @@ public class HssMeta {
 
         // response
 
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListOrganizationTreeRequest, ListOrganizationTreeResponse> listOrganizationTree =
-        genForListOrganizationTree();
-
-    private static HttpRequestDef<ListOrganizationTreeRequest, ListOrganizationTreeResponse> genForListOrganizationTree() {
-        // basic
-        HttpRequestDef.Builder<ListOrganizationTreeRequest, ListOrganizationTreeResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListOrganizationTreeRequest.class, ListOrganizationTreeResponse.class)
-            .withName("ListOrganizationTree")
-            .withUri("/v5/setting/account/organization-tree")
-            .withContentType("application/json");
-
-        // requests
-        builder.<Boolean>withRequestField("is_refresh",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListOrganizationTreeRequest::getIsRefresh,
-                ListOrganizationTreeRequest::setIsRefresh));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationTreeRequest::getEnterpriseProjectId,
-                ListOrganizationTreeRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("X-Security-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationTreeRequest::getXSecurityToken,
-                ListOrganizationTreeRequest::setXSecurityToken));
-        builder.<String>withRequestField("region",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListOrganizationTreeRequest::getRegion, ListOrganizationTreeRequest::setRegion));
-
-        // response
-
-        builder.<String>withResponseField("X-request-id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListOrganizationTreeResponse::getXRequestId,
-                ListOrganizationTreeResponse::setXRequestId));
         return builder.build();
     }
 

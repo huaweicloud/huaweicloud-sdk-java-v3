@@ -60,6 +60,11 @@ public class CentralNetwork {
     private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_plane_id")
+
+    private String defaultPlaneId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "planes")
 
     private List<CentralNetworkPlane> planes = null;
@@ -74,18 +79,13 @@ public class CentralNetwork {
 
     private List<CentralNetworkConnectionInfo> connections = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "default_plane_id")
-
-    private String defaultPlaneId;
-
     public CentralNetwork withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return id
      */
     public String getId() {
@@ -170,7 +170,7 @@ public class CentralNetwork {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 实例所属账号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -246,6 +246,23 @@ public class CentralNetwork {
 
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+
+    public CentralNetwork withDefaultPlaneId(String defaultPlaneId) {
+        this.defaultPlaneId = defaultPlaneId;
+        return this;
+    }
+
+    /**
+     * 中心网络默认平面的ID。
+     * @return defaultPlaneId
+     */
+    public String getDefaultPlaneId() {
+        return defaultPlaneId;
+    }
+
+    public void setDefaultPlaneId(String defaultPlaneId) {
+        this.defaultPlaneId = defaultPlaneId;
     }
 
     public CentralNetwork withPlanes(List<CentralNetworkPlane> planes) {
@@ -347,23 +364,6 @@ public class CentralNetwork {
         this.connections = connections;
     }
 
-    public CentralNetwork withDefaultPlaneId(String defaultPlaneId) {
-        this.defaultPlaneId = defaultPlaneId;
-        return this;
-    }
-
-    /**
-     * 资源ID标识符。
-     * @return defaultPlaneId
-     */
-    public String getDefaultPlaneId() {
-        return defaultPlaneId;
-    }
-
-    public void setDefaultPlaneId(String defaultPlaneId) {
-        this.defaultPlaneId = defaultPlaneId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -378,9 +378,9 @@ public class CentralNetwork {
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.domainId, that.domainId)
             && Objects.equals(this.state, that.state)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.planes, that.planes)
-            && Objects.equals(this.erInstances, that.erInstances) && Objects.equals(this.connections, that.connections)
-            && Objects.equals(this.defaultPlaneId, that.defaultPlaneId);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.defaultPlaneId, that.defaultPlaneId)
+            && Objects.equals(this.planes, that.planes) && Objects.equals(this.erInstances, that.erInstances)
+            && Objects.equals(this.connections, that.connections);
     }
 
     @Override
@@ -394,10 +394,10 @@ public class CentralNetwork {
             state,
             enterpriseProjectId,
             tags,
+            defaultPlaneId,
             planes,
             erInstances,
-            connections,
-            defaultPlaneId);
+            connections);
     }
 
     @Override
@@ -413,10 +413,10 @@ public class CentralNetwork {
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    defaultPlaneId: ").append(toIndentedString(defaultPlaneId)).append("\n");
         sb.append("    planes: ").append(toIndentedString(planes)).append("\n");
         sb.append("    erInstances: ").append(toIndentedString(erInstances)).append("\n");
         sb.append("    connections: ").append(toIndentedString(connections)).append("\n");
-        sb.append("    defaultPlaneId: ").append(toIndentedString(defaultPlaneId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

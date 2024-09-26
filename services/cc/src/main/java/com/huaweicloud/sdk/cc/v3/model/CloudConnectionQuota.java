@@ -133,7 +133,7 @@ public class CloudConnectionQuota {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 实例所属账号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -150,7 +150,7 @@ public class CloudConnectionQuota {
     }
 
     /**
-     * 资源ID标识符。
+     * 云连接实例ID。
      * @return cloudConnectionId
      */
     public String getCloudConnectionId() {

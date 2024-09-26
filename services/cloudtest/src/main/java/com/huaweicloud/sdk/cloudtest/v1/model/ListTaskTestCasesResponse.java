@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,117 +13,131 @@ import java.util.function.Consumer;
 public class ListTaskTestCasesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "related_case_uris")
+    @JsonProperty(value = "status")
 
-    private List<String> relatedCaseUris = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "not_related_case_uris")
-
-    private List<String> notRelatedCaseUris = null;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "case_task_info")
+    @JsonProperty(value = "result")
 
-    private List<RelateTaskTestCasesVo> caseTaskInfo = null;
+    private ResultValueQueryTaskTestCasesVo result;
 
-    public ListTaskTestCasesResponse withRelatedCaseUris(List<String> relatedCaseUris) {
-        this.relatedCaseUris = relatedCaseUris;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error")
 
-    public ListTaskTestCasesResponse addRelatedCaseUrisItem(String relatedCaseUrisItem) {
-        if (this.relatedCaseUris == null) {
-            this.relatedCaseUris = new ArrayList<>();
-        }
-        this.relatedCaseUris.add(relatedCaseUrisItem);
-        return this;
-    }
+    private ApiError error;
 
-    public ListTaskTestCasesResponse withRelatedCaseUris(Consumer<List<String>> relatedCaseUrisSetter) {
-        if (this.relatedCaseUris == null) {
-            this.relatedCaseUris = new ArrayList<>();
-        }
-        relatedCaseUrisSetter.accept(this.relatedCaseUris);
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
 
-    /**
-     * 关联的用例uris
-     * @return relatedCaseUris
-     */
-    public List<String> getRelatedCaseUris() {
-        return relatedCaseUris;
-    }
+    private String requestId;
 
-    public void setRelatedCaseUris(List<String> relatedCaseUris) {
-        this.relatedCaseUris = relatedCaseUris;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_address")
 
-    public ListTaskTestCasesResponse withNotRelatedCaseUris(List<String> notRelatedCaseUris) {
-        this.notRelatedCaseUris = notRelatedCaseUris;
-        return this;
-    }
+    private String serverAddress;
 
-    public ListTaskTestCasesResponse addNotRelatedCaseUrisItem(String notRelatedCaseUrisItem) {
-        if (this.notRelatedCaseUris == null) {
-            this.notRelatedCaseUris = new ArrayList<>();
-        }
-        this.notRelatedCaseUris.add(notRelatedCaseUrisItem);
-        return this;
-    }
-
-    public ListTaskTestCasesResponse withNotRelatedCaseUris(Consumer<List<String>> notRelatedCaseUrisSetter) {
-        if (this.notRelatedCaseUris == null) {
-            this.notRelatedCaseUris = new ArrayList<>();
-        }
-        notRelatedCaseUrisSetter.accept(this.notRelatedCaseUris);
+    public ListTaskTestCasesResponse withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * 未关联的用例uris
-     * @return notRelatedCaseUris
+     * 对外时：success|error; 对内时：ok|failed
+     * @return status
      */
-    public List<String> getNotRelatedCaseUris() {
-        return notRelatedCaseUris;
+    public String getStatus() {
+        return status;
     }
 
-    public void setNotRelatedCaseUris(List<String> notRelatedCaseUris) {
-        this.notRelatedCaseUris = notRelatedCaseUris;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public ListTaskTestCasesResponse withCaseTaskInfo(List<RelateTaskTestCasesVo> caseTaskInfo) {
-        this.caseTaskInfo = caseTaskInfo;
+    public ListTaskTestCasesResponse withResult(ResultValueQueryTaskTestCasesVo result) {
+        this.result = result;
         return this;
     }
 
-    public ListTaskTestCasesResponse addCaseTaskInfoItem(RelateTaskTestCasesVo caseTaskInfoItem) {
-        if (this.caseTaskInfo == null) {
-            this.caseTaskInfo = new ArrayList<>();
+    public ListTaskTestCasesResponse withResult(Consumer<ResultValueQueryTaskTestCasesVo> resultSetter) {
+        if (this.result == null) {
+            this.result = new ResultValueQueryTaskTestCasesVo();
+            resultSetter.accept(this.result);
         }
-        this.caseTaskInfo.add(caseTaskInfoItem);
-        return this;
-    }
 
-    public ListTaskTestCasesResponse withCaseTaskInfo(Consumer<List<RelateTaskTestCasesVo>> caseTaskInfoSetter) {
-        if (this.caseTaskInfo == null) {
-            this.caseTaskInfo = new ArrayList<>();
-        }
-        caseTaskInfoSetter.accept(this.caseTaskInfo);
         return this;
     }
 
     /**
-     * 用例及任务信息
-     * @return caseTaskInfo
+     * Get result
+     * @return result
      */
-    public List<RelateTaskTestCasesVo> getCaseTaskInfo() {
-        return caseTaskInfo;
+    public ResultValueQueryTaskTestCasesVo getResult() {
+        return result;
     }
 
-    public void setCaseTaskInfo(List<RelateTaskTestCasesVo> caseTaskInfo) {
-        this.caseTaskInfo = caseTaskInfo;
+    public void setResult(ResultValueQueryTaskTestCasesVo result) {
+        this.result = result;
+    }
+
+    public ListTaskTestCasesResponse withError(ApiError error) {
+        this.error = error;
+        return this;
+    }
+
+    public ListTaskTestCasesResponse withError(Consumer<ApiError> errorSetter) {
+        if (this.error == null) {
+            this.error = new ApiError();
+            errorSetter.accept(this.error);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get error
+     * @return error
+     */
+    public ApiError getError() {
+        return error;
+    }
+
+    public void setError(ApiError error) {
+        this.error = error;
+    }
+
+    public ListTaskTestCasesResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 由接口调用方传入，建议使用UUID保证请求的唯一性。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public ListTaskTestCasesResponse withServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
+        return this;
+    }
+
+    /**
+     * 对内接口才有此属性
+     * @return serverAddress
+     */
+    public String getServerAddress() {
+        return serverAddress;
+    }
+
+    public void setServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
     }
 
     @Override
@@ -137,23 +149,25 @@ public class ListTaskTestCasesResponse extends SdkResponse {
             return false;
         }
         ListTaskTestCasesResponse that = (ListTaskTestCasesResponse) obj;
-        return Objects.equals(this.relatedCaseUris, that.relatedCaseUris)
-            && Objects.equals(this.notRelatedCaseUris, that.notRelatedCaseUris)
-            && Objects.equals(this.caseTaskInfo, that.caseTaskInfo);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.serverAddress, that.serverAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(relatedCaseUris, notRelatedCaseUris, caseTaskInfo);
+        return Objects.hash(status, result, error, requestId, serverAddress);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTaskTestCasesResponse {\n");
-        sb.append("    relatedCaseUris: ").append(toIndentedString(relatedCaseUris)).append("\n");
-        sb.append("    notRelatedCaseUris: ").append(toIndentedString(notRelatedCaseUris)).append("\n");
-        sb.append("    caseTaskInfo: ").append(toIndentedString(caseTaskInfo)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    serverAddress: ").append(toIndentedString(serverAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

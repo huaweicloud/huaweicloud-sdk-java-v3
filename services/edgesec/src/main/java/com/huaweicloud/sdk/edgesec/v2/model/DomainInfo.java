@@ -117,7 +117,7 @@ public class DomainInfo {
     }
 
     /**
-     * - 调度状态: - 调度异常：dispatch_abnormal - 未调度：un_dispatch - 调度中：dispatching - 已调度：dispatched - 删除中：dispatch_deleting
+     * 调度状态： - 调度异常：dispatch_abnormal - 未调度：un_dispatch - 调度中：dispatching - 已调度：dispatched - 删除中：dispatch_deleting 
      * @return dispatchStatus
      */
     public String getDispatchStatus() {
@@ -185,7 +185,7 @@ public class DomainInfo {
     }
 
     /**
-     * - 防护状态: - 防护中：on - 未防护：off
+     * 防护状态： - 防护中：on - 未防护：off 
      * @return protectStatus
      */
     public String getProtectStatus() {

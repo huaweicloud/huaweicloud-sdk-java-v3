@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 中心网络连接状态。 - AVAILABLE (可用) - CREATING (创建中) - UPDATING (更新中) - DELETING (删除中) - FREEZING (冻结中) - UNFREEZING (解冻中) - RECOVERING (恢复中) - FAILED (失败) - DELETED (已刪除)
+ * 中心网络连接状态。 - AVAILABLE (可用) - CREATING (创建中) - UPDATING (更新中) - DELETING (删除中) - FREEZING (冻结中) - UNFREEZING (解冻中) - RECOVERING (恢复中) - FAILED (失败) - DELETED (已刪除) - APPROVING (审批中) - APPROVED (已审批) - UNAPPROVED (审批未通过)
  */
 public class CentralNetworkConnectionStateEnum {
 
@@ -60,6 +60,23 @@ public class CentralNetworkConnectionStateEnum {
      */
     public static final CentralNetworkConnectionStateEnum DELETED = new CentralNetworkConnectionStateEnum("DELETED");
 
+    /**
+     * Enum APPROVING for value: "APPROVING"
+     */
+    public static final CentralNetworkConnectionStateEnum APPROVING =
+        new CentralNetworkConnectionStateEnum("APPROVING");
+
+    /**
+     * Enum APPROVED for value: "APPROVED"
+     */
+    public static final CentralNetworkConnectionStateEnum APPROVED = new CentralNetworkConnectionStateEnum("APPROVED");
+
+    /**
+     * Enum UNAPPROVED for value: "UNAPPROVED"
+     */
+    public static final CentralNetworkConnectionStateEnum UNAPPROVED =
+        new CentralNetworkConnectionStateEnum("UNAPPROVED");
+
     private static final Map<String, CentralNetworkConnectionStateEnum> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, CentralNetworkConnectionStateEnum> createStaticFields() {
@@ -73,6 +90,9 @@ public class CentralNetworkConnectionStateEnum {
         map.put("RECOVERING", RECOVERING);
         map.put("FAILED", FAILED);
         map.put("DELETED", DELETED);
+        map.put("APPROVING", APPROVING);
+        map.put("APPROVED", APPROVED);
+        map.put("UNAPPROVED", UNAPPROVED);
         return Collections.unmodifiableMap(map);
     }
 

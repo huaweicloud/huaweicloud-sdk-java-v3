@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.cc.v3.model;
 import java.util.Objects;
 
 /**
- * 实例所属帐号ID。
+ * 实例所属账号ID。
  */
 public class DomainIdDef {
 

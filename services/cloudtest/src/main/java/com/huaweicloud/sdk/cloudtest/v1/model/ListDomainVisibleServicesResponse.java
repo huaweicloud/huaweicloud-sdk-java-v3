@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,41 +13,131 @@ import java.util.function.Consumer;
 public class ListDomainVisibleServicesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "value")
+    @JsonProperty(value = "status")
 
-    private List<DomainVisibleServiceVo> value = null;
+    private String status;
 
-    public ListDomainVisibleServicesResponse withValue(List<DomainVisibleServiceVo> value) {
-        this.value = value;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "result")
 
-    public ListDomainVisibleServicesResponse addValueItem(DomainVisibleServiceVo valueItem) {
-        if (this.value == null) {
-            this.value = new ArrayList<>();
-        }
-        this.value.add(valueItem);
-        return this;
-    }
+    private ResultValueListDomainVisibleServiceVo result;
 
-    public ListDomainVisibleServicesResponse withValue(Consumer<List<DomainVisibleServiceVo>> valueSetter) {
-        if (this.value == null) {
-            this.value = new ArrayList<>();
-        }
-        valueSetter.accept(this.value);
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error")
+
+    private ApiError error;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_address")
+
+    private String serverAddress;
+
+    public ListDomainVisibleServicesResponse withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * 实际的数据类型：单个对象，集合 或 NULL
-     * @return value
+     * 对外时：success|error; 对内时：ok|failed
+     * @return status
      */
-    public List<DomainVisibleServiceVo> getValue() {
-        return value;
+    public String getStatus() {
+        return status;
     }
 
-    public void setValue(List<DomainVisibleServiceVo> value) {
-        this.value = value;
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public ListDomainVisibleServicesResponse withResult(ResultValueListDomainVisibleServiceVo result) {
+        this.result = result;
+        return this;
+    }
+
+    public ListDomainVisibleServicesResponse withResult(Consumer<ResultValueListDomainVisibleServiceVo> resultSetter) {
+        if (this.result == null) {
+            this.result = new ResultValueListDomainVisibleServiceVo();
+            resultSetter.accept(this.result);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get result
+     * @return result
+     */
+    public ResultValueListDomainVisibleServiceVo getResult() {
+        return result;
+    }
+
+    public void setResult(ResultValueListDomainVisibleServiceVo result) {
+        this.result = result;
+    }
+
+    public ListDomainVisibleServicesResponse withError(ApiError error) {
+        this.error = error;
+        return this;
+    }
+
+    public ListDomainVisibleServicesResponse withError(Consumer<ApiError> errorSetter) {
+        if (this.error == null) {
+            this.error = new ApiError();
+            errorSetter.accept(this.error);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get error
+     * @return error
+     */
+    public ApiError getError() {
+        return error;
+    }
+
+    public void setError(ApiError error) {
+        this.error = error;
+    }
+
+    public ListDomainVisibleServicesResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 由接口调用方传入，建议使用UUID保证请求的唯一性。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public ListDomainVisibleServicesResponse withServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
+        return this;
+    }
+
+    /**
+     * 对内接口才有此属性
+     * @return serverAddress
+     */
+    public String getServerAddress() {
+        return serverAddress;
+    }
+
+    public void setServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
     }
 
     @Override
@@ -61,19 +149,25 @@ public class ListDomainVisibleServicesResponse extends SdkResponse {
             return false;
         }
         ListDomainVisibleServicesResponse that = (ListDomainVisibleServicesResponse) obj;
-        return Objects.equals(this.value, that.value);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.serverAddress, that.serverAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
+        return Objects.hash(status, result, error, requestId, serverAddress);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDomainVisibleServicesResponse {\n");
-        sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    serverAddress: ").append(toIndentedString(serverAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

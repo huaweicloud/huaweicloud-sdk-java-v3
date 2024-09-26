@@ -21,7 +21,7 @@ public class EnterpriseRouterProjectId {
     }
 
     /**
-     * 实例所属项目ID。
+     * 企业路由器的项目ID。
      * @return enterpriseRouterProjectId
      */
     public String getEnterpriseRouterProjectId() {

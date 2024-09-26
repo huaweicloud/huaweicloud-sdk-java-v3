@@ -132,7 +132,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return id
      */
     public String getId() {
@@ -183,7 +183,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 实例所属账号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -251,7 +251,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络ID。
      * @return centralNetworkId
      */
     public String getCentralNetworkId() {
@@ -268,7 +268,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络平面ID。
      * @return centralNetworkPlaneId
      */
     public String getCentralNetworkPlaneId() {
@@ -285,7 +285,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 全域互联带宽ID。
      * @return globalConnectionBandwidthId
      */
     public String getGlobalConnectionBandwidthId() {
@@ -355,7 +355,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 企业路由器的ID。
      * @return enterpriseRouterId
      */
     public String getEnterpriseRouterId() {
@@ -372,7 +372,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 实例所属项目ID。
+     * 企业路由器的项目ID。
      * @return enterpriseRouterProjectId
      */
     public String getEnterpriseRouterProjectId() {
@@ -389,7 +389,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * RegionID。
+     * ER路由器的regionID。
      * @return enterpriseRouterRegionId
      */
     public String getEnterpriseRouterRegionId() {
@@ -406,7 +406,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 企业路由器的连接ID。
      * @return enterpriseRouterAttachmentId
      */
     public String getEnterpriseRouterAttachmentId() {
@@ -423,7 +423,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * GDGW的连接ID。
      * @return globalDcGatewayPeerLinkId
      */
     public String getGlobalDcGatewayPeerLinkId() {
@@ -440,7 +440,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * Gdgw的ID。
      * @return globalDcGatewayId
      */
     public String getGlobalDcGatewayId() {
@@ -457,7 +457,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 实例所属项目ID。
+     * Gdgw的项目ID。
      * @return globalDcGatewayProjectId
      */
     public String getGlobalDcGatewayProjectId() {
@@ -474,7 +474,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * RegionID。
+     * Gdgw的RegionID。
      * @return globalDcGatewayRegionId
      */
     public String getGlobalDcGatewayRegionId() {
@@ -491,7 +491,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 站点编码定义
+     * 中心网络企业路由器的站点编码。
      * @return enterpriseRouterSiteCode
      */
     public String getEnterpriseRouterSiteCode() {

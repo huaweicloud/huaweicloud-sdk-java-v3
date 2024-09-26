@@ -143,7 +143,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return id
      */
     public String getId() {
@@ -194,7 +194,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 实例所属账号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -262,7 +262,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络ID。
      * @return centralNetworkId
      */
     public String getCentralNetworkId() {
@@ -279,7 +279,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络平面ID。
      * @return centralNetworkPlaneId
      */
     public String getCentralNetworkPlaneId() {
@@ -296,7 +296,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 全域互联带宽ID。
      * @return globalConnectionBandwidthId
      */
     public String getGlobalConnectionBandwidthId() {
@@ -366,7 +366,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 企业路由器的ID。
      * @return enterpriseRouterId
      */
     public String getEnterpriseRouterId() {
@@ -383,7 +383,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 实例所属项目ID。
+     * 企业路由器的项目ID。
      * @return enterpriseRouterProjectId
      */
     public String getEnterpriseRouterProjectId() {
@@ -400,7 +400,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * RegionID。
+     * ER路由器的regionID。
      * @return enterpriseRouterRegionId
      */
     public String getEnterpriseRouterRegionId() {
@@ -417,7 +417,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 企业路由器的连接ID。
      * @return enterpriseRouterAttachmentId
      */
     public String getEnterpriseRouterAttachmentId() {
@@ -451,7 +451,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络附件对端实例ID，企业路由器的路由表ID或者GDGW的ID。
      * @return attachmentInstanceId
      */
     public String getAttachmentInstanceId() {
@@ -468,7 +468,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络附件对端实例的连接ID，企业路由器的连接ID或者GDGW的连接ID。
      * @return attachmentId
      */
     public String getAttachmentId() {
@@ -485,7 +485,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 实例所属项目ID。
+     * 中心网络附件对端实例的项目ID。
      * @return attachmentInstanceProjectId
      */
     public String getAttachmentInstanceProjectId() {
@@ -502,7 +502,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * RegionID。
+     * 中心网络附件对端实例的regionID。
      * @return attachmentInstanceRegionId
      */
     public String getAttachmentInstanceRegionId() {
@@ -519,7 +519,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 站点编码定义
+     * 中心网络附件对端实例的站点编码。
      * @return attachmentInstanceSiteCode
      */
     public String getAttachmentInstanceSiteCode() {
@@ -536,7 +536,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 站点编码定义
+     * 中心网络企业路由器的站点编码。
      * @return enterpriseRouterSiteCode
      */
     public String getEnterpriseRouterSiteCode() {

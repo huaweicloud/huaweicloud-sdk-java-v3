@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * InstanceId
+ * 网络实例的ID。
  */
 public class InstanceId {
 
@@ -21,7 +21,7 @@ public class InstanceId {
     }
 
     /**
-     * 资源ID标识符。
+     * 网络实例（VPC，VGW）的ID。
      * @return instanceId
      */
     public String getInstanceId() {

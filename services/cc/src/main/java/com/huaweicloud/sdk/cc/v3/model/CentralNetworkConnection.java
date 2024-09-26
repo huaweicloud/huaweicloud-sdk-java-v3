@@ -100,7 +100,7 @@ public class CentralNetworkConnection {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return id
      */
     public String getId() {
@@ -151,7 +151,7 @@ public class CentralNetworkConnection {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 实例所属账号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -185,7 +185,7 @@ public class CentralNetworkConnection {
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络ID。
      * @return centralNetworkId
      */
     public String getCentralNetworkId() {
@@ -202,7 +202,7 @@ public class CentralNetworkConnection {
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络平面ID。
      * @return centralNetworkPlaneId
      */
     public String getCentralNetworkPlaneId() {
@@ -219,7 +219,7 @@ public class CentralNetworkConnection {
     }
 
     /**
-     * 资源ID标识符。
+     * 全域互联带宽ID。
      * @return globalConnectionBandwidthId
      */
     public String getGlobalConnectionBandwidthId() {

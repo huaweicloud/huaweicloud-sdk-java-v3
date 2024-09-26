@@ -30,6 +30,11 @@ public class ListComponentConfigurationsRequest {
 
     private String xEnvironmentID;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "displayMode")
+
+    private String displayMode;
+
     public ListComponentConfigurationsRequest withApplicationId(String applicationId) {
         this.applicationId = applicationId;
         return this;
@@ -102,6 +107,23 @@ public class ListComponentConfigurationsRequest {
         this.xEnvironmentID = xEnvironmentID;
     }
 
+    public ListComponentConfigurationsRequest withDisplayMode(String displayMode) {
+        this.displayMode = displayMode;
+        return this;
+    }
+
+    /**
+     * 显示模式，当前只支持“latestEffective”，即只显示最后一次生效配置。
+     * @return displayMode
+     */
+    public String getDisplayMode() {
+        return displayMode;
+    }
+
+    public void setDisplayMode(String displayMode) {
+        this.displayMode = displayMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -114,12 +136,13 @@ public class ListComponentConfigurationsRequest {
         return Objects.equals(this.applicationId, that.applicationId)
             && Objects.equals(this.componentId, that.componentId)
             && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
-            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID);
+            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
+            && Objects.equals(this.displayMode, that.displayMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(applicationId, componentId, xEnterpriseProjectID, xEnvironmentID);
+        return Objects.hash(applicationId, componentId, xEnterpriseProjectID, xEnvironmentID, displayMode);
     }
 
     @Override
@@ -130,6 +153,7 @@ public class ListComponentConfigurationsRequest {
         sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
         sb.append("    xEnterpriseProjectID: ").append(toIndentedString(xEnterpriseProjectID)).append("\n");
         sb.append("    xEnvironmentID: ").append(toIndentedString(xEnvironmentID)).append("\n");
+        sb.append("    displayMode: ").append(toIndentedString(displayMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

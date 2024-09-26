@@ -16,7 +16,7 @@ import java.util.Objects;
 public class GcbChargeMode {
 
     /**
-     * 功能说明：描述计费类型，描述可选计费类型。默认开放按带宽计费，传统95计费租户白名单控制。 取值范围：     bwd: 按带宽计费     95: 按传统型95计费
+     * 功能说明：描述计费类型，描述可选计费类型。默认开放按带宽计费，传统95计费租户白名单控制。 取值范围：     bwd: 按带宽计费     95: 按传统型95计费     95avr: 按传统型日95计费
      */
     public static final class ChargeModeEnum {
 
@@ -30,12 +30,18 @@ public class GcbChargeMode {
          */
         public static final ChargeModeEnum _95 = new ChargeModeEnum("95");
 
+        /**
+         * Enum _95AVR for value: "95avr"
+         */
+        public static final ChargeModeEnum _95AVR = new ChargeModeEnum("95avr");
+
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ChargeModeEnum> createStaticFields() {
             Map<String, ChargeModeEnum> map = new HashMap<>();
             map.put("bwd", BWD);
             map.put("95", _95);
+            map.put("95avr", _95AVR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -96,7 +102,7 @@ public class GcbChargeMode {
     }
 
     /**
-     * 功能说明：描述计费类型，描述可选计费类型。默认开放按带宽计费，传统95计费租户白名单控制。 取值范围：     bwd: 按带宽计费     95: 按传统型95计费
+     * 功能说明：描述计费类型，描述可选计费类型。默认开放按带宽计费，传统95计费租户白名单控制。 取值范围：     bwd: 按带宽计费     95: 按传统型95计费     95avr: 按传统型日95计费
      * @return chargeMode
      */
     public ChargeModeEnum getChargeMode() {

@@ -41,7 +41,7 @@ public class ListDatastoreVersionsResponse extends SdkResponse {
     }
 
     /**
-     * 数据库版本。支持3.4、3.2和4.0版本。
+     * 数据库版本。支持3.4及以上版本。
      * @return versions
      */
     public List<String> getVersions() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 云连接实例ID。
+ * 带宽包实例ID。
  */
 public class BandwidthPackageId {
 
@@ -21,7 +21,7 @@ public class BandwidthPackageId {
     }
 
     /**
-     * 资源ID标识符。
+     * 带宽包实例ID。
      * @return bandwidthPackageId
      */
     public String getBandwidthPackageId() {

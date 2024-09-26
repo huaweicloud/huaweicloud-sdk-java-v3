@@ -31,7 +31,7 @@ public class CentralNetworkCapability {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return id
      */
     public String getId() {
@@ -48,7 +48,7 @@ public class CentralNetworkCapability {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 实例所属账号ID。
      * @return domainId
      */
     public String getDomainId() {

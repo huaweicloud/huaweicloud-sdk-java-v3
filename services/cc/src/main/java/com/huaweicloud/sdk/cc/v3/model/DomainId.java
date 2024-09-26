@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 实例所属帐号ID。
+ * 实例所属账号ID。
  */
 public class DomainId {
 
@@ -21,7 +21,7 @@ public class DomainId {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 实例所属账号ID。
      * @return domainId
      */
     public String getDomainId() {

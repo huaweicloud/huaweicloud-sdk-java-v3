@@ -21,7 +21,7 @@ public class GlobalDcGatewayId {
     }
 
     /**
-     * 资源ID标识符。
+     * Gdgw的ID。
      * @return globalDcGatewayId
      */
     public String getGlobalDcGatewayId() {

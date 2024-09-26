@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateHarvestTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateHarvestTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordCallbackConfigRequest;
@@ -33,6 +35,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteHarvestTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteHarvestTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateRequest;
@@ -53,6 +57,8 @@ import com.huaweicloud.sdk.live.v1.model.ListDelayConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListDelayConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.ListHarvestTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.ListHarvestTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.ListHlsConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListHlsConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ListIpAuthListRequest;
@@ -75,6 +81,8 @@ import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenRequest;
 import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenResponse;
+import com.huaweicloud.sdk.live.v1.model.ModifyHarvestTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyHarvestTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoEncoderSettingsRequest;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoEncoderSettingsResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelInfoEndPointsRequest;
@@ -119,6 +127,8 @@ import com.huaweicloud.sdk.live.v1.model.UpdateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateHarvestJobStatusRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateHarvestJobStatusResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateHlsConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateHlsConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateIpAuthListRequest;
@@ -1872,6 +1882,152 @@ public class LiveAsyncClient {
     public AsyncInvoker<UpdateDomainHttpsCertRequest, UpdateDomainHttpsCertResponse> updateDomainHttpsCertAsyncInvoker(
         UpdateDomainHttpsCertRequest request) {
         return new AsyncInvoker<>(request, LiveMeta.updateDomainHttpsCert, hcClient);
+    }
+
+    /**
+     * 创建Live2VOD任务
+     *
+     * 创建Live2VOD任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHarvestTaskRequest 请求对象
+     * @return CompletableFuture<CreateHarvestTaskResponse>
+     */
+    public CompletableFuture<CreateHarvestTaskResponse> createHarvestTaskAsync(CreateHarvestTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.createHarvestTask);
+    }
+
+    /**
+     * 创建Live2VOD任务
+     *
+     * 创建Live2VOD任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHarvestTaskRequest 请求对象
+     * @return AsyncInvoker<CreateHarvestTaskRequest, CreateHarvestTaskResponse>
+     */
+    public AsyncInvoker<CreateHarvestTaskRequest, CreateHarvestTaskResponse> createHarvestTaskAsyncInvoker(
+        CreateHarvestTaskRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.createHarvestTask, hcClient);
+    }
+
+    /**
+     * 删除Live2VOD任务
+     *
+     * 删除Live2VOD任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHarvestTaskRequest 请求对象
+     * @return CompletableFuture<DeleteHarvestTaskResponse>
+     */
+    public CompletableFuture<DeleteHarvestTaskResponse> deleteHarvestTaskAsync(DeleteHarvestTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.deleteHarvestTask);
+    }
+
+    /**
+     * 删除Live2VOD任务
+     *
+     * 删除Live2VOD任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteHarvestTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteHarvestTaskRequest, DeleteHarvestTaskResponse>
+     */
+    public AsyncInvoker<DeleteHarvestTaskRequest, DeleteHarvestTaskResponse> deleteHarvestTaskAsyncInvoker(
+        DeleteHarvestTaskRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.deleteHarvestTask, hcClient);
+    }
+
+    /**
+     * 查询Live2VOD任务
+     *
+     * 查询Live2VOD任务，支持批量查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHarvestTaskRequest 请求对象
+     * @return CompletableFuture<ListHarvestTaskResponse>
+     */
+    public CompletableFuture<ListHarvestTaskResponse> listHarvestTaskAsync(ListHarvestTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.listHarvestTask);
+    }
+
+    /**
+     * 查询Live2VOD任务
+     *
+     * 查询Live2VOD任务，支持批量查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHarvestTaskRequest 请求对象
+     * @return AsyncInvoker<ListHarvestTaskRequest, ListHarvestTaskResponse>
+     */
+    public AsyncInvoker<ListHarvestTaskRequest, ListHarvestTaskResponse> listHarvestTaskAsyncInvoker(
+        ListHarvestTaskRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.listHarvestTask, hcClient);
+    }
+
+    /**
+     * 修改Live2VOD任务
+     *
+     * 修改Live2VOD任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyHarvestTaskRequest 请求对象
+     * @return CompletableFuture<ModifyHarvestTaskResponse>
+     */
+    public CompletableFuture<ModifyHarvestTaskResponse> modifyHarvestTaskAsync(ModifyHarvestTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.modifyHarvestTask);
+    }
+
+    /**
+     * 修改Live2VOD任务
+     *
+     * 修改Live2VOD任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyHarvestTaskRequest 请求对象
+     * @return AsyncInvoker<ModifyHarvestTaskRequest, ModifyHarvestTaskResponse>
+     */
+    public AsyncInvoker<ModifyHarvestTaskRequest, ModifyHarvestTaskResponse> modifyHarvestTaskAsyncInvoker(
+        ModifyHarvestTaskRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.modifyHarvestTask, hcClient);
+    }
+
+    /**
+     * 修改Live2VOD任务状态
+     *
+     * 修改Live2VOD任务状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHarvestJobStatusRequest 请求对象
+     * @return CompletableFuture<UpdateHarvestJobStatusResponse>
+     */
+    public CompletableFuture<UpdateHarvestJobStatusResponse> updateHarvestJobStatusAsync(
+        UpdateHarvestJobStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, LiveMeta.updateHarvestJobStatus);
+    }
+
+    /**
+     * 修改Live2VOD任务状态
+     *
+     * 修改Live2VOD任务状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateHarvestJobStatusRequest 请求对象
+     * @return AsyncInvoker<UpdateHarvestJobStatusRequest, UpdateHarvestJobStatusResponse>
+     */
+    public AsyncInvoker<UpdateHarvestJobStatusRequest, UpdateHarvestJobStatusResponse> updateHarvestJobStatusAsyncInvoker(
+        UpdateHarvestJobStatusRequest request) {
+        return new AsyncInvoker<>(request, LiveMeta.updateHarvestJobStatus, hcClient);
     }
 
     /**

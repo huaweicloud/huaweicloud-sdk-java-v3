@@ -40,7 +40,7 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rank_id")
 
-    private String rankId;
+    private Integer rankId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status_id")
@@ -162,7 +162,7 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
         this.testcaseNumber = testcaseNumber;
     }
 
-    public ShowTestCaseDetailV2Response withRankId(String rankId) {
+    public ShowTestCaseDetailV2Response withRankId(Integer rankId) {
         this.rankId = rankId;
         return this;
     }
@@ -171,11 +171,11 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
      * 测试用例等级
      * @return rankId
      */
-    public String getRankId() {
+    public Integer getRankId() {
         return rankId;
     }
 
-    public void setRankId(String rankId) {
+    public void setRankId(Integer rankId) {
         this.rankId = rankId;
     }
 

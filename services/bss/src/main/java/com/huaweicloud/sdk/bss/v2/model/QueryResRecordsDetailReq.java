@@ -335,9 +335,9 @@ public class QueryResRecordsDetailReq {
     }
 
     /**
-     * 统计类型。默认值为1。 1：按账期2：按天
+     * 统计类型。默认值为1。 1：按账期2：按天3：按明细
      * minimum: 1
-     * maximum: 2
+     * maximum: 3
      * @return statisticType
      */
     public Integer getStatisticType() {
@@ -354,7 +354,7 @@ public class QueryResRecordsDetailReq {
     }
 
     /**
-     * 查询类型。默认值为BILLCYCLE。 BILLCYCLE：按月DAILY：按天仅当statistic_type=2时，支持传递query_type=DAILY。该参数不携带或携带值为null或携带为空串时，取默认值BILLCYCLE。
+     * 查询类型。默认值为BILLCYCLE。 BILLCYCLE：按月DAILY：按天仅当statistic_type=2或3时，支持传递query_type=DAILY。该参数不携带或携带值为null或携带为空串时，取默认值BILLCYCLE。
      * @return queryType
      */
     public String getQueryType() {

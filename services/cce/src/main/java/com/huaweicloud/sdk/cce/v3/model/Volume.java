@@ -24,6 +24,16 @@ public class Volume {
     private String volumetype;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private Integer iops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throughput")
+
+    private Integer throughput;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extendParam")
 
     private Map<String, Object> extendParam = null;
@@ -71,7 +81,7 @@ public class Volume {
     }
 
     /**
-     * 磁盘类型，取值请参见创建云服务器 中“root_volume字段数据结构说明”。  - SAS：高IO，是指由SAS存储提供资源的磁盘类型。 - SSD：超高IO，是指由SSD存储提供资源的磁盘类型。 - SATA：普通IO，是指由SATA存储提供资源的磁盘类型。EVS已下线SATA磁盘，仅存量节点有此类型的磁盘。 [- ESSD：通用型SSD云硬盘，是指由SSD存储提供资源的磁盘类型。](tag:hws) [- GPSDD：通用型SSD云硬盘，是指由SSD存储提供资源的磁盘类型。](tag:hws) [> 了解不同磁盘类型的详细信息，链接请参见[创建云服务器](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。](tag:hws)
+     * 磁盘类型，取值请参见创建云服务器 中“root_volume字段数据结构说明”。  - SAS：高IO，是指由SAS存储提供资源的磁盘类型。 - SSD：超高IO，是指由SSD存储提供资源的磁盘类型。 - SATA：普通IO，是指由SATA存储提供资源的磁盘类型。EVS已下线SATA磁盘，仅存量节点有此类型的磁盘。 [- ESSD：通用型SSD云硬盘，是指由SSD存储提供资源的磁盘类型。](tag:hws) [- GPSDD：通用型SSD云硬盘，是指由SSD存储提供资源的磁盘类型。](tag:hws) [- ESSD2：极速型SSD V2云硬盘，是指由极速型SSD V2存储提供资源的磁盘类型。](tag:hws) [- GPSSD2：通用型SSD V2云硬盘，是指由通用型SSD V2存储提供资源的磁盘类型。](tag:hws) [> 了解不同磁盘类型的详细信息，链接请参见[创建云服务器](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。](tag:hws)
      * @return volumetype
      */
     public String getVolumetype() {
@@ -80,6 +90,40 @@ public class Volume {
 
     public void setVolumetype(String volumetype) {
         this.volumetype = volumetype;
+    }
+
+    public Volume withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    /**
+     * 给云硬盘配置iops，购买GPSSD2、ESSD2类型的云硬盘时必填，其他类型不能设置。 > - 只支持按需计费。 > - 了解GPSSD2、ESSD2类型的iops大小范围，请参见[云硬盘类型及性能介绍里面的云硬盘性能数据表](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
+     * @return iops
+     */
+    public Integer getIops() {
+        return iops;
+    }
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
+    public Volume withThroughput(Integer throughput) {
+        this.throughput = throughput;
+        return this;
+    }
+
+    /**
+     * 给云硬盘配置吞吐量，单位是MiB/s，购买GPSSD2类型云硬盘时必填，其他类型不能设置。 > - 只支持按需计费。 > - 了解GPSSD2类型的吞吐量大小范围，请参见[云硬盘类型及性能介绍里面的云硬盘性能数据表](https://support.huaweicloud.com/productdesc-evs/zh-cn_topic_0044524691.html)。
+     * @return throughput
+     */
+    public Integer getThroughput() {
+        return throughput;
+    }
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
     }
 
     public Volume withExtendParam(Map<String, Object> extendParam) {
@@ -202,6 +246,7 @@ public class Volume {
         }
         Volume that = (Volume) obj;
         return Objects.equals(this.size, that.size) && Objects.equals(this.volumetype, that.volumetype)
+            && Objects.equals(this.iops, that.iops) && Objects.equals(this.throughput, that.throughput)
             && Objects.equals(this.extendParam, that.extendParam) && Objects.equals(this.clusterId, that.clusterId)
             && Objects.equals(this.clusterType, that.clusterType)
             && Objects.equals(this.hwPassthrough, that.hwPassthrough) && Objects.equals(this.metadata, that.metadata);
@@ -209,7 +254,8 @@ public class Volume {
 
     @Override
     public int hashCode() {
-        return Objects.hash(size, volumetype, extendParam, clusterId, clusterType, hwPassthrough, metadata);
+        return Objects
+            .hash(size, volumetype, iops, throughput, extendParam, clusterId, clusterType, hwPassthrough, metadata);
     }
 
     @Override
@@ -218,6 +264,8 @@ public class Volume {
         sb.append("class Volume {\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    volumetype: ").append(toIndentedString(volumetype)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
+        sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");

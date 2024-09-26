@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -12,91 +13,131 @@ import java.util.Objects;
 public class ShowBackgroundInfoResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_uuid")
+    @JsonProperty(value = "status")
 
-    private String projectUuid;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cover_file_name")
-
-    private String coverFileName;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "background_file_name")
+    @JsonProperty(value = "result")
 
-    private String backgroundFileName;
+    private ResultValueBackgroundInfoVo result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "logo_file_name")
+    @JsonProperty(value = "error")
 
-    private String logoFileName;
+    private ApiError error;
 
-    public ShowBackgroundInfoResponse withProjectUuid(String projectUuid) {
-        this.projectUuid = projectUuid;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_address")
+
+    private String serverAddress;
+
+    public ShowBackgroundInfoResponse withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * 项目id
-     * @return projectUuid
+     * 对外时：success|error; 对内时：ok|failed
+     * @return status
      */
-    public String getProjectUuid() {
-        return projectUuid;
+    public String getStatus() {
+        return status;
     }
 
-    public void setProjectUuid(String projectUuid) {
-        this.projectUuid = projectUuid;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public ShowBackgroundInfoResponse withCoverFileName(String coverFileName) {
-        this.coverFileName = coverFileName;
+    public ShowBackgroundInfoResponse withResult(ResultValueBackgroundInfoVo result) {
+        this.result = result;
+        return this;
+    }
+
+    public ShowBackgroundInfoResponse withResult(Consumer<ResultValueBackgroundInfoVo> resultSetter) {
+        if (this.result == null) {
+            this.result = new ResultValueBackgroundInfoVo();
+            resultSetter.accept(this.result);
+        }
+
         return this;
     }
 
     /**
-     * cover文件名称
-     * @return coverFileName
+     * Get result
+     * @return result
      */
-    public String getCoverFileName() {
-        return coverFileName;
+    public ResultValueBackgroundInfoVo getResult() {
+        return result;
     }
 
-    public void setCoverFileName(String coverFileName) {
-        this.coverFileName = coverFileName;
+    public void setResult(ResultValueBackgroundInfoVo result) {
+        this.result = result;
     }
 
-    public ShowBackgroundInfoResponse withBackgroundFileName(String backgroundFileName) {
-        this.backgroundFileName = backgroundFileName;
+    public ShowBackgroundInfoResponse withError(ApiError error) {
+        this.error = error;
+        return this;
+    }
+
+    public ShowBackgroundInfoResponse withError(Consumer<ApiError> errorSetter) {
+        if (this.error == null) {
+            this.error = new ApiError();
+            errorSetter.accept(this.error);
+        }
+
         return this;
     }
 
     /**
-     * 背景文件名称
-     * @return backgroundFileName
+     * Get error
+     * @return error
      */
-    public String getBackgroundFileName() {
-        return backgroundFileName;
+    public ApiError getError() {
+        return error;
     }
 
-    public void setBackgroundFileName(String backgroundFileName) {
-        this.backgroundFileName = backgroundFileName;
+    public void setError(ApiError error) {
+        this.error = error;
     }
 
-    public ShowBackgroundInfoResponse withLogoFileName(String logoFileName) {
-        this.logoFileName = logoFileName;
+    public ShowBackgroundInfoResponse withRequestId(String requestId) {
+        this.requestId = requestId;
         return this;
     }
 
     /**
-     * logo文件名称
-     * @return logoFileName
+     * 由接口调用方传入，建议使用UUID保证请求的唯一性。
+     * @return requestId
      */
-    public String getLogoFileName() {
-        return logoFileName;
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setLogoFileName(String logoFileName) {
-        this.logoFileName = logoFileName;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public ShowBackgroundInfoResponse withServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
+        return this;
+    }
+
+    /**
+     * 对内接口才有此属性
+     * @return serverAddress
+     */
+    public String getServerAddress() {
+        return serverAddress;
+    }
+
+    public void setServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
     }
 
     @Override
@@ -108,25 +149,25 @@ public class ShowBackgroundInfoResponse extends SdkResponse {
             return false;
         }
         ShowBackgroundInfoResponse that = (ShowBackgroundInfoResponse) obj;
-        return Objects.equals(this.projectUuid, that.projectUuid)
-            && Objects.equals(this.coverFileName, that.coverFileName)
-            && Objects.equals(this.backgroundFileName, that.backgroundFileName)
-            && Objects.equals(this.logoFileName, that.logoFileName);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.serverAddress, that.serverAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectUuid, coverFileName, backgroundFileName, logoFileName);
+        return Objects.hash(status, result, error, requestId, serverAddress);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowBackgroundInfoResponse {\n");
-        sb.append("    projectUuid: ").append(toIndentedString(projectUuid)).append("\n");
-        sb.append("    coverFileName: ").append(toIndentedString(coverFileName)).append("\n");
-        sb.append("    backgroundFileName: ").append(toIndentedString(backgroundFileName)).append("\n");
-        sb.append("    logoFileName: ").append(toIndentedString(logoFileName)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    serverAddress: ").append(toIndentedString(serverAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

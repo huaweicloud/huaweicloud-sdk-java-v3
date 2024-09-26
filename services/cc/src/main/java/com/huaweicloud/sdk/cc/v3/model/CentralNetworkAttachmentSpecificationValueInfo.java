@@ -16,9 +16,9 @@ public class CentralNetworkAttachmentSpecificationValueInfo {
     private String enterpriseRouterTableId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "attached_er_id")
+    @JsonProperty(value = "attachment_parent_instance_id")
 
-    private String attachedErId;
+    private String attachmentParentInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "approved_state")
@@ -41,7 +41,7 @@ public class CentralNetworkAttachmentSpecificationValueInfo {
     }
 
     /**
-     * 资源ID标识符。
+     * 企业路由器的路由表ID。
      * @return enterpriseRouterTableId
      */
     public String getEnterpriseRouterTableId() {
@@ -52,21 +52,22 @@ public class CentralNetworkAttachmentSpecificationValueInfo {
         this.enterpriseRouterTableId = enterpriseRouterTableId;
     }
 
-    public CentralNetworkAttachmentSpecificationValueInfo withAttachedErId(String attachedErId) {
-        this.attachedErId = attachedErId;
+    public CentralNetworkAttachmentSpecificationValueInfo withAttachmentParentInstanceId(
+        String attachmentParentInstanceId) {
+        this.attachmentParentInstanceId = attachmentParentInstanceId;
         return this;
     }
 
     /**
-     * 资源ID标识符。
-     * @return attachedErId
+     * 实例ID。
+     * @return attachmentParentInstanceId
      */
-    public String getAttachedErId() {
-        return attachedErId;
+    public String getAttachmentParentInstanceId() {
+        return attachmentParentInstanceId;
     }
 
-    public void setAttachedErId(String attachedErId) {
-        this.attachedErId = attachedErId;
+    public void setAttachmentParentInstanceId(String attachmentParentInstanceId) {
+        this.attachmentParentInstanceId = attachmentParentInstanceId;
     }
 
     public CentralNetworkAttachmentSpecificationValueInfo withApprovedState(ApprovedStateEnum approvedState) {
@@ -130,14 +131,14 @@ public class CentralNetworkAttachmentSpecificationValueInfo {
         }
         CentralNetworkAttachmentSpecificationValueInfo that = (CentralNetworkAttachmentSpecificationValueInfo) obj;
         return Objects.equals(this.enterpriseRouterTableId, that.enterpriseRouterTableId)
-            && Objects.equals(this.attachedErId, that.attachedErId)
+            && Objects.equals(this.attachmentParentInstanceId, that.attachmentParentInstanceId)
             && Objects.equals(this.approvedState, that.approvedState)
             && Objects.equals(this.hostedCloud, that.hostedCloud) && Objects.equals(this.reason, that.reason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseRouterTableId, attachedErId, approvedState, hostedCloud, reason);
+        return Objects.hash(enterpriseRouterTableId, attachmentParentInstanceId, approvedState, hostedCloud, reason);
     }
 
     @Override
@@ -145,7 +146,7 @@ public class CentralNetworkAttachmentSpecificationValueInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class CentralNetworkAttachmentSpecificationValueInfo {\n");
         sb.append("    enterpriseRouterTableId: ").append(toIndentedString(enterpriseRouterTableId)).append("\n");
-        sb.append("    attachedErId: ").append(toIndentedString(attachedErId)).append("\n");
+        sb.append("    attachmentParentInstanceId: ").append(toIndentedString(attachmentParentInstanceId)).append("\n");
         sb.append("    approvedState: ").append(toIndentedString(approvedState)).append("\n");
         sb.append("    hostedCloud: ").append(toIndentedString(hostedCloud)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");

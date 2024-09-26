@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 网络实例的账户ID。
+ * 网络实例（VPC，VGW）所属账号ID。
  */
 public class InstanceDomainId {
 
@@ -21,7 +21,7 @@ public class InstanceDomainId {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 网络实例（VPC，VGW）所属账号ID。
      * @return instanceDomainId
      */
     public String getInstanceDomainId() {

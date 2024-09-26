@@ -3,7 +3,6 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -17,7 +16,7 @@ public class DashboardDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private OffsetDateTime createTime;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_user")
@@ -57,7 +56,7 @@ public class DashboardDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private OffsetDateTime updateTime;
+    private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_user")
@@ -69,7 +68,7 @@ public class DashboardDto {
 
     private String viewType;
 
-    public DashboardDto withCreateTime(OffsetDateTime createTime) {
+    public DashboardDto withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -78,11 +77,11 @@ public class DashboardDto {
      * 创建时间
      * @return createTime
      */
-    public OffsetDateTime getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(OffsetDateTime createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
@@ -221,7 +220,7 @@ public class DashboardDto {
         this.taskType = taskType;
     }
 
-    public DashboardDto withUpdateTime(OffsetDateTime updateTime) {
+    public DashboardDto withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
@@ -230,11 +229,11 @@ public class DashboardDto {
      * 修改时间
      * @return updateTime
      */
-    public OffsetDateTime getUpdateTime() {
+    public Long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(OffsetDateTime updateTime) {
+    public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
 

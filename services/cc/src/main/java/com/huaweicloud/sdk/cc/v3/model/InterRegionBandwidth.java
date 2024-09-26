@@ -10,7 +10,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * InterRegionBandwidth
+ * 域间带宽实例。
  */
 public class InterRegionBandwidth {
 
@@ -70,7 +70,7 @@ public class InterRegionBandwidth {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return id
      */
     public String getId() {
@@ -121,7 +121,7 @@ public class InterRegionBandwidth {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 实例所属账号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -172,7 +172,7 @@ public class InterRegionBandwidth {
     }
 
     /**
-     * 资源ID标识符。
+     * 云连接实例ID。
      * @return cloudConnectionId
      */
     public String getCloudConnectionId() {
@@ -189,7 +189,7 @@ public class InterRegionBandwidth {
     }
 
     /**
-     * 资源ID标识符。
+     * 带宽包实例ID。
      * @return bandwidthPackageId
      */
     public String getBandwidthPackageId() {

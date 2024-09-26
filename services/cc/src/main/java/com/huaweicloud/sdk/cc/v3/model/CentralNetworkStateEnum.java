@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 中心网络状态。 - AVAILABLE (可用) - UPDATING (处理中) - FAILED (失败) - CREATING (创建中) - DELETING (删除中) - DELETED (已刪除)
+ * 中心网络状态。 - AVAILABLE (可用) - UPDATING (处理中) - FAILED (失败) - CREATING (创建中) - DELETING (删除中) - DELETED (已刪除) - RESTORING (恢复中)
  */
 public class CentralNetworkStateEnum {
 
@@ -42,6 +42,11 @@ public class CentralNetworkStateEnum {
      */
     public static final CentralNetworkStateEnum DELETED = new CentralNetworkStateEnum("DELETED");
 
+    /**
+     * Enum RESTORING for value: "RESTORING"
+     */
+    public static final CentralNetworkStateEnum RESTORING = new CentralNetworkStateEnum("RESTORING");
+
     private static final Map<String, CentralNetworkStateEnum> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, CentralNetworkStateEnum> createStaticFields() {
@@ -52,6 +57,7 @@ public class CentralNetworkStateEnum {
         map.put("CREATING", CREATING);
         map.put("DELETING", DELETING);
         map.put("DELETED", DELETED);
+        map.put("RESTORING", RESTORING);
         return Collections.unmodifiableMap(map);
     }
 

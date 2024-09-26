@@ -19,6 +19,11 @@ import java.util.function.Consumer;
 public class AccessConfigurationDataItems {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operator")
+
+    private String operator;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "uid")
 
     private String uid;
@@ -138,6 +143,23 @@ public class AccessConfigurationDataItems {
     @JsonProperty(value = "private_ip")
 
     private String privateIp;
+
+    public AccessConfigurationDataItems withOperator(String operator) {
+        this.operator = operator;
+        return this;
+    }
+
+    /**
+     * 配置模式。 - 如果operator值为空，则表示使用全量覆盖模式进行配置，否则表示使用增删改模式进行配置。且此级列表的所有元素的operator值必须同时全为空或者非空。 - 当使用增删改模式时，operator取值支持\"add\",\"copy\",\"modify\",\"delete\"，分别表示新增，复制指定uid的元素修改后新增，修改指定uid的元素，删除指定uid的元素。 - 当operator取值为\"copy\",\"modify\",\"delete\"时，uid的值必须为非空，且存在于最后一次生效的配置中。 - 当operator取值为\"copy\",\"modify\"时，与operator同级别的字段中除uid外的所有字段如不写，置空或者为空列表，则表示保留在最后一次生效配置中指定uid的元素的同一字段的值。 
+     * @return operator
+     */
+    public String getOperator() {
+        return operator;
+    }
+
+    public void setOperator(String operator) {
+        this.operator = operator;
+    }
 
     public AccessConfigurationDataItems withUid(String uid) {
         this.uid = uid;
@@ -351,8 +373,9 @@ public class AccessConfigurationDataItems {
             return false;
         }
         AccessConfigurationDataItems that = (AccessConfigurationDataItems) obj;
-        return Objects.equals(this.uid, that.uid) && Objects.equals(this.metadata, that.metadata)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.domainNames, that.domainNames)
+        return Objects.equals(this.operator, that.operator) && Objects.equals(this.uid, that.uid)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.domainNames, that.domainNames)
             && Objects.equals(this.accessControl, that.accessControl) && Objects.equals(this.ports, that.ports)
             && Objects.equals(this.elbId, that.elbId) && Objects.equals(this.publicIp, that.publicIp)
             && Objects.equals(this.privateIp, that.privateIp);
@@ -360,13 +383,15 @@ public class AccessConfigurationDataItems {
 
     @Override
     public int hashCode() {
-        return Objects.hash(uid, metadata, type, domainNames, accessControl, ports, elbId, publicIp, privateIp);
+        return Objects
+            .hash(operator, uid, metadata, type, domainNames, accessControl, ports, elbId, publicIp, privateIp);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AccessConfigurationDataItems {\n");
+        sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
         sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

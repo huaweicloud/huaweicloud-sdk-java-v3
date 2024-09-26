@@ -32,7 +32,7 @@ public class BlockPage {
     }
 
     /**
-     * 模板名称
+     * 模板名称，默认页面请输入default，自定义告警页面时请输入custom，重定向请输入redirect
      * @return template
      */
     public String getTemplate() {

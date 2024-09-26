@@ -44,6 +44,11 @@ public class PostAlarmsReqV2 {
     private String alarmTemplateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
     private List<Policy> policies = null;
@@ -204,6 +209,39 @@ public class PostAlarmsReqV2 {
 
     public void setAlarmTemplateId(String alarmTemplateId) {
         this.alarmTemplateId = alarmTemplateId;
+    }
+
+    public PostAlarmsReqV2 withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public PostAlarmsReqV2 addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public PostAlarmsReqV2 withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 租户标签列表
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
     }
 
     public PostAlarmsReqV2 withPolicies(List<Policy> policies) {
@@ -420,7 +458,7 @@ public class PostAlarmsReqV2 {
             && Objects.equals(this.namespace, that.namespace)
             && Objects.equals(this.resourceGroupId, that.resourceGroupId)
             && Objects.equals(this.resources, that.resources)
-            && Objects.equals(this.alarmTemplateId, that.alarmTemplateId)
+            && Objects.equals(this.alarmTemplateId, that.alarmTemplateId) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.policies, that.policies) && Objects.equals(this.type, that.type)
             && Objects.equals(this.alarmNotifications, that.alarmNotifications)
             && Objects.equals(this.okNotifications, that.okNotifications)
@@ -439,6 +477,7 @@ public class PostAlarmsReqV2 {
             resourceGroupId,
             resources,
             alarmTemplateId,
+            tags,
             policies,
             type,
             alarmNotifications,
@@ -460,6 +499,7 @@ public class PostAlarmsReqV2 {
         sb.append("    resourceGroupId: ").append(toIndentedString(resourceGroupId)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    alarmTemplateId: ").append(toIndentedString(alarmTemplateId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    policies: ").append(toIndentedString(policies)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    alarmNotifications: ").append(toIndentedString(alarmNotifications)).append("\n");

@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,151 +13,56 @@ import java.util.function.Consumer;
 public class ListAllIteratorsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
+    @JsonProperty(value = "status")
 
-    private Integer total;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "value")
-
-    private List<TestVersionVo> value = null;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "reason")
+    @JsonProperty(value = "result")
 
-    private String reason;
+    private ResultValueListTestVersionVo result;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
-
-    private Integer pageSize;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_no")
-
-    private Integer pageNo;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "has_more")
-
-    private Boolean hasMore;
-
-    public ListAllIteratorsResponse withTotal(Integer total) {
-        this.total = total;
+    public ListAllIteratorsResponse withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * 起始记录数 大于 实际总条数时， 值为0， 分页请求才有此值
-     * @return total
+     * 对外时：success|error;
+     * @return status
      */
-    public Integer getTotal() {
-        return total;
+    public String getStatus() {
+        return status;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public ListAllIteratorsResponse withValue(List<TestVersionVo> value) {
-        this.value = value;
+    public ListAllIteratorsResponse withResult(ResultValueListTestVersionVo result) {
+        this.result = result;
         return this;
     }
 
-    public ListAllIteratorsResponse addValueItem(TestVersionVo valueItem) {
-        if (this.value == null) {
-            this.value = new ArrayList<>();
+    public ListAllIteratorsResponse withResult(Consumer<ResultValueListTestVersionVo> resultSetter) {
+        if (this.result == null) {
+            this.result = new ResultValueListTestVersionVo();
+            resultSetter.accept(this.result);
         }
-        this.value.add(valueItem);
-        return this;
-    }
 
-    public ListAllIteratorsResponse withValue(Consumer<List<TestVersionVo>> valueSetter) {
-        if (this.value == null) {
-            this.value = new ArrayList<>();
-        }
-        valueSetter.accept(this.value);
         return this;
     }
 
     /**
-     * 实际的数据类型：单个对象，集合 或 NULL
-     * @return value
+     * Get result
+     * @return result
      */
-    public List<TestVersionVo> getValue() {
-        return value;
+    public ResultValueListTestVersionVo getResult() {
+        return result;
     }
 
-    public void setValue(List<TestVersionVo> value) {
-        this.value = value;
-    }
-
-    public ListAllIteratorsResponse withReason(String reason) {
-        this.reason = reason;
-        return this;
-    }
-
-    /**
-     * 业务失败的提示内容，对内接口才有此值
-     * @return reason
-     */
-    public String getReason() {
-        return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
-    public ListAllIteratorsResponse withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-        return this;
-    }
-
-    /**
-     * Get pageSize
-     * @return pageSize
-     */
-    public Integer getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public ListAllIteratorsResponse withPageNo(Integer pageNo) {
-        this.pageNo = pageNo;
-        return this;
-    }
-
-    /**
-     * Get pageNo
-     * @return pageNo
-     */
-    public Integer getPageNo() {
-        return pageNo;
-    }
-
-    public void setPageNo(Integer pageNo) {
-        this.pageNo = pageNo;
-    }
-
-    public ListAllIteratorsResponse withHasMore(Boolean hasMore) {
-        this.hasMore = hasMore;
-        return this;
-    }
-
-    /**
-     * Get hasMore
-     * @return hasMore
-     */
-    public Boolean getHasMore() {
-        return hasMore;
-    }
-
-    public void setHasMore(Boolean hasMore) {
-        this.hasMore = hasMore;
+    public void setResult(ResultValueListTestVersionVo result) {
+        this.result = result;
     }
 
     @Override
@@ -171,26 +74,20 @@ public class ListAllIteratorsResponse extends SdkResponse {
             return false;
         }
         ListAllIteratorsResponse that = (ListAllIteratorsResponse) obj;
-        return Objects.equals(this.total, that.total) && Objects.equals(this.value, that.value)
-            && Objects.equals(this.reason, that.reason) && Objects.equals(this.pageSize, that.pageSize)
-            && Objects.equals(this.pageNo, that.pageNo) && Objects.equals(this.hasMore, that.hasMore);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, value, reason, pageSize, pageNo, hasMore);
+        return Objects.hash(status, result);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAllIteratorsResponse {\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    value: ").append(toIndentedString(value)).append("\n");
-        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    pageNo: ").append(toIndentedString(pageNo)).append("\n");
-        sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("}");
         return sb.toString();
     }

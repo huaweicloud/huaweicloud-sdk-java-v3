@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -16,283 +13,131 @@ import java.util.function.Consumer;
 public class AddTestCaseCommentResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "uri")
+    @JsonProperty(value = "status")
 
-    private String uri;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "creator")
-
-    private String creator;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "comment")
+    @JsonProperty(value = "result")
 
-    private String comment;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "notifier")
-
-    private List<String> notifier = null;
+    private ResultValueTestCaseCommentVo result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "test_case_uri")
+    @JsonProperty(value = "error")
 
-    private String testCaseUri;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
-
-    private OffsetDateTime createTime;
+    private ApiError error;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time_timestamp")
+    @JsonProperty(value = "request_id")
 
-    private Long createTimeTimestamp;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
-
-    private OffsetDateTime updateTime;
+    private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time_timestamp")
+    @JsonProperty(value = "server_address")
 
-    private Long updateTimeTimestamp;
+    private String serverAddress;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_uuid")
-
-    private String projectUuid;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "version_uri")
-
-    private String versionUri;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "display_name")
-
-    private String displayName;
-
-    public AddTestCaseCommentResponse withUri(String uri) {
-        this.uri = uri;
+    public AddTestCaseCommentResponse withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * Get uri
-     * @return uri
+     * 对外时：success|error; 对内时：ok|failed
+     * @return status
      */
-    public String getUri() {
-        return uri;
+    public String getStatus() {
+        return status;
     }
 
-    public void setUri(String uri) {
-        this.uri = uri;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public AddTestCaseCommentResponse withCreator(String creator) {
-        this.creator = creator;
+    public AddTestCaseCommentResponse withResult(ResultValueTestCaseCommentVo result) {
+        this.result = result;
         return this;
     }
 
-    /**
-     * Get creator
-     * @return creator
-     */
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    public AddTestCaseCommentResponse withComment(String comment) {
-        this.comment = comment;
-        return this;
-    }
-
-    /**
-     * Get comment
-     * @return comment
-     */
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public AddTestCaseCommentResponse withNotifier(List<String> notifier) {
-        this.notifier = notifier;
-        return this;
-    }
-
-    public AddTestCaseCommentResponse addNotifierItem(String notifierItem) {
-        if (this.notifier == null) {
-            this.notifier = new ArrayList<>();
+    public AddTestCaseCommentResponse withResult(Consumer<ResultValueTestCaseCommentVo> resultSetter) {
+        if (this.result == null) {
+            this.result = new ResultValueTestCaseCommentVo();
+            resultSetter.accept(this.result);
         }
-        this.notifier.add(notifierItem);
+
         return this;
     }
 
-    public AddTestCaseCommentResponse withNotifier(Consumer<List<String>> notifierSetter) {
-        if (this.notifier == null) {
-            this.notifier = new ArrayList<>();
+    /**
+     * Get result
+     * @return result
+     */
+    public ResultValueTestCaseCommentVo getResult() {
+        return result;
+    }
+
+    public void setResult(ResultValueTestCaseCommentVo result) {
+        this.result = result;
+    }
+
+    public AddTestCaseCommentResponse withError(ApiError error) {
+        this.error = error;
+        return this;
+    }
+
+    public AddTestCaseCommentResponse withError(Consumer<ApiError> errorSetter) {
+        if (this.error == null) {
+            this.error = new ApiError();
+            errorSetter.accept(this.error);
         }
-        notifierSetter.accept(this.notifier);
+
         return this;
     }
 
     /**
-     * Get notifier
-     * @return notifier
+     * Get error
+     * @return error
      */
-    public List<String> getNotifier() {
-        return notifier;
+    public ApiError getError() {
+        return error;
     }
 
-    public void setNotifier(List<String> notifier) {
-        this.notifier = notifier;
+    public void setError(ApiError error) {
+        this.error = error;
     }
 
-    public AddTestCaseCommentResponse withTestCaseUri(String testCaseUri) {
-        this.testCaseUri = testCaseUri;
+    public AddTestCaseCommentResponse withRequestId(String requestId) {
+        this.requestId = requestId;
         return this;
     }
 
     /**
-     * Get testCaseUri
-     * @return testCaseUri
+     * 由接口调用方传入，建议使用UUID保证请求的唯一性。
+     * @return requestId
      */
-    public String getTestCaseUri() {
-        return testCaseUri;
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setTestCaseUri(String testCaseUri) {
-        this.testCaseUri = testCaseUri;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
-    public AddTestCaseCommentResponse withCreateTime(OffsetDateTime createTime) {
-        this.createTime = createTime;
+    public AddTestCaseCommentResponse withServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
         return this;
     }
 
     /**
-     * Get createTime
-     * @return createTime
+     * 对内接口才有此属性
+     * @return serverAddress
      */
-    public OffsetDateTime getCreateTime() {
-        return createTime;
+    public String getServerAddress() {
+        return serverAddress;
     }
 
-    public void setCreateTime(OffsetDateTime createTime) {
-        this.createTime = createTime;
-    }
-
-    public AddTestCaseCommentResponse withCreateTimeTimestamp(Long createTimeTimestamp) {
-        this.createTimeTimestamp = createTimeTimestamp;
-        return this;
-    }
-
-    /**
-     * 创建时间时间戳
-     * @return createTimeTimestamp
-     */
-    public Long getCreateTimeTimestamp() {
-        return createTimeTimestamp;
-    }
-
-    public void setCreateTimeTimestamp(Long createTimeTimestamp) {
-        this.createTimeTimestamp = createTimeTimestamp;
-    }
-
-    public AddTestCaseCommentResponse withUpdateTime(OffsetDateTime updateTime) {
-        this.updateTime = updateTime;
-        return this;
-    }
-
-    /**
-     * Get updateTime
-     * @return updateTime
-     */
-    public OffsetDateTime getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(OffsetDateTime updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public AddTestCaseCommentResponse withUpdateTimeTimestamp(Long updateTimeTimestamp) {
-        this.updateTimeTimestamp = updateTimeTimestamp;
-        return this;
-    }
-
-    /**
-     * 更新时间时间戳
-     * @return updateTimeTimestamp
-     */
-    public Long getUpdateTimeTimestamp() {
-        return updateTimeTimestamp;
-    }
-
-    public void setUpdateTimeTimestamp(Long updateTimeTimestamp) {
-        this.updateTimeTimestamp = updateTimeTimestamp;
-    }
-
-    public AddTestCaseCommentResponse withProjectUuid(String projectUuid) {
-        this.projectUuid = projectUuid;
-        return this;
-    }
-
-    /**
-     * Get projectUuid
-     * @return projectUuid
-     */
-    public String getProjectUuid() {
-        return projectUuid;
-    }
-
-    public void setProjectUuid(String projectUuid) {
-        this.projectUuid = projectUuid;
-    }
-
-    public AddTestCaseCommentResponse withVersionUri(String versionUri) {
-        this.versionUri = versionUri;
-        return this;
-    }
-
-    /**
-     * Get versionUri
-     * @return versionUri
-     */
-    public String getVersionUri() {
-        return versionUri;
-    }
-
-    public void setVersionUri(String versionUri) {
-        this.versionUri = versionUri;
-    }
-
-    public AddTestCaseCommentResponse withDisplayName(String displayName) {
-        this.displayName = displayName;
-        return this;
-    }
-
-    /**
-     * Get displayName
-     * @return displayName
-     */
-    public String getDisplayName() {
-        return displayName;
-    }
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
+    public void setServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
     }
 
     @Override
@@ -304,48 +149,25 @@ public class AddTestCaseCommentResponse extends SdkResponse {
             return false;
         }
         AddTestCaseCommentResponse that = (AddTestCaseCommentResponse) obj;
-        return Objects.equals(this.uri, that.uri) && Objects.equals(this.creator, that.creator)
-            && Objects.equals(this.comment, that.comment) && Objects.equals(this.notifier, that.notifier)
-            && Objects.equals(this.testCaseUri, that.testCaseUri) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.createTimeTimestamp, that.createTimeTimestamp)
-            && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.updateTimeTimestamp, that.updateTimeTimestamp)
-            && Objects.equals(this.projectUuid, that.projectUuid) && Objects.equals(this.versionUri, that.versionUri)
-            && Objects.equals(this.displayName, that.displayName);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.serverAddress, that.serverAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(uri,
-            creator,
-            comment,
-            notifier,
-            testCaseUri,
-            createTime,
-            createTimeTimestamp,
-            updateTime,
-            updateTimeTimestamp,
-            projectUuid,
-            versionUri,
-            displayName);
+        return Objects.hash(status, result, error, requestId, serverAddress);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddTestCaseCommentResponse {\n");
-        sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
-        sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
-        sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
-        sb.append("    notifier: ").append(toIndentedString(notifier)).append("\n");
-        sb.append("    testCaseUri: ").append(toIndentedString(testCaseUri)).append("\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    createTimeTimestamp: ").append(toIndentedString(createTimeTimestamp)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-        sb.append("    updateTimeTimestamp: ").append(toIndentedString(updateTimeTimestamp)).append("\n");
-        sb.append("    projectUuid: ").append(toIndentedString(projectUuid)).append("\n");
-        sb.append("    versionUri: ").append(toIndentedString(versionUri)).append("\n");
-        sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    serverAddress: ").append(toIndentedString(serverAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -43,6 +43,8 @@ import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesRequest;
+import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
@@ -738,6 +740,35 @@ public class DasClient {
     public SyncInvoker<ExportTopSqlTrendDetailsRequest, ExportTopSqlTrendDetailsResponse> exportTopSqlTrendDetailsInvoker(
         ExportTopSqlTrendDetailsRequest request) {
         return new SyncInvoker<>(request, DasMeta.exportTopSqlTrendDetails, hcClient);
+    }
+
+    /**
+     * 获取DAS云DBA实例列表
+     *
+     * 获取DAS云DBA实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudDbaInstancesRequest 请求对象
+     * @return ListCloudDbaInstancesResponse
+     */
+    public ListCloudDbaInstancesResponse listCloudDbaInstances(ListCloudDbaInstancesRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listCloudDbaInstances);
+    }
+
+    /**
+     * 获取DAS云DBA实例列表
+     *
+     * 获取DAS云DBA实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudDbaInstancesRequest 请求对象
+     * @return SyncInvoker<ListCloudDbaInstancesRequest, ListCloudDbaInstancesResponse>
+     */
+    public SyncInvoker<ListCloudDbaInstancesRequest, ListCloudDbaInstancesResponse> listCloudDbaInstancesInvoker(
+        ListCloudDbaInstancesRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listCloudDbaInstances, hcClient);
     }
 
     /**

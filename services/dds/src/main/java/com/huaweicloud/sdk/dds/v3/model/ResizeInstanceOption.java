@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ResizeInstanceOption {
 
     /**
-     * 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更shard组规格时，取值为“shard”。 - 对于副本集和单节点实例，不传该参数。
+     * 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更单个shard组规格、或者批量变更多个shard组规格时，取值为“shard”，变更config组规格时，取值为\"config\"。 - 对于副本集实例，不传该参数。变更readonly节点规格时,取值为“readonly”。 - 对于单节点实例，不传该参数。
      */
     public static final class TargetTypeEnum {
 
@@ -30,12 +30,24 @@ public class ResizeInstanceOption {
          */
         public static final TargetTypeEnum SHARD = new TargetTypeEnum("shard");
 
+        /**
+         * Enum CONFIG for value: "config"
+         */
+        public static final TargetTypeEnum CONFIG = new TargetTypeEnum("config");
+
+        /**
+         * Enum READONLY for value: "readonly"
+         */
+        public static final TargetTypeEnum READONLY = new TargetTypeEnum("readonly");
+
         private static final Map<String, TargetTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TargetTypeEnum> createStaticFields() {
             Map<String, TargetTypeEnum> map = new HashMap<>();
             map.put("mongos", MONGOS);
             map.put("shard", SHARD);
+            map.put("config", CONFIG);
+            map.put("readonly", READONLY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -106,7 +118,7 @@ public class ResizeInstanceOption {
     }
 
     /**
-     * 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更shard组规格时，取值为“shard”。 - 对于副本集和单节点实例，不传该参数。
+     * 对象类型。 - 对于集群实例，该参数为必选。变更mongos节点规格时，取值为“mongos”；变更单个shard组规格、或者批量变更多个shard组规格时，取值为“shard”，变更config组规格时，取值为\"config\"。 - 对于副本集实例，不传该参数。变更readonly节点规格时,取值为“readonly”。 - 对于单节点实例，不传该参数。
      * @return targetType
      */
     public TargetTypeEnum getTargetType() {
@@ -123,7 +135,7 @@ public class ResizeInstanceOption {
     }
 
     /**
-     * 待变更规格的节点ID或实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 对于集群实例，变更mongos节点规格时，取值为mongos节点ID；变更shard组规格时，取值为shard组ID。 - 对于副本集实例，取值为相应的实例ID。 - 对于单节点实例，取值为相应的实例ID。
+     * 待变更规格的节点ID或实例ID，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 对于集群实例，变更mongos节点规格时，取值为mongos节点ID；变更单个shard组规格时，取值为shard组ID；批量变更多个shard组规格时，不传该参数；变更config组规格时，取值为config组的ID。 - 对于副本集实例，取值为相应的实例ID。变更readonly节点规格时，取值为readonly节点ID。 - 对于单节点实例，取值为相应的实例ID。
      * @return targetId
      */
     public String getTargetId() {

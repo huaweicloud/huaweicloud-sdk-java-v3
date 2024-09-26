@@ -30,7 +30,7 @@ public class AssociateGlobalConnectionBandwidthInstanceResponse extends SdkRespo
     }
 
     /**
-     * 资源ID标识符。
+     * 请求ID。
      * @return requestId
      */
     public String getRequestId() {

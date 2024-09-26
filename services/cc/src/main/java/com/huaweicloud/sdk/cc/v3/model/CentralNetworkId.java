@@ -21,7 +21,7 @@ public class CentralNetworkId {
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络ID。
      * @return centralNetworkId
      */
     public String getCentralNetworkId() {

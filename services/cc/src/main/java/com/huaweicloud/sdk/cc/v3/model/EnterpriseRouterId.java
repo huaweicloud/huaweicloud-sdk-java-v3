@@ -21,7 +21,7 @@ public class EnterpriseRouterId {
     }
 
     /**
-     * 资源ID标识符。
+     * 企业路由器的ID。
      * @return enterpriseRouterId
      */
     public String getEnterpriseRouterId() {

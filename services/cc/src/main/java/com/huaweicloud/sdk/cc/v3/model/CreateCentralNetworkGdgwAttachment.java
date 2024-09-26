@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CreateCentralNetworkGdgwAttachment
+ * 创建中心网络GDGW附件的请求体。
  */
 public class CreateCentralNetworkGdgwAttachment {
 
@@ -31,16 +31,6 @@ public class CreateCentralNetworkGdgwAttachment {
     private String globalDcGatewayId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_router_project_id")
-
-    private String enterpriseRouterProjectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_router_region_id")
-
-    private String enterpriseRouterRegionId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_dc_gateway_project_id")
 
     private String globalDcGatewayProjectId;
@@ -49,6 +39,16 @@ public class CreateCentralNetworkGdgwAttachment {
     @JsonProperty(value = "global_dc_gateway_region_id")
 
     private String globalDcGatewayRegionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_router_project_id")
+
+    private String enterpriseRouterProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_router_region_id")
+
+    private String enterpriseRouterRegionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "central_network_plane_id")
@@ -95,7 +95,7 @@ public class CreateCentralNetworkGdgwAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 企业路由器的ID。
      * @return enterpriseRouterId
      */
     public String getEnterpriseRouterId() {
@@ -112,7 +112,7 @@ public class CreateCentralNetworkGdgwAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * Gdgw的ID。
      * @return globalDcGatewayId
      */
     public String getGlobalDcGatewayId() {
@@ -123,47 +123,13 @@ public class CreateCentralNetworkGdgwAttachment {
         this.globalDcGatewayId = globalDcGatewayId;
     }
 
-    public CreateCentralNetworkGdgwAttachment withEnterpriseRouterProjectId(String enterpriseRouterProjectId) {
-        this.enterpriseRouterProjectId = enterpriseRouterProjectId;
-        return this;
-    }
-
-    /**
-     * 实例所属项目ID。
-     * @return enterpriseRouterProjectId
-     */
-    public String getEnterpriseRouterProjectId() {
-        return enterpriseRouterProjectId;
-    }
-
-    public void setEnterpriseRouterProjectId(String enterpriseRouterProjectId) {
-        this.enterpriseRouterProjectId = enterpriseRouterProjectId;
-    }
-
-    public CreateCentralNetworkGdgwAttachment withEnterpriseRouterRegionId(String enterpriseRouterRegionId) {
-        this.enterpriseRouterRegionId = enterpriseRouterRegionId;
-        return this;
-    }
-
-    /**
-     * RegionID。
-     * @return enterpriseRouterRegionId
-     */
-    public String getEnterpriseRouterRegionId() {
-        return enterpriseRouterRegionId;
-    }
-
-    public void setEnterpriseRouterRegionId(String enterpriseRouterRegionId) {
-        this.enterpriseRouterRegionId = enterpriseRouterRegionId;
-    }
-
     public CreateCentralNetworkGdgwAttachment withGlobalDcGatewayProjectId(String globalDcGatewayProjectId) {
         this.globalDcGatewayProjectId = globalDcGatewayProjectId;
         return this;
     }
 
     /**
-     * 实例所属项目ID。
+     * Gdgw的项目ID。
      * @return globalDcGatewayProjectId
      */
     public String getGlobalDcGatewayProjectId() {
@@ -180,7 +146,7 @@ public class CreateCentralNetworkGdgwAttachment {
     }
 
     /**
-     * RegionID。
+     * Gdgw的RegionID。
      * @return globalDcGatewayRegionId
      */
     public String getGlobalDcGatewayRegionId() {
@@ -191,13 +157,47 @@ public class CreateCentralNetworkGdgwAttachment {
         this.globalDcGatewayRegionId = globalDcGatewayRegionId;
     }
 
+    public CreateCentralNetworkGdgwAttachment withEnterpriseRouterProjectId(String enterpriseRouterProjectId) {
+        this.enterpriseRouterProjectId = enterpriseRouterProjectId;
+        return this;
+    }
+
+    /**
+     * 企业路由器的项目ID。
+     * @return enterpriseRouterProjectId
+     */
+    public String getEnterpriseRouterProjectId() {
+        return enterpriseRouterProjectId;
+    }
+
+    public void setEnterpriseRouterProjectId(String enterpriseRouterProjectId) {
+        this.enterpriseRouterProjectId = enterpriseRouterProjectId;
+    }
+
+    public CreateCentralNetworkGdgwAttachment withEnterpriseRouterRegionId(String enterpriseRouterRegionId) {
+        this.enterpriseRouterRegionId = enterpriseRouterRegionId;
+        return this;
+    }
+
+    /**
+     * ER路由器的regionID。
+     * @return enterpriseRouterRegionId
+     */
+    public String getEnterpriseRouterRegionId() {
+        return enterpriseRouterRegionId;
+    }
+
+    public void setEnterpriseRouterRegionId(String enterpriseRouterRegionId) {
+        this.enterpriseRouterRegionId = enterpriseRouterRegionId;
+    }
+
     public CreateCentralNetworkGdgwAttachment withCentralNetworkPlaneId(String centralNetworkPlaneId) {
         this.centralNetworkPlaneId = centralNetworkPlaneId;
         return this;
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络平面ID。
      * @return centralNetworkPlaneId
      */
     public String getCentralNetworkPlaneId() {
@@ -220,10 +220,10 @@ public class CreateCentralNetworkGdgwAttachment {
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.enterpriseRouterId, that.enterpriseRouterId)
             && Objects.equals(this.globalDcGatewayId, that.globalDcGatewayId)
-            && Objects.equals(this.enterpriseRouterProjectId, that.enterpriseRouterProjectId)
-            && Objects.equals(this.enterpriseRouterRegionId, that.enterpriseRouterRegionId)
             && Objects.equals(this.globalDcGatewayProjectId, that.globalDcGatewayProjectId)
             && Objects.equals(this.globalDcGatewayRegionId, that.globalDcGatewayRegionId)
+            && Objects.equals(this.enterpriseRouterProjectId, that.enterpriseRouterProjectId)
+            && Objects.equals(this.enterpriseRouterRegionId, that.enterpriseRouterRegionId)
             && Objects.equals(this.centralNetworkPlaneId, that.centralNetworkPlaneId);
     }
 
@@ -233,10 +233,10 @@ public class CreateCentralNetworkGdgwAttachment {
             description,
             enterpriseRouterId,
             globalDcGatewayId,
-            enterpriseRouterProjectId,
-            enterpriseRouterRegionId,
             globalDcGatewayProjectId,
             globalDcGatewayRegionId,
+            enterpriseRouterProjectId,
+            enterpriseRouterRegionId,
             centralNetworkPlaneId);
     }
 
@@ -248,10 +248,10 @@ public class CreateCentralNetworkGdgwAttachment {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enterpriseRouterId: ").append(toIndentedString(enterpriseRouterId)).append("\n");
         sb.append("    globalDcGatewayId: ").append(toIndentedString(globalDcGatewayId)).append("\n");
-        sb.append("    enterpriseRouterProjectId: ").append(toIndentedString(enterpriseRouterProjectId)).append("\n");
-        sb.append("    enterpriseRouterRegionId: ").append(toIndentedString(enterpriseRouterRegionId)).append("\n");
         sb.append("    globalDcGatewayProjectId: ").append(toIndentedString(globalDcGatewayProjectId)).append("\n");
         sb.append("    globalDcGatewayRegionId: ").append(toIndentedString(globalDcGatewayRegionId)).append("\n");
+        sb.append("    enterpriseRouterProjectId: ").append(toIndentedString(enterpriseRouterProjectId)).append("\n");
+        sb.append("    enterpriseRouterRegionId: ").append(toIndentedString(enterpriseRouterRegionId)).append("\n");
         sb.append("    centralNetworkPlaneId: ").append(toIndentedString(centralNetworkPlaneId)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -159,7 +159,7 @@ public class CreateAuthorisation {
     }
 
     /**
-     * 资源ID标识符。
+     * 网络实例（VPC，VGW）的ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -210,7 +210,7 @@ public class CreateAuthorisation {
     }
 
     /**
-     * 资源ID标识符。
+     * 云连接实例ID。
      * @return cloudConnectionId
      */
     public String getCloudConnectionId() {

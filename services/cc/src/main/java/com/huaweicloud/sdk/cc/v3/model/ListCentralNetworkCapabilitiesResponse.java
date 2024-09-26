@@ -30,7 +30,7 @@ public class ListCentralNetworkCapabilitiesResponse extends SdkResponse {
     }
 
     /**
-     * 资源ID标识符。
+     * 请求ID。
      * @return requestId
      */
     public String getRequestId() {

@@ -39,7 +39,7 @@ public class CreateInterRegionBandwidth {
     }
 
     /**
-     * 资源ID标识符。
+     * 云连接实例ID。
      * @return cloudConnectionId
      */
     public String getCloudConnectionId() {
@@ -56,7 +56,7 @@ public class CreateInterRegionBandwidth {
     }
 
     /**
-     * 资源ID标识符。
+     * 带宽包实例ID。
      * @return bandwidthPackageId
      */
     public String getBandwidthPackageId() {

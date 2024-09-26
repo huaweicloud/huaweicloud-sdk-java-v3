@@ -7,8 +7,6 @@ import com.huaweicloud.sdk.hss.v5.model.AddHostsGroupRequest;
 import com.huaweicloud.sdk.hss.v5.model.AddHostsGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.AssociatePolicyGroupRequest;
 import com.huaweicloud.sdk.hss.v5.model.AssociatePolicyGroupResponse;
-import com.huaweicloud.sdk.hss.v5.model.BatchAddAccountsRequest;
-import com.huaweicloud.sdk.hss.v5.model.BatchAddAccountsResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchCreateTagsRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchCreateTagsResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchScanSwrImageRequest;
@@ -31,16 +29,12 @@ import com.huaweicloud.sdk.hss.v5.model.CreateQuotasOrderRequest;
 import com.huaweicloud.sdk.hss.v5.model.CreateQuotasOrderResponse;
 import com.huaweicloud.sdk.hss.v5.model.CreateVulnerabilityScanTaskRequest;
 import com.huaweicloud.sdk.hss.v5.model.CreateVulnerabilityScanTaskResponse;
-import com.huaweicloud.sdk.hss.v5.model.DeleteAccountRequest;
-import com.huaweicloud.sdk.hss.v5.model.DeleteAccountResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteHostsGroupRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteHostsGroupResponse;
 import com.huaweicloud.sdk.hss.v5.model.DeleteResourceInstanceTagRequest;
 import com.huaweicloud.sdk.hss.v5.model.DeleteResourceInstanceTagResponse;
 import com.huaweicloud.sdk.hss.v5.model.ExportVulsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ExportVulsResponse;
-import com.huaweicloud.sdk.hss.v5.model.ListAccountsRequest;
-import com.huaweicloud.sdk.hss.v5.model.ListAccountsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAppChangeHistoriesRequest;
@@ -87,8 +81,6 @@ import com.huaweicloud.sdk.hss.v5.model.ListJarPackageHostInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageHostInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageStatisticsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListJarPackageStatisticsResponse;
-import com.huaweicloud.sdk.hss.v5.model.ListOrganizationTreeRequest;
-import com.huaweicloud.sdk.hss.v5.model.ListOrganizationTreeResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListPasswordComplexityRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListPasswordComplexityResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListPolicyGroupRequest;
@@ -248,35 +240,6 @@ public class HssAsyncClient {
     public AsyncInvoker<AssociatePolicyGroupRequest, AssociatePolicyGroupResponse> associatePolicyGroupAsyncInvoker(
         AssociatePolicyGroupRequest request) {
         return new AsyncInvoker<>(request, HssMeta.associatePolicyGroup, hcClient);
-    }
-
-    /**
-     * 批量添加账号
-     *
-     * 批量添加账号
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchAddAccountsRequest 请求对象
-     * @return CompletableFuture<BatchAddAccountsResponse>
-     */
-    public CompletableFuture<BatchAddAccountsResponse> batchAddAccountsAsync(BatchAddAccountsRequest request) {
-        return hcClient.asyncInvokeHttp(request, HssMeta.batchAddAccounts);
-    }
-
-    /**
-     * 批量添加账号
-     *
-     * 批量添加账号
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchAddAccountsRequest 请求对象
-     * @return AsyncInvoker<BatchAddAccountsRequest, BatchAddAccountsResponse>
-     */
-    public AsyncInvoker<BatchAddAccountsRequest, BatchAddAccountsResponse> batchAddAccountsAsyncInvoker(
-        BatchAddAccountsRequest request) {
-        return new AsyncInvoker<>(request, HssMeta.batchAddAccounts, hcClient);
     }
 
     /**
@@ -600,35 +563,6 @@ public class HssAsyncClient {
     }
 
     /**
-     * 删除账号
-     *
-     * 删除账号
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAccountRequest 请求对象
-     * @return CompletableFuture<DeleteAccountResponse>
-     */
-    public CompletableFuture<DeleteAccountResponse> deleteAccountAsync(DeleteAccountRequest request) {
-        return hcClient.asyncInvokeHttp(request, HssMeta.deleteAccount);
-    }
-
-    /**
-     * 删除账号
-     *
-     * 删除账号
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteAccountRequest 请求对象
-     * @return AsyncInvoker<DeleteAccountRequest, DeleteAccountResponse>
-     */
-    public AsyncInvoker<DeleteAccountRequest, DeleteAccountResponse> deleteAccountAsyncInvoker(
-        DeleteAccountRequest request) {
-        return new AsyncInvoker<>(request, HssMeta.deleteAccount, hcClient);
-    }
-
-    /**
      * 删除服务器组
      *
      * 删除服务器组
@@ -713,35 +647,6 @@ public class HssAsyncClient {
      */
     public AsyncInvoker<ExportVulsRequest, ExportVulsResponse> exportVulsAsyncInvoker(ExportVulsRequest request) {
         return new AsyncInvoker<>(request, HssMeta.exportVuls, hcClient);
-    }
-
-    /**
-     * 多账号列表
-     *
-     * 多账号列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAccountsRequest 请求对象
-     * @return CompletableFuture<ListAccountsResponse>
-     */
-    public CompletableFuture<ListAccountsResponse> listAccountsAsync(ListAccountsRequest request) {
-        return hcClient.asyncInvokeHttp(request, HssMeta.listAccounts);
-    }
-
-    /**
-     * 多账号列表
-     *
-     * 多账号列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListAccountsRequest 请求对象
-     * @return AsyncInvoker<ListAccountsRequest, ListAccountsResponse>
-     */
-    public AsyncInvoker<ListAccountsRequest, ListAccountsResponse> listAccountsAsyncInvoker(
-        ListAccountsRequest request) {
-        return new AsyncInvoker<>(request, HssMeta.listAccounts, hcClient);
     }
 
     /**
@@ -1419,36 +1324,6 @@ public class HssAsyncClient {
     public AsyncInvoker<ListJarPackageStatisticsRequest, ListJarPackageStatisticsResponse> listJarPackageStatisticsAsyncInvoker(
         ListJarPackageStatisticsRequest request) {
         return new AsyncInvoker<>(request, HssMeta.listJarPackageStatistics, hcClient);
-    }
-
-    /**
-     * 多账号列表
-     *
-     * List organization tree
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListOrganizationTreeRequest 请求对象
-     * @return CompletableFuture<ListOrganizationTreeResponse>
-     */
-    public CompletableFuture<ListOrganizationTreeResponse> listOrganizationTreeAsync(
-        ListOrganizationTreeRequest request) {
-        return hcClient.asyncInvokeHttp(request, HssMeta.listOrganizationTree);
-    }
-
-    /**
-     * 多账号列表
-     *
-     * List organization tree
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListOrganizationTreeRequest 请求对象
-     * @return AsyncInvoker<ListOrganizationTreeRequest, ListOrganizationTreeResponse>
-     */
-    public AsyncInvoker<ListOrganizationTreeRequest, ListOrganizationTreeResponse> listOrganizationTreeAsyncInvoker(
-        ListOrganizationTreeRequest request) {
-        return new AsyncInvoker<>(request, HssMeta.listOrganizationTree, hcClient);
     }
 
     /**

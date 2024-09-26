@@ -20,7 +20,22 @@ public class BatchAddRelationsByOneCaseResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private ResultValueStringForOk result;
+    private ResultValueString result;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error")
+
+    private ApiError error;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_address")
+
+    private String serverAddress;
 
     public BatchAddRelationsByOneCaseResponse withStatus(String status) {
         this.status = status;
@@ -28,7 +43,7 @@ public class BatchAddRelationsByOneCaseResponse extends SdkResponse {
     }
 
     /**
-     * 对外时：success|error;
+     * success|error
      * @return status
      */
     public String getStatus() {
@@ -39,14 +54,14 @@ public class BatchAddRelationsByOneCaseResponse extends SdkResponse {
         this.status = status;
     }
 
-    public BatchAddRelationsByOneCaseResponse withResult(ResultValueStringForOk result) {
+    public BatchAddRelationsByOneCaseResponse withResult(ResultValueString result) {
         this.result = result;
         return this;
     }
 
-    public BatchAddRelationsByOneCaseResponse withResult(Consumer<ResultValueStringForOk> resultSetter) {
+    public BatchAddRelationsByOneCaseResponse withResult(Consumer<ResultValueString> resultSetter) {
         if (this.result == null) {
-            this.result = new ResultValueStringForOk();
+            this.result = new ResultValueString();
             resultSetter.accept(this.result);
         }
 
@@ -57,12 +72,72 @@ public class BatchAddRelationsByOneCaseResponse extends SdkResponse {
      * Get result
      * @return result
      */
-    public ResultValueStringForOk getResult() {
+    public ResultValueString getResult() {
         return result;
     }
 
-    public void setResult(ResultValueStringForOk result) {
+    public void setResult(ResultValueString result) {
         this.result = result;
+    }
+
+    public BatchAddRelationsByOneCaseResponse withError(ApiError error) {
+        this.error = error;
+        return this;
+    }
+
+    public BatchAddRelationsByOneCaseResponse withError(Consumer<ApiError> errorSetter) {
+        if (this.error == null) {
+            this.error = new ApiError();
+            errorSetter.accept(this.error);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get error
+     * @return error
+     */
+    public ApiError getError() {
+        return error;
+    }
+
+    public void setError(ApiError error) {
+        this.error = error;
+    }
+
+    public BatchAddRelationsByOneCaseResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 由接口调用方传入，建议使用UUID保证请求的唯一性。
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    public BatchAddRelationsByOneCaseResponse withServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
+        return this;
+    }
+
+    /**
+     * 对内接口才有此属性
+     * @return serverAddress
+     */
+    public String getServerAddress() {
+        return serverAddress;
+    }
+
+    public void setServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
     }
 
     @Override
@@ -74,12 +149,14 @@ public class BatchAddRelationsByOneCaseResponse extends SdkResponse {
             return false;
         }
         BatchAddRelationsByOneCaseResponse that = (BatchAddRelationsByOneCaseResponse) obj;
-        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.serverAddress, that.serverAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, result);
+        return Objects.hash(status, result, error, requestId, serverAddress);
     }
 
     @Override
@@ -88,6 +165,9 @@ public class BatchAddRelationsByOneCaseResponse extends SdkResponse {
         sb.append("class BatchAddRelationsByOneCaseResponse {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    serverAddress: ").append(toIndentedString(serverAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

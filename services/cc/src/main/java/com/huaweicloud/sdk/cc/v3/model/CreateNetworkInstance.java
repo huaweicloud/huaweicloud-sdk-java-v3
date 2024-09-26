@@ -173,7 +173,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * 资源ID标识符。
+     * 网络实例（VPC，VGW）的ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -190,7 +190,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 网络实例（VPC，VGW）所属账号ID。
      * @return instanceDomainId
      */
     public String getInstanceDomainId() {
@@ -241,7 +241,7 @@ public class CreateNetworkInstance {
     }
 
     /**
-     * 资源ID标识符。
+     * 云连接实例ID。
      * @return cloudConnectionId
      */
     public String getCloudConnectionId() {

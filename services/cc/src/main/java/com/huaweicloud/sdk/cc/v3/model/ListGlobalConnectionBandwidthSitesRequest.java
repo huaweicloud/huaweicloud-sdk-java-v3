@@ -34,6 +34,16 @@ public class ListGlobalConnectionBandwidthSitesRequest {
     private List<String> id = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name_en")
+
+    private String nameEn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name_cn")
+
+    private String nameCn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "site_code")
 
     private String siteCode;
@@ -188,6 +198,40 @@ public class ListGlobalConnectionBandwidthSitesRequest {
         this.id = id;
     }
 
+    public ListGlobalConnectionBandwidthSitesRequest withNameEn(String nameEn) {
+        this.nameEn = nameEn;
+        return this;
+    }
+
+    /**
+     * 站点信息自定义英文名称。
+     * @return nameEn
+     */
+    public String getNameEn() {
+        return nameEn;
+    }
+
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
+    }
+
+    public ListGlobalConnectionBandwidthSitesRequest withNameCn(String nameCn) {
+        this.nameCn = nameCn;
+        return this;
+    }
+
+    /**
+     * 站点信息自定义中文名称。
+     * @return nameCn
+     */
+    public String getNameCn() {
+        return nameCn;
+    }
+
+    public void setNameCn(String nameCn) {
+        this.nameCn = nameCn;
+    }
+
     public ListGlobalConnectionBandwidthSitesRequest withSiteCode(String siteCode) {
         this.siteCode = siteCode;
         return this;
@@ -232,13 +276,14 @@ public class ListGlobalConnectionBandwidthSitesRequest {
         }
         ListGlobalConnectionBandwidthSitesRequest that = (ListGlobalConnectionBandwidthSitesRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.siteCode, that.siteCode)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.nameCn, that.nameCn) && Objects.equals(this.siteCode, that.siteCode)
             && Objects.equals(this.siteType, that.siteType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, id, siteCode, siteType);
+        return Objects.hash(limit, marker, id, nameEn, nameCn, siteCode, siteType);
     }
 
     @Override
@@ -248,6 +293,8 @@ public class ListGlobalConnectionBandwidthSitesRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    nameEn: ").append(toIndentedString(nameEn)).append("\n");
+        sb.append("    nameCn: ").append(toIndentedString(nameCn)).append("\n");
         sb.append("    siteCode: ").append(toIndentedString(siteCode)).append("\n");
         sb.append("    siteType: ").append(toIndentedString(siteType)).append("\n");
         sb.append("}");

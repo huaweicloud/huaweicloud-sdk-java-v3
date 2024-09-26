@@ -157,7 +157,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return id
      */
     public String getId() {
@@ -208,7 +208,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 实例所属账号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -276,7 +276,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络ID。
      * @return centralNetworkId
      */
     public String getCentralNetworkId() {
@@ -293,7 +293,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络平面ID。
      * @return centralNetworkPlaneId
      */
     public String getCentralNetworkPlaneId() {
@@ -310,7 +310,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 全域互联带宽ID。
      * @return globalConnectionBandwidthId
      */
     public String getGlobalConnectionBandwidthId() {
@@ -380,7 +380,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 企业路由器的ID。
      * @return enterpriseRouterId
      */
     public String getEnterpriseRouterId() {
@@ -397,7 +397,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 实例所属项目ID。
+     * 企业路由器的项目ID。
      * @return enterpriseRouterProjectId
      */
     public String getEnterpriseRouterProjectId() {
@@ -414,7 +414,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * RegionID。
+     * ER路由器的regionID。
      * @return enterpriseRouterRegionId
      */
     public String getEnterpriseRouterRegionId() {
@@ -431,7 +431,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 企业路由器的连接ID。
      * @return enterpriseRouterAttachmentId
      */
     public String getEnterpriseRouterAttachmentId() {
@@ -448,7 +448,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 企业路由器的路由表ID。
      * @return enterpriseRouterTableId
      */
     public String getEnterpriseRouterTableId() {
@@ -465,7 +465,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 站点编码定义
+     * 中心网络企业路由器的站点编码。
      * @return enterpriseRouterSiteCode
      */
     public String getEnterpriseRouterSiteCode() {
@@ -482,7 +482,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return attachedErTableId
      */
     public String getAttachedErTableId() {
@@ -550,7 +550,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return attachedErId
      */
     public String getAttachedErId() {
@@ -567,7 +567,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return attachedErAttachmentId
      */
     public String getAttachedErAttachmentId() {

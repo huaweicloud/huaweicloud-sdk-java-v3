@@ -19,7 +19,7 @@ public class CreateVersionTestCaseRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private TestCaseInfo body;
+    private ApiResultTestCaseVo body;
 
     public CreateVersionTestCaseRequest withVersionId(String versionId) {
         this.versionId = versionId;
@@ -38,14 +38,14 @@ public class CreateVersionTestCaseRequest {
         this.versionId = versionId;
     }
 
-    public CreateVersionTestCaseRequest withBody(TestCaseInfo body) {
+    public CreateVersionTestCaseRequest withBody(ApiResultTestCaseVo body) {
         this.body = body;
         return this;
     }
 
-    public CreateVersionTestCaseRequest withBody(Consumer<TestCaseInfo> bodySetter) {
+    public CreateVersionTestCaseRequest withBody(Consumer<ApiResultTestCaseVo> bodySetter) {
         if (this.body == null) {
-            this.body = new TestCaseInfo();
+            this.body = new ApiResultTestCaseVo();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateVersionTestCaseRequest {
      * Get body
      * @return body
      */
-    public TestCaseInfo getBody() {
+    public ApiResultTestCaseVo getBody() {
         return body;
     }
 
-    public void setBody(TestCaseInfo body) {
+    public void setBody(ApiResultTestCaseVo body) {
         this.body = body;
     }
 

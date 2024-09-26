@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class PolicyStatement {
 
     /**
-     * - Allow,允许控制访问权限 - Deny,拒绝控制访问权限
+     * - Allow，允许控制访问权限 - Deny，拒绝控制访问权限
      */
     public static final class EffectEnum {
 
@@ -109,7 +109,7 @@ public class PolicyStatement {
     }
 
     /**
-     * - Allow,允许控制访问权限 - Deny,拒绝控制访问权限
+     * - Allow，允许控制访问权限 - Deny，拒绝控制访问权限
      * @return effect
      */
     public EffectEnum getEffect() {

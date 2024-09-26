@@ -35,27 +35,32 @@ public class EdgeSecRegion {
 
     public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://esa.cn-north-4.myhuaweicloud.com");
 
-    public static final Region AP_SOUTHEAST_1 = new Region("ap-southeast-1", "https://edgesec-intl.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_1 =
+        new Region("ap-southeast-1", "https://esa.cn-north-4.myhuaweicloud.com");
 
-    public static final Region AP_SOUTHEAST_2 = new Region("ap-southeast-2", "https://edgesec-intl.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_2 =
+        new Region("ap-southeast-2", "https://esa.cn-north-4.myhuaweicloud.com");
 
-    public static final Region AP_SOUTHEAST_3 = new Region("ap-southeast-3", "https://edgesec-intl.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_3 =
+        new Region("ap-southeast-3", "https://esa.cn-north-4.myhuaweicloud.com");
 
-    public static final Region AP_SOUTHEAST_4 = new Region("ap-southeast-4", "https://edgesec-intl.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://esa.cn-north-4.myhuaweicloud.com");
 
-    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://edgesec-intl.myhuaweicloud.com");
+    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://esa.cn-north-4.myhuaweicloud.com");
 
-    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://edgesec-intl.myhuaweicloud.com");
+    public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://esa.cn-north-4.myhuaweicloud.com");
 
-    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://edgesec-intl.myhuaweicloud.com");
+    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://esa.cn-north-4.myhuaweicloud.com");
 
-    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://edgesec-intl.myhuaweicloud.com");
+    public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://esa.cn-north-4.myhuaweicloud.com");
 
-    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://edgesec-intl.myhuaweicloud.com");
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://esa.cn-north-4.myhuaweicloud.com");
 
-    public static final Region RU_NORTHWEST_2 = new Region("ru-northwest-2", "https://edgesec-intl.myhuaweicloud.com");
+    public static final Region RU_NORTHWEST_2 =
+        new Region("ru-northwest-2", "https://esa.cn-north-4.myhuaweicloud.com");
 
-    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://edgesec-intl.myhuaweicloud.com");
+    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://esa.cn-north-4.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("EDGESEC");
 

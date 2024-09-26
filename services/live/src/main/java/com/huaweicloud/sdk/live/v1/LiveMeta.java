@@ -12,6 +12,9 @@ import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateHarvestTaskInfoReq;
+import com.huaweicloud.sdk.live.v1.model.CreateHarvestTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateHarvestTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoReq;
 import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateOttChannelInfoResponse;
@@ -38,6 +41,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainMappingResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteHarvestTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteHarvestTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteOttChannelInfoResponse;
 import com.huaweicloud.sdk.live.v1.model.DeletePublishTemplateRequest;
@@ -64,6 +69,8 @@ import com.huaweicloud.sdk.live.v1.model.ListDelayConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListDelayConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListGeoBlockingConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.ListHarvestTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.ListHarvestTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.ListHlsConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.ListHlsConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.ListIpAuthListRequest;
@@ -90,6 +97,9 @@ import com.huaweicloud.sdk.live.v1.model.LiveDomainCreateReq;
 import com.huaweicloud.sdk.live.v1.model.LiveDomainModifyReq;
 import com.huaweicloud.sdk.live.v1.model.LiveSnapshotConfig;
 import com.huaweicloud.sdk.live.v1.model.ModifyDelayConfig;
+import com.huaweicloud.sdk.live.v1.model.ModifyHarvestTaskRequest;
+import com.huaweicloud.sdk.live.v1.model.ModifyHarvestTaskRequestBody;
+import com.huaweicloud.sdk.live.v1.model.ModifyHarvestTaskResponse;
 import com.huaweicloud.sdk.live.v1.model.ModifyHlsConfig;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelEncoderSettings;
 import com.huaweicloud.sdk.live.v1.model.ModifyOttChannelEndPointsReq;
@@ -150,6 +160,9 @@ import com.huaweicloud.sdk.live.v1.model.UpdateDomainRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateDomainResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateGeoBlockingConfigResponse;
+import com.huaweicloud.sdk.live.v1.model.UpdateHarvestJobStatusRequest;
+import com.huaweicloud.sdk.live.v1.model.UpdateHarvestJobStatusRequestBody;
+import com.huaweicloud.sdk.live.v1.model.UpdateHarvestJobStatusResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateHlsConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.UpdateHlsConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.UpdateIpAuthListRequest;
@@ -1802,6 +1815,221 @@ public class LiveMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DomainHttpsCertInfo.class),
             f -> f.withMarshaller(UpdateDomainHttpsCertRequest::getBody, UpdateDomainHttpsCertRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateHarvestTaskRequest, CreateHarvestTaskResponse> createHarvestTask =
+        genForCreateHarvestTask();
+
+    private static HttpRequestDef<CreateHarvestTaskRequest, CreateHarvestTaskResponse> genForCreateHarvestTask() {
+        // basic
+        HttpRequestDef.Builder<CreateHarvestTaskRequest, CreateHarvestTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateHarvestTaskRequest.class, CreateHarvestTaskResponse.class)
+                .withName("CreateHarvestTask")
+                .withUri("/v1/{project_id}/ott/harvest/task")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateHarvestTaskRequest::getAccessControlAllowInternal,
+                CreateHarvestTaskRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateHarvestTaskRequest::getAccessControlAllowExternal,
+                CreateHarvestTaskRequest::setAccessControlAllowExternal));
+        builder.<CreateHarvestTaskInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateHarvestTaskInfoReq.class),
+            f -> f.withMarshaller(CreateHarvestTaskRequest::getBody, CreateHarvestTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteHarvestTaskRequest, DeleteHarvestTaskResponse> deleteHarvestTask =
+        genForDeleteHarvestTask();
+
+    private static HttpRequestDef<DeleteHarvestTaskRequest, DeleteHarvestTaskResponse> genForDeleteHarvestTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteHarvestTaskRequest, DeleteHarvestTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteHarvestTaskRequest.class, DeleteHarvestTaskResponse.class)
+                .withName("DeleteHarvestTask")
+                .withUri("/v1/{project_id}/ott/harvest/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHarvestTaskRequest::getJobId, DeleteHarvestTaskRequest::setJobId));
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHarvestTaskRequest::getAccessControlAllowInternal,
+                DeleteHarvestTaskRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHarvestTaskRequest::getAccessControlAllowExternal,
+                DeleteHarvestTaskRequest::setAccessControlAllowExternal));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListHarvestTaskRequest, ListHarvestTaskResponse> listHarvestTask =
+        genForListHarvestTask();
+
+    private static HttpRequestDef<ListHarvestTaskRequest, ListHarvestTaskResponse> genForListHarvestTask() {
+        // basic
+        HttpRequestDef.Builder<ListHarvestTaskRequest, ListHarvestTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListHarvestTaskRequest.class, ListHarvestTaskResponse.class)
+                .withName("ListHarvestTask")
+                .withUri("/v1/{project_id}/ott/harvest/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHarvestTaskRequest::getDomain, ListHarvestTaskRequest::setDomain));
+        builder.<String>withRequestField("app_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHarvestTaskRequest::getAppName, ListHarvestTaskRequest::setAppName));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHarvestTaskRequest::getId, ListHarvestTaskRequest::setId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHarvestTaskRequest::getJobId, ListHarvestTaskRequest::setJobId));
+        builder.<Integer>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHarvestTaskRequest::getStartTime, ListHarvestTaskRequest::setStartTime));
+        builder.<Integer>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHarvestTaskRequest::getEndTime, ListHarvestTaskRequest::setEndTime));
+        builder.<String>withRequestField("event_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHarvestTaskRequest::getEventName, ListHarvestTaskRequest::setEventName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHarvestTaskRequest::getLimit, ListHarvestTaskRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHarvestTaskRequest::getOffset, ListHarvestTaskRequest::setOffset));
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHarvestTaskRequest::getAccessControlAllowInternal,
+                ListHarvestTaskRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHarvestTaskRequest::getAccessControlAllowExternal,
+                ListHarvestTaskRequest::setAccessControlAllowExternal));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyHarvestTaskRequest, ModifyHarvestTaskResponse> modifyHarvestTask =
+        genForModifyHarvestTask();
+
+    private static HttpRequestDef<ModifyHarvestTaskRequest, ModifyHarvestTaskResponse> genForModifyHarvestTask() {
+        // basic
+        HttpRequestDef.Builder<ModifyHarvestTaskRequest, ModifyHarvestTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyHarvestTaskRequest.class, ModifyHarvestTaskResponse.class)
+                .withName("ModifyHarvestTask")
+                .withUri("/v1/{project_id}/ott/harvest/task")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyHarvestTaskRequest::getAccessControlAllowInternal,
+                ModifyHarvestTaskRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyHarvestTaskRequest::getAccessControlAllowExternal,
+                ModifyHarvestTaskRequest::setAccessControlAllowExternal));
+        builder.<ModifyHarvestTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyHarvestTaskRequestBody.class),
+            f -> f.withMarshaller(ModifyHarvestTaskRequest::getBody, ModifyHarvestTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateHarvestJobStatusRequest, UpdateHarvestJobStatusResponse> updateHarvestJobStatus =
+        genForUpdateHarvestJobStatus();
+
+    private static HttpRequestDef<UpdateHarvestJobStatusRequest, UpdateHarvestJobStatusResponse> genForUpdateHarvestJobStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdateHarvestJobStatusRequest, UpdateHarvestJobStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateHarvestJobStatusRequest.class, UpdateHarvestJobStatusResponse.class)
+            .withName("UpdateHarvestJobStatus")
+            .withUri("/v1/{project_id}/ott/harvest/task/status")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHarvestJobStatusRequest::getAccessControlAllowInternal,
+                UpdateHarvestJobStatusRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateHarvestJobStatusRequest::getAccessControlAllowExternal,
+                UpdateHarvestJobStatusRequest::setAccessControlAllowExternal));
+        builder.<UpdateHarvestJobStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateHarvestJobStatusRequestBody.class),
+            f -> f.withMarshaller(UpdateHarvestJobStatusRequest::getBody, UpdateHarvestJobStatusRequest::setBody));
 
         // response
 

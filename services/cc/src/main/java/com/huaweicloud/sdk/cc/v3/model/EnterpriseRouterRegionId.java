@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * ER路由器的region ID。
+ * ER路由器的regionID。
  */
 public class EnterpriseRouterRegionId {
 
@@ -21,7 +21,7 @@ public class EnterpriseRouterRegionId {
     }
 
     /**
-     * RegionID。
+     * ER路由器的regionID。
      * @return enterpriseRouterRegionId
      */
     public String getEnterpriseRouterRegionId() {

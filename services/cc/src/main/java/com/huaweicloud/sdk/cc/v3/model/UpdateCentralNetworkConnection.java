@@ -48,7 +48,7 @@ public class UpdateCentralNetworkConnection {
     }
 
     /**
-     * 资源ID标识符。
+     * 全域互联带宽ID。
      * @return globalConnectionBandwidthId
      */
     public String getGlobalConnectionBandwidthId() {

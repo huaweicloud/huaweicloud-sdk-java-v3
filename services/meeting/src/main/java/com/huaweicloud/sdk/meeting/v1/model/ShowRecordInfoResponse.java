@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -24,7 +25,7 @@ public class ShowRecordInfoResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private RecordInfoDO data;
 
     public ShowRecordInfoResponse withCode(String code) {
         this.code = code;
@@ -60,20 +61,29 @@ public class ShowRecordInfoResponse extends SdkResponse {
         this.message = message;
     }
 
-    public ShowRecordInfoResponse withData(Object data) {
+    public ShowRecordInfoResponse withData(RecordInfoDO data) {
         this.data = data;
         return this;
     }
 
+    public ShowRecordInfoResponse withData(Consumer<RecordInfoDO> dataSetter) {
+        if (this.data == null) {
+            this.data = new RecordInfoDO();
+            dataSetter.accept(this.data);
+        }
+
+        return this;
+    }
+
     /**
-     * 响应体详情数据
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public RecordInfoDO getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(RecordInfoDO data) {
         this.data = data;
     }
 

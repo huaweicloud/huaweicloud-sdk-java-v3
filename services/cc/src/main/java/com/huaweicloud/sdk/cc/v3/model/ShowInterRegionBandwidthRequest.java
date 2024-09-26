@@ -21,7 +21,7 @@ public class ShowInterRegionBandwidthRequest {
     }
 
     /**
-     * 资源的Id。
+     * 实例ID。
      * @return id
      */
     public String getId() {

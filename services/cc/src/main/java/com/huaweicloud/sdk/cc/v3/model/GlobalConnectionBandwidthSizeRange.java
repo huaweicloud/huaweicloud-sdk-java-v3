@@ -16,7 +16,7 @@ import java.util.Objects;
 public class GlobalConnectionBandwidthSizeRange {
 
     /**
-     * 描述计费类型，描述可选计费类型。 取值范围：     bwd: 按带宽计费     95: 按传统型95计费
+     * 描述计费类型，描述可选计费类型。 取值范围：     bwd: 按带宽计费     95: 按传统型95计费     95avr：日95计费
      */
     public static final class TypeEnum {
 
@@ -30,12 +30,18 @@ public class GlobalConnectionBandwidthSizeRange {
          */
         public static final TypeEnum _95 = new TypeEnum("95");
 
+        /**
+         * Enum _95AVR for value: "95avr"
+         */
+        public static final TypeEnum _95AVR = new TypeEnum("95avr");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("bwd", BWD);
             map.put("95", _95);
+            map.put("95avr", _95AVR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -106,7 +112,7 @@ public class GlobalConnectionBandwidthSizeRange {
     }
 
     /**
-     * 描述计费类型，描述可选计费类型。 取值范围：     bwd: 按带宽计费     95: 按传统型95计费
+     * 描述计费类型，描述可选计费类型。 取值范围：     bwd: 按带宽计费     95: 按传统型95计费     95avr：日95计费
      * @return type
      */
     public TypeEnum getType() {

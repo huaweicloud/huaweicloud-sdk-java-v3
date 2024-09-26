@@ -26,6 +26,8 @@ public class RdsRegion {
 
     public static final Region CN_EAST_5 = new Region("cn-east-5", "https://rds.cn-east-5.myhuaweicloud.com");
 
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://rds.cn-east-4.myhuaweicloud.com");
+
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://rds.cn-south-1.myhuaweicloud.com");
 
     public static final Region CN_SOUTHWEST_2 =
@@ -85,6 +87,7 @@ public class RdsRegion {
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-east-3", CN_EAST_3);
         map.put("cn-east-5", CN_EAST_5);
+        map.put("cn-east-4", CN_EAST_4);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);

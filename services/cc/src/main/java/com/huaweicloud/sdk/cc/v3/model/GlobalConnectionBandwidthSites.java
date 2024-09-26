@@ -161,7 +161,7 @@ public class GlobalConnectionBandwidthSites {
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return id
      */
     public String getId() {

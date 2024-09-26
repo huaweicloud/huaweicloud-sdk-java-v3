@@ -21,7 +21,7 @@ public class ShowCloudConnectionRequest {
     }
 
     /**
-     * 资源的Id。
+     * 实例ID。
      * @return id
      */
     public String getId() {

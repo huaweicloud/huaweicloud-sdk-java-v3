@@ -76,13 +76,18 @@ public class Authorisation {
 
     private String cloudConnectionDomainId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_loaded_by_cloud_connection")
+
+    private Boolean isLoadedByCloudConnection;
+
     public Authorisation withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 资源ID标识符。
+     * 实例ID。
      * @return id
      */
     public String getId() {
@@ -133,7 +138,7 @@ public class Authorisation {
     }
 
     /**
-     * 资源ID标识符。
+     * 网络实例（VPC，VGW）的ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -218,7 +223,7 @@ public class Authorisation {
     }
 
     /**
-     * 实例所属帐号ID。
+     * 实例所属账号ID。
      * @return domainId
      */
     public String getDomainId() {
@@ -235,7 +240,7 @@ public class Authorisation {
     }
 
     /**
-     * 资源ID标识符。
+     * 云连接实例ID。
      * @return cloudConnectionId
      */
     public String getCloudConnectionId() {
@@ -297,6 +302,23 @@ public class Authorisation {
         this.cloudConnectionDomainId = cloudConnectionDomainId;
     }
 
+    public Authorisation withIsLoadedByCloudConnection(Boolean isLoadedByCloudConnection) {
+        this.isLoadedByCloudConnection = isLoadedByCloudConnection;
+        return this;
+    }
+
+    /**
+     * 是否已经被云连接加载。
+     * @return isLoadedByCloudConnection
+     */
+    public Boolean getIsLoadedByCloudConnection() {
+        return isLoadedByCloudConnection;
+    }
+
+    public void setIsLoadedByCloudConnection(Boolean isLoadedByCloudConnection) {
+        this.isLoadedByCloudConnection = isLoadedByCloudConnection;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -313,7 +335,8 @@ public class Authorisation {
             && Objects.equals(this.domainId, that.domainId)
             && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
             && Objects.equals(this.status, that.status) && Objects.equals(this.instanceType, that.instanceType)
-            && Objects.equals(this.cloudConnectionDomainId, that.cloudConnectionDomainId);
+            && Objects.equals(this.cloudConnectionDomainId, that.cloudConnectionDomainId)
+            && Objects.equals(this.isLoadedByCloudConnection, that.isLoadedByCloudConnection);
     }
 
     @Override
@@ -330,7 +353,8 @@ public class Authorisation {
             cloudConnectionId,
             status,
             instanceType,
-            cloudConnectionDomainId);
+            cloudConnectionDomainId,
+            isLoadedByCloudConnection);
     }
 
     @Override
@@ -350,6 +374,7 @@ public class Authorisation {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
         sb.append("    cloudConnectionDomainId: ").append(toIndentedString(cloudConnectionDomainId)).append("\n");
+        sb.append("    isLoadedByCloudConnection: ").append(toIndentedString(isLoadedByCloudConnection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

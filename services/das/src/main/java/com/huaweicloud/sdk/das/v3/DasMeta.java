@@ -55,6 +55,8 @@ import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportTopSqlTrendDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesRequest;
+import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
@@ -976,6 +978,46 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(ExportTopSqlTrendDetailsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ExportTopSqlTrendDetailsRequest::getXLanguage,
                 ExportTopSqlTrendDetailsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCloudDbaInstancesRequest, ListCloudDbaInstancesResponse> listCloudDbaInstances =
+        genForListCloudDbaInstances();
+
+    private static HttpRequestDef<ListCloudDbaInstancesRequest, ListCloudDbaInstancesResponse> genForListCloudDbaInstances() {
+        // basic
+        HttpRequestDef.Builder<ListCloudDbaInstancesRequest, ListCloudDbaInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListCloudDbaInstancesRequest.class, ListCloudDbaInstancesResponse.class)
+            .withName("ListCloudDbaInstances")
+            .withUri("/v3/{project_id}/instances")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudDbaInstancesRequest::getDatastoreType,
+                ListCloudDbaInstancesRequest::setDatastoreType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudDbaInstancesRequest::getOffset, ListCloudDbaInstancesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCloudDbaInstancesRequest::getLimit, ListCloudDbaInstancesRequest::setLimit));
+        builder.<ListCloudDbaInstancesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCloudDbaInstancesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListCloudDbaInstancesRequest::getXLanguage,
+                ListCloudDbaInstancesRequest::setXLanguage));
 
         // response
 

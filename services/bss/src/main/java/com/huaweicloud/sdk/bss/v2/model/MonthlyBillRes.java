@@ -234,6 +234,16 @@ public class MonthlyBillRes {
 
     private String payerAccountId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "effective_time")
+
+    private String effectiveTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expire_time")
+
+    private String expireTime;
+
     public MonthlyBillRes withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -998,6 +1008,40 @@ public class MonthlyBillRes {
         this.payerAccountId = payerAccountId;
     }
 
+    public MonthlyBillRes withEffectiveTime(String effectiveTime) {
+        this.effectiveTime = effectiveTime;
+        return this;
+    }
+
+    /**
+     * |参数名称：费用对应的资源使用的开始时间| |参数的约束及描述：费用对应的资源使用的开始时间，statistic_type=3有效，statistic_type=1或者2该字段保留。|
+     * @return effectiveTime
+     */
+    public String getEffectiveTime() {
+        return effectiveTime;
+    }
+
+    public void setEffectiveTime(String effectiveTime) {
+        this.effectiveTime = effectiveTime;
+    }
+
+    public MonthlyBillRes withExpireTime(String expireTime) {
+        this.expireTime = expireTime;
+        return this;
+    }
+
+    /**
+     * |参数名称：费用对应的资源使用的结束时间| |参数的约束及描述：费用对应的资源使用的结束时间，statistic_type=3有效，statistic_type=1或者2该字段保留。|
+     * @return expireTime
+     */
+    public String getExpireTime() {
+        return expireTime;
+    }
+
+    public void setExpireTime(String expireTime) {
+        this.expireTime = expireTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1041,7 +1085,9 @@ public class MonthlyBillRes {
             && Objects.equals(this.subResourceId, that.subResourceId)
             && Objects.equals(this.subResourceName, that.subResourceName)
             && Objects.equals(this.preOrderId, that.preOrderId) && Objects.equals(this.azCodeInfos, that.azCodeInfos)
-            && Objects.equals(this.payerAccountId, that.payerAccountId);
+            && Objects.equals(this.payerAccountId, that.payerAccountId)
+            && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override
@@ -1089,7 +1135,9 @@ public class MonthlyBillRes {
             subResourceName,
             preOrderId,
             azCodeInfos,
-            payerAccountId);
+            payerAccountId,
+            effectiveTime,
+            expireTime);
     }
 
     @Override
@@ -1140,6 +1188,8 @@ public class MonthlyBillRes {
         sb.append("    preOrderId: ").append(toIndentedString(preOrderId)).append("\n");
         sb.append("    azCodeInfos: ").append(toIndentedString(azCodeInfos)).append("\n");
         sb.append("    payerAccountId: ").append(toIndentedString(payerAccountId)).append("\n");
+        sb.append("    effectiveTime: ").append(toIndentedString(effectiveTime)).append("\n");
+        sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

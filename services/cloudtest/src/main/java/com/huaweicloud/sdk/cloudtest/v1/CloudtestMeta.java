@@ -6,6 +6,7 @@ import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AlarmStatisticsQuery;
 import com.huaweicloud.sdk.cloudtest.v1.model.AlertStatisticsDto;
+import com.huaweicloud.sdk.cloudtest.v1.model.ApiResultTestCaseVo;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorRequest;
@@ -74,7 +75,6 @@ import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseInfo;
-import com.huaweicloud.sdk.cloudtest.v1.model.EchoTestPackageCheckResult;
 import com.huaweicloud.sdk.cloudtest.v1.model.GenerateReportInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.IssueTreeInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.IteratorVersionInfo;
@@ -908,10 +908,10 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateVersionTestCaseRequest::getVersionId,
                 CreateVersionTestCaseRequest::setVersionId));
-        builder.<TestCaseInfo>withRequestField("body",
+        builder.<ApiResultTestCaseVo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(TestCaseInfo.class),
+            TypeCasts.uncheckedConversion(ApiResultTestCaseVo.class),
             f -> f.withMarshaller(CreateVersionTestCaseRequest::getBody, CreateVersionTestCaseRequest::setBody));
 
         // response
@@ -2886,12 +2886,12 @@ public class CloudtestMeta {
                 ShowEchoTestPackageUsingRequest::setServiceId));
 
         // response
-        builder.<List<EchoTestPackageCheckResult>>withResponseField("body",
+        builder.<Object>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ShowEchoTestPackageUsingResponse::getBody, ShowEchoTestPackageUsingResponse::setBody)
-                .withInnerContainerType(EchoTestPackageCheckResult.class));
+            Object.class,
+            f -> f.withMarshaller(ShowEchoTestPackageUsingResponse::getBody,
+                ShowEchoTestPackageUsingResponse::setBody));
 
         return builder.build();
     }

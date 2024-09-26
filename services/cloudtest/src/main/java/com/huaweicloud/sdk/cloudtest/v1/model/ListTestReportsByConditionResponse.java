@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -15,151 +13,131 @@ import java.util.function.Consumer;
 public class ListTestReportsByConditionResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
+    @JsonProperty(value = "status")
 
-    private Integer total;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "value")
-
-    private List<TestReportVo> value = null;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "reason")
+    @JsonProperty(value = "result")
 
-    private String reason;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_size")
-
-    private Integer pageSize;
+    private ResultValueListTestReportVo result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "page_no")
+    @JsonProperty(value = "error")
 
-    private Integer pageNo;
+    private ApiError error;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "has_more")
+    @JsonProperty(value = "request_id")
 
-    private Boolean hasMore;
+    private String requestId;
 
-    public ListTestReportsByConditionResponse withTotal(Integer total) {
-        this.total = total;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_address")
+
+    private String serverAddress;
+
+    public ListTestReportsByConditionResponse withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * 起始记录数 大于 实际总条数时， 值为0， 分页请求才有此值
-     * @return total
+     * 对外时：success|error; 对内时：ok|failed
+     * @return status
      */
-    public Integer getTotal() {
-        return total;
+    public String getStatus() {
+        return status;
     }
 
-    public void setTotal(Integer total) {
-        this.total = total;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public ListTestReportsByConditionResponse withValue(List<TestReportVo> value) {
-        this.value = value;
+    public ListTestReportsByConditionResponse withResult(ResultValueListTestReportVo result) {
+        this.result = result;
         return this;
     }
 
-    public ListTestReportsByConditionResponse addValueItem(TestReportVo valueItem) {
-        if (this.value == null) {
-            this.value = new ArrayList<>();
+    public ListTestReportsByConditionResponse withResult(Consumer<ResultValueListTestReportVo> resultSetter) {
+        if (this.result == null) {
+            this.result = new ResultValueListTestReportVo();
+            resultSetter.accept(this.result);
         }
-        this.value.add(valueItem);
+
         return this;
     }
 
-    public ListTestReportsByConditionResponse withValue(Consumer<List<TestReportVo>> valueSetter) {
-        if (this.value == null) {
-            this.value = new ArrayList<>();
+    /**
+     * Get result
+     * @return result
+     */
+    public ResultValueListTestReportVo getResult() {
+        return result;
+    }
+
+    public void setResult(ResultValueListTestReportVo result) {
+        this.result = result;
+    }
+
+    public ListTestReportsByConditionResponse withError(ApiError error) {
+        this.error = error;
+        return this;
+    }
+
+    public ListTestReportsByConditionResponse withError(Consumer<ApiError> errorSetter) {
+        if (this.error == null) {
+            this.error = new ApiError();
+            errorSetter.accept(this.error);
         }
-        valueSetter.accept(this.value);
+
         return this;
     }
 
     /**
-     * 实际的数据类型：单个对象，集合 或 NULL
-     * @return value
+     * Get error
+     * @return error
      */
-    public List<TestReportVo> getValue() {
-        return value;
+    public ApiError getError() {
+        return error;
     }
 
-    public void setValue(List<TestReportVo> value) {
-        this.value = value;
+    public void setError(ApiError error) {
+        this.error = error;
     }
 
-    public ListTestReportsByConditionResponse withReason(String reason) {
-        this.reason = reason;
+    public ListTestReportsByConditionResponse withRequestId(String requestId) {
+        this.requestId = requestId;
         return this;
     }
 
     /**
-     * 业务失败的提示内容，对内接口才有此值
-     * @return reason
+     * 由接口调用方传入，建议使用UUID保证请求的唯一性。
+     * @return requestId
      */
-    public String getReason() {
-        return reason;
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setReason(String reason) {
-        this.reason = reason;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
-    public ListTestReportsByConditionResponse withPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
+    public ListTestReportsByConditionResponse withServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
         return this;
     }
 
     /**
-     * Get pageSize
-     * @return pageSize
+     * 对内接口才有此属性
+     * @return serverAddress
      */
-    public Integer getPageSize() {
-        return pageSize;
+    public String getServerAddress() {
+        return serverAddress;
     }
 
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public ListTestReportsByConditionResponse withPageNo(Integer pageNo) {
-        this.pageNo = pageNo;
-        return this;
-    }
-
-    /**
-     * Get pageNo
-     * @return pageNo
-     */
-    public Integer getPageNo() {
-        return pageNo;
-    }
-
-    public void setPageNo(Integer pageNo) {
-        this.pageNo = pageNo;
-    }
-
-    public ListTestReportsByConditionResponse withHasMore(Boolean hasMore) {
-        this.hasMore = hasMore;
-        return this;
-    }
-
-    /**
-     * Get hasMore
-     * @return hasMore
-     */
-    public Boolean getHasMore() {
-        return hasMore;
-    }
-
-    public void setHasMore(Boolean hasMore) {
-        this.hasMore = hasMore;
+    public void setServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
     }
 
     @Override
@@ -171,26 +149,25 @@ public class ListTestReportsByConditionResponse extends SdkResponse {
             return false;
         }
         ListTestReportsByConditionResponse that = (ListTestReportsByConditionResponse) obj;
-        return Objects.equals(this.total, that.total) && Objects.equals(this.value, that.value)
-            && Objects.equals(this.reason, that.reason) && Objects.equals(this.pageSize, that.pageSize)
-            && Objects.equals(this.pageNo, that.pageNo) && Objects.equals(this.hasMore, that.hasMore);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.serverAddress, that.serverAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, value, reason, pageSize, pageNo, hasMore);
+        return Objects.hash(status, result, error, requestId, serverAddress);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTestReportsByConditionResponse {\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
-        sb.append("    value: ").append(toIndentedString(value)).append("\n");
-        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
-        sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    pageNo: ").append(toIndentedString(pageNo)).append("\n");
-        sb.append("    hasMore: ").append(toIndentedString(hasMore)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    serverAddress: ").append(toIndentedString(serverAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 中心网络附件对端实例ID，企业路由器ID或者GDGW的ID。
+ * 中心网络附件对端实例ID，企业路由器的路由表ID或者GDGW的ID。
  */
 public class AttachmentInstanceId {
 
@@ -21,7 +21,7 @@ public class AttachmentInstanceId {
     }
 
     /**
-     * 资源ID标识符。
+     * 中心网络附件对端实例ID，企业路由器的路由表ID或者GDGW的ID。
      * @return attachmentInstanceId
      */
     public String getAttachmentInstanceId() {

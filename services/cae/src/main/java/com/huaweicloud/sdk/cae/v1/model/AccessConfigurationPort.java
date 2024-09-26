@@ -19,6 +19,16 @@ import java.util.function.Consumer;
 public class AccessConfigurationPort {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operator")
+
+    private String operator;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "uid")
+
+    private String uid;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_port")
 
     private Integer targetPort;
@@ -216,6 +226,40 @@ public class AccessConfigurationPort {
 
     private String elbId;
 
+    public AccessConfigurationPort withOperator(String operator) {
+        this.operator = operator;
+        return this;
+    }
+
+    /**
+     * 配置模式。 - 如果operator值为空，则表示使用全量覆盖模式进行配置，否则表示使用增删改模式进行配置。且此级列表的所有元素的operator值必须同时全为空或者非空。 - 当使用增删改模式时，operator取值支持\"add\",\"copy\",\"modify\",\"delete\"，分别表示新增，复制指定uid的元素修改后新增，修改指定uid的元素，删除指定uid的元素。 - 当operator取值为\"copy\",\"modify\",\"delete\"时，uid的值必须为非空，且存在于最后一次生效的配置中。 - 当operator取值为\"copy\",\"modify\"时，与operator同级别的字段中除uid外的所有字段如不写，置空或者为空列表，则表示保留在最后一次生效配置中指定uid的元素的同一字段的值。 
+     * @return operator
+     */
+    public String getOperator() {
+        return operator;
+    }
+
+    public void setOperator(String operator) {
+        this.operator = operator;
+    }
+
+    public AccessConfigurationPort withUid(String uid) {
+        this.uid = uid;
+        return this;
+    }
+
+    /**
+     * 端口配置的uid。
+     * @return uid
+     */
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
     public AccessConfigurationPort withTargetPort(Integer targetPort) {
         this.targetPort = targetPort;
         return this;
@@ -377,7 +421,8 @@ public class AccessConfigurationPort {
             return false;
         }
         AccessConfigurationPort that = (AccessConfigurationPort) obj;
-        return Objects.equals(this.targetPort, that.targetPort) && Objects.equals(this.port, that.port)
+        return Objects.equals(this.operator, that.operator) && Objects.equals(this.uid, that.uid)
+            && Objects.equals(this.targetPort, that.targetPort) && Objects.equals(this.port, that.port)
             && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.defaultCertificate, that.defaultCertificate)
             && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.policy, that.policy)
@@ -386,13 +431,16 @@ public class AccessConfigurationPort {
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetPort, port, protocol, defaultCertificate, certificate, policy, paths, elbId);
+        return Objects
+            .hash(operator, uid, targetPort, port, protocol, defaultCertificate, certificate, policy, paths, elbId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AccessConfigurationPort {\n");
+        sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
+        sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
         sb.append("    targetPort: ").append(toIndentedString(targetPort)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");

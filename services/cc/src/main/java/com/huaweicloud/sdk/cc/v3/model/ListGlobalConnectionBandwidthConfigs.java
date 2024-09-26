@@ -24,7 +24,7 @@ public class ListGlobalConnectionBandwidthConfigs {
     private List<GlobalConnectionBandwidthSizeRange> sizeRange = null;
 
     /**
-     * 计费类型： - bwd: 按带宽计费 - 95: 按传统型95计费
+     * 计费类型： - bwd: 按带宽计费 - 95: 按传统型95计费 - 95avr (日95计费)
      */
     public static final class ChargeModeEnum {
 
@@ -38,12 +38,18 @@ public class ListGlobalConnectionBandwidthConfigs {
          */
         public static final ChargeModeEnum _95 = new ChargeModeEnum("95");
 
+        /**
+         * Enum _95AVR for value: "95avr"
+         */
+        public static final ChargeModeEnum _95AVR = new ChargeModeEnum("95avr");
+
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ChargeModeEnum> createStaticFields() {
             Map<String, ChargeModeEnum> map = new HashMap<>();
             map.put("bwd", BWD);
             map.put("95", _95);
+            map.put("95avr", _95AVR);
             return Collections.unmodifiableMap(map);
         }
 

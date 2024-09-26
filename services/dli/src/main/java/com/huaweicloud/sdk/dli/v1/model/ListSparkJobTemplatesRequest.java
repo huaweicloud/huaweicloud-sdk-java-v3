@@ -36,7 +36,7 @@ public class ListSparkJobTemplatesRequest {
     }
 
     /**
-     * 类型。
+     * 类型，需要且必须传入spark作为值。
      * @return type
      */
     public String getType() {
@@ -70,7 +70,7 @@ public class ListSparkJobTemplatesRequest {
     }
 
     /**
-     * 每页显示的最大结果行数，范围: [1, 100]。默认值为：50。
+     * 每页显示的最大结果行数，范围: [1, 1000]。默认值为：50。
      * @return pageSize
      */
     public Integer getPageSize() {

@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.time.OffsetDateTime;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -13,113 +13,132 @@ import java.util.Objects;
 public class ShowTestCasesChangeStatisticsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "add_testcases_number")
+    @JsonProperty(value = "status")
 
-    private Integer addTestcasesNumber;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "reuse_testcases_number")
-
-    private Integer reuseTestcasesNumber;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "modifying_testcases_number")
+    @JsonProperty(value = "result")
 
-    private Integer modifyingTestcasesNumber;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_date_timestamp")
-
-    private Long updateDateTimestamp;
+    private ResultValueVersionTestCasesChangeStatisticsVo result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_date")
+    @JsonProperty(value = "error")
 
-    private OffsetDateTime updateDate;
+    private ApiError error;
 
-    public ShowTestCasesChangeStatisticsResponse withAddTestcasesNumber(Integer addTestcasesNumber) {
-        this.addTestcasesNumber = addTestcasesNumber;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server_address")
+
+    private String serverAddress;
+
+    public ShowTestCasesChangeStatisticsResponse withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * 新增用例数
-     * @return addTestcasesNumber
+     * 对外时：success|error; 对内时：ok|failed
+     * @return status
      */
-    public Integer getAddTestcasesNumber() {
-        return addTestcasesNumber;
+    public String getStatus() {
+        return status;
     }
 
-    public void setAddTestcasesNumber(Integer addTestcasesNumber) {
-        this.addTestcasesNumber = addTestcasesNumber;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public ShowTestCasesChangeStatisticsResponse withReuseTestcasesNumber(Integer reuseTestcasesNumber) {
-        this.reuseTestcasesNumber = reuseTestcasesNumber;
+    public ShowTestCasesChangeStatisticsResponse withResult(ResultValueVersionTestCasesChangeStatisticsVo result) {
+        this.result = result;
+        return this;
+    }
+
+    public ShowTestCasesChangeStatisticsResponse withResult(
+        Consumer<ResultValueVersionTestCasesChangeStatisticsVo> resultSetter) {
+        if (this.result == null) {
+            this.result = new ResultValueVersionTestCasesChangeStatisticsVo();
+            resultSetter.accept(this.result);
+        }
+
         return this;
     }
 
     /**
-     * 复用用例数
-     * @return reuseTestcasesNumber
+     * Get result
+     * @return result
      */
-    public Integer getReuseTestcasesNumber() {
-        return reuseTestcasesNumber;
+    public ResultValueVersionTestCasesChangeStatisticsVo getResult() {
+        return result;
     }
 
-    public void setReuseTestcasesNumber(Integer reuseTestcasesNumber) {
-        this.reuseTestcasesNumber = reuseTestcasesNumber;
+    public void setResult(ResultValueVersionTestCasesChangeStatisticsVo result) {
+        this.result = result;
     }
 
-    public ShowTestCasesChangeStatisticsResponse withModifyingTestcasesNumber(Integer modifyingTestcasesNumber) {
-        this.modifyingTestcasesNumber = modifyingTestcasesNumber;
+    public ShowTestCasesChangeStatisticsResponse withError(ApiError error) {
+        this.error = error;
+        return this;
+    }
+
+    public ShowTestCasesChangeStatisticsResponse withError(Consumer<ApiError> errorSetter) {
+        if (this.error == null) {
+            this.error = new ApiError();
+            errorSetter.accept(this.error);
+        }
+
         return this;
     }
 
     /**
-     * 修改用例数
-     * @return modifyingTestcasesNumber
+     * Get error
+     * @return error
      */
-    public Integer getModifyingTestcasesNumber() {
-        return modifyingTestcasesNumber;
+    public ApiError getError() {
+        return error;
     }
 
-    public void setModifyingTestcasesNumber(Integer modifyingTestcasesNumber) {
-        this.modifyingTestcasesNumber = modifyingTestcasesNumber;
+    public void setError(ApiError error) {
+        this.error = error;
     }
 
-    public ShowTestCasesChangeStatisticsResponse withUpdateDateTimestamp(Long updateDateTimestamp) {
-        this.updateDateTimestamp = updateDateTimestamp;
+    public ShowTestCasesChangeStatisticsResponse withRequestId(String requestId) {
+        this.requestId = requestId;
         return this;
     }
 
     /**
-     * 修改时间时间戳
-     * @return updateDateTimestamp
+     * 由接口调用方传入，建议使用UUID保证请求的唯一性。
+     * @return requestId
      */
-    public Long getUpdateDateTimestamp() {
-        return updateDateTimestamp;
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setUpdateDateTimestamp(Long updateDateTimestamp) {
-        this.updateDateTimestamp = updateDateTimestamp;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
-    public ShowTestCasesChangeStatisticsResponse withUpdateDate(OffsetDateTime updateDate) {
-        this.updateDate = updateDate;
+    public ShowTestCasesChangeStatisticsResponse withServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
         return this;
     }
 
     /**
-     * 修改时间
-     * @return updateDate
+     * 对内接口才有此属性
+     * @return serverAddress
      */
-    public OffsetDateTime getUpdateDate() {
-        return updateDate;
+    public String getServerAddress() {
+        return serverAddress;
     }
 
-    public void setUpdateDate(OffsetDateTime updateDate) {
-        this.updateDate = updateDate;
+    public void setServerAddress(String serverAddress) {
+        this.serverAddress = serverAddress;
     }
 
     @Override
@@ -131,28 +150,25 @@ public class ShowTestCasesChangeStatisticsResponse extends SdkResponse {
             return false;
         }
         ShowTestCasesChangeStatisticsResponse that = (ShowTestCasesChangeStatisticsResponse) obj;
-        return Objects.equals(this.addTestcasesNumber, that.addTestcasesNumber)
-            && Objects.equals(this.reuseTestcasesNumber, that.reuseTestcasesNumber)
-            && Objects.equals(this.modifyingTestcasesNumber, that.modifyingTestcasesNumber)
-            && Objects.equals(this.updateDateTimestamp, that.updateDateTimestamp)
-            && Objects.equals(this.updateDate, that.updateDate);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.serverAddress, that.serverAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(addTestcasesNumber, reuseTestcasesNumber, modifyingTestcasesNumber, updateDateTimestamp, updateDate);
+        return Objects.hash(status, result, error, requestId, serverAddress);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowTestCasesChangeStatisticsResponse {\n");
-        sb.append("    addTestcasesNumber: ").append(toIndentedString(addTestcasesNumber)).append("\n");
-        sb.append("    reuseTestcasesNumber: ").append(toIndentedString(reuseTestcasesNumber)).append("\n");
-        sb.append("    modifyingTestcasesNumber: ").append(toIndentedString(modifyingTestcasesNumber)).append("\n");
-        sb.append("    updateDateTimestamp: ").append(toIndentedString(updateDateTimestamp)).append("\n");
-        sb.append("    updateDate: ").append(toIndentedString(updateDate)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    error: ").append(toIndentedString(error)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    serverAddress: ").append(toIndentedString(serverAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

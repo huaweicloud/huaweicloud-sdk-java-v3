@@ -961,6 +961,12 @@ public class CaeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListComponentConfigurationsRequest::getComponentId,
                 ListComponentConfigurationsRequest::setComponentId));
+        builder.<String>withRequestField("displayMode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListComponentConfigurationsRequest::getDisplayMode,
+                ListComponentConfigurationsRequest::setDisplayMode));
         builder.<String>withRequestField("X-Enterprise-Project-ID",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
