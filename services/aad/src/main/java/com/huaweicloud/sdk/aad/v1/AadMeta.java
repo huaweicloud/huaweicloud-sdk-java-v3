@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.aad.v1.model.AddBlackWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.AddPolicyBlackAndWhiteIpListRequest;
 import com.huaweicloud.sdk.aad.v1.model.AddPolicyBlackAndWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.AlarmBody;
+import com.huaweicloud.sdk.aad.v1.model.AssociateIpToPolicyAndPackageRequest;
+import com.huaweicloud.sdk.aad.v1.model.AssociateIpToPolicyAndPackageResponse;
 import com.huaweicloud.sdk.aad.v1.model.AssociateIpToPolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.AssociateIpToPolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.BatchCreateInstanceIpRuleRequest;
@@ -30,6 +32,8 @@ import com.huaweicloud.sdk.aad.v1.model.DeletePolicyBlackAndWhiteIpListRequest;
 import com.huaweicloud.sdk.aad.v1.model.DeletePolicyBlackAndWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.DeletePolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.DeletePolicyResponse;
+import com.huaweicloud.sdk.aad.v1.model.DisassociateIpFromPolicyAndPackageRequest;
+import com.huaweicloud.sdk.aad.v1.model.DisassociateIpFromPolicyAndPackageResponse;
 import com.huaweicloud.sdk.aad.v1.model.DisassociateIpFromPolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.DisassociateIpFromPolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.DomainRealServerInfo;
@@ -38,6 +42,7 @@ import com.huaweicloud.sdk.aad.v1.model.ExecuteUnblockIpRequestBody;
 import com.huaweicloud.sdk.aad.v1.model.ExecuteUnblockIpResponse;
 import com.huaweicloud.sdk.aad.v1.model.HostBody;
 import com.huaweicloud.sdk.aad.v1.model.IpBindingBody;
+import com.huaweicloud.sdk.aad.v1.model.IpBindingV3Body;
 import com.huaweicloud.sdk.aad.v1.model.ListBlockIpsRequest;
 import com.huaweicloud.sdk.aad.v1.model.ListBlockIpsResponse;
 import com.huaweicloud.sdk.aad.v1.model.ListDomainRequest;
@@ -319,6 +324,39 @@ public class AadMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AssociateIpToPolicyAndPackageRequest, AssociateIpToPolicyAndPackageResponse> associateIpToPolicyAndPackage =
+        genForAssociateIpToPolicyAndPackage();
+
+    private static HttpRequestDef<AssociateIpToPolicyAndPackageRequest, AssociateIpToPolicyAndPackageResponse> genForAssociateIpToPolicyAndPackage() {
+        // basic
+        HttpRequestDef.Builder<AssociateIpToPolicyAndPackageRequest, AssociateIpToPolicyAndPackageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssociateIpToPolicyAndPackageRequest.class,
+                    AssociateIpToPolicyAndPackageResponse.class)
+                .withName("AssociateIpToPolicyAndPackage")
+                .withUri("/v3/cnad/policies/{policy_id}/bind")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateIpToPolicyAndPackageRequest::getPolicyId,
+                AssociateIpToPolicyAndPackageRequest::setPolicyId));
+        builder.<IpBindingV3Body>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IpBindingV3Body.class),
+            f -> f.withMarshaller(AssociateIpToPolicyAndPackageRequest::getBody,
+                AssociateIpToPolicyAndPackageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchCreateInstanceIpRuleRequest, BatchCreateInstanceIpRuleResponse> batchCreateInstanceIpRule =
         genForBatchCreateInstanceIpRule();
 
@@ -560,6 +598,39 @@ public class AadMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IpBindingBody.class),
             f -> f.withMarshaller(DisassociateIpFromPolicyRequest::getBody, DisassociateIpFromPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateIpFromPolicyAndPackageRequest, DisassociateIpFromPolicyAndPackageResponse> disassociateIpFromPolicyAndPackage =
+        genForDisassociateIpFromPolicyAndPackage();
+
+    private static HttpRequestDef<DisassociateIpFromPolicyAndPackageRequest, DisassociateIpFromPolicyAndPackageResponse> genForDisassociateIpFromPolicyAndPackage() {
+        // basic
+        HttpRequestDef.Builder<DisassociateIpFromPolicyAndPackageRequest, DisassociateIpFromPolicyAndPackageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DisassociateIpFromPolicyAndPackageRequest.class,
+                    DisassociateIpFromPolicyAndPackageResponse.class)
+                .withName("DisassociateIpFromPolicyAndPackage")
+                .withUri("/v3/cnad/policies/{policy_id}/unbind")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateIpFromPolicyAndPackageRequest::getPolicyId,
+                DisassociateIpFromPolicyAndPackageRequest::setPolicyId));
+        builder.<IpBindingV3Body>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IpBindingV3Body.class),
+            f -> f.withMarshaller(DisassociateIpFromPolicyAndPackageRequest::getBody,
+                DisassociateIpFromPolicyAndPackageRequest::setBody));
 
         // response
 

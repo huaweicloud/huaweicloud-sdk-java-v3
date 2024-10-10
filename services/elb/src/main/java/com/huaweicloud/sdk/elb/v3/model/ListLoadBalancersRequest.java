@@ -566,7 +566,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。   支持多值查询，查询条件格式：*vip_subnet_cidr_id=xxx&vip_subnet_cidr_id=xxx*。
+     * 负载均衡器所在子网的IPv4子网ID，也称为该负载均衡器实例的前端子网。  支持多值查询，查询条件格式：*vip_subnet_cidr_id=xxx&vip_subnet_cidr_id=xxx*。
      * @return vipSubnetCidrId
      */
     public List<String> getVipSubnetCidrId() {
@@ -962,7 +962,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器中的后端云服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。
+     * 负载均衡器中的后端服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。
      * @return memberDeviceId
      */
     public List<String> getMemberDeviceId() {
@@ -995,7 +995,7 @@ public class ListLoadBalancersRequest {
     }
 
     /**
-     * 负载均衡器中的后端云服务器对应的弹性云服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。
+     * 负载均衡器中的后端服务器对应的弹性云服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。
      * @return memberAddress
      */
     public List<String> getMemberAddress() {

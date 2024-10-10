@@ -15,44 +15,42 @@ import java.util.function.Consumer;
 public class CheckStarrocksParamsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "check_starrocks_params_responce")
+    @JsonProperty(value = "differences")
 
-    private List<ParamGroupParameterDifferences> checkStarrocksParamsResponce = null;
+    private List<ParamGroupParameterDifferences> differences = null;
 
-    public CheckStarrocksParamsResponse withCheckStarrocksParamsResponce(
-        List<ParamGroupParameterDifferences> checkStarrocksParamsResponce) {
-        this.checkStarrocksParamsResponce = checkStarrocksParamsResponce;
+    public CheckStarrocksParamsResponse withDifferences(List<ParamGroupParameterDifferences> differences) {
+        this.differences = differences;
         return this;
     }
 
-    public CheckStarrocksParamsResponse addCheckStarrocksParamsResponceItem(
-        ParamGroupParameterDifferences checkStarrocksParamsResponceItem) {
-        if (this.checkStarrocksParamsResponce == null) {
-            this.checkStarrocksParamsResponce = new ArrayList<>();
+    public CheckStarrocksParamsResponse addDifferencesItem(ParamGroupParameterDifferences differencesItem) {
+        if (this.differences == null) {
+            this.differences = new ArrayList<>();
         }
-        this.checkStarrocksParamsResponce.add(checkStarrocksParamsResponceItem);
+        this.differences.add(differencesItem);
         return this;
     }
 
-    public CheckStarrocksParamsResponse withCheckStarrocksParamsResponce(
-        Consumer<List<ParamGroupParameterDifferences>> checkStarrocksParamsResponceSetter) {
-        if (this.checkStarrocksParamsResponce == null) {
-            this.checkStarrocksParamsResponce = new ArrayList<>();
+    public CheckStarrocksParamsResponse withDifferences(
+        Consumer<List<ParamGroupParameterDifferences>> differencesSetter) {
+        if (this.differences == null) {
+            this.differences = new ArrayList<>();
         }
-        checkStarrocksParamsResponceSetter.accept(this.checkStarrocksParamsResponce);
+        differencesSetter.accept(this.differences);
         return this;
     }
 
     /**
      * 参数之间区别的集合。
-     * @return checkStarrocksParamsResponce
+     * @return differences
      */
-    public List<ParamGroupParameterDifferences> getCheckStarrocksParamsResponce() {
-        return checkStarrocksParamsResponce;
+    public List<ParamGroupParameterDifferences> getDifferences() {
+        return differences;
     }
 
-    public void setCheckStarrocksParamsResponce(List<ParamGroupParameterDifferences> checkStarrocksParamsResponce) {
-        this.checkStarrocksParamsResponce = checkStarrocksParamsResponce;
+    public void setDifferences(List<ParamGroupParameterDifferences> differences) {
+        this.differences = differences;
     }
 
     @Override
@@ -64,21 +62,19 @@ public class CheckStarrocksParamsResponse extends SdkResponse {
             return false;
         }
         CheckStarrocksParamsResponse that = (CheckStarrocksParamsResponse) obj;
-        return Objects.equals(this.checkStarrocksParamsResponce, that.checkStarrocksParamsResponce);
+        return Objects.equals(this.differences, that.differences);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(checkStarrocksParamsResponce);
+        return Objects.hash(differences);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CheckStarrocksParamsResponse {\n");
-        sb.append("    checkStarrocksParamsResponce: ")
-            .append(toIndentedString(checkStarrocksParamsResponce))
-            .append("\n");
+        sb.append("    differences: ").append(toIndentedString(differences)).append("\n");
         sb.append("}");
         return sb.toString();
     }

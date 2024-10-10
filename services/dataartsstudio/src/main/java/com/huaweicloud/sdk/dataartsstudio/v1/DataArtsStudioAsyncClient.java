@@ -93,6 +93,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateLineageInfoRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateLineageInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetRequest;
@@ -1875,6 +1877,35 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<CreateFactorySupplementDataInstanceRequest, CreateFactorySupplementDataInstanceResponse> createFactorySupplementDataInstanceAsyncInvoker(
         CreateFactorySupplementDataInstanceRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.createFactorySupplementDataInstance, hcClient);
+    }
+
+    /**
+     * 创建血缘信息
+     *
+     * 创建血缘信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLineageInfoRequest 请求对象
+     * @return CompletableFuture<CreateLineageInfoResponse>
+     */
+    public CompletableFuture<CreateLineageInfoResponse> createLineageInfoAsync(CreateLineageInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createLineageInfo);
+    }
+
+    /**
+     * 创建血缘信息
+     *
+     * 创建血缘信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLineageInfoRequest 请求对象
+     * @return AsyncInvoker<CreateLineageInfoRequest, CreateLineageInfoResponse>
+     */
+    public AsyncInvoker<CreateLineageInfoRequest, CreateLineageInfoResponse> createLineageInfoAsyncInvoker(
+        CreateLineageInfoRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.createLineageInfo, hcClient);
     }
 
     /**

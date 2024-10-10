@@ -94,7 +94,7 @@ public class CreateMasterSlavePoolOption {
     }
 
     /**
-     * 后端云服务器组的描述信息。
+     * 后端服务器组的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -111,7 +111,7 @@ public class CreateMasterSlavePoolOption {
     }
 
     /**
-     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  [不支持QUIC_CID。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
+     * 后端服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  [不支持QUIC_CID。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
      * @return lbAlgorithm
      */
     public String getLbAlgorithm() {
@@ -128,7 +128,7 @@ public class CreateMasterSlavePoolOption {
     }
 
     /**
-     * 后端云服务器组关联的LB的ID。  使用说明：listener_id，loadbalancer_id，type至少指定一个。
+     * 后端服务器组关联的LB的ID。  使用说明：listener_id，loadbalancer_id，type至少指定一个。
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {
@@ -145,7 +145,7 @@ public class CreateMasterSlavePoolOption {
     }
 
     /**
-     * 后端云服务器组关联的监听器的ID。  使用说明：listener_id，loadbalancer_id，type至少指定一个。
+     * 后端服务器组关联的监听器的ID。  使用说明：listener_id，loadbalancer_id，type至少指定一个。
      * @return listenerId
      */
     public String getListenerId() {
@@ -162,7 +162,7 @@ public class CreateMasterSlavePoolOption {
     }
 
     /**
-     * 后端云服务器组的名称。
+     * 后端服务器组的名称。
      * @return name
      */
     public String getName() {
@@ -179,7 +179,7 @@ public class CreateMasterSlavePoolOption {
     }
 
     /**
-     * 后端云服务器组所属的项目ID。
+     * 后端服务器组所属的项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -196,7 +196,7 @@ public class CreateMasterSlavePoolOption {
     }
 
     /**
-     * 后端云服务器组的后端协议。  取值：TCP、UDP、QUIC、TLS。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC。 - listener的protocol为TCP时，pool的protocol必须为TCP。 - listener的protocol为TLS时，pool的protocol必须为TLS或TCP（且只能使用ip_version为v4的TCP pool）。 - 其他协议监听器不支持主备后端服务器组。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
+     * 后端服务器组的后端协议。  取值：TCP、UDP、QUIC、TLS。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC。 - listener的protocol为TCP时，pool的protocol必须为TCP。 - listener的protocol为TLS时，pool的protocol必须为TLS或TCP（且只能使用ip_version为v4的TCP pool）。 - 其他协议监听器不支持主备后端服务器组。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
      * @return protocol
      */
     public String getProtocol() {
@@ -240,7 +240,7 @@ public class CreateMasterSlavePoolOption {
     }
 
     /**
-     * 后端云服务器组关联的虚拟私有云的ID。  指定了vpc_id的约束： - 只能挂载到该虚拟私有云下。 - 只能添加该虚拟私有云下的后端服务器或跨VPC的后端服务器。 - type必须指定为instance。  没有指定vpc_id的约束： - 后续添加后端服务器时，vpc_id由后端服务器所在的虚拟私有云确定。
+     * 后端服务器组关联的虚拟私有云的ID。  指定了vpc_id的约束： - 只能挂载到该虚拟私有云下。 - 只能添加该虚拟私有云下的后端服务器或跨VPC的后端服务器。 - type必须指定为instance。  没有指定vpc_id的约束： - 后续添加后端服务器时，vpc_id由后端服务器所在的虚拟私有云确定。
      * @return vpcId
      */
     public String getVpcId() {
@@ -274,7 +274,7 @@ public class CreateMasterSlavePoolOption {
     }
 
     /**
-     * 后端云服务器组支持的IP版本。  [取值： - 共享型：固定为v4； -  独享型：取值dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。  当协议为HTTP时，ip_version为v4。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs)  [取值：dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。 当协议为HTTP时，ip_version为v4。](tag:hcso_dt)  [不支持IPv6，只会返回v4。](tag:dt,dt_test)
+     * 后端服务器组支持的IP版本。  [取值： - 共享型：固定为v4； -  独享型：取值dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。  当协议为HTTP时，ip_version为v4。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,fcs)  [取值：dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。 当协议为HTTP时，ip_version为v4。](tag:hcso_dt)  [不支持IPv6，只会返回v4。](tag:dt,dt_test)
      * @return ipVersion
      */
     public String getIpVersion() {
@@ -307,7 +307,7 @@ public class CreateMasterSlavePoolOption {
     }
 
     /**
-     * 主备主机组的后端服务器。 只能添加2个后端云服务器，必须有一个为主，一个为备。
+     * 主备主机组的后端服务器。 只能添加2个后端服务器，必须有一个为主，一个为备。
      * @return members
      */
     public List<CreateMasterSlaveMemberOption> getMembers() {

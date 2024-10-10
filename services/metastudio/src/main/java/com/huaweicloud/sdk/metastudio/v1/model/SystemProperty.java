@@ -91,7 +91,7 @@ public class SystemProperty {
     private ActionEnum action;
 
     /**
-     * **参数解释**： 系统属性条目。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： 公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频。 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_IMG：视频制作的2D背景图片。value设置成Yes * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏） * CREATED_BY_PLATFORM: 是否平台生成 * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频(过期) * BUSINESS_CARD_VIDEO：名片视频 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes * LAYER_CONFIG_ENABLE: 可用前景图层配置  **默认取值**： 不涉及
+     * **参数解释**： 系统属性条目。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： 公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作图片图层。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作视频图层。value设置成Yes。 * DIGITAL_HUMAN_2D_VIDEO：分身数字人视频。 * DIGITAL_HUMAN_3D_VIDEO：3D数字人视频。 * BUSINESS_CARD_VIDEO：名片视频。 * BUSSINESS_CARD_VIDEO：名片视频(过期) * PHOTO_VIDEO：照片数字人视频。   视频翻译资产属性： * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。 * TRANSLATED_VIDEO: 视频翻译后的视频  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏）。 * LAYER_CONFIG_ENABLE: 可用前景图层配置  **默认取值**： 不涉及
      */
     public static final class KeyEnum {
 
@@ -141,6 +141,16 @@ public class SystemProperty {
         public static final KeyEnum MATERIAL_VIDEO = new KeyEnum("MATERIAL_VIDEO");
 
         /**
+         * Enum DIGITAL_HUMAN_2D_VIDEO for value: "DIGITAL_HUMAN_2D_VIDEO"
+         */
+        public static final KeyEnum DIGITAL_HUMAN_2D_VIDEO = new KeyEnum("DIGITAL_HUMAN_2D_VIDEO");
+
+        /**
+         * Enum DIGITAL_HUMAN_3D_VIDEO for value: "DIGITAL_HUMAN_3D_VIDEO"
+         */
+        public static final KeyEnum DIGITAL_HUMAN_3D_VIDEO = new KeyEnum("DIGITAL_HUMAN_3D_VIDEO");
+
+        /**
          * Enum BUSSINESS_CARD_VIDEO for value: "BUSSINESS_CARD_VIDEO"
          */
         public static final KeyEnum BUSSINESS_CARD_VIDEO = new KeyEnum("BUSSINESS_CARD_VIDEO");
@@ -151,9 +161,19 @@ public class SystemProperty {
         public static final KeyEnum BUSINESS_CARD_VIDEO = new KeyEnum("BUSINESS_CARD_VIDEO");
 
         /**
+         * Enum PHOTO_VIDEO for value: "PHOTO_VIDEO"
+         */
+        public static final KeyEnum PHOTO_VIDEO = new KeyEnum("PHOTO_VIDEO");
+
+        /**
          * Enum TO_BE_TRANSLATED_VIDEO for value: "TO_BE_TRANSLATED_VIDEO"
          */
         public static final KeyEnum TO_BE_TRANSLATED_VIDEO = new KeyEnum("TO_BE_TRANSLATED_VIDEO");
+
+        /**
+         * Enum TRANSLATED_VIDEO for value: "TRANSLATED_VIDEO"
+         */
+        public static final KeyEnum TRANSLATED_VIDEO = new KeyEnum("TRANSLATED_VIDEO");
 
         /**
          * Enum LAYER_CONFIG_ENABLE for value: "LAYER_CONFIG_ENABLE"
@@ -173,9 +193,13 @@ public class SystemProperty {
             map.put("CREATED_BY_PLATFORM", CREATED_BY_PLATFORM);
             map.put("MATERIAL_IMG", MATERIAL_IMG);
             map.put("MATERIAL_VIDEO", MATERIAL_VIDEO);
+            map.put("DIGITAL_HUMAN_2D_VIDEO", DIGITAL_HUMAN_2D_VIDEO);
+            map.put("DIGITAL_HUMAN_3D_VIDEO", DIGITAL_HUMAN_3D_VIDEO);
             map.put("BUSSINESS_CARD_VIDEO", BUSSINESS_CARD_VIDEO);
             map.put("BUSINESS_CARD_VIDEO", BUSINESS_CARD_VIDEO);
+            map.put("PHOTO_VIDEO", PHOTO_VIDEO);
             map.put("TO_BE_TRANSLATED_VIDEO", TO_BE_TRANSLATED_VIDEO);
+            map.put("TRANSLATED_VIDEO", TRANSLATED_VIDEO);
             map.put("LAYER_CONFIG_ENABLE", LAYER_CONFIG_ENABLE);
             return Collections.unmodifiableMap(map);
         }
@@ -259,7 +283,7 @@ public class SystemProperty {
     }
 
     /**
-     * **参数解释**： 系统属性条目。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： 公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频。 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_IMG：视频制作的2D背景图片。value设置成Yes * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏） * CREATED_BY_PLATFORM: 是否平台生成 * MATERIAL_IMG：素材图片，用作前景。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作前景。value设置成Yes。 * BUSSINESS_CARD_VIDEO：名片视频(过期) * BUSINESS_CARD_VIDEO：名片视频 * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes * LAYER_CONFIG_ENABLE: 可用前景图层配置  **默认取值**： 不涉及
+     * **参数解释**： 系统属性条目。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： 公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作图片图层。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作视频图层。value设置成Yes。 * DIGITAL_HUMAN_2D_VIDEO：分身数字人视频。 * DIGITAL_HUMAN_3D_VIDEO：3D数字人视频。 * BUSINESS_CARD_VIDEO：名片视频。 * BUSSINESS_CARD_VIDEO：名片视频(过期) * PHOTO_VIDEO：照片数字人视频。   视频翻译资产属性： * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。 * TRANSLATED_VIDEO: 视频翻译后的视频  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏）。 * LAYER_CONFIG_ENABLE: 可用前景图层配置  **默认取值**： 不涉及
      * @return key
      */
     public KeyEnum getKey() {

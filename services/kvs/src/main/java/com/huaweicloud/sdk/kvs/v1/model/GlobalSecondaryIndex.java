@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 全局二级索引定义，元素key为数组下标
+ * GlobalSecondaryIndex
  */
 public class GlobalSecondaryIndex {
 
@@ -44,6 +44,12 @@ public class GlobalSecondaryIndex {
     @BsonProperty(value = "abstract_fields")
 
     private List<String> abstractFields = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "provisioned_throughput")
+    @BsonProperty(value = "provisioned_throughput")
+
+    private ProvisionedThroughput provisionedThroughput;
 
     public GlobalSecondaryIndex withIndexName(String indexName) {
         this.indexName = indexName;
@@ -178,6 +184,32 @@ public class GlobalSecondaryIndex {
         this.abstractFields = abstractFields;
     }
 
+    public GlobalSecondaryIndex withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
+        this.provisionedThroughput = provisionedThroughput;
+        return this;
+    }
+
+    public GlobalSecondaryIndex withProvisionedThroughput(Consumer<ProvisionedThroughput> provisionedThroughputSetter) {
+        if (this.provisionedThroughput == null) {
+            this.provisionedThroughput = new ProvisionedThroughput();
+            provisionedThroughputSetter.accept(this.provisionedThroughput);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get provisionedThroughput
+     * @return provisionedThroughput
+     */
+    public ProvisionedThroughput getProvisionedThroughput() {
+        return provisionedThroughput;
+    }
+
+    public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
+        this.provisionedThroughput = provisionedThroughput;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -190,12 +222,13 @@ public class GlobalSecondaryIndex {
         return Objects.equals(this.indexName, that.indexName)
             && Objects.equals(this.shardKeyFields, that.shardKeyFields)
             && Objects.equals(this.shardMode, that.shardMode) && Objects.equals(this.sortKeyFields, that.sortKeyFields)
-            && Objects.equals(this.abstractFields, that.abstractFields);
+            && Objects.equals(this.abstractFields, that.abstractFields)
+            && Objects.equals(this.provisionedThroughput, that.provisionedThroughput);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(indexName, shardKeyFields, shardMode, sortKeyFields, abstractFields);
+        return Objects.hash(indexName, shardKeyFields, shardMode, sortKeyFields, abstractFields, provisionedThroughput);
     }
 
     @Override
@@ -207,6 +240,7 @@ public class GlobalSecondaryIndex {
         sb.append("    shardMode: ").append(toIndentedString(shardMode)).append("\n");
         sb.append("    sortKeyFields: ").append(toIndentedString(sortKeyFields)).append("\n");
         sb.append("    abstractFields: ").append(toIndentedString(abstractFields)).append("\n");
+        sb.append("    provisionedThroughput: ").append(toIndentedString(provisionedThroughput)).append("\n");
         sb.append("}");
         return sb.toString();
     }

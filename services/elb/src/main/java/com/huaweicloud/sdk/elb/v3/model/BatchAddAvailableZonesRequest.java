@@ -27,7 +27,7 @@ public class BatchAddAvailableZonesRequest {
     }
 
     /**
-     * 负载均衡器ID。
+     * 参数解释：负载均衡器ID。
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {

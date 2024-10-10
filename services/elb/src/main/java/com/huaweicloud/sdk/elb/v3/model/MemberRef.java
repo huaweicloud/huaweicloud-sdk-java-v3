@@ -21,7 +21,7 @@ public class MemberRef {
     }
 
     /**
-     * 后端服务器ID。
+     * 参数解释：后端服务器ID。
      * @return id
      */
     public String getId() {

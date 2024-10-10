@@ -266,7 +266,7 @@ public class CreateListenerOption {
     }
 
     /**
-     * 参数解释：监听器默认的后端云服务器组ID。当请求没有匹配的转发策略时，转发到默认后端云服务器上处理。
+     * 参数解释：监听器默认的后端服务器组ID。当请求没有匹配的转发策略时，转发到默认后端服务器上处理。
      * @return defaultPoolId
      */
     public String getDefaultPoolId() {
@@ -713,7 +713,7 @@ public class CreateListenerOption {
     }
 
     /**
-     * 参数解释：是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。  开启后支持如下场景： - 转发策略的action字段支持指定为REDIRECT_TO_URL, FIXED_RESPONSE，即支持URL重定向和响应固定的内容给客户端。 - 转发策略支持指定priority、redirect_url_config、fixed_response_config字段。 - 转发规则rule的type可以指定METHOD, HEADER, QUERY_STRING, SOURCE_IP这几种取值。 - 转发规则rule的type为HOST_NAME时，转发规则rule的value支持通配符*。 - 转发规则支持指定conditions字段。  取值范围：true开启，false不开启，默认false。  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test) > 开启后不支持关闭
+     * 参数解释：是否开启高级转发策略功能。开启高级转发策略后，支持更灵活的转发策略和转发规则设置。  开启后支持如下场景： - 转发策略的action字段支持指定为REDIRECT_TO_URL, FIXED_RESPONSE，即支持URL重定向和响应固定的内容给客户端。 - 转发策略支持指定priority、redirect_url_config、fixed_response_config字段。 - 转发规则rule的type可以指定METHOD, HEADER, QUERY_STRING, SOURCE_IP这几种取值。 - 转发规则rule的type为HOST_NAME时，转发规则rule的value支持通配符*。 - 转发规则支持指定conditions字段。  约束限制：开启后不支持关闭  取值范围：true开启，false不开启，默认false。  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
      * @return enhanceL7policyEnable
      */
     public Boolean getEnhanceL7policyEnable() {

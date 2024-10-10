@@ -59,6 +59,8 @@ public class DnsRegion {
 
     public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://dns.ru-moscow-1.myhuaweicloud.com");
 
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://dns.me-east-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DNS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -85,6 +87,7 @@ public class DnsRegion {
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("ae-ad-1", AE_AD_1);
         map.put("ru-moscow-1", RU_MOSCOW_1);
+        map.put("me-east-1", ME_EAST_1);
         return Collections.unmodifiableMap(map);
     }
 

@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 转发到的后端主机组的URL配置。
+ * 参数解释：转发到的后端主机组的URL配置。
  */
 public class UpdateRedirectPoolsExtendConfig {
 

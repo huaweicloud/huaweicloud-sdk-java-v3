@@ -443,7 +443,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 监听器的默认后端云服务器组ID。当请求没有匹配的转发策略时，转发到默认后端云服务器上处理。  支持多值查询，查询条件格式：*default_pool_id=xxx&default_pool_id=xxx*。
+     * 监听器的默认后端服务器组ID。当请求没有匹配的转发策略时，转发到默认后端服务器上处理。  支持多值查询，查询条件格式：*default_pool_id=xxx&default_pool_id=xxx*。
      * @return defaultPoolId
      */
     public List<String> getDefaultPoolId() {
@@ -625,7 +625,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 后端云服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。
+     * 后端服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。
      * @return memberAddress
      */
     public List<String> getMemberAddress() {
@@ -658,7 +658,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 后端云服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。
+     * 后端服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。
      * @return memberDeviceId
      */
     public List<String> getMemberDeviceId() {
@@ -891,7 +891,7 @@ public class ListListenersRequest {
     }
 
     /**
-     * 后端云服务器ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_instance_id=xxx&member_instance_id=xxx*。
+     * 后端服务器ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_instance_id=xxx&member_instance_id=xxx*。
      * @return memberInstanceId
      */
     public List<String> getMemberInstanceId() {

@@ -137,6 +137,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateLineageInfoRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateLineageInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetRequest;
@@ -288,6 +290,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.InitializeStandardTemplateRes
 import com.huaweicloud.sdk.dataartsstudio.v1.model.JobAndNodeInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.JobInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.JobLogRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.LineageInfoRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.LinkAttributeAndElementVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAggregationLogicTablesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListAggregationLogicTablesResponse;
@@ -2125,6 +2128,40 @@ public class DataArtsStudioMeta {
             String.class,
             f -> f.withMarshaller(CreateFactorySupplementDataInstanceResponse::getXRequestId,
                 CreateFactorySupplementDataInstanceResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateLineageInfoRequest, CreateLineageInfoResponse> createLineageInfo =
+        genForCreateLineageInfo();
+
+    private static HttpRequestDef<CreateLineageInfoRequest, CreateLineageInfoResponse> genForCreateLineageInfo() {
+        // basic
+        HttpRequestDef.Builder<CreateLineageInfoRequest, CreateLineageInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLineageInfoRequest.class, CreateLineageInfoResponse.class)
+                .withName("CreateLineageInfo")
+                .withUri("/v1/{project_id}/lineage/lineage-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLineageInfoRequest::getWorkspace, CreateLineageInfoRequest::setWorkspace));
+        builder.<LineageInfoRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LineageInfoRequest.class),
+            f -> f.withMarshaller(CreateLineageInfoRequest::getBody, CreateLineageInfoRequest::setBody));
+
+        // response
+        builder.<List<ObjectIdInfo>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CreateLineageInfoResponse::getBody, CreateLineageInfoResponse::setBody)
+                .withInnerContainerType(ObjectIdInfo.class));
+
         return builder.build();
     }
 

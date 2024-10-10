@@ -425,6 +425,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowRecoveryTimeWindowRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowRecoveryTimeWindowResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplayDelayStatusRequest;
@@ -481,6 +483,7 @@ import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslRequest;
 import com.huaweicloud.sdk.rds.v3.model.SwitchSslResponse;
+import com.huaweicloud.sdk.rds.v3.model.ToPeriodReq;
 import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.UnlockNodeReadonlyStatusResponse;
@@ -536,6 +539,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitRuleReqV3;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateToPeriodRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateToPeriodResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionRequest;
@@ -5539,6 +5544,39 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateToPeriodRequest, UpdateToPeriodResponse> updateToPeriod =
+        genForUpdateToPeriod();
+
+    private static HttpRequestDef<UpdateToPeriodRequest, UpdateToPeriodResponse> genForUpdateToPeriod() {
+        // basic
+        HttpRequestDef.Builder<UpdateToPeriodRequest, UpdateToPeriodResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateToPeriodRequest.class, UpdateToPeriodResponse.class)
+                .withName("UpdateToPeriod")
+                .withUri("/v3/{project_id}/instances/{instance_id}/to-period")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateToPeriodRequest::getInstanceId, UpdateToPeriodRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateToPeriodRequest::getXLanguage, UpdateToPeriodRequest::setXLanguage));
+        builder.<ToPeriodReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ToPeriodReq.class),
+            f -> f.withMarshaller(UpdateToPeriodRequest::getBody, UpdateToPeriodRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpgradeDbMajorVersionRequest, UpgradeDbMajorVersionResponse> upgradeDbMajorVersion =
         genForUpgradeDbMajorVersion();
 
@@ -7190,6 +7228,36 @@ public class RdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPostgresqlParamValueRequest::getXLanguage,
                 ShowPostgresqlParamValueRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRecoveryTimeWindowRequest, ShowRecoveryTimeWindowResponse> showRecoveryTimeWindow =
+        genForShowRecoveryTimeWindow();
+
+    private static HttpRequestDef<ShowRecoveryTimeWindowRequest, ShowRecoveryTimeWindowResponse> genForShowRecoveryTimeWindow() {
+        // basic
+        HttpRequestDef.Builder<ShowRecoveryTimeWindowRequest, ShowRecoveryTimeWindowResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowRecoveryTimeWindowRequest.class, ShowRecoveryTimeWindowResponse.class)
+            .withName("ShowRecoveryTimeWindow")
+            .withUri("/v3/{project_id}/instances/{instance_id}/recovery-time")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRecoveryTimeWindowRequest::getInstanceId,
+                ShowRecoveryTimeWindowRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRecoveryTimeWindowRequest::getXLanguage,
+                ShowRecoveryTimeWindowRequest::setXLanguage));
 
         // response
 

@@ -48,6 +48,16 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
     private String timeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start")
+
+    private Long start;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "terminal")
+
+    private Long terminal;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_group")
 
     private IpGroup ipGroup;
@@ -171,6 +181,40 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         this.timeMode = timeMode;
     }
 
+    public UpdateWhiteblackipRuleResponse withStart(Long start) {
+        this.start = start;
+        return this;
+    }
+
+    /**
+     * 规则生效开始时间，生效模式为自定义时，此字段才有效
+     * @return start
+     */
+    public Long getStart() {
+        return start;
+    }
+
+    public void setStart(Long start) {
+        this.start = start;
+    }
+
+    public UpdateWhiteblackipRuleResponse withTerminal(Long terminal) {
+        this.terminal = terminal;
+        return this;
+    }
+
+    /**
+     * 规则生效结束时间，生效模式为自定义时，此字段才有效
+     * @return terminal
+     */
+    public Long getTerminal() {
+        return terminal;
+    }
+
+    public void setTerminal(Long terminal) {
+        this.terminal = terminal;
+    }
+
     public UpdateWhiteblackipRuleResponse withIpGroup(IpGroup ipGroup) {
         this.ipGroup = ipGroup;
         return this;
@@ -209,12 +253,13 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.addr, that.addr)
             && Objects.equals(this.description, that.description) && Objects.equals(this.white, that.white)
-            && Objects.equals(this.timeMode, that.timeMode) && Objects.equals(this.ipGroup, that.ipGroup);
+            && Objects.equals(this.timeMode, that.timeMode) && Objects.equals(this.start, that.start)
+            && Objects.equals(this.terminal, that.terminal) && Objects.equals(this.ipGroup, that.ipGroup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, policyid, addr, description, white, timeMode, ipGroup);
+        return Objects.hash(id, name, policyid, addr, description, white, timeMode, start, terminal, ipGroup);
     }
 
     @Override
@@ -228,6 +273,8 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
         sb.append("    timeMode: ").append(toIndentedString(timeMode)).append("\n");
+        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
         sb.append("    ipGroup: ").append(toIndentedString(ipGroup)).append("\n");
         sb.append("}");
         return sb.toString();

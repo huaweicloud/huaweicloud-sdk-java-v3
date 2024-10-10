@@ -60,6 +60,16 @@ public class VoiceCapability {
 
     private Boolean isSupportVoiceCache;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "conversion_rate")
+
+    private Float conversionRate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "conversion_rate_en")
+
+    private Float conversionRateEn;
+
     public VoiceCapability withIsSupportPhonemeEn(Boolean isSupportPhonemeEn) {
         this.isSupportPhonemeEn = isSupportPhonemeEn;
         return this;
@@ -230,6 +240,44 @@ public class VoiceCapability {
         this.isSupportVoiceCache = isSupportVoiceCache;
     }
 
+    public VoiceCapability withConversionRate(Float conversionRate) {
+        this.conversionRate = conversionRate;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 合成率。 **约束限制**： 不涉及 **取值范围**： * 0-50
+     * minimum: 0
+     * maximum: 5E+1
+     * @return conversionRate
+     */
+    public Float getConversionRate() {
+        return conversionRate;
+    }
+
+    public void setConversionRate(Float conversionRate) {
+        this.conversionRate = conversionRate;
+    }
+
+    public VoiceCapability withConversionRateEn(Float conversionRateEn) {
+        this.conversionRateEn = conversionRateEn;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 英语的合成率。 **约束限制**： 不涉及 **取值范围**： * 0-50
+     * minimum: 0
+     * maximum: 5E+1
+     * @return conversionRateEn
+     */
+    public Float getConversionRateEn() {
+        return conversionRateEn;
+    }
+
+    public void setConversionRateEn(Float conversionRateEn) {
+        this.conversionRateEn = conversionRateEn;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -248,7 +296,9 @@ public class VoiceCapability {
             && Objects.equals(this.isSupportSsmlSayAs, that.isSupportSsmlSayAs)
             && Objects.equals(this.isSupportSsmlSub, that.isSupportSsmlSub)
             && Objects.equals(this.isSupportWord, that.isSupportWord)
-            && Objects.equals(this.isSupportVoiceCache, that.isSupportVoiceCache);
+            && Objects.equals(this.isSupportVoiceCache, that.isSupportVoiceCache)
+            && Objects.equals(this.conversionRate, that.conversionRate)
+            && Objects.equals(this.conversionRateEn, that.conversionRateEn);
     }
 
     @Override
@@ -262,7 +312,9 @@ public class VoiceCapability {
             isSupportSsmlSayAs,
             isSupportSsmlSub,
             isSupportWord,
-            isSupportVoiceCache);
+            isSupportVoiceCache,
+            conversionRate,
+            conversionRateEn);
     }
 
     @Override
@@ -279,6 +331,8 @@ public class VoiceCapability {
         sb.append("    isSupportSsmlSub: ").append(toIndentedString(isSupportSsmlSub)).append("\n");
         sb.append("    isSupportWord: ").append(toIndentedString(isSupportWord)).append("\n");
         sb.append("    isSupportVoiceCache: ").append(toIndentedString(isSupportVoiceCache)).append("\n");
+        sb.append("    conversionRate: ").append(toIndentedString(conversionRate)).append("\n");
+        sb.append("    conversionRateEn: ").append(toIndentedString(conversionRateEn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

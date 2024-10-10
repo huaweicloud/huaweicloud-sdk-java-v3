@@ -285,6 +285,87 @@ public class TriggerProcess {
 
     private String robotId;
 
+    /**
+     * 回复播放类型。 - APPEND：追加，放置在场景播放队列尾部 - INSERT： 插入，在两个音频文件，或者文本句末添加。 - PLAY_NOW : 立即插入，收到指令后，立即播放，无需等待句末。
+     */
+    public static final class PlayTypeEnum {
+
+        /**
+         * Enum APPEND for value: "APPEND"
+         */
+        public static final PlayTypeEnum APPEND = new PlayTypeEnum("APPEND");
+
+        /**
+         * Enum INSERT for value: "INSERT"
+         */
+        public static final PlayTypeEnum INSERT = new PlayTypeEnum("INSERT");
+
+        /**
+         * Enum PLAY_NOW for value: "PLAY_NOW"
+         */
+        public static final PlayTypeEnum PLAY_NOW = new PlayTypeEnum("PLAY_NOW");
+
+        private static final Map<String, PlayTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PlayTypeEnum> createStaticFields() {
+            Map<String, PlayTypeEnum> map = new HashMap<>();
+            map.put("APPEND", APPEND);
+            map.put("INSERT", INSERT);
+            map.put("PLAY_NOW", PLAY_NOW);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PlayTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PlayTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PlayTypeEnum(value));
+        }
+
+        public static PlayTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PlayTypeEnum) {
+                return this.value.equals(((PlayTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "play_type")
+
+    private PlayTypeEnum playType;
+
     public TriggerProcess withTimeWindow(Integer timeWindow) {
         this.timeWindow = timeWindow;
         return this;
@@ -490,6 +571,23 @@ public class TriggerProcess {
         this.robotId = robotId;
     }
 
+    public TriggerProcess withPlayType(PlayTypeEnum playType) {
+        this.playType = playType;
+        return this;
+    }
+
+    /**
+     * 回复播放类型。 - APPEND：追加，放置在场景播放队列尾部 - INSERT： 插入，在两个音频文件，或者文本句末添加。 - PLAY_NOW : 立即插入，收到指令后，立即播放，无需等待句末。
+     * @return playType
+     */
+    public PlayTypeEnum getPlayType() {
+        return playType;
+    }
+
+    public void setPlayType(PlayTypeEnum playType) {
+        this.playType = playType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -504,7 +602,7 @@ public class TriggerProcess {
             && Objects.equals(this.extraLayerConfig, that.extraLayerConfig)
             && Objects.equals(this.replyTexts, that.replyTexts) && Objects.equals(this.replyAudios, that.replyAudios)
             && Objects.equals(this.replyOrder, that.replyOrder) && Objects.equals(this.replyRole, that.replyRole)
-            && Objects.equals(this.robotId, that.robotId);
+            && Objects.equals(this.robotId, that.robotId) && Objects.equals(this.playType, that.playType);
     }
 
     @Override
@@ -517,7 +615,8 @@ public class TriggerProcess {
             replyAudios,
             replyOrder,
             replyRole,
-            robotId);
+            robotId,
+            playType);
     }
 
     @Override
@@ -533,6 +632,7 @@ public class TriggerProcess {
         sb.append("    replyOrder: ").append(toIndentedString(replyOrder)).append("\n");
         sb.append("    replyRole: ").append(toIndentedString(replyRole)).append("\n");
         sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
+        sb.append("    playType: ").append(toIndentedString(playType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建云服务器组请求返回对象
+ * 创建后端服务器组请求返回对象
  */
 public class MasterSlavePool {
 
@@ -114,7 +114,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 后端云服务器组的描述信息。
+     * 后端服务器组的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -131,7 +131,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 后端云服务器组的ID。
+     * 后端服务器组的ID。
      * @return id
      */
     public String getId() {
@@ -148,7 +148,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。  [不支持QUIC_CID。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
+     * 后端服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。  使用说明： - 当该字段的取值为SOURCE_IP或QUIC_CID时，后端服务器组绑定的后端服务器的weight字段无效。 - 只有pool的protocol为QUIC时，才支持QUIC_CID算法。  [不支持QUIC_CID。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
      * @return lbAlgorithm
      */
     public String getLbAlgorithm() {
@@ -181,7 +181,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 后端云服务器组关联的监听器ID列表。
+     * 后端服务器组关联的监听器ID列表。
      * @return listeners
      */
     public List<ListenerRef> getListeners() {
@@ -214,7 +214,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 后端云服务器组关联的负载均衡器ID列表。
+     * 后端服务器组关联的负载均衡器ID列表。
      * @return loadbalancers
      */
     public List<LoadBalancerRef> getLoadbalancers() {
@@ -247,7 +247,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 后端云服务器组中的后端云服务器列表。
+     * 后端服务器组中的后端服务器列表。
      * @return members
      */
     public List<MasterSlaveMember> getMembers() {
@@ -264,7 +264,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 后端云服务器组的名称。
+     * 后端服务器组的名称。
      * @return name
      */
     public String getName() {
@@ -281,7 +281,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 后端云服务器组所在的项目ID。
+     * 后端服务器组所在的项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -298,7 +298,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 后端云服务器组的后端协议。  取值：TCP、UDP、QUIC、TLS。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC。 - listener的protocol为TCP时，pool的protocol必须为TCP。 - listener的protocol为TLS时，pool的protocol必须为TLS或TCP。 - 其他协议监听器不支持主备后端服务器组。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
+     * 后端服务器组的后端协议。  取值：TCP、UDP、QUIC、TLS。  使用说明： - listener的protocol为UDP时，pool的protocol必须为UDP或QUIC。 - listener的protocol为TCP时，pool的protocol必须为TCP。 - listener的protocol为TLS时，pool的protocol必须为TLS或TCP。 - 其他协议监听器不支持主备后端服务器组。  [不支持QUIC。](tag:tm,hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
      * @return protocol
      */
     public String getProtocol() {
@@ -341,7 +341,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 后端云服务器组支持的IP版本。  [取值： - 共享型：固定为v4； -  独享型：取值dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。  当协议为HTTP时，ip_version为v4。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs)  [取值：dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。 当协议为HTTP时，ip_version为v4。](tag:hcso_dt)  [不支持IPv6，只会返回v4。](tag:dt,dt_test)
+     * 后端服务器组支持的IP版本。  [取值： - 共享型：固定为v4； -  独享型：取值dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。  当协议为HTTP时，ip_version为v4。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs)  [取值：dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。 当协议为HTTP时，ip_version为v4。](tag:hcso_dt)  [不支持IPv6，只会返回v4。](tag:dt,dt_test)
      * @return ipVersion
      */
     public String getIpVersion() {
@@ -392,7 +392,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 后端云服务器组关联的虚拟私有云的ID。
+     * 后端服务器组关联的虚拟私有云的ID。
      * @return vpcId
      */
     public String getVpcId() {

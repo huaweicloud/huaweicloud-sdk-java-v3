@@ -195,11 +195,6 @@ public class VolumeDetail {
 
     private Throughput throughput;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "snapshot_policy_id")
-
-    private String snapshotPolicyId;
-
     public VolumeDetail withId(String id) {
         this.id = id;
         return this;
@@ -910,23 +905,6 @@ public class VolumeDetail {
         this.throughput = throughput;
     }
 
-    public VolumeDetail withSnapshotPolicyId(String snapshotPolicyId) {
-        this.snapshotPolicyId = snapshotPolicyId;
-        return this;
-    }
-
-    /**
-     * 云硬盘关联的自动快照策略ID
-     * @return snapshotPolicyId
-     */
-    public String getSnapshotPolicyId() {
-        return snapshotPolicyId;
-    }
-
-    public void setSnapshotPolicyId(String snapshotPolicyId) {
-        this.snapshotPolicyId = snapshotPolicyId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -960,8 +938,7 @@ public class VolumeDetail {
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.wwn, that.wwn)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.serialNumber, that.serialNumber) && Objects.equals(this.iops, that.iops)
-            && Objects.equals(this.throughput, that.throughput)
-            && Objects.equals(this.snapshotPolicyId, that.snapshotPolicyId);
+            && Objects.equals(this.throughput, that.throughput);
     }
 
     @Override
@@ -1001,8 +978,7 @@ public class VolumeDetail {
             enterpriseProjectId,
             serialNumber,
             iops,
-            throughput,
-            snapshotPolicyId);
+            throughput);
     }
 
     @Override
@@ -1047,7 +1023,6 @@ public class VolumeDetail {
         sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
         sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
         sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
-        sb.append("    snapshotPolicyId: ").append(toIndentedString(snapshotPolicyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

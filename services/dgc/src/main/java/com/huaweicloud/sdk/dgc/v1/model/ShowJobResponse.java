@@ -44,6 +44,11 @@ public class ShowJobResponse extends SdkResponse {
 
     private String directory;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "downstreamJobs")
+
+    private List<JobInformation> downstreamJobs = null;
+
     /**
      * 作业类型，REAL_TIME： 实时处理，BATCH：批处理
      */
@@ -447,6 +452,39 @@ public class ShowJobResponse extends SdkResponse {
         this.directory = directory;
     }
 
+    public ShowJobResponse withDownstreamJobs(List<JobInformation> downstreamJobs) {
+        this.downstreamJobs = downstreamJobs;
+        return this;
+    }
+
+    public ShowJobResponse addDownstreamJobsItem(JobInformation downstreamJobsItem) {
+        if (this.downstreamJobs == null) {
+            this.downstreamJobs = new ArrayList<>();
+        }
+        this.downstreamJobs.add(downstreamJobsItem);
+        return this;
+    }
+
+    public ShowJobResponse withDownstreamJobs(Consumer<List<JobInformation>> downstreamJobsSetter) {
+        if (this.downstreamJobs == null) {
+            this.downstreamJobs = new ArrayList<>();
+        }
+        downstreamJobsSetter.accept(this.downstreamJobs);
+        return this;
+    }
+
+    /**
+     * 下游作业信息
+     * @return downstreamJobs
+     */
+    public List<JobInformation> getDownstreamJobs() {
+        return downstreamJobs;
+    }
+
+    public void setDownstreamJobs(List<JobInformation> downstreamJobs) {
+        this.downstreamJobs = downstreamJobs;
+    }
+
     public ShowJobResponse withProcessType(ProcessTypeEnum processType) {
         this.processType = processType;
         return this;
@@ -688,8 +726,10 @@ public class ShowJobResponse extends SdkResponse {
         ShowJobResponse that = (ShowJobResponse) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.nodes, that.nodes)
             && Objects.equals(this.schedule, that.schedule) && Objects.equals(this.params, that.params)
-            && Objects.equals(this.directory, that.directory) && Objects.equals(this.processType, that.processType)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.directory, that.directory)
+            && Objects.equals(this.downstreamJobs, that.downstreamJobs)
+            && Objects.equals(this.processType, that.processType) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.singleNodeJobFlag, that.singleNodeJobFlag)
             && Objects.equals(this.singleNodeJobType, that.singleNodeJobType)
             && Objects.equals(this.lastUpdateUser, that.lastUpdateUser) && Objects.equals(this.logPath, that.logPath)
@@ -706,6 +746,7 @@ public class ShowJobResponse extends SdkResponse {
             schedule,
             params,
             directory,
+            downstreamJobs,
             processType,
             id,
             createTime,
@@ -730,6 +771,7 @@ public class ShowJobResponse extends SdkResponse {
         sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
         sb.append("    params: ").append(toIndentedString(params)).append("\n");
         sb.append("    directory: ").append(toIndentedString(directory)).append("\n");
+        sb.append("    downstreamJobs: ").append(toIndentedString(downstreamJobs)).append("\n");
         sb.append("    processType: ").append(toIndentedString(processType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");

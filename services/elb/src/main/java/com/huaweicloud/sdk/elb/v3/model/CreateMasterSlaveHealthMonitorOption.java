@@ -105,7 +105,7 @@ public class CreateMasterSlaveHealthMonitorOption {
     }
 
     /**
-     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。  默认值：200。  仅支持HTTP/HTTPS/gRPC设置该字段，其他协议设置不会生效。
+     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。  默认值：200。  仅支持HTTP/HTTPS/GRPC设置该字段，其他协议设置不会生效。
      * @return expectedCodes
      */
     public String getExpectedCodes() {
@@ -177,7 +177,7 @@ public class CreateMasterSlaveHealthMonitorOption {
     }
 
     /**
-     * 健康检查端口号。取值：1-65535，默认为空，表示使用后端云服务器端口号。
+     * 健康检查端口号。取值：1-65535，默认为空，表示使用后端服务器端口号。
      * minimum: 1
      * maximum: 65535
      * @return monitorPort

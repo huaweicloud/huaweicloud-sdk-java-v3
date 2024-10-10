@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 负载均衡器信息
+ * 参数解释：负载均衡器信息
  */
 public class LoadBalancerRef {
 

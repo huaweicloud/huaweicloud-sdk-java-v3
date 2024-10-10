@@ -65,6 +65,11 @@ public class ListMembersRequest {
 
     private Integer weight;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ListMembersRequest withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -253,6 +258,23 @@ public class ListMembersRequest {
         this.weight = weight;
     }
 
+    public ListMembersRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。 不传时查询default企业项目（即enterprise_project_id=0）下的资源，鉴权按照default企业项目鉴权。 如果传值enterprise_project_id=all_granted_eps，则表示查询所有有权限的企业项目下的资源。 其他情况则传已存在的企业项目ID。此时会校验ID，若不存在或格式错误则报错。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -267,13 +289,24 @@ public class ListMembersRequest {
             && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.address, that.address) && Objects.equals(this.protocolPort, that.protocolPort)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.adminStateUp, that.adminStateUp)
-            && Objects.equals(this.weight, that.weight);
+            && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(poolId, limit, marker, pageReverse, id, name, address, protocolPort, subnetId, adminStateUp, weight);
+        return Objects.hash(poolId,
+            limit,
+            marker,
+            pageReverse,
+            id,
+            name,
+            address,
+            protocolPort,
+            subnetId,
+            adminStateUp,
+            weight,
+            enterpriseProjectId);
     }
 
     @Override
@@ -291,6 +324,7 @@ public class ListMembersRequest {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

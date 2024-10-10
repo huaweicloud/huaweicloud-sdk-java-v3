@@ -4,6 +4,8 @@ import com.huaweicloud.sdk.aad.v1.model.AddBlackWhiteIpListRequest;
 import com.huaweicloud.sdk.aad.v1.model.AddBlackWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.AddPolicyBlackAndWhiteIpListRequest;
 import com.huaweicloud.sdk.aad.v1.model.AddPolicyBlackAndWhiteIpListResponse;
+import com.huaweicloud.sdk.aad.v1.model.AssociateIpToPolicyAndPackageRequest;
+import com.huaweicloud.sdk.aad.v1.model.AssociateIpToPolicyAndPackageResponse;
 import com.huaweicloud.sdk.aad.v1.model.AssociateIpToPolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.AssociateIpToPolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.BatchCreateInstanceIpRuleRequest;
@@ -22,6 +24,8 @@ import com.huaweicloud.sdk.aad.v1.model.DeletePolicyBlackAndWhiteIpListRequest;
 import com.huaweicloud.sdk.aad.v1.model.DeletePolicyBlackAndWhiteIpListResponse;
 import com.huaweicloud.sdk.aad.v1.model.DeletePolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.DeletePolicyResponse;
+import com.huaweicloud.sdk.aad.v1.model.DisassociateIpFromPolicyAndPackageRequest;
+import com.huaweicloud.sdk.aad.v1.model.DisassociateIpFromPolicyAndPackageResponse;
 import com.huaweicloud.sdk.aad.v1.model.DisassociateIpFromPolicyRequest;
 import com.huaweicloud.sdk.aad.v1.model.DisassociateIpFromPolicyResponse;
 import com.huaweicloud.sdk.aad.v1.model.ExecuteUnblockIpRequest;
@@ -330,6 +334,36 @@ public class AadAsyncClient {
     }
 
     /**
+     * 策略和防护包绑定防护对象
+     *
+     * 策略和防护包绑定防护对象
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateIpToPolicyAndPackageRequest 请求对象
+     * @return CompletableFuture<AssociateIpToPolicyAndPackageResponse>
+     */
+    public CompletableFuture<AssociateIpToPolicyAndPackageResponse> associateIpToPolicyAndPackageAsync(
+        AssociateIpToPolicyAndPackageRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.associateIpToPolicyAndPackage);
+    }
+
+    /**
+     * 策略和防护包绑定防护对象
+     *
+     * 策略和防护包绑定防护对象
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateIpToPolicyAndPackageRequest 请求对象
+     * @return AsyncInvoker<AssociateIpToPolicyAndPackageRequest, AssociateIpToPolicyAndPackageResponse>
+     */
+    public AsyncInvoker<AssociateIpToPolicyAndPackageRequest, AssociateIpToPolicyAndPackageResponse> associateIpToPolicyAndPackageAsyncInvoker(
+        AssociateIpToPolicyAndPackageRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.associateIpToPolicyAndPackage, hcClient);
+    }
+
+    /**
      * 批量创建高防实例IP的转发规则
      *
      * 批量创建高防实例IP的转发规则
@@ -593,6 +627,36 @@ public class AadAsyncClient {
     public AsyncInvoker<DisassociateIpFromPolicyRequest, DisassociateIpFromPolicyResponse> disassociateIpFromPolicyAsyncInvoker(
         DisassociateIpFromPolicyRequest request) {
         return new AsyncInvoker<>(request, AadMeta.disassociateIpFromPolicy, hcClient);
+    }
+
+    /**
+     * 策略和防护包解绑防护对象
+     *
+     * 策略和防护包解绑防护对象
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisassociateIpFromPolicyAndPackageRequest 请求对象
+     * @return CompletableFuture<DisassociateIpFromPolicyAndPackageResponse>
+     */
+    public CompletableFuture<DisassociateIpFromPolicyAndPackageResponse> disassociateIpFromPolicyAndPackageAsync(
+        DisassociateIpFromPolicyAndPackageRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.disassociateIpFromPolicyAndPackage);
+    }
+
+    /**
+     * 策略和防护包解绑防护对象
+     *
+     * 策略和防护包解绑防护对象
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisassociateIpFromPolicyAndPackageRequest 请求对象
+     * @return AsyncInvoker<DisassociateIpFromPolicyAndPackageRequest, DisassociateIpFromPolicyAndPackageResponse>
+     */
+    public AsyncInvoker<DisassociateIpFromPolicyAndPackageRequest, DisassociateIpFromPolicyAndPackageResponse> disassociateIpFromPolicyAndPackageAsyncInvoker(
+        DisassociateIpFromPolicyAndPackageRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.disassociateIpFromPolicyAndPackage, hcClient);
     }
 
     /**

@@ -185,7 +185,7 @@ public class ListMembersRequest {
     }
 
     /**
-     * 后端云服务器名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
+     * 后端服务器名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
      * @return name
      */
     public List<String> getName() {
@@ -218,7 +218,7 @@ public class ListMembersRequest {
     }
 
     /**
-     * 后端云服务器的权重，请求将根据pool配置的负载均衡算法和后端云服务器的权重进行负载分发。 权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。  取值：0-100。  支持多值查询，查询条件格式：*weight=xxx&weight=xxx*。
+     * 后端服务器的权重，请求将根据pool配置的负载均衡算法和后端服务器的权重进行负载分发。 权重值越大，分发的请求越多。权重为0的后端不再接受新的请求。  取值：0-100。  支持多值查询，查询条件格式：*weight=xxx&weight=xxx*。
      * @return weight
      */
     public List<Integer> getWeight() {
@@ -235,7 +235,7 @@ public class ListMembersRequest {
     }
 
     /**
-     * 后端云服务器的管理状态。  取值：true、false。  虽然创建、更新请求支持该字段，但实际取值决定于后端云服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
+     * 后端服务器的管理状态。  取值：true、false。  虽然创建、更新请求支持该字段，但实际取值决定于后端服务器对应的弹性云服务器是否存在。若存在，该值为true，否则，该值为false。
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -268,7 +268,7 @@ public class ListMembersRequest {
     }
 
     /**
-     * 后端云服务器所在子网的IPv4子网ID或IPv6子网ID。  支持多值查询，查询条件格式：***subnet_cidr_id=xxx&subnet_cidr_id=xxx*。  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt,dt_test)
+     * 后端服务器所在子网的IPv4子网ID或IPv6子网ID。  支持多值查询，查询条件格式：***subnet_cidr_id=xxx&subnet_cidr_id=xxx*。  [不支持IPv6，请勿设置为IPv6子网ID。](tag:dt,dt_test)
      * @return subnetCidrId
      */
     public List<String> getSubnetCidrId() {
@@ -367,7 +367,7 @@ public class ListMembersRequest {
     }
 
     /**
-     * 后端云服务器ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
+     * 后端服务器ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
      * @return id
      */
     public List<String> getId() {
@@ -400,7 +400,7 @@ public class ListMembersRequest {
     }
 
     /**
-     * 后端云服务器的健康状态。  取值： - ONLINE：后端云服务器正常。 - NO_MONITOR：后端云服务器所在的服务器组没有健康检查器。 - OFFLINE：后端云服务器关联的ECS服务器不存在或已关机。  支持多值查询，查询条件格式：*operating_status=xxx&operating_status=xxx*。
+     * 后端服务器的健康状态。  取值： - ONLINE：后端服务器正常。 - NO_MONITOR：后端服务器所在的服务器组没有健康检查器。 - OFFLINE：后端服务器关联的ECS服务器不存在或已关机。  支持多值查询，查询条件格式：*operating_status=xxx&operating_status=xxx*。
      * @return operatingStatus
      */
     public List<String> getOperatingStatus() {
@@ -499,7 +499,7 @@ public class ListMembersRequest {
     }
 
     /**
-     * 后端云服务器的类型。  取值： - ip：跨VPC的member。 - instance：关联到ECS的member。  支持多值查询，查询条件格式：*member_type=xxx&member_type=xxx*。
+     * 后端服务器的类型。  取值： - ip：跨VPC的member。 - instance：关联到ECS的member。  支持多值查询，查询条件格式：*member_type=xxx&member_type=xxx*。
      * @return memberType
      */
     public List<String> getMemberType() {

@@ -1418,6 +1418,12 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMembersRequest::getWeight, ListMembersRequest::setWeight));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMembersRequest::getEnterpriseProjectId,
+                ListMembersRequest::setEnterpriseProjectId));
 
         // response
 

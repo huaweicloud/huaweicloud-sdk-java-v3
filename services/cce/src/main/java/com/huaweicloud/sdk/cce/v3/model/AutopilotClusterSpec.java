@@ -325,6 +325,11 @@ public class AutopilotClusterSpec {
 
     private List<AutopilotPackageConfiguration> configurationsOverride = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deletionProtection")
+
+    private Boolean deletionProtection;
+
     public AutopilotClusterSpec withCategory(CategoryEnum category) {
         this.category = category;
         return this;
@@ -820,6 +825,23 @@ public class AutopilotClusterSpec {
         this.configurationsOverride = configurationsOverride;
     }
 
+    public AutopilotClusterSpec withDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+        return this;
+    }
+
+    /**
+     * 集群删除保护，开启后禁止用户通过API或console调用删除集群，true表示开启，默认值false关闭。
+     * @return deletionProtection
+     */
+    public Boolean getDeletionProtection() {
+        return deletionProtection;
+    }
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -846,7 +868,8 @@ public class AutopilotClusterSpec {
             && Objects.equals(this.clusterTags, that.clusterTags)
             && Objects.equals(this.kubeProxyMode, that.kubeProxyMode) && Objects.equals(this.az, that.az)
             && Objects.equals(this.extendParam, that.extendParam)
-            && Objects.equals(this.configurationsOverride, that.configurationsOverride);
+            && Objects.equals(this.configurationsOverride, that.configurationsOverride)
+            && Objects.equals(this.deletionProtection, that.deletionProtection);
     }
 
     @Override
@@ -873,7 +896,8 @@ public class AutopilotClusterSpec {
             kubeProxyMode,
             az,
             extendParam,
-            configurationsOverride);
+            configurationsOverride,
+            deletionProtection);
     }
 
     @Override
@@ -903,6 +927,7 @@ public class AutopilotClusterSpec {
         sb.append("    az: ").append(toIndentedString(az)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("    configurationsOverride: ").append(toIndentedString(configurationsOverride)).append("\n");
+        sb.append("    deletionProtection: ").append(toIndentedString(deletionProtection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

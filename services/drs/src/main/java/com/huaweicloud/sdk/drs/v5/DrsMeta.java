@@ -27,9 +27,13 @@ import com.huaweicloud.sdk.drs.v5.model.BatchStopJobsActionRequest;
 import com.huaweicloud.sdk.drs.v5.model.BatchStopJobsActionResponse;
 import com.huaweicloud.sdk.drs.v5.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.drs.v5.model.BatchTagActionResponse;
+import com.huaweicloud.sdk.drs.v5.model.ChangeToPeriodRequest;
+import com.huaweicloud.sdk.drs.v5.model.ChangeToPeriodResponse;
 import com.huaweicloud.sdk.drs.v5.model.CheckDataFilterRequest;
 import com.huaweicloud.sdk.drs.v5.model.CheckDataFilterResponse;
 import com.huaweicloud.sdk.drs.v5.model.CheckJobNameReq;
+import com.huaweicloud.sdk.drs.v5.model.CleanAlarmsRequest;
+import com.huaweicloud.sdk.drs.v5.model.CleanAlarmsResponse;
 import com.huaweicloud.sdk.drs.v5.model.CloneJobReq;
 import com.huaweicloud.sdk.drs.v5.model.CollectColumnsRequest;
 import com.huaweicloud.sdk.drs.v5.model.CollectColumnsResponse;
@@ -45,14 +49,24 @@ import com.huaweicloud.sdk.drs.v5.model.CopyJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CopyJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.CountInstanceByTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.CountInstanceByTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.CreateConnectionReq;
+import com.huaweicloud.sdk.drs.v5.model.CreateConnectionRequest;
+import com.huaweicloud.sdk.drs.v5.model.CreateConnectionResponse;
 import com.huaweicloud.sdk.drs.v5.model.CreateJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CreateJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.CreateOfflineTaskReq;
+import com.huaweicloud.sdk.drs.v5.model.CreateReplicationJobRequest;
+import com.huaweicloud.sdk.drs.v5.model.CreateReplicationJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.DataProcessReq;
+import com.huaweicloud.sdk.drs.v5.model.DeleteConnectionRequest;
+import com.huaweicloud.sdk.drs.v5.model.DeleteConnectionResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteDriverReq;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.DeleteReplicationJobRequest;
+import com.huaweicloud.sdk.drs.v5.model.DeleteReplicationJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteUserDriverReq;
 import com.huaweicloud.sdk.drs.v5.model.DeleteUserJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteUserJdbcDriverResponse;
@@ -72,6 +86,8 @@ import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobDetailRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobDetailResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListConnectionsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListConnectionsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListDbObjectsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListDbObjectsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListInstanceByTagsRequest;
@@ -80,6 +96,8 @@ import com.huaweicloud.sdk.drs.v5.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListJdbcDriversRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListJdbcDriversResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListJobDdlsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListJobDdlsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListJobHistoryParametersRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListJobHistoryParametersResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListJobParametersRequest;
@@ -90,6 +108,8 @@ import com.huaweicloud.sdk.drs.v5.model.ListLinksRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListLinksResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListReplicationJobsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListReplicationJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversRequest;
@@ -97,6 +117,9 @@ import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ModifyComparePolicyReq;
+import com.huaweicloud.sdk.drs.v5.model.ModifyConnectionRequest;
+import com.huaweicloud.sdk.drs.v5.model.ModifyConnectionResponse;
+import com.huaweicloud.sdk.drs.v5.model.ModifyOfflineTaskReq;
 import com.huaweicloud.sdk.drs.v5.model.ModifyParameterReq;
 import com.huaweicloud.sdk.drs.v5.model.ModifyStartPositionReq;
 import com.huaweicloud.sdk.drs.v5.model.QueryColumnReq;
@@ -152,6 +175,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplayResultsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplayResultsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowReplicationJobRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowReplicationJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowUpdateObjectSavingStatusRequest;
@@ -165,10 +190,12 @@ import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.SyncUserJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.SyncUserJdbcDriverResponse;
+import com.huaweicloud.sdk.drs.v5.model.ToPeriodReq;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateComparePolicyRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateComparePolicyResponse;
+import com.huaweicloud.sdk.drs.v5.model.UpdateConnectionReq;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDataProgressRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDataProgressResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateDriverReq;
@@ -176,6 +203,8 @@ import com.huaweicloud.sdk.drs.v5.model.UpdateJobConfigurationsRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobConfigurationsResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.UpdateReplicationJobRequest;
+import com.huaweicloud.sdk.drs.v5.model.UpdateReplicationJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateStartPositionRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateStartPositionResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateUserDriverReq;
@@ -424,6 +453,39 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ChangeToPeriodRequest, ChangeToPeriodResponse> changeToPeriod =
+        genForChangeToPeriod();
+
+    private static HttpRequestDef<ChangeToPeriodRequest, ChangeToPeriodResponse> genForChangeToPeriod() {
+        // basic
+        HttpRequestDef.Builder<ChangeToPeriodRequest, ChangeToPeriodResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeToPeriodRequest.class, ChangeToPeriodResponse.class)
+                .withName("ChangeToPeriod")
+                .withUri("/v5/{project_id}/job/{job_id}/change-to-period")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeToPeriodRequest::getJobId, ChangeToPeriodRequest::setJobId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeToPeriodRequest::getXLanguage, ChangeToPeriodRequest::setXLanguage));
+        builder.<ToPeriodReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ToPeriodReq.class),
+            f -> f.withMarshaller(ChangeToPeriodRequest::getBody, ChangeToPeriodRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CheckDataFilterRequest, CheckDataFilterResponse> checkDataFilter =
         genForCheckDataFilter();
 
@@ -451,6 +513,38 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DataProcessReq.class),
             f -> f.withMarshaller(CheckDataFilterRequest::getBody, CheckDataFilterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CleanAlarmsRequest, CleanAlarmsResponse> cleanAlarms = genForCleanAlarms();
+
+    private static HttpRequestDef<CleanAlarmsRequest, CleanAlarmsResponse> genForCleanAlarms() {
+        // basic
+        HttpRequestDef.Builder<CleanAlarmsRequest, CleanAlarmsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CleanAlarmsRequest.class, CleanAlarmsResponse.class)
+                .withName("CleanAlarms")
+                .withUri("/v5/{project_id}/jobs/{job_id}/alarms/{alarm_id}/clean")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CleanAlarmsRequest::getJobId, CleanAlarmsRequest::setJobId));
+        builder.<String>withRequestField("alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CleanAlarmsRequest::getAlarmId, CleanAlarmsRequest::setAlarmId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CleanAlarmsRequest::getXLanguage, CleanAlarmsRequest::setXLanguage));
 
         // response
 
@@ -702,6 +796,34 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> createConnection =
+        genForCreateConnection();
+
+    private static HttpRequestDef<CreateConnectionRequest, CreateConnectionResponse> genForCreateConnection() {
+        // basic
+        HttpRequestDef.Builder<CreateConnectionRequest, CreateConnectionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateConnectionRequest.class, CreateConnectionResponse.class)
+                .withName("CreateConnection")
+                .withUri("/v5/{project_id}/connections")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateConnectionRequest::getXLanguage, CreateConnectionRequest::setXLanguage));
+        builder.<CreateConnectionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateConnectionReq.class),
+            f -> f.withMarshaller(CreateConnectionRequest::getBody, CreateConnectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateJobRequest, CreateJobResponse> createJob = genForCreateJob();
 
     private static HttpRequestDef<CreateJobRequest, CreateJobResponse> genForCreateJob() {
@@ -723,6 +845,63 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SingleCreateJobReq.class),
             f -> f.withMarshaller(CreateJobRequest::getBody, CreateJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateReplicationJobRequest, CreateReplicationJobResponse> createReplicationJob =
+        genForCreateReplicationJob();
+
+    private static HttpRequestDef<CreateReplicationJobRequest, CreateReplicationJobResponse> genForCreateReplicationJob() {
+        // basic
+        HttpRequestDef.Builder<CreateReplicationJobRequest, CreateReplicationJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateReplicationJobRequest.class, CreateReplicationJobResponse.class)
+            .withName("CreateReplicationJob")
+            .withUri("/v5/{project_id}/backup-migration-jobs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateReplicationJobRequest::getXLanguage,
+                CreateReplicationJobRequest::setXLanguage));
+        builder.<CreateOfflineTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOfflineTaskReq.class),
+            f -> f.withMarshaller(CreateReplicationJobRequest::getBody, CreateReplicationJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteConnectionRequest, DeleteConnectionResponse> deleteConnection =
+        genForDeleteConnection();
+
+    private static HttpRequestDef<DeleteConnectionRequest, DeleteConnectionResponse> genForDeleteConnection() {
+        // basic
+        HttpRequestDef.Builder<DeleteConnectionRequest, DeleteConnectionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteConnectionRequest.class, DeleteConnectionResponse.class)
+                .withName("DeleteConnection")
+                .withUri("/v5/{project_id}/connections/{connection_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConnectionRequest::getConnectionId, DeleteConnectionRequest::setConnectionId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConnectionRequest::getXLanguage, DeleteConnectionRequest::setXLanguage));
 
         // response
 
@@ -778,6 +957,35 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteJobRequest.XLanguageEnum.class),
             f -> f.withMarshaller(DeleteJobRequest::getXLanguage, DeleteJobRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteReplicationJobRequest, DeleteReplicationJobResponse> deleteReplicationJob =
+        genForDeleteReplicationJob();
+
+    private static HttpRequestDef<DeleteReplicationJobRequest, DeleteReplicationJobResponse> genForDeleteReplicationJob() {
+        // basic
+        HttpRequestDef.Builder<DeleteReplicationJobRequest, DeleteReplicationJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteReplicationJobRequest.class, DeleteReplicationJobResponse.class)
+            .withName("DeleteReplicationJob")
+            .withUri("/v5/{project_id}/backup-migration-jobs/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReplicationJobRequest::getJobId, DeleteReplicationJobRequest::setJobId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteReplicationJobRequest::getXLanguage,
+                DeleteReplicationJobRequest::setXLanguage));
 
         // response
 
@@ -1073,6 +1281,95 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> listConnections =
+        genForListConnections();
+
+    private static HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> genForListConnections() {
+        // basic
+        HttpRequestDef.Builder<ListConnectionsRequest, ListConnectionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConnectionsRequest.class, ListConnectionsResponse.class)
+                .withName("ListConnections")
+                .withUri("/v5/{project_id}/connections")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getConnectionId, ListConnectionsRequest::setConnectionId));
+        builder.<ListConnectionsRequest.DbTypeEnum>withRequestField("db_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListConnectionsRequest.DbTypeEnum.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getDbType, ListConnectionsRequest::setDbType));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getName, ListConnectionsRequest::setName));
+        builder.<String>withRequestField("inst_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getInstId, ListConnectionsRequest::setInstId));
+        builder.<String>withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getIp, ListConnectionsRequest::setIp));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getDescription, ListConnectionsRequest::setDescription));
+        builder.<String>withRequestField("create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getCreateTime, ListConnectionsRequest::setCreateTime));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getEnterpriseProjectId,
+                ListConnectionsRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getOffset, ListConnectionsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getLimit, ListConnectionsRequest::setLimit));
+        builder.<Boolean>withRequestField("fetch_all",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getFetchAll, ListConnectionsRequest::setFetchAll));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getSortKey, ListConnectionsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getSortDir, ListConnectionsRequest::setSortDir));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getXLanguage, ListConnectionsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDbObjectsRequest, ListDbObjectsResponse> listDbObjects =
         genForListDbObjects();
 
@@ -1225,6 +1522,58 @@ public class DrsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListJdbcDriversRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListJdbcDriversRequest::getXLanguage, ListJdbcDriversRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListJobDdlsRequest, ListJobDdlsResponse> listJobDdls = genForListJobDdls();
+
+    private static HttpRequestDef<ListJobDdlsRequest, ListJobDdlsResponse> genForListJobDdls() {
+        // basic
+        HttpRequestDef.Builder<ListJobDdlsRequest, ListJobDdlsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobDdlsRequest.class, ListJobDdlsResponse.class)
+                .withName("ListJobDdls")
+                .withUri("/v5/{project_id}/jobs/{job_id}/ddl")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobDdlsRequest::getJobId, ListJobDdlsRequest::setJobId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobDdlsRequest::getOffset, ListJobDdlsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListJobDdlsRequest::getLimit, ListJobDdlsRequest::setLimit));
+        builder.<Long>withRequestField("start_seq_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListJobDdlsRequest::getStartSeqNo, ListJobDdlsRequest::setStartSeqNo));
+        builder.<Long>withRequestField("end_seq_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListJobDdlsRequest::getEndSeqNo, ListJobDdlsRequest::setEndSeqNo));
+        builder.<ListJobDdlsRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListJobDdlsRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListJobDdlsRequest::getStatus, ListJobDdlsRequest::setStatus));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobDdlsRequest::getXLanguage, ListJobDdlsRequest::setXLanguage));
 
         // response
 
@@ -1481,6 +1830,93 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListReplicationJobsRequest, ListReplicationJobsResponse> listReplicationJobs =
+        genForListReplicationJobs();
+
+    private static HttpRequestDef<ListReplicationJobsRequest, ListReplicationJobsResponse> genForListReplicationJobs() {
+        // basic
+        HttpRequestDef.Builder<ListReplicationJobsRequest, ListReplicationJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListReplicationJobsRequest.class, ListReplicationJobsResponse.class)
+                .withName("ListReplicationJobs")
+                .withUri("/v5/{project_id}/backup-migration-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getName, ListReplicationJobsRequest::setName));
+        builder.<ListReplicationJobsRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListReplicationJobsRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getStatus, ListReplicationJobsRequest::setStatus));
+        builder.<List<String>>withRequestField("dbs_instance_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getDbsInstanceIds,
+                ListReplicationJobsRequest::setDbsInstanceIds));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getDescription,
+                ListReplicationJobsRequest::setDescription));
+        builder.<String>withRequestField("create_at",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getCreateAt, ListReplicationJobsRequest::setCreateAt));
+        builder.<String>withRequestField("completed_at",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getCompletedAt,
+                ListReplicationJobsRequest::setCompletedAt));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getEnterpriseProjectId,
+                ListReplicationJobsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getTags, ListReplicationJobsRequest::setTags));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getLimit, ListReplicationJobsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getOffset, ListReplicationJobsRequest::setOffset));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getSortKey, ListReplicationJobsRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getSortDir, ListReplicationJobsRequest::setSortDir));
+        builder.<ListReplicationJobsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListReplicationJobsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListReplicationJobsRequest::getXLanguage, ListReplicationJobsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
 
     private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
@@ -1583,6 +2019,39 @@ public class DrsMeta {
             TypeCasts.uncheckedConversion(ListsAgencyPermissionsRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListsAgencyPermissionsRequest::getXLanguage,
                 ListsAgencyPermissionsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyConnectionRequest, ModifyConnectionResponse> modifyConnection =
+        genForModifyConnection();
+
+    private static HttpRequestDef<ModifyConnectionRequest, ModifyConnectionResponse> genForModifyConnection() {
+        // basic
+        HttpRequestDef.Builder<ModifyConnectionRequest, ModifyConnectionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyConnectionRequest.class, ModifyConnectionResponse.class)
+                .withName("ModifyConnection")
+                .withUri("/v5/{project_id}/connections/{connection_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyConnectionRequest::getConnectionId, ModifyConnectionRequest::setConnectionId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyConnectionRequest::getXLanguage, ModifyConnectionRequest::setXLanguage));
+        builder.<UpdateConnectionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateConnectionReq.class),
+            f -> f.withMarshaller(ModifyConnectionRequest::getBody, ModifyConnectionRequest::setBody));
 
         // response
 
@@ -2586,6 +3055,34 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowReplicationJobRequest, ShowReplicationJobResponse> showReplicationJob =
+        genForShowReplicationJob();
+
+    private static HttpRequestDef<ShowReplicationJobRequest, ShowReplicationJobResponse> genForShowReplicationJob() {
+        // basic
+        HttpRequestDef.Builder<ShowReplicationJobRequest, ShowReplicationJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowReplicationJobRequest.class, ShowReplicationJobResponse.class)
+                .withName("ShowReplicationJob")
+                .withUri("/v5/{project_id}/backup-migration-jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowReplicationJobRequest::getJobId, ShowReplicationJobRequest::setJobId));
+        builder.<ShowReplicationJobRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowReplicationJobRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowReplicationJobRequest::getXLanguage, ShowReplicationJobRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSupportObjectTypeRequest, ShowSupportObjectTypeResponse> showSupportObjectType =
         genForShowSupportObjectType();
 
@@ -2914,6 +3411,40 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyParameterReq.class),
             f -> f.withMarshaller(UpdateJobConfigurationsRequest::getBody, UpdateJobConfigurationsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateReplicationJobRequest, UpdateReplicationJobResponse> updateReplicationJob =
+        genForUpdateReplicationJob();
+
+    private static HttpRequestDef<UpdateReplicationJobRequest, UpdateReplicationJobResponse> genForUpdateReplicationJob() {
+        // basic
+        HttpRequestDef.Builder<UpdateReplicationJobRequest, UpdateReplicationJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateReplicationJobRequest.class, UpdateReplicationJobResponse.class)
+            .withName("UpdateReplicationJob")
+            .withUri("/v5/{project_id}/backup-migration-jobs/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateReplicationJobRequest::getJobId, UpdateReplicationJobRequest::setJobId));
+        builder.<UpdateReplicationJobRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateReplicationJobRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateReplicationJobRequest::getXLanguage,
+                UpdateReplicationJobRequest::setXLanguage));
+        builder.<ModifyOfflineTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyOfflineTaskReq.class),
+            f -> f.withMarshaller(UpdateReplicationJobRequest::getBody, UpdateReplicationJobRequest::setBody));
 
         // response
 

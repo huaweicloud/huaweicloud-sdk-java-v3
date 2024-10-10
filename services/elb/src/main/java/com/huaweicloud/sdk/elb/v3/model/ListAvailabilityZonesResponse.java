@@ -86,7 +86,7 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     }
 
     /**
-     * 可用区的产品编码，仅边缘场景有效。
+     * 参数解释：可用区的产品编码，仅边缘场景有效。
      * @return specCode
      */
     public String getSpecCode() {

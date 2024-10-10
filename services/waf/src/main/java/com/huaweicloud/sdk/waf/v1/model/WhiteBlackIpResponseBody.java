@@ -61,6 +61,16 @@ public class WhiteBlackIpResponseBody {
 
     private String timeMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start")
+
+    private Long start;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "terminal")
+
+    private Long terminal;
+
     public WhiteBlackIpResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -240,6 +250,40 @@ public class WhiteBlackIpResponseBody {
         this.timeMode = timeMode;
     }
 
+    public WhiteBlackIpResponseBody withStart(Long start) {
+        this.start = start;
+        return this;
+    }
+
+    /**
+     * 规则生效的开始时间，生效模式为自定义时，此字段才有效
+     * @return start
+     */
+    public Long getStart() {
+        return start;
+    }
+
+    public void setStart(Long start) {
+        this.start = start;
+    }
+
+    public WhiteBlackIpResponseBody withTerminal(Long terminal) {
+        this.terminal = terminal;
+        return this;
+    }
+
+    /**
+     * 规则生效的结束时间，生效模式为自定义时，此字段才有效
+     * @return terminal
+     */
+    public Long getTerminal() {
+        return terminal;
+    }
+
+    public void setTerminal(Long terminal) {
+        this.terminal = terminal;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -253,12 +297,14 @@ public class WhiteBlackIpResponseBody {
             && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.timestamp, that.timestamp)
             && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
             && Objects.equals(this.addr, that.addr) && Objects.equals(this.white, that.white)
-            && Objects.equals(this.ipGroup, that.ipGroup) && Objects.equals(this.timeMode, that.timeMode);
+            && Objects.equals(this.ipGroup, that.ipGroup) && Objects.equals(this.timeMode, that.timeMode)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.terminal, that.terminal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, policyid, timestamp, description, status, addr, white, ipGroup, timeMode);
+        return Objects
+            .hash(id, name, policyid, timestamp, description, status, addr, white, ipGroup, timeMode, start, terminal);
     }
 
     @Override
@@ -275,6 +321,8 @@ public class WhiteBlackIpResponseBody {
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
         sb.append("    ipGroup: ").append(toIndentedString(ipGroup)).append("\n");
         sb.append("    timeMode: ").append(toIndentedString(timeMode)).append("\n");
+        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
         sb.append("}");
         return sb.toString();
     }

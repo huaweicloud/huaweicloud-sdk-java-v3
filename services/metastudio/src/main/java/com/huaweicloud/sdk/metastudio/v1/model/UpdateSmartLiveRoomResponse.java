@@ -116,6 +116,11 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     private List<LiveVideoScriptInfo> sceneScripts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "interaction_config")
+
+    private LiveRoomInteractionConfig interactionConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interaction_rules")
 
     private List<LiveRoomInteractionRuleInfo> interactionRules = null;
@@ -448,6 +453,33 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
 
     public void setSceneScripts(List<LiveVideoScriptInfo> sceneScripts) {
         this.sceneScripts = sceneScripts;
+    }
+
+    public UpdateSmartLiveRoomResponse withInteractionConfig(LiveRoomInteractionConfig interactionConfig) {
+        this.interactionConfig = interactionConfig;
+        return this;
+    }
+
+    public UpdateSmartLiveRoomResponse withInteractionConfig(
+        Consumer<LiveRoomInteractionConfig> interactionConfigSetter) {
+        if (this.interactionConfig == null) {
+            this.interactionConfig = new LiveRoomInteractionConfig();
+            interactionConfigSetter.accept(this.interactionConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get interactionConfig
+     * @return interactionConfig
+     */
+    public LiveRoomInteractionConfig getInteractionConfig() {
+        return interactionConfig;
+    }
+
+    public void setInteractionConfig(LiveRoomInteractionConfig interactionConfig) {
+        this.interactionConfig = interactionConfig;
     }
 
     public UpdateSmartLiveRoomResponse withInteractionRules(List<LiveRoomInteractionRuleInfo> interactionRules) {
@@ -960,6 +992,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
         return Objects.equals(this.roomName, that.roomName)
             && Objects.equals(this.roomDescription, that.roomDescription)
             && Objects.equals(this.roomType, that.roomType) && Objects.equals(this.sceneScripts, that.sceneScripts)
+            && Objects.equals(this.interactionConfig, that.interactionConfig)
             && Objects.equals(this.interactionRules, that.interactionRules)
             && Objects.equals(this.playPolicy, that.playPolicy) && Objects.equals(this.videoConfig, that.videoConfig)
             && Objects.equals(this.outputUrls, that.outputUrls) && Objects.equals(this.streamKeys, that.streamKeys)
@@ -982,6 +1015,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
             roomDescription,
             roomType,
             sceneScripts,
+            interactionConfig,
             interactionRules,
             playPolicy,
             videoConfig,
@@ -1013,6 +1047,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
         sb.append("    roomDescription: ").append(toIndentedString(roomDescription)).append("\n");
         sb.append("    roomType: ").append(toIndentedString(roomType)).append("\n");
         sb.append("    sceneScripts: ").append(toIndentedString(sceneScripts)).append("\n");
+        sb.append("    interactionConfig: ").append(toIndentedString(interactionConfig)).append("\n");
         sb.append("    interactionRules: ").append(toIndentedString(interactionRules)).append("\n");
         sb.append("    playPolicy: ").append(toIndentedString(playPolicy)).append("\n");
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");

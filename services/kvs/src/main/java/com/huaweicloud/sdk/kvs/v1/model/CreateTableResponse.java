@@ -27,6 +27,18 @@ public class CreateTableResponse extends SdkBsonDocResponse {
     private String tableName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bill_mode")
+    @BsonProperty(value = "bill_mode")
+
+    private String billMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "provisioned_throughput")
+    @BsonProperty(value = "provisioned_throughput")
+
+    private ProvisionedThroughput provisionedThroughput;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "primary_key_schema")
     @BsonProperty(value = "primary_key_schema")
 
@@ -67,6 +79,49 @@ public class CreateTableResponse extends SdkBsonDocResponse {
 
     public void setTableName(String tableName) {
         this.tableName = tableName;
+    }
+
+    public CreateTableResponse withBillMode(String billMode) {
+        this.billMode = billMode;
+        return this;
+    }
+
+    /**
+     * 计费模式，可为\"provisioned\"或\"on_demand\"
+     * @return billMode
+     */
+    public String getBillMode() {
+        return billMode;
+    }
+
+    public void setBillMode(String billMode) {
+        this.billMode = billMode;
+    }
+
+    public CreateTableResponse withProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
+        this.provisionedThroughput = provisionedThroughput;
+        return this;
+    }
+
+    public CreateTableResponse withProvisionedThroughput(Consumer<ProvisionedThroughput> provisionedThroughputSetter) {
+        if (this.provisionedThroughput == null) {
+            this.provisionedThroughput = new ProvisionedThroughput();
+            provisionedThroughputSetter.accept(this.provisionedThroughput);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get provisionedThroughput
+     * @return provisionedThroughput
+     */
+    public ProvisionedThroughput getProvisionedThroughput() {
+        return provisionedThroughput;
+    }
+
+    public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
+        this.provisionedThroughput = provisionedThroughput;
     }
 
     public CreateTableResponse withPrimaryKeySchema(PrimaryKeySchema primaryKeySchema) {
@@ -198,7 +253,8 @@ public class CreateTableResponse extends SdkBsonDocResponse {
             return false;
         }
         CreateTableResponse that = (CreateTableResponse) obj;
-        return Objects.equals(this.tableName, that.tableName)
+        return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.billMode, that.billMode)
+            && Objects.equals(this.provisionedThroughput, that.provisionedThroughput)
             && Objects.equals(this.primaryKeySchema, that.primaryKeySchema)
             && Objects.equals(this.localSecondaryIndexSchema, that.localSecondaryIndexSchema)
             && Objects.equals(this.globalSecondaryIndexSchema, that.globalSecondaryIndexSchema)
@@ -208,6 +264,8 @@ public class CreateTableResponse extends SdkBsonDocResponse {
     @Override
     public int hashCode() {
         return Objects.hash(tableName,
+            billMode,
+            provisionedThroughput,
             primaryKeySchema,
             localSecondaryIndexSchema,
             globalSecondaryIndexSchema,
@@ -219,6 +277,8 @@ public class CreateTableResponse extends SdkBsonDocResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateTableResponse {\n");
         sb.append("    tableName: ").append(toIndentedString(tableName)).append("\n");
+        sb.append("    billMode: ").append(toIndentedString(billMode)).append("\n");
+        sb.append("    provisionedThroughput: ").append(toIndentedString(provisionedThroughput)).append("\n");
         sb.append("    primaryKeySchema: ").append(toIndentedString(primaryKeySchema)).append("\n");
         sb.append("    localSecondaryIndexSchema: ").append(toIndentedString(localSecondaryIndexSchema)).append("\n");
         sb.append("    globalSecondaryIndexSchema: ").append(toIndentedString(globalSecondaryIndexSchema)).append("\n");

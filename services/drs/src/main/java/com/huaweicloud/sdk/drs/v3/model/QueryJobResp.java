@@ -836,7 +836,7 @@ public class QueryJobResp {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_num")
 
-    private String nodeNum;
+    private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "object_switch")
@@ -1582,20 +1582,22 @@ public class QueryJobResp {
         this.schemaType = schemaType;
     }
 
-    public QueryJobResp withNodeNum(String nodeNum) {
+    public QueryJobResp withNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
         return this;
     }
 
     /**
-     * 节点个数。
+     * 节点个数。MongoDB数据库时对应源端分片个数，源库为集群时必填，[1-32]，MySQL双主灾备时会默认设置为2。
+     * minimum: 1
+     * maximum: 32
      * @return nodeNum
      */
-    public String getNodeNum() {
+    public Integer getNodeNum() {
         return nodeNum;
     }
 
-    public void setNodeNum(String nodeNum) {
+    public void setNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
     }
 

@@ -22,7 +22,7 @@ public class ExecuteSmartLiveCommandResponse extends SdkResponse {
     private String commandId;
 
     /**
-     * 命令名称。 - INSERT_PLAY_SCRIPT：插入表演脚本。用于互动回复。数字人不变，背景不变。params结构定义：ShootScript。 - REWRITE_PLAY_SCRIPT：动态编辑未播放剧本。params结构定义：scene_scripts。 - INSERT_PLAY_AUDIO：插入驱动音频。用于音频直接驱动。数字人不变，背景不变。params结构定义：PlayAudioInfo。 - GET_CURRENT_PLAYING_SCRIPTS：查询本轮剧本列表。响应为LivePlayingScriptList结构。 - REFRESH_OUTPUT_URL：更新当前任务的rtmp推流信息。params结构定义： RefreshOutputUrlConfig。 - REWRITE_INTERACTION_RULES：动态修改互动规则。params结构定义：interaction_rules。 - GET_LIVE_JOB_CONFIG_INFO：获取任务中的房间信息。params结构定义：SmartLiveRoomInfo。
+     * 命令名称。 - INSERT_PLAY_SCRIPT：插入表演脚本。用于互动回复。数字人不变，背景不变。params结构定义：ShootScript。 - REWRITE_PLAY_SCRIPT：动态编辑未播放剧本。params结构定义：scene_scripts。 - INSERT_PLAY_AUDIO：插入驱动音频。用于音频直接驱动。数字人不变，背景不变。params结构定义：PlayAudioInfo。 - GET_CURRENT_PLAYING_SCRIPTS：查询本轮剧本列表。响应为LivePlayingScriptList结构。 - REFRESH_OUTPUT_URL：更新当前任务的rtmp推流信息。params结构定义： RefreshOutputUrlConfig。 - REWRITE_INTERACTION_RULES：动态修改互动规则。params结构定义：interaction_rules。 - GET_LIVE_JOB_CONFIG_INFO：获取任务中的房间信息。params结构定义：SmartLiveRoomInfo。 - CLEAN_UP_INSERT_COMMAND：清理未播放的插入命令。params结构定义：[CleanUpInsertCommand](metastudio_02_0014.html#section3)
      */
     public static final class CommandEnum {
 
@@ -61,6 +61,11 @@ public class ExecuteSmartLiveCommandResponse extends SdkResponse {
          */
         public static final CommandEnum GET_LIVE_JOB_CONFIG_INFO = new CommandEnum("GET_LIVE_JOB_CONFIG_INFO");
 
+        /**
+         * Enum CLEAN_UP_INSERT_COMMAND for value: "CLEAN_UP_INSERT_COMMAND"
+         */
+        public static final CommandEnum CLEAN_UP_INSERT_COMMAND = new CommandEnum("CLEAN_UP_INSERT_COMMAND");
+
         private static final Map<String, CommandEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CommandEnum> createStaticFields() {
@@ -72,6 +77,7 @@ public class ExecuteSmartLiveCommandResponse extends SdkResponse {
             map.put("REFRESH_OUTPUT_URL", REFRESH_OUTPUT_URL);
             map.put("REWRITE_INTERACTION_RULES", REWRITE_INTERACTION_RULES);
             map.put("GET_LIVE_JOB_CONFIG_INFO", GET_LIVE_JOB_CONFIG_INFO);
+            map.put("CLEAN_UP_INSERT_COMMAND", CLEAN_UP_INSERT_COMMAND);
             return Collections.unmodifiableMap(map);
         }
 
@@ -159,7 +165,7 @@ public class ExecuteSmartLiveCommandResponse extends SdkResponse {
     }
 
     /**
-     * 命令名称。 - INSERT_PLAY_SCRIPT：插入表演脚本。用于互动回复。数字人不变，背景不变。params结构定义：ShootScript。 - REWRITE_PLAY_SCRIPT：动态编辑未播放剧本。params结构定义：scene_scripts。 - INSERT_PLAY_AUDIO：插入驱动音频。用于音频直接驱动。数字人不变，背景不变。params结构定义：PlayAudioInfo。 - GET_CURRENT_PLAYING_SCRIPTS：查询本轮剧本列表。响应为LivePlayingScriptList结构。 - REFRESH_OUTPUT_URL：更新当前任务的rtmp推流信息。params结构定义： RefreshOutputUrlConfig。 - REWRITE_INTERACTION_RULES：动态修改互动规则。params结构定义：interaction_rules。 - GET_LIVE_JOB_CONFIG_INFO：获取任务中的房间信息。params结构定义：SmartLiveRoomInfo。
+     * 命令名称。 - INSERT_PLAY_SCRIPT：插入表演脚本。用于互动回复。数字人不变，背景不变。params结构定义：ShootScript。 - REWRITE_PLAY_SCRIPT：动态编辑未播放剧本。params结构定义：scene_scripts。 - INSERT_PLAY_AUDIO：插入驱动音频。用于音频直接驱动。数字人不变，背景不变。params结构定义：PlayAudioInfo。 - GET_CURRENT_PLAYING_SCRIPTS：查询本轮剧本列表。响应为LivePlayingScriptList结构。 - REFRESH_OUTPUT_URL：更新当前任务的rtmp推流信息。params结构定义： RefreshOutputUrlConfig。 - REWRITE_INTERACTION_RULES：动态修改互动规则。params结构定义：interaction_rules。 - GET_LIVE_JOB_CONFIG_INFO：获取任务中的房间信息。params结构定义：SmartLiveRoomInfo。 - CLEAN_UP_INSERT_COMMAND：清理未播放的插入命令。params结构定义：[CleanUpInsertCommand](metastudio_02_0014.html#section3)
      * @return command
      */
     public CommandEnum getCommand() {

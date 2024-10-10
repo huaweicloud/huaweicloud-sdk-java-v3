@@ -532,7 +532,7 @@ public class CreateLoadBalancerOption {
     }
 
     /**
-     * 参数解释：是否为独享型负载均衡器实例。  约束限制：当前只支持设置为true，设置为false会返回400 Bad Request。  取值范围：布尔类型。 - true：独享型。 - false：共享型。  默认取值：true。
+     * 参数解释：是否为独享型负载均衡器实例。  约束限制：当前只支持设置为true，设置为false会返回400 Bad Request。  取值范围： - true：独享型。 - false：共享型。  默认取值：true。
      * @return guaranteed
      */
     public Boolean getGuaranteed() {

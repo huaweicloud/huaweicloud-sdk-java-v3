@@ -213,7 +213,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的描述信息。  支持多值查询，查询条件格式：*description=xxx&description=xxx*。
+     * 后端服务器组的描述信息。  支持多值查询，查询条件格式：*description=xxx&description=xxx*。
      * @return description
      */
     public List<String> getDescription() {
@@ -230,7 +230,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的管理状态。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 后端服务器组的管理状态。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return adminStateUp
      */
     public Boolean getAdminStateUp() {
@@ -263,7 +263,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组关联的健康检查的ID。  支持多值查询，查询条件格式：*healthmonitor_id=xxx&healthmonitor_id=xxx*。
+     * 后端服务器组关联的健康检查的ID。  支持多值查询，查询条件格式：*healthmonitor_id=xxx&healthmonitor_id=xxx*。
      * @return healthmonitorId
      */
     public List<String> getHealthmonitorId() {
@@ -296,7 +296,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
+     * 后端服务器组的ID。  支持多值查询，查询条件格式：*id=xxx&id=xxx*。
      * @return id
      */
     public List<String> getId() {
@@ -329,7 +329,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
+     * 后端服务器组的名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
      * @return name
      */
     public List<String> getName() {
@@ -362,7 +362,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组绑定的负载均衡器ID。  支持多值查询，查询条件格式：*loadbalancer_id=xxx&loadbalancer_id=xxx*。
+     * 后端服务器组绑定的负载均衡器ID。  支持多值查询，查询条件格式：*loadbalancer_id=xxx&loadbalancer_id=xxx*。
      * @return loadbalancerId
      */
     public List<String> getLoadbalancerId() {
@@ -395,7 +395,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的后端协议。  取值：TCP、UDP、[IP、](tag:hws_eu)TLS、HTTP、HTTPS、QUIC和gRPC。  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
+     * 后端服务器组的后端协议。  取值：TCP、UDP、[IP、](tag:hws_eu)TLS、HTTP、HTTPS、QUIC和GRPC。  支持多值查询，查询条件格式：*protocol=xxx&protocol=xxx*。  [不支持QUIC协议。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC。](tag:dt,dt_test)
      * @return protocol
      */
     public List<String> getProtocol() {
@@ -428,7 +428,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。 [- 2_TUPLE_HASH：二元组hash算法，仅IP类型的pool支持。 - 3_TUPLE_HASH：三元组hash算法，仅IP类型的pool支持。 - 4_TUPLE_HASH：五元组hash算法，仅IP类型的pool支持。](tag:hws_eu)  支持多值查询，查询条件格式：*lb_algorithm=xxx&lb_algorithm=xxx*。  [不支持QUIC_CID。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
+     * 后端服务器组的负载均衡算法。  取值： - ROUND_ROBIN：加权轮询算法。 - LEAST_CONNECTIONS：加权最少连接算法。 - SOURCE_IP：源IP算法。 - QUIC_CID：连接ID算法。 [- 2_TUPLE_HASH：二元组hash算法，仅IP类型的pool支持。 - 3_TUPLE_HASH：三元组hash算法，仅IP类型的pool支持。 - 5_TUPLE_HASH：五元组hash算法，仅IP类型的pool支持。 - IP型pool不指定该字段时，默认设置为5_TUPLE_HASH。](tag:hws_eu)  支持多值查询，查询条件格式：*lb_algorithm=xxx&lb_algorithm=xxx*。  [不支持QUIC_CID。](tag:hws_eu,g42,hk_g42,hcso_dt)  [荷兰region不支持QUIC_CID。](tag:dt,dt_test)
      * @return lbAlgorithm
      */
     public List<String> getLbAlgorithm() {
@@ -494,7 +494,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组支持的IP版本。  支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。
+     * 后端服务器组支持的IP版本。  支持多值查询，查询条件格式：*ip_version=xxx&ip_version=xxx*。
      * @return ipVersion
      */
     public List<String> getIpVersion() {
@@ -527,7 +527,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。
+     * 后端服务器的IP地址。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_address=xxx&member_address=xxx*。
      * @return memberAddress
      */
     public List<String> getMemberAddress() {
@@ -560,7 +560,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。
+     * 后端服务器对应的弹性云服务器的ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_device_id=xxx&member_device_id=xxx*。
      * @return memberDeviceId
      */
     public List<String> getMemberDeviceId() {
@@ -643,7 +643,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_instance_id=xxx&member_instance_id=xxx*。
+     * 后端服务器ID。仅用于查询条件，不作为响应参数字段。  支持多值查询，查询条件格式：*member_instance_id=xxx&member_instance_id=xxx*。
      * @return memberInstanceId
      */
     public List<String> getMemberInstanceId() {
@@ -676,7 +676,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 后端云服务器组关联的虚拟私有云的ID。
+     * 后端服务器组关联的虚拟私有云的ID。
      * @return vpcId
      */
     public List<String> getVpcId() {

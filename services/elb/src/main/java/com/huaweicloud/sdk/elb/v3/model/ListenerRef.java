@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 监听器
+ * 参数解释：监听器
  */
 public class ListenerRef {
 

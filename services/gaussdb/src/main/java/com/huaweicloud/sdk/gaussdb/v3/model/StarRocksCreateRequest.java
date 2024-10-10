@@ -150,6 +150,11 @@ public class StarRocksCreateRequest {
 
     private StarRocksCreateRequestTagsInfo tagsInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "security_group_id")
+
+    private String securityGroupId;
+
     public StarRocksCreateRequest withName(String name) {
         this.name = name;
         return this;
@@ -433,6 +438,23 @@ public class StarRocksCreateRequest {
         this.tagsInfo = tagsInfo;
     }
 
+    public StarRocksCreateRequest withSecurityGroupId(String securityGroupId) {
+        this.securityGroupId = securityGroupId;
+        return this;
+    }
+
+    /**
+     * 实例安全组ID。默认与Taurus安全组ID一致。
+     * @return securityGroupId
+     */
+    public String getSecurityGroupId() {
+        return securityGroupId;
+    }
+
+    public void setSecurityGroupId(String securityGroupId) {
+        this.securityGroupId = securityGroupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -448,7 +470,8 @@ public class StarRocksCreateRequest {
             && Objects.equals(this.feCount, that.feCount) && Objects.equals(this.beCount, that.beCount)
             && Objects.equals(this.azMode, that.azMode) && Objects.equals(this.feVolume, that.feVolume)
             && Objects.equals(this.beVolume, that.beVolume) && Objects.equals(this.azCode, that.azCode)
-            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.tagsInfo, that.tagsInfo);
+            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.tagsInfo, that.tagsInfo)
+            && Objects.equals(this.securityGroupId, that.securityGroupId);
     }
 
     @Override
@@ -466,7 +489,8 @@ public class StarRocksCreateRequest {
             beVolume,
             azCode,
             timeZone,
-            tagsInfo);
+            tagsInfo,
+            securityGroupId);
     }
 
     @Override
@@ -487,6 +511,7 @@ public class StarRocksCreateRequest {
         sb.append("    azCode: ").append(toIndentedString(azCode)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    tagsInfo: ").append(toIndentedString(tagsInfo)).append("\n");
+        sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -17,8 +17,12 @@ import com.huaweicloud.sdk.drs.v5.model.BatchStopJobsActionRequest;
 import com.huaweicloud.sdk.drs.v5.model.BatchStopJobsActionResponse;
 import com.huaweicloud.sdk.drs.v5.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.drs.v5.model.BatchTagActionResponse;
+import com.huaweicloud.sdk.drs.v5.model.ChangeToPeriodRequest;
+import com.huaweicloud.sdk.drs.v5.model.ChangeToPeriodResponse;
 import com.huaweicloud.sdk.drs.v5.model.CheckDataFilterRequest;
 import com.huaweicloud.sdk.drs.v5.model.CheckDataFilterResponse;
+import com.huaweicloud.sdk.drs.v5.model.CleanAlarmsRequest;
+import com.huaweicloud.sdk.drs.v5.model.CleanAlarmsResponse;
 import com.huaweicloud.sdk.drs.v5.model.CollectColumnsRequest;
 import com.huaweicloud.sdk.drs.v5.model.CollectColumnsResponse;
 import com.huaweicloud.sdk.drs.v5.model.CollectDbObjectsAsyncRequest;
@@ -33,12 +37,20 @@ import com.huaweicloud.sdk.drs.v5.model.CopyJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CopyJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.CountInstanceByTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.CountInstanceByTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.CreateConnectionRequest;
+import com.huaweicloud.sdk.drs.v5.model.CreateConnectionResponse;
 import com.huaweicloud.sdk.drs.v5.model.CreateJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.CreateJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.CreateReplicationJobRequest;
+import com.huaweicloud.sdk.drs.v5.model.CreateReplicationJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.DeleteConnectionRequest;
+import com.huaweicloud.sdk.drs.v5.model.DeleteConnectionResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.DeleteReplicationJobRequest;
+import com.huaweicloud.sdk.drs.v5.model.DeleteReplicationJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.DeleteUserJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.DeleteUserJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.DownloadBatchCreateTemplateRequest;
@@ -55,6 +67,8 @@ import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobDetailRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobDetailResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListAsyncJobsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListConnectionsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListConnectionsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListDbObjectsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListDbObjectsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListInstanceByTagsRequest;
@@ -63,6 +77,8 @@ import com.huaweicloud.sdk.drs.v5.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListJdbcDriversRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListJdbcDriversResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListJobDdlsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListJobDdlsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListJobHistoryParametersRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListJobHistoryParametersResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListJobParametersRequest;
@@ -73,12 +89,16 @@ import com.huaweicloud.sdk.drs.v5.model.ListLinksRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListLinksResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ListReplicationJobsRequest;
+import com.huaweicloud.sdk.drs.v5.model.ListReplicationJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListTagsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListUserJdbcDriversResponse;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ListsAgencyPermissionsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ModifyConnectionRequest;
+import com.huaweicloud.sdk.drs.v5.model.ModifyConnectionResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultRequest;
@@ -127,6 +147,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowProgressDataResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplayResultsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplayResultsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowReplicationJobRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowReplicationJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowUpdateObjectSavingStatusRequest;
@@ -147,6 +169,8 @@ import com.huaweicloud.sdk.drs.v5.model.UpdateJobConfigurationsRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobConfigurationsResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateJobResponse;
+import com.huaweicloud.sdk.drs.v5.model.UpdateReplicationJobRequest;
+import com.huaweicloud.sdk.drs.v5.model.UpdateReplicationJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateStartPositionRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateStartPositionResponse;
 import com.huaweicloud.sdk.drs.v5.model.UploadDbObjectTemplateRequest;
@@ -375,6 +399,35 @@ public class DrsClient {
     }
 
     /**
+     * 按需转包周期
+     *
+     * DRS同步和灾备任务按需计费转包周期计费。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeToPeriodRequest 请求对象
+     * @return ChangeToPeriodResponse
+     */
+    public ChangeToPeriodResponse changeToPeriod(ChangeToPeriodRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.changeToPeriod);
+    }
+
+    /**
+     * 按需转包周期
+     *
+     * DRS同步和灾备任务按需计费转包周期计费。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeToPeriodRequest 请求对象
+     * @return SyncInvoker<ChangeToPeriodRequest, ChangeToPeriodResponse>
+     */
+    public SyncInvoker<ChangeToPeriodRequest, ChangeToPeriodResponse> changeToPeriodInvoker(
+        ChangeToPeriodRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.changeToPeriod, hcClient);
+    }
+
+    /**
      * 数据过滤规则校验
      *
      * 数据过滤规则校验
@@ -401,6 +454,34 @@ public class DrsClient {
     public SyncInvoker<CheckDataFilterRequest, CheckDataFilterResponse> checkDataFilterInvoker(
         CheckDataFilterRequest request) {
         return new SyncInvoker<>(request, DrsMeta.checkDataFilter, hcClient);
+    }
+
+    /**
+     * 清除DDL告警
+     *
+     * 清除DDL告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CleanAlarmsRequest 请求对象
+     * @return CleanAlarmsResponse
+     */
+    public CleanAlarmsResponse cleanAlarms(CleanAlarmsRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.cleanAlarms);
+    }
+
+    /**
+     * 清除DDL告警
+     *
+     * 清除DDL告警
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CleanAlarmsRequest 请求对象
+     * @return SyncInvoker<CleanAlarmsRequest, CleanAlarmsResponse>
+     */
+    public SyncInvoker<CleanAlarmsRequest, CleanAlarmsResponse> cleanAlarmsInvoker(CleanAlarmsRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.cleanAlarms, hcClient);
     }
 
     /**
@@ -618,6 +699,35 @@ public class DrsClient {
     }
 
     /**
+     * 创建连接
+     *
+     * 创建单个连接，该连接可以为线下自建库或云上RDS等，目前支持的数据库引擎包括MySQL、PostgreSQL、Oracle和MongoDB。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateConnectionRequest 请求对象
+     * @return CreateConnectionResponse
+     */
+    public CreateConnectionResponse createConnection(CreateConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.createConnection);
+    }
+
+    /**
+     * 创建连接
+     *
+     * 创建单个连接，该连接可以为线下自建库或云上RDS等，目前支持的数据库引擎包括MySQL、PostgreSQL、Oracle和MongoDB。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateConnectionRequest 请求对象
+     * @return SyncInvoker<CreateConnectionRequest, CreateConnectionResponse>
+     */
+    public SyncInvoker<CreateConnectionRequest, CreateConnectionResponse> createConnectionInvoker(
+        CreateConnectionRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.createConnection, hcClient);
+    }
+
+    /**
      * 创建任务
      *
      * 创建单个任务，根据请求参数不同，可以创建单个实时迁移、实时同步、实时灾备等任务。
@@ -646,7 +756,73 @@ public class DrsClient {
     }
 
     /**
-     * 删除驱动文件
+     * 创建备份迁移任务
+     *
+     * 该接口主要用于三种常见场景下备份迁移任务的配置。
+     * 备份迁移支持如下的常见场景：
+     * - 通过OBS桶备份文件进行全量数据迁移。
+     * - 通过OBS桶备份文件进行全量+增量数据迁移。
+     * - 通过RDS全量备份进行全量数据迁移。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateReplicationJobRequest 请求对象
+     * @return CreateReplicationJobResponse
+     */
+    public CreateReplicationJobResponse createReplicationJob(CreateReplicationJobRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.createReplicationJob);
+    }
+
+    /**
+     * 创建备份迁移任务
+     *
+     * 该接口主要用于三种常见场景下备份迁移任务的配置。
+     * 备份迁移支持如下的常见场景：
+     * - 通过OBS桶备份文件进行全量数据迁移。
+     * - 通过OBS桶备份文件进行全量+增量数据迁移。
+     * - 通过RDS全量备份进行全量数据迁移。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateReplicationJobRequest 请求对象
+     * @return SyncInvoker<CreateReplicationJobRequest, CreateReplicationJobResponse>
+     */
+    public SyncInvoker<CreateReplicationJobRequest, CreateReplicationJobResponse> createReplicationJobInvoker(
+        CreateReplicationJobRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.createReplicationJob, hcClient);
+    }
+
+    /**
+     * 删除连接
+     *
+     * 删除租户指定的连接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConnectionRequest 请求对象
+     * @return DeleteConnectionResponse
+     */
+    public DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.deleteConnection);
+    }
+
+    /**
+     * 删除连接
+     *
+     * 删除租户指定的连接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConnectionRequest 请求对象
+     * @return SyncInvoker<DeleteConnectionRequest, DeleteConnectionResponse>
+     */
+    public SyncInvoker<DeleteConnectionRequest, DeleteConnectionResponse> deleteConnectionInvoker(
+        DeleteConnectionRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.deleteConnection, hcClient);
+    }
+
+    /**
+     * 删除驱动文件（不再推广）
      *
      * 删除驱动文件。
      * 
@@ -660,7 +836,7 @@ public class DrsClient {
     }
 
     /**
-     * 删除驱动文件
+     * 删除驱动文件（不再推广）
      *
      * 删除驱动文件。
      * 
@@ -700,6 +876,35 @@ public class DrsClient {
      */
     public SyncInvoker<DeleteJobRequest, DeleteJobResponse> deleteJobInvoker(DeleteJobRequest request) {
         return new SyncInvoker<>(request, DrsMeta.deleteJob, hcClient);
+    }
+
+    /**
+     * 删除备份迁移任务
+     *
+     * 对于已经完成的备份迁移任务，可以选择删除迁移任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteReplicationJobRequest 请求对象
+     * @return DeleteReplicationJobResponse
+     */
+    public DeleteReplicationJobResponse deleteReplicationJob(DeleteReplicationJobRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.deleteReplicationJob);
+    }
+
+    /**
+     * 删除备份迁移任务
+     *
+     * 对于已经完成的备份迁移任务，可以选择删除迁移任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteReplicationJobRequest 请求对象
+     * @return SyncInvoker<DeleteReplicationJobRequest, DeleteReplicationJobResponse>
+     */
+    public SyncInvoker<DeleteReplicationJobRequest, DeleteReplicationJobResponse> deleteReplicationJobInvoker(
+        DeleteReplicationJobRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.deleteReplicationJob, hcClient);
     }
 
     /**
@@ -934,6 +1139,35 @@ public class DrsClient {
     }
 
     /**
+     * 查询连接列表
+     *
+     * 查询连接列表，可根据连接类型进行查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConnectionsRequest 请求对象
+     * @return ListConnectionsResponse
+     */
+    public ListConnectionsResponse listConnections(ListConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.listConnections);
+    }
+
+    /**
+     * 查询连接列表
+     *
+     * 查询连接列表，可根据连接类型进行查询。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConnectionsRequest 请求对象
+     * @return SyncInvoker<ListConnectionsRequest, ListConnectionsResponse>
+     */
+    public SyncInvoker<ListConnectionsRequest, ListConnectionsResponse> listConnectionsInvoker(
+        ListConnectionsRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.listConnections, hcClient);
+    }
+
+    /**
      * 查询数据库对象信息
      *
      * 查询数据库对象信息。
@@ -1020,7 +1254,7 @@ public class DrsClient {
     }
 
     /**
-     * 查询驱动文件列表
+     * 查询驱动文件列表（不再推广）
      *
      * 查询驱动文件列表。
      * 
@@ -1034,7 +1268,7 @@ public class DrsClient {
     }
 
     /**
-     * 查询驱动文件列表
+     * 查询驱动文件列表（不再推广）
      *
      * 查询驱动文件列表。
      * 
@@ -1046,6 +1280,34 @@ public class DrsClient {
     public SyncInvoker<ListJdbcDriversRequest, ListJdbcDriversResponse> listJdbcDriversInvoker(
         ListJdbcDriversRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listJdbcDrivers, hcClient);
+    }
+
+    /**
+     * 查询增量DDL列表
+     *
+     * 查询增量DDL列表，可根据status查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobDdlsRequest 请求对象
+     * @return ListJobDdlsResponse
+     */
+    public ListJobDdlsResponse listJobDdls(ListJobDdlsRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.listJobDdls);
+    }
+
+    /**
+     * 查询增量DDL列表
+     *
+     * 查询增量DDL列表，可根据status查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobDdlsRequest 请求对象
+     * @return SyncInvoker<ListJobDdlsRequest, ListJobDdlsResponse>
+     */
+    public SyncInvoker<ListJobDdlsRequest, ListJobDdlsResponse> listJobDdlsInvoker(ListJobDdlsRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.listJobDdls, hcClient);
     }
 
     /**
@@ -1196,6 +1458,35 @@ public class DrsClient {
     }
 
     /**
+     * 查询备份迁移任务列表
+     *
+     * 获取当前备份迁移任务列表，不包含已删除的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReplicationJobsRequest 请求对象
+     * @return ListReplicationJobsResponse
+     */
+    public ListReplicationJobsResponse listReplicationJobs(ListReplicationJobsRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.listReplicationJobs);
+    }
+
+    /**
+     * 查询备份迁移任务列表
+     *
+     * 获取当前备份迁移任务列表，不包含已删除的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReplicationJobsRequest 请求对象
+     * @return SyncInvoker<ListReplicationJobsRequest, ListReplicationJobsResponse>
+     */
+    public SyncInvoker<ListReplicationJobsRequest, ListReplicationJobsResponse> listReplicationJobsInvoker(
+        ListReplicationJobsRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.listReplicationJobs, hcClient);
+    }
+
+    /**
      * 查询项目标签
      *
      * 查询租户在指定Project中实例类型的所有资源标签集合。
@@ -1279,6 +1570,35 @@ public class DrsClient {
     public SyncInvoker<ListsAgencyPermissionsRequest, ListsAgencyPermissionsResponse> listsAgencyPermissionsInvoker(
         ListsAgencyPermissionsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listsAgencyPermissions, hcClient);
+    }
+
+    /**
+     * 修改连接
+     *
+     * 修改创建的连接信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyConnectionRequest 请求对象
+     * @return ModifyConnectionResponse
+     */
+    public ModifyConnectionResponse modifyConnection(ModifyConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.modifyConnection);
+    }
+
+    /**
+     * 修改连接
+     *
+     * 修改创建的连接信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyConnectionRequest 请求对象
+     * @return SyncInvoker<ModifyConnectionRequest, ModifyConnectionResponse>
+     */
+    public SyncInvoker<ModifyConnectionRequest, ModifyConnectionResponse> modifyConnectionInvoker(
+        ModifyConnectionRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.modifyConnection, hcClient);
     }
 
     /**
@@ -1991,6 +2311,35 @@ public class DrsClient {
     }
 
     /**
+     * 查询备份迁移任务详细信息
+     *
+     * 获取指定备份迁移任务详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReplicationJobRequest 请求对象
+     * @return ShowReplicationJobResponse
+     */
+    public ShowReplicationJobResponse showReplicationJob(ShowReplicationJobRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.showReplicationJob);
+    }
+
+    /**
+     * 查询备份迁移任务详细信息
+     *
+     * 获取指定备份迁移任务详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowReplicationJobRequest 请求对象
+     * @return SyncInvoker<ShowReplicationJobRequest, ShowReplicationJobResponse>
+     */
+    public SyncInvoker<ShowReplicationJobRequest, ShowReplicationJobResponse> showReplicationJobInvoker(
+        ShowReplicationJobRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.showReplicationJob, hcClient);
+    }
+
+    /**
      * 查询是否支持对象选择和列映射
      *
      * 查询任务支持的对象选择类型、列映射、支持搜索的对象类型等信息。
@@ -2078,7 +2427,7 @@ public class DrsClient {
     }
 
     /**
-     * 同步驱动文件
+     * 同步驱动文件（不再推广）
      *
      * 同步驱动文件。
      * 
@@ -2092,7 +2441,7 @@ public class DrsClient {
     }
 
     /**
-     * 同步驱动文件
+     * 同步驱动文件（不再推广）
      *
      * 同步驱动文件。
      * 
@@ -2284,6 +2633,35 @@ public class DrsClient {
     }
 
     /**
+     * 修改备份迁移任务信息
+     *
+     * 修改指定备份迁移任务信息，任务名与任务描述。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateReplicationJobRequest 请求对象
+     * @return UpdateReplicationJobResponse
+     */
+    public UpdateReplicationJobResponse updateReplicationJob(UpdateReplicationJobRequest request) {
+        return hcClient.syncInvokeHttp(request, DrsMeta.updateReplicationJob);
+    }
+
+    /**
+     * 修改备份迁移任务信息
+     *
+     * 修改指定备份迁移任务信息，任务名与任务描述。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateReplicationJobRequest 请求对象
+     * @return SyncInvoker<UpdateReplicationJobRequest, UpdateReplicationJobResponse>
+     */
+    public SyncInvoker<UpdateReplicationJobRequest, UpdateReplicationJobResponse> updateReplicationJobInvoker(
+        UpdateReplicationJobRequest request) {
+        return new SyncInvoker<>(request, DrsMeta.updateReplicationJob, hcClient);
+    }
+
+    /**
      * 更新增量任务启动位点
      *
      * 更新增量任务的启动位点。
@@ -2344,7 +2722,7 @@ public class DrsClient {
     }
 
     /**
-     * 上传驱动文件
+     * 上传驱动文件（不再推广）
      *
      * 上传驱动文件。
      * 
@@ -2358,7 +2736,7 @@ public class DrsClient {
     }
 
     /**
-     * 上传驱动文件
+     * 上传驱动文件（不再推广）
      *
      * 上传驱动文件。
      * 

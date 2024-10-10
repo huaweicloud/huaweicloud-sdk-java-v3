@@ -22,7 +22,7 @@ public class UpdateDataProgressResponse extends SdkResponse {
     private String id;
 
     /**
-     * 查询状态
+     * 查询状态 pending：处理中 failed：失败 success：成功
      */
     public static final class StatusEnum {
 
@@ -130,7 +130,7 @@ public class UpdateDataProgressResponse extends SdkResponse {
     }
 
     /**
-     * 查询状态
+     * 查询状态 pending：处理中 failed：失败 success：成功
      * @return status
      */
     public StatusEnum getStatus() {

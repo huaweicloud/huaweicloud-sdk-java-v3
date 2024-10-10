@@ -12,38 +12,15 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 在hash分区时，预分裂分区数量。
+ * 按照设定的键值前缀进行预分裂。
  */
 public class PreSplitKeyOptions {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "hash_count")
-    @BsonProperty(value = "hash_count")
-
-    private Integer hashCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "range_split_points")
     @BsonProperty(value = "range_split_points")
 
     private List<Document> rangeSplitPoints = null;
-
-    public PreSplitKeyOptions withHashCount(Integer hashCount) {
-        this.hashCount = hashCount;
-        return this;
-    }
-
-    /**
-     * 在hash分区时，预分裂分区数量。
-     * @return hashCount
-     */
-    public Integer getHashCount() {
-        return hashCount;
-    }
-
-    public void setHashCount(Integer hashCount) {
-        this.hashCount = hashCount;
-    }
 
     public PreSplitKeyOptions withRangeSplitPoints(List<Document> rangeSplitPoints) {
         this.rangeSplitPoints = rangeSplitPoints;
@@ -67,7 +44,7 @@ public class PreSplitKeyOptions {
     }
 
     /**
-     * 在range分区模式有效，最大1000个，与\"hash_count\"二选一。
+     * 在range分区模式有效，最大10个。
      * @return rangeSplitPoints
      */
     public List<Document> getRangeSplitPoints() {
@@ -87,20 +64,18 @@ public class PreSplitKeyOptions {
             return false;
         }
         PreSplitKeyOptions that = (PreSplitKeyOptions) obj;
-        return Objects.equals(this.hashCount, that.hashCount)
-            && Objects.equals(this.rangeSplitPoints, that.rangeSplitPoints);
+        return Objects.equals(this.rangeSplitPoints, that.rangeSplitPoints);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hashCount, rangeSplitPoints);
+        return Objects.hash(rangeSplitPoints);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PreSplitKeyOptions {\n");
-        sb.append("    hashCount: ").append(toIndentedString(hashCount)).append("\n");
         sb.append("    rangeSplitPoints: ").append(toIndentedString(rangeSplitPoints)).append("\n");
         sb.append("}");
         return sb.toString();

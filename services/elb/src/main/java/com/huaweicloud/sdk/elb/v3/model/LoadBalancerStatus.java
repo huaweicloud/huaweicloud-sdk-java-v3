@@ -132,7 +132,7 @@ public class LoadBalancerStatus {
     }
 
     /**
-     * 负载均衡器关联的后端云服务器组列表。
+     * 负载均衡器关联的后端服务器组列表。
      * @return pools
      */
     public List<LoadBalancerStatusPool> getPools() {

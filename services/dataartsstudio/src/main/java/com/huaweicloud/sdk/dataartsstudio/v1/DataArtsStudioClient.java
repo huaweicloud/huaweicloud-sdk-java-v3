@@ -93,6 +93,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateLineageInfoRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateLineageInfoResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateManagerWorkSpaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateAssetRequest;
@@ -1863,6 +1865,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<CreateFactorySupplementDataInstanceRequest, CreateFactorySupplementDataInstanceResponse> createFactorySupplementDataInstanceInvoker(
         CreateFactorySupplementDataInstanceRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.createFactorySupplementDataInstance, hcClient);
+    }
+
+    /**
+     * 创建血缘信息
+     *
+     * 创建血缘信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLineageInfoRequest 请求对象
+     * @return CreateLineageInfoResponse
+     */
+    public CreateLineageInfoResponse createLineageInfo(CreateLineageInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.createLineageInfo);
+    }
+
+    /**
+     * 创建血缘信息
+     *
+     * 创建血缘信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLineageInfoRequest 请求对象
+     * @return SyncInvoker<CreateLineageInfoRequest, CreateLineageInfoResponse>
+     */
+    public SyncInvoker<CreateLineageInfoRequest, CreateLineageInfoResponse> createLineageInfoInvoker(
+        CreateLineageInfoRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.createLineageInfo, hcClient);
     }
 
     /**

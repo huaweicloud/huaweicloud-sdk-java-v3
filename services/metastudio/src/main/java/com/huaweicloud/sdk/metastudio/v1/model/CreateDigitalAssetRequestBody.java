@@ -191,6 +191,11 @@ public class CreateDigitalAssetRequestBody {
     private AssetExtraMeta assetExtraMeta;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "system_properties")
+
+    private List<SystemProperty> systemProperties = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shared_config")
 
     private AssetSharedConfig sharedConfig;
@@ -346,6 +351,39 @@ public class CreateDigitalAssetRequestBody {
         this.assetExtraMeta = assetExtraMeta;
     }
 
+    public CreateDigitalAssetRequestBody withSystemProperties(List<SystemProperty> systemProperties) {
+        this.systemProperties = systemProperties;
+        return this;
+    }
+
+    public CreateDigitalAssetRequestBody addSystemPropertiesItem(SystemProperty systemPropertiesItem) {
+        if (this.systemProperties == null) {
+            this.systemProperties = new ArrayList<>();
+        }
+        this.systemProperties.add(systemPropertiesItem);
+        return this;
+    }
+
+    public CreateDigitalAssetRequestBody withSystemProperties(Consumer<List<SystemProperty>> systemPropertiesSetter) {
+        if (this.systemProperties == null) {
+            this.systemProperties = new ArrayList<>();
+        }
+        systemPropertiesSetter.accept(this.systemProperties);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 设置系统属性。内部参数，普通用户无需设置。 **约束限制**： 不涉及 **取值范围**： 个数最大为50个。 **默认取值**： 不涉及
+     * @return systemProperties
+     */
+    public List<SystemProperty> getSystemProperties() {
+        return systemProperties;
+    }
+
+    public void setSystemProperties(List<SystemProperty> systemProperties) {
+        this.systemProperties = systemProperties;
+    }
+
     public CreateDigitalAssetRequestBody withSharedConfig(AssetSharedConfig sharedConfig) {
         this.sharedConfig = sharedConfig;
         return this;
@@ -455,6 +493,7 @@ public class CreateDigitalAssetRequestBody {
             && Objects.equals(this.assetDescription, that.assetDescription)
             && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.reviewConfig, that.reviewConfig)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
+            && Objects.equals(this.systemProperties, that.systemProperties)
             && Objects.equals(this.sharedConfig, that.sharedConfig)
             && Objects.equals(this.isNeedGenerateCover, that.isNeedGenerateCover)
             && Objects.equals(this.assetOrder, that.assetOrder)
@@ -469,6 +508,7 @@ public class CreateDigitalAssetRequestBody {
             reviewConfig,
             tags,
             assetExtraMeta,
+            systemProperties,
             sharedConfig,
             isNeedGenerateCover,
             assetOrder,
@@ -485,6 +525,7 @@ public class CreateDigitalAssetRequestBody {
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    assetExtraMeta: ").append(toIndentedString(assetExtraMeta)).append("\n");
+        sb.append("    systemProperties: ").append(toIndentedString(systemProperties)).append("\n");
         sb.append("    sharedConfig: ").append(toIndentedString(sharedConfig)).append("\n");
         sb.append("    isNeedGenerateCover: ").append(toIndentedString(isNeedGenerateCover)).append("\n");
         sb.append("    assetOrder: ").append(toIndentedString(assetOrder)).append("\n");

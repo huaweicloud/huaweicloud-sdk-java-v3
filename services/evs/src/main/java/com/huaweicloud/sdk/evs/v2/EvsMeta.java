@@ -679,11 +679,6 @@ public class EvsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVolumesRequest::getServerId, ListVolumesRequest::setServerId));
-        builder.<String>withRequestField("snapshot_policy_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListVolumesRequest::getSnapshotPolicyId, ListVolumesRequest::setSnapshotPolicyId));
 
         // response
 

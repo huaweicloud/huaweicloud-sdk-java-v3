@@ -341,6 +341,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowPostgresqlParamValueResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowRecoveryTimeWindowRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowRecoveryTimeWindowResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowRecyclePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowReplayDelayStatusRequest;
@@ -429,6 +431,8 @@ import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateSqlLimitResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpdateTdeStatusResponse;
+import com.huaweicloud.sdk.rds.v3.model.UpdateToPeriodRequest;
+import com.huaweicloud.sdk.rds.v3.model.UpdateToPeriodResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckRequest;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionPreCheckResponse;
 import com.huaweicloud.sdk.rds.v3.model.UpgradeDbMajorVersionRequest;
@@ -4699,6 +4703,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * RDS实例按需转包周期
+     *
+     * RDS实例按需转包周期
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateToPeriodRequest 请求对象
+     * @return CompletableFuture<UpdateToPeriodResponse>
+     */
+    public CompletableFuture<UpdateToPeriodResponse> updateToPeriodAsync(UpdateToPeriodRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.updateToPeriod);
+    }
+
+    /**
+     * RDS实例按需转包周期
+     *
+     * RDS实例按需转包周期
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateToPeriodRequest 请求对象
+     * @return AsyncInvoker<UpdateToPeriodRequest, UpdateToPeriodResponse>
+     */
+    public AsyncInvoker<UpdateToPeriodRequest, UpdateToPeriodResponse> updateToPeriodAsyncInvoker(
+        UpdateToPeriodRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.updateToPeriod, hcClient);
+    }
+
+    /**
      * 
      *
      * PostgreSQL数据库升级大版本。
@@ -6095,6 +6128,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<ShowPostgresqlParamValueRequest, ShowPostgresqlParamValueResponse> showPostgresqlParamValueAsyncInvoker(
         ShowPostgresqlParamValueRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.showPostgresqlParamValue, hcClient);
+    }
+
+    /**
+     * 查询wal日志恢复时间窗
+     *
+     * 查询wal日志恢复时间窗
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecoveryTimeWindowRequest 请求对象
+     * @return CompletableFuture<ShowRecoveryTimeWindowResponse>
+     */
+    public CompletableFuture<ShowRecoveryTimeWindowResponse> showRecoveryTimeWindowAsync(
+        ShowRecoveryTimeWindowRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showRecoveryTimeWindow);
+    }
+
+    /**
+     * 查询wal日志恢复时间窗
+     *
+     * 查询wal日志恢复时间窗
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecoveryTimeWindowRequest 请求对象
+     * @return AsyncInvoker<ShowRecoveryTimeWindowRequest, ShowRecoveryTimeWindowResponse>
+     */
+    public AsyncInvoker<ShowRecoveryTimeWindowRequest, ShowRecoveryTimeWindowResponse> showRecoveryTimeWindowAsyncInvoker(
+        ShowRecoveryTimeWindowRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.showRecoveryTimeWindow, hcClient);
     }
 
     /**

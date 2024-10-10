@@ -35,6 +35,21 @@ public class CreateWhiteBlackIpRuleRequestBody {
 
     private String ipGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_mode")
+
+    private String timeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start")
+
+    private Integer start;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "terminal")
+
+    private Integer terminal;
+
     public CreateWhiteBlackIpRuleRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -120,6 +135,57 @@ public class CreateWhiteBlackIpRuleRequestBody {
         this.ipGroupId = ipGroupId;
     }
 
+    public CreateWhiteBlackIpRuleRequestBody withTimeMode(String timeMode) {
+        this.timeMode = timeMode;
+        return this;
+    }
+
+    /**
+     * 生效模式，默认为permanent（立即生效）,创建自定义生效规则时请输入：customize
+     * @return timeMode
+     */
+    public String getTimeMode() {
+        return timeMode;
+    }
+
+    public void setTimeMode(String timeMode) {
+        this.timeMode = timeMode;
+    }
+
+    public CreateWhiteBlackIpRuleRequestBody withStart(Integer start) {
+        this.start = start;
+        return this;
+    }
+
+    /**
+     * 规则生效开始时间，生效模式为自定义时，此字段才有效，请输入时间戳
+     * @return start
+     */
+    public Integer getStart() {
+        return start;
+    }
+
+    public void setStart(Integer start) {
+        this.start = start;
+    }
+
+    public CreateWhiteBlackIpRuleRequestBody withTerminal(Integer terminal) {
+        this.terminal = terminal;
+        return this;
+    }
+
+    /**
+     * 规则生效结束时间，生效模式为自定义时，此字段才有效，请输入时间戳
+     * @return terminal
+     */
+    public Integer getTerminal() {
+        return terminal;
+    }
+
+    public void setTerminal(Integer terminal) {
+        this.terminal = terminal;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +197,13 @@ public class CreateWhiteBlackIpRuleRequestBody {
         CreateWhiteBlackIpRuleRequestBody that = (CreateWhiteBlackIpRuleRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.addr, that.addr)
             && Objects.equals(this.description, that.description) && Objects.equals(this.white, that.white)
-            && Objects.equals(this.ipGroupId, that.ipGroupId);
+            && Objects.equals(this.ipGroupId, that.ipGroupId) && Objects.equals(this.timeMode, that.timeMode)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.terminal, that.terminal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, addr, description, white, ipGroupId);
+        return Objects.hash(name, addr, description, white, ipGroupId, timeMode, start, terminal);
     }
 
     @Override
@@ -148,6 +215,9 @@ public class CreateWhiteBlackIpRuleRequestBody {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    white: ").append(toIndentedString(white)).append("\n");
         sb.append("    ipGroupId: ").append(toIndentedString(ipGroupId)).append("\n");
+        sb.append("    timeMode: ").append(toIndentedString(timeMode)).append("\n");
+        sb.append("    start: ").append(toIndentedString(start)).append("\n");
+        sb.append("    terminal: ").append(toIndentedString(terminal)).append("\n");
         sb.append("}");
         return sb.toString();
     }
