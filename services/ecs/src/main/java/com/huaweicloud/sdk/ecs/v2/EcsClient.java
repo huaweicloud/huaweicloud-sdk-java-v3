@@ -105,6 +105,8 @@ import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowFlavorExtraSpecsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowFlavorExtraSpecsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceRequest;
@@ -1762,6 +1764,35 @@ public class EcsClient {
     public SyncInvoker<NovaListServersDetailsRequest, NovaListServersDetailsResponse> novaListServersDetailsInvoker(
         NovaListServersDetailsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaListServersDetails, hcClient);
+    }
+
+    /**
+     * 查询云服务器规格extra_specs的详情
+     *
+     * 查询指定的规格的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request NovaShowFlavorExtraSpecsRequest 请求对象
+     * @return NovaShowFlavorExtraSpecsResponse
+     */
+    public NovaShowFlavorExtraSpecsResponse novaShowFlavorExtraSpecs(NovaShowFlavorExtraSpecsRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.novaShowFlavorExtraSpecs);
+    }
+
+    /**
+     * 查询云服务器规格extra_specs的详情
+     *
+     * 查询指定的规格的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request NovaShowFlavorExtraSpecsRequest 请求对象
+     * @return SyncInvoker<NovaShowFlavorExtraSpecsRequest, NovaShowFlavorExtraSpecsResponse>
+     */
+    public SyncInvoker<NovaShowFlavorExtraSpecsRequest, NovaShowFlavorExtraSpecsResponse> novaShowFlavorExtraSpecsInvoker(
+        NovaShowFlavorExtraSpecsRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.novaShowFlavorExtraSpecs, hcClient);
     }
 
     /**

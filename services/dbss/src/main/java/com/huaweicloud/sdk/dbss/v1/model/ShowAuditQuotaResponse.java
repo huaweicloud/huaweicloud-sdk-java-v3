@@ -12,6 +12,11 @@ import java.util.Objects;
 public class ShowAuditQuotaResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audit_quota")
 
     private Long auditQuota;
@@ -22,19 +27,26 @@ public class ShowAuditQuotaResponse extends SdkResponse {
     private Long cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "project_id")
-
-    private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "quota")
-
-    private Long quota;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ram")
 
     private Long ram;
+
+    public ShowAuditQuotaResponse withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 项目ID。
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
 
     public ShowAuditQuotaResponse withAuditQuota(Long auditQuota) {
         this.auditQuota = auditQuota;
@@ -42,7 +54,7 @@ public class ShowAuditQuotaResponse extends SdkResponse {
     }
 
     /**
-     * 实例当前剩余配额。
+     * 审计实例剩余配额。
      * @return auditQuota
      */
     public Long getAuditQuota() {
@@ -59,7 +71,7 @@ public class ShowAuditQuotaResponse extends SdkResponse {
     }
 
     /**
-     * Cpu当前剩余配额。
+     * CPU剩余配额。
      * @return cpu
      */
     public Long getCpu() {
@@ -70,47 +82,13 @@ public class ShowAuditQuotaResponse extends SdkResponse {
         this.cpu = cpu;
     }
 
-    public ShowAuditQuotaResponse withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 项目Id。
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
-
-    public ShowAuditQuotaResponse withQuota(Long quota) {
-        this.quota = quota;
-        return this;
-    }
-
-    /**
-     * 配额。
-     * @return quota
-     */
-    public Long getQuota() {
-        return quota;
-    }
-
-    public void setQuota(Long quota) {
-        this.quota = quota;
-    }
-
     public ShowAuditQuotaResponse withRam(Long ram) {
         this.ram = ram;
         return this;
     }
 
     /**
-     * 内存当前剩余配额
+     * 内存剩余配额。
      * @return ram
      */
     public Long getRam() {
@@ -130,24 +108,22 @@ public class ShowAuditQuotaResponse extends SdkResponse {
             return false;
         }
         ShowAuditQuotaResponse that = (ShowAuditQuotaResponse) obj;
-        return Objects.equals(this.auditQuota, that.auditQuota) && Objects.equals(this.cpu, that.cpu)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.quota, that.quota)
-            && Objects.equals(this.ram, that.ram);
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.auditQuota, that.auditQuota)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.ram, that.ram);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(auditQuota, cpu, projectId, quota, ram);
+        return Objects.hash(projectId, auditQuota, cpu, ram);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowAuditQuotaResponse {\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    auditQuota: ").append(toIndentedString(auditQuota)).append("\n");
         sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    quota: ").append(toIndentedString(quota)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("}");
         return sb.toString();

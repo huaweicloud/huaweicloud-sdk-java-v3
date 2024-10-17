@@ -69,6 +69,8 @@ public class DbssRegion {
     public static final Region MY_KUALALUMPUR_1 =
         new Region("my-kualalumpur-1", "https://dbss.my-kualalumpur-1.myhuaweicloud.com");
 
+    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://dbss.ru-moscow-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DBSS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -99,6 +101,7 @@ public class DbssRegion {
         map.put("tr-west-1", TR_WEST_1);
         map.put("cn-east-5", CN_EAST_5);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }
 

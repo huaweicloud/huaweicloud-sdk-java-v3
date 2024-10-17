@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.gsl.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -34,6 +37,11 @@ public class ListSimPoolsRequest {
     @JsonProperty(value = "all_billing_cycle")
 
     private Boolean allBillingCycle;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private List<Integer> status = null;
 
     public ListSimPoolsRequest withPoolName(String poolName) {
         this.poolName = poolName;
@@ -124,6 +132,39 @@ public class ListSimPoolsRequest {
         this.allBillingCycle = allBillingCycle;
     }
 
+    public ListSimPoolsRequest withStatus(List<Integer> status) {
+        this.status = status;
+        return this;
+    }
+
+    public ListSimPoolsRequest addStatusItem(Integer statusItem) {
+        if (this.status == null) {
+            this.status = new ArrayList<>();
+        }
+        this.status.add(statusItem);
+        return this;
+    }
+
+    public ListSimPoolsRequest withStatus(Consumer<List<Integer>> statusSetter) {
+        if (this.status == null) {
+            this.status = new ArrayList<>();
+        }
+        statusSetter.accept(this.status);
+        return this;
+    }
+
+    /**
+     * 流量池状态
+     * @return status
+     */
+    public List<Integer> getStatus() {
+        return status;
+    }
+
+    public void setStatus(List<Integer> status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -135,12 +176,12 @@ public class ListSimPoolsRequest {
         ListSimPoolsRequest that = (ListSimPoolsRequest) obj;
         return Objects.equals(this.poolName, that.poolName) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.billingCycle, that.billingCycle)
-            && Objects.equals(this.allBillingCycle, that.allBillingCycle);
+            && Objects.equals(this.allBillingCycle, that.allBillingCycle) && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(poolName, limit, offset, billingCycle, allBillingCycle);
+        return Objects.hash(poolName, limit, offset, billingCycle, allBillingCycle, status);
     }
 
     @Override
@@ -152,6 +193,7 @@ public class ListSimPoolsRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    billingCycle: ").append(toIndentedString(billingCycle)).append("\n");
         sb.append("    allBillingCycle: ").append(toIndentedString(allBillingCycle)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

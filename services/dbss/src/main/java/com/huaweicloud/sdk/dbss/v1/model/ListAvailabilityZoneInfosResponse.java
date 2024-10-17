@@ -41,7 +41,7 @@ public class ListAvailabilityZoneInfosResponse extends SdkResponse {
     }
 
     /**
-     * az列表
+     * 可用区集合
      * @return azs
      */
     public List<AzInfo> getAzs() {

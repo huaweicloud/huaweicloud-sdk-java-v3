@@ -36,6 +36,11 @@ public class JobBean {
     private String serverName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
 
     private Long beginTime;
@@ -76,7 +81,7 @@ public class JobBean {
     }
 
     /**
-     * 任务ID,异步查询标识
+     * 任务ID。
      * @return jobId
      */
     public String getJobId() {
@@ -93,7 +98,7 @@ public class JobBean {
     }
 
     /**
-     * 状态
+     * 任务状态 - SUCCESS - RUNNING - FAIL - INIT - READY
      * @return status
      */
     public String getStatus() {
@@ -155,6 +160,23 @@ public class JobBean {
         this.serverName = serverName;
     }
 
+    public JobBean withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
+
+    /**
+     * 资源ID
+     * @return resourceId
+     */
+    public String getResourceId() {
+        return resourceId;
+    }
+
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
+    }
+
     public JobBean withBeginTime(Long beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -195,7 +217,7 @@ public class JobBean {
     }
 
     /**
-     * 计费模式
+     * 计费模式 - Period:包周期计费 - Demand:按需计费
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -246,7 +268,7 @@ public class JobBean {
     }
 
     /**
-     * 双机实例HA共用的id
+     * 防护实例ID,该字段已废弃
      * @return haId
      */
     public String getHaId() {
@@ -263,7 +285,7 @@ public class JobBean {
     }
 
     /**
-     * HA别名
+     * 防护实例名称，该字段已废弃
      * @return haName
      */
     public String getHaName() {
@@ -285,10 +307,11 @@ public class JobBean {
         JobBean that = (JobBean) obj;
         return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.status, that.status)
             && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.serverId, that.serverId)
-            && Objects.equals(this.serverName, that.serverName) && Objects.equals(this.beginTime, that.beginTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.chargeMode, that.chargeMode)
-            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.failReason, that.failReason)
-            && Objects.equals(this.haId, that.haId) && Objects.equals(this.haName, that.haName);
+            && Objects.equals(this.serverName, that.serverName) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.failReason, that.failReason) && Objects.equals(this.haId, that.haId)
+            && Objects.equals(this.haName, that.haName);
     }
 
     @Override
@@ -298,6 +321,7 @@ public class JobBean {
             jobType,
             serverId,
             serverName,
+            resourceId,
             beginTime,
             endTime,
             chargeMode,
@@ -316,6 +340,7 @@ public class JobBean {
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("    serverName: ").append(toIndentedString(serverName)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");

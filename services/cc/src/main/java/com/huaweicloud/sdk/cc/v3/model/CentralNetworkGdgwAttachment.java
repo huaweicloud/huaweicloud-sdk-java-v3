@@ -319,7 +319,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 带宽值定义，单位Mbps。
+     * 带宽值，单位Mbps。
      * minimum: 1
      * maximum: 999999
      * @return bandwidthSize

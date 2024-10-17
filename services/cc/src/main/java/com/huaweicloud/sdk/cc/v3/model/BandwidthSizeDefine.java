@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.cc.v3.model;
 import java.util.Objects;
 
 /**
- * 带宽值定义，单位Mbps。
+ * 带宽值，单位Mbps。
  */
 public class BandwidthSizeDefine {
 

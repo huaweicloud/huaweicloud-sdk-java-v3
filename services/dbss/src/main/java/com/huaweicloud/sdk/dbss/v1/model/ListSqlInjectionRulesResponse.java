@@ -63,7 +63,7 @@ public class ListSqlInjectionRulesResponse extends SdkResponse {
     }
 
     /**
-     * 当前范围总数
+     * 总数
      * @return total
      */
     public Integer getTotal() {

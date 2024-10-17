@@ -14,30 +14,30 @@ import java.util.function.Consumer;
 public class SecurityGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_id")
+    @JsonProperty(value = "instance_id")
 
-    private String resourceId;
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "securitygroup_ids")
 
     private List<String> securitygroupIds = null;
 
-    public SecurityGroupRequest withResourceId(String resourceId) {
-        this.resourceId = resourceId;
+    public SecurityGroupRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
         return this;
     }
 
     /**
-     * 资源ID
-     * @return resourceId
+     * 实例ID。可在查询实例列表接口的ID字段获取。
+     * @return instanceId
      */
-    public String getResourceId() {
-        return resourceId;
+    public String getInstanceId() {
+        return instanceId;
     }
 
-    public void setResourceId(String resourceId) {
-        this.resourceId = resourceId;
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
     public SecurityGroupRequest withSecuritygroupIds(List<String> securitygroupIds) {
@@ -82,20 +82,20 @@ public class SecurityGroupRequest {
             return false;
         }
         SecurityGroupRequest that = (SecurityGroupRequest) obj;
-        return Objects.equals(this.resourceId, that.resourceId)
+        return Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.securitygroupIds, that.securitygroupIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceId, securitygroupIds);
+        return Objects.hash(instanceId, securitygroupIds);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SecurityGroupRequest {\n");
-        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    securitygroupIds: ").append(toIndentedString(securitygroupIds)).append("\n");
         sb.append("}");
         return sb.toString();

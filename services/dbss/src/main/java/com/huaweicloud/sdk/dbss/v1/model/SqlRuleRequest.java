@@ -21,7 +21,7 @@ public class SqlRuleRequest {
     }
 
     /**
-     * 风险级别:(多项查询使用逗号分隔)  HIGH  MEDIUM  LOW  NO_RISK
+     * 风险级别 - HIGH - MEDIUM - LOW - NO_RISK
      * @return riskLevels
      */
     public String getRiskLevels() {

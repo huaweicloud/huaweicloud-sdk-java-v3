@@ -26,7 +26,7 @@ public class ShowAuditRuleRiskRequest {
     }
 
     /**
-     * 实例ID
+     * 实例ID。可在查询实例列表接口的ID字段获取。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -43,7 +43,7 @@ public class ShowAuditRuleRiskRequest {
     }
 
     /**
-     * 风险规则ID
+     * 风险规则ID。可在查询风险规则策略接口的ID字段获取。
      * @return riskId
      */
     public String getRiskId() {

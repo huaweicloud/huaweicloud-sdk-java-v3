@@ -45,6 +45,11 @@ public class RuleRiskResponseRules {
 
     private String riskLevel;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rule_type")
+
+    private String ruleType;
+
     public RuleRiskResponseRules withId(String id) {
         this.id = id;
         return this;
@@ -85,7 +90,7 @@ public class RuleRiskResponseRules {
     }
 
     /**
-     * 风险类型
+     * 风险规则类型
      * @return type
      */
     public String getType() {
@@ -102,7 +107,7 @@ public class RuleRiskResponseRules {
     }
 
     /**
-     * 风险特征
+     * 风险规则特征
      * @return feature
      */
     public String getFeature() {
@@ -119,7 +124,7 @@ public class RuleRiskResponseRules {
     }
 
     /**
-     * 风险规则状态
+     * 风险规则状态。 - ON: 开启 - OFF: 关闭
      * @return status
      */
     public String getStatus() {
@@ -136,7 +141,7 @@ public class RuleRiskResponseRules {
     }
 
     /**
-     * 风险规则优先级
+     * 风险规则优先级。数字越小优先级越高。
      * @return rank
      */
     public Integer getRank() {
@@ -153,7 +158,7 @@ public class RuleRiskResponseRules {
     }
 
     /**
-     * 风险级别
+     * 风险级别 - LOW - MEDIUM - HIGH - NO_RISK]
      * @return riskLevel
      */
     public String getRiskLevel() {
@@ -162,6 +167,23 @@ public class RuleRiskResponseRules {
 
     public void setRiskLevel(String riskLevel) {
         this.riskLevel = riskLevel;
+    }
+
+    public RuleRiskResponseRules withRuleType(String ruleType) {
+        this.ruleType = ruleType;
+        return this;
+    }
+
+    /**
+     * 规则类型
+     * @return ruleType
+     */
+    public String getRuleType() {
+        return ruleType;
+    }
+
+    public void setRuleType(String ruleType) {
+        this.ruleType = ruleType;
     }
 
     @Override
@@ -176,12 +198,12 @@ public class RuleRiskResponseRules {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.type, that.type) && Objects.equals(this.feature, that.feature)
             && Objects.equals(this.status, that.status) && Objects.equals(this.rank, that.rank)
-            && Objects.equals(this.riskLevel, that.riskLevel);
+            && Objects.equals(this.riskLevel, that.riskLevel) && Objects.equals(this.ruleType, that.ruleType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, feature, status, rank, riskLevel);
+        return Objects.hash(id, name, type, feature, status, rank, riskLevel, ruleType);
     }
 
     @Override
@@ -195,6 +217,7 @@ public class RuleRiskResponseRules {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    rank: ").append(toIndentedString(rank)).append("\n");
         sb.append("    riskLevel: ").append(toIndentedString(riskLevel)).append("\n");
+        sb.append("    ruleType: ").append(toIndentedString(ruleType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

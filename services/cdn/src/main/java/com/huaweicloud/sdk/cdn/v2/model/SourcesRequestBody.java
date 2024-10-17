@@ -121,6 +121,16 @@ public class SourcesRequestBody {
 
     private Integer enableObsWebHosting;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "http_port")
+
+    private Integer httpPort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "https_port")
+
+    private Integer httpsPort;
+
     public SourcesRequestBody withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
@@ -223,6 +233,40 @@ public class SourcesRequestBody {
         this.enableObsWebHosting = enableObsWebHosting;
     }
 
+    public SourcesRequestBody withHttpPort(Integer httpPort) {
+        this.httpPort = httpPort;
+        return this;
+    }
+
+    /**
+     * HTTP端口，默认80,端口取值取值范围1-65535。
+     * @return httpPort
+     */
+    public Integer getHttpPort() {
+        return httpPort;
+    }
+
+    public void setHttpPort(Integer httpPort) {
+        this.httpPort = httpPort;
+    }
+
+    public SourcesRequestBody withHttpsPort(Integer httpsPort) {
+        this.httpsPort = httpsPort;
+        return this;
+    }
+
+    /**
+     * HTTPS端口，默认443,端口取值取值范围1-65535。
+     * @return httpsPort
+     */
+    public Integer getHttpsPort() {
+        return httpsPort;
+    }
+
+    public void setHttpsPort(Integer httpsPort) {
+        this.httpsPort = httpsPort;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -236,12 +280,20 @@ public class SourcesRequestBody {
             && Objects.equals(this.originType, that.originType)
             && Objects.equals(this.obsBucketType, that.obsBucketType)
             && Objects.equals(this.activeStandby, that.activeStandby)
-            && Objects.equals(this.enableObsWebHosting, that.enableObsWebHosting);
+            && Objects.equals(this.enableObsWebHosting, that.enableObsWebHosting)
+            && Objects.equals(this.httpPort, that.httpPort) && Objects.equals(this.httpsPort, that.httpsPort);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, ipOrDomain, originType, obsBucketType, activeStandby, enableObsWebHosting);
+        return Objects.hash(domainId,
+            ipOrDomain,
+            originType,
+            obsBucketType,
+            activeStandby,
+            enableObsWebHosting,
+            httpPort,
+            httpsPort);
     }
 
     @Override
@@ -254,6 +306,8 @@ public class SourcesRequestBody {
         sb.append("    obsBucketType: ").append(toIndentedString(obsBucketType)).append("\n");
         sb.append("    activeStandby: ").append(toIndentedString(activeStandby)).append("\n");
         sb.append("    enableObsWebHosting: ").append(toIndentedString(enableObsWebHosting)).append("\n");
+        sb.append("    httpPort: ").append(toIndentedString(httpPort)).append("\n");
+        sb.append("    httpsPort: ").append(toIndentedString(httpsPort)).append("\n");
         sb.append("}");
         return sb.toString();
     }

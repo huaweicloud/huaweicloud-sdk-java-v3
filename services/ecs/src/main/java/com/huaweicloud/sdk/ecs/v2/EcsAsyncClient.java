@@ -105,6 +105,8 @@ import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowFlavorExtraSpecsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowFlavorExtraSpecsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceRequest;
@@ -1788,6 +1790,36 @@ public class EcsAsyncClient {
     public AsyncInvoker<NovaListServersDetailsRequest, NovaListServersDetailsResponse> novaListServersDetailsAsyncInvoker(
         NovaListServersDetailsRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaListServersDetails, hcClient);
+    }
+
+    /**
+     * 查询云服务器规格extra_specs的详情
+     *
+     * 查询指定的规格的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request NovaShowFlavorExtraSpecsRequest 请求对象
+     * @return CompletableFuture<NovaShowFlavorExtraSpecsResponse>
+     */
+    public CompletableFuture<NovaShowFlavorExtraSpecsResponse> novaShowFlavorExtraSpecsAsync(
+        NovaShowFlavorExtraSpecsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.novaShowFlavorExtraSpecs);
+    }
+
+    /**
+     * 查询云服务器规格extra_specs的详情
+     *
+     * 查询指定的规格的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request NovaShowFlavorExtraSpecsRequest 请求对象
+     * @return AsyncInvoker<NovaShowFlavorExtraSpecsRequest, NovaShowFlavorExtraSpecsResponse>
+     */
+    public AsyncInvoker<NovaShowFlavorExtraSpecsRequest, NovaShowFlavorExtraSpecsResponse> novaShowFlavorExtraSpecsAsyncInvoker(
+        NovaShowFlavorExtraSpecsRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.novaShowFlavorExtraSpecs, hcClient);
     }
 
     /**

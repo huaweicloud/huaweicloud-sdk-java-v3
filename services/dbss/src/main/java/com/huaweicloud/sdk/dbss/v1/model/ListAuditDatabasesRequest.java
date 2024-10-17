@@ -36,7 +36,7 @@ public class ListAuditDatabasesRequest {
     }
 
     /**
-     * 实例ID
+     * 实例ID。可在查询实例列表接口的ID字段获取。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -53,7 +53,7 @@ public class ListAuditDatabasesRequest {
     }
 
     /**
-     * 实例状态 ON ：开启 OFF ： 关闭
+     * 实例状态 - ON :开启 - OFF : 关闭
      * @return status
      */
     public String getStatus() {
@@ -70,7 +70,7 @@ public class ListAuditDatabasesRequest {
     }
 
     /**
-     * 偏移量
+     * 偏移量，从第一条数据偏移offset条数据后开始查询，默认为0。
      * @return offset
      */
     public String getOffset() {
@@ -87,7 +87,7 @@ public class ListAuditDatabasesRequest {
     }
 
     /**
-     * 查询记录数
+     * 查询记录数，默认为100。
      * @return limit
      */
     public String getLimit() {

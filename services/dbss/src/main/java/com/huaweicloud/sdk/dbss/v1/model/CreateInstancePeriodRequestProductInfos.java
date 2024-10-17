@@ -58,7 +58,7 @@ public class CreateInstancePeriodRequestProductInfos {
     }
 
     /**
-     * 服务类型： 默认hws.service.type.dbss
+     * 服务类型： - hws.service.type.dbss
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -75,7 +75,7 @@ public class CreateInstancePeriodRequestProductInfos {
     }
 
     /**
-     * 资源类型: 默认hws.resource.type.dbss
+     * 资源类型: - hws.resource.type.dbss
      * @return resourceType
      */
     public String getResourceType() {
@@ -92,7 +92,7 @@ public class CreateInstancePeriodRequestProductInfos {
     }
 
     /**
-     * 资源规格： dbss.bypassaudit.low、dbss.bypassaudit.medium、dbss.bypassaudit.high
+     * 资源规格： - dbss.bypassaudit.low - dbss.bypassaudit.medium - dbss.bypassaudit.high
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -109,7 +109,7 @@ public class CreateInstancePeriodRequestProductInfos {
     }
 
     /**
-     * 产品规格描述
+     * 产品规格描述。json字符串格式 ：{\"specDesc\":{\"zh-cn\":{\"key1\":\"value1\"},\"en-us\":{\"key1\":\"value1\"}}}。key和value为用户自定义希望展示的产品描述信息。
      * @return productSpecDesc
      */
     public String getProductSpecDesc() {

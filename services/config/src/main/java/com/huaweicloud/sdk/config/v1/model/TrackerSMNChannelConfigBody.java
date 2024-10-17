@@ -31,7 +31,7 @@ public class TrackerSMNChannelConfigBody {
     }
 
     /**
-     * 区域id
+     * SMN主题的区域id
      * @return regionId
      */
     public String getRegionId() {
@@ -48,7 +48,7 @@ public class TrackerSMNChannelConfigBody {
     }
 
     /**
-     * 项目id
+     * 创建或更新资源记录器用户的项目id
      * @return projectId
      */
     public String getProjectId() {

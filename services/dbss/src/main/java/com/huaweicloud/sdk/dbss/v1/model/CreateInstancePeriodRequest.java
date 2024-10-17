@@ -14,14 +14,14 @@ import java.util.function.Consumer;
 public class CreateInstancePeriodRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "flavor_ref")
-
-    private String flavorRef;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_ref")
+
+    private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -103,6 +103,23 @@ public class CreateInstancePeriodRequest {
 
     private Integer isAutoRenew;
 
+    public CreateInstancePeriodRequest withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 实例名称。取值范围： - 只能由中文字符、英文字母、数字、下划线、中划线组成，且长度小于等于64个字符。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public CreateInstancePeriodRequest withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
@@ -120,30 +137,13 @@ public class CreateInstancePeriodRequest {
         this.flavorRef = flavorRef;
     }
 
-    public CreateInstancePeriodRequest withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * 云服务器名称。 取值范围： • 只能由中文字符、英文字母、数字、下划线、中划线组成，且长度小于等于64个字符。 • 创建的云服务器数量大于1时，长度小于等于59个字符
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public CreateInstancePeriodRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
     /**
-     * VPC的ID
+     * 虚拟私有云的ID
      * @return vpcId
      */
     public String getVpcId() {
@@ -160,7 +160,7 @@ public class CreateInstancePeriodRequest {
     }
 
     /**
-     * 云服务器对应可用分区信息。(两个主备分区，中间用“,”分割，例如az1.dc1,az2.dc2)
+     * 云服务器对应可用分区信息。(两个主备分区，中间用“,”分割，例如az1.dc1,az2.dc2)。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -177,7 +177,7 @@ public class CreateInstancePeriodRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。对接EPS必输。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -297,7 +297,7 @@ public class CreateInstancePeriodRequest {
     }
 
     /**
-     * 服务类型： 默认hws.service.type.dbss
+     * 服务类型： - hws.service.type.dbss
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -314,7 +314,7 @@ public class CreateInstancePeriodRequest {
     }
 
     /**
-     * 计费模式： • 0：包周期计费 • 1：按需计费
+     * 计费模式： - 0: 包周期计费 - 1: 按需计费
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -331,7 +331,7 @@ public class CreateInstancePeriodRequest {
     }
 
     /**
-     * 订购周期类型： • 0：天； • 1：周； • 2：月； • 3：年； • 4：小时； • 5：绝对时间
+     * -订购周期类型 - 0: 天 - 1：周 - 2：月 - 3：年 - 4: 小时 - 5: 绝对时间
      * @return periodType
      */
     public Integer getPeriodType() {
@@ -466,7 +466,7 @@ public class CreateInstancePeriodRequest {
     }
 
     /**
-     * 自动续费 1表示自动续费，0表示不自动续费
+     * 自动续费 - 1: 自动续费 - 0: 不自动续费
      * @return isAutoRenew
      */
     public Integer getIsAutoRenew() {
@@ -486,7 +486,7 @@ public class CreateInstancePeriodRequest {
             return false;
         }
         CreateInstancePeriodRequest that = (CreateInstancePeriodRequest) obj;
-        return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.name, that.name)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.flavorRef, that.flavorRef)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.availabilityZone, that.availabilityZone)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.nics, that.nics) && Objects.equals(this.securityGroups, that.securityGroups)
@@ -502,8 +502,8 @@ public class CreateInstancePeriodRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(flavorRef,
-            name,
+        return Objects.hash(name,
+            flavorRef,
             vpcId,
             availabilityZone,
             enterpriseProjectId,
@@ -526,8 +526,8 @@ public class CreateInstancePeriodRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateInstancePeriodRequest {\n");
-        sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

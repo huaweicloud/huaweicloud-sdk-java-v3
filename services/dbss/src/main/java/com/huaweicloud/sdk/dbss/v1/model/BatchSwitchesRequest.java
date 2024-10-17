@@ -21,7 +21,7 @@ public class BatchSwitchesRequest {
     private String ids;
 
     /**
-     * OFF：关闭 ON：开启
+     * 开关状态 - OFF: 关闭 - ON: 开启
      */
     public static final class StatusEnum {
 
@@ -101,7 +101,7 @@ public class BatchSwitchesRequest {
     }
 
     /**
-     * risk id, ids 中间逗号分隔
+     * 规则ID,多个ID中间逗号分隔。可在查询风险规则策略接口ID字段获取。
      * @return ids
      */
     public String getIds() {
@@ -118,7 +118,7 @@ public class BatchSwitchesRequest {
     }
 
     /**
-     * OFF：关闭 ON：开启
+     * 开关状态 - OFF: 关闭 - ON: 开启
      * @return status
      */
     public StatusEnum getStatus() {

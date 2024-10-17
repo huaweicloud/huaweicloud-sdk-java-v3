@@ -14,11 +14,6 @@ import java.util.function.Consumer;
 public class ResourceInstanceResponseResources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_detail")
-
-    private Object resourceDetail;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
     private String resourceId;
@@ -29,6 +24,11 @@ public class ResourceInstanceResponseResources {
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_detail")
+
+    private Object resourceDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<ResourceInstanceResponseTags> tags = null;
@@ -37,23 +37,6 @@ public class ResourceInstanceResponseResources {
     @JsonProperty(value = "sys_tags")
 
     private List<ResourceInstanceResponseSysTags> sysTags = null;
-
-    public ResourceInstanceResponseResources withResourceDetail(Object resourceDetail) {
-        this.resourceDetail = resourceDetail;
-        return this;
-    }
-
-    /**
-     * 资源详情。 资源对象，用于扩展。默认为空
-     * @return resourceDetail
-     */
-    public Object getResourceDetail() {
-        return resourceDetail;
-    }
-
-    public void setResourceDetail(Object resourceDetail) {
-        this.resourceDetail = resourceDetail;
-    }
 
     public ResourceInstanceResponseResources withResourceId(String resourceId) {
         this.resourceId = resourceId;
@@ -78,7 +61,7 @@ public class ResourceInstanceResponseResources {
     }
 
     /**
-     * 资源名称，资源没有名称时默认为空字符串，eip返回ip地址
+     * 资源名称，资源没有名称时默认为空字符串，eip返回ip地址。
      * @return resourceName
      */
     public String getResourceName() {
@@ -87,6 +70,23 @@ public class ResourceInstanceResponseResources {
 
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
+    }
+
+    public ResourceInstanceResponseResources withResourceDetail(Object resourceDetail) {
+        this.resourceDetail = resourceDetail;
+        return this;
+    }
+
+    /**
+     * 资源详情。 资源对象，用于扩展，默认为空。
+     * @return resourceDetail
+     */
+    public Object getResourceDetail() {
+        return resourceDetail;
+    }
+
+    public void setResourceDetail(Object resourceDetail) {
+        this.resourceDetail = resourceDetail;
     }
 
     public ResourceInstanceResponseResources withTags(List<ResourceInstanceResponseTags> tags) {
@@ -165,23 +165,23 @@ public class ResourceInstanceResponseResources {
             return false;
         }
         ResourceInstanceResponseResources that = (ResourceInstanceResponseResources) obj;
-        return Objects.equals(this.resourceDetail, that.resourceDetail)
-            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.sysTags, that.sysTags);
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceDetail, that.resourceDetail) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceDetail, resourceId, resourceName, tags, sysTags);
+        return Objects.hash(resourceId, resourceName, resourceDetail, tags, sysTags);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResourceInstanceResponseResources {\n");
-        sb.append("    resourceDetail: ").append(toIndentedString(resourceDetail)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
+        sb.append("    resourceDetail: ").append(toIndentedString(resourceDetail)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    sysTags: ").append(toIndentedString(sysTags)).append("\n");
         sb.append("}");

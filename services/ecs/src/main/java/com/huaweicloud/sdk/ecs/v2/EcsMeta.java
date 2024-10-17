@@ -138,6 +138,8 @@ import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListServersDetailsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaListVersionsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowFlavorExtraSpecsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.NovaShowFlavorExtraSpecsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairRequest;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowKeypairResponse;
 import com.huaweicloud.sdk.ecs.v2.model.NovaShowServerInterfaceRequest;
@@ -1856,6 +1858,31 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(NovaListServersDetailsRequest::getOpenStackAPIVersion,
                 NovaListServersDetailsRequest::setOpenStackAPIVersion));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<NovaShowFlavorExtraSpecsRequest, NovaShowFlavorExtraSpecsResponse> novaShowFlavorExtraSpecs =
+        genForNovaShowFlavorExtraSpecs();
+
+    private static HttpRequestDef<NovaShowFlavorExtraSpecsRequest, NovaShowFlavorExtraSpecsResponse> genForNovaShowFlavorExtraSpecs() {
+        // basic
+        HttpRequestDef.Builder<NovaShowFlavorExtraSpecsRequest, NovaShowFlavorExtraSpecsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, NovaShowFlavorExtraSpecsRequest.class, NovaShowFlavorExtraSpecsResponse.class)
+                .withName("NovaShowFlavorExtraSpecs")
+                .withUri("/v2.1/{project_id}/flavors/{flavor_id}/os-extra_specs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flavor_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(NovaShowFlavorExtraSpecsRequest::getFlavorId,
+                NovaShowFlavorExtraSpecsRequest::setFlavorId));
 
         // response
 

@@ -96,6 +96,11 @@ public class SimPoolVO {
 
     private String orderIds;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Integer status;
+
     public SimPoolVO withId(Long id) {
         this.id = id;
         return this;
@@ -388,6 +393,23 @@ public class SimPoolVO {
         this.orderIds = orderIds;
     }
 
+    public SimPoolVO withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 流量池状态，0：废弃，1：在用
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -409,7 +431,7 @@ public class SimPoolVO {
             && Objects.equals(this.activatedSimQuantity, that.activatedSimQuantity)
             && Objects.equals(this.inactiveSimQuantity, that.inactiveSimQuantity)
             && Objects.equals(this.disassembledSimQuantity, that.disassembledSimQuantity)
-            && Objects.equals(this.orderIds, that.orderIds);
+            && Objects.equals(this.orderIds, that.orderIds) && Objects.equals(this.status, that.status);
     }
 
     @Override
@@ -430,7 +452,8 @@ public class SimPoolVO {
             activatedSimQuantity,
             inactiveSimQuantity,
             disassembledSimQuantity,
-            orderIds);
+            orderIds,
+            status);
     }
 
     @Override
@@ -454,6 +477,7 @@ public class SimPoolVO {
         sb.append("    inactiveSimQuantity: ").append(toIndentedString(inactiveSimQuantity)).append("\n");
         sb.append("    disassembledSimQuantity: ").append(toIndentedString(disassembledSimQuantity)).append("\n");
         sb.append("    orderIds: ").append(toIndentedString(orderIds)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

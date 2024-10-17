@@ -3,6 +3,12 @@ package com.huaweicloud.sdk.dbss.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.dbss.v1.model.AddAuditAgentRequest;
+import com.huaweicloud.sdk.dbss.v1.model.AddAuditAgentResponse;
+import com.huaweicloud.sdk.dbss.v1.model.AddAuditDatabaseRequest;
+import com.huaweicloud.sdk.dbss.v1.model.AddAuditDatabaseResponse;
+import com.huaweicloud.sdk.dbss.v1.model.AddRdsDatabaseRequest;
+import com.huaweicloud.sdk.dbss.v1.model.AddRdsDatabaseResponse;
 import com.huaweicloud.sdk.dbss.v1.model.AddRdsNoAgentDatabaseRequest;
 import com.huaweicloud.sdk.dbss.v1.model.AddRdsNoAgentDatabaseResponse;
 import com.huaweicloud.sdk.dbss.v1.model.BatchAddResourceTagRequest;
@@ -13,6 +19,18 @@ import com.huaweicloud.sdk.dbss.v1.model.CountResourceInstanceByTagRequest;
 import com.huaweicloud.sdk.dbss.v1.model.CountResourceInstanceByTagResponse;
 import com.huaweicloud.sdk.dbss.v1.model.CreateInstancesPeriodOrderRequest;
 import com.huaweicloud.sdk.dbss.v1.model.CreateInstancesPeriodOrderResponse;
+import com.huaweicloud.sdk.dbss.v1.model.DeleteAuditAgentRequest;
+import com.huaweicloud.sdk.dbss.v1.model.DeleteAuditAgentResponse;
+import com.huaweicloud.sdk.dbss.v1.model.DeleteAuditDatabaseRequest;
+import com.huaweicloud.sdk.dbss.v1.model.DeleteAuditDatabaseResponse;
+import com.huaweicloud.sdk.dbss.v1.model.DeleteInstancesRequest;
+import com.huaweicloud.sdk.dbss.v1.model.DeleteInstancesResponse;
+import com.huaweicloud.sdk.dbss.v1.model.DownloadAuditAgentRequest;
+import com.huaweicloud.sdk.dbss.v1.model.DownloadAuditAgentResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditAgentRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditAgentResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditAlarmLogRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditAlarmLogResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditDatabasesRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditDatabasesResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditInstanceJobsRequest;
@@ -27,24 +45,40 @@ import com.huaweicloud.sdk.dbss.v1.model.ListAuditRuleScopesRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditRuleScopesResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditSensitiveMasksRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAuditSensitiveMasksResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditSqlsRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditSqlsResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditSummaryInfosRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListAuditSummaryInfosResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListAvailabilityZoneInfosRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListAvailabilityZoneInfosResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListEcsSpecificationRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListEcsSpecificationResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListProjectResourceTagsRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListProjectResourceTagsResponse;
+import com.huaweicloud.sdk.dbss.v1.model.ListRdsDatabasesRequest;
+import com.huaweicloud.sdk.dbss.v1.model.ListRdsDatabasesResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListResourceInstanceByTagRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListResourceInstanceByTagResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ListSqlInjectionRulesRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ListSqlInjectionRulesResponse;
+import com.huaweicloud.sdk.dbss.v1.model.RebootAuditInstanceRequest;
+import com.huaweicloud.sdk.dbss.v1.model.RebootAuditInstanceResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowAuditQuotaRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowAuditQuotaResponse;
 import com.huaweicloud.sdk.dbss.v1.model.ShowAuditRuleRiskRequest;
 import com.huaweicloud.sdk.dbss.v1.model.ShowAuditRuleRiskResponse;
+import com.huaweicloud.sdk.dbss.v1.model.StartAuditInstanceRequest;
+import com.huaweicloud.sdk.dbss.v1.model.StartAuditInstanceResponse;
+import com.huaweicloud.sdk.dbss.v1.model.StopAuditInstanceRequest;
+import com.huaweicloud.sdk.dbss.v1.model.StopAuditInstanceResponse;
 import com.huaweicloud.sdk.dbss.v1.model.SwitchAgentRequest;
 import com.huaweicloud.sdk.dbss.v1.model.SwitchAgentResponse;
+import com.huaweicloud.sdk.dbss.v1.model.SwitchAuditDatabaseRequest;
+import com.huaweicloud.sdk.dbss.v1.model.SwitchAuditDatabaseResponse;
 import com.huaweicloud.sdk.dbss.v1.model.SwitchRiskRuleRequest;
 import com.huaweicloud.sdk.dbss.v1.model.SwitchRiskRuleResponse;
+import com.huaweicloud.sdk.dbss.v1.model.UpdateAuditInstanceRequest;
+import com.huaweicloud.sdk.dbss.v1.model.UpdateAuditInstanceResponse;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateAuditSecurityGroupRequest;
 import com.huaweicloud.sdk.dbss.v1.model.UpdateAuditSecurityGroupResponse;
 
@@ -64,9 +98,68 @@ public class DbssAsyncClient {
     }
 
     /**
-     * 添加RDS免agent数据库
+     * 添加自建数据库
      *
-     * 添加RDS免agent数据库
+     * 添加自建数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddAuditDatabaseRequest 请求对象
+     * @return CompletableFuture<AddAuditDatabaseResponse>
+     */
+    public CompletableFuture<AddAuditDatabaseResponse> addAuditDatabaseAsync(AddAuditDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.addAuditDatabase);
+    }
+
+    /**
+     * 添加自建数据库
+     *
+     * 添加自建数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddAuditDatabaseRequest 请求对象
+     * @return AsyncInvoker<AddAuditDatabaseRequest, AddAuditDatabaseResponse>
+     */
+    public AsyncInvoker<AddAuditDatabaseRequest, AddAuditDatabaseResponse> addAuditDatabaseAsyncInvoker(
+        AddAuditDatabaseRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.addAuditDatabase, hcClient);
+    }
+
+    /**
+     * 添加RDS数据库
+     *
+     * 添加RDS数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddRdsDatabaseRequest 请求对象
+     * @return CompletableFuture<AddRdsDatabaseResponse>
+     */
+    public CompletableFuture<AddRdsDatabaseResponse> addRdsDatabaseAsync(AddRdsDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.addRdsDatabase);
+    }
+
+    /**
+     * 添加RDS数据库
+     *
+     * 添加RDS数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddRdsDatabaseRequest 请求对象
+     * @return AsyncInvoker<AddRdsDatabaseRequest, AddRdsDatabaseResponse>
+     */
+    public AsyncInvoker<AddRdsDatabaseRequest, AddRdsDatabaseResponse> addRdsDatabaseAsyncInvoker(
+        AddRdsDatabaseRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.addRdsDatabase, hcClient);
+    }
+
+    /**
+     * 添加RDS数据库(V1待下线)
+     *
+     * 添加RDS数据库。V1版本已不再维护，待下线。
+     * 请使用V2版本接口（/v2/{project_id}/{instance_id}/audit/databases/rds）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -79,9 +172,10 @@ public class DbssAsyncClient {
     }
 
     /**
-     * 添加RDS免agent数据库
+     * 添加RDS数据库(V1待下线)
      *
-     * 添加RDS免agent数据库
+     * 添加RDS数据库。V1版本已不再维护，待下线。
+     * 请使用V2版本接口（/v2/{project_id}/{instance_id}/audit/databases/rds）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -91,95 +185,6 @@ public class DbssAsyncClient {
     public AsyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse> addRdsNoAgentDatabaseAsyncInvoker(
         AddRdsNoAgentDatabaseRequest request) {
         return new AsyncInvoker<>(request, DbssMeta.addRdsNoAgentDatabase, hcClient);
-    }
-
-    /**
-     * 批量添加资源标签
-     *
-     * 批量添加资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchAddResourceTagRequest 请求对象
-     * @return CompletableFuture<BatchAddResourceTagResponse>
-     */
-    public CompletableFuture<BatchAddResourceTagResponse> batchAddResourceTagAsync(BatchAddResourceTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, DbssMeta.batchAddResourceTag);
-    }
-
-    /**
-     * 批量添加资源标签
-     *
-     * 批量添加资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchAddResourceTagRequest 请求对象
-     * @return AsyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse>
-     */
-    public AsyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse> batchAddResourceTagAsyncInvoker(
-        BatchAddResourceTagRequest request) {
-        return new AsyncInvoker<>(request, DbssMeta.batchAddResourceTag, hcClient);
-    }
-
-    /**
-     * 批量删除资源标签
-     *
-     * 批量删除资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDeleteResourceTagRequest 请求对象
-     * @return CompletableFuture<BatchDeleteResourceTagResponse>
-     */
-    public CompletableFuture<BatchDeleteResourceTagResponse> batchDeleteResourceTagAsync(
-        BatchDeleteResourceTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, DbssMeta.batchDeleteResourceTag);
-    }
-
-    /**
-     * 批量删除资源标签
-     *
-     * 批量删除资源标签
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request BatchDeleteResourceTagRequest 请求对象
-     * @return AsyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>
-     */
-    public AsyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> batchDeleteResourceTagAsyncInvoker(
-        BatchDeleteResourceTagRequest request) {
-        return new AsyncInvoker<>(request, DbssMeta.batchDeleteResourceTag, hcClient);
-    }
-
-    /**
-     * 根据标签查询资源实例数量
-     *
-     * 根据标签查询资源实例数量
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CountResourceInstanceByTagRequest 请求对象
-     * @return CompletableFuture<CountResourceInstanceByTagResponse>
-     */
-    public CompletableFuture<CountResourceInstanceByTagResponse> countResourceInstanceByTagAsync(
-        CountResourceInstanceByTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, DbssMeta.countResourceInstanceByTag);
-    }
-
-    /**
-     * 根据标签查询资源实例数量
-     *
-     * 根据标签查询资源实例数量
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CountResourceInstanceByTagRequest 请求对象
-     * @return AsyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse>
-     */
-    public AsyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse> countResourceInstanceByTagAsyncInvoker(
-        CountResourceInstanceByTagRequest request) {
-        return new AsyncInvoker<>(request, DbssMeta.countResourceInstanceByTag, hcClient);
     }
 
     /**
@@ -210,6 +215,93 @@ public class DbssAsyncClient {
     public AsyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse> createInstancesPeriodOrderAsyncInvoker(
         CreateInstancesPeriodOrderRequest request) {
         return new AsyncInvoker<>(request, DbssMeta.createInstancesPeriodOrder, hcClient);
+    }
+
+    /**
+     * 删除数据库
+     *
+     * 删除数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAuditDatabaseRequest 请求对象
+     * @return CompletableFuture<DeleteAuditDatabaseResponse>
+     */
+    public CompletableFuture<DeleteAuditDatabaseResponse> deleteAuditDatabaseAsync(DeleteAuditDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.deleteAuditDatabase);
+    }
+
+    /**
+     * 删除数据库
+     *
+     * 删除数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAuditDatabaseRequest 请求对象
+     * @return AsyncInvoker<DeleteAuditDatabaseRequest, DeleteAuditDatabaseResponse>
+     */
+    public AsyncInvoker<DeleteAuditDatabaseRequest, DeleteAuditDatabaseResponse> deleteAuditDatabaseAsyncInvoker(
+        DeleteAuditDatabaseRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.deleteAuditDatabase, hcClient);
+    }
+
+    /**
+     * 删除审计实例
+     *
+     * 只有按需计费模式实例没有任务时 或 包周期模式实例状态为故障时，才能执行此操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInstancesRequest 请求对象
+     * @return CompletableFuture<DeleteInstancesResponse>
+     */
+    public CompletableFuture<DeleteInstancesResponse> deleteInstancesAsync(DeleteInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.deleteInstances);
+    }
+
+    /**
+     * 删除审计实例
+     *
+     * 只有按需计费模式实例没有任务时 或 包周期模式实例状态为故障时，才能执行此操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInstancesRequest 请求对象
+     * @return AsyncInvoker<DeleteInstancesRequest, DeleteInstancesResponse>
+     */
+    public AsyncInvoker<DeleteInstancesRequest, DeleteInstancesResponse> deleteInstancesAsyncInvoker(
+        DeleteInstancesRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.deleteInstances, hcClient);
+    }
+
+    /**
+     * 查询审计告警信息
+     *
+     * 查询审计告警信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAuditAlarmLogRequest 请求对象
+     * @return CompletableFuture<ListAuditAlarmLogResponse>
+     */
+    public CompletableFuture<ListAuditAlarmLogResponse> listAuditAlarmLogAsync(ListAuditAlarmLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.listAuditAlarmLog);
+    }
+
+    /**
+     * 查询审计告警信息
+     *
+     * 查询审计告警信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAuditAlarmLogRequest 请求对象
+     * @return AsyncInvoker<ListAuditAlarmLogRequest, ListAuditAlarmLogResponse>
+     */
+    public AsyncInvoker<ListAuditAlarmLogRequest, ListAuditAlarmLogResponse> listAuditAlarmLogAsyncInvoker(
+        ListAuditAlarmLogRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.listAuditAlarmLog, hcClient);
     }
 
     /**
@@ -419,6 +511,65 @@ public class DbssAsyncClient {
     }
 
     /**
+     * 查询审计SQL语句
+     *
+     * 查询审计SQL语句
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAuditSqlsRequest 请求对象
+     * @return CompletableFuture<ListAuditSqlsResponse>
+     */
+    public CompletableFuture<ListAuditSqlsResponse> listAuditSqlsAsync(ListAuditSqlsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.listAuditSqls);
+    }
+
+    /**
+     * 查询审计SQL语句
+     *
+     * 查询审计SQL语句
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAuditSqlsRequest 请求对象
+     * @return AsyncInvoker<ListAuditSqlsRequest, ListAuditSqlsResponse>
+     */
+    public AsyncInvoker<ListAuditSqlsRequest, ListAuditSqlsResponse> listAuditSqlsAsyncInvoker(
+        ListAuditSqlsRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.listAuditSqls, hcClient);
+    }
+
+    /**
+     * 查询审计汇总信息
+     *
+     * 查询审计汇总信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAuditSummaryInfosRequest 请求对象
+     * @return CompletableFuture<ListAuditSummaryInfosResponse>
+     */
+    public CompletableFuture<ListAuditSummaryInfosResponse> listAuditSummaryInfosAsync(
+        ListAuditSummaryInfosRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.listAuditSummaryInfos);
+    }
+
+    /**
+     * 查询审计汇总信息
+     *
+     * 查询审计汇总信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAuditSummaryInfosRequest 请求对象
+     * @return AsyncInvoker<ListAuditSummaryInfosRequest, ListAuditSummaryInfosResponse>
+     */
+    public AsyncInvoker<ListAuditSummaryInfosRequest, ListAuditSummaryInfosResponse> listAuditSummaryInfosAsyncInvoker(
+        ListAuditSummaryInfosRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.listAuditSummaryInfos, hcClient);
+    }
+
+    /**
      * 查询可用区信息
      *
      * 查询可用区信息
@@ -449,9 +600,9 @@ public class DbssAsyncClient {
     }
 
     /**
-     * 查询ecs服务器规格信息
+     * 查询ECS服务器规格信息
      *
-     * 查询ecs服务器规格信息
+     * 查询ECS服务器规格信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -464,9 +615,9 @@ public class DbssAsyncClient {
     }
 
     /**
-     * 查询ecs服务器规格信息
+     * 查询ECS服务器规格信息
      *
-     * 查询ecs服务器规格信息
+     * 查询ECS服务器规格信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -479,63 +630,32 @@ public class DbssAsyncClient {
     }
 
     /**
-     * 查询项目标签
+     * 查询RDS数据库列表
      *
-     * 查询项目标签
+     * 查询RDS数据库列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListProjectResourceTagsRequest 请求对象
-     * @return CompletableFuture<ListProjectResourceTagsResponse>
+     * @param request ListRdsDatabasesRequest 请求对象
+     * @return CompletableFuture<ListRdsDatabasesResponse>
      */
-    public CompletableFuture<ListProjectResourceTagsResponse> listProjectResourceTagsAsync(
-        ListProjectResourceTagsRequest request) {
-        return hcClient.asyncInvokeHttp(request, DbssMeta.listProjectResourceTags);
+    public CompletableFuture<ListRdsDatabasesResponse> listRdsDatabasesAsync(ListRdsDatabasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.listRdsDatabases);
     }
 
     /**
-     * 查询项目标签
+     * 查询RDS数据库列表
      *
-     * 查询项目标签
+     * 查询RDS数据库列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListProjectResourceTagsRequest 请求对象
-     * @return AsyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse>
+     * @param request ListRdsDatabasesRequest 请求对象
+     * @return AsyncInvoker<ListRdsDatabasesRequest, ListRdsDatabasesResponse>
      */
-    public AsyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse> listProjectResourceTagsAsyncInvoker(
-        ListProjectResourceTagsRequest request) {
-        return new AsyncInvoker<>(request, DbssMeta.listProjectResourceTags, hcClient);
-    }
-
-    /**
-     * 根据标签查询资源实例列表
-     *
-     * 根据标签查询资源实例列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListResourceInstanceByTagRequest 请求对象
-     * @return CompletableFuture<ListResourceInstanceByTagResponse>
-     */
-    public CompletableFuture<ListResourceInstanceByTagResponse> listResourceInstanceByTagAsync(
-        ListResourceInstanceByTagRequest request) {
-        return hcClient.asyncInvokeHttp(request, DbssMeta.listResourceInstanceByTag);
-    }
-
-    /**
-     * 根据标签查询资源实例列表
-     *
-     * 根据标签查询资源实例列表
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListResourceInstanceByTagRequest 请求对象
-     * @return AsyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse>
-     */
-    public AsyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse> listResourceInstanceByTagAsyncInvoker(
-        ListResourceInstanceByTagRequest request) {
-        return new AsyncInvoker<>(request, DbssMeta.listResourceInstanceByTag, hcClient);
+    public AsyncInvoker<ListRdsDatabasesRequest, ListRdsDatabasesResponse> listRdsDatabasesAsyncInvoker(
+        ListRdsDatabasesRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.listRdsDatabases, hcClient);
     }
 
     /**
@@ -566,6 +686,35 @@ public class DbssAsyncClient {
     public AsyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse> listSqlInjectionRulesAsyncInvoker(
         ListSqlInjectionRulesRequest request) {
         return new AsyncInvoker<>(request, DbssMeta.listSqlInjectionRules, hcClient);
+    }
+
+    /**
+     * 重启审计实例
+     *
+     * 重启审计实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RebootAuditInstanceRequest 请求对象
+     * @return CompletableFuture<RebootAuditInstanceResponse>
+     */
+    public CompletableFuture<RebootAuditInstanceResponse> rebootAuditInstanceAsync(RebootAuditInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.rebootAuditInstance);
+    }
+
+    /**
+     * 重启审计实例
+     *
+     * 重启审计实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RebootAuditInstanceRequest 请求对象
+     * @return AsyncInvoker<RebootAuditInstanceRequest, RebootAuditInstanceResponse>
+     */
+    public AsyncInvoker<RebootAuditInstanceRequest, RebootAuditInstanceResponse> rebootAuditInstanceAsyncInvoker(
+        RebootAuditInstanceRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.rebootAuditInstance, hcClient);
     }
 
     /**
@@ -627,31 +776,90 @@ public class DbssAsyncClient {
     }
 
     /**
-     * 开启关闭Agent
+     * 开启审计实例
      *
-     * 用于开启和关闭agent的功能，当开启后，开始抓取用户的访问信息。
+     * 开启审计实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request SwitchAgentRequest 请求对象
-     * @return CompletableFuture<SwitchAgentResponse>
+     * @param request StartAuditInstanceRequest 请求对象
+     * @return CompletableFuture<StartAuditInstanceResponse>
      */
-    public CompletableFuture<SwitchAgentResponse> switchAgentAsync(SwitchAgentRequest request) {
-        return hcClient.asyncInvokeHttp(request, DbssMeta.switchAgent);
+    public CompletableFuture<StartAuditInstanceResponse> startAuditInstanceAsync(StartAuditInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.startAuditInstance);
     }
 
     /**
-     * 开启关闭Agent
+     * 开启审计实例
      *
-     * 用于开启和关闭agent的功能，当开启后，开始抓取用户的访问信息。
+     * 开启审计实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request SwitchAgentRequest 请求对象
-     * @return AsyncInvoker<SwitchAgentRequest, SwitchAgentResponse>
+     * @param request StartAuditInstanceRequest 请求对象
+     * @return AsyncInvoker<StartAuditInstanceRequest, StartAuditInstanceResponse>
      */
-    public AsyncInvoker<SwitchAgentRequest, SwitchAgentResponse> switchAgentAsyncInvoker(SwitchAgentRequest request) {
-        return new AsyncInvoker<>(request, DbssMeta.switchAgent, hcClient);
+    public AsyncInvoker<StartAuditInstanceRequest, StartAuditInstanceResponse> startAuditInstanceAsyncInvoker(
+        StartAuditInstanceRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.startAuditInstance, hcClient);
+    }
+
+    /**
+     * 关闭审计实例
+     *
+     * 关闭审计实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopAuditInstanceRequest 请求对象
+     * @return CompletableFuture<StopAuditInstanceResponse>
+     */
+    public CompletableFuture<StopAuditInstanceResponse> stopAuditInstanceAsync(StopAuditInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.stopAuditInstance);
+    }
+
+    /**
+     * 关闭审计实例
+     *
+     * 关闭审计实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopAuditInstanceRequest 请求对象
+     * @return AsyncInvoker<StopAuditInstanceRequest, StopAuditInstanceResponse>
+     */
+    public AsyncInvoker<StopAuditInstanceRequest, StopAuditInstanceResponse> stopAuditInstanceAsyncInvoker(
+        StopAuditInstanceRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.stopAuditInstance, hcClient);
+    }
+
+    /**
+     * 开启关闭数据库
+     *
+     * 开启关闭数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchAuditDatabaseRequest 请求对象
+     * @return CompletableFuture<SwitchAuditDatabaseResponse>
+     */
+    public CompletableFuture<SwitchAuditDatabaseResponse> switchAuditDatabaseAsync(SwitchAuditDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.switchAuditDatabase);
+    }
+
+    /**
+     * 开启关闭数据库
+     *
+     * 开启关闭数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchAuditDatabaseRequest 请求对象
+     * @return AsyncInvoker<SwitchAuditDatabaseRequest, SwitchAuditDatabaseResponse>
+     */
+    public AsyncInvoker<SwitchAuditDatabaseRequest, SwitchAuditDatabaseResponse> switchAuditDatabaseAsyncInvoker(
+        SwitchAuditDatabaseRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.switchAuditDatabase, hcClient);
     }
 
     /**
@@ -684,9 +892,38 @@ public class DbssAsyncClient {
     }
 
     /**
-     * 修改安全组
+     * 更新审计实例信息
      *
-     * 修改安全组
+     * 更新审计实例信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAuditInstanceRequest 请求对象
+     * @return CompletableFuture<UpdateAuditInstanceResponse>
+     */
+    public CompletableFuture<UpdateAuditInstanceResponse> updateAuditInstanceAsync(UpdateAuditInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.updateAuditInstance);
+    }
+
+    /**
+     * 更新审计实例信息
+     *
+     * 更新审计实例信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAuditInstanceRequest 请求对象
+     * @return AsyncInvoker<UpdateAuditInstanceRequest, UpdateAuditInstanceResponse>
+     */
+    public AsyncInvoker<UpdateAuditInstanceRequest, UpdateAuditInstanceResponse> updateAuditInstanceAsyncInvoker(
+        UpdateAuditInstanceRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.updateAuditInstance, hcClient);
+    }
+
+    /**
+     * 修改实例安全组
+     *
+     * 修改实例安全组
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -699,9 +936,9 @@ public class DbssAsyncClient {
     }
 
     /**
-     * 修改安全组
+     * 修改实例安全组
      *
-     * 修改安全组
+     * 修改实例安全组
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -711,6 +948,299 @@ public class DbssAsyncClient {
     public AsyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse> updateAuditSecurityGroupAsyncInvoker(
         UpdateAuditSecurityGroupRequest request) {
         return new AsyncInvoker<>(request, DbssMeta.updateAuditSecurityGroup, hcClient);
+    }
+
+    /**
+     * 添加审计数据库Agent
+     *
+     * 添加审计数据库Agent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddAuditAgentRequest 请求对象
+     * @return CompletableFuture<AddAuditAgentResponse>
+     */
+    public CompletableFuture<AddAuditAgentResponse> addAuditAgentAsync(AddAuditAgentRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.addAuditAgent);
+    }
+
+    /**
+     * 添加审计数据库Agent
+     *
+     * 添加审计数据库Agent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddAuditAgentRequest 请求对象
+     * @return AsyncInvoker<AddAuditAgentRequest, AddAuditAgentResponse>
+     */
+    public AsyncInvoker<AddAuditAgentRequest, AddAuditAgentResponse> addAuditAgentAsyncInvoker(
+        AddAuditAgentRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.addAuditAgent, hcClient);
+    }
+
+    /**
+     * 删除数据库Agent
+     *
+     * 删除数据库Agent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAuditAgentRequest 请求对象
+     * @return CompletableFuture<DeleteAuditAgentResponse>
+     */
+    public CompletableFuture<DeleteAuditAgentResponse> deleteAuditAgentAsync(DeleteAuditAgentRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.deleteAuditAgent);
+    }
+
+    /**
+     * 删除数据库Agent
+     *
+     * 删除数据库Agent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAuditAgentRequest 请求对象
+     * @return AsyncInvoker<DeleteAuditAgentRequest, DeleteAuditAgentResponse>
+     */
+    public AsyncInvoker<DeleteAuditAgentRequest, DeleteAuditAgentResponse> deleteAuditAgentAsyncInvoker(
+        DeleteAuditAgentRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.deleteAuditAgent, hcClient);
+    }
+
+    /**
+     * 下载审计Agent
+     *
+     * 下载审计Agent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadAuditAgentRequest 请求对象
+     * @return CompletableFuture<DownloadAuditAgentResponse>
+     */
+    public CompletableFuture<DownloadAuditAgentResponse> downloadAuditAgentAsync(DownloadAuditAgentRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.downloadAuditAgent);
+    }
+
+    /**
+     * 下载审计Agent
+     *
+     * 下载审计Agent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadAuditAgentRequest 请求对象
+     * @return AsyncInvoker<DownloadAuditAgentRequest, DownloadAuditAgentResponse>
+     */
+    public AsyncInvoker<DownloadAuditAgentRequest, DownloadAuditAgentResponse> downloadAuditAgentAsyncInvoker(
+        DownloadAuditAgentRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.downloadAuditAgent, hcClient);
+    }
+
+    /**
+     * 查询数据库Agent列表
+     *
+     * 查询数据库Agent列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAuditAgentRequest 请求对象
+     * @return CompletableFuture<ListAuditAgentResponse>
+     */
+    public CompletableFuture<ListAuditAgentResponse> listAuditAgentAsync(ListAuditAgentRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.listAuditAgent);
+    }
+
+    /**
+     * 查询数据库Agent列表
+     *
+     * 查询数据库Agent列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAuditAgentRequest 请求对象
+     * @return AsyncInvoker<ListAuditAgentRequest, ListAuditAgentResponse>
+     */
+    public AsyncInvoker<ListAuditAgentRequest, ListAuditAgentResponse> listAuditAgentAsyncInvoker(
+        ListAuditAgentRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.listAuditAgent, hcClient);
+    }
+
+    /**
+     * 开启关闭Agent
+     *
+     * 用于开启和关闭Agent审计的功能，当开启后，开始抓取用户的访问信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchAgentRequest 请求对象
+     * @return CompletableFuture<SwitchAgentResponse>
+     */
+    public CompletableFuture<SwitchAgentResponse> switchAgentAsync(SwitchAgentRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.switchAgent);
+    }
+
+    /**
+     * 开启关闭Agent
+     *
+     * 用于开启和关闭Agent审计的功能，当开启后，开始抓取用户的访问信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchAgentRequest 请求对象
+     * @return AsyncInvoker<SwitchAgentRequest, SwitchAgentResponse>
+     */
+    public AsyncInvoker<SwitchAgentRequest, SwitchAgentResponse> switchAgentAsyncInvoker(SwitchAgentRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.switchAgent, hcClient);
+    }
+
+    /**
+     * 批量添加资源标签
+     *
+     * 批量添加资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddResourceTagRequest 请求对象
+     * @return CompletableFuture<BatchAddResourceTagResponse>
+     */
+    public CompletableFuture<BatchAddResourceTagResponse> batchAddResourceTagAsync(BatchAddResourceTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.batchAddResourceTag);
+    }
+
+    /**
+     * 批量添加资源标签
+     *
+     * 批量添加资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAddResourceTagRequest 请求对象
+     * @return AsyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse>
+     */
+    public AsyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse> batchAddResourceTagAsyncInvoker(
+        BatchAddResourceTagRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.batchAddResourceTag, hcClient);
+    }
+
+    /**
+     * 批量删除资源标签
+     *
+     * 批量删除资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteResourceTagRequest 请求对象
+     * @return CompletableFuture<BatchDeleteResourceTagResponse>
+     */
+    public CompletableFuture<BatchDeleteResourceTagResponse> batchDeleteResourceTagAsync(
+        BatchDeleteResourceTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.batchDeleteResourceTag);
+    }
+
+    /**
+     * 批量删除资源标签
+     *
+     * 批量删除资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteResourceTagRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>
+     */
+    public AsyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> batchDeleteResourceTagAsyncInvoker(
+        BatchDeleteResourceTagRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.batchDeleteResourceTag, hcClient);
+    }
+
+    /**
+     * 根据标签查询资源实例数量
+     *
+     * 根据标签查询资源实例数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourceInstanceByTagRequest 请求对象
+     * @return CompletableFuture<CountResourceInstanceByTagResponse>
+     */
+    public CompletableFuture<CountResourceInstanceByTagResponse> countResourceInstanceByTagAsync(
+        CountResourceInstanceByTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.countResourceInstanceByTag);
+    }
+
+    /**
+     * 根据标签查询资源实例数量
+     *
+     * 根据标签查询资源实例数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountResourceInstanceByTagRequest 请求对象
+     * @return AsyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse>
+     */
+    public AsyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse> countResourceInstanceByTagAsyncInvoker(
+        CountResourceInstanceByTagRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.countResourceInstanceByTag, hcClient);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询项目标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectResourceTagsRequest 请求对象
+     * @return CompletableFuture<ListProjectResourceTagsResponse>
+     */
+    public CompletableFuture<ListProjectResourceTagsResponse> listProjectResourceTagsAsync(
+        ListProjectResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.listProjectResourceTags);
+    }
+
+    /**
+     * 查询项目标签
+     *
+     * 查询项目标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectResourceTagsRequest 请求对象
+     * @return AsyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse>
+     */
+    public AsyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse> listProjectResourceTagsAsyncInvoker(
+        ListProjectResourceTagsRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.listProjectResourceTags, hcClient);
+    }
+
+    /**
+     * 根据标签查询资源实例列表
+     *
+     * 根据标签查询资源实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceInstanceByTagRequest 请求对象
+     * @return CompletableFuture<ListResourceInstanceByTagResponse>
+     */
+    public CompletableFuture<ListResourceInstanceByTagResponse> listResourceInstanceByTagAsync(
+        ListResourceInstanceByTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, DbssMeta.listResourceInstanceByTag);
+    }
+
+    /**
+     * 根据标签查询资源实例列表
+     *
+     * 根据标签查询资源实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceInstanceByTagRequest 请求对象
+     * @return AsyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse>
+     */
+    public AsyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse> listResourceInstanceByTagAsyncInvoker(
+        ListResourceInstanceByTagRequest request) {
+        return new AsyncInvoker<>(request, DbssMeta.listResourceInstanceByTag, hcClient);
     }
 
 }

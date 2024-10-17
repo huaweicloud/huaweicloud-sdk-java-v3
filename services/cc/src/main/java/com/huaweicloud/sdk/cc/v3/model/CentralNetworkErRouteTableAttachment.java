@@ -107,9 +107,9 @@ public class CentralNetworkErRouteTableAttachment {
     private String enterpriseRouterSiteCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "attached_er_table_id")
+    @JsonProperty(value = "attached_er_table_project_id")
 
-    private String attachedErTableId;
+    private String attachedErTableProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attached_er_table_region_id")
@@ -117,24 +117,24 @@ public class CentralNetworkErRouteTableAttachment {
     private String attachedErTableRegionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "attached_er_table_project_id")
-
-    private String attachedErTableProjectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "attached_er_table_site_code")
-
-    private String attachedErTableSiteCode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attached_er_id")
 
     private String attachedErId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attached_er_table_id")
+
+    private String attachedErTableId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attached_er_attachment_id")
 
     private String attachedErAttachmentId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attached_er_table_site_code")
+
+    private String attachedErTableSiteCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "approved_state")
@@ -361,7 +361,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 带宽值定义，单位Mbps。
+     * 带宽值，单位Mbps。
      * minimum: 1
      * maximum: 999999
      * @return bandwidthSize
@@ -476,47 +476,13 @@ public class CentralNetworkErRouteTableAttachment {
         this.enterpriseRouterSiteCode = enterpriseRouterSiteCode;
     }
 
-    public CentralNetworkErRouteTableAttachment withAttachedErTableId(String attachedErTableId) {
-        this.attachedErTableId = attachedErTableId;
-        return this;
-    }
-
-    /**
-     * 实例ID。
-     * @return attachedErTableId
-     */
-    public String getAttachedErTableId() {
-        return attachedErTableId;
-    }
-
-    public void setAttachedErTableId(String attachedErTableId) {
-        this.attachedErTableId = attachedErTableId;
-    }
-
-    public CentralNetworkErRouteTableAttachment withAttachedErTableRegionId(String attachedErTableRegionId) {
-        this.attachedErTableRegionId = attachedErTableRegionId;
-        return this;
-    }
-
-    /**
-     * RegionID。
-     * @return attachedErTableRegionId
-     */
-    public String getAttachedErTableRegionId() {
-        return attachedErTableRegionId;
-    }
-
-    public void setAttachedErTableRegionId(String attachedErTableRegionId) {
-        this.attachedErTableRegionId = attachedErTableRegionId;
-    }
-
     public CentralNetworkErRouteTableAttachment withAttachedErTableProjectId(String attachedErTableProjectId) {
         this.attachedErTableProjectId = attachedErTableProjectId;
         return this;
     }
 
     /**
-     * 实例所属项目ID。
+     * 被挂载的企业路由器的项目ID。
      * @return attachedErTableProjectId
      */
     public String getAttachedErTableProjectId() {
@@ -527,21 +493,21 @@ public class CentralNetworkErRouteTableAttachment {
         this.attachedErTableProjectId = attachedErTableProjectId;
     }
 
-    public CentralNetworkErRouteTableAttachment withAttachedErTableSiteCode(String attachedErTableSiteCode) {
-        this.attachedErTableSiteCode = attachedErTableSiteCode;
+    public CentralNetworkErRouteTableAttachment withAttachedErTableRegionId(String attachedErTableRegionId) {
+        this.attachedErTableRegionId = attachedErTableRegionId;
         return this;
     }
 
     /**
-     * 站点编码定义
-     * @return attachedErTableSiteCode
+     * ER路由器的regionID。
+     * @return attachedErTableRegionId
      */
-    public String getAttachedErTableSiteCode() {
-        return attachedErTableSiteCode;
+    public String getAttachedErTableRegionId() {
+        return attachedErTableRegionId;
     }
 
-    public void setAttachedErTableSiteCode(String attachedErTableSiteCode) {
-        this.attachedErTableSiteCode = attachedErTableSiteCode;
+    public void setAttachedErTableRegionId(String attachedErTableRegionId) {
+        this.attachedErTableRegionId = attachedErTableRegionId;
     }
 
     public CentralNetworkErRouteTableAttachment withAttachedErId(String attachedErId) {
@@ -550,7 +516,7 @@ public class CentralNetworkErRouteTableAttachment {
     }
 
     /**
-     * 实例ID。
+     * 被挂载的企业路由器ID。
      * @return attachedErId
      */
     public String getAttachedErId() {
@@ -561,13 +527,30 @@ public class CentralNetworkErRouteTableAttachment {
         this.attachedErId = attachedErId;
     }
 
+    public CentralNetworkErRouteTableAttachment withAttachedErTableId(String attachedErTableId) {
+        this.attachedErTableId = attachedErTableId;
+        return this;
+    }
+
+    /**
+     * 被挂载的企业路由器的路由表ID。
+     * @return attachedErTableId
+     */
+    public String getAttachedErTableId() {
+        return attachedErTableId;
+    }
+
+    public void setAttachedErTableId(String attachedErTableId) {
+        this.attachedErTableId = attachedErTableId;
+    }
+
     public CentralNetworkErRouteTableAttachment withAttachedErAttachmentId(String attachedErAttachmentId) {
         this.attachedErAttachmentId = attachedErAttachmentId;
         return this;
     }
 
     /**
-     * 实例ID。
+     * 被挂载的企业路由器的连接ID。
      * @return attachedErAttachmentId
      */
     public String getAttachedErAttachmentId() {
@@ -576,6 +559,23 @@ public class CentralNetworkErRouteTableAttachment {
 
     public void setAttachedErAttachmentId(String attachedErAttachmentId) {
         this.attachedErAttachmentId = attachedErAttachmentId;
+    }
+
+    public CentralNetworkErRouteTableAttachment withAttachedErTableSiteCode(String attachedErTableSiteCode) {
+        this.attachedErTableSiteCode = attachedErTableSiteCode;
+        return this;
+    }
+
+    /**
+     * 被挂载的企业路由器的站点编码。
+     * @return attachedErTableSiteCode
+     */
+    public String getAttachedErTableSiteCode() {
+        return attachedErTableSiteCode;
+    }
+
+    public void setAttachedErTableSiteCode(String attachedErTableSiteCode) {
+        this.attachedErTableSiteCode = attachedErTableSiteCode;
     }
 
     public CentralNetworkErRouteTableAttachment withApprovedState(ApprovedStateEnum approvedState) {
@@ -653,12 +653,12 @@ public class CentralNetworkErRouteTableAttachment {
             && Objects.equals(this.enterpriseRouterAttachmentId, that.enterpriseRouterAttachmentId)
             && Objects.equals(this.enterpriseRouterTableId, that.enterpriseRouterTableId)
             && Objects.equals(this.enterpriseRouterSiteCode, that.enterpriseRouterSiteCode)
-            && Objects.equals(this.attachedErTableId, that.attachedErTableId)
-            && Objects.equals(this.attachedErTableRegionId, that.attachedErTableRegionId)
             && Objects.equals(this.attachedErTableProjectId, that.attachedErTableProjectId)
-            && Objects.equals(this.attachedErTableSiteCode, that.attachedErTableSiteCode)
+            && Objects.equals(this.attachedErTableRegionId, that.attachedErTableRegionId)
             && Objects.equals(this.attachedErId, that.attachedErId)
+            && Objects.equals(this.attachedErTableId, that.attachedErTableId)
             && Objects.equals(this.attachedErAttachmentId, that.attachedErAttachmentId)
+            && Objects.equals(this.attachedErTableSiteCode, that.attachedErTableSiteCode)
             && Objects.equals(this.approvedState, that.approvedState)
             && Objects.equals(this.hostedCloud, that.hostedCloud) && Objects.equals(this.reason, that.reason);
     }
@@ -684,12 +684,12 @@ public class CentralNetworkErRouteTableAttachment {
             enterpriseRouterAttachmentId,
             enterpriseRouterTableId,
             enterpriseRouterSiteCode,
-            attachedErTableId,
-            attachedErTableRegionId,
             attachedErTableProjectId,
-            attachedErTableSiteCode,
+            attachedErTableRegionId,
             attachedErId,
+            attachedErTableId,
             attachedErAttachmentId,
+            attachedErTableSiteCode,
             approvedState,
             hostedCloud,
             reason);
@@ -722,12 +722,12 @@ public class CentralNetworkErRouteTableAttachment {
             .append("\n");
         sb.append("    enterpriseRouterTableId: ").append(toIndentedString(enterpriseRouterTableId)).append("\n");
         sb.append("    enterpriseRouterSiteCode: ").append(toIndentedString(enterpriseRouterSiteCode)).append("\n");
-        sb.append("    attachedErTableId: ").append(toIndentedString(attachedErTableId)).append("\n");
-        sb.append("    attachedErTableRegionId: ").append(toIndentedString(attachedErTableRegionId)).append("\n");
         sb.append("    attachedErTableProjectId: ").append(toIndentedString(attachedErTableProjectId)).append("\n");
-        sb.append("    attachedErTableSiteCode: ").append(toIndentedString(attachedErTableSiteCode)).append("\n");
+        sb.append("    attachedErTableRegionId: ").append(toIndentedString(attachedErTableRegionId)).append("\n");
         sb.append("    attachedErId: ").append(toIndentedString(attachedErId)).append("\n");
+        sb.append("    attachedErTableId: ").append(toIndentedString(attachedErTableId)).append("\n");
         sb.append("    attachedErAttachmentId: ").append(toIndentedString(attachedErAttachmentId)).append("\n");
+        sb.append("    attachedErTableSiteCode: ").append(toIndentedString(attachedErTableSiteCode)).append("\n");
         sb.append("    approvedState: ").append(toIndentedString(approvedState)).append("\n");
         sb.append("    hostedCloud: ").append(toIndentedString(hostedCloud)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");

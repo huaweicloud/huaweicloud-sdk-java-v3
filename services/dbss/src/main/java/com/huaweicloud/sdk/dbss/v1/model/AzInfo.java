@@ -92,7 +92,7 @@ public class AzInfo {
     }
 
     /**
-     * 可用区别名
+     * 可用区中文别名
      * @return alias
      */
     public String getAlias() {
@@ -109,7 +109,7 @@ public class AzInfo {
     }
 
     /**
-     * 可用区别名英文
+     * 可用区英文别名
      * @return aliasUs
      */
     public String getAliasUs() {

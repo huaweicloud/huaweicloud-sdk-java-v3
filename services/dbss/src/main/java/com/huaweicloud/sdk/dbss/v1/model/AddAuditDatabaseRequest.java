@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.deh.v1.model;
+package com.huaweicloud.sdk.dbss.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,21 +9,43 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class CreateDedicatedHostRequest {
+public class AddAuditDatabaseRequest {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ReqAllocateDeh body;
+    private CreateDatabaseRequest body;
 
-    public CreateDedicatedHostRequest withBody(ReqAllocateDeh body) {
+    public AddAuditDatabaseRequest withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 实例ID。可在查询实例列表接口的ID字段获取。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public AddAuditDatabaseRequest withBody(CreateDatabaseRequest body) {
         this.body = body;
         return this;
     }
 
-    public CreateDedicatedHostRequest withBody(Consumer<ReqAllocateDeh> bodySetter) {
+    public AddAuditDatabaseRequest withBody(Consumer<CreateDatabaseRequest> bodySetter) {
         if (this.body == null) {
-            this.body = new ReqAllocateDeh();
+            this.body = new CreateDatabaseRequest();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +56,11 @@ public class CreateDedicatedHostRequest {
      * Get body
      * @return body
      */
-    public ReqAllocateDeh getBody() {
+    public CreateDatabaseRequest getBody() {
         return body;
     }
 
-    public void setBody(ReqAllocateDeh body) {
+    public void setBody(CreateDatabaseRequest body) {
         this.body = body;
     }
 
@@ -50,19 +72,20 @@ public class CreateDedicatedHostRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDedicatedHostRequest that = (CreateDedicatedHostRequest) obj;
-        return Objects.equals(this.body, that.body);
+        AddAuditDatabaseRequest that = (AddAuditDatabaseRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(instanceId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateDedicatedHostRequest {\n");
+        sb.append("class AddAuditDatabaseRequest {\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

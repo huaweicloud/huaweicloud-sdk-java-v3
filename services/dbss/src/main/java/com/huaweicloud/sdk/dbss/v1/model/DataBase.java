@@ -78,6 +78,31 @@ public class DataBase {
 
     private String dbClassification;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rds_audit_switch_mismatch")
+
+    private Boolean rdsAuditSwitchMismatch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rds_id")
+
+    private String rdsId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rds_obj_info")
+
+    private String rdsObjInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dws_obj_info")
+
+    private String dwsObjInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clouddb_obj_info")
+
+    private String clouddbObjInfo;
+
     public DataBase withId(String id) {
         this.id = id;
         return this;
@@ -118,7 +143,7 @@ public class DataBase {
     }
 
     /**
-     * 添加的数据库类型： 枚举值：  MYSQL  ORACLE  POSTGRESQL  SQLSERVER  DAMENG  TAURUS  DWS  KINGBASE  GAUSSDBOPENGAUSS   GREENPLUM   HIGHGO   SHENTONG   GBASE8A   GBASE8S   GBASEXDM   MONGODB   DDS
+     * 添加的数据库类型： - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - GAUSSDBOPENGAUSS - GREENPLUM - HIGHGO - SHENTONG - GBASE8A - GBASE8S - GBASEXDM - MONGODB - DDS
      * @return type
      */
     public String getType() {
@@ -152,7 +177,7 @@ public class DataBase {
     }
 
     /**
-     * 数据库字符集
+     * 数据库字符集 - GBK - UTF8
      * @return charset
      */
     public String getCharset() {
@@ -220,7 +245,7 @@ public class DataBase {
     }
 
     /**
-     * 开启状态（1：开启，0：关闭）
+     * 实例状态 - ON :开启 - OFF : 关闭
      * @return status
      */
     public String getStatus() {
@@ -254,7 +279,7 @@ public class DataBase {
     }
 
     /**
-     * 数据库的运行状态 枚举值：  ACTIVE  SHUTOFF  ERROR
+     * 数据库的运行状态 - ACTIVE - SHUTOFF - ERROR
      * @return auditStatus
      */
     public String getAuditStatus() {
@@ -304,7 +329,7 @@ public class DataBase {
     }
 
     /**
-     * 数据库分类，取值范围： RDS（表示RDS数据库）和 ECS（自建数据库）
+     * 数据库分类 - RDS: 表示RDS数据库 - ECS:自建数据库
      * @return dbClassification
      */
     public String getDbClassification() {
@@ -313,6 +338,91 @@ public class DataBase {
 
     public void setDbClassification(String dbClassification) {
         this.dbClassification = dbClassification;
+    }
+
+    public DataBase withRdsAuditSwitchMismatch(Boolean rdsAuditSwitchMismatch) {
+        this.rdsAuditSwitchMismatch = rdsAuditSwitchMismatch;
+        return this;
+    }
+
+    /**
+     * rds实例审计开关状态不匹配。当数据库审计开启且rds侧日志上传开关关闭时该字段为true。
+     * @return rdsAuditSwitchMismatch
+     */
+    public Boolean getRdsAuditSwitchMismatch() {
+        return rdsAuditSwitchMismatch;
+    }
+
+    public void setRdsAuditSwitchMismatch(Boolean rdsAuditSwitchMismatch) {
+        this.rdsAuditSwitchMismatch = rdsAuditSwitchMismatch;
+    }
+
+    public DataBase withRdsId(String rdsId) {
+        this.rdsId = rdsId;
+        return this;
+    }
+
+    /**
+     * RDS数据库的ID。
+     * @return rdsId
+     */
+    public String getRdsId() {
+        return rdsId;
+    }
+
+    public void setRdsId(String rdsId) {
+        this.rdsId = rdsId;
+    }
+
+    public DataBase withRdsObjInfo(String rdsObjInfo) {
+        this.rdsObjInfo = rdsObjInfo;
+        return this;
+    }
+
+    /**
+     * RDS数据库信息。
+     * @return rdsObjInfo
+     */
+    public String getRdsObjInfo() {
+        return rdsObjInfo;
+    }
+
+    public void setRdsObjInfo(String rdsObjInfo) {
+        this.rdsObjInfo = rdsObjInfo;
+    }
+
+    public DataBase withDwsObjInfo(String dwsObjInfo) {
+        this.dwsObjInfo = dwsObjInfo;
+        return this;
+    }
+
+    /**
+     * DWS数据库信息。
+     * @return dwsObjInfo
+     */
+    public String getDwsObjInfo() {
+        return dwsObjInfo;
+    }
+
+    public void setDwsObjInfo(String dwsObjInfo) {
+        this.dwsObjInfo = dwsObjInfo;
+    }
+
+    public DataBase withClouddbObjInfo(String clouddbObjInfo) {
+        this.clouddbObjInfo = clouddbObjInfo;
+        return this;
+    }
+
+    /**
+     * 云数据库信息，该字段已废弃。
+     * @return clouddbObjInfo
+     */
+    public String getClouddbObjInfo() {
+        return clouddbObjInfo;
+    }
+
+    public void setClouddbObjInfo(String clouddbObjInfo) {
+        this.clouddbObjInfo = clouddbObjInfo;
     }
 
     @Override
@@ -330,7 +440,11 @@ public class DataBase {
             && Objects.equals(this.port, that.port) && Objects.equals(this.os, that.os)
             && Objects.equals(this.status, that.status) && Objects.equals(this.instanceName, that.instanceName)
             && Objects.equals(this.auditStatus, that.auditStatus) && Objects.equals(this.agentUrl, that.agentUrl)
-            && Objects.equals(this.dbClassification, that.dbClassification);
+            && Objects.equals(this.dbClassification, that.dbClassification)
+            && Objects.equals(this.rdsAuditSwitchMismatch, that.rdsAuditSwitchMismatch)
+            && Objects.equals(this.rdsId, that.rdsId) && Objects.equals(this.rdsObjInfo, that.rdsObjInfo)
+            && Objects.equals(this.dwsObjInfo, that.dwsObjInfo)
+            && Objects.equals(this.clouddbObjInfo, that.clouddbObjInfo);
     }
 
     @Override
@@ -347,7 +461,12 @@ public class DataBase {
             instanceName,
             auditStatus,
             agentUrl,
-            dbClassification);
+            dbClassification,
+            rdsAuditSwitchMismatch,
+            rdsId,
+            rdsObjInfo,
+            dwsObjInfo,
+            clouddbObjInfo);
     }
 
     @Override
@@ -367,6 +486,11 @@ public class DataBase {
         sb.append("    auditStatus: ").append(toIndentedString(auditStatus)).append("\n");
         sb.append("    agentUrl: ").append(toIndentedString(agentUrl)).append("\n");
         sb.append("    dbClassification: ").append(toIndentedString(dbClassification)).append("\n");
+        sb.append("    rdsAuditSwitchMismatch: ").append(toIndentedString(rdsAuditSwitchMismatch)).append("\n");
+        sb.append("    rdsId: ").append(toIndentedString(rdsId)).append("\n");
+        sb.append("    rdsObjInfo: ").append(toIndentedString(rdsObjInfo)).append("\n");
+        sb.append("    dwsObjInfo: ").append(toIndentedString(dwsObjInfo)).append("\n");
+        sb.append("    clouddbObjInfo: ").append(toIndentedString(clouddbObjInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

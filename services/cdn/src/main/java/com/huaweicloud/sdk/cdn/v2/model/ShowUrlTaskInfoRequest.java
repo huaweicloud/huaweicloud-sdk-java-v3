@@ -56,7 +56,7 @@ public class ShowUrlTaskInfoRequest {
     }
 
     /**
-     * 起始时间戳（毫秒），默认当天00:00。
+     * 查询起始时间戳（毫秒），不传默认当天00:00，需与结束时间戳同时指定，时间跨度不能超过24小时。
      * @return startTime
      */
     public Long getStartTime() {
@@ -73,7 +73,7 @@ public class ShowUrlTaskInfoRequest {
     }
 
     /**
-     * 结束时间戳（毫秒），默认次日00:00。
+     * 查询结束时间戳（毫秒），不传默认次日00:00，需与开始时间戳同时指定，时间跨度不能超过24小时。
      * @return endTime
      */
     public Long getEndTime() {

@@ -48,6 +48,11 @@ public class EcsSpecificationBean {
 
     private Integer vcpus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "az_type")
+
+    private String azType;
+
     public EcsSpecificationBean withAzs(List<String> azs) {
         this.azs = azs;
         return this;
@@ -70,7 +75,7 @@ public class EcsSpecificationBean {
     }
 
     /**
-     * 可用区集合
+     * ECS规格所在的可用区集合
      * @return azs
      */
     public List<String> getAzs() {
@@ -87,7 +92,7 @@ public class EcsSpecificationBean {
     }
 
     /**
-     * ID
+     * 规格ID
      * @return id
      */
     public String getId() {
@@ -104,7 +109,7 @@ public class EcsSpecificationBean {
     }
 
     /**
-     * 等级
+     * 规格等级，支持的等级以局点配置为准。 - entry:入门版 - low:基础版 - medium:专业版 - high:高级版
      * @return level
      */
     public String getLevel() {
@@ -121,7 +126,7 @@ public class EcsSpecificationBean {
     }
 
     /**
-     * 名称
+     * 规格名称
      * @return name
      */
     public String getName() {
@@ -138,7 +143,7 @@ public class EcsSpecificationBean {
     }
 
     /**
-     * 代理
+     * 规格可添加的数据库数量
      * @return proxy
      */
     public Integer getProxy() {
@@ -183,6 +188,23 @@ public class EcsSpecificationBean {
         this.vcpus = vcpus;
     }
 
+    public EcsSpecificationBean withAzType(String azType) {
+        this.azType = azType;
+        return this;
+    }
+
+    /**
+     * 可用区类型 - DEDICATED - DEC - EDGE
+     * @return azType
+     */
+    public String getAzType() {
+        return azType;
+    }
+
+    public void setAzType(String azType) {
+        this.azType = azType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -195,12 +217,12 @@ public class EcsSpecificationBean {
         return Objects.equals(this.azs, that.azs) && Objects.equals(this.id, that.id)
             && Objects.equals(this.level, that.level) && Objects.equals(this.name, that.name)
             && Objects.equals(this.proxy, that.proxy) && Objects.equals(this.ram, that.ram)
-            && Objects.equals(this.vcpus, that.vcpus);
+            && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.azType, that.azType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(azs, id, level, name, proxy, ram, vcpus);
+        return Objects.hash(azs, id, level, name, proxy, ram, vcpus, azType);
     }
 
     @Override
@@ -214,6 +236,7 @@ public class EcsSpecificationBean {
         sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");
+        sb.append("    azType: ").append(toIndentedString(azType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

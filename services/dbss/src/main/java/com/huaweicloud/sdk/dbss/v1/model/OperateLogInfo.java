@@ -26,14 +26,14 @@ public class OperateLogInfo {
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "function")
-
-    private String function;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
     private String action;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "function")
+
+    private String function;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -73,7 +73,7 @@ public class OperateLogInfo {
     }
 
     /**
-     * 操作日志用户
+     * 操作日志用户名
      * @return user
      */
     public String getUser() {
@@ -90,7 +90,7 @@ public class OperateLogInfo {
     }
 
     /**
-     * 该条记录发生的时间，格式为时间戳
+     * 该条记录发生的时间，格式为时间戳。
      * @return time
      */
     public String getTime() {
@@ -99,6 +99,23 @@ public class OperateLogInfo {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public OperateLogInfo withAction(String action) {
+        this.action = action;
+        return this;
+    }
+
+    /**
+     * 该条记录的操作类型 - create：创建 - update：更新 - delete：删除 - download: 下载
+     * @return action
+     */
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
     }
 
     public OperateLogInfo withFunction(String function) {
@@ -116,23 +133,6 @@ public class OperateLogInfo {
 
     public void setFunction(String function) {
         this.function = function;
-    }
-
-    public OperateLogInfo withAction(String action) {
-        this.action = action;
-        return this;
-    }
-
-    /**
-     * 该条记录的操作类型  create：创建  update：更新  operate：操作（开关）  delete：删除
-     * @return action
-     */
-    public String getAction() {
-        return action;
-    }
-
-    public void setAction(String action) {
-        this.action = action;
     }
 
     public OperateLogInfo withName(String name) {
@@ -175,7 +175,7 @@ public class OperateLogInfo {
     }
 
     /**
-     * 该条记录对应用户执行的结果  success表示成功  fail表示失败
+     * 该条记录对应用户执行的结果 - success: 成功 - fail: 失败
      * @return result
      */
     public String getResult() {
@@ -196,14 +196,14 @@ public class OperateLogInfo {
         }
         OperateLogInfo that = (OperateLogInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.user, that.user)
-            && Objects.equals(this.time, that.time) && Objects.equals(this.function, that.function)
-            && Objects.equals(this.action, that.action) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.time, that.time) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.function, that.function) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.result, that.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, user, time, function, action, name, description, result);
+        return Objects.hash(id, user, time, action, function, name, description, result);
     }
 
     @Override
@@ -213,8 +213,8 @@ public class OperateLogInfo {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
-        sb.append("    function: ").append(toIndentedString(function)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    function: ").append(toIndentedString(function)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");

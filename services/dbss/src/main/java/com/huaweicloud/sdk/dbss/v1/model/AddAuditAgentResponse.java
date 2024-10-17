@@ -1,35 +1,36 @@
-package com.huaweicloud.sdk.deh.v1.model;
+package com.huaweicloud.sdk.dbss.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * Request Object
+ * Response Object
  */
-public class DeleteDedicatedHostRequest {
+public class AddAuditAgentResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dedicated_host_id")
+    @JsonProperty(value = "result")
 
-    private String dedicatedHostId;
+    private String result;
 
-    public DeleteDedicatedHostRequest withDedicatedHostId(String dedicatedHostId) {
-        this.dedicatedHostId = dedicatedHostId;
+    public AddAuditAgentResponse withResult(String result) {
+        this.result = result;
         return this;
     }
 
     /**
-     * 专属主机ID。
-     * @return dedicatedHostId
+     * 响应状态
+     * @return result
      */
-    public String getDedicatedHostId() {
-        return dedicatedHostId;
+    public String getResult() {
+        return result;
     }
 
-    public void setDedicatedHostId(String dedicatedHostId) {
-        this.dedicatedHostId = dedicatedHostId;
+    public void setResult(String result) {
+        this.result = result;
     }
 
     @Override
@@ -40,20 +41,20 @@ public class DeleteDedicatedHostRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDedicatedHostRequest that = (DeleteDedicatedHostRequest) obj;
-        return Objects.equals(this.dedicatedHostId, that.dedicatedHostId);
+        AddAuditAgentResponse that = (AddAuditAgentResponse) obj;
+        return Objects.equals(this.result, that.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dedicatedHostId);
+        return Objects.hash(result);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class DeleteDedicatedHostRequest {\n");
-        sb.append("    dedicatedHostId: ").append(toIndentedString(dedicatedHostId)).append("\n");
+        sb.append("class AddAuditAgentResponse {\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("}");
         return sb.toString();
     }

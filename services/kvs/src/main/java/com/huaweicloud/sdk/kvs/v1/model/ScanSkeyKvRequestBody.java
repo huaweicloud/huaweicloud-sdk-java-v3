@@ -56,6 +56,12 @@ public class ScanSkeyKvRequestBody {
 
     private ConditionExpression filterExpression;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_count_only")
+    @BsonProperty(value = "return_count_only")
+
+    private Boolean returnCountOnly;
+
     public ScanSkeyKvRequestBody withTableName(String tableName) {
         this.tableName = tableName;
         return this;
@@ -185,6 +191,23 @@ public class ScanSkeyKvRequestBody {
         this.filterExpression = filterExpression;
     }
 
+    public ScanSkeyKvRequestBody withReturnCountOnly(Boolean returnCountOnly) {
+        this.returnCountOnly = returnCountOnly;
+        return this;
+    }
+
+    /**
+     * 返回查询条件对应的KV总数. - 当KV总数小于limit条件时，返回KV查询结果和KV总数。 - 当KV总数多于limit条件时，只返回KV总数。
+     * @return returnCountOnly
+     */
+    public Boolean getReturnCountOnly() {
+        return returnCountOnly;
+    }
+
+    public void setReturnCountOnly(Boolean returnCountOnly) {
+        this.returnCountOnly = returnCountOnly;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -197,12 +220,20 @@ public class ScanSkeyKvRequestBody {
         return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.hintIndexName, that.hintIndexName)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.shardKey, that.shardKey)
             && Objects.equals(this.startSortKey, that.startSortKey) && Objects.equals(this.endSortKey, that.endSortKey)
-            && Objects.equals(this.filterExpression, that.filterExpression);
+            && Objects.equals(this.filterExpression, that.filterExpression)
+            && Objects.equals(this.returnCountOnly, that.returnCountOnly);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tableName, hintIndexName, limit, shardKey, startSortKey, endSortKey, filterExpression);
+        return Objects.hash(tableName,
+            hintIndexName,
+            limit,
+            shardKey,
+            startSortKey,
+            endSortKey,
+            filterExpression,
+            returnCountOnly);
     }
 
     @Override
@@ -216,6 +247,7 @@ public class ScanSkeyKvRequestBody {
         sb.append("    startSortKey: ").append(toIndentedString(startSortKey)).append("\n");
         sb.append("    endSortKey: ").append(toIndentedString(endSortKey)).append("\n");
         sb.append("    filterExpression: ").append(toIndentedString(filterExpression)).append("\n");
+        sb.append("    returnCountOnly: ").append(toIndentedString(returnCountOnly)).append("\n");
         sb.append("}");
         return sb.toString();
     }

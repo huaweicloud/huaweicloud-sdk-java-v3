@@ -24,6 +24,11 @@ public class SlowSqlTemplate {
     private String sqlSample;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sql_sample_user")
+
+    private String sqlSampleUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "db_names")
 
     private List<String> dbNames = null;
@@ -105,6 +110,23 @@ public class SlowSqlTemplate {
 
     public void setSqlSample(String sqlSample) {
         this.sqlSample = sqlSample;
+    }
+
+    public SlowSqlTemplate withSqlSampleUser(String sqlSampleUser) {
+        this.sqlSampleUser = sqlSampleUser;
+        return this;
+    }
+
+    /**
+     * SQL样本执行用户。
+     * @return sqlSampleUser
+     */
+    public String getSqlSampleUser() {
+        return sqlSampleUser;
+    }
+
+    public void setSqlSampleUser(String sqlSampleUser) {
+        this.sqlSampleUser = sqlSampleUser;
     }
 
     public SlowSqlTemplate withDbNames(List<String> dbNames) {
@@ -303,7 +325,8 @@ public class SlowSqlTemplate {
         }
         SlowSqlTemplate that = (SlowSqlTemplate) obj;
         return Objects.equals(this.sqlTemplate, that.sqlTemplate) && Objects.equals(this.sqlSample, that.sqlSample)
-            && Objects.equals(this.dbNames, that.dbNames) && Objects.equals(this.executeCount, that.executeCount)
+            && Objects.equals(this.sqlSampleUser, that.sqlSampleUser) && Objects.equals(this.dbNames, that.dbNames)
+            && Objects.equals(this.executeCount, that.executeCount)
             && Objects.equals(this.avgExecuteTime, that.avgExecuteTime)
             && Objects.equals(this.maxExecuteTime, that.maxExecuteTime)
             && Objects.equals(this.avgLockWaitTime, that.avgLockWaitTime)
@@ -317,6 +340,7 @@ public class SlowSqlTemplate {
     public int hashCode() {
         return Objects.hash(sqlTemplate,
             sqlSample,
+            sqlSampleUser,
             dbNames,
             executeCount,
             avgExecuteTime,
@@ -335,6 +359,7 @@ public class SlowSqlTemplate {
         sb.append("class SlowSqlTemplate {\n");
         sb.append("    sqlTemplate: ").append(toIndentedString(sqlTemplate)).append("\n");
         sb.append("    sqlSample: ").append(toIndentedString(sqlSample)).append("\n");
+        sb.append("    sqlSampleUser: ").append(toIndentedString(sqlSampleUser)).append("\n");
         sb.append("    dbNames: ").append(toIndentedString(dbNames)).append("\n");
         sb.append("    executeCount: ").append(toIndentedString(executeCount)).append("\n");
         sb.append("    avgExecuteTime: ").append(toIndentedString(avgExecuteTime)).append("\n");

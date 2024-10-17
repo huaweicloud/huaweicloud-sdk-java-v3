@@ -1176,6 +1176,11 @@ public class GslMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListSimPoolsRequest::getAllBillingCycle, ListSimPoolsRequest::setAllBillingCycle));
+        builder.<List<Integer>>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSimPoolsRequest::getStatus, ListSimPoolsRequest::setStatus));
 
         // response
 

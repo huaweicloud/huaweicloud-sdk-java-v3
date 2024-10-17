@@ -26,7 +26,7 @@ public class ResourceInstanceTagRequestMatches {
     }
 
     /**
-     * 键
+     * 键，目前仅支持：resource_name
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class ResourceInstanceTagRequestMatches {
     }
 
     /**
-     * 值
+     * 值，需要匹配的资源名称
      * @return value
      */
     public String getValue() {

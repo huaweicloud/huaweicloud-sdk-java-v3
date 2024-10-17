@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -21,15 +26,167 @@ public class OperateLogGetRequest {
 
     private String userName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "operate_name")
+    /**
+     * 动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE
+     */
+    public static final class ActionEnum {
 
-    private String operateName;
+        /**
+         * Enum CREATE for value: "CREATE"
+         */
+        public static final ActionEnum CREATE = new ActionEnum("CREATE");
+
+        /**
+         * Enum DELETE for value: "DELETE"
+         */
+        public static final ActionEnum DELETE = new ActionEnum("DELETE");
+
+        /**
+         * Enum DOWNLOAD for value: "DOWNLOAD"
+         */
+        public static final ActionEnum DOWNLOAD = new ActionEnum("DOWNLOAD");
+
+        /**
+         * Enum UPDATE for value: "UPDATE"
+         */
+        public static final ActionEnum UPDATE = new ActionEnum("UPDATE");
+
+        private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ActionEnum> createStaticFields() {
+            Map<String, ActionEnum> map = new HashMap<>();
+            map.put("CREATE", CREATE);
+            map.put("DELETE", DELETE);
+            map.put("DOWNLOAD", DOWNLOAD);
+            map.put("UPDATE", UPDATE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ActionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ActionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
+        }
+
+        public static ActionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ActionEnum) {
+                return this.value.equals(((ActionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action")
+
+    private ActionEnum action;
+
+    /**
+     * 执行结果 - success - fail
+     */
+    public static final class ResultEnum {
+
+        /**
+         * Enum SUCCESS for value: "success"
+         */
+        public static final ResultEnum SUCCESS = new ResultEnum("success");
+
+        /**
+         * Enum FAIL for value: "fail"
+         */
+        public static final ResultEnum FAIL = new ResultEnum("fail");
+
+        private static final Map<String, ResultEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ResultEnum> createStaticFields() {
+            Map<String, ResultEnum> map = new HashMap<>();
+            map.put("success", SUCCESS);
+            map.put("fail", FAIL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ResultEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ResultEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResultEnum(value));
+        }
+
+        public static ResultEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ResultEnum) {
+                return this.value.equals(((ResultEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private String result;
+    private ResultEnum result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
@@ -73,7 +230,7 @@ public class OperateLogGetRequest {
     }
 
     /**
-     * 筛选角色用户获取操作日志
+     * 操作日志用户名
      * @return userName
      */
     public String getUserName() {
@@ -84,37 +241,37 @@ public class OperateLogGetRequest {
         this.userName = userName;
     }
 
-    public OperateLogGetRequest withOperateName(String operateName) {
-        this.operateName = operateName;
+    public OperateLogGetRequest withAction(ActionEnum action) {
+        this.action = action;
         return this;
     }
 
     /**
-     * 筛选操作对象名称获取操作日志
-     * @return operateName
+     * 动作名称 - CREATE - DELETE - DOWNLOAD - UPDATE
+     * @return action
      */
-    public String getOperateName() {
-        return operateName;
+    public ActionEnum getAction() {
+        return action;
     }
 
-    public void setOperateName(String operateName) {
-        this.operateName = operateName;
+    public void setAction(ActionEnum action) {
+        this.action = action;
     }
 
-    public OperateLogGetRequest withResult(String result) {
+    public OperateLogGetRequest withResult(ResultEnum result) {
         this.result = result;
         return this;
     }
 
     /**
-     * 根据执行结果获取操作日志 [success, fail]
+     * 执行结果 - success - fail
      * @return result
      */
-    public String getResult() {
+    public ResultEnum getResult() {
         return result;
     }
 
-    public void setResult(String result) {
+    public void setResult(ResultEnum result) {
         this.result = result;
     }
 
@@ -162,13 +319,13 @@ public class OperateLogGetRequest {
         }
         OperateLogGetRequest that = (OperateLogGetRequest) obj;
         return Objects.equals(this.time, that.time) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.operateName, that.operateName) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.result, that.result)
             && Objects.equals(this.page, that.page) && Objects.equals(this.size, that.size);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, userName, operateName, result, page, size);
+        return Objects.hash(time, userName, action, result, page, size);
     }
 
     @Override
@@ -177,7 +334,7 @@ public class OperateLogGetRequest {
         sb.append("class OperateLogGetRequest {\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
-        sb.append("    operateName: ").append(toIndentedString(operateName)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");

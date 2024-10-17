@@ -62,7 +62,7 @@ public class InterRegionBandwidth {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth")
 
-    private Integer bandwidth;
+    private Long bandwidth;
 
     public InterRegionBandwidth withId(String id) {
         this.id = id;
@@ -233,22 +233,22 @@ public class InterRegionBandwidth {
         this.interRegions = interRegions;
     }
 
-    public InterRegionBandwidth withBandwidth(Integer bandwidth) {
+    public InterRegionBandwidth withBandwidth(Long bandwidth) {
         this.bandwidth = bandwidth;
         return this;
     }
 
     /**
-     * 域间带宽的值。
+     * 带宽值，单位Mbps。
      * minimum: 1
      * maximum: 999999
      * @return bandwidth
      */
-    public Integer getBandwidth() {
+    public Long getBandwidth() {
         return bandwidth;
     }
 
-    public void setBandwidth(Integer bandwidth) {
+    public void setBandwidth(Long bandwidth) {
         this.bandwidth = bandwidth;
     }
 

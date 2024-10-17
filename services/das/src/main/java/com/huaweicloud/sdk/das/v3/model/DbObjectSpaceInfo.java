@@ -116,6 +116,16 @@ public class DbObjectSpaceInfo {
     private Long indexSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "free_size")
+
+    private Long freeSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "free_rate")
+
+    private Double freeRate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "estimated_rows")
 
     private Long estimatedRows;
@@ -222,6 +232,40 @@ public class DbObjectSpaceInfo {
         this.indexSize = indexSize;
     }
 
+    public DbObjectSpaceInfo withFreeSize(Long freeSize) {
+        this.freeSize = freeSize;
+        return this;
+    }
+
+    /**
+     * 碎片空间，以字节为单位
+     * @return freeSize
+     */
+    public Long getFreeSize() {
+        return freeSize;
+    }
+
+    public void setFreeSize(Long freeSize) {
+        this.freeSize = freeSize;
+    }
+
+    public DbObjectSpaceInfo withFreeRate(Double freeRate) {
+        this.freeRate = freeRate;
+        return this;
+    }
+
+    /**
+     * 碎片率
+     * @return freeRate
+     */
+    public Double getFreeRate() {
+        return freeRate;
+    }
+
+    public void setFreeRate(Double freeRate) {
+        this.freeRate = freeRate;
+    }
+
     public DbObjectSpaceInfo withEstimatedRows(Long estimatedRows) {
         this.estimatedRows = estimatedRows;
         return this;
@@ -251,12 +295,14 @@ public class DbObjectSpaceInfo {
         return Objects.equals(this.objectType, that.objectType) && Objects.equals(this.objectName, that.objectName)
             && Objects.equals(this.objectId, that.objectId) && Objects.equals(this.usedSize, that.usedSize)
             && Objects.equals(this.dataSize, that.dataSize) && Objects.equals(this.indexSize, that.indexSize)
+            && Objects.equals(this.freeSize, that.freeSize) && Objects.equals(this.freeRate, that.freeRate)
             && Objects.equals(this.estimatedRows, that.estimatedRows);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectType, objectName, objectId, usedSize, dataSize, indexSize, estimatedRows);
+        return Objects
+            .hash(objectType, objectName, objectId, usedSize, dataSize, indexSize, freeSize, freeRate, estimatedRows);
     }
 
     @Override
@@ -269,6 +315,8 @@ public class DbObjectSpaceInfo {
         sb.append("    usedSize: ").append(toIndentedString(usedSize)).append("\n");
         sb.append("    dataSize: ").append(toIndentedString(dataSize)).append("\n");
         sb.append("    indexSize: ").append(toIndentedString(indexSize)).append("\n");
+        sb.append("    freeSize: ").append(toIndentedString(freeSize)).append("\n");
+        sb.append("    freeRate: ").append(toIndentedString(freeRate)).append("\n");
         sb.append("    estimatedRows: ").append(toIndentedString(estimatedRows)).append("\n");
         sb.append("}");
         return sb.toString();

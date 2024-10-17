@@ -16,19 +16,19 @@ public class ResourceTagRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
-    private List<KeyValueBean> tags = null;
+    private List<ResourceTagRequestTags> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sys_tags")
 
-    private List<KeyValueBean> sysTags = null;
+    private List<ResourceTagRequestTags> sysTags = null;
 
-    public ResourceTagRequest withTags(List<KeyValueBean> tags) {
+    public ResourceTagRequest withTags(List<ResourceTagRequestTags> tags) {
         this.tags = tags;
         return this;
     }
 
-    public ResourceTagRequest addTagsItem(KeyValueBean tagsItem) {
+    public ResourceTagRequest addTagsItem(ResourceTagRequestTags tagsItem) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class ResourceTagRequest {
         return this;
     }
 
-    public ResourceTagRequest withTags(Consumer<List<KeyValueBean>> tagsSetter) {
+    public ResourceTagRequest withTags(Consumer<List<ResourceTagRequestTags>> tagsSetter) {
         if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
@@ -48,20 +48,20 @@ public class ResourceTagRequest {
      * 标签列表 租户权限时该字段必选，op_service权限时和sys_tags二选一
      * @return tags
      */
-    public List<KeyValueBean> getTags() {
+    public List<ResourceTagRequestTags> getTags() {
         return tags;
     }
 
-    public void setTags(List<KeyValueBean> tags) {
+    public void setTags(List<ResourceTagRequestTags> tags) {
         this.tags = tags;
     }
 
-    public ResourceTagRequest withSysTags(List<KeyValueBean> sysTags) {
+    public ResourceTagRequest withSysTags(List<ResourceTagRequestTags> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
-    public ResourceTagRequest addSysTagsItem(KeyValueBean sysTagsItem) {
+    public ResourceTagRequest addSysTagsItem(ResourceTagRequestTags sysTagsItem) {
         if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
@@ -69,7 +69,7 @@ public class ResourceTagRequest {
         return this;
     }
 
-    public ResourceTagRequest withSysTags(Consumer<List<KeyValueBean>> sysTagsSetter) {
+    public ResourceTagRequest withSysTags(Consumer<List<ResourceTagRequestTags>> sysTagsSetter) {
         if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
@@ -81,11 +81,11 @@ public class ResourceTagRequest {
      * 系统标签列表 op_service权限可以访问，和tags二选一。 目前TMS调用时只包含一个resource_tag结构体 ，key固定为：_sys_enterprise_project_id value是UUID或0,value为0表示默认企业项目
      * @return sysTags
      */
-    public List<KeyValueBean> getSysTags() {
+    public List<ResourceTagRequestTags> getSysTags() {
         return sysTags;
     }
 
-    public void setSysTags(List<KeyValueBean> sysTags) {
+    public void setSysTags(List<ResourceTagRequestTags> sysTags) {
         this.sysTags = sysTags;
     }
 
