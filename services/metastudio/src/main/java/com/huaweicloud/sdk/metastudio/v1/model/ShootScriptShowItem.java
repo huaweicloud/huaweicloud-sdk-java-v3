@@ -24,7 +24,12 @@ public class ShootScriptShowItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subtitle_file_info")
 
-    private SubtitleFileInfo subtitleFileInfo;
+    private SubtitleFiles subtitleFileInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "preview_info")
+
+    private PreviewInfo previewInfo;
 
     public ShootScriptShowItem withSequenceNo(Integer sequenceNo) {
         this.sequenceNo = sequenceNo;
@@ -71,14 +76,14 @@ public class ShootScriptShowItem {
         this.shootScript = shootScript;
     }
 
-    public ShootScriptShowItem withSubtitleFileInfo(SubtitleFileInfo subtitleFileInfo) {
+    public ShootScriptShowItem withSubtitleFileInfo(SubtitleFiles subtitleFileInfo) {
         this.subtitleFileInfo = subtitleFileInfo;
         return this;
     }
 
-    public ShootScriptShowItem withSubtitleFileInfo(Consumer<SubtitleFileInfo> subtitleFileInfoSetter) {
+    public ShootScriptShowItem withSubtitleFileInfo(Consumer<SubtitleFiles> subtitleFileInfoSetter) {
         if (this.subtitleFileInfo == null) {
-            this.subtitleFileInfo = new SubtitleFileInfo();
+            this.subtitleFileInfo = new SubtitleFiles();
             subtitleFileInfoSetter.accept(this.subtitleFileInfo);
         }
 
@@ -89,12 +94,38 @@ public class ShootScriptShowItem {
      * Get subtitleFileInfo
      * @return subtitleFileInfo
      */
-    public SubtitleFileInfo getSubtitleFileInfo() {
+    public SubtitleFiles getSubtitleFileInfo() {
         return subtitleFileInfo;
     }
 
-    public void setSubtitleFileInfo(SubtitleFileInfo subtitleFileInfo) {
+    public void setSubtitleFileInfo(SubtitleFiles subtitleFileInfo) {
         this.subtitleFileInfo = subtitleFileInfo;
+    }
+
+    public ShootScriptShowItem withPreviewInfo(PreviewInfo previewInfo) {
+        this.previewInfo = previewInfo;
+        return this;
+    }
+
+    public ShootScriptShowItem withPreviewInfo(Consumer<PreviewInfo> previewInfoSetter) {
+        if (this.previewInfo == null) {
+            this.previewInfo = new PreviewInfo();
+            previewInfoSetter.accept(this.previewInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get previewInfo
+     * @return previewInfo
+     */
+    public PreviewInfo getPreviewInfo() {
+        return previewInfo;
+    }
+
+    public void setPreviewInfo(PreviewInfo previewInfo) {
+        this.previewInfo = previewInfo;
     }
 
     @Override
@@ -107,12 +138,13 @@ public class ShootScriptShowItem {
         }
         ShootScriptShowItem that = (ShootScriptShowItem) obj;
         return Objects.equals(this.sequenceNo, that.sequenceNo) && Objects.equals(this.shootScript, that.shootScript)
-            && Objects.equals(this.subtitleFileInfo, that.subtitleFileInfo);
+            && Objects.equals(this.subtitleFileInfo, that.subtitleFileInfo)
+            && Objects.equals(this.previewInfo, that.previewInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sequenceNo, shootScript, subtitleFileInfo);
+        return Objects.hash(sequenceNo, shootScript, subtitleFileInfo, previewInfo);
     }
 
     @Override
@@ -122,6 +154,7 @@ public class ShootScriptShowItem {
         sb.append("    sequenceNo: ").append(toIndentedString(sequenceNo)).append("\n");
         sb.append("    shootScript: ").append(toIndentedString(shootScript)).append("\n");
         sb.append("    subtitleFileInfo: ").append(toIndentedString(subtitleFileInfo)).append("\n");
+        sb.append("    previewInfo: ").append(toIndentedString(previewInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

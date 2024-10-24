@@ -24,7 +24,7 @@ public class Encryption {
     private Integer keyRotationIntervalSeconds;
 
     /**
-     * 加密方式
+     * 加密方式。  请注意：目前为保留字段，不支持配置。 
      */
     public static final class EncryptionMethodEnum {
 
@@ -174,9 +174,9 @@ public class Encryption {
     private LevelEnum level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "drm_content_id")
+    @JsonProperty(value = "resource_id")
 
-    private String drmContentId;
+    private String resourceId;
 
     /**
      * Gets or Sets systemIds
@@ -260,14 +260,163 @@ public class Encryption {
     private List<SystemIdsEnum> systemIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "auth_info")
+    @JsonProperty(value = "url")
 
-    private String authInfo;
+    private String url;
+
+    /**
+     * drm speke 版本号 当前只支持1.0
+     */
+    public static final class SpekeVersionEnum {
+
+        /**
+         * Enum _1_0 for value: "1.0"
+         */
+        public static final SpekeVersionEnum _1_0 = new SpekeVersionEnum("1.0");
+
+        private static final Map<String, SpekeVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SpekeVersionEnum> createStaticFields() {
+            Map<String, SpekeVersionEnum> map = new HashMap<>();
+            map.put("1.0", _1_0);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SpekeVersionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SpekeVersionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpekeVersionEnum(value));
+        }
+
+        public static SpekeVersionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SpekeVersionEnum) {
+                return this.value.equals(((SpekeVersionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "km_url")
+    @JsonProperty(value = "speke_version")
 
-    private String kmUrl;
+    private SpekeVersionEnum spekeVersion;
+
+    /**
+     * 请求模式。  取值如下： * direct_http：HTTP(S)直接访问DRM。 * functiongraph_proxy：FunctionGraph代理访问DRM。 
+     */
+    public static final class RequestModeEnum {
+
+        /**
+         * Enum DIRECT_HTTP for value: "direct_http"
+         */
+        public static final RequestModeEnum DIRECT_HTTP = new RequestModeEnum("direct_http");
+
+        /**
+         * Enum FUNCTIONGRAPH_PROXY for value: "functiongraph_proxy"
+         */
+        public static final RequestModeEnum FUNCTIONGRAPH_PROXY = new RequestModeEnum("functiongraph_proxy");
+
+        private static final Map<String, RequestModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, RequestModeEnum> createStaticFields() {
+            Map<String, RequestModeEnum> map = new HashMap<>();
+            map.put("direct_http", DIRECT_HTTP);
+            map.put("functiongraph_proxy", FUNCTIONGRAPH_PROXY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        RequestModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static RequestModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RequestModeEnum(value));
+        }
+
+        public static RequestModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof RequestModeEnum) {
+                return this.value.equals(((RequestModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_mode")
+
+    private RequestModeEnum requestMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "http_headers")
+
+    private List<HttpHeader> httpHeaders = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "urn")
+
+    private String urn;
 
     public Encryption withKeyRotationIntervalSeconds(Integer keyRotationIntervalSeconds) {
         this.keyRotationIntervalSeconds = keyRotationIntervalSeconds;
@@ -275,7 +424,7 @@ public class Encryption {
     }
 
     /**
-     * 密钥缓存时间。如果密钥不变，默认缓存七天
+     * 密钥缓存时间。如果密钥不变，默认缓存七天。  请注意：目前为保留字段，不支持配置。 
      * minimum: 0
      * maximum: 604800
      * @return keyRotationIntervalSeconds
@@ -294,7 +443,7 @@ public class Encryption {
     }
 
     /**
-     * 加密方式
+     * 加密方式。  请注意：目前为保留字段，不支持配置。 
      * @return encryptionMethod
      */
     public EncryptionMethodEnum getEncryptionMethod() {
@@ -322,21 +471,21 @@ public class Encryption {
         this.level = level;
     }
 
-    public Encryption withDrmContentId(String drmContentId) {
-        this.drmContentId = drmContentId;
+    public Encryption withResourceId(String resourceId) {
+        this.resourceId = resourceId;
         return this;
     }
 
     /**
      * 客户生成的DRM内容ID
-     * @return drmContentId
+     * @return resourceId
      */
-    public String getDrmContentId() {
-        return drmContentId;
+    public String getResourceId() {
+        return resourceId;
     }
 
-    public void setDrmContentId(String drmContentId) {
-        this.drmContentId = drmContentId;
+    public void setResourceId(String resourceId) {
+        this.resourceId = resourceId;
     }
 
     public Encryption withSystemIds(List<SystemIdsEnum> systemIds) {
@@ -361,7 +510,7 @@ public class Encryption {
     }
 
     /**
-     * system_id枚举值
+     * system_id枚举值。  取值如下： * HLS：FairPlay * DASH：Widevine、PlayReady * MSS：PlayReady 
      * @return systemIds
      */
     public List<SystemIdsEnum> getSystemIds() {
@@ -372,38 +521,105 @@ public class Encryption {
         this.systemIds = systemIds;
     }
 
-    public Encryption withAuthInfo(String authInfo) {
-        this.authInfo = authInfo;
-        return this;
-    }
-
-    /**
-     * 增加到请求消息体header中的鉴权信息
-     * @return authInfo
-     */
-    public String getAuthInfo() {
-        return authInfo;
-    }
-
-    public void setAuthInfo(String authInfo) {
-        this.authInfo = authInfo;
-    }
-
-    public Encryption withKmUrl(String kmUrl) {
-        this.kmUrl = kmUrl;
+    public Encryption withUrl(String url) {
+        this.url = url;
         return this;
     }
 
     /**
      * 获取密钥的DRM地址
-     * @return kmUrl
+     * @return url
      */
-    public String getKmUrl() {
-        return kmUrl;
+    public String getUrl() {
+        return url;
     }
 
-    public void setKmUrl(String kmUrl) {
-        this.kmUrl = kmUrl;
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Encryption withSpekeVersion(SpekeVersionEnum spekeVersion) {
+        this.spekeVersion = spekeVersion;
+        return this;
+    }
+
+    /**
+     * drm speke 版本号 当前只支持1.0
+     * @return spekeVersion
+     */
+    public SpekeVersionEnum getSpekeVersion() {
+        return spekeVersion;
+    }
+
+    public void setSpekeVersion(SpekeVersionEnum spekeVersion) {
+        this.spekeVersion = spekeVersion;
+    }
+
+    public Encryption withRequestMode(RequestModeEnum requestMode) {
+        this.requestMode = requestMode;
+        return this;
+    }
+
+    /**
+     * 请求模式。  取值如下： * direct_http：HTTP(S)直接访问DRM。 * functiongraph_proxy：FunctionGraph代理访问DRM。 
+     * @return requestMode
+     */
+    public RequestModeEnum getRequestMode() {
+        return requestMode;
+    }
+
+    public void setRequestMode(RequestModeEnum requestMode) {
+        this.requestMode = requestMode;
+    }
+
+    public Encryption withHttpHeaders(List<HttpHeader> httpHeaders) {
+        this.httpHeaders = httpHeaders;
+        return this;
+    }
+
+    public Encryption addHttpHeadersItem(HttpHeader httpHeadersItem) {
+        if (this.httpHeaders == null) {
+            this.httpHeaders = new ArrayList<>();
+        }
+        this.httpHeaders.add(httpHeadersItem);
+        return this;
+    }
+
+    public Encryption withHttpHeaders(Consumer<List<HttpHeader>> httpHeadersSetter) {
+        if (this.httpHeaders == null) {
+            this.httpHeaders = new ArrayList<>();
+        }
+        httpHeadersSetter.accept(this.httpHeaders);
+        return this;
+    }
+
+    /**
+     * 需要添加在drm请求头中的鉴权信息。最多支持配置5个。  仅direct_http请求模式支持配置http_headers。 
+     * @return httpHeaders
+     */
+    public List<HttpHeader> getHttpHeaders() {
+        return httpHeaders;
+    }
+
+    public void setHttpHeaders(List<HttpHeader> httpHeaders) {
+        this.httpHeaders = httpHeaders;
+    }
+
+    public Encryption withUrn(String urn) {
+        this.urn = urn;
+        return this;
+    }
+
+    /**
+     * functiongraph_proxy请求模式需要提供functiongraph的urn。
+     * @return urn
+     */
+    public String getUrn() {
+        return urn;
+    }
+
+    public void setUrn(String urn) {
+        this.urn = urn;
     }
 
     @Override
@@ -417,14 +633,24 @@ public class Encryption {
         Encryption that = (Encryption) obj;
         return Objects.equals(this.keyRotationIntervalSeconds, that.keyRotationIntervalSeconds)
             && Objects.equals(this.encryptionMethod, that.encryptionMethod) && Objects.equals(this.level, that.level)
-            && Objects.equals(this.drmContentId, that.drmContentId) && Objects.equals(this.systemIds, that.systemIds)
-            && Objects.equals(this.authInfo, that.authInfo) && Objects.equals(this.kmUrl, that.kmUrl);
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.systemIds, that.systemIds)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.spekeVersion, that.spekeVersion)
+            && Objects.equals(this.requestMode, that.requestMode) && Objects.equals(this.httpHeaders, that.httpHeaders)
+            && Objects.equals(this.urn, that.urn);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(keyRotationIntervalSeconds, encryptionMethod, level, drmContentId, systemIds, authInfo, kmUrl);
+        return Objects.hash(keyRotationIntervalSeconds,
+            encryptionMethod,
+            level,
+            resourceId,
+            systemIds,
+            url,
+            spekeVersion,
+            requestMode,
+            httpHeaders,
+            urn);
     }
 
     @Override
@@ -434,10 +660,13 @@ public class Encryption {
         sb.append("    keyRotationIntervalSeconds: ").append(toIndentedString(keyRotationIntervalSeconds)).append("\n");
         sb.append("    encryptionMethod: ").append(toIndentedString(encryptionMethod)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");
-        sb.append("    drmContentId: ").append(toIndentedString(drmContentId)).append("\n");
+        sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    systemIds: ").append(toIndentedString(systemIds)).append("\n");
-        sb.append("    authInfo: ").append(toIndentedString(authInfo)).append("\n");
-        sb.append("    kmUrl: ").append(toIndentedString(kmUrl)).append("\n");
+        sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    spekeVersion: ").append(toIndentedString(spekeVersion)).append("\n");
+        sb.append("    requestMode: ").append(toIndentedString(requestMode)).append("\n");
+        sb.append("    httpHeaders: ").append(toIndentedString(httpHeaders)).append("\n");
+        sb.append("    urn: ").append(toIndentedString(urn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -21,14 +21,14 @@ public class CentralNetworkAttachmentSpecificationValueInfo {
     private String attachmentParentInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "approved_state")
-
-    private ApprovedStateEnum approvedState;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosted_cloud")
 
     private HostedCloudEnum hostedCloud;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "approved_state")
+
+    private ApprovedStateEnum approvedState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
@@ -59,7 +59,7 @@ public class CentralNetworkAttachmentSpecificationValueInfo {
     }
 
     /**
-     * 实例ID。
+     * 连接的父资源ID，这里表示企业路由器ID。
      * @return attachmentParentInstanceId
      */
     public String getAttachmentParentInstanceId() {
@@ -68,23 +68,6 @@ public class CentralNetworkAttachmentSpecificationValueInfo {
 
     public void setAttachmentParentInstanceId(String attachmentParentInstanceId) {
         this.attachmentParentInstanceId = attachmentParentInstanceId;
-    }
-
-    public CentralNetworkAttachmentSpecificationValueInfo withApprovedState(ApprovedStateEnum approvedState) {
-        this.approvedState = approvedState;
-        return this;
-    }
-
-    /**
-     * Get approvedState
-     * @return approvedState
-     */
-    public ApprovedStateEnum getApprovedState() {
-        return approvedState;
-    }
-
-    public void setApprovedState(ApprovedStateEnum approvedState) {
-        this.approvedState = approvedState;
     }
 
     public CentralNetworkAttachmentSpecificationValueInfo withHostedCloud(HostedCloudEnum hostedCloud) {
@@ -102,6 +85,23 @@ public class CentralNetworkAttachmentSpecificationValueInfo {
 
     public void setHostedCloud(HostedCloudEnum hostedCloud) {
         this.hostedCloud = hostedCloud;
+    }
+
+    public CentralNetworkAttachmentSpecificationValueInfo withApprovedState(ApprovedStateEnum approvedState) {
+        this.approvedState = approvedState;
+        return this;
+    }
+
+    /**
+     * Get approvedState
+     * @return approvedState
+     */
+    public ApprovedStateEnum getApprovedState() {
+        return approvedState;
+    }
+
+    public void setApprovedState(ApprovedStateEnum approvedState) {
+        this.approvedState = approvedState;
     }
 
     public CentralNetworkAttachmentSpecificationValueInfo withReason(String reason) {
@@ -132,13 +132,13 @@ public class CentralNetworkAttachmentSpecificationValueInfo {
         CentralNetworkAttachmentSpecificationValueInfo that = (CentralNetworkAttachmentSpecificationValueInfo) obj;
         return Objects.equals(this.enterpriseRouterTableId, that.enterpriseRouterTableId)
             && Objects.equals(this.attachmentParentInstanceId, that.attachmentParentInstanceId)
-            && Objects.equals(this.approvedState, that.approvedState)
-            && Objects.equals(this.hostedCloud, that.hostedCloud) && Objects.equals(this.reason, that.reason);
+            && Objects.equals(this.hostedCloud, that.hostedCloud)
+            && Objects.equals(this.approvedState, that.approvedState) && Objects.equals(this.reason, that.reason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseRouterTableId, attachmentParentInstanceId, approvedState, hostedCloud, reason);
+        return Objects.hash(enterpriseRouterTableId, attachmentParentInstanceId, hostedCloud, approvedState, reason);
     }
 
     @Override
@@ -147,8 +147,8 @@ public class CentralNetworkAttachmentSpecificationValueInfo {
         sb.append("class CentralNetworkAttachmentSpecificationValueInfo {\n");
         sb.append("    enterpriseRouterTableId: ").append(toIndentedString(enterpriseRouterTableId)).append("\n");
         sb.append("    attachmentParentInstanceId: ").append(toIndentedString(attachmentParentInstanceId)).append("\n");
-        sb.append("    approvedState: ").append(toIndentedString(approvedState)).append("\n");
         sb.append("    hostedCloud: ").append(toIndentedString(hostedCloud)).append("\n");
+        sb.append("    approvedState: ").append(toIndentedString(approvedState)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("}");
         return sb.toString();

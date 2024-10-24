@@ -31,6 +31,11 @@ public class LiveShootScriptItem {
 
     private LiveAudioConfig audioConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "relation_product")
+
+    private RelationProductInfo relationProduct;
+
     public LiveShootScriptItem withSequenceNo(Integer sequenceNo) {
         this.sequenceNo = sequenceNo;
         return this;
@@ -119,6 +124,32 @@ public class LiveShootScriptItem {
         this.audioConfig = audioConfig;
     }
 
+    public LiveShootScriptItem withRelationProduct(RelationProductInfo relationProduct) {
+        this.relationProduct = relationProduct;
+        return this;
+    }
+
+    public LiveShootScriptItem withRelationProduct(Consumer<RelationProductInfo> relationProductSetter) {
+        if (this.relationProduct == null) {
+            this.relationProduct = new RelationProductInfo();
+            relationProductSetter.accept(this.relationProduct);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get relationProduct
+     * @return relationProduct
+     */
+    public RelationProductInfo getRelationProduct() {
+        return relationProduct;
+    }
+
+    public void setRelationProduct(RelationProductInfo relationProduct) {
+        this.relationProduct = relationProduct;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -129,12 +160,13 @@ public class LiveShootScriptItem {
         }
         LiveShootScriptItem that = (LiveShootScriptItem) obj;
         return Objects.equals(this.sequenceNo, that.sequenceNo) && Objects.equals(this.title, that.title)
-            && Objects.equals(this.textConfig, that.textConfig) && Objects.equals(this.audioConfig, that.audioConfig);
+            && Objects.equals(this.textConfig, that.textConfig) && Objects.equals(this.audioConfig, that.audioConfig)
+            && Objects.equals(this.relationProduct, that.relationProduct);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sequenceNo, title, textConfig, audioConfig);
+        return Objects.hash(sequenceNo, title, textConfig, audioConfig, relationProduct);
     }
 
     @Override
@@ -145,6 +177,7 @@ public class LiveShootScriptItem {
         sb.append("    title: ").append(toIndentedString(title)).append("\n");
         sb.append("    textConfig: ").append(toIndentedString(textConfig)).append("\n");
         sb.append("    audioConfig: ").append(toIndentedString(audioConfig)).append("\n");
+        sb.append("    relationProduct: ").append(toIndentedString(relationProduct)).append("\n");
         sb.append("}");
         return sb.toString();
     }

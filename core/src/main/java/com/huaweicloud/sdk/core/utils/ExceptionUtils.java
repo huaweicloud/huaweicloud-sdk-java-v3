@@ -28,6 +28,8 @@ import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
 import com.huaweicloud.sdk.core.exception.SdkException;
 import com.huaweicloud.sdk.core.http.HttpResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
@@ -79,10 +81,32 @@ public final class ExceptionUtils {
         return sdkErrorMessage;
     }
 
+    private static List<SdkErrorMessage> extractDetails(Object details) {
+        if (!(details instanceof List)) {
+            return null;
+        }
+
+        ArrayList<SdkErrorMessage> errors = new ArrayList<>();
+        for (Object detail : ((List<?>) details)) {
+            if (!(detail instanceof Map)) {
+                continue;
+            }
+            SdkErrorMessage error = new SdkErrorMessage();
+            processErrorMessage(error, (Map<?, ?>) detail);
+            errors.add(error);
+        }
+        return errors;
+    }
+
     private static void processErrorMessage(SdkErrorMessage sdkErrorMessage, Map<?, ?> errResult) {
         Object encodedAuthMsg = errResult.get(Constants.ENCODED_AUTHORIZATION_MESSAGE);
         if (Objects.nonNull(encodedAuthMsg)) {
             sdkErrorMessage.setEncodedAuthorizationMessage(encodedAuthMsg.toString());
+        }
+
+        Object details = errResult.get(Constants.DETAILS);
+        if (Objects.nonNull(details)) {
+            sdkErrorMessage.setDetails(extractDetails(details));
         }
 
         if (errResult.containsKey(Constants.ERROR_CODE) && errResult.containsKey(Constants.ERROR_MSG)) {

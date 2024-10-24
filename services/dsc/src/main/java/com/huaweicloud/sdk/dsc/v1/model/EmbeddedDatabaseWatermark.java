@@ -123,7 +123,7 @@ public class EmbeddedDatabaseWatermark {
     }
 
     /**
-     * 数据字段的内容，最大支持长度2000
+     * 嵌入可提取水印的行数限制1500-50000行。内容建议：数据具有随机性，内容重复率低
      * @return data
      */
     public List<Map<String, Object>> getData() {

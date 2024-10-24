@@ -24,6 +24,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ControlDigitalHumanLiveReq;
 import com.huaweicloud.sdk.metastudio.v1.model.ControlSmartLiveReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CopyVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CopyVideoScriptsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CountTenantResourcesRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CountTenantResourcesResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoReq;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoResponse;
@@ -217,6 +219,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTenantResourcesRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTenantResourcesResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsRequest;
@@ -280,6 +284,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowProductRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowProductResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowResourceUsageRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowResourceUsageResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatJobRequest;
@@ -6630,6 +6636,221 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListStylesResponse::getXRequestId, ListStylesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountTenantResourcesRequest, CountTenantResourcesResponse> countTenantResources =
+        genForCountTenantResources();
+
+    private static HttpRequestDef<CountTenantResourcesRequest, CountTenantResourcesResponse> genForCountTenantResources() {
+        // basic
+        HttpRequestDef.Builder<CountTenantResourcesRequest, CountTenantResourcesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, CountTenantResourcesRequest.class, CountTenantResourcesResponse.class)
+            .withName("CountTenantResources")
+            .withUri("/v1/{project_id}/tenants/resources-count")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("business",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountTenantResourcesRequest::getBusiness, CountTenantResourcesRequest::setBusiness));
+        builder.<String>withRequestField("resource_expire_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountTenantResourcesRequest::getResourceExpireStartTime,
+                CountTenantResourcesRequest::setResourceExpireStartTime));
+        builder.<String>withRequestField("resource_expire_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountTenantResourcesRequest::getResourceExpireEndTime,
+                CountTenantResourcesRequest::setResourceExpireEndTime));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountTenantResourcesRequest::getAuthorization,
+                CountTenantResourcesRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountTenantResourcesRequest::getXSdkDate, CountTenantResourcesRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountTenantResourcesRequest::getXProjectId,
+                CountTenantResourcesRequest::setXProjectId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CountTenantResourcesResponse::getXRequestId,
+                CountTenantResourcesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTenantResourcesRequest, ListTenantResourcesResponse> listTenantResources =
+        genForListTenantResources();
+
+    private static HttpRequestDef<ListTenantResourcesRequest, ListTenantResourcesResponse> genForListTenantResources() {
+        // basic
+        HttpRequestDef.Builder<ListTenantResourcesRequest, ListTenantResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTenantResourcesRequest.class, ListTenantResourcesResponse.class)
+                .withName("ListTenantResources")
+                .withUri("/v1/{project_id}/tenants/resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getLimit, ListTenantResourcesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getOffset, ListTenantResourcesRequest::setOffset));
+        builder.<String>withRequestField("resource",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getResource, ListTenantResourcesRequest::setResource));
+        builder.<String>withRequestField("business",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getBusiness, ListTenantResourcesRequest::setBusiness));
+        builder.<String>withRequestField("resource_source",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getResourceSource,
+                ListTenantResourcesRequest::setResourceSource));
+        builder.<String>withRequestField("resource_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getResourceName,
+                ListTenantResourcesRequest::setResourceName));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getResourceId,
+                ListTenantResourcesRequest::setResourceId));
+        builder.<String>withRequestField("order_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getOrderId, ListTenantResourcesRequest::setOrderId));
+        builder.<String>withRequestField("charging_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getChargingMode,
+                ListTenantResourcesRequest::setChargingMode));
+        builder.<String>withRequestField("resource_expire_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getResourceExpireStartTime,
+                ListTenantResourcesRequest::setResourceExpireStartTime));
+        builder.<String>withRequestField("resource_expire_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getResourceExpireEndTime,
+                ListTenantResourcesRequest::setResourceExpireEndTime));
+        builder.<String>withRequestField("sub_resource",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getSubResource,
+                ListTenantResourcesRequest::setSubResource));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getAuthorization,
+                ListTenantResourcesRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getXSdkDate, ListTenantResourcesRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getXProjectId,
+                ListTenantResourcesRequest::setXProjectId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListTenantResourcesResponse::getXRequestId,
+                ListTenantResourcesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResourceUsageRequest, ShowResourceUsageResponse> showResourceUsage =
+        genForShowResourceUsage();
+
+    private static HttpRequestDef<ShowResourceUsageRequest, ShowResourceUsageResponse> genForShowResourceUsage() {
+        // basic
+        HttpRequestDef.Builder<ShowResourceUsageRequest, ShowResourceUsageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResourceUsageRequest.class, ShowResourceUsageResponse.class)
+                .withName("ShowResourceUsage")
+                .withUri("/v1/{project_id}/tenants/resources-usage")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceUsageRequest::getResource, ShowResourceUsageRequest::setResource));
+        builder.<String>withRequestField("business",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceUsageRequest::getBusiness, ShowResourceUsageRequest::setBusiness));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceUsageRequest::getAuthorization,
+                ShowResourceUsageRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceUsageRequest::getXSdkDate, ShowResourceUsageRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceUsageRequest::getXProjectId, ShowResourceUsageRequest::setXProjectId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowResourceUsageResponse::getXRequestId, ShowResourceUsageResponse::setXRequestId));
         return builder.build();
     }
 

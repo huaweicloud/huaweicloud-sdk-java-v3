@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.live.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -53,13 +58,88 @@ public class DashPackageItem {
 
     private PackageRequestArgs requestArgs;
 
+    /**
+     * 广告标识。  DASH取值：\"xml+bin\"。 
+     */
+    public static final class AdMarkerEnum {
+
+        /**
+         * Enum XML_BIN for value: "xml+bin"
+         */
+        public static final AdMarkerEnum XML_BIN = new AdMarkerEnum("xml+bin");
+
+        /**
+         * Enum XML for value: "xml"
+         */
+        public static final AdMarkerEnum XML = new AdMarkerEnum("xml");
+
+        private static final Map<String, AdMarkerEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AdMarkerEnum> createStaticFields() {
+            Map<String, AdMarkerEnum> map = new HashMap<>();
+            map.put("xml+bin", XML_BIN);
+            map.put("xml", XML);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AdMarkerEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AdMarkerEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AdMarkerEnum(value));
+        }
+
+        public static AdMarkerEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AdMarkerEnum) {
+                return this.value.equals(((AdMarkerEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ad_marker")
+
+    private AdMarkerEnum adMarker;
+
     public DashPackageItem withUrl(String url) {
         this.url = url;
         return this;
     }
 
     /**
-     * 客户自定义的拉流地址，包括方法、域名、路径和参数
+     * 客户自定义的拉流地址，包括方法、域名、路径
      * @return url
      */
     public String getUrl() {
@@ -109,7 +189,7 @@ public class DashPackageItem {
     }
 
     /**
-     * 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10
+     * 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10 > 修改分片时长会影响已录制内容的时移和回看服务，请谨慎修改！
      * minimum: 1
      * maximum: 10
      * @return segmentDurationSeconds
@@ -227,6 +307,23 @@ public class DashPackageItem {
         this.requestArgs = requestArgs;
     }
 
+    public DashPackageItem withAdMarker(AdMarkerEnum adMarker) {
+        this.adMarker = adMarker;
+        return this;
+    }
+
+    /**
+     * 广告标识。  DASH取值：\"xml+bin\"。 
+     * @return adMarker
+     */
+    public AdMarkerEnum getAdMarker() {
+        return adMarker;
+    }
+
+    public void setAdMarker(AdMarkerEnum adMarker) {
+        this.adMarker = adMarker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -240,7 +337,8 @@ public class DashPackageItem {
             && Objects.equals(this.segmentDurationSeconds, that.segmentDurationSeconds)
             && Objects.equals(this.playlistWindowSeconds, that.playlistWindowSeconds)
             && Objects.equals(this.encryption, that.encryption) && Objects.equals(this.ads, that.ads)
-            && Objects.equals(this.extArgs, that.extArgs) && Objects.equals(this.requestArgs, that.requestArgs);
+            && Objects.equals(this.extArgs, that.extArgs) && Objects.equals(this.requestArgs, that.requestArgs)
+            && Objects.equals(this.adMarker, that.adMarker);
     }
 
     @Override
@@ -252,7 +350,8 @@ public class DashPackageItem {
             encryption,
             ads,
             extArgs,
-            requestArgs);
+            requestArgs,
+            adMarker);
     }
 
     @Override
@@ -267,6 +366,7 @@ public class DashPackageItem {
         sb.append("    ads: ").append(toIndentedString(ads)).append("\n");
         sb.append("    extArgs: ").append(toIndentedString(extArgs)).append("\n");
         sb.append("    requestArgs: ").append(toIndentedString(requestArgs)).append("\n");
+        sb.append("    adMarker: ").append(toIndentedString(adMarker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

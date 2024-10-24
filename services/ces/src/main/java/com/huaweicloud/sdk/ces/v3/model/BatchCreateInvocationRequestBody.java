@@ -340,6 +340,11 @@ public class BatchCreateInvocationRequestBody {
 
     private OriginEnum origin;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
     public BatchCreateInvocationRequestBody withInstanceIds(List<String> instanceIds) {
         this.instanceIds = instanceIds;
         return this;
@@ -474,6 +479,23 @@ public class BatchCreateInvocationRequestBody {
         this.origin = origin;
     }
 
+    public BatchCreateInvocationRequestBody withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 版本号
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -487,12 +509,13 @@ public class BatchCreateInvocationRequestBody {
             && Objects.equals(this.invocationType, that.invocationType)
             && Objects.equals(this.invocationTarget, that.invocationTarget)
             && Objects.equals(this.invocationIds, that.invocationIds)
-            && Objects.equals(this.versionType, that.versionType) && Objects.equals(this.origin, that.origin);
+            && Objects.equals(this.versionType, that.versionType) && Objects.equals(this.origin, that.origin)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceIds, invocationType, invocationTarget, invocationIds, versionType, origin);
+        return Objects.hash(instanceIds, invocationType, invocationTarget, invocationIds, versionType, origin, version);
     }
 
     @Override
@@ -505,6 +528,7 @@ public class BatchCreateInvocationRequestBody {
         sb.append("    invocationIds: ").append(toIndentedString(invocationIds)).append("\n");
         sb.append("    versionType: ").append(toIndentedString(versionType)).append("\n");
         sb.append("    origin: ").append(toIndentedString(origin)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

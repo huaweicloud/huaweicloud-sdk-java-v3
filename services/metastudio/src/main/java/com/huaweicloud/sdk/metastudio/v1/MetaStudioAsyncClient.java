@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CopyVideoScriptsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CopyVideoScriptsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CountTenantResourcesRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CountTenantResourcesResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2DDigitalHumanVideoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Create2dModelTrainingJobRequest;
@@ -179,6 +181,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTenantResourcesRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTenantResourcesResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsRequest;
@@ -237,6 +241,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPictureModelingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowProductRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowProductResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowResourceUsageRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowResourceUsageResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartChatJobRequest;
@@ -1153,6 +1159,7 @@ public class MetaStudioAsyncClient {
      * 查询视频制作任务列表
      *
      * 该接口用于查询视频制作任务列表。可查询分身数字人视频制作列表，照片数字人视频制作列表等。
+     * &gt; - 默认查询最近一个月任务记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1168,6 +1175,7 @@ public class MetaStudioAsyncClient {
      * 查询视频制作任务列表
      *
      * 该接口用于查询视频制作任务列表。可查询分身数字人视频制作列表，照片数字人视频制作列表等。
+     * &gt; - 默认查询最近一个月任务记录。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3551,6 +3559,94 @@ public class MetaStudioAsyncClient {
      */
     public AsyncInvoker<ListStylesRequest, ListStylesResponse> listStylesAsyncInvoker(ListStylesRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.listStyles, hcClient);
+    }
+
+    /**
+     * 统计时间段内资源数量
+     *
+     * 统计时间段内资源数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountTenantResourcesRequest 请求对象
+     * @return CompletableFuture<CountTenantResourcesResponse>
+     */
+    public CompletableFuture<CountTenantResourcesResponse> countTenantResourcesAsync(
+        CountTenantResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.countTenantResources);
+    }
+
+    /**
+     * 统计时间段内资源数量
+     *
+     * 统计时间段内资源数量
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountTenantResourcesRequest 请求对象
+     * @return AsyncInvoker<CountTenantResourcesRequest, CountTenantResourcesResponse>
+     */
+    public AsyncInvoker<CountTenantResourcesRequest, CountTenantResourcesResponse> countTenantResourcesAsyncInvoker(
+        CountTenantResourcesRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.countTenantResources, hcClient);
+    }
+
+    /**
+     * 查看租户资源列表
+     *
+     * 查看租户资源列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantResourcesRequest 请求对象
+     * @return CompletableFuture<ListTenantResourcesResponse>
+     */
+    public CompletableFuture<ListTenantResourcesResponse> listTenantResourcesAsync(ListTenantResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listTenantResources);
+    }
+
+    /**
+     * 查看租户资源列表
+     *
+     * 查看租户资源列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantResourcesRequest 请求对象
+     * @return AsyncInvoker<ListTenantResourcesRequest, ListTenantResourcesResponse>
+     */
+    public AsyncInvoker<ListTenantResourcesRequest, ListTenantResourcesResponse> listTenantResourcesAsyncInvoker(
+        ListTenantResourcesRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.listTenantResources, hcClient);
+    }
+
+    /**
+     * 查看租户资源用量信息
+     *
+     * 查看租户资源用量信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResourceUsageRequest 请求对象
+     * @return CompletableFuture<ShowResourceUsageResponse>
+     */
+    public CompletableFuture<ShowResourceUsageResponse> showResourceUsageAsync(ShowResourceUsageRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showResourceUsage);
+    }
+
+    /**
+     * 查看租户资源用量信息
+     *
+     * 查看租户资源用量信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowResourceUsageRequest 请求对象
+     * @return AsyncInvoker<ShowResourceUsageRequest, ShowResourceUsageResponse>
+     */
+    public AsyncInvoker<ShowResourceUsageRequest, ShowResourceUsageResponse> showResourceUsageAsyncInvoker(
+        ShowResourceUsageRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showResourceUsage, hcClient);
     }
 
     /**

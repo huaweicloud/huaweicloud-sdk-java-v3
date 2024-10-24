@@ -8,6 +8,8 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.idme.v1.model.CreateXdmApplicationRequest;
 import com.huaweicloud.sdk.idme.v1.model.CreateXdmApplicationRequestBody;
 import com.huaweicloud.sdk.idme.v1.model.CreateXdmApplicationResponse;
+import com.huaweicloud.sdk.idme.v1.model.DeleteCloudServiceRequest;
+import com.huaweicloud.sdk.idme.v1.model.DeleteCloudServiceResponse;
 import com.huaweicloud.sdk.idme.v1.model.DeleteXdmApplicationRequest;
 import com.huaweicloud.sdk.idme.v1.model.DeleteXdmApplicationResponse;
 import com.huaweicloud.sdk.idme.v1.model.DeployApplicationRequest;
@@ -43,6 +45,35 @@ public class IdmeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateXdmApplicationRequestBody.class),
             f -> f.withMarshaller(CreateXdmApplicationRequest::getBody, CreateXdmApplicationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCloudServiceRequest, DeleteCloudServiceResponse> deleteCloudService =
+        genForDeleteCloudService();
+
+    private static HttpRequestDef<DeleteCloudServiceRequest, DeleteCloudServiceResponse> genForDeleteCloudService() {
+        // basic
+        HttpRequestDef.Builder<DeleteCloudServiceRequest, DeleteCloudServiceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCloudServiceRequest.class, DeleteCloudServiceResponse.class)
+                .withName("DeleteCloudService")
+                .withUri("/v1/{project_id}/{service_type}/instances/{instance_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCloudServiceRequest::getServiceType,
+                DeleteCloudServiceRequest::setServiceType));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCloudServiceRequest::getInstanceId, DeleteCloudServiceRequest::setInstanceId));
 
         // response
 
@@ -116,6 +147,16 @@ public class IdmeMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Long>withRequestField("page_num",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAppsRequest::getPageNum, ListAppsRequest::setPageNum));
+        builder.<Long>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListAppsRequest::getPageSize, ListAppsRequest::setPageSize));
 
         // response
 
@@ -133,6 +174,21 @@ public class IdmeMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Long>withRequestField("page_num",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListEnvsRequest::getPageNum, ListEnvsRequest::setPageNum));
+        builder.<Long>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListEnvsRequest::getPageSize, ListEnvsRequest::setPageSize));
+        builder.<String>withRequestField("env_types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnvsRequest::getEnvTypes, ListEnvsRequest::setEnvTypes));
 
         // response
 

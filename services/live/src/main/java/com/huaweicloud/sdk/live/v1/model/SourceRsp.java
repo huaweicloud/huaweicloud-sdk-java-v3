@@ -58,7 +58,7 @@ public class SourceRsp {
     }
 
     /**
-     * 码率。  单位：bps。取值范围：0 - 104,857,600（100Mbps）
+     * 码率。  单位：bps。取值范围：(0,104,857,600]（100Mbps）
      * minimum: 0
      * maximum: 104857600
      * @return bitrate

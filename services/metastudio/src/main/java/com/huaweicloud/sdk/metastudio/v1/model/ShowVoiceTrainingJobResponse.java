@@ -101,6 +101,11 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
 
     private String dhtmsJobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "batch_name")
+
+    private String batchName;
+
     public ShowVoiceTrainingJobResponse withJobType(JobType jobType) {
         this.jobType = jobType;
         return this;
@@ -413,6 +418,23 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         this.dhtmsJobId = dhtmsJobId;
     }
 
+    public ShowVoiceTrainingJobResponse withBatchName(String batchName) {
+        this.batchName = batchName;
+        return this;
+    }
+
+    /**
+     * 批次名称
+     * @return batchName
+     */
+    public String getBatchName() {
+        return batchName;
+    }
+
+    public void setBatchName(String batchName) {
+        this.batchName = batchName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -432,7 +454,8 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
             && Objects.equals(this.lastupdateTime, that.lastupdateTime)
             && Objects.equals(this.voiceAuthorizationUrl, that.voiceAuthorizationUrl)
             && Objects.equals(this.createType, that.createType) && Objects.equals(this.tag, that.tag)
-            && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId);
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId)
+            && Objects.equals(this.batchName, that.batchName);
     }
 
     @Override
@@ -454,7 +477,8 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
             createType,
             tag,
             phone,
-            dhtmsJobId);
+            dhtmsJobId,
+            batchName);
     }
 
     @Override
@@ -479,6 +503,7 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    dhtmsJobId: ").append(toIndentedString(dhtmsJobId)).append("\n");
+        sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

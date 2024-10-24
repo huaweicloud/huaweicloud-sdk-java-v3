@@ -53,7 +53,7 @@ public class TextLayerConfig {
     }
 
     /**
-     * **参数解释**： 字体。当前支持的字体： **约束限制**： 不涉及。 **取值范围**： 支持的字体请参考[服务支持的字体](metastudio_02_0041.xml)
+     * 字体。当前支持的字体请参考[服务支持的字体](metastudio_02_0041.xml) **约束限制**： 不涉及。 **取值范围**： 字符长度0-64位
      * @return fontName
      */
     public String getFontName() {

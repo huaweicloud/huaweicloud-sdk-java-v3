@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 文件信息。
@@ -172,6 +173,11 @@ public class AssetFileInfo {
 
     private String reason;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_extra_meta")
+
+    private FileExtraMeta fileExtraMeta;
+
     public AssetFileInfo withFileId(String fileId) {
         this.fileId = fileId;
         return this;
@@ -265,7 +271,7 @@ public class AssetFileInfo {
     }
 
     /**
-     * 文件在资产中的分类。每种资产类型包含的文件分类不同。 * MAIN：主文件 * COVER：封面文件 * PAGE：内容页图片 * SAMPLE：样例音频 * OTHER：其他文件 * WHOLE_MODEL：全模型 * USER_MODIFIED_MODEL：用户上传模型 > * 资产类型为SCENE、ANIMATION、VIDEO、IMAGE、MATERIAL时，包含MAIN、COVER和OTHER > * 资产类型为PPT时，包含MAIN、COVER、PAGE和OTHER > * 资产类型为HUMAN_MODEL时，包含MAIN、COVER和OTHER > * 资产类型为VOICE_MODEL时，包含MAIN、SAMPLE(样例音频文件)和OTHER > * 资产类型为HUMAN_MODEL_2D时，包含MAIN、COVER、SAMPLE(动作样例)和OTHER(遮罩文件) > * 资产类型为BUSINESS_CARD_TEMPLET时，包含MAIN和COVER(名片效果图)
+     * 文件在资产中的分类。每种资产类型包含的文件分类不同。 * MAIN：主文件 * COVER：封面文件 * PAGE：内容页图片 * SAMPLE：样例音频 * OTHER：其他文件 * WHOLE_MODEL：全模型 * USER_MODIFIED_MODEL：用户上传模型 * TEMPORARY：临时文件夹（用于文件替换时上传新文件） > * 资产类型为SCENE、ANIMATION、VIDEO、IMAGE、MATERIAL时，包含MAIN、COVER和OTHER > * 资产类型为PPT时，包含MAIN、COVER、PAGE和OTHER > * 资产类型为HUMAN_MODEL时，包含MAIN、COVER和OTHER > * 资产类型为VOICE_MODEL时，包含MAIN、SAMPLE(样例音频文件)和OTHER > * 资产类型为HUMAN_MODEL_2D时，包含MAIN、COVER、SAMPLE(动作样例)和OTHER(遮罩文件) > * 资产类型为BUSINESS_CARD_TEMPLET时，包含MAIN和COVER(名片效果图)
      * @return assetFileCategory
      */
     public String getAssetFileCategory() {
@@ -327,6 +333,32 @@ public class AssetFileInfo {
         this.reason = reason;
     }
 
+    public AssetFileInfo withFileExtraMeta(FileExtraMeta fileExtraMeta) {
+        this.fileExtraMeta = fileExtraMeta;
+        return this;
+    }
+
+    public AssetFileInfo withFileExtraMeta(Consumer<FileExtraMeta> fileExtraMetaSetter) {
+        if (this.fileExtraMeta == null) {
+            this.fileExtraMeta = new FileExtraMeta();
+            fileExtraMetaSetter.accept(this.fileExtraMeta);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get fileExtraMeta
+     * @return fileExtraMeta
+     */
+    public FileExtraMeta getFileExtraMeta() {
+        return fileExtraMeta;
+    }
+
+    public void setFileExtraMeta(FileExtraMeta fileExtraMeta) {
+        this.fileExtraMeta = fileExtraMeta;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -341,13 +373,21 @@ public class AssetFileInfo {
             && Objects.equals(this.fileType, that.fileType)
             && Objects.equals(this.assetFileCategory, that.assetFileCategory)
             && Objects.equals(this.downloadUrl, that.downloadUrl) && Objects.equals(this.state, that.state)
-            && Objects.equals(this.reason, that.reason);
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.fileExtraMeta, that.fileExtraMeta);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(fileId, fileName, fileMd5, fileSize, fileType, assetFileCategory, downloadUrl, state, reason);
+        return Objects.hash(fileId,
+            fileName,
+            fileMd5,
+            fileSize,
+            fileType,
+            assetFileCategory,
+            downloadUrl,
+            state,
+            reason,
+            fileExtraMeta);
     }
 
     @Override
@@ -363,6 +403,7 @@ public class AssetFileInfo {
         sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
+        sb.append("    fileExtraMeta: ").append(toIndentedString(fileExtraMeta)).append("\n");
         sb.append("}");
         return sb.toString();
     }

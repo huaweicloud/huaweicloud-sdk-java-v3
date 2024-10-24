@@ -59,7 +59,7 @@ public class MssPackageItem {
     }
 
     /**
-     * 客户自定义的拉流地址，包括方法、域名、路径和参数
+     * 客户自定义的拉流地址，包括方法、域名、路径
      * @return url
      */
     public String getUrl() {
@@ -109,7 +109,7 @@ public class MssPackageItem {
     }
 
     /**
-     * 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10
+     * 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10 > 修改分片时长会影响已录制内容的时移和回看服务，请谨慎修改！
      * minimum: 1
      * maximum: 10
      * @return segmentDurationSeconds

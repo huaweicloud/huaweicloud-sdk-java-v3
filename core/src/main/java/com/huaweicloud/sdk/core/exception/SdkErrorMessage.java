@@ -23,6 +23,8 @@ package com.huaweicloud.sdk.core.exception;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.List;
+
 /**
  * @author HuaweiCloud_SDK
  */
@@ -34,6 +36,8 @@ public class SdkErrorMessage extends SdkResponse {
     private String requestId;
 
     private String encodedAuthorizationMessage;
+
+    private List<SdkErrorMessage> details;
 
     /**
      * Default constructor of class SdkErrorMessage
@@ -124,6 +128,19 @@ public class SdkErrorMessage extends SdkResponse {
 
     public SdkErrorMessage withEncodedAuthorizationMessage(String encodedAuthorizationMessage) {
         this.encodedAuthorizationMessage = encodedAuthorizationMessage;
+        return this;
+    }
+
+    public List<SdkErrorMessage> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<SdkErrorMessage> details) {
+        this.details = details;
+    }
+
+    public SdkErrorMessage withDetails(List<SdkErrorMessage> details) {
+        this.details = details;
         return this;
     }
 }

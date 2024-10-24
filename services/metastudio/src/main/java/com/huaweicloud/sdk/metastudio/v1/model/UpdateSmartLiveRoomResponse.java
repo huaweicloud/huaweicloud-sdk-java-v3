@@ -261,6 +261,11 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
     private String roomId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "relation_live_platform_info")
+
+    private PlatformLiveDetailInfo relationLivePlatformInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -850,6 +855,33 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
         this.roomId = roomId;
     }
 
+    public UpdateSmartLiveRoomResponse withRelationLivePlatformInfo(PlatformLiveDetailInfo relationLivePlatformInfo) {
+        this.relationLivePlatformInfo = relationLivePlatformInfo;
+        return this;
+    }
+
+    public UpdateSmartLiveRoomResponse withRelationLivePlatformInfo(
+        Consumer<PlatformLiveDetailInfo> relationLivePlatformInfoSetter) {
+        if (this.relationLivePlatformInfo == null) {
+            this.relationLivePlatformInfo = new PlatformLiveDetailInfo();
+            relationLivePlatformInfoSetter.accept(this.relationLivePlatformInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get relationLivePlatformInfo
+     * @return relationLivePlatformInfo
+     */
+    public PlatformLiveDetailInfo getRelationLivePlatformInfo() {
+        return relationLivePlatformInfo;
+    }
+
+    public void setRelationLivePlatformInfo(PlatformLiveDetailInfo relationLivePlatformInfo) {
+        this.relationLivePlatformInfo = relationLivePlatformInfo;
+    }
+
     public UpdateSmartLiveRoomResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -1003,6 +1035,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
             && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.viewMode, that.viewMode)
             && Objects.equals(this.coStreamerConfig, that.coStreamerConfig)
             && Objects.equals(this.privData, that.privData) && Objects.equals(this.roomId, that.roomId)
+            && Objects.equals(this.relationLivePlatformInfo, that.relationLivePlatformInfo)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.thumbnail, that.thumbnail)
             && Objects.equals(this.roomState, that.roomState) && Objects.equals(this.errorInfo, that.errorInfo)
@@ -1030,6 +1063,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
             coStreamerConfig,
             privData,
             roomId,
+            relationLivePlatformInfo,
             createTime,
             updateTime,
             coverUrl,
@@ -1062,6 +1096,7 @@ public class UpdateSmartLiveRoomResponse extends SdkResponse {
         sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
         sb.append("    privData: ").append(toIndentedString(privData)).append("\n");
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
+        sb.append("    relationLivePlatformInfo: ").append(toIndentedString(relationLivePlatformInfo)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");

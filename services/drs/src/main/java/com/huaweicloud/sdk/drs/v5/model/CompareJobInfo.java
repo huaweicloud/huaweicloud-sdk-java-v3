@@ -168,9 +168,19 @@ public class CompareJobInfo {
     private Map<String, String> compareJobTag = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "options")
+
+    private Map<String, String> options = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
 
     private String errorMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dynamic_compare_delay")
+
+    private Long dynamicCompareDelay;
 
     public CompareJobInfo withId(String id) {
         this.id = id;
@@ -341,6 +351,39 @@ public class CompareJobInfo {
         this.compareJobTag = compareJobTag;
     }
 
+    public CompareJobInfo withOptions(Map<String, String> options) {
+        this.options = options;
+        return this;
+    }
+
+    public CompareJobInfo putOptionsItem(String key, String optionsItem) {
+        if (this.options == null) {
+            this.options = new HashMap<>();
+        }
+        this.options.put(key, optionsItem);
+        return this;
+    }
+
+    public CompareJobInfo withOptions(Consumer<Map<String, String>> optionsSetter) {
+        if (this.options == null) {
+            this.options = new HashMap<>();
+        }
+        optionsSetter.accept(this.options);
+        return this;
+    }
+
+    /**
+     * 对比任务选项。
+     * @return options
+     */
+    public Map<String, String> getOptions() {
+        return options;
+    }
+
+    public void setOptions(Map<String, String> options) {
+        this.options = options;
+    }
+
     public CompareJobInfo withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -358,6 +401,25 @@ public class CompareJobInfo {
         this.errorMsg = errorMsg;
     }
 
+    public CompareJobInfo withDynamicCompareDelay(Long dynamicCompareDelay) {
+        this.dynamicCompareDelay = dynamicCompareDelay;
+        return this;
+    }
+
+    /**
+     * 动态比对时延。
+     * minimum: -1
+     * maximum: 9223372036854775807
+     * @return dynamicCompareDelay
+     */
+    public Long getDynamicCompareDelay() {
+        return dynamicCompareDelay;
+    }
+
+    public void setDynamicCompareDelay(Long dynamicCompareDelay) {
+        this.dynamicCompareDelay = dynamicCompareDelay;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -372,7 +434,9 @@ public class CompareJobInfo {
             && Objects.equals(this.status, that.status) && Objects.equals(this.computeType, that.computeType)
             && Objects.equals(this.exportStatus, that.exportStatus)
             && Objects.equals(this.reportRemainSeconds, that.reportRemainSeconds)
-            && Objects.equals(this.compareJobTag, that.compareJobTag) && Objects.equals(this.errorMsg, that.errorMsg);
+            && Objects.equals(this.compareJobTag, that.compareJobTag) && Objects.equals(this.options, that.options)
+            && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.dynamicCompareDelay, that.dynamicCompareDelay);
     }
 
     @Override
@@ -386,7 +450,9 @@ public class CompareJobInfo {
             exportStatus,
             reportRemainSeconds,
             compareJobTag,
-            errorMsg);
+            options,
+            errorMsg,
+            dynamicCompareDelay);
     }
 
     @Override
@@ -402,7 +468,9 @@ public class CompareJobInfo {
         sb.append("    exportStatus: ").append(toIndentedString(exportStatus)).append("\n");
         sb.append("    reportRemainSeconds: ").append(toIndentedString(reportRemainSeconds)).append("\n");
         sb.append("    compareJobTag: ").append(toIndentedString(compareJobTag)).append("\n");
+        sb.append("    options: ").append(toIndentedString(options)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    dynamicCompareDelay: ").append(toIndentedString(dynamicCompareDelay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

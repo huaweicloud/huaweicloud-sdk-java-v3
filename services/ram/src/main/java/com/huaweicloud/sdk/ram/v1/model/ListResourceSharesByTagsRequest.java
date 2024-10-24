@@ -22,6 +22,11 @@ public class ListResourceSharesByTagsRequest {
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ResourceSharesByTagsReqBody body;
@@ -62,6 +67,25 @@ public class ListResourceSharesByTagsRequest {
         this.offset = offset;
     }
 
+    public ListResourceSharesByTagsRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
+
     public ListResourceSharesByTagsRequest withBody(ResourceSharesByTagsReqBody body) {
         this.body = body;
         return this;
@@ -98,12 +122,12 @@ public class ListResourceSharesByTagsRequest {
         }
         ListResourceSharesByTagsRequest that = (ListResourceSharesByTagsRequest) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, body);
+        return Objects.hash(limit, offset, xSecurityToken, body);
     }
 
     @Override
@@ -112,6 +136,7 @@ public class ListResourceSharesByTagsRequest {
         sb.append("class ListResourceSharesByTagsRequest {\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

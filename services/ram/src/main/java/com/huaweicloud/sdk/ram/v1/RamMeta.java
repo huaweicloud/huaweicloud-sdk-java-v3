@@ -99,6 +99,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AssociateResourceSharePermissionRequest::getResourceShareId,
                 AssociateResourceSharePermissionRequest::setResourceShareId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateResourceSharePermissionRequest::getXSecurityToken,
+                AssociateResourceSharePermissionRequest::setXSecurityToken));
         builder.<AssociatePermissionReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -132,6 +138,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DisassociateResourceSharePermissionRequest::getResourceShareId,
                 DisassociateResourceSharePermissionRequest::setResourceShareId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateResourceSharePermissionRequest::getXSecurityToken,
+                DisassociateResourceSharePermissionRequest::setXSecurityToken));
         builder.<DisassociatePermissionReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -183,6 +195,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceSharePermissionsRequest::getMarker,
                 ListResourceSharePermissionsRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceSharePermissionsRequest::getXSecurityToken,
+                ListResourceSharePermissionsRequest::setXSecurityToken));
 
         // response
 
@@ -200,6 +218,11 @@ public class RamMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQuotaRequest::getXSecurityToken, ListQuotaRequest::setXSecurityToken));
 
         // response
 
@@ -228,6 +251,12 @@ public class RamMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceTypesRequest::getMarker, ListResourceTypesRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceTypesRequest::getXSecurityToken,
+                ListResourceTypesRequest::setXSecurityToken));
 
         // response
 
@@ -247,6 +276,12 @@ public class RamMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableOrganizationShareRequest::getXSecurityToken,
+                DisableOrganizationShareRequest::setXSecurityToken));
 
         // response
 
@@ -265,6 +300,12 @@ public class RamMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableOrganizationShareRequest::getXSecurityToken,
+                EnableOrganizationShareRequest::setXSecurityToken));
 
         // response
 
@@ -283,6 +324,12 @@ public class RamMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOrganizationShareRequest::getXSecurityToken,
+                ShowOrganizationShareRequest::setXSecurityToken));
 
         // response
 
@@ -317,6 +364,12 @@ public class RamMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPermissionVersionsRequest::getMarker, ListPermissionVersionsRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPermissionVersionsRequest::getXSecurityToken,
+                ListPermissionVersionsRequest::setXSecurityToken));
 
         // response
 
@@ -356,6 +409,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(ListPermissionsRequest.PermissionTypeEnum.class),
             f -> f.withMarshaller(ListPermissionsRequest::getPermissionType,
                 ListPermissionsRequest::setPermissionType));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPermissionsRequest::getXSecurityToken,
+                ListPermissionsRequest::setXSecurityToken));
 
         // response
 
@@ -385,6 +444,11 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowPermissionRequest::getPermissionVersion,
                 ShowPermissionRequest::setPermissionVersion));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPermissionRequest::getXSecurityToken, ShowPermissionRequest::setXSecurityToken));
 
         // response
 
@@ -403,6 +467,12 @@ public class RamMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchSharedPrincipalsRequest::getXSecurityToken,
+                SearchSharedPrincipalsRequest::setXSecurityToken));
         builder.<SearchSharedPrincipalsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -426,6 +496,12 @@ public class RamMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchSharedResourcesRequest::getXSecurityToken,
+                SearchSharedResourcesRequest::setXSecurityToken));
         builder.<SearchSharedResourcesReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -449,6 +525,12 @@ public class RamMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateResourceShareRequest::getXSecurityToken,
+                CreateResourceShareRequest::setXSecurityToken));
         builder.<CreateResourceShareReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -478,6 +560,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteResourceShareRequest::getResourceShareId,
                 DeleteResourceShareRequest::setResourceShareId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteResourceShareRequest::getXSecurityToken,
+                DeleteResourceShareRequest::setXSecurityToken));
 
         // response
 
@@ -496,6 +584,12 @@ public class RamMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchResourceSharesRequest::getXSecurityToken,
+                SearchResourceSharesRequest::setXSecurityToken));
         builder.<SearchResourceSharesReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -525,6 +619,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateResourceShareRequest::getResourceShareId,
                 UpdateResourceShareRequest::setResourceShareId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateResourceShareRequest::getXSecurityToken,
+                UpdateResourceShareRequest::setXSecurityToken));
         builder.<UpdateResourceShareReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -554,6 +654,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AssociateResourceShareRequest::getResourceShareId,
                 AssociateResourceShareRequest::setResourceShareId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateResourceShareRequest::getXSecurityToken,
+                AssociateResourceShareRequest::setXSecurityToken));
         builder.<ResourceShareAssociationReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -586,6 +692,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DisassociateResourceShareRequest::getResourceShareId,
                 DisassociateResourceShareRequest::setResourceShareId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateResourceShareRequest::getXSecurityToken,
+                DisassociateResourceShareRequest::setXSecurityToken));
         builder.<ResourceShareAssociationReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -613,6 +725,12 @@ public class RamMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchResourceShareAssociationsRequest::getXSecurityToken,
+                SearchResourceShareAssociationsRequest::setXSecurityToken));
         builder.<SearchResourceShareAssociationsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -646,6 +764,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AcceptResourceShareInvitationRequest::getResourceShareInvitationId,
                 AcceptResourceShareInvitationRequest::setResourceShareInvitationId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptResourceShareInvitationRequest::getXSecurityToken,
+                AcceptResourceShareInvitationRequest::setXSecurityToken));
 
         // response
 
@@ -673,6 +797,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RejectResourceShareInvitationRequest::getResourceShareInvitationId,
                 RejectResourceShareInvitationRequest::setResourceShareInvitationId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RejectResourceShareInvitationRequest::getXSecurityToken,
+                RejectResourceShareInvitationRequest::setXSecurityToken));
 
         // response
 
@@ -694,6 +824,12 @@ public class RamMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchResourceShareInvitationRequest::getXSecurityToken,
+                SearchResourceShareInvitationRequest::setXSecurityToken));
         builder.<SearchResourceShareInvitationReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -727,6 +863,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateResourceShareTagsRequest::getResourceShareId,
                 BatchCreateResourceShareTagsRequest::setResourceShareId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateResourceShareTagsRequest::getXSecurityToken,
+                BatchCreateResourceShareTagsRequest::setXSecurityToken));
         builder.<TagResourceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -760,6 +902,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteResourceShareTagsRequest::getResourceShareId,
                 BatchDeleteResourceShareTagsRequest::setResourceShareId));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteResourceShareTagsRequest::getXSecurityToken,
+                BatchDeleteResourceShareTagsRequest::setXSecurityToken));
         builder.<UntagResourceReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -794,6 +942,12 @@ public class RamMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceShareTagsRequest::getMarker, ListResourceShareTagsRequest::setMarker));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceShareTagsRequest::getXSecurityToken,
+                ListResourceShareTagsRequest::setXSecurityToken));
 
         // response
 
@@ -825,6 +979,12 @@ public class RamMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceSharesByTagsRequest::getOffset,
                 ListResourceSharesByTagsRequest::setOffset));
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceSharesByTagsRequest::getXSecurityToken,
+                ListResourceSharesByTagsRequest::setXSecurityToken));
         builder.<ResourceSharesByTagsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -851,6 +1011,12 @@ public class RamMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Security-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchResourceShareCountByTagsRequest::getXSecurityToken,
+                SearchResourceShareCountByTagsRequest::setXSecurityToken));
         builder.<ResourceSharesByTagsReqBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

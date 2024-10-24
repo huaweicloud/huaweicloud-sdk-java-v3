@@ -199,6 +199,11 @@ public class SmartLiveJob {
 
     private LiveJobLog liveJobLog;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "relation_live_platform_info")
+
+    private PlatformLiveDetailInfo relationLivePlatformInfo;
+
     public SmartLiveJob withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -580,6 +585,32 @@ public class SmartLiveJob {
         this.liveJobLog = liveJobLog;
     }
 
+    public SmartLiveJob withRelationLivePlatformInfo(PlatformLiveDetailInfo relationLivePlatformInfo) {
+        this.relationLivePlatformInfo = relationLivePlatformInfo;
+        return this;
+    }
+
+    public SmartLiveJob withRelationLivePlatformInfo(Consumer<PlatformLiveDetailInfo> relationLivePlatformInfoSetter) {
+        if (this.relationLivePlatformInfo == null) {
+            this.relationLivePlatformInfo = new PlatformLiveDetailInfo();
+            relationLivePlatformInfoSetter.accept(this.relationLivePlatformInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get relationLivePlatformInfo
+     * @return relationLivePlatformInfo
+     */
+    public PlatformLiveDetailInfo getRelationLivePlatformInfo() {
+        return relationLivePlatformInfo;
+    }
+
+    public void setRelationLivePlatformInfo(PlatformLiveDetailInfo relationLivePlatformInfo) {
+        this.relationLivePlatformInfo = relationLivePlatformInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -602,7 +633,8 @@ public class SmartLiveJob {
             && Objects.equals(this.streamDuration, that.streamDuration)
             && Objects.equals(this.blockReason, that.blockReason) && Objects.equals(this.coverUrl, that.coverUrl)
             && Objects.equals(this.coStreamerConfig, that.coStreamerConfig)
-            && Objects.equals(this.liveJobLog, that.liveJobLog);
+            && Objects.equals(this.liveJobLog, that.liveJobLog)
+            && Objects.equals(this.relationLivePlatformInfo, that.relationLivePlatformInfo);
     }
 
     @Override
@@ -625,7 +657,8 @@ public class SmartLiveJob {
             blockReason,
             coverUrl,
             coStreamerConfig,
-            liveJobLog);
+            liveJobLog,
+            relationLivePlatformInfo);
     }
 
     @Override
@@ -651,6 +684,7 @@ public class SmartLiveJob {
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
         sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
         sb.append("    liveJobLog: ").append(toIndentedString(liveJobLog)).append("\n");
+        sb.append("    relationLivePlatformInfo: ").append(toIndentedString(relationLivePlatformInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -36,14 +36,14 @@ public class ConnectionPoint {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private ConnectionPointTypeEnum type;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "parent_instance_id")
 
     private String parentInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private ConnectionPointTypeEnum type;
 
     public ConnectionPoint withId(String id) {
         this.id = id;
@@ -119,7 +119,7 @@ public class ConnectionPoint {
     }
 
     /**
-     * 实例ID。
+     * 连接点的实例ID。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -128,6 +128,23 @@ public class ConnectionPoint {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public ConnectionPoint withParentInstanceId(String parentInstanceId) {
+        this.parentInstanceId = parentInstanceId;
+        return this;
+    }
+
+    /**
+     * 连接点的实例的父资源ID。
+     * @return parentInstanceId
+     */
+    public String getParentInstanceId() {
+        return parentInstanceId;
+    }
+
+    public void setParentInstanceId(String parentInstanceId) {
+        this.parentInstanceId = parentInstanceId;
     }
 
     public ConnectionPoint withType(ConnectionPointTypeEnum type) {
@@ -147,23 +164,6 @@ public class ConnectionPoint {
         this.type = type;
     }
 
-    public ConnectionPoint withParentInstanceId(String parentInstanceId) {
-        this.parentInstanceId = parentInstanceId;
-        return this;
-    }
-
-    /**
-     * 实例ID。
-     * @return parentInstanceId
-     */
-    public String getParentInstanceId() {
-        return parentInstanceId;
-    }
-
-    public void setParentInstanceId(String parentInstanceId) {
-        this.parentInstanceId = parentInstanceId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -175,13 +175,13 @@ public class ConnectionPoint {
         ConnectionPoint that = (ConnectionPoint) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.siteCode, that.siteCode)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.parentInstanceId, that.parentInstanceId);
+            && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.parentInstanceId, that.parentInstanceId) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, projectId, regionId, siteCode, instanceId, type, parentInstanceId);
+        return Objects.hash(id, projectId, regionId, siteCode, instanceId, parentInstanceId, type);
     }
 
     @Override
@@ -193,8 +193,8 @@ public class ConnectionPoint {
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    siteCode: ").append(toIndentedString(siteCode)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    parentInstanceId: ").append(toIndentedString(parentInstanceId)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

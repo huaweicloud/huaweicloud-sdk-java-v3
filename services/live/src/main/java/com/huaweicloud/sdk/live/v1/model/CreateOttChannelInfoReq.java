@@ -133,6 +133,11 @@ public class CreateOttChannelInfoReq {
 
     private List<EndpointItem> endpoints = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encoder_settings_expand")
+
+    private EncoderSettingsExpand encoderSettingsExpand;
+
     public CreateOttChannelInfoReq withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -173,7 +178,7 @@ public class CreateOttChannelInfoReq {
     }
 
     /**
-     * 频道ID。频道唯一标识，为必填项。频道ID不建议输入下划线“_”，否则会影响转码和截图任务
+     * 频道ID。频道唯一标识，为必填项。
      * @return id
      */
     public String getId() {
@@ -340,6 +345,33 @@ public class CreateOttChannelInfoReq {
         this.endpoints = endpoints;
     }
 
+    public CreateOttChannelInfoReq withEncoderSettingsExpand(EncoderSettingsExpand encoderSettingsExpand) {
+        this.encoderSettingsExpand = encoderSettingsExpand;
+        return this;
+    }
+
+    public CreateOttChannelInfoReq withEncoderSettingsExpand(
+        Consumer<EncoderSettingsExpand> encoderSettingsExpandSetter) {
+        if (this.encoderSettingsExpand == null) {
+            this.encoderSettingsExpand = new EncoderSettingsExpand();
+            encoderSettingsExpandSetter.accept(this.encoderSettingsExpand);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get encoderSettingsExpand
+     * @return encoderSettingsExpand
+     */
+    public EncoderSettingsExpand getEncoderSettingsExpand() {
+        return encoderSettingsExpand;
+    }
+
+    public void setEncoderSettingsExpand(EncoderSettingsExpand encoderSettingsExpand) {
+        this.encoderSettingsExpand = encoderSettingsExpand;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -354,12 +386,22 @@ public class CreateOttChannelInfoReq {
             && Objects.equals(this.state, that.state) && Objects.equals(this.input, that.input)
             && Objects.equals(this.encoderSettings, that.encoderSettings)
             && Objects.equals(this.recordSettings, that.recordSettings)
-            && Objects.equals(this.endpoints, that.endpoints);
+            && Objects.equals(this.endpoints, that.endpoints)
+            && Objects.equals(this.encoderSettingsExpand, that.encoderSettingsExpand);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain, appName, id, name, state, input, encoderSettings, recordSettings, endpoints);
+        return Objects.hash(domain,
+            appName,
+            id,
+            name,
+            state,
+            input,
+            encoderSettings,
+            recordSettings,
+            endpoints,
+            encoderSettingsExpand);
     }
 
     @Override
@@ -375,6 +417,7 @@ public class CreateOttChannelInfoReq {
         sb.append("    encoderSettings: ").append(toIndentedString(encoderSettings)).append("\n");
         sb.append("    recordSettings: ").append(toIndentedString(recordSettings)).append("\n");
         sb.append("    endpoints: ").append(toIndentedString(endpoints)).append("\n");
+        sb.append("    encoderSettingsExpand: ").append(toIndentedString(encoderSettingsExpand)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -33,6 +33,11 @@ public class ModifyOttChannelEncoderSettings {
 
     private List<ModifyOttChannelEncoderSettingsEncoderSettings> encoderSettings = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encoder_settings_expand")
+
+    private EncoderSettingsExpand encoderSettingsExpand;
+
     public ModifyOttChannelEncoderSettings withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -120,6 +125,33 @@ public class ModifyOttChannelEncoderSettings {
         this.encoderSettings = encoderSettings;
     }
 
+    public ModifyOttChannelEncoderSettings withEncoderSettingsExpand(EncoderSettingsExpand encoderSettingsExpand) {
+        this.encoderSettingsExpand = encoderSettingsExpand;
+        return this;
+    }
+
+    public ModifyOttChannelEncoderSettings withEncoderSettingsExpand(
+        Consumer<EncoderSettingsExpand> encoderSettingsExpandSetter) {
+        if (this.encoderSettingsExpand == null) {
+            this.encoderSettingsExpand = new EncoderSettingsExpand();
+            encoderSettingsExpandSetter.accept(this.encoderSettingsExpand);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get encoderSettingsExpand
+     * @return encoderSettingsExpand
+     */
+    public EncoderSettingsExpand getEncoderSettingsExpand() {
+        return encoderSettingsExpand;
+    }
+
+    public void setEncoderSettingsExpand(EncoderSettingsExpand encoderSettingsExpand) {
+        this.encoderSettingsExpand = encoderSettingsExpand;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -130,12 +162,13 @@ public class ModifyOttChannelEncoderSettings {
         }
         ModifyOttChannelEncoderSettings that = (ModifyOttChannelEncoderSettings) obj;
         return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.encoderSettings, that.encoderSettings);
+            && Objects.equals(this.id, that.id) && Objects.equals(this.encoderSettings, that.encoderSettings)
+            && Objects.equals(this.encoderSettingsExpand, that.encoderSettingsExpand);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domain, appName, id, encoderSettings);
+        return Objects.hash(domain, appName, id, encoderSettings, encoderSettingsExpand);
     }
 
     @Override
@@ -146,6 +179,7 @@ public class ModifyOttChannelEncoderSettings {
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    encoderSettings: ").append(toIndentedString(encoderSettings)).append("\n");
+        sb.append("    encoderSettingsExpand: ").append(toIndentedString(encoderSettingsExpand)).append("\n");
         sb.append("}");
         return sb.toString();
     }

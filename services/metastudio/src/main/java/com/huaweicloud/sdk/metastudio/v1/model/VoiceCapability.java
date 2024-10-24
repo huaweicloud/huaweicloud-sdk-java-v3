@@ -70,6 +70,11 @@ public class VoiceCapability {
 
     private Float conversionRateEn;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_srt")
+
+    private Boolean isSupportSrt;
+
     public VoiceCapability withIsSupportPhonemeEn(Boolean isSupportPhonemeEn) {
         this.isSupportPhonemeEn = isSupportPhonemeEn;
         return this;
@@ -278,6 +283,23 @@ public class VoiceCapability {
         this.conversionRateEn = conversionRateEn;
     }
 
+    public VoiceCapability withIsSupportSrt(Boolean isSupportSrt) {
+        this.isSupportSrt = isSupportSrt;
+        return this;
+    }
+
+    /**
+     * 是否支持生成STR字幕文件。
+     * @return isSupportSrt
+     */
+    public Boolean getIsSupportSrt() {
+        return isSupportSrt;
+    }
+
+    public void setIsSupportSrt(Boolean isSupportSrt) {
+        this.isSupportSrt = isSupportSrt;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -298,7 +320,8 @@ public class VoiceCapability {
             && Objects.equals(this.isSupportWord, that.isSupportWord)
             && Objects.equals(this.isSupportVoiceCache, that.isSupportVoiceCache)
             && Objects.equals(this.conversionRate, that.conversionRate)
-            && Objects.equals(this.conversionRateEn, that.conversionRateEn);
+            && Objects.equals(this.conversionRateEn, that.conversionRateEn)
+            && Objects.equals(this.isSupportSrt, that.isSupportSrt);
     }
 
     @Override
@@ -314,7 +337,8 @@ public class VoiceCapability {
             isSupportWord,
             isSupportVoiceCache,
             conversionRate,
-            conversionRateEn);
+            conversionRateEn,
+            isSupportSrt);
     }
 
     @Override
@@ -333,6 +357,7 @@ public class VoiceCapability {
         sb.append("    isSupportVoiceCache: ").append(toIndentedString(isSupportVoiceCache)).append("\n");
         sb.append("    conversionRate: ").append(toIndentedString(conversionRate)).append("\n");
         sb.append("    conversionRateEn: ").append(toIndentedString(conversionRateEn)).append("\n");
+        sb.append("    isSupportSrt: ").append(toIndentedString(isSupportSrt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

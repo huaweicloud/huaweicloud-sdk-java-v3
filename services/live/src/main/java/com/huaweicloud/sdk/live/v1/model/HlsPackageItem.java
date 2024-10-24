@@ -58,13 +58,18 @@ public class HlsPackageItem {
 
     private PackageRequestArgs requestArgs;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ad_marker")
+
+    private List<String> adMarker = null;
+
     public HlsPackageItem withUrl(String url) {
         this.url = url;
         return this;
     }
 
     /**
-     * 客户自定义的拉流地址，包括方法、域名、路径和参数
+     * 客户自定义的拉流地址，包括方法、域名、路径
      * @return url
      */
     public String getUrl() {
@@ -131,7 +136,7 @@ public class HlsPackageItem {
     }
 
     /**
-     * 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10
+     * 频道输出分片的时长，为必选项  单位：秒。取值范围：1-10 > 修改分片时长会影响已录制内容的时移和回看服务，请谨慎修改！
      * minimum: 1
      * maximum: 10
      * @return segmentDurationSeconds
@@ -249,6 +254,39 @@ public class HlsPackageItem {
         this.requestArgs = requestArgs;
     }
 
+    public HlsPackageItem withAdMarker(List<String> adMarker) {
+        this.adMarker = adMarker;
+        return this;
+    }
+
+    public HlsPackageItem addAdMarkerItem(String adMarkerItem) {
+        if (this.adMarker == null) {
+            this.adMarker = new ArrayList<>();
+        }
+        this.adMarker.add(adMarkerItem);
+        return this;
+    }
+
+    public HlsPackageItem withAdMarker(Consumer<List<String>> adMarkerSetter) {
+        if (this.adMarker == null) {
+            this.adMarker = new ArrayList<>();
+        }
+        adMarkerSetter.accept(this.adMarker);
+        return this;
+    }
+
+    /**
+     * 广告标识。  HLS取值：[\"ENHANCED_SCTE35\"]。 
+     * @return adMarker
+     */
+    public List<String> getAdMarker() {
+        return adMarker;
+    }
+
+    public void setAdMarker(List<String> adMarker) {
+        this.adMarker = adMarker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -263,7 +301,8 @@ public class HlsPackageItem {
             && Objects.equals(this.segmentDurationSeconds, that.segmentDurationSeconds)
             && Objects.equals(this.playlistWindowSeconds, that.playlistWindowSeconds)
             && Objects.equals(this.encryption, that.encryption) && Objects.equals(this.ads, that.ads)
-            && Objects.equals(this.extArgs, that.extArgs) && Objects.equals(this.requestArgs, that.requestArgs);
+            && Objects.equals(this.extArgs, that.extArgs) && Objects.equals(this.requestArgs, that.requestArgs)
+            && Objects.equals(this.adMarker, that.adMarker);
     }
 
     @Override
@@ -276,7 +315,8 @@ public class HlsPackageItem {
             encryption,
             ads,
             extArgs,
-            requestArgs);
+            requestArgs,
+            adMarker);
     }
 
     @Override
@@ -292,6 +332,7 @@ public class HlsPackageItem {
         sb.append("    ads: ").append(toIndentedString(ads)).append("\n");
         sb.append("    extArgs: ").append(toIndentedString(extArgs)).append("\n");
         sb.append("    requestArgs: ").append(toIndentedString(requestArgs)).append("\n");
+        sb.append("    adMarker: ").append(toIndentedString(adMarker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -125,6 +125,11 @@ public class CreateTrainingJobReq {
 
     private String dhtmsJobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "batch_name")
+
+    private String batchName;
+
     public CreateTrainingJobReq withTag(JobTag tag) {
         this.tag = tag;
         return this;
@@ -261,6 +266,23 @@ public class CreateTrainingJobReq {
         this.dhtmsJobId = dhtmsJobId;
     }
 
+    public CreateTrainingJobReq withBatchName(String batchName) {
+        this.batchName = batchName;
+        return this;
+    }
+
+    /**
+     * 批次名称
+     * @return batchName
+     */
+    public String getBatchName() {
+        return batchName;
+    }
+
+    public void setBatchName(String batchName) {
+        this.batchName = batchName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -273,12 +295,13 @@ public class CreateTrainingJobReq {
         return Objects.equals(this.tag, that.tag) && Objects.equals(this.description, that.description)
             && Objects.equals(this.sex, that.sex) && Objects.equals(this.voiceName, that.voiceName)
             && Objects.equals(this.language, that.language) && Objects.equals(this.createType, that.createType)
-            && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId);
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId)
+            && Objects.equals(this.batchName, that.batchName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tag, description, sex, voiceName, language, createType, phone, dhtmsJobId);
+        return Objects.hash(tag, description, sex, voiceName, language, createType, phone, dhtmsJobId, batchName);
     }
 
     @Override
@@ -293,6 +316,7 @@ public class CreateTrainingJobReq {
         sb.append("    createType: ").append(toIndentedString(createType)).append("\n");
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    dhtmsJobId: ").append(toIndentedString(dhtmsJobId)).append("\n");
+        sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

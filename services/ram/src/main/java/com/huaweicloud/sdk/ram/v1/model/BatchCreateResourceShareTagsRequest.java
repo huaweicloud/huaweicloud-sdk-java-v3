@@ -17,6 +17,11 @@ public class BatchCreateResourceShareTagsRequest {
     private String resourceShareId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private TagResourceReqBody body;
@@ -36,6 +41,25 @@ public class BatchCreateResourceShareTagsRequest {
 
     public void setResourceShareId(String resourceShareId) {
         this.resourceShareId = resourceShareId;
+    }
+
+    public BatchCreateResourceShareTagsRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
     }
 
     public BatchCreateResourceShareTagsRequest withBody(TagResourceReqBody body) {
@@ -73,12 +97,13 @@ public class BatchCreateResourceShareTagsRequest {
             return false;
         }
         BatchCreateResourceShareTagsRequest that = (BatchCreateResourceShareTagsRequest) obj;
-        return Objects.equals(this.resourceShareId, that.resourceShareId) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.resourceShareId, that.resourceShareId)
+            && Objects.equals(this.xSecurityToken, that.xSecurityToken) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceShareId, body);
+        return Objects.hash(resourceShareId, xSecurityToken, body);
     }
 
     @Override
@@ -86,6 +111,7 @@ public class BatchCreateResourceShareTagsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchCreateResourceShareTagsRequest {\n");
         sb.append("    resourceShareId: ").append(toIndentedString(resourceShareId)).append("\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

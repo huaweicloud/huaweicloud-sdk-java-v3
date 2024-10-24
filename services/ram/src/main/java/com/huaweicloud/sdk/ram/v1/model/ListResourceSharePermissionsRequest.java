@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListResourceSharePermissionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_share_id")
 
     private String resourceShareId;
@@ -29,6 +34,25 @@ public class ListResourceSharePermissionsRequest {
     @JsonProperty(value = "marker")
 
     private String marker;
+
+    public ListResourceSharePermissionsRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+    }
 
     public ListResourceSharePermissionsRequest withResourceShareId(String resourceShareId) {
         this.resourceShareId = resourceShareId;
@@ -109,20 +133,22 @@ public class ListResourceSharePermissionsRequest {
             return false;
         }
         ListResourceSharePermissionsRequest that = (ListResourceSharePermissionsRequest) obj;
-        return Objects.equals(this.resourceShareId, that.resourceShareId)
+        return Objects.equals(this.xSecurityToken, that.xSecurityToken)
+            && Objects.equals(this.resourceShareId, that.resourceShareId)
             && Objects.equals(this.permissionName, that.permissionName) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceShareId, permissionName, limit, marker);
+        return Objects.hash(xSecurityToken, resourceShareId, permissionName, limit, marker);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListResourceSharePermissionsRequest {\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    resourceShareId: ").append(toIndentedString(resourceShareId)).append("\n");
         sb.append("    permissionName: ").append(toIndentedString(permissionName)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

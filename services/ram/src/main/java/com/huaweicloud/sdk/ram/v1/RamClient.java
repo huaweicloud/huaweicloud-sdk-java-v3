@@ -598,9 +598,9 @@ public class RamClient {
     }
 
     /**
-     * 移除资源使用者和共享资源
+     * 移除资源使用者或共享资源
      *
-     * 将指定的资源使用者或共享资源从指定的资源共享实例中移除。
+     * 将指定的资源使用者或共享资源从指定的资源共享实例中移除。资源使用者也可以从指定的资源共享实例中主动退出。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -612,9 +612,9 @@ public class RamClient {
     }
 
     /**
-     * 移除资源使用者和共享资源
+     * 移除资源使用者或共享资源
      *
-     * 将指定的资源使用者或共享资源从指定的资源共享实例中移除。
+     * 将指定的资源使用者或共享资源从指定的资源共享实例中移除。资源使用者也可以从指定的资源共享实例中主动退出。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -48,6 +48,16 @@ public class TableConfigCheckRequestV3 {
 
     private TableReplConfig tableReplConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_database_name")
+
+    private String targetDatabaseName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_create_task")
+
+    private String isCreateTask;
+
     public TableConfigCheckRequestV3 withSourceInstanceId(String sourceInstanceId) {
         this.sourceInstanceId = sourceInstanceId;
         return this;
@@ -208,6 +218,40 @@ public class TableConfigCheckRequestV3 {
         this.tableReplConfig = tableReplConfig;
     }
 
+    public TableConfigCheckRequestV3 withTargetDatabaseName(String targetDatabaseName) {
+        this.targetDatabaseName = targetDatabaseName;
+        return this;
+    }
+
+    /**
+     * 目标数据库名。字符长度限制3~128位，仅支持英文大小写字母、数字以及下划线。
+     * @return targetDatabaseName
+     */
+    public String getTargetDatabaseName() {
+        return targetDatabaseName;
+    }
+
+    public void setTargetDatabaseName(String targetDatabaseName) {
+        this.targetDatabaseName = targetDatabaseName;
+    }
+
+    public TableConfigCheckRequestV3 withIsCreateTask(String isCreateTask) {
+        this.isCreateTask = isCreateTask;
+        return this;
+    }
+
+    /**
+     * 是否创建同步任务
+     * @return isCreateTask
+     */
+    public String getIsCreateTask() {
+        return isCreateTask;
+    }
+
+    public void setIsCreateTask(String isCreateTask) {
+        this.isCreateTask = isCreateTask;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -222,7 +266,9 @@ public class TableConfigCheckRequestV3 {
             && Objects.equals(this.sourceDatabaseName, that.sourceDatabaseName)
             && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.dbConfigs, that.dbConfigs)
             && Objects.equals(this.tablesConfigs, that.tablesConfigs)
-            && Objects.equals(this.tableReplConfig, that.tableReplConfig);
+            && Objects.equals(this.tableReplConfig, that.tableReplConfig)
+            && Objects.equals(this.targetDatabaseName, that.targetDatabaseName)
+            && Objects.equals(this.isCreateTask, that.isCreateTask);
     }
 
     @Override
@@ -233,7 +279,9 @@ public class TableConfigCheckRequestV3 {
             taskName,
             dbConfigs,
             tablesConfigs,
-            tableReplConfig);
+            tableReplConfig,
+            targetDatabaseName,
+            isCreateTask);
     }
 
     @Override
@@ -247,6 +295,8 @@ public class TableConfigCheckRequestV3 {
         sb.append("    dbConfigs: ").append(toIndentedString(dbConfigs)).append("\n");
         sb.append("    tablesConfigs: ").append(toIndentedString(tablesConfigs)).append("\n");
         sb.append("    tableReplConfig: ").append(toIndentedString(tableReplConfig)).append("\n");
+        sb.append("    targetDatabaseName: ").append(toIndentedString(targetDatabaseName)).append("\n");
+        sb.append("    isCreateTask: ").append(toIndentedString(isCreateTask)).append("\n");
         sb.append("}");
         return sb.toString();
     }

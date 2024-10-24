@@ -21,6 +21,11 @@ public class ShootScriptItem {
 
     private ShootScript shootScript;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subtitle_file_info")
+
+    private SubtitleFiles subtitleFileInfo;
+
     public ShootScriptItem withSequenceNo(Integer sequenceNo) {
         this.sequenceNo = sequenceNo;
         return this;
@@ -66,6 +71,32 @@ public class ShootScriptItem {
         this.shootScript = shootScript;
     }
 
+    public ShootScriptItem withSubtitleFileInfo(SubtitleFiles subtitleFileInfo) {
+        this.subtitleFileInfo = subtitleFileInfo;
+        return this;
+    }
+
+    public ShootScriptItem withSubtitleFileInfo(Consumer<SubtitleFiles> subtitleFileInfoSetter) {
+        if (this.subtitleFileInfo == null) {
+            this.subtitleFileInfo = new SubtitleFiles();
+            subtitleFileInfoSetter.accept(this.subtitleFileInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get subtitleFileInfo
+     * @return subtitleFileInfo
+     */
+    public SubtitleFiles getSubtitleFileInfo() {
+        return subtitleFileInfo;
+    }
+
+    public void setSubtitleFileInfo(SubtitleFiles subtitleFileInfo) {
+        this.subtitleFileInfo = subtitleFileInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -75,12 +106,13 @@ public class ShootScriptItem {
             return false;
         }
         ShootScriptItem that = (ShootScriptItem) obj;
-        return Objects.equals(this.sequenceNo, that.sequenceNo) && Objects.equals(this.shootScript, that.shootScript);
+        return Objects.equals(this.sequenceNo, that.sequenceNo) && Objects.equals(this.shootScript, that.shootScript)
+            && Objects.equals(this.subtitleFileInfo, that.subtitleFileInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sequenceNo, shootScript);
+        return Objects.hash(sequenceNo, shootScript, subtitleFileInfo);
     }
 
     @Override
@@ -89,6 +121,7 @@ public class ShootScriptItem {
         sb.append("class ShootScriptItem {\n");
         sb.append("    sequenceNo: ").append(toIndentedString(sequenceNo)).append("\n");
         sb.append("    shootScript: ").append(toIndentedString(shootScript)).append("\n");
+        sb.append("    subtitleFileInfo: ").append(toIndentedString(subtitleFileInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

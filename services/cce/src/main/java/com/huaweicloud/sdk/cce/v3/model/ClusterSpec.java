@@ -339,6 +339,11 @@ public class ClusterSpec {
     private Boolean enableMasterVolumeEncryption;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enableDistMgt")
+
+    private Boolean enableDistMgt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configurationsOverride")
 
     private List<PackageConfiguration> configurationsOverride = null;
@@ -819,6 +824,23 @@ public class ClusterSpec {
         this.enableMasterVolumeEncryption = enableMasterVolumeEncryption;
     }
 
+    public ClusterSpec withEnableDistMgt(Boolean enableDistMgt) {
+        this.enableDistMgt = enableDistMgt;
+        return this;
+    }
+
+    /**
+     * 集群开启对分布式云支持。创建CCE Turbo集群时，可在创建集群过程中，开启对分布式云(cloudpond)支持。
+     * @return enableDistMgt
+     */
+    public Boolean getEnableDistMgt() {
+        return enableDistMgt;
+    }
+
+    public void setEnableDistMgt(Boolean enableDistMgt) {
+        this.enableDistMgt = enableDistMgt;
+    }
+
     public ClusterSpec withConfigurationsOverride(List<PackageConfiguration> configurationsOverride) {
         this.configurationsOverride = configurationsOverride;
         return this;
@@ -877,6 +899,7 @@ public class ClusterSpec {
             && Objects.equals(this.extendParam, that.extendParam)
             && Objects.equals(this.supportIstio, that.supportIstio)
             && Objects.equals(this.enableMasterVolumeEncryption, that.enableMasterVolumeEncryption)
+            && Objects.equals(this.enableDistMgt, that.enableDistMgt)
             && Objects.equals(this.configurationsOverride, that.configurationsOverride);
     }
 
@@ -904,6 +927,7 @@ public class ClusterSpec {
             extendParam,
             supportIstio,
             enableMasterVolumeEncryption,
+            enableDistMgt,
             configurationsOverride);
     }
 
@@ -935,6 +959,7 @@ public class ClusterSpec {
         sb.append("    enableMasterVolumeEncryption: ")
             .append(toIndentedString(enableMasterVolumeEncryption))
             .append("\n");
+        sb.append("    enableDistMgt: ").append(toIndentedString(enableDistMgt)).append("\n");
         sb.append("    configurationsOverride: ").append(toIndentedString(configurationsOverride)).append("\n");
         sb.append("}");
         return sb.toString();

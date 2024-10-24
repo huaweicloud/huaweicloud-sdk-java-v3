@@ -36,7 +36,7 @@ public class GetDatabaseInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
-    private String created;
+    private Long created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used_rds")
@@ -116,7 +116,7 @@ public class GetDatabaseInfo {
         this.status = status;
     }
 
-    public GetDatabaseInfo withCreated(String created) {
+    public GetDatabaseInfo withCreated(Long created) {
         this.created = created;
         return this;
     }
@@ -125,11 +125,11 @@ public class GetDatabaseInfo {
      * 逻辑库的创建时间。
      * @return created
      */
-    public String getCreated() {
+    public Long getCreated() {
         return created;
     }
 
-    public void setCreated(String created) {
+    public void setCreated(Long created) {
         this.created = created;
     }
 

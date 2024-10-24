@@ -16,6 +16,11 @@ public class ShowPermissionRequest {
     private String permissionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+
+    private String xSecurityToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "permission_version")
 
     private Integer permissionVersion;
@@ -35,6 +40,25 @@ public class ShowPermissionRequest {
 
     public void setPermissionId(String permissionId) {
         this.permissionId = permissionId;
+    }
+
+    public ShowPermissionRequest withXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
+        return this;
+    }
+
+    /**
+     * 如果正在使用临时安全凭据，则此header是必需的，该值是临时安全凭据的安全令牌（会话令牌）。
+     * @return xSecurityToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Security-Token")
+    public String getXSecurityToken() {
+        return xSecurityToken;
+    }
+
+    public void setXSecurityToken(String xSecurityToken) {
+        this.xSecurityToken = xSecurityToken;
     }
 
     public ShowPermissionRequest withPermissionVersion(Integer permissionVersion) {
@@ -66,12 +90,13 @@ public class ShowPermissionRequest {
         }
         ShowPermissionRequest that = (ShowPermissionRequest) obj;
         return Objects.equals(this.permissionId, that.permissionId)
+            && Objects.equals(this.xSecurityToken, that.xSecurityToken)
             && Objects.equals(this.permissionVersion, that.permissionVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(permissionId, permissionVersion);
+        return Objects.hash(permissionId, xSecurityToken, permissionVersion);
     }
 
     @Override
@@ -79,6 +104,7 @@ public class ShowPermissionRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPermissionRequest {\n");
         sb.append("    permissionId: ").append(toIndentedString(permissionId)).append("\n");
+        sb.append("    xSecurityToken: ").append(toIndentedString(xSecurityToken)).append("\n");
         sb.append("    permissionVersion: ").append(toIndentedString(permissionVersion)).append("\n");
         sb.append("}");
         return sb.toString();

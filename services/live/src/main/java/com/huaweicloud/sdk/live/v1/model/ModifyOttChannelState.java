@@ -145,7 +145,7 @@ public class ModifyOttChannelState {
     }
 
     /**
-     * 频道ID。频道唯一标识，为必填项。频道ID不建议输入下划线“_”，否则会影响转码和截图任务
+     * 频道ID。频道唯一标识，为必填项。
      * @return id
      */
     public String getId() {

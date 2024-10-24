@@ -81,7 +81,7 @@ public class SecondarySourcesInfo {
     }
 
     /**
-     * 码率。无需直播转码时，此参数为必填项  单位：bps。取值范围：0 - 104,857,600（100Mbps）
+     * 码率。无需直播转码时，此参数为必填项  单位：bps。取值范围：(0,104,857,600]（100Mbps）
      * minimum: 0
      * maximum: 104857600
      * @return bitrate
@@ -205,7 +205,7 @@ public class SecondarySourcesInfo {
     }
 
     /**
-     * 协议为SRT_PULL时，拉流地址的streamid
+     * 频道为SRT_PULL类型时，拉流地址的Stream ID。
      * @return streamId
      */
     public String getStreamId() {
@@ -222,7 +222,7 @@ public class SecondarySourcesInfo {
     }
 
     /**
-     * 协议为SRT_PULL时，拉流时延
+     * 频道为SRT_PULL类型时的拉流时延。
      * @return latency
      */
     public Integer getLatency() {

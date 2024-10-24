@@ -31,7 +31,7 @@ public class VideoLayerConfig {
     }
 
     /**
-     * **参数解释**： 视频文件的URL。 **约束限制**： 不涉及。 **取值范围**： 字符长度1-2048位。 **默认取值**： 不涉及。
+     * **参数解释**： 视频文件的URL。 **约束限制**： * 仅直播支持外部URL，其他业务通过资产库查询获取，不支持外部URL。 **取值范围**： 字符长度1-2048位。 **默认取值**： 不涉及。
      * @return videoUrl
      */
     public String getVideoUrl() {
@@ -48,7 +48,7 @@ public class VideoLayerConfig {
     }
 
     /**
-     * **参数解释**： 视频封面文件的URL。 **约束限制**： 不涉及。 **取值范围**： 字符长度1-2048位。 **默认取值**： 不涉及。
+     * **参数解释**： 视频封面文件的URL。 **约束限制**： * 仅直播支持外部URL，其他业务通过资产库查询获取，不支持外部URL。 **取值范围**： 字符长度1-2048位。 **默认取值**： 不涉及。
      * @return videoCoverUrl
      */
     public String getVideoCoverUrl() {

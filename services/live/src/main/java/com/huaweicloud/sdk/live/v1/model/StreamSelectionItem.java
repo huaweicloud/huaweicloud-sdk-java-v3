@@ -48,7 +48,7 @@ public class StreamSelectionItem {
     }
 
     /**
-     * 最小码率，单位：bps 取值范围：0 - 104,857,600（100Mbps）
+     * 最大码率，单位：bps  取值范围：0 - 104,857,600（100Mbps）
      * @return maxBandwidth
      */
     public Integer getMaxBandwidth() {
@@ -65,7 +65,7 @@ public class StreamSelectionItem {
     }
 
     /**
-     * 最小码率，单位：bps 取值范围：0 - 104,857,600（100Mbps）
+     * 最小码率，单位：bps  取值范围：0 - 104,857,600（100Mbps）
      * @return minBandwidth
      */
     public Integer getMinBandwidth() {

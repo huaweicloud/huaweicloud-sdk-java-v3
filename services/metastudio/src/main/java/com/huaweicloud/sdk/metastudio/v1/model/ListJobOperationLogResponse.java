@@ -22,7 +22,7 @@ public class ListJobOperationLogResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operations")
 
-    private List<Object> operations = null;
+    private List<OperationLogItem> operations = null;
 
     public ListJobOperationLogResponse withCount(Integer count) {
         this.count = count;
@@ -43,12 +43,12 @@ public class ListJobOperationLogResponse extends SdkResponse {
         this.count = count;
     }
 
-    public ListJobOperationLogResponse withOperations(List<Object> operations) {
+    public ListJobOperationLogResponse withOperations(List<OperationLogItem> operations) {
         this.operations = operations;
         return this;
     }
 
-    public ListJobOperationLogResponse addOperationsItem(Object operationsItem) {
+    public ListJobOperationLogResponse addOperationsItem(OperationLogItem operationsItem) {
         if (this.operations == null) {
             this.operations = new ArrayList<>();
         }
@@ -56,7 +56,7 @@ public class ListJobOperationLogResponse extends SdkResponse {
         return this;
     }
 
-    public ListJobOperationLogResponse withOperations(Consumer<List<Object>> operationsSetter) {
+    public ListJobOperationLogResponse withOperations(Consumer<List<OperationLogItem>> operationsSetter) {
         if (this.operations == null) {
             this.operations = new ArrayList<>();
         }
@@ -65,14 +65,14 @@ public class ListJobOperationLogResponse extends SdkResponse {
     }
 
     /**
-     * 操作
+     * 操作日志列表
      * @return operations
      */
-    public List<Object> getOperations() {
+    public List<OperationLogItem> getOperations() {
         return operations;
     }
 
-    public void setOperations(List<Object> operations) {
+    public void setOperations(List<OperationLogItem> operations) {
         this.operations = operations;
     }
 

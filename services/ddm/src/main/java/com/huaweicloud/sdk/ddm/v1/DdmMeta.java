@@ -20,6 +20,8 @@ import com.huaweicloud.sdk.ddm.v1.model.CreateUsersRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDatabaseResponse;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmDatabaseRequest;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserRequest;
@@ -29,13 +31,22 @@ import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillLogicalProcessesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillPhysicalProcessesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ExecuteKillPhysicalProcessesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ExpandDdmInstanceNodesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ExpandDdmInstanceNodesRequestBody;
+import com.huaweicloud.sdk.ddm.v1.model.ExpandDdmInstanceNodesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ExpandInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ExpandInstanceNodesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.KillProcessesOpenRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListApiVersionRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListApiVersionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListDdmEnginesRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListDdmEnginesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListDdmFlavorsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListDdmFlavorsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListEnginesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListEnginesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListFlavorsRequest;
@@ -105,6 +116,24 @@ import com.huaweicloud.sdk.ddm.v1.model.WeakPasswordReq;
 
 @SuppressWarnings("unchecked")
 public class DdmMeta {
+
+    public static final HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> listApiVersion =
+        genForListApiVersion();
+
+    private static HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> genForListApiVersion() {
+        // basic
+        HttpRequestDef.Builder<ListApiVersionRequest, ListApiVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListApiVersionRequest.class, ListApiVersionResponse.class)
+                .withName("ListApiVersion")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateDatabaseRequest, CreateDatabaseResponse> createDatabase =
         genForCreateDatabase();
@@ -249,6 +278,41 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteDdmDatabaseRequest, DeleteDdmDatabaseResponse> deleteDdmDatabase =
+        genForDeleteDdmDatabase();
+
+    private static HttpRequestDef<DeleteDdmDatabaseRequest, DeleteDdmDatabaseResponse> genForDeleteDdmDatabase() {
+        // basic
+        HttpRequestDef.Builder<DeleteDdmDatabaseRequest, DeleteDdmDatabaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDdmDatabaseRequest.class, DeleteDdmDatabaseResponse.class)
+                .withName("DeleteDdmDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/databases/{database_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDdmDatabaseRequest::getInstanceId, DeleteDdmDatabaseRequest::setInstanceId));
+        builder.<String>withRequestField("database_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDdmDatabaseRequest::getDatabaseName,
+                DeleteDdmDatabaseRequest::setDatabaseName));
+        builder.<Boolean>withRequestField("delete_dn_data",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(DeleteDdmDatabaseRequest::getDeleteDnData,
+                DeleteDdmDatabaseRequest::setDeleteDnData));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstance =
         genForDeleteInstance();
 
@@ -370,6 +434,35 @@ public class DdmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExpandDdmInstanceNodesRequest, ExpandDdmInstanceNodesResponse> expandDdmInstanceNodes =
+        genForExpandDdmInstanceNodes();
+
+    private static HttpRequestDef<ExpandDdmInstanceNodesRequest, ExpandDdmInstanceNodesResponse> genForExpandDdmInstanceNodes() {
+        // basic
+        HttpRequestDef.Builder<ExpandDdmInstanceNodesRequest, ExpandDdmInstanceNodesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExpandDdmInstanceNodesRequest.class, ExpandDdmInstanceNodesResponse.class)
+            .withName("ExpandDdmInstanceNodes")
+            .withUri("/v3/{project_id}/instances/{instance_id}/nodes")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandDdmInstanceNodesRequest::getInstanceId,
+                ExpandDdmInstanceNodesRequest::setInstanceId));
+        builder.<ExpandDdmInstanceNodesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExpandDdmInstanceNodesRequestBody.class),
+            f -> f.withMarshaller(ExpandDdmInstanceNodesRequest::getBody, ExpandDdmInstanceNodesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExpandInstanceNodesRequest, ExpandInstanceNodesResponse> expandInstanceNodes =
         genForExpandInstanceNodes();
 
@@ -460,6 +553,77 @@ public class DdmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDatabasesRequest::getLimit, ListDatabasesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDdmEnginesRequest, ListDdmEnginesResponse> listDdmEngines =
+        genForListDdmEngines();
+
+    private static HttpRequestDef<ListDdmEnginesRequest, ListDdmEnginesResponse> genForListDdmEngines() {
+        // basic
+        HttpRequestDef.Builder<ListDdmEnginesRequest, ListDdmEnginesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDdmEnginesRequest.class, ListDdmEnginesResponse.class)
+                .withName("ListDdmEngines")
+                .withUri("/v3/{project_id}/engines")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDdmEnginesRequest::getOffset, ListDdmEnginesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDdmEnginesRequest::getLimit, ListDdmEnginesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDdmFlavorsRequest, ListDdmFlavorsResponse> listDdmFlavors =
+        genForListDdmFlavors();
+
+    private static HttpRequestDef<ListDdmFlavorsRequest, ListDdmFlavorsResponse> genForListDdmFlavors() {
+        // basic
+        HttpRequestDef.Builder<ListDdmFlavorsRequest, ListDdmFlavorsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDdmFlavorsRequest.class, ListDdmFlavorsResponse.class)
+                .withName("ListDdmFlavors")
+                .withUri("/v3/{project_id}/flavors")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDdmFlavorsRequest::getOffset, ListDdmFlavorsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDdmFlavorsRequest::getLimit, ListDdmFlavorsRequest::setLimit));
+        builder.<String>withRequestField("engine_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDdmFlavorsRequest::getEngineId, ListDdmFlavorsRequest::setEngineId));
+        builder.<String>withRequestField("engine_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDdmFlavorsRequest::getEngineVersion, ListDdmFlavorsRequest::setEngineVersion));
+        builder.<String>withRequestField("available_zones",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDdmFlavorsRequest::getAvailableZones, ListDdmFlavorsRequest::setAvailableZones));
 
         // response
 

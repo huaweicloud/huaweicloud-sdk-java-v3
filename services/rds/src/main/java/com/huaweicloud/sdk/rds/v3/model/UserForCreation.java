@@ -100,7 +100,7 @@ public class UserForCreation {
     }
 
     /**
-     * 是否创建高权限用户。 • 若为true，则不用传hosts、databases参数。
+     * 是否创建高权限用户。 • 默认为false，暂不支持设置为true
      * @return isPrivilege
      */
     public Boolean getIsPrivilege() {

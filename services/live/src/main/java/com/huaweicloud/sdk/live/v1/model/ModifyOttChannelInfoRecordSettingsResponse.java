@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -38,11 +35,6 @@ public class ModifyOttChannelInfoRecordSettingsResponse extends SdkResponse {
     @JsonProperty(value = "id")
 
     private String id;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sources")
-
-    private List<SourceRsp> sources = null;
 
     public ModifyOttChannelInfoRecordSettingsResponse withResultCode(String resultCode) {
         this.resultCode = resultCode;
@@ -129,39 +121,6 @@ public class ModifyOttChannelInfoRecordSettingsResponse extends SdkResponse {
         this.id = id;
     }
 
-    public ModifyOttChannelInfoRecordSettingsResponse withSources(List<SourceRsp> sources) {
-        this.sources = sources;
-        return this;
-    }
-
-    public ModifyOttChannelInfoRecordSettingsResponse addSourcesItem(SourceRsp sourcesItem) {
-        if (this.sources == null) {
-            this.sources = new ArrayList<>();
-        }
-        this.sources.add(sourcesItem);
-        return this;
-    }
-
-    public ModifyOttChannelInfoRecordSettingsResponse withSources(Consumer<List<SourceRsp>> sourcesSetter) {
-        if (this.sources == null) {
-            this.sources = new ArrayList<>();
-        }
-        sourcesSetter.accept(this.sources);
-        return this;
-    }
-
-    /**
-     * 推流URL列表。创建频道时，只有入流协议为RTMP_PUSH时，会返回推流URL列表
-     * @return sources
-     */
-    public List<SourceRsp> getSources() {
-        return sources;
-    }
-
-    public void setSources(List<SourceRsp> sources) {
-        this.sources = sources;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -173,12 +132,12 @@ public class ModifyOttChannelInfoRecordSettingsResponse extends SdkResponse {
         ModifyOttChannelInfoRecordSettingsResponse that = (ModifyOttChannelInfoRecordSettingsResponse) obj;
         return Objects.equals(this.resultCode, that.resultCode) && Objects.equals(this.resultMsg, that.resultMsg)
             && Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.sources, that.sources);
+            && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resultCode, resultMsg, domain, appName, id, sources);
+        return Objects.hash(resultCode, resultMsg, domain, appName, id);
     }
 
     @Override
@@ -190,7 +149,6 @@ public class ModifyOttChannelInfoRecordSettingsResponse extends SdkResponse {
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    appName: ").append(toIndentedString(appName)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
-        sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
         sb.append("}");
         return sb.toString();
     }

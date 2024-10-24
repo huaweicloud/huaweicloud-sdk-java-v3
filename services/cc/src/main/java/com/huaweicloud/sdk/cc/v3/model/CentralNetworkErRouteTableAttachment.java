@@ -137,14 +137,14 @@ public class CentralNetworkErRouteTableAttachment {
     private String attachedErTableSiteCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "approved_state")
-
-    private ApprovedStateEnum approvedState;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hosted_cloud")
 
     private HostedCloudEnum hostedCloud;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "approved_state")
+
+    private ApprovedStateEnum approvedState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "reason")
@@ -578,23 +578,6 @@ public class CentralNetworkErRouteTableAttachment {
         this.attachedErTableSiteCode = attachedErTableSiteCode;
     }
 
-    public CentralNetworkErRouteTableAttachment withApprovedState(ApprovedStateEnum approvedState) {
-        this.approvedState = approvedState;
-        return this;
-    }
-
-    /**
-     * Get approvedState
-     * @return approvedState
-     */
-    public ApprovedStateEnum getApprovedState() {
-        return approvedState;
-    }
-
-    public void setApprovedState(ApprovedStateEnum approvedState) {
-        this.approvedState = approvedState;
-    }
-
     public CentralNetworkErRouteTableAttachment withHostedCloud(HostedCloudEnum hostedCloud) {
         this.hostedCloud = hostedCloud;
         return this;
@@ -610,6 +593,23 @@ public class CentralNetworkErRouteTableAttachment {
 
     public void setHostedCloud(HostedCloudEnum hostedCloud) {
         this.hostedCloud = hostedCloud;
+    }
+
+    public CentralNetworkErRouteTableAttachment withApprovedState(ApprovedStateEnum approvedState) {
+        this.approvedState = approvedState;
+        return this;
+    }
+
+    /**
+     * Get approvedState
+     * @return approvedState
+     */
+    public ApprovedStateEnum getApprovedState() {
+        return approvedState;
+    }
+
+    public void setApprovedState(ApprovedStateEnum approvedState) {
+        this.approvedState = approvedState;
     }
 
     public CentralNetworkErRouteTableAttachment withReason(String reason) {
@@ -659,8 +659,8 @@ public class CentralNetworkErRouteTableAttachment {
             && Objects.equals(this.attachedErTableId, that.attachedErTableId)
             && Objects.equals(this.attachedErAttachmentId, that.attachedErAttachmentId)
             && Objects.equals(this.attachedErTableSiteCode, that.attachedErTableSiteCode)
-            && Objects.equals(this.approvedState, that.approvedState)
-            && Objects.equals(this.hostedCloud, that.hostedCloud) && Objects.equals(this.reason, that.reason);
+            && Objects.equals(this.hostedCloud, that.hostedCloud)
+            && Objects.equals(this.approvedState, that.approvedState) && Objects.equals(this.reason, that.reason);
     }
 
     @Override
@@ -690,8 +690,8 @@ public class CentralNetworkErRouteTableAttachment {
             attachedErTableId,
             attachedErAttachmentId,
             attachedErTableSiteCode,
-            approvedState,
             hostedCloud,
+            approvedState,
             reason);
     }
 
@@ -728,8 +728,8 @@ public class CentralNetworkErRouteTableAttachment {
         sb.append("    attachedErTableId: ").append(toIndentedString(attachedErTableId)).append("\n");
         sb.append("    attachedErAttachmentId: ").append(toIndentedString(attachedErAttachmentId)).append("\n");
         sb.append("    attachedErTableSiteCode: ").append(toIndentedString(attachedErTableSiteCode)).append("\n");
-        sb.append("    approvedState: ").append(toIndentedString(approvedState)).append("\n");
         sb.append("    hostedCloud: ").append(toIndentedString(hostedCloud)).append("\n");
+        sb.append("    approvedState: ").append(toIndentedString(approvedState)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("}");
         return sb.toString();

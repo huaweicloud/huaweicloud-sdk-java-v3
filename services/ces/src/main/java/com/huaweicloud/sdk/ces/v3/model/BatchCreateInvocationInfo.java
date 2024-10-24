@@ -20,11 +20,6 @@ public class BatchCreateInvocationInfo {
 
     private String instanceId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "invocation_id")
-
-    private String invocationId;
-
     /**
      * 任务结果, successful成功，error失败
      */
@@ -101,14 +96,19 @@ public class BatchCreateInvocationInfo {
     private RetStatusEnum retStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_code")
-
-    private String errorCode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
 
     private String errorMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "invocation_id")
+
+    private String invocationId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
 
     public BatchCreateInvocationInfo withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -116,7 +116,7 @@ public class BatchCreateInvocationInfo {
     }
 
     /**
-     * 机器id
+     * 主机id
      * @return instanceId
      */
     public String getInstanceId() {
@@ -125,23 +125,6 @@ public class BatchCreateInvocationInfo {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    public BatchCreateInvocationInfo withInvocationId(String invocationId) {
-        this.invocationId = invocationId;
-        return this;
-    }
-
-    /**
-     * 任务id
-     * @return invocationId
-     */
-    public String getInvocationId() {
-        return invocationId;
-    }
-
-    public void setInvocationId(String invocationId) {
-        this.invocationId = invocationId;
     }
 
     public BatchCreateInvocationInfo withRetStatus(RetStatusEnum retStatus) {
@@ -161,23 +144,6 @@ public class BatchCreateInvocationInfo {
         this.retStatus = retStatus;
     }
 
-    public BatchCreateInvocationInfo withErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-        return this;
-    }
-
-    /**
-     * 错误码
-     * @return errorCode
-     */
-    public String getErrorCode() {
-        return errorCode;
-    }
-
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-    }
-
     public BatchCreateInvocationInfo withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
@@ -195,6 +161,40 @@ public class BatchCreateInvocationInfo {
         this.errorMsg = errorMsg;
     }
 
+    public BatchCreateInvocationInfo withInvocationId(String invocationId) {
+        this.invocationId = invocationId;
+        return this;
+    }
+
+    /**
+     * 任务id
+     * @return invocationId
+     */
+    public String getInvocationId() {
+        return invocationId;
+    }
+
+    public void setInvocationId(String invocationId) {
+        this.invocationId = invocationId;
+    }
+
+    public BatchCreateInvocationInfo withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
+     * 错误码
+     * @return errorCode
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -204,14 +204,14 @@ public class BatchCreateInvocationInfo {
             return false;
         }
         BatchCreateInvocationInfo that = (BatchCreateInvocationInfo) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.invocationId, that.invocationId)
-            && Objects.equals(this.retStatus, that.retStatus) && Objects.equals(this.errorCode, that.errorCode)
-            && Objects.equals(this.errorMsg, that.errorMsg);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.retStatus, that.retStatus)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.invocationId, that.invocationId)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, invocationId, retStatus, errorCode, errorMsg);
+        return Objects.hash(instanceId, retStatus, errorMsg, invocationId, errorCode);
     }
 
     @Override
@@ -219,10 +219,10 @@ public class BatchCreateInvocationInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchCreateInvocationInfo {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    invocationId: ").append(toIndentedString(invocationId)).append("\n");
         sb.append("    retStatus: ").append(toIndentedString(retStatus)).append("\n");
-        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    invocationId: ").append(toIndentedString(invocationId)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

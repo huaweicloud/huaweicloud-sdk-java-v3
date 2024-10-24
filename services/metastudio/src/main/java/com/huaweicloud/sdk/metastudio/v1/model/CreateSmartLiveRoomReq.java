@@ -254,6 +254,11 @@ public class CreateSmartLiveRoomReq {
 
     private String privData;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "relation_live_platform_info")
+
+    private PlatformLiveInfo relationLivePlatformInfo;
+
     public CreateSmartLiveRoomReq withRoomName(String roomName) {
         this.roomName = roomName;
         return this;
@@ -714,6 +719,33 @@ public class CreateSmartLiveRoomReq {
         this.privData = privData;
     }
 
+    public CreateSmartLiveRoomReq withRelationLivePlatformInfo(PlatformLiveInfo relationLivePlatformInfo) {
+        this.relationLivePlatformInfo = relationLivePlatformInfo;
+        return this;
+    }
+
+    public CreateSmartLiveRoomReq withRelationLivePlatformInfo(
+        Consumer<PlatformLiveInfo> relationLivePlatformInfoSetter) {
+        if (this.relationLivePlatformInfo == null) {
+            this.relationLivePlatformInfo = new PlatformLiveInfo();
+            relationLivePlatformInfoSetter.accept(this.relationLivePlatformInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get relationLivePlatformInfo
+     * @return relationLivePlatformInfo
+     */
+    public PlatformLiveInfo getRelationLivePlatformInfo() {
+        return relationLivePlatformInfo;
+    }
+
+    public void setRelationLivePlatformInfo(PlatformLiveInfo relationLivePlatformInfo) {
+        this.relationLivePlatformInfo = relationLivePlatformInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -736,7 +768,8 @@ public class CreateSmartLiveRoomReq {
             && Objects.equals(this.reviewConfig, that.reviewConfig)
             && Objects.equals(this.sharedConfig, that.sharedConfig) && Objects.equals(this.viewMode, that.viewMode)
             && Objects.equals(this.coStreamerConfig, that.coStreamerConfig)
-            && Objects.equals(this.privData, that.privData);
+            && Objects.equals(this.privData, that.privData)
+            && Objects.equals(this.relationLivePlatformInfo, that.relationLivePlatformInfo);
     }
 
     @Override
@@ -758,7 +791,8 @@ public class CreateSmartLiveRoomReq {
             sharedConfig,
             viewMode,
             coStreamerConfig,
-            privData);
+            privData,
+            relationLivePlatformInfo);
     }
 
     @Override
@@ -783,6 +817,7 @@ public class CreateSmartLiveRoomReq {
         sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");
         sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
         sb.append("    privData: ").append(toIndentedString(privData)).append("\n");
+        sb.append("    relationLivePlatformInfo: ").append(toIndentedString(relationLivePlatformInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -142,7 +142,7 @@ public class Create2dModelTrainingJobReq {
     private List<String> tags = null;
 
     /**
-     * 分身数字人模型版本。默认是V3版本模型。 * V2: V2版本模型 * V3：V3版本模型 * V3.2：V3.2版本模型 > * V2版本已废弃不用
+     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 > * V3和V2版本已废弃不用
      */
     public static final class ModelVersionEnum {
 
@@ -474,7 +474,7 @@ public class Create2dModelTrainingJobReq {
     }
 
     /**
-     * 分身数字人模型版本。默认是V3版本模型。 * V2: V2版本模型 * V3：V3版本模型 * V3.2：V3.2版本模型 > * V2版本已废弃不用
+     * 分身数字人模型版本。默认是V3.2版本模型。 * V3.2：V3.2版本模型 > * V3和V2版本已废弃不用
      * @return modelVersion
      */
     public ModelVersionEnum getModelVersion() {

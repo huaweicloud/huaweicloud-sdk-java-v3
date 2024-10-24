@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.idme.v1.model.CreateXdmApplicationRequest;
 import com.huaweicloud.sdk.idme.v1.model.CreateXdmApplicationResponse;
+import com.huaweicloud.sdk.idme.v1.model.DeleteCloudServiceRequest;
+import com.huaweicloud.sdk.idme.v1.model.DeleteCloudServiceResponse;
 import com.huaweicloud.sdk.idme.v1.model.DeleteXdmApplicationRequest;
 import com.huaweicloud.sdk.idme.v1.model.DeleteXdmApplicationResponse;
 import com.huaweicloud.sdk.idme.v1.model.DeployApplicationRequest;
@@ -61,6 +63,35 @@ public class IdmeAsyncClient {
     public AsyncInvoker<CreateXdmApplicationRequest, CreateXdmApplicationResponse> createXdmApplicationAsyncInvoker(
         CreateXdmApplicationRequest request) {
         return new AsyncInvoker<>(request, IdmeMeta.createXdmApplication, hcClient);
+    }
+
+    /**
+     * 删除iDME实例
+     *
+     * 本接口用于删除工业数字模型驱动引擎（Industrial Digital Model Engine，简称iDME）实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCloudServiceRequest 请求对象
+     * @return CompletableFuture<DeleteCloudServiceResponse>
+     */
+    public CompletableFuture<DeleteCloudServiceResponse> deleteCloudServiceAsync(DeleteCloudServiceRequest request) {
+        return hcClient.asyncInvokeHttp(request, IdmeMeta.deleteCloudService);
+    }
+
+    /**
+     * 删除iDME实例
+     *
+     * 本接口用于删除工业数字模型驱动引擎（Industrial Digital Model Engine，简称iDME）实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCloudServiceRequest 请求对象
+     * @return AsyncInvoker<DeleteCloudServiceRequest, DeleteCloudServiceResponse>
+     */
+    public AsyncInvoker<DeleteCloudServiceRequest, DeleteCloudServiceResponse> deleteCloudServiceAsyncInvoker(
+        DeleteCloudServiceRequest request) {
+        return new AsyncInvoker<>(request, IdmeMeta.deleteCloudService, hcClient);
     }
 
     /**
