@@ -15,21 +15,17 @@ public class ChangeEastWestFirewallStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private SuccessRspData data;
+    private ChangeEastWestFirewallStatusResponseData data;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "trace_id")
-
-    private String traceId;
-
-    public ChangeEastWestFirewallStatusResponse withData(SuccessRspData data) {
+    public ChangeEastWestFirewallStatusResponse withData(ChangeEastWestFirewallStatusResponseData data) {
         this.data = data;
         return this;
     }
 
-    public ChangeEastWestFirewallStatusResponse withData(Consumer<SuccessRspData> dataSetter) {
+    public ChangeEastWestFirewallStatusResponse withData(
+        Consumer<ChangeEastWestFirewallStatusResponseData> dataSetter) {
         if (this.data == null) {
-            this.data = new SuccessRspData();
+            this.data = new ChangeEastWestFirewallStatusResponseData();
             dataSetter.accept(this.data);
         }
 
@@ -40,29 +36,12 @@ public class ChangeEastWestFirewallStatusResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public SuccessRspData getData() {
+    public ChangeEastWestFirewallStatusResponseData getData() {
         return data;
     }
 
-    public void setData(SuccessRspData data) {
+    public void setData(ChangeEastWestFirewallStatusResponseData data) {
         this.data = data;
-    }
-
-    public ChangeEastWestFirewallStatusResponse withTraceId(String traceId) {
-        this.traceId = traceId;
-        return this;
-    }
-
-    /**
-     * trace id
-     * @return traceId
-     */
-    public String getTraceId() {
-        return traceId;
-    }
-
-    public void setTraceId(String traceId) {
-        this.traceId = traceId;
     }
 
     @Override
@@ -74,12 +53,12 @@ public class ChangeEastWestFirewallStatusResponse extends SdkResponse {
             return false;
         }
         ChangeEastWestFirewallStatusResponse that = (ChangeEastWestFirewallStatusResponse) obj;
-        return Objects.equals(this.data, that.data) && Objects.equals(this.traceId, that.traceId);
+        return Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, traceId);
+        return Objects.hash(data);
     }
 
     @Override
@@ -87,7 +66,6 @@ public class ChangeEastWestFirewallStatusResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ChangeEastWestFirewallStatusResponse {\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
-        sb.append("    traceId: ").append(toIndentedString(traceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

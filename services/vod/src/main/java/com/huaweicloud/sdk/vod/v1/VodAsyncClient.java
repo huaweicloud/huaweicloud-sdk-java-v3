@@ -87,6 +87,8 @@ import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowPreheatingAssetRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowPreheatingAssetResponse;
+import com.huaweicloud.sdk.vod.v1.model.ShowStorageModeTypeRequest;
+import com.huaweicloud.sdk.vod.v1.model.ShowStorageModeTypeResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverTaskDetailsRequest;
@@ -109,6 +111,8 @@ import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeResponse;
+import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeTypeRequest;
+import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeTypeResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupRequest;
@@ -1376,6 +1380,35 @@ public class VodAsyncClient {
     }
 
     /**
+     * 查询媒资降冷配置
+     *
+     * 查询媒资降冷配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStorageModeTypeRequest 请求对象
+     * @return CompletableFuture<ShowStorageModeTypeResponse>
+     */
+    public CompletableFuture<ShowStorageModeTypeResponse> showStorageModeTypeAsync(ShowStorageModeTypeRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.showStorageModeType);
+    }
+
+    /**
+     * 查询媒资降冷配置
+     *
+     * 查询媒资降冷配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStorageModeTypeRequest 请求对象
+     * @return AsyncInvoker<ShowStorageModeTypeRequest, ShowStorageModeTypeResponse>
+     */
+    public AsyncInvoker<ShowStorageModeTypeRequest, ShowStorageModeTypeResponse> showStorageModeTypeAsyncInvoker(
+        ShowStorageModeTypeRequest request) {
+        return new AsyncInvoker<>(request, VodMeta.showStorageModeType, hcClient);
+    }
+
+    /**
      * 查询取回数据信息
      *
      * ## 典型场景 ##
@@ -1657,6 +1690,40 @@ public class VodAsyncClient {
     public AsyncInvoker<UpdateStorageModeRequest, UpdateStorageModeResponse> updateStorageModeAsyncInvoker(
         UpdateStorageModeRequest request) {
         return new AsyncInvoker<>(request, VodMeta.updateStorageMode, hcClient);
+    }
+
+    /**
+     * 修改媒资降冷粒度
+     *
+     * 修改媒资降冷粒度。
+     * 
+     * 默认为整个媒资粒度，支持转为仅原文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStorageModeTypeRequest 请求对象
+     * @return CompletableFuture<UpdateStorageModeTypeResponse>
+     */
+    public CompletableFuture<UpdateStorageModeTypeResponse> updateStorageModeTypeAsync(
+        UpdateStorageModeTypeRequest request) {
+        return hcClient.asyncInvokeHttp(request, VodMeta.updateStorageModeType);
+    }
+
+    /**
+     * 修改媒资降冷粒度
+     *
+     * 修改媒资降冷粒度。
+     * 
+     * 默认为整个媒资粒度，支持转为仅原文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateStorageModeTypeRequest 请求对象
+     * @return AsyncInvoker<UpdateStorageModeTypeRequest, UpdateStorageModeTypeResponse>
+     */
+    public AsyncInvoker<UpdateStorageModeTypeRequest, UpdateStorageModeTypeResponse> updateStorageModeTypeAsyncInvoker(
+        UpdateStorageModeTypeRequest request) {
+        return new AsyncInvoker<>(request, VodMeta.updateStorageModeType, hcClient);
     }
 
     /**

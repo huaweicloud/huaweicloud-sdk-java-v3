@@ -29,11 +29,6 @@ public class GetEastWestFirewallResponseBody {
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "er_associated_subnet")
-
-    private SubnetInfo erAssociatedSubnet;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firewall_associated_subnets")
 
     private List<SubnetInfo> firewallAssociatedSubnets = null;
@@ -73,18 +68,13 @@ public class GetEastWestFirewallResponseBody {
 
     private String mode;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ew_vpc_route_limit")
-
-    private Integer ewVpcRouteLimit;
-
     public GetEastWestFirewallResponseBody withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
     }
 
     /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
+     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为1的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
      * @return objectId
      */
     public String getObjectId() {
@@ -101,7 +91,7 @@ public class GetEastWestFirewallResponseBody {
     }
 
     /**
-     * 租户project_id
+     * 项目ID, 可以从调API处获取，也可以从控制台获取。[项目ID获取方式](cfw_02_0015.xml)
      * @return projectId
      */
     public String getProjectId() {
@@ -127,32 +117,6 @@ public class GetEastWestFirewallResponseBody {
 
     public void setStatus(Integer status) {
         this.status = status;
-    }
-
-    public GetEastWestFirewallResponseBody withErAssociatedSubnet(SubnetInfo erAssociatedSubnet) {
-        this.erAssociatedSubnet = erAssociatedSubnet;
-        return this;
-    }
-
-    public GetEastWestFirewallResponseBody withErAssociatedSubnet(Consumer<SubnetInfo> erAssociatedSubnetSetter) {
-        if (this.erAssociatedSubnet == null) {
-            this.erAssociatedSubnet = new SubnetInfo();
-            erAssociatedSubnetSetter.accept(this.erAssociatedSubnet);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get erAssociatedSubnet
-     * @return erAssociatedSubnet
-     */
-    public SubnetInfo getErAssociatedSubnet() {
-        return erAssociatedSubnet;
-    }
-
-    public void setErAssociatedSubnet(SubnetInfo erAssociatedSubnet) {
-        this.erAssociatedSubnet = erAssociatedSubnet;
     }
 
     public GetEastWestFirewallResponseBody withFirewallAssociatedSubnets(List<SubnetInfo> firewallAssociatedSubnets) {
@@ -331,7 +295,7 @@ public class GetEastWestFirewallResponseBody {
     }
 
     /**
-     * 防护模式
+     * 防护模式，值为er
      * @return mode
      */
     public String getMode() {
@@ -340,23 +304,6 @@ public class GetEastWestFirewallResponseBody {
 
     public void setMode(String mode) {
         this.mode = mode;
-    }
-
-    public GetEastWestFirewallResponseBody withEwVpcRouteLimit(Integer ewVpcRouteLimit) {
-        this.ewVpcRouteLimit = ewVpcRouteLimit;
-        return this;
-    }
-
-    /**
-     * 东西向路由限制
-     * @return ewVpcRouteLimit
-     */
-    public Integer getEwVpcRouteLimit() {
-        return ewVpcRouteLimit;
-    }
-
-    public void setEwVpcRouteLimit(Integer ewVpcRouteLimit) {
-        this.ewVpcRouteLimit = ewVpcRouteLimit;
     }
 
     @Override
@@ -370,12 +317,11 @@ public class GetEastWestFirewallResponseBody {
         GetEastWestFirewallResponseBody that = (GetEastWestFirewallResponseBody) obj;
         return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.status, that.status)
-            && Objects.equals(this.erAssociatedSubnet, that.erAssociatedSubnet)
             && Objects.equals(this.firewallAssociatedSubnets, that.firewallAssociatedSubnets)
             && Objects.equals(this.er, that.er) && Objects.equals(this.inspectionVpc, that.inspectionVpc)
             && Objects.equals(this.protectInfos, that.protectInfos) && Objects.equals(this.total, that.total)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.mode, that.mode) && Objects.equals(this.ewVpcRouteLimit, that.ewVpcRouteLimit);
+            && Objects.equals(this.mode, that.mode);
     }
 
     @Override
@@ -383,7 +329,6 @@ public class GetEastWestFirewallResponseBody {
         return Objects.hash(objectId,
             projectId,
             status,
-            erAssociatedSubnet,
             firewallAssociatedSubnets,
             er,
             inspectionVpc,
@@ -391,8 +336,7 @@ public class GetEastWestFirewallResponseBody {
             total,
             offset,
             limit,
-            mode,
-            ewVpcRouteLimit);
+            mode);
     }
 
     @Override
@@ -402,7 +346,6 @@ public class GetEastWestFirewallResponseBody {
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
-        sb.append("    erAssociatedSubnet: ").append(toIndentedString(erAssociatedSubnet)).append("\n");
         sb.append("    firewallAssociatedSubnets: ").append(toIndentedString(firewallAssociatedSubnets)).append("\n");
         sb.append("    er: ").append(toIndentedString(er)).append("\n");
         sb.append("    inspectionVpc: ").append(toIndentedString(inspectionVpc)).append("\n");
@@ -411,7 +354,6 @@ public class GetEastWestFirewallResponseBody {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
-        sb.append("    ewVpcRouteLimit: ").append(toIndentedString(ewVpcRouteLimit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

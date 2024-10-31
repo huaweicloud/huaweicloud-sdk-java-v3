@@ -20,6 +20,11 @@ public class AudioStreamCreateRequestData {
 
     private String language;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "return_all_results")
+
+    private Boolean returnAllResults;
+
     public AudioStreamCreateRequestData withUrl(String url) {
         this.url = url;
         return this;
@@ -54,6 +59,23 @@ public class AudioStreamCreateRequestData {
         this.language = language;
     }
 
+    public AudioStreamCreateRequestData withReturnAllResults(Boolean returnAllResults) {
+        this.returnAllResults = returnAllResults;
+        return this;
+    }
+
+    /**
+     * 返回音频片段结果的策略。可选值如下： false：返回风险等级为非pass的音频片段结果 true：返回所有风险等级的音频片段结果 说明： 1. 默认值为false； 2. 每隔10秒返回一次最近10秒音频流的审核结果。
+     * @return returnAllResults
+     */
+    public Boolean getReturnAllResults() {
+        return returnAllResults;
+    }
+
+    public void setReturnAllResults(Boolean returnAllResults) {
+        this.returnAllResults = returnAllResults;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class AudioStreamCreateRequestData {
             return false;
         }
         AudioStreamCreateRequestData that = (AudioStreamCreateRequestData) obj;
-        return Objects.equals(this.url, that.url) && Objects.equals(this.language, that.language);
+        return Objects.equals(this.url, that.url) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.returnAllResults, that.returnAllResults);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url, language);
+        return Objects.hash(url, language, returnAllResults);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class AudioStreamCreateRequestData {
         sb.append("class AudioStreamCreateRequestData {\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    returnAllResults: ").append(toIndentedString(returnAllResults)).append("\n");
         sb.append("}");
         return sb.toString();
     }

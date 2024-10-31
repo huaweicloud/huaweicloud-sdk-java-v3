@@ -73,7 +73,7 @@ public class RuleHitCountRecords {
     }
 
     /**
-     * 总数
+     * 获取规则击中次数总条数
      * @return total
      */
     public Integer getTotal() {
@@ -106,7 +106,7 @@ public class RuleHitCountRecords {
     }
 
     /**
-     * 规则击中次数列表
+     * 规则击中次数信息列表
      * @return records
      */
     public List<RuleHitCountObject> getRecords() {

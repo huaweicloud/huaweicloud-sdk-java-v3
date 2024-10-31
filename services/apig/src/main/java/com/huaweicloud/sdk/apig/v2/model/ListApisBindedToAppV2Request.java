@@ -55,6 +55,11 @@ public class ListApisBindedToAppV2Request {
 
     private String envId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private String tags;
+
     public ListApisBindedToAppV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -210,6 +215,23 @@ public class ListApisBindedToAppV2Request {
         this.envId = envId;
     }
 
+    public ListApisBindedToAppV2Request withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    /**
+     * API标签，该参数可指定多个，多个不同的参数值为或关系；不指定或为空时，表示不筛选标签；指定为#no_tags#时，表示筛选无标签API。
+     * @return tags
+     */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -223,12 +245,12 @@ public class ListApisBindedToAppV2Request {
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.appId, that.appId)
             && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.apiName, that.apiName)
             && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.groupName, that.groupName)
-            && Objects.equals(this.envId, that.envId);
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit, appId, apiId, apiName, groupId, groupName, envId);
+        return Objects.hash(instanceId, offset, limit, appId, apiId, apiName, groupId, groupName, envId, tags);
     }
 
     @Override
@@ -244,6 +266,7 @@ public class ListApisBindedToAppV2Request {
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    envId: ").append(toIndentedString(envId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

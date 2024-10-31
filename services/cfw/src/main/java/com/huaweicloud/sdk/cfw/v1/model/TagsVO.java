@@ -31,7 +31,7 @@ public class TagsVO {
     }
 
     /**
-     * 标签id
+     * 规则id
      * @return tagId
      */
     public String getTagId() {
@@ -48,7 +48,7 @@ public class TagsVO {
     }
 
     /**
-     * 标签键
+     * 规则标签键
      * @return tagKey
      */
     public String getTagKey() {
@@ -65,7 +65,7 @@ public class TagsVO {
     }
 
     /**
-     * 标签值
+     * 规则标签值
      * @return tagValue
      */
     public String getTagValue() {

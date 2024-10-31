@@ -136,7 +136,7 @@ public class TestCaseListVo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    private String labels;
+    private List<LabelVo> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "custom_field_info")
@@ -665,8 +665,24 @@ public class TestCaseListVo {
         this.caseType = caseType;
     }
 
-    public TestCaseListVo withLabels(String labels) {
+    public TestCaseListVo withLabels(List<LabelVo> labels) {
         this.labels = labels;
+        return this;
+    }
+
+    public TestCaseListVo addLabelsItem(LabelVo labelsItem) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        this.labels.add(labelsItem);
+        return this;
+    }
+
+    public TestCaseListVo withLabels(Consumer<List<LabelVo>> labelsSetter) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        labelsSetter.accept(this.labels);
         return this;
     }
 
@@ -674,11 +690,11 @@ public class TestCaseListVo {
      * 用例标签名称列表
      * @return labels
      */
-    public String getLabels() {
+    public List<LabelVo> getLabels() {
         return labels;
     }
 
-    public void setLabels(String labels) {
+    public void setLabels(List<LabelVo> labels) {
         this.labels = labels;
     }
 

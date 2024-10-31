@@ -78,7 +78,7 @@ public class AddressItemListResponseDTOData {
     }
 
     /**
-     * 总数
+     * 地址组成员总数
      * @return total
      */
     public Integer getTotal() {
@@ -129,7 +129,7 @@ public class AddressItemListResponseDTOData {
     }
 
     /**
-     * 成员信息
+     * 地址组成员记录列表
      * @return records
      */
     public List<AddressItemListResponseDTODataRecords> getRecords() {

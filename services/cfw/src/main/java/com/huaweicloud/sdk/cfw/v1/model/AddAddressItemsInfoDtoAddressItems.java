@@ -11,11 +11,6 @@ import java.util.Objects;
 public class AddAddressItemsInfoDtoAddressItems {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address_type")
 
     private Integer addressType;
@@ -30,30 +25,13 @@ public class AddAddressItemsInfoDtoAddressItems {
 
     private String description;
 
-    public AddAddressItemsInfoDtoAddressItems withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * 地址名称
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public AddAddressItemsInfoDtoAddressItems withAddressType(Integer addressType) {
         this.addressType = addressType;
         return this;
     }
 
     /**
-     * 地址类型0 ipv4,1 ipv6
+     * 地址类型0 ipv4，1 ipv6
      * @return addressType
      */
     public Integer getAddressType() {
@@ -70,7 +48,7 @@ public class AddAddressItemsInfoDtoAddressItems {
     }
 
     /**
-     * 地址组ip信息
+     * ip
      * @return address
      */
     public String getAddress() {
@@ -107,20 +85,19 @@ public class AddAddressItemsInfoDtoAddressItems {
             return false;
         }
         AddAddressItemsInfoDtoAddressItems that = (AddAddressItemsInfoDtoAddressItems) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.addressType, that.addressType)
-            && Objects.equals(this.address, that.address) && Objects.equals(this.description, that.description);
+        return Objects.equals(this.addressType, that.addressType) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, addressType, address, description);
+        return Objects.hash(addressType, address, description);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddAddressItemsInfoDtoAddressItems {\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

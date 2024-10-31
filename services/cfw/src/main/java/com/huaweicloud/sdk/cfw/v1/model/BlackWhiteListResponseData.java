@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询黑白名单返回值
+ * 查询黑白名单返回值数据
  */
 public class BlackWhiteListResponseData {
 
@@ -73,7 +73,7 @@ public class BlackWhiteListResponseData {
     }
 
     /**
-     * 查询的总条数
+     * 查询黑白名单总条数
      * @return total
      */
     public Integer getTotal() {
@@ -106,7 +106,7 @@ public class BlackWhiteListResponseData {
     }
 
     /**
-     * 黑白名单记录
+     * 黑白名单列表
      * @return records
      */
     public List<BlackWhiteListResponseDataRecords> getRecords() {

@@ -43,7 +43,7 @@ public class RuleHitCountObject {
     }
 
     /**
-     * 规则击中次数
+     * 规则击中次数，当acl规则被触发时，对应规则id的击中次数会添加一次。
      * @return ruleHitCount
      */
     public Integer getRuleHitCount() {

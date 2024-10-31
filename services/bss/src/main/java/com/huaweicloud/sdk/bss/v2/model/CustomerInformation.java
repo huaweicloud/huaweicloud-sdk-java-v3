@@ -111,7 +111,7 @@ public class CustomerInformation {
     }
 
     /**
-     * 客户经理登录名称。
+     * 客户登录名称（如果客户创建了子用户，此处返回主账号登录名称）。
      * @return accountName
      */
     public String getAccountName() {

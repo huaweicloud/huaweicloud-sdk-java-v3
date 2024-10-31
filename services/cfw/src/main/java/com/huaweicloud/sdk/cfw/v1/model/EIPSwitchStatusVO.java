@@ -24,6 +24,11 @@ public class EIPSwitchStatusVO {
     private List<String> failEipIdList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fail_eip_list")
+
+    private List<FailedEipInfo> failEipList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -34,7 +39,7 @@ public class EIPSwitchStatusVO {
     }
 
     /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
+     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得
      * @return objectId
      */
     public String getObjectId() {
@@ -67,7 +72,7 @@ public class EIPSwitchStatusVO {
     }
 
     /**
-     * 修改eip防护状态失败列表。
+     * 修改eip防护状态失败状态列表，状态包括成功\"successful\"，失败“fail”
      * @return failEipIdList
      */
     public List<String> getFailEipIdList() {
@@ -78,13 +83,46 @@ public class EIPSwitchStatusVO {
         this.failEipIdList = failEipIdList;
     }
 
+    public EIPSwitchStatusVO withFailEipList(List<FailedEipInfo> failEipList) {
+        this.failEipList = failEipList;
+        return this;
+    }
+
+    public EIPSwitchStatusVO addFailEipListItem(FailedEipInfo failEipListItem) {
+        if (this.failEipList == null) {
+            this.failEipList = new ArrayList<>();
+        }
+        this.failEipList.add(failEipListItem);
+        return this;
+    }
+
+    public EIPSwitchStatusVO withFailEipList(Consumer<List<FailedEipInfo>> failEipListSetter) {
+        if (this.failEipList == null) {
+            this.failEipList = new ArrayList<>();
+        }
+        failEipListSetter.accept(this.failEipList);
+        return this;
+    }
+
+    /**
+     * 修改eip防护状态失败信息列表
+     * @return failEipList
+     */
+    public List<FailedEipInfo> getFailEipList() {
+        return failEipList;
+    }
+
+    public void setFailEipList(List<FailedEipInfo> failEipList) {
+        this.failEipList = failEipList;
+    }
+
     public EIPSwitchStatusVO withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * ID
+     * 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
      * @return id
      */
     public String getId() {
@@ -105,12 +143,12 @@ public class EIPSwitchStatusVO {
         }
         EIPSwitchStatusVO that = (EIPSwitchStatusVO) obj;
         return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.failEipIdList, that.failEipIdList)
-            && Objects.equals(this.id, that.id);
+            && Objects.equals(this.failEipList, that.failEipList) && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, failEipIdList, id);
+        return Objects.hash(objectId, failEipIdList, failEipList, id);
     }
 
     @Override
@@ -119,6 +157,7 @@ public class EIPSwitchStatusVO {
         sb.append("class EIPSwitchStatusVO {\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("    failEipIdList: ").append(toIndentedString(failEipIdList)).append("\n");
+        sb.append("    failEipList: ").append(toIndentedString(failEipList)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();

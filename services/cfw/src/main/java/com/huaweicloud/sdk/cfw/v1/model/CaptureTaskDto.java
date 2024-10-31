@@ -73,7 +73,7 @@ public class CaptureTaskDto {
     }
 
     /**
-     * 抓包时长
+     * 抓包时长，以分钟为单位
      * @return duration
      */
     public Integer getDuration() {
@@ -90,7 +90,7 @@ public class CaptureTaskDto {
     }
 
     /**
-     * 最大抓包数
+     * 最大抓包数，以个为单位
      * maximum: 1000000
      * @return maxPackets
      */

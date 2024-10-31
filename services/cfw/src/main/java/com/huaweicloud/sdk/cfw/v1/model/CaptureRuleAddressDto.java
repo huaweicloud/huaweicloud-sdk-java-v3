@@ -48,7 +48,7 @@ public class CaptureRuleAddressDto {
     }
 
     /**
-     * 目的地址类型0 ipv4,1 ipv6
+     * 目的地址类型0 ipv4，1 ipv6
      * @return addressType
      */
     public Integer getAddressType() {

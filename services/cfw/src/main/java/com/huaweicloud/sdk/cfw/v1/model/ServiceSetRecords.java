@@ -73,7 +73,7 @@ public class ServiceSetRecords {
     }
 
     /**
-     * 查询总数
+     * 查询服务组总数
      * @return total
      */
     public Integer getTotal() {

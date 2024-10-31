@@ -63,7 +63,7 @@ public class UpdateBlackWhiteListDto {
     }
 
     /**
-     * 地址类型0：ipv4,1:ipv6
+     * 地址类型0：ipv4，1:ipv6
      * @return addressType
      */
     public Integer getAddressType() {
@@ -97,7 +97,7 @@ public class UpdateBlackWhiteListDto {
     }
 
     /**
-     * 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1
+     * 协议类型：TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1
      * @return protocol
      */
     public Integer getProtocol() {

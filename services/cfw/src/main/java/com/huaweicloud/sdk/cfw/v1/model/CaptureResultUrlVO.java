@@ -44,7 +44,7 @@ public class CaptureResultUrlVO {
     }
 
     /**
-     * 下载链接提取码
+     * 下载链接提取码，用于打开下载链接时使用。
      * @return captcha
      */
     public String getCaptcha() {
@@ -94,7 +94,7 @@ public class CaptureResultUrlVO {
     }
 
     /**
-     * 抓包文件列表
+     * 抓包文件列表，当环境不支持obs文件夹分享时使用。当此字段存在时，无captch，expires，url返回值。
      * @return fileList
      */
     public List<CaptureFile> getFileList() {

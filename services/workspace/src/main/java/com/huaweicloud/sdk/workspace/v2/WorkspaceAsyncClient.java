@@ -49,6 +49,8 @@ import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeUserPrivilegeGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeUserPrivilegeGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyRequest;
@@ -816,6 +818,36 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ChangeDesktopNetworkRequest, ChangeDesktopNetworkResponse> changeDesktopNetworkAsyncInvoker(
         ChangeDesktopNetworkRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.changeDesktopNetwork, hcClient);
+    }
+
+    /**
+     * 批量修改用户权限组
+     *
+     * 批量修改用户权限组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeUserPrivilegeGroupRequest 请求对象
+     * @return CompletableFuture<ChangeUserPrivilegeGroupResponse>
+     */
+    public CompletableFuture<ChangeUserPrivilegeGroupResponse> changeUserPrivilegeGroupAsync(
+        ChangeUserPrivilegeGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.changeUserPrivilegeGroup);
+    }
+
+    /**
+     * 批量修改用户权限组
+     *
+     * 批量修改用户权限组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeUserPrivilegeGroupRequest 请求对象
+     * @return AsyncInvoker<ChangeUserPrivilegeGroupRequest, ChangeUserPrivilegeGroupResponse>
+     */
+    public AsyncInvoker<ChangeUserPrivilegeGroupRequest, ChangeUserPrivilegeGroupResponse> changeUserPrivilegeGroupAsyncInvoker(
+        ChangeUserPrivilegeGroupRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.changeUserPrivilegeGroup, hcClient);
     }
 
     /**

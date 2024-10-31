@@ -40,6 +40,11 @@ public class ListBandwidthTimelineRequest {
 
     private String groupBy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "display_option")
+
+    private Integer displayOption;
+
     public ListBandwidthTimelineRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -142,6 +147,23 @@ public class ListBandwidthTimelineRequest {
         this.groupBy = groupBy;
     }
 
+    public ListBandwidthTimelineRequest withDisplayOption(Integer displayOption) {
+        this.displayOption = displayOption;
+        return this;
+    }
+
+    /**
+     * 发送/接受字节数，查看峰值请输入1，查看平均值请输入0
+     * @return displayOption
+     */
+    public Integer getDisplayOption() {
+        return displayOption;
+    }
+
+    public void setDisplayOption(Integer displayOption) {
+        this.displayOption = displayOption;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -154,12 +176,12 @@ public class ListBandwidthTimelineRequest {
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
             && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.instances, that.instances)
-            && Objects.equals(this.groupBy, that.groupBy);
+            && Objects.equals(this.groupBy, that.groupBy) && Objects.equals(this.displayOption, that.displayOption);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, from, to, hosts, instances, groupBy);
+        return Objects.hash(enterpriseProjectId, from, to, hosts, instances, groupBy, displayOption);
     }
 
     @Override
@@ -172,6 +194,7 @@ public class ListBandwidthTimelineRequest {
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
         sb.append("    groupBy: ").append(toIndentedString(groupBy)).append("\n");
+        sb.append("    displayOption: ").append(toIndentedString(displayOption)).append("\n");
         sb.append("}");
         return sb.toString();
     }

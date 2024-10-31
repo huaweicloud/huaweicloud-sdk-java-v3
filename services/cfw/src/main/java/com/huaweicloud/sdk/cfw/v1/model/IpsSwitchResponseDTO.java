@@ -31,7 +31,7 @@ public class IpsSwitchResponseDTO {
     }
 
     /**
-     * ips开关id
+     * ips开关id，此处为互联网边界防护对象id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得
      * @return id
      */
     public String getId() {
@@ -48,7 +48,7 @@ public class IpsSwitchResponseDTO {
     }
 
     /**
-     * 基础防御状态
+     * 基础防御状态，0表示关闭，1表示开启
      * @return basicDefenseStatus
      */
     public Integer getBasicDefenseStatus() {
@@ -65,7 +65,7 @@ public class IpsSwitchResponseDTO {
     }
 
     /**
-     * 虚拟补丁状态
+     * 虚拟补丁状态，0表示关闭，1表示开启
      * @return virtualPatchesStatus
      */
     public Integer getVirtualPatchesStatus() {

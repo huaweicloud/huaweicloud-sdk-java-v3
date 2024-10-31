@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskRequest;
@@ -47,6 +49,8 @@ import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksRequest;
@@ -67,6 +71,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExecutionPlanRequest;
@@ -282,6 +288,36 @@ public class DasAsyncClient {
     public AsyncInvoker<ChangeTransactionSwitchStatusRequest, ChangeTransactionSwitchStatusResponse> changeTransactionSwitchStatusAsyncInvoker(
         ChangeTransactionSwitchStatusRequest request) {
         return new AsyncInvoker<>(request, DasMeta.changeTransactionSwitchStatus, hcClient);
+    }
+
+    /**
+     * 创建实例健康诊断任务
+     *
+     * 创建实例健康诊断任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHealthReportTaskRequest 请求对象
+     * @return CompletableFuture<CreateHealthReportTaskResponse>
+     */
+    public CompletableFuture<CreateHealthReportTaskResponse> createHealthReportTaskAsync(
+        CreateHealthReportTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.createHealthReportTask);
+    }
+
+    /**
+     * 创建实例健康诊断任务
+     *
+     * 创建实例健康诊断任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateHealthReportTaskRequest 请求对象
+     * @return AsyncInvoker<CreateHealthReportTaskRequest, CreateHealthReportTaskResponse>
+     */
+    public AsyncInvoker<CreateHealthReportTaskRequest, CreateHealthReportTaskResponse> createHealthReportTaskAsyncInvoker(
+        CreateHealthReportTaskRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.createHealthReportTask, hcClient);
     }
 
     /**
@@ -816,6 +852,36 @@ public class DasAsyncClient {
     }
 
     /**
+     * 查询实例健康诊断报告列表
+     *
+     * 查询实例健康诊断报告列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHealthReportTaskRequest 请求对象
+     * @return CompletableFuture<ListHealthReportTaskResponse>
+     */
+    public CompletableFuture<ListHealthReportTaskResponse> listHealthReportTaskAsync(
+        ListHealthReportTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.listHealthReportTask);
+    }
+
+    /**
+     * 查询实例健康诊断报告列表
+     *
+     * 查询实例健康诊断报告列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHealthReportTaskRequest 请求对象
+     * @return AsyncInvoker<ListHealthReportTaskRequest, ListHealthReportTaskResponse>
+     */
+    public AsyncInvoker<ListHealthReportTaskRequest, ListHealthReportTaskResponse> listHealthReportTaskAsyncInvoker(
+        ListHealthReportTaskRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.listHealthReportTask, hcClient);
+    }
+
+    /**
      * 查询InnoDB锁等待列表
      *
      * 查询InnoDB锁等待列表。
@@ -1085,6 +1151,36 @@ public class DasAsyncClient {
      */
     public AsyncInvoker<ShowDbUserRequest, ShowDbUserResponse> showDbUserAsyncInvoker(ShowDbUserRequest request) {
         return new AsyncInvoker<>(request, DasMeta.showDbUser, hcClient);
+    }
+
+    /**
+     * 获取实例健康诊断报告内容
+     *
+     * 获取实例健康诊断报告内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceHealthReportRequest 请求对象
+     * @return CompletableFuture<ShowInstanceHealthReportResponse>
+     */
+    public CompletableFuture<ShowInstanceHealthReportResponse> showInstanceHealthReportAsync(
+        ShowInstanceHealthReportRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.showInstanceHealthReport);
+    }
+
+    /**
+     * 获取实例健康诊断报告内容
+     *
+     * 获取实例健康诊断报告内容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceHealthReportRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceHealthReportRequest, ShowInstanceHealthReportResponse>
+     */
+    public AsyncInvoker<ShowInstanceHealthReportRequest, ShowInstanceHealthReportResponse> showInstanceHealthReportAsyncInvoker(
+        ShowInstanceHealthReportRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.showInstanceHealthReport, hcClient);
     }
 
     /**

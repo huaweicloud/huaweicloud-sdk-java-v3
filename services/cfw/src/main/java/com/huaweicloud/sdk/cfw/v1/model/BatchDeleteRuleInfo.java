@@ -26,7 +26,7 @@ public class BatchDeleteRuleInfo {
     }
 
     /**
-     * acl名称
+     * 批量删除的acl的名称
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class BatchDeleteRuleInfo {
     }
 
     /**
-     * aclId
+     * 批量删除的acl的id
      * @return id
      */
     public String getId() {

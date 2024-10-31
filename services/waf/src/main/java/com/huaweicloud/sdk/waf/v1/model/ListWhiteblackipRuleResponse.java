@@ -24,6 +24,11 @@ public class ListWhiteblackipRuleResponse extends SdkResponse {
 
     private List<WhiteBlackIpResponseBody> items = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "size")
+
+    private Integer size;
+
     public ListWhiteblackipRuleResponse withTotal(Integer total) {
         this.total = total;
         return this;
@@ -74,6 +79,23 @@ public class ListWhiteblackipRuleResponse extends SdkResponse {
         this.items = items;
     }
 
+    public ListWhiteblackipRuleResponse withSize(Integer size) {
+        this.size = size;
+        return this;
+    }
+
+    /**
+     * ip地址总数
+     * @return size
+     */
+    public Integer getSize() {
+        return size;
+    }
+
+    public void setSize(Integer size) {
+        this.size = size;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +105,13 @@ public class ListWhiteblackipRuleResponse extends SdkResponse {
             return false;
         }
         ListWhiteblackipRuleResponse that = (ListWhiteblackipRuleResponse) obj;
-        return Objects.equals(this.total, that.total) && Objects.equals(this.items, that.items);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.items, that.items)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(total, items);
+        return Objects.hash(total, items, size);
     }
 
     @Override
@@ -97,6 +120,7 @@ public class ListWhiteblackipRuleResponse extends SdkResponse {
         sb.append("class ListWhiteblackipRuleResponse {\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("    items: ").append(toIndentedString(items)).append("\n");
+        sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("}");
         return sb.toString();
     }

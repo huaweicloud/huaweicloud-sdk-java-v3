@@ -185,7 +185,7 @@ public class DefaultHttpClient implements HttpClient {
     private Request buildOkHttpRequestWithUrlEncoded(HttpRequest httpRequest, Request.Builder requestBuilder) {
         FormBody.Builder bodyBuilder = new FormBody.Builder();
         for (Map.Entry<String, FormDataPart<?>> entry : httpRequest.getFormData().entrySet()) {
-            bodyBuilder.addEncoded(entry.getKey(), entry.getValue().toString());
+            bodyBuilder.add(entry.getKey(), entry.getValue().toString());
         }
         return requestBuilder.method(httpRequest.getMethod().toString(), bodyBuilder.build()).build();
     }

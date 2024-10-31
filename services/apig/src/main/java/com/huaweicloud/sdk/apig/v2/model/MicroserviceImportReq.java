@@ -24,7 +24,7 @@ public class MicroserviceImportReq {
     private MicroserviceGroup groupInfo;
 
     /**
-     * 微服务中心类型。 - CSE：CSE微服务注册中心 - CCE: CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service）
+     * 微服务中心类型。 - CSE：CSE微服务注册中心 - CCE: CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service） - NACOS: Nacos注册中心，nacos_info必填。
      */
     public static final class ServiceTypeEnum {
 
@@ -43,6 +43,11 @@ public class MicroserviceImportReq {
          */
         public static final ServiceTypeEnum CCE_SERVICE = new ServiceTypeEnum("CCE_SERVICE");
 
+        /**
+         * Enum NACOS for value: "NACOS"
+         */
+        public static final ServiceTypeEnum NACOS = new ServiceTypeEnum("NACOS");
+
         private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ServiceTypeEnum> createStaticFields() {
@@ -50,6 +55,7 @@ public class MicroserviceImportReq {
             map.put("CSE", CSE);
             map.put("CCE", CCE);
             map.put("CCE_SERVICE", CCE_SERVICE);
+            map.put("NACOS", NACOS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -285,6 +291,11 @@ public class MicroserviceImportReq {
 
     private MicroServiceInfoCCECreate cceInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nacos_info")
+
+    private MicroServiceInfoNacosBase nacosInfo;
+
     public MicroserviceImportReq withGroupInfo(MicroserviceGroup groupInfo) {
         this.groupInfo = groupInfo;
         return this;
@@ -317,7 +328,7 @@ public class MicroserviceImportReq {
     }
 
     /**
-     * 微服务中心类型。 - CSE：CSE微服务注册中心 - CCE: CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service）
+     * 微服务中心类型。 - CSE：CSE微服务注册中心 - CCE: CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service） - NACOS: Nacos注册中心，nacos_info必填。
      * @return serviceType
      */
     public ServiceTypeEnum getServiceType() {
@@ -482,6 +493,32 @@ public class MicroserviceImportReq {
         this.cceInfo = cceInfo;
     }
 
+    public MicroserviceImportReq withNacosInfo(MicroServiceInfoNacosBase nacosInfo) {
+        this.nacosInfo = nacosInfo;
+        return this;
+    }
+
+    public MicroserviceImportReq withNacosInfo(Consumer<MicroServiceInfoNacosBase> nacosInfoSetter) {
+        if (this.nacosInfo == null) {
+            this.nacosInfo = new MicroServiceInfoNacosBase();
+            nacosInfoSetter.accept(this.nacosInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get nacosInfo
+     * @return nacosInfo
+     */
+    public MicroServiceInfoNacosBase getNacosInfo() {
+        return nacosInfo;
+    }
+
+    public void setNacosInfo(MicroServiceInfoNacosBase nacosInfo) {
+        this.nacosInfo = nacosInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -495,12 +532,13 @@ public class MicroserviceImportReq {
             && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.apis, that.apis)
             && Objects.equals(this.backendTimeout, that.backendTimeout) && Objects.equals(this.authType, that.authType)
             && Objects.equals(this.cors, that.cors) && Objects.equals(this.cseInfo, that.cseInfo)
-            && Objects.equals(this.cceInfo, that.cceInfo);
+            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.nacosInfo, that.nacosInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupInfo, serviceType, protocol, apis, backendTimeout, authType, cors, cseInfo, cceInfo);
+        return Objects
+            .hash(groupInfo, serviceType, protocol, apis, backendTimeout, authType, cors, cseInfo, cceInfo, nacosInfo);
     }
 
     @Override
@@ -516,6 +554,7 @@ public class MicroserviceImportReq {
         sb.append("    cors: ").append(toIndentedString(cors)).append("\n");
         sb.append("    cseInfo: ").append(toIndentedString(cseInfo)).append("\n");
         sb.append("    cceInfo: ").append(toIndentedString(cceInfo)).append("\n");
+        sb.append("    nacosInfo: ").append(toIndentedString(nacosInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

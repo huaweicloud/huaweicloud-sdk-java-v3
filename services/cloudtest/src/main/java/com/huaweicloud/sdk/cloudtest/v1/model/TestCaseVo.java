@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 实际的数据类型：单个对象，集合 或 NULL
@@ -419,7 +422,7 @@ public class TestCaseVo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    private String labels;
+    private List<LabelVo> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module_id")
@@ -2008,8 +2011,24 @@ public class TestCaseVo {
         this.labelId = labelId;
     }
 
-    public TestCaseVo withLabels(String labels) {
+    public TestCaseVo withLabels(List<LabelVo> labels) {
         this.labels = labels;
+        return this;
+    }
+
+    public TestCaseVo addLabelsItem(LabelVo labelsItem) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        this.labels.add(labelsItem);
+        return this;
+    }
+
+    public TestCaseVo withLabels(Consumer<List<LabelVo>> labelsSetter) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        labelsSetter.accept(this.labels);
         return this;
     }
 
@@ -2017,11 +2036,11 @@ public class TestCaseVo {
      * 用例标签名称列表
      * @return labels
      */
-    public String getLabels() {
+    public List<LabelVo> getLabels() {
         return labels;
     }
 
-    public void setLabels(String labels) {
+    public void setLabels(List<LabelVo> labels) {
         this.labels = labels;
     }
 

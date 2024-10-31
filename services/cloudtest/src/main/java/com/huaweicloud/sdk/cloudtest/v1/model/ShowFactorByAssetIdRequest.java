@@ -17,9 +17,9 @@ public class ShowFactorByAssetIdRequest {
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "asset_id")
+    @JsonProperty(value = "id")
 
-    private String assetId;
+    private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
@@ -43,21 +43,21 @@ public class ShowFactorByAssetIdRequest {
         this.projectId = projectId;
     }
 
-    public ShowFactorByAssetIdRequest withAssetId(String assetId) {
-        this.assetId = assetId;
+    public ShowFactorByAssetIdRequest withId(String id) {
+        this.id = id;
         return this;
     }
 
     /**
      * 资产库ID
-     * @return assetId
+     * @return id
      */
-    public String getAssetId() {
-        return assetId;
+    public String getId() {
+        return id;
     }
 
-    public void setAssetId(String assetId) {
-        this.assetId = assetId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public ShowFactorByAssetIdRequest withBody(CommRequestListFactorParam body) {
@@ -95,13 +95,13 @@ public class ShowFactorByAssetIdRequest {
             return false;
         }
         ShowFactorByAssetIdRequest that = (ShowFactorByAssetIdRequest) obj;
-        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.assetId, that.assetId)
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, assetId, body);
+        return Objects.hash(projectId, id, body);
     }
 
     @Override
@@ -109,7 +109,7 @@ public class ShowFactorByAssetIdRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowFactorByAssetIdRequest {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

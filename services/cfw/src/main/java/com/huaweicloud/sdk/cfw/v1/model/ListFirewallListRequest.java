@@ -27,7 +27,7 @@ public class ListFirewallListRequest {
     }
 
     /**
-     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

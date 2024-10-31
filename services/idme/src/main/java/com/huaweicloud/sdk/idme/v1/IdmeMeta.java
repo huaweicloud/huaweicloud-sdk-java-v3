@@ -22,6 +22,8 @@ import com.huaweicloud.sdk.idme.v1.model.ListEnvsResponse;
 import com.huaweicloud.sdk.idme.v1.model.ModifyApplicationRequest;
 import com.huaweicloud.sdk.idme.v1.model.ModifyApplicationRequestBody;
 import com.huaweicloud.sdk.idme.v1.model.ModifyApplicationResponse;
+import com.huaweicloud.sdk.idme.v1.model.SubscribeCloudServiceRequest;
+import com.huaweicloud.sdk.idme.v1.model.SubscribeCloudServiceResponse;
 import com.huaweicloud.sdk.idme.v1.model.UninstallRequest;
 import com.huaweicloud.sdk.idme.v1.model.UninstallResponse;
 
@@ -217,6 +219,30 @@ public class IdmeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyApplicationRequestBody.class),
             f -> f.withMarshaller(ModifyApplicationRequest::getBody, ModifyApplicationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SubscribeCloudServiceRequest, SubscribeCloudServiceResponse> subscribeCloudService =
+        genForSubscribeCloudService();
+
+    private static HttpRequestDef<SubscribeCloudServiceRequest, SubscribeCloudServiceResponse> genForSubscribeCloudService() {
+        // basic
+        HttpRequestDef.Builder<SubscribeCloudServiceRequest, SubscribeCloudServiceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SubscribeCloudServiceRequest.class, SubscribeCloudServiceResponse.class)
+            .withName("SubscribeCloudService")
+            .withUri("/v1/{project_id}/{service_type}/instances")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SubscribeCloudServiceRequest::getServiceType,
+                SubscribeCloudServiceRequest::setServiceType));
 
         // response
 

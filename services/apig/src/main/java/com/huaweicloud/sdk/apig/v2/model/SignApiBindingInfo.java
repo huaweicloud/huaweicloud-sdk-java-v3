@@ -6,10 +6,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SignApiBindingInfo
@@ -186,6 +189,11 @@ public class SignApiBindingInfo {
     @JsonProperty(value = "req_method")
 
     private ReqMethodEnum reqMethod;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sign_key")
@@ -505,6 +513,39 @@ public class SignApiBindingInfo {
         this.reqMethod = reqMethod;
     }
 
+    public SignApiBindingInfo withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public SignApiBindingInfo addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public SignApiBindingInfo withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * API绑定的标签，标签配额默认10条，可以联系技术调整。
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     public SignApiBindingInfo withSignKey(String signKey) {
         this.signKey = signKey;
         return this;
@@ -571,8 +612,9 @@ public class SignApiBindingInfo {
             && Objects.equals(this.apiType, that.apiType) && Objects.equals(this.apiName, that.apiName)
             && Objects.equals(this.id, that.id) && Objects.equals(this.apiRemark, that.apiRemark)
             && Objects.equals(this.signId, that.signId) && Objects.equals(this.signName, that.signName)
-            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.signKey, that.signKey)
-            && Objects.equals(this.signSecret, that.signSecret) && Objects.equals(this.signType, that.signType);
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.signKey, that.signKey) && Objects.equals(this.signSecret, that.signSecret)
+            && Objects.equals(this.signType, that.signType);
     }
 
     @Override
@@ -590,6 +632,7 @@ public class SignApiBindingInfo {
             signId,
             signName,
             reqMethod,
+            tags,
             signKey,
             signSecret,
             signType);
@@ -612,6 +655,7 @@ public class SignApiBindingInfo {
         sb.append("    signId: ").append(toIndentedString(signId)).append("\n");
         sb.append("    signName: ").append(toIndentedString(signName)).append("\n");
         sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    signKey: ").append(toIndentedString(signKey)).append("\n");
         sb.append("    signSecret: ").append(toIndentedString(signSecret)).append("\n");
         sb.append("    signType: ").append(toIndentedString(signType)).append("\n");

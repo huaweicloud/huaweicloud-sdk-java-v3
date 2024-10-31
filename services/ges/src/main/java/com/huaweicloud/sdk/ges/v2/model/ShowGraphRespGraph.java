@@ -238,6 +238,11 @@ public class ShowGraphRespGraph {
 
     private String sortKeyType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_lts")
+
+    private Boolean enableLts;
+
     public ShowGraphRespGraph withId(String id) {
         this.id = id;
         return this;
@@ -1108,6 +1113,23 @@ public class ShowGraphRespGraph {
         this.sortKeyType = sortKeyType;
     }
 
+    public ShowGraphRespGraph withEnableLts(Boolean enableLts) {
+        this.enableLts = enableLts;
+        return this;
+    }
+
+    /**
+     * 对接云服务LTS日志开启状态。  - true：日志对接开启中。 - false：日志对接关闭中。
+     * @return enableLts
+     */
+    public Boolean getEnableLts() {
+        return enableLts;
+    }
+
+    public void setEnableLts(Boolean enableLts) {
+        this.enableLts = enableLts;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1148,7 +1170,7 @@ public class ShowGraphRespGraph {
             && Objects.equals(this.expandTime, that.expandTime) && Objects.equals(this.resizeTime, that.resizeTime)
             && Objects.equals(this.enableMultiLabel, that.enableMultiLabel)
             && Objects.equals(this.capacityRatio, that.capacityRatio)
-            && Objects.equals(this.sortKeyType, that.sortKeyType);
+            && Objects.equals(this.sortKeyType, that.sortKeyType) && Objects.equals(this.enableLts, that.enableLts);
     }
 
     @Override
@@ -1197,7 +1219,8 @@ public class ShowGraphRespGraph {
             resizeTime,
             enableMultiLabel,
             capacityRatio,
-            sortKeyType);
+            sortKeyType,
+            enableLts);
     }
 
     @Override
@@ -1249,6 +1272,7 @@ public class ShowGraphRespGraph {
         sb.append("    enableMultiLabel: ").append(toIndentedString(enableMultiLabel)).append("\n");
         sb.append("    capacityRatio: ").append(toIndentedString(capacityRatio)).append("\n");
         sb.append("    sortKeyType: ").append(toIndentedString(sortKeyType)).append("\n");
+        sb.append("    enableLts: ").append(toIndentedString(enableLts)).append("\n");
         sb.append("}");
         return sb.toString();
     }

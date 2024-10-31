@@ -15,16 +15,16 @@ public class AddServiceSetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private CommonResponseDTOData data;
+    private ServiceSetId data;
 
-    public AddServiceSetResponse withData(CommonResponseDTOData data) {
+    public AddServiceSetResponse withData(ServiceSetId data) {
         this.data = data;
         return this;
     }
 
-    public AddServiceSetResponse withData(Consumer<CommonResponseDTOData> dataSetter) {
+    public AddServiceSetResponse withData(Consumer<ServiceSetId> dataSetter) {
         if (this.data == null) {
-            this.data = new CommonResponseDTOData();
+            this.data = new ServiceSetId();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class AddServiceSetResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public CommonResponseDTOData getData() {
+    public ServiceSetId getData() {
         return data;
     }
 
-    public void setData(CommonResponseDTOData data) {
+    public void setData(ServiceSetId data) {
         this.data = data;
     }
 

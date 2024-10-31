@@ -26,7 +26,7 @@ public class Er {
     }
 
     /**
-     * ER ID
+     * ER ID，创建东西向防护引用的 ID
      * @return erId
      */
     public String getErId() {
@@ -43,7 +43,7 @@ public class Er {
     }
 
     /**
-     * ER连接ID
+     * 企业路由器连接id，该连接用于连接防火墙和企业路由器，此字段可在通过id在ER界面查询指定er后在管理连接界面查询连接了解连接具体情况。
      * @return erAttachId
      */
     public String getErAttachId() {

@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class HttpQueryCfwAttackLogsResponseDTODataRecords {
 
     /**
-     * 方向，有内到外和外到内两种
+     * 方向，包含in2out，out2in
      */
     public static final class DirectionEnum {
 
@@ -249,7 +249,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     }
 
     /**
-     * 方向，有内到外和外到内两种
+     * 方向，包含in2out，out2in
      * @return direction
      */
     public DirectionEnum getDirection() {
@@ -266,7 +266,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     }
 
     /**
-     * 动作
+     * 动作包含permit，deny
      * @return action
      */
     public String getAction() {
@@ -334,7 +334,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     }
 
     /**
-     * 威胁等级
+     * 威胁等级，包括CRITICAL、HIGH、MEDIUM、LOW
      * @return level
      */
     public String getLevel() {
@@ -508,7 +508,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     }
 
     /**
-     * 协议
+     * 协议类型，包含TCP, UDP,ICMP,ICMPV6等。
      * @return protocol
      */
     public String getProtocol() {
@@ -542,7 +542,7 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     }
 
     /**
-     * 应用协议
+     * 规则应用类型包括：“HTTP”，\"HTTPS\"，\"TLS1\"，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
      * @return app
      */
     public String getApp() {

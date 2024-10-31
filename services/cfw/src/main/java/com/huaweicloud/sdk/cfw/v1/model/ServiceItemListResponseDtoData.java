@@ -78,7 +78,7 @@ public class ServiceItemListResponseDtoData {
     }
 
     /**
-     * 记录的总数
+     * 服务组成员总数
      * @return total
      */
     public Integer getTotal() {

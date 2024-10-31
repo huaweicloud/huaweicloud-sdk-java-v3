@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class UpdateRuleAclDto {
 
     /**
-     * 地址类型，0 ipv4,1 ipv6
+     * 地址类型，0表示ipv4，1表示ipv6
      */
     public static final class AddressTypeEnum {
 
@@ -98,13 +98,8 @@ public class UpdateRuleAclDto {
 
     private String name;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sequence")
-
-    private OrderRuleAclDto sequence;
-
     /**
-     * 方向：0表示外到内，1表示内到外【说明：规则type=0：互联网规则 | 2：nat规则时方向值必填】
+     * 方向：0表示外到内，1表示内到外,规则type=0（互联网规则）或者type= 2（nat规则）时方向值必填
      */
     public static final class DirectionEnum {
 
@@ -179,7 +174,7 @@ public class UpdateRuleAclDto {
     private DirectionEnum direction;
 
     /**
-     * 动作0：permit,1：deny
+     * 规则动作，0表示允许通行（permit），1表示拒绝通行（deny）
      */
     public static final class ActionTypeEnum {
 
@@ -262,11 +257,6 @@ public class UpdateRuleAclDto {
     @JsonProperty(value = "applications")
 
     private List<String> applications = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "applicationsJsonString")
-
-    private String applicationsJsonString;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -384,7 +374,7 @@ public class UpdateRuleAclDto {
     private RuleServiceDto service;
 
     /**
-     * 规则type，0：互联网规则，1：vpc规则，2：nat规则
+     * 规则类型，0：互联网规则，1：vpc规则，2：nat规则
      */
     public static final class TypeEnum {
 
@@ -475,7 +465,7 @@ public class UpdateRuleAclDto {
     }
 
     /**
-     * 地址类型，0 ipv4,1 ipv6
+     * 地址类型，0表示ipv4，1表示ipv6
      * @return addressType
      */
     public AddressTypeEnum getAddressType() {
@@ -503,39 +493,13 @@ public class UpdateRuleAclDto {
         this.name = name;
     }
 
-    public UpdateRuleAclDto withSequence(OrderRuleAclDto sequence) {
-        this.sequence = sequence;
-        return this;
-    }
-
-    public UpdateRuleAclDto withSequence(Consumer<OrderRuleAclDto> sequenceSetter) {
-        if (this.sequence == null) {
-            this.sequence = new OrderRuleAclDto();
-            sequenceSetter.accept(this.sequence);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get sequence
-     * @return sequence
-     */
-    public OrderRuleAclDto getSequence() {
-        return sequence;
-    }
-
-    public void setSequence(OrderRuleAclDto sequence) {
-        this.sequence = sequence;
-    }
-
     public UpdateRuleAclDto withDirection(DirectionEnum direction) {
         this.direction = direction;
         return this;
     }
 
     /**
-     * 方向：0表示外到内，1表示内到外【说明：规则type=0：互联网规则 | 2：nat规则时方向值必填】
+     * 方向：0表示外到内，1表示内到外,规则type=0（互联网规则）或者type= 2（nat规则）时方向值必填
      * @return direction
      */
     public DirectionEnum getDirection() {
@@ -552,7 +516,7 @@ public class UpdateRuleAclDto {
     }
 
     /**
-     * 动作0：permit,1：deny
+     * 规则动作，0表示允许通行（permit），1表示拒绝通行（deny）
      * @return actionType
      */
     public ActionTypeEnum getActionType() {
@@ -569,7 +533,7 @@ public class UpdateRuleAclDto {
     }
 
     /**
-     * 规则下发状态 0：禁用,1：启用
+     * 规则启用状态，0表示禁用，1表示启用
      * @return status
      */
     public Integer getStatus() {
@@ -602,7 +566,7 @@ public class UpdateRuleAclDto {
     }
 
     /**
-     * 应用列表
+     * 规则应用列表，规则应用类型包括：“HTTP”，\"HTTPS\"，\"TLS1\"，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
      * @return applications
      */
     public List<String> getApplications() {
@@ -613,30 +577,13 @@ public class UpdateRuleAclDto {
         this.applications = applications;
     }
 
-    public UpdateRuleAclDto withApplicationsJsonString(String applicationsJsonString) {
-        this.applicationsJsonString = applicationsJsonString;
-        return this;
-    }
-
-    /**
-     * 应用列表转化为字符串
-     * @return applicationsJsonString
-     */
-    public String getApplicationsJsonString() {
-        return applicationsJsonString;
-    }
-
-    public void setApplicationsJsonString(String applicationsJsonString) {
-        this.applicationsJsonString = applicationsJsonString;
-    }
-
     public UpdateRuleAclDto withDescription(String description) {
         this.description = description;
         return this;
     }
 
     /**
-     * 描述
+     * 规则描述
      * @return description
      */
     public String getDescription() {
@@ -653,7 +600,7 @@ public class UpdateRuleAclDto {
     }
 
     /**
-     * 长连接时长小时
+     * 长连接时长对应小时
      * @return longConnectTimeHour
      */
     public Long getLongConnectTimeHour() {
@@ -670,7 +617,7 @@ public class UpdateRuleAclDto {
     }
 
     /**
-     * 长连接时长分钟
+     * 长连接时长对应分钟
      * @return longConnectTimeMinute
      */
     public Long getLongConnectTimeMinute() {
@@ -816,7 +763,7 @@ public class UpdateRuleAclDto {
     }
 
     /**
-     * 规则type，0：互联网规则，1：vpc规则，2：nat规则
+     * 规则类型，0：互联网规则，1：vpc规则，2：nat规则
      * @return type
      */
     public TypeEnum getType() {
@@ -863,10 +810,8 @@ public class UpdateRuleAclDto {
         }
         UpdateRuleAclDto that = (UpdateRuleAclDto) obj;
         return Objects.equals(this.addressType, that.addressType) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.sequence, that.sequence) && Objects.equals(this.direction, that.direction)
-            && Objects.equals(this.actionType, that.actionType) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.applications, that.applications)
-            && Objects.equals(this.applicationsJsonString, that.applicationsJsonString)
+            && Objects.equals(this.direction, that.direction) && Objects.equals(this.actionType, that.actionType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.applications, that.applications)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.longConnectTimeHour, that.longConnectTimeHour)
             && Objects.equals(this.longConnectTimeMinute, that.longConnectTimeMinute)
@@ -882,12 +827,10 @@ public class UpdateRuleAclDto {
     public int hashCode() {
         return Objects.hash(addressType,
             name,
-            sequence,
             direction,
             actionType,
             status,
             applications,
-            applicationsJsonString,
             description,
             longConnectTimeHour,
             longConnectTimeMinute,
@@ -907,12 +850,10 @@ public class UpdateRuleAclDto {
         sb.append("class UpdateRuleAclDto {\n");
         sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    actionType: ").append(toIndentedString(actionType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    applications: ").append(toIndentedString(applications)).append("\n");
-        sb.append("    applicationsJsonString: ").append(toIndentedString(applicationsJsonString)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    longConnectTimeHour: ").append(toIndentedString(longConnectTimeHour)).append("\n");
         sb.append("    longConnectTimeMinute: ").append(toIndentedString(longConnectTimeMinute)).append("\n");

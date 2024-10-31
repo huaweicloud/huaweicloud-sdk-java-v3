@@ -26,7 +26,7 @@ public class CreateFirewallReqTags {
     }
 
     /**
-     * 标签KEY
+     * 资源标签键
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class CreateFirewallReqTags {
     }
 
     /**
-     * 标签VALUE
+     * 资源标签值
      * @return value
      */
     public String getValue() {

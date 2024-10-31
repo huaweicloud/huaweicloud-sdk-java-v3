@@ -144,6 +144,51 @@ public class UpdateAccessConfigResponse extends SdkResponse {
 
     private String clusterId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encoding_format")
+
+    private String encodingFormat;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "incremental_collect")
+
+    private Boolean incrementalCollect;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "processor_type")
+
+    private String processorType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "demo_log")
+
+    private String demoLog;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "demo_fields")
+
+    private List<DemoFieldAccess> demoFields = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "processors")
+
+    private List<Processor> processors = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "application_id")
+
+    private String applicationId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "environment_id")
+
+    private String environmentId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "component_id")
+
+    private List<String> componentId = null;
+
     public UpdateAccessConfigResponse withAccessConfigId(String accessConfigId) {
         this.accessConfigId = accessConfigId;
         return this;
@@ -377,6 +422,207 @@ public class UpdateAccessConfigResponse extends SdkResponse {
         this.clusterId = clusterId;
     }
 
+    public UpdateAccessConfigResponse withEncodingFormat(String encodingFormat) {
+        this.encodingFormat = encodingFormat;
+        return this;
+    }
+
+    /**
+     * 编码格式，默认UTF-8
+     * @return encodingFormat
+     */
+    public String getEncodingFormat() {
+        return encodingFormat;
+    }
+
+    public void setEncodingFormat(String encodingFormat) {
+        this.encodingFormat = encodingFormat;
+    }
+
+    public UpdateAccessConfigResponse withIncrementalCollect(Boolean incrementalCollect) {
+        this.incrementalCollect = incrementalCollect;
+        return this;
+    }
+
+    /**
+     * 采集策略：增量/全量
+     * @return incrementalCollect
+     */
+    public Boolean getIncrementalCollect() {
+        return incrementalCollect;
+    }
+
+    public void setIncrementalCollect(Boolean incrementalCollect) {
+        this.incrementalCollect = incrementalCollect;
+    }
+
+    public UpdateAccessConfigResponse withProcessorType(String processorType) {
+        this.processorType = processorType;
+        return this;
+    }
+
+    /**
+     * IC结构化解析类型
+     * @return processorType
+     */
+    public String getProcessorType() {
+        return processorType;
+    }
+
+    public void setProcessorType(String processorType) {
+        this.processorType = processorType;
+    }
+
+    public UpdateAccessConfigResponse withDemoLog(String demoLog) {
+        this.demoLog = demoLog;
+        return this;
+    }
+
+    /**
+     * 示例日志
+     * @return demoLog
+     */
+    public String getDemoLog() {
+        return demoLog;
+    }
+
+    public void setDemoLog(String demoLog) {
+        this.demoLog = demoLog;
+    }
+
+    public UpdateAccessConfigResponse withDemoFields(List<DemoFieldAccess> demoFields) {
+        this.demoFields = demoFields;
+        return this;
+    }
+
+    public UpdateAccessConfigResponse addDemoFieldsItem(DemoFieldAccess demoFieldsItem) {
+        if (this.demoFields == null) {
+            this.demoFields = new ArrayList<>();
+        }
+        this.demoFields.add(demoFieldsItem);
+        return this;
+    }
+
+    public UpdateAccessConfigResponse withDemoFields(Consumer<List<DemoFieldAccess>> demoFieldsSetter) {
+        if (this.demoFields == null) {
+            this.demoFields = new ArrayList<>();
+        }
+        demoFieldsSetter.accept(this.demoFields);
+        return this;
+    }
+
+    /**
+     * 示例日志解析字段
+     * @return demoFields
+     */
+    public List<DemoFieldAccess> getDemoFields() {
+        return demoFields;
+    }
+
+    public void setDemoFields(List<DemoFieldAccess> demoFields) {
+        this.demoFields = demoFields;
+    }
+
+    public UpdateAccessConfigResponse withProcessors(List<Processor> processors) {
+        this.processors = processors;
+        return this;
+    }
+
+    public UpdateAccessConfigResponse addProcessorsItem(Processor processorsItem) {
+        if (this.processors == null) {
+            this.processors = new ArrayList<>();
+        }
+        this.processors.add(processorsItem);
+        return this;
+    }
+
+    public UpdateAccessConfigResponse withProcessors(Consumer<List<Processor>> processorsSetter) {
+        if (this.processors == null) {
+            this.processors = new ArrayList<>();
+        }
+        processorsSetter.accept(this.processors);
+        return this;
+    }
+
+    /**
+     * IC结构化解析器
+     * @return processors
+     */
+    public List<Processor> getProcessors() {
+        return processors;
+    }
+
+    public void setProcessors(List<Processor> processors) {
+        this.processors = processors;
+    }
+
+    public UpdateAccessConfigResponse withApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+        return this;
+    }
+
+    /**
+     * ServiceStage应用ID
+     * @return applicationId
+     */
+    public String getApplicationId() {
+        return applicationId;
+    }
+
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+    }
+
+    public UpdateAccessConfigResponse withEnvironmentId(String environmentId) {
+        this.environmentId = environmentId;
+        return this;
+    }
+
+    /**
+     * ServiceStage环境ID
+     * @return environmentId
+     */
+    public String getEnvironmentId() {
+        return environmentId;
+    }
+
+    public void setEnvironmentId(String environmentId) {
+        this.environmentId = environmentId;
+    }
+
+    public UpdateAccessConfigResponse withComponentId(List<String> componentId) {
+        this.componentId = componentId;
+        return this;
+    }
+
+    public UpdateAccessConfigResponse addComponentIdItem(String componentIdItem) {
+        if (this.componentId == null) {
+            this.componentId = new ArrayList<>();
+        }
+        this.componentId.add(componentIdItem);
+        return this;
+    }
+
+    public UpdateAccessConfigResponse withComponentId(Consumer<List<String>> componentIdSetter) {
+        if (this.componentId == null) {
+            this.componentId = new ArrayList<>();
+        }
+        componentIdSetter.accept(this.componentId);
+        return this;
+    }
+
+    /**
+     * ServiceStage组件ID
+     * @return componentId
+     */
+    public List<String> getComponentId() {
+        return componentId;
+    }
+
+    public void setComponentId(List<String> componentId) {
+        this.componentId = componentId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -394,7 +640,14 @@ public class UpdateAccessConfigResponse extends SdkResponse {
             && Objects.equals(this.logInfo, that.logInfo) && Objects.equals(this.hostGroupInfo, that.hostGroupInfo)
             && Objects.equals(this.accessConfigTag, that.accessConfigTag)
             && Objects.equals(this.logSplit, that.logSplit) && Objects.equals(this.binaryCollect, that.binaryCollect)
-            && Objects.equals(this.clusterId, that.clusterId);
+            && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.encodingFormat, that.encodingFormat)
+            && Objects.equals(this.incrementalCollect, that.incrementalCollect)
+            && Objects.equals(this.processorType, that.processorType) && Objects.equals(this.demoLog, that.demoLog)
+            && Objects.equals(this.demoFields, that.demoFields) && Objects.equals(this.processors, that.processors)
+            && Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.environmentId, that.environmentId)
+            && Objects.equals(this.componentId, that.componentId);
     }
 
     @Override
@@ -409,7 +662,16 @@ public class UpdateAccessConfigResponse extends SdkResponse {
             accessConfigTag,
             logSplit,
             binaryCollect,
-            clusterId);
+            clusterId,
+            encodingFormat,
+            incrementalCollect,
+            processorType,
+            demoLog,
+            demoFields,
+            processors,
+            applicationId,
+            environmentId,
+            componentId);
     }
 
     @Override
@@ -427,6 +689,15 @@ public class UpdateAccessConfigResponse extends SdkResponse {
         sb.append("    logSplit: ").append(toIndentedString(logSplit)).append("\n");
         sb.append("    binaryCollect: ").append(toIndentedString(binaryCollect)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    encodingFormat: ").append(toIndentedString(encodingFormat)).append("\n");
+        sb.append("    incrementalCollect: ").append(toIndentedString(incrementalCollect)).append("\n");
+        sb.append("    processorType: ").append(toIndentedString(processorType)).append("\n");
+        sb.append("    demoLog: ").append(toIndentedString(demoLog)).append("\n");
+        sb.append("    demoFields: ").append(toIndentedString(demoFields)).append("\n");
+        sb.append("    processors: ").append(toIndentedString(processors)).append("\n");
+        sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
+        sb.append("    environmentId: ").append(toIndentedString(environmentId)).append("\n");
+        sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

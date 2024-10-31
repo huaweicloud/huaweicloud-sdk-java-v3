@@ -34,6 +34,12 @@ public class UpdateFields {
 
     private List<String> rmv = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "insert")
+    @BsonProperty(value = "insert")
+
+    private Document insert;
+
     public UpdateFields withSet(Document set) {
         this.set = set;
         return this;
@@ -101,6 +107,23 @@ public class UpdateFields {
         this.rmv = rmv;
     }
 
+    public UpdateFields withInsert(Document insert) {
+        this.insert = insert;
+        return this;
+    }
+
+    /**
+     * 插入元素到数组中 > 非数组返回失败。
+     * @return insert
+     */
+    public Document getInsert() {
+        return insert;
+    }
+
+    public void setInsert(Document insert) {
+        this.insert = insert;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -111,12 +134,12 @@ public class UpdateFields {
         }
         UpdateFields that = (UpdateFields) obj;
         return Objects.equals(this.set, that.set) && Objects.equals(this.add, that.add)
-            && Objects.equals(this.rmv, that.rmv);
+            && Objects.equals(this.rmv, that.rmv) && Objects.equals(this.insert, that.insert);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(set, add, rmv);
+        return Objects.hash(set, add, rmv, insert);
     }
 
     @Override
@@ -126,6 +149,7 @@ public class UpdateFields {
         sb.append("    set: ").append(toIndentedString(set)).append("\n");
         sb.append("    add: ").append(toIndentedString(add)).append("\n");
         sb.append("    rmv: ").append(toIndentedString(rmv)).append("\n");
+        sb.append("    insert: ").append(toIndentedString(insert)).append("\n");
         sb.append("}");
         return sb.toString();
     }

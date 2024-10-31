@@ -85,6 +85,11 @@ public class ListApisV2Request {
 
     private String returnDataMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private String tags;
+
     public ListApisV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -342,6 +347,23 @@ public class ListApisV2Request {
         this.returnDataMode = returnDataMode;
     }
 
+    public ListApisV2Request withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    /**
+     * API标签，该参数可指定多个，多个不同的参数值为或关系；不指定或为空时，表示不筛选标签；指定为#no_tags#时，表示筛选无标签API。
+     * @return tags
+     */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -359,7 +381,7 @@ public class ListApisV2Request {
             && Objects.equals(this.envId, that.envId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.preciseSearch, that.preciseSearch)
             && Objects.equals(this.vpcChannelName, that.vpcChannelName)
-            && Objects.equals(this.returnDataMode, that.returnDataMode);
+            && Objects.equals(this.returnDataMode, that.returnDataMode) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -378,7 +400,8 @@ public class ListApisV2Request {
             type,
             preciseSearch,
             vpcChannelName,
-            returnDataMode);
+            returnDataMode,
+            tags);
     }
 
     @Override
@@ -400,6 +423,7 @@ public class ListApisV2Request {
         sb.append("    preciseSearch: ").append(toIndentedString(preciseSearch)).append("\n");
         sb.append("    vpcChannelName: ").append(toIndentedString(vpcChannelName)).append("\n");
         sb.append("    returnDataMode: ").append(toIndentedString(returnDataMode)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

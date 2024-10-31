@@ -96,7 +96,7 @@ public class RuleServiceDto {
     }
 
     /**
-     * 协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+     * 协议类型：TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1,type为0手动类型时不能为空。
      * @return protocol
      */
     public Integer getProtocol() {
@@ -129,7 +129,7 @@ public class RuleServiceDto {
     }
 
     /**
-     * 协议列表，协议类型:TCP为6, UDP为17,ICMP为1,ICMPV6为58,ANY为-1,手动类型不为空，自动类型为空
+     * 协议列表，协议类型：TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1,type为0手动类型时不能为空。
      * @return protocols
      */
     public List<Integer> getProtocols() {
@@ -180,7 +180,7 @@ public class RuleServiceDto {
     }
 
     /**
-     * 服务组id，手动类型为空，自动类型为非空
+     * 服务组id，当type为1（关联IP地址组）时不能为空，可通过[获取服务组列表接口](ListServiceSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。
      * @return serviceSetId
      */
     public String getServiceSetId() {
@@ -197,7 +197,7 @@ public class RuleServiceDto {
     }
 
     /**
-     * 服务组名称
+     * 服务组名称,当type为1（关联IP地址组）时不能为空，可通过[获取服务组列表接口](ListServiceSets.xml)查询获得，通过返回值中的data.records.name（.表示各对象之间层级的区分）获得。
      * @return serviceSetName
      */
     public String getServiceSetName() {
@@ -263,7 +263,7 @@ public class RuleServiceDto {
     }
 
     /**
-     * 预定义服务组列表
+     * 预定义服务组id列表，服务组id可通过[获取服务组列表接口](ListServiceSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。查询条件中query_service_set_type需要设置为1预定义服务组。
      * @return predefinedGroup
      */
     public List<String> getPredefinedGroup() {
@@ -296,7 +296,7 @@ public class RuleServiceDto {
     }
 
     /**
-     * 服务组列表
+     * 服务组id列表，服务组id可通过[获取服务组列表接口](ListServiceSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。查询条件中query_service_set_type需要设置为0自定义服务组。
      * @return serviceGroup
      */
     public List<String> getServiceGroup() {

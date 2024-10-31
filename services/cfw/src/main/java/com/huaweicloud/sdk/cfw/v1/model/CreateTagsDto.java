@@ -40,7 +40,7 @@ public class CreateTagsDto {
     }
 
     /**
-     * 标签列表
+     * 创建防火墙标签列表
      * @return tags
      */
     public List<CreateTag> getTags() {

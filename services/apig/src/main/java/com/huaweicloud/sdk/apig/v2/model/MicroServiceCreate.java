@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class MicroServiceCreate {
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service）
+     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service） - NACOS: Nacos注册中心，nacos_info必填
      */
     public static final class ServiceTypeEnum {
 
@@ -36,6 +36,11 @@ public class MicroServiceCreate {
          */
         public static final ServiceTypeEnum CCE_SERVICE = new ServiceTypeEnum("CCE_SERVICE");
 
+        /**
+         * Enum NACOS for value: "NACOS"
+         */
+        public static final ServiceTypeEnum NACOS = new ServiceTypeEnum("NACOS");
+
         private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ServiceTypeEnum> createStaticFields() {
@@ -43,6 +48,7 @@ public class MicroServiceCreate {
             map.put("CSE", CSE);
             map.put("CCE", CCE);
             map.put("CCE_SERVICE", CCE_SERVICE);
+            map.put("NACOS", NACOS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -107,13 +113,18 @@ public class MicroServiceCreate {
 
     private MicroServiceInfoCCEBase cceInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nacos_info")
+
+    private MicroServiceInfoNacosBase nacosInfo;
+
     public MicroServiceCreate withServiceType(ServiceTypeEnum serviceType) {
         this.serviceType = serviceType;
         return this;
     }
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service）
+     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service） - NACOS: Nacos注册中心，nacos_info必填
      * @return serviceType
      */
     public ServiceTypeEnum getServiceType() {
@@ -176,6 +187,32 @@ public class MicroServiceCreate {
         this.cceInfo = cceInfo;
     }
 
+    public MicroServiceCreate withNacosInfo(MicroServiceInfoNacosBase nacosInfo) {
+        this.nacosInfo = nacosInfo;
+        return this;
+    }
+
+    public MicroServiceCreate withNacosInfo(Consumer<MicroServiceInfoNacosBase> nacosInfoSetter) {
+        if (this.nacosInfo == null) {
+            this.nacosInfo = new MicroServiceInfoNacosBase();
+            nacosInfoSetter.accept(this.nacosInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get nacosInfo
+     * @return nacosInfo
+     */
+    public MicroServiceInfoNacosBase getNacosInfo() {
+        return nacosInfo;
+    }
+
+    public void setNacosInfo(MicroServiceInfoNacosBase nacosInfo) {
+        this.nacosInfo = nacosInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -186,12 +223,12 @@ public class MicroServiceCreate {
         }
         MicroServiceCreate that = (MicroServiceCreate) obj;
         return Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.cseInfo, that.cseInfo)
-            && Objects.equals(this.cceInfo, that.cceInfo);
+            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.nacosInfo, that.nacosInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceType, cseInfo, cceInfo);
+        return Objects.hash(serviceType, cseInfo, cceInfo, nacosInfo);
     }
 
     @Override
@@ -201,6 +238,7 @@ public class MicroServiceCreate {
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    cseInfo: ").append(toIndentedString(cseInfo)).append("\n");
         sb.append("    cceInfo: ").append(toIndentedString(cceInfo)).append("\n");
+        sb.append("    nacosInfo: ").append(toIndentedString(nacosInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

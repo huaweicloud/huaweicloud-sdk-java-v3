@@ -32,6 +32,8 @@ public class GesRegion {
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://ges.ap-southeast-3.myhuaweicloud.com");
 
+    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://ges.ru-moscow-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("GES");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -46,6 +48,7 @@ public class GesRegion {
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }
 

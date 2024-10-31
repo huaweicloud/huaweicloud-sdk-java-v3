@@ -101,7 +101,7 @@ public class CaptureTaskVO {
     }
 
     /**
-     * 抓包大小
+     * 抓包大小,如500kb,500mb
      * @return captureSize
      */
     public String getCaptureSize() {
@@ -118,7 +118,7 @@ public class CaptureTaskVO {
     }
 
     /**
-     * 抓包创建时间
+     * 抓包创建时间,如2024/08/31 10:17:30
      * @return createdDate
      */
     public String getCreatedDate() {
@@ -152,7 +152,7 @@ public class CaptureTaskVO {
     }
 
     /**
-     * 目的地址类型0 ipv4,1 ipv6
+     * 目的地址类型0 ipv4，1 ipv6
      * @return destAddressType
      */
     public Integer getDestAddressType() {
@@ -186,7 +186,7 @@ public class CaptureTaskVO {
     }
 
     /**
-     * 抓包时长
+     * 抓包时长，以分钟为单位
      * @return duration
      */
     public Integer getDuration() {
@@ -220,7 +220,7 @@ public class CaptureTaskVO {
     }
 
     /**
-     * 最大抓包数
+     * 最大抓包数，以个为单位
      * @return maxPackets
      */
     public Integer getMaxPackets() {
@@ -237,7 +237,7 @@ public class CaptureTaskVO {
     }
 
     /**
-     * 修改日期
+     * 修改日期,如2024/08/31 10:17:30
      * @return modifiedDate
      */
     public String getModifiedDate() {
@@ -322,7 +322,7 @@ public class CaptureTaskVO {
     }
 
     /**
-     * 源地址类型0 ipv4,1 ipv6
+     * 源地址类型0 ipv4，1 ipv6
      * @return sourceAddressType
      */
     public Integer getSourceAddressType() {
@@ -356,7 +356,7 @@ public class CaptureTaskVO {
     }
 
     /**
-     * 抓包任务状态
+     * 抓包任务状态，如成功（1），运行中（2），已截止（4），截止中（5）
      * @return status
      */
     public Integer getStatus() {

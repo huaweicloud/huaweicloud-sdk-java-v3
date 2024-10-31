@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * data
+ * 查询规则列表返回值数据
  */
 public class RuleAclListResponseDTOData {
 
@@ -78,7 +78,7 @@ public class RuleAclListResponseDTOData {
     }
 
     /**
-     * 查询总条数
+     * 查询规则列表总条数
      * @return total
      */
     public Integer getTotal() {
@@ -128,7 +128,7 @@ public class RuleAclListResponseDTOData {
     }
 
     /**
-     * records
+     * 查询规则列表记录
      * @return records
      */
     public List<RuleAclListResponseDTODataRecords> getRecords() {

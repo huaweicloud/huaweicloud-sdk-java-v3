@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.cfw.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -25,80 +20,10 @@ public class ListFirewallDetailRequest {
 
     private Integer limit;
 
-    /**
-     * 服务类型 0 南北向防火墙 1 东西向防火墙
-     */
-    public static final class ServiceTypeEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final ServiceTypeEnum NUMBER_0 = new ServiceTypeEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final ServiceTypeEnum NUMBER_1 = new ServiceTypeEnum(1);
-
-        private static final Map<Integer, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, ServiceTypeEnum> createStaticFields() {
-            Map<Integer, ServiceTypeEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        ServiceTypeEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ServiceTypeEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
-        }
-
-        public static ServiceTypeEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ServiceTypeEnum) {
-                return this.value.equals(((ServiceTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type")
 
-    private ServiceTypeEnum serviceType;
+    private Integer serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -149,22 +74,20 @@ public class ListFirewallDetailRequest {
         this.limit = limit;
     }
 
-    public ListFirewallDetailRequest withServiceType(ServiceTypeEnum serviceType) {
+    public ListFirewallDetailRequest withServiceType(Integer serviceType) {
         this.serviceType = serviceType;
         return this;
     }
 
     /**
-     * 服务类型 0 南北向防火墙 1 东西向防火墙
-     * minimum: 0
-     * maximum: 1
+     * 服务类型，目前仅支持0互联网防护
      * @return serviceType
      */
-    public ServiceTypeEnum getServiceType() {
+    public Integer getServiceType() {
         return serviceType;
     }
 
-    public void setServiceType(ServiceTypeEnum serviceType) {
+    public void setServiceType(Integer serviceType) {
         this.serviceType = serviceType;
     }
 
@@ -174,7 +97,7 @@ public class ListFirewallDetailRequest {
     }
 
     /**
-     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

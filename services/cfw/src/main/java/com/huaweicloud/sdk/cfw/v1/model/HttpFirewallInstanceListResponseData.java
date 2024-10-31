@@ -95,7 +95,7 @@ public class HttpFirewallInstanceListResponseData {
     }
 
     /**
-     * 总数
+     * 防火墙总数量
      * @return total
      */
     public Integer getTotal() {

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.rds.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 数据库用户信息。
@@ -14,6 +17,16 @@ public class UserForList {
     @JsonProperty(value = "name")
 
     private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "databases")
+
+    private List<DatabaseWithPrivilegeObject> databases = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hosts")
+
+    private List<String> hosts = null;
 
     public UserForList withName(String name) {
         this.name = name;
@@ -32,6 +45,72 @@ public class UserForList {
         this.name = name;
     }
 
+    public UserForList withDatabases(List<DatabaseWithPrivilegeObject> databases) {
+        this.databases = databases;
+        return this;
+    }
+
+    public UserForList addDatabasesItem(DatabaseWithPrivilegeObject databasesItem) {
+        if (this.databases == null) {
+            this.databases = new ArrayList<>();
+        }
+        this.databases.add(databasesItem);
+        return this;
+    }
+
+    public UserForList withDatabases(Consumer<List<DatabaseWithPrivilegeObject>> databasesSetter) {
+        if (this.databases == null) {
+            this.databases = new ArrayList<>();
+        }
+        databasesSetter.accept(this.databases);
+        return this;
+    }
+
+    /**
+     * 数据库及其权限。
+     * @return databases
+     */
+    public List<DatabaseWithPrivilegeObject> getDatabases() {
+        return databases;
+    }
+
+    public void setDatabases(List<DatabaseWithPrivilegeObject> databases) {
+        this.databases = databases;
+    }
+
+    public UserForList withHosts(List<String> hosts) {
+        this.hosts = hosts;
+        return this;
+    }
+
+    public UserForList addHostsItem(String hostsItem) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        this.hosts.add(hostsItem);
+        return this;
+    }
+
+    public UserForList withHosts(Consumer<List<String>> hostsSetter) {
+        if (this.hosts == null) {
+            this.hosts = new ArrayList<>();
+        }
+        hostsSetter.accept(this.hosts);
+        return this;
+    }
+
+    /**
+     * 授权用户登录主机IP列表 • 若IP地址为%，则表示允许所有地址访问MySQL实例。 • 若IP地址为“10.10.10.%”，则表示10.10.10.X的IP地址都可以访问该MySQL实例。 • 支持添加多个IP地址。
+     * @return hosts
+     */
+    public List<String> getHosts() {
+        return hosts;
+    }
+
+    public void setHosts(List<String> hosts) {
+        this.hosts = hosts;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +120,13 @@ public class UserForList {
             return false;
         }
         UserForList that = (UserForList) obj;
-        return Objects.equals(this.name, that.name);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.databases, that.databases)
+            && Objects.equals(this.hosts, that.hosts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, databases, hosts);
     }
 
     @Override
@@ -54,6 +134,8 @@ public class UserForList {
         StringBuilder sb = new StringBuilder();
         sb.append("class UserForList {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    databases: ").append(toIndentedString(databases)).append("\n");
+        sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("}");
         return sb.toString();
     }

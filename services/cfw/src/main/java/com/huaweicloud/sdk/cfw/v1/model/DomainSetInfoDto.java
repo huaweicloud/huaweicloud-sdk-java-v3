@@ -26,7 +26,7 @@ public class DomainSetInfoDto {
     }
 
     /**
-     * 域名
+     * 域名，如www.test.com
      * @return domainName
      */
     public String getDomainName() {
@@ -43,7 +43,7 @@ public class DomainSetInfoDto {
     }
 
     /**
-     * 描述
+     * 域名描述
      * @return description
      */
     public String getDescription() {

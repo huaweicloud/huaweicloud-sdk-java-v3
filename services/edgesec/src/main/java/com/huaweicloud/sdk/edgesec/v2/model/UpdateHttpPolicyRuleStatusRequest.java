@@ -54,7 +54,7 @@ public class UpdateHttpPolicyRuleStatusRequest {
     }
 
     /**
-     * 防护策略规则 cc|custom|whiteblackip|privacy|ignore|geoip|antitamper|antileakage|punishment|ip-reputation
+     * 防护策略规则 cc-rule|access-control-rule|blocktrustip-rule|privacy-rule|ignore-rule|geoip-rule|punishment-rule
      * @return ruleType
      */
     public String getRuleType() {

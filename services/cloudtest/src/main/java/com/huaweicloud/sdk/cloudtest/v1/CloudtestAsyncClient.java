@@ -6,6 +6,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteFacotrByIdsRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteFacotrByIdsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCasesRequest;
@@ -14,12 +16,18 @@ import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestReportRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestReportResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchRemoveTestCasesFromIteratorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchRemoveTestCasesFromIteratorResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchShowTestCaseRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchShowTestCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateVersionTestCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateVersionTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CheckPermissionRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CheckPermissionResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateApiTestSuiteByRepoFileRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateApiTestSuiteByRepoFileResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateAssetTreeRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateAssetTreeResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateBackupMindmapRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateBackupMindmapResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateIteratorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateIteratorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreatePlanRequest;
@@ -34,6 +42,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.CreateResourceUriRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateResourceUriResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTemplateRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTemplateResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseInPlanRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseInPlanResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseRequest;
@@ -42,14 +52,34 @@ import com.huaweicloud.sdk.cloudtest.v1.model.CreateUserDefinedUrlKeyWordRequest
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateUserDefinedUrlKeyWordResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateVersionTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateVersionTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteAssetRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteAssetResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteAssetTreeRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteAssetTreeResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteBasicAwByIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteBasicAwByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteFacotrByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteFacotrByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteMindmapBackupByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteMindmapBackupByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteMindmapRecycleByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteMindmapRecycleByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteRelationsByOneCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTemplateByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTemplateByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ImportAssetRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ImportAssetResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ImportFactorRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ImportFactorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListAlarmStatisticsUsingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListAlarmStatisticsUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListAlertGroupsByConditionRequest;
@@ -160,8 +190,12 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowBackgroundInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowBackgroundInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowBranchRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowBranchResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowCaseResultRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowCaseResultResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowConcurrencyPackageUsingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowConcurrencyPackageUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowDefaultTemplateByPageRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowDefaultTemplateByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowDisclaimerRecordRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowDisclaimerRecordResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowDomainInfoRequest;
@@ -188,10 +222,18 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowIteratorDetailRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowIteratorDetailResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindMapByIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindMapByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapBackupByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapBackupByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapBackupByPageRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapBackupByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapByPageRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapCreatorNameRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapCreatorNameResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapRecycleByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapRecycleByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapRecycleByPageRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapRecycleByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowOperationalDataCurrentMonthUsingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowOperationalDataCurrentMonthUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanJournalsRequest;
@@ -218,6 +260,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowStatisticByIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowStatisticByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowSystemConfigsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowSystemConfigsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTemplateByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTemplateByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTemplateByPageRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTemplateByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseAndDefectInfoRequest;
@@ -232,6 +276,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseReviewsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseReviewsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCasesChangeStatisticsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCasesChangeStatisticsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByPageRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestpointByPageRequest;
@@ -240,10 +286,14 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserAccessInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserAccessInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowUserExecuteTestCaseInfoResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateAssetTreeRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateAssetTreeResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateBasicAwByIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateBasicAwByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateIteratorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateIteratorResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateMindmapNameRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateMindmapNameResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseAndScriptRequest;
@@ -893,6 +943,35 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<DeleteBasicAwByIdRequest, DeleteBasicAwByIdResponse> deleteBasicAwByIdAsyncInvoker(
         DeleteBasicAwByIdRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.deleteBasicAwById, hcClient);
+    }
+
+    /**
+     * 删除因子
+     *
+     * 删除因子
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFacotrByIdRequest 请求对象
+     * @return CompletableFuture<DeleteFacotrByIdResponse>
+     */
+    public CompletableFuture<DeleteFacotrByIdResponse> deleteFacotrByIdAsync(DeleteFacotrByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.deleteFacotrById);
+    }
+
+    /**
+     * 删除因子
+     *
+     * 删除因子
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFacotrByIdRequest 请求对象
+     * @return AsyncInvoker<DeleteFacotrByIdRequest, DeleteFacotrByIdResponse>
+     */
+    public AsyncInvoker<DeleteFacotrByIdRequest, DeleteFacotrByIdResponse> deleteFacotrByIdAsyncInvoker(
+        DeleteFacotrByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.deleteFacotrById, hcClient);
     }
 
     /**
@@ -2561,6 +2640,35 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 查询用例结果
+     *
+     * 查询用例结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCaseResultRequest 请求对象
+     * @return CompletableFuture<ShowCaseResultResponse>
+     */
+    public CompletableFuture<ShowCaseResultResponse> showCaseResultAsync(ShowCaseResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showCaseResult);
+    }
+
+    /**
+     * 查询用例结果
+     *
+     * 查询用例结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCaseResultRequest 请求对象
+     * @return AsyncInvoker<ShowCaseResultRequest, ShowCaseResultResponse>
+     */
+    public AsyncInvoker<ShowCaseResultRequest, ShowCaseResultResponse> showCaseResultAsyncInvoker(
+        ShowCaseResultRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showCaseResult, hcClient);
+    }
+
+    /**
      * 查询租户测试并发套餐状态
      *
      * 查询租户测试并发套餐状态
@@ -3410,6 +3518,35 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 获取模板V2
+     *
+     * 获取模板V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTemplateByIdRequest 请求对象
+     * @return CompletableFuture<ShowTemplateByIdResponse>
+     */
+    public CompletableFuture<ShowTemplateByIdResponse> showTemplateByIdAsync(ShowTemplateByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showTemplateById);
+    }
+
+    /**
+     * 获取模板V2
+     *
+     * 获取模板V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTemplateByIdRequest 请求对象
+     * @return AsyncInvoker<ShowTemplateByIdRequest, ShowTemplateByIdResponse>
+     */
+    public AsyncInvoker<ShowTemplateByIdRequest, ShowTemplateByIdResponse> showTemplateByIdAsyncInvoker(
+        ShowTemplateByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showTemplateById, hcClient);
+    }
+
+    /**
      * 根据条件分页获取模板V3
      *
      * 根据条件分页获取模板V3
@@ -4055,6 +4192,651 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ListEnvironmentsRequest, ListEnvironmentsResponse> listEnvironmentsAsyncInvoker(
         ListEnvironmentsRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.listEnvironments, hcClient);
+    }
+
+    /**
+     * 批量删除因子
+     *
+     * 批量删除因子
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteFacotrByIdsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteFacotrByIdsResponse>
+     */
+    public CompletableFuture<BatchDeleteFacotrByIdsResponse> batchDeleteFacotrByIdsAsync(
+        BatchDeleteFacotrByIdsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.batchDeleteFacotrByIds);
+    }
+
+    /**
+     * 批量删除因子
+     *
+     * 批量删除因子
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteFacotrByIdsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteFacotrByIdsRequest, BatchDeleteFacotrByIdsResponse>
+     */
+    public AsyncInvoker<BatchDeleteFacotrByIdsRequest, BatchDeleteFacotrByIdsResponse> batchDeleteFacotrByIdsAsyncInvoker(
+        BatchDeleteFacotrByIdsRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.batchDeleteFacotrByIds, hcClient);
+    }
+
+    /**
+     * 批量查询用例V3
+     *
+     * 批量查询用例V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchShowTestCaseRequest 请求对象
+     * @return CompletableFuture<BatchShowTestCaseResponse>
+     */
+    public CompletableFuture<BatchShowTestCaseResponse> batchShowTestCaseAsync(BatchShowTestCaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.batchShowTestCase);
+    }
+
+    /**
+     * 批量查询用例V3
+     *
+     * 批量查询用例V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchShowTestCaseRequest 请求对象
+     * @return AsyncInvoker<BatchShowTestCaseRequest, BatchShowTestCaseResponse>
+     */
+    public AsyncInvoker<BatchShowTestCaseRequest, BatchShowTestCaseResponse> batchShowTestCaseAsyncInvoker(
+        BatchShowTestCaseRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.batchShowTestCase, hcClient);
+    }
+
+    /**
+     * 新增资产树节点
+     *
+     * 新增资产树节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAssetTreeRequest 请求对象
+     * @return CompletableFuture<CreateAssetTreeResponse>
+     */
+    public CompletableFuture<CreateAssetTreeResponse> createAssetTreeAsync(CreateAssetTreeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.createAssetTree);
+    }
+
+    /**
+     * 新增资产树节点
+     *
+     * 新增资产树节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAssetTreeRequest 请求对象
+     * @return AsyncInvoker<CreateAssetTreeRequest, CreateAssetTreeResponse>
+     */
+    public AsyncInvoker<CreateAssetTreeRequest, CreateAssetTreeResponse> createAssetTreeAsyncInvoker(
+        CreateAssetTreeRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.createAssetTree, hcClient);
+    }
+
+    /**
+     * 备份脑图V2
+     *
+     * 备份脑图V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateBackupMindmapRequest 请求对象
+     * @return CompletableFuture<CreateBackupMindmapResponse>
+     */
+    public CompletableFuture<CreateBackupMindmapResponse> createBackupMindmapAsync(CreateBackupMindmapRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.createBackupMindmap);
+    }
+
+    /**
+     * 备份脑图V2
+     *
+     * 备份脑图V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateBackupMindmapRequest 请求对象
+     * @return AsyncInvoker<CreateBackupMindmapRequest, CreateBackupMindmapResponse>
+     */
+    public AsyncInvoker<CreateBackupMindmapRequest, CreateBackupMindmapResponse> createBackupMindmapAsyncInvoker(
+        CreateBackupMindmapRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.createBackupMindmap, hcClient);
+    }
+
+    /**
+     * 保存模板V2
+     *
+     * 保存模板V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTemplateRequest 请求对象
+     * @return CompletableFuture<CreateTemplateResponse>
+     */
+    public CompletableFuture<CreateTemplateResponse> createTemplateAsync(CreateTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.createTemplate);
+    }
+
+    /**
+     * 保存模板V2
+     *
+     * 保存模板V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTemplateRequest 请求对象
+     * @return AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse>
+     */
+    public AsyncInvoker<CreateTemplateRequest, CreateTemplateResponse> createTemplateAsyncInvoker(
+        CreateTemplateRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.createTemplate, hcClient);
+    }
+
+    /**
+     * 删除资产
+     *
+     * 删除资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAssetRequest 请求对象
+     * @return CompletableFuture<DeleteAssetResponse>
+     */
+    public CompletableFuture<DeleteAssetResponse> deleteAssetAsync(DeleteAssetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.deleteAsset);
+    }
+
+    /**
+     * 删除资产
+     *
+     * 删除资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAssetRequest 请求对象
+     * @return AsyncInvoker<DeleteAssetRequest, DeleteAssetResponse>
+     */
+    public AsyncInvoker<DeleteAssetRequest, DeleteAssetResponse> deleteAssetAsyncInvoker(DeleteAssetRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.deleteAsset, hcClient);
+    }
+
+    /**
+     * 删除资产树节点
+     *
+     * 删除资产树节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAssetTreeRequest 请求对象
+     * @return CompletableFuture<DeleteAssetTreeResponse>
+     */
+    public CompletableFuture<DeleteAssetTreeResponse> deleteAssetTreeAsync(DeleteAssetTreeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.deleteAssetTree);
+    }
+
+    /**
+     * 删除资产树节点
+     *
+     * 删除资产树节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAssetTreeRequest 请求对象
+     * @return AsyncInvoker<DeleteAssetTreeRequest, DeleteAssetTreeResponse>
+     */
+    public AsyncInvoker<DeleteAssetTreeRequest, DeleteAssetTreeResponse> deleteAssetTreeAsyncInvoker(
+        DeleteAssetTreeRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.deleteAssetTree, hcClient);
+    }
+
+    /**
+     * 根据id删除脑图备份V2
+     *
+     * 根据id删除脑图备份V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMindmapBackupByIdRequest 请求对象
+     * @return CompletableFuture<DeleteMindmapBackupByIdResponse>
+     */
+    public CompletableFuture<DeleteMindmapBackupByIdResponse> deleteMindmapBackupByIdAsync(
+        DeleteMindmapBackupByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.deleteMindmapBackupById);
+    }
+
+    /**
+     * 根据id删除脑图备份V2
+     *
+     * 根据id删除脑图备份V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMindmapBackupByIdRequest 请求对象
+     * @return AsyncInvoker<DeleteMindmapBackupByIdRequest, DeleteMindmapBackupByIdResponse>
+     */
+    public AsyncInvoker<DeleteMindmapBackupByIdRequest, DeleteMindmapBackupByIdResponse> deleteMindmapBackupByIdAsyncInvoker(
+        DeleteMindmapBackupByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.deleteMindmapBackupById, hcClient);
+    }
+
+    /**
+     * 删除脑图回收站V2
+     *
+     * 删除脑图回收站V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMindmapRecycleByIdRequest 请求对象
+     * @return CompletableFuture<DeleteMindmapRecycleByIdResponse>
+     */
+    public CompletableFuture<DeleteMindmapRecycleByIdResponse> deleteMindmapRecycleByIdAsync(
+        DeleteMindmapRecycleByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.deleteMindmapRecycleById);
+    }
+
+    /**
+     * 删除脑图回收站V2
+     *
+     * 删除脑图回收站V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMindmapRecycleByIdRequest 请求对象
+     * @return AsyncInvoker<DeleteMindmapRecycleByIdRequest, DeleteMindmapRecycleByIdResponse>
+     */
+    public AsyncInvoker<DeleteMindmapRecycleByIdRequest, DeleteMindmapRecycleByIdResponse> deleteMindmapRecycleByIdAsyncInvoker(
+        DeleteMindmapRecycleByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.deleteMindmapRecycleById, hcClient);
+    }
+
+    /**
+     * 删除模板V2
+     *
+     * 删除模板V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTemplateByIdRequest 请求对象
+     * @return CompletableFuture<DeleteTemplateByIdResponse>
+     */
+    public CompletableFuture<DeleteTemplateByIdResponse> deleteTemplateByIdAsync(DeleteTemplateByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.deleteTemplateById);
+    }
+
+    /**
+     * 删除模板V2
+     *
+     * 删除模板V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTemplateByIdRequest 请求对象
+     * @return AsyncInvoker<DeleteTemplateByIdRequest, DeleteTemplateByIdResponse>
+     */
+    public AsyncInvoker<DeleteTemplateByIdRequest, DeleteTemplateByIdResponse> deleteTemplateByIdAsyncInvoker(
+        DeleteTemplateByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.deleteTemplateById, hcClient);
+    }
+
+    /**
+     * 下载资产模板
+     *
+     * 下载资产模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadAssetTemplateRequest 请求对象
+     * @return CompletableFuture<DownloadAssetTemplateResponse>
+     */
+    public CompletableFuture<DownloadAssetTemplateResponse> downloadAssetTemplateAsync(
+        DownloadAssetTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.downloadAssetTemplate);
+    }
+
+    /**
+     * 下载资产模板
+     *
+     * 下载资产模板
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadAssetTemplateRequest 请求对象
+     * @return AsyncInvoker<DownloadAssetTemplateRequest, DownloadAssetTemplateResponse>
+     */
+    public AsyncInvoker<DownloadAssetTemplateRequest, DownloadAssetTemplateResponse> downloadAssetTemplateAsyncInvoker(
+        DownloadAssetTemplateRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.downloadAssetTemplate, hcClient);
+    }
+
+    /**
+     * 因子库导出
+     *
+     * 因子库导出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportFactorRequest 请求对象
+     * @return CompletableFuture<ExportFactorResponse>
+     */
+    public CompletableFuture<ExportFactorResponse> exportFactorAsync(ExportFactorRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.exportFactor);
+    }
+
+    /**
+     * 因子库导出
+     *
+     * 因子库导出
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportFactorRequest 请求对象
+     * @return AsyncInvoker<ExportFactorRequest, ExportFactorResponse>
+     */
+    public AsyncInvoker<ExportFactorRequest, ExportFactorResponse> exportFactorAsyncInvoker(
+        ExportFactorRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.exportFactor, hcClient);
+    }
+
+    /**
+     * 资产导入
+     *
+     * 资产导入
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportAssetRequest 请求对象
+     * @return CompletableFuture<ImportAssetResponse>
+     */
+    public CompletableFuture<ImportAssetResponse> importAssetAsync(ImportAssetRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.importAsset);
+    }
+
+    /**
+     * 资产导入
+     *
+     * 资产导入
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportAssetRequest 请求对象
+     * @return AsyncInvoker<ImportAssetRequest, ImportAssetResponse>
+     */
+    public AsyncInvoker<ImportAssetRequest, ImportAssetResponse> importAssetAsyncInvoker(ImportAssetRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.importAsset, hcClient);
+    }
+
+    /**
+     * 因子导入
+     *
+     * 因子导入
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportFactorRequest 请求对象
+     * @return CompletableFuture<ImportFactorResponse>
+     */
+    public CompletableFuture<ImportFactorResponse> importFactorAsync(ImportFactorRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.importFactor);
+    }
+
+    /**
+     * 因子导入
+     *
+     * 因子导入
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ImportFactorRequest 请求对象
+     * @return AsyncInvoker<ImportFactorRequest, ImportFactorResponse>
+     */
+    public AsyncInvoker<ImportFactorRequest, ImportFactorResponse> importFactorAsyncInvoker(
+        ImportFactorRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.importFactor, hcClient);
+    }
+
+    /**
+     * 获取默认模板V2
+     *
+     * 获取默认模板V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDefaultTemplateByPageRequest 请求对象
+     * @return CompletableFuture<ShowDefaultTemplateByPageResponse>
+     */
+    public CompletableFuture<ShowDefaultTemplateByPageResponse> showDefaultTemplateByPageAsync(
+        ShowDefaultTemplateByPageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showDefaultTemplateByPage);
+    }
+
+    /**
+     * 获取默认模板V2
+     *
+     * 获取默认模板V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDefaultTemplateByPageRequest 请求对象
+     * @return AsyncInvoker<ShowDefaultTemplateByPageRequest, ShowDefaultTemplateByPageResponse>
+     */
+    public AsyncInvoker<ShowDefaultTemplateByPageRequest, ShowDefaultTemplateByPageResponse> showDefaultTemplateByPageAsyncInvoker(
+        ShowDefaultTemplateByPageRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showDefaultTemplateByPage, hcClient);
+    }
+
+    /**
+     * 根据id获取脑图备份V2
+     *
+     * 根据id获取脑图备份V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMindmapBackupByIdRequest 请求对象
+     * @return CompletableFuture<ShowMindmapBackupByIdResponse>
+     */
+    public CompletableFuture<ShowMindmapBackupByIdResponse> showMindmapBackupByIdAsync(
+        ShowMindmapBackupByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showMindmapBackupById);
+    }
+
+    /**
+     * 根据id获取脑图备份V2
+     *
+     * 根据id获取脑图备份V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMindmapBackupByIdRequest 请求对象
+     * @return AsyncInvoker<ShowMindmapBackupByIdRequest, ShowMindmapBackupByIdResponse>
+     */
+    public AsyncInvoker<ShowMindmapBackupByIdRequest, ShowMindmapBackupByIdResponse> showMindmapBackupByIdAsyncInvoker(
+        ShowMindmapBackupByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showMindmapBackupById, hcClient);
+    }
+
+    /**
+     * 根据条件分页获取脑图备份对象V3
+     *
+     * 根据条件分页获取脑图备份对象V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMindmapBackupByPageRequest 请求对象
+     * @return CompletableFuture<ShowMindmapBackupByPageResponse>
+     */
+    public CompletableFuture<ShowMindmapBackupByPageResponse> showMindmapBackupByPageAsync(
+        ShowMindmapBackupByPageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showMindmapBackupByPage);
+    }
+
+    /**
+     * 根据条件分页获取脑图备份对象V3
+     *
+     * 根据条件分页获取脑图备份对象V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMindmapBackupByPageRequest 请求对象
+     * @return AsyncInvoker<ShowMindmapBackupByPageRequest, ShowMindmapBackupByPageResponse>
+     */
+    public AsyncInvoker<ShowMindmapBackupByPageRequest, ShowMindmapBackupByPageResponse> showMindmapBackupByPageAsyncInvoker(
+        ShowMindmapBackupByPageRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showMindmapBackupByPage, hcClient);
+    }
+
+    /**
+     * 根据id获取回收站脑图对象V2
+     *
+     * 根据id获取回收站脑图对象V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMindmapRecycleByIdRequest 请求对象
+     * @return CompletableFuture<ShowMindmapRecycleByIdResponse>
+     */
+    public CompletableFuture<ShowMindmapRecycleByIdResponse> showMindmapRecycleByIdAsync(
+        ShowMindmapRecycleByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showMindmapRecycleById);
+    }
+
+    /**
+     * 根据id获取回收站脑图对象V2
+     *
+     * 根据id获取回收站脑图对象V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMindmapRecycleByIdRequest 请求对象
+     * @return AsyncInvoker<ShowMindmapRecycleByIdRequest, ShowMindmapRecycleByIdResponse>
+     */
+    public AsyncInvoker<ShowMindmapRecycleByIdRequest, ShowMindmapRecycleByIdResponse> showMindmapRecycleByIdAsyncInvoker(
+        ShowMindmapRecycleByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showMindmapRecycleById, hcClient);
+    }
+
+    /**
+     * 根据条件分页获取回收站脑图对象V3
+     *
+     * 根据条件分页获取回收站脑图对象V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMindmapRecycleByPageRequest 请求对象
+     * @return CompletableFuture<ShowMindmapRecycleByPageResponse>
+     */
+    public CompletableFuture<ShowMindmapRecycleByPageResponse> showMindmapRecycleByPageAsync(
+        ShowMindmapRecycleByPageRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showMindmapRecycleByPage);
+    }
+
+    /**
+     * 根据条件分页获取回收站脑图对象V3
+     *
+     * 根据条件分页获取回收站脑图对象V3
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMindmapRecycleByPageRequest 请求对象
+     * @return AsyncInvoker<ShowMindmapRecycleByPageRequest, ShowMindmapRecycleByPageResponse>
+     */
+    public AsyncInvoker<ShowMindmapRecycleByPageRequest, ShowMindmapRecycleByPageResponse> showMindmapRecycleByPageAsyncInvoker(
+        ShowMindmapRecycleByPageRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showMindmapRecycleByPage, hcClient);
+    }
+
+    /**
+     * 根据id获取测试用例对象V2
+     *
+     * 根据id获取测试用例对象V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTestcaseByIdRequest 请求对象
+     * @return CompletableFuture<ShowTestcaseByIdResponse>
+     */
+    public CompletableFuture<ShowTestcaseByIdResponse> showTestcaseByIdAsync(ShowTestcaseByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.showTestcaseById);
+    }
+
+    /**
+     * 根据id获取测试用例对象V2
+     *
+     * 根据id获取测试用例对象V2
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTestcaseByIdRequest 请求对象
+     * @return AsyncInvoker<ShowTestcaseByIdRequest, ShowTestcaseByIdResponse>
+     */
+    public AsyncInvoker<ShowTestcaseByIdRequest, ShowTestcaseByIdResponse> showTestcaseByIdAsyncInvoker(
+        ShowTestcaseByIdRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.showTestcaseById, hcClient);
+    }
+
+    /**
+     * 修改资产树节点
+     *
+     * 修改资产树节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAssetTreeRequest 请求对象
+     * @return CompletableFuture<UpdateAssetTreeResponse>
+     */
+    public CompletableFuture<UpdateAssetTreeResponse> updateAssetTreeAsync(UpdateAssetTreeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.updateAssetTree);
+    }
+
+    /**
+     * 修改资产树节点
+     *
+     * 修改资产树节点
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAssetTreeRequest 请求对象
+     * @return AsyncInvoker<UpdateAssetTreeRequest, UpdateAssetTreeResponse>
+     */
+    public AsyncInvoker<UpdateAssetTreeRequest, UpdateAssetTreeResponse> updateAssetTreeAsyncInvoker(
+        UpdateAssetTreeRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.updateAssetTree, hcClient);
+    }
+
+    /**
+     * 脑图名称编辑
+     *
+     * 脑图名称编辑
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMindmapNameRequest 请求对象
+     * @return CompletableFuture<UpdateMindmapNameResponse>
+     */
+    public CompletableFuture<UpdateMindmapNameResponse> updateMindmapNameAsync(UpdateMindmapNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.updateMindmapName);
+    }
+
+    /**
+     * 脑图名称编辑
+     *
+     * 脑图名称编辑
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMindmapNameRequest 请求对象
+     * @return AsyncInvoker<UpdateMindmapNameRequest, UpdateMindmapNameResponse>
+     */
+    public AsyncInvoker<UpdateMindmapNameRequest, UpdateMindmapNameResponse> updateMindmapNameAsyncInvoker(
+        UpdateMindmapNameRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.updateMindmapName, hcClient);
     }
 
 }

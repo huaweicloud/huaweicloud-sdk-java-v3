@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -17,38 +15,31 @@ public class ListCaptureTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private List<HttpQueryCaptureTaskResponseData> data = null;
+    private HttpQueryCaptureTaskResponseData data;
 
-    public ListCaptureTaskResponse withData(List<HttpQueryCaptureTaskResponseData> data) {
+    public ListCaptureTaskResponse withData(HttpQueryCaptureTaskResponseData data) {
         this.data = data;
         return this;
     }
 
-    public ListCaptureTaskResponse addDataItem(HttpQueryCaptureTaskResponseData dataItem) {
+    public ListCaptureTaskResponse withData(Consumer<HttpQueryCaptureTaskResponseData> dataSetter) {
         if (this.data == null) {
-            this.data = new ArrayList<>();
+            this.data = new HttpQueryCaptureTaskResponseData();
+            dataSetter.accept(this.data);
         }
-        this.data.add(dataItem);
-        return this;
-    }
 
-    public ListCaptureTaskResponse withData(Consumer<List<HttpQueryCaptureTaskResponseData>> dataSetter) {
-        if (this.data == null) {
-            this.data = new ArrayList<>();
-        }
-        dataSetter.accept(this.data);
         return this;
     }
 
     /**
-     * 查询抓包任务返回值。
+     * Get data
      * @return data
      */
-    public List<HttpQueryCaptureTaskResponseData> getData() {
+    public HttpQueryCaptureTaskResponseData getData() {
         return data;
     }
 
-    public void setData(List<HttpQueryCaptureTaskResponseData> data) {
+    public void setData(HttpQueryCaptureTaskResponseData data) {
         this.data = data;
     }
 

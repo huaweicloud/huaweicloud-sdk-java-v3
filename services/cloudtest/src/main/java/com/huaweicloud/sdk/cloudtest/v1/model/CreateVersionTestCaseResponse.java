@@ -5,7 +5,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -420,7 +423,7 @@ public class CreateVersionTestCaseResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "labels")
 
-    private String labels;
+    private List<LabelVo> labels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "module_id")
@@ -2009,8 +2012,24 @@ public class CreateVersionTestCaseResponse extends SdkResponse {
         this.labelId = labelId;
     }
 
-    public CreateVersionTestCaseResponse withLabels(String labels) {
+    public CreateVersionTestCaseResponse withLabels(List<LabelVo> labels) {
         this.labels = labels;
+        return this;
+    }
+
+    public CreateVersionTestCaseResponse addLabelsItem(LabelVo labelsItem) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        this.labels.add(labelsItem);
+        return this;
+    }
+
+    public CreateVersionTestCaseResponse withLabels(Consumer<List<LabelVo>> labelsSetter) {
+        if (this.labels == null) {
+            this.labels = new ArrayList<>();
+        }
+        labelsSetter.accept(this.labels);
         return this;
     }
 
@@ -2018,11 +2037,11 @@ public class CreateVersionTestCaseResponse extends SdkResponse {
      * 用例标签名称列表
      * @return labels
      */
-    public String getLabels() {
+    public List<LabelVo> getLabels() {
         return labels;
     }
 
-    public void setLabels(String labels) {
+    public void setLabels(List<LabelVo> labels) {
         this.labels = labels;
     }
 

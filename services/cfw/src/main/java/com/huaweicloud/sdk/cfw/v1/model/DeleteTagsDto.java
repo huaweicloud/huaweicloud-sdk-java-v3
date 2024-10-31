@@ -40,7 +40,7 @@ public class DeleteTagsDto {
     }
 
     /**
-     * 标签列表
+     * 防火墙标签列表
      * @return tags
      */
     public List<ResourceTag> getTags() {

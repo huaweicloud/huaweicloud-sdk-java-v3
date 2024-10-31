@@ -259,6 +259,11 @@ public class ApiAuthBase {
 
     private String romaAppType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
+
     public ApiAuthBase withId(String id) {
         this.id = id;
         return this;
@@ -631,6 +636,39 @@ public class ApiAuthBase {
         this.romaAppType = romaAppType;
     }
 
+    public ApiAuthBase withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ApiAuthBase addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ApiAuthBase withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * API绑定的标签，标签配额默认10条，可以联系技术调整。
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -650,7 +688,8 @@ public class ApiAuthBase {
             && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.authTunnel, that.authTunnel)
             && Objects.equals(this.authWhitelist, that.authWhitelist)
             && Objects.equals(this.authBlacklist, that.authBlacklist)
-            && Objects.equals(this.visitParam, that.visitParam) && Objects.equals(this.romaAppType, that.romaAppType);
+            && Objects.equals(this.visitParam, that.visitParam) && Objects.equals(this.romaAppType, that.romaAppType)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -674,7 +713,8 @@ public class ApiAuthBase {
             authWhitelist,
             authBlacklist,
             visitParam,
-            romaAppType);
+            romaAppType,
+            tags);
     }
 
     @Override
@@ -701,6 +741,7 @@ public class ApiAuthBase {
         sb.append("    authBlacklist: ").append(toIndentedString(authBlacklist)).append("\n");
         sb.append("    visitParam: ").append(toIndentedString(visitParam)).append("\n");
         sb.append("    romaAppType: ").append(toIndentedString(romaAppType)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

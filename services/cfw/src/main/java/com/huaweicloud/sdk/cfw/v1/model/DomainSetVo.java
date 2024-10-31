@@ -44,11 +44,6 @@ public class DomainSetVo {
     private Integer configStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "message")
-
-    private String message;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rules")
 
     private List<UseRuleVO> rules = null;
@@ -93,7 +88,7 @@ public class DomainSetVo {
     }
 
     /**
-     * 描述
+     * 域名组描述
      * @return description
      */
     public String getDescription() {
@@ -110,7 +105,7 @@ public class DomainSetVo {
     }
 
     /**
-     * 引用次数
+     * 域名组被规则引用次数
      * @return refCount
      */
     public Integer getRefCount() {
@@ -144,7 +139,7 @@ public class DomainSetVo {
     }
 
     /**
-     * 配置状态
+     * 配置状态，-1表示未配置态，0表示配置失败，1表示配置成功，2表示配置中，3表示正常，4表示配置异常
      * @return configStatus
      */
     public Integer getConfigStatus() {
@@ -153,23 +148,6 @@ public class DomainSetVo {
 
     public void setConfigStatus(Integer configStatus) {
         this.configStatus = configStatus;
-    }
-
-    public DomainSetVo withMessage(String message) {
-        this.message = message;
-        return this;
-    }
-
-    /**
-     * 异常信息
-     * @return message
-     */
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     public DomainSetVo withRules(List<UseRuleVO> rules) {
@@ -217,13 +195,12 @@ public class DomainSetVo {
         return Objects.equals(this.setId, that.setId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.refCount, that.refCount)
             && Objects.equals(this.domainSetType, that.domainSetType)
-            && Objects.equals(this.configStatus, that.configStatus) && Objects.equals(this.message, that.message)
-            && Objects.equals(this.rules, that.rules);
+            && Objects.equals(this.configStatus, that.configStatus) && Objects.equals(this.rules, that.rules);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(setId, name, description, refCount, domainSetType, configStatus, message, rules);
+        return Objects.hash(setId, name, description, refCount, domainSetType, configStatus, rules);
     }
 
     @Override
@@ -236,7 +213,6 @@ public class DomainSetVo {
         sb.append("    refCount: ").append(toIndentedString(refCount)).append("\n");
         sb.append("    domainSetType: ").append(toIndentedString(domainSetType)).append("\n");
         sb.append("    configStatus: ").append(toIndentedString(configStatus)).append("\n");
-        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    rules: ").append(toIndentedString(rules)).append("\n");
         sb.append("}");
         return sb.toString();

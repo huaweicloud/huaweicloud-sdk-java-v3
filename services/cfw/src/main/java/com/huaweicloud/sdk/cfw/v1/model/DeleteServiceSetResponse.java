@@ -15,16 +15,16 @@ public class DeleteServiceSetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private IdObject data;
+    private ServiceSetId data;
 
-    public DeleteServiceSetResponse withData(IdObject data) {
+    public DeleteServiceSetResponse withData(ServiceSetId data) {
         this.data = data;
         return this;
     }
 
-    public DeleteServiceSetResponse withData(Consumer<IdObject> dataSetter) {
+    public DeleteServiceSetResponse withData(Consumer<ServiceSetId> dataSetter) {
         if (this.data == null) {
-            this.data = new IdObject();
+            this.data = new ServiceSetId();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class DeleteServiceSetResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public IdObject getData() {
+    public ServiceSetId getData() {
         return data;
     }
 
-    public void setData(IdObject data) {
+    public void setData(ServiceSetId data) {
         this.data = data;
     }
 

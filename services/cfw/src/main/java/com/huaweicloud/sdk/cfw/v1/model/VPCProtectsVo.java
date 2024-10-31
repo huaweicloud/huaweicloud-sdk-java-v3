@@ -54,7 +54,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 总VPC数
+     * 总防护VPC数
      * @return total
      */
     public Integer getTotal() {
@@ -71,7 +71,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 本项目防护VPC数
+     * 防火墙东西向防护可进行跨账号防护VPC，self_total表示本项目防护VPC总数。
      * @return selfTotal
      */
     public Integer getSelfTotal() {
@@ -88,7 +88,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 其他项目防护VPC数
+     * 防火墙东西向防护可进行跨账号防护VPC，other_total表示其他项目防护VPC数
      * @return otherTotal
      */
     public Integer getOtherTotal() {
@@ -121,7 +121,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 防护VPC
+     * 防火墙东西向防护可进行跨账号防护VPC，protect_vpcs指的是总体防护VPC列表
      * @return protectVpcs
      */
     public List<VpcAttachmentDetail> getProtectVpcs() {
@@ -154,7 +154,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 本项目防护VPC
+     * 防火墙东西向防护可进行跨账号防护VPC，self_protect_vpcs指的是本项目防护VPC列表
      * @return selfProtectVpcs
      */
     public List<VpcAttachmentDetail> getSelfProtectVpcs() {
@@ -187,7 +187,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 其他项目防护VPC
+     * 防火墙东西向防护可进行跨账号防护VPC，other_protect_vpcs指的是其他项目防护VPC列表
      * @return otherProtectVpcs
      */
     public List<VpcAttachmentDetail> getOtherProtectVpcs() {
@@ -204,7 +204,7 @@ public class VPCProtectsVo {
     }
 
     /**
-     * 所有资产数量
+     * 租户的所有VPC资产数量
      * @return totalAssets
      */
     public Integer getTotalAssets() {

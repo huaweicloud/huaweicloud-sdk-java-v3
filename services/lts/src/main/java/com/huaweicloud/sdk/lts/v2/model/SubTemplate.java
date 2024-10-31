@@ -113,6 +113,11 @@ public class SubTemplate {
 
     private String content;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "topic")
+
+    private String topic;
+
     public SubTemplate withSubType(SubTypeEnum subType) {
         this.subType = subType;
         return this;
@@ -147,6 +152,23 @@ public class SubTemplate {
         this.content = content;
     }
 
+    public SubTemplate withTopic(String topic) {
+        this.topic = topic;
+        return this;
+    }
+
+    /**
+     * 邮件主题,只有sub_type=email时生效
+     * @return topic
+     */
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -156,12 +178,13 @@ public class SubTemplate {
             return false;
         }
         SubTemplate that = (SubTemplate) obj;
-        return Objects.equals(this.subType, that.subType) && Objects.equals(this.content, that.content);
+        return Objects.equals(this.subType, that.subType) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.topic, that.topic);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subType, content);
+        return Objects.hash(subType, content, topic);
     }
 
     @Override
@@ -170,6 +193,7 @@ public class SubTemplate {
         sb.append("class SubTemplate {\n");
         sb.append("    subType: ").append(toIndentedString(subType)).append("\n");
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
+        sb.append("    topic: ").append(toIndentedString(topic)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询流日志返回值
+ * 查询流日志返回值数据
  */
 public class HttpQueryCfwFlowLogsResponseDTOData {
 
@@ -34,7 +34,7 @@ public class HttpQueryCfwFlowLogsResponseDTOData {
     }
 
     /**
-     * 返回数量
+     * 查询流日志返回值记录总数
      * @return total
      */
     public Integer getTotal() {

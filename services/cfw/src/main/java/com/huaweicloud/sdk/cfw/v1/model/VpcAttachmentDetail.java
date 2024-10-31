@@ -21,7 +21,7 @@ public class VpcAttachmentDetail {
     }
 
     /**
-     * vpc id
+     * 东西向防护添加的防护vpc的id
      * @return vpcId
      */
     public String getVpcId() {

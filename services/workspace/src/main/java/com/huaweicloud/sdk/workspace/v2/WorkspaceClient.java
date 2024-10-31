@@ -49,6 +49,8 @@ import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeUserPrivilegeGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeUserPrivilegeGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyRequest;
@@ -804,6 +806,35 @@ public class WorkspaceClient {
     public SyncInvoker<ChangeDesktopNetworkRequest, ChangeDesktopNetworkResponse> changeDesktopNetworkInvoker(
         ChangeDesktopNetworkRequest request) {
         return new SyncInvoker<>(request, WorkspaceMeta.changeDesktopNetwork, hcClient);
+    }
+
+    /**
+     * 批量修改用户权限组
+     *
+     * 批量修改用户权限组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeUserPrivilegeGroupRequest 请求对象
+     * @return ChangeUserPrivilegeGroupResponse
+     */
+    public ChangeUserPrivilegeGroupResponse changeUserPrivilegeGroup(ChangeUserPrivilegeGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.changeUserPrivilegeGroup);
+    }
+
+    /**
+     * 批量修改用户权限组
+     *
+     * 批量修改用户权限组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeUserPrivilegeGroupRequest 请求对象
+     * @return SyncInvoker<ChangeUserPrivilegeGroupRequest, ChangeUserPrivilegeGroupResponse>
+     */
+    public SyncInvoker<ChangeUserPrivilegeGroupRequest, ChangeUserPrivilegeGroupResponse> changeUserPrivilegeGroupInvoker(
+        ChangeUserPrivilegeGroupRequest request) {
+        return new SyncInvoker<>(request, WorkspaceMeta.changeUserPrivilegeGroup, hcClient);
     }
 
     /**

@@ -6787,7 +6787,7 @@ public class ApigClient {
     /**
      * 更新VPC通道后端服务器组
      *
-     * 更新指定VPC通道后端服务器组
+     * 更新指定VPC通道后端服务器组。当负载通道为nacos微服务类型时，不支持修改服务器组权重。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6801,7 +6801,7 @@ public class ApigClient {
     /**
      * 更新VPC通道后端服务器组
      *
-     * 更新指定VPC通道后端服务器组
+     * 更新指定VPC通道后端服务器组。当负载通道为nacos微服务类型时，不支持修改服务器组权重。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

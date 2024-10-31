@@ -6,7 +6,6 @@ import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -33,7 +32,7 @@ public class ListLogsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "analysisLogs")
 
-    private List<Map<String, String>> analysisLogs = null;
+    private List<Object> analysisLogs = null;
 
     public ListLogsResponse withCount(Integer count) {
         this.count = count;
@@ -102,12 +101,12 @@ public class ListLogsResponse extends SdkResponse {
         this.isQueryComplete = isQueryComplete;
     }
 
-    public ListLogsResponse withAnalysisLogs(List<Map<String, String>> analysisLogs) {
+    public ListLogsResponse withAnalysisLogs(List<Object> analysisLogs) {
         this.analysisLogs = analysisLogs;
         return this;
     }
 
-    public ListLogsResponse addAnalysisLogsItem(Map<String, String> analysisLogsItem) {
+    public ListLogsResponse addAnalysisLogsItem(Object analysisLogsItem) {
         if (this.analysisLogs == null) {
             this.analysisLogs = new ArrayList<>();
         }
@@ -115,7 +114,7 @@ public class ListLogsResponse extends SdkResponse {
         return this;
     }
 
-    public ListLogsResponse withAnalysisLogs(Consumer<List<Map<String, String>>> analysisLogsSetter) {
+    public ListLogsResponse withAnalysisLogs(Consumer<List<Object>> analysisLogsSetter) {
         if (this.analysisLogs == null) {
             this.analysisLogs = new ArrayList<>();
         }
@@ -127,11 +126,11 @@ public class ListLogsResponse extends SdkResponse {
      * 分析日志返回响应体
      * @return analysisLogs
      */
-    public List<Map<String, String>> getAnalysisLogs() {
+    public List<Object> getAnalysisLogs() {
         return analysisLogs;
     }
 
-    public void setAnalysisLogs(List<Map<String, String>> analysisLogs) {
+    public void setAnalysisLogs(List<Object> analysisLogs) {
         this.analysisLogs = analysisLogs;
     }
 

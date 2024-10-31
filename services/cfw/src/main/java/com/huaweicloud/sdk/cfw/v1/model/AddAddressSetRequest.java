@@ -32,7 +32,7 @@ public class AddAddressSetRequest {
     }
 
     /**
-     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -49,7 +49,7 @@ public class AddAddressSetRequest {
     }
 
     /**
-     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+     * 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
      * @return fwInstanceId
      */
     public String getFwInstanceId() {

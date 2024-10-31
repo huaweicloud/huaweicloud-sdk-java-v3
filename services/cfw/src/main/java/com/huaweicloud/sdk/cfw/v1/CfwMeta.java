@@ -310,7 +310,7 @@ public class CfwMeta {
                 AddDomainSetRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddDomainSetRequest::getFwInstanceId, AddDomainSetRequest::setFwInstanceId));
         builder.<AddDomainSetInfoDto>withRequestField("body",
@@ -933,6 +933,11 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDomainsRequest::getEnterpriseProjectId,
                 DeleteDomainsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDomainsRequest::getFwInstanceId, DeleteDomainsRequest::setFwInstanceId));
         builder.<DeleteDomainDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -1361,10 +1366,10 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAddressSetsRequest::getAddress, ListAddressSetsRequest::setAddress));
-        builder.<ListAddressSetsRequest.AddressTypeEnum>withRequestField("address_type",
+        builder.<Integer>withRequestField("address_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListAddressSetsRequest.AddressTypeEnum.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAddressSetsRequest::getAddressType, ListAddressSetsRequest::setAddressType));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
@@ -1687,7 +1692,7 @@ public class CfwMeta {
                 ListCaptureTaskRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCaptureTaskRequest::getFwInstanceId, ListCaptureTaskRequest::setFwInstanceId));
         builder.<Integer>withRequestField("limit",
@@ -1730,7 +1735,7 @@ public class CfwMeta {
             f -> f.withMarshaller(ListDnsServersRequest::getOffset, ListDnsServersRequest::setOffset));
         builder.<String>withRequestField("fw_instance_id",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDnsServersRequest::getFwInstanceId, ListDnsServersRequest::setFwInstanceId));
         builder.<String>withRequestField("enterprise_project_id",
@@ -1961,10 +1966,10 @@ public class CfwMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListFirewallDetailRequest::getLimit, ListFirewallDetailRequest::setLimit));
-        builder.<ListFirewallDetailRequest.ServiceTypeEnum>withRequestField("service_type",
+        builder.<Integer>withRequestField("service_type",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ListFirewallDetailRequest.ServiceTypeEnum.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListFirewallDetailRequest::getServiceType,
                 ListFirewallDetailRequest::setServiceType));
         builder.<String>withRequestField("enterprise_project_id",
@@ -2703,6 +2708,12 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchUpdateAclRuleActionsRequest::getEnterpriseProjectId,
                 BatchUpdateAclRuleActionsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("fw_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateAclRuleActionsRequest::getFwInstanceId,
+                BatchUpdateAclRuleActionsRequest::setFwInstanceId));
         builder.<UpdateSecurityPolciesActionDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3133,15 +3144,15 @@ public class CfwMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEipsRequest::getKeyWord, ListEipsRequest::setKeyWord));
-        builder.<ListEipsRequest.StatusEnum>withRequestField("status",
+        builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListEipsRequest.StatusEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListEipsRequest::getStatus, ListEipsRequest::setStatus));
-        builder.<ListEipsRequest.SyncEnum>withRequestField("sync",
+        builder.<Integer>withRequestField("sync",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListEipsRequest.SyncEnum.class),
+            TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListEipsRequest::getSync, ListEipsRequest::setSync));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
@@ -3253,12 +3264,6 @@ public class CfwMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeIpsSwitchStatusRequest::getFwInstanceId,
                 ChangeIpsSwitchStatusRequest::setFwInstanceId));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ChangeIpsSwitchStatusRequest::getXLanguage,
-                ChangeIpsSwitchStatusRequest::setXLanguage));
         builder.<IpsSwitchDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

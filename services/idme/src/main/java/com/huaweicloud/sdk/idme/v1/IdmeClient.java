@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.idme.v1.model.ListEnvsRequest;
 import com.huaweicloud.sdk.idme.v1.model.ListEnvsResponse;
 import com.huaweicloud.sdk.idme.v1.model.ModifyApplicationRequest;
 import com.huaweicloud.sdk.idme.v1.model.ModifyApplicationResponse;
+import com.huaweicloud.sdk.idme.v1.model.SubscribeCloudServiceRequest;
+import com.huaweicloud.sdk.idme.v1.model.SubscribeCloudServiceResponse;
 import com.huaweicloud.sdk.idme.v1.model.UninstallRequest;
 import com.huaweicloud.sdk.idme.v1.model.UninstallResponse;
 
@@ -232,6 +234,35 @@ public class IdmeClient {
     public SyncInvoker<ModifyApplicationRequest, ModifyApplicationResponse> modifyApplicationInvoker(
         ModifyApplicationRequest request) {
         return new SyncInvoker<>(request, IdmeMeta.modifyApplication, hcClient);
+    }
+
+    /**
+     * 开通iDME实例
+     *
+     * 本接口用于开通工业数字模型驱动引擎（Industrial Digital Model Engine，简称iDME）实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SubscribeCloudServiceRequest 请求对象
+     * @return SubscribeCloudServiceResponse
+     */
+    public SubscribeCloudServiceResponse subscribeCloudService(SubscribeCloudServiceRequest request) {
+        return hcClient.syncInvokeHttp(request, IdmeMeta.subscribeCloudService);
+    }
+
+    /**
+     * 开通iDME实例
+     *
+     * 本接口用于开通工业数字模型驱动引擎（Industrial Digital Model Engine，简称iDME）实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SubscribeCloudServiceRequest 请求对象
+     * @return SyncInvoker<SubscribeCloudServiceRequest, SubscribeCloudServiceResponse>
+     */
+    public SyncInvoker<SubscribeCloudServiceRequest, SubscribeCloudServiceResponse> subscribeCloudServiceInvoker(
+        SubscribeCloudServiceRequest request) {
+        return new SyncInvoker<>(request, IdmeMeta.subscribeCloudService, hcClient);
     }
 
     /**

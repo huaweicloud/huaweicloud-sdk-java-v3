@@ -161,11 +161,6 @@ public class EipResource {
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "owner")
-
-    private String owner;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fw_domain_id")
 
     private String fwDomainId;
@@ -227,7 +222,7 @@ public class EipResource {
     }
 
     /**
-     * 弹性公网IP,IPV6
+     * 弹性公网IP,IPV6类型
      * @return publicIpv6
      */
     public String getPublicIpv6() {
@@ -244,7 +239,7 @@ public class EipResource {
     }
 
     /**
-     * 企业项目id
+     * Eip所在账户企业项目id
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -261,7 +256,7 @@ public class EipResource {
     }
 
     /**
-     * 设备id
+     * EIP绑定设备（如ecs，nat）id
      * @return deviceId
      */
     public String getDeviceId() {
@@ -278,7 +273,7 @@ public class EipResource {
     }
 
     /**
-     * 设备名称
+     * EIP绑定设备（如ecs，nat）名称
      * @return deviceName
      */
     public String getDeviceName() {
@@ -295,7 +290,7 @@ public class EipResource {
     }
 
     /**
-     * 设备拥有者
+     * EIP绑定设备（如ecs，nat）拥有者
      * @return deviceOwner
      */
     public String getDeviceOwner() {
@@ -312,7 +307,7 @@ public class EipResource {
     }
 
     /**
-     * 关联实例类型
+     * 关联实例类型，包括：NATGW，ELB，PORT等。
      * @return associateInstanceType
      */
     public String getAssociateInstanceType() {
@@ -380,7 +375,7 @@ public class EipResource {
     }
 
     /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
+     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
      * @return objectId
      */
     public String getObjectId() {
@@ -414,7 +409,7 @@ public class EipResource {
     }
 
     /**
-     * EIP所属用户
+     * EIP所属用户id，可通过[获取账号、IAM用户、项目、用户组、区域、委托的名称和ID](cfw_02_0030.xml)获取。
      * @return domainId
      */
     public String getDomainId() {
@@ -425,30 +420,13 @@ public class EipResource {
         this.domainId = domainId;
     }
 
-    public EipResource withOwner(String owner) {
-        this.owner = owner;
-        return this;
-    }
-
-    /**
-     * 所属用户的名称
-     * @return owner
-     */
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
     public EipResource withFwDomainId(String fwDomainId) {
         this.fwDomainId = fwDomainId;
         return this;
     }
 
     /**
-     * 防火墙所属用户
+     * 防火墙所属用户，可通过[获取账号、IAM用户、项目、用户组、区域、委托的名称和ID](cfw_02_0030.xml)获取。
      * @return fwDomainId
      */
     public String getFwDomainId() {
@@ -478,8 +456,7 @@ public class EipResource {
             && Objects.equals(this.fwInstanceId, that.fwInstanceId)
             && Objects.equals(this.fwEnterpriseProjectId, that.fwEnterpriseProjectId)
             && Objects.equals(this.objectId, that.objectId) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.fwDomainId, that.fwDomainId);
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.fwDomainId, that.fwDomainId);
     }
 
     @Override
@@ -499,7 +476,6 @@ public class EipResource {
             objectId,
             tags,
             domainId,
-            owner,
             fwDomainId);
     }
 
@@ -522,7 +498,6 @@ public class EipResource {
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
         sb.append("    fwDomainId: ").append(toIndentedString(fwDomainId)).append("\n");
         sb.append("}");
         return sb.toString();

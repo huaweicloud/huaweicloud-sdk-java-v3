@@ -48,7 +48,7 @@ public class ListFirewallListResponse extends SdkResponse {
     }
 
     /**
-     * 是否支持eps
+     * 是否支持企业项目，true表示是，false表示不是
      * @return userSupportEps
      */
     public Boolean getUserSupportEps() {
@@ -65,7 +65,7 @@ public class ListFirewallListResponse extends SdkResponse {
     }
 
     /**
-     * 是否存在ndr
+     * 是否存在ndr，true表示是，false表示不是，NDR为原旁路版防火墙，现已停止售卖。
      * @return hasNdr
      */
     public Boolean getHasNdr() {
@@ -82,7 +82,7 @@ public class ListFirewallListResponse extends SdkResponse {
     }
 
     /**
-     * 是否支持按需购买
+     * 是否支持按需购买，true表示是，false表示不是
      * @return isSupportPostpaid
      */
     public Boolean getIsSupportPostpaid() {
@@ -99,7 +99,7 @@ public class ListFirewallListResponse extends SdkResponse {
     }
 
     /**
-     * 是否支持基础版
+     * 是否支持基础版，true表示是，false表示不是
      * @return isSupportBasicVersion
      */
     public Boolean getIsSupportBasicVersion() {
@@ -116,7 +116,7 @@ public class ListFirewallListResponse extends SdkResponse {
     }
 
     /**
-     * 是否支持购买专业版
+     * 是否支持购买专业版，true表示是，false表示不是
      * @return isSupportBuyProfessional
      */
     public Boolean getIsSupportBuyProfessional() {

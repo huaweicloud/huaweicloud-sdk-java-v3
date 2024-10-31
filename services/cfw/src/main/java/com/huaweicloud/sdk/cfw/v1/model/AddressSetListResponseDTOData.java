@@ -73,7 +73,7 @@ public class AddressSetListResponseDTOData {
     }
 
     /**
-     * 总数
+     * 地址组总数
      * @return total
      */
     public Integer getTotal() {

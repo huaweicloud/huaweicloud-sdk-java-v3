@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * object
+ * 修改ips防护模式返回值数据
  */
 public class CommonResponseDTOData {
 

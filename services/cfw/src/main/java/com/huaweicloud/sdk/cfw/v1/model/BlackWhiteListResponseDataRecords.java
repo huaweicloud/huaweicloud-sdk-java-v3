@@ -85,7 +85,7 @@ public class BlackWhiteListResponseDataRecords {
     }
 
     /**
-     * IP地址类型0：ipv4,1:ipv6
+     * ip地址类型0：ipv4，1:ipv6
      * @return addressType
      */
     public Integer getAddressType() {

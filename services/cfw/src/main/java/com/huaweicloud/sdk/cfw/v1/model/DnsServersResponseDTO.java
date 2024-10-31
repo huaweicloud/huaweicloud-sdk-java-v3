@@ -41,7 +41,7 @@ public class DnsServersResponseDTO {
     }
 
     /**
-     * id
+     * 域名服务器id
      * @return id
      */
     public Integer getId() {
@@ -58,7 +58,7 @@ public class DnsServersResponseDTO {
     }
 
     /**
-     * 是否应用，0否 1是
+     * 域名服务器是否应用，0否 1是
      * @return isApplied
      */
     public Integer getIsApplied() {
@@ -75,7 +75,7 @@ public class DnsServersResponseDTO {
     }
 
     /**
-     * 是否是用户自定义的dns服务器，0否 1是
+     * 域名服务器是否是用户自定义的dns服务器，0否 1是
      * @return isCustomized
      */
     public Integer getIsCustomized() {

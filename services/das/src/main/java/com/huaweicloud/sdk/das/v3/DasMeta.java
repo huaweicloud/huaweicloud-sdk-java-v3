@@ -16,6 +16,9 @@ import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateHealthReportReq;
+import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequestBody;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsResponse;
@@ -59,6 +62,8 @@ import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksRequest;
@@ -82,6 +87,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExecutionPlanRequest;
@@ -284,6 +291,41 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(TransactionSwitchReq.class),
             f -> f.withMarshaller(ChangeTransactionSwitchStatusRequest::getBody,
                 ChangeTransactionSwitchStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateHealthReportTaskRequest, CreateHealthReportTaskResponse> createHealthReportTask =
+        genForCreateHealthReportTask();
+
+    private static HttpRequestDef<CreateHealthReportTaskRequest, CreateHealthReportTaskResponse> genForCreateHealthReportTask() {
+        // basic
+        HttpRequestDef.Builder<CreateHealthReportTaskRequest, CreateHealthReportTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateHealthReportTaskRequest.class, CreateHealthReportTaskResponse.class)
+            .withName("CreateHealthReportTask")
+            .withUri("/v3/{project_id}/instances/{instance_id}/create-instance-health-report-task")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateHealthReportTaskRequest::getInstanceId,
+                CreateHealthReportTaskRequest::setInstanceId));
+        builder.<CreateHealthReportTaskRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateHealthReportTaskRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateHealthReportTaskRequest::getXLanguage,
+                CreateHealthReportTaskRequest::setXLanguage));
+        builder.<CreateHealthReportReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateHealthReportReq.class),
+            f -> f.withMarshaller(CreateHealthReportTaskRequest::getBody, CreateHealthReportTaskRequest::setBody));
 
         // response
 
@@ -1071,6 +1113,56 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListHealthReportTaskRequest, ListHealthReportTaskResponse> listHealthReportTask =
+        genForListHealthReportTask();
+
+    private static HttpRequestDef<ListHealthReportTaskRequest, ListHealthReportTaskResponse> genForListHealthReportTask() {
+        // basic
+        HttpRequestDef.Builder<ListHealthReportTaskRequest, ListHealthReportTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListHealthReportTaskRequest.class, ListHealthReportTaskResponse.class)
+            .withName("ListHealthReportTask")
+            .withUri("/v3/{project_id}/instances/{instance_id}/get-instance-health-report-task-list")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHealthReportTaskRequest::getInstanceId,
+                ListHealthReportTaskRequest::setInstanceId));
+        builder.<Long>withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListHealthReportTaskRequest::getStartAt, ListHealthReportTaskRequest::setStartAt));
+        builder.<Long>withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListHealthReportTaskRequest::getEndAt, ListHealthReportTaskRequest::setEndAt));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHealthReportTaskRequest::getOffset, ListHealthReportTaskRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListHealthReportTaskRequest::getLimit, ListHealthReportTaskRequest::setLimit));
+        builder.<ListHealthReportTaskRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListHealthReportTaskRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListHealthReportTaskRequest::getXLanguage,
+                ListHealthReportTaskRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInnodbLocksRequest, ListInnodbLocksResponse> listInnodbLocks =
         genForListInnodbLocks();
 
@@ -1486,6 +1578,43 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ShowDbUserRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowDbUserRequest::getXLanguage, ShowDbUserRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceHealthReportRequest, ShowInstanceHealthReportResponse> showInstanceHealthReport =
+        genForShowInstanceHealthReport();
+
+    private static HttpRequestDef<ShowInstanceHealthReportRequest, ShowInstanceHealthReportResponse> genForShowInstanceHealthReport() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceHealthReportRequest, ShowInstanceHealthReportResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowInstanceHealthReportRequest.class, ShowInstanceHealthReportResponse.class)
+                .withName("ShowInstanceHealthReport")
+                .withUri("/v3/{project_id}/instances/{instance_id}/get-instance-health-report")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceHealthReportRequest::getInstanceId,
+                ShowInstanceHealthReportRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceHealthReportRequest::getTaskId,
+                ShowInstanceHealthReportRequest::setTaskId));
+        builder.<ShowInstanceHealthReportRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowInstanceHealthReportRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowInstanceHealthReportRequest::getXLanguage,
+                ShowInstanceHealthReportRequest::setXLanguage));
 
         // response
 

@@ -26,7 +26,7 @@ public class CreateTag {
     }
 
     /**
-     * 键
+     * 标签键
      * @return key
      */
     public String getKey() {
@@ -43,7 +43,7 @@ public class CreateTag {
     }
 
     /**
-     * 值
+     * 标签值
      * @return value
      */
     public String getValue() {

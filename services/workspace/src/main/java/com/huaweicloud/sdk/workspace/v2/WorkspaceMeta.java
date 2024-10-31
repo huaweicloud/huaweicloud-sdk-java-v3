@@ -68,6 +68,9 @@ import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkReq;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeUserPrivilegeGroupReq;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeUserPrivilegeGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeUserPrivilegeGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyReq;
@@ -832,6 +835,30 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeDesktopNetworkReq.class),
             f -> f.withMarshaller(ChangeDesktopNetworkRequest::getBody, ChangeDesktopNetworkRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeUserPrivilegeGroupRequest, ChangeUserPrivilegeGroupResponse> changeUserPrivilegeGroup =
+        genForChangeUserPrivilegeGroup();
+
+    private static HttpRequestDef<ChangeUserPrivilegeGroupRequest, ChangeUserPrivilegeGroupResponse> genForChangeUserPrivilegeGroup() {
+        // basic
+        HttpRequestDef.Builder<ChangeUserPrivilegeGroupRequest, ChangeUserPrivilegeGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ChangeUserPrivilegeGroupRequest.class, ChangeUserPrivilegeGroupResponse.class)
+                .withName("ChangeUserPrivilegeGroup")
+                .withUri("/v2/{project_id}/desktops/change-user-privilege-group")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ChangeUserPrivilegeGroupReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeUserPrivilegeGroupReq.class),
+            f -> f.withMarshaller(ChangeUserPrivilegeGroupRequest::getBody, ChangeUserPrivilegeGroupRequest::setBody));
 
         // response
 

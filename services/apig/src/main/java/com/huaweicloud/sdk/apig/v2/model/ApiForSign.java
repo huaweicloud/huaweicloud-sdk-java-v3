@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ApiForSign
@@ -64,6 +67,11 @@ public class ApiForSign {
     @JsonProperty(value = "req_uri")
 
     private String reqUri;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -356,6 +364,39 @@ public class ApiForSign {
         this.reqUri = reqUri;
     }
 
+    public ApiForSign withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ApiForSign addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ApiForSign withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * API绑定的标签，标签配额默认10条，可以联系技术调整。
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     public ApiForSign withType(Integer type) {
         this.type = type;
         return this;
@@ -421,8 +462,8 @@ public class ApiForSign {
             && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.remark, that.remark) && Objects.equals(this.runEnvId, that.runEnvId)
             && Objects.equals(this.id, that.id) && Objects.equals(this.reqUri, that.reqUri)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.signatureName, that.signatureName)
-            && Objects.equals(this.reqMethod, that.reqMethod);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.signatureName, that.signatureName) && Objects.equals(this.reqMethod, that.reqMethod);
     }
 
     @Override
@@ -437,6 +478,7 @@ public class ApiForSign {
             runEnvId,
             id,
             reqUri,
+            tags,
             type,
             signatureName,
             reqMethod);
@@ -456,6 +498,7 @@ public class ApiForSign {
         sb.append("    runEnvId: ").append(toIndentedString(runEnvId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    signatureName: ").append(toIndentedString(signatureName)).append("\n");
         sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");

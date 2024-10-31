@@ -41,11 +41,6 @@ public class SubnetInfo {
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private String status;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6_enable")
 
     private Boolean ipv6Enable;
@@ -56,7 +51,7 @@ public class SubnetInfo {
     }
 
     /**
-     * 子网id
+     * 子网所在的可用区标识，从终端节点获取，参考[终端节点](cfw_02_0003.xml)
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -73,7 +68,7 @@ public class SubnetInfo {
     }
 
     /**
-     * vpc cidr
+     * 功能说明：虚拟私有云下可用子网的范围 取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24 不指定cidr时，默认值为空 约束：必须是cidr格式，例如:192.168.0.0/16
      * @return cidr
      */
     public String getCidr() {
@@ -124,7 +119,7 @@ public class SubnetInfo {
     }
 
     /**
-     * 子网网关ip
+     * 子网的网关，取值范围为子网网段cidr中的ip地址
      * @return gatewayIp
      */
     public String getGatewayIp() {
@@ -141,7 +136,7 @@ public class SubnetInfo {
     }
 
     /**
-     * vpc id
+     * 创建vpc产生的uuid
      * @return vpcId
      */
     public String getVpcId() {
@@ -150,23 +145,6 @@ public class SubnetInfo {
 
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
-    }
-
-    public SubnetInfo withStatus(String status) {
-        this.status = status;
-        return this;
-    }
-
-    /**
-     * 子网的状态
-     * @return status
-     */
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public SubnetInfo withIpv6Enable(Boolean ipv6Enable) {
@@ -198,12 +176,12 @@ public class SubnetInfo {
         return Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.cidr, that.cidr)
             && Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
             && Objects.equals(this.gatewayIp, that.gatewayIp) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.ipv6Enable, that.ipv6Enable);
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(availabilityZone, cidr, name, id, gatewayIp, vpcId, status, ipv6Enable);
+        return Objects.hash(availabilityZone, cidr, name, id, gatewayIp, vpcId, ipv6Enable);
     }
 
     @Override
@@ -216,7 +194,6 @@ public class SubnetInfo {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    gatewayIp: ").append(toIndentedString(gatewayIp)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("}");
         return sb.toString();

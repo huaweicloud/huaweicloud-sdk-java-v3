@@ -26,6 +26,11 @@ public class SmartDocumentRecognizerRequestBody {
     private Boolean singleOrientationMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private String language;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "kv")
 
     private Boolean kv;
@@ -105,7 +110,7 @@ public class SmartDocumentRecognizerRequestBody {
     }
 
     /**
-     * 单朝向模式开关。可选值包括： - true：打开单朝向模式 - false：关闭单朝向模式  未传入该参数时默认为false，即默认图片中的字段为多朝向 
+     * 单朝向模式开关。可选值包括： - true：打开单朝向模式 - false：关闭单朝向模式  图片文字方向一致时，打开该开关可提升识别精度；图片文字方向不一致时，关闭该开关可支持多朝向文字识别。未传入该参数时默认为true，既默认图片中的字段为单朝向。 
      * @return singleOrientationMode
      */
     public Boolean getSingleOrientationMode() {
@@ -114,6 +119,23 @@ public class SmartDocumentRecognizerRequestBody {
 
     public void setSingleOrientationMode(Boolean singleOrientationMode) {
         this.singleOrientationMode = singleOrientationMode;
+    }
+
+    public SmartDocumentRecognizerRequestBody withLanguage(String language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * 语种选择，未传入该参数时默认为中英文识别模式。参考[华为云通用文字支持语种](https://support.huaweicloud.com/api-ocr/ocr_03_0042.html)。 
+     * @return language
+     */
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
     public SmartDocumentRecognizerRequestBody withKv(Boolean kv) {
@@ -207,7 +229,7 @@ public class SmartDocumentRecognizerRequestBody {
     }
 
     /**
-     * 是否进行公式识别，识别结果为latex序列。若是，结果会以“formula_result”这一关键字返回。 当前仅支持文档（例如论文）中的公式识别，不支持公式切片图像。 
+     * 是否进行公式识别，识别结果为latex序列。若是，结果会以“formula_result”这一关键字返回。  - 开启公式识别后会降低响应速度。 - 当前仅支持3行以内公式识别，不支持3行以上的多行公式。 
      * @return formula
      */
     public Boolean getFormula() {
@@ -263,10 +285,11 @@ public class SmartDocumentRecognizerRequestBody {
         SmartDocumentRecognizerRequestBody that = (SmartDocumentRecognizerRequestBody) obj;
         return Objects.equals(this.data, that.data) && Objects.equals(this.url, that.url)
             && Objects.equals(this.singleOrientationMode, that.singleOrientationMode)
-            && Objects.equals(this.kv, that.kv) && Objects.equals(this.table, that.table)
-            && Objects.equals(this.layout, that.layout) && Objects.equals(this.returnExcel, that.returnExcel)
-            && Objects.equals(this.form, that.form) && Objects.equals(this.formula, that.formula)
-            && Objects.equals(this.kvMap, that.kvMap) && Objects.equals(this.pdfPageNumber, that.pdfPageNumber);
+            && Objects.equals(this.language, that.language) && Objects.equals(this.kv, that.kv)
+            && Objects.equals(this.table, that.table) && Objects.equals(this.layout, that.layout)
+            && Objects.equals(this.returnExcel, that.returnExcel) && Objects.equals(this.form, that.form)
+            && Objects.equals(this.formula, that.formula) && Objects.equals(this.kvMap, that.kvMap)
+            && Objects.equals(this.pdfPageNumber, that.pdfPageNumber);
     }
 
     @Override
@@ -274,6 +297,7 @@ public class SmartDocumentRecognizerRequestBody {
         return Objects.hash(data,
             url,
             singleOrientationMode,
+            language,
             kv,
             table,
             layout,
@@ -291,6 +315,7 @@ public class SmartDocumentRecognizerRequestBody {
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    singleOrientationMode: ").append(toIndentedString(singleOrientationMode)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    kv: ").append(toIndentedString(kv)).append("\n");
         sb.append("    table: ").append(toIndentedString(table)).append("\n");
         sb.append("    layout: ").append(toIndentedString(layout)).append("\n");

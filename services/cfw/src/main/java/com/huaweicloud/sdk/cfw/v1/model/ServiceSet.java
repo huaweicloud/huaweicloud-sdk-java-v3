@@ -71,7 +71,7 @@ public class ServiceSet {
     }
 
     /**
-     * 名称
+     * 服务组名称
      * @return name
      */
     public String getName() {
@@ -88,7 +88,7 @@ public class ServiceSet {
     }
 
     /**
-     * 描述
+     * 服务组描述
      * @return description
      */
     public String getDescription() {
@@ -122,7 +122,7 @@ public class ServiceSet {
     }
 
     /**
-     * 引用次数
+     * 服务组被规则引用次数
      * @return refCount
      */
     public Integer getRefCount() {
@@ -139,7 +139,7 @@ public class ServiceSet {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -172,7 +172,7 @@ public class ServiceSet {
     }
 
     /**
-     * 协议类型列表
+     * 协议列表，协议类型：TCP为6，UDP为17，ICMP为1，ICMPV6为58，ANY为-1,type为0手动类型时不能为空。
      * @return protocols
      */
     public List<Integer> getProtocols() {

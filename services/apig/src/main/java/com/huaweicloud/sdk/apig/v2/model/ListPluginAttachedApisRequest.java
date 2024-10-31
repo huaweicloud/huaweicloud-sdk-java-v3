@@ -60,6 +60,11 @@ public class ListPluginAttachedApisRequest {
 
     private String reqUri;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private String tags;
+
     public ListPluginAttachedApisRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -232,6 +237,23 @@ public class ListPluginAttachedApisRequest {
         this.reqUri = reqUri;
     }
 
+    public ListPluginAttachedApisRequest withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    /**
+     * API标签，该参数可指定多个，多个不同的参数值为或关系；不指定或为空时，表示不筛选标签；指定为#no_tags#时，表示筛选无标签API。
+     * @return tags
+     */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -245,12 +267,14 @@ public class ListPluginAttachedApisRequest {
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.pluginId, that.pluginId)
             && Objects.equals(this.envId, that.envId) && Objects.equals(this.apiName, that.apiName)
             && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.groupId, that.groupId)
-            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.reqUri, that.reqUri);
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.reqUri, that.reqUri)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit, pluginId, envId, apiName, apiId, groupId, reqMethod, reqUri);
+        return Objects
+            .hash(instanceId, offset, limit, pluginId, envId, apiName, apiId, groupId, reqMethod, reqUri, tags);
     }
 
     @Override
@@ -267,6 +291,7 @@ public class ListPluginAttachedApisRequest {
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

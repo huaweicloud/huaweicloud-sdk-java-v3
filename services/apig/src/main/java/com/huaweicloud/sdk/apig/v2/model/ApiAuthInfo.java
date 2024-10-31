@@ -260,6 +260,11 @@ public class ApiAuthInfo {
     private String romaAppType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env_name")
 
     private String envName;
@@ -641,6 +646,39 @@ public class ApiAuthInfo {
         this.romaAppType = romaAppType;
     }
 
+    public ApiAuthInfo withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ApiAuthInfo addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ApiAuthInfo withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * API绑定的标签，标签配额默认10条，可以联系技术调整。
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     public ApiAuthInfo withEnvName(String envName) {
         this.envName = envName;
         return this;
@@ -695,7 +733,8 @@ public class ApiAuthInfo {
             && Objects.equals(this.authWhitelist, that.authWhitelist)
             && Objects.equals(this.authBlacklist, that.authBlacklist)
             && Objects.equals(this.visitParam, that.visitParam) && Objects.equals(this.romaAppType, that.romaAppType)
-            && Objects.equals(this.envName, that.envName) && Objects.equals(this.appId, that.appId);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.envName, that.envName)
+            && Objects.equals(this.appId, that.appId);
     }
 
     @Override
@@ -720,6 +759,7 @@ public class ApiAuthInfo {
             authBlacklist,
             visitParam,
             romaAppType,
+            tags,
             envName,
             appId);
     }
@@ -748,6 +788,7 @@ public class ApiAuthInfo {
         sb.append("    authBlacklist: ").append(toIndentedString(authBlacklist)).append("\n");
         sb.append("    visitParam: ").append(toIndentedString(visitParam)).append("\n");
         sb.append("    romaAppType: ").append(toIndentedString(romaAppType)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    envName: ").append(toIndentedString(envName)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("}");

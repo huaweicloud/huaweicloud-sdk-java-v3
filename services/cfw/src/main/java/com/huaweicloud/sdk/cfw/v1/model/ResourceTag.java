@@ -31,7 +31,7 @@ public class ResourceTag {
     }
 
     /**
-     * 键
+     * 标签键
      * @return key
      */
     public String getKey() {
@@ -48,7 +48,7 @@ public class ResourceTag {
     }
 
     /**
-     * 值
+     * 标签值
      * @return value
      */
     public String getValue() {
@@ -65,7 +65,7 @@ public class ResourceTag {
     }
 
     /**
-     * 更新时间
+     * 标签更新时间
      * @return updateTime
      */
     public String getUpdateTime() {

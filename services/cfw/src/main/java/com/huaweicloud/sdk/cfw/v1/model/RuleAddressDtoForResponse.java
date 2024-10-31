@@ -89,7 +89,7 @@ public class RuleAddressDtoForResponse {
     }
 
     /**
-     * 源类型0手工输入,1关联IP地址组,2域名，3地理位置，4域名组，5多对象，6域名组-DNS解析，7域名组-URL过滤。
+     * 地址类型0手工输入，1关联IP地址组，2域名，3地理位置，4域名组，5多对象，6域名组-DNS解析，7域名组-应用型。
      * @return type
      */
     public Integer getType() {
@@ -106,7 +106,7 @@ public class RuleAddressDtoForResponse {
     }
 
     /**
-     * 源类型0 ipv4,1 ipv6
+     * 地址类型0 ipv4，1 ipv6，当type为0手动输入类型时不能为空
      * @return addressType
      */
     public Integer getAddressType() {
@@ -123,7 +123,7 @@ public class RuleAddressDtoForResponse {
     }
 
     /**
-     * 源IP，手动类型不能为空，自动及domain类型为空
+     * IP地址信息
      * @return address
      */
     public String getAddress() {
@@ -140,7 +140,7 @@ public class RuleAddressDtoForResponse {
     }
 
     /**
-     * 关联IP地址组ID，自动类型不能为空，手动类型合domain类型为空
+     * 关联IP地址组ID
      * @return addressSetId
      */
     public String getAddressSetId() {
@@ -174,7 +174,7 @@ public class RuleAddressDtoForResponse {
     }
 
     /**
-     * 域名地址名称，域名类型时不能为空，手动类型及自动类型时为空
+     * 域名地址名称
      * @return domainAddressName
      */
     public String getDomainAddressName() {
@@ -191,7 +191,7 @@ public class RuleAddressDtoForResponse {
     }
 
     /**
-     * 规则region列表json值
+     * 规则地域列表json值
      * @return regionListJson
      */
     public String getRegionListJson() {
@@ -224,7 +224,7 @@ public class RuleAddressDtoForResponse {
     }
 
     /**
-     * 规则region列表
+     * 规则地域列表
      * @return regionList
      */
     public List<IpRegionDto> getRegionList() {
@@ -324,7 +324,7 @@ public class RuleAddressDtoForResponse {
     }
 
     /**
-     * 地址组列表
+     * 地址组id列表
      * @return addressGroup
      */
     public List<String> getAddressGroup() {

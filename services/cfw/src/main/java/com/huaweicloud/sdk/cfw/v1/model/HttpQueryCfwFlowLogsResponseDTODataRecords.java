@@ -21,7 +21,7 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
     private Double bytes;
 
     /**
-     * 方向，有内到外和外到内两种
+     * 方向，有内到外（in2out）和外到内（out2in）两种
      */
     public static final class DirectionEnum {
 
@@ -233,7 +233,7 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
     }
 
     /**
-     * 方向，有内到外和外到内两种
+     * 方向，有内到外（in2out）和外到内（out2in）两种
      * @return direction
      */
     public DirectionEnum getDirection() {
@@ -250,7 +250,7 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
     }
 
     /**
-     * 包
+     * 字节包数
      * @return packets
      */
     public Integer getPackets() {
@@ -369,7 +369,7 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
     }
 
     /**
-     * 应用协议
+     * 规则应用类型包括：“HTTP”，\"HTTPS\"，\"TLS1\"，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”,“BGP”等。
      * @return app
      */
     public String getApp() {

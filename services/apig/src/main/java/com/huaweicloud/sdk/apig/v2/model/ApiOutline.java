@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.apig.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ApiOutline
@@ -59,6 +62,11 @@ public class ApiOutline {
     @JsonProperty(value = "req_uri")
 
     private String reqUri;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
 
     public ApiOutline withAuthType(String authType) {
         this.authType = authType;
@@ -230,6 +238,39 @@ public class ApiOutline {
         this.reqUri = reqUri;
     }
 
+    public ApiOutline withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public ApiOutline addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public ApiOutline withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * API绑定的标签，标签配额默认10条，可以联系技术调整。
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -243,12 +284,14 @@ public class ApiOutline {
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.publishId, that.publishId)
             && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.remark, that.remark) && Objects.equals(this.runEnvId, that.runEnvId)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.reqUri, that.reqUri);
+            && Objects.equals(this.id, that.id) && Objects.equals(this.reqUri, that.reqUri)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authType, runEnvName, groupName, publishId, groupId, name, remark, runEnvId, id, reqUri);
+        return Objects
+            .hash(authType, runEnvName, groupName, publishId, groupId, name, remark, runEnvId, id, reqUri, tags);
     }
 
     @Override
@@ -265,6 +308,7 @@ public class ApiOutline {
         sb.append("    runEnvId: ").append(toIndentedString(runEnvId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

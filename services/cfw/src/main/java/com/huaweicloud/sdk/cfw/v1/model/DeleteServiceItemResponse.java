@@ -15,16 +15,16 @@ public class DeleteServiceItemResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private IdObject data;
+    private DeleteServiceItemResponseBodyData data;
 
-    public DeleteServiceItemResponse withData(IdObject data) {
+    public DeleteServiceItemResponse withData(DeleteServiceItemResponseBodyData data) {
         this.data = data;
         return this;
     }
 
-    public DeleteServiceItemResponse withData(Consumer<IdObject> dataSetter) {
+    public DeleteServiceItemResponse withData(Consumer<DeleteServiceItemResponseBodyData> dataSetter) {
         if (this.data == null) {
-            this.data = new IdObject();
+            this.data = new DeleteServiceItemResponseBodyData();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class DeleteServiceItemResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public IdObject getData() {
+    public DeleteServiceItemResponseBodyData getData() {
         return data;
     }
 
-    public void setData(IdObject data) {
+    public void setData(DeleteServiceItemResponseBodyData data) {
         this.data = data;
     }
 

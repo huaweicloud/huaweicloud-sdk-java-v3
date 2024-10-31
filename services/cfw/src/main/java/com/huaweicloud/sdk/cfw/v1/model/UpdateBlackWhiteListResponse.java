@@ -15,16 +15,16 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private IdObject data;
+    private BlackWhiteListId data;
 
-    public UpdateBlackWhiteListResponse withData(IdObject data) {
+    public UpdateBlackWhiteListResponse withData(BlackWhiteListId data) {
         this.data = data;
         return this;
     }
 
-    public UpdateBlackWhiteListResponse withData(Consumer<IdObject> dataSetter) {
+    public UpdateBlackWhiteListResponse withData(Consumer<BlackWhiteListId> dataSetter) {
         if (this.data == null) {
-            this.data = new IdObject();
+            this.data = new BlackWhiteListId();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public IdObject getData() {
+    public BlackWhiteListId getData() {
         return data;
     }
 
-    public void setData(IdObject data) {
+    public void setData(BlackWhiteListId data) {
         this.data = data;
     }
 

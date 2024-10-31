@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.cfw.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -25,161 +20,15 @@ public class ListEipsRequest {
 
     private String keyWord;
 
-    /**
-     * 防护状态 null-全部 0-开启防护 1-关闭防护
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum NULL for value: "null"
-         */
-        public static final StatusEnum NULL = new StatusEnum("null");
-
-        /**
-         * Enum _0 for value: "0"
-         */
-        public static final StatusEnum _0 = new StatusEnum("0");
-
-        /**
-         * Enum _1 for value: "1"
-         */
-        public static final StatusEnum _1 = new StatusEnum("1");
-
-        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, StatusEnum> createStaticFields() {
-            Map<String, StatusEnum> map = new HashMap<>();
-            map.put("null", NULL);
-            map.put("0", _0);
-            map.put("1", _1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        StatusEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private StatusEnum status;
-
-    /**
-     * 是否同步租户EIP数据 0-不同步 1-同步
-     */
-    public static final class SyncEnum {
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final SyncEnum NUMBER_0 = new SyncEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final SyncEnum NUMBER_1 = new SyncEnum(1);
-
-        private static final Map<Integer, SyncEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, SyncEnum> createStaticFields() {
-            Map<Integer, SyncEnum> map = new HashMap<>();
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        SyncEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SyncEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SyncEnum(value));
-        }
-
-        public static SyncEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof SyncEnum) {
-                return this.value.equals(((SyncEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sync")
 
-    private SyncEnum sync;
+    private Integer sync;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -232,7 +81,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。
+     * 防护对象id，是创建云防火墙后用于区分互联网边界防护和VPC边界防护的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)获得，通过返回值中的data.records.protect_objects.object_id（.表示各对象之间层级的区分）获得，注意type为0的为互联网边界防护对象id，type为1的为VPC边界防护对象id。此处仅取type为0的防护对象id，可通过data.records.protect_objects.type（.表示各对象之间层级的区分）获得。
      * @return objectId
      */
     public String getObjectId() {
@@ -249,7 +98,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 弹性公网ID/弹性公网IP
+     * 查询防护EIP列表关键字，可选用弹性公网ID和弹性公网IP
      * @return keyWord
      */
     public String getKeyWord() {
@@ -260,7 +109,7 @@ public class ListEipsRequest {
         this.keyWord = keyWord;
     }
 
-    public ListEipsRequest withStatus(StatusEnum status) {
+    public ListEipsRequest withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -269,15 +118,15 @@ public class ListEipsRequest {
      * 防护状态 null-全部 0-开启防护 1-关闭防护
      * @return status
      */
-    public StatusEnum getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
-    public ListEipsRequest withSync(SyncEnum sync) {
+    public ListEipsRequest withSync(Integer sync) {
         this.sync = sync;
         return this;
     }
@@ -286,11 +135,11 @@ public class ListEipsRequest {
      * 是否同步租户EIP数据 0-不同步 1-同步
      * @return sync
      */
-    public SyncEnum getSync() {
+    public Integer getSync() {
         return sync;
     }
 
-    public void setSync(SyncEnum sync) {
+    public void setSync(Integer sync) {
         this.sync = sync;
     }
 
@@ -301,7 +150,6 @@ public class ListEipsRequest {
 
     /**
      * 每页显示个数，范围为1-1024
-     * minimum: 0
      * @return limit
      */
     public Integer getLimit() {
@@ -319,7 +167,6 @@ public class ListEipsRequest {
 
     /**
      * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
-     * minimum: 0
      * @return offset
      */
     public Integer getOffset() {
@@ -336,7 +183,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -353,7 +200,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 设备键
+     * 设备关键字，是eip绑定的资产的名称或id
      * @return deviceKey
      */
     public String getDeviceKey() {
@@ -370,7 +217,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 地址类型0 ipv4,1 ipv6
+     * 地址类型0 ipv4，1 ipv6
      * @return addressType
      */
     public Integer getAddressType() {
@@ -387,7 +234,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
+     * 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -404,7 +251,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 所绑定防火墙id防火墙名称
+     * 防火墙关键字，可使用防火墙id或名称查询，可通过[防火墙ID获取方式](cfw_02_0028.xml)
      * @return fwKeyWord
      */
     public String getFwKeyWord() {
@@ -421,7 +268,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 弹性公网ip的企业项目id
+     * 弹性公网ip的企业项目id，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，租户未开启企业项目时为0
      * @return epsId
      */
     public String getEpsId() {
@@ -438,7 +285,7 @@ public class ListEipsRequest {
     }
 
     /**
-     * 标签列表信息
+     * 标签列表信息可通过查询EIP服务界面列表标签页签获得
      * @return tags
      */
     public String getTags() {

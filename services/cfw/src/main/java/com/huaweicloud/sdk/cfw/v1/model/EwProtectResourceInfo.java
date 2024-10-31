@@ -56,7 +56,7 @@ public class EwProtectResourceInfo {
     }
 
     /**
-     * 防护资源类型：0 VPC，1 VGW
+     * 防护资源类型：0 VPC，1 VGW，2 VPN，3 PEERING
      * @return protectedResourceType
      */
     public Integer getProtectedResourceType() {
@@ -107,7 +107,7 @@ public class EwProtectResourceInfo {
     }
 
     /**
-     * 防护资源nat网关名称
+     * 防护资源nat网关名称，专业版防火墙支持NAT规则，此字段表示防护连接的NAT的名称。
      * @return protectedResourceNatName
      */
     public String getProtectedResourceNatName() {
@@ -124,7 +124,7 @@ public class EwProtectResourceInfo {
     }
 
     /**
-     * 防护资源nat网关id
+     * 防护资源nat网关id，专业版防火墙支持NAT规则，此字段表示防护连接的NAT的id。
      * @return protectedResourceNatId
      */
     public String getProtectedResourceNatId() {
@@ -141,7 +141,7 @@ public class EwProtectResourceInfo {
     }
 
     /**
-     * 防护资源租户id
+     * 防火墙支持跨账户防护，此处为防护资源租户id
      * @return protectedResourceProjectId
      */
     public String getProtectedResourceProjectId() {
@@ -158,7 +158,7 @@ public class EwProtectResourceInfo {
     }
 
     /**
-     * 防护资源模式
+     * 防护资源模式，为er
      * @return protectedResourceMode
      */
     public String getProtectedResourceMode() {
@@ -175,7 +175,7 @@ public class EwProtectResourceInfo {
     }
 
     /**
-     * 防护VPC的防护状态，0表示已关联，1表示未关联。
+     * 防护资源的防护状态，0表示已关联，1表示未关联。
      * @return status
      */
     public Integer getStatus() {

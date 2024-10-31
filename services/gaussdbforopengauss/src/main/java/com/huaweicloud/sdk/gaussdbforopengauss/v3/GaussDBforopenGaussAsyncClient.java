@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateGaussDbInstanceReq
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateGaussDbInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateLimitTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateRestoreInstanceRequest;
@@ -43,6 +45,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceTagRequest
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceTagResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteLimitTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupRequest;
@@ -99,6 +103,10 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKernelPluginsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKernelPluginsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListLimitTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListLimitTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListNodeLimitSqlModelRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListNodeLimitSqlModelResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListParamGroupTemplatesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListParamGroupTemplatesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginExtensionsRequest;
@@ -171,6 +179,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceSnapshotRequ
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceSnapshotResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowJobDetailRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowJobDetailResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowLimitTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowProjectQuotasRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowProjectQuotasResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRecyclePolicyRequest;
@@ -183,8 +193,12 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowUpgradeCandidateVers
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowUpgradeCandidateVersionsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartMysqlCompatibilityRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartMysqlCompatibilityResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopInstanceRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequest;
@@ -193,6 +207,10 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurat
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceNameResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateLimitTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateLimitTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateMysqlCompatibilityRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateMysqlCompatibilityResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpgradeInstanceVersionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpgradeInstanceVersionResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpgradeInstancesVersionRequest;
@@ -2853,6 +2871,36 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 开启MySQl兼容端口服务
+     *
+     * 开启指定实例的MySQl兼容端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartMysqlCompatibilityRequest 请求对象
+     * @return CompletableFuture<StartMysqlCompatibilityResponse>
+     */
+    public CompletableFuture<StartMysqlCompatibilityResponse> startMysqlCompatibilityAsync(
+        StartMysqlCompatibilityRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.startMysqlCompatibility);
+    }
+
+    /**
+     * 开启MySQl兼容端口服务
+     *
+     * 开启指定实例的MySQl兼容端口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartMysqlCompatibilityRequest 请求对象
+     * @return AsyncInvoker<StartMysqlCompatibilityRequest, StartMysqlCompatibilityResponse>
+     */
+    public AsyncInvoker<StartMysqlCompatibilityRequest, StartMysqlCompatibilityResponse> startMysqlCompatibilityAsyncInvoker(
+        StartMysqlCompatibilityRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.startMysqlCompatibility, hcClient);
+    }
+
+    /**
      * 停止备份
      *
      * 停止进行中的备份，包括全备和差备。
@@ -2878,6 +2926,35 @@ public class GaussDBforopenGaussAsyncClient {
      */
     public AsyncInvoker<StopBackupRequest, StopBackupResponse> stopBackupAsyncInvoker(StopBackupRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.stopBackup, hcClient);
+    }
+
+    /**
+     * 停止数据库
+     *
+     * 停止数据库,同时支持节点级别的停止操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopInstanceRequest 请求对象
+     * @return CompletableFuture<StopInstanceResponse>
+     */
+    public CompletableFuture<StopInstanceResponse> stopInstanceAsync(StopInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.stopInstance);
+    }
+
+    /**
+     * 停止数据库
+     *
+     * 停止数据库,同时支持节点级别的停止操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopInstanceRequest 请求对象
+     * @return AsyncInvoker<StopInstanceRequest, StopInstanceResponse>
+     */
+    public AsyncInvoker<StopInstanceRequest, StopInstanceResponse> stopInstanceAsyncInvoker(
+        StopInstanceRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.stopInstance, hcClient);
     }
 
     /**
@@ -2994,6 +3071,36 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceNameAsyncInvoker(
         UpdateInstanceNameRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.updateInstanceName, hcClient);
+    }
+
+    /**
+     * 更新/关闭MySQl兼容端口服务
+     *
+     * 更新指定实例的MySQl兼容端口服务配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMysqlCompatibilityRequest 请求对象
+     * @return CompletableFuture<UpdateMysqlCompatibilityResponse>
+     */
+    public CompletableFuture<UpdateMysqlCompatibilityResponse> updateMysqlCompatibilityAsync(
+        UpdateMysqlCompatibilityRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.updateMysqlCompatibility);
+    }
+
+    /**
+     * 更新/关闭MySQl兼容端口服务
+     *
+     * 更新指定实例的MySQl兼容端口服务配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMysqlCompatibilityRequest 请求对象
+     * @return AsyncInvoker<UpdateMysqlCompatibilityRequest, UpdateMysqlCompatibilityResponse>
+     */
+    public AsyncInvoker<UpdateMysqlCompatibilityRequest, UpdateMysqlCompatibilityResponse> updateMysqlCompatibilityAsyncInvoker(
+        UpdateMysqlCompatibilityRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.updateMysqlCompatibility, hcClient);
     }
 
     /**
@@ -3156,6 +3263,181 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> validateWeakPasswordAsyncInvoker(
         ValidateWeakPasswordRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.validateWeakPassword, hcClient);
+    }
+
+    /**
+     * 创建限流任务
+     *
+     * 根据具体范围和类型，进行限流任务的创建
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLimitTaskRequest 请求对象
+     * @return CompletableFuture<CreateLimitTaskResponse>
+     */
+    public CompletableFuture<CreateLimitTaskResponse> createLimitTaskAsync(CreateLimitTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.createLimitTask);
+    }
+
+    /**
+     * 创建限流任务
+     *
+     * 根据具体范围和类型，进行限流任务的创建
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLimitTaskRequest 请求对象
+     * @return AsyncInvoker<CreateLimitTaskRequest, CreateLimitTaskResponse>
+     */
+    public AsyncInvoker<CreateLimitTaskRequest, CreateLimitTaskResponse> createLimitTaskAsyncInvoker(
+        CreateLimitTaskRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.createLimitTask, hcClient);
+    }
+
+    /**
+     * 删除限流任务
+     *
+     * 根据task_id进行限流任务的删除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLimitTaskRequest 请求对象
+     * @return CompletableFuture<DeleteLimitTaskResponse>
+     */
+    public CompletableFuture<DeleteLimitTaskResponse> deleteLimitTaskAsync(DeleteLimitTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.deleteLimitTask);
+    }
+
+    /**
+     * 删除限流任务
+     *
+     * 根据task_id进行限流任务的删除
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLimitTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteLimitTaskRequest, DeleteLimitTaskResponse>
+     */
+    public AsyncInvoker<DeleteLimitTaskRequest, DeleteLimitTaskResponse> deleteLimitTaskAsyncInvoker(
+        DeleteLimitTaskRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.deleteLimitTask, hcClient);
+    }
+
+    /**
+     * 根据指定条件查询限流任务列表
+     *
+     * 根据指定条件查询限流任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLimitTaskRequest 请求对象
+     * @return CompletableFuture<ListLimitTaskResponse>
+     */
+    public CompletableFuture<ListLimitTaskResponse> listLimitTaskAsync(ListLimitTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listLimitTask);
+    }
+
+    /**
+     * 根据指定条件查询限流任务列表
+     *
+     * 根据指定条件查询限流任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLimitTaskRequest 请求对象
+     * @return AsyncInvoker<ListLimitTaskRequest, ListLimitTaskResponse>
+     */
+    public AsyncInvoker<ListLimitTaskRequest, ListLimitTaskResponse> listLimitTaskAsyncInvoker(
+        ListLimitTaskRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listLimitTask, hcClient);
+    }
+
+    /**
+     * 查询节点的sql模板列表
+     *
+     * 查询节点的sql模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNodeLimitSqlModelRequest 请求对象
+     * @return CompletableFuture<ListNodeLimitSqlModelResponse>
+     */
+    public CompletableFuture<ListNodeLimitSqlModelResponse> listNodeLimitSqlModelAsync(
+        ListNodeLimitSqlModelRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listNodeLimitSqlModel);
+    }
+
+    /**
+     * 查询节点的sql模板列表
+     *
+     * 查询节点的sql模板列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNodeLimitSqlModelRequest 请求对象
+     * @return AsyncInvoker<ListNodeLimitSqlModelRequest, ListNodeLimitSqlModelResponse>
+     */
+    public AsyncInvoker<ListNodeLimitSqlModelRequest, ListNodeLimitSqlModelResponse> listNodeLimitSqlModelAsyncInvoker(
+        ListNodeLimitSqlModelRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listNodeLimitSqlModel, hcClient);
+    }
+
+    /**
+     * 查询限流任务详情
+     *
+     * 查询限流任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLimitTaskRequest 请求对象
+     * @return CompletableFuture<ShowLimitTaskResponse>
+     */
+    public CompletableFuture<ShowLimitTaskResponse> showLimitTaskAsync(ShowLimitTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.showLimitTask);
+    }
+
+    /**
+     * 查询限流任务详情
+     *
+     * 查询限流任务详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLimitTaskRequest 请求对象
+     * @return AsyncInvoker<ShowLimitTaskRequest, ShowLimitTaskResponse>
+     */
+    public AsyncInvoker<ShowLimitTaskRequest, ShowLimitTaskResponse> showLimitTaskAsyncInvoker(
+        ShowLimitTaskRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.showLimitTask, hcClient);
+    }
+
+    /**
+     * 修改限流任务
+     *
+     * 根据新的条件进行限流任务的更新
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLimitTaskRequest 请求对象
+     * @return CompletableFuture<UpdateLimitTaskResponse>
+     */
+    public CompletableFuture<UpdateLimitTaskResponse> updateLimitTaskAsync(UpdateLimitTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.updateLimitTask);
+    }
+
+    /**
+     * 修改限流任务
+     *
+     * 根据新的条件进行限流任务的更新
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLimitTaskRequest 请求对象
+     * @return AsyncInvoker<UpdateLimitTaskRequest, UpdateLimitTaskResponse>
+     */
+    public AsyncInvoker<UpdateLimitTaskRequest, UpdateLimitTaskResponse> updateLimitTaskAsyncInvoker(
+        UpdateLimitTaskRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.updateLimitTask, hcClient);
     }
 
 }

@@ -36,7 +36,7 @@ public class IpRegionDto {
     }
 
     /**
-     * 区域id
+     * 区域id，可通过[获取账号、IAM用户、项目、用户组、区域、委托的名称和ID](cfw_02_0030.xml)获取。
      * @return regionId
      */
     public String getRegionId() {
@@ -53,7 +53,7 @@ public class IpRegionDto {
     }
 
     /**
-     * 中文描述
+     * 区域中文描述，仅当区域为中国区域时使用，可通过[地域信息表](cfw_02_0031.xml)获取。
      * @return descriptionCn
      */
     public String getDescriptionCn() {
@@ -70,7 +70,7 @@ public class IpRegionDto {
     }
 
     /**
-     * 英文描述
+     * 区域英文描述，仅当区域为非中国区域时使用，可通过[地域信息表](cfw_02_0031.xml)获取。
      * @return descriptionEn
      */
     public String getDescriptionEn() {
@@ -87,7 +87,7 @@ public class IpRegionDto {
     }
 
     /**
-     * 区域类型，0表示国家，1表示省份，2表示大洲
+     * 区域类型，0表示国家，1表示省份，2表示大洲，可通过[地域信息表](cfw_02_0031.xml)获取。
      * @return regionType
      */
     public Integer getRegionType() {

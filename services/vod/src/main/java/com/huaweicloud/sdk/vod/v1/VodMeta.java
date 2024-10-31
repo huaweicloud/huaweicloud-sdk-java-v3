@@ -107,6 +107,8 @@ import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowPreheatingAssetRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowPreheatingAssetResponse;
+import com.huaweicloud.sdk.vod.v1.model.ShowStorageModeTypeRequest;
+import com.huaweicloud.sdk.vod.v1.model.ShowStorageModeTypeResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverTaskDetailsRequest;
@@ -137,6 +139,9 @@ import com.huaweicloud.sdk.vod.v1.model.UpdateCoverByThumbnailResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeReq;
 import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeResponse;
+import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeTypeReq;
+import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeTypeRequest;
+import com.huaweicloud.sdk.vod.v1.model.UpdateStorageModeTypeResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.UpdateTemplateGroupRequest;
@@ -1605,6 +1610,24 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowStorageModeTypeRequest, ShowStorageModeTypeResponse> showStorageModeType =
+        genForShowStorageModeType();
+
+    private static HttpRequestDef<ShowStorageModeTypeRequest, ShowStorageModeTypeResponse> genForShowStorageModeType() {
+        // basic
+        HttpRequestDef.Builder<ShowStorageModeTypeRequest, ShowStorageModeTypeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowStorageModeTypeRequest.class, ShowStorageModeTypeResponse.class)
+                .withName("ShowStorageModeType")
+                .withUri("/v1/{project_id}/asset/storage-mode-type")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowVodRetrievalRequest, ShowVodRetrievalResponse> showVodRetrieval =
         genForShowVodRetrieval();
 
@@ -1862,6 +1885,29 @@ public class VodMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateStorageModeReq.class),
             f -> f.withMarshaller(UpdateStorageModeRequest::getBody, UpdateStorageModeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateStorageModeTypeRequest, UpdateStorageModeTypeResponse> updateStorageModeType =
+        genForUpdateStorageModeType();
+
+    private static HttpRequestDef<UpdateStorageModeTypeRequest, UpdateStorageModeTypeResponse> genForUpdateStorageModeType() {
+        // basic
+        HttpRequestDef.Builder<UpdateStorageModeTypeRequest, UpdateStorageModeTypeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateStorageModeTypeRequest.class, UpdateStorageModeTypeResponse.class)
+            .withName("UpdateStorageModeType")
+            .withUri("/v1/{project_id}/asset/storage-mode-type")
+            .withContentType("application/json");
+
+        // requests
+        builder.<UpdateStorageModeTypeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateStorageModeTypeReq.class),
+            f -> f.withMarshaller(UpdateStorageModeTypeRequest::getBody, UpdateStorageModeTypeRequest::setBody));
 
         // response
 

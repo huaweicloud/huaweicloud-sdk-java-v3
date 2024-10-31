@@ -31,7 +31,7 @@ public class UpdateDnsServersRequestBodyDnsServer {
     }
 
     /**
-     * DNS服务器IP
+     * DNS服务器IP，可通过[查询dns服务器列表接口](ListDnsServers.xml)查询获得，通过返回值中的data.server_ip（.表示各对象之间层级的区分）获得。
      * @return serverIp
      */
     public String getServerIp() {

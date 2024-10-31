@@ -54,7 +54,7 @@ public class IdentityCenterStoreAsyncClient {
 
     public static ClientBuilder<IdentityCenterStoreAsyncClient> newBuilder() {
         ClientBuilder<IdentityCenterStoreAsyncClient> clientBuilder =
-            new ClientBuilder<>(IdentityCenterStoreAsyncClient::new, "GlobalCredentials");
+            new ClientBuilder<>(IdentityCenterStoreAsyncClient::new);
         return clientBuilder;
     }
 

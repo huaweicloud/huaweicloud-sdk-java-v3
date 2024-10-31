@@ -73,7 +73,7 @@ public class ListDomainsetsResponseData {
     }
 
     /**
-     * 总数
+     * 域名组总数
      * @return total
      */
     public Integer getTotal() {

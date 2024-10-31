@@ -73,7 +73,7 @@ public class HttpGetAclTagResponseData {
     }
 
     /**
-     * 总数
+     * 规则标签总数
      * @return total
      */
     public Integer getTotal() {
@@ -106,7 +106,7 @@ public class HttpGetAclTagResponseData {
     }
 
     /**
-     * 标签列表
+     * 规则标签列表
      * @return records
      */
     public List<TagsVO> getRecords() {

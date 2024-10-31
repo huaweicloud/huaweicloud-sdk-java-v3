@@ -75,7 +75,7 @@ public class CreateFirewallReqChargeInfo {
     }
 
     /**
-     * “charge_mode”为“prePaid”时生效，且为必选值，指定订购的时间。  取值范围：  当“period_type”为“month”时，取值为1~9。 当“period_type”为“year”时，取值为1~3。
+     * “charge_mode”为“prePaid”时生效，且为必选值，指定订购的时间。  取值范围：  - 当“period_type”为“month”时，取值为1~9。 - 当“period_type”为“year”时，取值为1~3。
      * @return periodNum
      */
     public Integer getPeriodNum() {
@@ -109,7 +109,7 @@ public class CreateFirewallReqChargeInfo {
     }
 
     /**
-     * 创建包周期时可指定，表示是否自动从客户的账户中支付，此字段不影响自动续订的支付方式。  true，为自动支付。（会自动选择折扣和优惠券进行优惠，然后自动从客户华为云账户中支付），自动支付失败后会生成订单成功(该订单应付金额是优惠后金额)、但订单状态为“待支付”，等待客户手动支付(手动支付时，客户还可以修改系统自动选择的折扣和优惠券) false，为手动支付，默认该方式。（需要客户手动去支付，客户可以选择折扣和优惠券）
+     * 创建包周期时可指定，表示是否自动从客户的账户中支付，此字段不影响自动续订的支付方式。  - true，为自动支付。（会自动选择折扣和优惠券进行优惠，然后自动从客户华为云账户中支付），自动支付失败会生成、但订单状态为“待支付”，等待客户手动支付(手动支付时，可以修改系统自动选择的折扣和优惠券) - false，为手动支付，默认该方式。（需要客户手动去支付，客户可以选择折扣和优惠券）
      * @return isAutoPay
      */
     public Boolean getIsAutoPay() {

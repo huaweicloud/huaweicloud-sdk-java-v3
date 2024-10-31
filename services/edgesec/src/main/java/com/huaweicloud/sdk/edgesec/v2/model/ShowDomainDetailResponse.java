@@ -142,7 +142,7 @@ public class ShowDomainDetailResponse extends SdkResponse {
     }
 
     /**
-     * 防护状态： - 防护中：on - 未防护：off 
+     * - 防护状态: - 防护中：on - 未防护：off
      * @return protectStatus
      */
     public String getProtectStatus() {

@@ -26,7 +26,7 @@ public class UpdateDomainSetInfoDto {
     }
 
     /**
-     * 域名组名称UUID
+     * 域名组名称
      * @return name
      */
     public String getName() {
@@ -43,7 +43,7 @@ public class UpdateDomainSetInfoDto {
     }
 
     /**
-     * 描述
+     * 域名组描述
      * @return description
      */
     public String getDescription() {

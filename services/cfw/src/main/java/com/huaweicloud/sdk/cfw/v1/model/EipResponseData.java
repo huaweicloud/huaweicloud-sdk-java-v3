@@ -73,7 +73,7 @@ public class EipResponseData {
     }
 
     /**
-     * 总数
+     * 查询获得EIP列表总数
      * @return total
      */
     public Integer getTotal() {

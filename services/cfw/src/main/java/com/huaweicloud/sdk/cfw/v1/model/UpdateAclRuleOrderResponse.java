@@ -15,16 +15,16 @@ public class UpdateAclRuleOrderResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private RuleId data;
+    private OrderRuleId data;
 
-    public UpdateAclRuleOrderResponse withData(RuleId data) {
+    public UpdateAclRuleOrderResponse withData(OrderRuleId data) {
         this.data = data;
         return this;
     }
 
-    public UpdateAclRuleOrderResponse withData(Consumer<RuleId> dataSetter) {
+    public UpdateAclRuleOrderResponse withData(Consumer<OrderRuleId> dataSetter) {
         if (this.data == null) {
-            this.data = new RuleId();
+            this.data = new OrderRuleId();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class UpdateAclRuleOrderResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public RuleId getData() {
+    public OrderRuleId getData() {
         return data;
     }
 
-    public void setData(RuleId data) {
+    public void setData(OrderRuleId data) {
         this.data = data;
     }
 

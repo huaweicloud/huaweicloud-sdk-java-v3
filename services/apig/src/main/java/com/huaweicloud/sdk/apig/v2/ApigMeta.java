@@ -2603,6 +2603,12 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getGroupId,
                 ListApisBindedToSignatureKeyV2Request::setGroupId));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisBindedToSignatureKeyV2Request::getTags,
+                ListApisBindedToSignatureKeyV2Request::setTags));
 
         // response
 
@@ -2672,6 +2678,12 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getGroupId,
                 ListApisNotBoundWithSignatureKeyV2Request::setGroupId));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisNotBoundWithSignatureKeyV2Request::getTags,
+                ListApisNotBoundWithSignatureKeyV2Request::setTags));
 
         // response
 
@@ -3847,6 +3859,11 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPluginAttachableApisRequest::getReqUri,
                 ListPluginAttachableApisRequest::setReqUri));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachableApisRequest::getTags, ListPluginAttachableApisRequest::setTags));
 
         // response
 
@@ -3920,6 +3937,11 @@ public class ApigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPluginAttachedApisRequest::getReqUri, ListPluginAttachedApisRequest::setReqUri));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPluginAttachedApisRequest::getTags, ListPluginAttachedApisRequest::setTags));
 
         // response
 
@@ -6510,6 +6532,12 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getApiName,
                 ListApisBindedToRequestThrottlingPolicyV2Request::setApiName));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getTags,
+                ListApisBindedToRequestThrottlingPolicyV2Request::setTags));
 
         // response
 
@@ -6579,6 +6607,12 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getApiName,
                 ListApisUnbindedToRequestThrottlingPolicyV2Request::setApiName));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisUnbindedToRequestThrottlingPolicyV2Request::getTags,
+                ListApisUnbindedToRequestThrottlingPolicyV2Request::setTags));
 
         // response
 
@@ -6671,6 +6705,11 @@ public class ApigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisV2Request::getReturnDataMode, ListApisV2Request::setReturnDataMode));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisV2Request::getTags, ListApisV2Request::setTags));
 
         // response
 
@@ -7093,6 +7132,12 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getGroupId,
                 ListApisBindedToAclPolicyV2Request::setGroupId));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisBindedToAclPolicyV2Request::getTags,
+                ListApisBindedToAclPolicyV2Request::setTags));
 
         // response
 
@@ -7162,6 +7207,12 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getGroupId,
                 ListApisUnbindedToAclPolicyV2Request::setGroupId));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisUnbindedToAclPolicyV2Request::getTags,
+                ListApisUnbindedToAclPolicyV2Request::setTags));
 
         // response
 
@@ -7289,6 +7340,11 @@ public class ApigMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisBindedToAppV2Request::getEnvId, ListApisBindedToAppV2Request::setEnvId));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisBindedToAppV2Request::getTags, ListApisBindedToAppV2Request::setTags));
 
         // response
 
@@ -7351,6 +7407,11 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getApiName,
                 ListApisUnbindedToAppV2Request::setApiName));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApisUnbindedToAppV2Request::getTags, ListApisUnbindedToAppV2Request::setTags));
 
         // response
 

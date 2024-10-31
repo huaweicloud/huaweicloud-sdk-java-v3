@@ -25,18 +25,13 @@ public class VpcDetail {
 
     private String cidr;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
-
-    private String status;
-
     public VpcDetail withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * id
+     * 创建引流VPC产生的随机UUID
      * @return id
      */
     public String getId() {
@@ -53,7 +48,7 @@ public class VpcDetail {
     }
 
     /**
-     * 名称
+     * 引流VPC名称
      * @return name
      */
     public String getName() {
@@ -70,7 +65,7 @@ public class VpcDetail {
     }
 
     /**
-     * vpc cidr
+     * 功能说明：虚拟私有云下可用子网的范围 取值范围： 10.0.0.0/8~24 172.16.0.0/12~24 192.168.0.0/16~24 不指定cidr时，默认值为空 约束：必须是cidr格式，例如:192.168.0.0/16
      * @return cidr
      */
     public String getCidr() {
@@ -79,23 +74,6 @@ public class VpcDetail {
 
     public void setCidr(String cidr) {
         this.cidr = cidr;
-    }
-
-    public VpcDetail withStatus(String status) {
-        this.status = status;
-        return this;
-    }
-
-    /**
-     * 状态
-     * @return status
-     */
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     @Override
@@ -108,12 +86,12 @@ public class VpcDetail {
         }
         VpcDetail that = (VpcDetail) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.status, that.status);
+            && Objects.equals(this.cidr, that.cidr);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, cidr, status);
+        return Objects.hash(id, name, cidr);
     }
 
     @Override
@@ -123,7 +101,6 @@ public class VpcDetail {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    cidr: ").append(toIndentedString(cidr)).append("\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

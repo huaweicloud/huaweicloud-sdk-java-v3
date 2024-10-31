@@ -344,7 +344,7 @@ public class VpcCreate {
     }
 
     /**
-     * VPC通道后端服务器组列表
+     * VPC通道后端服务器组列表。当microservice_info中service_type为NACOS类型时，服务器组的权重不支持手动设置。
      * @return memberGroups
      */
     public List<MemberGroupCreate> getMemberGroups() {

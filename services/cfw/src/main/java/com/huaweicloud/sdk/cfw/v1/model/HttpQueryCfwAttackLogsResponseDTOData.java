@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询攻击日志返回值
+ * 查询攻击日志返回值数据
  */
 public class HttpQueryCfwAttackLogsResponseDTOData {
 
@@ -34,7 +34,7 @@ public class HttpQueryCfwAttackLogsResponseDTOData {
     }
 
     /**
-     * 返回数量
+     * 返回攻击数据总数
      * @return total
      */
     public Integer getTotal() {
@@ -87,7 +87,7 @@ public class HttpQueryCfwAttackLogsResponseDTOData {
     }
 
     /**
-     * 记录
+     * 攻击日志记录列表
      * @return records
      */
     public List<HttpQueryCfwAttackLogsResponseDTODataRecords> getRecords() {

@@ -15,16 +15,16 @@ public class DeleteAddressSetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private IdObject data;
+    private AddressSetId data;
 
-    public DeleteAddressSetResponse withData(IdObject data) {
+    public DeleteAddressSetResponse withData(AddressSetId data) {
         this.data = data;
         return this;
     }
 
-    public DeleteAddressSetResponse withData(Consumer<IdObject> dataSetter) {
+    public DeleteAddressSetResponse withData(Consumer<AddressSetId> dataSetter) {
         if (this.data == null) {
-            this.data = new IdObject();
+            this.data = new AddressSetId();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class DeleteAddressSetResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public IdObject getData() {
+    public AddressSetId getData() {
         return data;
     }
 
-    public void setData(IdObject data) {
+    public void setData(AddressSetId data) {
         this.data = data;
     }
 

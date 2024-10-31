@@ -3,10 +3,7 @@ package com.huaweicloud.sdk.cfw.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * DomainInfo
@@ -27,11 +24,6 @@ public class DomainInfo {
     @JsonProperty(value = "description")
 
     private String description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dns_ips")
-
-    private List<String> dnsIps = null;
 
     public DomainInfo withDomainAddressId(String domainAddressId) {
         this.domainAddressId = domainAddressId;
@@ -56,7 +48,7 @@ public class DomainInfo {
     }
 
     /**
-     * 域名
+     * 域名，如www.test.com
      * @return domainName
      */
     public String getDomainName() {
@@ -73,7 +65,7 @@ public class DomainInfo {
     }
 
     /**
-     * 描述
+     * 域名描述
      * @return description
      */
     public String getDescription() {
@@ -82,39 +74,6 @@ public class DomainInfo {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public DomainInfo withDnsIps(List<String> dnsIps) {
-        this.dnsIps = dnsIps;
-        return this;
-    }
-
-    public DomainInfo addDnsIpsItem(String dnsIpsItem) {
-        if (this.dnsIps == null) {
-            this.dnsIps = new ArrayList<>();
-        }
-        this.dnsIps.add(dnsIpsItem);
-        return this;
-    }
-
-    public DomainInfo withDnsIps(Consumer<List<String>> dnsIpsSetter) {
-        if (this.dnsIps == null) {
-            this.dnsIps = new ArrayList<>();
-        }
-        dnsIpsSetter.accept(this.dnsIps);
-        return this;
-    }
-
-    /**
-     * 域名服务器列表
-     * @return dnsIps
-     */
-    public List<String> getDnsIps() {
-        return dnsIps;
-    }
-
-    public void setDnsIps(List<String> dnsIps) {
-        this.dnsIps = dnsIps;
     }
 
     @Override
@@ -127,13 +86,12 @@ public class DomainInfo {
         }
         DomainInfo that = (DomainInfo) obj;
         return Objects.equals(this.domainAddressId, that.domainAddressId)
-            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.dnsIps, that.dnsIps);
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainAddressId, domainName, description, dnsIps);
+        return Objects.hash(domainAddressId, domainName, description);
     }
 
     @Override
@@ -143,7 +101,6 @@ public class DomainInfo {
         sb.append("    domainAddressId: ").append(toIndentedString(domainAddressId)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    dnsIps: ").append(toIndentedString(dnsIps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

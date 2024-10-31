@@ -26,7 +26,7 @@ public class RuleId {
     }
 
     /**
-     * id
+     * 规则id
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class RuleId {
     }
 
     /**
-     * 名称
+     * 规则名称
      * @return name
      */
     public String getName() {

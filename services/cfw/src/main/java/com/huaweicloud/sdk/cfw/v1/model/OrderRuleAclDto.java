@@ -31,7 +31,7 @@ public class OrderRuleAclDto {
     }
 
     /**
-     * 目标规则id，添加规则位于此规则之后，非置顶时不能为空，置顶时为空
+     * 目标规则id，添加规则位于此规则之后，非置顶时不能为空，置顶时为空，目标规则id可以通过[查询防护规则接口](ListAclRules.xml)获得，通过返回值中的data.records.rule_id（.表示各对象之间层级的区分）获得。
      * @return destRuleId
      */
     public String getDestRuleId() {

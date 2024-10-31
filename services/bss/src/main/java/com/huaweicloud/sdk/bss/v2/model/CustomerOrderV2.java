@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.bss.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -85,6 +87,11 @@ public class CustomerOrderV2 {
     @JsonProperty(value = "amount_info")
 
     private AmountInfomationV2 amountInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_projects")
+
+    private List<EnterpriseProject> enterpriseProjects = null;
 
     public CustomerOrderV2 withOrderId(String orderId) {
         this.orderId = orderId;
@@ -350,6 +357,39 @@ public class CustomerOrderV2 {
         this.amountInfo = amountInfo;
     }
 
+    public CustomerOrderV2 withEnterpriseProjects(List<EnterpriseProject> enterpriseProjects) {
+        this.enterpriseProjects = enterpriseProjects;
+        return this;
+    }
+
+    public CustomerOrderV2 addEnterpriseProjectsItem(EnterpriseProject enterpriseProjectsItem) {
+        if (this.enterpriseProjects == null) {
+            this.enterpriseProjects = new ArrayList<>();
+        }
+        this.enterpriseProjects.add(enterpriseProjectsItem);
+        return this;
+    }
+
+    public CustomerOrderV2 withEnterpriseProjects(Consumer<List<EnterpriseProject>> enterpriseProjectsSetter) {
+        if (this.enterpriseProjects == null) {
+            this.enterpriseProjects = new ArrayList<>();
+        }
+        enterpriseProjectsSetter.accept(this.enterpriseProjects);
+        return this;
+    }
+
+    /**
+     * |参数名称：客户订单企业项目信息。| |参数约束及描述： 客户订单企业项目信息。具体请参见表 EnterpriseProject。|
+     * @return enterpriseProjects
+     */
+    public List<EnterpriseProject> getEnterpriseProjects() {
+        return enterpriseProjects;
+    }
+
+    public void setEnterpriseProjects(List<EnterpriseProject> enterpriseProjects) {
+        this.enterpriseProjects = enterpriseProjects;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -368,7 +408,8 @@ public class CustomerOrderV2 {
             && Objects.equals(this.officialAmount, that.officialAmount)
             && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.paymentTime, that.paymentTime) && Objects.equals(this.currency, that.currency)
-            && Objects.equals(this.contractId, that.contractId) && Objects.equals(this.amountInfo, that.amountInfo);
+            && Objects.equals(this.contractId, that.contractId) && Objects.equals(this.amountInfo, that.amountInfo)
+            && Objects.equals(this.enterpriseProjects, that.enterpriseProjects);
     }
 
     @Override
@@ -387,7 +428,8 @@ public class CustomerOrderV2 {
             paymentTime,
             currency,
             contractId,
-            amountInfo);
+            amountInfo,
+            enterpriseProjects);
     }
 
     @Override
@@ -409,6 +451,7 @@ public class CustomerOrderV2 {
         sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
         sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
         sb.append("    amountInfo: ").append(toIndentedString(amountInfo)).append("\n");
+        sb.append("    enterpriseProjects: ").append(toIndentedString(enterpriseProjects)).append("\n");
         sb.append("}");
         return sb.toString();
     }

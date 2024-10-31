@@ -109,7 +109,7 @@ public class AddressItemListResponseDTODataRecords {
     }
 
     /**
-     * 地址组
+     * 地址信息
      * @return address
      */
     public String getAddress() {

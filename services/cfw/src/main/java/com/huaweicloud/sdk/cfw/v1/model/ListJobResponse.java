@@ -13,62 +13,18 @@ import java.util.function.Consumer;
 public class ListJobResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_code")
-
-    private String errorCode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "error_msg")
-
-    private String errorMsg;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private Object data;
+    private GetCreateFirewallJobResponseData data;
 
-    public ListJobResponse withErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-        return this;
-    }
-
-    /**
-     * 错误码
-     * @return errorCode
-     */
-    public String getErrorCode() {
-        return errorCode;
-    }
-
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-    }
-
-    public ListJobResponse withErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-        return this;
-    }
-
-    /**
-     * 错误描述
-     * @return errorMsg
-     */
-    public String getErrorMsg() {
-        return errorMsg;
-    }
-
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-    }
-
-    public ListJobResponse withData(Object data) {
+    public ListJobResponse withData(GetCreateFirewallJobResponseData data) {
         this.data = data;
         return this;
     }
 
-    public ListJobResponse withData(Consumer<Object> dataSetter) {
+    public ListJobResponse withData(Consumer<GetCreateFirewallJobResponseData> dataSetter) {
         if (this.data == null) {
-            this.data = new Object();
+            this.data = new GetCreateFirewallJobResponseData();
             dataSetter.accept(this.data);
         }
 
@@ -76,14 +32,14 @@ public class ListJobResponse extends SdkResponse {
     }
 
     /**
-     * 执行结果
+     * Get data
      * @return data
      */
-    public Object getData() {
+    public GetCreateFirewallJobResponseData getData() {
         return data;
     }
 
-    public void setData(Object data) {
+    public void setData(GetCreateFirewallJobResponseData data) {
         this.data = data;
     }
 
@@ -96,21 +52,18 @@ public class ListJobResponse extends SdkResponse {
             return false;
         }
         ListJobResponse that = (ListJobResponse) obj;
-        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
-            && Objects.equals(this.data, that.data);
+        return Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(errorCode, errorMsg, data);
+        return Objects.hash(data);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListJobResponse {\n");
-        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();

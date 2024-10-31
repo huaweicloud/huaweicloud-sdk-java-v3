@@ -1709,6 +1709,12 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBandwidthTimelineRequest::getGroupBy, ListBandwidthTimelineRequest::setGroupBy));
+        builder.<Integer>withRequestField("display_option",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBandwidthTimelineRequest::getDisplayOption,
+                ListBandwidthTimelineRequest::setDisplayOption));
 
         // response
         builder.<List<BandwidthStatisticsTimelineItem>>withResponseField("body",

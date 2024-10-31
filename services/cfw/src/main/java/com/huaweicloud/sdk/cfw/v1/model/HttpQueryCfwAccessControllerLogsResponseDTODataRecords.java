@@ -136,7 +136,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
     }
 
     /**
-     * 动作0：permit,1：deny
+     * 动作0：permit，1：deny
      * @return action
      */
     public String getAction() {
@@ -170,7 +170,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
     }
 
     /**
-     * 规则ID
+     * 规则id
      * @return ruleId
      */
     public String getRuleId() {
@@ -374,7 +374,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
     }
 
     /**
-     * 应用协议
+     * 规则应用类型包括：“HTTP”，\"HTTPS\"，\"TLS1\"，“DNS”，“SSH”，“MYSQL”，“SMTP”，“RDP”，“RDPS”，“VNC”，“POP3”，“IMAP4”，“SMTPS”，“POP3S”，“FTPS”，“ANY”，“BGP”等。
      * @return app
      */
     public String getApp() {

@@ -6,10 +6,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * AclBindApiInfo
@@ -176,6 +179,11 @@ public class AclBindApiInfo {
     @JsonProperty(value = "req_method")
 
     private ReqMethodEnum reqMethod;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
 
     public AclBindApiInfo withApiId(String apiId) {
         this.apiId = apiId;
@@ -364,6 +372,39 @@ public class AclBindApiInfo {
         this.reqMethod = reqMethod;
     }
 
+    public AclBindApiInfo withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public AclBindApiInfo addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public AclBindApiInfo withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * API绑定的标签，标签配额默认10条，可以联系技术调整。
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -378,7 +419,7 @@ public class AclBindApiInfo {
             && Objects.equals(this.envId, that.envId) && Objects.equals(this.envName, that.envName)
             && Objects.equals(this.bindId, that.bindId) && Objects.equals(this.groupName, that.groupName)
             && Objects.equals(this.bindTime, that.bindTime) && Objects.equals(this.publishId, that.publishId)
-            && Objects.equals(this.reqMethod, that.reqMethod);
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -393,7 +434,8 @@ public class AclBindApiInfo {
             groupName,
             bindTime,
             publishId,
-            reqMethod);
+            reqMethod,
+            tags);
     }
 
     @Override
@@ -411,6 +453,7 @@ public class AclBindApiInfo {
         sb.append("    bindTime: ").append(toIndentedString(bindTime)).append("\n");
         sb.append("    publishId: ").append(toIndentedString(publishId)).append("\n");
         sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

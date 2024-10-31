@@ -16,19 +16,19 @@ public class AddressItems {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "items")
 
-    private List<IdObject> items = null;
+    private List<AddressItemIdWithoutName> items = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "covered_ip")
 
     private List<CoveredIPVO> coveredIp = null;
 
-    public AddressItems withItems(List<IdObject> items) {
+    public AddressItems withItems(List<AddressItemIdWithoutName> items) {
         this.items = items;
         return this;
     }
 
-    public AddressItems addItemsItem(IdObject itemsItem) {
+    public AddressItems addItemsItem(AddressItemIdWithoutName itemsItem) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class AddressItems {
         return this;
     }
 
-    public AddressItems withItems(Consumer<List<IdObject>> itemsSetter) {
+    public AddressItems withItems(Consumer<List<AddressItemIdWithoutName>> itemsSetter) {
         if (this.items == null) {
             this.items = new ArrayList<>();
         }
@@ -48,11 +48,11 @@ public class AddressItems {
      * 地址组成员id列表
      * @return items
      */
-    public List<IdObject> getItems() {
+    public List<AddressItemIdWithoutName> getItems() {
         return items;
     }
 
-    public void setItems(List<IdObject> items) {
+    public void setItems(List<AddressItemIdWithoutName> items) {
         this.items = items;
     }
 

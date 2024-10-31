@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * UnbindApiForAcl
@@ -185,6 +188,11 @@ public class UnbindApiForAcl {
     @JsonProperty(value = "req_method")
 
     private ReqMethodEnum reqMethod;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
 
     public UnbindApiForAcl withId(String id) {
         this.id = id;
@@ -407,6 +415,39 @@ public class UnbindApiForAcl {
         this.reqMethod = reqMethod;
     }
 
+    public UnbindApiForAcl withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public UnbindApiForAcl addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public UnbindApiForAcl withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * API绑定的标签，标签配额默认10条，可以联系技术调整。
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -422,7 +463,7 @@ public class UnbindApiForAcl {
             && Objects.equals(this.runEnvName, that.runEnvName) && Objects.equals(this.runEnvId, that.runEnvId)
             && Objects.equals(this.publishId, that.publishId) && Objects.equals(this.aclName, that.aclName)
             && Objects.equals(this.reqUri, that.reqUri) && Objects.equals(this.authType, that.authType)
-            && Objects.equals(this.reqMethod, that.reqMethod);
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -439,7 +480,8 @@ public class UnbindApiForAcl {
             aclName,
             reqUri,
             authType,
-            reqMethod);
+            reqMethod,
+            tags);
     }
 
     @Override
@@ -459,6 +501,7 @@ public class UnbindApiForAcl {
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
         sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

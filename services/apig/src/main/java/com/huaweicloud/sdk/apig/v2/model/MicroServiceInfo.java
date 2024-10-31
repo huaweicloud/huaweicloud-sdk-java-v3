@@ -28,7 +28,7 @@ public class MicroServiceInfo {
     private String instanceId;
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service）
+     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service） - NACOS: nacos引擎，nacos_info必填
      */
     public static final class ServiceTypeEnum {
 
@@ -47,6 +47,11 @@ public class MicroServiceInfo {
          */
         public static final ServiceTypeEnum CCE_SERVICE = new ServiceTypeEnum("CCE_SERVICE");
 
+        /**
+         * Enum NACOS for value: "NACOS"
+         */
+        public static final ServiceTypeEnum NACOS = new ServiceTypeEnum("NACOS");
+
         private static final Map<String, ServiceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ServiceTypeEnum> createStaticFields() {
@@ -54,6 +59,7 @@ public class MicroServiceInfo {
             map.put("CSE", CSE);
             map.put("CCE", CCE);
             map.put("CCE_SERVICE", CCE_SERVICE);
+            map.put("NACOS", NACOS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -119,6 +125,11 @@ public class MicroServiceInfo {
     private MicroServiceInfoCCE cceInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nacos_info")
+
+    private MicroServiceInfoNacosBase nacosInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
     private OffsetDateTime updateTime;
@@ -168,7 +179,7 @@ public class MicroServiceInfo {
     }
 
     /**
-     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service）
+     * 微服务类型： - CSE：CSE微服务注册中心 - CCE：CCE云容器引擎（工作负载） - CCE_SERVICE: CCE云容器引擎（Service） - NACOS: nacos引擎，nacos_info必填
      * @return serviceType
      */
     public ServiceTypeEnum getServiceType() {
@@ -231,6 +242,32 @@ public class MicroServiceInfo {
         this.cceInfo = cceInfo;
     }
 
+    public MicroServiceInfo withNacosInfo(MicroServiceInfoNacosBase nacosInfo) {
+        this.nacosInfo = nacosInfo;
+        return this;
+    }
+
+    public MicroServiceInfo withNacosInfo(Consumer<MicroServiceInfoNacosBase> nacosInfoSetter) {
+        if (this.nacosInfo == null) {
+            this.nacosInfo = new MicroServiceInfoNacosBase();
+            nacosInfoSetter.accept(this.nacosInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get nacosInfo
+     * @return nacosInfo
+     */
+    public MicroServiceInfoNacosBase getNacosInfo() {
+        return nacosInfo;
+    }
+
+    public void setNacosInfo(MicroServiceInfoNacosBase nacosInfo) {
+        this.nacosInfo = nacosInfo;
+    }
+
     public MicroServiceInfo withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -276,13 +313,13 @@ public class MicroServiceInfo {
         MicroServiceInfo that = (MicroServiceInfo) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.cseInfo, that.cseInfo)
-            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.nacosInfo, that.nacosInfo)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, instanceId, serviceType, cseInfo, cceInfo, updateTime, createTime);
+        return Objects.hash(id, instanceId, serviceType, cseInfo, cceInfo, nacosInfo, updateTime, createTime);
     }
 
     @Override
@@ -294,6 +331,7 @@ public class MicroServiceInfo {
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    cseInfo: ").append(toIndentedString(cseInfo)).append("\n");
         sb.append("    cceInfo: ").append(toIndentedString(cceInfo)).append("\n");
+        sb.append("    nacosInfo: ").append(toIndentedString(nacosInfo)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("}");

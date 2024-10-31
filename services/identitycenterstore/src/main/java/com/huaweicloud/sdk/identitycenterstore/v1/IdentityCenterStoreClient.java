@@ -51,8 +51,7 @@ public class IdentityCenterStoreClient {
     }
 
     public static ClientBuilder<IdentityCenterStoreClient> newBuilder() {
-        ClientBuilder<IdentityCenterStoreClient> clientBuilder =
-            new ClientBuilder<>(IdentityCenterStoreClient::new, "GlobalCredentials");
+        ClientBuilder<IdentityCenterStoreClient> clientBuilder = new ClientBuilder<>(IdentityCenterStoreClient::new);
         return clientBuilder;
     }
 

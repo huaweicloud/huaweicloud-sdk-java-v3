@@ -33,6 +33,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateGaussDbInstanceReq
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateGaussDbInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateLimitTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateLimitTaskRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupResponse;
@@ -51,6 +54,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceTagRequest
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteInstanceTagResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteJobResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteLimitTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupRequest;
@@ -113,6 +118,10 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKernelPluginsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListKernelPluginsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListLimitTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListLimitTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListNodeLimitSqlModelRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListNodeLimitSqlModelResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListParamGroupTemplatesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListParamGroupTemplatesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListPluginExtensionsRequest;
@@ -204,6 +213,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceSnapshotRequ
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowInstanceSnapshotResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowJobDetailRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowJobDetailResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowLimitTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowProjectQuotasRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowProjectQuotasResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowRecyclePolicyRequest;
@@ -217,8 +228,14 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowUpgradeCandidateVers
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartInstanceRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartMySQLCompatibilityRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartMysqlCompatibilityRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StartMysqlCompatibilityResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopInstanceRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopInstanceRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.StopInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequest;
@@ -228,6 +245,12 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurat
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceNameResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateLimitTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateLimitTaskRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateLimitTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateMySQLCompatibilityRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateMysqlCompatibilityRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateMysqlCompatibilityResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateNameRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpgradeInstanceVersionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpgradeInstanceVersionResponse;
@@ -3427,6 +3450,41 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StartMysqlCompatibilityRequest, StartMysqlCompatibilityResponse> startMysqlCompatibility =
+        genForStartMysqlCompatibility();
+
+    private static HttpRequestDef<StartMysqlCompatibilityRequest, StartMysqlCompatibilityResponse> genForStartMysqlCompatibility() {
+        // basic
+        HttpRequestDef.Builder<StartMysqlCompatibilityRequest, StartMysqlCompatibilityResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StartMysqlCompatibilityRequest.class, StartMysqlCompatibilityResponse.class)
+            .withName("StartMysqlCompatibility")
+            .withUri("/v3/{project_id}/instances/{instance_id}/mysql-compatibility")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartMysqlCompatibilityRequest::getInstanceId,
+                StartMysqlCompatibilityRequest::setInstanceId));
+        builder.<StartMysqlCompatibilityRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StartMysqlCompatibilityRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(StartMysqlCompatibilityRequest::getXLanguage,
+                StartMysqlCompatibilityRequest::setXLanguage));
+        builder.<StartMySQLCompatibilityRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StartMySQLCompatibilityRequestBody.class),
+            f -> f.withMarshaller(StartMysqlCompatibilityRequest::getBody, StartMysqlCompatibilityRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StopBackupRequest, StopBackupResponse> stopBackup = genForStopBackup();
 
     private static HttpRequestDef<StopBackupRequest, StopBackupResponse> genForStopBackup() {
@@ -3448,6 +3506,38 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopBackupRequest::getXLanguage, StopBackupRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopInstanceRequest, StopInstanceResponse> stopInstance = genForStopInstance();
+
+    private static HttpRequestDef<StopInstanceRequest, StopInstanceResponse> genForStopInstance() {
+        // basic
+        HttpRequestDef.Builder<StopInstanceRequest, StopInstanceResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopInstanceRequest.class, StopInstanceResponse.class)
+                .withName("StopInstance")
+                .withUri("/v3/{project_id}/instances/{instance_id}/db-stop")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopInstanceRequest::getInstanceId, StopInstanceRequest::setInstanceId));
+        builder.<StopInstanceRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(StopInstanceRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(StopInstanceRequest::getXLanguage, StopInstanceRequest::setXLanguage));
+        builder.<StopInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StopInstanceRequestBody.class),
+            f -> f.withMarshaller(StopInstanceRequest::getBody, StopInstanceRequest::setBody));
 
         // response
 
@@ -3591,6 +3681,42 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateMysqlCompatibilityRequest, UpdateMysqlCompatibilityResponse> updateMysqlCompatibility =
+        genForUpdateMysqlCompatibility();
+
+    private static HttpRequestDef<UpdateMysqlCompatibilityRequest, UpdateMysqlCompatibilityResponse> genForUpdateMysqlCompatibility() {
+        // basic
+        HttpRequestDef.Builder<UpdateMysqlCompatibilityRequest, UpdateMysqlCompatibilityResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateMysqlCompatibilityRequest.class, UpdateMysqlCompatibilityResponse.class)
+                .withName("UpdateMysqlCompatibility")
+                .withUri("/v3/{project_id}/instances/{instance_id}/mysql-compatibility")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMysqlCompatibilityRequest::getInstanceId,
+                UpdateMysqlCompatibilityRequest::setInstanceId));
+        builder.<UpdateMysqlCompatibilityRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateMysqlCompatibilityRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateMysqlCompatibilityRequest::getXLanguage,
+                UpdateMysqlCompatibilityRequest::setXLanguage));
+        builder.<UpdateMySQLCompatibilityRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateMySQLCompatibilityRequestBody.class),
+            f -> f.withMarshaller(UpdateMysqlCompatibilityRequest::getBody, UpdateMysqlCompatibilityRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpgradeInstanceVersionRequest, UpgradeInstanceVersionResponse> upgradeInstanceVersion =
         genForUpgradeInstanceVersion();
 
@@ -3707,6 +3833,241 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(WeakPasswordRequestBody.class),
             f -> f.withMarshaller(ValidateWeakPasswordRequest::getBody, ValidateWeakPasswordRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateLimitTaskRequest, CreateLimitTaskResponse> createLimitTask =
+        genForCreateLimitTask();
+
+    private static HttpRequestDef<CreateLimitTaskRequest, CreateLimitTaskResponse> genForCreateLimitTask() {
+        // basic
+        HttpRequestDef.Builder<CreateLimitTaskRequest, CreateLimitTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLimitTaskRequest.class, CreateLimitTaskResponse.class)
+                .withName("CreateLimitTask")
+                .withUri("/v3/{project_id}/instances/{instance_id}/limit-task")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLimitTaskRequest::getInstanceId, CreateLimitTaskRequest::setInstanceId));
+        builder.<CreateLimitTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLimitTaskRequestBody.class),
+            f -> f.withMarshaller(CreateLimitTaskRequest::getBody, CreateLimitTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLimitTaskRequest, DeleteLimitTaskResponse> deleteLimitTask =
+        genForDeleteLimitTask();
+
+    private static HttpRequestDef<DeleteLimitTaskRequest, DeleteLimitTaskResponse> genForDeleteLimitTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteLimitTaskRequest, DeleteLimitTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteLimitTaskRequest.class, DeleteLimitTaskResponse.class)
+                .withName("DeleteLimitTask")
+                .withUri("/v3/{project_id}/instances/{instance_id}/limit-task/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLimitTaskRequest::getTaskId, DeleteLimitTaskRequest::setTaskId));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLimitTaskRequest::getInstanceId, DeleteLimitTaskRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLimitTaskRequest, ListLimitTaskResponse> listLimitTask =
+        genForListLimitTask();
+
+    private static HttpRequestDef<ListLimitTaskRequest, ListLimitTaskResponse> genForListLimitTask() {
+        // basic
+        HttpRequestDef.Builder<ListLimitTaskRequest, ListLimitTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLimitTaskRequest.class, ListLimitTaskResponse.class)
+                .withName("ListLimitTask")
+                .withUri("/v3/{project_id}/instances/{instance_id}/limit-task-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLimitTaskRequest::getInstanceId, ListLimitTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_scope",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLimitTaskRequest::getTaskScope, ListLimitTaskRequest::setTaskScope));
+        builder.<String>withRequestField("limit_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLimitTaskRequest::getLimitType, ListLimitTaskRequest::setLimitType));
+        builder.<String>withRequestField("limit_type_value",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLimitTaskRequest::getLimitTypeValue, ListLimitTaskRequest::setLimitTypeValue));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLimitTaskRequest::getTaskName, ListLimitTaskRequest::setTaskName));
+        builder.<String>withRequestField("sql_model",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLimitTaskRequest::getSqlModel, ListLimitTaskRequest::setSqlModel));
+        builder.<String>withRequestField("rule_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLimitTaskRequest::getRuleName, ListLimitTaskRequest::setRuleName));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLimitTaskRequest::getStartTime, ListLimitTaskRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLimitTaskRequest::getEndTime, ListLimitTaskRequest::setEndTime));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLimitTaskRequest::getOffset, ListLimitTaskRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLimitTaskRequest::getLimit, ListLimitTaskRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNodeLimitSqlModelRequest, ListNodeLimitSqlModelResponse> listNodeLimitSqlModel =
+        genForListNodeLimitSqlModel();
+
+    private static HttpRequestDef<ListNodeLimitSqlModelRequest, ListNodeLimitSqlModelResponse> genForListNodeLimitSqlModel() {
+        // basic
+        HttpRequestDef.Builder<ListNodeLimitSqlModelRequest, ListNodeLimitSqlModelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListNodeLimitSqlModelRequest.class, ListNodeLimitSqlModelResponse.class)
+            .withName("ListNodeLimitSqlModel")
+            .withUri("/v3/{project_id}/instances/{instance_id}/list-node-limit-sql-model")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNodeLimitSqlModelRequest::getInstanceId,
+                ListNodeLimitSqlModelRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNodeLimitSqlModelRequest::getNodeId, ListNodeLimitSqlModelRequest::setNodeId));
+        builder.<String>withRequestField("sql_model",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNodeLimitSqlModelRequest::getSqlModel,
+                ListNodeLimitSqlModelRequest::setSqlModel));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNodeLimitSqlModelRequest::getOffset, ListNodeLimitSqlModelRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListNodeLimitSqlModelRequest::getLimit, ListNodeLimitSqlModelRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLimitTaskRequest, ShowLimitTaskResponse> showLimitTask =
+        genForShowLimitTask();
+
+    private static HttpRequestDef<ShowLimitTaskRequest, ShowLimitTaskResponse> genForShowLimitTask() {
+        // basic
+        HttpRequestDef.Builder<ShowLimitTaskRequest, ShowLimitTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLimitTaskRequest.class, ShowLimitTaskResponse.class)
+                .withName("ShowLimitTask")
+                .withUri("/v3/{project_id}/instances/{instance_id}/limit-task/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLimitTaskRequest::getTaskId, ShowLimitTaskRequest::setTaskId));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLimitTaskRequest::getInstanceId, ShowLimitTaskRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLimitTaskRequest, UpdateLimitTaskResponse> updateLimitTask =
+        genForUpdateLimitTask();
+
+    private static HttpRequestDef<UpdateLimitTaskRequest, UpdateLimitTaskResponse> genForUpdateLimitTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateLimitTaskRequest, UpdateLimitTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLimitTaskRequest.class, UpdateLimitTaskResponse.class)
+                .withName("UpdateLimitTask")
+                .withUri("/v3/{project_id}/instances/{instance_id}/limit-task/{task_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLimitTaskRequest::getTaskId, UpdateLimitTaskRequest::setTaskId));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLimitTaskRequest::getInstanceId, UpdateLimitTaskRequest::setInstanceId));
+        builder.<UpdateLimitTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLimitTaskRequestBody.class),
+            f -> f.withMarshaller(UpdateLimitTaskRequest::getBody, UpdateLimitTaskRequest::setBody));
 
         // response
 

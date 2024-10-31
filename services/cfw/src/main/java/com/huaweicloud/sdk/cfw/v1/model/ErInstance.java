@@ -21,24 +21,9 @@ public class ErInstance {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "state")
-
-    private String state;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
-
-    private String enterpriseProjectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "project_id")
 
     private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_ipv6")
-
-    private String enableIpv6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attachment_id")
@@ -51,7 +36,7 @@ public class ErInstance {
     }
 
     /**
-     * ER实例id
+     * ER ID，创建ER时产生的ID
      * @return id
      */
     public String getId() {
@@ -79,47 +64,13 @@ public class ErInstance {
         this.name = name;
     }
 
-    public ErInstance withState(String state) {
-        this.state = state;
-        return this;
-    }
-
-    /**
-     * ER状态
-     * @return state
-     */
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public ErInstance withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-        return this;
-    }
-
-    /**
-     * 企业租户id
-     * @return enterpriseProjectId
-     */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
-    }
-
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
-    }
-
     public ErInstance withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
 
     /**
-     * 租户id
+     * 项目ID, 可以从调API处获取，也可以从控制台获取。[项目ID获取方式](cfw_02_0015.xml)
      * @return projectId
      */
     public String getProjectId() {
@@ -130,30 +81,13 @@ public class ErInstance {
         this.projectId = projectId;
     }
 
-    public ErInstance withEnableIpv6(String enableIpv6) {
-        this.enableIpv6 = enableIpv6;
-        return this;
-    }
-
-    /**
-     * 是否开启ipv6
-     * @return enableIpv6
-     */
-    public String getEnableIpv6() {
-        return enableIpv6;
-    }
-
-    public void setEnableIpv6(String enableIpv6) {
-        this.enableIpv6 = enableIpv6;
-    }
-
     public ErInstance withAttachmentId(String attachmentId) {
         this.attachmentId = attachmentId;
         return this;
     }
 
     /**
-     * 连接id
+     * 企业路由器连接id，该连接用于连接防火墙和企业路由器，此字段可在通过id在ER界面查询指定er后在管理连接界面查询连接了解连接具体情况。
      * @return attachmentId
      */
     public String getAttachmentId() {
@@ -174,15 +108,12 @@ public class ErInstance {
         }
         ErInstance that = (ErInstance) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.state, that.state)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.enableIpv6, that.enableIpv6)
-            && Objects.equals(this.attachmentId, that.attachmentId);
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.attachmentId, that.attachmentId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, state, enterpriseProjectId, projectId, enableIpv6, attachmentId);
+        return Objects.hash(id, name, projectId, attachmentId);
     }
 
     @Override
@@ -191,10 +122,7 @@ public class ErInstance {
         sb.append("class ErInstance {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    state: ").append(toIndentedString(state)).append("\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    enableIpv6: ").append(toIndentedString(enableIpv6)).append("\n");
         sb.append("    attachmentId: ").append(toIndentedString(attachmentId)).append("\n");
         sb.append("}");
         return sb.toString();

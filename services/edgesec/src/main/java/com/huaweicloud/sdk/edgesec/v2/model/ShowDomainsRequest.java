@@ -112,7 +112,7 @@ public class ShowDomainsRequest {
     }
 
     /**
-     * 企业项目id
+     * 您可以通过调用企业项目管理服务（EPS）的查询企业项目列表接口（ListEnterpriseProject）查询企业项目id，默认为0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

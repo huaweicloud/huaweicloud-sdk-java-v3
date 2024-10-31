@@ -25,7 +25,7 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
     @JsonProperty(value = "returned_count")
     @BsonProperty(value = "returned_count")
 
-    private Integer returnedCount;
+    private Long returnedCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "filtered_count")
@@ -47,7 +47,7 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
 
     private static Codec<ScanSkeyKvResponse> codec;
 
-    public ScanSkeyKvResponse withReturnedCount(Integer returnedCount) {
+    public ScanSkeyKvResponse withReturnedCount(Long returnedCount) {
         this.returnedCount = returnedCount;
         return this;
     }
@@ -56,11 +56,11 @@ public class ScanSkeyKvResponse extends SdkBsonDocResponse {
      * 返回的文档数量，为0不表示结束。 - 如果filtered_count超过500仍无匹配，则返回0。 -  长度：4
      * @return returnedCount
      */
-    public Integer getReturnedCount() {
+    public Long getReturnedCount() {
         return returnedCount;
     }
 
-    public void setReturnedCount(Integer returnedCount) {
+    public void setReturnedCount(Long returnedCount) {
         this.returnedCount = returnedCount;
     }
 

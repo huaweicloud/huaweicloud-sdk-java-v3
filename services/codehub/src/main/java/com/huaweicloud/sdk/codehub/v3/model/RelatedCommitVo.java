@@ -16,17 +16,17 @@ public class RelatedCommitVo {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "iam_id")
+    @JsonProperty(value = "iamId")
 
     private String iamId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_name")
+    @JsonProperty(value = "userName")
 
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "repository_id")
+    @JsonProperty(value = "repositoryId")
 
     private String repositoryId;
 
@@ -36,57 +36,57 @@ public class RelatedCommitVo {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_id")
+    @JsonProperty(value = "userId")
 
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "branch_name")
+    @JsonProperty(value = "branchName")
 
     private String branchName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "commit_id")
+    @JsonProperty(value = "commitId")
 
     private String commitId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "commit_shortId")
+    @JsonProperty(value = "commitShortId")
 
     private String commitShortId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "commit_msg")
+    @JsonProperty(value = "commitMsg")
 
     private String commitMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "commit_url")
+    @JsonProperty(value = "commitUrl")
 
     private String commitUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "commit_type")
+    @JsonProperty(value = "commitType")
 
     private String commitType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "related_id")
+    @JsonProperty(value = "relatedId")
 
     private String relatedId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_at")
+    @JsonProperty(value = "createAt")
 
     private String createAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_at")
+    @JsonProperty(value = "updateAt")
 
     private String updateAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "related_url")
+    @JsonProperty(value = "relatedUrl")
 
     private String relatedUrl;
 

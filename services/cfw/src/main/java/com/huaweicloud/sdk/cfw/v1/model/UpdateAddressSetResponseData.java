@@ -15,13 +15,18 @@ public class UpdateAddressSetResponseData {
 
     private String id;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
     public UpdateAddressSetResponseData withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * Id
+     * 地址组id
      * @return id
      */
     public String getId() {
@@ -30,6 +35,23 @@ public class UpdateAddressSetResponseData {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public UpdateAddressSetResponseData withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 地址组名称
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -41,12 +63,12 @@ public class UpdateAddressSetResponseData {
             return false;
         }
         UpdateAddressSetResponseData that = (UpdateAddressSetResponseData) obj;
-        return Objects.equals(this.id, that.id);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id, name);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class UpdateAddressSetResponseData {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateAddressSetResponseData {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

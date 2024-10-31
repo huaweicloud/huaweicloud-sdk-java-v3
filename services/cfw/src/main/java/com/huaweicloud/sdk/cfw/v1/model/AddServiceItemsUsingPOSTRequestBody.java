@@ -29,7 +29,7 @@ public class AddServiceItemsUsingPOSTRequestBody {
     }
 
     /**
-     * 服务组id
+     * 服务组id，可通过[获取服务组列表接口](ListServiceSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。
      * @return setId
      */
     public String getSetId() {
@@ -65,7 +65,7 @@ public class AddServiceItemsUsingPOSTRequestBody {
     }
 
     /**
-     * 添加服务组成员
+     * 服务组成员列表
      * @return serviceItems
      */
     public List<AddServiceItemsUsingPOSTRequestBodyServiceItems> getServiceItems() {

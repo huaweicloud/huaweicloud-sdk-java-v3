@@ -22,6 +22,11 @@ public class DeleteDomainsRequest {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fw_instance_id")
+
+    private String fwInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private DeleteDomainDto body;
@@ -32,7 +37,7 @@ public class DeleteDomainsRequest {
     }
 
     /**
-     * 域名组id
+     * 域名组id，可通过[查询域名组列表接口](ListDomainSets.xml)查询获得，通过返回值中的data.records.set_id（.表示各对象之间层级的区分）获得。
      * @return setId
      */
     public String getSetId() {
@@ -49,7 +54,7 @@ public class DeleteDomainsRequest {
     }
 
     /**
-     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -58,6 +63,23 @@ public class DeleteDomainsRequest {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public DeleteDomainsRequest withFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
+        return this;
+    }
+
+    /**
+     * 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
+     * @return fwInstanceId
+     */
+    public String getFwInstanceId() {
+        return fwInstanceId;
+    }
+
+    public void setFwInstanceId(String fwInstanceId) {
+        this.fwInstanceId = fwInstanceId;
     }
 
     public DeleteDomainsRequest withBody(DeleteDomainDto body) {
@@ -97,12 +119,12 @@ public class DeleteDomainsRequest {
         DeleteDomainsRequest that = (DeleteDomainsRequest) obj;
         return Objects.equals(this.setId, that.setId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(setId, enterpriseProjectId, body);
+        return Objects.hash(setId, enterpriseProjectId, fwInstanceId, body);
     }
 
     @Override
@@ -111,6 +133,7 @@ public class DeleteDomainsRequest {
         sb.append("class DeleteDomainsRequest {\n");
         sb.append("    setId: ").append(toIndentedString(setId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    fwInstanceId: ").append(toIndentedString(fwInstanceId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

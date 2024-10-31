@@ -22,7 +22,7 @@ public class DeleteFirewallResponse extends SdkResponse {
     }
 
     /**
-     * 删除防火墙返回data
+     * 删除防火墙时生成的任务的job_id
      * @return data
      */
     public String getData() {

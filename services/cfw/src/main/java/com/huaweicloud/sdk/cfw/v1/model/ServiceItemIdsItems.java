@@ -21,7 +21,7 @@ public class ServiceItemIdsItems {
     }
 
     /**
-     * id值
+     * 服务组成员id
      * @return id
      */
     public String getId() {

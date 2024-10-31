@@ -6,10 +6,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SignApiBindingBase
@@ -186,6 +189,11 @@ public class SignApiBindingBase {
     @JsonProperty(value = "req_method")
 
     private ReqMethodEnum reqMethod;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<String> tags = null;
 
     public SignApiBindingBase withPublishId(String publishId) {
         this.publishId = publishId;
@@ -408,6 +416,39 @@ public class SignApiBindingBase {
         this.reqMethod = reqMethod;
     }
 
+    public SignApiBindingBase withTags(List<String> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public SignApiBindingBase addTagsItem(String tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public SignApiBindingBase withTags(Consumer<List<String>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * API绑定的标签，标签配额默认10条，可以联系技术调整。
+     * @return tags
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -423,7 +464,7 @@ public class SignApiBindingBase {
             && Objects.equals(this.apiType, that.apiType) && Objects.equals(this.apiName, that.apiName)
             && Objects.equals(this.id, that.id) && Objects.equals(this.apiRemark, that.apiRemark)
             && Objects.equals(this.signId, that.signId) && Objects.equals(this.signName, that.signName)
-            && Objects.equals(this.reqMethod, that.reqMethod);
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -440,7 +481,8 @@ public class SignApiBindingBase {
             apiRemark,
             signId,
             signName,
-            reqMethod);
+            reqMethod,
+            tags);
     }
 
     @Override
@@ -460,6 +502,7 @@ public class SignApiBindingBase {
         sb.append("    signId: ").append(toIndentedString(signId)).append("\n");
         sb.append("    signName: ").append(toIndentedString(signName)).append("\n");
         sb.append("    reqMethod: ").append(toIndentedString(reqMethod)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

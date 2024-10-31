@@ -21,7 +21,7 @@ public class DeleteFirewallRequest {
     }
 
     /**
-     * 资源id
+     * 防火墙id，可通过[防火墙ID获取方式](cfw_02_0028.xml)获取
      * @return resourceId
      */
     public String getResourceId() {

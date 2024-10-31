@@ -50,6 +50,16 @@ public class Metadata {
 
     private String ltsAlarmType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_name")
+
+    private String logGroupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_stream_name")
+
+    private String logStreamName;
+
     public Metadata withEventType(String eventType) {
         this.eventType = eventType;
         return this;
@@ -186,6 +196,40 @@ public class Metadata {
         this.ltsAlarmType = ltsAlarmType;
     }
 
+    public Metadata withLogGroupName(String logGroupName) {
+        this.logGroupName = logGroupName;
+        return this;
+    }
+
+    /**
+     * 日志组原始名称
+     * @return logGroupName
+     */
+    public String getLogGroupName() {
+        return logGroupName;
+    }
+
+    public void setLogGroupName(String logGroupName) {
+        this.logGroupName = logGroupName;
+    }
+
+    public Metadata withLogStreamName(String logStreamName) {
+        this.logStreamName = logStreamName;
+        return this;
+    }
+
+    /**
+     * 日志流原始名称
+     * @return logStreamName
+     */
+    public String getLogStreamName() {
+        return logStreamName;
+    }
+
+    public void setLogStreamName(String logStreamName) {
+        this.logStreamName = logStreamName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -199,7 +243,9 @@ public class Metadata {
             && Objects.equals(this.eventSeverity, that.eventSeverity) && Objects.equals(this.eventName, that.eventName)
             && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.resourceProvider, that.resourceProvider)
-            && Objects.equals(this.ltsAlarmType, that.ltsAlarmType);
+            && Objects.equals(this.ltsAlarmType, that.ltsAlarmType)
+            && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logStreamName, that.logStreamName);
     }
 
     @Override
@@ -211,7 +257,9 @@ public class Metadata {
             resourceType,
             resourceId,
             resourceProvider,
-            ltsAlarmType);
+            ltsAlarmType,
+            logGroupName,
+            logStreamName);
     }
 
     @Override
@@ -226,6 +274,8 @@ public class Metadata {
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    resourceProvider: ").append(toIndentedString(resourceProvider)).append("\n");
         sb.append("    ltsAlarmType: ").append(toIndentedString(ltsAlarmType)).append("\n");
+        sb.append("    logGroupName: ").append(toIndentedString(logGroupName)).append("\n");
+        sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

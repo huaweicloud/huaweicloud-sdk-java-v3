@@ -73,7 +73,7 @@ public class GetFirewallInstanceData {
     }
 
     /**
-     * 总数
+     * 防火墙总数
      * @return total
      */
     public Integer getTotal() {

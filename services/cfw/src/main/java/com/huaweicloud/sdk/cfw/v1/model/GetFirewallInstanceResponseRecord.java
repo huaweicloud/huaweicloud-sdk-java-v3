@@ -1,12 +1,9 @@
 package com.huaweicloud.sdk.cfw.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -58,146 +55,10 @@ public class GetFirewallInstanceResponseRecord {
 
     private List<ProtectObjectVO> protectObjects = null;
 
-    /**
-     * 防火墙状态列表，包括-1：等待支付，0：创建中，1，删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败
-     */
-    public static final class StatusEnum {
-
-        /**
-         * Enum NUMBER_MINUS_1 for value: -1
-         */
-        public static final StatusEnum NUMBER_MINUS_1 = new StatusEnum(-1);
-
-        /**
-         * Enum NUMBER_0 for value: 0
-         */
-        public static final StatusEnum NUMBER_0 = new StatusEnum(0);
-
-        /**
-         * Enum NUMBER_1 for value: 1
-         */
-        public static final StatusEnum NUMBER_1 = new StatusEnum(1);
-
-        /**
-         * Enum NUMBER_2 for value: 2
-         */
-        public static final StatusEnum NUMBER_2 = new StatusEnum(2);
-
-        /**
-         * Enum NUMBER_3 for value: 3
-         */
-        public static final StatusEnum NUMBER_3 = new StatusEnum(3);
-
-        /**
-         * Enum NUMBER_4 for value: 4
-         */
-        public static final StatusEnum NUMBER_4 = new StatusEnum(4);
-
-        /**
-         * Enum NUMBER_5 for value: 5
-         */
-        public static final StatusEnum NUMBER_5 = new StatusEnum(5);
-
-        /**
-         * Enum NUMBER_6 for value: 6
-         */
-        public static final StatusEnum NUMBER_6 = new StatusEnum(6);
-
-        /**
-         * Enum NUMBER_7 for value: 7
-         */
-        public static final StatusEnum NUMBER_7 = new StatusEnum(7);
-
-        /**
-         * Enum NUMBER_8 for value: 8
-         */
-        public static final StatusEnum NUMBER_8 = new StatusEnum(8);
-
-        /**
-         * Enum NUMBER_9 for value: 9
-         */
-        public static final StatusEnum NUMBER_9 = new StatusEnum(9);
-
-        /**
-         * Enum NUMBER_10 for value: 10
-         */
-        public static final StatusEnum NUMBER_10 = new StatusEnum(10);
-
-        /**
-         * Enum NUMBER_11 for value: 11
-         */
-        public static final StatusEnum NUMBER_11 = new StatusEnum(11);
-
-        private static final Map<Integer, StatusEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, StatusEnum> createStaticFields() {
-            Map<Integer, StatusEnum> map = new HashMap<>();
-            map.put(-1, NUMBER_MINUS_1);
-            map.put(0, NUMBER_0);
-            map.put(1, NUMBER_1);
-            map.put(2, NUMBER_2);
-            map.put(3, NUMBER_3);
-            map.put(4, NUMBER_4);
-            map.put(5, NUMBER_5);
-            map.put(6, NUMBER_6);
-            map.put(7, NUMBER_7);
-            map.put(8, NUMBER_8);
-            map.put(9, NUMBER_9);
-            map.put(10, NUMBER_10);
-            map.put(11, NUMBER_11);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        StatusEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static StatusEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
-        }
-
-        public static StatusEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof StatusEnum) {
-                return this.value.equals(((StatusEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private StatusEnum status;
+    private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_old_firewall_instance")
@@ -260,7 +121,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)。
+     * 防火墙实例id，创建云防火墙后用于标志防火墙由系统自动生成的标志id。，可通过调用[查询防火墙实例接口](ListFirewallDetail.xml)，默认情况下，fw_instance_Id为空时，返回账号下第一个墙的信息；fw_instance_Id非空时，返回与fw_instance_Id对应墙的信息。
      * @return fwInstanceId
      */
     public String getFwInstanceId() {
@@ -294,7 +155,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 集群类型
+     * 集群类型，包含主备（0）和集群（1）两种方式，主备模式包含四个节点，2个主节点构成集群，剩余两个节点为主节点的备节点，集群模式仅拉起两个节点作为集群。
      * @return haType
      */
     public Integer getHaType() {
@@ -328,7 +189,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 服务类型
+     * 防火墙防护类型，目前仅支持0，互联网防护
      * @return serviceType
      */
     public Integer getServiceType() {
@@ -345,7 +206,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 引擎类型
+     * 引擎类型，0：自研引擎 1：山石引擎 3：天融信引擎
      * @return engineType
      */
     public Integer getEngineType() {
@@ -415,7 +276,7 @@ public class GetFirewallInstanceResponseRecord {
         this.protectObjects = protectObjects;
     }
 
-    public GetFirewallInstanceResponseRecord withStatus(StatusEnum status) {
+    public GetFirewallInstanceResponseRecord withStatus(Integer status) {
         this.status = status;
         return this;
     }
@@ -424,11 +285,11 @@ public class GetFirewallInstanceResponseRecord {
      * 防火墙状态列表，包括-1：等待支付，0：创建中，1，删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败
      * @return status
      */
-    public StatusEnum getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(StatusEnum status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -455,7 +316,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 是否支持obs
+     * 是否支持obs，true表示是，false表示不是
      * @return isAvailableObs
      */
     public Boolean getIsAvailableObs() {
@@ -472,7 +333,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 是否支持威胁标签
+     * 是否支持威胁情报标签，true表示是，false表示不是
      * @return isSupportThreatTags
      */
     public Boolean getIsSupportThreatTags() {
@@ -589,7 +450,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 企业项目id，用户支持企业项目后，由企业项目生成的id。
+     * 企业项目ID，用户根据组织规划企业项目，对应的ID为企业项目ID，可通过[如何获取企业项目ID](cfw_02_0027.xml)获取，用户未开启企业项目时为0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -606,7 +467,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 资源id
+     * 防火墙资源id，同fw_instance_id
      * @return resourceId
      */
     public String getResourceId() {
@@ -640,7 +501,7 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     /**
-     * 标签列表
+     * 标签列表，标签键值map转化的json字符串，如\"{\\\"key\\\":\\\"value\\\"}\"
      * @return tags
      */
     public String getTags() {

@@ -34,7 +34,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTOData {
     }
 
     /**
-     * 返回数量
+     * 查询访问控制日志记录总数
      * @return total
      */
     public Integer getTotal() {
@@ -87,7 +87,7 @@ public class HttpQueryCfwAccessControllerLogsResponseDTOData {
     }
 
     /**
-     * 记录
+     * 查询访问控制日志记录
      * @return records
      */
     public List<HttpQueryCfwAccessControllerLogsResponseDTODataRecords> getRecords() {

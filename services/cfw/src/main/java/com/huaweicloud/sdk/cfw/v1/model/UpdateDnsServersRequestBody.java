@@ -46,7 +46,7 @@ public class UpdateDnsServersRequestBody {
     }
 
     /**
-     * DNS服务器
+     * DNS服务器列表
      * @return dnsServer
      */
     public List<UpdateDnsServersRequestBodyDnsServer> getDnsServer() {
@@ -63,7 +63,7 @@ public class UpdateDnsServersRequestBody {
     }
 
     /**
-     * 健康检查域名
+     * 健康检查域名，可通过[查询dns服务器列表接口](ListDnsServers.xml)查询获得，通过返回值中的data.health_check_domain_name（.表示各对象之间层级的区分）获得。
      * @return healthCheckDomainName
      */
     public String getHealthCheckDomainName() {

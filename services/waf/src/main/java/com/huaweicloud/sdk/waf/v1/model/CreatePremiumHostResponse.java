@@ -327,6 +327,26 @@ public class CreatePremiumHostResponse extends SdkResponse {
     private Flag flag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "loadbalancer_id")
+
+    private String loadbalancerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "listener_id")
+
+    private String listenerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocol_port")
+
+    private Integer protocolPort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -599,6 +619,74 @@ public class CreatePremiumHostResponse extends SdkResponse {
         this.flag = flag;
     }
 
+    public CreatePremiumHostResponse withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 云模式elb接入域名返回此字段：elb-shared
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    public CreatePremiumHostResponse withLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+        return this;
+    }
+
+    /**
+     * 云模式elb接入域名返回此字段，表示负载均衡器（ELB）id
+     * @return loadbalancerId
+     */
+    public String getLoadbalancerId() {
+        return loadbalancerId;
+    }
+
+    public void setLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+    }
+
+    public CreatePremiumHostResponse withListenerId(String listenerId) {
+        this.listenerId = listenerId;
+        return this;
+    }
+
+    /**
+     * 云模式elb接入域名返回此字段，表示监听器id
+     * @return listenerId
+     */
+    public String getListenerId() {
+        return listenerId;
+    }
+
+    public void setListenerId(String listenerId) {
+        this.listenerId = listenerId;
+    }
+
+    public CreatePremiumHostResponse withProtocolPort(Integer protocolPort) {
+        this.protocolPort = protocolPort;
+        return this;
+    }
+
+    /**
+     * 云模式elb接入域名返回此字段， 表示业务端口
+     * @return protocolPort
+     */
+    public Integer getProtocolPort() {
+        return protocolPort;
+    }
+
+    public void setProtocolPort(Integer protocolPort) {
+        this.protocolPort = protocolPort;
+    }
+
     public CreatePremiumHostResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -791,9 +879,11 @@ public class CreatePremiumHostResponse extends SdkResponse {
             && Objects.equals(this.proxy, that.proxy) && Objects.equals(this.locked, that.locked)
             && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.tls, that.tls)
             && Objects.equals(this.cipher, that.cipher) && Objects.equals(this.extend, that.extend)
-            && Objects.equals(this.flag, that.flag) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.domainid, that.domainid)
-            && Objects.equals(this.projectid, that.projectid)
+            && Objects.equals(this.flag, that.flag) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.loadbalancerId, that.loadbalancerId)
+            && Objects.equals(this.listenerId, that.listenerId) && Objects.equals(this.protocolPort, that.protocolPort)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.domainid, that.domainid) && Objects.equals(this.projectid, that.projectid)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.blockPage, that.blockPage)
@@ -813,6 +903,10 @@ public class CreatePremiumHostResponse extends SdkResponse {
             cipher,
             extend,
             flag,
+            mode,
+            loadbalancerId,
+            listenerId,
+            protocolPort,
             description,
             policyid,
             domainid,
@@ -839,6 +933,10 @@ public class CreatePremiumHostResponse extends SdkResponse {
         sb.append("    cipher: ").append(toIndentedString(cipher)).append("\n");
         sb.append("    extend: ").append(toIndentedString(extend)).append("\n");
         sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
+        sb.append("    listenerId: ").append(toIndentedString(listenerId)).append("\n");
+        sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    policyid: ").append(toIndentedString(policyid)).append("\n");
         sb.append("    domainid: ").append(toIndentedString(domainid)).append("\n");

@@ -15,16 +15,16 @@ public class DeleteCaptureTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private IdObject data;
+    private CaptureTaskId data;
 
-    public DeleteCaptureTaskResponse withData(IdObject data) {
+    public DeleteCaptureTaskResponse withData(CaptureTaskId data) {
         this.data = data;
         return this;
     }
 
-    public DeleteCaptureTaskResponse withData(Consumer<IdObject> dataSetter) {
+    public DeleteCaptureTaskResponse withData(Consumer<CaptureTaskId> dataSetter) {
         if (this.data == null) {
-            this.data = new IdObject();
+            this.data = new CaptureTaskId();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class DeleteCaptureTaskResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public IdObject getData() {
+    public CaptureTaskId getData() {
         return data;
     }
 
-    public void setData(IdObject data) {
+    public void setData(CaptureTaskId data) {
         this.data = data;
     }
 

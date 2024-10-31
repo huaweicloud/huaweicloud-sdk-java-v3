@@ -83,7 +83,7 @@ public class ListDomainResponseData {
     }
 
     /**
-     * 租户项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -150,7 +150,7 @@ public class ListDomainResponseData {
     }
 
     /**
-     * 总数
+     * 域名总数
      * @return total
      */
     public Integer getTotal() {

@@ -162,7 +162,7 @@ public class RuleAclListResponseDTODataRecords {
     private RuleServiceDtoForResponse service;
 
     /**
-     * 规则type，0：互联网规则，1：vpc规则，2：nat规则
+     * 规则类型，0：互联网规则，1：vpc规则，2：nat规则
      */
     public static final class TypeEnum {
 
@@ -280,7 +280,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 地址类型0 ipv4,1 ipv6
+     * 地址类型0 ipv4，1 ipv6
      * @return addressType
      */
     public Integer getAddressType() {
@@ -331,7 +331,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 动作0：permit,1：deny
+     * 动作0：permit，1：deny
      * @return actionType
      */
     public Integer getActionType() {
@@ -348,7 +348,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 规则下发状态 0：禁用,1：启用
+     * 规则下发状态 0：禁用，1：启用
      * @return status
      */
     public Integer getStatus() {
@@ -416,7 +416,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 长连接时长小时
+     * 长连接时长对应小时
      * @return longConnectTimeHour
      */
     public Long getLongConnectTimeHour() {
@@ -433,7 +433,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 长连接时长分钟
+     * 长连接时长对应分钟
      * @return longConnectTimeMinute
      */
     public Long getLongConnectTimeMinute() {
@@ -545,7 +545,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 规则type，0：互联网规则，1：vpc规则，2：nat规则
+     * 规则类型，0：互联网规则，1：vpc规则，2：nat规则
      * @return type
      */
     public TypeEnum getType() {
@@ -562,7 +562,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 创建时间
+     * 规则创建时间，例如：\"2024-08-12 08:40:00\"
      * @return createdDate
      */
     public String getCreatedDate() {
@@ -579,7 +579,7 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     /**
-     * 最后开启时间
+     * 规则最后开启时间，例如：\"2024-08-12 08:40:00\"
      * @return lastOpenTime
      */
     public String getLastOpenTime() {

@@ -29,6 +29,11 @@ public class LogStreamResBody {
     private String logStreamName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_stream_name_alias")
+
+    private String logStreamNameAlias;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
     private Map<String, String> tag = null;
@@ -42,6 +47,31 @@ public class LogStreamResBody {
     @JsonProperty(value = "is_favorite")
 
     private Boolean isFavorite;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "whether_log_storage")
+
+    private Boolean whetherLogStorage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hot_cold_separation")
+
+    private Boolean hotColdSeparation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auth_web_tracking")
+
+    private Boolean authWebTracking;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ttl_in_days")
+
+    private Integer ttlInDays;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hot_storage_days")
+
+    private Integer hotStorageDays;
 
     public LogStreamResBody withCreationTime(Long creationTime) {
         this.creationTime = creationTime;
@@ -92,6 +122,23 @@ public class LogStreamResBody {
 
     public void setLogStreamName(String logStreamName) {
         this.logStreamName = logStreamName;
+    }
+
+    public LogStreamResBody withLogStreamNameAlias(String logStreamNameAlias) {
+        this.logStreamNameAlias = logStreamNameAlias;
+        return this;
+    }
+
+    /**
+     * 日志流别名
+     * @return logStreamNameAlias
+     */
+    public String getLogStreamNameAlias() {
+        return logStreamNameAlias;
+    }
+
+    public void setLogStreamNameAlias(String logStreamNameAlias) {
+        this.logStreamNameAlias = logStreamNameAlias;
     }
 
     public LogStreamResBody withTag(Map<String, String> tag) {
@@ -163,6 +210,91 @@ public class LogStreamResBody {
         this.isFavorite = isFavorite;
     }
 
+    public LogStreamResBody withWhetherLogStorage(Boolean whetherLogStorage) {
+        this.whetherLogStorage = whetherLogStorage;
+        return this;
+    }
+
+    /**
+     * 是否日志存储
+     * @return whetherLogStorage
+     */
+    public Boolean getWhetherLogStorage() {
+        return whetherLogStorage;
+    }
+
+    public void setWhetherLogStorage(Boolean whetherLogStorage) {
+        this.whetherLogStorage = whetherLogStorage;
+    }
+
+    public LogStreamResBody withHotColdSeparation(Boolean hotColdSeparation) {
+        this.hotColdSeparation = hotColdSeparation;
+        return this;
+    }
+
+    /**
+     * 是否冷存储
+     * @return hotColdSeparation
+     */
+    public Boolean getHotColdSeparation() {
+        return hotColdSeparation;
+    }
+
+    public void setHotColdSeparation(Boolean hotColdSeparation) {
+        this.hotColdSeparation = hotColdSeparation;
+    }
+
+    public LogStreamResBody withAuthWebTracking(Boolean authWebTracking) {
+        this.authWebTracking = authWebTracking;
+        return this;
+    }
+
+    /**
+     * 匿名写入开关
+     * @return authWebTracking
+     */
+    public Boolean getAuthWebTracking() {
+        return authWebTracking;
+    }
+
+    public void setAuthWebTracking(Boolean authWebTracking) {
+        this.authWebTracking = authWebTracking;
+    }
+
+    public LogStreamResBody withTtlInDays(Integer ttlInDays) {
+        this.ttlInDays = ttlInDays;
+        return this;
+    }
+
+    /**
+     * 存储时间
+     * @return ttlInDays
+     */
+    public Integer getTtlInDays() {
+        return ttlInDays;
+    }
+
+    public void setTtlInDays(Integer ttlInDays) {
+        this.ttlInDays = ttlInDays;
+    }
+
+    public LogStreamResBody withHotStorageDays(Integer hotStorageDays) {
+        this.hotStorageDays = hotStorageDays;
+        return this;
+    }
+
+    /**
+     * 标准存储时间
+     * @return hotStorageDays
+     */
+    public Integer getHotStorageDays() {
+        return hotStorageDays;
+    }
+
+    public void setHotStorageDays(Integer hotStorageDays) {
+        this.hotStorageDays = hotStorageDays;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -174,13 +306,30 @@ public class LogStreamResBody {
         LogStreamResBody that = (LogStreamResBody) obj;
         return Objects.equals(this.creationTime, that.creationTime)
             && Objects.equals(this.logStreamId, that.logStreamId)
-            && Objects.equals(this.logStreamName, that.logStreamName) && Objects.equals(this.tag, that.tag)
-            && Objects.equals(this.filterCount, that.filterCount) && Objects.equals(this.isFavorite, that.isFavorite);
+            && Objects.equals(this.logStreamName, that.logStreamName)
+            && Objects.equals(this.logStreamNameAlias, that.logStreamNameAlias) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.filterCount, that.filterCount) && Objects.equals(this.isFavorite, that.isFavorite)
+            && Objects.equals(this.whetherLogStorage, that.whetherLogStorage)
+            && Objects.equals(this.hotColdSeparation, that.hotColdSeparation)
+            && Objects.equals(this.authWebTracking, that.authWebTracking)
+            && Objects.equals(this.ttlInDays, that.ttlInDays)
+            && Objects.equals(this.hotStorageDays, that.hotStorageDays);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(creationTime, logStreamId, logStreamName, tag, filterCount, isFavorite);
+        return Objects.hash(creationTime,
+            logStreamId,
+            logStreamName,
+            logStreamNameAlias,
+            tag,
+            filterCount,
+            isFavorite,
+            whetherLogStorage,
+            hotColdSeparation,
+            authWebTracking,
+            ttlInDays,
+            hotStorageDays);
     }
 
     @Override
@@ -190,9 +339,15 @@ public class LogStreamResBody {
         sb.append("    creationTime: ").append(toIndentedString(creationTime)).append("\n");
         sb.append("    logStreamId: ").append(toIndentedString(logStreamId)).append("\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
+        sb.append("    logStreamNameAlias: ").append(toIndentedString(logStreamNameAlias)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    filterCount: ").append(toIndentedString(filterCount)).append("\n");
         sb.append("    isFavorite: ").append(toIndentedString(isFavorite)).append("\n");
+        sb.append("    whetherLogStorage: ").append(toIndentedString(whetherLogStorage)).append("\n");
+        sb.append("    hotColdSeparation: ").append(toIndentedString(hotColdSeparation)).append("\n");
+        sb.append("    authWebTracking: ").append(toIndentedString(authWebTracking)).append("\n");
+        sb.append("    ttlInDays: ").append(toIndentedString(ttlInDays)).append("\n");
+        sb.append("    hotStorageDays: ").append(toIndentedString(hotStorageDays)).append("\n");
         sb.append("}");
         return sb.toString();
     }

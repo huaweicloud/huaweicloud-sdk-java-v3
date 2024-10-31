@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteFacotrByIdsRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteFacotrByIdsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCaseRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestCaseResponse;
@@ -20,22 +22,37 @@ import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestReportRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchDeleteTestReportResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchRemoveTestCasesFromIteratorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchRemoveTestCasesFromIteratorResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchShowTestCaseRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.BatchShowTestCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateVersionTestCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchUpdateVersionTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BranchVersionInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.CaseRemoveInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.CheckPermissionRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CheckPermissionResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestAssetExportParam;
+import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestAssetTree;
+import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestBackUpMindmapParam;
+import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestGetDefaultTemplateParam;
 import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestListFactorParam;
+import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestListString;
+import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestMindmapBackupPageParam;
 import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestMindmapPageParamV3;
+import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestMindmapRecyclePageParam;
 import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestReviewPageParam;
+import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestSaveTemplateParam;
 import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestScenePageParam;
 import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestSystemConfig;
 import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestTemplatePageParam;
 import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestTestCasePageParam;
 import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestTestPointPageParam;
+import com.huaweicloud.sdk.cloudtest.v1.model.CommRequestUpdateAssetTreeParam;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateApiTestSuiteByRepoFileRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateApiTestSuiteByRepoFileResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateAssetTreeRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateAssetTreeResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateBackupMindmapRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateBackupMindmapResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateBasicAwReq;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateIteratorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateIteratorResponse;
@@ -52,6 +69,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.CreateResourceUriRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateResourceUriResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTemplateRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTemplateResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseInPlanRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseInPlanRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseInPlanResponse;
@@ -65,17 +84,39 @@ import com.huaweicloud.sdk.cloudtest.v1.model.CreateUserDefinedUrlKeyWordRespons
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateVersionTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateVersionTestCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DashboardDataQuery;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteAssetRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteAssetResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteAssetTreeRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteAssetTreeResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteBasicAwByIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteBasicAwByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteFacotrByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteFacotrByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteMindmapBackupByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteMindmapBackupByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteMindmapRecycleByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteMindmapRecycleByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteRelationsByOneCaseInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteRelationsByOneCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTemplateByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTemplateByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.DeleteTestCaseInfo;
+import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.DownloadAssetTemplateResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ExportFactorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.GenerateReportInfo;
+import com.huaweicloud.sdk.cloudtest.v1.model.ImportAssetRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ImportAssetRequestBody;
+import com.huaweicloud.sdk.cloudtest.v1.model.ImportAssetResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ImportFactorRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ImportFactorRequestBody;
+import com.huaweicloud.sdk.cloudtest.v1.model.ImportFactorResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.IssueTreeInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.IteratorVersionInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.IteratorVersionsQueryInfo;
@@ -175,6 +216,7 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListVariablesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListVariablesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.MsgInfoQuery;
 import com.huaweicloud.sdk.cloudtest.v1.model.OprReportInfo;
+import com.huaweicloud.sdk.cloudtest.v1.model.QueryCaseResultInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.QueryIssueTreeInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.QueryProjectIssuesRelationTestCasesInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.QueryRequirementsOverviewInfo;
@@ -207,8 +249,12 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowBackgroundInfoRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowBackgroundInfoResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowBranchRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowBranchResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowCaseResultRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowCaseResultResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowConcurrencyPackageUsingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowConcurrencyPackageUsingResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowDefaultTemplateByPageRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowDefaultTemplateByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowDisclaimerRecordRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowDisclaimerRecordResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowDomainInfoRequest;
@@ -235,10 +281,18 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowIteratorDetailRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowIteratorDetailResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindMapByIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindMapByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapBackupByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapBackupByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapBackupByPageRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapBackupByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapByPageRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapCreatorNameRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapCreatorNameResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapRecycleByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapRecycleByIdResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapRecycleByPageRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowMindmapRecycleByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowOperationalDataCurrentMonthUsingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowOperationalDataCurrentMonthUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowPlanJournalsRequest;
@@ -265,6 +319,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowStatisticByIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowStatisticByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowSystemConfigsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowSystemConfigsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTemplateByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTemplateByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTemplateByPageRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTemplateByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseAndDefectInfoRequest;
@@ -280,6 +336,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseReviewsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCaseReviewsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCasesChangeStatisticsRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestCasesChangeStatisticsResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByIdRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByPageRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestcaseByPageResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ShowTestpointByPageRequest;
@@ -297,11 +355,15 @@ import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanDetail;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanIssueDetail;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanJournalList;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestReportInfoRequestBody;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateAssetTreeRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateAssetTreeResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateBasicAwByIdRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateBasicAwByIdResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateBasicAwReq;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateIteratorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateIteratorResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateMindmapNameRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UpdateMindmapNameResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateServiceResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateTestCaseAndScriptRequest;
@@ -941,6 +1003,34 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBasicAwByIdRequest::getAwId, DeleteBasicAwByIdRequest::setAwId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFacotrByIdRequest, DeleteFacotrByIdResponse> deleteFacotrById =
+        genForDeleteFacotrById();
+
+    private static HttpRequestDef<DeleteFacotrByIdRequest, DeleteFacotrByIdResponse> genForDeleteFacotrById() {
+        // basic
+        HttpRequestDef.Builder<DeleteFacotrByIdRequest, DeleteFacotrByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFacotrByIdRequest.class, DeleteFacotrByIdResponse.class)
+                .withName("DeleteFacotrById")
+                .withUri("/v1/{project_id}/factor/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFacotrByIdRequest::getProjectId, DeleteFacotrByIdRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFacotrByIdRequest::getId, DeleteFacotrByIdRequest::setId));
 
         // response
 
@@ -2785,6 +2875,44 @@ public class CloudtestMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowCaseResultRequest, ShowCaseResultResponse> showCaseResult =
+        genForShowCaseResult();
+
+    private static HttpRequestDef<ShowCaseResultRequest, ShowCaseResultResponse> genForShowCaseResult() {
+        // basic
+        HttpRequestDef.Builder<ShowCaseResultRequest, ShowCaseResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowCaseResultRequest.class, ShowCaseResultResponse.class)
+                .withName("ShowCaseResult")
+                .withUri("/v4/{project_id}/versions/{version_uri}/testcases/{case_uri}/results/batch-query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCaseResultRequest::getProjectId, ShowCaseResultRequest::setProjectId));
+        builder.<String>withRequestField("version_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCaseResultRequest::getVersionUri, ShowCaseResultRequest::setVersionUri));
+        builder.<String>withRequestField("case_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCaseResultRequest::getCaseUri, ShowCaseResultRequest::setCaseUri));
+        builder.<QueryCaseResultInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(QueryCaseResultInfo.class),
+            f -> f.withMarshaller(ShowCaseResultRequest::getBody, ShowCaseResultRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowConcurrencyPackageUsingRequest, ShowConcurrencyPackageUsingResponse> showConcurrencyPackageUsing =
         genForShowConcurrencyPackageUsing();
 
@@ -2904,7 +3032,7 @@ public class CloudtestMeta {
         HttpRequestDef.Builder<ShowFactorByAssetIdRequest, ShowFactorByAssetIdResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, ShowFactorByAssetIdRequest.class, ShowFactorByAssetIdResponse.class)
                 .withName("ShowFactorByAssetId")
-                .withUri("/v1/{project_id}/factor/{asset_id}")
+                .withUri("/v1/{project_id}/factor/{id}")
                 .withContentType("application/json");
 
         // requests
@@ -2913,11 +3041,11 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFactorByAssetIdRequest::getProjectId, ShowFactorByAssetIdRequest::setProjectId));
-        builder.<String>withRequestField("asset_id",
+        builder.<String>withRequestField("id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowFactorByAssetIdRequest::getAssetId, ShowFactorByAssetIdRequest::setAssetId));
+            f -> f.withMarshaller(ShowFactorByAssetIdRequest::getId, ShowFactorByAssetIdRequest::setId));
         builder.<CommRequestListFactorParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
@@ -3695,6 +3823,34 @@ public class CloudtestMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowTemplateByIdRequest, ShowTemplateByIdResponse> showTemplateById =
+        genForShowTemplateById();
+
+    private static HttpRequestDef<ShowTemplateByIdRequest, ShowTemplateByIdResponse> genForShowTemplateById() {
+        // basic
+        HttpRequestDef.Builder<ShowTemplateByIdRequest, ShowTemplateByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTemplateByIdRequest.class, ShowTemplateByIdResponse.class)
+                .withName("ShowTemplateById")
+                .withUri("/v2/{project_id}/templates/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateByIdRequest::getProjectId, ShowTemplateByIdRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTemplateByIdRequest::getId, ShowTemplateByIdRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowTemplateByPageRequest, ShowTemplateByPageResponse> showTemplateByPage =
         genForShowTemplateByPage();
 
@@ -4408,6 +4564,660 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListEnvironmentsRequest::getLimit, ListEnvironmentsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteFacotrByIdsRequest, BatchDeleteFacotrByIdsResponse> batchDeleteFacotrByIds =
+        genForBatchDeleteFacotrByIds();
+
+    private static HttpRequestDef<BatchDeleteFacotrByIdsRequest, BatchDeleteFacotrByIdsResponse> genForBatchDeleteFacotrByIds() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteFacotrByIdsRequest, BatchDeleteFacotrByIdsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeleteFacotrByIdsRequest.class, BatchDeleteFacotrByIdsResponse.class)
+            .withName("BatchDeleteFacotrByIds")
+            .withUri("/v1/{project_id}/factor")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteFacotrByIdsRequest::getProjectId,
+                BatchDeleteFacotrByIdsRequest::setProjectId));
+        builder.<CommRequestListString>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CommRequestListString.class),
+            f -> f.withMarshaller(BatchDeleteFacotrByIdsRequest::getBody, BatchDeleteFacotrByIdsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchShowTestCaseRequest, BatchShowTestCaseResponse> batchShowTestCase =
+        genForBatchShowTestCase();
+
+    private static HttpRequestDef<BatchShowTestCaseRequest, BatchShowTestCaseResponse> genForBatchShowTestCase() {
+        // basic
+        HttpRequestDef.Builder<BatchShowTestCaseRequest, BatchShowTestCaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchShowTestCaseRequest.class, BatchShowTestCaseResponse.class)
+                .withName("BatchShowTestCase")
+                .withUri("/v3/{project_id}/testcases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchShowTestCaseRequest::getProjectId, BatchShowTestCaseRequest::setProjectId));
+        builder.<CommRequestTestCasePageParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CommRequestTestCasePageParam.class),
+            f -> f.withMarshaller(BatchShowTestCaseRequest::getBody, BatchShowTestCaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAssetTreeRequest, CreateAssetTreeResponse> createAssetTree =
+        genForCreateAssetTree();
+
+    private static HttpRequestDef<CreateAssetTreeRequest, CreateAssetTreeResponse> genForCreateAssetTree() {
+        // basic
+        HttpRequestDef.Builder<CreateAssetTreeRequest, CreateAssetTreeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAssetTreeRequest.class, CreateAssetTreeResponse.class)
+                .withName("CreateAssetTree")
+                .withUri("/v1/{project_id}/asset-tree/{asset_id}/{parent_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAssetTreeRequest::getProjectId, CreateAssetTreeRequest::setProjectId));
+        builder.<String>withRequestField("asset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAssetTreeRequest::getAssetId, CreateAssetTreeRequest::setAssetId));
+        builder.<String>withRequestField("parent_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAssetTreeRequest::getParentId, CreateAssetTreeRequest::setParentId));
+        builder.<CommRequestAssetTree>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CommRequestAssetTree.class),
+            f -> f.withMarshaller(CreateAssetTreeRequest::getBody, CreateAssetTreeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateBackupMindmapRequest, CreateBackupMindmapResponse> createBackupMindmap =
+        genForCreateBackupMindmap();
+
+    private static HttpRequestDef<CreateBackupMindmapRequest, CreateBackupMindmapResponse> genForCreateBackupMindmap() {
+        // basic
+        HttpRequestDef.Builder<CreateBackupMindmapRequest, CreateBackupMindmapResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateBackupMindmapRequest.class, CreateBackupMindmapResponse.class)
+                .withName("CreateBackupMindmap")
+                .withUri("/v2/{project_id}/mindmap-backups/backup")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBackupMindmapRequest::getProjectId, CreateBackupMindmapRequest::setProjectId));
+        builder.<CommRequestBackUpMindmapParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CommRequestBackUpMindmapParam.class),
+            f -> f.withMarshaller(CreateBackupMindmapRequest::getBody, CreateBackupMindmapRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> createTemplate =
+        genForCreateTemplate();
+
+    private static HttpRequestDef<CreateTemplateRequest, CreateTemplateResponse> genForCreateTemplate() {
+        // basic
+        HttpRequestDef.Builder<CreateTemplateRequest, CreateTemplateResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTemplateRequest.class, CreateTemplateResponse.class)
+                .withName("CreateTemplate")
+                .withUri("/v2/{project_id}/templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTemplateRequest::getProjectId, CreateTemplateRequest::setProjectId));
+        builder.<CommRequestSaveTemplateParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CommRequestSaveTemplateParam.class),
+            f -> f.withMarshaller(CreateTemplateRequest::getBody, CreateTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAssetRequest, DeleteAssetResponse> deleteAsset = genForDeleteAsset();
+
+    private static HttpRequestDef<DeleteAssetRequest, DeleteAssetResponse> genForDeleteAsset() {
+        // basic
+        HttpRequestDef.Builder<DeleteAssetRequest, DeleteAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAssetRequest.class, DeleteAssetResponse.class)
+                .withName("DeleteAsset")
+                .withUri("/v1/{project_id}/asset/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetRequest::getProjectId, DeleteAssetRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetRequest::getId, DeleteAssetRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAssetTreeRequest, DeleteAssetTreeResponse> deleteAssetTree =
+        genForDeleteAssetTree();
+
+    private static HttpRequestDef<DeleteAssetTreeRequest, DeleteAssetTreeResponse> genForDeleteAssetTree() {
+        // basic
+        HttpRequestDef.Builder<DeleteAssetTreeRequest, DeleteAssetTreeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAssetTreeRequest.class, DeleteAssetTreeResponse.class)
+                .withName("DeleteAssetTree")
+                .withUri("/v1/{project_id}/asset-tree/{asset_id}/{parent_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetTreeRequest::getProjectId, DeleteAssetTreeRequest::setProjectId));
+        builder.<String>withRequestField("asset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetTreeRequest::getAssetId, DeleteAssetTreeRequest::setAssetId));
+        builder.<String>withRequestField("parent_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAssetTreeRequest::getParentId, DeleteAssetTreeRequest::setParentId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMindmapBackupByIdRequest, DeleteMindmapBackupByIdResponse> deleteMindmapBackupById =
+        genForDeleteMindmapBackupById();
+
+    private static HttpRequestDef<DeleteMindmapBackupByIdRequest, DeleteMindmapBackupByIdResponse> genForDeleteMindmapBackupById() {
+        // basic
+        HttpRequestDef.Builder<DeleteMindmapBackupByIdRequest, DeleteMindmapBackupByIdResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteMindmapBackupByIdRequest.class, DeleteMindmapBackupByIdResponse.class)
+            .withName("DeleteMindmapBackupById")
+            .withUri("/v2/{project_id}/mindmap-backups/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMindmapBackupByIdRequest::getProjectId,
+                DeleteMindmapBackupByIdRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMindmapBackupByIdRequest::getId, DeleteMindmapBackupByIdRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMindmapRecycleByIdRequest, DeleteMindmapRecycleByIdResponse> deleteMindmapRecycleById =
+        genForDeleteMindmapRecycleById();
+
+    private static HttpRequestDef<DeleteMindmapRecycleByIdRequest, DeleteMindmapRecycleByIdResponse> genForDeleteMindmapRecycleById() {
+        // basic
+        HttpRequestDef.Builder<DeleteMindmapRecycleByIdRequest, DeleteMindmapRecycleByIdResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteMindmapRecycleByIdRequest.class,
+                    DeleteMindmapRecycleByIdResponse.class)
+                .withName("DeleteMindmapRecycleById")
+                .withUri("/v2/{project_id}/mindmap-recycles/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMindmapRecycleByIdRequest::getProjectId,
+                DeleteMindmapRecycleByIdRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMindmapRecycleByIdRequest::getId, DeleteMindmapRecycleByIdRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTemplateByIdRequest, DeleteTemplateByIdResponse> deleteTemplateById =
+        genForDeleteTemplateById();
+
+    private static HttpRequestDef<DeleteTemplateByIdRequest, DeleteTemplateByIdResponse> genForDeleteTemplateById() {
+        // basic
+        HttpRequestDef.Builder<DeleteTemplateByIdRequest, DeleteTemplateByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTemplateByIdRequest.class, DeleteTemplateByIdResponse.class)
+                .withName("DeleteTemplateById")
+                .withUri("/v2/{project_id}/templates/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateByIdRequest::getProjectId, DeleteTemplateByIdRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTemplateByIdRequest::getId, DeleteTemplateByIdRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadAssetTemplateRequest, DownloadAssetTemplateResponse> downloadAssetTemplate =
+        genForDownloadAssetTemplate();
+
+    private static HttpRequestDef<DownloadAssetTemplateRequest, DownloadAssetTemplateResponse> genForDownloadAssetTemplate() {
+        // basic
+        HttpRequestDef.Builder<DownloadAssetTemplateRequest, DownloadAssetTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, DownloadAssetTemplateRequest.class, DownloadAssetTemplateResponse.class)
+            .withName("DownloadAssetTemplate")
+            .withUri("/v1/{project_id}/asset/template")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadAssetTemplateRequest::getProjectId,
+                DownloadAssetTemplateRequest::setProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportFactorRequest, ExportFactorResponse> exportFactor = genForExportFactor();
+
+    private static HttpRequestDef<ExportFactorRequest, ExportFactorResponse> genForExportFactor() {
+        // basic
+        HttpRequestDef.Builder<ExportFactorRequest, ExportFactorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExportFactorRequest.class, ExportFactorResponse.class)
+                .withName("ExportFactor")
+                .withUri("/v1/{project_id}/asset/{asset_id}/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFactorRequest::getProjectId, ExportFactorRequest::setProjectId));
+        builder.<String>withRequestField("asset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFactorRequest::getAssetId, ExportFactorRequest::setAssetId));
+        builder.<CommRequestAssetExportParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CommRequestAssetExportParam.class),
+            f -> f.withMarshaller(ExportFactorRequest::getBody, ExportFactorRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportAssetRequest, ImportAssetResponse> importAsset = genForImportAsset();
+
+    private static HttpRequestDef<ImportAssetRequest, ImportAssetResponse> genForImportAsset() {
+        // basic
+        HttpRequestDef.Builder<ImportAssetRequest, ImportAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportAssetRequest.class, ImportAssetResponse.class)
+                .withName("ImportAsset")
+                .withUri("/v1/{project_id}/asset/import")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportAssetRequest::getProjectId, ImportAssetRequest::setProjectId));
+        builder.<ImportAssetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportAssetRequestBody.class),
+            f -> f.withMarshaller(ImportAssetRequest::getBody, ImportAssetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportFactorRequest, ImportFactorResponse> importFactor = genForImportFactor();
+
+    private static HttpRequestDef<ImportFactorRequest, ImportFactorResponse> genForImportFactor() {
+        // basic
+        HttpRequestDef.Builder<ImportFactorRequest, ImportFactorResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ImportFactorRequest.class, ImportFactorResponse.class)
+                .withName("ImportFactor")
+                .withUri("/v1/{project_id}/asset/{asset_id}/import")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportFactorRequest::getProjectId, ImportFactorRequest::setProjectId));
+        builder.<String>withRequestField("asset_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportFactorRequest::getAssetId, ImportFactorRequest::setAssetId));
+        builder.<ImportFactorRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportFactorRequestBody.class),
+            f -> f.withMarshaller(ImportFactorRequest::getBody, ImportFactorRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDefaultTemplateByPageRequest, ShowDefaultTemplateByPageResponse> showDefaultTemplateByPage =
+        genForShowDefaultTemplateByPage();
+
+    private static HttpRequestDef<ShowDefaultTemplateByPageRequest, ShowDefaultTemplateByPageResponse> genForShowDefaultTemplateByPage() {
+        // basic
+        HttpRequestDef.Builder<ShowDefaultTemplateByPageRequest, ShowDefaultTemplateByPageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ShowDefaultTemplateByPageRequest.class,
+                    ShowDefaultTemplateByPageResponse.class)
+                .withName("ShowDefaultTemplateByPage")
+                .withUri("/v2/{project_id}/templates/templates-default")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDefaultTemplateByPageRequest::getProjectId,
+                ShowDefaultTemplateByPageRequest::setProjectId));
+        builder.<CommRequestGetDefaultTemplateParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CommRequestGetDefaultTemplateParam.class),
+            f -> f.withMarshaller(ShowDefaultTemplateByPageRequest::getBody,
+                ShowDefaultTemplateByPageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMindmapBackupByIdRequest, ShowMindmapBackupByIdResponse> showMindmapBackupById =
+        genForShowMindmapBackupById();
+
+    private static HttpRequestDef<ShowMindmapBackupByIdRequest, ShowMindmapBackupByIdResponse> genForShowMindmapBackupById() {
+        // basic
+        HttpRequestDef.Builder<ShowMindmapBackupByIdRequest, ShowMindmapBackupByIdResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowMindmapBackupByIdRequest.class, ShowMindmapBackupByIdResponse.class)
+            .withName("ShowMindmapBackupById")
+            .withUri("/v2/{project_id}/mindmap-backups/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMindmapBackupByIdRequest::getProjectId,
+                ShowMindmapBackupByIdRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMindmapBackupByIdRequest::getId, ShowMindmapBackupByIdRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMindmapBackupByPageRequest, ShowMindmapBackupByPageResponse> showMindmapBackupByPage =
+        genForShowMindmapBackupByPage();
+
+    private static HttpRequestDef<ShowMindmapBackupByPageRequest, ShowMindmapBackupByPageResponse> genForShowMindmapBackupByPage() {
+        // basic
+        HttpRequestDef.Builder<ShowMindmapBackupByPageRequest, ShowMindmapBackupByPageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowMindmapBackupByPageRequest.class, ShowMindmapBackupByPageResponse.class)
+            .withName("ShowMindmapBackupByPage")
+            .withUri("/v3/{project_id}/mindmap-backups/page")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMindmapBackupByPageRequest::getProjectId,
+                ShowMindmapBackupByPageRequest::setProjectId));
+        builder.<CommRequestMindmapBackupPageParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CommRequestMindmapBackupPageParam.class),
+            f -> f.withMarshaller(ShowMindmapBackupByPageRequest::getBody, ShowMindmapBackupByPageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMindmapRecycleByIdRequest, ShowMindmapRecycleByIdResponse> showMindmapRecycleById =
+        genForShowMindmapRecycleById();
+
+    private static HttpRequestDef<ShowMindmapRecycleByIdRequest, ShowMindmapRecycleByIdResponse> genForShowMindmapRecycleById() {
+        // basic
+        HttpRequestDef.Builder<ShowMindmapRecycleByIdRequest, ShowMindmapRecycleByIdResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowMindmapRecycleByIdRequest.class, ShowMindmapRecycleByIdResponse.class)
+            .withName("ShowMindmapRecycleById")
+            .withUri("/v2/{project_id}/mindmap-recycles/{id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMindmapRecycleByIdRequest::getProjectId,
+                ShowMindmapRecycleByIdRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMindmapRecycleByIdRequest::getId, ShowMindmapRecycleByIdRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMindmapRecycleByPageRequest, ShowMindmapRecycleByPageResponse> showMindmapRecycleByPage =
+        genForShowMindmapRecycleByPage();
+
+    private static HttpRequestDef<ShowMindmapRecycleByPageRequest, ShowMindmapRecycleByPageResponse> genForShowMindmapRecycleByPage() {
+        // basic
+        HttpRequestDef.Builder<ShowMindmapRecycleByPageRequest, ShowMindmapRecycleByPageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ShowMindmapRecycleByPageRequest.class, ShowMindmapRecycleByPageResponse.class)
+                .withName("ShowMindmapRecycleByPage")
+                .withUri("/v3/{project_id}/mindmap-recycles/page")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMindmapRecycleByPageRequest::getProjectId,
+                ShowMindmapRecycleByPageRequest::setProjectId));
+        builder.<CommRequestMindmapRecyclePageParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CommRequestMindmapRecyclePageParam.class),
+            f -> f.withMarshaller(ShowMindmapRecycleByPageRequest::getBody, ShowMindmapRecycleByPageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTestcaseByIdRequest, ShowTestcaseByIdResponse> showTestcaseById =
+        genForShowTestcaseById();
+
+    private static HttpRequestDef<ShowTestcaseByIdRequest, ShowTestcaseByIdResponse> genForShowTestcaseById() {
+        // basic
+        HttpRequestDef.Builder<ShowTestcaseByIdRequest, ShowTestcaseByIdResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTestcaseByIdRequest.class, ShowTestcaseByIdResponse.class)
+                .withName("ShowTestcaseById")
+                .withUri("/v2/{project_id}/testcases/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTestcaseByIdRequest::getProjectId, ShowTestcaseByIdRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTestcaseByIdRequest::getId, ShowTestcaseByIdRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAssetTreeRequest, UpdateAssetTreeResponse> updateAssetTree =
+        genForUpdateAssetTree();
+
+    private static HttpRequestDef<UpdateAssetTreeRequest, UpdateAssetTreeResponse> genForUpdateAssetTree() {
+        // basic
+        HttpRequestDef.Builder<UpdateAssetTreeRequest, UpdateAssetTreeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAssetTreeRequest.class, UpdateAssetTreeResponse.class)
+                .withName("UpdateAssetTree")
+                .withUri("/v1/{project_id}/asset-tree")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAssetTreeRequest::getProjectId, UpdateAssetTreeRequest::setProjectId));
+        builder.<CommRequestUpdateAssetTreeParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CommRequestUpdateAssetTreeParam.class),
+            f -> f.withMarshaller(UpdateAssetTreeRequest::getBody, UpdateAssetTreeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateMindmapNameRequest, UpdateMindmapNameResponse> updateMindmapName =
+        genForUpdateMindmapName();
+
+    private static HttpRequestDef<UpdateMindmapNameRequest, UpdateMindmapNameResponse> genForUpdateMindmapName() {
+        // basic
+        HttpRequestDef.Builder<UpdateMindmapNameRequest, UpdateMindmapNameResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateMindmapNameRequest.class, UpdateMindmapNameResponse.class)
+                .withName("UpdateMindmapName")
+                .withUri("/v1/{project_id}/mindmaps/{id}/name")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMindmapNameRequest::getProjectId, UpdateMindmapNameRequest::setProjectId));
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMindmapNameRequest::getId, UpdateMindmapNameRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMindmapNameRequest::getName, UpdateMindmapNameRequest::setName));
 
         // response
 
