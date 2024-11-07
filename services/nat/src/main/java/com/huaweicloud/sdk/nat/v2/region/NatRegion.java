@@ -73,6 +73,8 @@ public class NatRegion {
     public static final Region MY_KUALALUMPUR_1 =
         new Region("my-kualalumpur-1", "https://nat.my-kualalumpur-1.myhuaweicloud.com");
 
+    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://nat.ru-moscow-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("NAT");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -105,6 +107,7 @@ public class NatRegion {
         map.put("cn-south-4", CN_SOUTH_4);
         map.put("eu-west-101", EU_WEST_101);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }
 

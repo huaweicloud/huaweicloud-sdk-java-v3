@@ -35,6 +35,16 @@ public class UpgradeInstanceData {
 
     private Integer bindDomainNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_service_bandwidth_type")
+
+    private Integer elasticServiceBandwidthType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "elastic_service_bandwidth")
+
+    private Integer elasticServiceBandwidth;
+
     public UpgradeInstanceData withBasicBandwidth(String basicBandwidth) {
         this.basicBandwidth = basicBandwidth;
         return this;
@@ -120,6 +130,40 @@ public class UpgradeInstanceData {
         this.bindDomainNum = bindDomainNum;
     }
 
+    public UpgradeInstanceData withElasticServiceBandwidthType(Integer elasticServiceBandwidthType) {
+        this.elasticServiceBandwidthType = elasticServiceBandwidthType;
+        return this;
+    }
+
+    /**
+     * 弹性业务带宽,0-关闭，3-月95
+     * @return elasticServiceBandwidthType
+     */
+    public Integer getElasticServiceBandwidthType() {
+        return elasticServiceBandwidthType;
+    }
+
+    public void setElasticServiceBandwidthType(Integer elasticServiceBandwidthType) {
+        this.elasticServiceBandwidthType = elasticServiceBandwidthType;
+    }
+
+    public UpgradeInstanceData withElasticServiceBandwidth(Integer elasticServiceBandwidth) {
+        this.elasticServiceBandwidth = elasticServiceBandwidth;
+        return this;
+    }
+
+    /**
+     * 弹性业务带宽增加值
+     * @return elasticServiceBandwidth
+     */
+    public Integer getElasticServiceBandwidth() {
+        return elasticServiceBandwidth;
+    }
+
+    public void setElasticServiceBandwidth(Integer elasticServiceBandwidth) {
+        this.elasticServiceBandwidth = elasticServiceBandwidth;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -132,12 +176,20 @@ public class UpgradeInstanceData {
         return Objects.equals(this.basicBandwidth, that.basicBandwidth)
             && Objects.equals(this.elasticBandwidth, that.elasticBandwidth)
             && Objects.equals(this.serviceBandwidth, that.serviceBandwidth)
-            && Objects.equals(this.portNum, that.portNum) && Objects.equals(this.bindDomainNum, that.bindDomainNum);
+            && Objects.equals(this.portNum, that.portNum) && Objects.equals(this.bindDomainNum, that.bindDomainNum)
+            && Objects.equals(this.elasticServiceBandwidthType, that.elasticServiceBandwidthType)
+            && Objects.equals(this.elasticServiceBandwidth, that.elasticServiceBandwidth);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basicBandwidth, elasticBandwidth, serviceBandwidth, portNum, bindDomainNum);
+        return Objects.hash(basicBandwidth,
+            elasticBandwidth,
+            serviceBandwidth,
+            portNum,
+            bindDomainNum,
+            elasticServiceBandwidthType,
+            elasticServiceBandwidth);
     }
 
     @Override
@@ -149,6 +201,10 @@ public class UpgradeInstanceData {
         sb.append("    serviceBandwidth: ").append(toIndentedString(serviceBandwidth)).append("\n");
         sb.append("    portNum: ").append(toIndentedString(portNum)).append("\n");
         sb.append("    bindDomainNum: ").append(toIndentedString(bindDomainNum)).append("\n");
+        sb.append("    elasticServiceBandwidthType: ")
+            .append(toIndentedString(elasticServiceBandwidthType))
+            .append("\n");
+        sb.append("    elasticServiceBandwidth: ").append(toIndentedString(elasticServiceBandwidth)).append("\n");
         sb.append("}");
         return sb.toString();
     }

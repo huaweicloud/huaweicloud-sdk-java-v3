@@ -31,6 +31,11 @@ public class CreateExtractTaskReq {
 
     private Integer sync;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encryption")
+
+    private Encryption encryption;
+
     public CreateExtractTaskReq withInput(ObsObjInfo input) {
         this.input = input;
         return this;
@@ -119,6 +124,32 @@ public class CreateExtractTaskReq {
         this.sync = sync;
     }
 
+    public CreateExtractTaskReq withEncryption(Encryption encryption) {
+        this.encryption = encryption;
+        return this;
+    }
+
+    public CreateExtractTaskReq withEncryption(Consumer<Encryption> encryptionSetter) {
+        if (this.encryption == null) {
+            this.encryption = new Encryption();
+            encryptionSetter.accept(this.encryption);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get encryption
+     * @return encryption
+     */
+    public Encryption getEncryption() {
+        return encryption;
+    }
+
+    public void setEncryption(Encryption encryption) {
+        this.encryption = encryption;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -129,12 +160,13 @@ public class CreateExtractTaskReq {
         }
         CreateExtractTaskReq that = (CreateExtractTaskReq) obj;
         return Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
-            && Objects.equals(this.userData, that.userData) && Objects.equals(this.sync, that.sync);
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.sync, that.sync)
+            && Objects.equals(this.encryption, that.encryption);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(input, output, userData, sync);
+        return Objects.hash(input, output, userData, sync, encryption);
     }
 
     @Override
@@ -145,6 +177,7 @@ public class CreateExtractTaskReq {
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    sync: ").append(toIndentedString(sync)).append("\n");
+        sb.append("    encryption: ").append(toIndentedString(encryption)).append("\n");
         sb.append("}");
         return sb.toString();
     }

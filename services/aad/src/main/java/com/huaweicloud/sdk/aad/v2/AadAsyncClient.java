@@ -87,6 +87,35 @@ public class AadAsyncClient {
     }
 
     /**
+     * 删除防护域名
+     *
+     * 删除防护域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainRequest 请求对象
+     * @return CompletableFuture<DeleteDomainResponse>
+     */
+    public CompletableFuture<DeleteDomainResponse> deleteDomainAsync(DeleteDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.deleteDomain);
+    }
+
+    /**
+     * 删除防护域名
+     *
+     * 删除防护域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainRequest 请求对象
+     * @return AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse>
+     */
+    public AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainAsyncInvoker(
+        DeleteDomainRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.deleteDomain, hcClient);
+    }
+
+    /**
      * 查询DDoS攻击事件列表
      *
      * 查询DDoS攻击事件列表
@@ -579,35 +608,6 @@ public class AadAsyncClient {
     public AsyncInvoker<UpgradeInstanceSpecRequest, UpgradeInstanceSpecResponse> upgradeInstanceSpecAsyncInvoker(
         UpgradeInstanceSpecRequest request) {
         return new AsyncInvoker<>(request, AadMeta.upgradeInstanceSpec, hcClient);
-    }
-
-    /**
-     * 删除防护域名
-     *
-     * 删除防护域名
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteDomainRequest 请求对象
-     * @return CompletableFuture<DeleteDomainResponse>
-     */
-    public CompletableFuture<DeleteDomainResponse> deleteDomainAsync(DeleteDomainRequest request) {
-        return hcClient.asyncInvokeHttp(request, AadMeta.deleteDomain);
-    }
-
-    /**
-     * 删除防护域名
-     *
-     * 删除防护域名
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteDomainRequest 请求对象
-     * @return AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse>
-     */
-    public AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainAsyncInvoker(
-        DeleteDomainRequest request) {
-        return new AsyncInvoker<>(request, AadMeta.deleteDomain, hcClient);
     }
 
 }

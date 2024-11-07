@@ -108,7 +108,7 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
 
-    private QueryError error;
+    private List<QueryError> error = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "whitelist")
@@ -509,17 +509,24 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
         this.tags = tags;
     }
 
-    public ListEndpointInfoDetailsResponse withError(QueryError error) {
+    public ListEndpointInfoDetailsResponse withError(List<QueryError> error) {
         this.error = error;
         return this;
     }
 
-    public ListEndpointInfoDetailsResponse withError(Consumer<QueryError> errorSetter) {
+    public ListEndpointInfoDetailsResponse addErrorItem(QueryError errorItem) {
         if (this.error == null) {
-            this.error = new QueryError();
-            errorSetter.accept(this.error);
+            this.error = new ArrayList<>();
         }
+        this.error.add(errorItem);
+        return this;
+    }
 
+    public ListEndpointInfoDetailsResponse withError(Consumer<List<QueryError>> errorSetter) {
+        if (this.error == null) {
+            this.error = new ArrayList<>();
+        }
+        errorSetter.accept(this.error);
         return this;
     }
 
@@ -527,11 +534,11 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
      * Get error
      * @return error
      */
-    public QueryError getError() {
+    public List<QueryError> getError() {
         return error;
     }
 
-    public void setError(QueryError error) {
+    public void setError(List<QueryError> error) {
         this.error = error;
     }
 

@@ -21,13 +21,18 @@ public class CreateInstanceResponse extends SdkResponse {
 
     private String orderId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
     public CreateInstanceResponse withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 实例ID。创建按需付费实例时返回该参数。
+     * 实例ID，创建按需付费实例时返回该参数。
      * @return id
      */
     public String getId() {
@@ -55,6 +60,23 @@ public class CreateInstanceResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
+    public CreateInstanceResponse withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * 任务id，创建按需付费实例时返回该参数
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,13 @@ public class CreateInstanceResponse extends SdkResponse {
             return false;
         }
         CreateInstanceResponse that = (CreateInstanceResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.orderId, that.orderId);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, orderId);
+        return Objects.hash(id, orderId, jobId);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class CreateInstanceResponse extends SdkResponse {
         sb.append("class CreateInstanceResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

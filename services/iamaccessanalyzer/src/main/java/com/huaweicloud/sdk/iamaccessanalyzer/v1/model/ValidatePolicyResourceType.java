@@ -13,11 +13,6 @@ import java.util.Map;
 public class ValidatePolicyResourceType {
 
     /**
-     * Enum OBS_BUCKET for value: "obs:bucket"
-     */
-    public static final ValidatePolicyResourceType OBS_BUCKET = new ValidatePolicyResourceType("obs:bucket");
-
-    /**
      * Enum IAM_AGENCY for value: "iam:agency"
      */
     public static final ValidatePolicyResourceType IAM_AGENCY = new ValidatePolicyResourceType("iam:agency");
@@ -26,7 +21,6 @@ public class ValidatePolicyResourceType {
 
     private static Map<String, ValidatePolicyResourceType> createStaticFields() {
         Map<String, ValidatePolicyResourceType> map = new HashMap<>();
-        map.put("obs:bucket", OBS_BUCKET);
         map.put("iam:agency", IAM_AGENCY);
         return Collections.unmodifiableMap(map);
     }

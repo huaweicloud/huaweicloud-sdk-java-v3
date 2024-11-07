@@ -50,6 +50,12 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
 
     private RunTimeInfo runTimeInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ttl_options")
+    @BsonProperty(value = "ttl_options")
+
+    private TtlOptions ttlOptions;
+
     private static Codec<DescribeTableResponse> codec;
 
     public DescribeTableResponse withTableName(String tableName) {
@@ -190,6 +196,32 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
         this.runTimeInfo = runTimeInfo;
     }
 
+    public DescribeTableResponse withTtlOptions(TtlOptions ttlOptions) {
+        this.ttlOptions = ttlOptions;
+        return this;
+    }
+
+    public DescribeTableResponse withTtlOptions(Consumer<TtlOptions> ttlOptionsSetter) {
+        if (this.ttlOptions == null) {
+            this.ttlOptions = new TtlOptions();
+            ttlOptionsSetter.accept(this.ttlOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get ttlOptions
+     * @return ttlOptions
+     */
+    public TtlOptions getTtlOptions() {
+        return ttlOptions;
+    }
+
+    public void setTtlOptions(TtlOptions ttlOptions) {
+        this.ttlOptions = ttlOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -203,13 +235,17 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
             && Objects.equals(this.primaryKeySchema, that.primaryKeySchema)
             && Objects.equals(this.localSecondaryIndexSchema, that.localSecondaryIndexSchema)
             && Objects.equals(this.globalSecondaryIndexSchema, that.globalSecondaryIndexSchema)
-            && Objects.equals(this.runTimeInfo, that.runTimeInfo);
+            && Objects.equals(this.runTimeInfo, that.runTimeInfo) && Objects.equals(this.ttlOptions, that.ttlOptions);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(tableName, primaryKeySchema, localSecondaryIndexSchema, globalSecondaryIndexSchema, runTimeInfo);
+        return Objects.hash(tableName,
+            primaryKeySchema,
+            localSecondaryIndexSchema,
+            globalSecondaryIndexSchema,
+            runTimeInfo,
+            ttlOptions);
     }
 
     @Override
@@ -221,6 +257,7 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
         sb.append("    localSecondaryIndexSchema: ").append(toIndentedString(localSecondaryIndexSchema)).append("\n");
         sb.append("    globalSecondaryIndexSchema: ").append(toIndentedString(globalSecondaryIndexSchema)).append("\n");
         sb.append("    runTimeInfo: ").append(toIndentedString(runTimeInfo)).append("\n");
+        sb.append("    ttlOptions: ").append(toIndentedString(ttlOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

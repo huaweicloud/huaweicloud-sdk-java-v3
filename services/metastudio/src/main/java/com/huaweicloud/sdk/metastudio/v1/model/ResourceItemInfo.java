@@ -451,7 +451,7 @@ public class ResourceItemInfo {
     }
 
     /**
-     * 资源类型。resource_spec_code/quota字段。
+     * 资源类型。详见[资源类型](metastudio_02_0042.xml)。
      * @return resourceType
      */
     public String getResourceType() {
@@ -485,7 +485,7 @@ public class ResourceItemInfo {
     }
 
     /**
-     * 子资源类型。
+     * 子资源类型。当前只有flexus套餐包存在该字段 * voice_clone_flexus: 语音克隆Flexus版 * modeling_count_2d_model_flexus: 分身数字人形象制作Flexus版 * video_time_flexus_2d_model: 分身数字人Flexus版本视频制作
      * @return subResourceType
      */
     public String getSubResourceType() {

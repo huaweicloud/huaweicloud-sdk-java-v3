@@ -26,6 +26,11 @@ public class FindingDetails {
 
     private UnusedIamUserPasswordDetails unusedIamUserPasswordDetails;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "unused_permission_details")
+
+    private UnusedPermissionDetails unusedPermissionDetails;
+
     public FindingDetails withExternalAccessDetails(ExternalAccessDetails externalAccessDetails) {
         this.externalAccessDetails = externalAccessDetails;
         return this;
@@ -107,6 +112,32 @@ public class FindingDetails {
         this.unusedIamUserPasswordDetails = unusedIamUserPasswordDetails;
     }
 
+    public FindingDetails withUnusedPermissionDetails(UnusedPermissionDetails unusedPermissionDetails) {
+        this.unusedPermissionDetails = unusedPermissionDetails;
+        return this;
+    }
+
+    public FindingDetails withUnusedPermissionDetails(Consumer<UnusedPermissionDetails> unusedPermissionDetailsSetter) {
+        if (this.unusedPermissionDetails == null) {
+            this.unusedPermissionDetails = new UnusedPermissionDetails();
+            unusedPermissionDetailsSetter.accept(this.unusedPermissionDetails);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get unusedPermissionDetails
+     * @return unusedPermissionDetails
+     */
+    public UnusedPermissionDetails getUnusedPermissionDetails() {
+        return unusedPermissionDetails;
+    }
+
+    public void setUnusedPermissionDetails(UnusedPermissionDetails unusedPermissionDetails) {
+        this.unusedPermissionDetails = unusedPermissionDetails;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -118,12 +149,16 @@ public class FindingDetails {
         FindingDetails that = (FindingDetails) obj;
         return Objects.equals(this.externalAccessDetails, that.externalAccessDetails)
             && Objects.equals(this.unusedIamUserAccessKeyDetails, that.unusedIamUserAccessKeyDetails)
-            && Objects.equals(this.unusedIamUserPasswordDetails, that.unusedIamUserPasswordDetails);
+            && Objects.equals(this.unusedIamUserPasswordDetails, that.unusedIamUserPasswordDetails)
+            && Objects.equals(this.unusedPermissionDetails, that.unusedPermissionDetails);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(externalAccessDetails, unusedIamUserAccessKeyDetails, unusedIamUserPasswordDetails);
+        return Objects.hash(externalAccessDetails,
+            unusedIamUserAccessKeyDetails,
+            unusedIamUserPasswordDetails,
+            unusedPermissionDetails);
     }
 
     @Override
@@ -137,6 +172,7 @@ public class FindingDetails {
         sb.append("    unusedIamUserPasswordDetails: ")
             .append(toIndentedString(unusedIamUserPasswordDetails))
             .append("\n");
+        sb.append("    unusedPermissionDetails: ").append(toIndentedString(unusedPermissionDetails)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -385,7 +385,7 @@ public class ResourceUsageInfo {
     }
 
     /**
-     * 资源类型。resource_spec_code/quota字段。
+     * 资源类型。详见[资源类型](metastudio_02_0042.xml)。
      * @return resourceType
      */
     public String getResourceType() {

@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvResponse;
+import com.huaweicloud.sdk.kvs.v1.model.CheckHealthRequest;
+import com.huaweicloud.sdk.kvs.v1.model.CheckHealthResponse;
 import com.huaweicloud.sdk.kvs.v1.model.CreateTableRequest;
 import com.huaweicloud.sdk.kvs.v1.model.CreateTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.DeleteKvRequest;
@@ -109,6 +111,23 @@ public class KvsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTableRequest::getStoreName, ListTableRequest::setStoreName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckHealthRequest, CheckHealthResponse> checkHealth = genForCheckHealth();
+
+    private static HttpRequestDef<CheckHealthRequest, CheckHealthResponse> genForCheckHealth() {
+        // basic
+        HttpRequestDef.Builder<CheckHealthRequest, CheckHealthResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckHealthRequest.class, CheckHealthResponse.class)
+                .withName("CheckHealth")
+                .withUri("/v1/check-health")
+                .withContentType("application/bson");
+
+        // requests
 
         // response
 

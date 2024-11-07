@@ -12,6 +12,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckWeekPasswordRequest;
@@ -331,6 +334,33 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchTagActionRequestBody.class),
             f -> f.withMarshaller(BatchTagActionRequest::getBody, BatchTagActionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse> batchUpgradeDatabaseVersion =
+        genForBatchUpgradeDatabaseVersion();
+
+    private static HttpRequestDef<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse> genForBatchUpgradeDatabaseVersion() {
+        // basic
+        HttpRequestDef.Builder<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchUpgradeDatabaseVersionRequest.class,
+                    BatchUpgradeDatabaseVersionResponse.class)
+                .withName("BatchUpgradeDatabaseVersion")
+                .withUri("/v3/{project_id}/instances/db-upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchUpgradeDatabaseVersionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpgradeDatabaseVersionRequestBody.class),
+            f -> f.withMarshaller(BatchUpgradeDatabaseVersionRequest::getBody,
+                BatchUpgradeDatabaseVersionRequest::setBody));
 
         // response
 

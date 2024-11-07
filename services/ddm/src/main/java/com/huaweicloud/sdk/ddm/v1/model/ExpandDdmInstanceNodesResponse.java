@@ -12,11 +12,6 @@ import java.util.Objects;
 public class ExpandDdmInstanceNodesResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
-
-    private String instanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
     private String jobId;
@@ -25,23 +20,6 @@ public class ExpandDdmInstanceNodesResponse extends SdkResponse {
     @JsonProperty(value = "order_id")
 
     private String orderId;
-
-    public ExpandDdmInstanceNodesResponse withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-
-    /**
-     * DDM实例ID。
-     * @return instanceId
-     */
-    public String getInstanceId() {
-        return instanceId;
-    }
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
 
     public ExpandDdmInstanceNodesResponse withJobId(String jobId) {
         this.jobId = jobId;
@@ -86,20 +64,18 @@ public class ExpandDdmInstanceNodesResponse extends SdkResponse {
             return false;
         }
         ExpandDdmInstanceNodesResponse that = (ExpandDdmInstanceNodesResponse) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.jobId, that.jobId)
-            && Objects.equals(this.orderId, that.orderId);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, jobId, orderId);
+        return Objects.hash(jobId, orderId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExpandDdmInstanceNodesResponse {\n");
-        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");

@@ -27,6 +27,11 @@ public class FindingType {
      */
     public static final FindingType UNUSED_IAM_USER_PASSWORD = new FindingType("unused_iam_user_password");
 
+    /**
+     * Enum UNUSED_PERMISSION for value: "unused_permission"
+     */
+    public static final FindingType UNUSED_PERMISSION = new FindingType("unused_permission");
+
     private static final Map<String, FindingType> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, FindingType> createStaticFields() {
@@ -34,6 +39,7 @@ public class FindingType {
         map.put("external_access", EXTERNAL_ACCESS);
         map.put("unused_iam_user_access_key", UNUSED_IAM_USER_ACCESS_KEY);
         map.put("unused_iam_user_password", UNUSED_IAM_USER_PASSWORD);
+        map.put("unused_permission", UNUSED_PERMISSION);
         return Collections.unmodifiableMap(map);
     }
 

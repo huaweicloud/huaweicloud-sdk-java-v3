@@ -6,6 +6,8 @@ import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageResponse;
 import com.huaweicloud.sdk.cc.v3.model.AssociateGlobalConnectionBandwidthInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.AssociateGlobalConnectionBandwidthInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.AssociateSiteNetworkBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.AssociateSiteNetworkBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.BatchCreateGcbResourceTagsRequest;
 import com.huaweicloud.sdk.cc.v3.model.BatchCreateGcbResourceTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.BatchDeleteGcbResourceTagsRequest;
@@ -34,6 +36,8 @@ import com.huaweicloud.sdk.cc.v3.model.CreateInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateP2PSiteNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateP2PSiteNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteAuthorisationRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteAuthorisationResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteBandwidthPackageRequest;
@@ -54,12 +58,22 @@ import com.huaweicloud.sdk.cc.v3.model.DeleteInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteSiteNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteSiteNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageResponse;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.DisassociateSiteNetworkBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.DisassociateSiteNetworkBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageLevelsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageLevelsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageLinesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageLinesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageSitesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageSitesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageTagsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackagesByTagsRequest;
@@ -120,6 +134,12 @@ import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkCapabilitiesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkCapabilitiesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkQuotasRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkQuotasResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworksRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworksResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListSupportBindingConnectionBandwidthsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListSupportBindingConnectionBandwidthsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowBandwidthPackageRequest;
@@ -140,6 +160,8 @@ import com.huaweicloud.sdk.cc.v3.model.ShowInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowSiteNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowSiteNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.TagBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.TagBandwidthPackageResponse;
 import com.huaweicloud.sdk.cc.v3.model.TagCentralNetworkRequest;
@@ -172,6 +194,12 @@ import com.huaweicloud.sdk.cc.v3.model.UpdateInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkBandwidthResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkBandwidthSizeRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkBandwidthSizeResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -2790,6 +2818,424 @@ public class CcAsyncClient {
     public AsyncInvoker<UpdateNetworkInstanceRequest, UpdateNetworkInstanceResponse> updateNetworkInstanceAsyncInvoker(
         UpdateNetworkInstanceRequest request) {
         return new AsyncInvoker<>(request, CcMeta.updateNetworkInstance, hcClient);
+    }
+
+    /**
+     * 关联分支连接带宽
+     *
+     * 关联分支连接带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateSiteNetworkBandwidthRequest 请求对象
+     * @return CompletableFuture<AssociateSiteNetworkBandwidthResponse>
+     */
+    public CompletableFuture<AssociateSiteNetworkBandwidthResponse> associateSiteNetworkBandwidthAsync(
+        AssociateSiteNetworkBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.associateSiteNetworkBandwidth);
+    }
+
+    /**
+     * 关联分支连接带宽
+     *
+     * 关联分支连接带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateSiteNetworkBandwidthRequest 请求对象
+     * @return AsyncInvoker<AssociateSiteNetworkBandwidthRequest, AssociateSiteNetworkBandwidthResponse>
+     */
+    public AsyncInvoker<AssociateSiteNetworkBandwidthRequest, AssociateSiteNetworkBandwidthResponse> associateSiteNetworkBandwidthAsyncInvoker(
+        AssociateSiteNetworkBandwidthRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.associateSiteNetworkBandwidth, hcClient);
+    }
+
+    /**
+     * 解关联分支连接带宽
+     *
+     * 解关联分支连接带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisassociateSiteNetworkBandwidthRequest 请求对象
+     * @return CompletableFuture<DisassociateSiteNetworkBandwidthResponse>
+     */
+    public CompletableFuture<DisassociateSiteNetworkBandwidthResponse> disassociateSiteNetworkBandwidthAsync(
+        DisassociateSiteNetworkBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.disassociateSiteNetworkBandwidth);
+    }
+
+    /**
+     * 解关联分支连接带宽
+     *
+     * 解关联分支连接带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisassociateSiteNetworkBandwidthRequest 请求对象
+     * @return AsyncInvoker<DisassociateSiteNetworkBandwidthRequest, DisassociateSiteNetworkBandwidthResponse>
+     */
+    public AsyncInvoker<DisassociateSiteNetworkBandwidthRequest, DisassociateSiteNetworkBandwidthResponse> disassociateSiteNetworkBandwidthAsyncInvoker(
+        DisassociateSiteNetworkBandwidthRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.disassociateSiteNetworkBandwidth, hcClient);
+    }
+
+    /**
+     * 更改分支连接带宽包
+     *
+     * 更改分支连接带宽包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSiteNetworkBandwidthRequest 请求对象
+     * @return CompletableFuture<UpdateSiteNetworkBandwidthResponse>
+     */
+    public CompletableFuture<UpdateSiteNetworkBandwidthResponse> updateSiteNetworkBandwidthAsync(
+        UpdateSiteNetworkBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.updateSiteNetworkBandwidth);
+    }
+
+    /**
+     * 更改分支连接带宽包
+     *
+     * 更改分支连接带宽包。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSiteNetworkBandwidthRequest 请求对象
+     * @return AsyncInvoker<UpdateSiteNetworkBandwidthRequest, UpdateSiteNetworkBandwidthResponse>
+     */
+    public AsyncInvoker<UpdateSiteNetworkBandwidthRequest, UpdateSiteNetworkBandwidthResponse> updateSiteNetworkBandwidthAsyncInvoker(
+        UpdateSiteNetworkBandwidthRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.updateSiteNetworkBandwidth, hcClient);
+    }
+
+    /**
+     * 更改分支连接带宽大小
+     *
+     * 更改分支连接带宽大小。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSiteNetworkBandwidthSizeRequest 请求对象
+     * @return CompletableFuture<UpdateSiteNetworkBandwidthSizeResponse>
+     */
+    public CompletableFuture<UpdateSiteNetworkBandwidthSizeResponse> updateSiteNetworkBandwidthSizeAsync(
+        UpdateSiteNetworkBandwidthSizeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.updateSiteNetworkBandwidthSize);
+    }
+
+    /**
+     * 更改分支连接带宽大小
+     *
+     * 更改分支连接带宽大小。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSiteNetworkBandwidthSizeRequest 请求对象
+     * @return AsyncInvoker<UpdateSiteNetworkBandwidthSizeRequest, UpdateSiteNetworkBandwidthSizeResponse>
+     */
+    public AsyncInvoker<UpdateSiteNetworkBandwidthSizeRequest, UpdateSiteNetworkBandwidthSizeResponse> updateSiteNetworkBandwidthSizeAsyncInvoker(
+        UpdateSiteNetworkBandwidthSizeRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.updateSiteNetworkBandwidthSize, hcClient);
+    }
+
+    /**
+     * 创建P2P类型的分支网络
+     *
+     * 创建P2P类型的分支网络。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateP2PSiteNetworkRequest 请求对象
+     * @return CompletableFuture<CreateP2PSiteNetworkResponse>
+     */
+    public CompletableFuture<CreateP2PSiteNetworkResponse> createP2PSiteNetworkAsync(
+        CreateP2PSiteNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.createP2PSiteNetwork);
+    }
+
+    /**
+     * 创建P2P类型的分支网络
+     *
+     * 创建P2P类型的分支网络。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateP2PSiteNetworkRequest 请求对象
+     * @return AsyncInvoker<CreateP2PSiteNetworkRequest, CreateP2PSiteNetworkResponse>
+     */
+    public AsyncInvoker<CreateP2PSiteNetworkRequest, CreateP2PSiteNetworkResponse> createP2PSiteNetworkAsyncInvoker(
+        CreateP2PSiteNetworkRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.createP2PSiteNetwork, hcClient);
+    }
+
+    /**
+     * 删除分支网络
+     *
+     * 删除分支网络。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSiteNetworkRequest 请求对象
+     * @return CompletableFuture<DeleteSiteNetworkResponse>
+     */
+    public CompletableFuture<DeleteSiteNetworkResponse> deleteSiteNetworkAsync(DeleteSiteNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.deleteSiteNetwork);
+    }
+
+    /**
+     * 删除分支网络
+     *
+     * 删除分支网络。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSiteNetworkRequest 请求对象
+     * @return AsyncInvoker<DeleteSiteNetworkRequest, DeleteSiteNetworkResponse>
+     */
+    public AsyncInvoker<DeleteSiteNetworkRequest, DeleteSiteNetworkResponse> deleteSiteNetworkAsyncInvoker(
+        DeleteSiteNetworkRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.deleteSiteNetwork, hcClient);
+    }
+
+    /**
+     * 查询分支网络列表
+     *
+     * 查询分支网络列表。
+     * 分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSiteNetworksRequest 请求对象
+     * @return CompletableFuture<ListSiteNetworksResponse>
+     */
+    public CompletableFuture<ListSiteNetworksResponse> listSiteNetworksAsync(ListSiteNetworksRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listSiteNetworks);
+    }
+
+    /**
+     * 查询分支网络列表
+     *
+     * 查询分支网络列表。
+     * 分页查询使用的参数为marker、limit。limit默认值为0，没有指定marker时返回第一条数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSiteNetworksRequest 请求对象
+     * @return AsyncInvoker<ListSiteNetworksRequest, ListSiteNetworksResponse>
+     */
+    public AsyncInvoker<ListSiteNetworksRequest, ListSiteNetworksResponse> listSiteNetworksAsyncInvoker(
+        ListSiteNetworksRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.listSiteNetworks, hcClient);
+    }
+
+    /**
+     * 查询分支网络详情
+     *
+     * 查询分支网络详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSiteNetworkRequest 请求对象
+     * @return CompletableFuture<ShowSiteNetworkResponse>
+     */
+    public CompletableFuture<ShowSiteNetworkResponse> showSiteNetworkAsync(ShowSiteNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.showSiteNetwork);
+    }
+
+    /**
+     * 查询分支网络详情
+     *
+     * 查询分支网络详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSiteNetworkRequest 请求对象
+     * @return AsyncInvoker<ShowSiteNetworkRequest, ShowSiteNetworkResponse>
+     */
+    public AsyncInvoker<ShowSiteNetworkRequest, ShowSiteNetworkResponse> showSiteNetworkAsyncInvoker(
+        ShowSiteNetworkRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.showSiteNetwork, hcClient);
+    }
+
+    /**
+     * 更新分支网络详情
+     *
+     * 更新分支网络详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSiteNetworkRequest 请求对象
+     * @return CompletableFuture<UpdateSiteNetworkResponse>
+     */
+    public CompletableFuture<UpdateSiteNetworkResponse> updateSiteNetworkAsync(UpdateSiteNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.updateSiteNetwork);
+    }
+
+    /**
+     * 更新分支网络详情
+     *
+     * 更新分支网络详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSiteNetworkRequest 请求对象
+     * @return AsyncInvoker<UpdateSiteNetworkRequest, UpdateSiteNetworkResponse>
+     */
+    public AsyncInvoker<UpdateSiteNetworkRequest, UpdateSiteNetworkResponse> updateSiteNetworkAsyncInvoker(
+        UpdateSiteNetworkRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.updateSiteNetwork, hcClient);
+    }
+
+    /**
+     * 查询分支网络的能力列表
+     *
+     * 查询分支网络的能力列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSiteNetworkCapabilitiesRequest 请求对象
+     * @return CompletableFuture<ListSiteNetworkCapabilitiesResponse>
+     */
+    public CompletableFuture<ListSiteNetworkCapabilitiesResponse> listSiteNetworkCapabilitiesAsync(
+        ListSiteNetworkCapabilitiesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listSiteNetworkCapabilities);
+    }
+
+    /**
+     * 查询分支网络的能力列表
+     *
+     * 查询分支网络的能力列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSiteNetworkCapabilitiesRequest 请求对象
+     * @return AsyncInvoker<ListSiteNetworkCapabilitiesRequest, ListSiteNetworkCapabilitiesResponse>
+     */
+    public AsyncInvoker<ListSiteNetworkCapabilitiesRequest, ListSiteNetworkCapabilitiesResponse> listSiteNetworkCapabilitiesAsyncInvoker(
+        ListSiteNetworkCapabilitiesRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.listSiteNetworkCapabilities, hcClient);
+    }
+
+    /**
+     * 查询分支网络配额
+     *
+     * 查询分支网络配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSiteNetworkQuotasRequest 请求对象
+     * @return CompletableFuture<ListSiteNetworkQuotasResponse>
+     */
+    public CompletableFuture<ListSiteNetworkQuotasResponse> listSiteNetworkQuotasAsync(
+        ListSiteNetworkQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listSiteNetworkQuotas);
+    }
+
+    /**
+     * 查询分支网络配额
+     *
+     * 查询分支网络配额。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSiteNetworkQuotasRequest 请求对象
+     * @return AsyncInvoker<ListSiteNetworkQuotasRequest, ListSiteNetworkQuotasResponse>
+     */
+    public AsyncInvoker<ListSiteNetworkQuotasRequest, ListSiteNetworkQuotasResponse> listSiteNetworkQuotasAsyncInvoker(
+        ListSiteNetworkQuotasRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.listSiteNetworkQuotas, hcClient);
+    }
+
+    /**
+     * 查询带宽包等级列表
+     *
+     * 查询带宽包等级列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBandwidthPackageLevelsRequest 请求对象
+     * @return CompletableFuture<ListBandwidthPackageLevelsResponse>
+     */
+    public CompletableFuture<ListBandwidthPackageLevelsResponse> listBandwidthPackageLevelsAsync(
+        ListBandwidthPackageLevelsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listBandwidthPackageLevels);
+    }
+
+    /**
+     * 查询带宽包等级列表
+     *
+     * 查询带宽包等级列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBandwidthPackageLevelsRequest 请求对象
+     * @return AsyncInvoker<ListBandwidthPackageLevelsRequest, ListBandwidthPackageLevelsResponse>
+     */
+    public AsyncInvoker<ListBandwidthPackageLevelsRequest, ListBandwidthPackageLevelsResponse> listBandwidthPackageLevelsAsyncInvoker(
+        ListBandwidthPackageLevelsRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.listBandwidthPackageLevels, hcClient);
+    }
+
+    /**
+     * 查询带宽包线路列表
+     *
+     * 查询带宽包线路列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBandwidthPackageLinesRequest 请求对象
+     * @return CompletableFuture<ListBandwidthPackageLinesResponse>
+     */
+    public CompletableFuture<ListBandwidthPackageLinesResponse> listBandwidthPackageLinesAsync(
+        ListBandwidthPackageLinesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listBandwidthPackageLines);
+    }
+
+    /**
+     * 查询带宽包线路列表
+     *
+     * 查询带宽包线路列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBandwidthPackageLinesRequest 请求对象
+     * @return AsyncInvoker<ListBandwidthPackageLinesRequest, ListBandwidthPackageLinesResponse>
+     */
+    public AsyncInvoker<ListBandwidthPackageLinesRequest, ListBandwidthPackageLinesResponse> listBandwidthPackageLinesAsyncInvoker(
+        ListBandwidthPackageLinesRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.listBandwidthPackageLines, hcClient);
+    }
+
+    /**
+     * 查询带宽包站点列表
+     *
+     * 查询带宽包站点列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBandwidthPackageSitesRequest 请求对象
+     * @return CompletableFuture<ListBandwidthPackageSitesResponse>
+     */
+    public CompletableFuture<ListBandwidthPackageSitesResponse> listBandwidthPackageSitesAsync(
+        ListBandwidthPackageSitesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CcMeta.listBandwidthPackageSites);
+    }
+
+    /**
+     * 查询带宽包站点列表
+     *
+     * 查询带宽包站点列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBandwidthPackageSitesRequest 请求对象
+     * @return AsyncInvoker<ListBandwidthPackageSitesRequest, ListBandwidthPackageSitesResponse>
+     */
+    public AsyncInvoker<ListBandwidthPackageSitesRequest, ListBandwidthPackageSitesResponse> listBandwidthPackageSitesAsyncInvoker(
+        ListBandwidthPackageSitesRequest request) {
+        return new AsyncInvoker<>(request, CcMeta.listBandwidthPackageSites, hcClient);
     }
 
 }

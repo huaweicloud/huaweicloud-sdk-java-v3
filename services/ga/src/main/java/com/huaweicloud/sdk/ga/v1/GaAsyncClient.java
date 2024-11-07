@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.ga.v1.model.CreateIpGroupRequest;
 import com.huaweicloud.sdk.ga.v1.model.CreateIpGroupResponse;
 import com.huaweicloud.sdk.ga.v1.model.CreateListenerRequest;
 import com.huaweicloud.sdk.ga.v1.model.CreateListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.CreateLogtankRequest;
+import com.huaweicloud.sdk.ga.v1.model.CreateLogtankResponse;
 import com.huaweicloud.sdk.ga.v1.model.CreateTagsRequest;
 import com.huaweicloud.sdk.ga.v1.model.CreateTagsResponse;
 import com.huaweicloud.sdk.ga.v1.model.DeleteAcceleratorRequest;
@@ -35,6 +37,8 @@ import com.huaweicloud.sdk.ga.v1.model.DeleteIpGroupRequest;
 import com.huaweicloud.sdk.ga.v1.model.DeleteIpGroupResponse;
 import com.huaweicloud.sdk.ga.v1.model.DeleteListenerRequest;
 import com.huaweicloud.sdk.ga.v1.model.DeleteListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.DeleteLogtankRequest;
+import com.huaweicloud.sdk.ga.v1.model.DeleteLogtankResponse;
 import com.huaweicloud.sdk.ga.v1.model.DeleteTagsRequest;
 import com.huaweicloud.sdk.ga.v1.model.DeleteTagsResponse;
 import com.huaweicloud.sdk.ga.v1.model.DisassociateListenerRequest;
@@ -51,6 +55,8 @@ import com.huaweicloud.sdk.ga.v1.model.ListIpGroupsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListIpGroupsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListListenersRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListListenersResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListLogtanksRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListLogtanksResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListRegionsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListRegionsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagRequest;
@@ -71,6 +77,8 @@ import com.huaweicloud.sdk.ga.v1.model.ShowIpGroupRequest;
 import com.huaweicloud.sdk.ga.v1.model.ShowIpGroupResponse;
 import com.huaweicloud.sdk.ga.v1.model.ShowListenerRequest;
 import com.huaweicloud.sdk.ga.v1.model.ShowListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.ShowLogtankRequest;
+import com.huaweicloud.sdk.ga.v1.model.ShowLogtankResponse;
 import com.huaweicloud.sdk.ga.v1.model.ShowResourceTagsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ShowResourceTagsResponse;
 import com.huaweicloud.sdk.ga.v1.model.UpdateAcceleratorRequest;
@@ -85,6 +93,8 @@ import com.huaweicloud.sdk.ga.v1.model.UpdateIpGroupRequest;
 import com.huaweicloud.sdk.ga.v1.model.UpdateIpGroupResponse;
 import com.huaweicloud.sdk.ga.v1.model.UpdateListenerRequest;
 import com.huaweicloud.sdk.ga.v1.model.UpdateListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.UpdateLogtankRequest;
+import com.huaweicloud.sdk.ga.v1.model.UpdateLogtankResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -1097,6 +1107,150 @@ public class GaAsyncClient {
     public AsyncInvoker<UpdateListenerRequest, UpdateListenerResponse> updateListenerAsyncInvoker(
         UpdateListenerRequest request) {
         return new AsyncInvoker<>(request, GaMeta.updateListener, hcClient);
+    }
+
+    /**
+     * 创建云日志
+     *
+     * 创建云日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLogtankRequest 请求对象
+     * @return CompletableFuture<CreateLogtankResponse>
+     */
+    public CompletableFuture<CreateLogtankResponse> createLogtankAsync(CreateLogtankRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.createLogtank);
+    }
+
+    /**
+     * 创建云日志
+     *
+     * 创建云日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLogtankRequest 请求对象
+     * @return AsyncInvoker<CreateLogtankRequest, CreateLogtankResponse>
+     */
+    public AsyncInvoker<CreateLogtankRequest, CreateLogtankResponse> createLogtankAsyncInvoker(
+        CreateLogtankRequest request) {
+        return new AsyncInvoker<>(request, GaMeta.createLogtank, hcClient);
+    }
+
+    /**
+     * 删除云日志
+     *
+     * 删除云日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLogtankRequest 请求对象
+     * @return CompletableFuture<DeleteLogtankResponse>
+     */
+    public CompletableFuture<DeleteLogtankResponse> deleteLogtankAsync(DeleteLogtankRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.deleteLogtank);
+    }
+
+    /**
+     * 删除云日志
+     *
+     * 删除云日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLogtankRequest 请求对象
+     * @return AsyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse>
+     */
+    public AsyncInvoker<DeleteLogtankRequest, DeleteLogtankResponse> deleteLogtankAsyncInvoker(
+        DeleteLogtankRequest request) {
+        return new AsyncInvoker<>(request, GaMeta.deleteLogtank, hcClient);
+    }
+
+    /**
+     * 查询云日志列表
+     *
+     * 查询云日志列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogtanksRequest 请求对象
+     * @return CompletableFuture<ListLogtanksResponse>
+     */
+    public CompletableFuture<ListLogtanksResponse> listLogtanksAsync(ListLogtanksRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.listLogtanks);
+    }
+
+    /**
+     * 查询云日志列表
+     *
+     * 查询云日志列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogtanksRequest 请求对象
+     * @return AsyncInvoker<ListLogtanksRequest, ListLogtanksResponse>
+     */
+    public AsyncInvoker<ListLogtanksRequest, ListLogtanksResponse> listLogtanksAsyncInvoker(
+        ListLogtanksRequest request) {
+        return new AsyncInvoker<>(request, GaMeta.listLogtanks, hcClient);
+    }
+
+    /**
+     * 查询云日志详情
+     *
+     * 查询云日志详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogtankRequest 请求对象
+     * @return CompletableFuture<ShowLogtankResponse>
+     */
+    public CompletableFuture<ShowLogtankResponse> showLogtankAsync(ShowLogtankRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.showLogtank);
+    }
+
+    /**
+     * 查询云日志详情
+     *
+     * 查询云日志详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowLogtankRequest 请求对象
+     * @return AsyncInvoker<ShowLogtankRequest, ShowLogtankResponse>
+     */
+    public AsyncInvoker<ShowLogtankRequest, ShowLogtankResponse> showLogtankAsyncInvoker(ShowLogtankRequest request) {
+        return new AsyncInvoker<>(request, GaMeta.showLogtank, hcClient);
+    }
+
+    /**
+     * 更新云日志
+     *
+     * 更新云日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLogtankRequest 请求对象
+     * @return CompletableFuture<UpdateLogtankResponse>
+     */
+    public CompletableFuture<UpdateLogtankResponse> updateLogtankAsync(UpdateLogtankRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.updateLogtank);
+    }
+
+    /**
+     * 更新云日志
+     *
+     * 更新云日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLogtankRequest 请求对象
+     * @return AsyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse>
+     */
+    public AsyncInvoker<UpdateLogtankRequest, UpdateLogtankResponse> updateLogtankAsyncInvoker(
+        UpdateLogtankRequest request) {
+        return new AsyncInvoker<>(request, GaMeta.updateLogtank, hcClient);
     }
 
     /**

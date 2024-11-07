@@ -84,6 +84,34 @@ public class AadClient {
     }
 
     /**
+     * 删除防护域名
+     *
+     * 删除防护域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainRequest 请求对象
+     * @return DeleteDomainResponse
+     */
+    public DeleteDomainResponse deleteDomain(DeleteDomainRequest request) {
+        return hcClient.syncInvokeHttp(request, AadMeta.deleteDomain);
+    }
+
+    /**
+     * 删除防护域名
+     *
+     * 删除防护域名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDomainRequest 请求对象
+     * @return SyncInvoker<DeleteDomainRequest, DeleteDomainResponse>
+     */
+    public SyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainInvoker(DeleteDomainRequest request) {
+        return new SyncInvoker<>(request, AadMeta.deleteDomain, hcClient);
+    }
+
+    /**
      * 查询DDoS攻击事件列表
      *
      * 查询DDoS攻击事件列表
@@ -569,34 +597,6 @@ public class AadClient {
     public SyncInvoker<UpgradeInstanceSpecRequest, UpgradeInstanceSpecResponse> upgradeInstanceSpecInvoker(
         UpgradeInstanceSpecRequest request) {
         return new SyncInvoker<>(request, AadMeta.upgradeInstanceSpec, hcClient);
-    }
-
-    /**
-     * 删除防护域名
-     *
-     * 删除防护域名
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteDomainRequest 请求对象
-     * @return DeleteDomainResponse
-     */
-    public DeleteDomainResponse deleteDomain(DeleteDomainRequest request) {
-        return hcClient.syncInvokeHttp(request, AadMeta.deleteDomain);
-    }
-
-    /**
-     * 删除防护域名
-     *
-     * 删除防护域名
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteDomainRequest 请求对象
-     * @return SyncInvoker<DeleteDomainRequest, DeleteDomainResponse>
-     */
-    public SyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainInvoker(DeleteDomainRequest request) {
-        return new SyncInvoker<>(request, AadMeta.deleteDomain, hcClient);
     }
 
 }

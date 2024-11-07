@@ -36,7 +36,7 @@ public class VerifyVideoMattingInfo {
     private Integer height;
 
     /**
-     * 资源操作类型。 * RESERVED: 保留区域 * DELETE：删除区域 * NO_DEGREEN：无区域
+     * 资源操作类型。 * RESERVED: 视频不需要抠绿的区域。 * DELETE：视频需要抠绿的区域。 * NO_DEGREEN：视频不需要去绿的区域。
      */
     public static final class MethodEnum {
 
@@ -198,7 +198,7 @@ public class VerifyVideoMattingInfo {
     }
 
     /**
-     * 资源操作类型。 * RESERVED: 保留区域 * DELETE：删除区域 * NO_DEGREEN：无区域
+     * 资源操作类型。 * RESERVED: 视频不需要抠绿的区域。 * DELETE：视频需要抠绿的区域。 * NO_DEGREEN：视频不需要去绿的区域。
      * @return method
      */
     public MethodEnum getMethod() {

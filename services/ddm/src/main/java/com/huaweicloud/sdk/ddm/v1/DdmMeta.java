@@ -6,6 +6,8 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.ddm.v1.model.AdminUserInfoReq;
+import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseReq;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseResponse;
@@ -18,6 +20,7 @@ import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersReq;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateUsersResponse;
+import com.huaweicloud.sdk.ddm.v1.model.DatabaseVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmDatabaseRequest;
@@ -41,6 +44,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ListApiVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListApiVersionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmEnginesRequest;
@@ -80,6 +85,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceReq;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.RollBackDatabaseVersionRequest;
+import com.huaweicloud.sdk.ddm.v1.model.RollBackDatabaseVersionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamRequest;
@@ -116,6 +123,86 @@ import com.huaweicloud.sdk.ddm.v1.model.WeakPasswordReq;
 
 @SuppressWarnings("unchecked")
 public class DdmMeta {
+
+    public static final HttpRequestDef<ChangeDatabaseVersionRequest, ChangeDatabaseVersionResponse> changeDatabaseVersion =
+        genForChangeDatabaseVersion();
+
+    private static HttpRequestDef<ChangeDatabaseVersionRequest, ChangeDatabaseVersionResponse> genForChangeDatabaseVersion() {
+        // basic
+        HttpRequestDef.Builder<ChangeDatabaseVersionRequest, ChangeDatabaseVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ChangeDatabaseVersionRequest.class, ChangeDatabaseVersionResponse.class)
+            .withName("ChangeDatabaseVersion")
+            .withUri("/v3/{project_id}/instances/{instance_id}/database-version/change-version")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeDatabaseVersionRequest::getInstanceId,
+                ChangeDatabaseVersionRequest::setInstanceId));
+        builder.<DatabaseVersionRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DatabaseVersionRequest.class),
+            f -> f.withMarshaller(ChangeDatabaseVersionRequest::getBody, ChangeDatabaseVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDatabaseAvailableVersionsRequest, ListDatabaseAvailableVersionsResponse> listDatabaseAvailableVersions =
+        genForListDatabaseAvailableVersions();
+
+    private static HttpRequestDef<ListDatabaseAvailableVersionsRequest, ListDatabaseAvailableVersionsResponse> genForListDatabaseAvailableVersions() {
+        // basic
+        HttpRequestDef.Builder<ListDatabaseAvailableVersionsRequest, ListDatabaseAvailableVersionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDatabaseAvailableVersionsRequest.class,
+                    ListDatabaseAvailableVersionsResponse.class)
+                .withName("ListDatabaseAvailableVersions")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database-version/available-versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDatabaseAvailableVersionsRequest::getInstanceId,
+                ListDatabaseAvailableVersionsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RollBackDatabaseVersionRequest, RollBackDatabaseVersionResponse> rollBackDatabaseVersion =
+        genForRollBackDatabaseVersion();
+
+    private static HttpRequestDef<RollBackDatabaseVersionRequest, RollBackDatabaseVersionResponse> genForRollBackDatabaseVersion() {
+        // basic
+        HttpRequestDef.Builder<RollBackDatabaseVersionRequest, RollBackDatabaseVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RollBackDatabaseVersionRequest.class, RollBackDatabaseVersionResponse.class)
+            .withName("RollBackDatabaseVersion")
+            .withUri("/v3/{project_id}/instances/{instance_id}/database-version/rollback-version")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RollBackDatabaseVersionRequest::getInstanceId,
+                RollBackDatabaseVersionRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<ListApiVersionRequest, ListApiVersionResponse> listApiVersion =
         genForListApiVersion();

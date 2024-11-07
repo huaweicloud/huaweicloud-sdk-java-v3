@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckWeekPasswordRequest;
@@ -291,6 +293,35 @@ public class GaussDBforNoSQLClient {
     public SyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionInvoker(
         BatchTagActionRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.batchTagAction, hcClient);
+    }
+
+    /**
+     * 批量数据库补丁升级
+     *
+     * 批量升级数据库补丁版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpgradeDatabaseVersionRequest 请求对象
+     * @return BatchUpgradeDatabaseVersionResponse
+     */
+    public BatchUpgradeDatabaseVersionResponse batchUpgradeDatabaseVersion(BatchUpgradeDatabaseVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.batchUpgradeDatabaseVersion);
+    }
+
+    /**
+     * 批量数据库补丁升级
+     *
+     * 批量升级数据库补丁版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpgradeDatabaseVersionRequest 请求对象
+     * @return SyncInvoker<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse>
+     */
+    public SyncInvoker<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse> batchUpgradeDatabaseVersionInvoker(
+        BatchUpgradeDatabaseVersionRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.batchUpgradeDatabaseVersion, hcClient);
     }
 
     /**

@@ -91,7 +91,7 @@ public class SystemProperty {
     private ActionEnum action;
 
     /**
-     * **参数解释**： 系统属性条目。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： 公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作图片图层。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作视频图层。value设置成Yes。 * DIGITAL_HUMAN_2D_VIDEO：分身数字人视频。 * DIGITAL_HUMAN_3D_VIDEO：3D数字人视频。 * BUSINESS_CARD_VIDEO：名片视频。 * BUSSINESS_CARD_VIDEO：名片视频(过期) * PHOTO_VIDEO：照片数字人视频。   视频翻译资产属性： * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。 * TRANSLATED_VIDEO: 视频翻译后的视频  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏）。 * LAYER_CONFIG_ENABLE: 可用前景图层配置  **默认取值**： 不涉及
+     * **参数解释**： 系统属性条目。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： 公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作图片图层。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作视频图层。value设置成Yes。 * DIGITAL_HUMAN_2D_VIDEO：分身数字人视频。 * DIGITAL_HUMAN_3D_VIDEO：3D数字人视频。 * BUSINESS_CARD_VIDEO：名片视频。 * BUSSINESS_CARD_VIDEO：名片视频(过期) * PHOTO_VIDEO：照片数字人视频。   视频翻译资产属性： * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。 * TRANSLATED_VIDEO: 视频翻译后的视频  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏）。 * LAYER_CONFIG_ENABLE: 可用前景图层配置 * MEITUAN_MATERIAL_APPROVED: 美团平台已审核标识，value设置成YES。  **默认取值**： 不涉及
      */
     public static final class KeyEnum {
 
@@ -180,6 +180,11 @@ public class SystemProperty {
          */
         public static final KeyEnum LAYER_CONFIG_ENABLE = new KeyEnum("LAYER_CONFIG_ENABLE");
 
+        /**
+         * Enum MEITUAN_MATERIAL_APPROVED for value: "MEITUAN_MATERIAL_APPROVED"
+         */
+        public static final KeyEnum MEITUAN_MATERIAL_APPROVED = new KeyEnum("MEITUAN_MATERIAL_APPROVED");
+
         private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, KeyEnum> createStaticFields() {
@@ -201,6 +206,7 @@ public class SystemProperty {
             map.put("TO_BE_TRANSLATED_VIDEO", TO_BE_TRANSLATED_VIDEO);
             map.put("TRANSLATED_VIDEO", TRANSLATED_VIDEO);
             map.put("LAYER_CONFIG_ENABLE", LAYER_CONFIG_ENABLE);
+            map.put("MEITUAN_MATERIAL_APPROVED", MEITUAN_MATERIAL_APPROVED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -283,7 +289,7 @@ public class SystemProperty {
     }
 
     /**
-     * **参数解释**： 系统属性条目。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： 公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作图片图层。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作视频图层。value设置成Yes。 * DIGITAL_HUMAN_2D_VIDEO：分身数字人视频。 * DIGITAL_HUMAN_3D_VIDEO：3D数字人视频。 * BUSINESS_CARD_VIDEO：名片视频。 * BUSSINESS_CARD_VIDEO：名片视频(过期) * PHOTO_VIDEO：照片数字人视频。   视频翻译资产属性： * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。 * TRANSLATED_VIDEO: 视频翻译后的视频  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏）。 * LAYER_CONFIG_ENABLE: 可用前景图层配置  **默认取值**： 不涉及
+     * **参数解释**： 系统属性条目。 **约束限制**： 系统属性仅为系统设置，普通用户无法修改。 **取值范围**： 公共资产属性： * BACKGROUND_IMG：视频制作的背景图片。value设置成Yes * CREATED_BY_PLATFORM: 是否平台生成。  分身数字人资产属性： * MATERIAL_IMG：素材图片，用作图片图层。value设置成Yes。 * MATERIAL_VIDEO：素材视频，用作视频图层。value设置成Yes。 * DIGITAL_HUMAN_2D_VIDEO：分身数字人视频。 * DIGITAL_HUMAN_3D_VIDEO：3D数字人视频。 * BUSINESS_CARD_VIDEO：名片视频。 * BUSSINESS_CARD_VIDEO：名片视频(过期) * PHOTO_VIDEO：照片数字人视频。   视频翻译资产属性： * TO_BE_TRANSLATED_VIDEO: 视频翻译的源视频。可取值Yes。 * TRANSLATED_VIDEO: 视频翻译后的视频  3D数字人资产属性： * STYLE_ID：风格Id。 * DH_ID：数字人ID(尚未启用)。 * PLATFORM_AVAILABLE：是否平台可用(尚未启用)。 * RENDER_ENGINE：引擎类型。value可选UE或MetaEngine。 * BACKGROUND_SCENE：视频制作的2D背景场景。value可选Horizontal（横屏）或者Vertical（竖屏）。 * LAYER_CONFIG_ENABLE: 可用前景图层配置 * MEITUAN_MATERIAL_APPROVED: 美团平台已审核标识，value设置成YES。  **默认取值**： 不涉及
      * @return key
      */
     public KeyEnum getKey() {

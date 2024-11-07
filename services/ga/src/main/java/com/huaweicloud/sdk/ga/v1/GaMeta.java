@@ -31,6 +31,9 @@ import com.huaweicloud.sdk.ga.v1.model.CreateIpGroupResponse;
 import com.huaweicloud.sdk.ga.v1.model.CreateListenerRequest;
 import com.huaweicloud.sdk.ga.v1.model.CreateListenerRequestBody;
 import com.huaweicloud.sdk.ga.v1.model.CreateListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.CreateLogtankRequest;
+import com.huaweicloud.sdk.ga.v1.model.CreateLogtankRequestBody;
+import com.huaweicloud.sdk.ga.v1.model.CreateLogtankResponse;
 import com.huaweicloud.sdk.ga.v1.model.CreateTagsRequest;
 import com.huaweicloud.sdk.ga.v1.model.CreateTagsRequestBody;
 import com.huaweicloud.sdk.ga.v1.model.CreateTagsResponse;
@@ -46,6 +49,8 @@ import com.huaweicloud.sdk.ga.v1.model.DeleteIpGroupRequest;
 import com.huaweicloud.sdk.ga.v1.model.DeleteIpGroupResponse;
 import com.huaweicloud.sdk.ga.v1.model.DeleteListenerRequest;
 import com.huaweicloud.sdk.ga.v1.model.DeleteListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.DeleteLogtankRequest;
+import com.huaweicloud.sdk.ga.v1.model.DeleteLogtankResponse;
 import com.huaweicloud.sdk.ga.v1.model.DeleteTagsRequest;
 import com.huaweicloud.sdk.ga.v1.model.DeleteTagsRequestBody;
 import com.huaweicloud.sdk.ga.v1.model.DeleteTagsResponse;
@@ -64,6 +69,8 @@ import com.huaweicloud.sdk.ga.v1.model.ListIpGroupsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListIpGroupsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListListenersRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListListenersResponse;
+import com.huaweicloud.sdk.ga.v1.model.ListLogtanksRequest;
+import com.huaweicloud.sdk.ga.v1.model.ListLogtanksResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListRegionsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ListRegionsResponse;
 import com.huaweicloud.sdk.ga.v1.model.ListResourcesByTagRequest;
@@ -87,6 +94,8 @@ import com.huaweicloud.sdk.ga.v1.model.ShowIpGroupRequest;
 import com.huaweicloud.sdk.ga.v1.model.ShowIpGroupResponse;
 import com.huaweicloud.sdk.ga.v1.model.ShowListenerRequest;
 import com.huaweicloud.sdk.ga.v1.model.ShowListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.ShowLogtankRequest;
+import com.huaweicloud.sdk.ga.v1.model.ShowLogtankResponse;
 import com.huaweicloud.sdk.ga.v1.model.ShowResourceTagsRequest;
 import com.huaweicloud.sdk.ga.v1.model.ShowResourceTagsResponse;
 import com.huaweicloud.sdk.ga.v1.model.UpdateAcceleratorRequest;
@@ -107,6 +116,11 @@ import com.huaweicloud.sdk.ga.v1.model.UpdateIpGroupResponse;
 import com.huaweicloud.sdk.ga.v1.model.UpdateListenerRequest;
 import com.huaweicloud.sdk.ga.v1.model.UpdateListenerRequestBody;
 import com.huaweicloud.sdk.ga.v1.model.UpdateListenerResponse;
+import com.huaweicloud.sdk.ga.v1.model.UpdateLogtankRequest;
+import com.huaweicloud.sdk.ga.v1.model.UpdateLogtankRequestBody;
+import com.huaweicloud.sdk.ga.v1.model.UpdateLogtankResponse;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class GaMeta {
@@ -1116,6 +1130,149 @@ public class GaMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateListenerRequestBody.class),
             f -> f.withMarshaller(UpdateListenerRequest::getBody, UpdateListenerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateLogtankRequest, CreateLogtankResponse> createLogtank =
+        genForCreateLogtank();
+
+    private static HttpRequestDef<CreateLogtankRequest, CreateLogtankResponse> genForCreateLogtank() {
+        // basic
+        HttpRequestDef.Builder<CreateLogtankRequest, CreateLogtankResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLogtankRequest.class, CreateLogtankResponse.class)
+                .withName("CreateLogtank")
+                .withUri("/v1/logtanks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateLogtankRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateLogtankRequestBody.class),
+            f -> f.withMarshaller(CreateLogtankRequest::getBody, CreateLogtankRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLogtankRequest, DeleteLogtankResponse> deleteLogtank =
+        genForDeleteLogtank();
+
+    private static HttpRequestDef<DeleteLogtankRequest, DeleteLogtankResponse> genForDeleteLogtank() {
+        // basic
+        HttpRequestDef.Builder<DeleteLogtankRequest, DeleteLogtankResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteLogtankRequest.class, DeleteLogtankResponse.class)
+                .withName("DeleteLogtank")
+                .withUri("/v1/logtanks/{logtank_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("logtank_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLogtankRequest::getLogtankId, DeleteLogtankRequest::setLogtankId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogtanksRequest, ListLogtanksResponse> listLogtanks = genForListLogtanks();
+
+    private static HttpRequestDef<ListLogtanksRequest, ListLogtanksResponse> genForListLogtanks() {
+        // basic
+        HttpRequestDef.Builder<ListLogtanksRequest, ListLogtanksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLogtanksRequest.class, ListLogtanksResponse.class)
+                .withName("ListLogtanks")
+                .withUri("/v1/logtanks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getLimit, ListLogtanksRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getMarker, ListLogtanksRequest::setMarker));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getId, ListLogtanksRequest::setId));
+        builder.<ListLogtanksRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListLogtanksRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getStatus, ListLogtanksRequest::setStatus));
+        builder.<List<String>>withRequestField("resource_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getResourceIds, ListLogtanksRequest::setResourceIds));
+        builder.<ListLogtanksRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListLogtanksRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListLogtanksRequest::getResourceType, ListLogtanksRequest::setResourceType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLogtankRequest, ShowLogtankResponse> showLogtank = genForShowLogtank();
+
+    private static HttpRequestDef<ShowLogtankRequest, ShowLogtankResponse> genForShowLogtank() {
+        // basic
+        HttpRequestDef.Builder<ShowLogtankRequest, ShowLogtankResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLogtankRequest.class, ShowLogtankResponse.class)
+                .withName("ShowLogtank")
+                .withUri("/v1/logtanks/{logtank_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("logtank_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLogtankRequest::getLogtankId, ShowLogtankRequest::setLogtankId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLogtankRequest, UpdateLogtankResponse> updateLogtank =
+        genForUpdateLogtank();
+
+    private static HttpRequestDef<UpdateLogtankRequest, UpdateLogtankResponse> genForUpdateLogtank() {
+        // basic
+        HttpRequestDef.Builder<UpdateLogtankRequest, UpdateLogtankResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLogtankRequest.class, UpdateLogtankResponse.class)
+                .withName("UpdateLogtank")
+                .withUri("/v1/logtanks/{logtank_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("logtank_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogtankRequest::getLogtankId, UpdateLogtankRequest::setLogtankId));
+        builder.<UpdateLogtankRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLogtankRequestBody.class),
+            f -> f.withMarshaller(UpdateLogtankRequest::getBody, UpdateLogtankRequest::setBody));
 
         // response
 

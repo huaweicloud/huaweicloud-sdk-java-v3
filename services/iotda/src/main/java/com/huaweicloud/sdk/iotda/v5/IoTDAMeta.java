@@ -23,6 +23,8 @@ import com.huaweicloud.sdk.iotda.v5.model.AddDeviceProxy;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddFlowControlPolicy;
+import com.huaweicloud.sdk.iotda.v5.model.AddFunctionsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddProduct;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueResponse;
@@ -46,6 +48,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CloseDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CloseDeviceTunnelResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CountAsyncHistoryCommandsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CountAsyncHistoryCommandsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeRequestBody;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeResponse;
@@ -109,6 +113,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
@@ -133,6 +139,11 @@ import com.huaweicloud.sdk.iotda.v5.model.DeviceMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DevicePropertiesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.FreezeDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.FreezeDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.FunctionRequestDTO;
+import com.huaweicloud.sdk.iotda.v5.model.ListAsyncCommandsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListAsyncCommandsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListAsyncHistoryCommandsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListAsyncHistoryCommandsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListBatchTaskFilesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListBatchTaskFilesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListBatchTasksRequest;
@@ -157,6 +168,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListProductsRequest;
@@ -615,6 +628,63 @@ public class IoTDAMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CountAsyncHistoryCommandsRequest, CountAsyncHistoryCommandsResponse> countAsyncHistoryCommands =
+        genForCountAsyncHistoryCommands();
+
+    private static HttpRequestDef<CountAsyncHistoryCommandsRequest, CountAsyncHistoryCommandsResponse> genForCountAsyncHistoryCommands() {
+        // basic
+        HttpRequestDef.Builder<CountAsyncHistoryCommandsRequest, CountAsyncHistoryCommandsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CountAsyncHistoryCommandsRequest.class,
+                    CountAsyncHistoryCommandsResponse.class)
+                .withName("CountAsyncHistoryCommands")
+                .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands-history/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAsyncHistoryCommandsRequest::getDeviceId,
+                CountAsyncHistoryCommandsRequest::setDeviceId));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAsyncHistoryCommandsRequest::getStartTime,
+                CountAsyncHistoryCommandsRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAsyncHistoryCommandsRequest::getEndTime,
+                CountAsyncHistoryCommandsRequest::setEndTime));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAsyncHistoryCommandsRequest::getStatus,
+                CountAsyncHistoryCommandsRequest::setStatus));
+        builder.<String>withRequestField("command_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAsyncHistoryCommandsRequest::getCommandName,
+                CountAsyncHistoryCommandsRequest::setCommandName));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountAsyncHistoryCommandsRequest::getInstanceId,
+                CountAsyncHistoryCommandsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAsyncCommandRequest, CreateAsyncCommandResponse> createAsyncCommand =
         genForCreateAsyncCommand();
 
@@ -642,6 +712,142 @@ public class IoTDAMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AsyncDeviceCommandRequest.class),
             f -> f.withMarshaller(CreateAsyncCommandRequest::getBody, CreateAsyncCommandRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAsyncCommandsRequest, ListAsyncCommandsResponse> listAsyncCommands =
+        genForListAsyncCommands();
+
+    private static HttpRequestDef<ListAsyncCommandsRequest, ListAsyncCommandsResponse> genForListAsyncCommands() {
+        // basic
+        HttpRequestDef.Builder<ListAsyncCommandsRequest, ListAsyncCommandsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAsyncCommandsRequest.class, ListAsyncCommandsResponse.class)
+                .withName("ListAsyncCommands")
+                .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getDeviceId, ListAsyncCommandsRequest::setDeviceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getLimit, ListAsyncCommandsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getMarker, ListAsyncCommandsRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getOffset, ListAsyncCommandsRequest::setOffset));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getStartTime, ListAsyncCommandsRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getEndTime, ListAsyncCommandsRequest::setEndTime));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getStatus, ListAsyncCommandsRequest::setStatus));
+        builder.<String>withRequestField("command_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getCommandName, ListAsyncCommandsRequest::setCommandName));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncCommandsRequest::getInstanceId, ListAsyncCommandsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse> listAsyncHistoryCommands =
+        genForListAsyncHistoryCommands();
+
+    private static HttpRequestDef<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse> genForListAsyncHistoryCommands() {
+        // basic
+        HttpRequestDef.Builder<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListAsyncHistoryCommandsRequest.class, ListAsyncHistoryCommandsResponse.class)
+                .withName("ListAsyncHistoryCommands")
+                .withUri("/v5/iot/{project_id}/devices/{device_id}/async-commands-history")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getDeviceId,
+                ListAsyncHistoryCommandsRequest::setDeviceId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getLimit,
+                ListAsyncHistoryCommandsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getMarker,
+                ListAsyncHistoryCommandsRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getOffset,
+                ListAsyncHistoryCommandsRequest::setOffset));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getStartTime,
+                ListAsyncHistoryCommandsRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getEndTime,
+                ListAsyncHistoryCommandsRequest::setEndTime));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getStatus,
+                ListAsyncHistoryCommandsRequest::setStatus));
+        builder.<String>withRequestField("command_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getCommandName,
+                ListAsyncHistoryCommandsRequest::setCommandName));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAsyncHistoryCommandsRequest::getInstanceId,
+                ListAsyncHistoryCommandsRequest::setInstanceId));
 
         // response
 
@@ -2888,6 +3094,130 @@ public class IoTDAMeta {
             TypeCasts.uncheckedConversion(UpdateFlowControlPolicy.class),
             f -> f.withMarshaller(UpdateRoutingFlowControlPolicyRequest::getBody,
                 UpdateRoutingFlowControlPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddFunctionsRequest, AddFunctionsResponse> addFunctions = genForAddFunctions();
+
+    private static HttpRequestDef<AddFunctionsRequest, AddFunctionsResponse> genForAddFunctions() {
+        // basic
+        HttpRequestDef.Builder<AddFunctionsRequest, AddFunctionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddFunctionsRequest.class, AddFunctionsResponse.class)
+                .withName("AddFunctions")
+                .withUri("/v5/iot/{project_id}/product-functions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddFunctionsRequest::getInstanceId, AddFunctionsRequest::setInstanceId));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddFunctionsRequest::getSpAuthToken, AddFunctionsRequest::setSpAuthToken));
+        builder.<String>withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddFunctionsRequest::getStageAuthToken, AddFunctionsRequest::setStageAuthToken));
+        builder.<FunctionRequestDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(FunctionRequestDTO.class),
+            f -> f.withMarshaller(AddFunctionsRequest::getBody, AddFunctionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFunctionsRequest, DeleteFunctionsResponse> deleteFunctions =
+        genForDeleteFunctions();
+
+    private static HttpRequestDef<DeleteFunctionsRequest, DeleteFunctionsResponse> genForDeleteFunctions() {
+        // basic
+        HttpRequestDef.Builder<DeleteFunctionsRequest, DeleteFunctionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFunctionsRequest.class, DeleteFunctionsResponse.class)
+                .withName("DeleteFunctions")
+                .withUri("/v5/iot/{project_id}/product-functions/{function_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("function_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFunctionsRequest::getFunctionId, DeleteFunctionsRequest::setFunctionId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFunctionsRequest::getInstanceId, DeleteFunctionsRequest::setInstanceId));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFunctionsRequest::getSpAuthToken, DeleteFunctionsRequest::setSpAuthToken));
+        builder.<String>withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFunctionsRequest::getStageAuthToken,
+                DeleteFunctionsRequest::setStageAuthToken));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteFunctionsResponse::getBody, DeleteFunctionsResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFunctionsRequest, ListFunctionsResponse> listFunctions =
+        genForListFunctions();
+
+    private static HttpRequestDef<ListFunctionsRequest, ListFunctionsResponse> genForListFunctions() {
+        // basic
+        HttpRequestDef.Builder<ListFunctionsRequest, ListFunctionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFunctionsRequest.class, ListFunctionsResponse.class)
+                .withName("ListFunctions")
+                .withUri("/v5/iot/{project_id}/product-functions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionsRequest::getAppId, ListFunctionsRequest::setAppId));
+        builder.<String>withRequestField("product_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionsRequest::getProductId, ListFunctionsRequest::setProductId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionsRequest::getInstanceId, ListFunctionsRequest::setInstanceId));
+        builder.<String>withRequestField("Sp-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionsRequest::getSpAuthToken, ListFunctionsRequest::setSpAuthToken));
+        builder.<String>withRequestField("Stage-Auth-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFunctionsRequest::getStageAuthToken, ListFunctionsRequest::setStageAuthToken));
 
         // response
 

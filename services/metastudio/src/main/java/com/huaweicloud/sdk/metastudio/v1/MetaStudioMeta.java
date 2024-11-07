@@ -375,6 +375,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechSwitchReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechSwitchRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechSwitchResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ValidateRobotReq;
+import com.huaweicloud.sdk.metastudio.v1.model.ValidateRobotRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ValidateRobotResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.VideoMotionCaptureJobReq;
 
 import java.util.List;
@@ -5250,6 +5253,54 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ValidateRobotRequest, ValidateRobotResponse> validateRobot =
+        genForValidateRobot();
+
+    private static HttpRequestDef<ValidateRobotRequest, ValidateRobotResponse> genForValidateRobot() {
+        // basic
+        HttpRequestDef.Builder<ValidateRobotRequest, ValidateRobotResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ValidateRobotRequest.class, ValidateRobotResponse.class)
+                .withName("ValidateRobot")
+                .withUri("/v1/{project_id}/digital-human-chat/robot/validate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateRobotRequest::getAuthorization, ValidateRobotRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateRobotRequest::getXSdkDate, ValidateRobotRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateRobotRequest::getXProjectId, ValidateRobotRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateRobotRequest::getXAppUserId, ValidateRobotRequest::setXAppUserId));
+        builder.<ValidateRobotReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ValidateRobotReq.class),
+            f -> f.withMarshaller(ValidateRobotRequest::getBody, ValidateRobotRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ValidateRobotResponse::getXRequestId, ValidateRobotResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSmartChatRoomRequest, CreateSmartChatRoomResponse> createSmartChatRoom =
         genForCreateSmartChatRoom();
 
@@ -6735,12 +6786,6 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTenantResourcesRequest::getResourceSource,
                 ListTenantResourcesRequest::setResourceSource));
-        builder.<String>withRequestField("resource_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTenantResourcesRequest::getResourceName,
-                ListTenantResourcesRequest::setResourceName));
         builder.<String>withRequestField("resource_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

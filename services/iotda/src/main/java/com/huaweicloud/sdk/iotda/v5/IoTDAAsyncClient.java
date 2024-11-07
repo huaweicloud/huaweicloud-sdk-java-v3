@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.iotda.v5.model.AddDeviceGroupRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceGroupResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.AddFunctionsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.AddFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueRequest;
 import com.huaweicloud.sdk.iotda.v5.model.AddQueueResponse;
 import com.huaweicloud.sdk.iotda.v5.model.AddTunnelRequest;
@@ -29,6 +31,8 @@ import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CloseDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CloseDeviceTunnelResponse;
+import com.huaweicloud.sdk.iotda.v5.model.CountAsyncHistoryCommandsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.CountAsyncHistoryCommandsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeRequest;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAccessCodeResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CreateAsyncCommandRequest;
@@ -85,6 +89,8 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteDeviceTunnelResponse;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.DeleteFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteOtaPackageResponse;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteProductRequest;
@@ -105,6 +111,10 @@ import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleRequest;
 import com.huaweicloud.sdk.iotda.v5.model.DeleteRuleResponse;
 import com.huaweicloud.sdk.iotda.v5.model.FreezeDeviceRequest;
 import com.huaweicloud.sdk.iotda.v5.model.FreezeDeviceResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListAsyncCommandsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListAsyncCommandsResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListAsyncHistoryCommandsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListAsyncHistoryCommandsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListBatchTaskFilesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListBatchTaskFilesResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListBatchTasksRequest;
@@ -129,6 +139,8 @@ import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDeviceTunnelsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListDevicesResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ListFunctionsResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ListOtaPackageInfoResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ListProductsRequest;
@@ -555,6 +567,36 @@ public class IoTDAAsyncClient {
     }
 
     /**
+     * 统计设备下的历史命令总数
+     *
+     * 统计设备下的历史命令总数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountAsyncHistoryCommandsRequest 请求对象
+     * @return CompletableFuture<CountAsyncHistoryCommandsResponse>
+     */
+    public CompletableFuture<CountAsyncHistoryCommandsResponse> countAsyncHistoryCommandsAsync(
+        CountAsyncHistoryCommandsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.countAsyncHistoryCommands);
+    }
+
+    /**
+     * 统计设备下的历史命令总数
+     *
+     * 统计设备下的历史命令总数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountAsyncHistoryCommandsRequest 请求对象
+     * @return AsyncInvoker<CountAsyncHistoryCommandsRequest, CountAsyncHistoryCommandsResponse>
+     */
+    public AsyncInvoker<CountAsyncHistoryCommandsRequest, CountAsyncHistoryCommandsResponse> countAsyncHistoryCommandsAsyncInvoker(
+        CountAsyncHistoryCommandsRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.countAsyncHistoryCommands, hcClient);
+    }
+
+    /**
      * 下发异步设备命令
      *
      * 设备的产品模型中定义了物联网平台可向设备下发的命令，应用服务器可调用此接口向指定设备下发异步命令，以实现对设备的控制。平台负责将命令发送给设备，并将设备执行命令结果异步通知应用服务器。 命令执行结果支持灵活的数据流转，应用服务器通过调用物联网平台的创建规则触发条件（Resource:device.command.status，Event:update）、创建规则动作并激活规则后，当命令状态变更时，物联网平台会根据规则将结果发送到规则指定的服务器，如用户自定义的HTTP服务器，AMQP服务器，以及华为云的其他储存服务器等, 详情参考[[设备命令状态变更通知](https://support.huaweicloud.com/api-iothub/iot_06_v5_01212.html)](tag:hws)[[设备命令状态变更通知](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_01212.html)](tag:hws_hk)。
@@ -587,6 +629,65 @@ public class IoTDAAsyncClient {
     public AsyncInvoker<CreateAsyncCommandRequest, CreateAsyncCommandResponse> createAsyncCommandAsyncInvoker(
         CreateAsyncCommandRequest request) {
         return new AsyncInvoker<>(request, IoTDAMeta.createAsyncCommand, hcClient);
+    }
+
+    /**
+     * 查询设备下队列中的命令
+     *
+     * 查询设备下队列中的命令（处理中的命令），包含PENDING、SENT、DELIVERED三种状态，注意：DELIVERED状态的命令经过系统设定的一段时间（具体以系统配置为准）仍然没有更新，就会从队列中移除，变为历史命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAsyncCommandsRequest 请求对象
+     * @return CompletableFuture<ListAsyncCommandsResponse>
+     */
+    public CompletableFuture<ListAsyncCommandsResponse> listAsyncCommandsAsync(ListAsyncCommandsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listAsyncCommands);
+    }
+
+    /**
+     * 查询设备下队列中的命令
+     *
+     * 查询设备下队列中的命令（处理中的命令），包含PENDING、SENT、DELIVERED三种状态，注意：DELIVERED状态的命令经过系统设定的一段时间（具体以系统配置为准）仍然没有更新，就会从队列中移除，变为历史命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAsyncCommandsRequest 请求对象
+     * @return AsyncInvoker<ListAsyncCommandsRequest, ListAsyncCommandsResponse>
+     */
+    public AsyncInvoker<ListAsyncCommandsRequest, ListAsyncCommandsResponse> listAsyncCommandsAsyncInvoker(
+        ListAsyncCommandsRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.listAsyncCommands, hcClient);
+    }
+
+    /**
+     * 查询设备下的历史命令
+     *
+     * 查询设备下发的历史异步命令，包含EXPIRED、SUCCESSFUL、FAILED、TIMEOUT、DELIVERED五种状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAsyncHistoryCommandsRequest 请求对象
+     * @return CompletableFuture<ListAsyncHistoryCommandsResponse>
+     */
+    public CompletableFuture<ListAsyncHistoryCommandsResponse> listAsyncHistoryCommandsAsync(
+        ListAsyncHistoryCommandsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listAsyncHistoryCommands);
+    }
+
+    /**
+     * 查询设备下的历史命令
+     *
+     * 查询设备下发的历史异步命令，包含EXPIRED、SUCCESSFUL、FAILED、TIMEOUT、DELIVERED五种状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAsyncHistoryCommandsRequest 请求对象
+     * @return AsyncInvoker<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse>
+     */
+    public AsyncInvoker<ListAsyncHistoryCommandsRequest, ListAsyncHistoryCommandsResponse> listAsyncHistoryCommandsAsyncInvoker(
+        ListAsyncHistoryCommandsRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.listAsyncHistoryCommands, hcClient);
     }
 
     /**
@@ -2692,6 +2793,93 @@ public class IoTDAAsyncClient {
     public AsyncInvoker<UpdateRoutingFlowControlPolicyRequest, UpdateRoutingFlowControlPolicyResponse> updateRoutingFlowControlPolicyAsyncInvoker(
         UpdateRoutingFlowControlPolicyRequest request) {
         return new AsyncInvoker<>(request, IoTDAMeta.updateRoutingFlowControlPolicy, hcClient);
+    }
+
+    /**
+     * 创建编解码函数
+     *
+     * 提供创建编解码函数的功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFunctionsRequest 请求对象
+     * @return CompletableFuture<AddFunctionsResponse>
+     */
+    public CompletableFuture<AddFunctionsResponse> addFunctionsAsync(AddFunctionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.addFunctions);
+    }
+
+    /**
+     * 创建编解码函数
+     *
+     * 提供创建编解码函数的功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFunctionsRequest 请求对象
+     * @return AsyncInvoker<AddFunctionsRequest, AddFunctionsResponse>
+     */
+    public AsyncInvoker<AddFunctionsRequest, AddFunctionsResponse> addFunctionsAsyncInvoker(
+        AddFunctionsRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.addFunctions, hcClient);
+    }
+
+    /**
+     * 删除编解码函数
+     *
+     * 提供删除编解码函数的功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFunctionsRequest 请求对象
+     * @return CompletableFuture<DeleteFunctionsResponse>
+     */
+    public CompletableFuture<DeleteFunctionsResponse> deleteFunctionsAsync(DeleteFunctionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.deleteFunctions);
+    }
+
+    /**
+     * 删除编解码函数
+     *
+     * 提供删除编解码函数的功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteFunctionsRequest 请求对象
+     * @return AsyncInvoker<DeleteFunctionsRequest, DeleteFunctionsResponse>
+     */
+    public AsyncInvoker<DeleteFunctionsRequest, DeleteFunctionsResponse> deleteFunctionsAsyncInvoker(
+        DeleteFunctionsRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.deleteFunctions, hcClient);
+    }
+
+    /**
+     * 查询编解码函数
+     *
+     * 提供查询编解码函数的功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFunctionsRequest 请求对象
+     * @return CompletableFuture<ListFunctionsResponse>
+     */
+    public CompletableFuture<ListFunctionsResponse> listFunctionsAsync(ListFunctionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.listFunctions);
+    }
+
+    /**
+     * 查询编解码函数
+     *
+     * 提供查询编解码函数的功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFunctionsRequest 请求对象
+     * @return AsyncInvoker<ListFunctionsRequest, ListFunctionsResponse>
+     */
+    public AsyncInvoker<ListFunctionsRequest, ListFunctionsResponse> listFunctionsAsyncInvoker(
+        ListFunctionsRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.listFunctions, hcClient);
     }
 
     /**

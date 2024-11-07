@@ -315,6 +315,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechSwitchRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateWelcomeSpeechSwitchResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ValidateRobotRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ValidateRobotResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -2920,6 +2922,35 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 校验应用
+     *
+     * 该接口用于校验应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateRobotRequest 请求对象
+     * @return CompletableFuture<ValidateRobotResponse>
+     */
+    public CompletableFuture<ValidateRobotResponse> validateRobotAsync(ValidateRobotRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.validateRobot);
+    }
+
+    /**
+     * 校验应用
+     *
+     * 该接口用于校验应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateRobotRequest 请求对象
+     * @return AsyncInvoker<ValidateRobotRequest, ValidateRobotResponse>
+     */
+    public AsyncInvoker<ValidateRobotRequest, ValidateRobotResponse> validateRobotAsyncInvoker(
+        ValidateRobotRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.validateRobot, hcClient);
+    }
+
+    /**
      * 创建智能交互对话
      *
      * 该接口用于创建智能交互对话。
@@ -3562,9 +3593,9 @@ public class MetaStudioAsyncClient {
     }
 
     /**
-     * 统计时间段内资源数量
+     * 统计时间段内过期的资源数量
      *
-     * 统计时间段内资源数量
+     * 统计指定时间段内即将过期的包周期与一次性资源数量。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3577,9 +3608,9 @@ public class MetaStudioAsyncClient {
     }
 
     /**
-     * 统计时间段内资源数量
+     * 统计时间段内过期的资源数量
      *
-     * 统计时间段内资源数量
+     * 统计指定时间段内即将过期的包周期与一次性资源数量。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3594,7 +3625,9 @@ public class MetaStudioAsyncClient {
     /**
      * 查看租户资源列表
      *
-     * 查看租户资源列表
+     * 查看租户资源列表。
+     * &gt; 按需套餐包用量本接口无法查询，需要调用CBC接口查询。[按需套餐包用量查询](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0001239.html)和[查询资源包信息](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0000511.html)。
+     * &gt; 各种资源的计费方式请参考[计费说明](https://support.huaweicloud.com/productdesc-metastudio/metastudio_01_0006.html)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3608,7 +3641,9 @@ public class MetaStudioAsyncClient {
     /**
      * 查看租户资源列表
      *
-     * 查看租户资源列表
+     * 查看租户资源列表。
+     * &gt; 按需套餐包用量本接口无法查询，需要调用CBC接口查询。[按需套餐包用量查询](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0001239.html)和[查询资源包信息](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0000511.html)。
+     * &gt; 各种资源的计费方式请参考[计费说明](https://support.huaweicloud.com/productdesc-metastudio/metastudio_01_0006.html)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3623,7 +3658,9 @@ public class MetaStudioAsyncClient {
     /**
      * 查看租户资源用量信息
      *
-     * 查看租户资源用量信息
+     * 查询租户一次性和包周期（包年/包月）资源用量信息。
+     * &gt; 按需套餐包用量本接口无法查询，需要调用CBC接口查询。[按需套餐包用量查询](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0001239.html)和[查询资源包信息](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0000511.html)。
+     * &gt; 各种资源的计费方式请参考[计费说明](https://support.huaweicloud.com/productdesc-metastudio/metastudio_01_0006.html)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3637,7 +3674,9 @@ public class MetaStudioAsyncClient {
     /**
      * 查看租户资源用量信息
      *
-     * 查看租户资源用量信息
+     * 查询租户一次性和包周期（包年/包月）资源用量信息。
+     * &gt; 按需套餐包用量本接口无法查询，需要调用CBC接口查询。[按需套餐包用量查询](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0001239.html)和[查询资源包信息](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0000511.html)。
+     * &gt; 各种资源的计费方式请参考[计费说明](https://support.huaweicloud.com/productdesc-metastudio/metastudio_01_0006.html)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

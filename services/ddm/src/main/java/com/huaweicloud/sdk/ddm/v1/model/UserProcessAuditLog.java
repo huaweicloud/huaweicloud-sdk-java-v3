@@ -31,9 +31,9 @@ public class UserProcessAuditLog {
     private String executeUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "excute_time")
+    @JsonProperty(value = "execute_time")
 
-    private String excuteTime;
+    private String executeTime;
 
     public UserProcessAuditLog withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -103,21 +103,21 @@ public class UserProcessAuditLog {
         this.executeUserName = executeUserName;
     }
 
-    public UserProcessAuditLog withExcuteTime(String excuteTime) {
-        this.excuteTime = excuteTime;
+    public UserProcessAuditLog withExecuteTime(String executeTime) {
+        this.executeTime = executeTime;
         return this;
     }
 
     /**
      * 发生时间，UTC时间
-     * @return excuteTime
+     * @return executeTime
      */
-    public String getExcuteTime() {
-        return excuteTime;
+    public String getExecuteTime() {
+        return executeTime;
     }
 
-    public void setExcuteTime(String excuteTime) {
-        this.excuteTime = excuteTime;
+    public void setExecuteTime(String executeTime) {
+        this.executeTime = executeTime;
     }
 
     @Override
@@ -132,12 +132,12 @@ public class UserProcessAuditLog {
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
             && Objects.equals(this.processId, that.processId)
             && Objects.equals(this.executeUserName, that.executeUserName)
-            && Objects.equals(this.excuteTime, that.excuteTime);
+            && Objects.equals(this.executeTime, that.executeTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, instanceName, processId, executeUserName, excuteTime);
+        return Objects.hash(instanceId, instanceName, processId, executeUserName, executeTime);
     }
 
     @Override
@@ -148,7 +148,7 @@ public class UserProcessAuditLog {
         sb.append("    instanceName: ").append(toIndentedString(instanceName)).append("\n");
         sb.append("    processId: ").append(toIndentedString(processId)).append("\n");
         sb.append("    executeUserName: ").append(toIndentedString(executeUserName)).append("\n");
-        sb.append("    excuteTime: ").append(toIndentedString(excuteTime)).append("\n");
+        sb.append("    executeTime: ").append(toIndentedString(executeTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

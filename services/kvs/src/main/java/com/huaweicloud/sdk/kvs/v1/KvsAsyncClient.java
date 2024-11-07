@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvResponse;
+import com.huaweicloud.sdk.kvs.v1.model.CheckHealthRequest;
+import com.huaweicloud.sdk.kvs.v1.model.CheckHealthResponse;
 import com.huaweicloud.sdk.kvs.v1.model.CreateTableRequest;
 import com.huaweicloud.sdk.kvs.v1.model.CreateTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.DeleteKvRequest;
@@ -28,7 +30,7 @@ import com.huaweicloud.sdk.kvs.v1.model.UpdateKvResponse;
 
 import java.util.concurrent.CompletableFuture;
 
-public class KvsAsyncClient {
+public class KvsAsyncClient implements IKvsAsyncClient {
 
     protected HcClient hcClient;
 
@@ -161,6 +163,34 @@ public class KvsAsyncClient {
      */
     public AsyncInvoker<ListTableRequest, ListTableResponse> listTableAsyncInvoker(ListTableRequest request) {
         return new AsyncInvoker<>(request, KvsMeta.listTable, hcClient);
+    }
+
+    /**
+     * 网络信道健康检查
+     *
+     * 网络信道健康检查，返回response未抛出网络异常即为成功
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckHealthRequest 请求对象
+     * @return CompletableFuture<CheckHealthResponse>
+     */
+    public CompletableFuture<CheckHealthResponse> checkHealthAsync(CheckHealthRequest request) {
+        return hcClient.asyncInvokeHttp(request, KvsMeta.checkHealth);
+    }
+
+    /**
+     * 网络信道健康检查
+     *
+     * 网络信道健康检查，返回response未抛出网络异常即为成功
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckHealthRequest 请求对象
+     * @return AsyncInvoker<CheckHealthRequest, CheckHealthResponse>
+     */
+    public AsyncInvoker<CheckHealthRequest, CheckHealthResponse> checkHealthAsyncInvoker(CheckHealthRequest request) {
+        return new AsyncInvoker<>(request, KvsMeta.checkHealth, hcClient);
     }
 
     /**

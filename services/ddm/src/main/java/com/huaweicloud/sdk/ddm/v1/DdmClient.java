@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.ddm.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateGroupRequest;
@@ -31,6 +33,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ListApiVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListApiVersionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListAvailableRdsListResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmEnginesRequest;
@@ -63,6 +67,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ResizeFlavorResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceResponse;
+import com.huaweicloud.sdk.ddm.v1.model.RollBackDatabaseVersionRequest;
+import com.huaweicloud.sdk.ddm.v1.model.RollBackDatabaseVersionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamRequest;
@@ -105,6 +111,94 @@ public class DdmClient {
     public static ClientBuilder<DdmClient> newBuilder() {
         ClientBuilder<DdmClient> clientBuilder = new ClientBuilder<>(DdmClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 变更内核版本
+     *
+     * 变更内核版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeDatabaseVersionRequest 请求对象
+     * @return ChangeDatabaseVersionResponse
+     */
+    public ChangeDatabaseVersionResponse changeDatabaseVersion(ChangeDatabaseVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.changeDatabaseVersion);
+    }
+
+    /**
+     * 变更内核版本
+     *
+     * 变更内核版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeDatabaseVersionRequest 请求对象
+     * @return SyncInvoker<ChangeDatabaseVersionRequest, ChangeDatabaseVersionResponse>
+     */
+    public SyncInvoker<ChangeDatabaseVersionRequest, ChangeDatabaseVersionResponse> changeDatabaseVersionInvoker(
+        ChangeDatabaseVersionRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.changeDatabaseVersion, hcClient);
+    }
+
+    /**
+     * 查询可变更内核版本
+     *
+     * 查询可变更内核版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseAvailableVersionsRequest 请求对象
+     * @return ListDatabaseAvailableVersionsResponse
+     */
+    public ListDatabaseAvailableVersionsResponse listDatabaseAvailableVersions(
+        ListDatabaseAvailableVersionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.listDatabaseAvailableVersions);
+    }
+
+    /**
+     * 查询可变更内核版本
+     *
+     * 查询可变更内核版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDatabaseAvailableVersionsRequest 请求对象
+     * @return SyncInvoker<ListDatabaseAvailableVersionsRequest, ListDatabaseAvailableVersionsResponse>
+     */
+    public SyncInvoker<ListDatabaseAvailableVersionsRequest, ListDatabaseAvailableVersionsResponse> listDatabaseAvailableVersionsInvoker(
+        ListDatabaseAvailableVersionsRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.listDatabaseAvailableVersions, hcClient);
+    }
+
+    /**
+     * 回滚内核版本
+     *
+     * 回滚内核版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RollBackDatabaseVersionRequest 请求对象
+     * @return RollBackDatabaseVersionResponse
+     */
+    public RollBackDatabaseVersionResponse rollBackDatabaseVersion(RollBackDatabaseVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, DdmMeta.rollBackDatabaseVersion);
+    }
+
+    /**
+     * 回滚内核版本
+     *
+     * 回滚内核版本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RollBackDatabaseVersionRequest 请求对象
+     * @return SyncInvoker<RollBackDatabaseVersionRequest, RollBackDatabaseVersionResponse>
+     */
+    public SyncInvoker<RollBackDatabaseVersionRequest, RollBackDatabaseVersionResponse> rollBackDatabaseVersionInvoker(
+        RollBackDatabaseVersionRequest request) {
+        return new SyncInvoker<>(request, DdmMeta.rollBackDatabaseVersion, hcClient);
     }
 
     /**

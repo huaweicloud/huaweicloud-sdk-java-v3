@@ -102,6 +102,16 @@ public class VideoParameters {
     private Integer codec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "crf")
+
+    private Object crf;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_bitrate")
+
+    private Integer maxBitrate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bitrate")
 
     private Integer bitrate;
@@ -185,6 +195,42 @@ public class VideoParameters {
 
     public void setCodec(Integer codec) {
         this.codec = codec;
+    }
+
+    public VideoParameters withCrf(Object crf) {
+        this.crf = crf;
+        return this;
+    }
+
+    /**
+     * 视频恒定码率控制因子。  取值范围为[0, 51] 
+     * @return crf
+     */
+    public Object getCrf() {
+        return crf;
+    }
+
+    public void setCrf(Object crf) {
+        this.crf = crf;
+    }
+
+    public VideoParameters withMaxBitrate(Integer maxBitrate) {
+        this.maxBitrate = maxBitrate;
+        return this;
+    }
+
+    /**
+     * 输出最大码率  单位：kbit/s  带crf时使用，参考原片的平均码率进行设置（一般为1.5倍） 
+     * minimum: 0
+     * maximum: 500000
+     * @return maxBitrate
+     */
+    public Integer getMaxBitrate() {
+        return maxBitrate;
+    }
+
+    public void setMaxBitrate(Integer maxBitrate) {
+        this.maxBitrate = maxBitrate;
     }
 
     public VideoParameters withBitrate(Integer bitrate) {
@@ -387,6 +433,7 @@ public class VideoParameters {
         }
         VideoParameters that = (VideoParameters) obj;
         return Objects.equals(this.outputPolicy, that.outputPolicy) && Objects.equals(this.codec, that.codec)
+            && Objects.equals(this.crf, that.crf) && Objects.equals(this.maxBitrate, that.maxBitrate)
             && Objects.equals(this.bitrate, that.bitrate) && Objects.equals(this.profile, that.profile)
             && Objects.equals(this.level, that.level) && Objects.equals(this.preset, that.preset)
             && Objects.equals(this.maxIframesInterval, that.maxIframesInterval)
@@ -399,6 +446,8 @@ public class VideoParameters {
     public int hashCode() {
         return Objects.hash(outputPolicy,
             codec,
+            crf,
+            maxBitrate,
             bitrate,
             profile,
             level,
@@ -417,6 +466,8 @@ public class VideoParameters {
         sb.append("class VideoParameters {\n");
         sb.append("    outputPolicy: ").append(toIndentedString(outputPolicy)).append("\n");
         sb.append("    codec: ").append(toIndentedString(codec)).append("\n");
+        sb.append("    crf: ").append(toIndentedString(crf)).append("\n");
+        sb.append("    maxBitrate: ").append(toIndentedString(maxBitrate)).append("\n");
         sb.append("    bitrate: ").append(toIndentedString(bitrate)).append("\n");
         sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");

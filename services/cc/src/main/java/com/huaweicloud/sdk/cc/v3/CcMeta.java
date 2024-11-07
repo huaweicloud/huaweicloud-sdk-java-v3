@@ -8,6 +8,9 @@ import com.huaweicloud.sdk.cc.v3.model.AssociateBandwidthPackageResponse;
 import com.huaweicloud.sdk.cc.v3.model.AssociateGlobalConnectionBandwidthInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.AssociateGlobalConnectionBandwidthInstanceRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.AssociateGlobalConnectionBandwidthInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.AssociateSiteConnectionBandwidthRequestBody;
+import com.huaweicloud.sdk.cc.v3.model.AssociateSiteNetworkBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.AssociateSiteNetworkBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.AttachmentInstanceTypeEnum;
 import com.huaweicloud.sdk.cc.v3.model.BandwidthTypeEnum;
 import com.huaweicloud.sdk.cc.v3.model.BatchCreateGcbResourceTagsRequest;
@@ -56,6 +59,9 @@ import com.huaweicloud.sdk.cc.v3.model.CreateInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.CreateNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.CreateNetworkInstanceRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.CreateNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.CreateP2PSiteNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.CreateP2PSiteNetworkRequestBody;
+import com.huaweicloud.sdk.cc.v3.model.CreateP2PSiteNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteAuthorisationRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteAuthorisationResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteBandwidthPackageRequest;
@@ -76,14 +82,24 @@ import com.huaweicloud.sdk.cc.v3.model.DeleteInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.DeleteNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.DeleteNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.DeleteSiteNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.DeleteSiteNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateBandwidthPackageResponse;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInstanceRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.DisassociateSiteNetworkBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.DisassociateSiteNetworkBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageLevelsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageLevelsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageLinesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageLinesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageSitesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageSitesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageTagsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackagesByTagsRequest;
@@ -147,6 +163,12 @@ import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkCapabilitiesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkCapabilitiesResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkQuotasRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkQuotasResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworksRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworksResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListSupportBindingConnectionBandwidthsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListSupportBindingConnectionBandwidthsResponse;
 import com.huaweicloud.sdk.cc.v3.model.QueryResourceByTagRequestBody;
@@ -168,6 +190,11 @@ import com.huaweicloud.sdk.cc.v3.model.ShowInterRegionBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.ShowNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.ShowNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.ShowSiteNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.ShowSiteNetworkResponse;
+import com.huaweicloud.sdk.cc.v3.model.SiteNetworkQuotaKeyEnum;
+import com.huaweicloud.sdk.cc.v3.model.SiteNetworkSpecificationEnum;
+import com.huaweicloud.sdk.cc.v3.model.SiteNetworkStateEnum;
 import com.huaweicloud.sdk.cc.v3.model.SortDir;
 import com.huaweicloud.sdk.cc.v3.model.TagBandwidthPackageRequest;
 import com.huaweicloud.sdk.cc.v3.model.TagBandwidthPackageRequestBody;
@@ -217,6 +244,14 @@ import com.huaweicloud.sdk.cc.v3.model.UpdateInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateNetworkInstanceRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.UpdateNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteConnectionBandwidthSizeRequestBody;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkBandwidthRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkBandwidthResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkBandwidthSizeRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkBandwidthSizeResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkRequest;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkRequestBody;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkResponse;
 import com.huaweicloud.sdk.cc.v3.model.Version;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
@@ -3430,6 +3465,501 @@ public class CcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNetworkInstanceRequestBody.class),
             f -> f.withMarshaller(UpdateNetworkInstanceRequest::getBody, UpdateNetworkInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociateSiteNetworkBandwidthRequest, AssociateSiteNetworkBandwidthResponse> associateSiteNetworkBandwidth =
+        genForAssociateSiteNetworkBandwidth();
+
+    private static HttpRequestDef<AssociateSiteNetworkBandwidthRequest, AssociateSiteNetworkBandwidthResponse> genForAssociateSiteNetworkBandwidth() {
+        // basic
+        HttpRequestDef.Builder<AssociateSiteNetworkBandwidthRequest, AssociateSiteNetworkBandwidthResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssociateSiteNetworkBandwidthRequest.class,
+                    AssociateSiteNetworkBandwidthResponse.class)
+                .withName("AssociateSiteNetworkBandwidth")
+                .withUri(
+                    "/v3/{domain_id}/dcaas/site-network/{site_network_id}/connections/{site_connection_id}/associate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("site_network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateSiteNetworkBandwidthRequest::getSiteNetworkId,
+                AssociateSiteNetworkBandwidthRequest::setSiteNetworkId));
+        builder.<String>withRequestField("site_connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateSiteNetworkBandwidthRequest::getSiteConnectionId,
+                AssociateSiteNetworkBandwidthRequest::setSiteConnectionId));
+        builder.<AssociateSiteConnectionBandwidthRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateSiteConnectionBandwidthRequestBody.class),
+            f -> f.withMarshaller(AssociateSiteNetworkBandwidthRequest::getBody,
+                AssociateSiteNetworkBandwidthRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateSiteNetworkBandwidthRequest, DisassociateSiteNetworkBandwidthResponse> disassociateSiteNetworkBandwidth =
+        genForDisassociateSiteNetworkBandwidth();
+
+    private static HttpRequestDef<DisassociateSiteNetworkBandwidthRequest, DisassociateSiteNetworkBandwidthResponse> genForDisassociateSiteNetworkBandwidth() {
+        // basic
+        HttpRequestDef.Builder<DisassociateSiteNetworkBandwidthRequest, DisassociateSiteNetworkBandwidthResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DisassociateSiteNetworkBandwidthRequest.class,
+                    DisassociateSiteNetworkBandwidthResponse.class)
+                .withName("DisassociateSiteNetworkBandwidth")
+                .withUri(
+                    "/v3/{domain_id}/dcaas/site-network/{site_network_id}/connections/{site_connection_id}/disassociate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("site_network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateSiteNetworkBandwidthRequest::getSiteNetworkId,
+                DisassociateSiteNetworkBandwidthRequest::setSiteNetworkId));
+        builder.<String>withRequestField("site_connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateSiteNetworkBandwidthRequest::getSiteConnectionId,
+                DisassociateSiteNetworkBandwidthRequest::setSiteConnectionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSiteNetworkBandwidthRequest, UpdateSiteNetworkBandwidthResponse> updateSiteNetworkBandwidth =
+        genForUpdateSiteNetworkBandwidth();
+
+    private static HttpRequestDef<UpdateSiteNetworkBandwidthRequest, UpdateSiteNetworkBandwidthResponse> genForUpdateSiteNetworkBandwidth() {
+        // basic
+        HttpRequestDef.Builder<UpdateSiteNetworkBandwidthRequest, UpdateSiteNetworkBandwidthResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateSiteNetworkBandwidthRequest.class,
+                    UpdateSiteNetworkBandwidthResponse.class)
+                .withName("UpdateSiteNetworkBandwidth")
+                .withUri(
+                    "/v3/{domain_id}/dcaas/site-network/{site_network_id}/connections/{site_connection_id}/update-bandwidth")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("site_network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSiteNetworkBandwidthRequest::getSiteNetworkId,
+                UpdateSiteNetworkBandwidthRequest::setSiteNetworkId));
+        builder.<String>withRequestField("site_connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSiteNetworkBandwidthRequest::getSiteConnectionId,
+                UpdateSiteNetworkBandwidthRequest::setSiteConnectionId));
+        builder.<AssociateSiteConnectionBandwidthRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateSiteConnectionBandwidthRequestBody.class),
+            f -> f.withMarshaller(UpdateSiteNetworkBandwidthRequest::getBody,
+                UpdateSiteNetworkBandwidthRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSiteNetworkBandwidthSizeRequest, UpdateSiteNetworkBandwidthSizeResponse> updateSiteNetworkBandwidthSize =
+        genForUpdateSiteNetworkBandwidthSize();
+
+    private static HttpRequestDef<UpdateSiteNetworkBandwidthSizeRequest, UpdateSiteNetworkBandwidthSizeResponse> genForUpdateSiteNetworkBandwidthSize() {
+        // basic
+        HttpRequestDef.Builder<UpdateSiteNetworkBandwidthSizeRequest, UpdateSiteNetworkBandwidthSizeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpdateSiteNetworkBandwidthSizeRequest.class,
+                    UpdateSiteNetworkBandwidthSizeResponse.class)
+                .withName("UpdateSiteNetworkBandwidthSize")
+                .withUri(
+                    "/v3/{domain_id}/dcaas/site-network/{site_network_id}/connections/{site_connection_id}/update-bandwidth-size")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("site_network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSiteNetworkBandwidthSizeRequest::getSiteNetworkId,
+                UpdateSiteNetworkBandwidthSizeRequest::setSiteNetworkId));
+        builder.<String>withRequestField("site_connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSiteNetworkBandwidthSizeRequest::getSiteConnectionId,
+                UpdateSiteNetworkBandwidthSizeRequest::setSiteConnectionId));
+        builder.<UpdateSiteConnectionBandwidthSizeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSiteConnectionBandwidthSizeRequestBody.class),
+            f -> f.withMarshaller(UpdateSiteNetworkBandwidthSizeRequest::getBody,
+                UpdateSiteNetworkBandwidthSizeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateP2PSiteNetworkRequest, CreateP2PSiteNetworkResponse> createP2PSiteNetwork =
+        genForCreateP2PSiteNetwork();
+
+    private static HttpRequestDef<CreateP2PSiteNetworkRequest, CreateP2PSiteNetworkResponse> genForCreateP2PSiteNetwork() {
+        // basic
+        HttpRequestDef.Builder<CreateP2PSiteNetworkRequest, CreateP2PSiteNetworkResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateP2PSiteNetworkRequest.class, CreateP2PSiteNetworkResponse.class)
+            .withName("CreateP2PSiteNetwork")
+            .withUri("/v3/{domain_id}/dcaas/p2p-site-networks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateP2PSiteNetworkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateP2PSiteNetworkRequestBody.class),
+            f -> f.withMarshaller(CreateP2PSiteNetworkRequest::getBody, CreateP2PSiteNetworkRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSiteNetworkRequest, DeleteSiteNetworkResponse> deleteSiteNetwork =
+        genForDeleteSiteNetwork();
+
+    private static HttpRequestDef<DeleteSiteNetworkRequest, DeleteSiteNetworkResponse> genForDeleteSiteNetwork() {
+        // basic
+        HttpRequestDef.Builder<DeleteSiteNetworkRequest, DeleteSiteNetworkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSiteNetworkRequest.class, DeleteSiteNetworkResponse.class)
+                .withName("DeleteSiteNetwork")
+                .withUri("/v3/{domain_id}/dcaas/site-networks/{site_network_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("site_network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSiteNetworkRequest::getSiteNetworkId,
+                DeleteSiteNetworkRequest::setSiteNetworkId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSiteNetworksRequest, ListSiteNetworksResponse> listSiteNetworks =
+        genForListSiteNetworks();
+
+    private static HttpRequestDef<ListSiteNetworksRequest, ListSiteNetworksResponse> genForListSiteNetworks() {
+        // basic
+        HttpRequestDef.Builder<ListSiteNetworksRequest, ListSiteNetworksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSiteNetworksRequest.class, ListSiteNetworksResponse.class)
+                .withName("ListSiteNetworks")
+                .withUri("/v3/{domain_id}/dcaas/site-networks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSiteNetworksRequest::getLimit, ListSiteNetworksRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSiteNetworksRequest::getMarker, ListSiteNetworksRequest::setMarker));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSiteNetworksRequest::getSortKey, ListSiteNetworksRequest::setSortKey));
+        builder.<SortDir>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SortDir.class),
+            f -> f.withMarshaller(ListSiteNetworksRequest::getSortDir, ListSiteNetworksRequest::setSortDir));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSiteNetworksRequest::getId, ListSiteNetworksRequest::setId));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSiteNetworksRequest::getName, ListSiteNetworksRequest::setName));
+        builder.<List<SiteNetworkStateEnum>>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSiteNetworksRequest::getState, ListSiteNetworksRequest::setState));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSiteNetworksRequest::getEnterpriseProjectId,
+                ListSiteNetworksRequest::setEnterpriseProjectId));
+        builder.<List<String>>withRequestField("global_dc_gateway_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSiteNetworksRequest::getGlobalDcGatewayId,
+                ListSiteNetworksRequest::setGlobalDcGatewayId));
+        builder.<List<String>>withRequestField("global_connection_bandwidth_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSiteNetworksRequest::getGlobalConnectionBandwidthId,
+                ListSiteNetworksRequest::setGlobalConnectionBandwidthId));
+        builder.<List<String>>withRequestField("connection_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSiteNetworksRequest::getConnectionId, ListSiteNetworksRequest::setConnectionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSiteNetworkRequest, ShowSiteNetworkResponse> showSiteNetwork =
+        genForShowSiteNetwork();
+
+    private static HttpRequestDef<ShowSiteNetworkRequest, ShowSiteNetworkResponse> genForShowSiteNetwork() {
+        // basic
+        HttpRequestDef.Builder<ShowSiteNetworkRequest, ShowSiteNetworkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSiteNetworkRequest.class, ShowSiteNetworkResponse.class)
+                .withName("ShowSiteNetwork")
+                .withUri("/v3/{domain_id}/dcaas/site-networks/{site_network_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("site_network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSiteNetworkRequest::getSiteNetworkId, ShowSiteNetworkRequest::setSiteNetworkId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSiteNetworkRequest, UpdateSiteNetworkResponse> updateSiteNetwork =
+        genForUpdateSiteNetwork();
+
+    private static HttpRequestDef<UpdateSiteNetworkRequest, UpdateSiteNetworkResponse> genForUpdateSiteNetwork() {
+        // basic
+        HttpRequestDef.Builder<UpdateSiteNetworkRequest, UpdateSiteNetworkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSiteNetworkRequest.class, UpdateSiteNetworkResponse.class)
+                .withName("UpdateSiteNetwork")
+                .withUri("/v3/{domain_id}/dcaas/site-networks/{site_network_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("site_network_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSiteNetworkRequest::getSiteNetworkId,
+                UpdateSiteNetworkRequest::setSiteNetworkId));
+        builder.<UpdateSiteNetworkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSiteNetworkRequestBody.class),
+            f -> f.withMarshaller(UpdateSiteNetworkRequest::getBody, UpdateSiteNetworkRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSiteNetworkCapabilitiesRequest, ListSiteNetworkCapabilitiesResponse> listSiteNetworkCapabilities =
+        genForListSiteNetworkCapabilities();
+
+    private static HttpRequestDef<ListSiteNetworkCapabilitiesRequest, ListSiteNetworkCapabilitiesResponse> genForListSiteNetworkCapabilities() {
+        // basic
+        HttpRequestDef.Builder<ListSiteNetworkCapabilitiesRequest, ListSiteNetworkCapabilitiesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSiteNetworkCapabilitiesRequest.class,
+                    ListSiteNetworkCapabilitiesResponse.class)
+                .withName("ListSiteNetworkCapabilities")
+                .withUri("/v3/{domain_id}/dcaas/site-network/capabilities")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<SiteNetworkSpecificationEnum>>withRequestField("specification",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSiteNetworkCapabilitiesRequest::getSpecification,
+                ListSiteNetworkCapabilitiesRequest::setSpecification));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSiteNetworkQuotasRequest, ListSiteNetworkQuotasResponse> listSiteNetworkQuotas =
+        genForListSiteNetworkQuotas();
+
+    private static HttpRequestDef<ListSiteNetworkQuotasRequest, ListSiteNetworkQuotasResponse> genForListSiteNetworkQuotas() {
+        // basic
+        HttpRequestDef.Builder<ListSiteNetworkQuotasRequest, ListSiteNetworkQuotasResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSiteNetworkQuotasRequest.class, ListSiteNetworkQuotasResponse.class)
+            .withName("ListSiteNetworkQuotas")
+            .withUri("/v3/{domain_id}/dcaas/site-network/quotas")
+            .withContentType("application/json");
+
+        // requests
+        builder.<List<SiteNetworkQuotaKeyEnum>>withRequestField("quota_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSiteNetworkQuotasRequest::getQuotaType,
+                ListSiteNetworkQuotasRequest::setQuotaType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSiteNetworkQuotasRequest::getLimit, ListSiteNetworkQuotasRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSiteNetworkQuotasRequest::getMarker, ListSiteNetworkQuotasRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBandwidthPackageLevelsRequest, ListBandwidthPackageLevelsResponse> listBandwidthPackageLevels =
+        genForListBandwidthPackageLevels();
+
+    private static HttpRequestDef<ListBandwidthPackageLevelsRequest, ListBandwidthPackageLevelsResponse> genForListBandwidthPackageLevels() {
+        // basic
+        HttpRequestDef.Builder<ListBandwidthPackageLevelsRequest, ListBandwidthPackageLevelsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListBandwidthPackageLevelsRequest.class,
+                    ListBandwidthPackageLevelsResponse.class)
+                .withName("ListBandwidthPackageLevels")
+                .withUri("/v3/{domain_id}/ccaas/bandwidth-packages/levels")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthPackageLevelsRequest::getLevel,
+                ListBandwidthPackageLevelsRequest::setLevel));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthPackageLevelsRequest::getName,
+                ListBandwidthPackageLevelsRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBandwidthPackageLinesRequest, ListBandwidthPackageLinesResponse> listBandwidthPackageLines =
+        genForListBandwidthPackageLines();
+
+    private static HttpRequestDef<ListBandwidthPackageLinesRequest, ListBandwidthPackageLinesResponse> genForListBandwidthPackageLines() {
+        // basic
+        HttpRequestDef.Builder<ListBandwidthPackageLinesRequest, ListBandwidthPackageLinesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListBandwidthPackageLinesRequest.class,
+                    ListBandwidthPackageLinesResponse.class)
+                .withName("ListBandwidthPackageLines")
+                .withUri("/v3/{domain_id}/ccaas/bandwidth-packages/lines")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthPackageLinesRequest::getLevel,
+                ListBandwidthPackageLinesRequest::setLevel));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthPackageLinesRequest::getName,
+                ListBandwidthPackageLinesRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBandwidthPackageSitesRequest, ListBandwidthPackageSitesResponse> listBandwidthPackageSites =
+        genForListBandwidthPackageSites();
+
+    private static HttpRequestDef<ListBandwidthPackageSitesRequest, ListBandwidthPackageSitesResponse> genForListBandwidthPackageSites() {
+        // basic
+        HttpRequestDef.Builder<ListBandwidthPackageSitesRequest, ListBandwidthPackageSitesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListBandwidthPackageSitesRequest.class,
+                    ListBandwidthPackageSitesResponse.class)
+                .withName("ListBandwidthPackageSites")
+                .withUri("/v3/{domain_id}/ccaas/bandwidth-packages/sites")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("site_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthPackageSitesRequest::getSiteCode,
+                ListBandwidthPackageSitesRequest::setSiteCode));
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthPackageSitesRequest::getRegionId,
+                ListBandwidthPackageSitesRequest::setRegionId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthPackageSitesRequest::getName,
+                ListBandwidthPackageSitesRequest::setName));
 
         // response
 

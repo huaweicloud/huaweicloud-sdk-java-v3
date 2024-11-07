@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.waf.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -30,6 +32,11 @@ public class CloudWafHostItem {
     @JsonProperty(value = "description")
 
     private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "server")
+
+    private List<CloudWafServer> server = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "type")
@@ -157,6 +164,39 @@ public class CloudWafHostItem {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public CloudWafHostItem withServer(List<CloudWafServer> server) {
+        this.server = server;
+        return this;
+    }
+
+    public CloudWafHostItem addServerItem(CloudWafServer serverItem) {
+        if (this.server == null) {
+            this.server = new ArrayList<>();
+        }
+        this.server.add(serverItem);
+        return this;
+    }
+
+    public CloudWafHostItem withServer(Consumer<List<CloudWafServer>> serverSetter) {
+        if (this.server == null) {
+            this.server = new ArrayList<>();
+        }
+        serverSetter.accept(this.server);
+        return this;
+    }
+
+    /**
+     * 防护域名的源站服务器配置信息
+     * @return server
+     */
+    public List<CloudWafServer> getServer() {
+        return server;
+    }
+
+    public void setServer(List<CloudWafServer> server) {
+        this.server = server;
     }
 
     public CloudWafHostItem withType(Integer type) {
@@ -383,10 +423,10 @@ public class CloudWafHostItem {
         CloudWafHostItem that = (CloudWafHostItem) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.hostid, that.hostid)
             && Objects.equals(this.region, that.region) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.proxy, that.proxy)
-            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.accessCode, that.accessCode)
-            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.timestamp, that.timestamp)
-            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.server, that.server) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.proxy, that.proxy) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.accessCode, that.accessCode) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.accessStatus, that.accessStatus)
             && Objects.equals(this.exclusiveIp, that.exclusiveIp) && Objects.equals(this.paidType, that.paidType)
             && Objects.equals(this.webTag, that.webTag) && Objects.equals(this.flag, that.flag);
@@ -398,6 +438,7 @@ public class CloudWafHostItem {
             hostid,
             region,
             description,
+            server,
             type,
             proxy,
             hostname,
@@ -420,6 +461,7 @@ public class CloudWafHostItem {
         sb.append("    hostid: ").append(toIndentedString(hostid)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    server: ").append(toIndentedString(server)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    proxy: ").append(toIndentedString(proxy)).append("\n");
         sb.append("    hostname: ").append(toIndentedString(hostname)).append("\n");

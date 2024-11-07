@@ -73,6 +73,28 @@ public class AadMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> deleteDomain = genForDeleteDomain();
+
+    private static HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> genForDeleteDomain() {
+        // basic
+        HttpRequestDef.Builder<DeleteDomainRequest, DeleteDomainResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainRequest.class, DeleteDomainResponse.class)
+                .withName("DeleteDomain")
+                .withUri("/v2/aad/domains")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteDomainV2RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteDomainV2RequestBody.class),
+            f -> f.withMarshaller(DeleteDomainRequest::getBody, DeleteDomainRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDDoSAttackEventRequest, ListDDoSAttackEventResponse> listDDoSAttackEvent =
         genForListDDoSAttackEvent();
 
@@ -638,28 +660,6 @@ public class AadMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeInstanceSpecV2RequestBody.class),
             f -> f.withMarshaller(UpgradeInstanceSpecRequest::getBody, UpgradeInstanceSpecRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> deleteDomain = genForDeleteDomain();
-
-    private static HttpRequestDef<DeleteDomainRequest, DeleteDomainResponse> genForDeleteDomain() {
-        // basic
-        HttpRequestDef.Builder<DeleteDomainRequest, DeleteDomainResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDomainRequest.class, DeleteDomainResponse.class)
-                .withName("DeleteDomain")
-                .withUri("/v2/aad/domains")
-                .withContentType("application/json");
-
-        // requests
-        builder.<DeleteDomainV2RequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeleteDomainV2RequestBody.class),
-            f -> f.withMarshaller(DeleteDomainRequest::getBody, DeleteDomainRequest::setBody));
 
         // response
 

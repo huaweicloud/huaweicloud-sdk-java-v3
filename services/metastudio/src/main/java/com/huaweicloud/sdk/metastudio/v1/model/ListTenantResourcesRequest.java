@@ -51,11 +51,6 @@ public class ListTenantResourcesRequest {
     private String resourceSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_name")
-
-    private String resourceName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_id")
 
     private String resourceId;
@@ -184,7 +179,7 @@ public class ListTenantResourcesRequest {
     }
 
     /**
-     * 资源类型。
+     * 资源类型。可填多个，用\",\"分隔。详见[资源类型](metastudio_02_0042.xml)。
      * @return resource
      */
     public String getResource() {
@@ -201,7 +196,7 @@ public class ListTenantResourcesRequest {
     }
 
     /**
-     * 业务类型。
+     * 业务类型。可填多个，用\",\"分隔。 * VOICE_CLONE：声音制作 * SYNTHETICS_SOUND：声音合成 * ASSET_MANAGER：资产管理 * MODELING_2D：形象制作 * LIVE_2D：分身数字人视频直播 * VIDEO_2D：分身数字人视频制作 * CHAT_2D：分身数字人智能交互 * BUSINESS_CARD_2D：分身数字人名片 * PICTURE_2D：照片数字人视频 * MODELING_3D：3D照片建模 * VDS_3D：3D视觉驱动 * TTSA_3D：3D语音驱动 * FLEXUS_2D：FLEXUS版本资源
      * @return business
      */
     public String getBusiness() {
@@ -218,7 +213,7 @@ public class ListTenantResourcesRequest {
     }
 
     /**
-     * 资源来源。
+     * 资源来源,可填多个 例如:PURCHASED,ADMIN_ALLOCATED,将返回商用资源与管理员分配资源。 * PURCHASED: 用户购买的资源 * SP_ALLOCATED: SP分配的资源 * ADMIN_ALLOCATED: 系统管理员分配的资源
      * @return resourceSource
      */
     public String getResourceSource() {
@@ -227,23 +222,6 @@ public class ListTenantResourcesRequest {
 
     public void setResourceSource(String resourceSource) {
         this.resourceSource = resourceSource;
-    }
-
-    public ListTenantResourcesRequest withResourceName(String resourceName) {
-        this.resourceName = resourceName;
-        return this;
-    }
-
-    /**
-     * 资源名称。
-     * @return resourceName
-     */
-    public String getResourceName() {
-        return resourceName;
-    }
-
-    public void setResourceName(String resourceName) {
-        this.resourceName = resourceName;
     }
 
     public ListTenantResourcesRequest withResourceId(String resourceId) {
@@ -286,7 +264,7 @@ public class ListTenantResourcesRequest {
     }
 
     /**
-     * 计费模式。
+     * 计费类型。  * PERIODIC: 包周期  * ONE_TIME：一次性  * ON_DEMAND：按需 计费模式。
      * @return chargingMode
      */
     public String getChargingMode() {
@@ -337,7 +315,7 @@ public class ListTenantResourcesRequest {
     }
 
     /**
-     * 子资源类型。
+     * 子资源类型。当前只有flexus套餐包存在该字段 * voice_clone_flexus: 语音克隆Flexus版 * modeling_count_2d_model_flexus: 分身数字人形象制作Flexus版 * video_time_flexus_2d_model: 分身数字人Flexus版本视频制作
      * @return subResource
      */
     public String getSubResource() {
@@ -361,8 +339,8 @@ public class ListTenantResourcesRequest {
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.resource, that.resource)
             && Objects.equals(this.business, that.business) && Objects.equals(this.resourceSource, that.resourceSource)
-            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.resourceId, that.resourceId)
-            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.resourceExpireStartTime, that.resourceExpireStartTime)
             && Objects.equals(this.resourceExpireEndTime, that.resourceExpireEndTime)
             && Objects.equals(this.subResource, that.subResource);
@@ -378,7 +356,6 @@ public class ListTenantResourcesRequest {
             resource,
             business,
             resourceSource,
-            resourceName,
             resourceId,
             orderId,
             chargingMode,
@@ -399,7 +376,6 @@ public class ListTenantResourcesRequest {
         sb.append("    resource: ").append(toIndentedString(resource)).append("\n");
         sb.append("    business: ").append(toIndentedString(business)).append("\n");
         sb.append("    resourceSource: ").append(toIndentedString(resourceSource)).append("\n");
-        sb.append("    resourceName: ").append(toIndentedString(resourceName)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");

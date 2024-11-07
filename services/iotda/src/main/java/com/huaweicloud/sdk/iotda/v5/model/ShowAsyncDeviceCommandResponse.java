@@ -150,7 +150,7 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     }
 
     /**
-     * 设备执行的命令，Json格式，里面是一个个健值对，如果service_id不为空，每个健都是profile中命令的参数名（paraName）;如果service_id为空则由用户自定义命令格式。设备命令示例：{\"value\":\"1\"}，具体格式需要应用和设备约定。
+     * 设备执行的命令，Json格式，里面是一个个健值对，如果service_id不为空，每个健都是profile中命令的参数名（paraName）;如果service_id为空则由用户自定义命令格式。设备命令示例：{\"value\":\"1\"}，具体格式需要应用和设备约定。 
      * @return paras
      */
     public Object getParas() {
@@ -184,7 +184,7 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     }
 
     /**
-     * 下发命令的状态。 ·PENDING表示未下发,在物联网平台缓存着 ·EXPIRED表示命令已经过期，即缓存的时间超过设定的expire_time ·SENT表示命令正在下发 ·DELIVERED表示命令已送达设备 ·SUCCESSFUL表示命令已经成功执行 ·FAILED表示命令执行失败 ·TIMEOUT表示命令下发之后，没有收到设备确认或者响应结果一定时间后超时
+     * 下发命令的状态。 ·PENDING表示未下发,在物联网平台缓存着 ·EXPIRED表示命令已经过期，即缓存的时间超过设定的expire_time ·SENT表示命令正在下发 ·DELIVERED表示命令已送达设备 ·SUCCESSFUL表示命令已经成功执行 ·FAILED表示命令执行失败 ·TIMEOUT表示命令下发之后，没有收到设备确认或者响应结果一定时间后超时 
      * @return status
      */
     public String getStatus() {
@@ -201,7 +201,7 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     }
 
     /**
-     * 设备命令执行的详细结果，由设备返回，Json格式。
+     * 设备命令执行的详细结果，由设备返回，Json格式。 
      * @return result
      */
     public Object getResult() {
@@ -252,7 +252,7 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     }
 
     /**
-     * 物联网平台将命令送达到设备的时间，\"yyyyMMdd'T'HHmmss'Z'\"格式的UTC字符串
+     * 物联网平台将命令送达到设备的时间，\"yyyyMMdd'T'HHmmss'Z'\"格式的UTC字符串。
      * @return deliveredTime
      */
     public String getDeliveredTime() {
@@ -286,7 +286,7 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     }
 
     /**
-     * 设备响应命令的时间，\"yyyyMMdd'T'HHmmss'Z'\"格式的UTC字符串
+     * 设备响应命令的时间，\"yyyyMMdd'T'HHmmss'Z'\"格式的UTC字符串。
      * @return responseTime
      */
     public String getResponseTime() {

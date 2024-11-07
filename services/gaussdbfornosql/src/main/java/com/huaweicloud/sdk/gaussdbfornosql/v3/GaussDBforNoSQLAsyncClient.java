@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckWeekPasswordRequest;
@@ -293,6 +295,36 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionAsyncInvoker(
         BatchTagActionRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.batchTagAction, hcClient);
+    }
+
+    /**
+     * 批量数据库补丁升级
+     *
+     * 批量升级数据库补丁版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpgradeDatabaseVersionRequest 请求对象
+     * @return CompletableFuture<BatchUpgradeDatabaseVersionResponse>
+     */
+    public CompletableFuture<BatchUpgradeDatabaseVersionResponse> batchUpgradeDatabaseVersionAsync(
+        BatchUpgradeDatabaseVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.batchUpgradeDatabaseVersion);
+    }
+
+    /**
+     * 批量数据库补丁升级
+     *
+     * 批量升级数据库补丁版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpgradeDatabaseVersionRequest 请求对象
+     * @return AsyncInvoker<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse>
+     */
+    public AsyncInvoker<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse> batchUpgradeDatabaseVersionAsyncInvoker(
+        BatchUpgradeDatabaseVersionRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.batchUpgradeDatabaseVersion, hcClient);
     }
 
     /**
