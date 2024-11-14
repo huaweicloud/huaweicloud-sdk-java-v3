@@ -36,8 +36,6 @@ import com.huaweicloud.sdk.cloudrtc.v2.model.ShowRecordCallbackRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ShowRecordCallbackResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ShowRecordRuleRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ShowRecordRuleResponse;
-import com.huaweicloud.sdk.cloudrtc.v2.model.ShowUrlAuthRequest;
-import com.huaweicloud.sdk.cloudrtc.v2.model.ShowUrlAuthResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.StartAppRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.StartAppResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.StopAppRequest;
@@ -58,8 +56,6 @@ import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordCallbackRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordCallbackResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordRuleRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordRuleResponse;
-import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateUrlAuthRequest;
-import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateUrlAuthResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -589,34 +585,6 @@ public class CloudRTCAsyncClient {
     }
 
     /**
-     * 查询访问控制参数
-     *
-     * 查询应用鉴权配置参数
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowUrlAuthRequest 请求对象
-     * @return CompletableFuture<ShowUrlAuthResponse>
-     */
-    public CompletableFuture<ShowUrlAuthResponse> showUrlAuthAsync(ShowUrlAuthRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudRTCMeta.showUrlAuth);
-    }
-
-    /**
-     * 查询访问控制参数
-     *
-     * 查询应用鉴权配置参数
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowUrlAuthRequest 请求对象
-     * @return AsyncInvoker<ShowUrlAuthRequest, ShowUrlAuthResponse>
-     */
-    public AsyncInvoker<ShowUrlAuthRequest, ShowUrlAuthResponse> showUrlAuthAsyncInvoker(ShowUrlAuthRequest request) {
-        return new AsyncInvoker<>(request, CloudRTCMeta.showUrlAuth, hcClient);
-    }
-
-    /**
      * 启用应用
      *
      * 调用此接口启用单个应用。
@@ -891,35 +859,6 @@ public class CloudRTCAsyncClient {
     public AsyncInvoker<UpdateRecordRuleRequest, UpdateRecordRuleResponse> updateRecordRuleAsyncInvoker(
         UpdateRecordRuleRequest request) {
         return new AsyncInvoker<>(request, CloudRTCMeta.updateRecordRule, hcClient);
-    }
-
-    /**
-     * 开关访问控制
-     *
-     * 调用此接口开启或关闭URL鉴权。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateUrlAuthRequest 请求对象
-     * @return CompletableFuture<UpdateUrlAuthResponse>
-     */
-    public CompletableFuture<UpdateUrlAuthResponse> updateUrlAuthAsync(UpdateUrlAuthRequest request) {
-        return hcClient.asyncInvokeHttp(request, CloudRTCMeta.updateUrlAuth);
-    }
-
-    /**
-     * 开关访问控制
-     *
-     * 调用此接口开启或关闭URL鉴权。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateUrlAuthRequest 请求对象
-     * @return AsyncInvoker<UpdateUrlAuthRequest, UpdateUrlAuthResponse>
-     */
-    public AsyncInvoker<UpdateUrlAuthRequest, UpdateUrlAuthResponse> updateUrlAuthAsyncInvoker(
-        UpdateUrlAuthRequest request) {
-        return new AsyncInvoker<>(request, CloudRTCMeta.updateUrlAuth, hcClient);
     }
 
     /**

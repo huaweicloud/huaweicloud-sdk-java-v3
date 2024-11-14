@@ -17,9 +17,9 @@ import java.util.function.Consumer;
 public class PushEventsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-enterprise-prject-id")
+    @JsonProperty(value = "enterprise-project-id")
 
-    private String xEnterprisePrjectId;
+    private String enterpriseProjectId;
 
     /**
      * 接口请求动作。action=clear代表清除告警，不传或者传其他值默认为上报动作。
@@ -95,23 +95,21 @@ public class PushEventsRequest {
 
     private EventList body;
 
-    public PushEventsRequest withXEnterprisePrjectId(String xEnterprisePrjectId) {
-        this.xEnterprisePrjectId = xEnterprisePrjectId;
+    public PushEventsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
      * 告警所属的企业项目id。
-     * @return xEnterprisePrjectId
+     * @return enterpriseProjectId
      */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "x-enterprise-prject-id")
-    public String getXEnterprisePrjectId() {
-        return xEnterprisePrjectId;
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
     }
 
-    public void setXEnterprisePrjectId(String xEnterprisePrjectId) {
-        this.xEnterprisePrjectId = xEnterprisePrjectId;
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public PushEventsRequest withAction(ActionEnum action) {
@@ -166,20 +164,20 @@ public class PushEventsRequest {
             return false;
         }
         PushEventsRequest that = (PushEventsRequest) obj;
-        return Objects.equals(this.xEnterprisePrjectId, that.xEnterprisePrjectId)
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.action, that.action) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xEnterprisePrjectId, action, body);
+        return Objects.hash(enterpriseProjectId, action, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PushEventsRequest {\n");
-        sb.append("    xEnterprisePrjectId: ").append(toIndentedString(xEnterprisePrjectId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

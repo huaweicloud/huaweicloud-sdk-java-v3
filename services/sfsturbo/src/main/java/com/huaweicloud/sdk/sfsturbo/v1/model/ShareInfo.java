@@ -75,7 +75,7 @@ public class ShareInfo {
     private String name;
 
     /**
-     * SFS Turbo文件系统的计费模式。'0'代表按需付费，'1'代表包周期计费。
+     * SFS Turbo文件系统的计费模式。'0'代表按需付费，'1'代表包周期计费。如果文件系统正在创建，该字段不返回。
      */
     public static final class PayModelEnum {
 
@@ -203,6 +203,36 @@ public class ShareInfo {
     @JsonProperty(value = "tags")
 
     private List<ResourceTag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "optional_endpoint")
+
+    private String optionalEndpoint;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hpc_bw")
+
+    private String hpcBw;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instanceId")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instanceType")
+
+    private String instanceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "statusDetail")
+
+    private String statusDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "features")
+
+    private ShareInfoFeatures features;
 
     public ShareInfo withActionProgress(ActionProgress actionProgress) {
         this.actionProgress = actionProgress;
@@ -338,7 +368,7 @@ public class ShareInfo {
     }
 
     /**
-     * 如果是增强型文件系统，该字段返回bandwidth，否则不返回。
+     * 如果是增强版文件系统，该字段返回bandwidth；如果是20MB/s/TiB、40MB/s/TiB、125MB/s/TiB、250MB/s/TiB、500MB/s/TiB、1000MB/s/TiB，该字段返回hpc；否则不返回。
      * @return expandType
      */
     public String getExpandType() {
@@ -355,7 +385,7 @@ public class ShareInfo {
     }
 
     /**
-     * SFS Turbo文件系统的挂载端点。
+     * SFS Turbo文件系统的挂载端点。例如\"192.168.0.90:/\"。如果文件系统正在创建，该字段不返回。
      * @return exportLocation
      */
     public String getExportLocation() {
@@ -406,7 +436,7 @@ public class ShareInfo {
     }
 
     /**
-     * SFS Turbo文件系统的计费模式。'0'代表按需付费，'1'代表包周期计费。
+     * SFS Turbo文件系统的计费模式。'0'代表按需付费，'1'代表包周期计费。如果文件系统正在创建，该字段不返回。
      * @return payModel
      */
     public PayModelEnum getPayModel() {
@@ -525,7 +555,7 @@ public class ShareInfo {
     }
 
     /**
-     * SFS Turbo文件系统的子状态。 '121'表示扩容中；'132'表示修改安全组中；'137'表示添加VPC中；'138'表示删除VPC中；'150'表示配置联动后端中；'151'表示删除联动后端配置中； '221'表示扩容成功；'232'表示修改安全组成功；'237'表示添加VPC成功；'238'表示删除VPC成功；'250'表示配置联动后端成功；'251'表示删除联动后端配置成功； '321'表示扩容失败；'332'表示修改安全组失败；'337'表示添加VPC失败；'338'表示删除VPC失败；'350'表示配置联动后端失败；'351'表示删除联动后端配置失败； 
+     * SFS Turbo文件系统的子状态。当用户未对文件系统有修改类操作时，该字段不返回。 '121'表示扩容中；'132'表示修改安全组中；'137'表示添加VPC中；'138'表示删除VPC中；'150'表示配置联动后端中；'151'表示删除联动后端配置中。 '221'表示扩容成功；'232'表示修改安全组成功；'237'表示添加VPC成功；'238'表示删除VPC成功；'250'表示配置联动后端成功；'251'表示删除联动后端配置成功。 '321'表示扩容失败；'332'表示修改安全组失败；'337'表示添加VPC失败；'338'表示删除VPC失败；'350'表示配置联动后端失败；'351'表示删除联动后端配置失败。 
      * @return subStatus
      */
     public String getSubStatus() {
@@ -620,6 +650,117 @@ public class ShareInfo {
         this.tags = tags;
     }
 
+    public ShareInfo withOptionalEndpoint(String optionalEndpoint) {
+        this.optionalEndpoint = optionalEndpoint;
+        return this;
+    }
+
+    /**
+     * 可选的挂载IP地址。上一代文件系统规格类型不返回该字段。
+     * @return optionalEndpoint
+     */
+    public String getOptionalEndpoint() {
+        return optionalEndpoint;
+    }
+
+    public void setOptionalEndpoint(String optionalEndpoint) {
+        this.optionalEndpoint = optionalEndpoint;
+    }
+
+    public ShareInfo withHpcBw(String hpcBw) {
+        this.hpcBw = hpcBw;
+        return this;
+    }
+
+    /**
+     * 文件系统的带宽规格。 - \"20M\"表示20MB/s/TiB - \"40M\"表示40MB/s/TiB - \"125M\"表示125MB/s/TiB - \"250M\"表示250MB/s/TiB - \"500M\"表示500MB/s/TiB  - \"1000M\"表示1000MB/s/TiB  - \"2G\"、\"4G\"、\"8G\"、\"16G\"、\"24G\"、\"32G\"或\"48G\"表示HPC缓存型的带宽规格。 
+     * @return hpcBw
+     */
+    public String getHpcBw() {
+        return hpcBw;
+    }
+
+    public void setHpcBw(String hpcBw) {
+        this.hpcBw = hpcBw;
+    }
+
+    public ShareInfo withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 文件系统规格的节点id，为预留字段，不具备实际含义。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public ShareInfo withInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+        return this;
+    }
+
+    /**
+     * 文件系统规格的节点类型，为预留字段，不具备实际含义。
+     * @return instanceType
+     */
+    public String getInstanceType() {
+        return instanceType;
+    }
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    public ShareInfo withStatusDetail(String statusDetail) {
+        this.statusDetail = statusDetail;
+        return this;
+    }
+
+    /**
+     * 文件系统的请求ID，为预留字段，不具备实际含义。
+     * @return statusDetail
+     */
+    public String getStatusDetail() {
+        return statusDetail;
+    }
+
+    public void setStatusDetail(String statusDetail) {
+        this.statusDetail = statusDetail;
+    }
+
+    public ShareInfo withFeatures(ShareInfoFeatures features) {
+        this.features = features;
+        return this;
+    }
+
+    public ShareInfo withFeatures(Consumer<ShareInfoFeatures> featuresSetter) {
+        if (this.features == null) {
+            this.features = new ShareInfoFeatures();
+            featuresSetter.accept(this.features);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get features
+     * @return features
+     */
+    public ShareInfoFeatures getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(ShareInfoFeatures features) {
+        this.features = features;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -642,7 +783,10 @@ public class ShareInfo {
             && Objects.equals(this.subStatus, that.subStatus) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.optionalEndpoint, that.optionalEndpoint)
+            && Objects.equals(this.hpcBw, that.hpcBw) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.instanceType, that.instanceType)
+            && Objects.equals(this.statusDetail, that.statusDetail) && Objects.equals(this.features, that.features);
     }
 
     @Override
@@ -669,7 +813,13 @@ public class ShareInfo {
             subnetId,
             vpcId,
             enterpriseProjectId,
-            tags);
+            tags,
+            optionalEndpoint,
+            hpcBw,
+            instanceId,
+            instanceType,
+            statusDetail,
+            features);
     }
 
     @Override
@@ -699,6 +849,12 @@ public class ShareInfo {
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    optionalEndpoint: ").append(toIndentedString(optionalEndpoint)).append("\n");
+        sb.append("    hpcBw: ").append(toIndentedString(hpcBw)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
+        sb.append("    statusDetail: ").append(toIndentedString(statusDetail)).append("\n");
+        sb.append("    features: ").append(toIndentedString(features)).append("\n");
         sb.append("}");
         return sb.toString();
     }

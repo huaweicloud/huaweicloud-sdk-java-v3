@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 变更磁盘类型
+ * 变更云硬盘类型
  */
 public class RetypeVolume {
 
@@ -15,13 +15,23 @@ public class RetypeVolume {
 
     private String newType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iops")
+
+    private Integer iops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "throughput")
+
+    private Integer throughput;
+
     public RetypeVolume withNewType(String newType) {
         this.newType = newType;
         return this;
     }
 
     /**
-     * 磁盘变更至指定的磁盘类型
+     * 变更至指定的云硬盘类型
      * @return newType
      */
     public String getNewType() {
@@ -30,6 +40,40 @@ public class RetypeVolume {
 
     public void setNewType(String newType) {
         this.newType = newType;
+    }
+
+    public RetypeVolume withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+
+    /**
+     * 云硬盘iops大小。
+     * @return iops
+     */
+    public Integer getIops() {
+        return iops;
+    }
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
+    public RetypeVolume withThroughput(Integer throughput) {
+        this.throughput = throughput;
+        return this;
+    }
+
+    /**
+     * 云硬盘的吞吐量大小。
+     * @return throughput
+     */
+    public Integer getThroughput() {
+        return throughput;
+    }
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
     }
 
     @Override
@@ -41,12 +85,13 @@ public class RetypeVolume {
             return false;
         }
         RetypeVolume that = (RetypeVolume) obj;
-        return Objects.equals(this.newType, that.newType);
+        return Objects.equals(this.newType, that.newType) && Objects.equals(this.iops, that.iops)
+            && Objects.equals(this.throughput, that.throughput);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(newType);
+        return Objects.hash(newType, iops, throughput);
     }
 
     @Override
@@ -54,6 +99,8 @@ public class RetypeVolume {
         StringBuilder sb = new StringBuilder();
         sb.append("class RetypeVolume {\n");
         sb.append("    newType: ").append(toIndentedString(newType)).append("\n");
+        sb.append("    iops: ").append(toIndentedString(iops)).append("\n");
+        sb.append("    throughput: ").append(toIndentedString(throughput)).append("\n");
         sb.append("}");
         return sb.toString();
     }

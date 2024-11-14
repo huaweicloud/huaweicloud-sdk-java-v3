@@ -1009,7 +1009,7 @@ public class HssMeta {
         // requests
         builder.<String>withRequestField("host_id",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppsRequest::getHostId, ListAppsRequest::setHostId));
         builder.<String>withRequestField("host_name",

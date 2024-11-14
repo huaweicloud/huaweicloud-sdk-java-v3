@@ -22,7 +22,7 @@ public class DeleteLdapConfigResponse extends SdkResponse {
     }
 
     /**
-     * 创建ldap异步任务的id
+     * ldap异步任务的id。可通过查询job的状态详情接口查询job的执行状态。
      * @return jobId
      */
     public String getJobId() {

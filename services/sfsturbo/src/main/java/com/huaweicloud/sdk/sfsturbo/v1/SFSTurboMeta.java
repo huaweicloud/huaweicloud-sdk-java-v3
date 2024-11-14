@@ -50,6 +50,8 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsDirResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsTaskRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteFsTaskResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteHpcCacheTaskRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteHpcCacheTaskResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteLdapConfigRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeleteLdapConfigResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.DeletePermRuleRequest;
@@ -109,6 +111,12 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateHpcShareResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateLdapConfigRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateLdapConfigRequestBody;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateLdapConfigResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateObsTargetAttributesRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateObsTargetAttributesRequestBody;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateObsTargetAttributesResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateObsTargetPolicyRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateObsTargetPolicyRequestBody;
+import com.huaweicloud.sdk.sfsturbo.v1.model.UpdateObsTargetPolicyResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.UpdatePermRuleResponse;
 
@@ -587,6 +595,40 @@ public class SFSTurboMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteHpcCacheTaskRequest, DeleteHpcCacheTaskResponse> deleteHpcCacheTask =
+        genForDeleteHpcCacheTask();
+
+    private static HttpRequestDef<DeleteHpcCacheTaskRequest, DeleteHpcCacheTaskResponse> genForDeleteHpcCacheTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteHpcCacheTaskRequest, DeleteHpcCacheTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteHpcCacheTaskRequest.class, DeleteHpcCacheTaskResponse.class)
+                .withName("DeleteHpcCacheTask")
+                .withUri("/v1/{project_id}/sfs-turbo/{share_id}/hpc-cache/task/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHpcCacheTaskRequest::getShareId, DeleteHpcCacheTaskRequest::setShareId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteHpcCacheTaskRequest::getTaskId, DeleteHpcCacheTaskRequest::setTaskId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteHpcCacheTaskResponse::getXRequestId,
+                DeleteHpcCacheTaskResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteLdapConfigRequest, DeleteLdapConfigResponse> deleteLdapConfig =
         genForDeleteLdapConfig();
 
@@ -828,6 +870,16 @@ public class SFSTurboMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListHpcCacheTasksRequest::getLimit, ListHpcCacheTasksRequest::setLimit));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHpcCacheTasksRequest::getStartTime, ListHpcCacheTasksRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHpcCacheTasksRequest::getEndTime, ListHpcCacheTasksRequest::setEndTime));
 
         // response
 
@@ -856,6 +908,16 @@ public class SFSTurboMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPermRulesRequest::getShareId, ListPermRulesRequest::setShareId));
+        builder.<Long>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPermRulesRequest::getLimit, ListPermRulesRequest::setLimit));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPermRulesRequest::getOffset, ListPermRulesRequest::setOffset));
 
         // response
 
@@ -874,6 +936,16 @@ public class SFSTurboMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSharedTagsRequest::getLimit, ListSharedTagsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSharedTagsRequest::getOffset, ListSharedTagsRequest::setOffset));
 
         // response
 
@@ -1338,6 +1410,91 @@ public class SFSTurboMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateObsTargetAttributesRequest, UpdateObsTargetAttributesResponse> updateObsTargetAttributes =
+        genForUpdateObsTargetAttributes();
+
+    private static HttpRequestDef<UpdateObsTargetAttributesRequest, UpdateObsTargetAttributesResponse> genForUpdateObsTargetAttributes() {
+        // basic
+        HttpRequestDef.Builder<UpdateObsTargetAttributesRequest, UpdateObsTargetAttributesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateObsTargetAttributesRequest.class,
+                    UpdateObsTargetAttributesResponse.class)
+                .withName("UpdateObsTargetAttributes")
+                .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/targets/{target_id}/attributes")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateObsTargetAttributesRequest::getShareId,
+                UpdateObsTargetAttributesRequest::setShareId));
+        builder.<String>withRequestField("target_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateObsTargetAttributesRequest::getTargetId,
+                UpdateObsTargetAttributesRequest::setTargetId));
+        builder.<UpdateObsTargetAttributesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateObsTargetAttributesRequestBody.class),
+            f -> f.withMarshaller(UpdateObsTargetAttributesRequest::getBody,
+                UpdateObsTargetAttributesRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateObsTargetAttributesResponse::getXRequestId,
+                UpdateObsTargetAttributesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateObsTargetPolicyRequest, UpdateObsTargetPolicyResponse> updateObsTargetPolicy =
+        genForUpdateObsTargetPolicy();
+
+    private static HttpRequestDef<UpdateObsTargetPolicyRequest, UpdateObsTargetPolicyResponse> genForUpdateObsTargetPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateObsTargetPolicyRequest, UpdateObsTargetPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateObsTargetPolicyRequest.class, UpdateObsTargetPolicyResponse.class)
+            .withName("UpdateObsTargetPolicy")
+            .withUri("/v1/{project_id}/sfs-turbo/shares/{share_id}/targets/{target_id}/policy")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("share_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateObsTargetPolicyRequest::getShareId, UpdateObsTargetPolicyRequest::setShareId));
+        builder.<String>withRequestField("target_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateObsTargetPolicyRequest::getTargetId,
+                UpdateObsTargetPolicyRequest::setTargetId));
+        builder.<UpdateObsTargetPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateObsTargetPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateObsTargetPolicyRequest::getBody, UpdateObsTargetPolicyRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateObsTargetPolicyResponse::getXRequestId,
+                UpdateObsTargetPolicyResponse::setXRequestId));
         return builder.build();
     }
 

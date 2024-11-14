@@ -52,7 +52,7 @@ public class CreateLimitTaskResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_words")
 
-    private List<String> keyWords = null;
+    private String keyWords;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -120,7 +120,7 @@ public class CreateLimitTaskResponse extends SdkResponse {
     private List<CreateLimitTaskNodeResult> nodeInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "jobId")
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
@@ -243,24 +243,8 @@ public class CreateLimitTaskResponse extends SdkResponse {
         this.sqlModel = sqlModel;
     }
 
-    public CreateLimitTaskResponse withKeyWords(List<String> keyWords) {
+    public CreateLimitTaskResponse withKeyWords(String keyWords) {
         this.keyWords = keyWords;
-        return this;
-    }
-
-    public CreateLimitTaskResponse addKeyWordsItem(String keyWordsItem) {
-        if (this.keyWords == null) {
-            this.keyWords = new ArrayList<>();
-        }
-        this.keyWords.add(keyWordsItem);
-        return this;
-    }
-
-    public CreateLimitTaskResponse withKeyWords(Consumer<List<String>> keyWordsSetter) {
-        if (this.keyWords == null) {
-            this.keyWords = new ArrayList<>();
-        }
-        keyWordsSetter.accept(this.keyWords);
         return this;
     }
 
@@ -268,11 +252,11 @@ public class CreateLimitTaskResponse extends SdkResponse {
      * 关键词，仅当任务类型为SQL_TYPE时，返回该值且与请求参数相同。
      * @return keyWords
      */
-    public List<String> getKeyWords() {
+    public String getKeyWords() {
         return keyWords;
     }
 
-    public void setKeyWords(List<String> keyWords) {
+    public void setKeyWords(String keyWords) {
         this.keyWords = keyWords;
     }
 

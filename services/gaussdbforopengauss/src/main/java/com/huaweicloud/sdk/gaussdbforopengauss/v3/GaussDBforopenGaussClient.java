@@ -2830,9 +2830,9 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 开启MySQl兼容端口服务
+     * 开启M兼容端口服务
      *
-     * 开启指定实例的MySQl兼容端口。
+     * 开启指定实例的M兼容端口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2844,9 +2844,9 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 开启MySQl兼容端口服务
+     * 开启M兼容端口服务
      *
-     * 开启指定实例的MySQl兼容端口。
+     * 开启指定实例的M兼容端口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3030,9 +3030,9 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 更新/关闭MySQl兼容端口服务
+     * 更新/关闭M兼容端口服务
      *
-     * 更新指定实例的MySQl兼容端口服务配置。
+     * 更新指定实例的M兼容端口服务配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3044,9 +3044,9 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
-     * 更新/关闭MySQl兼容端口服务
+     * 更新/关闭M兼容端口服务
      *
-     * 更新指定实例的MySQl兼容端口服务配置。
+     * 更新指定实例的M兼容端口服务配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

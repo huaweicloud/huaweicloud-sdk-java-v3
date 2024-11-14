@@ -31,6 +31,11 @@ public class ActionSampleInfo {
     private String catalog;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recommended_value")
+
+    private Integer recommendedValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_selected")
 
     private Boolean isSelected;
@@ -108,6 +113,25 @@ public class ActionSampleInfo {
         this.catalog = catalog;
     }
 
+    public ActionSampleInfo withRecommendedValue(Integer recommendedValue) {
+        this.recommendedValue = recommendedValue;
+        return this;
+    }
+
+    /**
+     * 推荐等级。
+     * minimum: 0
+     * maximum: 100
+     * @return recommendedValue
+     */
+    public Integer getRecommendedValue() {
+        return recommendedValue;
+    }
+
+    public void setRecommendedValue(Integer recommendedValue) {
+        this.recommendedValue = recommendedValue;
+    }
+
     public ActionSampleInfo withIsSelected(Boolean isSelected) {
         this.isSelected = isSelected;
         return this;
@@ -153,13 +177,16 @@ public class ActionSampleInfo {
         ActionSampleInfo that = (ActionSampleInfo) obj;
         return Objects.equals(this.actionNameZh, that.actionNameZh)
             && Objects.equals(this.actionNameEn, that.actionNameEn) && Objects.equals(this.actionTag, that.actionTag)
-            && Objects.equals(this.catalog, that.catalog) && Objects.equals(this.isSelected, that.isSelected)
+            && Objects.equals(this.catalog, that.catalog)
+            && Objects.equals(this.recommendedValue, that.recommendedValue)
+            && Objects.equals(this.isSelected, that.isSelected)
             && Objects.equals(this.sampleDownloadUrl, that.sampleDownloadUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(actionNameZh, actionNameEn, actionTag, catalog, isSelected, sampleDownloadUrl);
+        return Objects
+            .hash(actionNameZh, actionNameEn, actionTag, catalog, recommendedValue, isSelected, sampleDownloadUrl);
     }
 
     @Override
@@ -170,6 +197,7 @@ public class ActionSampleInfo {
         sb.append("    actionNameEn: ").append(toIndentedString(actionNameEn)).append("\n");
         sb.append("    actionTag: ").append(toIndentedString(actionTag)).append("\n");
         sb.append("    catalog: ").append(toIndentedString(catalog)).append("\n");
+        sb.append("    recommendedValue: ").append(toIndentedString(recommendedValue)).append("\n");
         sb.append("    isSelected: ").append(toIndentedString(isSelected)).append("\n");
         sb.append("    sampleDownloadUrl: ").append(toIndentedString(sampleDownloadUrl)).append("\n");
         sb.append("}");

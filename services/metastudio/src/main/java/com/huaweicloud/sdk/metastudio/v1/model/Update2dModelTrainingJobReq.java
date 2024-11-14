@@ -127,6 +127,11 @@ public class Update2dModelTrainingJobReq {
     private Integer actionVideoMultipartCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "beauty_level")
+
+    private Integer beautyLevel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_background_replacement")
 
     private Boolean isBackgroundReplacement;
@@ -315,6 +320,25 @@ public class Update2dModelTrainingJobReq {
         this.actionVideoMultipartCount = actionVideoMultipartCount;
     }
 
+    public Update2dModelTrainingJobReq withBeautyLevel(Integer beautyLevel) {
+        this.beautyLevel = beautyLevel;
+        return this;
+    }
+
+    /**
+     * 美白等级。默认值0，不美白。
+     * minimum: 0
+     * maximum: 3
+     * @return beautyLevel
+     */
+    public Integer getBeautyLevel() {
+        return beautyLevel;
+    }
+
+    public void setBeautyLevel(Integer beautyLevel) {
+        this.beautyLevel = beautyLevel;
+    }
+
     public Update2dModelTrainingJobReq withIsBackgroundReplacement(Boolean isBackgroundReplacement) {
         this.isBackgroundReplacement = isBackgroundReplacement;
         return this;
@@ -480,6 +504,7 @@ public class Update2dModelTrainingJobReq {
             && Objects.equals(this.commandMessage, that.commandMessage)
             && Objects.equals(this.videoMultipartCount, that.videoMultipartCount)
             && Objects.equals(this.actionVideoMultipartCount, that.actionVideoMultipartCount)
+            && Objects.equals(this.beautyLevel, that.beautyLevel)
             && Objects.equals(this.isBackgroundReplacement, that.isBackgroundReplacement)
             && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.samplesBasicInfo, that.samplesBasicInfo)
@@ -494,6 +519,7 @@ public class Update2dModelTrainingJobReq {
             commandMessage,
             videoMultipartCount,
             actionVideoMultipartCount,
+            beautyLevel,
             isBackgroundReplacement,
             batchName,
             tags,
@@ -511,6 +537,7 @@ public class Update2dModelTrainingJobReq {
         sb.append("    commandMessage: ").append(toIndentedString(commandMessage)).append("\n");
         sb.append("    videoMultipartCount: ").append(toIndentedString(videoMultipartCount)).append("\n");
         sb.append("    actionVideoMultipartCount: ").append(toIndentedString(actionVideoMultipartCount)).append("\n");
+        sb.append("    beautyLevel: ").append(toIndentedString(beautyLevel)).append("\n");
         sb.append("    isBackgroundReplacement: ").append(toIndentedString(isBackgroundReplacement)).append("\n");
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

@@ -31,6 +31,26 @@ public class ShowLdapConfigResponse extends SdkResponse {
 
     private String filterCondition;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_url")
+
+    private String backupUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schema")
+
+    private String schema;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "search_timeout")
+
+    private Integer searchTimeout;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow_local_user")
+
+    private String allowLocalUser;
+
     public ShowLdapConfigResponse withUrl(String url) {
         this.url = url;
         return this;
@@ -99,6 +119,74 @@ public class ShowLdapConfigResponse extends SdkResponse {
         this.filterCondition = filterCondition;
     }
 
+    public ShowLdapConfigResponse withBackupUrl(String backupUrl) {
+        this.backupUrl = backupUrl;
+        return this;
+    }
+
+    /**
+     * ldap备节点的url
+     * @return backupUrl
+     */
+    public String getBackupUrl() {
+        return backupUrl;
+    }
+
+    public void setBackupUrl(String backupUrl) {
+        this.backupUrl = backupUrl;
+    }
+
+    public ShowLdapConfigResponse withSchema(String schema) {
+        this.schema = schema;
+        return this;
+    }
+
+    /**
+     * ldap的schema，不填写则默认为RFC2307
+     * @return schema
+     */
+    public String getSchema() {
+        return schema;
+    }
+
+    public void setSchema(String schema) {
+        this.schema = schema;
+    }
+
+    public ShowLdapConfigResponse withSearchTimeout(Integer searchTimeout) {
+        this.searchTimeout = searchTimeout;
+        return this;
+    }
+
+    /**
+     * ldap搜索的超时时间，单位为秒。不填写则默认为3秒
+     * @return searchTimeout
+     */
+    public Integer getSearchTimeout() {
+        return searchTimeout;
+    }
+
+    public void setSearchTimeout(Integer searchTimeout) {
+        this.searchTimeout = searchTimeout;
+    }
+
+    public ShowLdapConfigResponse withAllowLocalUser(String allowLocalUser) {
+        this.allowLocalUser = allowLocalUser;
+        return this;
+    }
+
+    /**
+     * 访问ldap服务器失败后是否允许使用本地用户鉴权
+     * @return allowLocalUser
+     */
+    public String getAllowLocalUser() {
+        return allowLocalUser;
+    }
+
+    public void setAllowLocalUser(String allowLocalUser) {
+        this.allowLocalUser = allowLocalUser;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +197,15 @@ public class ShowLdapConfigResponse extends SdkResponse {
         }
         ShowLdapConfigResponse that = (ShowLdapConfigResponse) obj;
         return Objects.equals(this.url, that.url) && Objects.equals(this.baseDn, that.baseDn)
-            && Objects.equals(this.userDn, that.userDn) && Objects.equals(this.filterCondition, that.filterCondition);
+            && Objects.equals(this.userDn, that.userDn) && Objects.equals(this.filterCondition, that.filterCondition)
+            && Objects.equals(this.backupUrl, that.backupUrl) && Objects.equals(this.schema, that.schema)
+            && Objects.equals(this.searchTimeout, that.searchTimeout)
+            && Objects.equals(this.allowLocalUser, that.allowLocalUser);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url, baseDn, userDn, filterCondition);
+        return Objects.hash(url, baseDn, userDn, filterCondition, backupUrl, schema, searchTimeout, allowLocalUser);
     }
 
     @Override
@@ -125,6 +216,10 @@ public class ShowLdapConfigResponse extends SdkResponse {
         sb.append("    baseDn: ").append(toIndentedString(baseDn)).append("\n");
         sb.append("    userDn: ").append(toIndentedString(userDn)).append("\n");
         sb.append("    filterCondition: ").append(toIndentedString(filterCondition)).append("\n");
+        sb.append("    backupUrl: ").append(toIndentedString(backupUrl)).append("\n");
+        sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+        sb.append("    searchTimeout: ").append(toIndentedString(searchTimeout)).append("\n");
+        sb.append("    allowLocalUser: ").append(toIndentedString(allowLocalUser)).append("\n");
         sb.append("}");
         return sb.toString();
     }

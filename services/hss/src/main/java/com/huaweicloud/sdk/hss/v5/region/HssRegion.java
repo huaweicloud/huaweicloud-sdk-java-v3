@@ -27,6 +27,8 @@ public class HssRegion {
 
     public static final Region CN_EAST_3 = new Region("cn-east-3", "https://hss.cn-east-3.myhuaweicloud.com");
 
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://hss.cn-east-4.myhuaweicloud.com");
+
     public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://hss.cn-south-1.myhuaweicloud.com");
 
     public static final Region CN_SOUTH_2 = new Region("cn-south-2", "https://hss.cn-south-2.myhuaweicloud.com");
@@ -84,6 +86,7 @@ public class HssRegion {
         map.put("cn-southwest-2", CN_SOUTHWEST_2);
         map.put("cn-east-2", CN_EAST_2);
         map.put("cn-east-3", CN_EAST_3);
+        map.put("cn-east-4", CN_EAST_4);
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("cn-south-2", CN_SOUTH_2);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);

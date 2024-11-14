@@ -16,16 +16,6 @@ public class ListFunctionsRequest {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Sp-Auth-Token")
-
-    private String spAuthToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Stage-Auth-Token")
-
-    private String stageAuthToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_id")
 
     private String appId;
@@ -50,40 +40,6 @@ public class ListFunctionsRequest {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    public ListFunctionsRequest withSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-        return this;
-    }
-
-    /**
-     * **参数说明**：Sp用户Token。通过调用IoBPS服务获取SP用户Token。
-     * @return spAuthToken
-     */
-    public String getSpAuthToken() {
-        return spAuthToken;
-    }
-
-    public void setSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-    }
-
-    public ListFunctionsRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    /**
-     * **参数说明**：Stage用户的Token, 仅提供给IoStage服务使用。
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
     }
 
     public ListFunctionsRequest withAppId(String appId) {
@@ -129,14 +85,13 @@ public class ListFunctionsRequest {
             return false;
         }
         ListFunctionsRequest that = (ListFunctionsRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.spAuthToken, that.spAuthToken)
-            && Objects.equals(this.stageAuthToken, that.stageAuthToken) && Objects.equals(this.appId, that.appId)
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId)
             && Objects.equals(this.productId, that.productId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, spAuthToken, stageAuthToken, appId, productId);
+        return Objects.hash(instanceId, appId, productId);
     }
 
     @Override
@@ -144,8 +99,6 @@ public class ListFunctionsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFunctionsRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    spAuthToken: ").append(toIndentedString(spAuthToken)).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString(stageAuthToken)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("}");

@@ -11,10 +11,16 @@ import com.huaweicloud.sdk.dds.v3.model.AttachEipRequest;
 import com.huaweicloud.sdk.dds.v3.model.AttachEipResponse;
 import com.huaweicloud.sdk.dds.v3.model.AttachInternalIpRequest;
 import com.huaweicloud.sdk.dds.v3.model.AttachInternalIpResponse;
+import com.huaweicloud.sdk.dds.v3.model.BatchDeleteBackupRequest;
+import com.huaweicloud.sdk.dds.v3.model.BatchDeleteBackupResponse;
 import com.huaweicloud.sdk.dds.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.dds.v3.model.BatchTagActionResponse;
+import com.huaweicloud.sdk.dds.v3.model.BatchUpgradeDatabaseVersionRequest;
+import com.huaweicloud.sdk.dds.v3.model.BatchUpgradeDatabaseVersionResponse;
 import com.huaweicloud.sdk.dds.v3.model.CancelEipRequest;
 import com.huaweicloud.sdk.dds.v3.model.CancelEipResponse;
+import com.huaweicloud.sdk.dds.v3.model.CancelScheduledTaskRequest;
+import com.huaweicloud.sdk.dds.v3.model.CancelScheduledTaskResponse;
 import com.huaweicloud.sdk.dds.v3.model.ChangeOpsWindowRequest;
 import com.huaweicloud.sdk.dds.v3.model.ChangeOpsWindowResponse;
 import com.huaweicloud.sdk.dds.v3.model.CheckPasswordRequest;
@@ -115,6 +121,8 @@ import com.huaweicloud.sdk.dds.v3.model.ListRestoreDatabasesRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListRestoreDatabasesResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListRestoreTimesResponse;
+import com.huaweicloud.sdk.dds.v3.model.ListScheduledTasksRequest;
+import com.huaweicloud.sdk.dds.v3.model.ListScheduledTasksResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListSessionsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListSessionsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListSlowLogsRequest;
@@ -145,6 +153,8 @@ import com.huaweicloud.sdk.dds.v3.model.RestoreNewInstanceRequest;
 import com.huaweicloud.sdk.dds.v3.model.RestoreNewInstanceResponse;
 import com.huaweicloud.sdk.dds.v3.model.SetAuditlogPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.SetAuditlogPolicyResponse;
+import com.huaweicloud.sdk.dds.v3.model.SetAutoEnlargePoliciesRequest;
+import com.huaweicloud.sdk.dds.v3.model.SetAutoEnlargePoliciesResponse;
 import com.huaweicloud.sdk.dds.v3.model.SetBackupPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.SetBackupPolicyResponse;
 import com.huaweicloud.sdk.dds.v3.model.SetBalancerSwitchRequest;
@@ -157,6 +167,8 @@ import com.huaweicloud.sdk.dds.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowAuditlogPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowAuditlogPolicyResponse;
+import com.huaweicloud.sdk.dds.v3.model.ShowAutoEnlargePolicyRequest;
+import com.huaweicloud.sdk.dds.v3.model.ShowAutoEnlargePolicyResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowBackupDownloadLinkRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowBackupPolicyRequest;
@@ -175,6 +187,8 @@ import com.huaweicloud.sdk.dds.v3.model.ShowDiskUsageRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowDiskUsageResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowEntityConfigurationRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowEntityConfigurationResponse;
+import com.huaweicloud.sdk.dds.v3.model.ShowInstanceConfigurationModifyHistoryRequest;
+import com.huaweicloud.sdk.dds.v3.model.ShowInstanceConfigurationModifyHistoryResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowJobDetailRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowJobDetailResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowKillOpRuleRuleListRequest;
@@ -231,6 +245,8 @@ import com.huaweicloud.sdk.dds.v3.model.UpdateSecurityGroupRequest;
 import com.huaweicloud.sdk.dds.v3.model.UpdateSecurityGroupResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpgradeDatabaseVersionRequest;
 import com.huaweicloud.sdk.dds.v3.model.UpgradeDatabaseVersionResponse;
+import com.huaweicloud.sdk.dds.v3.model.ValidateConfigurationNameRequest;
+import com.huaweicloud.sdk.dds.v3.model.ValidateConfigurationNameResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -363,6 +379,35 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 批量删除手动备份
+     *
+     * 批量删除数据库实例的手动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteBackupRequest 请求对象
+     * @return CompletableFuture<BatchDeleteBackupResponse>
+     */
+    public CompletableFuture<BatchDeleteBackupResponse> batchDeleteBackupAsync(BatchDeleteBackupRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.batchDeleteBackup);
+    }
+
+    /**
+     * 批量删除手动备份
+     *
+     * 批量删除数据库实例的手动备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteBackupRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteBackupRequest, BatchDeleteBackupResponse>
+     */
+    public AsyncInvoker<BatchDeleteBackupRequest, BatchDeleteBackupResponse> batchDeleteBackupAsyncInvoker(
+        BatchDeleteBackupRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.batchDeleteBackup, hcClient);
+    }
+
+    /**
      * 批量添加或删除资源标签
      *
      * 批量添加或删除指定实例的标签。
@@ -392,6 +437,36 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 批量数据库补丁升级
+     *
+     * 批量升级数据库补丁版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpgradeDatabaseVersionRequest 请求对象
+     * @return CompletableFuture<BatchUpgradeDatabaseVersionResponse>
+     */
+    public CompletableFuture<BatchUpgradeDatabaseVersionResponse> batchUpgradeDatabaseVersionAsync(
+        BatchUpgradeDatabaseVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.batchUpgradeDatabaseVersion);
+    }
+
+    /**
+     * 批量数据库补丁升级
+     *
+     * 批量升级数据库补丁版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpgradeDatabaseVersionRequest 请求对象
+     * @return AsyncInvoker<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse>
+     */
+    public AsyncInvoker<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse> batchUpgradeDatabaseVersionAsyncInvoker(
+        BatchUpgradeDatabaseVersionRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.batchUpgradeDatabaseVersion, hcClient);
+    }
+
+    /**
      * 解绑弹性公网IP
      *
      * 解绑实例下节点已经绑定的弹性公网IP。
@@ -417,6 +492,35 @@ public class DdsAsyncClient {
      */
     public AsyncInvoker<CancelEipRequest, CancelEipResponse> cancelEipAsyncInvoker(CancelEipRequest request) {
         return new AsyncInvoker<>(request, DdsMeta.cancelEip, hcClient);
+    }
+
+    /**
+     * 取消定时任务
+     *
+     * 根据任务ID取消定时任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelScheduledTaskRequest 请求对象
+     * @return CompletableFuture<CancelScheduledTaskResponse>
+     */
+    public CompletableFuture<CancelScheduledTaskResponse> cancelScheduledTaskAsync(CancelScheduledTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.cancelScheduledTask);
+    }
+
+    /**
+     * 取消定时任务
+     *
+     * 根据任务ID取消定时任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelScheduledTaskRequest 请求对象
+     * @return AsyncInvoker<CancelScheduledTaskRequest, CancelScheduledTaskResponse>
+     */
+    public AsyncInvoker<CancelScheduledTaskRequest, CancelScheduledTaskResponse> cancelScheduledTaskAsyncInvoker(
+        CancelScheduledTaskRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.cancelScheduledTask, hcClient);
     }
 
     /**
@@ -1846,6 +1950,35 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 查询定时任务
+     *
+     * 根据指定条件查询定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRequest 请求对象
+     * @return CompletableFuture<ListScheduledTasksResponse>
+     */
+    public CompletableFuture<ListScheduledTasksResponse> listScheduledTasksAsync(ListScheduledTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.listScheduledTasks);
+    }
+
+    /**
+     * 查询定时任务
+     *
+     * 根据指定条件查询定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTasksRequest 请求对象
+     * @return AsyncInvoker<ListScheduledTasksRequest, ListScheduledTasksResponse>
+     */
+    public AsyncInvoker<ListScheduledTasksRequest, ListScheduledTasksResponse> listScheduledTasksAsyncInvoker(
+        ListScheduledTasksRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.listScheduledTasks, hcClient);
+    }
+
+    /**
      * 查询实例节点会话
      *
      * 查询实例节点会话。
@@ -2282,6 +2415,36 @@ public class DdsAsyncClient {
     }
 
     /**
+     * 设置磁盘自动扩容策略
+     *
+     * 设置磁盘自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAutoEnlargePoliciesRequest 请求对象
+     * @return CompletableFuture<SetAutoEnlargePoliciesResponse>
+     */
+    public CompletableFuture<SetAutoEnlargePoliciesResponse> setAutoEnlargePoliciesAsync(
+        SetAutoEnlargePoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.setAutoEnlargePolicies);
+    }
+
+    /**
+     * 设置磁盘自动扩容策略
+     *
+     * 设置磁盘自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAutoEnlargePoliciesRequest 请求对象
+     * @return AsyncInvoker<SetAutoEnlargePoliciesRequest, SetAutoEnlargePoliciesResponse>
+     */
+    public AsyncInvoker<SetAutoEnlargePoliciesRequest, SetAutoEnlargePoliciesResponse> setAutoEnlargePoliciesAsyncInvoker(
+        SetAutoEnlargePoliciesRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.setAutoEnlargePolicies, hcClient);
+    }
+
+    /**
      * 设置自动备份策略
      *
      * 设置自动备份策略。
@@ -2424,6 +2587,36 @@ public class DdsAsyncClient {
     public AsyncInvoker<ShowAuditlogPolicyRequest, ShowAuditlogPolicyResponse> showAuditlogPolicyAsyncInvoker(
         ShowAuditlogPolicyRequest request) {
         return new AsyncInvoker<>(request, DdsMeta.showAuditlogPolicy, hcClient);
+    }
+
+    /**
+     * 查询磁盘自动扩容策略
+     *
+     * 查询磁盘自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoEnlargePolicyRequest 请求对象
+     * @return CompletableFuture<ShowAutoEnlargePolicyResponse>
+     */
+    public CompletableFuture<ShowAutoEnlargePolicyResponse> showAutoEnlargePolicyAsync(
+        ShowAutoEnlargePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.showAutoEnlargePolicy);
+    }
+
+    /**
+     * 查询磁盘自动扩容策略
+     *
+     * 查询磁盘自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoEnlargePolicyRequest 请求对象
+     * @return AsyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse>
+     */
+    public AsyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> showAutoEnlargePolicyAsyncInvoker(
+        ShowAutoEnlargePolicyRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.showAutoEnlargePolicy, hcClient);
     }
 
     /**
@@ -2691,6 +2884,36 @@ public class DdsAsyncClient {
     public AsyncInvoker<ShowEntityConfigurationRequest, ShowEntityConfigurationResponse> showEntityConfigurationAsyncInvoker(
         ShowEntityConfigurationRequest request) {
         return new AsyncInvoker<>(request, DdsMeta.showEntityConfiguration, hcClient);
+    }
+
+    /**
+     * 查询实例参数的修改历史
+     *
+     * 查询实例参数的修改历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceConfigurationModifyHistoryRequest 请求对象
+     * @return CompletableFuture<ShowInstanceConfigurationModifyHistoryResponse>
+     */
+    public CompletableFuture<ShowInstanceConfigurationModifyHistoryResponse> showInstanceConfigurationModifyHistoryAsync(
+        ShowInstanceConfigurationModifyHistoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.showInstanceConfigurationModifyHistory);
+    }
+
+    /**
+     * 查询实例参数的修改历史
+     *
+     * 查询实例参数的修改历史。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceConfigurationModifyHistoryRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceConfigurationModifyHistoryRequest, ShowInstanceConfigurationModifyHistoryResponse>
+     */
+    public AsyncInvoker<ShowInstanceConfigurationModifyHistoryRequest, ShowInstanceConfigurationModifyHistoryResponse> showInstanceConfigurationModifyHistoryAsyncInvoker(
+        ShowInstanceConfigurationModifyHistoryRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.showInstanceConfigurationModifyHistory, hcClient);
     }
 
     /**
@@ -3516,6 +3739,36 @@ public class DdsAsyncClient {
     public AsyncInvoker<UpgradeDatabaseVersionRequest, UpgradeDatabaseVersionResponse> upgradeDatabaseVersionAsyncInvoker(
         UpgradeDatabaseVersionRequest request) {
         return new AsyncInvoker<>(request, DdsMeta.upgradeDatabaseVersion, hcClient);
+    }
+
+    /**
+     * 校验参数模板名称是否存在
+     *
+     * 校验参数模板名称是否存在。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateConfigurationNameRequest 请求对象
+     * @return CompletableFuture<ValidateConfigurationNameResponse>
+     */
+    public CompletableFuture<ValidateConfigurationNameResponse> validateConfigurationNameAsync(
+        ValidateConfigurationNameRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdsMeta.validateConfigurationName);
+    }
+
+    /**
+     * 校验参数模板名称是否存在
+     *
+     * 校验参数模板名称是否存在。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ValidateConfigurationNameRequest 请求对象
+     * @return AsyncInvoker<ValidateConfigurationNameRequest, ValidateConfigurationNameResponse>
+     */
+    public AsyncInvoker<ValidateConfigurationNameRequest, ValidateConfigurationNameResponse> validateConfigurationNameAsyncInvoker(
+        ValidateConfigurationNameRequest request) {
+        return new AsyncInvoker<>(request, DdsMeta.validateConfigurationName, hcClient);
     }
 
     /**

@@ -49,7 +49,7 @@ public class CreateFsTaskRequest {
     }
 
     /**
-     * 任务类型。例，DU任务取值为dir-usage
+     * 任务类型。当前仅支持取值\"dir-usage\"。
      * @return feature
      */
     public String getFeature() {

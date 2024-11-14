@@ -1,11 +1,16 @@
 package com.huaweicloud.sdk.sfsturbo.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -14,10 +19,92 @@ import java.util.function.Consumer;
  */
 public class ShowJobDetailResponse extends SdkResponse {
 
+    /**
+     * job的状态。success：成功。running：运行中。failed：失败。waiting：等待执行
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum SUCCESS for value: "success"
+         */
+        public static final StatusEnum SUCCESS = new StatusEnum("success");
+
+        /**
+         * Enum FAILED for value: "failed"
+         */
+        public static final StatusEnum FAILED = new StatusEnum("failed");
+
+        /**
+         * Enum WAITING for value: "waiting"
+         */
+        public static final StatusEnum WAITING = new StatusEnum("waiting");
+
+        /**
+         * Enum RUNNING for value: "running"
+         */
+        public static final StatusEnum RUNNING = new StatusEnum("running");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("success", SUCCESS);
+            map.put("failed", FAILED);
+            map.put("waiting", WAITING);
+            map.put("running", RUNNING);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
@@ -59,7 +146,7 @@ public class ShowJobDetailResponse extends SdkResponse {
 
     private String xRequestId;
 
-    public ShowJobDetailResponse withStatus(String status) {
+    public ShowJobDetailResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -68,11 +155,11 @@ public class ShowJobDetailResponse extends SdkResponse {
      * job的状态。success：成功。running：运行中。failed：失败。waiting：等待执行
      * @return status
      */
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 

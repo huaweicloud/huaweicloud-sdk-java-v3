@@ -999,12 +999,12 @@ public class AomMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(PushEventsRequest.ActionEnum.class),
             f -> f.withMarshaller(PushEventsRequest::getAction, PushEventsRequest::setAction));
-        builder.<String>withRequestField("x-enterprise-prject-id",
+        builder.<String>withRequestField("enterprise-project-id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(PushEventsRequest::getXEnterprisePrjectId,
-                PushEventsRequest::setXEnterprisePrjectId));
+            f -> f.withMarshaller(PushEventsRequest::getEnterpriseProjectId,
+                PushEventsRequest::setEnterpriseProjectId));
         builder.<EventList>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1483,7 +1483,7 @@ public class AomMeta {
             f -> f.withMarshaller(ListPromInstanceRequest::getPromStatus, ListPromInstanceRequest::setPromStatus));
         builder.<String>withRequestField("Enterprise-Project-Id",
             LocationType.Header,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPromInstanceRequest::getEnterpriseProjectId,
                 ListPromInstanceRequest::setEnterpriseProjectId));

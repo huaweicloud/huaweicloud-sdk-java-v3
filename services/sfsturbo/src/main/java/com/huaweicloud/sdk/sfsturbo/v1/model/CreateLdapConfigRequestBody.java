@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.sfsturbo.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -40,13 +45,103 @@ public class CreateLdapConfigRequestBody {
 
     private String filterCondition;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_url")
+
+    private String backupUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "schema")
+
+    private String schema;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "search_timeout")
+
+    private Integer searchTimeout;
+
+    /**
+     * 访问ldap服务器失败后是否允许使用本地用户鉴权
+     */
+    public static final class AllowLocalUserEnum {
+
+        /**
+         * Enum YES for value: "Yes"
+         */
+        public static final AllowLocalUserEnum YES = new AllowLocalUserEnum("Yes");
+
+        /**
+         * Enum NO for value: "No"
+         */
+        public static final AllowLocalUserEnum NO = new AllowLocalUserEnum("No");
+
+        private static final Map<String, AllowLocalUserEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AllowLocalUserEnum> createStaticFields() {
+            Map<String, AllowLocalUserEnum> map = new HashMap<>();
+            map.put("Yes", YES);
+            map.put("No", NO);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AllowLocalUserEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AllowLocalUserEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AllowLocalUserEnum(value));
+        }
+
+        public static AllowLocalUserEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AllowLocalUserEnum) {
+                return this.value.equals(((AllowLocalUserEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allow_local_user")
+
+    private AllowLocalUserEnum allowLocalUser;
+
     public CreateLdapConfigRequestBody withUrl(String url) {
         this.url = url;
         return this;
     }
 
     /**
-     * ldap服务器的url
+     * ldap服务器的url，固定格式为 ldap://{ip_address}:{port_number} 或 ldaps://{ip_address}:{port_number}，例如ldap://192.168.xx.xx:60000
      * @return url
      */
     public String getUrl() {
@@ -142,6 +237,74 @@ public class CreateLdapConfigRequestBody {
         this.filterCondition = filterCondition;
     }
 
+    public CreateLdapConfigRequestBody withBackupUrl(String backupUrl) {
+        this.backupUrl = backupUrl;
+        return this;
+    }
+
+    /**
+     * ldap备节点的url，固定格式为 ldap://{ip_address}:{port_number} 或 ldaps://{ip_address}:{port_number}，例如ldap://192.168.xx.xx:60000
+     * @return backupUrl
+     */
+    public String getBackupUrl() {
+        return backupUrl;
+    }
+
+    public void setBackupUrl(String backupUrl) {
+        this.backupUrl = backupUrl;
+    }
+
+    public CreateLdapConfigRequestBody withSchema(String schema) {
+        this.schema = schema;
+        return this;
+    }
+
+    /**
+     * ldap的schema，不填写则默认为RFC2307
+     * @return schema
+     */
+    public String getSchema() {
+        return schema;
+    }
+
+    public void setSchema(String schema) {
+        this.schema = schema;
+    }
+
+    public CreateLdapConfigRequestBody withSearchTimeout(Integer searchTimeout) {
+        this.searchTimeout = searchTimeout;
+        return this;
+    }
+
+    /**
+     * ldap搜索的超时时间，单位为秒。不填写则默认为3秒
+     * @return searchTimeout
+     */
+    public Integer getSearchTimeout() {
+        return searchTimeout;
+    }
+
+    public void setSearchTimeout(Integer searchTimeout) {
+        this.searchTimeout = searchTimeout;
+    }
+
+    public CreateLdapConfigRequestBody withAllowLocalUser(AllowLocalUserEnum allowLocalUser) {
+        this.allowLocalUser = allowLocalUser;
+        return this;
+    }
+
+    /**
+     * 访问ldap服务器失败后是否允许使用本地用户鉴权
+     * @return allowLocalUser
+     */
+    public AllowLocalUserEnum getAllowLocalUser() {
+        return allowLocalUser;
+    }
+
+    public void setAllowLocalUser(AllowLocalUserEnum allowLocalUser) {
+        this.allowLocalUser = allowLocalUser;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -153,12 +316,24 @@ public class CreateLdapConfigRequestBody {
         CreateLdapConfigRequestBody that = (CreateLdapConfigRequestBody) obj;
         return Objects.equals(this.url, that.url) && Objects.equals(this.baseDn, that.baseDn)
             && Objects.equals(this.userDn, that.userDn) && Objects.equals(this.password, that.password)
-            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.filterCondition, that.filterCondition);
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.filterCondition, that.filterCondition)
+            && Objects.equals(this.backupUrl, that.backupUrl) && Objects.equals(this.schema, that.schema)
+            && Objects.equals(this.searchTimeout, that.searchTimeout)
+            && Objects.equals(this.allowLocalUser, that.allowLocalUser);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url, baseDn, userDn, password, vpcId, filterCondition);
+        return Objects.hash(url,
+            baseDn,
+            userDn,
+            password,
+            vpcId,
+            filterCondition,
+            backupUrl,
+            schema,
+            searchTimeout,
+            allowLocalUser);
     }
 
     @Override
@@ -171,6 +346,10 @@ public class CreateLdapConfigRequestBody {
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    filterCondition: ").append(toIndentedString(filterCondition)).append("\n");
+        sb.append("    backupUrl: ").append(toIndentedString(backupUrl)).append("\n");
+        sb.append("    schema: ").append(toIndentedString(schema)).append("\n");
+        sb.append("    searchTimeout: ").append(toIndentedString(searchTimeout)).append("\n");
+        sb.append("    allowLocalUser: ").append(toIndentedString(allowLocalUser)).append("\n");
         sb.append("}");
         return sb.toString();
     }

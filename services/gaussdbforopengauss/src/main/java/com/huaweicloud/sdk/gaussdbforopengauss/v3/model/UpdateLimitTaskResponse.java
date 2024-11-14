@@ -62,7 +62,7 @@ public class UpdateLimitTaskResponse extends SdkResponse {
     private String ruleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "jobId")
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 

@@ -3116,16 +3116,6 @@ public class IoTDAMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddFunctionsRequest::getInstanceId, AddFunctionsRequest::setInstanceId));
-        builder.<String>withRequestField("Sp-Auth-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddFunctionsRequest::getSpAuthToken, AddFunctionsRequest::setSpAuthToken));
-        builder.<String>withRequestField("Stage-Auth-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AddFunctionsRequest::getStageAuthToken, AddFunctionsRequest::setStageAuthToken));
         builder.<FunctionRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -3159,24 +3149,8 @@ public class IoTDAMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteFunctionsRequest::getInstanceId, DeleteFunctionsRequest::setInstanceId));
-        builder.<String>withRequestField("Sp-Auth-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFunctionsRequest::getSpAuthToken, DeleteFunctionsRequest::setSpAuthToken));
-        builder.<String>withRequestField("Stage-Auth-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteFunctionsRequest::getStageAuthToken,
-                DeleteFunctionsRequest::setStageAuthToken));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteFunctionsResponse::getBody, DeleteFunctionsResponse::setBody));
 
         return builder.build();
     }
@@ -3208,16 +3182,6 @@ public class IoTDAMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFunctionsRequest::getInstanceId, ListFunctionsRequest::setInstanceId));
-        builder.<String>withRequestField("Sp-Auth-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionsRequest::getSpAuthToken, ListFunctionsRequest::setSpAuthToken));
-        builder.<String>withRequestField("Stage-Auth-Token",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListFunctionsRequest::getStageAuthToken, ListFunctionsRequest::setStageAuthToken));
 
         // response
 

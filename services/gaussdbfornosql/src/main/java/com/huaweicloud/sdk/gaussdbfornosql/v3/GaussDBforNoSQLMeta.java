@@ -9,12 +9,17 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ActionBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationToInstancesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationToInstancesRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationToInstancesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CancelInstanceScheduleWindowRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CancelInstanceScheduleWindowResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckWeekPasswordRequest;
@@ -35,6 +40,12 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateColdVolumeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateConfigurationRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbCacheMappingRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbCacheMappingRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbCacheMappingResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbCacheRuleRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbCacheRuleRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbCacheRuleResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbUserRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbUserResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDisasterRecoveryRequest;
@@ -46,6 +57,12 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteBackupRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteBackupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbCacheMappingRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbCacheMappingRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbCacheMappingResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbCacheRuleRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbCacheRuleRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbCacheRuleResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbUserRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbUserResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDisasterRecoveryRequest;
@@ -79,6 +96,10 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDatastoresRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDatastoresResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbCacheMappingsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbCacheMappingsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbCacheRulesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbCacheRulesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDedicatedResourcesRequest;
@@ -94,6 +115,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInfluxdbSlowLogsRequestB
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInfluxdbSlowLogsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceDatabasesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceDatabasesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceMaintenanceWindowRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceMaintenanceWindowResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesByResourceTagsRequest;
@@ -117,6 +140,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbErrorLogsResponse
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbSlowLogsRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbSlowLogsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListNosqlTaskListRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListNosqlTaskListResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRecycleInstancesRequest;
@@ -136,6 +161,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyDbUserPrivilegeRequest
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyDbUserPrivilegeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyEpsQuotasRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyEpsQuotasResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyInstanceMaintenanceWindowRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyInstanceMaintenanceWindowResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyInstanceOpsWindowV3Req;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyPortRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyPortRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyPortResponse;
@@ -189,6 +217,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetAutoPolicyRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetBackupPolicyRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetBackupPolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetInstanceDataDumpRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetInstanceDataDumpRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetInstanceDataDumpResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRecyclePolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAllInstancesBackupsNewRequest;
@@ -203,6 +234,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApplyHistoryRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApplyHistoryResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPoliciesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPoliciesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowConfigurationDetailRequest;
@@ -236,6 +269,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSecondLevelMonitoringStatusRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSecondLevelMonitoringStatusResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeRequest;
@@ -244,6 +279,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSecondLevelMonitoringRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSecondLevelMonitoringRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSecondLevelMonitoringResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationResponse;
@@ -264,11 +302,17 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDatabasesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDatabasesRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDatabasesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDbCacheRuleRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDbCacheRuleRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDbCacheRuleResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateHighRiskCommandsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateHighRiskCommandsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationsRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameResponse;
@@ -306,6 +350,39 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApplyConfigurationRequestBody.class),
             f -> f.withMarshaller(ApplyConfigurationRequest::getBody, ApplyConfigurationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ApplyConfigurationToInstancesRequest, ApplyConfigurationToInstancesResponse> applyConfigurationToInstances =
+        genForApplyConfigurationToInstances();
+
+    private static HttpRequestDef<ApplyConfigurationToInstancesRequest, ApplyConfigurationToInstancesResponse> genForApplyConfigurationToInstances() {
+        // basic
+        HttpRequestDef.Builder<ApplyConfigurationToInstancesRequest, ApplyConfigurationToInstancesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ApplyConfigurationToInstancesRequest.class,
+                    ApplyConfigurationToInstancesResponse.class)
+                .withName("ApplyConfigurationToInstances")
+                .withUri("/v3.1/{project_id}/configurations/{config_id}/apply")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("config_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ApplyConfigurationToInstancesRequest::getConfigId,
+                ApplyConfigurationToInstancesRequest::setConfigId));
+        builder.<ApplyConfigurationToInstancesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApplyConfigurationToInstancesRequestBody.class),
+            f -> f.withMarshaller(ApplyConfigurationToInstancesRequest::getBody,
+                ApplyConfigurationToInstancesRequest::setBody));
 
         // response
 
@@ -361,6 +438,33 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(BatchUpgradeDatabaseVersionRequestBody.class),
             f -> f.withMarshaller(BatchUpgradeDatabaseVersionRequest::getBody,
                 BatchUpgradeDatabaseVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelInstanceScheduleWindowRequest, CancelInstanceScheduleWindowResponse> cancelInstanceScheduleWindow =
+        genForCancelInstanceScheduleWindow();
+
+    private static HttpRequestDef<CancelInstanceScheduleWindowRequest, CancelInstanceScheduleWindowResponse> genForCancelInstanceScheduleWindow() {
+        // basic
+        HttpRequestDef.Builder<CancelInstanceScheduleWindowRequest, CancelInstanceScheduleWindowResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    CancelInstanceScheduleWindowRequest.class,
+                    CancelInstanceScheduleWindowResponse.class)
+                .withName("CancelInstanceScheduleWindow")
+                .withUri("/v3/{project_id}/scheduled-jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelInstanceScheduleWindowRequest::getJobId,
+                CancelInstanceScheduleWindowRequest::setJobId));
 
         // response
 
@@ -552,6 +656,52 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDbCacheMappingRequest, CreateDbCacheMappingResponse> createDbCacheMapping =
+        genForCreateDbCacheMapping();
+
+    private static HttpRequestDef<CreateDbCacheMappingRequest, CreateDbCacheMappingResponse> genForCreateDbCacheMapping() {
+        // basic
+        HttpRequestDef.Builder<CreateDbCacheMappingRequest, CreateDbCacheMappingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDbCacheMappingRequest.class, CreateDbCacheMappingResponse.class)
+            .withName("CreateDbCacheMapping")
+            .withUri("/v3/{project_id}/dbcache/mapping")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateDbCacheMappingRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDbCacheMappingRequestBody.class),
+            f -> f.withMarshaller(CreateDbCacheMappingRequest::getBody, CreateDbCacheMappingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDbCacheRuleRequest, CreateDbCacheRuleResponse> createDbCacheRule =
+        genForCreateDbCacheRule();
+
+    private static HttpRequestDef<CreateDbCacheRuleRequest, CreateDbCacheRuleResponse> genForCreateDbCacheRule() {
+        // basic
+        HttpRequestDef.Builder<CreateDbCacheRuleRequest, CreateDbCacheRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDbCacheRuleRequest.class, CreateDbCacheRuleResponse.class)
+                .withName("CreateDbCacheRule")
+                .withUri("/v3/{project_id}/dbcache/rule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateDbCacheRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateDbCacheRuleRequestBody.class),
+            f -> f.withMarshaller(CreateDbCacheRuleRequest::getBody, CreateDbCacheRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDbUserRequest, CreateDbUserResponse> createDbUser = genForCreateDbUser();
 
     private static HttpRequestDef<CreateDbUserRequest, CreateDbUserResponse> genForCreateDbUser() {
@@ -670,6 +820,52 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteConfigurationRequest::getConfigId, DeleteConfigurationRequest::setConfigId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDbCacheMappingRequest, DeleteDbCacheMappingResponse> deleteDbCacheMapping =
+        genForDeleteDbCacheMapping();
+
+    private static HttpRequestDef<DeleteDbCacheMappingRequest, DeleteDbCacheMappingResponse> genForDeleteDbCacheMapping() {
+        // basic
+        HttpRequestDef.Builder<DeleteDbCacheMappingRequest, DeleteDbCacheMappingResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDbCacheMappingRequest.class, DeleteDbCacheMappingResponse.class)
+            .withName("DeleteDbCacheMapping")
+            .withUri("/v3/{project_id}/dbcache/mapping")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DeleteDbCacheMappingRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteDbCacheMappingRequestBody.class),
+            f -> f.withMarshaller(DeleteDbCacheMappingRequest::getBody, DeleteDbCacheMappingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDbCacheRuleRequest, DeleteDbCacheRuleResponse> deleteDbCacheRule =
+        genForDeleteDbCacheRule();
+
+    private static HttpRequestDef<DeleteDbCacheRuleRequest, DeleteDbCacheRuleResponse> genForDeleteDbCacheRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteDbCacheRuleRequest, DeleteDbCacheRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDbCacheRuleRequest.class, DeleteDbCacheRuleResponse.class)
+                .withName("DeleteDbCacheRule")
+                .withUri("/v3/{project_id}/dbcache/rule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteDbCacheRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteDbCacheRuleRequestBody.class),
+            f -> f.withMarshaller(DeleteDbCacheRuleRequest::getBody, DeleteDbCacheRuleRequest::setBody));
 
         // response
 
@@ -1024,6 +1220,124 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListDbCacheMappingsRequest, ListDbCacheMappingsResponse> listDbCacheMappings =
+        genForListDbCacheMappings();
+
+    private static HttpRequestDef<ListDbCacheMappingsRequest, ListDbCacheMappingsResponse> genForListDbCacheMappings() {
+        // basic
+        HttpRequestDef.Builder<ListDbCacheMappingsRequest, ListDbCacheMappingsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDbCacheMappingsRequest.class, ListDbCacheMappingsResponse.class)
+                .withName("ListDbCacheMappings")
+                .withUri("/v3/{project_id}/dbcache/mappings")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheMappingsRequest::getId, ListDbCacheMappingsRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheMappingsRequest::getName, ListDbCacheMappingsRequest::setName));
+        builder.<String>withRequestField("source_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheMappingsRequest::getSourceInstanceId,
+                ListDbCacheMappingsRequest::setSourceInstanceId));
+        builder.<String>withRequestField("source_instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheMappingsRequest::getSourceInstanceName,
+                ListDbCacheMappingsRequest::setSourceInstanceName));
+        builder.<String>withRequestField("target_instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheMappingsRequest::getTargetInstanceId,
+                ListDbCacheMappingsRequest::setTargetInstanceId));
+        builder.<String>withRequestField("target_instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheMappingsRequest::getTargetInstanceName,
+                ListDbCacheMappingsRequest::setTargetInstanceName));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDbCacheMappingsRequest::getOffset, ListDbCacheMappingsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDbCacheMappingsRequest::getLimit, ListDbCacheMappingsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDbCacheRulesRequest, ListDbCacheRulesResponse> listDbCacheRules =
+        genForListDbCacheRules();
+
+    private static HttpRequestDef<ListDbCacheRulesRequest, ListDbCacheRulesResponse> genForListDbCacheRules() {
+        // basic
+        HttpRequestDef.Builder<ListDbCacheRulesRequest, ListDbCacheRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDbCacheRulesRequest.class, ListDbCacheRulesResponse.class)
+                .withName("ListDbCacheRules")
+                .withUri("/v3/{project_id}/dbcache/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("dbcache_mapping_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheRulesRequest::getDbcacheMappingId,
+                ListDbCacheRulesRequest::setDbcacheMappingId));
+        builder.<String>withRequestField("rule_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheRulesRequest::getRuleId, ListDbCacheRulesRequest::setRuleId));
+        builder.<String>withRequestField("rule_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheRulesRequest::getRuleName, ListDbCacheRulesRequest::setRuleName));
+        builder.<String>withRequestField("source_db_schema",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheRulesRequest::getSourceDbSchema,
+                ListDbCacheRulesRequest::setSourceDbSchema));
+        builder.<String>withRequestField("source_db_table",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheRulesRequest::getSourceDbTable,
+                ListDbCacheRulesRequest::setSourceDbTable));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheRulesRequest::getOffset, ListDbCacheRulesRequest::setOffset));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDbCacheRulesRequest::getLimit, ListDbCacheRulesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> listDbUsers = genForListDbUsers();
 
     private static HttpRequestDef<ListDbUsersRequest, ListDbUsersResponse> genForListDbUsers() {
@@ -1240,6 +1554,33 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListInstanceDatabasesRequest::getLimit, ListInstanceDatabasesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceMaintenanceWindowRequest, ListInstanceMaintenanceWindowResponse> listInstanceMaintenanceWindow =
+        genForListInstanceMaintenanceWindow();
+
+    private static HttpRequestDef<ListInstanceMaintenanceWindowRequest, ListInstanceMaintenanceWindowResponse> genForListInstanceMaintenanceWindow() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceMaintenanceWindowRequest, ListInstanceMaintenanceWindowResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInstanceMaintenanceWindowRequest.class,
+                    ListInstanceMaintenanceWindowResponse.class)
+                .withName("ListInstanceMaintenanceWindow")
+                .withUri("/v3/{project_id}/instances/{instance_id}/ops-window")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceMaintenanceWindowRequest::getInstanceId,
+                ListInstanceMaintenanceWindowRequest::setInstanceId));
 
         // response
 
@@ -1602,6 +1943,59 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListNosqlTaskListRequest, ListNosqlTaskListResponse> listNosqlTaskList =
+        genForListNosqlTaskList();
+
+    private static HttpRequestDef<ListNosqlTaskListRequest, ListNosqlTaskListResponse> genForListNosqlTaskList() {
+        // basic
+        HttpRequestDef.Builder<ListNosqlTaskListRequest, ListNosqlTaskListResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNosqlTaskListRequest.class, ListNosqlTaskListResponse.class)
+                .withName("ListNosqlTaskList")
+                .withUri("/v3/{project_id}/scheduled-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNosqlTaskListRequest::getJobName, ListNosqlTaskListRequest::setJobName));
+        builder.<String>withRequestField("job_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNosqlTaskListRequest::getJobStatus, ListNosqlTaskListRequest::setJobStatus));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNosqlTaskListRequest::getInstanceId, ListNosqlTaskListRequest::setInstanceId));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNosqlTaskListRequest::getStartTime, ListNosqlTaskListRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNosqlTaskListRequest::getEndTime, ListNosqlTaskListRequest::setEndTime));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNosqlTaskListRequest::getOffset, ListNosqlTaskListRequest::setOffset));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNosqlTaskListRequest::getLimit, ListNosqlTaskListRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTags =
         genForListProjectTags();
 
@@ -1906,6 +2300,39 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(NoSqlModiflyEpsQuotasRequestBody.class),
             f -> f.withMarshaller(ModifyEpsQuotasRequest::getBody, ModifyEpsQuotasRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyInstanceMaintenanceWindowRequest, ModifyInstanceMaintenanceWindowResponse> modifyInstanceMaintenanceWindow =
+        genForModifyInstanceMaintenanceWindow();
+
+    private static HttpRequestDef<ModifyInstanceMaintenanceWindowRequest, ModifyInstanceMaintenanceWindowResponse> genForModifyInstanceMaintenanceWindow() {
+        // basic
+        HttpRequestDef.Builder<ModifyInstanceMaintenanceWindowRequest, ModifyInstanceMaintenanceWindowResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifyInstanceMaintenanceWindowRequest.class,
+                    ModifyInstanceMaintenanceWindowResponse.class)
+                .withName("ModifyInstanceMaintenanceWindow")
+                .withUri("/v3/{project_id}/instances/{instance_id}/maintenance-window")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyInstanceMaintenanceWindowRequest::getInstanceId,
+                ModifyInstanceMaintenanceWindowRequest::setInstanceId));
+        builder.<ModifyInstanceOpsWindowV3Req>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyInstanceOpsWindowV3Req.class),
+            f -> f.withMarshaller(ModifyInstanceMaintenanceWindowRequest::getBody,
+                ModifyInstanceMaintenanceWindowRequest::setBody));
 
         // response
 
@@ -2356,6 +2783,35 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetInstanceDataDumpRequest, SetInstanceDataDumpResponse> setInstanceDataDump =
+        genForSetInstanceDataDump();
+
+    private static HttpRequestDef<SetInstanceDataDumpRequest, SetInstanceDataDumpResponse> genForSetInstanceDataDump() {
+        // basic
+        HttpRequestDef.Builder<SetInstanceDataDumpRequest, SetInstanceDataDumpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetInstanceDataDumpRequest.class, SetInstanceDataDumpResponse.class)
+                .withName("SetInstanceDataDump")
+                .withUri("/v3/{project_id}/instances/{instance_id}/data-dump")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetInstanceDataDumpRequest::getInstanceId,
+                SetInstanceDataDumpRequest::setInstanceId));
+        builder.<SetInstanceDataDumpRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetInstanceDataDumpRequestBody.class),
+            f -> f.withMarshaller(SetInstanceDataDumpRequest::getBody, SetInstanceDataDumpRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicy =
         genForSetRecyclePolicy();
 
@@ -2605,6 +3061,29 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAutoEnlargePolicyRequest::getInstanceId,
                 ShowAutoEnlargePolicyRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBackupPoliciesRequest, ShowBackupPoliciesResponse> showBackupPolicies =
+        genForShowBackupPolicies();
+
+    private static HttpRequestDef<ShowBackupPoliciesRequest, ShowBackupPoliciesResponse> genForShowBackupPolicies() {
+        // basic
+        HttpRequestDef.Builder<ShowBackupPoliciesRequest, ShowBackupPoliciesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBackupPoliciesRequest.class, ShowBackupPoliciesResponse.class)
+                .withName("ShowBackupPolicies")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/backups/policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBackupPoliciesRequest::getInstanceId, ShowBackupPoliciesRequest::setInstanceId));
 
         // response
 
@@ -3077,6 +3556,33 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse> showSecondLevelMonitoringStatus =
+        genForShowSecondLevelMonitoringStatus();
+
+    private static HttpRequestDef<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse> genForShowSecondLevelMonitoringStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecondLevelMonitoringStatusRequest.class,
+                    ShowSecondLevelMonitoringStatusResponse.class)
+                .withName("ShowSecondLevelMonitoringStatus")
+                .withUri("/v3/{project_id}/instances/{instance_id}/monitoring-by-seconds/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecondLevelMonitoringStatusRequest::getInstanceId,
+                ShowSecondLevelMonitoringStatusRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSlowLogDesensitizationRequest, ShowSlowLogDesensitizationResponse> showSlowLogDesensitization =
         genForShowSlowLogDesensitization();
 
@@ -3154,6 +3660,39 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SwitchIpGroupRequestBody.class),
             f -> f.withMarshaller(SwitchIpGroupRequest::getBody, SwitchIpGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchSecondLevelMonitoringRequest, SwitchSecondLevelMonitoringResponse> switchSecondLevelMonitoring =
+        genForSwitchSecondLevelMonitoring();
+
+    private static HttpRequestDef<SwitchSecondLevelMonitoringRequest, SwitchSecondLevelMonitoringResponse> genForSwitchSecondLevelMonitoring() {
+        // basic
+        HttpRequestDef.Builder<SwitchSecondLevelMonitoringRequest, SwitchSecondLevelMonitoringResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    SwitchSecondLevelMonitoringRequest.class,
+                    SwitchSecondLevelMonitoringResponse.class)
+                .withName("SwitchSecondLevelMonitoring")
+                .withUri("/v3/{project_id}/instances/{instance_id}/monitoring-by-seconds/switch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchSecondLevelMonitoringRequest::getInstanceId,
+                SwitchSecondLevelMonitoringRequest::setInstanceId));
+        builder.<SwitchSecondLevelMonitoringRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchSecondLevelMonitoringRequestBody.class),
+            f -> f.withMarshaller(SwitchSecondLevelMonitoringRequest::getBody,
+                SwitchSecondLevelMonitoringRequest::setBody));
 
         // response
 
@@ -3356,6 +3895,29 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateDbCacheRuleRequest, UpdateDbCacheRuleResponse> updateDbCacheRule =
+        genForUpdateDbCacheRule();
+
+    private static HttpRequestDef<UpdateDbCacheRuleRequest, UpdateDbCacheRuleResponse> genForUpdateDbCacheRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateDbCacheRuleRequest, UpdateDbCacheRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDbCacheRuleRequest.class, UpdateDbCacheRuleResponse.class)
+                .withName("UpdateDbCacheRule")
+                .withUri("/v3/{project_id}/dbcache/rule")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateDbCacheRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateDbCacheRuleRequestBody.class),
+            f -> f.withMarshaller(UpdateDbCacheRuleRequest::getBody, UpdateDbCacheRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateHighRiskCommandsRequest, UpdateHighRiskCommandsResponse> updateHighRiskCommands =
         genForUpdateHighRiskCommands();
 
@@ -3412,6 +3974,39 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(UpdateInstanceConfigurationRequestBody.class),
             f -> f.withMarshaller(UpdateInstanceConfigurationRequest::getBody,
                 UpdateInstanceConfigurationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse> updateInstanceConfigurations =
+        genForUpdateInstanceConfigurations();
+
+    private static HttpRequestDef<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse> genForUpdateInstanceConfigurations() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateInstanceConfigurationsRequest.class,
+                    UpdateInstanceConfigurationsResponse.class)
+                .withName("UpdateInstanceConfigurations")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/configurations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceConfigurationsRequest::getInstanceId,
+                UpdateInstanceConfigurationsRequest::setInstanceId));
+        builder.<UpdateInstanceConfigurationsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInstanceConfigurationsRequestBody.class),
+            f -> f.withMarshaller(UpdateInstanceConfigurationsRequest::getBody,
+                UpdateInstanceConfigurationsRequest::setBody));
 
         // response
 

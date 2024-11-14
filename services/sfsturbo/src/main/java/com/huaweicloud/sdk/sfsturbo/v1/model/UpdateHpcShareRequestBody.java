@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 更新 HPC 型文件系统请求体
+ * 更新文件系统请求体
  */
 public class UpdateHpcShareRequestBody {
 
@@ -26,7 +26,7 @@ public class UpdateHpcShareRequestBody {
     }
 
     /**
-     * 更新 HPC 型文件系统的操作类型。当前仅支持取值 config_gc_time
+     * 更新文件系统的操作类型。当前仅支持取值 config_gc_time
      * @return action
      */
     public String getAction() {

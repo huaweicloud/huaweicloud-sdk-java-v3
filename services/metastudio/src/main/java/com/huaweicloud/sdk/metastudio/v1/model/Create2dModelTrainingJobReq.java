@@ -223,9 +223,19 @@ public class Create2dModelTrainingJobReq {
     private ModelVersionEnum modelVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "beauty_level")
+
+    private Integer beautyLevel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_flexus")
 
     private Boolean isFlexus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_only_human_model")
+
+    private Boolean isOnlyHumanModel;
 
     /**
      * 声音来源类型 * VIDEO：视频中抽取音频 * AUDIO：单独上传的音频
@@ -485,6 +495,25 @@ public class Create2dModelTrainingJobReq {
         this.modelVersion = modelVersion;
     }
 
+    public Create2dModelTrainingJobReq withBeautyLevel(Integer beautyLevel) {
+        this.beautyLevel = beautyLevel;
+        return this;
+    }
+
+    /**
+     * 美白等级。默认值0，不美白。
+     * minimum: 0
+     * maximum: 3
+     * @return beautyLevel
+     */
+    public Integer getBeautyLevel() {
+        return beautyLevel;
+    }
+
+    public void setBeautyLevel(Integer beautyLevel) {
+        this.beautyLevel = beautyLevel;
+    }
+
     public Create2dModelTrainingJobReq withIsFlexus(Boolean isFlexus) {
         this.isFlexus = isFlexus;
         return this;
@@ -500,6 +529,23 @@ public class Create2dModelTrainingJobReq {
 
     public void setIsFlexus(Boolean isFlexus) {
         this.isFlexus = isFlexus;
+    }
+
+    public Create2dModelTrainingJobReq withIsOnlyHumanModel(Boolean isOnlyHumanModel) {
+        this.isOnlyHumanModel = isOnlyHumanModel;
+        return this;
+    }
+
+    /**
+     * 是否只训练形象模型，不训练声音模型。仅Flexus版本时有效，默认false。
+     * @return isOnlyHumanModel
+     */
+    public Boolean getIsOnlyHumanModel() {
+        return isOnlyHumanModel;
+    }
+
+    public void setIsOnlyHumanModel(Boolean isOnlyHumanModel) {
+        this.isOnlyHumanModel = isOnlyHumanModel;
     }
 
     public Create2dModelTrainingJobReq withAudioSourceType(AudioSourceTypeEnum audioSourceType) {
@@ -594,7 +640,9 @@ public class Create2dModelTrainingJobReq {
             && Objects.equals(this.actionVideoMultipartCount, that.actionVideoMultipartCount)
             && Objects.equals(this.isBackgroundReplacement, that.isBackgroundReplacement)
             && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.modelVersion, that.modelVersion) && Objects.equals(this.isFlexus, that.isFlexus)
+            && Objects.equals(this.modelVersion, that.modelVersion)
+            && Objects.equals(this.beautyLevel, that.beautyLevel) && Objects.equals(this.isFlexus, that.isFlexus)
+            && Objects.equals(this.isOnlyHumanModel, that.isOnlyHumanModel)
             && Objects.equals(this.audioSourceType, that.audioSourceType)
             && Objects.equals(this.voiceProperties, that.voiceProperties)
             && Objects.equals(this.supportedService, that.supportedService);
@@ -611,7 +659,9 @@ public class Create2dModelTrainingJobReq {
             batchName,
             tags,
             modelVersion,
+            beautyLevel,
             isFlexus,
+            isOnlyHumanModel,
             audioSourceType,
             voiceProperties,
             supportedService);
@@ -630,7 +680,9 @@ public class Create2dModelTrainingJobReq {
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    modelVersion: ").append(toIndentedString(modelVersion)).append("\n");
+        sb.append("    beautyLevel: ").append(toIndentedString(beautyLevel)).append("\n");
         sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
+        sb.append("    isOnlyHumanModel: ").append(toIndentedString(isOnlyHumanModel)).append("\n");
         sb.append("    audioSourceType: ").append(toIndentedString(audioSourceType)).append("\n");
         sb.append("    voiceProperties: ").append(toIndentedString(voiceProperties)).append("\n");
         sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");

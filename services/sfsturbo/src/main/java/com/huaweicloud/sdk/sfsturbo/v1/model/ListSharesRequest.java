@@ -26,7 +26,7 @@ public class ListSharesRequest {
     }
 
     /**
-     * 返回的文件系统个数，最大值为200。
+     * 设置返回的文件系统个数的最大值，不填默认为1000个
      * minimum: 0
      * maximum: 200
      * @return limit
@@ -45,7 +45,7 @@ public class ListSharesRequest {
     }
 
     /**
-     * 文件系统查询个数的偏移量。
+     * 设置返回的文件系统的偏移量。
      * minimum: 0
      * @return offset
      */

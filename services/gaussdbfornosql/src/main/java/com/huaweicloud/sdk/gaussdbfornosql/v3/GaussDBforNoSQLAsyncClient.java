@@ -5,10 +5,14 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationToInstancesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ApplyConfigurationToInstancesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchTagActionResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.BatchUpgradeDatabaseVersionResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CancelInstanceScheduleWindowRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CancelInstanceScheduleWindowResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckDisasterRecoveryOperationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CheckWeekPasswordRequest;
@@ -23,6 +27,10 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateColdVolumeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateColdVolumeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbCacheMappingRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbCacheMappingResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbCacheRuleRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbCacheRuleResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbUserRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbUserResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDisasterRecoveryRequest;
@@ -33,6 +41,10 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteBackupRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteBackupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbCacheMappingRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbCacheMappingResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbCacheRuleRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbCacheRuleResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbUserRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDbUserResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDisasterRecoveryRequest;
@@ -61,6 +73,10 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDatastoresRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDatastoresResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbCacheMappingsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbCacheMappingsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbCacheRulesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbCacheRulesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListDedicatedResourcesRequest;
@@ -75,6 +91,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInfluxdbSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInfluxdbSlowLogsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceDatabasesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceDatabasesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceMaintenanceWindowRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceMaintenanceWindowResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceTagsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstanceTagsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListInstancesByResourceTagsRequest;
@@ -95,6 +113,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbErrorLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbErrorLogsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListMongodbSlowLogsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListNosqlTaskListRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListNosqlTaskListResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRecycleInstancesRequest;
@@ -113,6 +133,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyDbUserPrivilegeRequest
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyDbUserPrivilegeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyEpsQuotasRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyEpsQuotasResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyInstanceMaintenanceWindowRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyInstanceMaintenanceWindowResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyPortRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyPortResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ModifyPublicIpRequest;
@@ -145,6 +167,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetAutoEnlargePolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetBackupPolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetInstanceDataDumpRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetInstanceDataDumpResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRecyclePolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAllInstancesBackupsNewRequest;
@@ -159,6 +183,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApplyHistoryRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowApplyHistoryResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPoliciesRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPoliciesResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowBackupPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowConfigurationDetailRequest;
@@ -191,12 +217,16 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSecondLevelMonitoringStatusRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSecondLevelMonitoringStatusResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSecondLevelMonitoringRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSecondLevelMonitoringResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSlowlogDesensitizationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchSslRequest;
@@ -211,10 +241,14 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDatabasesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDatabasesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDbCacheRuleRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateDbCacheRuleResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateHighRiskCommandsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateHighRiskCommandsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationsRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdateInstanceNameResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.UpdatePasswordlessConfigRequest;
@@ -266,6 +300,36 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<ApplyConfigurationRequest, ApplyConfigurationResponse> applyConfigurationAsyncInvoker(
         ApplyConfigurationRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.applyConfiguration, hcClient);
+    }
+
+    /**
+     * 应用参数模板
+     *
+     * 将参数模板应用到实例，可以指定一个或多个实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ApplyConfigurationToInstancesRequest 请求对象
+     * @return CompletableFuture<ApplyConfigurationToInstancesResponse>
+     */
+    public CompletableFuture<ApplyConfigurationToInstancesResponse> applyConfigurationToInstancesAsync(
+        ApplyConfigurationToInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.applyConfigurationToInstances);
+    }
+
+    /**
+     * 应用参数模板
+     *
+     * 将参数模板应用到实例，可以指定一个或多个实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ApplyConfigurationToInstancesRequest 请求对象
+     * @return AsyncInvoker<ApplyConfigurationToInstancesRequest, ApplyConfigurationToInstancesResponse>
+     */
+    public AsyncInvoker<ApplyConfigurationToInstancesRequest, ApplyConfigurationToInstancesResponse> applyConfigurationToInstancesAsyncInvoker(
+        ApplyConfigurationToInstancesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.applyConfigurationToInstances, hcClient);
     }
 
     /**
@@ -325,6 +389,36 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse> batchUpgradeDatabaseVersionAsyncInvoker(
         BatchUpgradeDatabaseVersionRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.batchUpgradeDatabaseVersion, hcClient);
+    }
+
+    /**
+     * 取消定时任务
+     *
+     * 取消定时任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelInstanceScheduleWindowRequest 请求对象
+     * @return CompletableFuture<CancelInstanceScheduleWindowResponse>
+     */
+    public CompletableFuture<CancelInstanceScheduleWindowResponse> cancelInstanceScheduleWindowAsync(
+        CancelInstanceScheduleWindowRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.cancelInstanceScheduleWindow);
+    }
+
+    /**
+     * 取消定时任务
+     *
+     * 取消定时任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelInstanceScheduleWindowRequest 请求对象
+     * @return AsyncInvoker<CancelInstanceScheduleWindowRequest, CancelInstanceScheduleWindowResponse>
+     */
+    public AsyncInvoker<CancelInstanceScheduleWindowRequest, CancelInstanceScheduleWindowResponse> cancelInstanceScheduleWindowAsyncInvoker(
+        CancelInstanceScheduleWindowRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.cancelInstanceScheduleWindow, hcClient);
     }
 
     /**
@@ -534,6 +628,65 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 创建内存加速映射
+     *
+     * 创建内存加速映射。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDbCacheMappingRequest 请求对象
+     * @return CompletableFuture<CreateDbCacheMappingResponse>
+     */
+    public CompletableFuture<CreateDbCacheMappingResponse> createDbCacheMappingAsync(
+        CreateDbCacheMappingRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.createDbCacheMapping);
+    }
+
+    /**
+     * 创建内存加速映射
+     *
+     * 创建内存加速映射。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDbCacheMappingRequest 请求对象
+     * @return AsyncInvoker<CreateDbCacheMappingRequest, CreateDbCacheMappingResponse>
+     */
+    public AsyncInvoker<CreateDbCacheMappingRequest, CreateDbCacheMappingResponse> createDbCacheMappingAsyncInvoker(
+        CreateDbCacheMappingRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.createDbCacheMapping, hcClient);
+    }
+
+    /**
+     * 创建内存加速规则
+     *
+     * 创建内存加速规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDbCacheRuleRequest 请求对象
+     * @return CompletableFuture<CreateDbCacheRuleResponse>
+     */
+    public CompletableFuture<CreateDbCacheRuleResponse> createDbCacheRuleAsync(CreateDbCacheRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.createDbCacheRule);
+    }
+
+    /**
+     * 创建内存加速规则
+     *
+     * 创建内存加速规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDbCacheRuleRequest 请求对象
+     * @return AsyncInvoker<CreateDbCacheRuleRequest, CreateDbCacheRuleResponse>
+     */
+    public AsyncInvoker<CreateDbCacheRuleRequest, CreateDbCacheRuleResponse> createDbCacheRuleAsyncInvoker(
+        CreateDbCacheRuleRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.createDbCacheRule, hcClient);
+    }
+
+    /**
      * 创建Redis数据库账号
      *
      * 在Redis实例中创建数据库帐号。
@@ -677,6 +830,65 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfigurationAsyncInvoker(
         DeleteConfigurationRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteConfiguration, hcClient);
+    }
+
+    /**
+     * 解除内存加速映射
+     *
+     * 解除指定内存加速映射。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDbCacheMappingRequest 请求对象
+     * @return CompletableFuture<DeleteDbCacheMappingResponse>
+     */
+    public CompletableFuture<DeleteDbCacheMappingResponse> deleteDbCacheMappingAsync(
+        DeleteDbCacheMappingRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.deleteDbCacheMapping);
+    }
+
+    /**
+     * 解除内存加速映射
+     *
+     * 解除指定内存加速映射。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDbCacheMappingRequest 请求对象
+     * @return AsyncInvoker<DeleteDbCacheMappingRequest, DeleteDbCacheMappingResponse>
+     */
+    public AsyncInvoker<DeleteDbCacheMappingRequest, DeleteDbCacheMappingResponse> deleteDbCacheMappingAsyncInvoker(
+        DeleteDbCacheMappingRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteDbCacheMapping, hcClient);
+    }
+
+    /**
+     * 删除内存加速规则
+     *
+     * 删除内存加速规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDbCacheRuleRequest 请求对象
+     * @return CompletableFuture<DeleteDbCacheRuleResponse>
+     */
+    public CompletableFuture<DeleteDbCacheRuleResponse> deleteDbCacheRuleAsync(DeleteDbCacheRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.deleteDbCacheRule);
+    }
+
+    /**
+     * 删除内存加速规则
+     *
+     * 删除内存加速规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDbCacheRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteDbCacheRuleRequest, DeleteDbCacheRuleResponse>
+     */
+    public AsyncInvoker<DeleteDbCacheRuleRequest, DeleteDbCacheRuleResponse> deleteDbCacheRuleAsyncInvoker(
+        DeleteDbCacheRuleRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteDbCacheRule, hcClient);
     }
 
     /**
@@ -1064,6 +1276,64 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询内存加速映射列表和详情
+     *
+     * 根据指定条件查询内存加速映射关系列表和详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDbCacheMappingsRequest 请求对象
+     * @return CompletableFuture<ListDbCacheMappingsResponse>
+     */
+    public CompletableFuture<ListDbCacheMappingsResponse> listDbCacheMappingsAsync(ListDbCacheMappingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listDbCacheMappings);
+    }
+
+    /**
+     * 查询内存加速映射列表和详情
+     *
+     * 根据指定条件查询内存加速映射关系列表和详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDbCacheMappingsRequest 请求对象
+     * @return AsyncInvoker<ListDbCacheMappingsRequest, ListDbCacheMappingsResponse>
+     */
+    public AsyncInvoker<ListDbCacheMappingsRequest, ListDbCacheMappingsResponse> listDbCacheMappingsAsyncInvoker(
+        ListDbCacheMappingsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listDbCacheMappings, hcClient);
+    }
+
+    /**
+     * 查询内存加速规则列表和详情
+     *
+     * 查询内存加速规则列表和详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDbCacheRulesRequest 请求对象
+     * @return CompletableFuture<ListDbCacheRulesResponse>
+     */
+    public CompletableFuture<ListDbCacheRulesResponse> listDbCacheRulesAsync(ListDbCacheRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listDbCacheRules);
+    }
+
+    /**
+     * 查询内存加速规则列表和详情
+     *
+     * 查询内存加速规则列表和详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDbCacheRulesRequest 请求对象
+     * @return AsyncInvoker<ListDbCacheRulesRequest, ListDbCacheRulesResponse>
+     */
+    public AsyncInvoker<ListDbCacheRulesRequest, ListDbCacheRulesResponse> listDbCacheRulesAsyncInvoker(
+        ListDbCacheRulesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listDbCacheRules, hcClient);
+    }
+
+    /**
      * 获取Redis数据库账号列表和详情
      *
      * 获取Redis数据库账号列表和详情。
@@ -1265,6 +1535,36 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<ListInstanceDatabasesRequest, ListInstanceDatabasesResponse> listInstanceDatabasesAsyncInvoker(
         ListInstanceDatabasesRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listInstanceDatabases, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例可维护时间段
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceMaintenanceWindowRequest 请求对象
+     * @return CompletableFuture<ListInstanceMaintenanceWindowResponse>
+     */
+    public CompletableFuture<ListInstanceMaintenanceWindowResponse> listInstanceMaintenanceWindowAsync(
+        ListInstanceMaintenanceWindowRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listInstanceMaintenanceWindow);
+    }
+
+    /**
+     * 
+     *
+     * 查询实例可维护时间段
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceMaintenanceWindowRequest 请求对象
+     * @return AsyncInvoker<ListInstanceMaintenanceWindowRequest, ListInstanceMaintenanceWindowResponse>
+     */
+    public AsyncInvoker<ListInstanceMaintenanceWindowRequest, ListInstanceMaintenanceWindowResponse> listInstanceMaintenanceWindowAsyncInvoker(
+        ListInstanceMaintenanceWindowRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listInstanceMaintenanceWindow, hcClient);
     }
 
     /**
@@ -1561,6 +1861,35 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询定时任务列表
+     *
+     * 根据指定条件查询定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNosqlTaskListRequest 请求对象
+     * @return CompletableFuture<ListNosqlTaskListResponse>
+     */
+    public CompletableFuture<ListNosqlTaskListResponse> listNosqlTaskListAsync(ListNosqlTaskListRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.listNosqlTaskList);
+    }
+
+    /**
+     * 查询定时任务列表
+     *
+     * 根据指定条件查询定时任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNosqlTaskListRequest 请求对象
+     * @return AsyncInvoker<ListNosqlTaskListRequest, ListNosqlTaskListResponse>
+     */
+    public AsyncInvoker<ListNosqlTaskListRequest, ListNosqlTaskListResponse> listNosqlTaskListAsyncInvoker(
+        ListNosqlTaskListRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.listNosqlTaskList, hcClient);
+    }
+
+    /**
      * 查询项目标签
      *
      * 查询指定项目的标签信息。
@@ -1822,6 +2151,36 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<ModifyEpsQuotasRequest, ModifyEpsQuotasResponse> modifyEpsQuotasAsyncInvoker(
         ModifyEpsQuotasRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.modifyEpsQuotas, hcClient);
+    }
+
+    /**
+     * 查询实例可维护时间段
+     *
+     * 设置指定实例可维护时间段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyInstanceMaintenanceWindowRequest 请求对象
+     * @return CompletableFuture<ModifyInstanceMaintenanceWindowResponse>
+     */
+    public CompletableFuture<ModifyInstanceMaintenanceWindowResponse> modifyInstanceMaintenanceWindowAsync(
+        ModifyInstanceMaintenanceWindowRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.modifyInstanceMaintenanceWindow);
+    }
+
+    /**
+     * 查询实例可维护时间段
+     *
+     * 设置指定实例可维护时间段。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyInstanceMaintenanceWindowRequest 请求对象
+     * @return AsyncInvoker<ModifyInstanceMaintenanceWindowRequest, ModifyInstanceMaintenanceWindowResponse>
+     */
+    public AsyncInvoker<ModifyInstanceMaintenanceWindowRequest, ModifyInstanceMaintenanceWindowResponse> modifyInstanceMaintenanceWindowAsyncInvoker(
+        ModifyInstanceMaintenanceWindowRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.modifyInstanceMaintenanceWindow, hcClient);
     }
 
     /**
@@ -2301,6 +2660,37 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 开启/关闭实例数据导出
+     *
+     * 开启/关闭实例数据导出。
+     * 当前支持将InfluxDB数据转为parquet格式文件然后上传到指定的OBS桶中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetInstanceDataDumpRequest 请求对象
+     * @return CompletableFuture<SetInstanceDataDumpResponse>
+     */
+    public CompletableFuture<SetInstanceDataDumpResponse> setInstanceDataDumpAsync(SetInstanceDataDumpRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.setInstanceDataDump);
+    }
+
+    /**
+     * 开启/关闭实例数据导出
+     *
+     * 开启/关闭实例数据导出。
+     * 当前支持将InfluxDB数据转为parquet格式文件然后上传到指定的OBS桶中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetInstanceDataDumpRequest 请求对象
+     * @return AsyncInvoker<SetInstanceDataDumpRequest, SetInstanceDataDumpResponse>
+     */
+    public AsyncInvoker<SetInstanceDataDumpRequest, SetInstanceDataDumpResponse> setInstanceDataDumpAsyncInvoker(
+        SetInstanceDataDumpRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.setInstanceDataDump, hcClient);
+    }
+
+    /**
      * 设置回收策略
      *
      * 设置已删除实例保留天数，修改保留天数后删除的实例按照新的天数保留，修改之前已在回收站的实例保留天数不变。
@@ -2474,6 +2864,35 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> showAutoEnlargePolicyAsyncInvoker(
         ShowAutoEnlargePolicyRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showAutoEnlargePolicy, hcClient);
+    }
+
+    /**
+     * 查询自动备份策略
+     *
+     * 查询自动备份策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackupPoliciesRequest 请求对象
+     * @return CompletableFuture<ShowBackupPoliciesResponse>
+     */
+    public CompletableFuture<ShowBackupPoliciesResponse> showBackupPoliciesAsync(ShowBackupPoliciesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showBackupPolicies);
+    }
+
+    /**
+     * 查询自动备份策略
+     *
+     * 查询自动备份策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBackupPoliciesRequest 请求对象
+     * @return AsyncInvoker<ShowBackupPoliciesRequest, ShowBackupPoliciesResponse>
+     */
+    public AsyncInvoker<ShowBackupPoliciesRequest, ShowBackupPoliciesResponse> showBackupPoliciesAsyncInvoker(
+        ShowBackupPoliciesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showBackupPolicies, hcClient);
     }
 
     /**
@@ -2947,6 +3366,36 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 查询秒级监控配置
+     *
+     * 查询秒级监控配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecondLevelMonitoringStatusRequest 请求对象
+     * @return CompletableFuture<ShowSecondLevelMonitoringStatusResponse>
+     */
+    public CompletableFuture<ShowSecondLevelMonitoringStatusResponse> showSecondLevelMonitoringStatusAsync(
+        ShowSecondLevelMonitoringStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.showSecondLevelMonitoringStatus);
+    }
+
+    /**
+     * 查询秒级监控配置
+     *
+     * 查询秒级监控配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecondLevelMonitoringStatusRequest 请求对象
+     * @return AsyncInvoker<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse>
+     */
+    public AsyncInvoker<ShowSecondLevelMonitoringStatusRequest, ShowSecondLevelMonitoringStatusResponse> showSecondLevelMonitoringStatusAsyncInvoker(
+        ShowSecondLevelMonitoringStatusRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.showSecondLevelMonitoringStatus, hcClient);
+    }
+
+    /**
      * 查询慢日志脱敏状态
      *
      * 查询慢日志脱敏状态。
@@ -3032,6 +3481,36 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<SwitchIpGroupRequest, SwitchIpGroupResponse> switchIpGroupAsyncInvoker(
         SwitchIpGroupRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.switchIpGroup, hcClient);
+    }
+
+    /**
+     * 开启/关闭秒级监控
+     *
+     * 开启或关闭指定实例的5秒级监控。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchSecondLevelMonitoringRequest 请求对象
+     * @return CompletableFuture<SwitchSecondLevelMonitoringResponse>
+     */
+    public CompletableFuture<SwitchSecondLevelMonitoringResponse> switchSecondLevelMonitoringAsync(
+        SwitchSecondLevelMonitoringRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.switchSecondLevelMonitoring);
+    }
+
+    /**
+     * 开启/关闭秒级监控
+     *
+     * 开启或关闭指定实例的5秒级监控。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchSecondLevelMonitoringRequest 请求对象
+     * @return AsyncInvoker<SwitchSecondLevelMonitoringRequest, SwitchSecondLevelMonitoringResponse>
+     */
+    public AsyncInvoker<SwitchSecondLevelMonitoringRequest, SwitchSecondLevelMonitoringResponse> switchSecondLevelMonitoringAsyncInvoker(
+        SwitchSecondLevelMonitoringRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.switchSecondLevelMonitoring, hcClient);
     }
 
     /**
@@ -3238,6 +3717,35 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 修改内存加速规则
+     *
+     * 修改指定内存加速规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDbCacheRuleRequest 请求对象
+     * @return CompletableFuture<UpdateDbCacheRuleResponse>
+     */
+    public CompletableFuture<UpdateDbCacheRuleResponse> updateDbCacheRuleAsync(UpdateDbCacheRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.updateDbCacheRule);
+    }
+
+    /**
+     * 修改内存加速规则
+     *
+     * 修改指定内存加速规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDbCacheRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateDbCacheRuleRequest, UpdateDbCacheRuleResponse>
+     */
+    public AsyncInvoker<UpdateDbCacheRuleRequest, UpdateDbCacheRuleResponse> updateDbCacheRuleAsyncInvoker(
+        UpdateDbCacheRuleRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateDbCacheRule, hcClient);
+    }
+
+    /**
      * 修改高危命令
      *
      * 批量修改高危命令
@@ -3295,6 +3803,36 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfigurationAsyncInvoker(
         UpdateInstanceConfigurationRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateInstanceConfiguration, hcClient);
+    }
+
+    /**
+     * 修改指定实例的参数
+     *
+     * 修改指定实例的参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceConfigurationsRequest 请求对象
+     * @return CompletableFuture<UpdateInstanceConfigurationsResponse>
+     */
+    public CompletableFuture<UpdateInstanceConfigurationsResponse> updateInstanceConfigurationsAsync(
+        UpdateInstanceConfigurationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.updateInstanceConfigurations);
+    }
+
+    /**
+     * 修改指定实例的参数
+     *
+     * 修改指定实例的参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceConfigurationsRequest 请求对象
+     * @return AsyncInvoker<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse>
+     */
+    public AsyncInvoker<UpdateInstanceConfigurationsRequest, UpdateInstanceConfigurationsResponse> updateInstanceConfigurationsAsyncInvoker(
+        UpdateInstanceConfigurationsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.updateInstanceConfigurations, hcClient);
     }
 
     /**

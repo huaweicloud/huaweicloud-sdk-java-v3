@@ -369,6 +369,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceRolesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceRolesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesForUserRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesForUserResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceusersRequest;
@@ -5696,6 +5698,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspacesAsyncInvoker(
         ListWorkspacesRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.listWorkspaces, hcClient);
+    }
+
+    /**
+     * 获取指定用户所有的工作空间集合
+     *
+     * 获取指定用户所有的工作空间集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkspacesForUserRequest 请求对象
+     * @return CompletableFuture<ListWorkspacesForUserResponse>
+     */
+    public CompletableFuture<ListWorkspacesForUserResponse> listWorkspacesForUserAsync(
+        ListWorkspacesForUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listWorkspacesForUser);
+    }
+
+    /**
+     * 获取指定用户所有的工作空间集合
+     *
+     * 获取指定用户所有的工作空间集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkspacesForUserRequest 请求对象
+     * @return AsyncInvoker<ListWorkspacesForUserRequest, ListWorkspacesForUserResponse>
+     */
+    public AsyncInvoker<ListWorkspacesForUserRequest, ListWorkspacesForUserResponse> listWorkspacesForUserAsyncInvoker(
+        ListWorkspacesForUserRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listWorkspacesForUser, hcClient);
     }
 
     /**

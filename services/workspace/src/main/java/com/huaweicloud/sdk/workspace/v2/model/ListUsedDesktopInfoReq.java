@@ -230,9 +230,9 @@ public class ListUsedDesktopInfoReq {
     }
 
     /**
-     * 从查询结果中的第几条数据开始返回,用于分页查询，取值范围0-2000，默认从0开始。
+     * 从查询结果中的第几条数据开始返回,用于分页查询，取值范围0-2147483647，默认从0开始。
      * minimum: 0
-     * maximum: 2000
+     * maximum: 2147483647
      * @return offset
      */
     public Integer getOffset() {

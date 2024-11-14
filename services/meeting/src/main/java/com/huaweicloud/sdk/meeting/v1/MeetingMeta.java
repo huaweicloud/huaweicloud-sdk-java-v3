@@ -76,6 +76,8 @@ import com.huaweicloud.sdk.meeting.v1.model.CancelRecurringMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CancelRecurringMeetingResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CancelRecurringSubMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CancelRecurringSubMeetingResponse;
+import com.huaweicloud.sdk.meeting.v1.model.CheckCallNumberInConfRequest;
+import com.huaweicloud.sdk.meeting.v1.model.CheckCallNumberInConfResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CheckSlideVerifyCodeRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CheckSlideVerifyCodeResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CheckTokenRequest;
@@ -1638,6 +1640,30 @@ public class MeetingMeta {
             TypeCasts.uncheckedConversion(RestCancelSingleRecordCycleConfListReqBody.class),
             f -> f.withMarshaller(CancelRecurringSubMeetingRequest::getBody,
                 CancelRecurringSubMeetingRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckCallNumberInConfRequest, CheckCallNumberInConfResponse> checkCallNumberInConf =
+        genForCheckCallNumberInConf();
+
+    private static HttpRequestDef<CheckCallNumberInConfRequest, CheckCallNumberInConfResponse> genForCheckCallNumberInConf() {
+        // basic
+        HttpRequestDef.Builder<CheckCallNumberInConfRequest, CheckCallNumberInConfResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, CheckCallNumberInConfRequest.class, CheckCallNumberInConfResponse.class)
+            .withName("CheckCallNumberInConf")
+            .withUri("/v2/mms/ncms/conferences/online/check-callnumber-in-conf")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("call_number",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckCallNumberInConfRequest::getCallNumber,
+                CheckCallNumberInConfRequest::setCallNumber));
 
         // response
 

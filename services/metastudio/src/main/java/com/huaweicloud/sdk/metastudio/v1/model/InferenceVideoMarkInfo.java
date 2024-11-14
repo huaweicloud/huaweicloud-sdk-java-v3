@@ -20,6 +20,16 @@ public class InferenceVideoMarkInfo {
 
     private String videoEndTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_video_start_time")
+
+    private String chatVideoStartTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_video_end_time")
+
+    private String chatVideoEndTime;
+
     public InferenceVideoMarkInfo withVideoStartTime(String videoStartTime) {
         this.videoStartTime = videoStartTime;
         return this;
@@ -54,6 +64,40 @@ public class InferenceVideoMarkInfo {
         this.videoEndTime = videoEndTime;
     }
 
+    public InferenceVideoMarkInfo withChatVideoStartTime(String chatVideoStartTime) {
+        this.chatVideoStartTime = chatVideoStartTime;
+        return this;
+    }
+
+    /**
+     * 选取推理数据预处理智能交互视频起始时间。格式：“HH:MM:SS.mmm”。
+     * @return chatVideoStartTime
+     */
+    public String getChatVideoStartTime() {
+        return chatVideoStartTime;
+    }
+
+    public void setChatVideoStartTime(String chatVideoStartTime) {
+        this.chatVideoStartTime = chatVideoStartTime;
+    }
+
+    public InferenceVideoMarkInfo withChatVideoEndTime(String chatVideoEndTime) {
+        this.chatVideoEndTime = chatVideoEndTime;
+        return this;
+    }
+
+    /**
+     * 选取推理数据预处理智能交互视频结束时间。格式：“HH:MM:SS.mmm”。
+     * @return chatVideoEndTime
+     */
+    public String getChatVideoEndTime() {
+        return chatVideoEndTime;
+    }
+
+    public void setChatVideoEndTime(String chatVideoEndTime) {
+        this.chatVideoEndTime = chatVideoEndTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +108,14 @@ public class InferenceVideoMarkInfo {
         }
         InferenceVideoMarkInfo that = (InferenceVideoMarkInfo) obj;
         return Objects.equals(this.videoStartTime, that.videoStartTime)
-            && Objects.equals(this.videoEndTime, that.videoEndTime);
+            && Objects.equals(this.videoEndTime, that.videoEndTime)
+            && Objects.equals(this.chatVideoStartTime, that.chatVideoStartTime)
+            && Objects.equals(this.chatVideoEndTime, that.chatVideoEndTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(videoStartTime, videoEndTime);
+        return Objects.hash(videoStartTime, videoEndTime, chatVideoStartTime, chatVideoEndTime);
     }
 
     @Override
@@ -78,6 +124,8 @@ public class InferenceVideoMarkInfo {
         sb.append("class InferenceVideoMarkInfo {\n");
         sb.append("    videoStartTime: ").append(toIndentedString(videoStartTime)).append("\n");
         sb.append("    videoEndTime: ").append(toIndentedString(videoEndTime)).append("\n");
+        sb.append("    chatVideoStartTime: ").append(toIndentedString(chatVideoStartTime)).append("\n");
+        sb.append("    chatVideoEndTime: ").append(toIndentedString(chatVideoEndTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

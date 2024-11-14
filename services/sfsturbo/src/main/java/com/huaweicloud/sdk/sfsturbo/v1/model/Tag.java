@@ -29,7 +29,7 @@ public class Tag {
     }
 
     /**
-     * 标签的键。  最大长度127个字符。 key不能为空。
+     * 标签的键。  最大长度128个字符。 key不能为空。
      * @return key
      */
     public String getKey() {

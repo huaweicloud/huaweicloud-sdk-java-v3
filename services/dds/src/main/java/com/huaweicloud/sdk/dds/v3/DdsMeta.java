@@ -18,11 +18,19 @@ import com.huaweicloud.sdk.dds.v3.model.AttachInternalIpRequest;
 import com.huaweicloud.sdk.dds.v3.model.AttachInternalIpRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.AttachInternalIpResponse;
 import com.huaweicloud.sdk.dds.v3.model.BalancerActiveWindow;
+import com.huaweicloud.sdk.dds.v3.model.BatchDeleteBackupRequest;
+import com.huaweicloud.sdk.dds.v3.model.BatchDeleteBackupRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.BatchDeleteBackupResponse;
 import com.huaweicloud.sdk.dds.v3.model.BatchOperateInstanceTagRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.BatchTagActionRequest;
 import com.huaweicloud.sdk.dds.v3.model.BatchTagActionResponse;
+import com.huaweicloud.sdk.dds.v3.model.BatchUpgradeDatabaseVersionRequest;
+import com.huaweicloud.sdk.dds.v3.model.BatchUpgradeDatabaseVersionRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.BatchUpgradeDatabaseVersionResponse;
 import com.huaweicloud.sdk.dds.v3.model.CancelEipRequest;
 import com.huaweicloud.sdk.dds.v3.model.CancelEipResponse;
+import com.huaweicloud.sdk.dds.v3.model.CancelScheduledTaskRequest;
+import com.huaweicloud.sdk.dds.v3.model.CancelScheduledTaskResponse;
 import com.huaweicloud.sdk.dds.v3.model.ChangeOpsWindowRequest;
 import com.huaweicloud.sdk.dds.v3.model.ChangeOpsWindowResponse;
 import com.huaweicloud.sdk.dds.v3.model.CheckPasswordRequest;
@@ -148,6 +156,8 @@ import com.huaweicloud.sdk.dds.v3.model.ListRestoreDatabasesRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListRestoreDatabasesResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListRestoreTimesResponse;
+import com.huaweicloud.sdk.dds.v3.model.ListScheduledTasksRequest;
+import com.huaweicloud.sdk.dds.v3.model.ListScheduledTasksResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListSessionsRequest;
 import com.huaweicloud.sdk.dds.v3.model.ListSessionsResponse;
 import com.huaweicloud.sdk.dds.v3.model.ListSlowLogsRequest;
@@ -192,6 +202,9 @@ import com.huaweicloud.sdk.dds.v3.model.RestoreNewInstanceResponse;
 import com.huaweicloud.sdk.dds.v3.model.SetAuditlogPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.SetAuditlogPolicyRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.SetAuditlogPolicyResponse;
+import com.huaweicloud.sdk.dds.v3.model.SetAutoEnlargePoliciesRequest;
+import com.huaweicloud.sdk.dds.v3.model.SetAutoEnlargePoliciesRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.SetAutoEnlargePoliciesResponse;
 import com.huaweicloud.sdk.dds.v3.model.SetBackupPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.SetBackupPolicyRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.SetBackupPolicyResponse;
@@ -205,6 +218,8 @@ import com.huaweicloud.sdk.dds.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowAuditlogPolicyRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowAuditlogPolicyResponse;
+import com.huaweicloud.sdk.dds.v3.model.ShowAutoEnlargePolicyRequest;
+import com.huaweicloud.sdk.dds.v3.model.ShowAutoEnlargePolicyResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowBackupDownloadLinkRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowBackupDownloadLinkResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowBackupPolicyRequest;
@@ -223,6 +238,8 @@ import com.huaweicloud.sdk.dds.v3.model.ShowDiskUsageRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowDiskUsageResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowEntityConfigurationRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowEntityConfigurationResponse;
+import com.huaweicloud.sdk.dds.v3.model.ShowInstanceConfigurationModifyHistoryRequest;
+import com.huaweicloud.sdk.dds.v3.model.ShowInstanceConfigurationModifyHistoryResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowJobDetailRequest;
 import com.huaweicloud.sdk.dds.v3.model.ShowJobDetailResponse;
 import com.huaweicloud.sdk.dds.v3.model.ShowKillOpRuleRuleListRequest;
@@ -291,6 +308,8 @@ import com.huaweicloud.sdk.dds.v3.model.UpdateSecurityGroupResponse;
 import com.huaweicloud.sdk.dds.v3.model.UpgradeDatabaseVersionRequest;
 import com.huaweicloud.sdk.dds.v3.model.UpgradeDatabaseVersionRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.UpgradeDatabaseVersionResponse;
+import com.huaweicloud.sdk.dds.v3.model.ValidateConfigurationNameRequest;
+import com.huaweicloud.sdk.dds.v3.model.ValidateConfigurationNameResponse;
 import com.huaweicloud.sdk.dds.v3.model.WeakPasswordCheckRequestBody;
 
 @SuppressWarnings("unchecked")
@@ -407,6 +426,34 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteBackupRequest, BatchDeleteBackupResponse> batchDeleteBackup =
+        genForBatchDeleteBackup();
+
+    private static HttpRequestDef<BatchDeleteBackupRequest, BatchDeleteBackupResponse> genForBatchDeleteBackup() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteBackupRequest, BatchDeleteBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteBackupRequest.class, BatchDeleteBackupResponse.class)
+                .withName("BatchDeleteBackup")
+                .withUri("/v3/{project_id}/instances/backups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteBackupRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchDeleteBackupRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(BatchDeleteBackupRequest::getXLanguage, BatchDeleteBackupRequest::setXLanguage));
+        builder.<BatchDeleteBackupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteBackupRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteBackupRequest::getBody, BatchDeleteBackupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchTagActionRequest, BatchTagActionResponse> batchTagAction =
         genForBatchTagAction();
 
@@ -435,6 +482,33 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse> batchUpgradeDatabaseVersion =
+        genForBatchUpgradeDatabaseVersion();
+
+    private static HttpRequestDef<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse> genForBatchUpgradeDatabaseVersion() {
+        // basic
+        HttpRequestDef.Builder<BatchUpgradeDatabaseVersionRequest, BatchUpgradeDatabaseVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchUpgradeDatabaseVersionRequest.class,
+                    BatchUpgradeDatabaseVersionResponse.class)
+                .withName("BatchUpgradeDatabaseVersion")
+                .withUri("/v3/{project_id}/instances/db-upgrade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchUpgradeDatabaseVersionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpgradeDatabaseVersionRequestBody.class),
+            f -> f.withMarshaller(BatchUpgradeDatabaseVersionRequest::getBody,
+                BatchUpgradeDatabaseVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CancelEipRequest, CancelEipResponse> cancelEip = genForCancelEip();
 
     private static HttpRequestDef<CancelEipRequest, CancelEipResponse> genForCancelEip() {
@@ -453,6 +527,34 @@ public class DdsMeta {
             f -> f.withMarshaller(CancelEipRequest::getNodeId, CancelEipRequest::setNodeId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelScheduledTaskRequest, CancelScheduledTaskResponse> cancelScheduledTask =
+        genForCancelScheduledTask();
+
+    private static HttpRequestDef<CancelScheduledTaskRequest, CancelScheduledTaskResponse> genForCancelScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<CancelScheduledTaskRequest, CancelScheduledTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, CancelScheduledTaskRequest.class, CancelScheduledTaskResponse.class)
+            .withName("CancelScheduledTask")
+            .withUri("/v3/{project_id}/scheduled-jobs/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelScheduledTaskRequest::getJobId, CancelScheduledTaskRequest::setJobId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CancelScheduledTaskResponse::getBody, CancelScheduledTaskResponse::setBody));
 
         return builder.build();
     }
@@ -1981,6 +2083,59 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListScheduledTasksRequest, ListScheduledTasksResponse> listScheduledTasks =
+        genForListScheduledTasks();
+
+    private static HttpRequestDef<ListScheduledTasksRequest, ListScheduledTasksResponse> genForListScheduledTasks() {
+        // basic
+        HttpRequestDef.Builder<ListScheduledTasksRequest, ListScheduledTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScheduledTasksRequest.class, ListScheduledTasksResponse.class)
+                .withName("ListScheduledTasks")
+                .withUri("/v3/{project_id}/scheduled-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getJobName, ListScheduledTasksRequest::setJobName));
+        builder.<String>withRequestField("job_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getJobStatus, ListScheduledTasksRequest::setJobStatus));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getInstanceId, ListScheduledTasksRequest::setInstanceId));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getStartTime, ListScheduledTasksRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getEndTime, ListScheduledTasksRequest::setEndTime));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getOffset, ListScheduledTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledTasksRequest::getLimit, ListScheduledTasksRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSessionsRequest, ListSessionsResponse> listSessions = genForListSessions();
 
     private static HttpRequestDef<ListSessionsRequest, ListSessionsResponse> genForListSessions() {
@@ -2474,6 +2629,29 @@ public class DdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetAutoEnlargePoliciesRequest, SetAutoEnlargePoliciesResponse> setAutoEnlargePolicies =
+        genForSetAutoEnlargePolicies();
+
+    private static HttpRequestDef<SetAutoEnlargePoliciesRequest, SetAutoEnlargePoliciesResponse> genForSetAutoEnlargePolicies() {
+        // basic
+        HttpRequestDef.Builder<SetAutoEnlargePoliciesRequest, SetAutoEnlargePoliciesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, SetAutoEnlargePoliciesRequest.class, SetAutoEnlargePoliciesResponse.class)
+            .withName("SetAutoEnlargePolicies")
+            .withUri("/v3/{project_id}/instances/auto-enlarge-volume-policies")
+            .withContentType("application/json");
+
+        // requests
+        builder.<SetAutoEnlargePoliciesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetAutoEnlargePoliciesRequestBody.class),
+            f -> f.withMarshaller(SetAutoEnlargePoliciesRequest::getBody, SetAutoEnlargePoliciesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicy =
         genForSetBackupPolicy();
 
@@ -2603,6 +2781,30 @@ public class DdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAuditlogPolicyRequest::getXLanguage, ShowAuditlogPolicyRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> showAutoEnlargePolicy =
+        genForShowAutoEnlargePolicy();
+
+    private static HttpRequestDef<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> genForShowAutoEnlargePolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoEnlargePolicyRequest, ShowAutoEnlargePolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAutoEnlargePolicyRequest.class, ShowAutoEnlargePolicyResponse.class)
+            .withName("ShowAutoEnlargePolicy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/auto-enlarge-volume-policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoEnlargePolicyRequest::getInstanceId,
+                ShowAutoEnlargePolicyRequest::setInstanceId));
 
         // response
 
@@ -2879,6 +3081,45 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEntityConfigurationRequest::getEntityId,
                 ShowEntityConfigurationRequest::setEntityId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceConfigurationModifyHistoryRequest, ShowInstanceConfigurationModifyHistoryResponse> showInstanceConfigurationModifyHistory =
+        genForShowInstanceConfigurationModifyHistory();
+
+    private static HttpRequestDef<ShowInstanceConfigurationModifyHistoryRequest, ShowInstanceConfigurationModifyHistoryResponse> genForShowInstanceConfigurationModifyHistory() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceConfigurationModifyHistoryRequest, ShowInstanceConfigurationModifyHistoryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowInstanceConfigurationModifyHistoryRequest.class,
+                    ShowInstanceConfigurationModifyHistoryResponse.class)
+                .withName("ShowInstanceConfigurationModifyHistory")
+                .withUri("/v3/{project_id}/instances/{instance_id}/configuration-histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceConfigurationModifyHistoryRequest::getInstanceId,
+                ShowInstanceConfigurationModifyHistoryRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowInstanceConfigurationModifyHistoryRequest::getOffset,
+                ShowInstanceConfigurationModifyHistoryRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowInstanceConfigurationModifyHistoryRequest::getLimit,
+                ShowInstanceConfigurationModifyHistoryRequest::setLimit));
 
         // response
 
@@ -3688,6 +3929,33 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeDatabaseVersionRequestBody.class),
             f -> f.withMarshaller(UpgradeDatabaseVersionRequest::getBody, UpgradeDatabaseVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ValidateConfigurationNameRequest, ValidateConfigurationNameResponse> validateConfigurationName =
+        genForValidateConfigurationName();
+
+    private static HttpRequestDef<ValidateConfigurationNameRequest, ValidateConfigurationNameResponse> genForValidateConfigurationName() {
+        // basic
+        HttpRequestDef.Builder<ValidateConfigurationNameRequest, ValidateConfigurationNameResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ValidateConfigurationNameRequest.class,
+                    ValidateConfigurationNameResponse.class)
+                .withName("ValidateConfigurationName")
+                .withUri("/v3/{project_id}/configurations/name-validation")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ValidateConfigurationNameRequest::getName,
+                ValidateConfigurationNameRequest::setName));
 
         // response
 

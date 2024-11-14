@@ -1,6 +1,5 @@
 package com.huaweicloud.sdk.cloudrtc.v2;
 
-import com.huaweicloud.sdk.cloudrtc.v2.model.AppAuthReq;
 import com.huaweicloud.sdk.cloudrtc.v2.model.AppCallbackUrlReq;
 import com.huaweicloud.sdk.cloudrtc.v2.model.AppReq;
 import com.huaweicloud.sdk.cloudrtc.v2.model.AutoRecordModeReq;
@@ -45,8 +44,6 @@ import com.huaweicloud.sdk.cloudrtc.v2.model.ShowRecordCallbackRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ShowRecordCallbackResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ShowRecordRuleRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.ShowRecordRuleResponse;
-import com.huaweicloud.sdk.cloudrtc.v2.model.ShowUrlAuthRequest;
-import com.huaweicloud.sdk.cloudrtc.v2.model.ShowUrlAuthResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.StartAppRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.StartAppResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.StopAppRequest;
@@ -69,8 +66,6 @@ import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordCallbackRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordCallbackResponse;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordRuleRequest;
 import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateRecordRuleResponse;
-import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateUrlAuthRequest;
-import com.huaweicloud.sdk.cloudrtc.v2.model.UpdateUrlAuthResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -847,48 +842,6 @@ public class CloudRTCMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowUrlAuthRequest, ShowUrlAuthResponse> showUrlAuth = genForShowUrlAuth();
-
-    private static HttpRequestDef<ShowUrlAuthRequest, ShowUrlAuthResponse> genForShowUrlAuth() {
-        // basic
-        HttpRequestDef.Builder<ShowUrlAuthRequest, ShowUrlAuthResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowUrlAuthRequest.class, ShowUrlAuthResponse.class)
-                .withName("ShowUrlAuth")
-                .withUri("/v2/apps/{app_id}/authentication")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUrlAuthRequest::getAppId, ShowUrlAuthRequest::setAppId));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUrlAuthRequest::getAuthorization, ShowUrlAuthRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUrlAuthRequest::getXSdkDate, ShowUrlAuthRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowUrlAuthRequest::getXProjectId, ShowUrlAuthRequest::setXProjectId));
-
-        // response
-
-        builder.<String>withResponseField("X-request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowUrlAuthResponse::getXRequestId, ShowUrlAuthResponse::setXRequestId));
-        return builder.build();
-    }
-
     public static final HttpRequestDef<StartAppRequest, StartAppResponse> startApp = genForStartApp();
 
     private static HttpRequestDef<StartAppRequest, StartAppResponse> genForStartApp() {
@@ -1338,54 +1291,6 @@ public class CloudRTCMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(UpdateRecordRuleResponse::getXRequestId, UpdateRecordRuleResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateUrlAuthRequest, UpdateUrlAuthResponse> updateUrlAuth =
-        genForUpdateUrlAuth();
-
-    private static HttpRequestDef<UpdateUrlAuthRequest, UpdateUrlAuthResponse> genForUpdateUrlAuth() {
-        // basic
-        HttpRequestDef.Builder<UpdateUrlAuthRequest, UpdateUrlAuthResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateUrlAuthRequest.class, UpdateUrlAuthResponse.class)
-                .withName("UpdateUrlAuth")
-                .withUri("/v2/apps/{app_id}/authentication")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("app_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUrlAuthRequest::getAppId, UpdateUrlAuthRequest::setAppId));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUrlAuthRequest::getAuthorization, UpdateUrlAuthRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUrlAuthRequest::getXSdkDate, UpdateUrlAuthRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateUrlAuthRequest::getXProjectId, UpdateUrlAuthRequest::setXProjectId));
-        builder.<AppAuthReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AppAuthReq.class),
-            f -> f.withMarshaller(UpdateUrlAuthRequest::getBody, UpdateUrlAuthRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateUrlAuthResponse::getXRequestId, UpdateUrlAuthResponse::setXRequestId));
         return builder.build();
     }
 

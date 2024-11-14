@@ -277,10 +277,14 @@ import com.huaweicloud.sdk.dws.v2.model.ShowWorkloadQueueRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowWorkloadQueueResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.StartClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.StartClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryResponse;
 import com.huaweicloud.sdk.dws.v2.model.StartWorkloadPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.StartWorkloadPlanResponse;
+import com.huaweicloud.sdk.dws.v2.model.StopClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.StopClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.StopRedistributionRequest;
 import com.huaweicloud.sdk.dws.v2.model.StopRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.StopWorkloadPlanRequest;
@@ -4412,6 +4416,35 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 启动集群
+     *
+     * 集群管理-启动集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartClusterRequest 请求对象
+     * @return CompletableFuture<StartClusterResponse>
+     */
+    public CompletableFuture<StartClusterResponse> startClusterAsync(StartClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.startCluster);
+    }
+
+    /**
+     * 启动集群
+     *
+     * 集群管理-启动集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartClusterRequest 请求对象
+     * @return AsyncInvoker<StartClusterRequest, StartClusterResponse>
+     */
+    public AsyncInvoker<StartClusterRequest, StartClusterResponse> startClusterAsyncInvoker(
+        StartClusterRequest request) {
+        return new AsyncInvoker<>(request, DwsMeta.startCluster, hcClient);
+    }
+
+    /**
      * 启动容灾
      *
      * 该接口用于启动容灾操作。
@@ -4476,6 +4509,34 @@ public class DwsAsyncClient {
     public AsyncInvoker<StartWorkloadPlanRequest, StartWorkloadPlanResponse> startWorkloadPlanAsyncInvoker(
         StartWorkloadPlanRequest request) {
         return new AsyncInvoker<>(request, DwsMeta.startWorkloadPlan, hcClient);
+    }
+
+    /**
+     * 停止集群
+     *
+     * 集群管理-停止集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopClusterRequest 请求对象
+     * @return CompletableFuture<StopClusterResponse>
+     */
+    public CompletableFuture<StopClusterResponse> stopClusterAsync(StopClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.stopCluster);
+    }
+
+    /**
+     * 停止集群
+     *
+     * 集群管理-停止集群
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopClusterRequest 请求对象
+     * @return AsyncInvoker<StopClusterRequest, StopClusterResponse>
+     */
+    public AsyncInvoker<StopClusterRequest, StopClusterResponse> stopClusterAsyncInvoker(StopClusterRequest request) {
+        return new AsyncInvoker<>(request, DwsMeta.stopCluster, hcClient);
     }
 
     /**

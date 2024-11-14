@@ -30,7 +30,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private String name;
 
     /**
-     * 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   > 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息  - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务
+     * 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   > 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步  - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务
      */
     public static final class StateEnum {
 
@@ -163,6 +163,11 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
          * Enum JOB_PENDING for value: "JOB_PENDING"
          */
         public static final StateEnum JOB_PENDING = new StateEnum("JOB_PENDING");
+
+        /**
+         * Enum WAIT_ASSET_SYNC for value: "WAIT_ASSET_SYNC"
+         */
+        public static final StateEnum WAIT_ASSET_SYNC = new StateEnum("WAIT_ASSET_SYNC");
 
         /**
          * Enum WAIT_ADMIN_CONFIRM for value: "WAIT_ADMIN_CONFIRM"
@@ -307,6 +312,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             map.put("WAIT_USER_CONFIRM", WAIT_USER_CONFIRM);
             map.put("JOB_REJECT", JOB_REJECT);
             map.put("JOB_PENDING", JOB_PENDING);
+            map.put("WAIT_ASSET_SYNC", WAIT_ASSET_SYNC);
             map.put("WAIT_ADMIN_CONFIRM", WAIT_ADMIN_CONFIRM);
             map.put("JOB_FINISH", JOB_FINISH);
             map.put("COMPILING", COMPILING);
@@ -595,6 +601,11 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private Boolean isFlexus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_only_human_model")
+
+    private Boolean isOnlyHumanModel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "training_video_download_url")
 
     private String trainingVideoDownloadUrl;
@@ -615,9 +626,19 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private String grantFileDownloadUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pre_beauty_image_download_url")
+
+    private String preBeautyImageDownloadUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action_video_download_url")
 
     private String actionVideoDownloadUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "post_beauty_image_download_url")
+
+    private String postBeautyImageDownloadUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_file_download_url")
@@ -665,6 +686,11 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private String markableVideoDownloadUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "traning_video_mark_info")
+
+    private TrainingVideoMarkInfo traningVideoMarkInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inference_data_process_video_mark_info")
 
     private InferenceVideoMarkInfo inferenceDataProcessVideoMarkInfo;
@@ -673,6 +699,11 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     @JsonProperty(value = "inference_data_process_action_mark_info")
 
     private InferenceActionMarkInfo inferenceDataProcessActionMarkInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inference_data_process_chat_action_mark_info")
+
+    private InferenceActionMarkInfo inferenceDataProcessChatActionMarkInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inference_data_process_eye_correction_mark_info")
@@ -688,6 +719,11 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     @JsonProperty(value = "worker_type")
 
     private List<String> workerType = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "beauty_level")
+
+    private Integer beautyLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "voice_train_job_id")
@@ -780,6 +816,11 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private List<SupportedServiceEnum> supportedService = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allocated_resource")
+
+    private TrainingAllocatedResource allocatedResource;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -824,7 +865,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     }
 
     /**
-     * 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   > 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息  - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务
+     * 任务的状态。  与MetaStudio Console上用户看到的状态映射关系如下：  - 待提交   * WAIT_FILE_UPLOAD: 待上传文件  - 系统审核中   * AUTO_VERIFYING: 自动审核中   * MANUAL_VERIFYING: 人工审核中  - 系统审核未通过   * AUTO_VERIFY_FAILED: 自动审核失败   * MANUAL_VERIFY_FAILED: 人工审核失败  - 算法训练中   > 算法训练中的状态仅管理员需要处理，普通用户仅需要显示“算法训练中”即可。   * MANUAL_VERIFY_SUCCESS: 审核通过，等待预处理资源   * WAIT_TRAINING_DATA_PREPROCESS: 等待训练数据预处理   * TRAINING_DATA_PREPROCESSING: 训练数据预处理中   * TRAINING_DATA_PREPROCESS_FAILED: 训练数据预处理失败   * TRAINING_DATA_PREPROCESS_SUCCESS: 训练数据预处理完成，等待训练资源中   * TRAINING: 训练中   * TRAIN_FAILED: 训练失败   * TRAIN_SUCCESS: 训练完成，等待预处理资源   * INFERENCE_DATA_PREPROCESSING: 推理数据预处理中   * INFERENCE_DATA_PREPROCESS_FAILED: 推理数据预处理失败   * WAIT_MAIN_FILE_UPLOAD: 等待主文件上传   * MANUAL_STOP_INFERENCE_DATA_PREPROCESS: 人工中止推理预处理   * MANUAL_STOP_TRAIN: 人工中止训练   * MANUAL_STOP_TRAINING_DATA_PREPROCESS: 人工中止训练预处理   * WAIT_ADMIN_CONFIRM: 等待管理员审核   * WAIT_COMPILE: 等待转编译   * COMPILING: 转编译中   * COMPILE_FAILED: 转编译失败   * WAIT_GENERATE_ACTION: 等待原子动作生成   * WAIT_ARRANGE: 等待编排   * ACTION_GENERATE_DATA_PROCESSING: 原子动作生成中   * MANUAL_STOP_ACTION_GENERATE_DATA_PROCESSING: 人工中止动作生成   * MANUAL_STOP_ACTION_GENERATE_ORI_PROCESSING: 人工中止动作编排   * ACTION_GENERATE_ORI_PROCESSING: 动作编排中   * ACTION_GENERATE_DATA_FAILED: 动作生成失败   * ACTION_GENERATE_ORI_FAILED: 生成动作编排资产失败   * ACTION_GENERATE_ORI_SUCCESS: 动作编排成功   * GENERATE_ACTION_PREPROCESS_FAILED: 生成动作编排原子动作失败   * WAIT_ADMIN_CALIBRATION: 等待管理员确认动作信息   * WAIT_ASSET_SYNC: 等待资产同步  - 待用户审核，仅NA白名单用户有该状态   * WAIT_USER_CONFIRM: 等待用户确认训练效果  - 用户驳回，仅NA白名单用户有该状态   * JOB_REJECT: 驳回任务  - 已完成   * JOB_SUCCESS: 训练任务完成（普通用户任务的完成状态，此时用户已经可以使用模型）   * JOB_FINISH: 任务结束，是最终状态，不支持修改此状态(NA用户任务的完成状态，并且此状态表明模型效果已通过用户的验收)  - 挂起，仅NA白名单用户有该状态   * JOB_PENDING: 挂起任务
      * @return state
      */
     public StateEnum getState() {
@@ -1072,6 +1113,23 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         this.isFlexus = isFlexus;
     }
 
+    public Show2dModelTrainingJobResponse withIsOnlyHumanModel(Boolean isOnlyHumanModel) {
+        this.isOnlyHumanModel = isOnlyHumanModel;
+        return this;
+    }
+
+    /**
+     * 是否只训练形象模型，不训练声音模型。仅Flexus版本时有效，默认false。
+     * @return isOnlyHumanModel
+     */
+    public Boolean getIsOnlyHumanModel() {
+        return isOnlyHumanModel;
+    }
+
+    public void setIsOnlyHumanModel(Boolean isOnlyHumanModel) {
+        this.isOnlyHumanModel = isOnlyHumanModel;
+    }
+
     public Show2dModelTrainingJobResponse withTrainingVideoDownloadUrl(String trainingVideoDownloadUrl) {
         this.trainingVideoDownloadUrl = trainingVideoDownloadUrl;
         return this;
@@ -1140,6 +1198,23 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         this.grantFileDownloadUrl = grantFileDownloadUrl;
     }
 
+    public Show2dModelTrainingJobResponse withPreBeautyImageDownloadUrl(String preBeautyImageDownloadUrl) {
+        this.preBeautyImageDownloadUrl = preBeautyImageDownloadUrl;
+        return this;
+    }
+
+    /**
+     * 美白前图片下载url。
+     * @return preBeautyImageDownloadUrl
+     */
+    public String getPreBeautyImageDownloadUrl() {
+        return preBeautyImageDownloadUrl;
+    }
+
+    public void setPreBeautyImageDownloadUrl(String preBeautyImageDownloadUrl) {
+        this.preBeautyImageDownloadUrl = preBeautyImageDownloadUrl;
+    }
+
     public Show2dModelTrainingJobResponse withActionVideoDownloadUrl(String actionVideoDownloadUrl) {
         this.actionVideoDownloadUrl = actionVideoDownloadUrl;
         return this;
@@ -1155,6 +1230,23 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
 
     public void setActionVideoDownloadUrl(String actionVideoDownloadUrl) {
         this.actionVideoDownloadUrl = actionVideoDownloadUrl;
+    }
+
+    public Show2dModelTrainingJobResponse withPostBeautyImageDownloadUrl(String postBeautyImageDownloadUrl) {
+        this.postBeautyImageDownloadUrl = postBeautyImageDownloadUrl;
+        return this;
+    }
+
+    /**
+     * 美白后图片下载url。
+     * @return postBeautyImageDownloadUrl
+     */
+    public String getPostBeautyImageDownloadUrl() {
+        return postBeautyImageDownloadUrl;
+    }
+
+    public void setPostBeautyImageDownloadUrl(String postBeautyImageDownloadUrl) {
+        this.postBeautyImageDownloadUrl = postBeautyImageDownloadUrl;
     }
 
     public Show2dModelTrainingJobResponse withAudioFileDownloadUrl(String audioFileDownloadUrl) {
@@ -1377,6 +1469,33 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         this.markableVideoDownloadUrl = markableVideoDownloadUrl;
     }
 
+    public Show2dModelTrainingJobResponse withTraningVideoMarkInfo(TrainingVideoMarkInfo traningVideoMarkInfo) {
+        this.traningVideoMarkInfo = traningVideoMarkInfo;
+        return this;
+    }
+
+    public Show2dModelTrainingJobResponse withTraningVideoMarkInfo(
+        Consumer<TrainingVideoMarkInfo> traningVideoMarkInfoSetter) {
+        if (this.traningVideoMarkInfo == null) {
+            this.traningVideoMarkInfo = new TrainingVideoMarkInfo();
+            traningVideoMarkInfoSetter.accept(this.traningVideoMarkInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get traningVideoMarkInfo
+     * @return traningVideoMarkInfo
+     */
+    public TrainingVideoMarkInfo getTraningVideoMarkInfo() {
+        return traningVideoMarkInfo;
+    }
+
+    public void setTraningVideoMarkInfo(TrainingVideoMarkInfo traningVideoMarkInfo) {
+        this.traningVideoMarkInfo = traningVideoMarkInfo;
+    }
+
     public Show2dModelTrainingJobResponse withInferenceDataProcessVideoMarkInfo(
         InferenceVideoMarkInfo inferenceDataProcessVideoMarkInfo) {
         this.inferenceDataProcessVideoMarkInfo = inferenceDataProcessVideoMarkInfo;
@@ -1431,6 +1550,35 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
 
     public void setInferenceDataProcessActionMarkInfo(InferenceActionMarkInfo inferenceDataProcessActionMarkInfo) {
         this.inferenceDataProcessActionMarkInfo = inferenceDataProcessActionMarkInfo;
+    }
+
+    public Show2dModelTrainingJobResponse withInferenceDataProcessChatActionMarkInfo(
+        InferenceActionMarkInfo inferenceDataProcessChatActionMarkInfo) {
+        this.inferenceDataProcessChatActionMarkInfo = inferenceDataProcessChatActionMarkInfo;
+        return this;
+    }
+
+    public Show2dModelTrainingJobResponse withInferenceDataProcessChatActionMarkInfo(
+        Consumer<InferenceActionMarkInfo> inferenceDataProcessChatActionMarkInfoSetter) {
+        if (this.inferenceDataProcessChatActionMarkInfo == null) {
+            this.inferenceDataProcessChatActionMarkInfo = new InferenceActionMarkInfo();
+            inferenceDataProcessChatActionMarkInfoSetter.accept(this.inferenceDataProcessChatActionMarkInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get inferenceDataProcessChatActionMarkInfo
+     * @return inferenceDataProcessChatActionMarkInfo
+     */
+    public InferenceActionMarkInfo getInferenceDataProcessChatActionMarkInfo() {
+        return inferenceDataProcessChatActionMarkInfo;
+    }
+
+    public void setInferenceDataProcessChatActionMarkInfo(
+        InferenceActionMarkInfo inferenceDataProcessChatActionMarkInfo) {
+        this.inferenceDataProcessChatActionMarkInfo = inferenceDataProcessChatActionMarkInfo;
     }
 
     public Show2dModelTrainingJobResponse withInferenceDataProcessEyeCorrectionMarkInfo(
@@ -1510,6 +1658,25 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
 
     public void setWorkerType(List<String> workerType) {
         this.workerType = workerType;
+    }
+
+    public Show2dModelTrainingJobResponse withBeautyLevel(Integer beautyLevel) {
+        this.beautyLevel = beautyLevel;
+        return this;
+    }
+
+    /**
+     * 美白等级。默认值0，不美白。
+     * minimum: 0
+     * maximum: 3
+     * @return beautyLevel
+     */
+    public Integer getBeautyLevel() {
+        return beautyLevel;
+    }
+
+    public void setBeautyLevel(Integer beautyLevel) {
+        this.beautyLevel = beautyLevel;
     }
 
     public Show2dModelTrainingJobResponse withVoiceTrainJobId(String voiceTrainJobId) {
@@ -1599,6 +1766,33 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         this.supportedService = supportedService;
     }
 
+    public Show2dModelTrainingJobResponse withAllocatedResource(TrainingAllocatedResource allocatedResource) {
+        this.allocatedResource = allocatedResource;
+        return this;
+    }
+
+    public Show2dModelTrainingJobResponse withAllocatedResource(
+        Consumer<TrainingAllocatedResource> allocatedResourceSetter) {
+        if (this.allocatedResource == null) {
+            this.allocatedResource = new TrainingAllocatedResource();
+            allocatedResourceSetter.accept(this.allocatedResource);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get allocatedResource
+     * @return allocatedResource
+     */
+    public TrainingAllocatedResource getAllocatedResource() {
+        return allocatedResource;
+    }
+
+    public void setAllocatedResource(TrainingAllocatedResource allocatedResource) {
+        this.allocatedResource = allocatedResource;
+    }
+
     public Show2dModelTrainingJobResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -1638,11 +1832,14 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             && Objects.equals(this.mattingType, that.mattingType)
             && Objects.equals(this.modelResolution, that.modelResolution)
             && Objects.equals(this.appUserId, that.appUserId) && Objects.equals(this.isFlexus, that.isFlexus)
+            && Objects.equals(this.isOnlyHumanModel, that.isOnlyHumanModel)
             && Objects.equals(this.trainingVideoDownloadUrl, that.trainingVideoDownloadUrl)
             && Objects.equals(this.idCardImage1DownloadUrl, that.idCardImage1DownloadUrl)
             && Objects.equals(this.idCardImage2DownloadUrl, that.idCardImage2DownloadUrl)
             && Objects.equals(this.grantFileDownloadUrl, that.grantFileDownloadUrl)
+            && Objects.equals(this.preBeautyImageDownloadUrl, that.preBeautyImageDownloadUrl)
             && Objects.equals(this.actionVideoDownloadUrl, that.actionVideoDownloadUrl)
+            && Objects.equals(this.postBeautyImageDownloadUrl, that.postBeautyImageDownloadUrl)
             && Objects.equals(this.audioFileDownloadUrl, that.audioFileDownloadUrl)
             && Objects.equals(this.operationLogs, that.operationLogs)
             && Objects.equals(this.verifyVideoMattingInfo, that.verifyVideoMattingInfo)
@@ -1651,16 +1848,19 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             && Objects.equals(this.maskFileDownloadUrl, that.maskFileDownloadUrl)
             && Objects.equals(this.verifyVideoDownloadUrl, that.verifyVideoDownloadUrl)
             && Objects.equals(this.markableVideoDownloadUrl, that.markableVideoDownloadUrl)
+            && Objects.equals(this.traningVideoMarkInfo, that.traningVideoMarkInfo)
             && Objects.equals(this.inferenceDataProcessVideoMarkInfo, that.inferenceDataProcessVideoMarkInfo)
             && Objects.equals(this.inferenceDataProcessActionMarkInfo, that.inferenceDataProcessActionMarkInfo)
+            && Objects.equals(this.inferenceDataProcessChatActionMarkInfo, that.inferenceDataProcessChatActionMarkInfo)
             && Objects.equals(this.inferenceDataProcessEyeCorrectionMarkInfo,
                 that.inferenceDataProcessEyeCorrectionMarkInfo)
             && Objects.equals(this.isBackgroundReplacement, that.isBackgroundReplacement)
-            && Objects.equals(this.workerType, that.workerType)
+            && Objects.equals(this.workerType, that.workerType) && Objects.equals(this.beautyLevel, that.beautyLevel)
             && Objects.equals(this.voiceTrainJobId, that.voiceTrainJobId)
             && Objects.equals(this.flexusRetryCount, that.flexusRetryCount)
             && Objects.equals(this.audioSourceType, that.audioSourceType)
             && Objects.equals(this.supportedService, that.supportedService)
+            && Objects.equals(this.allocatedResource, that.allocatedResource)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
@@ -1682,11 +1882,14 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             modelResolution,
             appUserId,
             isFlexus,
+            isOnlyHumanModel,
             trainingVideoDownloadUrl,
             idCardImage1DownloadUrl,
             idCardImage2DownloadUrl,
             grantFileDownloadUrl,
+            preBeautyImageDownloadUrl,
             actionVideoDownloadUrl,
+            postBeautyImageDownloadUrl,
             audioFileDownloadUrl,
             operationLogs,
             verifyVideoMattingInfo,
@@ -1696,15 +1899,19 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             maskFileDownloadUrl,
             verifyVideoDownloadUrl,
             markableVideoDownloadUrl,
+            traningVideoMarkInfo,
             inferenceDataProcessVideoMarkInfo,
             inferenceDataProcessActionMarkInfo,
+            inferenceDataProcessChatActionMarkInfo,
             inferenceDataProcessEyeCorrectionMarkInfo,
             isBackgroundReplacement,
             workerType,
+            beautyLevel,
             voiceTrainJobId,
             flexusRetryCount,
             audioSourceType,
             supportedService,
+            allocatedResource,
             xRequestId);
     }
 
@@ -1728,11 +1935,14 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         sb.append("    modelResolution: ").append(toIndentedString(modelResolution)).append("\n");
         sb.append("    appUserId: ").append(toIndentedString(appUserId)).append("\n");
         sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
+        sb.append("    isOnlyHumanModel: ").append(toIndentedString(isOnlyHumanModel)).append("\n");
         sb.append("    trainingVideoDownloadUrl: ").append(toIndentedString(trainingVideoDownloadUrl)).append("\n");
         sb.append("    idCardImage1DownloadUrl: ").append(toIndentedString(idCardImage1DownloadUrl)).append("\n");
         sb.append("    idCardImage2DownloadUrl: ").append(toIndentedString(idCardImage2DownloadUrl)).append("\n");
         sb.append("    grantFileDownloadUrl: ").append(toIndentedString(grantFileDownloadUrl)).append("\n");
+        sb.append("    preBeautyImageDownloadUrl: ").append(toIndentedString(preBeautyImageDownloadUrl)).append("\n");
         sb.append("    actionVideoDownloadUrl: ").append(toIndentedString(actionVideoDownloadUrl)).append("\n");
+        sb.append("    postBeautyImageDownloadUrl: ").append(toIndentedString(postBeautyImageDownloadUrl)).append("\n");
         sb.append("    audioFileDownloadUrl: ").append(toIndentedString(audioFileDownloadUrl)).append("\n");
         sb.append("    operationLogs: ").append(toIndentedString(operationLogs)).append("\n");
         sb.append("    verifyVideoMattingInfo: ").append(toIndentedString(verifyVideoMattingInfo)).append("\n");
@@ -1742,21 +1952,27 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         sb.append("    maskFileDownloadUrl: ").append(toIndentedString(maskFileDownloadUrl)).append("\n");
         sb.append("    verifyVideoDownloadUrl: ").append(toIndentedString(verifyVideoDownloadUrl)).append("\n");
         sb.append("    markableVideoDownloadUrl: ").append(toIndentedString(markableVideoDownloadUrl)).append("\n");
+        sb.append("    traningVideoMarkInfo: ").append(toIndentedString(traningVideoMarkInfo)).append("\n");
         sb.append("    inferenceDataProcessVideoMarkInfo: ")
             .append(toIndentedString(inferenceDataProcessVideoMarkInfo))
             .append("\n");
         sb.append("    inferenceDataProcessActionMarkInfo: ")
             .append(toIndentedString(inferenceDataProcessActionMarkInfo))
             .append("\n");
+        sb.append("    inferenceDataProcessChatActionMarkInfo: ")
+            .append(toIndentedString(inferenceDataProcessChatActionMarkInfo))
+            .append("\n");
         sb.append("    inferenceDataProcessEyeCorrectionMarkInfo: ")
             .append(toIndentedString(inferenceDataProcessEyeCorrectionMarkInfo))
             .append("\n");
         sb.append("    isBackgroundReplacement: ").append(toIndentedString(isBackgroundReplacement)).append("\n");
         sb.append("    workerType: ").append(toIndentedString(workerType)).append("\n");
+        sb.append("    beautyLevel: ").append(toIndentedString(beautyLevel)).append("\n");
         sb.append("    voiceTrainJobId: ").append(toIndentedString(voiceTrainJobId)).append("\n");
         sb.append("    flexusRetryCount: ").append(toIndentedString(flexusRetryCount)).append("\n");
         sb.append("    audioSourceType: ").append(toIndentedString(audioSourceType)).append("\n");
         sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");
+        sb.append("    allocatedResource: ").append(toIndentedString(allocatedResource)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

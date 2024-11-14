@@ -65,6 +65,8 @@ import com.huaweicloud.sdk.meeting.v1.model.CancelRecurringMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CancelRecurringMeetingResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CancelRecurringSubMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CancelRecurringSubMeetingResponse;
+import com.huaweicloud.sdk.meeting.v1.model.CheckCallNumberInConfRequest;
+import com.huaweicloud.sdk.meeting.v1.model.CheckCallNumberInConfResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CheckSlideVerifyCodeRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CheckSlideVerifyCodeResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CheckTokenRequest;
@@ -1288,6 +1290,35 @@ public class MeetingClient {
     public SyncInvoker<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> cancelRecurringSubMeetingInvoker(
         CancelRecurringSubMeetingRequest request) {
         return new SyncInvoker<>(request, MeetingMeta.cancelRecurringSubMeeting, hcClient);
+    }
+
+    /**
+     * 根据号码，查询是否在会议中
+     *
+     * 通过该接口查询号码，是否在会议中
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckCallNumberInConfRequest 请求对象
+     * @return CheckCallNumberInConfResponse
+     */
+    public CheckCallNumberInConfResponse checkCallNumberInConf(CheckCallNumberInConfRequest request) {
+        return hcClient.syncInvokeHttp(request, MeetingMeta.checkCallNumberInConf);
+    }
+
+    /**
+     * 根据号码，查询是否在会议中
+     *
+     * 通过该接口查询号码，是否在会议中
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckCallNumberInConfRequest 请求对象
+     * @return SyncInvoker<CheckCallNumberInConfRequest, CheckCallNumberInConfResponse>
+     */
+    public SyncInvoker<CheckCallNumberInConfRequest, CheckCallNumberInConfResponse> checkCallNumberInConfInvoker(
+        CheckCallNumberInConfRequest request) {
+        return new SyncInvoker<>(request, MeetingMeta.checkCallNumberInConf, hcClient);
     }
 
     /**

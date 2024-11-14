@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +34,7 @@ public class ImageAssetMeta {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private BigDecimal size;
+    private Long size;
 
     /**
      * **参数解释**： 图片形态。 **约束限制**： 用户无需填写，系统自行提取。 **取值范围**： * Horizontal：横向 * Vertical：纵向  **默认取值**： 不涉及。
@@ -172,7 +171,7 @@ public class ImageAssetMeta {
         this.height = height;
     }
 
-    public ImageAssetMeta withSize(BigDecimal size) {
+    public ImageAssetMeta withSize(Long size) {
         this.size = size;
         return this;
     }
@@ -183,11 +182,11 @@ public class ImageAssetMeta {
      * maximum: 9223372036854775807
      * @return size
      */
-    public BigDecimal getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(BigDecimal size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 

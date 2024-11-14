@@ -325,10 +325,14 @@ import com.huaweicloud.sdk.dws.v2.model.ShowWorkloadQueueRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowWorkloadQueueResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShrinkClusterResponse;
+import com.huaweicloud.sdk.dws.v2.model.StartClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.StartClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.StartDisasterRecoveryResponse;
 import com.huaweicloud.sdk.dws.v2.model.StartWorkloadPlanRequest;
 import com.huaweicloud.sdk.dws.v2.model.StartWorkloadPlanResponse;
+import com.huaweicloud.sdk.dws.v2.model.StopClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.StopClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.StopRedistributionRequest;
 import com.huaweicloud.sdk.dws.v2.model.StopRedistributionResponse;
 import com.huaweicloud.sdk.dws.v2.model.StopWorkloadPlanRequest;
@@ -4589,6 +4593,28 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<StartClusterRequest, StartClusterResponse> startCluster = genForStartCluster();
+
+    private static HttpRequestDef<StartClusterRequest, StartClusterResponse> genForStartCluster() {
+        // basic
+        HttpRequestDef.Builder<StartClusterRequest, StartClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StartClusterRequest.class, StartClusterResponse.class)
+                .withName("StartCluster")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/start")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartClusterRequest::getClusterId, StartClusterRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<StartDisasterRecoveryRequest, StartDisasterRecoveryResponse> startDisasterRecovery =
         genForStartDisasterRecovery();
 
@@ -4635,6 +4661,28 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartWorkloadPlanRequest::getPlanId, StartWorkloadPlanRequest::setPlanId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopClusterRequest, StopClusterResponse> stopCluster = genForStopCluster();
+
+    private static HttpRequestDef<StopClusterRequest, StopClusterResponse> genForStopCluster() {
+        // basic
+        HttpRequestDef.Builder<StopClusterRequest, StopClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, StopClusterRequest.class, StopClusterResponse.class)
+                .withName("StopCluster")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/stop")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopClusterRequest::getClusterId, StopClusterRequest::setClusterId));
 
         // response
 

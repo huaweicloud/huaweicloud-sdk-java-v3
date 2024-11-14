@@ -42,6 +42,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoRespo
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateBeautyPreviewJobReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateBeautyPreviewJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateBeautyPreviewJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlResponse;
@@ -258,6 +261,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowBeautyPreviewJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowBeautyPreviewJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionRequest;
@@ -311,6 +316,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SmartChatJobsReq;
+import com.huaweicloud.sdk.metastudio.v1.model.StartBeautyPreviewJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.StartBeautyPreviewJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveReq;
@@ -785,6 +792,164 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowAgencyResponse::getXRequestId, ShowAgencyResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateBeautyPreviewJobRequest, CreateBeautyPreviewJobResponse> createBeautyPreviewJob =
+        genForCreateBeautyPreviewJob();
+
+    private static HttpRequestDef<CreateBeautyPreviewJobRequest, CreateBeautyPreviewJobResponse> genForCreateBeautyPreviewJob() {
+        // basic
+        HttpRequestDef.Builder<CreateBeautyPreviewJobRequest, CreateBeautyPreviewJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateBeautyPreviewJobRequest.class, CreateBeautyPreviewJobResponse.class)
+            .withName("CreateBeautyPreviewJob")
+            .withUri("/v1/{project_id}/digital-human-training-manage/beauty-preview/jobs")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBeautyPreviewJobRequest::getAuthorization,
+                CreateBeautyPreviewJobRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBeautyPreviewJobRequest::getXSdkDate,
+                CreateBeautyPreviewJobRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBeautyPreviewJobRequest::getXProjectId,
+                CreateBeautyPreviewJobRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateBeautyPreviewJobRequest::getXAppUserId,
+                CreateBeautyPreviewJobRequest::setXAppUserId));
+        builder.<CreateBeautyPreviewJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateBeautyPreviewJobReq.class),
+            f -> f.withMarshaller(CreateBeautyPreviewJobRequest::getBody, CreateBeautyPreviewJobRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateBeautyPreviewJobResponse::getXRequestId,
+                CreateBeautyPreviewJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBeautyPreviewJobRequest, ShowBeautyPreviewJobResponse> showBeautyPreviewJob =
+        genForShowBeautyPreviewJob();
+
+    private static HttpRequestDef<ShowBeautyPreviewJobRequest, ShowBeautyPreviewJobResponse> genForShowBeautyPreviewJob() {
+        // basic
+        HttpRequestDef.Builder<ShowBeautyPreviewJobRequest, ShowBeautyPreviewJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowBeautyPreviewJobRequest.class, ShowBeautyPreviewJobResponse.class)
+            .withName("ShowBeautyPreviewJob")
+            .withUri("/v1/{project_id}/digital-human-training-manage/beauty-preview/jobs/{job_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBeautyPreviewJobRequest::getJobId, ShowBeautyPreviewJobRequest::setJobId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBeautyPreviewJobRequest::getAuthorization,
+                ShowBeautyPreviewJobRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBeautyPreviewJobRequest::getXSdkDate, ShowBeautyPreviewJobRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBeautyPreviewJobRequest::getXProjectId,
+                ShowBeautyPreviewJobRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBeautyPreviewJobRequest::getXAppUserId,
+                ShowBeautyPreviewJobRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowBeautyPreviewJobResponse::getXRequestId,
+                ShowBeautyPreviewJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StartBeautyPreviewJobRequest, StartBeautyPreviewJobResponse> startBeautyPreviewJob =
+        genForStartBeautyPreviewJob();
+
+    private static HttpRequestDef<StartBeautyPreviewJobRequest, StartBeautyPreviewJobResponse> genForStartBeautyPreviewJob() {
+        // basic
+        HttpRequestDef.Builder<StartBeautyPreviewJobRequest, StartBeautyPreviewJobResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, StartBeautyPreviewJobRequest.class, StartBeautyPreviewJobResponse.class)
+            .withName("StartBeautyPreviewJob")
+            .withUri("/v1/{project_id}/digital-human-training-manage/beauty-preview/jobs/{job_id}/start")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartBeautyPreviewJobRequest::getJobId, StartBeautyPreviewJobRequest::setJobId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartBeautyPreviewJobRequest::getAuthorization,
+                StartBeautyPreviewJobRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartBeautyPreviewJobRequest::getXSdkDate,
+                StartBeautyPreviewJobRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartBeautyPreviewJobRequest::getXProjectId,
+                StartBeautyPreviewJobRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StartBeautyPreviewJobRequest::getXAppUserId,
+                StartBeautyPreviewJobRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(StartBeautyPreviewJobResponse::getXRequestId,
+                StartBeautyPreviewJobResponse::setXRequestId));
         return builder.build();
     }
 

@@ -31,6 +31,11 @@ public class ActionBasicSampleInfo {
     private String catalog;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recommended_value")
+
+    private Integer recommendedValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_selected")
 
     private Boolean isSelected;
@@ -103,6 +108,25 @@ public class ActionBasicSampleInfo {
         this.catalog = catalog;
     }
 
+    public ActionBasicSampleInfo withRecommendedValue(Integer recommendedValue) {
+        this.recommendedValue = recommendedValue;
+        return this;
+    }
+
+    /**
+     * 推荐等级。
+     * minimum: 0
+     * maximum: 100
+     * @return recommendedValue
+     */
+    public Integer getRecommendedValue() {
+        return recommendedValue;
+    }
+
+    public void setRecommendedValue(Integer recommendedValue) {
+        this.recommendedValue = recommendedValue;
+    }
+
     public ActionBasicSampleInfo withIsSelected(Boolean isSelected) {
         this.isSelected = isSelected;
         return this;
@@ -131,12 +155,14 @@ public class ActionBasicSampleInfo {
         ActionBasicSampleInfo that = (ActionBasicSampleInfo) obj;
         return Objects.equals(this.actionNameZh, that.actionNameZh)
             && Objects.equals(this.actionNameEn, that.actionNameEn) && Objects.equals(this.actionTag, that.actionTag)
-            && Objects.equals(this.catalog, that.catalog) && Objects.equals(this.isSelected, that.isSelected);
+            && Objects.equals(this.catalog, that.catalog)
+            && Objects.equals(this.recommendedValue, that.recommendedValue)
+            && Objects.equals(this.isSelected, that.isSelected);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(actionNameZh, actionNameEn, actionTag, catalog, isSelected);
+        return Objects.hash(actionNameZh, actionNameEn, actionTag, catalog, recommendedValue, isSelected);
     }
 
     @Override
@@ -147,6 +173,7 @@ public class ActionBasicSampleInfo {
         sb.append("    actionNameEn: ").append(toIndentedString(actionNameEn)).append("\n");
         sb.append("    actionTag: ").append(toIndentedString(actionTag)).append("\n");
         sb.append("    catalog: ").append(toIndentedString(catalog)).append("\n");
+        sb.append("    recommendedValue: ").append(toIndentedString(recommendedValue)).append("\n");
         sb.append("    isSelected: ").append(toIndentedString(isSelected)).append("\n");
         sb.append("}");
         return sb.toString();

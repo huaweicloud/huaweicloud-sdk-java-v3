@@ -40,6 +40,11 @@ public class ApigDataSourceVo {
 
     private Integer envType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supportService")
+
+    private Integer supportService;
+
     public ApigDataSourceVo withDwName(String dwName) {
         this.dwName = dwName;
         return this;
@@ -144,6 +149,25 @@ public class ApigDataSourceVo {
         this.envType = envType;
     }
 
+    public ApigDataSourceVo withSupportService(Integer supportService) {
+        this.supportService = supportService;
+        return this;
+    }
+
+    /**
+     * 1：cdm 2：数据架构 4:数据开发 8：数据质量 16：数据目录 32：数据安全 64：数据服务
+     * minimum: 1
+     * maximum: 127
+     * @return supportService
+     */
+    public Integer getSupportService() {
+        return supportService;
+    }
+
+    public void setSupportService(Integer supportService) {
+        this.supportService = supportService;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -155,12 +179,13 @@ public class ApigDataSourceVo {
         ApigDataSourceVo that = (ApigDataSourceVo) obj;
         return Objects.equals(this.dwName, that.dwName) && Objects.equals(this.dwType, that.dwType)
             && Objects.equals(this.dwConfig, that.dwConfig) && Objects.equals(this.agentId, that.agentId)
-            && Objects.equals(this.agentName, that.agentName) && Objects.equals(this.envType, that.envType);
+            && Objects.equals(this.agentName, that.agentName) && Objects.equals(this.envType, that.envType)
+            && Objects.equals(this.supportService, that.supportService);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dwName, dwType, dwConfig, agentId, agentName, envType);
+        return Objects.hash(dwName, dwType, dwConfig, agentId, agentName, envType, supportService);
     }
 
     @Override
@@ -173,6 +198,7 @@ public class ApigDataSourceVo {
         sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
         sb.append("    agentName: ").append(toIndentedString(agentName)).append("\n");
         sb.append("    envType: ").append(toIndentedString(envType)).append("\n");
+        sb.append("    supportService: ").append(toIndentedString(supportService)).append("\n");
         sb.append("}");
         return sb.toString();
     }

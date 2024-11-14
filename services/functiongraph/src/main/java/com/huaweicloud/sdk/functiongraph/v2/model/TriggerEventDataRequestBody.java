@@ -946,6 +946,11 @@ public class TriggerEventDataRequestBody {
     private String channelName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "channel_id")
+
+    private String channelId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source_name")
 
     private String sourceName;
@@ -955,15 +960,90 @@ public class TriggerEventDataRequestBody {
 
     private OffsetDateTime createdTime;
 
+    /**
+     * 触发器状态（EVENTGRID触发器参数）。
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
+        public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
+
+        /**
+         * Enum DISABLE for value: "DISABLE"
+         */
+        public static final StatusEnum DISABLE = new StatusEnum("DISABLE");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("ACTIVE", ACTIVE);
+            map.put("DISABLE", DISABLE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_name")
 
     private String triggerName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_types")
+
+    private List<String> eventTypes = null;
 
     public TriggerEventDataRequestBody withName(String name) {
         this.name = name;
@@ -1863,7 +1943,7 @@ public class TriggerEventDataRequestBody {
     }
 
     /**
-     * EG obs触发器是否对对象加密。
+     * EG obs触发器是否对对象加密（EVENTGRID触发器参数）。
      * @return keyEncode
      */
     public Boolean getKeyEncode() {
@@ -1880,7 +1960,7 @@ public class TriggerEventDataRequestBody {
     }
 
     /**
-     * 使用的代理
+     * 使用的代理（EVENTGRID触发器参数）。
      * @return agency
      */
     public String getAgency() {
@@ -1897,7 +1977,7 @@ public class TriggerEventDataRequestBody {
     }
 
     /**
-     * 通道名称
+     * 通道名称（EVENTGRID触发器参数）。
      * @return channelName
      */
     public String getChannelName() {
@@ -1908,13 +1988,30 @@ public class TriggerEventDataRequestBody {
         this.channelName = channelName;
     }
 
+    public TriggerEventDataRequestBody withChannelId(String channelId) {
+        this.channelId = channelId;
+        return this;
+    }
+
+    /**
+     * 通道id（EVENTGRID触发器参数）。
+     * @return channelId
+     */
+    public String getChannelId() {
+        return channelId;
+    }
+
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
+    }
+
     public TriggerEventDataRequestBody withSourceName(String sourceName) {
         this.sourceName = sourceName;
         return this;
     }
 
     /**
-     * 事件源名称
+     * 事件源名称（EVENTGRID触发器参数）。
      * @return sourceName
      */
     public String getSourceName() {
@@ -1931,7 +2028,7 @@ public class TriggerEventDataRequestBody {
     }
 
     /**
-     * 创建时间
+     * 创建时间（EVENTGRID触发器参数）。
      * @return createdTime
      */
     public OffsetDateTime getCreatedTime() {
@@ -1942,20 +2039,20 @@ public class TriggerEventDataRequestBody {
         this.createdTime = createdTime;
     }
 
-    public TriggerEventDataRequestBody withStatus(String status) {
+    public TriggerEventDataRequestBody withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 触发器状态
+     * 触发器状态（EVENTGRID触发器参数）。
      * @return status
      */
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
@@ -1965,7 +2062,7 @@ public class TriggerEventDataRequestBody {
     }
 
     /**
-     * 触发器名称
+     * 触发器名称（EVENTGRID触发器参数）。
      * @return triggerName
      */
     public String getTriggerName() {
@@ -1974,6 +2071,39 @@ public class TriggerEventDataRequestBody {
 
     public void setTriggerName(String triggerName) {
         this.triggerName = triggerName;
+    }
+
+    public TriggerEventDataRequestBody withEventTypes(List<String> eventTypes) {
+        this.eventTypes = eventTypes;
+        return this;
+    }
+
+    public TriggerEventDataRequestBody addEventTypesItem(String eventTypesItem) {
+        if (this.eventTypes == null) {
+            this.eventTypes = new ArrayList<>();
+        }
+        this.eventTypes.add(eventTypesItem);
+        return this;
+    }
+
+    public TriggerEventDataRequestBody withEventTypes(Consumer<List<String>> eventTypesSetter) {
+        if (this.eventTypes == null) {
+            this.eventTypes = new ArrayList<>();
+        }
+        eventTypesSetter.accept(this.eventTypes);
+        return this;
+    }
+
+    /**
+     * 事件类型（EVENTGRID触发器参数）。
+     * @return eventTypes
+     */
+    public List<String> getEventTypes() {
+        return eventTypes;
+    }
+
+    public void setEventTypes(List<String> eventTypes) {
+        this.eventTypes = eventTypes;
     }
 
     @Override
@@ -2016,8 +2146,9 @@ public class TriggerEventDataRequestBody {
             && Objects.equals(this.exchangeName, that.exchangeName) && Objects.equals(this.vhost, that.vhost)
             && Objects.equals(this.sslEnable, that.sslEnable) && Objects.equals(this.keyEncode, that.keyEncode)
             && Objects.equals(this.agency, that.agency) && Objects.equals(this.channelName, that.channelName)
-            && Objects.equals(this.sourceName, that.sourceName) && Objects.equals(this.createdTime, that.createdTime)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.triggerName, that.triggerName);
+            && Objects.equals(this.channelId, that.channelId) && Objects.equals(this.sourceName, that.sourceName)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.triggerName, that.triggerName) && Objects.equals(this.eventTypes, that.eventTypes);
     }
 
     @Override
@@ -2074,10 +2205,12 @@ public class TriggerEventDataRequestBody {
             keyEncode,
             agency,
             channelName,
+            channelId,
             sourceName,
             createdTime,
             status,
-            triggerName);
+            triggerName,
+            eventTypes);
     }
 
     @Override
@@ -2136,10 +2269,12 @@ public class TriggerEventDataRequestBody {
         sb.append("    keyEncode: ").append(toIndentedString(keyEncode)).append("\n");
         sb.append("    agency: ").append(toIndentedString(agency)).append("\n");
         sb.append("    channelName: ").append(toIndentedString(channelName)).append("\n");
+        sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
         sb.append("    sourceName: ").append(toIndentedString(sourceName)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    triggerName: ").append(toIndentedString(triggerName)).append("\n");
+        sb.append("    eventTypes: ").append(toIndentedString(eventTypes)).append("\n");
         sb.append("}");
         return sb.toString();
     }

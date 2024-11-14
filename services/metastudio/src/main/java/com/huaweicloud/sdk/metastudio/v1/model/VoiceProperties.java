@@ -11,12 +11,12 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 声音配置信息
+ * 声音配置信息，为Flexus版声音的配置项，标准版声音不支持此配置。
  */
 public class VoiceProperties {
 
     /**
-     * 任务标签。   * ECOMMERCE: 电商   * NEWS: 新闻   * MARKETING: 营销
+     * 任务标签，为Flexus版声音的配置。   * ECOMMERCE: 电商   * NEWS: 新闻   * MARKETING: 营销
      */
     public static final class JobTagEnum {
 
@@ -97,7 +97,7 @@ public class VoiceProperties {
     private JobTagEnum jobTag;
 
     /**
-     * 语音性别,是男性声音还是女性声音。 * FEMALE: 女性 * MALE: 男性
+     * 语音性别，是男性声音还是女性声音，为Flexus版声音的配置。 * FEMALE: 女性 * MALE: 男性
      */
     public static final class SexEnum {
 
@@ -172,7 +172,7 @@ public class VoiceProperties {
     private SexEnum sex;
 
     /**
-     * 训练语言,当前仅支持中文。 * CN: 中文 * EN: 英文
+     * 训练语言，当前仅支持中文，为Flexus版声音的配置。 * CN: 中文 * EN: 英文
      */
     public static final class LanguageEnum {
 
@@ -252,7 +252,7 @@ public class VoiceProperties {
     }
 
     /**
-     * 任务标签。   * ECOMMERCE: 电商   * NEWS: 新闻   * MARKETING: 营销
+     * 任务标签，为Flexus版声音的配置。   * ECOMMERCE: 电商   * NEWS: 新闻   * MARKETING: 营销
      * @return jobTag
      */
     public JobTagEnum getJobTag() {
@@ -269,7 +269,7 @@ public class VoiceProperties {
     }
 
     /**
-     * 语音性别,是男性声音还是女性声音。 * FEMALE: 女性 * MALE: 男性
+     * 语音性别，是男性声音还是女性声音，为Flexus版声音的配置。 * FEMALE: 女性 * MALE: 男性
      * @return sex
      */
     public SexEnum getSex() {
@@ -286,7 +286,7 @@ public class VoiceProperties {
     }
 
     /**
-     * 训练语言,当前仅支持中文。 * CN: 中文 * EN: 英文
+     * 训练语言，当前仅支持中文，为Flexus版声音的配置。 * CN: 中文 * EN: 英文
      * @return language
      */
     public LanguageEnum getLanguage() {

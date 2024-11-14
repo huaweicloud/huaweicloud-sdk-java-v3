@@ -65,6 +65,8 @@ import com.huaweicloud.sdk.meeting.v1.model.CancelRecurringMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CancelRecurringMeetingResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CancelRecurringSubMeetingRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CancelRecurringSubMeetingResponse;
+import com.huaweicloud.sdk.meeting.v1.model.CheckCallNumberInConfRequest;
+import com.huaweicloud.sdk.meeting.v1.model.CheckCallNumberInConfResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CheckSlideVerifyCodeRequest;
 import com.huaweicloud.sdk.meeting.v1.model.CheckSlideVerifyCodeResponse;
 import com.huaweicloud.sdk.meeting.v1.model.CheckTokenRequest;
@@ -1305,6 +1307,36 @@ public class MeetingAsyncClient {
     public AsyncInvoker<CancelRecurringSubMeetingRequest, CancelRecurringSubMeetingResponse> cancelRecurringSubMeetingAsyncInvoker(
         CancelRecurringSubMeetingRequest request) {
         return new AsyncInvoker<>(request, MeetingMeta.cancelRecurringSubMeeting, hcClient);
+    }
+
+    /**
+     * 根据号码，查询是否在会议中
+     *
+     * 通过该接口查询号码，是否在会议中
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckCallNumberInConfRequest 请求对象
+     * @return CompletableFuture<CheckCallNumberInConfResponse>
+     */
+    public CompletableFuture<CheckCallNumberInConfResponse> checkCallNumberInConfAsync(
+        CheckCallNumberInConfRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.checkCallNumberInConf);
+    }
+
+    /**
+     * 根据号码，查询是否在会议中
+     *
+     * 通过该接口查询号码，是否在会议中
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckCallNumberInConfRequest 请求对象
+     * @return AsyncInvoker<CheckCallNumberInConfRequest, CheckCallNumberInConfResponse>
+     */
+    public AsyncInvoker<CheckCallNumberInConfRequest, CheckCallNumberInConfResponse> checkCallNumberInConfAsyncInvoker(
+        CheckCallNumberInConfRequest request) {
+        return new AsyncInvoker<>(request, MeetingMeta.checkCallNumberInConf, hcClient);
     }
 
     /**

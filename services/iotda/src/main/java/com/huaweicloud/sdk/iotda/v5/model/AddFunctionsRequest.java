@@ -17,16 +17,6 @@ public class AddFunctionsRequest {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Sp-Auth-Token")
-
-    private String spAuthToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "Stage-Auth-Token")
-
-    private String stageAuthToken;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private FunctionRequestDTO body;
@@ -46,40 +36,6 @@ public class AddFunctionsRequest {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
-    }
-
-    public AddFunctionsRequest withSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-        return this;
-    }
-
-    /**
-     * **参数说明**：Sp用户Token。通过调用IoBPS服务获取SP用户Token。
-     * @return spAuthToken
-     */
-    public String getSpAuthToken() {
-        return spAuthToken;
-    }
-
-    public void setSpAuthToken(String spAuthToken) {
-        this.spAuthToken = spAuthToken;
-    }
-
-    public AddFunctionsRequest withStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
-        return this;
-    }
-
-    /**
-     * **参数说明**：Stage用户的Token, 仅提供给IoStage服务使用。
-     * @return stageAuthToken
-     */
-    public String getStageAuthToken() {
-        return stageAuthToken;
-    }
-
-    public void setStageAuthToken(String stageAuthToken) {
-        this.stageAuthToken = stageAuthToken;
     }
 
     public AddFunctionsRequest withBody(FunctionRequestDTO body) {
@@ -117,13 +73,12 @@ public class AddFunctionsRequest {
             return false;
         }
         AddFunctionsRequest that = (AddFunctionsRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.spAuthToken, that.spAuthToken)
-            && Objects.equals(this.stageAuthToken, that.stageAuthToken) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, spAuthToken, stageAuthToken, body);
+        return Objects.hash(instanceId, body);
     }
 
     @Override
@@ -131,8 +86,6 @@ public class AddFunctionsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class AddFunctionsRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
-        sb.append("    spAuthToken: ").append(toIndentedString(spAuthToken)).append("\n");
-        sb.append("    stageAuthToken: ").append(toIndentedString(stageAuthToken)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

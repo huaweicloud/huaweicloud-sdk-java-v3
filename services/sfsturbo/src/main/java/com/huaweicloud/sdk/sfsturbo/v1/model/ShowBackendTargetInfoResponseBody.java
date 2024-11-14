@@ -12,7 +12,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 查询文件系统后端存储库详情返回体
+ * 查询文件系统后端存储详情返回体
  */
 public class ShowBackendTargetInfoResponseBody {
 

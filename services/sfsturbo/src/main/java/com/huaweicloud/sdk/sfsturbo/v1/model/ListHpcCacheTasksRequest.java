@@ -35,6 +35,16 @@ public class ListHpcCacheTasksRequest {
 
     private Long limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "start_time")
+
+    private String startTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private String endTime;
+
     public ListHpcCacheTasksRequest withShareId(String shareId) {
         this.shareId = shareId;
         return this;
@@ -120,6 +130,40 @@ public class ListHpcCacheTasksRequest {
         this.limit = limit;
     }
 
+    public ListHpcCacheTasksRequest withStartTime(String startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
+     * start_time
+     * @return startTime
+     */
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public ListHpcCacheTasksRequest withEndTime(String endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * end_time
+     * @return endTime
+     */
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +175,13 @@ public class ListHpcCacheTasksRequest {
         ListHpcCacheTasksRequest that = (ListHpcCacheTasksRequest) obj;
         return Objects.equals(this.shareId, that.shareId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.status, that.status) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(shareId, type, status, offset, limit);
+        return Objects.hash(shareId, type, status, offset, limit, startTime, endTime);
     }
 
     @Override
@@ -148,6 +193,8 @@ public class ListHpcCacheTasksRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

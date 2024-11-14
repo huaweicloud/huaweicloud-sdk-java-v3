@@ -31,6 +31,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoReque
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateBeautyPreviewJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateBeautyPreviewJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetRequest;
@@ -215,6 +217,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowBeautyPreviewJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowBeautyPreviewJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionRequest;
@@ -267,6 +271,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowWelcomeSpeechSwitchResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.StartBeautyPreviewJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.StartBeautyPreviewJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartChatJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.StartSmartLiveRequest;
@@ -593,6 +599,96 @@ public class MetaStudioAsyncClient {
      */
     public AsyncInvoker<ShowAgencyRequest, ShowAgencyResponse> showAgencyAsyncInvoker(ShowAgencyRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.showAgency, hcClient);
+    }
+
+    /**
+     * 创建美白预览任务
+     *
+     * 该接口用于创建美白预览任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateBeautyPreviewJobRequest 请求对象
+     * @return CompletableFuture<CreateBeautyPreviewJobResponse>
+     */
+    public CompletableFuture<CreateBeautyPreviewJobResponse> createBeautyPreviewJobAsync(
+        CreateBeautyPreviewJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createBeautyPreviewJob);
+    }
+
+    /**
+     * 创建美白预览任务
+     *
+     * 该接口用于创建美白预览任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateBeautyPreviewJobRequest 请求对象
+     * @return AsyncInvoker<CreateBeautyPreviewJobRequest, CreateBeautyPreviewJobResponse>
+     */
+    public AsyncInvoker<CreateBeautyPreviewJobRequest, CreateBeautyPreviewJobResponse> createBeautyPreviewJobAsyncInvoker(
+        CreateBeautyPreviewJobRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createBeautyPreviewJob, hcClient);
+    }
+
+    /**
+     * 查询美白预览任务
+     *
+     * 该接口用于查询美白预览任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBeautyPreviewJobRequest 请求对象
+     * @return CompletableFuture<ShowBeautyPreviewJobResponse>
+     */
+    public CompletableFuture<ShowBeautyPreviewJobResponse> showBeautyPreviewJobAsync(
+        ShowBeautyPreviewJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showBeautyPreviewJob);
+    }
+
+    /**
+     * 查询美白预览任务
+     *
+     * 该接口用于查询美白预览任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBeautyPreviewJobRequest 请求对象
+     * @return AsyncInvoker<ShowBeautyPreviewJobRequest, ShowBeautyPreviewJobResponse>
+     */
+    public AsyncInvoker<ShowBeautyPreviewJobRequest, ShowBeautyPreviewJobResponse> showBeautyPreviewJobAsyncInvoker(
+        ShowBeautyPreviewJobRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showBeautyPreviewJob, hcClient);
+    }
+
+    /**
+     * 启动美白预览任务
+     *
+     * 该接口用于启动美白预览任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartBeautyPreviewJobRequest 请求对象
+     * @return CompletableFuture<StartBeautyPreviewJobResponse>
+     */
+    public CompletableFuture<StartBeautyPreviewJobResponse> startBeautyPreviewJobAsync(
+        StartBeautyPreviewJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.startBeautyPreviewJob);
+    }
+
+    /**
+     * 启动美白预览任务
+     *
+     * 该接口用于启动美白预览任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StartBeautyPreviewJobRequest 请求对象
+     * @return AsyncInvoker<StartBeautyPreviewJobRequest, StartBeautyPreviewJobResponse>
+     */
+    public AsyncInvoker<StartBeautyPreviewJobRequest, StartBeautyPreviewJobResponse> startBeautyPreviewJobAsyncInvoker(
+        StartBeautyPreviewJobRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.startBeautyPreviewJob, hcClient);
     }
 
     /**

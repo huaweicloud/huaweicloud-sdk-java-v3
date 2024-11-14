@@ -93,7 +93,7 @@ public class CreateFsDirQuotaResponse extends SdkResponse {
     }
 
     /**
-     * 目录已使用的容量大小，单位：MB。仅SFSTurbo HPC型返回该字段
+     * 目录已使用的容量大小，单位：MB。仅SFSTurbo 20MB/s/TiB、40MB/s/TiB、125MB/s/TiB、250MB/s/TiB、500MB/s/TiB、1000MB/s/TiB返回该字段
      * @return usedCapacity
      */
     public Integer getUsedCapacity() {
@@ -110,7 +110,7 @@ public class CreateFsDirQuotaResponse extends SdkResponse {
     }
 
     /**
-     * 目录的已使用的inode数量。仅SFSTurbo HPC型返回该字段
+     * 目录的已使用的inode数量。仅SFSTurbo 20MB/s/TiB、40MB/s/TiB、125MB/s/TiB、250MB/s/TiB、500MB/s/TiB、1000MB/s/TiB返回该字段
      * @return usedInode
      */
     public Integer getUsedInode() {

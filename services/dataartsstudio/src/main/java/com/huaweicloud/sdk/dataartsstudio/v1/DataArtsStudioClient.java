@@ -369,6 +369,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceRolesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceRolesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesForUserRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesForUserResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceusersRequest;
@@ -5631,6 +5633,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<ListWorkspacesRequest, ListWorkspacesResponse> listWorkspacesInvoker(
         ListWorkspacesRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.listWorkspaces, hcClient);
+    }
+
+    /**
+     * 获取指定用户所有的工作空间集合
+     *
+     * 获取指定用户所有的工作空间集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkspacesForUserRequest 请求对象
+     * @return ListWorkspacesForUserResponse
+     */
+    public ListWorkspacesForUserResponse listWorkspacesForUser(ListWorkspacesForUserRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listWorkspacesForUser);
+    }
+
+    /**
+     * 获取指定用户所有的工作空间集合
+     *
+     * 获取指定用户所有的工作空间集合
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWorkspacesForUserRequest 请求对象
+     * @return SyncInvoker<ListWorkspacesForUserRequest, ListWorkspacesForUserResponse>
+     */
+    public SyncInvoker<ListWorkspacesForUserRequest, ListWorkspacesForUserResponse> listWorkspacesForUserInvoker(
+        ListWorkspacesForUserRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listWorkspacesForUser, hcClient);
     }
 
     /**

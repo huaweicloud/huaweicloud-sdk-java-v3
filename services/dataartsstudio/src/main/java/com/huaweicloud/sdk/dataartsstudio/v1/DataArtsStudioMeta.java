@@ -439,6 +439,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceRolesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceRolesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesForUserRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesForUserResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceusersRequest;
@@ -8233,6 +8235,35 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWorkspacesRequest::getXProjectId, ListWorkspacesRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListWorkspacesForUserRequest, ListWorkspacesForUserResponse> listWorkspacesForUser =
+        genForListWorkspacesForUser();
+
+    private static HttpRequestDef<ListWorkspacesForUserRequest, ListWorkspacesForUserResponse> genForListWorkspacesForUser() {
+        // basic
+        HttpRequestDef.Builder<ListWorkspacesForUserRequest, ListWorkspacesForUserResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListWorkspacesForUserRequest.class, ListWorkspacesForUserResponse.class)
+            .withName("ListWorkspacesForUser")
+            .withUri("/v1/{project_id}/{instance_id}/workspaces/{user_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesForUserRequest::getInstanceId,
+                ListWorkspacesForUserRequest::setInstanceId));
+        builder.<String>withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListWorkspacesForUserRequest::getUserId, ListWorkspacesForUserRequest::setUserId));
 
         // response
 

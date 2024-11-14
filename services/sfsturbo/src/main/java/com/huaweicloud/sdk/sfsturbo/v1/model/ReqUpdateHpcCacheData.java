@@ -28,11 +28,6 @@ public class ReqUpdateHpcCacheData {
 
     private List<ConfigNasTarget> nas = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "obs")
-
-    private List<ConfigObsTarget> obs = null;
-
     public ReqUpdateHpcCacheData withGcTime(Long gcTime) {
         this.gcTime = gcTime;
         return this;
@@ -89,7 +84,7 @@ public class ReqUpdateHpcCacheData {
     }
 
     /**
-     * 配置 nas 后端的信息, 和 obs 字段为二选一的关系
+     * 配置 nas 后端的信息
      * @return nas
      */
     public List<ConfigNasTarget> getNas() {
@@ -98,39 +93,6 @@ public class ReqUpdateHpcCacheData {
 
     public void setNas(List<ConfigNasTarget> nas) {
         this.nas = nas;
-    }
-
-    public ReqUpdateHpcCacheData withObs(List<ConfigObsTarget> obs) {
-        this.obs = obs;
-        return this;
-    }
-
-    public ReqUpdateHpcCacheData addObsItem(ConfigObsTarget obsItem) {
-        if (this.obs == null) {
-            this.obs = new ArrayList<>();
-        }
-        this.obs.add(obsItem);
-        return this;
-    }
-
-    public ReqUpdateHpcCacheData withObs(Consumer<List<ConfigObsTarget>> obsSetter) {
-        if (this.obs == null) {
-            this.obs = new ArrayList<>();
-        }
-        obsSetter.accept(this.obs);
-        return this;
-    }
-
-    /**
-     * 配置 obs 后端的信息, 和 nas 字段为二选一的关系
-     * @return obs
-     */
-    public List<ConfigObsTarget> getObs() {
-        return obs;
-    }
-
-    public void setObs(List<ConfigObsTarget> obs) {
-        this.obs = obs;
     }
 
     @Override
@@ -143,12 +105,12 @@ public class ReqUpdateHpcCacheData {
         }
         ReqUpdateHpcCacheData that = (ReqUpdateHpcCacheData) obj;
         return Objects.equals(this.gcTime, that.gcTime) && Objects.equals(this.ckTime, that.ckTime)
-            && Objects.equals(this.nas, that.nas) && Objects.equals(this.obs, that.obs);
+            && Objects.equals(this.nas, that.nas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(gcTime, ckTime, nas, obs);
+        return Objects.hash(gcTime, ckTime, nas);
     }
 
     @Override
@@ -158,7 +120,6 @@ public class ReqUpdateHpcCacheData {
         sb.append("    gcTime: ").append(toIndentedString(gcTime)).append("\n");
         sb.append("    ckTime: ").append(toIndentedString(ckTime)).append("\n");
         sb.append("    nas: ").append(toIndentedString(nas)).append("\n");
-        sb.append("    obs: ").append(toIndentedString(obs)).append("\n");
         sb.append("}");
         return sb.toString();
     }

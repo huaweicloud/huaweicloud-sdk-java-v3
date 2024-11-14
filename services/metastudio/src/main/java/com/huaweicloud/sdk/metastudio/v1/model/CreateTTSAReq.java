@@ -358,7 +358,7 @@ public class CreateTTSAReq {
     }
 
     /**
-     * 风格化ID。需要调用数字人风格管理相关接口，从系统重查得。
+     * 风格化ID。需要调用数字人风格管理相关接口，从系统中查得。
      * @return styleId
      */
     public String getStyleId() {
