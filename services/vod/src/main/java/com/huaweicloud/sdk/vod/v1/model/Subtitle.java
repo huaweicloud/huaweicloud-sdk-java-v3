@@ -165,6 +165,11 @@ public class Subtitle {
     private LanguageEnum language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "md5")
 
     private String md5;
@@ -225,6 +230,23 @@ public class Subtitle {
         this.language = language;
     }
 
+    public Subtitle withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * subtitle name
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Subtitle withMd5(String md5) {
         this.md5 = md5;
         return this;
@@ -269,13 +291,13 @@ public class Subtitle {
         }
         Subtitle that = (Subtitle) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.language, that.language) && Objects.equals(this.md5, that.md5)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.language, that.language) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.md5, that.md5) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, language, md5, description);
+        return Objects.hash(id, type, language, name, md5, description);
     }
 
     @Override
@@ -285,6 +307,7 @@ public class Subtitle {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    md5: ").append(toIndentedString(md5)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");

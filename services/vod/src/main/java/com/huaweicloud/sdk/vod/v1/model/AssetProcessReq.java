@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.vod.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -22,81 +17,6 @@ public class AssetProcessReq {
     @JsonProperty(value = "asset_id")
 
     private String assetId;
-
-    /**
-     * hls的音视频流存储方式。  取值如下： - composite：存储在同一文件中。 - separate：存储在不同文件中。
-     */
-    public static final class HlsStorageTypeEnum {
-
-        /**
-         * Enum COMPOSITE for value: "composite"
-         */
-        public static final HlsStorageTypeEnum COMPOSITE = new HlsStorageTypeEnum("composite");
-
-        /**
-         * Enum SEPARATE for value: "separate"
-         */
-        public static final HlsStorageTypeEnum SEPARATE = new HlsStorageTypeEnum("separate");
-
-        private static final Map<String, HlsStorageTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, HlsStorageTypeEnum> createStaticFields() {
-            Map<String, HlsStorageTypeEnum> map = new HashMap<>();
-            map.put("composite", COMPOSITE);
-            map.put("separate", SEPARATE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        HlsStorageTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static HlsStorageTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HlsStorageTypeEnum(value));
-        }
-
-        public static HlsStorageTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof HlsStorageTypeEnum) {
-                return this.value.equals(((HlsStorageTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "hls_storage_type")
-
-    private HlsStorageTypeEnum hlsStorageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_group_name")
@@ -135,30 +55,13 @@ public class AssetProcessReq {
         this.assetId = assetId;
     }
 
-    public AssetProcessReq withHlsStorageType(HlsStorageTypeEnum hlsStorageType) {
-        this.hlsStorageType = hlsStorageType;
-        return this;
-    }
-
-    /**
-     * hls的音视频流存储方式。  取值如下： - composite：存储在同一文件中。 - separate：存储在不同文件中。
-     * @return hlsStorageType
-     */
-    public HlsStorageTypeEnum getHlsStorageType() {
-        return hlsStorageType;
-    }
-
-    public void setHlsStorageType(HlsStorageTypeEnum hlsStorageType) {
-        this.hlsStorageType = hlsStorageType;
-    }
-
     public AssetProcessReq withTemplateGroupName(String templateGroupName) {
         this.templateGroupName = templateGroupName;
         return this;
     }
 
     /**
-     * 转码模板组名称。   若不为空，则使用指定的转码模板对上传的音视频进行转码，您可以在视频点播控制台配置转码模板，具体请参见[转码设置](https://support.huaweicloud.com/usermanual-vod/vod_01_0072.html)。
+     * 转码模板组名称。 若不为空，则使用指定的转码模板对上传的音视频进行转码，您可以在视频点播控制台配置转码模板，具体请参见[转码设置](https://support.huaweicloud.com/usermanual-vod/vod_01_0072.html)。
      * @return templateGroupName
      */
     public String getTemplateGroupName() {
@@ -254,7 +157,7 @@ public class AssetProcessReq {
             return false;
         }
         AssetProcessReq that = (AssetProcessReq) obj;
-        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.hlsStorageType, that.hlsStorageType)
+        return Objects.equals(this.assetId, that.assetId)
             && Objects.equals(this.templateGroupName, that.templateGroupName)
             && Objects.equals(this.autoEncrypt, that.autoEncrypt) && Objects.equals(this.thumbnail, that.thumbnail)
             && Objects.equals(this.subtitleId, that.subtitleId);
@@ -262,7 +165,7 @@ public class AssetProcessReq {
 
     @Override
     public int hashCode() {
-        return Objects.hash(assetId, hlsStorageType, templateGroupName, autoEncrypt, thumbnail, subtitleId);
+        return Objects.hash(assetId, templateGroupName, autoEncrypt, thumbnail, subtitleId);
     }
 
     @Override
@@ -270,7 +173,6 @@ public class AssetProcessReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class AssetProcessReq {\n");
         sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
-        sb.append("    hlsStorageType: ").append(toIndentedString(hlsStorageType)).append("\n");
         sb.append("    templateGroupName: ").append(toIndentedString(templateGroupName)).append("\n");
         sb.append("    autoEncrypt: ").append(toIndentedString(autoEncrypt)).append("\n");
         sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");

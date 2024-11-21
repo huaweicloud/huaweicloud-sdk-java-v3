@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 智能交互语言 * zh_CN:简体中文 * en_US:英语
+ * 智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文 * EN：英文
  */
 public class LanguageEnum {
 
@@ -22,12 +22,24 @@ public class LanguageEnum {
      */
     public static final LanguageEnum EN_US = new LanguageEnum("en_US");
 
+    /**
+     * Enum CN for value: "CN"
+     */
+    public static final LanguageEnum CN = new LanguageEnum("CN");
+
+    /**
+     * Enum EN for value: "EN"
+     */
+    public static final LanguageEnum EN = new LanguageEnum("EN");
+
     private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, LanguageEnum> createStaticFields() {
         Map<String, LanguageEnum> map = new HashMap<>();
         map.put("zh_CN", ZH_CN);
         map.put("en_US", EN_US);
+        map.put("CN", CN);
+        map.put("EN", EN);
         return Collections.unmodifiableMap(map);
     }
 

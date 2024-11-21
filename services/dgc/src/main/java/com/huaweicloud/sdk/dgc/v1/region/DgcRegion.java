@@ -33,6 +33,9 @@ public class DgcRegion {
     public static final Region RU_NORTHWEST_2 =
         new Region("ru-northwest-2", "https://dayu-dlf.ru-northwest-2.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_11 =
+        new Region("cn-north-11", "https://dayu-dlf.cn-north-11.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DGC");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -47,6 +50,7 @@ public class DgcRegion {
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ru-northwest-2", RU_NORTHWEST_2);
+        map.put("cn-north-11", CN_NORTH_11);
         return Collections.unmodifiableMap(map);
     }
 

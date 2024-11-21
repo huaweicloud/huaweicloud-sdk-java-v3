@@ -29,6 +29,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBeautyPreviewJobRequest;
@@ -61,6 +63,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateLargeFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateLargeFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateOnceCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateOnceCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePacifyWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePacifyWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDigitalHumanVideoRequest;
@@ -77,6 +81,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateSubtitleFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateSubtitleFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingAdvanceJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingAdvanceJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingBasicJobRequest;
@@ -117,6 +123,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeletePacifyWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeletePacifyWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteProductRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteProductResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteRobotRequest;
@@ -167,6 +175,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListPacifyWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListPacifyWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListProductsRequest;
@@ -217,6 +227,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAsyncTtsJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAsyncTtsJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowBeautyPreviewJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowBeautyPreviewJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
@@ -237,6 +249,14 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsIntentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsIntentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsSwitchRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsSwitchResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsTriggerTimeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsTriggerTimeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest;
@@ -257,6 +277,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileRequest;
@@ -307,6 +329,12 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsSwitchRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsSwitchResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsTriggerTimeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsTriggerTimeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateRobotRequest;
@@ -2585,6 +2613,301 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 创建安抚话术
+     *
+     * 该接口用于创建安抚话术。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePacifyWordsRequest 请求对象
+     * @return CompletableFuture<CreatePacifyWordsResponse>
+     */
+    public CompletableFuture<CreatePacifyWordsResponse> createPacifyWordsAsync(CreatePacifyWordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createPacifyWords);
+    }
+
+    /**
+     * 创建安抚话术
+     *
+     * 该接口用于创建安抚话术。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePacifyWordsRequest 请求对象
+     * @return AsyncInvoker<CreatePacifyWordsRequest, CreatePacifyWordsResponse>
+     */
+    public AsyncInvoker<CreatePacifyWordsRequest, CreatePacifyWordsResponse> createPacifyWordsAsyncInvoker(
+        CreatePacifyWordsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createPacifyWords, hcClient);
+    }
+
+    /**
+     * 删除安抚话术
+     *
+     * 该接口用于删除安抚话术。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePacifyWordsRequest 请求对象
+     * @return CompletableFuture<DeletePacifyWordsResponse>
+     */
+    public CompletableFuture<DeletePacifyWordsResponse> deletePacifyWordsAsync(DeletePacifyWordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deletePacifyWords);
+    }
+
+    /**
+     * 删除安抚话术
+     *
+     * 该接口用于删除安抚话术。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePacifyWordsRequest 请求对象
+     * @return AsyncInvoker<DeletePacifyWordsRequest, DeletePacifyWordsResponse>
+     */
+    public AsyncInvoker<DeletePacifyWordsRequest, DeletePacifyWordsResponse> deletePacifyWordsAsyncInvoker(
+        DeletePacifyWordsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.deletePacifyWords, hcClient);
+    }
+
+    /**
+     * 查询安抚话术列表
+     *
+     * 该接口用于查询安抚话术列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPacifyWordsRequest 请求对象
+     * @return CompletableFuture<ListPacifyWordsResponse>
+     */
+    public CompletableFuture<ListPacifyWordsResponse> listPacifyWordsAsync(ListPacifyWordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.listPacifyWords);
+    }
+
+    /**
+     * 查询安抚话术列表
+     *
+     * 该接口用于查询安抚话术列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPacifyWordsRequest 请求对象
+     * @return AsyncInvoker<ListPacifyWordsRequest, ListPacifyWordsResponse>
+     */
+    public AsyncInvoker<ListPacifyWordsRequest, ListPacifyWordsResponse> listPacifyWordsAsyncInvoker(
+        ListPacifyWordsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.listPacifyWords, hcClient);
+    }
+
+    /**
+     * 查询安抚话术详情
+     *
+     * 该接口用于查询安抚话术详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPacifyWordsRequest 请求对象
+     * @return CompletableFuture<ShowPacifyWordsResponse>
+     */
+    public CompletableFuture<ShowPacifyWordsResponse> showPacifyWordsAsync(ShowPacifyWordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showPacifyWords);
+    }
+
+    /**
+     * 查询安抚话术详情
+     *
+     * 该接口用于查询安抚话术详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPacifyWordsRequest 请求对象
+     * @return AsyncInvoker<ShowPacifyWordsRequest, ShowPacifyWordsResponse>
+     */
+    public AsyncInvoker<ShowPacifyWordsRequest, ShowPacifyWordsResponse> showPacifyWordsAsyncInvoker(
+        ShowPacifyWordsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showPacifyWords, hcClient);
+    }
+
+    /**
+     * 查询安抚话术意图
+     *
+     * 该接口用于查询安抚话术意图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPacifyWordsIntentRequest 请求对象
+     * @return CompletableFuture<ShowPacifyWordsIntentResponse>
+     */
+    public CompletableFuture<ShowPacifyWordsIntentResponse> showPacifyWordsIntentAsync(
+        ShowPacifyWordsIntentRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showPacifyWordsIntent);
+    }
+
+    /**
+     * 查询安抚话术意图
+     *
+     * 该接口用于查询安抚话术意图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPacifyWordsIntentRequest 请求对象
+     * @return AsyncInvoker<ShowPacifyWordsIntentRequest, ShowPacifyWordsIntentResponse>
+     */
+    public AsyncInvoker<ShowPacifyWordsIntentRequest, ShowPacifyWordsIntentResponse> showPacifyWordsIntentAsyncInvoker(
+        ShowPacifyWordsIntentRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showPacifyWordsIntent, hcClient);
+    }
+
+    /**
+     * 查询安抚话术功能开关
+     *
+     * 该接口用于查询安抚话术功能开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPacifyWordsSwitchRequest 请求对象
+     * @return CompletableFuture<ShowPacifyWordsSwitchResponse>
+     */
+    public CompletableFuture<ShowPacifyWordsSwitchResponse> showPacifyWordsSwitchAsync(
+        ShowPacifyWordsSwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showPacifyWordsSwitch);
+    }
+
+    /**
+     * 查询安抚话术功能开关
+     *
+     * 该接口用于查询安抚话术功能开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPacifyWordsSwitchRequest 请求对象
+     * @return AsyncInvoker<ShowPacifyWordsSwitchRequest, ShowPacifyWordsSwitchResponse>
+     */
+    public AsyncInvoker<ShowPacifyWordsSwitchRequest, ShowPacifyWordsSwitchResponse> showPacifyWordsSwitchAsyncInvoker(
+        ShowPacifyWordsSwitchRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showPacifyWordsSwitch, hcClient);
+    }
+
+    /**
+     * 查询安抚话术等待触发时长
+     *
+     * 该接口用于查询等待触发时长。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPacifyWordsTriggerTimeRequest 请求对象
+     * @return CompletableFuture<ShowPacifyWordsTriggerTimeResponse>
+     */
+    public CompletableFuture<ShowPacifyWordsTriggerTimeResponse> showPacifyWordsTriggerTimeAsync(
+        ShowPacifyWordsTriggerTimeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showPacifyWordsTriggerTime);
+    }
+
+    /**
+     * 查询安抚话术等待触发时长
+     *
+     * 该接口用于查询等待触发时长。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPacifyWordsTriggerTimeRequest 请求对象
+     * @return AsyncInvoker<ShowPacifyWordsTriggerTimeRequest, ShowPacifyWordsTriggerTimeResponse>
+     */
+    public AsyncInvoker<ShowPacifyWordsTriggerTimeRequest, ShowPacifyWordsTriggerTimeResponse> showPacifyWordsTriggerTimeAsyncInvoker(
+        ShowPacifyWordsTriggerTimeRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showPacifyWordsTriggerTime, hcClient);
+    }
+
+    /**
+     * 修改安抚话术
+     *
+     * 该接口用于修改安抚话术。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePacifyWordsRequest 请求对象
+     * @return CompletableFuture<UpdatePacifyWordsResponse>
+     */
+    public CompletableFuture<UpdatePacifyWordsResponse> updatePacifyWordsAsync(UpdatePacifyWordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updatePacifyWords);
+    }
+
+    /**
+     * 修改安抚话术
+     *
+     * 该接口用于修改安抚话术。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePacifyWordsRequest 请求对象
+     * @return AsyncInvoker<UpdatePacifyWordsRequest, UpdatePacifyWordsResponse>
+     */
+    public AsyncInvoker<UpdatePacifyWordsRequest, UpdatePacifyWordsResponse> updatePacifyWordsAsyncInvoker(
+        UpdatePacifyWordsRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.updatePacifyWords, hcClient);
+    }
+
+    /**
+     * 修改安抚话术功能开关
+     *
+     * 该接口用于修改安抚话术功能开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePacifyWordsSwitchRequest 请求对象
+     * @return CompletableFuture<UpdatePacifyWordsSwitchResponse>
+     */
+    public CompletableFuture<UpdatePacifyWordsSwitchResponse> updatePacifyWordsSwitchAsync(
+        UpdatePacifyWordsSwitchRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updatePacifyWordsSwitch);
+    }
+
+    /**
+     * 修改安抚话术功能开关
+     *
+     * 该接口用于修改安抚话术功能开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePacifyWordsSwitchRequest 请求对象
+     * @return AsyncInvoker<UpdatePacifyWordsSwitchRequest, UpdatePacifyWordsSwitchResponse>
+     */
+    public AsyncInvoker<UpdatePacifyWordsSwitchRequest, UpdatePacifyWordsSwitchResponse> updatePacifyWordsSwitchAsyncInvoker(
+        UpdatePacifyWordsSwitchRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.updatePacifyWordsSwitch, hcClient);
+    }
+
+    /**
+     * 修改安抚话术等待触发时长
+     *
+     * 该接口用于修改安抚话术等待触发时长。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePacifyWordsTriggerTimeRequest 请求对象
+     * @return CompletableFuture<UpdatePacifyWordsTriggerTimeResponse>
+     */
+    public CompletableFuture<UpdatePacifyWordsTriggerTimeResponse> updatePacifyWordsTriggerTimeAsync(
+        UpdatePacifyWordsTriggerTimeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updatePacifyWordsTriggerTime);
+    }
+
+    /**
+     * 修改安抚话术等待触发时长
+     *
+     * 该接口用于修改安抚话术等待触发时长。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePacifyWordsTriggerTimeRequest 请求对象
+     * @return AsyncInvoker<UpdatePacifyWordsTriggerTimeRequest, UpdatePacifyWordsTriggerTimeResponse>
+     */
+    public AsyncInvoker<UpdatePacifyWordsTriggerTimeRequest, UpdatePacifyWordsTriggerTimeResponse> updatePacifyWordsTriggerTimeAsyncInvoker(
+        UpdatePacifyWordsTriggerTimeRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.updatePacifyWordsTriggerTime, hcClient);
+    }
+
+    /**
      * 基于图片URL创建照片建模任务
      *
      * 该接口用于从URL中获取图片进行照片建模任务。
@@ -3689,6 +4012,64 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 创建分身数字人视频字幕文件
+     *
+     * 该接口用于创建分身数字人视频字幕文件任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSubtitleFileRequest 请求对象
+     * @return CompletableFuture<CreateSubtitleFileResponse>
+     */
+    public CompletableFuture<CreateSubtitleFileResponse> createSubtitleFileAsync(CreateSubtitleFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createSubtitleFile);
+    }
+
+    /**
+     * 创建分身数字人视频字幕文件
+     *
+     * 该接口用于创建分身数字人视频字幕文件任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSubtitleFileRequest 请求对象
+     * @return AsyncInvoker<CreateSubtitleFileRequest, CreateSubtitleFileResponse>
+     */
+    public AsyncInvoker<CreateSubtitleFileRequest, CreateSubtitleFileResponse> createSubtitleFileAsyncInvoker(
+        CreateSubtitleFileRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createSubtitleFile, hcClient);
+    }
+
+    /**
+     * 查询分身数字人视频字幕文件任务详情
+     *
+     * 该接口用于查询分身数字人视频字幕文件任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSubtitleFileRequest 请求对象
+     * @return CompletableFuture<ShowSubtitleFileResponse>
+     */
+    public CompletableFuture<ShowSubtitleFileResponse> showSubtitleFileAsync(ShowSubtitleFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showSubtitleFile);
+    }
+
+    /**
+     * 查询分身数字人视频字幕文件任务详情
+     *
+     * 该接口用于查询分身数字人视频字幕文件任务详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSubtitleFileRequest 请求对象
+     * @return AsyncInvoker<ShowSubtitleFileRequest, ShowSubtitleFileResponse>
+     */
+    public AsyncInvoker<ShowSubtitleFileRequest, ShowSubtitleFileResponse> showSubtitleFileAsyncInvoker(
+        ShowSubtitleFileRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showSubtitleFile, hcClient);
+    }
+
+    /**
      * 统计时间段内过期的资源数量
      *
      * 统计指定时间段内即将过期的包周期与一次性资源数量。
@@ -4505,6 +4886,35 @@ public class MetaStudioAsyncClient {
     }
 
     /**
+     * 创建TTS语音异步任务
+     *
+     * 该接口用于对外生成音频文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAsyncTtsJobRequest 请求对象
+     * @return CompletableFuture<CreateAsyncTtsJobResponse>
+     */
+    public CompletableFuture<CreateAsyncTtsJobResponse> createAsyncTtsJobAsync(CreateAsyncTtsJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createAsyncTtsJob);
+    }
+
+    /**
+     * 创建TTS语音异步任务
+     *
+     * 该接口用于对外生成音频文件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAsyncTtsJobRequest 请求对象
+     * @return AsyncInvoker<CreateAsyncTtsJobRequest, CreateAsyncTtsJobResponse>
+     */
+    public AsyncInvoker<CreateAsyncTtsJobRequest, CreateAsyncTtsJobResponse> createAsyncTtsJobAsyncInvoker(
+        CreateAsyncTtsJobRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createAsyncTtsJob, hcClient);
+    }
+
+    /**
      * 创建TTS试听任务
      *
      * 该接口用于创建生成播报内容的语音试听文件任务。
@@ -4539,6 +4949,35 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<CreateTtsAuditionRequest, CreateTtsAuditionResponse> createTtsAuditionAsyncInvoker(
         CreateTtsAuditionRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.createTtsAudition, hcClient);
+    }
+
+    /**
+     * 获取音频语音文件
+     *
+     * 该接口用于获取TTS音频文件下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAsyncTtsJobRequest 请求对象
+     * @return CompletableFuture<ShowAsyncTtsJobResponse>
+     */
+    public CompletableFuture<ShowAsyncTtsJobResponse> showAsyncTtsJobAsync(ShowAsyncTtsJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showAsyncTtsJob);
+    }
+
+    /**
+     * 获取音频语音文件
+     *
+     * 该接口用于获取TTS音频文件下载链接。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAsyncTtsJobRequest 请求对象
+     * @return AsyncInvoker<ShowAsyncTtsJobRequest, ShowAsyncTtsJobResponse>
+     */
+    public AsyncInvoker<ShowAsyncTtsJobRequest, ShowAsyncTtsJobResponse> showAsyncTtsJobAsyncInvoker(
+        ShowAsyncTtsJobRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showAsyncTtsJob, hcClient);
     }
 
     /**

@@ -22,12 +22,7 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "roles")
 
-    private List<RoleResult> roles = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total_number")
-
-    private Integer totalNumber;
+    private List<InheritedRoleResult> roles = null;
 
     public KeystoneListAllProjectPermissionsForGroupResponse withLinks(Links links) {
         this.links = links;
@@ -55,12 +50,12 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
         this.links = links;
     }
 
-    public KeystoneListAllProjectPermissionsForGroupResponse withRoles(List<RoleResult> roles) {
+    public KeystoneListAllProjectPermissionsForGroupResponse withRoles(List<InheritedRoleResult> roles) {
         this.roles = roles;
         return this;
     }
 
-    public KeystoneListAllProjectPermissionsForGroupResponse addRolesItem(RoleResult rolesItem) {
+    public KeystoneListAllProjectPermissionsForGroupResponse addRolesItem(InheritedRoleResult rolesItem) {
         if (this.roles == null) {
             this.roles = new ArrayList<>();
         }
@@ -68,7 +63,8 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
         return this;
     }
 
-    public KeystoneListAllProjectPermissionsForGroupResponse withRoles(Consumer<List<RoleResult>> rolesSetter) {
+    public KeystoneListAllProjectPermissionsForGroupResponse withRoles(
+        Consumer<List<InheritedRoleResult>> rolesSetter) {
         if (this.roles == null) {
             this.roles = new ArrayList<>();
         }
@@ -80,29 +76,12 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
      * 权限信息列表。
      * @return roles
      */
-    public List<RoleResult> getRoles() {
+    public List<InheritedRoleResult> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<RoleResult> roles) {
+    public void setRoles(List<InheritedRoleResult> roles) {
         this.roles = roles;
-    }
-
-    public KeystoneListAllProjectPermissionsForGroupResponse withTotalNumber(Integer totalNumber) {
-        this.totalNumber = totalNumber;
-        return this;
-    }
-
-    /**
-     * 在查询参数存在domain_id时，返回自定义策略总数
-     * @return totalNumber
-     */
-    public Integer getTotalNumber() {
-        return totalNumber;
-    }
-
-    public void setTotalNumber(Integer totalNumber) {
-        this.totalNumber = totalNumber;
     }
 
     @Override
@@ -115,13 +94,12 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
         }
         KeystoneListAllProjectPermissionsForGroupResponse that =
             (KeystoneListAllProjectPermissionsForGroupResponse) obj;
-        return Objects.equals(this.links, that.links) && Objects.equals(this.roles, that.roles)
-            && Objects.equals(this.totalNumber, that.totalNumber);
+        return Objects.equals(this.links, that.links) && Objects.equals(this.roles, that.roles);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(links, roles, totalNumber);
+        return Objects.hash(links, roles);
     }
 
     @Override
@@ -130,7 +108,6 @@ public class KeystoneListAllProjectPermissionsForGroupResponse extends SdkRespon
         sb.append("class KeystoneListAllProjectPermissionsForGroupResponse {\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
-        sb.append("    totalNumber: ").append(toIndentedString(totalNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

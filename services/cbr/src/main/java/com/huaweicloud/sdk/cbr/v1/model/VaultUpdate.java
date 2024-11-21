@@ -46,6 +46,11 @@ public class VaultUpdate {
 
     private Integer threshold;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "locked")
+
+    private Boolean locked;
+
     public VaultUpdate withBilling(BillingUpdate billing) {
         this.billing = billing;
         return this;
@@ -185,6 +190,23 @@ public class VaultUpdate {
         this.threshold = threshold;
     }
 
+    public VaultUpdate withLocked(Boolean locked) {
+        this.locked = locked;
+        return this;
+    }
+
+    /**
+     * 用于标识当前存储库是否已锁定
+     * @return locked
+     */
+    public Boolean getLocked() {
+        return locked;
+    }
+
+    public void setLocked(Boolean locked) {
+        this.locked = locked;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -197,12 +219,12 @@ public class VaultUpdate {
         return Objects.equals(this.billing, that.billing) && Objects.equals(this.name, that.name)
             && Objects.equals(this.autoBind, that.autoBind) && Objects.equals(this.bindRules, that.bindRules)
             && Objects.equals(this.autoExpand, that.autoExpand) && Objects.equals(this.smnNotify, that.smnNotify)
-            && Objects.equals(this.threshold, that.threshold);
+            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.locked, that.locked);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(billing, name, autoBind, bindRules, autoExpand, smnNotify, threshold);
+        return Objects.hash(billing, name, autoBind, bindRules, autoExpand, smnNotify, threshold, locked);
     }
 
     @Override
@@ -216,6 +238,7 @@ public class VaultUpdate {
         sb.append("    autoExpand: ").append(toIndentedString(autoExpand)).append("\n");
         sb.append("    smnNotify: ").append(toIndentedString(smnNotify)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
+        sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -41,6 +41,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchTagRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchTagResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchUpdateSecurityDlfDataWareHousesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchUpdateSecurityDlfDataWareHousesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CancelFactoryPackagesRequest;
@@ -1146,6 +1148,34 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<BatchSyncMetadataRequest, BatchSyncMetadataResponse> batchSyncMetadataAsyncInvoker(
         BatchSyncMetadataRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.batchSyncMetadata, hcClient);
+    }
+
+    /**
+     * 批量打标签(邀测)
+     *
+     * 批量给资产打标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchTagRequest 请求对象
+     * @return CompletableFuture<BatchTagResponse>
+     */
+    public CompletableFuture<BatchTagResponse> batchTagAsync(BatchTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.batchTag);
+    }
+
+    /**
+     * 批量打标签(邀测)
+     *
+     * 批量给资产打标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchTagRequest 请求对象
+     * @return AsyncInvoker<BatchTagRequest, BatchTagResponse>
+     */
+    public AsyncInvoker<BatchTagRequest, BatchTagResponse> batchTagAsyncInvoker(BatchTagRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.batchTag, hcClient);
     }
 
     /**

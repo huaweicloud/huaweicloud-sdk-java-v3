@@ -22,6 +22,16 @@ public class CreateWelcomeSpeechResponse extends SdkResponse {
     private String welcomeSpeech;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_welcome_speech")
+
+    private Boolean enableWelcomeSpeech;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private LanguageEnum language;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "robot_id")
 
     private String robotId;
@@ -73,6 +83,40 @@ public class CreateWelcomeSpeechResponse extends SdkResponse {
 
     public void setWelcomeSpeech(String welcomeSpeech) {
         this.welcomeSpeech = welcomeSpeech;
+    }
+
+    public CreateWelcomeSpeechResponse withEnableWelcomeSpeech(Boolean enableWelcomeSpeech) {
+        this.enableWelcomeSpeech = enableWelcomeSpeech;
+        return this;
+    }
+
+    /**
+     * 欢迎词功能开关。
+     * @return enableWelcomeSpeech
+     */
+    public Boolean getEnableWelcomeSpeech() {
+        return enableWelcomeSpeech;
+    }
+
+    public void setEnableWelcomeSpeech(Boolean enableWelcomeSpeech) {
+        this.enableWelcomeSpeech = enableWelcomeSpeech;
+    }
+
+    public CreateWelcomeSpeechResponse withLanguage(LanguageEnum language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * Get language
+     * @return language
+     */
+    public LanguageEnum getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(LanguageEnum language) {
+        this.language = language;
     }
 
     public CreateWelcomeSpeechResponse withRobotId(String robotId) {
@@ -155,14 +199,23 @@ public class CreateWelcomeSpeechResponse extends SdkResponse {
         }
         CreateWelcomeSpeechResponse that = (CreateWelcomeSpeechResponse) obj;
         return Objects.equals(this.welcomeSpeechId, that.welcomeSpeechId)
-            && Objects.equals(this.welcomeSpeech, that.welcomeSpeech) && Objects.equals(this.robotId, that.robotId)
+            && Objects.equals(this.welcomeSpeech, that.welcomeSpeech)
+            && Objects.equals(this.enableWelcomeSpeech, that.enableWelcomeSpeech)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.robotId, that.robotId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(welcomeSpeechId, welcomeSpeech, robotId, createTime, updateTime, xRequestId);
+        return Objects.hash(welcomeSpeechId,
+            welcomeSpeech,
+            enableWelcomeSpeech,
+            language,
+            robotId,
+            createTime,
+            updateTime,
+            xRequestId);
     }
 
     @Override
@@ -171,6 +224,8 @@ public class CreateWelcomeSpeechResponse extends SdkResponse {
         sb.append("class CreateWelcomeSpeechResponse {\n");
         sb.append("    welcomeSpeechId: ").append(toIndentedString(welcomeSpeechId)).append("\n");
         sb.append("    welcomeSpeech: ").append(toIndentedString(welcomeSpeech)).append("\n");
+        sb.append("    enableWelcomeSpeech: ").append(toIndentedString(enableWelcomeSpeech)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

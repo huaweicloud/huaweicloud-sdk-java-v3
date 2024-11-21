@@ -344,6 +344,11 @@ public class ClusterSpec {
     private Boolean enableDistMgt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deletionProtection")
+
+    private Boolean deletionProtection;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "configurationsOverride")
 
     private List<PackageConfiguration> configurationsOverride = null;
@@ -841,6 +846,23 @@ public class ClusterSpec {
         this.enableDistMgt = enableDistMgt;
     }
 
+    public ClusterSpec withDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+        return this;
+    }
+
+    /**
+     * 集群删除保护，默认为false关闭，如果开启后用户将无法删除该集群。
+     * @return deletionProtection
+     */
+    public Boolean getDeletionProtection() {
+        return deletionProtection;
+    }
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
     public ClusterSpec withConfigurationsOverride(List<PackageConfiguration> configurationsOverride) {
         this.configurationsOverride = configurationsOverride;
         return this;
@@ -900,6 +922,7 @@ public class ClusterSpec {
             && Objects.equals(this.supportIstio, that.supportIstio)
             && Objects.equals(this.enableMasterVolumeEncryption, that.enableMasterVolumeEncryption)
             && Objects.equals(this.enableDistMgt, that.enableDistMgt)
+            && Objects.equals(this.deletionProtection, that.deletionProtection)
             && Objects.equals(this.configurationsOverride, that.configurationsOverride);
     }
 
@@ -928,6 +951,7 @@ public class ClusterSpec {
             supportIstio,
             enableMasterVolumeEncryption,
             enableDistMgt,
+            deletionProtection,
             configurationsOverride);
     }
 
@@ -960,6 +984,7 @@ public class ClusterSpec {
             .append(toIndentedString(enableMasterVolumeEncryption))
             .append("\n");
         sb.append("    enableDistMgt: ").append(toIndentedString(enableDistMgt)).append("\n");
+        sb.append("    deletionProtection: ").append(toIndentedString(deletionProtection)).append("\n");
         sb.append("    configurationsOverride: ").append(toIndentedString(configurationsOverride)).append("\n");
         sb.append("}");
         return sb.toString();

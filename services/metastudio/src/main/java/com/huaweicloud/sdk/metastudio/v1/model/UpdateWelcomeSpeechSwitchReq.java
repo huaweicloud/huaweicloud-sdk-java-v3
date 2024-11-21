@@ -20,6 +20,11 @@ public class UpdateWelcomeSpeechSwitchReq {
 
     private Boolean enableWelcomeSpeech;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private LanguageEnum language;
+
     public UpdateWelcomeSpeechSwitchReq withRobotId(String robotId) {
         this.robotId = robotId;
         return this;
@@ -54,6 +59,23 @@ public class UpdateWelcomeSpeechSwitchReq {
         this.enableWelcomeSpeech = enableWelcomeSpeech;
     }
 
+    public UpdateWelcomeSpeechSwitchReq withLanguage(LanguageEnum language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * Get language
+     * @return language
+     */
+    public LanguageEnum getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(LanguageEnum language) {
+        this.language = language;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,13 @@ public class UpdateWelcomeSpeechSwitchReq {
         }
         UpdateWelcomeSpeechSwitchReq that = (UpdateWelcomeSpeechSwitchReq) obj;
         return Objects.equals(this.robotId, that.robotId)
-            && Objects.equals(this.enableWelcomeSpeech, that.enableWelcomeSpeech);
+            && Objects.equals(this.enableWelcomeSpeech, that.enableWelcomeSpeech)
+            && Objects.equals(this.language, that.language);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(robotId, enableWelcomeSpeech);
+        return Objects.hash(robotId, enableWelcomeSpeech, language);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class UpdateWelcomeSpeechSwitchReq {
         sb.append("class UpdateWelcomeSpeechSwitchReq {\n");
         sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
         sb.append("    enableWelcomeSpeech: ").append(toIndentedString(enableWelcomeSpeech)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("}");
         return sb.toString();
     }

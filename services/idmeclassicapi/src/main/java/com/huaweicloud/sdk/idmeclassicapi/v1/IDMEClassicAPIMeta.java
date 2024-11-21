@@ -83,6 +83,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalBranchRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalBranchResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalLatestVersionRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteLogicalLatestVersionResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteMultiViewRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteMultiViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteTargetRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteTargetResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.DeleteUsingPostRequest;
@@ -142,6 +144,7 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModelVer
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModelVersionUpdateDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMongPageRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMultiViewModelDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMultiViewModelMasterIdModifierDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOMultiViewModelVersionViewCreateDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistObjectIdDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistObjectIdDecryptDTO;
@@ -1250,10 +1253,15 @@ public class IDMEClassicAPIMeta {
         HttpRequestDef.Builder<CreateMultiViewRequest, CreateMultiViewResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateMultiViewRequest.class, CreateMultiViewResponse.class)
                 .withName("CreateMultiView")
-                .withUri("/rdm_{identifier}_app/publicservices/api/MultiViewModel/create")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{mvModelName}/create")
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("mvModelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMultiViewRequest::getMvModelName, CreateMultiViewRequest::setMvModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1378,10 +1386,16 @@ public class IDMEClassicAPIMeta {
                     DeleteByConditionMultiViewRequest.class,
                     DeleteByConditionMultiViewResponse.class)
                 .withName("DeleteByConditionMultiView")
-                .withUri("/rdm_{identifier}_app/publicservices/api/MultiViewModel/deleteByCondition")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{mvModelName}/deleteByCondition")
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("mvModelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteByConditionMultiViewRequest::getMvModelName,
+                DeleteByConditionMultiViewRequest::setMvModelName));
         builder.<String>withRequestField("identifier",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1540,6 +1554,39 @@ public class IDMEClassicAPIMeta {
             TypeCasts.uncheckedConversion(RDMParamVOVersionModelVersionMasterModifierDTO.class),
             f -> f.withMarshaller(DeleteLogicalLatestVersionRequest::getBody,
                 DeleteLogicalLatestVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMultiViewRequest, DeleteMultiViewResponse> deleteMultiView =
+        genForDeleteMultiView();
+
+    private static HttpRequestDef<DeleteMultiViewRequest, DeleteMultiViewResponse> genForDeleteMultiView() {
+        // basic
+        HttpRequestDef.Builder<DeleteMultiViewRequest, DeleteMultiViewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteMultiViewRequest.class, DeleteMultiViewResponse.class)
+                .withName("DeleteMultiView")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{mvModelName}/delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("mvModelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMultiViewRequest::getMvModelName, DeleteMultiViewRequest::setMvModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMultiViewRequest::getIdentifier, DeleteMultiViewRequest::setIdentifier));
+        builder.<RDMParamVOMultiViewModelMasterIdModifierDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOMultiViewModelMasterIdModifierDTO.class),
+            f -> f.withMarshaller(DeleteMultiViewRequest::getBody, DeleteMultiViewRequest::setBody));
 
         // response
 

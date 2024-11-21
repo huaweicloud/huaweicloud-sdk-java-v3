@@ -22,6 +22,11 @@ public class ShowHotQuestionResponse extends SdkResponse {
     private String hotQuestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private LanguageEnum language;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "robot_id")
 
     private String robotId;
@@ -73,6 +78,23 @@ public class ShowHotQuestionResponse extends SdkResponse {
 
     public void setHotQuestion(String hotQuestion) {
         this.hotQuestion = hotQuestion;
+    }
+
+    public ShowHotQuestionResponse withLanguage(LanguageEnum language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * Get language
+     * @return language
+     */
+    public LanguageEnum getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(LanguageEnum language) {
+        this.language = language;
     }
 
     public ShowHotQuestionResponse withRobotId(String robotId) {
@@ -155,14 +177,14 @@ public class ShowHotQuestionResponse extends SdkResponse {
         }
         ShowHotQuestionResponse that = (ShowHotQuestionResponse) obj;
         return Objects.equals(this.hotQuestionId, that.hotQuestionId)
-            && Objects.equals(this.hotQuestion, that.hotQuestion) && Objects.equals(this.robotId, that.robotId)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.hotQuestion, that.hotQuestion) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.robotId, that.robotId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hotQuestionId, hotQuestion, robotId, createTime, updateTime, xRequestId);
+        return Objects.hash(hotQuestionId, hotQuestion, language, robotId, createTime, updateTime, xRequestId);
     }
 
     @Override
@@ -171,6 +193,7 @@ public class ShowHotQuestionResponse extends SdkResponse {
         sb.append("class ShowHotQuestionResponse {\n");
         sb.append("    hotQuestionId: ").append(toIndentedString(hotQuestionId)).append("\n");
         sb.append("    hotQuestion: ").append(toIndentedString(hotQuestion)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

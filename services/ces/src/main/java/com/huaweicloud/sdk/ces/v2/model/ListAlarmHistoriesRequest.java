@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.ces.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -59,6 +64,93 @@ public class ListAlarmHistoriesRequest {
     @JsonProperty(value = "limit")
 
     private Integer limit;
+
+    /**
+     * 按关键字排序, 默认为update_time, {first_alarm_time: 告警产生时间, update_time: 更新时间, alarm_level: 告警级别, record_id：表记录主键} 
+     */
+    public static final class OrderByEnum {
+
+        /**
+         * Enum FIRST_ALARM_TIME for value: "first_alarm_time"
+         */
+        public static final OrderByEnum FIRST_ALARM_TIME = new OrderByEnum("first_alarm_time");
+
+        /**
+         * Enum UPDATE_TIME for value: "update_time"
+         */
+        public static final OrderByEnum UPDATE_TIME = new OrderByEnum("update_time");
+
+        /**
+         * Enum ALARM_LEVEL for value: "alarm_level"
+         */
+        public static final OrderByEnum ALARM_LEVEL = new OrderByEnum("alarm_level");
+
+        /**
+         * Enum RECORD_ID for value: "record_id"
+         */
+        public static final OrderByEnum RECORD_ID = new OrderByEnum("record_id");
+
+        private static final Map<String, OrderByEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OrderByEnum> createStaticFields() {
+            Map<String, OrderByEnum> map = new HashMap<>();
+            map.put("first_alarm_time", FIRST_ALARM_TIME);
+            map.put("update_time", UPDATE_TIME);
+            map.put("alarm_level", ALARM_LEVEL);
+            map.put("record_id", RECORD_ID);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        OrderByEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static OrderByEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderByEnum(value));
+        }
+
+        public static OrderByEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof OrderByEnum) {
+                return this.value.equals(((OrderByEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_by")
+
+    private OrderByEnum orderBy;
 
     public ListAlarmHistoriesRequest withAlarmId(String alarmId) {
         this.alarmId = alarmId;
@@ -236,6 +328,23 @@ public class ListAlarmHistoriesRequest {
         this.limit = limit;
     }
 
+    public ListAlarmHistoriesRequest withOrderBy(OrderByEnum orderBy) {
+        this.orderBy = orderBy;
+        return this;
+    }
+
+    /**
+     * 按关键字排序, 默认为update_time, {first_alarm_time: 告警产生时间, update_time: 更新时间, alarm_level: 告警级别, record_id：表记录主键} 
+     * @return orderBy
+     */
+    public OrderByEnum getOrderBy() {
+        return orderBy;
+    }
+
+    public void setOrderBy(OrderByEnum orderBy) {
+        this.orderBy = orderBy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -249,12 +358,13 @@ public class ListAlarmHistoriesRequest {
             && Objects.equals(this.status, that.status) && Objects.equals(this.level, that.level)
             && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.orderBy, that.orderBy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(alarmId, name, status, level, namespace, resourceId, from, to, offset, limit);
+        return Objects.hash(alarmId, name, status, level, namespace, resourceId, from, to, offset, limit, orderBy);
     }
 
     @Override
@@ -271,6 +381,7 @@ public class ListAlarmHistoriesRequest {
         sb.append("    to: ").append(toIndentedString(to)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

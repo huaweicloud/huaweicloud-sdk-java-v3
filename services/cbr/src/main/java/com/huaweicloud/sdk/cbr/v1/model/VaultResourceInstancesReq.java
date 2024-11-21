@@ -79,16 +79,16 @@ public class VaultResourceInstancesReq {
         public static final CloudTypeEnum PUBLIC = new CloudTypeEnum("public");
 
         /**
-         * Enum _HYBRID for value: " hybrid"
+         * Enum HYBRID for value: "hybrid"
          */
-        public static final CloudTypeEnum _HYBRID = new CloudTypeEnum(" hybrid");
+        public static final CloudTypeEnum HYBRID = new CloudTypeEnum("hybrid");
 
         private static final Map<String, CloudTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CloudTypeEnum> createStaticFields() {
             Map<String, CloudTypeEnum> map = new HashMap<>();
             map.put("public", PUBLIC);
-            map.put(" hybrid", _HYBRID);
+            map.put("hybrid", HYBRID);
             return Collections.unmodifiableMap(map);
         }
 

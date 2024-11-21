@@ -254,7 +254,7 @@ public class Update2dModelTrainingJobReq {
     }
 
     /**
-     * 分身数字人训练任务创建者联系方式，如手机或邮箱等。
+     * 分身数字人训练任务创建者的手机号。
      * @return contact
      */
     public String getContact() {

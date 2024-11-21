@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 如果用户传递的var_value是已经加密过的，可以通过声名此项以要求资源编排服务在使用前进行解密，目前暂时只支持KMS加解密
+ * 如果用户传递的var_value是已经加密过的，可以通过声明此项以要求资源编排服务在使用前进行解密，目前暂时只支持KMS加解密
  */
 public class EncryptionStructure {
 

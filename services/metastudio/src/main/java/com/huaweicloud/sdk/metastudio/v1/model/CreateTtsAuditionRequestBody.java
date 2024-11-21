@@ -35,6 +35,11 @@ public class CreateTtsAuditionRequestBody {
 
     private Integer volume;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "business_type")
+
+    private String businessType;
+
     public CreateTtsAuditionRequestBody withText(String text) {
         this.text = text;
         return this;
@@ -126,6 +131,23 @@ public class CreateTtsAuditionRequestBody {
         this.volume = volume;
     }
 
+    public CreateTtsAuditionRequestBody withBusinessType(String businessType) {
+        this.businessType = businessType;
+        return this;
+    }
+
+    /**
+     * 业务场景，多个入口调用试听接口时的业务场景
+     * @return businessType
+     */
+    public String getBusinessType() {
+        return businessType;
+    }
+
+    public void setBusinessType(String businessType) {
+        this.businessType = businessType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -137,12 +159,12 @@ public class CreateTtsAuditionRequestBody {
         CreateTtsAuditionRequestBody that = (CreateTtsAuditionRequestBody) obj;
         return Objects.equals(this.text, that.text) && Objects.equals(this.emotion, that.emotion)
             && Objects.equals(this.speed, that.speed) && Objects.equals(this.pitch, that.pitch)
-            && Objects.equals(this.volume, that.volume);
+            && Objects.equals(this.volume, that.volume) && Objects.equals(this.businessType, that.businessType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(text, emotion, speed, pitch, volume);
+        return Objects.hash(text, emotion, speed, pitch, volume, businessType);
     }
 
     @Override
@@ -154,6 +176,7 @@ public class CreateTtsAuditionRequestBody {
         sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
         sb.append("    pitch: ").append(toIndentedString(pitch)).append("\n");
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
+        sb.append("    businessType: ").append(toIndentedString(businessType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

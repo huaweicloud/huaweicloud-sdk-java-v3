@@ -83,6 +83,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateBackupResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateClusterJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateClusteringJobReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateClusteringJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateClusteringJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingResourceReq;
@@ -126,6 +129,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSvgRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugLigandSvgResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateDrugModelResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateFavoriteReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateFavoriteRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateFavoriteResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateFepJobReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateFepJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateFepJobResponse;
@@ -153,6 +159,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateModelReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateMolBatchDownloadTaskReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateMolBatchDownloadTaskRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateMolBatchDownloadTaskResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateMolDockingJobReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateMolDockingJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateMolDockingJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateNextflowJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateNextflowJobRequestBody;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateNextflowJobResponse;
@@ -239,6 +248,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandSimilarityGraphTask
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugLigandSimilarityGraphTaskResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugModelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteDrugModelResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteFavoriteRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteFavoriteResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteImageRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteImageResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteInstanceRequest;
@@ -365,6 +376,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListDrugJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListDrugModelResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListFavoriteRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListFavoriteResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListGlobalWorkflowStatisticRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListGlobalWorkflowStatisticResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListIamGroupUsersRequest;
@@ -500,6 +513,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.RunDrugReceptorPreprocessResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.RunFastaPreprocessReq;
 import com.huaweicloud.sdk.eihealth.v1.model.RunFastaPreprocessRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.RunFastaPreprocessResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.RunFormatConverterReq;
+import com.huaweicloud.sdk.eihealth.v1.model.RunFormatConverterRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.RunFormatConverterResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.RunPocketReq;
 import com.huaweicloud.sdk.eihealth.v1.model.RunReceptorPreprocessReq;
 import com.huaweicloud.sdk.eihealth.v1.model.RunSurfacePointsReq;
@@ -528,6 +544,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowBmsDevicesRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowBmsDevicesResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowBucketStorageRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowBucketStorageResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowClusteringJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowClusteringJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowCpiJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowCpiJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowCpiTaskResultRequest;
@@ -1532,6 +1550,35 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateClusteringJobRequest, CreateClusteringJobResponse> createClusteringJob =
+        genForCreateClusteringJob();
+
+    private static HttpRequestDef<CreateClusteringJobRequest, CreateClusteringJobResponse> genForCreateClusteringJob() {
+        // basic
+        HttpRequestDef.Builder<CreateClusteringJobRequest, CreateClusteringJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateClusteringJobRequest.class, CreateClusteringJobResponse.class)
+                .withName("CreateClusteringJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/clustering")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateClusteringJobRequest::getEihealthProjectId,
+                CreateClusteringJobRequest::setEihealthProjectId));
+        builder.<CreateClusteringJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateClusteringJobReq.class),
+            f -> f.withMarshaller(CreateClusteringJobRequest::getBody, CreateClusteringJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCodeRequest, CreateCodeResponse> createCode = genForCreateCode();
 
     private static HttpRequestDef<CreateCodeRequest, CreateCodeResponse> genForCreateCode() {
@@ -1741,6 +1788,35 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateFavoriteRequest, CreateFavoriteResponse> createFavorite =
+        genForCreateFavorite();
+
+    private static HttpRequestDef<CreateFavoriteRequest, CreateFavoriteResponse> genForCreateFavorite() {
+        // basic
+        HttpRequestDef.Builder<CreateFavoriteRequest, CreateFavoriteResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateFavoriteRequest.class, CreateFavoriteResponse.class)
+                .withName("CreateFavorite")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/favorites")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFavoriteRequest::getEihealthProjectId,
+                CreateFavoriteRequest::setEihealthProjectId));
+        builder.<CreateFavoriteReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateFavoriteReq.class),
+            f -> f.withMarshaller(CreateFavoriteRequest::getBody, CreateFavoriteRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateFepJobRequest, CreateFepJobResponse> createFepJob = genForCreateFepJob();
 
     private static HttpRequestDef<CreateFepJobRequest, CreateFepJobResponse> genForCreateFepJob() {
@@ -1931,6 +2007,35 @@ public class EiHealthMeta {
             TypeCasts.uncheckedConversion(CreateMolBatchDownloadTaskReq.class),
             f -> f.withMarshaller(CreateMolBatchDownloadTaskRequest::getBody,
                 CreateMolBatchDownloadTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateMolDockingJobRequest, CreateMolDockingJobResponse> createMolDockingJob =
+        genForCreateMolDockingJob();
+
+    private static HttpRequestDef<CreateMolDockingJobRequest, CreateMolDockingJobResponse> genForCreateMolDockingJob() {
+        // basic
+        HttpRequestDef.Builder<CreateMolDockingJobRequest, CreateMolDockingJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateMolDockingJobRequest.class, CreateMolDockingJobResponse.class)
+                .withName("CreateMolDockingJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/mol-docking")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMolDockingJobRequest::getEihealthProjectId,
+                CreateMolDockingJobRequest::setEihealthProjectId));
+        builder.<CreateMolDockingJobReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateMolDockingJobReq.class),
+            f -> f.withMarshaller(CreateMolDockingJobRequest::getBody, CreateMolDockingJobRequest::setBody));
 
         // response
 
@@ -2618,6 +2723,35 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDrugModelRequest::getModelId, DeleteDrugModelRequest::setModelId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteFavoriteRequest, DeleteFavoriteResponse> deleteFavorite =
+        genForDeleteFavorite();
+
+    private static HttpRequestDef<DeleteFavoriteRequest, DeleteFavoriteResponse> genForDeleteFavorite() {
+        // basic
+        HttpRequestDef.Builder<DeleteFavoriteRequest, DeleteFavoriteResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteFavoriteRequest.class, DeleteFavoriteResponse.class)
+                .withName("DeleteFavorite")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/favorites/{favorite_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFavoriteRequest::getEihealthProjectId,
+                DeleteFavoriteRequest::setEihealthProjectId));
+        builder.<String>withRequestField("favorite_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteFavoriteRequest::getFavoriteId, DeleteFavoriteRequest::setFavoriteId));
 
         // response
 
@@ -4279,6 +4413,84 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListFavoriteRequest, ListFavoriteResponse> listFavorite = genForListFavorite();
+
+    private static HttpRequestDef<ListFavoriteRequest, ListFavoriteResponse> genForListFavorite() {
+        // basic
+        HttpRequestDef.Builder<ListFavoriteRequest, ListFavoriteResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFavoriteRequest.class, ListFavoriteResponse.class)
+                .withName("ListFavorite")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/favorites")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFavoriteRequest::getEihealthProjectId,
+                ListFavoriteRequest::setEihealthProjectId));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFavoriteRequest::getResourceId, ListFavoriteRequest::setResourceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFavoriteRequest::getOffset, ListFavoriteRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFavoriteRequest::getLimit, ListFavoriteRequest::setLimit));
+        builder.<List<String>>withRequestField("user_name_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFavoriteRequest::getUserNameList, ListFavoriteRequest::setUserNameList));
+        builder.<List<String>>withRequestField("resource_type_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFavoriteRequest::getResourceTypeList, ListFavoriteRequest::setResourceTypeList));
+        builder.<List<String>>withRequestField("type_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFavoriteRequest::getTypeList, ListFavoriteRequest::setTypeList));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFavoriteRequest::getStartTime, ListFavoriteRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFavoriteRequest::getEndTime, ListFavoriteRequest::setEndTime));
+        builder.<String>withRequestField("key_word",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFavoriteRequest::getKeyWord, ListFavoriteRequest::setKeyWord));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFavoriteRequest::getSortDir, ListFavoriteRequest::setSortDir));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFavoriteRequest::getSortKey, ListFavoriteRequest::setSortKey));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListGlobalWorkflowStatisticRequest, ListGlobalWorkflowStatisticResponse> listGlobalWorkflowStatistic =
         genForListGlobalWorkflowStatistic();
 
@@ -5463,6 +5675,41 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RunFormatConverterRequest, RunFormatConverterResponse> runFormatConverter =
+        genForRunFormatConverter();
+
+    private static HttpRequestDef<RunFormatConverterRequest, RunFormatConverterResponse> genForRunFormatConverter() {
+        // basic
+        HttpRequestDef.Builder<RunFormatConverterRequest, RunFormatConverterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RunFormatConverterRequest.class, RunFormatConverterResponse.class)
+                .withName("RunFormatConverter")
+                .withUri(
+                    "/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-common/toolkit/format-converter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RunFormatConverterRequest::getEihealthProjectId,
+                RunFormatConverterRequest::setEihealthProjectId));
+        builder.<RunFormatConverterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RunFormatConverterReq.class),
+            f -> f.withMarshaller(RunFormatConverterRequest::getBody, RunFormatConverterRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RunFormatConverterResponse::getBody, RunFormatConverterResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<Show3dStructureContentRequest, Show3dStructureContentResponse> show3dStructureContent =
         genForShow3dStructureContent();
 
@@ -5712,6 +5959,35 @@ public class EiHealthMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBucketStorageRequest::getEihealthProjectId,
                 ShowBucketStorageRequest::setEihealthProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClusteringJobRequest, ShowClusteringJobResponse> showClusteringJob =
+        genForShowClusteringJob();
+
+    private static HttpRequestDef<ShowClusteringJobRequest, ShowClusteringJobResponse> genForShowClusteringJob() {
+        // basic
+        HttpRequestDef.Builder<ShowClusteringJobRequest, ShowClusteringJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowClusteringJobRequest.class, ShowClusteringJobResponse.class)
+                .withName("ShowClusteringJob")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/drug-jobs/clustering/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusteringJobRequest::getEihealthProjectId,
+                ShowClusteringJobRequest::setEihealthProjectId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowClusteringJobRequest::getJobId, ShowClusteringJobRequest::setJobId));
 
         // response
 

@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.cbr.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -30,75 +25,10 @@ public class ListExternalVaultRequest {
 
     private Integer offset;
 
-    /**
-     * [保护类型。取值为backup，replication和hybrid。](tag:hws,hws_hk) [保护类型。取值为backup和replication。](tag:ocb) [保护类型。取值为backup。](tag:g42,hk-g42,sbc,dt,fcs_vm,ctc,tm,tlf,cmcc,hcso_dt)
-     */
-    public static final class ProtectTypeEnum {
-
-        /**
-         * Enum BACKUP_REPLICATION_HYBRID for value: "backup;replication;hybrid"
-         */
-        public static final ProtectTypeEnum BACKUP_REPLICATION_HYBRID =
-            new ProtectTypeEnum("backup;replication;hybrid");
-
-        private static final Map<String, ProtectTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ProtectTypeEnum> createStaticFields() {
-            Map<String, ProtectTypeEnum> map = new HashMap<>();
-            map.put("backup;replication;hybrid", BACKUP_REPLICATION_HYBRID);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ProtectTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ProtectTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectTypeEnum(value));
-        }
-
-        public static ProtectTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ProtectTypeEnum) {
-                return this.value.equals(((ProtectTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_type")
 
-    private ProtectTypeEnum protectType;
+    private String protectType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
@@ -173,7 +103,7 @@ public class ListExternalVaultRequest {
         this.offset = offset;
     }
 
-    public ListExternalVaultRequest withProtectType(ProtectTypeEnum protectType) {
+    public ListExternalVaultRequest withProtectType(String protectType) {
         this.protectType = protectType;
         return this;
     }
@@ -182,11 +112,11 @@ public class ListExternalVaultRequest {
      * [保护类型。取值为backup，replication和hybrid。](tag:hws,hws_hk) [保护类型。取值为backup和replication。](tag:ocb) [保护类型。取值为backup。](tag:g42,hk-g42,sbc,dt,fcs_vm,ctc,tm,tlf,cmcc,hcso_dt)
      * @return protectType
      */
-    public ProtectTypeEnum getProtectType() {
+    public String getProtectType() {
         return protectType;
     }
 
-    public void setProtectType(ProtectTypeEnum protectType) {
+    public void setProtectType(String protectType) {
         this.protectType = protectType;
     }
 

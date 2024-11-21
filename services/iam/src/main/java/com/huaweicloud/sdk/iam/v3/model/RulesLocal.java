@@ -21,11 +21,6 @@ public class RulesLocal {
 
     private RulesLocalGroup group;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "groups")
-
-    private String groups;
-
     public RulesLocal withUser(RulesLocalUser user) {
         this.user = user;
         return this;
@@ -78,23 +73,6 @@ public class RulesLocal {
         this.group = group;
     }
 
-    public RulesLocal withGroups(String groups) {
-        this.groups = groups;
-        return this;
-    }
-
-    /**
-     * 联邦用户在本系统中所属用户组列表
-     * @return groups
-     */
-    public String getGroups() {
-        return groups;
-    }
-
-    public void setGroups(String groups) {
-        this.groups = groups;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -104,13 +82,12 @@ public class RulesLocal {
             return false;
         }
         RulesLocal that = (RulesLocal) obj;
-        return Objects.equals(this.user, that.user) && Objects.equals(this.group, that.group)
-            && Objects.equals(this.groups, that.groups);
+        return Objects.equals(this.user, that.user) && Objects.equals(this.group, that.group);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(user, group, groups);
+        return Objects.hash(user, group);
     }
 
     @Override
@@ -119,7 +96,6 @@ public class RulesLocal {
         sb.append("class RulesLocal {\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("    group: ").append(toIndentedString(group)).append("\n");
-        sb.append("    groups: ").append(toIndentedString(groups)).append("\n");
         sb.append("}");
         return sb.toString();
     }

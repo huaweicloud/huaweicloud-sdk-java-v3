@@ -12,6 +12,11 @@ import java.util.function.Consumer;
 public class DeleteByConditionMultiViewRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mvModelName")
+
+    private String mvModelName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "identifier")
 
     private String identifier;
@@ -20,6 +25,23 @@ public class DeleteByConditionMultiViewRequest {
     @JsonProperty(value = "body")
 
     private RDMParamVODeleteByConditionVo body;
+
+    public DeleteByConditionMultiViewRequest withMvModelName(String mvModelName) {
+        this.mvModelName = mvModelName;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  数据模型的英文名称。  **约束限制：**  不涉及。  **取值范围：**  大写字母开头，只能包含字母、数字、\"_\"，且长度为[1-60]个字符。  **默认取值：**  不涉及。 
+     * @return mvModelName
+     */
+    public String getMvModelName() {
+        return mvModelName;
+    }
+
+    public void setMvModelName(String mvModelName) {
+        this.mvModelName = mvModelName;
+    }
 
     public DeleteByConditionMultiViewRequest withIdentifier(String identifier) {
         this.identifier = identifier;
@@ -73,18 +95,20 @@ public class DeleteByConditionMultiViewRequest {
             return false;
         }
         DeleteByConditionMultiViewRequest that = (DeleteByConditionMultiViewRequest) obj;
-        return Objects.equals(this.identifier, that.identifier) && Objects.equals(this.body, that.body);
+        return Objects.equals(this.mvModelName, that.mvModelName) && Objects.equals(this.identifier, that.identifier)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(identifier, body);
+        return Objects.hash(mvModelName, identifier, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteByConditionMultiViewRequest {\n");
+        sb.append("    mvModelName: ").append(toIndentedString(mvModelName)).append("\n");
         sb.append("    identifier: ").append(toIndentedString(identifier)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

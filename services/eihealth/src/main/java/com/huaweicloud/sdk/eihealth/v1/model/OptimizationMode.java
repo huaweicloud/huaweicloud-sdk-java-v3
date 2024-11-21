@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 靶点口袋分子设计模式：支持从头生成、侧链修饰、骨架跃迁
+ * 靶点口袋分子设计模式：支持从头生成、侧链修饰、骨架跃迁、片段生长。
  */
 public class OptimizationMode {
 
@@ -27,6 +27,11 @@ public class OptimizationMode {
      */
     public static final OptimizationMode SCAFFOLD_HOPPING = new OptimizationMode("scaffold_hopping");
 
+    /**
+     * Enum FRAGMENT_GROWING for value: "fragment_growing"
+     */
+    public static final OptimizationMode FRAGMENT_GROWING = new OptimizationMode("fragment_growing");
+
     private static final Map<String, OptimizationMode> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, OptimizationMode> createStaticFields() {
@@ -34,6 +39,7 @@ public class OptimizationMode {
         map.put("generation", GENERATION);
         map.put("side_chains_decoration", SIDE_CHAINS_DECORATION);
         map.put("scaffold_hopping", SCAFFOLD_HOPPING);
+        map.put("fragment_growing", FRAGMENT_GROWING);
         return Collections.unmodifiableMap(map);
     }
 

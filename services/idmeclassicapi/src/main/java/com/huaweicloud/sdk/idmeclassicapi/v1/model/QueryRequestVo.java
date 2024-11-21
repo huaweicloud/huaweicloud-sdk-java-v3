@@ -321,7 +321,7 @@ public class QueryRequestVo {
     }
 
     /**
-     * **参数解释：**  排序方向。  **约束限制：**  不涉及。  **取值范围：**  - ASC：表示升序。 - DESC：表示降序。 不涉及。  **默认取值：**  ASC。 
+     * **参数解释：**  排序方向。  **约束限制：**  不涉及。  **取值范围：**  - ASC：表示升序。 - DESC：表示降序。  **默认取值：**  ASC。 
      * @return sort
      */
     public String getSort() {

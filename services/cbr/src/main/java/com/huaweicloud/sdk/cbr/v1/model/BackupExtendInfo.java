@@ -49,22 +49,22 @@ public class BackupExtendInfo {
         public static final SupportedRestoreModeEnum NA = new SupportedRestoreModeEnum("na");
 
         /**
-         * Enum _BACKUP for value: " backup"
+         * Enum BACKUP for value: "backup"
          */
-        public static final SupportedRestoreModeEnum _BACKUP = new SupportedRestoreModeEnum(" backup");
+        public static final SupportedRestoreModeEnum BACKUP = new SupportedRestoreModeEnum("backup");
 
         /**
-         * Enum _SNAPSHOT for value: " snapshot"
+         * Enum SNAPSHOT for value: "snapshot"
          */
-        public static final SupportedRestoreModeEnum _SNAPSHOT = new SupportedRestoreModeEnum(" snapshot");
+        public static final SupportedRestoreModeEnum SNAPSHOT = new SupportedRestoreModeEnum("snapshot");
 
         private static final Map<String, SupportedRestoreModeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SupportedRestoreModeEnum> createStaticFields() {
             Map<String, SupportedRestoreModeEnum> map = new HashMap<>();
             map.put("na", NA);
-            map.put(" backup", _BACKUP);
-            map.put(" snapshot", _SNAPSHOT);
+            map.put("backup", BACKUP);
+            map.put("snapshot", SNAPSHOT);
             return Collections.unmodifiableMap(map);
         }
 

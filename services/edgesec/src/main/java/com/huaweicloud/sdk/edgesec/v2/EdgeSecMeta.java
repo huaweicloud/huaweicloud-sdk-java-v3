@@ -1173,7 +1173,7 @@ public class EdgeSecMeta {
                 ShowHttpAttackTimelineStatsRequest::setGroupByValue));
         builder.<Integer>withRequestField("interval",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowHttpAttackTimelineStatsRequest::getInterval,
                 ShowHttpAttackTimelineStatsRequest::setInterval));

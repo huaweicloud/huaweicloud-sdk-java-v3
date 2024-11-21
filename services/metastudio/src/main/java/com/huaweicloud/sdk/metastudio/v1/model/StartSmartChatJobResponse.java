@@ -6,8 +6,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -41,6 +43,11 @@ public class StartSmartChatJobResponse extends SdkResponse {
     @JsonProperty(value = "video_config")
 
     private SmartChatVideoConfig videoConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "voice_config_list")
+
+    private List<SmartChatVoiceConfig> voiceConfigList = null;
 
     /**
      * 智能交互对话端配置。 * COMPUTER: 电脑端 * MOBILE: 手机端 * HUB: 大屏
@@ -137,6 +144,81 @@ public class StartSmartChatJobResponse extends SdkResponse {
     @JsonProperty(value = "is_transparent")
 
     private Boolean isTransparent;
+
+    /**
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。
+     */
+    public static final class DefaultLanguageEnum {
+
+        /**
+         * Enum CN for value: "CN"
+         */
+        public static final DefaultLanguageEnum CN = new DefaultLanguageEnum("CN");
+
+        /**
+         * Enum EN for value: "EN"
+         */
+        public static final DefaultLanguageEnum EN = new DefaultLanguageEnum("EN");
+
+        private static final Map<String, DefaultLanguageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DefaultLanguageEnum> createStaticFields() {
+            Map<String, DefaultLanguageEnum> map = new HashMap<>();
+            map.put("CN", CN);
+            map.put("EN", EN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DefaultLanguageEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DefaultLanguageEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DefaultLanguageEnum(value));
+        }
+
+        public static DefaultLanguageEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DefaultLanguageEnum) {
+                return this.value.equals(((DefaultLanguageEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_language")
+
+    private DefaultLanguageEnum defaultLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -256,6 +338,39 @@ public class StartSmartChatJobResponse extends SdkResponse {
         this.videoConfig = videoConfig;
     }
 
+    public StartSmartChatJobResponse withVoiceConfigList(List<SmartChatVoiceConfig> voiceConfigList) {
+        this.voiceConfigList = voiceConfigList;
+        return this;
+    }
+
+    public StartSmartChatJobResponse addVoiceConfigListItem(SmartChatVoiceConfig voiceConfigListItem) {
+        if (this.voiceConfigList == null) {
+            this.voiceConfigList = new ArrayList<>();
+        }
+        this.voiceConfigList.add(voiceConfigListItem);
+        return this;
+    }
+
+    public StartSmartChatJobResponse withVoiceConfigList(Consumer<List<SmartChatVoiceConfig>> voiceConfigListSetter) {
+        if (this.voiceConfigList == null) {
+            this.voiceConfigList = new ArrayList<>();
+        }
+        voiceConfigListSetter.accept(this.voiceConfigList);
+        return this;
+    }
+
+    /**
+     * 语音配置参数列表。
+     * @return voiceConfigList
+     */
+    public List<SmartChatVoiceConfig> getVoiceConfigList() {
+        return voiceConfigList;
+    }
+
+    public void setVoiceConfigList(List<SmartChatVoiceConfig> voiceConfigList) {
+        this.voiceConfigList = voiceConfigList;
+    }
+
     public StartSmartChatJobResponse withChatVideoType(ChatVideoTypeEnum chatVideoType) {
         this.chatVideoType = chatVideoType;
         return this;
@@ -324,6 +439,23 @@ public class StartSmartChatJobResponse extends SdkResponse {
         this.isTransparent = isTransparent;
     }
 
+    public StartSmartChatJobResponse withDefaultLanguage(DefaultLanguageEnum defaultLanguage) {
+        this.defaultLanguage = defaultLanguage;
+        return this;
+    }
+
+    /**
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。
+     * @return defaultLanguage
+     */
+    public DefaultLanguageEnum getDefaultLanguage() {
+        return defaultLanguage;
+    }
+
+    public void setDefaultLanguage(DefaultLanguageEnum defaultLanguage) {
+        this.defaultLanguage = defaultLanguage;
+    }
+
     public StartSmartChatJobResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -356,9 +488,11 @@ public class StartSmartChatJobResponse extends SdkResponse {
             && Objects.equals(this.rtcRoomInfo, that.rtcRoomInfo)
             && Objects.equals(this.chatSubtitleConfig, that.chatSubtitleConfig)
             && Objects.equals(this.videoConfig, that.videoConfig)
+            && Objects.equals(this.voiceConfigList, that.voiceConfigList)
             && Objects.equals(this.chatVideoType, that.chatVideoType) && Objects.equals(this.region, that.region)
             && Objects.equals(this.chatAccessAddress, that.chatAccessAddress)
             && Objects.equals(this.isTransparent, that.isTransparent)
+            && Objects.equals(this.defaultLanguage, that.defaultLanguage)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
@@ -369,10 +503,12 @@ public class StartSmartChatJobResponse extends SdkResponse {
             rtcRoomInfo,
             chatSubtitleConfig,
             videoConfig,
+            voiceConfigList,
             chatVideoType,
             region,
             chatAccessAddress,
             isTransparent,
+            defaultLanguage,
             xRequestId);
     }
 
@@ -385,10 +521,12 @@ public class StartSmartChatJobResponse extends SdkResponse {
         sb.append("    rtcRoomInfo: ").append(toIndentedString(rtcRoomInfo)).append("\n");
         sb.append("    chatSubtitleConfig: ").append(toIndentedString(chatSubtitleConfig)).append("\n");
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");
+        sb.append("    voiceConfigList: ").append(toIndentedString(voiceConfigList)).append("\n");
         sb.append("    chatVideoType: ").append(toIndentedString(chatVideoType)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    chatAccessAddress: ").append(toIndentedString(chatAccessAddress)).append("\n");
         sb.append("    isTransparent: ").append(toIndentedString(isTransparent)).append("\n");
+        sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

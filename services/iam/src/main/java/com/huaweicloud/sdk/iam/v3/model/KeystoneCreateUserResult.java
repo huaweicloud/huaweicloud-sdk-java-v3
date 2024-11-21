@@ -27,6 +27,11 @@ public class KeystoneCreateUserResult {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pwd_status")
+
+    private Boolean pwdStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password_expires_at")
 
     private String passwordExpiresAt;
@@ -95,6 +100,23 @@ public class KeystoneCreateUserResult {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public KeystoneCreateUserResult withPwdStatus(Boolean pwdStatus) {
+        this.pwdStatus = pwdStatus;
+        return this;
+    }
+
+    /**
+     * IAM用户密码状态。true：需要修改密码，false：正常；如果密码未设置，此字段可能不返回。
+     * @return pwdStatus
+     */
+    public Boolean getPwdStatus() {
+        return pwdStatus;
+    }
+
+    public void setPwdStatus(Boolean pwdStatus) {
+        this.pwdStatus = pwdStatus;
     }
 
     public KeystoneCreateUserResult withPasswordExpiresAt(String passwordExpiresAt) {
@@ -184,14 +206,14 @@ public class KeystoneCreateUserResult {
         }
         KeystoneCreateUserResult that = (KeystoneCreateUserResult) obj;
         return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.pwdStatus, that.pwdStatus)
             && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt) && Objects.equals(this.links, that.links)
             && Objects.equals(this.id, that.id) && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(domainId, name, description, passwordExpiresAt, links, id, enabled);
+        return Objects.hash(domainId, name, description, pwdStatus, passwordExpiresAt, links, id, enabled);
     }
 
     @Override
@@ -201,6 +223,7 @@ public class KeystoneCreateUserResult {
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    pwdStatus: ").append(toIndentedString(pwdStatus)).append("\n");
         sb.append("    passwordExpiresAt: ").append(toIndentedString(passwordExpiresAt)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");

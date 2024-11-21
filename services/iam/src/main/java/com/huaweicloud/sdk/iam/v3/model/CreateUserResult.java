@@ -100,6 +100,11 @@ public class CreateUserResult {
 
     private String passwordExpiresAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_project_id")
+
+    private String defaultProjectId;
+
     public CreateUserResult withAccessMode(String accessMode) {
         this.accessMode = accessMode;
         return this;
@@ -406,6 +411,23 @@ public class CreateUserResult {
         this.passwordExpiresAt = passwordExpiresAt;
     }
 
+    public CreateUserResult withDefaultProjectId(String defaultProjectId) {
+        this.defaultProjectId = defaultProjectId;
+        return this;
+    }
+
+    /**
+     * 用户默认的项目ID。
+     * @return defaultProjectId
+     */
+    public String getDefaultProjectId() {
+        return defaultProjectId;
+    }
+
+    public void setDefaultProjectId(String defaultProjectId) {
+        this.defaultProjectId = defaultProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -423,7 +445,8 @@ public class CreateUserResult {
             && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.areacode, that.areacode)
             && Objects.equals(this.email, that.email) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.xdomainId, that.xdomainId) && Objects.equals(this.xdomainType, that.xdomainType)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt);
+            && Objects.equals(this.id, that.id) && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt)
+            && Objects.equals(this.defaultProjectId, that.defaultProjectId);
     }
 
     @Override
@@ -445,7 +468,8 @@ public class CreateUserResult {
             xdomainId,
             xdomainType,
             id,
-            passwordExpiresAt);
+            passwordExpiresAt,
+            defaultProjectId);
     }
 
     @Override
@@ -470,6 +494,7 @@ public class CreateUserResult {
         sb.append("    xdomainType: ").append(toIndentedString(xdomainType)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    passwordExpiresAt: ").append(toIndentedString(passwordExpiresAt)).append("\n");
+        sb.append("    defaultProjectId: ").append(toIndentedString(defaultProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class ThirdPartyModelConfig {
 
     private String sisProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_hot_words")
+
+    private Boolean enableHotWords;
+
     public ThirdPartyModelConfig withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -168,6 +173,23 @@ public class ThirdPartyModelConfig {
         this.sisProjectId = sisProjectId;
     }
 
+    public ThirdPartyModelConfig withEnableHotWords(Boolean enableHotWords) {
+        this.enableHotWords = enableHotWords;
+        return this;
+    }
+
+    /**
+     * 是否开启热词
+     * @return enableHotWords
+     */
+    public Boolean getEnableHotWords() {
+        return enableHotWords;
+    }
+
+    public void setEnableHotWords(Boolean enableHotWords) {
+        this.enableHotWords = enableHotWords;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,12 +202,13 @@ public class ThirdPartyModelConfig {
         return Objects.equals(this.appId, that.appId) && Objects.equals(this.appKey, that.appKey)
             && Objects.equals(this.llmUrl, that.llmUrl) && Objects.equals(this.isStream, that.isStream)
             && Objects.equals(this.chatRounds, that.chatRounds) && Objects.equals(this.sisRegion, that.sisRegion)
-            && Objects.equals(this.sisProjectId, that.sisProjectId);
+            && Objects.equals(this.sisProjectId, that.sisProjectId)
+            && Objects.equals(this.enableHotWords, that.enableHotWords);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appId, appKey, llmUrl, isStream, chatRounds, sisRegion, sisProjectId);
+        return Objects.hash(appId, appKey, llmUrl, isStream, chatRounds, sisRegion, sisProjectId, enableHotWords);
     }
 
     @Override
@@ -199,6 +222,7 @@ public class ThirdPartyModelConfig {
         sb.append("    chatRounds: ").append(toIndentedString(chatRounds)).append("\n");
         sb.append("    sisRegion: ").append(toIndentedString(sisRegion)).append("\n");
         sb.append("    sisProjectId: ").append(toIndentedString(sisProjectId)).append("\n");
+        sb.append("    enableHotWords: ").append(toIndentedString(enableHotWords)).append("\n");
         sb.append("}");
         return sb.toString();
     }

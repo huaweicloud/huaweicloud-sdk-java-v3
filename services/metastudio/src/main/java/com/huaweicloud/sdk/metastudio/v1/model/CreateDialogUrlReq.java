@@ -26,7 +26,7 @@ public class CreateDialogUrlReq {
     }
 
     /**
-     * 智能交互对话ID。
+     * 智能交互对话ID，获取方法请参考[创建智能交互对话直播间](CreateSmartChatRoom.xml)。
      * @return roomId
      */
     public String getRoomId() {

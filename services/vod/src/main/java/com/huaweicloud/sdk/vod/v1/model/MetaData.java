@@ -444,6 +444,11 @@ public class MetaData {
     private Long hight;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "height")
+
+    private Long height;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bit_rate")
 
     private Long bitRate;
@@ -554,7 +559,7 @@ public class MetaData {
     }
 
     /**
-     * 视频高度（单位：像素）。 - 编码为H.264的取值范围：[32,2160]之间2的倍数 。 - 编码为H.265的取值范围：[240,2160]之间4的倍数。
+     * 视频高度（单位：像素）。该字段会逐渐废弃，请使用height字段。 - 编码为H.264的取值范围：[32,2160]之间2的倍数 。 - 编码为H.265的取值范围：[240,2160]之间4的倍数。
      * @return hight
      */
     public Long getHight() {
@@ -563,6 +568,23 @@ public class MetaData {
 
     public void setHight(Long hight) {
         this.hight = hight;
+    }
+
+    public MetaData withHeight(Long height) {
+        this.height = height;
+        return this;
+    }
+
+    /**
+     * 视频高度（单位：像素）。 - 编码为H.264的取值范围：[32,2160]之间2的倍数 。 - 编码为H.265的取值范围：[240,2160]之间4的倍数。
+     * @return height
+     */
+    public Long getHeight() {
+        return height;
+    }
+
+    public void setHeight(Long height) {
+        this.height = height;
     }
 
     public MetaData withBitRate(Long bitRate) {
@@ -645,14 +667,24 @@ public class MetaData {
         return Objects.equals(this.packType, that.packType) && Objects.equals(this.codec, that.codec)
             && Objects.equals(this.duration, that.duration) && Objects.equals(this.videoSize, that.videoSize)
             && Objects.equals(this.width, that.width) && Objects.equals(this.hight, that.hight)
-            && Objects.equals(this.bitRate, that.bitRate) && Objects.equals(this.frameRate, that.frameRate)
-            && Objects.equals(this.quality, that.quality) && Objects.equals(this.audioChannels, that.audioChannels);
+            && Objects.equals(this.height, that.height) && Objects.equals(this.bitRate, that.bitRate)
+            && Objects.equals(this.frameRate, that.frameRate) && Objects.equals(this.quality, that.quality)
+            && Objects.equals(this.audioChannels, that.audioChannels);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(packType, codec, duration, videoSize, width, hight, bitRate, frameRate, quality, audioChannels);
+        return Objects.hash(packType,
+            codec,
+            duration,
+            videoSize,
+            width,
+            hight,
+            height,
+            bitRate,
+            frameRate,
+            quality,
+            audioChannels);
     }
 
     @Override
@@ -665,6 +697,7 @@ public class MetaData {
         sb.append("    videoSize: ").append(toIndentedString(videoSize)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    hight: ").append(toIndentedString(hight)).append("\n");
+        sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    bitRate: ").append(toIndentedString(bitRate)).append("\n");
         sb.append("    frameRate: ").append(toIndentedString(frameRate)).append("\n");
         sb.append("    quality: ").append(toIndentedString(quality)).append("\n");

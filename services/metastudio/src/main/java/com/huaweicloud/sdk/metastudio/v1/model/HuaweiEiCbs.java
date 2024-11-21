@@ -35,6 +35,11 @@ public class HuaweiEiCbs {
 
     private String sisProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_hot_words")
+
+    private Boolean enableHotWords;
+
     public HuaweiEiCbs withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -124,6 +129,23 @@ public class HuaweiEiCbs {
         this.sisProjectId = sisProjectId;
     }
 
+    public HuaweiEiCbs withEnableHotWords(Boolean enableHotWords) {
+        this.enableHotWords = enableHotWords;
+        return this;
+    }
+
+    /**
+     * 是否开启热词
+     * @return enableHotWords
+     */
+    public Boolean getEnableHotWords() {
+        return enableHotWords;
+    }
+
+    public void setEnableHotWords(Boolean enableHotWords) {
+        this.enableHotWords = enableHotWords;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -135,12 +157,13 @@ public class HuaweiEiCbs {
         HuaweiEiCbs that = (HuaweiEiCbs) obj;
         return Objects.equals(this.appId, that.appId) && Objects.equals(this.region, that.region)
             && Objects.equals(this.cbsProjectId, that.cbsProjectId) && Objects.equals(this.sisRegion, that.sisRegion)
-            && Objects.equals(this.sisProjectId, that.sisProjectId);
+            && Objects.equals(this.sisProjectId, that.sisProjectId)
+            && Objects.equals(this.enableHotWords, that.enableHotWords);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appId, region, cbsProjectId, sisRegion, sisProjectId);
+        return Objects.hash(appId, region, cbsProjectId, sisRegion, sisProjectId, enableHotWords);
     }
 
     @Override
@@ -152,6 +175,7 @@ public class HuaweiEiCbs {
         sb.append("    cbsProjectId: ").append(toIndentedString(cbsProjectId)).append("\n");
         sb.append("    sisRegion: ").append(toIndentedString(sisRegion)).append("\n");
         sb.append("    sisProjectId: ").append(toIndentedString(sisProjectId)).append("\n");
+        sb.append("    enableHotWords: ").append(toIndentedString(enableHotWords)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -21,6 +21,11 @@ public class HotQuestionInfo {
     private String hotQuestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private LanguageEnum language;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "robot_id")
 
     private String robotId;
@@ -67,6 +72,23 @@ public class HotQuestionInfo {
 
     public void setHotQuestion(String hotQuestion) {
         this.hotQuestion = hotQuestion;
+    }
+
+    public HotQuestionInfo withLanguage(LanguageEnum language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * Get language
+     * @return language
+     */
+    public LanguageEnum getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(LanguageEnum language) {
+        this.language = language;
     }
 
     public HotQuestionInfo withRobotId(String robotId) {
@@ -130,13 +152,14 @@ public class HotQuestionInfo {
         }
         HotQuestionInfo that = (HotQuestionInfo) obj;
         return Objects.equals(this.hotQuestionId, that.hotQuestionId)
-            && Objects.equals(this.hotQuestion, that.hotQuestion) && Objects.equals(this.robotId, that.robotId)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.hotQuestion, that.hotQuestion) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.robotId, that.robotId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hotQuestionId, hotQuestion, robotId, createTime, updateTime);
+        return Objects.hash(hotQuestionId, hotQuestion, language, robotId, createTime, updateTime);
     }
 
     @Override
@@ -145,6 +168,7 @@ public class HotQuestionInfo {
         sb.append("class HotQuestionInfo {\n");
         sb.append("    hotQuestionId: ").append(toIndentedString(hotQuestionId)).append("\n");
         sb.append("    hotQuestion: ").append(toIndentedString(hotQuestion)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

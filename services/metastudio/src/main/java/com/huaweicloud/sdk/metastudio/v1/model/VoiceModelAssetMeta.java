@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -403,6 +405,11 @@ public class VoiceModelAssetMeta {
     private LanguageEnum language;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "languages")
+
+    private List<Language> languages = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed_ratio")
 
     private Float speedRatio;
@@ -510,6 +517,39 @@ public class VoiceModelAssetMeta {
 
     public void setLanguage(LanguageEnum language) {
         this.language = language;
+    }
+
+    public VoiceModelAssetMeta withLanguages(List<Language> languages) {
+        this.languages = languages;
+        return this;
+    }
+
+    public VoiceModelAssetMeta addLanguagesItem(Language languagesItem) {
+        if (this.languages == null) {
+            this.languages = new ArrayList<>();
+        }
+        this.languages.add(languagesItem);
+        return this;
+    }
+
+    public VoiceModelAssetMeta withLanguages(Consumer<List<Language>> languagesSetter) {
+        if (this.languages == null) {
+            this.languages = new ArrayList<>();
+        }
+        languagesSetter.accept(this.languages);
+        return this;
+    }
+
+    /**
+     * Get languages
+     * @return languages
+     */
+    public List<Language> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(List<Language> languages) {
+        this.languages = languages;
     }
 
     public VoiceModelAssetMeta withSpeedRatio(Float speedRatio) {
@@ -681,7 +721,8 @@ public class VoiceModelAssetMeta {
         VoiceModelAssetMeta that = (VoiceModelAssetMeta) obj;
         return Objects.equals(this.order, that.order) && Objects.equals(this.modelType, that.modelType)
             && Objects.equals(this.sex, that.sex) && Objects.equals(this.language, that.language)
-            && Objects.equals(this.speedRatio, that.speedRatio) && Objects.equals(this.volumeRatio, that.volumeRatio)
+            && Objects.equals(this.languages, that.languages) && Objects.equals(this.speedRatio, that.speedRatio)
+            && Objects.equals(this.volumeRatio, that.volumeRatio)
             && Objects.equals(this.isRealtimeVoice, that.isRealtimeVoice) && Objects.equals(this.style, that.style)
             && Objects.equals(this.voiceCapability, that.voiceCapability)
             && Objects.equals(this.externalVoiceMeta, that.externalVoiceMeta)
@@ -695,6 +736,7 @@ public class VoiceModelAssetMeta {
             modelType,
             sex,
             language,
+            languages,
             speedRatio,
             volumeRatio,
             isRealtimeVoice,
@@ -713,6 +755,7 @@ public class VoiceModelAssetMeta {
         sb.append("    modelType: ").append(toIndentedString(modelType)).append("\n");
         sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
+        sb.append("    languages: ").append(toIndentedString(languages)).append("\n");
         sb.append("    speedRatio: ").append(toIndentedString(speedRatio)).append("\n");
         sb.append("    volumeRatio: ").append(toIndentedString(volumeRatio)).append("\n");
         sb.append("    isRealtimeVoice: ").append(toIndentedString(isRealtimeVoice)).append("\n");

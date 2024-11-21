@@ -1006,10 +1006,10 @@ public class CbrMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListExternalVaultRequest::getOffset, ListExternalVaultRequest::setOffset));
-        builder.<ListExternalVaultRequest.ProtectTypeEnum>withRequestField("protect_type",
+        builder.<String>withRequestField("protect_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListExternalVaultRequest.ProtectTypeEnum.class),
+            TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListExternalVaultRequest::getProtectType, ListExternalVaultRequest::setProtectType));
         builder.<String>withRequestField("region_id",
             LocationType.Query,

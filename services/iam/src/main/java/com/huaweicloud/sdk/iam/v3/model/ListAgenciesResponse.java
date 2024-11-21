@@ -17,14 +17,14 @@ public class ListAgenciesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agencies")
 
-    private List<AgencyResult> agencies = null;
+    private List<AgencyListResult> agencies = null;
 
-    public ListAgenciesResponse withAgencies(List<AgencyResult> agencies) {
+    public ListAgenciesResponse withAgencies(List<AgencyListResult> agencies) {
         this.agencies = agencies;
         return this;
     }
 
-    public ListAgenciesResponse addAgenciesItem(AgencyResult agenciesItem) {
+    public ListAgenciesResponse addAgenciesItem(AgencyListResult agenciesItem) {
         if (this.agencies == null) {
             this.agencies = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListAgenciesResponse extends SdkResponse {
         return this;
     }
 
-    public ListAgenciesResponse withAgencies(Consumer<List<AgencyResult>> agenciesSetter) {
+    public ListAgenciesResponse withAgencies(Consumer<List<AgencyListResult>> agenciesSetter) {
         if (this.agencies == null) {
             this.agencies = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class ListAgenciesResponse extends SdkResponse {
      * 委托信息列表。
      * @return agencies
      */
-    public List<AgencyResult> getAgencies() {
+    public List<AgencyListResult> getAgencies() {
         return agencies;
     }
 
-    public void setAgencies(List<AgencyResult> agencies) {
+    public void setAgencies(List<AgencyListResult> agencies) {
         this.agencies = agencies;
     }
 

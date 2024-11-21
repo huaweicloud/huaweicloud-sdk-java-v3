@@ -51,7 +51,7 @@ public class ScopedTokenInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalog")
 
-    private List<UnscopedTokenInfoCatalog> catalog = null;
+    private List<UnscopedTokenInfoCatalogEndpoints> catalog = null;
 
     public ScopedTokenInfo withExpiresAt(String expiresAt) {
         this.expiresAt = expiresAt;
@@ -231,12 +231,12 @@ public class ScopedTokenInfo {
         this.roles = roles;
     }
 
-    public ScopedTokenInfo withCatalog(List<UnscopedTokenInfoCatalog> catalog) {
+    public ScopedTokenInfo withCatalog(List<UnscopedTokenInfoCatalogEndpoints> catalog) {
         this.catalog = catalog;
         return this;
     }
 
-    public ScopedTokenInfo addCatalogItem(UnscopedTokenInfoCatalog catalogItem) {
+    public ScopedTokenInfo addCatalogItem(UnscopedTokenInfoCatalogEndpoints catalogItem) {
         if (this.catalog == null) {
             this.catalog = new ArrayList<>();
         }
@@ -244,7 +244,7 @@ public class ScopedTokenInfo {
         return this;
     }
 
-    public ScopedTokenInfo withCatalog(Consumer<List<UnscopedTokenInfoCatalog>> catalogSetter) {
+    public ScopedTokenInfo withCatalog(Consumer<List<UnscopedTokenInfoCatalogEndpoints>> catalogSetter) {
         if (this.catalog == null) {
             this.catalog = new ArrayList<>();
         }
@@ -256,11 +256,11 @@ public class ScopedTokenInfo {
      * catalog信息
      * @return catalog
      */
-    public List<UnscopedTokenInfoCatalog> getCatalog() {
+    public List<UnscopedTokenInfoCatalogEndpoints> getCatalog() {
         return catalog;
     }
 
-    public void setCatalog(List<UnscopedTokenInfoCatalog> catalog) {
+    public void setCatalog(List<UnscopedTokenInfoCatalogEndpoints> catalog) {
         this.catalog = catalog;
     }
 

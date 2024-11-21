@@ -383,13 +383,103 @@ public class CommonInfo {
 
     private AdaptationEnum adaptation;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "preset")
+
+    private Integer preset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_iframes_interval")
+
+    private Integer maxIframesInterval;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hls_audio_separate")
+
+    private Boolean hlsAudioSeparate;
+
+    /**
+     * 分片的封装格式，目前支持TS和FMP4，默认TS格式。 
+     */
+    public static final class HlsSegmentTypeEnum {
+
+        /**
+         * Enum TS for value: "TS"
+         */
+        public static final HlsSegmentTypeEnum TS = new HlsSegmentTypeEnum("TS");
+
+        /**
+         * Enum FMP4 for value: "FMP4"
+         */
+        public static final HlsSegmentTypeEnum FMP4 = new HlsSegmentTypeEnum("FMP4");
+
+        private static final Map<String, HlsSegmentTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HlsSegmentTypeEnum> createStaticFields() {
+            Map<String, HlsSegmentTypeEnum> map = new HashMap<>();
+            map.put("TS", TS);
+            map.put("FMP4", FMP4);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HlsSegmentTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HlsSegmentTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HlsSegmentTypeEnum(value));
+        }
+
+        public static HlsSegmentTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof HlsSegmentTypeEnum) {
+                return this.value.equals(((HlsSegmentTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hls_segment_type")
+
+    private HlsSegmentTypeEnum hlsSegmentType;
+
     public CommonInfo withPvc(Boolean pvc) {
         this.pvc = pvc;
         return this;
     }
 
     /**
-     * pvc开关<br/> 
+     * 高清低码开关<br/> 
      * @return pvc
      */
     public Boolean getPvc() {
@@ -521,6 +611,74 @@ public class CommonInfo {
         this.adaptation = adaptation;
     }
 
+    public CommonInfo withPreset(Integer preset) {
+        this.preset = preset;
+        return this;
+    }
+
+    /**
+     * 编码质量等级，取值[0,2] 0表示当前现网方式默认方式，1表示转码效率优先，2表示转码质量优先。<br/> 
+     * @return preset
+     */
+    public Integer getPreset() {
+        return preset;
+    }
+
+    public void setPreset(Integer preset) {
+        this.preset = preset;
+    }
+
+    public CommonInfo withMaxIframesInterval(Integer maxIframesInterval) {
+        this.maxIframesInterval = maxIframesInterval;
+        return this;
+    }
+
+    /**
+     * I帧最大间隔，取值范围：[2，10]。默认值：5，单位秒。<br/> 
+     * @return maxIframesInterval
+     */
+    public Integer getMaxIframesInterval() {
+        return maxIframesInterval;
+    }
+
+    public void setMaxIframesInterval(Integer maxIframesInterval) {
+        this.maxIframesInterval = maxIframesInterval;
+    }
+
+    public CommonInfo withHlsAudioSeparate(Boolean hlsAudioSeparate) {
+        this.hlsAudioSeparate = hlsAudioSeparate;
+        return this;
+    }
+
+    /**
+     * 转码后音频是否独立存储。<br/> 
+     * @return hlsAudioSeparate
+     */
+    public Boolean getHlsAudioSeparate() {
+        return hlsAudioSeparate;
+    }
+
+    public void setHlsAudioSeparate(Boolean hlsAudioSeparate) {
+        this.hlsAudioSeparate = hlsAudioSeparate;
+    }
+
+    public CommonInfo withHlsSegmentType(HlsSegmentTypeEnum hlsSegmentType) {
+        this.hlsSegmentType = hlsSegmentType;
+        return this;
+    }
+
+    /**
+     * 分片的封装格式，目前支持TS和FMP4，默认TS格式。 
+     * @return hlsSegmentType
+     */
+    public HlsSegmentTypeEnum getHlsSegmentType() {
+        return hlsSegmentType;
+    }
+
+    public void setHlsSegmentType(HlsSegmentTypeEnum hlsSegmentType) {
+        this.hlsSegmentType = hlsSegmentType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -533,12 +691,27 @@ public class CommonInfo {
         return Objects.equals(this.pvc, that.pvc) && Objects.equals(this.videoCodec, that.videoCodec)
             && Objects.equals(this.audioCodec, that.audioCodec) && Objects.equals(this.isBlackCut, that.isBlackCut)
             && Objects.equals(this.format, that.format) && Objects.equals(this.hlsInterval, that.hlsInterval)
-            && Objects.equals(this.upsample, that.upsample) && Objects.equals(this.adaptation, that.adaptation);
+            && Objects.equals(this.upsample, that.upsample) && Objects.equals(this.adaptation, that.adaptation)
+            && Objects.equals(this.preset, that.preset)
+            && Objects.equals(this.maxIframesInterval, that.maxIframesInterval)
+            && Objects.equals(this.hlsAudioSeparate, that.hlsAudioSeparate)
+            && Objects.equals(this.hlsSegmentType, that.hlsSegmentType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(pvc, videoCodec, audioCodec, isBlackCut, format, hlsInterval, upsample, adaptation);
+        return Objects.hash(pvc,
+            videoCodec,
+            audioCodec,
+            isBlackCut,
+            format,
+            hlsInterval,
+            upsample,
+            adaptation,
+            preset,
+            maxIframesInterval,
+            hlsAudioSeparate,
+            hlsSegmentType);
     }
 
     @Override
@@ -553,6 +726,10 @@ public class CommonInfo {
         sb.append("    hlsInterval: ").append(toIndentedString(hlsInterval)).append("\n");
         sb.append("    upsample: ").append(toIndentedString(upsample)).append("\n");
         sb.append("    adaptation: ").append(toIndentedString(adaptation)).append("\n");
+        sb.append("    preset: ").append(toIndentedString(preset)).append("\n");
+        sb.append("    maxIframesInterval: ").append(toIndentedString(maxIframesInterval)).append("\n");
+        sb.append("    hlsAudioSeparate: ").append(toIndentedString(hlsAudioSeparate)).append("\n");
+        sb.append("    hlsSegmentType: ").append(toIndentedString(hlsSegmentType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

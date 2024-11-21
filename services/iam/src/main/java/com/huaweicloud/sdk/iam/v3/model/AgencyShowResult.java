@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * 
  */
-public class AgencyResult {
+public class AgencyShowResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -55,7 +55,7 @@ public class AgencyResult {
 
     private String agencyUrn;
 
-    public AgencyResult withCreateTime(String createTime) {
+    public AgencyShowResult withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -72,7 +72,7 @@ public class AgencyResult {
         this.createTime = createTime;
     }
 
-    public AgencyResult withDescription(String description) {
+    public AgencyShowResult withDescription(String description) {
         this.description = description;
         return this;
     }
@@ -89,7 +89,7 @@ public class AgencyResult {
         this.description = description;
     }
 
-    public AgencyResult withDomainId(String domainId) {
+    public AgencyShowResult withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
@@ -106,7 +106,7 @@ public class AgencyResult {
         this.domainId = domainId;
     }
 
-    public AgencyResult withExpireTime(String expireTime) {
+    public AgencyShowResult withExpireTime(String expireTime) {
         this.expireTime = expireTime;
         return this;
     }
@@ -123,7 +123,7 @@ public class AgencyResult {
         this.expireTime = expireTime;
     }
 
-    public AgencyResult withId(String id) {
+    public AgencyShowResult withId(String id) {
         this.id = id;
         return this;
     }
@@ -140,7 +140,7 @@ public class AgencyResult {
         this.id = id;
     }
 
-    public AgencyResult withName(String name) {
+    public AgencyShowResult withName(String name) {
         this.name = name;
         return this;
     }
@@ -157,7 +157,7 @@ public class AgencyResult {
         this.name = name;
     }
 
-    public AgencyResult withTrustDomainId(String trustDomainId) {
+    public AgencyShowResult withTrustDomainId(String trustDomainId) {
         this.trustDomainId = trustDomainId;
         return this;
     }
@@ -174,7 +174,7 @@ public class AgencyResult {
         this.trustDomainId = trustDomainId;
     }
 
-    public AgencyResult withTrustDomainName(String trustDomainName) {
+    public AgencyShowResult withTrustDomainName(String trustDomainName) {
         this.trustDomainName = trustDomainName;
         return this;
     }
@@ -191,7 +191,7 @@ public class AgencyResult {
         this.trustDomainName = trustDomainName;
     }
 
-    public AgencyResult withAgencyUrn(String agencyUrn) {
+    public AgencyShowResult withAgencyUrn(String agencyUrn) {
         this.agencyUrn = agencyUrn;
         return this;
     }
@@ -216,7 +216,7 @@ public class AgencyResult {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyResult that = (AgencyResult) obj;
+        AgencyShowResult that = (AgencyShowResult) obj;
         return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.description, that.description)
             && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.expireTime, that.expireTime)
             && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
@@ -234,7 +234,7 @@ public class AgencyResult {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AgencyResult {\n");
+        sb.append("class AgencyShowResult {\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");

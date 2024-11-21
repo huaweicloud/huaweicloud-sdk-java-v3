@@ -15,16 +15,16 @@ public class CreateAgencyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agency")
 
-    private AgencyResult agency;
+    private AgencyCreateResult agency;
 
-    public CreateAgencyResponse withAgency(AgencyResult agency) {
+    public CreateAgencyResponse withAgency(AgencyCreateResult agency) {
         this.agency = agency;
         return this;
     }
 
-    public CreateAgencyResponse withAgency(Consumer<AgencyResult> agencySetter) {
+    public CreateAgencyResponse withAgency(Consumer<AgencyCreateResult> agencySetter) {
         if (this.agency == null) {
-            this.agency = new AgencyResult();
+            this.agency = new AgencyCreateResult();
             agencySetter.accept(this.agency);
         }
 
@@ -35,11 +35,11 @@ public class CreateAgencyResponse extends SdkResponse {
      * Get agency
      * @return agency
      */
-    public AgencyResult getAgency() {
+    public AgencyCreateResult getAgency() {
         return agency;
     }
 
-    public void setAgency(AgencyResult agency) {
+    public void setAgency(AgencyCreateResult agency) {
         this.agency = agency;
     }
 

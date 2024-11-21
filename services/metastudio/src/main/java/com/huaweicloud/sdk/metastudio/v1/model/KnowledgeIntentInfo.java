@@ -63,7 +63,7 @@ public class KnowledgeIntentInfo {
     }
 
     /**
-     * 你是谁。
+     * 主题。
      * @return name
      */
     public String getName() {

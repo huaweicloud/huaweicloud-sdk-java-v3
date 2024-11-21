@@ -213,11 +213,6 @@ public class MrsMeta {
             f -> f.withMarshaller(CreateScalingPolicyRequest::getBody, CreateScalingPolicyRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateScalingPolicyResponse::getBody, CreateScalingPolicyResponse::setBody));
 
         return builder.build();
     }

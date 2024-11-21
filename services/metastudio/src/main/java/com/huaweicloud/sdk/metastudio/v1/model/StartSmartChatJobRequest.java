@@ -126,7 +126,7 @@ public class StartSmartChatJobRequest {
     }
 
     /**
-     * 智能交互对话ID，获取方法请参考[[创建智能交互对话直播间](https://support.huaweicloud.com/api-metastudio/CreateSmartChatRoom.html)](tag:hc,hk)[“创建智能交互对话直播间”](tag:cmcc)。
+     * 智能交互对话ID，获取方法请参考[创建智能交互对话直播间](CreateSmartChatRoom.xml)。
      * @return roomId
      */
     public String getRoomId() {
@@ -143,7 +143,7 @@ public class StartSmartChatJobRequest {
     }
 
     /**
-     * 应用ID，获取方法请参考[[创建应用](https://support.huaweicloud.com/api-metastudio/CreateRobot.html)](tag:hc,hk)[“创建应用”](tag:cmcc)。
+     * 应用ID，获取方法请参考[创建应用](CreateRobot.xml)。
      * @return robotId
      */
     public String getRobotId() {

@@ -101,6 +101,16 @@ public class ShowUserResult {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pwd_create_time")
+
+    private String pwdCreateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modify_pwd_time")
+
+    private String modifyPwdTime;
+
     public ShowUserResult withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -416,6 +426,40 @@ public class ShowUserResult {
         this.description = description;
     }
 
+    public ShowUserResult withPwdCreateTime(String pwdCreateTime) {
+        this.pwdCreateTime = pwdCreateTime;
+        return this;
+    }
+
+    /**
+     * IAM用户密码创建更新时间。
+     * @return pwdCreateTime
+     */
+    public String getPwdCreateTime() {
+        return pwdCreateTime;
+    }
+
+    public void setPwdCreateTime(String pwdCreateTime) {
+        this.pwdCreateTime = pwdCreateTime;
+    }
+
+    public ShowUserResult withModifyPwdTime(String modifyPwdTime) {
+        this.modifyPwdTime = modifyPwdTime;
+        return this;
+    }
+
+    /**
+     * IAM用户更新时间。
+     * @return modifyPwdTime
+     */
+    public String getModifyPwdTime() {
+        return modifyPwdTime;
+    }
+
+    public void setModifyPwdTime(String modifyPwdTime) {
+        this.modifyPwdTime = modifyPwdTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -435,7 +479,9 @@ public class ShowUserResult {
             && Objects.equals(this.lastLoginTime, that.lastLoginTime)
             && Objects.equals(this.pwdStrength, that.pwdStrength)
             && Objects.equals(this.isDomainOwner, that.isDomainOwner)
-            && Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.description, that.description);
+            && Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.pwdCreateTime, that.pwdCreateTime)
+            && Objects.equals(this.modifyPwdTime, that.modifyPwdTime);
     }
 
     @Override
@@ -457,7 +503,9 @@ public class ShowUserResult {
             pwdStrength,
             isDomainOwner,
             accessMode,
-            description);
+            description,
+            pwdCreateTime,
+            modifyPwdTime);
     }
 
     @Override
@@ -482,6 +530,8 @@ public class ShowUserResult {
         sb.append("    isDomainOwner: ").append(toIndentedString(isDomainOwner)).append("\n");
         sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    pwdCreateTime: ").append(toIndentedString(pwdCreateTime)).append("\n");
+        sb.append("    modifyPwdTime: ").append(toIndentedString(modifyPwdTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

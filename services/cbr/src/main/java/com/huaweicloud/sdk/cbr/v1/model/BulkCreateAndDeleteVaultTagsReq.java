@@ -39,16 +39,16 @@ public class BulkCreateAndDeleteVaultTagsReq {
         public static final ActionEnum CREATE = new ActionEnum("create");
 
         /**
-         * Enum _DELETE for value: " delete"
+         * Enum DELETE for value: "delete"
          */
-        public static final ActionEnum _DELETE = new ActionEnum(" delete");
+        public static final ActionEnum DELETE = new ActionEnum("delete");
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ActionEnum> createStaticFields() {
             Map<String, ActionEnum> map = new HashMap<>();
             map.put("create", CREATE);
-            map.put(" delete", _DELETE);
+            map.put("delete", DELETE);
             return Collections.unmodifiableMap(map);
         }
 

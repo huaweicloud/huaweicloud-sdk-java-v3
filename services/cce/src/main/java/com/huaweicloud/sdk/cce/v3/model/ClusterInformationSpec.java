@@ -38,6 +38,11 @@ public class ClusterInformationSpec {
 
     private ClusterInformationSpecHostNetwork hostNetwork;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deletionProtection")
+
+    private Boolean deletionProtection;
+
     public ClusterInformationSpec withDescription(String description) {
         this.description = description;
         return this;
@@ -166,6 +171,23 @@ public class ClusterInformationSpec {
         this.hostNetwork = hostNetwork;
     }
 
+    public ClusterInformationSpec withDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+        return this;
+    }
+
+    /**
+     * 集群删除保护，默认为false关闭，如果开启后用户将无法删除该集群。
+     * @return deletionProtection
+     */
+    public Boolean getDeletionProtection() {
+        return deletionProtection;
+    }
+
+    public void setDeletionProtection(Boolean deletionProtection) {
+        this.deletionProtection = deletionProtection;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -177,12 +199,13 @@ public class ClusterInformationSpec {
         ClusterInformationSpec that = (ClusterInformationSpec) obj;
         return Objects.equals(this.description, that.description) && Objects.equals(this.customSan, that.customSan)
             && Objects.equals(this.containerNetwork, that.containerNetwork)
-            && Objects.equals(this.eniNetwork, that.eniNetwork) && Objects.equals(this.hostNetwork, that.hostNetwork);
+            && Objects.equals(this.eniNetwork, that.eniNetwork) && Objects.equals(this.hostNetwork, that.hostNetwork)
+            && Objects.equals(this.deletionProtection, that.deletionProtection);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, customSan, containerNetwork, eniNetwork, hostNetwork);
+        return Objects.hash(description, customSan, containerNetwork, eniNetwork, hostNetwork, deletionProtection);
     }
 
     @Override
@@ -194,6 +217,7 @@ public class ClusterInformationSpec {
         sb.append("    containerNetwork: ").append(toIndentedString(containerNetwork)).append("\n");
         sb.append("    eniNetwork: ").append(toIndentedString(eniNetwork)).append("\n");
         sb.append("    hostNetwork: ").append(toIndentedString(hostNetwork)).append("\n");
+        sb.append("    deletionProtection: ").append(toIndentedString(deletionProtection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

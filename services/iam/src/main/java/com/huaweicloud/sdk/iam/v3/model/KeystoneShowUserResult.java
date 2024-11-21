@@ -56,6 +56,11 @@ public class KeystoneShowUserResult {
 
     private Boolean enabled;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_mode")
+
+    private String accessMode;
+
     public KeystoneShowUserResult withPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
         return this;
@@ -218,6 +223,23 @@ public class KeystoneShowUserResult {
         this.enabled = enabled;
     }
 
+    public KeystoneShowUserResult withAccessMode(String accessMode) {
+        this.accessMode = accessMode;
+        return this;
+    }
+
+    /**
+     * IAM用户访问方式。 - default：默认访问模式，编程访问和管理控制台访问。 - programmatic：编程访问。 - console：管理控制台访问。
+     * @return accessMode
+     */
+    public String getAccessMode() {
+        return accessMode;
+    }
+
+    public void setAccessMode(String accessMode) {
+        this.accessMode = accessMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -231,13 +253,22 @@ public class KeystoneShowUserResult {
             && Objects.equals(this.lastProjectId, that.lastProjectId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt) && Objects.equals(this.links, that.links)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.enabled, that.enabled);
+            && Objects.equals(this.id, that.id) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.accessMode, that.accessMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(pwdStatus, domainId, lastProjectId, name, description, passwordExpiresAt, links, id, enabled);
+        return Objects.hash(pwdStatus,
+            domainId,
+            lastProjectId,
+            name,
+            description,
+            passwordExpiresAt,
+            links,
+            id,
+            enabled,
+            accessMode);
     }
 
     @Override
@@ -253,6 +284,7 @@ public class KeystoneShowUserResult {
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

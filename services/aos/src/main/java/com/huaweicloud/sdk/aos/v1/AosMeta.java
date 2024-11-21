@@ -73,6 +73,8 @@ import com.huaweicloud.sdk.aos.v1.model.GetStackTemplateRequest;
 import com.huaweicloud.sdk.aos.v1.model.GetStackTemplateResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListExecutionPlansRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListExecutionPlansResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateHooksRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateHooksResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListStackEventsRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListStackEventsResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListStackInstancesRequest;
@@ -98,6 +100,8 @@ import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionPolicyRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionPolicyResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackSetMetadataRequest;
@@ -650,6 +654,40 @@ public class AosMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPrivateHooksRequest, ListPrivateHooksResponse> listPrivateHooks =
+        genForListPrivateHooks();
+
+    private static HttpRequestDef<ListPrivateHooksRequest, ListPrivateHooksResponse> genForListPrivateHooks() {
+        // basic
+        HttpRequestDef.Builder<ListPrivateHooksRequest, ListPrivateHooksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPrivateHooksRequest.class, ListPrivateHooksResponse.class)
+                .withName("ListPrivateHooks")
+                .withUri("/v1/private-hooks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<ListPrivateHooksRequest.SortKeyEnum>>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateHooksRequest::getSortKey, ListPrivateHooksRequest::setSortKey));
+        builder.<List<ListPrivateHooksRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateHooksRequest::getSortDir, ListPrivateHooksRequest::setSortDir));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateHooksRequest::getClientRequestId,
+                ListPrivateHooksRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPrivateHookMetadataRequest, ShowPrivateHookMetadataResponse> showPrivateHookMetadata =
         genForShowPrivateHookMetadata();
 
@@ -728,6 +766,57 @@ public class AosMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPrivateHookVersionPolicyRequest, ShowPrivateHookVersionPolicyResponse> showPrivateHookVersionPolicy =
+        genForShowPrivateHookVersionPolicy();
+
+    private static HttpRequestDef<ShowPrivateHookVersionPolicyRequest, ShowPrivateHookVersionPolicyResponse> genForShowPrivateHookVersionPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivateHookVersionPolicyRequest, ShowPrivateHookVersionPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPrivateHookVersionPolicyRequest.class,
+                    ShowPrivateHookVersionPolicyResponse.class)
+                .withName("ShowPrivateHookVersionPolicy")
+                .withUri("/v1/private-hooks/{hook_name}/versions/{hook_version}/policies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("hook_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateHookVersionPolicyRequest::getHookName,
+                ShowPrivateHookVersionPolicyRequest::setHookName));
+        builder.<String>withRequestField("hook_version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateHookVersionPolicyRequest::getHookVersion,
+                ShowPrivateHookVersionPolicyRequest::setHookVersion));
+        builder.<String>withRequestField("hook_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateHookVersionPolicyRequest::getHookId,
+                ShowPrivateHookVersionPolicyRequest::setHookId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateHookVersionPolicyRequest::getClientRequestId,
+                ShowPrivateHookVersionPolicyRequest::setClientRequestId));
+
+        // response
+
+        builder.<String>withResponseField("Location",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPrivateHookVersionPolicyResponse::getLocation,
+                ShowPrivateHookVersionPolicyResponse::setLocation));
         return builder.build();
     }
 

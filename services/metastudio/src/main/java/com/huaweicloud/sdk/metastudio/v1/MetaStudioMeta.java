@@ -39,6 +39,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAgencyWithRoleTypeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAssetByReplicationInfoResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobRequestBody;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionResponse;
@@ -83,6 +86,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateLargeFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateLargeFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateOnceCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateOnceCodeResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePacifyWordsReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePacifyWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreatePacifyWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePhotoDetectionResponse;
@@ -106,6 +112,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateSubtitleFileReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateSubtitleFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateSubtitleFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTTSAReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingAdvanceJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTrainingAdvanceJobResponse;
@@ -151,6 +160,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeletePacifyWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeletePacifyWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteProductRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteProductResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteRobotRequest;
@@ -206,6 +217,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListPacifyWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListPacifyWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListPictureModelingJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListProductsRequest;
@@ -261,6 +274,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetReplicationInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAsyncTtsJobRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowAsyncTtsJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowBeautyPreviewJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowBeautyPreviewJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
@@ -281,6 +296,14 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsIntentRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsIntentResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsSwitchRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsSwitchResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsTriggerTimeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowPacifyWordsTriggerTimeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDetectionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowPhotoDigitalHumanVideoRequest;
@@ -301,6 +324,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowSubtitleFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileRequest;
@@ -363,6 +388,15 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsSwitchReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsSwitchRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsSwitchResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsTriggerTimeReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsTriggerTimeRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsTriggerTimeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateProductResponse;
@@ -2976,6 +3010,11 @@ public class MetaStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHotQuestionRequest::getRobotId, ListHotQuestionRequest::setRobotId));
+        builder.<ListHotQuestionRequest.LanguageEnum>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListHotQuestionRequest.LanguageEnum.class),
+            f -> f.withMarshaller(ListHotQuestionRequest::getLanguage, ListHotQuestionRequest::setLanguage));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -4571,6 +4610,567 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(CreateOnceCodeResponse::getXRequestId, CreateOnceCodeResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePacifyWordsRequest, CreatePacifyWordsResponse> createPacifyWords =
+        genForCreatePacifyWords();
+
+    private static HttpRequestDef<CreatePacifyWordsRequest, CreatePacifyWordsResponse> genForCreatePacifyWords() {
+        // basic
+        HttpRequestDef.Builder<CreatePacifyWordsRequest, CreatePacifyWordsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePacifyWordsRequest.class, CreatePacifyWordsResponse.class)
+                .withName("CreatePacifyWords")
+                .withUri("/v1/{project_id}/digital-human-chat/pacify-words")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePacifyWordsRequest::getAuthorization,
+                CreatePacifyWordsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePacifyWordsRequest::getXSdkDate, CreatePacifyWordsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePacifyWordsRequest::getXProjectId, CreatePacifyWordsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePacifyWordsRequest::getXAppUserId, CreatePacifyWordsRequest::setXAppUserId));
+        builder.<CreatePacifyWordsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePacifyWordsReq.class),
+            f -> f.withMarshaller(CreatePacifyWordsRequest::getBody, CreatePacifyWordsRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePacifyWordsResponse::getXRequestId, CreatePacifyWordsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePacifyWordsRequest, DeletePacifyWordsResponse> deletePacifyWords =
+        genForDeletePacifyWords();
+
+    private static HttpRequestDef<DeletePacifyWordsRequest, DeletePacifyWordsResponse> genForDeletePacifyWords() {
+        // basic
+        HttpRequestDef.Builder<DeletePacifyWordsRequest, DeletePacifyWordsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePacifyWordsRequest.class, DeletePacifyWordsResponse.class)
+                .withName("DeletePacifyWords")
+                .withUri("/v1/{project_id}/digital-human-chat/pacify-words/{pacify_words_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pacify_words_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePacifyWordsRequest::getPacifyWordsId,
+                DeletePacifyWordsRequest::setPacifyWordsId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePacifyWordsRequest::getAuthorization,
+                DeletePacifyWordsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePacifyWordsRequest::getXSdkDate, DeletePacifyWordsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePacifyWordsRequest::getXProjectId, DeletePacifyWordsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePacifyWordsRequest::getXAppUserId, DeletePacifyWordsRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeletePacifyWordsResponse::getXRequestId, DeletePacifyWordsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPacifyWordsRequest, ListPacifyWordsResponse> listPacifyWords =
+        genForListPacifyWords();
+
+    private static HttpRequestDef<ListPacifyWordsRequest, ListPacifyWordsResponse> genForListPacifyWords() {
+        // basic
+        HttpRequestDef.Builder<ListPacifyWordsRequest, ListPacifyWordsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPacifyWordsRequest.class, ListPacifyWordsResponse.class)
+                .withName("ListPacifyWords")
+                .withUri("/v1/{project_id}/digital-human-chat/pacify-words")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPacifyWordsRequest::getOffset, ListPacifyWordsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPacifyWordsRequest::getLimit, ListPacifyWordsRequest::setLimit));
+        builder.<String>withRequestField("robot_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPacifyWordsRequest::getRobotId, ListPacifyWordsRequest::setRobotId));
+        builder.<ListPacifyWordsRequest.LanguageEnum>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListPacifyWordsRequest.LanguageEnum.class),
+            f -> f.withMarshaller(ListPacifyWordsRequest::getLanguage, ListPacifyWordsRequest::setLanguage));
+        builder.<Integer>withRequestField("pacify_words_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPacifyWordsRequest::getPacifyWordsType,
+                ListPacifyWordsRequest::setPacifyWordsType));
+        builder.<String>withRequestField("intent",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPacifyWordsRequest::getIntent, ListPacifyWordsRequest::setIntent));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPacifyWordsRequest::getAuthorization, ListPacifyWordsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPacifyWordsRequest::getXSdkDate, ListPacifyWordsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPacifyWordsRequest::getXProjectId, ListPacifyWordsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPacifyWordsRequest::getXAppUserId, ListPacifyWordsRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPacifyWordsResponse::getXRequestId, ListPacifyWordsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPacifyWordsRequest, ShowPacifyWordsResponse> showPacifyWords =
+        genForShowPacifyWords();
+
+    private static HttpRequestDef<ShowPacifyWordsRequest, ShowPacifyWordsResponse> genForShowPacifyWords() {
+        // basic
+        HttpRequestDef.Builder<ShowPacifyWordsRequest, ShowPacifyWordsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPacifyWordsRequest.class, ShowPacifyWordsResponse.class)
+                .withName("ShowPacifyWords")
+                .withUri("/v1/{project_id}/digital-human-chat/pacify-words/{pacify_words_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pacify_words_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsRequest::getPacifyWordsId, ShowPacifyWordsRequest::setPacifyWordsId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsRequest::getAuthorization, ShowPacifyWordsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsRequest::getXSdkDate, ShowPacifyWordsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsRequest::getXProjectId, ShowPacifyWordsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsRequest::getXAppUserId, ShowPacifyWordsRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPacifyWordsResponse::getXRequestId, ShowPacifyWordsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPacifyWordsIntentRequest, ShowPacifyWordsIntentResponse> showPacifyWordsIntent =
+        genForShowPacifyWordsIntent();
+
+    private static HttpRequestDef<ShowPacifyWordsIntentRequest, ShowPacifyWordsIntentResponse> genForShowPacifyWordsIntent() {
+        // basic
+        HttpRequestDef.Builder<ShowPacifyWordsIntentRequest, ShowPacifyWordsIntentResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPacifyWordsIntentRequest.class, ShowPacifyWordsIntentResponse.class)
+            .withName("ShowPacifyWordsIntent")
+            .withUri("/v1/{project_id}/digital-human-chat/pacify-words-intent")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("robot_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsIntentRequest::getRobotId, ShowPacifyWordsIntentRequest::setRobotId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsIntentRequest::getAuthorization,
+                ShowPacifyWordsIntentRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsIntentRequest::getXSdkDate,
+                ShowPacifyWordsIntentRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsIntentRequest::getXProjectId,
+                ShowPacifyWordsIntentRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsIntentRequest::getXAppUserId,
+                ShowPacifyWordsIntentRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPacifyWordsIntentResponse::getXRequestId,
+                ShowPacifyWordsIntentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPacifyWordsSwitchRequest, ShowPacifyWordsSwitchResponse> showPacifyWordsSwitch =
+        genForShowPacifyWordsSwitch();
+
+    private static HttpRequestDef<ShowPacifyWordsSwitchRequest, ShowPacifyWordsSwitchResponse> genForShowPacifyWordsSwitch() {
+        // basic
+        HttpRequestDef.Builder<ShowPacifyWordsSwitchRequest, ShowPacifyWordsSwitchResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowPacifyWordsSwitchRequest.class, ShowPacifyWordsSwitchResponse.class)
+            .withName("ShowPacifyWordsSwitch")
+            .withUri("/v1/{project_id}/digital-human-chat/pacify-words-switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("robot_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsSwitchRequest::getRobotId, ShowPacifyWordsSwitchRequest::setRobotId));
+        builder.<ShowPacifyWordsSwitchRequest.LanguageEnum>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowPacifyWordsSwitchRequest.LanguageEnum.class),
+            f -> f.withMarshaller(ShowPacifyWordsSwitchRequest::getLanguage,
+                ShowPacifyWordsSwitchRequest::setLanguage));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsSwitchRequest::getAuthorization,
+                ShowPacifyWordsSwitchRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsSwitchRequest::getXSdkDate,
+                ShowPacifyWordsSwitchRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsSwitchRequest::getXProjectId,
+                ShowPacifyWordsSwitchRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsSwitchRequest::getXAppUserId,
+                ShowPacifyWordsSwitchRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPacifyWordsSwitchResponse::getXRequestId,
+                ShowPacifyWordsSwitchResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPacifyWordsTriggerTimeRequest, ShowPacifyWordsTriggerTimeResponse> showPacifyWordsTriggerTime =
+        genForShowPacifyWordsTriggerTime();
+
+    private static HttpRequestDef<ShowPacifyWordsTriggerTimeRequest, ShowPacifyWordsTriggerTimeResponse> genForShowPacifyWordsTriggerTime() {
+        // basic
+        HttpRequestDef.Builder<ShowPacifyWordsTriggerTimeRequest, ShowPacifyWordsTriggerTimeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPacifyWordsTriggerTimeRequest.class,
+                    ShowPacifyWordsTriggerTimeResponse.class)
+                .withName("ShowPacifyWordsTriggerTime")
+                .withUri("/v1/{project_id}/digital-human-chat/pacify-words-time")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("robot_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsTriggerTimeRequest::getRobotId,
+                ShowPacifyWordsTriggerTimeRequest::setRobotId));
+        builder.<ShowPacifyWordsTriggerTimeRequest.LanguageEnum>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowPacifyWordsTriggerTimeRequest.LanguageEnum.class),
+            f -> f.withMarshaller(ShowPacifyWordsTriggerTimeRequest::getLanguage,
+                ShowPacifyWordsTriggerTimeRequest::setLanguage));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsTriggerTimeRequest::getAuthorization,
+                ShowPacifyWordsTriggerTimeRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsTriggerTimeRequest::getXSdkDate,
+                ShowPacifyWordsTriggerTimeRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsTriggerTimeRequest::getXProjectId,
+                ShowPacifyWordsTriggerTimeRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPacifyWordsTriggerTimeRequest::getXAppUserId,
+                ShowPacifyWordsTriggerTimeRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPacifyWordsTriggerTimeResponse::getXRequestId,
+                ShowPacifyWordsTriggerTimeResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePacifyWordsRequest, UpdatePacifyWordsResponse> updatePacifyWords =
+        genForUpdatePacifyWords();
+
+    private static HttpRequestDef<UpdatePacifyWordsRequest, UpdatePacifyWordsResponse> genForUpdatePacifyWords() {
+        // basic
+        HttpRequestDef.Builder<UpdatePacifyWordsRequest, UpdatePacifyWordsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePacifyWordsRequest.class, UpdatePacifyWordsResponse.class)
+                .withName("UpdatePacifyWords")
+                .withUri("/v1/{project_id}/digital-human-chat/pacify-words/{pacify_words_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pacify_words_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsRequest::getPacifyWordsId,
+                UpdatePacifyWordsRequest::setPacifyWordsId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsRequest::getAuthorization,
+                UpdatePacifyWordsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsRequest::getXSdkDate, UpdatePacifyWordsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsRequest::getXProjectId, UpdatePacifyWordsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsRequest::getXAppUserId, UpdatePacifyWordsRequest::setXAppUserId));
+        builder.<UpdatePacifyWordsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePacifyWordsReq.class),
+            f -> f.withMarshaller(UpdatePacifyWordsRequest::getBody, UpdatePacifyWordsRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePacifyWordsResponse::getXRequestId, UpdatePacifyWordsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePacifyWordsSwitchRequest, UpdatePacifyWordsSwitchResponse> updatePacifyWordsSwitch =
+        genForUpdatePacifyWordsSwitch();
+
+    private static HttpRequestDef<UpdatePacifyWordsSwitchRequest, UpdatePacifyWordsSwitchResponse> genForUpdatePacifyWordsSwitch() {
+        // basic
+        HttpRequestDef.Builder<UpdatePacifyWordsSwitchRequest, UpdatePacifyWordsSwitchResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdatePacifyWordsSwitchRequest.class, UpdatePacifyWordsSwitchResponse.class)
+            .withName("UpdatePacifyWordsSwitch")
+            .withUri("/v1/{project_id}/digital-human-chat/pacify-words-switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsSwitchRequest::getAuthorization,
+                UpdatePacifyWordsSwitchRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsSwitchRequest::getXSdkDate,
+                UpdatePacifyWordsSwitchRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsSwitchRequest::getXProjectId,
+                UpdatePacifyWordsSwitchRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsSwitchRequest::getXAppUserId,
+                UpdatePacifyWordsSwitchRequest::setXAppUserId));
+        builder.<UpdatePacifyWordsSwitchReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePacifyWordsSwitchReq.class),
+            f -> f.withMarshaller(UpdatePacifyWordsSwitchRequest::getBody, UpdatePacifyWordsSwitchRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePacifyWordsSwitchResponse::getXRequestId,
+                UpdatePacifyWordsSwitchResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePacifyWordsTriggerTimeRequest, UpdatePacifyWordsTriggerTimeResponse> updatePacifyWordsTriggerTime =
+        genForUpdatePacifyWordsTriggerTime();
+
+    private static HttpRequestDef<UpdatePacifyWordsTriggerTimeRequest, UpdatePacifyWordsTriggerTimeResponse> genForUpdatePacifyWordsTriggerTime() {
+        // basic
+        HttpRequestDef.Builder<UpdatePacifyWordsTriggerTimeRequest, UpdatePacifyWordsTriggerTimeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdatePacifyWordsTriggerTimeRequest.class,
+                    UpdatePacifyWordsTriggerTimeResponse.class)
+                .withName("UpdatePacifyWordsTriggerTime")
+                .withUri("/v1/{project_id}/digital-human-chat/pacify-words-time")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsTriggerTimeRequest::getAuthorization,
+                UpdatePacifyWordsTriggerTimeRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsTriggerTimeRequest::getXSdkDate,
+                UpdatePacifyWordsTriggerTimeRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsTriggerTimeRequest::getXProjectId,
+                UpdatePacifyWordsTriggerTimeRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePacifyWordsTriggerTimeRequest::getXAppUserId,
+                UpdatePacifyWordsTriggerTimeRequest::setXAppUserId));
+        builder.<UpdatePacifyWordsTriggerTimeReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePacifyWordsTriggerTimeReq.class),
+            f -> f.withMarshaller(UpdatePacifyWordsTriggerTimeRequest::getBody,
+                UpdatePacifyWordsTriggerTimeRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePacifyWordsTriggerTimeResponse::getXRequestId,
+                UpdatePacifyWordsTriggerTimeResponse::setXRequestId));
         return builder.build();
     }
 
@@ -6855,6 +7455,105 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSubtitleFileRequest, CreateSubtitleFileResponse> createSubtitleFile =
+        genForCreateSubtitleFile();
+
+    private static HttpRequestDef<CreateSubtitleFileRequest, CreateSubtitleFileResponse> genForCreateSubtitleFile() {
+        // basic
+        HttpRequestDef.Builder<CreateSubtitleFileRequest, CreateSubtitleFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSubtitleFileRequest.class, CreateSubtitleFileResponse.class)
+                .withName("CreateSubtitleFile")
+                .withUri("/v1/{project_id}/subtitle-files")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSubtitleFileRequest::getAuthorization,
+                CreateSubtitleFileRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSubtitleFileRequest::getXSdkDate, CreateSubtitleFileRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSubtitleFileRequest::getXProjectId, CreateSubtitleFileRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSubtitleFileRequest::getXAppUserId, CreateSubtitleFileRequest::setXAppUserId));
+        builder.<CreateSubtitleFileReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateSubtitleFileReq.class),
+            f -> f.withMarshaller(CreateSubtitleFileRequest::getBody, CreateSubtitleFileRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateSubtitleFileResponse::getXRequestId,
+                CreateSubtitleFileResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSubtitleFileRequest, ShowSubtitleFileResponse> showSubtitleFile =
+        genForShowSubtitleFile();
+
+    private static HttpRequestDef<ShowSubtitleFileRequest, ShowSubtitleFileResponse> genForShowSubtitleFile() {
+        // basic
+        HttpRequestDef.Builder<ShowSubtitleFileRequest, ShowSubtitleFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSubtitleFileRequest.class, ShowSubtitleFileResponse.class)
+                .withName("ShowSubtitleFile")
+                .withUri("/v1/{project_id}/subtitle-files/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSubtitleFileRequest::getJobId, ShowSubtitleFileRequest::setJobId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSubtitleFileRequest::getAuthorization,
+                ShowSubtitleFileRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSubtitleFileRequest::getXSdkDate, ShowSubtitleFileRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSubtitleFileRequest::getXProjectId, ShowSubtitleFileRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSubtitleFileRequest::getXAppUserId, ShowSubtitleFileRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowSubtitleFileResponse::getXRequestId, ShowSubtitleFileResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CountTenantResourcesRequest, CountTenantResourcesResponse> countTenantResources =
         genForCountTenantResources();
 
@@ -8148,6 +8847,50 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAsyncTtsJobRequest, CreateAsyncTtsJobResponse> createAsyncTtsJob =
+        genForCreateAsyncTtsJob();
+
+    private static HttpRequestDef<CreateAsyncTtsJobRequest, CreateAsyncTtsJobResponse> genForCreateAsyncTtsJob() {
+        // basic
+        HttpRequestDef.Builder<CreateAsyncTtsJobRequest, CreateAsyncTtsJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAsyncTtsJobRequest.class, CreateAsyncTtsJobResponse.class)
+                .withName("CreateAsyncTtsJob")
+                .withUri("/v1/{project_id}/ttsc/async-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAsyncTtsJobRequest::getAuthorization,
+                CreateAsyncTtsJobRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAsyncTtsJobRequest::getXSdkDate, CreateAsyncTtsJobRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAsyncTtsJobRequest::getXProjectId, CreateAsyncTtsJobRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAsyncTtsJobRequest::getXAppUserId, CreateAsyncTtsJobRequest::setXAppUserId));
+        builder.<CreateAsyncTtsJobRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAsyncTtsJobRequestBody.class),
+            f -> f.withMarshaller(CreateAsyncTtsJobRequest::getBody, CreateAsyncTtsJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateTtsAuditionRequest, CreateTtsAuditionResponse> createTtsAudition =
         genForCreateTtsAudition();
 
@@ -8191,6 +8934,49 @@ public class MetaStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTtsAuditionRequestBody.class),
             f -> f.withMarshaller(CreateTtsAuditionRequest::getBody, CreateTtsAuditionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAsyncTtsJobRequest, ShowAsyncTtsJobResponse> showAsyncTtsJob =
+        genForShowAsyncTtsJob();
+
+    private static HttpRequestDef<ShowAsyncTtsJobRequest, ShowAsyncTtsJobResponse> genForShowAsyncTtsJob() {
+        // basic
+        HttpRequestDef.Builder<ShowAsyncTtsJobRequest, ShowAsyncTtsJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAsyncTtsJobRequest.class, ShowAsyncTtsJobResponse.class)
+                .withName("ShowAsyncTtsJob")
+                .withUri("/v1/{project_id}/ttsc/async-jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getJobId, ShowAsyncTtsJobRequest::setJobId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getAuthorization, ShowAsyncTtsJobRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getXSdkDate, ShowAsyncTtsJobRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getXProjectId, ShowAsyncTtsJobRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAsyncTtsJobRequest::getXAppUserId, ShowAsyncTtsJobRequest::setXAppUserId));
 
         // response
 
@@ -9004,6 +9790,11 @@ public class MetaStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWelcomeSpeechRequest::getRobotId, ListWelcomeSpeechRequest::setRobotId));
+        builder.<ListWelcomeSpeechRequest.LanguageEnum>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListWelcomeSpeechRequest.LanguageEnum.class),
+            f -> f.withMarshaller(ListWelcomeSpeechRequest::getLanguage, ListWelcomeSpeechRequest::setLanguage));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -9104,6 +9895,12 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowWelcomeSpeechSwitchRequest::getRobotId,
                 ShowWelcomeSpeechSwitchRequest::setRobotId));
+        builder.<ShowWelcomeSpeechSwitchRequest.LanguageEnum>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowWelcomeSpeechSwitchRequest.LanguageEnum.class),
+            f -> f.withMarshaller(ShowWelcomeSpeechSwitchRequest::getLanguage,
+                ShowWelcomeSpeechSwitchRequest::setLanguage));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

@@ -58,6 +58,8 @@ import com.huaweicloud.sdk.aos.v1.model.GetStackTemplateRequest;
 import com.huaweicloud.sdk.aos.v1.model.GetStackTemplateResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListExecutionPlansRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListExecutionPlansResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateHooksRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateHooksResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListStackEventsRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListStackEventsResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListStackInstancesRequest;
@@ -82,6 +84,8 @@ import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionPolicyRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionPolicyResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackSetMetadataRequest;
@@ -799,15 +803,21 @@ public class AosAsyncClient {
      * 
      * 创建一个带有初始默认版本的私有hook，创建私有hook的时候需要同时创建一个初始化的默认版本，不允许空私有hook的创建。
      * 设置配置(Configuration)后的私有hook才会在触发资源栈部署时生效，资源栈使用私有hook的默认版本。若创建私有hook时未指定配置项，则该私有hook在资源栈部署时不生效，后续可通过UpdatePrivateHook API更新配置。
+     * 
      *   * 支持hook策略模板检验的资源栈服务API：
-     *       DeployStack 
+     *       CreateExecutionPlan
+     *       ApplyExecutionPlan
+     *       CreateStack
+     *       DeployStack
+     *       ContinueDeployStack
      *       DeleteStack
+     *       DeleteStackEnhanced
      *   * 创建私有hook时指定的版本为初始默认版本。
      *   * 如果同名的私有hook在当前domain_id+region下已经存在，则会返回409。
      *   * 私有hook版本号遵循语义化版本号（Semantic Version），为用户自定义。
      *   * 资源编排服务会对私有hook进行校验，如文件大小，策略文件语法校验等。若存在错误，则会创建失败。
      *   * 当前仅支持部署资源前的检测，不支持部署资源过程中的检测。如果通过了部署资源前的检测，资源栈则会继续部署资源。反之会停止部署资源，并记录资源栈事件（stack events）。
-     *   * 仅支持OPA开源引擎识别的，以Rego（https://www.openpolicyagent.org/docs/latest/policy-language/）语言编写的策略模板(用户可以通过policy_uri或policy_body给与策略文件内容)。
+     *   * 仅支持OPA开源引擎识别的，以Rego（https://www.openpolicyagent.org/docs/latest/policy-language/）语言编写的策略模板(用户可以通过policy_uri或policy_body给予策略文件内容)。
      *   * 策略模板中的决策结果使用object类型的hook_result，hook_result所在包的包名必须使用policy。hook_result格式如下：
      *       &#x60;&#x60;&#x60;
      *       hook_result :&#x3D; {
@@ -849,15 +859,21 @@ public class AosAsyncClient {
      * 
      * 创建一个带有初始默认版本的私有hook，创建私有hook的时候需要同时创建一个初始化的默认版本，不允许空私有hook的创建。
      * 设置配置(Configuration)后的私有hook才会在触发资源栈部署时生效，资源栈使用私有hook的默认版本。若创建私有hook时未指定配置项，则该私有hook在资源栈部署时不生效，后续可通过UpdatePrivateHook API更新配置。
+     * 
      *   * 支持hook策略模板检验的资源栈服务API：
-     *       DeployStack 
+     *       CreateExecutionPlan
+     *       ApplyExecutionPlan
+     *       CreateStack
+     *       DeployStack
+     *       ContinueDeployStack
      *       DeleteStack
+     *       DeleteStackEnhanced
      *   * 创建私有hook时指定的版本为初始默认版本。
      *   * 如果同名的私有hook在当前domain_id+region下已经存在，则会返回409。
      *   * 私有hook版本号遵循语义化版本号（Semantic Version），为用户自定义。
      *   * 资源编排服务会对私有hook进行校验，如文件大小，策略文件语法校验等。若存在错误，则会创建失败。
      *   * 当前仅支持部署资源前的检测，不支持部署资源过程中的检测。如果通过了部署资源前的检测，资源栈则会继续部署资源。反之会停止部署资源，并记录资源栈事件（stack events）。
-     *   * 仅支持OPA开源引擎识别的，以Rego（https://www.openpolicyagent.org/docs/latest/policy-language/）语言编写的策略模板(用户可以通过policy_uri或policy_body给与策略文件内容)。
+     *   * 仅支持OPA开源引擎识别的，以Rego（https://www.openpolicyagent.org/docs/latest/policy-language/）语言编写的策略模板(用户可以通过policy_uri或policy_body给予策略文件内容)。
      *   * 策略模板中的决策结果使用object类型的hook_result，hook_result所在包的包名必须使用policy。hook_result格式如下：
      *       &#x60;&#x60;&#x60;
      *       hook_result :&#x3D; {
@@ -899,6 +915,7 @@ public class AosAsyncClient {
      * 创建私有hook版本（CreatePrivateHookVersion）
      * 
      * 创建私有hook版本，创建私有hook版本后需要调用UpdatePrivateHook API设置为默认版本才能生效。
+     * 
      *   * 版本号遵循语义化版本号（Semantic Version），为用户自定义。
      *   * 若hook_name和hook_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
      *   * 资源编排服务会对私有hook进行校验，如文件大小，策略文件语法校验等。若存在错误，则会创建失败。
@@ -919,6 +936,7 @@ public class AosAsyncClient {
      * 创建私有hook版本（CreatePrivateHookVersion）
      * 
      * 创建私有hook版本，创建私有hook版本后需要调用UpdatePrivateHook API设置为默认版本才能生效。
+     * 
      *   * 版本号遵循语义化版本号（Semantic Version），为用户自定义。
      *   * 若hook_name和hook_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
      *   * 资源编排服务会对私有hook进行校验，如文件大小，策略文件语法校验等。若存在错误，则会创建失败。
@@ -939,6 +957,7 @@ public class AosAsyncClient {
      * 删除私有hook（DeletePrivateHook）
      * 
      * 删除某个私有hook以及私有hook下的全部hook版本
+     * 
      *   * 默认版本只能调用本API删除，除默认版本外的其它版本可以调用DeletePrivateHookVersion API删除。
      *   * 若hook_name和hook_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
      * 
@@ -959,6 +978,7 @@ public class AosAsyncClient {
      * 删除私有hook（DeletePrivateHook）
      * 
      * 删除某个私有hook以及私有hook下的全部hook版本
+     * 
      *   * 默认版本只能调用本API删除，除默认版本外的其它版本可以调用DeletePrivateHookVersion API删除。
      *   * 若hook_name和hook_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
      * 
@@ -980,6 +1000,7 @@ public class AosAsyncClient {
      * 删除私有hook版本（DeletePrivateHookVersion）
      * 
      * 删除某个私有hook版本
+     * 
      *   * 默认版本只能调用DeletePrivateHook API删除，除默认版本外的其它版本都可以调用本API删除。
      *   * 若hook_name和hook_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
      * 
@@ -1001,6 +1022,7 @@ public class AosAsyncClient {
      * 删除私有hook版本（DeletePrivateHookVersion）
      * 
      * 删除某个私有hook版本
+     * 
      *   * 默认版本只能调用DeletePrivateHook API删除，除默认版本外的其它版本都可以调用本API删除。
      *   * 若hook_name和hook_id同时存在，则资源编排服务会检查是否两个匹配，如果不匹配则会返回400。
      * 
@@ -1014,6 +1036,49 @@ public class AosAsyncClient {
     public AsyncInvoker<DeletePrivateHookVersionRequest, DeletePrivateHookVersionResponse> deletePrivateHookVersionAsyncInvoker(
         DeletePrivateHookVersionRequest request) {
         return new AsyncInvoker<>(request, AosMeta.deletePrivateHookVersion, hcClient);
+    }
+
+    /**
+     * 列举私有hook
+     *
+     * 列举私有hook（ListPrivateHooks）
+     * 
+     * 列举当前局点下用户所有的私有hook。
+     * 
+     *   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir的数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间降序排序。
+     *   * 注意：目前暂时返回全量hook的信息，即不支持分页。
+     *   * 若当前用户没有任何私有hook，则返回空list。
+     *   * 具体返回的信息见ListPrivateHooksResponseBody。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPrivateHooksRequest 请求对象
+     * @return CompletableFuture<ListPrivateHooksResponse>
+     */
+    public CompletableFuture<ListPrivateHooksResponse> listPrivateHooksAsync(ListPrivateHooksRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.listPrivateHooks);
+    }
+
+    /**
+     * 列举私有hook
+     *
+     * 列举私有hook（ListPrivateHooks）
+     * 
+     * 列举当前局点下用户所有的私有hook。
+     * 
+     *   * 可以使用sort_key和sort_dir两个关键字对返回结果按创建时间（create_time）进行排序。给予的sort_key和sort_dir的数量须一致，否则返回400。若未给予sort_key和sort_dir，则默认按照创建时间降序排序。
+     *   * 注意：目前暂时返回全量hook的信息，即不支持分页。
+     *   * 若当前用户没有任何私有hook，则返回空list。
+     *   * 具体返回的信息见ListPrivateHooksResponseBody。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPrivateHooksRequest 请求对象
+     * @return AsyncInvoker<ListPrivateHooksRequest, ListPrivateHooksResponse>
+     */
+    public AsyncInvoker<ListPrivateHooksRequest, ListPrivateHooksResponse> listPrivateHooksAsyncInvoker(
+        ListPrivateHooksRequest request) {
+        return new AsyncInvoker<>(request, AosMeta.listPrivateHooks, hcClient);
     }
 
     /**
@@ -1094,6 +1159,46 @@ public class AosAsyncClient {
     public AsyncInvoker<ShowPrivateHookVersionMetadataRequest, ShowPrivateHookVersionMetadataResponse> showPrivateHookVersionMetadataAsyncInvoker(
         ShowPrivateHookVersionMetadataRequest request) {
         return new AsyncInvoker<>(request, AosMeta.showPrivateHookVersionMetadata, hcClient);
+    }
+
+    /**
+     * 获取私有hook版本策略
+     *
+     * 获取私有hook版本策略（ShowPrivateHookVersionPolicy）
+     * 
+     * 获取指定私有hook对应版本的策略。
+     * 
+     *   * 如果获取成功，则以临时重定向形式返回私有hook版本策略下载链接（OBS Pre Signed地址，有效期为5分钟），大多数的客户端会进行自动重定向并下载私有hook版本策略。
+     *   * 如果未进行自动重定向，请参考HTTP的重定向规则获取私有hook版本策略下载链接，手动下载私有hook版本策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPrivateHookVersionPolicyRequest 请求对象
+     * @return CompletableFuture<ShowPrivateHookVersionPolicyResponse>
+     */
+    public CompletableFuture<ShowPrivateHookVersionPolicyResponse> showPrivateHookVersionPolicyAsync(
+        ShowPrivateHookVersionPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.showPrivateHookVersionPolicy);
+    }
+
+    /**
+     * 获取私有hook版本策略
+     *
+     * 获取私有hook版本策略（ShowPrivateHookVersionPolicy）
+     * 
+     * 获取指定私有hook对应版本的策略。
+     * 
+     *   * 如果获取成功，则以临时重定向形式返回私有hook版本策略下载链接（OBS Pre Signed地址，有效期为5分钟），大多数的客户端会进行自动重定向并下载私有hook版本策略。
+     *   * 如果未进行自动重定向，请参考HTTP的重定向规则获取私有hook版本策略下载链接，手动下载私有hook版本策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPrivateHookVersionPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowPrivateHookVersionPolicyRequest, ShowPrivateHookVersionPolicyResponse>
+     */
+    public AsyncInvoker<ShowPrivateHookVersionPolicyRequest, ShowPrivateHookVersionPolicyResponse> showPrivateHookVersionPolicyAsyncInvoker(
+        ShowPrivateHookVersionPolicyRequest request) {
+        return new AsyncInvoker<>(request, AosMeta.showPrivateHookVersionPolicy, hcClient);
     }
 
     /**

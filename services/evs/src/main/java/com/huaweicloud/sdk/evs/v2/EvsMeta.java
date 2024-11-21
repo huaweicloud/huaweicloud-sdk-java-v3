@@ -387,6 +387,11 @@ public class EvsMeta {
                 .withContentType("application/json;charset=UTF-8");
 
         // requests
+        builder.<String>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateVolumeRequest::getXClientToken, CreateVolumeRequest::setXClientToken));
         builder.<CreateVolumeRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

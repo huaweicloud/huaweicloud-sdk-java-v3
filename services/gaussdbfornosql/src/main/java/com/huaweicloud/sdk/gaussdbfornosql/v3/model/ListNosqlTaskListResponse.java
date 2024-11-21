@@ -17,14 +17,14 @@ public class ListNosqlTaskListResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
-    private String totalCount;
+    private Integer totalCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedules")
 
     private List<ScheduleDetailInfo> schedules = null;
 
-    public ListNosqlTaskListResponse withTotalCount(String totalCount) {
+    public ListNosqlTaskListResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
@@ -33,11 +33,11 @@ public class ListNosqlTaskListResponse extends SdkResponse {
      * 记录总数。
      * @return totalCount
      */
-    public String getTotalCount() {
+    public Integer getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(String totalCount) {
+    public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
 

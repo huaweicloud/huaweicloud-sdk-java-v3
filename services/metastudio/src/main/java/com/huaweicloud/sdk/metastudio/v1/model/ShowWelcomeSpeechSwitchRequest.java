@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.metastudio.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -34,6 +39,81 @@ public class ShowWelcomeSpeechSwitchRequest {
     @JsonProperty(value = "robot_id")
 
     private String robotId;
+
+    /**
+     * 智能交互语言  * CN:中文  * EN:英文
+     */
+    public static final class LanguageEnum {
+
+        /**
+         * Enum CN for value: "CN"
+         */
+        public static final LanguageEnum CN = new LanguageEnum("CN");
+
+        /**
+         * Enum EN for value: "EN"
+         */
+        public static final LanguageEnum EN = new LanguageEnum("EN");
+
+        private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, LanguageEnum> createStaticFields() {
+            Map<String, LanguageEnum> map = new HashMap<>();
+            map.put("CN", CN);
+            map.put("EN", EN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        LanguageEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static LanguageEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LanguageEnum(value));
+        }
+
+        public static LanguageEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof LanguageEnum) {
+                return this.value.equals(((LanguageEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "language")
+
+    private LanguageEnum language;
 
     public ShowWelcomeSpeechSwitchRequest withAuthorization(String authorization) {
         this.authorization = authorization;
@@ -126,6 +206,23 @@ public class ShowWelcomeSpeechSwitchRequest {
         this.robotId = robotId;
     }
 
+    public ShowWelcomeSpeechSwitchRequest withLanguage(LanguageEnum language) {
+        this.language = language;
+        return this;
+    }
+
+    /**
+     * 智能交互语言  * CN:中文  * EN:英文
+     * @return language
+     */
+    public LanguageEnum getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(LanguageEnum language) {
+        this.language = language;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -137,12 +234,12 @@ public class ShowWelcomeSpeechSwitchRequest {
         ShowWelcomeSpeechSwitchRequest that = (ShowWelcomeSpeechSwitchRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
-            && Objects.equals(this.robotId, that.robotId);
+            && Objects.equals(this.robotId, that.robotId) && Objects.equals(this.language, that.language);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, robotId);
+        return Objects.hash(authorization, xSdkDate, xProjectId, xAppUserId, robotId, language);
     }
 
     @Override
@@ -154,6 +251,7 @@ public class ShowWelcomeSpeechSwitchRequest {
         sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
+        sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -223,6 +223,21 @@ public class AlarmHistoryItemV2 {
     private OffsetDateTime endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "first_alarm_time")
+
+    private OffsetDateTime firstAlarmTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_alarm_time")
+
+    private OffsetDateTime lastAlarmTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_recovery_time")
+
+    private OffsetDateTime alarmRecoveryTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric")
 
     private Metric metric;
@@ -403,6 +418,57 @@ public class AlarmHistoryItemV2 {
 
     public void setEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
+    }
+
+    public AlarmHistoryItemV2 withFirstAlarmTime(OffsetDateTime firstAlarmTime) {
+        this.firstAlarmTime = firstAlarmTime;
+        return this;
+    }
+
+    /**
+     * 第一次告警时间戳，UTC时间
+     * @return firstAlarmTime
+     */
+    public OffsetDateTime getFirstAlarmTime() {
+        return firstAlarmTime;
+    }
+
+    public void setFirstAlarmTime(OffsetDateTime firstAlarmTime) {
+        this.firstAlarmTime = firstAlarmTime;
+    }
+
+    public AlarmHistoryItemV2 withLastAlarmTime(OffsetDateTime lastAlarmTime) {
+        this.lastAlarmTime = lastAlarmTime;
+        return this;
+    }
+
+    /**
+     * 最后一次告警时间，UTC时间
+     * @return lastAlarmTime
+     */
+    public OffsetDateTime getLastAlarmTime() {
+        return lastAlarmTime;
+    }
+
+    public void setLastAlarmTime(OffsetDateTime lastAlarmTime) {
+        this.lastAlarmTime = lastAlarmTime;
+    }
+
+    public AlarmHistoryItemV2 withAlarmRecoveryTime(OffsetDateTime alarmRecoveryTime) {
+        this.alarmRecoveryTime = alarmRecoveryTime;
+        return this;
+    }
+
+    /**
+     * 告警恢复时间，UTC时间
+     * @return alarmRecoveryTime
+     */
+    public OffsetDateTime getAlarmRecoveryTime() {
+        return alarmRecoveryTime;
+    }
+
+    public void setAlarmRecoveryTime(OffsetDateTime alarmRecoveryTime) {
+        this.alarmRecoveryTime = alarmRecoveryTime;
     }
 
     public AlarmHistoryItemV2 withMetric(Metric metric) {
@@ -595,8 +661,10 @@ public class AlarmHistoryItemV2 {
             && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
             && Objects.equals(this.level, that.level) && Objects.equals(this.type, that.type)
             && Objects.equals(this.actionEnabled, that.actionEnabled) && Objects.equals(this.beginTime, that.beginTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.metric, that.metric)
-            && Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.firstAlarmTime, that.firstAlarmTime)
+            && Objects.equals(this.lastAlarmTime, that.lastAlarmTime)
+            && Objects.equals(this.alarmRecoveryTime, that.alarmRecoveryTime)
+            && Objects.equals(this.metric, that.metric) && Objects.equals(this.condition, that.condition)
             && Objects.equals(this.additionalInfo, that.additionalInfo)
             && Objects.equals(this.alarmActions, that.alarmActions) && Objects.equals(this.okActions, that.okActions)
             && Objects.equals(this.dataPoints, that.dataPoints);
@@ -613,6 +681,9 @@ public class AlarmHistoryItemV2 {
             actionEnabled,
             beginTime,
             endTime,
+            firstAlarmTime,
+            lastAlarmTime,
+            alarmRecoveryTime,
             metric,
             condition,
             additionalInfo,
@@ -634,6 +705,9 @@ public class AlarmHistoryItemV2 {
         sb.append("    actionEnabled: ").append(toIndentedString(actionEnabled)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    firstAlarmTime: ").append(toIndentedString(firstAlarmTime)).append("\n");
+        sb.append("    lastAlarmTime: ").append(toIndentedString(lastAlarmTime)).append("\n");
+        sb.append("    alarmRecoveryTime: ").append(toIndentedString(alarmRecoveryTime)).append("\n");
         sb.append("    metric: ").append(toIndentedString(metric)).append("\n");
         sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
         sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Common {
 
     /**
-     * pvc开关。
+     * 高清低码开关。
      */
     public static final class PvcEnum {
 
@@ -286,7 +286,7 @@ public class Common {
     }
 
     /**
-     * pvc开关。
+     * 高清低码开关。
      * @return pvc
      */
     public PvcEnum getPvc() {
@@ -303,7 +303,7 @@ public class Common {
     }
 
     /**
-     * pvc版本。
+     * 高清低码版本。
      * @return pvcVersion
      */
     public String getPvcVersion() {

@@ -78,6 +78,11 @@ public class VaultOrder {
 
     private Boolean autoExpand;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "locked")
+
+    private Boolean locked;
+
     public VaultOrder withName(String name) {
         this.name = name;
         return this;
@@ -358,6 +363,23 @@ public class VaultOrder {
         this.autoExpand = autoExpand;
     }
 
+    public VaultOrder withLocked(Boolean locked) {
+        this.locked = locked;
+        return this;
+    }
+
+    /**
+     * 用于标识当前存储库是否已锁定
+     * @return locked
+     */
+    public Boolean getLocked() {
+        return locked;
+    }
+
+    public void setLocked(Boolean locked) {
+        this.locked = locked;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -373,7 +395,8 @@ public class VaultOrder {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.autoBind, that.autoBind) && Objects.equals(this.bindRules, that.bindRules)
             && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.smnNotify, that.smnNotify)
-            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.autoExpand, that.autoExpand);
+            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.autoExpand, that.autoExpand)
+            && Objects.equals(this.locked, that.locked);
     }
 
     @Override
@@ -390,7 +413,8 @@ public class VaultOrder {
             threshold,
             smnNotify,
             parameters,
-            autoExpand);
+            autoExpand,
+            locked);
     }
 
     @Override
@@ -410,6 +434,7 @@ public class VaultOrder {
         sb.append("    smnNotify: ").append(toIndentedString(smnNotify)).append("\n");
         sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
         sb.append("    autoExpand: ").append(toIndentedString(autoExpand)).append("\n");
+        sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -99,6 +99,11 @@ public class VaultGet {
     private String sysLockSourceService;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "locked")
+
+    private Boolean locked;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated_at")
 
     private String updatedAt;
@@ -449,6 +454,23 @@ public class VaultGet {
         this.sysLockSourceService = sysLockSourceService;
     }
 
+    public VaultGet withLocked(Boolean locked) {
+        this.locked = locked;
+        return this;
+    }
+
+    /**
+     * 用于标识该存储库是否已锁定
+     * @return locked
+     */
+    public Boolean getLocked() {
+        return locked;
+    }
+
+    public void setLocked(Boolean locked) {
+        this.locked = locked;
+    }
+
     public VaultGet withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
@@ -502,7 +524,8 @@ public class VaultGet {
             && Objects.equals(this.autoExpand, that.autoExpand) && Objects.equals(this.smnNotify, that.smnNotify)
             && Objects.equals(this.threshold, that.threshold)
             && Objects.equals(this.sysLockSourceService, that.sysLockSourceService)
-            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.version, that.version);
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override
@@ -524,6 +547,7 @@ public class VaultGet {
             smnNotify,
             threshold,
             sysLockSourceService,
+            locked,
             updatedAt,
             version);
     }
@@ -549,6 +573,7 @@ public class VaultGet {
         sb.append("    smnNotify: ").append(toIndentedString(smnNotify)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");
         sb.append("    sysLockSourceService: ").append(toIndentedString(sysLockSourceService)).append("\n");
+        sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");

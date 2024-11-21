@@ -12,9 +12,33 @@ import java.util.function.Consumer;
 public class CreateVolumeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Client-Token")
+
+    private String xClientToken;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private CreateVolumeRequestBody body;
+
+    public CreateVolumeRequest withXClientToken(String xClientToken) {
+        this.xClientToken = xClientToken;
+        return this;
+    }
+
+    /**
+     * 请求的幂等标识。
+     * @return xClientToken
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-Client-Token")
+    public String getXClientToken() {
+        return xClientToken;
+    }
+
+    public void setXClientToken(String xClientToken) {
+        this.xClientToken = xClientToken;
+    }
 
     public CreateVolumeRequest withBody(CreateVolumeRequestBody body) {
         this.body = body;
@@ -51,18 +75,19 @@ public class CreateVolumeRequest {
             return false;
         }
         CreateVolumeRequest that = (CreateVolumeRequest) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.xClientToken, that.xClientToken) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(xClientToken, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateVolumeRequest {\n");
+        sb.append("    xClientToken: ").append(toIndentedString(xClientToken)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

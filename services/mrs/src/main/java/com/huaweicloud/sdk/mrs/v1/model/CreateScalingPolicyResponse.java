@@ -12,25 +12,25 @@ import java.util.Objects;
 public class CreateScalingPolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "result")
 
-    private String body;
+    private String result;
 
-    public CreateScalingPolicyResponse withBody(String body) {
-        this.body = body;
+    public CreateScalingPolicyResponse withResult(String result) {
+        this.result = result;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 操作结果。 - succeeded：操作成功 - 操作失败时返回的错误码信息如[错误码](https://support.huaweicloud.com/api-mrs/ErrorCode.html)所示。
+     * @return result
      */
-    public String getBody() {
-        return body;
+    public String getResult() {
+        return result;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setResult(String result) {
+        this.result = result;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class CreateScalingPolicyResponse extends SdkResponse {
             return false;
         }
         CreateScalingPolicyResponse that = (CreateScalingPolicyResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.result, that.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(result);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateScalingPolicyResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("}");
         return sb.toString();
     }

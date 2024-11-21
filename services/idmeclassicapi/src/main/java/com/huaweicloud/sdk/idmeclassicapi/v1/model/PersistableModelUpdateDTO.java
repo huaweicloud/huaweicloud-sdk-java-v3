@@ -160,7 +160,7 @@ public class PersistableModelUpdateDTO {
     }
 
     /**
-     * **参数解释：**  设置空值，长度约束为1000。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  将自定义属性（包括基本属性和扩展属性）设置为空值，其长度不能超过1000个字符。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
      * @return needSetNullAttrs
      */
     public List<String> getNeedSetNullAttrs() {

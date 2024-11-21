@@ -133,6 +133,11 @@ public class VaultCreateResource {
 
     private String sysLockSourceService;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "locked")
+
+    private Boolean locked;
+
     public VaultCreateResource withBilling(Billing billing) {
         this.billing = billing;
         return this;
@@ -609,6 +614,23 @@ public class VaultCreateResource {
         this.sysLockSourceService = sysLockSourceService;
     }
 
+    public VaultCreateResource withLocked(Boolean locked) {
+        this.locked = locked;
+        return this;
+    }
+
+    /**
+     * 用于标识该存储库是否已锁定
+     * @return locked
+     */
+    public Boolean getLocked() {
+        return locked;
+    }
+
+    public void setLocked(Boolean locked) {
+        this.locked = locked;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -631,7 +653,8 @@ public class VaultCreateResource {
             && Objects.equals(this.backupNamePrefix, that.backupNamePrefix)
             && Objects.equals(this.demandBilling, that.demandBilling)
             && Objects.equals(this.cbcDeleteCount, that.cbcDeleteCount) && Objects.equals(this.frozen, that.frozen)
-            && Objects.equals(this.sysLockSourceService, that.sysLockSourceService);
+            && Objects.equals(this.sysLockSourceService, that.sysLockSourceService)
+            && Objects.equals(this.locked, that.locked);
     }
 
     @Override
@@ -659,7 +682,8 @@ public class VaultCreateResource {
             demandBilling,
             cbcDeleteCount,
             frozen,
-            sysLockSourceService);
+            sysLockSourceService,
+            locked);
     }
 
     @Override
@@ -690,6 +714,7 @@ public class VaultCreateResource {
         sb.append("    cbcDeleteCount: ").append(toIndentedString(cbcDeleteCount)).append("\n");
         sb.append("    frozen: ").append(toIndentedString(frozen)).append("\n");
         sb.append("    sysLockSourceService: ").append(toIndentedString(sysLockSourceService)).append("\n");
+        sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
         sb.append("}");
         return sb.toString();
     }

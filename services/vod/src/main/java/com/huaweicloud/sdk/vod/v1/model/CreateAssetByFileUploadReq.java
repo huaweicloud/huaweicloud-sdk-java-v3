@@ -139,7 +139,7 @@ public class CreateAssetByFileUploadReq {
     private String tags;
 
     /**
-     * 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：0。
+     * 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：1。
      */
     public static final class AutoPublishEnum {
 
@@ -435,7 +435,7 @@ public class CreateAssetByFileUploadReq {
     }
 
     /**
-     * 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：0。
+     * 是否自动发布。  取值如下： - 0：表示不自动发布。 - 1：表示自动发布。  默认值：1。
      * @return autoPublish
      */
     public AutoPublishEnum getAutoPublish() {

@@ -68,8 +68,11 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchRecommendationRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchTagRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchTagResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchUpdateSecurityDlfDataWareHousesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchUpdateSecurityDlfDataWareHousesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BehaviorRestBody;
@@ -1311,6 +1314,33 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CatalogMetaDataEventRequest.class),
             f -> f.withMarshaller(BatchSyncMetadataRequest::getBody, BatchSyncMetadataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchTagRequest, BatchTagResponse> batchTag = genForBatchTag();
+
+    private static HttpRequestDef<BatchTagRequest, BatchTagResponse> genForBatchTag() {
+        // basic
+        HttpRequestDef.Builder<BatchTagRequest, BatchTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchTagRequest.class, BatchTagResponse.class)
+                .withName("BatchTag")
+                .withUri("/v1/{project_id}/datamap/entities/guids/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchTagRequest::getInstance, BatchTagRequest::setInstance));
+        builder.<BatchRecommendationRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchRecommendationRequest.class),
+            f -> f.withMarshaller(BatchTagRequest::getBody, BatchTagRequest::setBody));
 
         // response
 

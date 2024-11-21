@@ -851,6 +851,11 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getLimit, ListAlarmHistoriesRequest::setLimit));
+        builder.<ListAlarmHistoriesRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAlarmHistoriesRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getOrderBy, ListAlarmHistoriesRequest::setOrderBy));
 
         // response
 
