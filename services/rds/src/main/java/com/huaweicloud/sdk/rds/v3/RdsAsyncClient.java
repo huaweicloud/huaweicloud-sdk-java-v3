@@ -41,6 +41,8 @@ import com.huaweicloud.sdk.rds.v3.model.ChangeTheDelayThresholdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ChangeTheDelayThresholdResponse;
 import com.huaweicloud.sdk.rds.v3.model.CopyConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.CopyConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.CopyDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.CopyDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateDatabaseRequest;
@@ -91,6 +93,8 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteLogLtsConfigsRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteMsdtcLocalHostRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteMsdtcLocalHostResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDbUserRequest;
@@ -6545,6 +6549,35 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 复制数据库
+     *
+     * 复制数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CopyDatabaseRequest 请求对象
+     * @return CompletableFuture<CopyDatabaseResponse>
+     */
+    public CompletableFuture<CopyDatabaseResponse> copyDatabaseAsync(CopyDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.copyDatabase);
+    }
+
+    /**
+     * 复制数据库
+     *
+     * 复制数据库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CopyDatabaseRequest 请求对象
+     * @return AsyncInvoker<CopyDatabaseRequest, CopyDatabaseResponse>
+     */
+    public AsyncInvoker<CopyDatabaseRequest, CopyDatabaseResponse> copyDatabaseAsyncInvoker(
+        CopyDatabaseRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.copyDatabase, hcClient);
+    }
+
+    /**
      * 创建数据库
      *
      * 创建数据库。
@@ -6602,6 +6635,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<CreateSqlserverDbUserRequest, CreateSqlserverDbUserResponse> createSqlserverDbUserAsyncInvoker(
         CreateSqlserverDbUserRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.createSqlserverDbUser, hcClient);
+    }
+
+    /**
+     * 删除MSDTC
+     *
+     * 删除MSDTC相关主机host地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMsdtcLocalHostRequest 请求对象
+     * @return CompletableFuture<DeleteMsdtcLocalHostResponse>
+     */
+    public CompletableFuture<DeleteMsdtcLocalHostResponse> deleteMsdtcLocalHostAsync(
+        DeleteMsdtcLocalHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.deleteMsdtcLocalHost);
+    }
+
+    /**
+     * 删除MSDTC
+     *
+     * 删除MSDTC相关主机host地址
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMsdtcLocalHostRequest 请求对象
+     * @return AsyncInvoker<DeleteMsdtcLocalHostRequest, DeleteMsdtcLocalHostResponse>
+     */
+    public AsyncInvoker<DeleteMsdtcLocalHostRequest, DeleteMsdtcLocalHostResponse> deleteMsdtcLocalHostAsyncInvoker(
+        DeleteMsdtcLocalHostRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.deleteMsdtcLocalHost, hcClient);
     }
 
     /**

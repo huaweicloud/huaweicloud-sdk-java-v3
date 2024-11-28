@@ -407,7 +407,7 @@ public class VoiceModelAssetMeta {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "languages")
 
-    private List<Language> languages = null;
+    private List<VoiceLanguage> languages = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "speed_ratio")
@@ -519,12 +519,12 @@ public class VoiceModelAssetMeta {
         this.language = language;
     }
 
-    public VoiceModelAssetMeta withLanguages(List<Language> languages) {
+    public VoiceModelAssetMeta withLanguages(List<VoiceLanguage> languages) {
         this.languages = languages;
         return this;
     }
 
-    public VoiceModelAssetMeta addLanguagesItem(Language languagesItem) {
+    public VoiceModelAssetMeta addLanguagesItem(VoiceLanguage languagesItem) {
         if (this.languages == null) {
             this.languages = new ArrayList<>();
         }
@@ -532,7 +532,7 @@ public class VoiceModelAssetMeta {
         return this;
     }
 
-    public VoiceModelAssetMeta withLanguages(Consumer<List<Language>> languagesSetter) {
+    public VoiceModelAssetMeta withLanguages(Consumer<List<VoiceLanguage>> languagesSetter) {
         if (this.languages == null) {
             this.languages = new ArrayList<>();
         }
@@ -541,14 +541,14 @@ public class VoiceModelAssetMeta {
     }
 
     /**
-     * Get languages
+     * **参数解释**： 声音语言。 **约束限制**： 不涉及。 **取值范围**： * UNKNOW：未知 * CN：中文 * EN：英文 * GER：德语 * fr：法语 * Kr：韩语 * por：葡萄牙语 * JPN：日语 * Ita：意大利语 * ESP：西班牙语 * DBH：东北话 * GT：港台 * GXH：广西话 * HBH：湖北话 * SXH：陕西话 * SCH：四川话 * YY：粤语 * Russian: 俄罗斯语 * Filipino: 菲律宾语 * Dutch: 荷兰语 * Indonesian: 印尼语 * Vietnamese: 越南语 * Arabic: 阿拉伯语 * Turkish: 土耳其语 * Malay: 马来语 * Thai: 泰语 * Finnish: 芬兰语
      * @return languages
      */
-    public List<Language> getLanguages() {
+    public List<VoiceLanguage> getLanguages() {
         return languages;
     }
 
-    public void setLanguages(List<Language> languages) {
+    public void setLanguages(List<VoiceLanguage> languages) {
         this.languages = languages;
     }
 

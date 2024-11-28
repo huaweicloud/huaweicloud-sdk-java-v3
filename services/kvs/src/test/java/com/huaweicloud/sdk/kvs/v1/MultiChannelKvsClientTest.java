@@ -131,7 +131,7 @@ public class MultiChannelKvsClientTest {
         config.setProperty("kvs.sdk.endpoints.weight", newEndpointWeights);
         builder.save();
 
-        Thread.sleep(21000);
+        Thread.sleep(8000);
 
         Assert.assertEquals(0, multiChannelKvsClient.getOldKvsClientMaps().size());
     }

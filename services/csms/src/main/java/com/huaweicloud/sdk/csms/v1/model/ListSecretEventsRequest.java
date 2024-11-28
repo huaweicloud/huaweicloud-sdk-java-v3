@@ -43,7 +43,7 @@ public class ListSecretEventsRequest {
     }
 
     /**
-     * 分页查询起始的资源id，为空时为查询第一页
+     * 分页查询起始的事件名称，为空时为查询第一页
      * @return marker
      */
     public String getMarker() {

@@ -29,7 +29,7 @@ public class Event {
     private String eventId;
 
     /**
-     * 本次事件通知的基础事件列表，基础事件类型如下。  SECRET_VERSION_CREATED：版本创建 SECRET_VERSION_EXPIRED：版本过期 SECRET_ROTATED：凭据轮转 SECRET_DELETED：凭据删除  列表包含的基础事件类型不能重复。 
+     * 本次事件通知的基础事件列表，基础事件类型如下。  SECRET_VERSION_CREATED：版本创建 SECRET_VERSION_EXPIRED：版本过期 SECRET_ROTATED：凭据轮转 SECRET_DELETED：凭据删除  列表包含的基础事件类型不能重复。
      */
     public static final class EventTypesEnum {
 
@@ -53,6 +53,11 @@ public class Event {
          */
         public static final EventTypesEnum SECRET_DELETED = new EventTypesEnum("SECRET_DELETED");
 
+        /**
+         * Enum SECRET_ROTATED_FAILED for value: "SECRET_ROTATED_FAILED"
+         */
+        public static final EventTypesEnum SECRET_ROTATED_FAILED = new EventTypesEnum("SECRET_ROTATED_FAILED");
+
         private static final Map<String, EventTypesEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, EventTypesEnum> createStaticFields() {
@@ -61,6 +66,7 @@ public class Event {
             map.put("SECRET_VERSION_EXPIRED", SECRET_VERSION_EXPIRED);
             map.put("SECRET_ROTATED", SECRET_ROTATED);
             map.put("SECRET_DELETED", SECRET_DELETED);
+            map.put("SECRET_ROTATED_FAILED", SECRET_ROTATED_FAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -116,7 +122,7 @@ public class Event {
     private List<EventTypesEnum> eventTypes = null;
 
     /**
-     * 事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态 
+     * 事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态
      */
     public static final class StateEnum {
 
@@ -261,7 +267,7 @@ public class Event {
     }
 
     /**
-     * 设置事件的基础事件类型列表,。  约束：数组大小：最小1，最大12。 
+     * 设置事件的基础事件类型列表,。  约束：数组大小：最小1，最大12。
      * @return eventTypes
      */
     public List<EventTypesEnum> getEventTypes() {
@@ -278,7 +284,7 @@ public class Event {
     }
 
     /**
-     * 事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态 
+     * 事件通知状态，取值如下。  ENABLED：表示启用状态 DISABLED：表示禁用状态
      * @return state
      */
     public StateEnum getState() {
@@ -295,7 +301,7 @@ public class Event {
     }
 
     /**
-     * 事件通知创建时间，时间戳，即从1970年1月1日至该时间的总秒数。 
+     * 事件通知创建时间，时间戳，即从1970年1月1日至该时间的总秒数。
      * minimum: 0
      * maximum: 13
      * @return createTime

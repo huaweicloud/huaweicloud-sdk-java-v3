@@ -52,6 +52,8 @@ import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowReportStatusRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowReportStatusResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowResultsRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowResultsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowSubscriptionRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowSubscriptionResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowTasksRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowTasksResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.UpdateDomainSettingsRequest;
@@ -272,6 +274,29 @@ public class CodeArtsInspectorMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListHostsRequest::getLimit, ListHostsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSubscriptionRequest, ShowSubscriptionResponse> showSubscription =
+        genForShowSubscription();
+
+    private static HttpRequestDef<ShowSubscriptionRequest, ShowSubscriptionResponse> genForShowSubscription() {
+        // basic
+        HttpRequestDef.Builder<ShowSubscriptionRequest, ShowSubscriptionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSubscriptionRequest.class, ShowSubscriptionResponse.class)
+                .withName("ShowSubscription")
+                .withUri("/v3/{project_id}/{service}/subscription")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("service",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSubscriptionRequest::getService, ShowSubscriptionRequest::setService));
 
         // response
 

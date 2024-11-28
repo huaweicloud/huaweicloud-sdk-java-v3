@@ -38,13 +38,18 @@ public class UpdateSecretRequestBody {
 
     private List<String> eventSubscriptions = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rotation_func_urn")
+
+    private String rotationFuncUrn;
+
     public UpdateSecretRequestBody withKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
         return this;
     }
 
     /**
-     * 用于加密保护凭据值的KMS主密钥ID。更新凭据的主密钥后，仅新创建的凭据版本使用更新后的主密钥ID加密，之前的凭据版本依旧使用之前的主密钥ID解密。 
+     * 用于加密保护凭据值的KMS主密钥ID。更新凭据的主密钥后，仅新创建的凭据版本使用更新后的主密钥ID加密，之前的凭据版本依旧使用之前的主密钥ID解密。
      * @return kmsKeyId
      */
     public String getKmsKeyId() {
@@ -61,7 +66,7 @@ public class UpdateSecretRequestBody {
     }
 
     /**
-     * 凭据的描述信息。 约束：2048字节。 
+     * 凭据的描述信息。 约束：2048字节。
      * @return description
      */
     public String getDescription() {
@@ -78,7 +83,7 @@ public class UpdateSecretRequestBody {
     }
 
     /**
-     * 自动轮转  取值：true 开启 false 关 
+     * 自动轮转  取值：true 开启 false 关
      * @return autoRotation
      */
     public Boolean getAutoRotation() {
@@ -95,7 +100,7 @@ public class UpdateSecretRequestBody {
     }
 
     /**
-     * 轮转周期  约束：6小时-8,760小时 （365天）  类型：Integer[unit] ，Integer表示时间长度 。unit表示时间单位，d（天）、h（小时）、m（分钟）、s（秒）。例如 1d 表示一天，24h也表示一天  说明：当开启自动轮转时，必须填写该值 
+     * 轮转周期  约束：6小时-8,760小时 （365天）  类型：Integer[unit] ，Integer表示时间长度 。unit表示时间单位，d（天）、h（小时）、m（分钟）、s（秒）。例如 1d 表示一天，24h也表示一天  说明：当开启自动轮转时，必须填写该值
      * @return rotationPeriod
      */
     public String getRotationPeriod() {
@@ -128,7 +133,7 @@ public class UpdateSecretRequestBody {
     }
 
     /**
-     * 凭据订阅的事件列表，当前最大可订阅一个事件。当事件包含的基础事件触发时，通知消息将发送到事件对应的通知主题。 
+     * 凭据订阅的事件列表，当前最大可订阅一个事件。当事件包含的基础事件触发时，通知消息将发送到事件对应的通知主题。
      * @return eventSubscriptions
      */
     public List<String> getEventSubscriptions() {
@@ -137,6 +142,23 @@ public class UpdateSecretRequestBody {
 
     public void setEventSubscriptions(List<String> eventSubscriptions) {
         this.eventSubscriptions = eventSubscriptions;
+    }
+
+    public UpdateSecretRequestBody withRotationFuncUrn(String rotationFuncUrn) {
+        this.rotationFuncUrn = rotationFuncUrn;
+        return this;
+    }
+
+    /**
+     * FunctionGraph函数的urn。
+     * @return rotationFuncUrn
+     */
+    public String getRotationFuncUrn() {
+        return rotationFuncUrn;
+    }
+
+    public void setRotationFuncUrn(String rotationFuncUrn) {
+        this.rotationFuncUrn = rotationFuncUrn;
     }
 
     @Override
@@ -151,12 +173,13 @@ public class UpdateSecretRequestBody {
         return Objects.equals(this.kmsKeyId, that.kmsKeyId) && Objects.equals(this.description, that.description)
             && Objects.equals(this.autoRotation, that.autoRotation)
             && Objects.equals(this.rotationPeriod, that.rotationPeriod)
-            && Objects.equals(this.eventSubscriptions, that.eventSubscriptions);
+            && Objects.equals(this.eventSubscriptions, that.eventSubscriptions)
+            && Objects.equals(this.rotationFuncUrn, that.rotationFuncUrn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(kmsKeyId, description, autoRotation, rotationPeriod, eventSubscriptions);
+        return Objects.hash(kmsKeyId, description, autoRotation, rotationPeriod, eventSubscriptions, rotationFuncUrn);
     }
 
     @Override
@@ -168,6 +191,7 @@ public class UpdateSecretRequestBody {
         sb.append("    autoRotation: ").append(toIndentedString(autoRotation)).append("\n");
         sb.append("    rotationPeriod: ").append(toIndentedString(rotationPeriod)).append("\n");
         sb.append("    eventSubscriptions: ").append(toIndentedString(eventSubscriptions)).append("\n");
+        sb.append("    rotationFuncUrn: ").append(toIndentedString(rotationFuncUrn)).append("\n");
         sb.append("}");
         return sb.toString();
     }

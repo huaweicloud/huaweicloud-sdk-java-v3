@@ -5,6 +5,9 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.kms.v2.model.AssociateAliasRequest;
+import com.huaweicloud.sdk.kms.v2.model.AssociateAliasRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.AssociateAliasResponse;
 import com.huaweicloud.sdk.kms.v2.model.BatchCreateKmsTagsRequest;
 import com.huaweicloud.sdk.kms.v2.model.BatchCreateKmsTagsRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.BatchCreateKmsTagsResponse;
@@ -14,6 +17,9 @@ import com.huaweicloud.sdk.kms.v2.model.CancelKeyDeletionRequest;
 import com.huaweicloud.sdk.kms.v2.model.CancelKeyDeletionResponse;
 import com.huaweicloud.sdk.kms.v2.model.CancelSelfGrantRequest;
 import com.huaweicloud.sdk.kms.v2.model.CancelSelfGrantResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateAliasRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateAliasRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.CreateAliasResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyResponse;
@@ -41,6 +47,9 @@ import com.huaweicloud.sdk.kms.v2.model.DecryptDataResponse;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyResponse;
+import com.huaweicloud.sdk.kms.v2.model.DeleteAliasRequest;
+import com.huaweicloud.sdk.kms.v2.model.DeleteAliasRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.DeleteAliasResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteImportedKeyMaterialRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteImportedKeyMaterialResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteKeyRequest;
@@ -75,6 +84,9 @@ import com.huaweicloud.sdk.kms.v2.model.GetParametersForImportRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialRequest;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialResponse;
+import com.huaweicloud.sdk.kms.v2.model.ListAliasResponseBody;
+import com.huaweicloud.sdk.kms.v2.model.ListAliasesRequest;
+import com.huaweicloud.sdk.kms.v2.model.ListAliasesResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListGrantsRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListGrantsRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.ListGrantsResponse;
@@ -139,8 +151,33 @@ import com.huaweicloud.sdk.kms.v2.model.VerifyMacRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.VerifyMacResponse;
 import com.huaweicloud.sdk.kms.v2.model.VerifyRequestBody;
 
+import java.util.List;
+
 @SuppressWarnings("unchecked")
 public class KmsMeta {
+
+    public static final HttpRequestDef<AssociateAliasRequest, AssociateAliasResponse> associateAlias =
+        genForAssociateAlias();
+
+    private static HttpRequestDef<AssociateAliasRequest, AssociateAliasResponse> genForAssociateAlias() {
+        // basic
+        HttpRequestDef.Builder<AssociateAliasRequest, AssociateAliasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AssociateAliasRequest.class, AssociateAliasResponse.class)
+                .withName("AssociateAlias")
+                .withUri("/v1.0/{project_id}/kms/alias/associate")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AssociateAliasRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateAliasRequestBody.class),
+            f -> f.withMarshaller(AssociateAliasRequest::getBody, AssociateAliasRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchCreateKmsTagsRequest, BatchCreateKmsTagsResponse> batchCreateKmsTags =
         genForBatchCreateKmsTags();
@@ -232,6 +269,28 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RevokeGrantRequestBody.class),
             f -> f.withMarshaller(CancelSelfGrantRequest::getBody, CancelSelfGrantRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAliasRequest, CreateAliasResponse> createAlias = genForCreateAlias();
+
+    private static HttpRequestDef<CreateAliasRequest, CreateAliasResponse> genForCreateAlias() {
+        // basic
+        HttpRequestDef.Builder<CreateAliasRequest, CreateAliasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAliasRequest.class, CreateAliasResponse.class)
+                .withName("CreateAlias")
+                .withUri("/v1.0/{project_id}/kms/aliases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateAliasRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAliasRequestBody.class),
+            f -> f.withMarshaller(CreateAliasRequest::getBody, CreateAliasRequest::setBody));
 
         // response
 
@@ -470,6 +529,28 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DecryptDatakeyRequestBody.class),
             f -> f.withMarshaller(DecryptDatakeyRequest::getBody, DecryptDatakeyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAliasRequest, DeleteAliasResponse> deleteAlias = genForDeleteAlias();
+
+    private static HttpRequestDef<DeleteAliasRequest, DeleteAliasResponse> genForDeleteAlias() {
+        // basic
+        HttpRequestDef.Builder<DeleteAliasRequest, DeleteAliasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAliasRequest.class, DeleteAliasResponse.class)
+                .withName("DeleteAlias")
+                .withUri("/v1.0/{project_id}/kms/aliases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<DeleteAliasRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteAliasRequestBody.class),
+            f -> f.withMarshaller(DeleteAliasRequest::getBody, DeleteAliasRequest::setBody));
 
         // response
 
@@ -801,6 +882,44 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAliasesRequest, ListAliasesResponse> listAliases = genForListAliases();
+
+    private static HttpRequestDef<ListAliasesRequest, ListAliasesResponse> genForListAliases() {
+        // basic
+        HttpRequestDef.Builder<ListAliasesRequest, ListAliasesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAliasesRequest.class, ListAliasesResponse.class)
+                .withName("ListAliases")
+                .withUri("/v1.0/{project_id}/kms/aliases")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("key_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAliasesRequest::getKeyId, ListAliasesRequest::setKeyId));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAliasesRequest::getLimit, ListAliasesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAliasesRequest::getMarker, ListAliasesRequest::setMarker));
+
+        // response
+        builder.<List<ListAliasResponseBody>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAliasesResponse::getBody, ListAliasesResponse::setBody)
+                .withInnerContainerType(ListAliasResponseBody.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListGrantsRequest, ListGrantsResponse> listGrants = genForListGrants();
 
     private static HttpRequestDef<ListGrantsRequest, ListGrantsResponse> genForListGrants() {
@@ -977,6 +1096,16 @@ public class KmsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSupportRegionsRequest::getLimit, ListSupportRegionsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSupportRegionsRequest::getOffset, ListSupportRegionsRequest::setOffset));
 
         // response
 

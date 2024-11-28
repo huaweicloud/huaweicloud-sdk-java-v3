@@ -8,6 +8,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequest;
+import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequestBody;
+import com.huaweicloud.sdk.csms.v1.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventResponse;
@@ -44,6 +47,8 @@ import com.huaweicloud.sdk.csms.v1.model.ListSecretEventsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretEventsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretTaskRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretTaskResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretsRequest;
@@ -52,8 +57,12 @@ import com.huaweicloud.sdk.csms.v1.model.RestoreSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.RotateSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.RotateSecretResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowAgencyRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowAgencyResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretEventResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretFunctionTemplatesRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretFunctionTemplatesResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageRequest;
@@ -102,6 +111,28 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getBody, BatchCreateOrDeleteTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> createAgency = genForCreateAgency();
+
+    private static HttpRequestDef<CreateAgencyRequest, CreateAgencyResponse> genForCreateAgency() {
+        // basic
+        HttpRequestDef.Builder<CreateAgencyRequest, CreateAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateAgencyRequest.class, CreateAgencyResponse.class)
+                .withName("CreateAgency")
+                .withUri("/v1/csms/agencies")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateAgencyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateAgencyRequestBody.class),
+            f -> f.withMarshaller(CreateAgencyRequest::getBody, CreateAgencyRequest::setBody));
 
         // response
 
@@ -375,17 +406,6 @@ public class CsmsMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNotificationRecordsRequest::getLimit, ListNotificationRecordsRequest::setLimit));
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNotificationRecordsRequest::getMarker,
-                ListNotificationRecordsRequest::setMarker));
 
         // response
 
@@ -484,6 +504,49 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecretTagsRequest::getSecretId, ListSecretTagsRequest::setSecretId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecretTaskRequest, ListSecretTaskResponse> listSecretTask =
+        genForListSecretTask();
+
+    private static HttpRequestDef<ListSecretTaskRequest, ListSecretTaskResponse> genForListSecretTask() {
+        // basic
+        HttpRequestDef.Builder<ListSecretTaskRequest, ListSecretTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSecretTaskRequest.class, ListSecretTaskResponse.class)
+                .withName("ListSecretTask")
+                .withUri("/v1/{project_id}/csms/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("secret_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecretTaskRequest::getSecretName, ListSecretTaskRequest::setSecretName));
+        builder.<ListSecretTaskRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecretTaskRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListSecretTaskRequest::getStatus, ListSecretTaskRequest::setStatus));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecretTaskRequest::getTaskId, ListSecretTaskRequest::setTaskId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecretTaskRequest::getLimit, ListSecretTaskRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecretTaskRequest::getMarker, ListSecretTaskRequest::setMarker));
 
         // response
 
@@ -600,6 +663,28 @@ public class CsmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> showAgency = genForShowAgency();
+
+    private static HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> genForShowAgency() {
+        // basic
+        HttpRequestDef.Builder<ShowAgencyRequest, ShowAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAgencyRequest.class, ShowAgencyResponse.class)
+                .withName("ShowAgency")
+                .withUri("/v1/csms/agencies")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowAgencyRequest.SecretTypeEnum>withRequestField("secret_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowAgencyRequest.SecretTypeEnum.class),
+            f -> f.withMarshaller(ShowAgencyRequest::getSecretType, ShowAgencyRequest::setSecretType));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSecretRequest, ShowSecretResponse> showSecret = genForShowSecret();
 
     private static HttpRequestDef<ShowSecretRequest, ShowSecretResponse> genForShowSecret() {
@@ -639,6 +724,45 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSecretEventRequest::getEventName, ShowSecretEventRequest::setEventName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecretFunctionTemplatesRequest, ShowSecretFunctionTemplatesResponse> showSecretFunctionTemplates =
+        genForShowSecretFunctionTemplates();
+
+    private static HttpRequestDef<ShowSecretFunctionTemplatesRequest, ShowSecretFunctionTemplatesResponse> genForShowSecretFunctionTemplates() {
+        // basic
+        HttpRequestDef.Builder<ShowSecretFunctionTemplatesRequest, ShowSecretFunctionTemplatesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecretFunctionTemplatesRequest.class,
+                    ShowSecretFunctionTemplatesResponse.class)
+                .withName("ShowSecretFunctionTemplates")
+                .withUri("/v1/csms/function-templates")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowSecretFunctionTemplatesRequest.SecretTypeEnum>withRequestField("secret_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowSecretFunctionTemplatesRequest.SecretTypeEnum.class),
+            f -> f.withMarshaller(ShowSecretFunctionTemplatesRequest::getSecretType,
+                ShowSecretFunctionTemplatesRequest::setSecretType));
+        builder.<ShowSecretFunctionTemplatesRequest.SecretSubTypeEnum>withRequestField("secret_sub_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowSecretFunctionTemplatesRequest.SecretSubTypeEnum.class),
+            f -> f.withMarshaller(ShowSecretFunctionTemplatesRequest::getSecretSubType,
+                ShowSecretFunctionTemplatesRequest::setSecretSubType));
+        builder.<ShowSecretFunctionTemplatesRequest.EngineEnum>withRequestField("engine",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSecretFunctionTemplatesRequest.EngineEnum.class),
+            f -> f.withMarshaller(ShowSecretFunctionTemplatesRequest::getEngine,
+                ShowSecretFunctionTemplatesRequest::setEngine));
 
         // response
 

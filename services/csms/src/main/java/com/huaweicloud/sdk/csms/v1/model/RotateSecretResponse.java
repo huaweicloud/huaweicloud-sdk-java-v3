@@ -21,6 +21,11 @@ public class RotateSecretResponse extends SdkResponse {
 
     private String secretName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rotation_task_id")
+
+    private String rotationTaskId;
+
     public RotateSecretResponse withVersionId(String versionId) {
         this.versionId = versionId;
         return this;
@@ -55,6 +60,23 @@ public class RotateSecretResponse extends SdkResponse {
         this.secretName = secretName;
     }
 
+    public RotateSecretResponse withRotationTaskId(String rotationTaskId) {
+        this.rotationTaskId = rotationTaskId;
+        return this;
+    }
+
+    /**
+     * 凭据轮转任务ID。
+     * @return rotationTaskId
+     */
+    public String getRotationTaskId() {
+        return rotationTaskId;
+    }
+
+    public void setRotationTaskId(String rotationTaskId) {
+        this.rotationTaskId = rotationTaskId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +86,13 @@ public class RotateSecretResponse extends SdkResponse {
             return false;
         }
         RotateSecretResponse that = (RotateSecretResponse) obj;
-        return Objects.equals(this.versionId, that.versionId) && Objects.equals(this.secretName, that.secretName);
+        return Objects.equals(this.versionId, that.versionId) && Objects.equals(this.secretName, that.secretName)
+            && Objects.equals(this.rotationTaskId, that.rotationTaskId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(versionId, secretName);
+        return Objects.hash(versionId, secretName, rotationTaskId);
     }
 
     @Override
@@ -78,6 +101,7 @@ public class RotateSecretResponse extends SdkResponse {
         sb.append("class RotateSecretResponse {\n");
         sb.append("    versionId: ").append(toIndentedString(versionId)).append("\n");
         sb.append("    secretName: ").append(toIndentedString(secretName)).append("\n");
+        sb.append("    rotationTaskId: ").append(toIndentedString(rotationTaskId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

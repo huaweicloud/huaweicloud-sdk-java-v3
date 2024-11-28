@@ -6,6 +6,9 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.workspace.v2.model.ActionsOfUsersInGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AddDesktopPoolVolumesReq;
+import com.huaweicloud.sdk.workspace.v2.model.AddDesktopPoolVolumesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AddDesktopPoolVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AddDesktopsVolumesReq;
 import com.huaweicloud.sdk.workspace.v2.model.AddMetricNotifyRuleReq;
 import com.huaweicloud.sdk.workspace.v2.model.AddMetricNotifyRuleRequest;
@@ -52,6 +55,9 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserReq;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDisassociateDesktopsEipReq;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDisassociateDesktopsEipRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDisassociateDesktopsEipResponse;
@@ -81,6 +87,12 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateAgenciesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolAuthorizedObjectsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolAuthorizedObjectsRequestBody;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolAuthorizedObjectsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolReq;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopReq;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopResponse;
@@ -102,6 +114,11 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DelOtpDevicesReq;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolVolumesReq;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolVolumesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopVolumesRequest;
@@ -122,11 +139,20 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteUserGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteVolumesReq;
+import com.huaweicloud.sdk.workspace.v2.model.DesktopPoolActionReq;
 import com.huaweicloud.sdk.workspace.v2.model.DetachInstancesReq;
 import com.huaweicloud.sdk.workspace.v2.model.DetachInstancesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DetachInstancesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.EditUserGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.EditUserReq;
+import com.huaweicloud.sdk.workspace.v2.model.ExecuteDesktopPoolActionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExecuteDesktopPoolActionResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolReq;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolVolumesReq;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolVolumesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopsVolumesReq;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumesResponse;
@@ -144,6 +170,10 @@ import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolAuthorizedObjectsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolAuthorizedObjectsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsConnectStatusRequest;
@@ -175,6 +205,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListPoolDesktopsDetailRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListPoolDesktopsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsRequest;
@@ -212,9 +244,15 @@ import com.huaweicloud.sdk.workspace.v2.model.MetricsWithTime;
 import com.huaweicloud.sdk.workspace.v2.model.ModifyWorkspaceAttributesReq;
 import com.huaweicloud.sdk.workspace.v2.model.OperateUserReq;
 import com.huaweicloud.sdk.workspace.v2.model.QueryDesktopByTagReq;
+import com.huaweicloud.sdk.workspace.v2.model.RebuildDesktopPoolReq;
+import com.huaweicloud.sdk.workspace.v2.model.RebuildDesktopPoolRequest;
+import com.huaweicloud.sdk.workspace.v2.model.RebuildDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.RebuildDesktopsReq;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopPoolReq;
+import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopPoolRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopReq;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopResponse;
@@ -226,6 +264,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopPoolDetailRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopPoolDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowJobRequest;
@@ -251,6 +291,9 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigRespon
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopPoolAttributesReq;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopPoolRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleReq;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleResponse;
@@ -1415,6 +1458,502 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateDesktopNamePolicyReq.class),
             f -> f.withMarshaller(UpdateDesktopNamePolicyRequest::getBody, UpdateDesktopNamePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddDesktopPoolVolumesRequest, AddDesktopPoolVolumesResponse> addDesktopPoolVolumes =
+        genForAddDesktopPoolVolumes();
+
+    private static HttpRequestDef<AddDesktopPoolVolumesRequest, AddDesktopPoolVolumesResponse> genForAddDesktopPoolVolumes() {
+        // basic
+        HttpRequestDef.Builder<AddDesktopPoolVolumesRequest, AddDesktopPoolVolumesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AddDesktopPoolVolumesRequest.class, AddDesktopPoolVolumesResponse.class)
+            .withName("AddDesktopPoolVolumes")
+            .withUri("/v2/{project_id}/desktop-pools/{pool_id}/volumes/batch-add")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDesktopPoolVolumesRequest::getPoolId, AddDesktopPoolVolumesRequest::setPoolId));
+        builder.<String>withRequestField("Service-Transaction-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddDesktopPoolVolumesRequest::getServiceTransactionId,
+                AddDesktopPoolVolumesRequest::setServiceTransactionId));
+        builder.<AddDesktopPoolVolumesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddDesktopPoolVolumesReq.class),
+            f -> f.withMarshaller(AddDesktopPoolVolumesRequest::getBody, AddDesktopPoolVolumesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDesktopPoolRequest, CreateDesktopPoolResponse> createDesktopPool =
+        genForCreateDesktopPool();
+
+    private static HttpRequestDef<CreateDesktopPoolRequest, CreateDesktopPoolResponse> genForCreateDesktopPool() {
+        // basic
+        HttpRequestDef.Builder<CreateDesktopPoolRequest, CreateDesktopPoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDesktopPoolRequest.class, CreateDesktopPoolResponse.class)
+                .withName("CreateDesktopPool")
+                .withUri("/v2/{project_id}/desktop-pools")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Service-Transaction-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDesktopPoolRequest::getServiceTransactionId,
+                CreateDesktopPoolRequest::setServiceTransactionId));
+        builder.<CreateDesktopPoolReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDesktopPoolReq.class),
+            f -> f.withMarshaller(CreateDesktopPoolRequest::getBody, CreateDesktopPoolRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDesktopPoolAuthorizedObjectsRequest, CreateDesktopPoolAuthorizedObjectsResponse> createDesktopPoolAuthorizedObjects =
+        genForCreateDesktopPoolAuthorizedObjects();
+
+    private static HttpRequestDef<CreateDesktopPoolAuthorizedObjectsRequest, CreateDesktopPoolAuthorizedObjectsResponse> genForCreateDesktopPoolAuthorizedObjects() {
+        // basic
+        HttpRequestDef.Builder<CreateDesktopPoolAuthorizedObjectsRequest, CreateDesktopPoolAuthorizedObjectsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDesktopPoolAuthorizedObjectsRequest.class,
+                    CreateDesktopPoolAuthorizedObjectsResponse.class)
+                .withName("CreateDesktopPoolAuthorizedObjects")
+                .withUri("/v2/{project_id}/desktop-pools/{pool_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDesktopPoolAuthorizedObjectsRequest::getPoolId,
+                CreateDesktopPoolAuthorizedObjectsRequest::setPoolId));
+        builder.<CreateDesktopPoolAuthorizedObjectsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDesktopPoolAuthorizedObjectsRequestBody.class),
+            f -> f.withMarshaller(CreateDesktopPoolAuthorizedObjectsRequest::getBody,
+                CreateDesktopPoolAuthorizedObjectsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDesktopPoolRequest, DeleteDesktopPoolResponse> deleteDesktopPool =
+        genForDeleteDesktopPool();
+
+    private static HttpRequestDef<DeleteDesktopPoolRequest, DeleteDesktopPoolResponse> genForDeleteDesktopPool() {
+        // basic
+        HttpRequestDef.Builder<DeleteDesktopPoolRequest, DeleteDesktopPoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDesktopPoolRequest.class, DeleteDesktopPoolResponse.class)
+                .withName("DeleteDesktopPool")
+                .withUri("/v2/{project_id}/desktop-pools/{pool_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesktopPoolRequest::getPoolId, DeleteDesktopPoolRequest::setPoolId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDesktopPoolVolumesRequest, DeleteDesktopPoolVolumesResponse> deleteDesktopPoolVolumes =
+        genForDeleteDesktopPoolVolumes();
+
+    private static HttpRequestDef<DeleteDesktopPoolVolumesRequest, DeleteDesktopPoolVolumesResponse> genForDeleteDesktopPoolVolumes() {
+        // basic
+        HttpRequestDef.Builder<DeleteDesktopPoolVolumesRequest, DeleteDesktopPoolVolumesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, DeleteDesktopPoolVolumesRequest.class, DeleteDesktopPoolVolumesResponse.class)
+                .withName("DeleteDesktopPoolVolumes")
+                .withUri("/v2/{project_id}/desktop-pools/{pool_id}/volumes/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesktopPoolVolumesRequest::getPoolId,
+                DeleteDesktopPoolVolumesRequest::setPoolId));
+        builder.<DeleteDesktopPoolVolumesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteDesktopPoolVolumesReq.class),
+            f -> f.withMarshaller(DeleteDesktopPoolVolumesRequest::getBody, DeleteDesktopPoolVolumesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteDesktopPoolActionRequest, ExecuteDesktopPoolActionResponse> executeDesktopPoolAction =
+        genForExecuteDesktopPoolAction();
+
+    private static HttpRequestDef<ExecuteDesktopPoolActionRequest, ExecuteDesktopPoolActionResponse> genForExecuteDesktopPoolAction() {
+        // basic
+        HttpRequestDef.Builder<ExecuteDesktopPoolActionRequest, ExecuteDesktopPoolActionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ExecuteDesktopPoolActionRequest.class, ExecuteDesktopPoolActionResponse.class)
+                .withName("ExecuteDesktopPoolAction")
+                .withUri("/v2/{project_id}/desktop-pools/{pool_id}/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteDesktopPoolActionRequest::getPoolId,
+                ExecuteDesktopPoolActionRequest::setPoolId));
+        builder.<DesktopPoolActionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DesktopPoolActionReq.class),
+            f -> f.withMarshaller(ExecuteDesktopPoolActionRequest::getBody, ExecuteDesktopPoolActionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExpandDesktopPoolRequest, ExpandDesktopPoolResponse> expandDesktopPool =
+        genForExpandDesktopPool();
+
+    private static HttpRequestDef<ExpandDesktopPoolRequest, ExpandDesktopPoolResponse> genForExpandDesktopPool() {
+        // basic
+        HttpRequestDef.Builder<ExpandDesktopPoolRequest, ExpandDesktopPoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExpandDesktopPoolRequest.class, ExpandDesktopPoolResponse.class)
+                .withName("ExpandDesktopPool")
+                .withUri("/v2/{project_id}/desktop-pools/{pool_id}/expand")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandDesktopPoolRequest::getPoolId, ExpandDesktopPoolRequest::setPoolId));
+        builder.<String>withRequestField("Service-Transaction-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandDesktopPoolRequest::getServiceTransactionId,
+                ExpandDesktopPoolRequest::setServiceTransactionId));
+        builder.<ExpandDesktopPoolReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExpandDesktopPoolReq.class),
+            f -> f.withMarshaller(ExpandDesktopPoolRequest::getBody, ExpandDesktopPoolRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExpandDesktopPoolVolumesRequest, ExpandDesktopPoolVolumesResponse> expandDesktopPoolVolumes =
+        genForExpandDesktopPoolVolumes();
+
+    private static HttpRequestDef<ExpandDesktopPoolVolumesRequest, ExpandDesktopPoolVolumesResponse> genForExpandDesktopPoolVolumes() {
+        // basic
+        HttpRequestDef.Builder<ExpandDesktopPoolVolumesRequest, ExpandDesktopPoolVolumesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ExpandDesktopPoolVolumesRequest.class, ExpandDesktopPoolVolumesResponse.class)
+                .withName("ExpandDesktopPoolVolumes")
+                .withUri("/v2/{project_id}/desktop-pools/{pool_id}/volumes/batch-expand")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandDesktopPoolVolumesRequest::getPoolId,
+                ExpandDesktopPoolVolumesRequest::setPoolId));
+        builder.<String>withRequestField("Service-Transaction-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExpandDesktopPoolVolumesRequest::getServiceTransactionId,
+                ExpandDesktopPoolVolumesRequest::setServiceTransactionId));
+        builder.<ExpandDesktopPoolVolumesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExpandDesktopPoolVolumesReq.class),
+            f -> f.withMarshaller(ExpandDesktopPoolVolumesRequest::getBody, ExpandDesktopPoolVolumesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDesktopPoolAuthorizedObjectsRequest, ListDesktopPoolAuthorizedObjectsResponse> listDesktopPoolAuthorizedObjects =
+        genForListDesktopPoolAuthorizedObjects();
+
+    private static HttpRequestDef<ListDesktopPoolAuthorizedObjectsRequest, ListDesktopPoolAuthorizedObjectsResponse> genForListDesktopPoolAuthorizedObjects() {
+        // basic
+        HttpRequestDef.Builder<ListDesktopPoolAuthorizedObjectsRequest, ListDesktopPoolAuthorizedObjectsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDesktopPoolAuthorizedObjectsRequest.class,
+                    ListDesktopPoolAuthorizedObjectsResponse.class)
+                .withName("ListDesktopPoolAuthorizedObjects")
+                .withUri("/v2/{project_id}/desktop-pools/{pool_id}/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopPoolAuthorizedObjectsRequest::getPoolId,
+                ListDesktopPoolAuthorizedObjectsRequest::setPoolId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopPoolAuthorizedObjectsRequest::getOffset,
+                ListDesktopPoolAuthorizedObjectsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopPoolAuthorizedObjectsRequest::getLimit,
+                ListDesktopPoolAuthorizedObjectsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDesktopPoolsRequest, ListDesktopPoolsResponse> listDesktopPools =
+        genForListDesktopPools();
+
+    private static HttpRequestDef<ListDesktopPoolsRequest, ListDesktopPoolsResponse> genForListDesktopPools() {
+        // basic
+        HttpRequestDef.Builder<ListDesktopPoolsRequest, ListDesktopPoolsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDesktopPoolsRequest.class, ListDesktopPoolsResponse.class)
+                .withName("ListDesktopPools")
+                .withUri("/v2/{project_id}/desktop-pools")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopPoolsRequest::getName, ListDesktopPoolsRequest::setName));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopPoolsRequest::getType, ListDesktopPoolsRequest::setType));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesktopPoolsRequest::getEnterpriseProjectId,
+                ListDesktopPoolsRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopPoolsRequest::getOffset, ListDesktopPoolsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesktopPoolsRequest::getLimit, ListDesktopPoolsRequest::setLimit));
+        builder.<Boolean>withRequestField("in_maintenance_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDesktopPoolsRequest::getInMaintenanceMode,
+                ListDesktopPoolsRequest::setInMaintenanceMode));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPoolDesktopsDetailRequest, ListPoolDesktopsDetailResponse> listPoolDesktopsDetail =
+        genForListPoolDesktopsDetail();
+
+    private static HttpRequestDef<ListPoolDesktopsDetailRequest, ListPoolDesktopsDetailResponse> genForListPoolDesktopsDetail() {
+        // basic
+        HttpRequestDef.Builder<ListPoolDesktopsDetailRequest, ListPoolDesktopsDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPoolDesktopsDetailRequest.class, ListPoolDesktopsDetailResponse.class)
+            .withName("ListPoolDesktopsDetail")
+            .withUri("/v2/{project_id}/desktop-pools/{pool_id}/desktops")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPoolDesktopsDetailRequest::getPoolId, ListPoolDesktopsDetailRequest::setPoolId));
+        builder.<String>withRequestField("inconsistent_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPoolDesktopsDetailRequest::getInconsistentType,
+                ListPoolDesktopsDetailRequest::setInconsistentType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPoolDesktopsDetailRequest::getOffset, ListPoolDesktopsDetailRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPoolDesktopsDetailRequest::getLimit, ListPoolDesktopsDetailRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RebuildDesktopPoolRequest, RebuildDesktopPoolResponse> rebuildDesktopPool =
+        genForRebuildDesktopPool();
+
+    private static HttpRequestDef<RebuildDesktopPoolRequest, RebuildDesktopPoolResponse> genForRebuildDesktopPool() {
+        // basic
+        HttpRequestDef.Builder<RebuildDesktopPoolRequest, RebuildDesktopPoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RebuildDesktopPoolRequest.class, RebuildDesktopPoolResponse.class)
+                .withName("RebuildDesktopPool")
+                .withUri("/v2/{project_id}/desktop-pools/{pool_id}/rebuild")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RebuildDesktopPoolRequest::getPoolId, RebuildDesktopPoolRequest::setPoolId));
+        builder.<String>withRequestField("Service-Transaction-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RebuildDesktopPoolRequest::getServiceTransactionId,
+                RebuildDesktopPoolRequest::setServiceTransactionId));
+        builder.<RebuildDesktopPoolReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RebuildDesktopPoolReq.class),
+            f -> f.withMarshaller(RebuildDesktopPoolRequest::getBody, RebuildDesktopPoolRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResizeDesktopPoolRequest, ResizeDesktopPoolResponse> resizeDesktopPool =
+        genForResizeDesktopPool();
+
+    private static HttpRequestDef<ResizeDesktopPoolRequest, ResizeDesktopPoolResponse> genForResizeDesktopPool() {
+        // basic
+        HttpRequestDef.Builder<ResizeDesktopPoolRequest, ResizeDesktopPoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResizeDesktopPoolRequest.class, ResizeDesktopPoolResponse.class)
+                .withName("ResizeDesktopPool")
+                .withUri("/v2/{project_id}/desktop-pools/{pool_id}/resize")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeDesktopPoolRequest::getPoolId, ResizeDesktopPoolRequest::setPoolId));
+        builder.<String>withRequestField("Service-Transaction-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResizeDesktopPoolRequest::getServiceTransactionId,
+                ResizeDesktopPoolRequest::setServiceTransactionId));
+        builder.<ResizeDesktopPoolReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResizeDesktopPoolReq.class),
+            f -> f.withMarshaller(ResizeDesktopPoolRequest::getBody, ResizeDesktopPoolRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDesktopPoolDetailRequest, ShowDesktopPoolDetailResponse> showDesktopPoolDetail =
+        genForShowDesktopPoolDetail();
+
+    private static HttpRequestDef<ShowDesktopPoolDetailRequest, ShowDesktopPoolDetailResponse> genForShowDesktopPoolDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowDesktopPoolDetailRequest, ShowDesktopPoolDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDesktopPoolDetailRequest.class, ShowDesktopPoolDetailResponse.class)
+            .withName("ShowDesktopPoolDetail")
+            .withUri("/v2/{project_id}/desktop-pools/{pool_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDesktopPoolDetailRequest::getPoolId, ShowDesktopPoolDetailRequest::setPoolId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDesktopPoolRequest, UpdateDesktopPoolResponse> updateDesktopPool =
+        genForUpdateDesktopPool();
+
+    private static HttpRequestDef<UpdateDesktopPoolRequest, UpdateDesktopPoolResponse> genForUpdateDesktopPool() {
+        // basic
+        HttpRequestDef.Builder<UpdateDesktopPoolRequest, UpdateDesktopPoolResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDesktopPoolRequest.class, UpdateDesktopPoolResponse.class)
+                .withName("UpdateDesktopPool")
+                .withUri("/v2/{project_id}/desktop-pools/{pool_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesktopPoolRequest::getPoolId, UpdateDesktopPoolRequest::setPoolId));
+        builder.<UpdateDesktopPoolAttributesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDesktopPoolAttributesReq.class),
+            f -> f.withMarshaller(UpdateDesktopPoolRequest::getBody, UpdateDesktopPoolRequest::setBody));
 
         // response
 
@@ -3108,6 +3647,29 @@ public class WorkspaceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DelOtpDevicesReq.class),
             f -> f.withMarshaller(BatchDeleteOtpDevicesRequest::getBody, BatchDeleteOtpDevicesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteUserRequest, BatchDeleteUserResponse> batchDeleteUser =
+        genForBatchDeleteUser();
+
+    private static HttpRequestDef<BatchDeleteUserRequest, BatchDeleteUserResponse> genForBatchDeleteUser() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteUserRequest, BatchDeleteUserResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteUserRequest.class, BatchDeleteUserResponse.class)
+                .withName("BatchDeleteUser")
+                .withUri("/v2/{project_id}/users/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteUserReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteUserReq.class),
+            f -> f.withMarshaller(BatchDeleteUserRequest::getBody, BatchDeleteUserRequest::setBody));
 
         // response
 

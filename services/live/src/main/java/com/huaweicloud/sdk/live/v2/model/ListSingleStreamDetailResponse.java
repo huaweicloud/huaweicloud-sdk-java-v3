@@ -40,11 +40,6 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
     private List<StreamDetail> videoBitrate = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "audio_framerate")
-
-    private List<StreamDetail> audioFramerate = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -166,39 +161,6 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
         this.videoBitrate = videoBitrate;
     }
 
-    public ListSingleStreamDetailResponse withAudioFramerate(List<StreamDetail> audioFramerate) {
-        this.audioFramerate = audioFramerate;
-        return this;
-    }
-
-    public ListSingleStreamDetailResponse addAudioFramerateItem(StreamDetail audioFramerateItem) {
-        if (this.audioFramerate == null) {
-            this.audioFramerate = new ArrayList<>();
-        }
-        this.audioFramerate.add(audioFramerateItem);
-        return this;
-    }
-
-    public ListSingleStreamDetailResponse withAudioFramerate(Consumer<List<StreamDetail>> audioFramerateSetter) {
-        if (this.audioFramerate == null) {
-            this.audioFramerate = new ArrayList<>();
-        }
-        audioFramerateSetter.accept(this.audioFramerate);
-        return this;
-    }
-
-    /**
-     * 展示流音频帧率情况，帧率单位为fps。  如果出现断流则会出现多个时间段流信息，如： ``` \"audio_framerate\": [     {       \"start_time\": \"2022-02-04T07:00:00Z\",       \"end_time\": \"2022-02-04T07:00:02Z\",       \"data_list\": [         10,         17       ]     },     {       \"start_time\": \"2022-02-04T07:00:05Z\",       \"end_time\": \"2022-02-04T07:00:06Z\",       \"data_list\": [         31,         33       ]     }   ] 
-     * @return audioFramerate
-     */
-    public List<StreamDetail> getAudioFramerate() {
-        return audioFramerate;
-    }
-
-    public void setAudioFramerate(List<StreamDetail> audioFramerate) {
-        this.audioFramerate = audioFramerate;
-    }
-
     public ListSingleStreamDetailResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -229,14 +191,12 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
         ListSingleStreamDetailResponse that = (ListSingleStreamDetailResponse) obj;
         return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
             && Objects.equals(this.stream, that.stream) && Objects.equals(this.videoFramerate, that.videoFramerate)
-            && Objects.equals(this.videoBitrate, that.videoBitrate)
-            && Objects.equals(this.audioFramerate, that.audioFramerate)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.videoBitrate, that.videoBitrate) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publishDomain, app, stream, videoFramerate, videoBitrate, audioFramerate, xRequestId);
+        return Objects.hash(publishDomain, app, stream, videoFramerate, videoBitrate, xRequestId);
     }
 
     @Override
@@ -248,7 +208,6 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
         sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
         sb.append("    videoFramerate: ").append(toIndentedString(videoFramerate)).append("\n");
         sb.append("    videoBitrate: ").append(toIndentedString(videoBitrate)).append("\n");
-        sb.append("    audioFramerate: ").append(toIndentedString(audioFramerate)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

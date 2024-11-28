@@ -45,13 +45,18 @@ public class GeneralTextRequestBody {
 
     private Boolean singleOrientationMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pdf_page_number")
+
+    private Integer pdfPageNumber;
+
     public GeneralTextRequestBody withImage(String image) {
         this.image = image;
         return this;
     }
 
     /**
-     * 与url二选一  图像数据，base64编码，要求base64编码后大小不超过10MB。图片最小边不小于15px，最长边不超过4096px。支持JPEG、JPG、PNG、BMP、TIFF格式。  图片文件Base64编码字符串，[点击[这里](https://support.huaweicloud.com/ocr_faq/ocr_01_0032.html)](tag:hc)[点击[这里](https://support.huaweicloud.com/intl/zh-cn/ocr_faq/ocr_01_0032.html)](tag:hk)查看详细获取方式。     
+     * 与url二选一  图像数据，base64编码，要求base64编码后大小不超过10MB。图片最小边不小于15px，最长边不超过4096px。支持JPEG、JPG、PNG、BMP、GIF、TIFF、WEBP、PCX、ICO、PSD、PDF格式。  图片文件Base64编码字符串，[点击[这里](https://support.huaweicloud.com/ocr_faq/ocr_01_0032.html)](tag:hc)[点击[这里](https://support.huaweicloud.com/intl/zh-cn/ocr_faq/ocr_01_0032.html)](tag:hk)查看详细获取方式。     
      * @return image
      */
     public String getImage() {
@@ -164,6 +169,23 @@ public class GeneralTextRequestBody {
         this.singleOrientationMode = singleOrientationMode;
     }
 
+    public GeneralTextRequestBody withPdfPageNumber(Integer pdfPageNumber) {
+        this.pdfPageNumber = pdfPageNumber;
+        return this;
+    }
+
+    /**
+     * 指定PDF页码识别。传入该参数时，则识别指定页码的内容。如果不传该参数，则默认识别第1页。 
+     * @return pdfPageNumber
+     */
+    public Integer getPdfPageNumber() {
+        return pdfPageNumber;
+    }
+
+    public void setPdfPageNumber(Integer pdfPageNumber) {
+        this.pdfPageNumber = pdfPageNumber;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -177,12 +199,20 @@ public class GeneralTextRequestBody {
             && Objects.equals(this.detectDirection, that.detectDirection)
             && Objects.equals(this.quickMode, that.quickMode) && Objects.equals(this.characterMode, that.characterMode)
             && Objects.equals(this.language, that.language)
-            && Objects.equals(this.singleOrientationMode, that.singleOrientationMode);
+            && Objects.equals(this.singleOrientationMode, that.singleOrientationMode)
+            && Objects.equals(this.pdfPageNumber, that.pdfPageNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, detectDirection, quickMode, characterMode, language, singleOrientationMode);
+        return Objects.hash(image,
+            url,
+            detectDirection,
+            quickMode,
+            characterMode,
+            language,
+            singleOrientationMode,
+            pdfPageNumber);
     }
 
     @Override
@@ -196,6 +226,7 @@ public class GeneralTextRequestBody {
         sb.append("    characterMode: ").append(toIndentedString(characterMode)).append("\n");
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    singleOrientationMode: ").append(toIndentedString(singleOrientationMode)).append("\n");
+        sb.append("    pdfPageNumber: ").append(toIndentedString(pdfPageNumber)).append("\n");
         sb.append("}");
         return sb.toString();
     }

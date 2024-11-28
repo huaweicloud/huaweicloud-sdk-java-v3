@@ -5,6 +5,7 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.rds.v3.model.AddCopyDatabaseRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.AddLogConfigResponseBody;
 import com.huaweicloud.sdk.rds.v3.model.AddMsdtcRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.AddPostgresqlHbaConfRequest;
@@ -56,6 +57,8 @@ import com.huaweicloud.sdk.rds.v3.model.ConfigurationForCreation;
 import com.huaweicloud.sdk.rds.v3.model.ConfigurationForUpdate;
 import com.huaweicloud.sdk.rds.v3.model.CopyConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.CopyConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.CopyDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.CopyDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.CreateConfigurationResponse;
 import com.huaweicloud.sdk.rds.v3.model.CreateDatabaseRequest;
@@ -123,6 +126,9 @@ import com.huaweicloud.sdk.rds.v3.model.DeleteLogLtsConfigsRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteLogLtsConfigsResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.rds.v3.model.DeleteMsdtcLocalHostRequest;
+import com.huaweicloud.sdk.rds.v3.model.DeleteMsdtcLocalHostRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.DeleteMsdtcLocalHostResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDatabaseRequest;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.DeletePostgresqlDbUserRequest;
@@ -7711,6 +7717,33 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CopyDatabaseRequest, CopyDatabaseResponse> copyDatabase = genForCopyDatabase();
+
+    private static HttpRequestDef<CopyDatabaseRequest, CopyDatabaseResponse> genForCopyDatabase() {
+        // basic
+        HttpRequestDef.Builder<CopyDatabaseRequest, CopyDatabaseResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CopyDatabaseRequest.class, CopyDatabaseResponse.class)
+                .withName("CopyDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database/procedure")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CopyDatabaseRequest::getInstanceId, CopyDatabaseRequest::setInstanceId));
+        builder.<AddCopyDatabaseRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddCopyDatabaseRequestBody.class),
+            f -> f.withMarshaller(CopyDatabaseRequest::getBody, CopyDatabaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSqlserverDatabaseRequest, CreateSqlserverDatabaseResponse> createSqlserverDatabase =
         genForCreateSqlserverDatabase();
 
@@ -7775,6 +7808,35 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SqlserverUserForCreation.class),
             f -> f.withMarshaller(CreateSqlserverDbUserRequest::getBody, CreateSqlserverDbUserRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMsdtcLocalHostRequest, DeleteMsdtcLocalHostResponse> deleteMsdtcLocalHost =
+        genForDeleteMsdtcLocalHost();
+
+    private static HttpRequestDef<DeleteMsdtcLocalHostRequest, DeleteMsdtcLocalHostResponse> genForDeleteMsdtcLocalHost() {
+        // basic
+        HttpRequestDef.Builder<DeleteMsdtcLocalHostRequest, DeleteMsdtcLocalHostResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteMsdtcLocalHostRequest.class, DeleteMsdtcLocalHostResponse.class)
+            .withName("DeleteMsdtcLocalHost")
+            .withUri("/v3/{project_id}/instances/{instance_id}/msdtc/host")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMsdtcLocalHostRequest::getInstanceId,
+                DeleteMsdtcLocalHostRequest::setInstanceId));
+        builder.<DeleteMsdtcLocalHostRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteMsdtcLocalHostRequestBody.class),
+            f -> f.withMarshaller(DeleteMsdtcLocalHostRequest::getBody, DeleteMsdtcLocalHostRequest::setBody));
 
         // response
 

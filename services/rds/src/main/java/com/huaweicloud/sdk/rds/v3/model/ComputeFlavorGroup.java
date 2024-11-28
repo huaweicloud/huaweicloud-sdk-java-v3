@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.rds.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -19,7 +21,7 @@ public class ComputeFlavorGroup {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "compute_flavors")
 
-    private ComputeFlavor computeFlavors;
+    private List<ComputeFlavor> computeFlavors = null;
 
     public ComputeFlavorGroup withGroupType(String groupType) {
         this.groupType = groupType;
@@ -38,29 +40,36 @@ public class ComputeFlavorGroup {
         this.groupType = groupType;
     }
 
-    public ComputeFlavorGroup withComputeFlavors(ComputeFlavor computeFlavors) {
+    public ComputeFlavorGroup withComputeFlavors(List<ComputeFlavor> computeFlavors) {
         this.computeFlavors = computeFlavors;
         return this;
     }
 
-    public ComputeFlavorGroup withComputeFlavors(Consumer<ComputeFlavor> computeFlavorsSetter) {
+    public ComputeFlavorGroup addComputeFlavorsItem(ComputeFlavor computeFlavorsItem) {
         if (this.computeFlavors == null) {
-            this.computeFlavors = new ComputeFlavor();
-            computeFlavorsSetter.accept(this.computeFlavors);
+            this.computeFlavors = new ArrayList<>();
         }
+        this.computeFlavors.add(computeFlavorsItem);
+        return this;
+    }
 
+    public ComputeFlavorGroup withComputeFlavors(Consumer<List<ComputeFlavor>> computeFlavorsSetter) {
+        if (this.computeFlavors == null) {
+            this.computeFlavors = new ArrayList<>();
+        }
+        computeFlavorsSetter.accept(this.computeFlavors);
         return this;
     }
 
     /**
-     * Get computeFlavors
+     * 计算规格列表
      * @return computeFlavors
      */
-    public ComputeFlavor getComputeFlavors() {
+    public List<ComputeFlavor> getComputeFlavors() {
         return computeFlavors;
     }
 
-    public void setComputeFlavors(ComputeFlavor computeFlavors) {
+    public void setComputeFlavors(List<ComputeFlavor> computeFlavors) {
         this.computeFlavors = computeFlavors;
     }
 

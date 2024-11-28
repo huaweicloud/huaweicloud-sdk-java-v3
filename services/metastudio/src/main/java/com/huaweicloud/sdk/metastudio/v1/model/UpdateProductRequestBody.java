@@ -271,7 +271,7 @@ public class UpdateProductRequestBody {
     }
 
     /**
-     * 素材资产列表
+     * 资产列表,仅支持图片、视频、音频资产
      * @return assetList
      */
     public List<ProductMediaInfo> getAssetList() {

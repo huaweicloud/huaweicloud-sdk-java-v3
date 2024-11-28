@@ -11,6 +11,10 @@ import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairResponse;
 import com.huaweicloud.sdk.kps.v3.model.BatchAssociateKeypairRequest;
 import com.huaweicloud.sdk.kps.v3.model.BatchAssociateKeypairRequestBody;
 import com.huaweicloud.sdk.kps.v3.model.BatchAssociateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.BatchExportPrivateKeyRequest;
+import com.huaweicloud.sdk.kps.v3.model.BatchExportPrivateKeyResponse;
+import com.huaweicloud.sdk.kps.v3.model.BatchImportKeypairRequest;
+import com.huaweicloud.sdk.kps.v3.model.BatchImportKeypairResponse;
 import com.huaweicloud.sdk.kps.v3.model.ClearPrivateKeyRequest;
 import com.huaweicloud.sdk.kps.v3.model.ClearPrivateKeyResponse;
 import com.huaweicloud.sdk.kps.v3.model.CreateKeypairRequest;
@@ -31,6 +35,7 @@ import com.huaweicloud.sdk.kps.v3.model.ExportPrivateKeyResponse;
 import com.huaweicloud.sdk.kps.v3.model.ImportPrivateKeyRequest;
 import com.huaweicloud.sdk.kps.v3.model.ImportPrivateKeyRequestBody;
 import com.huaweicloud.sdk.kps.v3.model.ImportPrivateKeyResponse;
+import com.huaweicloud.sdk.kps.v3.model.Keypairs;
 import com.huaweicloud.sdk.kps.v3.model.ListFailedTaskRequest;
 import com.huaweicloud.sdk.kps.v3.model.ListFailedTaskResponse;
 import com.huaweicloud.sdk.kps.v3.model.ListKeypairDetailRequest;
@@ -44,6 +49,8 @@ import com.huaweicloud.sdk.kps.v3.model.ListRunningTaskResponse;
 import com.huaweicloud.sdk.kps.v3.model.UpdateKeypairDescriptionRequest;
 import com.huaweicloud.sdk.kps.v3.model.UpdateKeypairDescriptionRequestBody;
 import com.huaweicloud.sdk.kps.v3.model.UpdateKeypairDescriptionResponse;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class KpsMeta {
@@ -88,6 +95,59 @@ public class KpsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAssociateKeypairRequestBody.class),
             f -> f.withMarshaller(BatchAssociateKeypairRequest::getBody, BatchAssociateKeypairRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchExportPrivateKeyRequest, BatchExportPrivateKeyResponse> batchExportPrivateKey =
+        genForBatchExportPrivateKey();
+
+    private static HttpRequestDef<BatchExportPrivateKeyRequest, BatchExportPrivateKeyResponse> genForBatchExportPrivateKey() {
+        // basic
+        HttpRequestDef.Builder<BatchExportPrivateKeyRequest, BatchExportPrivateKeyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchExportPrivateKeyRequest.class, BatchExportPrivateKeyResponse.class)
+            .withName("BatchExportPrivateKey")
+            .withUri("/v3/{project_id}/keypairs/private-key/batch-export")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<List<Keypairs>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchExportPrivateKeyRequest::getBody, BatchExportPrivateKeyRequest::setBody)
+                .withInnerContainerType(Keypairs.class));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchExportPrivateKeyResponse::getBody, BatchExportPrivateKeyResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchImportKeypairRequest, BatchImportKeypairResponse> batchImportKeypair =
+        genForBatchImportKeypair();
+
+    private static HttpRequestDef<BatchImportKeypairRequest, BatchImportKeypairResponse> genForBatchImportKeypair() {
+        // basic
+        HttpRequestDef.Builder<BatchImportKeypairRequest, BatchImportKeypairResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchImportKeypairRequest.class, BatchImportKeypairResponse.class)
+                .withName("BatchImportKeypair")
+                .withUri("/v3/{project_id}/keypairs/batch-import")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<List<CreateKeypairRequestBody>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchImportKeypairRequest::getBody, BatchImportKeypairRequest::setBody)
+                .withInnerContainerType(CreateKeypairRequestBody.class));
 
         // response
 

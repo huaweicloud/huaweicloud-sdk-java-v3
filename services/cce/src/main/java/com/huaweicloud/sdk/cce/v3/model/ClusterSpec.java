@@ -353,6 +353,11 @@ public class ClusterSpec {
 
     private List<PackageConfiguration> configurationsOverride = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encryptionConfig")
+
+    private EncryptionConfig encryptionConfig;
+
     public ClusterSpec withCategory(CategoryEnum category) {
         this.category = category;
         return this;
@@ -896,6 +901,32 @@ public class ClusterSpec {
         this.configurationsOverride = configurationsOverride;
     }
 
+    public ClusterSpec withEncryptionConfig(EncryptionConfig encryptionConfig) {
+        this.encryptionConfig = encryptionConfig;
+        return this;
+    }
+
+    public ClusterSpec withEncryptionConfig(Consumer<EncryptionConfig> encryptionConfigSetter) {
+        if (this.encryptionConfig == null) {
+            this.encryptionConfig = new EncryptionConfig();
+            encryptionConfigSetter.accept(this.encryptionConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get encryptionConfig
+     * @return encryptionConfig
+     */
+    public EncryptionConfig getEncryptionConfig() {
+        return encryptionConfig;
+    }
+
+    public void setEncryptionConfig(EncryptionConfig encryptionConfig) {
+        this.encryptionConfig = encryptionConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -923,7 +954,8 @@ public class ClusterSpec {
             && Objects.equals(this.enableMasterVolumeEncryption, that.enableMasterVolumeEncryption)
             && Objects.equals(this.enableDistMgt, that.enableDistMgt)
             && Objects.equals(this.deletionProtection, that.deletionProtection)
-            && Objects.equals(this.configurationsOverride, that.configurationsOverride);
+            && Objects.equals(this.configurationsOverride, that.configurationsOverride)
+            && Objects.equals(this.encryptionConfig, that.encryptionConfig);
     }
 
     @Override
@@ -952,7 +984,8 @@ public class ClusterSpec {
             enableMasterVolumeEncryption,
             enableDistMgt,
             deletionProtection,
-            configurationsOverride);
+            configurationsOverride,
+            encryptionConfig);
     }
 
     @Override
@@ -986,6 +1019,7 @@ public class ClusterSpec {
         sb.append("    enableDistMgt: ").append(toIndentedString(enableDistMgt)).append("\n");
         sb.append("    deletionProtection: ").append(toIndentedString(deletionProtection)).append("\n");
         sb.append("    configurationsOverride: ").append(toIndentedString(configurationsOverride)).append("\n");
+        sb.append("    encryptionConfig: ").append(toIndentedString(encryptionConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

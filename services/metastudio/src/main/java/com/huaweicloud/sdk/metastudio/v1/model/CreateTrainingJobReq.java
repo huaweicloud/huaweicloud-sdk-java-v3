@@ -130,6 +130,16 @@ public class CreateTrainingJobReq {
 
     private String batchName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_language")
+
+    private String outputLanguage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_text")
+
+    private String customText;
+
     public CreateTrainingJobReq withTag(JobTag tag) {
         this.tag = tag;
         return this;
@@ -283,6 +293,40 @@ public class CreateTrainingJobReq {
         this.batchName = batchName;
     }
 
+    public CreateTrainingJobReq withOutputLanguage(String outputLanguage) {
+        this.outputLanguage = outputLanguage;
+        return this;
+    }
+
+    /**
+     * 模型输出语言类型
+     * @return outputLanguage
+     */
+    public String getOutputLanguage() {
+        return outputLanguage;
+    }
+
+    public void setOutputLanguage(String outputLanguage) {
+        this.outputLanguage = outputLanguage;
+    }
+
+    public CreateTrainingJobReq withCustomText(String customText) {
+        this.customText = customText;
+        return this;
+    }
+
+    /**
+     * 自定义试听文本
+     * @return customText
+     */
+    public String getCustomText() {
+        return customText;
+    }
+
+    public void setCustomText(String customText) {
+        this.customText = customText;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -296,12 +340,24 @@ public class CreateTrainingJobReq {
             && Objects.equals(this.sex, that.sex) && Objects.equals(this.voiceName, that.voiceName)
             && Objects.equals(this.language, that.language) && Objects.equals(this.createType, that.createType)
             && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId)
-            && Objects.equals(this.batchName, that.batchName);
+            && Objects.equals(this.batchName, that.batchName)
+            && Objects.equals(this.outputLanguage, that.outputLanguage)
+            && Objects.equals(this.customText, that.customText);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tag, description, sex, voiceName, language, createType, phone, dhtmsJobId, batchName);
+        return Objects.hash(tag,
+            description,
+            sex,
+            voiceName,
+            language,
+            createType,
+            phone,
+            dhtmsJobId,
+            batchName,
+            outputLanguage,
+            customText);
     }
 
     @Override
@@ -317,6 +373,8 @@ public class CreateTrainingJobReq {
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    dhtmsJobId: ").append(toIndentedString(dhtmsJobId)).append("\n");
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
+        sb.append("    outputLanguage: ").append(toIndentedString(outputLanguage)).append("\n");
+        sb.append("    customText: ").append(toIndentedString(customText)).append("\n");
         sb.append("}");
         return sb.toString();
     }

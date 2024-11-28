@@ -89,7 +89,7 @@ public class CbcProductInfoUpdate {
     }
 
     /**
-     * 用户购买云服务产品的资源规格 Enum: [vault.backup.server.normal，vault.backup.turbo.normal, vault.backup.database.normal，vault.backup.volume.normal，vault.backup.rds.normal，vault.replication.server.normal，vault.hybrid.server.normal]
+     * 用户购买云服务产品的资源规格 Enum:  - vault.backup.server.normal - vault.backup.turbo.normal - vault.backup.database.normal - vault.backup.volume.normal - vault.backup.rds.normal - vault.replication.server.normal - vault.hybrid.server.normal
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {

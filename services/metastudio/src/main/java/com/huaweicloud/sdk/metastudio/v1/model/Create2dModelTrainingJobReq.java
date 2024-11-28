@@ -223,11 +223,6 @@ public class Create2dModelTrainingJobReq {
     private ModelVersionEnum modelVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "beauty_level")
-
-    private Integer beautyLevel;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_flexus")
 
     private Boolean isFlexus;
@@ -495,25 +490,6 @@ public class Create2dModelTrainingJobReq {
         this.modelVersion = modelVersion;
     }
 
-    public Create2dModelTrainingJobReq withBeautyLevel(Integer beautyLevel) {
-        this.beautyLevel = beautyLevel;
-        return this;
-    }
-
-    /**
-     * 美白等级。默认值0，不美白。
-     * minimum: 0
-     * maximum: 3
-     * @return beautyLevel
-     */
-    public Integer getBeautyLevel() {
-        return beautyLevel;
-    }
-
-    public void setBeautyLevel(Integer beautyLevel) {
-        this.beautyLevel = beautyLevel;
-    }
-
     public Create2dModelTrainingJobReq withIsFlexus(Boolean isFlexus) {
         this.isFlexus = isFlexus;
         return this;
@@ -640,8 +616,7 @@ public class Create2dModelTrainingJobReq {
             && Objects.equals(this.actionVideoMultipartCount, that.actionVideoMultipartCount)
             && Objects.equals(this.isBackgroundReplacement, that.isBackgroundReplacement)
             && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.modelVersion, that.modelVersion)
-            && Objects.equals(this.beautyLevel, that.beautyLevel) && Objects.equals(this.isFlexus, that.isFlexus)
+            && Objects.equals(this.modelVersion, that.modelVersion) && Objects.equals(this.isFlexus, that.isFlexus)
             && Objects.equals(this.isOnlyHumanModel, that.isOnlyHumanModel)
             && Objects.equals(this.audioSourceType, that.audioSourceType)
             && Objects.equals(this.voiceProperties, that.voiceProperties)
@@ -659,7 +634,6 @@ public class Create2dModelTrainingJobReq {
             batchName,
             tags,
             modelVersion,
-            beautyLevel,
             isFlexus,
             isOnlyHumanModel,
             audioSourceType,
@@ -680,7 +654,6 @@ public class Create2dModelTrainingJobReq {
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    modelVersion: ").append(toIndentedString(modelVersion)).append("\n");
-        sb.append("    beautyLevel: ").append(toIndentedString(beautyLevel)).append("\n");
         sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
         sb.append("    isOnlyHumanModel: ").append(toIndentedString(isOnlyHumanModel)).append("\n");
         sb.append("    audioSourceType: ").append(toIndentedString(audioSourceType)).append("\n");

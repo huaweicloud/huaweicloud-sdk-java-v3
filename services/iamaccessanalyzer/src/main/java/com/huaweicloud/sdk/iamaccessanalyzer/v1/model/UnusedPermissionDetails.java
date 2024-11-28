@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * UnusedPermissionDetails
+ * 未使用的权限详情。
  */
 public class UnusedPermissionDetails {
 

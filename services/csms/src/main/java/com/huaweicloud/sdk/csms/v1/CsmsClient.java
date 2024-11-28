@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequest;
+import com.huaweicloud.sdk.csms.v1.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretRequest;
@@ -35,6 +37,8 @@ import com.huaweicloud.sdk.csms.v1.model.ListSecretEventsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretEventsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretTaskRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretTaskResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretsRequest;
@@ -43,8 +47,12 @@ import com.huaweicloud.sdk.csms.v1.model.RestoreSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.RotateSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.RotateSecretResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowAgencyRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowAgencyResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretEventResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretFunctionTemplatesRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretFunctionTemplatesResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageRequest;
@@ -102,6 +110,34 @@ public class CsmsClient {
     public SyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTagsInvoker(
         BatchCreateOrDeleteTagsRequest request) {
         return new SyncInvoker<>(request, CsmsMeta.batchCreateOrDeleteTags, hcClient);
+    }
+
+    /**
+     * 创建服务委托
+     *
+     * 创建服务委托。用于创建凭据管理服务相关委托和函数工作流相关委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgencyRequest 请求对象
+     * @return CreateAgencyResponse
+     */
+    public CreateAgencyResponse createAgency(CreateAgencyRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.createAgency);
+    }
+
+    /**
+     * 创建服务委托
+     *
+     * 创建服务委托。用于创建凭据管理服务相关委托和函数工作流相关委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgencyRequest 请求对象
+     * @return SyncInvoker<CreateAgencyRequest, CreateAgencyResponse>
+     */
+    public SyncInvoker<CreateAgencyRequest, CreateAgencyResponse> createAgencyInvoker(CreateAgencyRequest request) {
+        return new SyncInvoker<>(request, CsmsMeta.createAgency, hcClient);
     }
 
     /**
@@ -546,6 +582,35 @@ public class CsmsClient {
     }
 
     /**
+     * 查询任务列表
+     *
+     * 查询任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecretTaskRequest 请求对象
+     * @return ListSecretTaskResponse
+     */
+    public ListSecretTaskResponse listSecretTask(ListSecretTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.listSecretTask);
+    }
+
+    /**
+     * 查询任务列表
+     *
+     * 查询任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecretTaskRequest 请求对象
+     * @return SyncInvoker<ListSecretTaskRequest, ListSecretTaskResponse>
+     */
+    public SyncInvoker<ListSecretTaskRequest, ListSecretTaskResponse> listSecretTaskInvoker(
+        ListSecretTaskRequest request) {
+        return new SyncInvoker<>(request, CsmsMeta.listSecretTask, hcClient);
+    }
+
+    /**
      * 查询凭据的版本列表
      *
      * 查询指定凭据下的版本列表信息。
@@ -659,6 +724,34 @@ public class CsmsClient {
     }
 
     /**
+     * 查看是否有服务委托
+     *
+     * 查看是否有服务委托
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyRequest 请求对象
+     * @return ShowAgencyResponse
+     */
+    public ShowAgencyResponse showAgency(ShowAgencyRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.showAgency);
+    }
+
+    /**
+     * 查看是否有服务委托
+     *
+     * 查看是否有服务委托
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyRequest 请求对象
+     * @return SyncInvoker<ShowAgencyRequest, ShowAgencyResponse>
+     */
+    public SyncInvoker<ShowAgencyRequest, ShowAgencyResponse> showAgencyInvoker(ShowAgencyRequest request) {
+        return new SyncInvoker<>(request, CsmsMeta.showAgency, hcClient);
+    }
+
+    /**
      * 查询凭据
      *
      * 查询指定凭据的信息。
@@ -713,6 +806,35 @@ public class CsmsClient {
     public SyncInvoker<ShowSecretEventRequest, ShowSecretEventResponse> showSecretEventInvoker(
         ShowSecretEventRequest request) {
         return new SyncInvoker<>(request, CsmsMeta.showSecretEvent, hcClient);
+    }
+
+    /**
+     * 获取凭据轮转函数模板
+     *
+     * 获取凭据轮转函数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecretFunctionTemplatesRequest 请求对象
+     * @return ShowSecretFunctionTemplatesResponse
+     */
+    public ShowSecretFunctionTemplatesResponse showSecretFunctionTemplates(ShowSecretFunctionTemplatesRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.showSecretFunctionTemplates);
+    }
+
+    /**
+     * 获取凭据轮转函数模板
+     *
+     * 获取凭据轮转函数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecretFunctionTemplatesRequest 请求对象
+     * @return SyncInvoker<ShowSecretFunctionTemplatesRequest, ShowSecretFunctionTemplatesResponse>
+     */
+    public SyncInvoker<ShowSecretFunctionTemplatesRequest, ShowSecretFunctionTemplatesResponse> showSecretFunctionTemplatesInvoker(
+        ShowSecretFunctionTemplatesRequest request) {
+        return new SyncInvoker<>(request, CsmsMeta.showSecretFunctionTemplates, hcClient);
     }
 
     /**

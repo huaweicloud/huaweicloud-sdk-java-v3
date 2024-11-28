@@ -3,6 +3,7 @@ package com.huaweicloud.sdk.bssintl.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -94,6 +95,21 @@ public class OrderInstanceV2 {
     @JsonProperty(value = "expire_policy")
 
     private Integer expirePolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_spec_desc")
+
+    private String productSpecDesc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spec_size")
+
+    private BigDecimal specSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spec_size_measure_id")
+
+    private Integer specSizeMeasureId;
 
     public OrderInstanceV2 withId(String id) {
         this.id = id;
@@ -384,6 +400,57 @@ public class OrderInstanceV2 {
         this.expirePolicy = expirePolicy;
     }
 
+    public OrderInstanceV2 withProductSpecDesc(String productSpecDesc) {
+        this.productSpecDesc = productSpecDesc;
+        return this;
+    }
+
+    /**
+     * 产品规格描述
+     * @return productSpecDesc
+     */
+    public String getProductSpecDesc() {
+        return productSpecDesc;
+    }
+
+    public void setProductSpecDesc(String productSpecDesc) {
+        this.productSpecDesc = productSpecDesc;
+    }
+
+    public OrderInstanceV2 withSpecSize(BigDecimal specSize) {
+        this.specSize = specSize;
+        return this;
+    }
+
+    /**
+     * 线性大小
+     * @return specSize
+     */
+    public BigDecimal getSpecSize() {
+        return specSize;
+    }
+
+    public void setSpecSize(BigDecimal specSize) {
+        this.specSize = specSize;
+    }
+
+    public OrderInstanceV2 withSpecSizeMeasureId(Integer specSizeMeasureId) {
+        this.specSizeMeasureId = specSizeMeasureId;
+        return this;
+    }
+
+    /**
+     * 线性大小单位
+     * @return specSizeMeasureId
+     */
+    public Integer getSpecSizeMeasureId() {
+        return specSizeMeasureId;
+    }
+
+    public void setSpecSizeMeasureId(Integer specSizeMeasureId) {
+        this.specSizeMeasureId = specSizeMeasureId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -404,7 +471,10 @@ public class OrderInstanceV2 {
             && Objects.equals(this.parentResourceId, that.parentResourceId)
             && Objects.equals(this.isMainResource, that.isMainResource) && Objects.equals(this.status, that.status)
             && Objects.equals(this.effectiveTime, that.effectiveTime)
-            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.expirePolicy, that.expirePolicy);
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.expirePolicy, that.expirePolicy)
+            && Objects.equals(this.productSpecDesc, that.productSpecDesc)
+            && Objects.equals(this.specSize, that.specSize)
+            && Objects.equals(this.specSizeMeasureId, that.specSizeMeasureId);
     }
 
     @Override
@@ -425,7 +495,10 @@ public class OrderInstanceV2 {
             status,
             effectiveTime,
             expireTime,
-            expirePolicy);
+            expirePolicy,
+            productSpecDesc,
+            specSize,
+            specSizeMeasureId);
     }
 
     @Override
@@ -449,6 +522,9 @@ public class OrderInstanceV2 {
         sb.append("    effectiveTime: ").append(toIndentedString(effectiveTime)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    expirePolicy: ").append(toIndentedString(expirePolicy)).append("\n");
+        sb.append("    productSpecDesc: ").append(toIndentedString(productSpecDesc)).append("\n");
+        sb.append("    specSize: ").append(toIndentedString(specSize)).append("\n");
+        sb.append("    specSizeMeasureId: ").append(toIndentedString(specSizeMeasureId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -91,6 +91,11 @@ public class CustomerOrderV3 {
 
     private String userName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pending_payment_end_time")
+
+    private String pendingPaymentEndTime;
+
     public CustomerOrderV3 withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -372,6 +377,23 @@ public class CustomerOrderV3 {
         this.userName = userName;
     }
 
+    public CustomerOrderV3 withPendingPaymentEndTime(String pendingPaymentEndTime) {
+        this.pendingPaymentEndTime = pendingPaymentEndTime;
+        return this;
+    }
+
+    /**
+     * 订单待付款截止时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-05-06T08:05:01Z”。其中，HH范围是0～23，mm和ss范围是0～59。
+     * @return pendingPaymentEndTime
+     */
+    public String getPendingPaymentEndTime() {
+        return pendingPaymentEndTime;
+    }
+
+    public void setPendingPaymentEndTime(String pendingPaymentEndTime) {
+        this.pendingPaymentEndTime = pendingPaymentEndTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -391,7 +413,8 @@ public class CustomerOrderV3 {
             && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.paymentTime, that.paymentTime) && Objects.equals(this.currency, that.currency)
             && Objects.equals(this.contractId, that.contractId) && Objects.equals(this.amountInfo, that.amountInfo)
-            && Objects.equals(this.userName, that.userName);
+            && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.pendingPaymentEndTime, that.pendingPaymentEndTime);
     }
 
     @Override
@@ -411,7 +434,8 @@ public class CustomerOrderV3 {
             currency,
             contractId,
             amountInfo,
-            userName);
+            userName,
+            pendingPaymentEndTime);
     }
 
     @Override
@@ -434,6 +458,7 @@ public class CustomerOrderV3 {
         sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
         sb.append("    amountInfo: ").append(toIndentedString(amountInfo)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    pendingPaymentEndTime: ").append(toIndentedString(pendingPaymentEndTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

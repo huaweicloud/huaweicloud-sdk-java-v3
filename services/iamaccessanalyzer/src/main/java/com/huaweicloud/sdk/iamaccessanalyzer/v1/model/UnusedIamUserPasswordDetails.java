@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * UnusedIamUserPasswordDetails
+ * 未使用的用户密码详情。
  */
 public class UnusedIamUserPasswordDetails {
 

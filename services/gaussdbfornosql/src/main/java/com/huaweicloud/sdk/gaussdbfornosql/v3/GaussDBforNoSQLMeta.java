@@ -146,6 +146,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRecycleInstancesRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRecycleInstancesResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisPitrRestoreTimeRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisPitrRestoreTimeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisSlowLogsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisSlowLogsRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ListRedisSlowLogsResponse;
@@ -207,6 +209,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisPitrRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisPitrRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRedisPitrResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SaveLtsConfigsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SaveLtsConfigsRequestBody;
@@ -222,6 +227,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetInstanceDataDumpRequestBo
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetInstanceDataDumpResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRecyclePolicyResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRedisPitrPolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRedisPitrPolicyRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SetRedisPitrPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAllInstancesBackupsNewRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAllInstancesBackupsNewResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowAllInstancesBackupsRequest;
@@ -267,6 +275,10 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRecyclePolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisBigKeysResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisPitrInfoRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisPitrInfoResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisPitrPolicyRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRedisPitrPolicyResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowRestorableListResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSecondLevelMonitoringStatusRequest;
@@ -276,6 +288,9 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShowSlowLogDesensitizationRe
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ShrinkInstanceNodeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.StopBackupRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.StopBackupRequestBody;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.StopBackupResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.SwitchIpGroupResponse;
@@ -2058,6 +2073,55 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRedisPitrRestoreTimeRequest, ListRedisPitrRestoreTimeResponse> listRedisPitrRestoreTime =
+        genForListRedisPitrRestoreTime();
+
+    private static HttpRequestDef<ListRedisPitrRestoreTimeRequest, ListRedisPitrRestoreTimeResponse> genForListRedisPitrRestoreTime() {
+        // basic
+        HttpRequestDef.Builder<ListRedisPitrRestoreTimeRequest, ListRedisPitrRestoreTimeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListRedisPitrRestoreTimeRequest.class, ListRedisPitrRestoreTimeResponse.class)
+                .withName("ListRedisPitrRestoreTime")
+                .withUri("/v3/{project_id}/redis/instances/{instance_id}/pitr/restorable-time-periods")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRedisPitrRestoreTimeRequest::getInstanceId,
+                ListRedisPitrRestoreTimeRequest::setInstanceId));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRedisPitrRestoreTimeRequest::getStartTime,
+                ListRedisPitrRestoreTimeRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRedisPitrRestoreTimeRequest::getEndTime,
+                ListRedisPitrRestoreTimeRequest::setEndTime));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRedisPitrRestoreTimeRequest::getOffset,
+                ListRedisPitrRestoreTimeRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRedisPitrRestoreTimeRequest::getLimit,
+                ListRedisPitrRestoreTimeRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRedisSlowLogsRequest, ListRedisSlowLogsResponse> listRedisSlowLogs =
         genForListRedisSlowLogs();
 
@@ -2704,6 +2768,34 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RestoreRedisPitrRequest, RestoreRedisPitrResponse> restoreRedisPitr =
+        genForRestoreRedisPitr();
+
+    private static HttpRequestDef<RestoreRedisPitrRequest, RestoreRedisPitrResponse> genForRestoreRedisPitr() {
+        // basic
+        HttpRequestDef.Builder<RestoreRedisPitrRequest, RestoreRedisPitrResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RestoreRedisPitrRequest.class, RestoreRedisPitrResponse.class)
+                .withName("RestoreRedisPitr")
+                .withUri("/v3/{project_id}/redis/instances/{instance_id}/pitr")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreRedisPitrRequest::getInstanceId, RestoreRedisPitrRequest::setInstanceId));
+        builder.<RestoreRedisPitrRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestoreRedisPitrRequestBody.class),
+            f -> f.withMarshaller(RestoreRedisPitrRequest::getBody, RestoreRedisPitrRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SaveLtsConfigsRequest, SaveLtsConfigsResponse> saveLtsConfigs =
         genForSaveLtsConfigs();
 
@@ -2829,6 +2921,34 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RecyclePolicyRequestBody.class),
             f -> f.withMarshaller(SetRecyclePolicyRequest::getBody, SetRecyclePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetRedisPitrPolicyRequest, SetRedisPitrPolicyResponse> setRedisPitrPolicy =
+        genForSetRedisPitrPolicy();
+
+    private static HttpRequestDef<SetRedisPitrPolicyRequest, SetRedisPitrPolicyResponse> genForSetRedisPitrPolicy() {
+        // basic
+        HttpRequestDef.Builder<SetRedisPitrPolicyRequest, SetRedisPitrPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetRedisPitrPolicyRequest.class, SetRedisPitrPolicyResponse.class)
+                .withName("SetRedisPitrPolicy")
+                .withUri("/v3/{project_id}/redis/instances/{instance_id}/pitr/policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetRedisPitrPolicyRequest::getInstanceId, SetRedisPitrPolicyRequest::setInstanceId));
+        builder.<SetRedisPitrPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetRedisPitrPolicyRequestBody.class),
+            f -> f.withMarshaller(SetRedisPitrPolicyRequest::getBody, SetRedisPitrPolicyRequest::setBody));
 
         // response
 
@@ -3523,6 +3643,53 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowRedisPitrInfoRequest, ShowRedisPitrInfoResponse> showRedisPitrInfo =
+        genForShowRedisPitrInfo();
+
+    private static HttpRequestDef<ShowRedisPitrInfoRequest, ShowRedisPitrInfoResponse> genForShowRedisPitrInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowRedisPitrInfoRequest, ShowRedisPitrInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRedisPitrInfoRequest.class, ShowRedisPitrInfoResponse.class)
+                .withName("ShowRedisPitrInfo")
+                .withUri("/v3/{project_id}/redis/instances/{instance_id}/pitr")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRedisPitrInfoRequest::getInstanceId, ShowRedisPitrInfoRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRedisPitrPolicyRequest, ShowRedisPitrPolicyResponse> showRedisPitrPolicy =
+        genForShowRedisPitrPolicy();
+
+    private static HttpRequestDef<ShowRedisPitrPolicyRequest, ShowRedisPitrPolicyResponse> genForShowRedisPitrPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowRedisPitrPolicyRequest, ShowRedisPitrPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRedisPitrPolicyRequest.class, ShowRedisPitrPolicyResponse.class)
+                .withName("ShowRedisPitrPolicy")
+                .withUri("/v3/{project_id}/redis/instances/{instance_id}/pitr/policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRedisPitrPolicyRequest::getInstanceId,
+                ShowRedisPitrPolicyRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRestorableListRequest, ShowRestorableListResponse> showRestorableList =
         genForShowRestorableList();
 
@@ -3632,6 +3799,33 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShrinkInstanceNodeRequestBody.class),
             f -> f.withMarshaller(ShrinkInstanceNodeRequest::getBody, ShrinkInstanceNodeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<StopBackupRequest, StopBackupResponse> stopBackup = genForStopBackup();
+
+    private static HttpRequestDef<StopBackupRequest, StopBackupResponse> genForStopBackup() {
+        // basic
+        HttpRequestDef.Builder<StopBackupRequest, StopBackupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, StopBackupRequest.class, StopBackupResponse.class)
+                .withName("StopBackup")
+                .withUri("/v3/{project_id}/backups/{backup_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("backup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(StopBackupRequest::getBackupId, StopBackupRequest::setBackupId));
+        builder.<StopBackupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(StopBackupRequestBody.class),
+            f -> f.withMarshaller(StopBackupRequest::getBody, StopBackupRequest::setBody));
 
         // response
 

@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.workspace.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.workspace.v2.model.AddDesktopPoolVolumesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AddDesktopPoolVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AddMetricNotifyRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AddMetricNotifyRuleResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AddVolumesRequest;
@@ -35,6 +37,8 @@ import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScheduledTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDisassociateDesktopsEipRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDisassociateDesktopsEipResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchLogoffDesktopsRequest;
@@ -59,6 +63,10 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateAgenciesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAgenciesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolAuthorizedObjectsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolAuthorizedObjectsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserRequest;
@@ -73,6 +81,10 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsRequ
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolVolumesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopVolumesRequest;
@@ -91,6 +103,12 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DetachInstancesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DetachInstancesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExecuteDesktopPoolActionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExecuteDesktopPoolActionResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolVolumesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportUserLoginInfoNewRequest;
@@ -107,6 +125,10 @@ import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolAuthorizedObjectsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolAuthorizedObjectsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsConnectStatusRequest;
@@ -137,6 +159,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListPoolDesktopsDetailRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListPoolDesktopsDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsRequest;
@@ -167,8 +191,12 @@ import com.huaweicloud.sdk.workspace.v2.model.ListUsersRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsersResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListWorkspacesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListWorkspacesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.RebuildDesktopPoolRequest;
+import com.huaweicloud.sdk.workspace.v2.model.RebuildDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopPoolRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnGroupRequest;
@@ -179,6 +207,8 @@ import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopPoolDetailRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopPoolDetailResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowJobRequest;
@@ -199,6 +229,8 @@ import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigReques
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopPoolRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksRequest;
@@ -1290,6 +1322,451 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<UpdateDesktopNamePolicyRequest, UpdateDesktopNamePolicyResponse> updateDesktopNamePolicyAsyncInvoker(
         UpdateDesktopNamePolicyRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.updateDesktopNamePolicy, hcClient);
+    }
+
+    /**
+     * 桌面池批量添加磁盘
+     *
+     * 桌面池批量添加磁盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDesktopPoolVolumesRequest 请求对象
+     * @return CompletableFuture<AddDesktopPoolVolumesResponse>
+     */
+    public CompletableFuture<AddDesktopPoolVolumesResponse> addDesktopPoolVolumesAsync(
+        AddDesktopPoolVolumesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.addDesktopPoolVolumes);
+    }
+
+    /**
+     * 桌面池批量添加磁盘
+     *
+     * 桌面池批量添加磁盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDesktopPoolVolumesRequest 请求对象
+     * @return AsyncInvoker<AddDesktopPoolVolumesRequest, AddDesktopPoolVolumesResponse>
+     */
+    public AsyncInvoker<AddDesktopPoolVolumesRequest, AddDesktopPoolVolumesResponse> addDesktopPoolVolumesAsyncInvoker(
+        AddDesktopPoolVolumesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.addDesktopPoolVolumes, hcClient);
+    }
+
+    /**
+     * 创建桌面池
+     *
+     * 创建桌面池，可将此桌面池分配给用户、用户组，用户登录时会绑定其中一个桌面。
+     * 注:需通过开通委托功能接口先对云服务进行授权才可以使用该功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesktopPoolRequest 请求对象
+     * @return CompletableFuture<CreateDesktopPoolResponse>
+     */
+    public CompletableFuture<CreateDesktopPoolResponse> createDesktopPoolAsync(CreateDesktopPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createDesktopPool);
+    }
+
+    /**
+     * 创建桌面池
+     *
+     * 创建桌面池，可将此桌面池分配给用户、用户组，用户登录时会绑定其中一个桌面。
+     * 注:需通过开通委托功能接口先对云服务进行授权才可以使用该功能
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesktopPoolRequest 请求对象
+     * @return AsyncInvoker<CreateDesktopPoolRequest, CreateDesktopPoolResponse>
+     */
+    public AsyncInvoker<CreateDesktopPoolRequest, CreateDesktopPoolResponse> createDesktopPoolAsyncInvoker(
+        CreateDesktopPoolRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createDesktopPool, hcClient);
+    }
+
+    /**
+     * 桌面池授权用户、用户组
+     *
+     * 该接口用于桌面池授权用户、用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesktopPoolAuthorizedObjectsRequest 请求对象
+     * @return CompletableFuture<CreateDesktopPoolAuthorizedObjectsResponse>
+     */
+    public CompletableFuture<CreateDesktopPoolAuthorizedObjectsResponse> createDesktopPoolAuthorizedObjectsAsync(
+        CreateDesktopPoolAuthorizedObjectsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createDesktopPoolAuthorizedObjects);
+    }
+
+    /**
+     * 桌面池授权用户、用户组
+     *
+     * 该接口用于桌面池授权用户、用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesktopPoolAuthorizedObjectsRequest 请求对象
+     * @return AsyncInvoker<CreateDesktopPoolAuthorizedObjectsRequest, CreateDesktopPoolAuthorizedObjectsResponse>
+     */
+    public AsyncInvoker<CreateDesktopPoolAuthorizedObjectsRequest, CreateDesktopPoolAuthorizedObjectsResponse> createDesktopPoolAuthorizedObjectsAsyncInvoker(
+        CreateDesktopPoolAuthorizedObjectsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createDesktopPoolAuthorizedObjects, hcClient);
+    }
+
+    /**
+     * 删除桌面池
+     *
+     * 当桌面池内无桌面时可删除桌面池，桌面池删除后无法恢复。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesktopPoolRequest 请求对象
+     * @return CompletableFuture<DeleteDesktopPoolResponse>
+     */
+    public CompletableFuture<DeleteDesktopPoolResponse> deleteDesktopPoolAsync(DeleteDesktopPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteDesktopPool);
+    }
+
+    /**
+     * 删除桌面池
+     *
+     * 当桌面池内无桌面时可删除桌面池，桌面池删除后无法恢复。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesktopPoolRequest 请求对象
+     * @return AsyncInvoker<DeleteDesktopPoolRequest, DeleteDesktopPoolResponse>
+     */
+    public AsyncInvoker<DeleteDesktopPoolRequest, DeleteDesktopPoolResponse> deleteDesktopPoolAsyncInvoker(
+        DeleteDesktopPoolRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteDesktopPool, hcClient);
+    }
+
+    /**
+     * 桌面池批量删除磁盘
+     *
+     * 桌面池批量删除磁盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesktopPoolVolumesRequest 请求对象
+     * @return CompletableFuture<DeleteDesktopPoolVolumesResponse>
+     */
+    public CompletableFuture<DeleteDesktopPoolVolumesResponse> deleteDesktopPoolVolumesAsync(
+        DeleteDesktopPoolVolumesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteDesktopPoolVolumes);
+    }
+
+    /**
+     * 桌面池批量删除磁盘
+     *
+     * 桌面池批量删除磁盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesktopPoolVolumesRequest 请求对象
+     * @return AsyncInvoker<DeleteDesktopPoolVolumesRequest, DeleteDesktopPoolVolumesResponse>
+     */
+    public AsyncInvoker<DeleteDesktopPoolVolumesRequest, DeleteDesktopPoolVolumesResponse> deleteDesktopPoolVolumesAsyncInvoker(
+        DeleteDesktopPoolVolumesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteDesktopPoolVolumes, hcClient);
+    }
+
+    /**
+     * 操作桌面池
+     *
+     * 操作桌面池，用于桌面池里面的桌面批量开机、关机、重启和休眠。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteDesktopPoolActionRequest 请求对象
+     * @return CompletableFuture<ExecuteDesktopPoolActionResponse>
+     */
+    public CompletableFuture<ExecuteDesktopPoolActionResponse> executeDesktopPoolActionAsync(
+        ExecuteDesktopPoolActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.executeDesktopPoolAction);
+    }
+
+    /**
+     * 操作桌面池
+     *
+     * 操作桌面池，用于桌面池里面的桌面批量开机、关机、重启和休眠。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteDesktopPoolActionRequest 请求对象
+     * @return AsyncInvoker<ExecuteDesktopPoolActionRequest, ExecuteDesktopPoolActionResponse>
+     */
+    public AsyncInvoker<ExecuteDesktopPoolActionRequest, ExecuteDesktopPoolActionResponse> executeDesktopPoolActionAsyncInvoker(
+        ExecuteDesktopPoolActionRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.executeDesktopPoolAction, hcClient);
+    }
+
+    /**
+     * 扩容桌面池
+     *
+     * 扩容桌面池。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExpandDesktopPoolRequest 请求对象
+     * @return CompletableFuture<ExpandDesktopPoolResponse>
+     */
+    public CompletableFuture<ExpandDesktopPoolResponse> expandDesktopPoolAsync(ExpandDesktopPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.expandDesktopPool);
+    }
+
+    /**
+     * 扩容桌面池
+     *
+     * 扩容桌面池。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExpandDesktopPoolRequest 请求对象
+     * @return AsyncInvoker<ExpandDesktopPoolRequest, ExpandDesktopPoolResponse>
+     */
+    public AsyncInvoker<ExpandDesktopPoolRequest, ExpandDesktopPoolResponse> expandDesktopPoolAsyncInvoker(
+        ExpandDesktopPoolRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.expandDesktopPool, hcClient);
+    }
+
+    /**
+     * 桌面池批量扩容磁盘
+     *
+     * 桌面池批量扩容磁盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExpandDesktopPoolVolumesRequest 请求对象
+     * @return CompletableFuture<ExpandDesktopPoolVolumesResponse>
+     */
+    public CompletableFuture<ExpandDesktopPoolVolumesResponse> expandDesktopPoolVolumesAsync(
+        ExpandDesktopPoolVolumesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.expandDesktopPoolVolumes);
+    }
+
+    /**
+     * 桌面池批量扩容磁盘
+     *
+     * 桌面池批量扩容磁盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExpandDesktopPoolVolumesRequest 请求对象
+     * @return AsyncInvoker<ExpandDesktopPoolVolumesRequest, ExpandDesktopPoolVolumesResponse>
+     */
+    public AsyncInvoker<ExpandDesktopPoolVolumesRequest, ExpandDesktopPoolVolumesResponse> expandDesktopPoolVolumesAsyncInvoker(
+        ExpandDesktopPoolVolumesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.expandDesktopPoolVolumes, hcClient);
+    }
+
+    /**
+     * 查询桌面池授权的用户、用户组
+     *
+     * 该接口用于查询指定桌面池授权的用户、用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopPoolAuthorizedObjectsRequest 请求对象
+     * @return CompletableFuture<ListDesktopPoolAuthorizedObjectsResponse>
+     */
+    public CompletableFuture<ListDesktopPoolAuthorizedObjectsResponse> listDesktopPoolAuthorizedObjectsAsync(
+        ListDesktopPoolAuthorizedObjectsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopPoolAuthorizedObjects);
+    }
+
+    /**
+     * 查询桌面池授权的用户、用户组
+     *
+     * 该接口用于查询指定桌面池授权的用户、用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopPoolAuthorizedObjectsRequest 请求对象
+     * @return AsyncInvoker<ListDesktopPoolAuthorizedObjectsRequest, ListDesktopPoolAuthorizedObjectsResponse>
+     */
+    public AsyncInvoker<ListDesktopPoolAuthorizedObjectsRequest, ListDesktopPoolAuthorizedObjectsResponse> listDesktopPoolAuthorizedObjectsAsyncInvoker(
+        ListDesktopPoolAuthorizedObjectsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopPoolAuthorizedObjects, hcClient);
+    }
+
+    /**
+     * 查询桌面池列表
+     *
+     * 该接口用于查询桌面池列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopPoolsRequest 请求对象
+     * @return CompletableFuture<ListDesktopPoolsResponse>
+     */
+    public CompletableFuture<ListDesktopPoolsResponse> listDesktopPoolsAsync(ListDesktopPoolsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopPools);
+    }
+
+    /**
+     * 查询桌面池列表
+     *
+     * 该接口用于查询桌面池列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopPoolsRequest 请求对象
+     * @return AsyncInvoker<ListDesktopPoolsRequest, ListDesktopPoolsResponse>
+     */
+    public AsyncInvoker<ListDesktopPoolsRequest, ListDesktopPoolsResponse> listDesktopPoolsAsyncInvoker(
+        ListDesktopPoolsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopPools, hcClient);
+    }
+
+    /**
+     * 查询桌面池下的桌面信息
+     *
+     * 该接口用于查询桌面池下的桌面信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoolDesktopsDetailRequest 请求对象
+     * @return CompletableFuture<ListPoolDesktopsDetailResponse>
+     */
+    public CompletableFuture<ListPoolDesktopsDetailResponse> listPoolDesktopsDetailAsync(
+        ListPoolDesktopsDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listPoolDesktopsDetail);
+    }
+
+    /**
+     * 查询桌面池下的桌面信息
+     *
+     * 该接口用于查询桌面池下的桌面信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoolDesktopsDetailRequest 请求对象
+     * @return AsyncInvoker<ListPoolDesktopsDetailRequest, ListPoolDesktopsDetailResponse>
+     */
+    public AsyncInvoker<ListPoolDesktopsDetailRequest, ListPoolDesktopsDetailResponse> listPoolDesktopsDetailAsyncInvoker(
+        ListPoolDesktopsDetailRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listPoolDesktopsDetail, hcClient);
+    }
+
+    /**
+     * 桌面池重建系统盘
+     *
+     * 桌面池重建系统盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RebuildDesktopPoolRequest 请求对象
+     * @return CompletableFuture<RebuildDesktopPoolResponse>
+     */
+    public CompletableFuture<RebuildDesktopPoolResponse> rebuildDesktopPoolAsync(RebuildDesktopPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.rebuildDesktopPool);
+    }
+
+    /**
+     * 桌面池重建系统盘
+     *
+     * 桌面池重建系统盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RebuildDesktopPoolRequest 请求对象
+     * @return AsyncInvoker<RebuildDesktopPoolRequest, RebuildDesktopPoolResponse>
+     */
+    public AsyncInvoker<RebuildDesktopPoolRequest, RebuildDesktopPoolResponse> rebuildDesktopPoolAsyncInvoker(
+        RebuildDesktopPoolRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.rebuildDesktopPool, hcClient);
+    }
+
+    /**
+     * 桌面池变更规格
+     *
+     * 桌面池变更规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResizeDesktopPoolRequest 请求对象
+     * @return CompletableFuture<ResizeDesktopPoolResponse>
+     */
+    public CompletableFuture<ResizeDesktopPoolResponse> resizeDesktopPoolAsync(ResizeDesktopPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.resizeDesktopPool);
+    }
+
+    /**
+     * 桌面池变更规格
+     *
+     * 桌面池变更规格
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResizeDesktopPoolRequest 请求对象
+     * @return AsyncInvoker<ResizeDesktopPoolRequest, ResizeDesktopPoolResponse>
+     */
+    public AsyncInvoker<ResizeDesktopPoolRequest, ResizeDesktopPoolResponse> resizeDesktopPoolAsyncInvoker(
+        ResizeDesktopPoolRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.resizeDesktopPool, hcClient);
+    }
+
+    /**
+     * 查询桌面池详情
+     *
+     * 指定桌面池Id查询详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDesktopPoolDetailRequest 请求对象
+     * @return CompletableFuture<ShowDesktopPoolDetailResponse>
+     */
+    public CompletableFuture<ShowDesktopPoolDetailResponse> showDesktopPoolDetailAsync(
+        ShowDesktopPoolDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showDesktopPoolDetail);
+    }
+
+    /**
+     * 查询桌面池详情
+     *
+     * 指定桌面池Id查询详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDesktopPoolDetailRequest 请求对象
+     * @return AsyncInvoker<ShowDesktopPoolDetailRequest, ShowDesktopPoolDetailResponse>
+     */
+    public AsyncInvoker<ShowDesktopPoolDetailRequest, ShowDesktopPoolDetailResponse> showDesktopPoolDetailAsyncInvoker(
+        ShowDesktopPoolDetailRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showDesktopPoolDetail, hcClient);
+    }
+
+    /**
+     * 修改桌面池属性
+     *
+     * 修改桌面池属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesktopPoolRequest 请求对象
+     * @return CompletableFuture<UpdateDesktopPoolResponse>
+     */
+    public CompletableFuture<UpdateDesktopPoolResponse> updateDesktopPoolAsync(UpdateDesktopPoolRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateDesktopPool);
+    }
+
+    /**
+     * 修改桌面池属性
+     *
+     * 修改桌面池属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesktopPoolRequest 请求对象
+     * @return AsyncInvoker<UpdateDesktopPoolRequest, UpdateDesktopPoolResponse>
+     */
+    public AsyncInvoker<UpdateDesktopPoolRequest, UpdateDesktopPoolResponse> updateDesktopPoolAsyncInvoker(
+        UpdateDesktopPoolRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateDesktopPool, hcClient);
     }
 
     /**
@@ -2839,6 +3316,35 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<BatchDeleteOtpDevicesRequest, BatchDeleteOtpDevicesResponse> batchDeleteOtpDevicesAsyncInvoker(
         BatchDeleteOtpDevicesRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.batchDeleteOtpDevices, hcClient);
+    }
+
+    /**
+     * 批量删除用户
+     *
+     * 该接口用于批量删除桌面用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteUserRequest 请求对象
+     * @return CompletableFuture<BatchDeleteUserResponse>
+     */
+    public CompletableFuture<BatchDeleteUserResponse> batchDeleteUserAsync(BatchDeleteUserRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchDeleteUser);
+    }
+
+    /**
+     * 批量删除用户
+     *
+     * 该接口用于批量删除桌面用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteUserRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteUserRequest, BatchDeleteUserResponse>
+     */
+    public AsyncInvoker<BatchDeleteUserRequest, BatchDeleteUserResponse> batchDeleteUserAsyncInvoker(
+        BatchDeleteUserRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchDeleteUser, hcClient);
     }
 
     /**

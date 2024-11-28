@@ -50,12 +50,30 @@ public class ListProtectableRequest {
          */
         public static final ProtectableTypeEnum DISK = new ProtectableTypeEnum("disk");
 
+        /**
+         * Enum TURBO for value: "turbo"
+         */
+        public static final ProtectableTypeEnum TURBO = new ProtectableTypeEnum("turbo");
+
+        /**
+         * Enum WORKSPACE for value: "workspace"
+         */
+        public static final ProtectableTypeEnum WORKSPACE = new ProtectableTypeEnum("workspace");
+
+        /**
+         * Enum WORKSPACE_V2 for value: "workspace_v2"
+         */
+        public static final ProtectableTypeEnum WORKSPACE_V2 = new ProtectableTypeEnum("workspace_v2");
+
         private static final Map<String, ProtectableTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ProtectableTypeEnum> createStaticFields() {
             Map<String, ProtectableTypeEnum> map = new HashMap<>();
             map.put("server", SERVER);
             map.put("disk", DISK);
+            map.put("turbo", TURBO);
+            map.put("workspace", WORKSPACE);
+            map.put("workspace_v2", WORKSPACE_V2);
             return Collections.unmodifiableMap(map);
         }
 

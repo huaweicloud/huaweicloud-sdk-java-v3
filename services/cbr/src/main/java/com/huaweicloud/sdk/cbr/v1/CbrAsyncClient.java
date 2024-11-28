@@ -12,6 +12,8 @@ import com.huaweicloud.sdk.cbr.v1.model.BatchCreateAndDeleteVaultTagsRequest;
 import com.huaweicloud.sdk.cbr.v1.model.BatchCreateAndDeleteVaultTagsResponse;
 import com.huaweicloud.sdk.cbr.v1.model.BatchUpdateVaultRequest;
 import com.huaweicloud.sdk.cbr.v1.model.BatchUpdateVaultResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ChangeOrderRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ChangeOrderResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CheckAgentRequest;
 import com.huaweicloud.sdk.cbr.v1.model.CheckAgentResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CopyBackupRequest;
@@ -344,6 +346,36 @@ public class CbrAsyncClient {
     public AsyncInvoker<BatchUpdateVaultRequest, BatchUpdateVaultResponse> batchUpdateVaultAsyncInvoker(
         BatchUpdateVaultRequest request) {
         return new AsyncInvoker<>(request, CbrMeta.batchUpdateVault, hcClient);
+    }
+
+    /**
+     * 变更
+     *
+     * 订单更新，调用该接口更新包周期产品订单信息,返回待支付订单信息。
+     * &gt; 该接口目前属于公测阶段，部分region暂时无法使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeOrderRequest 请求对象
+     * @return CompletableFuture<ChangeOrderResponse>
+     */
+    public CompletableFuture<ChangeOrderResponse> changeOrderAsync(ChangeOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.changeOrder);
+    }
+
+    /**
+     * 变更
+     *
+     * 订单更新，调用该接口更新包周期产品订单信息,返回待支付订单信息。
+     * &gt; 该接口目前属于公测阶段，部分region暂时无法使用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeOrderRequest 请求对象
+     * @return AsyncInvoker<ChangeOrderRequest, ChangeOrderResponse>
+     */
+    public AsyncInvoker<ChangeOrderRequest, ChangeOrderResponse> changeOrderAsyncInvoker(ChangeOrderRequest request) {
+        return new AsyncInvoker<>(request, CbrMeta.changeOrder, hcClient);
     }
 
     /**
@@ -2059,9 +2091,9 @@ public class CbrAsyncClient {
     }
 
     /**
-     * 变更
+     * 变更（废弃）
      *
-     * 订单更新，支付cbc订单后，调用该接口更新包周期产品订单信息。
+     * 订单更新，支付cbc订单后，调用该接口更新包周期产品订单信息。该接口已废弃。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2073,9 +2105,9 @@ public class CbrAsyncClient {
     }
 
     /**
-     * 变更
+     * 变更（废弃）
      *
-     * 订单更新，支付cbc订单后，调用该接口更新包周期产品订单信息。
+     * 订单更新，支付cbc订单后，调用该接口更新包周期产品订单信息。该接口已废弃。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

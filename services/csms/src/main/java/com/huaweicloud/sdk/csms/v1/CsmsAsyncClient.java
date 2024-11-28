@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequest;
+import com.huaweicloud.sdk.csms.v1.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretRequest;
@@ -35,6 +37,8 @@ import com.huaweicloud.sdk.csms.v1.model.ListSecretEventsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretEventsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretTaskRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListSecretTaskResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretsRequest;
@@ -43,8 +47,12 @@ import com.huaweicloud.sdk.csms.v1.model.RestoreSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.RotateSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.RotateSecretResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowAgencyRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowAgencyResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretEventResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretFunctionTemplatesRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretFunctionTemplatesResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageRequest;
@@ -105,6 +113,35 @@ public class CsmsAsyncClient {
     public AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTagsAsyncInvoker(
         BatchCreateOrDeleteTagsRequest request) {
         return new AsyncInvoker<>(request, CsmsMeta.batchCreateOrDeleteTags, hcClient);
+    }
+
+    /**
+     * 创建服务委托
+     *
+     * 创建服务委托。用于创建凭据管理服务相关委托和函数工作流相关委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgencyRequest 请求对象
+     * @return CompletableFuture<CreateAgencyResponse>
+     */
+    public CompletableFuture<CreateAgencyResponse> createAgencyAsync(CreateAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.createAgency);
+    }
+
+    /**
+     * 创建服务委托
+     *
+     * 创建服务委托。用于创建凭据管理服务相关委托和函数工作流相关委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgencyRequest 请求对象
+     * @return AsyncInvoker<CreateAgencyRequest, CreateAgencyResponse>
+     */
+    public AsyncInvoker<CreateAgencyRequest, CreateAgencyResponse> createAgencyAsyncInvoker(
+        CreateAgencyRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.createAgency, hcClient);
     }
 
     /**
@@ -555,6 +592,35 @@ public class CsmsAsyncClient {
     }
 
     /**
+     * 查询任务列表
+     *
+     * 查询任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecretTaskRequest 请求对象
+     * @return CompletableFuture<ListSecretTaskResponse>
+     */
+    public CompletableFuture<ListSecretTaskResponse> listSecretTaskAsync(ListSecretTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.listSecretTask);
+    }
+
+    /**
+     * 查询任务列表
+     *
+     * 查询任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecretTaskRequest 请求对象
+     * @return AsyncInvoker<ListSecretTaskRequest, ListSecretTaskResponse>
+     */
+    public AsyncInvoker<ListSecretTaskRequest, ListSecretTaskResponse> listSecretTaskAsyncInvoker(
+        ListSecretTaskRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.listSecretTask, hcClient);
+    }
+
+    /**
      * 查询凭据的版本列表
      *
      * 查询指定凭据下的版本列表信息。
@@ -670,6 +736,34 @@ public class CsmsAsyncClient {
     }
 
     /**
+     * 查看是否有服务委托
+     *
+     * 查看是否有服务委托
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyRequest 请求对象
+     * @return CompletableFuture<ShowAgencyResponse>
+     */
+    public CompletableFuture<ShowAgencyResponse> showAgencyAsync(ShowAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.showAgency);
+    }
+
+    /**
+     * 查看是否有服务委托
+     *
+     * 查看是否有服务委托
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyRequest 请求对象
+     * @return AsyncInvoker<ShowAgencyRequest, ShowAgencyResponse>
+     */
+    public AsyncInvoker<ShowAgencyRequest, ShowAgencyResponse> showAgencyAsyncInvoker(ShowAgencyRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.showAgency, hcClient);
+    }
+
+    /**
      * 查询凭据
      *
      * 查询指定凭据的信息。
@@ -724,6 +818,36 @@ public class CsmsAsyncClient {
     public AsyncInvoker<ShowSecretEventRequest, ShowSecretEventResponse> showSecretEventAsyncInvoker(
         ShowSecretEventRequest request) {
         return new AsyncInvoker<>(request, CsmsMeta.showSecretEvent, hcClient);
+    }
+
+    /**
+     * 获取凭据轮转函数模板
+     *
+     * 获取凭据轮转函数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecretFunctionTemplatesRequest 请求对象
+     * @return CompletableFuture<ShowSecretFunctionTemplatesResponse>
+     */
+    public CompletableFuture<ShowSecretFunctionTemplatesResponse> showSecretFunctionTemplatesAsync(
+        ShowSecretFunctionTemplatesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.showSecretFunctionTemplates);
+    }
+
+    /**
+     * 获取凭据轮转函数模板
+     *
+     * 获取凭据轮转函数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecretFunctionTemplatesRequest 请求对象
+     * @return AsyncInvoker<ShowSecretFunctionTemplatesRequest, ShowSecretFunctionTemplatesResponse>
+     */
+    public AsyncInvoker<ShowSecretFunctionTemplatesRequest, ShowSecretFunctionTemplatesResponse> showSecretFunctionTemplatesAsyncInvoker(
+        ShowSecretFunctionTemplatesRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.showSecretFunctionTemplates, hcClient);
     }
 
     /**

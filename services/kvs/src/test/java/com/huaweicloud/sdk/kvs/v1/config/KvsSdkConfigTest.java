@@ -48,8 +48,8 @@ public class KvsSdkConfigTest {
         Assert.assertEquals(5, sdkConfig.getConnectionPoolKeepAliveDuration().intValue());
         Assert.assertEquals(100, sdkConfig.getDispatcherMaxRequests().intValue());
         Assert.assertEquals(100, sdkConfig.getDispatcherMaxRequestsPerHost().intValue());
-        Assert.assertEquals(5, sdkConfig.getConnectionTimeout().intValue());
-        Assert.assertEquals(5, sdkConfig.getReadTimeout().intValue());
+        Assert.assertEquals(1, sdkConfig.getConnectionTimeout().intValue());
+        Assert.assertEquals(1, sdkConfig.getReadTimeout().intValue());
         Assert.assertEquals(10, sdkConfig.getExecutorThreadPoolSize().intValue());
     }
 
@@ -73,7 +73,7 @@ public class KvsSdkConfigTest {
     public void getMultiChannelClientConfigTest() {
         Assert.assertEquals(sdkConfig.isAsyncClient(), false);
         Assert.assertEquals(1, sdkConfig.getHeartbeatInterval().intValue());
-        Assert.assertEquals(3, sdkConfig.getReloadInterval().intValue());
+        Assert.assertEquals(1, sdkConfig.getReloadInterval().intValue());
         Assert.assertEquals(3, sdkConfig.getApiRetryCount().intValue());
     }
 }

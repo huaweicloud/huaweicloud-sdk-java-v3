@@ -109,6 +109,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadSlowLogFileRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadSlowLogFileResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlInstanceVolumeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlInstanceVolumeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlProxyRequest;
@@ -293,6 +295,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfo
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowLtsConfigsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowLtsConfigsResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowMultiTenantRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowMultiTenantResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyIpgroupRequest;
@@ -303,6 +307,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRecyclePolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowlogSensitiveStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowlogSensitiveStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlRequest;
@@ -369,6 +375,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateMultiTenantRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateMultiTenantResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateProxyConnectionPoolTypeRequest;
@@ -1362,6 +1370,35 @@ public class GaussDBAsyncClient {
     public AsyncInvoker<DescribeBackupEncryptStatusRequest, DescribeBackupEncryptStatusResponse> describeBackupEncryptStatusAsyncInvoker(
         DescribeBackupEncryptStatusRequest request) {
         return new AsyncInvoker<>(request, GaussDBMeta.describeBackupEncryptStatus, hcClient);
+    }
+
+    /**
+     * 获取慢日志下载链接
+     *
+     * 获取慢日志下载链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadSlowLogFileRequest 请求对象
+     * @return CompletableFuture<DownloadSlowLogFileResponse>
+     */
+    public CompletableFuture<DownloadSlowLogFileResponse> downloadSlowLogFileAsync(DownloadSlowLogFileRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.downloadSlowLogFile);
+    }
+
+    /**
+     * 获取慢日志下载链接
+     *
+     * 获取慢日志下载链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadSlowLogFileRequest 请求对象
+     * @return AsyncInvoker<DownloadSlowLogFileRequest, DownloadSlowLogFileResponse>
+     */
+    public AsyncInvoker<DownloadSlowLogFileRequest, DownloadSlowLogFileResponse> downloadSlowLogFileAsyncInvoker(
+        DownloadSlowLogFileRequest request) {
+        return new AsyncInvoker<>(request, GaussDBMeta.downloadSlowLogFile, hcClient);
     }
 
     /**
@@ -3273,6 +3310,35 @@ public class GaussDBAsyncClient {
     }
 
     /**
+     * 查询多租特性开关状态
+     *
+     * 查询多租特性开关状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMultiTenantRequest 请求对象
+     * @return CompletableFuture<ShowMultiTenantResponse>
+     */
+    public CompletableFuture<ShowMultiTenantResponse> showMultiTenantAsync(ShowMultiTenantRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showMultiTenant);
+    }
+
+    /**
+     * 查询多租特性开关状态
+     *
+     * 查询多租特性开关状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMultiTenantRequest 请求对象
+     * @return AsyncInvoker<ShowMultiTenantRequest, ShowMultiTenantResponse>
+     */
+    public AsyncInvoker<ShowMultiTenantRequest, ShowMultiTenantResponse> showMultiTenantAsyncInvoker(
+        ShowMultiTenantRequest request) {
+        return new AsyncInvoker<>(request, GaussDBMeta.showMultiTenant, hcClient);
+    }
+
+    /**
      * 查询数据库代理内核参数。
      *
      * 查询数据库代理内核参数。
@@ -3416,6 +3482,36 @@ public class GaussDBAsyncClient {
     public AsyncInvoker<ShowRestoreTablesRequest, ShowRestoreTablesResponse> showRestoreTablesAsyncInvoker(
         ShowRestoreTablesRequest request) {
         return new AsyncInvoker<>(request, GaussDBMeta.showRestoreTables, hcClient);
+    }
+
+    /**
+     * 查询慢日志统计信息
+     *
+     * 查询慢日志统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogStatisticsRequest 请求对象
+     * @return CompletableFuture<ShowSlowLogStatisticsResponse>
+     */
+    public CompletableFuture<ShowSlowLogStatisticsResponse> showSlowLogStatisticsAsync(
+        ShowSlowLogStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.showSlowLogStatistics);
+    }
+
+    /**
+     * 查询慢日志统计信息
+     *
+     * 查询慢日志统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlowLogStatisticsRequest 请求对象
+     * @return AsyncInvoker<ShowSlowLogStatisticsRequest, ShowSlowLogStatisticsResponse>
+     */
+    public AsyncInvoker<ShowSlowLogStatisticsRequest, ShowSlowLogStatisticsResponse> showSlowLogStatisticsAsyncInvoker(
+        ShowSlowLogStatisticsRequest request) {
+        return new AsyncInvoker<>(request, GaussDBMeta.showSlowLogStatistics, hcClient);
     }
 
     /**
@@ -4106,6 +4202,35 @@ public class GaussDBAsyncClient {
     public AsyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> updateInstanceMonitorAsyncInvoker(
         UpdateInstanceMonitorRequest request) {
         return new AsyncInvoker<>(request, GaussDBMeta.updateInstanceMonitor, hcClient);
+    }
+
+    /**
+     * 开启或者关闭多租特性
+     *
+     * 开启或者关闭多租特性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMultiTenantRequest 请求对象
+     * @return CompletableFuture<UpdateMultiTenantResponse>
+     */
+    public CompletableFuture<UpdateMultiTenantResponse> updateMultiTenantAsync(UpdateMultiTenantRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateMultiTenant);
+    }
+
+    /**
+     * 开启或者关闭多租特性
+     *
+     * 开启或者关闭多租特性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateMultiTenantRequest 请求对象
+     * @return AsyncInvoker<UpdateMultiTenantRequest, UpdateMultiTenantResponse>
+     */
+    public AsyncInvoker<UpdateMultiTenantRequest, UpdateMultiTenantResponse> updateMultiTenantAsyncInvoker(
+        UpdateMultiTenantRequest request) {
+        return new AsyncInvoker<>(request, GaussDBMeta.updateMultiTenant, hcClient);
     }
 
     /**

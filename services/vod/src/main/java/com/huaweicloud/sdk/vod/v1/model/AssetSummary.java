@@ -39,6 +39,11 @@ public class AssetSummary {
     private Integer duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duration_ms")
+
+    private Long durationMs;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
     private Long size;
@@ -513,6 +518,23 @@ public class AssetSummary {
         this.duration = duration;
     }
 
+    public AssetSummary withDurationMs(Long durationMs) {
+        this.durationMs = durationMs;
+        return this;
+    }
+
+    /**
+     * 视频时长，单位毫秒。
+     * @return durationMs
+     */
+    public Long getDurationMs() {
+        return durationMs;
+    }
+
+    public void setDurationMs(Long durationMs) {
+        this.durationMs = durationMs;
+    }
+
     public AssetSummary withSize(Long size) {
         this.size = size;
         return this;
@@ -727,9 +749,10 @@ public class AssetSummary {
         AssetSummary that = (AssetSummary) obj;
         return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.title, that.title)
             && Objects.equals(this.description, that.description) && Objects.equals(this.duration, that.duration)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.originalUrl, that.originalUrl)
-            && Objects.equals(this.category, that.category) && Objects.equals(this.covers, that.covers)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.assetStatus, that.assetStatus)
+            && Objects.equals(this.durationMs, that.durationMs) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.originalUrl, that.originalUrl) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.covers, that.covers) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.assetStatus, that.assetStatus)
             && Objects.equals(this.transcodeStatus, that.transcodeStatus)
             && Objects.equals(this.thumbnailStatus, that.thumbnailStatus)
             && Objects.equals(this.reviewStatus, that.reviewStatus) && Objects.equals(this.execDesc, that.execDesc)
@@ -742,6 +765,7 @@ public class AssetSummary {
             title,
             description,
             duration,
+            durationMs,
             size,
             originalUrl,
             category,
@@ -763,6 +787,7 @@ public class AssetSummary {
         sb.append("    title: ").append(toIndentedString(title)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    originalUrl: ").append(toIndentedString(originalUrl)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");

@@ -44,6 +44,8 @@ import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowReportStatusRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowReportStatusResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowResultsRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowResultsResponse;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowSubscriptionRequest;
+import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowSubscriptionResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowTasksRequest;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.ShowTasksResponse;
 import com.huaweicloud.sdk.codeartsinspector.v3.model.UpdateDomainSettingsRequest;
@@ -292,6 +294,35 @@ public class CodeArtsInspectorClient {
      */
     public SyncInvoker<ListHostsRequest, ListHostsResponse> listHostsInvoker(ListHostsRequest request) {
         return new SyncInvoker<>(request, CodeArtsInspectorMeta.listHosts, hcClient);
+    }
+
+    /**
+     * 资源版本查询接口
+     *
+     * 资源版本查询接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSubscriptionRequest 请求对象
+     * @return ShowSubscriptionResponse
+     */
+    public ShowSubscriptionResponse showSubscription(ShowSubscriptionRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsInspectorMeta.showSubscription);
+    }
+
+    /**
+     * 资源版本查询接口
+     *
+     * 资源版本查询接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSubscriptionRequest 请求对象
+     * @return SyncInvoker<ShowSubscriptionRequest, ShowSubscriptionResponse>
+     */
+    public SyncInvoker<ShowSubscriptionRequest, ShowSubscriptionResponse> showSubscriptionInvoker(
+        ShowSubscriptionRequest request) {
+        return new SyncInvoker<>(request, CodeArtsInspectorMeta.showSubscription, hcClient);
     }
 
     /**

@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -67,6 +72,83 @@ public class ReinstallNodeSpec {
     @JsonProperty(value = "hostnameConfig")
 
     private HostnameConfig hostnameConfig;
+
+    /**
+     * **参数解释**： 指定节点安全加固类型，当前仅支持HCE2.0镜像等保2.0三级安全加固。 等保加固会对身份鉴别、访问控制、安全审计、入侵防范、恶意代码防范进行检查并加固。详情请参见[Huawei Cloud EulerOS 2.0等保2.0三级版镜像概述](https://support.huaweicloud.com/productdesc-hce/hce_sec_0001.html)。 若未指定此参数，则尝试用原有的值补全。如：原先HCE2.0镜像已配置安全加固，更新节点池时未指定此参数，则仍旧保持安全加固配置，若要取消，需显式指定参数值为\"null\"。 **约束限制**： 不涉及 **取值范围**： 取值范围：['null', cybersecurity]; **默认取值**： 不涉及
+     */
+    public static final class SecurityReinforcementTypeEnum {
+
+        /**
+         * Enum NULL for value: "null"
+         */
+        public static final SecurityReinforcementTypeEnum NULL = new SecurityReinforcementTypeEnum("null");
+
+        /**
+         * Enum CYBERSECURITY for value: "cybersecurity"
+         */
+        public static final SecurityReinforcementTypeEnum CYBERSECURITY =
+            new SecurityReinforcementTypeEnum("cybersecurity");
+
+        private static final Map<String, SecurityReinforcementTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SecurityReinforcementTypeEnum> createStaticFields() {
+            Map<String, SecurityReinforcementTypeEnum> map = new HashMap<>();
+            map.put("null", NULL);
+            map.put("cybersecurity", CYBERSECURITY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SecurityReinforcementTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SecurityReinforcementTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new SecurityReinforcementTypeEnum(value));
+        }
+
+        public static SecurityReinforcementTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SecurityReinforcementTypeEnum) {
+                return this.value.equals(((SecurityReinforcementTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "securityReinforcementType")
+
+    private SecurityReinforcementTypeEnum securityReinforcementType;
 
     public ReinstallNodeSpec withOs(String os) {
         this.os = os;
@@ -343,6 +425,23 @@ public class ReinstallNodeSpec {
         this.hostnameConfig = hostnameConfig;
     }
 
+    public ReinstallNodeSpec withSecurityReinforcementType(SecurityReinforcementTypeEnum securityReinforcementType) {
+        this.securityReinforcementType = securityReinforcementType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 指定节点安全加固类型，当前仅支持HCE2.0镜像等保2.0三级安全加固。 等保加固会对身份鉴别、访问控制、安全审计、入侵防范、恶意代码防范进行检查并加固。详情请参见[Huawei Cloud EulerOS 2.0等保2.0三级版镜像概述](https://support.huaweicloud.com/productdesc-hce/hce_sec_0001.html)。 若未指定此参数，则尝试用原有的值补全。如：原先HCE2.0镜像已配置安全加固，更新节点池时未指定此参数，则仍旧保持安全加固配置，若要取消，需显式指定参数值为\"null\"。 **约束限制**： 不涉及 **取值范围**： 取值范围：['null', cybersecurity]; **默认取值**： 不涉及
+     * @return securityReinforcementType
+     */
+    public SecurityReinforcementTypeEnum getSecurityReinforcementType() {
+        return securityReinforcementType;
+    }
+
+    public void setSecurityReinforcementType(SecurityReinforcementTypeEnum securityReinforcementType) {
+        this.securityReinforcementType = securityReinforcementType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -359,7 +458,8 @@ public class ReinstallNodeSpec {
             && Objects.equals(this.k8sOptions, that.k8sOptions) && Objects.equals(this.lifecycle, that.lifecycle)
             && Objects.equals(this.initializedConditions, that.initializedConditions)
             && Objects.equals(this.extendParam, that.extendParam)
-            && Objects.equals(this.hostnameConfig, that.hostnameConfig);
+            && Objects.equals(this.hostnameConfig, that.hostnameConfig)
+            && Objects.equals(this.securityReinforcementType, that.securityReinforcementType);
     }
 
     @Override
@@ -374,7 +474,8 @@ public class ReinstallNodeSpec {
             lifecycle,
             initializedConditions,
             extendParam,
-            hostnameConfig);
+            hostnameConfig,
+            securityReinforcementType);
     }
 
     @Override
@@ -392,6 +493,7 @@ public class ReinstallNodeSpec {
         sb.append("    initializedConditions: ").append(toIndentedString(initializedConditions)).append("\n");
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("    hostnameConfig: ").append(toIndentedString(hostnameConfig)).append("\n");
+        sb.append("    securityReinforcementType: ").append(toIndentedString(securityReinforcementType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -295,7 +295,7 @@ public class ListProductsRequest {
     }
 
     /**
-     * 按状态查询，多状态使用英文逗号分割。
+     * 按状态查询，多状态使用英文逗号分隔。
      * @return state
      */
     public String getState() {

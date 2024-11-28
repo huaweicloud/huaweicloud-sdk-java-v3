@@ -44,7 +44,7 @@ public class KvsSdkConfigManagerTest {
         config.setProperty("kvs.sdk.endpoints.weight", newEndpointWeights);
         builder.save();
 
-        Thread.sleep(5000);
+        Thread.sleep(4000);
 
         System.out.println("output, kvsClientMap: " + kvsClientMap);
         Assert.assertEquals(4, kvsClientMap.size());
@@ -58,7 +58,7 @@ public class KvsSdkConfigManagerTest {
         config.setProperty("kvs.sdk.endpoints.weight", newEndpointWeights);
         builder.save();
 
-        Thread.sleep(5000);
+        Thread.sleep(4000);
 
         Assert.assertEquals(3, kvsClientMap.size());
     }
@@ -77,7 +77,7 @@ public class KvsSdkConfigManagerTest {
         config.setProperty("kvs.sdk.endpoints.weight", newEndpointWeights);
         builder.save();
 
-        Thread.sleep(5000);
+        Thread.sleep(4000);
 
         System.out.println("output, kvsClientMap: " + kvsClientMap);
         Assert.assertEquals(4, kvsClientMap.size());

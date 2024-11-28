@@ -30,6 +30,11 @@ public class Path {
 
     private String dirPath;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "exclude_paths")
+
+    private String excludePaths;
+
     public Path withId(String id) {
         this.id = id;
         return this;
@@ -98,6 +103,23 @@ public class Path {
         this.dirPath = dirPath;
     }
 
+    public Path withExcludePaths(String excludePaths) {
+        this.excludePaths = excludePaths;
+        return this;
+    }
+
+    /**
+     * 排除目录列表，多个路径之间以英文逗号分隔 > 该特性目前处于公测阶段，部分region可能无法使用。 
+     * @return excludePaths
+     */
+    public String getExcludePaths() {
+        return excludePaths;
+    }
+
+    public void setExcludePaths(String excludePaths) {
+        this.excludePaths = excludePaths;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class Path {
         }
         Path that = (Path) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.dirPath, that.dirPath);
+            && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.dirPath, that.dirPath)
+            && Objects.equals(this.excludePaths, that.excludePaths);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, agentId, dirPath);
+        return Objects.hash(id, status, agentId, dirPath, excludePaths);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class Path {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
         sb.append("    dirPath: ").append(toIndentedString(dirPath)).append("\n");
+        sb.append("    excludePaths: ").append(toIndentedString(excludePaths)).append("\n");
         sb.append("}");
         return sb.toString();
     }

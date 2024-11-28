@@ -96,6 +96,11 @@ public class OrderLineItemEntityV2 {
 
     private String commercialResource;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "base_product_info")
+
+    private ProductObject baseProductInfo;
+
     public OrderLineItemEntityV2 withOrderLineItemId(String orderLineItemId) {
         this.orderLineItemId = orderLineItemId;
         return this;
@@ -394,6 +399,32 @@ public class OrderLineItemEntityV2 {
         this.commercialResource = commercialResource;
     }
 
+    public OrderLineItemEntityV2 withBaseProductInfo(ProductObject baseProductInfo) {
+        this.baseProductInfo = baseProductInfo;
+        return this;
+    }
+
+    public OrderLineItemEntityV2 withBaseProductInfo(Consumer<ProductObject> baseProductInfoSetter) {
+        if (this.baseProductInfo == null) {
+            this.baseProductInfo = new ProductObject();
+            baseProductInfoSetter.accept(this.baseProductInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get baseProductInfo
+     * @return baseProductInfo
+     */
+    public ProductObject getBaseProductInfo() {
+        return baseProductInfo;
+    }
+
+    public void setBaseProductInfo(ProductObject baseProductInfo) {
+        this.baseProductInfo = baseProductInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -417,7 +448,8 @@ public class OrderLineItemEntityV2 {
             && Objects.equals(this.amountInfo, that.amountInfo) && Objects.equals(this.currency, that.currency)
             && Objects.equals(this.categoryCode, that.categoryCode)
             && Objects.equals(this.productOwnerService, that.productOwnerService)
-            && Objects.equals(this.commercialResource, that.commercialResource);
+            && Objects.equals(this.commercialResource, that.commercialResource)
+            && Objects.equals(this.baseProductInfo, that.baseProductInfo);
     }
 
     @Override
@@ -438,7 +470,8 @@ public class OrderLineItemEntityV2 {
             currency,
             categoryCode,
             productOwnerService,
-            commercialResource);
+            commercialResource,
+            baseProductInfo);
     }
 
     @Override
@@ -462,6 +495,7 @@ public class OrderLineItemEntityV2 {
         sb.append("    categoryCode: ").append(toIndentedString(categoryCode)).append("\n");
         sb.append("    productOwnerService: ").append(toIndentedString(productOwnerService)).append("\n");
         sb.append("    commercialResource: ").append(toIndentedString(commercialResource)).append("\n");
+        sb.append("    baseProductInfo: ").append(toIndentedString(baseProductInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

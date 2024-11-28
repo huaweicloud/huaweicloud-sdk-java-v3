@@ -120,6 +120,16 @@ public class CommitJobReq {
 
     private String appUserId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_language")
+
+    private String outputLanguage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_text")
+
+    private String customText;
+
     public CommitJobReq withTag(JobTag tag) {
         this.tag = tag;
         return this;
@@ -239,6 +249,40 @@ public class CommitJobReq {
         this.appUserId = appUserId;
     }
 
+    public CommitJobReq withOutputLanguage(String outputLanguage) {
+        this.outputLanguage = outputLanguage;
+        return this;
+    }
+
+    /**
+     * 模型输出语言类型
+     * @return outputLanguage
+     */
+    public String getOutputLanguage() {
+        return outputLanguage;
+    }
+
+    public void setOutputLanguage(String outputLanguage) {
+        this.outputLanguage = outputLanguage;
+    }
+
+    public CommitJobReq withCustomText(String customText) {
+        this.customText = customText;
+        return this;
+    }
+
+    /**
+     * 自定义试听文本
+     * @return customText
+     */
+    public String getCustomText() {
+        return customText;
+    }
+
+    public void setCustomText(String customText) {
+        this.customText = customText;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -251,12 +295,14 @@ public class CommitJobReq {
         return Objects.equals(this.tag, that.tag) && Objects.equals(this.description, that.description)
             && Objects.equals(this.sex, that.sex) && Objects.equals(this.voiceName, that.voiceName)
             && Objects.equals(this.language, that.language) && Objects.equals(this.phone, that.phone)
-            && Objects.equals(this.appUserId, that.appUserId);
+            && Objects.equals(this.appUserId, that.appUserId)
+            && Objects.equals(this.outputLanguage, that.outputLanguage)
+            && Objects.equals(this.customText, that.customText);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tag, description, sex, voiceName, language, phone, appUserId);
+        return Objects.hash(tag, description, sex, voiceName, language, phone, appUserId, outputLanguage, customText);
     }
 
     @Override
@@ -270,6 +316,8 @@ public class CommitJobReq {
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    appUserId: ").append(toIndentedString(appUserId)).append("\n");
+        sb.append("    outputLanguage: ").append(toIndentedString(outputLanguage)).append("\n");
+        sb.append("    customText: ").append(toIndentedString(customText)).append("\n");
         sb.append("}");
         return sb.toString();
     }

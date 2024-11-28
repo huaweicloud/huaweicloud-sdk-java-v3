@@ -23,7 +23,10 @@ import com.huaweicloud.sdk.cbr.v1.model.BatchUpdateVaultRequest;
 import com.huaweicloud.sdk.cbr.v1.model.BatchUpdateVaultRequestBody;
 import com.huaweicloud.sdk.cbr.v1.model.BatchUpdateVaultResponse;
 import com.huaweicloud.sdk.cbr.v1.model.BulkCreateAndDeleteVaultTagsReq;
+import com.huaweicloud.sdk.cbr.v1.model.CbcOrderChange;
 import com.huaweicloud.sdk.cbr.v1.model.CbcUpdate;
+import com.huaweicloud.sdk.cbr.v1.model.ChangeOrderRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ChangeOrderResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CheckAgentRequest;
 import com.huaweicloud.sdk.cbr.v1.model.CheckAgentResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CheckpointReplicateReq;
@@ -343,6 +346,28 @@ public class CbrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchUpdateVaultRequestBody.class),
             f -> f.withMarshaller(BatchUpdateVaultRequest::getBody, BatchUpdateVaultRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeOrderRequest, ChangeOrderResponse> changeOrder = genForChangeOrder();
+
+    private static HttpRequestDef<ChangeOrderRequest, ChangeOrderResponse> genForChangeOrder() {
+        // basic
+        HttpRequestDef.Builder<ChangeOrderRequest, ChangeOrderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeOrderRequest.class, ChangeOrderResponse.class)
+                .withName("ChangeOrder")
+                .withUri("/v3/{project_id}/orders/change")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CbcOrderChange>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CbcOrderChange.class),
+            f -> f.withMarshaller(ChangeOrderRequest::getBody, ChangeOrderRequest::setBody));
 
         // response
 
@@ -1134,6 +1159,18 @@ public class CbrMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOrganizationPoliciesRequest::getOperationType,
                 ListOrganizationPoliciesRequest::setOperationType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOrganizationPoliciesRequest::getLimit,
+                ListOrganizationPoliciesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOrganizationPoliciesRequest::getOffset,
+                ListOrganizationPoliciesRequest::setOffset));
 
         // response
 

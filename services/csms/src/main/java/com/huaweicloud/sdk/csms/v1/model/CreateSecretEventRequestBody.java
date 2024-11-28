@@ -23,13 +23,101 @@ public class CreateSecretEventRequestBody {
 
     private String name;
 
+    /**
+     * 基础事件类型。
+     */
+    public static final class EventTypesEnum {
+
+        /**
+         * Enum SECRET_VERSION_CREATED for value: "SECRET_VERSION_CREATED"
+         */
+        public static final EventTypesEnum SECRET_VERSION_CREATED = new EventTypesEnum("SECRET_VERSION_CREATED");
+
+        /**
+         * Enum SECRET_VERSION_EXPIRED for value: "SECRET_VERSION_EXPIRED"
+         */
+        public static final EventTypesEnum SECRET_VERSION_EXPIRED = new EventTypesEnum("SECRET_VERSION_EXPIRED");
+
+        /**
+         * Enum SECRET_ROTATED for value: "SECRET_ROTATED"
+         */
+        public static final EventTypesEnum SECRET_ROTATED = new EventTypesEnum("SECRET_ROTATED");
+
+        /**
+         * Enum SECRET_DELETED for value: "SECRET_DELETED"
+         */
+        public static final EventTypesEnum SECRET_DELETED = new EventTypesEnum("SECRET_DELETED");
+
+        /**
+         * Enum SECRET_ROTATED_FAILED for value: "SECRET_ROTATED_FAILED"
+         */
+        public static final EventTypesEnum SECRET_ROTATED_FAILED = new EventTypesEnum("SECRET_ROTATED_FAILED");
+
+        private static final Map<String, EventTypesEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, EventTypesEnum> createStaticFields() {
+            Map<String, EventTypesEnum> map = new HashMap<>();
+            map.put("SECRET_VERSION_CREATED", SECRET_VERSION_CREATED);
+            map.put("SECRET_VERSION_EXPIRED", SECRET_VERSION_EXPIRED);
+            map.put("SECRET_ROTATED", SECRET_ROTATED);
+            map.put("SECRET_DELETED", SECRET_DELETED);
+            map.put("SECRET_ROTATED_FAILED", SECRET_ROTATED_FAILED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        EventTypesEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static EventTypesEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventTypesEnum(value));
+        }
+
+        public static EventTypesEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof EventTypesEnum) {
+                return this.value.equals(((EventTypesEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_types")
 
-    private List<String> eventTypes = null;
+    private List<EventTypesEnum> eventTypes = null;
 
     /**
-     * 控制事件是否生效，只有启用状态才能触发包含的基础事件类型  ENABLED：启用 DISABLED：禁用 
+     * 控制事件是否生效，只有启用状态才能触发包含的基础事件类型  ENABLED：启用 DISABLED：禁用
      */
     public static final class StateEnum {
 
@@ -114,7 +202,7 @@ public class CreateSecretEventRequestBody {
     }
 
     /**
-     * 新创建事件通知的名称。  约束：取值范围为1到64个字符，满足正则匹配“^[a-zA-Z0-9_-]{1,64}$”。 
+     * 新创建事件通知的名称。  约束：取值范围为1到64个字符，满足正则匹配“^[a-zA-Z0-9_-]{1,64}$”。
      * @return name
      */
     public String getName() {
@@ -125,12 +213,12 @@ public class CreateSecretEventRequestBody {
         this.name = name;
     }
 
-    public CreateSecretEventRequestBody withEventTypes(List<String> eventTypes) {
+    public CreateSecretEventRequestBody withEventTypes(List<EventTypesEnum> eventTypes) {
         this.eventTypes = eventTypes;
         return this;
     }
 
-    public CreateSecretEventRequestBody addEventTypesItem(String eventTypesItem) {
+    public CreateSecretEventRequestBody addEventTypesItem(EventTypesEnum eventTypesItem) {
         if (this.eventTypes == null) {
             this.eventTypes = new ArrayList<>();
         }
@@ -138,7 +226,7 @@ public class CreateSecretEventRequestBody {
         return this;
     }
 
-    public CreateSecretEventRequestBody withEventTypes(Consumer<List<String>> eventTypesSetter) {
+    public CreateSecretEventRequestBody withEventTypes(Consumer<List<EventTypesEnum>> eventTypesSetter) {
         if (this.eventTypes == null) {
             this.eventTypes = new ArrayList<>();
         }
@@ -147,14 +235,14 @@ public class CreateSecretEventRequestBody {
     }
 
     /**
-     * 本次事件通知的基础事件列表，基础事件类型如下。  SECRET_VERSION_CREATED：版本创建 SECRET_VERSION_EXPIRED：版本过期 SECRET_ROTATED：凭据轮转 SECRET_DELETED：凭据删除  列表包含的基础事件类型不能重复。 
+     * 本次事件通知的基础事件列表，基础事件类型如下。  - SECRET_VERSION_CREATED：版本创建 - SECRET_VERSION_EXPIRED：版本过期 - SECRET_ROTATED：凭据轮转 - SECRET_DELETED：凭据删除 - SECRET_ROTATED_FAILED:凭据轮转失败  列表包含的基础事件类型不能重复。
      * @return eventTypes
      */
-    public List<String> getEventTypes() {
+    public List<EventTypesEnum> getEventTypes() {
         return eventTypes;
     }
 
-    public void setEventTypes(List<String> eventTypes) {
+    public void setEventTypes(List<EventTypesEnum> eventTypes) {
         this.eventTypes = eventTypes;
     }
 
@@ -164,7 +252,7 @@ public class CreateSecretEventRequestBody {
     }
 
     /**
-     * 控制事件是否生效，只有启用状态才能触发包含的基础事件类型  ENABLED：启用 DISABLED：禁用 
+     * 控制事件是否生效，只有启用状态才能触发包含的基础事件类型  ENABLED：启用 DISABLED：禁用
      * @return state
      */
     public StateEnum getState() {

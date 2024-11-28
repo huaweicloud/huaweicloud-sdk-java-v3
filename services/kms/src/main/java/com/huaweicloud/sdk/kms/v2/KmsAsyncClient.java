@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.kms.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.kms.v2.model.AssociateAliasRequest;
+import com.huaweicloud.sdk.kms.v2.model.AssociateAliasResponse;
 import com.huaweicloud.sdk.kms.v2.model.BatchCreateKmsTagsRequest;
 import com.huaweicloud.sdk.kms.v2.model.BatchCreateKmsTagsResponse;
 import com.huaweicloud.sdk.kms.v2.model.CancelGrantRequest;
@@ -11,6 +13,8 @@ import com.huaweicloud.sdk.kms.v2.model.CancelKeyDeletionRequest;
 import com.huaweicloud.sdk.kms.v2.model.CancelKeyDeletionResponse;
 import com.huaweicloud.sdk.kms.v2.model.CancelSelfGrantRequest;
 import com.huaweicloud.sdk.kms.v2.model.CancelSelfGrantResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateAliasRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateAliasResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyWithoutPlaintextRequest;
@@ -31,6 +35,8 @@ import com.huaweicloud.sdk.kms.v2.model.DecryptDataRequest;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataResponse;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyResponse;
+import com.huaweicloud.sdk.kms.v2.model.DeleteAliasRequest;
+import com.huaweicloud.sdk.kms.v2.model.DeleteAliasResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteImportedKeyMaterialRequest;
 import com.huaweicloud.sdk.kms.v2.model.DeleteImportedKeyMaterialResponse;
 import com.huaweicloud.sdk.kms.v2.model.DeleteKeyRequest;
@@ -59,6 +65,8 @@ import com.huaweicloud.sdk.kms.v2.model.GenerateMacRequest;
 import com.huaweicloud.sdk.kms.v2.model.GenerateMacResponse;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialRequest;
 import com.huaweicloud.sdk.kms.v2.model.ImportKeyMaterialResponse;
+import com.huaweicloud.sdk.kms.v2.model.ListAliasesRequest;
+import com.huaweicloud.sdk.kms.v2.model.ListAliasesResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListGrantsRequest;
 import com.huaweicloud.sdk.kms.v2.model.ListGrantsResponse;
 import com.huaweicloud.sdk.kms.v2.model.ListKeyDetailRequest;
@@ -121,6 +129,37 @@ public class KmsAsyncClient {
     public static ClientBuilder<KmsAsyncClient> newBuilder() {
         ClientBuilder<KmsAsyncClient> clientBuilder = new ClientBuilder<>(KmsAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 
+     *
+     * 关联别名。
+     * 你可以将别名从原密钥关联到另一个新的密钥
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateAliasRequest 请求对象
+     * @return CompletableFuture<AssociateAliasResponse>
+     */
+    public CompletableFuture<AssociateAliasResponse> associateAliasAsync(AssociateAliasRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.associateAlias);
+    }
+
+    /**
+     * 
+     *
+     * 关联别名。
+     * 你可以将别名从原密钥关联到另一个新的密钥
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AssociateAliasRequest 请求对象
+     * @return AsyncInvoker<AssociateAliasRequest, AssociateAliasResponse>
+     */
+    public AsyncInvoker<AssociateAliasRequest, AssociateAliasResponse> associateAliasAsyncInvoker(
+        AssociateAliasRequest request) {
+        return new AsyncInvoker<>(request, KmsMeta.associateAlias, hcClient);
     }
 
     /**
@@ -256,6 +295,32 @@ public class KmsAsyncClient {
     public AsyncInvoker<CancelSelfGrantRequest, CancelSelfGrantResponse> cancelSelfGrantAsyncInvoker(
         CancelSelfGrantRequest request) {
         return new AsyncInvoker<>(request, KmsMeta.cancelSelfGrant, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAliasRequest 请求对象
+     * @return CompletableFuture<CreateAliasResponse>
+     */
+    public CompletableFuture<CreateAliasResponse> createAliasAsync(CreateAliasRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.createAlias);
+    }
+
+    /**
+     * 
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAliasRequest 请求对象
+     * @return AsyncInvoker<CreateAliasRequest, CreateAliasResponse>
+     */
+    public AsyncInvoker<CreateAliasRequest, CreateAliasResponse> createAliasAsyncInvoker(CreateAliasRequest request) {
+        return new AsyncInvoker<>(request, KmsMeta.createAlias, hcClient);
     }
 
     /**
@@ -557,6 +622,34 @@ public class KmsAsyncClient {
     public AsyncInvoker<DecryptDatakeyRequest, DecryptDatakeyResponse> decryptDatakeyAsyncInvoker(
         DecryptDatakeyRequest request) {
         return new AsyncInvoker<>(request, KmsMeta.decryptDatakey, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 删除别名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAliasRequest 请求对象
+     * @return CompletableFuture<DeleteAliasResponse>
+     */
+    public CompletableFuture<DeleteAliasResponse> deleteAliasAsync(DeleteAliasRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.deleteAlias);
+    }
+
+    /**
+     * 
+     *
+     * 删除别名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAliasRequest 请求对象
+     * @return AsyncInvoker<DeleteAliasRequest, DeleteAliasResponse>
+     */
+    public AsyncInvoker<DeleteAliasRequest, DeleteAliasResponse> deleteAliasAsyncInvoker(DeleteAliasRequest request) {
+        return new AsyncInvoker<>(request, KmsMeta.deleteAlias, hcClient);
     }
 
     /**
@@ -968,6 +1061,34 @@ public class KmsAsyncClient {
     public AsyncInvoker<ImportKeyMaterialRequest, ImportKeyMaterialResponse> importKeyMaterialAsyncInvoker(
         ImportKeyMaterialRequest request) {
         return new AsyncInvoker<>(request, KmsMeta.importKeyMaterial, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 查询一个密钥关联的所有别名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAliasesRequest 请求对象
+     * @return CompletableFuture<ListAliasesResponse>
+     */
+    public CompletableFuture<ListAliasesResponse> listAliasesAsync(ListAliasesRequest request) {
+        return hcClient.asyncInvokeHttp(request, KmsMeta.listAliases);
+    }
+
+    /**
+     * 
+     *
+     * 查询一个密钥关联的所有别名
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAliasesRequest 请求对象
+     * @return AsyncInvoker<ListAliasesRequest, ListAliasesResponse>
+     */
+    public AsyncInvoker<ListAliasesRequest, ListAliasesResponse> listAliasesAsyncInvoker(ListAliasesRequest request) {
+        return new AsyncInvoker<>(request, KmsMeta.listAliases, hcClient);
     }
 
     /**

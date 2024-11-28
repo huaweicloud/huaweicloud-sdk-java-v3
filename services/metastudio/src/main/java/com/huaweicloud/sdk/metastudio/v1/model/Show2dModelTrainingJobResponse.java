@@ -721,11 +721,6 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
     private List<String> workerType = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "beauty_level")
-
-    private Integer beautyLevel;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "voice_train_job_id")
 
     private String voiceTrainJobId;
@@ -1660,25 +1655,6 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
         this.workerType = workerType;
     }
 
-    public Show2dModelTrainingJobResponse withBeautyLevel(Integer beautyLevel) {
-        this.beautyLevel = beautyLevel;
-        return this;
-    }
-
-    /**
-     * 美白等级。默认值0，不美白。
-     * minimum: 0
-     * maximum: 3
-     * @return beautyLevel
-     */
-    public Integer getBeautyLevel() {
-        return beautyLevel;
-    }
-
-    public void setBeautyLevel(Integer beautyLevel) {
-        this.beautyLevel = beautyLevel;
-    }
-
     public Show2dModelTrainingJobResponse withVoiceTrainJobId(String voiceTrainJobId) {
         this.voiceTrainJobId = voiceTrainJobId;
         return this;
@@ -1855,7 +1831,7 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             && Objects.equals(this.inferenceDataProcessEyeCorrectionMarkInfo,
                 that.inferenceDataProcessEyeCorrectionMarkInfo)
             && Objects.equals(this.isBackgroundReplacement, that.isBackgroundReplacement)
-            && Objects.equals(this.workerType, that.workerType) && Objects.equals(this.beautyLevel, that.beautyLevel)
+            && Objects.equals(this.workerType, that.workerType)
             && Objects.equals(this.voiceTrainJobId, that.voiceTrainJobId)
             && Objects.equals(this.flexusRetryCount, that.flexusRetryCount)
             && Objects.equals(this.audioSourceType, that.audioSourceType)
@@ -1906,7 +1882,6 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             inferenceDataProcessEyeCorrectionMarkInfo,
             isBackgroundReplacement,
             workerType,
-            beautyLevel,
             voiceTrainJobId,
             flexusRetryCount,
             audioSourceType,
@@ -1967,7 +1942,6 @@ public class Show2dModelTrainingJobResponse extends SdkResponse {
             .append("\n");
         sb.append("    isBackgroundReplacement: ").append(toIndentedString(isBackgroundReplacement)).append("\n");
         sb.append("    workerType: ").append(toIndentedString(workerType)).append("\n");
-        sb.append("    beautyLevel: ").append(toIndentedString(beautyLevel)).append("\n");
         sb.append("    voiceTrainJobId: ").append(toIndentedString(voiceTrainJobId)).append("\n");
         sb.append("    flexusRetryCount: ").append(toIndentedString(flexusRetryCount)).append("\n");
         sb.append("    audioSourceType: ").append(toIndentedString(audioSourceType)).append("\n");

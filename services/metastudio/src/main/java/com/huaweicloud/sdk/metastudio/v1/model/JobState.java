@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 任务状态。 * CREATING: 创建中 * SYSTEM_AUDITING: 系统审核中 * AUDITING: 人工审核中 * WAITING_SPLIT: 等待切割 * SPLITTING: 切割中 * SPLIT_FAILED: 切割失败 * ANNOTATING: 标注中 * WAITING: 等待训练 * PROCESSING: 任务训练中 * RESULT_REVIEW: 审核结果 * AUDIT_FAILED: 审核失败,等待用户重传数据 * FAILED: 失败 * SUCCEED: 成功
+ * 任务状态。 * CREATING: 创建中 * SYSTEM_AUDITING: 系统审核中 * AUDITING: 人工审核中 * WAITING_SPLIT: 等待切割 * SPLITTING: 切割中 * SPLIT_FAILED: 切割失败 * ANNOTATING: 标注中 * WAITING: 等待训练 * PROCESSING: 任务训练中 * RESULT_REVIEW: 审核结果 * AUDIT_FAILED: 审核失败,等待用户重传数据 * UPLOADING: 上传中 * FAILED: 失败 * SUCCEED: 成功
  */
 public class JobState {
 
@@ -78,6 +78,11 @@ public class JobState {
     public static final JobState USER_REVIEW_REJECT = new JobState("USER_REVIEW_REJECT");
 
     /**
+     * Enum UPLOADING for value: "UPLOADING"
+     */
+    public static final JobState UPLOADING = new JobState("UPLOADING");
+
+    /**
      * Enum FAILED for value: "FAILED"
      */
     public static final JobState FAILED = new JobState("FAILED");
@@ -104,6 +109,7 @@ public class JobState {
         map.put("AUDIT_FAILED", AUDIT_FAILED);
         map.put("USER_RESULT_REVIEW", USER_RESULT_REVIEW);
         map.put("USER_REVIEW_REJECT", USER_REVIEW_REJECT);
+        map.put("UPLOADING", UPLOADING);
         map.put("FAILED", FAILED);
         map.put("SUCCEED", SUCCEED);
         return Collections.unmodifiableMap(map);

@@ -51,6 +51,8 @@ public class SwrRegion {
 
     public static final Region CN_NORTH_9 = new Region("cn-north-9", "https://swr-api.cn-north-9.myhuaweicloud.com");
 
+    public static final Region CN_NORTH_11 = new Region("cn-north-11", "https://swr-api.cn-north-11.myhuaweicloud.com");
+
     public static final Region NA_MEXICO_1 = new Region("na-mexico-1", "https://swr-api.na-mexico-1.myhuaweicloud.com");
 
     public static final Region LA_NORTH_2 = new Region("la-north-2", "https://swr-api.la-north-2.myhuaweicloud.com");
@@ -92,6 +94,7 @@ public class SwrRegion {
         map.put("la-south-2", LA_SOUTH_2);
         map.put("sa-brazil-1", SA_BRAZIL_1);
         map.put("cn-north-9", CN_NORTH_9);
+        map.put("cn-north-11", CN_NORTH_11);
         map.put("na-mexico-1", NA_MEXICO_1);
         map.put("la-north-2", LA_NORTH_2);
         map.put("tr-west-1", TR_WEST_1);

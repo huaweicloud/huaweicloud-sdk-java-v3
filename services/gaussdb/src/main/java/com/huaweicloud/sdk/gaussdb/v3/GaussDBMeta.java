@@ -149,6 +149,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadSlowLogFileRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DownloadSlowLogFileResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.EnlargeProxyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlInstanceVolumeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ExpandGaussMySqlInstanceVolumeResponse;
@@ -264,6 +266,7 @@ import com.huaweicloud.sdk.gaussdb.v3.model.MysqlUpdateBackupPolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.MysqlUpdateInstanceNameRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.OpenMysqlProxyRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.OperateAuditLogRequestV3Body;
+import com.huaweicloud.sdk.gaussdb.v3.model.OperateMultiTenantReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.OperateSqlFilterControlReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.OperateSqlFilterRuleReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.PauseStarRocksDataReplication;
@@ -373,6 +376,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfo
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowIntelligentDiagnosisInstanceInfosPerMetricResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowLtsConfigsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowLtsConfigsResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowMultiTenantRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowMultiTenantResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyConfigurationsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyIpgroupRequest;
@@ -383,6 +388,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRecyclePolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowlogSensitiveStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowlogSensitiveStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSqlFilterControlRequest;
@@ -471,6 +479,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceConfigurationsRequestB
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceConfigurationsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateInstanceMonitorResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateMultiTenantRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateMultiTenantResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateNewNodeAutoAddSwitchResponse;
@@ -1615,6 +1625,40 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DescribeBackupEncryptStatusRequest::getXLanguage,
                 DescribeBackupEncryptStatusRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadSlowLogFileRequest, DownloadSlowLogFileResponse> downloadSlowLogFile =
+        genForDownloadSlowLogFile();
+
+    private static HttpRequestDef<DownloadSlowLogFileRequest, DownloadSlowLogFileResponse> genForDownloadSlowLogFile() {
+        // basic
+        HttpRequestDef.Builder<DownloadSlowLogFileRequest, DownloadSlowLogFileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DownloadSlowLogFileRequest.class, DownloadSlowLogFileResponse.class)
+                .withName("DownloadSlowLogFile")
+                .withUri("/v3/{project_id}/instances/{instance_id}/{node_id}/slowlog-download")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadSlowLogFileRequest::getInstanceId,
+                DownloadSlowLogFileRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadSlowLogFileRequest::getNodeId, DownloadSlowLogFileRequest::setNodeId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadSlowLogFileRequest::getXLanguage, DownloadSlowLogFileRequest::setXLanguage));
 
         // response
 
@@ -4190,6 +4234,34 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowMultiTenantRequest, ShowMultiTenantResponse> showMultiTenant =
+        genForShowMultiTenant();
+
+    private static HttpRequestDef<ShowMultiTenantRequest, ShowMultiTenantResponse> genForShowMultiTenant() {
+        // basic
+        HttpRequestDef.Builder<ShowMultiTenantRequest, ShowMultiTenantResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowMultiTenantRequest.class, ShowMultiTenantResponse.class)
+                .withName("ShowMultiTenant")
+                .withUri("/v3/{project_id}/instances/{instance_id}/multi-tenant")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMultiTenantRequest::getInstanceId, ShowMultiTenantRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMultiTenantRequest::getXLanguage, ShowMultiTenantRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowProxyConfigurationsRequest, ShowProxyConfigurationsResponse> showProxyConfigurations =
         genForShowProxyConfigurations();
 
@@ -4380,6 +4452,41 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRestoreTablesRequest::getXLanguage, ShowRestoreTablesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSlowLogStatisticsRequest, ShowSlowLogStatisticsResponse> showSlowLogStatistics =
+        genForShowSlowLogStatistics();
+
+    private static HttpRequestDef<ShowSlowLogStatisticsRequest, ShowSlowLogStatisticsResponse> genForShowSlowLogStatistics() {
+        // basic
+        HttpRequestDef.Builder<ShowSlowLogStatisticsRequest, ShowSlowLogStatisticsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowSlowLogStatisticsRequest.class, ShowSlowLogStatisticsResponse.class)
+            .withName("ShowSlowLogStatistics")
+            .withUri("/v3/{project_id}/instances/{instance_id}/slow-logs/statistics")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSlowLogStatisticsRequest::getInstanceId,
+                ShowSlowLogStatisticsRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSlowLogStatisticsRequest::getXLanguage,
+                ShowSlowLogStatisticsRequest::setXLanguage));
+        builder.<ShowSlowLogStatisticsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowSlowLogStatisticsRequestBody.class),
+            f -> f.withMarshaller(ShowSlowLogStatisticsRequest::getBody, ShowSlowLogStatisticsRequest::setBody));
 
         // response
 
@@ -5263,6 +5370,39 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TaurusModifyInstanceMonitorRequestBody.class),
             f -> f.withMarshaller(UpdateInstanceMonitorRequest::getBody, UpdateInstanceMonitorRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateMultiTenantRequest, UpdateMultiTenantResponse> updateMultiTenant =
+        genForUpdateMultiTenant();
+
+    private static HttpRequestDef<UpdateMultiTenantRequest, UpdateMultiTenantResponse> genForUpdateMultiTenant() {
+        // basic
+        HttpRequestDef.Builder<UpdateMultiTenantRequest, UpdateMultiTenantResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateMultiTenantRequest.class, UpdateMultiTenantResponse.class)
+                .withName("UpdateMultiTenant")
+                .withUri("/v3/{project_id}/instances/{instance_id}/multi-tenant")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMultiTenantRequest::getInstanceId, UpdateMultiTenantRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateMultiTenantRequest::getXLanguage, UpdateMultiTenantRequest::setXLanguage));
+        builder.<OperateMultiTenantReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OperateMultiTenantReq.class),
+            f -> f.withMarshaller(UpdateMultiTenantRequest::getBody, UpdateMultiTenantRequest::setBody));
 
         // response
 

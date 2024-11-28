@@ -21,7 +21,7 @@ public class DeleteOrganizationPolicyRequest {
     }
 
     /**
-     * 资源策略ID
+     * 组织策略ID
      * @return organizationPolicyId
      */
     public String getOrganizationPolicyId() {

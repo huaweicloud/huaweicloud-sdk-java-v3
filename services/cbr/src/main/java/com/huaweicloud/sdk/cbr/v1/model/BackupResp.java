@@ -50,80 +50,10 @@ public class BackupResp {
 
     private String id;
 
-    /**
-     * 备份类型
-     */
-    public static final class ImageTypeEnum {
-
-        /**
-         * Enum BACKUP for value: "backup"
-         */
-        public static final ImageTypeEnum BACKUP = new ImageTypeEnum("backup");
-
-        /**
-         * Enum REPLICATION for value: "replication"
-         */
-        public static final ImageTypeEnum REPLICATION = new ImageTypeEnum("replication");
-
-        private static final Map<String, ImageTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ImageTypeEnum> createStaticFields() {
-            Map<String, ImageTypeEnum> map = new HashMap<>();
-            map.put("backup", BACKUP);
-            map.put("replication", REPLICATION);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ImageTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ImageTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImageTypeEnum(value));
-        }
-
-        public static ImageTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ImageTypeEnum) {
-                return this.value.equals(((ImageTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_type")
 
-    private ImageTypeEnum imageType;
+    private String imageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -165,89 +95,13 @@ public class BackupResp {
 
     private Integer resourceSize;
 
-    /**
-     * 资源类型: 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 云桌面：OS::Workspace::DesktopV2
-     */
-    public static final class ResourceTypeEnum {
-
-        /**
-         * Enum OS_NOVA_SERVER for value: "OS::Nova::Server"
-         */
-        public static final ResourceTypeEnum OS_NOVA_SERVER = new ResourceTypeEnum("OS::Nova::Server");
-
-        /**
-         * Enum OS_CINDER_VOLUME for value: "OS::Cinder::Volume"
-         */
-        public static final ResourceTypeEnum OS_CINDER_VOLUME = new ResourceTypeEnum("OS::Cinder::Volume");
-
-        /**
-         * Enum OS_WORKSPACE_DESKTOPV2 for value: "OS::Workspace::DesktopV2"
-         */
-        public static final ResourceTypeEnum OS_WORKSPACE_DESKTOPV2 = new ResourceTypeEnum("OS::Workspace::DesktopV2");
-
-        private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ResourceTypeEnum> createStaticFields() {
-            Map<String, ResourceTypeEnum> map = new HashMap<>();
-            map.put("OS::Nova::Server", OS_NOVA_SERVER);
-            map.put("OS::Cinder::Volume", OS_CINDER_VOLUME);
-            map.put("OS::Workspace::DesktopV2", OS_WORKSPACE_DESKTOPV2);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ResourceTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ResourceTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
-        }
-
-        public static ResourceTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ResourceTypeEnum) {
-                return this.value.equals(((ResourceTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
 
-    private ResourceTypeEnum resourceType;
+    private String resourceType;
 
     /**
-     * 备份状态
+     * 备份状态 - available: 可用 - protecting: 保护中 - deleting: 删除中 - restoring: 恢复中 - error: 异常 - waiting_protect: 等待保护 - waiting_delete: 等待删除 - waiting_restore: 等待恢复
      */
     public static final class StatusEnum {
 
@@ -392,6 +246,11 @@ public class BackupResp {
 
     private Boolean incremental;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private Integer version;
+
     public BackupResp withCheckpointId(String checkpointId) {
         this.checkpointId = checkpointId;
         return this;
@@ -503,20 +362,20 @@ public class BackupResp {
         this.id = id;
     }
 
-    public BackupResp withImageType(ImageTypeEnum imageType) {
+    public BackupResp withImageType(String imageType) {
         this.imageType = imageType;
         return this;
     }
 
     /**
-     * 备份类型
+     * [备份类型。取值为backup和replication。](tag:hws,hws_hk,ocb) [备份类型。取值为backup。](tag:g42,hk_g42,sbc,dt,fcs_vm,ctc,tm,tlf,cmcc,hcso_dt)
      * @return imageType
      */
-    public ImageTypeEnum getImageType() {
+    public String getImageType() {
         return imageType;
     }
 
-    public void setImageType(ImageTypeEnum imageType) {
+    public void setImageType(String imageType) {
         this.imageType = imageType;
     }
 
@@ -656,20 +515,20 @@ public class BackupResp {
         this.resourceSize = resourceSize;
     }
 
-    public BackupResp withResourceType(ResourceTypeEnum resourceType) {
+    public BackupResp withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
 
     /**
-     * 资源类型: 云服务器: OS::Nova::Server, 云硬盘: OS::Cinder::Volume, 云桌面：OS::Workspace::DesktopV2
+     * [资源类型: OS::Nova::Server, OS::Cinder::Volume, OS::Ironic::BareMetalServer, OS::Native::Server, OS::Sfs::Turbo, OS::Workspace::DesktopV2](tag:hws,hws_hk) [资源类型: OS::Nova::Server, OS::Cinder::Volume, OS::Sfs::Turbo](tag:hk_g42,sbc,dt) [资源类型: OS::Nova::Server, OS::Cinder::Volume, OS::Ironic::BareMetalServer, OS::Sfs::Turbo](tag:fcs_vm,ctc,ocb,tm) [资源类型: OS::Nova::Server, OS::Cinder::Volume](tag:tlf,cmcc,hcso_dt) [资源类型: OS::Nova::Server, OS::Cinder::Volume, OS::Sfs::Turbo, OS::Workspace::DesktopV2](tag:g42)
      * @return resourceType
      */
-    public ResourceTypeEnum getResourceType() {
+    public String getResourceType() {
         return resourceType;
     }
 
-    public void setResourceType(ResourceTypeEnum resourceType) {
+    public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
     }
 
@@ -679,7 +538,7 @@ public class BackupResp {
     }
 
     /**
-     * 备份状态
+     * 备份状态 - available: 可用 - protecting: 保护中 - deleting: 删除中 - restoring: 恢复中 - error: 异常 - waiting_protect: 等待保护 - waiting_delete: 等待删除 - waiting_restore: 等待恢复
      * @return status
      */
     public StatusEnum getStatus() {
@@ -780,7 +639,7 @@ public class BackupResp {
     }
 
     /**
-     * 备份提供商ID，用于区分备份对象。当前取值包含  0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881， 该值代表备份对象为SFS Turbo。a13639de-00be-4e94-af30-26912d75e4a2，该值代表备份对象为混合云VMware备份。
+     * 备份提供商ID，用于区分备份对象。当前取值包含： [0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881， 该值代表备份对象为SFS Turbo。a13639de-00be-4e94-af30-26912d75e4a2，该值代表备份对象为混合云VMware备份。](tag:hws,hws_hk) [0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881，该值代表备份对象为SFS Turbo。](tag:ocb,tlf,sbc,fcs_vm,g42,tm,dt,cmcc) [0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。3f3c3220-245c-4805-b811-758870015881，该值代表备份对象为SFS Turbo。86a80900-71bf-4961-956a-d52df944f84a，该值代表备份对象为Workspace。](tag:ctc) [0daac4c5-6707-4851-97ba-169e36266b66，该值代表备份对象为云服务器。d1603440-187d-4516-af25-121250c7cc97，该值代表备份对象为云硬盘。](tag:hcso_dt)
      * @return providerId
      */
     public String getProviderId() {
@@ -841,6 +700,23 @@ public class BackupResp {
         this.incremental = incremental;
     }
 
+    public BackupResp withVersion(Integer version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 备份副本快照类型
+     * @return version
+     */
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -863,7 +739,7 @@ public class BackupResp {
             && Objects.equals(this.replicationRecords, that.replicationRecords)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.providerId, that.providerId) && Objects.equals(this.children, that.children)
-            && Objects.equals(this.incremental, that.incremental);
+            && Objects.equals(this.incremental, that.incremental) && Objects.equals(this.version, that.version);
     }
 
     @Override
@@ -891,7 +767,8 @@ public class BackupResp {
             enterpriseProjectId,
             providerId,
             children,
-            incremental);
+            incremental,
+            version);
     }
 
     @Override
@@ -922,6 +799,7 @@ public class BackupResp {
         sb.append("    providerId: ").append(toIndentedString(providerId)).append("\n");
         sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("    incremental: ").append(toIndentedString(incremental)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }

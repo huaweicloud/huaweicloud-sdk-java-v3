@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -105,6 +106,11 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
     @JsonProperty(value = "batch_name")
 
     private String batchName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "allocated_resource")
+
+    private VoiceTrainingAllocatedResource allocatedResource;
 
     public ShowVoiceTrainingJobResponse withJobType(JobType jobType) {
         this.jobType = jobType;
@@ -435,6 +441,33 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         this.batchName = batchName;
     }
 
+    public ShowVoiceTrainingJobResponse withAllocatedResource(VoiceTrainingAllocatedResource allocatedResource) {
+        this.allocatedResource = allocatedResource;
+        return this;
+    }
+
+    public ShowVoiceTrainingJobResponse withAllocatedResource(
+        Consumer<VoiceTrainingAllocatedResource> allocatedResourceSetter) {
+        if (this.allocatedResource == null) {
+            this.allocatedResource = new VoiceTrainingAllocatedResource();
+            allocatedResourceSetter.accept(this.allocatedResource);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get allocatedResource
+     * @return allocatedResource
+     */
+    public VoiceTrainingAllocatedResource getAllocatedResource() {
+        return allocatedResource;
+    }
+
+    public void setAllocatedResource(VoiceTrainingAllocatedResource allocatedResource) {
+        this.allocatedResource = allocatedResource;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -455,7 +488,8 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
             && Objects.equals(this.voiceAuthorizationUrl, that.voiceAuthorizationUrl)
             && Objects.equals(this.createType, that.createType) && Objects.equals(this.tag, that.tag)
             && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId)
-            && Objects.equals(this.batchName, that.batchName);
+            && Objects.equals(this.batchName, that.batchName)
+            && Objects.equals(this.allocatedResource, that.allocatedResource);
     }
 
     @Override
@@ -478,7 +512,8 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
             tag,
             phone,
             dhtmsJobId,
-            batchName);
+            batchName,
+            allocatedResource);
     }
 
     @Override
@@ -504,6 +539,7 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
         sb.append("    dhtmsJobId: ").append(toIndentedString(dhtmsJobId)).append("\n");
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
+        sb.append("    allocatedResource: ").append(toIndentedString(allocatedResource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

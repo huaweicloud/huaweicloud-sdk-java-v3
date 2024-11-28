@@ -60,6 +60,11 @@ public class ListVoiceTrainingJobRequest {
 
     private String jobType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "batch_name")
+
+    private String batchName;
+
     public ListVoiceTrainingJobRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -236,6 +241,23 @@ public class ListVoiceTrainingJobRequest {
         this.jobType = jobType;
     }
 
+    public ListVoiceTrainingJobRequest withBatchName(String batchName) {
+        this.batchName = batchName;
+        return this;
+    }
+
+    /**
+     * 批次名称。
+     * @return batchName
+     */
+    public String getBatchName() {
+        return batchName;
+    }
+
+    public void setBatchName(String batchName) {
+        this.batchName = batchName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -249,12 +271,23 @@ public class ListVoiceTrainingJobRequest {
             && Objects.equals(this.createUntil, that.createUntil) && Objects.equals(this.createSince, that.createSince)
             && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.state, that.state)
             && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.voiceName, that.voiceName)
-            && Objects.equals(this.tag, that.tag) && Objects.equals(this.jobType, that.jobType);
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.batchName, that.batchName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, createUntil, createSince, xAppUserId, state, jobId, voiceName, tag, jobType);
+        return Objects.hash(offset,
+            limit,
+            createUntil,
+            createSince,
+            xAppUserId,
+            state,
+            jobId,
+            voiceName,
+            tag,
+            jobType,
+            batchName);
     }
 
     @Override
@@ -271,6 +304,7 @@ public class ListVoiceTrainingJobRequest {
         sb.append("    voiceName: ").append(toIndentedString(voiceName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
+        sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

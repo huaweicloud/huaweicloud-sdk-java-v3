@@ -18,6 +18,11 @@ public class AgentAddPathReq {
 
     private List<String> addPath = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "exclude_path")
+
+    private List<ExcludePath> excludePath = null;
+
     public AgentAddPathReq withAddPath(List<String> addPath) {
         this.addPath = addPath;
         return this;
@@ -51,6 +56,39 @@ public class AgentAddPathReq {
         this.addPath = addPath;
     }
 
+    public AgentAddPathReq withExcludePath(List<ExcludePath> excludePath) {
+        this.excludePath = excludePath;
+        return this;
+    }
+
+    public AgentAddPathReq addExcludePathItem(ExcludePath excludePathItem) {
+        if (this.excludePath == null) {
+            this.excludePath = new ArrayList<>();
+        }
+        this.excludePath.add(excludePathItem);
+        return this;
+    }
+
+    public AgentAddPathReq withExcludePath(Consumer<List<ExcludePath>> excludePathSetter) {
+        if (this.excludePath == null) {
+            this.excludePath = new ArrayList<>();
+        }
+        excludePathSetter.accept(this.excludePath);
+        return this;
+    }
+
+    /**
+     * 增加排除目录 > 该特性目前处于公测阶段，部分region可能无法使用。
+     * @return excludePath
+     */
+    public List<ExcludePath> getExcludePath() {
+        return excludePath;
+    }
+
+    public void setExcludePath(List<ExcludePath> excludePath) {
+        this.excludePath = excludePath;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -60,12 +98,12 @@ public class AgentAddPathReq {
             return false;
         }
         AgentAddPathReq that = (AgentAddPathReq) obj;
-        return Objects.equals(this.addPath, that.addPath);
+        return Objects.equals(this.addPath, that.addPath) && Objects.equals(this.excludePath, that.excludePath);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(addPath);
+        return Objects.hash(addPath, excludePath);
     }
 
     @Override
@@ -73,6 +111,7 @@ public class AgentAddPathReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class AgentAddPathReq {\n");
         sb.append("    addPath: ").append(toIndentedString(addPath)).append("\n");
+        sb.append("    excludePath: ").append(toIndentedString(excludePath)).append("\n");
         sb.append("}");
         return sb.toString();
     }

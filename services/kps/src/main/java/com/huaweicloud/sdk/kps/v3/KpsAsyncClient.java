@@ -7,6 +7,10 @@ import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairRequest;
 import com.huaweicloud.sdk.kps.v3.model.AssociateKeypairResponse;
 import com.huaweicloud.sdk.kps.v3.model.BatchAssociateKeypairRequest;
 import com.huaweicloud.sdk.kps.v3.model.BatchAssociateKeypairResponse;
+import com.huaweicloud.sdk.kps.v3.model.BatchExportPrivateKeyRequest;
+import com.huaweicloud.sdk.kps.v3.model.BatchExportPrivateKeyResponse;
+import com.huaweicloud.sdk.kps.v3.model.BatchImportKeypairRequest;
+import com.huaweicloud.sdk.kps.v3.model.BatchImportKeypairResponse;
 import com.huaweicloud.sdk.kps.v3.model.ClearPrivateKeyRequest;
 import com.huaweicloud.sdk.kps.v3.model.ClearPrivateKeyResponse;
 import com.huaweicloud.sdk.kps.v3.model.CreateKeypairRequest;
@@ -108,6 +112,65 @@ public class KpsAsyncClient {
     public AsyncInvoker<BatchAssociateKeypairRequest, BatchAssociateKeypairResponse> batchAssociateKeypairAsyncInvoker(
         BatchAssociateKeypairRequest request) {
         return new AsyncInvoker<>(request, KpsMeta.batchAssociateKeypair, hcClient);
+    }
+
+    /**
+     * 批量导出密钥对私钥
+     *
+     * 批量导出密钥对私钥，单次最多导出10条数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchExportPrivateKeyRequest 请求对象
+     * @return CompletableFuture<BatchExportPrivateKeyResponse>
+     */
+    public CompletableFuture<BatchExportPrivateKeyResponse> batchExportPrivateKeyAsync(
+        BatchExportPrivateKeyRequest request) {
+        return hcClient.asyncInvokeHttp(request, KpsMeta.batchExportPrivateKey);
+    }
+
+    /**
+     * 批量导出密钥对私钥
+     *
+     * 批量导出密钥对私钥，单次最多导出10条数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchExportPrivateKeyRequest 请求对象
+     * @return AsyncInvoker<BatchExportPrivateKeyRequest, BatchExportPrivateKeyResponse>
+     */
+    public AsyncInvoker<BatchExportPrivateKeyRequest, BatchExportPrivateKeyResponse> batchExportPrivateKeyAsyncInvoker(
+        BatchExportPrivateKeyRequest request) {
+        return new AsyncInvoker<>(request, KpsMeta.batchExportPrivateKey, hcClient);
+    }
+
+    /**
+     * 批量导入SSH密钥对
+     *
+     * 批量导入SSH密钥对,单次批量导入不得超过10条记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchImportKeypairRequest 请求对象
+     * @return CompletableFuture<BatchImportKeypairResponse>
+     */
+    public CompletableFuture<BatchImportKeypairResponse> batchImportKeypairAsync(BatchImportKeypairRequest request) {
+        return hcClient.asyncInvokeHttp(request, KpsMeta.batchImportKeypair);
+    }
+
+    /**
+     * 批量导入SSH密钥对
+     *
+     * 批量导入SSH密钥对,单次批量导入不得超过10条记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchImportKeypairRequest 请求对象
+     * @return AsyncInvoker<BatchImportKeypairRequest, BatchImportKeypairResponse>
+     */
+    public AsyncInvoker<BatchImportKeypairRequest, BatchImportKeypairResponse> batchImportKeypairAsyncInvoker(
+        BatchImportKeypairRequest request) {
+        return new AsyncInvoker<>(request, KpsMeta.batchImportKeypair, hcClient);
     }
 
     /**
