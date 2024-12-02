@@ -49,7 +49,7 @@ public class VpnRegion {
 
     public static final Region AE_AD_1 = new Region("ae-ad-1", "https://vpn.ae-ad-1.myhuaweicloud.com");
 
-    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://vpn.eu-west-101.myhuaweicloud.com");
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://vpn.eu-west-101.myhuaweicloud.eu");
 
     public static final Region TR_WEST_1 = new Region("tr-west-1", "https://vpn.tr-west-1.myhuaweicloud.com");
 

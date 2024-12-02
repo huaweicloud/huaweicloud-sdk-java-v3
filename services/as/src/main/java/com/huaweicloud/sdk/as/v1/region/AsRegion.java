@@ -62,7 +62,7 @@ public class AsRegion {
 
     public static final Region EU_WEST_0 = new Region("eu-west-0", "https://as.eu-west-0.myhuaweicloud.com");
 
-    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://as.eu-west-101.myhuaweicloud.com");
+    public static final Region EU_WEST_101 = new Region("eu-west-101", "https://as.eu-west-101.myhuaweicloud.eu");
 
     public static final Region MY_KUALALUMPUR_1 =
         new Region("my-kualalumpur-1", "https://as.my-kualalumpur-1.myhuaweicloud.com");
