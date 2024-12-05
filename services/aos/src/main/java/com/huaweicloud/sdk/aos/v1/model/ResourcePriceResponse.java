@@ -221,6 +221,21 @@ public class ResourcePriceResponse {
 
     private Integer periodCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "best_discount_type")
+
+    private Integer bestDiscountType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "best_discount_price")
+
+    private Double bestDiscountPrice;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "official_website_discount_price")
+
+    private Double officialWebsiteDiscountPrice;
+
     public ResourcePriceResponse withChargeMode(ChargeModeEnum chargeMode) {
         this.chargeMode = chargeMode;
         return this;
@@ -323,6 +338,57 @@ public class ResourcePriceResponse {
         this.periodCount = periodCount;
     }
 
+    public ResourcePriceResponse withBestDiscountType(Integer bestDiscountType) {
+        this.bestDiscountType = bestDiscountType;
+        return this;
+    }
+
+    /**
+     * 该资源的最优折扣类型  对于按需计费资源的折扣类型 合同商务优惠类型：605 （华为云商务-折扣率，一口价，华为云用户）、606 （渠道商务-折扣率，一口价，BP用户） 伙伴折扣优惠类型：607 (合作伙伴授予折扣-折扣率)  对于包周期计费资源的折扣类型 合同商务折扣：605（华为云BE场景下的合同商务折扣）、606（分销商BE场景下的合同商务折扣） 伙伴授予折扣：607 促销折扣：700  如果该资源存在折扣，则返回该字段；如果该资源不存在折扣，则不返回该字段。
+     * @return bestDiscountType
+     */
+    public Integer getBestDiscountType() {
+        return bestDiscountType;
+    }
+
+    public void setBestDiscountType(Integer bestDiscountType) {
+        this.bestDiscountType = bestDiscountType;
+    }
+
+    public ResourcePriceResponse withBestDiscountPrice(Double bestDiscountPrice) {
+        this.bestDiscountPrice = bestDiscountPrice;
+        return this;
+    }
+
+    /**
+     * 最优折扣优惠额，保留小数点后2位，向上取整，默认单位是元。  如果该资源存在折扣，则返回该字段；如果该资源不存在折扣，则不返回该字段。
+     * @return bestDiscountPrice
+     */
+    public Double getBestDiscountPrice() {
+        return bestDiscountPrice;
+    }
+
+    public void setBestDiscountPrice(Double bestDiscountPrice) {
+        this.bestDiscountPrice = bestDiscountPrice;
+    }
+
+    public ResourcePriceResponse withOfficialWebsiteDiscountPrice(Double officialWebsiteDiscountPrice) {
+        this.officialWebsiteDiscountPrice = officialWebsiteDiscountPrice;
+        return this;
+    }
+
+    /**
+     * 官网价优惠额，保留小数点后2位，向上取整，默认单位是元。  如果该资源存在官网价优惠额，则返回该字段；如果该资源不存在官网价优惠额，则不返回该字段。
+     * @return officialWebsiteDiscountPrice
+     */
+    public Double getOfficialWebsiteDiscountPrice() {
+        return officialWebsiteDiscountPrice;
+    }
+
+    public void setOfficialWebsiteDiscountPrice(Double officialWebsiteDiscountPrice) {
+        this.officialWebsiteDiscountPrice = officialWebsiteDiscountPrice;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -334,12 +400,23 @@ public class ResourcePriceResponse {
         ResourcePriceResponse that = (ResourcePriceResponse) obj;
         return Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.salePrice, that.salePrice)
             && Objects.equals(this.discount, that.discount) && Objects.equals(this.originalPrice, that.originalPrice)
-            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodCount, that.periodCount);
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodCount, that.periodCount)
+            && Objects.equals(this.bestDiscountType, that.bestDiscountType)
+            && Objects.equals(this.bestDiscountPrice, that.bestDiscountPrice)
+            && Objects.equals(this.officialWebsiteDiscountPrice, that.officialWebsiteDiscountPrice);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(chargeMode, salePrice, discount, originalPrice, periodType, periodCount);
+        return Objects.hash(chargeMode,
+            salePrice,
+            discount,
+            originalPrice,
+            periodType,
+            periodCount,
+            bestDiscountType,
+            bestDiscountPrice,
+            officialWebsiteDiscountPrice);
     }
 
     @Override
@@ -352,6 +429,11 @@ public class ResourcePriceResponse {
         sb.append("    originalPrice: ").append(toIndentedString(originalPrice)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    periodCount: ").append(toIndentedString(periodCount)).append("\n");
+        sb.append("    bestDiscountType: ").append(toIndentedString(bestDiscountType)).append("\n");
+        sb.append("    bestDiscountPrice: ").append(toIndentedString(bestDiscountPrice)).append("\n");
+        sb.append("    officialWebsiteDiscountPrice: ")
+            .append(toIndentedString(officialWebsiteDiscountPrice))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

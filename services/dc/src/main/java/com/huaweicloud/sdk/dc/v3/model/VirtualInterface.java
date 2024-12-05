@@ -45,11 +45,6 @@ public class VirtualInterface {
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "update_time")
-
-    private OffsetDateTime updateTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -505,23 +500,6 @@ public class VirtualInterface {
 
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
-    }
-
-    public VirtualInterface withUpdateTime(OffsetDateTime updateTime) {
-        this.updateTime = updateTime;
-        return this;
-    }
-
-    /**
-     * 虚拟接口更新时间
-     * @return updateTime
-     */
-    public OffsetDateTime getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(OffsetDateTime updateTime) {
-        this.updateTime = updateTime;
     }
 
     public VirtualInterface withDescription(String description) {
@@ -1139,8 +1117,7 @@ public class VirtualInterface {
         VirtualInterface that = (VirtualInterface) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.bandwidth, that.bandwidth)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.description, that.description)
             && Objects.equals(this.directConnectId, that.directConnectId)
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.status, that.status)
             && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.type, that.type)
@@ -1169,7 +1146,6 @@ public class VirtualInterface {
             adminStateUp,
             bandwidth,
             createTime,
-            updateTime,
             description,
             directConnectId,
             serviceType,
@@ -1212,7 +1188,6 @@ public class VirtualInterface {
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    directConnectId: ").append(toIndentedString(directConnectId)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");

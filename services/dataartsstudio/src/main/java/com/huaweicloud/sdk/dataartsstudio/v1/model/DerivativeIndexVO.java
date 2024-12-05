@@ -155,7 +155,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -257,7 +257,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 主题域分组ID，只读，填写String类型替代Long类型。
+     * 主题域分组ID，只读，ID字符串。
      * @return l1Id
      */
     public String getL1Id() {
@@ -291,7 +291,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 业务对象guid，填写String类型替代Long类型。
+     * 业务对象guid，ID字符串。
      * @return l3Id
      */
     public String getL3Id() {
@@ -325,7 +325,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 原子指标ID，填写String类型替代Long类型。
+     * 原子指标ID，ID字符串。
      * @return atomicIndexId
      */
     public String getAtomicIndexId() {
@@ -342,7 +342,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 时间限定ID，填写String类型替代Long类型。
+     * 时间限定ID，ID字符串。
      * @return timeConditionId
      */
     public String getTimeConditionId() {
@@ -359,7 +359,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 时间限定关联字段ID，填写String类型替代Long类型。
+     * 时间限定关联字段ID，ID字符串。
      * @return timeFieldId
      */
     public String getTimeFieldId() {
@@ -613,7 +613,7 @@ public class DerivativeIndexVO {
     }
 
     /**
-     * 汇总表ID，只读，填写String类型替代Long类型。
+     * 汇总表ID，只读，ID字符串。
      * @return summaryTableId
      */
     public String getSummaryTableId() {

@@ -72,7 +72,7 @@ public class RemoveDesignQualityInfosRequest {
     }
 
     /**
-     * 表的ID，填写String类型替代Long类型。
+     * 表的ID，ID字符串。
      * @return tableId
      */
     public String getTableId() {

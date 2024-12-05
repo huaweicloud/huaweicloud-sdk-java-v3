@@ -106,7 +106,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 属性定义的ID，填写String类型替代Long类型。
+     * 属性定义的ID，ID字符串。
      * @return fdId
      */
     public String getFdId() {
@@ -123,7 +123,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 标准所属目录，填写String类型替代Long类型。
+     * 标准所属目录，ID字符串。
      * @return directoryId
      */
     public String getDirectoryId() {
@@ -140,7 +140,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 标准所属行，填写String类型替代Long类型。
+     * 标准所属行，ID字符串。
      * @return rowId
      */
     public String getRowId() {
@@ -157,7 +157,7 @@ public class StandElementValueVO {
     }
 
     /**
-     * 数据标准的ID，填写String类型替代Long类型。
+     * 数据标准的ID，ID字符串。
      * @return id
      */
     public String getId() {

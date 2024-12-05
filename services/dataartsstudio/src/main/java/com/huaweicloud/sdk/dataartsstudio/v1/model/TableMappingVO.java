@@ -95,7 +95,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -146,7 +146,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 目的表ID，填写String类型替代Long类型。
+     * 目的表ID，ID字符串。
      * @return targetTableId
      */
     public String getTargetTableId() {
@@ -163,7 +163,7 @@ public class TableMappingVO {
     }
 
     /**
-     * 来源表在关系建模中的模型ID，填写String类型替代Long类型。
+     * 来源表在关系建模中的模型ID，ID字符串。
      * @return srcModelId
      */
     public String getSrcModelId() {

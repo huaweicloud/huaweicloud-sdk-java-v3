@@ -517,7 +517,7 @@ public class DimensionLogicTableVO {
     }
 
     /**
-     * 主题域分组ID，只读，填写String类型替代Long类型。
+     * 主题域分组ID，只读，ID字符串。
      * @return l1Id
      */
     public String getL1Id() {
@@ -551,7 +551,7 @@ public class DimensionLogicTableVO {
     }
 
     /**
-     * 业务对象ID，填写String类型替代Long类型。
+     * 业务对象ID，ID字符串。
      * @return l3Id
      */
     public String getL3Id() {
@@ -602,7 +602,7 @@ public class DimensionLogicTableVO {
     }
 
     /**
-     * 所属维度ID，填写String类型替代Long类型。
+     * 所属维度ID，ID字符串。
      * @return dimensionId
      */
     public String getDimensionId() {
@@ -653,7 +653,7 @@ public class DimensionLogicTableVO {
     }
 
     /**
-     * 引用码表ID，填写String类型替代Long类型。
+     * 引用码表ID，ID字符串。
      * @return codeTableId
      */
     public String getCodeTableId() {
@@ -1342,7 +1342,7 @@ public class DimensionLogicTableVO {
     }
 
     /**
-     * 质量ID，填写String类型替代Long类型。
+     * 质量ID，ID字符串。
      * @return qualityId
      */
     public String getQualityId() {
@@ -1443,7 +1443,7 @@ public class DimensionLogicTableVO {
     }
 
     /**
-     * 开发环境版本，填写String类型替代Long类型。
+     * 开发环境版本，ID字符串。
      * @return devVersion
      */
     public String getDevVersion() {
@@ -1460,7 +1460,7 @@ public class DimensionLogicTableVO {
     }
 
     /**
-     * 生产环境版本，填写String类型替代Long类型
+     * 生产环境版本，ID字符串
      * @return prodVersion
      */
     public String getProdVersion() {

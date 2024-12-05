@@ -82,7 +82,7 @@ public class ListDimensionGroupsRequest {
     }
 
     /**
-     * 关联表的ID，填写String类型替代Long类型。
+     * 关联表的ID，ID字符串。
      * @return tableId
      */
     public String getTableId() {

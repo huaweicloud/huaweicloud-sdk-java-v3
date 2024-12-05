@@ -51,7 +51,7 @@ public class DataSource {
     }
 
     /**
-     * 数据源类型，取值范围如下： 1 - 华为产品 2 - 第三方产品 3 - 租户私有产品
+     * 数据源类型，取值范围如下： 1 - 系统 2 - 第三方产品 3 - 租户私有产品
      * minimum: 1
      * maximum: 3
      * @return type
@@ -104,7 +104,7 @@ public class DataSource {
     }
 
     /**
-     * 数据源产品所在区域，具体取值范围查看华为云地区和终端节点定义。
+     * 数据源产品所在区域。
      * @return regionId
      */
     public String getRegionId() {

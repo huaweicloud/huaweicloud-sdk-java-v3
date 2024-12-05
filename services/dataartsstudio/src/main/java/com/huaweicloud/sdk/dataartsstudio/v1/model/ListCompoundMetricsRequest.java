@@ -301,7 +301,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 依据原子指标ID查维度属性，填写String类型替代Long类型。
+     * 依据原子指标ID查维度属性，ID字符串。
      * @return atomicIndexId
      */
     public String getAtomicIndexId() {
@@ -318,7 +318,7 @@ public class ListCompoundMetricsRequest {
     }
 
     /**
-     * 业务对象l3的ID，填写String类型替代Long类型。
+     * 业务对象l3的ID，ID字符串。
      * @return l3Id
      */
     public String getL3Id() {

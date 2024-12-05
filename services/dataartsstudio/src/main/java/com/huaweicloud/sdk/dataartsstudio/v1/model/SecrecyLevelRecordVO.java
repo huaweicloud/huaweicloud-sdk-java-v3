@@ -77,7 +77,7 @@ public class SecrecyLevelRecordVO {
     }
 
     /**
-     * 属性关联密级的ID，填写String类型替代Long类型。
+     * 属性关联密级的ID，ID字符串。
      * @return id
      */
     public String getId() {
@@ -94,7 +94,7 @@ public class SecrecyLevelRecordVO {
     }
 
     /**
-     * 密级的ID，填写String类型替代Long类型。
+     * 密级的ID，ID字符串。
      * @return secrecyLevelId
      */
     public String getSecrecyLevelId() {
@@ -179,7 +179,7 @@ public class SecrecyLevelRecordVO {
     }
 
     /**
-     * 业务对象ID，填写String类型替代Long类型。
+     * 业务对象ID，ID字符串。
      * @return bizId
      */
     public String getBizId() {

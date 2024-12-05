@@ -118,7 +118,7 @@ public class StandElementValueVOList {
     }
 
     /**
-     * 数据标准的ID，填写String类型替代Long类型。
+     * 数据标准的ID，ID字符串。
      * @return id
      */
     public String getId() {
@@ -135,7 +135,7 @@ public class StandElementValueVOList {
     }
 
     /**
-     * 标准所属目录，填写String类型替代Long类型。
+     * 标准所属目录，ID字符串。
      * @return directoryId
      */
     public String getDirectoryId() {
@@ -169,7 +169,7 @@ public class StandElementValueVOList {
     }
 
     /**
-     * 标准行的ID，填写String类型替代Long类型。
+     * 标准行的ID，ID字符串。
      * @return rowId
      */
     public String getRowId() {

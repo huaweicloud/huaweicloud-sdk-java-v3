@@ -80,7 +80,7 @@ public class AddDesignEntityTagsRequest {
     }
 
     /**
-     * 表的ID，填写String类型替代Long类型。
+     * 表的ID，ID字符串。
      * @return entityId
      */
     public String getEntityId() {
@@ -97,7 +97,7 @@ public class AddDesignEntityTagsRequest {
     }
 
     /**
-     * 属性的ID，填写String类型替代Long类型。
+     * 属性的ID，ID字符串。
      * @return attrId
      */
     public String getAttrId() {

@@ -78,6 +78,11 @@ public class CreateInstanceRequestBody {
 
     private Boolean antiAffinity;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TmsResourceTag> tags = null;
+
     public CreateInstanceRequestBody withChargemode(Integer chargemode) {
         this.chargemode = chargemode;
         return this;
@@ -315,6 +320,39 @@ public class CreateInstanceRequestBody {
         this.antiAffinity = antiAffinity;
     }
 
+    public CreateInstanceRequestBody withTags(List<TmsResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CreateInstanceRequestBody addTagsItem(TmsResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CreateInstanceRequestBody withTags(Consumer<List<TmsResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * TMS标签信息
+     * @return tags
+     */
+    public List<TmsResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<TmsResourceTag> tags) {
+        this.tags = tags;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -330,7 +368,8 @@ public class CreateInstanceRequestBody {
             && Objects.equals(this.specification, that.specification) && Objects.equals(this.cpuFlavor, that.cpuFlavor)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.securityGroup, that.securityGroup) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.resTenant, that.resTenant) && Objects.equals(this.antiAffinity, that.antiAffinity);
+            && Objects.equals(this.resTenant, that.resTenant) && Objects.equals(this.antiAffinity, that.antiAffinity)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -347,7 +386,8 @@ public class CreateInstanceRequestBody {
             securityGroup,
             count,
             resTenant,
-            antiAffinity);
+            antiAffinity,
+            tags);
     }
 
     @Override
@@ -367,6 +407,7 @@ public class CreateInstanceRequestBody {
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    resTenant: ").append(toIndentedString(resTenant)).append("\n");
         sb.append("    antiAffinity: ").append(toIndentedString(antiAffinity)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -95,7 +95,7 @@ public class RelationVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -112,7 +112,7 @@ public class RelationVO {
     }
 
     /**
-     * 源表ID，填写String类型替代Long类型。
+     * 源表ID，ID字符串。
      * @return sourceTableId
      */
     public String getSourceTableId() {
@@ -129,7 +129,7 @@ public class RelationVO {
     }
 
     /**
-     * 目标表ID，填写String类型替代Long类型。
+     * 目标表ID，ID字符串。
      * @return targetTableId
      */
     public String getTargetTableId() {

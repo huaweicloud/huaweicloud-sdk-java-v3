@@ -207,6 +207,16 @@ public class Traces {
 
     private String resourceAccountId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "read_only")
+
+    private Boolean readOnly;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operation_id")
+
+    private String operationId;
+
     public Traces withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
@@ -611,6 +621,40 @@ public class Traces {
         this.resourceAccountId = resourceAccountId;
     }
 
+    public Traces withReadOnly(Boolean readOnly) {
+        this.readOnly = readOnly;
+        return this;
+    }
+
+    /**
+     * 标识用户请求是不是只读。
+     * @return readOnly
+     */
+    public Boolean getReadOnly() {
+        return readOnly;
+    }
+
+    public void setReadOnly(Boolean readOnly) {
+        this.readOnly = readOnly;
+    }
+
+    public Traces withOperationId(String operationId) {
+        this.operationId = operationId;
+        return this;
+    }
+
+    /**
+     * 记录事件对应的操作ID。
+     * @return operationId
+     */
+    public String getOperationId() {
+        return operationId;
+    }
+
+    public void setOperationId(String operationId) {
+        this.operationId = operationId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -632,7 +676,8 @@ public class Traces {
             && Objects.equals(this.locationInfo, that.locationInfo) && Objects.equals(this.endpoint, that.endpoint)
             && Objects.equals(this.resourceUrl, that.resourceUrl)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.resourceAccountId, that.resourceAccountId);
+            && Objects.equals(this.resourceAccountId, that.resourceAccountId)
+            && Objects.equals(this.readOnly, that.readOnly) && Objects.equals(this.operationId, that.operationId);
     }
 
     @Override
@@ -659,7 +704,9 @@ public class Traces {
             endpoint,
             resourceUrl,
             enterpriseProjectId,
-            resourceAccountId);
+            resourceAccountId,
+            readOnly,
+            operationId);
     }
 
     @Override
@@ -689,6 +736,8 @@ public class Traces {
         sb.append("    resourceUrl: ").append(toIndentedString(resourceUrl)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    resourceAccountId: ").append(toIndentedString(resourceAccountId)).append("\n");
+        sb.append("    readOnly: ").append(toIndentedString(readOnly)).append("\n");
+        sb.append("    operationId: ").append(toIndentedString(operationId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

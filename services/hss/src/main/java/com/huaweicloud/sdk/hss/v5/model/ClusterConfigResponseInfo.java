@@ -46,19 +46,9 @@ public class ClusterConfigResponseInfo {
     private String chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "auto_upgrade")
-
-    private Boolean autoUpgrade;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "prefer_packet_cycle")
 
     private Integer preferPacketCycle;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "vpc_id")
-
-    private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protect_type")
@@ -196,7 +186,7 @@ public class ClusterConfigResponseInfo {
     }
 
     /**
-     * 付费模式 | on_demand 按需 free 免费
+     * 付费模式：   on_demand 按需   free 免费
      * @return chargingMode
      */
     public String getChargingMode() {
@@ -205,23 +195,6 @@ public class ClusterConfigResponseInfo {
 
     public void setChargingMode(String chargingMode) {
         this.chargingMode = chargingMode;
-    }
-
-    public ClusterConfigResponseInfo withAutoUpgrade(Boolean autoUpgrade) {
-        this.autoUpgrade = autoUpgrade;
-        return this;
-    }
-
-    /**
-     * 开启agent自动升级
-     * @return autoUpgrade
-     */
-    public Boolean getAutoUpgrade() {
-        return autoUpgrade;
-    }
-
-    public void setAutoUpgrade(Boolean autoUpgrade) {
-        this.autoUpgrade = autoUpgrade;
     }
 
     public ClusterConfigResponseInfo withPreferPacketCycle(Integer preferPacketCycle) {
@@ -243,30 +216,13 @@ public class ClusterConfigResponseInfo {
         this.preferPacketCycle = preferPacketCycle;
     }
 
-    public ClusterConfigResponseInfo withVpcId(String vpcId) {
-        this.vpcId = vpcId;
-        return this;
-    }
-
-    /**
-     * vpc id
-     * @return vpcId
-     */
-    public String getVpcId() {
-        return vpcId;
-    }
-
-    public void setVpcId(String vpcId) {
-        this.vpcId = vpcId;
-    }
-
     public ClusterConfigResponseInfo withProtectType(String protectType) {
         this.protectType = protectType;
         return this;
     }
 
     /**
-     * cce protection type
+     * cce集群防护类型
      * @return protectType
      */
     public String getProtectType() {
@@ -283,7 +239,7 @@ public class ClusterConfigResponseInfo {
     }
 
     /**
-     * protection status
+     * 防护状态：   protecting 防护中   part_protect  部分防护   creating 开启中   error_protect 防护异常   unprotect 未防护   wait_protect 待防护
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -300,7 +256,7 @@ public class ClusterConfigResponseInfo {
     }
 
     /**
-     * cluster type
+     * 集群类型
      * @return clusterType
      */
     public String getClusterType() {
@@ -344,8 +300,7 @@ public class ClusterConfigResponseInfo {
             && Objects.equals(this.nodeTotalNum, that.nodeTotalNum)
             && Objects.equals(this.clusterName, that.clusterName)
             && Objects.equals(this.chargingMode, that.chargingMode)
-            && Objects.equals(this.autoUpgrade, that.autoUpgrade)
-            && Objects.equals(this.preferPacketCycle, that.preferPacketCycle) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.preferPacketCycle, that.preferPacketCycle)
             && Objects.equals(this.protectType, that.protectType)
             && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.clusterType, that.clusterType) && Objects.equals(this.failReason, that.failReason);
@@ -360,9 +315,7 @@ public class ClusterConfigResponseInfo {
             nodeTotalNum,
             clusterName,
             chargingMode,
-            autoUpgrade,
             preferPacketCycle,
-            vpcId,
             protectType,
             protectStatus,
             clusterType,
@@ -380,9 +333,7 @@ public class ClusterConfigResponseInfo {
         sb.append("    nodeTotalNum: ").append(toIndentedString(nodeTotalNum)).append("\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
-        sb.append("    autoUpgrade: ").append(toIndentedString(autoUpgrade)).append("\n");
         sb.append("    preferPacketCycle: ").append(toIndentedString(preferPacketCycle)).append("\n");
-        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    protectType: ").append(toIndentedString(protectType)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");

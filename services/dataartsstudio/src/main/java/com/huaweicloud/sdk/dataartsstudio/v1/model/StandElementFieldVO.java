@@ -209,7 +209,7 @@ public class StandElementFieldVO {
     }
 
     /**
-     * 数据标准ID，填写String类型替代Long类型。
+     * 数据标准ID，ID字符串。
      * @return id
      */
     public String getId() {

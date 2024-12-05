@@ -40,6 +40,26 @@ public class SimDeviceMultiplyVO {
 
     private Integer version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccid_mobile")
+
+    private String iccidMobile;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccid_unicom")
+
+    private String iccidUnicom;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "iccid_telcom")
+
+    private String iccidTelcom;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private Long orderId;
+
     public SimDeviceMultiplyVO withSimCardId(Long simCardId) {
         this.simCardId = simCardId;
         return this;
@@ -142,6 +162,74 @@ public class SimDeviceMultiplyVO {
         this.version = version;
     }
 
+    public SimDeviceMultiplyVO withIccidMobile(String iccidMobile) {
+        this.iccidMobile = iccidMobile;
+        return this;
+    }
+
+    /**
+     * 移动网络iccid
+     * @return iccidMobile
+     */
+    public String getIccidMobile() {
+        return iccidMobile;
+    }
+
+    public void setIccidMobile(String iccidMobile) {
+        this.iccidMobile = iccidMobile;
+    }
+
+    public SimDeviceMultiplyVO withIccidUnicom(String iccidUnicom) {
+        this.iccidUnicom = iccidUnicom;
+        return this;
+    }
+
+    /**
+     * 联通网络iccid
+     * @return iccidUnicom
+     */
+    public String getIccidUnicom() {
+        return iccidUnicom;
+    }
+
+    public void setIccidUnicom(String iccidUnicom) {
+        this.iccidUnicom = iccidUnicom;
+    }
+
+    public SimDeviceMultiplyVO withIccidTelcom(String iccidTelcom) {
+        this.iccidTelcom = iccidTelcom;
+        return this;
+    }
+
+    /**
+     * 电信网络iccid
+     * @return iccidTelcom
+     */
+    public String getIccidTelcom() {
+        return iccidTelcom;
+    }
+
+    public void setIccidTelcom(String iccidTelcom) {
+        this.iccidTelcom = iccidTelcom;
+    }
+
+    public SimDeviceMultiplyVO withOrderId(Long orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 批次号
+     * @return orderId
+     */
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -154,12 +242,23 @@ public class SimDeviceMultiplyVO {
         return Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.cid, that.cid)
             && Objects.equals(this.onlineCarrier, that.onlineCarrier)
             && Objects.equals(this.networkSwitchPolicyId, that.networkSwitchPolicyId)
-            && Objects.equals(this.policyName, that.policyName) && Objects.equals(this.version, that.version);
+            && Objects.equals(this.policyName, that.policyName) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.iccidMobile, that.iccidMobile) && Objects.equals(this.iccidUnicom, that.iccidUnicom)
+            && Objects.equals(this.iccidTelcom, that.iccidTelcom) && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(simCardId, cid, onlineCarrier, networkSwitchPolicyId, policyName, version);
+        return Objects.hash(simCardId,
+            cid,
+            onlineCarrier,
+            networkSwitchPolicyId,
+            policyName,
+            version,
+            iccidMobile,
+            iccidUnicom,
+            iccidTelcom,
+            orderId);
     }
 
     @Override
@@ -172,6 +271,10 @@ public class SimDeviceMultiplyVO {
         sb.append("    networkSwitchPolicyId: ").append(toIndentedString(networkSwitchPolicyId)).append("\n");
         sb.append("    policyName: ").append(toIndentedString(policyName)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    iccidMobile: ").append(toIndentedString(iccidMobile)).append("\n");
+        sb.append("    iccidUnicom: ").append(toIndentedString(iccidUnicom)).append("\n");
+        sb.append("    iccidTelcom: ").append(toIndentedString(iccidTelcom)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

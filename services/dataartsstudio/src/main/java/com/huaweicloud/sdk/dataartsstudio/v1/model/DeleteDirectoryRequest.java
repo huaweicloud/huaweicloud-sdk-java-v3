@@ -86,7 +86,7 @@ public class DeleteDirectoryRequest {
     }
 
     /**
-     * 实体ID数组，填写String类型替代Long类型。
+     * 实体ID数组，ID字符串。
      * @return ids
      */
     public List<String> getIds() {

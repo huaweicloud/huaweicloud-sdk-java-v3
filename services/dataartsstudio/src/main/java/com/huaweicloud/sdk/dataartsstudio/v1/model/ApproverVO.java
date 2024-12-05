@@ -158,7 +158,7 @@ public class ApproverVO {
     }
 
     /**
-     * 审批单ID，填写String类型替代Long类型。
+     * 审批单ID，ID字符串。
      * @return id
      */
     public String getId() {

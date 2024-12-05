@@ -119,7 +119,7 @@ public class DimensionLogicTableAttributeVO {
     }
 
     /**
-     * 维度表ID，填写String类型替代Long类型。
+     * 维度表ID，ID字符串。
      * @return id
      */
     public String getId() {
@@ -170,7 +170,7 @@ public class DimensionLogicTableAttributeVO {
     }
 
     /**
-     * 维度属性ID，填写String类型替代Long类型。
+     * 维度属性ID，ID字符串。
      * @return dimensionAttributeId
      */
     public String getDimensionAttributeId() {
@@ -357,7 +357,7 @@ public class DimensionLogicTableAttributeVO {
     }
 
     /**
-     * 关联的数据标准的ID，填写String类型替代Long类型。
+     * 关联的数据标准的ID，ID字符串。
      * @return standRowId
      */
     public String getStandRowId() {

@@ -25,6 +25,11 @@ public class ListDataconnectionsResponse extends SdkResponse {
     private Integer maxRecords;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_size")
+
+    private Integer totalSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data_connection_lists")
 
     private List<ApigDataSourceView> dataConnectionLists = null;
@@ -65,6 +70,25 @@ public class ListDataconnectionsResponse extends SdkResponse {
 
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
+    }
+
+    public ListDataconnectionsResponse withTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
+        return this;
+    }
+
+    /**
+     * 返回当前空间内创建连接的总数
+     * minimum: 0
+     * maximum: 1000
+     * @return totalSize
+     */
+    public Integer getTotalSize() {
+        return totalSize;
+    }
+
+    public void setTotalSize(Integer totalSize) {
+        this.totalSize = totalSize;
     }
 
     public ListDataconnectionsResponse withDataConnectionLists(List<ApigDataSourceView> dataConnectionLists) {
@@ -111,12 +135,13 @@ public class ListDataconnectionsResponse extends SdkResponse {
         }
         ListDataconnectionsResponse that = (ListDataconnectionsResponse) obj;
         return Objects.equals(this.count, that.count) && Objects.equals(this.maxRecords, that.maxRecords)
+            && Objects.equals(this.totalSize, that.totalSize)
             && Objects.equals(this.dataConnectionLists, that.dataConnectionLists);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, maxRecords, dataConnectionLists);
+        return Objects.hash(count, maxRecords, totalSize, dataConnectionLists);
     }
 
     @Override
@@ -125,6 +150,7 @@ public class ListDataconnectionsResponse extends SdkResponse {
         sb.append("class ListDataconnectionsResponse {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    maxRecords: ").append(toIndentedString(maxRecords)).append("\n");
+        sb.append("    totalSize: ").append(toIndentedString(totalSize)).append("\n");
         sb.append("    dataConnectionLists: ").append(toIndentedString(dataConnectionLists)).append("\n");
         sb.append("}");
         return sb.toString();

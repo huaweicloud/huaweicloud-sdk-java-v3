@@ -334,7 +334,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -503,7 +503,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 指标信息，填写String类型替代Long类型。
+     * 指标信息，ID字符串。
      * @return metricIds
      */
     public List<String> getMetricIds() {
@@ -569,7 +569,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 复合指标信息，填写String类型替代Long类型。
+     * 复合指标信息，ID字符串。
      * @return compoundMetricIds
      */
     public List<String> getCompoundMetricIds() {
@@ -635,7 +635,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 引用函数ID，填写String类型替代Long类型。
+     * 引用函数ID，ID字符串。
      * @return calFnIds
      */
     public List<String> getCalFnIds() {
@@ -669,7 +669,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 主题域分组ID，只读，填写String类型替代Long类型。
+     * 主题域分组ID，只读，ID字符串。
      * @return l1Id
      */
     public String getL1Id() {
@@ -703,7 +703,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 业务对象ID，填写String类型替代Long类型。
+     * 业务对象ID，ID字符串。
      * @return l3Id
      */
     public String getL3Id() {
@@ -951,7 +951,7 @@ public class CompoundMetricVO {
     }
 
     /**
-     * 汇总表ID，只读，填写String类型替代Long类型。
+     * 汇总表ID，只读，ID字符串。
      * @return summaryTableId
      */
     public String getSummaryTableId() {

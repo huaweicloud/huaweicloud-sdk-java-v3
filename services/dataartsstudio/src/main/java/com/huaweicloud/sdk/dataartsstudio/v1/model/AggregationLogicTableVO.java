@@ -518,7 +518,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 汇总表的唯一系统ID，更新时必填，创建时不须填写，填写String类型替代Long类型。
+     * 汇总表的唯一系统ID，更新时必填，创建时不须填写，ID字符串。
      * @return id
      */
     public String getId() {
@@ -569,7 +569,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 主题域分组ID，只读，创建和更新时无需填写，填写String类型替代Long类型。
+     * 主题域分组ID，只读，创建和更新时无需填写，ID字符串。
      * @return l1Id
      */
     public String getL1Id() {
@@ -603,7 +603,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 汇总表所属主题的ID，必填，填写String类型替代Long类型。
+     * 汇总表所属主题的ID，必填，ID字符串。
      * @return l3Id
      */
     public String getL3Id() {
@@ -1395,7 +1395,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 质量ID，填写String类型替代Long类型。
+     * 质量ID，ID字符串。
      * @return qualityId
      */
     public String getQualityId() {
@@ -1632,7 +1632,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 开发环境版本，填写String类型替代Long类型。
+     * 开发环境版本，ID字符串。
      * @return devVersion
      */
     public String getDevVersion() {
@@ -1649,7 +1649,7 @@ public class AggregationLogicTableVO {
     }
 
     /**
-     * 生产环境版本，填写String类型替代Long类型。
+     * 生产环境版本，ID字符串。
      * @return prodVersion
      */
     public String getProdVersion() {

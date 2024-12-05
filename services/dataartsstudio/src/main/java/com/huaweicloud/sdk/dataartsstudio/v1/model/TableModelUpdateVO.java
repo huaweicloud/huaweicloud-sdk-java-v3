@@ -465,7 +465,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -482,7 +482,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 所属关系建模的模型ID，填写String类型替代Long类型。
+     * 所属关系建模的模型ID，ID字符串。
      * @return modelId
      */
     public String getModelId() {
@@ -499,7 +499,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 父表ID，填写String类型替代Long类型。
+     * 父表ID，ID字符串。
      * @return parentTableId
      */
     public String getParentTableId() {
@@ -882,7 +882,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 逻辑实体的ID，填写String类型替代Long类型。
+     * 逻辑实体的ID，ID字符串。
      * @return logicTbId
      */
     public String getLogicTbId() {
@@ -899,7 +899,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 归属的业务分类的ID，填写String类型替代Long类型。
+     * 归属的业务分类的ID，ID字符串。
      * @return bizCatalogId
      */
     public String getBizCatalogId() {
@@ -1270,7 +1270,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 主题域分组ID，只读，填写String类型替代Long类型。
+     * 主题域分组ID，只读，ID字符串。
      * @return l1Id
      */
     public String getL1Id() {
@@ -1304,7 +1304,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 业务对象ID，只读，填写String类型替代Long类型。
+     * 业务对象ID，只读，ID字符串。
      * @return l3Id
      */
     public String getL3Id() {
@@ -1474,7 +1474,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 质量ID，填写String类型替代Long类型。
+     * 质量ID，ID字符串。
      * @return qualityId
      */
     public String getQualityId() {
@@ -1711,7 +1711,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 开发环境版本，填写String类型替代Long类型。
+     * 开发环境版本，ID字符串。
      * @return devVersion
      */
     public String getDevVersion() {
@@ -1728,7 +1728,7 @@ public class TableModelUpdateVO {
     }
 
     /**
-     * 生产环境版本，填写String类型替代Long类型。
+     * 生产环境版本，ID字符串。
      * @return prodVersion
      */
     public String getProdVersion() {

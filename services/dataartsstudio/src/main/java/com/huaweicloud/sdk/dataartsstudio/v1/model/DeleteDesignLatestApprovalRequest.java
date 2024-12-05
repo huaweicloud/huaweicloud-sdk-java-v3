@@ -195,7 +195,7 @@ public class DeleteDesignLatestApprovalRequest {
     }
 
     /**
-     * 待删除下展的实体ID，填写String类型替代Long类型。
+     * 待删除下展的实体ID，ID字符串。
      * @return bizId
      */
     public String getBizId() {

@@ -56,11 +56,6 @@ public class KeystoneUpdateUserByAdminResult {
 
     private Boolean enabled;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extra")
-
-    private KeystoneUserResultExtra extra;
-
     public KeystoneUpdateUserByAdminResult withPwdStatus(Boolean pwdStatus) {
         this.pwdStatus = pwdStatus;
         return this;
@@ -223,32 +218,6 @@ public class KeystoneUpdateUserByAdminResult {
         this.enabled = enabled;
     }
 
-    public KeystoneUpdateUserByAdminResult withExtra(KeystoneUserResultExtra extra) {
-        this.extra = extra;
-        return this;
-    }
-
-    public KeystoneUpdateUserByAdminResult withExtra(Consumer<KeystoneUserResultExtra> extraSetter) {
-        if (this.extra == null) {
-            this.extra = new KeystoneUserResultExtra();
-            extraSetter.accept(this.extra);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get extra
-     * @return extra
-     */
-    public KeystoneUserResultExtra getExtra() {
-        return extra;
-    }
-
-    public void setExtra(KeystoneUserResultExtra extra) {
-        this.extra = extra;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -262,14 +231,13 @@ public class KeystoneUpdateUserByAdminResult {
             && Objects.equals(this.lastProjectId, that.lastProjectId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt) && Objects.equals(this.links, that.links)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.enabled, that.enabled)
-            && Objects.equals(this.extra, that.extra);
+            && Objects.equals(this.id, that.id) && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(pwdStatus, domainId, lastProjectId, name, description, passwordExpiresAt, links, id, enabled, extra);
+            .hash(pwdStatus, domainId, lastProjectId, name, description, passwordExpiresAt, links, id, enabled);
     }
 
     @Override
@@ -285,7 +253,6 @@ public class KeystoneUpdateUserByAdminResult {
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
-        sb.append("    extra: ").append(toIndentedString(extra)).append("\n");
         sb.append("}");
         return sb.toString();
     }

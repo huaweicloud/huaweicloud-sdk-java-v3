@@ -110,7 +110,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -144,7 +144,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 目的字段ID，填写String类型替代Long类型。
+     * 目的字段ID，ID字符串。
      * @return targetAttrId
      */
     public String getTargetAttrId() {
@@ -277,7 +277,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表在关系建模中的模型ID数组，只读，填写String类型替代Long类型。
+     * 源表在关系建模中的模型ID数组，只读，ID字符串。
      * @return srcTableModelIds
      */
     public List<String> getSrcTableModelIds() {
@@ -310,7 +310,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表ID数组，只读，填写String类型替代Long类型。
+     * 源表ID数组，只读，ID字符串。
      * @return srcTableIdList
      */
     public List<String> getSrcTableIdList() {
@@ -393,7 +393,7 @@ public class TableMappingDetailVO {
     }
 
     /**
-     * 源表字段ID数组，只读，填写String类型替代Long类型。
+     * 源表字段ID数组，只读，ID字符串。
      * @return srcAttrIdList
      */
     public List<String> getSrcAttrIdList() {

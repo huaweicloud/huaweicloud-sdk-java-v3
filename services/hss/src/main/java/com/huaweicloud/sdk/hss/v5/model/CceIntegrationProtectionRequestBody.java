@@ -16,7 +16,7 @@ import java.util.Objects;
 public class CceIntegrationProtectionRequestBody {
 
     /**
-     * cce集群类型 | existing 存量集群 adding 新增集群
+     * cce集群类型：   existing 存量集群   adding 新增集群
      */
     public static final class ClusterTypeEnum {
 
@@ -101,7 +101,7 @@ public class CceIntegrationProtectionRequestBody {
     private String clusterName;
 
     /**
-     * 付费模式 | on_demand 按需 free_security_check 免费安全体检
+     * 付费模式：   on_demand 按需   free_security_check 免费安全体检
      */
     public static final class ChargingModeEnum {
 
@@ -176,7 +176,7 @@ public class CceIntegrationProtectionRequestBody {
     private ChargingModeEnum chargingMode;
 
     /**
-     * cce防护类型 | cluster_level 集群级别防护 node_level 节点级别防护
+     * cce防护类型：   cluster_level 集群级别防护   node_level 节点级别防护
      */
     public static final class CceProtectionTypeEnum {
 
@@ -261,7 +261,7 @@ public class CceIntegrationProtectionRequestBody {
     }
 
     /**
-     * cce集群类型 | existing 存量集群 adding 新增集群
+     * cce集群类型：   existing 存量集群   adding 新增集群
      * @return clusterType
      */
     public ClusterTypeEnum getClusterType() {
@@ -312,7 +312,7 @@ public class CceIntegrationProtectionRequestBody {
     }
 
     /**
-     * 付费模式 | on_demand 按需 free_security_check 免费安全体检
+     * 付费模式：   on_demand 按需   free_security_check 免费安全体检
      * @return chargingMode
      */
     public ChargingModeEnum getChargingMode() {
@@ -329,7 +329,7 @@ public class CceIntegrationProtectionRequestBody {
     }
 
     /**
-     * cce防护类型 | cluster_level 集群级别防护 node_level 节点级别防护
+     * cce防护类型：   cluster_level 集群级别防护   node_level 节点级别防护
      * @return cceProtectionType
      */
     public CceProtectionTypeEnum getCceProtectionType() {

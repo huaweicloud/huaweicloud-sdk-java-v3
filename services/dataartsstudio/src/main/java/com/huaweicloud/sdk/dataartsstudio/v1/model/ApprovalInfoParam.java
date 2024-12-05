@@ -45,7 +45,7 @@ public class ApprovalInfoParam {
     }
 
     /**
-     * 审批单ID列表，填写String类型替代Long类型。
+     * 审批单ID列表，ID字符串。
      * @return ids
      */
     public List<String> getIds() {

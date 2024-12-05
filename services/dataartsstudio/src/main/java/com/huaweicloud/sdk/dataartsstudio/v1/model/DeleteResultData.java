@@ -13,9 +13,9 @@ public class DeleteResultData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "value")
 
-    private String value;
+    private Integer value;
 
-    public DeleteResultData withValue(String value) {
+    public DeleteResultData withValue(Integer value) {
         this.value = value;
         return this;
     }
@@ -24,11 +24,11 @@ public class DeleteResultData {
      * 成功删除的对象个数
      * @return value
      */
-    public String getValue() {
+    public Integer getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Integer value) {
         this.value = value;
     }
 

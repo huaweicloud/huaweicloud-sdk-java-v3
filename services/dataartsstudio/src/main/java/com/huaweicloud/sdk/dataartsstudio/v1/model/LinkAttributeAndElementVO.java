@@ -148,7 +148,7 @@ public class LinkAttributeAndElementVO {
     }
 
     /**
-     * 属性ID列表，填写String类型替代Long类型。
+     * 属性ID列表，ID字符串。
      * @return ids
      */
     public List<String> getIds() {
@@ -165,7 +165,7 @@ public class LinkAttributeAndElementVO {
     }
 
     /**
-     * 关联的数据标准的ID，填写String类型替代Long类型。
+     * 关联的数据标准的ID，ID字符串。
      * @return standRowId
      */
     public String getStandRowId() {
@@ -182,7 +182,7 @@ public class LinkAttributeAndElementVO {
     }
 
     /**
-     * 表ID，填写String类型替代Long类型。
+     * 表ID，ID字符串。
      * @return tableId
      */
     public String getTableId() {

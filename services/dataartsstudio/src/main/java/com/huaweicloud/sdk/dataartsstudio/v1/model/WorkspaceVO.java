@@ -175,7 +175,7 @@ public class WorkspaceVO {
     }
 
     /**
-     * 编号，填写String类型替代Long类型。
+     * 编号，ID字符串。
      * @return id
      */
     public String getId() {

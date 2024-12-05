@@ -715,7 +715,7 @@ public class ListAllTablesRequest {
     }
 
     /**
-     * 所属主题的ID列表，填写String类型替代Long类型。
+     * 所属主题的ID列表，ID字符串。
      * @return bizCatalogIdList
      */
     public List<String> getBizCatalogIdList() {

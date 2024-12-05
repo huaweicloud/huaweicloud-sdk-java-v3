@@ -569,7 +569,7 @@ public class ListAggregationLogicTablesRequest {
     }
 
     /**
-     * 业务对象l3的ID，填写String类型替代Long类型。
+     * 业务对象l3的ID，ID字符串。
      * @return l3Id
      */
     public String getL3Id() {

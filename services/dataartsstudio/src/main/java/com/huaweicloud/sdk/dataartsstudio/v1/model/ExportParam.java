@@ -70,7 +70,7 @@ public class ExportParam {
     }
 
     /**
-     * 导出对象ID的列表，如：某几个逻辑模型的ID，填写String类型替代Long类型。
+     * 导出对象ID的列表，如：某几个逻辑模型的ID，ID字符串。
      * @return ids
      */
     public List<String> getIds() {
@@ -121,7 +121,7 @@ public class ExportParam {
     }
 
     /**
-     * 所属目录ID，填写String类型替代Long类型。
+     * 所属目录ID，ID字符串。
      * @return directoryId
      */
     public String getDirectoryId() {
@@ -138,7 +138,7 @@ public class ExportParam {
     }
 
     /**
-     * 所属业务分层的ID，填写String类型替代Long类型。
+     * 所属业务分层的ID，ID字符串。
      * @return bizCatalogId
      */
     public String getBizCatalogId() {
@@ -188,7 +188,7 @@ public class ExportParam {
     }
 
     /**
-     * 所属关系建模的模型ID，导出关系模型需要此参数，填写String类型替代Long类型。
+     * 所属关系建模的模型ID，导出关系模型需要此参数，ID字符串。
      * @return modelId
      */
     public String getModelId() {

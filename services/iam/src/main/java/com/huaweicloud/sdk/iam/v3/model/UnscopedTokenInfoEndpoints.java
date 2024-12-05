@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * UnscopedTokenInfoCatalogEndpoints
+ * UnscopedTokenInfoEndpoints
  */
-public class UnscopedTokenInfoCatalogEndpoints {
+public class UnscopedTokenInfoEndpoints {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -35,7 +35,7 @@ public class UnscopedTokenInfoCatalogEndpoints {
 
     private String url;
 
-    public UnscopedTokenInfoCatalogEndpoints withId(String id) {
+    public UnscopedTokenInfoEndpoints withId(String id) {
         this.id = id;
         return this;
     }
@@ -52,7 +52,7 @@ public class UnscopedTokenInfoCatalogEndpoints {
         this.id = id;
     }
 
-    public UnscopedTokenInfoCatalogEndpoints withInterface(String _interface) {
+    public UnscopedTokenInfoEndpoints withInterface(String _interface) {
         this._interface = _interface;
         return this;
     }
@@ -69,7 +69,7 @@ public class UnscopedTokenInfoCatalogEndpoints {
         this._interface = _interface;
     }
 
-    public UnscopedTokenInfoCatalogEndpoints withRegion(String region) {
+    public UnscopedTokenInfoEndpoints withRegion(String region) {
         this.region = region;
         return this;
     }
@@ -86,7 +86,7 @@ public class UnscopedTokenInfoCatalogEndpoints {
         this.region = region;
     }
 
-    public UnscopedTokenInfoCatalogEndpoints withRegionId(String regionId) {
+    public UnscopedTokenInfoEndpoints withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
     }
@@ -103,7 +103,7 @@ public class UnscopedTokenInfoCatalogEndpoints {
         this.regionId = regionId;
     }
 
-    public UnscopedTokenInfoCatalogEndpoints withUrl(String url) {
+    public UnscopedTokenInfoEndpoints withUrl(String url) {
         this.url = url;
         return this;
     }
@@ -128,7 +128,7 @@ public class UnscopedTokenInfoCatalogEndpoints {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnscopedTokenInfoCatalogEndpoints that = (UnscopedTokenInfoCatalogEndpoints) obj;
+        UnscopedTokenInfoEndpoints that = (UnscopedTokenInfoEndpoints) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this._interface, that._interface)
             && Objects.equals(this.region, that.region) && Objects.equals(this.regionId, that.regionId)
             && Objects.equals(this.url, that.url);
@@ -142,7 +142,7 @@ public class UnscopedTokenInfoCatalogEndpoints {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UnscopedTokenInfoCatalogEndpoints {\n");
+        sb.append("class UnscopedTokenInfoEndpoints {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    _interface: ").append(toIndentedString(_interface)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");

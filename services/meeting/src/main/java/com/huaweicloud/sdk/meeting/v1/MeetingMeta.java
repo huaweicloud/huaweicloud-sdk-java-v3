@@ -156,6 +156,8 @@ import com.huaweicloud.sdk.meeting.v1.model.ListNetworkQualityRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ListNetworkQualityResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ListOngoingWebinarsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ListOngoingWebinarsResponse;
+import com.huaweicloud.sdk.meeting.v1.model.ListOnlineConfAttendeeRequest;
+import com.huaweicloud.sdk.meeting.v1.model.ListOnlineConfAttendeeResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ListUpComingWebinarsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ListUpComingWebinarsResponse;
 import com.huaweicloud.sdk.meeting.v1.model.LiveRequest;
@@ -2973,6 +2975,45 @@ public class MeetingMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOngoingWebinarsRequest::getAcceptLanguage,
                 ListOngoingWebinarsRequest::setAcceptLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOnlineConfAttendeeRequest, ListOnlineConfAttendeeResponse> listOnlineConfAttendee =
+        genForListOnlineConfAttendee();
+
+    private static HttpRequestDef<ListOnlineConfAttendeeRequest, ListOnlineConfAttendeeResponse> genForListOnlineConfAttendee() {
+        // basic
+        HttpRequestDef.Builder<ListOnlineConfAttendeeRequest, ListOnlineConfAttendeeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListOnlineConfAttendeeRequest.class, ListOnlineConfAttendeeResponse.class)
+            .withName("ListOnlineConfAttendee")
+            .withUri("/v1/mmc/management/conferences/online/conf-attendee")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conf_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOnlineConfAttendeeRequest::getConfId, ListOnlineConfAttendeeRequest::setConfId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOnlineConfAttendeeRequest::getOffset, ListOnlineConfAttendeeRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOnlineConfAttendeeRequest::getLimit, ListOnlineConfAttendeeRequest::setLimit));
+        builder.<String>withRequestField("search_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOnlineConfAttendeeRequest::getSearchKey,
+                ListOnlineConfAttendeeRequest::setSearchKey));
 
         // response
 

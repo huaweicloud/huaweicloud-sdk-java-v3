@@ -23,6 +23,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationToEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateDesignTableModelsFromLogicRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateDesignTableModelsFromLogicResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetMembersRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetMembersResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetPermissionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetPermissionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDynamicMaskingPoliciesRequest;
@@ -57,6 +63,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CheckDimensionStatusRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CheckDimensionStatusResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CheckFactLogicTableStatusRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CheckFactLogicTableStatusResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CompareDesignVersionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CompareDesignVersionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ConfirmApprovalsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ConfirmApprovalsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ConfirmMessageRequest;
@@ -87,6 +95,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAggregationLogicT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAggregationLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAtomicIndexRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAtomicIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignCompoundMetricRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignCompoundMetricResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignDerivativeIndexRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignDerivativeIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignDimensionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignDimensionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvRequest;
@@ -163,6 +177,16 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAggregationLogicT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAggregationLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAtomicIndexRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAtomicIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignCompoundMetricRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignCompoundMetricResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignDerivativeIndexRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignDerivativeIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignDimensionLogicTableRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignDimensionLogicTableResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignDimensionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignDimensionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignFactLogicTableRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignFactLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryRequest;
@@ -495,6 +519,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatamapLineageRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatamapLineageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDerivativeIndexByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDerivativeIndexByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDesignOperationResultRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDesignOperationResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDimensionByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDimensionByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDimensionLogicTableByIdRequest;
@@ -593,6 +619,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignCompoundMetricRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignCompoundMetricResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDerivativeIndexRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDerivativeIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDimensionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDimensionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDirectoryRequest;
@@ -881,6 +913,104 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<BatchAssociateSecurityLevelToEntitiesRequest, BatchAssociateSecurityLevelToEntitiesResponse> batchAssociateSecurityLevelToEntitiesAsyncInvoker(
         BatchAssociateSecurityLevelToEntitiesRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.batchAssociateSecurityLevelToEntities, hcClient);
+    }
+
+    /**
+     * 转换逻辑模型为物理模型
+     *
+     * 转换逻辑模型为物理模型，转换成功则显示转换后的目标模型信息。
+     * 异常：目标模型信息的“id”等属性为null时，则需要调用《获取操作结果》接口查看具体报错信息：GET https://{endpoint}/v1/{project_id}/design/operation-results?operation_type&#x3D;TRANSFORM_LOGIC_MODEL&amp;operation_id&#x3D;{model_id}，其中{model_id}为本接口的路径参数。
+     * 约束与限制：
+     *   1、target_model_id与target_model_name不对应时，target_model_id优先级高于target_model_name。
+     *   2、target_model_id与dw_type不对应时，会找不到模型，提示：模型不存在。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateDesignTableModelsFromLogicRequest 请求对象
+     * @return CompletableFuture<BatchCreateDesignTableModelsFromLogicResponse>
+     */
+    public CompletableFuture<BatchCreateDesignTableModelsFromLogicResponse> batchCreateDesignTableModelsFromLogicAsync(
+        BatchCreateDesignTableModelsFromLogicRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.batchCreateDesignTableModelsFromLogic);
+    }
+
+    /**
+     * 转换逻辑模型为物理模型
+     *
+     * 转换逻辑模型为物理模型，转换成功则显示转换后的目标模型信息。
+     * 异常：目标模型信息的“id”等属性为null时，则需要调用《获取操作结果》接口查看具体报错信息：GET https://{endpoint}/v1/{project_id}/design/operation-results?operation_type&#x3D;TRANSFORM_LOGIC_MODEL&amp;operation_id&#x3D;{model_id}，其中{model_id}为本接口的路径参数。
+     * 约束与限制：
+     *   1、target_model_id与target_model_name不对应时，target_model_id优先级高于target_model_name。
+     *   2、target_model_id与dw_type不对应时，会找不到模型，提示：模型不存在。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateDesignTableModelsFromLogicRequest 请求对象
+     * @return AsyncInvoker<BatchCreateDesignTableModelsFromLogicRequest, BatchCreateDesignTableModelsFromLogicResponse>
+     */
+    public AsyncInvoker<BatchCreateDesignTableModelsFromLogicRequest, BatchCreateDesignTableModelsFromLogicResponse> batchCreateDesignTableModelsFromLogicAsyncInvoker(
+        BatchCreateDesignTableModelsFromLogicRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.batchCreateDesignTableModelsFromLogic, hcClient);
+    }
+
+    /**
+     * 批量添加权限集成员
+     *
+     * 批量添加权限集成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateSecurityPermissionSetMembersRequest 请求对象
+     * @return CompletableFuture<BatchCreateSecurityPermissionSetMembersResponse>
+     */
+    public CompletableFuture<BatchCreateSecurityPermissionSetMembersResponse> batchCreateSecurityPermissionSetMembersAsync(
+        BatchCreateSecurityPermissionSetMembersRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.batchCreateSecurityPermissionSetMembers);
+    }
+
+    /**
+     * 批量添加权限集成员
+     *
+     * 批量添加权限集成员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateSecurityPermissionSetMembersRequest 请求对象
+     * @return AsyncInvoker<BatchCreateSecurityPermissionSetMembersRequest, BatchCreateSecurityPermissionSetMembersResponse>
+     */
+    public AsyncInvoker<BatchCreateSecurityPermissionSetMembersRequest, BatchCreateSecurityPermissionSetMembersResponse> batchCreateSecurityPermissionSetMembersAsyncInvoker(
+        BatchCreateSecurityPermissionSetMembersRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.batchCreateSecurityPermissionSetMembers, hcClient);
+    }
+
+    /**
+     * 批量添加权限集的权限
+     *
+     * 批量添加权限集的权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateSecurityPermissionSetPermissionsRequest 请求对象
+     * @return CompletableFuture<BatchCreateSecurityPermissionSetPermissionsResponse>
+     */
+    public CompletableFuture<BatchCreateSecurityPermissionSetPermissionsResponse> batchCreateSecurityPermissionSetPermissionsAsync(
+        BatchCreateSecurityPermissionSetPermissionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.batchCreateSecurityPermissionSetPermissions);
+    }
+
+    /**
+     * 批量添加权限集的权限
+     *
+     * 批量添加权限集的权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateSecurityPermissionSetPermissionsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateSecurityPermissionSetPermissionsRequest, BatchCreateSecurityPermissionSetPermissionsResponse>
+     */
+    public AsyncInvoker<BatchCreateSecurityPermissionSetPermissionsRequest, BatchCreateSecurityPermissionSetPermissionsResponse> batchCreateSecurityPermissionSetPermissionsAsyncInvoker(
+        BatchCreateSecurityPermissionSetPermissionsRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.batchCreateSecurityPermissionSetPermissions, hcClient);
     }
 
     /**
@@ -1386,6 +1516,36 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 比较版本信息
+     *
+     * 通过两个版本id，比较两者差异。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CompareDesignVersionsRequest 请求对象
+     * @return CompletableFuture<CompareDesignVersionsResponse>
+     */
+    public CompletableFuture<CompareDesignVersionsResponse> compareDesignVersionsAsync(
+        CompareDesignVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.compareDesignVersions);
+    }
+
+    /**
+     * 比较版本信息
+     *
+     * 通过两个版本id，比较两者差异。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CompareDesignVersionsRequest 请求对象
+     * @return AsyncInvoker<CompareDesignVersionsRequest, CompareDesignVersionsResponse>
+     */
+    public AsyncInvoker<CompareDesignVersionsRequest, CompareDesignVersionsResponse> compareDesignVersionsAsyncInvoker(
+        CompareDesignVersionsRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.compareDesignVersions, hcClient);
+    }
+
+    /**
      * 审批单处理
      *
      * 审批驳回/通过，单个或多个action-id&#x3D;reject/resolve。
@@ -1792,6 +1952,96 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<CreateDesignAtomicIndexRequest, CreateDesignAtomicIndexResponse> createDesignAtomicIndexAsyncInvoker(
         CreateDesignAtomicIndexRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.createDesignAtomicIndex, hcClient);
+    }
+
+    /**
+     * 新建复合指标
+     *
+     * 根据参数，新建复合指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesignCompoundMetricRequest 请求对象
+     * @return CompletableFuture<CreateDesignCompoundMetricResponse>
+     */
+    public CompletableFuture<CreateDesignCompoundMetricResponse> createDesignCompoundMetricAsync(
+        CreateDesignCompoundMetricRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createDesignCompoundMetric);
+    }
+
+    /**
+     * 新建复合指标
+     *
+     * 根据参数，新建复合指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesignCompoundMetricRequest 请求对象
+     * @return AsyncInvoker<CreateDesignCompoundMetricRequest, CreateDesignCompoundMetricResponse>
+     */
+    public AsyncInvoker<CreateDesignCompoundMetricRequest, CreateDesignCompoundMetricResponse> createDesignCompoundMetricAsyncInvoker(
+        CreateDesignCompoundMetricRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.createDesignCompoundMetric, hcClient);
+    }
+
+    /**
+     * 新建衍生指标
+     *
+     * 根据参数，新建衍生指标指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesignDerivativeIndexRequest 请求对象
+     * @return CompletableFuture<CreateDesignDerivativeIndexResponse>
+     */
+    public CompletableFuture<CreateDesignDerivativeIndexResponse> createDesignDerivativeIndexAsync(
+        CreateDesignDerivativeIndexRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createDesignDerivativeIndex);
+    }
+
+    /**
+     * 新建衍生指标
+     *
+     * 根据参数，新建衍生指标指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesignDerivativeIndexRequest 请求对象
+     * @return AsyncInvoker<CreateDesignDerivativeIndexRequest, CreateDesignDerivativeIndexResponse>
+     */
+    public AsyncInvoker<CreateDesignDerivativeIndexRequest, CreateDesignDerivativeIndexResponse> createDesignDerivativeIndexAsyncInvoker(
+        CreateDesignDerivativeIndexRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.createDesignDerivativeIndex, hcClient);
+    }
+
+    /**
+     * 新建维度
+     *
+     * 根据参数新建维度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesignDimensionRequest 请求对象
+     * @return CompletableFuture<CreateDesignDimensionResponse>
+     */
+    public CompletableFuture<CreateDesignDimensionResponse> createDesignDimensionAsync(
+        CreateDesignDimensionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.createDesignDimension);
+    }
+
+    /**
+     * 新建维度
+     *
+     * 根据参数新建维度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesignDimensionRequest 请求对象
+     * @return AsyncInvoker<CreateDesignDimensionRequest, CreateDesignDimensionResponse>
+     */
+    public AsyncInvoker<CreateDesignDimensionRequest, CreateDesignDimensionResponse> createDesignDimensionAsyncInvoker(
+        CreateDesignDimensionRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.createDesignDimension, hcClient);
     }
 
     /**
@@ -2850,6 +3100,156 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<DeleteDesignAtomicIndexRequest, DeleteDesignAtomicIndexResponse> deleteDesignAtomicIndexAsyncInvoker(
         DeleteDesignAtomicIndexRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.deleteDesignAtomicIndex, hcClient);
+    }
+
+    /**
+     * 删除复合指标
+     *
+     * 根据ID集合删除复合指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignCompoundMetricRequest 请求对象
+     * @return CompletableFuture<DeleteDesignCompoundMetricResponse>
+     */
+    public CompletableFuture<DeleteDesignCompoundMetricResponse> deleteDesignCompoundMetricAsync(
+        DeleteDesignCompoundMetricRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.deleteDesignCompoundMetric);
+    }
+
+    /**
+     * 删除复合指标
+     *
+     * 根据ID集合删除复合指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignCompoundMetricRequest 请求对象
+     * @return AsyncInvoker<DeleteDesignCompoundMetricRequest, DeleteDesignCompoundMetricResponse>
+     */
+    public AsyncInvoker<DeleteDesignCompoundMetricRequest, DeleteDesignCompoundMetricResponse> deleteDesignCompoundMetricAsyncInvoker(
+        DeleteDesignCompoundMetricRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.deleteDesignCompoundMetric, hcClient);
+    }
+
+    /**
+     * 删除衍生指标
+     *
+     * 根据衍生指标ID，删除衍生指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignDerivativeIndexRequest 请求对象
+     * @return CompletableFuture<DeleteDesignDerivativeIndexResponse>
+     */
+    public CompletableFuture<DeleteDesignDerivativeIndexResponse> deleteDesignDerivativeIndexAsync(
+        DeleteDesignDerivativeIndexRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.deleteDesignDerivativeIndex);
+    }
+
+    /**
+     * 删除衍生指标
+     *
+     * 根据衍生指标ID，删除衍生指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignDerivativeIndexRequest 请求对象
+     * @return AsyncInvoker<DeleteDesignDerivativeIndexRequest, DeleteDesignDerivativeIndexResponse>
+     */
+    public AsyncInvoker<DeleteDesignDerivativeIndexRequest, DeleteDesignDerivativeIndexResponse> deleteDesignDerivativeIndexAsyncInvoker(
+        DeleteDesignDerivativeIndexRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.deleteDesignDerivativeIndex, hcClient);
+    }
+
+    /**
+     * 删除维度
+     *
+     * 根据传入的维度ID，删除维度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignDimensionRequest 请求对象
+     * @return CompletableFuture<DeleteDesignDimensionResponse>
+     */
+    public CompletableFuture<DeleteDesignDimensionResponse> deleteDesignDimensionAsync(
+        DeleteDesignDimensionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.deleteDesignDimension);
+    }
+
+    /**
+     * 删除维度
+     *
+     * 根据传入的维度ID，删除维度。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignDimensionRequest 请求对象
+     * @return AsyncInvoker<DeleteDesignDimensionRequest, DeleteDesignDimensionResponse>
+     */
+    public AsyncInvoker<DeleteDesignDimensionRequest, DeleteDesignDimensionResponse> deleteDesignDimensionAsyncInvoker(
+        DeleteDesignDimensionRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.deleteDesignDimension, hcClient);
+    }
+
+    /**
+     * 删除维度表
+     *
+     * 根据维度表ID，删除维度表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignDimensionLogicTableRequest 请求对象
+     * @return CompletableFuture<DeleteDesignDimensionLogicTableResponse>
+     */
+    public CompletableFuture<DeleteDesignDimensionLogicTableResponse> deleteDesignDimensionLogicTableAsync(
+        DeleteDesignDimensionLogicTableRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.deleteDesignDimensionLogicTable);
+    }
+
+    /**
+     * 删除维度表
+     *
+     * 根据维度表ID，删除维度表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignDimensionLogicTableRequest 请求对象
+     * @return AsyncInvoker<DeleteDesignDimensionLogicTableRequest, DeleteDesignDimensionLogicTableResponse>
+     */
+    public AsyncInvoker<DeleteDesignDimensionLogicTableRequest, DeleteDesignDimensionLogicTableResponse> deleteDesignDimensionLogicTableAsyncInvoker(
+        DeleteDesignDimensionLogicTableRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.deleteDesignDimensionLogicTable, hcClient);
+    }
+
+    /**
+     * 删除事实表
+     *
+     * 根据ID集合删除事实表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignFactLogicTableRequest 请求对象
+     * @return CompletableFuture<DeleteDesignFactLogicTableResponse>
+     */
+    public CompletableFuture<DeleteDesignFactLogicTableResponse> deleteDesignFactLogicTableAsync(
+        DeleteDesignFactLogicTableRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.deleteDesignFactLogicTable);
+    }
+
+    /**
+     * 删除事实表
+     *
+     * 根据ID集合删除事实表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesignFactLogicTableRequest 请求对象
+     * @return AsyncInvoker<DeleteDesignFactLogicTableRequest, DeleteDesignFactLogicTableResponse>
+     */
+    public AsyncInvoker<DeleteDesignFactLogicTableRequest, DeleteDesignFactLogicTableResponse> deleteDesignFactLogicTableAsyncInvoker(
+        DeleteDesignFactLogicTableRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.deleteDesignFactLogicTable, hcClient);
     }
 
     /**
@@ -7402,6 +7802,36 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 获取操作结果
+     *
+     * 获取批量操作的结果，如逻辑模型转物理模型和逆向数据库操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDesignOperationResultRequest 请求对象
+     * @return CompletableFuture<ShowDesignOperationResultResponse>
+     */
+    public CompletableFuture<ShowDesignOperationResultResponse> showDesignOperationResultAsync(
+        ShowDesignOperationResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showDesignOperationResult);
+    }
+
+    /**
+     * 获取操作结果
+     *
+     * 获取批量操作的结果，如逻辑模型转物理模型和逆向数据库操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDesignOperationResultRequest 请求对象
+     * @return AsyncInvoker<ShowDesignOperationResultRequest, ShowDesignOperationResultResponse>
+     */
+    public AsyncInvoker<ShowDesignOperationResultRequest, ShowDesignOperationResultResponse> showDesignOperationResultAsyncInvoker(
+        ShowDesignOperationResultRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.showDesignOperationResult, hcClient);
+    }
+
+    /**
      * 查看维度详情
      *
      * 通过ID查看维度详情信息。
@@ -8809,6 +9239,96 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<UpdateDesignAtomicIndexRequest, UpdateDesignAtomicIndexResponse> updateDesignAtomicIndexAsyncInvoker(
         UpdateDesignAtomicIndexRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.updateDesignAtomicIndex, hcClient);
+    }
+
+    /**
+     * 更新复合指标
+     *
+     * 根据参数，更新复合指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignCompoundMetricRequest 请求对象
+     * @return CompletableFuture<UpdateDesignCompoundMetricResponse>
+     */
+    public CompletableFuture<UpdateDesignCompoundMetricResponse> updateDesignCompoundMetricAsync(
+        UpdateDesignCompoundMetricRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.updateDesignCompoundMetric);
+    }
+
+    /**
+     * 更新复合指标
+     *
+     * 根据参数，更新复合指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignCompoundMetricRequest 请求对象
+     * @return AsyncInvoker<UpdateDesignCompoundMetricRequest, UpdateDesignCompoundMetricResponse>
+     */
+    public AsyncInvoker<UpdateDesignCompoundMetricRequest, UpdateDesignCompoundMetricResponse> updateDesignCompoundMetricAsyncInvoker(
+        UpdateDesignCompoundMetricRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.updateDesignCompoundMetric, hcClient);
+    }
+
+    /**
+     * 更新衍生指标
+     *
+     * 根据传入参数，更新衍生指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignDerivativeIndexRequest 请求对象
+     * @return CompletableFuture<UpdateDesignDerivativeIndexResponse>
+     */
+    public CompletableFuture<UpdateDesignDerivativeIndexResponse> updateDesignDerivativeIndexAsync(
+        UpdateDesignDerivativeIndexRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.updateDesignDerivativeIndex);
+    }
+
+    /**
+     * 更新衍生指标
+     *
+     * 根据传入参数，更新衍生指标。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignDerivativeIndexRequest 请求对象
+     * @return AsyncInvoker<UpdateDesignDerivativeIndexRequest, UpdateDesignDerivativeIndexResponse>
+     */
+    public AsyncInvoker<UpdateDesignDerivativeIndexRequest, UpdateDesignDerivativeIndexResponse> updateDesignDerivativeIndexAsyncInvoker(
+        UpdateDesignDerivativeIndexRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.updateDesignDerivativeIndex, hcClient);
+    }
+
+    /**
+     * 更新维度
+     *
+     * 根据参数，更新维度信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignDimensionRequest 请求对象
+     * @return CompletableFuture<UpdateDesignDimensionResponse>
+     */
+    public CompletableFuture<UpdateDesignDimensionResponse> updateDesignDimensionAsync(
+        UpdateDesignDimensionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.updateDesignDimension);
+    }
+
+    /**
+     * 更新维度
+     *
+     * 根据参数，更新维度信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignDimensionRequest 请求对象
+     * @return AsyncInvoker<UpdateDesignDimensionRequest, UpdateDesignDimensionResponse>
+     */
+    public AsyncInvoker<UpdateDesignDimensionRequest, UpdateDesignDimensionResponse> updateDesignDimensionAsyncInvoker(
+        UpdateDesignDimensionRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.updateDesignDimension, hcClient);
     }
 
     /**

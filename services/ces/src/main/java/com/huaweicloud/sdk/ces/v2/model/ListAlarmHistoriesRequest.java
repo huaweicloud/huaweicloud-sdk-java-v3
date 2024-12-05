@@ -21,6 +21,11 @@ public class ListAlarmHistoriesRequest {
     private String alarmId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "record_id")
+
+    private String recordId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -167,6 +172,23 @@ public class ListAlarmHistoriesRequest {
 
     public void setAlarmId(String alarmId) {
         this.alarmId = alarmId;
+    }
+
+    public ListAlarmHistoriesRequest withRecordId(String recordId) {
+        this.recordId = recordId;
+        return this;
+    }
+
+    /**
+     * 告警记录ID,以ah开头，后跟22位由字母或数字组成的字符串
+     * @return recordId
+     */
+    public String getRecordId() {
+        return recordId;
+    }
+
+    public void setRecordId(String recordId) {
+        this.recordId = recordId;
     }
 
     public ListAlarmHistoriesRequest withName(String name) {
@@ -354,17 +376,18 @@ public class ListAlarmHistoriesRequest {
             return false;
         }
         ListAlarmHistoriesRequest that = (ListAlarmHistoriesRequest) obj;
-        return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.level, that.level)
-            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.resourceId, that.resourceId)
-            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.orderBy, that.orderBy);
+        return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.recordId, that.recordId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.from, that.from)
+            && Objects.equals(this.to, that.to) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.orderBy, that.orderBy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(alarmId, name, status, level, namespace, resourceId, from, to, offset, limit, orderBy);
+        return Objects
+            .hash(alarmId, recordId, name, status, level, namespace, resourceId, from, to, offset, limit, orderBy);
     }
 
     @Override
@@ -372,6 +395,7 @@ public class ListAlarmHistoriesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAlarmHistoriesRequest {\n");
         sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
+        sb.append("    recordId: ").append(toIndentedString(recordId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");

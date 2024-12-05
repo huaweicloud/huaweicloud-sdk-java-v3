@@ -111,6 +111,11 @@ public class PermissionSetMemberCreateDTO {
 
     private String workspace;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_sync")
+
+    private Boolean autoSync;
+
     public PermissionSetMemberCreateDTO withMemberType(MemberTypeEnum memberType) {
         this.memberType = memberType;
         return this;
@@ -179,6 +184,23 @@ public class PermissionSetMemberCreateDTO {
         this.workspace = workspace;
     }
 
+    public PermissionSetMemberCreateDTO withAutoSync(Boolean autoSync) {
+        this.autoSync = autoSync;
+        return this;
+    }
+
+    /**
+     * 是否自动触发同步, 默认false
+     * @return autoSync
+     */
+    public Boolean getAutoSync() {
+        return autoSync;
+    }
+
+    public void setAutoSync(Boolean autoSync) {
+        this.autoSync = autoSync;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -189,12 +211,13 @@ public class PermissionSetMemberCreateDTO {
         }
         PermissionSetMemberCreateDTO that = (PermissionSetMemberCreateDTO) obj;
         return Objects.equals(this.memberType, that.memberType) && Objects.equals(this.memberId, that.memberId)
-            && Objects.equals(this.memberName, that.memberName) && Objects.equals(this.workspace, that.workspace);
+            && Objects.equals(this.memberName, that.memberName) && Objects.equals(this.workspace, that.workspace)
+            && Objects.equals(this.autoSync, that.autoSync);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(memberType, memberId, memberName, workspace);
+        return Objects.hash(memberType, memberId, memberName, workspace, autoSync);
     }
 
     @Override
@@ -205,6 +228,7 @@ public class PermissionSetMemberCreateDTO {
         sb.append("    memberId: ").append(toIndentedString(memberId)).append("\n");
         sb.append("    memberName: ").append(toIndentedString(memberName)).append("\n");
         sb.append("    workspace: ").append(toIndentedString(workspace)).append("\n");
+        sb.append("    autoSync: ").append(toIndentedString(autoSync)).append("\n");
         sb.append("}");
         return sb.toString();
     }

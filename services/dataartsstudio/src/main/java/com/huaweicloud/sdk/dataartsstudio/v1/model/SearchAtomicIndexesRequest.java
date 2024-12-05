@@ -313,7 +313,7 @@ public class SearchAtomicIndexesRequest {
     }
 
     /**
-     * 业务对象l3的ID，填写String类型替代Long类型。
+     * 业务对象l3的ID，ID字符串。
      * @return l3Id
      */
     public String getL3Id() {
@@ -330,7 +330,7 @@ public class SearchAtomicIndexesRequest {
     }
 
     /**
-     * 关联表的ID，填写String类型替代Long类型。
+     * 关联表的ID，ID字符串。
      * @return tableId
      */
     public String getTableId() {

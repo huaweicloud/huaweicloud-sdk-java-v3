@@ -441,7 +441,7 @@ public class CatalogVO {
     }
 
     /**
-     * 父目录ID，木有则为根目录，填写String类型替代Long类型。
+     * 父目录ID，木有则为根目录，ID字符串。
      * @return parentId
      */
     public String getParentId() {
@@ -458,7 +458,7 @@ public class CatalogVO {
     }
 
     /**
-     * 同层排序，目标节点的ID，填写String类型替代Long类型。
+     * 同层排序，目标节点的ID，ID字符串。
      * @return swapOrderId
      */
     public String getSwapOrderId() {
@@ -475,7 +475,7 @@ public class CatalogVO {
     }
 
     /**
-     * 主题ID，填写String类型替代Long类型。
+     * 主题ID，ID字符串。
      * @return id
      */
     public String getId() {

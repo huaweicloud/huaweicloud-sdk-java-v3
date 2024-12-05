@@ -61,7 +61,7 @@ public class BizDatasourceRelationVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -78,7 +78,7 @@ public class BizDatasourceRelationVO {
     }
 
     /**
-     * 业务对象信息，填写String类型替代Long类型。
+     * 业务对象信息，ID字符串。
      * @return bizId
      */
     public String getBizId() {

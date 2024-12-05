@@ -67,7 +67,7 @@ public class CountTableModelsRequest {
     }
 
     /**
-     * 依据关系建模的模型ID查询统计信息，填写String类型替代Long类型。
+     * 依据关系建模的模型ID查询统计信息，ID字符串。
      * @return modelId
      */
     public String getModelId() {

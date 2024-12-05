@@ -132,7 +132,7 @@ public class ListFunctionAsyncInvocationsResult {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "end_time")
 
-    private OffsetDateTime endTime;
+    private String endTime;
 
     public ListFunctionAsyncInvocationsResult withRequestId(String requestId) {
         this.requestId = requestId;
@@ -219,7 +219,7 @@ public class ListFunctionAsyncInvocationsResult {
         this.startTime = startTime;
     }
 
-    public ListFunctionAsyncInvocationsResult withEndTime(OffsetDateTime endTime) {
+    public ListFunctionAsyncInvocationsResult withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -228,11 +228,11 @@ public class ListFunctionAsyncInvocationsResult {
      * 异步调用结束时间（格式为YYYY-MM-DD'T'HH:mm:ss,UTC时间）。
      * @return endTime
      */
-    public OffsetDateTime getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(OffsetDateTime endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 

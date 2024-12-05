@@ -180,7 +180,7 @@ public class BatchOperationVO {
     }
 
     /**
-     * 批量审批ID，填写String类型替代Long类型。
+     * 批量审批ID，ID字符串。
      * @return id
      */
     public String getId() {
@@ -214,7 +214,7 @@ public class BatchOperationVO {
     }
 
     /**
-     * 组ID，填写String类型替代Long类型。
+     * 组ID，ID字符串。
      * @return groupId
      */
     public String getGroupId() {
@@ -248,7 +248,7 @@ public class BatchOperationVO {
     }
 
     /**
-     * 业务ID，填写String类型替代Long类型。
+     * 业务ID，ID字符串。
      * @return bizId
      */
     public String getBizId() {

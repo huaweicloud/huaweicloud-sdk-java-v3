@@ -363,7 +363,7 @@ public class AlarmCondition {
     /**
      * 次数
      * minimum: 1
-     * maximum: 100
+     * maximum: 180
      * @return count
      */
     public Integer getCount() {

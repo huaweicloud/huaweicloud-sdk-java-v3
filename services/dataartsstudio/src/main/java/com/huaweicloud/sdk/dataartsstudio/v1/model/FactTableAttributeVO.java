@@ -134,7 +134,7 @@ public class FactTableAttributeVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -151,7 +151,7 @@ public class FactTableAttributeVO {
     }
 
     /**
-     * 所属事实表ID，只读，填写String类型替代Long类型。
+     * 所属事实表ID，只读，ID字符串。
      * @return factLogicTableId
      */
     public String getFactLogicTableId() {
@@ -185,7 +185,7 @@ public class FactTableAttributeVO {
     }
 
     /**
-     * 维度ID，填写String类型替代Long类型。
+     * 维度ID，ID字符串。
      * @return dimensionId
      */
     public String getDimensionId() {
@@ -465,7 +465,7 @@ public class FactTableAttributeVO {
     }
 
     /**
-     * 关联的数据标准的ID，填写String类型替代Long类型。
+     * 关联的数据标准的ID，ID字符串。
      * @return standRowId
      */
     public String getStandRowId() {

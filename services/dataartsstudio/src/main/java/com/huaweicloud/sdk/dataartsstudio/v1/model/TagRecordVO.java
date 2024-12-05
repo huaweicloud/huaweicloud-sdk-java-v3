@@ -62,7 +62,7 @@ public class TagRecordVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -79,7 +79,7 @@ public class TagRecordVO {
     }
 
     /**
-     * 标签ID，填写String类型替代Long类型。
+     * 标签ID，ID字符串。
      * @return tagId
      */
     public String getTagId() {
@@ -113,7 +113,7 @@ public class TagRecordVO {
     }
 
     /**
-     * 实体ID，填写String类型替代Long类型。
+     * 实体ID，ID字符串。
      * @return bizId
      */
     public String getBizId() {

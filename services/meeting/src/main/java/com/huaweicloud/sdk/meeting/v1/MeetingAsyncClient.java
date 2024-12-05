@@ -139,6 +139,8 @@ import com.huaweicloud.sdk.meeting.v1.model.ListNetworkQualityRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ListNetworkQualityResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ListOngoingWebinarsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ListOngoingWebinarsResponse;
+import com.huaweicloud.sdk.meeting.v1.model.ListOnlineConfAttendeeRequest;
+import com.huaweicloud.sdk.meeting.v1.model.ListOnlineConfAttendeeResponse;
 import com.huaweicloud.sdk.meeting.v1.model.ListUpComingWebinarsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.ListUpComingWebinarsResponse;
 import com.huaweicloud.sdk.meeting.v1.model.LiveRequest;
@@ -2391,6 +2393,36 @@ public class MeetingAsyncClient {
     public AsyncInvoker<ListOngoingWebinarsRequest, ListOngoingWebinarsResponse> listOngoingWebinarsAsyncInvoker(
         ListOngoingWebinarsRequest request) {
         return new AsyncInvoker<>(request, MeetingMeta.listOngoingWebinars, hcClient);
+    }
+
+    /**
+     * 查询指定会议的在线与会者信息
+     *
+     * 该接口用于查询指定会议的在线与会者信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOnlineConfAttendeeRequest 请求对象
+     * @return CompletableFuture<ListOnlineConfAttendeeResponse>
+     */
+    public CompletableFuture<ListOnlineConfAttendeeResponse> listOnlineConfAttendeeAsync(
+        ListOnlineConfAttendeeRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.listOnlineConfAttendee);
+    }
+
+    /**
+     * 查询指定会议的在线与会者信息
+     *
+     * 该接口用于查询指定会议的在线与会者信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOnlineConfAttendeeRequest 请求对象
+     * @return AsyncInvoker<ListOnlineConfAttendeeRequest, ListOnlineConfAttendeeResponse>
+     */
+    public AsyncInvoker<ListOnlineConfAttendeeRequest, ListOnlineConfAttendeeResponse> listOnlineConfAttendeeAsyncInvoker(
+        ListOnlineConfAttendeeRequest request) {
+        return new AsyncInvoker<>(request, MeetingMeta.listOnlineConfAttendee, hcClient);
     }
 
     /**

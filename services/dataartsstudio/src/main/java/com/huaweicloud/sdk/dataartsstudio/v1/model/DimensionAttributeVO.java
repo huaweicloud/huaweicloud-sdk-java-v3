@@ -140,7 +140,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -157,7 +157,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 维度ID，只读，填写String类型替代Long类型。
+     * 维度ID，只读，ID字符串。
      * @return dimensionId
      */
     public String getDimensionId() {
@@ -174,7 +174,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 码表属性ID，填写String类型替代Long类型。
+     * 码表属性ID，ID字符串。
      * @return codeTableFieldId
      */
     public String getCodeTableFieldId() {
@@ -395,7 +395,7 @@ public class DimensionAttributeVO {
     }
 
     /**
-     * 关联的数据标准的ID，填写String类型替代Long类型。
+     * 关联的数据标准的ID，ID字符串。
      * @return standRowId
      */
     public String getStandRowId() {

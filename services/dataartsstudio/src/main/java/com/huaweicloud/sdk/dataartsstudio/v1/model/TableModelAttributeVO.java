@@ -170,7 +170,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -442,7 +442,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 所属关系建模的模型ID，填写String类型替代Long类型。
+     * 所属关系建模的模型ID，ID字符串。
      * @return tableModelId
      */
     public String getTableModelId() {
@@ -559,7 +559,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 关联的数据标准的ID，填写String类型替代Long类型。
+     * 关联的数据标准的ID，ID字符串。
      * @return standRowId
      */
     public String getStandRowId() {
@@ -693,7 +693,7 @@ public class TableModelAttributeVO {
     }
 
     /**
-     * 关联逻辑属性ID，填写String类型替代Long类型。
+     * 关联逻辑属性ID，ID字符串。
      * @return relatedLogicAttrId
      */
     public String getRelatedLogicAttrId() {

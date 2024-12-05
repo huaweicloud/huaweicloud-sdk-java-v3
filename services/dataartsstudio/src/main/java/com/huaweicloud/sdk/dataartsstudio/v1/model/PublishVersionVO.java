@@ -142,7 +142,7 @@ public class PublishVersionVO {
     }
 
     /**
-     * 版本ID，填写String类型替代Long类型。
+     * 版本ID，ID字符串。
      * @return id
      */
     public String getId() {
@@ -210,7 +210,7 @@ public class PublishVersionVO {
     }
 
     /**
-     * 业务对象ID，填写String类型替代Long类型。
+     * 业务对象ID，ID字符串。
      * @return bizId
      */
     public String getBizId() {

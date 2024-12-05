@@ -2006,11 +2006,6 @@ public class AosMeta {
                 DeleteTemplateRequest::setClientRequestId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteTemplateResponse::getBody, DeleteTemplateResponse::setBody));
 
         return builder.build();
     }
@@ -2053,11 +2048,6 @@ public class AosMeta {
                 DeleteTemplateVersionRequest::setClientRequestId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteTemplateVersionResponse::getBody, DeleteTemplateVersionResponse::setBody));
 
         return builder.build();
     }
@@ -2210,12 +2200,6 @@ public class AosMeta {
                 ShowTemplateVersionContentRequest::setClientRequestId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ShowTemplateVersionContentResponse::getBody,
-                ShowTemplateVersionContentResponse::setBody));
 
         builder.<String>withResponseField("Location",
             LocationType.Header,
@@ -2302,11 +2286,6 @@ public class AosMeta {
             f -> f.withMarshaller(UpdateTemplateMetadataRequest::getBody, UpdateTemplateMetadataRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateTemplateMetadataResponse::getBody, UpdateTemplateMetadataResponse::setBody));
 
         return builder.build();
     }

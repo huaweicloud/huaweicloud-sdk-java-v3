@@ -81,6 +81,26 @@ public class UpdateUserResult {
 
     private String passwordExpiresAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private String createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "xdomain_id")
+
+    private String xdomainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "xdomain_type")
+
+    private String xdomainType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_domain_owner")
+
+    private Boolean isDomainOwner;
+
     public UpdateUserResult withAccessMode(String accessMode) {
         this.accessMode = accessMode;
         return this;
@@ -328,6 +348,74 @@ public class UpdateUserResult {
         this.passwordExpiresAt = passwordExpiresAt;
     }
 
+    public UpdateUserResult withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * UTC时间，格式为YYYY-MM-DDTHH:mm:ss.ssssss，日期和时间戳格式如：2023-06-28T08:56:33.710000。
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public UpdateUserResult withXdomainId(String xdomainId) {
+        this.xdomainId = xdomainId;
+        return this;
+    }
+
+    /**
+     * IAM用户在外部系统中的ID。 >外部系统指与华为云对接的外部企业管理系统，xaccount_type、xaccount_id、xdomain_type、xdomain_id、xuser_type、xuser_id等参数值，无法在华为云获取，请咨询企业管理员。
+     * @return xdomainId
+     */
+    public String getXdomainId() {
+        return xdomainId;
+    }
+
+    public void setXdomainId(String xdomainId) {
+        this.xdomainId = xdomainId;
+    }
+
+    public UpdateUserResult withXdomainType(String xdomainType) {
+        this.xdomainType = xdomainType;
+        return this;
+    }
+
+    /**
+     * IAM用户在外部系统中的类型。 >外部系统指与华为云对接的外部企业管理系统，xaccount_type、xaccount_id、xdomain_type、xdomain_id、xuser_type、xuser_id等参数值，无法在华为云获取，请咨询企业管理员。 
+     * @return xdomainType
+     */
+    public String getXdomainType() {
+        return xdomainType;
+    }
+
+    public void setXdomainType(String xdomainType) {
+        this.xdomainType = xdomainType;
+    }
+
+    public UpdateUserResult withIsDomainOwner(Boolean isDomainOwner) {
+        this.isDomainOwner = isDomainOwner;
+        return this;
+    }
+
+    /**
+     * IAM用户是否为账号管理员。
+     * @return isDomainOwner
+     */
+    public Boolean getIsDomainOwner() {
+        return isDomainOwner;
+    }
+
+    public void setIsDomainOwner(Boolean isDomainOwner) {
+        this.isDomainOwner = isDomainOwner;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -343,7 +431,10 @@ public class UpdateUserResult {
             && Objects.equals(this.phone, that.phone) && Objects.equals(this.domainId, that.domainId)
             && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.areacode, that.areacode)
             && Objects.equals(this.email, that.email) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.links, that.links) && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt);
+            && Objects.equals(this.links, that.links) && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.xdomainId, that.xdomainId)
+            && Objects.equals(this.xdomainType, that.xdomainType)
+            && Objects.equals(this.isDomainOwner, that.isDomainOwner);
     }
 
     @Override
@@ -361,7 +452,11 @@ public class UpdateUserResult {
             email,
             id,
             links,
-            passwordExpiresAt);
+            passwordExpiresAt,
+            createTime,
+            xdomainId,
+            xdomainType,
+            isDomainOwner);
     }
 
     @Override
@@ -382,6 +477,10 @@ public class UpdateUserResult {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    passwordExpiresAt: ").append(toIndentedString(passwordExpiresAt)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    xdomainId: ").append(toIndentedString(xdomainId)).append("\n");
+        sb.append("    xdomainType: ").append(toIndentedString(xdomainType)).append("\n");
+        sb.append("    isDomainOwner: ").append(toIndentedString(isDomainOwner)).append("\n");
         sb.append("}");
         return sb.toString();
     }

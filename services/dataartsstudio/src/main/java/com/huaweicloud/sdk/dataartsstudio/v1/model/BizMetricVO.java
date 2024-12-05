@@ -345,7 +345,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 编码，更新时必填，创建时为空，填写String类型替代Long类型。
+     * 编码，更新时必填，创建时为空，ID字符串。
      * @return id
      */
     public String getId() {
@@ -447,7 +447,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 归属的流程架构的ID，填写String类型替代Long类型。
+     * 归属的流程架构的ID，ID字符串。
      * @return bizCatalogId
      */
     public String getBizCatalogId() {
@@ -634,7 +634,7 @@ public class BizMetricVO {
     }
 
     /**
-     * 关联技术指标，填写String类型替代Long类型。
+     * 关联技术指标，ID字符串。
      * @return technicalMetric
      */
     public String getTechnicalMetric() {

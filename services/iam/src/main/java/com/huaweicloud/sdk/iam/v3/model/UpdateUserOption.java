@@ -11,26 +11,6 @@ import java.util.Objects;
 public class UpdateUserOption {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "create_time")
-
-    private String createTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "xdomain_id")
-
-    private String xdomainId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "xdomain_type")
-
-    private String xdomainType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "is_domain_owner")
-
-    private Boolean isDomainOwner;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_mode")
 
     private String accessMode;
@@ -84,74 +64,6 @@ public class UpdateUserOption {
     @JsonProperty(value = "description")
 
     private String description;
-
-    public UpdateUserOption withCreateTime(String createTime) {
-        this.createTime = createTime;
-        return this;
-    }
-
-    /**
-     * 
-     * @return createTime
-     */
-    public String getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
-    }
-
-    public UpdateUserOption withXdomainId(String xdomainId) {
-        this.xdomainId = xdomainId;
-        return this;
-    }
-
-    /**
-     * IAM用户在外部系统中的ID。 >外部系统指与华为云对接的外部企业管理系统，xaccount_type、xaccount_id、xdomain_type、xdomain_id、xuser_type、xuser_id等参数值，无法在华为云获取，请咨询企业管理员。
-     * @return xdomainId
-     */
-    public String getXdomainId() {
-        return xdomainId;
-    }
-
-    public void setXdomainId(String xdomainId) {
-        this.xdomainId = xdomainId;
-    }
-
-    public UpdateUserOption withXdomainType(String xdomainType) {
-        this.xdomainType = xdomainType;
-        return this;
-    }
-
-    /**
-     * IAM用户在外部系统中的类型。 >外部系统指与华为云对接的外部企业管理系统，xaccount_type、xaccount_id、xdomain_type、xdomain_id、xuser_type、xuser_id等参数值，无法在华为云获取，请咨询企业管理员。 
-     * @return xdomainType
-     */
-    public String getXdomainType() {
-        return xdomainType;
-    }
-
-    public void setXdomainType(String xdomainType) {
-        this.xdomainType = xdomainType;
-    }
-
-    public UpdateUserOption withIsDomainOwner(Boolean isDomainOwner) {
-        this.isDomainOwner = isDomainOwner;
-        return this;
-    }
-
-    /**
-     * IAM用户是否为账号管理员。
-     * @return isDomainOwner
-     */
-    public Boolean getIsDomainOwner() {
-        return isDomainOwner;
-    }
-
-    public void setIsDomainOwner(Boolean isDomainOwner) {
-        this.isDomainOwner = isDomainOwner;
-    }
 
     public UpdateUserOption withAccessMode(String accessMode) {
         this.accessMode = accessMode;
@@ -349,10 +261,7 @@ public class UpdateUserOption {
             return false;
         }
         UpdateUserOption that = (UpdateUserOption) obj;
-        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.xdomainId, that.xdomainId)
-            && Objects.equals(this.xdomainType, that.xdomainType)
-            && Objects.equals(this.isDomainOwner, that.isDomainOwner)
-            && Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.name, that.name)
+        return Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.name, that.name)
             && Objects.equals(this.password, that.password) && Objects.equals(this.email, that.email)
             && Objects.equals(this.areacode, that.areacode) && Objects.equals(this.phone, that.phone)
             && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.pwdStatus, that.pwdStatus)
@@ -362,11 +271,7 @@ public class UpdateUserOption {
 
     @Override
     public int hashCode() {
-        return Objects.hash(createTime,
-            xdomainId,
-            xdomainType,
-            isDomainOwner,
-            accessMode,
+        return Objects.hash(accessMode,
             name,
             password,
             email,
@@ -383,10 +288,6 @@ public class UpdateUserOption {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateUserOption {\n");
-        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-        sb.append("    xdomainId: ").append(toIndentedString(xdomainId)).append("\n");
-        sb.append("    xdomainType: ").append(toIndentedString(xdomainType)).append("\n");
-        sb.append("    isDomainOwner: ").append(toIndentedString(isDomainOwner)).append("\n");
         sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");

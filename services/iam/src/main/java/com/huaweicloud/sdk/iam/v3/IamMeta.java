@@ -144,6 +144,8 @@ import com.huaweicloud.sdk.iam.v3.model.KeystoneListEndpointsRequest;
 import com.huaweicloud.sdk.iam.v3.model.KeystoneListEndpointsResponse;
 import com.huaweicloud.sdk.iam.v3.model.KeystoneListFederationDomainsRequest;
 import com.huaweicloud.sdk.iam.v3.model.KeystoneListFederationDomainsResponse;
+import com.huaweicloud.sdk.iam.v3.model.KeystoneListFederationProjectsRequest;
+import com.huaweicloud.sdk.iam.v3.model.KeystoneListFederationProjectsResponse;
 import com.huaweicloud.sdk.iam.v3.model.KeystoneListGroupsForUserRequest;
 import com.huaweicloud.sdk.iam.v3.model.KeystoneListGroupsForUserResponse;
 import com.huaweicloud.sdk.iam.v3.model.KeystoneListGroupsRequest;
@@ -1805,6 +1807,27 @@ public class IamMeta {
                     KeystoneListFederationDomainsResponse.class)
                 .withName("KeystoneListFederationDomains")
                 .withUri("/v3/OS-FEDERATION/domains")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<KeystoneListFederationProjectsRequest, KeystoneListFederationProjectsResponse> keystoneListFederationProjects =
+        genForKeystoneListFederationProjects();
+
+    private static HttpRequestDef<KeystoneListFederationProjectsRequest, KeystoneListFederationProjectsResponse> genForKeystoneListFederationProjects() {
+        // basic
+        HttpRequestDef.Builder<KeystoneListFederationProjectsRequest, KeystoneListFederationProjectsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    KeystoneListFederationProjectsRequest.class,
+                    KeystoneListFederationProjectsResponse.class)
+                .withName("KeystoneListFederationProjects")
+                .withUri("/v3/OS-FEDERATION/projects")
                 .withContentType("application/json");
 
         // requests

@@ -136,7 +136,7 @@ public class SearchVersionsRequest {
     }
 
     /**
-     * 业务定义ID，填写String类型替代Long类型。
+     * 业务定义ID，ID字符串。
      * @return bizId
      */
     public String getBizId() {

@@ -5,8 +5,16 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.dc.v3.model.BatchCreateResourceTagsRequest;
 import com.huaweicloud.sdk.dc.v3.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.dc.v3.model.BindGlobalEipsRequest;
+import com.huaweicloud.sdk.dc.v3.model.BindGlobalEipsResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreateConnectGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreateConnectGatewayResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreateGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreateGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreatePeerLinkRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreatePeerLinkResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerRequest;
@@ -15,10 +23,16 @@ import com.huaweicloud.sdk.dc.v3.model.CreateVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualInterfaceRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualInterfaceResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteConnectGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteConnectGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeletePeerLinkRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeletePeerLinkResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerRequest;
@@ -27,12 +41,24 @@ import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualInterfaceRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualInterfaceResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListConnectGatewaysRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListConnectGatewaysResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListDirectConnectsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListDirectConnectsResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListGdgwRouteTablesRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListGdgwRouteTablesResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListGlobalDcGatewayResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListGlobalEipsRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListGlobalEipsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListHostedDirectConnectsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListHostedDirectConnectsResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListPeerLinksRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListPeerLinksResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListRmsGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListRmsGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesRequest;
@@ -41,24 +67,42 @@ import com.huaweicloud.sdk.dc.v3.model.ListVirtualGatewaysRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualGatewaysResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualInterfacesRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualInterfacesResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowConnectGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowConnectGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowPeerLinkRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowPeerLinkResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowRmsGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowRmsGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceResponse;
 import com.huaweicloud.sdk.dc.v3.model.SwitchoverTestRequest;
 import com.huaweicloud.sdk.dc.v3.model.SwitchoverTestResponse;
+import com.huaweicloud.sdk.dc.v3.model.UnbindGlobalEipsRequest;
+import com.huaweicloud.sdk.dc.v3.model.UnbindGlobalEipsResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateConnectGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateConnectGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateGdgwRouteTableRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateGdgwRouteTableResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdatePeerLinkRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdatePeerLinkResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateVifPeerRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateVifPeerResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateVirtualGatewayRequest;
@@ -77,6 +121,238 @@ public class DcClient {
     public static ClientBuilder<DcClient> newBuilder() {
         ClientBuilder<DcClient> clientBuilder = new ClientBuilder<>(DcClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 绑定GEIP操作
+     *
+     * 绑定GEIP操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindGlobalEipsRequest 请求对象
+     * @return BindGlobalEipsResponse
+     */
+    public BindGlobalEipsResponse bindGlobalEips(BindGlobalEipsRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.bindGlobalEips);
+    }
+
+    /**
+     * 绑定GEIP操作
+     *
+     * 绑定GEIP操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BindGlobalEipsRequest 请求对象
+     * @return SyncInvoker<BindGlobalEipsRequest, BindGlobalEipsResponse>
+     */
+    public SyncInvoker<BindGlobalEipsRequest, BindGlobalEipsResponse> bindGlobalEipsInvoker(
+        BindGlobalEipsRequest request) {
+        return new SyncInvoker<>(request, DcMeta.bindGlobalEips, hcClient);
+    }
+
+    /**
+     * 查询已经绑定的GEIP列表
+     *
+     * 查询已经绑定的GEIP列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalEipsRequest 请求对象
+     * @return ListGlobalEipsResponse
+     */
+    public ListGlobalEipsResponse listGlobalEips(ListGlobalEipsRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.listGlobalEips);
+    }
+
+    /**
+     * 查询已经绑定的GEIP列表
+     *
+     * 查询已经绑定的GEIP列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalEipsRequest 请求对象
+     * @return SyncInvoker<ListGlobalEipsRequest, ListGlobalEipsResponse>
+     */
+    public SyncInvoker<ListGlobalEipsRequest, ListGlobalEipsResponse> listGlobalEipsInvoker(
+        ListGlobalEipsRequest request) {
+        return new SyncInvoker<>(request, DcMeta.listGlobalEips, hcClient);
+    }
+
+    /**
+     * 解绑GEIP
+     *
+     * 解绑GEIP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindGlobalEipsRequest 请求对象
+     * @return UnbindGlobalEipsResponse
+     */
+    public UnbindGlobalEipsResponse unbindGlobalEips(UnbindGlobalEipsRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.unbindGlobalEips);
+    }
+
+    /**
+     * 解绑GEIP
+     *
+     * 解绑GEIP
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnbindGlobalEipsRequest 请求对象
+     * @return SyncInvoker<UnbindGlobalEipsRequest, UnbindGlobalEipsResponse>
+     */
+    public SyncInvoker<UnbindGlobalEipsRequest, UnbindGlobalEipsResponse> unbindGlobalEipsInvoker(
+        UnbindGlobalEipsRequest request) {
+        return new SyncInvoker<>(request, DcMeta.unbindGlobalEips, hcClient);
+    }
+
+    /**
+     * 创建互联网关
+     *
+     * 创建互联网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateConnectGatewayRequest 请求对象
+     * @return CreateConnectGatewayResponse
+     */
+    public CreateConnectGatewayResponse createConnectGateway(CreateConnectGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.createConnectGateway);
+    }
+
+    /**
+     * 创建互联网关
+     *
+     * 创建互联网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateConnectGatewayRequest 请求对象
+     * @return SyncInvoker<CreateConnectGatewayRequest, CreateConnectGatewayResponse>
+     */
+    public SyncInvoker<CreateConnectGatewayRequest, CreateConnectGatewayResponse> createConnectGatewayInvoker(
+        CreateConnectGatewayRequest request) {
+        return new SyncInvoker<>(request, DcMeta.createConnectGateway, hcClient);
+    }
+
+    /**
+     * 删除互联网关
+     *
+     * 删除互联网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConnectGatewayRequest 请求对象
+     * @return DeleteConnectGatewayResponse
+     */
+    public DeleteConnectGatewayResponse deleteConnectGateway(DeleteConnectGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.deleteConnectGateway);
+    }
+
+    /**
+     * 删除互联网关
+     *
+     * 删除互联网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConnectGatewayRequest 请求对象
+     * @return SyncInvoker<DeleteConnectGatewayRequest, DeleteConnectGatewayResponse>
+     */
+    public SyncInvoker<DeleteConnectGatewayRequest, DeleteConnectGatewayResponse> deleteConnectGatewayInvoker(
+        DeleteConnectGatewayRequest request) {
+        return new SyncInvoker<>(request, DcMeta.deleteConnectGateway, hcClient);
+    }
+
+    /**
+     * 查询互联网关列表信息
+     *
+     * 查询互联网关列表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConnectGatewaysRequest 请求对象
+     * @return ListConnectGatewaysResponse
+     */
+    public ListConnectGatewaysResponse listConnectGateways(ListConnectGatewaysRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.listConnectGateways);
+    }
+
+    /**
+     * 查询互联网关列表信息
+     *
+     * 查询互联网关列表信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConnectGatewaysRequest 请求对象
+     * @return SyncInvoker<ListConnectGatewaysRequest, ListConnectGatewaysResponse>
+     */
+    public SyncInvoker<ListConnectGatewaysRequest, ListConnectGatewaysResponse> listConnectGatewaysInvoker(
+        ListConnectGatewaysRequest request) {
+        return new SyncInvoker<>(request, DcMeta.listConnectGateways, hcClient);
+    }
+
+    /**
+     * 查询互联网关详细信息
+     *
+     * 查询互联网关详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConnectGatewayRequest 请求对象
+     * @return ShowConnectGatewayResponse
+     */
+    public ShowConnectGatewayResponse showConnectGateway(ShowConnectGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.showConnectGateway);
+    }
+
+    /**
+     * 查询互联网关详细信息
+     *
+     * 查询互联网关详细信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConnectGatewayRequest 请求对象
+     * @return SyncInvoker<ShowConnectGatewayRequest, ShowConnectGatewayResponse>
+     */
+    public SyncInvoker<ShowConnectGatewayRequest, ShowConnectGatewayResponse> showConnectGatewayInvoker(
+        ShowConnectGatewayRequest request) {
+        return new SyncInvoker<>(request, DcMeta.showConnectGateway, hcClient);
+    }
+
+    /**
+     * 更新互联网关
+     *
+     * 更新互联网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateConnectGatewayRequest 请求对象
+     * @return UpdateConnectGatewayResponse
+     */
+    public UpdateConnectGatewayResponse updateConnectGateway(UpdateConnectGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.updateConnectGateway);
+    }
+
+    /**
+     * 更新互联网关
+     *
+     * 更新互联网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateConnectGatewayRequest 请求对象
+     * @return SyncInvoker<UpdateConnectGatewayRequest, UpdateConnectGatewayResponse>
+     */
+    public SyncInvoker<UpdateConnectGatewayRequest, UpdateConnectGatewayResponse> updateConnectGatewayInvoker(
+        UpdateConnectGatewayRequest request) {
+        return new SyncInvoker<>(request, DcMeta.updateConnectGateway, hcClient);
     }
 
     /**
@@ -340,6 +616,410 @@ public class DcClient {
     public SyncInvoker<UpdateHostedDirectConnectRequest, UpdateHostedDirectConnectResponse> updateHostedDirectConnectInvoker(
         UpdateHostedDirectConnectRequest request) {
         return new SyncInvoker<>(request, DcMeta.updateHostedDirectConnect, hcClient);
+    }
+
+    /**
+     * 查询全球接入网关路由表
+     *
+     * 查询全球接入网关路由表，返回查询到的全球接入网关路由表的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGdgwRouteTablesRequest 请求对象
+     * @return ListGdgwRouteTablesResponse
+     */
+    public ListGdgwRouteTablesResponse listGdgwRouteTables(ListGdgwRouteTablesRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.listGdgwRouteTables);
+    }
+
+    /**
+     * 查询全球接入网关路由表
+     *
+     * 查询全球接入网关路由表，返回查询到的全球接入网关路由表的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGdgwRouteTablesRequest 请求对象
+     * @return SyncInvoker<ListGdgwRouteTablesRequest, ListGdgwRouteTablesResponse>
+     */
+    public SyncInvoker<ListGdgwRouteTablesRequest, ListGdgwRouteTablesResponse> listGdgwRouteTablesInvoker(
+        ListGdgwRouteTablesRequest request) {
+        return new SyncInvoker<>(request, DcMeta.listGdgwRouteTables, hcClient);
+    }
+
+    /**
+     * 修改全球接入网关路由表
+     *
+     * 修改全球接入网关路由表，返回修改全球接入网关路由表的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGdgwRouteTableRequest 请求对象
+     * @return UpdateGdgwRouteTableResponse
+     */
+    public UpdateGdgwRouteTableResponse updateGdgwRouteTable(UpdateGdgwRouteTableRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.updateGdgwRouteTable);
+    }
+
+    /**
+     * 修改全球接入网关路由表
+     *
+     * 修改全球接入网关路由表，返回修改全球接入网关路由表的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGdgwRouteTableRequest 请求对象
+     * @return SyncInvoker<UpdateGdgwRouteTableRequest, UpdateGdgwRouteTableResponse>
+     */
+    public SyncInvoker<UpdateGdgwRouteTableRequest, UpdateGdgwRouteTableResponse> updateGdgwRouteTableInvoker(
+        UpdateGdgwRouteTableRequest request) {
+        return new SyncInvoker<>(request, DcMeta.updateGdgwRouteTable, hcClient);
+    }
+
+    /**
+     * 创建全球接入网关
+     *
+     * 创建全球接入网关，返回创建全球接入网关的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGlobalDcGatewayRequest 请求对象
+     * @return CreateGlobalDcGatewayResponse
+     */
+    public CreateGlobalDcGatewayResponse createGlobalDcGateway(CreateGlobalDcGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.createGlobalDcGateway);
+    }
+
+    /**
+     * 创建全球接入网关
+     *
+     * 创建全球接入网关，返回创建全球接入网关的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGlobalDcGatewayRequest 请求对象
+     * @return SyncInvoker<CreateGlobalDcGatewayRequest, CreateGlobalDcGatewayResponse>
+     */
+    public SyncInvoker<CreateGlobalDcGatewayRequest, CreateGlobalDcGatewayResponse> createGlobalDcGatewayInvoker(
+        CreateGlobalDcGatewayRequest request) {
+        return new SyncInvoker<>(request, DcMeta.createGlobalDcGateway, hcClient);
+    }
+
+    /**
+     * 创建全球接入网关对等链接
+     *
+     * 创建全球接入网关对等链接，返回创建全球接入网关对等链接的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePeerLinkRequest 请求对象
+     * @return CreatePeerLinkResponse
+     */
+    public CreatePeerLinkResponse createPeerLink(CreatePeerLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.createPeerLink);
+    }
+
+    /**
+     * 创建全球接入网关对等链接
+     *
+     * 创建全球接入网关对等链接，返回创建全球接入网关对等链接的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePeerLinkRequest 请求对象
+     * @return SyncInvoker<CreatePeerLinkRequest, CreatePeerLinkResponse>
+     */
+    public SyncInvoker<CreatePeerLinkRequest, CreatePeerLinkResponse> createPeerLinkInvoker(
+        CreatePeerLinkRequest request) {
+        return new SyncInvoker<>(request, DcMeta.createPeerLink, hcClient);
+    }
+
+    /**
+     * 删除全球接入网关
+     *
+     * 根据ID删除全球接入网关，返回删除全球接入网关的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGlobalDcGatewayRequest 请求对象
+     * @return DeleteGlobalDcGatewayResponse
+     */
+    public DeleteGlobalDcGatewayResponse deleteGlobalDcGateway(DeleteGlobalDcGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.deleteGlobalDcGateway);
+    }
+
+    /**
+     * 删除全球接入网关
+     *
+     * 根据ID删除全球接入网关，返回删除全球接入网关的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGlobalDcGatewayRequest 请求对象
+     * @return SyncInvoker<DeleteGlobalDcGatewayRequest, DeleteGlobalDcGatewayResponse>
+     */
+    public SyncInvoker<DeleteGlobalDcGatewayRequest, DeleteGlobalDcGatewayResponse> deleteGlobalDcGatewayInvoker(
+        DeleteGlobalDcGatewayRequest request) {
+        return new SyncInvoker<>(request, DcMeta.deleteGlobalDcGateway, hcClient);
+    }
+
+    /**
+     * 删除全球接入网关对等链接
+     *
+     * 根据ID删除全球接入网关对等链接，返回删除全球接入网关对等链接的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePeerLinkRequest 请求对象
+     * @return DeletePeerLinkResponse
+     */
+    public DeletePeerLinkResponse deletePeerLink(DeletePeerLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.deletePeerLink);
+    }
+
+    /**
+     * 删除全球接入网关对等链接
+     *
+     * 根据ID删除全球接入网关对等链接，返回删除全球接入网关对等链接的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePeerLinkRequest 请求对象
+     * @return SyncInvoker<DeletePeerLinkRequest, DeletePeerLinkResponse>
+     */
+    public SyncInvoker<DeletePeerLinkRequest, DeletePeerLinkResponse> deletePeerLinkInvoker(
+        DeletePeerLinkRequest request) {
+        return new SyncInvoker<>(request, DcMeta.deletePeerLink, hcClient);
+    }
+
+    /**
+     * 查询全球接入网关列表
+     *
+     * 查询 全球接入网关列表，返回列表中包含全球接入网关的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalDcGatewayRequest 请求对象
+     * @return ListGlobalDcGatewayResponse
+     */
+    public ListGlobalDcGatewayResponse listGlobalDcGateway(ListGlobalDcGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.listGlobalDcGateway);
+    }
+
+    /**
+     * 查询全球接入网关列表
+     *
+     * 查询 全球接入网关列表，返回列表中包含全球接入网关的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGlobalDcGatewayRequest 请求对象
+     * @return SyncInvoker<ListGlobalDcGatewayRequest, ListGlobalDcGatewayResponse>
+     */
+    public SyncInvoker<ListGlobalDcGatewayRequest, ListGlobalDcGatewayResponse> listGlobalDcGatewayInvoker(
+        ListGlobalDcGatewayRequest request) {
+        return new SyncInvoker<>(request, DcMeta.listGlobalDcGateway, hcClient);
+    }
+
+    /**
+     * 查询全球接入网关对等链接
+     *
+     * 查询全球接入网关对等链接，返回查询到的全球接入网关对等链接的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPeerLinksRequest 请求对象
+     * @return ListPeerLinksResponse
+     */
+    public ListPeerLinksResponse listPeerLinks(ListPeerLinksRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.listPeerLinks);
+    }
+
+    /**
+     * 查询全球接入网关对等链接
+     *
+     * 查询全球接入网关对等链接，返回查询到的全球接入网关对等链接的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPeerLinksRequest 请求对象
+     * @return SyncInvoker<ListPeerLinksRequest, ListPeerLinksResponse>
+     */
+    public SyncInvoker<ListPeerLinksRequest, ListPeerLinksResponse> listPeerLinksInvoker(ListPeerLinksRequest request) {
+        return new SyncInvoker<>(request, DcMeta.listPeerLinks, hcClient);
+    }
+
+    /**
+     * 查询RMS全球接入网关
+     *
+     * 根据类型、domain_id、region_id,资源类型查询资源，返回查询到的资源的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRmsGlobalDcGatewayRequest 请求对象
+     * @return ListRmsGlobalDcGatewayResponse
+     */
+    public ListRmsGlobalDcGatewayResponse listRmsGlobalDcGateway(ListRmsGlobalDcGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.listRmsGlobalDcGateway);
+    }
+
+    /**
+     * 查询RMS全球接入网关
+     *
+     * 根据类型、domain_id、region_id,资源类型查询资源，返回查询到的资源的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRmsGlobalDcGatewayRequest 请求对象
+     * @return SyncInvoker<ListRmsGlobalDcGatewayRequest, ListRmsGlobalDcGatewayResponse>
+     */
+    public SyncInvoker<ListRmsGlobalDcGatewayRequest, ListRmsGlobalDcGatewayResponse> listRmsGlobalDcGatewayInvoker(
+        ListRmsGlobalDcGatewayRequest request) {
+        return new SyncInvoker<>(request, DcMeta.listRmsGlobalDcGateway, hcClient);
+    }
+
+    /**
+     * 查询全球接入网关详情
+     *
+     * 根据ID查询全球接入网关，返回查询到的全球接入网关的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGlobalDcGatewayRequest 请求对象
+     * @return ShowGlobalDcGatewayResponse
+     */
+    public ShowGlobalDcGatewayResponse showGlobalDcGateway(ShowGlobalDcGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.showGlobalDcGateway);
+    }
+
+    /**
+     * 查询全球接入网关详情
+     *
+     * 根据ID查询全球接入网关，返回查询到的全球接入网关的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGlobalDcGatewayRequest 请求对象
+     * @return SyncInvoker<ShowGlobalDcGatewayRequest, ShowGlobalDcGatewayResponse>
+     */
+    public SyncInvoker<ShowGlobalDcGatewayRequest, ShowGlobalDcGatewayResponse> showGlobalDcGatewayInvoker(
+        ShowGlobalDcGatewayRequest request) {
+        return new SyncInvoker<>(request, DcMeta.showGlobalDcGateway, hcClient);
+    }
+
+    /**
+     * 查询全球接入网关对等链接
+     *
+     * 根据ID查询全球接入网关对等链接，返回查询到的全球接入网关对等链接的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPeerLinkRequest 请求对象
+     * @return ShowPeerLinkResponse
+     */
+    public ShowPeerLinkResponse showPeerLink(ShowPeerLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.showPeerLink);
+    }
+
+    /**
+     * 查询全球接入网关对等链接
+     *
+     * 根据ID查询全球接入网关对等链接，返回查询到的全球接入网关对等链接的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPeerLinkRequest 请求对象
+     * @return SyncInvoker<ShowPeerLinkRequest, ShowPeerLinkResponse>
+     */
+    public SyncInvoker<ShowPeerLinkRequest, ShowPeerLinkResponse> showPeerLinkInvoker(ShowPeerLinkRequest request) {
+        return new SyncInvoker<>(request, DcMeta.showPeerLink, hcClient);
+    }
+
+    /**
+     * 查询RMS全球接入网关
+     *
+     * 根据类型、domain_id、region_id,资源类型，全球接入网关ID查询资源,返回查询到的资源的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRmsGlobalDcGatewayRequest 请求对象
+     * @return ShowRmsGlobalDcGatewayResponse
+     */
+    public ShowRmsGlobalDcGatewayResponse showRmsGlobalDcGateway(ShowRmsGlobalDcGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.showRmsGlobalDcGateway);
+    }
+
+    /**
+     * 查询RMS全球接入网关
+     *
+     * 根据类型、domain_id、region_id,资源类型，全球接入网关ID查询资源,返回查询到的资源的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRmsGlobalDcGatewayRequest 请求对象
+     * @return SyncInvoker<ShowRmsGlobalDcGatewayRequest, ShowRmsGlobalDcGatewayResponse>
+     */
+    public SyncInvoker<ShowRmsGlobalDcGatewayRequest, ShowRmsGlobalDcGatewayResponse> showRmsGlobalDcGatewayInvoker(
+        ShowRmsGlobalDcGatewayRequest request) {
+        return new SyncInvoker<>(request, DcMeta.showRmsGlobalDcGateway, hcClient);
+    }
+
+    /**
+     * 修改全球接入网关
+     *
+     * 根据ID修改全球接入网关，返回修改全球接入网关的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGlobalDcGatewayRequest 请求对象
+     * @return UpdateGlobalDcGatewayResponse
+     */
+    public UpdateGlobalDcGatewayResponse updateGlobalDcGateway(UpdateGlobalDcGatewayRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.updateGlobalDcGateway);
+    }
+
+    /**
+     * 修改全球接入网关
+     *
+     * 根据ID修改全球接入网关，返回修改全球接入网关的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGlobalDcGatewayRequest 请求对象
+     * @return SyncInvoker<UpdateGlobalDcGatewayRequest, UpdateGlobalDcGatewayResponse>
+     */
+    public SyncInvoker<UpdateGlobalDcGatewayRequest, UpdateGlobalDcGatewayResponse> updateGlobalDcGatewayInvoker(
+        UpdateGlobalDcGatewayRequest request) {
+        return new SyncInvoker<>(request, DcMeta.updateGlobalDcGateway, hcClient);
+    }
+
+    /**
+     * 修改全球接入网关对等链接
+     *
+     * 根据ID修改全球接入网关对等链接，返回修改全球接入网关对等链接的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePeerLinkRequest 请求对象
+     * @return UpdatePeerLinkResponse
+     */
+    public UpdatePeerLinkResponse updatePeerLink(UpdatePeerLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.updatePeerLink);
+    }
+
+    /**
+     * 修改全球接入网关对等链接
+     *
+     * 根据ID修改全球接入网关对等链接，返回修改全球接入网关对等链接的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePeerLinkRequest 请求对象
+     * @return SyncInvoker<UpdatePeerLinkRequest, UpdatePeerLinkResponse>
+     */
+    public SyncInvoker<UpdatePeerLinkRequest, UpdatePeerLinkResponse> updatePeerLinkInvoker(
+        UpdatePeerLinkRequest request) {
+        return new SyncInvoker<>(request, DcMeta.updatePeerLink, hcClient);
     }
 
     /**

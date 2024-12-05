@@ -68,7 +68,7 @@ public class SecrecyLevelVO {
     }
 
     /**
-     * 密级ID，填写String类型替代Long类型。
+     * 密级ID，ID字符串。
      * @return id
      */
     public String getId() {

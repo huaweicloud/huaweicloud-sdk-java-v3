@@ -650,7 +650,7 @@ public class ListDimensionLogicTablesRequest {
     }
 
     /**
-     * 主题域l2的ID，填写String类型替代Long类型。
+     * 主题域l2的ID，ID字符串。
      * @return l2Id
      */
     public String getL2Id() {
@@ -667,7 +667,7 @@ public class ListDimensionLogicTablesRequest {
     }
 
     /**
-     * 依据维度ID查维度属性，填写String类型替代Long类型。
+     * 依据维度ID查维度属性，ID字符串。
      * @return dimensionId
      */
     public String getDimensionId() {

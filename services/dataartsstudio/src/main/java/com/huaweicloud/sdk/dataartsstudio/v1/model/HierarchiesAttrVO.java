@@ -74,7 +74,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -91,7 +91,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 层级ID，填写String类型替代Long类型。
+     * 层级ID，ID字符串。
      * @return hierarchiesId
      */
     public String getHierarchiesId() {
@@ -108,7 +108,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 属性ID，填写String类型替代Long类型。
+     * 属性ID，ID字符串。
      * @return attrId
      */
     public String getAttrId() {
@@ -192,7 +192,7 @@ public class HierarchiesAttrVO {
     }
 
     /**
-     * 详情属性ID，填写String类型替代Long类型。
+     * 详情属性ID，ID字符串。
      * @return detailAttrIds
      */
     public List<String> getDetailAttrIds() {

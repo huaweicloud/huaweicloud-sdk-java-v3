@@ -39,7 +39,7 @@ public class StatisticStandardCoverageVO {
     }
 
     /**
-     * 字段总数，填写String类型替代Long类型。
+     * 字段总数，ID字符串。
      * @return allColNum
      */
     public String getAllColNum() {
@@ -56,7 +56,7 @@ public class StatisticStandardCoverageVO {
     }
 
     /**
-     * 关联标准字段数，填写String类型替代Long类型。
+     * 关联标准字段数，ID字符串。
      * @return colNum
      */
     public String getColNum() {

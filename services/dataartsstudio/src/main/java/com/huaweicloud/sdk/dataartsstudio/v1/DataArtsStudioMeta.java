@@ -48,6 +48,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationToEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateDesignTableModelsFromLogicRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateDesignTableModelsFromLogicResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetMembersRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetMembersResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetPermissionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetPermissionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteBaseDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeletePolicySetsDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteRulesBaseDTO;
@@ -101,6 +107,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CheckFactLogicTableStatusRequ
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CheckFactLogicTableStatusResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CodeTableFieldValueUpdateVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CodeTableVO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CompareDesignVersionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CompareDesignVersionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CompoundMetricVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ConfirmApprovalsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ConfirmApprovalsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ConfirmMessageRequest;
@@ -131,6 +140,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAggregationLogicT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAggregationLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAtomicIndexRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignAtomicIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignCompoundMetricRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignCompoundMetricResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignDerivativeIndexRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignDerivativeIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignDimensionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDesignDimensionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateDirectoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvRequest;
@@ -215,6 +230,16 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAggregationLogicT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAggregationLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAtomicIndexRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignAtomicIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignCompoundMetricRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignCompoundMetricResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignDerivativeIndexRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignDerivativeIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignDimensionLogicTableRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignDimensionLogicTableResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignDimensionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignDimensionResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignFactLogicTableRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignFactLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryRequest;
@@ -250,6 +275,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteWorkspaceusersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DerivativeIndexVO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DimensionVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DirectoryVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DynamicMaskingPolicyCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DynamicMaskingPolicyUpdateDTO;
@@ -469,6 +496,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ParseUserBehaviorResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PayForDgcOneKeyRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PayForDgcOneKeyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetCreateDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetMemberBatchCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetMemberCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetPermissionCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetPermissionUpdateDTO;
@@ -588,6 +616,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatamapLineageRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDatamapLineageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDerivativeIndexByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDerivativeIndexByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDesignOperationResultRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDesignOperationResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDimensionByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDimensionByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDimensionLogicTableByIdRequest;
@@ -696,6 +726,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicT
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignCompoundMetricRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignCompoundMetricResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDerivativeIndexRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDerivativeIndexResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDimensionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDimensionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityParam;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignTableQualityResponse;
@@ -737,6 +773,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkSpaceUserOrGroupReq
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkSpaceUserOrGroupResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkspaceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateWorkspaceResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.WorkspaceTransformVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.WorkspaceVO;
 
 import java.math.BigDecimal;
@@ -1021,6 +1058,129 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(BulkSecurityLevel.class),
             f -> f.withMarshaller(BatchAssociateSecurityLevelToEntitiesRequest::getBody,
                 BatchAssociateSecurityLevelToEntitiesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateDesignTableModelsFromLogicRequest, BatchCreateDesignTableModelsFromLogicResponse> batchCreateDesignTableModelsFromLogic =
+        genForBatchCreateDesignTableModelsFromLogic();
+
+    private static HttpRequestDef<BatchCreateDesignTableModelsFromLogicRequest, BatchCreateDesignTableModelsFromLogicResponse> genForBatchCreateDesignTableModelsFromLogic() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateDesignTableModelsFromLogicRequest, BatchCreateDesignTableModelsFromLogicResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchCreateDesignTableModelsFromLogicRequest.class,
+                    BatchCreateDesignTableModelsFromLogicResponse.class)
+                .withName("BatchCreateDesignTableModelsFromLogic")
+                .withUri("/v1/{project_id}/design/workspaces/{model_id}/transform")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("model_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateDesignTableModelsFromLogicRequest::getModelId,
+                BatchCreateDesignTableModelsFromLogicRequest::setModelId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateDesignTableModelsFromLogicRequest::getWorkspace,
+                BatchCreateDesignTableModelsFromLogicRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateDesignTableModelsFromLogicRequest::getXProjectId,
+                BatchCreateDesignTableModelsFromLogicRequest::setXProjectId));
+        builder.<WorkspaceTransformVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(WorkspaceTransformVO.class),
+            f -> f.withMarshaller(BatchCreateDesignTableModelsFromLogicRequest::getBody,
+                BatchCreateDesignTableModelsFromLogicRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateSecurityPermissionSetMembersRequest, BatchCreateSecurityPermissionSetMembersResponse> batchCreateSecurityPermissionSetMembers =
+        genForBatchCreateSecurityPermissionSetMembers();
+
+    private static HttpRequestDef<BatchCreateSecurityPermissionSetMembersRequest, BatchCreateSecurityPermissionSetMembersResponse> genForBatchCreateSecurityPermissionSetMembers() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateSecurityPermissionSetMembersRequest, BatchCreateSecurityPermissionSetMembersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateSecurityPermissionSetMembersRequest.class,
+                    BatchCreateSecurityPermissionSetMembersResponse.class)
+                .withName("BatchCreateSecurityPermissionSetMembers")
+                .withUri("/v1/{project_id}/security/permission-sets/{permission_set_id}/members/batch-create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("permission_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateSecurityPermissionSetMembersRequest::getPermissionSetId,
+                BatchCreateSecurityPermissionSetMembersRequest::setPermissionSetId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateSecurityPermissionSetMembersRequest::getWorkspace,
+                BatchCreateSecurityPermissionSetMembersRequest::setWorkspace));
+        builder.<PermissionSetMemberBatchCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PermissionSetMemberBatchCreateDTO.class),
+            f -> f.withMarshaller(BatchCreateSecurityPermissionSetMembersRequest::getBody,
+                BatchCreateSecurityPermissionSetMembersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateSecurityPermissionSetPermissionsRequest, BatchCreateSecurityPermissionSetPermissionsResponse> batchCreateSecurityPermissionSetPermissions =
+        genForBatchCreateSecurityPermissionSetPermissions();
+
+    private static HttpRequestDef<BatchCreateSecurityPermissionSetPermissionsRequest, BatchCreateSecurityPermissionSetPermissionsResponse> genForBatchCreateSecurityPermissionSetPermissions() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateSecurityPermissionSetPermissionsRequest, BatchCreateSecurityPermissionSetPermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateSecurityPermissionSetPermissionsRequest.class,
+                    BatchCreateSecurityPermissionSetPermissionsResponse.class)
+                .withName("BatchCreateSecurityPermissionSetPermissions")
+                .withUri("/v1/{project_id}/security/permission-sets/{permission_set_id}/permissions/batch-append")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("permission_set_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateSecurityPermissionSetPermissionsRequest::getPermissionSetId,
+                BatchCreateSecurityPermissionSetPermissionsRequest::setPermissionSetId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateSecurityPermissionSetPermissionsRequest::getWorkspace,
+                BatchCreateSecurityPermissionSetPermissionsRequest::setWorkspace));
+        builder.<PermissionSetPermissionCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PermissionSetPermissionCreateDTO.class),
+            f -> f.withMarshaller(BatchCreateSecurityPermissionSetPermissionsRequest::getBody,
+                BatchCreateSecurityPermissionSetPermissionsRequest::setBody));
 
         // response
 
@@ -1561,6 +1721,41 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CompareDesignVersionsRequest, CompareDesignVersionsResponse> compareDesignVersions =
+        genForCompareDesignVersions();
+
+    private static HttpRequestDef<CompareDesignVersionsRequest, CompareDesignVersionsResponse> genForCompareDesignVersions() {
+        // basic
+        HttpRequestDef.Builder<CompareDesignVersionsRequest, CompareDesignVersionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CompareDesignVersionsRequest.class, CompareDesignVersionsResponse.class)
+            .withName("CompareDesignVersions")
+            .withUri("/v1/{project_id}/design/versions/compare")
+            .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("ids",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(CompareDesignVersionsRequest::getIds, CompareDesignVersionsRequest::setIds));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CompareDesignVersionsRequest::getWorkspace,
+                CompareDesignVersionsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CompareDesignVersionsRequest::getXProjectId,
+                CompareDesignVersionsRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ConfirmApprovalsRequest, ConfirmApprovalsResponse> confirmApprovals =
         genForConfirmApprovals();
 
@@ -2019,6 +2214,121 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AtomicIndexVO.class),
             f -> f.withMarshaller(CreateDesignAtomicIndexRequest::getBody, CreateDesignAtomicIndexRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDesignCompoundMetricRequest, CreateDesignCompoundMetricResponse> createDesignCompoundMetric =
+        genForCreateDesignCompoundMetric();
+
+    private static HttpRequestDef<CreateDesignCompoundMetricRequest, CreateDesignCompoundMetricResponse> genForCreateDesignCompoundMetric() {
+        // basic
+        HttpRequestDef.Builder<CreateDesignCompoundMetricRequest, CreateDesignCompoundMetricResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDesignCompoundMetricRequest.class,
+                    CreateDesignCompoundMetricResponse.class)
+                .withName("CreateDesignCompoundMetric")
+                .withUri("/v2/{project_id}/design/compound-metrics")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDesignCompoundMetricRequest::getWorkspace,
+                CreateDesignCompoundMetricRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDesignCompoundMetricRequest::getXProjectId,
+                CreateDesignCompoundMetricRequest::setXProjectId));
+        builder.<CompoundMetricVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CompoundMetricVO.class),
+            f -> f.withMarshaller(CreateDesignCompoundMetricRequest::getBody,
+                CreateDesignCompoundMetricRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDesignDerivativeIndexRequest, CreateDesignDerivativeIndexResponse> createDesignDerivativeIndex =
+        genForCreateDesignDerivativeIndex();
+
+    private static HttpRequestDef<CreateDesignDerivativeIndexRequest, CreateDesignDerivativeIndexResponse> genForCreateDesignDerivativeIndex() {
+        // basic
+        HttpRequestDef.Builder<CreateDesignDerivativeIndexRequest, CreateDesignDerivativeIndexResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateDesignDerivativeIndexRequest.class,
+                    CreateDesignDerivativeIndexResponse.class)
+                .withName("CreateDesignDerivativeIndex")
+                .withUri("/v2/{project_id}/design/derivative-indexs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDesignDerivativeIndexRequest::getWorkspace,
+                CreateDesignDerivativeIndexRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDesignDerivativeIndexRequest::getXProjectId,
+                CreateDesignDerivativeIndexRequest::setXProjectId));
+        builder.<List<DerivativeIndexVO>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(CreateDesignDerivativeIndexRequest::getBody,
+                    CreateDesignDerivativeIndexRequest::setBody)
+                .withInnerContainerType(DerivativeIndexVO.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDesignDimensionRequest, CreateDesignDimensionResponse> createDesignDimension =
+        genForCreateDesignDimension();
+
+    private static HttpRequestDef<CreateDesignDimensionRequest, CreateDesignDimensionResponse> genForCreateDesignDimension() {
+        // basic
+        HttpRequestDef.Builder<CreateDesignDimensionRequest, CreateDesignDimensionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateDesignDimensionRequest.class, CreateDesignDimensionResponse.class)
+            .withName("CreateDesignDimension")
+            .withUri("/v2/{project_id}/design/dimensions")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDesignDimensionRequest::getWorkspace,
+                CreateDesignDimensionRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDesignDimensionRequest::getXProjectId,
+                CreateDesignDimensionRequest::setXProjectId));
+        builder.<DimensionVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DimensionVO.class),
+            f -> f.withMarshaller(CreateDesignDimensionRequest::getBody, CreateDesignDimensionRequest::setBody));
 
         // response
 
@@ -3212,6 +3522,197 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(IdsParam.class),
             f -> f.withMarshaller(DeleteDesignAtomicIndexRequest::getBody, DeleteDesignAtomicIndexRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDesignCompoundMetricRequest, DeleteDesignCompoundMetricResponse> deleteDesignCompoundMetric =
+        genForDeleteDesignCompoundMetric();
+
+    private static HttpRequestDef<DeleteDesignCompoundMetricRequest, DeleteDesignCompoundMetricResponse> genForDeleteDesignCompoundMetric() {
+        // basic
+        HttpRequestDef.Builder<DeleteDesignCompoundMetricRequest, DeleteDesignCompoundMetricResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDesignCompoundMetricRequest.class,
+                    DeleteDesignCompoundMetricResponse.class)
+                .withName("DeleteDesignCompoundMetric")
+                .withUri("/v2/{project_id}/design/compound-metrics")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignCompoundMetricRequest::getWorkspace,
+                DeleteDesignCompoundMetricRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignCompoundMetricRequest::getXProjectId,
+                DeleteDesignCompoundMetricRequest::setXProjectId));
+        builder.<IdsParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IdsParam.class),
+            f -> f.withMarshaller(DeleteDesignCompoundMetricRequest::getBody,
+                DeleteDesignCompoundMetricRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDesignDerivativeIndexRequest, DeleteDesignDerivativeIndexResponse> deleteDesignDerivativeIndex =
+        genForDeleteDesignDerivativeIndex();
+
+    private static HttpRequestDef<DeleteDesignDerivativeIndexRequest, DeleteDesignDerivativeIndexResponse> genForDeleteDesignDerivativeIndex() {
+        // basic
+        HttpRequestDef.Builder<DeleteDesignDerivativeIndexRequest, DeleteDesignDerivativeIndexResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDesignDerivativeIndexRequest.class,
+                    DeleteDesignDerivativeIndexResponse.class)
+                .withName("DeleteDesignDerivativeIndex")
+                .withUri("/v2/{project_id}/design/derivative-indexs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignDerivativeIndexRequest::getWorkspace,
+                DeleteDesignDerivativeIndexRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignDerivativeIndexRequest::getXProjectId,
+                DeleteDesignDerivativeIndexRequest::setXProjectId));
+        builder.<IdsParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IdsParam.class),
+            f -> f.withMarshaller(DeleteDesignDerivativeIndexRequest::getBody,
+                DeleteDesignDerivativeIndexRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDesignDimensionRequest, DeleteDesignDimensionResponse> deleteDesignDimension =
+        genForDeleteDesignDimension();
+
+    private static HttpRequestDef<DeleteDesignDimensionRequest, DeleteDesignDimensionResponse> genForDeleteDesignDimension() {
+        // basic
+        HttpRequestDef.Builder<DeleteDesignDimensionRequest, DeleteDesignDimensionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteDesignDimensionRequest.class, DeleteDesignDimensionResponse.class)
+            .withName("DeleteDesignDimension")
+            .withUri("/v2/{project_id}/design/dimensions")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignDimensionRequest::getWorkspace,
+                DeleteDesignDimensionRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignDimensionRequest::getXProjectId,
+                DeleteDesignDimensionRequest::setXProjectId));
+        builder.<IdsParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IdsParam.class),
+            f -> f.withMarshaller(DeleteDesignDimensionRequest::getBody, DeleteDesignDimensionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDesignDimensionLogicTableRequest, DeleteDesignDimensionLogicTableResponse> deleteDesignDimensionLogicTable =
+        genForDeleteDesignDimensionLogicTable();
+
+    private static HttpRequestDef<DeleteDesignDimensionLogicTableRequest, DeleteDesignDimensionLogicTableResponse> genForDeleteDesignDimensionLogicTable() {
+        // basic
+        HttpRequestDef.Builder<DeleteDesignDimensionLogicTableRequest, DeleteDesignDimensionLogicTableResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDesignDimensionLogicTableRequest.class,
+                    DeleteDesignDimensionLogicTableResponse.class)
+                .withName("DeleteDesignDimensionLogicTable")
+                .withUri("/v2/{project_id}/design/dimension-logic-tables")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignDimensionLogicTableRequest::getWorkspace,
+                DeleteDesignDimensionLogicTableRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignDimensionLogicTableRequest::getXProjectId,
+                DeleteDesignDimensionLogicTableRequest::setXProjectId));
+        builder.<IdsParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IdsParam.class),
+            f -> f.withMarshaller(DeleteDesignDimensionLogicTableRequest::getBody,
+                DeleteDesignDimensionLogicTableRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDesignFactLogicTableRequest, DeleteDesignFactLogicTableResponse> deleteDesignFactLogicTable =
+        genForDeleteDesignFactLogicTable();
+
+    private static HttpRequestDef<DeleteDesignFactLogicTableRequest, DeleteDesignFactLogicTableResponse> genForDeleteDesignFactLogicTable() {
+        // basic
+        HttpRequestDef.Builder<DeleteDesignFactLogicTableRequest, DeleteDesignFactLogicTableResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDesignFactLogicTableRequest.class,
+                    DeleteDesignFactLogicTableResponse.class)
+                .withName("DeleteDesignFactLogicTable")
+                .withUri("/v2/{project_id}/design/fact-logic-tables")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignFactLogicTableRequest::getWorkspace,
+                DeleteDesignFactLogicTableRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDesignFactLogicTableRequest::getXProjectId,
+                DeleteDesignFactLogicTableRequest::setXProjectId));
+        builder.<IdsParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(IdsParam.class),
+            f -> f.withMarshaller(DeleteDesignFactLogicTableRequest::getBody,
+                DeleteDesignFactLogicTableRequest::setBody));
 
         // response
 
@@ -10801,6 +11302,63 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDesignOperationResultRequest, ShowDesignOperationResultResponse> showDesignOperationResult =
+        genForShowDesignOperationResult();
+
+    private static HttpRequestDef<ShowDesignOperationResultRequest, ShowDesignOperationResultResponse> genForShowDesignOperationResult() {
+        // basic
+        HttpRequestDef.Builder<ShowDesignOperationResultRequest, ShowDesignOperationResultResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDesignOperationResultRequest.class,
+                    ShowDesignOperationResultResponse.class)
+                .withName("ShowDesignOperationResult")
+                .withUri("/v1/{project_id}/design/operation-results")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowDesignOperationResultRequest.OperationTypeEnum>withRequestField("operation_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowDesignOperationResultRequest.OperationTypeEnum.class),
+            f -> f.withMarshaller(ShowDesignOperationResultRequest::getOperationType,
+                ShowDesignOperationResultRequest::setOperationType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowDesignOperationResultRequest::getLimit,
+                ShowDesignOperationResultRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowDesignOperationResultRequest::getOffset,
+                ShowDesignOperationResultRequest::setOffset));
+        builder.<String>withRequestField("operation_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDesignOperationResultRequest::getOperationId,
+                ShowDesignOperationResultRequest::setOperationId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDesignOperationResultRequest::getWorkspace,
+                ShowDesignOperationResultRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDesignOperationResultRequest::getXProjectId,
+                ShowDesignOperationResultRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDimensionByIdRequest, ShowDimensionByIdResponse> showDimensionById =
         genForShowDimensionById();
 
@@ -12532,6 +13090,119 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AtomicIndexVO.class),
             f -> f.withMarshaller(UpdateDesignAtomicIndexRequest::getBody, UpdateDesignAtomicIndexRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDesignCompoundMetricRequest, UpdateDesignCompoundMetricResponse> updateDesignCompoundMetric =
+        genForUpdateDesignCompoundMetric();
+
+    private static HttpRequestDef<UpdateDesignCompoundMetricRequest, UpdateDesignCompoundMetricResponse> genForUpdateDesignCompoundMetric() {
+        // basic
+        HttpRequestDef.Builder<UpdateDesignCompoundMetricRequest, UpdateDesignCompoundMetricResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDesignCompoundMetricRequest.class,
+                    UpdateDesignCompoundMetricResponse.class)
+                .withName("UpdateDesignCompoundMetric")
+                .withUri("/v2/{project_id}/design/compound-metrics")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignCompoundMetricRequest::getWorkspace,
+                UpdateDesignCompoundMetricRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignCompoundMetricRequest::getXProjectId,
+                UpdateDesignCompoundMetricRequest::setXProjectId));
+        builder.<CompoundMetricVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CompoundMetricVO.class),
+            f -> f.withMarshaller(UpdateDesignCompoundMetricRequest::getBody,
+                UpdateDesignCompoundMetricRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDesignDerivativeIndexRequest, UpdateDesignDerivativeIndexResponse> updateDesignDerivativeIndex =
+        genForUpdateDesignDerivativeIndex();
+
+    private static HttpRequestDef<UpdateDesignDerivativeIndexRequest, UpdateDesignDerivativeIndexResponse> genForUpdateDesignDerivativeIndex() {
+        // basic
+        HttpRequestDef.Builder<UpdateDesignDerivativeIndexRequest, UpdateDesignDerivativeIndexResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDesignDerivativeIndexRequest.class,
+                    UpdateDesignDerivativeIndexResponse.class)
+                .withName("UpdateDesignDerivativeIndex")
+                .withUri("/v2/{project_id}/design/derivative-indexs")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignDerivativeIndexRequest::getWorkspace,
+                UpdateDesignDerivativeIndexRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignDerivativeIndexRequest::getXProjectId,
+                UpdateDesignDerivativeIndexRequest::setXProjectId));
+        builder.<DerivativeIndexVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DerivativeIndexVO.class),
+            f -> f.withMarshaller(UpdateDesignDerivativeIndexRequest::getBody,
+                UpdateDesignDerivativeIndexRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDesignDimensionRequest, UpdateDesignDimensionResponse> updateDesignDimension =
+        genForUpdateDesignDimension();
+
+    private static HttpRequestDef<UpdateDesignDimensionRequest, UpdateDesignDimensionResponse> genForUpdateDesignDimension() {
+        // basic
+        HttpRequestDef.Builder<UpdateDesignDimensionRequest, UpdateDesignDimensionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDesignDimensionRequest.class, UpdateDesignDimensionResponse.class)
+            .withName("UpdateDesignDimension")
+            .withUri("/v2/{project_id}/design/dimensions")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignDimensionRequest::getWorkspace,
+                UpdateDesignDimensionRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignDimensionRequest::getXProjectId,
+                UpdateDesignDimensionRequest::setXProjectId));
+        builder.<DimensionVO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DimensionVO.class),
+            f -> f.withMarshaller(UpdateDesignDimensionRequest::getBody, UpdateDesignDimensionRequest::setBody));
 
         // response
 

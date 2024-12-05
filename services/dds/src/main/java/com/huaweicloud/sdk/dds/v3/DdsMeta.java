@@ -3108,6 +3108,12 @@ public class DdsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceConfigurationModifyHistoryRequest::getInstanceId,
                 ShowInstanceConfigurationModifyHistoryRequest::setInstanceId));
+        builder.<String>withRequestField("entity_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceConfigurationModifyHistoryRequest::getEntityId,
+                ShowInstanceConfigurationModifyHistoryRequest::setEntityId));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

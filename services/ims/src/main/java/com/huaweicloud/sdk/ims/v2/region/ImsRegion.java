@@ -78,6 +78,9 @@ public class ImsRegion {
 
     public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://ims.ru-moscow-1.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://ims.ap-southeast-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("IMS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -113,6 +116,7 @@ public class ImsRegion {
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("af-north-1", AF_NORTH_1);
         map.put("ru-moscow-1", RU_MOSCOW_1);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
         return Collections.unmodifiableMap(map);
     }
 

@@ -335,6 +335,11 @@ public class PermissionSetPermissionCreateDTO {
 
     private String url;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_sync")
+
+    private Boolean autoSync;
+
     public PermissionSetPermissionCreateDTO withDwId(String dwId) {
         this.dwId = dwId;
         return this;
@@ -573,6 +578,23 @@ public class PermissionSetPermissionCreateDTO {
         this.url = url;
     }
 
+    public PermissionSetPermissionCreateDTO withAutoSync(Boolean autoSync) {
+        this.autoSync = autoSync;
+        return this;
+    }
+
+    /**
+     * 是否自动触发同步, 默认false
+     * @return autoSync
+     */
+    public Boolean getAutoSync() {
+        return autoSync;
+    }
+
+    public void setAutoSync(Boolean autoSync) {
+        this.autoSync = autoSync;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -589,7 +611,8 @@ public class PermissionSetPermissionCreateDTO {
             && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.schemaName, that.schemaName)
             && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.tableName, that.tableName)
             && Objects.equals(this.columnName, that.columnName)
-            && Objects.equals(this.rowLevelSecurity, that.rowLevelSecurity) && Objects.equals(this.url, that.url);
+            && Objects.equals(this.rowLevelSecurity, that.rowLevelSecurity) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.autoSync, that.autoSync);
     }
 
     @Override
@@ -606,7 +629,8 @@ public class PermissionSetPermissionCreateDTO {
             tableName,
             columnName,
             rowLevelSecurity,
-            url);
+            url,
+            autoSync);
     }
 
     @Override
@@ -626,6 +650,7 @@ public class PermissionSetPermissionCreateDTO {
         sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
         sb.append("    rowLevelSecurity: ").append(toIndentedString(rowLevelSecurity)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    autoSync: ").append(toIndentedString(autoSync)).append("\n");
         sb.append("}");
         return sb.toString();
     }

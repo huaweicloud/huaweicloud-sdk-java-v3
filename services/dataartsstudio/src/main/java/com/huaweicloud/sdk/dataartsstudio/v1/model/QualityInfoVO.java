@@ -97,7 +97,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 编码ID，填写String类型替代Long类型。
+     * 编码ID，ID字符串。
      * @return id
      */
     public String getId() {
@@ -114,7 +114,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 表ID，只读，填写String类型替代Long类型。
+     * 表ID，只读，ID字符串。
      * @return tableId
      */
     public String getTableId() {
@@ -131,7 +131,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 属性ID，只读，填写String类型替代Long类型。
+     * 属性ID，只读，ID字符串。
      * @return attrId
      */
     public String getAttrId() {
@@ -165,7 +165,7 @@ public class QualityInfoVO {
     }
 
     /**
-     * 质量ID，填写String类型替代Long类型。
+     * 质量ID，ID字符串。
      * @return dataQualityId
      */
     public String getDataQualityId() {

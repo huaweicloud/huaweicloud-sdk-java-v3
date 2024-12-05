@@ -268,7 +268,7 @@ public class AllTableVO {
     }
 
     /**
-     * l1的ID，填写String类型替代Long类型。
+     * l1的ID，ID字符串。
      * @return id
      */
     public String getId() {
@@ -710,7 +710,7 @@ public class AllTableVO {
     }
 
     /**
-     * 主题域分组ID，只读，填写String类型替代Long类型。
+     * 主题域分组ID，只读，ID字符串。
      * @return l1Id
      */
     public String getL1Id() {
@@ -744,7 +744,7 @@ public class AllTableVO {
     }
 
     /**
-     * 业务对象ID，只读，填写String类型替代Long类型。
+     * 业务对象ID，只读，ID字符串。
      * @return l3Id
      */
     public String getL3Id() {
@@ -957,7 +957,7 @@ public class AllTableVO {
     }
 
     /**
-     * 标准数量，只读，填写String类型替代Long类型。
+     * 标准数量，只读，ID字符串。
      * @return standardCount
      */
     public String getStandardCount() {
@@ -1042,7 +1042,7 @@ public class AllTableVO {
     }
 
     /**
-     * 开发环境版本，填写String类型替代Long类型。
+     * 开发环境版本，ID字符串。
      * @return devVersion
      */
     public String getDevVersion() {
@@ -1059,7 +1059,7 @@ public class AllTableVO {
     }
 
     /**
-     * 生产环境版本，填写String类型替代Long类型。
+     * 生产环境版本，ID字符串。
      * @return prodVersion
      */
     public String getProdVersion() {

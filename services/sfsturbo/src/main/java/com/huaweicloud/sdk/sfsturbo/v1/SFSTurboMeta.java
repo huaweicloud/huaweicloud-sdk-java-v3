@@ -74,6 +74,9 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ListPermRulesRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListPermRulesResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesByTagRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesByTagRequestBody;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesByTagResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.OnePermRuleRequestInfo;
@@ -976,6 +979,34 @@ public class SFSTurboMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSharesByTagRequest, ListSharesByTagResponse> listSharesByTag =
+        genForListSharesByTag();
+
+    private static HttpRequestDef<ListSharesByTagRequest, ListSharesByTagResponse> genForListSharesByTag() {
+        // basic
+        HttpRequestDef.Builder<ListSharesByTagRequest, ListSharesByTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListSharesByTagRequest.class, ListSharesByTagResponse.class)
+                .withName("ListSharesByTag")
+                .withUri("/v1/{project_id}/sfs-turbo/resource_instances/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ListSharesByTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListSharesByTagRequestBody.class),
+            f -> f.withMarshaller(ListSharesByTagRequest::getBody, ListSharesByTagRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSharesByTagResponse::getXRequestId, ListSharesByTagResponse::setXRequestId));
         return builder.build();
     }
 

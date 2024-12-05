@@ -79,7 +79,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * 码表字段ID，填写String类型替代Long类型。
+     * 码表字段ID，ID字符串。
      * @return id
      */
     public String getId() {
@@ -96,7 +96,7 @@ public class CodeTableFieldVO {
     }
 
     /**
-     * 所属码表ID，填写String类型替代Long类型。
+     * 所属码表ID，ID字符串。
      * @return codeTableId
      */
     public String getCodeTableId() {

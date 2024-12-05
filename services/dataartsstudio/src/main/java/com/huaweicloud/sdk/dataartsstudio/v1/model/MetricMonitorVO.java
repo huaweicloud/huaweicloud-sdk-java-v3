@@ -64,7 +64,7 @@ public class MetricMonitorVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -97,7 +97,7 @@ public class MetricMonitorVO {
     }
 
     /**
-     * 其他指标ID，填写String类型替代Long类型。
+     * 其他指标ID，ID字符串。
      * @return otherMetricIds
      */
     public List<String> getOtherMetricIds() {
@@ -230,7 +230,7 @@ public class MetricMonitorVO {
     }
 
     /**
-     * 挂载指ID，填写String类型替代Long类型。
+     * 挂载指ID，ID字符串。
      * @return metricId
      */
     public String getMetricId() {

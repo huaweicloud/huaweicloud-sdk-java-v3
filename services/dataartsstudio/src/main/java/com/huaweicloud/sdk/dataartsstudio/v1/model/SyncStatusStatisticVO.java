@@ -36,7 +36,7 @@ public class SyncStatusStatisticVO {
     }
 
     /**
-     * 成功数，填写String类型替代Long类型。
+     * 成功数，ID字符串。
      * @return success
      */
     public String getSuccess() {
@@ -53,7 +53,7 @@ public class SyncStatusStatisticVO {
     }
 
     /**
-     * 失败数，填写String类型替代Long类型。
+     * 失败数，ID字符串。
      * @return failed
      */
     public String getFailed() {
@@ -70,7 +70,7 @@ public class SyncStatusStatisticVO {
     }
 
     /**
-     * 同步中，填写String类型替代Long类型。
+     * 同步中，ID字符串。
      * @return running
      */
     public String getRunning() {
@@ -87,7 +87,7 @@ public class SyncStatusStatisticVO {
     }
 
     /**
-     * 未同步数，填写String类型替代Long类型。
+     * 未同步数，ID字符串。
      * @return other
      */
     public String getOther() {

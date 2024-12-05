@@ -170,7 +170,7 @@ public class CommonConditionVO {
     }
 
     /**
-     * 引用函数ID，填写String类型替代Long类型。
+     * 引用函数ID，ID字符串。
      * @return calFnIds
      */
     public List<String> getCalFnIds() {
@@ -204,7 +204,7 @@ public class CommonConditionVO {
     }
 
     /**
-     * 通用限定ID，只读，填写String类型替代Long类型。
+     * 通用限定ID，只读，ID字符串。
      * @return id
      */
     public String getId() {

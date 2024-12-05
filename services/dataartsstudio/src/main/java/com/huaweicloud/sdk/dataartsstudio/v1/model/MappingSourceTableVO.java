@@ -136,7 +136,7 @@ public class MappingSourceTableVO {
     }
 
     /**
-     * 表1ID，填写String类型替代Long类型。
+     * 表1ID，ID字符串。
      * @return table1Id
      */
     public String getTable1Id() {
@@ -153,7 +153,7 @@ public class MappingSourceTableVO {
     }
 
     /**
-     * 表2ID，填写String类型替代Long类型。
+     * 表2ID，ID字符串。
      * @return table2Id
      */
     public String getTable2Id() {

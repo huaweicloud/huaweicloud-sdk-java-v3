@@ -68,6 +68,11 @@ public class ShowDataconnectionResponse extends SdkResponse {
     private String dwCatagory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_type")
 
     private Integer updateType;
@@ -263,6 +268,23 @@ public class ShowDataconnectionResponse extends SdkResponse {
         this.dwCatagory = dwCatagory;
     }
 
+    public ShowDataconnectionResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 连接描述信息
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public ShowDataconnectionResponse withUpdateType(Integer updateType) {
         this.updateType = updateType;
         return this;
@@ -296,7 +318,8 @@ public class ShowDataconnectionResponse extends SdkResponse {
             && Objects.equals(this.agentName, that.agentName) && Objects.equals(this.envType, that.envType)
             && Objects.equals(this.qualifiedName, that.qualifiedName) && Objects.equals(this.dwId, that.dwId)
             && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.dwCatagory, that.dwCatagory) && Objects.equals(this.updateType, that.updateType);
+            && Objects.equals(this.dwCatagory, that.dwCatagory) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.updateType, that.updateType);
     }
 
     @Override
@@ -312,6 +335,7 @@ public class ShowDataconnectionResponse extends SdkResponse {
             createUser,
             createTime,
             dwCatagory,
+            description,
             updateType);
     }
 
@@ -330,6 +354,7 @@ public class ShowDataconnectionResponse extends SdkResponse {
         sb.append("    createUser: ").append(toIndentedString(createUser)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    dwCatagory: ").append(toIndentedString(dwCatagory)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    updateType: ").append(toIndentedString(updateType)).append("\n");
         sb.append("}");
         return sb.toString();

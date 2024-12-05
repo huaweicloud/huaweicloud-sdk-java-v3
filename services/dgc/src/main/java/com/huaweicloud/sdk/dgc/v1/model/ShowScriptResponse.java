@@ -24,6 +24,11 @@ public class ShowScriptResponse extends SdkResponse {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
     /**
      * 脚本类型： - FlinkSQL - DLISQL - SparkSQL - HiveSQL - DWSSQL - RDSSQL - Shell - PRESTO - ClickHouseSQL - HetuEngineSQL - PYTHON - ImpalaSQL - SparkPython
      */
@@ -297,7 +302,7 @@ public class ShowScriptResponse extends SdkResponse {
     }
 
     /**
-     * Get name
+     * 脚本名称。
      * @return name
      */
     public String getName() {
@@ -306,6 +311,23 @@ public class ShowScriptResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ShowScriptResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 脚本ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public ShowScriptResponse withType(TypeEnum type) {
@@ -536,10 +558,10 @@ public class ShowScriptResponse extends SdkResponse {
             return false;
         }
         ShowScriptResponse that = (ShowScriptResponse) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.directory, that.directory) && Objects.equals(this.content, that.content)
-            && Objects.equals(this.connectionName, that.connectionName) && Objects.equals(this.database, that.database)
-            && Objects.equals(this.queueName, that.queueName)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.directory, that.directory)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.connectionName, that.connectionName)
+            && Objects.equals(this.database, that.database) && Objects.equals(this.queueName, that.queueName)
             && Objects.equals(this._configuration, that._configuration)
             && Objects.equals(this.description, that.description) && Objects.equals(this.owner, that.owner)
             && Objects.equals(this.targetStatus, that.targetStatus) && Objects.equals(this.approvers, that.approvers);
@@ -548,6 +570,7 @@ public class ShowScriptResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(name,
+            id,
             type,
             directory,
             content,
@@ -566,6 +589,7 @@ public class ShowScriptResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowScriptResponse {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    directory: ").append(toIndentedString(directory)).append("\n");
         sb.append("    content: ").append(toIndentedString(content)).append("\n");

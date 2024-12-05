@@ -127,7 +127,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 审批单ID，填写String类型替代Long类型。
+     * 审批单ID，ID字符串。
      * @return id
      */
     public String getId() {
@@ -195,7 +195,7 @@ public class ApprovalVO {
     }
 
     /**
-     * 业务ID，填写String类型替代Long类型。
+     * 业务ID，ID字符串。
      * @return bizId
      */
     public String getBizId() {

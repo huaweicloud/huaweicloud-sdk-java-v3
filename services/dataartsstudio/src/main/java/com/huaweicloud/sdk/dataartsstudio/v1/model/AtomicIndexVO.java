@@ -140,7 +140,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -258,7 +258,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 引用函数ID，填写String类型替代Long类型。
+     * 引用函数ID，ID字符串。
      * @return calFnIds
      */
     public List<String> getCalFnIds() {
@@ -275,7 +275,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 主题域分组ID，只读，填写String类型替代Long类型。
+     * 主题域分组ID，只读，ID字符串。
      * @return l1Id
      */
     public String getL1Id() {
@@ -309,7 +309,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 业务对象guid，填写String类型替代Long类型。
+     * 业务对象guid，ID字符串。
      * @return l3Id
      */
     public String getL3Id() {
@@ -326,7 +326,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 事实表ID，填写String类型替代Long类型。
+     * 事实表ID，ID字符串。
      * @return tableId
      */
     public String getTableId() {
@@ -393,7 +393,7 @@ public class AtomicIndexVO {
     }
 
     /**
-     * 字段ID信息，填写String类型替代Long类型。
+     * 字段ID信息，ID字符串。
      * @return fieldIds
      */
     public List<String> getFieldIds() {

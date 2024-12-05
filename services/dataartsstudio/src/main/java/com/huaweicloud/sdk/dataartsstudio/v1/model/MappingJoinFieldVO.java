@@ -36,7 +36,7 @@ public class MappingJoinFieldVO {
     }
 
     /**
-     * 属性1ID，填写String类型替代Long类型。
+     * 属性1ID，ID字符串。
      * @return field1Id
      */
     public String getField1Id() {
@@ -53,7 +53,7 @@ public class MappingJoinFieldVO {
     }
 
     /**
-     * 属性2ID，填写String类型替代Long类型。
+     * 属性2ID，ID字符串。
      * @return field2Id
      */
     public String getField2Id() {

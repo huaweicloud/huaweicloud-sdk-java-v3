@@ -57,6 +57,8 @@ import com.huaweicloud.sdk.sfsturbo.v1.model.ListPermRulesRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListPermRulesResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharedTagsResponse;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesByTagRequest;
+import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesByTagResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesRequest;
 import com.huaweicloud.sdk.sfsturbo.v1.model.ListSharesResponse;
 import com.huaweicloud.sdk.sfsturbo.v1.model.SetHpcCacheBackendRequest;
@@ -944,6 +946,35 @@ public class SFSTurboAsyncClient {
      */
     public AsyncInvoker<ListSharesRequest, ListSharesResponse> listSharesAsyncInvoker(ListSharesRequest request) {
         return new AsyncInvoker<>(request, SFSTurboMeta.listShares, hcClient);
+    }
+
+    /**
+     * 通过标签查询文件系统列表
+     *
+     * 通过标签查询文件系统列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSharesByTagRequest 请求对象
+     * @return CompletableFuture<ListSharesByTagResponse>
+     */
+    public CompletableFuture<ListSharesByTagResponse> listSharesByTagAsync(ListSharesByTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, SFSTurboMeta.listSharesByTag);
+    }
+
+    /**
+     * 通过标签查询文件系统列表
+     *
+     * 通过标签查询文件系统列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSharesByTagRequest 请求对象
+     * @return AsyncInvoker<ListSharesByTagRequest, ListSharesByTagResponse>
+     */
+    public AsyncInvoker<ListSharesByTagRequest, ListSharesByTagResponse> listSharesByTagAsyncInvoker(
+        ListSharesByTagRequest request) {
+        return new AsyncInvoker<>(request, SFSTurboMeta.listSharesByTag, hcClient);
     }
 
     /**

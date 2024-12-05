@@ -62,11 +62,6 @@ public class KeystoneUserResult {
     private String pwdStrength;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extra")
-
-    private KeystoneUserResultExtra extra;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_mode")
 
     private String accessMode;
@@ -250,32 +245,6 @@ public class KeystoneUserResult {
         this.pwdStrength = pwdStrength;
     }
 
-    public KeystoneUserResult withExtra(KeystoneUserResultExtra extra) {
-        this.extra = extra;
-        return this;
-    }
-
-    public KeystoneUserResult withExtra(Consumer<KeystoneUserResultExtra> extraSetter) {
-        if (this.extra == null) {
-            this.extra = new KeystoneUserResultExtra();
-            extraSetter.accept(this.extra);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get extra
-     * @return extra
-     */
-    public KeystoneUserResultExtra getExtra() {
-        return extra;
-    }
-
-    public void setExtra(KeystoneUserResultExtra extra) {
-        this.extra = extra;
-    }
-
     public KeystoneUserResult withAccessMode(String accessMode) {
         this.accessMode = accessMode;
         return this;
@@ -307,8 +276,7 @@ public class KeystoneUserResult {
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt) && Objects.equals(this.links, that.links)
             && Objects.equals(this.id, that.id) && Objects.equals(this.enabled, that.enabled)
-            && Objects.equals(this.pwdStrength, that.pwdStrength) && Objects.equals(this.extra, that.extra)
-            && Objects.equals(this.accessMode, that.accessMode);
+            && Objects.equals(this.pwdStrength, that.pwdStrength) && Objects.equals(this.accessMode, that.accessMode);
     }
 
     @Override
@@ -323,7 +291,6 @@ public class KeystoneUserResult {
             id,
             enabled,
             pwdStrength,
-            extra,
             accessMode);
     }
 
@@ -341,7 +308,6 @@ public class KeystoneUserResult {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    pwdStrength: ").append(toIndentedString(pwdStrength)).append("\n");
-        sb.append("    extra: ").append(toIndentedString(extra)).append("\n");
         sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
         sb.append("}");
         return sb.toString();

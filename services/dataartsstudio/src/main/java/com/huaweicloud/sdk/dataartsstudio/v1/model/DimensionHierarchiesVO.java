@@ -55,7 +55,7 @@ public class DimensionHierarchiesVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {

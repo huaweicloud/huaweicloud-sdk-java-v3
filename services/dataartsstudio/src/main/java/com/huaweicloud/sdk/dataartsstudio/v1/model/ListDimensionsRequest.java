@@ -373,7 +373,7 @@ public class ListDimensionsRequest {
     }
 
     /**
-     * 主题域l2的ID，填写String类型替代Long类型。
+     * 主题域l2的ID，ID字符串。
      * @return l2Id
      */
     public String getL2Id() {
@@ -406,7 +406,7 @@ public class ListDimensionsRequest {
     }
 
     /**
-     * 依据复合指标ID列表查维度，填写String类型替代Long类型。
+     * 依据复合指标ID列表查维度，ID字符串。
      * @return derivativeIds
      */
     public List<String> getDerivativeIds() {
@@ -457,7 +457,7 @@ public class ListDimensionsRequest {
     }
 
     /**
-     * 事实表ID，填写String类型替代Long类型。
+     * 事实表ID，ID字符串。
      * @return factLogicId
      */
     public String getFactLogicId() {

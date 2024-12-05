@@ -69,7 +69,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 编码。更新时必填，创建时可以为空，填写String类型替代Long类型。
+     * 编码。更新时必填，创建时可以为空，ID字符串。
      * @return id
      */
     public String getId() {
@@ -205,7 +205,7 @@ public class SubjectParamsVO {
     }
 
     /**
-     * 上层主题ID，首层则为空，填写String类型替代Long类型。
+     * 上层主题ID，首层则为空，ID字符串。
      * @return parentId
      */
     public String getParentId() {

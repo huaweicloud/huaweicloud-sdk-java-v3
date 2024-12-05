@@ -257,7 +257,7 @@ public class SearchCodeTablesRequest {
     }
 
     /**
-     * 目录ID，填写String类型替代Long类型。
+     * 目录ID，ID字符串。
      * @return directoryId
      */
     public String getDirectoryId() {

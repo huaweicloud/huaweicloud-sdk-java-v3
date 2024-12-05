@@ -490,7 +490,7 @@ public class TableModelVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -507,7 +507,7 @@ public class TableModelVO {
     }
 
     /**
-     * 所属关系建模的模型ID，填写String类型替代Long类型。
+     * 所属关系建模的模型ID，ID字符串。
      * @return modelId
      */
     public String getModelId() {
@@ -524,7 +524,7 @@ public class TableModelVO {
     }
 
     /**
-     * 父表ID，填写String类型替代Long类型。
+     * 父表ID，ID字符串。
      * @return parentTableId
      */
     public String getParentTableId() {
@@ -575,7 +575,7 @@ public class TableModelVO {
     }
 
     /**
-     * 关联逻辑实体的ID，填写String类型替代Long类型。
+     * 关联逻辑实体的ID，ID字符串。
      * @return relatedLogicTableId
      */
     public String getRelatedLogicTableId() {
@@ -609,7 +609,7 @@ public class TableModelVO {
     }
 
     /**
-     * 关联逻辑实体的模型ID，填写String类型替代Long类型。
+     * 关联逻辑实体的模型ID，ID字符串。
      * @return relatedLogicTableModelId
      */
     public String getRelatedLogicTableModelId() {
@@ -975,7 +975,7 @@ public class TableModelVO {
     }
 
     /**
-     * 逻辑实体的ID，填写String类型替代Long类型。
+     * 逻辑实体的ID，ID字符串。
      * @return logicTbId
      */
     public String getLogicTbId() {
@@ -992,7 +992,7 @@ public class TableModelVO {
     }
 
     /**
-     * 归属的业务分类的id，填写String类型替代Long类型。
+     * 归属的业务分类的id，ID字符串。
      * @return bizCatalogId
      */
     public String getBizCatalogId() {
@@ -1363,7 +1363,7 @@ public class TableModelVO {
     }
 
     /**
-     * 主题域分组ID，只读，填写String类型替代Long类型。
+     * 主题域分组ID，只读，ID字符串。
      * @return l1Id
      */
     public String getL1Id() {
@@ -1397,7 +1397,7 @@ public class TableModelVO {
     }
 
     /**
-     * 业务对象ID，只读，填写String类型替代Long类型。
+     * 业务对象ID，只读，ID字符串。
      * @return l3Id
      */
     public String getL3Id() {
@@ -1567,7 +1567,7 @@ public class TableModelVO {
     }
 
     /**
-     * 质量ID，填写String类型替代Long类型。
+     * 质量ID，ID字符串。
      * @return qualityId
      */
     public String getQualityId() {
@@ -1754,7 +1754,7 @@ public class TableModelVO {
     }
 
     /**
-     * 开发环境版本，填写String类型替代Long类型。
+     * 开发环境版本，ID字符串。
      * @return devVersion
      */
     public String getDevVersion() {
@@ -1771,7 +1771,7 @@ public class TableModelVO {
     }
 
     /**
-     * 生产环境版本，填写String类型替代Long类型。
+     * 生产环境版本，ID字符串。
      * @return prodVersion
      */
     public String getProdVersion() {

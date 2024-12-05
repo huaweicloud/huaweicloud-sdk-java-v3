@@ -114,7 +114,7 @@ public class IdsParam {
     }
 
     /**
-     * ID列表，填写String类型替代Long类型。
+     * ID列表，ID字符串。
      * @return ids
      */
     public List<String> getIds() {

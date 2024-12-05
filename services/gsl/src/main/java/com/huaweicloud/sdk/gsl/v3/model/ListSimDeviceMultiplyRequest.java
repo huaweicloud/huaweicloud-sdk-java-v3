@@ -26,6 +26,11 @@ public class ListSimDeviceMultiplyRequest {
     private Long simCardId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private Long orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
     private Integer version;
@@ -91,6 +96,23 @@ public class ListSimDeviceMultiplyRequest {
 
     public void setSimCardId(Long simCardId) {
         this.simCardId = simCardId;
+    }
+
+    public ListSimDeviceMultiplyRequest withOrderId(Long orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 批次号
+     * @return orderId
+     */
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
     public ListSimDeviceMultiplyRequest withVersion(Integer version) {
@@ -160,13 +182,14 @@ public class ListSimDeviceMultiplyRequest {
         }
         ListSimDeviceMultiplyRequest that = (ListSimDeviceMultiplyRequest) obj;
         return Objects.equals(this.cid, that.cid) && Objects.equals(this.onlineCarrier, that.onlineCarrier)
-            && Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.version, that.version)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cid, onlineCarrier, simCardId, version, limit, offset);
+        return Objects.hash(cid, onlineCarrier, simCardId, orderId, version, limit, offset);
     }
 
     @Override
@@ -176,6 +199,7 @@ public class ListSimDeviceMultiplyRequest {
         sb.append("    cid: ").append(toIndentedString(cid)).append("\n");
         sb.append("    onlineCarrier: ").append(toIndentedString(onlineCarrier)).append("\n");
         sb.append("    simCardId: ").append(toIndentedString(simCardId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

@@ -16,6 +16,11 @@ public class ShowInstanceConfigurationModifyHistoryRequest {
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "entity_id")
+
+    private String entityId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -40,6 +45,23 @@ public class ShowInstanceConfigurationModifyHistoryRequest {
 
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
+    }
+
+    public ShowInstanceConfigurationModifyHistoryRequest withEntityId(String entityId) {
+        this.entityId = entityId;
+        return this;
+    }
+
+    /**
+     * 实例ID或组ID或节点ID。可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。
+     * @return entityId
+     */
+    public String getEntityId() {
+        return entityId;
+    }
+
+    public void setEntityId(String entityId) {
+        this.entityId = entityId;
     }
 
     public ShowInstanceConfigurationModifyHistoryRequest withOffset(Integer offset) {
@@ -85,13 +107,13 @@ public class ShowInstanceConfigurationModifyHistoryRequest {
             return false;
         }
         ShowInstanceConfigurationModifyHistoryRequest that = (ShowInstanceConfigurationModifyHistoryRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.entityId, that.entityId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit);
+        return Objects.hash(instanceId, entityId, offset, limit);
     }
 
     @Override
@@ -99,6 +121,7 @@ public class ShowInstanceConfigurationModifyHistoryRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowInstanceConfigurationModifyHistoryRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    entityId: ").append(toIndentedString(entityId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

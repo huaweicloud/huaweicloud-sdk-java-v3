@@ -87,7 +87,7 @@ public class Environment {
     }
 
     /**
-     * 数据源产品所在区域，具体取值范围查看华为云地区和终端节点定义。
+     * 数据源产品所在区域。
      * @return regionId
      */
     public String getRegionId() {

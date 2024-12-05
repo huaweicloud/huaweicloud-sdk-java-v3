@@ -162,7 +162,7 @@ public class ListTableModelRelationsRequest {
     }
 
     /**
-     * 所属关系建模的模型ID，填写String类型替代Long类型。
+     * 所属关系建模的模型ID，ID字符串。
      * @return modelId
      */
     public String getModelId() {
@@ -179,7 +179,7 @@ public class ListTableModelRelationsRequest {
     }
 
     /**
-     * 表模型ids，填写String类型替代Long类型。
+     * 表模型ids，ID字符串。
      * @return tableIds
      */
     public String getTableIds() {

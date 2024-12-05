@@ -1018,6 +1018,11 @@ public class GslMeta {
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListSimDeviceMultiplyRequest::getSimCardId,
                 ListSimDeviceMultiplyRequest::setSimCardId));
+        builder.<Long>withRequestField("order_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSimDeviceMultiplyRequest::getOrderId, ListSimDeviceMultiplyRequest::setOrderId));
         builder.<Integer>withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

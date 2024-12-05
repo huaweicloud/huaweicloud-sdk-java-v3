@@ -138,7 +138,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 维度ID，填写String类型替代Long类型。
+     * 维度ID，ID字符串。
      * @return dimensionId
      */
     public String getDimensionId() {
@@ -155,7 +155,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 维度层级ID，填写String类型替代Long类型。
+     * 维度层级ID，ID字符串。
      * @return hierarchiesId
      */
     public String getHierarchiesId() {
@@ -324,7 +324,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 主题域分组ID，只读，填写String类型替代Long类型。
+     * 主题域分组ID，只读，ID字符串。
      * @return l1Id
      */
     public String getL1Id() {
@@ -358,7 +358,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 业务对象ID，只读，填写String类型替代Long类型。
+     * 业务对象ID，只读，ID字符串。
      * @return l3Id
      */
     public String getL3Id() {
@@ -392,7 +392,7 @@ public class DerivativeIndexDimensionVO {
     }
 
     /**
-     * 层级的ID，只读，填写String类型替代Long类型。
+     * 层级的ID，只读，ID字符串。
      * @return id
      */
     public String getId() {

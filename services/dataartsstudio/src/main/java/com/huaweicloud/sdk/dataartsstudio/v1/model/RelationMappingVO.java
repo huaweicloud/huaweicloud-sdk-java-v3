@@ -67,7 +67,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -84,7 +84,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 关系ID，填写String类型替代Long类型。
+     * 关系ID，ID字符串。
      * @return relationId
      */
     public String getRelationId() {
@@ -101,7 +101,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 源字段ID，填写String类型替代Long类型。
+     * 源字段ID，ID字符串。
      * @return sourceFieldId
      */
     public String getSourceFieldId() {
@@ -118,7 +118,7 @@ public class RelationMappingVO {
     }
 
     /**
-     * 目标字段ID，填写String类型替代Long类型。
+     * 目标字段ID，ID字符串。
      * @return targetFieldId
      */
     public String getTargetFieldId() {

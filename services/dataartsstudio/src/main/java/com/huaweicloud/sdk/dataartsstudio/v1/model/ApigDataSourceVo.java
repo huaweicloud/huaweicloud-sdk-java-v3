@@ -45,6 +45,16 @@ public class ApigDataSourceVo {
 
     private Integer supportService;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dw_category")
+
+    private String dwCategory;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public ApigDataSourceVo withDwName(String dwName) {
         this.dwName = dwName;
         return this;
@@ -168,6 +178,40 @@ public class ApigDataSourceVo {
         this.supportService = supportService;
     }
 
+    public ApigDataSourceVo withDwCategory(String dwCategory) {
+        this.dwCategory = dwCategory;
+        return this;
+    }
+
+    /**
+     * 标签信息
+     * @return dwCategory
+     */
+    public String getDwCategory() {
+        return dwCategory;
+    }
+
+    public void setDwCategory(String dwCategory) {
+        this.dwCategory = dwCategory;
+    }
+
+    public ApigDataSourceVo withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 连接描述信息
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,12 +224,14 @@ public class ApigDataSourceVo {
         return Objects.equals(this.dwName, that.dwName) && Objects.equals(this.dwType, that.dwType)
             && Objects.equals(this.dwConfig, that.dwConfig) && Objects.equals(this.agentId, that.agentId)
             && Objects.equals(this.agentName, that.agentName) && Objects.equals(this.envType, that.envType)
-            && Objects.equals(this.supportService, that.supportService);
+            && Objects.equals(this.supportService, that.supportService)
+            && Objects.equals(this.dwCategory, that.dwCategory) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dwName, dwType, dwConfig, agentId, agentName, envType, supportService);
+        return Objects
+            .hash(dwName, dwType, dwConfig, agentId, agentName, envType, supportService, dwCategory, description);
     }
 
     @Override
@@ -199,6 +245,8 @@ public class ApigDataSourceVo {
         sb.append("    agentName: ").append(toIndentedString(agentName)).append("\n");
         sb.append("    envType: ").append(toIndentedString(envType)).append("\n");
         sb.append("    supportService: ").append(toIndentedString(supportService)).append("\n");
+        sb.append("    dwCategory: ").append(toIndentedString(dwCategory)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -124,7 +124,7 @@ public class AggregationLogicTableAttributeVO {
     }
 
     /**
-     * 编码，填写String类型替代Long类型。
+     * 编码，ID字符串。
      * @return id
      */
     public String getId() {
@@ -141,7 +141,7 @@ public class AggregationLogicTableAttributeVO {
     }
 
     /**
-     * 所属汇总表ID，填写String类型替代Long类型。
+     * 所属汇总表ID，ID字符串。
      * @return aggregationLogicTableId
      */
     public String getAggregationLogicTableId() {
@@ -429,7 +429,7 @@ public class AggregationLogicTableAttributeVO {
     }
 
     /**
-     * 关联的数据标准的ID，填写String类型替代Long类型。
+     * 关联的数据标准的ID，ID字符串。
      * @return standRowId
      */
     public String getStandRowId() {

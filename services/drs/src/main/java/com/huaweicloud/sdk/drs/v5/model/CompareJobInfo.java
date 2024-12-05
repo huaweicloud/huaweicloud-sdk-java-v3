@@ -177,6 +177,11 @@ public class CompareJobInfo {
 
     private String errorMsg;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dynamic_compare_delay")
+
+    private Long dynamicCompareDelay;
+
     public CompareJobInfo withId(String id) {
         this.id = id;
         return this;
@@ -396,6 +401,25 @@ public class CompareJobInfo {
         this.errorMsg = errorMsg;
     }
 
+    public CompareJobInfo withDynamicCompareDelay(Long dynamicCompareDelay) {
+        this.dynamicCompareDelay = dynamicCompareDelay;
+        return this;
+    }
+
+    /**
+     * 动态比对时延。
+     * minimum: -1
+     * maximum: 9223372036854775807
+     * @return dynamicCompareDelay
+     */
+    public Long getDynamicCompareDelay() {
+        return dynamicCompareDelay;
+    }
+
+    public void setDynamicCompareDelay(Long dynamicCompareDelay) {
+        this.dynamicCompareDelay = dynamicCompareDelay;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -411,7 +435,8 @@ public class CompareJobInfo {
             && Objects.equals(this.exportStatus, that.exportStatus)
             && Objects.equals(this.reportRemainSeconds, that.reportRemainSeconds)
             && Objects.equals(this.compareJobTag, that.compareJobTag) && Objects.equals(this.options, that.options)
-            && Objects.equals(this.errorMsg, that.errorMsg);
+            && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.dynamicCompareDelay, that.dynamicCompareDelay);
     }
 
     @Override
@@ -426,7 +451,8 @@ public class CompareJobInfo {
             reportRemainSeconds,
             compareJobTag,
             options,
-            errorMsg);
+            errorMsg,
+            dynamicCompareDelay);
     }
 
     @Override
@@ -444,6 +470,7 @@ public class CompareJobInfo {
         sb.append("    compareJobTag: ").append(toIndentedString(compareJobTag)).append("\n");
         sb.append("    options: ").append(toIndentedString(options)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    dynamicCompareDelay: ").append(toIndentedString(dynamicCompareDelay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -8,13 +8,26 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.dc.v3.model.BatchCreateResourceTagsRequest;
 import com.huaweicloud.sdk.dc.v3.model.BatchCreateResourceTagsResponse;
 import com.huaweicloud.sdk.dc.v3.model.BatchOperateResourceTagsRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.BindGlobalEipsRequest;
+import com.huaweicloud.sdk.dc.v3.model.BindGlobalEipsResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreateBindingGeipRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.CreateConnectGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreateConnectGatewayRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.CreateConnectGatewayResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreateGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreateGlobalDcGatewayRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.CreateGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateHostedDirectConnectRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.CreateHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.CreatePeerLinkRequest;
+import com.huaweicloud.sdk.dc.v3.model.CreatePeerLinkRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.CreatePeerLinkResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.CreateResourceTagResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateSwitchoverTestRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.CreateUnbindingGeipRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.CreateVifPeerResponse;
@@ -24,10 +37,16 @@ import com.huaweicloud.sdk.dc.v3.model.CreateVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualInterfaceRequest;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualInterfaceRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.CreateVirtualInterfaceResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteConnectGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteConnectGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeleteGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeleteGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.DeletePeerLinkRequest;
+import com.huaweicloud.sdk.dc.v3.model.DeletePeerLinkResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteResourceTagResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVifPeerRequest;
@@ -36,12 +55,24 @@ import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualInterfaceRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualInterfaceResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListConnectGatewaysRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListConnectGatewaysResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListDirectConnectsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListDirectConnectsResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListGdgwRouteTablesRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListGdgwRouteTablesResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListGlobalDcGatewayResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListGlobalEipsRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListGlobalEipsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListHostedDirectConnectsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListHostedDirectConnectsResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListPeerLinksRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListPeerLinksResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListRmsGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListRmsGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesRequest;
@@ -51,26 +82,48 @@ import com.huaweicloud.sdk.dc.v3.model.ListVirtualGatewaysRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualGatewaysResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualInterfacesRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualInterfacesResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowConnectGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowConnectGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowPeerLinkRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowPeerLinkResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowRmsGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowRmsGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceResponse;
 import com.huaweicloud.sdk.dc.v3.model.SwitchoverTestRequest;
 import com.huaweicloud.sdk.dc.v3.model.SwitchoverTestResponse;
+import com.huaweicloud.sdk.dc.v3.model.UnbindGlobalEipsRequest;
+import com.huaweicloud.sdk.dc.v3.model.UnbindGlobalEipsResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateConnectGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateConnectGatewayRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.UpdateConnectGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.UpdateDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateGdgwRouteTableRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateGdgwRouteTableResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdateGdgwRoutetableRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.UpdateGlobalDcGatewayRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdateGlobalDcGatewayRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.UpdateGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateHostedDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateHostedDirectConnectRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.UpdateHostedDirectConnectResponse;
+import com.huaweicloud.sdk.dc.v3.model.UpdatePeerLinkRequest;
+import com.huaweicloud.sdk.dc.v3.model.UpdatePeerLinkRequestBody;
+import com.huaweicloud.sdk.dc.v3.model.UpdatePeerLinkResponse;
 import com.huaweicloud.sdk.dc.v3.model.UpdateVifPeerRequest;
 import com.huaweicloud.sdk.dc.v3.model.UpdateVifPeerRequestBody;
 import com.huaweicloud.sdk.dc.v3.model.UpdateVifPeerResponse;
@@ -85,6 +138,333 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class DcMeta {
+
+    public static final HttpRequestDef<BindGlobalEipsRequest, BindGlobalEipsResponse> bindGlobalEips =
+        genForBindGlobalEips();
+
+    private static HttpRequestDef<BindGlobalEipsRequest, BindGlobalEipsResponse> genForBindGlobalEips() {
+        // basic
+        HttpRequestDef.Builder<BindGlobalEipsRequest, BindGlobalEipsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BindGlobalEipsRequest.class, BindGlobalEipsResponse.class)
+                .withName("BindGlobalEips")
+                .withUri("/v3/{project_id}/dcaas/connect-gateways/{connect_gateway_id}/binding-global-eips")
+                .withContentType("application/json; charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("connect_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BindGlobalEipsRequest::getConnectGatewayId,
+                BindGlobalEipsRequest::setConnectGatewayId));
+        builder.<CreateBindingGeipRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateBindingGeipRequestBody.class),
+            f -> f.withMarshaller(BindGlobalEipsRequest::getBody, BindGlobalEipsRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BindGlobalEipsResponse::getXRequestId, BindGlobalEipsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGlobalEipsRequest, ListGlobalEipsResponse> listGlobalEips =
+        genForListGlobalEips();
+
+    private static HttpRequestDef<ListGlobalEipsRequest, ListGlobalEipsResponse> genForListGlobalEips() {
+        // basic
+        HttpRequestDef.Builder<ListGlobalEipsRequest, ListGlobalEipsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGlobalEipsRequest.class, ListGlobalEipsResponse.class)
+                .withName("ListGlobalEips")
+                .withUri("/v3/{project_id}/dcaas/connect-gateways/{connect_gateway_id}/binding-global-eips")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connect_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalEipsRequest::getConnectGatewayId,
+                ListGlobalEipsRequest::setConnectGatewayId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGlobalEipsRequest::getLimit, ListGlobalEipsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGlobalEipsRequest::getOffset, ListGlobalEipsRequest::setOffset));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalEipsRequest::getMarker, ListGlobalEipsRequest::setMarker));
+        builder.<Boolean>withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListGlobalEipsRequest::getPageReverse, ListGlobalEipsRequest::setPageReverse));
+        builder.<List<String>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalEipsRequest::getFields, ListGlobalEipsRequest::setFields));
+        builder.<List<String>>withRequestField("ext_fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalEipsRequest::getExtFields, ListGlobalEipsRequest::setExtFields));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalEipsRequest::getSortKey, ListGlobalEipsRequest::setSortKey));
+        builder.<List<ListGlobalEipsRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalEipsRequest::getSortDir, ListGlobalEipsRequest::setSortDir));
+        builder.<List<String>>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalEipsRequest::getStatus, ListGlobalEipsRequest::setStatus));
+        builder.<List<String>>withRequestField("global_eip_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalEipsRequest::getGlobalEipId, ListGlobalEipsRequest::setGlobalEipId));
+        builder.<List<String>>withRequestField("global_eip_segment_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalEipsRequest::getGlobalEipSegmentId,
+                ListGlobalEipsRequest::setGlobalEipSegmentId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListGlobalEipsResponse::getXRequestId, ListGlobalEipsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnbindGlobalEipsRequest, UnbindGlobalEipsResponse> unbindGlobalEips =
+        genForUnbindGlobalEips();
+
+    private static HttpRequestDef<UnbindGlobalEipsRequest, UnbindGlobalEipsResponse> genForUnbindGlobalEips() {
+        // basic
+        HttpRequestDef.Builder<UnbindGlobalEipsRequest, UnbindGlobalEipsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UnbindGlobalEipsRequest.class, UnbindGlobalEipsResponse.class)
+                .withName("UnbindGlobalEips")
+                .withUri("/v3/{project_id}/dcaas/connect-gateways/{connect_gateway_id}/unbinding-global-eips")
+                .withContentType("application/json; charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("connect_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnbindGlobalEipsRequest::getConnectGatewayId,
+                UnbindGlobalEipsRequest::setConnectGatewayId));
+        builder.<CreateUnbindingGeipRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateUnbindingGeipRequestBody.class),
+            f -> f.withMarshaller(UnbindGlobalEipsRequest::getBody, UnbindGlobalEipsRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UnbindGlobalEipsResponse::getXRequestId, UnbindGlobalEipsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateConnectGatewayRequest, CreateConnectGatewayResponse> createConnectGateway =
+        genForCreateConnectGateway();
+
+    private static HttpRequestDef<CreateConnectGatewayRequest, CreateConnectGatewayResponse> genForCreateConnectGateway() {
+        // basic
+        HttpRequestDef.Builder<CreateConnectGatewayRequest, CreateConnectGatewayResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateConnectGatewayRequest.class, CreateConnectGatewayResponse.class)
+            .withName("CreateConnectGateway")
+            .withUri("/v3/{project_id}/dcaas/connect-gateways")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateConnectGatewayRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateConnectGatewayRequestBody.class),
+            f -> f.withMarshaller(CreateConnectGatewayRequest::getBody, CreateConnectGatewayRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteConnectGatewayRequest, DeleteConnectGatewayResponse> deleteConnectGateway =
+        genForDeleteConnectGateway();
+
+    private static HttpRequestDef<DeleteConnectGatewayRequest, DeleteConnectGatewayResponse> genForDeleteConnectGateway() {
+        // basic
+        HttpRequestDef.Builder<DeleteConnectGatewayRequest, DeleteConnectGatewayResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteConnectGatewayRequest.class, DeleteConnectGatewayResponse.class)
+            .withName("DeleteConnectGateway")
+            .withUri("/v3/{project_id}/dcaas/connect-gateways/{connect_gateway_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connect_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteConnectGatewayRequest::getConnectGatewayId,
+                DeleteConnectGatewayRequest::setConnectGatewayId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConnectGatewaysRequest, ListConnectGatewaysResponse> listConnectGateways =
+        genForListConnectGateways();
+
+    private static HttpRequestDef<ListConnectGatewaysRequest, ListConnectGatewaysResponse> genForListConnectGateways() {
+        // basic
+        HttpRequestDef.Builder<ListConnectGatewaysRequest, ListConnectGatewaysResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConnectGatewaysRequest.class, ListConnectGatewaysResponse.class)
+                .withName("ListConnectGateways")
+                .withUri("/v3/{project_id}/dcaas/connect-gateways")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectGatewaysRequest::getLimit, ListConnectGatewaysRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectGatewaysRequest::getOffset, ListConnectGatewaysRequest::setOffset));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectGatewaysRequest::getMarker, ListConnectGatewaysRequest::setMarker));
+        builder.<Boolean>withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListConnectGatewaysRequest::getPageReverse,
+                ListConnectGatewaysRequest::setPageReverse));
+        builder.<List<String>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListConnectGatewaysRequest::getFields, ListConnectGatewaysRequest::setFields));
+        builder.<List<String>>withRequestField("ext_fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListConnectGatewaysRequest::getExtFields, ListConnectGatewaysRequest::setExtFields));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectGatewaysRequest::getSortKey, ListConnectGatewaysRequest::setSortKey));
+        builder.<List<ListConnectGatewaysRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListConnectGatewaysRequest::getSortDir, ListConnectGatewaysRequest::setSortDir));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListConnectGatewaysRequest::getId, ListConnectGatewaysRequest::setId));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListConnectGatewaysRequest::getName, ListConnectGatewaysRequest::setName));
+        builder.<List<String>>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListConnectGatewaysRequest::getStatus, ListConnectGatewaysRequest::setStatus));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowConnectGatewayRequest, ShowConnectGatewayResponse> showConnectGateway =
+        genForShowConnectGateway();
+
+    private static HttpRequestDef<ShowConnectGatewayRequest, ShowConnectGatewayResponse> genForShowConnectGateway() {
+        // basic
+        HttpRequestDef.Builder<ShowConnectGatewayRequest, ShowConnectGatewayResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowConnectGatewayRequest.class, ShowConnectGatewayResponse.class)
+                .withName("ShowConnectGateway")
+                .withUri("/v3/{project_id}/dcaas/connect-gateways/{connect_gateway_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connect_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowConnectGatewayRequest::getConnectGatewayId,
+                ShowConnectGatewayRequest::setConnectGatewayId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateConnectGatewayRequest, UpdateConnectGatewayResponse> updateConnectGateway =
+        genForUpdateConnectGateway();
+
+    private static HttpRequestDef<UpdateConnectGatewayRequest, UpdateConnectGatewayResponse> genForUpdateConnectGateway() {
+        // basic
+        HttpRequestDef.Builder<UpdateConnectGatewayRequest, UpdateConnectGatewayResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateConnectGatewayRequest.class, UpdateConnectGatewayResponse.class)
+            .withName("UpdateConnectGateway")
+            .withUri("/v3/{project_id}/dcaas/connect-gateways/{connect_gateway_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("connect_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateConnectGatewayRequest::getConnectGatewayId,
+                UpdateConnectGatewayRequest::setConnectGatewayId));
+        builder.<UpdateConnectGatewayRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateConnectGatewayRequestBody.class),
+            f -> f.withMarshaller(UpdateConnectGatewayRequest::getBody, UpdateConnectGatewayRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateHostedDirectConnectRequest, CreateHostedDirectConnectResponse> createHostedDirectConnect =
         genForCreateHostedDirectConnect();
@@ -440,6 +820,742 @@ public class DcMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGdgwRouteTablesRequest, ListGdgwRouteTablesResponse> listGdgwRouteTables =
+        genForListGdgwRouteTables();
+
+    private static HttpRequestDef<ListGdgwRouteTablesRequest, ListGdgwRouteTablesResponse> genForListGdgwRouteTables() {
+        // basic
+        HttpRequestDef.Builder<ListGdgwRouteTablesRequest, ListGdgwRouteTablesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGdgwRouteTablesRequest.class, ListGdgwRouteTablesResponse.class)
+                .withName("ListGdgwRouteTables")
+                .withUri("/v3/{project_id}/dcaas/gdgw/{gdgw_id}/routetables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("gdgw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGdgwRouteTablesRequest::getGdgwId, ListGdgwRouteTablesRequest::setGdgwId));
+        builder.<List<String>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGdgwRouteTablesRequest::getFields, ListGdgwRouteTablesRequest::setFields));
+        builder.<List<String>>withRequestField("ext_fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGdgwRouteTablesRequest::getExtFields, ListGdgwRouteTablesRequest::setExtFields));
+        builder.<List<String>>withRequestField("nexthop",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGdgwRouteTablesRequest::getNexthop, ListGdgwRouteTablesRequest::setNexthop));
+        builder.<List<String>>withRequestField("destination",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGdgwRouteTablesRequest::getDestination,
+                ListGdgwRouteTablesRequest::setDestination));
+        builder.<List<ListGdgwRouteTablesRequest.AddressFamilyEnum>>withRequestField("address_family",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGdgwRouteTablesRequest::getAddressFamily,
+                ListGdgwRouteTablesRequest::setAddressFamily));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListGdgwRouteTablesResponse::getXRequestId,
+                ListGdgwRouteTablesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateGdgwRouteTableRequest, UpdateGdgwRouteTableResponse> updateGdgwRouteTable =
+        genForUpdateGdgwRouteTable();
+
+    private static HttpRequestDef<UpdateGdgwRouteTableRequest, UpdateGdgwRouteTableResponse> genForUpdateGdgwRouteTable() {
+        // basic
+        HttpRequestDef.Builder<UpdateGdgwRouteTableRequest, UpdateGdgwRouteTableResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateGdgwRouteTableRequest.class, UpdateGdgwRouteTableResponse.class)
+            .withName("UpdateGdgwRouteTable")
+            .withUri("/v3/{project_id}/dcaas/gdgw/{gdgw_id}/routetables")
+            .withContentType("application/json; charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("gdgw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGdgwRouteTableRequest::getGdgwId, UpdateGdgwRouteTableRequest::setGdgwId));
+        builder.<UpdateGdgwRoutetableRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateGdgwRoutetableRequestBody.class),
+            f -> f.withMarshaller(UpdateGdgwRouteTableRequest::getBody, UpdateGdgwRouteTableRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateGdgwRouteTableResponse::getXRequestId,
+                UpdateGdgwRouteTableResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateGlobalDcGatewayRequest, CreateGlobalDcGatewayResponse> createGlobalDcGateway =
+        genForCreateGlobalDcGateway();
+
+    private static HttpRequestDef<CreateGlobalDcGatewayRequest, CreateGlobalDcGatewayResponse> genForCreateGlobalDcGateway() {
+        // basic
+        HttpRequestDef.Builder<CreateGlobalDcGatewayRequest, CreateGlobalDcGatewayResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateGlobalDcGatewayRequest.class, CreateGlobalDcGatewayResponse.class)
+            .withName("CreateGlobalDcGateway")
+            .withUri("/v3/{project_id}/dcaas/global-dc-gateways")
+            .withContentType("application/json; charset=utf-8");
+
+        // requests
+        builder.<CreateGlobalDcGatewayRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateGlobalDcGatewayRequestBody.class),
+            f -> f.withMarshaller(CreateGlobalDcGatewayRequest::getBody, CreateGlobalDcGatewayRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateGlobalDcGatewayResponse::getXRequestId,
+                CreateGlobalDcGatewayResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePeerLinkRequest, CreatePeerLinkResponse> createPeerLink =
+        genForCreatePeerLink();
+
+    private static HttpRequestDef<CreatePeerLinkRequest, CreatePeerLinkResponse> genForCreatePeerLink() {
+        // basic
+        HttpRequestDef.Builder<CreatePeerLinkRequest, CreatePeerLinkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePeerLinkRequest.class, CreatePeerLinkResponse.class)
+                .withName("CreatePeerLink")
+                .withUri("/v3/{project_id}/dcaas/global-dc-gateways/{global_dc_gateway_id}/peer-links")
+                .withContentType("application/json; charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("global_dc_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePeerLinkRequest::getGlobalDcGatewayId,
+                CreatePeerLinkRequest::setGlobalDcGatewayId));
+        builder.<CreatePeerLinkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePeerLinkRequestBody.class),
+            f -> f.withMarshaller(CreatePeerLinkRequest::getBody, CreatePeerLinkRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreatePeerLinkResponse::getXRequestId, CreatePeerLinkResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteGlobalDcGatewayRequest, DeleteGlobalDcGatewayResponse> deleteGlobalDcGateway =
+        genForDeleteGlobalDcGateway();
+
+    private static HttpRequestDef<DeleteGlobalDcGatewayRequest, DeleteGlobalDcGatewayResponse> genForDeleteGlobalDcGateway() {
+        // basic
+        HttpRequestDef.Builder<DeleteGlobalDcGatewayRequest, DeleteGlobalDcGatewayResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteGlobalDcGatewayRequest.class, DeleteGlobalDcGatewayResponse.class)
+            .withName("DeleteGlobalDcGateway")
+            .withUri("/v3/{project_id}/dcaas/global-dc-gateways/{global_dc_gateway_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("global_dc_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGlobalDcGatewayRequest::getGlobalDcGatewayId,
+                DeleteGlobalDcGatewayRequest::setGlobalDcGatewayId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteGlobalDcGatewayResponse::getXRequestId,
+                DeleteGlobalDcGatewayResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePeerLinkRequest, DeletePeerLinkResponse> deletePeerLink =
+        genForDeletePeerLink();
+
+    private static HttpRequestDef<DeletePeerLinkRequest, DeletePeerLinkResponse> genForDeletePeerLink() {
+        // basic
+        HttpRequestDef.Builder<DeletePeerLinkRequest, DeletePeerLinkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePeerLinkRequest.class, DeletePeerLinkResponse.class)
+                .withName("DeletePeerLink")
+                .withUri("/v3/{project_id}/dcaas/global-dc-gateways/{global_dc_gateway_id}/peer-links/{peer_link_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("global_dc_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePeerLinkRequest::getGlobalDcGatewayId,
+                DeletePeerLinkRequest::setGlobalDcGatewayId));
+        builder.<String>withRequestField("peer_link_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePeerLinkRequest::getPeerLinkId, DeletePeerLinkRequest::setPeerLinkId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeletePeerLinkResponse::getXRequestId, DeletePeerLinkResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGlobalDcGatewayRequest, ListGlobalDcGatewayResponse> listGlobalDcGateway =
+        genForListGlobalDcGateway();
+
+    private static HttpRequestDef<ListGlobalDcGatewayRequest, ListGlobalDcGatewayResponse> genForListGlobalDcGateway() {
+        // basic
+        HttpRequestDef.Builder<ListGlobalDcGatewayRequest, ListGlobalDcGatewayResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGlobalDcGatewayRequest.class, ListGlobalDcGatewayResponse.class)
+                .withName("ListGlobalDcGateway")
+                .withUri("/v3/{project_id}/dcaas/global-dc-gateways")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGlobalDcGatewayRequest::getLimit, ListGlobalDcGatewayRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalDcGatewayRequest::getMarker, ListGlobalDcGatewayRequest::setMarker));
+        builder.<List<String>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalDcGatewayRequest::getFields, ListGlobalDcGatewayRequest::setFields));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGlobalDcGatewayRequest::getSortKey, ListGlobalDcGatewayRequest::setSortKey));
+        builder.<List<ListGlobalDcGatewayRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalDcGatewayRequest::getSortDir, ListGlobalDcGatewayRequest::setSortDir));
+        builder.<List<String>>withRequestField("hosting_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalDcGatewayRequest::getHostingId, ListGlobalDcGatewayRequest::setHostingId));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalDcGatewayRequest::getEnterpriseProjectId,
+                ListGlobalDcGatewayRequest::setEnterpriseProjectId));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalDcGatewayRequest::getId, ListGlobalDcGatewayRequest::setId));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalDcGatewayRequest::getName, ListGlobalDcGatewayRequest::setName));
+        builder.<List<String>>withRequestField("global_center_network_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalDcGatewayRequest::getGlobalCenterNetworkId,
+                ListGlobalDcGatewayRequest::setGlobalCenterNetworkId));
+        builder.<List<String>>withRequestField("site_network_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalDcGatewayRequest::getSiteNetworkId,
+                ListGlobalDcGatewayRequest::setSiteNetworkId));
+        builder.<List<String>>withRequestField("cloud_connection_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGlobalDcGatewayRequest::getCloudConnectionId,
+                ListGlobalDcGatewayRequest::setCloudConnectionId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListGlobalDcGatewayResponse::getXRequestId,
+                ListGlobalDcGatewayResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPeerLinksRequest, ListPeerLinksResponse> listPeerLinks =
+        genForListPeerLinks();
+
+    private static HttpRequestDef<ListPeerLinksRequest, ListPeerLinksResponse> genForListPeerLinks() {
+        // basic
+        HttpRequestDef.Builder<ListPeerLinksRequest, ListPeerLinksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPeerLinksRequest.class, ListPeerLinksResponse.class)
+                .withName("ListPeerLinks")
+                .withUri("/v3/{project_id}/dcaas/global-dc-gateways/{global_dc_gateway_id}/peer-links")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("global_dc_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPeerLinksRequest::getGlobalDcGatewayId,
+                ListPeerLinksRequest::setGlobalDcGatewayId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPeerLinksRequest::getLimit, ListPeerLinksRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPeerLinksRequest::getOffset, ListPeerLinksRequest::setOffset));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPeerLinksRequest::getMarker, ListPeerLinksRequest::setMarker));
+        builder.<Boolean>withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPeerLinksRequest::getPageReverse, ListPeerLinksRequest::setPageReverse));
+        builder.<List<String>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPeerLinksRequest::getFields, ListPeerLinksRequest::setFields));
+        builder.<List<String>>withRequestField("ext_fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPeerLinksRequest::getExtFields, ListPeerLinksRequest::setExtFields));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPeerLinksRequest::getSortKey, ListPeerLinksRequest::setSortKey));
+        builder.<List<ListPeerLinksRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPeerLinksRequest::getSortDir, ListPeerLinksRequest::setSortDir));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPeerLinksRequest::getId, ListPeerLinksRequest::setId));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPeerLinksRequest::getName, ListPeerLinksRequest::setName));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListPeerLinksResponse::getXRequestId, ListPeerLinksResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRmsGlobalDcGatewayRequest, ListRmsGlobalDcGatewayResponse> listRmsGlobalDcGateway =
+        genForListRmsGlobalDcGateway();
+
+    private static HttpRequestDef<ListRmsGlobalDcGatewayRequest, ListRmsGlobalDcGatewayResponse> genForListRmsGlobalDcGateway() {
+        // basic
+        HttpRequestDef.Builder<ListRmsGlobalDcGatewayRequest, ListRmsGlobalDcGatewayResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRmsGlobalDcGatewayRequest.class, ListRmsGlobalDcGatewayResponse.class)
+            .withName("ListRmsGlobalDcGateway")
+            .withUri("/v3/providers/{rp_name}/domains/{domain_id}/regions/{region_id}/{resource_type}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rp_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getRpName, ListRmsGlobalDcGatewayRequest::setRpName));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getDomainId,
+                ListRmsGlobalDcGatewayRequest::setDomainId));
+        builder.<String>withRequestField("region_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getRegionId,
+                ListRmsGlobalDcGatewayRequest::setRegionId));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getResourceType,
+                ListRmsGlobalDcGatewayRequest::setResourceType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getLimit, ListRmsGlobalDcGatewayRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getOffset, ListRmsGlobalDcGatewayRequest::setOffset));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getMarker, ListRmsGlobalDcGatewayRequest::setMarker));
+        builder.<Boolean>withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getPageReverse,
+                ListRmsGlobalDcGatewayRequest::setPageReverse));
+        builder.<List<String>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getFields, ListRmsGlobalDcGatewayRequest::setFields));
+        builder.<List<String>>withRequestField("ext_fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getExtFields,
+                ListRmsGlobalDcGatewayRequest::setExtFields));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getSortKey,
+                ListRmsGlobalDcGatewayRequest::setSortKey));
+        builder.<List<ListRmsGlobalDcGatewayRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getSortDir,
+                ListRmsGlobalDcGatewayRequest::setSortDir));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getId, ListRmsGlobalDcGatewayRequest::setId));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getName, ListRmsGlobalDcGatewayRequest::setName));
+        builder.<List<String>>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getStatus, ListRmsGlobalDcGatewayRequest::setStatus));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getEnterpriseProjectId,
+                ListRmsGlobalDcGatewayRequest::setEnterpriseProjectId));
+        builder.<List<String>>withRequestField("global_center_network_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getGlobalCenterNetworkId,
+                ListRmsGlobalDcGatewayRequest::setGlobalCenterNetworkId));
+        builder.<List<String>>withRequestField("site_network_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getSiteNetworkId,
+                ListRmsGlobalDcGatewayRequest::setSiteNetworkId));
+        builder.<List<String>>withRequestField("cloud_connection_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayRequest::getCloudConnectionId,
+                ListRmsGlobalDcGatewayRequest::setCloudConnectionId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListRmsGlobalDcGatewayResponse::getXRequestId,
+                ListRmsGlobalDcGatewayResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowGlobalDcGatewayRequest, ShowGlobalDcGatewayResponse> showGlobalDcGateway =
+        genForShowGlobalDcGateway();
+
+    private static HttpRequestDef<ShowGlobalDcGatewayRequest, ShowGlobalDcGatewayResponse> genForShowGlobalDcGateway() {
+        // basic
+        HttpRequestDef.Builder<ShowGlobalDcGatewayRequest, ShowGlobalDcGatewayResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowGlobalDcGatewayRequest.class, ShowGlobalDcGatewayResponse.class)
+                .withName("ShowGlobalDcGateway")
+                .withUri("/v3/{project_id}/dcaas/global-dc-gateways/{global_dc_gateway_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("global_dc_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGlobalDcGatewayRequest::getGlobalDcGatewayId,
+                ShowGlobalDcGatewayRequest::setGlobalDcGatewayId));
+        builder.<List<String>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowGlobalDcGatewayRequest::getFields, ShowGlobalDcGatewayRequest::setFields));
+        builder.<List<String>>withRequestField("ext_fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowGlobalDcGatewayRequest::getExtFields, ShowGlobalDcGatewayRequest::setExtFields));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowGlobalDcGatewayResponse::getXRequestId,
+                ShowGlobalDcGatewayResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPeerLinkRequest, ShowPeerLinkResponse> showPeerLink = genForShowPeerLink();
+
+    private static HttpRequestDef<ShowPeerLinkRequest, ShowPeerLinkResponse> genForShowPeerLink() {
+        // basic
+        HttpRequestDef.Builder<ShowPeerLinkRequest, ShowPeerLinkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPeerLinkRequest.class, ShowPeerLinkResponse.class)
+                .withName("ShowPeerLink")
+                .withUri("/v3/{project_id}/dcaas/global-dc-gateways/{global_dc_gateway_id}/peer-links/{peer_link_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("global_dc_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPeerLinkRequest::getGlobalDcGatewayId,
+                ShowPeerLinkRequest::setGlobalDcGatewayId));
+        builder.<String>withRequestField("peer_link_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPeerLinkRequest::getPeerLinkId, ShowPeerLinkRequest::setPeerLinkId));
+        builder.<List<String>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowPeerLinkRequest::getFields, ShowPeerLinkRequest::setFields));
+        builder.<List<String>>withRequestField("ext_fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowPeerLinkRequest::getExtFields, ShowPeerLinkRequest::setExtFields));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPeerLinkResponse::getXRequestId, ShowPeerLinkResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRmsGlobalDcGatewayRequest, ShowRmsGlobalDcGatewayResponse> showRmsGlobalDcGateway =
+        genForShowRmsGlobalDcGateway();
+
+    private static HttpRequestDef<ShowRmsGlobalDcGatewayRequest, ShowRmsGlobalDcGatewayResponse> genForShowRmsGlobalDcGateway() {
+        // basic
+        HttpRequestDef.Builder<ShowRmsGlobalDcGatewayRequest, ShowRmsGlobalDcGatewayResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowRmsGlobalDcGatewayRequest.class, ShowRmsGlobalDcGatewayResponse.class)
+            .withName("ShowRmsGlobalDcGateway")
+            .withUri(
+                "/v3/providers/{rp_name}/domains/{domain_id}/regions/{region_id}/{resource_type}/{global_dc_gateway_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("rp_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRmsGlobalDcGatewayRequest::getRpName, ShowRmsGlobalDcGatewayRequest::setRpName));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRmsGlobalDcGatewayRequest::getDomainId,
+                ShowRmsGlobalDcGatewayRequest::setDomainId));
+        builder.<String>withRequestField("region_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRmsGlobalDcGatewayRequest::getRegionId,
+                ShowRmsGlobalDcGatewayRequest::setRegionId));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRmsGlobalDcGatewayRequest::getResourceType,
+                ShowRmsGlobalDcGatewayRequest::setResourceType));
+        builder.<String>withRequestField("global_dc_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRmsGlobalDcGatewayRequest::getGlobalDcGatewayId,
+                ShowRmsGlobalDcGatewayRequest::setGlobalDcGatewayId));
+        builder.<List<String>>withRequestField("fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowRmsGlobalDcGatewayRequest::getFields, ShowRmsGlobalDcGatewayRequest::setFields));
+        builder.<List<String>>withRequestField("ext_fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ShowRmsGlobalDcGatewayRequest::getExtFields,
+                ShowRmsGlobalDcGatewayRequest::setExtFields));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowRmsGlobalDcGatewayResponse::getXRequestId,
+                ShowRmsGlobalDcGatewayResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateGlobalDcGatewayRequest, UpdateGlobalDcGatewayResponse> updateGlobalDcGateway =
+        genForUpdateGlobalDcGateway();
+
+    private static HttpRequestDef<UpdateGlobalDcGatewayRequest, UpdateGlobalDcGatewayResponse> genForUpdateGlobalDcGateway() {
+        // basic
+        HttpRequestDef.Builder<UpdateGlobalDcGatewayRequest, UpdateGlobalDcGatewayResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateGlobalDcGatewayRequest.class, UpdateGlobalDcGatewayResponse.class)
+            .withName("UpdateGlobalDcGateway")
+            .withUri("/v3/{project_id}/dcaas/global-dc-gateways/{global_dc_gateway_id}")
+            .withContentType("application/json; charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("global_dc_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGlobalDcGatewayRequest::getGlobalDcGatewayId,
+                UpdateGlobalDcGatewayRequest::setGlobalDcGatewayId));
+        builder.<UpdateGlobalDcGatewayRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateGlobalDcGatewayRequestBody.class),
+            f -> f.withMarshaller(UpdateGlobalDcGatewayRequest::getBody, UpdateGlobalDcGatewayRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateGlobalDcGatewayResponse::getXRequestId,
+                UpdateGlobalDcGatewayResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePeerLinkRequest, UpdatePeerLinkResponse> updatePeerLink =
+        genForUpdatePeerLink();
+
+    private static HttpRequestDef<UpdatePeerLinkRequest, UpdatePeerLinkResponse> genForUpdatePeerLink() {
+        // basic
+        HttpRequestDef.Builder<UpdatePeerLinkRequest, UpdatePeerLinkResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePeerLinkRequest.class, UpdatePeerLinkResponse.class)
+                .withName("UpdatePeerLink")
+                .withUri("/v3/{project_id}/dcaas/global-dc-gateways/{global_dc_gateway_id}/peer-links/{peer_link_id}")
+                .withContentType("application/json; charset=utf-8");
+
+        // requests
+        builder.<String>withRequestField("global_dc_gateway_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePeerLinkRequest::getGlobalDcGatewayId,
+                UpdatePeerLinkRequest::setGlobalDcGatewayId));
+        builder.<String>withRequestField("peer_link_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePeerLinkRequest::getPeerLinkId, UpdatePeerLinkRequest::setPeerLinkId));
+        builder.<UpdatePeerLinkRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePeerLinkRequestBody.class),
+            f -> f.withMarshaller(UpdatePeerLinkRequest::getBody, UpdatePeerLinkRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdatePeerLinkResponse::getXRequestId, UpdatePeerLinkResponse::setXRequestId));
         return builder.build();
     }
 

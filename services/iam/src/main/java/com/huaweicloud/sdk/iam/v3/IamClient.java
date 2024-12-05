@@ -117,6 +117,8 @@ import com.huaweicloud.sdk.iam.v3.model.KeystoneListEndpointsRequest;
 import com.huaweicloud.sdk.iam.v3.model.KeystoneListEndpointsResponse;
 import com.huaweicloud.sdk.iam.v3.model.KeystoneListFederationDomainsRequest;
 import com.huaweicloud.sdk.iam.v3.model.KeystoneListFederationDomainsResponse;
+import com.huaweicloud.sdk.iam.v3.model.KeystoneListFederationProjectsRequest;
+import com.huaweicloud.sdk.iam.v3.model.KeystoneListFederationProjectsResponse;
 import com.huaweicloud.sdk.iam.v3.model.KeystoneListGroupsForUserRequest;
 import com.huaweicloud.sdk.iam.v3.model.KeystoneListGroupsForUserResponse;
 import com.huaweicloud.sdk.iam.v3.model.KeystoneListGroupsRequest;
@@ -1870,6 +1872,42 @@ public class IamClient {
     public SyncInvoker<KeystoneListFederationDomainsRequest, KeystoneListFederationDomainsResponse> keystoneListFederationDomainsInvoker(
         KeystoneListFederationDomainsRequest request) {
         return new SyncInvoker<>(request, IamMeta.keystoneListFederationDomains, hcClient);
+    }
+
+    /**
+     * 查询联邦用户可以访问的项目列表
+     *
+     * 该接口可以用于查询联邦用户可以访问的项目列表。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * &gt; - 推荐使用[查询IAM用户可以访问的项目列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IAM&amp;api&#x3D;KeystoneListAccessibleProjectsToUser)，该接口可以返回相同的响应格式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request KeystoneListFederationProjectsRequest 请求对象
+     * @return KeystoneListFederationProjectsResponse
+     */
+    public KeystoneListFederationProjectsResponse keystoneListFederationProjects(
+        KeystoneListFederationProjectsRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.keystoneListFederationProjects);
+    }
+
+    /**
+     * 查询联邦用户可以访问的项目列表
+     *
+     * 该接口可以用于查询联邦用户可以访问的项目列表。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * &gt; - 推荐使用[查询IAM用户可以访问的项目列表](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product&#x3D;IAM&amp;api&#x3D;KeystoneListAccessibleProjectsToUser)，该接口可以返回相同的响应格式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request KeystoneListFederationProjectsRequest 请求对象
+     * @return SyncInvoker<KeystoneListFederationProjectsRequest, KeystoneListFederationProjectsResponse>
+     */
+    public SyncInvoker<KeystoneListFederationProjectsRequest, KeystoneListFederationProjectsResponse> keystoneListFederationProjectsInvoker(
+        KeystoneListFederationProjectsRequest request) {
+        return new SyncInvoker<>(request, IamMeta.keystoneListFederationProjects, hcClient);
     }
 
     /**

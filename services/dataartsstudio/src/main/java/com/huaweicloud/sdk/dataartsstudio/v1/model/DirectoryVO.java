@@ -132,7 +132,7 @@ public class DirectoryVO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from_public")
 
-    private String fromPublic;
+    private Boolean fromPublic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -300,7 +300,7 @@ public class DirectoryVO {
         this.qualifiedName = qualifiedName;
     }
 
-    public DirectoryVO withFromPublic(String fromPublic) {
+    public DirectoryVO withFromPublic(Boolean fromPublic) {
         this.fromPublic = fromPublic;
         return this;
     }
@@ -309,11 +309,11 @@ public class DirectoryVO {
      * 是否来自公共层，只读。
      * @return fromPublic
      */
-    public String getFromPublic() {
+    public Boolean getFromPublic() {
         return fromPublic;
     }
 
-    public void setFromPublic(String fromPublic) {
+    public void setFromPublic(Boolean fromPublic) {
         this.fromPublic = fromPublic;
     }
 
@@ -391,7 +391,7 @@ public class DirectoryVO {
     }
 
     /**
-     * 关联的主题ID，填写String类型替代Long类型。
+     * 关联的主题ID，ID字符串。
      * @return refId
      */
     public String getRefId() {
