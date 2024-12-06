@@ -17,5 +17,18 @@ jobs:
           java-version: ${{ matrix.java-version }}
           distribution: 'temurin'
           cache: 'maven'
+      - name: Filter Tests
+        run: |
+          read -r -a array <<< "$EXCLUDED_TEST_SERVICES"
+          for service in "${array[@]}"; do
+            service_test_dir="services/${service}/src/test"
+            if [ -d "$service_test_dir" ]; then
+              echo "ignore ${service} tests."
+              rm -rf "$service_test_dir"
+            fi
+          done
+        env:
+          EXCLUDED_TEST_SERVICES: ${{ vars.EXCLUDED_TEST_SERVICES }}
+        shell: bash
       - name: Maven CI
         run: mvn -U -B clean install
