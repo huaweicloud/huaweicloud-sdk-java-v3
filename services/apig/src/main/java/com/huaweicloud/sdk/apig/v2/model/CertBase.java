@@ -149,6 +149,87 @@ public class CertBase {
 
     private Boolean isHasTrustedRootCa;
 
+    /**
+     * 证书算法类型： - RSA - ECC - SM2
+     */
+    public static final class AlgorithmTypeEnum {
+
+        /**
+         * Enum RSA for value: "RSA"
+         */
+        public static final AlgorithmTypeEnum RSA = new AlgorithmTypeEnum("RSA");
+
+        /**
+         * Enum ECC for value: "ECC"
+         */
+        public static final AlgorithmTypeEnum ECC = new AlgorithmTypeEnum("ECC");
+
+        /**
+         * Enum SM2 for value: "SM2"
+         */
+        public static final AlgorithmTypeEnum SM2 = new AlgorithmTypeEnum("SM2");
+
+        private static final Map<String, AlgorithmTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AlgorithmTypeEnum> createStaticFields() {
+            Map<String, AlgorithmTypeEnum> map = new HashMap<>();
+            map.put("RSA", RSA);
+            map.put("ECC", ECC);
+            map.put("SM2", SM2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AlgorithmTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AlgorithmTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AlgorithmTypeEnum(value));
+        }
+
+        public static AlgorithmTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AlgorithmTypeEnum) {
+                return this.value.equals(((AlgorithmTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "algorithm_type")
+
+    private AlgorithmTypeEnum algorithmType;
+
     public CertBase withId(String id) {
         this.id = id;
         return this;
@@ -369,6 +450,23 @@ public class CertBase {
         this.isHasTrustedRootCa = isHasTrustedRootCa;
     }
 
+    public CertBase withAlgorithmType(AlgorithmTypeEnum algorithmType) {
+        this.algorithmType = algorithmType;
+        return this;
+    }
+
+    /**
+     * 证书算法类型： - RSA - ECC - SM2
+     * @return algorithmType
+     */
+    public AlgorithmTypeEnum getAlgorithmType() {
+        return algorithmType;
+    }
+
+    public void setAlgorithmType(AlgorithmTypeEnum algorithmType) {
+        this.algorithmType = algorithmType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -384,7 +482,8 @@ public class CertBase {
             && Objects.equals(this.san, that.san) && Objects.equals(this.notAfter, that.notAfter)
             && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.isHasTrustedRootCa, that.isHasTrustedRootCa);
+            && Objects.equals(this.isHasTrustedRootCa, that.isHasTrustedRootCa)
+            && Objects.equals(this.algorithmType, that.algorithmType);
     }
 
     @Override
@@ -400,7 +499,8 @@ public class CertBase {
             signatureAlgorithm,
             createTime,
             updateTime,
-            isHasTrustedRootCa);
+            isHasTrustedRootCa,
+            algorithmType);
     }
 
     @Override
@@ -419,6 +519,7 @@ public class CertBase {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    isHasTrustedRootCa: ").append(toIndentedString(isHasTrustedRootCa)).append("\n");
+        sb.append("    algorithmType: ").append(toIndentedString(algorithmType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListRdsDatabasesRequest {
 
     /**
-     * 数据库类型 - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - MARIADB - GAUSSDBOPENGAUSS
+     * 数据库类型 - MYSQL - POSTGRESQL - SQLSERVER - TAURUS - DWS - MARIADB - GAUSSDBOPENGAUSS
      */
     public static final class DbTypeEnum {
 
@@ -24,11 +24,6 @@ public class ListRdsDatabasesRequest {
          * Enum MYSQL for value: "MYSQL"
          */
         public static final DbTypeEnum MYSQL = new DbTypeEnum("MYSQL");
-
-        /**
-         * Enum ORACLE for value: "ORACLE"
-         */
-        public static final DbTypeEnum ORACLE = new DbTypeEnum("ORACLE");
 
         /**
          * Enum POSTGRESQL for value: "POSTGRESQL"
@@ -41,11 +36,6 @@ public class ListRdsDatabasesRequest {
         public static final DbTypeEnum SQLSERVER = new DbTypeEnum("SQLSERVER");
 
         /**
-         * Enum DAMENG for value: "DAMENG"
-         */
-        public static final DbTypeEnum DAMENG = new DbTypeEnum("DAMENG");
-
-        /**
          * Enum TAURUS for value: "TAURUS"
          */
         public static final DbTypeEnum TAURUS = new DbTypeEnum("TAURUS");
@@ -54,11 +44,6 @@ public class ListRdsDatabasesRequest {
          * Enum DWS for value: "DWS"
          */
         public static final DbTypeEnum DWS = new DbTypeEnum("DWS");
-
-        /**
-         * Enum KINGBASE for value: "KINGBASE"
-         */
-        public static final DbTypeEnum KINGBASE = new DbTypeEnum("KINGBASE");
 
         /**
          * Enum MARIADB for value: "MARIADB"
@@ -75,13 +60,10 @@ public class ListRdsDatabasesRequest {
         private static Map<String, DbTypeEnum> createStaticFields() {
             Map<String, DbTypeEnum> map = new HashMap<>();
             map.put("MYSQL", MYSQL);
-            map.put("ORACLE", ORACLE);
             map.put("POSTGRESQL", POSTGRESQL);
             map.put("SQLSERVER", SQLSERVER);
-            map.put("DAMENG", DAMENG);
             map.put("TAURUS", TAURUS);
             map.put("DWS", DWS);
-            map.put("KINGBASE", KINGBASE);
             map.put("MARIADB", MARIADB);
             map.put("GAUSSDBOPENGAUSS", GAUSSDBOPENGAUSS);
             return Collections.unmodifiableMap(map);
@@ -154,7 +136,7 @@ public class ListRdsDatabasesRequest {
     }
 
     /**
-     * 数据库类型 - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - MARIADB - GAUSSDBOPENGAUSS
+     * 数据库类型 - MYSQL - POSTGRESQL - SQLSERVER - TAURUS - DWS - MARIADB - GAUSSDBOPENGAUSS
      * @return dbType
      */
     public DbTypeEnum getDbType() {

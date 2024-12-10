@@ -255,6 +255,11 @@ public class BackendApiBase {
     private String retryCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_sm_channel")
+
+    private Boolean enableSmChannel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private String id;
@@ -445,6 +450,23 @@ public class BackendApiBase {
         this.retryCount = retryCount;
     }
 
+    public BackendApiBase withEnableSmChannel(Boolean enableSmChannel) {
+        this.enableSmChannel = enableSmChannel;
+        return this;
+    }
+
+    /**
+     * 是否启用SM商密通道。  仅实例支持SM系列商密算法的实例时支持开启。
+     * @return enableSmChannel
+     */
+    public Boolean getEnableSmChannel() {
+        return enableSmChannel;
+    }
+
+    public void setEnableSmChannel(Boolean enableSmChannel) {
+        this.enableSmChannel = enableSmChannel;
+    }
+
     public BackendApiBase withId(String id) {
         this.id = id;
         return this;
@@ -527,7 +549,8 @@ public class BackendApiBase {
             && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.version, that.version)
             && Objects.equals(this.reqUri, that.reqUri) && Objects.equals(this.timeout, that.timeout)
             && Objects.equals(this.enableClientSsl, that.enableClientSsl)
-            && Objects.equals(this.retryCount, that.retryCount) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.retryCount, that.retryCount)
+            && Objects.equals(this.enableSmChannel, that.enableSmChannel) && Objects.equals(this.id, that.id)
             && Objects.equals(this.status, that.status) && Objects.equals(this.registerTime, that.registerTime)
             && Objects.equals(this.updateTime, that.updateTime);
     }
@@ -544,6 +567,7 @@ public class BackendApiBase {
             timeout,
             enableClientSsl,
             retryCount,
+            enableSmChannel,
             id,
             status,
             registerTime,
@@ -564,6 +588,7 @@ public class BackendApiBase {
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
         sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
+        sb.append("    enableSmChannel: ").append(toIndentedString(enableSmChannel)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    registerTime: ").append(toIndentedString(registerTime)).append("\n");

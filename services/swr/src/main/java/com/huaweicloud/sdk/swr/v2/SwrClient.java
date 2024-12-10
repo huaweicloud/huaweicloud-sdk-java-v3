@@ -15,6 +15,8 @@ import com.huaweicloud.sdk.swr.v2.model.CreateRepoDomainsRequest;
 import com.huaweicloud.sdk.swr.v2.model.CreateRepoDomainsResponse;
 import com.huaweicloud.sdk.swr.v2.model.CreateRepoRequest;
 import com.huaweicloud.sdk.swr.v2.model.CreateRepoResponse;
+import com.huaweicloud.sdk.swr.v2.model.CreateRepoTagRequest;
+import com.huaweicloud.sdk.swr.v2.model.CreateRepoTagResponse;
 import com.huaweicloud.sdk.swr.v2.model.CreateRetentionRequest;
 import com.huaweicloud.sdk.swr.v2.model.CreateRetentionResponse;
 import com.huaweicloud.sdk.swr.v2.model.CreateSecretRequest;
@@ -67,6 +69,10 @@ import com.huaweicloud.sdk.swr.v2.model.ShowAccessDomainRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowAccessDomainResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.swr.v2.model.ShowDomainOverviewRequest;
+import com.huaweicloud.sdk.swr.v2.model.ShowDomainOverviewResponse;
+import com.huaweicloud.sdk.swr.v2.model.ShowDomainResourceReportsRequest;
+import com.huaweicloud.sdk.swr.v2.model.ShowDomainResourceReportsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceAuthRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceAuthResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceRequest;
@@ -75,6 +81,8 @@ import com.huaweicloud.sdk.swr.v2.model.ShowRepositoryRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowRepositoryResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowRetentionRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowRetentionResponse;
+import com.huaweicloud.sdk.swr.v2.model.ShowShareFeatureGatesRequest;
+import com.huaweicloud.sdk.swr.v2.model.ShowShareFeatureGatesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowSyncJobRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowSyncJobResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowTriggerRequest;
@@ -278,6 +286,34 @@ public class SwrClient {
     public SyncInvoker<CreateRepoDomainsRequest, CreateRepoDomainsResponse> createRepoDomainsInvoker(
         CreateRepoDomainsRequest request) {
         return new SyncInvoker<>(request, SwrMeta.createRepoDomains, hcClient);
+    }
+
+    /**
+     * 创建镜像tag
+     *
+     * 创建镜像tag
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRepoTagRequest 请求对象
+     * @return CreateRepoTagResponse
+     */
+    public CreateRepoTagResponse createRepoTag(CreateRepoTagRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.createRepoTag);
+    }
+
+    /**
+     * 创建镜像tag
+     *
+     * 创建镜像tag
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRepoTagRequest 请求对象
+     * @return SyncInvoker<CreateRepoTagRequest, CreateRepoTagResponse>
+     */
+    public SyncInvoker<CreateRepoTagRequest, CreateRepoTagResponse> createRepoTagInvoker(CreateRepoTagRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.createRepoTag, hcClient);
     }
 
     /**
@@ -972,6 +1008,64 @@ public class SwrClient {
     }
 
     /**
+     * 获取租户总览信息
+     *
+     * 获取租户总览信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainOverviewRequest 请求对象
+     * @return ShowDomainOverviewResponse
+     */
+    public ShowDomainOverviewResponse showDomainOverview(ShowDomainOverviewRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.showDomainOverview);
+    }
+
+    /**
+     * 获取租户总览信息
+     *
+     * 获取租户总览信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainOverviewRequest 请求对象
+     * @return SyncInvoker<ShowDomainOverviewRequest, ShowDomainOverviewResponse>
+     */
+    public SyncInvoker<ShowDomainOverviewRequest, ShowDomainOverviewResponse> showDomainOverviewInvoker(
+        ShowDomainOverviewRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.showDomainOverview, hcClient);
+    }
+
+    /**
+     * 获取租户资源统计信息
+     *
+     * 获取租户资源统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainResourceReportsRequest 请求对象
+     * @return ShowDomainResourceReportsResponse
+     */
+    public ShowDomainResourceReportsResponse showDomainResourceReports(ShowDomainResourceReportsRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.showDomainResourceReports);
+    }
+
+    /**
+     * 获取租户资源统计信息
+     *
+     * 获取租户资源统计信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainResourceReportsRequest 请求对象
+     * @return SyncInvoker<ShowDomainResourceReportsRequest, ShowDomainResourceReportsResponse>
+     */
+    public SyncInvoker<ShowDomainResourceReportsRequest, ShowDomainResourceReportsResponse> showDomainResourceReportsInvoker(
+        ShowDomainResourceReportsRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.showDomainResourceReports, hcClient);
+    }
+
+    /**
      * 获取组织详情
      *
      * 获取组织详情
@@ -1083,6 +1177,35 @@ public class SwrClient {
      */
     public SyncInvoker<ShowRetentionRequest, ShowRetentionResponse> showRetentionInvoker(ShowRetentionRequest request) {
         return new SyncInvoker<>(request, SwrMeta.showRetention, hcClient);
+    }
+
+    /**
+     * 查询服务特性开关信息
+     *
+     * 查询服务特性开关信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowShareFeatureGatesRequest 请求对象
+     * @return ShowShareFeatureGatesResponse
+     */
+    public ShowShareFeatureGatesResponse showShareFeatureGates(ShowShareFeatureGatesRequest request) {
+        return hcClient.syncInvokeHttp(request, SwrMeta.showShareFeatureGates);
+    }
+
+    /**
+     * 查询服务特性开关信息
+     *
+     * 查询服务特性开关信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowShareFeatureGatesRequest 请求对象
+     * @return SyncInvoker<ShowShareFeatureGatesRequest, ShowShareFeatureGatesResponse>
+     */
+    public SyncInvoker<ShowShareFeatureGatesRequest, ShowShareFeatureGatesResponse> showShareFeatureGatesInvoker(
+        ShowShareFeatureGatesRequest request) {
+        return new SyncInvoker<>(request, SwrMeta.showShareFeatureGates, hcClient);
     }
 
     /**

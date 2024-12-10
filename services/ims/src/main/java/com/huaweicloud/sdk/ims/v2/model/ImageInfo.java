@@ -1260,6 +1260,16 @@ public class ImageInfo {
 
     private String supportAmd;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_kvm_hi1822_hisriov")
+
+    private String supportKvmHi1822Hisriov;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_kvm_hi1822_hivirtionet")
+
+    private String supportKvmHi1822Hivirtionet;
+
     public ImageInfo withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -2368,6 +2378,44 @@ public class ImageInfo {
         this.supportAmd = supportAmd;
     }
 
+    public ImageInfo withSupportKvmHi1822Hisriov(String supportKvmHi1822Hisriov) {
+        this.supportKvmHi1822Hisriov = supportKvmHi1822Hisriov;
+        return this;
+    }
+
+    /**
+     * 如果镜像支持sriov直通，取值为true，否则无需增加该属性。
+     * @return supportKvmHi1822Hisriov
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_kvm_hi1822_hisriov")
+    public String getSupportKvmHi1822Hisriov() {
+        return supportKvmHi1822Hisriov;
+    }
+
+    public void setSupportKvmHi1822Hisriov(String supportKvmHi1822Hisriov) {
+        this.supportKvmHi1822Hisriov = supportKvmHi1822Hisriov;
+    }
+
+    public ImageInfo withSupportKvmHi1822Hivirtionet(String supportKvmHi1822Hivirtionet) {
+        this.supportKvmHi1822Hivirtionet = supportKvmHi1822Hivirtionet;
+        return this;
+    }
+
+    /**
+     * 如果镜像支持Virtio-net直通规格，取值为true，否则无需增加该属性。
+     * @return supportKvmHi1822Hivirtionet
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "__support_kvm_hi1822_hivirtionet")
+    public String getSupportKvmHi1822Hivirtionet() {
+        return supportKvmHi1822Hivirtionet;
+    }
+
+    public void setSupportKvmHi1822Hivirtionet(String supportKvmHi1822Hivirtionet) {
+        this.supportKvmHi1822Hivirtionet = supportKvmHi1822Hivirtionet;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -2419,7 +2467,9 @@ public class ImageInfo {
             && Objects.equals(this.sequenceNum, that.sequenceNum) && Objects.equals(this.activeAt, that.activeAt)
             && Objects.equals(this.supportAgentList, that.supportAgentList)
             && Objects.equals(this.imageDisplayname, that.imageDisplayname)
-            && Objects.equals(this.supportAmd, that.supportAmd);
+            && Objects.equals(this.supportAmd, that.supportAmd)
+            && Objects.equals(this.supportKvmHi1822Hisriov, that.supportKvmHi1822Hisriov)
+            && Objects.equals(this.supportKvmHi1822Hivirtionet, that.supportKvmHi1822Hivirtionet);
     }
 
     @Override
@@ -2483,7 +2533,9 @@ public class ImageInfo {
             activeAt,
             supportAgentList,
             imageDisplayname,
-            supportAmd);
+            supportAmd,
+            supportKvmHi1822Hisriov,
+            supportKvmHi1822Hivirtionet);
     }
 
     @Override
@@ -2550,6 +2602,10 @@ public class ImageInfo {
         sb.append("    supportAgentList: ").append(toIndentedString(supportAgentList)).append("\n");
         sb.append("    imageDisplayname: ").append(toIndentedString(imageDisplayname)).append("\n");
         sb.append("    supportAmd: ").append(toIndentedString(supportAmd)).append("\n");
+        sb.append("    supportKvmHi1822Hisriov: ").append(toIndentedString(supportKvmHi1822Hisriov)).append("\n");
+        sb.append("    supportKvmHi1822Hivirtionet: ")
+            .append(toIndentedString(supportKvmHi1822Hivirtionet))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

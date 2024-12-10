@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * UrlDomain
@@ -134,6 +137,11 @@ public class UrlDomain {
     @JsonProperty(value = "ingress_https_port")
 
     private Integer ingressHttpsPort;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ssl_infos")
+
+    private List<SslInfo> sslInfos = null;
 
     public UrlDomain withId(String id) {
         this.id = id;
@@ -277,7 +285,7 @@ public class UrlDomain {
     }
 
     /**
-     * 访问该域名绑定的http协议入方向端口，-1表示无端口且协议不支持，可使用80默认端口，其他有效端口允许的取值范围为1024~49151，需为实例已开放的HTTP协议的自定义入方向端口。  当创建域名时，该参数未填表示用默认80端口；若填写该参数，则必须同时填写https_port；若要http_port和https_port同时使用默认端口，则两个参数都不填。  当修改域名时，该参数未填表示不修改该端口。 
+     * 访问该域名绑定的http协议入方向端口，-1表示无端口且协议不支持，可使用80默认端口，其他有效端口允许的取值范围为1024~49151，需为实例已开放的HTTP协议的自定义入方向端口。  当创建域名时，该参数未填表示用默认80端口；如果填写该参数，则必须同时填写https_port；如果要http_port和https_port同时使用默认端口，则两个参数都不填。  当修改域名时，该参数未填表示不修改该端口。 
      * minimum: -1
      * maximum: 49151
      * @return ingressHttpPort
@@ -296,7 +304,7 @@ public class UrlDomain {
     }
 
     /**
-     * 访问该域名绑定的http协议入方向端口，-1表示无端口且协议不支持，可使用443默认端口，其他有效端口允许的取值范围为1024~49151，需为实例已开放的HTTPS协议的自定义入方向端口。  当创建域名时，该参数未填表示用默认443端口；若填写该参数，则必须同时填写http_port；若要http_port和https_port同时使用默认端口，则两个参数都不填。  当修改域名时，该参数未填表示不修改该端口。 
+     * 访问该域名绑定的https协议入方向端口，-1表示无端口且协议不支持，可使用443默认端口，其他有效端口允许的取值范围为1024~49151，需为实例已开放的HTTPS协议的自定义入方向端口。  当创建域名时，该参数未填表示用默认443端口；如果填写该参数，则必须同时填写http_port；如果要http_port和https_port同时使用默认端口，则两个参数都不填。  当修改域名时，该参数未填表示不修改该端口。 
      * minimum: -1
      * maximum: 49151
      * @return ingressHttpsPort
@@ -307,6 +315,39 @@ public class UrlDomain {
 
     public void setIngressHttpsPort(Integer ingressHttpsPort) {
         this.ingressHttpsPort = ingressHttpsPort;
+    }
+
+    public UrlDomain withSslInfos(List<SslInfo> sslInfos) {
+        this.sslInfos = sslInfos;
+        return this;
+    }
+
+    public UrlDomain addSslInfosItem(SslInfo sslInfosItem) {
+        if (this.sslInfos == null) {
+            this.sslInfos = new ArrayList<>();
+        }
+        this.sslInfos.add(sslInfosItem);
+        return this;
+    }
+
+    public UrlDomain withSslInfos(Consumer<List<SslInfo>> sslInfosSetter) {
+        if (this.sslInfos == null) {
+            this.sslInfos = new ArrayList<>();
+        }
+        sslInfosSetter.accept(this.sslInfos);
+        return this;
+    }
+
+    /**
+     * SSL证书列表。
+     * @return sslInfos
+     */
+    public List<SslInfo> getSslInfos() {
+        return sslInfos;
+    }
+
+    public void setSslInfos(List<SslInfo> sslInfos) {
+        this.sslInfos = sslInfos;
     }
 
     @Override
@@ -324,7 +365,8 @@ public class UrlDomain {
             && Objects.equals(this.verifiedClientCertificateEnabled, that.verifiedClientCertificateEnabled)
             && Objects.equals(this.isHasTrustedRootCa, that.isHasTrustedRootCa)
             && Objects.equals(this.ingressHttpPort, that.ingressHttpPort)
-            && Objects.equals(this.ingressHttpsPort, that.ingressHttpsPort);
+            && Objects.equals(this.ingressHttpsPort, that.ingressHttpsPort)
+            && Objects.equals(this.sslInfos, that.sslInfos);
     }
 
     @Override
@@ -338,7 +380,8 @@ public class UrlDomain {
             verifiedClientCertificateEnabled,
             isHasTrustedRootCa,
             ingressHttpPort,
-            ingressHttpsPort);
+            ingressHttpsPort,
+            sslInfos);
     }
 
     @Override
@@ -357,6 +400,7 @@ public class UrlDomain {
         sb.append("    isHasTrustedRootCa: ").append(toIndentedString(isHasTrustedRootCa)).append("\n");
         sb.append("    ingressHttpPort: ").append(toIndentedString(ingressHttpPort)).append("\n");
         sb.append("    ingressHttpsPort: ").append(toIndentedString(ingressHttpsPort)).append("\n");
+        sb.append("    sslInfos: ").append(toIndentedString(sslInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

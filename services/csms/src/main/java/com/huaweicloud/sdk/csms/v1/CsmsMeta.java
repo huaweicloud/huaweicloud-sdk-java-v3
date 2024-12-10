@@ -11,6 +11,9 @@ import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyResponse;
+import com.huaweicloud.sdk.csms.v1.model.CreateGrantsRequest;
+import com.huaweicloud.sdk.csms.v1.model.CreateGrantsResponse;
+import com.huaweicloud.sdk.csms.v1.model.CreatePasswordRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventResponse;
@@ -23,6 +26,8 @@ import com.huaweicloud.sdk.csms.v1.model.CreateSecretTagResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretVersionRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.DeleteGrantRequest;
+import com.huaweicloud.sdk.csms.v1.model.DeleteGrantResponse;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretForScheduleRequest;
@@ -36,6 +41,11 @@ import com.huaweicloud.sdk.csms.v1.model.DeleteSecretTagRequest;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretTagResponse;
 import com.huaweicloud.sdk.csms.v1.model.DownloadSecretBlobRequest;
 import com.huaweicloud.sdk.csms.v1.model.DownloadSecretBlobResponse;
+import com.huaweicloud.sdk.csms.v1.model.GenerateRandomPasswordRequest;
+import com.huaweicloud.sdk.csms.v1.model.GenerateRandomPasswordResponse;
+import com.huaweicloud.sdk.csms.v1.model.GrantSecretReqBody;
+import com.huaweicloud.sdk.csms.v1.model.ListGrantsRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListGrantsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListNotificationRecordsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListNotificationRecordsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListProjectSecretsTagsRequest;
@@ -53,6 +63,8 @@ import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretsResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListUsersRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListUsersResponse;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.RotateSecretRequest;
@@ -69,6 +81,8 @@ import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.UpdateGrantRequest;
+import com.huaweicloud.sdk.csms.v1.model.UpdateGrantResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretEventRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretEventResponse;
@@ -133,6 +147,28 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAgencyRequestBody.class),
             f -> f.withMarshaller(CreateAgencyRequest::getBody, CreateAgencyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateGrantsRequest, CreateGrantsResponse> createGrants = genForCreateGrants();
+
+    private static HttpRequestDef<CreateGrantsRequest, CreateGrantsResponse> genForCreateGrants() {
+        // basic
+        HttpRequestDef.Builder<CreateGrantsRequest, CreateGrantsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateGrantsRequest.class, CreateGrantsResponse.class)
+                .withName("CreateGrants")
+                .withUri("/v1/{project_id}/csms/grants")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<GrantSecretReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GrantSecretReqBody.class),
+            f -> f.withMarshaller(CreateGrantsRequest::getBody, CreateGrantsRequest::setBody));
 
         // response
 
@@ -235,6 +271,33 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateSecretVersionRequestBody.class),
             f -> f.withMarshaller(CreateSecretVersionRequest::getBody, CreateSecretVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteGrantRequest, DeleteGrantResponse> deleteGrant = genForDeleteGrant();
+
+    private static HttpRequestDef<DeleteGrantRequest, DeleteGrantResponse> genForDeleteGrant() {
+        // basic
+        HttpRequestDef.Builder<DeleteGrantRequest, DeleteGrantResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteGrantRequest.class, DeleteGrantResponse.class)
+                .withName("DeleteGrant")
+                .withUri("/v1/{project_id}/csms/grants")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("grantee_user",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGrantRequest::getGranteeUser, DeleteGrantRequest::setGranteeUser));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGrantRequest::getResourceId, DeleteGrantRequest::setResourceId));
 
         // response
 
@@ -388,6 +451,51 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadSecretBlobRequest::getSecretName, DownloadSecretBlobRequest::setSecretName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GenerateRandomPasswordRequest, GenerateRandomPasswordResponse> generateRandomPassword =
+        genForGenerateRandomPassword();
+
+    private static HttpRequestDef<GenerateRandomPasswordRequest, GenerateRandomPasswordResponse> genForGenerateRandomPassword() {
+        // basic
+        HttpRequestDef.Builder<GenerateRandomPasswordRequest, GenerateRandomPasswordResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, GenerateRandomPasswordRequest.class, GenerateRandomPasswordResponse.class)
+            .withName("GenerateRandomPassword")
+            .withUri("/v1/{project_id}/csms/generate-password")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreatePasswordRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreatePasswordRequestBody.class),
+            f -> f.withMarshaller(GenerateRandomPasswordRequest::getBody, GenerateRandomPasswordRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListGrantsRequest, ListGrantsResponse> listGrants = genForListGrants();
+
+    private static HttpRequestDef<ListGrantsRequest, ListGrantsResponse> genForListGrants() {
+        // basic
+        HttpRequestDef.Builder<ListGrantsRequest, ListGrantsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListGrantsRequest.class, ListGrantsResponse.class)
+                .withName("ListGrants")
+                .withUri("/v1/{project_id}/csms/grants")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGrantsRequest::getResourceId, ListGrantsRequest::setResourceId));
 
         // response
 
@@ -618,6 +726,43 @@ public class CsmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListUsersRequest, ListUsersResponse> listUsers = genForListUsers();
+
+    private static HttpRequestDef<ListUsersRequest, ListUsersResponse> genForListUsers() {
+        // basic
+        HttpRequestDef.Builder<ListUsersRequest, ListUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUsersRequest.class, ListUsersResponse.class)
+                .withName("ListUsers")
+                .withUri("/v1/csms/users")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("org_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersRequest::getOrgId, ListUsersRequest::setOrgId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUsersRequest::getOffset, ListUsersRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUsersRequest::getLimit, ListUsersRequest::setLimit));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUsersRequest::getUserName, ListUsersRequest::setUserName));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RestoreSecretRequest, RestoreSecretResponse> restoreSecret =
         genForRestoreSecret();
 
@@ -819,6 +964,33 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSecretVersionRequest::getVersionId, ShowSecretVersionRequest::setVersionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateGrantRequest, UpdateGrantResponse> updateGrant = genForUpdateGrant();
+
+    private static HttpRequestDef<UpdateGrantRequest, UpdateGrantResponse> genForUpdateGrant() {
+        // basic
+        HttpRequestDef.Builder<UpdateGrantRequest, UpdateGrantResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateGrantRequest.class, UpdateGrantResponse.class)
+                .withName("UpdateGrant")
+                .withUri("/v1/{project_id}/csms/grants")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateGrantRequest::getResourceId, UpdateGrantRequest::setResourceId));
+        builder.<GrantSecretReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(GrantSecretReqBody.class),
+            f -> f.withMarshaller(UpdateGrantRequest::getBody, UpdateGrantRequest::setBody));
 
         // response
 

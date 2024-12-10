@@ -51,6 +51,11 @@ public class UpdateMemberGroupResponse extends SdkResponse {
     private List<MicroserviceLabel> microserviceLabels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reference_vpc_channel_id")
+
+    private String referenceVpcChannelId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_group_id")
 
     private String memberGroupId;
@@ -205,6 +210,23 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         this.microserviceLabels = microserviceLabels;
     }
 
+    public UpdateMemberGroupResponse withReferenceVpcChannelId(String referenceVpcChannelId) {
+        this.referenceVpcChannelId = referenceVpcChannelId;
+        return this;
+    }
+
+    /**
+     * 引用的负载通道编号，仅VPC通道类型为引用类型（vpc_channel_type=reference）时支持。
+     * @return referenceVpcChannelId
+     */
+    public String getReferenceVpcChannelId() {
+        return referenceVpcChannelId;
+    }
+
+    public void setReferenceVpcChannelId(String referenceVpcChannelId) {
+        this.referenceVpcChannelId = referenceVpcChannelId;
+    }
+
     public UpdateMemberGroupResponse withMemberGroupId(String memberGroupId) {
         this.memberGroupId = memberGroupId;
         return this;
@@ -272,6 +294,7 @@ public class UpdateMemberGroupResponse extends SdkResponse {
             && Objects.equals(this.microserviceVersion, that.microserviceVersion)
             && Objects.equals(this.microservicePort, that.microservicePort)
             && Objects.equals(this.microserviceLabels, that.microserviceLabels)
+            && Objects.equals(this.referenceVpcChannelId, that.referenceVpcChannelId)
             && Objects.equals(this.memberGroupId, that.memberGroupId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
@@ -285,6 +308,7 @@ public class UpdateMemberGroupResponse extends SdkResponse {
             microserviceVersion,
             microservicePort,
             microserviceLabels,
+            referenceVpcChannelId,
             memberGroupId,
             createTime,
             updateTime);
@@ -301,6 +325,7 @@ public class UpdateMemberGroupResponse extends SdkResponse {
         sb.append("    microserviceVersion: ").append(toIndentedString(microserviceVersion)).append("\n");
         sb.append("    microservicePort: ").append(toIndentedString(microservicePort)).append("\n");
         sb.append("    microserviceLabels: ").append(toIndentedString(microserviceLabels)).append("\n");
+        sb.append("    referenceVpcChannelId: ").append(toIndentedString(referenceVpcChannelId)).append("\n");
         sb.append("    memberGroupId: ").append(toIndentedString(memberGroupId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");

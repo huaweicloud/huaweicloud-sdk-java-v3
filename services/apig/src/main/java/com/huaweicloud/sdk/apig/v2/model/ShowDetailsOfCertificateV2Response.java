@@ -150,6 +150,87 @@ public class ShowDetailsOfCertificateV2Response extends SdkResponse {
 
     private Boolean isHasTrustedRootCa;
 
+    /**
+     * 证书算法类型： - RSA - ECC - SM2
+     */
+    public static final class AlgorithmTypeEnum {
+
+        /**
+         * Enum RSA for value: "RSA"
+         */
+        public static final AlgorithmTypeEnum RSA = new AlgorithmTypeEnum("RSA");
+
+        /**
+         * Enum ECC for value: "ECC"
+         */
+        public static final AlgorithmTypeEnum ECC = new AlgorithmTypeEnum("ECC");
+
+        /**
+         * Enum SM2 for value: "SM2"
+         */
+        public static final AlgorithmTypeEnum SM2 = new AlgorithmTypeEnum("SM2");
+
+        private static final Map<String, AlgorithmTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AlgorithmTypeEnum> createStaticFields() {
+            Map<String, AlgorithmTypeEnum> map = new HashMap<>();
+            map.put("RSA", RSA);
+            map.put("ECC", ECC);
+            map.put("SM2", SM2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AlgorithmTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AlgorithmTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AlgorithmTypeEnum(value));
+        }
+
+        public static AlgorithmTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AlgorithmTypeEnum) {
+                return this.value.equals(((AlgorithmTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "algorithm_type")
+
+    private AlgorithmTypeEnum algorithmType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
@@ -413,6 +494,23 @@ public class ShowDetailsOfCertificateV2Response extends SdkResponse {
 
     public void setIsHasTrustedRootCa(Boolean isHasTrustedRootCa) {
         this.isHasTrustedRootCa = isHasTrustedRootCa;
+    }
+
+    public ShowDetailsOfCertificateV2Response withAlgorithmType(AlgorithmTypeEnum algorithmType) {
+        this.algorithmType = algorithmType;
+        return this;
+    }
+
+    /**
+     * 证书算法类型： - RSA - ECC - SM2
+     * @return algorithmType
+     */
+    public AlgorithmTypeEnum getAlgorithmType() {
+        return algorithmType;
+    }
+
+    public void setAlgorithmType(AlgorithmTypeEnum algorithmType) {
+        this.algorithmType = algorithmType;
     }
 
     public ShowDetailsOfCertificateV2Response withVersion(Integer version) {
@@ -680,7 +778,8 @@ public class ShowDetailsOfCertificateV2Response extends SdkResponse {
             && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.isHasTrustedRootCa, that.isHasTrustedRootCa)
-            && Objects.equals(this.version, that.version) && Objects.equals(this.organization, that.organization)
+            && Objects.equals(this.algorithmType, that.algorithmType) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.organization, that.organization)
             && Objects.equals(this.organizationalUnit, that.organizationalUnit)
             && Objects.equals(this.locality, that.locality) && Objects.equals(this.state, that.state)
             && Objects.equals(this.country, that.country) && Objects.equals(this.notBefore, that.notBefore)
@@ -701,6 +800,7 @@ public class ShowDetailsOfCertificateV2Response extends SdkResponse {
             createTime,
             updateTime,
             isHasTrustedRootCa,
+            algorithmType,
             version,
             organization,
             organizationalUnit,
@@ -728,6 +828,7 @@ public class ShowDetailsOfCertificateV2Response extends SdkResponse {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    isHasTrustedRootCa: ").append(toIndentedString(isHasTrustedRootCa)).append("\n");
+        sb.append("    algorithmType: ").append(toIndentedString(algorithmType)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
         sb.append("    organizationalUnit: ").append(toIndentedString(organizationalUnit)).append("\n");

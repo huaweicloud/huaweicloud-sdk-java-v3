@@ -115,6 +115,97 @@ public class CertificateForm {
 
     private String trustedRootCa;
 
+    /**
+     * 证书算法类型： - RSA - ECC - SM2
+     */
+    public static final class AlgorithmTypeEnum {
+
+        /**
+         * Enum RSA for value: "RSA"
+         */
+        public static final AlgorithmTypeEnum RSA = new AlgorithmTypeEnum("RSA");
+
+        /**
+         * Enum ECC for value: "ECC"
+         */
+        public static final AlgorithmTypeEnum ECC = new AlgorithmTypeEnum("ECC");
+
+        /**
+         * Enum SM2 for value: "SM2"
+         */
+        public static final AlgorithmTypeEnum SM2 = new AlgorithmTypeEnum("SM2");
+
+        private static final Map<String, AlgorithmTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AlgorithmTypeEnum> createStaticFields() {
+            Map<String, AlgorithmTypeEnum> map = new HashMap<>();
+            map.put("RSA", RSA);
+            map.put("ECC", ECC);
+            map.put("SM2", SM2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AlgorithmTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AlgorithmTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AlgorithmTypeEnum(value));
+        }
+
+        public static AlgorithmTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AlgorithmTypeEnum) {
+                return this.value.equals(((AlgorithmTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "algorithm_type")
+
+    private AlgorithmTypeEnum algorithmType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cert_content_sign")
+
+    private String certContentSign;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "private_key_sign")
+
+    private String privateKeySign;
+
     public CertificateForm withName(String name) {
         this.name = name;
         return this;
@@ -217,6 +308,57 @@ public class CertificateForm {
         this.trustedRootCa = trustedRootCa;
     }
 
+    public CertificateForm withAlgorithmType(AlgorithmTypeEnum algorithmType) {
+        this.algorithmType = algorithmType;
+        return this;
+    }
+
+    /**
+     * 证书算法类型： - RSA - ECC - SM2
+     * @return algorithmType
+     */
+    public AlgorithmTypeEnum getAlgorithmType() {
+        return algorithmType;
+    }
+
+    public void setAlgorithmType(AlgorithmTypeEnum algorithmType) {
+        this.algorithmType = algorithmType;
+    }
+
+    public CertificateForm withCertContentSign(String certContentSign) {
+        this.certContentSign = certContentSign;
+        return this;
+    }
+
+    /**
+     * 签名类型证书内容，仅algorithm_type=SM2时必填。
+     * @return certContentSign
+     */
+    public String getCertContentSign() {
+        return certContentSign;
+    }
+
+    public void setCertContentSign(String certContentSign) {
+        this.certContentSign = certContentSign;
+    }
+
+    public CertificateForm withPrivateKeySign(String privateKeySign) {
+        this.privateKeySign = privateKeySign;
+        return this;
+    }
+
+    /**
+     * 签名类型私钥内容，仅algorithm_type=SM2时必填。
+     * @return privateKeySign
+     */
+    public String getPrivateKeySign() {
+        return privateKeySign;
+    }
+
+    public void setPrivateKeySign(String privateKeySign) {
+        this.privateKeySign = privateKeySign;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -229,12 +371,23 @@ public class CertificateForm {
         return Objects.equals(this.name, that.name) && Objects.equals(this.certContent, that.certContent)
             && Objects.equals(this.privateKey, that.privateKey) && Objects.equals(this.type, that.type)
             && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.trustedRootCa, that.trustedRootCa);
+            && Objects.equals(this.trustedRootCa, that.trustedRootCa)
+            && Objects.equals(this.algorithmType, that.algorithmType)
+            && Objects.equals(this.certContentSign, that.certContentSign)
+            && Objects.equals(this.privateKeySign, that.privateKeySign);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, certContent, privateKey, type, instanceId, trustedRootCa);
+        return Objects.hash(name,
+            certContent,
+            privateKey,
+            type,
+            instanceId,
+            trustedRootCa,
+            algorithmType,
+            certContentSign,
+            privateKeySign);
     }
 
     @Override
@@ -247,6 +400,9 @@ public class CertificateForm {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    trustedRootCa: ").append(toIndentedString(trustedRootCa)).append("\n");
+        sb.append("    algorithmType: ").append(toIndentedString(algorithmType)).append("\n");
+        sb.append("    certContentSign: ").append(toIndentedString(certContentSign)).append("\n");
+        sb.append("    privateKeySign: ").append(toIndentedString(privateKeySign)).append("\n");
         sb.append("}");
         return sb.toString();
     }

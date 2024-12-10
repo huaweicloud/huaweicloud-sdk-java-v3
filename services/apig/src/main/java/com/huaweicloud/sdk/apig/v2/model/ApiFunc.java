@@ -365,7 +365,7 @@ public class ApiFunc {
     }
 
     /**
-     * 函数版本  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * 函数版本   当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
      * @return version
      */
     public String getVersion() {
@@ -382,7 +382,7 @@ public class ApiFunc {
     }
 
     /**
-     * 函数别名URN  当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
+     * 函数别名URN   当函数别名URN和函数版本同时传入时，函数版本将被忽略，只会使用函数别名URN
      * @return aliasUrn
      */
     public String getAliasUrn() {

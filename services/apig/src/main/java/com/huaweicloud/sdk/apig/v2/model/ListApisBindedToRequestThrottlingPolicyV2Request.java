@@ -50,11 +50,6 @@ public class ListApisBindedToRequestThrottlingPolicyV2Request {
 
     private String apiName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tags")
-
-    private String tags;
-
     public ListApisBindedToRequestThrottlingPolicyV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -193,23 +188,6 @@ public class ListApisBindedToRequestThrottlingPolicyV2Request {
         this.apiName = apiName;
     }
 
-    public ListApisBindedToRequestThrottlingPolicyV2Request withTags(String tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    /**
-     * API标签，该参数可指定多个，多个不同的参数值为或关系；不指定或为空时，表示不筛选标签；指定为#no_tags#时，表示筛选无标签API。
-     * @return tags
-     */
-    public String getTags() {
-        return tags;
-    }
-
-    public void setTags(String tags) {
-        this.tags = tags;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -222,13 +200,12 @@ public class ListApisBindedToRequestThrottlingPolicyV2Request {
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.throttleId, that.throttleId)
             && Objects.equals(this.envId, that.envId) && Objects.equals(this.groupId, that.groupId)
-            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.apiName, that.apiName)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.apiName, that.apiName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, offset, limit, throttleId, envId, groupId, apiId, apiName, tags);
+        return Objects.hash(instanceId, offset, limit, throttleId, envId, groupId, apiId, apiName);
     }
 
     @Override
@@ -243,7 +220,6 @@ public class ListApisBindedToRequestThrottlingPolicyV2Request {
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    apiId: ").append(toIndentedString(apiId)).append("\n");
         sb.append("    apiName: ").append(toIndentedString(apiName)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

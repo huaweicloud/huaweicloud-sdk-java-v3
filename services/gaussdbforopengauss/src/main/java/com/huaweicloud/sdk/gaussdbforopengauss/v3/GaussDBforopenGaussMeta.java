@@ -100,6 +100,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListGaussDbDatastoresRequest;
@@ -241,6 +243,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationRespo
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateFeaturesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateFeaturesRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateFeaturesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceNameRequest;
@@ -1621,6 +1626,33 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListEpsQuotasRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListEpsQuotasRequest::getXLanguage, ListEpsQuotasRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFeaturesRequest, ListFeaturesResponse> listFeatures = genForListFeatures();
+
+    private static HttpRequestDef<ListFeaturesRequest, ListFeaturesResponse> genForListFeatures() {
+        // basic
+        HttpRequestDef.Builder<ListFeaturesRequest, ListFeaturesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFeaturesRequest.class, ListFeaturesResponse.class)
+                .withName("ListFeatures")
+                .withUri("/v3/{project_id}/instances/{instance_id}/advance-features")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFeaturesRequest::getInstanceId, ListFeaturesRequest::setInstanceId));
+        builder.<ListFeaturesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFeaturesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListFeaturesRequest::getXLanguage, ListFeaturesRequest::setXLanguage));
 
         // response
 
@@ -3603,6 +3635,39 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SwitchShardRequestBody.class),
             f -> f.withMarshaller(SwitchShardRequest::getBody, SwitchShardRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateFeaturesRequest, UpdateFeaturesResponse> updateFeatures =
+        genForUpdateFeatures();
+
+    private static HttpRequestDef<UpdateFeaturesRequest, UpdateFeaturesResponse> genForUpdateFeatures() {
+        // basic
+        HttpRequestDef.Builder<UpdateFeaturesRequest, UpdateFeaturesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateFeaturesRequest.class, UpdateFeaturesResponse.class)
+                .withName("UpdateFeatures")
+                .withUri("/v3/{project_id}/instances/{instance_id}/advance-features")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateFeaturesRequest::getInstanceId, UpdateFeaturesRequest::setInstanceId));
+        builder.<UpdateFeaturesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateFeaturesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(UpdateFeaturesRequest::getXLanguage, UpdateFeaturesRequest::setXLanguage));
+        builder.<UpdateFeaturesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateFeaturesRequestBody.class),
+            f -> f.withMarshaller(UpdateFeaturesRequest::getBody, UpdateFeaturesRequest::setBody));
 
         // response
 

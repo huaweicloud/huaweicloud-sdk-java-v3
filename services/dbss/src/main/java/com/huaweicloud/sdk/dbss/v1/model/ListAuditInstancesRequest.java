@@ -26,7 +26,7 @@ public class ListAuditInstancesRequest {
     }
 
     /**
-     * 偏移量
+     * 偏移量，默认0。
      * @return offset
      */
     public String getOffset() {
@@ -43,7 +43,7 @@ public class ListAuditInstancesRequest {
     }
 
     /**
-     * 查询记录数
+     * 查询记录数，默认100，最大1000。
      * @return limit
      */
     public String getLimit() {

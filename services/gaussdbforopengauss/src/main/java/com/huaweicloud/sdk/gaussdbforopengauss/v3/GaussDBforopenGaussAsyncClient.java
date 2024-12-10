@@ -85,6 +85,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListGaussDbDatastoresRequest;
@@ -203,6 +205,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationReque
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateFeaturesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateFeaturesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceNameRequest;
@@ -1371,6 +1375,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse> listEpsQuotasAsyncInvoker(
         ListEpsQuotasRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listEpsQuotas, hcClient);
+    }
+
+    /**
+     * 查询实例特性列表
+     *
+     * 查询当前实例高级特性列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFeaturesRequest 请求对象
+     * @return CompletableFuture<ListFeaturesResponse>
+     */
+    public CompletableFuture<ListFeaturesResponse> listFeaturesAsync(ListFeaturesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listFeatures);
+    }
+
+    /**
+     * 查询实例特性列表
+     *
+     * 查询当前实例高级特性列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFeaturesRequest 请求对象
+     * @return AsyncInvoker<ListFeaturesRequest, ListFeaturesResponse>
+     */
+    public AsyncInvoker<ListFeaturesRequest, ListFeaturesResponse> listFeaturesAsyncInvoker(
+        ListFeaturesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listFeatures, hcClient);
     }
 
     /**
@@ -3012,6 +3045,35 @@ public class GaussDBforopenGaussAsyncClient {
      */
     public AsyncInvoker<SwitchShardRequest, SwitchShardResponse> switchShardAsyncInvoker(SwitchShardRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.switchShard, hcClient);
+    }
+
+    /**
+     * 开启特性
+     *
+     * 打开高级特性开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateFeaturesRequest 请求对象
+     * @return CompletableFuture<UpdateFeaturesResponse>
+     */
+    public CompletableFuture<UpdateFeaturesResponse> updateFeaturesAsync(UpdateFeaturesRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.updateFeatures);
+    }
+
+    /**
+     * 开启特性
+     *
+     * 打开高级特性开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateFeaturesRequest 请求对象
+     * @return AsyncInvoker<UpdateFeaturesRequest, UpdateFeaturesResponse>
+     */
+    public AsyncInvoker<UpdateFeaturesRequest, UpdateFeaturesResponse> updateFeaturesAsyncInvoker(
+        UpdateFeaturesRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.updateFeatures, hcClient);
     }
 
     /**

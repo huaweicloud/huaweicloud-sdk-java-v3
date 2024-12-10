@@ -253,6 +253,11 @@ public class BackendApiBaseInfo {
 
     private String retryCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_sm_channel")
+
+    private Boolean enableSmChannel;
+
     public BackendApiBaseInfo withAuthorizerId(String authorizerId) {
         this.authorizerId = authorizerId;
         return this;
@@ -424,6 +429,23 @@ public class BackendApiBaseInfo {
         this.retryCount = retryCount;
     }
 
+    public BackendApiBaseInfo withEnableSmChannel(Boolean enableSmChannel) {
+        this.enableSmChannel = enableSmChannel;
+        return this;
+    }
+
+    /**
+     * 是否启用SM商密通道。  仅实例支持SM系列商密算法的实例时支持开启。
+     * @return enableSmChannel
+     */
+    public Boolean getEnableSmChannel() {
+        return enableSmChannel;
+    }
+
+    public void setEnableSmChannel(Boolean enableSmChannel) {
+        this.enableSmChannel = enableSmChannel;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -438,7 +460,8 @@ public class BackendApiBaseInfo {
             && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.version, that.version)
             && Objects.equals(this.reqUri, that.reqUri) && Objects.equals(this.timeout, that.timeout)
             && Objects.equals(this.enableClientSsl, that.enableClientSsl)
-            && Objects.equals(this.retryCount, that.retryCount);
+            && Objects.equals(this.retryCount, that.retryCount)
+            && Objects.equals(this.enableSmChannel, that.enableSmChannel);
     }
 
     @Override
@@ -452,7 +475,8 @@ public class BackendApiBaseInfo {
             reqUri,
             timeout,
             enableClientSsl,
-            retryCount);
+            retryCount,
+            enableSmChannel);
     }
 
     @Override
@@ -469,6 +493,7 @@ public class BackendApiBaseInfo {
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    enableClientSsl: ").append(toIndentedString(enableClientSsl)).append("\n");
         sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
+        sb.append("    enableSmChannel: ").append(toIndentedString(enableSmChannel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

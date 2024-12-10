@@ -337,6 +337,11 @@ public class ApiPolicyHttpResp {
     private String retryCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_sm_channel")
+
+    private Boolean enableSmChannel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_channel_info")
 
     private VpcInfo vpcChannelInfo;
@@ -583,6 +588,23 @@ public class ApiPolicyHttpResp {
         this.retryCount = retryCount;
     }
 
+    public ApiPolicyHttpResp withEnableSmChannel(Boolean enableSmChannel) {
+        this.enableSmChannel = enableSmChannel;
+        return this;
+    }
+
+    /**
+     * 是否启用SM商密通道。  仅实例支持SM系列商密算法的实例时支持开启。
+     * @return enableSmChannel
+     */
+    public Boolean getEnableSmChannel() {
+        return enableSmChannel;
+    }
+
+    public void setEnableSmChannel(Boolean enableSmChannel) {
+        this.enableSmChannel = enableSmChannel;
+    }
+
     public ApiPolicyHttpResp withVpcChannelInfo(VpcInfo vpcChannelInfo) {
         this.vpcChannelInfo = vpcChannelInfo;
         return this;
@@ -641,6 +663,7 @@ public class ApiPolicyHttpResp {
             && Objects.equals(this.urlDomain, that.urlDomain) && Objects.equals(this.reqProtocol, that.reqProtocol)
             && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.reqUri, that.reqUri)
             && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.retryCount, that.retryCount)
+            && Objects.equals(this.enableSmChannel, that.enableSmChannel)
             && Objects.equals(this.vpcChannelInfo, that.vpcChannelInfo)
             && Objects.equals(this.vpcChannelStatus, that.vpcChannelStatus);
     }
@@ -659,6 +682,7 @@ public class ApiPolicyHttpResp {
             reqUri,
             timeout,
             retryCount,
+            enableSmChannel,
             vpcChannelInfo,
             vpcChannelStatus);
     }
@@ -679,6 +703,7 @@ public class ApiPolicyHttpResp {
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
+        sb.append("    enableSmChannel: ").append(toIndentedString(enableSmChannel)).append("\n");
         sb.append("    vpcChannelInfo: ").append(toIndentedString(vpcChannelInfo)).append("\n");
         sb.append("    vpcChannelStatus: ").append(toIndentedString(vpcChannelStatus)).append("\n");
         sb.append("}");

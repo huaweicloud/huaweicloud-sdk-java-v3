@@ -233,6 +233,11 @@ public class ApiPolicyHttpBase {
 
     private String retryCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_sm_channel")
+
+    private Boolean enableSmChannel;
+
     public ApiPolicyHttpBase withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -336,6 +341,23 @@ public class ApiPolicyHttpBase {
         this.retryCount = retryCount;
     }
 
+    public ApiPolicyHttpBase withEnableSmChannel(Boolean enableSmChannel) {
+        this.enableSmChannel = enableSmChannel;
+        return this;
+    }
+
+    /**
+     * 是否启用SM商密通道。  仅实例支持SM系列商密算法的实例时支持开启。
+     * @return enableSmChannel
+     */
+    public Boolean getEnableSmChannel() {
+        return enableSmChannel;
+    }
+
+    public void setEnableSmChannel(Boolean enableSmChannel) {
+        this.enableSmChannel = enableSmChannel;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -347,12 +369,13 @@ public class ApiPolicyHttpBase {
         ApiPolicyHttpBase that = (ApiPolicyHttpBase) obj;
         return Objects.equals(this.urlDomain, that.urlDomain) && Objects.equals(this.reqProtocol, that.reqProtocol)
             && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.reqUri, that.reqUri)
-            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.retryCount, that.retryCount);
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.retryCount, that.retryCount)
+            && Objects.equals(this.enableSmChannel, that.enableSmChannel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(urlDomain, reqProtocol, reqMethod, reqUri, timeout, retryCount);
+        return Objects.hash(urlDomain, reqProtocol, reqMethod, reqUri, timeout, retryCount, enableSmChannel);
     }
 
     @Override
@@ -365,6 +388,7 @@ public class ApiPolicyHttpBase {
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
+        sb.append("    enableSmChannel: ").append(toIndentedString(enableSmChannel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

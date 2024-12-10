@@ -292,6 +292,11 @@ public class MicroserviceImportReq {
     private MicroServiceInfoCCECreate cceInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cce_service_info")
+
+    private MicroServiceInfoCCEServiceCreate cceServiceInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "nacos_info")
 
     private MicroServiceInfoNacosBase nacosInfo;
@@ -493,6 +498,32 @@ public class MicroserviceImportReq {
         this.cceInfo = cceInfo;
     }
 
+    public MicroserviceImportReq withCceServiceInfo(MicroServiceInfoCCEServiceCreate cceServiceInfo) {
+        this.cceServiceInfo = cceServiceInfo;
+        return this;
+    }
+
+    public MicroserviceImportReq withCceServiceInfo(Consumer<MicroServiceInfoCCEServiceCreate> cceServiceInfoSetter) {
+        if (this.cceServiceInfo == null) {
+            this.cceServiceInfo = new MicroServiceInfoCCEServiceCreate();
+            cceServiceInfoSetter.accept(this.cceServiceInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get cceServiceInfo
+     * @return cceServiceInfo
+     */
+    public MicroServiceInfoCCEServiceCreate getCceServiceInfo() {
+        return cceServiceInfo;
+    }
+
+    public void setCceServiceInfo(MicroServiceInfoCCEServiceCreate cceServiceInfo) {
+        this.cceServiceInfo = cceServiceInfo;
+    }
+
     public MicroserviceImportReq withNacosInfo(MicroServiceInfoNacosBase nacosInfo) {
         this.nacosInfo = nacosInfo;
         return this;
@@ -532,13 +563,23 @@ public class MicroserviceImportReq {
             && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.apis, that.apis)
             && Objects.equals(this.backendTimeout, that.backendTimeout) && Objects.equals(this.authType, that.authType)
             && Objects.equals(this.cors, that.cors) && Objects.equals(this.cseInfo, that.cseInfo)
-            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.nacosInfo, that.nacosInfo);
+            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.cceServiceInfo, that.cceServiceInfo)
+            && Objects.equals(this.nacosInfo, that.nacosInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(groupInfo, serviceType, protocol, apis, backendTimeout, authType, cors, cseInfo, cceInfo, nacosInfo);
+        return Objects.hash(groupInfo,
+            serviceType,
+            protocol,
+            apis,
+            backendTimeout,
+            authType,
+            cors,
+            cseInfo,
+            cceInfo,
+            cceServiceInfo,
+            nacosInfo);
     }
 
     @Override
@@ -554,6 +595,7 @@ public class MicroserviceImportReq {
         sb.append("    cors: ").append(toIndentedString(cors)).append("\n");
         sb.append("    cseInfo: ").append(toIndentedString(cseInfo)).append("\n");
         sb.append("    cceInfo: ").append(toIndentedString(cceInfo)).append("\n");
+        sb.append("    cceServiceInfo: ").append(toIndentedString(cceServiceInfo)).append("\n");
         sb.append("    nacosInfo: ").append(toIndentedString(nacosInfo)).append("\n");
         sb.append("}");
         return sb.toString();

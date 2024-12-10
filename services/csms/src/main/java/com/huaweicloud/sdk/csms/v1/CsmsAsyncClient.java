@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyResponse;
+import com.huaweicloud.sdk.csms.v1.model.CreateGrantsRequest;
+import com.huaweicloud.sdk.csms.v1.model.CreateGrantsResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretRequest;
@@ -15,6 +17,8 @@ import com.huaweicloud.sdk.csms.v1.model.CreateSecretTagRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretTagResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.DeleteGrantRequest;
+import com.huaweicloud.sdk.csms.v1.model.DeleteGrantResponse;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretForScheduleRequest;
@@ -27,6 +31,10 @@ import com.huaweicloud.sdk.csms.v1.model.DeleteSecretTagRequest;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretTagResponse;
 import com.huaweicloud.sdk.csms.v1.model.DownloadSecretBlobRequest;
 import com.huaweicloud.sdk.csms.v1.model.DownloadSecretBlobResponse;
+import com.huaweicloud.sdk.csms.v1.model.GenerateRandomPasswordRequest;
+import com.huaweicloud.sdk.csms.v1.model.GenerateRandomPasswordResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListGrantsRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListGrantsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListNotificationRecordsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListNotificationRecordsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListProjectSecretsTagsRequest;
@@ -43,6 +51,8 @@ import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretsResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListUsersRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListUsersResponse;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.RotateSecretRequest;
@@ -59,6 +69,8 @@ import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.UpdateGrantRequest;
+import com.huaweicloud.sdk.csms.v1.model.UpdateGrantResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretRequest;
@@ -142,6 +154,35 @@ public class CsmsAsyncClient {
     public AsyncInvoker<CreateAgencyRequest, CreateAgencyResponse> createAgencyAsyncInvoker(
         CreateAgencyRequest request) {
         return new AsyncInvoker<>(request, CsmsMeta.createAgency, hcClient);
+    }
+
+    /**
+     * 授权操作
+     *
+     * 授权操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGrantsRequest 请求对象
+     * @return CompletableFuture<CreateGrantsResponse>
+     */
+    public CompletableFuture<CreateGrantsResponse> createGrantsAsync(CreateGrantsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.createGrants);
+    }
+
+    /**
+     * 授权操作
+     *
+     * 授权操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGrantsRequest 请求对象
+     * @return AsyncInvoker<CreateGrantsRequest, CreateGrantsResponse>
+     */
+    public AsyncInvoker<CreateGrantsRequest, CreateGrantsResponse> createGrantsAsyncInvoker(
+        CreateGrantsRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.createGrants, hcClient);
     }
 
     /**
@@ -266,6 +307,34 @@ public class CsmsAsyncClient {
     public AsyncInvoker<CreateSecretVersionRequest, CreateSecretVersionResponse> createSecretVersionAsyncInvoker(
         CreateSecretVersionRequest request) {
         return new AsyncInvoker<>(request, CsmsMeta.createSecretVersion, hcClient);
+    }
+
+    /**
+     * 删除授权
+     *
+     * 删除授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGrantRequest 请求对象
+     * @return CompletableFuture<DeleteGrantResponse>
+     */
+    public CompletableFuture<DeleteGrantResponse> deleteGrantAsync(DeleteGrantRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.deleteGrant);
+    }
+
+    /**
+     * 删除授权
+     *
+     * 删除授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGrantRequest 请求对象
+     * @return AsyncInvoker<DeleteGrantRequest, DeleteGrantResponse>
+     */
+    public AsyncInvoker<DeleteGrantRequest, DeleteGrantResponse> deleteGrantAsyncInvoker(DeleteGrantRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.deleteGrant, hcClient);
     }
 
     /**
@@ -441,6 +510,64 @@ public class CsmsAsyncClient {
     public AsyncInvoker<DownloadSecretBlobRequest, DownloadSecretBlobResponse> downloadSecretBlobAsyncInvoker(
         DownloadSecretBlobRequest request) {
         return new AsyncInvoker<>(request, CsmsMeta.downloadSecretBlob, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 生成随机密码
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateRandomPasswordRequest 请求对象
+     * @return CompletableFuture<GenerateRandomPasswordResponse>
+     */
+    public CompletableFuture<GenerateRandomPasswordResponse> generateRandomPasswordAsync(
+        GenerateRandomPasswordRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.generateRandomPassword);
+    }
+
+    /**
+     * 
+     *
+     * 生成随机密码
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateRandomPasswordRequest 请求对象
+     * @return AsyncInvoker<GenerateRandomPasswordRequest, GenerateRandomPasswordResponse>
+     */
+    public AsyncInvoker<GenerateRandomPasswordRequest, GenerateRandomPasswordResponse> generateRandomPasswordAsyncInvoker(
+        GenerateRandomPasswordRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.generateRandomPassword, hcClient);
+    }
+
+    /**
+     * 授权列表
+     *
+     * 授权列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGrantsRequest 请求对象
+     * @return CompletableFuture<ListGrantsResponse>
+     */
+    public CompletableFuture<ListGrantsResponse> listGrantsAsync(ListGrantsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.listGrants);
+    }
+
+    /**
+     * 授权列表
+     *
+     * 授权列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGrantsRequest 请求对象
+     * @return AsyncInvoker<ListGrantsRequest, ListGrantsResponse>
+     */
+    public AsyncInvoker<ListGrantsRequest, ListGrantsResponse> listGrantsAsyncInvoker(ListGrantsRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.listGrants, hcClient);
     }
 
     /**
@@ -678,6 +805,34 @@ public class CsmsAsyncClient {
     }
 
     /**
+     * 查询用户列表
+     *
+     * 查询用户列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUsersRequest 请求对象
+     * @return CompletableFuture<ListUsersResponse>
+     */
+    public CompletableFuture<ListUsersResponse> listUsersAsync(ListUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.listUsers);
+    }
+
+    /**
+     * 查询用户列表
+     *
+     * 查询用户列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUsersRequest 请求对象
+     * @return AsyncInvoker<ListUsersRequest, ListUsersResponse>
+     */
+    public AsyncInvoker<ListUsersRequest, ListUsersResponse> listUsersAsyncInvoker(ListUsersRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.listUsers, hcClient);
+    }
+
+    /**
      * 取消凭据的定时删除任务
      *
      * 取消凭据的定时删除任务，凭据对象恢复可使用状态。
@@ -908,6 +1063,34 @@ public class CsmsAsyncClient {
     public AsyncInvoker<ShowSecretVersionRequest, ShowSecretVersionResponse> showSecretVersionAsyncInvoker(
         ShowSecretVersionRequest request) {
         return new AsyncInvoker<>(request, CsmsMeta.showSecretVersion, hcClient);
+    }
+
+    /**
+     * 更新授权
+     *
+     * 更新授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGrantRequest 请求对象
+     * @return CompletableFuture<UpdateGrantResponse>
+     */
+    public CompletableFuture<UpdateGrantResponse> updateGrantAsync(UpdateGrantRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.updateGrant);
+    }
+
+    /**
+     * 更新授权
+     *
+     * 更新授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGrantRequest 请求对象
+     * @return AsyncInvoker<UpdateGrantRequest, UpdateGrantResponse>
+     */
+    public AsyncInvoker<UpdateGrantRequest, UpdateGrantResponse> updateGrantAsyncInvoker(UpdateGrantRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.updateGrant, hcClient);
     }
 
     /**

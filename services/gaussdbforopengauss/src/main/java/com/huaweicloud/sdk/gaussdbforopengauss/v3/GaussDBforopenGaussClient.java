@@ -85,6 +85,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListGaussDbDatastoresRequest;
@@ -203,6 +205,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationReque
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateFeaturesRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateFeaturesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateInstanceNameRequest;
@@ -1353,6 +1357,34 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse> listEpsQuotasInvoker(ListEpsQuotasRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listEpsQuotas, hcClient);
+    }
+
+    /**
+     * 查询实例特性列表
+     *
+     * 查询当前实例高级特性列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFeaturesRequest 请求对象
+     * @return ListFeaturesResponse
+     */
+    public ListFeaturesResponse listFeatures(ListFeaturesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listFeatures);
+    }
+
+    /**
+     * 查询实例特性列表
+     *
+     * 查询当前实例高级特性列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFeaturesRequest 请求对象
+     * @return SyncInvoker<ListFeaturesRequest, ListFeaturesResponse>
+     */
+    public SyncInvoker<ListFeaturesRequest, ListFeaturesResponse> listFeaturesInvoker(ListFeaturesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listFeatures, hcClient);
     }
 
     /**
@@ -2969,6 +3001,35 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<SwitchShardRequest, SwitchShardResponse> switchShardInvoker(SwitchShardRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.switchShard, hcClient);
+    }
+
+    /**
+     * 开启特性
+     *
+     * 打开高级特性开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateFeaturesRequest 请求对象
+     * @return UpdateFeaturesResponse
+     */
+    public UpdateFeaturesResponse updateFeatures(UpdateFeaturesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.updateFeatures);
+    }
+
+    /**
+     * 开启特性
+     *
+     * 打开高级特性开关。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateFeaturesRequest 请求对象
+     * @return SyncInvoker<UpdateFeaturesRequest, UpdateFeaturesResponse>
+     */
+    public SyncInvoker<UpdateFeaturesRequest, UpdateFeaturesResponse> updateFeaturesInvoker(
+        UpdateFeaturesRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.updateFeatures, hcClient);
     }
 
     /**

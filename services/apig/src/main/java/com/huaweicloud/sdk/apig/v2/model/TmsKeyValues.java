@@ -62,7 +62,7 @@ public class TmsKeyValues {
     }
 
     /**
-     * 值。  支持可用 UTF-8 格式表示的字母(包含中文)、数字和空格，以及以下字符： _ . : / = + - @
+     * 值。            支持可用 UTF-8 格式表示的字母(包含中文)、数字和空格，以及以下字符： _ . : / = + - @
      * @return values
      */
     public List<String> getValues() {

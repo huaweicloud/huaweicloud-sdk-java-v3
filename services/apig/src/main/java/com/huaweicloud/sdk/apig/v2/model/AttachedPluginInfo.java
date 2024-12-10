@@ -32,7 +32,7 @@ public class AttachedPluginInfo {
     private String pluginName;
 
     /**
-     * 插件类型 - cors：跨域资源共享 - set_resp_headers：HTTP响应头管理 - kafka_log：Kafka日志推送 - breaker：断路器 - rate_limit: 流量控制 - third_auth: 第三方认证 - proxy_cache: 响应缓存
+     * 插件类型。 - cors：跨域资源共享 - set_resp_headers：HTTP响应头管理 - kafka_log：Kafka日志推送 - breaker：断路器 - rate_limit: 流量控制 - third_auth: 第三方认证 - proxy_cache: 响应缓存 - proxy_mirror: 请求镜像
      */
     public static final class PluginTypeEnum {
 
@@ -71,6 +71,11 @@ public class AttachedPluginInfo {
          */
         public static final PluginTypeEnum PROXY_CACHE = new PluginTypeEnum("proxy_cache");
 
+        /**
+         * Enum PROXY_MIRROR for value: "proxy_mirror"
+         */
+        public static final PluginTypeEnum PROXY_MIRROR = new PluginTypeEnum("proxy_mirror");
+
         private static final Map<String, PluginTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, PluginTypeEnum> createStaticFields() {
@@ -82,6 +87,7 @@ public class AttachedPluginInfo {
             map.put("rate_limit", RATE_LIMIT);
             map.put("third_auth", THIRD_AUTH);
             map.put("proxy_cache", PROXY_CACHE);
+            map.put("proxy_mirror", PROXY_MIRROR);
             return Collections.unmodifiableMap(map);
         }
 
@@ -297,7 +303,7 @@ public class AttachedPluginInfo {
     }
 
     /**
-     * 插件类型 - cors：跨域资源共享 - set_resp_headers：HTTP响应头管理 - kafka_log：Kafka日志推送 - breaker：断路器 - rate_limit: 流量控制 - third_auth: 第三方认证 - proxy_cache: 响应缓存
+     * 插件类型。 - cors：跨域资源共享 - set_resp_headers：HTTP响应头管理 - kafka_log：Kafka日志推送 - breaker：断路器 - rate_limit: 流量控制 - third_auth: 第三方认证 - proxy_cache: 响应缓存 - proxy_mirror: 请求镜像
      * @return pluginType
      */
     public PluginTypeEnum getPluginType() {

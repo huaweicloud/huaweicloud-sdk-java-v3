@@ -48,6 +48,11 @@ public class MemberGroupCreate {
 
     private List<MicroserviceLabel> microserviceLabels = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reference_vpc_channel_id")
+
+    private String referenceVpcChannelId;
+
     public MemberGroupCreate withMemberGroupName(String memberGroupName) {
         this.memberGroupName = memberGroupName;
         return this;
@@ -187,6 +192,23 @@ public class MemberGroupCreate {
         this.microserviceLabels = microserviceLabels;
     }
 
+    public MemberGroupCreate withReferenceVpcChannelId(String referenceVpcChannelId) {
+        this.referenceVpcChannelId = referenceVpcChannelId;
+        return this;
+    }
+
+    /**
+     * 引用的负载通道编号，仅VPC通道类型为引用类型（vpc_channel_type=reference）时支持。
+     * @return referenceVpcChannelId
+     */
+    public String getReferenceVpcChannelId() {
+        return referenceVpcChannelId;
+    }
+
+    public void setReferenceVpcChannelId(String referenceVpcChannelId) {
+        this.referenceVpcChannelId = referenceVpcChannelId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -202,7 +224,8 @@ public class MemberGroupCreate {
             && Objects.equals(this.dictCode, that.dictCode)
             && Objects.equals(this.microserviceVersion, that.microserviceVersion)
             && Objects.equals(this.microservicePort, that.microservicePort)
-            && Objects.equals(this.microserviceLabels, that.microserviceLabels);
+            && Objects.equals(this.microserviceLabels, that.microserviceLabels)
+            && Objects.equals(this.referenceVpcChannelId, that.referenceVpcChannelId);
     }
 
     @Override
@@ -213,7 +236,8 @@ public class MemberGroupCreate {
             dictCode,
             microserviceVersion,
             microservicePort,
-            microserviceLabels);
+            microserviceLabels,
+            referenceVpcChannelId);
     }
 
     @Override
@@ -227,6 +251,7 @@ public class MemberGroupCreate {
         sb.append("    microserviceVersion: ").append(toIndentedString(microserviceVersion)).append("\n");
         sb.append("    microservicePort: ").append(toIndentedString(microservicePort)).append("\n");
         sb.append("    microserviceLabels: ").append(toIndentedString(microserviceLabels)).append("\n");
+        sb.append("    referenceVpcChannelId: ").append(toIndentedString(referenceVpcChannelId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

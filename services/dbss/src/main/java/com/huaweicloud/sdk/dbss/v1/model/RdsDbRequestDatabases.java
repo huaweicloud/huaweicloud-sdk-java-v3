@@ -43,7 +43,7 @@ public class RdsDbRequestDatabases {
     }
 
     /**
-     * 数据库类型 - MYSQL - ORACLE - POSTGRESQL - SQLSERVER - DAMENG - TAURUS - DWS - KINGBASE - MARIADB - GAUSSDBOPENGAUSS
+     * 数据库类型 - MYSQL - POSTGRESQL - SQLSERVER - TAURUS - DWS - MARIADB - GAUSSDBOPENGAUSS
      * @return type
      */
     public String getType() {

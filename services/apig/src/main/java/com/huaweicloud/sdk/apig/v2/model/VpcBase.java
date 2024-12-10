@@ -192,6 +192,87 @@ public class VpcBase {
 
     private Integer type;
 
+    /**
+     * vpc通道类型。 - builtin：服务器类型 - microservice： 微服务类型 - reference：引用负载通道类型  当vpc_channel_type为空时，负载通道类型取决于type字段的取值。 当vpc_channel_type不为空，但type字段非空或不为0时，当vpc_channel_type的指定类型与type字段指定的类型冲突时会校验报错。 当vpc_channel_type不为空，且type字段为空或等于0时，直接使用vpc_channel_type字段的值指定负载通道类型。  修改负载通道时vpc通道类型不会修改，直接使用原有的vpc通道类型。
+     */
+    public static final class VpcChannelTypeEnum {
+
+        /**
+         * Enum BUILTIN for value: "builtin"
+         */
+        public static final VpcChannelTypeEnum BUILTIN = new VpcChannelTypeEnum("builtin");
+
+        /**
+         * Enum MICROSERVICE for value: "microservice"
+         */
+        public static final VpcChannelTypeEnum MICROSERVICE = new VpcChannelTypeEnum("microservice");
+
+        /**
+         * Enum REFERENCE for value: "reference"
+         */
+        public static final VpcChannelTypeEnum REFERENCE = new VpcChannelTypeEnum("reference");
+
+        private static final Map<String, VpcChannelTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VpcChannelTypeEnum> createStaticFields() {
+            Map<String, VpcChannelTypeEnum> map = new HashMap<>();
+            map.put("builtin", BUILTIN);
+            map.put("microservice", MICROSERVICE);
+            map.put("reference", REFERENCE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        VpcChannelTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VpcChannelTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VpcChannelTypeEnum(value));
+        }
+
+        public static VpcChannelTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof VpcChannelTypeEnum) {
+                return this.value.equals(((VpcChannelTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_channel_type")
+
+    private VpcChannelTypeEnum vpcChannelType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dict_code")
 
@@ -271,7 +352,7 @@ public class VpcBase {
     }
 
     /**
-     * vpc通道类型，默认为服务器类型。 - 2：服务器类型 - 3：微服务类型
+     * vpc通道类型，默认为服务器类型。 - 2：服务器类型 - 3：微服务类型  当vpc_channel_type字段为空时，负载通道类型由type字段控制： 当type不为3或microservice_info为空，VCP通道类型默认为服务器类型。 当type=3，microservice_info不为空，VPC通道类型为微服务类型。  修改负载通道时vpc通道类型不会修改，直接使用原有的vpc通道类型。  此字段待废弃，请使用vpc_channel_type字段指定负载通道类型。
      * @return type
      */
     public Integer getType() {
@@ -280,6 +361,23 @@ public class VpcBase {
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    public VpcBase withVpcChannelType(VpcChannelTypeEnum vpcChannelType) {
+        this.vpcChannelType = vpcChannelType;
+        return this;
+    }
+
+    /**
+     * vpc通道类型。 - builtin：服务器类型 - microservice： 微服务类型 - reference：引用负载通道类型  当vpc_channel_type为空时，负载通道类型取决于type字段的取值。 当vpc_channel_type不为空，但type字段非空或不为0时，当vpc_channel_type的指定类型与type字段指定的类型冲突时会校验报错。 当vpc_channel_type不为空，且type字段为空或等于0时，直接使用vpc_channel_type字段的值指定负载通道类型。  修改负载通道时vpc通道类型不会修改，直接使用原有的vpc通道类型。
+     * @return vpcChannelType
+     */
+    public VpcChannelTypeEnum getVpcChannelType() {
+        return vpcChannelType;
+    }
+
+    public void setVpcChannelType(VpcChannelTypeEnum vpcChannelType) {
+        this.vpcChannelType = vpcChannelType;
     }
 
     public VpcBase withDictCode(String dictCode) {
@@ -311,12 +409,12 @@ public class VpcBase {
         return Objects.equals(this.name, that.name) && Objects.equals(this.port, that.port)
             && Objects.equals(this.balanceStrategy, that.balanceStrategy)
             && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.dictCode, that.dictCode);
+            && Objects.equals(this.vpcChannelType, that.vpcChannelType) && Objects.equals(this.dictCode, that.dictCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, port, balanceStrategy, memberType, type, dictCode);
+        return Objects.hash(name, port, balanceStrategy, memberType, type, vpcChannelType, dictCode);
     }
 
     @Override
@@ -328,6 +426,7 @@ public class VpcBase {
         sb.append("    balanceStrategy: ").append(toIndentedString(balanceStrategy)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    vpcChannelType: ").append(toIndentedString(vpcChannelType)).append("\n");
         sb.append("    dictCode: ").append(toIndentedString(dictCode)).append("\n");
         sb.append("}");
         return sb.toString();

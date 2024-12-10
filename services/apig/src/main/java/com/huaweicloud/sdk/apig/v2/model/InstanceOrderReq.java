@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -16,15 +21,149 @@ public class InstanceOrderReq {
 
     private String productId;
 
+    /**
+     * 计费模式： - 0：按需 - 1：包周期 
+     */
+    public static final class ChargingModeEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final ChargingModeEnum NUMBER_0 = new ChargingModeEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final ChargingModeEnum NUMBER_1 = new ChargingModeEnum(1);
+
+        private static final Map<Integer, ChargingModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, ChargingModeEnum> createStaticFields() {
+            Map<Integer, ChargingModeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        ChargingModeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ChargingModeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargingModeEnum(value));
+        }
+
+        public static ChargingModeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ChargingModeEnum) {
+                return this.value.equals(((ChargingModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "charging_mode")
 
-    private Integer chargingMode;
+    private ChargingModeEnum chargingMode;
+
+    /**
+     * 支付模式： - ALL_UPFRONT：全预付 
+     */
+    public static final class PaymentModeEnum {
+
+        /**
+         * Enum ALL_UPFRONT for value: "ALL_UPFRONT"
+         */
+        public static final PaymentModeEnum ALL_UPFRONT = new PaymentModeEnum("ALL_UPFRONT");
+
+        private static final Map<String, PaymentModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PaymentModeEnum> createStaticFields() {
+            Map<String, PaymentModeEnum> map = new HashMap<>();
+            map.put("ALL_UPFRONT", ALL_UPFRONT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PaymentModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PaymentModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PaymentModeEnum(value));
+        }
+
+        public static PaymentModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PaymentModeEnum) {
+                return this.value.equals(((PaymentModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "payment_mode")
 
-    private String paymentMode;
+    private PaymentModeEnum paymentMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period_type")
@@ -36,10 +175,80 @@ public class InstanceOrderReq {
 
     private Integer periodNum;
 
+    /**
+     * 是否支持自动续费： - 0：不自动续费 - 1：自动续费 
+     */
+    public static final class IsAutoRenewEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final IsAutoRenewEnum NUMBER_0 = new IsAutoRenewEnum(0);
+
+        /**
+         * Enum NUMBER_1 for value: 1
+         */
+        public static final IsAutoRenewEnum NUMBER_1 = new IsAutoRenewEnum(1);
+
+        private static final Map<Integer, IsAutoRenewEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, IsAutoRenewEnum> createStaticFields() {
+            Map<Integer, IsAutoRenewEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(1, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        IsAutoRenewEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IsAutoRenewEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsAutoRenewEnum(value));
+        }
+
+        public static IsAutoRenewEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IsAutoRenewEnum) {
+                return this.value.equals(((IsAutoRenewEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_auto_renew")
 
-    private Integer isAutoRenew;
+    private IsAutoRenewEnum isAutoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "promotion_id")
@@ -83,37 +292,37 @@ public class InstanceOrderReq {
         this.productId = productId;
     }
 
-    public InstanceOrderReq withChargingMode(Integer chargingMode) {
+    public InstanceOrderReq withChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
         return this;
     }
 
     /**
-     * 计费模式。
+     * 计费模式： - 0：按需 - 1：包周期 
      * @return chargingMode
      */
-    public Integer getChargingMode() {
+    public ChargingModeEnum getChargingMode() {
         return chargingMode;
     }
 
-    public void setChargingMode(Integer chargingMode) {
+    public void setChargingMode(ChargingModeEnum chargingMode) {
         this.chargingMode = chargingMode;
     }
 
-    public InstanceOrderReq withPaymentMode(String paymentMode) {
+    public InstanceOrderReq withPaymentMode(PaymentModeEnum paymentMode) {
         this.paymentMode = paymentMode;
         return this;
     }
 
     /**
-     * 支付模式。
+     * 支付模式： - ALL_UPFRONT：全预付 
      * @return paymentMode
      */
-    public String getPaymentMode() {
+    public PaymentModeEnum getPaymentMode() {
         return paymentMode;
     }
 
-    public void setPaymentMode(String paymentMode) {
+    public void setPaymentMode(PaymentModeEnum paymentMode) {
         this.paymentMode = paymentMode;
     }
 
@@ -123,7 +332,7 @@ public class InstanceOrderReq {
     }
 
     /**
-     * 订购周期类型： - 2：月 - 3：年
+     * 订购周期类型： - 2：月 - 3：年 
      * @return periodType
      */
     public Integer getPeriodType() {
@@ -140,7 +349,7 @@ public class InstanceOrderReq {
     }
 
     /**
-     * 订购周期数
+     * 订购周期数：1-9 
      * @return periodNum
      */
     public Integer getPeriodNum() {
@@ -151,20 +360,20 @@ public class InstanceOrderReq {
         this.periodNum = periodNum;
     }
 
-    public InstanceOrderReq withIsAutoRenew(Integer isAutoRenew) {
+    public InstanceOrderReq withIsAutoRenew(IsAutoRenewEnum isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
         return this;
     }
 
     /**
-     * 是否支持自动续费
+     * 是否支持自动续费： - 0：不自动续费 - 1：自动续费 
      * @return isAutoRenew
      */
-    public Integer getIsAutoRenew() {
+    public IsAutoRenewEnum getIsAutoRenew() {
         return isAutoRenew;
     }
 
-    public void setIsAutoRenew(Integer isAutoRenew) {
+    public void setIsAutoRenew(IsAutoRenewEnum isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
     }
 

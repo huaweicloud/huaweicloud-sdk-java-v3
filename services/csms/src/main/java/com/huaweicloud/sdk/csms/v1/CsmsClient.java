@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyResponse;
+import com.huaweicloud.sdk.csms.v1.model.CreateGrantsRequest;
+import com.huaweicloud.sdk.csms.v1.model.CreateGrantsResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretRequest;
@@ -15,6 +17,8 @@ import com.huaweicloud.sdk.csms.v1.model.CreateSecretTagRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretTagResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.DeleteGrantRequest;
+import com.huaweicloud.sdk.csms.v1.model.DeleteGrantResponse;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretForScheduleRequest;
@@ -27,6 +31,10 @@ import com.huaweicloud.sdk.csms.v1.model.DeleteSecretTagRequest;
 import com.huaweicloud.sdk.csms.v1.model.DeleteSecretTagResponse;
 import com.huaweicloud.sdk.csms.v1.model.DownloadSecretBlobRequest;
 import com.huaweicloud.sdk.csms.v1.model.DownloadSecretBlobResponse;
+import com.huaweicloud.sdk.csms.v1.model.GenerateRandomPasswordRequest;
+import com.huaweicloud.sdk.csms.v1.model.GenerateRandomPasswordResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListGrantsRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListGrantsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListNotificationRecordsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListNotificationRecordsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListProjectSecretsTagsRequest;
@@ -43,6 +51,8 @@ import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretVersionsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListSecretsResponse;
+import com.huaweicloud.sdk.csms.v1.model.ListUsersRequest;
+import com.huaweicloud.sdk.csms.v1.model.ListUsersResponse;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.RestoreSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.RotateSecretRequest;
@@ -59,6 +69,8 @@ import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.UpdateGrantRequest;
+import com.huaweicloud.sdk.csms.v1.model.UpdateGrantResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretEventRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretEventResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretRequest;
@@ -138,6 +150,34 @@ public class CsmsClient {
      */
     public SyncInvoker<CreateAgencyRequest, CreateAgencyResponse> createAgencyInvoker(CreateAgencyRequest request) {
         return new SyncInvoker<>(request, CsmsMeta.createAgency, hcClient);
+    }
+
+    /**
+     * 授权操作
+     *
+     * 授权操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGrantsRequest 请求对象
+     * @return CreateGrantsResponse
+     */
+    public CreateGrantsResponse createGrants(CreateGrantsRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.createGrants);
+    }
+
+    /**
+     * 授权操作
+     *
+     * 授权操作
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGrantsRequest 请求对象
+     * @return SyncInvoker<CreateGrantsRequest, CreateGrantsResponse>
+     */
+    public SyncInvoker<CreateGrantsRequest, CreateGrantsResponse> createGrantsInvoker(CreateGrantsRequest request) {
+        return new SyncInvoker<>(request, CsmsMeta.createGrants, hcClient);
     }
 
     /**
@@ -261,6 +301,34 @@ public class CsmsClient {
     public SyncInvoker<CreateSecretVersionRequest, CreateSecretVersionResponse> createSecretVersionInvoker(
         CreateSecretVersionRequest request) {
         return new SyncInvoker<>(request, CsmsMeta.createSecretVersion, hcClient);
+    }
+
+    /**
+     * 删除授权
+     *
+     * 删除授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGrantRequest 请求对象
+     * @return DeleteGrantResponse
+     */
+    public DeleteGrantResponse deleteGrant(DeleteGrantRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.deleteGrant);
+    }
+
+    /**
+     * 删除授权
+     *
+     * 删除授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGrantRequest 请求对象
+     * @return SyncInvoker<DeleteGrantRequest, DeleteGrantResponse>
+     */
+    public SyncInvoker<DeleteGrantRequest, DeleteGrantResponse> deleteGrantInvoker(DeleteGrantRequest request) {
+        return new SyncInvoker<>(request, CsmsMeta.deleteGrant, hcClient);
     }
 
     /**
@@ -434,6 +502,63 @@ public class CsmsClient {
     public SyncInvoker<DownloadSecretBlobRequest, DownloadSecretBlobResponse> downloadSecretBlobInvoker(
         DownloadSecretBlobRequest request) {
         return new SyncInvoker<>(request, CsmsMeta.downloadSecretBlob, hcClient);
+    }
+
+    /**
+     * 
+     *
+     * 生成随机密码
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateRandomPasswordRequest 请求对象
+     * @return GenerateRandomPasswordResponse
+     */
+    public GenerateRandomPasswordResponse generateRandomPassword(GenerateRandomPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.generateRandomPassword);
+    }
+
+    /**
+     * 
+     *
+     * 生成随机密码
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GenerateRandomPasswordRequest 请求对象
+     * @return SyncInvoker<GenerateRandomPasswordRequest, GenerateRandomPasswordResponse>
+     */
+    public SyncInvoker<GenerateRandomPasswordRequest, GenerateRandomPasswordResponse> generateRandomPasswordInvoker(
+        GenerateRandomPasswordRequest request) {
+        return new SyncInvoker<>(request, CsmsMeta.generateRandomPassword, hcClient);
+    }
+
+    /**
+     * 授权列表
+     *
+     * 授权列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGrantsRequest 请求对象
+     * @return ListGrantsResponse
+     */
+    public ListGrantsResponse listGrants(ListGrantsRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.listGrants);
+    }
+
+    /**
+     * 授权列表
+     *
+     * 授权列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListGrantsRequest 请求对象
+     * @return SyncInvoker<ListGrantsRequest, ListGrantsResponse>
+     */
+    public SyncInvoker<ListGrantsRequest, ListGrantsResponse> listGrantsInvoker(ListGrantsRequest request) {
+        return new SyncInvoker<>(request, CsmsMeta.listGrants, hcClient);
     }
 
     /**
@@ -668,6 +793,34 @@ public class CsmsClient {
     }
 
     /**
+     * 查询用户列表
+     *
+     * 查询用户列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUsersRequest 请求对象
+     * @return ListUsersResponse
+     */
+    public ListUsersResponse listUsers(ListUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.listUsers);
+    }
+
+    /**
+     * 查询用户列表
+     *
+     * 查询用户列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUsersRequest 请求对象
+     * @return SyncInvoker<ListUsersRequest, ListUsersResponse>
+     */
+    public SyncInvoker<ListUsersRequest, ListUsersResponse> listUsersInvoker(ListUsersRequest request) {
+        return new SyncInvoker<>(request, CsmsMeta.listUsers, hcClient);
+    }
+
+    /**
      * 取消凭据的定时删除任务
      *
      * 取消凭据的定时删除任务，凭据对象恢复可使用状态。
@@ -895,6 +1048,34 @@ public class CsmsClient {
     public SyncInvoker<ShowSecretVersionRequest, ShowSecretVersionResponse> showSecretVersionInvoker(
         ShowSecretVersionRequest request) {
         return new SyncInvoker<>(request, CsmsMeta.showSecretVersion, hcClient);
+    }
+
+    /**
+     * 更新授权
+     *
+     * 更新授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGrantRequest 请求对象
+     * @return UpdateGrantResponse
+     */
+    public UpdateGrantResponse updateGrant(UpdateGrantRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.updateGrant);
+    }
+
+    /**
+     * 更新授权
+     *
+     * 更新授权
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateGrantRequest 请求对象
+     * @return SyncInvoker<UpdateGrantRequest, UpdateGrantResponse>
+     */
+    public SyncInvoker<UpdateGrantRequest, UpdateGrantResponse> updateGrantInvoker(UpdateGrantRequest request) {
+        return new SyncInvoker<>(request, CsmsMeta.updateGrant, hcClient);
     }
 
     /**

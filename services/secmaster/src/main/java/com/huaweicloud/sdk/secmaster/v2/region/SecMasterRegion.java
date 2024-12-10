@@ -68,6 +68,9 @@ public class SecMasterRegion {
     public static final Region EU_WEST_101 =
         new Region("eu-west-101", "https://secmaster.eu-west-101.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://secmaster.ap-southeast-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("SECMASTER");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -97,6 +100,7 @@ public class SecMasterRegion {
         map.put("af-south-1", AF_SOUTH_1);
         map.put("la-south-2", LA_SOUTH_2);
         map.put("eu-west-101", EU_WEST_101);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
         return Collections.unmodifiableMap(map);
     }
 

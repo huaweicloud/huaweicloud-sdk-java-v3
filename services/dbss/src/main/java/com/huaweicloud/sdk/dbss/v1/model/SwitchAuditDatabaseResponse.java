@@ -12,25 +12,25 @@ import java.util.Objects;
 public class SwitchAuditDatabaseResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "result")
+    @JsonProperty(value = "status")
 
-    private String result;
+    private String status;
 
-    public SwitchAuditDatabaseResponse withResult(String result) {
-        this.result = result;
+    public SwitchAuditDatabaseResponse withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
      * 响应状态
-     * @return result
+     * @return status
      */
-    public String getResult() {
-        return result;
+    public String getStatus() {
+        return status;
     }
 
-    public void setResult(String result) {
-        this.result = result;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class SwitchAuditDatabaseResponse extends SdkResponse {
             return false;
         }
         SwitchAuditDatabaseResponse that = (SwitchAuditDatabaseResponse) obj;
-        return Objects.equals(this.result, that.result);
+        return Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(result);
+        return Objects.hash(status);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SwitchAuditDatabaseResponse {\n");
-        sb.append("    result: ").append(toIndentedString(result)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

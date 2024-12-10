@@ -6,10 +6,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -148,6 +151,11 @@ public class AssociateCertificateV2Response extends SdkResponse {
 
     private String sslId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ssl_infos")
+
+    private List<SslInfo> sslInfos = null;
+
     public AssociateCertificateV2Response withUrlDomain(String urlDomain) {
         this.urlDomain = urlDomain;
         return this;
@@ -257,7 +265,7 @@ public class AssociateCertificateV2Response extends SdkResponse {
     }
 
     /**
-     * 访问该域名绑定的http协议入方向端口，-1表示无端口且协议不支持，可使用80默认端口，其他有效端口允许的取值范围为1024~49151，需为实例已开放的HTTP协议的自定义入方向端口。  当创建域名时，该参数未填表示用默认80端口；若填写该参数，则必须同时填写https_port；若要http_port和https_port同时使用默认端口，则两个参数都不填。  当修改域名时，该参数未填表示不修改该端口。 
+     * 访问该域名绑定的http协议入方向端口，-1表示无端口且协议不支持，可使用80默认端口，其他有效端口允许的取值范围为1024~49151，需为实例已开放的HTTP协议的自定义入方向端口。  当创建域名时，该参数未填表示用默认80端口；如果填写该参数，则必须同时填写https_port；如果要http_port和https_port同时使用默认端口，则两个参数都不填。  当修改域名时，该参数未填表示不修改该端口。 
      * minimum: -1
      * maximum: 49151
      * @return ingressHttpPort
@@ -276,7 +284,7 @@ public class AssociateCertificateV2Response extends SdkResponse {
     }
 
     /**
-     * 访问该域名绑定的http协议入方向端口，-1表示无端口且协议不支持，可使用443默认端口，其他有效端口允许的取值范围为1024~49151，需为实例已开放的HTTPS协议的自定义入方向端口。  当创建域名时，该参数未填表示用默认443端口；若填写该参数，则必须同时填写http_port；若要http_port和https_port同时使用默认端口，则两个参数都不填。  当修改域名时，该参数未填表示不修改该端口。 
+     * 访问该域名绑定的https协议入方向端口，-1表示无端口且协议不支持，可使用443默认端口，其他有效端口允许的取值范围为1024~49151，需为实例已开放的HTTPS协议的自定义入方向端口。  当创建域名时，该参数未填表示用默认443端口；如果填写该参数，则必须同时填写http_port；如果要http_port和https_port同时使用默认端口，则两个参数都不填。  当修改域名时，该参数未填表示不修改该端口。 
      * minimum: -1
      * maximum: 49151
      * @return ingressHttpsPort
@@ -323,6 +331,39 @@ public class AssociateCertificateV2Response extends SdkResponse {
         this.sslId = sslId;
     }
 
+    public AssociateCertificateV2Response withSslInfos(List<SslInfo> sslInfos) {
+        this.sslInfos = sslInfos;
+        return this;
+    }
+
+    public AssociateCertificateV2Response addSslInfosItem(SslInfo sslInfosItem) {
+        if (this.sslInfos == null) {
+            this.sslInfos = new ArrayList<>();
+        }
+        this.sslInfos.add(sslInfosItem);
+        return this;
+    }
+
+    public AssociateCertificateV2Response withSslInfos(Consumer<List<SslInfo>> sslInfosSetter) {
+        if (this.sslInfos == null) {
+            this.sslInfos = new ArrayList<>();
+        }
+        sslInfosSetter.accept(this.sslInfos);
+        return this;
+    }
+
+    /**
+     * SSL证书列表。
+     * @return sslInfos
+     */
+    public List<SslInfo> getSslInfos() {
+        return sslInfos;
+    }
+
+    public void setSslInfos(List<SslInfo> sslInfos) {
+        this.sslInfos = sslInfos;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -338,7 +379,8 @@ public class AssociateCertificateV2Response extends SdkResponse {
             && Objects.equals(this.verifiedClientCertificateEnabled, that.verifiedClientCertificateEnabled)
             && Objects.equals(this.ingressHttpPort, that.ingressHttpPort)
             && Objects.equals(this.ingressHttpsPort, that.ingressHttpsPort)
-            && Objects.equals(this.sslName, that.sslName) && Objects.equals(this.sslId, that.sslId);
+            && Objects.equals(this.sslName, that.sslName) && Objects.equals(this.sslId, that.sslId)
+            && Objects.equals(this.sslInfos, that.sslInfos);
     }
 
     @Override
@@ -352,7 +394,8 @@ public class AssociateCertificateV2Response extends SdkResponse {
             ingressHttpPort,
             ingressHttpsPort,
             sslName,
-            sslId);
+            sslId,
+            sslInfos);
     }
 
     @Override
@@ -371,6 +414,7 @@ public class AssociateCertificateV2Response extends SdkResponse {
         sb.append("    ingressHttpsPort: ").append(toIndentedString(ingressHttpsPort)).append("\n");
         sb.append("    sslName: ").append(toIndentedString(sslName)).append("\n");
         sb.append("    sslId: ").append(toIndentedString(sslId)).append("\n");
+        sb.append("    sslInfos: ").append(toIndentedString(sslInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

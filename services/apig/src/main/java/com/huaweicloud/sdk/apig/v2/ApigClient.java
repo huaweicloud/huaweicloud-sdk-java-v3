@@ -6346,6 +6346,8 @@ public class ApigClient {
      * 
      * 如果指定地址的后端实例已存在，则更新对应后端实例信息。如果请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
      * 
+     * 引用负载通道类型的负载通道不支持添加或更新后端实例。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request AddingBackendInstancesV2Request 请求对象
@@ -6362,6 +6364,8 @@ public class ApigClient {
      * 
      * 如果指定地址的后端实例已存在，则更新对应后端实例信息。如果请求体中包含多个重复地址的后端实例定义，则使用第一个定义。
      * 
+     * 引用负载通道类型的负载通道不支持添加或更新后端实例。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request AddingBackendInstancesV2Request 请求对象
@@ -6377,6 +6381,8 @@ public class ApigClient {
      *
      * 批量修改后端服务器状态不可用。
      * 
+     * 引用负载通道类型的负载通道不支持修改后端服务器状态不可用。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request BatchDisableMembersRequest 请求对象
@@ -6390,6 +6396,8 @@ public class ApigClient {
      * 批量修改后端服务器状态不可用
      *
      * 批量修改后端服务器状态不可用。
+     * 
+     * 引用负载通道类型的负载通道不支持修改后端服务器状态不可用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6406,6 +6414,8 @@ public class ApigClient {
      *
      * 批量修改后端服务器状态可用。
      * 
+     * 引用负载通道类型的负载通道不支持修改后端服务器状态可用。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request BatchEnableMembersRequest 请求对象
@@ -6419,6 +6429,8 @@ public class ApigClient {
      * 批量修改后端服务器状态可用
      *
      * 批量修改后端服务器状态可用。
+     * 
+     * 引用负载通道类型的负载通道不支持修改后端服务器状态可用。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6499,6 +6511,8 @@ public class ApigClient {
      *
      * 删除指定VPC通道中的后端实例
      * 
+     * 引用负载通道类型的负载通道不支持删除后端实例。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request DeleteBackendInstanceV2Request 请求对象
@@ -6512,6 +6526,8 @@ public class ApigClient {
      * 删除后端实例
      *
      * 删除指定VPC通道中的后端实例
+     * 
+     * 引用负载通道类型的负载通道不支持删除后端实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -6731,6 +6747,8 @@ public class ApigClient {
      *
      * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。如果未指定修改的云服务器组，则进行全量覆盖。
      * 
+     * 引用负载通道类型的负载通道不支持更新后端实例。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request UpdateBackendInstancesV2Request 请求对象
@@ -6744,6 +6762,8 @@ public class ApigClient {
      * 更新后端实例
      *
      * 更新指定的VPC通道的后端实例。更新时，使用传入的请求参数对对应云服务组的后端实例进行全量覆盖修改。如果未指定修改的云服务器组，则进行全量覆盖。
+     * 
+     * 引用负载通道类型的负载通道不支持更新后端实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -22,6 +22,9 @@ import com.huaweicloud.sdk.swr.v2.model.CreateRepoDomainsResponse;
 import com.huaweicloud.sdk.swr.v2.model.CreateRepoRequest;
 import com.huaweicloud.sdk.swr.v2.model.CreateRepoRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.CreateRepoResponse;
+import com.huaweicloud.sdk.swr.v2.model.CreateRepoTagRequest;
+import com.huaweicloud.sdk.swr.v2.model.CreateRepoTagRequestBody;
+import com.huaweicloud.sdk.swr.v2.model.CreateRepoTagResponse;
 import com.huaweicloud.sdk.swr.v2.model.CreateRetentionRequest;
 import com.huaweicloud.sdk.swr.v2.model.CreateRetentionRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.CreateRetentionResponse;
@@ -73,11 +76,16 @@ import com.huaweicloud.sdk.swr.v2.model.ListSharedReposDetailsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListSharedReposDetailsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ListTriggersDetailsRequest;
 import com.huaweicloud.sdk.swr.v2.model.ListTriggersDetailsResponse;
+import com.huaweicloud.sdk.swr.v2.model.ReportData;
 import com.huaweicloud.sdk.swr.v2.model.Retention;
 import com.huaweicloud.sdk.swr.v2.model.ShowAccessDomainRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowAccessDomainResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowApiVersionResponse;
+import com.huaweicloud.sdk.swr.v2.model.ShowDomainOverviewRequest;
+import com.huaweicloud.sdk.swr.v2.model.ShowDomainOverviewResponse;
+import com.huaweicloud.sdk.swr.v2.model.ShowDomainResourceReportsRequest;
+import com.huaweicloud.sdk.swr.v2.model.ShowDomainResourceReportsResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceAuthRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceAuthResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowNamespaceRequest;
@@ -89,6 +97,8 @@ import com.huaweicloud.sdk.swr.v2.model.ShowRepositoryRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowRepositoryResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowRetentionRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowRetentionResponse;
+import com.huaweicloud.sdk.swr.v2.model.ShowShareFeatureGatesRequest;
+import com.huaweicloud.sdk.swr.v2.model.ShowShareFeatureGatesResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowSyncJobRequest;
 import com.huaweicloud.sdk.swr.v2.model.ShowSyncJobResponse;
 import com.huaweicloud.sdk.swr.v2.model.ShowTriggerRequest;
@@ -307,6 +317,39 @@ public class SwrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateRepoDomainsRequestBody.class),
             f -> f.withMarshaller(CreateRepoDomainsRequest::getBody, CreateRepoDomainsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRepoTagRequest, CreateRepoTagResponse> createRepoTag =
+        genForCreateRepoTag();
+
+    private static HttpRequestDef<CreateRepoTagRequest, CreateRepoTagResponse> genForCreateRepoTag() {
+        // basic
+        HttpRequestDef.Builder<CreateRepoTagRequest, CreateRepoTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRepoTagRequest.class, CreateRepoTagResponse.class)
+                .withName("CreateRepoTag")
+                .withUri("/v2/manage/namespaces/{namespace}/repos/{repository}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("namespace",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRepoTagRequest::getNamespace, CreateRepoTagRequest::setNamespace));
+        builder.<String>withRequestField("repository",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateRepoTagRequest::getRepository, CreateRepoTagRequest::setRepository));
+        builder.<CreateRepoTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRepoTagRequestBody.class),
+            f -> f.withMarshaller(CreateRepoTagRequest::getBody, CreateRepoTagRequest::setBody));
 
         // response
 
@@ -1205,6 +1248,64 @@ public class SwrMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowDomainOverviewRequest, ShowDomainOverviewResponse> showDomainOverview =
+        genForShowDomainOverview();
+
+    private static HttpRequestDef<ShowDomainOverviewRequest, ShowDomainOverviewResponse> genForShowDomainOverview() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainOverviewRequest, ShowDomainOverviewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainOverviewRequest.class, ShowDomainOverviewResponse.class)
+                .withName("ShowDomainOverview")
+                .withUri("/v2/manage/overview")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainResourceReportsRequest, ShowDomainResourceReportsResponse> showDomainResourceReports =
+        genForShowDomainResourceReports();
+
+    private static HttpRequestDef<ShowDomainResourceReportsRequest, ShowDomainResourceReportsResponse> genForShowDomainResourceReports() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainResourceReportsRequest, ShowDomainResourceReportsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDomainResourceReportsRequest.class,
+                    ShowDomainResourceReportsResponse.class)
+                .withName("ShowDomainResourceReports")
+                .withUri("/v2/manage/reports/{resource_type}/{frequency}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ShowDomainResourceReportsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowDomainResourceReportsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ShowDomainResourceReportsRequest::getResourceType,
+                ShowDomainResourceReportsRequest::setResourceType));
+        builder.<ShowDomainResourceReportsRequest.FrequencyEnum>withRequestField("frequency",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowDomainResourceReportsRequest.FrequencyEnum.class),
+            f -> f.withMarshaller(ShowDomainResourceReportsRequest::getFrequency,
+                ShowDomainResourceReportsRequest::setFrequency));
+
+        // response
+        builder.<List<ReportData>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(ShowDomainResourceReportsResponse::getBody, ShowDomainResourceReportsResponse::setBody)
+                .withInnerContainerType(ReportData.class));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowNamespaceRequest, ShowNamespaceResponse> showNamespace =
         genForShowNamespace();
 
@@ -1306,6 +1407,24 @@ public class SwrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowRetentionRequest::getRetentionId, ShowRetentionRequest::setRetentionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowShareFeatureGatesRequest, ShowShareFeatureGatesResponse> showShareFeatureGates =
+        genForShowShareFeatureGates();
+
+    private static HttpRequestDef<ShowShareFeatureGatesRequest, ShowShareFeatureGatesResponse> genForShowShareFeatureGates() {
+        // basic
+        HttpRequestDef.Builder<ShowShareFeatureGatesRequest, ShowShareFeatureGatesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowShareFeatureGatesRequest.class, ShowShareFeatureGatesResponse.class)
+            .withName("ShowShareFeatureGates")
+            .withUri("/v2/manage/projects/{project_id}/feature-gates")
+            .withContentType("application/json");
+
+        // requests
 
         // response
 

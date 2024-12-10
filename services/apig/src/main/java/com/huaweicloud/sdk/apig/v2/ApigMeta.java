@@ -6532,12 +6532,6 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getApiName,
                 ListApisBindedToRequestThrottlingPolicyV2Request::setApiName));
-        builder.<String>withRequestField("tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListApisBindedToRequestThrottlingPolicyV2Request::getTags,
-                ListApisBindedToRequestThrottlingPolicyV2Request::setTags));
 
         // response
 
@@ -7817,6 +7811,12 @@ public class ApigMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCertificatesV2Request::getInstanceId, ListCertificatesV2Request::setInstanceId));
+        builder.<ListCertificatesV2Request.AlgorithmTypeEnum>withRequestField("algorithm_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCertificatesV2Request.AlgorithmTypeEnum.class),
+            f -> f.withMarshaller(ListCertificatesV2Request::getAlgorithmType,
+                ListCertificatesV2Request::setAlgorithmType));
 
         // response
 
@@ -8337,6 +8337,12 @@ public class ApigMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVpcChannelsV2Request::getMemberGroupId,
                 ListVpcChannelsV2Request::setMemberGroupId));
+        builder.<ListVpcChannelsV2Request.VpcChannelTypeEnum>withRequestField("vpc_channel_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListVpcChannelsV2Request.VpcChannelTypeEnum.class),
+            f -> f.withMarshaller(ListVpcChannelsV2Request::getVpcChannelType,
+                ListVpcChannelsV2Request::setVpcChannelType));
 
         // response
 

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.apig.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -64,6 +69,87 @@ public class ListVpcChannelsV2Request {
     @JsonProperty(value = "member_group_id")
 
     private String memberGroupId;
+
+    /**
+     * vpc通道类型： - builtin：服务器类型 - microservice： 微服务类型 - reference：引用负载通道类型
+     */
+    public static final class VpcChannelTypeEnum {
+
+        /**
+         * Enum BUILTIN for value: "builtin"
+         */
+        public static final VpcChannelTypeEnum BUILTIN = new VpcChannelTypeEnum("builtin");
+
+        /**
+         * Enum MICROSERVICE for value: "microservice"
+         */
+        public static final VpcChannelTypeEnum MICROSERVICE = new VpcChannelTypeEnum("microservice");
+
+        /**
+         * Enum REFERENCE for value: "reference"
+         */
+        public static final VpcChannelTypeEnum REFERENCE = new VpcChannelTypeEnum("reference");
+
+        private static final Map<String, VpcChannelTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, VpcChannelTypeEnum> createStaticFields() {
+            Map<String, VpcChannelTypeEnum> map = new HashMap<>();
+            map.put("builtin", BUILTIN);
+            map.put("microservice", MICROSERVICE);
+            map.put("reference", REFERENCE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        VpcChannelTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static VpcChannelTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VpcChannelTypeEnum(value));
+        }
+
+        public static VpcChannelTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof VpcChannelTypeEnum) {
+                return this.value.equals(((VpcChannelTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_channel_type")
+
+    private VpcChannelTypeEnum vpcChannelType;
 
     public ListVpcChannelsV2Request withInstanceId(String instanceId) {
         this.instanceId = instanceId;
@@ -256,6 +342,23 @@ public class ListVpcChannelsV2Request {
         this.memberGroupId = memberGroupId;
     }
 
+    public ListVpcChannelsV2Request withVpcChannelType(VpcChannelTypeEnum vpcChannelType) {
+        this.vpcChannelType = vpcChannelType;
+        return this;
+    }
+
+    /**
+     * vpc通道类型： - builtin：服务器类型 - microservice： 微服务类型 - reference：引用负载通道类型
+     * @return vpcChannelType
+     */
+    public VpcChannelTypeEnum getVpcChannelType() {
+        return vpcChannelType;
+    }
+
+    public void setVpcChannelType(VpcChannelTypeEnum vpcChannelType) {
+        this.vpcChannelType = vpcChannelType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -271,7 +374,8 @@ public class ListVpcChannelsV2Request {
             && Objects.equals(this.preciseSearch, that.preciseSearch)
             && Objects.equals(this.memberHost, that.memberHost) && Objects.equals(this.memberPort, that.memberPort)
             && Objects.equals(this.memberGroupName, that.memberGroupName)
-            && Objects.equals(this.memberGroupId, that.memberGroupId);
+            && Objects.equals(this.memberGroupId, that.memberGroupId)
+            && Objects.equals(this.vpcChannelType, that.vpcChannelType);
     }
 
     @Override
@@ -286,7 +390,8 @@ public class ListVpcChannelsV2Request {
             memberHost,
             memberPort,
             memberGroupName,
-            memberGroupId);
+            memberGroupId,
+            vpcChannelType);
     }
 
     @Override
@@ -304,6 +409,7 @@ public class ListVpcChannelsV2Request {
         sb.append("    memberPort: ").append(toIndentedString(memberPort)).append("\n");
         sb.append("    memberGroupName: ").append(toIndentedString(memberGroupName)).append("\n");
         sb.append("    memberGroupId: ").append(toIndentedString(memberGroupId)).append("\n");
+        sb.append("    vpcChannelType: ").append(toIndentedString(vpcChannelType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -236,6 +236,11 @@ public class ApiPolicyHttpCreate {
 
     private String retryCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_sm_channel")
+
+    private Boolean enableSmChannel;
+
     /**
      * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
      */
@@ -514,6 +519,23 @@ public class ApiPolicyHttpCreate {
         this.retryCount = retryCount;
     }
 
+    public ApiPolicyHttpCreate withEnableSmChannel(Boolean enableSmChannel) {
+        this.enableSmChannel = enableSmChannel;
+        return this;
+    }
+
+    /**
+     * 是否启用SM商密通道。  仅实例支持SM系列商密算法的实例时支持开启。
+     * @return enableSmChannel
+     */
+    public Boolean getEnableSmChannel() {
+        return enableSmChannel;
+    }
+
+    public void setEnableSmChannel(Boolean enableSmChannel) {
+        this.enableSmChannel = enableSmChannel;
+    }
+
     public ApiPolicyHttpCreate withEffectMode(EffectModeEnum effectMode) {
         this.effectMode = effectMode;
         return this;
@@ -686,6 +708,7 @@ public class ApiPolicyHttpCreate {
         return Objects.equals(this.urlDomain, that.urlDomain) && Objects.equals(this.reqProtocol, that.reqProtocol)
             && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.reqUri, that.reqUri)
             && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.retryCount, that.retryCount)
+            && Objects.equals(this.enableSmChannel, that.enableSmChannel)
             && Objects.equals(this.effectMode, that.effectMode) && Objects.equals(this.name, that.name)
             && Objects.equals(this.backendParams, that.backendParams)
             && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.authorizerId, that.authorizerId)
@@ -701,6 +724,7 @@ public class ApiPolicyHttpCreate {
             reqUri,
             timeout,
             retryCount,
+            enableSmChannel,
             effectMode,
             name,
             backendParams,
@@ -720,6 +744,7 @@ public class ApiPolicyHttpCreate {
         sb.append("    reqUri: ").append(toIndentedString(reqUri)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    retryCount: ").append(toIndentedString(retryCount)).append("\n");
+        sb.append("    enableSmChannel: ").append(toIndentedString(enableSmChannel)).append("\n");
         sb.append("    effectMode: ").append(toIndentedString(effectMode)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    backendParams: ").append(toIndentedString(backendParams)).append("\n");

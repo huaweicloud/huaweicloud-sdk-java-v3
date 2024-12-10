@@ -136,7 +136,7 @@ public class CreateDatabaseRequestDatabase {
     }
 
     /**
-     * 数据库分类 - RDS: RDS数据库 - ECS:自建数据库
+     * 数据库分类 - ECS:自建数据库
      * @return dbClassification
      */
     public String getDbClassification() {

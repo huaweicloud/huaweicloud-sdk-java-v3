@@ -120,6 +120,87 @@ public class ListCertificatesV2Request {
 
     private String instanceId;
 
+    /**
+     * 证书算法类型： - RSA。 - ECC。 - SM2。
+     */
+    public static final class AlgorithmTypeEnum {
+
+        /**
+         * Enum RSA for value: "RSA"
+         */
+        public static final AlgorithmTypeEnum RSA = new AlgorithmTypeEnum("RSA");
+
+        /**
+         * Enum ECC for value: "ECC"
+         */
+        public static final AlgorithmTypeEnum ECC = new AlgorithmTypeEnum("ECC");
+
+        /**
+         * Enum SM2 for value: "SM2"
+         */
+        public static final AlgorithmTypeEnum SM2 = new AlgorithmTypeEnum("SM2");
+
+        private static final Map<String, AlgorithmTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AlgorithmTypeEnum> createStaticFields() {
+            Map<String, AlgorithmTypeEnum> map = new HashMap<>();
+            map.put("RSA", RSA);
+            map.put("ECC", ECC);
+            map.put("SM2", SM2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AlgorithmTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AlgorithmTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AlgorithmTypeEnum(value));
+        }
+
+        public static AlgorithmTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AlgorithmTypeEnum) {
+                return this.value.equals(((AlgorithmTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "algorithm_type")
+
+    private AlgorithmTypeEnum algorithmType;
+
     public ListCertificatesV2Request withOffset(Long offset) {
         this.offset = offset;
         return this;
@@ -241,6 +322,23 @@ public class ListCertificatesV2Request {
         this.instanceId = instanceId;
     }
 
+    public ListCertificatesV2Request withAlgorithmType(AlgorithmTypeEnum algorithmType) {
+        this.algorithmType = algorithmType;
+        return this;
+    }
+
+    /**
+     * 证书算法类型： - RSA。 - ECC。 - SM2。
+     * @return algorithmType
+     */
+    public AlgorithmTypeEnum getAlgorithmType() {
+        return algorithmType;
+    }
+
+    public void setAlgorithmType(AlgorithmTypeEnum algorithmType) {
+        this.algorithmType = algorithmType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -253,12 +351,13 @@ public class ListCertificatesV2Request {
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.name, that.name) && Objects.equals(this.commonName, that.commonName)
             && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.instanceId, that.instanceId);
+            && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.algorithmType, that.algorithmType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, name, commonName, signatureAlgorithm, type, instanceId);
+        return Objects.hash(offset, limit, name, commonName, signatureAlgorithm, type, instanceId, algorithmType);
     }
 
     @Override
@@ -272,6 +371,7 @@ public class ListCertificatesV2Request {
         sb.append("    signatureAlgorithm: ").append(toIndentedString(signatureAlgorithm)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    algorithmType: ").append(toIndentedString(algorithmType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
