@@ -26,9 +26,9 @@ public class ListUsersRequest {
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "user_name")
+    @JsonProperty(value = "user_info")
 
-    private String userName;
+    private String userInfo;
 
     public ListUsersRequest withOrgId(String orgId) {
         this.orgId = orgId;
@@ -84,21 +84,21 @@ public class ListUsersRequest {
         this.limit = limit;
     }
 
-    public ListUsersRequest withUserName(String userName) {
-        this.userName = userName;
+    public ListUsersRequest withUserInfo(String userInfo) {
+        this.userInfo = userInfo;
         return this;
     }
 
     /**
      * 最长64位，用户名，支持模糊查询
-     * @return userName
+     * @return userInfo
      */
-    public String getUserName() {
-        return userName;
+    public String getUserInfo() {
+        return userInfo;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserInfo(String userInfo) {
+        this.userInfo = userInfo;
     }
 
     @Override
@@ -111,12 +111,12 @@ public class ListUsersRequest {
         }
         ListUsersRequest that = (ListUsersRequest) obj;
         return Objects.equals(this.orgId, that.orgId) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.userName, that.userName);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.userInfo, that.userInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(orgId, offset, limit, userName);
+        return Objects.hash(orgId, offset, limit, userInfo);
     }
 
     @Override
@@ -126,7 +126,7 @@ public class ListUsersRequest {
         sb.append("    orgId: ").append(toIndentedString(orgId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    userInfo: ").append(toIndentedString(userInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

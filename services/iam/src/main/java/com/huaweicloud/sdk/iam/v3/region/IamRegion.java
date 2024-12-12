@@ -68,6 +68,10 @@ public class IamRegion {
 
     public static final Region AE_AD_1 = new Region("ae-ad-1", "https://iam.ae-ad-1.myhuaweicloud.com");
 
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://iam.cn-east-4.myhuaweicloud.com");
+
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://iam.cn-east-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("IAM");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -98,6 +102,8 @@ public class IamRegion {
         map.put("me-east-1", ME_EAST_1);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("ae-ad-1", AE_AD_1);
+        map.put("cn-east-4", CN_EAST_4);
+        map.put("cn-east-5", CN_EAST_5);
         return Collections.unmodifiableMap(map);
     }
 

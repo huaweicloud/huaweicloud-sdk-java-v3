@@ -39,7 +39,7 @@ public class UpdateLivePlatformRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateLivePlatformReq body;
+    private UpdateLivePlatformReq body;
 
     public UpdateLivePlatformRequest withAuthorization(String authorization) {
         this.authorization = authorization;
@@ -132,14 +132,14 @@ public class UpdateLivePlatformRequest {
         this.platformId = platformId;
     }
 
-    public UpdateLivePlatformRequest withBody(CreateLivePlatformReq body) {
+    public UpdateLivePlatformRequest withBody(UpdateLivePlatformReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdateLivePlatformRequest withBody(Consumer<CreateLivePlatformReq> bodySetter) {
+    public UpdateLivePlatformRequest withBody(Consumer<UpdateLivePlatformReq> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateLivePlatformReq();
+            this.body = new UpdateLivePlatformReq();
             bodySetter.accept(this.body);
         }
 
@@ -150,11 +150,11 @@ public class UpdateLivePlatformRequest {
      * Get body
      * @return body
      */
-    public CreateLivePlatformReq getBody() {
+    public UpdateLivePlatformReq getBody() {
         return body;
     }
 
-    public void setBody(CreateLivePlatformReq body) {
+    public void setBody(UpdateLivePlatformReq body) {
         this.body = body;
     }
 

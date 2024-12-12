@@ -135,6 +135,9 @@ import com.huaweicloud.sdk.lts.v2.model.ListHostRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListHostResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListKeywordsAlarmRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListKeywordsAlarmRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.ListLogContextRequest;
+import com.huaweicloud.sdk.lts.v2.model.ListLogContextRequestBody;
+import com.huaweicloud.sdk.lts.v2.model.ListLogContextResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListLogGroupsRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListLogGroupsResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListLogHistogramRequest;
@@ -1307,6 +1310,39 @@ public class LtsMeta {
             .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogContextRequest, ListLogContextResponse> listLogContext =
+        genForListLogContext();
+
+    private static HttpRequestDef<ListLogContextRequest, ListLogContextResponse> genForListLogContext() {
+        // basic
+        HttpRequestDef.Builder<ListLogContextRequest, ListLogContextResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListLogContextRequest.class, ListLogContextResponse.class)
+                .withName("ListLogContext")
+                .withUri("/v2/{project_id}/groups/{log_group_id}/streams/{log_stream_id}/context")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("log_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogContextRequest::getLogGroupId, ListLogContextRequest::setLogGroupId));
+        builder.<String>withRequestField("log_stream_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogContextRequest::getLogStreamId, ListLogContextRequest::setLogStreamId));
+        builder.<ListLogContextRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListLogContextRequestBody.class),
+            f -> f.withMarshaller(ListLogContextRequest::getBody, ListLogContextRequest::setBody));
 
         // response
 

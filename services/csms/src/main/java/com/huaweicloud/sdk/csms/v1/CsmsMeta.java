@@ -752,11 +752,11 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListUsersRequest::getLimit, ListUsersRequest::setLimit));
-        builder.<String>withRequestField("user_name",
+        builder.<String>withRequestField("user_info",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListUsersRequest::getUserName, ListUsersRequest::setUserName));
+            f -> f.withMarshaller(ListUsersRequest::getUserInfo, ListUsersRequest::setUserInfo));
 
         // response
 

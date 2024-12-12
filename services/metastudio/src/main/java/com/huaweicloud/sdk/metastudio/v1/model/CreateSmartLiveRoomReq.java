@@ -152,7 +152,7 @@ public class CreateSmartLiveRoomReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "live_event_callback_config")
 
-    private LiveEventCallBackConfig liveEventCallbackConfig;
+    private LiveRoomEventCallBackConfig liveEventCallbackConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rtc_callback_config")
@@ -554,15 +554,15 @@ public class CreateSmartLiveRoomReq {
         this.backupModelAssetIds = backupModelAssetIds;
     }
 
-    public CreateSmartLiveRoomReq withLiveEventCallbackConfig(LiveEventCallBackConfig liveEventCallbackConfig) {
+    public CreateSmartLiveRoomReq withLiveEventCallbackConfig(LiveRoomEventCallBackConfig liveEventCallbackConfig) {
         this.liveEventCallbackConfig = liveEventCallbackConfig;
         return this;
     }
 
     public CreateSmartLiveRoomReq withLiveEventCallbackConfig(
-        Consumer<LiveEventCallBackConfig> liveEventCallbackConfigSetter) {
+        Consumer<LiveRoomEventCallBackConfig> liveEventCallbackConfigSetter) {
         if (this.liveEventCallbackConfig == null) {
-            this.liveEventCallbackConfig = new LiveEventCallBackConfig();
+            this.liveEventCallbackConfig = new LiveRoomEventCallBackConfig();
             liveEventCallbackConfigSetter.accept(this.liveEventCallbackConfig);
         }
 
@@ -573,11 +573,11 @@ public class CreateSmartLiveRoomReq {
      * Get liveEventCallbackConfig
      * @return liveEventCallbackConfig
      */
-    public LiveEventCallBackConfig getLiveEventCallbackConfig() {
+    public LiveRoomEventCallBackConfig getLiveEventCallbackConfig() {
         return liveEventCallbackConfig;
     }
 
-    public void setLiveEventCallbackConfig(LiveEventCallBackConfig liveEventCallbackConfig) {
+    public void setLiveEventCallbackConfig(LiveRoomEventCallBackConfig liveEventCallbackConfig) {
         this.liveEventCallbackConfig = liveEventCallbackConfig;
     }
 

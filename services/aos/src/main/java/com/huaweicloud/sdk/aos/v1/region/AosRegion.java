@@ -39,6 +39,9 @@ public class AosRegion {
     public static final Region AP_SOUTHEAST_4 =
         new Region("ap-southeast-4", "https://rfs.ap-southeast-4.myhuaweicloud.com");
 
+    public static final Region MY_KUALALUMPUR_1 =
+        new Region("my-kualalumpur-1", "https://rfs.my-kualalumpur-1.myhuaweicloud.com");
+
     public static final Region ME_EAST_1 = new Region("me-east-1", "https://rfs.me-east-1.myhuaweicloud.com");
 
     public static final Region TR_WEST_1 = new Region("tr-west-1", "https://rfs.tr-west-1.myhuaweicloud.com");
@@ -77,6 +80,7 @@ public class AosRegion {
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("me-east-1", ME_EAST_1);
         map.put("tr-west-1", TR_WEST_1);
         map.put("la-south-2", LA_SOUTH_2);

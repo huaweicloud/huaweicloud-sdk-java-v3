@@ -293,6 +293,11 @@ public class VideoConfig {
 
     private Boolean isEnableSuperResolution;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_end_at_first_frame")
+
+    private Boolean isEndAtFirstFrame;
+
     public VideoConfig withClipMode(ClipModeEnum clipMode) {
         this.clipMode = clipMode;
         return this;
@@ -499,6 +504,23 @@ public class VideoConfig {
         this.isEnableSuperResolution = isEnableSuperResolution;
     }
 
+    public VideoConfig withIsEndAtFirstFrame(Boolean isEndAtFirstFrame) {
+        this.isEndAtFirstFrame = isEndAtFirstFrame;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 视频结束帧是否跟起始帧相同。需要多个数字人视频无缝拼接时设置成true。 **约束限制**： 仅分身数字人视频制作支持。 **取值范围** * true: 开启 * false: 不开启
+     * @return isEndAtFirstFrame
+     */
+    public Boolean getIsEndAtFirstFrame() {
+        return isEndAtFirstFrame;
+    }
+
+    public void setIsEndAtFirstFrame(Boolean isEndAtFirstFrame) {
+        this.isEndAtFirstFrame = isEndAtFirstFrame;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -514,7 +536,8 @@ public class VideoConfig {
             && Objects.equals(this.isSubtitleEnable, that.isSubtitleEnable)
             && Objects.equals(this.subtitleConfig, that.subtitleConfig) && Objects.equals(this.dx, that.dx)
             && Objects.equals(this.dy, that.dy)
-            && Objects.equals(this.isEnableSuperResolution, that.isEnableSuperResolution);
+            && Objects.equals(this.isEnableSuperResolution, that.isEnableSuperResolution)
+            && Objects.equals(this.isEndAtFirstFrame, that.isEndAtFirstFrame);
     }
 
     @Override
@@ -529,7 +552,8 @@ public class VideoConfig {
             subtitleConfig,
             dx,
             dy,
-            isEnableSuperResolution);
+            isEnableSuperResolution,
+            isEndAtFirstFrame);
     }
 
     @Override
@@ -547,6 +571,7 @@ public class VideoConfig {
         sb.append("    dx: ").append(toIndentedString(dx)).append("\n");
         sb.append("    dy: ").append(toIndentedString(dy)).append("\n");
         sb.append("    isEnableSuperResolution: ").append(toIndentedString(isEnableSuperResolution)).append("\n");
+        sb.append("    isEndAtFirstFrame: ").append(toIndentedString(isEndAtFirstFrame)).append("\n");
         sb.append("}");
         return sb.toString();
     }

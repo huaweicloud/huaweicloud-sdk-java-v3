@@ -23,6 +23,16 @@ public class HealthReportDiskStat {
 
     private List<HealthReportRatioStat> ratioStats = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "analyze_success")
+
+    private Boolean analyzeSuccess;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_message")
+
+    private String errorMessage;
+
     public HealthReportDiskStat withPeakStats(List<HealthReportSingleValueStat> peakStats) {
         this.peakStats = peakStats;
         return this;
@@ -89,6 +99,40 @@ public class HealthReportDiskStat {
         this.ratioStats = ratioStats;
     }
 
+    public HealthReportDiskStat withAnalyzeSuccess(Boolean analyzeSuccess) {
+        this.analyzeSuccess = analyzeSuccess;
+        return this;
+    }
+
+    /**
+     * 统计分析是否成功。
+     * @return analyzeSuccess
+     */
+    public Boolean getAnalyzeSuccess() {
+        return analyzeSuccess;
+    }
+
+    public void setAnalyzeSuccess(Boolean analyzeSuccess) {
+        this.analyzeSuccess = analyzeSuccess;
+    }
+
+    public HealthReportDiskStat withErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+        return this;
+    }
+
+    /**
+     * 错误信息。
+     * @return errorMessage
+     */
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -98,12 +142,14 @@ public class HealthReportDiskStat {
             return false;
         }
         HealthReportDiskStat that = (HealthReportDiskStat) obj;
-        return Objects.equals(this.peakStats, that.peakStats) && Objects.equals(this.ratioStats, that.ratioStats);
+        return Objects.equals(this.peakStats, that.peakStats) && Objects.equals(this.ratioStats, that.ratioStats)
+            && Objects.equals(this.analyzeSuccess, that.analyzeSuccess)
+            && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(peakStats, ratioStats);
+        return Objects.hash(peakStats, ratioStats, analyzeSuccess, errorMessage);
     }
 
     @Override
@@ -112,6 +158,8 @@ public class HealthReportDiskStat {
         sb.append("class HealthReportDiskStat {\n");
         sb.append("    peakStats: ").append(toIndentedString(peakStats)).append("\n");
         sb.append("    ratioStats: ").append(toIndentedString(ratioStats)).append("\n");
+        sb.append("    analyzeSuccess: ").append(toIndentedString(analyzeSuccess)).append("\n");
+        sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

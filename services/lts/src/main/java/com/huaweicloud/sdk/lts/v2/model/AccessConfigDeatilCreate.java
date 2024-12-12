@@ -189,6 +189,51 @@ public class AccessConfigDeatilCreate {
 
     private Map<String, String> logK8s = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repeat_collect")
+
+    private Boolean repeatCollect;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "system_fields")
+
+    private List<String> systemFields = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "custom_key_value")
+
+    private Map<String, String> customKeyValue = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "includeLabelsLogical")
+
+    private String includeLabelsLogical;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "excludeLabelsLogical")
+
+    private String excludeLabelsLogical;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "includeK8sLabelsLogical")
+
+    private String includeK8sLabelsLogical;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "excludeK8sLabelsLogical")
+
+    private String excludeK8sLabelsLogical;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "includeEnvsLogical")
+
+    private String includeEnvsLogical;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "excludeEnvsLogical")
+
+    private String excludeEnvsLogical;
+
     public AccessConfigDeatilCreate withPaths(List<String> paths) {
         this.paths = paths;
         return this;
@@ -707,6 +752,191 @@ public class AccessConfigDeatilCreate {
         this.logK8s = logK8s;
     }
 
+    public AccessConfigDeatilCreate withRepeatCollect(Boolean repeatCollect) {
+        this.repeatCollect = repeatCollect;
+        return this;
+    }
+
+    /**
+     * 是否允许此文件重复采集
+     * @return repeatCollect
+     */
+    public Boolean getRepeatCollect() {
+        return repeatCollect;
+    }
+
+    public void setRepeatCollect(Boolean repeatCollect) {
+        this.repeatCollect = repeatCollect;
+    }
+
+    public AccessConfigDeatilCreate withSystemFields(List<String> systemFields) {
+        this.systemFields = systemFields;
+        return this;
+    }
+
+    public AccessConfigDeatilCreate addSystemFieldsItem(String systemFieldsItem) {
+        if (this.systemFields == null) {
+            this.systemFields = new ArrayList<>();
+        }
+        this.systemFields.add(systemFieldsItem);
+        return this;
+    }
+
+    public AccessConfigDeatilCreate withSystemFields(Consumer<List<String>> systemFieldsSetter) {
+        if (this.systemFields == null) {
+            this.systemFields = new ArrayList<>();
+        }
+        systemFieldsSetter.accept(this.systemFields);
+        return this;
+    }
+
+    /**
+     * 系统内置字段：配置日志接入规则时，可以配置系统内置字段，上报日志后，每条日志数据的标签数据中将会有系统字段 采集场景为主机文件的内置字段为：hostName、hostId、hostIP、pathFile、hostIPv6、category、collectTime、__host_group__ 采集场景为K8S集群容器文件的内置字段为：hostName、hostId、hostIP、pathFile、hostIPv6、clusterId、podName、appName、containerName、nameSpace、category、collectTime、__host_group__、serviceID、podIp、clusterName、workloadType 若修改时传入此字段，将覆盖原有配置
+     * @return systemFields
+     */
+    public List<String> getSystemFields() {
+        return systemFields;
+    }
+
+    public void setSystemFields(List<String> systemFields) {
+        this.systemFields = systemFields;
+    }
+
+    public AccessConfigDeatilCreate withCustomKeyValue(Map<String, String> customKeyValue) {
+        this.customKeyValue = customKeyValue;
+        return this;
+    }
+
+    public AccessConfigDeatilCreate putCustomKeyValueItem(String key, String customKeyValueItem) {
+        if (this.customKeyValue == null) {
+            this.customKeyValue = new HashMap<>();
+        }
+        this.customKeyValue.put(key, customKeyValueItem);
+        return this;
+    }
+
+    public AccessConfigDeatilCreate withCustomKeyValue(Consumer<Map<String, String>> customKeyValueSetter) {
+        if (this.customKeyValue == null) {
+            this.customKeyValue = new HashMap<>();
+        }
+        customKeyValueSetter.accept(this.customKeyValue);
+        return this;
+    }
+
+    /**
+     * 自定义键值对：配置日志接入规则时，可以配置自定义键值对规则，上报日志后，每条日志数据的标签数据中将会有用户自定义的键值对字段，键值对数量不超过20 键的长度限制为128，允许的字符有a-zA-Z0-9_- 值的长度限制为1024
+     * @return customKeyValue
+     */
+    public Map<String, String> getCustomKeyValue() {
+        return customKeyValue;
+    }
+
+    public void setCustomKeyValue(Map<String, String> customKeyValue) {
+        this.customKeyValue = customKeyValue;
+    }
+
+    public AccessConfigDeatilCreate withIncludeLabelsLogical(String includeLabelsLogical) {
+        this.includeLabelsLogical = includeLabelsLogical;
+        return this;
+    }
+
+    /**
+     * 容器 Label白名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+     * @return includeLabelsLogical
+     */
+    public String getIncludeLabelsLogical() {
+        return includeLabelsLogical;
+    }
+
+    public void setIncludeLabelsLogical(String includeLabelsLogical) {
+        this.includeLabelsLogical = includeLabelsLogical;
+    }
+
+    public AccessConfigDeatilCreate withExcludeLabelsLogical(String excludeLabelsLogical) {
+        this.excludeLabelsLogical = excludeLabelsLogical;
+        return this;
+    }
+
+    /**
+     * 容器 Label黑名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+     * @return excludeLabelsLogical
+     */
+    public String getExcludeLabelsLogical() {
+        return excludeLabelsLogical;
+    }
+
+    public void setExcludeLabelsLogical(String excludeLabelsLogical) {
+        this.excludeLabelsLogical = excludeLabelsLogical;
+    }
+
+    public AccessConfigDeatilCreate withIncludeK8sLabelsLogical(String includeK8sLabelsLogical) {
+        this.includeK8sLabelsLogical = includeK8sLabelsLogical;
+        return this;
+    }
+
+    /**
+     * K8S Label白名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+     * @return includeK8sLabelsLogical
+     */
+    public String getIncludeK8sLabelsLogical() {
+        return includeK8sLabelsLogical;
+    }
+
+    public void setIncludeK8sLabelsLogical(String includeK8sLabelsLogical) {
+        this.includeK8sLabelsLogical = includeK8sLabelsLogical;
+    }
+
+    public AccessConfigDeatilCreate withExcludeK8sLabelsLogical(String excludeK8sLabelsLogical) {
+        this.excludeK8sLabelsLogical = excludeK8sLabelsLogical;
+        return this;
+    }
+
+    /**
+     * K8S Label黑名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+     * @return excludeK8sLabelsLogical
+     */
+    public String getExcludeK8sLabelsLogical() {
+        return excludeK8sLabelsLogical;
+    }
+
+    public void setExcludeK8sLabelsLogical(String excludeK8sLabelsLogical) {
+        this.excludeK8sLabelsLogical = excludeK8sLabelsLogical;
+    }
+
+    public AccessConfigDeatilCreate withIncludeEnvsLogical(String includeEnvsLogical) {
+        this.includeEnvsLogical = includeEnvsLogical;
+        return this;
+    }
+
+    /**
+     * 环境变量白名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+     * @return includeEnvsLogical
+     */
+    public String getIncludeEnvsLogical() {
+        return includeEnvsLogical;
+    }
+
+    public void setIncludeEnvsLogical(String includeEnvsLogical) {
+        this.includeEnvsLogical = includeEnvsLogical;
+    }
+
+    public AccessConfigDeatilCreate withExcludeEnvsLogical(String excludeEnvsLogical) {
+        this.excludeEnvsLogical = excludeEnvsLogical;
+        return this;
+    }
+
+    /**
+     * 环境变量黑名单，可选为AND，OR，不配置时默认为OR；当存在多个值时的处理逻辑，AND表示同时满足才会生效，OR表示有一项满足就会生效
+     * @return excludeEnvsLogical
+     */
+    public String getExcludeEnvsLogical() {
+        return excludeEnvsLogical;
+    }
+
+    public void setExcludeEnvsLogical(String excludeEnvsLogical) {
+        this.excludeEnvsLogical = excludeEnvsLogical;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -727,7 +957,16 @@ public class AccessConfigDeatilCreate {
             && Objects.equals(this.includeEnvs, that.includeEnvs) && Objects.equals(this.excludeEnvs, that.excludeEnvs)
             && Objects.equals(this.logLabels, that.logLabels) && Objects.equals(this.logEnvs, that.logEnvs)
             && Objects.equals(this.includeK8sLabels, that.includeK8sLabels)
-            && Objects.equals(this.excludeK8sLabels, that.excludeK8sLabels) && Objects.equals(this.logK8s, that.logK8s);
+            && Objects.equals(this.excludeK8sLabels, that.excludeK8sLabels) && Objects.equals(this.logK8s, that.logK8s)
+            && Objects.equals(this.repeatCollect, that.repeatCollect)
+            && Objects.equals(this.systemFields, that.systemFields)
+            && Objects.equals(this.customKeyValue, that.customKeyValue)
+            && Objects.equals(this.includeLabelsLogical, that.includeLabelsLogical)
+            && Objects.equals(this.excludeLabelsLogical, that.excludeLabelsLogical)
+            && Objects.equals(this.includeK8sLabelsLogical, that.includeK8sLabelsLogical)
+            && Objects.equals(this.excludeK8sLabelsLogical, that.excludeK8sLabelsLogical)
+            && Objects.equals(this.includeEnvsLogical, that.includeEnvsLogical)
+            && Objects.equals(this.excludeEnvsLogical, that.excludeEnvsLogical);
     }
 
     @Override
@@ -750,7 +989,16 @@ public class AccessConfigDeatilCreate {
             logEnvs,
             includeK8sLabels,
             excludeK8sLabels,
-            logK8s);
+            logK8s,
+            repeatCollect,
+            systemFields,
+            customKeyValue,
+            includeLabelsLogical,
+            excludeLabelsLogical,
+            includeK8sLabelsLogical,
+            excludeK8sLabelsLogical,
+            includeEnvsLogical,
+            excludeEnvsLogical);
     }
 
     @Override
@@ -776,6 +1024,15 @@ public class AccessConfigDeatilCreate {
         sb.append("    includeK8sLabels: ").append(toIndentedString(includeK8sLabels)).append("\n");
         sb.append("    excludeK8sLabels: ").append(toIndentedString(excludeK8sLabels)).append("\n");
         sb.append("    logK8s: ").append(toIndentedString(logK8s)).append("\n");
+        sb.append("    repeatCollect: ").append(toIndentedString(repeatCollect)).append("\n");
+        sb.append("    systemFields: ").append(toIndentedString(systemFields)).append("\n");
+        sb.append("    customKeyValue: ").append(toIndentedString(customKeyValue)).append("\n");
+        sb.append("    includeLabelsLogical: ").append(toIndentedString(includeLabelsLogical)).append("\n");
+        sb.append("    excludeLabelsLogical: ").append(toIndentedString(excludeLabelsLogical)).append("\n");
+        sb.append("    includeK8sLabelsLogical: ").append(toIndentedString(includeK8sLabelsLogical)).append("\n");
+        sb.append("    excludeK8sLabelsLogical: ").append(toIndentedString(excludeK8sLabelsLogical)).append("\n");
+        sb.append("    includeEnvsLogical: ").append(toIndentedString(includeEnvsLogical)).append("\n");
+        sb.append("    excludeEnvsLogical: ").append(toIndentedString(excludeEnvsLogical)).append("\n");
         sb.append("}");
         return sb.toString();
     }

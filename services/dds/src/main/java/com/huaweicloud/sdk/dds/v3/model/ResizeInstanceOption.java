@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ResizeInstanceOption
@@ -108,6 +111,11 @@ public class ResizeInstanceOption {
     private String targetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_ids")
+
+    private List<String> targetIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "target_spec_code")
 
     private String targetSpecCode;
@@ -146,6 +154,39 @@ public class ResizeInstanceOption {
         this.targetId = targetId;
     }
 
+    public ResizeInstanceOption withTargetIds(List<String> targetIds) {
+        this.targetIds = targetIds;
+        return this;
+    }
+
+    public ResizeInstanceOption addTargetIdsItem(String targetIdsItem) {
+        if (this.targetIds == null) {
+            this.targetIds = new ArrayList<>();
+        }
+        this.targetIds.add(targetIdsItem);
+        return this;
+    }
+
+    public ResizeInstanceOption withTargetIds(Consumer<List<String>> targetIdsSetter) {
+        if (this.targetIds == null) {
+            this.targetIds = new ArrayList<>();
+        }
+        targetIdsSetter.accept(this.targetIds);
+        return this;
+    }
+
+    /**
+     * 待变更规格的节点组ID列表，可以调用“查询实例列表和详情”接口获取。如果未申请实例，可以调用“创建实例”接口创建。 - 对于集群实例，变更mongos节点规格时，不传该参数；变更单个shard组规格时，不传该参数；变更config组规格时，不传该参数；批量变更多个shard组规格时，取值为相应的多个shard组ID，最多支持16个shard组批量变更。 - 对于副本集实例，不传该参数。 - 对于单节点实例，不传该参数。
+     * @return targetIds
+     */
+    public List<String> getTargetIds() {
+        return targetIds;
+    }
+
+    public void setTargetIds(List<String> targetIds) {
+        this.targetIds = targetIds;
+    }
+
     public ResizeInstanceOption withTargetSpecCode(String targetSpecCode) {
         this.targetSpecCode = targetSpecCode;
         return this;
@@ -173,12 +214,13 @@ public class ResizeInstanceOption {
         }
         ResizeInstanceOption that = (ResizeInstanceOption) obj;
         return Objects.equals(this.targetType, that.targetType) && Objects.equals(this.targetId, that.targetId)
+            && Objects.equals(this.targetIds, that.targetIds)
             && Objects.equals(this.targetSpecCode, that.targetSpecCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetType, targetId, targetSpecCode);
+        return Objects.hash(targetType, targetId, targetIds, targetSpecCode);
     }
 
     @Override
@@ -187,6 +229,7 @@ public class ResizeInstanceOption {
         sb.append("class ResizeInstanceOption {\n");
         sb.append("    targetType: ").append(toIndentedString(targetType)).append("\n");
         sb.append("    targetId: ").append(toIndentedString(targetId)).append("\n");
+        sb.append("    targetIds: ").append(toIndentedString(targetIds)).append("\n");
         sb.append("    targetSpecCode: ").append(toIndentedString(targetSpecCode)).append("\n");
         sb.append("}");
         return sb.toString();

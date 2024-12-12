@@ -397,6 +397,7 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeQuestionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateKnowledgeSkillResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateLivePlatformReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateLivePlatformRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateLivePlatformResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdatePacifyWordsReq;
@@ -4731,10 +4732,10 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateLivePlatformRequest::getXAppUserId, UpdateLivePlatformRequest::setXAppUserId));
-        builder.<CreateLivePlatformReq>withRequestField("body",
+        builder.<UpdateLivePlatformReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateLivePlatformReq.class),
+            TypeCasts.uncheckedConversion(UpdateLivePlatformReq.class),
             f -> f.withMarshaller(UpdateLivePlatformRequest::getBody, UpdateLivePlatformRequest::setBody));
 
         // response

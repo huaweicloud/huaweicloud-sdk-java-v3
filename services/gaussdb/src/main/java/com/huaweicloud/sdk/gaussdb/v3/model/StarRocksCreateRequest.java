@@ -155,6 +155,16 @@ public class StarRocksCreateRequest {
 
     private String securityGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pay_info")
+
+    private StarRocksCreateRequestPayInfo payInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_code")
+
+    private String regionCode;
+
     public StarRocksCreateRequest withName(String name) {
         this.name = name;
         return this;
@@ -455,6 +465,49 @@ public class StarRocksCreateRequest {
         this.securityGroupId = securityGroupId;
     }
 
+    public StarRocksCreateRequest withPayInfo(StarRocksCreateRequestPayInfo payInfo) {
+        this.payInfo = payInfo;
+        return this;
+    }
+
+    public StarRocksCreateRequest withPayInfo(Consumer<StarRocksCreateRequestPayInfo> payInfoSetter) {
+        if (this.payInfo == null) {
+            this.payInfo = new StarRocksCreateRequestPayInfo();
+            payInfoSetter.accept(this.payInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get payInfo
+     * @return payInfo
+     */
+    public StarRocksCreateRequestPayInfo getPayInfo() {
+        return payInfo;
+    }
+
+    public void setPayInfo(StarRocksCreateRequestPayInfo payInfo) {
+        this.payInfo = payInfo;
+    }
+
+    public StarRocksCreateRequest withRegionCode(String regionCode) {
+        this.regionCode = regionCode;
+        return this;
+    }
+
+    /**
+     * 可用区。包周期场景必填。
+     * @return regionCode
+     */
+    public String getRegionCode() {
+        return regionCode;
+    }
+
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -471,7 +524,8 @@ public class StarRocksCreateRequest {
             && Objects.equals(this.azMode, that.azMode) && Objects.equals(this.feVolume, that.feVolume)
             && Objects.equals(this.beVolume, that.beVolume) && Objects.equals(this.azCode, that.azCode)
             && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.tagsInfo, that.tagsInfo)
-            && Objects.equals(this.securityGroupId, that.securityGroupId);
+            && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.payInfo, that.payInfo)
+            && Objects.equals(this.regionCode, that.regionCode);
     }
 
     @Override
@@ -490,7 +544,9 @@ public class StarRocksCreateRequest {
             azCode,
             timeZone,
             tagsInfo,
-            securityGroupId);
+            securityGroupId,
+            payInfo,
+            regionCode);
     }
 
     @Override
@@ -512,6 +568,8 @@ public class StarRocksCreateRequest {
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    tagsInfo: ").append(toIndentedString(tagsInfo)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    payInfo: ").append(toIndentedString(payInfo)).append("\n");
+        sb.append("    regionCode: ").append(toIndentedString(regionCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

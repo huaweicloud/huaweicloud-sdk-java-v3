@@ -1,8 +1,15 @@
 package com.huaweicloud.sdk.metastudio.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -50,6 +57,86 @@ public class SmartChatRoomBaseInfo {
     @JsonProperty(value = "concurrency")
 
     private Integer concurrency;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "voice_config_list")
+
+    private List<VoiceConfigRsp> voiceConfigList = null;
+
+    /**
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。
+     */
+    public static final class DefaultLanguageEnum {
+
+        /**
+         * Enum CN for value: "CN"
+         */
+        public static final DefaultLanguageEnum CN = new DefaultLanguageEnum("CN");
+
+        /**
+         * Enum EN for value: "EN"
+         */
+        public static final DefaultLanguageEnum EN = new DefaultLanguageEnum("EN");
+
+        private static final Map<String, DefaultLanguageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DefaultLanguageEnum> createStaticFields() {
+            Map<String, DefaultLanguageEnum> map = new HashMap<>();
+            map.put("CN", CN);
+            map.put("EN", EN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DefaultLanguageEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DefaultLanguageEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DefaultLanguageEnum(value));
+        }
+
+        public static DefaultLanguageEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DefaultLanguageEnum) {
+                return this.value.equals(((DefaultLanguageEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_language")
+
+    private DefaultLanguageEnum defaultLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -217,6 +304,56 @@ public class SmartChatRoomBaseInfo {
         this.concurrency = concurrency;
     }
 
+    public SmartChatRoomBaseInfo withVoiceConfigList(List<VoiceConfigRsp> voiceConfigList) {
+        this.voiceConfigList = voiceConfigList;
+        return this;
+    }
+
+    public SmartChatRoomBaseInfo addVoiceConfigListItem(VoiceConfigRsp voiceConfigListItem) {
+        if (this.voiceConfigList == null) {
+            this.voiceConfigList = new ArrayList<>();
+        }
+        this.voiceConfigList.add(voiceConfigListItem);
+        return this;
+    }
+
+    public SmartChatRoomBaseInfo withVoiceConfigList(Consumer<List<VoiceConfigRsp>> voiceConfigListSetter) {
+        if (this.voiceConfigList == null) {
+            this.voiceConfigList = new ArrayList<>();
+        }
+        voiceConfigListSetter.accept(this.voiceConfigList);
+        return this;
+    }
+
+    /**
+     * 语音配置参数列表。
+     * @return voiceConfigList
+     */
+    public List<VoiceConfigRsp> getVoiceConfigList() {
+        return voiceConfigList;
+    }
+
+    public void setVoiceConfigList(List<VoiceConfigRsp> voiceConfigList) {
+        this.voiceConfigList = voiceConfigList;
+    }
+
+    public SmartChatRoomBaseInfo withDefaultLanguage(DefaultLanguageEnum defaultLanguage) {
+        this.defaultLanguage = defaultLanguage;
+        return this;
+    }
+
+    /**
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。
+     * @return defaultLanguage
+     */
+    public DefaultLanguageEnum getDefaultLanguage() {
+        return defaultLanguage;
+    }
+
+    public void setDefaultLanguage(DefaultLanguageEnum defaultLanguage) {
+        this.defaultLanguage = defaultLanguage;
+    }
+
     public SmartChatRoomBaseInfo withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -264,6 +401,8 @@ public class SmartChatRoomBaseInfo {
             && Objects.equals(this.roomDescription, that.roomDescription) && Objects.equals(this.robotId, that.robotId)
             && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.modelInfos, that.modelInfos)
             && Objects.equals(this.voiceConfig, that.voiceConfig) && Objects.equals(this.concurrency, that.concurrency)
+            && Objects.equals(this.voiceConfigList, that.voiceConfigList)
+            && Objects.equals(this.defaultLanguage, that.defaultLanguage)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
@@ -277,6 +416,8 @@ public class SmartChatRoomBaseInfo {
             modelInfos,
             voiceConfig,
             concurrency,
+            voiceConfigList,
+            defaultLanguage,
             createTime,
             updateTime);
     }
@@ -293,6 +434,8 @@ public class SmartChatRoomBaseInfo {
         sb.append("    modelInfos: ").append(toIndentedString(modelInfos)).append("\n");
         sb.append("    voiceConfig: ").append(toIndentedString(voiceConfig)).append("\n");
         sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
+        sb.append("    voiceConfigList: ").append(toIndentedString(voiceConfigList)).append("\n");
+        sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

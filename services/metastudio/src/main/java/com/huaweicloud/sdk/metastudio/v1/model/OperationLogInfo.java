@@ -547,6 +547,11 @@ public class OperationLogInfo {
 
     private OperateUserEnum operateUser;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
     public OperationLogInfo withOperateTime(String operateTime) {
         this.operateTime = operateTime;
         return this;
@@ -587,7 +592,7 @@ public class OperationLogInfo {
     }
 
     /**
-     * 日志描述。用于记录人工审核不通过时的审核意见和DHTS、DHPS上报的错误信息。
+     * 日志描述。用于记录人工或自动审核不通过时的审核意见。
      * @return logDescription
      */
     public String getLogDescription() {
@@ -615,6 +620,23 @@ public class OperationLogInfo {
         this.operateUser = operateUser;
     }
 
+    public OperationLogInfo withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
+     * 系统自动驳回时的错误码： * 44005901：视频分辨率不符合要求，目前只接受 1080p(1920x1080, 1080x1920) 或 4K(3840x2160, 2160x3840) 这四种分辨率
+     * @return errorCode
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -626,12 +648,12 @@ public class OperationLogInfo {
         OperationLogInfo that = (OperationLogInfo) obj;
         return Objects.equals(this.operateTime, that.operateTime) && Objects.equals(this.logType, that.logType)
             && Objects.equals(this.logDescription, that.logDescription)
-            && Objects.equals(this.operateUser, that.operateUser);
+            && Objects.equals(this.operateUser, that.operateUser) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operateTime, logType, logDescription, operateUser);
+        return Objects.hash(operateTime, logType, logDescription, operateUser, errorCode);
     }
 
     @Override
@@ -642,6 +664,7 @@ public class OperationLogInfo {
         sb.append("    logType: ").append(toIndentedString(logType)).append("\n");
         sb.append("    logDescription: ").append(toIndentedString(logDescription)).append("\n");
         sb.append("    operateUser: ").append(toIndentedString(operateUser)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

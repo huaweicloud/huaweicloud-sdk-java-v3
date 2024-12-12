@@ -264,8 +264,6 @@ import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionResponse;
-import com.huaweicloud.sdk.cce.v3.model.SyncNodePoolRequest;
-import com.huaweicloud.sdk.cce.v3.model.SyncNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.SyncNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.SyncNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
@@ -2492,38 +2490,6 @@ public class CceMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(SyncNodeResponse::getBody, SyncNodeResponse::setBody));
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<SyncNodePoolRequest, SyncNodePoolResponse> syncNodePool = genForSyncNodePool();
-
-    private static HttpRequestDef<SyncNodePoolRequest, SyncNodePoolResponse> genForSyncNodePool() {
-        // basic
-        HttpRequestDef.Builder<SyncNodePoolRequest, SyncNodePoolResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, SyncNodePoolRequest.class, SyncNodePoolResponse.class)
-                .withName("SyncNodePool")
-                .withUri("/api/v3.1/projects/{project_id}/clusters/{cluster_id}/nodepool/{nodepool_id}/sync")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("cluster_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SyncNodePoolRequest::getClusterId, SyncNodePoolRequest::setClusterId));
-        builder.<String>withRequestField("nodepool_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SyncNodePoolRequest::getNodepoolId, SyncNodePoolRequest::setNodepoolId));
-
-        // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(SyncNodePoolResponse::getBody, SyncNodePoolResponse::setBody));
 
         return builder.build();
     }

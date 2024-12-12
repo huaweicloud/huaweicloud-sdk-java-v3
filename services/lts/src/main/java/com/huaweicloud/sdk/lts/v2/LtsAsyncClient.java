@@ -101,6 +101,8 @@ import com.huaweicloud.sdk.lts.v2.model.ListHostRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListHostResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListKeywordsAlarmRulesRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListKeywordsAlarmRulesResponse;
+import com.huaweicloud.sdk.lts.v2.model.ListLogContextRequest;
+import com.huaweicloud.sdk.lts.v2.model.ListLogContextResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListLogGroupsRequest;
 import com.huaweicloud.sdk.lts.v2.model.ListLogGroupsResponse;
 import com.huaweicloud.sdk.lts.v2.model.ListLogHistogramRequest;
@@ -1370,6 +1372,35 @@ public class LtsAsyncClient {
     public AsyncInvoker<ListKeywordsAlarmRulesRequest, ListKeywordsAlarmRulesResponse> listKeywordsAlarmRulesAsyncInvoker(
         ListKeywordsAlarmRulesRequest request) {
         return new AsyncInvoker<>(request, LtsMeta.listKeywordsAlarmRules, hcClient);
+    }
+
+    /**
+     * 查询上下文日志
+     *
+     * 查询上下文日志 该接口用于查询指定日志前（上文）后（下文）的若干条日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogContextRequest 请求对象
+     * @return CompletableFuture<ListLogContextResponse>
+     */
+    public CompletableFuture<ListLogContextResponse> listLogContextAsync(ListLogContextRequest request) {
+        return hcClient.asyncInvokeHttp(request, LtsMeta.listLogContext);
+    }
+
+    /**
+     * 查询上下文日志
+     *
+     * 查询上下文日志 该接口用于查询指定日志前（上文）后（下文）的若干条日志。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogContextRequest 请求对象
+     * @return AsyncInvoker<ListLogContextRequest, ListLogContextResponse>
+     */
+    public AsyncInvoker<ListLogContextRequest, ListLogContextResponse> listLogContextAsyncInvoker(
+        ListLogContextRequest request) {
+        return new AsyncInvoker<>(request, LtsMeta.listLogContext, hcClient);
     }
 
     /**

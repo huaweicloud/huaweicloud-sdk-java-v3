@@ -153,7 +153,7 @@ public class CreateAsyncTtsJobRequestBody {
     }
 
     /**
-     * 音色ID
+     * 音色ID，获取方式详见[获取音色ID](metastudio_02_0054.xml)。
      * @return voiceAssetId
      */
     public String getVoiceAssetId() {
@@ -170,7 +170,7 @@ public class CreateAsyncTtsJobRequestBody {
     }
 
     /**
-     * 语速。 默认值100，最小值50，最大值200。 > * 当取值为“100”时，表示一个成年人正常的语速，约为250字/分钟。 > * 50表示0.5倍语速，100表示正常语速，200表示2倍语速。
+     * 语速。 * 当取值为“100”时，表示一个成年人正常的语速，约为250字/分钟。 * 50表示0.5倍语速，100表示正常语速，200表示2倍语速。
      * minimum: 50
      * maximum: 200
      * @return speed
@@ -189,7 +189,7 @@ public class CreateAsyncTtsJobRequestBody {
     }
 
     /**
-     * 音高。 默认值100，最小值50，最大值200。
+     * 音高。
      * minimum: 50
      * maximum: 200
      * @return pitch
@@ -208,7 +208,7 @@ public class CreateAsyncTtsJobRequestBody {
     }
 
     /**
-     * 音量。 默认值140，最小值90，最大值240。
+     * 音量。
      * minimum: 90
      * maximum: 240
      * @return volume
@@ -244,7 +244,7 @@ public class CreateAsyncTtsJobRequestBody {
     }
 
     /**
-     * 是否需要时间戳 false不需要；true：需要返回时间戳信息；默认false
+     * 是否需要时间戳。false为不需要，true为需要返回时间戳信息。默认值为false。
      * @return needTimestamp
      */
     public Boolean getNeedTimestamp() {
@@ -278,7 +278,7 @@ public class CreateAsyncTtsJobRequestBody {
     }
 
     /**
-     * 异常时返回的静默音频流时长,单位毫秒
+     * 异常时返回的静默音频流时长，单位毫秒。
      * minimum: 0
      * maximum: 5000
      * @return silenceTimeMs

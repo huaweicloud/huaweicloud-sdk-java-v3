@@ -44,6 +44,11 @@ public class CreateSmartChatRoomReq {
     private VoiceConfig voiceConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "voice_config_list")
+
+    private List<ChatVoiceConfig> voiceConfigList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "robot_id")
 
     private String robotId;
@@ -52,6 +57,81 @@ public class CreateSmartChatRoomReq {
     @JsonProperty(value = "concurrency")
 
     private Integer concurrency;
+
+    /**
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。
+     */
+    public static final class DefaultLanguageEnum {
+
+        /**
+         * Enum CN for value: "CN"
+         */
+        public static final DefaultLanguageEnum CN = new DefaultLanguageEnum("CN");
+
+        /**
+         * Enum EN for value: "EN"
+         */
+        public static final DefaultLanguageEnum EN = new DefaultLanguageEnum("EN");
+
+        private static final Map<String, DefaultLanguageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DefaultLanguageEnum> createStaticFields() {
+            Map<String, DefaultLanguageEnum> map = new HashMap<>();
+            map.put("CN", CN);
+            map.put("EN", EN);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DefaultLanguageEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DefaultLanguageEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DefaultLanguageEnum(value));
+        }
+
+        public static DefaultLanguageEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DefaultLanguageEnum) {
+                return this.value.equals(((DefaultLanguageEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_language")
+
+    private DefaultLanguageEnum defaultLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "background_config")
@@ -257,6 +337,39 @@ public class CreateSmartChatRoomReq {
         this.voiceConfig = voiceConfig;
     }
 
+    public CreateSmartChatRoomReq withVoiceConfigList(List<ChatVoiceConfig> voiceConfigList) {
+        this.voiceConfigList = voiceConfigList;
+        return this;
+    }
+
+    public CreateSmartChatRoomReq addVoiceConfigListItem(ChatVoiceConfig voiceConfigListItem) {
+        if (this.voiceConfigList == null) {
+            this.voiceConfigList = new ArrayList<>();
+        }
+        this.voiceConfigList.add(voiceConfigListItem);
+        return this;
+    }
+
+    public CreateSmartChatRoomReq withVoiceConfigList(Consumer<List<ChatVoiceConfig>> voiceConfigListSetter) {
+        if (this.voiceConfigList == null) {
+            this.voiceConfigList = new ArrayList<>();
+        }
+        voiceConfigListSetter.accept(this.voiceConfigList);
+        return this;
+    }
+
+    /**
+     * 语音配置参数列表。
+     * @return voiceConfigList
+     */
+    public List<ChatVoiceConfig> getVoiceConfigList() {
+        return voiceConfigList;
+    }
+
+    public void setVoiceConfigList(List<ChatVoiceConfig> voiceConfigList) {
+        this.voiceConfigList = voiceConfigList;
+    }
+
     public CreateSmartChatRoomReq withRobotId(String robotId) {
         this.robotId = robotId;
         return this;
@@ -291,6 +404,23 @@ public class CreateSmartChatRoomReq {
 
     public void setConcurrency(Integer concurrency) {
         this.concurrency = concurrency;
+    }
+
+    public CreateSmartChatRoomReq withDefaultLanguage(DefaultLanguageEnum defaultLanguage) {
+        this.defaultLanguage = defaultLanguage;
+        return this;
+    }
+
+    /**
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。
+     * @return defaultLanguage
+     */
+    public DefaultLanguageEnum getDefaultLanguage() {
+        return defaultLanguage;
+    }
+
+    public void setDefaultLanguage(DefaultLanguageEnum defaultLanguage) {
+        this.defaultLanguage = defaultLanguage;
     }
 
     public CreateSmartChatRoomReq withBackgroundConfig(BackgroundConfigInfo backgroundConfig) {
@@ -434,8 +564,10 @@ public class CreateSmartChatRoomReq {
             && Objects.equals(this.roomDescription, that.roomDescription)
             && Objects.equals(this.videoConfig, that.videoConfig)
             && Objects.equals(this.modelAssetId, that.modelAssetId)
-            && Objects.equals(this.voiceConfig, that.voiceConfig) && Objects.equals(this.robotId, that.robotId)
+            && Objects.equals(this.voiceConfig, that.voiceConfig)
+            && Objects.equals(this.voiceConfigList, that.voiceConfigList) && Objects.equals(this.robotId, that.robotId)
             && Objects.equals(this.concurrency, that.concurrency)
+            && Objects.equals(this.defaultLanguage, that.defaultLanguage)
             && Objects.equals(this.backgroundConfig, that.backgroundConfig)
             && Objects.equals(this.layerConfig, that.layerConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig)
@@ -450,8 +582,10 @@ public class CreateSmartChatRoomReq {
             videoConfig,
             modelAssetId,
             voiceConfig,
+            voiceConfigList,
             robotId,
             concurrency,
+            defaultLanguage,
             backgroundConfig,
             layerConfig,
             reviewConfig,
@@ -468,8 +602,10 @@ public class CreateSmartChatRoomReq {
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");
         sb.append("    modelAssetId: ").append(toIndentedString(modelAssetId)).append("\n");
         sb.append("    voiceConfig: ").append(toIndentedString(voiceConfig)).append("\n");
+        sb.append("    voiceConfigList: ").append(toIndentedString(voiceConfigList)).append("\n");
         sb.append("    robotId: ").append(toIndentedString(robotId)).append("\n");
         sb.append("    concurrency: ").append(toIndentedString(concurrency)).append("\n");
+        sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");
         sb.append("    backgroundConfig: ").append(toIndentedString(backgroundConfig)).append("\n");
         sb.append("    layerConfig: ").append(toIndentedString(layerConfig)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");

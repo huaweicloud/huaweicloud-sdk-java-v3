@@ -111,6 +111,11 @@ public class TrainingJobInfo {
 
     private VoiceTrainingAllocatedResource allocatedResource;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_language")
+
+    private String outputLanguage;
+
     public TrainingJobInfo withJobType(JobType jobType) {
         this.jobType = jobType;
         return this;
@@ -466,6 +471,23 @@ public class TrainingJobInfo {
         this.allocatedResource = allocatedResource;
     }
 
+    public TrainingJobInfo withOutputLanguage(String outputLanguage) {
+        this.outputLanguage = outputLanguage;
+        return this;
+    }
+
+    /**
+     * 模型输出语言类型
+     * @return outputLanguage
+     */
+    public String getOutputLanguage() {
+        return outputLanguage;
+    }
+
+    public void setOutputLanguage(String outputLanguage) {
+        this.outputLanguage = outputLanguage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -487,7 +509,8 @@ public class TrainingJobInfo {
             && Objects.equals(this.createType, that.createType) && Objects.equals(this.tag, that.tag)
             && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId)
             && Objects.equals(this.batchName, that.batchName)
-            && Objects.equals(this.allocatedResource, that.allocatedResource);
+            && Objects.equals(this.allocatedResource, that.allocatedResource)
+            && Objects.equals(this.outputLanguage, that.outputLanguage);
     }
 
     @Override
@@ -511,7 +534,8 @@ public class TrainingJobInfo {
             phone,
             dhtmsJobId,
             batchName,
-            allocatedResource);
+            allocatedResource,
+            outputLanguage);
     }
 
     @Override
@@ -538,6 +562,7 @@ public class TrainingJobInfo {
         sb.append("    dhtmsJobId: ").append(toIndentedString(dhtmsJobId)).append("\n");
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    allocatedResource: ").append(toIndentedString(allocatedResource)).append("\n");
+        sb.append("    outputLanguage: ").append(toIndentedString(outputLanguage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

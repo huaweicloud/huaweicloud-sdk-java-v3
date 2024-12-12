@@ -112,6 +112,16 @@ public class ImageAssetMeta {
     private ModeEnum mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "frame_rate")
+
+    private String frameRate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duration")
+
+    private Integer duration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_info")
 
     private ErrorResponse errorInfo;
@@ -207,6 +217,42 @@ public class ImageAssetMeta {
         this.mode = mode;
     }
 
+    public ImageAssetMeta withFrameRate(String frameRate) {
+        this.frameRate = frameRate;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 视频帧率。 **约束限制**： 用户无需填写，系统自行提取。 **取值范围**： 字符长度0-32位。 **默认取值**： 不涉及
+     * @return frameRate
+     */
+    public String getFrameRate() {
+        return frameRate;
+    }
+
+    public void setFrameRate(String frameRate) {
+        this.frameRate = frameRate;
+    }
+
+    public ImageAssetMeta withDuration(Integer duration) {
+        this.duration = duration;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 时长,单位秒。 **约束限制**： 用户无需填写，系统自行提取。 **默认取值**： 不涉及
+     * minimum: 0
+     * maximum: 86400
+     * @return duration
+     */
+    public Integer getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
     public ImageAssetMeta withErrorInfo(ErrorResponse errorInfo) {
         this.errorInfo = errorInfo;
         return this;
@@ -244,12 +290,13 @@ public class ImageAssetMeta {
         ImageAssetMeta that = (ImageAssetMeta) obj;
         return Objects.equals(this.codec, that.codec) && Objects.equals(this.width, that.width)
             && Objects.equals(this.height, that.height) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.mode, that.mode) && Objects.equals(this.errorInfo, that.errorInfo);
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.frameRate, that.frameRate)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.errorInfo, that.errorInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codec, width, height, size, mode, errorInfo);
+        return Objects.hash(codec, width, height, size, mode, frameRate, duration, errorInfo);
     }
 
     @Override
@@ -261,6 +308,8 @@ public class ImageAssetMeta {
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    frameRate: ").append(toIndentedString(frameRate)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("}");
         return sb.toString();

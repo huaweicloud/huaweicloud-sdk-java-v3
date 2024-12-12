@@ -1,11 +1,13 @@
-package com.huaweicloud.sdk.cce.v3.model;
+package com.huaweicloud.sdk.aos.v1.model;
+
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * SyncNodePoolResp
+ * Response Object
  */
-public class SyncNodePoolResp {
+public class DeletePrivateModuleResponse extends SdkResponse {
 
     @Override
     public boolean equals(java.lang.Object obj) {
@@ -26,7 +28,7 @@ public class SyncNodePoolResp {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SyncNodePoolResp {\n");
+        sb.append("class DeletePrivateModuleResponse {\n");
         sb.append("}");
         return sb.toString();
     }

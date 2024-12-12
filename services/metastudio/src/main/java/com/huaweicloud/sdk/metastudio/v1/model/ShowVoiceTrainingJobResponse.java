@@ -112,6 +112,11 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
 
     private VoiceTrainingAllocatedResource allocatedResource;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_language")
+
+    private String outputLanguage;
+
     public ShowVoiceTrainingJobResponse withJobType(JobType jobType) {
         this.jobType = jobType;
         return this;
@@ -468,6 +473,23 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         this.allocatedResource = allocatedResource;
     }
 
+    public ShowVoiceTrainingJobResponse withOutputLanguage(String outputLanguage) {
+        this.outputLanguage = outputLanguage;
+        return this;
+    }
+
+    /**
+     * 模型输出语言类型
+     * @return outputLanguage
+     */
+    public String getOutputLanguage() {
+        return outputLanguage;
+    }
+
+    public void setOutputLanguage(String outputLanguage) {
+        this.outputLanguage = outputLanguage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -489,7 +511,8 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
             && Objects.equals(this.createType, that.createType) && Objects.equals(this.tag, that.tag)
             && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId)
             && Objects.equals(this.batchName, that.batchName)
-            && Objects.equals(this.allocatedResource, that.allocatedResource);
+            && Objects.equals(this.allocatedResource, that.allocatedResource)
+            && Objects.equals(this.outputLanguage, that.outputLanguage);
     }
 
     @Override
@@ -513,7 +536,8 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
             phone,
             dhtmsJobId,
             batchName,
-            allocatedResource);
+            allocatedResource,
+            outputLanguage);
     }
 
     @Override
@@ -540,6 +564,7 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         sb.append("    dhtmsJobId: ").append(toIndentedString(dhtmsJobId)).append("\n");
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    allocatedResource: ").append(toIndentedString(allocatedResource)).append("\n");
+        sb.append("    outputLanguage: ").append(toIndentedString(outputLanguage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

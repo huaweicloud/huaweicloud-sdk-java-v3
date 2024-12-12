@@ -13,9 +13,31 @@ import java.util.function.Consumer;
 public class UpdateVifPeerResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "request_id")
+
+    private String requestId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vif_peer")
 
     private VifPeer vifPeer;
+
+    public UpdateVifPeerResponse withRequestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    /**
+     * 请求ID
+     * @return requestId
+     */
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public UpdateVifPeerResponse withVifPeer(VifPeer vifPeer) {
         this.vifPeer = vifPeer;
@@ -52,18 +74,19 @@ public class UpdateVifPeerResponse extends SdkResponse {
             return false;
         }
         UpdateVifPeerResponse that = (UpdateVifPeerResponse) obj;
-        return Objects.equals(this.vifPeer, that.vifPeer);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.vifPeer, that.vifPeer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vifPeer);
+        return Objects.hash(requestId, vifPeer);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateVifPeerResponse {\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    vifPeer: ").append(toIndentedString(vifPeer)).append("\n");
         sb.append("}");
         return sb.toString();

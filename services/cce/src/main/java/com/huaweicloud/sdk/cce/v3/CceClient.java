@@ -232,8 +232,6 @@ import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowUserChartsQuotasResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionResponse;
-import com.huaweicloud.sdk.cce.v3.model.SyncNodePoolRequest;
-import com.huaweicloud.sdk.cce.v3.model.SyncNodePoolResponse;
 import com.huaweicloud.sdk.cce.v3.model.SyncNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.SyncNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
@@ -2530,34 +2528,6 @@ public class CceClient {
      */
     public SyncInvoker<SyncNodeRequest, SyncNodeResponse> syncNodeInvoker(SyncNodeRequest request) {
         return new SyncInvoker<>(request, CceMeta.syncNode, hcClient);
-    }
-
-    /**
-     * 同步nodePool配置到存量节点
-     *
-     * 该API用于同步nodePool配置到存量节点。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SyncNodePoolRequest 请求对象
-     * @return SyncNodePoolResponse
-     */
-    public SyncNodePoolResponse syncNodePool(SyncNodePoolRequest request) {
-        return hcClient.syncInvokeHttp(request, CceMeta.syncNodePool);
-    }
-
-    /**
-     * 同步nodePool配置到存量节点
-     *
-     * 该API用于同步nodePool配置到存量节点。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SyncNodePoolRequest 请求对象
-     * @return SyncInvoker<SyncNodePoolRequest, SyncNodePoolResponse>
-     */
-    public SyncInvoker<SyncNodePoolRequest, SyncNodePoolResponse> syncNodePoolInvoker(SyncNodePoolRequest request) {
-        return new SyncInvoker<>(request, CceMeta.syncNodePool, hcClient);
     }
 
     /**

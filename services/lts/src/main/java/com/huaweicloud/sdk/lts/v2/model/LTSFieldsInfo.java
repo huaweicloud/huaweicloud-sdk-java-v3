@@ -38,6 +38,11 @@ public class LTSFieldsInfo {
          */
         public static final FieldTypeEnum FLOAT = new FieldTypeEnum("float");
 
+        /**
+         * Enum JSON for value: "json"
+         */
+        public static final FieldTypeEnum JSON = new FieldTypeEnum("json");
+
         private static final Map<String, FieldTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FieldTypeEnum> createStaticFields() {
@@ -45,6 +50,7 @@ public class LTSFieldsInfo {
             map.put("string", STRING);
             map.put("long", LONG);
             map.put("float", FLOAT);
+            map.put("json", JSON);
             return Collections.unmodifiableMap(map);
         }
 
@@ -128,6 +134,11 @@ public class LTSFieldsInfo {
     @JsonProperty(value = "ascii")
 
     private List<String> ascii = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ltsSubFieldsInfoList")
+
+    private List<LTSSubFieldsInfo> ltsSubFieldsInfoList = null;
 
     public LTSFieldsInfo withFieldType(FieldTypeEnum fieldType) {
         this.fieldType = fieldType;
@@ -264,6 +275,39 @@ public class LTSFieldsInfo {
         this.ascii = ascii;
     }
 
+    public LTSFieldsInfo withLtsSubFieldsInfoList(List<LTSSubFieldsInfo> ltsSubFieldsInfoList) {
+        this.ltsSubFieldsInfoList = ltsSubFieldsInfoList;
+        return this;
+    }
+
+    public LTSFieldsInfo addLtsSubFieldsInfoListItem(LTSSubFieldsInfo ltsSubFieldsInfoListItem) {
+        if (this.ltsSubFieldsInfoList == null) {
+            this.ltsSubFieldsInfoList = new ArrayList<>();
+        }
+        this.ltsSubFieldsInfoList.add(ltsSubFieldsInfoListItem);
+        return this;
+    }
+
+    public LTSFieldsInfo withLtsSubFieldsInfoList(Consumer<List<LTSSubFieldsInfo>> ltsSubFieldsInfoListSetter) {
+        if (this.ltsSubFieldsInfoList == null) {
+            this.ltsSubFieldsInfoList = new ArrayList<>();
+        }
+        ltsSubFieldsInfoListSetter.accept(this.ltsSubFieldsInfoList);
+        return this;
+    }
+
+    /**
+     * json字段信息
+     * @return ltsSubFieldsInfoList
+     */
+    public List<LTSSubFieldsInfo> getLtsSubFieldsInfoList() {
+        return ltsSubFieldsInfoList;
+    }
+
+    public void setLtsSubFieldsInfoList(List<LTSSubFieldsInfo> ltsSubFieldsInfoList) {
+        this.ltsSubFieldsInfoList = ltsSubFieldsInfoList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -277,12 +321,20 @@ public class LTSFieldsInfo {
             && Objects.equals(this.caseSensitive, that.caseSensitive)
             && Objects.equals(this.includeChinese, that.includeChinese)
             && Objects.equals(this.tokenizer, that.tokenizer) && Objects.equals(this.quickAnalysis, that.quickAnalysis)
-            && Objects.equals(this.ascii, that.ascii);
+            && Objects.equals(this.ascii, that.ascii)
+            && Objects.equals(this.ltsSubFieldsInfoList, that.ltsSubFieldsInfoList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fieldType, fieldName, caseSensitive, includeChinese, tokenizer, quickAnalysis, ascii);
+        return Objects.hash(fieldType,
+            fieldName,
+            caseSensitive,
+            includeChinese,
+            tokenizer,
+            quickAnalysis,
+            ascii,
+            ltsSubFieldsInfoList);
     }
 
     @Override
@@ -296,6 +348,7 @@ public class LTSFieldsInfo {
         sb.append("    tokenizer: ").append(toIndentedString(tokenizer)).append("\n");
         sb.append("    quickAnalysis: ").append(toIndentedString(quickAnalysis)).append("\n");
         sb.append("    ascii: ").append(toIndentedString(ascii)).append("\n");
+        sb.append("    ltsSubFieldsInfoList: ").append(toIndentedString(ltsSubFieldsInfoList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

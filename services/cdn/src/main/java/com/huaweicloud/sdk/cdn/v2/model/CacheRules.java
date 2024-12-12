@@ -41,6 +41,11 @@ public class CacheRules {
     private String followOrigin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "force_cache")
+
+    private String forceCache;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "url_parameter_type")
 
     private String urlParameterType;
@@ -152,6 +157,23 @@ public class CacheRules {
         this.followOrigin = followOrigin;
     }
 
+    public CacheRules withForceCache(String forceCache) {
+        this.forceCache = forceCache;
+        return this;
+    }
+
+    /**
+     * 强制缓存：CDN节点缓存过期时间是否忽略源站响应头Cache-Control中的no-cache、private、no-store字段，默认关闭强制缓存功能。强制缓存与缓存过期时间来源功能配合使用，具体使用限制及配置效果请参考CDN用户指南的配置节点缓存规则章节。on：打开强制缓存，off：关闭强制缓存
+     * @return forceCache
+     */
+    public String getForceCache() {
+        return forceCache;
+    }
+
+    public void setForceCache(String forceCache) {
+        this.forceCache = forceCache;
+    }
+
     public CacheRules withUrlParameterType(String urlParameterType) {
         this.urlParameterType = urlParameterType;
         return this;
@@ -198,14 +220,22 @@ public class CacheRules {
         return Objects.equals(this.matchType, that.matchType) && Objects.equals(this.matchValue, that.matchValue)
             && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.ttlUnit, that.ttlUnit)
             && Objects.equals(this.priority, that.priority) && Objects.equals(this.followOrigin, that.followOrigin)
+            && Objects.equals(this.forceCache, that.forceCache)
             && Objects.equals(this.urlParameterType, that.urlParameterType)
             && Objects.equals(this.urlParameterValue, that.urlParameterValue);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(matchType, matchValue, ttl, ttlUnit, priority, followOrigin, urlParameterType, urlParameterValue);
+        return Objects.hash(matchType,
+            matchValue,
+            ttl,
+            ttlUnit,
+            priority,
+            followOrigin,
+            forceCache,
+            urlParameterType,
+            urlParameterValue);
     }
 
     @Override
@@ -218,6 +248,7 @@ public class CacheRules {
         sb.append("    ttlUnit: ").append(toIndentedString(ttlUnit)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    followOrigin: ").append(toIndentedString(followOrigin)).append("\n");
+        sb.append("    forceCache: ").append(toIndentedString(forceCache)).append("\n");
         sb.append("    urlParameterType: ").append(toIndentedString(urlParameterType)).append("\n");
         sb.append("    urlParameterValue: ").append(toIndentedString(urlParameterValue)).append("\n");
         sb.append("}");

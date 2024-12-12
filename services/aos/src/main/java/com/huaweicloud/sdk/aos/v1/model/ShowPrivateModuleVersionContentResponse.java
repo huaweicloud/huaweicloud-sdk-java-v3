@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.cce.v3.model;
+package com.huaweicloud.sdk.aos.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,28 +9,28 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class SyncNodePoolResponse extends SdkResponse {
+public class ShowPrivateModuleVersionContentResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "Location")
 
-    private String body;
+    private String location;
 
-    public SyncNodePoolResponse withBody(String body) {
-        this.body = body;
+    public ShowPrivateModuleVersionContentResponse withLocation(String location) {
+        this.location = location;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * Get location
+     * @return location
      */
-    public String getBody() {
-        return body;
+    public String getLocation() {
+        return location;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     @Override
@@ -41,20 +41,20 @@ public class SyncNodePoolResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SyncNodePoolResponse that = (SyncNodePoolResponse) obj;
-        return Objects.equals(this.body, that.body);
+        ShowPrivateModuleVersionContentResponse that = (ShowPrivateModuleVersionContentResponse) obj;
+        return Objects.equals(this.location, that.location);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(location);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SyncNodePoolResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("class ShowPrivateModuleVersionContentResponse {\n");
+        sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -66,7 +66,7 @@ public class ShowAsyncTtsJobResponse extends SdkResponse {
     }
 
     /**
-     * 音频信息文件下载链接，有效期为1个小时。
+     * 字幕文件下载链接，有效期为1个小时。
      * @return audioInfoFileUrl
      */
     public String getAudioInfoFileUrl() {

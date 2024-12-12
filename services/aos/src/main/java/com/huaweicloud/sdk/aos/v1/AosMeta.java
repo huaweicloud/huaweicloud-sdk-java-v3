@@ -18,6 +18,12 @@ import com.huaweicloud.sdk.aos.v1.model.CreatePrivateHookResponse;
 import com.huaweicloud.sdk.aos.v1.model.CreatePrivateHookVersionRequest;
 import com.huaweicloud.sdk.aos.v1.model.CreatePrivateHookVersionRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.CreatePrivateHookVersionResponse;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateModuleRequest;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateModuleRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateModuleResponse;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateModuleVersionRequest;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateModuleVersionRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.CreatePrivateModuleVersionResponse;
 import com.huaweicloud.sdk.aos.v1.model.CreatePrivateProviderRequest;
 import com.huaweicloud.sdk.aos.v1.model.CreatePrivateProviderRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.CreatePrivateProviderResponse;
@@ -39,6 +45,10 @@ import com.huaweicloud.sdk.aos.v1.model.DeletePrivateHookRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeletePrivateHookResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeletePrivateHookVersionRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeletePrivateHookVersionResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateModuleRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateModuleResponse;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateModuleVersionRequest;
+import com.huaweicloud.sdk.aos.v1.model.DeletePrivateModuleVersionResponse;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedRequest;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.DeleteStackEnhancedResponse;
@@ -75,6 +85,10 @@ import com.huaweicloud.sdk.aos.v1.model.ListExecutionPlansRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListExecutionPlansResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListPrivateHooksRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListPrivateHooksResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateModuleVersionsRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateModuleVersionsResponse;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateModulesRequest;
+import com.huaweicloud.sdk.aos.v1.model.ListPrivateModulesResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListStackEventsRequest;
 import com.huaweicloud.sdk.aos.v1.model.ListStackEventsResponse;
 import com.huaweicloud.sdk.aos.v1.model.ListStackInstancesRequest;
@@ -102,6 +116,12 @@ import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionPolicyRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowPrivateHookVersionPolicyResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleVersionContentRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleVersionContentResponse;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleVersionMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.ShowPrivateModuleVersionMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceRequest;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackInstanceResponse;
 import com.huaweicloud.sdk.aos.v1.model.ShowStackSetMetadataRequest;
@@ -119,6 +139,9 @@ import com.huaweicloud.sdk.aos.v1.model.ShowTemplateVersionMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateHookMetadataRequest;
 import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateHookMetadataRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateHookMetadataResponse;
+import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateModuleMetadataRequest;
+import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateModuleMetadataRequestBody;
+import com.huaweicloud.sdk.aos.v1.model.UpdatePrivateModuleMetadataResponse;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesRequest;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesRequestBody;
 import com.huaweicloud.sdk.aos.v1.model.UpdateStackInstancesResponse;
@@ -853,6 +876,413 @@ public class AosMeta {
             TypeCasts.uncheckedConversion(UpdatePrivateHookMetadataRequestBody.class),
             f -> f.withMarshaller(UpdatePrivateHookMetadataRequest::getBody,
                 UpdatePrivateHookMetadataRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePrivateModuleRequest, CreatePrivateModuleResponse> createPrivateModule =
+        genForCreatePrivateModule();
+
+    private static HttpRequestDef<CreatePrivateModuleRequest, CreatePrivateModuleResponse> genForCreatePrivateModule() {
+        // basic
+        HttpRequestDef.Builder<CreatePrivateModuleRequest, CreatePrivateModuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePrivateModuleRequest.class, CreatePrivateModuleResponse.class)
+                .withName("CreatePrivateModule")
+                .withUri("/v1/private-modules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePrivateModuleRequest::getClientRequestId,
+                CreatePrivateModuleRequest::setClientRequestId));
+        builder.<CreatePrivateModuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePrivateModuleRequestBody.class),
+            f -> f.withMarshaller(CreatePrivateModuleRequest::getBody, CreatePrivateModuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePrivateModuleVersionRequest, CreatePrivateModuleVersionResponse> createPrivateModuleVersion =
+        genForCreatePrivateModuleVersion();
+
+    private static HttpRequestDef<CreatePrivateModuleVersionRequest, CreatePrivateModuleVersionResponse> genForCreatePrivateModuleVersion() {
+        // basic
+        HttpRequestDef.Builder<CreatePrivateModuleVersionRequest, CreatePrivateModuleVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreatePrivateModuleVersionRequest.class,
+                    CreatePrivateModuleVersionResponse.class)
+                .withName("CreatePrivateModuleVersion")
+                .withUri("/v1/private-modules/{module_name}/versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("module_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePrivateModuleVersionRequest::getModuleName,
+                CreatePrivateModuleVersionRequest::setModuleName));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreatePrivateModuleVersionRequest::getClientRequestId,
+                CreatePrivateModuleVersionRequest::setClientRequestId));
+        builder.<CreatePrivateModuleVersionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePrivateModuleVersionRequestBody.class),
+            f -> f.withMarshaller(CreatePrivateModuleVersionRequest::getBody,
+                CreatePrivateModuleVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePrivateModuleRequest, DeletePrivateModuleResponse> deletePrivateModule =
+        genForDeletePrivateModule();
+
+    private static HttpRequestDef<DeletePrivateModuleRequest, DeletePrivateModuleResponse> genForDeletePrivateModule() {
+        // basic
+        HttpRequestDef.Builder<DeletePrivateModuleRequest, DeletePrivateModuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeletePrivateModuleRequest.class, DeletePrivateModuleResponse.class)
+            .withName("DeletePrivateModule")
+            .withUri("/v1/private-modules/{module_name}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("module_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateModuleRequest::getModuleName,
+                DeletePrivateModuleRequest::setModuleName));
+        builder.<String>withRequestField("module_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateModuleRequest::getModuleId, DeletePrivateModuleRequest::setModuleId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateModuleRequest::getClientRequestId,
+                DeletePrivateModuleRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePrivateModuleVersionRequest, DeletePrivateModuleVersionResponse> deletePrivateModuleVersion =
+        genForDeletePrivateModuleVersion();
+
+    private static HttpRequestDef<DeletePrivateModuleVersionRequest, DeletePrivateModuleVersionResponse> genForDeletePrivateModuleVersion() {
+        // basic
+        HttpRequestDef.Builder<DeletePrivateModuleVersionRequest, DeletePrivateModuleVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeletePrivateModuleVersionRequest.class,
+                    DeletePrivateModuleVersionResponse.class)
+                .withName("DeletePrivateModuleVersion")
+                .withUri("/v1/private-modules/{module_name}/versions/{module_version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("module_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateModuleVersionRequest::getModuleName,
+                DeletePrivateModuleVersionRequest::setModuleName));
+        builder.<String>withRequestField("module_version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateModuleVersionRequest::getModuleVersion,
+                DeletePrivateModuleVersionRequest::setModuleVersion));
+        builder.<String>withRequestField("module_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateModuleVersionRequest::getModuleId,
+                DeletePrivateModuleVersionRequest::setModuleId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateModuleVersionRequest::getClientRequestId,
+                DeletePrivateModuleVersionRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPrivateModuleVersionsRequest, ListPrivateModuleVersionsResponse> listPrivateModuleVersions =
+        genForListPrivateModuleVersions();
+
+    private static HttpRequestDef<ListPrivateModuleVersionsRequest, ListPrivateModuleVersionsResponse> genForListPrivateModuleVersions() {
+        // basic
+        HttpRequestDef.Builder<ListPrivateModuleVersionsRequest, ListPrivateModuleVersionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPrivateModuleVersionsRequest.class,
+                    ListPrivateModuleVersionsResponse.class)
+                .withName("ListPrivateModuleVersions")
+                .withUri("/v1/private-modules/{module_name}/versions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("module_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateModuleVersionsRequest::getModuleName,
+                ListPrivateModuleVersionsRequest::setModuleName));
+        builder.<String>withRequestField("module_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateModuleVersionsRequest::getModuleId,
+                ListPrivateModuleVersionsRequest::setModuleId));
+        builder.<List<ListPrivateModuleVersionsRequest.SortKeyEnum>>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateModuleVersionsRequest::getSortKey,
+                ListPrivateModuleVersionsRequest::setSortKey));
+        builder.<List<ListPrivateModuleVersionsRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateModuleVersionsRequest::getSortDir,
+                ListPrivateModuleVersionsRequest::setSortDir));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateModuleVersionsRequest::getClientRequestId,
+                ListPrivateModuleVersionsRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPrivateModulesRequest, ListPrivateModulesResponse> listPrivateModules =
+        genForListPrivateModules();
+
+    private static HttpRequestDef<ListPrivateModulesRequest, ListPrivateModulesResponse> genForListPrivateModules() {
+        // basic
+        HttpRequestDef.Builder<ListPrivateModulesRequest, ListPrivateModulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPrivateModulesRequest.class, ListPrivateModulesResponse.class)
+                .withName("ListPrivateModules")
+                .withUri("/v1/private-modules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<ListPrivateModulesRequest.SortKeyEnum>>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateModulesRequest::getSortKey, ListPrivateModulesRequest::setSortKey));
+        builder.<List<ListPrivateModulesRequest.SortDirEnum>>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPrivateModulesRequest::getSortDir, ListPrivateModulesRequest::setSortDir));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateModulesRequest::getClientRequestId,
+                ListPrivateModulesRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPrivateModuleMetadataRequest, ShowPrivateModuleMetadataResponse> showPrivateModuleMetadata =
+        genForShowPrivateModuleMetadata();
+
+    private static HttpRequestDef<ShowPrivateModuleMetadataRequest, ShowPrivateModuleMetadataResponse> genForShowPrivateModuleMetadata() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivateModuleMetadataRequest, ShowPrivateModuleMetadataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPrivateModuleMetadataRequest.class,
+                    ShowPrivateModuleMetadataResponse.class)
+                .withName("ShowPrivateModuleMetadata")
+                .withUri("/v1/private-modules/{module_name}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("module_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateModuleMetadataRequest::getModuleName,
+                ShowPrivateModuleMetadataRequest::setModuleName));
+        builder.<String>withRequestField("module_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateModuleMetadataRequest::getModuleId,
+                ShowPrivateModuleMetadataRequest::setModuleId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateModuleMetadataRequest::getClientRequestId,
+                ShowPrivateModuleMetadataRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPrivateModuleVersionContentRequest, ShowPrivateModuleVersionContentResponse> showPrivateModuleVersionContent =
+        genForShowPrivateModuleVersionContent();
+
+    private static HttpRequestDef<ShowPrivateModuleVersionContentRequest, ShowPrivateModuleVersionContentResponse> genForShowPrivateModuleVersionContent() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivateModuleVersionContentRequest, ShowPrivateModuleVersionContentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPrivateModuleVersionContentRequest.class,
+                    ShowPrivateModuleVersionContentResponse.class)
+                .withName("ShowPrivateModuleVersionContent")
+                .withUri("/v1/private-modules/{module_name}/versions/{module_version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("module_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateModuleVersionContentRequest::getModuleName,
+                ShowPrivateModuleVersionContentRequest::setModuleName));
+        builder.<String>withRequestField("module_version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateModuleVersionContentRequest::getModuleVersion,
+                ShowPrivateModuleVersionContentRequest::setModuleVersion));
+        builder.<String>withRequestField("module_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateModuleVersionContentRequest::getModuleId,
+                ShowPrivateModuleVersionContentRequest::setModuleId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateModuleVersionContentRequest::getClientRequestId,
+                ShowPrivateModuleVersionContentRequest::setClientRequestId));
+
+        // response
+
+        builder.<String>withResponseField("Location",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowPrivateModuleVersionContentResponse::getLocation,
+                ShowPrivateModuleVersionContentResponse::setLocation));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPrivateModuleVersionMetadataRequest, ShowPrivateModuleVersionMetadataResponse> showPrivateModuleVersionMetadata =
+        genForShowPrivateModuleVersionMetadata();
+
+    private static HttpRequestDef<ShowPrivateModuleVersionMetadataRequest, ShowPrivateModuleVersionMetadataResponse> genForShowPrivateModuleVersionMetadata() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivateModuleVersionMetadataRequest, ShowPrivateModuleVersionMetadataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPrivateModuleVersionMetadataRequest.class,
+                    ShowPrivateModuleVersionMetadataResponse.class)
+                .withName("ShowPrivateModuleVersionMetadata")
+                .withUri("/v1/private-modules/{module_name}/versions/{module_version}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("module_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateModuleVersionMetadataRequest::getModuleName,
+                ShowPrivateModuleVersionMetadataRequest::setModuleName));
+        builder.<String>withRequestField("module_version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateModuleVersionMetadataRequest::getModuleVersion,
+                ShowPrivateModuleVersionMetadataRequest::setModuleVersion));
+        builder.<String>withRequestField("module_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateModuleVersionMetadataRequest::getModuleId,
+                ShowPrivateModuleVersionMetadataRequest::setModuleId));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateModuleVersionMetadataRequest::getClientRequestId,
+                ShowPrivateModuleVersionMetadataRequest::setClientRequestId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePrivateModuleMetadataRequest, UpdatePrivateModuleMetadataResponse> updatePrivateModuleMetadata =
+        genForUpdatePrivateModuleMetadata();
+
+    private static HttpRequestDef<UpdatePrivateModuleMetadataRequest, UpdatePrivateModuleMetadataResponse> genForUpdatePrivateModuleMetadata() {
+        // basic
+        HttpRequestDef.Builder<UpdatePrivateModuleMetadataRequest, UpdatePrivateModuleMetadataResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PATCH,
+                    UpdatePrivateModuleMetadataRequest.class,
+                    UpdatePrivateModuleMetadataResponse.class)
+                .withName("UpdatePrivateModuleMetadata")
+                .withUri("/v1/private-modules/{module_name}/metadata")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("module_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrivateModuleMetadataRequest::getModuleName,
+                UpdatePrivateModuleMetadataRequest::setModuleName));
+        builder.<String>withRequestField("Client-Request-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrivateModuleMetadataRequest::getClientRequestId,
+                UpdatePrivateModuleMetadataRequest::setClientRequestId));
+        builder.<UpdatePrivateModuleMetadataRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePrivateModuleMetadataRequestBody.class),
+            f -> f.withMarshaller(UpdatePrivateModuleMetadataRequest::getBody,
+                UpdatePrivateModuleMetadataRequest::setBody));
 
         // response
 
