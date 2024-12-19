@@ -1,11 +1,17 @@
 package com.huaweicloud.sdk.aad.v2;
 
+import com.huaweicloud.sdk.aad.v2.model.AddWafWhiteIpRuleRequest;
+import com.huaweicloud.sdk.aad.v2.model.AddWafWhiteIpRuleResponse;
+import com.huaweicloud.sdk.aad.v2.model.AddWafWhiteIpRuleV2RequestBody;
 import com.huaweicloud.sdk.aad.v2.model.CreateAadDomainRequestBody;
 import com.huaweicloud.sdk.aad.v2.model.CreateDomainRequest;
 import com.huaweicloud.sdk.aad.v2.model.CreateDomainResponse;
 import com.huaweicloud.sdk.aad.v2.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.aad.v2.model.DeleteDomainResponse;
 import com.huaweicloud.sdk.aad.v2.model.DeleteDomainV2RequestBody;
+import com.huaweicloud.sdk.aad.v2.model.DeleteWafWhiteIpRuleRequest;
+import com.huaweicloud.sdk.aad.v2.model.DeleteWafWhiteIpRuleResponse;
+import com.huaweicloud.sdk.aad.v2.model.DeleteWafWhiteIpRuleV2RequestBody;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSAttackEventRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSAttackEventRequestBody;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSAttackEventResponse;
@@ -51,6 +57,34 @@ import com.huaweicloud.sdk.core.http.LocationType;
 @SuppressWarnings("unchecked")
 public class AadMeta {
 
+    public static final HttpRequestDef<AddWafWhiteIpRuleRequest, AddWafWhiteIpRuleResponse> addWafWhiteIpRule =
+        genForAddWafWhiteIpRule();
+
+    private static HttpRequestDef<AddWafWhiteIpRuleRequest, AddWafWhiteIpRuleResponse> genForAddWafWhiteIpRule() {
+        // basic
+        HttpRequestDef.Builder<AddWafWhiteIpRuleRequest, AddWafWhiteIpRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddWafWhiteIpRuleRequest.class, AddWafWhiteIpRuleResponse.class)
+                .withName("AddWafWhiteIpRule")
+                .withUri("/v2/aad/policies/waf/blackwhite-list")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AddWafWhiteIpRuleV2RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AddWafWhiteIpRuleV2RequestBody.class),
+            f -> f.withMarshaller(AddWafWhiteIpRuleRequest::getBody, AddWafWhiteIpRuleRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(AddWafWhiteIpRuleResponse::getBody, AddWafWhiteIpRuleResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateDomainRequest, CreateDomainResponse> createDomain = genForCreateDomain();
 
     private static HttpRequestDef<CreateDomainRequest, CreateDomainResponse> genForCreateDomain() {
@@ -91,6 +125,34 @@ public class AadMeta {
             f -> f.withMarshaller(DeleteDomainRequest::getBody, DeleteDomainRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteWafWhiteIpRuleRequest, DeleteWafWhiteIpRuleResponse> deleteWafWhiteIpRule =
+        genForDeleteWafWhiteIpRule();
+
+    private static HttpRequestDef<DeleteWafWhiteIpRuleRequest, DeleteWafWhiteIpRuleResponse> genForDeleteWafWhiteIpRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteWafWhiteIpRuleRequest, DeleteWafWhiteIpRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteWafWhiteIpRuleRequest.class, DeleteWafWhiteIpRuleResponse.class)
+            .withName("DeleteWafWhiteIpRule")
+            .withUri("/v2/aad/policies/waf/blackwhite-list")
+            .withContentType("application/json");
+
+        // requests
+        builder.<DeleteWafWhiteIpRuleV2RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteWafWhiteIpRuleV2RequestBody.class),
+            f -> f.withMarshaller(DeleteWafWhiteIpRuleRequest::getBody, DeleteWafWhiteIpRuleRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteWafWhiteIpRuleResponse::getBody, DeleteWafWhiteIpRuleResponse::setBody));
 
         return builder.build();
     }

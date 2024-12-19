@@ -28,6 +28,9 @@ import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyAsyncRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyAsyncResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ChangeNodesStartStopStatusBody;
+import com.huaweicloud.sdk.dcs.v2.model.ChangeNodesStartStopStatusRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ChangeNodesStartStopStatusResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateAclAccountRequest;
@@ -80,11 +83,15 @@ import com.huaweicloud.sdk.dcs.v2.model.DeleteDiagnosisTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteDiagnosisTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteHotkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteHotkeyScanTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteInstanceBandwidthAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteInstanceBandwidthAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteIpFromDomainNameRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteIpFromDomainNameResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrateTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrationTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeletePublicIpRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeletePublicIpResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DownloadBackupFilesReq;
@@ -201,6 +208,8 @@ import com.huaweicloud.sdk.dcs.v2.model.SetOnlineMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.SetOnlineMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBackgroundTaskProgressRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBackgroundTaskProgressResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowBandwidthsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowBandwidthsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyAutoscanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyScanTaskDetailsRequest;
@@ -219,10 +228,14 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyAutoscanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyTaskDetailsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyTaskDetailsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceBandwidthAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceBandwidthAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceSslDetailRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceSslDetailResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceVersionRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceVersionResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowIpWhitelistRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowIpWhitelistResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowJobInfoRequest;
@@ -254,6 +267,9 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateAutoScanConfigRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateBandwidthInfoRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateBandwidthRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateBandwidthResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateBigkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateBigkeyAutoscanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateClientIpTransparentTransmissionRequest;
@@ -268,6 +284,9 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdateExpireAutoScanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateExpireAutoScanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateHotkeyAutoScanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateHotkeyAutoScanConfigResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthAutoScalingPolicyRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceConfigRequest;
@@ -280,11 +299,17 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdateMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdatePublicIpRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdatePublicIpRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.UpdatePublicIpResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSSLSwitchRequestBody;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSslSwitchRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSslSwitchResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpgradeInstanceMinorVersionRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpgradeInstanceMinorVersionResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpgradeMinorVersionRequestBody;
 import com.huaweicloud.sdk.dcs.v2.model.ValidateDeletableReplicaRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ValidateDeletableReplicaResponse;
 
@@ -480,6 +505,45 @@ public class DcsMeta {
                 ChangeMasterStandbyAsyncRequest::setInstanceId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeNodesStartStopStatusRequest, ChangeNodesStartStopStatusResponse> changeNodesStartStopStatus =
+        genForChangeNodesStartStopStatus();
+
+    private static HttpRequestDef<ChangeNodesStartStopStatusRequest, ChangeNodesStartStopStatusResponse> genForChangeNodesStartStopStatus() {
+        // basic
+        HttpRequestDef.Builder<ChangeNodesStartStopStatusRequest, ChangeNodesStartStopStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ChangeNodesStartStopStatusRequest.class,
+                    ChangeNodesStartStopStatusResponse.class)
+                .withName("ChangeNodesStartStopStatus")
+                .withUri("/v2/{project_id}/instances/{instance_id}/nodes/status")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeNodesStartStopStatusRequest::getInstanceId,
+                ChangeNodesStartStopStatusRequest::setInstanceId));
+        builder.<ChangeNodesStartStopStatusBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeNodesStartStopStatusBody.class),
+            f -> f.withMarshaller(ChangeNodesStartStopStatusRequest::getBody,
+                ChangeNodesStartStopStatusRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ChangeNodesStartStopStatusResponse::getBody,
+                ChangeNodesStartStopStatusResponse::setBody));
 
         return builder.build();
     }
@@ -1059,6 +1123,39 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteInstanceBandwidthAutoScalingPolicyRequest, DeleteInstanceBandwidthAutoScalingPolicyResponse> deleteInstanceBandwidthAutoScalingPolicy =
+        genForDeleteInstanceBandwidthAutoScalingPolicy();
+
+    private static HttpRequestDef<DeleteInstanceBandwidthAutoScalingPolicyRequest, DeleteInstanceBandwidthAutoScalingPolicyResponse> genForDeleteInstanceBandwidthAutoScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteInstanceBandwidthAutoScalingPolicyRequest, DeleteInstanceBandwidthAutoScalingPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteInstanceBandwidthAutoScalingPolicyRequest.class,
+                    DeleteInstanceBandwidthAutoScalingPolicyResponse.class)
+                .withName("DeleteInstanceBandwidthAutoScalingPolicy")
+                .withUri("/v2/{project_id}/instances/{instance_id}/autoscaling-policy/bandwidth")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInstanceBandwidthAutoScalingPolicyRequest::getInstanceId,
+                DeleteInstanceBandwidthAutoScalingPolicyRequest::setInstanceId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteInstanceBandwidthAutoScalingPolicyResponse::getBody,
+                DeleteInstanceBandwidthAutoScalingPolicyResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteIpFromDomainNameRequest, DeleteIpFromDomainNameResponse> deleteIpFromDomainName =
         genForDeleteIpFromDomainName();
 
@@ -1111,6 +1208,29 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteMigrateTaskRequest.class),
             f -> f.withMarshaller(DeleteMigrationTaskRequest::getBody, DeleteMigrationTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePublicIpRequest, DeletePublicIpResponse> deletePublicIp =
+        genForDeletePublicIp();
+
+    private static HttpRequestDef<DeletePublicIpRequest, DeletePublicIpResponse> genForDeletePublicIp() {
+        // basic
+        HttpRequestDef.Builder<DeletePublicIpRequest, DeletePublicIpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePublicIpRequest.class, DeletePublicIpResponse.class)
+                .withName("DeletePublicIp")
+                .withUri("/v2/{project_id}/instances/{instance_id}/public-ip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePublicIpRequest::getInstanceId, DeletePublicIpRequest::setInstanceId));
 
         // response
 
@@ -2697,6 +2817,29 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowBandwidthsRequest, ShowBandwidthsResponse> showBandwidths =
+        genForShowBandwidths();
+
+    private static HttpRequestDef<ShowBandwidthsRequest, ShowBandwidthsResponse> genForShowBandwidths() {
+        // basic
+        HttpRequestDef.Builder<ShowBandwidthsRequest, ShowBandwidthsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBandwidthsRequest.class, ShowBandwidthsResponse.class)
+                .withName("ShowBandwidths")
+                .withUri("/v2/{project_id}/instances/{instance_id}/bandwidths")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBandwidthsRequest::getInstanceId, ShowBandwidthsRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowBigkeyAutoscanConfigRequest, ShowBigkeyAutoscanConfigResponse> showBigkeyAutoscanConfig =
         genForShowBigkeyAutoscanConfig();
 
@@ -2984,6 +3127,33 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowInstanceBandwidthAutoScalingPolicyRequest, ShowInstanceBandwidthAutoScalingPolicyResponse> showInstanceBandwidthAutoScalingPolicy =
+        genForShowInstanceBandwidthAutoScalingPolicy();
+
+    private static HttpRequestDef<ShowInstanceBandwidthAutoScalingPolicyRequest, ShowInstanceBandwidthAutoScalingPolicyResponse> genForShowInstanceBandwidthAutoScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceBandwidthAutoScalingPolicyRequest, ShowInstanceBandwidthAutoScalingPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowInstanceBandwidthAutoScalingPolicyRequest.class,
+                    ShowInstanceBandwidthAutoScalingPolicyResponse.class)
+                .withName("ShowInstanceBandwidthAutoScalingPolicy")
+                .withUri("/v2/{project_id}/instances/{instance_id}/autoscaling-policy/bandwidth")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceBandwidthAutoScalingPolicyRequest::getInstanceId,
+                ShowInstanceBandwidthAutoScalingPolicyRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse> showInstanceSslDetail =
         genForShowInstanceSslDetail();
 
@@ -3002,6 +3172,30 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceSslDetailRequest::getInstanceId,
                 ShowInstanceSslDetailRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceVersionRequest, ShowInstanceVersionResponse> showInstanceVersion =
+        genForShowInstanceVersion();
+
+    private static HttpRequestDef<ShowInstanceVersionRequest, ShowInstanceVersionResponse> genForShowInstanceVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceVersionRequest, ShowInstanceVersionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowInstanceVersionRequest.class, ShowInstanceVersionResponse.class)
+                .withName("ShowInstanceVersion")
+                .withUri("/v2/{project_id}/instances/{instance_id}/version")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceVersionRequest::getInstanceId,
+                ShowInstanceVersionRequest::setInstanceId));
 
         // response
 
@@ -3358,6 +3552,39 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateBandwidthRequest, UpdateBandwidthResponse> updateBandwidth =
+        genForUpdateBandwidth();
+
+    private static HttpRequestDef<UpdateBandwidthRequest, UpdateBandwidthResponse> genForUpdateBandwidth() {
+        // basic
+        HttpRequestDef.Builder<UpdateBandwidthRequest, UpdateBandwidthResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateBandwidthRequest.class, UpdateBandwidthResponse.class)
+                .withName("UpdateBandwidth")
+                .withUri("/v2/{project_id}/instances/{instance_id}/bandwidths")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateBandwidthRequest::getInstanceId, UpdateBandwidthRequest::setInstanceId));
+        builder.<UpdateBandwidthInfoRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateBandwidthInfoRequest.class),
+            f -> f.withMarshaller(UpdateBandwidthRequest::getBody, UpdateBandwidthRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateBandwidthResponse::getBody, UpdateBandwidthResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateBigkeyAutoscanConfigRequest, UpdateBigkeyAutoscanConfigResponse> updateBigkeyAutoscanConfig =
         genForUpdateBigkeyAutoscanConfig();
 
@@ -3600,6 +3827,39 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateInstanceBandwidthAutoScalingPolicyRequest, UpdateInstanceBandwidthAutoScalingPolicyResponse> updateInstanceBandwidthAutoScalingPolicy =
+        genForUpdateInstanceBandwidthAutoScalingPolicy();
+
+    private static HttpRequestDef<UpdateInstanceBandwidthAutoScalingPolicyRequest, UpdateInstanceBandwidthAutoScalingPolicyResponse> genForUpdateInstanceBandwidthAutoScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateInstanceBandwidthAutoScalingPolicyRequest, UpdateInstanceBandwidthAutoScalingPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateInstanceBandwidthAutoScalingPolicyRequest.class,
+                    UpdateInstanceBandwidthAutoScalingPolicyResponse.class)
+                .withName("UpdateInstanceBandwidthAutoScalingPolicy")
+                .withUri("/v2/{project_id}/instances/{instance_id}/autoscaling-policy/bandwidth")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInstanceBandwidthAutoScalingPolicyRequest::getInstanceId,
+                UpdateInstanceBandwidthAutoScalingPolicyRequest::setInstanceId));
+        builder.<UpdateInstanceBandwidthAutoScalingPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateInstanceBandwidthAutoScalingPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateInstanceBandwidthAutoScalingPolicyRequest::getBody,
+                UpdateInstanceBandwidthAutoScalingPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateInstanceConfigRequest, UpdateInstanceConfigResponse> updateInstanceConfig =
         genForUpdateInstanceConfig();
 
@@ -3690,6 +3950,34 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdatePublicIpRequest, UpdatePublicIpResponse> updatePublicIp =
+        genForUpdatePublicIp();
+
+    private static HttpRequestDef<UpdatePublicIpRequest, UpdatePublicIpResponse> genForUpdatePublicIp() {
+        // basic
+        HttpRequestDef.Builder<UpdatePublicIpRequest, UpdatePublicIpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdatePublicIpRequest.class, UpdatePublicIpResponse.class)
+                .withName("UpdatePublicIp")
+                .withUri("/v2/{project_id}/instances/{instance_id}/public-ip")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePublicIpRequest::getInstanceId, UpdatePublicIpRequest::setInstanceId));
+        builder.<UpdatePublicIpRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePublicIpRequestBody.class),
+            f -> f.withMarshaller(UpdatePublicIpRequest::getBody, UpdatePublicIpRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateSlavePriorityRequest, UpdateSlavePriorityResponse> updateSlavePriority =
         genForUpdateSlavePriority();
 
@@ -3752,6 +4040,39 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSSLSwitchRequestBody.class),
             f -> f.withMarshaller(UpdateSslSwitchRequest::getBody, UpdateSslSwitchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeInstanceMinorVersionRequest, UpgradeInstanceMinorVersionResponse> upgradeInstanceMinorVersion =
+        genForUpgradeInstanceMinorVersion();
+
+    private static HttpRequestDef<UpgradeInstanceMinorVersionRequest, UpgradeInstanceMinorVersionResponse> genForUpgradeInstanceMinorVersion() {
+        // basic
+        HttpRequestDef.Builder<UpgradeInstanceMinorVersionRequest, UpgradeInstanceMinorVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UpgradeInstanceMinorVersionRequest.class,
+                    UpgradeInstanceMinorVersionResponse.class)
+                .withName("UpgradeInstanceMinorVersion")
+                .withUri("/v2/{project_id}/instances/{instance_id}/minor-version/upgrade")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeInstanceMinorVersionRequest::getInstanceId,
+                UpgradeInstanceMinorVersionRequest::setInstanceId));
+        builder.<UpgradeMinorVersionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeMinorVersionRequestBody.class),
+            f -> f.withMarshaller(UpgradeInstanceMinorVersionRequest::getBody,
+                UpgradeInstanceMinorVersionRequest::setBody));
 
         // response
 

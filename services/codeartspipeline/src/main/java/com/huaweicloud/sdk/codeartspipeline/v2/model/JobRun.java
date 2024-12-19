@@ -31,7 +31,7 @@ public class JobRun {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "async")
 
-    private String async;
+    private Boolean async;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -154,7 +154,7 @@ public class JobRun {
         this.sequence = sequence;
     }
 
-    public JobRun withAsync(String async) {
+    public JobRun withAsync(Boolean async) {
         this.async = async;
         return this;
     }
@@ -163,11 +163,11 @@ public class JobRun {
      * 是否异步
      * @return async
      */
-    public String getAsync() {
+    public Boolean getAsync() {
         return async;
     }
 
-    public void setAsync(String async) {
+    public void setAsync(Boolean async) {
         this.async = async;
     }
 

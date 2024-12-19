@@ -1,9 +1,13 @@
 package com.huaweicloud.sdk.aad.v2;
 
+import com.huaweicloud.sdk.aad.v2.model.AddWafWhiteIpRuleRequest;
+import com.huaweicloud.sdk.aad.v2.model.AddWafWhiteIpRuleResponse;
 import com.huaweicloud.sdk.aad.v2.model.CreateDomainRequest;
 import com.huaweicloud.sdk.aad.v2.model.CreateDomainResponse;
 import com.huaweicloud.sdk.aad.v2.model.DeleteDomainRequest;
 import com.huaweicloud.sdk.aad.v2.model.DeleteDomainResponse;
+import com.huaweicloud.sdk.aad.v2.model.DeleteWafWhiteIpRuleRequest;
+import com.huaweicloud.sdk.aad.v2.model.DeleteWafWhiteIpRuleResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSAttackEventRequest;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSAttackEventResponse;
 import com.huaweicloud.sdk.aad.v2.model.ListDDoSConnectionNumberRequest;
@@ -55,6 +59,35 @@ public class AadAsyncClient {
     public static ClientBuilder<AadAsyncClient> newBuilder() {
         ClientBuilder<AadAsyncClient> clientBuilder = new ClientBuilder<>(AadAsyncClient::new, "GlobalCredentials");
         return clientBuilder;
+    }
+
+    /**
+     * 防护策略web-cc黑白名单-创建黑白名单规则
+     *
+     * 防护策略web-cc黑白名单-创建黑白名单规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddWafWhiteIpRuleRequest 请求对象
+     * @return CompletableFuture<AddWafWhiteIpRuleResponse>
+     */
+    public CompletableFuture<AddWafWhiteIpRuleResponse> addWafWhiteIpRuleAsync(AddWafWhiteIpRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.addWafWhiteIpRule);
+    }
+
+    /**
+     * 防护策略web-cc黑白名单-创建黑白名单规则
+     *
+     * 防护策略web-cc黑白名单-创建黑白名单规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddWafWhiteIpRuleRequest 请求对象
+     * @return AsyncInvoker<AddWafWhiteIpRuleRequest, AddWafWhiteIpRuleResponse>
+     */
+    public AsyncInvoker<AddWafWhiteIpRuleRequest, AddWafWhiteIpRuleResponse> addWafWhiteIpRuleAsyncInvoker(
+        AddWafWhiteIpRuleRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.addWafWhiteIpRule, hcClient);
     }
 
     /**
@@ -113,6 +146,36 @@ public class AadAsyncClient {
     public AsyncInvoker<DeleteDomainRequest, DeleteDomainResponse> deleteDomainAsyncInvoker(
         DeleteDomainRequest request) {
         return new AsyncInvoker<>(request, AadMeta.deleteDomain, hcClient);
+    }
+
+    /**
+     * 防护策略web-cc黑白名单-删除黑白名单规则
+     *
+     * 防护策略web-cc黑白名单-删除黑白名单规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWafWhiteIpRuleRequest 请求对象
+     * @return CompletableFuture<DeleteWafWhiteIpRuleResponse>
+     */
+    public CompletableFuture<DeleteWafWhiteIpRuleResponse> deleteWafWhiteIpRuleAsync(
+        DeleteWafWhiteIpRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, AadMeta.deleteWafWhiteIpRule);
+    }
+
+    /**
+     * 防护策略web-cc黑白名单-删除黑白名单规则
+     *
+     * 防护策略web-cc黑白名单-删除黑白名单规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteWafWhiteIpRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteWafWhiteIpRuleRequest, DeleteWafWhiteIpRuleResponse>
+     */
+    public AsyncInvoker<DeleteWafWhiteIpRuleRequest, DeleteWafWhiteIpRuleResponse> deleteWafWhiteIpRuleAsyncInvoker(
+        DeleteWafWhiteIpRuleRequest request) {
+        return new AsyncInvoker<>(request, AadMeta.deleteWafWhiteIpRule, hcClient);
     }
 
     /**

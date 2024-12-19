@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * ExternalUpdatePeerLink
+ * 更新的请求体信息
  */
 public class ExternalUpdatePeerLink {
 
@@ -73,7 +73,7 @@ public class ExternalUpdatePeerLink {
     }
 
     /**
-     * Get id
+     * 关联连接的ID
      * @return id
      */
     public String getId() {
@@ -90,7 +90,7 @@ public class ExternalUpdatePeerLink {
     }
 
     /**
-     * Get tenantId
+     * 关联连接归属的租户ID
      * @return tenantId
      */
     public String getTenantId() {
@@ -107,7 +107,7 @@ public class ExternalUpdatePeerLink {
     }
 
     /**
-     * Get name
+     * 关联连接的名字
      * @return name
      */
     public String getName() {
@@ -124,7 +124,7 @@ public class ExternalUpdatePeerLink {
     }
 
     /**
-     * Get description
+     * 关联连接的描述信息
      * @return description
      */
     public String getDescription() {
@@ -141,7 +141,7 @@ public class ExternalUpdatePeerLink {
     }
 
     /**
-     * Get globalDcGatewayId
+     * 关联连接归属的接入网关ID
      * @return globalDcGatewayId
      */
     public String getGlobalDcGatewayId() {
@@ -210,7 +210,7 @@ public class ExternalUpdatePeerLink {
     }
 
     /**
-     * Get status
+     * 关联连接的状态
      * @return status
      */
     public String getStatus() {
@@ -227,7 +227,7 @@ public class ExternalUpdatePeerLink {
     }
 
     /**
-     * Get reason
+     * 失败原因
      * @return reason
      */
     public String getReason() {
@@ -244,7 +244,7 @@ public class ExternalUpdatePeerLink {
     }
 
     /**
-     * Get createdTime
+     * 创建时间
      * @return createdTime
      */
     public OffsetDateTime getCreatedTime() {
@@ -261,7 +261,7 @@ public class ExternalUpdatePeerLink {
     }
 
     /**
-     * Get updatedTime
+     * 更新时间
      * @return updatedTime
      */
     public OffsetDateTime getUpdatedTime() {

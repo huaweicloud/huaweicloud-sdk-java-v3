@@ -20,7 +20,6 @@ import com.huaweicloud.sdk.dws.v2.model.AssociateEipRequest;
 import com.huaweicloud.sdk.dws.v2.model.AssociateEipResponse;
 import com.huaweicloud.sdk.dws.v2.model.AssociateElbRequest;
 import com.huaweicloud.sdk.dws.v2.model.AssociateElbResponse;
-import com.huaweicloud.sdk.dws.v2.model.BackupPolicy;
 import com.huaweicloud.sdk.dws.v2.model.BatchCreateClusterCnRequest;
 import com.huaweicloud.sdk.dws.v2.model.BatchCreateClusterCnResponse;
 import com.huaweicloud.sdk.dws.v2.model.BatchCreateCn;
@@ -76,6 +75,7 @@ import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotPolicyRequest;
+import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotPolicyRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotPolicyResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotRequestBody;
@@ -1149,10 +1149,10 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateSnapshotPolicyRequest::getClusterId,
                 CreateSnapshotPolicyRequest::setClusterId));
-        builder.<BackupPolicy>withRequestField("body",
+        builder.<CreateSnapshotPolicyRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BackupPolicy.class),
+            TypeCasts.uncheckedConversion(CreateSnapshotPolicyRequestBody.class),
             f -> f.withMarshaller(CreateSnapshotPolicyRequest::getBody, CreateSnapshotPolicyRequest::setBody));
 
         // response

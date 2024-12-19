@@ -38,11 +38,6 @@ public class ExternalCreatePeerLink {
     private String globalDcGatewayId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
-
-    private String instanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "bandwidth_info")
 
     private BandwidthInfoExternal bandwidthInfo;
@@ -78,7 +73,7 @@ public class ExternalCreatePeerLink {
     }
 
     /**
-     * 唯一ID
+     * 专线对等连接
      * @return id
      */
     public String getId() {
@@ -129,7 +124,7 @@ public class ExternalCreatePeerLink {
     }
 
     /**
-     * 描述
+     * 描述信息
      * @return description
      */
     public String getDescription() {
@@ -146,7 +141,7 @@ public class ExternalCreatePeerLink {
     }
 
     /**
-     * 全球接入网关ID
+     * 全域接入网关ID
      * @return globalDcGatewayId
      */
     public String getGlobalDcGatewayId() {
@@ -155,23 +150,6 @@ public class ExternalCreatePeerLink {
 
     public void setGlobalDcGatewayId(String globalDcGatewayId) {
         this.globalDcGatewayId = globalDcGatewayId;
-    }
-
-    public ExternalCreatePeerLink withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-
-    /**
-     * 实例ID
-     * @return instanceId
-     */
-    public String getInstanceId() {
-        return instanceId;
-    }
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
     }
 
     public ExternalCreatePeerLink withBandwidthInfo(BandwidthInfoExternal bandwidthInfo) {
@@ -232,7 +210,7 @@ public class ExternalCreatePeerLink {
     }
 
     /**
-     * 状态： ACTIVE-正常
+     * '状态信息' - ACTIVE 正常 - ERROR 异常
      * @return status
      */
     public String getStatus() {
@@ -249,7 +227,7 @@ public class ExternalCreatePeerLink {
     }
 
     /**
-     * 原因
+     * 失败原因
      * @return reason
      */
     public String getReason() {
@@ -283,7 +261,7 @@ public class ExternalCreatePeerLink {
     }
 
     /**
-     * 修改时间
+     * 更新时间
      * @return updatedTime
      */
     public OffsetDateTime getUpdatedTime() {
@@ -306,7 +284,6 @@ public class ExternalCreatePeerLink {
         return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.globalDcGatewayId, that.globalDcGatewayId)
-            && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.bandwidthInfo, that.bandwidthInfo) && Objects.equals(this.peerSite, that.peerSite)
             && Objects.equals(this.status, that.status) && Objects.equals(this.reason, that.reason)
             && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime);
@@ -319,7 +296,6 @@ public class ExternalCreatePeerLink {
             name,
             description,
             globalDcGatewayId,
-            instanceId,
             bandwidthInfo,
             peerSite,
             status,
@@ -337,7 +313,6 @@ public class ExternalCreatePeerLink {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    globalDcGatewayId: ").append(toIndentedString(globalDcGatewayId)).append("\n");
-        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    bandwidthInfo: ").append(toIndentedString(bandwidthInfo)).append("\n");
         sb.append("    peerSite: ").append(toIndentedString(peerSite)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

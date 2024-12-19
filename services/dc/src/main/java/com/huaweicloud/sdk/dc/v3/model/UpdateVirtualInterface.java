@@ -236,7 +236,7 @@ public class UpdateVirtualInterface {
     }
 
     /**
-     * 用于公网专线,用户访问公网服务地址列表
+     * 用于公网专线,用户访问公网服务地址列表。[（预留字段，暂不支持）](tag:dt)
      * @return serviceEpGroup
      */
     public List<String> getServiceEpGroup() {
@@ -253,7 +253,7 @@ public class UpdateVirtualInterface {
     }
 
     /**
-     * 是否使能bfd功能：true或false
+     * 是否使能bfd功能：true或false。[（预留字段，暂不支持）](tag:dt)
      * @return enableBfd
      */
     public Boolean getEnableBfd() {
@@ -270,7 +270,7 @@ public class UpdateVirtualInterface {
     }
 
     /**
-     * 是否使能nqa功能：true或false
+     * 是否使能nqa功能：true或false。[（预留字段，暂不支持）](tag:dt)
      * @return enableNqa
      */
     public Boolean getEnableNqa() {

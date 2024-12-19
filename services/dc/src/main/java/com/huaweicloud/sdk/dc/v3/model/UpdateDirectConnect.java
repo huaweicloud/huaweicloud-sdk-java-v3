@@ -36,7 +36,7 @@ public class UpdateDirectConnect {
     private String peerLocation;
 
     /**
-     * 更新资源状态，合法值是：PENDING_PAY
+     * 更新资源状态，合法值是：PENDING_PAY,APPLY
      */
     public static final class StatusEnum {
 
@@ -45,11 +45,17 @@ public class UpdateDirectConnect {
          */
         public static final StatusEnum PENDING_PAY = new StatusEnum("PENDING_PAY");
 
+        /**
+         * Enum APPLY for value: "APPLY"
+         */
+        public static final StatusEnum APPLY = new StatusEnum("APPLY");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
             map.put("PENDING_PAY", PENDING_PAY);
+            map.put("APPLY", APPLY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -219,7 +225,7 @@ public class UpdateDirectConnect {
     }
 
     /**
-     * 指定托管专线接入带宽,单位Mbps
+     * 指定托管专线接入带宽,单位Mbps。[注：标准或运营专线的带宽不能降低！](tag:dt)
      * minimum: 2
      * maximum: 100000
      * @return bandwidth
@@ -255,7 +261,7 @@ public class UpdateDirectConnect {
     }
 
     /**
-     * 更新资源状态，合法值是：PENDING_PAY
+     * 更新资源状态，合法值是：PENDING_PAY,APPLY
      * @return status
      */
     public StatusEnum getStatus() {

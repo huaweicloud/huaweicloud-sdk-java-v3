@@ -27,7 +27,7 @@ public class UpdateGdgwRouteTableRequest {
     }
 
     /**
-     * 全球接入网关ID
+     * 全域接入网关ID
      * @return gdgwId
      */
     public String getGdgwId() {

@@ -23,26 +23,6 @@ public class ListGdgwRouteTablesRequest {
 
     private String gdgwId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "fields")
-
-    private List<String> fields = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ext_fields")
-
-    private List<String> extFields = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nexthop")
-
-    private List<String> nexthop = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "destination")
-
-    private List<String> destination = null;
-
     /**
      * Gets or Sets addressFamily
      */
@@ -118,13 +98,23 @@ public class ListGdgwRouteTablesRequest {
 
     private List<AddressFamilyEnum> addressFamily = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nexthop")
+
+    private List<String> nexthop = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "destination")
+
+    private List<String> destination = null;
+
     public ListGdgwRouteTablesRequest withGdgwId(String gdgwId) {
         this.gdgwId = gdgwId;
         return this;
     }
 
     /**
-     * 全球接入网关ID
+     * 全域接入网关ID
      * @return gdgwId
      */
     public String getGdgwId() {
@@ -135,70 +125,37 @@ public class ListGdgwRouteTablesRequest {
         this.gdgwId = gdgwId;
     }
 
-    public ListGdgwRouteTablesRequest withFields(List<String> fields) {
-        this.fields = fields;
+    public ListGdgwRouteTablesRequest withAddressFamily(List<AddressFamilyEnum> addressFamily) {
+        this.addressFamily = addressFamily;
         return this;
     }
 
-    public ListGdgwRouteTablesRequest addFieldsItem(String fieldsItem) {
-        if (this.fields == null) {
-            this.fields = new ArrayList<>();
+    public ListGdgwRouteTablesRequest addAddressFamilyItem(AddressFamilyEnum addressFamilyItem) {
+        if (this.addressFamily == null) {
+            this.addressFamily = new ArrayList<>();
         }
-        this.fields.add(fieldsItem);
+        this.addressFamily.add(addressFamilyItem);
         return this;
     }
 
-    public ListGdgwRouteTablesRequest withFields(Consumer<List<String>> fieldsSetter) {
-        if (this.fields == null) {
-            this.fields = new ArrayList<>();
+    public ListGdgwRouteTablesRequest withAddressFamily(Consumer<List<AddressFamilyEnum>> addressFamilySetter) {
+        if (this.addressFamily == null) {
+            this.addressFamily = new ArrayList<>();
         }
-        fieldsSetter.accept(this.fields);
+        addressFamilySetter.accept(this.addressFamily);
         return this;
     }
 
     /**
-     * 显示字段列表
-     * @return fields
+     * 地址簇
+     * @return addressFamily
      */
-    public List<String> getFields() {
-        return fields;
+    public List<AddressFamilyEnum> getAddressFamily() {
+        return addressFamily;
     }
 
-    public void setFields(List<String> fields) {
-        this.fields = fields;
-    }
-
-    public ListGdgwRouteTablesRequest withExtFields(List<String> extFields) {
-        this.extFields = extFields;
-        return this;
-    }
-
-    public ListGdgwRouteTablesRequest addExtFieldsItem(String extFieldsItem) {
-        if (this.extFields == null) {
-            this.extFields = new ArrayList<>();
-        }
-        this.extFields.add(extFieldsItem);
-        return this;
-    }
-
-    public ListGdgwRouteTablesRequest withExtFields(Consumer<List<String>> extFieldsSetter) {
-        if (this.extFields == null) {
-            this.extFields = new ArrayList<>();
-        }
-        extFieldsSetter.accept(this.extFields);
-        return this;
-    }
-
-    /**
-     * show response ext-fields
-     * @return extFields
-     */
-    public List<String> getExtFields() {
-        return extFields;
-    }
-
-    public void setExtFields(List<String> extFields) {
-        this.extFields = extFields;
+    public void setAddressFamily(List<AddressFamilyEnum> addressFamily) {
+        this.addressFamily = addressFamily;
     }
 
     public ListGdgwRouteTablesRequest withNexthop(List<String> nexthop) {
@@ -223,7 +180,7 @@ public class ListGdgwRouteTablesRequest {
     }
 
     /**
-     * 下一条ID
+     * 下一跳ID
      * @return nexthop
      */
     public List<String> getNexthop() {
@@ -267,39 +224,6 @@ public class ListGdgwRouteTablesRequest {
         this.destination = destination;
     }
 
-    public ListGdgwRouteTablesRequest withAddressFamily(List<AddressFamilyEnum> addressFamily) {
-        this.addressFamily = addressFamily;
-        return this;
-    }
-
-    public ListGdgwRouteTablesRequest addAddressFamilyItem(AddressFamilyEnum addressFamilyItem) {
-        if (this.addressFamily == null) {
-            this.addressFamily = new ArrayList<>();
-        }
-        this.addressFamily.add(addressFamilyItem);
-        return this;
-    }
-
-    public ListGdgwRouteTablesRequest withAddressFamily(Consumer<List<AddressFamilyEnum>> addressFamilySetter) {
-        if (this.addressFamily == null) {
-            this.addressFamily = new ArrayList<>();
-        }
-        addressFamilySetter.accept(this.addressFamily);
-        return this;
-    }
-
-    /**
-     * 地址簇
-     * @return addressFamily
-     */
-    public List<AddressFamilyEnum> getAddressFamily() {
-        return addressFamily;
-    }
-
-    public void setAddressFamily(List<AddressFamilyEnum> addressFamily) {
-        this.addressFamily = addressFamily;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -309,15 +233,13 @@ public class ListGdgwRouteTablesRequest {
             return false;
         }
         ListGdgwRouteTablesRequest that = (ListGdgwRouteTablesRequest) obj;
-        return Objects.equals(this.gdgwId, that.gdgwId) && Objects.equals(this.fields, that.fields)
-            && Objects.equals(this.extFields, that.extFields) && Objects.equals(this.nexthop, that.nexthop)
-            && Objects.equals(this.destination, that.destination)
-            && Objects.equals(this.addressFamily, that.addressFamily);
+        return Objects.equals(this.gdgwId, that.gdgwId) && Objects.equals(this.addressFamily, that.addressFamily)
+            && Objects.equals(this.nexthop, that.nexthop) && Objects.equals(this.destination, that.destination);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(gdgwId, fields, extFields, nexthop, destination, addressFamily);
+        return Objects.hash(gdgwId, addressFamily, nexthop, destination);
     }
 
     @Override
@@ -325,11 +247,9 @@ public class ListGdgwRouteTablesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListGdgwRouteTablesRequest {\n");
         sb.append("    gdgwId: ").append(toIndentedString(gdgwId)).append("\n");
-        sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
-        sb.append("    extFields: ").append(toIndentedString(extFields)).append("\n");
+        sb.append("    addressFamily: ").append(toIndentedString(addressFamily)).append("\n");
         sb.append("    nexthop: ").append(toIndentedString(nexthop)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
-        sb.append("    addressFamily: ").append(toIndentedString(addressFamily)).append("\n");
         sb.append("}");
         return sb.toString();
     }

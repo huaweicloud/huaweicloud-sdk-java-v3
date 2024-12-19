@@ -20,11 +20,6 @@ public class BandwidthInfoExternal {
 
     private String gcbId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "freeze_status")
-
-    private String freezeStatus;
-
     public BandwidthInfoExternal withBandwidthSize(Long bandwidthSize) {
         this.bandwidthSize = bandwidthSize;
         return this;
@@ -59,23 +54,6 @@ public class BandwidthInfoExternal {
         this.gcbId = gcbId;
     }
 
-    public BandwidthInfoExternal withFreezeStatus(String freezeStatus) {
-        this.freezeStatus = freezeStatus;
-        return this;
-    }
-
-    /**
-     * 冻结状态
-     * @return freezeStatus
-     */
-    public String getFreezeStatus() {
-        return freezeStatus;
-    }
-
-    public void setFreezeStatus(String freezeStatus) {
-        this.freezeStatus = freezeStatus;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,13 +63,12 @@ public class BandwidthInfoExternal {
             return false;
         }
         BandwidthInfoExternal that = (BandwidthInfoExternal) obj;
-        return Objects.equals(this.bandwidthSize, that.bandwidthSize) && Objects.equals(this.gcbId, that.gcbId)
-            && Objects.equals(this.freezeStatus, that.freezeStatus);
+        return Objects.equals(this.bandwidthSize, that.bandwidthSize) && Objects.equals(this.gcbId, that.gcbId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthSize, gcbId, freezeStatus);
+        return Objects.hash(bandwidthSize, gcbId);
     }
 
     @Override
@@ -100,7 +77,6 @@ public class BandwidthInfoExternal {
         sb.append("class BandwidthInfoExternal {\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
         sb.append("    gcbId: ").append(toIndentedString(gcbId)).append("\n");
-        sb.append("    freezeStatus: ").append(toIndentedString(freezeStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

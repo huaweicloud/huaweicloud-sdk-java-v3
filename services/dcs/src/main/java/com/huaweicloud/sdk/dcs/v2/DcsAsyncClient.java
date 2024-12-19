@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyAsyncRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyAsyncResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ChangeMasterStandbyResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ChangeNodesStartStopStatusRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ChangeNodesStartStopStatusResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CopyInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateAclAccountRequest;
@@ -59,10 +61,14 @@ import com.huaweicloud.sdk.dcs.v2.model.DeleteDiagnosisTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteDiagnosisTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteHotkeyScanTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteHotkeyScanTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteInstanceBandwidthAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteInstanceBandwidthAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteIpFromDomainNameRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteIpFromDomainNameResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrationTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeletePublicIpRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeletePublicIpResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DownloadSslCertRequest;
@@ -159,6 +165,8 @@ import com.huaweicloud.sdk.dcs.v2.model.SetOnlineMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.SetOnlineMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBackgroundTaskProgressRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBackgroundTaskProgressResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowBandwidthsRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowBandwidthsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyAutoscanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowBigkeyScanTaskDetailsRequest;
@@ -177,10 +185,14 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyAutoscanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyTaskDetailsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowHotkeyTaskDetailsResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceBandwidthAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceBandwidthAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceSslDetailRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceSslDetailResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceVersionRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceVersionResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowIpWhitelistRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowIpWhitelistResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowJobInfoRequest;
@@ -209,6 +221,8 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRemarkResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateAclAccountResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateBandwidthRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateBandwidthResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateBigkeyAutoscanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateBigkeyAutoscanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateClientIpTransparentTransmissionRequest;
@@ -221,6 +235,8 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdateExpireAutoScanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateExpireAutoScanConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateHotkeyAutoScanConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateHotkeyAutoScanConfigResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthAutoScalingPolicyRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthAutoScalingPolicyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceBandwidthResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceConfigRequest;
@@ -233,10 +249,14 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdateMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdatePasswordResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdatePublicIpRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdatePublicIpResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSlavePriorityResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSslSwitchRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateSslSwitchResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpgradeInstanceMinorVersionRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpgradeInstanceMinorVersionResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ValidateDeletableReplicaRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ValidateDeletableReplicaResponse;
 
@@ -466,6 +486,36 @@ public class DcsAsyncClient {
     public AsyncInvoker<ChangeMasterStandbyAsyncRequest, ChangeMasterStandbyAsyncResponse> changeMasterStandbyAsyncAsyncInvoker(
         ChangeMasterStandbyAsyncRequest request) {
         return new AsyncInvoker<>(request, DcsMeta.changeMasterStandbyAsync, hcClient);
+    }
+
+    /**
+     * 指定实例节点启停开关
+     *
+     * 实例节点启停。执行节点关机操作前的24小时内，需要对实例（单机实例除外）进行数据备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeNodesStartStopStatusRequest 请求对象
+     * @return CompletableFuture<ChangeNodesStartStopStatusResponse>
+     */
+    public CompletableFuture<ChangeNodesStartStopStatusResponse> changeNodesStartStopStatusAsync(
+        ChangeNodesStartStopStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.changeNodesStartStopStatus);
+    }
+
+    /**
+     * 指定实例节点启停开关
+     *
+     * 实例节点启停。执行节点关机操作前的24小时内，需要对实例（单机实例除外）进行数据备份。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeNodesStartStopStatusRequest 请求对象
+     * @return AsyncInvoker<ChangeNodesStartStopStatusRequest, ChangeNodesStartStopStatusResponse>
+     */
+    public AsyncInvoker<ChangeNodesStartStopStatusRequest, ChangeNodesStartStopStatusResponse> changeNodesStartStopStatusAsyncInvoker(
+        ChangeNodesStartStopStatusRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.changeNodesStartStopStatus, hcClient);
     }
 
     /**
@@ -1102,6 +1152,36 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 删除实例带宽弹性伸缩策略
+     *
+     * 删除实例带宽弹性伸缩策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInstanceBandwidthAutoScalingPolicyRequest 请求对象
+     * @return CompletableFuture<DeleteInstanceBandwidthAutoScalingPolicyResponse>
+     */
+    public CompletableFuture<DeleteInstanceBandwidthAutoScalingPolicyResponse> deleteInstanceBandwidthAutoScalingPolicyAsync(
+        DeleteInstanceBandwidthAutoScalingPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.deleteInstanceBandwidthAutoScalingPolicy);
+    }
+
+    /**
+     * 删除实例带宽弹性伸缩策略
+     *
+     * 删除实例带宽弹性伸缩策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInstanceBandwidthAutoScalingPolicyRequest 请求对象
+     * @return AsyncInvoker<DeleteInstanceBandwidthAutoScalingPolicyRequest, DeleteInstanceBandwidthAutoScalingPolicyResponse>
+     */
+    public AsyncInvoker<DeleteInstanceBandwidthAutoScalingPolicyRequest, DeleteInstanceBandwidthAutoScalingPolicyResponse> deleteInstanceBandwidthAutoScalingPolicyAsyncInvoker(
+        DeleteInstanceBandwidthAutoScalingPolicyRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.deleteInstanceBandwidthAutoScalingPolicy, hcClient);
+    }
+
+    /**
      * 域名摘除IP
      *
      * 将只读副本的IP从域名中摘除，摘除成功后，只读域名不会再解析到该副本IP。
@@ -1158,6 +1238,35 @@ public class DcsAsyncClient {
     public AsyncInvoker<DeleteMigrationTaskRequest, DeleteMigrationTaskResponse> deleteMigrationTaskAsyncInvoker(
         DeleteMigrationTaskRequest request) {
         return new AsyncInvoker<>(request, DcsMeta.deleteMigrationTask, hcClient);
+    }
+
+    /**
+     * 关闭实例公网访问
+     *
+     * 关闭实例公网访问。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePublicIpRequest 请求对象
+     * @return CompletableFuture<DeletePublicIpResponse>
+     */
+    public CompletableFuture<DeletePublicIpResponse> deletePublicIpAsync(DeletePublicIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.deletePublicIp);
+    }
+
+    /**
+     * 关闭实例公网访问
+     *
+     * 关闭实例公网访问。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePublicIpRequest 请求对象
+     * @return AsyncInvoker<DeletePublicIpRequest, DeletePublicIpResponse>
+     */
+    public AsyncInvoker<DeletePublicIpRequest, DeletePublicIpResponse> deletePublicIpAsyncInvoker(
+        DeletePublicIpRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.deletePublicIp, hcClient);
     }
 
     /**
@@ -2578,6 +2687,35 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 获取实例分片带宽
+     *
+     * 获取实例各个分片带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBandwidthsRequest 请求对象
+     * @return CompletableFuture<ShowBandwidthsResponse>
+     */
+    public CompletableFuture<ShowBandwidthsResponse> showBandwidthsAsync(ShowBandwidthsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.showBandwidths);
+    }
+
+    /**
+     * 获取实例分片带宽
+     *
+     * 获取实例各个分片带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowBandwidthsRequest 请求对象
+     * @return AsyncInvoker<ShowBandwidthsRequest, ShowBandwidthsResponse>
+     */
+    public AsyncInvoker<ShowBandwidthsRequest, ShowBandwidthsResponse> showBandwidthsAsyncInvoker(
+        ShowBandwidthsRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.showBandwidths, hcClient);
+    }
+
+    /**
      * 查询大key自动分析配置
      *
      * 查询大key自动分析配置。
@@ -2876,6 +3014,36 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 查询实例带宽弹性伸缩策略
+     *
+     * 查询实例带宽弹性伸缩策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceBandwidthAutoScalingPolicyRequest 请求对象
+     * @return CompletableFuture<ShowInstanceBandwidthAutoScalingPolicyResponse>
+     */
+    public CompletableFuture<ShowInstanceBandwidthAutoScalingPolicyResponse> showInstanceBandwidthAutoScalingPolicyAsync(
+        ShowInstanceBandwidthAutoScalingPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.showInstanceBandwidthAutoScalingPolicy);
+    }
+
+    /**
+     * 查询实例带宽弹性伸缩策略
+     *
+     * 查询实例带宽弹性伸缩策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceBandwidthAutoScalingPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceBandwidthAutoScalingPolicyRequest, ShowInstanceBandwidthAutoScalingPolicyResponse>
+     */
+    public AsyncInvoker<ShowInstanceBandwidthAutoScalingPolicyRequest, ShowInstanceBandwidthAutoScalingPolicyResponse> showInstanceBandwidthAutoScalingPolicyAsyncInvoker(
+        ShowInstanceBandwidthAutoScalingPolicyRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.showInstanceBandwidthAutoScalingPolicy, hcClient);
+    }
+
+    /**
      * 查询实例SSL信息
      *
      * 查询实例SSL信息。该接口目前仅针对Redis 6.0[基础版](tag:hws,hws_hk)版本实例。
@@ -2903,6 +3071,35 @@ public class DcsAsyncClient {
     public AsyncInvoker<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse> showInstanceSslDetailAsyncInvoker(
         ShowInstanceSslDetailRequest request) {
         return new AsyncInvoker<>(request, DcsMeta.showInstanceSslDetail, hcClient);
+    }
+
+    /**
+     * 根据实例ID获取实例内核版本信息
+     *
+     * 获取对应实例内核版本号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceVersionRequest 请求对象
+     * @return CompletableFuture<ShowInstanceVersionResponse>
+     */
+    public CompletableFuture<ShowInstanceVersionResponse> showInstanceVersionAsync(ShowInstanceVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.showInstanceVersion);
+    }
+
+    /**
+     * 根据实例ID获取实例内核版本信息
+     *
+     * 获取对应实例内核版本号。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceVersionRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceVersionRequest, ShowInstanceVersionResponse>
+     */
+    public AsyncInvoker<ShowInstanceVersionRequest, ShowInstanceVersionResponse> showInstanceVersionAsyncInvoker(
+        ShowInstanceVersionRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.showInstanceVersion, hcClient);
     }
 
     /**
@@ -3292,6 +3489,35 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 修改实例分片带宽
+     *
+     * 修改实例分片带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBandwidthRequest 请求对象
+     * @return CompletableFuture<UpdateBandwidthResponse>
+     */
+    public CompletableFuture<UpdateBandwidthResponse> updateBandwidthAsync(UpdateBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.updateBandwidth);
+    }
+
+    /**
+     * 修改实例分片带宽
+     *
+     * 修改实例分片带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateBandwidthRequest 请求对象
+     * @return AsyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse>
+     */
+    public AsyncInvoker<UpdateBandwidthRequest, UpdateBandwidthResponse> updateBandwidthAsyncInvoker(
+        UpdateBandwidthRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.updateBandwidth, hcClient);
+    }
+
+    /**
      * 设置大key自动分析配置
      *
      * 设置大key自动分析配置。
@@ -3531,6 +3757,36 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 更新实例带宽弹性伸缩策略
+     *
+     * 更新实例带宽弹性伸缩策略。暂不支持实例带宽自动回缩。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceBandwidthAutoScalingPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateInstanceBandwidthAutoScalingPolicyResponse>
+     */
+    public CompletableFuture<UpdateInstanceBandwidthAutoScalingPolicyResponse> updateInstanceBandwidthAutoScalingPolicyAsync(
+        UpdateInstanceBandwidthAutoScalingPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.updateInstanceBandwidthAutoScalingPolicy);
+    }
+
+    /**
+     * 更新实例带宽弹性伸缩策略
+     *
+     * 更新实例带宽弹性伸缩策略。暂不支持实例带宽自动回缩。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceBandwidthAutoScalingPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateInstanceBandwidthAutoScalingPolicyRequest, UpdateInstanceBandwidthAutoScalingPolicyResponse>
+     */
+    public AsyncInvoker<UpdateInstanceBandwidthAutoScalingPolicyRequest, UpdateInstanceBandwidthAutoScalingPolicyResponse> updateInstanceBandwidthAutoScalingPolicyAsyncInvoker(
+        UpdateInstanceBandwidthAutoScalingPolicyRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.updateInstanceBandwidthAutoScalingPolicy, hcClient);
+    }
+
+    /**
      * 异步修改实例配置参数
      *
      * 为了确保分布式缓存服务发挥出最优性能，您可以根据自己的业务情况对DCS缓存实例的运行参数进行调整。
@@ -3619,6 +3875,35 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 开启/修改实例公网访问
+     *
+     * 开启/修改实例公网访问。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePublicIpRequest 请求对象
+     * @return CompletableFuture<UpdatePublicIpResponse>
+     */
+    public CompletableFuture<UpdatePublicIpResponse> updatePublicIpAsync(UpdatePublicIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.updatePublicIp);
+    }
+
+    /**
+     * 开启/修改实例公网访问
+     *
+     * 开启/修改实例公网访问。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePublicIpRequest 请求对象
+     * @return AsyncInvoker<UpdatePublicIpRequest, UpdatePublicIpResponse>
+     */
+    public AsyncInvoker<UpdatePublicIpRequest, UpdatePublicIpResponse> updatePublicIpAsyncInvoker(
+        UpdatePublicIpRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.updatePublicIp, hcClient);
+    }
+
+    /**
      * 设置备节点优先级
      *
      * 设置副本优先级，主节点故障时，权重越小的备节点切换为主节点的优先级越高。
@@ -3674,6 +3959,36 @@ public class DcsAsyncClient {
     public AsyncInvoker<UpdateSslSwitchRequest, UpdateSslSwitchResponse> updateSslSwitchAsyncInvoker(
         UpdateSslSwitchRequest request) {
         return new AsyncInvoker<>(request, DcsMeta.updateSslSwitch, hcClient);
+    }
+
+    /**
+     * 升级实例小版本
+     *
+     * 升级实例小版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeInstanceMinorVersionRequest 请求对象
+     * @return CompletableFuture<UpgradeInstanceMinorVersionResponse>
+     */
+    public CompletableFuture<UpgradeInstanceMinorVersionResponse> upgradeInstanceMinorVersionAsync(
+        UpgradeInstanceMinorVersionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.upgradeInstanceMinorVersion);
+    }
+
+    /**
+     * 升级实例小版本
+     *
+     * 升级实例小版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeInstanceMinorVersionRequest 请求对象
+     * @return AsyncInvoker<UpgradeInstanceMinorVersionRequest, UpgradeInstanceMinorVersionResponse>
+     */
+    public AsyncInvoker<UpgradeInstanceMinorVersionRequest, UpgradeInstanceMinorVersionResponse> upgradeInstanceMinorVersionAsyncInvoker(
+        UpgradeInstanceMinorVersionRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.upgradeInstanceMinorVersion, hcClient);
     }
 
     /**

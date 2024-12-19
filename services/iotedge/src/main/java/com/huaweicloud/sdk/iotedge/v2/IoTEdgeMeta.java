@@ -124,6 +124,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ListNaAuthorizedNodesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListNaAuthorizedNodesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListNasRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListNasResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ListPropertyActiveControlsRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ListPropertyActiveControlsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.SetDeviceControlDefaultValuesRequest;
@@ -498,6 +500,51 @@ public class IoTEdgeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeviceControlSetReqDTO.class),
             f -> f.withMarshaller(ExecuteDeviceControlsSetRequest::getBody, ExecuteDeviceControlsSetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPropertyActiveControlsRequest, ListPropertyActiveControlsResponse> listPropertyActiveControls =
+        genForListPropertyActiveControls();
+
+    private static HttpRequestDef<ListPropertyActiveControlsRequest, ListPropertyActiveControlsResponse> genForListPropertyActiveControls() {
+        // basic
+        HttpRequestDef.Builder<ListPropertyActiveControlsRequest, ListPropertyActiveControlsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPropertyActiveControlsRequest.class,
+                    ListPropertyActiveControlsResponse.class)
+                .withName("ListPropertyActiveControls")
+                .withUri("/v2/{project_id}/edge-nodes/{edge_node_id}/devices/{device_id}/active-controls")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("edge_node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPropertyActiveControlsRequest::getEdgeNodeId,
+                ListPropertyActiveControlsRequest::setEdgeNodeId));
+        builder.<String>withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPropertyActiveControlsRequest::getDeviceId,
+                ListPropertyActiveControlsRequest::setDeviceId));
+        builder.<String>withRequestField("service_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPropertyActiveControlsRequest::getServiceId,
+                ListPropertyActiveControlsRequest::setServiceId));
+        builder.<String>withRequestField("property",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPropertyActiveControlsRequest::getProperty,
+                ListPropertyActiveControlsRequest::setProperty));
 
         // response
 

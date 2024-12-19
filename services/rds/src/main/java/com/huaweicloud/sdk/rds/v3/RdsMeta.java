@@ -293,6 +293,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesRequest;
@@ -3455,6 +3457,39 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStorageTypesRequest::getXLanguage, ListStorageTypesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUpdateBackupEnhancePolicyRequest, ListUpdateBackupEnhancePolicyResponse> listUpdateBackupEnhancePolicy =
+        genForListUpdateBackupEnhancePolicy();
+
+    private static HttpRequestDef<ListUpdateBackupEnhancePolicyRequest, ListUpdateBackupEnhancePolicyResponse> genForListUpdateBackupEnhancePolicy() {
+        // basic
+        HttpRequestDef.Builder<ListUpdateBackupEnhancePolicyRequest, ListUpdateBackupEnhancePolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListUpdateBackupEnhancePolicyRequest.class,
+                    ListUpdateBackupEnhancePolicyResponse.class)
+                .withName("ListUpdateBackupEnhancePolicy")
+                .withUri("/v3/{project_id}/instances/{instance_id}/backups/enhance-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpdateBackupEnhancePolicyRequest::getInstanceId,
+                ListUpdateBackupEnhancePolicyRequest::setInstanceId));
+        builder.<String>withRequestField("time_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUpdateBackupEnhancePolicyRequest::getTimeZone,
+                ListUpdateBackupEnhancePolicyRequest::setTimeZone));
 
         // response
 

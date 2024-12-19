@@ -22,18 +22,13 @@ public class CreatePeerLinkResponse extends SdkResponse {
 
     private ExternalCreatePeerLink peerLink;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Request-Id")
-
-    private String xRequestId;
-
     public CreatePeerLinkResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
     }
 
     /**
-     * Get requestId
+     * 请求ID
      * @return requestId
      */
     public String getRequestId() {
@@ -70,25 +65,6 @@ public class CreatePeerLinkResponse extends SdkResponse {
         this.peerLink = peerLink;
     }
 
-    public CreatePeerLinkResponse withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
-        return this;
-    }
-
-    /**
-     * Get xRequestId
-     * @return xRequestId
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Request-Id")
-    public String getXRequestId() {
-        return xRequestId;
-    }
-
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -98,13 +74,12 @@ public class CreatePeerLinkResponse extends SdkResponse {
             return false;
         }
         CreatePeerLinkResponse that = (CreatePeerLinkResponse) obj;
-        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.peerLink, that.peerLink)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.peerLink, that.peerLink);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, peerLink, xRequestId);
+        return Objects.hash(requestId, peerLink);
     }
 
     @Override
@@ -113,7 +88,6 @@ public class CreatePeerLinkResponse extends SdkResponse {
         sb.append("class CreatePeerLinkResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    peerLink: ").append(toIndentedString(peerLink)).append("\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,11 @@ public class VirtualInterface {
     private OffsetDateTime createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private OffsetDateTime updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -491,7 +496,7 @@ public class VirtualInterface {
     }
 
     /**
-     * 虚拟接口创建时间
+     * 虚拟接口创建时间。采用UTC时间格式，格式为：yyyy-MM-ddTHH:mm:ss.SSSZ
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -500,6 +505,23 @@ public class VirtualInterface {
 
     public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
+    }
+
+    public VirtualInterface withUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * 虚拟接口修改时间。采用UTC时间格式，格式为：yyyy-MM-ddTHH:mm:ss.SSSZ
+     * @return updateTime
+     */
+    public OffsetDateTime getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(OffsetDateTime updateTime) {
+        this.updateTime = updateTime;
     }
 
     public VirtualInterface withDescription(String description) {
@@ -682,7 +704,7 @@ public class VirtualInterface {
     }
 
     /**
-     * 是否使能nqa功能：true或false
+     * 是否使能bfd功能：true或false
      * @return enableBfd
      */
     public Boolean getEnableBfd() {
@@ -817,7 +839,7 @@ public class VirtualInterface {
     }
 
     /**
-     * 归属的IES站点的ID[（功能暂不支持）](tag:dt)
+     * 归属的CloudPond站点的ID[（功能暂不支持）](tag:dt)
      * @return iesId
      */
     public String getIesId() {
@@ -919,7 +941,7 @@ public class VirtualInterface {
     }
 
     /**
-     * 本地网关的ID，用于IES场景。[（功能暂不支持）](tag:dt)
+     * 本地网关的ID，用于CloudPond场景。[（功能暂不支持）](tag:dt)
      * @return lgwId
      */
     public String getLgwId() {
@@ -1069,7 +1091,7 @@ public class VirtualInterface {
     }
 
     /**
-     * vif的Peer的相关信息
+     * vif的Peer的相关信息[（预留字段，暂不支持）](tag:dt)
      * @return vifPeers
      */
     public List<VifPeer> getVifPeers() {
@@ -1117,7 +1139,8 @@ public class VirtualInterface {
         VirtualInterface that = (VirtualInterface) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.bandwidth, that.bandwidth)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.description, that.description)
             && Objects.equals(this.directConnectId, that.directConnectId)
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.status, that.status)
             && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.type, that.type)
@@ -1146,6 +1169,7 @@ public class VirtualInterface {
             adminStateUp,
             bandwidth,
             createTime,
+            updateTime,
             description,
             directConnectId,
             serviceType,
@@ -1188,6 +1212,7 @@ public class VirtualInterface {
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    bandwidth: ").append(toIndentedString(bandwidth)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    directConnectId: ").append(toIndentedString(directConnectId)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");

@@ -87,6 +87,21 @@ public class QuotaList {
     private QuotaDetailVolumesSSD volumesSSD;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gigabytes_ESSD")
+
+    private QuotaDetailGigabytesESSD gigabytesESSD;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "snapshots_ESSD")
+
+    private QuotaDetailSnapshotsESSD snapshotsESSD;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "volumes_ESSD")
+
+    private QuotaDetailVolumesESSD volumesESSD;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gigabytes_GPSSD")
 
     private QuotaDetailGigabytesGPSSD gigabytesGPSSD;
@@ -487,6 +502,84 @@ public class QuotaList {
         this.volumesSSD = volumesSSD;
     }
 
+    public QuotaList withGigabytesESSD(QuotaDetailGigabytesESSD gigabytesESSD) {
+        this.gigabytesESSD = gigabytesESSD;
+        return this;
+    }
+
+    public QuotaList withGigabytesESSD(Consumer<QuotaDetailGigabytesESSD> gigabytesESSDSetter) {
+        if (this.gigabytesESSD == null) {
+            this.gigabytesESSD = new QuotaDetailGigabytesESSD();
+            gigabytesESSDSetter.accept(this.gigabytesESSD);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get gigabytesESSD
+     * @return gigabytesESSD
+     */
+    public QuotaDetailGigabytesESSD getGigabytesESSD() {
+        return gigabytesESSD;
+    }
+
+    public void setGigabytesESSD(QuotaDetailGigabytesESSD gigabytesESSD) {
+        this.gigabytesESSD = gigabytesESSD;
+    }
+
+    public QuotaList withSnapshotsESSD(QuotaDetailSnapshotsESSD snapshotsESSD) {
+        this.snapshotsESSD = snapshotsESSD;
+        return this;
+    }
+
+    public QuotaList withSnapshotsESSD(Consumer<QuotaDetailSnapshotsESSD> snapshotsESSDSetter) {
+        if (this.snapshotsESSD == null) {
+            this.snapshotsESSD = new QuotaDetailSnapshotsESSD();
+            snapshotsESSDSetter.accept(this.snapshotsESSD);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get snapshotsESSD
+     * @return snapshotsESSD
+     */
+    public QuotaDetailSnapshotsESSD getSnapshotsESSD() {
+        return snapshotsESSD;
+    }
+
+    public void setSnapshotsESSD(QuotaDetailSnapshotsESSD snapshotsESSD) {
+        this.snapshotsESSD = snapshotsESSD;
+    }
+
+    public QuotaList withVolumesESSD(QuotaDetailVolumesESSD volumesESSD) {
+        this.volumesESSD = volumesESSD;
+        return this;
+    }
+
+    public QuotaList withVolumesESSD(Consumer<QuotaDetailVolumesESSD> volumesESSDSetter) {
+        if (this.volumesESSD == null) {
+            this.volumesESSD = new QuotaDetailVolumesESSD();
+            volumesESSDSetter.accept(this.volumesESSD);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get volumesESSD
+     * @return volumesESSD
+     */
+    public QuotaDetailVolumesESSD getVolumesESSD() {
+        return volumesESSD;
+    }
+
+    public void setVolumesESSD(QuotaDetailVolumesESSD volumesESSD) {
+        this.volumesESSD = volumesESSD;
+    }
+
     public QuotaList withGigabytesGPSSD(QuotaDetailGigabytesGPSSD gigabytesGPSSD) {
         this.gigabytesGPSSD = gigabytesGPSSD;
         return this;
@@ -610,6 +703,9 @@ public class QuotaList {
             && Objects.equals(this.snapshotsSAS, that.snapshotsSAS) && Objects.equals(this.volumesSAS, that.volumesSAS)
             && Objects.equals(this.gigabytesSSD, that.gigabytesSSD)
             && Objects.equals(this.snapshotsSSD, that.snapshotsSSD) && Objects.equals(this.volumesSSD, that.volumesSSD)
+            && Objects.equals(this.gigabytesESSD, that.gigabytesESSD)
+            && Objects.equals(this.snapshotsESSD, that.snapshotsESSD)
+            && Objects.equals(this.volumesESSD, that.volumesESSD)
             && Objects.equals(this.gigabytesGPSSD, that.gigabytesGPSSD)
             && Objects.equals(this.snapshotsGPSSD, that.snapshotsGPSSD)
             && Objects.equals(this.volumesGPSSD, that.volumesGPSSD)
@@ -633,6 +729,9 @@ public class QuotaList {
             gigabytesSSD,
             snapshotsSSD,
             volumesSSD,
+            gigabytesESSD,
+            snapshotsESSD,
+            volumesESSD,
             gigabytesGPSSD,
             snapshotsGPSSD,
             volumesGPSSD,
@@ -658,6 +757,9 @@ public class QuotaList {
         sb.append("    gigabytesSSD: ").append(toIndentedString(gigabytesSSD)).append("\n");
         sb.append("    snapshotsSSD: ").append(toIndentedString(snapshotsSSD)).append("\n");
         sb.append("    volumesSSD: ").append(toIndentedString(volumesSSD)).append("\n");
+        sb.append("    gigabytesESSD: ").append(toIndentedString(gigabytesESSD)).append("\n");
+        sb.append("    snapshotsESSD: ").append(toIndentedString(snapshotsESSD)).append("\n");
+        sb.append("    volumesESSD: ").append(toIndentedString(volumesESSD)).append("\n");
         sb.append("    gigabytesGPSSD: ").append(toIndentedString(gigabytesGPSSD)).append("\n");
         sb.append("    snapshotsGPSSD: ").append(toIndentedString(snapshotsGPSSD)).append("\n");
         sb.append("    volumesGPSSD: ").append(toIndentedString(volumesGPSSD)).append("\n");

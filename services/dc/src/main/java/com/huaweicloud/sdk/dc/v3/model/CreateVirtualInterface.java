@@ -114,11 +114,6 @@ public class CreateVirtualInterface {
     public static final class ServiceTypeEnum {
 
         /**
-         * Enum VPC for value: "vpc"
-         */
-        public static final ServiceTypeEnum VPC = new ServiceTypeEnum("vpc");
-
-        /**
          * Enum VGW for value: "VGW"
          */
         public static final ServiceTypeEnum VGW = new ServiceTypeEnum("VGW");
@@ -137,7 +132,6 @@ public class CreateVirtualInterface {
 
         private static Map<String, ServiceTypeEnum> createStaticFields() {
             Map<String, ServiceTypeEnum> map = new HashMap<>();
-            map.put("vpc", VPC);
             map.put("VGW", VGW);
             map.put("GDGW", GDGW);
             map.put("LGW", LGW);
@@ -400,7 +394,7 @@ public class CreateVirtualInterface {
     }
 
     /**
-     * 虚拟接口关联的物理专线ID
+     * 虚拟接口关联的物理专线ID。在创建虚拟接口时，需要关联direct_connect_id或lag_id，当LAG功能在当前局点不支持时，该参数为必选。
      * @return directConnectId
      */
     public String getDirectConnectId() {
@@ -451,7 +445,7 @@ public class CreateVirtualInterface {
     }
 
     /**
-     * 对接客户侧vlan
+     * 对接客户侧vlan。当关联物理连接选择托管专线时，vlan需要和托管专线保持一致。
      * minimum: 0
      * maximum: 3999
      * @return vlan
@@ -574,7 +568,7 @@ public class CreateVirtualInterface {
     }
 
     /**
-     * 虚拟风关连接的虚拟网关的ID
+     * 虚拟接口连接的虚拟网关的ID
      * @return vgwId
      */
     public String getVgwId() {
@@ -710,7 +704,7 @@ public class CreateVirtualInterface {
     }
 
     /**
-     * 是否使能bfd功能：true或false
+     * 是否使能bfd功能：true或false。[（预留字段暂不支持）](tag:dt)
      * @return enableBfd
      */
     public Boolean getEnableBfd() {
@@ -727,7 +721,7 @@ public class CreateVirtualInterface {
     }
 
     /**
-     * 是否使能nqa功能：true或false
+     * 是否使能nqa功能：true或false。[（预留字段暂不支持）](tag:dt)
      * @return enableNqa
      */
     public Boolean getEnableNqa() {

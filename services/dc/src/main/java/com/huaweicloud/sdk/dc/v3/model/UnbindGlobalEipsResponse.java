@@ -22,11 +22,6 @@ public class UnbindGlobalEipsResponse extends SdkResponse {
 
     private ListBindingGeip globalEips;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Request-Id")
-
-    private String xRequestId;
-
     public UnbindGlobalEipsResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -70,25 +65,6 @@ public class UnbindGlobalEipsResponse extends SdkResponse {
         this.globalEips = globalEips;
     }
 
-    public UnbindGlobalEipsResponse withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
-        return this;
-    }
-
-    /**
-     * Get xRequestId
-     * @return xRequestId
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Request-Id")
-    public String getXRequestId() {
-        return xRequestId;
-    }
-
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -98,13 +74,12 @@ public class UnbindGlobalEipsResponse extends SdkResponse {
             return false;
         }
         UnbindGlobalEipsResponse that = (UnbindGlobalEipsResponse) obj;
-        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.globalEips, that.globalEips)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.globalEips, that.globalEips);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, globalEips, xRequestId);
+        return Objects.hash(requestId, globalEips);
     }
 
     @Override
@@ -113,7 +88,6 @@ public class UnbindGlobalEipsResponse extends SdkResponse {
         sb.append("class UnbindGlobalEipsResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    globalEips: ").append(toIndentedString(globalEips)).append("\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -19,6 +19,11 @@ import java.util.function.Consumer;
 public class ListPeerLinksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_dc_gateway_id")
+
+    private String globalDcGatewayId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -129,11 +134,6 @@ public class ListPeerLinksRequest {
     private List<SortDirEnum> sortDir = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "global_dc_gateway_id")
-
-    private String globalDcGatewayId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
     private List<String> id = null;
@@ -142,6 +142,23 @@ public class ListPeerLinksRequest {
     @JsonProperty(value = "name")
 
     private List<String> name = null;
+
+    public ListPeerLinksRequest withGlobalDcGatewayId(String globalDcGatewayId) {
+        this.globalDcGatewayId = globalDcGatewayId;
+        return this;
+    }
+
+    /**
+     * 全域接入网关ID
+     * @return globalDcGatewayId
+     */
+    public String getGlobalDcGatewayId() {
+        return globalDcGatewayId;
+    }
+
+    public void setGlobalDcGatewayId(String globalDcGatewayId) {
+        this.globalDcGatewayId = globalDcGatewayId;
+    }
 
     public ListPeerLinksRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -168,7 +185,9 @@ public class ListPeerLinksRequest {
     }
 
     /**
-     * Get offset
+     * 分页偏移量
+     * minimum: 1
+     * maximum: 1000
      * @return offset
      */
     public Integer getOffset() {
@@ -202,7 +221,7 @@ public class ListPeerLinksRequest {
     }
 
     /**
-     * Get pageReverse
+     * 分页参数
      * @return pageReverse
      */
     public Boolean getPageReverse() {
@@ -329,23 +348,6 @@ public class ListPeerLinksRequest {
         this.sortDir = sortDir;
     }
 
-    public ListPeerLinksRequest withGlobalDcGatewayId(String globalDcGatewayId) {
-        this.globalDcGatewayId = globalDcGatewayId;
-        return this;
-    }
-
-    /**
-     * 全球接入网关ID
-     * @return globalDcGatewayId
-     */
-    public String getGlobalDcGatewayId() {
-        return globalDcGatewayId;
-    }
-
-    public void setGlobalDcGatewayId(String globalDcGatewayId) {
-        this.globalDcGatewayId = globalDcGatewayId;
-    }
-
     public ListPeerLinksRequest withId(List<String> id) {
         this.id = id;
         return this;
@@ -421,24 +423,25 @@ public class ListPeerLinksRequest {
             return false;
         }
         ListPeerLinksRequest that = (ListPeerLinksRequest) obj;
-        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.marker, that.marker) && Objects.equals(this.pageReverse, that.pageReverse)
-            && Objects.equals(this.fields, that.fields) && Objects.equals(this.extFields, that.extFields)
-            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
-            && Objects.equals(this.globalDcGatewayId, that.globalDcGatewayId) && Objects.equals(this.id, that.id)
+        return Objects.equals(this.globalDcGatewayId, that.globalDcGatewayId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.fields, that.fields)
+            && Objects.equals(this.extFields, that.extFields) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(limit, offset, marker, pageReverse, fields, extFields, sortKey, sortDir, globalDcGatewayId, id, name);
+            .hash(globalDcGatewayId, limit, offset, marker, pageReverse, fields, extFields, sortKey, sortDir, id, name);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPeerLinksRequest {\n");
+        sb.append("    globalDcGatewayId: ").append(toIndentedString(globalDcGatewayId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
@@ -447,7 +450,6 @@ public class ListPeerLinksRequest {
         sb.append("    extFields: ").append(toIndentedString(extFields)).append("\n");
         sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
         sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
-        sb.append("    globalDcGatewayId: ").append(toIndentedString(globalDcGatewayId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");

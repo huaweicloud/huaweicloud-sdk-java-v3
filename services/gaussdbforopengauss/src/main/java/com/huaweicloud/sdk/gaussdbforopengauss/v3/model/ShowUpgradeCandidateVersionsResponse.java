@@ -57,12 +57,12 @@ public class ShowUpgradeCandidateVersionsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hotfix_upgrade_infos")
 
-    private HotfixUpgradeInfos hotfixUpgradeInfos;
+    private List<HotfixUpgradeInfos> hotfixUpgradeInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "hotfix_rollback_infos")
 
-    private HotfixRollbackInfos hotfixRollbackInfos;
+    private List<HotfixRollbackInfos> hotfixRollbackInfos = null;
 
     public ShowUpgradeCandidateVersionsResponse withUpgradeTypeList(List<UpgradeTypeInfo> upgradeTypeList) {
         this.upgradeTypeList = upgradeTypeList;
@@ -282,57 +282,72 @@ public class ShowUpgradeCandidateVersionsResponse extends SdkResponse {
         this.hotfixRollbackCandidateVersions = hotfixRollbackCandidateVersions;
     }
 
-    public ShowUpgradeCandidateVersionsResponse withHotfixUpgradeInfos(HotfixUpgradeInfos hotfixUpgradeInfos) {
+    public ShowUpgradeCandidateVersionsResponse withHotfixUpgradeInfos(List<HotfixUpgradeInfos> hotfixUpgradeInfos) {
         this.hotfixUpgradeInfos = hotfixUpgradeInfos;
+        return this;
+    }
+
+    public ShowUpgradeCandidateVersionsResponse addHotfixUpgradeInfosItem(HotfixUpgradeInfos hotfixUpgradeInfosItem) {
+        if (this.hotfixUpgradeInfos == null) {
+            this.hotfixUpgradeInfos = new ArrayList<>();
+        }
+        this.hotfixUpgradeInfos.add(hotfixUpgradeInfosItem);
         return this;
     }
 
     public ShowUpgradeCandidateVersionsResponse withHotfixUpgradeInfos(
-        Consumer<HotfixUpgradeInfos> hotfixUpgradeInfosSetter) {
+        Consumer<List<HotfixUpgradeInfos>> hotfixUpgradeInfosSetter) {
         if (this.hotfixUpgradeInfos == null) {
-            this.hotfixUpgradeInfos = new HotfixUpgradeInfos();
-            hotfixUpgradeInfosSetter.accept(this.hotfixUpgradeInfos);
+            this.hotfixUpgradeInfos = new ArrayList<>();
         }
-
+        hotfixUpgradeInfosSetter.accept(this.hotfixUpgradeInfos);
         return this;
     }
 
     /**
-     * Get hotfixUpgradeInfos
+     * 可以升级的热补丁信息。
      * @return hotfixUpgradeInfos
      */
-    public HotfixUpgradeInfos getHotfixUpgradeInfos() {
+    public List<HotfixUpgradeInfos> getHotfixUpgradeInfos() {
         return hotfixUpgradeInfos;
     }
 
-    public void setHotfixUpgradeInfos(HotfixUpgradeInfos hotfixUpgradeInfos) {
+    public void setHotfixUpgradeInfos(List<HotfixUpgradeInfos> hotfixUpgradeInfos) {
         this.hotfixUpgradeInfos = hotfixUpgradeInfos;
     }
 
-    public ShowUpgradeCandidateVersionsResponse withHotfixRollbackInfos(HotfixRollbackInfos hotfixRollbackInfos) {
+    public ShowUpgradeCandidateVersionsResponse withHotfixRollbackInfos(List<HotfixRollbackInfos> hotfixRollbackInfos) {
         this.hotfixRollbackInfos = hotfixRollbackInfos;
         return this;
     }
 
-    public ShowUpgradeCandidateVersionsResponse withHotfixRollbackInfos(
-        Consumer<HotfixRollbackInfos> hotfixRollbackInfosSetter) {
+    public ShowUpgradeCandidateVersionsResponse addHotfixRollbackInfosItem(
+        HotfixRollbackInfos hotfixRollbackInfosItem) {
         if (this.hotfixRollbackInfos == null) {
-            this.hotfixRollbackInfos = new HotfixRollbackInfos();
-            hotfixRollbackInfosSetter.accept(this.hotfixRollbackInfos);
+            this.hotfixRollbackInfos = new ArrayList<>();
         }
+        this.hotfixRollbackInfos.add(hotfixRollbackInfosItem);
+        return this;
+    }
 
+    public ShowUpgradeCandidateVersionsResponse withHotfixRollbackInfos(
+        Consumer<List<HotfixRollbackInfos>> hotfixRollbackInfosSetter) {
+        if (this.hotfixRollbackInfos == null) {
+            this.hotfixRollbackInfos = new ArrayList<>();
+        }
+        hotfixRollbackInfosSetter.accept(this.hotfixRollbackInfos);
         return this;
     }
 
     /**
-     * Get hotfixRollbackInfos
+     * 可以回滚的热补丁信息。
      * @return hotfixRollbackInfos
      */
-    public HotfixRollbackInfos getHotfixRollbackInfos() {
+    public List<HotfixRollbackInfos> getHotfixRollbackInfos() {
         return hotfixRollbackInfos;
     }
 
-    public void setHotfixRollbackInfos(HotfixRollbackInfos hotfixRollbackInfos) {
+    public void setHotfixRollbackInfos(List<HotfixRollbackInfos> hotfixRollbackInfos) {
         this.hotfixRollbackInfos = hotfixRollbackInfos;
     }
 

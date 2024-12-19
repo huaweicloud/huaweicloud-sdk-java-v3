@@ -15,6 +15,11 @@ public class ScaleOut {
 
     private Integer count;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_id")
+
+    private String subnetId;
+
     public ScaleOut withCount(Integer count) {
         this.count = count;
         return this;
@@ -32,6 +37,23 @@ public class ScaleOut {
         this.count = count;
     }
 
+    public ScaleOut withSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+        return this;
+    }
+
+    /**
+     * 指定子网ID。
+     * @return subnetId
+     */
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    public void setSubnetId(String subnetId) {
+        this.subnetId = subnetId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class ScaleOut {
             return false;
         }
         ScaleOut that = (ScaleOut) obj;
-        return Objects.equals(this.count, that.count);
+        return Objects.equals(this.count, that.count) && Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count);
+        return Objects.hash(count, subnetId);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class ScaleOut {
         StringBuilder sb = new StringBuilder();
         sb.append("class ScaleOut {\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

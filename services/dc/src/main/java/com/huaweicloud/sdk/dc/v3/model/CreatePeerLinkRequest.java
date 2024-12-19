@@ -19,7 +19,7 @@ public class CreatePeerLinkRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreatePeerLinkRequestBody body;
+    private CreateExternalPeerLinkRequestBody body;
 
     public CreatePeerLinkRequest withGlobalDcGatewayId(String globalDcGatewayId) {
         this.globalDcGatewayId = globalDcGatewayId;
@@ -27,7 +27,7 @@ public class CreatePeerLinkRequest {
     }
 
     /**
-     * 全球接入网关ID
+     * 全域接入网关ID
      * @return globalDcGatewayId
      */
     public String getGlobalDcGatewayId() {
@@ -38,14 +38,14 @@ public class CreatePeerLinkRequest {
         this.globalDcGatewayId = globalDcGatewayId;
     }
 
-    public CreatePeerLinkRequest withBody(CreatePeerLinkRequestBody body) {
+    public CreatePeerLinkRequest withBody(CreateExternalPeerLinkRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreatePeerLinkRequest withBody(Consumer<CreatePeerLinkRequestBody> bodySetter) {
+    public CreatePeerLinkRequest withBody(Consumer<CreateExternalPeerLinkRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreatePeerLinkRequestBody();
+            this.body = new CreateExternalPeerLinkRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreatePeerLinkRequest {
      * Get body
      * @return body
      */
-    public CreatePeerLinkRequestBody getBody() {
+    public CreateExternalPeerLinkRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreatePeerLinkRequestBody body) {
+    public void setBody(CreateExternalPeerLinkRequestBody body) {
         this.body = body;
     }
 

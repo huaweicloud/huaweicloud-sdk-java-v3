@@ -7,47 +7,23 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建全球接入网关请求体
+ * 更新global-dc-gateway的请求体。
  */
 public class UpdateGlobalDcGatewayRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dry_run")
-
-    private Boolean dryRun;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_dc_gateway")
 
-    private UpdateGlobalDcGatewayRequestBodyGlobalDcGateway globalDcGateway;
+    private UpdateGlobalDcGateway globalDcGateway;
 
-    public UpdateGlobalDcGatewayRequestBody withDryRun(Boolean dryRun) {
-        this.dryRun = dryRun;
-        return this;
-    }
-
-    /**
-     * 空运行？ true-是，false-否
-     * @return dryRun
-     */
-    public Boolean getDryRun() {
-        return dryRun;
-    }
-
-    public void setDryRun(Boolean dryRun) {
-        this.dryRun = dryRun;
-    }
-
-    public UpdateGlobalDcGatewayRequestBody withGlobalDcGateway(
-        UpdateGlobalDcGatewayRequestBodyGlobalDcGateway globalDcGateway) {
+    public UpdateGlobalDcGatewayRequestBody withGlobalDcGateway(UpdateGlobalDcGateway globalDcGateway) {
         this.globalDcGateway = globalDcGateway;
         return this;
     }
 
-    public UpdateGlobalDcGatewayRequestBody withGlobalDcGateway(
-        Consumer<UpdateGlobalDcGatewayRequestBodyGlobalDcGateway> globalDcGatewaySetter) {
+    public UpdateGlobalDcGatewayRequestBody withGlobalDcGateway(Consumer<UpdateGlobalDcGateway> globalDcGatewaySetter) {
         if (this.globalDcGateway == null) {
-            this.globalDcGateway = new UpdateGlobalDcGatewayRequestBodyGlobalDcGateway();
+            this.globalDcGateway = new UpdateGlobalDcGateway();
             globalDcGatewaySetter.accept(this.globalDcGateway);
         }
 
@@ -58,11 +34,11 @@ public class UpdateGlobalDcGatewayRequestBody {
      * Get globalDcGateway
      * @return globalDcGateway
      */
-    public UpdateGlobalDcGatewayRequestBodyGlobalDcGateway getGlobalDcGateway() {
+    public UpdateGlobalDcGateway getGlobalDcGateway() {
         return globalDcGateway;
     }
 
-    public void setGlobalDcGateway(UpdateGlobalDcGatewayRequestBodyGlobalDcGateway globalDcGateway) {
+    public void setGlobalDcGateway(UpdateGlobalDcGateway globalDcGateway) {
         this.globalDcGateway = globalDcGateway;
     }
 
@@ -75,19 +51,18 @@ public class UpdateGlobalDcGatewayRequestBody {
             return false;
         }
         UpdateGlobalDcGatewayRequestBody that = (UpdateGlobalDcGatewayRequestBody) obj;
-        return Objects.equals(this.dryRun, that.dryRun) && Objects.equals(this.globalDcGateway, that.globalDcGateway);
+        return Objects.equals(this.globalDcGateway, that.globalDcGateway);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dryRun, globalDcGateway);
+        return Objects.hash(globalDcGateway);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateGlobalDcGatewayRequestBody {\n");
-        sb.append("    dryRun: ").append(toIndentedString(dryRun)).append("\n");
         sb.append("    globalDcGateway: ").append(toIndentedString(globalDcGateway)).append("\n");
         sb.append("}");
         return sb.toString();

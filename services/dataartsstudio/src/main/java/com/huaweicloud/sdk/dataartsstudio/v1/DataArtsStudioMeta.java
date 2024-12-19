@@ -514,6 +514,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.RenewDataProfileRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RenewDataProfileResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ResetLinkAttributeAndStandardRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ResetLinkAttributeAndStandardResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RetryFactoryJobInstanceBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RetryFactoryJobInstanceRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RetryFactoryJobInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RoleActionQueryDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RollbackApprovalRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RollbackApprovalResponse;
@@ -9148,6 +9151,47 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(LinkAttributeAndElementVO.class),
             f -> f.withMarshaller(ResetLinkAttributeAndStandardRequest::getBody,
                 ResetLinkAttributeAndStandardRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RetryFactoryJobInstanceRequest, RetryFactoryJobInstanceResponse> retryFactoryJobInstance =
+        genForRetryFactoryJobInstance();
+
+    private static HttpRequestDef<RetryFactoryJobInstanceRequest, RetryFactoryJobInstanceResponse> genForRetryFactoryJobInstance() {
+        // basic
+        HttpRequestDef.Builder<RetryFactoryJobInstanceRequest, RetryFactoryJobInstanceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, RetryFactoryJobInstanceRequest.class, RetryFactoryJobInstanceResponse.class)
+            .withName("RetryFactoryJobInstance")
+            .withUri("/v2/{project_id}/factory/jobs/{job_name}/instances/retry")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("job_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryFactoryJobInstanceRequest::getJobName,
+                RetryFactoryJobInstanceRequest::setJobName));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryFactoryJobInstanceRequest::getWorkspace,
+                RetryFactoryJobInstanceRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RetryFactoryJobInstanceRequest::getXProjectId,
+                RetryFactoryJobInstanceRequest::setXProjectId));
+        builder.<RetryFactoryJobInstanceBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RetryFactoryJobInstanceBody.class),
+            f -> f.withMarshaller(RetryFactoryJobInstanceRequest::getBody, RetryFactoryJobInstanceRequest::setBody));
 
         // response
 

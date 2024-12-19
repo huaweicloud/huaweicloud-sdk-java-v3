@@ -24,18 +24,13 @@ public class UpdateGdgwRouteTableResponse extends SdkResponse {
 
     private List<ShowGdgwRoutetable> gdgwRoutetable = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Request-Id")
-
-    private String xRequestId;
-
     public UpdateGdgwRouteTableResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
     }
 
     /**
-     * 请求ID
+     * 请求id
      * @return requestId
      */
     public String getRequestId() {
@@ -68,7 +63,7 @@ public class UpdateGdgwRouteTableResponse extends SdkResponse {
     }
 
     /**
-     * 路由表详细对象
+     * 全域接入网关路由表
      * @return gdgwRoutetable
      */
     public List<ShowGdgwRoutetable> getGdgwRoutetable() {
@@ -77,25 +72,6 @@ public class UpdateGdgwRouteTableResponse extends SdkResponse {
 
     public void setGdgwRoutetable(List<ShowGdgwRoutetable> gdgwRoutetable) {
         this.gdgwRoutetable = gdgwRoutetable;
-    }
-
-    public UpdateGdgwRouteTableResponse withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
-        return this;
-    }
-
-    /**
-     * Get xRequestId
-     * @return xRequestId
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Request-Id")
-    public String getXRequestId() {
-        return xRequestId;
-    }
-
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
     }
 
     @Override
@@ -108,13 +84,12 @@ public class UpdateGdgwRouteTableResponse extends SdkResponse {
         }
         UpdateGdgwRouteTableResponse that = (UpdateGdgwRouteTableResponse) obj;
         return Objects.equals(this.requestId, that.requestId)
-            && Objects.equals(this.gdgwRoutetable, that.gdgwRoutetable)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.gdgwRoutetable, that.gdgwRoutetable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, gdgwRoutetable, xRequestId);
+        return Objects.hash(requestId, gdgwRoutetable);
     }
 
     @Override
@@ -123,7 +98,6 @@ public class UpdateGdgwRouteTableResponse extends SdkResponse {
         sb.append("class UpdateGdgwRouteTableResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    gdgwRoutetable: ").append(toIndentedString(gdgwRoutetable)).append("\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

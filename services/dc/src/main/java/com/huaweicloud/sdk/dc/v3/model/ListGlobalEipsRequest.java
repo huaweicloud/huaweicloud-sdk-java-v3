@@ -173,7 +173,9 @@ public class ListGlobalEipsRequest {
     }
 
     /**
-     * Get offset
+     * 分页偏移量
+     * minimum: 1
+     * maximum: 1000
      * @return offset
      */
     public Integer getOffset() {
@@ -207,7 +209,7 @@ public class ListGlobalEipsRequest {
     }
 
     /**
-     * Get pageReverse
+     * 分页参数
      * @return pageReverse
      */
     public Boolean getPageReverse() {

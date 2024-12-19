@@ -13,46 +13,23 @@ import java.util.function.Consumer;
 public class UpdateGlobalDcGatewayResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_dc_gateway")
+
+    private GlobalDcGatewayEntry globalDcGateway;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
     private String requestId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "global_dc_gateway")
-
-    private ExternalUpdateGlobalDcGateway globalDcGateway;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Request-Id")
-
-    private String xRequestId;
-
-    public UpdateGlobalDcGatewayResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * 请求ID
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    public UpdateGlobalDcGatewayResponse withGlobalDcGateway(ExternalUpdateGlobalDcGateway globalDcGateway) {
+    public UpdateGlobalDcGatewayResponse withGlobalDcGateway(GlobalDcGatewayEntry globalDcGateway) {
         this.globalDcGateway = globalDcGateway;
         return this;
     }
 
-    public UpdateGlobalDcGatewayResponse withGlobalDcGateway(
-        Consumer<ExternalUpdateGlobalDcGateway> globalDcGatewaySetter) {
+    public UpdateGlobalDcGatewayResponse withGlobalDcGateway(Consumer<GlobalDcGatewayEntry> globalDcGatewaySetter) {
         if (this.globalDcGateway == null) {
-            this.globalDcGateway = new ExternalUpdateGlobalDcGateway();
+            this.globalDcGateway = new GlobalDcGatewayEntry();
             globalDcGatewaySetter.accept(this.globalDcGateway);
         }
 
@@ -63,31 +40,29 @@ public class UpdateGlobalDcGatewayResponse extends SdkResponse {
      * Get globalDcGateway
      * @return globalDcGateway
      */
-    public ExternalUpdateGlobalDcGateway getGlobalDcGateway() {
+    public GlobalDcGatewayEntry getGlobalDcGateway() {
         return globalDcGateway;
     }
 
-    public void setGlobalDcGateway(ExternalUpdateGlobalDcGateway globalDcGateway) {
+    public void setGlobalDcGateway(GlobalDcGatewayEntry globalDcGateway) {
         this.globalDcGateway = globalDcGateway;
     }
 
-    public UpdateGlobalDcGatewayResponse withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
+    public UpdateGlobalDcGatewayResponse withRequestId(String requestId) {
+        this.requestId = requestId;
         return this;
     }
 
     /**
-     * Get xRequestId
-     * @return xRequestId
+     * 请求ID。
+     * @return requestId
      */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Request-Id")
-    public String getXRequestId() {
-        return xRequestId;
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
     @Override
@@ -99,23 +74,21 @@ public class UpdateGlobalDcGatewayResponse extends SdkResponse {
             return false;
         }
         UpdateGlobalDcGatewayResponse that = (UpdateGlobalDcGatewayResponse) obj;
-        return Objects.equals(this.requestId, that.requestId)
-            && Objects.equals(this.globalDcGateway, that.globalDcGateway)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.globalDcGateway, that.globalDcGateway)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, globalDcGateway, xRequestId);
+        return Objects.hash(globalDcGateway, requestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateGlobalDcGatewayResponse {\n");
-        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    globalDcGateway: ").append(toIndentedString(globalDcGateway)).append("\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

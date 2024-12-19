@@ -14,9 +14,9 @@ import java.util.function.Consumer;
 public class ShowGlobalDcGatewayRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "global_dc_gateway_id")
+    @JsonProperty(value = "limit")
 
-    private String globalDcGatewayId;
+    private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fields")
@@ -28,21 +28,33 @@ public class ShowGlobalDcGatewayRequest {
 
     private List<String> extFields = null;
 
-    public ShowGlobalDcGatewayRequest withGlobalDcGatewayId(String globalDcGatewayId) {
-        this.globalDcGatewayId = globalDcGatewayId;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private List<String> enterpriseProjectId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_dc_gateway_id")
+
+    private String globalDcGatewayId;
+
+    public ShowGlobalDcGatewayRequest withLimit(Integer limit) {
+        this.limit = limit;
         return this;
     }
 
     /**
-     * 全球接入网关ID
-     * @return globalDcGatewayId
+     * 每页返回的个数。 取值范围：1~2000。
+     * minimum: 1
+     * maximum: 2000
+     * @return limit
      */
-    public String getGlobalDcGatewayId() {
-        return globalDcGatewayId;
+    public Integer getLimit() {
+        return limit;
     }
 
-    public void setGlobalDcGatewayId(String globalDcGatewayId) {
-        this.globalDcGatewayId = globalDcGatewayId;
+    public void setLimit(Integer limit) {
+        this.limit = limit;
     }
 
     public ShowGlobalDcGatewayRequest withFields(List<String> fields) {
@@ -111,6 +123,56 @@ public class ShowGlobalDcGatewayRequest {
         this.extFields = extFields;
     }
 
+    public ShowGlobalDcGatewayRequest withEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    public ShowGlobalDcGatewayRequest addEnterpriseProjectIdItem(String enterpriseProjectIdItem) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        this.enterpriseProjectId.add(enterpriseProjectIdItem);
+        return this;
+    }
+
+    public ShowGlobalDcGatewayRequest withEnterpriseProjectId(Consumer<List<String>> enterpriseProjectIdSetter) {
+        if (this.enterpriseProjectId == null) {
+            this.enterpriseProjectId = new ArrayList<>();
+        }
+        enterpriseProjectIdSetter.accept(this.enterpriseProjectId);
+        return this;
+    }
+
+    /**
+     * 根据企业项目ID过滤资源实例
+     * @return enterpriseProjectId
+     */
+    public List<String> getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(List<String> enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ShowGlobalDcGatewayRequest withGlobalDcGatewayId(String globalDcGatewayId) {
+        this.globalDcGatewayId = globalDcGatewayId;
+        return this;
+    }
+
+    /**
+     * 全域接入网关ID
+     * @return globalDcGatewayId
+     */
+    public String getGlobalDcGatewayId() {
+        return globalDcGatewayId;
+    }
+
+    public void setGlobalDcGatewayId(String globalDcGatewayId) {
+        this.globalDcGatewayId = globalDcGatewayId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -120,22 +182,26 @@ public class ShowGlobalDcGatewayRequest {
             return false;
         }
         ShowGlobalDcGatewayRequest that = (ShowGlobalDcGatewayRequest) obj;
-        return Objects.equals(this.globalDcGatewayId, that.globalDcGatewayId)
-            && Objects.equals(this.fields, that.fields) && Objects.equals(this.extFields, that.extFields);
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.fields, that.fields)
+            && Objects.equals(this.extFields, that.extFields)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.globalDcGatewayId, that.globalDcGatewayId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(globalDcGatewayId, fields, extFields);
+        return Objects.hash(limit, fields, extFields, enterpriseProjectId, globalDcGatewayId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowGlobalDcGatewayRequest {\n");
-        sb.append("    globalDcGatewayId: ").append(toIndentedString(globalDcGatewayId)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
         sb.append("    extFields: ").append(toIndentedString(extFields)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    globalDcGatewayId: ").append(toIndentedString(globalDcGatewayId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -101,6 +101,8 @@ import com.huaweicloud.sdk.iotedge.v2.model.ListNaAuthorizedNodesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListNaAuthorizedNodesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListNasRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListNasResponse;
+import com.huaweicloud.sdk.iotedge.v2.model.ListPropertyActiveControlsRequest;
+import com.huaweicloud.sdk.iotedge.v2.model.ListPropertyActiveControlsResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesRequest;
 import com.huaweicloud.sdk.iotedge.v2.model.ListRoutesResponse;
 import com.huaweicloud.sdk.iotedge.v2.model.SetDeviceControlDefaultValuesRequest;
@@ -443,6 +445,36 @@ public class IoTEdgeAsyncClient {
     public AsyncInvoker<ExecuteDeviceControlsSetRequest, ExecuteDeviceControlsSetResponse> executeDeviceControlsSetAsyncInvoker(
         ExecuteDeviceControlsSetRequest request) {
         return new AsyncInvoker<>(request, IoTEdgeMeta.executeDeviceControlsSet, hcClient);
+    }
+
+    /**
+     * 获取属性执行中的控制
+     *
+     * 获取属性执行中的控制
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPropertyActiveControlsRequest 请求对象
+     * @return CompletableFuture<ListPropertyActiveControlsResponse>
+     */
+    public CompletableFuture<ListPropertyActiveControlsResponse> listPropertyActiveControlsAsync(
+        ListPropertyActiveControlsRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.listPropertyActiveControls);
+    }
+
+    /**
+     * 获取属性执行中的控制
+     *
+     * 获取属性执行中的控制
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPropertyActiveControlsRequest 请求对象
+     * @return AsyncInvoker<ListPropertyActiveControlsRequest, ListPropertyActiveControlsResponse>
+     */
+    public AsyncInvoker<ListPropertyActiveControlsRequest, ListPropertyActiveControlsResponse> listPropertyActiveControlsAsyncInvoker(
+        ListPropertyActiveControlsRequest request) {
+        return new AsyncInvoker<>(request, IoTEdgeMeta.listPropertyActiveControls, hcClient);
     }
 
     /**

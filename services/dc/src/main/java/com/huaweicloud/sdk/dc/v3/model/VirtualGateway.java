@@ -24,6 +24,11 @@ public class VirtualGateway {
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_router_id")
+
+    private String enterpriseRouterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
 
     private String tenantId;
@@ -125,6 +130,23 @@ public class VirtualGateway {
 
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
+    }
+
+    public VirtualGateway withEnterpriseRouterId(String enterpriseRouterId) {
+        this.enterpriseRouterId = enterpriseRouterId;
+        return this;
+    }
+
+    /**
+     * 虚拟网关接入的ER的ID
+     * @return enterpriseRouterId
+     */
+    public String getEnterpriseRouterId() {
+        return enterpriseRouterId;
+    }
+
+    public void setEnterpriseRouterId(String enterpriseRouterId) {
+        this.enterpriseRouterId = enterpriseRouterId;
     }
 
     public VirtualGateway withTenantId(String tenantId) {
@@ -425,6 +447,7 @@ public class VirtualGateway {
         }
         VirtualGateway that = (VirtualGateway) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.enterpriseRouterId, that.enterpriseRouterId)
             && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.type, that.type)
             && Objects.equals(this.localEpGroup, that.localEpGroup)
@@ -441,6 +464,7 @@ public class VirtualGateway {
     public int hashCode() {
         return Objects.hash(id,
             vpcId,
+            enterpriseRouterId,
             tenantId,
             name,
             description,
@@ -463,6 +487,7 @@ public class VirtualGateway {
         sb.append("class VirtualGateway {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    enterpriseRouterId: ").append(toIndentedString(enterpriseRouterId)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

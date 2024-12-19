@@ -29,6 +29,11 @@ public class AutoClassificationRequestBody {
     private List<String> typeList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pdf_page_number")
+
+    private Integer pdfPageNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extended_parameters")
 
     private Object extendedParameters;
@@ -44,7 +49,7 @@ public class AutoClassificationRequestBody {
     }
 
     /**
-     * 与url二选一  图像数据，base64编码，要求base64编码后大小不超过10MB。图片最小边不小于15px，最长边不超过8000px，支持JPEG、JPG、PNG、BMP、TIFF、PDF格式。  图片文件Base64编码字符串，点击[这里](https://support.huaweicloud.com/ocr_faq/ocr_01_0032.html)查看详细获取方式。   
+     * 与url二选一  图像数据，base64编码，要求base64编码后大小不超过10MB。图片最小边不小于15px，最长边不超过8192px，支持JPEG、JPG、PNG、BMP、TIFF、PDF、OFD格式,OFD格式数据仅支持增值税发票服务。  图片文件Base64编码字符串，点击[这里](https://support.huaweicloud.com/ocr_faq/ocr_01_0032.html)查看详细获取方式。   
      * @return image
      */
     public String getImage() {
@@ -105,6 +110,23 @@ public class AutoClassificationRequestBody {
         this.typeList = typeList;
     }
 
+    public AutoClassificationRequestBody withPdfPageNumber(Integer pdfPageNumber) {
+        this.pdfPageNumber = pdfPageNumber;
+        return this;
+    }
+
+    /**
+     * 指定PDF页码识别。传入该参数时，则识别指定页码的内容。如果不传该参数，则默认识别第1页。  > 说明：  - 如果需要指定PDF页码识别，请通过该参数传入页码。目前不支持通过extended_parameters参数指定票证PDF页码。 
+     * @return pdfPageNumber
+     */
+    public Integer getPdfPageNumber() {
+        return pdfPageNumber;
+    }
+
+    public void setPdfPageNumber(Integer pdfPageNumber) {
+        this.pdfPageNumber = pdfPageNumber;
+    }
+
     public AutoClassificationRequestBody withExtendedParameters(Object extendedParameters) {
         this.extendedParameters = extendedParameters;
         return this;
@@ -149,14 +171,14 @@ public class AutoClassificationRequestBody {
         }
         AutoClassificationRequestBody that = (AutoClassificationRequestBody) obj;
         return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
-            && Objects.equals(this.typeList, that.typeList)
+            && Objects.equals(this.typeList, that.typeList) && Objects.equals(this.pdfPageNumber, that.pdfPageNumber)
             && Objects.equals(this.extendedParameters, that.extendedParameters)
             && Objects.equals(this.detectSeal, that.detectSeal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, typeList, extendedParameters, detectSeal);
+        return Objects.hash(image, url, typeList, pdfPageNumber, extendedParameters, detectSeal);
     }
 
     @Override
@@ -166,6 +188,7 @@ public class AutoClassificationRequestBody {
         sb.append("    image: ").append(toIndentedString(image)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    typeList: ").append(toIndentedString(typeList)).append("\n");
+        sb.append("    pdfPageNumber: ").append(toIndentedString(pdfPageNumber)).append("\n");
         sb.append("    extendedParameters: ").append(toIndentedString(extendedParameters)).append("\n");
         sb.append("    detectSeal: ").append(toIndentedString(detectSeal)).append("\n");
         sb.append("}");

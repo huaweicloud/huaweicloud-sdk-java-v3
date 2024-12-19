@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * UpdateGdgwRoutetableRequestBody
+ * 修改全域接入网关路由表的request
  */
 public class UpdateGdgwRoutetableRequestBody {
 
@@ -19,7 +19,7 @@ public class UpdateGdgwRoutetableRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gdgw_routetable")
 
-    private UpdateGdgwRoutetableRequestBodyGdgwRoutetable gdgwRoutetable;
+    private GdgwRouteTableRequest gdgwRoutetable;
 
     public UpdateGdgwRoutetableRequestBody withDryRun(Boolean dryRun) {
         this.dryRun = dryRun;
@@ -27,7 +27,7 @@ public class UpdateGdgwRoutetableRequestBody {
     }
 
     /**
-     * 空运行：true-是，false-否
+     * 是否dry run模式执行
      * @return dryRun
      */
     public Boolean getDryRun() {
@@ -38,16 +38,14 @@ public class UpdateGdgwRoutetableRequestBody {
         this.dryRun = dryRun;
     }
 
-    public UpdateGdgwRoutetableRequestBody withGdgwRoutetable(
-        UpdateGdgwRoutetableRequestBodyGdgwRoutetable gdgwRoutetable) {
+    public UpdateGdgwRoutetableRequestBody withGdgwRoutetable(GdgwRouteTableRequest gdgwRoutetable) {
         this.gdgwRoutetable = gdgwRoutetable;
         return this;
     }
 
-    public UpdateGdgwRoutetableRequestBody withGdgwRoutetable(
-        Consumer<UpdateGdgwRoutetableRequestBodyGdgwRoutetable> gdgwRoutetableSetter) {
+    public UpdateGdgwRoutetableRequestBody withGdgwRoutetable(Consumer<GdgwRouteTableRequest> gdgwRoutetableSetter) {
         if (this.gdgwRoutetable == null) {
-            this.gdgwRoutetable = new UpdateGdgwRoutetableRequestBodyGdgwRoutetable();
+            this.gdgwRoutetable = new GdgwRouteTableRequest();
             gdgwRoutetableSetter.accept(this.gdgwRoutetable);
         }
 
@@ -58,11 +56,11 @@ public class UpdateGdgwRoutetableRequestBody {
      * Get gdgwRoutetable
      * @return gdgwRoutetable
      */
-    public UpdateGdgwRoutetableRequestBodyGdgwRoutetable getGdgwRoutetable() {
+    public GdgwRouteTableRequest getGdgwRoutetable() {
         return gdgwRoutetable;
     }
 
-    public void setGdgwRoutetable(UpdateGdgwRoutetableRequestBodyGdgwRoutetable gdgwRoutetable) {
+    public void setGdgwRoutetable(GdgwRouteTableRequest gdgwRoutetable) {
         this.gdgwRoutetable = gdgwRoutetable;
     }
 

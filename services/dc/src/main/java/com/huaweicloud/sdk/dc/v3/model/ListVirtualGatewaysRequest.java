@@ -335,7 +335,7 @@ public class ListVirtualGatewaysRequest {
     }
 
     /**
-     * 通过VPC-ID过虑虚拟网关实例
+     * 通过VPC-ID过滤虚拟网关实例
      * @return vpcId
      */
     public List<String> getVpcId() {

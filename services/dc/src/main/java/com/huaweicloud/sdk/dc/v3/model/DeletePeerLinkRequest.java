@@ -26,7 +26,7 @@ public class DeletePeerLinkRequest {
     }
 
     /**
-     * 全球接入网关ID
+     * 全域接入网关ID
      * @return globalDcGatewayId
      */
     public String getGlobalDcGatewayId() {
@@ -43,7 +43,7 @@ public class DeletePeerLinkRequest {
     }
 
     /**
-     * 全球接入网关对等体
+     * 全域接入网关对等体
      * @return peerLinkId
      */
     public String getPeerLinkId() {

@@ -6,14 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 对等体对象
+ * PeerSiteExternal
  */
 public class PeerSiteExternal {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
-
-    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gateway_id")
@@ -40,30 +35,13 @@ public class PeerSiteExternal {
 
     private String siteCode;
 
-    public PeerSiteExternal withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * 类型
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public PeerSiteExternal withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
         return this;
     }
 
     /**
-     * 网关ID
+     * 全域接入网关ID
      * @return gatewayId
      */
     public String getGatewayId() {
@@ -131,7 +109,7 @@ public class PeerSiteExternal {
     }
 
     /**
-     * 站点编码
+     * 网点编码
      * @return siteCode
      */
     public String getSiteCode() {
@@ -151,21 +129,20 @@ public class PeerSiteExternal {
             return false;
         }
         PeerSiteExternal that = (PeerSiteExternal) obj;
-        return Objects.equals(this.type, that.type) && Objects.equals(this.gatewayId, that.gatewayId)
-            && Objects.equals(this.linkId, that.linkId) && Objects.equals(this.regionId, that.regionId)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.siteCode, that.siteCode);
+        return Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.linkId, that.linkId)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.siteCode, that.siteCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, gatewayId, linkId, regionId, projectId, siteCode);
+        return Objects.hash(gatewayId, linkId, regionId, projectId, siteCode);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PeerSiteExternal {\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    gatewayId: ").append(toIndentedString(gatewayId)).append("\n");
         sb.append("    linkId: ").append(toIndentedString(linkId)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");

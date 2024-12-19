@@ -341,7 +341,7 @@ public class DirectConnect {
     private Integer vlan;
 
     /**
-     * 资源状态，合法值是： ACTIVE：专线已经开通完成且线路处于正常状态 DOWN：专线对应的端口处于down的状态，可能存在线路故障等异常。 BUILD：申请专线正在施工建设中 ERROR：专线配置异常，请联系客服解决相关问题。 PENDING_DELETE：正在删除 DELETED：已删除 APPLY：申请开通 DENY：客户需求无法满足，拒绝工勘。 PENDING_PAY：待支付 PAID：已支付 PENDING_SURVEY：待工勘
+     * 资源状态，合法值是： ACTIVE：专线已经开通完成且线路处于正常状态 DOWN：专线对应的端口处于down的状态，可能存在线路故障等异常。 BUILD：申请专线正在施工建设中 ERROR：专线配置异常，请联系客服解决相关问题。 PENDING_DELETE：正在删除 DELETED：已删除 APPLY：申请开通 DENY：客户需求无法满足，拒绝工勘。 PENDING_PAY：待支付 PAID：已支付 PENDING_SURVEY：待工勘 LEASED_LINE_DELIVERY：运营商施工
      */
     public static final class StatusEnum {
 
@@ -400,6 +400,11 @@ public class DirectConnect {
          */
         public static final StatusEnum PENDING_PAY = new StatusEnum("PENDING_PAY");
 
+        /**
+         * Enum LEASED_LINE_DELIVERY for value: "LEASED_LINE_DELIVERY"
+         */
+        public static final StatusEnum LEASED_LINE_DELIVERY = new StatusEnum("LEASED_LINE_DELIVERY");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
@@ -415,6 +420,7 @@ public class DirectConnect {
             map.put("DELETED", DELETED);
             map.put("DENY", DENY);
             map.put("PENDING_PAY", PENDING_PAY);
+            map.put("LEASED_LINE_DELIVERY", LEASED_LINE_DELIVERY);
             return Collections.unmodifiableMap(map);
         }
 
@@ -664,7 +670,7 @@ public class DirectConnect {
     private String lagId;
 
     /**
-     * 专线协议的签暑状态
+     * 专线协议的签署状态
      */
     public static final class SignedAgreementStatusEnum {
 
@@ -1087,7 +1093,7 @@ public class DirectConnect {
     }
 
     /**
-     * 资源状态，合法值是： ACTIVE：专线已经开通完成且线路处于正常状态 DOWN：专线对应的端口处于down的状态，可能存在线路故障等异常。 BUILD：申请专线正在施工建设中 ERROR：专线配置异常，请联系客服解决相关问题。 PENDING_DELETE：正在删除 DELETED：已删除 APPLY：申请开通 DENY：客户需求无法满足，拒绝工勘。 PENDING_PAY：待支付 PAID：已支付 PENDING_SURVEY：待工勘
+     * 资源状态，合法值是： ACTIVE：专线已经开通完成且线路处于正常状态 DOWN：专线对应的端口处于down的状态，可能存在线路故障等异常。 BUILD：申请专线正在施工建设中 ERROR：专线配置异常，请联系客服解决相关问题。 PENDING_DELETE：正在删除 DELETED：已删除 APPLY：申请开通 DENY：客户需求无法满足，拒绝工勘。 PENDING_PAY：待支付 PAID：已支付 PENDING_SURVEY：待工勘 LEASED_LINE_DELIVERY：运营商施工
      * @return status
      */
     public StatusEnum getStatus() {
@@ -1104,7 +1110,7 @@ public class DirectConnect {
     }
 
     /**
-     * 物理专线的申请时间
+     * 物理专线的申请时间。采用UTC时间格式，格式为：yyyy-MM-ddTHH:mm:ss.SSSZ
      * @return applyTime
      */
     public OffsetDateTime getApplyTime() {
@@ -1121,7 +1127,7 @@ public class DirectConnect {
     }
 
     /**
-     * 物理专线的创建时间
+     * 物理专线的创建时间。采用UTC时间格式，格式为：yyyy-MM-ddTHH:mm:ss.SSSZ
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -1291,7 +1297,7 @@ public class DirectConnect {
     }
 
     /**
-     * 物理专线归属的链路聚合组(lag）的ID
+     * 物理专线归属的链路聚合组（lag）的ID
      * @return lagId
      */
     public String getLagId() {
@@ -1308,7 +1314,7 @@ public class DirectConnect {
     }
 
     /**
-     * 专线协议的签暑状态
+     * 专线协议的签署状态
      * @return signedAgreementStatus
      */
     public SignedAgreementStatusEnum getSignedAgreementStatus() {
@@ -1325,7 +1331,7 @@ public class DirectConnect {
     }
 
     /**
-     * 专线协议的签暑时间
+     * 专线协议的签署时间。采用UTC时间格式，格式为：yyyy-MM-ddTHH:mm:ss.SSSZ
      * @return signedAgreementTime
      */
     public OffsetDateTime getSignedAgreementTime() {
@@ -1451,7 +1457,7 @@ public class DirectConnect {
     }
 
     /**
-     * 归属的IES站点的ID[（功能暂不支持）](tag:dt)
+     * 归属的CloudPond站点的ID[（功能暂不支持）](tag:dt)
      * @return iesId
      */
     public String getIesId() {

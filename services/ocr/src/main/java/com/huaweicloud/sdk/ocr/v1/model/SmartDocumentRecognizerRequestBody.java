@@ -66,6 +66,11 @@ public class SmartDocumentRecognizerRequestBody {
     private String kvMap;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "erase_seal")
+
+    private Boolean eraseSeal;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pdf_page_number")
 
     private Integer pdfPageNumber;
@@ -257,6 +262,23 @@ public class SmartDocumentRecognizerRequestBody {
         this.kvMap = kvMap;
     }
 
+    public SmartDocumentRecognizerRequestBody withEraseSeal(Boolean eraseSeal) {
+        this.eraseSeal = eraseSeal;
+        return this;
+    }
+
+    /**
+     * 是否进行印章擦除。开启后，可提升印章遮挡区域的文字识别精度。 
+     * @return eraseSeal
+     */
+    public Boolean getEraseSeal() {
+        return eraseSeal;
+    }
+
+    public void setEraseSeal(Boolean eraseSeal) {
+        this.eraseSeal = eraseSeal;
+    }
+
     public SmartDocumentRecognizerRequestBody withPdfPageNumber(Integer pdfPageNumber) {
         this.pdfPageNumber = pdfPageNumber;
         return this;
@@ -289,7 +311,7 @@ public class SmartDocumentRecognizerRequestBody {
             && Objects.equals(this.table, that.table) && Objects.equals(this.layout, that.layout)
             && Objects.equals(this.returnExcel, that.returnExcel) && Objects.equals(this.form, that.form)
             && Objects.equals(this.formula, that.formula) && Objects.equals(this.kvMap, that.kvMap)
-            && Objects.equals(this.pdfPageNumber, that.pdfPageNumber);
+            && Objects.equals(this.eraseSeal, that.eraseSeal) && Objects.equals(this.pdfPageNumber, that.pdfPageNumber);
     }
 
     @Override
@@ -305,6 +327,7 @@ public class SmartDocumentRecognizerRequestBody {
             form,
             formula,
             kvMap,
+            eraseSeal,
             pdfPageNumber);
     }
 
@@ -323,6 +346,7 @@ public class SmartDocumentRecognizerRequestBody {
         sb.append("    form: ").append(toIndentedString(form)).append("\n");
         sb.append("    formula: ").append(toIndentedString(formula)).append("\n");
         sb.append("    kvMap: ").append(toIndentedString(kvMap)).append("\n");
+        sb.append("    eraseSeal: ").append(toIndentedString(eraseSeal)).append("\n");
         sb.append("    pdfPageNumber: ").append(toIndentedString(pdfPageNumber)).append("\n");
         sb.append("}");
         return sb.toString();

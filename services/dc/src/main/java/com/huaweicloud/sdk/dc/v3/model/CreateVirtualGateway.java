@@ -19,6 +19,11 @@ public class CreateVirtualGateway {
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_router_id")
+
+    private String enterpriseRouterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -59,7 +64,7 @@ public class CreateVirtualGateway {
     }
 
     /**
-     * 虚拟网关接入的VPC的ID
+     * 虚拟网关接入的VPC的ID[，当选择创建接入VPC的虚拟网关时必选。](tag:dt)
      * @return vpcId
      */
     public String getVpcId() {
@@ -68,6 +73,23 @@ public class CreateVirtualGateway {
 
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
+    }
+
+    public CreateVirtualGateway withEnterpriseRouterId(String enterpriseRouterId) {
+        this.enterpriseRouterId = enterpriseRouterId;
+        return this;
+    }
+
+    /**
+     * 虚拟网关接入的ER的ID，当选择创建接入ER的虚拟网关时必选。
+     * @return enterpriseRouterId
+     */
+    public String getEnterpriseRouterId() {
+        return enterpriseRouterId;
+    }
+
+    public void setEnterpriseRouterId(String enterpriseRouterId) {
+        this.enterpriseRouterId = enterpriseRouterId;
     }
 
     public CreateVirtualGateway withName(String name) {
@@ -126,7 +148,7 @@ public class CreateVirtualGateway {
     }
 
     /**
-     * 虚拟网关到访问云上服务IPv4子网列表，通常是vpc的cidrs
+     * 虚拟网关到访问云上服务IPv4子网列表，通常是vpc的cidrs[，当选择创建接入VPC的虚拟网关时必选。](tag:dt)
      * @return localEpGroup
      */
     public List<String> getLocalEpGroup() {
@@ -176,7 +198,7 @@ public class CreateVirtualGateway {
     }
 
     /**
-     * 虚拟网关本地的BGP自冶域号(asn)
+     * 虚拟网关本地的BGP自治域号(asn)
      * minimum: 1
      * maximum: 4294967295
      * @return bgpAsn
@@ -248,7 +270,8 @@ public class CreateVirtualGateway {
             return false;
         }
         CreateVirtualGateway that = (CreateVirtualGateway) obj;
-        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.name, that.name)
+        return Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.enterpriseRouterId, that.enterpriseRouterId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.localEpGroup, that.localEpGroup)
             && Objects.equals(this.localEpGroupIpv6, that.localEpGroupIpv6) && Objects.equals(this.bgpAsn, that.bgpAsn)
@@ -258,8 +281,15 @@ public class CreateVirtualGateway {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(vpcId, name, description, localEpGroup, localEpGroupIpv6, bgpAsn, enterpriseProjectId, tags);
+        return Objects.hash(vpcId,
+            enterpriseRouterId,
+            name,
+            description,
+            localEpGroup,
+            localEpGroupIpv6,
+            bgpAsn,
+            enterpriseProjectId,
+            tags);
     }
 
     @Override
@@ -267,6 +297,7 @@ public class CreateVirtualGateway {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateVirtualGateway {\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    enterpriseRouterId: ").append(toIndentedString(enterpriseRouterId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    localEpGroup: ").append(toIndentedString(localEpGroup)).append("\n");

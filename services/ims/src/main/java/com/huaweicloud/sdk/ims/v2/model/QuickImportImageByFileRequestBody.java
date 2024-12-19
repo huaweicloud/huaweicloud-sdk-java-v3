@@ -44,6 +44,11 @@ public class QuickImportImageByFileRequestBody {
     private Integer minDisk;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "license_type")
+
+    private String licenseType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<String> tags = null;
@@ -376,6 +381,23 @@ public class QuickImportImageByFileRequestBody {
         this.minDisk = minDisk;
     }
 
+    public QuickImportImageByFileRequestBody withLicenseType(String licenseType) {
+        this.licenseType = licenseType;
+        return this;
+    }
+
+    /**
+     * 操作系统使用的许可证类型。取值范围： platform：华为云官方许可证 byol：自带许可证（Bring Your Own License） 目前仅Windows操作系统支持设置该参数。
+     * @return licenseType
+     */
+    public String getLicenseType() {
+        return licenseType;
+    }
+
+    public void setLicenseType(String licenseType) {
+        this.licenseType = licenseType;
+    }
+
     public QuickImportImageByFileRequestBody withTags(List<String> tags) {
         this.tags = tags;
         return this;
@@ -521,8 +543,8 @@ public class QuickImportImageByFileRequestBody {
         QuickImportImageByFileRequestBody that = (QuickImportImageByFileRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.imageUrl, that.imageUrl)
-            && Objects.equals(this.minDisk, that.minDisk) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.type, that.type)
+            && Objects.equals(this.minDisk, that.minDisk) && Objects.equals(this.licenseType, that.licenseType)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.type, that.type)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.architecture, that.architecture) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.imageTags, that.imageTags);
@@ -535,6 +557,7 @@ public class QuickImportImageByFileRequestBody {
             osVersion,
             imageUrl,
             minDisk,
+            licenseType,
             tags,
             type,
             enterpriseProjectId,
@@ -552,6 +575,7 @@ public class QuickImportImageByFileRequestBody {
         sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
         sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
         sb.append("    minDisk: ").append(toIndentedString(minDisk)).append("\n");
+        sb.append("    licenseType: ").append(toIndentedString(licenseType)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

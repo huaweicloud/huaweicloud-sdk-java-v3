@@ -421,6 +421,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.RenewDataProfileRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RenewDataProfileResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ResetLinkAttributeAndStandardRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ResetLinkAttributeAndStandardResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RetryFactoryJobInstanceRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RetryFactoryJobInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RollbackApprovalRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RollbackApprovalResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchApprovalsRequest;
@@ -6453,6 +6455,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ResetLinkAttributeAndStandardRequest, ResetLinkAttributeAndStandardResponse> resetLinkAttributeAndStandardAsyncInvoker(
         ResetLinkAttributeAndStandardRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.resetLinkAttributeAndStandard, hcClient);
+    }
+
+    /**
+     * 重跑作业实例
+     *
+     * 支持重跑作业实例以及上下游的作业实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryFactoryJobInstanceRequest 请求对象
+     * @return CompletableFuture<RetryFactoryJobInstanceResponse>
+     */
+    public CompletableFuture<RetryFactoryJobInstanceResponse> retryFactoryJobInstanceAsync(
+        RetryFactoryJobInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.retryFactoryJobInstance);
+    }
+
+    /**
+     * 重跑作业实例
+     *
+     * 支持重跑作业实例以及上下游的作业实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryFactoryJobInstanceRequest 请求对象
+     * @return AsyncInvoker<RetryFactoryJobInstanceRequest, RetryFactoryJobInstanceResponse>
+     */
+    public AsyncInvoker<RetryFactoryJobInstanceRequest, RetryFactoryJobInstanceResponse> retryFactoryJobInstanceAsyncInvoker(
+        RetryFactoryJobInstanceRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.retryFactoryJobInstance, hcClient);
     }
 
     /**

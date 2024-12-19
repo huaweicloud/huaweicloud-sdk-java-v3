@@ -42,6 +42,11 @@ public class CreateComponentWithConfigurationRequestBodySpec {
         public static final RuntimeEnum JAVA17 = new RuntimeEnum("Java17");
 
         /**
+         * Enum JAVA21 for value: "Java21"
+         */
+        public static final RuntimeEnum JAVA21 = new RuntimeEnum("Java21");
+
+        /**
          * Enum TOMCAT8 for value: "Tomcat8"
          */
         public static final RuntimeEnum TOMCAT8 = new RuntimeEnum("Tomcat8");
@@ -104,6 +109,7 @@ public class CreateComponentWithConfigurationRequestBodySpec {
             map.put("Java8", JAVA8);
             map.put("Java11", JAVA11);
             map.put("Java17", JAVA17);
+            map.put("Java21", JAVA21);
             map.put("Tomcat8", TOMCAT8);
             map.put("Tomcat9", TOMCAT9);
             map.put("Python3", PYTHON3);

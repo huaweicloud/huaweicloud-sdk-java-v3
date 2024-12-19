@@ -43,12 +43,14 @@ import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualInterfaceRequest;
 import com.huaweicloud.sdk.dc.v3.model.DeleteVirtualInterfaceResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListConnectGatewaysRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListConnectGatewaysResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListDirectConnectLocationsRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListDirectConnectLocationsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListDirectConnectsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListDirectConnectsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListGdgwRouteTablesRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListGdgwRouteTablesResponse;
-import com.huaweicloud.sdk.dc.v3.model.ListGlobalDcGatewayRequest;
-import com.huaweicloud.sdk.dc.v3.model.ListGlobalDcGatewayResponse;
+import com.huaweicloud.sdk.dc.v3.model.ListGlobalDcGatewaysRequest;
+import com.huaweicloud.sdk.dc.v3.model.ListGlobalDcGatewaysResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListGlobalEipsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListGlobalEipsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListHostedDirectConnectsRequest;
@@ -57,8 +59,6 @@ import com.huaweicloud.sdk.dc.v3.model.ListPeerLinksRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListPeerLinksResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListProjectTagsResponse;
-import com.huaweicloud.sdk.dc.v3.model.ListRmsGlobalDcGatewayRequest;
-import com.huaweicloud.sdk.dc.v3.model.ListRmsGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListSwitchoverTestRecordsResponse;
 import com.huaweicloud.sdk.dc.v3.model.ListTagResourceInstancesRequest;
@@ -69,6 +69,8 @@ import com.huaweicloud.sdk.dc.v3.model.ListVirtualInterfacesRequest;
 import com.huaweicloud.sdk.dc.v3.model.ListVirtualInterfacesResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowConnectGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowConnectGatewayResponse;
+import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectLocationRequest;
+import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectLocationResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowDirectConnectResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowGlobalDcGatewayRequest;
@@ -81,8 +83,6 @@ import com.huaweicloud.sdk.dc.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowResourceTagResponse;
-import com.huaweicloud.sdk.dc.v3.model.ShowRmsGlobalDcGatewayRequest;
-import com.huaweicloud.sdk.dc.v3.model.ShowRmsGlobalDcGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayRequest;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualGatewayResponse;
 import com.huaweicloud.sdk.dc.v3.model.ShowVirtualInterfaceRequest;
@@ -619,9 +619,67 @@ public class DcClient {
     }
 
     /**
-     * 查询全球接入网关路由表
+     * 查询专线接入点位置列表
      *
-     * 查询全球接入网关路由表，返回查询到的全球接入网关路由表的详细信息。
+     * 查询本区域下所有专线的接入点的信息，分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDirectConnectLocationsRequest 请求对象
+     * @return ListDirectConnectLocationsResponse
+     */
+    public ListDirectConnectLocationsResponse listDirectConnectLocations(ListDirectConnectLocationsRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.listDirectConnectLocations);
+    }
+
+    /**
+     * 查询专线接入点位置列表
+     *
+     * 查询本区域下所有专线的接入点的信息，分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDirectConnectLocationsRequest 请求对象
+     * @return SyncInvoker<ListDirectConnectLocationsRequest, ListDirectConnectLocationsResponse>
+     */
+    public SyncInvoker<ListDirectConnectLocationsRequest, ListDirectConnectLocationsResponse> listDirectConnectLocationsInvoker(
+        ListDirectConnectLocationsRequest request) {
+        return new SyncInvoker<>(request, DcMeta.listDirectConnectLocations, hcClient);
+    }
+
+    /**
+     * 查询指定专线接入点详情
+     *
+     * 查询指定的专线接入点详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDirectConnectLocationRequest 请求对象
+     * @return ShowDirectConnectLocationResponse
+     */
+    public ShowDirectConnectLocationResponse showDirectConnectLocation(ShowDirectConnectLocationRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.showDirectConnectLocation);
+    }
+
+    /**
+     * 查询指定专线接入点详情
+     *
+     * 查询指定的专线接入点详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDirectConnectLocationRequest 请求对象
+     * @return SyncInvoker<ShowDirectConnectLocationRequest, ShowDirectConnectLocationResponse>
+     */
+    public SyncInvoker<ShowDirectConnectLocationRequest, ShowDirectConnectLocationResponse> showDirectConnectLocationInvoker(
+        ShowDirectConnectLocationRequest request) {
+        return new SyncInvoker<>(request, DcMeta.showDirectConnectLocation, hcClient);
+    }
+
+    /**
+     * 查询全域接入网关路由表
+     *
+     * 查询全域接入网关路由表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -633,9 +691,9 @@ public class DcClient {
     }
 
     /**
-     * 查询全球接入网关路由表
+     * 查询全域接入网关路由表
      *
-     * 查询全球接入网关路由表，返回查询到的全球接入网关路由表的详细信息。
+     * 查询全域接入网关路由表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -648,9 +706,13 @@ public class DcClient {
     }
 
     /**
-     * 修改全球接入网关路由表
+     * 修改全域接入网关路由表
      *
-     * 修改全球接入网关路由表，返回修改全球接入网关路由表的结果。
+     * # 支持的修改操作：
+     * **注意：新增、删除、修改操作互斥，一次请求只能执行其中一类操作**
+     * + 1. 新增下一跳路由
+     * + 2. 删除下一跳路由
+     * + 3. 修改路由描述
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -662,9 +724,13 @@ public class DcClient {
     }
 
     /**
-     * 修改全球接入网关路由表
+     * 修改全域接入网关路由表
      *
-     * 修改全球接入网关路由表，返回修改全球接入网关路由表的结果。
+     * # 支持的修改操作：
+     * **注意：新增、删除、修改操作互斥，一次请求只能执行其中一类操作**
+     * + 1. 新增下一跳路由
+     * + 2. 删除下一跳路由
+     * + 3. 修改路由描述
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -677,9 +743,9 @@ public class DcClient {
     }
 
     /**
-     * 创建全球接入网关
+     * 创建专线全域接入网关
      *
-     * 创建全球接入网关，返回创建全球接入网关的结果。
+     * 创建专线全域接入网关实例(global-dc-gateway)，用于接入全球的ER实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -691,9 +757,9 @@ public class DcClient {
     }
 
     /**
-     * 创建全球接入网关
+     * 创建专线全域接入网关
      *
-     * 创建全球接入网关，返回创建全球接入网关的结果。
+     * 创建专线全域接入网关实例(global-dc-gateway)，用于接入全球的ER实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -706,38 +772,9 @@ public class DcClient {
     }
 
     /**
-     * 创建全球接入网关对等链接
+     * 删除专线全域接入网关
      *
-     * 创建全球接入网关对等链接，返回创建全球接入网关对等链接的结果。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreatePeerLinkRequest 请求对象
-     * @return CreatePeerLinkResponse
-     */
-    public CreatePeerLinkResponse createPeerLink(CreatePeerLinkRequest request) {
-        return hcClient.syncInvokeHttp(request, DcMeta.createPeerLink);
-    }
-
-    /**
-     * 创建全球接入网关对等链接
-     *
-     * 创建全球接入网关对等链接，返回创建全球接入网关对等链接的结果。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreatePeerLinkRequest 请求对象
-     * @return SyncInvoker<CreatePeerLinkRequest, CreatePeerLinkResponse>
-     */
-    public SyncInvoker<CreatePeerLinkRequest, CreatePeerLinkResponse> createPeerLinkInvoker(
-        CreatePeerLinkRequest request) {
-        return new SyncInvoker<>(request, DcMeta.createPeerLink, hcClient);
-    }
-
-    /**
-     * 删除全球接入网关
-     *
-     * 根据ID删除全球接入网关，返回删除全球接入网关的结果。
+     * 删除专线全域接入网关global-dc-gateway实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -749,9 +786,9 @@ public class DcClient {
     }
 
     /**
-     * 删除全球接入网关
+     * 删除专线全域接入网关
      *
-     * 根据ID删除全球接入网关，返回删除全球接入网关的结果。
+     * 删除专线全域接入网关global-dc-gateway实例
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -764,124 +801,38 @@ public class DcClient {
     }
 
     /**
-     * 删除全球接入网关对等链接
+     * 查询专线全域接入网关列表
      *
-     * 根据ID删除全球接入网关对等链接，返回删除全球接入网关对等链接的结果。
+     * 查询专线全域接入网关列表，建议使用分页查询 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeletePeerLinkRequest 请求对象
-     * @return DeletePeerLinkResponse
+     * @param request ListGlobalDcGatewaysRequest 请求对象
+     * @return ListGlobalDcGatewaysResponse
      */
-    public DeletePeerLinkResponse deletePeerLink(DeletePeerLinkRequest request) {
-        return hcClient.syncInvokeHttp(request, DcMeta.deletePeerLink);
+    public ListGlobalDcGatewaysResponse listGlobalDcGateways(ListGlobalDcGatewaysRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.listGlobalDcGateways);
     }
 
     /**
-     * 删除全球接入网关对等链接
+     * 查询专线全域接入网关列表
      *
-     * 根据ID删除全球接入网关对等链接，返回删除全球接入网关对等链接的结果。
+     * 查询专线全域接入网关列表，建议使用分页查询 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request DeletePeerLinkRequest 请求对象
-     * @return SyncInvoker<DeletePeerLinkRequest, DeletePeerLinkResponse>
+     * @param request ListGlobalDcGatewaysRequest 请求对象
+     * @return SyncInvoker<ListGlobalDcGatewaysRequest, ListGlobalDcGatewaysResponse>
      */
-    public SyncInvoker<DeletePeerLinkRequest, DeletePeerLinkResponse> deletePeerLinkInvoker(
-        DeletePeerLinkRequest request) {
-        return new SyncInvoker<>(request, DcMeta.deletePeerLink, hcClient);
+    public SyncInvoker<ListGlobalDcGatewaysRequest, ListGlobalDcGatewaysResponse> listGlobalDcGatewaysInvoker(
+        ListGlobalDcGatewaysRequest request) {
+        return new SyncInvoker<>(request, DcMeta.listGlobalDcGateways, hcClient);
     }
 
     /**
-     * 查询全球接入网关列表
+     * 查询专线全域接入网关详情
      *
-     * 查询 全球接入网关列表，返回列表中包含全球接入网关的详细信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListGlobalDcGatewayRequest 请求对象
-     * @return ListGlobalDcGatewayResponse
-     */
-    public ListGlobalDcGatewayResponse listGlobalDcGateway(ListGlobalDcGatewayRequest request) {
-        return hcClient.syncInvokeHttp(request, DcMeta.listGlobalDcGateway);
-    }
-
-    /**
-     * 查询全球接入网关列表
-     *
-     * 查询 全球接入网关列表，返回列表中包含全球接入网关的详细信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListGlobalDcGatewayRequest 请求对象
-     * @return SyncInvoker<ListGlobalDcGatewayRequest, ListGlobalDcGatewayResponse>
-     */
-    public SyncInvoker<ListGlobalDcGatewayRequest, ListGlobalDcGatewayResponse> listGlobalDcGatewayInvoker(
-        ListGlobalDcGatewayRequest request) {
-        return new SyncInvoker<>(request, DcMeta.listGlobalDcGateway, hcClient);
-    }
-
-    /**
-     * 查询全球接入网关对等链接
-     *
-     * 查询全球接入网关对等链接，返回查询到的全球接入网关对等链接的详细信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPeerLinksRequest 请求对象
-     * @return ListPeerLinksResponse
-     */
-    public ListPeerLinksResponse listPeerLinks(ListPeerLinksRequest request) {
-        return hcClient.syncInvokeHttp(request, DcMeta.listPeerLinks);
-    }
-
-    /**
-     * 查询全球接入网关对等链接
-     *
-     * 查询全球接入网关对等链接，返回查询到的全球接入网关对等链接的详细信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPeerLinksRequest 请求对象
-     * @return SyncInvoker<ListPeerLinksRequest, ListPeerLinksResponse>
-     */
-    public SyncInvoker<ListPeerLinksRequest, ListPeerLinksResponse> listPeerLinksInvoker(ListPeerLinksRequest request) {
-        return new SyncInvoker<>(request, DcMeta.listPeerLinks, hcClient);
-    }
-
-    /**
-     * 查询RMS全球接入网关
-     *
-     * 根据类型、domain_id、region_id,资源类型查询资源，返回查询到的资源的详细信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRmsGlobalDcGatewayRequest 请求对象
-     * @return ListRmsGlobalDcGatewayResponse
-     */
-    public ListRmsGlobalDcGatewayResponse listRmsGlobalDcGateway(ListRmsGlobalDcGatewayRequest request) {
-        return hcClient.syncInvokeHttp(request, DcMeta.listRmsGlobalDcGateway);
-    }
-
-    /**
-     * 查询RMS全球接入网关
-     *
-     * 根据类型、domain_id、region_id,资源类型查询资源，返回查询到的资源的详细信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListRmsGlobalDcGatewayRequest 请求对象
-     * @return SyncInvoker<ListRmsGlobalDcGatewayRequest, ListRmsGlobalDcGatewayResponse>
-     */
-    public SyncInvoker<ListRmsGlobalDcGatewayRequest, ListRmsGlobalDcGatewayResponse> listRmsGlobalDcGatewayInvoker(
-        ListRmsGlobalDcGatewayRequest request) {
-        return new SyncInvoker<>(request, DcMeta.listRmsGlobalDcGateway, hcClient);
-    }
-
-    /**
-     * 查询全球接入网关详情
-     *
-     * 根据ID查询全球接入网关，返回查询到的全球接入网关的详细信息。
+     * 查询专线全域接入网关实例详情信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -893,9 +844,9 @@ public class DcClient {
     }
 
     /**
-     * 查询全球接入网关详情
+     * 查询专线全域接入网关详情
      *
-     * 根据ID查询全球接入网关，返回查询到的全球接入网关的详细信息。
+     * 查询专线全域接入网关实例详情信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -908,66 +859,9 @@ public class DcClient {
     }
 
     /**
-     * 查询全球接入网关对等链接
+     * 更新专线全域接入网关
      *
-     * 根据ID查询全球接入网关对等链接，返回查询到的全球接入网关对等链接的详细信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowPeerLinkRequest 请求对象
-     * @return ShowPeerLinkResponse
-     */
-    public ShowPeerLinkResponse showPeerLink(ShowPeerLinkRequest request) {
-        return hcClient.syncInvokeHttp(request, DcMeta.showPeerLink);
-    }
-
-    /**
-     * 查询全球接入网关对等链接
-     *
-     * 根据ID查询全球接入网关对等链接，返回查询到的全球接入网关对等链接的详细信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowPeerLinkRequest 请求对象
-     * @return SyncInvoker<ShowPeerLinkRequest, ShowPeerLinkResponse>
-     */
-    public SyncInvoker<ShowPeerLinkRequest, ShowPeerLinkResponse> showPeerLinkInvoker(ShowPeerLinkRequest request) {
-        return new SyncInvoker<>(request, DcMeta.showPeerLink, hcClient);
-    }
-
-    /**
-     * 查询RMS全球接入网关
-     *
-     * 根据类型、domain_id、region_id,资源类型，全球接入网关ID查询资源,返回查询到的资源的详细信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowRmsGlobalDcGatewayRequest 请求对象
-     * @return ShowRmsGlobalDcGatewayResponse
-     */
-    public ShowRmsGlobalDcGatewayResponse showRmsGlobalDcGateway(ShowRmsGlobalDcGatewayRequest request) {
-        return hcClient.syncInvokeHttp(request, DcMeta.showRmsGlobalDcGateway);
-    }
-
-    /**
-     * 查询RMS全球接入网关
-     *
-     * 根据类型、domain_id、region_id,资源类型，全球接入网关ID查询资源,返回查询到的资源的详细信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowRmsGlobalDcGatewayRequest 请求对象
-     * @return SyncInvoker<ShowRmsGlobalDcGatewayRequest, ShowRmsGlobalDcGatewayResponse>
-     */
-    public SyncInvoker<ShowRmsGlobalDcGatewayRequest, ShowRmsGlobalDcGatewayResponse> showRmsGlobalDcGatewayInvoker(
-        ShowRmsGlobalDcGatewayRequest request) {
-        return new SyncInvoker<>(request, DcMeta.showRmsGlobalDcGateway, hcClient);
-    }
-
-    /**
-     * 修改全球接入网关
-     *
-     * 根据ID修改全球接入网关，返回修改全球接入网关的结果。
+     * 更新专线全域接入网关global-dc-gateway的名字，描述等信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -979,9 +873,9 @@ public class DcClient {
     }
 
     /**
-     * 修改全球接入网关
+     * 更新专线全域接入网关
      *
-     * 根据ID修改全球接入网关，返回修改全球接入网关的结果。
+     * 更新专线全域接入网关global-dc-gateway的名字，描述等信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -994,9 +888,123 @@ public class DcClient {
     }
 
     /**
-     * 修改全球接入网关对等链接
+     * 创建专线关联连接
      *
-     * 根据ID修改全球接入网关对等链接，返回修改全球接入网关对等链接的结果。
+     * 创建专线全域接入网关的关联连接peer-link对象，用于连接企业路由器或者其他接入网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePeerLinkRequest 请求对象
+     * @return CreatePeerLinkResponse
+     */
+    public CreatePeerLinkResponse createPeerLink(CreatePeerLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.createPeerLink);
+    }
+
+    /**
+     * 创建专线关联连接
+     *
+     * 创建专线全域接入网关的关联连接peer-link对象，用于连接企业路由器或者其他接入网关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePeerLinkRequest 请求对象
+     * @return SyncInvoker<CreatePeerLinkRequest, CreatePeerLinkResponse>
+     */
+    public SyncInvoker<CreatePeerLinkRequest, CreatePeerLinkResponse> createPeerLinkInvoker(
+        CreatePeerLinkRequest request) {
+        return new SyncInvoker<>(request, DcMeta.createPeerLink, hcClient);
+    }
+
+    /**
+     * 删除专线关联连接
+     *
+     * 删除全域接入网关与ER的关联连接peer-link
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePeerLinkRequest 请求对象
+     * @return DeletePeerLinkResponse
+     */
+    public DeletePeerLinkResponse deletePeerLink(DeletePeerLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.deletePeerLink);
+    }
+
+    /**
+     * 删除专线关联连接
+     *
+     * 删除全域接入网关与ER的关联连接peer-link
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePeerLinkRequest 请求对象
+     * @return SyncInvoker<DeletePeerLinkRequest, DeletePeerLinkResponse>
+     */
+    public SyncInvoker<DeletePeerLinkRequest, DeletePeerLinkResponse> deletePeerLinkInvoker(
+        DeletePeerLinkRequest request) {
+        return new SyncInvoker<>(request, DcMeta.deletePeerLink, hcClient);
+    }
+
+    /**
+     * 查询专线关联连接列表
+     *
+     * 查询全域接入网关与ER等对象的关联连接列表，分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPeerLinksRequest 请求对象
+     * @return ListPeerLinksResponse
+     */
+    public ListPeerLinksResponse listPeerLinks(ListPeerLinksRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.listPeerLinks);
+    }
+
+    /**
+     * 查询专线关联连接列表
+     *
+     * 查询全域接入网关与ER等对象的关联连接列表，分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPeerLinksRequest 请求对象
+     * @return SyncInvoker<ListPeerLinksRequest, ListPeerLinksResponse>
+     */
+    public SyncInvoker<ListPeerLinksRequest, ListPeerLinksResponse> listPeerLinksInvoker(ListPeerLinksRequest request) {
+        return new SyncInvoker<>(request, DcMeta.listPeerLinks, hcClient);
+    }
+
+    /**
+     * 查询专线关联连接详情
+     *
+     * 查询指定接入网关的指定的关联连接(peer link)详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPeerLinkRequest 请求对象
+     * @return ShowPeerLinkResponse
+     */
+    public ShowPeerLinkResponse showPeerLink(ShowPeerLinkRequest request) {
+        return hcClient.syncInvokeHttp(request, DcMeta.showPeerLink);
+    }
+
+    /**
+     * 查询专线关联连接详情
+     *
+     * 查询指定接入网关的指定的关联连接(peer link)详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPeerLinkRequest 请求对象
+     * @return SyncInvoker<ShowPeerLinkRequest, ShowPeerLinkResponse>
+     */
+    public SyncInvoker<ShowPeerLinkRequest, ShowPeerLinkResponse> showPeerLinkInvoker(ShowPeerLinkRequest request) {
+        return new SyncInvoker<>(request, DcMeta.showPeerLink, hcClient);
+    }
+
+    /**
+     * 更新专线关联连接
+     *
+     * 更新接入网关与ER对接的关联连接peer-link
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1008,9 +1016,9 @@ public class DcClient {
     }
 
     /**
-     * 修改全球接入网关对等链接
+     * 更新专线关联连接
      *
-     * 根据ID修改全球接入网关对等链接，返回修改全球接入网关对等链接的结果。
+     * 更新接入网关与ER对接的关联连接peer-link
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1439,7 +1447,7 @@ public class DcClient {
     /**
      * 删除虚拟接口对应的对等体
      *
-     * 删除虚拟接口对等体信息,虚拟接口到少要含一个对等体,最后一个对等体不能删除 本接口只在支持Ipv6的区域开放，如需要使用请联系客服
+     * 删除虚拟接口对等体信息,虚拟接口至少要含一个对等体，最后一个对等体不能删除 本接口只在支持Ipv6的区域开放，如需要使用请联系客服
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1453,7 +1461,7 @@ public class DcClient {
     /**
      * 删除虚拟接口对应的对等体
      *
-     * 删除虚拟接口对等体信息,虚拟接口到少要含一个对等体,最后一个对等体不能删除 本接口只在支持Ipv6的区域开放，如需要使用请联系客服
+     * 删除虚拟接口对等体信息,虚拟接口至少要含一个对等体，最后一个对等体不能删除 本接口只在支持Ipv6的区域开放，如需要使用请联系客服
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

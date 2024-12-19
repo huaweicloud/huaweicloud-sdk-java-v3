@@ -32,9 +32,9 @@ public class ScalingActivityLogList {
         public static final StatusEnum FAIL = new StatusEnum("FAIL");
 
         /**
-         * Enum DING for value: "DING"
+         * Enum DOING for value: "DOING"
          */
-        public static final StatusEnum DING = new StatusEnum("DING");
+        public static final StatusEnum DOING = new StatusEnum("DOING");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -42,7 +42,7 @@ public class ScalingActivityLogList {
             Map<String, StatusEnum> map = new HashMap<>();
             map.put("SUCCESS", SUCCESS);
             map.put("FAIL", FAIL);
-            map.put("DING", DING);
+            map.put("DOING", DOING);
             return Collections.unmodifiableMap(map);
         }
 

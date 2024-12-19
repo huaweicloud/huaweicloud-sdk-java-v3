@@ -27,7 +27,7 @@ public class UpdateGlobalDcGatewayRequest {
     }
 
     /**
-     * 全球接入网关ID
+     * 全域接入网关ID
      * @return globalDcGatewayId
      */
     public String getGlobalDcGatewayId() {

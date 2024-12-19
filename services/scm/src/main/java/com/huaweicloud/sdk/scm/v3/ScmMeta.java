@@ -247,6 +247,11 @@ public class ScmMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListCertificatesRequest::getDeploySupport,
                 ListCertificatesRequest::setDeploySupport));
+        builder.<Boolean>withRequestField("owned_by_self",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getOwnedBySelf, ListCertificatesRequest::setOwnedBySelf));
 
         // response
 

@@ -363,7 +363,7 @@ public class SwitchoverTestRecord {
     }
 
     /**
-     * 倒换测试操作的开始时间
+     * 倒换测试操作的开始时间。采用UTC时间格式，格式为：yyyy-MM-ddTHH:mm:ss.SSSZ
      * @return startTime
      */
     public OffsetDateTime getStartTime() {
@@ -380,7 +380,7 @@ public class SwitchoverTestRecord {
     }
 
     /**
-     * 倒换测试操作的结束时间
+     * 倒换测试操作的结束时间。采用UTC时间格式，格式为：yyyy-MM-ddTHH:mm:ss.SSSZ
      * @return endTime
      */
     public OffsetDateTime getEndTime() {

@@ -24,7 +24,7 @@ public class UpdatePeerLinkRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdatePeerLinkRequestBody body;
+    private UpdateExternalPeerLinkRequestBody body;
 
     public UpdatePeerLinkRequest withGlobalDcGatewayId(String globalDcGatewayId) {
         this.globalDcGatewayId = globalDcGatewayId;
@@ -32,7 +32,7 @@ public class UpdatePeerLinkRequest {
     }
 
     /**
-     * 全球接入网关ID
+     * 全域接入网关ID
      * @return globalDcGatewayId
      */
     public String getGlobalDcGatewayId() {
@@ -49,7 +49,7 @@ public class UpdatePeerLinkRequest {
     }
 
     /**
-     * 全球接入网关对等体
+     * 全域接入网关对等体
      * @return peerLinkId
      */
     public String getPeerLinkId() {
@@ -60,14 +60,14 @@ public class UpdatePeerLinkRequest {
         this.peerLinkId = peerLinkId;
     }
 
-    public UpdatePeerLinkRequest withBody(UpdatePeerLinkRequestBody body) {
+    public UpdatePeerLinkRequest withBody(UpdateExternalPeerLinkRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdatePeerLinkRequest withBody(Consumer<UpdatePeerLinkRequestBody> bodySetter) {
+    public UpdatePeerLinkRequest withBody(Consumer<UpdateExternalPeerLinkRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdatePeerLinkRequestBody();
+            this.body = new UpdateExternalPeerLinkRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -78,11 +78,11 @@ public class UpdatePeerLinkRequest {
      * Get body
      * @return body
      */
-    public UpdatePeerLinkRequestBody getBody() {
+    public UpdateExternalPeerLinkRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdatePeerLinkRequestBody body) {
+    public void setBody(UpdateExternalPeerLinkRequestBody body) {
         this.body = body;
     }
 

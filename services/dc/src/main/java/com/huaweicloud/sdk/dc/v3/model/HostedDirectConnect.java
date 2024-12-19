@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -71,7 +72,7 @@ public class HostedDirectConnect {
     private Integer vlan;
 
     /**
-     * 操作状态，合法值是： BUILD：已开通 ACTIVE：虚拟网关正常 DOWN：专线对应的端口处于down的状态，可能存在线路故障等异常。 ERROR：虚拟网关异常 PENDING_DELETE：删除中 PENDING_UPDATE：更新中 PENDING_CREATE：创建中
+     * 操作状态，合法值是： BUILD：已开通 ACTIVE：托管专线正常 DOWN：专线对应的端口处于down的状态，可能存在线路故障等异常。 ERROR：托管专线异常 PENDING_DELETE：删除中 PENDING_UPDATE：更新中 PENDING_CREATE：创建中
      */
     public static final class StatusEnum {
 
@@ -178,15 +179,15 @@ public class HostedDirectConnect {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "apply_time")
 
-    private String applyTime;
+    private OffsetDateTime applyTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private String createTime;
+    private OffsetDateTime createTime;
 
     /**
-     * 物理专线的运营商操作状态，合法值是：ACTIVE， DOWN
+     * 托管专线的运营商操作状态，合法值是：ACTIVE， DOWN
      */
     public static final class ProviderStatusEnum {
 
@@ -261,7 +262,7 @@ public class HostedDirectConnect {
     private ProviderStatusEnum providerStatus;
 
     /**
-     * 物理专线接入接口的类型，支持1G 10G 40G 100G
+     * 托管专线接入接口的类型，支持1G 10G 40G 100G
      */
     public static final class PortTypeEnum {
 
@@ -348,7 +349,7 @@ public class HostedDirectConnect {
     private PortTypeEnum portType;
 
     /**
-     * 物理专线的类型，类型包括标准(standard)，运营专线(hosting)，托管专线（hosted）[，一站式标准（onestop_standard），一站式托管（onestop_hosted）](tag:hws)。
+     * 托管专线的类型，类型包括标准(standard)，运营专线(hosting)，托管专线（hosted）[，一站式标准（onestop_standard），一站式托管（onestop_hosted）](tag:hws)。
      */
     public static final class TypeEnum {
 
@@ -480,7 +481,7 @@ public class HostedDirectConnect {
     }
 
     /**
-     * 物理专线名字
+     * 托管专线名字
      * @return name
      */
     public String getName() {
@@ -497,7 +498,7 @@ public class HostedDirectConnect {
     }
 
     /**
-     * 物理专线的描述信息
+     * 托管专线的描述信息
      * @return description
      */
     public String getDescription() {
@@ -514,7 +515,7 @@ public class HostedDirectConnect {
     }
 
     /**
-     * 物理专线接入带宽，单位Mbps。
+     * 托管专线接入带宽，单位Mbps。
      * minimum: 2
      * maximum: 400000
      * @return bandwidth
@@ -550,7 +551,7 @@ public class HostedDirectConnect {
     }
 
     /**
-     * 物理专线对端所在的物理位置，省/市/街道或IDC名字。
+     * 托管专线对端所在的物理位置，省/市/街道或IDC名字。
      * @return peerLocation
      */
     public String getPeerLocation() {
@@ -637,7 +638,7 @@ public class HostedDirectConnect {
     }
 
     /**
-     * 操作状态，合法值是： BUILD：已开通 ACTIVE：虚拟网关正常 DOWN：专线对应的端口处于down的状态，可能存在线路故障等异常。 ERROR：虚拟网关异常 PENDING_DELETE：删除中 PENDING_UPDATE：更新中 PENDING_CREATE：创建中
+     * 操作状态，合法值是： BUILD：已开通 ACTIVE：托管专线正常 DOWN：专线对应的端口处于down的状态，可能存在线路故障等异常。 ERROR：托管专线异常 PENDING_DELETE：删除中 PENDING_UPDATE：更新中 PENDING_CREATE：创建中
      * @return status
      */
     public StatusEnum getStatus() {
@@ -648,37 +649,37 @@ public class HostedDirectConnect {
         this.status = status;
     }
 
-    public HostedDirectConnect withApplyTime(String applyTime) {
+    public HostedDirectConnect withApplyTime(OffsetDateTime applyTime) {
         this.applyTime = applyTime;
         return this;
     }
 
     /**
-     * 物理专线申请时间
+     * 托管专线申请时间。采用UTC时间格式，格式为：yyyy-MM-ddTHH:mm:ss.SSSZ
      * @return applyTime
      */
-    public String getApplyTime() {
+    public OffsetDateTime getApplyTime() {
         return applyTime;
     }
 
-    public void setApplyTime(String applyTime) {
+    public void setApplyTime(OffsetDateTime applyTime) {
         this.applyTime = applyTime;
     }
 
-    public HostedDirectConnect withCreateTime(String createTime) {
+    public HostedDirectConnect withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
     /**
-     * 物理专线创建时间
+     * 托管专线创建时间。采用UTC时间格式，格式为：yyyy-MM-ddTHH:mm:ss.SSSZ
      * @return createTime
      */
-    public String getCreateTime() {
+    public OffsetDateTime getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
     }
 
@@ -688,7 +689,7 @@ public class HostedDirectConnect {
     }
 
     /**
-     * 物理专线的运营商操作状态，合法值是：ACTIVE， DOWN
+     * 托管专线的运营商操作状态，合法值是：ACTIVE， DOWN
      * @return providerStatus
      */
     public ProviderStatusEnum getProviderStatus() {
@@ -705,7 +706,7 @@ public class HostedDirectConnect {
     }
 
     /**
-     * 物理专线接入接口的类型，支持1G 10G 40G 100G
+     * 托管专线接入接口的类型，支持1G 10G 40G 100G
      * @return portType
      */
     public PortTypeEnum getPortType() {
@@ -722,7 +723,7 @@ public class HostedDirectConnect {
     }
 
     /**
-     * 物理专线的类型，类型包括标准(standard)，运营专线(hosting)，托管专线（hosted）[，一站式标准（onestop_standard），一站式托管（onestop_hosted）](tag:hws)。
+     * 托管专线的类型，类型包括标准(standard)，运营专线(hosting)，托管专线（hosted）[，一站式标准（onestop_standard），一站式托管（onestop_hosted）](tag:hws)。
      * @return type
      */
     public TypeEnum getType() {

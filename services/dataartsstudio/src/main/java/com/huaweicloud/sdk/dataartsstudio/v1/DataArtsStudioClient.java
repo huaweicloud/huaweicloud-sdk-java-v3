@@ -421,6 +421,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.RenewDataProfileRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RenewDataProfileResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ResetLinkAttributeAndStandardRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ResetLinkAttributeAndStandardResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RetryFactoryJobInstanceRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.RetryFactoryJobInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RollbackApprovalRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RollbackApprovalResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchApprovalsRequest;
@@ -6376,6 +6378,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<ResetLinkAttributeAndStandardRequest, ResetLinkAttributeAndStandardResponse> resetLinkAttributeAndStandardInvoker(
         ResetLinkAttributeAndStandardRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.resetLinkAttributeAndStandard, hcClient);
+    }
+
+    /**
+     * 重跑作业实例
+     *
+     * 支持重跑作业实例以及上下游的作业实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryFactoryJobInstanceRequest 请求对象
+     * @return RetryFactoryJobInstanceResponse
+     */
+    public RetryFactoryJobInstanceResponse retryFactoryJobInstance(RetryFactoryJobInstanceRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.retryFactoryJobInstance);
+    }
+
+    /**
+     * 重跑作业实例
+     *
+     * 支持重跑作业实例以及上下游的作业实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryFactoryJobInstanceRequest 请求对象
+     * @return SyncInvoker<RetryFactoryJobInstanceRequest, RetryFactoryJobInstanceResponse>
+     */
+    public SyncInvoker<RetryFactoryJobInstanceRequest, RetryFactoryJobInstanceResponse> retryFactoryJobInstanceInvoker(
+        RetryFactoryJobInstanceRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.retryFactoryJobInstance, hcClient);
     }
 
     /**

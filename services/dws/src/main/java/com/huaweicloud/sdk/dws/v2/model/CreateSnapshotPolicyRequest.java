@@ -19,7 +19,7 @@ public class CreateSnapshotPolicyRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BackupPolicy body;
+    private CreateSnapshotPolicyRequestBody body;
 
     public CreateSnapshotPolicyRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -38,14 +38,14 @@ public class CreateSnapshotPolicyRequest {
         this.clusterId = clusterId;
     }
 
-    public CreateSnapshotPolicyRequest withBody(BackupPolicy body) {
+    public CreateSnapshotPolicyRequest withBody(CreateSnapshotPolicyRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateSnapshotPolicyRequest withBody(Consumer<BackupPolicy> bodySetter) {
+    public CreateSnapshotPolicyRequest withBody(Consumer<CreateSnapshotPolicyRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BackupPolicy();
+            this.body = new CreateSnapshotPolicyRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class CreateSnapshotPolicyRequest {
      * Get body
      * @return body
      */
-    public BackupPolicy getBody() {
+    public CreateSnapshotPolicyRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BackupPolicy body) {
+    public void setBody(CreateSnapshotPolicyRequestBody body) {
         this.body = body;
     }
 

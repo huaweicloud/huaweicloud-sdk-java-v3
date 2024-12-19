@@ -14,16 +14,6 @@ import java.util.function.Consumer;
 public class ShowPeerLinkRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "global_dc_gateway_id")
-
-    private String globalDcGatewayId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "peer_link_id")
-
-    private String peerLinkId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fields")
 
     private List<String> fields = null;
@@ -33,39 +23,15 @@ public class ShowPeerLinkRequest {
 
     private List<String> extFields = null;
 
-    public ShowPeerLinkRequest withGlobalDcGatewayId(String globalDcGatewayId) {
-        this.globalDcGatewayId = globalDcGatewayId;
-        return this;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "global_dc_gateway_id")
 
-    /**
-     * 全球接入网关ID
-     * @return globalDcGatewayId
-     */
-    public String getGlobalDcGatewayId() {
-        return globalDcGatewayId;
-    }
+    private String globalDcGatewayId;
 
-    public void setGlobalDcGatewayId(String globalDcGatewayId) {
-        this.globalDcGatewayId = globalDcGatewayId;
-    }
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "peer_link_id")
 
-    public ShowPeerLinkRequest withPeerLinkId(String peerLinkId) {
-        this.peerLinkId = peerLinkId;
-        return this;
-    }
-
-    /**
-     * 全球接入网关对等体
-     * @return peerLinkId
-     */
-    public String getPeerLinkId() {
-        return peerLinkId;
-    }
-
-    public void setPeerLinkId(String peerLinkId) {
-        this.peerLinkId = peerLinkId;
-    }
+    private String peerLinkId;
 
     public ShowPeerLinkRequest withFields(List<String> fields) {
         this.fields = fields;
@@ -133,6 +99,40 @@ public class ShowPeerLinkRequest {
         this.extFields = extFields;
     }
 
+    public ShowPeerLinkRequest withGlobalDcGatewayId(String globalDcGatewayId) {
+        this.globalDcGatewayId = globalDcGatewayId;
+        return this;
+    }
+
+    /**
+     * 全域接入网关ID
+     * @return globalDcGatewayId
+     */
+    public String getGlobalDcGatewayId() {
+        return globalDcGatewayId;
+    }
+
+    public void setGlobalDcGatewayId(String globalDcGatewayId) {
+        this.globalDcGatewayId = globalDcGatewayId;
+    }
+
+    public ShowPeerLinkRequest withPeerLinkId(String peerLinkId) {
+        this.peerLinkId = peerLinkId;
+        return this;
+    }
+
+    /**
+     * 全域接入网关对等体
+     * @return peerLinkId
+     */
+    public String getPeerLinkId() {
+        return peerLinkId;
+    }
+
+    public void setPeerLinkId(String peerLinkId) {
+        this.peerLinkId = peerLinkId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -142,24 +142,24 @@ public class ShowPeerLinkRequest {
             return false;
         }
         ShowPeerLinkRequest that = (ShowPeerLinkRequest) obj;
-        return Objects.equals(this.globalDcGatewayId, that.globalDcGatewayId)
-            && Objects.equals(this.peerLinkId, that.peerLinkId) && Objects.equals(this.fields, that.fields)
-            && Objects.equals(this.extFields, that.extFields);
+        return Objects.equals(this.fields, that.fields) && Objects.equals(this.extFields, that.extFields)
+            && Objects.equals(this.globalDcGatewayId, that.globalDcGatewayId)
+            && Objects.equals(this.peerLinkId, that.peerLinkId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(globalDcGatewayId, peerLinkId, fields, extFields);
+        return Objects.hash(fields, extFields, globalDcGatewayId, peerLinkId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowPeerLinkRequest {\n");
-        sb.append("    globalDcGatewayId: ").append(toIndentedString(globalDcGatewayId)).append("\n");
-        sb.append("    peerLinkId: ").append(toIndentedString(peerLinkId)).append("\n");
         sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
         sb.append("    extFields: ").append(toIndentedString(extFields)).append("\n");
+        sb.append("    globalDcGatewayId: ").append(toIndentedString(globalDcGatewayId)).append("\n");
+        sb.append("    peerLinkId: ").append(toIndentedString(peerLinkId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,12 +1,17 @@
 package com.huaweicloud.sdk.dc.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
- * 路由表详细
+ * 路由明细
  */
 public class ShowGdgwRoutetable {
 
@@ -35,30 +40,182 @@ public class ShowGdgwRoutetable {
 
     private String nexthop;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "type")
+    /**
+     * 路由类型: - customized: 默认路由 - specific: 自定义路由 - bgp: 动态路由
+     */
+    public static final class ObtainModeEnum {
 
-    private String type;
+        /**
+         * Enum CUSTOMIZED for value: "customized"
+         */
+        public static final ObtainModeEnum CUSTOMIZED = new ObtainModeEnum("customized");
+
+        /**
+         * Enum SPECIFIC for value: "specific"
+         */
+        public static final ObtainModeEnum SPECIFIC = new ObtainModeEnum("specific");
+
+        /**
+         * Enum BGP for value: "bgp"
+         */
+        public static final ObtainModeEnum BGP = new ObtainModeEnum("bgp");
+
+        private static final Map<String, ObtainModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ObtainModeEnum> createStaticFields() {
+            Map<String, ObtainModeEnum> map = new HashMap<>();
+            map.put("customized", CUSTOMIZED);
+            map.put("specific", SPECIFIC);
+            map.put("bgp", BGP);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ObtainModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ObtainModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObtainModeEnum(value));
+        }
+
+        public static ObtainModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ObtainModeEnum) {
+                return this.value.equals(((ObtainModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "obtain_mode")
 
-    private String obtainMode;
+    private ObtainModeEnum obtainMode;
+
+    /**
+     * 路由状态: - ACTIVE: 下发正常 - ERROR: 下发失败 - PENDING_CREATE: 待下发
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum ACTIVE for value: "ACTIVE"
+         */
+        public static final StatusEnum ACTIVE = new StatusEnum("ACTIVE");
+
+        /**
+         * Enum ERROR for value: "ERROR"
+         */
+        public static final StatusEnum ERROR = new StatusEnum("ERROR");
+
+        /**
+         * Enum PENDING_CREATE for value: "PENDING_CREATE"
+         */
+        public static final StatusEnum PENDING_CREATE = new StatusEnum("PENDING_CREATE");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("ACTIVE", ACTIVE);
+            map.put("ERROR", ERROR);
+            map.put("PENDING_CREATE", PENDING_CREATE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
-    private String status;
+    private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address_family")
 
-    private String addressFamily;
+    private AddressFamily addressFamily;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private RouteTypeOfGdgw type;
 
     public ShowGdgwRoutetable withId(String id) {
         this.id = id;
@@ -66,7 +223,7 @@ public class ShowGdgwRoutetable {
     }
 
     /**
-     * 唯一ID
+     * 路由id
      * @return id
      */
     public String getId() {
@@ -83,7 +240,7 @@ public class ShowGdgwRoutetable {
     }
 
     /**
-     * 租户ID
+     * 租户id
      * @return tenantId
      */
     public String getTenantId() {
@@ -100,7 +257,7 @@ public class ShowGdgwRoutetable {
     }
 
     /**
-     * 网关ID
+     * 网关id
      * @return gatewayId
      */
     public String getGatewayId() {
@@ -117,7 +274,7 @@ public class ShowGdgwRoutetable {
     }
 
     /**
-     * 描述信息
+     * 路由子网
      * @return destination
      */
     public String getDestination() {
@@ -134,7 +291,7 @@ public class ShowGdgwRoutetable {
     }
 
     /**
-     * 下一跳ID
+     * 下一跳id
      * @return nexthop
      */
     public String getNexthop() {
@@ -145,71 +302,54 @@ public class ShowGdgwRoutetable {
         this.nexthop = nexthop;
     }
 
-    public ShowGdgwRoutetable withType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
-     * 类型
-     * @return type
-     */
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public ShowGdgwRoutetable withObtainMode(String obtainMode) {
+    public ShowGdgwRoutetable withObtainMode(ObtainModeEnum obtainMode) {
         this.obtainMode = obtainMode;
         return this;
     }
 
     /**
-     * 获得模式
+     * 路由类型: - customized: 默认路由 - specific: 自定义路由 - bgp: 动态路由
      * @return obtainMode
      */
-    public String getObtainMode() {
+    public ObtainModeEnum getObtainMode() {
         return obtainMode;
     }
 
-    public void setObtainMode(String obtainMode) {
+    public void setObtainMode(ObtainModeEnum obtainMode) {
         this.obtainMode = obtainMode;
     }
 
-    public ShowGdgwRoutetable withStatus(String status) {
+    public ShowGdgwRoutetable withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 状态：ACTIVE-正常，ERROR-异常
+     * 路由状态: - ACTIVE: 下发正常 - ERROR: 下发失败 - PENDING_CREATE: 待下发
      * @return status
      */
-    public String getStatus() {
+    public StatusEnum getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(StatusEnum status) {
         this.status = status;
     }
 
-    public ShowGdgwRoutetable withAddressFamily(String addressFamily) {
+    public ShowGdgwRoutetable withAddressFamily(AddressFamily addressFamily) {
         this.addressFamily = addressFamily;
         return this;
     }
 
     /**
-     * 地址簇：ipv4 | ipv6
+     * Get addressFamily
      * @return addressFamily
      */
-    public String getAddressFamily() {
+    public AddressFamily getAddressFamily() {
         return addressFamily;
     }
 
-    public void setAddressFamily(String addressFamily) {
+    public void setAddressFamily(AddressFamily addressFamily) {
         this.addressFamily = addressFamily;
     }
 
@@ -219,7 +359,7 @@ public class ShowGdgwRoutetable {
     }
 
     /**
-     * 描述信息
+     * 路由描述
      * @return description
      */
     public String getDescription() {
@@ -228,6 +368,23 @@ public class ShowGdgwRoutetable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public ShowGdgwRoutetable withType(RouteTypeOfGdgw type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * Get type
+     * @return type
+     */
+    public RouteTypeOfGdgw getType() {
+        return type;
+    }
+
+    public void setType(RouteTypeOfGdgw type) {
+        this.type = type;
     }
 
     @Override
@@ -241,16 +398,15 @@ public class ShowGdgwRoutetable {
         ShowGdgwRoutetable that = (ShowGdgwRoutetable) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
             && Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.destination, that.destination)
-            && Objects.equals(this.nexthop, that.nexthop) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.obtainMode, that.obtainMode) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.addressFamily, that.addressFamily)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.nexthop, that.nexthop) && Objects.equals(this.obtainMode, that.obtainMode)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.addressFamily, that.addressFamily)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(id, tenantId, gatewayId, destination, nexthop, type, obtainMode, status, addressFamily, description);
+            .hash(id, tenantId, gatewayId, destination, nexthop, obtainMode, status, addressFamily, description, type);
     }
 
     @Override
@@ -262,11 +418,11 @@ public class ShowGdgwRoutetable {
         sb.append("    gatewayId: ").append(toIndentedString(gatewayId)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    nexthop: ").append(toIndentedString(nexthop)).append("\n");
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    obtainMode: ").append(toIndentedString(obtainMode)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    addressFamily: ").append(toIndentedString(addressFamily)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

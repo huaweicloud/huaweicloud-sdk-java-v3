@@ -45,6 +45,11 @@ public class ListCertificatesRequest {
 
     private Boolean deploySupport;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "owned_by_self")
+
+    private Boolean ownedBySelf;
+
     public ListCertificatesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -167,6 +172,23 @@ public class ListCertificatesRequest {
         this.deploySupport = deploySupport;
     }
 
+    public ListCertificatesRequest withOwnedBySelf(Boolean ownedBySelf) {
+        this.ownedBySelf = ownedBySelf;
+        return this;
+    }
+
+    /**
+     * 过滤资源是否属于当前租户，取值如下： - true：只查属于当前租户的资源，不包括共享资源。 - false：查询当前租户及共享给该租户的资源。
+     * @return ownedBySelf
+     */
+    public Boolean getOwnedBySelf() {
+        return ownedBySelf;
+    }
+
+    public void setOwnedBySelf(Boolean ownedBySelf) {
+        this.ownedBySelf = ownedBySelf;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,12 +202,13 @@ public class ListCertificatesRequest {
             && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.sortKey, that.sortKey)
             && Objects.equals(this.status, that.status)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.deploySupport, that.deploySupport);
+            && Objects.equals(this.deploySupport, that.deploySupport)
+            && Objects.equals(this.ownedBySelf, that.ownedBySelf);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, sortDir, sortKey, status, enterpriseProjectId, deploySupport);
+        return Objects.hash(limit, offset, sortDir, sortKey, status, enterpriseProjectId, deploySupport, ownedBySelf);
     }
 
     @Override
@@ -199,6 +222,7 @@ public class ListCertificatesRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    deploySupport: ").append(toIndentedString(deploySupport)).append("\n");
+        sb.append("    ownedBySelf: ").append(toIndentedString(ownedBySelf)).append("\n");
         sb.append("}");
         return sb.toString();
     }

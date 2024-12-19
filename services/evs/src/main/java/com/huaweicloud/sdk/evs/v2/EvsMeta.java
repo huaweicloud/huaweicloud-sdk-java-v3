@@ -72,12 +72,18 @@ import com.huaweicloud.sdk.evs.v2.model.ShowVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeResponse;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsRequest;
 import com.huaweicloud.sdk.evs.v2.model.ShowVolumeTagsResponse;
+import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeRequest;
+import com.huaweicloud.sdk.evs.v2.model.UnsubscribePostpaidVolumeResponse;
+import com.huaweicloud.sdk.evs.v2.model.UnsubscribeVolumeRequestBody;
+import com.huaweicloud.sdk.evs.v2.model.UnsubscribeVolumeResponseBody;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.UpdateSnapshotResponse;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeRequest;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeRequestBody;
 import com.huaweicloud.sdk.evs.v2.model.UpdateVolumeResponse;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class EvsMeta {
@@ -871,6 +877,40 @@ public class EvsMeta {
             f -> f.withMarshaller(ShowVolumeTagsRequest::getVolumeId, ShowVolumeTagsRequest::setVolumeId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnsubscribePostpaidVolumeRequest, UnsubscribePostpaidVolumeResponse> unsubscribePostpaidVolume =
+        genForUnsubscribePostpaidVolume();
+
+    private static HttpRequestDef<UnsubscribePostpaidVolumeRequest, UnsubscribePostpaidVolumeResponse> genForUnsubscribePostpaidVolume() {
+        // basic
+        HttpRequestDef.Builder<UnsubscribePostpaidVolumeRequest, UnsubscribePostpaidVolumeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UnsubscribePostpaidVolumeRequest.class,
+                    UnsubscribePostpaidVolumeResponse.class)
+                .withName("UnsubscribePostpaidVolume")
+                .withUri("/v2/{project_id}/cloudvolumes/unsubscribe")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<UnsubscribeVolumeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UnsubscribeVolumeRequestBody.class),
+            f -> f.withMarshaller(UnsubscribePostpaidVolumeRequest::getBody,
+                UnsubscribePostpaidVolumeRequest::setBody));
+
+        // response
+        builder.<List<UnsubscribeVolumeResponseBody>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(UnsubscribePostpaidVolumeResponse::getBody, UnsubscribePostpaidVolumeResponse::setBody)
+                .withInnerContainerType(UnsubscribeVolumeResponseBody.class));
 
         return builder.build();
     }

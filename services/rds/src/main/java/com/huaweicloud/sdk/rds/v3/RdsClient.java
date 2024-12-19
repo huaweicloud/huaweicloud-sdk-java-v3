@@ -245,6 +245,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListSslCertDownloadLinkResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListStorageTypesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesRequest;
@@ -2778,6 +2780,36 @@ public class RdsClient {
     public SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypesInvoker(
         ListStorageTypesRequest request) {
         return new SyncInvoker<>(request, RdsMeta.listStorageTypes, hcClient);
+    }
+
+    /**
+     * 查询高级备份策略
+     *
+     * 查询高级备份策略，可查看自定义稀疏备份等
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUpdateBackupEnhancePolicyRequest 请求对象
+     * @return ListUpdateBackupEnhancePolicyResponse
+     */
+    public ListUpdateBackupEnhancePolicyResponse listUpdateBackupEnhancePolicy(
+        ListUpdateBackupEnhancePolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listUpdateBackupEnhancePolicy);
+    }
+
+    /**
+     * 查询高级备份策略
+     *
+     * 查询高级备份策略，可查看自定义稀疏备份等
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUpdateBackupEnhancePolicyRequest 请求对象
+     * @return SyncInvoker<ListUpdateBackupEnhancePolicyRequest, ListUpdateBackupEnhancePolicyResponse>
+     */
+    public SyncInvoker<ListUpdateBackupEnhancePolicyRequest, ListUpdateBackupEnhancePolicyResponse> listUpdateBackupEnhancePolicyInvoker(
+        ListUpdateBackupEnhancePolicyRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listUpdateBackupEnhancePolicy, hcClient);
     }
 
     /**

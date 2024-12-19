@@ -40,7 +40,7 @@ public class ShowQuotasResponseBodyQuotas {
     }
 
     /**
-     * Get resources
+     * 不同资源配额使用详情列表
      * @return resources
      */
     public List<Info> getResources() {

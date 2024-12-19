@@ -89,7 +89,7 @@ public class UpdateVirtualGateway {
     }
 
     /**
-     * 虚拟网关到访问云上服务IPv4子网列表，通常是vpc的cidrs
+     * 虚拟网关到访问云上服务IPv4子网列表，通常是vpc的cidrs[，当虚拟网关接入VPC时该列表才允许更新。](tag:dt)
      * @return localEpGroup
      */
     public List<String> getLocalEpGroup() {
@@ -122,7 +122,7 @@ public class UpdateVirtualGateway {
     }
 
     /**
-     * 虚拟网关到访问云上服务IPv6子网列表，通常是vpc的cidrs
+     * 虚拟网关到访问云上服务IPv6子网列表，通常是vpc的cidrs。[（预留字段，暂不支持）](tag:dt)
      * @return localEpGroupIpv6
      */
     public List<String> getLocalEpGroupIpv6() {

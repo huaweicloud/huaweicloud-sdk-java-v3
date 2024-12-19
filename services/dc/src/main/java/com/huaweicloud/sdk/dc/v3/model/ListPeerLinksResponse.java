@@ -15,14 +15,9 @@ import java.util.function.Consumer;
 public class ListPeerLinksResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "request_id")
-
-    private String requestId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "peer_links")
 
-    private List<ExternalListPeerLinks> peerLinks = null;
+    private List<PeerLinkEntry> peerLinks = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
@@ -30,33 +25,16 @@ public class ListPeerLinksResponse extends SdkResponse {
     private PageInfo pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Request-Id")
+    @JsonProperty(value = "request_id")
 
-    private String xRequestId;
+    private String requestId;
 
-    public ListPeerLinksResponse withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-    /**
-     * Get requestId
-     * @return requestId
-     */
-    public String getRequestId() {
-        return requestId;
-    }
-
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
-    }
-
-    public ListPeerLinksResponse withPeerLinks(List<ExternalListPeerLinks> peerLinks) {
+    public ListPeerLinksResponse withPeerLinks(List<PeerLinkEntry> peerLinks) {
         this.peerLinks = peerLinks;
         return this;
     }
 
-    public ListPeerLinksResponse addPeerLinksItem(ExternalListPeerLinks peerLinksItem) {
+    public ListPeerLinksResponse addPeerLinksItem(PeerLinkEntry peerLinksItem) {
         if (this.peerLinks == null) {
             this.peerLinks = new ArrayList<>();
         }
@@ -64,7 +42,7 @@ public class ListPeerLinksResponse extends SdkResponse {
         return this;
     }
 
-    public ListPeerLinksResponse withPeerLinks(Consumer<List<ExternalListPeerLinks>> peerLinksSetter) {
+    public ListPeerLinksResponse withPeerLinks(Consumer<List<PeerLinkEntry>> peerLinksSetter) {
         if (this.peerLinks == null) {
             this.peerLinks = new ArrayList<>();
         }
@@ -73,14 +51,14 @@ public class ListPeerLinksResponse extends SdkResponse {
     }
 
     /**
-     * Get peerLinks
+     * 专线关联连接列表。
      * @return peerLinks
      */
-    public List<ExternalListPeerLinks> getPeerLinks() {
+    public List<PeerLinkEntry> getPeerLinks() {
         return peerLinks;
     }
 
-    public void setPeerLinks(List<ExternalListPeerLinks> peerLinks) {
+    public void setPeerLinks(List<PeerLinkEntry> peerLinks) {
         this.peerLinks = peerLinks;
     }
 
@@ -110,23 +88,21 @@ public class ListPeerLinksResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
-    public ListPeerLinksResponse withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
+    public ListPeerLinksResponse withRequestId(String requestId) {
+        this.requestId = requestId;
         return this;
     }
 
     /**
-     * Get xRequestId
-     * @return xRequestId
+     * 请求ID。
+     * @return requestId
      */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Request-Id")
-    public String getXRequestId() {
-        return xRequestId;
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
     @Override
@@ -138,23 +114,22 @@ public class ListPeerLinksResponse extends SdkResponse {
             return false;
         }
         ListPeerLinksResponse that = (ListPeerLinksResponse) obj;
-        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.peerLinks, that.peerLinks)
-            && Objects.equals(this.pageInfo, that.pageInfo) && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.peerLinks, that.peerLinks) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, peerLinks, pageInfo, xRequestId);
+        return Objects.hash(peerLinks, pageInfo, requestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListPeerLinksResponse {\n");
-        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    peerLinks: ").append(toIndentedString(peerLinks)).append("\n");
         sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

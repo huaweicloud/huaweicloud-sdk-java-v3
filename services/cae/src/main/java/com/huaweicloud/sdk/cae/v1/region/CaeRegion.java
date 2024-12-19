@@ -14,16 +14,20 @@ import java.util.stream.Collectors;
 
 public class CaeRegion {
 
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://cae.cn-north-4.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 =
+        new Region("cn-north-4", "https://cae.cn-north-4.myhuaweicloud.com", "https://cae.cn-north-4.myhuaweicloud.cn");
 
-    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://cae.cn-east-3.myhuaweicloud.com");
+    public static final Region CN_EAST_3 =
+        new Region("cn-east-3", "https://cae.cn-east-3.myhuaweicloud.com", "https://cae.cn-east-3.myhuaweicloud.cn");
 
-    public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://cae.cn-south-1.myhuaweicloud.com");
+    public static final Region CN_SOUTH_1 =
+        new Region("cn-south-1", "https://cae.cn-south-1.myhuaweicloud.com", "https://cae.cn-south-1.myhuaweicloud.cn");
 
-    public static final Region AP_SOUTHEAST_3 =
-        new Region("ap-southeast-3", "https://cae.ap-southeast-3.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_3 = new Region("ap-southeast-3",
+        "https://cae.ap-southeast-3.myhuaweicloud.com", "https://cae.ap-southeast-3.myhuaweicloud.cn");
 
-    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://cae.af-south-1.myhuaweicloud.com");
+    public static final Region AF_SOUTH_1 =
+        new Region("af-south-1", "https://cae.af-south-1.myhuaweicloud.com", "https://cae.af-south-1.myhuaweicloud.cn");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CAE");
 
