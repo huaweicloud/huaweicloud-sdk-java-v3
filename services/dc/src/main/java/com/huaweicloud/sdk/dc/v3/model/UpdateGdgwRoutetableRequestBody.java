@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 修改全域接入网关路由表的request
+ * 注意：新增、删除、修改操作互斥，一次请求只能执行其中一类操作
  */
 public class UpdateGdgwRoutetableRequestBody {
 

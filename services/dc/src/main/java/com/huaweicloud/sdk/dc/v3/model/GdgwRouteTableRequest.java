@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * GdgwRouteTableRequest
+ * 修改路由入参对象
  */
 public class GdgwRouteTableRequest {
 

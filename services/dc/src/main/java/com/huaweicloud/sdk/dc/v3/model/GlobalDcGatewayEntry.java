@@ -40,6 +40,11 @@ public class GlobalDcGatewayEntry {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reason")
+
+    private String reason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -245,6 +250,23 @@ public class GlobalDcGatewayEntry {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public GlobalDcGatewayEntry withReason(String reason) {
+        this.reason = reason;
+        return this;
+    }
+
+    /**
+     * 失败原因
+     * @return reason
+     */
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public GlobalDcGatewayEntry withEnterpriseProjectId(String enterpriseProjectId) {
@@ -523,6 +545,7 @@ public class GlobalDcGatewayEntry {
         GlobalDcGatewayEntry that = (GlobalDcGatewayEntry) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.reason, that.reason)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.globalCenterNetworkId, that.globalCenterNetworkId)
             && Objects.equals(this.bgpAsn, that.bgpAsn) && Objects.equals(this.regionId, that.regionId)
@@ -541,6 +564,7 @@ public class GlobalDcGatewayEntry {
             tenantId,
             name,
             description,
+            reason,
             enterpriseProjectId,
             globalCenterNetworkId,
             bgpAsn,
@@ -565,6 +589,7 @@ public class GlobalDcGatewayEntry {
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    globalCenterNetworkId: ").append(toIndentedString(globalCenterNetworkId)).append("\n");
         sb.append("    bgpAsn: ").append(toIndentedString(bgpAsn)).append("\n");

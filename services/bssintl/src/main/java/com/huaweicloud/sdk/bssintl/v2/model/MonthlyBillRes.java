@@ -244,6 +244,11 @@ public class MonthlyBillRes {
 
     private String expireTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consume_time")
+
+    private String consumeTime;
+
     public MonthlyBillRes withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -1042,6 +1047,23 @@ public class MonthlyBillRes {
         this.expireTime = expireTime;
     }
 
+    public MonthlyBillRes withConsumeTime(String consumeTime) {
+        this.consumeTime = consumeTime;
+        return this;
+    }
+
+    /**
+     * |参数名称：消费时间| |参数约束及描述：消费时间，UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ。包周期、预留实例预付为交易时间，按需、预留实例按时计费为话单生失效时间。 说明：当statistic_type=3时有效。|
+     * @return consumeTime
+     */
+    public String getConsumeTime() {
+        return consumeTime;
+    }
+
+    public void setConsumeTime(String consumeTime) {
+        this.consumeTime = consumeTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1087,7 +1109,7 @@ public class MonthlyBillRes {
             && Objects.equals(this.preOrderId, that.preOrderId) && Objects.equals(this.azCodeInfos, that.azCodeInfos)
             && Objects.equals(this.payerAccountId, that.payerAccountId)
             && Objects.equals(this.effectiveTime, that.effectiveTime)
-            && Objects.equals(this.expireTime, that.expireTime);
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.consumeTime, that.consumeTime);
     }
 
     @Override
@@ -1137,7 +1159,8 @@ public class MonthlyBillRes {
             azCodeInfos,
             payerAccountId,
             effectiveTime,
-            expireTime);
+            expireTime,
+            consumeTime);
     }
 
     @Override
@@ -1190,6 +1213,7 @@ public class MonthlyBillRes {
         sb.append("    payerAccountId: ").append(toIndentedString(payerAccountId)).append("\n");
         sb.append("    effectiveTime: ").append(toIndentedString(effectiveTime)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
+        sb.append("    consumeTime: ").append(toIndentedString(consumeTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

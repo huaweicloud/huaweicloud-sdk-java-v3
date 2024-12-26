@@ -28,6 +28,11 @@ public class CreateLogGroupParams {
 
     private List<TagsBody> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_name_alias")
+
+    private String logGroupNameAlias;
+
     public CreateLogGroupParams withLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
         return this;
@@ -97,6 +102,23 @@ public class CreateLogGroupParams {
         this.tags = tags;
     }
 
+    public CreateLogGroupParams withLogGroupNameAlias(String logGroupNameAlias) {
+        this.logGroupNameAlias = logGroupNameAlias;
+        return this;
+    }
+
+    /**
+     * 日志组别名
+     * @return logGroupNameAlias
+     */
+    public String getLogGroupNameAlias() {
+        return logGroupNameAlias;
+    }
+
+    public void setLogGroupNameAlias(String logGroupNameAlias) {
+        this.logGroupNameAlias = logGroupNameAlias;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -107,12 +129,12 @@ public class CreateLogGroupParams {
         }
         CreateLogGroupParams that = (CreateLogGroupParams) obj;
         return Objects.equals(this.logGroupName, that.logGroupName) && Objects.equals(this.ttlInDays, that.ttlInDays)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.logGroupNameAlias, that.logGroupNameAlias);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logGroupName, ttlInDays, tags);
+        return Objects.hash(logGroupName, ttlInDays, tags, logGroupNameAlias);
     }
 
     @Override
@@ -122,6 +144,7 @@ public class CreateLogGroupParams {
         sb.append("    logGroupName: ").append(toIndentedString(logGroupName)).append("\n");
         sb.append("    ttlInDays: ").append(toIndentedString(ttlInDays)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    logGroupNameAlias: ").append(toIndentedString(logGroupNameAlias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

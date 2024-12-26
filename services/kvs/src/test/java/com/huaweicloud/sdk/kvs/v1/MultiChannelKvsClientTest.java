@@ -153,26 +153,6 @@ public class MultiChannelKvsClientTest {
     }
 
     @Test
-    public void threeClientsCreateTableTestWith1Unusable() throws Exception {
-        Configurations configs = new Configurations();
-        this.builder = configs.propertiesBuilder(configFilePath);
-        this.config = builder.getConfiguration();
-
-        PowerMockito.when(mockKvsClient2.checkHealth(Mockito.any()))
-            .thenThrow(new ConnectionException("mock socket timeout"));
-        Thread.sleep(3000);
-
-        CreateTableRequest request = new CreateTableRequest();
-        for (int count = 0; count < 7; count++) {
-            multiChannelKvsClient.createTable(request);
-        }
-
-        Assert.assertEquals(3, clientInvokeCount1.intValue());
-        Assert.assertEquals(0, clientInvokeCount2.intValue());
-        Assert.assertEquals(4, clientInvokeCount3.intValue());
-    }
-
-    @Test
     public void threeClientsCreateTableTestWith1IntervalUnusable() throws Exception {
         Configurations configs = new Configurations();
         this.builder = configs.propertiesBuilder(configFilePath);

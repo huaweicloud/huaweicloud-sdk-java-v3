@@ -20,16 +20,6 @@ public class ListLogStreamsRequest {
 
     private String logStreamName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
-
-    private Integer offset;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private Integer limit;
-
     public ListLogStreamsRequest withLogGroupName(String logGroupName) {
         this.logGroupName = logGroupName;
         return this;
@@ -64,44 +54,6 @@ public class ListLogStreamsRequest {
         this.logStreamName = logStreamName;
     }
 
-    public ListLogStreamsRequest withOffset(Integer offset) {
-        this.offset = offset;
-        return this;
-    }
-
-    /**
-     * 查询游标，初始传入0，后续从上一次的返回值中获取
-     * minimum: 0
-     * maximum: 1024
-     * @return offset
-     */
-    public Integer getOffset() {
-        return offset;
-    }
-
-    public void setOffset(Integer offset) {
-        this.offset = offset;
-    }
-
-    public ListLogStreamsRequest withLimit(Integer limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * 每页数据量，最大值为100
-     * minimum: 0
-     * maximum: 100
-     * @return limit
-     */
-    public Integer getLimit() {
-        return limit;
-    }
-
-    public void setLimit(Integer limit) {
-        this.limit = limit;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -112,13 +64,12 @@ public class ListLogStreamsRequest {
         }
         ListLogStreamsRequest that = (ListLogStreamsRequest) obj;
         return Objects.equals(this.logGroupName, that.logGroupName)
-            && Objects.equals(this.logStreamName, that.logStreamName) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.logStreamName, that.logStreamName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logGroupName, logStreamName, offset, limit);
+        return Objects.hash(logGroupName, logStreamName);
     }
 
     @Override
@@ -127,8 +78,6 @@ public class ListLogStreamsRequest {
         sb.append("class ListLogStreamsRequest {\n");
         sb.append("    logGroupName: ").append(toIndentedString(logGroupName)).append("\n");
         sb.append("    logStreamName: ").append(toIndentedString(logStreamName)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -31,6 +31,16 @@ public class ListVoiceTrainingJobRequest {
     private String createSince;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_until")
+
+    private String updateUntil;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_since")
+
+    private String updateSince;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-App-UserId")
 
     private String xAppUserId;
@@ -64,6 +74,16 @@ public class ListVoiceTrainingJobRequest {
     @JsonProperty(value = "batch_name")
 
     private String batchName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_key")
+
+    private String sortKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_dir")
+
+    private String sortDir;
 
     public ListVoiceTrainingJobRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -135,6 +155,40 @@ public class ListVoiceTrainingJobRequest {
 
     public void setCreateSince(String createSince) {
         this.createSince = createSince;
+    }
+
+    public ListVoiceTrainingJobRequest withUpdateUntil(String updateUntil) {
+        this.updateUntil = updateUntil;
+        return this;
+    }
+
+    /**
+     * 过滤更新时间<=输入时间的记录。
+     * @return updateUntil
+     */
+    public String getUpdateUntil() {
+        return updateUntil;
+    }
+
+    public void setUpdateUntil(String updateUntil) {
+        this.updateUntil = updateUntil;
+    }
+
+    public ListVoiceTrainingJobRequest withUpdateSince(String updateSince) {
+        this.updateSince = updateSince;
+        return this;
+    }
+
+    /**
+     * 过滤更新时间>=输入时间的记录。
+     * @return updateSince
+     */
+    public String getUpdateSince() {
+        return updateSince;
+    }
+
+    public void setUpdateSince(String updateSince) {
+        this.updateSince = updateSince;
     }
 
     public ListVoiceTrainingJobRequest withXAppUserId(String xAppUserId) {
@@ -258,6 +312,40 @@ public class ListVoiceTrainingJobRequest {
         this.batchName = batchName;
     }
 
+    public ListVoiceTrainingJobRequest withSortKey(String sortKey) {
+        this.sortKey = sortKey;
+        return this;
+    }
+
+    /**
+     * 排序字段，当前支持：ceate_time/update_time
+     * @return sortKey
+     */
+    public String getSortKey() {
+        return sortKey;
+    }
+
+    public void setSortKey(String sortKey) {
+        this.sortKey = sortKey;
+    }
+
+    public ListVoiceTrainingJobRequest withSortDir(String sortDir) {
+        this.sortDir = sortDir;
+        return this;
+    }
+
+    /**
+     * 排序规则：desc(降序)/asc(升序)
+     * @return sortDir
+     */
+    public String getSortDir() {
+        return sortDir;
+    }
+
+    public void setSortDir(String sortDir) {
+        this.sortDir = sortDir;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -269,10 +357,12 @@ public class ListVoiceTrainingJobRequest {
         ListVoiceTrainingJobRequest that = (ListVoiceTrainingJobRequest) obj;
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.createUntil, that.createUntil) && Objects.equals(this.createSince, that.createSince)
+            && Objects.equals(this.updateUntil, that.updateUntil) && Objects.equals(this.updateSince, that.updateSince)
             && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.state, that.state)
             && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.voiceName, that.voiceName)
             && Objects.equals(this.tag, that.tag) && Objects.equals(this.jobType, that.jobType)
-            && Objects.equals(this.batchName, that.batchName);
+            && Objects.equals(this.batchName, that.batchName) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override
@@ -281,13 +371,17 @@ public class ListVoiceTrainingJobRequest {
             limit,
             createUntil,
             createSince,
+            updateUntil,
+            updateSince,
             xAppUserId,
             state,
             jobId,
             voiceName,
             tag,
             jobType,
-            batchName);
+            batchName,
+            sortKey,
+            sortDir);
     }
 
     @Override
@@ -298,6 +392,8 @@ public class ListVoiceTrainingJobRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    createUntil: ").append(toIndentedString(createUntil)).append("\n");
         sb.append("    createSince: ").append(toIndentedString(createSince)).append("\n");
+        sb.append("    updateUntil: ").append(toIndentedString(updateUntil)).append("\n");
+        sb.append("    updateSince: ").append(toIndentedString(updateSince)).append("\n");
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    state: ").append(toIndentedString(state)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
@@ -305,6 +401,8 @@ public class ListVoiceTrainingJobRequest {
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
+        sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
+        sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -366,6 +366,92 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
 
     private RoomStateEnum roomState;
 
+    /**
+     * 直播间确认状态。此状态仅用于特定用户需要人工确认场景。 - UNCONFIRM: 未确认 - CONFIRMED：已确认 - REJECT： 拒绝
+     */
+    public static final class ConfirmStateEnum {
+
+        /**
+         * Enum UNCONFIRM for value: "UNCONFIRM"
+         */
+        public static final ConfirmStateEnum UNCONFIRM = new ConfirmStateEnum("UNCONFIRM");
+
+        /**
+         * Enum CONFIRMED for value: "CONFIRMED"
+         */
+        public static final ConfirmStateEnum CONFIRMED = new ConfirmStateEnum("CONFIRMED");
+
+        /**
+         * Enum REJECT for value: "REJECT"
+         */
+        public static final ConfirmStateEnum REJECT = new ConfirmStateEnum("REJECT");
+
+        private static final Map<String, ConfirmStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ConfirmStateEnum> createStaticFields() {
+            Map<String, ConfirmStateEnum> map = new HashMap<>();
+            map.put("UNCONFIRM", UNCONFIRM);
+            map.put("CONFIRMED", CONFIRMED);
+            map.put("REJECT", REJECT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ConfirmStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ConfirmStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConfirmStateEnum(value));
+        }
+
+        public static ConfirmStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ConfirmStateEnum) {
+                return this.value.equals(((ConfirmStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "confirm_state")
+
+    private ConfirmStateEnum confirmState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "script_version")
+
+    private String scriptVersion;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_info")
 
@@ -967,6 +1053,40 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
         this.roomState = roomState;
     }
 
+    public ShowSmartLiveRoomResponse withConfirmState(ConfirmStateEnum confirmState) {
+        this.confirmState = confirmState;
+        return this;
+    }
+
+    /**
+     * 直播间确认状态。此状态仅用于特定用户需要人工确认场景。 - UNCONFIRM: 未确认 - CONFIRMED：已确认 - REJECT： 拒绝
+     * @return confirmState
+     */
+    public ConfirmStateEnum getConfirmState() {
+        return confirmState;
+    }
+
+    public void setConfirmState(ConfirmStateEnum confirmState) {
+        this.confirmState = confirmState;
+    }
+
+    public ShowSmartLiveRoomResponse withScriptVersion(String scriptVersion) {
+        this.scriptVersion = scriptVersion;
+        return this;
+    }
+
+    /**
+     * 直播间剧本版本。调用update接口即更新版本。使用时间戳。
+     * @return scriptVersion
+     */
+    public String getScriptVersion() {
+        return scriptVersion;
+    }
+
+    public void setScriptVersion(String scriptVersion) {
+        this.scriptVersion = scriptVersion;
+    }
+
     public ShowSmartLiveRoomResponse withErrorInfo(ErrorResponse errorInfo) {
         this.errorInfo = errorInfo;
         return this;
@@ -1038,7 +1158,8 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
             && Objects.equals(this.relationLivePlatformInfo, that.relationLivePlatformInfo)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.coverUrl, that.coverUrl) && Objects.equals(this.thumbnail, that.thumbnail)
-            && Objects.equals(this.roomState, that.roomState) && Objects.equals(this.errorInfo, that.errorInfo)
+            && Objects.equals(this.roomState, that.roomState) && Objects.equals(this.confirmState, that.confirmState)
+            && Objects.equals(this.scriptVersion, that.scriptVersion) && Objects.equals(this.errorInfo, that.errorInfo)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
@@ -1069,6 +1190,8 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
             coverUrl,
             thumbnail,
             roomState,
+            confirmState,
+            scriptVersion,
             errorInfo,
             xRequestId);
     }
@@ -1102,6 +1225,8 @@ public class ShowSmartLiveRoomResponse extends SdkResponse {
         sb.append("    coverUrl: ").append(toIndentedString(coverUrl)).append("\n");
         sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
         sb.append("    roomState: ").append(toIndentedString(roomState)).append("\n");
+        sb.append("    confirmState: ").append(toIndentedString(confirmState)).append("\n");
+        sb.append("    scriptVersion: ").append(toIndentedString(scriptVersion)).append("\n");
         sb.append("    errorInfo: ").append(toIndentedString(errorInfo)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");

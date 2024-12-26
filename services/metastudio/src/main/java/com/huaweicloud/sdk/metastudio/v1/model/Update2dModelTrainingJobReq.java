@@ -439,7 +439,7 @@ public class Update2dModelTrainingJobReq {
     }
 
     /**
-     * 该任务所生成的模型支持的业务类型，可多选
+     * 该任务所生成的模型支持的业务类型，可多选。  Flexus版数字人仅支持选择“VIDEO_2D”。
      * @return supportedService
      */
     public List<SupportedServiceEnum> getSupportedService() {

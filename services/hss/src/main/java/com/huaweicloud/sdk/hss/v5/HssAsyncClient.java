@@ -45,6 +45,8 @@ import com.huaweicloud.sdk.hss.v5.model.ExportVulsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ExportVulsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAccountsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAccountsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAgentInstallScriptRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAgentInstallScriptResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAppChangeHistoriesRequest;
@@ -810,6 +812,36 @@ public class HssAsyncClient {
     public AsyncInvoker<ListAccountsRequest, ListAccountsResponse> listAccountsAsyncInvoker(
         ListAccountsRequest request) {
         return new AsyncInvoker<>(request, HssMeta.listAccounts, hcClient);
+    }
+
+    /**
+     * 查询agent安装脚本
+     *
+     * 查询agent安装脚本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAgentInstallScriptRequest 请求对象
+     * @return CompletableFuture<ListAgentInstallScriptResponse>
+     */
+    public CompletableFuture<ListAgentInstallScriptResponse> listAgentInstallScriptAsync(
+        ListAgentInstallScriptRequest request) {
+        return hcClient.asyncInvokeHttp(request, HssMeta.listAgentInstallScript);
+    }
+
+    /**
+     * 查询agent安装脚本
+     *
+     * 查询agent安装脚本
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAgentInstallScriptRequest 请求对象
+     * @return AsyncInvoker<ListAgentInstallScriptRequest, ListAgentInstallScriptResponse>
+     */
+    public AsyncInvoker<ListAgentInstallScriptRequest, ListAgentInstallScriptResponse> listAgentInstallScriptAsyncInvoker(
+        ListAgentInstallScriptRequest request) {
+        return new AsyncInvoker<>(request, HssMeta.listAgentInstallScript, hcClient);
     }
 
     /**

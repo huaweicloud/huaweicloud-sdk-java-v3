@@ -22,6 +22,11 @@ public class UpdateSubscriptionTargetRequest {
     private String targetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private SubscriptionTarget body;
@@ -60,6 +65,23 @@ public class UpdateSubscriptionTargetRequest {
         this.targetId = targetId;
     }
 
+    public UpdateSubscriptionTargetRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 创建订阅时所使用的企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     public UpdateSubscriptionTargetRequest withBody(SubscriptionTarget body) {
         this.body = body;
         return this;
@@ -96,12 +118,13 @@ public class UpdateSubscriptionTargetRequest {
         }
         UpdateSubscriptionTargetRequest that = (UpdateSubscriptionTargetRequest) obj;
         return Objects.equals(this.subscriptionId, that.subscriptionId) && Objects.equals(this.targetId, that.targetId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subscriptionId, targetId, body);
+        return Objects.hash(subscriptionId, targetId, enterpriseProjectId, body);
     }
 
     @Override
@@ -110,6 +133,7 @@ public class UpdateSubscriptionTargetRequest {
         sb.append("class UpdateSubscriptionTargetRequest {\n");
         sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
         sb.append("    targetId: ").append(toIndentedString(targetId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

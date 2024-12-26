@@ -20,16 +20,6 @@ public class ListEventStreamingRequest {
 
     private Integer limit;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "name")
-
-    private String name;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "fuzzy_name")
-
-    private String fuzzyName;
-
     public ListEventStreamingRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -68,40 +58,6 @@ public class ListEventStreamingRequest {
         this.limit = limit;
     }
 
-    public ListEventStreamingRequest withName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    /**
-     * 指定查询的事件订阅名称，精准匹配
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ListEventStreamingRequest withFuzzyName(String fuzzyName) {
-        this.fuzzyName = fuzzyName;
-        return this;
-    }
-
-    /**
-     * 指定查询的事件流名称，模糊匹配
-     * @return fuzzyName
-     */
-    public String getFuzzyName() {
-        return fuzzyName;
-    }
-
-    public void setFuzzyName(String fuzzyName) {
-        this.fuzzyName = fuzzyName;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -111,13 +67,12 @@ public class ListEventStreamingRequest {
             return false;
         }
         ListEventStreamingRequest that = (ListEventStreamingRequest) obj;
-        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.fuzzyName, that.fuzzyName);
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, name, fuzzyName);
+        return Objects.hash(offset, limit);
     }
 
     @Override
@@ -126,8 +81,6 @@ public class ListEventStreamingRequest {
         sb.append("class ListEventStreamingRequest {\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    fuzzyName: ").append(toIndentedString(fuzzyName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

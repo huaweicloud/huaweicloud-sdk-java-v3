@@ -15,11 +15,6 @@ public class ShowDetailOfEventRequest {
 
     private String traceId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "channel_id")
-
-    private String channelId;
-
     public ShowDetailOfEventRequest withTraceId(String traceId) {
         this.traceId = traceId;
         return this;
@@ -37,23 +32,6 @@ public class ShowDetailOfEventRequest {
         this.traceId = traceId;
     }
 
-    public ShowDetailOfEventRequest withChannelId(String channelId) {
-        this.channelId = channelId;
-        return this;
-    }
-
-    /**
-     * 指定查询的事件通道ID
-     * @return channelId
-     */
-    public String getChannelId() {
-        return channelId;
-    }
-
-    public void setChannelId(String channelId) {
-        this.channelId = channelId;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +41,12 @@ public class ShowDetailOfEventRequest {
             return false;
         }
         ShowDetailOfEventRequest that = (ShowDetailOfEventRequest) obj;
-        return Objects.equals(this.traceId, that.traceId) && Objects.equals(this.channelId, that.channelId);
+        return Objects.equals(this.traceId, that.traceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(traceId, channelId);
+        return Objects.hash(traceId);
     }
 
     @Override
@@ -76,7 +54,6 @@ public class ShowDetailOfEventRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowDetailOfEventRequest {\n");
         sb.append("    traceId: ").append(toIndentedString(traceId)).append("\n");
-        sb.append("    channelId: ").append(toIndentedString(channelId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -22,7 +22,7 @@ public class ListGdgwRouteTablesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gdgw_routetable")
 
-    private List<ShowGdgwRoutetable> gdgwRoutetable = null;
+    private List<CommonRoutetable> gdgwRoutetable = null;
 
     public ListGdgwRouteTablesResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -41,12 +41,12 @@ public class ListGdgwRouteTablesResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ListGdgwRouteTablesResponse withGdgwRoutetable(List<ShowGdgwRoutetable> gdgwRoutetable) {
+    public ListGdgwRouteTablesResponse withGdgwRoutetable(List<CommonRoutetable> gdgwRoutetable) {
         this.gdgwRoutetable = gdgwRoutetable;
         return this;
     }
 
-    public ListGdgwRouteTablesResponse addGdgwRoutetableItem(ShowGdgwRoutetable gdgwRoutetableItem) {
+    public ListGdgwRouteTablesResponse addGdgwRoutetableItem(CommonRoutetable gdgwRoutetableItem) {
         if (this.gdgwRoutetable == null) {
             this.gdgwRoutetable = new ArrayList<>();
         }
@@ -54,7 +54,7 @@ public class ListGdgwRouteTablesResponse extends SdkResponse {
         return this;
     }
 
-    public ListGdgwRouteTablesResponse withGdgwRoutetable(Consumer<List<ShowGdgwRoutetable>> gdgwRoutetableSetter) {
+    public ListGdgwRouteTablesResponse withGdgwRoutetable(Consumer<List<CommonRoutetable>> gdgwRoutetableSetter) {
         if (this.gdgwRoutetable == null) {
             this.gdgwRoutetable = new ArrayList<>();
         }
@@ -66,11 +66,11 @@ public class ListGdgwRouteTablesResponse extends SdkResponse {
      * 全域接入网关路由表
      * @return gdgwRoutetable
      */
-    public List<ShowGdgwRoutetable> getGdgwRoutetable() {
+    public List<CommonRoutetable> getGdgwRoutetable() {
         return gdgwRoutetable;
     }
 
-    public void setGdgwRoutetable(List<ShowGdgwRoutetable> gdgwRoutetable) {
+    public void setGdgwRoutetable(List<CommonRoutetable> gdgwRoutetable) {
         this.gdgwRoutetable = gdgwRoutetable;
     }
 

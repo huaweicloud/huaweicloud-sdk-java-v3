@@ -34,6 +34,11 @@ public class NodeTypes {
     private String datastoreType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "architecture")
+
+    private String architecture;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_zones")
 
     private List<NodeTypeAvailableZones> availableZones = null;
@@ -145,6 +150,23 @@ public class NodeTypes {
 
     public void setDatastoreType(String datastoreType) {
         this.datastoreType = datastoreType;
+    }
+
+    public NodeTypes withArchitecture(String architecture) {
+        this.architecture = architecture;
+        return this;
+    }
+
+    /**
+     * 架构类型 - x86。 - arm。
+     * @return architecture
+     */
+    public String getArchitecture() {
+        return architecture;
+    }
+
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
     }
 
     public NodeTypes withAvailableZones(List<NodeTypeAvailableZones> availableZones) {
@@ -317,6 +339,7 @@ public class NodeTypes {
         NodeTypes that = (NodeTypes) obj;
         return Objects.equals(this.specName, that.specName) && Objects.equals(this.detail, that.detail)
             && Objects.equals(this.id, that.id) && Objects.equals(this.datastoreType, that.datastoreType)
+            && Objects.equals(this.architecture, that.architecture)
             && Objects.equals(this.availableZones, that.availableZones) && Objects.equals(this.ram, that.ram)
             && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.datastores, that.datastores)
             && Objects.equals(this.volume, that.volume)
@@ -329,6 +352,7 @@ public class NodeTypes {
             detail,
             id,
             datastoreType,
+            architecture,
             availableZones,
             ram,
             vcpus,
@@ -345,6 +369,7 @@ public class NodeTypes {
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
+        sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
         sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
         sb.append("    ram: ").append(toIndentedString(ram)).append("\n");
         sb.append("    vcpus: ").append(toIndentedString(vcpus)).append("\n");

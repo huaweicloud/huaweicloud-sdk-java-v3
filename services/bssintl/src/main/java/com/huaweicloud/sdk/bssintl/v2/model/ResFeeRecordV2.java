@@ -291,6 +291,11 @@ public class ResFeeRecordV2 {
 
     private String subResourceName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consume_time")
+
+    private String consumeTime;
+
     public ResFeeRecordV2 withBillDate(String billDate) {
         this.billDate = billDate;
         return this;
@@ -1243,6 +1248,23 @@ public class ResFeeRecordV2 {
         this.subResourceName = subResourceName;
     }
 
+    public ResFeeRecordV2 withConsumeTime(String consumeTime) {
+        this.consumeTime = consumeTime;
+        return this;
+    }
+
+    /**
+     * |参数名称：消费时间| |参数约束及描述：消费时间，UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ。包周期、预留实例预付为交易时间，按需、预留实例按时计费为话单生失效时间。 说明：当statistic_type=3时有效。|
+     * @return consumeTime
+     */
+    public String getConsumeTime() {
+        return consumeTime;
+    }
+
+    public void setConsumeTime(String consumeTime) {
+        this.consumeTime = consumeTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1293,7 +1315,8 @@ public class ResFeeRecordV2 {
             && Objects.equals(this.subResourceTypeCode, that.subResourceTypeCode)
             && Objects.equals(this.subResourceTypeName, that.subResourceTypeName)
             && Objects.equals(this.subResourceId, that.subResourceId)
-            && Objects.equals(this.subResourceName, that.subResourceName);
+            && Objects.equals(this.subResourceName, that.subResourceName)
+            && Objects.equals(this.consumeTime, that.consumeTime);
     }
 
     @Override
@@ -1353,7 +1376,8 @@ public class ResFeeRecordV2 {
             subResourceTypeCode,
             subResourceTypeName,
             subResourceId,
-            subResourceName);
+            subResourceName,
+            consumeTime);
     }
 
     @Override
@@ -1416,6 +1440,7 @@ public class ResFeeRecordV2 {
         sb.append("    subResourceTypeName: ").append(toIndentedString(subResourceTypeName)).append("\n");
         sb.append("    subResourceId: ").append(toIndentedString(subResourceId)).append("\n");
         sb.append("    subResourceName: ").append(toIndentedString(subResourceName)).append("\n");
+        sb.append("    consumeTime: ").append(toIndentedString(consumeTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

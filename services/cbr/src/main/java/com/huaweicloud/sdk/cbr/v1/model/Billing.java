@@ -261,6 +261,11 @@ public class Billing {
         public static final ObjectTypeEnum DISK = new ObjectTypeEnum("disk");
 
         /**
+         * Enum TURBO for value: "turbo"
+         */
+        public static final ObjectTypeEnum TURBO = new ObjectTypeEnum("turbo");
+
+        /**
          * Enum WORKSPACE for value: "workspace"
          */
         public static final ObjectTypeEnum WORKSPACE = new ObjectTypeEnum("workspace");
@@ -286,6 +291,7 @@ public class Billing {
             Map<String, ObjectTypeEnum> map = new HashMap<>();
             map.put("server", SERVER);
             map.put("disk", DISK);
+            map.put("turbo", TURBO);
             map.put("workspace", WORKSPACE);
             map.put("vmware", VMWARE);
             map.put("rds", RDS);
@@ -455,12 +461,38 @@ public class Billing {
          */
         public static final SpecCodeEnum VAULT_BACKUP_VOLUME_NORMAL = new SpecCodeEnum("vault.backup.volume.normal");
 
+        /**
+         * Enum VAULT_BACKUP_TURBO_NORMAL for value: "vault.backup.turbo.normal"
+         */
+        public static final SpecCodeEnum VAULT_BACKUP_TURBO_NORMAL = new SpecCodeEnum("vault.backup.turbo.normal");
+
+        /**
+         * Enum VAULT_BACKUP_DATABASE_NORMAL for value: "vault.backup.database.normal"
+         */
+        public static final SpecCodeEnum VAULT_BACKUP_DATABASE_NORMAL =
+            new SpecCodeEnum("vault.backup.database.normal");
+
+        /**
+         * Enum VAULT_HYBRID_SERVER_NORMAL for value: "vault.hybrid.server.normal"
+         */
+        public static final SpecCodeEnum VAULT_HYBRID_SERVER_NORMAL = new SpecCodeEnum("vault.hybrid.server.normal");
+
+        /**
+         * Enum VAULT_REPLICATION_SERVER_NORMAL for value: "vault.replication.server.normal"
+         */
+        public static final SpecCodeEnum VAULT_REPLICATION_SERVER_NORMAL =
+            new SpecCodeEnum("vault.replication.server.normal");
+
         private static final Map<String, SpecCodeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, SpecCodeEnum> createStaticFields() {
             Map<String, SpecCodeEnum> map = new HashMap<>();
             map.put("vault.backup.server.normal", VAULT_BACKUP_SERVER_NORMAL);
             map.put("vault.backup.volume.normal", VAULT_BACKUP_VOLUME_NORMAL);
+            map.put("vault.backup.turbo.normal", VAULT_BACKUP_TURBO_NORMAL);
+            map.put("vault.backup.database.normal", VAULT_BACKUP_DATABASE_NORMAL);
+            map.put("vault.hybrid.server.normal", VAULT_HYBRID_SERVER_NORMAL);
+            map.put("vault.replication.server.normal", VAULT_REPLICATION_SERVER_NORMAL);
             return Collections.unmodifiableMap(map);
         }
 

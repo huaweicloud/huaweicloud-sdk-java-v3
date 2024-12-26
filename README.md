@@ -311,6 +311,8 @@ the [CHANGELOG.md](https://github.com/huaweicloud/huaweicloud-sdk-java-v3/blob/m
 * [8. Upload and download files](#8-upload-and-download-files-top)
     * [8.1 Upload and download](#81-upload-and-download-top)
     * [8.2 Obtain progress](#82-obtain-progress-top)
+* [9. FAQ](#9-faq-top)
+    * [9.1 How to use in Cloud Service Alliance Scenarios](#91-how-to-use-in-cloud-service-alliance-scenarios-top)
 
 ### 1. Client Configuration [:top:](#user-manual-top)
 
@@ -410,7 +412,7 @@ There are two types of Huawei Cloud services, `regional` services and `global` s
 
 Global services contain BSS, DevStar, EPS, IAM, OSM, RMS, TMS.
 
-For `regional` services' authentication, projectId is required to initialize BasicCredentials. 
+For `regional` services' authentication, projectId is required to initialize BasicCredentials.
 
 For `global` services' authentication, domainId is required to initialize GlobalCredentials.
 
@@ -968,7 +970,7 @@ Region region2 = EcsRegion.valueOf("cn-north-9");
 // send a request and print response, take interface of ListVpcs for example
 ListVpcRequest request = new ListVpcsRequest().withLimit(1);
 
-ListVpcsResponse response = client.listVpcs(request); 
+ListVpcsResponse response = client.listVpcs(request);
 logger.info(response.toString());
 ```
 
@@ -988,7 +990,7 @@ logger.info(response.toString());
 try {
     ListVpcRequest request = new ListVpcsRequest().withLimit(1);
 
-    ListVpcsResponse response = client.listVpcs(request); 
+    ListVpcsResponse response = client.listVpcs(request);
     logger.info(response.toString());
 } catch(ServiceResponseException e) {
     logger.error("HttpStatusCode: " + e.getHttpStatusCode());
@@ -1278,7 +1280,7 @@ try {
 **Scenario 1**: If the response status code of the interface is 500(Server Error) or 429(Server Flow Control), retry for
 the request, and the code would be like the following:
 
-``` java 
+``` java
 String jobId = "{valid job id}";
 ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
 try {
@@ -1405,7 +1407,7 @@ public class CreateImageWatermarkDemo {
         createImageWatermark(client);
 
     }
-    
+
 }
 ```
 
@@ -1501,4 +1503,25 @@ public class ObsDemo {
         getObject(client);
     }
 }
+```
+
+### 9. FAQ [:top:](#user-manual-top)
+
+#### 9.1 How to use in Cloud Service Alliance Scenarios [:top:](#user-manual-top)
+
+```java
+// Specify the endpoint, take the endpoint of VPC service in region of eu-west-101 for example
+String endpoint = "https://vpc.eu-west-101.myhuaweicloud.com";
+
+// Initialize the credentials, you should provide projectId or domainId in this way, take initializing BasicCredentials for example
+BasicCredentials basicCredentials = new BasicCredentials()
+	.withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
+	.withSk(System.getenv("HUAWEICLOUD_SDK_SK"))
+	.withProjectId("{your projectId string}");
+
+// Initialize specified service client instance, take initializing the regional service VPC's VpcClient for example
+VpcClient vpcClient = VpcClient.newBuilder()
+	.withCredential(basicCredentials)
+	.withEndpoint(endpoint)
+	.build();
 ```

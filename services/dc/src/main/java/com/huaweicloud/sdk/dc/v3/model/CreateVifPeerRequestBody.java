@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateVifPeerRequestBody
+ * 创建虚拟接口对等体请求体
  */
 public class CreateVifPeerRequestBody {
 

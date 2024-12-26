@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 文本转语音任务请求。
@@ -19,6 +20,11 @@ public class CreateAsyncTtsJobRequestBody {
     @JsonProperty(value = "text")
 
     private String text;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tts_text")
+
+    private String ttsText;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "voice_asset_id")
@@ -130,6 +136,26 @@ public class CreateAsyncTtsJobRequestBody {
 
     private Integer silenceTimeMs;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "callback_config")
+
+    private TtsCallBackConfig callbackConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gen_srt")
+
+    private Boolean genSrt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "srt_len")
+
+    private Long srtLen;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "srt_line_limit")
+
+    private Integer srtLineLimit;
+
     public CreateAsyncTtsJobRequestBody withText(String text) {
         this.text = text;
         return this;
@@ -145,6 +171,23 @@ public class CreateAsyncTtsJobRequestBody {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public CreateAsyncTtsJobRequestBody withTtsText(String ttsText) {
+        this.ttsText = ttsText;
+        return this;
+    }
+
+    /**
+     * 发送给tts的待合成文本
+     * @return ttsText
+     */
+    public String getTtsText() {
+        return ttsText;
+    }
+
+    public void setTtsText(String ttsText) {
+        this.ttsText = ttsText;
     }
 
     public CreateAsyncTtsJobRequestBody withVoiceAssetId(String voiceAssetId) {
@@ -291,6 +334,87 @@ public class CreateAsyncTtsJobRequestBody {
         this.silenceTimeMs = silenceTimeMs;
     }
 
+    public CreateAsyncTtsJobRequestBody withCallbackConfig(TtsCallBackConfig callbackConfig) {
+        this.callbackConfig = callbackConfig;
+        return this;
+    }
+
+    public CreateAsyncTtsJobRequestBody withCallbackConfig(Consumer<TtsCallBackConfig> callbackConfigSetter) {
+        if (this.callbackConfig == null) {
+            this.callbackConfig = new TtsCallBackConfig();
+            callbackConfigSetter.accept(this.callbackConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get callbackConfig
+     * @return callbackConfig
+     */
+    public TtsCallBackConfig getCallbackConfig() {
+        return callbackConfig;
+    }
+
+    public void setCallbackConfig(TtsCallBackConfig callbackConfig) {
+        this.callbackConfig = callbackConfig;
+    }
+
+    public CreateAsyncTtsJobRequestBody withGenSrt(Boolean genSrt) {
+        this.genSrt = genSrt;
+        return this;
+    }
+
+    /**
+     * 是否开启字幕
+     * @return genSrt
+     */
+    public Boolean getGenSrt() {
+        return genSrt;
+    }
+
+    public void setGenSrt(Boolean genSrt) {
+        this.genSrt = genSrt;
+    }
+
+    public CreateAsyncTtsJobRequestBody withSrtLen(Long srtLen) {
+        this.srtLen = srtLen;
+        return this;
+    }
+
+    /**
+     * 字幕最大长度限制
+     * minimum: 0
+     * maximum: 10000
+     * @return srtLen
+     */
+    public Long getSrtLen() {
+        return srtLen;
+    }
+
+    public void setSrtLen(Long srtLen) {
+        this.srtLen = srtLen;
+    }
+
+    public CreateAsyncTtsJobRequestBody withSrtLineLimit(Integer srtLineLimit) {
+        this.srtLineLimit = srtLineLimit;
+        return this;
+    }
+
+    /**
+     * 字幕行数限制，默认为1
+     * minimum: 0
+     * maximum: 5000
+     * @return srtLineLimit
+     */
+    public Integer getSrtLineLimit() {
+        return srtLineLimit;
+    }
+
+    public void setSrtLineLimit(Integer srtLineLimit) {
+        this.srtLineLimit = srtLineLimit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -300,18 +424,33 @@ public class CreateAsyncTtsJobRequestBody {
             return false;
         }
         CreateAsyncTtsJobRequestBody that = (CreateAsyncTtsJobRequestBody) obj;
-        return Objects.equals(this.text, that.text) && Objects.equals(this.voiceAssetId, that.voiceAssetId)
-            && Objects.equals(this.speed, that.speed) && Objects.equals(this.pitch, that.pitch)
-            && Objects.equals(this.volume, that.volume) && Objects.equals(this.audioFormat, that.audioFormat)
+        return Objects.equals(this.text, that.text) && Objects.equals(this.ttsText, that.ttsText)
+            && Objects.equals(this.voiceAssetId, that.voiceAssetId) && Objects.equals(this.speed, that.speed)
+            && Objects.equals(this.pitch, that.pitch) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.audioFormat, that.audioFormat)
             && Objects.equals(this.needTimestamp, that.needTimestamp)
             && Objects.equals(this.silenceFlag, that.silenceFlag)
-            && Objects.equals(this.silenceTimeMs, that.silenceTimeMs);
+            && Objects.equals(this.silenceTimeMs, that.silenceTimeMs)
+            && Objects.equals(this.callbackConfig, that.callbackConfig) && Objects.equals(this.genSrt, that.genSrt)
+            && Objects.equals(this.srtLen, that.srtLen) && Objects.equals(this.srtLineLimit, that.srtLineLimit);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(text, voiceAssetId, speed, pitch, volume, audioFormat, needTimestamp, silenceFlag, silenceTimeMs);
+        return Objects.hash(text,
+            ttsText,
+            voiceAssetId,
+            speed,
+            pitch,
+            volume,
+            audioFormat,
+            needTimestamp,
+            silenceFlag,
+            silenceTimeMs,
+            callbackConfig,
+            genSrt,
+            srtLen,
+            srtLineLimit);
     }
 
     @Override
@@ -319,6 +458,7 @@ public class CreateAsyncTtsJobRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAsyncTtsJobRequestBody {\n");
         sb.append("    text: ").append(toIndentedString(text)).append("\n");
+        sb.append("    ttsText: ").append(toIndentedString(ttsText)).append("\n");
         sb.append("    voiceAssetId: ").append(toIndentedString(voiceAssetId)).append("\n");
         sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
         sb.append("    pitch: ").append(toIndentedString(pitch)).append("\n");
@@ -327,6 +467,10 @@ public class CreateAsyncTtsJobRequestBody {
         sb.append("    needTimestamp: ").append(toIndentedString(needTimestamp)).append("\n");
         sb.append("    silenceFlag: ").append(toIndentedString(silenceFlag)).append("\n");
         sb.append("    silenceTimeMs: ").append(toIndentedString(silenceTimeMs)).append("\n");
+        sb.append("    callbackConfig: ").append(toIndentedString(callbackConfig)).append("\n");
+        sb.append("    genSrt: ").append(toIndentedString(genSrt)).append("\n");
+        sb.append("    srtLen: ").append(toIndentedString(srtLen)).append("\n");
+        sb.append("    srtLineLimit: ").append(toIndentedString(srtLineLimit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

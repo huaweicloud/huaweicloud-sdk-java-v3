@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 授权数据库角色。
@@ -18,7 +19,7 @@ public class AllowDbRolePrivilegesRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user")
 
-    private Object user;
+    private GaussDBforOpenGaussRoleAttributes user;
 
     public AllowDbRolePrivilegesRequestBody withDbName(String dbName) {
         this.dbName = dbName;
@@ -37,20 +38,29 @@ public class AllowDbRolePrivilegesRequestBody {
         this.dbName = dbName;
     }
 
-    public AllowDbRolePrivilegesRequestBody withUser(Object user) {
+    public AllowDbRolePrivilegesRequestBody withUser(GaussDBforOpenGaussRoleAttributes user) {
         this.user = user;
         return this;
     }
 
+    public AllowDbRolePrivilegesRequestBody withUser(Consumer<GaussDBforOpenGaussRoleAttributes> userSetter) {
+        if (this.user == null) {
+            this.user = new GaussDBforOpenGaussRoleAttributes();
+            userSetter.accept(this.user);
+        }
+
+        return this;
+    }
+
     /**
-     * 角色权限信息。
+     * Get user
      * @return user
      */
-    public Object getUser() {
+    public GaussDBforOpenGaussRoleAttributes getUser() {
         return user;
     }
 
-    public void setUser(Object user) {
+    public void setUser(GaussDBforOpenGaussRoleAttributes user) {
         this.user = user;
     }
 

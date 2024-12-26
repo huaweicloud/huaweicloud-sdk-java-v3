@@ -83,6 +83,11 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
     private String voiceAuthorizationUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "training_input_source_url")
+
+    private String trainingInputSourceUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_type")
 
     private CreateType createType;
@@ -116,6 +121,11 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
     @JsonProperty(value = "output_language")
 
     private String outputLanguage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_remake")
+
+    private Boolean isRemake;
 
     public ShowVoiceTrainingJobResponse withJobType(JobType jobType) {
         this.jobType = jobType;
@@ -361,6 +371,23 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         this.voiceAuthorizationUrl = voiceAuthorizationUrl;
     }
 
+    public ShowVoiceTrainingJobResponse withTrainingInputSourceUrl(String trainingInputSourceUrl) {
+        this.trainingInputSourceUrl = trainingInputSourceUrl;
+        return this;
+    }
+
+    /**
+     * 用户原始输入数据url。
+     * @return trainingInputSourceUrl
+     */
+    public String getTrainingInputSourceUrl() {
+        return trainingInputSourceUrl;
+    }
+
+    public void setTrainingInputSourceUrl(String trainingInputSourceUrl) {
+        this.trainingInputSourceUrl = trainingInputSourceUrl;
+    }
+
     public ShowVoiceTrainingJobResponse withCreateType(CreateType createType) {
         this.createType = createType;
         return this;
@@ -490,6 +517,23 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         this.outputLanguage = outputLanguage;
     }
 
+    public ShowVoiceTrainingJobResponse withIsRemake(Boolean isRemake) {
+        this.isRemake = isRemake;
+        return this;
+    }
+
+    /**
+     * 任务是否重做
+     * @return isRemake
+     */
+    public Boolean getIsRemake() {
+        return isRemake;
+    }
+
+    public void setIsRemake(Boolean isRemake) {
+        this.isRemake = isRemake;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -508,11 +552,12 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.lastupdateTime, that.lastupdateTime)
             && Objects.equals(this.voiceAuthorizationUrl, that.voiceAuthorizationUrl)
+            && Objects.equals(this.trainingInputSourceUrl, that.trainingInputSourceUrl)
             && Objects.equals(this.createType, that.createType) && Objects.equals(this.tag, that.tag)
             && Objects.equals(this.phone, that.phone) && Objects.equals(this.dhtmsJobId, that.dhtmsJobId)
             && Objects.equals(this.batchName, that.batchName)
             && Objects.equals(this.allocatedResource, that.allocatedResource)
-            && Objects.equals(this.outputLanguage, that.outputLanguage);
+            && Objects.equals(this.outputLanguage, that.outputLanguage) && Objects.equals(this.isRemake, that.isRemake);
     }
 
     @Override
@@ -531,13 +576,15 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
             createTime,
             lastupdateTime,
             voiceAuthorizationUrl,
+            trainingInputSourceUrl,
             createType,
             tag,
             phone,
             dhtmsJobId,
             batchName,
             allocatedResource,
-            outputLanguage);
+            outputLanguage,
+            isRemake);
     }
 
     @Override
@@ -558,6 +605,7 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    lastupdateTime: ").append(toIndentedString(lastupdateTime)).append("\n");
         sb.append("    voiceAuthorizationUrl: ").append(toIndentedString(voiceAuthorizationUrl)).append("\n");
+        sb.append("    trainingInputSourceUrl: ").append(toIndentedString(trainingInputSourceUrl)).append("\n");
         sb.append("    createType: ").append(toIndentedString(createType)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
@@ -565,6 +613,7 @@ public class ShowVoiceTrainingJobResponse extends SdkResponse {
         sb.append("    batchName: ").append(toIndentedString(batchName)).append("\n");
         sb.append("    allocatedResource: ").append(toIndentedString(allocatedResource)).append("\n");
         sb.append("    outputLanguage: ").append(toIndentedString(outputLanguage)).append("\n");
+        sb.append("    isRemake: ").append(toIndentedString(isRemake)).append("\n");
         sb.append("}");
         return sb.toString();
     }

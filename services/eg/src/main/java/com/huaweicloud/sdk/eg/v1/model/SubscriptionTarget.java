@@ -41,12 +41,18 @@ public class SubscriptionTarget {
          */
         public static final ProviderTypeEnum OFFICIAL = new ProviderTypeEnum("OFFICIAL");
 
+        /**
+         * Enum APIGW for value: "APIGW"
+         */
+        public static final ProviderTypeEnum APIGW = new ProviderTypeEnum("APIGW");
+
         private static final Map<String, ProviderTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ProviderTypeEnum> createStaticFields() {
             Map<String, ProviderTypeEnum> map = new HashMap<>();
             map.put("CUSTOM", CUSTOM);
             map.put("OFFICIAL", OFFICIAL);
+            map.put("APIGW", APIGW);
             return Collections.unmodifiableMap(map);
         }
 
@@ -125,6 +131,16 @@ public class SubscriptionTarget {
     @JsonProperty(value = "eg_detail")
 
     private EgTargetDetail egDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apigw_detail")
+
+    private ApigwTargetDetail apigwDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_times")
+
+    private Integer retryTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transform")
@@ -299,6 +315,49 @@ public class SubscriptionTarget {
         this.egDetail = egDetail;
     }
 
+    public SubscriptionTarget withApigwDetail(ApigwTargetDetail apigwDetail) {
+        this.apigwDetail = apigwDetail;
+        return this;
+    }
+
+    public SubscriptionTarget withApigwDetail(Consumer<ApigwTargetDetail> apigwDetailSetter) {
+        if (this.apigwDetail == null) {
+            this.apigwDetail = new ApigwTargetDetail();
+            apigwDetailSetter.accept(this.apigwDetail);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get apigwDetail
+     * @return apigwDetail
+     */
+    public ApigwTargetDetail getApigwDetail() {
+        return apigwDetail;
+    }
+
+    public void setApigwDetail(ApigwTargetDetail apigwDetail) {
+        this.apigwDetail = apigwDetail;
+    }
+
+    public SubscriptionTarget withRetryTimes(Integer retryTimes) {
+        this.retryTimes = retryTimes;
+        return this;
+    }
+
+    /**
+     * 重试次数
+     * @return retryTimes
+     */
+    public Integer getRetryTimes() {
+        return retryTimes;
+    }
+
+    public void setRetryTimes(Integer retryTimes) {
+        this.retryTimes = retryTimes;
+    }
+
     public SubscriptionTarget withTransform(TransForm transform) {
         this.transform = transform;
         return this;
@@ -364,7 +423,8 @@ public class SubscriptionTarget {
             && Objects.equals(this.providerType, that.providerType)
             && Objects.equals(this.connectionId, that.connectionId) && Objects.equals(this.detail, that.detail)
             && Objects.equals(this.kafkaDetail, that.kafkaDetail) && Objects.equals(this.smnDetail, that.smnDetail)
-            && Objects.equals(this.egDetail, that.egDetail) && Objects.equals(this.transform, that.transform)
+            && Objects.equals(this.egDetail, that.egDetail) && Objects.equals(this.apigwDetail, that.apigwDetail)
+            && Objects.equals(this.retryTimes, that.retryTimes) && Objects.equals(this.transform, that.transform)
             && Objects.equals(this.deadLetterQueue, that.deadLetterQueue);
     }
 
@@ -378,6 +438,8 @@ public class SubscriptionTarget {
             kafkaDetail,
             smnDetail,
             egDetail,
+            apigwDetail,
+            retryTimes,
             transform,
             deadLetterQueue);
     }
@@ -394,6 +456,8 @@ public class SubscriptionTarget {
         sb.append("    kafkaDetail: ").append(toIndentedString(kafkaDetail)).append("\n");
         sb.append("    smnDetail: ").append(toIndentedString(smnDetail)).append("\n");
         sb.append("    egDetail: ").append(toIndentedString(egDetail)).append("\n");
+        sb.append("    apigwDetail: ").append(toIndentedString(apigwDetail)).append("\n");
+        sb.append("    retryTimes: ").append(toIndentedString(retryTimes)).append("\n");
         sb.append("    transform: ").append(toIndentedString(transform)).append("\n");
         sb.append("    deadLetterQueue: ").append(toIndentedString(deadLetterQueue)).append("\n");
         sb.append("}");

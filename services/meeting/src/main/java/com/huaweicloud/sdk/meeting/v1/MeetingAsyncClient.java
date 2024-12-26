@@ -181,6 +181,8 @@ import com.huaweicloud.sdk.meeting.v1.model.SearchAttendanceRecordsOfHisMeetingR
 import com.huaweicloud.sdk.meeting.v1.model.SearchAttendanceRecordsOfHisMeetingResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SearchCorpAdminsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SearchCorpAdminsResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SearchCorpDigitalInfoListRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SearchCorpDigitalInfoListResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SearchCorpDirRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SearchCorpDirResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SearchCorpExternalDirRequest;
@@ -209,6 +211,8 @@ import com.huaweicloud.sdk.meeting.v1.model.SearchMemberVmrRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SearchMemberVmrResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SearchOnlineMeetingsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SearchOnlineMeetingsResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SearchPrivateCorpDigitalInfoRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SearchPrivateCorpDigitalInfoResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SearchProgramsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SearchProgramsResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SearchPublicationsRequest;
@@ -3030,6 +3034,36 @@ public class MeetingAsyncClient {
     }
 
     /**
+     * 查询公共或本地数字资产列表
+     *
+     * 主持人通过该接口查询系统公共音色或者企业本地音色。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchCorpDigitalInfoListRequest 请求对象
+     * @return CompletableFuture<SearchCorpDigitalInfoListResponse>
+     */
+    public CompletableFuture<SearchCorpDigitalInfoListResponse> searchCorpDigitalInfoListAsync(
+        SearchCorpDigitalInfoListRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchCorpDigitalInfoList);
+    }
+
+    /**
+     * 查询公共或本地数字资产列表
+     *
+     * 主持人通过该接口查询系统公共音色或者企业本地音色。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchCorpDigitalInfoListRequest 请求对象
+     * @return AsyncInvoker<SearchCorpDigitalInfoListRequest, SearchCorpDigitalInfoListResponse>
+     */
+    public AsyncInvoker<SearchCorpDigitalInfoListRequest, SearchCorpDigitalInfoListResponse> searchCorpDigitalInfoListAsyncInvoker(
+        SearchCorpDigitalInfoListRequest request) {
+        return new AsyncInvoker<>(request, MeetingMeta.searchCorpDigitalInfoList, hcClient);
+    }
+
+    /**
      * 查询企业通讯录
      *
      * 企业用户（含管理员）通过该接口查询该企业的通讯录。
@@ -3421,6 +3455,36 @@ public class MeetingAsyncClient {
     public AsyncInvoker<SearchOnlineMeetingsRequest, SearchOnlineMeetingsResponse> searchOnlineMeetingsAsyncInvoker(
         SearchOnlineMeetingsRequest request) {
         return new AsyncInvoker<>(request, MeetingMeta.searchOnlineMeetings, hcClient);
+    }
+
+    /**
+     * 查询主讲人绑定的数字资产信息
+     *
+     * 主持人通过该接口查询查询主讲人绑定的数字资产信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchPrivateCorpDigitalInfoRequest 请求对象
+     * @return CompletableFuture<SearchPrivateCorpDigitalInfoResponse>
+     */
+    public CompletableFuture<SearchPrivateCorpDigitalInfoResponse> searchPrivateCorpDigitalInfoAsync(
+        SearchPrivateCorpDigitalInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, MeetingMeta.searchPrivateCorpDigitalInfo);
+    }
+
+    /**
+     * 查询主讲人绑定的数字资产信息
+     *
+     * 主持人通过该接口查询查询主讲人绑定的数字资产信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SearchPrivateCorpDigitalInfoRequest 请求对象
+     * @return AsyncInvoker<SearchPrivateCorpDigitalInfoRequest, SearchPrivateCorpDigitalInfoResponse>
+     */
+    public AsyncInvoker<SearchPrivateCorpDigitalInfoRequest, SearchPrivateCorpDigitalInfoResponse> searchPrivateCorpDigitalInfoAsyncInvoker(
+        SearchPrivateCorpDigitalInfoRequest request) {
+        return new AsyncInvoker<>(request, MeetingMeta.searchPrivateCorpDigitalInfo, hcClient);
     }
 
     /**

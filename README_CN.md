@@ -312,6 +312,8 @@ public class Application {
 * [8. 文件上传与下载](#8-文件上传与下载-top)
     * [8.1 上传与下载](#81-上传与下载-top)
     * [8.2 获取进度](#82-获取进度-top)
+* [9. FAQ](#9-faq-top)
+    * [9.1 云联盟场景如何调用](#91-云联盟场景如何调用-top)
 
 ### 1. 客户端连接参数 [:top:](#用户手册-top)
 
@@ -350,7 +352,7 @@ VpcClient client = VpcClient.newBuilder()
 
 #### 1.3 超时配置 [:top:](#用户手册-top)
 
-``` java 
+``` java
 
 HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
 // 默认连接超时时间为60秒，可根据需要配置（v3.1.94及之前的版本）
@@ -386,7 +388,7 @@ HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
     .withSSLSocketFactory(sslSocketFactory)
     .withX509TrustManager(trustManager)
     .withHostnameVerifier(hostnameVerifier);
-    
+
 VpcClient client = VpcClient.newBuilder()
         .withHttpConfig(httpConfig)
         .build();
@@ -396,7 +398,7 @@ VpcClient client = VpcClient.newBuilder()
 
 ```java
 import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
- 
+
 // 使用HMAC_SM3签名算法需要JDK8u302及以上版本, 默认签名算法为HMAC_SHA256
 HttpConfig.getDefaultHttpConfig().withSigningAlgorithm(SigningAlgorithm.HMAC_SM3);
 
@@ -965,7 +967,7 @@ Region region2 = EcsRegion.valueOf("cn-north-9");
 // 初始化请求，以调用接口 ListVpcs 为例
 ListVpcRequest request = new ListVpcsRequest().withLimit(1);
 
-ListVpcsResponse response = client.listVpcs(request); 
+ListVpcsResponse response = client.listVpcs(request);
 logger.info(response.toString());
 ```
 
@@ -986,7 +988,7 @@ logger.info(response.toString());
 try {
     ListVpcRequest request = new ListVpcsRequest().withLimit(1);
 
-    ListVpcsResponse response = client.listVpcs(request); 
+    ListVpcsResponse response = client.listVpcs(request);
     logger.info(response.toString());
 } catch(ServiceResponseException e) {
     logger.error("HttpStatusCode: " + e.getHttpStatusCode());
@@ -1178,7 +1180,7 @@ try {
 - _最大重试次数_：30 次，可设置任意不大于 30 的正整数
 - _重试条件_：lambda 函数，提供默认的重试条件，会对 ConnectionException 进行重试，关键代码如下：
 
-``` java 
+``` java
 /**
  * 默认重试条件，当请求响应状态异常，并且异常类型为 ConnectionException 及其子类时，会执行重试
  *
@@ -1261,7 +1263,7 @@ try {
 
 **场景1**：当接口响应状态码为 500(服务器端异常) 或者 429(服务器端流控) 时，对请求进行重试。示例代码如下：
 
-``` java 
+``` java
 String jobId = "{valid job id}";
 ShowJobRequest request = new ShowJobRequest().withJobId(jobId);
 try {
@@ -1290,7 +1292,7 @@ try {
     final int baseDelay = 1000;
     // 退避等待的最长时间
     final int maxBackoffInMilliseconds = 30000;
-    
+
     ShowJobResponse response = client.showJobInvoker(request)
     // 请求最大重试次数
     .retryTimes(10)
@@ -1386,7 +1388,7 @@ public class CreateImageWatermarkDemo {
         createImageWatermark(client);
 
     }
-    
+
 }
 ```
 
@@ -1482,4 +1484,25 @@ public class ObsDemo {
         getObject(client);
     }
 }
+```
+
+### 9. FAQ [:top:](#用户手册-top)
+
+#### 9.1 云联盟场景如何调用 [:top:](#用户手册-top)
+
+```java
+// 指定终端节点，以 云联盟都柏林节点调用 VPC 服务为例
+String endpoint = "https://vpc.eu-west-101.myhuaweicloud.com";
+
+// 初始化客户端认证信息，需要填写相应 projectId/domainId，以初始化 BasicCredentials 为例
+BasicCredentials basicCredentials = new BasicCredentials()
+	.withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
+	.withSk(System.getenv("HUAWEICLOUD_SDK_SK"))
+	.withProjectId("{your projectId string}");
+
+// 初始化指定云服务的客户端 {Service}Client，以初始化 Region 级服务 VPC 的 VpcClient 为例
+VpcClient vpcClient = VpcClient.newBuilder()
+	.withCredential(basicCredentials)
+	.withEndpoint(endpoint)
+	.build();
 ```

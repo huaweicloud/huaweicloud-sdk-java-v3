@@ -6,6 +6,9 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchAssetActionReq;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchConfirmLiveCommandsReq;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchConfirmLiveCommandsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchConfirmLiveCommandsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoRequest;
@@ -18,6 +21,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmartLiveRoomReq;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmartLiveRoomRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ControlDigitalHumanLiveReq;
@@ -128,6 +134,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyConfigsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsReq;
@@ -172,6 +180,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsRequestBody;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobRequest;
@@ -239,6 +250,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRuleCommandsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRuleCommandsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveScriptCommandsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveScriptCommandsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTenantResourcesRequest;
@@ -247,6 +262,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyConfigsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsRequest;
@@ -266,6 +283,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsRequestBody;
+import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameReq;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameResponse;
@@ -6530,6 +6550,72 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchConfirmLiveCommandsRequest, BatchConfirmLiveCommandsResponse> batchConfirmLiveCommands =
+        genForBatchConfirmLiveCommands();
+
+    private static HttpRequestDef<BatchConfirmLiveCommandsRequest, BatchConfirmLiveCommandsResponse> genForBatchConfirmLiveCommands() {
+        // basic
+        HttpRequestDef.Builder<BatchConfirmLiveCommandsRequest, BatchConfirmLiveCommandsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchConfirmLiveCommandsRequest.class, BatchConfirmLiveCommandsResponse.class)
+                .withName("BatchConfirmLiveCommands")
+                .withUri("/v1/{project_id}/smart-live-rooms/{room_id}/smart-live-jobs/{job_id}/batch-commands-confirm")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("room_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchConfirmLiveCommandsRequest::getRoomId,
+                BatchConfirmLiveCommandsRequest::setRoomId));
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchConfirmLiveCommandsRequest::getJobId,
+                BatchConfirmLiveCommandsRequest::setJobId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchConfirmLiveCommandsRequest::getAuthorization,
+                BatchConfirmLiveCommandsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchConfirmLiveCommandsRequest::getXSdkDate,
+                BatchConfirmLiveCommandsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchConfirmLiveCommandsRequest::getXProjectId,
+                BatchConfirmLiveCommandsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchConfirmLiveCommandsRequest::getXAppUserId,
+                BatchConfirmLiveCommandsRequest::setXAppUserId));
+        builder.<BatchConfirmLiveCommandsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchConfirmLiveCommandsReq.class),
+            f -> f.withMarshaller(BatchConfirmLiveCommandsRequest::getBody, BatchConfirmLiveCommandsRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchConfirmLiveCommandsResponse::getXRequestId,
+                BatchConfirmLiveCommandsResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExecuteSmartLiveCommandRequest, ExecuteSmartLiveCommandResponse> executeSmartLiveCommand =
         genForExecuteSmartLiveCommand();
 
@@ -6758,6 +6844,144 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListSmartLiveJobsResponse::getXRequestId, ListSmartLiveJobsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSmartLiveRuleCommandsRequest, ListSmartLiveRuleCommandsResponse> listSmartLiveRuleCommands =
+        genForListSmartLiveRuleCommands();
+
+    private static HttpRequestDef<ListSmartLiveRuleCommandsRequest, ListSmartLiveRuleCommandsResponse> genForListSmartLiveRuleCommands() {
+        // basic
+        HttpRequestDef.Builder<ListSmartLiveRuleCommandsRequest, ListSmartLiveRuleCommandsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSmartLiveRuleCommandsRequest.class,
+                    ListSmartLiveRuleCommandsResponse.class)
+                .withName("ListSmartLiveRuleCommands")
+                .withUri("/v1/{project_id}/smart-live-command/rule-commands")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveRuleCommandsRequest::getJobId,
+                ListSmartLiveRuleCommandsRequest::setJobId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSmartLiveRuleCommandsRequest::getOffset,
+                ListSmartLiveRuleCommandsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSmartLiveRuleCommandsRequest::getLimit,
+                ListSmartLiveRuleCommandsRequest::setLimit));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveRuleCommandsRequest::getAuthorization,
+                ListSmartLiveRuleCommandsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveRuleCommandsRequest::getXSdkDate,
+                ListSmartLiveRuleCommandsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveRuleCommandsRequest::getXProjectId,
+                ListSmartLiveRuleCommandsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveRuleCommandsRequest::getXAppUserId,
+                ListSmartLiveRuleCommandsRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSmartLiveRuleCommandsResponse::getXRequestId,
+                ListSmartLiveRuleCommandsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSmartLiveScriptCommandsRequest, ListSmartLiveScriptCommandsResponse> listSmartLiveScriptCommands =
+        genForListSmartLiveScriptCommands();
+
+    private static HttpRequestDef<ListSmartLiveScriptCommandsRequest, ListSmartLiveScriptCommandsResponse> genForListSmartLiveScriptCommands() {
+        // basic
+        HttpRequestDef.Builder<ListSmartLiveScriptCommandsRequest, ListSmartLiveScriptCommandsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSmartLiveScriptCommandsRequest.class,
+                    ListSmartLiveScriptCommandsResponse.class)
+                .withName("ListSmartLiveScriptCommands")
+                .withUri("/v1/{project_id}/smart-live-command/script-commands")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveScriptCommandsRequest::getJobId,
+                ListSmartLiveScriptCommandsRequest::setJobId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSmartLiveScriptCommandsRequest::getOffset,
+                ListSmartLiveScriptCommandsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSmartLiveScriptCommandsRequest::getLimit,
+                ListSmartLiveScriptCommandsRequest::setLimit));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveScriptCommandsRequest::getAuthorization,
+                ListSmartLiveScriptCommandsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveScriptCommandsRequest::getXSdkDate,
+                ListSmartLiveScriptCommandsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveScriptCommandsRequest::getXProjectId,
+                ListSmartLiveScriptCommandsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveScriptCommandsRequest::getXAppUserId,
+                ListSmartLiveScriptCommandsRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListSmartLiveScriptCommandsResponse::getXRequestId,
+                ListSmartLiveScriptCommandsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -6990,6 +7214,63 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(StopSmartLiveResponse::getXRequestId, StopSmartLiveResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ConfirmSmartLiveRoomRequest, ConfirmSmartLiveRoomResponse> confirmSmartLiveRoom =
+        genForConfirmSmartLiveRoom();
+
+    private static HttpRequestDef<ConfirmSmartLiveRoomRequest, ConfirmSmartLiveRoomResponse> genForConfirmSmartLiveRoom() {
+        // basic
+        HttpRequestDef.Builder<ConfirmSmartLiveRoomRequest, ConfirmSmartLiveRoomResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ConfirmSmartLiveRoomRequest.class, ConfirmSmartLiveRoomResponse.class)
+            .withName("ConfirmSmartLiveRoom")
+            .withUri("/v1/{project_id}/smart-live-rooms/{room_id}/confirm")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("room_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmSmartLiveRoomRequest::getRoomId, ConfirmSmartLiveRoomRequest::setRoomId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmSmartLiveRoomRequest::getAuthorization,
+                ConfirmSmartLiveRoomRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmSmartLiveRoomRequest::getXSdkDate, ConfirmSmartLiveRoomRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmSmartLiveRoomRequest::getXProjectId,
+                ConfirmSmartLiveRoomRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ConfirmSmartLiveRoomRequest::getXAppUserId,
+                ConfirmSmartLiveRoomRequest::setXAppUserId));
+        builder.<ConfirmSmartLiveRoomReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ConfirmSmartLiveRoomReq.class),
+            f -> f.withMarshaller(ConfirmSmartLiveRoomRequest::getBody, ConfirmSmartLiveRoomRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ConfirmSmartLiveRoomResponse::getXRequestId,
+                ConfirmSmartLiveRoomResponse::setXRequestId));
         return builder.build();
     }
 
@@ -7355,6 +7636,12 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSmartLiveRoomsRequest::getTemplateOwnType,
                 ListSmartLiveRoomsRequest::setTemplateOwnType));
+        builder.<String>withRequestField("confirm_state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSmartLiveRoomsRequest::getConfirmState,
+                ListSmartLiveRoomsRequest::setConfirmState));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -8260,6 +8547,18 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVoiceTrainingJobRequest::getCreateSince,
                 ListVoiceTrainingJobRequest::setCreateSince));
+        builder.<String>withRequestField("update_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getUpdateUntil,
+                ListVoiceTrainingJobRequest::setUpdateUntil));
+        builder.<String>withRequestField("update_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getUpdateSince,
+                ListVoiceTrainingJobRequest::setUpdateSince));
         builder.<String>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -8292,6 +8591,16 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVoiceTrainingJobRequest::getBatchName,
                 ListVoiceTrainingJobRequest::setBatchName));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getSortKey, ListVoiceTrainingJobRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVoiceTrainingJobRequest::getSortDir, ListVoiceTrainingJobRequest::setSortDir));
         builder.<String>withRequestField("X-App-UserId",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -9160,6 +9469,282 @@ public class MetaStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateTtsAuditionRequestBody.class),
             f -> f.withMarshaller(CreateTtsAuditionRequest::getBody, CreateTtsAuditionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTtscVocabularyConfigsRequest, CreateTtscVocabularyConfigsResponse> createTtscVocabularyConfigs =
+        genForCreateTtscVocabularyConfigs();
+
+    private static HttpRequestDef<CreateTtscVocabularyConfigsRequest, CreateTtscVocabularyConfigsResponse> genForCreateTtscVocabularyConfigs() {
+        // basic
+        HttpRequestDef.Builder<CreateTtscVocabularyConfigsRequest, CreateTtscVocabularyConfigsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateTtscVocabularyConfigsRequest.class,
+                    CreateTtscVocabularyConfigsResponse.class)
+                .withName("CreateTtscVocabularyConfigs")
+                .withUri("/v1/{project_id}/ttsc/vocabulary-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtscVocabularyConfigsRequest::getXRequestId,
+                CreateTtscVocabularyConfigsRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtscVocabularyConfigsRequest::getAuthorization,
+                CreateTtscVocabularyConfigsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtscVocabularyConfigsRequest::getXSdkDate,
+                CreateTtscVocabularyConfigsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtscVocabularyConfigsRequest::getXProjectId,
+                CreateTtscVocabularyConfigsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTtscVocabularyConfigsRequest::getXAppUserId,
+                CreateTtscVocabularyConfigsRequest::setXAppUserId));
+        builder.<SaveTtscVocabularyConfigsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveTtscVocabularyConfigsRequestBody.class),
+            f -> f.withMarshaller(CreateTtscVocabularyConfigsRequest::getBody,
+                CreateTtscVocabularyConfigsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTtscVocabularyConfigsRequest, DeleteTtscVocabularyConfigsResponse> deleteTtscVocabularyConfigs =
+        genForDeleteTtscVocabularyConfigs();
+
+    private static HttpRequestDef<DeleteTtscVocabularyConfigsRequest, DeleteTtscVocabularyConfigsResponse> genForDeleteTtscVocabularyConfigs() {
+        // basic
+        HttpRequestDef.Builder<DeleteTtscVocabularyConfigsRequest, DeleteTtscVocabularyConfigsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteTtscVocabularyConfigsRequest.class,
+                    DeleteTtscVocabularyConfigsResponse.class)
+                .withName("DeleteTtscVocabularyConfigs")
+                .withUri("/v1/{project_id}/ttsc/vocabulary-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyConfigsRequest::getOffset,
+                DeleteTtscVocabularyConfigsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyConfigsRequest::getLimit,
+                DeleteTtscVocabularyConfigsRequest::setLimit));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyConfigsRequest::getXRequestId,
+                DeleteTtscVocabularyConfigsRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyConfigsRequest::getAuthorization,
+                DeleteTtscVocabularyConfigsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyConfigsRequest::getXSdkDate,
+                DeleteTtscVocabularyConfigsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyConfigsRequest::getXProjectId,
+                DeleteTtscVocabularyConfigsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyConfigsRequest::getXAppUserId,
+                DeleteTtscVocabularyConfigsRequest::setXAppUserId));
+        builder.<DeleteTtscVocabularyConfigsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteTtscVocabularyConfigsRequestBody.class),
+            f -> f.withMarshaller(DeleteTtscVocabularyConfigsRequest::getBody,
+                DeleteTtscVocabularyConfigsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTtscVocabularyConfigsRequest, ListTtscVocabularyConfigsResponse> listTtscVocabularyConfigs =
+        genForListTtscVocabularyConfigs();
+
+    private static HttpRequestDef<ListTtscVocabularyConfigsRequest, ListTtscVocabularyConfigsResponse> genForListTtscVocabularyConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListTtscVocabularyConfigsRequest, ListTtscVocabularyConfigsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListTtscVocabularyConfigsRequest.class,
+                    ListTtscVocabularyConfigsResponse.class)
+                .withName("ListTtscVocabularyConfigs")
+                .withUri("/v1/{project_id}/ttsc/vocabulary-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getType,
+                ListTtscVocabularyConfigsRequest::setType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getLimit,
+                ListTtscVocabularyConfigsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getOffset,
+                ListTtscVocabularyConfigsRequest::setOffset));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getStartTime,
+                ListTtscVocabularyConfigsRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getEndTime,
+                ListTtscVocabularyConfigsRequest::setEndTime));
+        builder.<String>withRequestField("search_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getSearchKey,
+                ListTtscVocabularyConfigsRequest::setSearchKey));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getXRequestId,
+                ListTtscVocabularyConfigsRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getAuthorization,
+                ListTtscVocabularyConfigsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getXSdkDate,
+                ListTtscVocabularyConfigsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getXProjectId,
+                ListTtscVocabularyConfigsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getXAppUserId,
+                ListTtscVocabularyConfigsRequest::setXAppUserId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SaveTtscVocabularyConfigsRequest, SaveTtscVocabularyConfigsResponse> saveTtscVocabularyConfigs =
+        genForSaveTtscVocabularyConfigs();
+
+    private static HttpRequestDef<SaveTtscVocabularyConfigsRequest, SaveTtscVocabularyConfigsResponse> genForSaveTtscVocabularyConfigs() {
+        // basic
+        HttpRequestDef.Builder<SaveTtscVocabularyConfigsRequest, SaveTtscVocabularyConfigsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    SaveTtscVocabularyConfigsRequest.class,
+                    SaveTtscVocabularyConfigsResponse.class)
+                .withName("SaveTtscVocabularyConfigs")
+                .withUri("/v1/{project_id}/ttsc/vocabulary-configs/{vocabulary_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vocabulary_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTtscVocabularyConfigsRequest::getVocabularyId,
+                SaveTtscVocabularyConfigsRequest::setVocabularyId));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTtscVocabularyConfigsRequest::getXRequestId,
+                SaveTtscVocabularyConfigsRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTtscVocabularyConfigsRequest::getAuthorization,
+                SaveTtscVocabularyConfigsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTtscVocabularyConfigsRequest::getXSdkDate,
+                SaveTtscVocabularyConfigsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTtscVocabularyConfigsRequest::getXProjectId,
+                SaveTtscVocabularyConfigsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SaveTtscVocabularyConfigsRequest::getXAppUserId,
+                SaveTtscVocabularyConfigsRequest::setXAppUserId));
+        builder.<SaveTtscVocabularyConfigsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SaveTtscVocabularyConfigsRequestBody.class),
+            f -> f.withMarshaller(SaveTtscVocabularyConfigsRequest::getBody,
+                SaveTtscVocabularyConfigsRequest::setBody));
 
         // response
 

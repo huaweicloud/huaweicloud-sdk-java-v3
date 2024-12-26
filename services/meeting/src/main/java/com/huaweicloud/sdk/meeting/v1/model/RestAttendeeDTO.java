@@ -90,6 +90,11 @@ public class RestAttendeeDTO {
 
     private String appId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "uniqueType")
+
+    private Integer uniqueType;
+
     public RestAttendeeDTO withUserUUID(String userUUID) {
         this.userUUID = userUUID;
         return this;
@@ -368,6 +373,25 @@ public class RestAttendeeDTO {
         this.appId = appId;
     }
 
+    public RestAttendeeDTO withUniqueType(Integer uniqueType) {
+        this.uniqueType = uniqueType;
+        return this;
+    }
+
+    /**
+     * 企业内唯一会场标识, 0标识为普通与会者，1标识为企业内唯一会场; uniqueType 为1， 同时type要指定为customnumber
+     * minimum: 0
+     * maximum: 1
+     * @return uniqueType
+     */
+    public Integer getUniqueType() {
+        return uniqueType;
+    }
+
+    public void setUniqueType(Integer uniqueType) {
+        this.uniqueType = uniqueType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -384,7 +408,8 @@ public class RestAttendeeDTO {
             && Objects.equals(this.sms, that.sms) && Objects.equals(this.isMute, that.isMute)
             && Objects.equals(this.isAutoInvite, that.isAutoInvite) && Objects.equals(this.type, that.type)
             && Objects.equals(this.address, that.address) && Objects.equals(this.deptUUID, that.deptUUID)
-            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.appId, that.appId);
+            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.uniqueType, that.uniqueType);
     }
 
     @Override
@@ -404,7 +429,8 @@ public class RestAttendeeDTO {
             address,
             deptUUID,
             deptName,
-            appId);
+            appId,
+            uniqueType);
     }
 
     @Override
@@ -427,6 +453,7 @@ public class RestAttendeeDTO {
         sb.append("    deptUUID: ").append(toIndentedString(deptUUID)).append("\n");
         sb.append("    deptName: ").append(toIndentedString(deptName)).append("\n");
         sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
+        sb.append("    uniqueType: ").append(toIndentedString(uniqueType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

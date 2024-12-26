@@ -122,9 +122,9 @@ public class ListChannelsRequest {
     private String fuzzyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "eps_id")
+    @JsonProperty(value = "enterprise_project_id")
 
-    private String epsId;
+    private String enterpriseProjectId;
 
     public ListChannelsRequest withOffset(Integer offset) {
         this.offset = offset;
@@ -232,21 +232,21 @@ public class ListChannelsRequest {
         this.fuzzyName = fuzzyName;
     }
 
-    public ListChannelsRequest withEpsId(String epsId) {
-        this.epsId = epsId;
+    public ListChannelsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
      * 指定查询的企业项目id，精确匹配
-     * @return epsId
+     * @return enterpriseProjectId
      */
-    public String getEpsId() {
-        return epsId;
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
     }
 
-    public void setEpsId(String epsId) {
-        this.epsId = epsId;
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     @Override
@@ -261,12 +261,12 @@ public class ListChannelsRequest {
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.sort, that.sort) && Objects.equals(this.providerType, that.providerType)
             && Objects.equals(this.name, that.name) && Objects.equals(this.fuzzyName, that.fuzzyName)
-            && Objects.equals(this.epsId, that.epsId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, sort, providerType, name, fuzzyName, epsId);
+        return Objects.hash(offset, limit, sort, providerType, name, fuzzyName, enterpriseProjectId);
     }
 
     @Override
@@ -279,7 +279,7 @@ public class ListChannelsRequest {
         sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    fuzzyName: ").append(toIndentedString(fuzzyName)).append("\n");
-        sb.append("    epsId: ").append(toIndentedString(epsId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

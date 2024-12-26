@@ -17,6 +17,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeActionApiToInstanceR
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeActionApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeApiToInstanceResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeDataConnectionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeDataConnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveApplyRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveApplyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationToEntitiesRequest;
@@ -191,6 +193,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalReq
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteEntityRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteEntityResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityAssignedQueueRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityAssignedQueueResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleRequest;
@@ -565,6 +569,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowPathObjectByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowPathObjectByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQualityTaskDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQualityTaskDetailResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQueuesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQueuesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleGroupRequest;
@@ -583,6 +589,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardTemplateRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardTemplateResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTableDataRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTableDataResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTableModelByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTableModelByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTagsRequest;
@@ -826,6 +834,36 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<AssociateSecurityLevelToEntitieRequest, AssociateSecurityLevelToEntitieResponse> associateSecurityLevelToEntitieAsyncInvoker(
         AssociateSecurityLevelToEntitieRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.associateSecurityLevelToEntitie, hcClient);
+    }
+
+    /**
+     * 数据连接跨空间授权
+     *
+     * 数据连接跨空间授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AuthorizeDataConnectionRequest 请求对象
+     * @return CompletableFuture<AuthorizeDataConnectionResponse>
+     */
+    public CompletableFuture<AuthorizeDataConnectionResponse> authorizeDataConnectionAsync(
+        AuthorizeDataConnectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.authorizeDataConnection);
+    }
+
+    /**
+     * 数据连接跨空间授权
+     *
+     * 数据连接跨空间授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AuthorizeDataConnectionRequest 请求对象
+     * @return AsyncInvoker<AuthorizeDataConnectionRequest, AuthorizeDataConnectionResponse>
+     */
+    public AsyncInvoker<AuthorizeDataConnectionRequest, AuthorizeDataConnectionResponse> authorizeDataConnectionAsyncInvoker(
+        AuthorizeDataConnectionRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.authorizeDataConnection, hcClient);
     }
 
     /**
@@ -3311,6 +3349,35 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<DeleteDirectoryRequest, DeleteDirectoryResponse> deleteDirectoryAsyncInvoker(
         DeleteDirectoryRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.deleteDirectory, hcClient);
+    }
+
+    /**
+     * 删除资产(邀测)
+     *
+     * 根据guid删除资产。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteEntityRequest 请求对象
+     * @return CompletableFuture<DeleteEntityResponse>
+     */
+    public CompletableFuture<DeleteEntityResponse> deleteEntityAsync(DeleteEntityRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.deleteEntity);
+    }
+
+    /**
+     * 删除资产(邀测)
+     *
+     * 根据guid删除资产。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteEntityRequest 请求对象
+     * @return AsyncInvoker<DeleteEntityRequest, DeleteEntityResponse>
+     */
+    public AsyncInvoker<DeleteEntityRequest, DeleteEntityResponse> deleteEntityAsyncInvoker(
+        DeleteEntityRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.deleteEntity, hcClient);
     }
 
     /**
@@ -8479,6 +8546,34 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 获取队列(邀测)
+     *
+     * 队列列表，展示10条数据，该接口功能处于邀测阶段，后续将随功能公测将逐步开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowQueuesRequest 请求对象
+     * @return CompletableFuture<ShowQueuesResponse>
+     */
+    public CompletableFuture<ShowQueuesResponse> showQueuesAsync(ShowQueuesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showQueues);
+    }
+
+    /**
+     * 获取队列(邀测)
+     *
+     * 队列列表，展示10条数据，该接口功能处于邀测阶段，后续将随功能公测将逐步开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowQueuesRequest 请求对象
+     * @return AsyncInvoker<ShowQueuesRequest, ShowQueuesResponse>
+     */
+    public AsyncInvoker<ShowQueuesRequest, ShowQueuesResponse> showQueuesAsyncInvoker(ShowQueuesRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.showQueues, hcClient);
+    }
+
+    /**
      * 查看关系详情
      *
      * 通过ID获取关系详情信息。
@@ -8744,6 +8839,35 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ShowStandardTemplateRequest, ShowStandardTemplateResponse> showStandardTemplateAsyncInvoker(
         ShowStandardTemplateRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.showStandardTemplate, hcClient);
+    }
+
+    /**
+     * 数据预览(邀测)
+     *
+     * 表数据预览，展示10条数据，该接口功能处于邀测阶段，后续将随功能公测将逐步开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTableDataRequest 请求对象
+     * @return CompletableFuture<ShowTableDataResponse>
+     */
+    public CompletableFuture<ShowTableDataResponse> showTableDataAsync(ShowTableDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showTableData);
+    }
+
+    /**
+     * 数据预览(邀测)
+     *
+     * 表数据预览，展示10条数据，该接口功能处于邀测阶段，后续将随功能公测将逐步开放。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTableDataRequest 请求对象
+     * @return AsyncInvoker<ShowTableDataRequest, ShowTableDataResponse>
+     */
+    public AsyncInvoker<ShowTableDataRequest, ShowTableDataResponse> showTableDataAsyncInvoker(
+        ShowTableDataRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.showTableData, hcClient);
     }
 
     /**

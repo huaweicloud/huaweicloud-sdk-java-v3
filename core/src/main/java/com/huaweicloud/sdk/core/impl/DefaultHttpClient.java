@@ -108,6 +108,11 @@ public class DefaultHttpClient implements HttpClient {
         if (Objects.nonNull(httpConfig.getDispatcher())) {
             clientBuilder.dispatcher(httpConfig.getDispatcher());
         }
+
+        if (Objects.nonNull(httpConfig.getDns())) {
+            clientBuilder.dns(httpConfig.getDns());
+        }
+
         clientBuilder.connectTimeout(httpConfig.getConnectionTimeout(), TimeUnit.SECONDS)
                 .readTimeout(httpConfig.getReadTimeout(), TimeUnit.SECONDS);
 

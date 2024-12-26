@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateExternalPeerLinkRequestBodyPeerLink
+ * 创建关联连接请求Body体
  */
 public class CreateExternalPeerLinkRequestBodyPeerLink {
 

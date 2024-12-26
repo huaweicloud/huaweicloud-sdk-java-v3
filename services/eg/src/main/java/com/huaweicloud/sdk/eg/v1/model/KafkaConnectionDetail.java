@@ -31,14 +31,14 @@ public class KafkaConnectionDetail {
     private String securityProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sasl_ssl")
+    @JsonProperty(value = "enable_sasl_ssl")
 
-    private Boolean saslSsl;
+    private Boolean enableSaslSsl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "username")
+    @JsonProperty(value = "user_name")
 
-    private String username;
+    private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password")
@@ -177,38 +177,38 @@ public class KafkaConnectionDetail {
         this.securityProtocol = securityProtocol;
     }
 
-    public KafkaConnectionDetail withSaslSsl(Boolean saslSsl) {
-        this.saslSsl = saslSsl;
+    public KafkaConnectionDetail withEnableSaslSsl(Boolean enableSaslSsl) {
+        this.enableSaslSsl = enableSaslSsl;
         return this;
     }
 
     /**
      * kafka实例是否开启了SASL_SSL。
-     * @return saslSsl
+     * @return enableSaslSsl
      */
-    public Boolean getSaslSsl() {
-        return saslSsl;
+    public Boolean getEnableSaslSsl() {
+        return enableSaslSsl;
     }
 
-    public void setSaslSsl(Boolean saslSsl) {
-        this.saslSsl = saslSsl;
+    public void setEnableSaslSsl(Boolean enableSaslSsl) {
+        this.enableSaslSsl = enableSaslSsl;
     }
 
-    public KafkaConnectionDetail withUsername(String username) {
-        this.username = username;
+    public KafkaConnectionDetail withUserName(String userName) {
+        this.userName = userName;
         return this;
     }
 
     /**
      * kafka实例用户名。实例开启了SASL_SSL时必填
-     * @return username
+     * @return userName
      */
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public KafkaConnectionDetail withPassword(String password) {
@@ -256,13 +256,13 @@ public class KafkaConnectionDetail {
         KafkaConnectionDetail that = (KafkaConnectionDetail) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.addr, that.addr)
             && Objects.equals(this.securityProtocol, that.securityProtocol)
-            && Objects.equals(this.saslSsl, that.saslSsl) && Objects.equals(this.username, that.username)
+            && Objects.equals(this.enableSaslSsl, that.enableSaslSsl) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.password, that.password) && Objects.equals(this.acks, that.acks);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, addr, securityProtocol, saslSsl, username, password, acks);
+        return Objects.hash(instanceId, addr, securityProtocol, enableSaslSsl, userName, password, acks);
     }
 
     @Override
@@ -272,8 +272,8 @@ public class KafkaConnectionDetail {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    addr: ").append(toIndentedString(addr)).append("\n");
         sb.append("    securityProtocol: ").append(toIndentedString(securityProtocol)).append("\n");
-        sb.append("    saslSsl: ").append(toIndentedString(saslSsl)).append("\n");
-        sb.append("    username: ").append(toIndentedString(username)).append("\n");
+        sb.append("    enableSaslSsl: ").append(toIndentedString(enableSaslSsl)).append("\n");
+        sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    acks: ").append(toIndentedString(acks)).append("\n");
         sb.append("}");

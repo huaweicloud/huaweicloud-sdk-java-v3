@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * UpdateConnectGateway
+ * 修改互联网关请求Body体
  */
 public class UpdateConnectGateway {
 

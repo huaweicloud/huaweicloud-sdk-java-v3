@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * Returns geip and its binding status
+ * GEIP列表的响应体
  */
 public class ListBindingGeip {
 

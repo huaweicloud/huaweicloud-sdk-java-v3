@@ -36,7 +36,7 @@ public class CreateIgnoreRuleRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "advanced")
 
-    private List<Advanced> advanced = null;
+    private IgnoreAdvanced advanced;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -143,36 +143,29 @@ public class CreateIgnoreRuleRequestBody {
         this.rule = rule;
     }
 
-    public CreateIgnoreRuleRequestBody withAdvanced(List<Advanced> advanced) {
+    public CreateIgnoreRuleRequestBody withAdvanced(IgnoreAdvanced advanced) {
         this.advanced = advanced;
         return this;
     }
 
-    public CreateIgnoreRuleRequestBody addAdvancedItem(Advanced advancedItem) {
+    public CreateIgnoreRuleRequestBody withAdvanced(Consumer<IgnoreAdvanced> advancedSetter) {
         if (this.advanced == null) {
-            this.advanced = new ArrayList<>();
+            this.advanced = new IgnoreAdvanced();
+            advancedSetter.accept(this.advanced);
         }
-        this.advanced.add(advancedItem);
-        return this;
-    }
 
-    public CreateIgnoreRuleRequestBody withAdvanced(Consumer<List<Advanced>> advancedSetter) {
-        if (this.advanced == null) {
-            this.advanced = new ArrayList<>();
-        }
-        advancedSetter.accept(this.advanced);
         return this;
     }
 
     /**
-     * 高级配置项。**当前该参数类型错误，请用户忽略该参数**；正确类型可先参考更新接口，后续将改正。
+     * Get advanced
      * @return advanced
      */
-    public List<Advanced> getAdvanced() {
+    public IgnoreAdvanced getAdvanced() {
         return advanced;
     }
 
-    public void setAdvanced(List<Advanced> advanced) {
+    public void setAdvanced(IgnoreAdvanced advanced) {
         this.advanced = advanced;
     }
 

@@ -249,6 +249,8 @@ import com.huaweicloud.sdk.meeting.v1.model.SearchAttendanceRecordsOfHisMeetingR
 import com.huaweicloud.sdk.meeting.v1.model.SearchAttendanceRecordsOfHisMeetingResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SearchCorpAdminsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SearchCorpAdminsResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SearchCorpDigitalInfoListRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SearchCorpDigitalInfoListResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SearchCorpDirRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SearchCorpDirResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SearchCorpExternalDirRequest;
@@ -277,6 +279,8 @@ import com.huaweicloud.sdk.meeting.v1.model.SearchMemberVmrRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SearchMemberVmrResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SearchOnlineMeetingsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SearchOnlineMeetingsResponse;
+import com.huaweicloud.sdk.meeting.v1.model.SearchPrivateCorpDigitalInfoRequest;
+import com.huaweicloud.sdk.meeting.v1.model.SearchPrivateCorpDigitalInfoResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SearchProgramsRequest;
 import com.huaweicloud.sdk.meeting.v1.model.SearchProgramsResponse;
 import com.huaweicloud.sdk.meeting.v1.model.SearchPublicationsRequest;
@@ -3823,6 +3827,51 @@ public class MeetingMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SearchCorpDigitalInfoListRequest, SearchCorpDigitalInfoListResponse> searchCorpDigitalInfoList =
+        genForSearchCorpDigitalInfoList();
+
+    private static HttpRequestDef<SearchCorpDigitalInfoListRequest, SearchCorpDigitalInfoListResponse> genForSearchCorpDigitalInfoList() {
+        // basic
+        HttpRequestDef.Builder<SearchCorpDigitalInfoListRequest, SearchCorpDigitalInfoListResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    SearchCorpDigitalInfoListRequest.class,
+                    SearchCorpDigitalInfoListResponse.class)
+                .withName("SearchCorpDigitalInfoList")
+                .withUri("/v1/mmc/control/conferences/queryCorpDigitalInfoList")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchCorpDigitalInfoListRequest::getConferenceID,
+                SearchCorpDigitalInfoListRequest::setConferenceID));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchCorpDigitalInfoListRequest::getType,
+                SearchCorpDigitalInfoListRequest::setType));
+        builder.<String>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchCorpDigitalInfoListRequest::getLanguage,
+                SearchCorpDigitalInfoListRequest::setLanguage));
+        builder.<String>withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchCorpDigitalInfoListRequest::getXConferenceAuthorization,
+                SearchCorpDigitalInfoListRequest::setXConferenceAuthorization));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SearchCorpDirRequest, SearchCorpDirResponse> searchCorpDir =
         genForSearchCorpDir();
 
@@ -4552,6 +4601,51 @@ public class MeetingMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SearchOnlineMeetingsRequest::getXSiteId, SearchOnlineMeetingsRequest::setXSiteId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SearchPrivateCorpDigitalInfoRequest, SearchPrivateCorpDigitalInfoResponse> searchPrivateCorpDigitalInfo =
+        genForSearchPrivateCorpDigitalInfo();
+
+    private static HttpRequestDef<SearchPrivateCorpDigitalInfoRequest, SearchPrivateCorpDigitalInfoResponse> genForSearchPrivateCorpDigitalInfo() {
+        // basic
+        HttpRequestDef.Builder<SearchPrivateCorpDigitalInfoRequest, SearchPrivateCorpDigitalInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    SearchPrivateCorpDigitalInfoRequest.class,
+                    SearchPrivateCorpDigitalInfoResponse.class)
+                .withName("SearchPrivateCorpDigitalInfo")
+                .withUri("/v1/mmc/control/conferences/queryPrivateCorpDigitalInfo")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("conferenceID",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchPrivateCorpDigitalInfoRequest::getConferenceID,
+                SearchPrivateCorpDigitalInfoRequest::setConferenceID));
+        builder.<String>withRequestField("account",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchPrivateCorpDigitalInfoRequest::getAccount,
+                SearchPrivateCorpDigitalInfoRequest::setAccount));
+        builder.<String>withRequestField("language",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchPrivateCorpDigitalInfoRequest::getLanguage,
+                SearchPrivateCorpDigitalInfoRequest::setLanguage));
+        builder.<String>withRequestField("X-Conference-Authorization",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SearchPrivateCorpDigitalInfoRequest::getXConferenceAuthorization,
+                SearchPrivateCorpDigitalInfoRequest::setXConferenceAuthorization));
 
         // response
 

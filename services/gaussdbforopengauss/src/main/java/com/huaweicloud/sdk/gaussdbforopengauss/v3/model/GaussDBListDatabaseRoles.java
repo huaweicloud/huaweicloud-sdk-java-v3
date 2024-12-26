@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * GaussDBListDatabaseRoles
@@ -28,7 +29,7 @@ public class GaussDBListDatabaseRoles {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "attribute")
 
-    private Object attribute;
+    private GaussDBListDatabaseRolesPriv attribute;
 
     public GaussDBListDatabaseRoles withName(String name) {
         this.name = name;
@@ -81,20 +82,29 @@ public class GaussDBListDatabaseRoles {
         this.lockStatus = lockStatus;
     }
 
-    public GaussDBListDatabaseRoles withAttribute(Object attribute) {
+    public GaussDBListDatabaseRoles withAttribute(GaussDBListDatabaseRolesPriv attribute) {
         this.attribute = attribute;
         return this;
     }
 
+    public GaussDBListDatabaseRoles withAttribute(Consumer<GaussDBListDatabaseRolesPriv> attributeSetter) {
+        if (this.attribute == null) {
+            this.attribute = new GaussDBListDatabaseRolesPriv();
+            attributeSetter.accept(this.attribute);
+        }
+
+        return this;
+    }
+
     /**
-     * 用户/角色的权限属性。
+     * Get attribute
      * @return attribute
      */
-    public Object getAttribute() {
+    public GaussDBListDatabaseRolesPriv getAttribute() {
         return attribute;
     }
 
-    public void setAttribute(Object attribute) {
+    public void setAttribute(GaussDBListDatabaseRolesPriv attribute) {
         this.attribute = attribute;
     }
 

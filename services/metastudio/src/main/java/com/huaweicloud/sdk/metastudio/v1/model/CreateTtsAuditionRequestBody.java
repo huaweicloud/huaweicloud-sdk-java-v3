@@ -16,6 +16,11 @@ public class CreateTtsAuditionRequestBody {
     private String text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tts_text")
+
+    private String ttsText;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "emotion")
 
     private String emotion;
@@ -40,6 +45,11 @@ public class CreateTtsAuditionRequestBody {
 
     private String businessType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "style")
+
+    private String style;
+
     public CreateTtsAuditionRequestBody withText(String text) {
         this.text = text;
         return this;
@@ -55,6 +65,23 @@ public class CreateTtsAuditionRequestBody {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public CreateTtsAuditionRequestBody withTtsText(String ttsText) {
+        this.ttsText = ttsText;
+        return this;
+    }
+
+    /**
+     * 发送给tts的待合成文本。
+     * @return ttsText
+     */
+    public String getTtsText() {
+        return ttsText;
+    }
+
+    public void setTtsText(String ttsText) {
+        this.ttsText = ttsText;
     }
 
     public CreateTtsAuditionRequestBody withEmotion(String emotion) {
@@ -148,6 +175,23 @@ public class CreateTtsAuditionRequestBody {
         this.businessType = businessType;
     }
 
+    public CreateTtsAuditionRequestBody withStyle(String style) {
+        this.style = style;
+        return this;
+    }
+
+    /**
+     * 风格情感
+     * @return style
+     */
+    public String getStyle() {
+        return style;
+    }
+
+    public void setStyle(String style) {
+        this.style = style;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -157,14 +201,15 @@ public class CreateTtsAuditionRequestBody {
             return false;
         }
         CreateTtsAuditionRequestBody that = (CreateTtsAuditionRequestBody) obj;
-        return Objects.equals(this.text, that.text) && Objects.equals(this.emotion, that.emotion)
-            && Objects.equals(this.speed, that.speed) && Objects.equals(this.pitch, that.pitch)
-            && Objects.equals(this.volume, that.volume) && Objects.equals(this.businessType, that.businessType);
+        return Objects.equals(this.text, that.text) && Objects.equals(this.ttsText, that.ttsText)
+            && Objects.equals(this.emotion, that.emotion) && Objects.equals(this.speed, that.speed)
+            && Objects.equals(this.pitch, that.pitch) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.businessType, that.businessType) && Objects.equals(this.style, that.style);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(text, emotion, speed, pitch, volume, businessType);
+        return Objects.hash(text, ttsText, emotion, speed, pitch, volume, businessType, style);
     }
 
     @Override
@@ -172,11 +217,13 @@ public class CreateTtsAuditionRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateTtsAuditionRequestBody {\n");
         sb.append("    text: ").append(toIndentedString(text)).append("\n");
+        sb.append("    ttsText: ").append(toIndentedString(ttsText)).append("\n");
         sb.append("    emotion: ").append(toIndentedString(emotion)).append("\n");
         sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
         sb.append("    pitch: ").append(toIndentedString(pitch)).append("\n");
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
         sb.append("    businessType: ").append(toIndentedString(businessType)).append("\n");
+        sb.append("    style: ").append(toIndentedString(style)).append("\n");
         sb.append("}");
         return sb.toString();
     }

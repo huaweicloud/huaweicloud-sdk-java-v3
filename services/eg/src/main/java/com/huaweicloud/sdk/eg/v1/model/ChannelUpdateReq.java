@@ -19,9 +19,9 @@ public class ChannelUpdateReq {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "eps_id")
+    @JsonProperty(value = "enterprise_project_id")
 
-    private String epsId;
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cross_account")
@@ -50,21 +50,21 @@ public class ChannelUpdateReq {
         this.description = description;
     }
 
-    public ChannelUpdateReq withEpsId(String epsId) {
-        this.epsId = epsId;
+    public ChannelUpdateReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
      * 企业项目id
-     * @return epsId
+     * @return enterpriseProjectId
      */
-    public String getEpsId() {
-        return epsId;
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
     }
 
-    public void setEpsId(String epsId) {
-        this.epsId = epsId;
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public ChannelUpdateReq withCrossAccount(Boolean crossAccount) {
@@ -126,13 +126,14 @@ public class ChannelUpdateReq {
             return false;
         }
         ChannelUpdateReq that = (ChannelUpdateReq) obj;
-        return Objects.equals(this.description, that.description) && Objects.equals(this.epsId, that.epsId)
+        return Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.crossAccount, that.crossAccount) && Objects.equals(this.policy, that.policy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, epsId, crossAccount, policy);
+        return Objects.hash(description, enterpriseProjectId, crossAccount, policy);
     }
 
     @Override
@@ -140,7 +141,7 @@ public class ChannelUpdateReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class ChannelUpdateReq {\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    epsId: ").append(toIndentedString(epsId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    crossAccount: ").append(toIndentedString(crossAccount)).append("\n");
         sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
         sb.append("}");

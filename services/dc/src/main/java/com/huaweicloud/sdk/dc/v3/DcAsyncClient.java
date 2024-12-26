@@ -631,7 +631,7 @@ public class DcAsyncClient {
     /**
      * 查询专线接入点位置列表
      *
-     * 查询本区域下所有专线的接入点的信息，分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 查询本区域下所有专线的接入点的信息，分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -646,7 +646,7 @@ public class DcAsyncClient {
     /**
      * 查询专线接入点位置列表
      *
-     * 查询本区域下所有专线的接入点的信息，分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
+     * 查询本区域下所有专线的接入点的信息，分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -720,11 +720,7 @@ public class DcAsyncClient {
     /**
      * 修改全域接入网关路由表
      *
-     * # 支持的修改操作：
-     * **注意：新增、删除、修改操作互斥，一次请求只能执行其中一类操作**
-     * + 1. 新增下一跳路由
-     * + 2. 删除下一跳路由
-     * + 3. 修改路由描述
+     * 支持的修改操作：新增、删除、修改
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -739,11 +735,7 @@ public class DcAsyncClient {
     /**
      * 修改全域接入网关路由表
      *
-     * # 支持的修改操作：
-     * **注意：新增、删除、修改操作互斥，一次请求只能执行其中一类操作**
-     * + 1. 新增下一跳路由
-     * + 2. 删除下一跳路由
-     * + 3. 修改路由描述
+     * 支持的修改操作：新增、删除、修改
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

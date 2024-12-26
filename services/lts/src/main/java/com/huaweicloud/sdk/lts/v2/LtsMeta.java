@@ -1435,16 +1435,6 @@ public class LtsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListLogStreamsRequest::getLogStreamName, ListLogStreamsRequest::setLogStreamName));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLogStreamsRequest::getOffset, ListLogStreamsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLogStreamsRequest::getLimit, ListLogStreamsRequest::setLimit));
 
         // response
 

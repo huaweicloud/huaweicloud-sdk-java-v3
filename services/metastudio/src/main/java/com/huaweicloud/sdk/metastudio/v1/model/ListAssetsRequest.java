@@ -620,7 +620,7 @@ public class ListAssetsRequest {
     }
 
     /**
-     * 最近直播任务起始时间。格式遵循：RFC 3339 如“2021-01-10T08:43:17Z”。
+     * 起始时间。格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
      * @return startTime
      */
     public String getStartTime() {

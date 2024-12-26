@@ -196,6 +196,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListDatastoresRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDatastoresResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListDrInfosRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListDrInfosResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDrRelationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDrRelationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListEngineFlavorsRequest;
@@ -328,6 +330,7 @@ import com.huaweicloud.sdk.rds.v3.model.PostgresqlHbaHistory;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlPreCheckUpgradeMajorVersionReq;
 import com.huaweicloud.sdk.rds.v3.model.PostgresqlUserForCreation;
 import com.huaweicloud.sdk.rds.v3.model.PwdResetRequest;
+import com.huaweicloud.sdk.rds.v3.model.QueryDRInfoRequest;
 import com.huaweicloud.sdk.rds.v3.model.RecyclePolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ReduceVolumeRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
@@ -1793,6 +1796,33 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDatastoresRequest::getXLanguage, ListDatastoresRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDrInfosRequest, ListDrInfosResponse> listDrInfos = genForListDrInfos();
+
+    private static HttpRequestDef<ListDrInfosRequest, ListDrInfosResponse> genForListDrInfos() {
+        // basic
+        HttpRequestDef.Builder<ListDrInfosRequest, ListDrInfosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListDrInfosRequest.class, ListDrInfosResponse.class)
+                .withName("ListDrInfos")
+                .withUri("/v3/{project_id}/instances/disaster-recovery-infos")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDrInfosRequest::getXLanguage, ListDrInfosRequest::setXLanguage));
+        builder.<QueryDRInfoRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QueryDRInfoRequest.class),
+            f -> f.withMarshaller(ListDrInfosRequest::getBody, ListDrInfosRequest::setBody));
 
         // response
 

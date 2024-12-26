@@ -43,7 +43,7 @@ public class Volume {
     }
 
     /**
-     * 磁盘容量
+     * 磁盘容量,单位：GB
      * @return capacity
      */
     public Integer getCapacity() {

@@ -158,12 +158,42 @@ public class VaultResourceInstancesReq {
          */
         public static final ObjectTypeEnum DISK = new ObjectTypeEnum("disk");
 
+        /**
+         * Enum TURBO for value: "turbo"
+         */
+        public static final ObjectTypeEnum TURBO = new ObjectTypeEnum("turbo");
+
+        /**
+         * Enum WORKSPACE for value: "workspace"
+         */
+        public static final ObjectTypeEnum WORKSPACE = new ObjectTypeEnum("workspace");
+
+        /**
+         * Enum VMWARE for value: "vmware"
+         */
+        public static final ObjectTypeEnum VMWARE = new ObjectTypeEnum("vmware");
+
+        /**
+         * Enum RDS for value: "rds"
+         */
+        public static final ObjectTypeEnum RDS = new ObjectTypeEnum("rds");
+
+        /**
+         * Enum FILE for value: "file"
+         */
+        public static final ObjectTypeEnum FILE = new ObjectTypeEnum("file");
+
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ObjectTypeEnum> createStaticFields() {
             Map<String, ObjectTypeEnum> map = new HashMap<>();
             map.put("server", SERVER);
             map.put("disk", DISK);
+            map.put("turbo", TURBO);
+            map.put("workspace", WORKSPACE);
+            map.put("vmware", VMWARE);
+            map.put("rds", RDS);
+            map.put("file", FILE);
             return Collections.unmodifiableMap(map);
         }
 

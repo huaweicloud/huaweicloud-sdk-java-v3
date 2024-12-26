@@ -606,11 +606,6 @@ public class SecMasterMeta {
             f -> f.withMarshaller(CreateDataspaceRequest::getBody, CreateDataspaceRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateDataspaceResponse::getBody, CreateDataspaceResponse::setBody));
 
         return builder.build();
     }

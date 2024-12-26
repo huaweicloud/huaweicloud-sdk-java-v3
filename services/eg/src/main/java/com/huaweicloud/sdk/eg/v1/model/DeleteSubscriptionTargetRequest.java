@@ -20,6 +20,11 @@ public class DeleteSubscriptionTargetRequest {
 
     private String targetId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public DeleteSubscriptionTargetRequest withSubscriptionId(String subscriptionId) {
         this.subscriptionId = subscriptionId;
         return this;
@@ -54,6 +59,23 @@ public class DeleteSubscriptionTargetRequest {
         this.targetId = targetId;
     }
 
+    public DeleteSubscriptionTargetRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 创建订阅时所使用的企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class DeleteSubscriptionTargetRequest {
             return false;
         }
         DeleteSubscriptionTargetRequest that = (DeleteSubscriptionTargetRequest) obj;
-        return Objects.equals(this.subscriptionId, that.subscriptionId) && Objects.equals(this.targetId, that.targetId);
+        return Objects.equals(this.subscriptionId, that.subscriptionId) && Objects.equals(this.targetId, that.targetId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subscriptionId, targetId);
+        return Objects.hash(subscriptionId, targetId, enterpriseProjectId);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class DeleteSubscriptionTargetRequest {
         sb.append("class DeleteSubscriptionTargetRequest {\n");
         sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
         sb.append("    targetId: ").append(toIndentedString(targetId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

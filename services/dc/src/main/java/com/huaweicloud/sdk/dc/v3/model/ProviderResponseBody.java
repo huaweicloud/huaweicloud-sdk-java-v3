@@ -119,7 +119,7 @@ public class ProviderResponseBody {
     }
 
     /**
-     * 运营商描述信息
+     * 运营商说明
      * @return description
      */
     public String getDescription() {

@@ -63,6 +63,8 @@ import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointServiceRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointServiceResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -917,6 +919,38 @@ public class VpcepAsyncClient {
     public AsyncInvoker<UpdateEndpointWhiteRequest, UpdateEndpointWhiteResponse> updateEndpointWhiteAsyncInvoker(
         UpdateEndpointWhiteRequest request) {
         return new AsyncInvoker<>(request, VpcepMeta.updateEndpointWhite, hcClient);
+    }
+
+    /**
+     * 升级终端节点服务
+     *
+     * 升级终端节点服务，使终端节点服务支持创建专业型终端节点实例
+     * 该接口仅支持在华东二、中东-利雅得、华东-青岛、非洲-开罗局点调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeEndpointServiceRequest 请求对象
+     * @return CompletableFuture<UpgradeEndpointServiceResponse>
+     */
+    public CompletableFuture<UpgradeEndpointServiceResponse> upgradeEndpointServiceAsync(
+        UpgradeEndpointServiceRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpcepMeta.upgradeEndpointService);
+    }
+
+    /**
+     * 升级终端节点服务
+     *
+     * 升级终端节点服务，使终端节点服务支持创建专业型终端节点实例
+     * 该接口仅支持在华东二、中东-利雅得、华东-青岛、非洲-开罗局点调用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeEndpointServiceRequest 请求对象
+     * @return AsyncInvoker<UpgradeEndpointServiceRequest, UpgradeEndpointServiceResponse>
+     */
+    public AsyncInvoker<UpgradeEndpointServiceRequest, UpgradeEndpointServiceResponse> upgradeEndpointServiceAsyncInvoker(
+        UpgradeEndpointServiceRequest request) {
+        return new AsyncInvoker<>(request, VpcepMeta.upgradeEndpointService, hcClient);
     }
 
     /**

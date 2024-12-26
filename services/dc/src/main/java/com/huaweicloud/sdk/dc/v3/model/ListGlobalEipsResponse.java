@@ -24,6 +24,16 @@ public class ListGlobalEipsResponse extends SdkResponse {
 
     private List<ListBindingGeip> globalEips = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListGlobalEipsResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -74,6 +84,49 @@ public class ListGlobalEipsResponse extends SdkResponse {
         this.globalEips = globalEips;
     }
 
+    public ListGlobalEipsResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 总记录数。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public ListGlobalEipsResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListGlobalEipsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -83,12 +136,13 @@ public class ListGlobalEipsResponse extends SdkResponse {
             return false;
         }
         ListGlobalEipsResponse that = (ListGlobalEipsResponse) obj;
-        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.globalEips, that.globalEips);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.globalEips, that.globalEips)
+            && Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, globalEips);
+        return Objects.hash(requestId, globalEips, totalCount, pageInfo);
     }
 
     @Override
@@ -97,6 +151,8 @@ public class ListGlobalEipsResponse extends SdkResponse {
         sb.append("class ListGlobalEipsResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    globalEips: ").append(toIndentedString(globalEips)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

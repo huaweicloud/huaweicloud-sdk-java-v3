@@ -1,15 +1,10 @@
 package com.huaweicloud.sdk.lts.v2.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -18,96 +13,32 @@ import java.util.function.Consumer;
  */
 public class UpdateLogStreamParams {
 
-    /**
-     * 日志存储时间（天）。   该参数仅对华东-上海一、华北-北京四、华南-广州用户开放。
-     */
-    public static final class TtlInDaysEnum {
-
-        /**
-         * Enum NUMBER_7 for value: 7
-         */
-        public static final TtlInDaysEnum NUMBER_7 = new TtlInDaysEnum(7);
-
-        private static final Map<Integer, TtlInDaysEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<Integer, TtlInDaysEnum> createStaticFields() {
-            Map<Integer, TtlInDaysEnum> map = new HashMap<>();
-            map.put(7, NUMBER_7);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private Integer value;
-
-        TtlInDaysEnum(Integer value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public Integer getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TtlInDaysEnum fromValue(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TtlInDaysEnum(value));
-        }
-
-        public static TtlInDaysEnum valueOf(Integer value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TtlInDaysEnum) {
-                return this.value.equals(((TtlInDaysEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ttl_in_days")
 
-    private TtlInDaysEnum ttlInDays;
+    private Integer ttlInDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
 
     private List<TagsBody> tags = null;
 
-    public UpdateLogStreamParams withTtlInDays(TtlInDaysEnum ttlInDays) {
+    public UpdateLogStreamParams withTtlInDays(Integer ttlInDays) {
         this.ttlInDays = ttlInDays;
         return this;
     }
 
     /**
-     * 日志存储时间（天）。   该参数仅对华东-上海一、华北-北京四、华南-广州用户开放。
+     * 日志存储时间（天）。
      * minimum: 1
      * maximum: 365
      * @return ttlInDays
      */
-    public TtlInDaysEnum getTtlInDays() {
+    public Integer getTtlInDays() {
         return ttlInDays;
     }
 
-    public void setTtlInDays(TtlInDaysEnum ttlInDays) {
+    public void setTtlInDays(Integer ttlInDays) {
         this.ttlInDays = ttlInDays;
     }
 

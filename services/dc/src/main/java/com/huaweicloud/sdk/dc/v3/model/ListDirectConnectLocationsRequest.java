@@ -297,7 +297,7 @@ public class ListDirectConnectLocationsRequest {
     }
 
     /**
-     * 根椐资源状态过淲实例
+     * 根椐资源状态过滤实例
      * @return status
      */
     public List<String> getStatus() {

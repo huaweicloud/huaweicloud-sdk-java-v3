@@ -148,7 +148,7 @@ public class DcMeta {
             HttpRequestDef.builder(HttpMethod.POST, BindGlobalEipsRequest.class, BindGlobalEipsResponse.class)
                 .withName("BindGlobalEips")
                 .withUri("/v3/{project_id}/dcaas/connect-gateways/{connect_gateway_id}/binding-global-eips")
-                .withContentType("application/json; charset=utf-8");
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("connect_gateway_id",
@@ -257,7 +257,7 @@ public class DcMeta {
             HttpRequestDef.builder(HttpMethod.POST, UnbindGlobalEipsRequest.class, UnbindGlobalEipsResponse.class)
                 .withName("UnbindGlobalEips")
                 .withUri("/v3/{project_id}/dcaas/connect-gateways/{connect_gateway_id}/unbinding-global-eips")
-                .withContentType("application/json; charset=utf-8");
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("connect_gateway_id",
@@ -442,7 +442,7 @@ public class DcMeta {
                 UpdateConnectGatewayRequest::setConnectGatewayId));
         builder.<UpdateConnectGatewayRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateConnectGatewayRequestBody.class),
             f -> f.withMarshaller(UpdateConnectGatewayRequest::getBody, UpdateConnectGatewayRequest::setBody));
 
@@ -914,12 +914,16 @@ public class DcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListGdgwRouteTablesRequest::getGdgwId, ListGdgwRouteTablesRequest::setGdgwId));
-        builder.<List<ListGdgwRouteTablesRequest.AddressFamilyEnum>>withRequestField("address_family",
+        builder.<List<String>>withRequestField("fields",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListGdgwRouteTablesRequest::getAddressFamily,
-                ListGdgwRouteTablesRequest::setAddressFamily));
+            f -> f.withMarshaller(ListGdgwRouteTablesRequest::getFields, ListGdgwRouteTablesRequest::setFields));
+        builder.<List<String>>withRequestField("ext_fields",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGdgwRouteTablesRequest::getExtFields, ListGdgwRouteTablesRequest::setExtFields));
         builder.<List<String>>withRequestField("nexthop",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -931,6 +935,12 @@ public class DcMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListGdgwRouteTablesRequest::getDestination,
                 ListGdgwRouteTablesRequest::setDestination));
+        builder.<List<ListGdgwRouteTablesRequest.AddressFamilyEnum>>withRequestField("address_family",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListGdgwRouteTablesRequest::getAddressFamily,
+                ListGdgwRouteTablesRequest::setAddressFamily));
 
         // response
 
@@ -946,7 +956,7 @@ public class DcMeta {
             .builder(HttpMethod.PUT, UpdateGdgwRouteTableRequest.class, UpdateGdgwRouteTableResponse.class)
             .withName("UpdateGdgwRouteTable")
             .withUri("/v3/{project_id}/dcaas/gdgw/{gdgw_id}/routetables")
-            .withContentType("application/json; charset=utf-8");
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("gdgw_id",
@@ -956,7 +966,7 @@ public class DcMeta {
             f -> f.withMarshaller(UpdateGdgwRouteTableRequest::getGdgwId, UpdateGdgwRouteTableRequest::setGdgwId));
         builder.<UpdateGdgwRoutetableRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateGdgwRoutetableRequestBody.class),
             f -> f.withMarshaller(UpdateGdgwRouteTableRequest::getBody, UpdateGdgwRouteTableRequest::setBody));
 
@@ -1425,11 +1435,6 @@ public class DcMeta {
             f -> f.withMarshaller(BatchCreateResourceTagsRequest::getBody, BatchCreateResourceTagsRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(BatchCreateResourceTagsResponse::getBody, BatchCreateResourceTagsResponse::setBody));
 
         return builder.build();
     }
@@ -1464,11 +1469,6 @@ public class DcMeta {
             f -> f.withMarshaller(CreateResourceTagRequest::getBody, CreateResourceTagRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateResourceTagResponse::getBody, CreateResourceTagResponse::setBody));
 
         return builder.build();
     }

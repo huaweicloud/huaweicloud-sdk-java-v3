@@ -80,6 +80,11 @@ public class ListSmartLiveRoomsRequest {
 
     private String templateOwnType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "confirm_state")
+
+    private String confirmState;
+
     public ListSmartLiveRoomsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -328,6 +333,23 @@ public class ListSmartLiveRoomsRequest {
         this.templateOwnType = templateOwnType;
     }
 
+    public ListSmartLiveRoomsRequest withConfirmState(String confirmState) {
+        this.confirmState = confirmState;
+        return this;
+    }
+
+    /**
+     * 直播间确认状态。此状态仅用于特定用户需要人工确认场景。 - unconfirm: 未确认 - confirmed：已确认 - reject： 拒绝
+     * @return confirmState
+     */
+    public String getConfirmState() {
+        return confirmState;
+    }
+
+    public void setConfirmState(String confirmState) {
+        this.confirmState = confirmState;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -344,7 +366,8 @@ public class ListSmartLiveRoomsRequest {
             && Objects.equals(this.modelName, that.modelName) && Objects.equals(this.liveState, that.liveState)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.roomType, that.roomType)
-            && Objects.equals(this.templateOwnType, that.templateOwnType);
+            && Objects.equals(this.templateOwnType, that.templateOwnType)
+            && Objects.equals(this.confirmState, that.confirmState);
     }
 
     @Override
@@ -362,7 +385,8 @@ public class ListSmartLiveRoomsRequest {
             startTime,
             endTime,
             roomType,
-            templateOwnType);
+            templateOwnType,
+            confirmState);
     }
 
     @Override
@@ -383,6 +407,7 @@ public class ListSmartLiveRoomsRequest {
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    roomType: ").append(toIndentedString(roomType)).append("\n");
         sb.append("    templateOwnType: ").append(toIndentedString(templateOwnType)).append("\n");
+        sb.append("    confirmState: ").append(toIndentedString(confirmState)).append("\n");
         sb.append("}");
         return sb.toString();
     }

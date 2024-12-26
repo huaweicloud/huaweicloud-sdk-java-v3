@@ -22,7 +22,7 @@ public class ListDatabaseRolesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
-    private Long totalCount;
+    private Integer totalCount;
 
     public ListDatabaseRolesResponse withRoles(List<GaussDBListDatabaseRoles> roles) {
         this.roles = roles;
@@ -57,7 +57,7 @@ public class ListDatabaseRolesResponse extends SdkResponse {
         this.roles = roles;
     }
 
-    public ListDatabaseRolesResponse withTotalCount(Long totalCount) {
+    public ListDatabaseRolesResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
@@ -66,11 +66,11 @@ public class ListDatabaseRolesResponse extends SdkResponse {
      * 数据库用户/角色总数。
      * @return totalCount
      */
-    public Long getTotalCount() {
+    public Integer getTotalCount() {
         return totalCount;
     }
 
-    public void setTotalCount(Long totalCount) {
+    public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
 

@@ -445,6 +445,11 @@ public class VoiceModelAssetMeta {
     private Boolean isSupportVcProcess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_thai_auto_split")
+
+    private Boolean isSupportThaiAutoSplit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_flexus")
 
     private Boolean isFlexus;
@@ -693,6 +698,23 @@ public class VoiceModelAssetMeta {
         this.isSupportVcProcess = isSupportVcProcess;
     }
 
+    public VoiceModelAssetMeta withIsSupportThaiAutoSplit(Boolean isSupportThaiAutoSplit) {
+        this.isSupportThaiAutoSplit = isSupportThaiAutoSplit;
+        return this;
+    }
+
+    /**
+     * 是否支持泰语文本自动分句。
+     * @return isSupportThaiAutoSplit
+     */
+    public Boolean getIsSupportThaiAutoSplit() {
+        return isSupportThaiAutoSplit;
+    }
+
+    public void setIsSupportThaiAutoSplit(Boolean isSupportThaiAutoSplit) {
+        this.isSupportThaiAutoSplit = isSupportThaiAutoSplit;
+    }
+
     public VoiceModelAssetMeta withIsFlexus(Boolean isFlexus) {
         this.isFlexus = isFlexus;
         return this;
@@ -727,6 +749,7 @@ public class VoiceModelAssetMeta {
             && Objects.equals(this.voiceCapability, that.voiceCapability)
             && Objects.equals(this.externalVoiceMeta, that.externalVoiceMeta)
             && Objects.equals(this.isSupportVcProcess, that.isSupportVcProcess)
+            && Objects.equals(this.isSupportThaiAutoSplit, that.isSupportThaiAutoSplit)
             && Objects.equals(this.isFlexus, that.isFlexus);
     }
 
@@ -744,6 +767,7 @@ public class VoiceModelAssetMeta {
             voiceCapability,
             externalVoiceMeta,
             isSupportVcProcess,
+            isSupportThaiAutoSplit,
             isFlexus);
     }
 
@@ -763,6 +787,7 @@ public class VoiceModelAssetMeta {
         sb.append("    voiceCapability: ").append(toIndentedString(voiceCapability)).append("\n");
         sb.append("    externalVoiceMeta: ").append(toIndentedString(externalVoiceMeta)).append("\n");
         sb.append("    isSupportVcProcess: ").append(toIndentedString(isSupportVcProcess)).append("\n");
+        sb.append("    isSupportThaiAutoSplit: ").append(toIndentedString(isSupportThaiAutoSplit)).append("\n");
         sb.append("    isFlexus: ").append(toIndentedString(isFlexus)).append("\n");
         sb.append("}");
         return sb.toString();

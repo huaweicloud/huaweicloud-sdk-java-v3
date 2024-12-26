@@ -80,6 +80,8 @@ import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointServiceResponse;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteRequest;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteRequestBody;
 import com.huaweicloud.sdk.vpcep.v1.model.UpdateEndpointWhiteResponse;
+import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointServiceRequest;
+import com.huaweicloud.sdk.vpcep.v1.model.UpgradeEndpointServiceResponse;
 
 @SuppressWarnings("unchecked")
 public class VpcepMeta {
@@ -985,6 +987,30 @@ public class VpcepMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateEndpointWhiteRequestBody.class),
             f -> f.withMarshaller(UpdateEndpointWhiteRequest::getBody, UpdateEndpointWhiteRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeEndpointServiceRequest, UpgradeEndpointServiceResponse> upgradeEndpointService =
+        genForUpgradeEndpointService();
+
+    private static HttpRequestDef<UpgradeEndpointServiceRequest, UpgradeEndpointServiceResponse> genForUpgradeEndpointService() {
+        // basic
+        HttpRequestDef.Builder<UpgradeEndpointServiceRequest, UpgradeEndpointServiceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpgradeEndpointServiceRequest.class, UpgradeEndpointServiceResponse.class)
+            .withName("UpgradeEndpointService")
+            .withUri("/v2/{project_id}/vpc-endpoint-services/{vpc_endpoint_service_id}/upgrade")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpc_endpoint_service_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeEndpointServiceRequest::getVpcEndpointServiceId,
+                UpgradeEndpointServiceRequest::setVpcEndpointServiceId));
 
         // response
 

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CreateExternalPeerLinkRequestBodyPeerLinkPeerSite
+ * 连接站点对象
  */
 public class CreateExternalPeerLinkRequestBodyPeerLinkPeerSite {
 

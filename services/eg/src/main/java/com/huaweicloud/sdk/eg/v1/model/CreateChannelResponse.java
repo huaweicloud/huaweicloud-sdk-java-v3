@@ -123,9 +123,9 @@ public class CreateChannelResponse extends SdkResponse {
     private String updatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "eps_id")
+    @JsonProperty(value = "enterprise_project_id")
 
-    private String epsId;
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -234,21 +234,21 @@ public class CreateChannelResponse extends SdkResponse {
         this.updatedTime = updatedTime;
     }
 
-    public CreateChannelResponse withEpsId(String epsId) {
-        this.epsId = epsId;
+    public CreateChannelResponse withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
      * 企业项目id
-     * @return epsId
+     * @return enterpriseProjectId
      */
-    public String getEpsId() {
-        return epsId;
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
     }
 
-    public void setEpsId(String epsId) {
-        this.epsId = epsId;
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public CreateChannelResponse withXRequestId(String xRequestId) {
@@ -283,12 +283,14 @@ public class CreateChannelResponse extends SdkResponse {
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.providerType, that.providerType)
             && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
-            && Objects.equals(this.epsId, that.epsId) && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, providerType, createdTime, updatedTime, epsId, xRequestId);
+        return Objects
+            .hash(id, name, description, providerType, createdTime, updatedTime, enterpriseProjectId, xRequestId);
     }
 
     @Override
@@ -301,7 +303,7 @@ public class CreateChannelResponse extends SdkResponse {
         sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
-        sb.append("    epsId: ").append(toIndentedString(epsId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

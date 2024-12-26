@@ -26,21 +26,43 @@ public class EventStreamingSource {
 
     private SourceMobileMQParameters sourceMobileRocketmq;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_community_rocketmq")
+
+    private SourceCommunityMQParameters sourceCommunityRocketmq;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source_dms_rocketmq")
+
+    private SourceDMSMQParameters sourceDmsRocketmq;
+
     /**
      * 事件源类型名称
      */
     public static final class NameEnum {
 
         /**
-         * Enum HC_DMS for value: "HC.DMS"
+         * Enum HC_DMS_ROCKETMQ for value: "HC.DMS_ROCKETMQ"
          */
-        public static final NameEnum HC_DMS = new NameEnum("HC.DMS");
+        public static final NameEnum HC_DMS_ROCKETMQ = new NameEnum("HC.DMS_ROCKETMQ");
+
+        /**
+         * Enum HC_COMMUNITY_ROCKETMQ for value: "HC.COMMUNITY_ROCKETMQ"
+         */
+        public static final NameEnum HC_COMMUNITY_ROCKETMQ = new NameEnum("HC.COMMUNITY_ROCKETMQ");
+
+        /**
+         * Enum HC_KAFKA for value: "HC.Kafka"
+         */
+        public static final NameEnum HC_KAFKA = new NameEnum("HC.Kafka");
 
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, NameEnum> createStaticFields() {
             Map<String, NameEnum> map = new HashMap<>();
-            map.put("HC.DMS", HC_DMS);
+            map.put("HC.DMS_ROCKETMQ", HC_DMS_ROCKETMQ);
+            map.put("HC.COMMUNITY_ROCKETMQ", HC_COMMUNITY_ROCKETMQ);
+            map.put("HC.Kafka", HC_KAFKA);
             return Collections.unmodifiableMap(map);
         }
 
@@ -148,6 +170,59 @@ public class EventStreamingSource {
         this.sourceMobileRocketmq = sourceMobileRocketmq;
     }
 
+    public EventStreamingSource withSourceCommunityRocketmq(SourceCommunityMQParameters sourceCommunityRocketmq) {
+        this.sourceCommunityRocketmq = sourceCommunityRocketmq;
+        return this;
+    }
+
+    public EventStreamingSource withSourceCommunityRocketmq(
+        Consumer<SourceCommunityMQParameters> sourceCommunityRocketmqSetter) {
+        if (this.sourceCommunityRocketmq == null) {
+            this.sourceCommunityRocketmq = new SourceCommunityMQParameters();
+            sourceCommunityRocketmqSetter.accept(this.sourceCommunityRocketmq);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sourceCommunityRocketmq
+     * @return sourceCommunityRocketmq
+     */
+    public SourceCommunityMQParameters getSourceCommunityRocketmq() {
+        return sourceCommunityRocketmq;
+    }
+
+    public void setSourceCommunityRocketmq(SourceCommunityMQParameters sourceCommunityRocketmq) {
+        this.sourceCommunityRocketmq = sourceCommunityRocketmq;
+    }
+
+    public EventStreamingSource withSourceDmsRocketmq(SourceDMSMQParameters sourceDmsRocketmq) {
+        this.sourceDmsRocketmq = sourceDmsRocketmq;
+        return this;
+    }
+
+    public EventStreamingSource withSourceDmsRocketmq(Consumer<SourceDMSMQParameters> sourceDmsRocketmqSetter) {
+        if (this.sourceDmsRocketmq == null) {
+            this.sourceDmsRocketmq = new SourceDMSMQParameters();
+            sourceDmsRocketmqSetter.accept(this.sourceDmsRocketmq);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sourceDmsRocketmq
+     * @return sourceDmsRocketmq
+     */
+    public SourceDMSMQParameters getSourceDmsRocketmq() {
+        return sourceDmsRocketmq;
+    }
+
+    public void setSourceDmsRocketmq(SourceDMSMQParameters sourceDmsRocketmq) {
+        this.sourceDmsRocketmq = sourceDmsRocketmq;
+    }
+
     public EventStreamingSource withName(NameEnum name) {
         this.name = name;
         return this;
@@ -176,12 +251,13 @@ public class EventStreamingSource {
         EventStreamingSource that = (EventStreamingSource) obj;
         return Objects.equals(this.sourceKafka, that.sourceKafka)
             && Objects.equals(this.sourceMobileRocketmq, that.sourceMobileRocketmq)
-            && Objects.equals(this.name, that.name);
+            && Objects.equals(this.sourceCommunityRocketmq, that.sourceCommunityRocketmq)
+            && Objects.equals(this.sourceDmsRocketmq, that.sourceDmsRocketmq) && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sourceKafka, sourceMobileRocketmq, name);
+        return Objects.hash(sourceKafka, sourceMobileRocketmq, sourceCommunityRocketmq, sourceDmsRocketmq, name);
     }
 
     @Override
@@ -190,6 +266,8 @@ public class EventStreamingSource {
         sb.append("class EventStreamingSource {\n");
         sb.append("    sourceKafka: ").append(toIndentedString(sourceKafka)).append("\n");
         sb.append("    sourceMobileRocketmq: ").append(toIndentedString(sourceMobileRocketmq)).append("\n");
+        sb.append("    sourceCommunityRocketmq: ").append(toIndentedString(sourceCommunityRocketmq)).append("\n");
+        sb.append("    sourceDmsRocketmq: ").append(toIndentedString(sourceDmsRocketmq)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();

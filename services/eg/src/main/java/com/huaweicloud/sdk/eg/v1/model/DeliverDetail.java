@@ -36,7 +36,7 @@ public class DeliverDetail {
     }
 
     /**
-     * 投递时间   格式 yyyy/mm/dd xx:yy:zz
+     * 投递时间 格式 yyyy/mm/dd xx:yy:zz
      * @return deliverTime
      */
     public String getDeliverTime() {
@@ -53,7 +53,7 @@ public class DeliverDetail {
     }
 
     /**
-     * 投递状态     SUCCESS Or  FAILED
+     * 投递状态 SUCCESS Or FAILED
      * @return deliverStatus
      */
     public String getDeliverStatus() {

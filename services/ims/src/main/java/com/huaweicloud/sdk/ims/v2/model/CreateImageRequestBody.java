@@ -266,6 +266,81 @@ public class CreateImageRequestBody {
 
     private String volumeId;
 
+    /**
+     * 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
+     */
+    public static final class HwFirmwareTypeEnum {
+
+        /**
+         * Enum BIOS for value: "bios"
+         */
+        public static final HwFirmwareTypeEnum BIOS = new HwFirmwareTypeEnum("bios");
+
+        /**
+         * Enum UEFI for value: "uefi"
+         */
+        public static final HwFirmwareTypeEnum UEFI = new HwFirmwareTypeEnum("uefi");
+
+        private static final Map<String, HwFirmwareTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HwFirmwareTypeEnum> createStaticFields() {
+            Map<String, HwFirmwareTypeEnum> map = new HashMap<>();
+            map.put("bios", BIOS);
+            map.put("uefi", UEFI);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HwFirmwareTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HwFirmwareTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HwFirmwareTypeEnum(value));
+        }
+
+        public static HwFirmwareTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof HwFirmwareTypeEnum) {
+                return this.value.equals(((HwFirmwareTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hw_firmware_type")
+
+    private HwFirmwareTypeEnum hwFirmwareType;
+
     public CreateImageRequestBody withDataImages(List<CreateDataImage> dataImages) {
         this.dataImages = dataImages;
         return this;
@@ -620,6 +695,23 @@ public class CreateImageRequestBody {
         this.volumeId = volumeId;
     }
 
+    public CreateImageRequestBody withHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
+        this.hwFirmwareType = hwFirmwareType;
+        return this;
+    }
+
+    /**
+     * 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
+     * @return hwFirmwareType
+     */
+    public HwFirmwareTypeEnum getHwFirmwareType() {
+        return hwFirmwareType;
+    }
+
+    public void setHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
+        this.hwFirmwareType = hwFirmwareType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -638,7 +730,8 @@ public class CreateImageRequestBody {
             && Objects.equals(this.minDisk, that.minDisk) && Objects.equals(this.isConfig, that.isConfig)
             && Objects.equals(this.cmkId, that.cmkId) && Objects.equals(this.type, that.type)
             && Objects.equals(this.isQuickImport, that.isQuickImport)
-            && Objects.equals(this.architecture, that.architecture) && Objects.equals(this.volumeId, that.volumeId);
+            && Objects.equals(this.architecture, that.architecture) && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.hwFirmwareType, that.hwFirmwareType);
     }
 
     @Override
@@ -660,7 +753,8 @@ public class CreateImageRequestBody {
             type,
             isQuickImport,
             architecture,
-            volumeId);
+            volumeId,
+            hwFirmwareType);
     }
 
     @Override
@@ -685,6 +779,7 @@ public class CreateImageRequestBody {
         sb.append("    isQuickImport: ").append(toIndentedString(isQuickImport)).append("\n");
         sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
         sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
+        sb.append("    hwFirmwareType: ").append(toIndentedString(hwFirmwareType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

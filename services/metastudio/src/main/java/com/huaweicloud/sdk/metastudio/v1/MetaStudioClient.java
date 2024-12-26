@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.metastudio.v1;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchConfirmLiveCommandsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchConfirmLiveCommandsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoRequest;
@@ -13,6 +15,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmartLiveRoomRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmartLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CopyVideoScriptsRequest;
@@ -93,6 +97,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsAuditionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateTtsaResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyConfigsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateVideoScriptsRequest;
@@ -135,6 +141,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartChatRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVideoScriptResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteVoiceTrainingJobRequest;
@@ -197,6 +205,10 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRoomsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRuleCommandsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveRuleCommandsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveScriptCommandsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListSmartLiveScriptCommandsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListStylesResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTenantResourcesRequest;
@@ -205,6 +217,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaDataResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListTtsaJobsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyConfigsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ListTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoMotionCaptureJobsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ListVideoScriptsRequest;
@@ -219,6 +233,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ResetActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.RestoreAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.SaveTtscVocabularyConfigsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.SetJobBatchNameResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.SetProductAssetRequest;
@@ -3568,6 +3584,35 @@ public class MetaStudioClient {
     }
 
     /**
+     * 批量确认命令
+     *
+     * 该接口用于批量确认命令列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchConfirmLiveCommandsRequest 请求对象
+     * @return BatchConfirmLiveCommandsResponse
+     */
+    public BatchConfirmLiveCommandsResponse batchConfirmLiveCommands(BatchConfirmLiveCommandsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.batchConfirmLiveCommands);
+    }
+
+    /**
+     * 批量确认命令
+     *
+     * 该接口用于批量确认命令列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchConfirmLiveCommandsRequest 请求对象
+     * @return SyncInvoker<BatchConfirmLiveCommandsRequest, BatchConfirmLiveCommandsResponse>
+     */
+    public SyncInvoker<BatchConfirmLiveCommandsRequest, BatchConfirmLiveCommandsResponse> batchConfirmLiveCommandsInvoker(
+        BatchConfirmLiveCommandsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.batchConfirmLiveCommands, hcClient);
+    }
+
+    /**
      * 控制数字人直播过程
      *
      * 该接口用于控制数字人直播过程。
@@ -3651,6 +3696,64 @@ public class MetaStudioClient {
     public SyncInvoker<ListSmartLiveJobsRequest, ListSmartLiveJobsResponse> listSmartLiveJobsInvoker(
         ListSmartLiveJobsRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.listSmartLiveJobs, hcClient);
+    }
+
+    /**
+     * 查询租户未确认的互动规则命令列表
+     *
+     * 该接口用于查询租户未确认的互动规则命令列表，仅限于需要做二次确认的特定用户使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSmartLiveRuleCommandsRequest 请求对象
+     * @return ListSmartLiveRuleCommandsResponse
+     */
+    public ListSmartLiveRuleCommandsResponse listSmartLiveRuleCommands(ListSmartLiveRuleCommandsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listSmartLiveRuleCommands);
+    }
+
+    /**
+     * 查询租户未确认的互动规则命令列表
+     *
+     * 该接口用于查询租户未确认的互动规则命令列表，仅限于需要做二次确认的特定用户使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSmartLiveRuleCommandsRequest 请求对象
+     * @return SyncInvoker<ListSmartLiveRuleCommandsRequest, ListSmartLiveRuleCommandsResponse>
+     */
+    public SyncInvoker<ListSmartLiveRuleCommandsRequest, ListSmartLiveRuleCommandsResponse> listSmartLiveRuleCommandsInvoker(
+        ListSmartLiveRuleCommandsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listSmartLiveRuleCommands, hcClient);
+    }
+
+    /**
+     * 查询租户未确认的剧本命令列表
+     *
+     * 该接口用于查询租户未确认的剧本命令列表，仅限于需要做二次确认的特定用户使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSmartLiveScriptCommandsRequest 请求对象
+     * @return ListSmartLiveScriptCommandsResponse
+     */
+    public ListSmartLiveScriptCommandsResponse listSmartLiveScriptCommands(ListSmartLiveScriptCommandsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listSmartLiveScriptCommands);
+    }
+
+    /**
+     * 查询租户未确认的剧本命令列表
+     *
+     * 该接口用于查询租户未确认的剧本命令列表，仅限于需要做二次确认的特定用户使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSmartLiveScriptCommandsRequest 请求对象
+     * @return SyncInvoker<ListSmartLiveScriptCommandsRequest, ListSmartLiveScriptCommandsResponse>
+     */
+    public SyncInvoker<ListSmartLiveScriptCommandsRequest, ListSmartLiveScriptCommandsResponse> listSmartLiveScriptCommandsInvoker(
+        ListSmartLiveScriptCommandsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listSmartLiveScriptCommands, hcClient);
     }
 
     /**
@@ -3765,6 +3868,35 @@ public class MetaStudioClient {
      */
     public SyncInvoker<StopSmartLiveRequest, StopSmartLiveResponse> stopSmartLiveInvoker(StopSmartLiveRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.stopSmartLive, hcClient);
+    }
+
+    /**
+     * 直播间确认
+     *
+     * 该接口用直播间二次确认
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConfirmSmartLiveRoomRequest 请求对象
+     * @return ConfirmSmartLiveRoomResponse
+     */
+    public ConfirmSmartLiveRoomResponse confirmSmartLiveRoom(ConfirmSmartLiveRoomRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.confirmSmartLiveRoom);
+    }
+
+    /**
+     * 直播间确认
+     *
+     * 该接口用直播间二次确认
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ConfirmSmartLiveRoomRequest 请求对象
+     * @return SyncInvoker<ConfirmSmartLiveRoomRequest, ConfirmSmartLiveRoomResponse>
+     */
+    public SyncInvoker<ConfirmSmartLiveRoomRequest, ConfirmSmartLiveRoomResponse> confirmSmartLiveRoomInvoker(
+        ConfirmSmartLiveRoomRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.confirmSmartLiveRoom, hcClient);
     }
 
     /**
@@ -5042,6 +5174,122 @@ public class MetaStudioClient {
     public SyncInvoker<CreateTtsAuditionRequest, CreateTtsAuditionResponse> createTtsAuditionInvoker(
         CreateTtsAuditionRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.createTtsAudition, hcClient);
+    }
+
+    /**
+     * 设置TTS租户级扩展词表配置
+     *
+     * 该接口用于设置TTS租户级扩展词表配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTtscVocabularyConfigsRequest 请求对象
+     * @return CreateTtscVocabularyConfigsResponse
+     */
+    public CreateTtscVocabularyConfigsResponse createTtscVocabularyConfigs(CreateTtscVocabularyConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createTtscVocabularyConfigs);
+    }
+
+    /**
+     * 设置TTS租户级扩展词表配置
+     *
+     * 该接口用于设置TTS租户级扩展词表配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTtscVocabularyConfigsRequest 请求对象
+     * @return SyncInvoker<CreateTtscVocabularyConfigsRequest, CreateTtscVocabularyConfigsResponse>
+     */
+    public SyncInvoker<CreateTtscVocabularyConfigsRequest, CreateTtscVocabularyConfigsResponse> createTtscVocabularyConfigsInvoker(
+        CreateTtscVocabularyConfigsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createTtscVocabularyConfigs, hcClient);
+    }
+
+    /**
+     * 删除TTS租户级词表扩展配置
+     *
+     * 该接口用于删除TTS租户级词表扩展配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTtscVocabularyConfigsRequest 请求对象
+     * @return DeleteTtscVocabularyConfigsResponse
+     */
+    public DeleteTtscVocabularyConfigsResponse deleteTtscVocabularyConfigs(DeleteTtscVocabularyConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteTtscVocabularyConfigs);
+    }
+
+    /**
+     * 删除TTS租户级词表扩展配置
+     *
+     * 该接口用于删除TTS租户级词表扩展配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTtscVocabularyConfigsRequest 请求对象
+     * @return SyncInvoker<DeleteTtscVocabularyConfigsRequest, DeleteTtscVocabularyConfigsResponse>
+     */
+    public SyncInvoker<DeleteTtscVocabularyConfigsRequest, DeleteTtscVocabularyConfigsResponse> deleteTtscVocabularyConfigsInvoker(
+        DeleteTtscVocabularyConfigsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteTtscVocabularyConfigs, hcClient);
+    }
+
+    /**
+     * 获取TTS租户级词表扩展配置
+     *
+     * 该接口用于获取TTS租户级词表扩展配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTtscVocabularyConfigsRequest 请求对象
+     * @return ListTtscVocabularyConfigsResponse
+     */
+    public ListTtscVocabularyConfigsResponse listTtscVocabularyConfigs(ListTtscVocabularyConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listTtscVocabularyConfigs);
+    }
+
+    /**
+     * 获取TTS租户级词表扩展配置
+     *
+     * 该接口用于获取TTS租户级词表扩展配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTtscVocabularyConfigsRequest 请求对象
+     * @return SyncInvoker<ListTtscVocabularyConfigsRequest, ListTtscVocabularyConfigsResponse>
+     */
+    public SyncInvoker<ListTtscVocabularyConfigsRequest, ListTtscVocabularyConfigsResponse> listTtscVocabularyConfigsInvoker(
+        ListTtscVocabularyConfigsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listTtscVocabularyConfigs, hcClient);
+    }
+
+    /**
+     * 修改TTS租户级扩展词表配置
+     *
+     * 该接口用于修改TTS租户级扩展词表配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveTtscVocabularyConfigsRequest 请求对象
+     * @return SaveTtscVocabularyConfigsResponse
+     */
+    public SaveTtscVocabularyConfigsResponse saveTtscVocabularyConfigs(SaveTtscVocabularyConfigsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.saveTtscVocabularyConfigs);
+    }
+
+    /**
+     * 修改TTS租户级扩展词表配置
+     *
+     * 该接口用于修改TTS租户级扩展词表配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveTtscVocabularyConfigsRequest 请求对象
+     * @return SyncInvoker<SaveTtscVocabularyConfigsRequest, SaveTtscVocabularyConfigsResponse>
+     */
+    public SyncInvoker<SaveTtscVocabularyConfigsRequest, SaveTtscVocabularyConfigsResponse> saveTtscVocabularyConfigsInvoker(
+        SaveTtscVocabularyConfigsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.saveTtscVocabularyConfigs, hcClient);
     }
 
     /**

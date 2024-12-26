@@ -30,6 +30,11 @@ public class InterpreterInfo {
 
     private String name;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "interpreterId")
+
+    private String interpreterId;
+
     public InterpreterInfo withLoginAccount(String loginAccount) {
         this.loginAccount = loginAccount;
         return this;
@@ -98,6 +103,23 @@ public class InterpreterInfo {
         this.name = name;
     }
 
+    public InterpreterInfo withInterpreterId(String interpreterId) {
+        this.interpreterId = interpreterId;
+        return this;
+    }
+
+    /**
+     * 传译员序号，AI传译组下传译员唯一标识。
+     * @return interpreterId
+     */
+    public String getInterpreterId() {
+        return interpreterId;
+    }
+
+    public void setInterpreterId(String interpreterId) {
+        this.interpreterId = interpreterId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class InterpreterInfo {
         }
         InterpreterInfo that = (InterpreterInfo) obj;
         return Objects.equals(this.loginAccount, that.loginAccount) && Objects.equals(this.userID, that.userID)
-            && Objects.equals(this.callNumber, that.callNumber) && Objects.equals(this.name, that.name);
+            && Objects.equals(this.callNumber, that.callNumber) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.interpreterId, that.interpreterId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(loginAccount, userID, callNumber, name);
+        return Objects.hash(loginAccount, userID, callNumber, name, interpreterId);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class InterpreterInfo {
         sb.append("    userID: ").append(toIndentedString(userID)).append("\n");
         sb.append("    callNumber: ").append(toIndentedString(callNumber)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    interpreterId: ").append(toIndentedString(interpreterId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

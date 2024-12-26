@@ -22,6 +22,8 @@ import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteAclRulesRequest;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteAclRulesResponse;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteAddressItemsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteAddressItemsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteDomainSetRequest;
+import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteDomainSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteServiceItemsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.BatchDeleteServiceItemsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.BatchUpdateAclRuleActionsRequest;
@@ -34,6 +36,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ChangeEipStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeEipStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsProtectModeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsProtectModeResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsRuleModeRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsRuleModeResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ChangeIpsSwitchStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.CreateCaptureTaskRequest;
@@ -80,6 +84,8 @@ import com.huaweicloud.sdk.cfw.v1.model.ListAddressSetDetailRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAddressSetDetailResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAddressSetsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAddressSetsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListAlarmWhitelistRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListAlarmWhitelistResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListAttackLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListAttackLogsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListBlackWhiteListsRequest;
@@ -88,10 +94,14 @@ import com.huaweicloud.sdk.cfw.v1.model.ListCaptureResultRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListCaptureResultResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListCaptureTaskRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListCaptureTaskResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListCustomerIpsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListCustomerIpsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListDnsServersRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListDnsServersResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainParseDetailRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainParseDetailResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListDomainParseIpRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListDomainParseIpResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainSetsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainSetsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListDomainsRequest;
@@ -110,14 +120,24 @@ import com.huaweicloud.sdk.cfw.v1.model.ListFlowLogsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListFlowLogsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsProtectModeResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpsRules1Request;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpsRules1Response;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpsRulesRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListIpsRulesResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsSwitchStatusRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListIpsSwitchStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListJobRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListJobResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListLogConfigResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListProjectTagsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListProjectTagsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListProtectedVpcsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListRegionsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListRegionsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ListResourceTagsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ListResourceTagsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListRuleAclTagsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListRuleAclTagsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceItemsRequest;
@@ -126,12 +146,38 @@ import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetDetailRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetDetailResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.SaveTagsRequest;
+import com.huaweicloud.sdk.cfw.v1.model.SaveTagsResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAlarmConfigRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAlarmConfigResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAntiVirusRuleRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAntiVirusRuleResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAntiVirusSwitchRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAntiVirusSwitchResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAutoProtectStatusRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowAutoProtectStatusResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowDomainSetDetailRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowDomainSetDetailResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowImportStatusRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowImportStatusResponse;
+import com.huaweicloud.sdk.cfw.v1.model.ShowIpsUpdateTimeRequest;
+import com.huaweicloud.sdk.cfw.v1.model.ShowIpsUpdateTimeResponse;
+import com.huaweicloud.sdk.cfw.v1.model.SwitchAutoProtectStatusRequest;
+import com.huaweicloud.sdk.cfw.v1.model.SwitchAutoProtectStatusResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateAclRuleOrderRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateAclRuleOrderResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateAclRuleRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateAclRuleResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateAddressSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateAddressSetResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateAdvancedIpsRuleRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateAdvancedIpsRuleResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateAlarmConfigRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateAlarmConfigResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateAntiVirusRuleRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateAntiVirusRuleResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateAntiVirusSwitchRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateAntiVirusSwitchResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateBlackWhiteListRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateBlackWhiteListResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateDnsServersRequest;
@@ -413,6 +459,35 @@ public class CfwClient {
     public SyncInvoker<BatchDeleteAddressItemsRequest, BatchDeleteAddressItemsResponse> batchDeleteAddressItemsInvoker(
         BatchDeleteAddressItemsRequest request) {
         return new SyncInvoker<>(request, CfwMeta.batchDeleteAddressItems, hcClient);
+    }
+
+    /**
+     * 批量删除域名组
+     *
+     * 批量删除域名组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteDomainSetRequest 请求对象
+     * @return BatchDeleteDomainSetResponse
+     */
+    public BatchDeleteDomainSetResponse batchDeleteDomainSet(BatchDeleteDomainSetRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.batchDeleteDomainSet);
+    }
+
+    /**
+     * 批量删除域名组
+     *
+     * 批量删除域名组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteDomainSetRequest 请求对象
+     * @return SyncInvoker<BatchDeleteDomainSetRequest, BatchDeleteDomainSetResponse>
+     */
+    public SyncInvoker<BatchDeleteDomainSetRequest, BatchDeleteDomainSetResponse> batchDeleteDomainSetInvoker(
+        BatchDeleteDomainSetRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.batchDeleteDomainSet, hcClient);
     }
 
     /**
@@ -1197,6 +1272,35 @@ public class CfwClient {
     }
 
     /**
+     * 获取域名地址解析结果
+     *
+     * 获取域名地址解析结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainParseIpRequest 请求对象
+     * @return ListDomainParseIpResponse
+     */
+    public ListDomainParseIpResponse listDomainParseIp(ListDomainParseIpRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listDomainParseIp);
+    }
+
+    /**
+     * 获取域名地址解析结果
+     *
+     * 获取域名地址解析结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDomainParseIpRequest 请求对象
+     * @return SyncInvoker<ListDomainParseIpRequest, ListDomainParseIpResponse>
+     */
+    public SyncInvoker<ListDomainParseIpRequest, ListDomainParseIpResponse> listDomainParseIpInvoker(
+        ListDomainParseIpRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listDomainParseIp, hcClient);
+    }
+
+    /**
      * 查询域名组列表
      *
      * 查询域名组列表
@@ -1425,6 +1529,35 @@ public class CfwClient {
     }
 
     /**
+     * 查询标签信息
+     *
+     * 查询标签信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectTagsRequest 请求对象
+     * @return ListProjectTagsResponse
+     */
+    public ListProjectTagsResponse listProjectTags(ListProjectTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listProjectTags);
+    }
+
+    /**
+     * 查询标签信息
+     *
+     * 查询标签信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectTagsRequest 请求对象
+     * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
+     */
+    public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(
+        ListProjectTagsRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listProjectTags, hcClient);
+    }
+
+    /**
      * 查询防护VPC数
      *
      * 查询防护vpc信息
@@ -1451,6 +1584,35 @@ public class CfwClient {
     public SyncInvoker<ListProtectedVpcsRequest, ListProtectedVpcsResponse> listProtectedVpcsInvoker(
         ListProtectedVpcsRequest request) {
         return new SyncInvoker<>(request, CfwMeta.listProtectedVpcs, hcClient);
+    }
+
+    /**
+     * 查询资源标签信息
+     *
+     * 查询资源标签信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceTagsRequest 请求对象
+     * @return ListResourceTagsResponse
+     */
+    public ListResourceTagsResponse listResourceTags(ListResourceTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listResourceTags);
+    }
+
+    /**
+     * 查询资源标签信息
+     *
+     * 查询资源标签信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListResourceTagsRequest 请求对象
+     * @return SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse>
+     */
+    public SyncInvoker<ListResourceTagsRequest, ListResourceTagsResponse> listResourceTagsInvoker(
+        ListResourceTagsRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listResourceTags, hcClient);
     }
 
     /**
@@ -1541,6 +1703,150 @@ public class CfwClient {
     }
 
     /**
+     * 保存资源标签接口
+     *
+     * 保存资源标签接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveTagsRequest 请求对象
+     * @return SaveTagsResponse
+     */
+    public SaveTagsResponse saveTags(SaveTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.saveTags);
+    }
+
+    /**
+     * 保存资源标签接口
+     *
+     * 保存资源标签接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SaveTagsRequest 请求对象
+     * @return SyncInvoker<SaveTagsRequest, SaveTagsResponse>
+     */
+    public SyncInvoker<SaveTagsRequest, SaveTagsResponse> saveTagsInvoker(SaveTagsRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.saveTags, hcClient);
+    }
+
+    /**
+     * 获取告警配置信息
+     *
+     * 获取告警配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlarmConfigRequest 请求对象
+     * @return ShowAlarmConfigResponse
+     */
+    public ShowAlarmConfigResponse showAlarmConfig(ShowAlarmConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showAlarmConfig);
+    }
+
+    /**
+     * 获取告警配置信息
+     *
+     * 获取告警配置信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlarmConfigRequest 请求对象
+     * @return SyncInvoker<ShowAlarmConfigRequest, ShowAlarmConfigResponse>
+     */
+    public SyncInvoker<ShowAlarmConfigRequest, ShowAlarmConfigResponse> showAlarmConfigInvoker(
+        ShowAlarmConfigRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showAlarmConfig, hcClient);
+    }
+
+    /**
+     * 获取防火墙反病毒规则信息
+     *
+     * 获取防火墙反病毒规则信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAntiVirusRuleRequest 请求对象
+     * @return ShowAntiVirusRuleResponse
+     */
+    public ShowAntiVirusRuleResponse showAntiVirusRule(ShowAntiVirusRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showAntiVirusRule);
+    }
+
+    /**
+     * 获取防火墙反病毒规则信息
+     *
+     * 获取防火墙反病毒规则信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAntiVirusRuleRequest 请求对象
+     * @return SyncInvoker<ShowAntiVirusRuleRequest, ShowAntiVirusRuleResponse>
+     */
+    public SyncInvoker<ShowAntiVirusRuleRequest, ShowAntiVirusRuleResponse> showAntiVirusRuleInvoker(
+        ShowAntiVirusRuleRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showAntiVirusRule, hcClient);
+    }
+
+    /**
+     * 查看反病毒开关
+     *
+     * 查看反病毒开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAntiVirusSwitchRequest 请求对象
+     * @return ShowAntiVirusSwitchResponse
+     */
+    public ShowAntiVirusSwitchResponse showAntiVirusSwitch(ShowAntiVirusSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showAntiVirusSwitch);
+    }
+
+    /**
+     * 查看反病毒开关
+     *
+     * 查看反病毒开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAntiVirusSwitchRequest 请求对象
+     * @return SyncInvoker<ShowAntiVirusSwitchRequest, ShowAntiVirusSwitchResponse>
+     */
+    public SyncInvoker<ShowAntiVirusSwitchRequest, ShowAntiVirusSwitchResponse> showAntiVirusSwitchInvoker(
+        ShowAntiVirusSwitchRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showAntiVirusSwitch, hcClient);
+    }
+
+    /**
+     * 查看域名组详情
+     *
+     * 查看域名组详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainSetDetailRequest 请求对象
+     * @return ShowDomainSetDetailResponse
+     */
+    public ShowDomainSetDetailResponse showDomainSetDetail(ShowDomainSetDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showDomainSetDetail);
+    }
+
+    /**
+     * 查看域名组详情
+     *
+     * 查看域名组详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDomainSetDetailRequest 请求对象
+     * @return SyncInvoker<ShowDomainSetDetailRequest, ShowDomainSetDetailResponse>
+     */
+    public SyncInvoker<ShowDomainSetDetailRequest, ShowDomainSetDetailResponse> showDomainSetDetailInvoker(
+        ShowDomainSetDetailRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showDomainSetDetail, hcClient);
+    }
+
+    /**
      * 更新地址组信息
      *
      * 更新地址组信息
@@ -1567,6 +1873,93 @@ public class CfwClient {
     public SyncInvoker<UpdateAddressSetRequest, UpdateAddressSetResponse> updateAddressSetInvoker(
         UpdateAddressSetRequest request) {
         return new SyncInvoker<>(request, CfwMeta.updateAddressSet, hcClient);
+    }
+
+    /**
+     * 修改告警配置接口
+     *
+     * 修改告警配置接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAlarmConfigRequest 请求对象
+     * @return UpdateAlarmConfigResponse
+     */
+    public UpdateAlarmConfigResponse updateAlarmConfig(UpdateAlarmConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.updateAlarmConfig);
+    }
+
+    /**
+     * 修改告警配置接口
+     *
+     * 修改告警配置接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAlarmConfigRequest 请求对象
+     * @return SyncInvoker<UpdateAlarmConfigRequest, UpdateAlarmConfigResponse>
+     */
+    public SyncInvoker<UpdateAlarmConfigRequest, UpdateAlarmConfigResponse> updateAlarmConfigInvoker(
+        UpdateAlarmConfigRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.updateAlarmConfig, hcClient);
+    }
+
+    /**
+     * 修改反病毒规则
+     *
+     * 修改反病毒规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAntiVirusRuleRequest 请求对象
+     * @return UpdateAntiVirusRuleResponse
+     */
+    public UpdateAntiVirusRuleResponse updateAntiVirusRule(UpdateAntiVirusRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.updateAntiVirusRule);
+    }
+
+    /**
+     * 修改反病毒规则
+     *
+     * 修改反病毒规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAntiVirusRuleRequest 请求对象
+     * @return SyncInvoker<UpdateAntiVirusRuleRequest, UpdateAntiVirusRuleResponse>
+     */
+    public SyncInvoker<UpdateAntiVirusRuleRequest, UpdateAntiVirusRuleResponse> updateAntiVirusRuleInvoker(
+        UpdateAntiVirusRuleRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.updateAntiVirusRule, hcClient);
+    }
+
+    /**
+     * 修改反病毒开关
+     *
+     * 修改反病毒开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAntiVirusSwitchRequest 请求对象
+     * @return UpdateAntiVirusSwitchResponse
+     */
+    public UpdateAntiVirusSwitchResponse updateAntiVirusSwitch(UpdateAntiVirusSwitchRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.updateAntiVirusSwitch);
+    }
+
+    /**
+     * 修改反病毒开关
+     *
+     * 修改反病毒开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAntiVirusSwitchRequest 请求对象
+     * @return SyncInvoker<UpdateAntiVirusSwitchRequest, UpdateAntiVirusSwitchResponse>
+     */
+    public SyncInvoker<UpdateAntiVirusSwitchRequest, UpdateAntiVirusSwitchResponse> updateAntiVirusSwitchInvoker(
+        UpdateAntiVirusSwitchRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.updateAntiVirusSwitch, hcClient);
     }
 
     /**
@@ -1915,6 +2308,34 @@ public class CfwClient {
     }
 
     /**
+     * 查看region列表
+     *
+     * 查看region列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRegionsRequest 请求对象
+     * @return ListRegionsResponse
+     */
+    public ListRegionsResponse listRegions(ListRegionsRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listRegions);
+    }
+
+    /**
+     * 查看region列表
+     *
+     * 查看region列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRegionsRequest 请求对象
+     * @return SyncInvoker<ListRegionsRequest, ListRegionsResponse>
+     */
+    public SyncInvoker<ListRegionsRequest, ListRegionsResponse> listRegionsInvoker(ListRegionsRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listRegions, hcClient);
+    }
+
+    /**
      * 查询规则标签
      *
      * 查询规则标签
@@ -1941,6 +2362,35 @@ public class CfwClient {
     public SyncInvoker<ListRuleAclTagsRequest, ListRuleAclTagsResponse> listRuleAclTagsInvoker(
         ListRuleAclTagsRequest request) {
         return new SyncInvoker<>(request, CfwMeta.listRuleAclTags, hcClient);
+    }
+
+    /**
+     * 查看导入状态接口
+     *
+     * 查看导入状态接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowImportStatusRequest 请求对象
+     * @return ShowImportStatusResponse
+     */
+    public ShowImportStatusResponse showImportStatus(ShowImportStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showImportStatus);
+    }
+
+    /**
+     * 查看导入状态接口
+     *
+     * 查看导入状态接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowImportStatusRequest 请求对象
+     * @return SyncInvoker<ShowImportStatusRequest, ShowImportStatusResponse>
+     */
+    public SyncInvoker<ShowImportStatusRequest, ShowImportStatusResponse> showImportStatusInvoker(
+        ShowImportStatusRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showImportStatus, hcClient);
     }
 
     /**
@@ -2030,6 +2480,35 @@ public class CfwClient {
     }
 
     /**
+     * 查看eip告警白名单
+     *
+     * 查看eip告警白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmWhitelistRequest 请求对象
+     * @return ListAlarmWhitelistResponse
+     */
+    public ListAlarmWhitelistResponse listAlarmWhitelist(ListAlarmWhitelistRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listAlarmWhitelist);
+    }
+
+    /**
+     * 查看eip告警白名单
+     *
+     * 查看eip告警白名单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmWhitelistRequest 请求对象
+     * @return SyncInvoker<ListAlarmWhitelistRequest, ListAlarmWhitelistResponse>
+     */
+    public SyncInvoker<ListAlarmWhitelistRequest, ListAlarmWhitelistResponse> listAlarmWhitelistInvoker(
+        ListAlarmWhitelistRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listAlarmWhitelist, hcClient);
+    }
+
+    /**
      * 查询Eip个数
      *
      * 查询Eip个数
@@ -2086,6 +2565,64 @@ public class CfwClient {
     }
 
     /**
+     * 获取eip自动防护状态信息
+     *
+     * 获取eip自动防护状态信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoProtectStatusRequest 请求对象
+     * @return ShowAutoProtectStatusResponse
+     */
+    public ShowAutoProtectStatusResponse showAutoProtectStatus(ShowAutoProtectStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showAutoProtectStatus);
+    }
+
+    /**
+     * 获取eip自动防护状态信息
+     *
+     * 获取eip自动防护状态信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoProtectStatusRequest 请求对象
+     * @return SyncInvoker<ShowAutoProtectStatusRequest, ShowAutoProtectStatusResponse>
+     */
+    public SyncInvoker<ShowAutoProtectStatusRequest, ShowAutoProtectStatusResponse> showAutoProtectStatusInvoker(
+        ShowAutoProtectStatusRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showAutoProtectStatus, hcClient);
+    }
+
+    /**
+     * 修改eip自动防护开关
+     *
+     * 修改eip自动防护开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchAutoProtectStatusRequest 请求对象
+     * @return SwitchAutoProtectStatusResponse
+     */
+    public SwitchAutoProtectStatusResponse switchAutoProtectStatus(SwitchAutoProtectStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.switchAutoProtectStatus);
+    }
+
+    /**
+     * 修改eip自动防护开关
+     *
+     * 修改eip自动防护开关
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchAutoProtectStatusRequest 请求对象
+     * @return SyncInvoker<SwitchAutoProtectStatusRequest, SwitchAutoProtectStatusResponse>
+     */
+    public SyncInvoker<SwitchAutoProtectStatusRequest, SwitchAutoProtectStatusResponse> switchAutoProtectStatusInvoker(
+        SwitchAutoProtectStatusRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.switchAutoProtectStatus, hcClient);
+    }
+
+    /**
      * 切换防护模式
      *
      * 切换防护模式
@@ -2112,6 +2649,35 @@ public class CfwClient {
     public SyncInvoker<ChangeIpsProtectModeRequest, ChangeIpsProtectModeResponse> changeIpsProtectModeInvoker(
         ChangeIpsProtectModeRequest request) {
         return new SyncInvoker<>(request, CfwMeta.changeIpsProtectMode, hcClient);
+    }
+
+    /**
+     * 改变ips规则模式
+     *
+     * 改变ips规则模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeIpsRuleModeRequest 请求对象
+     * @return ChangeIpsRuleModeResponse
+     */
+    public ChangeIpsRuleModeResponse changeIpsRuleMode(ChangeIpsRuleModeRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.changeIpsRuleMode);
+    }
+
+    /**
+     * 改变ips规则模式
+     *
+     * 改变ips规则模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeIpsRuleModeRequest 请求对象
+     * @return SyncInvoker<ChangeIpsRuleModeRequest, ChangeIpsRuleModeResponse>
+     */
+    public SyncInvoker<ChangeIpsRuleModeRequest, ChangeIpsRuleModeResponse> changeIpsRuleModeInvoker(
+        ChangeIpsRuleModeRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.changeIpsRuleMode, hcClient);
     }
 
     /**
@@ -2144,6 +2710,35 @@ public class CfwClient {
     }
 
     /**
+     * 获取自定义ips规则
+     *
+     * 获取自定义ips规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomerIpsRequest 请求对象
+     * @return ListCustomerIpsResponse
+     */
+    public ListCustomerIpsResponse listCustomerIps(ListCustomerIpsRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listCustomerIps);
+    }
+
+    /**
+     * 获取自定义ips规则
+     *
+     * 获取自定义ips规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCustomerIpsRequest 请求对象
+     * @return SyncInvoker<ListCustomerIpsRequest, ListCustomerIpsResponse>
+     */
+    public SyncInvoker<ListCustomerIpsRequest, ListCustomerIpsResponse> listCustomerIpsInvoker(
+        ListCustomerIpsRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listCustomerIps, hcClient);
+    }
+
+    /**
      * 查询防护模式
      *
      * 查询防护模式
@@ -2173,6 +2768,62 @@ public class CfwClient {
     }
 
     /**
+     * 查询频率ips规则信息
+     *
+     * 查询频率ips规则信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpsRulesRequest 请求对象
+     * @return ListIpsRulesResponse
+     */
+    public ListIpsRulesResponse listIpsRules(ListIpsRulesRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listIpsRules);
+    }
+
+    /**
+     * 查询频率ips规则信息
+     *
+     * 查询频率ips规则信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpsRulesRequest 请求对象
+     * @return SyncInvoker<ListIpsRulesRequest, ListIpsRulesResponse>
+     */
+    public SyncInvoker<ListIpsRulesRequest, ListIpsRulesResponse> listIpsRulesInvoker(ListIpsRulesRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.listIpsRules, hcClient);
+    }
+
+    /**
+     * 获取ips规则列表
+     *
+     * 获取ips规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpsRules1Request 请求对象
+     * @return ListIpsRules1Response
+     */
+    public ListIpsRules1Response listIpsRules1(ListIpsRules1Request request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.listIpsRules1);
+    }
+
+    /**
+     * 获取ips规则列表
+     *
+     * 获取ips规则列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListIpsRules1Request 请求对象
+     * @return SyncInvoker<ListIpsRules1Request, ListIpsRules1Response>
+     */
+    public SyncInvoker<ListIpsRules1Request, ListIpsRules1Response> listIpsRules1Invoker(ListIpsRules1Request request) {
+        return new SyncInvoker<>(request, CfwMeta.listIpsRules1, hcClient);
+    }
+
+    /**
      * 查询IPS特性开关状态
      *
      * 查询IPS特性开关状态
@@ -2199,6 +2850,64 @@ public class CfwClient {
     public SyncInvoker<ListIpsSwitchStatusRequest, ListIpsSwitchStatusResponse> listIpsSwitchStatusInvoker(
         ListIpsSwitchStatusRequest request) {
         return new SyncInvoker<>(request, CfwMeta.listIpsSwitchStatus, hcClient);
+    }
+
+    /**
+     * 获取ips规则细节
+     *
+     * 获取ips规则细节
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIpsUpdateTimeRequest 请求对象
+     * @return ShowIpsUpdateTimeResponse
+     */
+    public ShowIpsUpdateTimeResponse showIpsUpdateTime(ShowIpsUpdateTimeRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.showIpsUpdateTime);
+    }
+
+    /**
+     * 获取ips规则细节
+     *
+     * 获取ips规则细节
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowIpsUpdateTimeRequest 请求对象
+     * @return SyncInvoker<ShowIpsUpdateTimeRequest, ShowIpsUpdateTimeResponse>
+     */
+    public SyncInvoker<ShowIpsUpdateTimeRequest, ShowIpsUpdateTimeResponse> showIpsUpdateTimeInvoker(
+        ShowIpsUpdateTimeRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.showIpsUpdateTime, hcClient);
+    }
+
+    /**
+     * 创建频率ips规则
+     *
+     * 创建频率ips规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAdvancedIpsRuleRequest 请求对象
+     * @return UpdateAdvancedIpsRuleResponse
+     */
+    public UpdateAdvancedIpsRuleResponse updateAdvancedIpsRule(UpdateAdvancedIpsRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.updateAdvancedIpsRule);
+    }
+
+    /**
+     * 创建频率ips规则
+     *
+     * 创建频率ips规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAdvancedIpsRuleRequest 请求对象
+     * @return SyncInvoker<UpdateAdvancedIpsRuleRequest, UpdateAdvancedIpsRuleResponse>
+     */
+    public SyncInvoker<UpdateAdvancedIpsRuleRequest, UpdateAdvancedIpsRuleResponse> updateAdvancedIpsRuleInvoker(
+        UpdateAdvancedIpsRuleRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.updateAdvancedIpsRule, hcClient);
     }
 
 }

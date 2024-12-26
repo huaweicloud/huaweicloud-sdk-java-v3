@@ -122,9 +122,9 @@ public class ChannelInfo {
     private String updatedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "eps_id")
+    @JsonProperty(value = "enterprise_project_id")
 
-    private String epsId;
+    private String enterpriseProjectId;
 
     public ChannelInfo withId(String id) {
         this.id = id;
@@ -228,21 +228,21 @@ public class ChannelInfo {
         this.updatedTime = updatedTime;
     }
 
-    public ChannelInfo withEpsId(String epsId) {
-        this.epsId = epsId;
+    public ChannelInfo withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
      * 企业项目id
-     * @return epsId
+     * @return enterpriseProjectId
      */
-    public String getEpsId() {
-        return epsId;
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
     }
 
-    public void setEpsId(String epsId) {
-        this.epsId = epsId;
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     @Override
@@ -258,12 +258,12 @@ public class ChannelInfo {
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.providerType, that.providerType)
             && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
-            && Objects.equals(this.epsId, that.epsId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, providerType, createdTime, updatedTime, epsId);
+        return Objects.hash(id, name, description, providerType, createdTime, updatedTime, enterpriseProjectId);
     }
 
     @Override
@@ -276,7 +276,7 @@ public class ChannelInfo {
         sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
         sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
-        sb.append("    epsId: ").append(toIndentedString(epsId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

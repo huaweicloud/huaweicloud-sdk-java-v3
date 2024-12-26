@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * BandwidthInfoExternal
+ * 带宽信息
  */
 public class BandwidthInfoExternal {
 

@@ -15,6 +15,11 @@ public class DeleteSubscriptionRequest {
 
     private String subscriptionId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public DeleteSubscriptionRequest withSubscriptionId(String subscriptionId) {
         this.subscriptionId = subscriptionId;
         return this;
@@ -32,6 +37,23 @@ public class DeleteSubscriptionRequest {
         this.subscriptionId = subscriptionId;
     }
 
+    public DeleteSubscriptionRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 创建订阅时所使用的企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,13 @@ public class DeleteSubscriptionRequest {
             return false;
         }
         DeleteSubscriptionRequest that = (DeleteSubscriptionRequest) obj;
-        return Objects.equals(this.subscriptionId, that.subscriptionId);
+        return Objects.equals(this.subscriptionId, that.subscriptionId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subscriptionId);
+        return Objects.hash(subscriptionId, enterpriseProjectId);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class DeleteSubscriptionRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class DeleteSubscriptionRequest {\n");
         sb.append("    subscriptionId: ").append(toIndentedString(subscriptionId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

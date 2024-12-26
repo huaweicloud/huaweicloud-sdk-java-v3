@@ -24,9 +24,9 @@ public class ChannelCreateReq {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "eps_id")
+    @JsonProperty(value = "enterprise_project_id")
 
-    private String epsId;
+    private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cross_account")
@@ -72,21 +72,21 @@ public class ChannelCreateReq {
         this.description = description;
     }
 
-    public ChannelCreateReq withEpsId(String epsId) {
-        this.epsId = epsId;
+    public ChannelCreateReq withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
      * 企业项目id
-     * @return epsId
+     * @return enterpriseProjectId
      */
-    public String getEpsId() {
-        return epsId;
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
     }
 
-    public void setEpsId(String epsId) {
-        this.epsId = epsId;
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     public ChannelCreateReq withCrossAccount(Boolean crossAccount) {
@@ -149,13 +149,13 @@ public class ChannelCreateReq {
         }
         ChannelCreateReq that = (ChannelCreateReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.epsId, that.epsId) && Objects.equals(this.crossAccount, that.crossAccount)
-            && Objects.equals(this.policy, that.policy);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.crossAccount, that.crossAccount) && Objects.equals(this.policy, that.policy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, epsId, crossAccount, policy);
+        return Objects.hash(name, description, enterpriseProjectId, crossAccount, policy);
     }
 
     @Override
@@ -164,7 +164,7 @@ public class ChannelCreateReq {
         sb.append("class ChannelCreateReq {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    epsId: ").append(toIndentedString(epsId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    crossAccount: ").append(toIndentedString(crossAccount)).append("\n");
         sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
         sb.append("}");

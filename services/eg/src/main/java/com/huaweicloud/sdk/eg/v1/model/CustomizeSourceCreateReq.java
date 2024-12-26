@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CustomizeSourceCreateReq
@@ -114,7 +115,7 @@ public class CustomizeSourceCreateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
-    private Object detail;
+    private RocketMqDetail detail;
 
     public CustomizeSourceCreateReq withName(String name) {
         this.name = name;
@@ -184,20 +185,29 @@ public class CustomizeSourceCreateReq {
         this.type = type;
     }
 
-    public CustomizeSourceCreateReq withDetail(Object detail) {
+    public CustomizeSourceCreateReq withDetail(RocketMqDetail detail) {
         this.detail = detail;
         return this;
     }
 
+    public CustomizeSourceCreateReq withDetail(Consumer<RocketMqDetail> detailSetter) {
+        if (this.detail == null) {
+            this.detail = new RocketMqDetail();
+            detailSetter.accept(this.detail);
+        }
+
+        return this;
+    }
+
     /**
-     * json格式封装消息实例链接信息：如RabbitMQ实例的instance_id字段、虚拟主机vhost字段、队列queue字段、用户名、密码等
+     * Get detail
      * @return detail
      */
-    public Object getDetail() {
+    public RocketMqDetail getDetail() {
         return detail;
     }
 
-    public void setDetail(Object detail) {
+    public void setDetail(RocketMqDetail detail) {
         this.detail = detail;
     }
 

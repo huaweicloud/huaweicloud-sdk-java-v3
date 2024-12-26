@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * ExternalCreatePeerLink
+ * 创建关联连接返回对象
  */
 public class ExternalCreatePeerLink {
 
@@ -16,6 +16,11 @@ public class ExternalCreatePeerLink {
     @JsonProperty(value = "id")
 
     private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
@@ -82,6 +87,23 @@ public class ExternalCreatePeerLink {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public ExternalCreatePeerLink withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 专线对等连接实例ID
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
     }
 
     public ExternalCreatePeerLink withTenantId(String tenantId) {
@@ -281,8 +303,9 @@ public class ExternalCreatePeerLink {
             return false;
         }
         ExternalCreatePeerLink that = (ExternalCreatePeerLink) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
             && Objects.equals(this.globalDcGatewayId, that.globalDcGatewayId)
             && Objects.equals(this.bandwidthInfo, that.bandwidthInfo) && Objects.equals(this.peerSite, that.peerSite)
             && Objects.equals(this.status, that.status) && Objects.equals(this.reason, that.reason)
@@ -292,6 +315,7 @@ public class ExternalCreatePeerLink {
     @Override
     public int hashCode() {
         return Objects.hash(id,
+            instanceId,
             tenantId,
             name,
             description,
@@ -309,6 +333,7 @@ public class ExternalCreatePeerLink {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExternalCreatePeerLink {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

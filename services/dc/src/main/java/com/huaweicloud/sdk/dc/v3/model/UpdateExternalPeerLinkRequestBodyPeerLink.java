@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * UpdateExternalPeerLinkRequestBodyPeerLink
+ * 更新关联连接请求体
  */
 public class UpdateExternalPeerLinkRequestBodyPeerLink {
 

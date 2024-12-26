@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * PeerSiteExternal
+ * 连接站点信息
  */
 public class PeerSiteExternal {
 
@@ -34,6 +34,11 @@ public class PeerSiteExternal {
     @JsonProperty(value = "site_code")
 
     private String siteCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
 
     public PeerSiteExternal withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
@@ -120,6 +125,23 @@ public class PeerSiteExternal {
         this.siteCode = siteCode;
     }
 
+    public PeerSiteExternal withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 连接类型
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,12 @@ public class PeerSiteExternal {
         PeerSiteExternal that = (PeerSiteExternal) obj;
         return Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.linkId, that.linkId)
             && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.siteCode, that.siteCode);
+            && Objects.equals(this.siteCode, that.siteCode) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(gatewayId, linkId, regionId, projectId, siteCode);
+        return Objects.hash(gatewayId, linkId, regionId, projectId, siteCode, type);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class PeerSiteExternal {
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    siteCode: ").append(toIndentedString(siteCode)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

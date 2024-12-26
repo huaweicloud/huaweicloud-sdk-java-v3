@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CustomizeSourceUpdateReq
@@ -18,7 +19,7 @@ public class CustomizeSourceUpdateReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "detail")
 
-    private Object detail;
+    private RocketMqDetail detail;
 
     public CustomizeSourceUpdateReq withDescription(String description) {
         this.description = description;
@@ -37,20 +38,29 @@ public class CustomizeSourceUpdateReq {
         this.description = description;
     }
 
-    public CustomizeSourceUpdateReq withDetail(Object detail) {
+    public CustomizeSourceUpdateReq withDetail(RocketMqDetail detail) {
         this.detail = detail;
         return this;
     }
 
+    public CustomizeSourceUpdateReq withDetail(Consumer<RocketMqDetail> detailSetter) {
+        if (this.detail == null) {
+            this.detail = new RocketMqDetail();
+            detailSetter.accept(this.detail);
+        }
+
+        return this;
+    }
+
     /**
-     * json格式封装消息实例更新信息：如RabbitMQ实例的虚拟主机vhost字段、队列queue字段、用户密码
+     * Get detail
      * @return detail
      */
-    public Object getDetail() {
+    public RocketMqDetail getDetail() {
         return detail;
     }
 
-    public void setDetail(Object detail) {
+    public void setDetail(RocketMqDetail detail) {
         this.detail = detail;
     }
 

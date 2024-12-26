@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 关联连接状态，PENDING_CREATE (创建中), PENDING_UPDATE (更新中), ACTIVE (可用状态), ERROR (失败状态)。
+ * 关联连接状态， - PENDING_CREATE (创建中) - PENDING_UPDATE (更新中) - ACTIVE (可用状态) - ERROR (失败状态)
  */
 public class PeerLinkStatus {
 

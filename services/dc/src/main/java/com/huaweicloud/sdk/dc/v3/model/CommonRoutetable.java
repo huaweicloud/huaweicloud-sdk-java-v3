@@ -212,6 +212,81 @@ public class CommonRoutetable {
 
     private String description;
 
+    /**
+     * 下一跳类型: - vif_peer: 虚拟接口对等体 - gdgw: 全域接入网关
+     */
+    public static final class TypeEnum {
+
+        /**
+         * Enum VIF_PEER for value: "vif_peer"
+         */
+        public static final TypeEnum VIF_PEER = new TypeEnum("vif_peer");
+
+        /**
+         * Enum GDGW for value: "gdgw"
+         */
+        public static final TypeEnum GDGW = new TypeEnum("gdgw");
+
+        private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TypeEnum> createStaticFields() {
+            Map<String, TypeEnum> map = new HashMap<>();
+            map.put("vif_peer", VIF_PEER);
+            map.put("gdgw", GDGW);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
+        }
+
+        public static TypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TypeEnum) {
+                return this.value.equals(((TypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private TypeEnum type;
+
     public CommonRoutetable withId(String id) {
         this.id = id;
         return this;
@@ -365,6 +440,23 @@ public class CommonRoutetable {
         this.description = description;
     }
 
+    public CommonRoutetable withType(TypeEnum type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 下一跳类型: - vif_peer: 虚拟接口对等体 - gdgw: 全域接入网关
+     * @return type
+     */
+    public TypeEnum getType() {
+        return type;
+    }
+
+    public void setType(TypeEnum type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -378,13 +470,13 @@ public class CommonRoutetable {
             && Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.destination, that.destination)
             && Objects.equals(this.nexthop, that.nexthop) && Objects.equals(this.obtainMode, that.obtainMode)
             && Objects.equals(this.status, that.status) && Objects.equals(this.addressFamily, that.addressFamily)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(id, tenantId, gatewayId, destination, nexthop, obtainMode, status, addressFamily, description);
+            .hash(id, tenantId, gatewayId, destination, nexthop, obtainMode, status, addressFamily, description, type);
     }
 
     @Override
@@ -400,6 +492,7 @@ public class CommonRoutetable {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    addressFamily: ").append(toIndentedString(addressFamily)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

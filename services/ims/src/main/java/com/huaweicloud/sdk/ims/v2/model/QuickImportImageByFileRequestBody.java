@@ -215,6 +215,81 @@ public class QuickImportImageByFileRequestBody {
     private ArchitectureEnum architecture;
 
     /**
+     * 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
+     */
+    public static final class HwFirmwareTypeEnum {
+
+        /**
+         * Enum BIOS for value: "bios"
+         */
+        public static final HwFirmwareTypeEnum BIOS = new HwFirmwareTypeEnum("bios");
+
+        /**
+         * Enum UEFI for value: "uefi"
+         */
+        public static final HwFirmwareTypeEnum UEFI = new HwFirmwareTypeEnum("uefi");
+
+        private static final Map<String, HwFirmwareTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HwFirmwareTypeEnum> createStaticFields() {
+            Map<String, HwFirmwareTypeEnum> map = new HashMap<>();
+            map.put("bios", BIOS);
+            map.put("uefi", UEFI);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HwFirmwareTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HwFirmwareTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HwFirmwareTypeEnum(value));
+        }
+
+        public static HwFirmwareTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof HwFirmwareTypeEnum) {
+                return this.value.equals(((HwFirmwareTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hw_firmware_type")
+
+    private HwFirmwareTypeEnum hwFirmwareType;
+
+    /**
      * 操作系统版本。 创建数据盘镜像时该参数取值为Linux或Windows，默认Linux。
      */
     public static final class OsTypeEnum {
@@ -482,6 +557,23 @@ public class QuickImportImageByFileRequestBody {
         this.architecture = architecture;
     }
 
+    public QuickImportImageByFileRequestBody withHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
+        this.hwFirmwareType = hwFirmwareType;
+        return this;
+    }
+
+    /**
+     * 云主机云服务器的启动方式。目前支持： bios：表示bios引导启动。 uefi：表示uefi引导启动。
+     * @return hwFirmwareType
+     */
+    public HwFirmwareTypeEnum getHwFirmwareType() {
+        return hwFirmwareType;
+    }
+
+    public void setHwFirmwareType(HwFirmwareTypeEnum hwFirmwareType) {
+        this.hwFirmwareType = hwFirmwareType;
+    }
+
     public QuickImportImageByFileRequestBody withOsType(OsTypeEnum osType) {
         this.osType = osType;
         return this;
@@ -546,7 +638,8 @@ public class QuickImportImageByFileRequestBody {
             && Objects.equals(this.minDisk, that.minDisk) && Objects.equals(this.licenseType, that.licenseType)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.type, that.type)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.architecture, that.architecture) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.architecture, that.architecture)
+            && Objects.equals(this.hwFirmwareType, that.hwFirmwareType) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.imageTags, that.imageTags);
     }
 
@@ -562,6 +655,7 @@ public class QuickImportImageByFileRequestBody {
             type,
             enterpriseProjectId,
             architecture,
+            hwFirmwareType,
             osType,
             imageTags);
     }
@@ -580,6 +674,7 @@ public class QuickImportImageByFileRequestBody {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
+        sb.append("    hwFirmwareType: ").append(toIndentedString(hwFirmwareType)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    imageTags: ").append(toIndentedString(imageTags)).append("\n");
         sb.append("}");

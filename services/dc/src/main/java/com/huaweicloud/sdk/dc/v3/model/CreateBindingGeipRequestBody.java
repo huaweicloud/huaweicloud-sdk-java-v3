@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateBindingGeipRequestBody
+ * 绑定GEIP请求体
  */
 public class CreateBindingGeipRequestBody {
 

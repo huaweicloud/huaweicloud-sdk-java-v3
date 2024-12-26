@@ -45,6 +45,11 @@ public class ListSubscriptionsRequest {
 
     private String connectionId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public ListSubscriptionsRequest withChannelId(String channelId) {
         this.channelId = channelId;
         return this;
@@ -168,6 +173,23 @@ public class ListSubscriptionsRequest {
         this.connectionId = connectionId;
     }
 
+    public ListSubscriptionsRequest withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 创建订阅时所使用的企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -180,12 +202,13 @@ public class ListSubscriptionsRequest {
         return Objects.equals(this.channelId, that.channelId) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.sort, that.sort)
             && Objects.equals(this.name, that.name) && Objects.equals(this.fuzzyName, that.fuzzyName)
-            && Objects.equals(this.connectionId, that.connectionId);
+            && Objects.equals(this.connectionId, that.connectionId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(channelId, offset, limit, sort, name, fuzzyName, connectionId);
+        return Objects.hash(channelId, offset, limit, sort, name, fuzzyName, connectionId, enterpriseProjectId);
     }
 
     @Override
@@ -199,6 +222,7 @@ public class ListSubscriptionsRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    fuzzyName: ").append(toIndentedString(fuzzyName)).append("\n");
         sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -24,6 +24,11 @@ public class InterpreterGroupInfo {
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "groupType")
+
+    private String groupType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "firstLanguage")
 
     private String firstLanguage;
@@ -70,6 +75,23 @@ public class InterpreterGroupInfo {
 
     public void setGroupName(String groupName) {
         this.groupName = groupName;
+    }
+
+    public InterpreterGroupInfo withGroupType(String groupType) {
+        this.groupType = groupType;
+        return this;
+    }
+
+    /**
+     * 传译组类型，MANUAL：人工传译，AI：AI传译。默认MANUAL。
+     * @return groupType
+     */
+    public String getGroupType() {
+        return groupType;
+    }
+
+    public void setGroupType(String groupType) {
+        this.groupType = groupType;
     }
 
     public InterpreterGroupInfo withFirstLanguage(String firstLanguage) {
@@ -149,14 +171,14 @@ public class InterpreterGroupInfo {
         }
         InterpreterGroupInfo that = (InterpreterGroupInfo) obj;
         return Objects.equals(this.groupID, that.groupID) && Objects.equals(this.groupName, that.groupName)
-            && Objects.equals(this.firstLanguage, that.firstLanguage)
+            && Objects.equals(this.groupType, that.groupType) && Objects.equals(this.firstLanguage, that.firstLanguage)
             && Objects.equals(this.secondLanguage, that.secondLanguage)
             && Objects.equals(this.interpreters, that.interpreters);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupID, groupName, firstLanguage, secondLanguage, interpreters);
+        return Objects.hash(groupID, groupName, groupType, firstLanguage, secondLanguage, interpreters);
     }
 
     @Override
@@ -165,6 +187,7 @@ public class InterpreterGroupInfo {
         sb.append("class InterpreterGroupInfo {\n");
         sb.append("    groupID: ").append(toIndentedString(groupID)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    groupType: ").append(toIndentedString(groupType)).append("\n");
         sb.append("    firstLanguage: ").append(toIndentedString(firstLanguage)).append("\n");
         sb.append("    secondLanguage: ").append(toIndentedString(secondLanguage)).append("\n");
         sb.append("    interpreters: ").append(toIndentedString(interpreters)).append("\n");

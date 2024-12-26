@@ -149,6 +149,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListDatastoresRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDatastoresResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListDrInfosRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListDrInfosResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListDrRelationsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListDrRelationsResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListEngineFlavorsRequest;
@@ -1599,6 +1601,34 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListDatastoresRequest, ListDatastoresResponse> listDatastoresAsyncInvoker(
         ListDatastoresRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.listDatastores, hcClient);
+    }
+
+    /**
+     * 查询容灾管理列表
+     *
+     * 查询容灾管理列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDrInfosRequest 请求对象
+     * @return CompletableFuture<ListDrInfosResponse>
+     */
+    public CompletableFuture<ListDrInfosResponse> listDrInfosAsync(ListDrInfosRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listDrInfos);
+    }
+
+    /**
+     * 查询容灾管理列表
+     *
+     * 查询容灾管理列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDrInfosRequest 请求对象
+     * @return AsyncInvoker<ListDrInfosRequest, ListDrInfosResponse>
+     */
+    public AsyncInvoker<ListDrInfosRequest, ListDrInfosResponse> listDrInfosAsyncInvoker(ListDrInfosRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listDrInfos, hcClient);
     }
 
     /**

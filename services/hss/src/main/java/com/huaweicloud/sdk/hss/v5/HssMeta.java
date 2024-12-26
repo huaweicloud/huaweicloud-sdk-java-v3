@@ -65,6 +65,8 @@ import com.huaweicloud.sdk.hss.v5.model.ExportVulsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ExportVulsResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAccountsRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAccountsResponse;
+import com.huaweicloud.sdk.hss.v5.model.ListAgentInstallScriptRequest;
+import com.huaweicloud.sdk.hss.v5.model.ListAgentInstallScriptResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListRequest;
 import com.huaweicloud.sdk.hss.v5.model.ListAlarmWhiteListResponse;
 import com.huaweicloud.sdk.hss.v5.model.ListAppChangeHistoriesRequest;
@@ -1047,6 +1049,68 @@ public class HssMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListAccountsResponse::getXRequestId, ListAccountsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAgentInstallScriptRequest, ListAgentInstallScriptResponse> listAgentInstallScript =
+        genForListAgentInstallScript();
+
+    private static HttpRequestDef<ListAgentInstallScriptRequest, ListAgentInstallScriptResponse> genForListAgentInstallScript() {
+        // basic
+        HttpRequestDef.Builder<ListAgentInstallScriptRequest, ListAgentInstallScriptResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAgentInstallScriptRequest.class, ListAgentInstallScriptResponse.class)
+            .withName("ListAgentInstallScript")
+            .withUri("/v5/{project_id}/setting/agent-install-script")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentInstallScriptRequest::getEnterpriseProjectId,
+                ListAgentInstallScriptRequest::setEnterpriseProjectId));
+        builder.<ListAgentInstallScriptRequest.OsTypeEnum>withRequestField("os_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAgentInstallScriptRequest.OsTypeEnum.class),
+            f -> f.withMarshaller(ListAgentInstallScriptRequest::getOsType, ListAgentInstallScriptRequest::setOsType));
+        builder.<ListAgentInstallScriptRequest.OsArchEnum>withRequestField("os_arch",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListAgentInstallScriptRequest.OsArchEnum.class),
+            f -> f.withMarshaller(ListAgentInstallScriptRequest::getOsArch, ListAgentInstallScriptRequest::setOsArch));
+        builder.<Boolean>withRequestField("outside_host",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAgentInstallScriptRequest::getOutsideHost,
+                ListAgentInstallScriptRequest::setOutsideHost));
+        builder.<String>withRequestField("outside_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentInstallScriptRequest::getOutsideGroupId,
+                ListAgentInstallScriptRequest::setOutsideGroupId));
+        builder.<Boolean>withRequestField("batch_install",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAgentInstallScriptRequest::getBatchInstall,
+                ListAgentInstallScriptRequest::setBatchInstall));
+        builder.<ListAgentInstallScriptRequest.TypeEnum>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAgentInstallScriptRequest.TypeEnum.class),
+            f -> f.withMarshaller(ListAgentInstallScriptRequest::getType, ListAgentInstallScriptRequest::setType));
+        builder.<String>withRequestField("region",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAgentInstallScriptRequest::getRegion, ListAgentInstallScriptRequest::setRegion));
+
+        // response
+
         return builder.build();
     }
 

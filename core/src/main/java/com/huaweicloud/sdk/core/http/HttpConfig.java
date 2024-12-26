@@ -26,6 +26,7 @@ import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
 import com.huaweicloud.sdk.core.utils.RandomUtils;
 import okhttp3.ConnectionPool;
 import okhttp3.Dispatcher;
+import okhttp3.Dns;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSocketFactory;
@@ -83,6 +84,8 @@ public class HttpConfig {
     private Dispatcher dispatcher;
 
     private HostnameVerifier hostnameVerifier;
+
+    private Dns dns;
 
     /**
      * @deprecated
@@ -401,6 +404,19 @@ public class HttpConfig {
 
     public HttpConfig withSecureRandom(SecureRandom secureRandom) {
         setSecureRandom(secureRandom);
+        return this;
+    }
+
+    public Dns getDns() {
+        return dns;
+    }
+
+    public void setDns(Dns dns) {
+        this.dns = dns;
+    }
+
+    public HttpConfig withDns(Dns dns) {
+        setDns(dns);
         return this;
     }
 }

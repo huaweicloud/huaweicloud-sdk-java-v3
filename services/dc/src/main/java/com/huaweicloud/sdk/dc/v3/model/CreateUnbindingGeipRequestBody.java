@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateUnbindingGeipRequestBody
+ * 解绑GEIP请求体
  */
 public class CreateUnbindingGeipRequestBody {
 

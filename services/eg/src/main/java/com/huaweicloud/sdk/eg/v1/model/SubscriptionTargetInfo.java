@@ -37,6 +37,31 @@ public class SubscriptionTargetInfo {
     private Object detail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kafka_detail")
+
+    private KafkaTargetDetail kafkaDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "smn_detail")
+
+    private SmnTargetDetail smnDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eg_detail")
+
+    private EgTargetDetail egDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apigw_detail")
+
+    private ApigwTargetDetail apigwDetail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "retry_times")
+
+    private Integer retryTimes;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "transform")
 
     private TransForm transform;
@@ -141,6 +166,127 @@ public class SubscriptionTargetInfo {
         this.detail = detail;
     }
 
+    public SubscriptionTargetInfo withKafkaDetail(KafkaTargetDetail kafkaDetail) {
+        this.kafkaDetail = kafkaDetail;
+        return this;
+    }
+
+    public SubscriptionTargetInfo withKafkaDetail(Consumer<KafkaTargetDetail> kafkaDetailSetter) {
+        if (this.kafkaDetail == null) {
+            this.kafkaDetail = new KafkaTargetDetail();
+            kafkaDetailSetter.accept(this.kafkaDetail);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get kafkaDetail
+     * @return kafkaDetail
+     */
+    public KafkaTargetDetail getKafkaDetail() {
+        return kafkaDetail;
+    }
+
+    public void setKafkaDetail(KafkaTargetDetail kafkaDetail) {
+        this.kafkaDetail = kafkaDetail;
+    }
+
+    public SubscriptionTargetInfo withSmnDetail(SmnTargetDetail smnDetail) {
+        this.smnDetail = smnDetail;
+        return this;
+    }
+
+    public SubscriptionTargetInfo withSmnDetail(Consumer<SmnTargetDetail> smnDetailSetter) {
+        if (this.smnDetail == null) {
+            this.smnDetail = new SmnTargetDetail();
+            smnDetailSetter.accept(this.smnDetail);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get smnDetail
+     * @return smnDetail
+     */
+    public SmnTargetDetail getSmnDetail() {
+        return smnDetail;
+    }
+
+    public void setSmnDetail(SmnTargetDetail smnDetail) {
+        this.smnDetail = smnDetail;
+    }
+
+    public SubscriptionTargetInfo withEgDetail(EgTargetDetail egDetail) {
+        this.egDetail = egDetail;
+        return this;
+    }
+
+    public SubscriptionTargetInfo withEgDetail(Consumer<EgTargetDetail> egDetailSetter) {
+        if (this.egDetail == null) {
+            this.egDetail = new EgTargetDetail();
+            egDetailSetter.accept(this.egDetail);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get egDetail
+     * @return egDetail
+     */
+    public EgTargetDetail getEgDetail() {
+        return egDetail;
+    }
+
+    public void setEgDetail(EgTargetDetail egDetail) {
+        this.egDetail = egDetail;
+    }
+
+    public SubscriptionTargetInfo withApigwDetail(ApigwTargetDetail apigwDetail) {
+        this.apigwDetail = apigwDetail;
+        return this;
+    }
+
+    public SubscriptionTargetInfo withApigwDetail(Consumer<ApigwTargetDetail> apigwDetailSetter) {
+        if (this.apigwDetail == null) {
+            this.apigwDetail = new ApigwTargetDetail();
+            apigwDetailSetter.accept(this.apigwDetail);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get apigwDetail
+     * @return apigwDetail
+     */
+    public ApigwTargetDetail getApigwDetail() {
+        return apigwDetail;
+    }
+
+    public void setApigwDetail(ApigwTargetDetail apigwDetail) {
+        this.apigwDetail = apigwDetail;
+    }
+
+    public SubscriptionTargetInfo withRetryTimes(Integer retryTimes) {
+        this.retryTimes = retryTimes;
+        return this;
+    }
+
+    /**
+     * 重试次数
+     * @return retryTimes
+     */
+    public Integer getRetryTimes() {
+        return retryTimes;
+    }
+
+    public void setRetryTimes(Integer retryTimes) {
+        this.retryTimes = retryTimes;
+    }
+
     public SubscriptionTargetInfo withTransform(TransForm transform) {
         this.transform = transform;
         return this;
@@ -239,15 +385,29 @@ public class SubscriptionTargetInfo {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.providerType, that.providerType)
             && Objects.equals(this.connectionId, that.connectionId) && Objects.equals(this.detail, that.detail)
-            && Objects.equals(this.transform, that.transform)
+            && Objects.equals(this.kafkaDetail, that.kafkaDetail) && Objects.equals(this.smnDetail, that.smnDetail)
+            && Objects.equals(this.egDetail, that.egDetail) && Objects.equals(this.apigwDetail, that.apigwDetail)
+            && Objects.equals(this.retryTimes, that.retryTimes) && Objects.equals(this.transform, that.transform)
             && Objects.equals(this.deadLetterQueue, that.deadLetterQueue)
             && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(id, name, providerType, connectionId, detail, transform, deadLetterQueue, createdTime, updatedTime);
+        return Objects.hash(id,
+            name,
+            providerType,
+            connectionId,
+            detail,
+            kafkaDetail,
+            smnDetail,
+            egDetail,
+            apigwDetail,
+            retryTimes,
+            transform,
+            deadLetterQueue,
+            createdTime,
+            updatedTime);
     }
 
     @Override
@@ -259,6 +419,11 @@ public class SubscriptionTargetInfo {
         sb.append("    providerType: ").append(toIndentedString(providerType)).append("\n");
         sb.append("    connectionId: ").append(toIndentedString(connectionId)).append("\n");
         sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
+        sb.append("    kafkaDetail: ").append(toIndentedString(kafkaDetail)).append("\n");
+        sb.append("    smnDetail: ").append(toIndentedString(smnDetail)).append("\n");
+        sb.append("    egDetail: ").append(toIndentedString(egDetail)).append("\n");
+        sb.append("    apigwDetail: ").append(toIndentedString(apigwDetail)).append("\n");
+        sb.append("    retryTimes: ").append(toIndentedString(retryTimes)).append("\n");
         sb.append("    transform: ").append(toIndentedString(transform)).append("\n");
         sb.append("    deadLetterQueue: ").append(toIndentedString(deadLetterQueue)).append("\n");
         sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");

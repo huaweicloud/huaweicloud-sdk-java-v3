@@ -42,6 +42,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeActionApiToInstanceR
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeActionApiToInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeApiToInstanceResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeDataConnectionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeDataConnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveApplyRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveApplyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationToEntitiesRequest;
@@ -244,6 +246,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalReq
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDesignLatestApprovalResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteDirectoryResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteEntityRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteEntityResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityAssignedQueueRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityAssignedQueueResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleRequest;
@@ -663,6 +667,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowPathObjectByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowPathObjectByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQualityTaskDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQualityTaskDetailResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQueuesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQueuesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleGroupRequest;
@@ -681,6 +687,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardTemplateRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardTemplateResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTableDataRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTableDataResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTableModelByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTableModelByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowTagsRequest;
@@ -962,6 +970,36 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AssociateSecurityLevelToEntitieRequest::getWorkspace,
                 AssociateSecurityLevelToEntitieRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AuthorizeDataConnectionRequest, AuthorizeDataConnectionResponse> authorizeDataConnection =
+        genForAuthorizeDataConnection();
+
+    private static HttpRequestDef<AuthorizeDataConnectionRequest, AuthorizeDataConnectionResponse> genForAuthorizeDataConnection() {
+        // basic
+        HttpRequestDef.Builder<AuthorizeDataConnectionRequest, AuthorizeDataConnectionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AuthorizeDataConnectionRequest.class, AuthorizeDataConnectionResponse.class)
+            .withName("AuthorizeDataConnection")
+            .withUri("/v1/{project_id}/datasources/authorize_datasource")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("data_connection_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AuthorizeDataConnectionRequest::getDataConnectionId,
+                AuthorizeDataConnectionRequest::setDataConnectionId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AuthorizeDataConnectionRequest::getWorkspaceId,
+                AuthorizeDataConnectionRequest::setWorkspaceId));
 
         // response
 
@@ -3794,6 +3832,33 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteDirectoryRequest::getXProjectId, DeleteDirectoryRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEntityRequest, DeleteEntityResponse> deleteEntity = genForDeleteEntity();
+
+    private static HttpRequestDef<DeleteEntityRequest, DeleteEntityResponse> genForDeleteEntity() {
+        // basic
+        HttpRequestDef.Builder<DeleteEntityRequest, DeleteEntityResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEntityRequest.class, DeleteEntityResponse.class)
+                .withName("DeleteEntity")
+                .withUri("/v1/{project_id}/datamap/entities/guid/{guid}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("guid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEntityRequest::getGuid, DeleteEntityRequest::setGuid));
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEntityRequest::getInstance, DeleteEntityRequest::setInstance));
 
         // response
 
@@ -12216,6 +12281,28 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowQueuesRequest, ShowQueuesResponse> showQueues = genForShowQueues();
+
+    private static HttpRequestDef<ShowQueuesRequest, ShowQueuesResponse> genForShowQueues() {
+        // basic
+        HttpRequestDef.Builder<ShowQueuesRequest, ShowQueuesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQueuesRequest.class, ShowQueuesResponse.class)
+                .withName("ShowQueues")
+                .withUri("/v1/{project_id}/datamap/entities/queue")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQueuesRequest::getInstance, ShowQueuesRequest::setInstance));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowRelationByIdRequest, ShowRelationByIdResponse> showRelationById =
         genForShowRelationById();
 
@@ -12516,6 +12603,65 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowStandardTemplateRequest::getXProjectId,
                 ShowStandardTemplateRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTableDataRequest, ShowTableDataResponse> showTableData =
+        genForShowTableData();
+
+    private static HttpRequestDef<ShowTableDataRequest, ShowTableDataResponse> genForShowTableData() {
+        // basic
+        HttpRequestDef.Builder<ShowTableDataRequest, ShowTableDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTableDataRequest.class, ShowTableDataResponse.class)
+                .withName("ShowTableData")
+                .withUri("/v1/{project_id}/datamap/entities/guid/{guid}/preview")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("guid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableDataRequest::getGuid, ShowTableDataRequest::setGuid));
+        builder.<String>withRequestField("data_connection_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableDataRequest::getDataConnectionId,
+                ShowTableDataRequest::setDataConnectionId));
+        builder.<String>withRequestField("source_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableDataRequest::getSourceType, ShowTableDataRequest::setSourceType));
+        builder.<String>withRequestField("database",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableDataRequest::getDatabase, ShowTableDataRequest::setDatabase));
+        builder.<String>withRequestField("schema",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableDataRequest::getSchema, ShowTableDataRequest::setSchema));
+        builder.<String>withRequestField("table",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableDataRequest::getTable, ShowTableDataRequest::setTable));
+        builder.<String>withRequestField("queue",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableDataRequest::getQueue, ShowTableDataRequest::setQueue));
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTableDataRequest::getInstance, ShowTableDataRequest::setInstance));
 
         // response
 

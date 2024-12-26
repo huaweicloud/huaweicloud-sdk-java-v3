@@ -19,6 +19,11 @@ public class UpdateAccessConfigRequestBody {
     private String accessConfigId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_config_name")
+
+    private String accessConfigName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_config_detail")
 
     private AccessConfigDeatilUpdate accessConfigDetail;
@@ -108,6 +113,23 @@ public class UpdateAccessConfigRequestBody {
 
     public void setAccessConfigId(String accessConfigId) {
         this.accessConfigId = accessConfigId;
+    }
+
+    public UpdateAccessConfigRequestBody withAccessConfigName(String accessConfigName) {
+        this.accessConfigName = accessConfigName;
+        return this;
+    }
+
+    /**
+     * 日志接入名称。 满足正则表达式：^(?!.)(?!)(?!.*?.$)[\\u4e00-\\u9fa5a-zA-Z0-9-.]{1,64}$
+     * @return accessConfigName
+     */
+    public String getAccessConfigName() {
+        return accessConfigName;
+    }
+
+    public void setAccessConfigName(String accessConfigName) {
+        this.accessConfigName = accessConfigName;
     }
 
     public UpdateAccessConfigRequestBody withAccessConfigDetail(AccessConfigDeatilUpdate accessConfigDetail) {
@@ -458,6 +480,7 @@ public class UpdateAccessConfigRequestBody {
         }
         UpdateAccessConfigRequestBody that = (UpdateAccessConfigRequestBody) obj;
         return Objects.equals(this.accessConfigId, that.accessConfigId)
+            && Objects.equals(this.accessConfigName, that.accessConfigName)
             && Objects.equals(this.accessConfigDetail, that.accessConfigDetail)
             && Objects.equals(this.hostGroupInfo, that.hostGroupInfo)
             && Objects.equals(this.accessConfigTag, that.accessConfigTag)
@@ -475,6 +498,7 @@ public class UpdateAccessConfigRequestBody {
     @Override
     public int hashCode() {
         return Objects.hash(accessConfigId,
+            accessConfigName,
             accessConfigDetail,
             hostGroupInfo,
             accessConfigTag,
@@ -497,6 +521,7 @@ public class UpdateAccessConfigRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateAccessConfigRequestBody {\n");
         sb.append("    accessConfigId: ").append(toIndentedString(accessConfigId)).append("\n");
+        sb.append("    accessConfigName: ").append(toIndentedString(accessConfigName)).append("\n");
         sb.append("    accessConfigDetail: ").append(toIndentedString(accessConfigDetail)).append("\n");
         sb.append("    hostGroupInfo: ").append(toIndentedString(hostGroupInfo)).append("\n");
         sb.append("    accessConfigTag: ").append(toIndentedString(accessConfigTag)).append("\n");

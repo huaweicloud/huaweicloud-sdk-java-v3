@@ -18,7 +18,7 @@ public class Policy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retention_days")
 
-    private String retentionDays;
+    private Integer retentionDays;
 
     public Policy withPeriod(String period) {
         this.period = period;
@@ -37,7 +37,7 @@ public class Policy {
         this.period = period;
     }
 
-    public Policy withRetentionDays(String retentionDays) {
+    public Policy withRetentionDays(Integer retentionDays) {
         this.retentionDays = retentionDays;
         return this;
     }
@@ -46,11 +46,11 @@ public class Policy {
      * 保留时长（天）
      * @return retentionDays
      */
-    public String getRetentionDays() {
+    public Integer getRetentionDays() {
         return retentionDays;
     }
 
-    public void setRetentionDays(String retentionDays) {
+    public void setRetentionDays(Integer retentionDays) {
         this.retentionDays = retentionDays;
     }
 

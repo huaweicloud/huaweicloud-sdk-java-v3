@@ -138,7 +138,7 @@ public class PeerSite {
     }
 
     /**
-     * 对端网关连接的ID(如：对端为ER时为attachment ID,对端为GDGW时为对端的PeerLink Id)
+     * 对端网关连接的ID(如：对端为ER时为attachment ID,对端为GDGW时为对端的PeerLink Id
      * @return linkId
      */
     public String getLinkId() {

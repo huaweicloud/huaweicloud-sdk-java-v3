@@ -26,6 +26,11 @@ public class EventStreamingSink {
 
     private SinkKafkaParameters sinkKafka;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sink_obs")
+
+    private SinkObsParameters sinkObs;
+
     /**
      * 事件目标类型名称
      */
@@ -153,6 +158,32 @@ public class EventStreamingSink {
         this.sinkKafka = sinkKafka;
     }
 
+    public EventStreamingSink withSinkObs(SinkObsParameters sinkObs) {
+        this.sinkObs = sinkObs;
+        return this;
+    }
+
+    public EventStreamingSink withSinkObs(Consumer<SinkObsParameters> sinkObsSetter) {
+        if (this.sinkObs == null) {
+            this.sinkObs = new SinkObsParameters();
+            sinkObsSetter.accept(this.sinkObs);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sinkObs
+     * @return sinkObs
+     */
+    public SinkObsParameters getSinkObs() {
+        return sinkObs;
+    }
+
+    public void setSinkObs(SinkObsParameters sinkObs) {
+        this.sinkObs = sinkObs;
+    }
+
     public EventStreamingSink withName(NameEnum name) {
         this.name = name;
         return this;
@@ -180,12 +211,12 @@ public class EventStreamingSink {
         }
         EventStreamingSink that = (EventStreamingSink) obj;
         return Objects.equals(this.sinkFg, that.sinkFg) && Objects.equals(this.sinkKafka, that.sinkKafka)
-            && Objects.equals(this.name, that.name);
+            && Objects.equals(this.sinkObs, that.sinkObs) && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sinkFg, sinkKafka, name);
+        return Objects.hash(sinkFg, sinkKafka, sinkObs, name);
     }
 
     @Override
@@ -194,6 +225,7 @@ public class EventStreamingSink {
         sb.append("class EventStreamingSink {\n");
         sb.append("    sinkFg: ").append(toIndentedString(sinkFg)).append("\n");
         sb.append("    sinkKafka: ").append(toIndentedString(sinkKafka)).append("\n");
+        sb.append("    sinkObs: ").append(toIndentedString(sinkObs)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();

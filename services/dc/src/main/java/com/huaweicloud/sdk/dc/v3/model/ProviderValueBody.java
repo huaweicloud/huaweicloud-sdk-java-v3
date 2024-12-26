@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 运营商描述信息。
+ * 运营商名称
  */
 public class ProviderValueBody {
 

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * OrderInstanceV2
@@ -110,6 +111,16 @@ public class OrderInstanceV2 {
     @JsonProperty(value = "spec_size_measure_id")
 
     private Integer specSizeMeasureId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private String updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project")
+
+    private EnterpriseProject enterpriseProject;
 
     public OrderInstanceV2 withId(String id) {
         this.id = id;
@@ -451,6 +462,49 @@ public class OrderInstanceV2 {
         this.specSizeMeasureId = specSizeMeasureId;
     }
 
+    public OrderInstanceV2 withUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * |参数名称：资源更新时间。| |参数约束及描述：资源更新时间。UTC时间，格式：yyyy-MM-ddTHH:mm:ssZ，如“2019-12-25T07:32:04Z”。|
+     * @return updateTime
+     */
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public OrderInstanceV2 withEnterpriseProject(EnterpriseProject enterpriseProject) {
+        this.enterpriseProject = enterpriseProject;
+        return this;
+    }
+
+    public OrderInstanceV2 withEnterpriseProject(Consumer<EnterpriseProject> enterpriseProjectSetter) {
+        if (this.enterpriseProject == null) {
+            this.enterpriseProject = new EnterpriseProject();
+            enterpriseProjectSetter.accept(this.enterpriseProject);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get enterpriseProject
+     * @return enterpriseProject
+     */
+    public EnterpriseProject getEnterpriseProject() {
+        return enterpriseProject;
+    }
+
+    public void setEnterpriseProject(EnterpriseProject enterpriseProject) {
+        this.enterpriseProject = enterpriseProject;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -474,7 +528,9 @@ public class OrderInstanceV2 {
             && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.expirePolicy, that.expirePolicy)
             && Objects.equals(this.productSpecDesc, that.productSpecDesc)
             && Objects.equals(this.specSize, that.specSize)
-            && Objects.equals(this.specSizeMeasureId, that.specSizeMeasureId);
+            && Objects.equals(this.specSizeMeasureId, that.specSizeMeasureId)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.enterpriseProject, that.enterpriseProject);
     }
 
     @Override
@@ -498,7 +554,9 @@ public class OrderInstanceV2 {
             expirePolicy,
             productSpecDesc,
             specSize,
-            specSizeMeasureId);
+            specSizeMeasureId,
+            updateTime,
+            enterpriseProject);
     }
 
     @Override
@@ -525,6 +583,8 @@ public class OrderInstanceV2 {
         sb.append("    productSpecDesc: ").append(toIndentedString(productSpecDesc)).append("\n");
         sb.append("    specSize: ").append(toIndentedString(specSize)).append("\n");
         sb.append("    specSizeMeasureId: ").append(toIndentedString(specSizeMeasureId)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    enterpriseProject: ").append(toIndentedString(enterpriseProject)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -73,7 +73,7 @@ public class DeliverTarget {
     }
 
     /**
-     * 投递状态         SUCCESS Or  FAILED
+     * 投递状态 SUCCESS Or FAILED
      * @return deliverStatus
      */
     public String getDeliverStatus() {
@@ -106,7 +106,7 @@ public class DeliverTarget {
     }
 
     /**
-     * 考虑展示的个数    例如限制只展示最新三条
+     * 考虑展示的个数 例如限制只展示最新三条
      * @return deliverDetailList
      */
     public List<DeliverDetail> getDeliverDetailList() {

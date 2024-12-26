@@ -33,6 +33,11 @@ public class PeerLinkEntry {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reason")
+
+    private String reason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "global_dc_gateway_id")
 
     private String globalDcGatewayId;
@@ -138,6 +143,23 @@ public class PeerLinkEntry {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public PeerLinkEntry withReason(String reason) {
+        this.reason = reason;
+        return this;
+    }
+
+    /**
+     * 失败原因
+     * @return reason
+     */
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public PeerLinkEntry withGlobalDcGatewayId(String globalDcGatewayId) {
@@ -305,6 +327,7 @@ public class PeerLinkEntry {
         PeerLinkEntry that = (PeerLinkEntry) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.reason, that.reason)
             && Objects.equals(this.globalDcGatewayId, that.globalDcGatewayId)
             && Objects.equals(this.bandwidthInfo, that.bandwidthInfo) && Objects.equals(this.peerSite, that.peerSite)
             && Objects.equals(this.status, that.status) && Objects.equals(this.createdTime, that.createdTime)
@@ -318,6 +341,7 @@ public class PeerLinkEntry {
             tenantId,
             name,
             description,
+            reason,
             globalDcGatewayId,
             bandwidthInfo,
             peerSite,
@@ -336,6 +360,7 @@ public class PeerLinkEntry {
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    globalDcGatewayId: ").append(toIndentedString(globalDcGatewayId)).append("\n");
         sb.append("    bandwidthInfo: ").append(toIndentedString(bandwidthInfo)).append("\n");
         sb.append("    peerSite: ").append(toIndentedString(peerSite)).append("\n");
