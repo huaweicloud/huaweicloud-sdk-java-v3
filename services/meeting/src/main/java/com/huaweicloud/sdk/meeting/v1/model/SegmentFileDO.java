@@ -18,22 +18,22 @@ public class SegmentFileDO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "beginTime")
 
-    private Integer beginTime;
+    private Long beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "endTime")
 
-    private Integer endTime;
+    private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
-    private Integer duration;
+    private Long duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "fileSize")
 
-    private Integer fileSize;
+    private Long fileSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sha256")
@@ -67,7 +67,7 @@ public class SegmentFileDO {
         this.recordType = recordType;
     }
 
-    public SegmentFileDO withBeginTime(Integer beginTime) {
+    public SegmentFileDO withBeginTime(Long beginTime) {
         this.beginTime = beginTime;
         return this;
     }
@@ -76,15 +76,15 @@ public class SegmentFileDO {
      * 录制文件开始时间 
      * @return beginTime
      */
-    public Integer getBeginTime() {
+    public Long getBeginTime() {
         return beginTime;
     }
 
-    public void setBeginTime(Integer beginTime) {
+    public void setBeginTime(Long beginTime) {
         this.beginTime = beginTime;
     }
 
-    public SegmentFileDO withEndTime(Integer endTime) {
+    public SegmentFileDO withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
@@ -93,15 +93,15 @@ public class SegmentFileDO {
      * 录制文件结束时间 
      * @return endTime
      */
-    public Integer getEndTime() {
+    public Long getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Integer endTime) {
+    public void setEndTime(Long endTime) {
         this.endTime = endTime;
     }
 
-    public SegmentFileDO withDuration(Integer duration) {
+    public SegmentFileDO withDuration(Long duration) {
         this.duration = duration;
         return this;
     }
@@ -110,15 +110,15 @@ public class SegmentFileDO {
      * 录制文件时长(秒)
      * @return duration
      */
-    public Integer getDuration() {
+    public Long getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(Long duration) {
         this.duration = duration;
     }
 
-    public SegmentFileDO withFileSize(Integer fileSize) {
+    public SegmentFileDO withFileSize(Long fileSize) {
         this.fileSize = fileSize;
         return this;
     }
@@ -127,11 +127,11 @@ public class SegmentFileDO {
      * 文件大小(字节数)
      * @return fileSize
      */
-    public Integer getFileSize() {
+    public Long getFileSize() {
         return fileSize;
     }
 
-    public void setFileSize(Integer fileSize) {
+    public void setFileSize(Long fileSize) {
         this.fileSize = fileSize;
     }
 

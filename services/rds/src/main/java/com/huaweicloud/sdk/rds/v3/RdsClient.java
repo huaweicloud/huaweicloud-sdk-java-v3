@@ -217,6 +217,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListRdSforMySqlProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRdSforMySqlProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRdSforMysqlProxyFlavorsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRdSforMysqlProxyFlavorsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListReadOnlyReplayDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListReadOnlyReplayDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesRequest;
@@ -265,6 +267,8 @@ import com.huaweicloud.sdk.rds.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.rds.v3.model.ResetPwdResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceResponse;
+import com.huaweicloud.sdk.rds.v3.model.RestoreLogReplayDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.RestoreLogReplayDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesNewResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesRequest;
@@ -2434,6 +2438,35 @@ public class RdsClient {
     }
 
     /**
+     * 查询只读实例可恢复到主实例的库
+     *
+     * 查询只读实例可恢复到主实例的库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReadOnlyReplayDatabaseRequest 请求对象
+     * @return ListReadOnlyReplayDatabaseResponse
+     */
+    public ListReadOnlyReplayDatabaseResponse listReadOnlyReplayDatabase(ListReadOnlyReplayDatabaseRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.listReadOnlyReplayDatabase);
+    }
+
+    /**
+     * 查询只读实例可恢复到主实例的库
+     *
+     * 查询只读实例可恢复到主实例的库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListReadOnlyReplayDatabaseRequest 请求对象
+     * @return SyncInvoker<ListReadOnlyReplayDatabaseRequest, ListReadOnlyReplayDatabaseResponse>
+     */
+    public SyncInvoker<ListReadOnlyReplayDatabaseRequest, ListReadOnlyReplayDatabaseResponse> listReadOnlyReplayDatabaseInvoker(
+        ListReadOnlyReplayDatabaseRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.listReadOnlyReplayDatabase, hcClient);
+    }
+
+    /**
      * 查询回收站
      *
      * 查询回收站实例信息
@@ -3017,6 +3050,35 @@ public class RdsClient {
     public SyncInvoker<RestoreExistInstanceRequest, RestoreExistInstanceResponse> restoreExistInstanceInvoker(
         RestoreExistInstanceRequest request) {
         return new SyncInvoker<>(request, RdsMeta.restoreExistInstance, hcClient);
+    }
+
+    /**
+     * 延迟库只读，恢复库到主实例
+     *
+     * 延迟库只读，恢复库到主实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreLogReplayDatabaseRequest 请求对象
+     * @return RestoreLogReplayDatabaseResponse
+     */
+    public RestoreLogReplayDatabaseResponse restoreLogReplayDatabase(RestoreLogReplayDatabaseRequest request) {
+        return hcClient.syncInvokeHttp(request, RdsMeta.restoreLogReplayDatabase);
+    }
+
+    /**
+     * 延迟库只读，恢复库到主实例
+     *
+     * 延迟库只读，恢复库到主实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreLogReplayDatabaseRequest 请求对象
+     * @return SyncInvoker<RestoreLogReplayDatabaseRequest, RestoreLogReplayDatabaseResponse>
+     */
+    public SyncInvoker<RestoreLogReplayDatabaseRequest, RestoreLogReplayDatabaseResponse> restoreLogReplayDatabaseInvoker(
+        RestoreLogReplayDatabaseRequest request) {
+        return new SyncInvoker<>(request, RdsMeta.restoreLogReplayDatabase, hcClient);
     }
 
     /**

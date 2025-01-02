@@ -9,9 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * PageInfoCustomerIpsListVO
+ * HttpListCustomerIpsResponseData
  */
-public class PageInfoCustomerIpsListVO {
+public class HttpListCustomerIpsResponseData {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -24,22 +24,22 @@ public class PageInfoCustomerIpsListVO {
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "records")
-
-    private List<CustomerIpsListVO> records = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private Integer total;
 
-    public PageInfoCustomerIpsListVO withLimit(Integer limit) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "records")
+
+    private List<CustomerIpsListVO> records = null;
+
+    public HttpListCustomerIpsResponseData withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
 
     /**
-     * Get limit
+     * 每页显示个数，范围为1-1024
      * @return limit
      */
     public Integer getLimit() {
@@ -50,13 +50,13 @@ public class PageInfoCustomerIpsListVO {
         this.limit = limit;
     }
 
-    public PageInfoCustomerIpsListVO withOffset(Integer offset) {
+    public HttpListCustomerIpsResponseData withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * Get offset
+     * 偏移量：指定返回记录的开始位置，必须为数字，取值范围为大于或等于0，默认0
      * @return offset
      */
     public Integer getOffset() {
@@ -67,46 +67,13 @@ public class PageInfoCustomerIpsListVO {
         this.offset = offset;
     }
 
-    public PageInfoCustomerIpsListVO withRecords(List<CustomerIpsListVO> records) {
-        this.records = records;
-        return this;
-    }
-
-    public PageInfoCustomerIpsListVO addRecordsItem(CustomerIpsListVO recordsItem) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
-        this.records.add(recordsItem);
-        return this;
-    }
-
-    public PageInfoCustomerIpsListVO withRecords(Consumer<List<CustomerIpsListVO>> recordsSetter) {
-        if (this.records == null) {
-            this.records = new ArrayList<>();
-        }
-        recordsSetter.accept(this.records);
-        return this;
-    }
-
-    /**
-     * Get records
-     * @return records
-     */
-    public List<CustomerIpsListVO> getRecords() {
-        return records;
-    }
-
-    public void setRecords(List<CustomerIpsListVO> records) {
-        this.records = records;
-    }
-
-    public PageInfoCustomerIpsListVO withTotal(Integer total) {
+    public HttpListCustomerIpsResponseData withTotal(Integer total) {
         this.total = total;
         return this;
     }
 
     /**
-     * Get total
+     * 查询获得自定义ips规则列表总数
      * @return total
      */
     public Integer getTotal() {
@@ -117,6 +84,39 @@ public class PageInfoCustomerIpsListVO {
         this.total = total;
     }
 
+    public HttpListCustomerIpsResponseData withRecords(List<CustomerIpsListVO> records) {
+        this.records = records;
+        return this;
+    }
+
+    public HttpListCustomerIpsResponseData addRecordsItem(CustomerIpsListVO recordsItem) {
+        if (this.records == null) {
+            this.records = new ArrayList<>();
+        }
+        this.records.add(recordsItem);
+        return this;
+    }
+
+    public HttpListCustomerIpsResponseData withRecords(Consumer<List<CustomerIpsListVO>> recordsSetter) {
+        if (this.records == null) {
+            this.records = new ArrayList<>();
+        }
+        recordsSetter.accept(this.records);
+        return this;
+    }
+
+    /**
+     * 自定义ips规则记录
+     * @return records
+     */
+    public List<CustomerIpsListVO> getRecords() {
+        return records;
+    }
+
+    public void setRecords(List<CustomerIpsListVO> records) {
+        this.records = records;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -125,24 +125,24 @@ public class PageInfoCustomerIpsListVO {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PageInfoCustomerIpsListVO that = (PageInfoCustomerIpsListVO) obj;
+        HttpListCustomerIpsResponseData that = (HttpListCustomerIpsResponseData) obj;
         return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.records, that.records) && Objects.equals(this.total, that.total);
+            && Objects.equals(this.total, that.total) && Objects.equals(this.records, that.records);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, records, total);
+        return Objects.hash(limit, offset, total, records);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class PageInfoCustomerIpsListVO {\n");
+        sb.append("class HttpListCustomerIpsResponseData {\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
-        sb.append("    records: ").append(toIndentedString(records)).append("\n");
         sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    records: ").append(toIndentedString(records)).append("\n");
         sb.append("}");
         return sb.toString();
     }

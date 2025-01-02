@@ -105,6 +105,9 @@ import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningResponse;
+import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesReq;
+import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesRequest;
+import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.TransactionSwitchReq;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequestBody;
@@ -1897,6 +1900,35 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTuningRequest::getXLanguage, ShowTuningRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SynchronizeInstancesRequest, SynchronizeInstancesResponse> synchronizeInstances =
+        genForSynchronizeInstances();
+
+    private static HttpRequestDef<SynchronizeInstancesRequest, SynchronizeInstancesResponse> genForSynchronizeInstances() {
+        // basic
+        HttpRequestDef.Builder<SynchronizeInstancesRequest, SynchronizeInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SynchronizeInstancesRequest.class, SynchronizeInstancesResponse.class)
+            .withName("SynchronizeInstances")
+            .withUri("/v3/{project_id}/instances/synchronize-instance-list")
+            .withContentType("application/json");
+
+        // requests
+        builder.<SynchronizeInstancesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SynchronizeInstancesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SynchronizeInstancesRequest::getXLanguage,
+                SynchronizeInstancesRequest::setXLanguage));
+        builder.<SynchronizeInstancesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SynchronizeInstancesReq.class),
+            f -> f.withMarshaller(SynchronizeInstancesRequest::getBody, SynchronizeInstancesRequest::setBody));
 
         // response
 

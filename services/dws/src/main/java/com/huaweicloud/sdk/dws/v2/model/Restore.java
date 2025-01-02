@@ -51,6 +51,11 @@ public class Restore {
 
     private String enterpriseProjectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6_enable")
+
+    private Boolean ipv6Enable;
+
     public Restore withName(String name) {
         this.name = name;
         return this;
@@ -198,6 +203,23 @@ public class Restore {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public Restore withIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+        return this;
+    }
+
+    /**
+     * 指定网络协议类型，表明是否支持IPv6,默认不使用IPv6。
+     * @return ipv6Enable
+     */
+    public Boolean getIpv6Enable() {
+        return ipv6Enable;
+    }
+
+    public void setIpv6Enable(Boolean ipv6Enable) {
+        this.ipv6Enable = ipv6Enable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -211,13 +233,21 @@ public class Restore {
             && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.port, that.port)
             && Objects.equals(this.publicIp, that.publicIp)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, subnetId, securityGroupId, vpcId, availabilityZone, port, publicIp, enterpriseProjectId);
+        return Objects.hash(name,
+            subnetId,
+            securityGroupId,
+            vpcId,
+            availabilityZone,
+            port,
+            publicIp,
+            enterpriseProjectId,
+            ipv6Enable);
     }
 
     @Override
@@ -232,6 +262,7 @@ public class Restore {
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

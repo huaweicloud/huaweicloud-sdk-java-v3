@@ -66,6 +66,11 @@ public class InstanceDrInfo {
     private String slaveRegion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "build_process")
+
+    private String buildProcess;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "time")
 
     private Long time;
@@ -257,6 +262,23 @@ public class InstanceDrInfo {
         this.slaveRegion = slaveRegion;
     }
 
+    public InstanceDrInfo withBuildProcess(String buildProcess) {
+        this.buildProcess = buildProcess;
+        return this;
+    }
+
+    /**
+     * 搭建流程。master表示配置主实例容灾能力流程。slave表示配置灾备实例容灾能力流程。
+     * @return buildProcess
+     */
+    public String getBuildProcess() {
+        return buildProcess;
+    }
+
+    public void setBuildProcess(String buildProcess) {
+        this.buildProcess = buildProcess;
+    }
+
     public InstanceDrInfo withTime(Long time) {
         this.time = time;
         return this;
@@ -292,7 +314,8 @@ public class InstanceDrInfo {
             && Objects.equals(this.masterInstanceId, that.masterInstanceId)
             && Objects.equals(this.masterRegion, that.masterRegion)
             && Objects.equals(this.slaveInstanceId, that.slaveInstanceId)
-            && Objects.equals(this.slaveRegion, that.slaveRegion) && Objects.equals(this.time, that.time);
+            && Objects.equals(this.slaveRegion, that.slaveRegion)
+            && Objects.equals(this.buildProcess, that.buildProcess) && Objects.equals(this.time, that.time);
     }
 
     @Override
@@ -308,6 +331,7 @@ public class InstanceDrInfo {
             masterRegion,
             slaveInstanceId,
             slaveRegion,
+            buildProcess,
             time);
     }
 
@@ -326,6 +350,7 @@ public class InstanceDrInfo {
         sb.append("    masterRegion: ").append(toIndentedString(masterRegion)).append("\n");
         sb.append("    slaveInstanceId: ").append(toIndentedString(slaveInstanceId)).append("\n");
         sb.append("    slaveRegion: ").append(toIndentedString(slaveRegion)).append("\n");
+        sb.append("    buildProcess: ").append(toIndentedString(buildProcess)).append("\n");
         sb.append("    time: ").append(toIndentedString(time)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.ces.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -17,6 +22,81 @@ public class UpdateAlarmTemplateRequestBody {
     @JsonProperty(value = "template_name")
 
     private String templateName;
+
+    /**
+     * 自定义告警模板类型 0：指标 2： 事件
+     */
+    public static final class TemplateTypeEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final TemplateTypeEnum NUMBER_0 = new TemplateTypeEnum(0);
+
+        /**
+         * Enum NUMBER_2 for value: 2
+         */
+        public static final TemplateTypeEnum NUMBER_2 = new TemplateTypeEnum(2);
+
+        private static final Map<Integer, TemplateTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Integer, TemplateTypeEnum> createStaticFields() {
+            Map<Integer, TemplateTypeEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
+            map.put(2, NUMBER_2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Integer value;
+
+        TemplateTypeEnum(Integer value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Integer getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TemplateTypeEnum fromValue(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TemplateTypeEnum(value));
+        }
+
+        public static TemplateTypeEnum valueOf(Integer value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TemplateTypeEnum) {
+                return this.value.equals(((TemplateTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_type")
+
+    private TemplateTypeEnum templateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "template_description")
@@ -43,6 +123,23 @@ public class UpdateAlarmTemplateRequestBody {
 
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
+    }
+
+    public UpdateAlarmTemplateRequestBody withTemplateType(TemplateTypeEnum templateType) {
+        this.templateType = templateType;
+        return this;
+    }
+
+    /**
+     * 自定义告警模板类型 0：指标 2： 事件
+     * @return templateType
+     */
+    public TemplateTypeEnum getTemplateType() {
+        return templateType;
+    }
+
+    public void setTemplateType(TemplateTypeEnum templateType) {
+        this.templateType = templateType;
     }
 
     public UpdateAlarmTemplateRequestBody withTemplateDescription(String templateDescription) {
@@ -105,13 +202,14 @@ public class UpdateAlarmTemplateRequestBody {
         }
         UpdateAlarmTemplateRequestBody that = (UpdateAlarmTemplateRequestBody) obj;
         return Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateType, that.templateType)
             && Objects.equals(this.templateDescription, that.templateDescription)
             && Objects.equals(this.policies, that.policies);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templateName, templateDescription, policies);
+        return Objects.hash(templateName, templateType, templateDescription, policies);
     }
 
     @Override
@@ -119,6 +217,7 @@ public class UpdateAlarmTemplateRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateAlarmTemplateRequestBody {\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
+        sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
         sb.append("    templateDescription: ").append(toIndentedString(templateDescription)).append("\n");
         sb.append("    policies: ").append(toIndentedString(policies)).append("\n");
         sb.append("}");

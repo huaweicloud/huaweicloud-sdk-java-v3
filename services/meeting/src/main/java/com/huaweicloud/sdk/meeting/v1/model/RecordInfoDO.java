@@ -36,7 +36,7 @@ public class RecordInfoDO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "segmentCount")
 
-    private Integer segmentCount;
+    private Long segmentCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "segmentList")
@@ -111,7 +111,7 @@ public class RecordInfoDO {
         this.segmentLimit = segmentLimit;
     }
 
-    public RecordInfoDO withSegmentCount(Integer segmentCount) {
+    public RecordInfoDO withSegmentCount(Long segmentCount) {
         this.segmentCount = segmentCount;
         return this;
     }
@@ -120,11 +120,11 @@ public class RecordInfoDO {
      * 录制段落总数
      * @return segmentCount
      */
-    public Integer getSegmentCount() {
+    public Long getSegmentCount() {
         return segmentCount;
     }
 
-    public void setSegmentCount(Integer segmentCount) {
+    public void setSegmentCount(Long segmentCount) {
         this.segmentCount = segmentCount;
     }
 

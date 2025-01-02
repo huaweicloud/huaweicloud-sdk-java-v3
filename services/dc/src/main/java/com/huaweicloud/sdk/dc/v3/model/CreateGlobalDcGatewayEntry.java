@@ -67,12 +67,12 @@ public class CreateGlobalDcGatewayEntry {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_peer_link_count")
 
-    private String currentPeerLinkCount;
+    private Integer currentPeerLinkCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "available_peer_link_count")
 
-    private String availablePeerLinkCount;
+    private Integer availablePeerLinkCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -324,7 +324,7 @@ public class CreateGlobalDcGatewayEntry {
         this.locationName = locationName;
     }
 
-    public CreateGlobalDcGatewayEntry withCurrentPeerLinkCount(String currentPeerLinkCount) {
+    public CreateGlobalDcGatewayEntry withCurrentPeerLinkCount(Integer currentPeerLinkCount) {
         this.currentPeerLinkCount = currentPeerLinkCount;
         return this;
     }
@@ -333,15 +333,15 @@ public class CreateGlobalDcGatewayEntry {
      * 全域接入网关(GDGW)上关联连接的数量，表示DGW挂载ER的数量
      * @return currentPeerLinkCount
      */
-    public String getCurrentPeerLinkCount() {
+    public Integer getCurrentPeerLinkCount() {
         return currentPeerLinkCount;
     }
 
-    public void setCurrentPeerLinkCount(String currentPeerLinkCount) {
+    public void setCurrentPeerLinkCount(Integer currentPeerLinkCount) {
         this.currentPeerLinkCount = currentPeerLinkCount;
     }
 
-    public CreateGlobalDcGatewayEntry withAvailablePeerLinkCount(String availablePeerLinkCount) {
+    public CreateGlobalDcGatewayEntry withAvailablePeerLinkCount(Integer availablePeerLinkCount) {
         this.availablePeerLinkCount = availablePeerLinkCount;
         return this;
     }
@@ -350,11 +350,11 @@ public class CreateGlobalDcGatewayEntry {
      * 该全域接入网关上GDGW允许创建关联连接（PeerLink）的数量
      * @return availablePeerLinkCount
      */
-    public String getAvailablePeerLinkCount() {
+    public Integer getAvailablePeerLinkCount() {
         return availablePeerLinkCount;
     }
 
-    public void setAvailablePeerLinkCount(String availablePeerLinkCount) {
+    public void setAvailablePeerLinkCount(Integer availablePeerLinkCount) {
         this.availablePeerLinkCount = availablePeerLinkCount;
     }
 

@@ -51,7 +51,7 @@ public class SubnetInfo {
     }
 
     /**
-     * 子网所在的可用区标识，从终端节点获取，参考[终端节点](cfw_02_0003.xml)
+     * 子网所在的可用区标识，从终端节点获取，参考[终端节点](cfw_02_0000.xml)
      * @return availabilityZone
      */
     public String getAvailabilityZone() {

@@ -816,6 +816,11 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getName, ListAlarmHistoriesRequest::setName));
+        builder.<ListAlarmHistoriesRequest.AlarmTypeEnum>withRequestField("alarm_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAlarmHistoriesRequest.AlarmTypeEnum.class),
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmType, ListAlarmHistoriesRequest::setAlarmType));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

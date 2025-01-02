@@ -23,7 +23,7 @@ public class Auditlog {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
-    private Long size;
+    private Double size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
@@ -69,7 +69,7 @@ public class Auditlog {
         this.name = name;
     }
 
-    public Auditlog withSize(Long size) {
+    public Auditlog withSize(Double size) {
         this.size = size;
         return this;
     }
@@ -78,11 +78,11 @@ public class Auditlog {
      * 审计日志大小，单位：KB。
      * @return size
      */
-    public Long getSize() {
+    public Double getSize() {
         return size;
     }
 
-    public void setSize(Long size) {
+    public void setSize(Double size) {
         this.size = size;
     }
 

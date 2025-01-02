@@ -24,6 +24,16 @@ public class ListConnectGatewaysResponse extends SdkResponse {
 
     private List<ConnectGatewayResponse> connectGateways = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListConnectGatewaysResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -75,6 +85,49 @@ public class ListConnectGatewaysResponse extends SdkResponse {
         this.connectGateways = connectGateways;
     }
 
+    public ListConnectGatewaysResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 总记录数。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public ListConnectGatewaysResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListConnectGatewaysResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -85,12 +138,13 @@ public class ListConnectGatewaysResponse extends SdkResponse {
         }
         ListConnectGatewaysResponse that = (ListConnectGatewaysResponse) obj;
         return Objects.equals(this.requestId, that.requestId)
-            && Objects.equals(this.connectGateways, that.connectGateways);
+            && Objects.equals(this.connectGateways, that.connectGateways)
+            && Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, connectGateways);
+        return Objects.hash(requestId, connectGateways, totalCount, pageInfo);
     }
 
     @Override
@@ -99,6 +153,8 @@ public class ListConnectGatewaysResponse extends SdkResponse {
         sb.append("class ListConnectGatewaysResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    connectGateways: ").append(toIndentedString(connectGateways)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

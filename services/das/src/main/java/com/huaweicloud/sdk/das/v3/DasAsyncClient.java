@@ -89,6 +89,8 @@ import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowTuningResponse;
+import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesRequest;
+import com.huaweicloud.sdk.das.v3.model.SynchronizeInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateDbUserResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesRequest;
@@ -1422,6 +1424,36 @@ public class DasAsyncClient {
      */
     public AsyncInvoker<ShowTuningRequest, ShowTuningResponse> showTuningAsyncInvoker(ShowTuningRequest request) {
         return new AsyncInvoker<>(request, DasMeta.showTuning, hcClient);
+    }
+
+    /**
+     * 同步实例列表
+     *
+     * 同步实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SynchronizeInstancesRequest 请求对象
+     * @return CompletableFuture<SynchronizeInstancesResponse>
+     */
+    public CompletableFuture<SynchronizeInstancesResponse> synchronizeInstancesAsync(
+        SynchronizeInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.synchronizeInstances);
+    }
+
+    /**
+     * 同步实例列表
+     *
+     * 同步实例列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SynchronizeInstancesRequest 请求对象
+     * @return AsyncInvoker<SynchronizeInstancesRequest, SynchronizeInstancesResponse>
+     */
+    public AsyncInvoker<SynchronizeInstancesRequest, SynchronizeInstancesResponse> synchronizeInstancesAsyncInvoker(
+        SynchronizeInstancesRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.synchronizeInstances, hcClient);
     }
 
     /**

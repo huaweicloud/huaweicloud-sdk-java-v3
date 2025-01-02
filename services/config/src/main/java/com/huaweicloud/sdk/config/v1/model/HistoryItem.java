@@ -46,7 +46,7 @@ public class HistoryItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource")
 
-    private ResourceEntity resource;
+    private BaseResourceEntity resource;
 
     public HistoryItem withDomainId(String domainId) {
         this.domainId = domainId;
@@ -166,14 +166,14 @@ public class HistoryItem {
         this.relations = relations;
     }
 
-    public HistoryItem withResource(ResourceEntity resource) {
+    public HistoryItem withResource(BaseResourceEntity resource) {
         this.resource = resource;
         return this;
     }
 
-    public HistoryItem withResource(Consumer<ResourceEntity> resourceSetter) {
+    public HistoryItem withResource(Consumer<BaseResourceEntity> resourceSetter) {
         if (this.resource == null) {
-            this.resource = new ResourceEntity();
+            this.resource = new BaseResourceEntity();
             resourceSetter.accept(this.resource);
         }
 
@@ -184,11 +184,11 @@ public class HistoryItem {
      * Get resource
      * @return resource
      */
-    public ResourceEntity getResource() {
+    public BaseResourceEntity getResource() {
         return resource;
     }
 
-    public void setResource(ResourceEntity resource) {
+    public void setResource(BaseResourceEntity resource) {
         this.resource = resource;
     }
 

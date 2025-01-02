@@ -30,6 +30,81 @@ public class ListAlarmHistoriesRequest {
 
     private String name;
 
+    /**
+     * 告警类型，event：查询事件类型告警，metric：查询指标类型告警
+     */
+    public static final class AlarmTypeEnum {
+
+        /**
+         * Enum EVENT for value: "event"
+         */
+        public static final AlarmTypeEnum EVENT = new AlarmTypeEnum("event");
+
+        /**
+         * Enum METRIC for value: "metric"
+         */
+        public static final AlarmTypeEnum METRIC = new AlarmTypeEnum("metric");
+
+        private static final Map<String, AlarmTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AlarmTypeEnum> createStaticFields() {
+            Map<String, AlarmTypeEnum> map = new HashMap<>();
+            map.put("event", EVENT);
+            map.put("metric", METRIC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AlarmTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AlarmTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AlarmTypeEnum(value));
+        }
+
+        public static AlarmTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AlarmTypeEnum) {
+                return this.value.equals(((AlarmTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_type")
+
+    private AlarmTypeEnum alarmType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
@@ -208,6 +283,23 @@ public class ListAlarmHistoriesRequest {
         this.name = name;
     }
 
+    public ListAlarmHistoriesRequest withAlarmType(AlarmTypeEnum alarmType) {
+        this.alarmType = alarmType;
+        return this;
+    }
+
+    /**
+     * 告警类型，event：查询事件类型告警，metric：查询指标类型告警
+     * @return alarmType
+     */
+    public AlarmTypeEnum getAlarmType() {
+        return alarmType;
+    }
+
+    public void setAlarmType(AlarmTypeEnum alarmType) {
+        this.alarmType = alarmType;
+    }
+
     public ListAlarmHistoriesRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -377,17 +469,29 @@ public class ListAlarmHistoriesRequest {
         }
         ListAlarmHistoriesRequest that = (ListAlarmHistoriesRequest) obj;
         return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.recordId, that.recordId)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.level, that.level) && Objects.equals(this.namespace, that.namespace)
-            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.from, that.from)
-            && Objects.equals(this.to, that.to) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.orderBy, that.orderBy);
+            && Objects.equals(this.name, that.name) && Objects.equals(this.alarmType, that.alarmType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.orderBy, that.orderBy);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(alarmId, recordId, name, status, level, namespace, resourceId, from, to, offset, limit, orderBy);
+        return Objects.hash(alarmId,
+            recordId,
+            name,
+            alarmType,
+            status,
+            level,
+            namespace,
+            resourceId,
+            from,
+            to,
+            offset,
+            limit,
+            orderBy);
     }
 
     @Override
@@ -397,6 +501,7 @@ public class ListAlarmHistoriesRequest {
         sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
         sb.append("    recordId: ").append(toIndentedString(recordId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    alarmType: ").append(toIndentedString(alarmType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");

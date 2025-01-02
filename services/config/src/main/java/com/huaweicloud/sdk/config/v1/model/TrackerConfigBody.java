@@ -31,16 +31,6 @@ public class TrackerConfigBody {
 
     private String agencyName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domain_id")
-
-    private String domainId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "frozen_status")
-
-    private FrozenStatus frozenStatus;
-
     public TrackerConfigBody withChannel(ChannelConfigBody channel) {
         this.channel = channel;
         return this;
@@ -127,49 +117,6 @@ public class TrackerConfigBody {
         this.agencyName = agencyName;
     }
 
-    public TrackerConfigBody withDomainId(String domainId) {
-        this.domainId = domainId;
-        return this;
-    }
-
-    /**
-     * 账号ID
-     * @return domainId
-     */
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
-    }
-
-    public TrackerConfigBody withFrozenStatus(FrozenStatus frozenStatus) {
-        this.frozenStatus = frozenStatus;
-        return this;
-    }
-
-    public TrackerConfigBody withFrozenStatus(Consumer<FrozenStatus> frozenStatusSetter) {
-        if (this.frozenStatus == null) {
-            this.frozenStatus = new FrozenStatus();
-            frozenStatusSetter.accept(this.frozenStatus);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get frozenStatus
-     * @return frozenStatus
-     */
-    public FrozenStatus getFrozenStatus() {
-        return frozenStatus;
-    }
-
-    public void setFrozenStatus(FrozenStatus frozenStatus) {
-        this.frozenStatus = frozenStatus;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -181,13 +128,12 @@ public class TrackerConfigBody {
         TrackerConfigBody that = (TrackerConfigBody) obj;
         return Objects.equals(this.channel, that.channel) && Objects.equals(this.selector, that.selector)
             && Objects.equals(this.retentionPeriodInDays, that.retentionPeriodInDays)
-            && Objects.equals(this.agencyName, that.agencyName) && Objects.equals(this.domainId, that.domainId)
-            && Objects.equals(this.frozenStatus, that.frozenStatus);
+            && Objects.equals(this.agencyName, that.agencyName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(channel, selector, retentionPeriodInDays, agencyName, domainId, frozenStatus);
+        return Objects.hash(channel, selector, retentionPeriodInDays, agencyName);
     }
 
     @Override
@@ -198,8 +144,6 @@ public class TrackerConfigBody {
         sb.append("    selector: ").append(toIndentedString(selector)).append("\n");
         sb.append("    retentionPeriodInDays: ").append(toIndentedString(retentionPeriodInDays)).append("\n");
         sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
-        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
-        sb.append("    frozenStatus: ").append(toIndentedString(frozenStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

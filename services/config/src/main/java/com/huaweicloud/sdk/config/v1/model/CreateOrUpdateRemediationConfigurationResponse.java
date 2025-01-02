@@ -30,6 +30,16 @@ public class CreateOrUpdateRemediationConfigurationResponse extends SdkResponse 
     private String targetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_region_id")
+
+    private String targetRegionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "target_project_id")
+
+    private String targetProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "static_parameter")
 
     private List<RemediationStaticParameter> staticParameter = null;
@@ -123,6 +133,40 @@ public class CreateOrUpdateRemediationConfigurationResponse extends SdkResponse 
 
     public void setTargetId(String targetId) {
         this.targetId = targetId;
+    }
+
+    public CreateOrUpdateRemediationConfigurationResponse withTargetRegionId(String targetRegionId) {
+        this.targetRegionId = targetRegionId;
+        return this;
+    }
+
+    /**
+     * 修正执行的目标的regionId。如果修正方式为RFS，该字段为空则Config服务会默认配置北京四（中国站）或香港一（国际站）的regionId；如果修正方式为FGS，该字段为空则Config服务会根据实例urn自动配置。指定target_project_id字段则该字段必选。
+     * @return targetRegionId
+     */
+    public String getTargetRegionId() {
+        return targetRegionId;
+    }
+
+    public void setTargetRegionId(String targetRegionId) {
+        this.targetRegionId = targetRegionId;
+    }
+
+    public CreateOrUpdateRemediationConfigurationResponse withTargetProjectId(String targetProjectId) {
+        this.targetProjectId = targetProjectId;
+        return this;
+    }
+
+    /**
+     * 修正执行的目标的projectId。如果修正方式为RFS，该字段为空则Config服务会默认配置北京四（中国站）或香港一（国际站）的主projectId；如果修正方式为FGS，该字段为空则Config服务会根据实例urn自动配置。指定target_region_id字段则该字段必选。
+     * @return targetProjectId
+     */
+    public String getTargetProjectId() {
+        return targetProjectId;
+    }
+
+    public void setTargetProjectId(String targetProjectId) {
+        this.targetProjectId = targetProjectId;
     }
 
     public CreateOrUpdateRemediationConfigurationResponse withStaticParameter(
@@ -322,7 +366,8 @@ public class CreateOrUpdateRemediationConfigurationResponse extends SdkResponse 
         }
         CreateOrUpdateRemediationConfigurationResponse that = (CreateOrUpdateRemediationConfigurationResponse) obj;
         return Objects.equals(this.automatic, that.automatic) && Objects.equals(this.targetType, that.targetType)
-            && Objects.equals(this.targetId, that.targetId)
+            && Objects.equals(this.targetId, that.targetId) && Objects.equals(this.targetRegionId, that.targetRegionId)
+            && Objects.equals(this.targetProjectId, that.targetProjectId)
             && Objects.equals(this.staticParameter, that.staticParameter)
             && Objects.equals(this.resourceParameter, that.resourceParameter)
             && Objects.equals(this.maximumAttempts, that.maximumAttempts)
@@ -337,6 +382,8 @@ public class CreateOrUpdateRemediationConfigurationResponse extends SdkResponse 
         return Objects.hash(automatic,
             targetType,
             targetId,
+            targetRegionId,
+            targetProjectId,
             staticParameter,
             resourceParameter,
             maximumAttempts,
@@ -355,6 +402,8 @@ public class CreateOrUpdateRemediationConfigurationResponse extends SdkResponse 
         sb.append("    automatic: ").append(toIndentedString(automatic)).append("\n");
         sb.append("    targetType: ").append(toIndentedString(targetType)).append("\n");
         sb.append("    targetId: ").append(toIndentedString(targetId)).append("\n");
+        sb.append("    targetRegionId: ").append(toIndentedString(targetRegionId)).append("\n");
+        sb.append("    targetProjectId: ").append(toIndentedString(targetProjectId)).append("\n");
         sb.append("    staticParameter: ").append(toIndentedString(staticParameter)).append("\n");
         sb.append("    resourceParameter: ").append(toIndentedString(resourceParameter)).append("\n");
         sb.append("    maximumAttempts: ").append(toIndentedString(maximumAttempts)).append("\n");

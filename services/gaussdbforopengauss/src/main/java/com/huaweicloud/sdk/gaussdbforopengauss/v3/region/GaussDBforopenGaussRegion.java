@@ -56,6 +56,27 @@ public class GaussDBforopenGaussRegion {
     public static final Region CN_NORTH_9 =
         new Region("cn-north-9", "https://gaussdb-opengauss.cn-north-9.myhuaweicloud.com");
 
+    public static final Region CN_SOUTH_2 =
+        new Region("cn-south-2", "https://gaussdb-opengauss.cn-south-2.myhuaweicloud.com");
+
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://gaussdb.cn-east-4.myhuaweicloud.com");
+
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://gaussdb.cn-east-5.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://gaussdb.ap-southeast-5.myhuaweicloud.com");
+
+    public static final Region TR_WEST_1 = new Region("tr-west-1", "https://gaussdb.tr-west-1.myhuaweicloud.com");
+
+    public static final Region ME_EAST_1 = new Region("me-east-1", "https://gaussdb.me-east-1.myhuaweicloud.com");
+
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://gaussdb.af-north-1.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_4 =
+        new Region("ap-southeast-4", "https://gaussdb-opengauss.ap-southeast-4.myhuaweicloud.com");
+
+    public static final Region CN_EAST_2 = new Region("cn-east-2", "https://gaussdb.cn-east-2.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER =
         RegionProviderChain.getDefaultRegionProviderChain("GAUSSDBFOROPENGAUSS");
 
@@ -77,6 +98,15 @@ public class GaussDBforopenGaussRegion {
         map.put("la-north-2", LA_NORTH_2);
         map.put("af-south-1", AF_SOUTH_1);
         map.put("cn-north-9", CN_NORTH_9);
+        map.put("cn-south-2", CN_SOUTH_2);
+        map.put("cn-east-4", CN_EAST_4);
+        map.put("cn-east-5", CN_EAST_5);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("tr-west-1", TR_WEST_1);
+        map.put("me-east-1", ME_EAST_1);
+        map.put("af-north-1", AF_NORTH_1);
+        map.put("ap-southeast-4", AP_SOUTHEAST_4);
+        map.put("cn-east-2", CN_EAST_2);
         return Collections.unmodifiableMap(map);
     }
 

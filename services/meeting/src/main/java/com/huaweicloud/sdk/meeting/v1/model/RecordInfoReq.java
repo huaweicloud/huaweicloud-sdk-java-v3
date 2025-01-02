@@ -18,12 +18,12 @@ public class RecordInfoReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "segmentOffset")
 
-    private Long segmentOffset;
+    private Integer segmentOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "segmentLimit")
 
-    private Long segmentLimit;
+    private Integer segmentLimit;
 
     public RecordInfoReq withConfUUID(String confUUID) {
         this.confUUID = confUUID;
@@ -42,7 +42,7 @@ public class RecordInfoReq {
         this.confUUID = confUUID;
     }
 
-    public RecordInfoReq withSegmentOffset(Long segmentOffset) {
+    public RecordInfoReq withSegmentOffset(Integer segmentOffset) {
         this.segmentOffset = segmentOffset;
         return this;
     }
@@ -51,15 +51,15 @@ public class RecordInfoReq {
      * 录制段落查询偏移量
      * @return segmentOffset
      */
-    public Long getSegmentOffset() {
+    public Integer getSegmentOffset() {
         return segmentOffset;
     }
 
-    public void setSegmentOffset(Long segmentOffset) {
+    public void setSegmentOffset(Integer segmentOffset) {
         this.segmentOffset = segmentOffset;
     }
 
-    public RecordInfoReq withSegmentLimit(Long segmentLimit) {
+    public RecordInfoReq withSegmentLimit(Integer segmentLimit) {
         this.segmentLimit = segmentLimit;
         return this;
     }
@@ -68,11 +68,11 @@ public class RecordInfoReq {
      * 录制段落查询数量
      * @return segmentLimit
      */
-    public Long getSegmentLimit() {
+    public Integer getSegmentLimit() {
         return segmentLimit;
     }
 
-    public void setSegmentLimit(Long segmentLimit) {
+    public void setSegmentLimit(Integer segmentLimit) {
         this.segmentLimit = segmentLimit;
     }
 

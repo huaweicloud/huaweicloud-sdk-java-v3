@@ -265,6 +265,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListRdSforMySqlProxyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRdSforMySqlProxyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRdSforMysqlProxyFlavorsRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRdSforMysqlProxyFlavorsResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListReadOnlyReplayDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListReadOnlyReplayDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListRecycleInstancesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListRestoreTimesRequest;
@@ -301,6 +303,7 @@ import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesResponse;
+import com.huaweicloud.sdk.rds.v3.model.LogReplayDatabaseReq;
 import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerRequest;
 import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerResponse;
 import com.huaweicloud.sdk.rds.v3.model.ModifiyInstanceNameRequest;
@@ -339,6 +342,8 @@ import com.huaweicloud.sdk.rds.v3.model.ResizeFlavorRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistInstanceResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreExistingInstanceRequestBody;
+import com.huaweicloud.sdk.rds.v3.model.RestoreLogReplayDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.RestoreLogReplayDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesNewRequest;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesNewRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.RestoreTablesNewResponse;
@@ -2973,6 +2978,33 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListReadOnlyReplayDatabaseRequest, ListReadOnlyReplayDatabaseResponse> listReadOnlyReplayDatabase =
+        genForListReadOnlyReplayDatabase();
+
+    private static HttpRequestDef<ListReadOnlyReplayDatabaseRequest, ListReadOnlyReplayDatabaseResponse> genForListReadOnlyReplayDatabase() {
+        // basic
+        HttpRequestDef.Builder<ListReadOnlyReplayDatabaseRequest, ListReadOnlyReplayDatabaseResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListReadOnlyReplayDatabaseRequest.class,
+                    ListReadOnlyReplayDatabaseResponse.class)
+                .withName("ListReadOnlyReplayDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/log-replay/database")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListReadOnlyReplayDatabaseRequest::getInstanceId,
+                ListReadOnlyReplayDatabaseRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstances =
         genForListRecycleInstances();
 
@@ -3746,6 +3778,42 @@ public class RdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RestoreExistingInstanceRequestBody.class),
             f -> f.withMarshaller(RestoreExistInstanceRequest::getBody, RestoreExistInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestoreLogReplayDatabaseRequest, RestoreLogReplayDatabaseResponse> restoreLogReplayDatabase =
+        genForRestoreLogReplayDatabase();
+
+    private static HttpRequestDef<RestoreLogReplayDatabaseRequest, RestoreLogReplayDatabaseResponse> genForRestoreLogReplayDatabase() {
+        // basic
+        HttpRequestDef.Builder<RestoreLogReplayDatabaseRequest, RestoreLogReplayDatabaseResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, RestoreLogReplayDatabaseRequest.class, RestoreLogReplayDatabaseResponse.class)
+                .withName("RestoreLogReplayDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/log-replay/database")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreLogReplayDatabaseRequest::getInstanceId,
+                RestoreLogReplayDatabaseRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreLogReplayDatabaseRequest::getXLanguage,
+                RestoreLogReplayDatabaseRequest::setXLanguage));
+        builder.<LogReplayDatabaseReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LogReplayDatabaseReq.class),
+            f -> f.withMarshaller(RestoreLogReplayDatabaseRequest::getBody, RestoreLogReplayDatabaseRequest::setBody));
 
         // response
 

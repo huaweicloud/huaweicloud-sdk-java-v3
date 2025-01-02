@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 传译员信息
@@ -34,6 +35,16 @@ public class InterpreterInfo {
     @JsonProperty(value = "interpreterId")
 
     private String interpreterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "interpreterType")
+
+    private String interpreterType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "aiDigitalInfo")
+
+    private InterpreterAiDigitalInfo aiDigitalInfo;
 
     public InterpreterInfo withLoginAccount(String loginAccount) {
         this.loginAccount = loginAccount;
@@ -120,6 +131,49 @@ public class InterpreterInfo {
         this.interpreterId = interpreterId;
     }
 
+    public InterpreterInfo withInterpreterType(String interpreterType) {
+        this.interpreterType = interpreterType;
+        return this;
+    }
+
+    /**
+     * 传译员类型，MANUAL：人工传译，AI：AI传译。默认MANUAL。
+     * @return interpreterType
+     */
+    public String getInterpreterType() {
+        return interpreterType;
+    }
+
+    public void setInterpreterType(String interpreterType) {
+        this.interpreterType = interpreterType;
+    }
+
+    public InterpreterInfo withAiDigitalInfo(InterpreterAiDigitalInfo aiDigitalInfo) {
+        this.aiDigitalInfo = aiDigitalInfo;
+        return this;
+    }
+
+    public InterpreterInfo withAiDigitalInfo(Consumer<InterpreterAiDigitalInfo> aiDigitalInfoSetter) {
+        if (this.aiDigitalInfo == null) {
+            this.aiDigitalInfo = new InterpreterAiDigitalInfo();
+            aiDigitalInfoSetter.accept(this.aiDigitalInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get aiDigitalInfo
+     * @return aiDigitalInfo
+     */
+    public InterpreterAiDigitalInfo getAiDigitalInfo() {
+        return aiDigitalInfo;
+    }
+
+    public void setAiDigitalInfo(InterpreterAiDigitalInfo aiDigitalInfo) {
+        this.aiDigitalInfo = aiDigitalInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +185,14 @@ public class InterpreterInfo {
         InterpreterInfo that = (InterpreterInfo) obj;
         return Objects.equals(this.loginAccount, that.loginAccount) && Objects.equals(this.userID, that.userID)
             && Objects.equals(this.callNumber, that.callNumber) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.interpreterId, that.interpreterId);
+            && Objects.equals(this.interpreterId, that.interpreterId)
+            && Objects.equals(this.interpreterType, that.interpreterType)
+            && Objects.equals(this.aiDigitalInfo, that.aiDigitalInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(loginAccount, userID, callNumber, name, interpreterId);
+        return Objects.hash(loginAccount, userID, callNumber, name, interpreterId, interpreterType, aiDigitalInfo);
     }
 
     @Override
@@ -148,6 +204,8 @@ public class InterpreterInfo {
         sb.append("    callNumber: ").append(toIndentedString(callNumber)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    interpreterId: ").append(toIndentedString(interpreterId)).append("\n");
+        sb.append("    interpreterType: ").append(toIndentedString(interpreterType)).append("\n");
+        sb.append("    aiDigitalInfo: ").append(toIndentedString(aiDigitalInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }
