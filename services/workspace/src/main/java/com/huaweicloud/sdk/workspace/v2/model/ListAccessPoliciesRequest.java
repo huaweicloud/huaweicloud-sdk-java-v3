@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ListAccessPoliciesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_control_type")
+
+    private String accessControlType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -19,6 +24,23 @@ public class ListAccessPoliciesRequest {
     @JsonProperty(value = "offset")
 
     private Integer offset;
+
+    public ListAccessPoliciesRequest withAccessControlType(String accessControlType) {
+        this.accessControlType = accessControlType;
+        return this;
+    }
+
+    /**
+     * 接入策略控制类型 * ACCESS_TYPE： 接入类型 * IP_WHITE_LIST： IP白名单
+     * @return accessControlType
+     */
+    public String getAccessControlType() {
+        return accessControlType;
+    }
+
+    public void setAccessControlType(String accessControlType) {
+        this.accessControlType = accessControlType;
+    }
 
     public ListAccessPoliciesRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -67,18 +89,20 @@ public class ListAccessPoliciesRequest {
             return false;
         }
         ListAccessPoliciesRequest that = (ListAccessPoliciesRequest) obj;
-        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+        return Objects.equals(this.accessControlType, that.accessControlType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset);
+        return Objects.hash(accessControlType, limit, offset);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAccessPoliciesRequest {\n");
+        sb.append("    accessControlType: ").append(toIndentedString(accessControlType)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

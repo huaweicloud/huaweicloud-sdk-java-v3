@@ -20,6 +20,11 @@ public class LivePlayingShootScriptItem {
 
     private String title;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "text")
+
+    private String text;
+
     public LivePlayingShootScriptItem withSequenceNo(Integer sequenceNo) {
         this.sequenceNo = sequenceNo;
         return this;
@@ -56,6 +61,23 @@ public class LivePlayingShootScriptItem {
         this.title = title;
     }
 
+    public LivePlayingShootScriptItem withText(String text) {
+        this.text = text;
+        return this;
+    }
+
+    /**
+     * 段落话术内容。
+     * @return text
+     */
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -65,12 +87,13 @@ public class LivePlayingShootScriptItem {
             return false;
         }
         LivePlayingShootScriptItem that = (LivePlayingShootScriptItem) obj;
-        return Objects.equals(this.sequenceNo, that.sequenceNo) && Objects.equals(this.title, that.title);
+        return Objects.equals(this.sequenceNo, that.sequenceNo) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.text, that.text);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sequenceNo, title);
+        return Objects.hash(sequenceNo, title, text);
     }
 
     @Override
@@ -79,6 +102,7 @@ public class LivePlayingShootScriptItem {
         sb.append("class LivePlayingShootScriptItem {\n");
         sb.append("    sequenceNo: ").append(toIndentedString(sequenceNo)).append("\n");
         sb.append("    title: ").append(toIndentedString(title)).append("\n");
+        sb.append("    text: ").append(toIndentedString(text)).append("\n");
         sb.append("}");
         return sb.toString();
     }

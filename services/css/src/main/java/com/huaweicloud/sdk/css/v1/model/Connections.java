@@ -45,6 +45,21 @@ public class Connections {
 
     private String domainId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpcepIp")
+
+    private String vpcepIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpcepIpv6Address")
+
+    private String vpcepIpv6Address;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpcepDnsName")
+
+    private String vpcepDnsName;
+
     public Connections withId(String id) {
         this.id = id;
         return this;
@@ -164,6 +179,57 @@ public class Connections {
         this.domainId = domainId;
     }
 
+    public Connections withVpcepIp(String vpcepIp) {
+        this.vpcepIp = vpcepIp;
+        return this;
+    }
+
+    /**
+     * 终端节点IPv4。
+     * @return vpcepIp
+     */
+    public String getVpcepIp() {
+        return vpcepIp;
+    }
+
+    public void setVpcepIp(String vpcepIp) {
+        this.vpcepIp = vpcepIp;
+    }
+
+    public Connections withVpcepIpv6Address(String vpcepIpv6Address) {
+        this.vpcepIpv6Address = vpcepIpv6Address;
+        return this;
+    }
+
+    /**
+     * 终端节点IPv6。
+     * @return vpcepIpv6Address
+     */
+    public String getVpcepIpv6Address() {
+        return vpcepIpv6Address;
+    }
+
+    public void setVpcepIpv6Address(String vpcepIpv6Address) {
+        this.vpcepIpv6Address = vpcepIpv6Address;
+    }
+
+    public Connections withVpcepDnsName(String vpcepDnsName) {
+        this.vpcepDnsName = vpcepDnsName;
+        return this;
+    }
+
+    /**
+     * 终端节点内网域名。
+     * @return vpcepDnsName
+     */
+    public String getVpcepDnsName() {
+        return vpcepDnsName;
+    }
+
+    public void setVpcepDnsName(String vpcepDnsName) {
+        this.vpcepDnsName = vpcepDnsName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -177,12 +243,23 @@ public class Connections {
             && Objects.equals(this.maxSession, that.maxSession)
             && Objects.equals(this.specificationName, that.specificationName)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updateAt, that.updateAt)
-            && Objects.equals(this.domainId, that.domainId);
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.vpcepIp, that.vpcepIp)
+            && Objects.equals(this.vpcepIpv6Address, that.vpcepIpv6Address)
+            && Objects.equals(this.vpcepDnsName, that.vpcepDnsName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, maxSession, specificationName, createdAt, updateAt, domainId);
+        return Objects.hash(id,
+            status,
+            maxSession,
+            specificationName,
+            createdAt,
+            updateAt,
+            domainId,
+            vpcepIp,
+            vpcepIpv6Address,
+            vpcepDnsName);
     }
 
     @Override
@@ -196,6 +273,9 @@ public class Connections {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updateAt: ").append(toIndentedString(updateAt)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    vpcepIp: ").append(toIndentedString(vpcepIp)).append("\n");
+        sb.append("    vpcepIpv6Address: ").append(toIndentedString(vpcepIpv6Address)).append("\n");
+        sb.append("    vpcepDnsName: ").append(toIndentedString(vpcepDnsName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

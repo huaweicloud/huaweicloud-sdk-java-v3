@@ -60,6 +60,11 @@ public class BatchCreateSecurityGroupRulesOption {
 
     private String priority;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enabled")
+
+    private Boolean enabled;
+
     public BatchCreateSecurityGroupRulesOption withDescription(String description) {
         this.description = description;
         return this;
@@ -230,6 +235,23 @@ public class BatchCreateSecurityGroupRulesOption {
         this.priority = priority;
     }
 
+    public BatchCreateSecurityGroupRulesOption withEnabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否启用安全组规则。 取值范围：true, false。 约束：默认值为true。
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -245,7 +267,8 @@ public class BatchCreateSecurityGroupRulesOption {
             && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix)
             && Objects.equals(this.remoteGroupId, that.remoteGroupId)
             && Objects.equals(this.remoteAddressGroupId, that.remoteAddressGroupId)
-            && Objects.equals(this.action, that.action) && Objects.equals(this.priority, that.priority);
+            && Objects.equals(this.action, that.action) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override
@@ -259,7 +282,8 @@ public class BatchCreateSecurityGroupRulesOption {
             remoteGroupId,
             remoteAddressGroupId,
             action,
-            priority);
+            priority,
+            enabled);
     }
 
     @Override
@@ -276,6 +300,7 @@ public class BatchCreateSecurityGroupRulesOption {
         sb.append("    remoteAddressGroupId: ").append(toIndentedString(remoteAddressGroupId)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

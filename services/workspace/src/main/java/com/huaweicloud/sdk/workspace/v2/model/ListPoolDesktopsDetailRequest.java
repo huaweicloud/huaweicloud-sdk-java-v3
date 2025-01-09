@@ -53,7 +53,7 @@ public class ListPoolDesktopsDetailRequest {
     }
 
     /**
-     * 通过该类型过滤出与桌面池规格类型不一致的桌面  - PRODUCT: 查找productID与桌面池套餐ID不一致的桌面 - IMAGE: 查找imageID与桌面池镜像ID不一致的桌面
+     * 通过该类型过滤出与桌面池规格类型不一致的桌面 - PRODUCT: 查找productID与桌面池套餐ID不一致的桌面 - IMAGE: 查找imageID与桌面池镜像ID不一致的桌面
      * @return inconsistentType
      */
     public String getInconsistentType() {

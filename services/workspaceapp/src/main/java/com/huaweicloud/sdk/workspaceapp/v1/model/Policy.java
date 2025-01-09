@@ -19,7 +19,7 @@ public class Policy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "statement")
 
-    private ObsPolicyStatement statement;
+    private PolicyStatement statement;
 
     public Policy withVersion(String version) {
         this.version = version;
@@ -38,14 +38,14 @@ public class Policy {
         this.version = version;
     }
 
-    public Policy withStatement(ObsPolicyStatement statement) {
+    public Policy withStatement(PolicyStatement statement) {
         this.statement = statement;
         return this;
     }
 
-    public Policy withStatement(Consumer<ObsPolicyStatement> statementSetter) {
+    public Policy withStatement(Consumer<PolicyStatement> statementSetter) {
         if (this.statement == null) {
-            this.statement = new ObsPolicyStatement();
+            this.statement = new PolicyStatement();
             statementSetter.accept(this.statement);
         }
 
@@ -56,11 +56,11 @@ public class Policy {
      * Get statement
      * @return statement
      */
-    public ObsPolicyStatement getStatement() {
+    public PolicyStatement getStatement() {
         return statement;
     }
 
-    public void setStatement(ObsPolicyStatement statement) {
+    public void setStatement(PolicyStatement statement) {
         this.statement = statement;
     }
 

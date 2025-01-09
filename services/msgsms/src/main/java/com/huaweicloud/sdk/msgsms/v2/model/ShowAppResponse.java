@@ -298,7 +298,7 @@ public class ShowAppResponse extends SdkResponse {
     }
 
     /**
-     * 应用状态   CREATED：待上线。应用暂未创建成功，请稍候。   SUSPENDED：暂停。无法发起业务请求。当客户所发短信内容触发业务违规，或客户申请退订短信业务时，运营经理会将客户短信应用暂停。   LAUNCHED：正常。应用添加成功，可以正常使用。
+     * 应用状态   CREATED：待上线。应用暂未创建成功，请稍候。   SUSPENDED：暂停。无法发起业务请求。当客户所发短信内容触发业务违规，或客户申请退订短信业务时，运营经理会将客户短信应用暂停。   LAUNCHED：正常。应用添加成功，可以正常使用。   PROCESSING：资源待分配。请联系客户经理或通过工单系统申请配置资源。
      * @return status
      */
     public String getStatus() {

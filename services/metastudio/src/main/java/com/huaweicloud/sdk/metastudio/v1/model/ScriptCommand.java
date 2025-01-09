@@ -29,6 +29,11 @@ public class ScriptCommand {
     private String commandId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "command_time")
+
+    private String commandTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "scene_scripts")
 
     private List<LivePlayingScriptInfo> sceneScripts = null;
@@ -84,6 +89,23 @@ public class ScriptCommand {
         this.commandId = commandId;
     }
 
+    public ScriptCommand withCommandTime(String commandTime) {
+        this.commandTime = commandTime;
+        return this;
+    }
+
+    /**
+     * 命令时间。格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * @return commandTime
+     */
+    public String getCommandTime() {
+        return commandTime;
+    }
+
+    public void setCommandTime(String commandTime) {
+        this.commandTime = commandTime;
+    }
+
     public ScriptCommand withSceneScripts(List<LivePlayingScriptInfo> sceneScripts) {
         this.sceneScripts = sceneScripts;
         return this;
@@ -127,12 +149,13 @@ public class ScriptCommand {
         }
         ScriptCommand that = (ScriptCommand) obj;
         return Objects.equals(this.roomId, that.roomId) && Objects.equals(this.jobId, that.jobId)
-            && Objects.equals(this.commandId, that.commandId) && Objects.equals(this.sceneScripts, that.sceneScripts);
+            && Objects.equals(this.commandId, that.commandId) && Objects.equals(this.commandTime, that.commandTime)
+            && Objects.equals(this.sceneScripts, that.sceneScripts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(roomId, jobId, commandId, sceneScripts);
+        return Objects.hash(roomId, jobId, commandId, commandTime, sceneScripts);
     }
 
     @Override
@@ -142,6 +165,7 @@ public class ScriptCommand {
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    commandId: ").append(toIndentedString(commandId)).append("\n");
+        sb.append("    commandTime: ").append(toIndentedString(commandTime)).append("\n");
         sb.append("    sceneScripts: ").append(toIndentedString(sceneScripts)).append("\n");
         sb.append("}");
         return sb.toString();

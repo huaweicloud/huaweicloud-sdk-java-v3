@@ -82,6 +82,11 @@ public class ListUserConnectionReq {
     private String wiIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
     private OffsetDateTime updateTime;
@@ -344,6 +349,23 @@ public class ListUserConnectionReq {
         this.wiIp = wiIp;
     }
 
+    public ListUserConnectionReq withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 客户端出口ip。
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
     public ListUserConnectionReq withUpdateTime(OffsetDateTime updateTime) {
         this.updateTime = updateTime;
         return this;
@@ -446,8 +468,9 @@ public class ListUserConnectionReq {
             && Objects.equals(this.clientVersion, that.clientVersion)
             && Objects.equals(this.clientType, that.clientType) && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.vmIp, that.vmIp) && Objects.equals(this.connectFlag, that.connectFlag)
-            && Objects.equals(this.wiIp, that.wiIp) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.loginStartTime, that.loginStartTime)
+            && Objects.equals(this.wiIp, that.wiIp) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.loginStartTime, that.loginStartTime)
             && Objects.equals(this.loginEndTime, that.loginEndTime) && Objects.equals(this.virtualIp, that.virtualIp);
     }
 
@@ -467,6 +490,7 @@ public class ListUserConnectionReq {
             vmIp,
             connectFlag,
             wiIp,
+            publicIp,
             updateTime,
             tenantId,
             loginStartTime,
@@ -492,6 +516,7 @@ public class ListUserConnectionReq {
         sb.append("    vmIp: ").append(toIndentedString(vmIp)).append("\n");
         sb.append("    connectFlag: ").append(toIndentedString(connectFlag)).append("\n");
         sb.append("    wiIp: ").append(toIndentedString(wiIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    loginStartTime: ").append(toIndentedString(loginStartTime)).append("\n");

@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchConfirmLiveCommandsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchConfirmLiveCommandsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchDeletePacifyWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchDeletePacifyWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoRequest;
@@ -2694,6 +2696,35 @@ public class MetaStudioClient {
     }
 
     /**
+     * 批量删除安抚话术
+     *
+     * 该接口用于批量删除安抚话术。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePacifyWordsRequest 请求对象
+     * @return BatchDeletePacifyWordsResponse
+     */
+    public BatchDeletePacifyWordsResponse batchDeletePacifyWords(BatchDeletePacifyWordsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.batchDeletePacifyWords);
+    }
+
+    /**
+     * 批量删除安抚话术
+     *
+     * 该接口用于批量删除安抚话术。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeletePacifyWordsRequest 请求对象
+     * @return SyncInvoker<BatchDeletePacifyWordsRequest, BatchDeletePacifyWordsResponse>
+     */
+    public SyncInvoker<BatchDeletePacifyWordsRequest, BatchDeletePacifyWordsResponse> batchDeletePacifyWordsInvoker(
+        BatchDeletePacifyWordsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.batchDeletePacifyWords, hcClient);
+    }
+
+    /**
      * 创建安抚话术
      *
      * 该接口用于创建安抚话术。
@@ -5177,9 +5208,9 @@ public class MetaStudioClient {
     }
 
     /**
-     * 设置TTS租户级扩展词表配置
+     * 设置TTS租户级自定义读法配置
      *
-     * 该接口用于设置TTS租户级扩展词表配置。
+     * 该接口用于设置TTS租户级自定义读法配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5191,9 +5222,9 @@ public class MetaStudioClient {
     }
 
     /**
-     * 设置TTS租户级扩展词表配置
+     * 设置TTS租户级自定义读法配置
      *
-     * 该接口用于设置TTS租户级扩展词表配置。
+     * 该接口用于设置TTS租户级自定义读法配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5206,9 +5237,9 @@ public class MetaStudioClient {
     }
 
     /**
-     * 删除TTS租户级词表扩展配置
+     * 删除TTS租户级自定义读法配置
      *
-     * 该接口用于删除TTS租户级词表扩展配置。
+     * 该接口用于删除TTS租户级自定义读法配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5220,9 +5251,9 @@ public class MetaStudioClient {
     }
 
     /**
-     * 删除TTS租户级词表扩展配置
+     * 删除TTS租户级自定义读法配置
      *
-     * 该接口用于删除TTS租户级词表扩展配置。
+     * 该接口用于删除TTS租户级自定义读法配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5235,9 +5266,9 @@ public class MetaStudioClient {
     }
 
     /**
-     * 获取TTS租户级词表扩展配置
+     * 获取TTS租户级自定义读法配置
      *
-     * 该接口用于获取TTS租户级词表扩展配置。
+     * 该接口用于获取TTS租户级自定义读法配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5249,9 +5280,9 @@ public class MetaStudioClient {
     }
 
     /**
-     * 获取TTS租户级词表扩展配置
+     * 获取TTS租户级自定义读法配置
      *
-     * 该接口用于获取TTS租户级词表扩展配置。
+     * 该接口用于获取TTS租户级自定义读法配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5264,9 +5295,9 @@ public class MetaStudioClient {
     }
 
     /**
-     * 修改TTS租户级扩展词表配置
+     * 修改TTS租户级自定义读法配置
      *
-     * 该接口用于修改TTS租户级扩展词表配置。
+     * 该接口用于修改TTS租户级自定义读法配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -5278,9 +5309,9 @@ public class MetaStudioClient {
     }
 
     /**
-     * 修改TTS租户级扩展词表配置
+     * 修改TTS租户级自定义读法配置
      *
-     * 该接口用于修改TTS租户级扩展词表配置。
+     * 该接口用于修改TTS租户级自定义读法配置。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class TerminalsBindingDesktopsConfig {
 
     /**
-     * 绑定开关,只取值on或off
+     * 绑定开关，只取值ON或OFF
      */
     public static final class TcBindSwitchEnum {
 
@@ -90,13 +90,93 @@ public class TerminalsBindingDesktopsConfig {
 
     private TcBindSwitchEnum tcBindSwitch;
 
+    /**
+     * 自动绑定开关，只取值ON或OFF
+     */
+    public static final class TcAutoBindSwitchEnum {
+
+        /**
+         * Enum ON for value: "ON"
+         */
+        public static final TcAutoBindSwitchEnum ON = new TcAutoBindSwitchEnum("ON");
+
+        /**
+         * Enum OFF for value: "OFF"
+         */
+        public static final TcAutoBindSwitchEnum OFF = new TcAutoBindSwitchEnum("OFF");
+
+        private static final Map<String, TcAutoBindSwitchEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, TcAutoBindSwitchEnum> createStaticFields() {
+            Map<String, TcAutoBindSwitchEnum> map = new HashMap<>();
+            map.put("ON", ON);
+            map.put("OFF", OFF);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        TcAutoBindSwitchEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static TcAutoBindSwitchEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TcAutoBindSwitchEnum(value));
+        }
+
+        public static TcAutoBindSwitchEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof TcAutoBindSwitchEnum) {
+                return this.value.equals(((TcAutoBindSwitchEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tc_auto_bind_switch")
+
+    private TcAutoBindSwitchEnum tcAutoBindSwitch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tc_auto_bind_max")
+
+    private Integer tcAutoBindMax;
+
     public TerminalsBindingDesktopsConfig withTcBindSwitch(TcBindSwitchEnum tcBindSwitch) {
         this.tcBindSwitch = tcBindSwitch;
         return this;
     }
 
     /**
-     * 绑定开关,只取值on或off
+     * 绑定开关，只取值ON或OFF
      * @return tcBindSwitch
      */
     public TcBindSwitchEnum getTcBindSwitch() {
@@ -105,6 +185,42 @@ public class TerminalsBindingDesktopsConfig {
 
     public void setTcBindSwitch(TcBindSwitchEnum tcBindSwitch) {
         this.tcBindSwitch = tcBindSwitch;
+    }
+
+    public TerminalsBindingDesktopsConfig withTcAutoBindSwitch(TcAutoBindSwitchEnum tcAutoBindSwitch) {
+        this.tcAutoBindSwitch = tcAutoBindSwitch;
+        return this;
+    }
+
+    /**
+     * 自动绑定开关，只取值ON或OFF
+     * @return tcAutoBindSwitch
+     */
+    public TcAutoBindSwitchEnum getTcAutoBindSwitch() {
+        return tcAutoBindSwitch;
+    }
+
+    public void setTcAutoBindSwitch(TcAutoBindSwitchEnum tcAutoBindSwitch) {
+        this.tcAutoBindSwitch = tcAutoBindSwitch;
+    }
+
+    public TerminalsBindingDesktopsConfig withTcAutoBindMax(Integer tcAutoBindMax) {
+        this.tcAutoBindMax = tcAutoBindMax;
+        return this;
+    }
+
+    /**
+     * 最大绑定数量，默认值为1
+     * minimum: 1
+     * maximum: 10
+     * @return tcAutoBindMax
+     */
+    public Integer getTcAutoBindMax() {
+        return tcAutoBindMax;
+    }
+
+    public void setTcAutoBindMax(Integer tcAutoBindMax) {
+        this.tcAutoBindMax = tcAutoBindMax;
     }
 
     @Override
@@ -116,12 +232,14 @@ public class TerminalsBindingDesktopsConfig {
             return false;
         }
         TerminalsBindingDesktopsConfig that = (TerminalsBindingDesktopsConfig) obj;
-        return Objects.equals(this.tcBindSwitch, that.tcBindSwitch);
+        return Objects.equals(this.tcBindSwitch, that.tcBindSwitch)
+            && Objects.equals(this.tcAutoBindSwitch, that.tcAutoBindSwitch)
+            && Objects.equals(this.tcAutoBindMax, that.tcAutoBindMax);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(tcBindSwitch);
+        return Objects.hash(tcBindSwitch, tcAutoBindSwitch, tcAutoBindMax);
     }
 
     @Override
@@ -129,6 +247,8 @@ public class TerminalsBindingDesktopsConfig {
         StringBuilder sb = new StringBuilder();
         sb.append("class TerminalsBindingDesktopsConfig {\n");
         sb.append("    tcBindSwitch: ").append(toIndentedString(tcBindSwitch)).append("\n");
+        sb.append("    tcAutoBindSwitch: ").append(toIndentedString(tcAutoBindSwitch)).append("\n");
+        sb.append("    tcAutoBindMax: ").append(toIndentedString(tcAutoBindMax)).append("\n");
         sb.append("}");
         return sb.toString();
     }

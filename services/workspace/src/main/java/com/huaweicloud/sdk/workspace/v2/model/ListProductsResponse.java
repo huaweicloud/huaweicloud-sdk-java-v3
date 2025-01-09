@@ -32,7 +32,7 @@ public class ListProductsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "products")
 
-    private List<ProductInfo> products = null;
+    private List<Product> products = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
@@ -90,12 +90,12 @@ public class ListProductsResponse extends SdkResponse {
         this.availabilityZone = availabilityZone;
     }
 
-    public ListProductsResponse withProducts(List<ProductInfo> products) {
+    public ListProductsResponse withProducts(List<Product> products) {
         this.products = products;
         return this;
     }
 
-    public ListProductsResponse addProductsItem(ProductInfo productsItem) {
+    public ListProductsResponse addProductsItem(Product productsItem) {
         if (this.products == null) {
             this.products = new ArrayList<>();
         }
@@ -103,7 +103,7 @@ public class ListProductsResponse extends SdkResponse {
         return this;
     }
 
-    public ListProductsResponse withProducts(Consumer<List<ProductInfo>> productsSetter) {
+    public ListProductsResponse withProducts(Consumer<List<Product>> productsSetter) {
         if (this.products == null) {
             this.products = new ArrayList<>();
         }
@@ -115,11 +115,11 @@ public class ListProductsResponse extends SdkResponse {
      * 产品列表。
      * @return products
      */
-    public List<ProductInfo> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(List<ProductInfo> products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 

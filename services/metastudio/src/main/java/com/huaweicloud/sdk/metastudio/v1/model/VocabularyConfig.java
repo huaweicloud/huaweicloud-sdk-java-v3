@@ -58,7 +58,7 @@ public class VocabularyConfig {
     }
 
     /**
-     * 映射键
+     * 原始词
      * @return key
      */
     public String getKey() {
@@ -75,7 +75,7 @@ public class VocabularyConfig {
     }
 
     /**
-     * 映射值
+     * 设置的自定义读法
      * @return value
      */
     public String getValue() {

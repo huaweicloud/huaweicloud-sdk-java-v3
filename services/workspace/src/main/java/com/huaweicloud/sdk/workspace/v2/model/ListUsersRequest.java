@@ -16,6 +16,11 @@ public class ListUsersRequest {
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_email")
+
+    private String userEmail;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private String limit;
@@ -40,6 +45,21 @@ public class ListUsersRequest {
 
     private String groupName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "share_space_subscription")
+
+    private Boolean shareSpaceSubscription;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "share_space_desktops")
+
+    private Boolean shareSpaceDesktops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_query_total_desktops")
+
+    private Boolean isQueryTotalDesktops;
+
     public ListUsersRequest withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -55,6 +75,23 @@ public class ListUsersRequest {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public ListUsersRequest withUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+        return this;
+    }
+
+    /**
+     * 用户邮箱。
+     * @return userEmail
+     */
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public ListUsersRequest withLimit(String limit) {
@@ -142,6 +179,57 @@ public class ListUsersRequest {
         this.groupName = groupName;
     }
 
+    public ListUsersRequest withShareSpaceSubscription(Boolean shareSpaceSubscription) {
+        this.shareSpaceSubscription = shareSpaceSubscription;
+        return this;
+    }
+
+    /**
+     * 用户是否已订阅协同，true/false
+     * @return shareSpaceSubscription
+     */
+    public Boolean getShareSpaceSubscription() {
+        return shareSpaceSubscription;
+    }
+
+    public void setShareSpaceSubscription(Boolean shareSpaceSubscription) {
+        this.shareSpaceSubscription = shareSpaceSubscription;
+    }
+
+    public ListUsersRequest withShareSpaceDesktops(Boolean shareSpaceDesktops) {
+        this.shareSpaceDesktops = shareSpaceDesktops;
+        return this;
+    }
+
+    /**
+     * 用户是否已绑定协同桌面,true/false
+     * @return shareSpaceDesktops
+     */
+    public Boolean getShareSpaceDesktops() {
+        return shareSpaceDesktops;
+    }
+
+    public void setShareSpaceDesktops(Boolean shareSpaceDesktops) {
+        this.shareSpaceDesktops = shareSpaceDesktops;
+    }
+
+    public ListUsersRequest withIsQueryTotalDesktops(Boolean isQueryTotalDesktops) {
+        this.isQueryTotalDesktops = isQueryTotalDesktops;
+        return this;
+    }
+
+    /**
+     * 是否查询用户绑定的桌面数,true/false,默认true
+     * @return isQueryTotalDesktops
+     */
+    public Boolean getIsQueryTotalDesktops() {
+        return isQueryTotalDesktops;
+    }
+
+    public void setIsQueryTotalDesktops(Boolean isQueryTotalDesktops) {
+        this.isQueryTotalDesktops = isQueryTotalDesktops;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -151,14 +239,27 @@ public class ListUsersRequest {
             return false;
         }
         ListUsersRequest that = (ListUsersRequest) obj;
-        return Objects.equals(this.userName, that.userName) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.activeType, that.activeType) && Objects.equals(this.groupName, that.groupName);
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.userEmail, that.userEmail)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.activeType, that.activeType)
+            && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.shareSpaceSubscription, that.shareSpaceSubscription)
+            && Objects.equals(this.shareSpaceDesktops, that.shareSpaceDesktops)
+            && Objects.equals(this.isQueryTotalDesktops, that.isQueryTotalDesktops);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, limit, offset, description, activeType, groupName);
+        return Objects.hash(userName,
+            userEmail,
+            limit,
+            offset,
+            description,
+            activeType,
+            groupName,
+            shareSpaceSubscription,
+            shareSpaceDesktops,
+            isQueryTotalDesktops);
     }
 
     @Override
@@ -166,11 +267,15 @@ public class ListUsersRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListUsersRequest {\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    activeType: ").append(toIndentedString(activeType)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    shareSpaceSubscription: ").append(toIndentedString(shareSpaceSubscription)).append("\n");
+        sb.append("    shareSpaceDesktops: ").append(toIndentedString(shareSpaceDesktops)).append("\n");
+        sb.append("    isQueryTotalDesktops: ").append(toIndentedString(isQueryTotalDesktops)).append("\n");
         sb.append("}");
         return sb.toString();
     }

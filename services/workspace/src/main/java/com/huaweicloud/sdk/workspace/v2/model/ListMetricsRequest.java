@@ -119,7 +119,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 开始时间, UTC时间, 格式为：yyyy-MM-ddTHH:mm:ssZ
+     * 开始时间, UTC时间
      * @return startTime
      */
     public String getStartTime() {
@@ -136,7 +136,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 结束时间 ,UTC时间, 格式为：yyyy-MM-ddTHH:mm:ssZ
+     * 结束时间,UTC时间
      * @return endTime
      */
     public String getEndTime() {
@@ -186,7 +186,7 @@ public class ListMetricsRequest {
     }
 
     /**
-     * 指标名称，支持的指标名称参考[Workspace运维监控指标](https://support.huaweicloud.com/usermanual-workspace/workspace_06_1032.html)
+     * 指标名称列表
      * @return metricNames
      */
     public List<String> getMetricNames() {

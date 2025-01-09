@@ -5,12 +5,26 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.workspace.v2.model.AddDesktopPoolVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AddDesktopPoolVolumesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.AddDesktopSubResourcesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AddDesktopSubResourcesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.AddDesktopVolumesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AddDesktopVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AddMetricNotifyRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AddMetricNotifyRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.AddOuRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AddOuResponse;
+import com.huaweicloud.sdk.workspace.v2.model.AddRestrictedRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AddRestrictedRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.AddSiteRequest;
+import com.huaweicloud.sdk.workspace.v2.model.AddSiteResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AddVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AddVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyDesktopsInternetRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyDesktopsInternetResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ApplyInternetRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ApplyInternetResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ApplySubnetBandwidthRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ApplySubnetBandwidthResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ApplyWorkspaceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.AssociateDesktopsEipRequest;
@@ -19,40 +33,78 @@ import com.huaweicloud.sdk.workspace.v2.model.AttachInstancesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.AttachInstancesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchAddDesktopsTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchAddDesktopsTagsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchAssociateInstancesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchAssociateInstancesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchAttachInstancesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchAttachInstancesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchChangeDesktopNetworkRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchChangeDesktopNetworkResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchChangeTagsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchCreateDesktopSnapshotRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchCreateDesktopSnapshotResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchCreateUsersResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAccessPoliciesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAccessPoliciesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAppRulesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAppRulesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAppsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteAppsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopSnapshotRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopSnapshotResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteDesktopsTagsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteJobsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteJobsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteOtpDevicesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteOtpDevicesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScheduledTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScreenRecordsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteScreenRecordsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteSubJobsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteSubJobsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserGroupsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDeleteUserResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDetachInstancesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDetachInstancesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDisableAppsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchDisableAppsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDisassociateDesktopsEipRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchDisassociateDesktopsEipResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchEnableAppsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchEnableAppsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchInstallAgentRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchInstallAgentResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchInstallAppsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchInstallAppsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchLogoffDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchLogoffDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRebuildDesktopsSystemDiskRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRebuildDesktopsSystemDiskResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchRestoreDesktopSnapshotRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchRestoreDesktopSnapshotResponse;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRunDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.BatchRunDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchUpdateAppAuthorizationsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchUpdateAppAuthorizationsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.BatchUpdateTargetOfPolicyGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.BatchUpdateTargetOfPolicyGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CancelRemoteAssistanceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CancelRemoteAssistanceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CancelWorkspaceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopNetworkResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopToImageRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ChangeDesktopToImageResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserPrivilegeGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserPrivilegeGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ChangeUserStatusRequest;
@@ -61,38 +113,78 @@ import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAccessPolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAgenciesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateAgenciesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateAndAuthorizeBucketRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateAndAuthorizeBucketResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateAppRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateAppRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateBucketCredentialRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateBucketCredentialResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateChangeOrderRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateChangeOrderResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopBatchOrderRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopBatchOrderResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopOrderRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopOrderResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolAuthorizedObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolAuthorizedObjectsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolChangeOrderRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolChangeOrderResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateDesktopUserResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateOrderRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateOrderResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreatePolicyGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreatePolicyGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateRemoteAssistanceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateRemoteAssistanceResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateScheduledTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateScriptRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateScriptResponse;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSubnetBandwidthChangeOrderRequest;
+import com.huaweicloud.sdk.workspace.v2.model.CreateSubnetBandwidthChangeOrderResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTagRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTagResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateTerminalsBindingDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.CreateUserGroupResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteAppRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteAppResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteAppRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteAppRuleResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopPoolVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopSubResourcesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopSubResourcesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteDesktopVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteMetricNotifyRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteMetricNotifyRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteOuRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteOuResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeletePolicyGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeletePolicyGroupResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteRestrictedRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteRestrictedRuleResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteScheduledTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteScriptRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteScriptResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSiteRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSiteResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSubnetBandwidthRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DeleteSubnetBandwidthResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTagResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteTerminalsBindingDesktopsRequest;
@@ -103,32 +195,88 @@ import com.huaweicloud.sdk.workspace.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DeleteUserResponse;
 import com.huaweicloud.sdk.workspace.v2.model.DetachInstancesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.DetachInstancesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.DisableRuleRestrictionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.DisableRuleRestrictionResponse;
+import com.huaweicloud.sdk.workspace.v2.model.EnableRuleRestrictionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.EnableRuleRestrictionResponse;
+import com.huaweicloud.sdk.workspace.v2.model.EstimateAddResourcesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.EstimateAddResourcesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.EstimateChangeImagesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.EstimateChangeImagesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.EstimateDesktopPoolAddVolumeRequest;
+import com.huaweicloud.sdk.workspace.v2.model.EstimateDesktopPoolAddVolumeResponse;
+import com.huaweicloud.sdk.workspace.v2.model.EstimateDesktopPoolChangeImageRequest;
+import com.huaweicloud.sdk.workspace.v2.model.EstimateDesktopPoolChangeImageResponse;
+import com.huaweicloud.sdk.workspace.v2.model.EstimateDesktopPoolExtendVolumeRequest;
+import com.huaweicloud.sdk.workspace.v2.model.EstimateDesktopPoolExtendVolumeResponse;
+import com.huaweicloud.sdk.workspace.v2.model.EstimateDesktopPoolResizeRequest;
+import com.huaweicloud.sdk.workspace.v2.model.EstimateDesktopPoolResizeResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExecuteDesktopPoolActionRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExecuteDesktopPoolActionResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExecuteDesktopPoolScriptRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExecuteDesktopPoolScriptResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExecuteScriptOrCommandRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExecuteScriptOrCommandResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopPoolVolumesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopVolumeRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ExpandDesktopVolumeResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExpandVolumesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ExportUserLoginInfoNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ExportUserLoginInfoNewResponse;
+import com.huaweicloud.sdk.workspace.v2.model.InstallAppRequest;
+import com.huaweicloud.sdk.workspace.v2.model.InstallAppResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAccessAddressBackupConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAccessAddressBackupConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPoliciesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPoliciesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPolicyObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAccessPolicyObjectsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAdOuUsersRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAdOuUsersResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAdOusRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAdOusResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAgenciesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAgenciesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAgentsInstallConditionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAgentsInstallConditionResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAlarmStatisticsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAlarmStatisticsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAlarmsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAlarmsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAppAuthorizationsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAppAuthorizationsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAppCatalogsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAppCatalogsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAppRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAppRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAppUserAccessDataRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAppUserAccessDataResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAppsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAppsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListAvailabilityZonesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListAzsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListAzsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopActionsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopActionsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopByTagsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopDetachInfoRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopDetachInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopNamePolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopOperationsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopOperationsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolAuthorizedObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolAuthorizedObjectsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopPoolsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopSnapshotRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopSnapshotResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopUsageMetricResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsConnectStatusRequest;
@@ -139,16 +287,36 @@ import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsEipsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsStatisticsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsStatisticsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsStatusRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDesktopsStatusResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListDownloadAddressRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListDownloadAddressResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListFutureExecutionsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListFutureExecutionsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoNewResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListHistoryOnlineInfoResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListHourPackagesTypeRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListHourPackagesTypeResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListImagesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListImagesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListInstancesStatusRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListInstancesStatusResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListInternetRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListInternetResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListItaSubJobsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListItaSubJobsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListJobsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListJobsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListLoginRecordsNewRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListLoginRecordsNewResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListLoginStateRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListLoginStateResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListMarketImagesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListMarketImagesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRecordRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRecordResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricNotifyRuleRequest;
@@ -157,30 +325,76 @@ import com.huaweicloud.sdk.workspace.v2.model.ListMetricsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListMetricsTrendResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListNatGatewaysRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListNatGatewaysResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListNatMappingConfigsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListNatMappingConfigsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListOriginalPolicyInfoRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListOriginalPolicyInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListOtpDevicesByUserIdResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListOuDetailsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListOuDetailsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListPoliciesOfPolicyGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListPoliciesOfPolicyGroupResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListPolicyDetailInfoByIdRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListPolicyDetailInfoByIdResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListPolicyGroupInfoRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListPolicyGroupInfoResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListPolicyGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListPolicyGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListPoolDesktopsDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListPoolDesktopsDetailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListPortsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListPortsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListProductsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListProjectTagsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListRestrictedRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListRestrictedRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListRunStateRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListRunStateResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRecordsDetailsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRecordsDetailsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRecordsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRecordsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListScheduledTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListScreenRecordsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListScreenRecordsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListScriptRecordsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListScriptRecordsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListScriptTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListScriptTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListScriptsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListScriptsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListSharerProductsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListSharerProductsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListSiteConfigsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListSiteConfigsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListSubnetBandwidthsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListSubnetBandwidthsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListTargetOfPolicyGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListTargetOfPolicyGroupResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListTenantConfigsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListTenantConfigsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListTenantProfilesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListTenantProfilesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListTerminalsBindingDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListTimeZonesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListTimeZonesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUnusedDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUnusedDesktopsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsedDesktopInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsedDesktopInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserDetailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListUserEventsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListUserEventsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserGroupsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserGroupsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUserUsageMetricRequest;
@@ -189,62 +403,164 @@ import com.huaweicloud.sdk.workspace.v2.model.ListUsersOfGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsersOfGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsersRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListUsersResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListVolumeProductInfoRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListVolumeProductInfoResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ListWksEdgeSitesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ListWksEdgeSitesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ListWorkspacesRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ListWorkspacesResponse;
 import com.huaweicloud.sdk.workspace.v2.model.RebuildDesktopPoolRequest;
 import com.huaweicloud.sdk.workspace.v2.model.RebuildDesktopPoolResponse;
+import com.huaweicloud.sdk.workspace.v2.model.RegisterDomainRequest;
+import com.huaweicloud.sdk.workspace.v2.model.RegisterDomainResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ResetRandomPasswordResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopPoolRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopPoolResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ResizeDesktopResponse;
+import com.huaweicloud.sdk.workspace.v2.model.RetryJobsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.RetryJobsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.RetryScriptExecutionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.RetryScriptExecutionResponse;
 import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnGroupResponse;
+import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnWorkspaceJobRequest;
+import com.huaweicloud.sdk.workspace.v2.model.RunActionsOnWorkspaceJobResponse;
+import com.huaweicloud.sdk.workspace.v2.model.SendDesktopPoolNotificationsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.SendDesktopPoolNotificationsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.SendEmailRequest;
+import com.huaweicloud.sdk.workspace.v2.model.SendEmailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.SendNotificationsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.SendNotificationsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.SetMaintenanceModeRequest;
+import com.huaweicloud.sdk.workspace.v2.model.SetMaintenanceModeResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowAssistAuthConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowAuthConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowAuthConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowAvailableIpRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowAvailableIpResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowAzDetailsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowAzDetailsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopDetailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopMonitorDataRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopMonitorDataResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworkResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopNetworksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopPoolDetailRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopPoolDetailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopPoolsScriptExecTasksRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopPoolsScriptExecTasksResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowDesktopRemoteAssistanceInfoResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowGrowthRateRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowGrowthRateResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowJobRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowJobResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowQuotaDetailsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowQuotaDetailsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowRemoteConsoleAddressRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowRemoteConsoleAddressResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowScheduledTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowScreenRecordRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowScreenRecordResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowScriptDetailRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowScriptDetailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowScriptRecordDetailRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowScriptRecordDetailResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowShareSpaceConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowShareSpaceConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowSubnetBandwidthControlListRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowSubnetBandwidthControlListResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowSysprepInfoRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowSysprepInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowTagByDesktopIdRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowTagByDesktopIdResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowUserAccessStagesRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowUserAccessStagesResponse;
+import com.huaweicloud.sdk.workspace.v2.model.ShowUsingSubnetsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.ShowUsingSubnetsResponse;
 import com.huaweicloud.sdk.workspace.v2.model.ShowWorkspaceLockRequest;
 import com.huaweicloud.sdk.workspace.v2.model.ShowWorkspaceLockResponse;
+import com.huaweicloud.sdk.workspace.v2.model.StopScriptExecutionRequest;
+import com.huaweicloud.sdk.workspace.v2.model.StopScriptExecutionResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UnlockWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UnlockWorkspaceResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAccessAddressBackupConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAccessAddressBackupConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAccessModeRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAccessModeResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAccessPolicyObjectsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAccessPolicyObjectsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAccessPolicyRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAccessPolicyResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAppAuthorizationsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAppAuthorizationsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAppRuleRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAppRuleResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateAssistAuthMethodConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthMethodConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateAuthMethodConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopNamePolicyResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopPoolRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopPoolResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopSidsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopSidsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopUsernameRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateDesktopUsernameResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateEnterpriseIdRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateEnterpriseIdResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateMetricNotifyRuleResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateNatMappingConfigsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateNatMappingConfigsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateOuInfoRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateOuInfoResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdatePoliciesOfPolicyGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdatePoliciesOfPolicyGroupResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdatePolicyGroupRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdatePolicyGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateScheduledTasksResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateScriptResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateShareSpaceConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateShareSpaceConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSubnetBandwidthControlListRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSubnetBandwidthControlListResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSubnetBandwidthRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSubnetBandwidthResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSubnetIdsRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateSubnetIdsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateTenantConfigRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateTenantConfigResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateTenantProfileRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateTenantProfileResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsConfigRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsConfigResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateTerminalsBindingDesktopsResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateUploadedAppRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UpdateUploadedAppResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateUserGroupRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateUserGroupResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateUserInfoRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateUserInfoResponse;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateWorkspaceRequest;
 import com.huaweicloud.sdk.workspace.v2.model.UpdateWorkspaceResponse;
+import com.huaweicloud.sdk.workspace.v2.model.UploadAppRequest;
+import com.huaweicloud.sdk.workspace.v2.model.UploadAppResponse;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -259,6 +575,66 @@ public class WorkspaceAsyncClient {
     public static ClientBuilder<WorkspaceAsyncClient> newBuilder() {
         ClientBuilder<WorkspaceAsyncClient> clientBuilder = new ClientBuilder<>(WorkspaceAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 获取云办公服务接入地址备份配置
+     *
+     * 该接口用于获取云办公服务接入地址备份配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAccessAddressBackupConfigRequest 请求对象
+     * @return CompletableFuture<ListAccessAddressBackupConfigResponse>
+     */
+    public CompletableFuture<ListAccessAddressBackupConfigResponse> listAccessAddressBackupConfigAsync(
+        ListAccessAddressBackupConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listAccessAddressBackupConfig);
+    }
+
+    /**
+     * 获取云办公服务接入地址备份配置
+     *
+     * 该接口用于获取云办公服务接入地址备份配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAccessAddressBackupConfigRequest 请求对象
+     * @return AsyncInvoker<ListAccessAddressBackupConfigRequest, ListAccessAddressBackupConfigResponse>
+     */
+    public AsyncInvoker<ListAccessAddressBackupConfigRequest, ListAccessAddressBackupConfigResponse> listAccessAddressBackupConfigAsyncInvoker(
+        ListAccessAddressBackupConfigRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listAccessAddressBackupConfig, hcClient);
+    }
+
+    /**
+     * 修改云办公服务接入地址备份配置
+     *
+     * 该接口用于修改云办公服务接入地址备份配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAccessAddressBackupConfigRequest 请求对象
+     * @return CompletableFuture<UpdateAccessAddressBackupConfigResponse>
+     */
+    public CompletableFuture<UpdateAccessAddressBackupConfigResponse> updateAccessAddressBackupConfigAsync(
+        UpdateAccessAddressBackupConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateAccessAddressBackupConfig);
+    }
+
+    /**
+     * 修改云办公服务接入地址备份配置
+     *
+     * 该接口用于修改云办公服务接入地址备份配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAccessAddressBackupConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateAccessAddressBackupConfigRequest, UpdateAccessAddressBackupConfigResponse>
+     */
+    public AsyncInvoker<UpdateAccessAddressBackupConfigRequest, UpdateAccessAddressBackupConfigResponse> updateAccessAddressBackupConfigAsyncInvoker(
+        UpdateAccessAddressBackupConfigRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateAccessAddressBackupConfig, hcClient);
     }
 
     /**
@@ -380,6 +756,35 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 更新指定接入策略
+     *
+     * 该接口用于更新指定接入策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAccessPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateAccessPolicyResponse>
+     */
+    public CompletableFuture<UpdateAccessPolicyResponse> updateAccessPolicyAsync(UpdateAccessPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateAccessPolicy);
+    }
+
+    /**
+     * 更新指定接入策略
+     *
+     * 该接口用于更新指定接入策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAccessPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateAccessPolicyRequest, UpdateAccessPolicyResponse>
+     */
+    public AsyncInvoker<UpdateAccessPolicyRequest, UpdateAccessPolicyResponse> updateAccessPolicyAsyncInvoker(
+        UpdateAccessPolicyRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateAccessPolicy, hcClient);
+    }
+
+    /**
      * 更新指定接入策略的应用对象
      *
      * 该接口用于更新指定接入策略的应用对象。
@@ -412,7 +817,7 @@ public class WorkspaceAsyncClient {
     /**
      * 开通委托功能
      *
-     * 开通委托功能
+     * 开通委托功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -426,7 +831,7 @@ public class WorkspaceAsyncClient {
     /**
      * 开通委托功能
      *
-     * 开通委托功能
+     * 开通委托功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -441,7 +846,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询委托功能
      *
-     * 查询委托功能
+     * 查询委托功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -455,7 +860,7 @@ public class WorkspaceAsyncClient {
     /**
      * 查询委托功能
      *
-     * 查询委托功能
+     * 查询委托功能。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -465,6 +870,876 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ListAgenciesRequest, ListAgenciesResponse> listAgenciesAsyncInvoker(
         ListAgenciesRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.listAgencies, hcClient);
+    }
+
+    /**
+     * 查询告警统计
+     *
+     * 返回各级别告警数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmStatisticsRequest 请求对象
+     * @return CompletableFuture<ListAlarmStatisticsResponse>
+     */
+    public CompletableFuture<ListAlarmStatisticsResponse> listAlarmStatisticsAsync(ListAlarmStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listAlarmStatistics);
+    }
+
+    /**
+     * 查询告警统计
+     *
+     * 返回各级别告警数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListAlarmStatisticsRequest, ListAlarmStatisticsResponse>
+     */
+    public AsyncInvoker<ListAlarmStatisticsRequest, ListAlarmStatisticsResponse> listAlarmStatisticsAsyncInvoker(
+        ListAlarmStatisticsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listAlarmStatistics, hcClient);
+    }
+
+    /**
+     * 查询告警列表
+     *
+     * 从ces查询告警列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmsRequest 请求对象
+     * @return CompletableFuture<ListAlarmsResponse>
+     */
+    public CompletableFuture<ListAlarmsResponse> listAlarmsAsync(ListAlarmsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listAlarms);
+    }
+
+    /**
+     * 查询告警列表
+     *
+     * 从ces查询告警列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmsRequest 请求对象
+     * @return AsyncInvoker<ListAlarmsRequest, ListAlarmsResponse>
+     */
+    public AsyncInvoker<ListAlarmsRequest, ListAlarmsResponse> listAlarmsAsyncInvoker(ListAlarmsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listAlarms, hcClient);
+    }
+
+    /**
+     * 批量删除应用
+     *
+     * 批量删除应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAppsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteAppsResponse>
+     */
+    public CompletableFuture<BatchDeleteAppsResponse> batchDeleteAppsAsync(BatchDeleteAppsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchDeleteApps);
+    }
+
+    /**
+     * 批量删除应用
+     *
+     * 批量删除应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAppsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteAppsRequest, BatchDeleteAppsResponse>
+     */
+    public AsyncInvoker<BatchDeleteAppsRequest, BatchDeleteAppsResponse> batchDeleteAppsAsyncInvoker(
+        BatchDeleteAppsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchDeleteApps, hcClient);
+    }
+
+    /**
+     * 批量删除job
+     *
+     * 批量删除job。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteJobsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteJobsResponse>
+     */
+    public CompletableFuture<BatchDeleteJobsResponse> batchDeleteJobsAsync(BatchDeleteJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchDeleteJobs);
+    }
+
+    /**
+     * 批量删除job
+     *
+     * 批量删除job。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteJobsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse>
+     */
+    public AsyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse> batchDeleteJobsAsyncInvoker(
+        BatchDeleteJobsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchDeleteJobs, hcClient);
+    }
+
+    /**
+     * 批量设置不可见
+     *
+     * 批量设置不可见。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDisableAppsRequest 请求对象
+     * @return CompletableFuture<BatchDisableAppsResponse>
+     */
+    public CompletableFuture<BatchDisableAppsResponse> batchDisableAppsAsync(BatchDisableAppsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchDisableApps);
+    }
+
+    /**
+     * 批量设置不可见
+     *
+     * 批量设置不可见。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDisableAppsRequest 请求对象
+     * @return AsyncInvoker<BatchDisableAppsRequest, BatchDisableAppsResponse>
+     */
+    public AsyncInvoker<BatchDisableAppsRequest, BatchDisableAppsResponse> batchDisableAppsAsyncInvoker(
+        BatchDisableAppsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchDisableApps, hcClient);
+    }
+
+    /**
+     * 批量设置可见
+     *
+     * 批量设置可见。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchEnableAppsRequest 请求对象
+     * @return CompletableFuture<BatchEnableAppsResponse>
+     */
+    public CompletableFuture<BatchEnableAppsResponse> batchEnableAppsAsync(BatchEnableAppsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchEnableApps);
+    }
+
+    /**
+     * 批量设置可见
+     *
+     * 批量设置可见。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchEnableAppsRequest 请求对象
+     * @return AsyncInvoker<BatchEnableAppsRequest, BatchEnableAppsResponse>
+     */
+    public AsyncInvoker<BatchEnableAppsRequest, BatchEnableAppsResponse> batchEnableAppsAsyncInvoker(
+        BatchEnableAppsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchEnableApps, hcClient);
+    }
+
+    /**
+     * 批量自动安装安装应用
+     *
+     * 批量自动安装安装应用 (应用需支持静默安装或者解压安装)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchInstallAppsRequest 请求对象
+     * @return CompletableFuture<BatchInstallAppsResponse>
+     */
+    public CompletableFuture<BatchInstallAppsResponse> batchInstallAppsAsync(BatchInstallAppsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchInstallApps);
+    }
+
+    /**
+     * 批量自动安装安装应用
+     *
+     * 批量自动安装安装应用 (应用需支持静默安装或者解压安装)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchInstallAppsRequest 请求对象
+     * @return AsyncInvoker<BatchInstallAppsRequest, BatchInstallAppsResponse>
+     */
+    public AsyncInvoker<BatchInstallAppsRequest, BatchInstallAppsResponse> batchInstallAppsAsyncInvoker(
+        BatchInstallAppsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchInstallApps, hcClient);
+    }
+
+    /**
+     * 批量设置应用授权
+     *
+     * 批量设置应用授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateAppAuthorizationsRequest 请求对象
+     * @return CompletableFuture<BatchUpdateAppAuthorizationsResponse>
+     */
+    public CompletableFuture<BatchUpdateAppAuthorizationsResponse> batchUpdateAppAuthorizationsAsync(
+        BatchUpdateAppAuthorizationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchUpdateAppAuthorizations);
+    }
+
+    /**
+     * 批量设置应用授权
+     *
+     * 批量设置应用授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateAppAuthorizationsRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateAppAuthorizationsRequest, BatchUpdateAppAuthorizationsResponse>
+     */
+    public AsyncInvoker<BatchUpdateAppAuthorizationsRequest, BatchUpdateAppAuthorizationsResponse> batchUpdateAppAuthorizationsAsyncInvoker(
+        BatchUpdateAppAuthorizationsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchUpdateAppAuthorizations, hcClient);
+    }
+
+    /**
+     * 添加并授权默认桶
+     *
+     * 添加并授权默认桶,桶不存在时会自动创建OBS桶。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAndAuthorizeBucketRequest 请求对象
+     * @return CompletableFuture<CreateAndAuthorizeBucketResponse>
+     */
+    public CompletableFuture<CreateAndAuthorizeBucketResponse> createAndAuthorizeBucketAsync(
+        CreateAndAuthorizeBucketRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createAndAuthorizeBucket);
+    }
+
+    /**
+     * 添加并授权默认桶
+     *
+     * 添加并授权默认桶,桶不存在时会自动创建OBS桶。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAndAuthorizeBucketRequest 请求对象
+     * @return AsyncInvoker<CreateAndAuthorizeBucketRequest, CreateAndAuthorizeBucketResponse>
+     */
+    public AsyncInvoker<CreateAndAuthorizeBucketRequest, CreateAndAuthorizeBucketResponse> createAndAuthorizeBucketAsyncInvoker(
+        CreateAndAuthorizeBucketRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createAndAuthorizeBucket, hcClient);
+    }
+
+    /**
+     * 生成访问凭证信息
+     *
+     * 生成桶凭证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateBucketCredentialRequest 请求对象
+     * @return CompletableFuture<CreateBucketCredentialResponse>
+     */
+    public CompletableFuture<CreateBucketCredentialResponse> createBucketCredentialAsync(
+        CreateBucketCredentialRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createBucketCredential);
+    }
+
+    /**
+     * 生成访问凭证信息
+     *
+     * 生成桶凭证信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateBucketCredentialRequest 请求对象
+     * @return AsyncInvoker<CreateBucketCredentialRequest, CreateBucketCredentialResponse>
+     */
+    public AsyncInvoker<CreateBucketCredentialRequest, CreateBucketCredentialResponse> createBucketCredentialAsyncInvoker(
+        CreateBucketCredentialRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createBucketCredential, hcClient);
+    }
+
+    /**
+     * 删除应用
+     *
+     * 删除应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAppRequest 请求对象
+     * @return CompletableFuture<DeleteAppResponse>
+     */
+    public CompletableFuture<DeleteAppResponse> deleteAppAsync(DeleteAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteApp);
+    }
+
+    /**
+     * 删除应用
+     *
+     * 删除应用
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAppRequest 请求对象
+     * @return AsyncInvoker<DeleteAppRequest, DeleteAppResponse>
+     */
+    public AsyncInvoker<DeleteAppRequest, DeleteAppResponse> deleteAppAsyncInvoker(DeleteAppRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteApp, hcClient);
+    }
+
+    /**
+     * 自动安装应用
+     *
+     * 自动安装应用(应用需支持静默安装或者解压安装)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InstallAppRequest 请求对象
+     * @return CompletableFuture<InstallAppResponse>
+     */
+    public CompletableFuture<InstallAppResponse> installAppAsync(InstallAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.installApp);
+    }
+
+    /**
+     * 自动安装应用
+     *
+     * 自动安装应用(应用需支持静默安装或者解压安装)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InstallAppRequest 请求对象
+     * @return AsyncInvoker<InstallAppRequest, InstallAppResponse>
+     */
+    public AsyncInvoker<InstallAppRequest, InstallAppResponse> installAppAsyncInvoker(InstallAppRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.installApp, hcClient);
+    }
+
+    /**
+     * 查询应用授权信息
+     *
+     * 查询应用授权信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAppAuthorizationsRequest 请求对象
+     * @return CompletableFuture<ListAppAuthorizationsResponse>
+     */
+    public CompletableFuture<ListAppAuthorizationsResponse> listAppAuthorizationsAsync(
+        ListAppAuthorizationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listAppAuthorizations);
+    }
+
+    /**
+     * 查询应用授权信息
+     *
+     * 查询应用授权信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAppAuthorizationsRequest 请求对象
+     * @return AsyncInvoker<ListAppAuthorizationsRequest, ListAppAuthorizationsResponse>
+     */
+    public AsyncInvoker<ListAppAuthorizationsRequest, ListAppAuthorizationsResponse> listAppAuthorizationsAsyncInvoker(
+        ListAppAuthorizationsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listAppAuthorizations, hcClient);
+    }
+
+    /**
+     * 查询应用分类信息
+     *
+     * 查询应用分类信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAppCatalogsRequest 请求对象
+     * @return CompletableFuture<ListAppCatalogsResponse>
+     */
+    public CompletableFuture<ListAppCatalogsResponse> listAppCatalogsAsync(ListAppCatalogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listAppCatalogs);
+    }
+
+    /**
+     * 查询应用分类信息
+     *
+     * 查询应用分类信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAppCatalogsRequest 请求对象
+     * @return AsyncInvoker<ListAppCatalogsRequest, ListAppCatalogsResponse>
+     */
+    public AsyncInvoker<ListAppCatalogsRequest, ListAppCatalogsResponse> listAppCatalogsAsyncInvoker(
+        ListAppCatalogsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listAppCatalogs, hcClient);
+    }
+
+    /**
+     * 按照名称分页查询应用
+     *
+     * 按照名称分页查询应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAppsRequest 请求对象
+     * @return CompletableFuture<ListAppsResponse>
+     */
+    public CompletableFuture<ListAppsResponse> listAppsAsync(ListAppsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listApps);
+    }
+
+    /**
+     * 按照名称分页查询应用
+     *
+     * 按照名称分页查询应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAppsRequest 请求对象
+     * @return AsyncInvoker<ListAppsRequest, ListAppsResponse>
+     */
+    public AsyncInvoker<ListAppsRequest, ListAppsResponse> listAppsAsyncInvoker(ListAppsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listApps, hcClient);
+    }
+
+    /**
+     * 查询应用安装job信息
+     *
+     * 查询应用安装job信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobsRequest 请求对象
+     * @return CompletableFuture<ListJobsResponse>
+     */
+    public CompletableFuture<ListJobsResponse> listJobsAsync(ListJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listJobs);
+    }
+
+    /**
+     * 查询应用安装job信息
+     *
+     * 查询应用安装job信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListJobsRequest 请求对象
+     * @return AsyncInvoker<ListJobsRequest, ListJobsResponse>
+     */
+    public AsyncInvoker<ListJobsRequest, ListJobsResponse> listJobsAsyncInvoker(ListJobsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listJobs, hcClient);
+    }
+
+    /**
+     * 重试失败job
+     *
+     * 重试指定失败job(仅支持失败job重试，其他类型job重试会响应错误)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryJobsRequest 请求对象
+     * @return CompletableFuture<RetryJobsResponse>
+     */
+    public CompletableFuture<RetryJobsResponse> retryJobsAsync(RetryJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.retryJobs);
+    }
+
+    /**
+     * 重试失败job
+     *
+     * 重试指定失败job(仅支持失败job重试，其他类型job重试会响应错误)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryJobsRequest 请求对象
+     * @return AsyncInvoker<RetryJobsRequest, RetryJobsResponse>
+     */
+    public AsyncInvoker<RetryJobsRequest, RetryJobsResponse> retryJobsAsyncInvoker(RetryJobsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.retryJobs, hcClient);
+    }
+
+    /**
+     * 设置应用授权
+     *
+     * 设置应用授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAppAuthorizationsRequest 请求对象
+     * @return CompletableFuture<UpdateAppAuthorizationsResponse>
+     */
+    public CompletableFuture<UpdateAppAuthorizationsResponse> updateAppAuthorizationsAsync(
+        UpdateAppAuthorizationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateAppAuthorizations);
+    }
+
+    /**
+     * 设置应用授权
+     *
+     * 设置应用授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAppAuthorizationsRequest 请求对象
+     * @return AsyncInvoker<UpdateAppAuthorizationsRequest, UpdateAppAuthorizationsResponse>
+     */
+    public AsyncInvoker<UpdateAppAuthorizationsRequest, UpdateAppAuthorizationsResponse> updateAppAuthorizationsAsyncInvoker(
+        UpdateAppAuthorizationsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateAppAuthorizations, hcClient);
+    }
+
+    /**
+     * 修改应用
+     *
+     * 修改应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateUploadedAppRequest 请求对象
+     * @return CompletableFuture<UpdateUploadedAppResponse>
+     */
+    public CompletableFuture<UpdateUploadedAppResponse> updateUploadedAppAsync(UpdateUploadedAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateUploadedApp);
+    }
+
+    /**
+     * 修改应用
+     *
+     * 修改应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateUploadedAppRequest 请求对象
+     * @return AsyncInvoker<UpdateUploadedAppRequest, UpdateUploadedAppResponse>
+     */
+    public AsyncInvoker<UpdateUploadedAppRequest, UpdateUploadedAppResponse> updateUploadedAppAsyncInvoker(
+        UpdateUploadedAppRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateUploadedApp, hcClient);
+    }
+
+    /**
+     * 添加应用
+     *
+     * 添加应用应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadAppRequest 请求对象
+     * @return CompletableFuture<UploadAppResponse>
+     */
+    public CompletableFuture<UploadAppResponse> uploadAppAsync(UploadAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.uploadApp);
+    }
+
+    /**
+     * 添加应用
+     *
+     * 添加应用应用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadAppRequest 请求对象
+     * @return AsyncInvoker<UploadAppRequest, UploadAppResponse>
+     */
+    public AsyncInvoker<UploadAppRequest, UploadAppResponse> uploadAppAsyncInvoker(UploadAppRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.uploadApp, hcClient);
+    }
+
+    /**
+     * 增加管控规则
+     *
+     * 增加管控规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddRestrictedRuleRequest 请求对象
+     * @return CompletableFuture<AddRestrictedRuleResponse>
+     */
+    public CompletableFuture<AddRestrictedRuleResponse> addRestrictedRuleAsync(AddRestrictedRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.addRestrictedRule);
+    }
+
+    /**
+     * 增加管控规则
+     *
+     * 增加管控规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddRestrictedRuleRequest 请求对象
+     * @return AsyncInvoker<AddRestrictedRuleRequest, AddRestrictedRuleResponse>
+     */
+    public AsyncInvoker<AddRestrictedRuleRequest, AddRestrictedRuleResponse> addRestrictedRuleAsyncInvoker(
+        AddRestrictedRuleRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.addRestrictedRule, hcClient);
+    }
+
+    /**
+     * 批量删除规则
+     *
+     * 批量删除规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAppRulesRequest 请求对象
+     * @return CompletableFuture<BatchDeleteAppRulesResponse>
+     */
+    public CompletableFuture<BatchDeleteAppRulesResponse> batchDeleteAppRulesAsync(BatchDeleteAppRulesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchDeleteAppRules);
+    }
+
+    /**
+     * 批量删除规则
+     *
+     * 批量删除规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteAppRulesRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteAppRulesRequest, BatchDeleteAppRulesResponse>
+     */
+    public AsyncInvoker<BatchDeleteAppRulesRequest, BatchDeleteAppRulesResponse> batchDeleteAppRulesAsyncInvoker(
+        BatchDeleteAppRulesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchDeleteAppRules, hcClient);
+    }
+
+    /**
+     * 创建应用规则
+     *
+     * 创建应用规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAppRuleRequest 请求对象
+     * @return CompletableFuture<CreateAppRuleResponse>
+     */
+    public CompletableFuture<CreateAppRuleResponse> createAppRuleAsync(CreateAppRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createAppRule);
+    }
+
+    /**
+     * 创建应用规则
+     *
+     * 创建应用规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAppRuleRequest 请求对象
+     * @return AsyncInvoker<CreateAppRuleRequest, CreateAppRuleResponse>
+     */
+    public AsyncInvoker<CreateAppRuleRequest, CreateAppRuleResponse> createAppRuleAsyncInvoker(
+        CreateAppRuleRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createAppRule, hcClient);
+    }
+
+    /**
+     * 删除应用规则
+     *
+     * 删除应用规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAppRuleRequest 请求对象
+     * @return CompletableFuture<DeleteAppRuleResponse>
+     */
+    public CompletableFuture<DeleteAppRuleResponse> deleteAppRuleAsync(DeleteAppRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteAppRule);
+    }
+
+    /**
+     * 删除应用规则
+     *
+     * 删除应用规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAppRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteAppRuleRequest, DeleteAppRuleResponse>
+     */
+    public AsyncInvoker<DeleteAppRuleRequest, DeleteAppRuleResponse> deleteAppRuleAsyncInvoker(
+        DeleteAppRuleRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteAppRule, hcClient);
+    }
+
+    /**
+     * 批量删除管控规则列表
+     *
+     * 批量删除管控规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRestrictedRuleRequest 请求对象
+     * @return CompletableFuture<DeleteRestrictedRuleResponse>
+     */
+    public CompletableFuture<DeleteRestrictedRuleResponse> deleteRestrictedRuleAsync(
+        DeleteRestrictedRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteRestrictedRule);
+    }
+
+    /**
+     * 批量删除管控规则列表
+     *
+     * 批量删除管控规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRestrictedRuleRequest 请求对象
+     * @return AsyncInvoker<DeleteRestrictedRuleRequest, DeleteRestrictedRuleResponse>
+     */
+    public AsyncInvoker<DeleteRestrictedRuleRequest, DeleteRestrictedRuleResponse> deleteRestrictedRuleAsyncInvoker(
+        DeleteRestrictedRuleRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteRestrictedRule, hcClient);
+    }
+
+    /**
+     * 禁用规则管控
+     *
+     * 禁用规则管控。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableRuleRestrictionRequest 请求对象
+     * @return CompletableFuture<DisableRuleRestrictionResponse>
+     */
+    public CompletableFuture<DisableRuleRestrictionResponse> disableRuleRestrictionAsync(
+        DisableRuleRestrictionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.disableRuleRestriction);
+    }
+
+    /**
+     * 禁用规则管控
+     *
+     * 禁用规则管控。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableRuleRestrictionRequest 请求对象
+     * @return AsyncInvoker<DisableRuleRestrictionRequest, DisableRuleRestrictionResponse>
+     */
+    public AsyncInvoker<DisableRuleRestrictionRequest, DisableRuleRestrictionResponse> disableRuleRestrictionAsyncInvoker(
+        DisableRuleRestrictionRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.disableRuleRestriction, hcClient);
+    }
+
+    /**
+     * 启用规则管控
+     *
+     * 启用规则管控。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableRuleRestrictionRequest 请求对象
+     * @return CompletableFuture<EnableRuleRestrictionResponse>
+     */
+    public CompletableFuture<EnableRuleRestrictionResponse> enableRuleRestrictionAsync(
+        EnableRuleRestrictionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.enableRuleRestriction);
+    }
+
+    /**
+     * 启用规则管控
+     *
+     * 启用规则管控。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableRuleRestrictionRequest 请求对象
+     * @return AsyncInvoker<EnableRuleRestrictionRequest, EnableRuleRestrictionResponse>
+     */
+    public AsyncInvoker<EnableRuleRestrictionRequest, EnableRuleRestrictionResponse> enableRuleRestrictionAsyncInvoker(
+        EnableRuleRestrictionRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.enableRuleRestriction, hcClient);
+    }
+
+    /**
+     * 查询应用规则
+     *
+     * 查询应用规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAppRuleRequest 请求对象
+     * @return CompletableFuture<ListAppRuleResponse>
+     */
+    public CompletableFuture<ListAppRuleResponse> listAppRuleAsync(ListAppRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listAppRule);
+    }
+
+    /**
+     * 查询应用规则
+     *
+     * 查询应用规则
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAppRuleRequest 请求对象
+     * @return AsyncInvoker<ListAppRuleRequest, ListAppRuleResponse>
+     */
+    public AsyncInvoker<ListAppRuleRequest, ListAppRuleResponse> listAppRuleAsyncInvoker(ListAppRuleRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listAppRule, hcClient);
+    }
+
+    /**
+     * 查询管控规则列表
+     *
+     * 查询管控规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRestrictedRuleRequest 请求对象
+     * @return CompletableFuture<ListRestrictedRuleResponse>
+     */
+    public CompletableFuture<ListRestrictedRuleResponse> listRestrictedRuleAsync(ListRestrictedRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listRestrictedRule);
+    }
+
+    /**
+     * 查询管控规则列表
+     *
+     * 查询管控规则列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRestrictedRuleRequest 请求对象
+     * @return AsyncInvoker<ListRestrictedRuleRequest, ListRestrictedRuleResponse>
+     */
+    public AsyncInvoker<ListRestrictedRuleRequest, ListRestrictedRuleResponse> listRestrictedRuleAsyncInvoker(
+        ListRestrictedRuleRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listRestrictedRule, hcClient);
+    }
+
+    /**
+     * 修改应用规则
+     *
+     * 修改应用规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAppRuleRequest 请求对象
+     * @return CompletableFuture<UpdateAppRuleResponse>
+     */
+    public CompletableFuture<UpdateAppRuleResponse> updateAppRuleAsync(UpdateAppRuleRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateAppRule);
+    }
+
+    /**
+     * 修改应用规则
+     *
+     * 修改应用规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAppRuleRequest 请求对象
+     * @return AsyncInvoker<UpdateAppRuleRequest, UpdateAppRuleResponse>
+     */
+    public AsyncInvoker<UpdateAppRuleRequest, UpdateAppRuleResponse> updateAppRuleAsyncInvoker(
+        UpdateAppRuleRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateAppRule, hcClient);
     }
 
     /**
@@ -498,6 +1773,35 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询认证登录方式
+     *
+     * 查询认证登录方式配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAuthConfigRequest 请求对象
+     * @return CompletableFuture<ShowAuthConfigResponse>
+     */
+    public CompletableFuture<ShowAuthConfigResponse> showAuthConfigAsync(ShowAuthConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showAuthConfig);
+    }
+
+    /**
+     * 查询认证登录方式
+     *
+     * 查询认证登录方式配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAuthConfigRequest 请求对象
+     * @return AsyncInvoker<ShowAuthConfigRequest, ShowAuthConfigResponse>
+     */
+    public AsyncInvoker<ShowAuthConfigRequest, ShowAuthConfigResponse> showAuthConfigAsyncInvoker(
+        ShowAuthConfigRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showAuthConfig, hcClient);
+    }
+
+    /**
      * 更新辅助认证策略配置
      *
      * 更新辅助认证策略配置
@@ -525,6 +1829,36 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<UpdateAssistAuthMethodConfigRequest, UpdateAssistAuthMethodConfigResponse> updateAssistAuthMethodConfigAsyncInvoker(
         UpdateAssistAuthMethodConfigRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.updateAssistAuthMethodConfig, hcClient);
+    }
+
+    /**
+     * 更新认证策略配置
+     *
+     * 更新认证策略配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAuthMethodConfigRequest 请求对象
+     * @return CompletableFuture<UpdateAuthMethodConfigResponse>
+     */
+    public CompletableFuture<UpdateAuthMethodConfigResponse> updateAuthMethodConfigAsync(
+        UpdateAuthMethodConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateAuthMethodConfig);
+    }
+
+    /**
+     * 更新认证策略配置
+     *
+     * 更新认证策略配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAuthMethodConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateAuthMethodConfigRequest, UpdateAuthMethodConfigResponse>
+     */
+    public AsyncInvoker<UpdateAuthMethodConfigRequest, UpdateAuthMethodConfigResponse> updateAuthMethodConfigAsyncInvoker(
+        UpdateAuthMethodConfigRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateAuthMethodConfig, hcClient);
     }
 
     /**
@@ -558,6 +1892,63 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询可用分区列表概要
+     *
+     * 该接口用于查询云桌面支持的可用分区列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAzsRequest 请求对象
+     * @return CompletableFuture<ListAzsResponse>
+     */
+    public CompletableFuture<ListAzsResponse> listAzsAsync(ListAzsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listAzs);
+    }
+
+    /**
+     * 查询可用分区列表概要
+     *
+     * 该接口用于查询云桌面支持的可用分区列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAzsRequest 请求对象
+     * @return AsyncInvoker<ListAzsRequest, ListAzsResponse>
+     */
+    public AsyncInvoker<ListAzsRequest, ListAzsResponse> listAzsAsyncInvoker(ListAzsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listAzs, hcClient);
+    }
+
+    /**
+     * 查询可用分区详情
+     *
+     * 该接口用于查询云桌面支持的可用分区列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAzDetailsRequest 请求对象
+     * @return CompletableFuture<ShowAzDetailsResponse>
+     */
+    public CompletableFuture<ShowAzDetailsResponse> showAzDetailsAsync(ShowAzDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showAzDetails);
+    }
+
+    /**
+     * 查询可用分区详情
+     *
+     * 该接口用于查询云桌面支持的可用分区列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAzDetailsRequest 请求对象
+     * @return AsyncInvoker<ShowAzDetailsRequest, ShowAzDetailsResponse>
+     */
+    public AsyncInvoker<ShowAzDetailsRequest, ShowAzDetailsResponse> showAzDetailsAsyncInvoker(
+        ShowAzDetailsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showAzDetails, hcClient);
+    }
+
+    /**
      * 导出连接记录
      *
      * 该接口用于导出连接记录。
@@ -588,6 +1979,67 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询桌面登录状态
+     *
+     * 该接口用于查询桌面登录状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopsStatusRequest 请求对象
+     * @return CompletableFuture<ListDesktopsStatusResponse>
+     */
+    @Deprecated
+    public CompletableFuture<ListDesktopsStatusResponse> listDesktopsStatusAsync(ListDesktopsStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopsStatus);
+    }
+
+    /**
+     * 查询桌面登录状态
+     *
+     * 该接口用于查询桌面登录状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopsStatusRequest 请求对象
+     * @return AsyncInvoker<ListDesktopsStatusRequest, ListDesktopsStatusResponse>
+     */
+    @Deprecated
+    public AsyncInvoker<ListDesktopsStatusRequest, ListDesktopsStatusResponse> listDesktopsStatusAsyncInvoker(
+        ListDesktopsStatusRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopsStatus, hcClient);
+    }
+
+    /**
+     * 查询登录人数
+     *
+     * 该接口用于查询登录人数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistoryOnlineInfoRequest 请求对象
+     * @return CompletableFuture<ListHistoryOnlineInfoResponse>
+     */
+    public CompletableFuture<ListHistoryOnlineInfoResponse> listHistoryOnlineInfoAsync(
+        ListHistoryOnlineInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listHistoryOnlineInfo);
+    }
+
+    /**
+     * 查询登录人数
+     *
+     * 该接口用于查询登录人数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHistoryOnlineInfoRequest 请求对象
+     * @return AsyncInvoker<ListHistoryOnlineInfoRequest, ListHistoryOnlineInfoResponse>
+     */
+    public AsyncInvoker<ListHistoryOnlineInfoRequest, ListHistoryOnlineInfoResponse> listHistoryOnlineInfoAsyncInvoker(
+        ListHistoryOnlineInfoRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listHistoryOnlineInfo, hcClient);
+    }
+
+    /**
      * 查询登录人数
      *
      * 该接口用于查询登录人数，注意查询参数不可全空。
@@ -615,6 +2067,35 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ListHistoryOnlineInfoNewRequest, ListHistoryOnlineInfoNewResponse> listHistoryOnlineInfoNewAsyncInvoker(
         ListHistoryOnlineInfoNewRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.listHistoryOnlineInfoNew, hcClient);
+    }
+
+    /**
+     * 查询桌面登录状态
+     *
+     * 该接口用于查询桌面登录状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesStatusRequest 请求对象
+     * @return CompletableFuture<ListInstancesStatusResponse>
+     */
+    public CompletableFuture<ListInstancesStatusResponse> listInstancesStatusAsync(ListInstancesStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listInstancesStatus);
+    }
+
+    /**
+     * 查询桌面登录状态
+     *
+     * 该接口用于查询桌面登录状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesStatusRequest 请求对象
+     * @return AsyncInvoker<ListInstancesStatusRequest, ListInstancesStatusResponse>
+     */
+    public AsyncInvoker<ListInstancesStatusRequest, ListInstancesStatusResponse> listInstancesStatusAsyncInvoker(
+        ListInstancesStatusRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listInstancesStatus, hcClient);
     }
 
     /**
@@ -676,6 +2157,96 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 预批量分配用户
+     *
+     * 预批量将桌面分配给用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAssociateInstancesRequest 请求对象
+     * @return CompletableFuture<BatchAssociateInstancesResponse>
+     */
+    public CompletableFuture<BatchAssociateInstancesResponse> batchAssociateInstancesAsync(
+        BatchAssociateInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchAssociateInstances);
+    }
+
+    /**
+     * 预批量分配用户
+     *
+     * 预批量将桌面分配给用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAssociateInstancesRequest 请求对象
+     * @return AsyncInvoker<BatchAssociateInstancesRequest, BatchAssociateInstancesResponse>
+     */
+    public AsyncInvoker<BatchAssociateInstancesRequest, BatchAssociateInstancesResponse> batchAssociateInstancesAsyncInvoker(
+        BatchAssociateInstancesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchAssociateInstances, hcClient);
+    }
+
+    /**
+     * 批量分配用户
+     *
+     * 批量分配桌面给用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAttachInstancesRequest 请求对象
+     * @return CompletableFuture<BatchAttachInstancesResponse>
+     */
+    public CompletableFuture<BatchAttachInstancesResponse> batchAttachInstancesAsync(
+        BatchAttachInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchAttachInstances);
+    }
+
+    /**
+     * 批量分配用户
+     *
+     * 批量分配桌面给用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchAttachInstancesRequest 请求对象
+     * @return AsyncInvoker<BatchAttachInstancesRequest, BatchAttachInstancesResponse>
+     */
+    public AsyncInvoker<BatchAttachInstancesRequest, BatchAttachInstancesResponse> batchAttachInstancesAsyncInvoker(
+        BatchAttachInstancesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchAttachInstances, hcClient);
+    }
+
+    /**
+     * 批量切换桌面网络
+     *
+     * 批量切换桌面vpc、子网、ip、安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchChangeDesktopNetworkRequest 请求对象
+     * @return CompletableFuture<BatchChangeDesktopNetworkResponse>
+     */
+    public CompletableFuture<BatchChangeDesktopNetworkResponse> batchChangeDesktopNetworkAsync(
+        BatchChangeDesktopNetworkRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchChangeDesktopNetwork);
+    }
+
+    /**
+     * 批量切换桌面网络
+     *
+     * 批量切换桌面vpc、子网、ip、安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchChangeDesktopNetworkRequest 请求对象
+     * @return AsyncInvoker<BatchChangeDesktopNetworkRequest, BatchChangeDesktopNetworkResponse>
+     */
+    public AsyncInvoker<BatchChangeDesktopNetworkRequest, BatchChangeDesktopNetworkResponse> batchChangeDesktopNetworkAsyncInvoker(
+        BatchChangeDesktopNetworkRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchChangeDesktopNetwork, hcClient);
+    }
+
+    /**
      * 批量删除桌面
      *
      * 批量删除桌面，删除后无法恢复。
@@ -702,6 +2273,65 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<BatchDeleteDesktopsRequest, BatchDeleteDesktopsResponse> batchDeleteDesktopsAsyncInvoker(
         BatchDeleteDesktopsRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.batchDeleteDesktops, hcClient);
+    }
+
+    /**
+     * 批量解绑用户
+     *
+     * 批量将桌面和用户解绑
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDetachInstancesRequest 请求对象
+     * @return CompletableFuture<BatchDetachInstancesResponse>
+     */
+    public CompletableFuture<BatchDetachInstancesResponse> batchDetachInstancesAsync(
+        BatchDetachInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchDetachInstances);
+    }
+
+    /**
+     * 批量解绑用户
+     *
+     * 批量将桌面和用户解绑
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDetachInstancesRequest 请求对象
+     * @return AsyncInvoker<BatchDetachInstancesRequest, BatchDetachInstancesResponse>
+     */
+    public AsyncInvoker<BatchDetachInstancesRequest, BatchDetachInstancesResponse> batchDetachInstancesAsyncInvoker(
+        BatchDetachInstancesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchDetachInstances, hcClient);
+    }
+
+    /**
+     * 安装ces-agent
+     *
+     * 批量为桌面安装agent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchInstallAgentRequest 请求对象
+     * @return CompletableFuture<BatchInstallAgentResponse>
+     */
+    public CompletableFuture<BatchInstallAgentResponse> batchInstallAgentAsync(BatchInstallAgentRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchInstallAgent);
+    }
+
+    /**
+     * 安装ces-agent
+     *
+     * 批量为桌面安装agent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchInstallAgentRequest 请求对象
+     * @return AsyncInvoker<BatchInstallAgentRequest, BatchInstallAgentResponse>
+     */
+    public AsyncInvoker<BatchInstallAgentRequest, BatchInstallAgentResponse> batchInstallAgentAsyncInvoker(
+        BatchInstallAgentRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchInstallAgent, hcClient);
     }
 
     /**
@@ -853,6 +2483,36 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 桌面转镜像
+     *
+     * 桌面转镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeDesktopToImageRequest 请求对象
+     * @return CompletableFuture<ChangeDesktopToImageResponse>
+     */
+    public CompletableFuture<ChangeDesktopToImageResponse> changeDesktopToImageAsync(
+        ChangeDesktopToImageRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.changeDesktopToImage);
+    }
+
+    /**
+     * 桌面转镜像
+     *
+     * 桌面转镜像
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeDesktopToImageRequest 请求对象
+     * @return AsyncInvoker<ChangeDesktopToImageRequest, ChangeDesktopToImageResponse>
+     */
+    public AsyncInvoker<ChangeDesktopToImageRequest, ChangeDesktopToImageResponse> changeDesktopToImageAsyncInvoker(
+        ChangeDesktopToImageRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.changeDesktopToImage, hcClient);
+    }
+
+    /**
      * 批量修改用户权限组
      *
      * 批量修改用户权限组。
@@ -1000,6 +2660,95 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询桌面安装agent详情
+     *
+     * 展示桌面安装agent详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAgentsInstallConditionRequest 请求对象
+     * @return CompletableFuture<ListAgentsInstallConditionResponse>
+     */
+    public CompletableFuture<ListAgentsInstallConditionResponse> listAgentsInstallConditionAsync(
+        ListAgentsInstallConditionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listAgentsInstallCondition);
+    }
+
+    /**
+     * 查询桌面安装agent详情
+     *
+     * 展示桌面安装agent详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAgentsInstallConditionRequest 请求对象
+     * @return AsyncInvoker<ListAgentsInstallConditionRequest, ListAgentsInstallConditionResponse>
+     */
+    public AsyncInvoker<ListAgentsInstallConditionRequest, ListAgentsInstallConditionResponse> listAgentsInstallConditionAsyncInvoker(
+        ListAgentsInstallConditionRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listAgentsInstallCondition, hcClient);
+    }
+
+    /**
+     * 查询桌面开关机信息
+     *
+     * 获取桌面开关机信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopActionsRequest 请求对象
+     * @return CompletableFuture<ListDesktopActionsResponse>
+     */
+    public CompletableFuture<ListDesktopActionsResponse> listDesktopActionsAsync(ListDesktopActionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopActions);
+    }
+
+    /**
+     * 查询桌面开关机信息
+     *
+     * 获取桌面开关机信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopActionsRequest 请求对象
+     * @return AsyncInvoker<ListDesktopActionsRequest, ListDesktopActionsResponse>
+     */
+    public AsyncInvoker<ListDesktopActionsRequest, ListDesktopActionsResponse> listDesktopActionsAsyncInvoker(
+        ListDesktopActionsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopActions, hcClient);
+    }
+
+    /**
+     * 查询桌面解绑信息
+     *
+     * 查询桌面解绑信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopDetachInfoRequest 请求对象
+     * @return CompletableFuture<ListDesktopDetachInfoResponse>
+     */
+    public CompletableFuture<ListDesktopDetachInfoResponse> listDesktopDetachInfoAsync(
+        ListDesktopDetachInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopDetachInfo);
+    }
+
+    /**
+     * 查询桌面解绑信息
+     *
+     * 查询桌面解绑信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopDetachInfoRequest 请求对象
+     * @return AsyncInvoker<ListDesktopDetachInfoRequest, ListDesktopDetachInfoResponse>
+     */
+    public AsyncInvoker<ListDesktopDetachInfoRequest, ListDesktopDetachInfoResponse> listDesktopDetachInfoAsyncInvoker(
+        ListDesktopDetachInfoRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopDetachInfo, hcClient);
+    }
+
+    /**
      * 查询桌面列表
      *
      * 该接口用于查询桌面虚拟机列表。
@@ -1029,9 +2778,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 查询桌面登录状态列表
+     * 查询桌面连接状态列表
      *
-     * 查询桌面登录状态列表。
+     * 查询桌面连接状态列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1044,9 +2793,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 查询桌面登录状态列表
+     * 查询桌面连接状态列表
      *
-     * 查询桌面登录状态列表。
+     * 查询桌面连接状态列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1088,6 +2837,35 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 重新加入AD域
+     *
+     * 该接口用于Windows桌面重新加入AD域，一般用于解决桌面脱域的情况使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RegisterDomainRequest 请求对象
+     * @return CompletableFuture<RegisterDomainResponse>
+     */
+    public CompletableFuture<RegisterDomainResponse> registerDomainAsync(RegisterDomainRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.registerDomain);
+    }
+
+    /**
+     * 重新加入AD域
+     *
+     * 该接口用于Windows桌面重新加入AD域，一般用于解决桌面脱域的情况使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RegisterDomainRequest 请求对象
+     * @return AsyncInvoker<RegisterDomainRequest, RegisterDomainResponse>
+     */
+    public AsyncInvoker<RegisterDomainRequest, RegisterDomainResponse> registerDomainAsyncInvoker(
+        RegisterDomainRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.registerDomain, hcClient);
+    }
+
+    /**
      * 变更规格
      *
      * 变更云桌面规格，只支持变更CPU和内存，不支持变更磁盘，不支持同规格互相变更。
@@ -1114,6 +2892,64 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ResizeDesktopRequest, ResizeDesktopResponse> resizeDesktopAsyncInvoker(
         ResizeDesktopRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.resizeDesktop, hcClient);
+    }
+
+    /**
+     * 发送消息通知
+     *
+     * 用于管理员向桌面发送消息通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SendNotificationsRequest 请求对象
+     * @return CompletableFuture<SendNotificationsResponse>
+     */
+    public CompletableFuture<SendNotificationsResponse> sendNotificationsAsync(SendNotificationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.sendNotifications);
+    }
+
+    /**
+     * 发送消息通知
+     *
+     * 用于管理员向桌面发送消息通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SendNotificationsRequest 请求对象
+     * @return AsyncInvoker<SendNotificationsRequest, SendNotificationsResponse>
+     */
+    public AsyncInvoker<SendNotificationsRequest, SendNotificationsResponse> sendNotificationsAsyncInvoker(
+        SendNotificationsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.sendNotifications, hcClient);
+    }
+
+    /**
+     * 批量设置桌面维护模式
+     *
+     * 批量设置桌面管理员维护模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetMaintenanceModeRequest 请求对象
+     * @return CompletableFuture<SetMaintenanceModeResponse>
+     */
+    public CompletableFuture<SetMaintenanceModeResponse> setMaintenanceModeAsync(SetMaintenanceModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.setMaintenanceMode);
+    }
+
+    /**
+     * 批量设置桌面维护模式
+     *
+     * 批量设置桌面管理员维护模式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetMaintenanceModeRequest 请求对象
+     * @return AsyncInvoker<SetMaintenanceModeRequest, SetMaintenanceModeResponse>
+     */
+    public AsyncInvoker<SetMaintenanceModeRequest, SetMaintenanceModeResponse> setMaintenanceModeAsyncInvoker(
+        SetMaintenanceModeRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.setMaintenanceMode, hcClient);
     }
 
     /**
@@ -1146,6 +2982,36 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询桌面监控信息
+     *
+     * 该接口可获取某一计算机在一段时间段(范围：1小时到30天)的数据信息（例如CPU占用率、内存占用率、用户的在线时间段等），最长数据保存时间不能超过180天。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDesktopMonitorDataRequest 请求对象
+     * @return CompletableFuture<ShowDesktopMonitorDataResponse>
+     */
+    public CompletableFuture<ShowDesktopMonitorDataResponse> showDesktopMonitorDataAsync(
+        ShowDesktopMonitorDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showDesktopMonitorData);
+    }
+
+    /**
+     * 查询桌面监控信息
+     *
+     * 该接口可获取某一计算机在一段时间段(范围：1小时到30天)的数据信息（例如CPU占用率、内存占用率、用户的在线时间段等），最长数据保存时间不能超过180天。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDesktopMonitorDataRequest 请求对象
+     * @return AsyncInvoker<ShowDesktopMonitorDataRequest, ShowDesktopMonitorDataResponse>
+     */
+    public AsyncInvoker<ShowDesktopMonitorDataRequest, ShowDesktopMonitorDataResponse> showDesktopMonitorDataAsyncInvoker(
+        ShowDesktopMonitorDataRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showDesktopMonitorData, hcClient);
+    }
+
+    /**
      * 查询桌面网络
      *
      * 查询桌面vpc、子网、privateIp、EIP、安全组
@@ -1172,6 +3038,35 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ShowDesktopNetworkRequest, ShowDesktopNetworkResponse> showDesktopNetworkAsyncInvoker(
         ShowDesktopNetworkRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.showDesktopNetwork, hcClient);
+    }
+
+    /**
+     * 批量查询桌面网络
+     *
+     * 查询桌面vpc、子网、privateIp、EIP、安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDesktopNetworksRequest 请求对象
+     * @return CompletableFuture<ShowDesktopNetworksResponse>
+     */
+    public CompletableFuture<ShowDesktopNetworksResponse> showDesktopNetworksAsync(ShowDesktopNetworksRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showDesktopNetworks);
+    }
+
+    /**
+     * 批量查询桌面网络
+     *
+     * 查询桌面vpc、子网、privateIp、EIP、安全组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDesktopNetworksRequest 请求对象
+     * @return AsyncInvoker<ShowDesktopNetworksRequest, ShowDesktopNetworksResponse>
+     */
+    public AsyncInvoker<ShowDesktopNetworksRequest, ShowDesktopNetworksResponse> showDesktopNetworksAsyncInvoker(
+        ShowDesktopNetworksRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showDesktopNetworks, hcClient);
     }
 
     /**
@@ -1202,6 +3097,153 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ShowDesktopRemoteAssistanceInfoRequest, ShowDesktopRemoteAssistanceInfoResponse> showDesktopRemoteAssistanceInfoAsyncInvoker(
         ShowDesktopRemoteAssistanceInfoRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.showDesktopRemoteAssistanceInfo, hcClient);
+    }
+
+    /**
+     * 远程登录控制台
+     *
+     * 用于直接获取远程登录控制台地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRemoteConsoleAddressRequest 请求对象
+     * @return CompletableFuture<ShowRemoteConsoleAddressResponse>
+     */
+    public CompletableFuture<ShowRemoteConsoleAddressResponse> showRemoteConsoleAddressAsync(
+        ShowRemoteConsoleAddressRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showRemoteConsoleAddress);
+    }
+
+    /**
+     * 远程登录控制台
+     *
+     * 用于直接获取远程登录控制台地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRemoteConsoleAddressRequest 请求对象
+     * @return AsyncInvoker<ShowRemoteConsoleAddressRequest, ShowRemoteConsoleAddressResponse>
+     */
+    public AsyncInvoker<ShowRemoteConsoleAddressRequest, ShowRemoteConsoleAddressResponse> showRemoteConsoleAddressAsyncInvoker(
+        ShowRemoteConsoleAddressRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showRemoteConsoleAddress, hcClient);
+    }
+
+    /**
+     * 查询sysprep版本信息
+     *
+     * 查询sysprep版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSysprepInfoRequest 请求对象
+     * @return CompletableFuture<ShowSysprepInfoResponse>
+     */
+    public CompletableFuture<ShowSysprepInfoResponse> showSysprepInfoAsync(ShowSysprepInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showSysprepInfo);
+    }
+
+    /**
+     * 查询sysprep版本信息
+     *
+     * 查询sysprep版本信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSysprepInfoRequest 请求对象
+     * @return AsyncInvoker<ShowSysprepInfoRequest, ShowSysprepInfoResponse>
+     */
+    public AsyncInvoker<ShowSysprepInfoRequest, ShowSysprepInfoResponse> showSysprepInfoAsyncInvoker(
+        ShowSysprepInfoRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showSysprepInfo, hcClient);
+    }
+
+    /**
+     * 修改桌面属性
+     *
+     * 修改桌面属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesktopRequest 请求对象
+     * @return CompletableFuture<UpdateDesktopResponse>
+     */
+    public CompletableFuture<UpdateDesktopResponse> updateDesktopAsync(UpdateDesktopRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateDesktop);
+    }
+
+    /**
+     * 修改桌面属性
+     *
+     * 修改桌面属性。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesktopRequest 请求对象
+     * @return AsyncInvoker<UpdateDesktopRequest, UpdateDesktopResponse>
+     */
+    public AsyncInvoker<UpdateDesktopRequest, UpdateDesktopResponse> updateDesktopAsyncInvoker(
+        UpdateDesktopRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateDesktop, hcClient);
+    }
+
+    /**
+     * 更新桌面SID
+     *
+     * 该接口用于桌面sid和WindowsAD中的SID不同时，更新桌面SID使其与AD中的SID保持一致，一般用于解决桌面脱域的情况使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesktopSidsRequest 请求对象
+     * @return CompletableFuture<UpdateDesktopSidsResponse>
+     */
+    public CompletableFuture<UpdateDesktopSidsResponse> updateDesktopSidsAsync(UpdateDesktopSidsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateDesktopSids);
+    }
+
+    /**
+     * 更新桌面SID
+     *
+     * 该接口用于桌面sid和WindowsAD中的SID不同时，更新桌面SID使其与AD中的SID保持一致，一般用于解决桌面脱域的情况使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesktopSidsRequest 请求对象
+     * @return AsyncInvoker<UpdateDesktopSidsRequest, UpdateDesktopSidsResponse>
+     */
+    public AsyncInvoker<UpdateDesktopSidsRequest, UpdateDesktopSidsResponse> updateDesktopSidsAsyncInvoker(
+        UpdateDesktopSidsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateDesktopSids, hcClient);
+    }
+
+    /**
+     * AD场景支持桌面更换关联用户名
+     *
+     * AD场景支持桌面更换关联用户名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesktopUsernameRequest 请求对象
+     * @return CompletableFuture<UpdateDesktopUsernameResponse>
+     */
+    public CompletableFuture<UpdateDesktopUsernameResponse> updateDesktopUsernameAsync(
+        UpdateDesktopUsernameRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateDesktopUsername);
+    }
+
+    /**
+     * AD场景支持桌面更换关联用户名
+     *
+     * AD场景支持桌面更换关联用户名。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesktopUsernameRequest 请求对象
+     * @return AsyncInvoker<UpdateDesktopUsernameRequest, UpdateDesktopUsernameResponse>
+     */
+    public AsyncInvoker<UpdateDesktopUsernameRequest, UpdateDesktopUsernameResponse> updateDesktopUsernameAsyncInvoker(
+        UpdateDesktopUsernameRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateDesktopUsername, hcClient);
     }
 
     /**
@@ -1505,6 +3547,36 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 桌面池批量执行脚本
+     *
+     * 桌面池批量执行脚本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteDesktopPoolScriptRequest 请求对象
+     * @return CompletableFuture<ExecuteDesktopPoolScriptResponse>
+     */
+    public CompletableFuture<ExecuteDesktopPoolScriptResponse> executeDesktopPoolScriptAsync(
+        ExecuteDesktopPoolScriptRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.executeDesktopPoolScript);
+    }
+
+    /**
+     * 桌面池批量执行脚本
+     *
+     * 桌面池批量执行脚本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteDesktopPoolScriptRequest 请求对象
+     * @return AsyncInvoker<ExecuteDesktopPoolScriptRequest, ExecuteDesktopPoolScriptResponse>
+     */
+    public AsyncInvoker<ExecuteDesktopPoolScriptRequest, ExecuteDesktopPoolScriptResponse> executeDesktopPoolScriptAsyncInvoker(
+        ExecuteDesktopPoolScriptRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.executeDesktopPoolScript, hcClient);
+    }
+
+    /**
      * 扩容桌面池
      *
      * 扩容桌面池。
@@ -1711,6 +3783,36 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 发送消息通知
+     *
+     * 用于管理员向桌面发送消息通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SendDesktopPoolNotificationsRequest 请求对象
+     * @return CompletableFuture<SendDesktopPoolNotificationsResponse>
+     */
+    public CompletableFuture<SendDesktopPoolNotificationsResponse> sendDesktopPoolNotificationsAsync(
+        SendDesktopPoolNotificationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.sendDesktopPoolNotifications);
+    }
+
+    /**
+     * 发送消息通知
+     *
+     * 用于管理员向桌面发送消息通知
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SendDesktopPoolNotificationsRequest 请求对象
+     * @return AsyncInvoker<SendDesktopPoolNotificationsRequest, SendDesktopPoolNotificationsResponse>
+     */
+    public AsyncInvoker<SendDesktopPoolNotificationsRequest, SendDesktopPoolNotificationsResponse> sendDesktopPoolNotificationsAsyncInvoker(
+        SendDesktopPoolNotificationsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.sendDesktopPoolNotifications, hcClient);
+    }
+
+    /**
      * 查询桌面池详情
      *
      * 指定桌面池Id查询详细信息。
@@ -1741,6 +3843,36 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询桌面池的脚本执行任务列表
+     *
+     * 桌面池的脚本执行任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDesktopPoolsScriptExecTasksRequest 请求对象
+     * @return CompletableFuture<ShowDesktopPoolsScriptExecTasksResponse>
+     */
+    public CompletableFuture<ShowDesktopPoolsScriptExecTasksResponse> showDesktopPoolsScriptExecTasksAsync(
+        ShowDesktopPoolsScriptExecTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showDesktopPoolsScriptExecTasks);
+    }
+
+    /**
+     * 查询桌面池的脚本执行任务列表
+     *
+     * 桌面池的脚本执行任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDesktopPoolsScriptExecTasksRequest 请求对象
+     * @return AsyncInvoker<ShowDesktopPoolsScriptExecTasksRequest, ShowDesktopPoolsScriptExecTasksResponse>
+     */
+    public AsyncInvoker<ShowDesktopPoolsScriptExecTasksRequest, ShowDesktopPoolsScriptExecTasksResponse> showDesktopPoolsScriptExecTasksAsyncInvoker(
+        ShowDesktopPoolsScriptExecTasksRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showDesktopPoolsScriptExecTasks, hcClient);
+    }
+
+    /**
      * 修改桌面池属性
      *
      * 修改桌面池属性。
@@ -1767,64 +3899,6 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<UpdateDesktopPoolRequest, UpdateDesktopPoolResponse> updateDesktopPoolAsyncInvoker(
         UpdateDesktopPoolRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.updateDesktopPool, hcClient);
-    }
-
-    /**
-     * 查询在指定时间段未使用的桌面
-     *
-     * 查询在指定时间段未使用的桌面。已废弃，不推荐使用。统计数据推荐使用[查询桌面使用情况统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListDesktopUsageMetric)和[查询用户使用统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListUserUsageMetric)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListUnusedDesktopsRequest 请求对象
-     * @return CompletableFuture<ListUnusedDesktopsResponse>
-     */
-    public CompletableFuture<ListUnusedDesktopsResponse> listUnusedDesktopsAsync(ListUnusedDesktopsRequest request) {
-        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listUnusedDesktops);
-    }
-
-    /**
-     * 查询在指定时间段未使用的桌面
-     *
-     * 查询在指定时间段未使用的桌面。已废弃，不推荐使用。统计数据推荐使用[查询桌面使用情况统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListDesktopUsageMetric)和[查询用户使用统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListUserUsageMetric)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListUnusedDesktopsRequest 请求对象
-     * @return AsyncInvoker<ListUnusedDesktopsRequest, ListUnusedDesktopsResponse>
-     */
-    public AsyncInvoker<ListUnusedDesktopsRequest, ListUnusedDesktopsResponse> listUnusedDesktopsAsyncInvoker(
-        ListUnusedDesktopsRequest request) {
-        return new AsyncInvoker<>(request, WorkspaceMeta.listUnusedDesktops, hcClient);
-    }
-
-    /**
-     * 查询使用桌面的时长
-     *
-     * 查询使用桌面的时长。已废弃，不推荐使用。统计数据推荐使用[查询桌面使用情况统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListDesktopUsageMetric)和[查询用户使用统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListUserUsageMetric)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListUsedDesktopInfoRequest 请求对象
-     * @return CompletableFuture<ListUsedDesktopInfoResponse>
-     */
-    public CompletableFuture<ListUsedDesktopInfoResponse> listUsedDesktopInfoAsync(ListUsedDesktopInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listUsedDesktopInfo);
-    }
-
-    /**
-     * 查询使用桌面的时长
-     *
-     * 查询使用桌面的时长。已废弃，不推荐使用。统计数据推荐使用[查询桌面使用情况统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListDesktopUsageMetric)和[查询用户使用统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListUserUsageMetric)。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListUsedDesktopInfoRequest 请求对象
-     * @return AsyncInvoker<ListUsedDesktopInfoRequest, ListUsedDesktopInfoResponse>
-     */
-    public AsyncInvoker<ListUsedDesktopInfoRequest, ListUsedDesktopInfoResponse> listUsedDesktopInfoAsyncInvoker(
-        ListUsedDesktopInfoRequest request) {
-        return new AsyncInvoker<>(request, WorkspaceMeta.listUsedDesktopInfo, hcClient);
     }
 
     /**
@@ -2292,6 +4366,274 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 获取云市场镜像列表
+     *
+     * 获取云市场镜像列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMarketImagesRequest 请求对象
+     * @return CompletableFuture<ListMarketImagesResponse>
+     */
+    public CompletableFuture<ListMarketImagesResponse> listMarketImagesAsync(ListMarketImagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listMarketImages);
+    }
+
+    /**
+     * 获取云市场镜像列表
+     *
+     * 获取云市场镜像列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMarketImagesRequest 请求对象
+     * @return AsyncInvoker<ListMarketImagesRequest, ListMarketImagesResponse>
+     */
+    public AsyncInvoker<ListMarketImagesRequest, ListMarketImagesResponse> listMarketImagesAsyncInvoker(
+        ListMarketImagesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listMarketImages, hcClient);
+    }
+
+    /**
+     * 包周期桌面增配变更批量询价
+     *
+     * 包周期桌面增配变更批量询价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EstimateAddResourcesRequest 请求对象
+     * @return CompletableFuture<EstimateAddResourcesResponse>
+     */
+    public CompletableFuture<EstimateAddResourcesResponse> estimateAddResourcesAsync(
+        EstimateAddResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.estimateAddResources);
+    }
+
+    /**
+     * 包周期桌面增配变更批量询价
+     *
+     * 包周期桌面增配变更批量询价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EstimateAddResourcesRequest 请求对象
+     * @return AsyncInvoker<EstimateAddResourcesRequest, EstimateAddResourcesResponse>
+     */
+    public AsyncInvoker<EstimateAddResourcesRequest, EstimateAddResourcesResponse> estimateAddResourcesAsyncInvoker(
+        EstimateAddResourcesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.estimateAddResources, hcClient);
+    }
+
+    /**
+     * 批量包周期桌面切换镜像询价
+     *
+     * 批量包周期桌面切换镜像(由不收费镜像变更至收费镜像)询价。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EstimateChangeImagesRequest 请求对象
+     * @return CompletableFuture<EstimateChangeImagesResponse>
+     */
+    public CompletableFuture<EstimateChangeImagesResponse> estimateChangeImagesAsync(
+        EstimateChangeImagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.estimateChangeImages);
+    }
+
+    /**
+     * 批量包周期桌面切换镜像询价
+     *
+     * 批量包周期桌面切换镜像(由不收费镜像变更至收费镜像)询价。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EstimateChangeImagesRequest 请求对象
+     * @return AsyncInvoker<EstimateChangeImagesRequest, EstimateChangeImagesResponse>
+     */
+    public AsyncInvoker<EstimateChangeImagesRequest, EstimateChangeImagesResponse> estimateChangeImagesAsyncInvoker(
+        EstimateChangeImagesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.estimateChangeImages, hcClient);
+    }
+
+    /**
+     * 包周期桌面池添加单个磁盘批量询价
+     *
+     * 包周期桌面池添加单个磁盘批量询价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EstimateDesktopPoolAddVolumeRequest 请求对象
+     * @return CompletableFuture<EstimateDesktopPoolAddVolumeResponse>
+     */
+    public CompletableFuture<EstimateDesktopPoolAddVolumeResponse> estimateDesktopPoolAddVolumeAsync(
+        EstimateDesktopPoolAddVolumeRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.estimateDesktopPoolAddVolume);
+    }
+
+    /**
+     * 包周期桌面池添加单个磁盘批量询价
+     *
+     * 包周期桌面池添加单个磁盘批量询价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EstimateDesktopPoolAddVolumeRequest 请求对象
+     * @return AsyncInvoker<EstimateDesktopPoolAddVolumeRequest, EstimateDesktopPoolAddVolumeResponse>
+     */
+    public AsyncInvoker<EstimateDesktopPoolAddVolumeRequest, EstimateDesktopPoolAddVolumeResponse> estimateDesktopPoolAddVolumeAsyncInvoker(
+        EstimateDesktopPoolAddVolumeRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.estimateDesktopPoolAddVolume, hcClient);
+    }
+
+    /**
+     * 包周期桌面池切换镜像批量询价
+     *
+     * 包周期桌面池切换镜像(由不收费镜像变更至收费镜像)批量询价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EstimateDesktopPoolChangeImageRequest 请求对象
+     * @return CompletableFuture<EstimateDesktopPoolChangeImageResponse>
+     */
+    public CompletableFuture<EstimateDesktopPoolChangeImageResponse> estimateDesktopPoolChangeImageAsync(
+        EstimateDesktopPoolChangeImageRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.estimateDesktopPoolChangeImage);
+    }
+
+    /**
+     * 包周期桌面池切换镜像批量询价
+     *
+     * 包周期桌面池切换镜像(由不收费镜像变更至收费镜像)批量询价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EstimateDesktopPoolChangeImageRequest 请求对象
+     * @return AsyncInvoker<EstimateDesktopPoolChangeImageRequest, EstimateDesktopPoolChangeImageResponse>
+     */
+    public AsyncInvoker<EstimateDesktopPoolChangeImageRequest, EstimateDesktopPoolChangeImageResponse> estimateDesktopPoolChangeImageAsyncInvoker(
+        EstimateDesktopPoolChangeImageRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.estimateDesktopPoolChangeImage, hcClient);
+    }
+
+    /**
+     * 包周期桌面池扩容磁盘批量询价
+     *
+     * 包周期桌面池扩容磁盘批量询价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EstimateDesktopPoolExtendVolumeRequest 请求对象
+     * @return CompletableFuture<EstimateDesktopPoolExtendVolumeResponse>
+     */
+    public CompletableFuture<EstimateDesktopPoolExtendVolumeResponse> estimateDesktopPoolExtendVolumeAsync(
+        EstimateDesktopPoolExtendVolumeRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.estimateDesktopPoolExtendVolume);
+    }
+
+    /**
+     * 包周期桌面池扩容磁盘批量询价
+     *
+     * 包周期桌面池扩容磁盘批量询价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EstimateDesktopPoolExtendVolumeRequest 请求对象
+     * @return AsyncInvoker<EstimateDesktopPoolExtendVolumeRequest, EstimateDesktopPoolExtendVolumeResponse>
+     */
+    public AsyncInvoker<EstimateDesktopPoolExtendVolumeRequest, EstimateDesktopPoolExtendVolumeResponse> estimateDesktopPoolExtendVolumeAsyncInvoker(
+        EstimateDesktopPoolExtendVolumeRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.estimateDesktopPoolExtendVolume, hcClient);
+    }
+
+    /**
+     * 包周期桌面池变更规格批量询价
+     *
+     * 包周期桌面池变更规格批量询价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EstimateDesktopPoolResizeRequest 请求对象
+     * @return CompletableFuture<EstimateDesktopPoolResizeResponse>
+     */
+    public CompletableFuture<EstimateDesktopPoolResizeResponse> estimateDesktopPoolResizeAsync(
+        EstimateDesktopPoolResizeRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.estimateDesktopPoolResize);
+    }
+
+    /**
+     * 包周期桌面池变更规格批量询价
+     *
+     * 包周期桌面池变更规格批量询价
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EstimateDesktopPoolResizeRequest 请求对象
+     * @return AsyncInvoker<EstimateDesktopPoolResizeRequest, EstimateDesktopPoolResizeResponse>
+     */
+    public AsyncInvoker<EstimateDesktopPoolResizeRequest, EstimateDesktopPoolResizeResponse> estimateDesktopPoolResizeAsyncInvoker(
+        EstimateDesktopPoolResizeRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.estimateDesktopPoolResize, hcClient);
+    }
+
+    /**
+     * 重试任务
+     *
+     * 该接口用来对失败的任务进行重试，当前仅支持开户和销户的任务重试。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunActionsOnWorkspaceJobRequest 请求对象
+     * @return CompletableFuture<RunActionsOnWorkspaceJobResponse>
+     */
+    public CompletableFuture<RunActionsOnWorkspaceJobResponse> runActionsOnWorkspaceJobAsync(
+        RunActionsOnWorkspaceJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.runActionsOnWorkspaceJob);
+    }
+
+    /**
+     * 重试任务
+     *
+     * 该接口用来对失败的任务进行重试，当前仅支持开户和销户的任务重试。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RunActionsOnWorkspaceJobRequest 请求对象
+     * @return AsyncInvoker<RunActionsOnWorkspaceJobRequest, RunActionsOnWorkspaceJobResponse>
+     */
+    public AsyncInvoker<RunActionsOnWorkspaceJobRequest, RunActionsOnWorkspaceJobResponse> runActionsOnWorkspaceJobAsyncInvoker(
+        RunActionsOnWorkspaceJobRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.runActionsOnWorkspaceJob, hcClient);
+    }
+
+    /**
+     * 删除子任务
+     *
+     * 该接口用于删除子任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSubJobsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteSubJobsResponse>
+     */
+    public CompletableFuture<BatchDeleteSubJobsResponse> batchDeleteSubJobsAsync(BatchDeleteSubJobsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchDeleteSubJobs);
+    }
+
+    /**
+     * 删除子任务
+     *
+     * 该接口用于删除子任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteSubJobsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteSubJobsRequest, BatchDeleteSubJobsResponse>
+     */
+    public AsyncInvoker<BatchDeleteSubJobsRequest, BatchDeleteSubJobsResponse> batchDeleteSubJobsAsyncInvoker(
+        BatchDeleteSubJobsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchDeleteSubJobs, hcClient);
+    }
+
+    /**
      * 子任务查询
      *
      * 该接口用于查询异步任务执行情况，比如查询创建桌面的执行状态。
@@ -2349,6 +4691,66 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询租户的NAT映射配置项
+     *
+     * 查询租户的NAT映射配置项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNatMappingConfigsRequest 请求对象
+     * @return CompletableFuture<ListNatMappingConfigsResponse>
+     */
+    public CompletableFuture<ListNatMappingConfigsResponse> listNatMappingConfigsAsync(
+        ListNatMappingConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listNatMappingConfigs);
+    }
+
+    /**
+     * 查询租户的NAT映射配置项
+     *
+     * 查询租户的NAT映射配置项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNatMappingConfigsRequest 请求对象
+     * @return AsyncInvoker<ListNatMappingConfigsRequest, ListNatMappingConfigsResponse>
+     */
+    public AsyncInvoker<ListNatMappingConfigsRequest, ListNatMappingConfigsResponse> listNatMappingConfigsAsyncInvoker(
+        ListNatMappingConfigsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listNatMappingConfigs, hcClient);
+    }
+
+    /**
+     * 修改租户的NAT映射配置项
+     *
+     * 修改租户的NAT映射配置项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNatMappingConfigsRequest 请求对象
+     * @return CompletableFuture<UpdateNatMappingConfigsResponse>
+     */
+    public CompletableFuture<UpdateNatMappingConfigsResponse> updateNatMappingConfigsAsync(
+        UpdateNatMappingConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateNatMappingConfigs);
+    }
+
+    /**
+     * 修改租户的NAT映射配置项
+     *
+     * 修改租户的NAT映射配置项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNatMappingConfigsRequest 请求对象
+     * @return AsyncInvoker<UpdateNatMappingConfigsRequest, UpdateNatMappingConfigsResponse>
+     */
+    public AsyncInvoker<UpdateNatMappingConfigsRequest, UpdateNatMappingConfigsResponse> updateNatMappingConfigsAsyncInvoker(
+        UpdateNatMappingConfigsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateNatMappingConfigs, hcClient);
+    }
+
+    /**
      * 开通桌面上网功能
      *
      * 开通桌面上网功能。
@@ -2376,6 +4778,65 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ApplyDesktopsInternetRequest, ApplyDesktopsInternetResponse> applyDesktopsInternetAsyncInvoker(
         ApplyDesktopsInternetRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.applyDesktopsInternet, hcClient);
+    }
+
+    /**
+     * 开通上网功能
+     *
+     * 开通上网功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ApplyInternetRequest 请求对象
+     * @return CompletableFuture<ApplyInternetResponse>
+     */
+    public CompletableFuture<ApplyInternetResponse> applyInternetAsync(ApplyInternetRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.applyInternet);
+    }
+
+    /**
+     * 开通上网功能
+     *
+     * 开通上网功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ApplyInternetRequest 请求对象
+     * @return AsyncInvoker<ApplyInternetRequest, ApplyInternetResponse>
+     */
+    public AsyncInvoker<ApplyInternetRequest, ApplyInternetResponse> applyInternetAsyncInvoker(
+        ApplyInternetRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.applyInternet, hcClient);
+    }
+
+    /**
+     * 创建云办公带宽
+     *
+     * 创建按需云办公带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ApplySubnetBandwidthRequest 请求对象
+     * @return CompletableFuture<ApplySubnetBandwidthResponse>
+     */
+    public CompletableFuture<ApplySubnetBandwidthResponse> applySubnetBandwidthAsync(
+        ApplySubnetBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.applySubnetBandwidth);
+    }
+
+    /**
+     * 创建云办公带宽
+     *
+     * 创建按需云办公带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ApplySubnetBandwidthRequest 请求对象
+     * @return AsyncInvoker<ApplySubnetBandwidthRequest, ApplySubnetBandwidthResponse>
+     */
+    public AsyncInvoker<ApplySubnetBandwidthRequest, ApplySubnetBandwidthResponse> applySubnetBandwidthAsyncInvoker(
+        ApplySubnetBandwidthRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.applySubnetBandwidth, hcClient);
     }
 
     /**
@@ -2439,6 +4900,36 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 删除云办公带宽
+     *
+     * 删除云办公带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubnetBandwidthRequest 请求对象
+     * @return CompletableFuture<DeleteSubnetBandwidthResponse>
+     */
+    public CompletableFuture<DeleteSubnetBandwidthResponse> deleteSubnetBandwidthAsync(
+        DeleteSubnetBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteSubnetBandwidth);
+    }
+
+    /**
+     * 删除云办公带宽
+     *
+     * 删除云办公带宽。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSubnetBandwidthRequest 请求对象
+     * @return AsyncInvoker<DeleteSubnetBandwidthRequest, DeleteSubnetBandwidthResponse>
+     */
+    public AsyncInvoker<DeleteSubnetBandwidthRequest, DeleteSubnetBandwidthResponse> deleteSubnetBandwidthAsyncInvoker(
+        DeleteSubnetBandwidthRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteSubnetBandwidth, hcClient);
+    }
+
+    /**
      * 查询已绑定桌面和未绑定的Eip
      *
      * 查询已绑定桌面和未绑定的Eip。
@@ -2468,6 +4959,943 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询上网功能
+     *
+     * 查询上网功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInternetRequest 请求对象
+     * @return CompletableFuture<ListInternetResponse>
+     */
+    public CompletableFuture<ListInternetResponse> listInternetAsync(ListInternetRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listInternet);
+    }
+
+    /**
+     * 查询上网功能
+     *
+     * 查询上网功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInternetRequest 请求对象
+     * @return AsyncInvoker<ListInternetRequest, ListInternetResponse>
+     */
+    public AsyncInvoker<ListInternetRequest, ListInternetResponse> listInternetAsyncInvoker(
+        ListInternetRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listInternet, hcClient);
+    }
+
+    /**
+     * 查询Nat网关列表
+     *
+     * 查询NAT网关列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNatGatewaysRequest 请求对象
+     * @return CompletableFuture<ListNatGatewaysResponse>
+     */
+    public CompletableFuture<ListNatGatewaysResponse> listNatGatewaysAsync(ListNatGatewaysRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listNatGateways);
+    }
+
+    /**
+     * 查询Nat网关列表
+     *
+     * 查询NAT网关列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListNatGatewaysRequest 请求对象
+     * @return AsyncInvoker<ListNatGatewaysRequest, ListNatGatewaysResponse>
+     */
+    public AsyncInvoker<ListNatGatewaysRequest, ListNatGatewaysResponse> listNatGatewaysAsyncInvoker(
+        ListNatGatewaysRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listNatGateways, hcClient);
+    }
+
+    /**
+     * 查询端口列表
+     *
+     * 查询端口列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPortsRequest 请求对象
+     * @return CompletableFuture<ListPortsResponse>
+     */
+    public CompletableFuture<ListPortsResponse> listPortsAsync(ListPortsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listPorts);
+    }
+
+    /**
+     * 查询端口列表
+     *
+     * 查询端口列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPortsRequest 请求对象
+     * @return AsyncInvoker<ListPortsRequest, ListPortsResponse>
+     */
+    public AsyncInvoker<ListPortsRequest, ListPortsResponse> listPortsAsyncInvoker(ListPortsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listPorts, hcClient);
+    }
+
+    /**
+     * 查询云办公带宽列表
+     *
+     * 查询云办公带宽列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubnetBandwidthsRequest 请求对象
+     * @return CompletableFuture<ListSubnetBandwidthsResponse>
+     */
+    public CompletableFuture<ListSubnetBandwidthsResponse> listSubnetBandwidthsAsync(
+        ListSubnetBandwidthsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listSubnetBandwidths);
+    }
+
+    /**
+     * 查询云办公带宽列表
+     *
+     * 查询云办公带宽列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSubnetBandwidthsRequest 请求对象
+     * @return AsyncInvoker<ListSubnetBandwidthsRequest, ListSubnetBandwidthsResponse>
+     */
+    public AsyncInvoker<ListSubnetBandwidthsRequest, ListSubnetBandwidthsResponse> listSubnetBandwidthsAsyncInvoker(
+        ListSubnetBandwidthsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listSubnetBandwidths, hcClient);
+    }
+
+    /**
+     * 查询云办公带宽的控制配置
+     *
+     * 查询云办公带宽的控制配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSubnetBandwidthControlListRequest 请求对象
+     * @return CompletableFuture<ShowSubnetBandwidthControlListResponse>
+     */
+    public CompletableFuture<ShowSubnetBandwidthControlListResponse> showSubnetBandwidthControlListAsync(
+        ShowSubnetBandwidthControlListRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showSubnetBandwidthControlList);
+    }
+
+    /**
+     * 查询云办公带宽的控制配置
+     *
+     * 查询云办公带宽的控制配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSubnetBandwidthControlListRequest 请求对象
+     * @return AsyncInvoker<ShowSubnetBandwidthControlListRequest, ShowSubnetBandwidthControlListResponse>
+     */
+    public AsyncInvoker<ShowSubnetBandwidthControlListRequest, ShowSubnetBandwidthControlListResponse> showSubnetBandwidthControlListAsyncInvoker(
+        ShowSubnetBandwidthControlListRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showSubnetBandwidthControlList, hcClient);
+    }
+
+    /**
+     * 查询正在被使用的子网id列表
+     *
+     * 根据子网id列表查询正在被桌面使用的子网id，并且返回subnetId列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUsingSubnetsRequest 请求对象
+     * @return CompletableFuture<ShowUsingSubnetsResponse>
+     */
+    public CompletableFuture<ShowUsingSubnetsResponse> showUsingSubnetsAsync(ShowUsingSubnetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showUsingSubnets);
+    }
+
+    /**
+     * 查询正在被使用的子网id列表
+     *
+     * 根据子网id列表查询正在被桌面使用的子网id，并且返回subnetId列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUsingSubnetsRequest 请求对象
+     * @return AsyncInvoker<ShowUsingSubnetsRequest, ShowUsingSubnetsResponse>
+     */
+    public AsyncInvoker<ShowUsingSubnetsRequest, ShowUsingSubnetsResponse> showUsingSubnetsAsyncInvoker(
+        ShowUsingSubnetsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showUsingSubnets, hcClient);
+    }
+
+    /**
+     * 修改云办公带宽
+     *
+     * 修改云办公带宽
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSubnetBandwidthRequest 请求对象
+     * @return CompletableFuture<UpdateSubnetBandwidthResponse>
+     */
+    public CompletableFuture<UpdateSubnetBandwidthResponse> updateSubnetBandwidthAsync(
+        UpdateSubnetBandwidthRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateSubnetBandwidth);
+    }
+
+    /**
+     * 修改云办公带宽
+     *
+     * 修改云办公带宽
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSubnetBandwidthRequest 请求对象
+     * @return AsyncInvoker<UpdateSubnetBandwidthRequest, UpdateSubnetBandwidthResponse>
+     */
+    public AsyncInvoker<UpdateSubnetBandwidthRequest, UpdateSubnetBandwidthResponse> updateSubnetBandwidthAsyncInvoker(
+        UpdateSubnetBandwidthRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateSubnetBandwidth, hcClient);
+    }
+
+    /**
+     * 修改云办公带宽的控制配置
+     *
+     * 修改云办公带宽的控制配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSubnetBandwidthControlListRequest 请求对象
+     * @return CompletableFuture<UpdateSubnetBandwidthControlListResponse>
+     */
+    public CompletableFuture<UpdateSubnetBandwidthControlListResponse> updateSubnetBandwidthControlListAsync(
+        UpdateSubnetBandwidthControlListRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateSubnetBandwidthControlList);
+    }
+
+    /**
+     * 修改云办公带宽的控制配置
+     *
+     * 修改云办公带宽的控制配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSubnetBandwidthControlListRequest 请求对象
+     * @return AsyncInvoker<UpdateSubnetBandwidthControlListRequest, UpdateSubnetBandwidthControlListResponse>
+     */
+    public AsyncInvoker<UpdateSubnetBandwidthControlListRequest, UpdateSubnetBandwidthControlListResponse> updateSubnetBandwidthControlListAsyncInvoker(
+        UpdateSubnetBandwidthControlListRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateSubnetBandwidthControlList, hcClient);
+    }
+
+    /**
+     * 创建变更订单
+     *
+     * 变更规格、扩容磁盘[、按需转包周期生成订单](tag:inner)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateChangeOrderRequest 请求对象
+     * @return CompletableFuture<CreateChangeOrderResponse>
+     */
+    public CompletableFuture<CreateChangeOrderResponse> createChangeOrderAsync(CreateChangeOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createChangeOrder);
+    }
+
+    /**
+     * 创建变更订单
+     *
+     * 变更规格、扩容磁盘[、按需转包周期生成订单](tag:inner)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateChangeOrderRequest 请求对象
+     * @return AsyncInvoker<CreateChangeOrderRequest, CreateChangeOrderResponse>
+     */
+    public AsyncInvoker<CreateChangeOrderRequest, CreateChangeOrderResponse> createChangeOrderAsyncInvoker(
+        CreateChangeOrderRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createChangeOrder, hcClient);
+    }
+
+    /**
+     * 包周期桌面批量变更下单
+     *
+     * 包周期桌面批量变更下单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesktopBatchOrderRequest 请求对象
+     * @return CompletableFuture<CreateDesktopBatchOrderResponse>
+     */
+    public CompletableFuture<CreateDesktopBatchOrderResponse> createDesktopBatchOrderAsync(
+        CreateDesktopBatchOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createDesktopBatchOrder);
+    }
+
+    /**
+     * 包周期桌面批量变更下单
+     *
+     * 包周期桌面批量变更下单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesktopBatchOrderRequest 请求对象
+     * @return AsyncInvoker<CreateDesktopBatchOrderRequest, CreateDesktopBatchOrderResponse>
+     */
+    public AsyncInvoker<CreateDesktopBatchOrderRequest, CreateDesktopBatchOrderResponse> createDesktopBatchOrderAsyncInvoker(
+        CreateDesktopBatchOrderRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createDesktopBatchOrder, hcClient);
+    }
+
+    /**
+     * 创建桌面订单
+     *
+     * 创建桌面订单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesktopOrderRequest 请求对象
+     * @return CompletableFuture<CreateDesktopOrderResponse>
+     */
+    public CompletableFuture<CreateDesktopOrderResponse> createDesktopOrderAsync(CreateDesktopOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createDesktopOrder);
+    }
+
+    /**
+     * 创建桌面订单
+     *
+     * 创建桌面订单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesktopOrderRequest 请求对象
+     * @return AsyncInvoker<CreateDesktopOrderRequest, CreateDesktopOrderResponse>
+     */
+    public AsyncInvoker<CreateDesktopOrderRequest, CreateDesktopOrderResponse> createDesktopOrderAsyncInvoker(
+        CreateDesktopOrderRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createDesktopOrder, hcClient);
+    }
+
+    /**
+     * 包周期桌面池批量变更下单
+     *
+     * 包周期桌面池批量变更下单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesktopPoolChangeOrderRequest 请求对象
+     * @return CompletableFuture<CreateDesktopPoolChangeOrderResponse>
+     */
+    public CompletableFuture<CreateDesktopPoolChangeOrderResponse> createDesktopPoolChangeOrderAsync(
+        CreateDesktopPoolChangeOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createDesktopPoolChangeOrder);
+    }
+
+    /**
+     * 包周期桌面池批量变更下单
+     *
+     * 包周期桌面池批量变更下单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDesktopPoolChangeOrderRequest 请求对象
+     * @return AsyncInvoker<CreateDesktopPoolChangeOrderRequest, CreateDesktopPoolChangeOrderResponse>
+     */
+    public AsyncInvoker<CreateDesktopPoolChangeOrderRequest, CreateDesktopPoolChangeOrderResponse> createDesktopPoolChangeOrderAsyncInvoker(
+        CreateDesktopPoolChangeOrderRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createDesktopPoolChangeOrder, hcClient);
+    }
+
+    /**
+     * 包周期下单
+     *
+     * 包周期资源（桌面、磁盘[、云办公主机](tag:ZQ)）下订单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOrderRequest 请求对象
+     * @return CompletableFuture<CreateOrderResponse>
+     */
+    public CompletableFuture<CreateOrderResponse> createOrderAsync(CreateOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createOrder);
+    }
+
+    /**
+     * 包周期下单
+     *
+     * 包周期资源（桌面、磁盘[、云办公主机](tag:ZQ)）下订单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOrderRequest 请求对象
+     * @return AsyncInvoker<CreateOrderRequest, CreateOrderResponse>
+     */
+    public AsyncInvoker<CreateOrderRequest, CreateOrderResponse> createOrderAsyncInvoker(CreateOrderRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createOrder, hcClient);
+    }
+
+    /**
+     * 包周期云办公带宽变更下单
+     *
+     * 包周期云办公带宽变更下单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSubnetBandwidthChangeOrderRequest 请求对象
+     * @return CompletableFuture<CreateSubnetBandwidthChangeOrderResponse>
+     */
+    public CompletableFuture<CreateSubnetBandwidthChangeOrderResponse> createSubnetBandwidthChangeOrderAsync(
+        CreateSubnetBandwidthChangeOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createSubnetBandwidthChangeOrder);
+    }
+
+    /**
+     * 包周期云办公带宽变更下单
+     *
+     * 包周期云办公带宽变更下单。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSubnetBandwidthChangeOrderRequest 请求对象
+     * @return AsyncInvoker<CreateSubnetBandwidthChangeOrderRequest, CreateSubnetBandwidthChangeOrderResponse>
+     */
+    public AsyncInvoker<CreateSubnetBandwidthChangeOrderRequest, CreateSubnetBandwidthChangeOrderResponse> createSubnetBandwidthChangeOrderAsyncInvoker(
+        CreateSubnetBandwidthChangeOrderRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createSubnetBandwidthChangeOrder, hcClient);
+    }
+
+    /**
+     * 新增OU信息
+     *
+     * 该接口用于创建OU。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddOuRequest 请求对象
+     * @return CompletableFuture<AddOuResponse>
+     */
+    public CompletableFuture<AddOuResponse> addOuAsync(AddOuRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.addOu);
+    }
+
+    /**
+     * 新增OU信息
+     *
+     * 该接口用于创建OU。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddOuRequest 请求对象
+     * @return AsyncInvoker<AddOuRequest, AddOuResponse>
+     */
+    public AsyncInvoker<AddOuRequest, AddOuResponse> addOuAsyncInvoker(AddOuRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.addOu, hcClient);
+    }
+
+    /**
+     * 删除OU信息
+     *
+     * 该接口用于删除OU信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOuRequest 请求对象
+     * @return CompletableFuture<DeleteOuResponse>
+     */
+    public CompletableFuture<DeleteOuResponse> deleteOuAsync(DeleteOuRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteOu);
+    }
+
+    /**
+     * 删除OU信息
+     *
+     * 该接口用于删除OU信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOuRequest 请求对象
+     * @return AsyncInvoker<DeleteOuRequest, DeleteOuResponse>
+     */
+    public AsyncInvoker<DeleteOuRequest, DeleteOuResponse> deleteOuAsyncInvoker(DeleteOuRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteOu, hcClient);
+    }
+
+    /**
+     * 查询OU下用户信息
+     *
+     * 查询OU下用户信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAdOuUsersRequest 请求对象
+     * @return CompletableFuture<ListAdOuUsersResponse>
+     */
+    public CompletableFuture<ListAdOuUsersResponse> listAdOuUsersAsync(ListAdOuUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listAdOuUsers);
+    }
+
+    /**
+     * 查询OU下用户信息
+     *
+     * 查询OU下用户信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAdOuUsersRequest 请求对象
+     * @return AsyncInvoker<ListAdOuUsersRequest, ListAdOuUsersResponse>
+     */
+    public AsyncInvoker<ListAdOuUsersRequest, ListAdOuUsersResponse> listAdOuUsersAsyncInvoker(
+        ListAdOuUsersRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listAdOuUsers, hcClient);
+    }
+
+    /**
+     * 查询OU信息
+     *
+     * 查询OU信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAdOusRequest 请求对象
+     * @return CompletableFuture<ListAdOusResponse>
+     */
+    public CompletableFuture<ListAdOusResponse> listAdOusAsync(ListAdOusRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listAdOus);
+    }
+
+    /**
+     * 查询OU信息
+     *
+     * 查询OU信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAdOusRequest 请求对象
+     * @return AsyncInvoker<ListAdOusRequest, ListAdOusResponse>
+     */
+    public AsyncInvoker<ListAdOusRequest, ListAdOusResponse> listAdOusAsyncInvoker(ListAdOusRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listAdOus, hcClient);
+    }
+
+    /**
+     * 查询OU信息
+     *
+     * 查询OU信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOuDetailsRequest 请求对象
+     * @return CompletableFuture<ListOuDetailsResponse>
+     */
+    public CompletableFuture<ListOuDetailsResponse> listOuDetailsAsync(ListOuDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listOuDetails);
+    }
+
+    /**
+     * 查询OU信息
+     *
+     * 查询OU信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOuDetailsRequest 请求对象
+     * @return AsyncInvoker<ListOuDetailsRequest, ListOuDetailsResponse>
+     */
+    public AsyncInvoker<ListOuDetailsRequest, ListOuDetailsResponse> listOuDetailsAsyncInvoker(
+        ListOuDetailsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listOuDetails, hcClient);
+    }
+
+    /**
+     * 更新OU信息
+     *
+     * 更新OU信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOuInfoRequest 请求对象
+     * @return CompletableFuture<UpdateOuInfoResponse>
+     */
+    public CompletableFuture<UpdateOuInfoResponse> updateOuInfoAsync(UpdateOuInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateOuInfo);
+    }
+
+    /**
+     * 更新OU信息
+     *
+     * 更新OU信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateOuInfoRequest 请求对象
+     * @return AsyncInvoker<UpdateOuInfoRequest, UpdateOuInfoResponse>
+     */
+    public AsyncInvoker<UpdateOuInfoRequest, UpdateOuInfoResponse> updateOuInfoAsyncInvoker(
+        UpdateOuInfoRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateOuInfo, hcClient);
+    }
+
+    /**
+     * 修改策略组应用对象
+     *
+     * 批量增加、删除应用对象到指定策略组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateTargetOfPolicyGroupRequest 请求对象
+     * @return CompletableFuture<BatchUpdateTargetOfPolicyGroupResponse>
+     */
+    public CompletableFuture<BatchUpdateTargetOfPolicyGroupResponse> batchUpdateTargetOfPolicyGroupAsync(
+        BatchUpdateTargetOfPolicyGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchUpdateTargetOfPolicyGroup);
+    }
+
+    /**
+     * 修改策略组应用对象
+     *
+     * 批量增加、删除应用对象到指定策略组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateTargetOfPolicyGroupRequest 请求对象
+     * @return AsyncInvoker<BatchUpdateTargetOfPolicyGroupRequest, BatchUpdateTargetOfPolicyGroupResponse>
+     */
+    public AsyncInvoker<BatchUpdateTargetOfPolicyGroupRequest, BatchUpdateTargetOfPolicyGroupResponse> batchUpdateTargetOfPolicyGroupAsyncInvoker(
+        BatchUpdateTargetOfPolicyGroupRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchUpdateTargetOfPolicyGroup, hcClient);
+    }
+
+    /**
+     * 新增策略组
+     *
+     * 新增策略组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePolicyGroupRequest 请求对象
+     * @return CompletableFuture<CreatePolicyGroupResponse>
+     */
+    public CompletableFuture<CreatePolicyGroupResponse> createPolicyGroupAsync(CreatePolicyGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createPolicyGroup);
+    }
+
+    /**
+     * 新增策略组
+     *
+     * 新增策略组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePolicyGroupRequest 请求对象
+     * @return AsyncInvoker<CreatePolicyGroupRequest, CreatePolicyGroupResponse>
+     */
+    public AsyncInvoker<CreatePolicyGroupRequest, CreatePolicyGroupResponse> createPolicyGroupAsyncInvoker(
+        CreatePolicyGroupRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createPolicyGroup, hcClient);
+    }
+
+    /**
+     * 删除策略组
+     *
+     * 删除指定策略组，包含策略组对应的策略信息以及应用对象信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePolicyGroupRequest 请求对象
+     * @return CompletableFuture<DeletePolicyGroupResponse>
+     */
+    public CompletableFuture<DeletePolicyGroupResponse> deletePolicyGroupAsync(DeletePolicyGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deletePolicyGroup);
+    }
+
+    /**
+     * 删除策略组
+     *
+     * 删除指定策略组，包含策略组对应的策略信息以及应用对象信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeletePolicyGroupRequest 请求对象
+     * @return AsyncInvoker<DeletePolicyGroupRequest, DeletePolicyGroupResponse>
+     */
+    public AsyncInvoker<DeletePolicyGroupRequest, DeletePolicyGroupResponse> deletePolicyGroupAsyncInvoker(
+        DeletePolicyGroupRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deletePolicyGroup, hcClient);
+    }
+
+    /**
+     * 查询初始策略项
+     *
+     * 查询初始策略项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOriginalPolicyInfoRequest 请求对象
+     * @return CompletableFuture<ListOriginalPolicyInfoResponse>
+     */
+    public CompletableFuture<ListOriginalPolicyInfoResponse> listOriginalPolicyInfoAsync(
+        ListOriginalPolicyInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listOriginalPolicyInfo);
+    }
+
+    /**
+     * 查询初始策略项
+     *
+     * 查询初始策略项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOriginalPolicyInfoRequest 请求对象
+     * @return AsyncInvoker<ListOriginalPolicyInfoRequest, ListOriginalPolicyInfoResponse>
+     */
+    public AsyncInvoker<ListOriginalPolicyInfoRequest, ListOriginalPolicyInfoResponse> listOriginalPolicyInfoAsyncInvoker(
+        ListOriginalPolicyInfoRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listOriginalPolicyInfo, hcClient);
+    }
+
+    /**
+     * 查询策略组中的策略项
+     *
+     * 查询指定策略组内的策略项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoliciesOfPolicyGroupRequest 请求对象
+     * @return CompletableFuture<ListPoliciesOfPolicyGroupResponse>
+     */
+    public CompletableFuture<ListPoliciesOfPolicyGroupResponse> listPoliciesOfPolicyGroupAsync(
+        ListPoliciesOfPolicyGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listPoliciesOfPolicyGroup);
+    }
+
+    /**
+     * 查询策略组中的策略项
+     *
+     * 查询指定策略组内的策略项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPoliciesOfPolicyGroupRequest 请求对象
+     * @return AsyncInvoker<ListPoliciesOfPolicyGroupRequest, ListPoliciesOfPolicyGroupResponse>
+     */
+    public AsyncInvoker<ListPoliciesOfPolicyGroupRequest, ListPoliciesOfPolicyGroupResponse> listPoliciesOfPolicyGroupAsyncInvoker(
+        ListPoliciesOfPolicyGroupRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listPoliciesOfPolicyGroup, hcClient);
+    }
+
+    /**
+     * 查询策略组
+     *
+     * 根据策略组ID查询策略组详细信息，包含策略信息以及应用对象信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyDetailInfoByIdRequest 请求对象
+     * @return CompletableFuture<ListPolicyDetailInfoByIdResponse>
+     */
+    public CompletableFuture<ListPolicyDetailInfoByIdResponse> listPolicyDetailInfoByIdAsync(
+        ListPolicyDetailInfoByIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listPolicyDetailInfoById);
+    }
+
+    /**
+     * 查询策略组
+     *
+     * 根据策略组ID查询策略组详细信息，包含策略信息以及应用对象信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyDetailInfoByIdRequest 请求对象
+     * @return AsyncInvoker<ListPolicyDetailInfoByIdRequest, ListPolicyDetailInfoByIdResponse>
+     */
+    public AsyncInvoker<ListPolicyDetailInfoByIdRequest, ListPolicyDetailInfoByIdResponse> listPolicyDetailInfoByIdAsyncInvoker(
+        ListPolicyDetailInfoByIdRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listPolicyDetailInfoById, hcClient);
+    }
+
+    /**
+     * 查询策略组列表
+     *
+     * 查询策略组概要信息列表，不包含策略信息以及应用对象信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyGroupRequest 请求对象
+     * @return CompletableFuture<ListPolicyGroupResponse>
+     */
+    public CompletableFuture<ListPolicyGroupResponse> listPolicyGroupAsync(ListPolicyGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listPolicyGroup);
+    }
+
+    /**
+     * 查询策略组列表
+     *
+     * 查询策略组概要信息列表，不包含策略信息以及应用对象信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyGroupRequest 请求对象
+     * @return AsyncInvoker<ListPolicyGroupRequest, ListPolicyGroupResponse>
+     */
+    public AsyncInvoker<ListPolicyGroupRequest, ListPolicyGroupResponse> listPolicyGroupAsyncInvoker(
+        ListPolicyGroupRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listPolicyGroup, hcClient);
+    }
+
+    /**
+     * 查询策略组详情列表
+     *
+     * 包含策略信息以及应用对象的信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyGroupInfoRequest 请求对象
+     * @return CompletableFuture<ListPolicyGroupInfoResponse>
+     */
+    public CompletableFuture<ListPolicyGroupInfoResponse> listPolicyGroupInfoAsync(ListPolicyGroupInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listPolicyGroupInfo);
+    }
+
+    /**
+     * 查询策略组详情列表
+     *
+     * 包含策略信息以及应用对象的信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPolicyGroupInfoRequest 请求对象
+     * @return AsyncInvoker<ListPolicyGroupInfoRequest, ListPolicyGroupInfoResponse>
+     */
+    public AsyncInvoker<ListPolicyGroupInfoRequest, ListPolicyGroupInfoResponse> listPolicyGroupInfoAsyncInvoker(
+        ListPolicyGroupInfoRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listPolicyGroupInfo, hcClient);
+    }
+
+    /**
+     * 查询策略组应用对象
+     *
+     * 查询指定策略组所应用的对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTargetOfPolicyGroupRequest 请求对象
+     * @return CompletableFuture<ListTargetOfPolicyGroupResponse>
+     */
+    public CompletableFuture<ListTargetOfPolicyGroupResponse> listTargetOfPolicyGroupAsync(
+        ListTargetOfPolicyGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listTargetOfPolicyGroup);
+    }
+
+    /**
+     * 查询策略组应用对象
+     *
+     * 查询指定策略组所应用的对象。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTargetOfPolicyGroupRequest 请求对象
+     * @return AsyncInvoker<ListTargetOfPolicyGroupRequest, ListTargetOfPolicyGroupResponse>
+     */
+    public AsyncInvoker<ListTargetOfPolicyGroupRequest, ListTargetOfPolicyGroupResponse> listTargetOfPolicyGroupAsyncInvoker(
+        ListTargetOfPolicyGroupRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listTargetOfPolicyGroup, hcClient);
+    }
+
+    /**
+     * 修改策略组中的策略项
+     *
+     * 修改一个策略组的部分或者所有策略项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePoliciesOfPolicyGroupRequest 请求对象
+     * @return CompletableFuture<UpdatePoliciesOfPolicyGroupResponse>
+     */
+    public CompletableFuture<UpdatePoliciesOfPolicyGroupResponse> updatePoliciesOfPolicyGroupAsync(
+        UpdatePoliciesOfPolicyGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updatePoliciesOfPolicyGroup);
+    }
+
+    /**
+     * 修改策略组中的策略项
+     *
+     * 修改一个策略组的部分或者所有策略项。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePoliciesOfPolicyGroupRequest 请求对象
+     * @return AsyncInvoker<UpdatePoliciesOfPolicyGroupRequest, UpdatePoliciesOfPolicyGroupResponse>
+     */
+    public AsyncInvoker<UpdatePoliciesOfPolicyGroupRequest, UpdatePoliciesOfPolicyGroupResponse> updatePoliciesOfPolicyGroupAsyncInvoker(
+        UpdatePoliciesOfPolicyGroupRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updatePoliciesOfPolicyGroup, hcClient);
+    }
+
+    /**
+     * 修改策略组
+     *
+     * 修改指定策略组的信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePolicyGroupRequest 请求对象
+     * @return CompletableFuture<UpdatePolicyGroupResponse>
+     */
+    public CompletableFuture<UpdatePolicyGroupResponse> updatePolicyGroupAsync(UpdatePolicyGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updatePolicyGroup);
+    }
+
+    /**
+     * 修改策略组
+     *
+     * 修改指定策略组的信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdatePolicyGroupRequest 请求对象
+     * @return AsyncInvoker<UpdatePolicyGroupRequest, UpdatePolicyGroupResponse>
+     */
+    public AsyncInvoker<UpdatePolicyGroupRequest, UpdatePolicyGroupResponse> updatePolicyGroupAsyncInvoker(
+        UpdatePolicyGroupRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updatePolicyGroup, hcClient);
+    }
+
+    /**
+     * 查询可订购小时包类型
+     *
+     * 该接口用于查询可订购小时包类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHourPackagesTypeRequest 请求对象
+     * @return CompletableFuture<ListHourPackagesTypeResponse>
+     */
+    public CompletableFuture<ListHourPackagesTypeResponse> listHourPackagesTypeAsync(
+        ListHourPackagesTypeRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listHourPackagesType);
+    }
+
+    /**
+     * 查询可订购小时包类型
+     *
+     * 该接口用于查询可订购小时包类型。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListHourPackagesTypeRequest 请求对象
+     * @return AsyncInvoker<ListHourPackagesTypeRequest, ListHourPackagesTypeResponse>
+     */
+    public AsyncInvoker<ListHourPackagesTypeRequest, ListHourPackagesTypeResponse> listHourPackagesTypeAsyncInvoker(
+        ListHourPackagesTypeRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listHourPackagesType, hcClient);
+    }
+
+    /**
      * 查询产品套餐列表
      *
      * 该接口用于查询云桌面支持的产品套餐列表。
@@ -2494,6 +5922,122 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ListProductsRequest, ListProductsResponse> listProductsAsyncInvoker(
         ListProductsRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.listProducts, hcClient);
+    }
+
+    /**
+     * 查询协同套餐列表
+     *
+     * 该接口用于查询协同套餐列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSharerProductsRequest 请求对象
+     * @return CompletableFuture<ListSharerProductsResponse>
+     */
+    public CompletableFuture<ListSharerProductsResponse> listSharerProductsAsync(ListSharerProductsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listSharerProducts);
+    }
+
+    /**
+     * 查询协同套餐列表
+     *
+     * 该接口用于查询协同套餐列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSharerProductsRequest 请求对象
+     * @return AsyncInvoker<ListSharerProductsRequest, ListSharerProductsResponse>
+     */
+    public AsyncInvoker<ListSharerProductsRequest, ListSharerProductsResponse> listSharerProductsAsyncInvoker(
+        ListSharerProductsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listSharerProducts, hcClient);
+    }
+
+    /**
+     * 查询租户功能状态
+     *
+     * 查询租户功能状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantProfilesRequest 请求对象
+     * @return CompletableFuture<ListTenantProfilesResponse>
+     */
+    public CompletableFuture<ListTenantProfilesResponse> listTenantProfilesAsync(ListTenantProfilesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listTenantProfiles);
+    }
+
+    /**
+     * 查询租户功能状态
+     *
+     * 查询租户功能状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantProfilesRequest 请求对象
+     * @return AsyncInvoker<ListTenantProfilesRequest, ListTenantProfilesResponse>
+     */
+    public AsyncInvoker<ListTenantProfilesRequest, ListTenantProfilesResponse> listTenantProfilesAsyncInvoker(
+        ListTenantProfilesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listTenantProfiles, hcClient);
+    }
+
+    /**
+     * 启禁用租户功能
+     *
+     * 启禁用租户功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTenantProfileRequest 请求对象
+     * @return CompletableFuture<UpdateTenantProfileResponse>
+     */
+    public CompletableFuture<UpdateTenantProfileResponse> updateTenantProfileAsync(UpdateTenantProfileRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateTenantProfile);
+    }
+
+    /**
+     * 启禁用租户功能
+     *
+     * 启禁用租户功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTenantProfileRequest 请求对象
+     * @return AsyncInvoker<UpdateTenantProfileRequest, UpdateTenantProfileResponse>
+     */
+    public AsyncInvoker<UpdateTenantProfileRequest, UpdateTenantProfileResponse> updateTenantProfileAsyncInvoker(
+        UpdateTenantProfileRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateTenantProfile, hcClient);
+    }
+
+    /**
+     * 查询租户单个站点配额详情
+     *
+     * 查询租户单个站点配额详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowQuotaDetailsRequest 请求对象
+     * @return CompletableFuture<ShowQuotaDetailsResponse>
+     */
+    public CompletableFuture<ShowQuotaDetailsResponse> showQuotaDetailsAsync(ShowQuotaDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showQuotaDetails);
+    }
+
+    /**
+     * 查询租户单个站点配额详情
+     *
+     * 查询租户单个站点配额详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowQuotaDetailsRequest 请求对象
+     * @return AsyncInvoker<ShowQuotaDetailsRequest, ShowQuotaDetailsResponse>
+     */
+    public AsyncInvoker<ShowQuotaDetailsRequest, ShowQuotaDetailsResponse> showQuotaDetailsAsyncInvoker(
+        ShowQuotaDetailsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showQuotaDetails, hcClient);
     }
 
     /**
@@ -2558,6 +6102,7 @@ public class WorkspaceAsyncClient {
      * 创建定时任务
      *
      * 创建定时任务。
+     * 注:需通过开通委托功能接口先对云服务进行授权才可以使用该功能
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2573,6 +6118,7 @@ public class WorkspaceAsyncClient {
      * 创建定时任务
      *
      * 创建定时任务。
+     * 注:需通过开通委托功能接口先对云服务进行授权才可以使用该功能
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2734,6 +6280,35 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 获取时区配置
+     *
+     * 获取时区配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTimeZonesRequest 请求对象
+     * @return CompletableFuture<ListTimeZonesResponse>
+     */
+    public CompletableFuture<ListTimeZonesResponse> listTimeZonesAsync(ListTimeZonesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listTimeZones);
+    }
+
+    /**
+     * 获取时区配置
+     *
+     * 获取时区配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTimeZonesRequest 请求对象
+     * @return AsyncInvoker<ListTimeZonesRequest, ListTimeZonesResponse>
+     */
+    public AsyncInvoker<ListTimeZonesRequest, ListTimeZonesResponse> listTimeZonesAsyncInvoker(
+        ListTimeZonesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listTimeZones, hcClient);
+    }
+
+    /**
      * 查询定时任务详情
      *
      * 查询定时任务详情。
@@ -2790,6 +6365,885 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<UpdateScheduledTasksRequest, UpdateScheduledTasksResponse> updateScheduledTasksAsyncInvoker(
         UpdateScheduledTasksRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.updateScheduledTasks, hcClient);
+    }
+
+    /**
+     * 批量删除录屏记录
+     *
+     * 批量删除录屏记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteScreenRecordsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteScreenRecordsResponse>
+     */
+    public CompletableFuture<BatchDeleteScreenRecordsResponse> batchDeleteScreenRecordsAsync(
+        BatchDeleteScreenRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchDeleteScreenRecords);
+    }
+
+    /**
+     * 批量删除录屏记录
+     *
+     * 批量删除录屏记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteScreenRecordsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteScreenRecordsRequest, BatchDeleteScreenRecordsResponse>
+     */
+    public AsyncInvoker<BatchDeleteScreenRecordsRequest, BatchDeleteScreenRecordsResponse> batchDeleteScreenRecordsAsyncInvoker(
+        BatchDeleteScreenRecordsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchDeleteScreenRecords, hcClient);
+    }
+
+    /**
+     * 查询桌面关键事件列表
+     *
+     * 查询桌面关键事件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopOperationsRequest 请求对象
+     * @return CompletableFuture<ListDesktopOperationsResponse>
+     */
+    public CompletableFuture<ListDesktopOperationsResponse> listDesktopOperationsAsync(
+        ListDesktopOperationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopOperations);
+    }
+
+    /**
+     * 查询桌面关键事件列表
+     *
+     * 查询桌面关键事件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopOperationsRequest 请求对象
+     * @return AsyncInvoker<ListDesktopOperationsRequest, ListDesktopOperationsResponse>
+     */
+    public AsyncInvoker<ListDesktopOperationsRequest, ListDesktopOperationsResponse> listDesktopOperationsAsyncInvoker(
+        ListDesktopOperationsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopOperations, hcClient);
+    }
+
+    /**
+     * 查询下载地址列表
+     *
+     * 查询下载地址列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDownloadAddressRequest 请求对象
+     * @return CompletableFuture<ListDownloadAddressResponse>
+     */
+    public CompletableFuture<ListDownloadAddressResponse> listDownloadAddressAsync(ListDownloadAddressRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDownloadAddress);
+    }
+
+    /**
+     * 查询下载地址列表
+     *
+     * 查询下载地址列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDownloadAddressRequest 请求对象
+     * @return AsyncInvoker<ListDownloadAddressRequest, ListDownloadAddressResponse>
+     */
+    public AsyncInvoker<ListDownloadAddressRequest, ListDownloadAddressResponse> listDownloadAddressAsyncInvoker(
+        ListDownloadAddressRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listDownloadAddress, hcClient);
+    }
+
+    /**
+     * 查询录屏记录列表
+     *
+     * 查询录屏记录列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScreenRecordsRequest 请求对象
+     * @return CompletableFuture<ListScreenRecordsResponse>
+     */
+    public CompletableFuture<ListScreenRecordsResponse> listScreenRecordsAsync(ListScreenRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listScreenRecords);
+    }
+
+    /**
+     * 查询录屏记录列表
+     *
+     * 查询录屏记录列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScreenRecordsRequest 请求对象
+     * @return AsyncInvoker<ListScreenRecordsRequest, ListScreenRecordsResponse>
+     */
+    public AsyncInvoker<ListScreenRecordsRequest, ListScreenRecordsResponse> listScreenRecordsAsyncInvoker(
+        ListScreenRecordsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listScreenRecords, hcClient);
+    }
+
+    /**
+     * 查询录屏详情
+     *
+     * 查询录屏详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowScreenRecordRequest 请求对象
+     * @return CompletableFuture<ShowScreenRecordResponse>
+     */
+    public CompletableFuture<ShowScreenRecordResponse> showScreenRecordAsync(ShowScreenRecordRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showScreenRecord);
+    }
+
+    /**
+     * 查询录屏详情
+     *
+     * 查询录屏详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowScreenRecordRequest 请求对象
+     * @return AsyncInvoker<ShowScreenRecordRequest, ShowScreenRecordResponse>
+     */
+    public AsyncInvoker<ShowScreenRecordRequest, ShowScreenRecordResponse> showScreenRecordAsyncInvoker(
+        ShowScreenRecordRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showScreenRecord, hcClient);
+    }
+
+    /**
+     * 新增脚本
+     *
+     * 新增脚本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateScriptRequest 请求对象
+     * @return CompletableFuture<CreateScriptResponse>
+     */
+    public CompletableFuture<CreateScriptResponse> createScriptAsync(CreateScriptRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createScript);
+    }
+
+    /**
+     * 新增脚本
+     *
+     * 新增脚本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateScriptRequest 请求对象
+     * @return AsyncInvoker<CreateScriptRequest, CreateScriptResponse>
+     */
+    public AsyncInvoker<CreateScriptRequest, CreateScriptResponse> createScriptAsyncInvoker(
+        CreateScriptRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.createScript, hcClient);
+    }
+
+    /**
+     * 删除脚本
+     *
+     * 删除脚本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScriptRequest 请求对象
+     * @return CompletableFuture<DeleteScriptResponse>
+     */
+    public CompletableFuture<DeleteScriptResponse> deleteScriptAsync(DeleteScriptRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteScript);
+    }
+
+    /**
+     * 删除脚本
+     *
+     * 删除脚本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScriptRequest 请求对象
+     * @return AsyncInvoker<DeleteScriptRequest, DeleteScriptResponse>
+     */
+    public AsyncInvoker<DeleteScriptRequest, DeleteScriptResponse> deleteScriptAsyncInvoker(
+        DeleteScriptRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteScript, hcClient);
+    }
+
+    /**
+     * 批量执行脚本或命令
+     *
+     * 批量执行脚本或命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteScriptOrCommandRequest 请求对象
+     * @return CompletableFuture<ExecuteScriptOrCommandResponse>
+     */
+    public CompletableFuture<ExecuteScriptOrCommandResponse> executeScriptOrCommandAsync(
+        ExecuteScriptOrCommandRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.executeScriptOrCommand);
+    }
+
+    /**
+     * 批量执行脚本或命令
+     *
+     * 批量执行脚本或命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteScriptOrCommandRequest 请求对象
+     * @return AsyncInvoker<ExecuteScriptOrCommandRequest, ExecuteScriptOrCommandResponse>
+     */
+    public AsyncInvoker<ExecuteScriptOrCommandRequest, ExecuteScriptOrCommandResponse> executeScriptOrCommandAsyncInvoker(
+        ExecuteScriptOrCommandRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.executeScriptOrCommand, hcClient);
+    }
+
+    /**
+     * 查询脚本执行记录列表
+     *
+     * 查询脚本执行记录列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScriptRecordsRequest 请求对象
+     * @return CompletableFuture<ListScriptRecordsResponse>
+     */
+    public CompletableFuture<ListScriptRecordsResponse> listScriptRecordsAsync(ListScriptRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listScriptRecords);
+    }
+
+    /**
+     * 查询脚本执行记录列表
+     *
+     * 查询脚本执行记录列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScriptRecordsRequest 请求对象
+     * @return AsyncInvoker<ListScriptRecordsRequest, ListScriptRecordsResponse>
+     */
+    public AsyncInvoker<ListScriptRecordsRequest, ListScriptRecordsResponse> listScriptRecordsAsyncInvoker(
+        ListScriptRecordsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listScriptRecords, hcClient);
+    }
+
+    /**
+     * 查询脚本任务列表
+     *
+     * 查询脚本任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScriptTasksRequest 请求对象
+     * @return CompletableFuture<ListScriptTasksResponse>
+     */
+    public CompletableFuture<ListScriptTasksResponse> listScriptTasksAsync(ListScriptTasksRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listScriptTasks);
+    }
+
+    /**
+     * 查询脚本任务列表
+     *
+     * 查询脚本任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScriptTasksRequest 请求对象
+     * @return AsyncInvoker<ListScriptTasksRequest, ListScriptTasksResponse>
+     */
+    public AsyncInvoker<ListScriptTasksRequest, ListScriptTasksResponse> listScriptTasksAsyncInvoker(
+        ListScriptTasksRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listScriptTasks, hcClient);
+    }
+
+    /**
+     * 查询脚本列表
+     *
+     * 查询脚本列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScriptsRequest 请求对象
+     * @return CompletableFuture<ListScriptsResponse>
+     */
+    public CompletableFuture<ListScriptsResponse> listScriptsAsync(ListScriptsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listScripts);
+    }
+
+    /**
+     * 查询脚本列表
+     *
+     * 查询脚本列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScriptsRequest 请求对象
+     * @return AsyncInvoker<ListScriptsRequest, ListScriptsResponse>
+     */
+    public AsyncInvoker<ListScriptsRequest, ListScriptsResponse> listScriptsAsyncInvoker(ListScriptsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listScripts, hcClient);
+    }
+
+    /**
+     * 重试脚本或执行脚本失败的任务
+     *
+     * 重试脚本或执行脚本失败的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryScriptExecutionRequest 请求对象
+     * @return CompletableFuture<RetryScriptExecutionResponse>
+     */
+    public CompletableFuture<RetryScriptExecutionResponse> retryScriptExecutionAsync(
+        RetryScriptExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.retryScriptExecution);
+    }
+
+    /**
+     * 重试脚本或执行脚本失败的任务
+     *
+     * 重试脚本或执行脚本失败的任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RetryScriptExecutionRequest 请求对象
+     * @return AsyncInvoker<RetryScriptExecutionRequest, RetryScriptExecutionResponse>
+     */
+    public AsyncInvoker<RetryScriptExecutionRequest, RetryScriptExecutionResponse> retryScriptExecutionAsyncInvoker(
+        RetryScriptExecutionRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.retryScriptExecution, hcClient);
+    }
+
+    /**
+     * 查询脚本详情
+     *
+     * 查询脚本详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowScriptDetailRequest 请求对象
+     * @return CompletableFuture<ShowScriptDetailResponse>
+     */
+    public CompletableFuture<ShowScriptDetailResponse> showScriptDetailAsync(ShowScriptDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showScriptDetail);
+    }
+
+    /**
+     * 查询脚本详情
+     *
+     * 查询脚本详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowScriptDetailRequest 请求对象
+     * @return AsyncInvoker<ShowScriptDetailRequest, ShowScriptDetailResponse>
+     */
+    public AsyncInvoker<ShowScriptDetailRequest, ShowScriptDetailResponse> showScriptDetailAsyncInvoker(
+        ShowScriptDetailRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showScriptDetail, hcClient);
+    }
+
+    /**
+     * 查询脚本执行记录详情
+     *
+     * 查询脚本执行记录详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowScriptRecordDetailRequest 请求对象
+     * @return CompletableFuture<ShowScriptRecordDetailResponse>
+     */
+    public CompletableFuture<ShowScriptRecordDetailResponse> showScriptRecordDetailAsync(
+        ShowScriptRecordDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showScriptRecordDetail);
+    }
+
+    /**
+     * 查询脚本执行记录详情
+     *
+     * 查询脚本执行记录详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowScriptRecordDetailRequest 请求对象
+     * @return AsyncInvoker<ShowScriptRecordDetailRequest, ShowScriptRecordDetailResponse>
+     */
+    public AsyncInvoker<ShowScriptRecordDetailRequest, ShowScriptRecordDetailResponse> showScriptRecordDetailAsyncInvoker(
+        ShowScriptRecordDetailRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showScriptRecordDetail, hcClient);
+    }
+
+    /**
+     * 停止脚本或者命令执行任务
+     *
+     * 停止脚本或者命令执行任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopScriptExecutionRequest 请求对象
+     * @return CompletableFuture<StopScriptExecutionResponse>
+     */
+    public CompletableFuture<StopScriptExecutionResponse> stopScriptExecutionAsync(StopScriptExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.stopScriptExecution);
+    }
+
+    /**
+     * 停止脚本或者命令执行任务
+     *
+     * 停止脚本或者命令执行任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopScriptExecutionRequest 请求对象
+     * @return AsyncInvoker<StopScriptExecutionRequest, StopScriptExecutionResponse>
+     */
+    public AsyncInvoker<StopScriptExecutionRequest, StopScriptExecutionResponse> stopScriptExecutionAsyncInvoker(
+        StopScriptExecutionRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.stopScriptExecution, hcClient);
+    }
+
+    /**
+     * 更新脚本
+     *
+     * 更新脚本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScriptRequest 请求对象
+     * @return CompletableFuture<UpdateScriptResponse>
+     */
+    public CompletableFuture<UpdateScriptResponse> updateScriptAsync(UpdateScriptRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateScript);
+    }
+
+    /**
+     * 更新脚本
+     *
+     * 更新脚本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScriptRequest 请求对象
+     * @return AsyncInvoker<UpdateScriptRequest, UpdateScriptResponse>
+     */
+    public AsyncInvoker<UpdateScriptRequest, UpdateScriptResponse> updateScriptAsyncInvoker(
+        UpdateScriptRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateScript, hcClient);
+    }
+
+    /**
+     * 桌面购买附属资源
+     *
+     * 存量桌面购买附属资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDesktopSubResourcesRequest 请求对象
+     * @return CompletableFuture<AddDesktopSubResourcesResponse>
+     */
+    public CompletableFuture<AddDesktopSubResourcesResponse> addDesktopSubResourcesAsync(
+        AddDesktopSubResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.addDesktopSubResources);
+    }
+
+    /**
+     * 桌面购买附属资源
+     *
+     * 存量桌面购买附属资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDesktopSubResourcesRequest 请求对象
+     * @return AsyncInvoker<AddDesktopSubResourcesRequest, AddDesktopSubResourcesResponse>
+     */
+    public AsyncInvoker<AddDesktopSubResourcesRequest, AddDesktopSubResourcesResponse> addDesktopSubResourcesAsyncInvoker(
+        AddDesktopSubResourcesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.addDesktopSubResources, hcClient);
+    }
+
+    /**
+     * 桌面删除附属资源
+     *
+     * 桌面删除附属资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesktopSubResourcesRequest 请求对象
+     * @return CompletableFuture<DeleteDesktopSubResourcesResponse>
+     */
+    public CompletableFuture<DeleteDesktopSubResourcesResponse> deleteDesktopSubResourcesAsync(
+        DeleteDesktopSubResourcesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteDesktopSubResources);
+    }
+
+    /**
+     * 桌面删除附属资源
+     *
+     * 桌面删除附属资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDesktopSubResourcesRequest 请求对象
+     * @return AsyncInvoker<DeleteDesktopSubResourcesRequest, DeleteDesktopSubResourcesResponse>
+     */
+    public AsyncInvoker<DeleteDesktopSubResourcesRequest, DeleteDesktopSubResourcesResponse> deleteDesktopSubResourcesAsyncInvoker(
+        DeleteDesktopSubResourcesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteDesktopSubResources, hcClient);
+    }
+
+    /**
+     * 查询协同桌面默认用户配置
+     *
+     * 查询协同桌面默认用户配置（当前功能公测中,需要使用请联系管理员申请使用）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowShareSpaceConfigRequest 请求对象
+     * @return CompletableFuture<ShowShareSpaceConfigResponse>
+     */
+    public CompletableFuture<ShowShareSpaceConfigResponse> showShareSpaceConfigAsync(
+        ShowShareSpaceConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showShareSpaceConfig);
+    }
+
+    /**
+     * 查询协同桌面默认用户配置
+     *
+     * 查询协同桌面默认用户配置（当前功能公测中,需要使用请联系管理员申请使用）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowShareSpaceConfigRequest 请求对象
+     * @return AsyncInvoker<ShowShareSpaceConfigRequest, ShowShareSpaceConfigResponse>
+     */
+    public AsyncInvoker<ShowShareSpaceConfigRequest, ShowShareSpaceConfigResponse> showShareSpaceConfigAsyncInvoker(
+        ShowShareSpaceConfigRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showShareSpaceConfig, hcClient);
+    }
+
+    /**
+     * 设置协同桌面默认用户配置
+     *
+     * 设置协同桌面默认用户配置（当前功能公测中，需要使用请联系管理员申请使用）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateShareSpaceConfigRequest 请求对象
+     * @return CompletableFuture<UpdateShareSpaceConfigResponse>
+     */
+    public CompletableFuture<UpdateShareSpaceConfigResponse> updateShareSpaceConfigAsync(
+        UpdateShareSpaceConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateShareSpaceConfig);
+    }
+
+    /**
+     * 设置协同桌面默认用户配置
+     *
+     * 设置协同桌面默认用户配置（当前功能公测中，需要使用请联系管理员申请使用）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateShareSpaceConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateShareSpaceConfigRequest, UpdateShareSpaceConfigResponse>
+     */
+    public AsyncInvoker<UpdateShareSpaceConfigRequest, UpdateShareSpaceConfigResponse> updateShareSpaceConfigAsyncInvoker(
+        UpdateShareSpaceConfigRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateShareSpaceConfig, hcClient);
+    }
+
+    /**
+     * 新增站点
+     *
+     * 用于查询站点信息的接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddSiteRequest 请求对象
+     * @return CompletableFuture<AddSiteResponse>
+     */
+    public CompletableFuture<AddSiteResponse> addSiteAsync(AddSiteRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.addSite);
+    }
+
+    /**
+     * 新增站点
+     *
+     * 用于查询站点信息的接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddSiteRequest 请求对象
+     * @return AsyncInvoker<AddSiteRequest, AddSiteResponse>
+     */
+    public AsyncInvoker<AddSiteRequest, AddSiteResponse> addSiteAsyncInvoker(AddSiteRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.addSite, hcClient);
+    }
+
+    /**
+     * 删除站点
+     *
+     * 用于删除站点的接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSiteRequest 请求对象
+     * @return CompletableFuture<DeleteSiteResponse>
+     */
+    public CompletableFuture<DeleteSiteResponse> deleteSiteAsync(DeleteSiteRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteSite);
+    }
+
+    /**
+     * 删除站点
+     *
+     * 用于删除站点的接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSiteRequest 请求对象
+     * @return AsyncInvoker<DeleteSiteRequest, DeleteSiteResponse>
+     */
+    public AsyncInvoker<DeleteSiteRequest, DeleteSiteResponse> deleteSiteAsyncInvoker(DeleteSiteRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.deleteSite, hcClient);
+    }
+
+    /**
+     * 查询站点信息
+     *
+     * 用于查询站点信息的接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSiteConfigsRequest 请求对象
+     * @return CompletableFuture<ListSiteConfigsResponse>
+     */
+    public CompletableFuture<ListSiteConfigsResponse> listSiteConfigsAsync(ListSiteConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listSiteConfigs);
+    }
+
+    /**
+     * 查询站点信息
+     *
+     * 用于查询站点信息的接口
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSiteConfigsRequest 请求对象
+     * @return AsyncInvoker<ListSiteConfigsRequest, ListSiteConfigsResponse>
+     */
+    public AsyncInvoker<ListSiteConfigsRequest, ListSiteConfigsResponse> listSiteConfigsAsyncInvoker(
+        ListSiteConfigsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listSiteConfigs, hcClient);
+    }
+
+    /**
+     * 查询边缘小站列表
+     *
+     * 查询边缘小站列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWksEdgeSitesRequest 请求对象
+     * @return CompletableFuture<ListWksEdgeSitesResponse>
+     */
+    public CompletableFuture<ListWksEdgeSitesResponse> listWksEdgeSitesAsync(ListWksEdgeSitesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listWksEdgeSites);
+    }
+
+    /**
+     * 查询边缘小站列表
+     *
+     * 查询边缘小站列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListWksEdgeSitesRequest 请求对象
+     * @return AsyncInvoker<ListWksEdgeSitesRequest, ListWksEdgeSitesResponse>
+     */
+    public AsyncInvoker<ListWksEdgeSitesRequest, ListWksEdgeSitesResponse> listWksEdgeSitesAsyncInvoker(
+        ListWksEdgeSitesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listWksEdgeSites, hcClient);
+    }
+
+    /**
+     * 修改站点接入方式
+     *
+     * 用于修改站点接入方式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAccessModeRequest 请求对象
+     * @return CompletableFuture<UpdateAccessModeResponse>
+     */
+    public CompletableFuture<UpdateAccessModeResponse> updateAccessModeAsync(UpdateAccessModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateAccessMode);
+    }
+
+    /**
+     * 修改站点接入方式
+     *
+     * 用于修改站点接入方式
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAccessModeRequest 请求对象
+     * @return AsyncInvoker<UpdateAccessModeRequest, UpdateAccessModeResponse>
+     */
+    public AsyncInvoker<UpdateAccessModeRequest, UpdateAccessModeResponse> updateAccessModeAsyncInvoker(
+        UpdateAccessModeRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateAccessMode, hcClient);
+    }
+
+    /**
+     * 修改站点业务子网
+     *
+     * 用于修改站点业务子网
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSubnetIdsRequest 请求对象
+     * @return CompletableFuture<UpdateSubnetIdsResponse>
+     */
+    public CompletableFuture<UpdateSubnetIdsResponse> updateSubnetIdsAsync(UpdateSubnetIdsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateSubnetIds);
+    }
+
+    /**
+     * 修改站点业务子网
+     *
+     * 用于修改站点业务子网
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSubnetIdsRequest 请求对象
+     * @return AsyncInvoker<UpdateSubnetIdsRequest, UpdateSubnetIdsResponse>
+     */
+    public AsyncInvoker<UpdateSubnetIdsRequest, UpdateSubnetIdsResponse> updateSubnetIdsAsyncInvoker(
+        UpdateSubnetIdsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateSubnetIds, hcClient);
+    }
+
+    /**
+     * 批量创建快照
+     *
+     * 批量创建快照
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateDesktopSnapshotRequest 请求对象
+     * @return CompletableFuture<BatchCreateDesktopSnapshotResponse>
+     */
+    public CompletableFuture<BatchCreateDesktopSnapshotResponse> batchCreateDesktopSnapshotAsync(
+        BatchCreateDesktopSnapshotRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchCreateDesktopSnapshot);
+    }
+
+    /**
+     * 批量创建快照
+     *
+     * 批量创建快照
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateDesktopSnapshotRequest 请求对象
+     * @return AsyncInvoker<BatchCreateDesktopSnapshotRequest, BatchCreateDesktopSnapshotResponse>
+     */
+    public AsyncInvoker<BatchCreateDesktopSnapshotRequest, BatchCreateDesktopSnapshotResponse> batchCreateDesktopSnapshotAsyncInvoker(
+        BatchCreateDesktopSnapshotRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchCreateDesktopSnapshot, hcClient);
+    }
+
+    /**
+     * 批量删除快照
+     *
+     * 批量删除快照
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteDesktopSnapshotRequest 请求对象
+     * @return CompletableFuture<BatchDeleteDesktopSnapshotResponse>
+     */
+    public CompletableFuture<BatchDeleteDesktopSnapshotResponse> batchDeleteDesktopSnapshotAsync(
+        BatchDeleteDesktopSnapshotRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchDeleteDesktopSnapshot);
+    }
+
+    /**
+     * 批量删除快照
+     *
+     * 批量删除快照
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteDesktopSnapshotRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteDesktopSnapshotRequest, BatchDeleteDesktopSnapshotResponse>
+     */
+    public AsyncInvoker<BatchDeleteDesktopSnapshotRequest, BatchDeleteDesktopSnapshotResponse> batchDeleteDesktopSnapshotAsyncInvoker(
+        BatchDeleteDesktopSnapshotRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchDeleteDesktopSnapshot, hcClient);
+    }
+
+    /**
+     * 批量恢复快照
+     *
+     * 批量恢快照
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRestoreDesktopSnapshotRequest 请求对象
+     * @return CompletableFuture<BatchRestoreDesktopSnapshotResponse>
+     */
+    public CompletableFuture<BatchRestoreDesktopSnapshotResponse> batchRestoreDesktopSnapshotAsync(
+        BatchRestoreDesktopSnapshotRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchRestoreDesktopSnapshot);
+    }
+
+    /**
+     * 批量恢复快照
+     *
+     * 批量恢快照
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchRestoreDesktopSnapshotRequest 请求对象
+     * @return AsyncInvoker<BatchRestoreDesktopSnapshotRequest, BatchRestoreDesktopSnapshotResponse>
+     */
+    public AsyncInvoker<BatchRestoreDesktopSnapshotRequest, BatchRestoreDesktopSnapshotResponse> batchRestoreDesktopSnapshotAsyncInvoker(
+        BatchRestoreDesktopSnapshotRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.batchRestoreDesktopSnapshot, hcClient);
+    }
+
+    /**
+     * 查询快照列表
+     *
+     * 查询快照列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopSnapshotRequest 请求对象
+     * @return CompletableFuture<ListDesktopSnapshotResponse>
+     */
+    public CompletableFuture<ListDesktopSnapshotResponse> listDesktopSnapshotAsync(ListDesktopSnapshotRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopSnapshot);
+    }
+
+    /**
+     * 查询快照列表
+     *
+     * 查询快照列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopSnapshotRequest 请求对象
+     * @return AsyncInvoker<ListDesktopSnapshotRequest, ListDesktopSnapshotResponse>
+     */
+    public AsyncInvoker<ListDesktopSnapshotRequest, ListDesktopSnapshotResponse> listDesktopSnapshotAsyncInvoker(
+        ListDesktopSnapshotRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopSnapshot, hcClient);
     }
 
     /**
@@ -2860,6 +7314,38 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询云应用接入统计数据
+     *
+     * 查询云应用接入统计数据;
+     * 最多查询30天内的数据;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAppUserAccessDataRequest 请求对象
+     * @return CompletableFuture<ListAppUserAccessDataResponse>
+     */
+    public CompletableFuture<ListAppUserAccessDataResponse> listAppUserAccessDataAsync(
+        ListAppUserAccessDataRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listAppUserAccessData);
+    }
+
+    /**
+     * 查询云应用接入统计数据
+     *
+     * 查询云应用接入统计数据;
+     * 最多查询30天内的数据;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAppUserAccessDataRequest 请求对象
+     * @return AsyncInvoker<ListAppUserAccessDataRequest, ListAppUserAccessDataResponse>
+     */
+    public AsyncInvoker<ListAppUserAccessDataRequest, ListAppUserAccessDataResponse> listAppUserAccessDataAsyncInvoker(
+        ListAppUserAccessDataRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listAppUserAccessData, hcClient);
+    }
+
+    /**
      * 查询桌面使用情况统计数据
      *
      * 查询桌面使用统计信息;
@@ -2897,6 +7383,65 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ListDesktopUsageMetricRequest, ListDesktopUsageMetricResponse> listDesktopUsageMetricAsyncInvoker(
         ListDesktopUsageMetricRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopUsageMetric, hcClient);
+    }
+
+    /**
+     * 桌面统计
+     *
+     * 统计租户下的普通桌面、桌面池状态，默认仅统计总数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopsStatisticsRequest 请求对象
+     * @return CompletableFuture<ListDesktopsStatisticsResponse>
+     */
+    public CompletableFuture<ListDesktopsStatisticsResponse> listDesktopsStatisticsAsync(
+        ListDesktopsStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopsStatistics);
+    }
+
+    /**
+     * 桌面统计
+     *
+     * 统计租户下的普通桌面、桌面池状态，默认仅统计总数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesktopsStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListDesktopsStatisticsRequest, ListDesktopsStatisticsResponse>
+     */
+    public AsyncInvoker<ListDesktopsStatisticsRequest, ListDesktopsStatisticsResponse> listDesktopsStatisticsAsyncInvoker(
+        ListDesktopsStatisticsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listDesktopsStatistics, hcClient);
+    }
+
+    /**
+     * 登录状态统计
+     *
+     * 查询租户桌面登录状态统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLoginStateRequest 请求对象
+     * @return CompletableFuture<ListLoginStateResponse>
+     */
+    public CompletableFuture<ListLoginStateResponse> listLoginStateAsync(ListLoginStateRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listLoginState);
+    }
+
+    /**
+     * 登录状态统计
+     *
+     * 查询租户桌面登录状态统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLoginStateRequest 请求对象
+     * @return AsyncInvoker<ListLoginStateRequest, ListLoginStateResponse>
+     */
+    public AsyncInvoker<ListLoginStateRequest, ListLoginStateResponse> listLoginStateAsyncInvoker(
+        ListLoginStateRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listLoginState, hcClient);
     }
 
     /**
@@ -3019,6 +7564,93 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 运行状态统计
+     *
+     * 租户桌面运行状态统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRunStateRequest 请求对象
+     * @return CompletableFuture<ListRunStateResponse>
+     */
+    public CompletableFuture<ListRunStateResponse> listRunStateAsync(ListRunStateRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listRunState);
+    }
+
+    /**
+     * 运行状态统计
+     *
+     * 租户桌面运行状态统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRunStateRequest 请求对象
+     * @return AsyncInvoker<ListRunStateRequest, ListRunStateResponse>
+     */
+    public AsyncInvoker<ListRunStateRequest, ListRunStateResponse> listRunStateAsyncInvoker(
+        ListRunStateRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listRunState, hcClient);
+    }
+
+    /**
+     * 查询在指定时间段未使用的桌面
+     *
+     * 查询在指定时间段未使用的桌面。已废弃，不推荐使用。统计数据推荐使用[查询桌面使用情况统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListDesktopUsageMetric)和[查询用户使用统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListUserUsageMetric)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUnusedDesktopsRequest 请求对象
+     * @return CompletableFuture<ListUnusedDesktopsResponse>
+     */
+    public CompletableFuture<ListUnusedDesktopsResponse> listUnusedDesktopsAsync(ListUnusedDesktopsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listUnusedDesktops);
+    }
+
+    /**
+     * 查询在指定时间段未使用的桌面
+     *
+     * 查询在指定时间段未使用的桌面。已废弃，不推荐使用。统计数据推荐使用[查询桌面使用情况统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListDesktopUsageMetric)和[查询用户使用统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListUserUsageMetric)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUnusedDesktopsRequest 请求对象
+     * @return AsyncInvoker<ListUnusedDesktopsRequest, ListUnusedDesktopsResponse>
+     */
+    public AsyncInvoker<ListUnusedDesktopsRequest, ListUnusedDesktopsResponse> listUnusedDesktopsAsyncInvoker(
+        ListUnusedDesktopsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listUnusedDesktops, hcClient);
+    }
+
+    /**
+     * 查询使用桌面的时长
+     *
+     * 查询使用桌面的时长。已废弃，不推荐使用。统计数据推荐使用[查询桌面使用情况统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListDesktopUsageMetric)和[查询用户使用统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListUserUsageMetric)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUsedDesktopInfoRequest 请求对象
+     * @return CompletableFuture<ListUsedDesktopInfoResponse>
+     */
+    public CompletableFuture<ListUsedDesktopInfoResponse> listUsedDesktopInfoAsync(ListUsedDesktopInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listUsedDesktopInfo);
+    }
+
+    /**
+     * 查询使用桌面的时长
+     *
+     * 查询使用桌面的时长。已废弃，不推荐使用。统计数据推荐使用[查询桌面使用情况统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListDesktopUsageMetric)和[查询用户使用统计数据接口](https://console.huaweicloud.com/apiexplorer/#/openapi/Workspace/doc?api&#x3D;ListUserUsageMetric)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUsedDesktopInfoRequest 请求对象
+     * @return AsyncInvoker<ListUsedDesktopInfoRequest, ListUsedDesktopInfoResponse>
+     */
+    public AsyncInvoker<ListUsedDesktopInfoRequest, ListUsedDesktopInfoResponse> listUsedDesktopInfoAsyncInvoker(
+        ListUsedDesktopInfoRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listUsedDesktopInfo, hcClient);
+    }
+
+    /**
      * 查询用户使用统计数据
      *
      * 查询用户使用统计信息;
@@ -3050,6 +7682,65 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询指标环比值
+     *
+     * 查询指标环比值
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGrowthRateRequest 请求对象
+     * @return CompletableFuture<ShowGrowthRateResponse>
+     */
+    public CompletableFuture<ShowGrowthRateResponse> showGrowthRateAsync(ShowGrowthRateRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showGrowthRate);
+    }
+
+    /**
+     * 查询指标环比值
+     *
+     * 查询指标环比值
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGrowthRateRequest 请求对象
+     * @return AsyncInvoker<ShowGrowthRateRequest, ShowGrowthRateResponse>
+     */
+    public AsyncInvoker<ShowGrowthRateRequest, ShowGrowthRateResponse> showGrowthRateAsyncInvoker(
+        ShowGrowthRateRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showGrowthRate, hcClient);
+    }
+
+    /**
+     * 查询接入云桌面或云应用各阶段时长数据
+     *
+     * 查询接入云桌面或云应用各阶段时长数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUserAccessStagesRequest 请求对象
+     * @return CompletableFuture<ShowUserAccessStagesResponse>
+     */
+    public CompletableFuture<ShowUserAccessStagesResponse> showUserAccessStagesAsync(
+        ShowUserAccessStagesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showUserAccessStages);
+    }
+
+    /**
+     * 查询接入云桌面或云应用各阶段时长数据
+     *
+     * 查询接入云桌面或云应用各阶段时长数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUserAccessStagesRequest 请求对象
+     * @return AsyncInvoker<ShowUserAccessStagesRequest, ShowUserAccessStagesResponse>
+     */
+    public AsyncInvoker<ShowUserAccessStagesRequest, ShowUserAccessStagesResponse> showUserAccessStagesAsyncInvoker(
+        ShowUserAccessStagesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showUserAccessStages, hcClient);
+    }
+
+    /**
      * 更新通知规则
      *
      * 更新对应指标的通知规则;对应指标满足相应的规则条件时发送通知
@@ -3077,6 +7768,93 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<UpdateMetricNotifyRuleRequest, UpdateMetricNotifyRuleResponse> updateMetricNotifyRuleAsyncInvoker(
         UpdateMetricNotifyRuleRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.updateMetricNotifyRule, hcClient);
+    }
+
+    /**
+     * 根据子网id查询该子网下可用的ip
+     *
+     * 根据子网id查询该子网下可用的ip。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailableIpRequest 请求对象
+     * @return CompletableFuture<ShowAvailableIpResponse>
+     */
+    public CompletableFuture<ShowAvailableIpResponse> showAvailableIpAsync(ShowAvailableIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.showAvailableIp);
+    }
+
+    /**
+     * 根据子网id查询该子网下可用的ip
+     *
+     * 根据子网id查询该子网下可用的ip。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAvailableIpRequest 请求对象
+     * @return AsyncInvoker<ShowAvailableIpRequest, ShowAvailableIpResponse>
+     */
+    public AsyncInvoker<ShowAvailableIpRequest, ShowAvailableIpResponse> showAvailableIpAsyncInvoker(
+        ShowAvailableIpRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.showAvailableIp, hcClient);
+    }
+
+    /**
+     * 查询租户个性配置列表
+     *
+     * 查询租户个性配置列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantConfigsRequest 请求对象
+     * @return CompletableFuture<ListTenantConfigsResponse>
+     */
+    public CompletableFuture<ListTenantConfigsResponse> listTenantConfigsAsync(ListTenantConfigsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listTenantConfigs);
+    }
+
+    /**
+     * 查询租户个性配置列表
+     *
+     * 查询租户个性配置列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTenantConfigsRequest 请求对象
+     * @return AsyncInvoker<ListTenantConfigsRequest, ListTenantConfigsResponse>
+     */
+    public AsyncInvoker<ListTenantConfigsRequest, ListTenantConfigsResponse> listTenantConfigsAsyncInvoker(
+        ListTenantConfigsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listTenantConfigs, hcClient);
+    }
+
+    /**
+     * 修改租户个性配置
+     *
+     * 租户个性配置修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTenantConfigRequest 请求对象
+     * @return CompletableFuture<UpdateTenantConfigResponse>
+     */
+    public CompletableFuture<UpdateTenantConfigResponse> updateTenantConfigAsync(UpdateTenantConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateTenantConfig);
+    }
+
+    /**
+     * 修改租户个性配置
+     *
+     * 租户个性配置修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTenantConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateTenantConfigRequest, UpdateTenantConfigResponse>
+     */
+    public AsyncInvoker<UpdateTenantConfigRequest, UpdateTenantConfigResponse> updateTenantConfigAsyncInvoker(
+        UpdateTenantConfigRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateTenantConfig, hcClient);
     }
 
     /**
@@ -3550,6 +8328,34 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 重新发送邮件
+     *
+     * 该接口用于重新发送邮件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SendEmailRequest 请求对象
+     * @return CompletableFuture<SendEmailResponse>
+     */
+    public CompletableFuture<SendEmailResponse> sendEmailAsync(SendEmailRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.sendEmail);
+    }
+
+    /**
+     * 重新发送邮件
+     *
+     * 该接口用于重新发送邮件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SendEmailRequest 请求对象
+     * @return AsyncInvoker<SendEmailRequest, SendEmailResponse>
+     */
+    public AsyncInvoker<SendEmailRequest, SendEmailResponse> sendEmailAsyncInvoker(SendEmailRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.sendEmail, hcClient);
+    }
+
+    /**
      * 修改用户信息
      *
      * 该接口用于修改桌面用户信息。
@@ -3576,6 +8382,64 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<UpdateUserInfoRequest, UpdateUserInfoResponse> updateUserInfoAsyncInvoker(
         UpdateUserInfoRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.updateUserInfo, hcClient);
+    }
+
+    /**
+     * 查询用户事件
+     *
+     * 查询用户事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserEventsRequest 请求对象
+     * @return CompletableFuture<ListUserEventsResponse>
+     */
+    public CompletableFuture<ListUserEventsResponse> listUserEventsAsync(ListUserEventsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listUserEvents);
+    }
+
+    /**
+     * 查询用户事件
+     *
+     * 查询用户事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserEventsRequest 请求对象
+     * @return AsyncInvoker<ListUserEventsRequest, ListUserEventsResponse>
+     */
+    public AsyncInvoker<ListUserEventsRequest, ListUserEventsResponse> listUserEventsAsyncInvoker(
+        ListUserEventsRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listUserEvents, hcClient);
+    }
+
+    /**
+     * 增加桌面磁盘
+     *
+     * 给单个桌面增加磁盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDesktopVolumesRequest 请求对象
+     * @return CompletableFuture<AddDesktopVolumesResponse>
+     */
+    public CompletableFuture<AddDesktopVolumesResponse> addDesktopVolumesAsync(AddDesktopVolumesRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.addDesktopVolumes);
+    }
+
+    /**
+     * 增加桌面磁盘
+     *
+     * 给单个桌面增加磁盘。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddDesktopVolumesRequest 请求对象
+     * @return AsyncInvoker<AddDesktopVolumesRequest, AddDesktopVolumesResponse>
+     */
+    public AsyncInvoker<AddDesktopVolumesRequest, AddDesktopVolumesResponse> addDesktopVolumesAsyncInvoker(
+        AddDesktopVolumesRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.addDesktopVolumes, hcClient);
     }
 
     /**
@@ -3637,6 +8501,35 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 扩容磁盘
+     *
+     * 扩容磁盘
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExpandDesktopVolumeRequest 请求对象
+     * @return CompletableFuture<ExpandDesktopVolumeResponse>
+     */
+    public CompletableFuture<ExpandDesktopVolumeResponse> expandDesktopVolumeAsync(ExpandDesktopVolumeRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.expandDesktopVolume);
+    }
+
+    /**
+     * 扩容磁盘
+     *
+     * 扩容磁盘
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExpandDesktopVolumeRequest 请求对象
+     * @return AsyncInvoker<ExpandDesktopVolumeRequest, ExpandDesktopVolumeResponse>
+     */
+    public AsyncInvoker<ExpandDesktopVolumeRequest, ExpandDesktopVolumeResponse> expandDesktopVolumeAsyncInvoker(
+        ExpandDesktopVolumeRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.expandDesktopVolume, hcClient);
+    }
+
+    /**
      * 扩容桌面磁盘
      *
      * 扩容桌面磁盘。
@@ -3663,6 +8556,36 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<ExpandVolumesRequest, ExpandVolumesResponse> expandVolumesAsyncInvoker(
         ExpandVolumesRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.expandVolumes, hcClient);
+    }
+
+    /**
+     * 查询磁盘产品信息
+     *
+     * 查询磁盘产品信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVolumeProductInfoRequest 请求对象
+     * @return CompletableFuture<ListVolumeProductInfoResponse>
+     */
+    public CompletableFuture<ListVolumeProductInfoResponse> listVolumeProductInfoAsync(
+        ListVolumeProductInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listVolumeProductInfo);
+    }
+
+    /**
+     * 查询磁盘产品信息
+     *
+     * 查询磁盘产品信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVolumeProductInfoRequest 请求对象
+     * @return AsyncInvoker<ListVolumeProductInfoRequest, ListVolumeProductInfoResponse>
+     */
+    public AsyncInvoker<ListVolumeProductInfoRequest, ListVolumeProductInfoResponse> listVolumeProductInfoAsyncInvoker(
+        ListVolumeProductInfoRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.listVolumeProductInfo, hcClient);
     }
 
     /**
@@ -3812,6 +8735,35 @@ public class WorkspaceAsyncClient {
     public AsyncInvoker<UnlockWorkspaceRequest, UnlockWorkspaceResponse> unlockWorkspaceAsyncInvoker(
         UnlockWorkspaceRequest request) {
         return new AsyncInvoker<>(request, WorkspaceMeta.unlockWorkspace, hcClient);
+    }
+
+    /**
+     * 修改企业ID
+     *
+     * 修改租户的企业ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateEnterpriseIdRequest 请求对象
+     * @return CompletableFuture<UpdateEnterpriseIdResponse>
+     */
+    public CompletableFuture<UpdateEnterpriseIdResponse> updateEnterpriseIdAsync(UpdateEnterpriseIdRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateEnterpriseId);
+    }
+
+    /**
+     * 修改企业ID
+     *
+     * 修改租户的企业ID。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateEnterpriseIdRequest 请求对象
+     * @return AsyncInvoker<UpdateEnterpriseIdRequest, UpdateEnterpriseIdResponse>
+     */
+    public AsyncInvoker<UpdateEnterpriseIdRequest, UpdateEnterpriseIdResponse> updateEnterpriseIdAsyncInvoker(
+        UpdateEnterpriseIdRequest request) {
+        return new AsyncInvoker<>(request, WorkspaceMeta.updateEnterpriseId, hcClient);
     }
 
     /**

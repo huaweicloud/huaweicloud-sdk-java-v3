@@ -18,7 +18,7 @@ public class CountItem {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "num")
 
-    private Integer num;
+    private Long num;
 
     public CountItem withKey(String key) {
         this.key = key;
@@ -37,7 +37,7 @@ public class CountItem {
         this.key = key;
     }
 
-    public CountItem withNum(Integer num) {
+    public CountItem withNum(Long num) {
         this.num = num;
         return this;
     }
@@ -46,11 +46,11 @@ public class CountItem {
      * 数量
      * @return num
      */
-    public Integer getNum() {
+    public Long getNum() {
         return num;
     }
 
-    public void setNum(Integer num) {
+    public void setNum(Long num) {
         this.num = num;
     }
 

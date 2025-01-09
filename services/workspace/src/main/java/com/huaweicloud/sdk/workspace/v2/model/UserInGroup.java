@@ -31,6 +31,11 @@ public class UserInGroup {
     private String userPhone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_desktops")
+
+    private Integer totalDesktops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -103,6 +108,23 @@ public class UserInGroup {
         this.userPhone = userPhone;
     }
 
+    public UserInGroup withTotalDesktops(Integer totalDesktops) {
+        this.totalDesktops = totalDesktops;
+        return this;
+    }
+
+    /**
+     * 用户桌面数。
+     * @return totalDesktops
+     */
+    public Integer getTotalDesktops() {
+        return totalDesktops;
+    }
+
+    public void setTotalDesktops(Integer totalDesktops) {
+        this.totalDesktops = totalDesktops;
+    }
+
     public UserInGroup withDescription(String description) {
         this.description = description;
         return this;
@@ -131,12 +153,13 @@ public class UserInGroup {
         UserInGroup that = (UserInGroup) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.userEmail, that.userEmail) && Objects.equals(this.userPhone, that.userPhone)
+            && Objects.equals(this.totalDesktops, that.totalDesktops)
             && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, userName, userEmail, userPhone, description);
+        return Objects.hash(id, userName, userEmail, userPhone, totalDesktops, description);
     }
 
     @Override
@@ -147,6 +170,7 @@ public class UserInGroup {
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
         sb.append("    userPhone: ").append(toIndentedString(userPhone)).append("\n");
+        sb.append("    totalDesktops: ").append(toIndentedString(totalDesktops)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();

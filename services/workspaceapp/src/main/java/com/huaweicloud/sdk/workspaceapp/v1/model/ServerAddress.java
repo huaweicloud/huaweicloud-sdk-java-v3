@@ -18,7 +18,7 @@ public class ServerAddress {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "version")
 
-    private Integer version;
+    private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "OS-EXT-IPS-MAC:mac_addr")
@@ -52,7 +52,7 @@ public class ServerAddress {
         this.addr = addr;
     }
 
-    public ServerAddress withVersion(Integer version) {
+    public ServerAddress withVersion(String version) {
         this.version = version;
         return this;
     }
@@ -61,11 +61,11 @@ public class ServerAddress {
      * IP地址类型： `4` - IPV4 `6` - IPV6
      * @return version
      */
-    public Integer getVersion() {
+    public String getVersion() {
         return version;
     }
 
-    public void setVersion(Integer version) {
+    public void setVersion(String version) {
         this.version = version;
     }
 

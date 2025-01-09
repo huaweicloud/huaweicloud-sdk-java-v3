@@ -141,6 +141,11 @@ public class UserGroupInfo {
 
     private String sid;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_desktops")
+
+    private Integer totalDesktops;
+
     public UserGroupInfo withName(String name) {
         this.name = name;
         return this;
@@ -337,6 +342,23 @@ public class UserGroupInfo {
         this.sid = sid;
     }
 
+    public UserGroupInfo withTotalDesktops(Integer totalDesktops) {
+        this.totalDesktops = totalDesktops;
+        return this;
+    }
+
+    /**
+     * 用户列表中用户数。
+     * @return totalDesktops
+     */
+    public Integer getTotalDesktops() {
+        return totalDesktops;
+    }
+
+    public void setTotalDesktops(Integer totalDesktops) {
+        this.totalDesktops = totalDesktops;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -351,13 +373,23 @@ public class UserGroupInfo {
             && Objects.equals(this.userQuantity, that.userQuantity) && Objects.equals(this.parent, that.parent)
             && Objects.equals(this.realmId, that.realmId) && Objects.equals(this.platformType, that.platformType)
             && Objects.equals(this.groupDn, that.groupDn) && Objects.equals(this.domain, that.domain)
-            && Objects.equals(this.sid, that.sid);
+            && Objects.equals(this.sid, that.sid) && Objects.equals(this.totalDesktops, that.totalDesktops);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, id, createTime, description, userQuantity, parent, realmId, platformType, groupDn, domain, sid);
+        return Objects.hash(name,
+            id,
+            createTime,
+            description,
+            userQuantity,
+            parent,
+            realmId,
+            platformType,
+            groupDn,
+            domain,
+            sid,
+            totalDesktops);
     }
 
     @Override
@@ -375,6 +407,7 @@ public class UserGroupInfo {
         sb.append("    groupDn: ").append(toIndentedString(groupDn)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    sid: ").append(toIndentedString(sid)).append("\n");
+        sb.append("    totalDesktops: ").append(toIndentedString(totalDesktops)).append("\n");
         sb.append("}");
         return sb.toString();
     }

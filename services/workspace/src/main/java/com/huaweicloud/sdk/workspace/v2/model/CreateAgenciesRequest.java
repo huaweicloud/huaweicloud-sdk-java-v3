@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -13,10 +14,19 @@ public class CreateAgenciesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private Object body;
+    private CreateAgenciesReq body;
 
-    public CreateAgenciesRequest withBody(Object body) {
+    public CreateAgenciesRequest withBody(CreateAgenciesReq body) {
         this.body = body;
+        return this;
+    }
+
+    public CreateAgenciesRequest withBody(Consumer<CreateAgenciesReq> bodySetter) {
+        if (this.body == null) {
+            this.body = new CreateAgenciesReq();
+            bodySetter.accept(this.body);
+        }
+
         return this;
     }
 
@@ -24,11 +34,11 @@ public class CreateAgenciesRequest {
      * Get body
      * @return body
      */
-    public Object getBody() {
+    public CreateAgenciesReq getBody() {
         return body;
     }
 
-    public void setBody(Object body) {
+    public void setBody(CreateAgenciesReq body) {
         this.body = body;
     }
 

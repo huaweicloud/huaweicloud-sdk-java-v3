@@ -86,6 +86,11 @@ public class SecurityGroupRule {
 
     private String projectId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enabled")
+
+    private Boolean enabled;
+
     public SecurityGroupRule withId(String id) {
         this.id = id;
         return this;
@@ -341,6 +346,23 @@ public class SecurityGroupRule {
         this.projectId = projectId;
     }
 
+    public SecurityGroupRule withEnabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否启用安全组规则。 取值范围：true, false。 约束：默认值为true。
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -359,7 +381,7 @@ public class SecurityGroupRule {
             && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix)
             && Objects.equals(this.remoteAddressGroupId, that.remoteAddressGroupId)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.projectId, that.projectId);
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override
@@ -378,7 +400,8 @@ public class SecurityGroupRule {
             remoteAddressGroupId,
             createdAt,
             updatedAt,
-            projectId);
+            projectId,
+            enabled);
     }
 
     @Override
@@ -400,6 +423,7 @@ public class SecurityGroupRule {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

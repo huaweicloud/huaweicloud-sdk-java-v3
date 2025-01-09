@@ -36,14 +36,24 @@ public class ListLoginRecordsNewRequest {
     private String terminalType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "limit")
-
-    private String limit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
-    private String offset;
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_network_rtt")
+
+    private Integer minNetworkRtt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_network_rtt")
+
+    private Integer maxNetworkRtt;
 
     public ListLoginRecordsNewRequest withStartTime(String startTime) {
         this.startTime = startTime;
@@ -130,38 +140,80 @@ public class ListLoginRecordsNewRequest {
         this.terminalType = terminalType;
     }
 
-    public ListLoginRecordsNewRequest withLimit(String limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    /**
-     * 用于分页查询，取值范围0-100，默认值20。
-     * @return limit
-     */
-    public String getLimit() {
-        return limit;
-    }
-
-    public void setLimit(String limit) {
-        this.limit = limit;
-    }
-
-    public ListLoginRecordsNewRequest withOffset(String offset) {
+    public ListLoginRecordsNewRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
 
     /**
-     * 用于分页查询，查询的起始记录序号，从0开始。
+     * 用于分页查询，查询的起始记录序号，从0开始
+     * minimum: 0
+     * maximum: 2147483646
      * @return offset
      */
-    public String getOffset() {
+    public Integer getOffset() {
         return offset;
     }
 
-    public void setOffset(String offset) {
+    public void setOffset(Integer offset) {
         this.offset = offset;
+    }
+
+    public ListLoginRecordsNewRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 用于分页查询，返回登录记录数量限制,取值范围0-1000。如果不指定，默认为20。
+     * minimum: 0
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListLoginRecordsNewRequest withMinNetworkRtt(Integer minNetworkRtt) {
+        this.minNetworkRtt = minNetworkRtt;
+        return this;
+    }
+
+    /**
+     * 查询端到端时延的最小值
+     * minimum: 0
+     * maximum: 10000
+     * @return minNetworkRtt
+     */
+    public Integer getMinNetworkRtt() {
+        return minNetworkRtt;
+    }
+
+    public void setMinNetworkRtt(Integer minNetworkRtt) {
+        this.minNetworkRtt = minNetworkRtt;
+    }
+
+    public ListLoginRecordsNewRequest withMaxNetworkRtt(Integer maxNetworkRtt) {
+        this.maxNetworkRtt = maxNetworkRtt;
+        return this;
+    }
+
+    /**
+     * 查询端到端时延的最大值
+     * minimum: 0
+     * maximum: 10000
+     * @return maxNetworkRtt
+     */
+    public Integer getMaxNetworkRtt() {
+        return maxNetworkRtt;
+    }
+
+    public void setMaxNetworkRtt(Integer maxNetworkRtt) {
+        this.maxNetworkRtt = maxNetworkRtt;
     }
 
     @Override
@@ -175,13 +227,22 @@ public class ListLoginRecordsNewRequest {
         ListLoginRecordsNewRequest that = (ListLoginRecordsNewRequest) obj;
         return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.userName, that.userName) && Objects.equals(this.computerName, that.computerName)
-            && Objects.equals(this.terminalType, that.terminalType) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.terminalType, that.terminalType) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.minNetworkRtt, that.minNetworkRtt)
+            && Objects.equals(this.maxNetworkRtt, that.maxNetworkRtt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, userName, computerName, terminalType, limit, offset);
+        return Objects.hash(startTime,
+            endTime,
+            userName,
+            computerName,
+            terminalType,
+            offset,
+            limit,
+            minNetworkRtt,
+            maxNetworkRtt);
     }
 
     @Override
@@ -193,8 +254,10 @@ public class ListLoginRecordsNewRequest {
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
         sb.append("    terminalType: ").append(toIndentedString(terminalType)).append("\n");
-        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    minNetworkRtt: ").append(toIndentedString(minNetworkRtt)).append("\n");
+        sb.append("    maxNetworkRtt: ").append(toIndentedString(maxNetworkRtt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

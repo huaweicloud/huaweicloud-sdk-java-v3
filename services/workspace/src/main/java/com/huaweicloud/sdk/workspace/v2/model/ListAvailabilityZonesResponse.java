@@ -17,19 +17,19 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zones")
 
-    private List<AvailabilityZoneInfo> availabilityZones = null;
+    private List<AvailabilityZone> availabilityZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    public ListAvailabilityZonesResponse withAvailabilityZones(List<AvailabilityZoneInfo> availabilityZones) {
+    public ListAvailabilityZonesResponse withAvailabilityZones(List<AvailabilityZone> availabilityZones) {
         this.availabilityZones = availabilityZones;
         return this;
     }
 
-    public ListAvailabilityZonesResponse addAvailabilityZonesItem(AvailabilityZoneInfo availabilityZonesItem) {
+    public ListAvailabilityZonesResponse addAvailabilityZonesItem(AvailabilityZone availabilityZonesItem) {
         if (this.availabilityZones == null) {
             this.availabilityZones = new ArrayList<>();
         }
@@ -38,7 +38,7 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     }
 
     public ListAvailabilityZonesResponse withAvailabilityZones(
-        Consumer<List<AvailabilityZoneInfo>> availabilityZonesSetter) {
+        Consumer<List<AvailabilityZone>> availabilityZonesSetter) {
         if (this.availabilityZones == null) {
             this.availabilityZones = new ArrayList<>();
         }
@@ -50,11 +50,11 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
      * 云桌面支持的可用分区列表。
      * @return availabilityZones
      */
-    public List<AvailabilityZoneInfo> getAvailabilityZones() {
+    public List<AvailabilityZone> getAvailabilityZones() {
         return availabilityZones;
     }
 
-    public void setAvailabilityZones(List<AvailabilityZoneInfo> availabilityZones) {
+    public void setAvailabilityZones(List<AvailabilityZone> availabilityZones) {
         this.availabilityZones = availabilityZones;
     }
 

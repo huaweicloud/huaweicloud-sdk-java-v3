@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * EditUserReq
@@ -119,6 +122,16 @@ public class EditUserReq {
     @JsonProperty(value = "next_login_change_password")
 
     private Boolean nextLoginChangePassword;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_ids")
+
+    private List<String> groupIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias_name")
+
+    private String aliasName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password_never_expired")
@@ -249,6 +262,56 @@ public class EditUserReq {
         this.nextLoginChangePassword = nextLoginChangePassword;
     }
 
+    public EditUserReq withGroupIds(List<String> groupIds) {
+        this.groupIds = groupIds;
+        return this;
+    }
+
+    public EditUserReq addGroupIdsItem(String groupIdsItem) {
+        if (this.groupIds == null) {
+            this.groupIds = new ArrayList<>();
+        }
+        this.groupIds.add(groupIdsItem);
+        return this;
+    }
+
+    public EditUserReq withGroupIds(Consumer<List<String>> groupIdsSetter) {
+        if (this.groupIds == null) {
+            this.groupIds = new ArrayList<>();
+        }
+        groupIdsSetter.accept(this.groupIds);
+        return this;
+    }
+
+    /**
+     * 用户组的专有ID列表。
+     * @return groupIds
+     */
+    public List<String> getGroupIds() {
+        return groupIds;
+    }
+
+    public void setGroupIds(List<String> groupIds) {
+        this.groupIds = groupIds;
+    }
+
+    public EditUserReq withAliasName(String aliasName) {
+        this.aliasName = aliasName;
+        return this;
+    }
+
+    /**
+     * 别名。
+     * @return aliasName
+     */
+    public String getAliasName() {
+        return aliasName;
+    }
+
+    public void setAliasName(String aliasName) {
+        this.aliasName = aliasName;
+    }
+
     public EditUserReq withPasswordNeverExpired(Boolean passwordNeverExpired) {
         this.passwordNeverExpired = passwordNeverExpired;
         return this;
@@ -297,6 +360,7 @@ public class EditUserReq {
             && Objects.equals(this.accountExpires, that.accountExpires)
             && Objects.equals(this.enableChangePassword, that.enableChangePassword)
             && Objects.equals(this.nextLoginChangePassword, that.nextLoginChangePassword)
+            && Objects.equals(this.groupIds, that.groupIds) && Objects.equals(this.aliasName, that.aliasName)
             && Objects.equals(this.passwordNeverExpired, that.passwordNeverExpired)
             && Objects.equals(this.disabled, that.disabled);
     }
@@ -310,6 +374,8 @@ public class EditUserReq {
             accountExpires,
             enableChangePassword,
             nextLoginChangePassword,
+            groupIds,
+            aliasName,
             passwordNeverExpired,
             disabled);
     }
@@ -325,6 +391,8 @@ public class EditUserReq {
         sb.append("    accountExpires: ").append(toIndentedString(accountExpires)).append("\n");
         sb.append("    enableChangePassword: ").append(toIndentedString(enableChangePassword)).append("\n");
         sb.append("    nextLoginChangePassword: ").append(toIndentedString(nextLoginChangePassword)).append("\n");
+        sb.append("    groupIds: ").append(toIndentedString(groupIds)).append("\n");
+        sb.append("    aliasName: ").append(toIndentedString(aliasName)).append("\n");
         sb.append("    passwordNeverExpired: ").append(toIndentedString(passwordNeverExpired)).append("\n");
         sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
         sb.append("}");

@@ -7,8 +7,14 @@ import com.huaweicloud.sdk.scm.v3.model.ApplyCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ApplyCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.CancelCertificateRequestRequest;
+import com.huaweicloud.sdk.scm.v3.model.CancelCertificateRequestResponse;
+import com.huaweicloud.sdk.scm.v3.model.CreateCsrRequest;
+import com.huaweicloud.sdk.scm.v3.model.CreateCsrResponse;
 import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.DeleteCsrRequest;
+import com.huaweicloud.sdk.scm.v3.model.DeleteCsrResponse;
 import com.huaweicloud.sdk.scm.v3.model.DeployCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.DeployCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ExportCertificateRequest;
@@ -17,16 +23,26 @@ import com.huaweicloud.sdk.scm.v3.model.ImportCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ImportCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.scm.v3.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.scm.v3.model.ListCsrRequest;
+import com.huaweicloud.sdk.scm.v3.model.ListCsrResponse;
 import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesRequest;
 import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesResponse;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ShowCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ShowCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.ShowCsrPrivateKeyRequest;
+import com.huaweicloud.sdk.scm.v3.model.ShowCsrPrivateKeyResponse;
+import com.huaweicloud.sdk.scm.v3.model.ShowCsrRequest;
+import com.huaweicloud.sdk.scm.v3.model.ShowCsrResponse;
 import com.huaweicloud.sdk.scm.v3.model.SubscribeCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.SubscribeCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.UnsubscribeCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.UnsubscribeCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.UpdateCsrRequest;
+import com.huaweicloud.sdk.scm.v3.model.UpdateCsrResponse;
+import com.huaweicloud.sdk.scm.v3.model.UploadCsrRequest;
+import com.huaweicloud.sdk.scm.v3.model.UploadCsrResponse;
 
 public class ScmClient {
 
@@ -98,6 +114,35 @@ public class ScmClient {
     public SyncInvoker<BatchPushCertificateRequest, BatchPushCertificateResponse> batchPushCertificateInvoker(
         BatchPushCertificateRequest request) {
         return new SyncInvoker<>(request, ScmMeta.batchPushCertificate, hcClient);
+    }
+
+    /**
+     * 撤回证书申请
+     *
+     * 撤回证书申请。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelCertificateRequestRequest 请求对象
+     * @return CancelCertificateRequestResponse
+     */
+    public CancelCertificateRequestResponse cancelCertificateRequest(CancelCertificateRequestRequest request) {
+        return hcClient.syncInvokeHttp(request, ScmMeta.cancelCertificateRequest);
+    }
+
+    /**
+     * 撤回证书申请
+     *
+     * 撤回证书申请。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelCertificateRequestRequest 请求对象
+     * @return SyncInvoker<CancelCertificateRequestRequest, CancelCertificateRequestResponse>
+     */
+    public SyncInvoker<CancelCertificateRequestRequest, CancelCertificateRequestResponse> cancelCertificateRequestInvoker(
+        CancelCertificateRequestRequest request) {
+        return new SyncInvoker<>(request, ScmMeta.cancelCertificateRequest, hcClient);
     }
 
     /**
@@ -388,6 +433,203 @@ public class ScmClient {
     public SyncInvoker<UnsubscribeCertificateRequest, UnsubscribeCertificateResponse> unsubscribeCertificateInvoker(
         UnsubscribeCertificateRequest request) {
         return new SyncInvoker<>(request, ScmMeta.unsubscribeCertificate, hcClient);
+    }
+
+    /**
+     * 创建CSR
+     *
+     * 创建CSR。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCsrRequest 请求对象
+     * @return CreateCsrResponse
+     */
+    public CreateCsrResponse createCsr(CreateCsrRequest request) {
+        return hcClient.syncInvokeHttp(request, ScmMeta.createCsr);
+    }
+
+    /**
+     * 创建CSR
+     *
+     * 创建CSR。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCsrRequest 请求对象
+     * @return SyncInvoker<CreateCsrRequest, CreateCsrResponse>
+     */
+    public SyncInvoker<CreateCsrRequest, CreateCsrResponse> createCsrInvoker(CreateCsrRequest request) {
+        return new SyncInvoker<>(request, ScmMeta.createCsr, hcClient);
+    }
+
+    /**
+     * 删除CSR
+     *
+     * 删除CSR。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCsrRequest 请求对象
+     * @return DeleteCsrResponse
+     */
+    public DeleteCsrResponse deleteCsr(DeleteCsrRequest request) {
+        return hcClient.syncInvokeHttp(request, ScmMeta.deleteCsr);
+    }
+
+    /**
+     * 删除CSR
+     *
+     * 删除CSR。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteCsrRequest 请求对象
+     * @return SyncInvoker<DeleteCsrRequest, DeleteCsrResponse>
+     */
+    public SyncInvoker<DeleteCsrRequest, DeleteCsrResponse> deleteCsrInvoker(DeleteCsrRequest request) {
+        return new SyncInvoker<>(request, ScmMeta.deleteCsr, hcClient);
+    }
+
+    /**
+     * 查询CSR列表
+     *
+     * 查询CSR列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCsrRequest 请求对象
+     * @return ListCsrResponse
+     */
+    public ListCsrResponse listCsr(ListCsrRequest request) {
+        return hcClient.syncInvokeHttp(request, ScmMeta.listCsr);
+    }
+
+    /**
+     * 查询CSR列表
+     *
+     * 查询CSR列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCsrRequest 请求对象
+     * @return SyncInvoker<ListCsrRequest, ListCsrResponse>
+     */
+    public SyncInvoker<ListCsrRequest, ListCsrResponse> listCsrInvoker(ListCsrRequest request) {
+        return new SyncInvoker<>(request, ScmMeta.listCsr, hcClient);
+    }
+
+    /**
+     * 查询CSR
+     *
+     * 查询CSR。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCsrRequest 请求对象
+     * @return ShowCsrResponse
+     */
+    public ShowCsrResponse showCsr(ShowCsrRequest request) {
+        return hcClient.syncInvokeHttp(request, ScmMeta.showCsr);
+    }
+
+    /**
+     * 查询CSR
+     *
+     * 查询CSR。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCsrRequest 请求对象
+     * @return SyncInvoker<ShowCsrRequest, ShowCsrResponse>
+     */
+    public SyncInvoker<ShowCsrRequest, ShowCsrResponse> showCsrInvoker(ShowCsrRequest request) {
+        return new SyncInvoker<>(request, ScmMeta.showCsr, hcClient);
+    }
+
+    /**
+     * 查询私钥
+     *
+     * 查询私钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCsrPrivateKeyRequest 请求对象
+     * @return ShowCsrPrivateKeyResponse
+     */
+    public ShowCsrPrivateKeyResponse showCsrPrivateKey(ShowCsrPrivateKeyRequest request) {
+        return hcClient.syncInvokeHttp(request, ScmMeta.showCsrPrivateKey);
+    }
+
+    /**
+     * 查询私钥
+     *
+     * 查询私钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCsrPrivateKeyRequest 请求对象
+     * @return SyncInvoker<ShowCsrPrivateKeyRequest, ShowCsrPrivateKeyResponse>
+     */
+    public SyncInvoker<ShowCsrPrivateKeyRequest, ShowCsrPrivateKeyResponse> showCsrPrivateKeyInvoker(
+        ShowCsrPrivateKeyRequest request) {
+        return new SyncInvoker<>(request, ScmMeta.showCsrPrivateKey, hcClient);
+    }
+
+    /**
+     * 更新CSR
+     *
+     * 更新CSR。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCsrRequest 请求对象
+     * @return UpdateCsrResponse
+     */
+    public UpdateCsrResponse updateCsr(UpdateCsrRequest request) {
+        return hcClient.syncInvokeHttp(request, ScmMeta.updateCsr);
+    }
+
+    /**
+     * 更新CSR
+     *
+     * 更新CSR。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateCsrRequest 请求对象
+     * @return SyncInvoker<UpdateCsrRequest, UpdateCsrResponse>
+     */
+    public SyncInvoker<UpdateCsrRequest, UpdateCsrResponse> updateCsrInvoker(UpdateCsrRequest request) {
+        return new SyncInvoker<>(request, ScmMeta.updateCsr, hcClient);
+    }
+
+    /**
+     * 上传CSR
+     *
+     * 上传CSR。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadCsrRequest 请求对象
+     * @return UploadCsrResponse
+     */
+    public UploadCsrResponse uploadCsr(UploadCsrRequest request) {
+        return hcClient.syncInvokeHttp(request, ScmMeta.uploadCsr);
+    }
+
+    /**
+     * 上传CSR
+     *
+     * 上传CSR。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadCsrRequest 请求对象
+     * @return SyncInvoker<UploadCsrRequest, UploadCsrResponse>
+     */
+    public SyncInvoker<UploadCsrRequest, UploadCsrResponse> uploadCsrInvoker(UploadCsrRequest request) {
+        return new SyncInvoker<>(request, ScmMeta.uploadCsr, hcClient);
     }
 
 }

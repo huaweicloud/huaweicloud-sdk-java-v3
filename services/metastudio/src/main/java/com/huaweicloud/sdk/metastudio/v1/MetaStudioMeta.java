@@ -9,6 +9,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.BatchAssetActionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchConfirmLiveCommandsReq;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchConfirmLiveCommandsRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchConfirmLiveCommandsResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchDeletePacifyWordsRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.BatchDeletePacifyWordsResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.BatchExecuteAssetActionResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.Cancel2DDigitalHumanVideoRequest;
@@ -4809,6 +4811,60 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(CreateOnceCodeResponse::getXRequestId, CreateOnceCodeResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeletePacifyWordsRequest, BatchDeletePacifyWordsResponse> batchDeletePacifyWords =
+        genForBatchDeletePacifyWords();
+
+    private static HttpRequestDef<BatchDeletePacifyWordsRequest, BatchDeletePacifyWordsResponse> genForBatchDeletePacifyWords() {
+        // basic
+        HttpRequestDef.Builder<BatchDeletePacifyWordsRequest, BatchDeletePacifyWordsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeletePacifyWordsRequest.class, BatchDeletePacifyWordsResponse.class)
+            .withName("BatchDeletePacifyWords")
+            .withUri("/v1/{project_id}/digital-human-chat/pacify-words/delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeletePacifyWordsRequest::getAuthorization,
+                BatchDeletePacifyWordsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeletePacifyWordsRequest::getXSdkDate,
+                BatchDeletePacifyWordsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeletePacifyWordsRequest::getXProjectId,
+                BatchDeletePacifyWordsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeletePacifyWordsRequest::getXAppUserId,
+                BatchDeletePacifyWordsRequest::setXAppUserId));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(BatchDeletePacifyWordsRequest::getBody, BatchDeletePacifyWordsRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchDeletePacifyWordsResponse::getXRequestId,
+                BatchDeletePacifyWordsResponse::setXRequestId));
         return builder.build();
     }
 

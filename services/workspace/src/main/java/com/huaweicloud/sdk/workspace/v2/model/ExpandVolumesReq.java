@@ -16,6 +16,11 @@ public class ExpandVolumesReq {
     private String desktopId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "volume_id")
 
     private String volumeId;
@@ -40,6 +45,23 @@ public class ExpandVolumesReq {
 
     public void setDesktopId(String desktopId) {
         this.desktopId = desktopId;
+    }
+
+    public ExpandVolumesReq withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 订单ID，包周期桌面扩容时使用。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     public ExpandVolumesReq withVolumeId(String volumeId) {
@@ -87,13 +109,13 @@ public class ExpandVolumesReq {
             return false;
         }
         ExpandVolumesReq that = (ExpandVolumesReq) obj;
-        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.volumeId, that.volumeId)
-            && Objects.equals(this.newSize, that.newSize);
+        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.newSize, that.newSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopId, volumeId, newSize);
+        return Objects.hash(desktopId, orderId, volumeId, newSize);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class ExpandVolumesReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExpandVolumesReq {\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    volumeId: ").append(toIndentedString(volumeId)).append("\n");
         sb.append("    newSize: ").append(toIndentedString(newSize)).append("\n");
         sb.append("}");

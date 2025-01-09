@@ -424,6 +424,87 @@ public class SmartLiveRoomBaseInfo {
 
     private String privData;
 
+    /**
+     * 直播间确认状态。此状态仅用于特定用户需要人工确认场景。 - UNCONFIRM: 未确认 - CONFIRMED：已确认 - REJECT： 拒绝
+     */
+    public static final class ConfirmStateEnum {
+
+        /**
+         * Enum UNCONFIRM for value: "UNCONFIRM"
+         */
+        public static final ConfirmStateEnum UNCONFIRM = new ConfirmStateEnum("UNCONFIRM");
+
+        /**
+         * Enum CONFIRMED for value: "CONFIRMED"
+         */
+        public static final ConfirmStateEnum CONFIRMED = new ConfirmStateEnum("CONFIRMED");
+
+        /**
+         * Enum REJECT for value: "REJECT"
+         */
+        public static final ConfirmStateEnum REJECT = new ConfirmStateEnum("REJECT");
+
+        private static final Map<String, ConfirmStateEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ConfirmStateEnum> createStaticFields() {
+            Map<String, ConfirmStateEnum> map = new HashMap<>();
+            map.put("UNCONFIRM", UNCONFIRM);
+            map.put("CONFIRMED", CONFIRMED);
+            map.put("REJECT", REJECT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ConfirmStateEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ConfirmStateEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConfirmStateEnum(value));
+        }
+
+        public static ConfirmStateEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ConfirmStateEnum) {
+                return this.value.equals(((ConfirmStateEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "confirm_state")
+
+    private ConfirmStateEnum confirmState;
+
     public SmartLiveRoomBaseInfo withRoomId(String roomId) {
         this.roomId = roomId;
         return this;
@@ -764,6 +845,23 @@ public class SmartLiveRoomBaseInfo {
         this.privData = privData;
     }
 
+    public SmartLiveRoomBaseInfo withConfirmState(ConfirmStateEnum confirmState) {
+        this.confirmState = confirmState;
+        return this;
+    }
+
+    /**
+     * 直播间确认状态。此状态仅用于特定用户需要人工确认场景。 - UNCONFIRM: 未确认 - CONFIRMED：已确认 - REJECT： 拒绝
+     * @return confirmState
+     */
+    public ConfirmStateEnum getConfirmState() {
+        return confirmState;
+    }
+
+    public void setConfirmState(ConfirmStateEnum confirmState) {
+        this.confirmState = confirmState;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -783,7 +881,8 @@ public class SmartLiveRoomBaseInfo {
             && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.lastJobStartTime, that.lastJobStartTime)
             && Objects.equals(this.lastJobEndTime, that.lastJobEndTime)
-            && Objects.equals(this.lastJobStatus, that.lastJobStatus) && Objects.equals(this.privData, that.privData);
+            && Objects.equals(this.lastJobStatus, that.lastJobStatus) && Objects.equals(this.privData, that.privData)
+            && Objects.equals(this.confirmState, that.confirmState);
     }
 
     @Override
@@ -805,7 +904,8 @@ public class SmartLiveRoomBaseInfo {
             lastJobStartTime,
             lastJobEndTime,
             lastJobStatus,
-            privData);
+            privData,
+            confirmState);
     }
 
     @Override
@@ -830,6 +930,7 @@ public class SmartLiveRoomBaseInfo {
         sb.append("    lastJobEndTime: ").append(toIndentedString(lastJobEndTime)).append("\n");
         sb.append("    lastJobStatus: ").append(toIndentedString(lastJobStatus)).append("\n");
         sb.append("    privData: ").append(toIndentedString(privData)).append("\n");
+        sb.append("    confirmState: ").append(toIndentedString(confirmState)).append("\n");
         sb.append("}");
         return sb.toString();
     }

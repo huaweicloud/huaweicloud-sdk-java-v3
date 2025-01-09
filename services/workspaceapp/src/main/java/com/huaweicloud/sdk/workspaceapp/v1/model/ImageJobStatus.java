@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * job状态 * &#x60;WAITING&#x60; - 等待 * &#x60;RUNNING&#x60; - 运行中 * &#x60;SUCCESS - 完成 * &#x60;FAILED&#x60; - 失败
+ * job状态。 * &#x60;WAITING&#x60; - 等待 * &#x60;RUNNING&#x60; - 运行中 * &#x60;SUCCESS - 完成 * &#x60;FAILED&#x60; - 失败
  */
 public class ImageJobStatus {
 

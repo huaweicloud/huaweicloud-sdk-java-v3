@@ -21,7 +21,7 @@ public class GetDatabaseResponseBean {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
-    private String created;
+    private Long created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -31,7 +31,7 @@ public class GetDatabaseResponseBean {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
-    private String updated;
+    private Long updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "databases")
@@ -80,7 +80,7 @@ public class GetDatabaseResponseBean {
         this.name = name;
     }
 
-    public GetDatabaseResponseBean withCreated(String created) {
+    public GetDatabaseResponseBean withCreated(Long created) {
         this.created = created;
         return this;
     }
@@ -89,11 +89,11 @@ public class GetDatabaseResponseBean {
      * 逻辑库的创建时间。
      * @return created
      */
-    public String getCreated() {
+    public Long getCreated() {
         return created;
     }
 
-    public void setCreated(String created) {
+    public void setCreated(Long created) {
         this.created = created;
     }
 
@@ -114,7 +114,7 @@ public class GetDatabaseResponseBean {
         this.status = status;
     }
 
-    public GetDatabaseResponseBean withUpdated(String updated) {
+    public GetDatabaseResponseBean withUpdated(Long updated) {
         this.updated = updated;
         return this;
     }
@@ -123,11 +123,11 @@ public class GetDatabaseResponseBean {
      * DDM实例最后更新时间。
      * @return updated
      */
-    public String getUpdated() {
+    public Long getUpdated() {
         return updated;
     }
 
-    public void setUpdated(String updated) {
+    public void setUpdated(Long updated) {
         this.updated = updated;
     }
 

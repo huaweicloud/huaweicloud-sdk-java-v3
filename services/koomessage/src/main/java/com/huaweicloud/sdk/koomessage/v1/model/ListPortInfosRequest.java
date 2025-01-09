@@ -56,6 +56,11 @@ public class ListPortInfosRequest {
 
     private String pubName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_bind")
+
+    private Integer isBind;
+
     public ListPortInfosRequest withType(Integer type) {
         this.type = type;
         return this;
@@ -215,6 +220,23 @@ public class ListPortInfosRequest {
         this.pubName = pubName;
     }
 
+    public ListPortInfosRequest withIsBind(Integer isBind) {
+        this.isBind = isBind;
+        return this;
+    }
+
+    /**
+     * 绑定状态。 - 0：未绑定 - 1：已绑定  > - type=0时，此字段作为过滤条件 > - type=1时，不作为过滤条件 
+     * @return isBind
+     */
+    public Integer getIsBind() {
+        return isBind;
+    }
+
+    public void setIsBind(Integer isBind) {
+        this.isBind = isBind;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -228,12 +250,12 @@ public class ListPortInfosRequest {
             && Objects.equals(this.portType, that.portType) && Objects.equals(this.signSearch, that.signSearch)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.pubName, that.pubName);
+            && Objects.equals(this.pubName, that.pubName) && Objects.equals(this.isBind, that.isBind);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, port, portType, signSearch, offset, limit, startTime, endTime, pubName);
+        return Objects.hash(type, port, portType, signSearch, offset, limit, startTime, endTime, pubName, isBind);
     }
 
     @Override
@@ -249,6 +271,7 @@ public class ListPortInfosRequest {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    pubName: ").append(toIndentedString(pubName)).append("\n");
+        sb.append("    isBind: ").append(toIndentedString(isBind)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -212,7 +212,7 @@ public class CreateResolveTaskRequestBody {
     }
 
     /**
-     * 短链参数列表。一次请求最多生成100个短链。  > OPPO模板一次最多申请10个短链。 > 群发短链每次调用最多申请一条。 
+     * 短链参数列表。一次请求最多生成100个短链。  > 群发短链每次调用最多申请一条。 
      * @return params
      */
     public List<CreateShortChainParam> getParams() {

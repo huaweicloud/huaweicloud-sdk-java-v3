@@ -65,7 +65,7 @@ public class ListTtscVocabularyConfigsResponse extends SdkResponse {
     }
 
     /**
-     * 词表。
+     * 自定义读法。
      * @return data
      */
     public List<VocabularyConfig> getData() {

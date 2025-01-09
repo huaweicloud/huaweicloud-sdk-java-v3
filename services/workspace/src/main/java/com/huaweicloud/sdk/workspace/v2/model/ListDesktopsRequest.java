@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.workspace.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -13,7 +16,7 @@ public class ListDesktopsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
 
-    private String userName;
+    private List<String> userName = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "computer_name")
@@ -26,6 +29,11 @@ public class ListDesktopsRequest {
     private String desktopIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sids")
+
+    private List<String> sids = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -34,6 +42,11 @@ public class ListDesktopsRequest {
     @JsonProperty(value = "limit")
 
     private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "site_id")
+
+    private String siteId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
@@ -51,12 +64,48 @@ public class ListDesktopsRequest {
     private String desktopType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_share_desktop")
+
+    private Boolean isShareDesktop;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
 
     private String subnetId;
 
-    public ListDesktopsRequest withUserName(String userName) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_id")
+
+    private List<String> desktopId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag")
+
+    private String tag;
+
+    public ListDesktopsRequest withUserName(List<String> userName) {
         this.userName = userName;
+        return this;
+    }
+
+    public ListDesktopsRequest addUserNameItem(String userNameItem) {
+        if (this.userName == null) {
+            this.userName = new ArrayList<>();
+        }
+        this.userName.add(userNameItem);
+        return this;
+    }
+
+    public ListDesktopsRequest withUserName(Consumer<List<String>> userNameSetter) {
+        if (this.userName == null) {
+            this.userName = new ArrayList<>();
+        }
+        userNameSetter.accept(this.userName);
         return this;
     }
 
@@ -64,11 +113,11 @@ public class ListDesktopsRequest {
      * 桌面所属用户。
      * @return userName
      */
-    public String getUserName() {
+    public List<String> getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
+    public void setUserName(List<String> userName) {
         this.userName = userName;
     }
 
@@ -104,6 +153,39 @@ public class ListDesktopsRequest {
 
     public void setDesktopIp(String desktopIp) {
         this.desktopIp = desktopIp;
+    }
+
+    public ListDesktopsRequest withSids(List<String> sids) {
+        this.sids = sids;
+        return this;
+    }
+
+    public ListDesktopsRequest addSidsItem(String sidsItem) {
+        if (this.sids == null) {
+            this.sids = new ArrayList<>();
+        }
+        this.sids.add(sidsItem);
+        return this;
+    }
+
+    public ListDesktopsRequest withSids(Consumer<List<String>> sidsSetter) {
+        if (this.sids == null) {
+            this.sids = new ArrayList<>();
+        }
+        sidsSetter.accept(this.sids);
+        return this;
+    }
+
+    /**
+     * 桌面的sid列表，一次只能查询20个sid。
+     * @return sids
+     */
+    public List<String> getSids() {
+        return sids;
+    }
+
+    public void setSids(List<String> sids) {
+        this.sids = sids;
     }
 
     public ListDesktopsRequest withOffset(Integer offset) {
@@ -142,6 +224,23 @@ public class ListDesktopsRequest {
 
     public void setLimit(Integer limit) {
         this.limit = limit;
+    }
+
+    public ListDesktopsRequest withSiteId(String siteId) {
+        this.siteId = siteId;
+        return this;
+    }
+
+    /**
+     * 用于筛选指定站点下的桌面列表
+     * @return siteId
+     */
+    public String getSiteId() {
+        return siteId;
+    }
+
+    public void setSiteId(String siteId) {
+        this.siteId = siteId;
     }
 
     public ListDesktopsRequest withPoolId(String poolId) {
@@ -195,6 +294,23 @@ public class ListDesktopsRequest {
         this.desktopType = desktopType;
     }
 
+    public ListDesktopsRequest withIsShareDesktop(Boolean isShareDesktop) {
+        this.isShareDesktop = isShareDesktop;
+        return this;
+    }
+
+    /**
+     * 是否为协同桌面
+     * @return isShareDesktop
+     */
+    public Boolean getIsShareDesktop() {
+        return isShareDesktop;
+    }
+
+    public void setIsShareDesktop(Boolean isShareDesktop) {
+        this.isShareDesktop = isShareDesktop;
+    }
+
     public ListDesktopsRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -212,6 +328,73 @@ public class ListDesktopsRequest {
         this.subnetId = subnetId;
     }
 
+    public ListDesktopsRequest withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 桌面的运行状态。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public ListDesktopsRequest withDesktopId(List<String> desktopId) {
+        this.desktopId = desktopId;
+        return this;
+    }
+
+    public ListDesktopsRequest addDesktopIdItem(String desktopIdItem) {
+        if (this.desktopId == null) {
+            this.desktopId = new ArrayList<>();
+        }
+        this.desktopId.add(desktopIdItem);
+        return this;
+    }
+
+    public ListDesktopsRequest withDesktopId(Consumer<List<String>> desktopIdSetter) {
+        if (this.desktopId == null) {
+            this.desktopId = new ArrayList<>();
+        }
+        desktopIdSetter.accept(this.desktopId);
+        return this;
+    }
+
+    /**
+     * 桌面id，当前最多支持100个桌面id进行查询。
+     * @return desktopId
+     */
+    public List<String> getDesktopId() {
+        return desktopId;
+    }
+
+    public void setDesktopId(List<String> desktopId) {
+        this.desktopId = desktopId;
+    }
+
+    public ListDesktopsRequest withTag(String tag) {
+        this.tag = tag;
+        return this;
+    }
+
+    /**
+     * 桌面的标签。样例： - key1=value1。 - key1=value1，key2=value2。
+     * @return tag
+     */
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -222,16 +405,33 @@ public class ListDesktopsRequest {
         }
         ListDesktopsRequest that = (ListDesktopsRequest) obj;
         return Objects.equals(this.userName, that.userName) && Objects.equals(this.computerName, that.computerName)
-            && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.sids, that.sids)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.siteId, that.siteId) && Objects.equals(this.poolId, that.poolId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.subnetId, that.subnetId);
+            && Objects.equals(this.desktopType, that.desktopType)
+            && Objects.equals(this.isShareDesktop, that.isShareDesktop) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.desktopId, that.desktopId)
+            && Objects.equals(this.tag, that.tag);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(userName, computerName, desktopIp, offset, limit, poolId, enterpriseProjectId, desktopType, subnetId);
+        return Objects.hash(userName,
+            computerName,
+            desktopIp,
+            sids,
+            offset,
+            limit,
+            siteId,
+            poolId,
+            enterpriseProjectId,
+            desktopType,
+            isShareDesktop,
+            subnetId,
+            status,
+            desktopId,
+            tag);
     }
 
     @Override
@@ -241,12 +441,18 @@ public class ListDesktopsRequest {
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
         sb.append("    desktopIp: ").append(toIndentedString(desktopIp)).append("\n");
+        sb.append("    sids: ").append(toIndentedString(sids)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    siteId: ").append(toIndentedString(siteId)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
+        sb.append("    isShareDesktop: ").append(toIndentedString(isShareDesktop)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
+        sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

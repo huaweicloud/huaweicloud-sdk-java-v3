@@ -31,6 +31,16 @@ public class ListServersRequest {
     private String serverName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "machine_name")
+
+    private String machineName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_addr")
+
+    private String ipAddr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
 
     private String serverId;
@@ -117,6 +127,40 @@ public class ListServersRequest {
         this.serverName = serverName;
     }
 
+    public ListServersRequest withMachineName(String machineName) {
+        this.machineName = machineName;
+        return this;
+    }
+
+    /**
+     * 机器名称，支持部分匹配。
+     * @return machineName
+     */
+    public String getMachineName() {
+        return machineName;
+    }
+
+    public void setMachineName(String machineName) {
+        this.machineName = machineName;
+    }
+
+    public ListServersRequest withIpAddr(String ipAddr) {
+        this.ipAddr = ipAddr;
+        return this;
+    }
+
+    /**
+     * ip地址，支持部分匹配。
+     * @return ipAddr
+     */
+    public String getIpAddr() {
+        return ipAddr;
+    }
+
+    public void setIpAddr(String ipAddr) {
+        this.ipAddr = ipAddr;
+    }
+
     public ListServersRequest withServerId(String serverId) {
         this.serverId = serverId;
         return this;
@@ -179,14 +223,23 @@ public class ListServersRequest {
         ListServersRequest that = (ListServersRequest) obj;
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.serverGroupId, that.serverGroupId)
-            && Objects.equals(this.serverName, that.serverName) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.serverName, that.serverName) && Objects.equals(this.machineName, that.machineName)
+            && Objects.equals(this.ipAddr, that.ipAddr) && Objects.equals(this.serverId, that.serverId)
             && Objects.equals(this.maintainStatus, that.maintainStatus)
             && Objects.equals(this.scalingAutoCreate, that.scalingAutoCreate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, serverGroupId, serverName, serverId, maintainStatus, scalingAutoCreate);
+        return Objects.hash(offset,
+            limit,
+            serverGroupId,
+            serverName,
+            machineName,
+            ipAddr,
+            serverId,
+            maintainStatus,
+            scalingAutoCreate);
     }
 
     @Override
@@ -197,6 +250,8 @@ public class ListServersRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    serverGroupId: ").append(toIndentedString(serverGroupId)).append("\n");
         sb.append("    serverName: ").append(toIndentedString(serverName)).append("\n");
+        sb.append("    machineName: ").append(toIndentedString(machineName)).append("\n");
+        sb.append("    ipAddr: ").append(toIndentedString(ipAddr)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("    maintainStatus: ").append(toIndentedString(maintainStatus)).append("\n");
         sb.append("    scalingAutoCreate: ").append(toIndentedString(scalingAutoCreate)).append("\n");

@@ -106,6 +106,11 @@ public class AppSession {
     private String clientIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_version")
 
     private String clientVersion;
@@ -468,6 +473,23 @@ public class AppSession {
         this.clientIp = clientIp;
     }
 
+    public AppSession withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 客户端出口ip。
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
     public AppSession withClientVersion(String clientVersion) {
         this.clientVersion = clientVersion;
         return this;
@@ -624,7 +646,8 @@ public class AppSession {
             && Objects.equals(this.machineSid, that.machineSid) && Objects.equals(this.machineName, that.machineName)
             && Objects.equals(this.sessionState, that.sessionState) && Objects.equals(this.appName, that.appName)
             && Objects.equals(this.clientMac, that.clientMac) && Objects.equals(this.clientName, that.clientName)
-            && Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.clientVersion, that.clientVersion)
+            && Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.clientVersion, that.clientVersion)
             && Objects.equals(this.clientType, that.clientType) && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.vmIp, that.vmIp) && Objects.equals(this.failedReason, that.failedReason)
             && Objects.equals(this.failedCode, that.failedCode)
@@ -653,6 +676,7 @@ public class AppSession {
             clientMac,
             clientName,
             clientIp,
+            publicIp,
             clientVersion,
             clientType,
             agentVersion,
@@ -686,6 +710,7 @@ public class AppSession {
         sb.append("    clientMac: ").append(toIndentedString(clientMac)).append("\n");
         sb.append("    clientName: ").append(toIndentedString(clientName)).append("\n");
         sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
         sb.append("    clientType: ").append(toIndentedString(clientType)).append("\n");
         sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");

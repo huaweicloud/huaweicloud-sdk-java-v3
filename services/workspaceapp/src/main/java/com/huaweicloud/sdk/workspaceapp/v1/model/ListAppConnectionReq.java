@@ -87,6 +87,11 @@ public class ListAppConnectionReq {
     private String wiIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tenant_id")
 
     private String tenantId;
@@ -361,6 +366,23 @@ public class ListAppConnectionReq {
         this.wiIp = wiIp;
     }
 
+    public ListAppConnectionReq withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 客户端出口ip。
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
     public ListAppConnectionReq withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
@@ -447,7 +469,7 @@ public class ListAppConnectionReq {
             && Objects.equals(this.clientVersion, that.clientVersion)
             && Objects.equals(this.clientType, that.clientType) && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.vmIp, that.vmIp) && Objects.equals(this.wiIp, that.wiIp)
-            && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.tenantId, that.tenantId)
             && Objects.equals(this.brokeringStartTime, that.brokeringStartTime)
             && Objects.equals(this.brokeringEndTime, that.brokeringEndTime)
             && Objects.equals(this.virtualIp, that.virtualIp);
@@ -470,6 +492,7 @@ public class ListAppConnectionReq {
             agentVersion,
             vmIp,
             wiIp,
+            publicIp,
             tenantId,
             brokeringStartTime,
             brokeringEndTime,
@@ -495,6 +518,7 @@ public class ListAppConnectionReq {
         sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");
         sb.append("    vmIp: ").append(toIndentedString(vmIp)).append("\n");
         sb.append("    wiIp: ").append(toIndentedString(wiIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    brokeringStartTime: ").append(toIndentedString(brokeringStartTime)).append("\n");
         sb.append("    brokeringEndTime: ").append(toIndentedString(brokeringEndTime)).append("\n");

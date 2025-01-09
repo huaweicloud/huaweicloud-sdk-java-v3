@@ -63,6 +63,26 @@ public class ListSecurityGroupRulesRequest {
 
     private String remoteIpPrefix;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority")
+
+    private List<Integer> priority = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ethertype")
+
+    private List<String> ethertype = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_address_group_id")
+
+    private List<String> remoteAddressGroupId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enabled")
+
+    private Boolean enabled;
+
     public ListSecurityGroupRulesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -285,7 +305,7 @@ public class ListSecurityGroupRulesRequest {
     }
 
     /**
-     * 功能说明：安全组规则生效策略
+     * 功能说明：安全组规则生效策略。 取值范围：allow表示允许，deny表示拒绝。
      * @return action
      */
     public String getAction() {
@@ -313,6 +333,122 @@ public class ListSecurityGroupRulesRequest {
         this.remoteIpPrefix = remoteIpPrefix;
     }
 
+    public ListSecurityGroupRulesRequest withPriority(List<Integer> priority) {
+        this.priority = priority;
+        return this;
+    }
+
+    public ListSecurityGroupRulesRequest addPriorityItem(Integer priorityItem) {
+        if (this.priority == null) {
+            this.priority = new ArrayList<>();
+        }
+        this.priority.add(priorityItem);
+        return this;
+    }
+
+    public ListSecurityGroupRulesRequest withPriority(Consumer<List<Integer>> prioritySetter) {
+        if (this.priority == null) {
+            this.priority = new ArrayList<>();
+        }
+        prioritySetter.accept(this.priority);
+        return this;
+    }
+
+    /**
+     * 功能说明：优先级，支持多条过滤。
+     * @return priority
+     */
+    public List<Integer> getPriority() {
+        return priority;
+    }
+
+    public void setPriority(List<Integer> priority) {
+        this.priority = priority;
+    }
+
+    public ListSecurityGroupRulesRequest withEthertype(List<String> ethertype) {
+        this.ethertype = ethertype;
+        return this;
+    }
+
+    public ListSecurityGroupRulesRequest addEthertypeItem(String ethertypeItem) {
+        if (this.ethertype == null) {
+            this.ethertype = new ArrayList<>();
+        }
+        this.ethertype.add(ethertypeItem);
+        return this;
+    }
+
+    public ListSecurityGroupRulesRequest withEthertype(Consumer<List<String>> ethertypeSetter) {
+        if (this.ethertype == null) {
+            this.ethertype = new ArrayList<>();
+        }
+        ethertypeSetter.accept(this.ethertype);
+        return this;
+    }
+
+    /**
+     * 功能说明：IP协议类型，支持多条过滤。 取值范围：IPv4,IPv6,ipv4,ipv6
+     * @return ethertype
+     */
+    public List<String> getEthertype() {
+        return ethertype;
+    }
+
+    public void setEthertype(List<String> ethertype) {
+        this.ethertype = ethertype;
+    }
+
+    public ListSecurityGroupRulesRequest withRemoteAddressGroupId(List<String> remoteAddressGroupId) {
+        this.remoteAddressGroupId = remoteAddressGroupId;
+        return this;
+    }
+
+    public ListSecurityGroupRulesRequest addRemoteAddressGroupIdItem(String remoteAddressGroupIdItem) {
+        if (this.remoteAddressGroupId == null) {
+            this.remoteAddressGroupId = new ArrayList<>();
+        }
+        this.remoteAddressGroupId.add(remoteAddressGroupIdItem);
+        return this;
+    }
+
+    public ListSecurityGroupRulesRequest withRemoteAddressGroupId(Consumer<List<String>> remoteAddressGroupIdSetter) {
+        if (this.remoteAddressGroupId == null) {
+            this.remoteAddressGroupId = new ArrayList<>();
+        }
+        remoteAddressGroupIdSetter.accept(this.remoteAddressGroupId);
+        return this;
+    }
+
+    /**
+     * 功能说明：远端IP地址组ID，支持多ID过滤。
+     * @return remoteAddressGroupId
+     */
+    public List<String> getRemoteAddressGroupId() {
+        return remoteAddressGroupId;
+    }
+
+    public void setRemoteAddressGroupId(List<String> remoteAddressGroupId) {
+        this.remoteAddressGroupId = remoteAddressGroupId;
+    }
+
+    public ListSecurityGroupRulesRequest withEnabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+
+    /**
+     * 功能说明：是否启用安全组规则，不支持多值过滤。 取值范围：true, false。
+     * @return enabled
+     */
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -326,7 +462,10 @@ public class ListSecurityGroupRulesRequest {
             && Objects.equals(this.id, that.id) && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.description, that.description)
             && Objects.equals(this.remoteGroupId, that.remoteGroupId) && Objects.equals(this.direction, that.direction)
-            && Objects.equals(this.action, that.action) && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix);
+            && Objects.equals(this.action, that.action) && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.ethertype, that.ethertype)
+            && Objects.equals(this.remoteAddressGroupId, that.remoteAddressGroupId)
+            && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override
@@ -340,7 +479,11 @@ public class ListSecurityGroupRulesRequest {
             remoteGroupId,
             direction,
             action,
-            remoteIpPrefix);
+            remoteIpPrefix,
+            priority,
+            ethertype,
+            remoteAddressGroupId,
+            enabled);
     }
 
     @Override
@@ -357,6 +500,10 @@ public class ListSecurityGroupRulesRequest {
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    remoteIpPrefix: ").append(toIndentedString(remoteIpPrefix)).append("\n");
+        sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
+        sb.append("    ethertype: ").append(toIndentedString(ethertype)).append("\n");
+        sb.append("    remoteAddressGroupId: ").append(toIndentedString(remoteAddressGroupId)).append("\n");
+        sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }

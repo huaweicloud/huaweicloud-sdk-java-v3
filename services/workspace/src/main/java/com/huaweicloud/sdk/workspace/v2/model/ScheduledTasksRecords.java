@@ -60,6 +60,11 @@ public class ScheduledTasksRecords {
 
     private String executeTaskId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "execute_object_type")
+
+    private String executeObjectType;
+
     public ScheduledTasksRecords withId(String id) {
         this.id = id;
         return this;
@@ -230,6 +235,23 @@ public class ScheduledTasksRecords {
         this.executeTaskId = executeTaskId;
     }
 
+    public ScheduledTasksRecords withExecuteObjectType(String executeObjectType) {
+        this.executeObjectType = executeObjectType;
+        return this;
+    }
+
+    /**
+     * 执行定时任务的对象类型，只有定时执行脚本返回。
+     * @return executeObjectType
+     */
+    public String getExecuteObjectType() {
+        return executeObjectType;
+    }
+
+    public void setExecuteObjectType(String executeObjectType) {
+        this.executeObjectType = executeObjectType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -243,7 +265,8 @@ public class ScheduledTasksRecords {
             && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.scheduledType, that.scheduledType)
             && Objects.equals(this.status, that.status) && Objects.equals(this.successNum, that.successNum)
             && Objects.equals(this.failedNum, that.failedNum) && Objects.equals(this.skipNum, that.skipNum)
-            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.executeTaskId, that.executeTaskId);
+            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.executeTaskId, that.executeTaskId)
+            && Objects.equals(this.executeObjectType, that.executeObjectType);
     }
 
     @Override
@@ -257,7 +280,8 @@ public class ScheduledTasksRecords {
             failedNum,
             skipNum,
             timeZone,
-            executeTaskId);
+            executeTaskId,
+            executeObjectType);
     }
 
     @Override
@@ -274,6 +298,7 @@ public class ScheduledTasksRecords {
         sb.append("    skipNum: ").append(toIndentedString(skipNum)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
         sb.append("    executeTaskId: ").append(toIndentedString(executeTaskId)).append("\n");
+        sb.append("    executeObjectType: ").append(toIndentedString(executeObjectType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

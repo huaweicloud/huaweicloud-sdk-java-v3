@@ -924,6 +924,16 @@ public class DcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListGdgwRouteTablesRequest::getExtFields, ListGdgwRouteTablesRequest::setExtFields));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListGdgwRouteTablesRequest::getLimit, ListGdgwRouteTablesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListGdgwRouteTablesRequest::getMarker, ListGdgwRouteTablesRequest::setMarker));
         builder.<List<String>>withRequestField("nexthop",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

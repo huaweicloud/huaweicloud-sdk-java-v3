@@ -126,6 +126,11 @@ public class UserConnectionInfo {
 
     private String virtualIp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
     public UserConnectionInfo withId(String id) {
         this.id = id;
         return this;
@@ -517,6 +522,23 @@ public class UserConnectionInfo {
         this.virtualIp = virtualIp;
     }
 
+    public UserConnectionInfo withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 客户端出口ip。
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -538,7 +560,8 @@ public class UserConnectionInfo {
             && Objects.equals(this.clientType, that.clientType) && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.vmIp, that.vmIp) && Objects.equals(this.connectFlag, that.connectFlag)
             && Objects.equals(this.wiIp, that.wiIp) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.virtualIp, that.virtualIp);
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.virtualIp, that.virtualIp)
+            && Objects.equals(this.publicIp, that.publicIp);
     }
 
     @Override
@@ -565,7 +588,8 @@ public class UserConnectionInfo {
             wiIp,
             updateTime,
             tenantId,
-            virtualIp);
+            virtualIp,
+            publicIp);
     }
 
     @Override
@@ -595,6 +619,7 @@ public class UserConnectionInfo {
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    virtualIp: ").append(toIndentedString(virtualIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

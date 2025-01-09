@@ -15,6 +15,16 @@ import java.util.function.Consumer;
 public class BatchRunDesktopsResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_msg")
+
+    private String errorMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_operation_list")
 
     private List<VmOperateResult> failedOperationList = null;
@@ -23,6 +33,40 @@ public class BatchRunDesktopsResponse extends SdkResponse {
     @JsonProperty(value = "job_id")
 
     private String jobId;
+
+    public BatchRunDesktopsResponse withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
+     * 错误码，失败时返回。
+     * @return errorCode
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    public BatchRunDesktopsResponse withErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+
+    /**
+     * 错误描述。
+     * @return errorMsg
+     */
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
 
     public BatchRunDesktopsResponse withFailedOperationList(List<VmOperateResult> failedOperationList) {
         this.failedOperationList = failedOperationList;
@@ -83,19 +127,22 @@ public class BatchRunDesktopsResponse extends SdkResponse {
             return false;
         }
         BatchRunDesktopsResponse that = (BatchRunDesktopsResponse) obj;
-        return Objects.equals(this.failedOperationList, that.failedOperationList)
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.failedOperationList, that.failedOperationList)
             && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(failedOperationList, jobId);
+        return Objects.hash(errorCode, errorMsg, failedOperationList, jobId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchRunDesktopsResponse {\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("    failedOperationList: ").append(toIndentedString(failedOperationList)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");

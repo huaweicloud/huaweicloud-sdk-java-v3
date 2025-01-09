@@ -46,6 +46,11 @@ public class ListSessionsRequest {
     private String vmIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "machine_name")
 
     private String machineName;
@@ -183,6 +188,23 @@ public class ListSessionsRequest {
         this.vmIp = vmIp;
     }
 
+    public ListSessionsRequest withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 客户端出口IP。
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
     public ListSessionsRequest withMachineName(String machineName) {
         this.machineName = machineName;
         return this;
@@ -206,7 +228,7 @@ public class ListSessionsRequest {
     }
 
     /**
-     * 应用状态： * `Active` - 会话当前处于活动状态，有用户登录并且正在使用。 * `Disconnected` - 用户已经登录但会话处于断开连接状态。 * `AppcInit` - 会话正在初始化。 * `SignedOut` - 会话已注销。 * `InitFail` - 会话初始化失败。
+     * 应用状态，支持查询多个，中间用英文逗号分隔： * `Active` - 会话当前处于活动状态，有用户登录并且正在使用。 * `Disconnected` - 用户已经登录但会话处于断开连接状态。 * `AppcInit` - 会话正在初始化。 * `SignedOut` - 会话已注销。 * `InitFail` - 会话初始化失败。
      * @return sessionState
      */
     public String getSessionState() {
@@ -247,7 +269,7 @@ public class ListSessionsRequest {
             && Objects.equals(this.userName, that.userName) && Objects.equals(this.queryBeginTime, that.queryBeginTime)
             && Objects.equals(this.queryEndTime, that.queryEndTime)
             && Objects.equals(this.appServerGroupId, that.appServerGroupId) && Objects.equals(this.vmIp, that.vmIp)
-            && Objects.equals(this.machineName, that.machineName)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.machineName, that.machineName)
             && Objects.equals(this.sessionState, that.sessionState) && Objects.equals(this.isSuccess, that.isSuccess);
     }
 
@@ -260,6 +282,7 @@ public class ListSessionsRequest {
             queryEndTime,
             appServerGroupId,
             vmIp,
+            publicIp,
             machineName,
             sessionState,
             isSuccess);
@@ -276,6 +299,7 @@ public class ListSessionsRequest {
         sb.append("    queryEndTime: ").append(toIndentedString(queryEndTime)).append("\n");
         sb.append("    appServerGroupId: ").append(toIndentedString(appServerGroupId)).append("\n");
         sb.append("    vmIp: ").append(toIndentedString(vmIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    machineName: ").append(toIndentedString(machineName)).append("\n");
         sb.append("    sessionState: ").append(toIndentedString(sessionState)).append("\n");
         sb.append("    isSuccess: ").append(toIndentedString(isSuccess)).append("\n");

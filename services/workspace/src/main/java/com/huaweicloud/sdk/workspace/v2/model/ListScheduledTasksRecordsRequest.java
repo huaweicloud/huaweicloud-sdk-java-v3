@@ -15,6 +15,16 @@ public class ListScheduledTasksRecordsRequest {
 
     private String taskId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
     public ListScheduledTasksRecordsRequest withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -32,6 +42,44 @@ public class ListScheduledTasksRecordsRequest {
         this.taskId = taskId;
     }
 
+    public ListScheduledTasksRecordsRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 用于分页查询，查询的起始记录序号，从0开始。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public ListScheduledTasksRecordsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 用于分页查询，返回桌面数量限制。取值范围0-100，默认值是10。
+     * minimum: 1
+     * maximum: 100
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +89,13 @@ public class ListScheduledTasksRecordsRequest {
             return false;
         }
         ListScheduledTasksRecordsRequest that = (ListScheduledTasksRecordsRequest) obj;
-        return Objects.equals(this.taskId, that.taskId);
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId);
+        return Objects.hash(taskId, offset, limit);
     }
 
     @Override
@@ -54,6 +103,8 @@ public class ListScheduledTasksRecordsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListScheduledTasksRecordsRequest {\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

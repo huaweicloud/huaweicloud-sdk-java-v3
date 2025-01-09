@@ -24,6 +24,11 @@ public class ApplyDesktopsInternetReq {
     private List<String> desktopIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inst_info_ids")
+
+    private List<String> instInfoIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip_type")
 
     private String eipType;
@@ -109,6 +114,11 @@ public class ApplyDesktopsInternetReq {
     private Integer bandwidthSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -149,6 +159,39 @@ public class ApplyDesktopsInternetReq {
 
     public void setDesktopIds(List<String> desktopIds) {
         this.desktopIds = desktopIds;
+    }
+
+    public ApplyDesktopsInternetReq withInstInfoIds(List<String> instInfoIds) {
+        this.instInfoIds = instInfoIds;
+        return this;
+    }
+
+    public ApplyDesktopsInternetReq addInstInfoIdsItem(String instInfoIdsItem) {
+        if (this.instInfoIds == null) {
+            this.instInfoIds = new ArrayList<>();
+        }
+        this.instInfoIds.add(instInfoIdsItem);
+        return this;
+    }
+
+    public ApplyDesktopsInternetReq withInstInfoIds(Consumer<List<String>> instInfoIdsSetter) {
+        if (this.instInfoIds == null) {
+            this.instInfoIds = new ArrayList<>();
+        }
+        instInfoIdsSetter.accept(this.instInfoIds);
+        return this;
+    }
+
+    /**
+     * 需要开通上网功能的桌面instInfoId列表。供包周期回调使用
+     * @return instInfoIds
+     */
+    public List<String> getInstInfoIds() {
+        return instInfoIds;
+    }
+
+    public void setInstInfoIds(List<String> instInfoIds) {
+        this.instInfoIds = instInfoIds;
     }
 
     public ApplyDesktopsInternetReq withEipType(String eipType) {
@@ -204,6 +247,23 @@ public class ApplyDesktopsInternetReq {
         this.bandwidthSize = bandwidthSize;
     }
 
+    public ApplyDesktopsInternetReq withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 包周期订购ID，CBC订购回调时使用。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
     public ApplyDesktopsInternetReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -249,16 +309,17 @@ public class ApplyDesktopsInternetReq {
             return false;
         }
         ApplyDesktopsInternetReq that = (ApplyDesktopsInternetReq) obj;
-        return Objects.equals(this.desktopIds, that.desktopIds) && Objects.equals(this.eipType, that.eipType)
-            && Objects.equals(this.eipChargeMode, that.eipChargeMode)
-            && Objects.equals(this.bandwidthSize, that.bandwidthSize)
+        return Objects.equals(this.desktopIds, that.desktopIds) && Objects.equals(this.instInfoIds, that.instInfoIds)
+            && Objects.equals(this.eipType, that.eipType) && Objects.equals(this.eipChargeMode, that.eipChargeMode)
+            && Objects.equals(this.bandwidthSize, that.bandwidthSize) && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopIds, eipType, eipChargeMode, bandwidthSize, enterpriseProjectId, count);
+        return Objects
+            .hash(desktopIds, instInfoIds, eipType, eipChargeMode, bandwidthSize, orderId, enterpriseProjectId, count);
     }
 
     @Override
@@ -266,9 +327,11 @@ public class ApplyDesktopsInternetReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class ApplyDesktopsInternetReq {\n");
         sb.append("    desktopIds: ").append(toIndentedString(desktopIds)).append("\n");
+        sb.append("    instInfoIds: ").append(toIndentedString(instInfoIds)).append("\n");
         sb.append("    eipType: ").append(toIndentedString(eipType)).append("\n");
         sb.append("    eipChargeMode: ").append(toIndentedString(eipChargeMode)).append("\n");
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("}");

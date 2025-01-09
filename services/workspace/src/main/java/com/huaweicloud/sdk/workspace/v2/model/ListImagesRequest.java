@@ -50,6 +50,16 @@ public class ListImagesRequest {
 
     private Integer offset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_field")
+
+    private String sortField;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_type")
+
+    private String sortType;
+
     public ListImagesRequest withOsType(String osType) {
         this.osType = osType;
         return this;
@@ -190,6 +200,40 @@ public class ListImagesRequest {
         this.offset = offset;
     }
 
+    public ListImagesRequest withSortField(String sortField) {
+        this.sortField = sortField;
+        return this;
+    }
+
+    /**
+     * 用于排序，表示按照哪个字段排序。取值为镜像属性name、created_at字段，默认为name。
+     * @return sortField
+     */
+    public String getSortField() {
+        return sortField;
+    }
+
+    public void setSortField(String sortField) {
+        this.sortField = sortField;
+    }
+
+    public ListImagesRequest withSortType(String sortType) {
+        this.sortType = sortType;
+        return this;
+    }
+
+    /**
+     * 用于排序，表示升序还是降序，取值为asc和desc。与sort_field一起组合使用，默认为升序asc。
+     * @return sortType
+     */
+    public String getSortType() {
+        return sortType;
+    }
+
+    public void setSortType(String sortType) {
+        this.sortType = sortType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -202,12 +246,14 @@ public class ListImagesRequest {
         return Objects.equals(this.osType, that.osType) && Objects.equals(this.imageType, that.imageType)
             && Objects.equals(this.platform, that.platform) && Objects.equals(this.architecture, that.architecture)
             && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.imageId, that.imageId)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.sortField, that.sortField) && Objects.equals(this.sortType, that.sortType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(osType, imageType, platform, architecture, packageType, imageId, limit, offset);
+        return Objects
+            .hash(osType, imageType, platform, architecture, packageType, imageId, limit, offset, sortField, sortType);
     }
 
     @Override
@@ -222,6 +268,8 @@ public class ListImagesRequest {
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    sortField: ").append(toIndentedString(sortField)).append("\n");
+        sb.append("    sortType: ").append(toIndentedString(sortType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

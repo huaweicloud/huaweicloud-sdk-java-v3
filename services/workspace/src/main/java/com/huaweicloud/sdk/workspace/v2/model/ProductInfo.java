@@ -29,19 +29,9 @@ public class ProductInfo {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "architecture")
-
-    private String architecture;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cpu")
 
     private String cpu;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cpu_desc")
-
-    private String cpuDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "memory")
@@ -49,9 +39,34 @@ public class ProductInfo {
     private String memory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "descriptions")
+
+    private String descriptions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charge_mode")
+
+    private String chargeMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "architecture")
+
+    private String architecture;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cpu_desc")
+
+    private String cpuDesc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_gpu")
 
     private Boolean isGpu;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "package_type")
+
+    private String packageType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "system_disk_type")
@@ -64,29 +79,9 @@ public class ProductInfo {
     private String systemDiskSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "data_disk_size")
-
-    private String dataDiskSize;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gpu_desc")
 
     private String gpuDesc;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "bill_switch")
-
-    private String billSwitch;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "descriptions")
-
-    private String descriptions;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "charge_mode")
-
-    private String chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "contain_data_disk")
@@ -109,11 +104,6 @@ public class ProductInfo {
     private String volumeProductType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "domain_ids")
-
-    private List<String> domainIds = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -123,23 +113,13 @@ public class ProductInfo {
 
     private List<String> subProductList = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "default_desktop_num")
-
-    private Integer defaultDesktopNum;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "max_apply_desktop_num")
-
-    private Integer maxApplyDesktopNum;
-
     public ProductInfo withProductId(String productId) {
         this.productId = productId;
         return this;
     }
 
     /**
-     * 产品id。
+     * 产品ID。
      * @return productId
      */
     public String getProductId() {
@@ -156,7 +136,7 @@ public class ProductInfo {
     }
 
     /**
-     * 规格ID。
+     * 产品规格ID。
      * @return flavorId
      */
     public String getFlavorId() {
@@ -173,7 +153,7 @@ public class ProductInfo {
     }
 
     /**
-     * 产品类型。取值为： BASE：表示产品基础套餐，套餐镜像中不包括除操作系统之外的其他商业软件，私有镜像场景只能使用此类套餐。
+     * 产品类型。  - BASE：表示产品基础套餐，套餐镜像中不包括除操作系统之外的其他商业软件，私有镜像场景只能使用此类套餐。
      * @return type
      */
     public String getType() {
@@ -184,30 +164,13 @@ public class ProductInfo {
         this.type = type;
     }
 
-    public ProductInfo withArchitecture(String architecture) {
-        this.architecture = architecture;
-        return this;
-    }
-
-    /**
-     * 产品架构，当前支持：arm、x86。
-     * @return architecture
-     */
-    public String getArchitecture() {
-        return architecture;
-    }
-
-    public void setArchitecture(String architecture) {
-        this.architecture = architecture;
-    }
-
     public ProductInfo withCpu(String cpu) {
         this.cpu = cpu;
         return this;
     }
 
     /**
-     * cpu。
+     * CPU
      * @return cpu
      */
     public String getCpu() {
@@ -216,23 +179,6 @@ public class ProductInfo {
 
     public void setCpu(String cpu) {
         this.cpu = cpu;
-    }
-
-    public ProductInfo withCpuDesc(String cpuDesc) {
-        this.cpuDesc = cpuDesc;
-        return this;
-    }
-
-    /**
-     * cpu描述。
-     * @return cpuDesc
-     */
-    public String getCpuDesc() {
-        return cpuDesc;
-    }
-
-    public void setCpuDesc(String cpuDesc) {
-        this.cpuDesc = cpuDesc;
     }
 
     public ProductInfo withMemory(String memory) {
@@ -250,108 +196,6 @@ public class ProductInfo {
 
     public void setMemory(String memory) {
         this.memory = memory;
-    }
-
-    public ProductInfo withIsGpu(Boolean isGpu) {
-        this.isGpu = isGpu;
-        return this;
-    }
-
-    /**
-     * 是否是GPU类型的规格。
-     * @return isGpu
-     */
-    public Boolean getIsGpu() {
-        return isGpu;
-    }
-
-    public void setIsGpu(Boolean isGpu) {
-        this.isGpu = isGpu;
-    }
-
-    public ProductInfo withSystemDiskType(String systemDiskType) {
-        this.systemDiskType = systemDiskType;
-        return this;
-    }
-
-    /**
-     * 系统盘类型。
-     * @return systemDiskType
-     */
-    public String getSystemDiskType() {
-        return systemDiskType;
-    }
-
-    public void setSystemDiskType(String systemDiskType) {
-        this.systemDiskType = systemDiskType;
-    }
-
-    public ProductInfo withSystemDiskSize(String systemDiskSize) {
-        this.systemDiskSize = systemDiskSize;
-        return this;
-    }
-
-    /**
-     * 系统盘大小，单位GB。
-     * @return systemDiskSize
-     */
-    public String getSystemDiskSize() {
-        return systemDiskSize;
-    }
-
-    public void setSystemDiskSize(String systemDiskSize) {
-        this.systemDiskSize = systemDiskSize;
-    }
-
-    public ProductInfo withDataDiskSize(String dataDiskSize) {
-        this.dataDiskSize = dataDiskSize;
-        return this;
-    }
-
-    /**
-     * 数据盘大小，单位GB。
-     * @return dataDiskSize
-     */
-    public String getDataDiskSize() {
-        return dataDiskSize;
-    }
-
-    public void setDataDiskSize(String dataDiskSize) {
-        this.dataDiskSize = dataDiskSize;
-    }
-
-    public ProductInfo withGpuDesc(String gpuDesc) {
-        this.gpuDesc = gpuDesc;
-        return this;
-    }
-
-    /**
-     * GPU描述。
-     * @return gpuDesc
-     */
-    public String getGpuDesc() {
-        return gpuDesc;
-    }
-
-    public void setGpuDesc(String gpuDesc) {
-        this.gpuDesc = gpuDesc;
-    }
-
-    public ProductInfo withBillSwitch(String billSwitch) {
-        this.billSwitch = billSwitch;
-        return this;
-    }
-
-    /**
-     * 话单开关，默认on,on-出话单模式,off-关话单模式,只支持反序列化，不支持序列化，不在接口中展示。
-     * @return billSwitch
-     */
-    public String getBillSwitch() {
-        return billSwitch;
-    }
-
-    public void setBillSwitch(String billSwitch) {
-        this.billSwitch = billSwitch;
     }
 
     public ProductInfo withDescriptions(String descriptions) {
@@ -377,7 +221,7 @@ public class ProductInfo {
     }
 
     /**
-     * 周期套餐标识。0表示包周期，1表示按需。
+     * 周期套餐标识，0表示包周期，1表示按需。
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -388,13 +232,132 @@ public class ProductInfo {
         this.chargeMode = chargeMode;
     }
 
+    public ProductInfo withArchitecture(String architecture) {
+        this.architecture = architecture;
+        return this;
+    }
+
+    /**
+     * 产品架构。
+     * @return architecture
+     */
+    public String getArchitecture() {
+        return architecture;
+    }
+
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
+    }
+
+    public ProductInfo withCpuDesc(String cpuDesc) {
+        this.cpuDesc = cpuDesc;
+        return this;
+    }
+
+    /**
+     * CPU描述。
+     * @return cpuDesc
+     */
+    public String getCpuDesc() {
+        return cpuDesc;
+    }
+
+    public void setCpuDesc(String cpuDesc) {
+        this.cpuDesc = cpuDesc;
+    }
+
+    public ProductInfo withIsGpu(Boolean isGpu) {
+        this.isGpu = isGpu;
+        return this;
+    }
+
+    /**
+     * 是否是GPU类型的规格。
+     * @return isGpu
+     */
+    public Boolean getIsGpu() {
+        return isGpu;
+    }
+
+    public void setIsGpu(Boolean isGpu) {
+        this.isGpu = isGpu;
+    }
+
+    public ProductInfo withPackageType(String packageType) {
+        this.packageType = packageType;
+        return this;
+    }
+
+    /**
+     * 套餐类型。 - ultimate：尊享版 - enterprise：企业版 - general: 通用办公版 - workstation: 云工作站 - dedicated: 专属办公版 - solver: 解算版 - agile: 敏捷办公版
+     * @return packageType
+     */
+    public String getPackageType() {
+        return packageType;
+    }
+
+    public void setPackageType(String packageType) {
+        this.packageType = packageType;
+    }
+
+    public ProductInfo withSystemDiskType(String systemDiskType) {
+        this.systemDiskType = systemDiskType;
+        return this;
+    }
+
+    /**
+     * 系统盘类型。
+     * @return systemDiskType
+     */
+    public String getSystemDiskType() {
+        return systemDiskType;
+    }
+
+    public void setSystemDiskType(String systemDiskType) {
+        this.systemDiskType = systemDiskType;
+    }
+
+    public ProductInfo withSystemDiskSize(String systemDiskSize) {
+        this.systemDiskSize = systemDiskSize;
+        return this;
+    }
+
+    /**
+     * 系统盘大小。
+     * @return systemDiskSize
+     */
+    public String getSystemDiskSize() {
+        return systemDiskSize;
+    }
+
+    public void setSystemDiskSize(String systemDiskSize) {
+        this.systemDiskSize = systemDiskSize;
+    }
+
+    public ProductInfo withGpuDesc(String gpuDesc) {
+        this.gpuDesc = gpuDesc;
+        return this;
+    }
+
+    /**
+     * GPU描述。
+     * @return gpuDesc
+     */
+    public String getGpuDesc() {
+        return gpuDesc;
+    }
+
+    public void setGpuDesc(String gpuDesc) {
+        this.gpuDesc = gpuDesc;
+    }
+
     public ProductInfo withContainDataDisk(Boolean containDataDisk) {
         this.containDataDisk = containDataDisk;
         return this;
     }
 
     /**
-     * 套餐计费是否包含了数据盘,off-不包含。
+     * 套餐计费是否包含了数据盘,off-不包含
      * @return containDataDisk
      */
     public Boolean getContainDataDisk() {
@@ -411,7 +374,7 @@ public class ProductInfo {
     }
 
     /**
-     * 资源规格。
+     * 资源类型。
      * @return resourceType
      */
     public String getResourceType() {
@@ -428,7 +391,7 @@ public class ProductInfo {
     }
 
     /**
-     * 云服务编码。
+     * 云服务类型。
      * @return cloudServiceType
      */
     public String getCloudServiceType() {
@@ -456,46 +419,13 @@ public class ProductInfo {
         this.volumeProductType = volumeProductType;
     }
 
-    public ProductInfo withDomainIds(List<String> domainIds) {
-        this.domainIds = domainIds;
-        return this;
-    }
-
-    public ProductInfo addDomainIdsItem(String domainIdsItem) {
-        if (this.domainIds == null) {
-            this.domainIds = new ArrayList<>();
-        }
-        this.domainIds.add(domainIdsItem);
-        return this;
-    }
-
-    public ProductInfo withDomainIds(Consumer<List<String>> domainIdsSetter) {
-        if (this.domainIds == null) {
-            this.domainIds = new ArrayList<>();
-        }
-        domainIdsSetter.accept(this.domainIds);
-        return this;
-    }
-
-    /**
-     * 该产品套餐支持的专有域id（domainId）。
-     * @return domainIds
-     */
-    public List<String> getDomainIds() {
-        return domainIds;
-    }
-
-    public void setDomainIds(List<String> domainIds) {
-        this.domainIds = domainIds;
-    }
-
     public ProductInfo withStatus(String status) {
         this.status = status;
         return this;
     }
 
     /**
-     * 产品状态，normal：正常、sellout：售空、abandon：下线。
+     * 默认在售状态，normal代表正常，sellout代表售空，abandon代表下线。
      * @return status
      */
     public String getStatus() {
@@ -539,44 +469,6 @@ public class ProductInfo {
         this.subProductList = subProductList;
     }
 
-    public ProductInfo withDefaultDesktopNum(Integer defaultDesktopNum) {
-        this.defaultDesktopNum = defaultDesktopNum;
-        return this;
-    }
-
-    /**
-     * 专享主机套餐默认的桌面数。
-     * minimum: 0
-     * maximum: 100
-     * @return defaultDesktopNum
-     */
-    public Integer getDefaultDesktopNum() {
-        return defaultDesktopNum;
-    }
-
-    public void setDefaultDesktopNum(Integer defaultDesktopNum) {
-        this.defaultDesktopNum = defaultDesktopNum;
-    }
-
-    public ProductInfo withMaxApplyDesktopNum(Integer maxApplyDesktopNum) {
-        this.maxApplyDesktopNum = maxApplyDesktopNum;
-        return this;
-    }
-
-    /**
-     * 专享主机支持创建的最大桌面数。
-     * minimum: 0
-     * maximum: 100
-     * @return maxApplyDesktopNum
-     */
-    public Integer getMaxApplyDesktopNum() {
-        return maxApplyDesktopNum;
-    }
-
-    public void setMaxApplyDesktopNum(Integer maxApplyDesktopNum) {
-        this.maxApplyDesktopNum = maxApplyDesktopNum;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -587,22 +479,18 @@ public class ProductInfo {
         }
         ProductInfo that = (ProductInfo) obj;
         return Objects.equals(this.productId, that.productId) && Objects.equals(this.flavorId, that.flavorId)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.architecture, that.architecture)
-            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.cpuDesc, that.cpuDesc)
-            && Objects.equals(this.memory, that.memory) && Objects.equals(this.isGpu, that.isGpu)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.descriptions, that.descriptions)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.architecture, that.architecture)
+            && Objects.equals(this.cpuDesc, that.cpuDesc) && Objects.equals(this.isGpu, that.isGpu)
+            && Objects.equals(this.packageType, that.packageType)
             && Objects.equals(this.systemDiskType, that.systemDiskType)
-            && Objects.equals(this.systemDiskSize, that.systemDiskSize)
-            && Objects.equals(this.dataDiskSize, that.dataDiskSize) && Objects.equals(this.gpuDesc, that.gpuDesc)
-            && Objects.equals(this.billSwitch, that.billSwitch) && Objects.equals(this.descriptions, that.descriptions)
-            && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.systemDiskSize, that.systemDiskSize) && Objects.equals(this.gpuDesc, that.gpuDesc)
             && Objects.equals(this.containDataDisk, that.containDataDisk)
             && Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.cloudServiceType, that.cloudServiceType)
             && Objects.equals(this.volumeProductType, that.volumeProductType)
-            && Objects.equals(this.domainIds, that.domainIds) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.subProductList, that.subProductList)
-            && Objects.equals(this.defaultDesktopNum, that.defaultDesktopNum)
-            && Objects.equals(this.maxApplyDesktopNum, that.maxApplyDesktopNum);
+            && Objects.equals(this.status, that.status) && Objects.equals(this.subProductList, that.subProductList);
     }
 
     @Override
@@ -610,27 +498,23 @@ public class ProductInfo {
         return Objects.hash(productId,
             flavorId,
             type,
-            architecture,
             cpu,
-            cpuDesc,
             memory,
-            isGpu,
-            systemDiskType,
-            systemDiskSize,
-            dataDiskSize,
-            gpuDesc,
-            billSwitch,
             descriptions,
             chargeMode,
+            architecture,
+            cpuDesc,
+            isGpu,
+            packageType,
+            systemDiskType,
+            systemDiskSize,
+            gpuDesc,
             containDataDisk,
             resourceType,
             cloudServiceType,
             volumeProductType,
-            domainIds,
             status,
-            subProductList,
-            defaultDesktopNum,
-            maxApplyDesktopNum);
+            subProductList);
     }
 
     @Override
@@ -640,27 +524,23 @@ public class ProductInfo {
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
         sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
-        sb.append("    cpuDesc: ").append(toIndentedString(cpuDesc)).append("\n");
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
-        sb.append("    isGpu: ").append(toIndentedString(isGpu)).append("\n");
-        sb.append("    systemDiskType: ").append(toIndentedString(systemDiskType)).append("\n");
-        sb.append("    systemDiskSize: ").append(toIndentedString(systemDiskSize)).append("\n");
-        sb.append("    dataDiskSize: ").append(toIndentedString(dataDiskSize)).append("\n");
-        sb.append("    gpuDesc: ").append(toIndentedString(gpuDesc)).append("\n");
-        sb.append("    billSwitch: ").append(toIndentedString(billSwitch)).append("\n");
         sb.append("    descriptions: ").append(toIndentedString(descriptions)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
+        sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
+        sb.append("    cpuDesc: ").append(toIndentedString(cpuDesc)).append("\n");
+        sb.append("    isGpu: ").append(toIndentedString(isGpu)).append("\n");
+        sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
+        sb.append("    systemDiskType: ").append(toIndentedString(systemDiskType)).append("\n");
+        sb.append("    systemDiskSize: ").append(toIndentedString(systemDiskSize)).append("\n");
+        sb.append("    gpuDesc: ").append(toIndentedString(gpuDesc)).append("\n");
         sb.append("    containDataDisk: ").append(toIndentedString(containDataDisk)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    cloudServiceType: ").append(toIndentedString(cloudServiceType)).append("\n");
         sb.append("    volumeProductType: ").append(toIndentedString(volumeProductType)).append("\n");
-        sb.append("    domainIds: ").append(toIndentedString(domainIds)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    subProductList: ").append(toIndentedString(subProductList)).append("\n");
-        sb.append("    defaultDesktopNum: ").append(toIndentedString(defaultDesktopNum)).append("\n");
-        sb.append("    maxApplyDesktopNum: ").append(toIndentedString(maxApplyDesktopNum)).append("\n");
         sb.append("}");
         return sb.toString();
     }

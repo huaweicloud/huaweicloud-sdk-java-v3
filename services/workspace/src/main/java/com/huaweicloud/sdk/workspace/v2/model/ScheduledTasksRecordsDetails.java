@@ -36,6 +36,11 @@ public class ScheduledTasksRecordsDetails {
     private String execStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "exec_script_id")
+
+    private String execScriptId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result_code")
 
     private String resultCode;
@@ -145,6 +150,23 @@ public class ScheduledTasksRecordsDetails {
         this.execStatus = execStatus;
     }
 
+    public ScheduledTasksRecordsDetails withExecScriptId(String execScriptId) {
+        this.execScriptId = execScriptId;
+        return this;
+    }
+
+    /**
+     * 执行脚本id。
+     * @return execScriptId
+     */
+    public String getExecScriptId() {
+        return execScriptId;
+    }
+
+    public void setExecScriptId(String execScriptId) {
+        this.execScriptId = execScriptId;
+    }
+
     public ScheduledTasksRecordsDetails withResultCode(String resultCode) {
         this.resultCode = resultCode;
         return this;
@@ -241,9 +263,10 @@ public class ScheduledTasksRecordsDetails {
         ScheduledTasksRecordsDetails that = (ScheduledTasksRecordsDetails) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.recordId, that.recordId)
             && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.desktopName, that.desktopName)
-            && Objects.equals(this.execStatus, that.execStatus) && Objects.equals(this.resultCode, that.resultCode)
-            && Objects.equals(this.failReason, that.failReason) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.timeZone, that.timeZone);
+            && Objects.equals(this.execStatus, that.execStatus) && Objects.equals(this.execScriptId, that.execScriptId)
+            && Objects.equals(this.resultCode, that.resultCode) && Objects.equals(this.failReason, that.failReason)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.timeZone, that.timeZone);
     }
 
     @Override
@@ -253,6 +276,7 @@ public class ScheduledTasksRecordsDetails {
             desktopId,
             desktopName,
             execStatus,
+            execScriptId,
             resultCode,
             failReason,
             startTime,
@@ -269,6 +293,7 @@ public class ScheduledTasksRecordsDetails {
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    desktopName: ").append(toIndentedString(desktopName)).append("\n");
         sb.append("    execStatus: ").append(toIndentedString(execStatus)).append("\n");
+        sb.append("    execScriptId: ").append(toIndentedString(execScriptId)).append("\n");
         sb.append("    resultCode: ").append(toIndentedString(resultCode)).append("\n");
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

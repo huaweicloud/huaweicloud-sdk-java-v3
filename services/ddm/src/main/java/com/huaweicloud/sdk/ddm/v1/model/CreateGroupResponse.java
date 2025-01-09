@@ -12,36 +12,19 @@ import java.util.Objects;
 public class CreateGroupResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "instance_id")
-
-    private String instanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
 
     private String orderId;
-
-    public CreateGroupResponse withInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-        return this;
-    }
-
-    /**
-     * DDM实例ID。
-     * @return instanceId
-     */
-    public String getInstanceId() {
-        return instanceId;
-    }
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
-    }
 
     public CreateGroupResponse withJobId(String jobId) {
         this.jobId = jobId;
@@ -58,6 +41,23 @@ public class CreateGroupResponse extends SdkResponse {
 
     public void setJobId(String jobId) {
         this.jobId = jobId;
+    }
+
+    public CreateGroupResponse withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 组ID，仅创建按需实例时会返回该参数。
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     public CreateGroupResponse withOrderId(String orderId) {
@@ -86,21 +86,21 @@ public class CreateGroupResponse extends SdkResponse {
             return false;
         }
         CreateGroupResponse that = (CreateGroupResponse) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.jobId, that.jobId)
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.groupId, that.groupId)
             && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, jobId, orderId);
+        return Objects.hash(jobId, groupId, orderId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateGroupResponse {\n");
-        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();

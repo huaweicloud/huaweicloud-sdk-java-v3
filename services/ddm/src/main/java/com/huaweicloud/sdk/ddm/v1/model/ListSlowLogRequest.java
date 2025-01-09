@@ -58,7 +58,7 @@ public class ListSlowLogRequest {
     }
 
     /**
-     * 分页参数：起始值 [大于等于0] 。
+     * 分页参数：起始值 [大于等于1] 。
      * @return curPage
      */
     public String getCurPage() {

@@ -107,6 +107,11 @@ public class SessionInfo {
     private String clientIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "client_version")
 
     private String clientVersion;
@@ -145,6 +150,16 @@ public class SessionInfo {
     @JsonProperty(value = "tenant_id")
 
     private String tenantId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "primary_server_group_id")
+
+    private String primaryServerGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secondary_server_group_id")
+
+    private String secondaryServerGroupId;
 
     public SessionInfo withId(String id) {
         this.id = id;
@@ -469,6 +484,23 @@ public class SessionInfo {
         this.clientIp = clientIp;
     }
 
+    public SessionInfo withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 客户端出口ip。
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
     public SessionInfo withClientVersion(String clientVersion) {
         this.clientVersion = clientVersion;
         return this;
@@ -605,6 +637,40 @@ public class SessionInfo {
         this.tenantId = tenantId;
     }
 
+    public SessionInfo withPrimaryServerGroupId(String primaryServerGroupId) {
+        this.primaryServerGroupId = primaryServerGroupId;
+        return this;
+    }
+
+    /**
+     * 主服务器组ID。
+     * @return primaryServerGroupId
+     */
+    public String getPrimaryServerGroupId() {
+        return primaryServerGroupId;
+    }
+
+    public void setPrimaryServerGroupId(String primaryServerGroupId) {
+        this.primaryServerGroupId = primaryServerGroupId;
+    }
+
+    public SessionInfo withSecondaryServerGroupId(String secondaryServerGroupId) {
+        this.secondaryServerGroupId = secondaryServerGroupId;
+        return this;
+    }
+
+    /**
+     * 备服务器组ID。
+     * @return secondaryServerGroupId
+     */
+    public String getSecondaryServerGroupId() {
+        return secondaryServerGroupId;
+    }
+
+    public void setSecondaryServerGroupId(String secondaryServerGroupId) {
+        this.secondaryServerGroupId = secondaryServerGroupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -626,12 +692,15 @@ public class SessionInfo {
             && Objects.equals(this.machineSid, that.machineSid) && Objects.equals(this.machineName, that.machineName)
             && Objects.equals(this.sessionState, that.sessionState) && Objects.equals(this.appName, that.appName)
             && Objects.equals(this.clientMac, that.clientMac) && Objects.equals(this.clientName, that.clientName)
-            && Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.clientVersion, that.clientVersion)
+            && Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.clientVersion, that.clientVersion)
             && Objects.equals(this.clientType, that.clientType) && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.vmIp, that.vmIp) && Objects.equals(this.failedReason, that.failedReason)
             && Objects.equals(this.failedCode, that.failedCode)
             && Objects.equals(this.lastUpdateStatusTime, that.lastUpdateStatusTime)
-            && Objects.equals(this.tenantId, that.tenantId);
+            && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.primaryServerGroupId, that.primaryServerGroupId)
+            && Objects.equals(this.secondaryServerGroupId, that.secondaryServerGroupId);
     }
 
     @Override
@@ -655,6 +724,7 @@ public class SessionInfo {
             clientMac,
             clientName,
             clientIp,
+            publicIp,
             clientVersion,
             clientType,
             agentVersion,
@@ -662,7 +732,9 @@ public class SessionInfo {
             failedReason,
             failedCode,
             lastUpdateStatusTime,
-            tenantId);
+            tenantId,
+            primaryServerGroupId,
+            secondaryServerGroupId);
     }
 
     @Override
@@ -688,6 +760,7 @@ public class SessionInfo {
         sb.append("    clientMac: ").append(toIndentedString(clientMac)).append("\n");
         sb.append("    clientName: ").append(toIndentedString(clientName)).append("\n");
         sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    clientVersion: ").append(toIndentedString(clientVersion)).append("\n");
         sb.append("    clientType: ").append(toIndentedString(clientType)).append("\n");
         sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");
@@ -696,6 +769,8 @@ public class SessionInfo {
         sb.append("    failedCode: ").append(toIndentedString(failedCode)).append("\n");
         sb.append("    lastUpdateStatusTime: ").append(toIndentedString(lastUpdateStatusTime)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
+        sb.append("    primaryServerGroupId: ").append(toIndentedString(primaryServerGroupId)).append("\n");
+        sb.append("    secondaryServerGroupId: ").append(toIndentedString(secondaryServerGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

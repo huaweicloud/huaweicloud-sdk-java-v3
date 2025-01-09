@@ -1,0 +1,192 @@
+package com.huaweicloud.sdk.workspace.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.Objects;
+
+/**
+ * Response Object
+ */
+public class ExpandDesktopVolumeResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bssJobId")
+
+    private String bssJobId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "getJobEndpoint")
+
+    private String getJobEndpoint;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "maxProvisionTime")
+
+    private Integer maxProvisionTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "minProvisionTime")
+
+    private Integer minProvisionTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "periodicQueryTime")
+
+    private Integer periodicQueryTime;
+
+    public ExpandDesktopVolumeResponse withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * 扩容磁盘任务id
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    public ExpandDesktopVolumeResponse withBssJobId(String bssJobId) {
+        this.bssJobId = bssJobId;
+        return this;
+    }
+
+    /**
+     * 【BSS移动云回调】包周期扩容磁盘的任务ID
+     * @return bssJobId
+     */
+    public String getBssJobId() {
+        return bssJobId;
+    }
+
+    public void setBssJobId(String bssJobId) {
+        this.bssJobId = bssJobId;
+    }
+
+    public ExpandDesktopVolumeResponse withGetJobEndpoint(String getJobEndpoint) {
+        this.getJobEndpoint = getJobEndpoint;
+        return this;
+    }
+
+    /**
+     * 云运营平台CBC获取到JobId后，会使用getJobEndpoint当做URL，调用云服务，查询获取Job结果
+     * @return getJobEndpoint
+     */
+    public String getGetJobEndpoint() {
+        return getJobEndpoint;
+    }
+
+    public void setGetJobEndpoint(String getJobEndpoint) {
+        this.getJobEndpoint = getJobEndpoint;
+    }
+
+    public ExpandDesktopVolumeResponse withMaxProvisionTime(Integer maxProvisionTime) {
+        this.maxProvisionTime = maxProvisionTime;
+        return this;
+    }
+
+    /**
+     * 在线开通最大时间
+     * @return maxProvisionTime
+     */
+    public Integer getMaxProvisionTime() {
+        return maxProvisionTime;
+    }
+
+    public void setMaxProvisionTime(Integer maxProvisionTime) {
+        this.maxProvisionTime = maxProvisionTime;
+    }
+
+    public ExpandDesktopVolumeResponse withMinProvisionTime(Integer minProvisionTime) {
+        this.minProvisionTime = minProvisionTime;
+        return this;
+    }
+
+    /**
+     * 开通最小时间（云服务最快开通时长，或一般开通时长）
+     * @return minProvisionTime
+     */
+    public Integer getMinProvisionTime() {
+        return minProvisionTime;
+    }
+
+    public void setMinProvisionTime(Integer minProvisionTime) {
+        this.minProvisionTime = minProvisionTime;
+    }
+
+    public ExpandDesktopVolumeResponse withPeriodicQueryTime(Integer periodicQueryTime) {
+        this.periodicQueryTime = periodicQueryTime;
+        return this;
+    }
+
+    /**
+     * Job周期性查询时间，默认1分钟查询一次
+     * @return periodicQueryTime
+     */
+    public Integer getPeriodicQueryTime() {
+        return periodicQueryTime;
+    }
+
+    public void setPeriodicQueryTime(Integer periodicQueryTime) {
+        this.periodicQueryTime = periodicQueryTime;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ExpandDesktopVolumeResponse that = (ExpandDesktopVolumeResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.bssJobId, that.bssJobId)
+            && Objects.equals(this.getJobEndpoint, that.getJobEndpoint)
+            && Objects.equals(this.maxProvisionTime, that.maxProvisionTime)
+            && Objects.equals(this.minProvisionTime, that.minProvisionTime)
+            && Objects.equals(this.periodicQueryTime, that.periodicQueryTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(jobId, bssJobId, getJobEndpoint, maxProvisionTime, minProvisionTime, periodicQueryTime);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ExpandDesktopVolumeResponse {\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    bssJobId: ").append(toIndentedString(bssJobId)).append("\n");
+        sb.append("    getJobEndpoint: ").append(toIndentedString(getJobEndpoint)).append("\n");
+        sb.append("    maxProvisionTime: ").append(toIndentedString(maxProvisionTime)).append("\n");
+        sb.append("    minProvisionTime: ").append(toIndentedString(minProvisionTime)).append("\n");
+        sb.append("    periodicQueryTime: ").append(toIndentedString(periodicQueryTime)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

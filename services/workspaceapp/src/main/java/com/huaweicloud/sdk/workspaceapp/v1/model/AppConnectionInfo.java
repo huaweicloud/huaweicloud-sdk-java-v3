@@ -111,6 +111,46 @@ public class AppConnectionInfo {
 
     private String virtualIp;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ip")
+
+    private String publicIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "transaction_id")
+
+    private String transactionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private OffsetDateTime endTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "aps_instance_id")
+
+    private String apsInstanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "aps_instance_name")
+
+    private String apsInstanceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "aps_host_id")
+
+    private String apsHostId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "primary_server_group_id")
+
+    private String primaryServerGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "secondary_server_group_id")
+
+    private String secondaryServerGroupId;
+
     public AppConnectionInfo withId(String id) {
         this.id = id;
         return this;
@@ -451,6 +491,142 @@ public class AppConnectionInfo {
         this.virtualIp = virtualIp;
     }
 
+    public AppConnectionInfo withPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+        return this;
+    }
+
+    /**
+     * 客户端出口ip。
+     * @return publicIp
+     */
+    public String getPublicIp() {
+        return publicIp;
+    }
+
+    public void setPublicIp(String publicIp) {
+        this.publicIp = publicIp;
+    }
+
+    public AppConnectionInfo withTransactionId(String transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    }
+
+    /**
+     * 事务id。
+     * @return transactionId
+     */
+    public String getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    public AppConnectionInfo withEndTime(OffsetDateTime endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * 登录应用结束时间。
+     * @return endTime
+     */
+    public OffsetDateTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(OffsetDateTime endTime) {
+        this.endTime = endTime;
+    }
+
+    public AppConnectionInfo withApsInstanceId(String apsInstanceId) {
+        this.apsInstanceId = apsInstanceId;
+        return this;
+    }
+
+    /**
+     * aps服务器ID。
+     * @return apsInstanceId
+     */
+    public String getApsInstanceId() {
+        return apsInstanceId;
+    }
+
+    public void setApsInstanceId(String apsInstanceId) {
+        this.apsInstanceId = apsInstanceId;
+    }
+
+    public AppConnectionInfo withApsInstanceName(String apsInstanceName) {
+        this.apsInstanceName = apsInstanceName;
+        return this;
+    }
+
+    /**
+     * aps服务器名称。
+     * @return apsInstanceName
+     */
+    public String getApsInstanceName() {
+        return apsInstanceName;
+    }
+
+    public void setApsInstanceName(String apsInstanceName) {
+        this.apsInstanceName = apsInstanceName;
+    }
+
+    public AppConnectionInfo withApsHostId(String apsHostId) {
+        this.apsHostId = apsHostId;
+        return this;
+    }
+
+    /**
+     * wdh专属主机ID。
+     * @return apsHostId
+     */
+    public String getApsHostId() {
+        return apsHostId;
+    }
+
+    public void setApsHostId(String apsHostId) {
+        this.apsHostId = apsHostId;
+    }
+
+    public AppConnectionInfo withPrimaryServerGroupId(String primaryServerGroupId) {
+        this.primaryServerGroupId = primaryServerGroupId;
+        return this;
+    }
+
+    /**
+     * 主服务器组ID。
+     * @return primaryServerGroupId
+     */
+    public String getPrimaryServerGroupId() {
+        return primaryServerGroupId;
+    }
+
+    public void setPrimaryServerGroupId(String primaryServerGroupId) {
+        this.primaryServerGroupId = primaryServerGroupId;
+    }
+
+    public AppConnectionInfo withSecondaryServerGroupId(String secondaryServerGroupId) {
+        this.secondaryServerGroupId = secondaryServerGroupId;
+        return this;
+    }
+
+    /**
+     * 主服务器组ID。
+     * @return secondaryServerGroupId
+     */
+    public String getSecondaryServerGroupId() {
+        return secondaryServerGroupId;
+    }
+
+    public void setSecondaryServerGroupId(String secondaryServerGroupId) {
+        this.secondaryServerGroupId = secondaryServerGroupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -470,7 +646,13 @@ public class AppConnectionInfo {
             && Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.clientVersion, that.clientVersion)
             && Objects.equals(this.clientType, that.clientType) && Objects.equals(this.agentVersion, that.agentVersion)
             && Objects.equals(this.vmIp, that.vmIp) && Objects.equals(this.wiIp, that.wiIp)
-            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.virtualIp, that.virtualIp);
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.virtualIp, that.virtualIp)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.transactionId, that.transactionId)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.apsInstanceId, that.apsInstanceId)
+            && Objects.equals(this.apsInstanceName, that.apsInstanceName)
+            && Objects.equals(this.apsHostId, that.apsHostId)
+            && Objects.equals(this.primaryServerGroupId, that.primaryServerGroupId)
+            && Objects.equals(this.secondaryServerGroupId, that.secondaryServerGroupId);
     }
 
     @Override
@@ -494,7 +676,15 @@ public class AppConnectionInfo {
             vmIp,
             wiIp,
             tenantId,
-            virtualIp);
+            virtualIp,
+            publicIp,
+            transactionId,
+            endTime,
+            apsInstanceId,
+            apsInstanceName,
+            apsHostId,
+            primaryServerGroupId,
+            secondaryServerGroupId);
     }
 
     @Override
@@ -521,6 +711,14 @@ public class AppConnectionInfo {
         sb.append("    wiIp: ").append(toIndentedString(wiIp)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    virtualIp: ").append(toIndentedString(virtualIp)).append("\n");
+        sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    apsInstanceId: ").append(toIndentedString(apsInstanceId)).append("\n");
+        sb.append("    apsInstanceName: ").append(toIndentedString(apsInstanceName)).append("\n");
+        sb.append("    apsHostId: ").append(toIndentedString(apsHostId)).append("\n");
+        sb.append("    primaryServerGroupId: ").append(toIndentedString(primaryServerGroupId)).append("\n");
+        sb.append("    secondaryServerGroupId: ").append(toIndentedString(secondaryServerGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

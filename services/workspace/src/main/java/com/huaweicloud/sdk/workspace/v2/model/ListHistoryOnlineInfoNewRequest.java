@@ -25,6 +25,11 @@ public class ListHistoryOnlineInfoNewRequest {
 
     private String queryType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_hour")
+
+    private Integer clientHour;
+
     public ListHistoryOnlineInfoNewRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -76,6 +81,25 @@ public class ListHistoryOnlineInfoNewRequest {
         this.queryType = queryType;
     }
 
+    public ListHistoryOnlineInfoNewRequest withClientHour(Integer clientHour) {
+        this.clientHour = clientHour;
+        return this;
+    }
+
+    /**
+     * 客户端所在操作系统时间的小时数。
+     * minimum: 0
+     * maximum: 7200
+     * @return clientHour
+     */
+    public Integer getClientHour() {
+        return clientHour;
+    }
+
+    public void setClientHour(Integer clientHour) {
+        this.clientHour = clientHour;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +110,12 @@ public class ListHistoryOnlineInfoNewRequest {
         }
         ListHistoryOnlineInfoNewRequest that = (ListHistoryOnlineInfoNewRequest) obj;
         return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.queryType, that.queryType);
+            && Objects.equals(this.queryType, that.queryType) && Objects.equals(this.clientHour, that.clientHour);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startTime, endTime, queryType);
+        return Objects.hash(startTime, endTime, queryType, clientHour);
     }
 
     @Override
@@ -101,6 +125,7 @@ public class ListHistoryOnlineInfoNewRequest {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    queryType: ").append(toIndentedString(queryType)).append("\n");
+        sb.append("    clientHour: ").append(toIndentedString(clientHour)).append("\n");
         sb.append("}");
         return sb.toString();
     }

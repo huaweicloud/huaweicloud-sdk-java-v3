@@ -1,13 +1,13 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
-import com.huaweicloud.sdk.core.SdkStreamResponse;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
  * Response Object
  */
-public class ExportUserLoginInfoNewResponse extends SdkStreamResponse {
+public class ExportUserLoginInfoNewResponse extends SdkResponse {
 
     @Override
     public boolean equals(java.lang.Object obj) {

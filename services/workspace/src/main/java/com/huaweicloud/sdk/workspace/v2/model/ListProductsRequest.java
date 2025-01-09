@@ -16,6 +16,11 @@ public class ListProductsRequest {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_id")
+
+    private String flavorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone")
 
     private String availabilityZone;
@@ -36,9 +41,24 @@ public class ListProductsRequest {
     private String architecture;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deh_product_id")
+
+    private String dehProductId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_deh")
+
+    private Boolean isDeh;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "package_type")
 
     private String packageType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "products_range")
+
+    private String productsRange;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -65,6 +85,23 @@ public class ListProductsRequest {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public ListProductsRequest withFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+        return this;
+    }
+
+    /**
+     * 产品flavor_id。
+     * @return flavorId
+     */
+    public String getFlavorId() {
+        return flavorId;
+    }
+
+    public void setFlavorId(String flavorId) {
+        this.flavorId = flavorId;
     }
 
     public ListProductsRequest withAvailabilityZone(String availabilityZone) {
@@ -135,6 +172,40 @@ public class ListProductsRequest {
         this.architecture = architecture;
     }
 
+    public ListProductsRequest withDehProductId(String dehProductId) {
+        this.dehProductId = dehProductId;
+        return this;
+    }
+
+    /**
+     * wdh套餐id。
+     * @return dehProductId
+     */
+    public String getDehProductId() {
+        return dehProductId;
+    }
+
+    public void setDehProductId(String dehProductId) {
+        this.dehProductId = dehProductId;
+    }
+
+    public ListProductsRequest withIsDeh(Boolean isDeh) {
+        this.isDeh = isDeh;
+        return this;
+    }
+
+    /**
+     * 是否为wdh产品。
+     * @return isDeh
+     */
+    public Boolean getIsDeh() {
+        return isDeh;
+    }
+
+    public void setIsDeh(Boolean isDeh) {
+        this.isDeh = isDeh;
+    }
+
     public ListProductsRequest withPackageType(String packageType) {
         this.packageType = packageType;
         return this;
@@ -150,6 +221,23 @@ public class ListProductsRequest {
 
     public void setPackageType(String packageType) {
         this.packageType = packageType;
+    }
+
+    public ListProductsRequest withProductsRange(String productsRange) {
+        this.productsRange = productsRange;
+        return this;
+    }
+
+    /**
+     * 查询套餐的范围(all：查询所有套餐，包括培训版；若为null则不包含培训版套餐）
+     * @return productsRange
+     */
+    public String getProductsRange() {
+        return productsRange;
+    }
+
+    public void setProductsRange(String productsRange) {
+        this.productsRange = productsRange;
     }
 
     public ListProductsRequest withLimit(Integer limit) {
@@ -199,16 +287,29 @@ public class ListProductsRequest {
             return false;
         }
         ListProductsRequest that = (ListProductsRequest) obj;
-        return Objects.equals(this.productId, that.productId)
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.flavorId, that.flavorId)
             && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.architecture, that.architecture)
-            && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.dehProductId, that.dehProductId) && Objects.equals(this.isDeh, that.isDeh)
+            && Objects.equals(this.packageType, that.packageType)
+            && Objects.equals(this.productsRange, that.productsRange) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId, availabilityZone, osType, chargeMode, architecture, packageType, limit, offset);
+        return Objects.hash(productId,
+            flavorId,
+            availabilityZone,
+            osType,
+            chargeMode,
+            architecture,
+            dehProductId,
+            isDeh,
+            packageType,
+            productsRange,
+            limit,
+            offset);
     }
 
     @Override
@@ -216,11 +317,15 @@ public class ListProductsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListProductsRequest {\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    architecture: ").append(toIndentedString(architecture)).append("\n");
+        sb.append("    dehProductId: ").append(toIndentedString(dehProductId)).append("\n");
+        sb.append("    isDeh: ").append(toIndentedString(isDeh)).append("\n");
         sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
+        sb.append("    productsRange: ").append(toIndentedString(productsRange)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

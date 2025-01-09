@@ -52,9 +52,14 @@ public class JobDetailInfo {
     private String failReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "message")
+    @JsonProperty(value = "host")
 
-    private String message;
+    private String host;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
@@ -62,24 +67,29 @@ public class JobDetailInfo {
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "desktop_name")
+    @JsonProperty(value = "success_result")
 
-    private String desktopName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ip_address")
-
-    private String ipAddress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mac_address")
-
-    private String macAddress;
+    private String successResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "process")
 
     private Integer process;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attach_user")
+
+    private String attachUser;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "entity")
+
+    private String entity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_address")
+
+    private String ipAddress;
 
     public JobDetailInfo withId(String id) {
         this.id = id;
@@ -87,7 +97,7 @@ public class JobDetailInfo {
     }
 
     /**
-     * 任务id。
+     * 子任务ID。
      * @return id
      */
     public String getId() {
@@ -226,21 +236,38 @@ public class JobDetailInfo {
         this.failReason = failReason;
     }
 
-    public JobDetailInfo withMessage(String message) {
-        this.message = message;
+    public JobDetailInfo withHost(String host) {
+        this.host = host;
         return this;
     }
 
     /**
-     * 任务失败原因信息。
-     * @return message
+     * 任务执行的服务器IP。
+     * @return host
      */
-    public String getMessage() {
-        return message;
+    public String getHost() {
+        return host;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public JobDetailInfo withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 项目ID。
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
     public JobDetailInfo withJobId(String jobId) {
@@ -260,55 +287,21 @@ public class JobDetailInfo {
         this.jobId = jobId;
     }
 
-    public JobDetailInfo withDesktopName(String desktopName) {
-        this.desktopName = desktopName;
+    public JobDetailInfo withSuccessResult(String successResult) {
+        this.successResult = successResult;
         return this;
     }
 
     /**
-     * 桌面名称。
-     * @return desktopName
+     * 任务成功结果。
+     * @return successResult
      */
-    public String getDesktopName() {
-        return desktopName;
+    public String getSuccessResult() {
+        return successResult;
     }
 
-    public void setDesktopName(String desktopName) {
-        this.desktopName = desktopName;
-    }
-
-    public JobDetailInfo withIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
-        return this;
-    }
-
-    /**
-     * ip地址。
-     * @return ipAddress
-     */
-    public String getIpAddress() {
-        return ipAddress;
-    }
-
-    public void setIpAddress(String ipAddress) {
-        this.ipAddress = ipAddress;
-    }
-
-    public JobDetailInfo withMacAddress(String macAddress) {
-        this.macAddress = macAddress;
-        return this;
-    }
-
-    /**
-     * mac地址。
-     * @return macAddress
-     */
-    public String getMacAddress() {
-        return macAddress;
-    }
-
-    public void setMacAddress(String macAddress) {
-        this.macAddress = macAddress;
+    public void setSuccessResult(String successResult) {
+        this.successResult = successResult;
     }
 
     public JobDetailInfo withProcess(Integer process) {
@@ -328,6 +321,57 @@ public class JobDetailInfo {
         this.process = process;
     }
 
+    public JobDetailInfo withAttachUser(String attachUser) {
+        this.attachUser = attachUser;
+        return this;
+    }
+
+    /**
+     * 关联用户。
+     * @return attachUser
+     */
+    public String getAttachUser() {
+        return attachUser;
+    }
+
+    public void setAttachUser(String attachUser) {
+        this.attachUser = attachUser;
+    }
+
+    public JobDetailInfo withEntity(String entity) {
+        this.entity = entity;
+        return this;
+    }
+
+    /**
+     * 操作对象。
+     * @return entity
+     */
+    public String getEntity() {
+        return entity;
+    }
+
+    public void setEntity(String entity) {
+        this.entity = entity;
+    }
+
+    public JobDetailInfo withIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+        return this;
+    }
+
+    /**
+     * ip地址。
+     * @return ipAddress
+     */
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -341,9 +385,10 @@ public class JobDetailInfo {
             && Objects.equals(this.entities, that.entities) && Objects.equals(this.beginTime, that.beginTime)
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.status, that.status)
             && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.failReason, that.failReason)
-            && Objects.equals(this.message, that.message) && Objects.equals(this.jobId, that.jobId)
-            && Objects.equals(this.desktopName, that.desktopName) && Objects.equals(this.ipAddress, that.ipAddress)
-            && Objects.equals(this.macAddress, that.macAddress) && Objects.equals(this.process, that.process);
+            && Objects.equals(this.host, that.host) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.successResult, that.successResult)
+            && Objects.equals(this.process, that.process) && Objects.equals(this.attachUser, that.attachUser)
+            && Objects.equals(this.entity, that.entity) && Objects.equals(this.ipAddress, that.ipAddress);
     }
 
     @Override
@@ -356,12 +401,14 @@ public class JobDetailInfo {
             status,
             errorCode,
             failReason,
-            message,
+            host,
+            projectId,
             jobId,
-            desktopName,
-            ipAddress,
-            macAddress,
-            process);
+            successResult,
+            process,
+            attachUser,
+            entity,
+            ipAddress);
     }
 
     @Override
@@ -376,12 +423,14 @@ public class JobDetailInfo {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
-        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    host: ").append(toIndentedString(host)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
-        sb.append("    desktopName: ").append(toIndentedString(desktopName)).append("\n");
-        sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
-        sb.append("    macAddress: ").append(toIndentedString(macAddress)).append("\n");
+        sb.append("    successResult: ").append(toIndentedString(successResult)).append("\n");
         sb.append("    process: ").append(toIndentedString(process)).append("\n");
+        sb.append("    attachUser: ").append(toIndentedString(attachUser)).append("\n");
+        sb.append("    entity: ").append(toIndentedString(entity)).append("\n");
+        sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

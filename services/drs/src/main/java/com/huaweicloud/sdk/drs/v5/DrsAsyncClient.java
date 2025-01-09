@@ -101,6 +101,8 @@ import com.huaweicloud.sdk.drs.v5.model.ModifyConnectionRequest;
 import com.huaweicloud.sdk.drs.v5.model.ModifyConnectionResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowAgencyInfoRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowAgencyInfoResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowComparePolicyRequest;
@@ -159,6 +161,8 @@ import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.SyncUserJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.SyncUserJdbcDriverResponse;
+import com.huaweicloud.sdk.drs.v5.model.UpdateAgencyPolicyRequest;
+import com.huaweicloud.sdk.drs.v5.model.UpdateAgencyPolicyResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateComparePolicyRequest;
@@ -1647,6 +1651,35 @@ public class DrsAsyncClient {
     }
 
     /**
+     * 查询委托权限详情
+     *
+     * 查询委托权限详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyInfoRequest 请求对象
+     * @return CompletableFuture<ShowAgencyInfoResponse>
+     */
+    public CompletableFuture<ShowAgencyInfoResponse> showAgencyInfoAsync(ShowAgencyInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.showAgencyInfo);
+    }
+
+    /**
+     * 查询委托权限详情
+     *
+     * 查询委托权限详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyInfoRequest 请求对象
+     * @return AsyncInvoker<ShowAgencyInfoRequest, ShowAgencyInfoResponse>
+     */
+    public AsyncInvoker<ShowAgencyInfoRequest, ShowAgencyInfoResponse> showAgencyInfoAsyncInvoker(
+        ShowAgencyInfoRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.showAgencyInfo, hcClient);
+    }
+
+    /**
      * 获取指定数据库表列信息
      *
      * 获取指定数据库表列信息
@@ -2510,6 +2543,35 @@ public class DrsAsyncClient {
     public AsyncInvoker<SyncUserJdbcDriverRequest, SyncUserJdbcDriverResponse> syncUserJdbcDriverAsyncInvoker(
         SyncUserJdbcDriverRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.syncUserJdbcDriver, hcClient);
+    }
+
+    /**
+     * 更新委托权限策略
+     *
+     * 更新委托权限策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAgencyPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateAgencyPolicyResponse>
+     */
+    public CompletableFuture<UpdateAgencyPolicyResponse> updateAgencyPolicyAsync(UpdateAgencyPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.updateAgencyPolicy);
+    }
+
+    /**
+     * 更新委托权限策略
+     *
+     * 更新委托权限策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAgencyPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateAgencyPolicyRequest, UpdateAgencyPolicyResponse>
+     */
+    public AsyncInvoker<UpdateAgencyPolicyRequest, UpdateAgencyPolicyResponse> updateAgencyPolicyAsyncInvoker(
+        UpdateAgencyPolicyRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.updateAgencyPolicy, hcClient);
     }
 
     /**

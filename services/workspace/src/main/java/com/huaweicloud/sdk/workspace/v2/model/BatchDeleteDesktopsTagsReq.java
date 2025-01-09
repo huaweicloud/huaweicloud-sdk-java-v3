@@ -40,7 +40,7 @@ public class BatchDeleteDesktopsTagsReq {
     }
 
     /**
-     * 桌面（桌面携带标签列表）列表
+     * 桌面（桌面携带标签列表）列表。批量操作时非法桌面ID会过滤不做处理。
      * @return desktops
      */
     public List<DesktopTagsInfo> getDesktops() {

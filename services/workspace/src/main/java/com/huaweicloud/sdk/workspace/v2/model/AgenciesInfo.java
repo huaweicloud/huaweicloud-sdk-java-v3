@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 委托信息
+ * 委托信息。
  */
 public class AgenciesInfo {
 

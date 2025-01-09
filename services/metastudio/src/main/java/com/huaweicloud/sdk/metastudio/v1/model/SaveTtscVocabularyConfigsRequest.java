@@ -145,7 +145,7 @@ public class SaveTtscVocabularyConfigsRequest {
     }
 
     /**
-     * 词表id
+     * 自定义读法id
      * @return vocabularyId
      */
     public String getVocabularyId() {

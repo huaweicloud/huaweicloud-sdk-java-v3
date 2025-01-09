@@ -1270,6 +1270,11 @@ public class ImageInfo {
 
     private String supportKvmHi1822Hivirtionet;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_shutdown_timeout")
+
+    private String osShutdownTimeout;
+
     public ImageInfo withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
@@ -2416,6 +2421,23 @@ public class ImageInfo {
         this.supportKvmHi1822Hivirtionet = supportKvmHi1822Hivirtionet;
     }
 
+    public ImageInfo withOsShutdownTimeout(String osShutdownTimeout) {
+        this.osShutdownTimeout = osShutdownTimeout;
+        return this;
+    }
+
+    /**
+     * 设置虚拟机的优雅关机超时时间，设置范围为60-300，默认为60（取值为整数，单位为秒）。 云服务器在优雅关机超时后会触发强制关机，避免实例长时间处于关机状态中。 当您的云服务器关机过程中由于特定软件的状态、保存等原因导致优雅关机时间过长，会触发超时强制关机。 您可以通过设置镜像该字段，使得发放的云服务器优雅关机超时时间变长。 该字段当前只影响弹性云服务器，不影响裸金属服务器。
+     * @return osShutdownTimeout
+     */
+    public String getOsShutdownTimeout() {
+        return osShutdownTimeout;
+    }
+
+    public void setOsShutdownTimeout(String osShutdownTimeout) {
+        this.osShutdownTimeout = osShutdownTimeout;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -2469,7 +2491,8 @@ public class ImageInfo {
             && Objects.equals(this.imageDisplayname, that.imageDisplayname)
             && Objects.equals(this.supportAmd, that.supportAmd)
             && Objects.equals(this.supportKvmHi1822Hisriov, that.supportKvmHi1822Hisriov)
-            && Objects.equals(this.supportKvmHi1822Hivirtionet, that.supportKvmHi1822Hivirtionet);
+            && Objects.equals(this.supportKvmHi1822Hivirtionet, that.supportKvmHi1822Hivirtionet)
+            && Objects.equals(this.osShutdownTimeout, that.osShutdownTimeout);
     }
 
     @Override
@@ -2535,7 +2558,8 @@ public class ImageInfo {
             imageDisplayname,
             supportAmd,
             supportKvmHi1822Hisriov,
-            supportKvmHi1822Hivirtionet);
+            supportKvmHi1822Hivirtionet,
+            osShutdownTimeout);
     }
 
     @Override
@@ -2606,6 +2630,7 @@ public class ImageInfo {
         sb.append("    supportKvmHi1822Hivirtionet: ")
             .append(toIndentedString(supportKvmHi1822Hivirtionet))
             .append("\n");
+        sb.append("    osShutdownTimeout: ").append(toIndentedString(osShutdownTimeout)).append("\n");
         sb.append("}");
         return sb.toString();
     }

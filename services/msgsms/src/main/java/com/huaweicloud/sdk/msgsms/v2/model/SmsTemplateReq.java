@@ -68,6 +68,11 @@ public class SmsTemplateReq {
 
     private List<SmsTemplateVariableAttrReq> variableAttributes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flow_status")
+
+    private String flowStatus;
+
     public SmsTemplateReq withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -289,6 +294,23 @@ public class SmsTemplateReq {
         this.variableAttributes = variableAttributes;
     }
 
+    public SmsTemplateReq withFlowStatus(String flowStatus) {
+        this.flowStatus = flowStatus;
+        return this;
+    }
+
+    /**
+     * 流程状态 1. Pending: 待提交 2. Reviewing: 待审核 3. Disable：停用
+     * @return flowStatus
+     */
+    public String getFlowStatus() {
+        return flowStatus;
+    }
+
+    public void setFlowStatus(String flowStatus) {
+        this.flowStatus = flowStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -305,7 +327,8 @@ public class SmsTemplateReq {
             && Objects.equals(this.templateName, that.templateName)
             && Objects.equals(this.templateType, that.templateType)
             && Objects.equals(this.universalTemplate, that.universalTemplate)
-            && Objects.equals(this.variableAttributes, that.variableAttributes);
+            && Objects.equals(this.variableAttributes, that.variableAttributes)
+            && Objects.equals(this.flowStatus, that.flowStatus);
     }
 
     @Override
@@ -320,7 +343,8 @@ public class SmsTemplateReq {
             templateName,
             templateType,
             universalTemplate,
-            variableAttributes);
+            variableAttributes,
+            flowStatus);
     }
 
     @Override
@@ -338,6 +362,7 @@ public class SmsTemplateReq {
         sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
         sb.append("    universalTemplate: ").append(toIndentedString(universalTemplate)).append("\n");
         sb.append("    variableAttributes: ").append(toIndentedString(variableAttributes)).append("\n");
+        sb.append("    flowStatus: ").append(toIndentedString(flowStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

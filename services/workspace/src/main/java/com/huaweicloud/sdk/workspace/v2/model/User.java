@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * User
@@ -19,6 +22,11 @@ public class User {
     @JsonProperty(value = "id")
 
     private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sid")
+
+    private String sid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_name")
@@ -160,6 +168,21 @@ public class User {
 
     private Boolean disabled;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "share_space_subscription")
+
+    private Boolean shareSpaceSubscription;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "share_space_desktops")
+
+    private Integer shareSpaceDesktops;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_names")
+
+    private List<String> groupNames = null;
+
     public User withId(String id) {
         this.id = id;
         return this;
@@ -175,6 +198,23 @@ public class User {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public User withSid(String sid) {
+        this.sid = sid;
+        return this;
+    }
+
+    /**
+     * 用户ID。
+     * @return sid
+     */
+    public String getSid() {
+        return sid;
+    }
+
+    public void setSid(String sid) {
+        this.sid = sid;
     }
 
     public User withUserName(String userName) {
@@ -417,6 +457,75 @@ public class User {
         this.disabled = disabled;
     }
 
+    public User withShareSpaceSubscription(Boolean shareSpaceSubscription) {
+        this.shareSpaceSubscription = shareSpaceSubscription;
+        return this;
+    }
+
+    /**
+     * 用户是否订阅协同，true表示已订阅，false表示未订阅
+     * @return shareSpaceSubscription
+     */
+    public Boolean getShareSpaceSubscription() {
+        return shareSpaceSubscription;
+    }
+
+    public void setShareSpaceSubscription(Boolean shareSpaceSubscription) {
+        this.shareSpaceSubscription = shareSpaceSubscription;
+    }
+
+    public User withShareSpaceDesktops(Integer shareSpaceDesktops) {
+        this.shareSpaceDesktops = shareSpaceDesktops;
+        return this;
+    }
+
+    /**
+     * 用户已绑定协同桌面数
+     * minimum: 0
+     * maximum: 100
+     * @return shareSpaceDesktops
+     */
+    public Integer getShareSpaceDesktops() {
+        return shareSpaceDesktops;
+    }
+
+    public void setShareSpaceDesktops(Integer shareSpaceDesktops) {
+        this.shareSpaceDesktops = shareSpaceDesktops;
+    }
+
+    public User withGroupNames(List<String> groupNames) {
+        this.groupNames = groupNames;
+        return this;
+    }
+
+    public User addGroupNamesItem(String groupNamesItem) {
+        if (this.groupNames == null) {
+            this.groupNames = new ArrayList<>();
+        }
+        this.groupNames.add(groupNamesItem);
+        return this;
+    }
+
+    public User withGroupNames(Consumer<List<String>> groupNamesSetter) {
+        if (this.groupNames == null) {
+            this.groupNames = new ArrayList<>();
+        }
+        groupNamesSetter.accept(this.groupNames);
+        return this;
+    }
+
+    /**
+     * 加入的组列表。
+     * @return groupNames
+     */
+    public List<String> getGroupNames() {
+        return groupNames;
+    }
+
+    public void setGroupNames(List<String> groupNames) {
+        this.groupNames = groupNames;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -426,22 +535,26 @@ public class User {
             return false;
         }
         User that = (User) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.userName, that.userName)
-            && Objects.equals(this.userEmail, that.userEmail) && Objects.equals(this.totalDesktops, that.totalDesktops)
-            && Objects.equals(this.userPhone, that.userPhone) && Objects.equals(this.activeType, that.activeType)
-            && Objects.equals(this.isPreUser, that.isPreUser)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.sid, that.sid)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.userEmail, that.userEmail)
+            && Objects.equals(this.totalDesktops, that.totalDesktops) && Objects.equals(this.userPhone, that.userPhone)
+            && Objects.equals(this.activeType, that.activeType) && Objects.equals(this.isPreUser, that.isPreUser)
             && Objects.equals(this.accountExpires, that.accountExpires)
             && Objects.equals(this.passwordNeverExpired, that.passwordNeverExpired)
             && Objects.equals(this.accountExpired, that.accountExpired)
             && Objects.equals(this.enableChangePassword, that.enableChangePassword)
             && Objects.equals(this.nextLoginChangePassword, that.nextLoginChangePassword)
             && Objects.equals(this.description, that.description) && Objects.equals(this.locked, that.locked)
-            && Objects.equals(this.disabled, that.disabled);
+            && Objects.equals(this.disabled, that.disabled)
+            && Objects.equals(this.shareSpaceSubscription, that.shareSpaceSubscription)
+            && Objects.equals(this.shareSpaceDesktops, that.shareSpaceDesktops)
+            && Objects.equals(this.groupNames, that.groupNames);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
+            sid,
             userName,
             userEmail,
             totalDesktops,
@@ -455,7 +568,10 @@ public class User {
             nextLoginChangePassword,
             description,
             locked,
-            disabled);
+            disabled,
+            shareSpaceSubscription,
+            shareSpaceDesktops,
+            groupNames);
     }
 
     @Override
@@ -463,6 +579,7 @@ public class User {
         StringBuilder sb = new StringBuilder();
         sb.append("class User {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    sid: ").append(toIndentedString(sid)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    userEmail: ").append(toIndentedString(userEmail)).append("\n");
         sb.append("    totalDesktops: ").append(toIndentedString(totalDesktops)).append("\n");
@@ -477,6 +594,9 @@ public class User {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
         sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
+        sb.append("    shareSpaceSubscription: ").append(toIndentedString(shareSpaceSubscription)).append("\n");
+        sb.append("    shareSpaceDesktops: ").append(toIndentedString(shareSpaceDesktops)).append("\n");
+        sb.append("    groupNames: ").append(toIndentedString(groupNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }

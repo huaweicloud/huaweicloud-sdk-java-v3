@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 分配用户请求桌面信息。
+ * 分配用户请求桌面信息，单人专属桌面只能分配给一个用户；多人共享桌面可以分配给多个用户或用户组，具体分配信息见字段attach_user_infos说明。
  */
 public class AttachInstancesDesktopInfo {
 
@@ -71,7 +71,7 @@ public class AttachInstancesDesktopInfo {
     }
 
     /**
-     * 桌面所属的用户，当桌面分配成功后此用户可以登录该桌面。只允许输入大写字母、小写字母、数字、中划线（-）和下划线（_）。域类型为LITE_AD时，使用小写字母或者大写字母开头，长度范围为[1-20]。当域类型为LOCAL_AD时，用户名可以使用小写字母或者大写字母或者数字开头，长度范围为[1-32]。Windows桌面用户最长支持20个字符，Linux桌面用户最长支持32个字符。
+     * 桌面所属的用户，当桌面分配成功后此用户可以登录该桌面。只允许输入大写字母、小写字母、数字、中划线（-）和下划线（_）。域类型为LITE_AD时，使用小写字母或者大写字母开头，长度范围为[1-20]。当域类型为LOCAL_AD时，用户名可以使用小写字母或者大写字母或者数字开头，长度范围为[1-32]。Windows桌面用户最长支持20个字符，Linux桌面用户最长支持32个字符。用户名不能与分配的机器名重名。 attach_user_infos为空时,必填,attach_user_infos优先级更高
      * @return userName
      */
     public String getUserName() {
@@ -105,7 +105,7 @@ public class AttachInstancesDesktopInfo {
     }
 
     /**
-     * 桌面用户所属的用户组。  - sudo：Linux管理员组。 - default：Linux默认用户组。 - administrators：Windows管理员组。管理员拥有对该桌面的完全访问权，可以做任何需要的更改（禁用操作除外）。 - users：Windows标准用户组。标准用户可以使用大多数软件，并可以更改不影响其他用户的系统设置。
+     * 桌面用户所属的用户组,attach_user_infos为空时,必填,attach_user_infos优先级更高。  - sudo：Linux管理员组。 - default：Linux默认用户组。 - administrators：Windows管理员组。管理员拥有对该桌面的完全访问权，可以做任何需要的更改（禁用操作除外）。 - users：Windows标准用户组。标准用户可以使用大多数软件，并可以更改不影响其他用户的系统设置。
      * @return userGroup
      */
     public String getUserGroup() {
@@ -173,7 +173,7 @@ public class AttachInstancesDesktopInfo {
     }
 
     /**
-     * 待分配的用户信息列表。
+     * 待分配的用户信息列表,只有多用户桌面分配多人时有效。
      * @return attachUserInfos
      */
     public List<AttachInstancesUserInfo> getAttachUserInfos() {

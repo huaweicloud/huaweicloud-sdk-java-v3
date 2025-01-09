@@ -36,7 +36,7 @@ public class NetworkInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroupInfo> securityGroups = null;
+    private List<SecurityGroup> securityGroups = null;
 
     public NetworkInfo withVpcInfo(Vpc vpcInfo) {
         this.vpcInfo = vpcInfo;
@@ -142,12 +142,12 @@ public class NetworkInfo {
         this.publicIpInfo = publicIpInfo;
     }
 
-    public NetworkInfo withSecurityGroups(List<SecurityGroupInfo> securityGroups) {
+    public NetworkInfo withSecurityGroups(List<SecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public NetworkInfo addSecurityGroupsItem(SecurityGroupInfo securityGroupsItem) {
+    public NetworkInfo addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -155,7 +155,7 @@ public class NetworkInfo {
         return this;
     }
 
-    public NetworkInfo withSecurityGroups(Consumer<List<SecurityGroupInfo>> securityGroupsSetter) {
+    public NetworkInfo withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -167,11 +167,11 @@ public class NetworkInfo {
      * 桌面绑定的安全组列表
      * @return securityGroups
      */
-    public List<SecurityGroupInfo> getSecurityGroups() {
+    public List<SecurityGroup> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroupInfo> securityGroups) {
+    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
     }
 

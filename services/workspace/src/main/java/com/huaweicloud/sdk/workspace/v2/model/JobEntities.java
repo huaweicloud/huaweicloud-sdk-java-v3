@@ -25,6 +25,16 @@ public class JobEntities {
 
     private String userName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_name")
+
+    private String desktopName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_address")
+
+    private String ipAddress;
+
     public JobEntities withDesktopId(String desktopId) {
         this.desktopId = desktopId;
         return this;
@@ -76,6 +86,40 @@ public class JobEntities {
         this.userName = userName;
     }
 
+    public JobEntities withDesktopName(String desktopName) {
+        this.desktopName = desktopName;
+        return this;
+    }
+
+    /**
+     * 桌面名称。
+     * @return desktopName
+     */
+    public String getDesktopName() {
+        return desktopName;
+    }
+
+    public void setDesktopName(String desktopName) {
+        this.desktopName = desktopName;
+    }
+
+    public JobEntities withIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+        return this;
+    }
+
+    /**
+     * ip地址。
+     * @return ipAddress
+     */
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +130,13 @@ public class JobEntities {
         }
         JobEntities that = (JobEntities) obj;
         return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.productId, that.productId)
-            && Objects.equals(this.userName, that.userName);
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.desktopName, that.desktopName)
+            && Objects.equals(this.ipAddress, that.ipAddress);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopId, productId, userName);
+        return Objects.hash(desktopId, productId, userName, desktopName, ipAddress);
     }
 
     @Override
@@ -101,6 +146,8 @@ public class JobEntities {
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+        sb.append("    desktopName: ").append(toIndentedString(desktopName)).append("\n");
+        sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("}");
         return sb.toString();
     }

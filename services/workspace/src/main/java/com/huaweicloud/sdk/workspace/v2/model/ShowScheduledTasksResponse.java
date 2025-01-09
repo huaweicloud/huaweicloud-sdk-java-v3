@@ -114,6 +114,11 @@ public class ShowScheduledTasksResponse extends SdkResponse {
 
     private String timeZone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "wait_time")
+
+    private Integer waitTime;
+
     public ShowScheduledTasksResponse withId(String id) {
         this.id = id;
         return this;
@@ -486,6 +491,23 @@ public class ShowScheduledTasksResponse extends SdkResponse {
         this.timeZone = timeZone;
     }
 
+    public ShowScheduledTasksResponse withWaitTime(Integer waitTime) {
+        this.waitTime = waitTime;
+        return this;
+    }
+
+    /**
+     * 触发式任务触发后，等待时长。
+     * @return waitTime
+     */
+    public Integer getWaitTime() {
+        return waitTime;
+    }
+
+    public void setWaitTime(Integer waitTime) {
+        this.waitTime = waitTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -508,7 +530,7 @@ public class ShowScheduledTasksResponse extends SdkResponse {
             && Objects.equals(this.applyObjects, that.applyObjects) && Objects.equals(this.grayCount, that.grayCount)
             && Objects.equals(this.grayDesktopIds, that.grayDesktopIds)
             && Objects.equals(this.grayFailThreshold, that.grayFailThreshold)
-            && Objects.equals(this.timeZone, that.timeZone);
+            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.waitTime, that.waitTime);
     }
 
     @Override
@@ -532,7 +554,8 @@ public class ShowScheduledTasksResponse extends SdkResponse {
             grayCount,
             grayDesktopIds,
             grayFailThreshold,
-            timeZone);
+            timeZone,
+            waitTime);
     }
 
     @Override
@@ -559,6 +582,7 @@ public class ShowScheduledTasksResponse extends SdkResponse {
         sb.append("    grayDesktopIds: ").append(toIndentedString(grayDesktopIds)).append("\n");
         sb.append("    grayFailThreshold: ").append(toIndentedString(grayFailThreshold)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+        sb.append("    waitTime: ").append(toIndentedString(waitTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

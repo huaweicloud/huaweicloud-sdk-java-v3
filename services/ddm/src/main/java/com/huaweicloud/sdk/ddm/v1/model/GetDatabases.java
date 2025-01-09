@@ -28,12 +28,12 @@ public class GetDatabases {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
-    private String created;
+    private Long created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
-    private String updated;
+    private Long updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
@@ -96,7 +96,7 @@ public class GetDatabases {
         this.status = status;
     }
 
-    public GetDatabases withCreated(String created) {
+    public GetDatabases withCreated(Long created) {
         this.created = created;
         return this;
     }
@@ -105,15 +105,15 @@ public class GetDatabases {
      * 创建时间。
      * @return created
      */
-    public String getCreated() {
+    public Long getCreated() {
         return created;
     }
 
-    public void setCreated(String created) {
+    public void setCreated(Long created) {
         this.created = created;
     }
 
-    public GetDatabases withUpdated(String updated) {
+    public GetDatabases withUpdated(Long updated) {
         this.updated = updated;
         return this;
     }
@@ -122,11 +122,11 @@ public class GetDatabases {
      * 最近更新时间。
      * @return updated
      */
-    public String getUpdated() {
+    public Long getUpdated() {
         return updated;
     }
 
-    public void setUpdated(String updated) {
+    public void setUpdated(Long updated) {
         this.updated = updated;
     }
 

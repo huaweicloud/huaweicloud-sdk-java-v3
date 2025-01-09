@@ -39,9 +39,19 @@ public class ListMetricsTrendRequest {
     private List<String> metricNames = null;
 
     /**
-     * 数据周期 | DAY - 天级数据 HOUR - 小时级数据
+     * 数据周期 | MIN - 分钟级 5MIN - 5分钟级 DAY - 天级数据 HOUR - 小时级数据
      */
     public static final class PeriodEnum {
+
+        /**
+         * Enum MIN for value: "MIN"
+         */
+        public static final PeriodEnum MIN = new PeriodEnum("MIN");
+
+        /**
+         * Enum _5MIN for value: "5MIN"
+         */
+        public static final PeriodEnum _5MIN = new PeriodEnum("5MIN");
 
         /**
          * Enum DAY for value: "DAY"
@@ -57,6 +67,8 @@ public class ListMetricsTrendRequest {
 
         private static Map<String, PeriodEnum> createStaticFields() {
             Map<String, PeriodEnum> map = new HashMap<>();
+            map.put("MIN", MIN);
+            map.put("5MIN", _5MIN);
             map.put("DAY", DAY);
             map.put("HOUR", HOUR);
             return Collections.unmodifiableMap(map);
@@ -119,7 +131,7 @@ public class ListMetricsTrendRequest {
     }
 
     /**
-     * 开始时间, UTC时间, 格式为：yyyy-MM-ddTHH:mm:ssZ
+     * 开始时间
      * @return startTime
      */
     public String getStartTime() {
@@ -136,7 +148,7 @@ public class ListMetricsTrendRequest {
     }
 
     /**
-     * 结束时间, UTC时间, 格式为：yyyy-MM-ddTHH:mm:ssZ
+     * 结束时间
      * @return endTime
      */
     public String getEndTime() {
@@ -186,7 +198,7 @@ public class ListMetricsTrendRequest {
     }
 
     /**
-     * 指标名称，支持的指标名称参考[Workspace运维监控指标](https://support.huaweicloud.com/usermanual-workspace/workspace_06_1032.html)
+     * 指标名称列表
      * @return metricNames
      */
     public List<String> getMetricNames() {
@@ -203,7 +215,7 @@ public class ListMetricsTrendRequest {
     }
 
     /**
-     * 数据周期 | DAY - 天级数据 HOUR - 小时级数据
+     * 数据周期 | MIN - 分钟级 5MIN - 5分钟级 DAY - 天级数据 HOUR - 小时级数据
      * @return period
      */
     public PeriodEnum getPeriod() {

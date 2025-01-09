@@ -21,7 +21,7 @@ public class ApplyObject {
     private String objectId;
 
     /**
-     * 对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面，仅供触发式任务使用。
+     * 对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面，仅供触发式任务使用。 - DESKTOP_TAG：桌面标签
      */
     public static final class ObjectTypeEnum {
 
@@ -40,6 +40,11 @@ public class ApplyObject {
          */
         public static final ObjectTypeEnum ALL_DESKTOPS = new ObjectTypeEnum("ALL_DESKTOPS");
 
+        /**
+         * Enum DESKTOP_TAG for value: "DESKTOP_TAG"
+         */
+        public static final ObjectTypeEnum DESKTOP_TAG = new ObjectTypeEnum("DESKTOP_TAG");
+
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ObjectTypeEnum> createStaticFields() {
@@ -47,6 +52,7 @@ public class ApplyObject {
             map.put("DESKTOP", DESKTOP);
             map.put("DESKTOP_POOL", DESKTOP_POOL);
             map.put("ALL_DESKTOPS", ALL_DESKTOPS);
+            map.put("DESKTOP_TAG", DESKTOP_TAG);
             return Collections.unmodifiableMap(map);
         }
 
@@ -129,7 +135,7 @@ public class ApplyObject {
     }
 
     /**
-     * 对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面，仅供触发式任务使用。
+     * 对象类型，可选值为： - DESKTOP：桌面。 - DESKTOP_POOL：桌面池。 - ALL_DESKTOPS: 所有桌面，仅供触发式任务使用。 - DESKTOP_TAG：桌面标签
      * @return objectType
      */
     public ObjectTypeEnum getObjectType() {

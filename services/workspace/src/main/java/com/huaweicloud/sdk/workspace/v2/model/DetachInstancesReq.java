@@ -18,6 +18,11 @@ public class DetachInstancesReq {
 
     private List<String> desktopIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "shutoff_after_detach")
+
+    private Boolean shutoffAfterDetach;
+
     public DetachInstancesReq withDesktopIds(List<String> desktopIds) {
         this.desktopIds = desktopIds;
         return this;
@@ -40,7 +45,7 @@ public class DetachInstancesReq {
     }
 
     /**
-     * 桌面id
+     * 桌面id,不能为空
      * @return desktopIds
      */
     public List<String> getDesktopIds() {
@@ -49,6 +54,23 @@ public class DetachInstancesReq {
 
     public void setDesktopIds(List<String> desktopIds) {
         this.desktopIds = desktopIds;
+    }
+
+    public DetachInstancesReq withShutoffAfterDetach(Boolean shutoffAfterDetach) {
+        this.shutoffAfterDetach = shutoffAfterDetach;
+        return this;
+    }
+
+    /**
+     * 解绑后是否关机。
+     * @return shutoffAfterDetach
+     */
+    public Boolean getShutoffAfterDetach() {
+        return shutoffAfterDetach;
+    }
+
+    public void setShutoffAfterDetach(Boolean shutoffAfterDetach) {
+        this.shutoffAfterDetach = shutoffAfterDetach;
     }
 
     @Override
@@ -60,12 +82,13 @@ public class DetachInstancesReq {
             return false;
         }
         DetachInstancesReq that = (DetachInstancesReq) obj;
-        return Objects.equals(this.desktopIds, that.desktopIds);
+        return Objects.equals(this.desktopIds, that.desktopIds)
+            && Objects.equals(this.shutoffAfterDetach, that.shutoffAfterDetach);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktopIds);
+        return Objects.hash(desktopIds, shutoffAfterDetach);
     }
 
     @Override
@@ -73,6 +96,7 @@ public class DetachInstancesReq {
         StringBuilder sb = new StringBuilder();
         sb.append("class DetachInstancesReq {\n");
         sb.append("    desktopIds: ").append(toIndentedString(desktopIds)).append("\n");
+        sb.append("    shutoffAfterDetach: ").append(toIndentedString(shutoffAfterDetach)).append("\n");
         sb.append("}");
         return sb.toString();
     }

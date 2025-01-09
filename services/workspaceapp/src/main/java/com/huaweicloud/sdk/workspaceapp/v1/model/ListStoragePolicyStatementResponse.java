@@ -30,7 +30,7 @@ public class ListStoragePolicyStatementResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * 总数。
      * minimum: 0
      * maximum: 2147483647
      * @return count

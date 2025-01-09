@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ChangeDatabaseVersionResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateDatabaseResponse;
+import com.huaweicloud.sdk.ddm.v1.model.CreateDdmDatabaseRequest;
+import com.huaweicloud.sdk.ddm.v1.model.CreateDdmDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateGroupRequest;
 import com.huaweicloud.sdk.ddm.v1.model.CreateGroupResponse;
 import com.huaweicloud.sdk.ddm.v1.model.CreateInstanceRequest;
@@ -17,6 +19,8 @@ import com.huaweicloud.sdk.ddm.v1.model.DeleteDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDatabaseResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmDatabaseResponse;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmInstanceRequest;
+import com.huaweicloud.sdk.ddm.v1.model.DeleteDdmInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.DeleteUserRequest;
@@ -37,6 +41,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabaseAvailableVersionsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDatabasesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListDdmConfigurationsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListDdmConfigurationsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmEnginesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmEnginesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListDdmFlavorsRequest;
@@ -55,6 +61,8 @@ import com.huaweicloud.sdk.ddm.v1.model.ListReadWriteRatioRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListReadWriteRatioResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogsRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ListSlowLogsResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ListUsersRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ListUsersResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RebuildConfigRequest;
@@ -69,8 +77,12 @@ import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.ddm.v1.model.RollBackDatabaseVersionRequest;
 import com.huaweicloud.sdk.ddm.v1.model.RollBackDatabaseVersionResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowConfigurationRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowConfigurationResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowDatabaseResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowDdmJobResultRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowDdmJobResultResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceParamResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowInstanceRequest;
@@ -83,8 +95,12 @@ import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowPhysicalProcessesResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShowProcessesAuditLogResponse;
+import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoRequest;
+import com.huaweicloud.sdk.ddm.v1.model.ShowRiskInfoResponse;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesRequest;
 import com.huaweicloud.sdk.ddm.v1.model.ShrinkInstanceNodesResponse;
+import com.huaweicloud.sdk.ddm.v1.model.SwitchSslRequest;
+import com.huaweicloud.sdk.ddm.v1.model.SwitchSslResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoRequest;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateDatabaseInfoResponse;
 import com.huaweicloud.sdk.ddm.v1.model.UpdateInstanceNameRequest;
@@ -176,6 +192,36 @@ public class DdmAsyncClient {
     }
 
     /**
+     * 获取参数模板列表
+     *
+     * 获取参数模板列表，包括所有DDM的默认参数模板和用户创建的参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDdmConfigurationsRequest 请求对象
+     * @return CompletableFuture<ListDdmConfigurationsResponse>
+     */
+    public CompletableFuture<ListDdmConfigurationsResponse> listDdmConfigurationsAsync(
+        ListDdmConfigurationsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.listDdmConfigurations);
+    }
+
+    /**
+     * 获取参数模板列表
+     *
+     * 获取参数模板列表，包括所有DDM的默认参数模板和用户创建的参数模板。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDdmConfigurationsRequest 请求对象
+     * @return AsyncInvoker<ListDdmConfigurationsRequest, ListDdmConfigurationsResponse>
+     */
+    public AsyncInvoker<ListDdmConfigurationsRequest, ListDdmConfigurationsResponse> listDdmConfigurationsAsyncInvoker(
+        ListDdmConfigurationsRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.listDdmConfigurations, hcClient);
+    }
+
+    /**
      * 回滚内核版本
      *
      * 回滚内核版本
@@ -203,6 +249,64 @@ public class DdmAsyncClient {
     public AsyncInvoker<RollBackDatabaseVersionRequest, RollBackDatabaseVersionResponse> rollBackDatabaseVersionAsyncInvoker(
         RollBackDatabaseVersionRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.rollBackDatabaseVersion, hcClient);
+    }
+
+    /**
+     * 获取指定参数模板的参数
+     *
+     * 获取指定参数模板的参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConfigurationRequest 请求对象
+     * @return CompletableFuture<ShowConfigurationResponse>
+     */
+    public CompletableFuture<ShowConfigurationResponse> showConfigurationAsync(ShowConfigurationRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.showConfiguration);
+    }
+
+    /**
+     * 获取指定参数模板的参数
+     *
+     * 获取指定参数模板的参数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowConfigurationRequest 请求对象
+     * @return AsyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse>
+     */
+    public AsyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse> showConfigurationAsyncInvoker(
+        ShowConfigurationRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.showConfiguration, hcClient);
+    }
+
+    /**
+     * 内核版本风险提醒
+     *
+     * 内核版本风险提醒
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRiskInfoRequest 请求对象
+     * @return CompletableFuture<ShowRiskInfoResponse>
+     */
+    public CompletableFuture<ShowRiskInfoResponse> showRiskInfoAsync(ShowRiskInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.showRiskInfo);
+    }
+
+    /**
+     * 内核版本风险提醒
+     *
+     * 内核版本风险提醒
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRiskInfoRequest 请求对象
+     * @return AsyncInvoker<ShowRiskInfoRequest, ShowRiskInfoResponse>
+     */
+    public AsyncInvoker<ShowRiskInfoRequest, ShowRiskInfoResponse> showRiskInfoAsyncInvoker(
+        ShowRiskInfoRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.showRiskInfo, hcClient);
     }
 
     /**
@@ -261,6 +365,35 @@ public class DdmAsyncClient {
     public AsyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> createDatabaseAsyncInvoker(
         CreateDatabaseRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.createDatabase, hcClient);
+    }
+
+    /**
+     * 创建DDM逻辑库
+     *
+     * 创建DDM逻辑库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDdmDatabaseRequest 请求对象
+     * @return CompletableFuture<CreateDdmDatabaseResponse>
+     */
+    public CompletableFuture<CreateDdmDatabaseResponse> createDdmDatabaseAsync(CreateDdmDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.createDdmDatabase);
+    }
+
+    /**
+     * 创建DDM逻辑库
+     *
+     * 创建DDM逻辑库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDdmDatabaseRequest 请求对象
+     * @return AsyncInvoker<CreateDdmDatabaseRequest, CreateDdmDatabaseResponse>
+     */
+    public AsyncInvoker<CreateDdmDatabaseRequest, CreateDdmDatabaseResponse> createDdmDatabaseAsyncInvoker(
+        CreateDdmDatabaseRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.createDdmDatabase, hcClient);
     }
 
     /**
@@ -408,6 +541,35 @@ public class DdmAsyncClient {
     public AsyncInvoker<DeleteDdmDatabaseRequest, DeleteDdmDatabaseResponse> deleteDdmDatabaseAsyncInvoker(
         DeleteDdmDatabaseRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.deleteDdmDatabase, hcClient);
+    }
+
+    /**
+     * 删除DDM实例
+     *
+     * 删除指定的DDM实例，释放该实例的所有资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDdmInstanceRequest 请求对象
+     * @return CompletableFuture<DeleteDdmInstanceResponse>
+     */
+    public CompletableFuture<DeleteDdmInstanceResponse> deleteDdmInstanceAsync(DeleteDdmInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.deleteDdmInstance);
+    }
+
+    /**
+     * 删除DDM实例
+     *
+     * 删除指定的DDM实例，释放该实例的所有资源。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDdmInstanceRequest 请求对象
+     * @return AsyncInvoker<DeleteDdmInstanceRequest, DeleteDdmInstanceResponse>
+     */
+    public AsyncInvoker<DeleteDdmInstanceRequest, DeleteDdmInstanceResponse> deleteDdmInstanceAsyncInvoker(
+        DeleteDdmInstanceRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.deleteDdmInstance, hcClient);
     }
 
     /**
@@ -902,6 +1064,35 @@ public class DdmAsyncClient {
     }
 
     /**
+     * 慢日志监控
+     *
+     * 查询指定时间段内在DDM实例上执行过的慢sql相关信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSlowLogsRequest 请求对象
+     * @return CompletableFuture<ListSlowLogsResponse>
+     */
+    public CompletableFuture<ListSlowLogsResponse> listSlowLogsAsync(ListSlowLogsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.listSlowLogs);
+    }
+
+    /**
+     * 慢日志监控
+     *
+     * 查询指定时间段内在DDM实例上执行过的慢sql相关信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSlowLogsRequest 请求对象
+     * @return AsyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse>
+     */
+    public AsyncInvoker<ListSlowLogsRequest, ListSlowLogsResponse> listSlowLogsAsyncInvoker(
+        ListSlowLogsRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.listSlowLogs, hcClient);
+    }
+
+    /**
      * 查询DDM帐号列表
      *
      * 查询DDM帐号列表。
@@ -1101,6 +1292,35 @@ public class DdmAsyncClient {
     public AsyncInvoker<ShowDatabaseRequest, ShowDatabaseResponse> showDatabaseAsyncInvoker(
         ShowDatabaseRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.showDatabase, hcClient);
+    }
+
+    /**
+     * 获取指定ID的任务信息
+     *
+     * 获取指定ID的任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDdmJobResultRequest 请求对象
+     * @return CompletableFuture<ShowDdmJobResultResponse>
+     */
+    public CompletableFuture<ShowDdmJobResultResponse> showDdmJobResultAsync(ShowDdmJobResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.showDdmJobResult);
+    }
+
+    /**
+     * 获取指定ID的任务信息
+     *
+     * 获取指定ID的任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDdmJobResultRequest 请求对象
+     * @return AsyncInvoker<ShowDdmJobResultRequest, ShowDdmJobResultResponse>
+     */
+    public AsyncInvoker<ShowDdmJobResultRequest, ShowDdmJobResultResponse> showDdmJobResultAsyncInvoker(
+        ShowDdmJobResultRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.showDdmJobResult, hcClient);
     }
 
     /**
@@ -1306,6 +1526,34 @@ public class DdmAsyncClient {
     public AsyncInvoker<ShrinkInstanceNodesRequest, ShrinkInstanceNodesResponse> shrinkInstanceNodesAsyncInvoker(
         ShrinkInstanceNodesRequest request) {
         return new AsyncInvoker<>(request, DdmMeta.shrinkInstanceNodes, hcClient);
+    }
+
+    /**
+     * 为实例设置SSL数据加密
+     *
+     * 为实例设置SSL数据加密。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchSslRequest 请求对象
+     * @return CompletableFuture<SwitchSslResponse>
+     */
+    public CompletableFuture<SwitchSslResponse> switchSslAsync(SwitchSslRequest request) {
+        return hcClient.asyncInvokeHttp(request, DdmMeta.switchSsl);
+    }
+
+    /**
+     * 为实例设置SSL数据加密
+     *
+     * 为实例设置SSL数据加密。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchSslRequest 请求对象
+     * @return AsyncInvoker<SwitchSslRequest, SwitchSslResponse>
+     */
+    public AsyncInvoker<SwitchSslRequest, SwitchSslResponse> switchSslAsyncInvoker(SwitchSslRequest request) {
+        return new AsyncInvoker<>(request, DdmMeta.switchSsl, hcClient);
     }
 
     /**

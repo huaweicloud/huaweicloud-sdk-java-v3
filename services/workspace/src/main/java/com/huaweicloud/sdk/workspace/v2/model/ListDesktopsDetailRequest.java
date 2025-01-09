@@ -194,6 +194,11 @@ public class ListDesktopsDetailRequest {
     private String desktopIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sids")
+
+    private String sids;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -214,9 +219,19 @@ public class ListDesktopsDetailRequest {
     private String desktopType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "login_status")
+
+    private String loginStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tag")
 
     private String tag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "fuzzy_query")
+
+    private Boolean fuzzyQuery;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "pool_id")
@@ -249,9 +264,24 @@ public class ListDesktopsDetailRequest {
     private Boolean inMaintenanceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_share_desktop")
+
+    private Boolean isShareDesktop;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
 
     private String subnetId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_internet")
+
+    private Boolean isSupportInternet;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
 
     public ListDesktopsDetailRequest withStatus(String status) {
         this.status = status;
@@ -259,7 +289,7 @@ public class ListDesktopsDetailRequest {
     }
 
     /**
-     * 桌面状态。  - ACTIVE：运行中。 - SHUTOFF：关机。 - ERROR：异常。
+     * 桌面状态。  - ACTIVE：运行中。 - SHUTOFF：关机。 - ERROR：异常。 - HIBERNATED：休眠。
      * @return status
      */
     public String getStatus() {
@@ -388,6 +418,23 @@ public class ListDesktopsDetailRequest {
         this.desktopIp = desktopIp;
     }
 
+    public ListDesktopsDetailRequest withSids(String sids) {
+        this.sids = sids;
+        return this;
+    }
+
+    /**
+     * 桌面的sid列表。
+     * @return sids
+     */
+    public String getSids() {
+        return sids;
+    }
+
+    public void setSids(String sids) {
+        this.sids = sids;
+    }
+
     public ListDesktopsDetailRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -465,7 +512,7 @@ public class ListDesktopsDetailRequest {
     }
 
     /**
-     * 桌面类型，为空时查所有桌面。 - DEDICATED：普通桌面，包括专享桌面、专属桌面等 - POOLED：池桌面，即桌面池里的桌面 - SHARED: 多用户共享桌面。
+     * 桌面类型，为空时查所有桌面。 - DEDICATED：普通桌面，包括专享桌面、专属桌面等 - POOLED：池桌面，即桌面池里的桌面
      * @return desktopType
      */
     public String getDesktopType() {
@@ -474,6 +521,23 @@ public class ListDesktopsDetailRequest {
 
     public void setDesktopType(String desktopType) {
         this.desktopType = desktopType;
+    }
+
+    public ListDesktopsDetailRequest withLoginStatus(String loginStatus) {
+        this.loginStatus = loginStatus;
+        return this;
+    }
+
+    /**
+     * 桌面的登录状态。  - UNREGISTER：表示桌面未注册时的状态（桌面启动后，会自动注册）。关机后也会出现未注册的状态。 - REGISTERED：表示桌面注册以后，等待用户连接的状态。 - CONNECTED：表示用户已经成功登录，正在使用桌面。 - DISCONNECTED：表示桌面与客户端断开会话后显示的状态，可能为关闭客户端窗口，或客户端与桌面网络断开引起。
+     * @return loginStatus
+     */
+    public String getLoginStatus() {
+        return loginStatus;
+    }
+
+    public void setLoginStatus(String loginStatus) {
+        this.loginStatus = loginStatus;
     }
 
     public ListDesktopsDetailRequest withTag(String tag) {
@@ -491,6 +555,23 @@ public class ListDesktopsDetailRequest {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public ListDesktopsDetailRequest withFuzzyQuery(Boolean fuzzyQuery) {
+        this.fuzzyQuery = fuzzyQuery;
+        return this;
+    }
+
+    /**
+     * 是不是模糊用户查询。
+     * @return fuzzyQuery
+     */
+    public Boolean getFuzzyQuery() {
+        return fuzzyQuery;
+    }
+
+    public void setFuzzyQuery(Boolean fuzzyQuery) {
+        this.fuzzyQuery = fuzzyQuery;
     }
 
     public ListDesktopsDetailRequest withPoolId(String poolId) {
@@ -595,6 +676,23 @@ public class ListDesktopsDetailRequest {
         this.inMaintenanceMode = inMaintenanceMode;
     }
 
+    public ListDesktopsDetailRequest withIsShareDesktop(Boolean isShareDesktop) {
+        this.isShareDesktop = isShareDesktop;
+        return this;
+    }
+
+    /**
+     * 是否为协同桌面
+     * @return isShareDesktop
+     */
+    public Boolean getIsShareDesktop() {
+        return isShareDesktop;
+    }
+
+    public void setIsShareDesktop(Boolean isShareDesktop) {
+        this.isShareDesktop = isShareDesktop;
+    }
+
     public ListDesktopsDetailRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -612,6 +710,40 @@ public class ListDesktopsDetailRequest {
         this.subnetId = subnetId;
     }
 
+    public ListDesktopsDetailRequest withIsSupportInternet(Boolean isSupportInternet) {
+        this.isSupportInternet = isSupportInternet;
+        return this;
+    }
+
+    /**
+     * 是否支持上网。
+     * @return isSupportInternet
+     */
+    public Boolean getIsSupportInternet() {
+        return isSupportInternet;
+    }
+
+    public void setIsSupportInternet(Boolean isSupportInternet) {
+        this.isSupportInternet = isSupportInternet;
+    }
+
+    public ListDesktopsDetailRequest withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 查询可用区
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -624,14 +756,18 @@ public class ListDesktopsDetailRequest {
         return Objects.equals(this.status, that.status) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.userNames, that.userNames) && Objects.equals(this.sortField, that.sortField)
             && Objects.equals(this.sortType, that.sortType) && Objects.equals(this.computerName, that.computerName)
-            && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.desktopId, that.desktopId)
-            && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.tag, that.tag)
-            && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.userAttached, that.userAttached)
+            && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.sids, that.sids)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.desktopType, that.desktopType)
+            && Objects.equals(this.loginStatus, that.loginStatus) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.fuzzyQuery, that.fuzzyQuery) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.userAttached, that.userAttached)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
-            && Objects.equals(this.subnetId, that.subnetId);
+            && Objects.equals(this.isShareDesktop, that.isShareDesktop) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.isSupportInternet, that.isSupportInternet)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override
@@ -643,18 +779,24 @@ public class ListDesktopsDetailRequest {
             sortType,
             computerName,
             desktopIp,
+            sids,
             offset,
             limit,
             desktopId,
             desktopType,
+            loginStatus,
             tag,
+            fuzzyQuery,
             poolId,
             userAttached,
             enterpriseProjectId,
             imageId,
             chargeMode,
             inMaintenanceMode,
-            subnetId);
+            isShareDesktop,
+            subnetId,
+            isSupportInternet,
+            availabilityZone);
     }
 
     @Override
@@ -668,18 +810,24 @@ public class ListDesktopsDetailRequest {
         sb.append("    sortType: ").append(toIndentedString(sortType)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
         sb.append("    desktopIp: ").append(toIndentedString(desktopIp)).append("\n");
+        sb.append("    sids: ").append(toIndentedString(sids)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
+        sb.append("    loginStatus: ").append(toIndentedString(loginStatus)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    fuzzyQuery: ").append(toIndentedString(fuzzyQuery)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("    userAttached: ").append(toIndentedString(userAttached)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
+        sb.append("    isShareDesktop: ").append(toIndentedString(isShareDesktop)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    isSupportInternet: ").append(toIndentedString(isSupportInternet)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

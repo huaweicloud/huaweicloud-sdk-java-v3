@@ -25,9 +25,19 @@ public class ListWorkspacesResponse extends SdkResponse {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auth_type")
+
+    private String authType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ad_domains")
 
     private AdInfo adDomains;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "third_gateway_info")
+
+    private ThirdGatewayInfo thirdGatewayInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -45,6 +55,11 @@ public class ListWorkspacesResponse extends SdkResponse {
     private String accessMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "adn_conflict_network")
+
+    private String adnConflictNetwork;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dedicated_subnets")
 
     private String dedicatedSubnets;
@@ -55,9 +70,19 @@ public class ListWorkspacesResponse extends SdkResponse {
     private String dedicatedAccessAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dedicated_access_address_ipv6")
+
+    private String dedicatedAccessAddressIpv6;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "internet_access_address")
 
     private String internetAccessAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "internet_access_address_ipv6")
+
+    private String internetAccessAddressIpv6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "internet_access_port")
@@ -65,7 +90,7 @@ public class ListWorkspacesResponse extends SdkResponse {
     private String internetAccessPort;
 
     /**
-     * 云办公服务的状态。 - PREPARING：准备开通。 - SUBSCRIBING：开通中。 - SUBSCRIBED：已开通。 - SUBSCRIPTION_FAILED：开通失败。 - DEREGISTERING：销户中。 - DEREGISTRATION_FAILED：销户失败。 - CLOSED：已销户未开通。
+     * 云办公服务的状态。 - PREPARING：准备开通。 - SUBSCRIBING：开通中。 - SUBSCRIBED：已开通。 - SUBSCRIPTION_FAILED：开通失败。 - DEREGISTERING：销户中。 - DEREGISTRATION_FAILED：销户失败。 - RECYCLING：清理资源中。 - RECYCLED：清理资源成功。 - RECYCLE_FAILED：清理资源失败。 - CLOSED：已销户未开通。
      */
     public static final class StatusEnum {
 
@@ -100,6 +125,21 @@ public class ListWorkspacesResponse extends SdkResponse {
         public static final StatusEnum DEREGISTRATION_FAILED = new StatusEnum("DEREGISTRATION_FAILED");
 
         /**
+         * Enum RECYCLING for value: "RECYCLING"
+         */
+        public static final StatusEnum RECYCLING = new StatusEnum("RECYCLING");
+
+        /**
+         * Enum RECYCLED for value: "RECYCLED"
+         */
+        public static final StatusEnum RECYCLED = new StatusEnum("RECYCLED");
+
+        /**
+         * Enum RECYCLE_FAILED for value: "RECYCLE_FAILED"
+         */
+        public static final StatusEnum RECYCLE_FAILED = new StatusEnum("RECYCLE_FAILED");
+
+        /**
          * Enum CLOSED for value: "CLOSED"
          */
         public static final StatusEnum CLOSED = new StatusEnum("CLOSED");
@@ -114,6 +154,9 @@ public class ListWorkspacesResponse extends SdkResponse {
             map.put("SUBSCRIPTION_FAILED", SUBSCRIPTION_FAILED);
             map.put("DEREGISTERING", DEREGISTERING);
             map.put("DEREGISTRATION_FAILED", DEREGISTRATION_FAILED);
+            map.put("RECYCLING", RECYCLING);
+            map.put("RECYCLED", RECYCLED);
+            map.put("RECYCLE_FAILED", RECYCLE_FAILED);
             map.put("CLOSED", CLOSED);
             return Collections.unmodifiableMap(map);
         }
@@ -180,6 +223,11 @@ public class ListWorkspacesResponse extends SdkResponse {
     private List<SubnetInfo> subnetIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_config_infos")
+
+    private List<VpcConfigInfo> vpcConfigInfos = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "management_subnet_cidr")
 
     private String managementSubnetCidr;
@@ -230,6 +278,21 @@ public class ListWorkspacesResponse extends SdkResponse {
     private String enterpriseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_resource_type")
+
+    private String projectResourceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "assist_auth_config_info")
+
+    private AssistAuthConfigInfo assistAuthConfigInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_send_email")
 
     private Boolean isSendEmail;
@@ -245,9 +308,44 @@ public class ListWorkspacesResponse extends SdkResponse {
     private Boolean authorizedHdaUpgrade;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "site_configs")
+
+    private List<SiteConfigsResponse> siteConfigs = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_multi_vpc")
+
+    private Boolean isMultiVpc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_config_nat_mapping")
+
+    private Boolean isConfigNatMapping;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dc_vnc_ip")
 
     private String dcVncIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dc_vnc_vpcep_id")
+
+    private String dcVncVpcepId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_authorized_install_agent")
+
+    private Boolean isAuthorizedInstallAgent;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_ipv6")
+
+    private Boolean isSupportIpv6;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_user_create_snapshot")
+
+    private Boolean enableUserCreateSnapshot;
 
     public ListWorkspacesResponse withId(String id) {
         this.id = id;
@@ -264,6 +362,23 @@ public class ListWorkspacesResponse extends SdkResponse {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public ListWorkspacesResponse withAuthType(String authType) {
+        this.authType = authType;
+        return this;
+    }
+
+    /**
+     * 主认证方式。 - KERBEROS：KERBEROS。 - KERBEROS_THIRD_SSO：第三方登录认证。
+     * @return authType
+     */
+    public String getAuthType() {
+        return authType;
+    }
+
+    public void setAuthType(String authType) {
+        this.authType = authType;
     }
 
     public ListWorkspacesResponse withAdDomains(AdInfo adDomains) {
@@ -290,6 +405,32 @@ public class ListWorkspacesResponse extends SdkResponse {
 
     public void setAdDomains(AdInfo adDomains) {
         this.adDomains = adDomains;
+    }
+
+    public ListWorkspacesResponse withThirdGatewayInfo(ThirdGatewayInfo thirdGatewayInfo) {
+        this.thirdGatewayInfo = thirdGatewayInfo;
+        return this;
+    }
+
+    public ListWorkspacesResponse withThirdGatewayInfo(Consumer<ThirdGatewayInfo> thirdGatewayInfoSetter) {
+        if (this.thirdGatewayInfo == null) {
+            this.thirdGatewayInfo = new ThirdGatewayInfo();
+            thirdGatewayInfoSetter.accept(this.thirdGatewayInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get thirdGatewayInfo
+     * @return thirdGatewayInfo
+     */
+    public ThirdGatewayInfo getThirdGatewayInfo() {
+        return thirdGatewayInfo;
+    }
+
+    public void setThirdGatewayInfo(ThirdGatewayInfo thirdGatewayInfo) {
+        this.thirdGatewayInfo = thirdGatewayInfo;
     }
 
     public ListWorkspacesResponse withVpcId(String vpcId) {
@@ -343,6 +484,23 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.accessMode = accessMode;
     }
 
+    public ListWorkspacesResponse withAdnConflictNetwork(String adnConflictNetwork) {
+        this.adnConflictNetwork = adnConflictNetwork;
+        return this;
+    }
+
+    /**
+     * ADN上网冲突网段列表，多个网段信息用分号隔开，列表长度不超过50。
+     * @return adnConflictNetwork
+     */
+    public String getAdnConflictNetwork() {
+        return adnConflictNetwork;
+    }
+
+    public void setAdnConflictNetwork(String adnConflictNetwork) {
+        this.adnConflictNetwork = adnConflictNetwork;
+    }
+
     public ListWorkspacesResponse withDedicatedSubnets(String dedicatedSubnets) {
         this.dedicatedSubnets = dedicatedSubnets;
         return this;
@@ -377,6 +535,23 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.dedicatedAccessAddress = dedicatedAccessAddress;
     }
 
+    public ListWorkspacesResponse withDedicatedAccessAddressIpv6(String dedicatedAccessAddressIpv6) {
+        this.dedicatedAccessAddressIpv6 = dedicatedAccessAddressIpv6;
+        return this;
+    }
+
+    /**
+     * 专线接入ipv6地址，只有access_mode为“DEDICATED”或“BOTH”时才会返回该参数。
+     * @return dedicatedAccessAddressIpv6
+     */
+    public String getDedicatedAccessAddressIpv6() {
+        return dedicatedAccessAddressIpv6;
+    }
+
+    public void setDedicatedAccessAddressIpv6(String dedicatedAccessAddressIpv6) {
+        this.dedicatedAccessAddressIpv6 = dedicatedAccessAddressIpv6;
+    }
+
     public ListWorkspacesResponse withInternetAccessAddress(String internetAccessAddress) {
         this.internetAccessAddress = internetAccessAddress;
         return this;
@@ -392,6 +567,23 @@ public class ListWorkspacesResponse extends SdkResponse {
 
     public void setInternetAccessAddress(String internetAccessAddress) {
         this.internetAccessAddress = internetAccessAddress;
+    }
+
+    public ListWorkspacesResponse withInternetAccessAddressIpv6(String internetAccessAddressIpv6) {
+        this.internetAccessAddressIpv6 = internetAccessAddressIpv6;
+        return this;
+    }
+
+    /**
+     * 互联网接入ipv6地址，只有access_mode为“INTERNET”或“BOTH”时才会返回该参数。
+     * @return internetAccessAddressIpv6
+     */
+    public String getInternetAccessAddressIpv6() {
+        return internetAccessAddressIpv6;
+    }
+
+    public void setInternetAccessAddressIpv6(String internetAccessAddressIpv6) {
+        this.internetAccessAddressIpv6 = internetAccessAddressIpv6;
     }
 
     public ListWorkspacesResponse withInternetAccessPort(String internetAccessPort) {
@@ -417,7 +609,7 @@ public class ListWorkspacesResponse extends SdkResponse {
     }
 
     /**
-     * 云办公服务的状态。 - PREPARING：准备开通。 - SUBSCRIBING：开通中。 - SUBSCRIBED：已开通。 - SUBSCRIPTION_FAILED：开通失败。 - DEREGISTERING：销户中。 - DEREGISTRATION_FAILED：销户失败。 - CLOSED：已销户未开通。
+     * 云办公服务的状态。 - PREPARING：准备开通。 - SUBSCRIBING：开通中。 - SUBSCRIBED：已开通。 - SUBSCRIPTION_FAILED：开通失败。 - DEREGISTERING：销户中。 - DEREGISTRATION_FAILED：销户失败。 - RECYCLING：清理资源中。 - RECYCLED：清理资源成功。 - RECYCLE_FAILED：清理资源失败。 - CLOSED：已销户未开通。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -476,6 +668,39 @@ public class ListWorkspacesResponse extends SdkResponse {
 
     public void setSubnetIds(List<SubnetInfo> subnetIds) {
         this.subnetIds = subnetIds;
+    }
+
+    public ListWorkspacesResponse withVpcConfigInfos(List<VpcConfigInfo> vpcConfigInfos) {
+        this.vpcConfigInfos = vpcConfigInfos;
+        return this;
+    }
+
+    public ListWorkspacesResponse addVpcConfigInfosItem(VpcConfigInfo vpcConfigInfosItem) {
+        if (this.vpcConfigInfos == null) {
+            this.vpcConfigInfos = new ArrayList<>();
+        }
+        this.vpcConfigInfos.add(vpcConfigInfosItem);
+        return this;
+    }
+
+    public ListWorkspacesResponse withVpcConfigInfos(Consumer<List<VpcConfigInfo>> vpcConfigInfosSetter) {
+        if (this.vpcConfigInfos == null) {
+            this.vpcConfigInfos = new ArrayList<>();
+        }
+        vpcConfigInfosSetter.accept(this.vpcConfigInfos);
+        return this;
+    }
+
+    /**
+     * VPC配置信息列表。
+     * @return vpcConfigInfos
+     */
+    public List<VpcConfigInfo> getVpcConfigInfos() {
+        return vpcConfigInfos;
+    }
+
+    public void setVpcConfigInfos(List<VpcConfigInfo> vpcConfigInfos) {
+        this.vpcConfigInfos = vpcConfigInfos;
     }
 
     public ListWorkspacesResponse withManagementSubnetCidr(String managementSubnetCidr) {
@@ -669,6 +894,66 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.enterpriseId = enterpriseId;
     }
 
+    public ListWorkspacesResponse withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID。
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public ListWorkspacesResponse withProjectResourceType(String projectResourceType) {
+        this.projectResourceType = projectResourceType;
+        return this;
+    }
+
+    /**
+     * 资源池类型。 - \"public\"： 私有资源池 - \"private\"： 公有资源池
+     * @return projectResourceType
+     */
+    public String getProjectResourceType() {
+        return projectResourceType;
+    }
+
+    public void setProjectResourceType(String projectResourceType) {
+        this.projectResourceType = projectResourceType;
+    }
+
+    public ListWorkspacesResponse withAssistAuthConfigInfo(AssistAuthConfigInfo assistAuthConfigInfo) {
+        this.assistAuthConfigInfo = assistAuthConfigInfo;
+        return this;
+    }
+
+    public ListWorkspacesResponse withAssistAuthConfigInfo(Consumer<AssistAuthConfigInfo> assistAuthConfigInfoSetter) {
+        if (this.assistAuthConfigInfo == null) {
+            this.assistAuthConfigInfo = new AssistAuthConfigInfo();
+            assistAuthConfigInfoSetter.accept(this.assistAuthConfigInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get assistAuthConfigInfo
+     * @return assistAuthConfigInfo
+     */
+    public AssistAuthConfigInfo getAssistAuthConfigInfo() {
+        return assistAuthConfigInfo;
+    }
+
+    public void setAssistAuthConfigInfo(AssistAuthConfigInfo assistAuthConfigInfo) {
+        this.assistAuthConfigInfo = assistAuthConfigInfo;
+    }
+
     public ListWorkspacesResponse withIsSendEmail(Boolean isSendEmail) {
         this.isSendEmail = isSendEmail;
         return this;
@@ -720,6 +1005,73 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.authorizedHdaUpgrade = authorizedHdaUpgrade;
     }
 
+    public ListWorkspacesResponse withSiteConfigs(List<SiteConfigsResponse> siteConfigs) {
+        this.siteConfigs = siteConfigs;
+        return this;
+    }
+
+    public ListWorkspacesResponse addSiteConfigsItem(SiteConfigsResponse siteConfigsItem) {
+        if (this.siteConfigs == null) {
+            this.siteConfigs = new ArrayList<>();
+        }
+        this.siteConfigs.add(siteConfigsItem);
+        return this;
+    }
+
+    public ListWorkspacesResponse withSiteConfigs(Consumer<List<SiteConfigsResponse>> siteConfigsSetter) {
+        if (this.siteConfigs == null) {
+            this.siteConfigs = new ArrayList<>();
+        }
+        siteConfigsSetter.accept(this.siteConfigs);
+        return this;
+    }
+
+    /**
+     * 站点配置
+     * @return siteConfigs
+     */
+    public List<SiteConfigsResponse> getSiteConfigs() {
+        return siteConfigs;
+    }
+
+    public void setSiteConfigs(List<SiteConfigsResponse> siteConfigs) {
+        this.siteConfigs = siteConfigs;
+    }
+
+    public ListWorkspacesResponse withIsMultiVpc(Boolean isMultiVpc) {
+        this.isMultiVpc = isMultiVpc;
+        return this;
+    }
+
+    /**
+     * 是否支持多VPC。
+     * @return isMultiVpc
+     */
+    public Boolean getIsMultiVpc() {
+        return isMultiVpc;
+    }
+
+    public void setIsMultiVpc(Boolean isMultiVpc) {
+        this.isMultiVpc = isMultiVpc;
+    }
+
+    public ListWorkspacesResponse withIsConfigNatMapping(Boolean isConfigNatMapping) {
+        this.isConfigNatMapping = isConfigNatMapping;
+        return this;
+    }
+
+    /**
+     * 是否支持配置nat映射。
+     * @return isConfigNatMapping
+     */
+    public Boolean getIsConfigNatMapping() {
+        return isConfigNatMapping;
+    }
+
+    public void setIsConfigNatMapping(Boolean isConfigNatMapping) {
+        this.isConfigNatMapping = isConfigNatMapping;
+    }
+
     public ListWorkspacesResponse withDcVncIp(String dcVncIp) {
         this.dcVncIp = dcVncIp;
         return this;
@@ -737,6 +1089,74 @@ public class ListWorkspacesResponse extends SdkResponse {
         this.dcVncIp = dcVncIp;
     }
 
+    public ListWorkspacesResponse withDcVncVpcepId(String dcVncVpcepId) {
+        this.dcVncVpcepId = dcVncVpcepId;
+        return this;
+    }
+
+    /**
+     * 专线VNC VPC终端节点ID
+     * @return dcVncVpcepId
+     */
+    public String getDcVncVpcepId() {
+        return dcVncVpcepId;
+    }
+
+    public void setDcVncVpcepId(String dcVncVpcepId) {
+        this.dcVncVpcepId = dcVncVpcepId;
+    }
+
+    public ListWorkspacesResponse withIsAuthorizedInstallAgent(Boolean isAuthorizedInstallAgent) {
+        this.isAuthorizedInstallAgent = isAuthorizedInstallAgent;
+        return this;
+    }
+
+    /**
+     * 是否授权桌面自动安装agent插件。
+     * @return isAuthorizedInstallAgent
+     */
+    public Boolean getIsAuthorizedInstallAgent() {
+        return isAuthorizedInstallAgent;
+    }
+
+    public void setIsAuthorizedInstallAgent(Boolean isAuthorizedInstallAgent) {
+        this.isAuthorizedInstallAgent = isAuthorizedInstallAgent;
+    }
+
+    public ListWorkspacesResponse withIsSupportIpv6(Boolean isSupportIpv6) {
+        this.isSupportIpv6 = isSupportIpv6;
+        return this;
+    }
+
+    /**
+     * 是否支持ipv6。
+     * @return isSupportIpv6
+     */
+    public Boolean getIsSupportIpv6() {
+        return isSupportIpv6;
+    }
+
+    public void setIsSupportIpv6(Boolean isSupportIpv6) {
+        this.isSupportIpv6 = isSupportIpv6;
+    }
+
+    public ListWorkspacesResponse withEnableUserCreateSnapshot(Boolean enableUserCreateSnapshot) {
+        this.enableUserCreateSnapshot = enableUserCreateSnapshot;
+        return this;
+    }
+
+    /**
+     * 是否授权最终租户创建快照。
+     * @return enableUserCreateSnapshot
+     */
+    public Boolean getEnableUserCreateSnapshot() {
+        return enableUserCreateSnapshot;
+    }
+
+    public void setEnableUserCreateSnapshot(Boolean enableUserCreateSnapshot) {
+        this.enableUserCreateSnapshot = enableUserCreateSnapshot;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -746,15 +1166,20 @@ public class ListWorkspacesResponse extends SdkResponse {
             return false;
         }
         ListWorkspacesResponse that = (ListWorkspacesResponse) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.adDomains, that.adDomains)
-            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.vpcName, that.vpcName)
-            && Objects.equals(this.accessMode, that.accessMode)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.authType, that.authType)
+            && Objects.equals(this.adDomains, that.adDomains)
+            && Objects.equals(this.thirdGatewayInfo, that.thirdGatewayInfo) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.vpcName, that.vpcName) && Objects.equals(this.accessMode, that.accessMode)
+            && Objects.equals(this.adnConflictNetwork, that.adnConflictNetwork)
             && Objects.equals(this.dedicatedSubnets, that.dedicatedSubnets)
             && Objects.equals(this.dedicatedAccessAddress, that.dedicatedAccessAddress)
+            && Objects.equals(this.dedicatedAccessAddressIpv6, that.dedicatedAccessAddressIpv6)
             && Objects.equals(this.internetAccessAddress, that.internetAccessAddress)
+            && Objects.equals(this.internetAccessAddressIpv6, that.internetAccessAddressIpv6)
             && Objects.equals(this.internetAccessPort, that.internetAccessPort)
             && Objects.equals(this.status, that.status) && Objects.equals(this.accessStatus, that.accessStatus)
             && Objects.equals(this.subnetIds, that.subnetIds)
+            && Objects.equals(this.vpcConfigInfos, that.vpcConfigInfos)
             && Objects.equals(this.managementSubnetCidr, that.managementSubnetCidr)
             && Objects.equals(this.infrastructureSecurityGroup, that.infrastructureSecurityGroup)
             && Objects.equals(this.desktopSecurityGroup, that.desktopSecurityGroup)
@@ -762,26 +1187,40 @@ public class ListWorkspacesResponse extends SdkResponse {
             && Objects.equals(this.progress, that.progress) && Objects.equals(this.jobId, that.jobId)
             && Objects.equals(this.failCode, that.failCode) && Objects.equals(this.failReason, that.failReason)
             && Objects.equals(this.enterpriseId, that.enterpriseId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.projectResourceType, that.projectResourceType)
+            && Objects.equals(this.assistAuthConfigInfo, that.assistAuthConfigInfo)
             && Objects.equals(this.isSendEmail, that.isSendEmail)
             && Objects.equals(this.authorizedCollectLog, that.authorizedCollectLog)
             && Objects.equals(this.authorizedHdaUpgrade, that.authorizedHdaUpgrade)
-            && Objects.equals(this.dcVncIp, that.dcVncIp);
+            && Objects.equals(this.siteConfigs, that.siteConfigs) && Objects.equals(this.isMultiVpc, that.isMultiVpc)
+            && Objects.equals(this.isConfigNatMapping, that.isConfigNatMapping)
+            && Objects.equals(this.dcVncIp, that.dcVncIp) && Objects.equals(this.dcVncVpcepId, that.dcVncVpcepId)
+            && Objects.equals(this.isAuthorizedInstallAgent, that.isAuthorizedInstallAgent)
+            && Objects.equals(this.isSupportIpv6, that.isSupportIpv6)
+            && Objects.equals(this.enableUserCreateSnapshot, that.enableUserCreateSnapshot);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id,
+            authType,
             adDomains,
+            thirdGatewayInfo,
             vpcId,
             vpcName,
             accessMode,
+            adnConflictNetwork,
             dedicatedSubnets,
             dedicatedAccessAddress,
+            dedicatedAccessAddressIpv6,
             internetAccessAddress,
+            internetAccessAddressIpv6,
             internetAccessPort,
             status,
             accessStatus,
             subnetIds,
+            vpcConfigInfos,
             managementSubnetCidr,
             infrastructureSecurityGroup,
             desktopSecurityGroup,
@@ -792,10 +1231,20 @@ public class ListWorkspacesResponse extends SdkResponse {
             failCode,
             failReason,
             enterpriseId,
+            enterpriseProjectId,
+            projectResourceType,
+            assistAuthConfigInfo,
             isSendEmail,
             authorizedCollectLog,
             authorizedHdaUpgrade,
-            dcVncIp);
+            siteConfigs,
+            isMultiVpc,
+            isConfigNatMapping,
+            dcVncIp,
+            dcVncVpcepId,
+            isAuthorizedInstallAgent,
+            isSupportIpv6,
+            enableUserCreateSnapshot);
     }
 
     @Override
@@ -803,17 +1252,23 @@ public class ListWorkspacesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListWorkspacesResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
         sb.append("    adDomains: ").append(toIndentedString(adDomains)).append("\n");
+        sb.append("    thirdGatewayInfo: ").append(toIndentedString(thirdGatewayInfo)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    vpcName: ").append(toIndentedString(vpcName)).append("\n");
         sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
+        sb.append("    adnConflictNetwork: ").append(toIndentedString(adnConflictNetwork)).append("\n");
         sb.append("    dedicatedSubnets: ").append(toIndentedString(dedicatedSubnets)).append("\n");
         sb.append("    dedicatedAccessAddress: ").append(toIndentedString(dedicatedAccessAddress)).append("\n");
+        sb.append("    dedicatedAccessAddressIpv6: ").append(toIndentedString(dedicatedAccessAddressIpv6)).append("\n");
         sb.append("    internetAccessAddress: ").append(toIndentedString(internetAccessAddress)).append("\n");
+        sb.append("    internetAccessAddressIpv6: ").append(toIndentedString(internetAccessAddressIpv6)).append("\n");
         sb.append("    internetAccessPort: ").append(toIndentedString(internetAccessPort)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
         sb.append("    subnetIds: ").append(toIndentedString(subnetIds)).append("\n");
+        sb.append("    vpcConfigInfos: ").append(toIndentedString(vpcConfigInfos)).append("\n");
         sb.append("    managementSubnetCidr: ").append(toIndentedString(managementSubnetCidr)).append("\n");
         sb.append("    infrastructureSecurityGroup: ")
             .append(toIndentedString(infrastructureSecurityGroup))
@@ -826,10 +1281,20 @@ public class ListWorkspacesResponse extends SdkResponse {
         sb.append("    failCode: ").append(toIndentedString(failCode)).append("\n");
         sb.append("    failReason: ").append(toIndentedString(failReason)).append("\n");
         sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    projectResourceType: ").append(toIndentedString(projectResourceType)).append("\n");
+        sb.append("    assistAuthConfigInfo: ").append(toIndentedString(assistAuthConfigInfo)).append("\n");
         sb.append("    isSendEmail: ").append(toIndentedString(isSendEmail)).append("\n");
         sb.append("    authorizedCollectLog: ").append(toIndentedString(authorizedCollectLog)).append("\n");
         sb.append("    authorizedHdaUpgrade: ").append(toIndentedString(authorizedHdaUpgrade)).append("\n");
+        sb.append("    siteConfigs: ").append(toIndentedString(siteConfigs)).append("\n");
+        sb.append("    isMultiVpc: ").append(toIndentedString(isMultiVpc)).append("\n");
+        sb.append("    isConfigNatMapping: ").append(toIndentedString(isConfigNatMapping)).append("\n");
         sb.append("    dcVncIp: ").append(toIndentedString(dcVncIp)).append("\n");
+        sb.append("    dcVncVpcepId: ").append(toIndentedString(dcVncVpcepId)).append("\n");
+        sb.append("    isAuthorizedInstallAgent: ").append(toIndentedString(isAuthorizedInstallAgent)).append("\n");
+        sb.append("    isSupportIpv6: ").append(toIndentedString(isSupportIpv6)).append("\n");
+        sb.append("    enableUserCreateSnapshot: ").append(toIndentedString(enableUserCreateSnapshot)).append("\n");
         sb.append("}");
         return sb.toString();
     }

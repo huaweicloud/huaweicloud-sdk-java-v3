@@ -40,7 +40,7 @@ public class DeleteTtscVocabularyConfigsRequestBody {
     }
 
     /**
-     * 词表id
+     * 自定义读法id
      * @return id
      */
     public List<String> getId() {

@@ -164,7 +164,7 @@ public class ListTtscVocabularyConfigsRequest {
     }
 
     /**
-     * 词表类型 CHINESE_G2P：（g2p）中文拼音
+     * 自定义读法类型 CHINESE_G2P：拼音
      * @return type
      */
     public String getType() {

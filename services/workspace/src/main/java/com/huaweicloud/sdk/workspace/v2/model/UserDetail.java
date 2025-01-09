@@ -174,9 +174,9 @@ public class UserDetail {
     private Boolean locked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enabled_change_password")
+    @JsonProperty(value = "enable_change_password")
 
-    private Boolean enabledChangePassword;
+    private Boolean enableChangePassword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "password_never_expired")
@@ -197,6 +197,16 @@ public class UserDetail {
     @JsonProperty(value = "group_names")
 
     private List<String> groupNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "share_space_subscription")
+
+    private Boolean shareSpaceSubscription;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "share_space_desktops")
+
+    private Integer shareSpaceDesktops;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_desktops")
@@ -496,21 +506,21 @@ public class UserDetail {
         this.locked = locked;
     }
 
-    public UserDetail withEnabledChangePassword(Boolean enabledChangePassword) {
-        this.enabledChangePassword = enabledChangePassword;
+    public UserDetail withEnableChangePassword(Boolean enableChangePassword) {
+        this.enableChangePassword = enableChangePassword;
         return this;
     }
 
     /**
      * 是否允许修改密码，true表示允许修改密码，false表示不允许。
-     * @return enabledChangePassword
+     * @return enableChangePassword
      */
-    public Boolean getEnabledChangePassword() {
-        return enabledChangePassword;
+    public Boolean getEnableChangePassword() {
+        return enableChangePassword;
     }
 
-    public void setEnabledChangePassword(Boolean enabledChangePassword) {
-        this.enabledChangePassword = enabledChangePassword;
+    public void setEnableChangePassword(Boolean enableChangePassword) {
+        this.enableChangePassword = enableChangePassword;
     }
 
     public UserDetail withPasswordNeverExpired(Boolean passwordNeverExpired) {
@@ -597,6 +607,42 @@ public class UserDetail {
         this.groupNames = groupNames;
     }
 
+    public UserDetail withShareSpaceSubscription(Boolean shareSpaceSubscription) {
+        this.shareSpaceSubscription = shareSpaceSubscription;
+        return this;
+    }
+
+    /**
+     * 用户是否订阅协同，true表示已订阅，false表示未订阅
+     * @return shareSpaceSubscription
+     */
+    public Boolean getShareSpaceSubscription() {
+        return shareSpaceSubscription;
+    }
+
+    public void setShareSpaceSubscription(Boolean shareSpaceSubscription) {
+        this.shareSpaceSubscription = shareSpaceSubscription;
+    }
+
+    public UserDetail withShareSpaceDesktops(Integer shareSpaceDesktops) {
+        this.shareSpaceDesktops = shareSpaceDesktops;
+        return this;
+    }
+
+    /**
+     * 用户已绑定协同桌面数
+     * minimum: 0
+     * maximum: 100
+     * @return shareSpaceDesktops
+     */
+    public Integer getShareSpaceDesktops() {
+        return shareSpaceDesktops;
+    }
+
+    public void setShareSpaceDesktops(Integer shareSpaceDesktops) {
+        this.shareSpaceDesktops = shareSpaceDesktops;
+    }
+
     public UserDetail withTotalDesktops(Integer totalDesktops) {
         this.totalDesktops = totalDesktops;
         return this;
@@ -637,10 +683,12 @@ public class UserDetail {
             && Objects.equals(this.accountExpires, that.accountExpires)
             && Objects.equals(this.isPreUser, that.isPreUser) && Objects.equals(this.userExpired, that.userExpired)
             && Objects.equals(this.locked, that.locked)
-            && Objects.equals(this.enabledChangePassword, that.enabledChangePassword)
+            && Objects.equals(this.enableChangePassword, that.enableChangePassword)
             && Objects.equals(this.passwordNeverExpired, that.passwordNeverExpired)
             && Objects.equals(this.nextLoginChangePassword, that.nextLoginChangePassword)
             && Objects.equals(this.disabled, that.disabled) && Objects.equals(this.groupNames, that.groupNames)
+            && Objects.equals(this.shareSpaceSubscription, that.shareSpaceSubscription)
+            && Objects.equals(this.shareSpaceDesktops, that.shareSpaceDesktops)
             && Objects.equals(this.totalDesktops, that.totalDesktops);
     }
 
@@ -663,11 +711,13 @@ public class UserDetail {
             isPreUser,
             userExpired,
             locked,
-            enabledChangePassword,
+            enableChangePassword,
             passwordNeverExpired,
             nextLoginChangePassword,
             disabled,
             groupNames,
+            shareSpaceSubscription,
+            shareSpaceDesktops,
             totalDesktops);
     }
 
@@ -692,11 +742,13 @@ public class UserDetail {
         sb.append("    isPreUser: ").append(toIndentedString(isPreUser)).append("\n");
         sb.append("    userExpired: ").append(toIndentedString(userExpired)).append("\n");
         sb.append("    locked: ").append(toIndentedString(locked)).append("\n");
-        sb.append("    enabledChangePassword: ").append(toIndentedString(enabledChangePassword)).append("\n");
+        sb.append("    enableChangePassword: ").append(toIndentedString(enableChangePassword)).append("\n");
         sb.append("    passwordNeverExpired: ").append(toIndentedString(passwordNeverExpired)).append("\n");
         sb.append("    nextLoginChangePassword: ").append(toIndentedString(nextLoginChangePassword)).append("\n");
         sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
         sb.append("    groupNames: ").append(toIndentedString(groupNames)).append("\n");
+        sb.append("    shareSpaceSubscription: ").append(toIndentedString(shareSpaceSubscription)).append("\n");
+        sb.append("    shareSpaceDesktops: ").append(toIndentedString(shareSpaceDesktops)).append("\n");
         sb.append("    totalDesktops: ").append(toIndentedString(totalDesktops)).append("\n");
         sb.append("}");
         return sb.toString();

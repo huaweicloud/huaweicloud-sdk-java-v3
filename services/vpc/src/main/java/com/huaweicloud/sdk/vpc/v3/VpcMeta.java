@@ -930,6 +930,30 @@ public class VpcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecurityGroupRulesRequest::getRemoteIpPrefix,
                 ListSecurityGroupRulesRequest::setRemoteIpPrefix));
+        builder.<List<Integer>>withRequestField("priority",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getPriority,
+                ListSecurityGroupRulesRequest::setPriority));
+        builder.<List<String>>withRequestField("ethertype",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getEthertype,
+                ListSecurityGroupRulesRequest::setEthertype));
+        builder.<List<String>>withRequestField("remote_address_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getRemoteAddressGroupId,
+                ListSecurityGroupRulesRequest::setRemoteAddressGroupId));
+        builder.<Boolean>withRequestField("enabled",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityGroupRulesRequest::getEnabled,
+                ListSecurityGroupRulesRequest::setEnabled));
 
         // response
 

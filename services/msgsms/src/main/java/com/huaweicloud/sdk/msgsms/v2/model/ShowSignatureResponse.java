@@ -132,6 +132,16 @@ public class ShowSignatureResponse extends SdkResponse {
 
     private String signatureUsage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "qualification_id")
+
+    private String qualificationId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "qualification_name")
+
+    private String qualificationName;
+
     public ShowSignatureResponse withId(String id) {
         this.id = id;
         return this;
@@ -551,6 +561,40 @@ public class ShowSignatureResponse extends SdkResponse {
         this.signatureUsage = signatureUsage;
     }
 
+    public ShowSignatureResponse withQualificationId(String qualificationId) {
+        this.qualificationId = qualificationId;
+        return this;
+    }
+
+    /**
+     * 资质ID
+     * @return qualificationId
+     */
+    public String getQualificationId() {
+        return qualificationId;
+    }
+
+    public void setQualificationId(String qualificationId) {
+        this.qualificationId = qualificationId;
+    }
+
+    public ShowSignatureResponse withQualificationName(String qualificationName) {
+        this.qualificationName = qualificationName;
+        return this;
+    }
+
+    /**
+     * 资质名
+     * @return qualificationName
+     */
+    public String getQualificationName() {
+        return qualificationName;
+    }
+
+    public void setQualificationName(String qualificationName) {
+        this.qualificationName = qualificationName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -574,7 +618,9 @@ public class ShowSignatureResponse extends SdkResponse {
             && Objects.equals(this.urgeStatus, that.urgeStatus) && Objects.equals(this.urgeTime, that.urgeTime)
             && Objects.equals(this.urgeDesc, that.urgeDesc) && Objects.equals(this.appKey, that.appKey)
             && Objects.equals(this.sourceTitleContent, that.sourceTitleContent)
-            && Objects.equals(this.signatureUsage, that.signatureUsage);
+            && Objects.equals(this.signatureUsage, that.signatureUsage)
+            && Objects.equals(this.qualificationId, that.qualificationId)
+            && Objects.equals(this.qualificationName, that.qualificationName);
     }
 
     @Override
@@ -602,7 +648,9 @@ public class ShowSignatureResponse extends SdkResponse {
             urgeDesc,
             appKey,
             sourceTitleContent,
-            signatureUsage);
+            signatureUsage,
+            qualificationId,
+            qualificationName);
     }
 
     @Override
@@ -633,6 +681,8 @@ public class ShowSignatureResponse extends SdkResponse {
         sb.append("    appKey: ").append(toIndentedString(appKey)).append("\n");
         sb.append("    sourceTitleContent: ").append(toIndentedString(sourceTitleContent)).append("\n");
         sb.append("    signatureUsage: ").append(toIndentedString(signatureUsage)).append("\n");
+        sb.append("    qualificationId: ").append(toIndentedString(qualificationId)).append("\n");
+        sb.append("    qualificationName: ").append(toIndentedString(qualificationName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

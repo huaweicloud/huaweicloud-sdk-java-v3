@@ -167,7 +167,7 @@ public class ListUserUsageMetricRequest {
     }
 
     /**
-     * 按照指标进行排序的方向;需配合sort_field起义使用 * `DESC` - 降序返回数据 * `ASC` -  升序返回数据
+     * 按照指标进行排序的方向;需配合sort_field一起使用 * `DESC` - 降序返回数据 * `ASC` -  升序返回数据
      * @return sortType
      */
     public String getSortType() {
@@ -203,7 +203,7 @@ public class ListUserUsageMetricRequest {
     }
 
     /**
-     * 单次查询的大小[1-100],默认值10
+     * limit范围[1-100],默认值0
      * minimum: 1
      * maximum: 100
      * @return limit

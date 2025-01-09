@@ -20,9 +20,14 @@ public class ListGdgwRouteTablesResponse extends SdkResponse {
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "gdgw_routetable")
+    @JsonProperty(value = "gdgw_routetables")
 
-    private List<CommonRoutetable> gdgwRoutetable = null;
+    private List<CommonRoutetable> gdgwRoutetables = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
 
     public ListGdgwRouteTablesResponse withRequestId(String requestId) {
         this.requestId = requestId;
@@ -41,37 +46,63 @@ public class ListGdgwRouteTablesResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    public ListGdgwRouteTablesResponse withGdgwRoutetable(List<CommonRoutetable> gdgwRoutetable) {
-        this.gdgwRoutetable = gdgwRoutetable;
+    public ListGdgwRouteTablesResponse withGdgwRoutetables(List<CommonRoutetable> gdgwRoutetables) {
+        this.gdgwRoutetables = gdgwRoutetables;
         return this;
     }
 
-    public ListGdgwRouteTablesResponse addGdgwRoutetableItem(CommonRoutetable gdgwRoutetableItem) {
-        if (this.gdgwRoutetable == null) {
-            this.gdgwRoutetable = new ArrayList<>();
+    public ListGdgwRouteTablesResponse addGdgwRoutetablesItem(CommonRoutetable gdgwRoutetablesItem) {
+        if (this.gdgwRoutetables == null) {
+            this.gdgwRoutetables = new ArrayList<>();
         }
-        this.gdgwRoutetable.add(gdgwRoutetableItem);
+        this.gdgwRoutetables.add(gdgwRoutetablesItem);
         return this;
     }
 
-    public ListGdgwRouteTablesResponse withGdgwRoutetable(Consumer<List<CommonRoutetable>> gdgwRoutetableSetter) {
-        if (this.gdgwRoutetable == null) {
-            this.gdgwRoutetable = new ArrayList<>();
+    public ListGdgwRouteTablesResponse withGdgwRoutetables(Consumer<List<CommonRoutetable>> gdgwRoutetablesSetter) {
+        if (this.gdgwRoutetables == null) {
+            this.gdgwRoutetables = new ArrayList<>();
         }
-        gdgwRoutetableSetter.accept(this.gdgwRoutetable);
+        gdgwRoutetablesSetter.accept(this.gdgwRoutetables);
         return this;
     }
 
     /**
      * 全域接入网关路由表
-     * @return gdgwRoutetable
+     * @return gdgwRoutetables
      */
-    public List<CommonRoutetable> getGdgwRoutetable() {
-        return gdgwRoutetable;
+    public List<CommonRoutetable> getGdgwRoutetables() {
+        return gdgwRoutetables;
     }
 
-    public void setGdgwRoutetable(List<CommonRoutetable> gdgwRoutetable) {
-        this.gdgwRoutetable = gdgwRoutetable;
+    public void setGdgwRoutetables(List<CommonRoutetable> gdgwRoutetables) {
+        this.gdgwRoutetables = gdgwRoutetables;
+    }
+
+    public ListGdgwRouteTablesResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListGdgwRouteTablesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
     }
 
     @Override
@@ -84,12 +115,13 @@ public class ListGdgwRouteTablesResponse extends SdkResponse {
         }
         ListGdgwRouteTablesResponse that = (ListGdgwRouteTablesResponse) obj;
         return Objects.equals(this.requestId, that.requestId)
-            && Objects.equals(this.gdgwRoutetable, that.gdgwRoutetable);
+            && Objects.equals(this.gdgwRoutetables, that.gdgwRoutetables)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, gdgwRoutetable);
+        return Objects.hash(requestId, gdgwRoutetables, pageInfo);
     }
 
     @Override
@@ -97,7 +129,8 @@ public class ListGdgwRouteTablesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListGdgwRouteTablesResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-        sb.append("    gdgwRoutetable: ").append(toIndentedString(gdgwRoutetable)).append("\n");
+        sb.append("    gdgwRoutetables: ").append(toIndentedString(gdgwRoutetables)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

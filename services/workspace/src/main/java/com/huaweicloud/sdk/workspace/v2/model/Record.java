@@ -11,6 +11,11 @@ import java.util.Objects;
 public class Record {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tenantId")
+
+    private String tenantId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sid")
 
     private String sid;
@@ -99,6 +104,23 @@ public class Record {
     @JsonProperty(value = "e2e_rtt")
 
     private Integer e2eRtt;
+
+    public Record withTenantId(String tenantId) {
+        this.tenantId = tenantId;
+        return this;
+    }
+
+    /**
+     * 租户id，不对外展示
+     * @return tenantId
+     */
+    public String getTenantId() {
+        return tenantId;
+    }
+
+    public void setTenantId(String tenantId) {
+        this.tenantId = tenantId;
+    }
 
     public Record withSid(String sid) {
         this.sid = sid;
@@ -415,7 +437,8 @@ public class Record {
             return false;
         }
         Record that = (Record) obj;
-        return Objects.equals(this.sid, that.sid) && Objects.equals(this.transactionId, that.transactionId)
+        return Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.sid, that.sid)
+            && Objects.equals(this.transactionId, that.transactionId)
             && Objects.equals(this.computerName, that.computerName) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.terminalMac, that.terminalMac)
             && Objects.equals(this.terminalName, that.terminalName) && Objects.equals(this.terminalIp, that.terminalIp)
@@ -432,7 +455,8 @@ public class Record {
 
     @Override
     public int hashCode() {
-        return Objects.hash(sid,
+        return Objects.hash(tenantId,
+            sid,
             transactionId,
             computerName,
             userName,
@@ -456,6 +480,7 @@ public class Record {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class Record {\n");
+        sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    sid: ").append(toIndentedString(sid)).append("\n");
         sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");

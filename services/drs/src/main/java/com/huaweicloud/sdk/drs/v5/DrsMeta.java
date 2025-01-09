@@ -129,6 +129,8 @@ import com.huaweicloud.sdk.drs.v5.model.QuerySelectObjectInfoReq;
 import com.huaweicloud.sdk.drs.v5.model.QueryUserSelectedObjectInfoReq;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowActionsResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowAgencyInfoRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowAgencyInfoResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowColumnInfoResultResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowComparePolicyRequest;
@@ -191,6 +193,9 @@ import com.huaweicloud.sdk.drs.v5.model.SyncJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.SyncUserJdbcDriverRequest;
 import com.huaweicloud.sdk.drs.v5.model.SyncUserJdbcDriverResponse;
 import com.huaweicloud.sdk.drs.v5.model.ToPeriodReq;
+import com.huaweicloud.sdk.drs.v5.model.UpdateAgencyPolicyRequest;
+import com.huaweicloud.sdk.drs.v5.model.UpdateAgencyPolicyRequestBody;
+import com.huaweicloud.sdk.drs.v5.model.UpdateAgencyPolicyResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsRequest;
 import com.huaweicloud.sdk.drs.v5.model.UpdateBatchAsyncJobsResponse;
 import com.huaweicloud.sdk.drs.v5.model.UpdateComparePolicyRequest;
@@ -2085,6 +2090,34 @@ public class DrsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAgencyInfoRequest, ShowAgencyInfoResponse> showAgencyInfo =
+        genForShowAgencyInfo();
+
+    private static HttpRequestDef<ShowAgencyInfoRequest, ShowAgencyInfoResponse> genForShowAgencyInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowAgencyInfoRequest, ShowAgencyInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAgencyInfoRequest.class, ShowAgencyInfoResponse.class)
+                .withName("ShowAgencyInfo")
+                .withUri("/v5/{project_id}/agency/{agency_name}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agency_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAgencyInfoRequest::getAgencyName, ShowAgencyInfoRequest::setAgencyName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAgencyInfoRequest::getXLanguage, ShowAgencyInfoRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowColumnInfoResultRequest, ShowColumnInfoResultResponse> showColumnInfoResult =
         genForShowColumnInfoResult();
 
@@ -3244,6 +3277,39 @@ public class DrsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateUserDriverReq.class),
             f -> f.withMarshaller(SyncUserJdbcDriverRequest::getBody, SyncUserJdbcDriverRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAgencyPolicyRequest, UpdateAgencyPolicyResponse> updateAgencyPolicy =
+        genForUpdateAgencyPolicy();
+
+    private static HttpRequestDef<UpdateAgencyPolicyRequest, UpdateAgencyPolicyResponse> genForUpdateAgencyPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateAgencyPolicyRequest, UpdateAgencyPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAgencyPolicyRequest.class, UpdateAgencyPolicyResponse.class)
+                .withName("UpdateAgencyPolicy")
+                .withUri("/v5/{project_id}/agency/{agency_name}/policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("agency_name",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAgencyPolicyRequest::getAgencyName, UpdateAgencyPolicyRequest::setAgencyName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAgencyPolicyRequest::getXLanguage, UpdateAgencyPolicyRequest::setXLanguage));
+        builder.<UpdateAgencyPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateAgencyPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateAgencyPolicyRequest::getBody, UpdateAgencyPolicyRequest::setBody));
 
         // response
 

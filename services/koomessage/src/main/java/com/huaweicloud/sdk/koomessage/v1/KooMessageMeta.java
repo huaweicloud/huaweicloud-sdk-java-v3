@@ -571,6 +571,11 @@ public class KooMessageMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortInfosRequest::getPubName, ListPortInfosRequest::setPubName));
+        builder.<Integer>withRequestField("is_bind",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPortInfosRequest::getIsBind, ListPortInfosRequest::setIsBind));
 
         // response
 

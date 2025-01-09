@@ -24,6 +24,11 @@ public class SimpleDesktopInfo {
     private String computerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_host_name")
+
+    private String osHostName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
     private String created;
@@ -74,6 +79,16 @@ public class SimpleDesktopInfo {
     private Boolean inMaintenanceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "share_resource_sku")
+
+    private String shareResourceSku;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_type")
+
+    private String desktopType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "subnet_id")
 
     private String subnetId;
@@ -82,6 +97,16 @@ public class SimpleDesktopInfo {
     @JsonProperty(value = "bill_resource_id")
 
     private String billResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "task_status")
+
+    private String taskStatus;
 
     public SimpleDesktopInfo withDesktopId(String desktopId) {
         this.desktopId = desktopId;
@@ -115,6 +140,23 @@ public class SimpleDesktopInfo {
 
     public void setComputerName(String computerName) {
         this.computerName = computerName;
+    }
+
+    public SimpleDesktopInfo withOsHostName(String osHostName) {
+        this.osHostName = osHostName;
+        return this;
+    }
+
+    /**
+     * 系统计算机名。
+     * @return osHostName
+     */
+    public String getOsHostName() {
+        return osHostName;
+    }
+
+    public void setOsHostName(String osHostName) {
+        this.osHostName = osHostName;
     }
 
     public SimpleDesktopInfo withCreated(String created) {
@@ -319,6 +361,40 @@ public class SimpleDesktopInfo {
         this.inMaintenanceMode = inMaintenanceMode;
     }
 
+    public SimpleDesktopInfo withShareResourceSku(String shareResourceSku) {
+        this.shareResourceSku = shareResourceSku;
+        return this;
+    }
+
+    /**
+     * 桌面协同资源SKU码
+     * @return shareResourceSku
+     */
+    public String getShareResourceSku() {
+        return shareResourceSku;
+    }
+
+    public void setShareResourceSku(String shareResourceSku) {
+        this.shareResourceSku = shareResourceSku;
+    }
+
+    public SimpleDesktopInfo withDesktopType(String desktopType) {
+        this.desktopType = desktopType;
+        return this;
+    }
+
+    /**
+     * 桌面类型
+     * @return desktopType
+     */
+    public String getDesktopType() {
+        return desktopType;
+    }
+
+    public void setDesktopType(String desktopType) {
+        this.desktopType = desktopType;
+    }
+
     public SimpleDesktopInfo withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
@@ -353,6 +429,40 @@ public class SimpleDesktopInfo {
         this.billResourceId = billResourceId;
     }
 
+    public SimpleDesktopInfo withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 桌面的运行状态。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public SimpleDesktopInfo withTaskStatus(String taskStatus) {
+        this.taskStatus = taskStatus;
+        return this;
+    }
+
+    /**
+     * 桌面的任务状态。
+     * @return taskStatus
+     */
+    public String getTaskStatus() {
+        return taskStatus;
+    }
+
+    public void setTaskStatus(String taskStatus) {
+        this.taskStatus = taskStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -363,20 +473,24 @@ public class SimpleDesktopInfo {
         }
         SimpleDesktopInfo that = (SimpleDesktopInfo) obj;
         return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.computerName, that.computerName)
-            && Objects.equals(this.created, that.created) && Objects.equals(this.ipAddress, that.ipAddress)
-            && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.osHostName, that.osHostName) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.attachUserInfos, that.attachUserInfos)
             && Objects.equals(this.userGroup, that.userGroup) && Objects.equals(this.sid, that.sid)
             && Objects.equals(this.ouName, that.ouName)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
-            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.billResourceId, that.billResourceId);
+            && Objects.equals(this.shareResourceSku, that.shareResourceSku)
+            && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.billResourceId, that.billResourceId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.taskStatus, that.taskStatus);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(desktopId,
             computerName,
+            osHostName,
             created,
             ipAddress,
             userName,
@@ -387,8 +501,12 @@ public class SimpleDesktopInfo {
             enterpriseProjectId,
             tags,
             inMaintenanceMode,
+            shareResourceSku,
+            desktopType,
             subnetId,
-            billResourceId);
+            billResourceId,
+            status,
+            taskStatus);
     }
 
     @Override
@@ -397,6 +515,7 @@ public class SimpleDesktopInfo {
         sb.append("class SimpleDesktopInfo {\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
+        sb.append("    osHostName: ").append(toIndentedString(osHostName)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
@@ -407,8 +526,12 @@ public class SimpleDesktopInfo {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
+        sb.append("    shareResourceSku: ").append(toIndentedString(shareResourceSku)).append("\n");
+        sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    billResourceId: ").append(toIndentedString(billResourceId)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

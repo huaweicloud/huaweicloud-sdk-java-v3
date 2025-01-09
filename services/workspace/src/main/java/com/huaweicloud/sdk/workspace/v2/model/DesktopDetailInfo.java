@@ -29,6 +29,11 @@ public class DesktopDetailInfo {
     private String computerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_host_name")
+
+    private String osHostName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "addresses")
 
     private Map<String, List<AddressInfo>> addresses = null;
@@ -37,6 +42,16 @@ public class DesktopDetailInfo {
     @JsonProperty(value = "ip_addresses")
 
     private List<String> ipAddresses = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv4")
+
+    private String ipv4;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6")
+
+    private String ipv6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "user_list")
@@ -52,6 +67,11 @@ public class DesktopDetailInfo {
     @JsonProperty(value = "desktop_type")
 
     private String desktopType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_type")
+
+    private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metadata")
@@ -72,6 +92,11 @@ public class DesktopDetailInfo {
     @JsonProperty(value = "task_status")
 
     private String taskStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "in_maintenance_mode")
+
+    private Boolean inMaintenanceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
@@ -102,6 +127,11 @@ public class DesktopDetailInfo {
     @JsonProperty(value = "product_id")
 
     private String productId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "share_resource_sku")
+
+    private String shareResourceSku;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "root_volume")
@@ -136,7 +166,7 @@ public class DesktopDetailInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product")
 
-    private ProductDetailInfo product;
+    private ProductInfo product;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ou_name")
@@ -154,6 +184,11 @@ public class DesktopDetailInfo {
     private String sid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "join_domain")
+
+    private String joinDomain;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "order_id")
 
     private String orderId;
@@ -162,6 +197,21 @@ public class DesktopDetailInfo {
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deh_id")
+
+    private String dehId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "platform_kind")
+
+    private Integer platformKind;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_internet")
+
+    private Boolean isSupportInternet;
 
     /**
      * 上网方式。 - NAT：表示NAT上网方式。 - EIP：表示EIP上网方式。 - BOTH：表示两种上网方式都支持。
@@ -245,9 +295,99 @@ public class DesktopDetailInfo {
     private InternetModeEnum internetMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "internet_mode_list")
+
+    private List<String> internetModeList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "need_apply_adn")
+
+    private Boolean needApplyAdn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_attaching_eip")
 
     private Boolean isAttachingEip;
+
+    /**
+     * 桌面来源。  - DEFAULT：默认桌面来源。 - ONEMOBILE：协同办公云桌面OneMobile。
+     */
+    public static final class DesktopIsvEnum {
+
+        /**
+         * Enum DEFAULT for value: "DEFAULT"
+         */
+        public static final DesktopIsvEnum DEFAULT = new DesktopIsvEnum("DEFAULT");
+
+        /**
+         * Enum ONEMOBILE for value: "ONEMOBILE"
+         */
+        public static final DesktopIsvEnum ONEMOBILE = new DesktopIsvEnum("ONEMOBILE");
+
+        private static final Map<String, DesktopIsvEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DesktopIsvEnum> createStaticFields() {
+            Map<String, DesktopIsvEnum> map = new HashMap<>();
+            map.put("DEFAULT", DEFAULT);
+            map.put("ONEMOBILE", ONEMOBILE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DesktopIsvEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DesktopIsvEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DesktopIsvEnum(value));
+        }
+
+        public static DesktopIsvEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DesktopIsvEnum) {
+                return this.value.equals(((DesktopIsvEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_isv")
+
+    private DesktopIsvEnum desktopIsv;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "creation_type")
+
+    private String creationType;
 
     /**
      * 分配状态。 - ATTACHED：已分配。 - UNATTACH：未分配 表示未关联。 - DEATTACHED：已解分配。 - ATTACHING：分配中。 - DEATTACHING：解分配中。 - ATTACHFAIL：分配失败。 - DEATTACHFAIL：解分配失败。 - WAITING：等待被分配中,描述从批量分配（解分配）下发到转入分配（解分配）的中间状态 同时方便单个关联流程的状态独立性。 - ATTACH_FAIL_CAN_ATTACH_AGAIN：分配失败,还可以再关联。 - DEATTACH_FAIL_CAN_DEATTACH_AGAIN：解分配失败,还可以再解分配。
@@ -394,6 +534,16 @@ public class DesktopDetailInfo {
 
     private Integer process;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "root_resource_id")
+
+    private String rootResourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hour_package_info")
+
+    private HourPackageInfo hourPackageInfo;
+
     public DesktopDetailInfo withDesktopId(String desktopId) {
         this.desktopId = desktopId;
         return this;
@@ -426,6 +576,23 @@ public class DesktopDetailInfo {
 
     public void setComputerName(String computerName) {
         this.computerName = computerName;
+    }
+
+    public DesktopDetailInfo withOsHostName(String osHostName) {
+        this.osHostName = osHostName;
+        return this;
+    }
+
+    /**
+     * 系统计算机名。
+     * @return osHostName
+     */
+    public String getOsHostName() {
+        return osHostName;
+    }
+
+    public void setOsHostName(String osHostName) {
+        this.osHostName = osHostName;
     }
 
     public DesktopDetailInfo withAddresses(Map<String, List<AddressInfo>> addresses) {
@@ -492,6 +659,40 @@ public class DesktopDetailInfo {
 
     public void setIpAddresses(List<String> ipAddresses) {
         this.ipAddresses = ipAddresses;
+    }
+
+    public DesktopDetailInfo withIpv4(String ipv4) {
+        this.ipv4 = ipv4;
+        return this;
+    }
+
+    /**
+     * 系统计算机IPV4。
+     * @return ipv4
+     */
+    public String getIpv4() {
+        return ipv4;
+    }
+
+    public void setIpv4(String ipv4) {
+        this.ipv4 = ipv4;
+    }
+
+    public DesktopDetailInfo withIpv6(String ipv6) {
+        this.ipv6 = ipv6;
+        return this;
+    }
+
+    /**
+     * 系统计算机IPV6。
+     * @return ipv6
+     */
+    public String getIpv6() {
+        return ipv6;
+    }
+
+    public void setIpv6(String ipv6) {
+        this.ipv6 = ipv6;
     }
 
     public DesktopDetailInfo withUserList(List<String> userList) {
@@ -577,6 +778,23 @@ public class DesktopDetailInfo {
         this.desktopType = desktopType;
     }
 
+    public DesktopDetailInfo withResourceType(String resourceType) {
+        this.resourceType = resourceType;
+        return this;
+    }
+
+    /**
+     * resource_type字段，分别表示：专属桌面（DEDICATED_DESKTOP）、池桌面（POOLED_DESKTOP）、渲染桌面（RENDER_DESKTOP）、专享主机（EXCLUSIVE_HOST）、多用户桌面(SHARED_DESKTOP)
+     * @return resourceType
+     */
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
     public DesktopDetailInfo withMetadata(Map<String, String> metadata) {
         this.metadata = metadata;
         return this;
@@ -659,7 +877,7 @@ public class DesktopDetailInfo {
     }
 
     /**
-     * 任务状态。  - scheduling：创建中，正在进行调度。 - block_device_mapping：创建中，正在准备磁盘。 - networking：创建中，正在准备网络。 - spawning：创建中，正在内部创建。 - rebooting：重启中。 - reboot_pending：重启中，正在下发重启。 - reboot_started：重启中，开始内部重启。 - rebooting_hard：强制重启中。 - reboot_pending_hard：强制重启中，正在下发重启。 - reboot_started_hard：强制重启中，开始内部重启。 - rebuilding：重建中。 - rebuild_block_device_mapping：重建中，正在准备磁盘。 - rebuild_spawning：重建中，正在内部重建。 - migrating：热迁移中。 - resize_prep：调整规格中，正在准备阶段。 - resize_migrating：调整规格中，正在迁移阶段。 - resize_migrated：调整规格中，已经完成迁移。 - resize_finish：调整规格中，正在完成调整。 - resize_reverting：调整规格中，正在回退调整。 - powering-off：停止中。 - powering-on：启动中。 - deleting：删除中。 - deleteFailed：删除失败。
+     * 任务状态。  - scheduling：创建中，正在进行调度。 - block_device_mapping：创建中，正在准备磁盘。 - networking：创建中，正在准备网络。 - spawning：创建中，正在内部创建。 - rebooting：重启中。 - reboot_pending：重启中，正在下发重启。 - reboot_started：重启中，开始内部重启。 - rebooting_hard：强制重启中。 - reboot_pending_hard：强制重启中，正在下发重启。 - reboot_started_hard：强制重启中，开始内部重启。 - rebuilding：重建中。 - rebuild_block_device_mapping：重建中，正在准备磁盘。 - rebuild_spawning：重建中，正在内部重建。 - migrating：热迁移中。 - resize_prep：调整规格中，正在准备阶段。 - resize_migrating：调整规格中，正在迁移阶段。 - resize_migrated：调整规格中，已经完成迁移。 - resize_finish：调整规格中，正在完成调整。 - resize_reverting：调整规格中，正在回退调整。 - powering-off：停止中。 - powering-on：启动中。 - deleting：删除中。 - deleteFailed：删除失败。 - updating: 更新中。 - desktopNetworkChanging: 切换网络中。
      * @return taskStatus
      */
     public String getTaskStatus() {
@@ -668,6 +886,23 @@ public class DesktopDetailInfo {
 
     public void setTaskStatus(String taskStatus) {
         this.taskStatus = taskStatus;
+    }
+
+    public DesktopDetailInfo withInMaintenanceMode(Boolean inMaintenanceMode) {
+        this.inMaintenanceMode = inMaintenanceMode;
+        return this;
+    }
+
+    /**
+     * 是否处于维护模式,true表示维护模式，false表示不处于维护模式
+     * @return inMaintenanceMode
+     */
+    public Boolean getInMaintenanceMode() {
+        return inMaintenanceMode;
+    }
+
+    public void setInMaintenanceMode(Boolean inMaintenanceMode) {
+        this.inMaintenanceMode = inMaintenanceMode;
     }
 
     public DesktopDetailInfo withCreated(String created) {
@@ -804,6 +1039,23 @@ public class DesktopDetailInfo {
         this.productId = productId;
     }
 
+    public DesktopDetailInfo withShareResourceSku(String shareResourceSku) {
+        this.shareResourceSku = shareResourceSku;
+        return this;
+    }
+
+    /**
+     * 桌面协同资源SKU码
+     * @return shareResourceSku
+     */
+    public String getShareResourceSku() {
+        return shareResourceSku;
+    }
+
+    public void setShareResourceSku(String shareResourceSku) {
+        this.shareResourceSku = shareResourceSku;
+    }
+
     public DesktopDetailInfo withRootVolume(VolumeDetail rootVolume) {
         this.rootVolume = rootVolume;
         return this;
@@ -931,14 +1183,14 @@ public class DesktopDetailInfo {
         this.siteName = siteName;
     }
 
-    public DesktopDetailInfo withProduct(ProductDetailInfo product) {
+    public DesktopDetailInfo withProduct(ProductInfo product) {
         this.product = product;
         return this;
     }
 
-    public DesktopDetailInfo withProduct(Consumer<ProductDetailInfo> productSetter) {
+    public DesktopDetailInfo withProduct(Consumer<ProductInfo> productSetter) {
         if (this.product == null) {
-            this.product = new ProductDetailInfo();
+            this.product = new ProductInfo();
             productSetter.accept(this.product);
         }
 
@@ -949,11 +1201,11 @@ public class DesktopDetailInfo {
      * Get product
      * @return product
      */
-    public ProductDetailInfo getProduct() {
+    public ProductInfo getProduct() {
         return product;
     }
 
-    public void setProduct(ProductDetailInfo product) {
+    public void setProduct(ProductInfo product) {
         this.product = product;
     }
 
@@ -1008,6 +1260,23 @@ public class DesktopDetailInfo {
         this.sid = sid;
     }
 
+    public DesktopDetailInfo withJoinDomain(String joinDomain) {
+        this.joinDomain = joinDomain;
+        return this;
+    }
+
+    /**
+     * 计算机是否加入域。  - 0：不加入域。 - 1：加入域。
+     * @return joinDomain
+     */
+    public String getJoinDomain() {
+        return joinDomain;
+    }
+
+    public void setJoinDomain(String joinDomain) {
+        this.joinDomain = joinDomain;
+    }
+
     public DesktopDetailInfo withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -1058,6 +1327,59 @@ public class DesktopDetailInfo {
         this.tags = tags;
     }
 
+    public DesktopDetailInfo withDehId(String dehId) {
+        this.dehId = dehId;
+        return this;
+    }
+
+    /**
+     * 云办公主机id。
+     * @return dehId
+     */
+    public String getDehId() {
+        return dehId;
+    }
+
+    public void setDehId(String dehId) {
+        this.dehId = dehId;
+    }
+
+    public DesktopDetailInfo withPlatformKind(Integer platformKind) {
+        this.platformKind = platformKind;
+        return this;
+    }
+
+    /**
+     * 平台类型，0:fc fusioncompute平台 1:physical 物理机 2:openstack 3:workspace_manager 1.0平台 5:graphics_workstation 图形工作站 6:sce 容器桌面 10:other 其它平台。
+     * minimum: 0
+     * maximum: 100
+     * @return platformKind
+     */
+    public Integer getPlatformKind() {
+        return platformKind;
+    }
+
+    public void setPlatformKind(Integer platformKind) {
+        this.platformKind = platformKind;
+    }
+
+    public DesktopDetailInfo withIsSupportInternet(Boolean isSupportInternet) {
+        this.isSupportInternet = isSupportInternet;
+        return this;
+    }
+
+    /**
+     * 是否开通互联网，true：已开通，false：未开通
+     * @return isSupportInternet
+     */
+    public Boolean getIsSupportInternet() {
+        return isSupportInternet;
+    }
+
+    public void setIsSupportInternet(Boolean isSupportInternet) {
+        this.isSupportInternet = isSupportInternet;
+    }
+
     public DesktopDetailInfo withInternetMode(InternetModeEnum internetMode) {
         this.internetMode = internetMode;
         return this;
@@ -1075,6 +1397,56 @@ public class DesktopDetailInfo {
         this.internetMode = internetMode;
     }
 
+    public DesktopDetailInfo withInternetModeList(List<String> internetModeList) {
+        this.internetModeList = internetModeList;
+        return this;
+    }
+
+    public DesktopDetailInfo addInternetModeListItem(String internetModeListItem) {
+        if (this.internetModeList == null) {
+            this.internetModeList = new ArrayList<>();
+        }
+        this.internetModeList.add(internetModeListItem);
+        return this;
+    }
+
+    public DesktopDetailInfo withInternetModeList(Consumer<List<String>> internetModeListSetter) {
+        if (this.internetModeList == null) {
+            this.internetModeList = new ArrayList<>();
+        }
+        internetModeListSetter.accept(this.internetModeList);
+        return this;
+    }
+
+    /**
+     * 桌面使用的上网方式列表。
+     * @return internetModeList
+     */
+    public List<String> getInternetModeList() {
+        return internetModeList;
+    }
+
+    public void setInternetModeList(List<String> internetModeList) {
+        this.internetModeList = internetModeList;
+    }
+
+    public DesktopDetailInfo withNeedApplyAdn(Boolean needApplyAdn) {
+        this.needApplyAdn = needApplyAdn;
+        return this;
+    }
+
+    /**
+     * 是否需要开通云办公带宽。
+     * @return needApplyAdn
+     */
+    public Boolean getNeedApplyAdn() {
+        return needApplyAdn;
+    }
+
+    public void setNeedApplyAdn(Boolean needApplyAdn) {
+        this.needApplyAdn = needApplyAdn;
+    }
+
     public DesktopDetailInfo withIsAttachingEip(Boolean isAttachingEip) {
         this.isAttachingEip = isAttachingEip;
         return this;
@@ -1090,6 +1462,40 @@ public class DesktopDetailInfo {
 
     public void setIsAttachingEip(Boolean isAttachingEip) {
         this.isAttachingEip = isAttachingEip;
+    }
+
+    public DesktopDetailInfo withDesktopIsv(DesktopIsvEnum desktopIsv) {
+        this.desktopIsv = desktopIsv;
+        return this;
+    }
+
+    /**
+     * 桌面来源。  - DEFAULT：默认桌面来源。 - ONEMOBILE：协同办公云桌面OneMobile。
+     * @return desktopIsv
+     */
+    public DesktopIsvEnum getDesktopIsv() {
+        return desktopIsv;
+    }
+
+    public void setDesktopIsv(DesktopIsvEnum desktopIsv) {
+        this.desktopIsv = desktopIsv;
+    }
+
+    public DesktopDetailInfo withCreationType(String creationType) {
+        this.creationType = creationType;
+        return this;
+    }
+
+    /**
+     * 桌面创建类型，null或者MANUALLY表示基础创建出来，AUTOSCALE：表示自动扩容出来的。
+     * @return creationType
+     */
+    public String getCreationType() {
+        return creationType;
+    }
+
+    public void setCreationType(String creationType) {
+        this.creationType = creationType;
     }
 
     public DesktopDetailInfo withAttachState(AttachStateEnum attachState) {
@@ -1177,6 +1583,49 @@ public class DesktopDetailInfo {
         this.process = process;
     }
 
+    public DesktopDetailInfo withRootResourceId(String rootResourceId) {
+        this.rootResourceId = rootResourceId;
+        return this;
+    }
+
+    /**
+     * 整机实例根资源ID。
+     * @return rootResourceId
+     */
+    public String getRootResourceId() {
+        return rootResourceId;
+    }
+
+    public void setRootResourceId(String rootResourceId) {
+        this.rootResourceId = rootResourceId;
+    }
+
+    public DesktopDetailInfo withHourPackageInfo(HourPackageInfo hourPackageInfo) {
+        this.hourPackageInfo = hourPackageInfo;
+        return this;
+    }
+
+    public DesktopDetailInfo withHourPackageInfo(Consumer<HourPackageInfo> hourPackageInfoSetter) {
+        if (this.hourPackageInfo == null) {
+            this.hourPackageInfo = new HourPackageInfo();
+            hourPackageInfoSetter.accept(this.hourPackageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hourPackageInfo
+     * @return hourPackageInfo
+     */
+    public HourPackageInfo getHourPackageInfo() {
+        return hourPackageInfo;
+    }
+
+    public void setHourPackageInfo(HourPackageInfo hourPackageInfo) {
+        this.hourPackageInfo = hourPackageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1187,48 +1636,67 @@ public class DesktopDetailInfo {
         }
         DesktopDetailInfo that = (DesktopDetailInfo) obj;
         return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.computerName, that.computerName)
-            && Objects.equals(this.addresses, that.addresses) && Objects.equals(this.ipAddresses, that.ipAddresses)
-            && Objects.equals(this.userList, that.userList) && Objects.equals(this.userGroupList, that.userGroupList)
-            && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.osHostName, that.osHostName) && Objects.equals(this.addresses, that.addresses)
+            && Objects.equals(this.ipAddresses, that.ipAddresses) && Objects.equals(this.ipv4, that.ipv4)
+            && Objects.equals(this.ipv6, that.ipv6) && Objects.equals(this.userList, that.userList)
+            && Objects.equals(this.userGroupList, that.userGroupList)
+            && Objects.equals(this.desktopType, that.desktopType)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.metadata, that.metadata)
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.created, that.created)
-            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.taskStatus, that.taskStatus)
+            && Objects.equals(this.inMaintenanceMode, that.inMaintenanceMode)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.securityGroups, that.securityGroups)
             && Objects.equals(this.loginStatus, that.loginStatus) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.attachUserInfos, that.attachUserInfos)
-            && Objects.equals(this.productId, that.productId) && Objects.equals(this.rootVolume, that.rootVolume)
-            && Objects.equals(this.dataVolumes, that.dataVolumes) && Objects.equals(this.userGroup, that.userGroup)
+            && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.shareResourceSku, that.shareResourceSku)
+            && Objects.equals(this.rootVolume, that.rootVolume) && Objects.equals(this.dataVolumes, that.dataVolumes)
+            && Objects.equals(this.userGroup, that.userGroup)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
             && Objects.equals(this.siteType, that.siteType) && Objects.equals(this.siteName, that.siteName)
             && Objects.equals(this.product, that.product) && Objects.equals(this.ouName, that.ouName)
             && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.sid, that.sid)
-            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.joinDomain, that.joinDomain) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.dehId, that.dehId)
+            && Objects.equals(this.platformKind, that.platformKind)
+            && Objects.equals(this.isSupportInternet, that.isSupportInternet)
             && Objects.equals(this.internetMode, that.internetMode)
+            && Objects.equals(this.internetModeList, that.internetModeList)
+            && Objects.equals(this.needApplyAdn, that.needApplyAdn)
             && Objects.equals(this.isAttachingEip, that.isAttachingEip)
+            && Objects.equals(this.desktopIsv, that.desktopIsv) && Objects.equals(this.creationType, that.creationType)
             && Objects.equals(this.attachState, that.attachState)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.billResourceId, that.billResourceId)
-            && Objects.equals(this.process, that.process);
+            && Objects.equals(this.process, that.process) && Objects.equals(this.rootResourceId, that.rootResourceId)
+            && Objects.equals(this.hourPackageInfo, that.hourPackageInfo);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(desktopId,
             computerName,
+            osHostName,
             addresses,
             ipAddresses,
+            ipv4,
+            ipv6,
             userList,
             userGroupList,
             desktopType,
+            resourceType,
             metadata,
             flavor,
             status,
             taskStatus,
+            inMaintenanceMode,
             created,
             securityGroups,
             loginStatus,
             userName,
             attachUserInfos,
             productId,
+            shareResourceSku,
             rootVolume,
             dataVolumes,
             userGroup,
@@ -1239,15 +1707,25 @@ public class DesktopDetailInfo {
             ouName,
             osVersion,
             sid,
+            joinDomain,
             orderId,
             tags,
+            dehId,
+            platformKind,
+            isSupportInternet,
             internetMode,
+            internetModeList,
+            needApplyAdn,
             isAttachingEip,
+            desktopIsv,
+            creationType,
             attachState,
             enterpriseProjectId,
             subnetId,
             billResourceId,
-            process);
+            process,
+            rootResourceId,
+            hourPackageInfo);
     }
 
     @Override
@@ -1256,21 +1734,27 @@ public class DesktopDetailInfo {
         sb.append("class DesktopDetailInfo {\n");
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    computerName: ").append(toIndentedString(computerName)).append("\n");
+        sb.append("    osHostName: ").append(toIndentedString(osHostName)).append("\n");
         sb.append("    addresses: ").append(toIndentedString(addresses)).append("\n");
         sb.append("    ipAddresses: ").append(toIndentedString(ipAddresses)).append("\n");
+        sb.append("    ipv4: ").append(toIndentedString(ipv4)).append("\n");
+        sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
         sb.append("    userList: ").append(toIndentedString(userList)).append("\n");
         sb.append("    userGroupList: ").append(toIndentedString(userGroupList)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
+        sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");
+        sb.append("    inMaintenanceMode: ").append(toIndentedString(inMaintenanceMode)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    loginStatus: ").append(toIndentedString(loginStatus)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    attachUserInfos: ").append(toIndentedString(attachUserInfos)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    shareResourceSku: ").append(toIndentedString(shareResourceSku)).append("\n");
         sb.append("    rootVolume: ").append(toIndentedString(rootVolume)).append("\n");
         sb.append("    dataVolumes: ").append(toIndentedString(dataVolumes)).append("\n");
         sb.append("    userGroup: ").append(toIndentedString(userGroup)).append("\n");
@@ -1281,15 +1765,25 @@ public class DesktopDetailInfo {
         sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
         sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
         sb.append("    sid: ").append(toIndentedString(sid)).append("\n");
+        sb.append("    joinDomain: ").append(toIndentedString(joinDomain)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    dehId: ").append(toIndentedString(dehId)).append("\n");
+        sb.append("    platformKind: ").append(toIndentedString(platformKind)).append("\n");
+        sb.append("    isSupportInternet: ").append(toIndentedString(isSupportInternet)).append("\n");
         sb.append("    internetMode: ").append(toIndentedString(internetMode)).append("\n");
+        sb.append("    internetModeList: ").append(toIndentedString(internetModeList)).append("\n");
+        sb.append("    needApplyAdn: ").append(toIndentedString(needApplyAdn)).append("\n");
         sb.append("    isAttachingEip: ").append(toIndentedString(isAttachingEip)).append("\n");
+        sb.append("    desktopIsv: ").append(toIndentedString(desktopIsv)).append("\n");
+        sb.append("    creationType: ").append(toIndentedString(creationType)).append("\n");
         sb.append("    attachState: ").append(toIndentedString(attachState)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    billResourceId: ").append(toIndentedString(billResourceId)).append("\n");
         sb.append("    process: ").append(toIndentedString(process)).append("\n");
+        sb.append("    rootResourceId: ").append(toIndentedString(rootResourceId)).append("\n");
+        sb.append("    hourPackageInfo: ").append(toIndentedString(hourPackageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

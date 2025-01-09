@@ -46,7 +46,7 @@ public class ListDesktopsConnectStatusResponse extends SdkResponse {
     }
 
     /**
-     * 桌面登录信息列表。
+     * 桌面连接信息列表。
      * @return desktops
      */
     public List<ConnectDesktopsInfo> getDesktops() {

@@ -16,24 +16,54 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.AttachServerAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.AuthorizeObsReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.AuthorizeObsRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.AuthorizeObsResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchChangeMaintainServerReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchChangeServerImageReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchChangeServerImageRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchChangeServerImageResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchChangeServerMaintainModeRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchChangeServerMaintainModeResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchCreateServerGroupTagsReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchCreateServerGroupTagsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchCreateServerGroupTagsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteAppGroupAuthorizationRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteAppGroupAuthorizationResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteAppGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteAppGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteAppSubJobsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteAppSubJobsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteImageServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteImageServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteImageServerResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteImageSubJobsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteImageSubJobsResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeletePersistentStorageReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeletePersistentStorageRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeletePersistentStorageResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteScheduleTaskReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteScheduleTaskRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteScheduleTaskResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteServerGroupTagsReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteServerGroupTagsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteServerGroupTagsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteServerResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteSubJobsReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteWarehouseAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteWarehouseAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDeleteWarehouseAppResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDisableAppRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchDisableAppResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchEnableAppRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchEnableAppResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchMigrateHostsServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchMigrateHostsServerResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchMigrateServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchRebootServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchRebootServerResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchReinstallServerReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchReinstallServerRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchReinstallServerResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchRejoinDomainReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchRejoinDomainRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchRejoinDomainResponse;
@@ -42,25 +72,39 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.BatchStartServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchStartServerResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchStopServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchStopServerResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchUpdateAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchUpdateTsviRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.BatchUpdateTsviResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchUpgradeHdaVersionReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchUpgradeHdaVersionRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.BatchUpgradeHdaVersionResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeServerImageReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeServerImageRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ChangeServerImageResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CheckQuotaRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CheckQuotaResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CountSubJobsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CountSubJobsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppGroupReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppGroupResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppServersRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateAppServersResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateBucketOrAclRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateBucketOrAclResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateImageServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateImageServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateImageServerResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateOrUpdateScalingPolicyReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateOrUpdateScalingPolicyRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateOrUpdateScalingPolicyResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateOrUpdateStoragePolicyStatementReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateOrUpdateStoragePolicyStatementRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateOrUpdateStoragePolicyStatementResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateOrderReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateOrderRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateOrderResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreatePersistentStorageReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreatePersistentStorageRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreatePersistentStorageResponse;
@@ -70,9 +114,15 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.CreatePolicyGroupResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreatePolicyTemplateReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreatePolicyTemplateRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreatePolicyTemplateResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateResourceTagReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateScheduleTaskReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateScheduleTaskRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateScheduleTaskResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateServerGroupReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateServerGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateServerGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateServerGroupTagsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.CreateServerGroupTagsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateServerImageReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateShareFolderReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateShareFolderRequest;
@@ -81,20 +131,42 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.CreateWarehouseAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateWarehouseAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.CreateWarehouseAppResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteAppGroupReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteAppGroupRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteAppGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteAppIconRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteAppIconResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeletePersistentStorageRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeletePersistentStorageResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeletePolicyGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeletePolicyGroupResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeletePolicyTemplateRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeletePolicyTemplateResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteResourceTagReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteScalingPolicyRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteScalingPolicyResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteScheduleTaskRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteScheduleTaskResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteServerGroupTagsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteServerGroupTagsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteServerGroupsRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteServerGroupsResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteServerRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteServerResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteStorageClaimReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteStorageClaimRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteStorageClaimResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteUserStorageAttachmentReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteUserStorageAttachmentRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteUserStorageAttachmentResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteWarehouseAppRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DeleteWarehouseAppResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DisassociateAppGroupRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.DisassociateAppGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.InitializeTenantReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.InitializeTenantRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.InitializeTenantResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListAccessAgentLatestVersionRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListAccessAgentLatestVersionResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListAppConnectionReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListAppConnectionRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListAppConnectionResponse;
@@ -102,24 +174,50 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ListAppGroupAuthorizationReques
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListAppGroupAuthorizationResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListAppGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListAppGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListAuthorizationMailRecordRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListAuthorizationMailRecordResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListAvailabilityZoneRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListAvailabilityZoneResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListAzRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListAzResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListConfigInfoReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListCorpConfigInfoRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListCorpConfigInfoResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListFutureExecutionsReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListFutureExecutionsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListFutureExecutionsResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListImageJobsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListImageJobsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListImageServersRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListImageServersResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListImageSubJobsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListImageSubJobsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListLatestAttachedServerAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListLatestAttachedServerAppResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPersistentStorageRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPersistentStorageResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListPolicyGroupDetailInfoRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListPolicyGroupDetailInfoResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPolicyGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPolicyGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListPolicyOfPolicyGroupRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListPolicyOfPolicyGroupResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPolicyTemplateRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPolicyTemplateResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListProductRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListProductResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPublishedAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListPublishedAppResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListScheduleTasksRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListScheduleTasksResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListServerGroupTagRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListServerGroupTagResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListServerGroupsRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListServerGroupsResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListServerHdaDetailsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListServerHdaDetailsResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListServerHdaUpgradeRecordsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListServerHdaUpgradeRecordsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListServerMetricDataRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListServerMetricDataResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListServersRequest;
@@ -130,14 +228,26 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.ListSessionTypeRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListSessionTypeResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListSessionsRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListSessionsResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListSfs3StorageRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListSfs3StorageResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListShareFolderRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListShareFolderResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListStorageAssignmentRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListStorageAssignmentResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListStoragePolicyStatementRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListStoragePolicyStatementResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListSubJobsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListSubJobsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListTargetsOfPolicyGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListTargetsOfPolicyGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListTaskExecuteDetailRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListTaskExecuteDetailResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListTaskExecuteHistoryRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListTaskExecuteHistoryResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListTenantProfileRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListTenantProfileResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListTenantServerGroupsRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ListTenantServerGroupsResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListUserConnectionReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListUserConnectionRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ListUserConnectionResponse;
@@ -151,24 +261,59 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.LogoffUserSessionResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.PublishAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.PublishAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.PublishAppResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.QuerySessionTypesReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.RecreateServerImageRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.RecreateServerImageResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ReinstallServerReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ReinstallServerRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ReinstallServerResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ResendAuthorizationMailReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ResendAuthorizedMailReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.SendAuthorizationMailRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.SendAuthorizationMailResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.SendAuthorizedMailRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.SendAuthorizedMailResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ServerHaltReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAccessAgentLatestVersionRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAccessAgentLatestVersionResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppDetailRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppDetailResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppGroupDetailRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowAppGroupDetailResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowImageJobRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowImageJobResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowImageServerRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowImageServerResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobDetailRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobDetailResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowJobResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowOriginalPolicyInfoResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPolicyGroupRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPolicyGroupResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPublishableAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowPublishableAppResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowScalingPolicyRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowScalingPolicyResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowScheduleTaskRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowScheduleTaskResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerGroupRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerGroupResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerGroupRestrictRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerGroupRestrictResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerGroupStateRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerGroupStateResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerGroupTagRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerGroupTagResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerMetricDataRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerMetricDataResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerVncRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.ShowServerVncResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowSessionTypesRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.ShowSessionTypesResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UnpublishAppReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UnpublishAppRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UnpublishAppResponse;
@@ -187,6 +332,9 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePolicyGroupResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePolicyTemplateReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePolicyTemplateRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdatePolicyTemplateResponse;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateScheduleTaskReq;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateScheduleTaskRequest;
+import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateScheduleTaskResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateServerGroupReq;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateServerGroupRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UpdateServerGroupResponse;
@@ -207,6 +355,8 @@ import com.huaweicloud.sdk.workspaceapp.v1.model.UploadAppIconResponse;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadWarehouseAppIconRequest;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadWarehouseAppIconRequestBody;
 import com.huaweicloud.sdk.workspaceapp.v1.model.UploadWarehouseAppIconResponse;
+
+import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class WorkspaceAppMeta {
@@ -256,6 +406,24 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateBucketOrAclRequest, CreateBucketOrAclResponse> createBucketOrAcl =
+        genForCreateBucketOrAcl();
+
+    private static HttpRequestDef<CreateBucketOrAclRequest, CreateBucketOrAclResponse> genForCreateBucketOrAcl() {
+        // basic
+        HttpRequestDef.Builder<CreateBucketOrAclRequest, CreateBucketOrAclResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateBucketOrAclRequest.class, CreateBucketOrAclResponse.class)
+                .withName("CreateBucketOrAcl")
+                .withUri("/v1/{project_id}/app-warehouse/bucket-and-acl/create")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateWarehouseAppRequest, CreateWarehouseAppResponse> createWarehouseApp =
         genForCreateWarehouseApp();
 
@@ -273,6 +441,29 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateWarehouseAppReq.class),
             f -> f.withMarshaller(CreateWarehouseAppRequest::getBody, CreateWarehouseAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteWarehouseAppRequest, DeleteWarehouseAppResponse> deleteWarehouseApp =
+        genForDeleteWarehouseApp();
+
+    private static HttpRequestDef<DeleteWarehouseAppRequest, DeleteWarehouseAppResponse> genForDeleteWarehouseApp() {
+        // basic
+        HttpRequestDef.Builder<DeleteWarehouseAppRequest, DeleteWarehouseAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteWarehouseAppRequest.class, DeleteWarehouseAppResponse.class)
+                .withName("DeleteWarehouseApp")
+                .withUri("/v1/{project_id}/app-warehouse/apps/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteWarehouseAppRequest::getId, DeleteWarehouseAppRequest::setId));
 
         // response
 
@@ -379,6 +570,90 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDisableAppRequest, BatchDisableAppResponse> batchDisableApp =
+        genForBatchDisableApp();
+
+    private static HttpRequestDef<BatchDisableAppRequest, BatchDisableAppResponse> genForBatchDisableApp() {
+        // basic
+        HttpRequestDef.Builder<BatchDisableAppRequest, BatchDisableAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDisableAppRequest.class, BatchDisableAppResponse.class)
+                .withName("BatchDisableApp")
+                .withUri("/v1/{project_id}/app-groups/{app_group_id}/apps/actions/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDisableAppRequest::getAppGroupId, BatchDisableAppRequest::setAppGroupId));
+        builder.<BatchUpdateAppReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateAppReq.class),
+            f -> f.withMarshaller(BatchDisableAppRequest::getBody, BatchDisableAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchEnableAppRequest, BatchEnableAppResponse> batchEnableApp =
+        genForBatchEnableApp();
+
+    private static HttpRequestDef<BatchEnableAppRequest, BatchEnableAppResponse> genForBatchEnableApp() {
+        // basic
+        HttpRequestDef.Builder<BatchEnableAppRequest, BatchEnableAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchEnableAppRequest.class, BatchEnableAppResponse.class)
+                .withName("BatchEnableApp")
+                .withUri("/v1/{project_id}/app-groups/{app_group_id}/apps/actions/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchEnableAppRequest::getAppGroupId, BatchEnableAppRequest::setAppGroupId));
+        builder.<BatchUpdateAppReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateAppReq.class),
+            f -> f.withMarshaller(BatchEnableAppRequest::getBody, BatchEnableAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAppIconRequest, DeleteAppIconResponse> deleteAppIcon =
+        genForDeleteAppIcon();
+
+    private static HttpRequestDef<DeleteAppIconRequest, DeleteAppIconResponse> genForDeleteAppIcon() {
+        // basic
+        HttpRequestDef.Builder<DeleteAppIconRequest, DeleteAppIconResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppIconRequest.class, DeleteAppIconResponse.class)
+                .withName("DeleteAppIcon")
+                .withUri("/v1/{project_id}/app-groups/{app_group_id}/apps/{app_id}/icon")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppIconRequest::getAppGroupId, DeleteAppIconRequest::setAppGroupId));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppIconRequest::getAppId, DeleteAppIconRequest::setAppId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPublishedAppRequest, ListPublishedAppResponse> listPublishedApp =
         genForListPublishedApp();
 
@@ -448,6 +723,34 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PublishAppReq.class),
             f -> f.withMarshaller(PublishAppRequest::getBody, PublishAppRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAppDetailRequest, ShowAppDetailResponse> showAppDetail =
+        genForShowAppDetail();
+
+    private static HttpRequestDef<ShowAppDetailRequest, ShowAppDetailResponse> genForShowAppDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowAppDetailRequest, ShowAppDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAppDetailRequest.class, ShowAppDetailResponse.class)
+                .withName("ShowAppDetail")
+                .withUri("/v1/{project_id}/app-groups/{app_group_id}/apps/{app_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppDetailRequest::getAppGroupId, ShowAppDetailRequest::setAppGroupId));
+        builder.<String>withRequestField("app_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppDetailRequest::getAppId, ShowAppDetailRequest::setAppId));
 
         // response
 
@@ -569,6 +872,70 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<InitializeTenantRequest, InitializeTenantResponse> initializeTenant =
+        genForInitializeTenant();
+
+    private static HttpRequestDef<InitializeTenantRequest, InitializeTenantResponse> genForInitializeTenant() {
+        // basic
+        HttpRequestDef.Builder<InitializeTenantRequest, InitializeTenantResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InitializeTenantRequest.class, InitializeTenantResponse.class)
+                .withName("InitializeTenant")
+                .withUri("/v1/{project_id}/tenant/action/active")
+                .withContentType("application/json");
+
+        // requests
+        builder.<InitializeTenantReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InitializeTenantReq.class),
+            f -> f.withMarshaller(InitializeTenantRequest::getBody, InitializeTenantRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCorpConfigInfoRequest, ListCorpConfigInfoResponse> listCorpConfigInfo =
+        genForListCorpConfigInfo();
+
+    private static HttpRequestDef<ListCorpConfigInfoRequest, ListCorpConfigInfoResponse> genForListCorpConfigInfo() {
+        // basic
+        HttpRequestDef.Builder<ListCorpConfigInfoRequest, ListCorpConfigInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListCorpConfigInfoRequest.class, ListCorpConfigInfoResponse.class)
+                .withName("ListCorpConfigInfo")
+                .withUri("/v1/{project_id}/bundles/batch-query-config-info")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListConfigInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListConfigInfoReq.class),
+            f -> f.withMarshaller(ListCorpConfigInfoRequest::getBody, ListCorpConfigInfoRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTenantProfileRequest, ListTenantProfileResponse> listTenantProfile =
+        genForListTenantProfile();
+
+    private static HttpRequestDef<ListTenantProfileRequest, ListTenantProfileResponse> genForListTenantProfile() {
+        // basic
+        HttpRequestDef.Builder<ListTenantProfileRequest, ListTenantProfileResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTenantProfileRequest.class, ListTenantProfileResponse.class)
+                .withName("ListTenantProfile")
+                .withUri("/v1/{project_id}/tenant/profile")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteAppGroupRequest, BatchDeleteAppGroupResponse> batchDeleteAppGroup =
         genForBatchDeleteAppGroup();
 
@@ -609,6 +976,53 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppGroupReq.class),
             f -> f.withMarshaller(CreateAppGroupRequest::getBody, CreateAppGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAppGroupRequest, DeleteAppGroupResponse> deleteAppGroup =
+        genForDeleteAppGroup();
+
+    private static HttpRequestDef<DeleteAppGroupRequest, DeleteAppGroupResponse> genForDeleteAppGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteAppGroupRequest, DeleteAppGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteAppGroupRequest.class, DeleteAppGroupResponse.class)
+                .withName("DeleteAppGroup")
+                .withUri("/v1/{project_id}/app-groups/{app_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAppGroupRequest::getAppGroupId, DeleteAppGroupRequest::setAppGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateAppGroupRequest, DisassociateAppGroupResponse> disassociateAppGroup =
+        genForDisassociateAppGroup();
+
+    private static HttpRequestDef<DisassociateAppGroupRequest, DisassociateAppGroupResponse> genForDisassociateAppGroup() {
+        // basic
+        HttpRequestDef.Builder<DisassociateAppGroupRequest, DisassociateAppGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DisassociateAppGroupRequest.class, DisassociateAppGroupResponse.class)
+            .withName("DisassociateAppGroup")
+            .withUri("/v1/{project_id}/app-groups/actions/disassociate-app-group")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_group_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateAppGroupRequest::getServerGroupId,
+                DisassociateAppGroupRequest::setServerGroupId));
 
         // response
 
@@ -668,6 +1082,29 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAppGroupDetailRequest, ShowAppGroupDetailResponse> showAppGroupDetail =
+        genForShowAppGroupDetail();
+
+    private static HttpRequestDef<ShowAppGroupDetailRequest, ShowAppGroupDetailResponse> genForShowAppGroupDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowAppGroupDetailRequest, ShowAppGroupDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAppGroupDetailRequest.class, ShowAppGroupDetailResponse.class)
+                .withName("ShowAppGroupDetail")
+                .withUri("/v1/{project_id}/app-groups/{app_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("app_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAppGroupDetailRequest::getAppGroupId, ShowAppGroupDetailRequest::setAppGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAppGroupRequest, UpdateAppGroupResponse> updateAppGroup =
         genForUpdateAppGroup();
 
@@ -690,6 +1127,28 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAppGroupReq.class),
             f -> f.withMarshaller(UpdateAppGroupRequest::getBody, UpdateAppGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOrderRequest, CreateOrderResponse> createOrder = genForCreateOrder();
+
+    private static HttpRequestDef<CreateOrderRequest, CreateOrderResponse> genForCreateOrder() {
+        // basic
+        HttpRequestDef.Builder<CreateOrderRequest, CreateOrderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateOrderRequest.class, CreateOrderResponse.class)
+                .withName("CreateOrder")
+                .withUri("/v1/{project_id}/bundles/subscribe/order")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateOrderReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOrderReq.class),
+            f -> f.withMarshaller(CreateOrderRequest::getBody, CreateOrderRequest::setBody));
 
         // response
 
@@ -760,6 +1219,29 @@ public class WorkspaceAppMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSessionTypesRequest, ShowSessionTypesResponse> showSessionTypes =
+        genForShowSessionTypes();
+
+    private static HttpRequestDef<ShowSessionTypesRequest, ShowSessionTypesResponse> genForShowSessionTypes() {
+        // basic
+        HttpRequestDef.Builder<ShowSessionTypesRequest, ShowSessionTypesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowSessionTypesRequest.class, ShowSessionTypesResponse.class)
+                .withName("ShowSessionTypes")
+                .withUri("/v1/{project_id}/session-type")
+                .withContentType("application/json");
+
+        // requests
+        builder.<QuerySessionTypesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(QuerySessionTypesReq.class),
+            f -> f.withMarshaller(ShowSessionTypesRequest::getBody, ShowSessionTypesRequest::setBody));
 
         // response
 
@@ -890,6 +1372,23 @@ public class WorkspaceAppMeta {
             .withName("ListAvailabilityZone")
             .withUri("/v1/{project_id}/availability-zone")
             .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAzRequest, ListAzResponse> listAz = genForListAz();
+
+    private static HttpRequestDef<ListAzRequest, ListAzResponse> genForListAz() {
+        // basic
+        HttpRequestDef.Builder<ListAzRequest, ListAzResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAzRequest.class, ListAzResponse.class)
+                .withName("ListAz")
+                .withUri("/v1/{project_id}/availability-zone/summary")
+                .withContentType("application/json");
 
         // requests
 
@@ -1077,6 +1576,29 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowImageServerRequest, ShowImageServerResponse> showImageServer =
+        genForShowImageServer();
+
+    private static HttpRequestDef<ShowImageServerRequest, ShowImageServerResponse> genForShowImageServer() {
+        // basic
+        HttpRequestDef.Builder<ShowImageServerRequest, ShowImageServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowImageServerRequest.class, ShowImageServerResponse.class)
+                .withName("ShowImageServer")
+                .withUri("/v1/{project_id}/image-servers/{server_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowImageServerRequest::getServerId, ShowImageServerRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateImageServerRequest, UpdateImageServerResponse> updateImageServer =
         genForUpdateImageServer();
 
@@ -1099,6 +1621,207 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateImageServerReq.class),
             f -> f.withMarshaller(UpdateImageServerRequest::getBody, UpdateImageServerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteAppSubJobsRequest, BatchDeleteAppSubJobsResponse> batchDeleteAppSubJobs =
+        genForBatchDeleteAppSubJobs();
+
+    private static HttpRequestDef<BatchDeleteAppSubJobsRequest, BatchDeleteAppSubJobsResponse> genForBatchDeleteAppSubJobs() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteAppSubJobsRequest, BatchDeleteAppSubJobsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteAppSubJobsRequest.class, BatchDeleteAppSubJobsResponse.class)
+            .withName("BatchDeleteAppSubJobs")
+            .withUri("/v1/{project_id}/app-server-sub-jobs/actions/batch-delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteSubJobsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteSubJobsReq.class),
+            f -> f.withMarshaller(BatchDeleteAppSubJobsRequest::getBody, BatchDeleteAppSubJobsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteImageSubJobsRequest, BatchDeleteImageSubJobsResponse> batchDeleteImageSubJobs =
+        genForBatchDeleteImageSubJobs();
+
+    private static HttpRequestDef<BatchDeleteImageSubJobsRequest, BatchDeleteImageSubJobsResponse> genForBatchDeleteImageSubJobs() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteImageSubJobsRequest, BatchDeleteImageSubJobsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PATCH, BatchDeleteImageSubJobsRequest.class, BatchDeleteImageSubJobsResponse.class)
+            .withName("BatchDeleteImageSubJobs")
+            .withUri("/v1/{project_id}/image-server-sub-jobs/actions/batch-delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteSubJobsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteSubJobsReq.class),
+            f -> f.withMarshaller(BatchDeleteImageSubJobsRequest::getBody, BatchDeleteImageSubJobsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountSubJobsRequest, CountSubJobsResponse> countSubJobs = genForCountSubJobs();
+
+    private static HttpRequestDef<CountSubJobsRequest, CountSubJobsResponse> genForCountSubJobs() {
+        // basic
+        HttpRequestDef.Builder<CountSubJobsRequest, CountSubJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CountSubJobsRequest.class, CountSubJobsResponse.class)
+                .withName("CountSubJobs")
+                .withUri("/v1/{project_id}/app-server-sub-jobs/actions/count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSubJobsRequest::getStatus, CountSubJobsRequest::setStatus));
+        builder.<String>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSubJobsRequest::getJobType, CountSubJobsRequest::setJobType));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountSubJobsRequest::getJobId, CountSubJobsRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImageJobsRequest, ListImageJobsResponse> listImageJobs =
+        genForListImageJobs();
+
+    private static HttpRequestDef<ListImageJobsRequest, ListImageJobsResponse> genForListImageJobs() {
+        // basic
+        HttpRequestDef.Builder<ListImageJobsRequest, ListImageJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImageJobsRequest.class, ListImageJobsResponse.class)
+                .withName("ListImageJobs")
+                .withUri("/v1/{project_id}/image-server-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageJobsRequest::getStatus, ListImageJobsRequest::setStatus));
+        builder.<String>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageJobsRequest::getJobType, ListImageJobsRequest::setJobType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageJobsRequest::getOffset, ListImageJobsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageJobsRequest::getLimit, ListImageJobsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImageSubJobsRequest, ListImageSubJobsResponse> listImageSubJobs =
+        genForListImageSubJobs();
+
+    private static HttpRequestDef<ListImageSubJobsRequest, ListImageSubJobsResponse> genForListImageSubJobs() {
+        // basic
+        HttpRequestDef.Builder<ListImageSubJobsRequest, ListImageSubJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImageSubJobsRequest.class, ListImageSubJobsResponse.class)
+                .withName("ListImageSubJobs")
+                .withUri("/v1/{project_id}/image-server-sub-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageSubJobsRequest::getStatus, ListImageSubJobsRequest::setStatus));
+        builder.<String>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageSubJobsRequest::getJobType, ListImageSubJobsRequest::setJobType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageSubJobsRequest::getOffset, ListImageSubJobsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListImageSubJobsRequest::getLimit, ListImageSubJobsRequest::setLimit));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageSubJobsRequest::getJobId, ListImageSubJobsRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSubJobsRequest, ListSubJobsResponse> listSubJobs = genForListSubJobs();
+
+    private static HttpRequestDef<ListSubJobsRequest, ListSubJobsResponse> genForListSubJobs() {
+        // basic
+        HttpRequestDef.Builder<ListSubJobsRequest, ListSubJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSubJobsRequest.class, ListSubJobsResponse.class)
+                .withName("ListSubJobs")
+                .withUri("/v1/{project_id}/app-server-sub-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubJobsRequest::getStatus, ListSubJobsRequest::setStatus));
+        builder.<String>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubJobsRequest::getJobType, ListSubJobsRequest::setJobType));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubJobsRequest::getOffset, ListSubJobsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSubJobsRequest::getLimit, ListSubJobsRequest::setLimit));
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSubJobsRequest::getJobId, ListSubJobsRequest::setJobId));
 
         // response
 
@@ -1166,6 +1889,147 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJobDetailRequest::getJobId, ShowJobDetailRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAuthorizationMailRecordRequest, ListAuthorizationMailRecordResponse> listAuthorizationMailRecord =
+        genForListAuthorizationMailRecord();
+
+    private static HttpRequestDef<ListAuthorizationMailRecordRequest, ListAuthorizationMailRecordResponse> genForListAuthorizationMailRecord() {
+        // basic
+        HttpRequestDef.Builder<ListAuthorizationMailRecordRequest, ListAuthorizationMailRecordResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAuthorizationMailRecordRequest.class,
+                    ListAuthorizationMailRecordResponse.class)
+                .withName("ListAuthorizationMailRecord")
+                .withUri("/v1/{project_id}/mails")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAuthorizationMailRecordRequest::getLimit,
+                ListAuthorizationMailRecordRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAuthorizationMailRecordRequest::getOffset,
+                ListAuthorizationMailRecordRequest::setOffset));
+        builder.<String>withRequestField("app_group_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuthorizationMailRecordRequest::getAppGroupId,
+                ListAuthorizationMailRecordRequest::setAppGroupId));
+        builder.<String>withRequestField("account",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuthorizationMailRecordRequest::getAccount,
+                ListAuthorizationMailRecordRequest::setAccount));
+        builder.<String>withRequestField("mail_send_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuthorizationMailRecordRequest::getMailSendType,
+                ListAuthorizationMailRecordRequest::setMailSendType));
+        builder.<String>withRequestField("mail_send_result",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAuthorizationMailRecordRequest::getMailSendResult,
+                ListAuthorizationMailRecordRequest::setMailSendResult));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SendAuthorizationMailRequest, SendAuthorizationMailResponse> sendAuthorizationMail =
+        genForSendAuthorizationMail();
+
+    private static HttpRequestDef<SendAuthorizationMailRequest, SendAuthorizationMailResponse> genForSendAuthorizationMail() {
+        // basic
+        HttpRequestDef.Builder<SendAuthorizationMailRequest, SendAuthorizationMailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SendAuthorizationMailRequest.class, SendAuthorizationMailResponse.class)
+            .withName("SendAuthorizationMail")
+            .withUri("/v1/{project_id}/mails/actions/send")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SendAuthorizationMailRequest::getXLanguage,
+                SendAuthorizationMailRequest::setXLanguage));
+        builder.<ResendAuthorizationMailReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResendAuthorizationMailReq.class),
+            f -> f.withMarshaller(SendAuthorizationMailRequest::getBody, SendAuthorizationMailRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SendAuthorizedMailRequest, SendAuthorizedMailResponse> sendAuthorizedMail =
+        genForSendAuthorizedMail();
+
+    private static HttpRequestDef<SendAuthorizedMailRequest, SendAuthorizedMailResponse> genForSendAuthorizedMail() {
+        // basic
+        HttpRequestDef.Builder<SendAuthorizedMailRequest, SendAuthorizedMailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SendAuthorizedMailRequest.class, SendAuthorizedMailResponse.class)
+                .withName("SendAuthorizedMail")
+                .withUri("/v1/{project_id}/mails/actions/send-by-authorization")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SendAuthorizedMailRequest::getXLanguage, SendAuthorizedMailRequest::setXLanguage));
+        builder.<ResendAuthorizedMailReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ResendAuthorizedMailReq.class),
+            f -> f.withMarshaller(SendAuthorizedMailRequest::getBody, SendAuthorizedMailRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeletePersistentStorageRequest, BatchDeletePersistentStorageResponse> batchDeletePersistentStorage =
+        genForBatchDeletePersistentStorage();
+
+    private static HttpRequestDef<BatchDeletePersistentStorageRequest, BatchDeletePersistentStorageResponse> genForBatchDeletePersistentStorage() {
+        // basic
+        HttpRequestDef.Builder<BatchDeletePersistentStorageRequest, BatchDeletePersistentStorageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeletePersistentStorageRequest.class,
+                    BatchDeletePersistentStorageResponse.class)
+                .withName("BatchDeletePersistentStorage")
+                .withUri("/v1/{project_id}/persistent-storages/actions/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeletePersistentStorageReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeletePersistentStorageReq.class),
+            f -> f.withMarshaller(BatchDeletePersistentStorageRequest::getBody,
+                BatchDeletePersistentStorageRequest::setBody));
 
         // response
 
@@ -1368,6 +2232,39 @@ public class WorkspaceAppMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPersistentStorageRequest::getName, ListPersistentStorageRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSfs3StorageRequest, ListSfs3StorageResponse> listSfs3Storage =
+        genForListSfs3Storage();
+
+    private static HttpRequestDef<ListSfs3StorageRequest, ListSfs3StorageResponse> genForListSfs3Storage() {
+        // basic
+        HttpRequestDef.Builder<ListSfs3StorageRequest, ListSfs3StorageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSfs3StorageRequest.class, ListSfs3StorageResponse.class)
+                .withName("ListSfs3Storage")
+                .withUri("/v1/persistent-storages/actions/list-sfs-storages")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSfs3StorageRequest::getOffset, ListSfs3StorageRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSfs3StorageRequest::getLimit, ListSfs3StorageRequest::setLimit));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSfs3StorageRequest::getName, ListSfs3StorageRequest::setName));
 
         // response
 
@@ -1708,6 +2605,81 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPolicyGroupDetailInfoRequest, ListPolicyGroupDetailInfoResponse> listPolicyGroupDetailInfo =
+        genForListPolicyGroupDetailInfo();
+
+    private static HttpRequestDef<ListPolicyGroupDetailInfoRequest, ListPolicyGroupDetailInfoResponse> genForListPolicyGroupDetailInfo() {
+        // basic
+        HttpRequestDef.Builder<ListPolicyGroupDetailInfoRequest, ListPolicyGroupDetailInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListPolicyGroupDetailInfoRequest.class,
+                    ListPolicyGroupDetailInfoResponse.class)
+                .withName("ListPolicyGroupDetailInfo")
+                .withUri("/v1/{project_id}/policy-groups/show/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPolicyGroupDetailInfoRequest::getOffset,
+                ListPolicyGroupDetailInfoRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPolicyGroupDetailInfoRequest::getLimit,
+                ListPolicyGroupDetailInfoRequest::setLimit));
+        builder.<String>withRequestField("policy_group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyGroupDetailInfoRequest::getPolicyGroupName,
+                ListPolicyGroupDetailInfoRequest::setPolicyGroupName));
+        builder.<Integer>withRequestField("policy_group_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPolicyGroupDetailInfoRequest::getPolicyGroupType,
+                ListPolicyGroupDetailInfoRequest::setPolicyGroupType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPolicyOfPolicyGroupRequest, ListPolicyOfPolicyGroupResponse> listPolicyOfPolicyGroup =
+        genForListPolicyOfPolicyGroup();
+
+    private static HttpRequestDef<ListPolicyOfPolicyGroupRequest, ListPolicyOfPolicyGroupResponse> genForListPolicyOfPolicyGroup() {
+        // basic
+        HttpRequestDef.Builder<ListPolicyOfPolicyGroupRequest, ListPolicyOfPolicyGroupResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListPolicyOfPolicyGroupRequest.class, ListPolicyOfPolicyGroupResponse.class)
+            .withName("ListPolicyOfPolicyGroup")
+            .withUri("/v1/{project_id}/policy-groups/{policy_group_id}/policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyOfPolicyGroupRequest::getPolicyGroupId,
+                ListPolicyOfPolicyGroupRequest::setPolicyGroupId));
+        builder.<String>withRequestField("policy_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPolicyOfPolicyGroupRequest::getPolicyType,
+                ListPolicyOfPolicyGroupRequest::setPolicyType));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPolicyTemplateRequest, ListPolicyTemplateResponse> listPolicyTemplate =
         genForListPolicyTemplate();
 
@@ -1785,6 +2757,29 @@ public class WorkspaceAppMeta {
             .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPolicyGroupRequest, ShowPolicyGroupResponse> showPolicyGroup =
+        genForShowPolicyGroup();
+
+    private static HttpRequestDef<ShowPolicyGroupRequest, ShowPolicyGroupResponse> genForShowPolicyGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowPolicyGroupRequest, ShowPolicyGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPolicyGroupRequest.class, ShowPolicyGroupResponse.class)
+                .withName("ShowPolicyGroup")
+                .withUri("/v1/{project_id}/policy-groups/{policy_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPolicyGroupRequest::getPolicyGroupId, ShowPolicyGroupRequest::setPolicyGroupId));
 
         // response
 
@@ -1906,6 +2901,379 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateOrUpdateScalingPolicyRequest, CreateOrUpdateScalingPolicyResponse> createOrUpdateScalingPolicy =
+        genForCreateOrUpdateScalingPolicy();
+
+    private static HttpRequestDef<CreateOrUpdateScalingPolicyRequest, CreateOrUpdateScalingPolicyResponse> genForCreateOrUpdateScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateOrUpdateScalingPolicyRequest, CreateOrUpdateScalingPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    CreateOrUpdateScalingPolicyRequest.class,
+                    CreateOrUpdateScalingPolicyResponse.class)
+                .withName("CreateOrUpdateScalingPolicy")
+                .withUri("/v1/{project_id}/scaling-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateOrUpdateScalingPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOrUpdateScalingPolicyReq.class),
+            f -> f.withMarshaller(CreateOrUpdateScalingPolicyRequest::getBody,
+                CreateOrUpdateScalingPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteScalingPolicyRequest, DeleteScalingPolicyResponse> deleteScalingPolicy =
+        genForDeleteScalingPolicy();
+
+    private static HttpRequestDef<DeleteScalingPolicyRequest, DeleteScalingPolicyResponse> genForDeleteScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteScalingPolicyRequest, DeleteScalingPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteScalingPolicyRequest.class, DeleteScalingPolicyResponse.class)
+            .withName("DeleteScalingPolicy")
+            .withUri("/v1/{project_id}/scaling-policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_group_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScalingPolicyRequest::getServerGroupId,
+                DeleteScalingPolicyRequest::setServerGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowScalingPolicyRequest, ShowScalingPolicyResponse> showScalingPolicy =
+        genForShowScalingPolicy();
+
+    private static HttpRequestDef<ShowScalingPolicyRequest, ShowScalingPolicyResponse> genForShowScalingPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowScalingPolicyRequest, ShowScalingPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowScalingPolicyRequest.class, ShowScalingPolicyResponse.class)
+                .withName("ShowScalingPolicy")
+                .withUri("/v1/{project_id}/scaling-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_group_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScalingPolicyRequest::getServerGroupId,
+                ShowScalingPolicyRequest::setServerGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteScheduleTaskRequest, BatchDeleteScheduleTaskResponse> batchDeleteScheduleTask =
+        genForBatchDeleteScheduleTask();
+
+    private static HttpRequestDef<BatchDeleteScheduleTaskRequest, BatchDeleteScheduleTaskResponse> genForBatchDeleteScheduleTask() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteScheduleTaskRequest, BatchDeleteScheduleTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchDeleteScheduleTaskRequest.class, BatchDeleteScheduleTaskResponse.class)
+            .withName("BatchDeleteScheduleTask")
+            .withUri("/v1/{project_id}/schedule-task/actions/batch-delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteScheduleTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteScheduleTaskReq.class),
+            f -> f.withMarshaller(BatchDeleteScheduleTaskRequest::getBody, BatchDeleteScheduleTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateScheduleTaskRequest, CreateScheduleTaskResponse> createScheduleTask =
+        genForCreateScheduleTask();
+
+    private static HttpRequestDef<CreateScheduleTaskRequest, CreateScheduleTaskResponse> genForCreateScheduleTask() {
+        // basic
+        HttpRequestDef.Builder<CreateScheduleTaskRequest, CreateScheduleTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateScheduleTaskRequest.class, CreateScheduleTaskResponse.class)
+                .withName("CreateScheduleTask")
+                .withUri("/v1/{project_id}/schedule-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateScheduleTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateScheduleTaskReq.class),
+            f -> f.withMarshaller(CreateScheduleTaskRequest::getBody, CreateScheduleTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteScheduleTaskRequest, DeleteScheduleTaskResponse> deleteScheduleTask =
+        genForDeleteScheduleTask();
+
+    private static HttpRequestDef<DeleteScheduleTaskRequest, DeleteScheduleTaskResponse> genForDeleteScheduleTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteScheduleTaskRequest, DeleteScheduleTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteScheduleTaskRequest.class, DeleteScheduleTaskResponse.class)
+                .withName("DeleteScheduleTask")
+                .withUri("/v1/{project_id}/schedule-task/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduleTaskRequest::getTaskId, DeleteScheduleTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFutureExecutionsRequest, ListFutureExecutionsResponse> listFutureExecutions =
+        genForListFutureExecutions();
+
+    private static HttpRequestDef<ListFutureExecutionsRequest, ListFutureExecutionsResponse> genForListFutureExecutions() {
+        // basic
+        HttpRequestDef.Builder<ListFutureExecutionsRequest, ListFutureExecutionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListFutureExecutionsRequest.class, ListFutureExecutionsResponse.class)
+            .withName("ListFutureExecutions")
+            .withUri("/v1/{project_id}/schedule-task/future-executions")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListFutureExecutionsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListFutureExecutionsReq.class),
+            f -> f.withMarshaller(ListFutureExecutionsRequest::getBody, ListFutureExecutionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScheduleTasksRequest, ListScheduleTasksResponse> listScheduleTasks =
+        genForListScheduleTasks();
+
+    private static HttpRequestDef<ListScheduleTasksRequest, ListScheduleTasksResponse> genForListScheduleTasks() {
+        // basic
+        HttpRequestDef.Builder<ListScheduleTasksRequest, ListScheduleTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScheduleTasksRequest.class, ListScheduleTasksResponse.class)
+                .withName("ListScheduleTasks")
+                .withUri("/v1/{project_id}/schedule-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduleTasksRequest::getOffset, ListScheduleTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduleTasksRequest::getLimit, ListScheduleTasksRequest::setLimit));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleTasksRequest::getTaskName, ListScheduleTasksRequest::setTaskName));
+        builder.<String>withRequestField("task_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleTasksRequest::getTaskType, ListScheduleTasksRequest::setTaskType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTaskExecuteDetailRequest, ListTaskExecuteDetailResponse> listTaskExecuteDetail =
+        genForListTaskExecuteDetail();
+
+    private static HttpRequestDef<ListTaskExecuteDetailRequest, ListTaskExecuteDetailResponse> genForListTaskExecuteDetail() {
+        // basic
+        HttpRequestDef.Builder<ListTaskExecuteDetailRequest, ListTaskExecuteDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTaskExecuteDetailRequest.class, ListTaskExecuteDetailResponse.class)
+            .withName("ListTaskExecuteDetail")
+            .withUri("/v1/{project_id}/schedule-task/{execute_history_id}/execute-detail")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("execute_history_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskExecuteDetailRequest::getExecuteHistoryId,
+                ListTaskExecuteDetailRequest::setExecuteHistoryId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskExecuteDetailRequest::getOffset, ListTaskExecuteDetailRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskExecuteDetailRequest::getLimit, ListTaskExecuteDetailRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTaskExecuteHistoryRequest, ListTaskExecuteHistoryResponse> listTaskExecuteHistory =
+        genForListTaskExecuteHistory();
+
+    private static HttpRequestDef<ListTaskExecuteHistoryRequest, ListTaskExecuteHistoryResponse> genForListTaskExecuteHistory() {
+        // basic
+        HttpRequestDef.Builder<ListTaskExecuteHistoryRequest, ListTaskExecuteHistoryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTaskExecuteHistoryRequest.class, ListTaskExecuteHistoryResponse.class)
+            .withName("ListTaskExecuteHistory")
+            .withUri("/v1/{project_id}/schedule-task/{task_id}/execute-history")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskExecuteHistoryRequest::getTaskId, ListTaskExecuteHistoryRequest::setTaskId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskExecuteHistoryRequest::getOffset, ListTaskExecuteHistoryRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaskExecuteHistoryRequest::getLimit, ListTaskExecuteHistoryRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowScheduleTaskRequest, ShowScheduleTaskResponse> showScheduleTask =
+        genForShowScheduleTask();
+
+    private static HttpRequestDef<ShowScheduleTaskRequest, ShowScheduleTaskResponse> genForShowScheduleTask() {
+        // basic
+        HttpRequestDef.Builder<ShowScheduleTaskRequest, ShowScheduleTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowScheduleTaskRequest.class, ShowScheduleTaskResponse.class)
+                .withName("ShowScheduleTask")
+                .withUri("/v1/{project_id}/schedule-task/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScheduleTaskRequest::getTaskId, ShowScheduleTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScheduleTaskRequest, UpdateScheduleTaskResponse> updateScheduleTask =
+        genForUpdateScheduleTask();
+
+    private static HttpRequestDef<UpdateScheduleTaskRequest, UpdateScheduleTaskResponse> genForUpdateScheduleTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateScheduleTaskRequest, UpdateScheduleTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, UpdateScheduleTaskRequest.class, UpdateScheduleTaskResponse.class)
+                .withName("UpdateScheduleTask")
+                .withUri("/v1/{project_id}/schedule-task/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduleTaskRequest::getTaskId, UpdateScheduleTaskRequest::setTaskId));
+        builder.<UpdateScheduleTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateScheduleTaskReq.class),
+            f -> f.withMarshaller(UpdateScheduleTaskRequest::getBody, UpdateScheduleTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchChangeServerImageRequest, BatchChangeServerImageResponse> batchChangeServerImage =
+        genForBatchChangeServerImage();
+
+    private static HttpRequestDef<BatchChangeServerImageRequest, BatchChangeServerImageResponse> genForBatchChangeServerImage() {
+        // basic
+        HttpRequestDef.Builder<BatchChangeServerImageRequest, BatchChangeServerImageResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchChangeServerImageRequest.class, BatchChangeServerImageResponse.class)
+            .withName("BatchChangeServerImage")
+            .withUri("/v1/{project_id}/app-servers/actions/batch-change-image")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchChangeServerImageReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchChangeServerImageReq.class),
+            f -> f.withMarshaller(BatchChangeServerImageRequest::getBody, BatchChangeServerImageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchChangeServerMaintainModeRequest, BatchChangeServerMaintainModeResponse> batchChangeServerMaintainMode =
+        genForBatchChangeServerMaintainMode();
+
+    private static HttpRequestDef<BatchChangeServerMaintainModeRequest, BatchChangeServerMaintainModeResponse> genForBatchChangeServerMaintainMode() {
+        // basic
+        HttpRequestDef.Builder<BatchChangeServerMaintainModeRequest, BatchChangeServerMaintainModeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PATCH,
+                    BatchChangeServerMaintainModeRequest.class,
+                    BatchChangeServerMaintainModeResponse.class)
+                .withName("BatchChangeServerMaintainMode")
+                .withUri("/v1/{project_id}/app-servers/actions/batch-maint")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchChangeMaintainServerReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchChangeMaintainServerReq.class),
+            f -> f.withMarshaller(BatchChangeServerMaintainModeRequest::getBody,
+                BatchChangeServerMaintainModeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteServerRequest, BatchDeleteServerResponse> batchDeleteServer =
         genForBatchDeleteServer();
 
@@ -1969,6 +3337,29 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ServerHaltReq.class),
             f -> f.withMarshaller(BatchRebootServerRequest::getBody, BatchRebootServerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchReinstallServerRequest, BatchReinstallServerResponse> batchReinstallServer =
+        genForBatchReinstallServer();
+
+    private static HttpRequestDef<BatchReinstallServerRequest, BatchReinstallServerResponse> genForBatchReinstallServer() {
+        // basic
+        HttpRequestDef.Builder<BatchReinstallServerRequest, BatchReinstallServerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchReinstallServerRequest.class, BatchReinstallServerResponse.class)
+            .withName("BatchReinstallServer")
+            .withUri("/v1/{project_id}/app-servers/actions/batch-reinstall")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchReinstallServerReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchReinstallServerReq.class),
+            f -> f.withMarshaller(BatchReinstallServerRequest::getBody, BatchReinstallServerRequest::setBody));
 
         // response
 
@@ -2067,6 +3458,29 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchUpgradeHdaVersionRequest, BatchUpgradeHdaVersionResponse> batchUpgradeHdaVersion =
+        genForBatchUpgradeHdaVersion();
+
+    private static HttpRequestDef<BatchUpgradeHdaVersionRequest, BatchUpgradeHdaVersionResponse> genForBatchUpgradeHdaVersion() {
+        // basic
+        HttpRequestDef.Builder<BatchUpgradeHdaVersionRequest, BatchUpgradeHdaVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PATCH, BatchUpgradeHdaVersionRequest.class, BatchUpgradeHdaVersionResponse.class)
+            .withName("BatchUpgradeHdaVersion")
+            .withUri("/v1/{project_id}/app-servers/access-agent/actions/upgrade")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchUpgradeHdaVersionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpgradeHdaVersionReq.class),
+            f -> f.withMarshaller(BatchUpgradeHdaVersionRequest::getBody, BatchUpgradeHdaVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeServerImageRequest, ChangeServerImageResponse> changeServerImage =
         genForChangeServerImage();
 
@@ -2112,6 +3526,122 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppServerReq.class),
             f -> f.withMarshaller(CreateAppServersRequest::getBody, CreateAppServersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteServerRequest, DeleteServerResponse> deleteServer = genForDeleteServer();
+
+    private static HttpRequestDef<DeleteServerRequest, DeleteServerResponse> genForDeleteServer() {
+        // basic
+        HttpRequestDef.Builder<DeleteServerRequest, DeleteServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteServerRequest.class, DeleteServerResponse.class)
+                .withName("DeleteServer")
+                .withUri("/v1/{project_id}/app-servers/{server_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServerRequest::getServerId, DeleteServerRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAccessAgentLatestVersionRequest, ListAccessAgentLatestVersionResponse> listAccessAgentLatestVersion =
+        genForListAccessAgentLatestVersion();
+
+    private static HttpRequestDef<ListAccessAgentLatestVersionRequest, ListAccessAgentLatestVersionResponse> genForListAccessAgentLatestVersion() {
+        // basic
+        HttpRequestDef.Builder<ListAccessAgentLatestVersionRequest, ListAccessAgentLatestVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAccessAgentLatestVersionRequest.class,
+                    ListAccessAgentLatestVersionResponse.class)
+                .withName("ListAccessAgentLatestVersion")
+                .withUri("/v1/{project_id}/app-servers/access-agent/actions/show-latest-version")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListServerHdaDetailsRequest, ListServerHdaDetailsResponse> listServerHdaDetails =
+        genForListServerHdaDetails();
+
+    private static HttpRequestDef<ListServerHdaDetailsRequest, ListServerHdaDetailsResponse> genForListServerHdaDetails() {
+        // basic
+        HttpRequestDef.Builder<ListServerHdaDetailsRequest, ListServerHdaDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListServerHdaDetailsRequest.class, ListServerHdaDetailsResponse.class)
+            .withName("ListServerHdaDetails")
+            .withUri("/v1/{project_id}/app-servers/access-agent/list")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServerHdaDetailsRequest::getOffset, ListServerHdaDetailsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServerHdaDetailsRequest::getLimit, ListServerHdaDetailsRequest::setLimit));
+        builder.<String>withRequestField("server_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServerHdaDetailsRequest::getServerGroupId,
+                ListServerHdaDetailsRequest::setServerGroupId));
+        builder.<String>withRequestField("server_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServerHdaDetailsRequest::getServerName,
+                ListServerHdaDetailsRequest::setServerName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListServerHdaUpgradeRecordsRequest, ListServerHdaUpgradeRecordsResponse> listServerHdaUpgradeRecords =
+        genForListServerHdaUpgradeRecords();
+
+    private static HttpRequestDef<ListServerHdaUpgradeRecordsRequest, ListServerHdaUpgradeRecordsResponse> genForListServerHdaUpgradeRecords() {
+        // basic
+        HttpRequestDef.Builder<ListServerHdaUpgradeRecordsRequest, ListServerHdaUpgradeRecordsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListServerHdaUpgradeRecordsRequest.class,
+                    ListServerHdaUpgradeRecordsResponse.class)
+                .withName("ListServerHdaUpgradeRecords")
+                .withUri("/v1/{project_id}/app-servers/access-agent/upgrade-record")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServerHdaUpgradeRecordsRequest::getOffset,
+                ListServerHdaUpgradeRecordsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListServerHdaUpgradeRecordsRequest::getLimit,
+                ListServerHdaUpgradeRecordsRequest::setLimit));
 
         // response
 
@@ -2204,6 +3734,16 @@ public class WorkspaceAppMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListServersRequest::getServerName, ListServersRequest::setServerName));
+        builder.<String>withRequestField("machine_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServersRequest::getMachineName, ListServersRequest::setMachineName));
+        builder.<String>withRequestField("ip_addr",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServersRequest::getIpAddr, ListServersRequest::setIpAddr));
         builder.<String>withRequestField("server_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2247,6 +3787,89 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ReinstallServerReq.class),
             f -> f.withMarshaller(ReinstallServerRequest::getBody, ReinstallServerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAccessAgentLatestVersionRequest, ShowAccessAgentLatestVersionResponse> showAccessAgentLatestVersion =
+        genForShowAccessAgentLatestVersion();
+
+    private static HttpRequestDef<ShowAccessAgentLatestVersionRequest, ShowAccessAgentLatestVersionResponse> genForShowAccessAgentLatestVersion() {
+        // basic
+        HttpRequestDef.Builder<ShowAccessAgentLatestVersionRequest, ShowAccessAgentLatestVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAccessAgentLatestVersionRequest.class,
+                    ShowAccessAgentLatestVersionResponse.class)
+                .withName("ShowAccessAgentLatestVersion")
+                .withUri("/v1/{project_id}/app-servers/access-agent/latest-version")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowServerRequest, ShowServerResponse> showServer = genForShowServer();
+
+    private static HttpRequestDef<ShowServerRequest, ShowServerResponse> genForShowServer() {
+        // basic
+        HttpRequestDef.Builder<ShowServerRequest, ShowServerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowServerRequest.class, ShowServerResponse.class)
+                .withName("ShowServer")
+                .withUri("/v1/{project_id}/app-servers/{server_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerRequest::getServerId, ShowServerRequest::setServerId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowServerMetricDataRequest, ShowServerMetricDataResponse> showServerMetricData =
+        genForShowServerMetricData();
+
+    private static HttpRequestDef<ShowServerMetricDataRequest, ShowServerMetricDataResponse> genForShowServerMetricData() {
+        // basic
+        HttpRequestDef.Builder<ShowServerMetricDataRequest, ShowServerMetricDataResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowServerMetricDataRequest.class, ShowServerMetricDataResponse.class)
+            .withName("ShowServerMetricData")
+            .withUri("/v1/{project_id}/app-servers/metric-data/{server_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerMetricDataRequest::getServerId, ShowServerMetricDataRequest::setServerId));
+        builder.<OffsetDateTime>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ShowServerMetricDataRequest::getStartTime,
+                ShowServerMetricDataRequest::setStartTime));
+        builder.<OffsetDateTime>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OffsetDateTime.class),
+            f -> f.withMarshaller(ShowServerMetricDataRequest::getEndTime, ShowServerMetricDataRequest::setEndTime));
+        builder.<String>withRequestField("metric_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerMetricDataRequest::getMetricName,
+                ShowServerMetricDataRequest::setMetricName));
 
         // response
 
@@ -2412,6 +4035,117 @@ public class WorkspaceAppMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTenantServerGroupsRequest, ListTenantServerGroupsResponse> listTenantServerGroups =
+        genForListTenantServerGroups();
+
+    private static HttpRequestDef<ListTenantServerGroupsRequest, ListTenantServerGroupsResponse> genForListTenantServerGroups() {
+        // basic
+        HttpRequestDef.Builder<ListTenantServerGroupsRequest, ListTenantServerGroupsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTenantServerGroupsRequest.class, ListTenantServerGroupsResponse.class)
+            .withName("ListTenantServerGroups")
+            .withUri("/v1/{project_id}/app-server-groups/actions/list")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantServerGroupsRequest::getOffset, ListTenantServerGroupsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantServerGroupsRequest::getLimit, ListTenantServerGroupsRequest::setLimit));
+        builder.<String>withRequestField("sever_group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantServerGroupsRequest::getSeverGroupName,
+                ListTenantServerGroupsRequest::setSeverGroupName));
+        builder.<String>withRequestField("app_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantServerGroupsRequest::getAppType,
+                ListTenantServerGroupsRequest::setAppType));
+        builder.<String>withRequestField("is_secondary_server_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTenantServerGroupsRequest::getIsSecondaryServerGroup,
+                ListTenantServerGroupsRequest::setIsSecondaryServerGroup));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowServerGroupRequest, ShowServerGroupResponse> showServerGroup =
+        genForShowServerGroup();
+
+    private static HttpRequestDef<ShowServerGroupRequest, ShowServerGroupResponse> genForShowServerGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowServerGroupRequest, ShowServerGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowServerGroupRequest.class, ShowServerGroupResponse.class)
+                .withName("ShowServerGroup")
+                .withUri("/v1/{project_id}/app-server-groups/{server_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerGroupRequest::getServerGroupId, ShowServerGroupRequest::setServerGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowServerGroupRestrictRequest, ShowServerGroupRestrictResponse> showServerGroupRestrict =
+        genForShowServerGroupRestrict();
+
+    private static HttpRequestDef<ShowServerGroupRestrictRequest, ShowServerGroupRestrictResponse> genForShowServerGroupRestrict() {
+        // basic
+        HttpRequestDef.Builder<ShowServerGroupRestrictRequest, ShowServerGroupRestrictResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowServerGroupRestrictRequest.class, ShowServerGroupRestrictResponse.class)
+            .withName("ShowServerGroupRestrict")
+            .withUri("/v1/{project_id}/app-server-groups/resources/restrict")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowServerGroupStateRequest, ShowServerGroupStateResponse> showServerGroupState =
+        genForShowServerGroupState();
+
+    private static HttpRequestDef<ShowServerGroupStateRequest, ShowServerGroupStateResponse> genForShowServerGroupState() {
+        // basic
+        HttpRequestDef.Builder<ShowServerGroupStateRequest, ShowServerGroupStateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowServerGroupStateRequest.class, ShowServerGroupStateResponse.class)
+            .withName("ShowServerGroupState")
+            .withUri("/v1/{project_id}/app-server-groups/{server_group_id}/state")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerGroupStateRequest::getServerGroupId,
+                ShowServerGroupStateRequest::setServerGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateServerGroupRequest, UpdateServerGroupResponse> updateServerGroup =
         genForUpdateServerGroup();
 
@@ -2544,6 +4278,11 @@ public class WorkspaceAppMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSessionsRequest::getVmIp, ListSessionsRequest::setVmIp));
+        builder.<String>withRequestField("public_ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSessionsRequest::getPublicIp, ListSessionsRequest::setPublicIp));
         builder.<String>withRequestField("machine_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2615,6 +4354,160 @@ public class WorkspaceAppMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LogoffUserSessionReq.class),
             f -> f.withMarshaller(LogoffUserSessionRequest::getBody, LogoffUserSessionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateServerGroupTagsRequest, BatchCreateServerGroupTagsResponse> batchCreateServerGroupTags =
+        genForBatchCreateServerGroupTags();
+
+    private static HttpRequestDef<BatchCreateServerGroupTagsRequest, BatchCreateServerGroupTagsResponse> genForBatchCreateServerGroupTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateServerGroupTagsRequest, BatchCreateServerGroupTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateServerGroupTagsRequest.class,
+                    BatchCreateServerGroupTagsResponse.class)
+                .withName("BatchCreateServerGroupTags")
+                .withUri("/v1/{project_id}/server-group/tags/batch-create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchCreateServerGroupTagsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateServerGroupTagsReq.class),
+            f -> f.withMarshaller(BatchCreateServerGroupTagsRequest::getBody,
+                BatchCreateServerGroupTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteServerGroupTagsRequest, BatchDeleteServerGroupTagsResponse> batchDeleteServerGroupTags =
+        genForBatchDeleteServerGroupTags();
+
+    private static HttpRequestDef<BatchDeleteServerGroupTagsRequest, BatchDeleteServerGroupTagsResponse> genForBatchDeleteServerGroupTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteServerGroupTagsRequest, BatchDeleteServerGroupTagsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    BatchDeleteServerGroupTagsRequest.class,
+                    BatchDeleteServerGroupTagsResponse.class)
+                .withName("BatchDeleteServerGroupTags")
+                .withUri("/v1/{project_id}/server-group/tags/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteServerGroupTagsReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteServerGroupTagsReq.class),
+            f -> f.withMarshaller(BatchDeleteServerGroupTagsRequest::getBody,
+                BatchDeleteServerGroupTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateServerGroupTagsRequest, CreateServerGroupTagsResponse> createServerGroupTags =
+        genForCreateServerGroupTags();
+
+    private static HttpRequestDef<CreateServerGroupTagsRequest, CreateServerGroupTagsResponse> genForCreateServerGroupTags() {
+        // basic
+        HttpRequestDef.Builder<CreateServerGroupTagsRequest, CreateServerGroupTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateServerGroupTagsRequest.class, CreateServerGroupTagsResponse.class)
+            .withName("CreateServerGroupTags")
+            .withUri("/v1/{project_id}/server-group/{server_group_id}/tags/create")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateServerGroupTagsRequest::getServerGroupId,
+                CreateServerGroupTagsRequest::setServerGroupId));
+        builder.<CreateResourceTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateResourceTagReq.class),
+            f -> f.withMarshaller(CreateServerGroupTagsRequest::getBody, CreateServerGroupTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteServerGroupTagsRequest, DeleteServerGroupTagsResponse> deleteServerGroupTags =
+        genForDeleteServerGroupTags();
+
+    private static HttpRequestDef<DeleteServerGroupTagsRequest, DeleteServerGroupTagsResponse> genForDeleteServerGroupTags() {
+        // basic
+        HttpRequestDef.Builder<DeleteServerGroupTagsRequest, DeleteServerGroupTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteServerGroupTagsRequest.class, DeleteServerGroupTagsResponse.class)
+            .withName("DeleteServerGroupTags")
+            .withUri("/v1/{project_id}/server-group/{server_group_id}/tags/delete")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteServerGroupTagsRequest::getServerGroupId,
+                DeleteServerGroupTagsRequest::setServerGroupId));
+        builder.<DeleteResourceTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteResourceTagReq.class),
+            f -> f.withMarshaller(DeleteServerGroupTagsRequest::getBody, DeleteServerGroupTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListServerGroupTagRequest, ListServerGroupTagResponse> listServerGroupTag =
+        genForListServerGroupTag();
+
+    private static HttpRequestDef<ListServerGroupTagRequest, ListServerGroupTagResponse> genForListServerGroupTag() {
+        // basic
+        HttpRequestDef.Builder<ListServerGroupTagRequest, ListServerGroupTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListServerGroupTagRequest.class, ListServerGroupTagResponse.class)
+                .withName("ListServerGroupTag")
+                .withUri("/v1/{project_id}/server-group/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowServerGroupTagRequest, ShowServerGroupTagResponse> showServerGroupTag =
+        genForShowServerGroupTag();
+
+    private static HttpRequestDef<ShowServerGroupTagRequest, ShowServerGroupTagResponse> genForShowServerGroupTag() {
+        // basic
+        HttpRequestDef.Builder<ShowServerGroupTagRequest, ShowServerGroupTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowServerGroupTagRequest.class, ShowServerGroupTagResponse.class)
+                .withName("ShowServerGroupTag")
+                .withUri("/v1/{project_id}/server-group/{server_group_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowServerGroupTagRequest::getServerGroupId,
+                ShowServerGroupTagRequest::setServerGroupId));
 
         // response
 

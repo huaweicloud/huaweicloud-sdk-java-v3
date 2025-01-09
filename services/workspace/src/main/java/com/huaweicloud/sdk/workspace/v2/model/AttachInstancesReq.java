@@ -34,6 +34,11 @@ public class AttachInstancesReq {
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -116,7 +121,7 @@ public class AttachInstancesReq {
     }
 
     /**
-     * os类型，涉及变更镜像时需传（可选）
+     * os类型，涉及变更镜像时需传（可选，该参数已废弃）。
      * @return osType
      */
     public String getOsType() {
@@ -127,13 +132,30 @@ public class AttachInstancesReq {
         this.osType = osType;
     }
 
+    public AttachInstancesReq withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 包周期订购ID，CBC订购回调时使用。（可选）
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
     public AttachInstancesReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 企业项目ID，默认\"0\"
+     * 企业项目ID，默认\"0\",无用参数,废弃
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -172,13 +194,14 @@ public class AttachInstancesReq {
         AttachInstancesReq that = (AttachInstancesReq) obj;
         return Objects.equals(this.desktops, that.desktops) && Objects.equals(this.imageType, that.imageType)
             && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(desktops, imageType, imageId, osType, enterpriseProjectId, desktopNamePolicyId);
+        return Objects.hash(desktops, imageType, imageId, osType, orderId, enterpriseProjectId, desktopNamePolicyId);
     }
 
     @Override
@@ -189,6 +212,7 @@ public class AttachInstancesReq {
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    desktopNamePolicyId: ").append(toIndentedString(desktopNamePolicyId)).append("\n");
         sb.append("}");

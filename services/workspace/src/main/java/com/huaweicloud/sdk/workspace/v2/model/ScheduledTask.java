@@ -65,6 +65,11 @@ public class ScheduledTask {
 
     private String timeZone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "wait_time")
+
+    private Integer waitTime;
+
     public ScheduledTask withId(String id) {
         this.id = id;
         return this;
@@ -105,7 +110,7 @@ public class ScheduledTask {
     }
 
     /**
-     * 任务类型。START：开机，STOP：关机，REBOOT：重启，HIBERNATE：休眠，REBUILD：重建系统盘，EXECUTE_SCRIPT：执行脚本。
+     * 任务类型。START：开机，STOP：关机，REBOOT：重启，HIBERNATE：休眠，REBUILD：重建系统盘，EXECUTE_SCRIPT：执行脚本，CREATE_SNAPSHOT：创建快照。
      * @return taskType
      */
     public String getTaskType() {
@@ -252,6 +257,23 @@ public class ScheduledTask {
         this.timeZone = timeZone;
     }
 
+    public ScheduledTask withWaitTime(Integer waitTime) {
+        this.waitTime = waitTime;
+        return this;
+    }
+
+    /**
+     * 触发式任务触发后，等待时长。
+     * @return waitTime
+     */
+    public Integer getWaitTime() {
+        return waitTime;
+    }
+
+    public void setWaitTime(Integer waitTime) {
+        this.waitTime = waitTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -267,7 +289,8 @@ public class ScheduledTask {
             && Objects.equals(this.lastStatus, that.lastStatus)
             && Objects.equals(this.nextExecutionTime, that.nextExecutionTime)
             && Objects.equals(this.enable, that.enable) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.priority, that.priority) && Objects.equals(this.timeZone, that.timeZone);
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.timeZone, that.timeZone)
+            && Objects.equals(this.waitTime, that.waitTime);
     }
 
     @Override
@@ -282,7 +305,8 @@ public class ScheduledTask {
             enable,
             description,
             priority,
-            timeZone);
+            timeZone,
+            waitTime);
     }
 
     @Override
@@ -300,6 +324,7 @@ public class ScheduledTask {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
+        sb.append("    waitTime: ").append(toIndentedString(waitTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

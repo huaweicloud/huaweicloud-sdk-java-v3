@@ -36,7 +36,7 @@ public class VoiceConfig {
     }
 
     /**
-     * **参数解释**： 音色资产ID，可以从资产库中查询。 **约束限制**： 不涉及。 **取值范围**： 字符长度1-256位。 **默认取值**： 不涉及。
+     * **参数解释**： 音色资产ID，可以从资产库中查询。 音色ID的查询操作，详见[查询预置音色ID](metastudio_02_0054.xml)。 **约束限制**： 不涉及。 **取值范围**： 字符长度1-256位。 **默认取值**： 不涉及。
      * @return voiceAssetId
      */
     public String getVoiceAssetId() {

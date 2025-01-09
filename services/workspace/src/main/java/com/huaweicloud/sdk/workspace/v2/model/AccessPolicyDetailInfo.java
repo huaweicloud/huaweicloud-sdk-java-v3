@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * AccessPolicyDetailInfo
@@ -89,6 +92,91 @@ public class AccessPolicyDetailInfo {
 
     private BlacklistTypeEnum blacklistType;
 
+    /**
+     * 访问控制类型。默认为接入类型 * ACCESS_TYPE： 接入类型 * IP_WHITE_LIST： IP白名单
+     */
+    public static final class AccessControlTypeEnum {
+
+        /**
+         * Enum ACCESS_TYPE for value: "ACCESS_TYPE"
+         */
+        public static final AccessControlTypeEnum ACCESS_TYPE = new AccessControlTypeEnum("ACCESS_TYPE");
+
+        /**
+         * Enum IP_WHITE_LIST for value: "IP_WHITE_LIST"
+         */
+        public static final AccessControlTypeEnum IP_WHITE_LIST = new AccessControlTypeEnum("IP_WHITE_LIST");
+
+        private static final Map<String, AccessControlTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AccessControlTypeEnum> createStaticFields() {
+            Map<String, AccessControlTypeEnum> map = new HashMap<>();
+            map.put("ACCESS_TYPE", ACCESS_TYPE);
+            map.put("IP_WHITE_LIST", IP_WHITE_LIST);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AccessControlTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AccessControlTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessControlTypeEnum(value));
+        }
+
+        public static AccessControlTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AccessControlTypeEnum) {
+                return this.value.equals(((AccessControlTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_control_type")
+
+    private AccessControlTypeEnum accessControlType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_list")
+
+    private List<IpInfo> ipList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_total_count")
+
+    private Integer ipTotalCount;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_id")
 
@@ -105,7 +193,7 @@ public class AccessPolicyDetailInfo {
     }
 
     /**
-     * 策略名，当前只支持专线接入策略名。 * PRIVATE_ACCESS： 专线接入
+     * 策略名
      * @return policyName
      */
     public String getPolicyName() {
@@ -133,6 +221,75 @@ public class AccessPolicyDetailInfo {
         this.blacklistType = blacklistType;
     }
 
+    public AccessPolicyDetailInfo withAccessControlType(AccessControlTypeEnum accessControlType) {
+        this.accessControlType = accessControlType;
+        return this;
+    }
+
+    /**
+     * 访问控制类型。默认为接入类型 * ACCESS_TYPE： 接入类型 * IP_WHITE_LIST： IP白名单
+     * @return accessControlType
+     */
+    public AccessControlTypeEnum getAccessControlType() {
+        return accessControlType;
+    }
+
+    public void setAccessControlType(AccessControlTypeEnum accessControlType) {
+        this.accessControlType = accessControlType;
+    }
+
+    public AccessPolicyDetailInfo withIpList(List<IpInfo> ipList) {
+        this.ipList = ipList;
+        return this;
+    }
+
+    public AccessPolicyDetailInfo addIpListItem(IpInfo ipListItem) {
+        if (this.ipList == null) {
+            this.ipList = new ArrayList<>();
+        }
+        this.ipList.add(ipListItem);
+        return this;
+    }
+
+    public AccessPolicyDetailInfo withIpList(Consumer<List<IpInfo>> ipListSetter) {
+        if (this.ipList == null) {
+            this.ipList = new ArrayList<>();
+        }
+        ipListSetter.accept(this.ipList);
+        return this;
+    }
+
+    /**
+     * 策略的ip列表。
+     * @return ipList
+     */
+    public List<IpInfo> getIpList() {
+        return ipList;
+    }
+
+    public void setIpList(List<IpInfo> ipList) {
+        this.ipList = ipList;
+    }
+
+    public AccessPolicyDetailInfo withIpTotalCount(Integer ipTotalCount) {
+        this.ipTotalCount = ipTotalCount;
+        return this;
+    }
+
+    /**
+     * 策略总数。
+     * minimum: 0
+     * maximum: 1000
+     * @return ipTotalCount
+     */
+    public Integer getIpTotalCount() {
+        return ipTotalCount;
+    }
+
+    public void setIpTotalCount(Integer ipTotalCount) {
+        this.ipTotalCount = ipTotalCount;
+    }
+
     public AccessPolicyDetailInfo withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
@@ -156,7 +313,7 @@ public class AccessPolicyDetailInfo {
     }
 
     /**
-     * 用户otp设备绑定时间。
+     * 接入策略创建的时间。
      * @return createTime
      */
     public String getCreateTime() {
@@ -177,13 +334,15 @@ public class AccessPolicyDetailInfo {
         }
         AccessPolicyDetailInfo that = (AccessPolicyDetailInfo) obj;
         return Objects.equals(this.policyName, that.policyName)
-            && Objects.equals(this.blacklistType, that.blacklistType) && Objects.equals(this.policyId, that.policyId)
-            && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.blacklistType, that.blacklistType)
+            && Objects.equals(this.accessControlType, that.accessControlType)
+            && Objects.equals(this.ipList, that.ipList) && Objects.equals(this.ipTotalCount, that.ipTotalCount)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyName, blacklistType, policyId, createTime);
+        return Objects.hash(policyName, blacklistType, accessControlType, ipList, ipTotalCount, policyId, createTime);
     }
 
     @Override
@@ -192,6 +351,9 @@ public class AccessPolicyDetailInfo {
         sb.append("class AccessPolicyDetailInfo {\n");
         sb.append("    policyName: ").append(toIndentedString(policyName)).append("\n");
         sb.append("    blacklistType: ").append(toIndentedString(blacklistType)).append("\n");
+        sb.append("    accessControlType: ").append(toIndentedString(accessControlType)).append("\n");
+        sb.append("    ipList: ").append(toIndentedString(ipList)).append("\n");
+        sb.append("    ipTotalCount: ").append(toIndentedString(ipTotalCount)).append("\n");
         sb.append("    policyId: ").append(toIndentedString(policyId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("}");

@@ -29,6 +29,16 @@ public class ListGdgwRouteTablesRequest {
     private List<String> extFields = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "gdgw_id")
 
     private String gdgwId;
@@ -184,6 +194,42 @@ public class ListGdgwRouteTablesRequest {
         this.extFields = extFields;
     }
 
+    public ListGdgwRouteTablesRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页返回的个数。 取值范围：1~2000。
+     * minimum: 1
+     * maximum: 2000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListGdgwRouteTablesRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 上一页最后一条资源记录的ID，为空时为查询第一页。 使用说明：必须与limit一起使用。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     public ListGdgwRouteTablesRequest withGdgwId(String gdgwId) {
         this.gdgwId = gdgwId;
         return this;
@@ -310,6 +356,7 @@ public class ListGdgwRouteTablesRequest {
         }
         ListGdgwRouteTablesRequest that = (ListGdgwRouteTablesRequest) obj;
         return Objects.equals(this.fields, that.fields) && Objects.equals(this.extFields, that.extFields)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
             && Objects.equals(this.gdgwId, that.gdgwId) && Objects.equals(this.nexthop, that.nexthop)
             && Objects.equals(this.destination, that.destination)
             && Objects.equals(this.addressFamily, that.addressFamily);
@@ -317,7 +364,7 @@ public class ListGdgwRouteTablesRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(fields, extFields, gdgwId, nexthop, destination, addressFamily);
+        return Objects.hash(fields, extFields, limit, marker, gdgwId, nexthop, destination, addressFamily);
     }
 
     @Override
@@ -326,6 +373,8 @@ public class ListGdgwRouteTablesRequest {
         sb.append("class ListGdgwRouteTablesRequest {\n");
         sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
         sb.append("    extFields: ").append(toIndentedString(extFields)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    gdgwId: ").append(toIndentedString(gdgwId)).append("\n");
         sb.append("    nexthop: ").append(toIndentedString(nexthop)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");

@@ -20,6 +20,11 @@ public class BaseResponse {
 
     private String errorMsg;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "encoded_authorization_message")
+
+    private String encodedAuthorizationMessage;
+
     public BaseResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
@@ -54,6 +59,23 @@ public class BaseResponse {
         this.errorMsg = errorMsg;
     }
 
+    public BaseResponse withEncodedAuthorizationMessage(String encodedAuthorizationMessage) {
+        this.encodedAuthorizationMessage = encodedAuthorizationMessage;
+        return this;
+    }
+
+    /**
+     * 加密后的详细拒绝原因，用户可以自行调用STS服务的decode-authorization-message接口进行解密。
+     * @return encodedAuthorizationMessage
+     */
+    public String getEncodedAuthorizationMessage() {
+        return encodedAuthorizationMessage;
+    }
+
+    public void setEncodedAuthorizationMessage(String encodedAuthorizationMessage) {
+        this.encodedAuthorizationMessage = encodedAuthorizationMessage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class BaseResponse {
             return false;
         }
         BaseResponse that = (BaseResponse) obj;
-        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.encodedAuthorizationMessage, that.encodedAuthorizationMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(errorCode, errorMsg);
+        return Objects.hash(errorCode, errorMsg, encodedAuthorizationMessage);
     }
 
     @Override
@@ -77,6 +100,9 @@ public class BaseResponse {
         sb.append("class BaseResponse {\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    encodedAuthorizationMessage: ")
+            .append(toIndentedString(encodedAuthorizationMessage))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

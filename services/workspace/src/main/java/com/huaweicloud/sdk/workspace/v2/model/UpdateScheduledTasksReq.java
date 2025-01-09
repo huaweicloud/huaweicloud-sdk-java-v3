@@ -211,6 +211,11 @@ public class UpdateScheduledTasksReq {
 
     private Boolean isGray;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "wait_time")
+
+    private Integer waitTime;
+
     public UpdateScheduledTasksReq withScheduledType(ScheduledTypeEnum scheduledType) {
         this.scheduledType = scheduledType;
         return this;
@@ -426,7 +431,7 @@ public class UpdateScheduledTasksReq {
     }
 
     /**
-     * 触发场景。POST_CREATE_DESKTOP_SUCCESS：创建桌面成功后，POST_REBUILD_DESKTOP_SUCCESS：重建桌面成功后，POST_REATTACH_DESKTOP_SUCCESS：触发重建的分配用户任务成功后。
+     * 触发场景。POST_CREATE_DESKTOP_SUCCESS：创建桌面成功后，POST_REBUILD_DESKTOP_SUCCESS：重建桌面成功后，POST_REATTACH_DESKTOP_SUCCESS：触发重建的分配用户任务成功后，POST_DESKTOP_DISCONNECTED：桌面断开连接后。
      * @return lifeCycleType
      */
     public String getLifeCycleType() {
@@ -608,6 +613,25 @@ public class UpdateScheduledTasksReq {
         this.isGray = isGray;
     }
 
+    public UpdateScheduledTasksReq withWaitTime(Integer waitTime) {
+        this.waitTime = waitTime;
+        return this;
+    }
+
+    /**
+     * 触发式任务触发后，等待时长。
+     * minimum: 0
+     * maximum: 43200
+     * @return waitTime
+     */
+    public Integer getWaitTime() {
+        return waitTime;
+    }
+
+    public void setWaitTime(Integer waitTime) {
+        this.waitTime = waitTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -630,7 +654,7 @@ public class UpdateScheduledTasksReq {
             && Objects.equals(this.description, that.description) && Objects.equals(this.enable, that.enable)
             && Objects.equals(this.extraParams, that.extraParams)
             && Objects.equals(this.applyObjects, that.applyObjects) && Objects.equals(this.priority, that.priority)
-            && Objects.equals(this.isGray, that.isGray);
+            && Objects.equals(this.isGray, that.isGray) && Objects.equals(this.waitTime, that.waitTime);
     }
 
     @Override
@@ -655,7 +679,8 @@ public class UpdateScheduledTasksReq {
             extraParams,
             applyObjects,
             priority,
-            isGray);
+            isGray,
+            waitTime);
     }
 
     @Override
@@ -683,6 +708,7 @@ public class UpdateScheduledTasksReq {
         sb.append("    applyObjects: ").append(toIndentedString(applyObjects)).append("\n");
         sb.append("    priority: ").append(toIndentedString(priority)).append("\n");
         sb.append("    isGray: ").append(toIndentedString(isGray)).append("\n");
+        sb.append("    waitTime: ").append(toIndentedString(waitTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

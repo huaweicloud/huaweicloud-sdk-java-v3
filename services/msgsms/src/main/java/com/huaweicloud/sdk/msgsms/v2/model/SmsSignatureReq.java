@@ -55,6 +55,11 @@ public class SmsSignatureReq {
 
     private String sourceTitleContent;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "qualification_id")
+
+    private String qualificationId;
+
     public SmsSignatureReq withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -112,7 +117,7 @@ public class SmsSignatureReq {
     }
 
     /**
-     * 是否涉及第三方权益 1. Yes: 是 2. No:
+     * 是否涉及第三方权益 1. Yes: 是 2. No: 
      * @return isInvolvedThird
      */
     public String getIsInvolvedThird() {
@@ -210,6 +215,23 @@ public class SmsSignatureReq {
         this.sourceTitleContent = sourceTitleContent;
     }
 
+    public SmsSignatureReq withQualificationId(String qualificationId) {
+        this.qualificationId = qualificationId;
+        return this;
+    }
+
+    /**
+     * 资质ID ，当前考虑存量应用的接口兼容性，代码未做强制校验，但创建签名时请务必携带资质ID，否则会导致资质审核失败
+     * @return qualificationId
+     */
+    public String getQualificationId() {
+        return qualificationId;
+    }
+
+    public void setQualificationId(String qualificationId) {
+        this.qualificationId = qualificationId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -225,7 +247,8 @@ public class SmsSignatureReq {
             && Objects.equals(this.signatureName, that.signatureName)
             && Objects.equals(this.signatureSource, that.signatureSource)
             && Objects.equals(this.signatureType, that.signatureType)
-            && Objects.equals(this.sourceTitleContent, that.sourceTitleContent);
+            && Objects.equals(this.sourceTitleContent, that.sourceTitleContent)
+            && Objects.equals(this.qualificationId, that.qualificationId);
     }
 
     @Override
@@ -238,7 +261,8 @@ public class SmsSignatureReq {
             signatureName,
             signatureSource,
             signatureType,
-            sourceTitleContent);
+            sourceTitleContent,
+            qualificationId);
     }
 
     @Override
@@ -254,6 +278,7 @@ public class SmsSignatureReq {
         sb.append("    signatureSource: ").append(toIndentedString(signatureSource)).append("\n");
         sb.append("    signatureType: ").append(toIndentedString(signatureType)).append("\n");
         sb.append("    sourceTitleContent: ").append(toIndentedString(sourceTitleContent)).append("\n");
+        sb.append("    qualificationId: ").append(toIndentedString(qualificationId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

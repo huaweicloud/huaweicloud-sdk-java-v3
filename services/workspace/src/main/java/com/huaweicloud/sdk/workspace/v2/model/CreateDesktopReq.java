@@ -104,6 +104,16 @@ public class CreateDesktopReq {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_id")
+
+    private String flavorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "share_resource_sku")
+
+    private String shareResourceSku;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_type")
 
     private String imageType;
@@ -144,6 +154,11 @@ public class CreateDesktopReq {
     private String desktopName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_ips")
+
+    private List<String> desktopIps = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "size")
 
     private Integer size;
@@ -154,9 +169,34 @@ public class CreateDesktopReq {
     private Boolean emailNotification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_id")
+
+    private String enterpriseId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ou_name")
+
+    private String ouName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_id")
+
+    private String vpcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subnet_ids")
+
+    private List<String> subnetIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -164,14 +204,215 @@ public class CreateDesktopReq {
     private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scheduler_hints")
+
+    private WdhParam schedulerHints;
+
+    /**
+     * 桌面来源。  - DEFAULT：默认桌面来源 - ONEMOBILE：协同办公云桌面OneMobile
+     */
+    public static final class DesktopIsvEnum {
+
+        /**
+         * Enum DEFAULT for value: "DEFAULT"
+         */
+        public static final DesktopIsvEnum DEFAULT = new DesktopIsvEnum("DEFAULT");
+
+        /**
+         * Enum ONEMOBILE for value: "ONEMOBILE"
+         */
+        public static final DesktopIsvEnum ONEMOBILE = new DesktopIsvEnum("ONEMOBILE");
+
+        private static final Map<String, DesktopIsvEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DesktopIsvEnum> createStaticFields() {
+            Map<String, DesktopIsvEnum> map = new HashMap<>();
+            map.put("DEFAULT", DEFAULT);
+            map.put("ONEMOBILE", ONEMOBILE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DesktopIsvEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DesktopIsvEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DesktopIsvEnum(value));
+        }
+
+        public static DesktopIsvEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DesktopIsvEnum) {
+                return this.value.equals(((DesktopIsvEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desktop_isv")
+
+    private DesktopIsvEnum desktopIsv;
+
+    /**
+     * 接入模式。在非对接AD场景首次创建桌面时使用。 - INTERNET：互联网接入。 - DEDICATED：专线接入。 - BOTH：代表两种接入方式都支持。
+     */
+    public static final class AccessModeEnum {
+
+        /**
+         * Enum INTERNET for value: "INTERNET"
+         */
+        public static final AccessModeEnum INTERNET = new AccessModeEnum("INTERNET");
+
+        /**
+         * Enum DEDICATED for value: "DEDICATED"
+         */
+        public static final AccessModeEnum DEDICATED = new AccessModeEnum("DEDICATED");
+
+        /**
+         * Enum BOTH for value: "BOTH"
+         */
+        public static final AccessModeEnum BOTH = new AccessModeEnum("BOTH");
+
+        private static final Map<String, AccessModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AccessModeEnum> createStaticFields() {
+            Map<String, AccessModeEnum> map = new HashMap<>();
+            map.put("INTERNET", INTERNET);
+            map.put("DEDICATED", DEDICATED);
+            map.put("BOTH", BOTH);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AccessModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AccessModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessModeEnum(value));
+        }
+
+        public static AccessModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AccessModeEnum) {
+                return this.value.equals(((AccessModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "access_mode")
+
+    private AccessModeEnum accessMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apply_shared_vpc_dedicated_param")
+
+    private ApplySharedVpcDedicatedParam applySharedVpcDedicatedParam;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dedicated_subnets")
+
+    private String dedicatedSubnets;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip")
 
     private Eip eip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "adn")
+
+    private Adn adn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "exclusive_host_id")
+
+    private String exclusiveHostId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktop_name_policy_id")
 
     private String desktopNamePolicyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hour_package_product_id")
+
+    private String hourPackageProductId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hour_package_offering_id")
+
+    private String hourPackageOfferingId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "root_resource_ids")
+
+    private List<String> rootResourceIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "inst_info_ids")
+
+    private List<String> instInfoIds = null;
 
     public CreateDesktopReq withDesktopType(DesktopTypeEnum desktopType) {
         this.desktopType = desktopType;
@@ -222,6 +463,40 @@ public class CreateDesktopReq {
 
     public void setProductId(String productId) {
         this.productId = productId;
+    }
+
+    public CreateDesktopReq withFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+        return this;
+    }
+
+    /**
+     * 套餐flavorID。
+     * @return flavorId
+     */
+    public String getFlavorId() {
+        return flavorId;
+    }
+
+    public void setFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+    }
+
+    public CreateDesktopReq withShareResourceSku(String shareResourceSku) {
+        this.shareResourceSku = shareResourceSku;
+        return this;
+    }
+
+    /**
+     * 桌面协同资源SKU码
+     * @return shareResourceSku
+     */
+    public String getShareResourceSku() {
+        return shareResourceSku;
+    }
+
+    public void setShareResourceSku(String shareResourceSku) {
+        this.shareResourceSku = shareResourceSku;
     }
 
     public CreateDesktopReq withImageType(String imageType) {
@@ -433,6 +708,39 @@ public class CreateDesktopReq {
         this.desktopName = desktopName;
     }
 
+    public CreateDesktopReq withDesktopIps(List<String> desktopIps) {
+        this.desktopIps = desktopIps;
+        return this;
+    }
+
+    public CreateDesktopReq addDesktopIpsItem(String desktopIpsItem) {
+        if (this.desktopIps == null) {
+            this.desktopIps = new ArrayList<>();
+        }
+        this.desktopIps.add(desktopIpsItem);
+        return this;
+    }
+
+    public CreateDesktopReq withDesktopIps(Consumer<List<String>> desktopIpsSetter) {
+        if (this.desktopIps == null) {
+            this.desktopIps = new ArrayList<>();
+        }
+        desktopIpsSetter.accept(this.desktopIps);
+        return this;
+    }
+
+    /**
+     * 桌面指定分配的ip地址列表,最小为0，最大为100。
+     * @return desktopIps
+     */
+    public List<String> getDesktopIps() {
+        return desktopIps;
+    }
+
+    public void setDesktopIps(List<String> desktopIps) {
+        this.desktopIps = desktopIps;
+    }
+
     public CreateDesktopReq withSize(Integer size) {
         this.size = size;
         return this;
@@ -469,6 +777,23 @@ public class CreateDesktopReq {
         this.emailNotification = emailNotification;
     }
 
+    public CreateDesktopReq withEnterpriseId(String enterpriseId) {
+        this.enterpriseId = enterpriseId;
+        return this;
+    }
+
+    /**
+     * 企业ID，在非对接AD场景首次创建桌面时使用。
+     * @return enterpriseId
+     */
+    public String getEnterpriseId() {
+        return enterpriseId;
+    }
+
+    public void setEnterpriseId(String enterpriseId) {
+        this.enterpriseId = enterpriseId;
+    }
+
     public CreateDesktopReq withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -484,6 +809,90 @@ public class CreateDesktopReq {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public CreateDesktopReq withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 包周期订购ID，CBC订购回调时使用。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
+    public CreateDesktopReq withOuName(String ouName) {
+        this.ouName = ouName;
+        return this;
+    }
+
+    /**
+     * OU名称，在对接AD时使用，需提前在AD中创建OU。
+     * @return ouName
+     */
+    public String getOuName() {
+        return ouName;
+    }
+
+    public void setOuName(String ouName) {
+        this.ouName = ouName;
+    }
+
+    public CreateDesktopReq withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    /**
+     * 在非对接AD场景首次创建桌面时使用。
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    public CreateDesktopReq withSubnetIds(List<String> subnetIds) {
+        this.subnetIds = subnetIds;
+        return this;
+    }
+
+    public CreateDesktopReq addSubnetIdsItem(String subnetIdsItem) {
+        if (this.subnetIds == null) {
+            this.subnetIds = new ArrayList<>();
+        }
+        this.subnetIds.add(subnetIdsItem);
+        return this;
+    }
+
+    public CreateDesktopReq withSubnetIds(Consumer<List<String>> subnetIdsSetter) {
+        if (this.subnetIds == null) {
+            this.subnetIds = new ArrayList<>();
+        }
+        subnetIdsSetter.accept(this.subnetIds);
+        return this;
+    }
+
+    /**
+     * 在非对接AD场景首次创建桌面时使用。
+     * @return subnetIds
+     */
+    public List<String> getSubnetIds() {
+        return subnetIds;
+    }
+
+    public void setSubnetIds(List<String> subnetIds) {
+        this.subnetIds = subnetIds;
     }
 
     public CreateDesktopReq withTags(List<Tag> tags) {
@@ -519,6 +928,111 @@ public class CreateDesktopReq {
         this.tags = tags;
     }
 
+    public CreateDesktopReq withSchedulerHints(WdhParam schedulerHints) {
+        this.schedulerHints = schedulerHints;
+        return this;
+    }
+
+    public CreateDesktopReq withSchedulerHints(Consumer<WdhParam> schedulerHintsSetter) {
+        if (this.schedulerHints == null) {
+            this.schedulerHints = new WdhParam();
+            schedulerHintsSetter.accept(this.schedulerHints);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get schedulerHints
+     * @return schedulerHints
+     */
+    public WdhParam getSchedulerHints() {
+        return schedulerHints;
+    }
+
+    public void setSchedulerHints(WdhParam schedulerHints) {
+        this.schedulerHints = schedulerHints;
+    }
+
+    public CreateDesktopReq withDesktopIsv(DesktopIsvEnum desktopIsv) {
+        this.desktopIsv = desktopIsv;
+        return this;
+    }
+
+    /**
+     * 桌面来源。  - DEFAULT：默认桌面来源 - ONEMOBILE：协同办公云桌面OneMobile
+     * @return desktopIsv
+     */
+    public DesktopIsvEnum getDesktopIsv() {
+        return desktopIsv;
+    }
+
+    public void setDesktopIsv(DesktopIsvEnum desktopIsv) {
+        this.desktopIsv = desktopIsv;
+    }
+
+    public CreateDesktopReq withAccessMode(AccessModeEnum accessMode) {
+        this.accessMode = accessMode;
+        return this;
+    }
+
+    /**
+     * 接入模式。在非对接AD场景首次创建桌面时使用。 - INTERNET：互联网接入。 - DEDICATED：专线接入。 - BOTH：代表两种接入方式都支持。
+     * @return accessMode
+     */
+    public AccessModeEnum getAccessMode() {
+        return accessMode;
+    }
+
+    public void setAccessMode(AccessModeEnum accessMode) {
+        this.accessMode = accessMode;
+    }
+
+    public CreateDesktopReq withApplySharedVpcDedicatedParam(
+        ApplySharedVpcDedicatedParam applySharedVpcDedicatedParam) {
+        this.applySharedVpcDedicatedParam = applySharedVpcDedicatedParam;
+        return this;
+    }
+
+    public CreateDesktopReq withApplySharedVpcDedicatedParam(
+        Consumer<ApplySharedVpcDedicatedParam> applySharedVpcDedicatedParamSetter) {
+        if (this.applySharedVpcDedicatedParam == null) {
+            this.applySharedVpcDedicatedParam = new ApplySharedVpcDedicatedParam();
+            applySharedVpcDedicatedParamSetter.accept(this.applySharedVpcDedicatedParam);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get applySharedVpcDedicatedParam
+     * @return applySharedVpcDedicatedParam
+     */
+    public ApplySharedVpcDedicatedParam getApplySharedVpcDedicatedParam() {
+        return applySharedVpcDedicatedParam;
+    }
+
+    public void setApplySharedVpcDedicatedParam(ApplySharedVpcDedicatedParam applySharedVpcDedicatedParam) {
+        this.applySharedVpcDedicatedParam = applySharedVpcDedicatedParam;
+    }
+
+    public CreateDesktopReq withDedicatedSubnets(String dedicatedSubnets) {
+        this.dedicatedSubnets = dedicatedSubnets;
+        return this;
+    }
+
+    /**
+     * 专线接入网段列表，多个网段信息用分号隔开，列表长度不超过5。在非对接AD场景首次创建桌面时使用。
+     * @return dedicatedSubnets
+     */
+    public String getDedicatedSubnets() {
+        return dedicatedSubnets;
+    }
+
+    public void setDedicatedSubnets(String dedicatedSubnets) {
+        this.dedicatedSubnets = dedicatedSubnets;
+    }
+
     public CreateDesktopReq withEip(Eip eip) {
         this.eip = eip;
         return this;
@@ -545,6 +1059,49 @@ public class CreateDesktopReq {
         this.eip = eip;
     }
 
+    public CreateDesktopReq withAdn(Adn adn) {
+        this.adn = adn;
+        return this;
+    }
+
+    public CreateDesktopReq withAdn(Consumer<Adn> adnSetter) {
+        if (this.adn == null) {
+            this.adn = new Adn();
+            adnSetter.accept(this.adn);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get adn
+     * @return adn
+     */
+    public Adn getAdn() {
+        return adn;
+    }
+
+    public void setAdn(Adn adn) {
+        this.adn = adn;
+    }
+
+    public CreateDesktopReq withExclusiveHostId(String exclusiveHostId) {
+        this.exclusiveHostId = exclusiveHostId;
+        return this;
+    }
+
+    /**
+     * 专享主机ID，创建专享桌面时如果在指定专享主机中创建则必选
+     * @return exclusiveHostId
+     */
+    public String getExclusiveHostId() {
+        return exclusiveHostId;
+    }
+
+    public void setExclusiveHostId(String exclusiveHostId) {
+        this.exclusiveHostId = exclusiveHostId;
+    }
+
     public CreateDesktopReq withDesktopNamePolicyId(String desktopNamePolicyId) {
         this.desktopNamePolicyId = desktopNamePolicyId;
         return this;
@@ -562,6 +1119,106 @@ public class CreateDesktopReq {
         this.desktopNamePolicyId = desktopNamePolicyId;
     }
 
+    public CreateDesktopReq withHourPackageProductId(String hourPackageProductId) {
+        this.hourPackageProductId = hourPackageProductId;
+        return this;
+    }
+
+    /**
+     * 桌面小时包套餐ID。
+     * @return hourPackageProductId
+     */
+    public String getHourPackageProductId() {
+        return hourPackageProductId;
+    }
+
+    public void setHourPackageProductId(String hourPackageProductId) {
+        this.hourPackageProductId = hourPackageProductId;
+    }
+
+    public CreateDesktopReq withHourPackageOfferingId(String hourPackageOfferingId) {
+        this.hourPackageOfferingId = hourPackageOfferingId;
+        return this;
+    }
+
+    /**
+     * 桌面小时包offeringID。
+     * @return hourPackageOfferingId
+     */
+    public String getHourPackageOfferingId() {
+        return hourPackageOfferingId;
+    }
+
+    public void setHourPackageOfferingId(String hourPackageOfferingId) {
+        this.hourPackageOfferingId = hourPackageOfferingId;
+    }
+
+    public CreateDesktopReq withRootResourceIds(List<String> rootResourceIds) {
+        this.rootResourceIds = rootResourceIds;
+        return this;
+    }
+
+    public CreateDesktopReq addRootResourceIdsItem(String rootResourceIdsItem) {
+        if (this.rootResourceIds == null) {
+            this.rootResourceIds = new ArrayList<>();
+        }
+        this.rootResourceIds.add(rootResourceIdsItem);
+        return this;
+    }
+
+    public CreateDesktopReq withRootResourceIds(Consumer<List<String>> rootResourceIdsSetter) {
+        if (this.rootResourceIds == null) {
+            this.rootResourceIds = new ArrayList<>();
+        }
+        rootResourceIdsSetter.accept(this.rootResourceIds);
+        return this;
+    }
+
+    /**
+     * 根资源ID列表，创建小时包桌面时使用，最小为0，最大为100。
+     * @return rootResourceIds
+     */
+    public List<String> getRootResourceIds() {
+        return rootResourceIds;
+    }
+
+    public void setRootResourceIds(List<String> rootResourceIds) {
+        this.rootResourceIds = rootResourceIds;
+    }
+
+    public CreateDesktopReq withInstInfoIds(List<String> instInfoIds) {
+        this.instInfoIds = instInfoIds;
+        return this;
+    }
+
+    public CreateDesktopReq addInstInfoIdsItem(String instInfoIdsItem) {
+        if (this.instInfoIds == null) {
+            this.instInfoIds = new ArrayList<>();
+        }
+        this.instInfoIds.add(instInfoIdsItem);
+        return this;
+    }
+
+    public CreateDesktopReq withInstInfoIds(Consumer<List<String>> instInfoIdsSetter) {
+        if (this.instInfoIds == null) {
+            this.instInfoIds = new ArrayList<>();
+        }
+        instInfoIdsSetter.accept(this.instInfoIds);
+        return this;
+    }
+
+    /**
+     * instInfoId列表，创建小时包桌面时使用，最小为0，最大为100。
+     * @return instInfoIds
+     */
+    public List<String> getInstInfoIds() {
+        return instInfoIds;
+    }
+
+    public void setInstInfoIds(List<String> instInfoIds) {
+        this.instInfoIds = instInfoIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -573,15 +1230,28 @@ public class CreateDesktopReq {
         CreateDesktopReq that = (CreateDesktopReq) obj;
         return Objects.equals(this.desktopType, that.desktopType)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.productId, that.productId) && Objects.equals(this.imageType, that.imageType)
-            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.rootVolume, that.rootVolume)
-            && Objects.equals(this.dataVolumes, that.dataVolumes) && Objects.equals(this.nics, that.nics)
-            && Objects.equals(this.securityGroups, that.securityGroups) && Objects.equals(this.desktops, that.desktops)
-            && Objects.equals(this.desktopName, that.desktopName) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.flavorId, that.flavorId)
+            && Objects.equals(this.shareResourceSku, that.shareResourceSku)
+            && Objects.equals(this.imageType, that.imageType) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.rootVolume, that.rootVolume) && Objects.equals(this.dataVolumes, that.dataVolumes)
+            && Objects.equals(this.nics, that.nics) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.desktops, that.desktops) && Objects.equals(this.desktopName, that.desktopName)
+            && Objects.equals(this.desktopIps, that.desktopIps) && Objects.equals(this.size, that.size)
             && Objects.equals(this.emailNotification, that.emailNotification)
+            && Objects.equals(this.enterpriseId, that.enterpriseId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.eip, that.eip)
-            && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId);
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.ouName, that.ouName)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetIds, that.subnetIds)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.schedulerHints, that.schedulerHints)
+            && Objects.equals(this.desktopIsv, that.desktopIsv) && Objects.equals(this.accessMode, that.accessMode)
+            && Objects.equals(this.applySharedVpcDedicatedParam, that.applySharedVpcDedicatedParam)
+            && Objects.equals(this.dedicatedSubnets, that.dedicatedSubnets) && Objects.equals(this.eip, that.eip)
+            && Objects.equals(this.adn, that.adn) && Objects.equals(this.exclusiveHostId, that.exclusiveHostId)
+            && Objects.equals(this.desktopNamePolicyId, that.desktopNamePolicyId)
+            && Objects.equals(this.hourPackageProductId, that.hourPackageProductId)
+            && Objects.equals(this.hourPackageOfferingId, that.hourPackageOfferingId)
+            && Objects.equals(this.rootResourceIds, that.rootResourceIds)
+            && Objects.equals(this.instInfoIds, that.instInfoIds);
     }
 
     @Override
@@ -589,6 +1259,8 @@ public class CreateDesktopReq {
         return Objects.hash(desktopType,
             availabilityZone,
             productId,
+            flavorId,
+            shareResourceSku,
             imageType,
             imageId,
             rootVolume,
@@ -597,12 +1269,29 @@ public class CreateDesktopReq {
             securityGroups,
             desktops,
             desktopName,
+            desktopIps,
             size,
             emailNotification,
+            enterpriseId,
             enterpriseProjectId,
+            orderId,
+            ouName,
+            vpcId,
+            subnetIds,
             tags,
+            schedulerHints,
+            desktopIsv,
+            accessMode,
+            applySharedVpcDedicatedParam,
+            dedicatedSubnets,
             eip,
-            desktopNamePolicyId);
+            adn,
+            exclusiveHostId,
+            desktopNamePolicyId,
+            hourPackageProductId,
+            hourPackageOfferingId,
+            rootResourceIds,
+            instInfoIds);
     }
 
     @Override
@@ -612,6 +1301,8 @@ public class CreateDesktopReq {
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
+        sb.append("    shareResourceSku: ").append(toIndentedString(shareResourceSku)).append("\n");
         sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    rootVolume: ").append(toIndentedString(rootVolume)).append("\n");
@@ -620,12 +1311,31 @@ public class CreateDesktopReq {
         sb.append("    securityGroups: ").append(toIndentedString(securityGroups)).append("\n");
         sb.append("    desktops: ").append(toIndentedString(desktops)).append("\n");
         sb.append("    desktopName: ").append(toIndentedString(desktopName)).append("\n");
+        sb.append("    desktopIps: ").append(toIndentedString(desktopIps)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    emailNotification: ").append(toIndentedString(emailNotification)).append("\n");
+        sb.append("    enterpriseId: ").append(toIndentedString(enterpriseId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    ouName: ").append(toIndentedString(ouName)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    subnetIds: ").append(toIndentedString(subnetIds)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    schedulerHints: ").append(toIndentedString(schedulerHints)).append("\n");
+        sb.append("    desktopIsv: ").append(toIndentedString(desktopIsv)).append("\n");
+        sb.append("    accessMode: ").append(toIndentedString(accessMode)).append("\n");
+        sb.append("    applySharedVpcDedicatedParam: ")
+            .append(toIndentedString(applySharedVpcDedicatedParam))
+            .append("\n");
+        sb.append("    dedicatedSubnets: ").append(toIndentedString(dedicatedSubnets)).append("\n");
         sb.append("    eip: ").append(toIndentedString(eip)).append("\n");
+        sb.append("    adn: ").append(toIndentedString(adn)).append("\n");
+        sb.append("    exclusiveHostId: ").append(toIndentedString(exclusiveHostId)).append("\n");
         sb.append("    desktopNamePolicyId: ").append(toIndentedString(desktopNamePolicyId)).append("\n");
+        sb.append("    hourPackageProductId: ").append(toIndentedString(hourPackageProductId)).append("\n");
+        sb.append("    hourPackageOfferingId: ").append(toIndentedString(hourPackageOfferingId)).append("\n");
+        sb.append("    rootResourceIds: ").append(toIndentedString(rootResourceIds)).append("\n");
+        sb.append("    instInfoIds: ").append(toIndentedString(instInfoIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

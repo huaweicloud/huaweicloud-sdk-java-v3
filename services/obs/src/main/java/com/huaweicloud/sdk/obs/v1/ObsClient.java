@@ -365,6 +365,8 @@ public class ObsClient {
      * 
      * 有关权限控制的更多信息请参考《对象存储服务权限配置指南》的[OBS权限控制概述](https://support.huaweicloud.com/perms-cfg-obs/obs_40_0001.html)章节。
      * 
+     * OBS自定义域名配置暂不支持HTTPS访问，只支持HTTP访问自定义域名。如需导入证书使用HTTPS协议访问，请[提交工单](https://support.huaweicloud.com/usermanual-ticket/zh-cn_topic_0127038618.html)。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request GetBucketCustomdomainRequest 请求对象
@@ -382,6 +384,8 @@ public class ObsClient {
      * 要正确执行此操作，需要确保执行者有GetBucketcustomdomainConfiguration权限。桶拥有者默认具有此权限，并且可以将此权限授予其他人。
      * 
      * 有关权限控制的更多信息请参考《对象存储服务权限配置指南》的[OBS权限控制概述](https://support.huaweicloud.com/perms-cfg-obs/obs_40_0001.html)章节。
+     * 
+     * OBS自定义域名配置暂不支持HTTPS访问，只支持HTTP访问自定义域名。如需导入证书使用HTTPS协议访问，请[提交工单](https://support.huaweicloud.com/usermanual-ticket/zh-cn_topic_0127038618.html)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -693,6 +697,8 @@ public class ObsClient {
      * 
      * 必须保证此自定义域名通过DNS能够正确解析到OBS服务。
      * 
+     * OBS自定义域名配置暂不支持HTTPS访问，只支持HTTP访问自定义域名。如需导入证书使用HTTPS协议访问，请[提交工单](https://support.huaweicloud.com/usermanual-ticket/zh-cn_topic_0127038618.html)。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request SetBucketCustomedomainRequest 请求对象
@@ -708,6 +714,8 @@ public class ObsClient {
      * OBS使用PUT操作为桶设置自定义域名，设置成功之后，用户访问桶的自定义域名就能访问到桶。
      * 
      * 必须保证此自定义域名通过DNS能够正确解析到OBS服务。
+     * 
+     * OBS自定义域名配置暂不支持HTTPS访问，只支持HTTP访问自定义域名。如需导入证书使用HTTPS协议访问，请[提交工单](https://support.huaweicloud.com/usermanual-ticket/zh-cn_topic_0127038618.html)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

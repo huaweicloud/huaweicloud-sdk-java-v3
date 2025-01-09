@@ -29,6 +29,11 @@ public class RuleCommand {
     private String commandId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "command_time")
+
+    private String commandTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "interaction_rules")
 
     private List<LiveRoomInteractionRuleInfo> interactionRules = null;
@@ -84,6 +89,23 @@ public class RuleCommand {
         this.commandId = commandId;
     }
 
+    public RuleCommand withCommandTime(String commandTime) {
+        this.commandTime = commandTime;
+        return this;
+    }
+
+    /**
+     * 命令时间。格式遵循：RFC 3339 如\"2021-01-10T08:43:17Z\"。
+     * @return commandTime
+     */
+    public String getCommandTime() {
+        return commandTime;
+    }
+
+    public void setCommandTime(String commandTime) {
+        this.commandTime = commandTime;
+    }
+
     public RuleCommand withInteractionRules(List<LiveRoomInteractionRuleInfo> interactionRules) {
         this.interactionRules = interactionRules;
         return this;
@@ -127,13 +149,13 @@ public class RuleCommand {
         }
         RuleCommand that = (RuleCommand) obj;
         return Objects.equals(this.roomId, that.roomId) && Objects.equals(this.jobId, that.jobId)
-            && Objects.equals(this.commandId, that.commandId)
+            && Objects.equals(this.commandId, that.commandId) && Objects.equals(this.commandTime, that.commandTime)
             && Objects.equals(this.interactionRules, that.interactionRules);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(roomId, jobId, commandId, interactionRules);
+        return Objects.hash(roomId, jobId, commandId, commandTime, interactionRules);
     }
 
     @Override
@@ -143,6 +165,7 @@ public class RuleCommand {
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    commandId: ").append(toIndentedString(commandId)).append("\n");
+        sb.append("    commandTime: ").append(toIndentedString(commandTime)).append("\n");
         sb.append("    interactionRules: ").append(toIndentedString(interactionRules)).append("\n");
         sb.append("}");
         return sb.toString();

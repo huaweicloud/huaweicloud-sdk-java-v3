@@ -33,7 +33,7 @@ public class RoutePolicy {
     /**
      * 单台服务器最大的链接会话数。
      * minimum: 1
-     * maximum: 100
+     * maximum: 1024
      * @return maxSession
      */
     public Integer getMaxSession() {

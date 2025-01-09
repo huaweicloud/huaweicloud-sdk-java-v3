@@ -171,130 +171,6 @@ public class CreateScheduledTasksReq {
 
     private String timeZone;
 
-    /**
-     * 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。
-     */
-    public static final class TaskTypeEnum {
-
-        /**
-         * Enum START for value: "START"
-         */
-        public static final TaskTypeEnum START = new TaskTypeEnum("START");
-
-        /**
-         * Enum STOP for value: "STOP"
-         */
-        public static final TaskTypeEnum STOP = new TaskTypeEnum("STOP");
-
-        /**
-         * Enum REBOOT for value: "REBOOT"
-         */
-        public static final TaskTypeEnum REBOOT = new TaskTypeEnum("REBOOT");
-
-        /**
-         * Enum HIBERNATE for value: "HIBERNATE"
-         */
-        public static final TaskTypeEnum HIBERNATE = new TaskTypeEnum("HIBERNATE");
-
-        /**
-         * Enum REBUILD for value: "REBUILD"
-         */
-        public static final TaskTypeEnum REBUILD = new TaskTypeEnum("REBUILD");
-
-        /**
-         * Enum EXECUTE_SCRIPT for value: "EXECUTE_SCRIPT"
-         */
-        public static final TaskTypeEnum EXECUTE_SCRIPT = new TaskTypeEnum("EXECUTE_SCRIPT");
-
-        private static final Map<String, TaskTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, TaskTypeEnum> createStaticFields() {
-            Map<String, TaskTypeEnum> map = new HashMap<>();
-            map.put("START", START);
-            map.put("STOP", STOP);
-            map.put("REBOOT", REBOOT);
-            map.put("HIBERNATE", HIBERNATE);
-            map.put("REBUILD", REBUILD);
-            map.put("EXECUTE_SCRIPT", EXECUTE_SCRIPT);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        TaskTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static TaskTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
-        }
-
-        public static TaskTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof TaskTypeEnum) {
-                return this.value.equals(((TaskTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_type")
-
-    private TaskTypeEnum taskType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_name")
-
-    private String taskName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "force_execute")
-
-    private Boolean forceExecute;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "description")
-
-    private String description;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "extra_params")
-
-    private String extraParams;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "apply_objects")
-
-    private List<ApplyObject> applyObjects = null;
-
     public CreateScheduledTasksReq withScheduledType(ScheduledTypeEnum scheduledType) {
         this.scheduledType = scheduledType;
         return this;
@@ -510,7 +386,7 @@ public class CreateScheduledTasksReq {
     }
 
     /**
-     * 触发场景。POST_CREATE_DESKTOP_SUCCESS：创建桌面成功后，POST_REBUILD_DESKTOP_SUCCESS：重建桌面成功后，POST_REATTACH_DESKTOP_SUCCESS：触发重建的分配用户任务成功后。
+     * 触发场景。POST_CREATE_DESKTOP_SUCCESS：创建桌面成功后，POST_REBUILD_DESKTOP_SUCCESS：重建桌面成功后，POST_REATTACH_DESKTOP_SUCCESS：触发重建的分配用户任务成功后，POST_DESKTOP_DISCONNECTED：桌面断开连接后。
      * @return lifeCycleType
      */
     public String getLifeCycleType() {
@@ -538,124 +414,6 @@ public class CreateScheduledTasksReq {
         this.timeZone = timeZone;
     }
 
-    public CreateScheduledTasksReq withTaskType(TaskTypeEnum taskType) {
-        this.taskType = taskType;
-        return this;
-    }
-
-    /**
-     * 任务类型，可选值为： - START：开机。 - STOP：关机。 - REBOOT：重启。 - HIBERNATE：休眠。 - REBUILD：重建系统盘。 - EXECUTE_SCRIPT：执行脚本。
-     * @return taskType
-     */
-    public TaskTypeEnum getTaskType() {
-        return taskType;
-    }
-
-    public void setTaskType(TaskTypeEnum taskType) {
-        this.taskType = taskType;
-    }
-
-    public CreateScheduledTasksReq withTaskName(String taskName) {
-        this.taskName = taskName;
-        return this;
-    }
-
-    /**
-     * 任务名称。
-     * @return taskName
-     */
-    public String getTaskName() {
-        return taskName;
-    }
-
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
-    }
-
-    public CreateScheduledTasksReq withForceExecute(Boolean forceExecute) {
-        this.forceExecute = forceExecute;
-        return this;
-    }
-
-    /**
-     * 是否强制执行，true表示强制执行，false表示不强制执行。
-     * @return forceExecute
-     */
-    public Boolean getForceExecute() {
-        return forceExecute;
-    }
-
-    public void setForceExecute(Boolean forceExecute) {
-        this.forceExecute = forceExecute;
-    }
-
-    public CreateScheduledTasksReq withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * 描述。
-     * @return description
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public CreateScheduledTasksReq withExtraParams(String extraParams) {
-        this.extraParams = extraParams;
-        return this;
-    }
-
-    /**
-     * 扩展参数，json格式。
-     * @return extraParams
-     */
-    public String getExtraParams() {
-        return extraParams;
-    }
-
-    public void setExtraParams(String extraParams) {
-        this.extraParams = extraParams;
-    }
-
-    public CreateScheduledTasksReq withApplyObjects(List<ApplyObject> applyObjects) {
-        this.applyObjects = applyObjects;
-        return this;
-    }
-
-    public CreateScheduledTasksReq addApplyObjectsItem(ApplyObject applyObjectsItem) {
-        if (this.applyObjects == null) {
-            this.applyObjects = new ArrayList<>();
-        }
-        this.applyObjects.add(applyObjectsItem);
-        return this;
-    }
-
-    public CreateScheduledTasksReq withApplyObjects(Consumer<List<ApplyObject>> applyObjectsSetter) {
-        if (this.applyObjects == null) {
-            this.applyObjects = new ArrayList<>();
-        }
-        applyObjectsSetter.accept(this.applyObjects);
-        return this;
-    }
-
-    /**
-     * 定时任务应用的对象列表。
-     * @return applyObjects
-     */
-    public List<ApplyObject> getApplyObjects() {
-        return applyObjects;
-    }
-
-    public void setApplyObjects(List<ApplyObject> applyObjects) {
-        this.applyObjects = applyObjects;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -673,11 +431,7 @@ public class CreateScheduledTasksReq {
             && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.grayCount, that.grayCount)
             && Objects.equals(this.grayDesktopIds, that.grayDesktopIds)
             && Objects.equals(this.grayFailThreshold, that.grayFailThreshold)
-            && Objects.equals(this.lifeCycleType, that.lifeCycleType) && Objects.equals(this.timeZone, that.timeZone)
-            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.taskName, that.taskName)
-            && Objects.equals(this.forceExecute, that.forceExecute)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.extraParams, that.extraParams)
-            && Objects.equals(this.applyObjects, that.applyObjects);
+            && Objects.equals(this.lifeCycleType, that.lifeCycleType) && Objects.equals(this.timeZone, that.timeZone);
     }
 
     @Override
@@ -694,13 +448,7 @@ public class CreateScheduledTasksReq {
             grayDesktopIds,
             grayFailThreshold,
             lifeCycleType,
-            timeZone,
-            taskType,
-            taskName,
-            forceExecute,
-            description,
-            extraParams,
-            applyObjects);
+            timeZone);
     }
 
     @Override
@@ -720,12 +468,6 @@ public class CreateScheduledTasksReq {
         sb.append("    grayFailThreshold: ").append(toIndentedString(grayFailThreshold)).append("\n");
         sb.append("    lifeCycleType: ").append(toIndentedString(lifeCycleType)).append("\n");
         sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
-        sb.append("    taskType: ").append(toIndentedString(taskType)).append("\n");
-        sb.append("    taskName: ").append(toIndentedString(taskName)).append("\n");
-        sb.append("    forceExecute: ").append(toIndentedString(forceExecute)).append("\n");
-        sb.append("    description: ").append(toIndentedString(description)).append("\n");
-        sb.append("    extraParams: ").append(toIndentedString(extraParams)).append("\n");
-        sb.append("    applyObjects: ").append(toIndentedString(applyObjects)).append("\n");
         sb.append("}");
         return sb.toString();
     }

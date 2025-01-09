@@ -56,7 +56,7 @@ public class ListDesktopsEipsRequest {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
