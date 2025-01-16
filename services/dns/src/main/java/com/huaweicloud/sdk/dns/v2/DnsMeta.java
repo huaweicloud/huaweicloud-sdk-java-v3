@@ -13,13 +13,25 @@ import com.huaweicloud.sdk.dns.v2.model.BatchCreateTagResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetsRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetsRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetsResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeleteZonesRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeleteZonesRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeleteZonesResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchHandTags;
-import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineReq;
+import com.huaweicloud.sdk.dns.v2.model.BatchSetRecordSetsStatusRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchSetRecordSetsStatusRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.BatchSetRecordSetsStatusResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchSetZonesStatusRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchSetZonesStatusRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.BatchSetZonesStatusResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateCustomLineRequest;
+import com.huaweicloud.sdk.dns.v2.model.CreateCustomLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.CreateCustomLineResponse;
-import com.huaweicloud.sdk.dns.v2.model.CreateCustomLines;
 import com.huaweicloud.sdk.dns.v2.model.CreateEipRecordSetRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateEipRecordSetResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateLineGroupRequest;
@@ -89,8 +101,8 @@ import com.huaweicloud.sdk.dns.v2.model.ListTagsResponse;
 import com.huaweicloud.sdk.dns.v2.model.RestorePtrRecordRequest;
 import com.huaweicloud.sdk.dns.v2.model.RestorePtrRecordResponse;
 import com.huaweicloud.sdk.dns.v2.model.RestorePtrReq;
-import com.huaweicloud.sdk.dns.v2.model.SetRecordSetsStatusReq;
 import com.huaweicloud.sdk.dns.v2.model.SetRecordSetsStatusRequest;
+import com.huaweicloud.sdk.dns.v2.model.SetRecordSetsStatusRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.SetRecordSetsStatusResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowApiInfoRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowApiInfoResponse;
@@ -117,10 +129,10 @@ import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetWithLineResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowResourceTagResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdateCustomLineRequest;
+import com.huaweicloud.sdk.dns.v2.model.UpdateCustomLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.UpdateCustomLineResponse;
-import com.huaweicloud.sdk.dns.v2.model.UpdateCustomsLineReq;
-import com.huaweicloud.sdk.dns.v2.model.UpdateLineGroupsBody;
 import com.huaweicloud.sdk.dns.v2.model.UpdateLineGroupsRequest;
+import com.huaweicloud.sdk.dns.v2.model.UpdateLineGroupsRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.UpdateLineGroupsResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePrivateZoneInfoReq;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePrivateZoneRequest;
@@ -144,6 +156,99 @@ import com.huaweicloud.sdk.dns.v2.model.UpdateRecordSetsResponse;
 @SuppressWarnings("unchecked")
 public class DnsMeta {
 
+    public static final HttpRequestDef<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse> batchDeleteRecordSets =
+        genForBatchDeleteRecordSets();
+
+    private static HttpRequestDef<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse> genForBatchDeleteRecordSets() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeleteRecordSetsRequest.class, BatchDeleteRecordSetsResponse.class)
+            .withName("BatchDeleteRecordSets")
+            .withUri("/v2.1/recordsets")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteRecordSetsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteRecordSetsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteRecordSetsRequest::getBody, BatchDeleteRecordSetsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteZonesRequest, BatchDeleteZonesResponse> batchDeleteZones =
+        genForBatchDeleteZones();
+
+    private static HttpRequestDef<BatchDeleteZonesRequest, BatchDeleteZonesResponse> genForBatchDeleteZones() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteZonesRequest, BatchDeleteZonesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteZonesRequest.class, BatchDeleteZonesResponse.class)
+                .withName("BatchDeleteZones")
+                .withUri("/v2.1/zones")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeleteZonesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteZonesRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteZonesRequest::getBody, BatchDeleteZonesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchSetRecordSetsStatusRequest, BatchSetRecordSetsStatusResponse> batchSetRecordSetsStatus =
+        genForBatchSetRecordSetsStatus();
+
+    private static HttpRequestDef<BatchSetRecordSetsStatusRequest, BatchSetRecordSetsStatusResponse> genForBatchSetRecordSetsStatus() {
+        // basic
+        HttpRequestDef.Builder<BatchSetRecordSetsStatusRequest, BatchSetRecordSetsStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, BatchSetRecordSetsStatusRequest.class, BatchSetRecordSetsStatusResponse.class)
+                .withName("BatchSetRecordSetsStatus")
+                .withUri("/v2.1/recordsets/statuses")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchSetRecordSetsStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSetRecordSetsStatusRequestBody.class),
+            f -> f.withMarshaller(BatchSetRecordSetsStatusRequest::getBody, BatchSetRecordSetsStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchSetZonesStatusRequest, BatchSetZonesStatusResponse> batchSetZonesStatus =
+        genForBatchSetZonesStatus();
+
+    private static HttpRequestDef<BatchSetZonesStatusRequest, BatchSetZonesStatusResponse> genForBatchSetZonesStatus() {
+        // basic
+        HttpRequestDef.Builder<BatchSetZonesStatusRequest, BatchSetZonesStatusResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, BatchSetZonesStatusRequest.class, BatchSetZonesStatusResponse.class)
+                .withName("BatchSetZonesStatus")
+                .withUri("/v2.1/zones/statuses")
+                .withContentType("application/json");
+
+        // requests
+        builder.<BatchSetZonesStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchSetZonesStatusRequestBody.class),
+            f -> f.withMarshaller(BatchSetZonesStatusRequest::getBody, BatchSetZonesStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCustomLineRequest, CreateCustomLineResponse> createCustomLine =
         genForCreateCustomLine();
 
@@ -156,10 +261,10 @@ public class DnsMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<CreateCustomLines>withRequestField("body",
+        builder.<CreateCustomLineRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateCustomLines.class),
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCustomLineRequestBody.class),
             f -> f.withMarshaller(CreateCustomLineRequest::getBody, CreateCustomLineRequest::setBody));
 
         // response
@@ -291,6 +396,16 @@ public class DnsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListCustomLineRequest::getShowDetail, ListCustomLineRequest::setShowDetail));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomLineRequest::getStatus, ListCustomLineRequest::setStatus));
+        builder.<String>withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomLineRequest::getIp, ListCustomLineRequest::setIp));
 
         // response
 
@@ -448,10 +563,10 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateCustomLineRequest::getLineId, UpdateCustomLineRequest::setLineId));
-        builder.<UpdateCustomsLineReq>withRequestField("body",
+        builder.<UpdateCustomLineRequestBody>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(UpdateCustomsLineReq.class),
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateCustomLineRequestBody.class),
             f -> f.withMarshaller(UpdateCustomLineRequest::getBody, UpdateCustomLineRequest::setBody));
 
         // response
@@ -476,10 +591,10 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateLineGroupsRequest::getLinegroupId, UpdateLineGroupsRequest::setLinegroupId));
-        builder.<UpdateLineGroupsBody>withRequestField("body",
+        builder.<UpdateLineGroupsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateLineGroupsBody.class),
+            TypeCasts.uncheckedConversion(UpdateLineGroupsRequestBody.class),
             f -> f.withMarshaller(UpdateLineGroupsRequest::getBody, UpdateLineGroupsRequest::setBody));
 
         // response
@@ -718,10 +833,10 @@ public class DnsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getZoneId,
                 BatchUpdateRecordSetWithLineRequest::setZoneId));
-        builder.<BatchUpdateRecordSetWithLineReq>withRequestField("body",
+        builder.<BatchUpdateRecordSetWithLineRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchUpdateRecordSetWithLineReq.class),
+            TypeCasts.uncheckedConversion(BatchUpdateRecordSetWithLineRequestBody.class),
             f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getBody,
                 BatchUpdateRecordSetWithLineRequest::setBody));
 
@@ -1071,6 +1186,11 @@ public class DnsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListRecordSetsWithLineRequest::getOffset, ListRecordSetsWithLineRequest::setOffset));
+        builder.<String>withRequestField("zone_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecordSetsWithLineRequest::getZoneId, ListRecordSetsWithLineRequest::setZoneId));
         builder.<String>withRequestField("line_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1155,10 +1275,10 @@ public class DnsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SetRecordSetsStatusRequest::getRecordsetId,
                 SetRecordSetsStatusRequest::setRecordsetId));
-        builder.<SetRecordSetsStatusReq>withRequestField("body",
+        builder.<SetRecordSetsStatusRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(SetRecordSetsStatusReq.class),
+            TypeCasts.uncheckedConversion(SetRecordSetsStatusRequestBody.class),
             f -> f.withMarshaller(SetRecordSetsStatusRequest::getBody, SetRecordSetsStatusRequest::setBody));
 
         // response
@@ -1737,6 +1857,11 @@ public class DnsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPrivateZonesRequest::getName, ListPrivateZonesRequest::setName));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getId, ListPrivateZonesRequest::setId));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1747,12 +1872,27 @@ public class DnsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPrivateZonesRequest::getSearchMode, ListPrivateZonesRequest::setSearchMode));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getSortKey, ListPrivateZonesRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getSortDir, ListPrivateZonesRequest::setSortDir));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPrivateZonesRequest::getEnterpriseProjectId,
                 ListPrivateZonesRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("router_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getRouterId, ListPrivateZonesRequest::setRouterId));
 
         // response
 
@@ -1801,6 +1941,11 @@ public class DnsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPublicZonesRequest::getName, ListPublicZonesRequest::setName));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getId, ListPublicZonesRequest::setId));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1811,6 +1956,16 @@ public class DnsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPublicZonesRequest::getSearchMode, ListPublicZonesRequest::setSearchMode));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getSortKey, ListPublicZonesRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getSortDir, ListPublicZonesRequest::setSortDir));
         builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

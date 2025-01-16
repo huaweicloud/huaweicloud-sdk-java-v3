@@ -97,7 +97,7 @@ public class ListPtrRecordsRequest {
     }
 
     /**
-     * 反向解析关联的企业项目ID，长度不超过36个字符。  默认值为0。
+     * 反向解析关联的企业项目ID，长度不超过36个字符。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

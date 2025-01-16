@@ -105,7 +105,7 @@ public class CreateRecordSetRequestBody {
     }
 
     /**
-     * 资源状态。
+     * 解析记录的状态。 取值范围： ENABLE：启用 DISABLE：暂停 默认值为ENABLE。
      * @return status
      */
     public String getStatus() {

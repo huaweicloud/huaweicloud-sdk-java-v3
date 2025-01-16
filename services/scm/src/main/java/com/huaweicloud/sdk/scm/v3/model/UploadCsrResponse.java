@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -25,7 +24,7 @@ public class UploadCsrResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private BigDecimal createTime;
+    private Long createTime;
 
     public UploadCsrResponse withId(String id) {
         this.id = id;
@@ -61,7 +60,7 @@ public class UploadCsrResponse extends SdkResponse {
         this.name = name;
     }
 
-    public UploadCsrResponse withCreateTime(BigDecimal createTime) {
+    public UploadCsrResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -70,11 +69,11 @@ public class UploadCsrResponse extends SdkResponse {
      * CSR创建时间。
      * @return createTime
      */
-    public BigDecimal getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(BigDecimal createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 

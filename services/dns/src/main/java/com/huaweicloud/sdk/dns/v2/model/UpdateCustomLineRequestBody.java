@@ -9,9 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * UpdateCustomsLineReq
+ * UpdateCustomLineRequestBody
  */
-public class UpdateCustomsLineReq {
+public class UpdateCustomLineRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -28,7 +28,7 @@ public class UpdateCustomsLineReq {
 
     private String description;
 
-    public UpdateCustomsLineReq withName(String name) {
+    public UpdateCustomLineRequestBody withName(String name) {
         this.name = name;
         return this;
     }
@@ -45,12 +45,12 @@ public class UpdateCustomsLineReq {
         this.name = name;
     }
 
-    public UpdateCustomsLineReq withIpSegments(List<String> ipSegments) {
+    public UpdateCustomLineRequestBody withIpSegments(List<String> ipSegments) {
         this.ipSegments = ipSegments;
         return this;
     }
 
-    public UpdateCustomsLineReq addIpSegmentsItem(String ipSegmentsItem) {
+    public UpdateCustomLineRequestBody addIpSegmentsItem(String ipSegmentsItem) {
         if (this.ipSegments == null) {
             this.ipSegments = new ArrayList<>();
         }
@@ -58,7 +58,7 @@ public class UpdateCustomsLineReq {
         return this;
     }
 
-    public UpdateCustomsLineReq withIpSegments(Consumer<List<String>> ipSegmentsSetter) {
+    public UpdateCustomLineRequestBody withIpSegments(Consumer<List<String>> ipSegmentsSetter) {
         if (this.ipSegments == null) {
             this.ipSegments = new ArrayList<>();
         }
@@ -78,7 +78,7 @@ public class UpdateCustomsLineReq {
         this.ipSegments = ipSegments;
     }
 
-    public UpdateCustomsLineReq withDescription(String description) {
+    public UpdateCustomLineRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
@@ -103,7 +103,7 @@ public class UpdateCustomsLineReq {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCustomsLineReq that = (UpdateCustomsLineReq) obj;
+        UpdateCustomLineRequestBody that = (UpdateCustomLineRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.ipSegments, that.ipSegments)
             && Objects.equals(this.description, that.description);
     }
@@ -116,7 +116,7 @@ public class UpdateCustomsLineReq {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateCustomsLineReq {\n");
+        sb.append("class UpdateCustomLineRequestBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    ipSegments: ").append(toIndentedString(ipSegments)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

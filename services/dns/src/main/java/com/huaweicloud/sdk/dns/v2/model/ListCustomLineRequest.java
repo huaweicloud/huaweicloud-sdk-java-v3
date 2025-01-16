@@ -35,6 +35,16 @@ public class ListCustomLineRequest {
 
     private Boolean showDetail;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip")
+
+    private String ip;
+
     public ListCustomLineRequest withLineId(String lineId) {
         this.lineId = lineId;
         return this;
@@ -75,7 +85,9 @@ public class ListCustomLineRequest {
     }
 
     /**
-     * 每页返回的资源个数。  取值范围：0~500  取值一般为10，20，50。默认值为500。
+     * 每页返回的资源个数。 当查询详细信息时：取值范围：0~100取值一般为10，20，50默认为100。 当查询概要信息时：取值范围：0~3000默认为3000。
+     * minimum: 0
+     * maximum: 3000
      * @return limit
      */
     public Integer getLimit() {
@@ -93,6 +105,7 @@ public class ListCustomLineRequest {
 
     /**
      * 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。  取值范围：0~2147483647  默认值为0。  当前设置marker不为空时，以marker为分页起始标识。
+     * minimum: 0
      * @return offset
      */
     public Integer getOffset() {
@@ -120,6 +133,40 @@ public class ListCustomLineRequest {
         this.showDetail = showDetail;
     }
 
+    public ListCustomLineRequest withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 资源状态。
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public ListCustomLineRequest withIp(String ip) {
+        this.ip = ip;
+        return this;
+    }
+
+    /**
+     * IP地址范围。
+     * @return ip
+     */
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +178,13 @@ public class ListCustomLineRequest {
         ListCustomLineRequest that = (ListCustomLineRequest) obj;
         return Objects.equals(this.lineId, that.lineId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.showDetail, that.showDetail);
+            && Objects.equals(this.showDetail, that.showDetail) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.ip, that.ip);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lineId, name, limit, offset, showDetail);
+        return Objects.hash(lineId, name, limit, offset, showDetail, status, ip);
     }
 
     @Override
@@ -148,6 +196,8 @@ public class ListCustomLineRequest {
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    showDetail: ").append(toIndentedString(showDetail)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
         sb.append("}");
         return sb.toString();
     }

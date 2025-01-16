@@ -6,16 +6,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * SetRecordSetsStatusReq
+ * SetRecordSetsStatusRequestBody
  */
-public class SetRecordSetsStatusReq {
+public class SetRecordSetsStatusRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
 
-    public SetRecordSetsStatusReq withStatus(String status) {
+    public SetRecordSetsStatusRequestBody withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -40,7 +40,7 @@ public class SetRecordSetsStatusReq {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetRecordSetsStatusReq that = (SetRecordSetsStatusReq) obj;
+        SetRecordSetsStatusRequestBody that = (SetRecordSetsStatusRequestBody) obj;
         return Objects.equals(this.status, that.status);
     }
 
@@ -52,7 +52,7 @@ public class SetRecordSetsStatusReq {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SetRecordSetsStatusReq {\n");
+        sb.append("class SetRecordSetsStatusRequestBody {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();

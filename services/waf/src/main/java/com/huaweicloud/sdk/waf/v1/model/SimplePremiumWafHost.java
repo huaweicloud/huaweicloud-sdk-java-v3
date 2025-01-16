@@ -68,6 +68,11 @@ public class SimplePremiumWafHost {
 
     private String hostid;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public SimplePremiumWafHost withId(String id) {
         this.id = id;
         return this;
@@ -280,6 +285,23 @@ public class SimplePremiumWafHost {
         this.hostid = hostid;
     }
 
+    public SimplePremiumWafHost withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -294,7 +316,8 @@ public class SimplePremiumWafHost {
             && Objects.equals(this.flag, that.flag) && Objects.equals(this.description, that.description)
             && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.webTag, that.webTag)
-            && Objects.equals(this.hostid, that.hostid);
+            && Objects.equals(this.hostid, that.hostid)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -309,7 +332,8 @@ public class SimplePremiumWafHost {
             protectStatus,
             accessStatus,
             webTag,
-            hostid);
+            hostid,
+            enterpriseProjectId);
     }
 
     @Override
@@ -327,6 +351,7 @@ public class SimplePremiumWafHost {
         sb.append("    accessStatus: ").append(toIndentedString(accessStatus)).append("\n");
         sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
         sb.append("    hostid: ").append(toIndentedString(hostid)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

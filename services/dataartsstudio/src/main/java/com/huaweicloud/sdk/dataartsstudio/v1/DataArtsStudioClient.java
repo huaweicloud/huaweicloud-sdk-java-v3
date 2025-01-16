@@ -513,6 +513,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowConsistencyTaskDetailRequ
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowConsistencyTaskDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataDetailResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataPreviewRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataPreviewResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataProfileRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataProfileResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataServiceInstanceRequest;
@@ -7631,6 +7633,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<ShowDataDetailRequest, ShowDataDetailResponse> showDataDetailInvoker(
         ShowDataDetailRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.showDataDetail, hcClient);
+    }
+
+    /**
+     * 表数据预览
+     *
+     * 表数据预览
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDataPreviewRequest 请求对象
+     * @return ShowDataPreviewResponse
+     */
+    public ShowDataPreviewResponse showDataPreview(ShowDataPreviewRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.showDataPreview);
+    }
+
+    /**
+     * 表数据预览
+     *
+     * 表数据预览
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDataPreviewRequest 请求对象
+     * @return SyncInvoker<ShowDataPreviewRequest, ShowDataPreviewResponse>
+     */
+    public SyncInvoker<ShowDataPreviewRequest, ShowDataPreviewResponse> showDataPreviewInvoker(
+        ShowDataPreviewRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.showDataPreview, hcClient);
     }
 
     /**

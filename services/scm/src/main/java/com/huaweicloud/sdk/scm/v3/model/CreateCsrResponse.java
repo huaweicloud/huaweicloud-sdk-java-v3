@@ -61,6 +61,16 @@ public class CreateCsrResponse extends SdkResponse {
 
     private String companyName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private Long createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private Long updateTime;
+
     public CreateCsrResponse withId(String id) {
         this.id = id;
         return this;
@@ -231,6 +241,44 @@ public class CreateCsrResponse extends SdkResponse {
         this.companyName = companyName;
     }
 
+    public CreateCsrResponse withCreateTime(Long createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * CSR创建时间。
+     * minimum: 13
+     * maximum: 20
+     * @return createTime
+     */
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
+    public CreateCsrResponse withUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * CSR更新时间。
+     * minimum: 13
+     * maximum: 20
+     * @return updateTime
+     */
+    public Long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -245,7 +293,8 @@ public class CreateCsrResponse extends SdkResponse {
             && Objects.equals(this.privateKeyAlgo, that.privateKeyAlgo) && Objects.equals(this.usage, that.usage)
             && Objects.equals(this.companyCountry, that.companyCountry)
             && Objects.equals(this.companyProvince, that.companyProvince)
-            && Objects.equals(this.companyCity, that.companyCity) && Objects.equals(this.companyName, that.companyName);
+            && Objects.equals(this.companyCity, that.companyCity) && Objects.equals(this.companyName, that.companyName)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
@@ -259,7 +308,9 @@ public class CreateCsrResponse extends SdkResponse {
             companyCountry,
             companyProvince,
             companyCity,
-            companyName);
+            companyName,
+            createTime,
+            updateTime);
     }
 
     @Override
@@ -276,6 +327,8 @@ public class CreateCsrResponse extends SdkResponse {
         sb.append("    companyProvince: ").append(toIndentedString(companyProvince)).append("\n");
         sb.append("    companyCity: ").append(toIndentedString(companyCity)).append("\n");
         sb.append("    companyName: ").append(toIndentedString(companyName)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

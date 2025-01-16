@@ -185,6 +185,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListScheduleJobsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListScheduleJobsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataBasesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataBasesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationConfigByDataBaseRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationConfigByDataBaseResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationConfigRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationsRequest;
@@ -195,6 +197,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListStarrocksInstanceInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarrocksInstanceInfoResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyDataSyncRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyDataSyncResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMysqlDnsRequest;
@@ -407,6 +411,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseReq
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeSrKernelVersionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeSrKernelVersionResponse;
 
 public class GaussDBClient {
 
@@ -5437,6 +5443,36 @@ public class GaussDBClient {
     }
 
     /**
+     * 按目标库查询StarRocks数据同步配置信息
+     *
+     * 按目标库查询StarRocks数据同步配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListStarRocksDataReplicationConfigByDataBaseRequest 请求对象
+     * @return ListStarRocksDataReplicationConfigByDataBaseResponse
+     */
+    public ListStarRocksDataReplicationConfigByDataBaseResponse listStarRocksDataReplicationConfigByDataBase(
+        ListStarRocksDataReplicationConfigByDataBaseRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listStarRocksDataReplicationConfigByDataBase);
+    }
+
+    /**
+     * 按目标库查询StarRocks数据同步配置信息
+     *
+     * 按目标库查询StarRocks数据同步配置信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListStarRocksDataReplicationConfigByDataBaseRequest 请求对象
+     * @return SyncInvoker<ListStarRocksDataReplicationConfigByDataBaseRequest, ListStarRocksDataReplicationConfigByDataBaseResponse>
+     */
+    public SyncInvoker<ListStarRocksDataReplicationConfigByDataBaseRequest, ListStarRocksDataReplicationConfigByDataBaseResponse> listStarRocksDataReplicationConfigByDataBaseInvoker(
+        ListStarRocksDataReplicationConfigByDataBaseRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listStarRocksDataReplicationConfigByDataBase, hcClient);
+    }
+
+    /**
      * 查询StarRocks数据同步状态信息
      *
      * 查询StarRocks数据同步状态信息。
@@ -5522,6 +5558,35 @@ public class GaussDBClient {
     public SyncInvoker<ListStarrocksInstanceInfoRequest, ListStarrocksInstanceInfoResponse> listStarrocksInstanceInfoInvoker(
         ListStarrocksInstanceInfoRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.listStarrocksInstanceInfo, hcClient);
+    }
+
+    /**
+     * 修改StarRocks数据同步配置
+     *
+     * 修改StarRocks数据同步配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyDataSyncRequest 请求对象
+     * @return ModifyDataSyncResponse
+     */
+    public ModifyDataSyncResponse modifyDataSync(ModifyDataSyncRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.modifyDataSync);
+    }
+
+    /**
+     * 修改StarRocks数据同步配置
+     *
+     * 修改StarRocks数据同步配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyDataSyncRequest 请求对象
+     * @return SyncInvoker<ModifyDataSyncRequest, ModifyDataSyncResponse>
+     */
+    public SyncInvoker<ModifyDataSyncRequest, ModifyDataSyncResponse> modifyDataSyncInvoker(
+        ModifyDataSyncRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.modifyDataSync, hcClient);
     }
 
     /**
@@ -6198,6 +6263,35 @@ public class GaussDBClient {
     public SyncInvoker<UpdateStarrocksParamsRequest, UpdateStarrocksParamsResponse> updateStarrocksParamsInvoker(
         UpdateStarrocksParamsRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.updateStarrocksParams, hcClient);
+    }
+
+    /**
+     * StarRocks内核版本升级
+     *
+     * StarRocks内核版本升级。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeSrKernelVersionRequest 请求对象
+     * @return UpgradeSrKernelVersionResponse
+     */
+    public UpgradeSrKernelVersionResponse upgradeSrKernelVersion(UpgradeSrKernelVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.upgradeSrKernelVersion);
+    }
+
+    /**
+     * StarRocks内核版本升级
+     *
+     * StarRocks内核版本升级。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpgradeSrKernelVersionRequest 请求对象
+     * @return SyncInvoker<UpgradeSrKernelVersionRequest, UpgradeSrKernelVersionResponse>
+     */
+    public SyncInvoker<UpgradeSrKernelVersionRequest, UpgradeSrKernelVersionResponse> upgradeSrKernelVersionInvoker(
+        UpgradeSrKernelVersionRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.upgradeSrKernelVersion, hcClient);
     }
 
     /**

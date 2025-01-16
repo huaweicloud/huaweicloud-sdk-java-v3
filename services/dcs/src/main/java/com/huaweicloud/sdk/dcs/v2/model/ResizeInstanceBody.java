@@ -39,7 +39,7 @@ public class ResizeInstanceBody {
     private List<String> reservedIp = null;
 
     /**
-     * 变更类型，Redis 4.0或者5.0主备实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 
+     * 变更类型，Redis 4.0或者5.0实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 - addSharding: 添加分片 - instanceType: 实例类型变更[，目前仅支持Redis 4.0/5.0/6.0实例中的主备实例/读写分离实例变更为proxy集群实例、proxy集群实例变更为主备实例/读写分离实例](tag:hws,hws_hk,hws_eu,ctc,sbc,hk_sbc,g42,hk_g42,otc)。 
      */
     public static final class ChangeTypeEnum {
 
@@ -53,12 +53,24 @@ public class ResizeInstanceBody {
          */
         public static final ChangeTypeEnum DELETEREPLICATION = new ChangeTypeEnum("deleteReplication");
 
+        /**
+         * Enum ADDSHARDING for value: "addSharding"
+         */
+        public static final ChangeTypeEnum ADDSHARDING = new ChangeTypeEnum("addSharding");
+
+        /**
+         * Enum INSTANCETYPE for value: "instanceType"
+         */
+        public static final ChangeTypeEnum INSTANCETYPE = new ChangeTypeEnum("instanceType");
+
         private static final Map<String, ChangeTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ChangeTypeEnum> createStaticFields() {
             Map<String, ChangeTypeEnum> map = new HashMap<>();
             map.put("createReplication", CREATEREPLICATION);
             map.put("deleteReplication", DELETEREPLICATION);
+            map.put("addSharding", ADDSHARDING);
+            map.put("instanceType", INSTANCETYPE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -227,7 +239,7 @@ public class ResizeInstanceBody {
     }
 
     /**
-     * 变更类型，Redis 4.0或者5.0主备实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 
+     * 变更类型，Redis 4.0或者5.0实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 - addSharding: 添加分片 - instanceType: 实例类型变更[，目前仅支持Redis 4.0/5.0/6.0实例中的主备实例/读写分离实例变更为proxy集群实例、proxy集群实例变更为主备实例/读写分离实例](tag:hws,hws_hk,hws_eu,ctc,sbc,hk_sbc,g42,hk_g42,otc)。 
      * @return changeType
      */
     public ChangeTypeEnum getChangeType() {

@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.smn.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -31,13 +33,18 @@ public class AddSubscriptionRequestBody {
 
     private SubscriptionExtension extension;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "subscriptions")
+
+    private List<BatchAddSubscriptionsRequestBody> subscriptions = null;
+
     public AddSubscriptionRequestBody withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
 
     /**
-     * 不同协议对应不同的endpoint（接受消息的接入点）。 目前支持的协议包括：  “email”：邮件传输协议，endpoint为邮箱地址。  “sms”：短信传输协议，endpoint为手机号码。  “functionstage”：FunctionGraph（函数）传输协议，endpoint为一个函数。  “functiongraph”：FunctionGraph（工作流）传输协议，endpoint为由一组函数编排成的工作流。  “http”、“https”：HTTP/HTTPS传输协议，endpoint为URL。  “callnotify”：语音通知传输协议，endpoint为手机号码。  “wechat”：微信群机器人传输协议。  “dingding”：钉钉群机器人传输协议。  “feishu”：飞书群机器人传输协议。  “welink”：welink群机器人传输协议。
+     * 不同协议对应不同的endpoint（接受消息的接入点）。 目前支持的协议包括：  “email”：邮件传输协议，endpoint为邮箱地址。  “sms”：短信传输协议，endpoint为手机号码。  “functionstage”：FunctionGraph（函数）传输协议，endpoint为一个函数。  “functiongraph”：FunctionGraph（工作流）传输协议，endpoint为由一组函数编排成的工作流。  “http”、“https”：HTTP/HTTPS传输协议，endpoint为URL。  “callnotify”：语音通知传输协议，endpoint为手机号码。  “wechat”：微信群机器人传输协议。  “dingding”：钉钉群机器人传输协议。  “feishu”：飞书群机器人传输协议。  “welink”：welink群机器人传输协议。  “dingTalkBot”：个人钉钉传输协议。
      * @return protocol
      */
     public String getProtocol() {
@@ -54,7 +61,7 @@ public class AddSubscriptionRequestBody {
     }
 
     /**
-     * 说明：  http协议，接入点必须以“http://”开头。  https协议，接入点必须以“https://”开头。  email协议，接入点必须是邮件地址。  sms协议，接入点必须是一个电话号码。  functionstage协议，接入点必须是一个函数。  functiongraph协议，接入点必须是一个函数工作流。  dms协议，接入点必须是一个消息队列。  application协议，接入点必须是一个应用平台的设备终端。  callnotify协议，接入点必须是一个电话号码。  dingding协议，接入点必须是一个钉钉群机器人的地址。  wechat协议，接入点必须是一个微信群机器人的地址。  feishu协议，接入点必须是一个飞书群机器人的地址。  welink协议，接入点必须是一个welink的群号。
+     * 说明：  http协议，接入点必须以“http://”开头。  https协议，接入点必须以“https://”开头。  email协议，接入点必须是邮件地址。  sms协议，接入点必须是一个电话号码。  functionstage协议，接入点必须是一个函数。  functiongraph协议，接入点必须是一个函数工作流。  callnotify协议，接入点必须是一个电话号码。  dingding协议，接入点必须是一个钉钉自定义群机器人的地址，或添加了钉钉企业内部机器人的群组openConversationId。添加钉钉企业内部机器人对应的群组openConversationId时，该字段不能以“http://”或“https://”为开头。  wechat协议，接入点必须是一个微信群机器人的地址。  feishu协议，接入点必须是一个飞书群机器人的地址。  welink协议，接入点必须是一个welink的群号。  dingTalkBot协议，接入点必须是一个钉钉企业用户的userId。
      * @return endpoint
      */
     public String getEndpoint() {
@@ -108,6 +115,40 @@ public class AddSubscriptionRequestBody {
         this.extension = extension;
     }
 
+    public AddSubscriptionRequestBody withSubscriptions(List<BatchAddSubscriptionsRequestBody> subscriptions) {
+        this.subscriptions = subscriptions;
+        return this;
+    }
+
+    public AddSubscriptionRequestBody addSubscriptionsItem(BatchAddSubscriptionsRequestBody subscriptionsItem) {
+        if (this.subscriptions == null) {
+            this.subscriptions = new ArrayList<>();
+        }
+        this.subscriptions.add(subscriptionsItem);
+        return this;
+    }
+
+    public AddSubscriptionRequestBody withSubscriptions(
+        Consumer<List<BatchAddSubscriptionsRequestBody>> subscriptionsSetter) {
+        if (this.subscriptions == null) {
+            this.subscriptions = new ArrayList<>();
+        }
+        subscriptionsSetter.accept(this.subscriptions);
+        return this;
+    }
+
+    /**
+     * 当需要批量创建订阅时，需要传入该字段。SMN支持一次最多创建50个订阅。
+     * @return subscriptions
+     */
+    public List<BatchAddSubscriptionsRequestBody> getSubscriptions() {
+        return subscriptions;
+    }
+
+    public void setSubscriptions(List<BatchAddSubscriptionsRequestBody> subscriptions) {
+        this.subscriptions = subscriptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -118,12 +159,13 @@ public class AddSubscriptionRequestBody {
         }
         AddSubscriptionRequestBody that = (AddSubscriptionRequestBody) obj;
         return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.endpoint, that.endpoint)
-            && Objects.equals(this.remark, that.remark) && Objects.equals(this.extension, that.extension);
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.extension, that.extension)
+            && Objects.equals(this.subscriptions, that.subscriptions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(protocol, endpoint, remark, extension);
+        return Objects.hash(protocol, endpoint, remark, extension, subscriptions);
     }
 
     @Override
@@ -134,6 +176,7 @@ public class AddSubscriptionRequestBody {
         sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");
         sb.append("    extension: ").append(toIndentedString(extension)).append("\n");
+        sb.append("    subscriptions: ").append(toIndentedString(subscriptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

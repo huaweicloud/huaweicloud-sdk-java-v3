@@ -85,7 +85,7 @@ public class ListTopicsRequest {
     }
 
     /**
-     * 企业项目id，默认企业项目id为0。
+     * 企业项目id。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

@@ -93,6 +93,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListServerAzInfoRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListServerAzInfoResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerBlockDevicesRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerBlockDevicesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerGroupsRequest;
@@ -1261,6 +1263,24 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResizeFlavorsRequest::getSourceFlavorName,
                 ListResizeFlavorsRequest::setSourceFlavorName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListServerAzInfoRequest, ListServerAzInfoResponse> listServerAzInfo =
+        genForListServerAzInfo();
+
+    private static HttpRequestDef<ListServerAzInfoRequest, ListServerAzInfoResponse> genForListServerAzInfo() {
+        // basic
+        HttpRequestDef.Builder<ListServerAzInfoRequest, ListServerAzInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListServerAzInfoRequest.class, ListServerAzInfoResponse.class)
+                .withName("ListServerAzInfo")
+                .withUri("/v1/{project_id}/availability-zones")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

@@ -20,6 +20,11 @@ public class TagOperationDTO {
 
     private String tagId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modifier")
+
+    private String modifier;
+
     public TagOperationDTO withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
@@ -54,6 +59,23 @@ public class TagOperationDTO {
         this.tagId = tagId;
     }
 
+    public TagOperationDTO withModifier(String modifier) {
+        this.modifier = modifier;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  修改人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * @return modifier
+     */
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class TagOperationDTO {
             return false;
         }
         TagOperationDTO that = (TagOperationDTO) obj;
-        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.tagId, that.tagId);
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.tagId, that.tagId)
+            && Objects.equals(this.modifier, that.modifier);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, tagId);
+        return Objects.hash(objectId, tagId, modifier);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class TagOperationDTO {
         sb.append("class TagOperationDTO {\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
         sb.append("    tagId: ").append(toIndentedString(tagId)).append("\n");
+        sb.append("    modifier: ").append(toIndentedString(modifier)).append("\n");
         sb.append("}");
         return sb.toString();
     }

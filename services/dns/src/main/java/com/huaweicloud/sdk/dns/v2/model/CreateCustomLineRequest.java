@@ -14,16 +14,16 @@ public class CreateCustomLineRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateCustomLines body;
+    private CreateCustomLineRequestBody body;
 
-    public CreateCustomLineRequest withBody(CreateCustomLines body) {
+    public CreateCustomLineRequest withBody(CreateCustomLineRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public CreateCustomLineRequest withBody(Consumer<CreateCustomLines> bodySetter) {
+    public CreateCustomLineRequest withBody(Consumer<CreateCustomLineRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateCustomLines();
+            this.body = new CreateCustomLineRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class CreateCustomLineRequest {
      * Get body
      * @return body
      */
-    public CreateCustomLines getBody() {
+    public CreateCustomLineRequestBody getBody() {
         return body;
     }
 
-    public void setBody(CreateCustomLines body) {
+    public void setBody(CreateCustomLineRequestBody body) {
         this.body = body;
     }
 

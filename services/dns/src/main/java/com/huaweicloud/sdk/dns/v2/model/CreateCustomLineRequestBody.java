@@ -9,9 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateCustomLines
+ * CreateCustomLineRequestBody
  */
-public class CreateCustomLines {
+public class CreateCustomLineRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -28,7 +28,7 @@ public class CreateCustomLines {
 
     private String description;
 
-    public CreateCustomLines withName(String name) {
+    public CreateCustomLineRequestBody withName(String name) {
         this.name = name;
         return this;
     }
@@ -45,12 +45,12 @@ public class CreateCustomLines {
         this.name = name;
     }
 
-    public CreateCustomLines withIpSegments(List<String> ipSegments) {
+    public CreateCustomLineRequestBody withIpSegments(List<String> ipSegments) {
         this.ipSegments = ipSegments;
         return this;
     }
 
-    public CreateCustomLines addIpSegmentsItem(String ipSegmentsItem) {
+    public CreateCustomLineRequestBody addIpSegmentsItem(String ipSegmentsItem) {
         if (this.ipSegments == null) {
             this.ipSegments = new ArrayList<>();
         }
@@ -58,7 +58,7 @@ public class CreateCustomLines {
         return this;
     }
 
-    public CreateCustomLines withIpSegments(Consumer<List<String>> ipSegmentsSetter) {
+    public CreateCustomLineRequestBody withIpSegments(Consumer<List<String>> ipSegmentsSetter) {
         if (this.ipSegments == null) {
             this.ipSegments = new ArrayList<>();
         }
@@ -78,7 +78,7 @@ public class CreateCustomLines {
         this.ipSegments = ipSegments;
     }
 
-    public CreateCustomLines withDescription(String description) {
+    public CreateCustomLineRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
@@ -103,7 +103,7 @@ public class CreateCustomLines {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCustomLines that = (CreateCustomLines) obj;
+        CreateCustomLineRequestBody that = (CreateCustomLineRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.ipSegments, that.ipSegments)
             && Objects.equals(this.description, that.description);
     }
@@ -116,7 +116,7 @@ public class CreateCustomLines {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateCustomLines {\n");
+        sb.append("class CreateCustomLineRequestBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    ipSegments: ").append(toIndentedString(ipSegments)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

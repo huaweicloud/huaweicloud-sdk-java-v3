@@ -35,6 +35,11 @@ public class VehicleLicenseRequestBody {
 
     private Boolean returnTextLocation;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recognize_electronic_license")
+
+    private Boolean recognizeElectronicLicense;
+
     public VehicleLicenseRequestBody withImage(String image) {
         this.image = image;
         return this;
@@ -109,7 +114,7 @@ public class VehicleLicenseRequestBody {
     }
 
     /**
-     * 识别到的文字块的区域位置信息。可选值包括：  - true：返回各个文字块区域  - false：不返回各个文字块区域  如果无该参数，系统默认不返回文字块区域。如果输入参数不是Boolean类型，则会报非法参数错误。 
+     * 识别到的文字块的区域位置信息。取值范围：  - true：返回各个文字块区域  - false：不返回各个文字块区域  如果无该参数，系统默认不返回文字块区域。如果输入参数不是Boolean类型，则会报非法参数错误。 
      * @return returnTextLocation
      */
     public Boolean getReturnTextLocation() {
@@ -118,6 +123,23 @@ public class VehicleLicenseRequestBody {
 
     public void setReturnTextLocation(Boolean returnTextLocation) {
         this.returnTextLocation = returnTextLocation;
+    }
+
+    public VehicleLicenseRequestBody withRecognizeElectronicLicense(Boolean recognizeElectronicLicense) {
+        this.recognizeElectronicLicense = recognizeElectronicLicense;
+        return this;
+    }
+
+    /**
+     * 是否支持识别电子行驶证，取值范围：  - true：支持识别电子行驶证  - false：不支持识别电子行驶证  默认不支持识别电子行驶证。如果输入参数不是Boolean类型，则会报非法参数错误。 
+     * @return recognizeElectronicLicense
+     */
+    public Boolean getRecognizeElectronicLicense() {
+        return recognizeElectronicLicense;
+    }
+
+    public void setRecognizeElectronicLicense(Boolean recognizeElectronicLicense) {
+        this.recognizeElectronicLicense = recognizeElectronicLicense;
     }
 
     @Override
@@ -132,12 +154,13 @@ public class VehicleLicenseRequestBody {
         return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
             && Objects.equals(this.side, that.side)
             && Objects.equals(this.returnIssuingAuthority, that.returnIssuingAuthority)
-            && Objects.equals(this.returnTextLocation, that.returnTextLocation);
+            && Objects.equals(this.returnTextLocation, that.returnTextLocation)
+            && Objects.equals(this.recognizeElectronicLicense, that.recognizeElectronicLicense);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(image, url, side, returnIssuingAuthority, returnTextLocation);
+        return Objects.hash(image, url, side, returnIssuingAuthority, returnTextLocation, recognizeElectronicLicense);
     }
 
     @Override
@@ -149,6 +172,7 @@ public class VehicleLicenseRequestBody {
         sb.append("    side: ").append(toIndentedString(side)).append("\n");
         sb.append("    returnIssuingAuthority: ").append(toIndentedString(returnIssuingAuthority)).append("\n");
         sb.append("    returnTextLocation: ").append(toIndentedString(returnTextLocation)).append("\n");
+        sb.append("    recognizeElectronicLicense: ").append(toIndentedString(recognizeElectronicLicense)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -31,11 +31,6 @@ public class SecretTask {
     private String taskStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "attempt_nums")
-
-    private Integer attemptNums;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_type")
 
     private String operateType;
@@ -44,6 +39,11 @@ public class SecretTask {
     @JsonProperty(value = "task_time")
 
     private Long taskTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "attempt_nums")
+
+    private Integer attemptNums;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_error_code")
@@ -123,23 +123,6 @@ public class SecretTask {
         this.taskStatus = taskStatus;
     }
 
-    public SecretTask withAttemptNums(Integer attemptNums) {
-        this.attemptNums = attemptNums;
-        return this;
-    }
-
-    /**
-     * 任务尝试次数。
-     * @return attemptNums
-     */
-    public Integer getAttemptNums() {
-        return attemptNums;
-    }
-
-    public void setAttemptNums(Integer attemptNums) {
-        this.attemptNums = attemptNums;
-    }
-
     public SecretTask withOperateType(String operateType) {
         this.operateType = operateType;
         return this;
@@ -172,6 +155,23 @@ public class SecretTask {
 
     public void setTaskTime(Long taskTime) {
         this.taskTime = taskTime;
+    }
+
+    public SecretTask withAttemptNums(Integer attemptNums) {
+        this.attemptNums = attemptNums;
+        return this;
+    }
+
+    /**
+     * 轮转尝试次数。
+     * @return attemptNums
+     */
+    public Integer getAttemptNums() {
+        return attemptNums;
+    }
+
+    public void setAttemptNums(Integer attemptNums) {
+        this.attemptNums = attemptNums;
     }
 
     public SecretTask withTaskErrorCode(String taskErrorCode) {
@@ -219,8 +219,8 @@ public class SecretTask {
         SecretTask that = (SecretTask) obj;
         return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.secretName, that.secretName)
             && Objects.equals(this.rotationFuncUrn, that.rotationFuncUrn)
-            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.attemptNums, that.attemptNums)
-            && Objects.equals(this.operateType, that.operateType) && Objects.equals(this.taskTime, that.taskTime)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.operateType, that.operateType)
+            && Objects.equals(this.taskTime, that.taskTime) && Objects.equals(this.attemptNums, that.attemptNums)
             && Objects.equals(this.taskErrorCode, that.taskErrorCode)
             && Objects.equals(this.taskErrorMsg, that.taskErrorMsg);
     }
@@ -231,9 +231,9 @@ public class SecretTask {
             secretName,
             rotationFuncUrn,
             taskStatus,
-            attemptNums,
             operateType,
             taskTime,
+            attemptNums,
             taskErrorCode,
             taskErrorMsg);
     }
@@ -246,9 +246,9 @@ public class SecretTask {
         sb.append("    secretName: ").append(toIndentedString(secretName)).append("\n");
         sb.append("    rotationFuncUrn: ").append(toIndentedString(rotationFuncUrn)).append("\n");
         sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");
-        sb.append("    attemptNums: ").append(toIndentedString(attemptNums)).append("\n");
         sb.append("    operateType: ").append(toIndentedString(operateType)).append("\n");
         sb.append("    taskTime: ").append(toIndentedString(taskTime)).append("\n");
+        sb.append("    attemptNums: ").append(toIndentedString(attemptNums)).append("\n");
         sb.append("    taskErrorCode: ").append(toIndentedString(taskErrorCode)).append("\n");
         sb.append("    taskErrorMsg: ").append(toIndentedString(taskErrorMsg)).append("\n");
         sb.append("}");

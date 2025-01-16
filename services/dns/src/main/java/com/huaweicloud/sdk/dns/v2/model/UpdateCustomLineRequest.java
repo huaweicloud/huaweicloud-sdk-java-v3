@@ -19,7 +19,7 @@ public class UpdateCustomLineRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateCustomsLineReq body;
+    private UpdateCustomLineRequestBody body;
 
     public UpdateCustomLineRequest withLineId(String lineId) {
         this.lineId = lineId;
@@ -27,7 +27,7 @@ public class UpdateCustomLineRequest {
     }
 
     /**
-     * 解析线路ID。
+     * 自定义线路id
      * @return lineId
      */
     public String getLineId() {
@@ -38,14 +38,14 @@ public class UpdateCustomLineRequest {
         this.lineId = lineId;
     }
 
-    public UpdateCustomLineRequest withBody(UpdateCustomsLineReq body) {
+    public UpdateCustomLineRequest withBody(UpdateCustomLineRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateCustomLineRequest withBody(Consumer<UpdateCustomsLineReq> bodySetter) {
+    public UpdateCustomLineRequest withBody(Consumer<UpdateCustomLineRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateCustomsLineReq();
+            this.body = new UpdateCustomLineRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateCustomLineRequest {
      * Get body
      * @return body
      */
-    public UpdateCustomsLineReq getBody() {
+    public UpdateCustomLineRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateCustomsLineReq body) {
+    public void setBody(UpdateCustomLineRequestBody body) {
         this.body = body;
     }
 

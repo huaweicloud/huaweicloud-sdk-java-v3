@@ -35,6 +35,11 @@ public class DbParameter {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_modifiable")
+
+    private String isModifiable;
+
     public DbParameter withParamName(String paramName) {
         this.paramName = paramName;
         return this;
@@ -120,6 +125,23 @@ public class DbParameter {
         this.description = description;
     }
 
+    public DbParameter withIsModifiable(String isModifiable) {
+        this.isModifiable = isModifiable;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  新增子任务的场景，用于区分库参数是否支持修改。  **取值范围**：  不涉及。
+     * @return isModifiable
+     */
+    public String getIsModifiable() {
+        return isModifiable;
+    }
+
+    public void setIsModifiable(String isModifiable) {
+        this.isModifiable = isModifiable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,13 @@ public class DbParameter {
         DbParameter that = (DbParameter) obj;
         return Objects.equals(this.paramName, that.paramName) && Objects.equals(this.dataType, that.dataType)
             && Objects.equals(this.defaultValue, that.defaultValue) && Objects.equals(this.valueRange, that.valueRange)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.isModifiable, that.isModifiable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(paramName, dataType, defaultValue, valueRange, description);
+        return Objects.hash(paramName, dataType, defaultValue, valueRange, description, isModifiable);
     }
 
     @Override
@@ -148,6 +171,7 @@ public class DbParameter {
         sb.append("    defaultValue: ").append(toIndentedString(defaultValue)).append("\n");
         sb.append("    valueRange: ").append(toIndentedString(valueRange)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    isModifiable: ").append(toIndentedString(isModifiable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

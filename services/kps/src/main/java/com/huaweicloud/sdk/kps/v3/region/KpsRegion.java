@@ -70,6 +70,9 @@ public class KpsRegion {
 
     public static final Region CN_EAST_4 = new Region("cn-east-4", "https://kms.cn-east-4.myhuaweicloud.com");
 
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://kms.ap-southeast-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("KPS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -101,6 +104,7 @@ public class KpsRegion {
         map.put("ru-moscow-1", RU_MOSCOW_1);
         map.put("cn-east-5", CN_EAST_5);
         map.put("cn-east-4", CN_EAST_4);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
         return Collections.unmodifiableMap(map);
     }
 

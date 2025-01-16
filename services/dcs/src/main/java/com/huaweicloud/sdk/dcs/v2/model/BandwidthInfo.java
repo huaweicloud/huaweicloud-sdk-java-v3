@@ -60,6 +60,16 @@ public class BandwidthInfo {
 
     private Boolean taskRunning;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "assured_bandwidth")
+
+    private Integer assuredBandwidth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "max_bandwidth_for_node")
+
+    private Integer maxBandwidthForNode;
+
     public BandwidthInfo withBeginTime(Long beginTime) {
         this.beginTime = beginTime;
         return this;
@@ -230,6 +240,40 @@ public class BandwidthInfo {
         this.taskRunning = taskRunning;
     }
 
+    public BandwidthInfo withAssuredBandwidth(Integer assuredBandwidth) {
+        this.assuredBandwidth = assuredBandwidth;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实例基准带宽。 **取值范围**： 不涉及。 
+     * @return assuredBandwidth
+     */
+    public Integer getAssuredBandwidth() {
+        return assuredBandwidth;
+    }
+
+    public void setAssuredBandwidth(Integer assuredBandwidth) {
+        this.assuredBandwidth = assuredBandwidth;
+    }
+
+    public BandwidthInfo withMaxBandwidthForNode(Integer maxBandwidthForNode) {
+        this.maxBandwidthForNode = maxBandwidthForNode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点最大带宽。 **取值范围**： 不涉及。 
+     * @return maxBandwidthForNode
+     */
+    public Integer getMaxBandwidthForNode() {
+        return maxBandwidthForNode;
+    }
+
+    public void setMaxBandwidthForNode(Integer maxBandwidthForNode) {
+        this.maxBandwidthForNode = maxBandwidthForNode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -246,7 +290,9 @@ public class BandwidthInfo {
             && Objects.equals(this.expandEffectTime, that.expandEffectTime)
             && Objects.equals(this.expandIntervalTime, that.expandIntervalTime)
             && Objects.equals(this.maxExpandCount, that.maxExpandCount)
-            && Objects.equals(this.taskRunning, that.taskRunning);
+            && Objects.equals(this.taskRunning, that.taskRunning)
+            && Objects.equals(this.assuredBandwidth, that.assuredBandwidth)
+            && Objects.equals(this.maxBandwidthForNode, that.maxBandwidthForNode);
     }
 
     @Override
@@ -260,7 +306,9 @@ public class BandwidthInfo {
             expandEffectTime,
             expandIntervalTime,
             maxExpandCount,
-            taskRunning);
+            taskRunning,
+            assuredBandwidth,
+            maxBandwidthForNode);
     }
 
     @Override
@@ -277,6 +325,8 @@ public class BandwidthInfo {
         sb.append("    expandIntervalTime: ").append(toIndentedString(expandIntervalTime)).append("\n");
         sb.append("    maxExpandCount: ").append(toIndentedString(maxExpandCount)).append("\n");
         sb.append("    taskRunning: ").append(toIndentedString(taskRunning)).append("\n");
+        sb.append("    assuredBandwidth: ").append(toIndentedString(assuredBandwidth)).append("\n");
+        sb.append("    maxBandwidthForNode: ").append(toIndentedString(maxBandwidthForNode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

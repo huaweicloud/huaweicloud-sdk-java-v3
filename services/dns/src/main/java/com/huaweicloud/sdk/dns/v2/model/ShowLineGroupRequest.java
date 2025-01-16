@@ -21,7 +21,7 @@ public class ShowLineGroupRequest {
     }
 
     /**
-     * 待查询的线路分组ID。
+     * 线路分组ID
      * @return linegroupId
      */
     public String getLinegroupId() {

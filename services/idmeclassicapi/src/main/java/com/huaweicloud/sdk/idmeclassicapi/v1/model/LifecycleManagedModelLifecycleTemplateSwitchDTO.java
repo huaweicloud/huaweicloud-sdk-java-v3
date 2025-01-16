@@ -26,6 +26,11 @@ public class LifecycleManagedModelLifecycleTemplateSwitchDTO {
 
     private ObjectReferenceParamDTO lifecycleState;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modifier")
+
+    private String modifier;
+
     public LifecycleManagedModelLifecycleTemplateSwitchDTO withId(String id) {
         this.id = id;
         return this;
@@ -98,6 +103,23 @@ public class LifecycleManagedModelLifecycleTemplateSwitchDTO {
         this.lifecycleState = lifecycleState;
     }
 
+    public LifecycleManagedModelLifecycleTemplateSwitchDTO withModifier(String modifier) {
+        this.modifier = modifier;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  修改人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
+     * @return modifier
+     */
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,12 @@ public class LifecycleManagedModelLifecycleTemplateSwitchDTO {
         }
         LifecycleManagedModelLifecycleTemplateSwitchDTO that = (LifecycleManagedModelLifecycleTemplateSwitchDTO) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.lifecycleTemplate, that.lifecycleTemplate)
-            && Objects.equals(this.lifecycleState, that.lifecycleState);
+            && Objects.equals(this.lifecycleState, that.lifecycleState) && Objects.equals(this.modifier, that.modifier);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, lifecycleTemplate, lifecycleState);
+        return Objects.hash(id, lifecycleTemplate, lifecycleState, modifier);
     }
 
     @Override
@@ -123,6 +145,7 @@ public class LifecycleManagedModelLifecycleTemplateSwitchDTO {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    lifecycleTemplate: ").append(toIndentedString(lifecycleTemplate)).append("\n");
         sb.append("    lifecycleState: ").append(toIndentedString(lifecycleState)).append("\n");
+        sb.append("    modifier: ").append(toIndentedString(modifier)).append("\n");
         sb.append("}");
         return sb.toString();
     }

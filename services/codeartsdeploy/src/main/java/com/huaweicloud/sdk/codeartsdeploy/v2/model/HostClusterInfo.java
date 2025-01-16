@@ -42,11 +42,6 @@ public class HostClusterInfo {
     private String slaveClusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "created_by")
-
-    private UserInfo createdBy;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -65,6 +60,11 @@ public class HostClusterInfo {
     @JsonProperty(value = "env_count")
 
     private Integer envCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_proxy_mode")
+
+    private Integer isProxyMode;
 
     public HostClusterInfo withId(String id) {
         this.id = id;
@@ -170,32 +170,6 @@ public class HostClusterInfo {
         this.slaveClusterId = slaveClusterId;
     }
 
-    public HostClusterInfo withCreatedBy(UserInfo createdBy) {
-        this.createdBy = createdBy;
-        return this;
-    }
-
-    public HostClusterInfo withCreatedBy(Consumer<UserInfo> createdBySetter) {
-        if (this.createdBy == null) {
-            this.createdBy = new UserInfo();
-            createdBySetter.accept(this.createdBy);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get createdBy
-     * @return createdBy
-     */
-    public UserInfo getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(UserInfo createdBy) {
-        this.createdBy = createdBy;
-    }
-
     public HostClusterInfo withDescription(String description) {
         this.description = description;
         return this;
@@ -273,6 +247,23 @@ public class HostClusterInfo {
         this.envCount = envCount;
     }
 
+    public HostClusterInfo withIsProxyMode(Integer isProxyMode) {
+        this.isProxyMode = isProxyMode;
+        return this;
+    }
+
+    /**
+     * 主机集群是否为代理机接入模式， 1：是 0：否
+     * @return isProxyMode
+     */
+    public Integer getIsProxyMode() {
+        return isProxyMode;
+    }
+
+    public void setIsProxyMode(Integer isProxyMode) {
+        this.isProxyMode = isProxyMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -285,9 +276,9 @@ public class HostClusterInfo {
         return Objects.equals(this.id, that.id) && Objects.equals(this.hostCount, that.hostCount)
             && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.os, that.os) && Objects.equals(this.slaveClusterId, that.slaveClusterId)
-            && Objects.equals(this.createdBy, that.createdBy) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.permission, that.permission) && Objects.equals(this.nickName, that.nickName)
-            && Objects.equals(this.envCount, that.envCount);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.permission, that.permission)
+            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.envCount, that.envCount)
+            && Objects.equals(this.isProxyMode, that.isProxyMode);
     }
 
     @Override
@@ -298,11 +289,11 @@ public class HostClusterInfo {
             projectId,
             os,
             slaveClusterId,
-            createdBy,
             description,
             permission,
             nickName,
-            envCount);
+            envCount,
+            isProxyMode);
     }
 
     @Override
@@ -315,11 +306,11 @@ public class HostClusterInfo {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    os: ").append(toIndentedString(os)).append("\n");
         sb.append("    slaveClusterId: ").append(toIndentedString(slaveClusterId)).append("\n");
-        sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    permission: ").append(toIndentedString(permission)).append("\n");
         sb.append("    nickName: ").append(toIndentedString(nickName)).append("\n");
         sb.append("    envCount: ").append(toIndentedString(envCount)).append("\n");
+        sb.append("    isProxyMode: ").append(toIndentedString(isProxyMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

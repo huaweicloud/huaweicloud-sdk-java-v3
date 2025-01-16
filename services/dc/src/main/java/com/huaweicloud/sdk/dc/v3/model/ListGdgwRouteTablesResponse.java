@@ -25,6 +25,11 @@ public class ListGdgwRouteTablesResponse extends SdkResponse {
     private List<CommonRoutetable> gdgwRoutetables = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
 
     private PageInfo pageInfo;
@@ -79,6 +84,23 @@ public class ListGdgwRouteTablesResponse extends SdkResponse {
         this.gdgwRoutetables = gdgwRoutetables;
     }
 
+    public ListGdgwRouteTablesResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 总记录数。
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
     public ListGdgwRouteTablesResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
         return this;
@@ -116,12 +138,12 @@ public class ListGdgwRouteTablesResponse extends SdkResponse {
         ListGdgwRouteTablesResponse that = (ListGdgwRouteTablesResponse) obj;
         return Objects.equals(this.requestId, that.requestId)
             && Objects.equals(this.gdgwRoutetables, that.gdgwRoutetables)
-            && Objects.equals(this.pageInfo, that.pageInfo);
+            && Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, gdgwRoutetables, pageInfo);
+        return Objects.hash(requestId, gdgwRoutetables, totalCount, pageInfo);
     }
 
     @Override
@@ -130,6 +152,7 @@ public class ListGdgwRouteTablesResponse extends SdkResponse {
         sb.append("class ListGdgwRouteTablesResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    gdgwRoutetables: ").append(toIndentedString(gdgwRoutetables)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();

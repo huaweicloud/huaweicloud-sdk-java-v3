@@ -108,6 +108,11 @@ public class CompositeHostResponse {
 
     private List<WafServer> server = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CompositeHostResponse withId(String id) {
         this.id = id;
         return this;
@@ -489,6 +494,23 @@ public class CompositeHostResponse {
         this.server = server;
     }
 
+    public CompositeHostResponse withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -508,7 +530,8 @@ public class CompositeHostResponse {
             && Objects.equals(this.webTag, that.webTag) && Objects.equals(this.accessProgress, that.accessProgress)
             && Objects.equals(this.premiumWafInstances, that.premiumWafInstances)
             && Objects.equals(this.description, that.description) && Objects.equals(this.exclusiveIp, that.exclusiveIp)
-            && Objects.equals(this.region, that.region) && Objects.equals(this.server, that.server);
+            && Objects.equals(this.region, that.region) && Objects.equals(this.server, that.server)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -531,7 +554,8 @@ public class CompositeHostResponse {
             description,
             exclusiveIp,
             region,
-            server);
+            server,
+            enterpriseProjectId);
     }
 
     @Override
@@ -557,6 +581,7 @@ public class CompositeHostResponse {
         sb.append("    exclusiveIp: ").append(toIndentedString(exclusiveIp)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    server: ").append(toIndentedString(server)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

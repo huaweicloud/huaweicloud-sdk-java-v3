@@ -50,6 +50,11 @@ public class PublishMessageRequestBody {
 
     private List<MessageAttribute> messageAttributes = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "locale")
+
+    private String locale;
+
     public PublishMessageRequestBody withSubject(String subject) {
         this.subject = subject;
         return this;
@@ -73,7 +78,7 @@ public class PublishMessageRequestBody {
     }
 
     /**
-     * 发送的消息。消息体必须是UTF-8编码的字符串，大小至多256KB。如果订阅者是手机号码，长度不超过490个字符，超出部分系统自动截断。短信内容不能包含“[]”或者“【】”符号。  对于移动推送订阅者推送消息，message消息必须符合移动推送平台的消息格式，消息格式请参见application消息体格式。否则移动app无法收到消息，目前支持的平台有HMS、APNS、APNS_SANDBOX。 说明： 三种消息发送方式  message  message_structure  message_template_name  至少设置其中一个，如果同时设置，生效的优先级为 message_structure > message_template_name > message。
+     * 发送的消息。消息体必须是UTF-8编码的字符串，大小至多256KB。如果订阅者是手机号码，短信长度限制为490字，超出则可能被运营商拦截。短信内容不能包含“[]”或者“【】”符号。 说明： 三种消息发送方式：message、message_structure、message_template_name  至少设置其中一个，如果同时设置，生效的优先级为 message_structure > message_template_name > message。
      * @return message
      */
     public String getMessage() {
@@ -90,7 +95,7 @@ public class PublishMessageRequestBody {
     }
 
     /**
-     * Json格式的字符串。支持“email”、“sms”、 “http”、“https”、“dms”、“functiongraph”、“functionstage”、“HMS”、“APNS”、“APNS_SANDBOX”、 \"dingding\", \"wechat\",”feishu“, \"welink\"。其中，“HMS”、“APNS”以及“APNS_SANDBOX”三种消息的格式请参见application消息体格式。必须设置默认的消息“default”，当匹配不到消息协议时，按“default”中的内容发送。其中，钉钉、微信、飞书、welink协议类型的消息需指定msgType字段；钉钉，微信和飞书机器人协议支持msgType为text（纯文本）和markdown（MD）格式消息，welink和红版welink机器人类型暂仅支持msgType为text的纯文本消息。  说明： 三种消息发送方式  message  message_structure  message_template_name  至少设置其中一个，如果同时设置，生效的优先级为 message_structure > message_template_name > message。  华为透传消息  {   \"hps\": {     \"msg\": {       \"type\": 1,       \"body\": {         \"key\": \"value\"       }     }   } }  华为系统通知栏消息  {   \"hps\": {     \"msg\": {       \"type\": 3,       \"body\": {         \"content\": \"Push message content\",         \"title\": \"Push message content\"       },       \"action\": {         \"type\": 1,         \"param\": {           \"intent\": \"#Intent;compo=com.rvr/.Activity;S.W=U;end\"         }       }     },     \"ext\": {       \"biTag\": \"Trump\",       \"icon\": \"http://upload.w.org/00/150pxsvg.png\"     }   } }  苹果平台消息格式  {   \"aps\": {     \"alert\": \"hello world\"   } }
+     * Json格式的字符串。支持“email”、“sms”、“http”、“https”、“functiongraph”、“functionstage”、“dingding”、“wechat”、“feishu”、“welink”。必须设置默认的消息“default”，当匹配不到消息协议时，按“default”中的内容发送。其中，钉钉、微信、飞书、welink协议类型的消息需指定msgType字段；钉钉，微信和飞书机器人协议支持msgType为text（纯文本）和markdown（MD）格式消息，welink和红版welink机器人类型暂仅支持msgType为text的纯文本消息。   钉钉机器人协议支持通过at字段实现@群组成员。当您需要@群成员时，可以在isAtAll字段中传入布尔值，表示是否需要@群组内所有人。您可以在atMobiles字段中传入需要@的人的手机号列表，或在atUserIds字段中传入需要@的钉钉userID列表。当您使用atMobiles字段或atUserIds字段时，需要在消息内容中同时传入@对应手机号或userID的信息。展示效果请参考钉钉官方文档。  说明： 三种消息发送方式：message、message_structure、message_template_name  至少设置其中一个，如果同时设置，生效的优先级为 message_structure > message_template_name > message。
      * @return messageStructure
      */
     public String getMessageStructure() {
@@ -107,7 +112,7 @@ public class PublishMessageRequestBody {
     }
 
     /**
-     * 消息模板名称，可通过[查询消息模板列表](ListMessageTemplates.xml)获取名称。  说明： 三种消息发送方式:  message  message_structure  message_template_name  至少设置其中一个，如果同时设置，生效的优先级为 message_structure > message_template_name > message。
+     * 消息模板名称，可通过[查询消息模板列表](ListMessageTemplates.xml)获取名称。  说明： 三种消息发送方式：message、message_structure、message_template_name  至少设置其中一个，如果同时设置，生效的优先级为 message_structure > message_template_name > message。
      * @return messageTemplateName
      */
     public String getMessageTemplateName() {
@@ -201,6 +206,23 @@ public class PublishMessageRequestBody {
         this.messageAttributes = messageAttributes;
     }
 
+    public PublishMessageRequestBody withLocale(String locale) {
+        this.locale = locale;
+        return this;
+    }
+
+    /**
+     * 语言，发送出去的消息中SMN附加系统内容的语言，若没传入，使用账号的语言。取值范围是该局点支持的语言，比如：zh-cn,en-us等
+     * @return locale
+     */
+    public String getLocale() {
+        return locale;
+    }
+
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -214,13 +236,14 @@ public class PublishMessageRequestBody {
             && Objects.equals(this.messageStructure, that.messageStructure)
             && Objects.equals(this.messageTemplateName, that.messageTemplateName)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.timeToLive, that.timeToLive)
-            && Objects.equals(this.messageAttributes, that.messageAttributes);
+            && Objects.equals(this.messageAttributes, that.messageAttributes)
+            && Objects.equals(this.locale, that.locale);
     }
 
     @Override
     public int hashCode() {
         return Objects
-            .hash(subject, message, messageStructure, messageTemplateName, tags, timeToLive, messageAttributes);
+            .hash(subject, message, messageStructure, messageTemplateName, tags, timeToLive, messageAttributes, locale);
     }
 
     @Override
@@ -234,6 +257,7 @@ public class PublishMessageRequestBody {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    timeToLive: ").append(toIndentedString(timeToLive)).append("\n");
         sb.append("    messageAttributes: ").append(toIndentedString(messageAttributes)).append("\n");
+        sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
         sb.append("}");
         return sb.toString();
     }

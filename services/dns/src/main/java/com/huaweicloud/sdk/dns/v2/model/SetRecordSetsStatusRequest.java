@@ -19,7 +19,7 @@ public class SetRecordSetsStatusRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private SetRecordSetsStatusReq body;
+    private SetRecordSetsStatusRequestBody body;
 
     public SetRecordSetsStatusRequest withRecordsetId(String recordsetId) {
         this.recordsetId = recordsetId;
@@ -38,14 +38,14 @@ public class SetRecordSetsStatusRequest {
         this.recordsetId = recordsetId;
     }
 
-    public SetRecordSetsStatusRequest withBody(SetRecordSetsStatusReq body) {
+    public SetRecordSetsStatusRequest withBody(SetRecordSetsStatusRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public SetRecordSetsStatusRequest withBody(Consumer<SetRecordSetsStatusReq> bodySetter) {
+    public SetRecordSetsStatusRequest withBody(Consumer<SetRecordSetsStatusRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new SetRecordSetsStatusReq();
+            this.body = new SetRecordSetsStatusRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class SetRecordSetsStatusRequest {
      * Get body
      * @return body
      */
-    public SetRecordSetsStatusReq getBody() {
+    public SetRecordSetsStatusRequestBody getBody() {
         return body;
     }
 
-    public void setBody(SetRecordSetsStatusReq body) {
+    public void setBody(SetRecordSetsStatusRequestBody body) {
         this.body = body;
     }
 

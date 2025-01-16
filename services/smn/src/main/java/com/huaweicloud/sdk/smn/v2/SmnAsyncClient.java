@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.smn.v2.model.CreateLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateMessageTemplateRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateMessageTemplateResponse;
+import com.huaweicloud.sdk.smn.v2.model.CreateNotifyPolicyRequest;
+import com.huaweicloud.sdk.smn.v2.model.CreateNotifyPolicyResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateResourceTagRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateResourceTagResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateTopicRequest;
@@ -37,6 +39,8 @@ import com.huaweicloud.sdk.smn.v2.model.DeleteLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteMessageTemplateRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteMessageTemplateResponse;
+import com.huaweicloud.sdk.smn.v2.model.DeleteNotifyPolicyRequest;
+import com.huaweicloud.sdk.smn.v2.model.DeleteNotifyPolicyResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteResourceTagResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributeByNameRequest;
@@ -87,6 +91,8 @@ import com.huaweicloud.sdk.smn.v2.model.PublishMessageRequest;
 import com.huaweicloud.sdk.smn.v2.model.PublishMessageResponse;
 import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultRequest;
 import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultResponse;
+import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyRequest;
+import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationRequest;
@@ -95,6 +101,8 @@ import com.huaweicloud.sdk.smn.v2.model.UpdateLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateMessageTemplateRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateMessageTemplateResponse;
+import com.huaweicloud.sdk.smn.v2.model.UpdateNotifyPolicyRequest;
+import com.huaweicloud.sdk.smn.v2.model.UpdateNotifyPolicyResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateSubscriptionRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateSubscriptionResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateTopicAttributeRequest;
@@ -393,6 +401,35 @@ public class SmnAsyncClient {
     }
 
     /**
+     * 创建通知策略
+     *
+     * 创建通知策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateNotifyPolicyRequest 请求对象
+     * @return CompletableFuture<CreateNotifyPolicyResponse>
+     */
+    public CompletableFuture<CreateNotifyPolicyResponse> createNotifyPolicyAsync(CreateNotifyPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.createNotifyPolicy);
+    }
+
+    /**
+     * 创建通知策略
+     *
+     * 创建通知策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateNotifyPolicyRequest 请求对象
+     * @return AsyncInvoker<CreateNotifyPolicyRequest, CreateNotifyPolicyResponse>
+     */
+    public AsyncInvoker<CreateNotifyPolicyRequest, CreateNotifyPolicyResponse> createNotifyPolicyAsyncInvoker(
+        CreateNotifyPolicyRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.createNotifyPolicy, hcClient);
+    }
+
+    /**
      * 添加资源标签
      *
      * 一个资源上最多有10个标签。此接口为幂等接口：创建时，如果创建的标签已经存在（key相同），则覆盖。
@@ -508,6 +545,35 @@ public class SmnAsyncClient {
     public AsyncInvoker<DeleteMessageTemplateRequest, DeleteMessageTemplateResponse> deleteMessageTemplateAsyncInvoker(
         DeleteMessageTemplateRequest request) {
         return new AsyncInvoker<>(request, SmnMeta.deleteMessageTemplate, hcClient);
+    }
+
+    /**
+     * 删除通知策略
+     *
+     * 删除通知策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteNotifyPolicyRequest 请求对象
+     * @return CompletableFuture<DeleteNotifyPolicyResponse>
+     */
+    public CompletableFuture<DeleteNotifyPolicyResponse> deleteNotifyPolicyAsync(DeleteNotifyPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.deleteNotifyPolicy);
+    }
+
+    /**
+     * 删除通知策略
+     *
+     * 删除通知策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteNotifyPolicyRequest 请求对象
+     * @return AsyncInvoker<DeleteNotifyPolicyRequest, DeleteNotifyPolicyResponse>
+     */
+    public AsyncInvoker<DeleteNotifyPolicyRequest, DeleteNotifyPolicyResponse> deleteNotifyPolicyAsyncInvoker(
+        DeleteNotifyPolicyRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.deleteNotifyPolicy, hcClient);
     }
 
     /**
@@ -1037,7 +1103,8 @@ public class SmnAsyncClient {
     /**
      * 消息发布
      *
-     * 将消息发送给Topic的所有订阅端点。当返回消息ID时，该消息已被保存并开始尝试将其推送给Topic的订阅者。三种消息发送方式
+     * 将消息发送给Topic的所有订阅端点。当返回消息ID时，该消息已被保存并开始尝试将其推送给Topic的订阅者。为确保您的消息能够成功推送到各个订阅者，请确保您的消息内容符合当地法律法规要求。
+     * 三种消息发送方式
      * 
      * message
      * 
@@ -1060,7 +1127,8 @@ public class SmnAsyncClient {
     /**
      * 消息发布
      *
-     * 将消息发送给Topic的所有订阅端点。当返回消息ID时，该消息已被保存并开始尝试将其推送给Topic的订阅者。三种消息发送方式
+     * 将消息发送给Topic的所有订阅端点。当返回消息ID时，该消息已被保存并开始尝试将其推送给Topic的订阅者。为确保您的消息能够成功推送到各个订阅者，请确保您的消息内容符合当地法律法规要求。
+     * 三种消息发送方式
      * 
      * message
      * 
@@ -1109,6 +1177,35 @@ public class SmnAsyncClient {
     public AsyncInvoker<ShowHttpDetectResultRequest, ShowHttpDetectResultResponse> showHttpDetectResultAsyncInvoker(
         ShowHttpDetectResultRequest request) {
         return new AsyncInvoker<>(request, SmnMeta.showHttpDetectResult, hcClient);
+    }
+
+    /**
+     * 查询通知策略
+     *
+     * 查询通知策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNotifyPolicyRequest 请求对象
+     * @return CompletableFuture<ShowNotifyPolicyResponse>
+     */
+    public CompletableFuture<ShowNotifyPolicyResponse> showNotifyPolicyAsync(ShowNotifyPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.showNotifyPolicy);
+    }
+
+    /**
+     * 查询通知策略
+     *
+     * 查询通知策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowNotifyPolicyRequest 请求对象
+     * @return AsyncInvoker<ShowNotifyPolicyRequest, ShowNotifyPolicyResponse>
+     */
+    public AsyncInvoker<ShowNotifyPolicyRequest, ShowNotifyPolicyResponse> showNotifyPolicyAsyncInvoker(
+        ShowNotifyPolicyRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.showNotifyPolicy, hcClient);
     }
 
     /**
@@ -1168,6 +1265,35 @@ public class SmnAsyncClient {
     public AsyncInvoker<UpdateMessageTemplateRequest, UpdateMessageTemplateResponse> updateMessageTemplateAsyncInvoker(
         UpdateMessageTemplateRequest request) {
         return new AsyncInvoker<>(request, SmnMeta.updateMessageTemplate, hcClient);
+    }
+
+    /**
+     * 修改通知策略
+     *
+     * 修改通知策略，该接口仅支持全量修改，不支持部分修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNotifyPolicyRequest 请求对象
+     * @return CompletableFuture<UpdateNotifyPolicyResponse>
+     */
+    public CompletableFuture<UpdateNotifyPolicyResponse> updateNotifyPolicyAsync(UpdateNotifyPolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, SmnMeta.updateNotifyPolicy);
+    }
+
+    /**
+     * 修改通知策略
+     *
+     * 修改通知策略，该接口仅支持全量修改，不支持部分修改。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateNotifyPolicyRequest 请求对象
+     * @return AsyncInvoker<UpdateNotifyPolicyRequest, UpdateNotifyPolicyResponse>
+     */
+    public AsyncInvoker<UpdateNotifyPolicyRequest, UpdateNotifyPolicyResponse> updateNotifyPolicyAsyncInvoker(
+        UpdateNotifyPolicyRequest request) {
+        return new AsyncInvoker<>(request, SmnMeta.updateNotifyPolicy, hcClient);
     }
 
     /**

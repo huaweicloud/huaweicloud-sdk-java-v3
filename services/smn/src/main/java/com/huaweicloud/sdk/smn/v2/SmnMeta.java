@@ -36,6 +36,8 @@ import com.huaweicloud.sdk.smn.v2.model.CreateLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateMessageTemplateRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateMessageTemplateRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.CreateMessageTemplateResponse;
+import com.huaweicloud.sdk.smn.v2.model.CreateNotifyPolicyRequest;
+import com.huaweicloud.sdk.smn.v2.model.CreateNotifyPolicyResponse;
 import com.huaweicloud.sdk.smn.v2.model.CreateResourceTagRequest;
 import com.huaweicloud.sdk.smn.v2.model.CreateResourceTagRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.CreateResourceTagResponse;
@@ -50,6 +52,8 @@ import com.huaweicloud.sdk.smn.v2.model.DeleteLogtankRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteMessageTemplateRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteMessageTemplateResponse;
+import com.huaweicloud.sdk.smn.v2.model.DeleteNotifyPolicyRequest;
+import com.huaweicloud.sdk.smn.v2.model.DeleteNotifyPolicyResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteResourceTagRequest;
 import com.huaweicloud.sdk.smn.v2.model.DeleteResourceTagResponse;
 import com.huaweicloud.sdk.smn.v2.model.DeleteTopicAttributeByNameRequest;
@@ -94,6 +98,7 @@ import com.huaweicloud.sdk.smn.v2.model.ListVersionRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListVersionResponse;
 import com.huaweicloud.sdk.smn.v2.model.ListVersionsRequest;
 import com.huaweicloud.sdk.smn.v2.model.ListVersionsResponse;
+import com.huaweicloud.sdk.smn.v2.model.NotifyPolicyRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.PublishAppMessageRequest;
 import com.huaweicloud.sdk.smn.v2.model.PublishAppMessageRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.PublishAppMessageResponse;
@@ -104,6 +109,8 @@ import com.huaweicloud.sdk.smn.v2.model.PublishMessageRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.PublishMessageResponse;
 import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultRequest;
 import com.huaweicloud.sdk.smn.v2.model.ShowHttpDetectResultResponse;
+import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyRequest;
+import com.huaweicloud.sdk.smn.v2.model.ShowNotifyPolicyResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.UpdateApplicationEndpointResponse;
@@ -116,6 +123,8 @@ import com.huaweicloud.sdk.smn.v2.model.UpdateLogtankResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateMessageTemplateRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateMessageTemplateRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.UpdateMessageTemplateResponse;
+import com.huaweicloud.sdk.smn.v2.model.UpdateNotifyPolicyRequest;
+import com.huaweicloud.sdk.smn.v2.model.UpdateNotifyPolicyResponse;
 import com.huaweicloud.sdk.smn.v2.model.UpdateSubscriptionRequest;
 import com.huaweicloud.sdk.smn.v2.model.UpdateSubscriptionRequestBody;
 import com.huaweicloud.sdk.smn.v2.model.UpdateSubscriptionResponse;
@@ -385,6 +394,34 @@ public class SmnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateNotifyPolicyRequest, CreateNotifyPolicyResponse> createNotifyPolicy =
+        genForCreateNotifyPolicy();
+
+    private static HttpRequestDef<CreateNotifyPolicyRequest, CreateNotifyPolicyResponse> genForCreateNotifyPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateNotifyPolicyRequest, CreateNotifyPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateNotifyPolicyRequest.class, CreateNotifyPolicyResponse.class)
+                .withName("CreateNotifyPolicy")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateNotifyPolicyRequest::getTopicUrn, CreateNotifyPolicyRequest::setTopicUrn));
+        builder.<NotifyPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NotifyPolicyRequestBody.class),
+            f -> f.withMarshaller(CreateNotifyPolicyRequest::getBody, CreateNotifyPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateResourceTagRequest, CreateResourceTagResponse> createResourceTag =
         genForCreateResourceTag();
 
@@ -489,6 +526,40 @@ public class SmnMeta {
                 DeleteMessageTemplateRequest::setMessageTemplateId));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteNotifyPolicyRequest, DeleteNotifyPolicyResponse> deleteNotifyPolicy =
+        genForDeleteNotifyPolicy();
+
+    private static HttpRequestDef<DeleteNotifyPolicyRequest, DeleteNotifyPolicyResponse> genForDeleteNotifyPolicy() {
+        // basic
+        HttpRequestDef.Builder<DeleteNotifyPolicyRequest, DeleteNotifyPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteNotifyPolicyRequest.class, DeleteNotifyPolicyResponse.class)
+                .withName("DeleteNotifyPolicy")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy/{notify_policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNotifyPolicyRequest::getTopicUrn, DeleteNotifyPolicyRequest::setTopicUrn));
+        builder.<String>withRequestField("notify_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteNotifyPolicyRequest::getNotifyPolicyId,
+                DeleteNotifyPolicyRequest::setNotifyPolicyId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteNotifyPolicyResponse::getBody, DeleteNotifyPolicyResponse::setBody));
 
         return builder.build();
     }
@@ -884,7 +955,7 @@ public class SmnMeta {
             f -> f.withMarshaller(ListTopicAttributesRequest::getTopicUrn, ListTopicAttributesRequest::setTopicUrn));
         builder.<String>withRequestField("name",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTopicAttributesRequest::getName, ListTopicAttributesRequest::setName));
 
@@ -1087,6 +1158,29 @@ public class SmnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowNotifyPolicyRequest, ShowNotifyPolicyResponse> showNotifyPolicy =
+        genForShowNotifyPolicy();
+
+    private static HttpRequestDef<ShowNotifyPolicyRequest, ShowNotifyPolicyResponse> genForShowNotifyPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowNotifyPolicyRequest, ShowNotifyPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowNotifyPolicyRequest.class, ShowNotifyPolicyResponse.class)
+                .withName("ShowNotifyPolicy")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowNotifyPolicyRequest::getTopicUrn, ShowNotifyPolicyRequest::setTopicUrn));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateLogtankRequest, UpdateLogtankResponse> updateLogtank =
         genForUpdateLogtank();
 
@@ -1145,6 +1239,45 @@ public class SmnMeta {
             f -> f.withMarshaller(UpdateMessageTemplateRequest::getBody, UpdateMessageTemplateRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateNotifyPolicyRequest, UpdateNotifyPolicyResponse> updateNotifyPolicy =
+        genForUpdateNotifyPolicy();
+
+    private static HttpRequestDef<UpdateNotifyPolicyRequest, UpdateNotifyPolicyResponse> genForUpdateNotifyPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateNotifyPolicyRequest, UpdateNotifyPolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateNotifyPolicyRequest.class, UpdateNotifyPolicyResponse.class)
+                .withName("UpdateNotifyPolicy")
+                .withUri("/v2/{project_id}/notifications/topics/{topic_urn}/notify-policy/{notify_policy_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("topic_urn",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNotifyPolicyRequest::getTopicUrn, UpdateNotifyPolicyRequest::setTopicUrn));
+        builder.<String>withRequestField("notify_policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateNotifyPolicyRequest::getNotifyPolicyId,
+                UpdateNotifyPolicyRequest::setNotifyPolicyId));
+        builder.<NotifyPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(NotifyPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateNotifyPolicyRequest::getBody, UpdateNotifyPolicyRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateNotifyPolicyResponse::getBody, UpdateNotifyPolicyResponse::setBody));
 
         return builder.build();
     }

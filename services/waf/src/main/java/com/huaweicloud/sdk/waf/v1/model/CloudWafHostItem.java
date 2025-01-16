@@ -98,6 +98,11 @@ public class CloudWafHostItem {
 
     private Flag flag;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
     public CloudWafHostItem withId(String id) {
         this.id = id;
         return this;
@@ -412,6 +417,23 @@ public class CloudWafHostItem {
         this.flag = flag;
     }
 
+    public CloudWafHostItem withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目id
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -429,7 +451,8 @@ public class CloudWafHostItem {
             && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.accessStatus, that.accessStatus)
             && Objects.equals(this.exclusiveIp, that.exclusiveIp) && Objects.equals(this.paidType, that.paidType)
-            && Objects.equals(this.webTag, that.webTag) && Objects.equals(this.flag, that.flag);
+            && Objects.equals(this.webTag, that.webTag) && Objects.equals(this.flag, that.flag)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
@@ -450,7 +473,8 @@ public class CloudWafHostItem {
             exclusiveIp,
             paidType,
             webTag,
-            flag);
+            flag,
+            enterpriseProjectId);
     }
 
     @Override
@@ -474,6 +498,7 @@ public class CloudWafHostItem {
         sb.append("    paidType: ").append(toIndentedString(paidType)).append("\n");
         sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
         sb.append("    flag: ").append(toIndentedString(flag)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -9,6 +9,14 @@ import com.huaweicloud.sdk.dns.v2.model.BatchCreateTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchCreateTagResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetsRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetsResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeleteZonesRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeleteZonesResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchSetRecordSetsStatusRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchSetRecordSetsStatusResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchSetZonesStatusRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchSetZonesStatusResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchUpdateRecordSetWithLineResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateCustomLineRequest;
@@ -127,6 +135,140 @@ public class DnsAsyncClient {
     public static ClientBuilder<DnsAsyncClient> newBuilder() {
         ClientBuilder<DnsAsyncClient> clientBuilder = new ClientBuilder<>(DnsAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 批量删除Record Set
+     *
+     * 批量删除Record Set。
+     * 响应结果中只包含本次实际删除的Record Set。
+     * 支持批量删除公网域名和内网域名的记录集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteRecordSetsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteRecordSetsResponse>
+     */
+    public CompletableFuture<BatchDeleteRecordSetsResponse> batchDeleteRecordSetsAsync(
+        BatchDeleteRecordSetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DnsMeta.batchDeleteRecordSets);
+    }
+
+    /**
+     * 批量删除Record Set
+     *
+     * 批量删除Record Set。
+     * 响应结果中只包含本次实际删除的Record Set。
+     * 支持批量删除公网域名和内网域名的记录集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteRecordSetsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse>
+     */
+    public AsyncInvoker<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse> batchDeleteRecordSetsAsyncInvoker(
+        BatchDeleteRecordSetsRequest request) {
+        return new AsyncInvoker<>(request, DnsMeta.batchDeleteRecordSets, hcClient);
+    }
+
+    /**
+     * 批量删除Zone
+     *
+     * 批量删除Zone。
+     * 本接口为原子操作，所有记录应全部删除成功或全部失败。
+     * 仅支持公网Zone、内网Zone。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteZonesRequest 请求对象
+     * @return CompletableFuture<BatchDeleteZonesResponse>
+     */
+    public CompletableFuture<BatchDeleteZonesResponse> batchDeleteZonesAsync(BatchDeleteZonesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DnsMeta.batchDeleteZones);
+    }
+
+    /**
+     * 批量删除Zone
+     *
+     * 批量删除Zone。
+     * 本接口为原子操作，所有记录应全部删除成功或全部失败。
+     * 仅支持公网Zone、内网Zone。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteZonesRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteZonesRequest, BatchDeleteZonesResponse>
+     */
+    public AsyncInvoker<BatchDeleteZonesRequest, BatchDeleteZonesResponse> batchDeleteZonesAsyncInvoker(
+        BatchDeleteZonesRequest request) {
+        return new AsyncInvoker<>(request, DnsMeta.batchDeleteZones, hcClient);
+    }
+
+    /**
+     * 批量设置Record Set状态
+     *
+     * 批量设置Record Set状态。
+     * 响应结果中只包含本次实际更新的Record Set。
+     * 支持公网域名和内网域名的记录集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSetRecordSetsStatusRequest 请求对象
+     * @return CompletableFuture<BatchSetRecordSetsStatusResponse>
+     */
+    public CompletableFuture<BatchSetRecordSetsStatusResponse> batchSetRecordSetsStatusAsync(
+        BatchSetRecordSetsStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, DnsMeta.batchSetRecordSetsStatus);
+    }
+
+    /**
+     * 批量设置Record Set状态
+     *
+     * 批量设置Record Set状态。
+     * 响应结果中只包含本次实际更新的Record Set。
+     * 支持公网域名和内网域名的记录集。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSetRecordSetsStatusRequest 请求对象
+     * @return AsyncInvoker<BatchSetRecordSetsStatusRequest, BatchSetRecordSetsStatusResponse>
+     */
+    public AsyncInvoker<BatchSetRecordSetsStatusRequest, BatchSetRecordSetsStatusResponse> batchSetRecordSetsStatusAsyncInvoker(
+        BatchSetRecordSetsStatusRequest request) {
+        return new AsyncInvoker<>(request, DnsMeta.batchSetRecordSetsStatus, hcClient);
+    }
+
+    /**
+     * 批量设置Zone状态
+     *
+     * 批量设置Zone状态。
+     * 响应结果中只包含本次实际更新的Zone。
+     * 仅支持公网Zone、内网Zone。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSetZonesStatusRequest 请求对象
+     * @return CompletableFuture<BatchSetZonesStatusResponse>
+     */
+    public CompletableFuture<BatchSetZonesStatusResponse> batchSetZonesStatusAsync(BatchSetZonesStatusRequest request) {
+        return hcClient.asyncInvokeHttp(request, DnsMeta.batchSetZonesStatus);
+    }
+
+    /**
+     * 批量设置Zone状态
+     *
+     * 批量设置Zone状态。
+     * 响应结果中只包含本次实际更新的Zone。
+     * 仅支持公网Zone、内网Zone。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchSetZonesStatusRequest 请求对象
+     * @return AsyncInvoker<BatchSetZonesStatusRequest, BatchSetZonesStatusResponse>
+     */
+    public AsyncInvoker<BatchSetZonesStatusRequest, BatchSetZonesStatusResponse> batchSetZonesStatusAsyncInvoker(
+        BatchSetZonesStatusRequest request) {
+        return new AsyncInvoker<>(request, DnsMeta.batchSetZonesStatus, hcClient);
     }
 
     /**
@@ -506,9 +648,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 设置弹性IP的PTR记录
+     * 设置弹性公网IP的PTR记录
      *
-     * 设置弹性IP的PTR记录
+     * 设置弹性公网IP的PTR记录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -520,9 +662,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 设置弹性IP的PTR记录
+     * 设置弹性公网IP的PTR记录
      *
-     * 设置弹性IP的PTR记录
+     * 设置弹性公网IP的PTR记录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -535,9 +677,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 查询租户弹性IP的PTR记录列表
+     * 查询租户弹性公网IP的PTR记录列表
      *
-     * 查询租户弹性IP的PTR记录列表
+     * 查询租户弹性公网IP的PTR记录列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -549,9 +691,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 查询租户弹性IP的PTR记录列表
+     * 查询租户弹性公网IP的PTR记录列表
      *
-     * 查询租户弹性IP的PTR记录列表
+     * 查询租户弹性公网IP的PTR记录列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -564,9 +706,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 将弹性IP的PTR记录恢复为默认值
+     * 将弹性公网IP的PTR记录恢复为默认值
      *
-     * 将弹性IP的PTR记录恢复为默认值
+     * 将弹性公网IP的PTR记录恢复为默认值
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -578,9 +720,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 将弹性IP的PTR记录恢复为默认值
+     * 将弹性公网IP的PTR记录恢复为默认值
      *
-     * 将弹性IP的PTR记录恢复为默认值
+     * 将弹性公网IP的PTR记录恢复为默认值
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -593,9 +735,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 查询单个弹性IP的PTR记录
+     * 查询单个弹性公网IP的PTR记录
      *
-     * 查询单个弹性IP的PTR记录
+     * 查询单个弹性公网IP的PTR记录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -607,9 +749,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 查询单个弹性IP的PTR记录
+     * 查询单个弹性公网IP的PTR记录
      *
-     * 查询单个弹性IP的PTR记录
+     * 查询单个弹性公网IP的PTR记录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -622,9 +764,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 修改弹性IP的PTR记录
+     * 修改弹性公网IP的PTR记录
      *
-     * 修改弹性IP的PTR记录
+     * 修改弹性公网IP的PTR记录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -636,9 +778,9 @@ public class DnsAsyncClient {
     }
 
     /**
-     * 修改弹性IP的PTR记录
+     * 修改弹性公网IP的PTR记录
      *
-     * 修改弹性IP的PTR记录
+     * 修改弹性公网IP的PTR记录
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

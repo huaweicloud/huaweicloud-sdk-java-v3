@@ -25,6 +25,11 @@ public class VersionModelVersionUpdateDTO {
 
     private String version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "modifier")
+
+    private String modifier;
+
     public VersionModelVersionUpdateDTO withId(String id) {
         this.id = id;
         return this;
@@ -76,6 +81,23 @@ public class VersionModelVersionUpdateDTO {
         this.version = version;
     }
 
+    public VersionModelVersionUpdateDTO withModifier(String modifier) {
+        this.modifier = modifier;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  修改人。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * @return modifier
+     */
+    public String getModifier() {
+        return modifier;
+    }
+
+    public void setModifier(String modifier) {
+        this.modifier = modifier;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class VersionModelVersionUpdateDTO {
         }
         VersionModelVersionUpdateDTO that = (VersionModelVersionUpdateDTO) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.iteration, that.iteration)
-            && Objects.equals(this.version, that.version);
+            && Objects.equals(this.version, that.version) && Objects.equals(this.modifier, that.modifier);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, iteration, version);
+        return Objects.hash(id, iteration, version, modifier);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class VersionModelVersionUpdateDTO {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    iteration: ").append(toIndentedString(iteration)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    modifier: ").append(toIndentedString(modifier)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -21,6 +20,11 @@ public class UpdateCsrResponse extends SdkResponse {
     @JsonProperty(value = "name")
 
     private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "csr")
+
+    private String csr;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "domain_name")
@@ -65,12 +69,12 @@ public class UpdateCsrResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
-    private BigDecimal createTime;
+    private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "update_time")
 
-    private BigDecimal updateTime;
+    private Long updateTime;
 
     public UpdateCsrResponse withId(String id) {
         this.id = id;
@@ -104,6 +108,23 @@ public class UpdateCsrResponse extends SdkResponse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public UpdateCsrResponse withCsr(String csr) {
+        this.csr = csr;
+        return this;
+    }
+
+    /**
+     * CSR内容。
+     * @return csr
+     */
+    public String getCsr() {
+        return csr;
+    }
+
+    public void setCsr(String csr) {
+        this.csr = csr;
     }
 
     public UpdateCsrResponse withDomainName(String domainName) {
@@ -242,7 +263,7 @@ public class UpdateCsrResponse extends SdkResponse {
         this.companyName = companyName;
     }
 
-    public UpdateCsrResponse withCreateTime(BigDecimal createTime) {
+    public UpdateCsrResponse withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
@@ -250,18 +271,18 @@ public class UpdateCsrResponse extends SdkResponse {
     /**
      * CSR创建时间。
      * minimum: 13
-     * maximum: 2E+1
+     * maximum: 20
      * @return createTime
      */
-    public BigDecimal getCreateTime() {
+    public Long getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(BigDecimal createTime) {
+    public void setCreateTime(Long createTime) {
         this.createTime = createTime;
     }
 
-    public UpdateCsrResponse withUpdateTime(BigDecimal updateTime) {
+    public UpdateCsrResponse withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
@@ -269,14 +290,14 @@ public class UpdateCsrResponse extends SdkResponse {
     /**
      * CSR更新时间。
      * minimum: 13
-     * maximum: 2E+1
+     * maximum: 20
      * @return updateTime
      */
-    public BigDecimal getUpdateTime() {
+    public Long getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(BigDecimal updateTime) {
+    public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
     }
 
@@ -290,9 +311,9 @@ public class UpdateCsrResponse extends SdkResponse {
         }
         UpdateCsrResponse that = (UpdateCsrResponse) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.sans, that.sans)
-            && Objects.equals(this.privateKeyAlgo, that.privateKeyAlgo) && Objects.equals(this.usage, that.usage)
-            && Objects.equals(this.companyCountry, that.companyCountry)
+            && Objects.equals(this.csr, that.csr) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.sans, that.sans) && Objects.equals(this.privateKeyAlgo, that.privateKeyAlgo)
+            && Objects.equals(this.usage, that.usage) && Objects.equals(this.companyCountry, that.companyCountry)
             && Objects.equals(this.companyProvince, that.companyProvince)
             && Objects.equals(this.companyCity, that.companyCity) && Objects.equals(this.companyName, that.companyName)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
@@ -302,6 +323,7 @@ public class UpdateCsrResponse extends SdkResponse {
     public int hashCode() {
         return Objects.hash(id,
             name,
+            csr,
             domainName,
             sans,
             privateKeyAlgo,
@@ -320,6 +342,7 @@ public class UpdateCsrResponse extends SdkResponse {
         sb.append("class UpdateCsrResponse {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    csr: ").append(toIndentedString(csr)).append("\n");
         sb.append("    domainName: ").append(toIndentedString(domainName)).append("\n");
         sb.append("    sans: ").append(toIndentedString(sans)).append("\n");
         sb.append("    privateKeyAlgo: ").append(toIndentedString(privateKeyAlgo)).append("\n");

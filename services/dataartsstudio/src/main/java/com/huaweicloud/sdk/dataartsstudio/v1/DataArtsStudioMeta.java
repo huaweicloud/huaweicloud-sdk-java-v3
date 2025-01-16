@@ -611,6 +611,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowConsistencyTaskDetailRequ
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowConsistencyTaskDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataDetailResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataPreviewRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataPreviewResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataProfileRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataProfileResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowDataServiceInstanceRequest;
@@ -11166,6 +11168,72 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowDataDetailRequest::getInstance, ShowDataDetailRequest::setInstance));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDataPreviewRequest, ShowDataPreviewResponse> showDataPreview =
+        genForShowDataPreview();
+
+    private static HttpRequestDef<ShowDataPreviewRequest, ShowDataPreviewResponse> genForShowDataPreview() {
+        // basic
+        HttpRequestDef.Builder<ShowDataPreviewRequest, ShowDataPreviewResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDataPreviewRequest.class, ShowDataPreviewResponse.class)
+                .withName("ShowDataPreview")
+                .withUri("/v3/{project_id}/asset/entities/guid/{guid}/preview")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("guid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataPreviewRequest::getGuid, ShowDataPreviewRequest::setGuid));
+        builder.<String>withRequestField("data_connection_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataPreviewRequest::getDataConnectionId,
+                ShowDataPreviewRequest::setDataConnectionId));
+        builder.<String>withRequestField("data_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataPreviewRequest::getDataType, ShowDataPreviewRequest::setDataType));
+        builder.<String>withRequestField("database",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataPreviewRequest::getDatabase, ShowDataPreviewRequest::setDatabase));
+        builder.<String>withRequestField("schema",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataPreviewRequest::getSchema, ShowDataPreviewRequest::setSchema));
+        builder.<String>withRequestField("table",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataPreviewRequest::getTable, ShowDataPreviewRequest::setTable));
+        builder.<String>withRequestField("datasource_workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataPreviewRequest::getDatasourceWorkspaceId,
+                ShowDataPreviewRequest::setDatasourceWorkspaceId));
+        builder.<String>withRequestField("partitions_condition",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataPreviewRequest::getPartitionsCondition,
+                ShowDataPreviewRequest::setPartitionsCondition));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDataPreviewRequest::getWorkspace, ShowDataPreviewRequest::setWorkspace));
 
         // response
 

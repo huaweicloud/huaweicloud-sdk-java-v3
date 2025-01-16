@@ -19,7 +19,7 @@ public class UpdateLineGroupsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdateLineGroupsBody body;
+    private UpdateLineGroupsRequestBody body;
 
     public UpdateLineGroupsRequest withLinegroupId(String linegroupId) {
         this.linegroupId = linegroupId;
@@ -27,7 +27,7 @@ public class UpdateLineGroupsRequest {
     }
 
     /**
-     * 待更新的线路分组ID。
+     * 线路分组ID
      * @return linegroupId
      */
     public String getLinegroupId() {
@@ -38,14 +38,14 @@ public class UpdateLineGroupsRequest {
         this.linegroupId = linegroupId;
     }
 
-    public UpdateLineGroupsRequest withBody(UpdateLineGroupsBody body) {
+    public UpdateLineGroupsRequest withBody(UpdateLineGroupsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateLineGroupsRequest withBody(Consumer<UpdateLineGroupsBody> bodySetter) {
+    public UpdateLineGroupsRequest withBody(Consumer<UpdateLineGroupsRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdateLineGroupsBody();
+            this.body = new UpdateLineGroupsRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateLineGroupsRequest {
      * Get body
      * @return body
      */
-    public UpdateLineGroupsBody getBody() {
+    public UpdateLineGroupsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdateLineGroupsBody body) {
+    public void setBody(UpdateLineGroupsRequestBody body) {
         this.body = body;
     }
 

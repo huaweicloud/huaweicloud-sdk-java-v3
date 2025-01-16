@@ -9,21 +9,21 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * BatchUpdateRecordSetWithLineReq
+ * BatchUpdateRecordSetWithLineRequestBody
  */
-public class BatchUpdateRecordSetWithLineReq {
+public class BatchUpdateRecordSetWithLineRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recordsets")
 
     private List<BatchUpdateRecordSet> recordsets = null;
 
-    public BatchUpdateRecordSetWithLineReq withRecordsets(List<BatchUpdateRecordSet> recordsets) {
+    public BatchUpdateRecordSetWithLineRequestBody withRecordsets(List<BatchUpdateRecordSet> recordsets) {
         this.recordsets = recordsets;
         return this;
     }
 
-    public BatchUpdateRecordSetWithLineReq addRecordsetsItem(BatchUpdateRecordSet recordsetsItem) {
+    public BatchUpdateRecordSetWithLineRequestBody addRecordsetsItem(BatchUpdateRecordSet recordsetsItem) {
         if (this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
@@ -31,7 +31,8 @@ public class BatchUpdateRecordSetWithLineReq {
         return this;
     }
 
-    public BatchUpdateRecordSetWithLineReq withRecordsets(Consumer<List<BatchUpdateRecordSet>> recordsetsSetter) {
+    public BatchUpdateRecordSetWithLineRequestBody withRecordsets(
+        Consumer<List<BatchUpdateRecordSet>> recordsetsSetter) {
         if (this.recordsets == null) {
             this.recordsets = new ArrayList<>();
         }
@@ -59,7 +60,7 @@ public class BatchUpdateRecordSetWithLineReq {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateRecordSetWithLineReq that = (BatchUpdateRecordSetWithLineReq) obj;
+        BatchUpdateRecordSetWithLineRequestBody that = (BatchUpdateRecordSetWithLineRequestBody) obj;
         return Objects.equals(this.recordsets, that.recordsets);
     }
 
@@ -71,7 +72,7 @@ public class BatchUpdateRecordSetWithLineReq {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class BatchUpdateRecordSetWithLineReq {\n");
+        sb.append("class BatchUpdateRecordSetWithLineRequestBody {\n");
         sb.append("    recordsets: ").append(toIndentedString(recordsets)).append("\n");
         sb.append("}");
         return sb.toString();

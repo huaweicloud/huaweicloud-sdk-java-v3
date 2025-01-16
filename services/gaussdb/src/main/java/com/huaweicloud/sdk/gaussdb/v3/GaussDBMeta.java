@@ -228,6 +228,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListScheduleJobsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListScheduleJobsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataBasesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataBasesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationConfigByDataBaseRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationConfigByDataBaseResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationConfigRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationConfigResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDataReplicationsRequest;
@@ -242,6 +244,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAliasRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBindEipRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyDataSyncConfigRequestV3;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyDataSyncRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyDataSyncResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyDnsNameReq;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRequestBody;
@@ -518,6 +523,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseReq
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeProxyVersionResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeSrKernelVersionRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeSrKernelVersionRequestV3;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeSrKernelVersionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UserSyncReq;
 
 @SuppressWarnings("unchecked")
@@ -7043,6 +7051,46 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListStarRocksDataReplicationConfigByDataBaseRequest, ListStarRocksDataReplicationConfigByDataBaseResponse> listStarRocksDataReplicationConfigByDataBase =
+        genForListStarRocksDataReplicationConfigByDataBase();
+
+    private static HttpRequestDef<ListStarRocksDataReplicationConfigByDataBaseRequest, ListStarRocksDataReplicationConfigByDataBaseResponse> genForListStarRocksDataReplicationConfigByDataBase() {
+        // basic
+        HttpRequestDef.Builder<ListStarRocksDataReplicationConfigByDataBaseRequest, ListStarRocksDataReplicationConfigByDataBaseResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListStarRocksDataReplicationConfigByDataBaseRequest.class,
+                    ListStarRocksDataReplicationConfigByDataBaseResponse.class)
+                .withName("ListStarRocksDataReplicationConfigByDataBase")
+                .withUri(
+                    "/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication/configuration/{database}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataReplicationConfigByDataBaseRequest::getInstanceId,
+                ListStarRocksDataReplicationConfigByDataBaseRequest::setInstanceId));
+        builder.<String>withRequestField("database",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataReplicationConfigByDataBaseRequest::getDatabase,
+                ListStarRocksDataReplicationConfigByDataBaseRequest::setDatabase));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDataReplicationConfigByDataBaseRequest::getXLanguage,
+                ListStarRocksDataReplicationConfigByDataBaseRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListStarRocksDataReplicationsRequest, ListStarRocksDataReplicationsResponse> listStarRocksDataReplications =
         genForListStarRocksDataReplications();
 
@@ -7109,6 +7157,12 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStarRocksDbParametersRequest::getInstanceId,
                 ListStarRocksDbParametersRequest::setInstanceId));
+        builder.<String>withRequestField("add_task_scenario",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDbParametersRequest::getAddTaskScenario,
+                ListStarRocksDbParametersRequest::setAddTaskScenario));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -7154,6 +7208,39 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStarrocksInstanceInfoRequest::getXLanguage,
                 ListStarrocksInstanceInfoRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyDataSyncRequest, ModifyDataSyncResponse> modifyDataSync =
+        genForModifyDataSync();
+
+    private static HttpRequestDef<ModifyDataSyncRequest, ModifyDataSyncResponse> genForModifyDataSync() {
+        // basic
+        HttpRequestDef.Builder<ModifyDataSyncRequest, ModifyDataSyncResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyDataSyncRequest.class, ModifyDataSyncResponse.class)
+                .withName("ModifyDataSync")
+                .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/databases/replication")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyDataSyncRequest::getInstanceId, ModifyDataSyncRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyDataSyncRequest::getXLanguage, ModifyDataSyncRequest::setXLanguage));
+        builder.<ModifyDataSyncConfigRequestV3>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyDataSyncConfigRequestV3.class),
+            f -> f.withMarshaller(ModifyDataSyncRequest::getBody, ModifyDataSyncRequest::setBody));
 
         // response
 
@@ -8042,6 +8129,41 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateParamInfo.class),
             f -> f.withMarshaller(UpdateStarrocksParamsRequest::getBody, UpdateStarrocksParamsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpgradeSrKernelVersionRequest, UpgradeSrKernelVersionResponse> upgradeSrKernelVersion =
+        genForUpgradeSrKernelVersion();
+
+    private static HttpRequestDef<UpgradeSrKernelVersionRequest, UpgradeSrKernelVersionResponse> genForUpgradeSrKernelVersion() {
+        // basic
+        HttpRequestDef.Builder<UpgradeSrKernelVersionRequest, UpgradeSrKernelVersionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpgradeSrKernelVersionRequest.class, UpgradeSrKernelVersionResponse.class)
+            .withName("UpgradeSrKernelVersion")
+            .withUri("/v3/{project_id}/instances/{instance_id}/starrocks/db-upgrade")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeSrKernelVersionRequest::getInstanceId,
+                UpgradeSrKernelVersionRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeSrKernelVersionRequest::getXLanguage,
+                UpgradeSrKernelVersionRequest::setXLanguage));
+        builder.<UpgradeSrKernelVersionRequestV3>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeSrKernelVersionRequestV3.class),
+            f -> f.withMarshaller(UpgradeSrKernelVersionRequest::getBody, UpgradeSrKernelVersionRequest::setBody));
 
         // response
 

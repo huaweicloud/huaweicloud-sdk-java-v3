@@ -9,9 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * UpdateLineGroupsBody
+ * UpdateLineGroupsRequestBody
  */
-public class UpdateLineGroupsBody {
+public class UpdateLineGroupsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
@@ -28,7 +28,7 @@ public class UpdateLineGroupsBody {
 
     private List<String> lines = null;
 
-    public UpdateLineGroupsBody withName(String name) {
+    public UpdateLineGroupsRequestBody withName(String name) {
         this.name = name;
         return this;
     }
@@ -45,7 +45,7 @@ public class UpdateLineGroupsBody {
         this.name = name;
     }
 
-    public UpdateLineGroupsBody withDescription(String description) {
+    public UpdateLineGroupsRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
@@ -62,12 +62,12 @@ public class UpdateLineGroupsBody {
         this.description = description;
     }
 
-    public UpdateLineGroupsBody withLines(List<String> lines) {
+    public UpdateLineGroupsRequestBody withLines(List<String> lines) {
         this.lines = lines;
         return this;
     }
 
-    public UpdateLineGroupsBody addLinesItem(String linesItem) {
+    public UpdateLineGroupsRequestBody addLinesItem(String linesItem) {
         if (this.lines == null) {
             this.lines = new ArrayList<>();
         }
@@ -75,7 +75,7 @@ public class UpdateLineGroupsBody {
         return this;
     }
 
-    public UpdateLineGroupsBody withLines(Consumer<List<String>> linesSetter) {
+    public UpdateLineGroupsRequestBody withLines(Consumer<List<String>> linesSetter) {
         if (this.lines == null) {
             this.lines = new ArrayList<>();
         }
@@ -103,7 +103,7 @@ public class UpdateLineGroupsBody {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLineGroupsBody that = (UpdateLineGroupsBody) obj;
+        UpdateLineGroupsRequestBody that = (UpdateLineGroupsRequestBody) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.lines, that.lines);
     }
@@ -116,7 +116,7 @@ public class UpdateLineGroupsBody {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateLineGroupsBody {\n");
+        sb.append("class UpdateLineGroupsRequestBody {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    lines: ").append(toIndentedString(lines)).append("\n");

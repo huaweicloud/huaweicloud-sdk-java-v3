@@ -19,7 +19,7 @@ public class BatchUpdateRecordSetWithLineRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchUpdateRecordSetWithLineReq body;
+    private BatchUpdateRecordSetWithLineRequestBody body;
 
     public BatchUpdateRecordSetWithLineRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -38,14 +38,14 @@ public class BatchUpdateRecordSetWithLineRequest {
         this.zoneId = zoneId;
     }
 
-    public BatchUpdateRecordSetWithLineRequest withBody(BatchUpdateRecordSetWithLineReq body) {
+    public BatchUpdateRecordSetWithLineRequest withBody(BatchUpdateRecordSetWithLineRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public BatchUpdateRecordSetWithLineRequest withBody(Consumer<BatchUpdateRecordSetWithLineReq> bodySetter) {
+    public BatchUpdateRecordSetWithLineRequest withBody(Consumer<BatchUpdateRecordSetWithLineRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchUpdateRecordSetWithLineReq();
+            this.body = new BatchUpdateRecordSetWithLineRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class BatchUpdateRecordSetWithLineRequest {
      * Get body
      * @return body
      */
-    public BatchUpdateRecordSetWithLineReq getBody() {
+    public BatchUpdateRecordSetWithLineRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BatchUpdateRecordSetWithLineReq body) {
+    public void setBody(BatchUpdateRecordSetWithLineRequestBody body) {
         this.body = body;
     }
 

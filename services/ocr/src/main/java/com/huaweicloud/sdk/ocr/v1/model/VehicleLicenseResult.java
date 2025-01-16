@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.ocr.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -10,6 +12,11 @@ import java.util.function.Consumer;
  * 
  */
 public class VehicleLicenseResult {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "number")
@@ -127,6 +134,21 @@ public class VehicleLicenseResult {
     private String energyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "color")
+
+    private String color;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mandatory_scrapping_date")
+
+    private String mandatoryScrappingDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private List<String> status = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "front")
 
     private VehicleLicenseFront front;
@@ -135,6 +157,23 @@ public class VehicleLicenseResult {
     @JsonProperty(value = "back")
 
     private VehicleLicenseback back;
+
+    public VehicleLicenseResult withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 行驶证类型：  - normal: 纸质行驶证  - electronic: 电子行驶证 
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public VehicleLicenseResult withNumber(String number) {
         this.number = number;
@@ -527,6 +566,73 @@ public class VehicleLicenseResult {
         this.energyType = energyType;
     }
 
+    public VehicleLicenseResult withColor(String color) {
+        this.color = color;
+        return this;
+    }
+
+    /**
+     * 车身颜色。 
+     * @return color
+     */
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public VehicleLicenseResult withMandatoryScrappingDate(String mandatoryScrappingDate) {
+        this.mandatoryScrappingDate = mandatoryScrappingDate;
+        return this;
+    }
+
+    /**
+     * 强制报废日期。 
+     * @return mandatoryScrappingDate
+     */
+    public String getMandatoryScrappingDate() {
+        return mandatoryScrappingDate;
+    }
+
+    public void setMandatoryScrappingDate(String mandatoryScrappingDate) {
+        this.mandatoryScrappingDate = mandatoryScrappingDate;
+    }
+
+    public VehicleLicenseResult withStatus(List<String> status) {
+        this.status = status;
+        return this;
+    }
+
+    public VehicleLicenseResult addStatusItem(String statusItem) {
+        if (this.status == null) {
+            this.status = new ArrayList<>();
+        }
+        this.status.add(statusItem);
+        return this;
+    }
+
+    public VehicleLicenseResult withStatus(Consumer<List<String>> statusSetter) {
+        if (this.status == null) {
+            this.status = new ArrayList<>();
+        }
+        statusSetter.accept(this.status);
+        return this;
+    }
+
+    /**
+     * 状态。 
+     * @return status
+     */
+    public List<String> getStatus() {
+        return status;
+    }
+
+    public void setStatus(List<String> status) {
+        this.status = status;
+    }
+
     public VehicleLicenseResult withFront(VehicleLicenseFront front) {
         this.front = front;
         return this;
@@ -588,11 +694,12 @@ public class VehicleLicenseResult {
             return false;
         }
         VehicleLicenseResult that = (VehicleLicenseResult) obj;
-        return Objects.equals(this.number, that.number) && Objects.equals(this.vehicleType, that.vehicleType)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.address, that.address)
-            && Objects.equals(this.useCharacter, that.useCharacter) && Objects.equals(this.model, that.model)
-            && Objects.equals(this.engineNo, that.engineNo) && Objects.equals(this.vin, that.vin)
-            && Objects.equals(this.registerDate, that.registerDate) && Objects.equals(this.issueDate, that.issueDate)
+        return Objects.equals(this.type, that.type) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.vehicleType, that.vehicleType) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.useCharacter, that.useCharacter)
+            && Objects.equals(this.model, that.model) && Objects.equals(this.engineNo, that.engineNo)
+            && Objects.equals(this.vin, that.vin) && Objects.equals(this.registerDate, that.registerDate)
+            && Objects.equals(this.issueDate, that.issueDate)
             && Objects.equals(this.issuingAuthority, that.issuingAuthority) && Objects.equals(this.fileNo, that.fileNo)
             && Objects.equals(this.approvedPassengers, that.approvedPassengers)
             && Objects.equals(this.grossMass, that.grossMass) && Objects.equals(this.unladenMass, that.unladenMass)
@@ -600,13 +707,16 @@ public class VehicleLicenseResult {
             && Objects.equals(this.tractionMass, that.tractionMass) && Objects.equals(this.remarks, that.remarks)
             && Objects.equals(this.inspectionRecord, that.inspectionRecord)
             && Objects.equals(this.codeNumber, that.codeNumber) && Objects.equals(this.textLocation, that.textLocation)
-            && Objects.equals(this.energyType, that.energyType) && Objects.equals(this.front, that.front)
+            && Objects.equals(this.energyType, that.energyType) && Objects.equals(this.color, that.color)
+            && Objects.equals(this.mandatoryScrappingDate, that.mandatoryScrappingDate)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.front, that.front)
             && Objects.equals(this.back, that.back);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number,
+        return Objects.hash(type,
+            number,
             vehicleType,
             name,
             address,
@@ -629,6 +739,9 @@ public class VehicleLicenseResult {
             codeNumber,
             textLocation,
             energyType,
+            color,
+            mandatoryScrappingDate,
+            status,
             front,
             back);
     }
@@ -637,6 +750,7 @@ public class VehicleLicenseResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VehicleLicenseResult {\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    number: ").append(toIndentedString(number)).append("\n");
         sb.append("    vehicleType: ").append(toIndentedString(vehicleType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
@@ -660,6 +774,9 @@ public class VehicleLicenseResult {
         sb.append("    codeNumber: ").append(toIndentedString(codeNumber)).append("\n");
         sb.append("    textLocation: ").append(toIndentedString(textLocation)).append("\n");
         sb.append("    energyType: ").append(toIndentedString(energyType)).append("\n");
+        sb.append("    color: ").append(toIndentedString(color)).append("\n");
+        sb.append("    mandatoryScrappingDate: ").append(toIndentedString(mandatoryScrappingDate)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    front: ").append(toIndentedString(front)).append("\n");
         sb.append("    back: ").append(toIndentedString(back)).append("\n");
         sb.append("}");

@@ -31,6 +31,11 @@ public class ListRecordSetsWithLineRequest {
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "zone_id")
+
+    private String zoneId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "line_id")
 
     private String lineId;
@@ -126,6 +131,8 @@ public class ListRecordSetsWithLineRequest {
 
     /**
      * 每页返回的资源个数。  取值范围：0~500  取值一般为10，20，50。默认值为500。
+     * minimum: 0
+     * maximum: 500
      * @return limit
      */
     public Integer getLimit() {
@@ -143,6 +150,7 @@ public class ListRecordSetsWithLineRequest {
 
     /**
      * 分页查询起始偏移量，表示从偏移量的下一个资源开始查询。  取值范围：0~2147483647  默认值为0。  当前设置marker不为空时，以marker为分页起始标识。
+     * minimum: 0
      * @return offset
      */
     public Integer getOffset() {
@@ -151,6 +159,23 @@ public class ListRecordSetsWithLineRequest {
 
     public void setOffset(Integer offset) {
         this.offset = offset;
+    }
+
+    public ListRecordSetsWithLineRequest withZoneId(String zoneId) {
+        this.zoneId = zoneId;
+        return this;
+    }
+
+    /**
+     * zone的ID。
+     * @return zoneId
+     */
+    public String getZoneId() {
+        return zoneId;
+    }
+
+    public void setZoneId(String zoneId) {
+        this.zoneId = zoneId;
     }
 
     public ListRecordSetsWithLineRequest withLineId(String lineId) {
@@ -244,7 +269,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 待查询的Record Set的id包含此id。  搜索模式默认为模糊搜索。  默认值为空。
+     * 待查询的Record Set的id包含此id。
      * @return id
      */
     public String getId() {
@@ -278,7 +303,7 @@ public class ListRecordSetsWithLineRequest {
     }
 
     /**
-     * 查询结果中Record Set列表的排序字段。  取值范围：  name：域名 type：记录集类型 默认值为空，表示不排序。
+     * 查询结果中Record Set列表的排序字段。  取值范围：  name：记录集名称 type：记录集类型 默认值为空，表示不排序。
      * @return sortKey
      */
     public String getSortKey() {
@@ -351,11 +376,12 @@ public class ListRecordSetsWithLineRequest {
         ListRecordSetsWithLineRequest that = (ListRecordSetsWithLineRequest) obj;
         return Objects.equals(this.zoneType, that.zoneType) && Objects.equals(this.marker, that.marker)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.lineId, that.lineId) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
-            && Objects.equals(this.records, that.records) && Objects.equals(this.sortKey, that.sortKey)
-            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.healthCheckId, that.healthCheckId)
+            && Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.lineId, that.lineId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.records, that.records)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.healthCheckId, that.healthCheckId)
             && Objects.equals(this.searchMode, that.searchMode);
     }
 
@@ -365,6 +391,7 @@ public class ListRecordSetsWithLineRequest {
             marker,
             limit,
             offset,
+            zoneId,
             lineId,
             tags,
             status,
@@ -386,6 +413,7 @@ public class ListRecordSetsWithLineRequest {
         sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    zoneId: ").append(toIndentedString(zoneId)).append("\n");
         sb.append("    lineId: ").append(toIndentedString(lineId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

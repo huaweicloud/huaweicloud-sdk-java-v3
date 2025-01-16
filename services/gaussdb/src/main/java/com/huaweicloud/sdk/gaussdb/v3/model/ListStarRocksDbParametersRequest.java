@@ -20,6 +20,11 @@ public class ListStarRocksDbParametersRequest {
 
     private String xLanguage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "add_task_scenario")
+
+    private String addTaskScenario;
+
     public ListStarRocksDbParametersRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -56,6 +61,23 @@ public class ListStarRocksDbParametersRequest {
         this.xLanguage = xLanguage;
     }
 
+    public ListStarRocksDbParametersRequest withAddTaskScenario(String addTaskScenario) {
+        this.addTaskScenario = addTaskScenario;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  新增子任务的场景，用于区分库参数是否支持修改。  **约束限制**：  非必填。  **取值范围**：  不涉及。  **默认值**：  不涉及。
+     * @return addTaskScenario
+     */
+    public String getAddTaskScenario() {
+        return addTaskScenario;
+    }
+
+    public void setAddTaskScenario(String addTaskScenario) {
+        this.addTaskScenario = addTaskScenario;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -65,12 +87,13 @@ public class ListStarRocksDbParametersRequest {
             return false;
         }
         ListStarRocksDbParametersRequest that = (ListStarRocksDbParametersRequest) obj;
-        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.xLanguage, that.xLanguage);
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.addTaskScenario, that.addTaskScenario);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, xLanguage);
+        return Objects.hash(instanceId, xLanguage, addTaskScenario);
     }
 
     @Override
@@ -79,6 +102,7 @@ public class ListStarRocksDbParametersRequest {
         sb.append("class ListStarRocksDbParametersRequest {\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    addTaskScenario: ").append(toIndentedString(addTaskScenario)).append("\n");
         sb.append("}");
         return sb.toString();
     }

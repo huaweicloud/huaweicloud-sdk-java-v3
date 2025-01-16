@@ -80,7 +80,7 @@ public class ListSubscriptionsRequest {
     }
 
     /**
-     * 协议名称， 枚举值：http、https、sms、email、functionstage、dms、application。
+     * 协议名称， 枚举值：http、https、sms、email、functionstage。
      * @return protocol
      */
     public String getProtocol() {

@@ -35,6 +35,11 @@ public class PermissionClusterDetail {
 
     private Boolean canManage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "can_copy")
+
+    private Boolean canCopy;
+
     public PermissionClusterDetail withCanView(Boolean canView) {
         this.canView = canView;
         return this;
@@ -120,6 +125,23 @@ public class PermissionClusterDetail {
         this.canManage = canManage;
     }
 
+    public PermissionClusterDetail withCanCopy(Boolean canCopy) {
+        this.canCopy = canCopy;
+        return this;
+    }
+
+    /**
+     * 是否有复制主机权限
+     * @return canCopy
+     */
+    public Boolean getCanCopy() {
+        return canCopy;
+    }
+
+    public void setCanCopy(Boolean canCopy) {
+        this.canCopy = canCopy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,12 @@ public class PermissionClusterDetail {
         PermissionClusterDetail that = (PermissionClusterDetail) obj;
         return Objects.equals(this.canView, that.canView) && Objects.equals(this.canEdit, that.canEdit)
             && Objects.equals(this.canDelete, that.canDelete) && Objects.equals(this.canAddHost, that.canAddHost)
-            && Objects.equals(this.canManage, that.canManage);
+            && Objects.equals(this.canManage, that.canManage) && Objects.equals(this.canCopy, that.canCopy);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(canView, canEdit, canDelete, canAddHost, canManage);
+        return Objects.hash(canView, canEdit, canDelete, canAddHost, canManage, canCopy);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class PermissionClusterDetail {
         sb.append("    canDelete: ").append(toIndentedString(canDelete)).append("\n");
         sb.append("    canAddHost: ").append(toIndentedString(canAddHost)).append("\n");
         sb.append("    canManage: ").append(toIndentedString(canManage)).append("\n");
+        sb.append("    canCopy: ").append(toIndentedString(canCopy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -88,7 +88,7 @@ public class CreatePublicZoneReq {
     }
 
     /**
-     * Zone类型,取值public。
+     * 域名类型。取值：public。
      * @return zoneType
      */
     public String getZoneType() {
@@ -105,7 +105,7 @@ public class CreatePublicZoneReq {
     }
 
     /**
-     * 管理该zone的管理员邮箱
+     * 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
      * @return email
      */
     public String getEmail() {

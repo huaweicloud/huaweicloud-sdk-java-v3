@@ -67,6 +67,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListServerAzInfoRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListServerAzInfoResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerBlockDevicesRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerBlockDevicesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerGroupsRequest;
@@ -1207,6 +1209,37 @@ public class EcsClient {
     public SyncInvoker<ListResizeFlavorsRequest, ListResizeFlavorsResponse> listResizeFlavorsInvoker(
         ListResizeFlavorsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.listResizeFlavors, hcClient);
+    }
+
+    /**
+     * 查询可用区列表
+     *
+     * 查询可用区列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServerAzInfoRequest 请求对象
+     * @return ListServerAzInfoResponse
+     */
+    @Deprecated
+    public ListServerAzInfoResponse listServerAzInfo(ListServerAzInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.listServerAzInfo);
+    }
+
+    /**
+     * 查询可用区列表
+     *
+     * 查询可用区列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServerAzInfoRequest 请求对象
+     * @return SyncInvoker<ListServerAzInfoRequest, ListServerAzInfoResponse>
+     */
+    @Deprecated
+    public SyncInvoker<ListServerAzInfoRequest, ListServerAzInfoResponse> listServerAzInfoInvoker(
+        ListServerAzInfoRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.listServerAzInfo, hcClient);
     }
 
     /**

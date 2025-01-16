@@ -161,7 +161,7 @@ public class ShowPrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 管理该zone的管理员邮箱。
+     * 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
      * @return email
      */
     public String getEmail() {

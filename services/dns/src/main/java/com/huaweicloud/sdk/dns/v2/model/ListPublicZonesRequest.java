@@ -41,6 +41,11 @@ public class ListPublicZonesRequest {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -49,6 +54,16 @@ public class ListPublicZonesRequest {
     @JsonProperty(value = "search_mode")
 
     private String searchMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_key")
+
+    private String sortKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_dir")
+
+    private String sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -61,7 +76,7 @@ public class ListPublicZonesRequest {
     }
 
     /**
-     * 待查询的zone的类型。  取值范围：public  搜索模式默认为模糊搜索。  默认值为空。
+     * 待查询的zone的类型。  取值范围：public 默认值为空。
      * @return type
      */
     public String getType() {
@@ -146,7 +161,7 @@ public class ListPublicZonesRequest {
     }
 
     /**
-     * zone名称。  搜索模式默认为模糊搜索。
+     * Zone名称。  搜索模式默认为模糊搜索。
      * @return name
      */
     public String getName() {
@@ -155,6 +170,23 @@ public class ListPublicZonesRequest {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ListPublicZonesRequest withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * Zone ID。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public ListPublicZonesRequest withStatus(String status) {
@@ -191,13 +223,47 @@ public class ListPublicZonesRequest {
         this.searchMode = searchMode;
     }
 
+    public ListPublicZonesRequest withSortKey(String sortKey) {
+        this.sortKey = sortKey;
+        return this;
+    }
+
+    /**
+     * 查询结果中zone列表的排序字段。  取值范围为：  name：域名 created_at：创建时间 updated_at：更新时间 默认值为空，表示不排序。
+     * @return sortKey
+     */
+    public String getSortKey() {
+        return sortKey;
+    }
+
+    public void setSortKey(String sortKey) {
+        this.sortKey = sortKey;
+    }
+
+    public ListPublicZonesRequest withSortDir(String sortDir) {
+        this.sortDir = sortDir;
+        return this;
+    }
+
+    /**
+     * 查询结果中zone列表的排序方式。  取值范围：  desc：降序排序 asc：升序排序 默认值为空，表示不排序。
+     * @return sortDir
+     */
+    public String getSortDir() {
+        return sortDir;
+    }
+
+    public void setSortDir(String sortDir) {
+        this.sortDir = sortDir;
+    }
+
     public ListPublicZonesRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 域名关联的企业项目ID，长度不超过36个字符。  默认值为0。
+     * 域名关联的企业项目ID，长度不超过36个字符。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -220,13 +286,26 @@ public class ListPublicZonesRequest {
         return Objects.equals(this.type, that.type) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.marker, that.marker) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.searchMode, that.searchMode)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.searchMode, that.searchMode) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, limit, marker, offset, tags, name, status, searchMode, enterpriseProjectId);
+        return Objects.hash(type,
+            limit,
+            marker,
+            offset,
+            tags,
+            name,
+            id,
+            status,
+            searchMode,
+            sortKey,
+            sortDir,
+            enterpriseProjectId);
     }
 
     @Override
@@ -239,8 +318,11 @@ public class ListPublicZonesRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    searchMode: ").append(toIndentedString(searchMode)).append("\n");
+        sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
+        sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

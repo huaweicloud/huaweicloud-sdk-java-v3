@@ -131,7 +131,7 @@ public class ShowPtrRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 弹性IP的IP地址。
+     * 弹性公网IP的IP地址。
      * @return address
      */
     public String getAddress() {
