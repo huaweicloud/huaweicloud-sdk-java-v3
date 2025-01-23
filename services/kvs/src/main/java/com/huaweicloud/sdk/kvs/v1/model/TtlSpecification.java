@@ -8,15 +8,15 @@ import org.bson.codecs.pojo.annotations.BsonProperty;
 import java.util.Objects;
 
 /**
- * TtlOptions
+ * TTL设置。非必填项，默认不启用TTL。
  */
-public class TtlOptions {
+public class TtlSpecification {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ttl_switch")
-    @BsonProperty(value = "ttl_switch")
+    @JsonProperty(value = "enable")
+    @BsonProperty(value = "enable")
 
-    private Boolean ttlSwitch;
+    private Boolean enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_after_seconds")
@@ -25,29 +25,29 @@ public class TtlOptions {
     private Integer expireAfterSeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ttl_field_name")
-    @BsonProperty(value = "ttl_field_name")
+    @JsonProperty(value = "field_name")
+    @BsonProperty(value = "field_name")
 
-    private String ttlFieldName;
+    private String fieldName;
 
-    public TtlOptions withTtlSwitch(Boolean ttlSwitch) {
-        this.ttlSwitch = ttlSwitch;
+    public TtlSpecification withEnable(Boolean enable) {
+        this.enable = enable;
         return this;
     }
 
     /**
      * TTL开关
-     * @return ttlSwitch
+     * @return enable
      */
-    public Boolean getTtlSwitch() {
-        return ttlSwitch;
+    public Boolean getEnable() {
+        return enable;
     }
 
-    public void setTtlSwitch(Boolean ttlSwitch) {
-        this.ttlSwitch = ttlSwitch;
+    public void setEnable(Boolean enable) {
+        this.enable = enable;
     }
 
-    public TtlOptions withExpireAfterSeconds(Integer expireAfterSeconds) {
+    public TtlSpecification withExpireAfterSeconds(Integer expireAfterSeconds) {
         this.expireAfterSeconds = expireAfterSeconds;
         return this;
     }
@@ -64,21 +64,21 @@ public class TtlOptions {
         this.expireAfterSeconds = expireAfterSeconds;
     }
 
-    public TtlOptions withTtlFieldName(String ttlFieldName) {
-        this.ttlFieldName = ttlFieldName;
+    public TtlSpecification withFieldName(String fieldName) {
+        this.fieldName = fieldName;
         return this;
     }
 
     /**
      * 文档中记录TTL过期时间的字段名，字段值为UTC时间，单位秒
-     * @return ttlFieldName
+     * @return fieldName
      */
-    public String getTtlFieldName() {
-        return ttlFieldName;
+    public String getFieldName() {
+        return fieldName;
     }
 
-    public void setTtlFieldName(String ttlFieldName) {
-        this.ttlFieldName = ttlFieldName;
+    public void setFieldName(String fieldName) {
+        this.fieldName = fieldName;
     }
 
     @Override
@@ -89,24 +89,24 @@ public class TtlOptions {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TtlOptions that = (TtlOptions) obj;
-        return Objects.equals(this.ttlSwitch, that.ttlSwitch)
+        TtlSpecification that = (TtlSpecification) obj;
+        return Objects.equals(this.enable, that.enable)
             && Objects.equals(this.expireAfterSeconds, that.expireAfterSeconds)
-            && Objects.equals(this.ttlFieldName, that.ttlFieldName);
+            && Objects.equals(this.fieldName, that.fieldName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ttlSwitch, expireAfterSeconds, ttlFieldName);
+        return Objects.hash(enable, expireAfterSeconds, fieldName);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class TtlOptions {\n");
-        sb.append("    ttlSwitch: ").append(toIndentedString(ttlSwitch)).append("\n");
+        sb.append("class TtlSpecification {\n");
+        sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
         sb.append("    expireAfterSeconds: ").append(toIndentedString(expireAfterSeconds)).append("\n");
-        sb.append("    ttlFieldName: ").append(toIndentedString(ttlFieldName)).append("\n");
+        sb.append("    fieldName: ").append(toIndentedString(fieldName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

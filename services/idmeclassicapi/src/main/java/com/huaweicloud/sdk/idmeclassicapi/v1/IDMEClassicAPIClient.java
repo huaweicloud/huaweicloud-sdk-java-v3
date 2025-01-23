@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddTagRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddTagResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddToCategoryRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddToCategoryResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchAddChildNodeRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchAddChildNodeResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckinRequest;
@@ -17,16 +19,26 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutUndoByAdminReque
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutUndoByAdminResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutUndoRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutUndoResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateShareDocsRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateShareDocsResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateViewRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteBranchRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteBranchResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLatestVersionRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLatestVersionResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalBranchRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalBranchResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalLatestVersionRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalLatestVersionResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteShareDocsRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteShareDocsResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteStructuredDocumentRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteStructuredDocumentResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchExecuteReviseRequest;
@@ -41,6 +53,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateAndReviseRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateAndReviseResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateByAdminRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateByAdminResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateDocumentRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateDocumentResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateVersionRequest;
@@ -63,6 +77,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareVersionRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareVersionResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CountUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CountUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateDocumentRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateDocumentResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateMultiViewRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateMultiViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateUsingPostRequest;
@@ -105,10 +121,14 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListGetChildListRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListGetChildListResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListHistoryDataRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListHistoryDataResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryDocumentsRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryDocumentsResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelatedObjectsRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelatedObjectsResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelationshipRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelationshipResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryShareDocsRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryShareDocsResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryTargetRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryTargetResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryUsingPostRequest;
@@ -119,6 +139,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RefreshRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RefreshResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveFromCategoryRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveFromCategoryResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveTagRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveTagResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.SaveAllUsingPostRequest;
@@ -135,6 +157,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetParentRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetParentResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetRootRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetRootResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetTokensRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetTokensResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteByConditionUsingPostRequest;
@@ -157,6 +181,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByAdminRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByAdminResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByConditionUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByConditionUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateDocumentRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateDocumentResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateStateRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateStateResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateUsingPostRequest;
@@ -203,6 +229,34 @@ public class IDMEClassicAPIClient {
      */
     public SyncInvoker<AddTagRequest, AddTagResponse> addTagInvoker(AddTagRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.addTag, hcClient);
+    }
+
+    /**
+     * 添加数据分类
+     *
+     * 将数据分类对象数据实例添加至数据分类数据实例中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddToCategoryRequest 请求对象
+     * @return AddToCategoryResponse
+     */
+    public AddToCategoryResponse addToCategory(AddToCategoryRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.addToCategory);
+    }
+
+    /**
+     * 添加数据分类
+     *
+     * 将数据分类对象数据实例添加至数据分类数据实例中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddToCategoryRequest 请求对象
+     * @return SyncInvoker<AddToCategoryRequest, AddToCategoryResponse>
+     */
+    public SyncInvoker<AddToCategoryRequest, AddToCategoryResponse> addToCategoryInvoker(AddToCategoryRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.addToCategory, hcClient);
     }
 
     /**
@@ -378,6 +432,35 @@ public class IDMEClassicAPIClient {
     }
 
     /**
+     * 批量创建分享结构化文档
+     *
+     * 批量创建分享结构化文档。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateShareDocsRequest 请求对象
+     * @return BatchCreateShareDocsResponse
+     */
+    public BatchCreateShareDocsResponse batchCreateShareDocs(BatchCreateShareDocsRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.batchCreateShareDocs);
+    }
+
+    /**
+     * 批量创建分享结构化文档
+     *
+     * 批量创建分享结构化文档。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateShareDocsRequest 请求对象
+     * @return SyncInvoker<BatchCreateShareDocsRequest, BatchCreateShareDocsResponse>
+     */
+    public SyncInvoker<BatchCreateShareDocsRequest, BatchCreateShareDocsResponse> batchCreateShareDocsInvoker(
+        BatchCreateShareDocsRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchCreateShareDocs, hcClient);
+    }
+
+    /**
      * 批量创建实例
      *
      * 批量创建指定数据模型的数据实例。
@@ -465,6 +548,35 @@ public class IDMEClassicAPIClient {
     }
 
     /**
+     * 批量删除版本对象下最新分支的最新版本实例数据
+     *
+     * 根据主对象ID，批量删除版本对象下最新分支的最新版本实例数据。请您谨慎使用删除操作，删除后该数据将无法恢复。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteLatestVersionRequest 请求对象
+     * @return BatchDeleteLatestVersionResponse
+     */
+    public BatchDeleteLatestVersionResponse batchDeleteLatestVersion(BatchDeleteLatestVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.batchDeleteLatestVersion);
+    }
+
+    /**
+     * 批量删除版本对象下最新分支的最新版本实例数据
+     *
+     * 根据主对象ID，批量删除版本对象下最新分支的最新版本实例数据。请您谨慎使用删除操作，删除后该数据将无法恢复。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteLatestVersionRequest 请求对象
+     * @return SyncInvoker<BatchDeleteLatestVersionRequest, BatchDeleteLatestVersionResponse>
+     */
+    public SyncInvoker<BatchDeleteLatestVersionRequest, BatchDeleteLatestVersionResponse> batchDeleteLatestVersionInvoker(
+        BatchDeleteLatestVersionRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchDeleteLatestVersion, hcClient);
+    }
+
+    /**
      * 批量软删除最新大版本下的所有小版本
      *
      * 根据主对象ID，批量软删除最新大版本下的所有小版本。通过此接口进行删除操作时，系统会将当前删除的实例数据转存至XDM应用的XDMLogicDeleteData内置模型中。
@@ -491,6 +603,36 @@ public class IDMEClassicAPIClient {
     public SyncInvoker<BatchDeleteLogicalBranchRequest, BatchDeleteLogicalBranchResponse> batchDeleteLogicalBranchInvoker(
         BatchDeleteLogicalBranchRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchDeleteLogicalBranch, hcClient);
+    }
+
+    /**
+     * 批量软删除版本对象下最新分支的最新版本实例数据
+     *
+     * 根据主对象ID，批量软删除版本对象下最新分支的最新版本实例数据。通过此接口进行删除操作时，系统会将当前删除的实例数据转存至XDM应用的XDMLogicDeleteData内置模型中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteLogicalLatestVersionRequest 请求对象
+     * @return BatchDeleteLogicalLatestVersionResponse
+     */
+    public BatchDeleteLogicalLatestVersionResponse batchDeleteLogicalLatestVersion(
+        BatchDeleteLogicalLatestVersionRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.batchDeleteLogicalLatestVersion);
+    }
+
+    /**
+     * 批量软删除版本对象下最新分支的最新版本实例数据
+     *
+     * 根据主对象ID，批量软删除版本对象下最新分支的最新版本实例数据。通过此接口进行删除操作时，系统会将当前删除的实例数据转存至XDM应用的XDMLogicDeleteData内置模型中。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteLogicalLatestVersionRequest 请求对象
+     * @return SyncInvoker<BatchDeleteLogicalLatestVersionRequest, BatchDeleteLogicalLatestVersionResponse>
+     */
+    public SyncInvoker<BatchDeleteLogicalLatestVersionRequest, BatchDeleteLogicalLatestVersionResponse> batchDeleteLogicalLatestVersionInvoker(
+        BatchDeleteLogicalLatestVersionRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchDeleteLogicalLatestVersion, hcClient);
     }
 
     /**
@@ -524,6 +666,65 @@ public class IDMEClassicAPIClient {
     public SyncInvoker<BatchDeleteLogicalUsingPostRequest, BatchDeleteLogicalUsingPostResponse> batchDeleteLogicalUsingPostInvoker(
         BatchDeleteLogicalUsingPostRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchDeleteLogicalUsingPost, hcClient);
+    }
+
+    /**
+     * 批量删除结构化文档分享权限
+     *
+     * 批量删除结构化文档分享权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteShareDocsRequest 请求对象
+     * @return BatchDeleteShareDocsResponse
+     */
+    public BatchDeleteShareDocsResponse batchDeleteShareDocs(BatchDeleteShareDocsRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.batchDeleteShareDocs);
+    }
+
+    /**
+     * 批量删除结构化文档分享权限
+     *
+     * 批量删除结构化文档分享权限。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteShareDocsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteShareDocsRequest, BatchDeleteShareDocsResponse>
+     */
+    public SyncInvoker<BatchDeleteShareDocsRequest, BatchDeleteShareDocsResponse> batchDeleteShareDocsInvoker(
+        BatchDeleteShareDocsRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchDeleteShareDocs, hcClient);
+    }
+
+    /**
+     * 批量删除结构化文档
+     *
+     * 批量删除结构化文档。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteStructuredDocumentRequest 请求对象
+     * @return BatchDeleteStructuredDocumentResponse
+     */
+    public BatchDeleteStructuredDocumentResponse batchDeleteStructuredDocument(
+        BatchDeleteStructuredDocumentRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.batchDeleteStructuredDocument);
+    }
+
+    /**
+     * 批量删除结构化文档
+     *
+     * 批量删除结构化文档。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteStructuredDocumentRequest 请求对象
+     * @return SyncInvoker<BatchDeleteStructuredDocumentRequest, BatchDeleteStructuredDocumentResponse>
+     */
+    public SyncInvoker<BatchDeleteStructuredDocumentRequest, BatchDeleteStructuredDocumentResponse> batchDeleteStructuredDocumentInvoker(
+        BatchDeleteStructuredDocumentRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchDeleteStructuredDocument, hcClient);
     }
 
     /**
@@ -731,6 +932,35 @@ public class IDMEClassicAPIClient {
     public SyncInvoker<BatchUpdateByAdminRequest, BatchUpdateByAdminResponse> batchUpdateByAdminInvoker(
         BatchUpdateByAdminRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchUpdateByAdmin, hcClient);
+    }
+
+    /**
+     * 批量更新结构化文档
+     *
+     * 批量更新结构化文档。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateDocumentRequest 请求对象
+     * @return BatchUpdateDocumentResponse
+     */
+    public BatchUpdateDocumentResponse batchUpdateDocument(BatchUpdateDocumentRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.batchUpdateDocument);
+    }
+
+    /**
+     * 批量更新结构化文档
+     *
+     * 批量更新结构化文档。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchUpdateDocumentRequest 请求对象
+     * @return SyncInvoker<BatchUpdateDocumentRequest, BatchUpdateDocumentResponse>
+     */
+    public SyncInvoker<BatchUpdateDocumentRequest, BatchUpdateDocumentResponse> batchUpdateDocumentInvoker(
+        BatchUpdateDocumentRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.batchUpdateDocument, hcClient);
     }
 
     /**
@@ -1047,6 +1277,35 @@ public class IDMEClassicAPIClient {
     public SyncInvoker<CountUsingPostRequest, CountUsingPostResponse> countUsingPostInvoker(
         CountUsingPostRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.countUsingPost, hcClient);
+    }
+
+    /**
+     * 创建结构化文档
+     *
+     * 创建结构化文档。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDocumentRequest 请求对象
+     * @return CreateDocumentResponse
+     */
+    public CreateDocumentResponse createDocument(CreateDocumentRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.createDocument);
+    }
+
+    /**
+     * 创建结构化文档
+     *
+     * 创建结构化文档。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDocumentRequest 请求对象
+     * @return SyncInvoker<CreateDocumentRequest, CreateDocumentResponse>
+     */
+    public SyncInvoker<CreateDocumentRequest, CreateDocumentResponse> createDocumentInvoker(
+        CreateDocumentRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.createDocument, hcClient);
     }
 
     /**
@@ -1664,6 +1923,35 @@ public class IDMEClassicAPIClient {
     }
 
     /**
+     * 查询结构化文档
+     *
+     * 查询结构化文档。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListQueryDocumentsRequest 请求对象
+     * @return ListQueryDocumentsResponse
+     */
+    public ListQueryDocumentsResponse listQueryDocuments(ListQueryDocumentsRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.listQueryDocuments);
+    }
+
+    /**
+     * 查询结构化文档
+     *
+     * 查询结构化文档。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListQueryDocumentsRequest 请求对象
+     * @return SyncInvoker<ListQueryDocumentsRequest, ListQueryDocumentsResponse>
+     */
+    public SyncInvoker<ListQueryDocumentsRequest, ListQueryDocumentsResponse> listQueryDocumentsInvoker(
+        ListQueryDocumentsRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.listQueryDocuments, hcClient);
+    }
+
+    /**
      * 查询关系实体关联模型的信息
      *
      * 调用该接口查询指定关系实体所关联的源/目标模型的所有实例信息，包含具体的属性。
@@ -1721,6 +2009,35 @@ public class IDMEClassicAPIClient {
     public SyncInvoker<ListQueryRelationshipRequest, ListQueryRelationshipResponse> listQueryRelationshipInvoker(
         ListQueryRelationshipRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.listQueryRelationship, hcClient);
+    }
+
+    /**
+     * 查询结构化文档分享授权列表
+     *
+     * 查询结构化文档分享授权列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListQueryShareDocsRequest 请求对象
+     * @return ListQueryShareDocsResponse
+     */
+    public ListQueryShareDocsResponse listQueryShareDocs(ListQueryShareDocsRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.listQueryShareDocs);
+    }
+
+    /**
+     * 查询结构化文档分享授权列表
+     *
+     * 查询结构化文档分享授权列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListQueryShareDocsRequest 请求对象
+     * @return SyncInvoker<ListQueryShareDocsRequest, ListQueryShareDocsResponse>
+     */
+    public SyncInvoker<ListQueryShareDocsRequest, ListQueryShareDocsResponse> listQueryShareDocsInvoker(
+        ListQueryShareDocsRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.listQueryShareDocs, hcClient);
     }
 
     /**
@@ -1868,6 +2185,35 @@ public class IDMEClassicAPIClient {
      */
     public SyncInvoker<RefreshRequest, RefreshResponse> refreshInvoker(RefreshRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.refresh, hcClient);
+    }
+
+    /**
+     * 移除数据分类
+     *
+     * 将数据分类数据实例从数据分类对象数据实例中移除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveFromCategoryRequest 请求对象
+     * @return RemoveFromCategoryResponse
+     */
+    public RemoveFromCategoryResponse removeFromCategory(RemoveFromCategoryRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.removeFromCategory);
+    }
+
+    /**
+     * 移除数据分类
+     *
+     * 将数据分类数据实例从数据分类对象数据实例中移除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RemoveFromCategoryRequest 请求对象
+     * @return SyncInvoker<RemoveFromCategoryRequest, RemoveFromCategoryResponse>
+     */
+    public SyncInvoker<RemoveFromCategoryRequest, RemoveFromCategoryResponse> removeFromCategoryInvoker(
+        RemoveFromCategoryRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.removeFromCategory, hcClient);
     }
 
     /**
@@ -2104,6 +2450,34 @@ public class IDMEClassicAPIClient {
      */
     public SyncInvoker<ShowGetRootRequest, ShowGetRootResponse> showGetRootInvoker(ShowGetRootRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.showGetRoot, hcClient);
+    }
+
+    /**
+     * 获取Token信息
+     *
+     * 该接口可以用于通过文档ID和认证类型的方式进行认证来获取结构化文档的Token。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGetTokensRequest 请求对象
+     * @return ShowGetTokensResponse
+     */
+    public ShowGetTokensResponse showGetTokens(ShowGetTokensRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.showGetTokens);
+    }
+
+    /**
+     * 获取Token信息
+     *
+     * 该接口可以用于通过文档ID和认证类型的方式进行认证来获取结构化文档的Token。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowGetTokensRequest 请求对象
+     * @return SyncInvoker<ShowGetTokensRequest, ShowGetTokensResponse>
+     */
+    public SyncInvoker<ShowGetTokensRequest, ShowGetTokensResponse> showGetTokensInvoker(ShowGetTokensRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.showGetTokens, hcClient);
     }
 
     /**
@@ -2430,6 +2804,35 @@ public class IDMEClassicAPIClient {
     public SyncInvoker<UpdateByConditionUsingPostRequest, UpdateByConditionUsingPostResponse> updateByConditionUsingPostInvoker(
         UpdateByConditionUsingPostRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.updateByConditionUsingPost, hcClient);
+    }
+
+    /**
+     * 更新文档标题
+     *
+     * 更新文档标题。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDocumentRequest 请求对象
+     * @return UpdateDocumentResponse
+     */
+    public UpdateDocumentResponse updateDocument(UpdateDocumentRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.updateDocument);
+    }
+
+    /**
+     * 更新文档标题
+     *
+     * 更新文档标题。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDocumentRequest 请求对象
+     * @return SyncInvoker<UpdateDocumentRequest, UpdateDocumentResponse>
+     */
+    public SyncInvoker<UpdateDocumentRequest, UpdateDocumentResponse> updateDocumentInvoker(
+        UpdateDocumentRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.updateDocument, hcClient);
     }
 
     /**

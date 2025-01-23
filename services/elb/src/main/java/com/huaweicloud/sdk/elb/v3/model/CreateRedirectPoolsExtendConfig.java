@@ -36,6 +36,11 @@ public class CreateRedirectPoolsExtendConfig {
 
     private CreateTrafficLimitConfig trafficLimitConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cors_config")
+
+    private CreateCorsConfig corsConfig;
+
     public CreateRedirectPoolsExtendConfig withRewriteUrlEnable(Boolean rewriteUrlEnable) {
         this.rewriteUrlEnable = rewriteUrlEnable;
         return this;
@@ -161,6 +166,32 @@ public class CreateRedirectPoolsExtendConfig {
         this.trafficLimitConfig = trafficLimitConfig;
     }
 
+    public CreateRedirectPoolsExtendConfig withCorsConfig(CreateCorsConfig corsConfig) {
+        this.corsConfig = corsConfig;
+        return this;
+    }
+
+    public CreateRedirectPoolsExtendConfig withCorsConfig(Consumer<CreateCorsConfig> corsConfigSetter) {
+        if (this.corsConfig == null) {
+            this.corsConfig = new CreateCorsConfig();
+            corsConfigSetter.accept(this.corsConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get corsConfig
+     * @return corsConfig
+     */
+    public CreateCorsConfig getCorsConfig() {
+        return corsConfig;
+    }
+
+    public void setCorsConfig(CreateCorsConfig corsConfig) {
+        this.corsConfig = corsConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -174,13 +205,18 @@ public class CreateRedirectPoolsExtendConfig {
             && Objects.equals(this.rewriteUrlConfig, that.rewriteUrlConfig)
             && Objects.equals(this.insertHeadersConfig, that.insertHeadersConfig)
             && Objects.equals(this.removeHeadersConfig, that.removeHeadersConfig)
-            && Objects.equals(this.trafficLimitConfig, that.trafficLimitConfig);
+            && Objects.equals(this.trafficLimitConfig, that.trafficLimitConfig)
+            && Objects.equals(this.corsConfig, that.corsConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(rewriteUrlEnable, rewriteUrlConfig, insertHeadersConfig, removeHeadersConfig, trafficLimitConfig);
+        return Objects.hash(rewriteUrlEnable,
+            rewriteUrlConfig,
+            insertHeadersConfig,
+            removeHeadersConfig,
+            trafficLimitConfig,
+            corsConfig);
     }
 
     @Override
@@ -192,6 +228,7 @@ public class CreateRedirectPoolsExtendConfig {
         sb.append("    insertHeadersConfig: ").append(toIndentedString(insertHeadersConfig)).append("\n");
         sb.append("    removeHeadersConfig: ").append(toIndentedString(removeHeadersConfig)).append("\n");
         sb.append("    trafficLimitConfig: ").append(toIndentedString(trafficLimitConfig)).append("\n");
+        sb.append("    corsConfig: ").append(toIndentedString(corsConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

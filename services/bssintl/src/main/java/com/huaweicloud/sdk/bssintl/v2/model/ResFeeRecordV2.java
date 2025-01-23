@@ -296,6 +296,11 @@ public class ResFeeRecordV2 {
 
     private String consumeTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "relative_order_id")
+
+    private String relativeOrderId;
+
     public ResFeeRecordV2 withBillDate(String billDate) {
         this.billDate = billDate;
         return this;
@@ -1265,6 +1270,23 @@ public class ResFeeRecordV2 {
         this.consumeTime = consumeTime;
     }
 
+    public ResFeeRecordV2 withRelativeOrderId(String relativeOrderId) {
+        this.relativeOrderId = relativeOrderId;
+        return this;
+    }
+
+    /**
+     * |参数名称：客户订单关联的订单ID| |参数约束及描述：客户订单关联的订单ID，包年/包月资源的使用记录该字段才有值，按需资源则为空。当order_id为组合交易订单时，该字段才有值，当查询为普通订单时，此字段返回为空。|
+     * @return relativeOrderId
+     */
+    public String getRelativeOrderId() {
+        return relativeOrderId;
+    }
+
+    public void setRelativeOrderId(String relativeOrderId) {
+        this.relativeOrderId = relativeOrderId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1316,7 +1338,8 @@ public class ResFeeRecordV2 {
             && Objects.equals(this.subResourceTypeName, that.subResourceTypeName)
             && Objects.equals(this.subResourceId, that.subResourceId)
             && Objects.equals(this.subResourceName, that.subResourceName)
-            && Objects.equals(this.consumeTime, that.consumeTime);
+            && Objects.equals(this.consumeTime, that.consumeTime)
+            && Objects.equals(this.relativeOrderId, that.relativeOrderId);
     }
 
     @Override
@@ -1377,7 +1400,8 @@ public class ResFeeRecordV2 {
             subResourceTypeName,
             subResourceId,
             subResourceName,
-            consumeTime);
+            consumeTime,
+            relativeOrderId);
     }
 
     @Override
@@ -1441,6 +1465,7 @@ public class ResFeeRecordV2 {
         sb.append("    subResourceId: ").append(toIndentedString(subResourceId)).append("\n");
         sb.append("    subResourceName: ").append(toIndentedString(subResourceName)).append("\n");
         sb.append("    consumeTime: ").append(toIndentedString(consumeTime)).append("\n");
+        sb.append("    relativeOrderId: ").append(toIndentedString(relativeOrderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

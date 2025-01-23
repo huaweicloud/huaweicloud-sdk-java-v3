@@ -235,7 +235,7 @@ public class CreateChInstanceRequestBody {
     }
 
     /**
-     * 时区。默认为所属GaussDB(for MySQL)实例时区。
+     * 时区。默认为所属TaurusDB实例时区。
      * @return timeZone
      */
     public String getTimeZone() {

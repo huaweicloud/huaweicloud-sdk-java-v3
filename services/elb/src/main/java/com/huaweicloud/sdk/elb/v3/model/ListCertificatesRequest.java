@@ -59,6 +59,11 @@ public class ListCertificatesRequest {
     private List<String> type = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scm_certificate_id")
+
+    private List<String> scmCertificateId = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "common_name")
 
     private List<String> commonName = null;
@@ -303,6 +308,39 @@ public class ListCertificatesRequest {
         this.type = type;
     }
 
+    public ListCertificatesRequest withScmCertificateId(List<String> scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
+        return this;
+    }
+
+    public ListCertificatesRequest addScmCertificateIdItem(String scmCertificateIdItem) {
+        if (this.scmCertificateId == null) {
+            this.scmCertificateId = new ArrayList<>();
+        }
+        this.scmCertificateId.add(scmCertificateIdItem);
+        return this;
+    }
+
+    public ListCertificatesRequest withScmCertificateId(Consumer<List<String>> scmCertificateIdSetter) {
+        if (this.scmCertificateId == null) {
+            this.scmCertificateId = new ArrayList<>();
+        }
+        scmCertificateIdSetter.accept(this.scmCertificateId);
+        return this;
+    }
+
+    /**
+     * SCM证书ID。  支持多值查询，查询条件格式：scm_certificate_id=xxx&scm_certificate_id=xxx。
+     * @return scmCertificateId
+     */
+    public List<String> getScmCertificateId() {
+        return scmCertificateId;
+    }
+
+    public void setScmCertificateId(List<String> scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
+    }
+
     public ListCertificatesRequest withCommonName(List<String> commonName) {
         this.commonName = commonName;
         return this;
@@ -382,8 +420,8 @@ public class ListCertificatesRequest {
             && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.domain, that.domain)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.commonName, that.commonName)
-            && Objects.equals(this.fingerprint, that.fingerprint);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.scmCertificateId, that.scmCertificateId)
+            && Objects.equals(this.commonName, that.commonName) && Objects.equals(this.fingerprint, that.fingerprint);
     }
 
     @Override
@@ -397,6 +435,7 @@ public class ListCertificatesRequest {
             adminStateUp,
             domain,
             type,
+            scmCertificateId,
             commonName,
             fingerprint);
     }
@@ -414,6 +453,7 @@ public class ListCertificatesRequest {
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    scmCertificateId: ").append(toIndentedString(scmCertificateId)).append("\n");
         sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
         sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
         sb.append("}");

@@ -108,6 +108,11 @@ public class MasterSlavePool {
 
     private ConnectionDrain connectionDrain;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quic_cid_hash_strategy")
+
+    private QuicCidHashStrategy quicCidHashStrategy;
+
     public MasterSlavePool withDescription(String description) {
         this.description = description;
         return this;
@@ -341,7 +346,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 后端服务器组支持的IP版本。  [取值： - 共享型：固定为v4； -  独享型：取值dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。  当协议为HTTP时，ip_version为v4。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs)  [取值：dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。 当协议为HTTP时，ip_version为v4。](tag:hcso_dt)  [不支持IPv6，只会返回v4。](tag:dt,dt_test)
+     * 后端服务器组支持的IP版本。  [取值： - 共享型：固定为v4； -  独享型：取值dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。  当协议为HTTP时，ip_version为v4。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs)  [取值：dualstack、v4、v6。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。 当协议为HTTP时，ip_version为v4。](tag:hcso_dt)  [不支持IPv6，只会返回v4。](tag:dt,dt_test)
      * @return ipVersion
      */
     public String getIpVersion() {
@@ -358,7 +363,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+     * 创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -375,7 +380,7 @@ public class MasterSlavePool {
     }
 
     /**
-     * 更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+     * 更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -506,6 +511,32 @@ public class MasterSlavePool {
         this.connectionDrain = connectionDrain;
     }
 
+    public MasterSlavePool withQuicCidHashStrategy(QuicCidHashStrategy quicCidHashStrategy) {
+        this.quicCidHashStrategy = quicCidHashStrategy;
+        return this;
+    }
+
+    public MasterSlavePool withQuicCidHashStrategy(Consumer<QuicCidHashStrategy> quicCidHashStrategySetter) {
+        if (this.quicCidHashStrategy == null) {
+            this.quicCidHashStrategy = new QuicCidHashStrategy();
+            quicCidHashStrategySetter.accept(this.quicCidHashStrategy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get quicCidHashStrategy
+     * @return quicCidHashStrategy
+     */
+    public QuicCidHashStrategy getQuicCidHashStrategy() {
+        return quicCidHashStrategy;
+    }
+
+    public void setQuicCidHashStrategy(QuicCidHashStrategy quicCidHashStrategy) {
+        this.quicCidHashStrategy = quicCidHashStrategy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -527,7 +558,8 @@ public class MasterSlavePool {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.healthmonitor, that.healthmonitor)
             && Objects.equals(this.anyPortEnable, that.anyPortEnable)
-            && Objects.equals(this.connectionDrain, that.connectionDrain);
+            && Objects.equals(this.connectionDrain, that.connectionDrain)
+            && Objects.equals(this.quicCidHashStrategy, that.quicCidHashStrategy);
     }
 
     @Override
@@ -550,7 +582,8 @@ public class MasterSlavePool {
             enterpriseProjectId,
             healthmonitor,
             anyPortEnable,
-            connectionDrain);
+            connectionDrain,
+            quicCidHashStrategy);
     }
 
     @Override
@@ -576,6 +609,7 @@ public class MasterSlavePool {
         sb.append("    healthmonitor: ").append(toIndentedString(healthmonitor)).append("\n");
         sb.append("    anyPortEnable: ").append(toIndentedString(anyPortEnable)).append("\n");
         sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
+        sb.append("    quicCidHashStrategy: ").append(toIndentedString(quicCidHashStrategy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

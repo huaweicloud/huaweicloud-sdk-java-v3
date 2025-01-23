@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 后端服务器操作状态。
@@ -19,6 +20,11 @@ public class MemberStatus {
     @JsonProperty(value = "operating_status")
 
     private String operatingStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reason")
+
+    private MemberHealthCheckFailedReason reason;
 
     public MemberStatus withListenerId(String listenerId) {
         this.listenerId = listenerId;
@@ -54,6 +60,32 @@ public class MemberStatus {
         this.operatingStatus = operatingStatus;
     }
 
+    public MemberStatus withReason(MemberHealthCheckFailedReason reason) {
+        this.reason = reason;
+        return this;
+    }
+
+    public MemberStatus withReason(Consumer<MemberHealthCheckFailedReason> reasonSetter) {
+        if (this.reason == null) {
+            this.reason = new MemberHealthCheckFailedReason();
+            reasonSetter.accept(this.reason);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reason
+     * @return reason
+     */
+    public MemberHealthCheckFailedReason getReason() {
+        return reason;
+    }
+
+    public void setReason(MemberHealthCheckFailedReason reason) {
+        this.reason = reason;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -64,12 +96,12 @@ public class MemberStatus {
         }
         MemberStatus that = (MemberStatus) obj;
         return Objects.equals(this.listenerId, that.listenerId)
-            && Objects.equals(this.operatingStatus, that.operatingStatus);
+            && Objects.equals(this.operatingStatus, that.operatingStatus) && Objects.equals(this.reason, that.reason);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(listenerId, operatingStatus);
+        return Objects.hash(listenerId, operatingStatus, reason);
     }
 
     @Override
@@ -78,6 +110,7 @@ public class MemberStatus {
         sb.append("class MemberStatus {\n");
         sb.append("    listenerId: ").append(toIndentedString(listenerId)).append("\n");
         sb.append("    operatingStatus: ").append(toIndentedString(operatingStatus)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

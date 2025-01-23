@@ -69,6 +69,11 @@ public class Member {
     private List<MemberStatus> status = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reason")
+
+    private MemberHealthCheckFailedReason reason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private String createdAt;
@@ -295,13 +300,39 @@ public class Member {
         this.status = status;
     }
 
+    public Member withReason(MemberHealthCheckFailedReason reason) {
+        this.reason = reason;
+        return this;
+    }
+
+    public Member withReason(Consumer<MemberHealthCheckFailedReason> reasonSetter) {
+        if (this.reason == null) {
+            this.reason = new MemberHealthCheckFailedReason();
+            reasonSetter.accept(this.reason);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reason
+     * @return reason
+     */
+    public MemberHealthCheckFailedReason getReason() {
+        return reason;
+    }
+
+    public void setReason(MemberHealthCheckFailedReason reason) {
+        this.reason = reason;
+    }
+
     public Member withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
 
     /**
-     * 参数解释：创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+     * 参数解释：创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -318,7 +349,7 @@ public class Member {
     }
 
     /**
-     * 参数解释：更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+     * 参数解释：更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -378,8 +409,9 @@ public class Member {
             && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.weight, that.weight)
             && Objects.equals(this.address, that.address) && Objects.equals(this.ipVersion, that.ipVersion)
             && Objects.equals(this.operatingStatus, that.operatingStatus) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
-            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.instanceId, that.instanceId);
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.memberType, that.memberType)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
@@ -395,6 +427,7 @@ public class Member {
             ipVersion,
             operatingStatus,
             status,
+            reason,
             createdAt,
             updatedAt,
             memberType,
@@ -416,6 +449,7 @@ public class Member {
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    operatingStatus: ").append(toIndentedString(operatingStatus)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");

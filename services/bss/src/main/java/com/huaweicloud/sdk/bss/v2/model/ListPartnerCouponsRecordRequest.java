@@ -227,7 +227,7 @@ public class ListPartnerCouponsRecordRequest {
     }
 
     /**
-     * 操作结果。0：成功-1：失败（非0的记录）此参数不携带或携带值为空串或携带值为空或携带值为null时，不作为筛选条件。
+     * 操作结果。0：成功-1：失败（非0的记录）此参数不携带或携带值为非枚举值时，不作为筛选条件。
      * @return result
      */
     public String getResult() {

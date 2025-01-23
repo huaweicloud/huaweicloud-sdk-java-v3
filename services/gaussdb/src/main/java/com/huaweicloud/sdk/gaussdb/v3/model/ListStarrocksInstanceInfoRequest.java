@@ -31,7 +31,7 @@ public class ListStarrocksInstanceInfoRequest {
     }
 
     /**
-     * GaussDBforMySQL实例ID，严格匹配UUID规则。
+     * TaurusDB实例ID，严格匹配UUID规则。
      * @return instanceId
      */
     public String getInstanceId() {

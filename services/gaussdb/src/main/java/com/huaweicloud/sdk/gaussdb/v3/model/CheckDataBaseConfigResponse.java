@@ -45,7 +45,7 @@ public class CheckDataBaseConfigResponse extends SdkResponse {
     }
 
     /**
-     * GaussDB(for MySQL)数据库名称。
+     * TaurusDB数据库名称。
      * @return sourceDatabaseName
      */
     public String getSourceDatabaseName() {
@@ -81,7 +81,7 @@ public class CheckDataBaseConfigResponse extends SdkResponse {
     }
 
     /**
-     * GaussDB(for MySQL)数据库配置检查结果。
+     * TaurusDB数据库配置检查结果。
      * @return sourceDbConfigCheckResults
      */
     public List<DbConfigCheckResult> getSourceDbConfigCheckResults() {

@@ -27,6 +27,11 @@ public class ShootScriptShowItem {
     private SubtitleFiles subtitleFileInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_config")
+
+    private AudioInfo audioConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "preview_info")
 
     private PreviewInfo previewInfo;
@@ -102,6 +107,32 @@ public class ShootScriptShowItem {
         this.subtitleFileInfo = subtitleFileInfo;
     }
 
+    public ShootScriptShowItem withAudioConfig(AudioInfo audioConfig) {
+        this.audioConfig = audioConfig;
+        return this;
+    }
+
+    public ShootScriptShowItem withAudioConfig(Consumer<AudioInfo> audioConfigSetter) {
+        if (this.audioConfig == null) {
+            this.audioConfig = new AudioInfo();
+            audioConfigSetter.accept(this.audioConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get audioConfig
+     * @return audioConfig
+     */
+    public AudioInfo getAudioConfig() {
+        return audioConfig;
+    }
+
+    public void setAudioConfig(AudioInfo audioConfig) {
+        this.audioConfig = audioConfig;
+    }
+
     public ShootScriptShowItem withPreviewInfo(PreviewInfo previewInfo) {
         this.previewInfo = previewInfo;
         return this;
@@ -139,12 +170,12 @@ public class ShootScriptShowItem {
         ShootScriptShowItem that = (ShootScriptShowItem) obj;
         return Objects.equals(this.sequenceNo, that.sequenceNo) && Objects.equals(this.shootScript, that.shootScript)
             && Objects.equals(this.subtitleFileInfo, that.subtitleFileInfo)
-            && Objects.equals(this.previewInfo, that.previewInfo);
+            && Objects.equals(this.audioConfig, that.audioConfig) && Objects.equals(this.previewInfo, that.previewInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sequenceNo, shootScript, subtitleFileInfo, previewInfo);
+        return Objects.hash(sequenceNo, shootScript, subtitleFileInfo, audioConfig, previewInfo);
     }
 
     @Override
@@ -154,6 +185,7 @@ public class ShootScriptShowItem {
         sb.append("    sequenceNo: ").append(toIndentedString(sequenceNo)).append("\n");
         sb.append("    shootScript: ").append(toIndentedString(shootScript)).append("\n");
         sb.append("    subtitleFileInfo: ").append(toIndentedString(subtitleFileInfo)).append("\n");
+        sb.append("    audioConfig: ").append(toIndentedString(audioConfig)).append("\n");
         sb.append("    previewInfo: ").append(toIndentedString(previewInfo)).append("\n");
         sb.append("}");
         return sb.toString();

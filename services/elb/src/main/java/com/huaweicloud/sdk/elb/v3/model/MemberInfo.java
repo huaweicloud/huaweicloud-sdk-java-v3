@@ -113,6 +113,11 @@ public class MemberInfo {
 
     private String instanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reason")
+
+    private MemberHealthCheckFailedReason reason;
+
     public MemberInfo withId(String id) {
         this.id = id;
         return this;
@@ -427,7 +432,7 @@ public class MemberInfo {
     }
 
     /**
-     * 创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+     * 创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -444,7 +449,7 @@ public class MemberInfo {
     }
 
     /**
-     * 更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+     * 更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -489,6 +494,32 @@ public class MemberInfo {
         this.instanceId = instanceId;
     }
 
+    public MemberInfo withReason(MemberHealthCheckFailedReason reason) {
+        this.reason = reason;
+        return this;
+    }
+
+    public MemberInfo withReason(Consumer<MemberHealthCheckFailedReason> reasonSetter) {
+        if (this.reason == null) {
+            this.reason = new MemberHealthCheckFailedReason();
+            reasonSetter.accept(this.reason);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reason
+     * @return reason
+     */
+    public MemberHealthCheckFailedReason getReason() {
+        return reason;
+    }
+
+    public void setReason(MemberHealthCheckFailedReason reason) {
+        this.reason = reason;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -509,7 +540,7 @@ public class MemberInfo {
             && Objects.equals(this.loadbalancerId, that.loadbalancerId)
             && Objects.equals(this.loadbalancers, that.loadbalancers) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.memberType, that.memberType)
-            && Objects.equals(this.instanceId, that.instanceId);
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.reason, that.reason);
     }
 
     @Override
@@ -533,7 +564,8 @@ public class MemberInfo {
             createdAt,
             updatedAt,
             memberType,
-            instanceId);
+            instanceId,
+            reason);
     }
 
     @Override
@@ -560,6 +592,7 @@ public class MemberInfo {
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

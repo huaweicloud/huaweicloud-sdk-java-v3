@@ -48,7 +48,7 @@ public class CreateChDatabaseReplicationRequestBody {
     }
 
     /**
-     * 源节点ID。GaussDB(for MySQL)只读节点ID。如为空，则取GaussDB(for MySQL)主节点ID。
+     * 源节点ID。TaurusDB只读节点ID。如为空，则取TaurusDB主节点ID。
      * @return sourceNodeId
      */
     public String getSourceNodeId() {

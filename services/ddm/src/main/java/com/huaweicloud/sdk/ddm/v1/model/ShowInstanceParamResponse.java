@@ -15,6 +15,21 @@ import java.util.function.Consumer;
 public class ShowInstanceParamResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "updated")
 
     private String updated;
@@ -38,6 +53,57 @@ public class ShowInstanceParamResponse extends SdkResponse {
     @JsonProperty(value = "total")
 
     private Integer total;
+
+    public ShowInstanceParamResponse withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * 参数组id。
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ShowInstanceParamResponse withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * 参数组名称。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ShowInstanceParamResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 参数组描述。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public ShowInstanceParamResponse withUpdated(String updated) {
         this.updated = updated;
@@ -152,7 +218,8 @@ public class ShowInstanceParamResponse extends SdkResponse {
             return false;
         }
         ShowInstanceParamResponse that = (ShowInstanceParamResponse) obj;
-        return Objects.equals(this.updated, that.updated)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.configurationParameter, that.configurationParameter)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.total, that.total);
@@ -160,13 +227,16 @@ public class ShowInstanceParamResponse extends SdkResponse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(updated, configurationParameter, offset, limit, total);
+        return Objects.hash(id, name, description, updated, configurationParameter, offset, limit, total);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowInstanceParamResponse {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    configurationParameter: ").append(toIndentedString(configurationParameter)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

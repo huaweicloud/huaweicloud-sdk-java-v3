@@ -138,6 +138,16 @@ public class ListPoolsRequest {
 
     private String publicBorderGroup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quic_cid_len")
+
+    private Integer quicCidLen;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quic_cid_offset")
+
+    private Integer quicCidOffset;
+
     public ListPoolsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -461,7 +471,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 企业项目ID。不传时查询default企业项目\"0\"下的资源，鉴权按照default企业项目鉴权； 如果传值，则传已存在的企业项目ID或all_granted_eps（表示查询所有企业项目）进行查询。  支持多值查询，查询条件格式：*enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 参数解释：所属的企业项目ID。 如果enterprise_project_id不传值，默认查询所有企业项目下的资源，鉴权按照细粒度权限鉴权，必须在用户组下分配elb:pools:list权限。 如果enterprise_project_id传值，鉴权按照企业项目权限鉴权，分为传入具体eps_id和all_granted_eps两种场景，前者查询指定eps_id的eps下的资源，后者查询的是所有有list权限的eps下的资源。  支持多值查询，查询条件格式： *enterprise_project_id=xxx&enterprise_project_id=xxx*。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
      * @return enterpriseProjectId
      */
     public List<String> getEnterpriseProjectId() {
@@ -810,7 +820,7 @@ public class ListPoolsRequest {
     }
 
     /**
-     * 可用区组
+     * 网络公共边界组
      * @return publicBorderGroup
      */
     public String getPublicBorderGroup() {
@@ -819,6 +829,40 @@ public class ListPoolsRequest {
 
     public void setPublicBorderGroup(String publicBorderGroup) {
         this.publicBorderGroup = publicBorderGroup;
+    }
+
+    public ListPoolsRequest withQuicCidLen(Integer quicCidLen) {
+        this.quicCidLen = quicCidLen;
+        return this;
+    }
+
+    /**
+     * 查询相同QUIC CID策略配置的后端服务器组，仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*quic_cid_len=3&quic_cid_len=5*
+     * @return quicCidLen
+     */
+    public Integer getQuicCidLen() {
+        return quicCidLen;
+    }
+
+    public void setQuicCidLen(Integer quicCidLen) {
+        this.quicCidLen = quicCidLen;
+    }
+
+    public ListPoolsRequest withQuicCidOffset(Integer quicCidOffset) {
+        this.quicCidOffset = quicCidOffset;
+        return this;
+    }
+
+    /**
+     * 查询相同QUIC CID策略配置的后端服务器组，仅用于查询条件，不作为响应参数字段。 支持多值查询，查询条件格式：*quic_cid_offset=1&quic_cid_offset=3*
+     * @return quicCidOffset
+     */
+    public Integer getQuicCidOffset() {
+        return quicCidOffset;
+    }
+
+    public void setQuicCidOffset(Integer quicCidOffset) {
+        this.quicCidOffset = quicCidOffset;
     }
 
     @Override
@@ -846,7 +890,9 @@ public class ListPoolsRequest {
             && Objects.equals(this.connectionDrain, that.connectionDrain)
             && Objects.equals(this.poolHealth, that.poolHealth)
             && Objects.equals(this.anyPortEnable, that.anyPortEnable)
-            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.quicCidLen, that.quicCidLen)
+            && Objects.equals(this.quicCidOffset, that.quicCidOffset);
     }
 
     @Override
@@ -875,7 +921,9 @@ public class ListPoolsRequest {
             connectionDrain,
             poolHealth,
             anyPortEnable,
-            publicBorderGroup);
+            publicBorderGroup,
+            quicCidLen,
+            quicCidOffset);
     }
 
     @Override
@@ -909,6 +957,8 @@ public class ListPoolsRequest {
         sb.append("    poolHealth: ").append(toIndentedString(poolHealth)).append("\n");
         sb.append("    anyPortEnable: ").append(toIndentedString(anyPortEnable)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    quicCidLen: ").append(toIndentedString(quicCidLen)).append("\n");
+        sb.append("    quicCidOffset: ").append(toIndentedString(quicCidOffset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

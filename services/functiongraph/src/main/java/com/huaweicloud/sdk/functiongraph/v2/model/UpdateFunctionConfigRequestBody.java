@@ -290,6 +290,11 @@ public class UpdateFunctionConfigRequestBody {
     private FuncVpc funcVpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "peering_cidr")
+
+    private String peeringCidr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_config")
 
     private MountConfig mountConfig;
@@ -388,6 +393,11 @@ public class UpdateFunctionConfigRequestBody {
     @JsonProperty(value = "enable_class_isolation")
 
     private Boolean enableClassIsolation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lts_custom_tag")
+
+    private Map<String, String> ltsCustomTag = null;
 
     public UpdateFunctionConfigRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
@@ -617,6 +627,23 @@ public class UpdateFunctionConfigRequestBody {
 
     public void setFuncVpc(FuncVpc funcVpc) {
         this.funcVpc = funcVpc;
+    }
+
+    public UpdateFunctionConfigRequestBody withPeeringCidr(String peeringCidr) {
+        this.peeringCidr = peeringCidr;
+        return this;
+    }
+
+    /**
+     * VPC对等连接网段。您可以声明代码中使用到的VPC网段，用以检测是否与服务使用VPC网段冲突。网段间使用分号分隔且不能超过5个。
+     * @return peeringCidr
+     */
+    public String getPeeringCidr() {
+        return peeringCidr;
+    }
+
+    public void setPeeringCidr(String peeringCidr) {
+        this.peeringCidr = peeringCidr;
     }
 
     public UpdateFunctionConfigRequestBody withMountConfig(MountConfig mountConfig) {
@@ -1005,6 +1032,39 @@ public class UpdateFunctionConfigRequestBody {
         this.enableClassIsolation = enableClassIsolation;
     }
 
+    public UpdateFunctionConfigRequestBody withLtsCustomTag(Map<String, String> ltsCustomTag) {
+        this.ltsCustomTag = ltsCustomTag;
+        return this;
+    }
+
+    public UpdateFunctionConfigRequestBody putLtsCustomTagItem(String key, String ltsCustomTagItem) {
+        if (this.ltsCustomTag == null) {
+            this.ltsCustomTag = new HashMap<>();
+        }
+        this.ltsCustomTag.put(key, ltsCustomTagItem);
+        return this;
+    }
+
+    public UpdateFunctionConfigRequestBody withLtsCustomTag(Consumer<Map<String, String>> ltsCustomTagSetter) {
+        if (this.ltsCustomTag == null) {
+            this.ltsCustomTag = new HashMap<>();
+        }
+        ltsCustomTagSetter.accept(this.ltsCustomTag);
+        return this;
+    }
+
+    /**
+     * 自定义日志标签。函数执行时，可以按照自定义标签配置上报标签到云日志服务(LTS)，用户可以通过标签对日志进行过滤筛选。
+     * @return ltsCustomTag
+     */
+    public Map<String, String> getLtsCustomTag() {
+        return ltsCustomTag;
+    }
+
+    public void setLtsCustomTag(Map<String, String> ltsCustomTag) {
+        this.ltsCustomTag = ltsCustomTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1020,7 +1080,8 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.gpuType, that.gpuType) && Objects.equals(this.userData, that.userData)
             && Objects.equals(this.encryptedUserData, that.encryptedUserData) && Objects.equals(this.xrole, that.xrole)
             && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.funcVpc, that.funcVpc) && Objects.equals(this.mountConfig, that.mountConfig)
+            && Objects.equals(this.funcVpc, that.funcVpc) && Objects.equals(this.peeringCidr, that.peeringCidr)
+            && Objects.equals(this.mountConfig, that.mountConfig)
             && Objects.equals(this.strategyConfig, that.strategyConfig)
             && Objects.equals(this.customImage, that.customImage)
             && Objects.equals(this.extendConfig, that.extendConfig)
@@ -1039,7 +1100,8 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.restoreHookHandler, that.restoreHookHandler)
             && Objects.equals(this.restoreHookTimeout, that.restoreHookTimeout)
             && Objects.equals(this.heartbeatHandler, that.heartbeatHandler)
-            && Objects.equals(this.enableClassIsolation, that.enableClassIsolation);
+            && Objects.equals(this.enableClassIsolation, that.enableClassIsolation)
+            && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
     }
 
     @Override
@@ -1057,6 +1119,7 @@ public class UpdateFunctionConfigRequestBody {
             appXrole,
             description,
             funcVpc,
+            peeringCidr,
             mountConfig,
             strategyConfig,
             customImage,
@@ -1076,7 +1139,8 @@ public class UpdateFunctionConfigRequestBody {
             restoreHookHandler,
             restoreHookTimeout,
             heartbeatHandler,
-            enableClassIsolation);
+            enableClassIsolation,
+            ltsCustomTag);
     }
 
     @Override
@@ -1096,6 +1160,7 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    appXrole: ").append(toIndentedString(appXrole)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
+        sb.append("    peeringCidr: ").append(toIndentedString(peeringCidr)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
         sb.append("    customImage: ").append(toIndentedString(customImage)).append("\n");
@@ -1116,6 +1181,7 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    restoreHookTimeout: ").append(toIndentedString(restoreHookTimeout)).append("\n");
         sb.append("    heartbeatHandler: ").append(toIndentedString(heartbeatHandler)).append("\n");
         sb.append("    enableClassIsolation: ").append(toIndentedString(enableClassIsolation)).append("\n");
+        sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

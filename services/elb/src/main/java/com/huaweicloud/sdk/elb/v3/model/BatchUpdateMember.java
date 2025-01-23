@@ -59,6 +59,11 @@ public class BatchUpdateMember {
     private String operatingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reason")
+
+    private MemberHealthCheckFailedReason reason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private List<MemberStatus> status = null;
@@ -245,6 +250,32 @@ public class BatchUpdateMember {
         this.operatingStatus = operatingStatus;
     }
 
+    public BatchUpdateMember withReason(MemberHealthCheckFailedReason reason) {
+        this.reason = reason;
+        return this;
+    }
+
+    public BatchUpdateMember withReason(Consumer<MemberHealthCheckFailedReason> reasonSetter) {
+        if (this.reason == null) {
+            this.reason = new MemberHealthCheckFailedReason();
+            reasonSetter.accept(this.reason);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reason
+     * @return reason
+     */
+    public MemberHealthCheckFailedReason getReason() {
+        return reason;
+    }
+
+    public void setReason(MemberHealthCheckFailedReason reason) {
+        this.reason = reason;
+    }
+
     public BatchUpdateMember withStatus(List<MemberStatus> status) {
         this.status = status;
         return this;
@@ -335,7 +366,7 @@ public class BatchUpdateMember {
     }
 
     /**
-     * 创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+     * 创建时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -352,7 +383,7 @@ public class BatchUpdateMember {
     }
 
     /**
-     * 更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+     * 更新时间。格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -377,9 +408,10 @@ public class BatchUpdateMember {
             && Objects.equals(this.subnetCidrId, that.subnetCidrId)
             && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.weight, that.weight)
             && Objects.equals(this.address, that.address) && Objects.equals(this.operatingStatus, that.operatingStatus)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.memberType, that.memberType)
-            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.portId, that.portId)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.portId, that.portId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
@@ -393,6 +425,7 @@ public class BatchUpdateMember {
             weight,
             address,
             operatingStatus,
+            reason,
             status,
             memberType,
             instanceId,
@@ -414,6 +447,7 @@ public class BatchUpdateMember {
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    operatingStatus: ").append(toIndentedString(operatingStatus)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");

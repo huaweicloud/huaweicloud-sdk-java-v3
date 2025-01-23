@@ -101,6 +101,11 @@ public class OrderLineItemEntityV2 {
 
     private ProductObject baseProductInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
     public OrderLineItemEntityV2 withOrderLineItemId(String orderLineItemId) {
         this.orderLineItemId = orderLineItemId;
         return this;
@@ -425,6 +430,23 @@ public class OrderLineItemEntityV2 {
         this.baseProductInfo = baseProductInfo;
     }
 
+    public OrderLineItemEntityV2 withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 订单ID。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -449,7 +471,7 @@ public class OrderLineItemEntityV2 {
             && Objects.equals(this.categoryCode, that.categoryCode)
             && Objects.equals(this.productOwnerService, that.productOwnerService)
             && Objects.equals(this.commercialResource, that.commercialResource)
-            && Objects.equals(this.baseProductInfo, that.baseProductInfo);
+            && Objects.equals(this.baseProductInfo, that.baseProductInfo) && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override
@@ -471,7 +493,8 @@ public class OrderLineItemEntityV2 {
             categoryCode,
             productOwnerService,
             commercialResource,
-            baseProductInfo);
+            baseProductInfo,
+            orderId);
     }
 
     @Override
@@ -496,6 +519,7 @@ public class OrderLineItemEntityV2 {
         sb.append("    productOwnerService: ").append(toIndentedString(productOwnerService)).append("\n");
         sb.append("    commercialResource: ").append(toIndentedString(commercialResource)).append("\n");
         sb.append("    baseProductInfo: ").append(toIndentedString(baseProductInfo)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

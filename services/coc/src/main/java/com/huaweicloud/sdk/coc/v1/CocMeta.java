@@ -46,8 +46,6 @@ import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantResponse;
-import com.huaweicloud.sdk.coc.v1.model.ListPrrTemplateRequest;
-import com.huaweicloud.sdk.coc.v1.model.ListPrrTemplateResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListResourceRequest;
@@ -550,45 +548,6 @@ public class CocMeta {
             TypeCasts.uncheckedConversion(ListAuthorizableTicketsReq.class),
             f -> f.withMarshaller(ListAuthorizableTicketsExternalRequest::getBody,
                 ListAuthorizableTicketsExternalRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPrrTemplateRequest, ListPrrTemplateResponse> listPrrTemplate =
-        genForListPrrTemplate();
-
-    private static HttpRequestDef<ListPrrTemplateRequest, ListPrrTemplateResponse> genForListPrrTemplate() {
-        // basic
-        HttpRequestDef.Builder<ListPrrTemplateRequest, ListPrrTemplateResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListPrrTemplateRequest.class, ListPrrTemplateResponse.class)
-                .withName("ListPrrTemplate")
-                .withUri("/v1/prr-template")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrrTemplateRequest::getName, ListPrrTemplateRequest::setName));
-        builder.<ListPrrTemplateRequest.ApplicationTypeEnum>withRequestField("application_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListPrrTemplateRequest.ApplicationTypeEnum.class),
-            f -> f.withMarshaller(ListPrrTemplateRequest::getApplicationType,
-                ListPrrTemplateRequest::setApplicationType));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPrrTemplateRequest::getOffset, ListPrrTemplateRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPrrTemplateRequest::getLimit, ListPrrTemplateRequest::setLimit));
 
         // response
 

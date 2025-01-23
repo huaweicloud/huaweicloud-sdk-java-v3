@@ -124,6 +124,16 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private String adminUserName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_ssl")
+
+    private Boolean enableSsl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_ref")
+
+    private String flavorRef;
+
     public ShowInstanceResponse withId(String id) {
         this.id = id;
         return this;
@@ -514,6 +524,40 @@ public class ShowInstanceResponse extends SdkResponse {
         this.adminUserName = adminUserName;
     }
 
+    public ShowInstanceResponse withEnableSsl(Boolean enableSsl) {
+        this.enableSsl = enableSsl;
+        return this;
+    }
+
+    /**
+     * 是否开启SSL。
+     * @return enableSsl
+     */
+    public Boolean getEnableSsl() {
+        return enableSsl;
+    }
+
+    public void setEnableSsl(Boolean enableSsl) {
+        this.enableSsl = enableSsl;
+    }
+
+    public ShowInstanceResponse withFlavorRef(String flavorRef) {
+        this.flavorRef = flavorRef;
+        return this;
+    }
+
+    /**
+     * 规格码。
+     * @return flavorRef
+     */
+    public String getFlavorRef() {
+        return flavorRef;
+    }
+
+    public void setFlavorRef(String flavorRef) {
+        this.flavorRef = flavorRef;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -535,7 +579,8 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.nodes, that.nodes)
-            && Objects.equals(this.adminUserName, that.adminUserName);
+            && Objects.equals(this.adminUserName, that.adminUserName) && Objects.equals(this.enableSsl, that.enableSsl)
+            && Objects.equals(this.flavorRef, that.flavorRef);
     }
 
     @Override
@@ -561,7 +606,9 @@ public class ShowInstanceResponse extends SdkResponse {
             enterpriseProjectId,
             engineVersion,
             nodes,
-            adminUserName);
+            adminUserName,
+            enableSsl,
+            flavorRef);
     }
 
     @Override
@@ -590,6 +637,8 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
         sb.append("    nodes: ").append(toIndentedString(nodes)).append("\n");
         sb.append("    adminUserName: ").append(toIndentedString(adminUserName)).append("\n");
+        sb.append("    enableSsl: ").append(toIndentedString(enableSsl)).append("\n");
+        sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("}");
         return sb.toString();
     }

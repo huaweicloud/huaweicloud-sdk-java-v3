@@ -169,7 +169,7 @@ public class PeriodProductRatingResult {
     }
 
     /**
-     * 分期金额的官网价。  说明： 暂只支持IES产品。
+     * 分期金额的官网价。  说明： 暂只支持CloudPond产品。
      * @return installmentOfficialWebsiteAmount
      */
     public String getInstallmentOfficialWebsiteAmount() {
@@ -186,7 +186,7 @@ public class PeriodProductRatingResult {
     }
 
     /**
-     * 分期金额的折扣价。  说明： 暂只支持IES产品。
+     * 分期金额的折扣价。  说明： 暂只支持CloudPond产品。
      * @return installmentOfficialDiscountAmount
      */
     public String getInstallmentOfficialDiscountAmount() {
@@ -203,7 +203,7 @@ public class PeriodProductRatingResult {
     }
 
     /**
-     * 分期金额的成交价。  说明： 分期金额的成交价=分期金额的官网价-分期金额的折扣价。暂只支持IES产品。
+     * 分期金额的成交价。  说明： 分期金额的成交价=分期金额的官网价-分期金额的折扣价。暂只支持CloudPond产品。
      * @return installmentAmount
      */
     public String getInstallmentAmount() {
@@ -220,7 +220,7 @@ public class PeriodProductRatingResult {
     }
 
     /**
-     * 分期付款的周期类型。 2：月  说明： 暂只支持IES产品。
+     * 分期付款的周期类型。 2：月 3：年 说明： 暂只支持CloudPond产品。
      * @return installmentPeriodType
      */
     public Integer getInstallmentPeriodType() {

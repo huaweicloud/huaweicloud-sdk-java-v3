@@ -26,6 +26,21 @@ public class ResetPasswordResponse extends SdkResponse {
 
     private String lockTimeLeft;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code")
+
+    private String code;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "message")
+
+    private String message;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ext_message")
+
+    private String extMessage;
+
     public ResetPasswordResponse withRetryTimesLeft(String retryTimesLeft) {
         this.retryTimesLeft = retryTimesLeft;
         return this;
@@ -77,6 +92,57 @@ public class ResetPasswordResponse extends SdkResponse {
         this.lockTimeLeft = lockTimeLeft;
     }
 
+    public ResetPasswordResponse withCode(String code) {
+        this.code = code;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 重置密码结果编号。 **取值范围**： - 1：重置密码成功。 - 3：实例被锁定。 
+     * @return code
+     */
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public ResetPasswordResponse withMessage(String message) {
+        this.message = message;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 重置密码结果信息。 **取值范围**： - success - instance is locked 
+     * @return message
+     */
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public ResetPasswordResponse withExtMessage(String extMessage) {
+        this.extMessage = extMessage;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 重置密码错误信息，若重置密码成功，则为null。 **取值范围**： 不涉及。 
+     * @return extMessage
+     */
+    public String getExtMessage() {
+        return extMessage;
+    }
+
+    public void setExtMessage(String extMessage) {
+        this.extMessage = extMessage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +153,13 @@ public class ResetPasswordResponse extends SdkResponse {
         }
         ResetPasswordResponse that = (ResetPasswordResponse) obj;
         return Objects.equals(this.retryTimesLeft, that.retryTimesLeft) && Objects.equals(this.lockTime, that.lockTime)
-            && Objects.equals(this.lockTimeLeft, that.lockTimeLeft);
+            && Objects.equals(this.lockTimeLeft, that.lockTimeLeft) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.extMessage, that.extMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(retryTimesLeft, lockTime, lockTimeLeft);
+        return Objects.hash(retryTimesLeft, lockTime, lockTimeLeft, code, message, extMessage);
     }
 
     @Override
@@ -102,6 +169,9 @@ public class ResetPasswordResponse extends SdkResponse {
         sb.append("    retryTimesLeft: ").append(toIndentedString(retryTimesLeft)).append("\n");
         sb.append("    lockTime: ").append(toIndentedString(lockTime)).append("\n");
         sb.append("    lockTimeLeft: ").append(toIndentedString(lockTimeLeft)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    extMessage: ").append(toIndentedString(extMessage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

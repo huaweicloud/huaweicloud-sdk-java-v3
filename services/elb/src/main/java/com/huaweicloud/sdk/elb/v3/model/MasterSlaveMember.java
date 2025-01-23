@@ -64,6 +64,11 @@ public class MasterSlaveMember {
     private String operatingStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "reason")
+
+    private MemberHealthCheckFailedReason reason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "member_type")
 
     private String memberType;
@@ -255,6 +260,32 @@ public class MasterSlaveMember {
         this.operatingStatus = operatingStatus;
     }
 
+    public MasterSlaveMember withReason(MemberHealthCheckFailedReason reason) {
+        this.reason = reason;
+        return this;
+    }
+
+    public MasterSlaveMember withReason(Consumer<MemberHealthCheckFailedReason> reasonSetter) {
+        if (this.reason == null) {
+            this.reason = new MemberHealthCheckFailedReason();
+            reasonSetter.accept(this.reason);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get reason
+     * @return reason
+     */
+    public MemberHealthCheckFailedReason getReason() {
+        return reason;
+    }
+
+    public void setReason(MemberHealthCheckFailedReason reason) {
+        this.reason = reason;
+    }
+
     public MasterSlaveMember withMemberType(String memberType) {
         this.memberType = memberType;
         return this;
@@ -354,7 +385,7 @@ public class MasterSlaveMember {
             && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.address, that.address)
             && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.deviceOwner, that.deviceOwner)
             && Objects.equals(this.deviceId, that.deviceId)
-            && Objects.equals(this.operatingStatus, that.operatingStatus)
+            && Objects.equals(this.operatingStatus, that.operatingStatus) && Objects.equals(this.reason, that.reason)
             && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.role, that.role) && Objects.equals(this.status, that.status);
     }
@@ -371,6 +402,7 @@ public class MasterSlaveMember {
             deviceOwner,
             deviceId,
             operatingStatus,
+            reason,
             memberType,
             instanceId,
             role,
@@ -391,6 +423,7 @@ public class MasterSlaveMember {
         sb.append("    deviceOwner: ").append(toIndentedString(deviceOwner)).append("\n");
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
         sb.append("    operatingStatus: ").append(toIndentedString(operatingStatus)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    role: ").append(toIndentedString(role)).append("\n");

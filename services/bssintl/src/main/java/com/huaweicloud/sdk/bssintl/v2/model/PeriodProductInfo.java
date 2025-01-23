@@ -193,6 +193,8 @@ public class PeriodProductInfo {
 
     /**
      * 资源容量度量标识。 15：Mbps（购买带宽时使用）17：GB（购买云硬盘时使用）14：个 线性产品时该参数不能为空。线性产品为包括硬盘，带宽等在订购时需要指定大小的产品。例如硬盘在订购时需选择10G、20G等不同大小。
+     * minimum: 0
+     * maximum: 214783647
      * @return sizeMeasureId
      */
     public Integer getSizeMeasureId() {

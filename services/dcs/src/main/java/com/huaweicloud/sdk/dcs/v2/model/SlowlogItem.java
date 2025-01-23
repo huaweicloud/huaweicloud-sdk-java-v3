@@ -45,6 +45,16 @@ public class SlowlogItem {
 
     private String username;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_role")
+
+    private String nodeRole;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_ip")
+
+    private String clientIp;
+
     public SlowlogItem withId(Integer id) {
         this.id = id;
         return this;
@@ -164,6 +174,40 @@ public class SlowlogItem {
         this.username = username;
     }
 
+    public SlowlogItem withNodeRole(String nodeRole) {
+        this.nodeRole = nodeRole;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点类型。 **取值范围**： 不涉及。 
+     * @return nodeRole
+     */
+    public String getNodeRole() {
+        return nodeRole;
+    }
+
+    public void setNodeRole(String nodeRole) {
+        this.nodeRole = nodeRole;
+    }
+
+    public SlowlogItem withClientIp(String clientIp) {
+        this.clientIp = clientIp;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 客户端IP地址。 **取值范围**： 不涉及。 
+     * @return clientIp
+     */
+    public String getClientIp() {
+        return clientIp;
+    }
+
+    public void setClientIp(String clientIp) {
+        this.clientIp = clientIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +220,13 @@ public class SlowlogItem {
         return Objects.equals(this.id, that.id) && Objects.equals(this.command, that.command)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
             && Objects.equals(this.shardName, that.shardName) && Objects.equals(this.databaseId, that.databaseId)
-            && Objects.equals(this.username, that.username);
+            && Objects.equals(this.username, that.username) && Objects.equals(this.nodeRole, that.nodeRole)
+            && Objects.equals(this.clientIp, that.clientIp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, command, startTime, duration, shardName, databaseId, username);
+        return Objects.hash(id, command, startTime, duration, shardName, databaseId, username, nodeRole, clientIp);
     }
 
     @Override
@@ -195,6 +240,8 @@ public class SlowlogItem {
         sb.append("    shardName: ").append(toIndentedString(shardName)).append("\n");
         sb.append("    databaseId: ").append(toIndentedString(databaseId)).append("\n");
         sb.append("    username: ").append(toIndentedString(username)).append("\n");
+        sb.append("    nodeRole: ").append(toIndentedString(nodeRole)).append("\n");
+        sb.append("    clientIp: ").append(toIndentedString(clientIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

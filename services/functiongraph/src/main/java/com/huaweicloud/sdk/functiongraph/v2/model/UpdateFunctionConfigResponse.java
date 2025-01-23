@@ -462,6 +462,11 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     private FuncVpc funcVpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "peering_cidr")
+
+    private String peeringCidr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_config")
 
     private MountConfig mountConfig;
@@ -625,6 +630,11 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     @JsonProperty(value = "is_return_stream")
 
     private Boolean isReturnStream;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lts_custom_tag")
+
+    private Map<String, String> ltsCustomTag = null;
 
     public UpdateFunctionConfigResponse withFuncId(String funcId) {
         this.funcId = funcId;
@@ -1128,6 +1138,23 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         this.funcVpc = funcVpc;
     }
 
+    public UpdateFunctionConfigResponse withPeeringCidr(String peeringCidr) {
+        this.peeringCidr = peeringCidr;
+        return this;
+    }
+
+    /**
+     * VPC对等连接网段。您可以声明代码中使用到的VPC网段，用以检测是否与服务使用VPC网段冲突。网段间使用分号分隔且不能超过5个。
+     * @return peeringCidr
+     */
+    public String getPeeringCidr() {
+        return peeringCidr;
+    }
+
+    public void setPeeringCidr(String peeringCidr) {
+        this.peeringCidr = peeringCidr;
+    }
+
     public UpdateFunctionConfigResponse withMountConfig(MountConfig mountConfig) {
         this.mountConfig = mountConfig;
         return this;
@@ -1494,6 +1521,39 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         this.isReturnStream = isReturnStream;
     }
 
+    public UpdateFunctionConfigResponse withLtsCustomTag(Map<String, String> ltsCustomTag) {
+        this.ltsCustomTag = ltsCustomTag;
+        return this;
+    }
+
+    public UpdateFunctionConfigResponse putLtsCustomTagItem(String key, String ltsCustomTagItem) {
+        if (this.ltsCustomTag == null) {
+            this.ltsCustomTag = new HashMap<>();
+        }
+        this.ltsCustomTag.put(key, ltsCustomTagItem);
+        return this;
+    }
+
+    public UpdateFunctionConfigResponse withLtsCustomTag(Consumer<Map<String, String>> ltsCustomTagSetter) {
+        if (this.ltsCustomTag == null) {
+            this.ltsCustomTag = new HashMap<>();
+        }
+        ltsCustomTagSetter.accept(this.ltsCustomTag);
+        return this;
+    }
+
+    /**
+     * 自定义日志标签。函数执行时，可以按照自定义标签配置上报标签到云日志服务(LTS)，用户可以通过标签对日志进行过滤筛选。
+     * @return ltsCustomTag
+     */
+    public Map<String, String> getLtsCustomTag() {
+        return ltsCustomTag;
+    }
+
+    public void setLtsCustomTag(Map<String, String> ltsCustomTag) {
+        this.ltsCustomTag = ltsCustomTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1519,7 +1579,8 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
             && Objects.equals(this.lastModified, that.lastModified)
             && Objects.equals(this.ephemeralStorage, that.ephemeralStorage)
-            && Objects.equals(this.funcVpc, that.funcVpc) && Objects.equals(this.mountConfig, that.mountConfig)
+            && Objects.equals(this.funcVpc, that.funcVpc) && Objects.equals(this.peeringCidr, that.peeringCidr)
+            && Objects.equals(this.mountConfig, that.mountConfig)
             && Objects.equals(this.strategyConfig, that.strategyConfig)
             && Objects.equals(this.dependencies, that.dependencies)
             && Objects.equals(this.initializerHandler, that.initializerHandler)
@@ -1535,7 +1596,8 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.domainNames, that.domainNames)
             && Objects.equals(this.enableAuthInHeader, that.enableAuthInHeader)
             && Objects.equals(this.customImage, that.customImage)
-            && Objects.equals(this.isReturnStream, that.isReturnStream);
+            && Objects.equals(this.isReturnStream, that.isReturnStream)
+            && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
     }
 
     @Override
@@ -1569,6 +1631,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             lastModified,
             ephemeralStorage,
             funcVpc,
+            peeringCidr,
             mountConfig,
             strategyConfig,
             dependencies,
@@ -1587,7 +1650,8 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             domainNames,
             enableAuthInHeader,
             customImage,
-            isReturnStream);
+            isReturnStream,
+            ltsCustomTag);
     }
 
     @Override
@@ -1623,6 +1687,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("    ephemeralStorage: ").append(toIndentedString(ephemeralStorage)).append("\n");
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
+        sb.append("    peeringCidr: ").append(toIndentedString(peeringCidr)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
         sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
@@ -1642,6 +1707,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
         sb.append("    customImage: ").append(toIndentedString(customImage)).append("\n");
         sb.append("    isReturnStream: ").append(toIndentedString(isReturnStream)).append("\n");
+        sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

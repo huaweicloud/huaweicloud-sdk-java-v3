@@ -50,6 +50,11 @@ public class CreateTtsAuditionRequestBody {
 
     private String style;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "channels")
+
+    private Integer channels;
+
     public CreateTtsAuditionRequestBody withText(String text) {
         this.text = text;
         return this;
@@ -192,6 +197,25 @@ public class CreateTtsAuditionRequestBody {
         this.style = style;
     }
 
+    public CreateTtsAuditionRequestBody withChannels(Integer channels) {
+        this.channels = channels;
+        return this;
+    }
+
+    /**
+     * 声道。（单声道|双声道） 默认值1，最小值1，最大值2。
+     * minimum: 1
+     * maximum: 2
+     * @return channels
+     */
+    public Integer getChannels() {
+        return channels;
+    }
+
+    public void setChannels(Integer channels) {
+        this.channels = channels;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -204,12 +228,13 @@ public class CreateTtsAuditionRequestBody {
         return Objects.equals(this.text, that.text) && Objects.equals(this.ttsText, that.ttsText)
             && Objects.equals(this.emotion, that.emotion) && Objects.equals(this.speed, that.speed)
             && Objects.equals(this.pitch, that.pitch) && Objects.equals(this.volume, that.volume)
-            && Objects.equals(this.businessType, that.businessType) && Objects.equals(this.style, that.style);
+            && Objects.equals(this.businessType, that.businessType) && Objects.equals(this.style, that.style)
+            && Objects.equals(this.channels, that.channels);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(text, ttsText, emotion, speed, pitch, volume, businessType, style);
+        return Objects.hash(text, ttsText, emotion, speed, pitch, volume, businessType, style, channels);
     }
 
     @Override
@@ -224,6 +249,7 @@ public class CreateTtsAuditionRequestBody {
         sb.append("    volume: ").append(toIndentedString(volume)).append("\n");
         sb.append("    businessType: ").append(toIndentedString(businessType)).append("\n");
         sb.append("    style: ").append(toIndentedString(style)).append("\n");
+        sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
         sb.append("}");
         return sb.toString();
     }

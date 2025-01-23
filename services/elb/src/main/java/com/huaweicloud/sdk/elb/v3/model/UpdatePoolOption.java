@@ -156,6 +156,11 @@ public class UpdatePoolOption {
 
     private PoolHealth poolHealth;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quic_cid_hash_strategy")
+
+    private QuicCidHashStrategy quicCidHashStrategy;
+
     public UpdatePoolOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -351,7 +356,7 @@ public class UpdatePoolOption {
     }
 
     /**
-     * 设置保护的原因 >仅当protection_status为consoleProtection时有效。
+     * 参数解释：设置保护的原因。作为protection_status的转态设置的原因。  约束限制：仅当protection_status为consoleProtection时有效。  取值范围：除'<'和'>'外通用Unicode字符集字符，最大255个字符。
      * @return protectionReason
      */
     public String getProtectionReason() {
@@ -431,6 +436,32 @@ public class UpdatePoolOption {
         this.poolHealth = poolHealth;
     }
 
+    public UpdatePoolOption withQuicCidHashStrategy(QuicCidHashStrategy quicCidHashStrategy) {
+        this.quicCidHashStrategy = quicCidHashStrategy;
+        return this;
+    }
+
+    public UpdatePoolOption withQuicCidHashStrategy(Consumer<QuicCidHashStrategy> quicCidHashStrategySetter) {
+        if (this.quicCidHashStrategy == null) {
+            this.quicCidHashStrategy = new QuicCidHashStrategy();
+            quicCidHashStrategySetter.accept(this.quicCidHashStrategy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get quicCidHashStrategy
+     * @return quicCidHashStrategy
+     */
+    public QuicCidHashStrategy getQuicCidHashStrategy() {
+        return quicCidHashStrategy;
+    }
+
+    public void setQuicCidHashStrategy(QuicCidHashStrategy quicCidHashStrategy) {
+        this.quicCidHashStrategy = quicCidHashStrategy;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -450,7 +481,8 @@ public class UpdatePoolOption {
             && Objects.equals(this.protectionReason, that.protectionReason)
             && Objects.equals(this.anyPortEnable, that.anyPortEnable)
             && Objects.equals(this.connectionDrain, that.connectionDrain)
-            && Objects.equals(this.poolHealth, that.poolHealth);
+            && Objects.equals(this.poolHealth, that.poolHealth)
+            && Objects.equals(this.quicCidHashStrategy, that.quicCidHashStrategy);
     }
 
     @Override
@@ -468,7 +500,8 @@ public class UpdatePoolOption {
             protectionReason,
             anyPortEnable,
             connectionDrain,
-            poolHealth);
+            poolHealth,
+            quicCidHashStrategy);
     }
 
     @Override
@@ -491,6 +524,7 @@ public class UpdatePoolOption {
         sb.append("    anyPortEnable: ").append(toIndentedString(anyPortEnable)).append("\n");
         sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
         sb.append("    poolHealth: ").append(toIndentedString(poolHealth)).append("\n");
+        sb.append("    quicCidHashStrategy: ").append(toIndentedString(quicCidHashStrategy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

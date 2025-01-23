@@ -104,6 +104,11 @@ public class ShootScript {
     private List<AudioDriveActionConfig> audioDriveActionConfig = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_drive_file_external_url")
+
+    private String audioDriveFileExternalUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "background_config")
 
     private List<BackgroundConfigInfo> backgroundConfig = null;
@@ -112,6 +117,11 @@ public class ShootScript {
     @JsonProperty(value = "layer_config")
 
     private List<LayerConfig> layerConfig = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_config")
+
+    private AudioInfo audioConfig;
 
     public ShootScript withScriptType(ScriptTypeEnum scriptType) {
         this.scriptType = scriptType;
@@ -189,6 +199,23 @@ public class ShootScript {
         this.audioDriveActionConfig = audioDriveActionConfig;
     }
 
+    public ShootScript withAudioDriveFileExternalUrl(String audioDriveFileExternalUrl) {
+        this.audioDriveFileExternalUrl = audioDriveFileExternalUrl;
+        return this;
+    }
+
+    /**
+     * 语音驱动音频文件外部下载URL。  > * 需要先申请开通白名单后，才允许通过外部URL的音频文件来驱动分身数字人视频。
+     * @return audioDriveFileExternalUrl
+     */
+    public String getAudioDriveFileExternalUrl() {
+        return audioDriveFileExternalUrl;
+    }
+
+    public void setAudioDriveFileExternalUrl(String audioDriveFileExternalUrl) {
+        this.audioDriveFileExternalUrl = audioDriveFileExternalUrl;
+    }
+
     public ShootScript withBackgroundConfig(List<BackgroundConfigInfo> backgroundConfig) {
         this.backgroundConfig = backgroundConfig;
         return this;
@@ -255,6 +282,32 @@ public class ShootScript {
         this.layerConfig = layerConfig;
     }
 
+    public ShootScript withAudioConfig(AudioInfo audioConfig) {
+        this.audioConfig = audioConfig;
+        return this;
+    }
+
+    public ShootScript withAudioConfig(Consumer<AudioInfo> audioConfigSetter) {
+        if (this.audioConfig == null) {
+            this.audioConfig = new AudioInfo();
+            audioConfigSetter.accept(this.audioConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get audioConfig
+     * @return audioConfig
+     */
+    public AudioInfo getAudioConfig() {
+        return audioConfig;
+    }
+
+    public void setAudioConfig(AudioInfo audioConfig) {
+        this.audioConfig = audioConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -266,13 +319,20 @@ public class ShootScript {
         ShootScript that = (ShootScript) obj;
         return Objects.equals(this.scriptType, that.scriptType) && Objects.equals(this.textConfig, that.textConfig)
             && Objects.equals(this.audioDriveActionConfig, that.audioDriveActionConfig)
+            && Objects.equals(this.audioDriveFileExternalUrl, that.audioDriveFileExternalUrl)
             && Objects.equals(this.backgroundConfig, that.backgroundConfig)
-            && Objects.equals(this.layerConfig, that.layerConfig);
+            && Objects.equals(this.layerConfig, that.layerConfig) && Objects.equals(this.audioConfig, that.audioConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scriptType, textConfig, audioDriveActionConfig, backgroundConfig, layerConfig);
+        return Objects.hash(scriptType,
+            textConfig,
+            audioDriveActionConfig,
+            audioDriveFileExternalUrl,
+            backgroundConfig,
+            layerConfig,
+            audioConfig);
     }
 
     @Override
@@ -282,8 +342,10 @@ public class ShootScript {
         sb.append("    scriptType: ").append(toIndentedString(scriptType)).append("\n");
         sb.append("    textConfig: ").append(toIndentedString(textConfig)).append("\n");
         sb.append("    audioDriveActionConfig: ").append(toIndentedString(audioDriveActionConfig)).append("\n");
+        sb.append("    audioDriveFileExternalUrl: ").append(toIndentedString(audioDriveFileExternalUrl)).append("\n");
         sb.append("    backgroundConfig: ").append(toIndentedString(backgroundConfig)).append("\n");
         sb.append("    layerConfig: ").append(toIndentedString(layerConfig)).append("\n");
+        sb.append("    audioConfig: ").append(toIndentedString(audioConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

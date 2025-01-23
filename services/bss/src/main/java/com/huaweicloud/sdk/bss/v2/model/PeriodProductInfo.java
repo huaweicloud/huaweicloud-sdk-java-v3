@@ -198,6 +198,8 @@ public class PeriodProductInfo {
 
     /**
      * 资源容量度量标识。 15：Mbps（购买带宽时使用）17：GB（购买云硬盘时使用）14：个 线性产品时该参数必填。线性产品为包括硬盘，带宽等在订购时需要指定大小的产品。例如硬盘在订购时需选择10G、20G等不同大小。 非线性产品时此参数不携带或者携带值为null时，不作为筛选条件。
+     * minimum: 0
+     * maximum: 214783647
      * @return sizeMeasureId
      */
     public Integer getSizeMeasureId() {
@@ -271,7 +273,7 @@ public class PeriodProductInfo {
     }
 
     /**
-     * 费用分期模式。 HALF_PAY：半付ZERO_PAY：零付NA：不支持费用分期模式  说明： 此参数不携带或携带值为空串或携带值为null时，默认值为“NA”。暂只支持IES产品。
+     * 费用分期模式。 HALF_PAY：半付ZERO_PAY：零付NA：不支持费用分期模式  说明： 此参数不携带或携带值为空串或携带值为null时，默认值为“NA”。暂只支持CloudPond产品。
      * @return feeInstallmentMode
      */
     public String getFeeInstallmentMode() {

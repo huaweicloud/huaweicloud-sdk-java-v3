@@ -38,13 +38,23 @@ public class CountPreoccupyIpNumRequest {
 
     private List<String> availabilityZoneId = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scene")
+
+    private String scene;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nat64_enable")
+
+    private Boolean nat64Enable;
+
     public CountPreoccupyIpNumRequest withL7FlavorId(String l7FlavorId) {
         this.l7FlavorId = l7FlavorId;
         return this;
     }
 
     /**
-     * 负载均衡器七层规格的ID。传入该字段表示计算创建该规格的LB，或变更LB的原七层规格到该规格所需要的预占IP。  适用场景：创建负LB，变更LB规格。  [不支持传入l7_flavor_id](tag:hcso,hk_vdf,fcs,fcs_vm,mix,hcso_g42,hcso_g42_b)
+     * 负载均衡器七层规格的ID。传入该字段表示计算创建该规格的LB的预占IP数量，或变更LB的原七层规格到该规格所需要的新增预占IP数量。  适用场景：创建负LB，变更LB规格。  [不支持传入l7_flavor_id。](tag:hcso,hk_vdf,srg,fcs)
      * @return l7FlavorId
      */
     public String getL7FlavorId() {
@@ -61,7 +71,7 @@ public class CountPreoccupyIpNumRequest {
     }
 
     /**
-     * 是否开启跨VPC转发。  取值true表示计算创建或变更为开启跨VPC转发的LB的预占IP。  取值false表示计算创建或变更为不开启跨VPC转发的LB的预占IP。不传等价false。  适用场景：创建LB，变更LB规格。  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
+     * 跨VPC后端转发开关。  取值true表示计算创建开启跨VPC后端转发的LB的预占IP数量，或开启LB跨VPC后端转发所需要的新增预占IP数量。  取值false表示计算创建不开启跨VPC后端转发的LB的预占IP。  不传等价false。  适用场景：创建LB，LB开启跨VPC后端转发。  [荷兰region不支持该字段，请勿使用。](tag:dt,dt_test)
      * @return ipTargetEnable
      */
     public Boolean getIpTargetEnable() {
@@ -95,7 +105,7 @@ public class CountPreoccupyIpNumRequest {
     }
 
     /**
-     * 负载均衡器ID。计算LB规格变更或创建LB中的第一个七层监听器的预占IP。  适用场景：变更LB规格，创建LB中的第一个七层监听器。
+     * 负载均衡器ID。计算LB变更或创建LB中的第一个七层监听器的新增预占IP。  适用场景：变更LB规格，开启跨VPC后端转发，开启/不开启地址族转换功能，创建LB中的第一个七层监听器。
      * @return loadbalancerId
      */
     public String getLoadbalancerId() {
@@ -128,7 +138,7 @@ public class CountPreoccupyIpNumRequest {
     }
 
     /**
-     * 计算创建AZ列表为availability_zone_id的负载局衡器实例的预占IP。  适用场景：创建LB。  使用说明：传入loadbalancer_id时，该参数无效。
+     * 计算创建AZ列表为availability_zone_id的负载均衡器实例的预占IP。  适用场景：创建LB。  使用说明：传入loadbalancer_id时，该参数无效。
      * @return availabilityZoneId
      */
     public List<String> getAvailabilityZoneId() {
@@ -137,6 +147,40 @@ public class CountPreoccupyIpNumRequest {
 
     public void setAvailabilityZoneId(List<String> availabilityZoneId) {
         this.availabilityZoneId = availabilityZoneId;
+    }
+
+    public CountPreoccupyIpNumRequest withScene(String scene) {
+        this.scene = scene;
+        return this;
+    }
+
+    /**
+     * 参数解释：计算共享型升级为独享型ELB负载均衡器实例的所需预占IP。  约束限制：必须同时传入loadbalancer_id。  取值范围：UPGRADE - 共享型升级为独享型ELB场景。
+     * @return scene
+     */
+    public String getScene() {
+        return scene;
+    }
+
+    public void setScene(String scene) {
+        this.scene = scene;
+    }
+
+    public CountPreoccupyIpNumRequest withNat64Enable(Boolean nat64Enable) {
+        this.nat64Enable = nat64Enable;
+        return this;
+    }
+
+    /**
+     * 参数解释： 开启地址族转换。传入该字段表示计算创建LB及该LB下开启/不开启地址族转换特性的监听器所需要的预占IP，或者指定LB创建开启/不开启地址族转换特性的监听器所需要的新增预占IP。  取值范围： true：开启地址族转换特性。 false：不开启地址族转换特性。  默认取值： false
+     * @return nat64Enable
+     */
+    public Boolean getNat64Enable() {
+        return nat64Enable;
+    }
+
+    public void setNat64Enable(Boolean nat64Enable) {
+        this.nat64Enable = nat64Enable;
     }
 
     @Override
@@ -152,12 +196,14 @@ public class CountPreoccupyIpNumRequest {
             && Objects.equals(this.ipTargetEnable, that.ipTargetEnable)
             && Objects.equals(this.ipVersion, that.ipVersion)
             && Objects.equals(this.loadbalancerId, that.loadbalancerId)
-            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId);
+            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.scene, that.scene) && Objects.equals(this.nat64Enable, that.nat64Enable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(l7FlavorId, ipTargetEnable, ipVersion, loadbalancerId, availabilityZoneId);
+        return Objects
+            .hash(l7FlavorId, ipTargetEnable, ipVersion, loadbalancerId, availabilityZoneId, scene, nat64Enable);
     }
 
     @Override
@@ -169,6 +215,8 @@ public class CountPreoccupyIpNumRequest {
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
         sb.append("    availabilityZoneId: ").append(toIndentedString(availabilityZoneId)).append("\n");
+        sb.append("    scene: ").append(toIndentedString(scene)).append("\n");
+        sb.append("    nat64Enable: ").append(toIndentedString(nat64Enable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -539,6 +539,11 @@ public class CreateFunctionRequestBody {
 
     private Boolean enableDynamicMemory;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lts_custom_tag")
+
+    private Map<String, String> ltsCustomTag = null;
+
     public CreateFunctionRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -1136,6 +1141,39 @@ public class CreateFunctionRequestBody {
         this.enableDynamicMemory = enableDynamicMemory;
     }
 
+    public CreateFunctionRequestBody withLtsCustomTag(Map<String, String> ltsCustomTag) {
+        this.ltsCustomTag = ltsCustomTag;
+        return this;
+    }
+
+    public CreateFunctionRequestBody putLtsCustomTagItem(String key, String ltsCustomTagItem) {
+        if (this.ltsCustomTag == null) {
+            this.ltsCustomTag = new HashMap<>();
+        }
+        this.ltsCustomTag.put(key, ltsCustomTagItem);
+        return this;
+    }
+
+    public CreateFunctionRequestBody withLtsCustomTag(Consumer<Map<String, String>> ltsCustomTagSetter) {
+        if (this.ltsCustomTag == null) {
+            this.ltsCustomTag = new HashMap<>();
+        }
+        ltsCustomTagSetter.accept(this.ltsCustomTag);
+        return this;
+    }
+
+    /**
+     * 自定义日志标签。函数执行时，可以按照自定义标签配置上报标签到云日志服务(LTS)，用户可以通过标签对日志进行过滤筛选。
+     * @return ltsCustomTag
+     */
+    public Map<String, String> getLtsCustomTag() {
+        return ltsCustomTag;
+    }
+
+    public void setLtsCustomTag(Map<String, String> ltsCustomTag) {
+        this.ltsCustomTag = ltsCustomTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1165,7 +1203,8 @@ public class CreateFunctionRequestBody {
             && Objects.equals(this.type, that.type) && Objects.equals(this.logConfig, that.logConfig)
             && Objects.equals(this.networkController, that.networkController)
             && Objects.equals(this.isStatefulFunction, that.isStatefulFunction)
-            && Objects.equals(this.enableDynamicMemory, that.enableDynamicMemory);
+            && Objects.equals(this.enableDynamicMemory, that.enableDynamicMemory)
+            && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
     }
 
     @Override
@@ -1200,7 +1239,8 @@ public class CreateFunctionRequestBody {
             logConfig,
             networkController,
             isStatefulFunction,
-            enableDynamicMemory);
+            enableDynamicMemory,
+            ltsCustomTag);
     }
 
     @Override
@@ -1238,6 +1278,7 @@ public class CreateFunctionRequestBody {
         sb.append("    networkController: ").append(toIndentedString(networkController)).append("\n");
         sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
         sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
+        sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddTagRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddTagResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddToCategoryRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.AddToCategoryResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchAddChildNodeRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchAddChildNodeResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckinRequest;
@@ -19,16 +21,26 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutUndoByAdminReque
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutUndoByAdminResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutUndoRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCheckoutUndoResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateShareDocsRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateShareDocsResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateViewRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchCreateViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteBranchRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteBranchResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLatestVersionRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLatestVersionResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalBranchRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalBranchResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalLatestVersionRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalLatestVersionResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteLogicalUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteShareDocsRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteShareDocsResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteStructuredDocumentRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteStructuredDocumentResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchDeleteUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchExecuteReviseRequest;
@@ -43,6 +55,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateAndReviseRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateAndReviseResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateByAdminRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateByAdminResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateDocumentRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateDocumentResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.BatchUpdateVersionRequest;
@@ -65,6 +79,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareVersionRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CompareVersionResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CountUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CountUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateDocumentRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateDocumentResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateMultiViewRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateMultiViewResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.CreateUsingPostRequest;
@@ -107,10 +123,14 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListGetChildListRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListGetChildListResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListHistoryDataRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListHistoryDataResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryDocumentsRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryDocumentsResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelatedObjectsRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelatedObjectsResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelationshipRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryRelationshipResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryShareDocsRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryShareDocsResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryTargetRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryTargetResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListQueryUsingPostRequest;
@@ -119,20 +139,26 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListSelectUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListSelectUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ListUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOBatchDeleteDocRequestDto;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOBatchOperateChildDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOCategoryDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOCompareVersionVO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVODeleteByConditionVo;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVODeleteDocParamDto;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOGenericLinkBatchQueryDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOGenericLinkQueryDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOGenericLinkTypeDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOGenericLinkTypeModifierDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOGetTokenDto;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOLifecycleManagedModelLifecycleTemplateSwitchDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListBatchUpdateStructuredDocDto;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListLifecycleManagedModelUpdateLifecycleStateDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListMultiViewModelVersionViewCreateDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListPersistableModelCreateDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListPersistableModelSaveAllDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListPersistableModelSaveDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListPersistableModelUpdateDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListShareDocsParamDto;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModel;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModelVersionCheckInDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOListVersionModelVersionCheckOutDTO;
@@ -157,17 +183,22 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistableModelSav
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistableModelUniqueKeyDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOPersistableModelUpdateDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryChildListDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryDocParamDto;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryParentDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryRequestCountVo;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryRequestSelectedVo;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryRequestStaticsVo;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryRequestVo;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOQueryShareDocs;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOStatisticsPVO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOStructuredDocInfo;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOTagOperationDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOUpdateByConditionVoPersistableModelUpdateDTO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOUpdateDocRequestDto;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionMasterIdsDtoVersionModelVersionMasterDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModel;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelCompareVersionVO;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelMasterIdsModifierDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelVersionCheckInDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelVersionCheckOutDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelVersionCheckoutAndUpdateDTOVersionModel;
@@ -181,6 +212,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionModelVersion
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RDMParamVOVersionUpdateViewDTOMultiViewModelViewUpdateAttrDTO;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RefreshRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RefreshResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveFromCategoryRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveFromCategoryResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveTagRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.RemoveTagResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.SaveAllUsingPostRequest;
@@ -197,6 +230,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetParentRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetParentResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetRootRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetRootResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetTokensRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetTokensResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowGetUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteByConditionUsingPostRequest;
@@ -219,6 +254,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByAdminRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByAdminResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByConditionUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateByConditionUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateDocumentRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateDocumentResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateStateRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateStateResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.UpdateUsingPostRequest;
@@ -255,6 +292,39 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOTagOperationDTO.class),
             f -> f.withMarshaller(AddTagRequest::getBody, AddTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddToCategoryRequest, AddToCategoryResponse> addToCategory =
+        genForAddToCategory();
+
+    private static HttpRequestDef<AddToCategoryRequest, AddToCategoryResponse> genForAddToCategory() {
+        // basic
+        HttpRequestDef.Builder<AddToCategoryRequest, AddToCategoryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddToCategoryRequest.class, AddToCategoryResponse.class)
+                .withName("AddToCategory")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/addToCategory")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddToCategoryRequest::getIdentifier, AddToCategoryRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddToCategoryRequest::getModelName, AddToCategoryRequest::setModelName));
+        builder.<RDMParamVOCategoryDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOCategoryDTO.class),
+            f -> f.withMarshaller(AddToCategoryRequest::getBody, AddToCategoryRequest::setBody));
 
         // response
 
@@ -463,6 +533,41 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchCreateShareDocsRequest, BatchCreateShareDocsResponse> batchCreateShareDocs =
+        genForBatchCreateShareDocs();
+
+    private static HttpRequestDef<BatchCreateShareDocsRequest, BatchCreateShareDocsResponse> genForBatchCreateShareDocs() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateShareDocsRequest, BatchCreateShareDocsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateShareDocsRequest.class, BatchCreateShareDocsResponse.class)
+            .withName("BatchCreateShareDocs")
+            .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/structured-doc/share-doc/batch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateShareDocsRequest::getModelName,
+                BatchCreateShareDocsRequest::setModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateShareDocsRequest::getIdentifier,
+                BatchCreateShareDocsRequest::setIdentifier));
+        builder.<RDMParamVOListShareDocsParamDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RDMParamVOListShareDocsParamDto.class),
+            f -> f.withMarshaller(BatchCreateShareDocsRequest::getBody, BatchCreateShareDocsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchCreateUsingPostRequest, BatchCreateUsingPostResponse> batchCreateUsingPost =
         genForBatchCreateUsingPost();
 
@@ -564,6 +669,42 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteLatestVersionRequest, BatchDeleteLatestVersionResponse> batchDeleteLatestVersion =
+        genForBatchDeleteLatestVersion();
+
+    private static HttpRequestDef<BatchDeleteLatestVersionRequest, BatchDeleteLatestVersionResponse> genForBatchDeleteLatestVersion() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteLatestVersionRequest, BatchDeleteLatestVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchDeleteLatestVersionRequest.class, BatchDeleteLatestVersionResponse.class)
+                .withName("BatchDeleteLatestVersion")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/batch-delete-latest-version")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteLatestVersionRequest::getModelName,
+                BatchDeleteLatestVersionRequest::setModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteLatestVersionRequest::getIdentifier,
+                BatchDeleteLatestVersionRequest::setIdentifier));
+        builder.<RDMParamVOVersionModelMasterIdsModifierDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOVersionModelMasterIdsModifierDTO.class),
+            f -> f.withMarshaller(BatchDeleteLatestVersionRequest::getBody, BatchDeleteLatestVersionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteLogicalBranchRequest, BatchDeleteLogicalBranchResponse> batchDeleteLogicalBranch =
         genForBatchDeleteLogicalBranch();
 
@@ -594,6 +735,45 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOVersionMasterIdsDtoVersionModelVersionMasterDTO.class),
             f -> f.withMarshaller(BatchDeleteLogicalBranchRequest::getBody, BatchDeleteLogicalBranchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteLogicalLatestVersionRequest, BatchDeleteLogicalLatestVersionResponse> batchDeleteLogicalLatestVersion =
+        genForBatchDeleteLogicalLatestVersion();
+
+    private static HttpRequestDef<BatchDeleteLogicalLatestVersionRequest, BatchDeleteLogicalLatestVersionResponse> genForBatchDeleteLogicalLatestVersion() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteLogicalLatestVersionRequest, BatchDeleteLogicalLatestVersionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteLogicalLatestVersionRequest.class,
+                    BatchDeleteLogicalLatestVersionResponse.class)
+                .withName("BatchDeleteLogicalLatestVersion")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/batch-logical-delete-latest-version")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteLogicalLatestVersionRequest::getModelName,
+                BatchDeleteLogicalLatestVersionRequest::setModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteLogicalLatestVersionRequest::getIdentifier,
+                BatchDeleteLogicalLatestVersionRequest::setIdentifier));
+        builder.<RDMParamVOVersionModelMasterIdsModifierDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOVersionModelMasterIdsModifierDTO.class),
+            f -> f.withMarshaller(BatchDeleteLogicalLatestVersionRequest::getBody,
+                BatchDeleteLogicalLatestVersionRequest::setBody));
 
         // response
 
@@ -633,6 +813,80 @@ public class IDMEClassicAPIMeta {
             TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdsModifierDTO.class),
             f -> f.withMarshaller(BatchDeleteLogicalUsingPostRequest::getBody,
                 BatchDeleteLogicalUsingPostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteShareDocsRequest, BatchDeleteShareDocsResponse> batchDeleteShareDocs =
+        genForBatchDeleteShareDocs();
+
+    private static HttpRequestDef<BatchDeleteShareDocsRequest, BatchDeleteShareDocsResponse> genForBatchDeleteShareDocs() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteShareDocsRequest, BatchDeleteShareDocsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeleteShareDocsRequest.class, BatchDeleteShareDocsResponse.class)
+            .withName("BatchDeleteShareDocs")
+            .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/structured-doc/share-doc/batch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteShareDocsRequest::getModelName,
+                BatchDeleteShareDocsRequest::setModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteShareDocsRequest::getIdentifier,
+                BatchDeleteShareDocsRequest::setIdentifier));
+        builder.<RDMParamVODeleteDocParamDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RDMParamVODeleteDocParamDto.class),
+            f -> f.withMarshaller(BatchDeleteShareDocsRequest::getBody, BatchDeleteShareDocsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteStructuredDocumentRequest, BatchDeleteStructuredDocumentResponse> batchDeleteStructuredDocument =
+        genForBatchDeleteStructuredDocument();
+
+    private static HttpRequestDef<BatchDeleteStructuredDocumentRequest, BatchDeleteStructuredDocumentResponse> genForBatchDeleteStructuredDocument() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteStructuredDocumentRequest, BatchDeleteStructuredDocumentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    BatchDeleteStructuredDocumentRequest.class,
+                    BatchDeleteStructuredDocumentResponse.class)
+                .withName("BatchDeleteStructuredDocument")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/structured-doc/documents/batch")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteStructuredDocumentRequest::getModelName,
+                BatchDeleteStructuredDocumentRequest::setModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteStructuredDocumentRequest::getIdentifier,
+                BatchDeleteStructuredDocumentRequest::setIdentifier));
+        builder.<RDMParamVOBatchDeleteDocRequestDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RDMParamVOBatchDeleteDocRequestDto.class),
+            f -> f.withMarshaller(BatchDeleteStructuredDocumentRequest::getBody,
+                BatchDeleteStructuredDocumentRequest::setBody));
 
         // response
 
@@ -874,6 +1128,40 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOListVersionModel.class),
             f -> f.withMarshaller(BatchUpdateByAdminRequest::getBody, BatchUpdateByAdminRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchUpdateDocumentRequest, BatchUpdateDocumentResponse> batchUpdateDocument =
+        genForBatchUpdateDocument();
+
+    private static HttpRequestDef<BatchUpdateDocumentRequest, BatchUpdateDocumentResponse> genForBatchUpdateDocument() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateDocumentRequest, BatchUpdateDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchUpdateDocumentRequest.class, BatchUpdateDocumentResponse.class)
+                .withName("BatchUpdateDocument")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/structured-doc/documents/batch/update")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateDocumentRequest::getModelName, BatchUpdateDocumentRequest::setModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateDocumentRequest::getIdentifier,
+                BatchUpdateDocumentRequest::setIdentifier));
+        builder.<RDMParamVOListBatchUpdateStructuredDocDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RDMParamVOListBatchUpdateStructuredDocDto.class),
+            f -> f.withMarshaller(BatchUpdateDocumentRequest::getBody, BatchUpdateDocumentRequest::setBody));
 
         // response
 
@@ -1239,6 +1527,39 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOQueryRequestCountVo.class),
             f -> f.withMarshaller(CountUsingPostRequest::getBody, CountUsingPostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDocumentRequest, CreateDocumentResponse> createDocument =
+        genForCreateDocument();
+
+    private static HttpRequestDef<CreateDocumentRequest, CreateDocumentResponse> genForCreateDocument() {
+        // basic
+        HttpRequestDef.Builder<CreateDocumentRequest, CreateDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDocumentRequest.class, CreateDocumentResponse.class)
+                .withName("CreateDocument")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/structured-doc/documents")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDocumentRequest::getModelName, CreateDocumentRequest::setModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDocumentRequest::getIdentifier, CreateDocumentRequest::setIdentifier));
+        builder.<RDMParamVOStructuredDocInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RDMParamVOStructuredDocInfo.class),
+            f -> f.withMarshaller(CreateDocumentRequest::getBody, CreateDocumentRequest::setBody));
 
         // response
 
@@ -2154,6 +2475,39 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListQueryDocumentsRequest, ListQueryDocumentsResponse> listQueryDocuments =
+        genForListQueryDocuments();
+
+    private static HttpRequestDef<ListQueryDocumentsRequest, ListQueryDocumentsResponse> genForListQueryDocuments() {
+        // basic
+        HttpRequestDef.Builder<ListQueryDocumentsRequest, ListQueryDocumentsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListQueryDocumentsRequest.class, ListQueryDocumentsResponse.class)
+                .withName("ListQueryDocuments")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/structured-doc/documents/query")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryDocumentsRequest::getModelName, ListQueryDocumentsRequest::setModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryDocumentsRequest::getIdentifier, ListQueryDocumentsRequest::setIdentifier));
+        builder.<RDMParamVOQueryDocParamDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RDMParamVOQueryDocParamDto.class),
+            f -> f.withMarshaller(ListQueryDocumentsRequest::getBody, ListQueryDocumentsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListQueryRelatedObjectsRequest, ListQueryRelatedObjectsResponse> listQueryRelatedObjects =
         genForListQueryRelatedObjects();
 
@@ -2327,6 +2681,39 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOGenericLinkQueryDTO.class),
             f -> f.withMarshaller(ListQueryRelationshipRequest::getBody, ListQueryRelationshipRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListQueryShareDocsRequest, ListQueryShareDocsResponse> listQueryShareDocs =
+        genForListQueryShareDocs();
+
+    private static HttpRequestDef<ListQueryShareDocsRequest, ListQueryShareDocsResponse> genForListQueryShareDocs() {
+        // basic
+        HttpRequestDef.Builder<ListQueryShareDocsRequest, ListQueryShareDocsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListQueryShareDocsRequest.class, ListQueryShareDocsResponse.class)
+                .withName("ListQueryShareDocs")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/structured-doc/share-doc")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryShareDocsRequest::getModelName, ListQueryShareDocsRequest::setModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListQueryShareDocsRequest::getIdentifier, ListQueryShareDocsRequest::setIdentifier));
+        builder.<RDMParamVOQueryShareDocs>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RDMParamVOQueryShareDocs.class),
+            f -> f.withMarshaller(ListQueryShareDocsRequest::getBody, ListQueryShareDocsRequest::setBody));
 
         // response
 
@@ -2687,6 +3074,39 @@ public class IDMEClassicAPIMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RemoveFromCategoryRequest, RemoveFromCategoryResponse> removeFromCategory =
+        genForRemoveFromCategory();
+
+    private static HttpRequestDef<RemoveFromCategoryRequest, RemoveFromCategoryResponse> genForRemoveFromCategory() {
+        // basic
+        HttpRequestDef.Builder<RemoveFromCategoryRequest, RemoveFromCategoryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RemoveFromCategoryRequest.class, RemoveFromCategoryResponse.class)
+                .withName("RemoveFromCategory")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/removeFromCategory")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveFromCategoryRequest::getModelName, RemoveFromCategoryRequest::setModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveFromCategoryRequest::getIdentifier, RemoveFromCategoryRequest::setIdentifier));
+        builder.<RDMParamVOCategoryDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOCategoryDTO.class),
+            f -> f.withMarshaller(RemoveFromCategoryRequest::getBody, RemoveFromCategoryRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<RemoveTagRequest, RemoveTagResponse> removeTag = genForRemoveTag();
 
     private static HttpRequestDef<RemoveTagRequest, RemoveTagResponse> genForRemoveTag() {
@@ -2995,6 +3415,39 @@ public class IDMEClassicAPIMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdDTO.class),
             f -> f.withMarshaller(ShowGetRootRequest::getBody, ShowGetRootRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowGetTokensRequest, ShowGetTokensResponse> showGetTokens =
+        genForShowGetTokens();
+
+    private static HttpRequestDef<ShowGetTokensRequest, ShowGetTokensResponse> genForShowGetTokens() {
+        // basic
+        HttpRequestDef.Builder<ShowGetTokensRequest, ShowGetTokensResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowGetTokensRequest.class, ShowGetTokensResponse.class)
+                .withName("ShowGetTokens")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/structured-doc/tokens")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGetTokensRequest::getIdentifier, ShowGetTokensRequest::setIdentifier));
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowGetTokensRequest::getModelName, ShowGetTokensRequest::setModelName));
+        builder.<RDMParamVOGetTokenDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RDMParamVOGetTokenDto.class),
+            f -> f.withMarshaller(ShowGetTokensRequest::getBody, ShowGetTokensRequest::setBody));
 
         // response
 
@@ -3380,6 +3833,39 @@ public class IDMEClassicAPIMeta {
             TypeCasts.uncheckedConversion(RDMParamVOUpdateByConditionVoPersistableModelUpdateDTO.class),
             f -> f.withMarshaller(UpdateByConditionUsingPostRequest::getBody,
                 UpdateByConditionUsingPostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDocumentRequest, UpdateDocumentResponse> updateDocument =
+        genForUpdateDocument();
+
+    private static HttpRequestDef<UpdateDocumentRequest, UpdateDocumentResponse> genForUpdateDocument() {
+        // basic
+        HttpRequestDef.Builder<UpdateDocumentRequest, UpdateDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDocumentRequest.class, UpdateDocumentResponse.class)
+                .withName("UpdateDocument")
+                .withUri("/rdm_{identifier}_app/publicservices/api/{modelName}/structured-doc/documents")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentRequest::getModelName, UpdateDocumentRequest::setModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentRequest::getIdentifier, UpdateDocumentRequest::setIdentifier));
+        builder.<RDMParamVOUpdateDocRequestDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RDMParamVOUpdateDocRequestDto.class),
+            f -> f.withMarshaller(UpdateDocumentRequest::getBody, UpdateDocumentRequest::setBody));
 
         // response
 

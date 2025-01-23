@@ -48,6 +48,26 @@ public class ListFlavorsRequest {
 
     private Boolean shared;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private List<String> publicBorderGroup = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category")
+
+    private List<Integer> category = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "list_all")
+
+    private Boolean listAll;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_sold_out")
+
+    private Boolean flavorSoldOut;
+
     public ListFlavorsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -217,6 +237,106 @@ public class ListFlavorsRequest {
         this.shared = shared;
     }
 
+    public ListFlavorsRequest withPublicBorderGroup(List<String> publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    public ListFlavorsRequest addPublicBorderGroupItem(String publicBorderGroupItem) {
+        if (this.publicBorderGroup == null) {
+            this.publicBorderGroup = new ArrayList<>();
+        }
+        this.publicBorderGroup.add(publicBorderGroupItem);
+        return this;
+    }
+
+    public ListFlavorsRequest withPublicBorderGroup(Consumer<List<String>> publicBorderGroupSetter) {
+        if (this.publicBorderGroup == null) {
+            this.publicBorderGroup = new ArrayList<>();
+        }
+        publicBorderGroupSetter.accept(this.publicBorderGroup);
+        return this;
+    }
+
+    /**
+     * 站点pbg。  支持多值查询，查询条件格式：*public_border_group=xxx&public_border_group=xxx*。
+     * @return publicBorderGroup
+     */
+    public List<String> getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(List<String> publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+    }
+
+    public ListFlavorsRequest withCategory(List<Integer> category) {
+        this.category = category;
+        return this;
+    }
+
+    public ListFlavorsRequest addCategoryItem(Integer categoryItem) {
+        if (this.category == null) {
+            this.category = new ArrayList<>();
+        }
+        this.category.add(categoryItem);
+        return this;
+    }
+
+    public ListFlavorsRequest withCategory(Consumer<List<Integer>> categorySetter) {
+        if (this.category == null) {
+            this.category = new ArrayList<>();
+        }
+        categorySetter.accept(this.category);
+        return this;
+    }
+
+    /**
+     * 站点category。  支持多值查询，查询条件格式：*category=xxx&category=xxx*。
+     * @return category
+     */
+    public List<Integer> getCategory() {
+        return category;
+    }
+
+    public void setCategory(List<Integer> category) {
+        this.category = category;
+    }
+
+    public ListFlavorsRequest withListAll(Boolean listAll) {
+        this.listAll = listAll;
+        return this;
+    }
+
+    /**
+     * 设置list_all=true时，返回当前租户所有的弹性上限规格（l4_elastic_max、l7__elastic_max）。否则只返回该租户弹性上限规格中最大的规格（l4类型优先比较cps指标，然后是带宽；l7类型优先比较https cps指标然后是qps指标）。
+     * @return listAll
+     */
+    public Boolean getListAll() {
+        return listAll;
+    }
+
+    public void setListAll(Boolean listAll) {
+        this.listAll = listAll;
+    }
+
+    public ListFlavorsRequest withFlavorSoldOut(Boolean flavorSoldOut) {
+        this.flavorSoldOut = flavorSoldOut;
+        return this;
+    }
+
+    /**
+     * 参数解释： [是否售罄。](tag:hws) [是否无法购买该规格的LB。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,dt_test,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,ct)  取值范围： - true：[已售罄，将](tag:hws)无法购买该规格的LB。 - false：[未售罄，](tag:hws)可购买该规格的LB。
+     * @return flavorSoldOut
+     */
+    public Boolean getFlavorSoldOut() {
+        return flavorSoldOut;
+    }
+
+    public void setFlavorSoldOut(Boolean flavorSoldOut) {
+        this.flavorSoldOut = flavorSoldOut;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -229,12 +349,25 @@ public class ListFlavorsRequest {
         return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.shared, that.shared);
+            && Objects.equals(this.shared, that.shared)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.listAll, that.listAll)
+            && Objects.equals(this.flavorSoldOut, that.flavorSoldOut);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(marker, limit, pageReverse, id, name, type, shared);
+        return Objects.hash(marker,
+            limit,
+            pageReverse,
+            id,
+            name,
+            type,
+            shared,
+            publicBorderGroup,
+            category,
+            listAll,
+            flavorSoldOut);
     }
 
     @Override
@@ -248,6 +381,10 @@ public class ListFlavorsRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    listAll: ").append(toIndentedString(listAll)).append("\n");
+        sb.append("    flavorSoldOut: ").append(toIndentedString(flavorSoldOut)).append("\n");
         sb.append("}");
         return sb.toString();
     }

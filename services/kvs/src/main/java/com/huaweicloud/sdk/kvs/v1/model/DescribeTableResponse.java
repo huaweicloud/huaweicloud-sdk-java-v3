@@ -51,10 +51,10 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
     private RunTimeInfo runTimeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ttl_options")
-    @BsonProperty(value = "ttl_options")
+    @JsonProperty(value = "ttl_specification")
+    @BsonProperty(value = "ttl_specification")
 
-    private TtlOptions ttlOptions;
+    private TtlSpecification ttlSpecification;
 
     private static Codec<DescribeTableResponse> codec;
 
@@ -196,30 +196,30 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
         this.runTimeInfo = runTimeInfo;
     }
 
-    public DescribeTableResponse withTtlOptions(TtlOptions ttlOptions) {
-        this.ttlOptions = ttlOptions;
+    public DescribeTableResponse withTtlSpecification(TtlSpecification ttlSpecification) {
+        this.ttlSpecification = ttlSpecification;
         return this;
     }
 
-    public DescribeTableResponse withTtlOptions(Consumer<TtlOptions> ttlOptionsSetter) {
-        if (this.ttlOptions == null) {
-            this.ttlOptions = new TtlOptions();
-            ttlOptionsSetter.accept(this.ttlOptions);
+    public DescribeTableResponse withTtlSpecification(Consumer<TtlSpecification> ttlSpecificationSetter) {
+        if (this.ttlSpecification == null) {
+            this.ttlSpecification = new TtlSpecification();
+            ttlSpecificationSetter.accept(this.ttlSpecification);
         }
 
         return this;
     }
 
     /**
-     * Get ttlOptions
-     * @return ttlOptions
+     * Get ttlSpecification
+     * @return ttlSpecification
      */
-    public TtlOptions getTtlOptions() {
-        return ttlOptions;
+    public TtlSpecification getTtlSpecification() {
+        return ttlSpecification;
     }
 
-    public void setTtlOptions(TtlOptions ttlOptions) {
-        this.ttlOptions = ttlOptions;
+    public void setTtlSpecification(TtlSpecification ttlSpecification) {
+        this.ttlSpecification = ttlSpecification;
     }
 
     @Override
@@ -235,7 +235,8 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
             && Objects.equals(this.primaryKeySchema, that.primaryKeySchema)
             && Objects.equals(this.localSecondaryIndexSchema, that.localSecondaryIndexSchema)
             && Objects.equals(this.globalSecondaryIndexSchema, that.globalSecondaryIndexSchema)
-            && Objects.equals(this.runTimeInfo, that.runTimeInfo) && Objects.equals(this.ttlOptions, that.ttlOptions);
+            && Objects.equals(this.runTimeInfo, that.runTimeInfo)
+            && Objects.equals(this.ttlSpecification, that.ttlSpecification);
     }
 
     @Override
@@ -245,7 +246,7 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
             localSecondaryIndexSchema,
             globalSecondaryIndexSchema,
             runTimeInfo,
-            ttlOptions);
+            ttlSpecification);
     }
 
     @Override
@@ -257,7 +258,7 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
         sb.append("    localSecondaryIndexSchema: ").append(toIndentedString(localSecondaryIndexSchema)).append("\n");
         sb.append("    globalSecondaryIndexSchema: ").append(toIndentedString(globalSecondaryIndexSchema)).append("\n");
         sb.append("    runTimeInfo: ").append(toIndentedString(runTimeInfo)).append("\n");
-        sb.append("    ttlOptions: ").append(toIndentedString(ttlOptions)).append("\n");
+        sb.append("    ttlSpecification: ").append(toIndentedString(ttlSpecification)).append("\n");
         sb.append("}");
         return sb.toString();
     }

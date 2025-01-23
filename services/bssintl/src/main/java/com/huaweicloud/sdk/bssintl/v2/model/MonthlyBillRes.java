@@ -249,6 +249,11 @@ public class MonthlyBillRes {
 
     private String consumeTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "be_id")
+
+    private String beId;
+
     public MonthlyBillRes withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -1064,6 +1069,23 @@ public class MonthlyBillRes {
         this.consumeTime = consumeTime;
     }
 
+    public MonthlyBillRes withBeId(String beId) {
+        this.beId = beId;
+        return this;
+    }
+
+    /**
+     * |参数名称：华为云运营实体ID。| |参数约束及描述：华为云运营实体ID。|
+     * @return beId
+     */
+    public String getBeId() {
+        return beId;
+    }
+
+    public void setBeId(String beId) {
+        this.beId = beId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1109,7 +1131,8 @@ public class MonthlyBillRes {
             && Objects.equals(this.preOrderId, that.preOrderId) && Objects.equals(this.azCodeInfos, that.azCodeInfos)
             && Objects.equals(this.payerAccountId, that.payerAccountId)
             && Objects.equals(this.effectiveTime, that.effectiveTime)
-            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.consumeTime, that.consumeTime);
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.consumeTime, that.consumeTime)
+            && Objects.equals(this.beId, that.beId);
     }
 
     @Override
@@ -1160,7 +1183,8 @@ public class MonthlyBillRes {
             payerAccountId,
             effectiveTime,
             expireTime,
-            consumeTime);
+            consumeTime,
+            beId);
     }
 
     @Override
@@ -1214,6 +1238,7 @@ public class MonthlyBillRes {
         sb.append("    effectiveTime: ").append(toIndentedString(effectiveTime)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    consumeTime: ").append(toIndentedString(consumeTime)).append("\n");
+        sb.append("    beId: ").append(toIndentedString(beId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

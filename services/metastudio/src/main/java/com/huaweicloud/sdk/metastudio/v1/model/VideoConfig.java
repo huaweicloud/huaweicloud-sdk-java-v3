@@ -298,6 +298,11 @@ public class VideoConfig {
 
     private Boolean isEndAtFirstFrame;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_external_url")
+
+    private String outputExternalUrl;
+
     public VideoConfig withClipMode(ClipModeEnum clipMode) {
         this.clipMode = clipMode;
         return this;
@@ -521,6 +526,23 @@ public class VideoConfig {
         this.isEndAtFirstFrame = isEndAtFirstFrame;
     }
 
+    public VideoConfig withOutputExternalUrl(String outputExternalUrl) {
+        this.outputExternalUrl = outputExternalUrl;
+        return this;
+    }
+
+    /**
+     * 视频文件上传的外部URL。  > * 需要先申请开通白名单后，才允许将视频上传到外部URL。
+     * @return outputExternalUrl
+     */
+    public String getOutputExternalUrl() {
+        return outputExternalUrl;
+    }
+
+    public void setOutputExternalUrl(String outputExternalUrl) {
+        this.outputExternalUrl = outputExternalUrl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -537,7 +559,8 @@ public class VideoConfig {
             && Objects.equals(this.subtitleConfig, that.subtitleConfig) && Objects.equals(this.dx, that.dx)
             && Objects.equals(this.dy, that.dy)
             && Objects.equals(this.isEnableSuperResolution, that.isEnableSuperResolution)
-            && Objects.equals(this.isEndAtFirstFrame, that.isEndAtFirstFrame);
+            && Objects.equals(this.isEndAtFirstFrame, that.isEndAtFirstFrame)
+            && Objects.equals(this.outputExternalUrl, that.outputExternalUrl);
     }
 
     @Override
@@ -553,7 +576,8 @@ public class VideoConfig {
             dx,
             dy,
             isEnableSuperResolution,
-            isEndAtFirstFrame);
+            isEndAtFirstFrame,
+            outputExternalUrl);
     }
 
     @Override
@@ -572,6 +596,7 @@ public class VideoConfig {
         sb.append("    dy: ").append(toIndentedString(dy)).append("\n");
         sb.append("    isEnableSuperResolution: ").append(toIndentedString(isEnableSuperResolution)).append("\n");
         sb.append("    isEndAtFirstFrame: ").append(toIndentedString(isEndAtFirstFrame)).append("\n");
+        sb.append("    outputExternalUrl: ").append(toIndentedString(outputExternalUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

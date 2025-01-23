@@ -218,6 +218,11 @@ public class Pool {
 
     private String publicBorderGroup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "quic_cid_hash_strategy")
+
+    private QuicCidHashStrategy quicCidHashStrategy;
+
     public Pool withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -485,7 +490,7 @@ public class Pool {
     }
 
     /**
-     * 参数解释：后端服务器组支持的IP版本。  [取值范围： - 共享型：固定为v4； -  独享型：取值dualstack、v4。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs)  [取值范围：dualstack、v4。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。](tag:hcso_dt)  [不支持IPv6，只会返回v4。](tag:dt,dt_test)
+     * 参数解释：后端服务器组支持的IP版本。  [取值范围： - 共享型：固定为v4； - 独享型：取值dualstack、v4。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。 ](tag:hws,hws_hk,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs)  [取值范围：dualstack、v4。当协议为TCP/UDP时，ip_version为dualstack，表示双栈。当协议为HTTP时，ip_version为v4。](tag:hcso_dt)  [不支持IPv6，只会返回v4。](tag:dt,dt_test)
      * @return ipVersion
      */
     public String getIpVersion() {
@@ -545,7 +550,7 @@ public class Pool {
     }
 
     /**
-     * 参数解释：创建时间。  取值范围：格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+     * 参数解释：创建时间。  取值范围：格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -562,7 +567,7 @@ public class Pool {
     }
 
     /**
-     * 参数解释：更新时间。  取值范围：格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,fcs,dt,hk_tm)
+     * 参数解释：更新时间。  取值范围：格式：yyyy-MM-dd'T'HH:mm:ss'Z'，UTC时区。  [注意：独享型实例的历史数据以及共享型实例下的资源，不返回该字段。 ](tag:hws,hws_hk,ocb,ctc,g42,tm,cmcc,hk_g42,hws_ocb,hk_vdf,srg,fcs,dt,hk_tm)
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -630,7 +635,7 @@ public class Pool {
     }
 
     /**
-     * 参数解释：设置保护的原因。  参数限制：仅当protection_status为consoleProtection时有效。
+     * 参数解释：设置保护的原因。作为protection_status的转态设置的原因。  约束限制：仅当protection_status为consoleProtection时有效。  取值范围：除'<'和'>'外通用Unicode字符集字符，最大255个字符。
      * @return protectionReason
      */
     public String getProtectionReason() {
@@ -733,7 +738,7 @@ public class Pool {
     }
 
     /**
-     * 参数解释：可用区组，如：center
+     * 参数解释：网络公共边界组，如：center
      * @return publicBorderGroup
      */
     public String getPublicBorderGroup() {
@@ -742,6 +747,32 @@ public class Pool {
 
     public void setPublicBorderGroup(String publicBorderGroup) {
         this.publicBorderGroup = publicBorderGroup;
+    }
+
+    public Pool withQuicCidHashStrategy(QuicCidHashStrategy quicCidHashStrategy) {
+        this.quicCidHashStrategy = quicCidHashStrategy;
+        return this;
+    }
+
+    public Pool withQuicCidHashStrategy(Consumer<QuicCidHashStrategy> quicCidHashStrategySetter) {
+        if (this.quicCidHashStrategy == null) {
+            this.quicCidHashStrategy = new QuicCidHashStrategy();
+            quicCidHashStrategySetter.accept(this.quicCidHashStrategy);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get quicCidHashStrategy
+     * @return quicCidHashStrategy
+     */
+    public QuicCidHashStrategy getQuicCidHashStrategy() {
+        return quicCidHashStrategy;
+    }
+
+    public void setQuicCidHashStrategy(QuicCidHashStrategy quicCidHashStrategy) {
+        this.quicCidHashStrategy = quicCidHashStrategy;
     }
 
     @Override
@@ -771,7 +802,8 @@ public class Pool {
             && Objects.equals(this.connectionDrain, that.connectionDrain)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.poolHealth, that.poolHealth)
-            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.quicCidHashStrategy, that.quicCidHashStrategy);
     }
 
     @Override
@@ -801,7 +833,8 @@ public class Pool {
             connectionDrain,
             enterpriseProjectId,
             poolHealth,
-            publicBorderGroup);
+            publicBorderGroup,
+            quicCidHashStrategy);
     }
 
     @Override
@@ -836,6 +869,7 @@ public class Pool {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    poolHealth: ").append(toIndentedString(poolHealth)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    quicCidHashStrategy: ").append(toIndentedString(quicCidHashStrategy)).append("\n");
         sb.append("}");
         return sb.toString();
     }

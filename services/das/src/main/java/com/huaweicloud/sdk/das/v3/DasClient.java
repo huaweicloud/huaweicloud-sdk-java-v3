@@ -53,26 +53,44 @@ import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceDistributionRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceDistributionResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceMultiNodesSingleMetricRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceMultiNodesSingleMetricResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceNodesInfoRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceNodesInfoResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceTopSlowLogRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceTopSlowLogResponse;
 import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListProcessesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListProcessesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListRiskItemsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListRiskItemsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListRiskTrendRequest;
+import com.huaweicloud.sdk.das.v3.model.ListRiskTrendResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListTopSlowLogRequest;
+import com.huaweicloud.sdk.das.v3.model.ListTopSlowLogResponse;
 import com.huaweicloud.sdk.das.v3.model.ListTransactionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListTransactionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesResponse;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricRequest;
+import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExecutionPlanRequest;
@@ -899,6 +917,123 @@ public class DasClient {
     }
 
     /**
+     * 查询实例分布情况
+     *
+     * 查询实例分布情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceDistributionRequest 请求对象
+     * @return ListInstanceDistributionResponse
+     */
+    public ListInstanceDistributionResponse listInstanceDistribution(ListInstanceDistributionRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listInstanceDistribution);
+    }
+
+    /**
+     * 查询实例分布情况
+     *
+     * 查询实例分布情况
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceDistributionRequest 请求对象
+     * @return SyncInvoker<ListInstanceDistributionRequest, ListInstanceDistributionResponse>
+     */
+    public SyncInvoker<ListInstanceDistributionRequest, ListInstanceDistributionResponse> listInstanceDistributionInvoker(
+        ListInstanceDistributionRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listInstanceDistribution, hcClient);
+    }
+
+    /**
+     * 获取多节点单指标数据
+     *
+     * 获取多节点单指标数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceMultiNodesSingleMetricRequest 请求对象
+     * @return ListInstanceMultiNodesSingleMetricResponse
+     */
+    public ListInstanceMultiNodesSingleMetricResponse listInstanceMultiNodesSingleMetric(
+        ListInstanceMultiNodesSingleMetricRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listInstanceMultiNodesSingleMetric);
+    }
+
+    /**
+     * 获取多节点单指标数据
+     *
+     * 获取多节点单指标数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceMultiNodesSingleMetricRequest 请求对象
+     * @return SyncInvoker<ListInstanceMultiNodesSingleMetricRequest, ListInstanceMultiNodesSingleMetricResponse>
+     */
+    public SyncInvoker<ListInstanceMultiNodesSingleMetricRequest, ListInstanceMultiNodesSingleMetricResponse> listInstanceMultiNodesSingleMetricInvoker(
+        ListInstanceMultiNodesSingleMetricRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listInstanceMultiNodesSingleMetric, hcClient);
+    }
+
+    /**
+     * 获取单个实例节点信息
+     *
+     * 获取单个实例节点信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceNodesInfoRequest 请求对象
+     * @return ListInstanceNodesInfoResponse
+     */
+    public ListInstanceNodesInfoResponse listInstanceNodesInfo(ListInstanceNodesInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listInstanceNodesInfo);
+    }
+
+    /**
+     * 获取单个实例节点信息
+     *
+     * 获取单个实例节点信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceNodesInfoRequest 请求对象
+     * @return SyncInvoker<ListInstanceNodesInfoRequest, ListInstanceNodesInfoResponse>
+     */
+    public SyncInvoker<ListInstanceNodesInfoRequest, ListInstanceNodesInfoResponse> listInstanceNodesInfoInvoker(
+        ListInstanceNodesInfoRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listInstanceNodesInfo, hcClient);
+    }
+
+    /**
+     * 查询实例的TOP慢SQL列表
+     *
+     * 查询实例的TOP慢SQL列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceTopSlowLogRequest 请求对象
+     * @return ListInstanceTopSlowLogResponse
+     */
+    public ListInstanceTopSlowLogResponse listInstanceTopSlowLog(ListInstanceTopSlowLogRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listInstanceTopSlowLog);
+    }
+
+    /**
+     * 查询实例的TOP慢SQL列表
+     *
+     * 查询实例的TOP慢SQL列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceTopSlowLogRequest 请求对象
+     * @return SyncInvoker<ListInstanceTopSlowLogRequest, ListInstanceTopSlowLogResponse>
+     */
+    public SyncInvoker<ListInstanceTopSlowLogRequest, ListInstanceTopSlowLogResponse> listInstanceTopSlowLogInvoker(
+        ListInstanceTopSlowLogRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listInstanceTopSlowLog, hcClient);
+    }
+
+    /**
      * 查询元数据锁列表
      *
      * 查询元数据锁列表。
@@ -960,6 +1095,62 @@ public class DasClient {
     }
 
     /**
+     * 查询资源风险实例风险项
+     *
+     * 查询资源风险实例风险项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRiskItemsRequest 请求对象
+     * @return ListRiskItemsResponse
+     */
+    public ListRiskItemsResponse listRiskItems(ListRiskItemsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listRiskItems);
+    }
+
+    /**
+     * 查询资源风险实例风险项
+     *
+     * 查询资源风险实例风险项
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRiskItemsRequest 请求对象
+     * @return SyncInvoker<ListRiskItemsRequest, ListRiskItemsResponse>
+     */
+    public SyncInvoker<ListRiskItemsRequest, ListRiskItemsResponse> listRiskItemsInvoker(ListRiskItemsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listRiskItems, hcClient);
+    }
+
+    /**
+     * 查询资源风险实例风险趋势
+     *
+     * 查询资源风险实例风险趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRiskTrendRequest 请求对象
+     * @return ListRiskTrendResponse
+     */
+    public ListRiskTrendResponse listRiskTrend(ListRiskTrendRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listRiskTrend);
+    }
+
+    /**
+     * 查询资源风险实例风险趋势
+     *
+     * 查询资源风险实例风险趋势
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRiskTrendRequest 请求对象
+     * @return SyncInvoker<ListRiskTrendRequest, ListRiskTrendResponse>
+     */
+    public SyncInvoker<ListRiskTrendRequest, ListRiskTrendResponse> listRiskTrendInvoker(ListRiskTrendRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listRiskTrend, hcClient);
+    }
+
+    /**
      * 获取空间分析数据列表
      *
      * 获取空间分析数据列表。实例级别数据来源于文件系统，库级别和表级别数据来源于information_schema.tables表。空间&amp;元数据分析最多分析10000张表，若缺少库表空间数据，可能是因为数据库实例表个数过多或者账号未保存密码。如果为保存密码，请使用用户管理接口或页面录入数据库账号。 支持MySQL、GaussDB(for MySQL)和SQLServer引擎。
@@ -1015,6 +1206,35 @@ public class DasClient {
     public SyncInvoker<ListSqlLimitRulesRequest, ListSqlLimitRulesResponse> listSqlLimitRulesInvoker(
         ListSqlLimitRulesRequest request) {
         return new SyncInvoker<>(request, DasMeta.listSqlLimitRules, hcClient);
+    }
+
+    /**
+     * 查询TOP慢SQL列表
+     *
+     * 查询TOP慢SQL列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopSlowLogRequest 请求对象
+     * @return ListTopSlowLogResponse
+     */
+    public ListTopSlowLogResponse listTopSlowLog(ListTopSlowLogRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listTopSlowLog);
+    }
+
+    /**
+     * 查询TOP慢SQL列表
+     *
+     * 查询TOP慢SQL列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTopSlowLogRequest 请求对象
+     * @return SyncInvoker<ListTopSlowLogRequest, ListTopSlowLogResponse>
+     */
+    public SyncInvoker<ListTopSlowLogRequest, ListTopSlowLogResponse> listTopSlowLogInvoker(
+        ListTopSlowLogRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listTopSlowLog, hcClient);
     }
 
     /**
@@ -1109,6 +1329,35 @@ public class DasClient {
     }
 
     /**
+     * 设置指标阈值
+     *
+     * 设置指标阈值
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetThresholdForMetricRequest 请求对象
+     * @return SetThresholdForMetricResponse
+     */
+    public SetThresholdForMetricResponse setThresholdForMetric(SetThresholdForMetricRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.setThresholdForMetric);
+    }
+
+    /**
+     * 设置指标阈值
+     *
+     * 设置指标阈值
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetThresholdForMetricRequest 请求对象
+     * @return SyncInvoker<SetThresholdForMetricRequest, SetThresholdForMetricResponse>
+     */
+    public SyncInvoker<SetThresholdForMetricRequest, SetThresholdForMetricResponse> setThresholdForMetricInvoker(
+        SetThresholdForMetricRequest request) {
+        return new SyncInvoker<>(request, DasMeta.setThresholdForMetric, hcClient);
+    }
+
+    /**
      * 查询数据库用户信息
      *
      * 查询注册在DAS里的数据库用户信息。此接口不能查询数据库实例上的数据库用户对象。
@@ -1165,6 +1414,35 @@ public class DasClient {
     public SyncInvoker<ShowInstanceHealthReportRequest, ShowInstanceHealthReportResponse> showInstanceHealthReportInvoker(
         ShowInstanceHealthReportRequest request) {
         return new SyncInvoker<>(request, DasMeta.showInstanceHealthReport, hcClient);
+    }
+
+    /**
+     * 多节点单指标支持指标信息
+     *
+     * 多节点单指标支持指标信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMetricNamesSupportRequest 请求对象
+     * @return ShowMetricNamesSupportResponse
+     */
+    public ShowMetricNamesSupportResponse showMetricNamesSupport(ShowMetricNamesSupportRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.showMetricNamesSupport);
+    }
+
+    /**
+     * 多节点单指标支持指标信息
+     *
+     * 多节点单指标支持指标信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMetricNamesSupportRequest 请求对象
+     * @return SyncInvoker<ShowMetricNamesSupportRequest, ShowMetricNamesSupportResponse>
+     */
+    public SyncInvoker<ShowMetricNamesSupportRequest, ShowMetricNamesSupportResponse> showMetricNamesSupportInvoker(
+        ShowMetricNamesSupportRequest request) {
+        return new SyncInvoker<>(request, DasMeta.showMetricNamesSupport, hcClient);
     }
 
     /**

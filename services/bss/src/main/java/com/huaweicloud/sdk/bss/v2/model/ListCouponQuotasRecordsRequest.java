@@ -141,7 +141,7 @@ public class ListCouponQuotasRecordsRequest {
     }
 
     /**
-     * 操作类型。10：发放额度11：回收额度此参数不携带或携带值为空或携带值为空串时，不作为筛选条件。
+     * 操作类型。10：发放额度11：回收额度。此参数不携带或携带值为非枚举值时，不作为筛选条件。
      * @return operationType
      */
     public String getOperationType() {

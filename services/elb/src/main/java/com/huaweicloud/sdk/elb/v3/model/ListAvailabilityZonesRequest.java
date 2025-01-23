@@ -15,13 +15,18 @@ public class ListAvailabilityZonesRequest {
 
     private String publicBorderGroup;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "loadbalancer_id")
+
+    private String loadbalancerId;
+
     public ListAvailabilityZonesRequest withPublicBorderGroup(String publicBorderGroup) {
         this.publicBorderGroup = publicBorderGroup;
         return this;
     }
 
     /**
-     * 参数解释：可用区组。
+     * 参数解释：网络公共边界组。
      * @return publicBorderGroup
      */
     public String getPublicBorderGroup() {
@@ -30,6 +35,23 @@ public class ListAvailabilityZonesRequest {
 
     public void setPublicBorderGroup(String publicBorderGroup) {
         this.publicBorderGroup = publicBorderGroup;
+    }
+
+    public ListAvailabilityZonesRequest withLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+        return this;
+    }
+
+    /**
+     * 参数解释：负载均衡器ID。
+     * @return loadbalancerId
+     */
+    public String getLoadbalancerId() {
+        return loadbalancerId;
+    }
+
+    public void setLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
     }
 
     @Override
@@ -41,12 +63,13 @@ public class ListAvailabilityZonesRequest {
             return false;
         }
         ListAvailabilityZonesRequest that = (ListAvailabilityZonesRequest) obj;
-        return Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
+        return Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.loadbalancerId, that.loadbalancerId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publicBorderGroup);
+        return Objects.hash(publicBorderGroup, loadbalancerId);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class ListAvailabilityZonesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAvailabilityZonesRequest {\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
+        sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

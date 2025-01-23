@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 参数解释：创建负载均衡器实例的预付费计费配置。若传入该结构体，则创建预付费类型的负载均衡器实例。  [不支持该字段，请勿使用](tag:dt,dt_test,hcso_dt)
+ * 参数解释：创建负载均衡器实例的预付费计费配置。若传入该结构体，则创建预付费类型的负载均衡器实例。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg)
  */
 public class PrepaidCreateOption {
 

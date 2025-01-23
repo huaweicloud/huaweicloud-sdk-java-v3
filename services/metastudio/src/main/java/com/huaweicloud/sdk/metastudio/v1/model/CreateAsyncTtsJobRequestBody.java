@@ -156,6 +156,26 @@ public class CreateAsyncTtsJobRequestBody {
 
     private Integer srtLineLimit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "channels")
+
+    private Integer channels;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_external_url")
+
+    private String outputExternalUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "srt_output_external_url")
+
+    private String srtOutputExternalUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_output_external_url")
+
+    private String actionOutputExternalUrl;
+
     public CreateAsyncTtsJobRequestBody withText(String text) {
         this.text = text;
         return this;
@@ -415,6 +435,76 @@ public class CreateAsyncTtsJobRequestBody {
         this.srtLineLimit = srtLineLimit;
     }
 
+    public CreateAsyncTtsJobRequestBody withChannels(Integer channels) {
+        this.channels = channels;
+        return this;
+    }
+
+    /**
+     * 声道。（单声道|双声道） 默认值1，最小值1，最大值2。
+     * minimum: 1
+     * maximum: 2
+     * @return channels
+     */
+    public Integer getChannels() {
+        return channels;
+    }
+
+    public void setChannels(Integer channels) {
+        this.channels = channels;
+    }
+
+    public CreateAsyncTtsJobRequestBody withOutputExternalUrl(String outputExternalUrl) {
+        this.outputExternalUrl = outputExternalUrl;
+        return this;
+    }
+
+    /**
+     * 音频文件上传的外部URL > * 需要先申请开通白名单， 才允许将音频等文件上传到外部URL。
+     * @return outputExternalUrl
+     */
+    public String getOutputExternalUrl() {
+        return outputExternalUrl;
+    }
+
+    public void setOutputExternalUrl(String outputExternalUrl) {
+        this.outputExternalUrl = outputExternalUrl;
+    }
+
+    public CreateAsyncTtsJobRequestBody withSrtOutputExternalUrl(String srtOutputExternalUrl) {
+        this.srtOutputExternalUrl = srtOutputExternalUrl;
+        return this;
+    }
+
+    /**
+     * 字幕文件上传的外部URL > * 需要先申请开通白名单， 才允许将字幕等文件上传到外部URL。
+     * @return srtOutputExternalUrl
+     */
+    public String getSrtOutputExternalUrl() {
+        return srtOutputExternalUrl;
+    }
+
+    public void setSrtOutputExternalUrl(String srtOutputExternalUrl) {
+        this.srtOutputExternalUrl = srtOutputExternalUrl;
+    }
+
+    public CreateAsyncTtsJobRequestBody withActionOutputExternalUrl(String actionOutputExternalUrl) {
+        this.actionOutputExternalUrl = actionOutputExternalUrl;
+        return this;
+    }
+
+    /**
+     * 动作信息文件上传的外部URL > * 需要先申请开通白名单， 才允许将时间戳等文件上传到外部URL。
+     * @return actionOutputExternalUrl
+     */
+    public String getActionOutputExternalUrl() {
+        return actionOutputExternalUrl;
+    }
+
+    public void setActionOutputExternalUrl(String actionOutputExternalUrl) {
+        this.actionOutputExternalUrl = actionOutputExternalUrl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -432,7 +522,11 @@ public class CreateAsyncTtsJobRequestBody {
             && Objects.equals(this.silenceFlag, that.silenceFlag)
             && Objects.equals(this.silenceTimeMs, that.silenceTimeMs)
             && Objects.equals(this.callbackConfig, that.callbackConfig) && Objects.equals(this.genSrt, that.genSrt)
-            && Objects.equals(this.srtLen, that.srtLen) && Objects.equals(this.srtLineLimit, that.srtLineLimit);
+            && Objects.equals(this.srtLen, that.srtLen) && Objects.equals(this.srtLineLimit, that.srtLineLimit)
+            && Objects.equals(this.channels, that.channels)
+            && Objects.equals(this.outputExternalUrl, that.outputExternalUrl)
+            && Objects.equals(this.srtOutputExternalUrl, that.srtOutputExternalUrl)
+            && Objects.equals(this.actionOutputExternalUrl, that.actionOutputExternalUrl);
     }
 
     @Override
@@ -450,7 +544,11 @@ public class CreateAsyncTtsJobRequestBody {
             callbackConfig,
             genSrt,
             srtLen,
-            srtLineLimit);
+            srtLineLimit,
+            channels,
+            outputExternalUrl,
+            srtOutputExternalUrl,
+            actionOutputExternalUrl);
     }
 
     @Override
@@ -471,6 +569,10 @@ public class CreateAsyncTtsJobRequestBody {
         sb.append("    genSrt: ").append(toIndentedString(genSrt)).append("\n");
         sb.append("    srtLen: ").append(toIndentedString(srtLen)).append("\n");
         sb.append("    srtLineLimit: ").append(toIndentedString(srtLineLimit)).append("\n");
+        sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
+        sb.append("    outputExternalUrl: ").append(toIndentedString(outputExternalUrl)).append("\n");
+        sb.append("    srtOutputExternalUrl: ").append(toIndentedString(srtOutputExternalUrl)).append("\n");
+        sb.append("    actionOutputExternalUrl: ").append(toIndentedString(actionOutputExternalUrl)).append("\n");
         sb.append("}");
         return sb.toString();
     }

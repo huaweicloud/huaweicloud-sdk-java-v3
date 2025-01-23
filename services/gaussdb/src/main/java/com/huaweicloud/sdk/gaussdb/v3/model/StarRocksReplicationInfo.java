@@ -307,7 +307,7 @@ public class StarRocksReplicationInfo {
     }
 
     /**
-     * GaussDB(for MySQL)数据库。
+     * TaurusDB数据库。
      * @return sourceDatabase
      */
     public String getSourceDatabase() {

@@ -681,6 +681,11 @@ public class CreateFunctionResponse extends SdkResponse {
 
     private Boolean enableAuthInHeader;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lts_custom_tag")
+
+    private Map<String, String> ltsCustomTag = null;
+
     public CreateFunctionResponse withFuncId(String funcId) {
         this.funcId = funcId;
         return this;
@@ -1777,6 +1782,39 @@ public class CreateFunctionResponse extends SdkResponse {
         this.enableAuthInHeader = enableAuthInHeader;
     }
 
+    public CreateFunctionResponse withLtsCustomTag(Map<String, String> ltsCustomTag) {
+        this.ltsCustomTag = ltsCustomTag;
+        return this;
+    }
+
+    public CreateFunctionResponse putLtsCustomTagItem(String key, String ltsCustomTagItem) {
+        if (this.ltsCustomTag == null) {
+            this.ltsCustomTag = new HashMap<>();
+        }
+        this.ltsCustomTag.put(key, ltsCustomTagItem);
+        return this;
+    }
+
+    public CreateFunctionResponse withLtsCustomTag(Consumer<Map<String, String>> ltsCustomTagSetter) {
+        if (this.ltsCustomTag == null) {
+            this.ltsCustomTag = new HashMap<>();
+        }
+        ltsCustomTagSetter.accept(this.ltsCustomTag);
+        return this;
+    }
+
+    /**
+     * 自定义日志标签。函数执行时，可以按照自定义标签配置上报标签到云日志服务(LTS)，用户可以通过标签对日志进行过滤筛选。
+     * @return ltsCustomTag
+     */
+    public Map<String, String> getLtsCustomTag() {
+        return ltsCustomTag;
+    }
+
+    public void setLtsCustomTag(Map<String, String> ltsCustomTag) {
+        this.ltsCustomTag = ltsCustomTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1829,7 +1867,8 @@ public class CreateFunctionResponse extends SdkResponse {
             && Objects.equals(this.networkController, that.networkController)
             && Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.isReturnStream, that.isReturnStream)
-            && Objects.equals(this.enableAuthInHeader, that.enableAuthInHeader);
+            && Objects.equals(this.enableAuthInHeader, that.enableAuthInHeader)
+            && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
     }
 
     @Override
@@ -1892,7 +1931,8 @@ public class CreateFunctionResponse extends SdkResponse {
             networkController,
             resourceId,
             isReturnStream,
-            enableAuthInHeader);
+            enableAuthInHeader,
+            ltsCustomTag);
     }
 
     @Override
@@ -1958,6 +1998,7 @@ public class CreateFunctionResponse extends SdkResponse {
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    isReturnStream: ").append(toIndentedString(isReturnStream)).append("\n");
         sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
+        sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

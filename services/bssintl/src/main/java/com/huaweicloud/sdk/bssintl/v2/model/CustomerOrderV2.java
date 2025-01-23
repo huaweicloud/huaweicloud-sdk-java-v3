@@ -93,6 +93,11 @@ public class CustomerOrderV2 {
 
     private List<EnterpriseProject> enterpriseProjects = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_order_infos")
+
+    private List<SubCustomerOrderV2> subOrderInfos = null;
+
     public CustomerOrderV2 withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
@@ -379,7 +384,7 @@ public class CustomerOrderV2 {
     }
 
     /**
-     * |参数名称：客户订单企业项目信息。| |参数约束及描述： 客户订单企业项目信息。具体请参见表 EnterpriseProject。|
+     * 客户订单企业项目信息。具体请参见表 EnterpriseProject。
      * @return enterpriseProjects
      */
     public List<EnterpriseProject> getEnterpriseProjects() {
@@ -388,6 +393,39 @@ public class CustomerOrderV2 {
 
     public void setEnterpriseProjects(List<EnterpriseProject> enterpriseProjects) {
         this.enterpriseProjects = enterpriseProjects;
+    }
+
+    public CustomerOrderV2 withSubOrderInfos(List<SubCustomerOrderV2> subOrderInfos) {
+        this.subOrderInfos = subOrderInfos;
+        return this;
+    }
+
+    public CustomerOrderV2 addSubOrderInfosItem(SubCustomerOrderV2 subOrderInfosItem) {
+        if (this.subOrderInfos == null) {
+            this.subOrderInfos = new ArrayList<>();
+        }
+        this.subOrderInfos.add(subOrderInfosItem);
+        return this;
+    }
+
+    public CustomerOrderV2 withSubOrderInfos(Consumer<List<SubCustomerOrderV2>> subOrderInfosSetter) {
+        if (this.subOrderInfos == null) {
+            this.subOrderInfos = new ArrayList<>();
+        }
+        subOrderInfosSetter.accept(this.subOrderInfos);
+        return this;
+    }
+
+    /**
+     * 客户订单下属的订单详情信息。具体请参见表 SubCustomerOrderV2 说明：当查询订单为组合交易订单时，订单信息会返回下属的订单信息，当查询为普通订单时，此字段返回为空
+     * @return subOrderInfos
+     */
+    public List<SubCustomerOrderV2> getSubOrderInfos() {
+        return subOrderInfos;
+    }
+
+    public void setSubOrderInfos(List<SubCustomerOrderV2> subOrderInfos) {
+        this.subOrderInfos = subOrderInfos;
     }
 
     @Override
@@ -409,7 +447,8 @@ public class CustomerOrderV2 {
             && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.paymentTime, that.paymentTime) && Objects.equals(this.currency, that.currency)
             && Objects.equals(this.contractId, that.contractId) && Objects.equals(this.amountInfo, that.amountInfo)
-            && Objects.equals(this.enterpriseProjects, that.enterpriseProjects);
+            && Objects.equals(this.enterpriseProjects, that.enterpriseProjects)
+            && Objects.equals(this.subOrderInfos, that.subOrderInfos);
     }
 
     @Override
@@ -429,7 +468,8 @@ public class CustomerOrderV2 {
             currency,
             contractId,
             amountInfo,
-            enterpriseProjects);
+            enterpriseProjects,
+            subOrderInfos);
     }
 
     @Override
@@ -452,6 +492,7 @@ public class CustomerOrderV2 {
         sb.append("    contractId: ").append(toIndentedString(contractId)).append("\n");
         sb.append("    amountInfo: ").append(toIndentedString(amountInfo)).append("\n");
         sb.append("    enterpriseProjects: ").append(toIndentedString(enterpriseProjects)).append("\n");
+        sb.append("    subOrderInfos: ").append(toIndentedString(subOrderInfos)).append("\n");
         sb.append("}");
         return sb.toString();
     }

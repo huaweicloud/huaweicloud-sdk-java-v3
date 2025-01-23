@@ -8,6 +8,9 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.elb.v3.model.BatchAddAvailableZonesRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchAddAvailableZonesRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.BatchAddAvailableZonesResponse;
+import com.huaweicloud.sdk.elb.v3.model.BatchCreateLoadBalancersRequest;
+import com.huaweicloud.sdk.elb.v3.model.BatchCreateLoadBalancersRequestBody;
+import com.huaweicloud.sdk.elb.v3.model.BatchCreateLoadBalancersResponse;
 import com.huaweicloud.sdk.elb.v3.model.BatchCreateMembersRequest;
 import com.huaweicloud.sdk.elb.v3.model.BatchCreateMembersRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.BatchCreateMembersResponse;
@@ -29,6 +32,9 @@ import com.huaweicloud.sdk.elb.v3.model.BatchUpdatePoliciesPriorityResponse;
 import com.huaweicloud.sdk.elb.v3.model.ChangeLoadbalancerChargeModeRequest;
 import com.huaweicloud.sdk.elb.v3.model.ChangeLoadbalancerChargeModeRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.ChangeLoadbalancerChargeModeResponse;
+import com.huaweicloud.sdk.elb.v3.model.CloneLoadbalancerRequest;
+import com.huaweicloud.sdk.elb.v3.model.CloneLoadbalancerRequestBody;
+import com.huaweicloud.sdk.elb.v3.model.CloneLoadbalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.CountPreoccupyIpNumRequest;
 import com.huaweicloud.sdk.elb.v3.model.CountPreoccupyIpNumResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreateCertificatePrivateKeyEchoRequest;
@@ -84,6 +90,9 @@ import com.huaweicloud.sdk.elb.v3.model.DeleteListenerForceRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteListenerForceResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeleteListenerRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteListenerResponse;
+import com.huaweicloud.sdk.elb.v3.model.DeleteLoadBalancerCascadeRequest;
+import com.huaweicloud.sdk.elb.v3.model.DeleteLoadBalancerCascadeRequestBody;
+import com.huaweicloud.sdk.elb.v3.model.DeleteLoadBalancerCascadeResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeleteLoadBalancerForceRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteLoadBalancerForceResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeleteLoadBalancerRequest;
@@ -94,6 +103,8 @@ import com.huaweicloud.sdk.elb.v3.model.DeleteMasterSlavePoolRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteMasterSlavePoolResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeleteMemberRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteMemberResponse;
+import com.huaweicloud.sdk.elb.v3.model.DeletePoolCascadeRequest;
+import com.huaweicloud.sdk.elb.v3.model.DeletePoolCascadeResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeletePoolRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeletePoolResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeleteSecurityPolicyRequest;
@@ -106,12 +117,16 @@ import com.huaweicloud.sdk.elb.v3.model.ListAvailabilityZonesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListAvailabilityZonesResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListCertificatesResponse;
+import com.huaweicloud.sdk.elb.v3.model.ListFeatureConfigsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ListFeatureConfigsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListHealthMonitorsRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListHealthMonitorsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListIpGroupsRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListIpGroupsResponse;
+import com.huaweicloud.sdk.elb.v3.model.ListJobsRequest;
+import com.huaweicloud.sdk.elb.v3.model.ListJobsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListL7PoliciesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListL7PoliciesResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListL7RulesRequest;
@@ -120,6 +135,8 @@ import com.huaweicloud.sdk.elb.v3.model.ListListenersRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListListenersResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListLoadBalancersRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListLoadBalancersResponse;
+import com.huaweicloud.sdk.elb.v3.model.ListLoadbalancerFeatureRequest;
+import com.huaweicloud.sdk.elb.v3.model.ListLoadbalancerFeatureResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListLogtanksRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListLogtanksResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListMasterSlavePoolsRequest;
@@ -142,8 +159,12 @@ import com.huaweicloud.sdk.elb.v3.model.ShowFlavorRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowFlavorResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowHealthMonitorRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowHealthMonitorResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowIpGroupRelatedListenersRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowIpGroupRelatedListenersResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowIpGroupRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowIpGroupResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowJobRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowJobResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowL7PolicyRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowL7PolicyResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowL7RuleRequest;
@@ -202,6 +223,9 @@ import com.huaweicloud.sdk.elb.v3.model.UpdatePoolResponse;
 import com.huaweicloud.sdk.elb.v3.model.UpdateSecurityPolicyRequest;
 import com.huaweicloud.sdk.elb.v3.model.UpdateSecurityPolicyRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.UpdateSecurityPolicyResponse;
+import com.huaweicloud.sdk.elb.v3.model.UpgradeLoadbalancerRequest;
+import com.huaweicloud.sdk.elb.v3.model.UpgradeLoadbalancerResponse;
+import com.huaweicloud.sdk.elb.v3.model.UpgradeV3RequestBody;
 
 import java.util.List;
 
@@ -231,6 +255,30 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAddAvailableZonesRequestBody.class),
             f -> f.withMarshaller(BatchAddAvailableZonesRequest::getBody, BatchAddAvailableZonesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateLoadBalancersRequest, BatchCreateLoadBalancersResponse> batchCreateLoadBalancers =
+        genForBatchCreateLoadBalancers();
+
+    private static HttpRequestDef<BatchCreateLoadBalancersRequest, BatchCreateLoadBalancersResponse> genForBatchCreateLoadBalancers() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateLoadBalancersRequest, BatchCreateLoadBalancersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, BatchCreateLoadBalancersRequest.class, BatchCreateLoadBalancersResponse.class)
+                .withName("BatchCreateLoadBalancers")
+                .withUri("/v3/{project_id}/elb/loadbalancers/batch-create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchCreateLoadBalancersRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateLoadBalancersRequestBody.class),
+            f -> f.withMarshaller(BatchCreateLoadBalancersRequest::getBody, BatchCreateLoadBalancersRequest::setBody));
 
         // response
 
@@ -402,6 +450,35 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(ChangeLoadbalancerChargeModeRequestBody.class),
             f -> f.withMarshaller(ChangeLoadbalancerChargeModeRequest::getBody,
                 ChangeLoadbalancerChargeModeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CloneLoadbalancerRequest, CloneLoadbalancerResponse> cloneLoadbalancer =
+        genForCloneLoadbalancer();
+
+    private static HttpRequestDef<CloneLoadbalancerRequest, CloneLoadbalancerResponse> genForCloneLoadbalancer() {
+        // basic
+        HttpRequestDef.Builder<CloneLoadbalancerRequest, CloneLoadbalancerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CloneLoadbalancerRequest.class, CloneLoadbalancerResponse.class)
+                .withName("CloneLoadbalancer")
+                .withUri("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/clone")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CloneLoadbalancerRequest::getLoadbalancerId,
+                CloneLoadbalancerRequest::setLoadbalancerId));
+        builder.<CloneLoadbalancerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CloneLoadbalancerRequestBody.class),
+            f -> f.withMarshaller(CloneLoadbalancerRequest::getBody, CloneLoadbalancerRequest::setBody));
 
         // response
 
@@ -864,6 +941,39 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteLoadBalancerCascadeRequest, DeleteLoadBalancerCascadeResponse> deleteLoadBalancerCascade =
+        genForDeleteLoadBalancerCascade();
+
+    private static HttpRequestDef<DeleteLoadBalancerCascadeRequest, DeleteLoadBalancerCascadeResponse> genForDeleteLoadBalancerCascade() {
+        // basic
+        HttpRequestDef.Builder<DeleteLoadBalancerCascadeRequest, DeleteLoadBalancerCascadeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DeleteLoadBalancerCascadeRequest.class,
+                    DeleteLoadBalancerCascadeResponse.class)
+                .withName("DeleteLoadBalancerCascade")
+                .withUri("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/delete-cascade")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLoadBalancerCascadeRequest::getLoadbalancerId,
+                DeleteLoadBalancerCascadeRequest::setLoadbalancerId));
+        builder.<DeleteLoadBalancerCascadeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteLoadBalancerCascadeRequestBody.class),
+            f -> f.withMarshaller(DeleteLoadBalancerCascadeRequest::getBody,
+                DeleteLoadBalancerCascadeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteLoadBalancerForceRequest, DeleteLoadBalancerForceResponse> deleteLoadBalancerForce =
         genForDeleteLoadBalancerForce();
 
@@ -977,6 +1087,29 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeletePoolRequest::getPoolId, DeletePoolRequest::setPoolId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePoolCascadeRequest, DeletePoolCascadeResponse> deletePoolCascade =
+        genForDeletePoolCascade();
+
+    private static HttpRequestDef<DeletePoolCascadeRequest, DeletePoolCascadeResponse> genForDeletePoolCascade() {
+        // basic
+        HttpRequestDef.Builder<DeletePoolCascadeRequest, DeletePoolCascadeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePoolCascadeRequest.class, DeletePoolCascadeResponse.class)
+                .withName("DeletePoolCascade")
+                .withUri("/v3/{project_id}/elb/pools/{pool_id}/delete-cascade")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("pool_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePoolCascadeRequest::getPoolId, DeletePoolCascadeRequest::setPoolId));
 
         // response
 
@@ -1120,6 +1253,12 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAvailabilityZonesRequest::getPublicBorderGroup,
                 ListAvailabilityZonesRequest::setPublicBorderGroup));
+        builder.<String>withRequestField("loadbalancer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAvailabilityZonesRequest::getLoadbalancerId,
+                ListAvailabilityZonesRequest::setLoadbalancerId));
 
         // response
 
@@ -1183,6 +1322,12 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCertificatesRequest::getType, ListCertificatesRequest::setType));
+        builder.<List<String>>withRequestField("scm_certificate_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getScmCertificateId,
+                ListCertificatesRequest::setScmCertificateId));
         builder.<List<String>>withRequestField("common_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1193,6 +1338,29 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCertificatesRequest::getFingerprint, ListCertificatesRequest::setFingerprint));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFeatureConfigsRequest, ListFeatureConfigsResponse> listFeatureConfigs =
+        genForListFeatureConfigs();
+
+    private static HttpRequestDef<ListFeatureConfigsRequest, ListFeatureConfigsResponse> genForListFeatureConfigs() {
+        // basic
+        HttpRequestDef.Builder<ListFeatureConfigsRequest, ListFeatureConfigsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFeatureConfigsRequest.class, ListFeatureConfigsResponse.class)
+                .withName("ListFeatureConfigs")
+                .withUri("/v3/{project_id}/elb/feature/configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("feature",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFeatureConfigsRequest::getFeature, ListFeatureConfigsRequest::setFeature));
 
         // response
 
@@ -1245,6 +1413,26 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListFlavorsRequest::getShared, ListFlavorsRequest::setShared));
+        builder.<List<String>>withRequestField("public_border_group",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getPublicBorderGroup, ListFlavorsRequest::setPublicBorderGroup));
+        builder.<List<Integer>>withRequestField("category",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getCategory, ListFlavorsRequest::setCategory));
+        builder.<Boolean>withRequestField("list_all",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getListAll, ListFlavorsRequest::setListAll));
+        builder.<Boolean>withRequestField("flavor_sold_out",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getFlavorSoldOut, ListFlavorsRequest::setFlavorSoldOut));
 
         // response
 
@@ -1354,6 +1542,53 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListHealthMonitorsRequest::getEnterpriseProjectId,
                 ListHealthMonitorsRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListJobsRequest, ListJobsResponse> listJobs = genForListJobs();
+
+    private static HttpRequestDef<ListJobsRequest, ListJobsResponse> genForListJobs() {
+        // basic
+        HttpRequestDef.Builder<ListJobsRequest, ListJobsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListJobsRequest.class, ListJobsResponse.class)
+                .withName("ListJobs")
+                .withUri("/v3/{project_id}/elb/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getJobId, ListJobsRequest::setJobId));
+        builder.<String>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getJobType, ListJobsRequest::setJobType));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getStatus, ListJobsRequest::setStatus));
+        builder.<String>withRequestField("error_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getErrorCode, ListJobsRequest::setErrorCode));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getResourceId, ListJobsRequest::setResourceId));
+        builder.<String>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListJobsRequest::getBeginTime, ListJobsRequest::setBeginTime));
 
         // response
 
@@ -1714,6 +1949,17 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListListenersRequest::getProtectionStatus,
                 ListListenersRequest::setProtectionStatus));
+        builder.<Boolean>withRequestField("ssl_early_data_enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListListenersRequest::getSslEarlyDataEnable,
+                ListListenersRequest::setSslEarlyDataEnable));
+        builder.<Boolean>withRequestField("nat64_enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListListenersRequest::getNat64Enable, ListListenersRequest::setNat64Enable));
 
         // response
 
@@ -1928,6 +2174,30 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getLogGroupId, ListLoadBalancersRequest::setLogGroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLoadbalancerFeatureRequest, ListLoadbalancerFeatureResponse> listLoadbalancerFeature =
+        genForListLoadbalancerFeature();
+
+    private static HttpRequestDef<ListLoadbalancerFeatureRequest, ListLoadbalancerFeatureResponse> genForListLoadbalancerFeature() {
+        // basic
+        HttpRequestDef.Builder<ListLoadbalancerFeatureRequest, ListLoadbalancerFeatureResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListLoadbalancerFeatureRequest.class, ListLoadbalancerFeatureResponse.class)
+            .withName("ListLoadbalancerFeature")
+            .withUri("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/features")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLoadbalancerFeatureRequest::getLoadbalancerId,
+                ListLoadbalancerFeatureRequest::setLoadbalancerId));
 
         // response
 
@@ -2352,6 +2622,16 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPoolsRequest::getPublicBorderGroup, ListPoolsRequest::setPublicBorderGroup));
+        builder.<Integer>withRequestField("quic_cid_len",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPoolsRequest::getQuicCidLen, ListPoolsRequest::setQuicCidLen));
+        builder.<Integer>withRequestField("quic_cid_offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPoolsRequest::getQuicCidOffset, ListPoolsRequest::setQuicCidOffset));
 
         // response
 
@@ -2547,6 +2827,28 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowHealthMonitorRequest::getHealthmonitorId,
                 ShowHealthMonitorRequest::setHealthmonitorId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowJobRequest, ShowJobResponse> showJob = genForShowJob();
+
+    private static HttpRequestDef<ShowJobRequest, ShowJobResponse> genForShowJob() {
+        // basic
+        HttpRequestDef.Builder<ShowJobRequest, ShowJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobRequest.class, ShowJobResponse.class)
+                .withName("ShowJob")
+                .withUri("/v3/{project_id}/elb/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobRequest::getJobId, ShowJobRequest::setJobId));
 
         // response
 
@@ -3098,6 +3400,35 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpgradeLoadbalancerRequest, UpgradeLoadbalancerResponse> upgradeLoadbalancer =
+        genForUpgradeLoadbalancer();
+
+    private static HttpRequestDef<UpgradeLoadbalancerRequest, UpgradeLoadbalancerResponse> genForUpgradeLoadbalancer() {
+        // basic
+        HttpRequestDef.Builder<UpgradeLoadbalancerRequest, UpgradeLoadbalancerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpgradeLoadbalancerRequest.class, UpgradeLoadbalancerResponse.class)
+                .withName("UpgradeLoadbalancer")
+                .withUri("/v3/{project_id}/elb/loadbalancers/{loadbalancer_id}/upgrade")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpgradeLoadbalancerRequest::getLoadbalancerId,
+                UpgradeLoadbalancerRequest::setLoadbalancerId));
+        builder.<UpgradeV3RequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpgradeV3RequestBody.class),
+            f -> f.withMarshaller(UpgradeLoadbalancerRequest::getBody, UpgradeLoadbalancerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
         genForListApiVersions();
 
@@ -3185,6 +3516,17 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CountPreoccupyIpNumRequest::getAvailabilityZoneId,
                 CountPreoccupyIpNumRequest::setAvailabilityZoneId));
+        builder.<String>withRequestField("scene",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountPreoccupyIpNumRequest::getScene, CountPreoccupyIpNumRequest::setScene));
+        builder.<Boolean>withRequestField("nat64_enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(CountPreoccupyIpNumRequest::getNat64Enable,
+                CountPreoccupyIpNumRequest::setNat64Enable));
 
         // response
 
@@ -3311,6 +3653,33 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowIpGroupRequest::getIpgroupId, ShowIpGroupRequest::setIpgroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowIpGroupRelatedListenersRequest, ShowIpGroupRelatedListenersResponse> showIpGroupRelatedListeners =
+        genForShowIpGroupRelatedListeners();
+
+    private static HttpRequestDef<ShowIpGroupRelatedListenersRequest, ShowIpGroupRelatedListenersResponse> genForShowIpGroupRelatedListeners() {
+        // basic
+        HttpRequestDef.Builder<ShowIpGroupRelatedListenersRequest, ShowIpGroupRelatedListenersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowIpGroupRelatedListenersRequest.class,
+                    ShowIpGroupRelatedListenersResponse.class)
+                .withName("ShowIpGroupRelatedListeners")
+                .withUri("/v3/{project_id}/elb/ipgroups/{ipgroup_id}/related-listeners")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ipgroup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIpGroupRelatedListenersRequest::getIpgroupId,
+                ShowIpGroupRelatedListenersRequest::setIpgroupId));
 
         // response
 

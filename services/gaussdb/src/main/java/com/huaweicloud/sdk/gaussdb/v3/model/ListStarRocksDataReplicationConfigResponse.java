@@ -65,7 +65,7 @@ public class ListStarRocksDataReplicationConfigResponse extends SdkResponse {
     }
 
     /**
-     * GaussDB(for MySQL)实例ID。
+     * TaurusDB实例ID。
      * @return sourceInstanceId
      */
     public String getSourceInstanceId() {
@@ -82,7 +82,7 @@ public class ListStarRocksDataReplicationConfigResponse extends SdkResponse {
     }
 
     /**
-     * GaussDB(for MySQL)节点ID。
+     * TaurusDB节点ID。
      * @return sourceNodeId
      */
     public String getSourceNodeId() {

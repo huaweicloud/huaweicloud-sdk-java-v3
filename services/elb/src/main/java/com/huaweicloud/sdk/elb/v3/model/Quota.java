@@ -90,6 +90,21 @@ public class Quota {
 
     private Integer listenersPerLoadbalancer;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipgroups_per_listener")
+
+    private Integer ipgroupsPerListener;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pools_per_l7policy")
+
+    private Integer poolsPerL7policy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "l7policies_per_listener")
+
+    private Integer l7policiesPerListener;
+
     public Quota withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -362,6 +377,57 @@ public class Quota {
         this.listenersPerLoadbalancer = listenersPerLoadbalancer;
     }
 
+    public Quota withIpgroupsPerListener(Integer ipgroupsPerListener) {
+        this.ipgroupsPerListener = ipgroupsPerListener;
+        return this;
+    }
+
+    /**
+     * 单个监听器下的IP地址组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return ipgroupsPerListener
+     */
+    public Integer getIpgroupsPerListener() {
+        return ipgroupsPerListener;
+    }
+
+    public void setIpgroupsPerListener(Integer ipgroupsPerListener) {
+        this.ipgroupsPerListener = ipgroupsPerListener;
+    }
+
+    public Quota withPoolsPerL7policy(Integer poolsPerL7policy) {
+        this.poolsPerL7policy = poolsPerL7policy;
+        return this;
+    }
+
+    /**
+     * 单个转发策略下的后端服务器组配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return poolsPerL7policy
+     */
+    public Integer getPoolsPerL7policy() {
+        return poolsPerL7policy;
+    }
+
+    public void setPoolsPerL7policy(Integer poolsPerL7policy) {
+        this.poolsPerL7policy = poolsPerL7policy;
+    }
+
+    public Quota withL7policiesPerListener(Integer l7policiesPerListener) {
+        this.l7policiesPerListener = l7policiesPerListener;
+        return this;
+    }
+
+    /**
+     * 单个监听器下的转发策略配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return l7policiesPerListener
+     */
+    public Integer getL7policiesPerListener() {
+        return l7policiesPerListener;
+    }
+
+    public void setL7policiesPerListener(Integer l7policiesPerListener) {
+        this.l7policiesPerListener = l7policiesPerListener;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -381,7 +447,10 @@ public class Quota {
             && Objects.equals(this.ipgroup, that.ipgroup) && Objects.equals(this.ipgroupBindings, that.ipgroupBindings)
             && Objects.equals(this.ipgroupMaxLength, that.ipgroupMaxLength)
             && Objects.equals(this.securityPolicy, that.securityPolicy)
-            && Objects.equals(this.listenersPerLoadbalancer, that.listenersPerLoadbalancer);
+            && Objects.equals(this.listenersPerLoadbalancer, that.listenersPerLoadbalancer)
+            && Objects.equals(this.ipgroupsPerListener, that.ipgroupsPerListener)
+            && Objects.equals(this.poolsPerL7policy, that.poolsPerL7policy)
+            && Objects.equals(this.l7policiesPerListener, that.l7policiesPerListener);
     }
 
     @Override
@@ -401,7 +470,10 @@ public class Quota {
             ipgroupBindings,
             ipgroupMaxLength,
             securityPolicy,
-            listenersPerLoadbalancer);
+            listenersPerLoadbalancer,
+            ipgroupsPerListener,
+            poolsPerL7policy,
+            l7policiesPerListener);
     }
 
     @Override
@@ -424,6 +496,9 @@ public class Quota {
         sb.append("    ipgroupMaxLength: ").append(toIndentedString(ipgroupMaxLength)).append("\n");
         sb.append("    securityPolicy: ").append(toIndentedString(securityPolicy)).append("\n");
         sb.append("    listenersPerLoadbalancer: ").append(toIndentedString(listenersPerLoadbalancer)).append("\n");
+        sb.append("    ipgroupsPerListener: ").append(toIndentedString(ipgroupsPerListener)).append("\n");
+        sb.append("    poolsPerL7policy: ").append(toIndentedString(poolsPerL7policy)).append("\n");
+        sb.append("    l7policiesPerListener: ").append(toIndentedString(l7policiesPerListener)).append("\n");
         sb.append("}");
         return sb.toString();
     }

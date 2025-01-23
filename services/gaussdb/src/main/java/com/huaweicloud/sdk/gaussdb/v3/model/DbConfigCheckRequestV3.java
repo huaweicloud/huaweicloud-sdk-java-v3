@@ -54,7 +54,7 @@ public class DbConfigCheckRequestV3 {
     }
 
     /**
-     * GaussDB(for MySQL)实例ID。
+     * TaurusDB实例ID。
      * @return sourceInstanceId
      */
     public String getSourceInstanceId() {
@@ -71,7 +71,7 @@ public class DbConfigCheckRequestV3 {
     }
 
     /**
-     * GaussDB(for MySQL)只读节点ID。如为空，则取GaussDB(for MySQL)主节点ID
+     * TaurusDB只读节点ID。如为空，则取TaurusDB主节点ID
      * @return sourceNodeId
      */
     public String getSourceNodeId() {
@@ -88,7 +88,7 @@ public class DbConfigCheckRequestV3 {
     }
 
     /**
-     * GaussDB(for MySQL)数据库名。
+     * TaurusDB数据库名。
      * @return sourceDatabaseName
      */
     public String getSourceDatabaseName() {

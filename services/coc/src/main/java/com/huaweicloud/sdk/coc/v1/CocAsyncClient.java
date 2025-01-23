@@ -38,8 +38,6 @@ import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantResponse;
-import com.huaweicloud.sdk.coc.v1.model.ListPrrTemplateRequest;
-import com.huaweicloud.sdk.coc.v1.model.ListPrrTemplateResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListResourceRequest;
@@ -79,7 +77,8 @@ public class CocAsyncClient {
     }
 
     public static ClientBuilder<CocAsyncClient> newBuilder() {
-        ClientBuilder<CocAsyncClient> clientBuilder = new ClientBuilder<>(CocAsyncClient::new);
+        ClientBuilder<CocAsyncClient> clientBuilder =
+            new ClientBuilder<>(CocAsyncClient::new, "GlobalCredentials,BasicCredentials");
         return clientBuilder;
     }
 
@@ -436,39 +435,6 @@ public class CocAsyncClient {
     public AsyncInvoker<ListAuthorizableTicketsExternalRequest, ListAuthorizableTicketsExternalResponse> listAuthorizableTicketsExternalAsyncInvoker(
         ListAuthorizableTicketsExternalRequest request) {
         return new AsyncInvoker<>(request, CocMeta.listAuthorizableTicketsExternal, hcClient);
-    }
-
-    /**
-     * 查询PRR模板列表
-     *
-     * 查询PRR模板列表
-     * 
-     * limit最大为100
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPrrTemplateRequest 请求对象
-     * @return CompletableFuture<ListPrrTemplateResponse>
-     */
-    public CompletableFuture<ListPrrTemplateResponse> listPrrTemplateAsync(ListPrrTemplateRequest request) {
-        return hcClient.asyncInvokeHttp(request, CocMeta.listPrrTemplate);
-    }
-
-    /**
-     * 查询PRR模板列表
-     *
-     * 查询PRR模板列表
-     * 
-     * limit最大为100
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPrrTemplateRequest 请求对象
-     * @return AsyncInvoker<ListPrrTemplateRequest, ListPrrTemplateResponse>
-     */
-    public AsyncInvoker<ListPrrTemplateRequest, ListPrrTemplateResponse> listPrrTemplateAsyncInvoker(
-        ListPrrTemplateRequest request) {
-        return new AsyncInvoker<>(request, CocMeta.listPrrTemplate, hcClient);
     }
 
     /**

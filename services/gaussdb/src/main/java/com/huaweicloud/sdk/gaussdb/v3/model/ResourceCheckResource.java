@@ -294,7 +294,7 @@ public class ResourceCheckResource {
     }
 
     /**
-     * HTAP实例子网即GaussDBForMySQL实例子网。 获取方法请参见[获取子网ID](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。
+     * HTAP实例子网即TaurusDB实例子网。 获取方法请参见[获取子网ID](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。
      * @return subnetId
      */
     public String getSubnetId() {

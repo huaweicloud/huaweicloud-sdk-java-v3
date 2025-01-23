@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 public class InstanceSetting {
 
     /**
-     * 网络类型，枚举：MOBILE_NETWORK/WIFI
+     * 网络类型，枚举值：MOBILE_NETWORK/WIFI/WIRED，注意这三个参数都必须有，配合encoding_type必填的2种参数共6种组合，详细先看请求示例
      */
     public static final class NetworkTypeEnum {
 
@@ -94,7 +94,7 @@ public class InstanceSetting {
     private NetworkTypeEnum networkType;
 
     /**
-     * 编码类型，目前固定值H264
+     * 编码类型，枚举值:H264/H265,注意这两个参数都必须有，配合network_type必填的3种参数共6种组合，详细先看请求示例
      */
     public static final class EncodingTypeEnum {
 
@@ -173,7 +173,7 @@ public class InstanceSetting {
     }
 
     /**
-     * 网络类型，枚举：MOBILE_NETWORK/WIFI
+     * 网络类型，枚举值：MOBILE_NETWORK/WIFI/WIRED，注意这三个参数都必须有，配合encoding_type必填的2种参数共6种组合，详细先看请求示例
      * @return networkType
      */
     public NetworkTypeEnum getNetworkType() {
@@ -190,7 +190,7 @@ public class InstanceSetting {
     }
 
     /**
-     * 编码类型，目前固定值H264
+     * 编码类型，枚举值:H264/H265,注意这两个参数都必须有，配合network_type必填的3种参数共6种组合，详细先看请求示例
      * @return encodingType
      */
     public EncodingTypeEnum getEncodingType() {

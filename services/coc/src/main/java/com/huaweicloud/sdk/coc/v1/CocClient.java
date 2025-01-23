@@ -38,8 +38,6 @@ import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantResponse;
-import com.huaweicloud.sdk.coc.v1.model.ListPrrTemplateRequest;
-import com.huaweicloud.sdk.coc.v1.model.ListPrrTemplateResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListResourceRequest;
@@ -77,7 +75,8 @@ public class CocClient {
     }
 
     public static ClientBuilder<CocClient> newBuilder() {
-        ClientBuilder<CocClient> clientBuilder = new ClientBuilder<>(CocClient::new);
+        ClientBuilder<CocClient> clientBuilder =
+            new ClientBuilder<>(CocClient::new, "GlobalCredentials,BasicCredentials");
         return clientBuilder;
     }
 
@@ -429,39 +428,6 @@ public class CocClient {
     public SyncInvoker<ListAuthorizableTicketsExternalRequest, ListAuthorizableTicketsExternalResponse> listAuthorizableTicketsExternalInvoker(
         ListAuthorizableTicketsExternalRequest request) {
         return new SyncInvoker<>(request, CocMeta.listAuthorizableTicketsExternal, hcClient);
-    }
-
-    /**
-     * 查询PRR模板列表
-     *
-     * 查询PRR模板列表
-     * 
-     * limit最大为100
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPrrTemplateRequest 请求对象
-     * @return ListPrrTemplateResponse
-     */
-    public ListPrrTemplateResponse listPrrTemplate(ListPrrTemplateRequest request) {
-        return hcClient.syncInvokeHttp(request, CocMeta.listPrrTemplate);
-    }
-
-    /**
-     * 查询PRR模板列表
-     *
-     * 查询PRR模板列表
-     * 
-     * limit最大为100
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListPrrTemplateRequest 请求对象
-     * @return SyncInvoker<ListPrrTemplateRequest, ListPrrTemplateResponse>
-     */
-    public SyncInvoker<ListPrrTemplateRequest, ListPrrTemplateResponse> listPrrTemplateInvoker(
-        ListPrrTemplateRequest request) {
-        return new SyncInvoker<>(request, CocMeta.listPrrTemplate, hcClient);
     }
 
     /**

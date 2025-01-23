@@ -58,7 +58,7 @@ public class DetectLiveByFileRequestBody implements SdkFormDataBody {
     }
 
     /**
-     * 动作代码顺序列表，英文逗号（,）分隔。建议单动作，目前支持的动作有： • 1：左摇头 • 2：右摇头 • 3：点头 • 4：嘴部动作
+     * 动作代码顺序列表，英文逗号（,）分隔。建议单动作，目前支持的动作有： • 1：左摇头 • 2：右摇头 • 3：点头 • 4：嘴部动作 • 5：眨眼
      * @return actions
      */
     public String getActions() {

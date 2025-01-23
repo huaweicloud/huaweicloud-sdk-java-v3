@@ -186,6 +186,11 @@ public class ExportTopRiskInstancesRequest {
 
     private XLanguageEnum xLanguage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metric_code")
+
+    private String metricCode;
+
     public ExportTopRiskInstancesRequest withStartAt(Long startAt) {
         this.startAt = startAt;
         return this;
@@ -273,6 +278,23 @@ public class ExportTopRiskInstancesRequest {
         this.xLanguage = xLanguage;
     }
 
+    public ExportTopRiskInstancesRequest withMetricCode(String metricCode) {
+        this.metricCode = metricCode;
+        return this;
+    }
+
+    /**
+     * 指标码
+     * @return metricCode
+     */
+    public String getMetricCode() {
+        return metricCode;
+    }
+
+    public void setMetricCode(String metricCode) {
+        this.metricCode = metricCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -284,12 +306,12 @@ public class ExportTopRiskInstancesRequest {
         ExportTopRiskInstancesRequest that = (ExportTopRiskInstancesRequest) obj;
         return Objects.equals(this.startAt, that.startAt) && Objects.equals(this.endAt, that.endAt)
             && Objects.equals(this.datastoreType, that.datastoreType) && Objects.equals(this.num, that.num)
-            && Objects.equals(this.xLanguage, that.xLanguage);
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.metricCode, that.metricCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(startAt, endAt, datastoreType, num, xLanguage);
+        return Objects.hash(startAt, endAt, datastoreType, num, xLanguage, metricCode);
     }
 
     @Override
@@ -301,6 +323,7 @@ public class ExportTopRiskInstancesRequest {
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
         sb.append("    num: ").append(toIndentedString(num)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    metricCode: ").append(toIndentedString(metricCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

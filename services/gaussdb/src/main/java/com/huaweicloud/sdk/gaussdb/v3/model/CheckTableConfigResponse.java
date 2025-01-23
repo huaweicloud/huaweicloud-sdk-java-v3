@@ -40,7 +40,7 @@ public class CheckTableConfigResponse extends SdkResponse {
     }
 
     /**
-     * GaussDB(for MySQL)数据库名。
+     * TaurusDB数据库名。
      * @return sourceDatabaseName
      */
     public String getSourceDatabaseName() {

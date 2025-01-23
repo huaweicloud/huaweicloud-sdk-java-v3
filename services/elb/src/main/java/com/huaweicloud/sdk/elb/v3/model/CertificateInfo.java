@@ -84,6 +84,11 @@ public class CertificateInfo {
     private String encPrivateKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scm_certificate_id")
+
+    private String scmCertificateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "common_name")
 
     private String commonName;
@@ -155,7 +160,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 服务器证书所签域名。该字段仅type为server时有效。  总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过100个域名。  普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符， 只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com。  泛域名：在普通域名的基础上仅允许首字母为\"\\*\"。例：\\*.test.com
+     * 服务器证书所签域名。该字段仅type为server时有效。  总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\",\"分隔，不超过100个域名。  普通域名：由若干字符串组成，字符串间以\".\"分隔，单个字符串长度不超过63个字符， 只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com。  泛域名：在普通域名的基础上仅允许首字母为\"\\*\"。例：\\*.test.com
      * @return domain
      */
     public String getDomain() {
@@ -336,13 +341,30 @@ public class CertificateInfo {
         this.encPrivateKey = encPrivateKey;
     }
 
+    public CertificateInfo withScmCertificateId(String scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
+        return this;
+    }
+
+    /**
+     * SCM证书ID
+     * @return scmCertificateId
+     */
+    public String getScmCertificateId() {
+        return scmCertificateId;
+    }
+
+    public void setScmCertificateId(String scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
+    }
+
     public CertificateInfo withCommonName(String commonName) {
         this.commonName = commonName;
         return this;
     }
 
     /**
-     * 证书主域名
+     * 证书绑定的主域名。
      * @return commonName
      */
     public String getCommonName() {
@@ -392,7 +414,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书全部域名
+     * 证书绑定的所有域名。
      * @return subjectAlternativeNames
      */
     public List<String> getSubjectAlternativeNames() {
@@ -421,6 +443,7 @@ public class CertificateInfo {
             && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.encCertificate, that.encCertificate)
             && Objects.equals(this.encPrivateKey, that.encPrivateKey)
+            && Objects.equals(this.scmCertificateId, that.scmCertificateId)
             && Objects.equals(this.commonName, that.commonName) && Objects.equals(this.fingerprint, that.fingerprint)
             && Objects.equals(this.subjectAlternativeNames, that.subjectAlternativeNames);
     }
@@ -441,6 +464,7 @@ public class CertificateInfo {
             projectId,
             encCertificate,
             encPrivateKey,
+            scmCertificateId,
             commonName,
             fingerprint,
             subjectAlternativeNames);
@@ -464,6 +488,7 @@ public class CertificateInfo {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
         sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
+        sb.append("    scmCertificateId: ").append(toIndentedString(scmCertificateId)).append("\n");
         sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
         sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
         sb.append("    subjectAlternativeNames: ").append(toIndentedString(subjectAlternativeNames)).append("\n");

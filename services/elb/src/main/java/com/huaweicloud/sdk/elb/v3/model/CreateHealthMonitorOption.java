@@ -209,7 +209,7 @@ public class CreateHealthMonitorOption {
     }
 
     /**
-     * 健康检查端口号。取值：1-65535，默认为空，表示使用后端服务器端口号。  [当pool协议为IP时，monitor_port必须指定为非0值。](tag:hws_eu)  >当绑定的pool开启了端口透传功能时，该字段为必填。
+     * 参数解释：健康检查端口号。 约束限制： - 当绑定的pool开启了端口透传功能时，该字段为必填。 [- 当pool协议为IP时，monitor_port必须指定为非0值。](tag:hws_eu) 取值范围：1-65535和null，传null表示使用后端服务器端口号。 默认取值：null
      * minimum: 1
      * maximum: 65535
      * @return monitorPort

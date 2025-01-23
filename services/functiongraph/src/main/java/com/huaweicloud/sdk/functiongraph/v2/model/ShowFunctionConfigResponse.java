@@ -467,6 +467,11 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     private FuncVpc funcVpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "peering_cidr")
+
+    private String peeringCidr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "mount_config")
 
     private MountConfig mountConfig;
@@ -670,6 +675,11 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     @JsonProperty(value = "is_return_stream")
 
     private Boolean isReturnStream;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "lts_custom_tag")
+
+    private Map<String, String> ltsCustomTag = null;
 
     public ShowFunctionConfigResponse withFuncId(String funcId) {
         this.funcId = funcId;
@@ -1188,6 +1198,23 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
     public void setFuncVpc(FuncVpc funcVpc) {
         this.funcVpc = funcVpc;
+    }
+
+    public ShowFunctionConfigResponse withPeeringCidr(String peeringCidr) {
+        this.peeringCidr = peeringCidr;
+        return this;
+    }
+
+    /**
+     * VPC对等连接网段。您可以声明代码中使用到的VPC网段，用以检测是否与服务使用VPC网段冲突。网段间使用分号分隔且不能超过5个。
+     * @return peeringCidr
+     */
+    public String getPeeringCidr() {
+        return peeringCidr;
+    }
+
+    public void setPeeringCidr(String peeringCidr) {
+        this.peeringCidr = peeringCidr;
     }
 
     public ShowFunctionConfigResponse withMountConfig(MountConfig mountConfig) {
@@ -1733,6 +1760,39 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         this.isReturnStream = isReturnStream;
     }
 
+    public ShowFunctionConfigResponse withLtsCustomTag(Map<String, String> ltsCustomTag) {
+        this.ltsCustomTag = ltsCustomTag;
+        return this;
+    }
+
+    public ShowFunctionConfigResponse putLtsCustomTagItem(String key, String ltsCustomTagItem) {
+        if (this.ltsCustomTag == null) {
+            this.ltsCustomTag = new HashMap<>();
+        }
+        this.ltsCustomTag.put(key, ltsCustomTagItem);
+        return this;
+    }
+
+    public ShowFunctionConfigResponse withLtsCustomTag(Consumer<Map<String, String>> ltsCustomTagSetter) {
+        if (this.ltsCustomTag == null) {
+            this.ltsCustomTag = new HashMap<>();
+        }
+        ltsCustomTagSetter.accept(this.ltsCustomTag);
+        return this;
+    }
+
+    /**
+     * 自定义日志标签。函数执行时，可以按照自定义标签配置上报标签到云日志服务(LTS)，用户可以通过标签对日志进行过滤筛选。
+     * @return ltsCustomTag
+     */
+    public Map<String, String> getLtsCustomTag() {
+        return ltsCustomTag;
+    }
+
+    public void setLtsCustomTag(Map<String, String> ltsCustomTag) {
+        this.ltsCustomTag = ltsCustomTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1758,8 +1818,8 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
             && Objects.equals(this.lastModified, that.lastModified)
             && Objects.equals(this.ephemeralStorage, that.ephemeralStorage)
-            && Objects.equals(this.funcVpc, that.funcVpc) && Objects.equals(this.mountConfig, that.mountConfig)
-            && Objects.equals(this.dependList, that.dependList)
+            && Objects.equals(this.funcVpc, that.funcVpc) && Objects.equals(this.peeringCidr, that.peeringCidr)
+            && Objects.equals(this.mountConfig, that.mountConfig) && Objects.equals(this.dependList, that.dependList)
             && Objects.equals(this.dependVersionList, that.dependVersionList)
             && Objects.equals(this.strategyConfig, that.strategyConfig)
             && Objects.equals(this.dependencies, that.dependencies)
@@ -1782,7 +1842,8 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.enableClassIsolation, that.enableClassIsolation)
             && Objects.equals(this.allowEphemeralStorage, that.allowEphemeralStorage)
             && Objects.equals(this.networkController, that.networkController)
-            && Objects.equals(this.isReturnStream, that.isReturnStream);
+            && Objects.equals(this.isReturnStream, that.isReturnStream)
+            && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
     }
 
     @Override
@@ -1817,6 +1878,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             lastModified,
             ephemeralStorage,
             funcVpc,
+            peeringCidr,
             mountConfig,
             dependList,
             dependVersionList,
@@ -1843,7 +1905,8 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             enableClassIsolation,
             allowEphemeralStorage,
             networkController,
-            isReturnStream);
+            isReturnStream,
+            ltsCustomTag);
     }
 
     @Override
@@ -1880,6 +1943,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         sb.append("    lastModified: ").append(toIndentedString(lastModified)).append("\n");
         sb.append("    ephemeralStorage: ").append(toIndentedString(ephemeralStorage)).append("\n");
         sb.append("    funcVpc: ").append(toIndentedString(funcVpc)).append("\n");
+        sb.append("    peeringCidr: ").append(toIndentedString(peeringCidr)).append("\n");
         sb.append("    mountConfig: ").append(toIndentedString(mountConfig)).append("\n");
         sb.append("    dependList: ").append(toIndentedString(dependList)).append("\n");
         sb.append("    dependVersionList: ").append(toIndentedString(dependVersionList)).append("\n");
@@ -1907,6 +1971,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         sb.append("    allowEphemeralStorage: ").append(toIndentedString(allowEphemeralStorage)).append("\n");
         sb.append("    networkController: ").append(toIndentedString(networkController)).append("\n");
         sb.append("    isReturnStream: ").append(toIndentedString(isReturnStream)).append("\n");
+        sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

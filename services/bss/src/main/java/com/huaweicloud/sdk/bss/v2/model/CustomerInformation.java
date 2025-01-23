@@ -88,6 +88,11 @@ public class CustomerInformation {
 
     private String customerLevel;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "email")
+
+    private String email;
+
     public CustomerInformation withCustomer(String customer) {
         this.customer = customer;
         return this;
@@ -359,6 +364,23 @@ public class CustomerInformation {
         this.customerLevel = customerLevel;
     }
 
+    public CustomerInformation withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    /**
+     * |参数名称：客户邮箱| |参数的约束及描述：该参数为字符串 范围限制:0-256。|
+     * @return email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -377,7 +399,7 @@ public class CustomerInformation {
             && Objects.equals(this.customerType, that.customerType) && Objects.equals(this.isFrozen, that.isFrozen)
             && Objects.equals(this.accountManagers, that.accountManagers)
             && Objects.equals(this.xaccountId, that.xaccountId) && Objects.equals(this.xaccountType, that.xaccountType)
-            && Objects.equals(this.customerLevel, that.customerLevel);
+            && Objects.equals(this.customerLevel, that.customerLevel) && Objects.equals(this.email, that.email);
     }
 
     @Override
@@ -396,7 +418,8 @@ public class CustomerInformation {
             accountManagers,
             xaccountId,
             xaccountType,
-            customerLevel);
+            customerLevel,
+            email);
     }
 
     @Override
@@ -418,6 +441,7 @@ public class CustomerInformation {
         sb.append("    xaccountId: ").append(toIndentedString(xaccountId)).append("\n");
         sb.append("    xaccountType: ").append(toIndentedString(xaccountType)).append("\n");
         sb.append("    customerLevel: ").append(toIndentedString(customerLevel)).append("\n");
+        sb.append("    email: ").append(toIndentedString(email)).append("\n");
         sb.append("}");
         return sb.toString();
     }

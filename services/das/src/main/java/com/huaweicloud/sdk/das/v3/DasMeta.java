@@ -5,6 +5,7 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.das.v3.model.ApiSetMetricCodeThresholdReq;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequestBody;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsResponse;
@@ -66,14 +67,29 @@ import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceDistributionRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceDistributionResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceMultiNodesSingleMetric;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceMultiNodesSingleMetricRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceMultiNodesSingleMetricResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceNodesInfoRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceNodesInfoResponse;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceTopSlowLogRequest;
+import com.huaweicloud.sdk.das.v3.model.ListInstanceTopSlowLogResponse;
 import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksRequest;
 import com.huaweicloud.sdk.das.v3.model.ListMetadataLocksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListProcessesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListProcessesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListRiskItemsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListRiskItemsResponse;
+import com.huaweicloud.sdk.das.v3.model.ListRiskTrendRequest;
+import com.huaweicloud.sdk.das.v3.model.ListRiskTrendResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSpaceAnalysisResponse;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListTopSlowLogRequest;
+import com.huaweicloud.sdk.das.v3.model.ListTopSlowLogResponse;
 import com.huaweicloud.sdk.das.v3.model.ListTransactionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListTransactionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ParseSqlLimitRulesReq;
@@ -83,12 +99,16 @@ import com.huaweicloud.sdk.das.v3.model.QuerySqlPlanBody;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserRequestBody;
 import com.huaweicloud.sdk.das.v3.model.RegisterDbUserResponse;
+import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricRequest;
+import com.huaweicloud.sdk.das.v3.model.SetThresholdForMetricResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowDbUserResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowInstanceHealthReportResponse;
+import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportRequest;
+import com.huaweicloud.sdk.das.v3.model.ShowMetricNamesSupportResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.das.v3.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.das.v3.model.ShowSqlExecutionPlanRequest;
@@ -881,6 +901,12 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ExportTopRiskInstancesRequest.NumEnum.class),
             f -> f.withMarshaller(ExportTopRiskInstancesRequest::getNum, ExportTopRiskInstancesRequest::setNum));
+        builder.<String>withRequestField("metric_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportTopRiskInstancesRequest::getMetricCode,
+                ExportTopRiskInstancesRequest::setMetricCode));
         builder.<ExportTopRiskInstancesRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -1199,6 +1225,152 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstanceDistributionRequest, ListInstanceDistributionResponse> listInstanceDistribution =
+        genForListInstanceDistribution();
+
+    private static HttpRequestDef<ListInstanceDistributionRequest, ListInstanceDistributionResponse> genForListInstanceDistribution() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceDistributionRequest, ListInstanceDistributionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListInstanceDistributionRequest.class, ListInstanceDistributionResponse.class)
+                .withName("ListInstanceDistribution")
+                .withUri("/v3/{project_id}/instances/distribution")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceDistributionRequest::getDatastoreType,
+                ListInstanceDistributionRequest::setDatastoreType));
+        builder.<ListInstanceDistributionRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstanceDistributionRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListInstanceDistributionRequest::getXLanguage,
+                ListInstanceDistributionRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceMultiNodesSingleMetricRequest, ListInstanceMultiNodesSingleMetricResponse> listInstanceMultiNodesSingleMetric =
+        genForListInstanceMultiNodesSingleMetric();
+
+    private static HttpRequestDef<ListInstanceMultiNodesSingleMetricRequest, ListInstanceMultiNodesSingleMetricResponse> genForListInstanceMultiNodesSingleMetric() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceMultiNodesSingleMetricRequest, ListInstanceMultiNodesSingleMetricResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListInstanceMultiNodesSingleMetricRequest.class,
+                    ListInstanceMultiNodesSingleMetricResponse.class)
+                .withName("ListInstanceMultiNodesSingleMetric")
+                .withUri("/v3/{project_id}/multi-nodes/single-metric")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ListInstanceMultiNodesSingleMetricRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstanceMultiNodesSingleMetricRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListInstanceMultiNodesSingleMetricRequest::getXLanguage,
+                ListInstanceMultiNodesSingleMetricRequest::setXLanguage));
+        builder.<ListInstanceMultiNodesSingleMetric>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListInstanceMultiNodesSingleMetric.class),
+            f -> f.withMarshaller(ListInstanceMultiNodesSingleMetricRequest::getBody,
+                ListInstanceMultiNodesSingleMetricRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceNodesInfoRequest, ListInstanceNodesInfoResponse> listInstanceNodesInfo =
+        genForListInstanceNodesInfo();
+
+    private static HttpRequestDef<ListInstanceNodesInfoRequest, ListInstanceNodesInfoResponse> genForListInstanceNodesInfo() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceNodesInfoRequest, ListInstanceNodesInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInstanceNodesInfoRequest.class, ListInstanceNodesInfoResponse.class)
+            .withName("ListInstanceNodesInfo")
+            .withUri("/v3/{project_id}/instance/nodes-info")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceNodesInfoRequest::getInstanceId,
+                ListInstanceNodesInfoRequest::setInstanceId));
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceNodesInfoRequest::getDatastoreType,
+                ListInstanceNodesInfoRequest::setDatastoreType));
+        builder.<ListInstanceNodesInfoRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstanceNodesInfoRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListInstanceNodesInfoRequest::getXLanguage,
+                ListInstanceNodesInfoRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstanceTopSlowLogRequest, ListInstanceTopSlowLogResponse> listInstanceTopSlowLog =
+        genForListInstanceTopSlowLog();
+
+    private static HttpRequestDef<ListInstanceTopSlowLogRequest, ListInstanceTopSlowLogResponse> genForListInstanceTopSlowLog() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceTopSlowLogRequest, ListInstanceTopSlowLogResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInstanceTopSlowLogRequest.class, ListInstanceTopSlowLogResponse.class)
+            .withName("ListInstanceTopSlowLog")
+            .withUri("/v3/{project_id}/instances/{instance_id}/top-slow-log")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstanceTopSlowLogRequest::getInstanceId,
+                ListInstanceTopSlowLogRequest::setInstanceId));
+        builder.<Integer>withRequestField("num",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceTopSlowLogRequest::getNum, ListInstanceTopSlowLogRequest::setNum));
+        builder.<Long>withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListInstanceTopSlowLogRequest::getStartAt,
+                ListInstanceTopSlowLogRequest::setStartAt));
+        builder.<Long>withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListInstanceTopSlowLogRequest::getEndAt, ListInstanceTopSlowLogRequest::setEndAt));
+        builder.<ListInstanceTopSlowLogRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstanceTopSlowLogRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListInstanceTopSlowLogRequest::getXLanguage,
+                ListInstanceTopSlowLogRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListMetadataLocksRequest, ListMetadataLocksResponse> listMetadataLocks =
         genForListMetadataLocks();
 
@@ -1299,6 +1471,77 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListProcessesRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListProcessesRequest::getXLanguage, ListProcessesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRiskItemsRequest, ListRiskItemsResponse> listRiskItems =
+        genForListRiskItems();
+
+    private static HttpRequestDef<ListRiskItemsRequest, ListRiskItemsResponse> genForListRiskItems() {
+        // basic
+        HttpRequestDef.Builder<ListRiskItemsRequest, ListRiskItemsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRiskItemsRequest.class, ListRiskItemsResponse.class)
+                .withName("ListRiskItems")
+                .withUri("/v3/{project_id}/get-risk-items")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRiskItemsRequest::getDatastoreType, ListRiskItemsRequest::setDatastoreType));
+        builder.<ListRiskItemsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListRiskItemsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListRiskItemsRequest::getXLanguage, ListRiskItemsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRiskTrendRequest, ListRiskTrendResponse> listRiskTrend =
+        genForListRiskTrend();
+
+    private static HttpRequestDef<ListRiskTrendRequest, ListRiskTrendResponse> genForListRiskTrend() {
+        // basic
+        HttpRequestDef.Builder<ListRiskTrendRequest, ListRiskTrendResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRiskTrendRequest.class, ListRiskTrendResponse.class)
+                .withName("ListRiskTrend")
+                .withUri("/v3/{project_id}/instances/risk-trend")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRiskTrendRequest::getDatastoreType, ListRiskTrendRequest::setDatastoreType));
+        builder.<Long>withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListRiskTrendRequest::getStartAt, ListRiskTrendRequest::setStartAt));
+        builder.<Long>withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListRiskTrendRequest::getEndAt, ListRiskTrendRequest::setEndAt));
+        builder.<String>withRequestField("metric_code",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRiskTrendRequest::getMetricCode, ListRiskTrendRequest::setMetricCode));
+        builder.<ListRiskTrendRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListRiskTrendRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListRiskTrendRequest::getXLanguage, ListRiskTrendRequest::setXLanguage));
 
         // response
 
@@ -1409,6 +1652,44 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListSqlLimitRulesRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListSqlLimitRulesRequest::getXLanguage, ListSqlLimitRulesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTopSlowLogRequest, ListTopSlowLogResponse> listTopSlowLog =
+        genForListTopSlowLog();
+
+    private static HttpRequestDef<ListTopSlowLogRequest, ListTopSlowLogResponse> genForListTopSlowLog() {
+        // basic
+        HttpRequestDef.Builder<ListTopSlowLogRequest, ListTopSlowLogResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTopSlowLogRequest.class, ListTopSlowLogResponse.class)
+                .withName("ListTopSlowLog")
+                .withUri("/v3/{project_id}/instances/top-slow-log")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("num",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTopSlowLogRequest::getNum, ListTopSlowLogRequest::setNum));
+        builder.<Long>withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTopSlowLogRequest::getStartAt, ListTopSlowLogRequest::setStartAt));
+        builder.<Long>withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListTopSlowLogRequest::getEndAt, ListTopSlowLogRequest::setEndAt));
+        builder.<ListTopSlowLogRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTopSlowLogRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListTopSlowLogRequest::getXLanguage, ListTopSlowLogRequest::setXLanguage));
 
         // response
 
@@ -1555,6 +1836,35 @@ public class DasMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetThresholdForMetricRequest, SetThresholdForMetricResponse> setThresholdForMetric =
+        genForSetThresholdForMetric();
+
+    private static HttpRequestDef<SetThresholdForMetricRequest, SetThresholdForMetricResponse> genForSetThresholdForMetric() {
+        // basic
+        HttpRequestDef.Builder<SetThresholdForMetricRequest, SetThresholdForMetricResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SetThresholdForMetricRequest.class, SetThresholdForMetricResponse.class)
+            .withName("SetThresholdForMetric")
+            .withUri("/v3/{project_id}/set-metric-threshold")
+            .withContentType("application/json");
+
+        // requests
+        builder.<SetThresholdForMetricRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SetThresholdForMetricRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(SetThresholdForMetricRequest::getXLanguage,
+                SetThresholdForMetricRequest::setXLanguage));
+        builder.<ApiSetMetricCodeThresholdReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApiSetMetricCodeThresholdReq.class),
+            f -> f.withMarshaller(SetThresholdForMetricRequest::getBody, SetThresholdForMetricRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowDbUserRequest, ShowDbUserResponse> showDbUser = genForShowDbUser();
 
     private static HttpRequestDef<ShowDbUserRequest, ShowDbUserResponse> genForShowDbUser() {
@@ -1618,6 +1928,30 @@ public class DasMeta {
             TypeCasts.uncheckedConversion(ShowInstanceHealthReportRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowInstanceHealthReportRequest::getXLanguage,
                 ShowInstanceHealthReportRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowMetricNamesSupportRequest, ShowMetricNamesSupportResponse> showMetricNamesSupport =
+        genForShowMetricNamesSupport();
+
+    private static HttpRequestDef<ShowMetricNamesSupportRequest, ShowMetricNamesSupportResponse> genForShowMetricNamesSupport() {
+        // basic
+        HttpRequestDef.Builder<ShowMetricNamesSupportRequest, ShowMetricNamesSupportResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowMetricNamesSupportRequest.class, ShowMetricNamesSupportResponse.class)
+            .withName("ShowMetricNamesSupport")
+            .withUri("/v3/{project_id}/metric-names/support")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ShowMetricNamesSupportRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowMetricNamesSupportRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowMetricNamesSupportRequest::getXLanguage,
+                ShowMetricNamesSupportRequest::setXLanguage));
 
         // response
 

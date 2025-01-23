@@ -140,6 +140,11 @@ public class CreateCertificateOption {
 
     private String encPrivateKey;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scm_certificate_id")
+
+    private String scmCertificateId;
+
     public CreateCertificateOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -197,7 +202,7 @@ public class CreateCertificateOption {
     }
 
     /**
-     * 服务器证书所签域名。该字段仅type为server时有效。  总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\",\"分割，不超过100个域名。  普通域名：由若干字符串组成，字符串间以\".\"分割，单个字符串长度不超过63个字符， 只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com；  泛域名：在普通域名的基础上仅允许首字母为\"\\*\"。例：\\*.test.com
+     * 服务器证书所签域名。该字段仅type为server时有效。  总长度为0-10000，由若干普通域名或泛域名组成，域名之间以\",\"分隔，不超过100个域名。  普通域名：由若干字符串组成，字符串间以\".\"分隔，单个字符串长度不超过63个字符， 只能包含英文字母、数字或\"-\"，且必须以字母或数字开头和结尾。例：www.test.com；  泛域名：在普通域名的基础上仅允许首字母为\"\\*\"。例：\\*.test.com
      * @return domain
      */
     public String getDomain() {
@@ -327,6 +332,23 @@ public class CreateCertificateOption {
         this.encPrivateKey = encPrivateKey;
     }
 
+    public CreateCertificateOption withScmCertificateId(String scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
+        return this;
+    }
+
+    /**
+     * SM证书ID。
+     * @return scmCertificateId
+     */
+    public String getScmCertificateId() {
+        return scmCertificateId;
+    }
+
+    public void setScmCertificateId(String scmCertificateId) {
+        this.scmCertificateId = scmCertificateId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -343,7 +365,8 @@ public class CreateCertificateOption {
             && Objects.equals(this.type, that.type)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.encCertificate, that.encCertificate)
-            && Objects.equals(this.encPrivateKey, that.encPrivateKey);
+            && Objects.equals(this.encPrivateKey, that.encPrivateKey)
+            && Objects.equals(this.scmCertificateId, that.scmCertificateId);
     }
 
     @Override
@@ -358,7 +381,8 @@ public class CreateCertificateOption {
             type,
             enterpriseProjectId,
             encCertificate,
-            encPrivateKey);
+            encPrivateKey,
+            scmCertificateId);
     }
 
     @Override
@@ -376,6 +400,7 @@ public class CreateCertificateOption {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
         sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");
+        sb.append("    scmCertificateId: ").append(toIndentedString(scmCertificateId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

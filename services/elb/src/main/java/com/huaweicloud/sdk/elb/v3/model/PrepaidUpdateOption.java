@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 负载均衡器的包周期规格变更信息
+ * 参数解释：更新负载均衡器实例的预付费计费配置。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg)
  */
 public class PrepaidUpdateOption {
 

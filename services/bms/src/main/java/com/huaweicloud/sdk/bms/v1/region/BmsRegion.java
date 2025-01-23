@@ -68,8 +68,6 @@ public class BmsRegion {
 
     public static final Region CN_EAST_4 = new Region("cn-east-4", "https://bms.cn-east-4.myhuaweicloud.com");
 
-    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://bms.af-north-1.myhuaweicloud.com");
-
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("BMS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -100,7 +98,6 @@ public class BmsRegion {
         map.put("tr-west-1", TR_WEST_1);
         map.put("me-east-1", ME_EAST_1);
         map.put("cn-east-4", CN_EAST_4);
-        map.put("af-north-1", AF_NORTH_1);
         return Collections.unmodifiableMap(map);
     }
 
