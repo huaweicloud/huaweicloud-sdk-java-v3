@@ -11,7 +11,7 @@ jobs:
       - name: Set up Maven Central Repository
         uses: actions/setup-java@v3
         with:
-          java-version: '8.0.352'
+          java-version: '11.0.23'
           distribution: 'temurin'
           cache: 'maven'
           server-id: 'ossrh'
