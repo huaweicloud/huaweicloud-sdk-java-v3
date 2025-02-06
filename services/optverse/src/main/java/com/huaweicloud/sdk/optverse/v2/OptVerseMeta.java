@@ -1,19 +1,19 @@
-package com.huaweicloud.sdk.optverse.v1;
+package com.huaweicloud.sdk.optverse.v2;
 
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.optverse.v1.model.CreateTaskRequest;
-import com.huaweicloud.sdk.optverse.v1.model.CreateTaskResponse;
-import com.huaweicloud.sdk.optverse.v1.model.DeleteTaskRequest;
-import com.huaweicloud.sdk.optverse.v1.model.DeleteTaskResponse;
-import com.huaweicloud.sdk.optverse.v1.model.ListTaskRequest;
-import com.huaweicloud.sdk.optverse.v1.model.ListTaskResponse;
-import com.huaweicloud.sdk.optverse.v1.model.ShowTaskRequest;
-import com.huaweicloud.sdk.optverse.v1.model.ShowTaskResponse;
-import com.huaweicloud.sdk.optverse.v1.model.TaskDto;
+import com.huaweicloud.sdk.optverse.v2.model.CreateTaskRequest;
+import com.huaweicloud.sdk.optverse.v2.model.CreateTaskResponse;
+import com.huaweicloud.sdk.optverse.v2.model.DeleteTaskRequest;
+import com.huaweicloud.sdk.optverse.v2.model.DeleteTaskResponse;
+import com.huaweicloud.sdk.optverse.v2.model.ListTaskRequest;
+import com.huaweicloud.sdk.optverse.v2.model.ListTaskResponse;
+import com.huaweicloud.sdk.optverse.v2.model.ShowTaskRequest;
+import com.huaweicloud.sdk.optverse.v2.model.ShowTaskResponse;
+import com.huaweicloud.sdk.optverse.v2.model.TaskDto;
 
 @SuppressWarnings("unchecked")
 public class OptVerseMeta {
@@ -25,25 +25,15 @@ public class OptVerseMeta {
         HttpRequestDef.Builder<CreateTaskRequest, CreateTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, CreateTaskRequest.class, CreateTaskResponse.class)
                 .withName("CreateTask")
-                .withUri("/v1/{project_id}/optverse/{service_group}/{service_type}/tasks")
-                .withContentType("application/json;charset=utf-8");
+                .withUri("/v2/{project_id}/optverse/{service_type}/tasks")
+                .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("service_group",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTaskRequest::getServiceGroup, CreateTaskRequest::setServiceGroup));
         builder.<String>withRequestField("service_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateTaskRequest::getServiceType, CreateTaskRequest::setServiceType));
-        builder.<String>withRequestField("X-Apig-AppCode",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTaskRequest::getXApigAppCode, CreateTaskRequest::setXApigAppCode));
         builder.<TaskDto>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -62,15 +52,10 @@ public class OptVerseMeta {
         HttpRequestDef.Builder<DeleteTaskRequest, DeleteTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.DELETE, DeleteTaskRequest.class, DeleteTaskResponse.class)
                 .withName("DeleteTask")
-                .withUri("/v1/{project_id}/optverse/{service_group}/{service_type}/tasks/{task_id}")
+                .withUri("/v2/{project_id}/optverse/{service_type}/tasks/{task_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("service_group",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getServiceGroup, DeleteTaskRequest::setServiceGroup));
         builder.<String>withRequestField("service_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -81,11 +66,6 @@ public class OptVerseMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteTaskRequest::getTaskId, DeleteTaskRequest::setTaskId));
-        builder.<String>withRequestField("X-Apig-AppCode",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTaskRequest::getXApigAppCode, DeleteTaskRequest::setXApigAppCode));
 
         // response
 
@@ -99,15 +79,10 @@ public class OptVerseMeta {
         HttpRequestDef.Builder<ListTaskRequest, ListTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ListTaskRequest.class, ListTaskResponse.class)
                 .withName("ListTask")
-                .withUri("/v1/{project_id}/optverse/{service_group}/{service_type}/tasks")
+                .withUri("/v2/{project_id}/optverse/{service_type}/tasks")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("service_group",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTaskRequest::getServiceGroup, ListTaskRequest::setServiceGroup));
         builder.<String>withRequestField("service_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -123,11 +98,6 @@ public class OptVerseMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListTaskRequest::getOffset, ListTaskRequest::setOffset));
-        builder.<String>withRequestField("X-Apig-AppCode",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTaskRequest::getXApigAppCode, ListTaskRequest::setXApigAppCode));
 
         // response
 
@@ -141,15 +111,10 @@ public class OptVerseMeta {
         HttpRequestDef.Builder<ShowTaskRequest, ShowTaskResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowTaskRequest.class, ShowTaskResponse.class)
                 .withName("ShowTask")
-                .withUri("/v1/{project_id}/optverse/{service_group}/{service_type}/tasks/{task_id}")
+                .withUri("/v2/{project_id}/optverse/{service_type}/tasks/{task_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("service_group",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getServiceGroup, ShowTaskRequest::setServiceGroup));
         builder.<String>withRequestField("service_type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -165,11 +130,6 @@ public class OptVerseMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ShowTaskRequest::getInputEnable, ShowTaskRequest::setInputEnable));
-        builder.<String>withRequestField("X-Apig-AppCode",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowTaskRequest::getXApigAppCode, ShowTaskRequest::setXApigAppCode));
 
         // response
 

@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.optverse.v1.model;
+package com.huaweicloud.sdk.optverse.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -30,9 +30,8 @@ public class ListTaskResponse extends SdkResponse {
     }
 
     /**
-     * 数量
+     * 任务数量
      * minimum: 0
-     * maximum: 300
      * @return count
      */
     public Integer getCount() {

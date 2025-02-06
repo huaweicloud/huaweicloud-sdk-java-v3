@@ -101,6 +101,7 @@ import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.CreateXelLogDownloadResponse;
 import com.huaweicloud.sdk.rds.v3.model.CustomerCreateInstanceReq;
 import com.huaweicloud.sdk.rds.v3.model.CustomerModifyAutoEnlargePolicyReq;
+import com.huaweicloud.sdk.rds.v3.model.CustomerModifyAutoUpgradePolicyReq;
 import com.huaweicloud.sdk.rds.v3.model.CustomerUpgradeDatabaseVersionReq;
 import com.huaweicloud.sdk.rds.v3.model.CustomerUpgradeDatabaseVersionReqNew;
 import com.huaweicloud.sdk.rds.v3.model.DataIpRequest;
@@ -373,6 +374,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetAuditlogPolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SetAuditlogPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetAutoUpgradePolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetAutoUpgradePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyRequestBody;
 import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyResponse;
@@ -413,6 +416,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkRequest;
@@ -423,6 +428,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowBinlogClearPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBinlogClearPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowDatabaseLevelDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowDatabaseLevelDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowDnsNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowDnsNameResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowDomainNameRequest;
@@ -3992,6 +3999,41 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetAutoUpgradePolicyRequest, SetAutoUpgradePolicyResponse> setAutoUpgradePolicy =
+        genForSetAutoUpgradePolicy();
+
+    private static HttpRequestDef<SetAutoUpgradePolicyRequest, SetAutoUpgradePolicyResponse> genForSetAutoUpgradePolicy() {
+        // basic
+        HttpRequestDef.Builder<SetAutoUpgradePolicyRequest, SetAutoUpgradePolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, SetAutoUpgradePolicyRequest.class, SetAutoUpgradePolicyResponse.class)
+            .withName("SetAutoUpgradePolicy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/db-auto-upgrade")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetAutoUpgradePolicyRequest::getInstanceId,
+                SetAutoUpgradePolicyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetAutoUpgradePolicyRequest::getXLanguage,
+                SetAutoUpgradePolicyRequest::setXLanguage));
+        builder.<CustomerModifyAutoUpgradePolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CustomerModifyAutoUpgradePolicyReq.class),
+            f -> f.withMarshaller(SetAutoUpgradePolicyRequest::getBody, SetAutoUpgradePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicy =
         genForSetBackupPolicy();
 
@@ -4366,6 +4408,36 @@ public class RdsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowAutoUpgradePolicyRequest, ShowAutoUpgradePolicyResponse> showAutoUpgradePolicy =
+        genForShowAutoUpgradePolicy();
+
+    private static HttpRequestDef<ShowAutoUpgradePolicyRequest, ShowAutoUpgradePolicyResponse> genForShowAutoUpgradePolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoUpgradePolicyRequest, ShowAutoUpgradePolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAutoUpgradePolicyRequest.class, ShowAutoUpgradePolicyResponse.class)
+            .withName("ShowAutoUpgradePolicy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/db-auto-upgrade")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoUpgradePolicyRequest::getInstanceId,
+                ShowAutoUpgradePolicyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoUpgradePolicyRequest::getXLanguage,
+                ShowAutoUpgradePolicyRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAvailableVersionRequest, ShowAvailableVersionResponse> showAvailableVersion =
         genForShowAvailableVersion();
 
@@ -4506,6 +4578,45 @@ public class RdsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowConfigurationRequest::getXLanguage, ShowConfigurationRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDatabaseLevelDatabaseRequest, ShowDatabaseLevelDatabaseResponse> showDatabaseLevelDatabase =
+        genForShowDatabaseLevelDatabase();
+
+    private static HttpRequestDef<ShowDatabaseLevelDatabaseRequest, ShowDatabaseLevelDatabaseResponse> genForShowDatabaseLevelDatabase() {
+        // basic
+        HttpRequestDef.Builder<ShowDatabaseLevelDatabaseRequest, ShowDatabaseLevelDatabaseResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDatabaseLevelDatabaseRequest.class,
+                    ShowDatabaseLevelDatabaseResponse.class)
+                .withName("ShowDatabaseLevelDatabase")
+                .withUri("/v3/{project_id}/instances/{instance_id}/database/db-table-name")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatabaseLevelDatabaseRequest::getInstanceId,
+                ShowDatabaseLevelDatabaseRequest::setInstanceId));
+        builder.<String>withRequestField("backup_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatabaseLevelDatabaseRequest::getBackupId,
+                ShowDatabaseLevelDatabaseRequest::setBackupId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDatabaseLevelDatabaseRequest::getXLanguage,
+                ShowDatabaseLevelDatabaseRequest::setXLanguage));
 
         // response
 

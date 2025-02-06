@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.optverse.v1.model;
+package com.huaweicloud.sdk.rds.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,28 +9,28 @@ import java.util.Objects;
 /**
  * Response Object
  */
-public class CreateTaskResponse extends SdkResponse {
+public class SetAutoUpgradePolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "task_id")
+    @JsonProperty(value = "resp")
 
-    private String taskId;
+    private String resp;
 
-    public CreateTaskResponse withTaskId(String taskId) {
-        this.taskId = taskId;
+    public SetAutoUpgradePolicyResponse withResp(String resp) {
+        this.resp = resp;
         return this;
     }
 
     /**
-     * 任务编号
-     * @return taskId
+     * 响应结果
+     * @return resp
      */
-    public String getTaskId() {
-        return taskId;
+    public String getResp() {
+        return resp;
     }
 
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
+    public void setResp(String resp) {
+        this.resp = resp;
     }
 
     @Override
@@ -41,20 +41,20 @@ public class CreateTaskResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTaskResponse that = (CreateTaskResponse) obj;
-        return Objects.equals(this.taskId, that.taskId);
+        SetAutoUpgradePolicyResponse that = (SetAutoUpgradePolicyResponse) obj;
+        return Objects.equals(this.resp, that.resp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taskId);
+        return Objects.hash(resp);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateTaskResponse {\n");
-        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("class SetAutoUpgradePolicyResponse {\n");
+        sb.append("    resp: ").append(toIndentedString(resp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

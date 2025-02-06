@@ -289,6 +289,8 @@ import com.huaweicloud.sdk.rds.v3.model.SetAuditlogPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetAuditlogPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.SetAutoUpgradePolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.SetAutoUpgradePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.SetBackupPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.SetBinlogClearPolicyRequest;
@@ -325,6 +327,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAuditlogPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAutoEnlargePolicyResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowAutoUpgradePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowAvailableVersionResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowBackupDownloadLinkRequest;
@@ -335,6 +339,8 @@ import com.huaweicloud.sdk.rds.v3.model.ShowBinlogClearPolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowBinlogClearPolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowConfigurationRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowConfigurationResponse;
+import com.huaweicloud.sdk.rds.v3.model.ShowDatabaseLevelDatabaseRequest;
+import com.huaweicloud.sdk.rds.v3.model.ShowDatabaseLevelDatabaseResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowDnsNameRequest;
 import com.huaweicloud.sdk.rds.v3.model.ShowDnsNameResponse;
 import com.huaweicloud.sdk.rds.v3.model.ShowDomainNameRequest;
@@ -1636,7 +1642,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 批量查询容灾实例信息
      *
      * 批量查询容灾实例信息
      * 
@@ -1650,7 +1656,7 @@ public class RdsAsyncClient {
     }
 
     /**
-     * 
+     * 批量查询容灾实例信息
      *
      * 批量查询容灾实例信息
      * 
@@ -3271,6 +3277,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 设置实例内核小版本自动升级策略
+     *
+     * 设置实例内核小版本自动升级策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAutoUpgradePolicyRequest 请求对象
+     * @return CompletableFuture<SetAutoUpgradePolicyResponse>
+     */
+    public CompletableFuture<SetAutoUpgradePolicyResponse> setAutoUpgradePolicyAsync(
+        SetAutoUpgradePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.setAutoUpgradePolicy);
+    }
+
+    /**
+     * 设置实例内核小版本自动升级策略
+     *
+     * 设置实例内核小版本自动升级策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetAutoUpgradePolicyRequest 请求对象
+     * @return AsyncInvoker<SetAutoUpgradePolicyRequest, SetAutoUpgradePolicyResponse>
+     */
+    public AsyncInvoker<SetAutoUpgradePolicyRequest, SetAutoUpgradePolicyResponse> setAutoUpgradePolicyAsyncInvoker(
+        SetAutoUpgradePolicyRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.setAutoUpgradePolicy, hcClient);
+    }
+
+    /**
      * 设置自动备份策略
      *
      * 设置自动备份策略。
@@ -3600,6 +3636,36 @@ public class RdsAsyncClient {
     }
 
     /**
+     * 查询实例内核小版本自动升级策略
+     *
+     * 查询实例内核小版本自动升级策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoUpgradePolicyRequest 请求对象
+     * @return CompletableFuture<ShowAutoUpgradePolicyResponse>
+     */
+    public CompletableFuture<ShowAutoUpgradePolicyResponse> showAutoUpgradePolicyAsync(
+        ShowAutoUpgradePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showAutoUpgradePolicy);
+    }
+
+    /**
+     * 查询实例内核小版本自动升级策略
+     *
+     * 查询实例内核小版本自动升级策略
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoUpgradePolicyRequest 请求对象
+     * @return AsyncInvoker<ShowAutoUpgradePolicyRequest, ShowAutoUpgradePolicyResponse>
+     */
+    public AsyncInvoker<ShowAutoUpgradePolicyRequest, ShowAutoUpgradePolicyResponse> showAutoUpgradePolicyAsyncInvoker(
+        ShowAutoUpgradePolicyRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.showAutoUpgradePolicy, hcClient);
+    }
+
+    /**
      * 
      *
      * 查询实例可升级的目标版本
@@ -3745,6 +3811,36 @@ public class RdsAsyncClient {
     public AsyncInvoker<ShowConfigurationRequest, ShowConfigurationResponse> showConfigurationAsyncInvoker(
         ShowConfigurationRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.showConfiguration, hcClient);
+    }
+
+    /**
+     * 查询库级备份包含的库
+     *
+     * 查询库级备份包含的库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDatabaseLevelDatabaseRequest 请求对象
+     * @return CompletableFuture<ShowDatabaseLevelDatabaseResponse>
+     */
+    public CompletableFuture<ShowDatabaseLevelDatabaseResponse> showDatabaseLevelDatabaseAsync(
+        ShowDatabaseLevelDatabaseRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.showDatabaseLevelDatabase);
+    }
+
+    /**
+     * 查询库级备份包含的库
+     *
+     * 查询库级备份包含的库
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDatabaseLevelDatabaseRequest 请求对象
+     * @return AsyncInvoker<ShowDatabaseLevelDatabaseRequest, ShowDatabaseLevelDatabaseResponse>
+     */
+    public AsyncInvoker<ShowDatabaseLevelDatabaseRequest, ShowDatabaseLevelDatabaseResponse> showDatabaseLevelDatabaseAsyncInvoker(
+        ShowDatabaseLevelDatabaseRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.showDatabaseLevelDatabase, hcClient);
     }
 
     /**

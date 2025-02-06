@@ -138,6 +138,11 @@ public class CreateRestoreInstanceRequestBody {
 
     private Boolean dryRun;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_auto_upgrade")
+
+    private Boolean isAutoUpgrade;
+
     public CreateRestoreInstanceRequestBody withName(String name) {
         this.name = name;
         return this;
@@ -642,6 +647,23 @@ public class CreateRestoreInstanceRequestBody {
         this.dryRun = dryRun;
     }
 
+    public CreateRestoreInstanceRequestBody withIsAutoUpgrade(Boolean isAutoUpgrade) {
+        this.isAutoUpgrade = isAutoUpgrade;
+        return this;
+    }
+
+    /**
+     * 是否开启自动小版本升级，默认为false，仅支持PostgreSQL。 - true：开启自动小版本升级。 - false：不开启自动小版本升级。
+     * @return isAutoUpgrade
+     */
+    public Boolean getIsAutoUpgrade() {
+        return isAutoUpgrade;
+    }
+
+    public void setIsAutoUpgrade(Boolean isAutoUpgrade) {
+        this.isAutoUpgrade = isAutoUpgrade;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -664,7 +686,8 @@ public class CreateRestoreInstanceRequestBody {
             && Objects.equals(this.chargeInfo, that.chargeInfo) && Objects.equals(this.timeZone, that.timeZone)
             && Objects.equals(this.dsspoolId, that.dsspoolId) && Objects.equals(this.restorePoint, that.restorePoint)
             && Objects.equals(this.collation, that.collation) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.serverlessInfo, that.serverlessInfo) && Objects.equals(this.dryRun, that.dryRun);
+            && Objects.equals(this.serverlessInfo, that.serverlessInfo) && Objects.equals(this.dryRun, that.dryRun)
+            && Objects.equals(this.isAutoUpgrade, that.isAutoUpgrade);
     }
 
     @Override
@@ -693,7 +716,8 @@ public class CreateRestoreInstanceRequestBody {
             collation,
             tags,
             serverlessInfo,
-            dryRun);
+            dryRun,
+            isAutoUpgrade);
     }
 
     @Override
@@ -725,6 +749,7 @@ public class CreateRestoreInstanceRequestBody {
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    serverlessInfo: ").append(toIndentedString(serverlessInfo)).append("\n");
         sb.append("    dryRun: ").append(toIndentedString(dryRun)).append("\n");
+        sb.append("    isAutoUpgrade: ").append(toIndentedString(isAutoUpgrade)).append("\n");
         sb.append("}");
         return sb.toString();
     }

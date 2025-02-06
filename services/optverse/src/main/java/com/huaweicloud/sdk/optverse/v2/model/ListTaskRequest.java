@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.optverse.v1.model;
+package com.huaweicloud.sdk.optverse.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,16 +9,6 @@ import java.util.Objects;
  * Request Object
  */
 public class ListTaskRequest {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Apig-AppCode")
-
-    private String xApigAppCode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "service_group")
-
-    private String serviceGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "service_type")
@@ -35,49 +25,13 @@ public class ListTaskRequest {
 
     private Integer offset;
 
-    public ListTaskRequest withXApigAppCode(String xApigAppCode) {
-        this.xApigAppCode = xApigAppCode;
-        return this;
-    }
-
-    /**
-     * 用户凭证
-     * @return xApigAppCode
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Apig-AppCode")
-    public String getXApigAppCode() {
-        return xApigAppCode;
-    }
-
-    public void setXApigAppCode(String xApigAppCode) {
-        this.xApigAppCode = xApigAppCode;
-    }
-
-    public ListTaskRequest withServiceGroup(String serviceGroup) {
-        this.serviceGroup = serviceGroup;
-        return this;
-    }
-
-    /**
-     * 服务类别，针对不同服务类场景，为用户提前填充对应值，用户侧不需单独赋值；当前仅支持 二维切割 2dcut ，便于后续扩展
-     * @return serviceGroup
-     */
-    public String getServiceGroup() {
-        return serviceGroup;
-    }
-
-    public void setServiceGroup(String serviceGroup) {
-        this.serviceGroup = serviceGroup;
-    }
-
     public ListTaskRequest withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
     }
 
     /**
-     * 子服务类型，针对不同服务，为用户提前填充对应值，用户侧不需单独赋值；服装切割固定为 irregular-textile，雕刻机切割固定为 engraving-machine-cutting， 板材切割固定为 regular-plate
+     * 服务类型，针对不同服务，为用户提前填充对应值，用户侧不需单独赋值；二维切割-方形件固定为 regular-plate，二维切割-异形件固定为 irregular-textile， 数学规划求解器固定为 optverse-mpsolver
      * @return serviceType
      */
     public String getServiceType() {
@@ -135,23 +89,19 @@ public class ListTaskRequest {
             return false;
         }
         ListTaskRequest that = (ListTaskRequest) obj;
-        return Objects.equals(this.xApigAppCode, that.xApigAppCode)
-            && Objects.equals(this.serviceGroup, that.serviceGroup)
-            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.limit, that.limit)
+        return Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xApigAppCode, serviceGroup, serviceType, limit, offset);
+        return Objects.hash(serviceType, limit, offset);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListTaskRequest {\n");
-        sb.append("    xApigAppCode: ").append(toIndentedString(xApigAppCode)).append("\n");
-        sb.append("    serviceGroup: ").append(toIndentedString(serviceGroup)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

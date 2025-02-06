@@ -153,6 +153,11 @@ public class InstanceRequest {
 
     private ServerlessInfo serverlessInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_auto_upgrade")
+
+    private Boolean isAutoUpgrade;
+
     public InstanceRequest withName(String name) {
         this.name = name;
         return this;
@@ -717,6 +722,23 @@ public class InstanceRequest {
         this.serverlessInfo = serverlessInfo;
     }
 
+    public InstanceRequest withIsAutoUpgrade(Boolean isAutoUpgrade) {
+        this.isAutoUpgrade = isAutoUpgrade;
+        return this;
+    }
+
+    /**
+     * 是否开启自动小版本升级，默认为false，仅支持PostgreSQL。 - true：开启自动小版本升级。 - false：不开启自动小版本升级。
+     * @return isAutoUpgrade
+     */
+    public Boolean getIsAutoUpgrade() {
+        return isAutoUpgrade;
+    }
+
+    public void setIsAutoUpgrade(Boolean isAutoUpgrade) {
+        this.isAutoUpgrade = isAutoUpgrade;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -741,7 +763,8 @@ public class InstanceRequest {
             && Objects.equals(this.restorePoint, that.restorePoint) && Objects.equals(this.collation, that.collation)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.unchangeableParam, that.unchangeableParam)
             && Objects.equals(this.dryRun, that.dryRun) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.serverlessInfo, that.serverlessInfo);
+            && Objects.equals(this.serverlessInfo, that.serverlessInfo)
+            && Objects.equals(this.isAutoUpgrade, that.isAutoUpgrade);
     }
 
     @Override
@@ -773,7 +796,8 @@ public class InstanceRequest {
             unchangeableParam,
             dryRun,
             count,
-            serverlessInfo);
+            serverlessInfo,
+            isAutoUpgrade);
     }
 
     @Override
@@ -808,6 +832,7 @@ public class InstanceRequest {
         sb.append("    dryRun: ").append(toIndentedString(dryRun)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    serverlessInfo: ").append(toIndentedString(serverlessInfo)).append("\n");
+        sb.append("    isAutoUpgrade: ").append(toIndentedString(isAutoUpgrade)).append("\n");
         sb.append("}");
         return sb.toString();
     }

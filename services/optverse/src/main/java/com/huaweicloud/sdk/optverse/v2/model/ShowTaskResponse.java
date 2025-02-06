@@ -1,9 +1,10 @@
-package com.huaweicloud.sdk.optverse.v1.model;
+package com.huaweicloud.sdk.optverse.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -12,14 +13,19 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * 任务列表项视图
+ * Response Object
  */
-public class TaskListItemVo {
+public class ShowTaskResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "id")
+    @JsonProperty(value = "task_id")
 
-    private String id;
+    private String taskId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "input_json")
+
+    private Object inputJson;
 
     /**
      * 状态
@@ -32,22 +38,52 @@ public class TaskListItemVo {
         public static final StatusEnum RUNNING = new StatusEnum("Running");
 
         /**
+         * Enum PENDING for value: "Pending"
+         */
+        public static final StatusEnum PENDING = new StatusEnum("Pending");
+
+        /**
+         * Enum EXPIRED for value: "Expired"
+         */
+        public static final StatusEnum EXPIRED = new StatusEnum("Expired");
+
+        /**
+         * Enum UNKNOWN for value: "Unknown"
+         */
+        public static final StatusEnum UNKNOWN = new StatusEnum("Unknown");
+
+        /**
          * Enum FAILED for value: "Failed"
          */
         public static final StatusEnum FAILED = new StatusEnum("Failed");
 
         /**
-         * Enum SUCCESSED for value: "Successed"
+         * Enum SUCCEEDED for value: "Succeeded"
          */
-        public static final StatusEnum SUCCESSED = new StatusEnum("Successed");
+        public static final StatusEnum SUCCEEDED = new StatusEnum("Succeeded");
+
+        /**
+         * Enum STOPPED for value: "Stopped"
+         */
+        public static final StatusEnum STOPPED = new StatusEnum("Stopped");
+
+        /**
+         * Enum DELETED for value: "Deleted"
+         */
+        public static final StatusEnum DELETED = new StatusEnum("Deleted");
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
             Map<String, StatusEnum> map = new HashMap<>();
             map.put("Running", RUNNING);
+            map.put("Pending", PENDING);
+            map.put("Expired", EXPIRED);
+            map.put("Unknown", UNKNOWN);
             map.put("Failed", FAILED);
-            map.put("Successed", SUCCESSED);
+            map.put("Succeeded", SUCCEEDED);
+            map.put("Stopped", STOPPED);
+            map.put("Deleted", DELETED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -103,6 +139,16 @@ public class TaskListItemVo {
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "progress")
+
+    private Object progress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "output_json")
+
+    private Object outputJson;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "start_time")
 
     private OffsetDateTime startTime;
@@ -117,24 +163,41 @@ public class TaskListItemVo {
 
     private OffsetDateTime createTime;
 
-    public TaskListItemVo withId(String id) {
-        this.id = id;
+    public ShowTaskResponse withTaskId(String taskId) {
+        this.taskId = taskId;
         return this;
     }
 
     /**
-     * 任务编号
-     * @return id
+     * 任务ID
+     * @return taskId
      */
-    public String getId() {
-        return id;
+    public String getTaskId() {
+        return taskId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
     }
 
-    public TaskListItemVo withStatus(StatusEnum status) {
+    public ShowTaskResponse withInputJson(Object inputJson) {
+        this.inputJson = inputJson;
+        return this;
+    }
+
+    /**
+     * 用户输入
+     * @return inputJson
+     */
+    public Object getInputJson() {
+        return inputJson;
+    }
+
+    public void setInputJson(Object inputJson) {
+        this.inputJson = inputJson;
+    }
+
+    public ShowTaskResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
@@ -151,13 +214,47 @@ public class TaskListItemVo {
         this.status = status;
     }
 
-    public TaskListItemVo withStartTime(OffsetDateTime startTime) {
+    public ShowTaskResponse withProgress(Object progress) {
+        this.progress = progress;
+        return this;
+    }
+
+    /**
+     * 任务进度
+     * @return progress
+     */
+    public Object getProgress() {
+        return progress;
+    }
+
+    public void setProgress(Object progress) {
+        this.progress = progress;
+    }
+
+    public ShowTaskResponse withOutputJson(Object outputJson) {
+        this.outputJson = outputJson;
+        return this;
+    }
+
+    /**
+     * 输出
+     * @return outputJson
+     */
+    public Object getOutputJson() {
+        return outputJson;
+    }
+
+    public void setOutputJson(Object outputJson) {
+        this.outputJson = outputJson;
+    }
+
+    public ShowTaskResponse withStartTime(OffsetDateTime startTime) {
         this.startTime = startTime;
         return this;
     }
 
     /**
-     * 开始时间（UTC）
+     * 开始时间
      * @return startTime
      */
     public OffsetDateTime getStartTime() {
@@ -168,13 +265,13 @@ public class TaskListItemVo {
         this.startTime = startTime;
     }
 
-    public TaskListItemVo withEndTime(OffsetDateTime endTime) {
+    public ShowTaskResponse withEndTime(OffsetDateTime endTime) {
         this.endTime = endTime;
         return this;
     }
 
     /**
-     * 结束时间（UTC）
+     * 结束时间
      * @return endTime
      */
     public OffsetDateTime getEndTime() {
@@ -185,13 +282,13 @@ public class TaskListItemVo {
         this.endTime = endTime;
     }
 
-    public TaskListItemVo withCreateTime(OffsetDateTime createTime) {
+    public ShowTaskResponse withCreateTime(OffsetDateTime createTime) {
         this.createTime = createTime;
         return this;
     }
 
     /**
-     * 创建时间（UTC）
+     * 创建时间
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -210,23 +307,27 @@ public class TaskListItemVo {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskListItemVo that = (TaskListItemVo) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
-            && Objects.equals(this.createTime, that.createTime);
+        ShowTaskResponse that = (ShowTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.inputJson, that.inputJson)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.outputJson, that.outputJson) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, status, startTime, endTime, createTime);
+        return Objects.hash(taskId, inputJson, status, progress, outputJson, startTime, endTime, createTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class TaskListItemVo {\n");
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("class ShowTaskResponse {\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
+        sb.append("    inputJson: ").append(toIndentedString(inputJson)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    progress: ").append(toIndentedString(progress)).append("\n");
+        sb.append("    outputJson: ").append(toIndentedString(outputJson)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");

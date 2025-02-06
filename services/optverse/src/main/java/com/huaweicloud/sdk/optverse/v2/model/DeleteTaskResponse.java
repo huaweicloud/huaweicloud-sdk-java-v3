@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.optverse.v1.model;
+package com.huaweicloud.sdk.optverse.v2.model;
 
 import com.huaweicloud.sdk.core.SdkResponse;
 

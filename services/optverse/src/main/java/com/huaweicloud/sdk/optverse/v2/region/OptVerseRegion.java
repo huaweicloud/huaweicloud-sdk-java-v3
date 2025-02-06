@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.optverse.v1.region;
+package com.huaweicloud.sdk.optverse.v2.region;
 
 import com.huaweicloud.sdk.core.region.IRegionProvider;
 import com.huaweicloud.sdk.core.region.Region;

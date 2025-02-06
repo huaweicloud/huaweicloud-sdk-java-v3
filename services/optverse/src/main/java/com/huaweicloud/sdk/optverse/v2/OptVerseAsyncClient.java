@@ -1,16 +1,16 @@
-package com.huaweicloud.sdk.optverse.v1;
+package com.huaweicloud.sdk.optverse.v2;
 
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
-import com.huaweicloud.sdk.optverse.v1.model.CreateTaskRequest;
-import com.huaweicloud.sdk.optverse.v1.model.CreateTaskResponse;
-import com.huaweicloud.sdk.optverse.v1.model.DeleteTaskRequest;
-import com.huaweicloud.sdk.optverse.v1.model.DeleteTaskResponse;
-import com.huaweicloud.sdk.optverse.v1.model.ListTaskRequest;
-import com.huaweicloud.sdk.optverse.v1.model.ListTaskResponse;
-import com.huaweicloud.sdk.optverse.v1.model.ShowTaskRequest;
-import com.huaweicloud.sdk.optverse.v1.model.ShowTaskResponse;
+import com.huaweicloud.sdk.optverse.v2.model.CreateTaskRequest;
+import com.huaweicloud.sdk.optverse.v2.model.CreateTaskResponse;
+import com.huaweicloud.sdk.optverse.v2.model.DeleteTaskRequest;
+import com.huaweicloud.sdk.optverse.v2.model.DeleteTaskResponse;
+import com.huaweicloud.sdk.optverse.v2.model.ListTaskRequest;
+import com.huaweicloud.sdk.optverse.v2.model.ListTaskResponse;
+import com.huaweicloud.sdk.optverse.v2.model.ShowTaskRequest;
+import com.huaweicloud.sdk.optverse.v2.model.ShowTaskResponse;
 
 import java.util.concurrent.CompletableFuture;
 

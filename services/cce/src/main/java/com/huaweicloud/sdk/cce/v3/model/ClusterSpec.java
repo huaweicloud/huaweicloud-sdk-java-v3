@@ -354,6 +354,11 @@ public class ClusterSpec {
     private List<PackageConfiguration> configurationsOverride = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "clusterOps")
+
+    private ClusterOps clusterOps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "encryptionConfig")
 
     private EncryptionConfig encryptionConfig;
@@ -901,6 +906,32 @@ public class ClusterSpec {
         this.configurationsOverride = configurationsOverride;
     }
 
+    public ClusterSpec withClusterOps(ClusterOps clusterOps) {
+        this.clusterOps = clusterOps;
+        return this;
+    }
+
+    public ClusterSpec withClusterOps(Consumer<ClusterOps> clusterOpsSetter) {
+        if (this.clusterOps == null) {
+            this.clusterOps = new ClusterOps();
+            clusterOpsSetter.accept(this.clusterOps);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get clusterOps
+     * @return clusterOps
+     */
+    public ClusterOps getClusterOps() {
+        return clusterOps;
+    }
+
+    public void setClusterOps(ClusterOps clusterOps) {
+        this.clusterOps = clusterOps;
+    }
+
     public ClusterSpec withEncryptionConfig(EncryptionConfig encryptionConfig) {
         this.encryptionConfig = encryptionConfig;
         return this;
@@ -955,6 +986,7 @@ public class ClusterSpec {
             && Objects.equals(this.enableDistMgt, that.enableDistMgt)
             && Objects.equals(this.deletionProtection, that.deletionProtection)
             && Objects.equals(this.configurationsOverride, that.configurationsOverride)
+            && Objects.equals(this.clusterOps, that.clusterOps)
             && Objects.equals(this.encryptionConfig, that.encryptionConfig);
     }
 
@@ -985,6 +1017,7 @@ public class ClusterSpec {
             enableDistMgt,
             deletionProtection,
             configurationsOverride,
+            clusterOps,
             encryptionConfig);
     }
 
@@ -1019,6 +1052,7 @@ public class ClusterSpec {
         sb.append("    enableDistMgt: ").append(toIndentedString(enableDistMgt)).append("\n");
         sb.append("    deletionProtection: ").append(toIndentedString(deletionProtection)).append("\n");
         sb.append("    configurationsOverride: ").append(toIndentedString(configurationsOverride)).append("\n");
+        sb.append("    clusterOps: ").append(toIndentedString(clusterOps)).append("\n");
         sb.append("    encryptionConfig: ").append(toIndentedString(encryptionConfig)).append("\n");
         sb.append("}");
         return sb.toString();
