@@ -555,11 +555,6 @@ public class SmnMeta {
                 DeleteNotifyPolicyRequest::setNotifyPolicyId));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteNotifyPolicyResponse::getBody, DeleteNotifyPolicyResponse::setBody));
 
         return builder.build();
     }
@@ -1273,11 +1268,6 @@ public class SmnMeta {
             f -> f.withMarshaller(UpdateNotifyPolicyRequest::getBody, UpdateNotifyPolicyRequest::setBody));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateNotifyPolicyResponse::getBody, UpdateNotifyPolicyResponse::setBody));
 
         return builder.build();
     }

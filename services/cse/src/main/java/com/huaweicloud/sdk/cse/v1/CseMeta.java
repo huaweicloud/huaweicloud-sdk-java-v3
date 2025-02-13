@@ -1264,19 +1264,19 @@ public class CseMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("custom_namespace_id",
+        builder.<String>withRequestField("customNamespaceId",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateNacosNamespacesRequest::getCustomNamespaceId,
                 CreateNacosNamespacesRequest::setCustomNamespaceId));
-        builder.<String>withRequestField("namespace_name",
+        builder.<String>withRequestField("namespaceName",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateNacosNamespacesRequest::getNamespaceName,
                 CreateNacosNamespacesRequest::setNamespaceName));
-        builder.<String>withRequestField("namespace_desc",
+        builder.<String>withRequestField("namespaceDesc",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
@@ -1296,6 +1296,11 @@ public class CseMeta {
                 CreateNacosNamespacesRequest::setXEnterpriseProjectID));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateNacosNamespacesResponse::getBody, CreateNacosNamespacesResponse::setBody));
 
         return builder.build();
     }
@@ -1312,7 +1317,7 @@ public class CseMeta {
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("namespace_id",
+        builder.<String>withRequestField("namespaceId",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
@@ -1332,6 +1337,11 @@ public class CseMeta {
                 DeleteNacosNamespacesRequest::setXEnterpriseProjectID));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteNacosNamespacesResponse::getBody, DeleteNacosNamespacesResponse::setBody));
 
         return builder.build();
     }
@@ -1371,6 +1381,11 @@ public class CseMeta {
                 ListNacosNamespacesRequest::setXEnterpriseProjectID));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListNacosNamespacesResponse::getBody, ListNacosNamespacesResponse::setBody));
 
         return builder.build();
     }
@@ -1393,13 +1408,13 @@ public class CseMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateNacosNamespacesRequest::getNamespace,
                 UpdateNacosNamespacesRequest::setNamespace));
-        builder.<String>withRequestField("namespace_show_name",
+        builder.<String>withRequestField("namespaceShowName",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateNacosNamespacesRequest::getNamespaceShowName,
                 UpdateNacosNamespacesRequest::setNamespaceShowName));
-        builder.<String>withRequestField("namespace_desc",
+        builder.<String>withRequestField("namespaceDesc",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
@@ -1419,6 +1434,11 @@ public class CseMeta {
                 UpdateNacosNamespacesRequest::setXEnterpriseProjectID));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateNacosNamespacesResponse::getBody, UpdateNacosNamespacesResponse::setBody));
 
         return builder.build();
     }

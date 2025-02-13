@@ -59,7 +59,7 @@ public class DashPackageItem {
     private PackageRequestArgs requestArgs;
 
     /**
-     * 广告标识。  DASH取值：\"xml+bin\"。 
+     * 广告标识。DASH取值：\"xml+bin\"
      */
     public static final class AdMarkerEnum {
 
@@ -132,6 +132,21 @@ public class DashPackageItem {
     @JsonProperty(value = "ad_marker")
 
     private AdMarkerEnum adMarker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "suggested_presentation_delay")
+
+    private Integer suggestedPresentationDelay;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "minimum_update_period")
+
+    private Integer minimumUpdatePeriod;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_buffer_time")
+
+    private Integer minBufferTime;
 
     public DashPackageItem withUrl(String url) {
         this.url = url;
@@ -313,7 +328,7 @@ public class DashPackageItem {
     }
 
     /**
-     * 广告标识。  DASH取值：\"xml+bin\"。 
+     * 广告标识。DASH取值：\"xml+bin\"
      * @return adMarker
      */
     public AdMarkerEnum getAdMarker() {
@@ -322,6 +337,63 @@ public class DashPackageItem {
 
     public void setAdMarker(AdMarkerEnum adMarker) {
         this.adMarker = adMarker;
+    }
+
+    public DashPackageItem withSuggestedPresentationDelay(Integer suggestedPresentationDelay) {
+        this.suggestedPresentationDelay = suggestedPresentationDelay;
+        return this;
+    }
+
+    /**
+     * 建议播放延迟。单位：秒。取值范围：[1 - 120]
+     * minimum: 1
+     * maximum: 120
+     * @return suggestedPresentationDelay
+     */
+    public Integer getSuggestedPresentationDelay() {
+        return suggestedPresentationDelay;
+    }
+
+    public void setSuggestedPresentationDelay(Integer suggestedPresentationDelay) {
+        this.suggestedPresentationDelay = suggestedPresentationDelay;
+    }
+
+    public DashPackageItem withMinimumUpdatePeriod(Integer minimumUpdatePeriod) {
+        this.minimumUpdatePeriod = minimumUpdatePeriod;
+        return this;
+    }
+
+    /**
+     * 索引最短更新周期。单位：秒。取值范围：[1 - 120]
+     * minimum: 1
+     * maximum: 120
+     * @return minimumUpdatePeriod
+     */
+    public Integer getMinimumUpdatePeriod() {
+        return minimumUpdatePeriod;
+    }
+
+    public void setMinimumUpdatePeriod(Integer minimumUpdatePeriod) {
+        this.minimumUpdatePeriod = minimumUpdatePeriod;
+    }
+
+    public DashPackageItem withMinBufferTime(Integer minBufferTime) {
+        this.minBufferTime = minBufferTime;
+        return this;
+    }
+
+    /**
+     * 最小缓冲时间。单位：秒。取值范围：[1 - 120]
+     * minimum: 1
+     * maximum: 120
+     * @return minBufferTime
+     */
+    public Integer getMinBufferTime() {
+        return minBufferTime;
+    }
+
+    public void setMinBufferTime(Integer minBufferTime) {
+        this.minBufferTime = minBufferTime;
     }
 
     @Override
@@ -338,7 +410,10 @@ public class DashPackageItem {
             && Objects.equals(this.playlistWindowSeconds, that.playlistWindowSeconds)
             && Objects.equals(this.encryption, that.encryption) && Objects.equals(this.ads, that.ads)
             && Objects.equals(this.extArgs, that.extArgs) && Objects.equals(this.requestArgs, that.requestArgs)
-            && Objects.equals(this.adMarker, that.adMarker);
+            && Objects.equals(this.adMarker, that.adMarker)
+            && Objects.equals(this.suggestedPresentationDelay, that.suggestedPresentationDelay)
+            && Objects.equals(this.minimumUpdatePeriod, that.minimumUpdatePeriod)
+            && Objects.equals(this.minBufferTime, that.minBufferTime);
     }
 
     @Override
@@ -351,7 +426,10 @@ public class DashPackageItem {
             ads,
             extArgs,
             requestArgs,
-            adMarker);
+            adMarker,
+            suggestedPresentationDelay,
+            minimumUpdatePeriod,
+            minBufferTime);
     }
 
     @Override
@@ -367,6 +445,9 @@ public class DashPackageItem {
         sb.append("    extArgs: ").append(toIndentedString(extArgs)).append("\n");
         sb.append("    requestArgs: ").append(toIndentedString(requestArgs)).append("\n");
         sb.append("    adMarker: ").append(toIndentedString(adMarker)).append("\n");
+        sb.append("    suggestedPresentationDelay: ").append(toIndentedString(suggestedPresentationDelay)).append("\n");
+        sb.append("    minimumUpdatePeriod: ").append(toIndentedString(minimumUpdatePeriod)).append("\n");
+        sb.append("    minBufferTime: ").append(toIndentedString(minBufferTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

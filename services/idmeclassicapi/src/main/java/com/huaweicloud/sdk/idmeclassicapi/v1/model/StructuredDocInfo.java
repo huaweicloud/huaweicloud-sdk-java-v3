@@ -127,7 +127,7 @@ public class StructuredDocInfo {
     }
 
     /**
-     * **参数解释**：  文档类型。  **约束限制**：  不涉及。  **取值范围**：  - directory: 目录 - pageDocument: Page文档 - boardDocument: Board文档 - mindDocument: Mind文档 - drawDocument: Draw文档  **默认取值**：  不涉及。
+     * **参数解释**：  文档类型。  **约束限制**：  不涉及。  **取值范围**：  - directory：目录。 - pageDocument：Page文档。 - boardDocument：Board文档。 - mindDocument：Mind文档。 - drawDocument：Draw文档。  **默认取值**：  不涉及。
      * @return type
      */
     public String getType() {
@@ -246,7 +246,7 @@ public class StructuredDocInfo {
     }
 
     /**
-     * **参数解释**：  创建者id。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * **参数解释**：  创建者ID。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
      * @return createUserId
      */
     public String getCreateUserId() {

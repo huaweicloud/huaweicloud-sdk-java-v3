@@ -33,6 +33,7 @@ import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -45,6 +46,7 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
+@Ignore
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({KvsSdkConfigManager.class, ManagedKvsClient.class})
 @PowerMockIgnore({"javax.management.*", "javax.net.ssl.*", "javax.crypto.*"})

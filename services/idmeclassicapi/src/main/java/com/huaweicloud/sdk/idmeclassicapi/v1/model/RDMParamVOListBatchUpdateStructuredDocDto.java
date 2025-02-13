@@ -63,7 +63,7 @@ public class RDMParamVOListBatchUpdateStructuredDocDto {
     }
 
     /**
-     * Get params
+     * **参数解释：**  请求参数对象。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return params
      */
     public List<BatchUpdateStructuredDocDto> getParams() {

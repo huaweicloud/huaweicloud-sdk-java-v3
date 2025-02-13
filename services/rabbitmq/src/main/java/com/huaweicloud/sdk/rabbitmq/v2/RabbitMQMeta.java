@@ -48,6 +48,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteQueueInfoRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteQueueInfoResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteUserResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.EnableDnsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBackgroundTasksRequest;
@@ -93,6 +95,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQueueDetailsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQueueDetailsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsRequest;
@@ -325,6 +329,28 @@ public class RabbitMQMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteUserRequest::getUserName, DeleteUserRequest::setUserName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableDnsRequest, EnableDnsResponse> enableDns = genForEnableDns();
+
+    private static HttpRequestDef<EnableDnsRequest, EnableDnsResponse> genForEnableDns() {
+        // basic
+        HttpRequestDef.Builder<EnableDnsRequest, EnableDnsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableDnsRequest.class, EnableDnsResponse.class)
+                .withName("EnableDns")
+                .withUri("/v2/{project_id}/rabbitmq/instances/{instance_id}/dns")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableDnsRequest::getInstanceId, EnableDnsRequest::setInstanceId));
 
         // response
 
@@ -814,6 +840,23 @@ public class RabbitMQMeta {
             HttpRequestDef.builder(HttpMethod.GET, ShowMaintainWindowsRequest.class, ShowMaintainWindowsResponse.class)
                 .withName("ShowMaintainWindows")
                 .withUri("/v2/instances/maintain-windows")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> showQuotas = genForShowQuotas();
+
+    private static HttpRequestDef<ShowQuotasRequest, ShowQuotasResponse> genForShowQuotas() {
+        // basic
+        HttpRequestDef.Builder<ShowQuotasRequest, ShowQuotasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowQuotasRequest.class, ShowQuotasResponse.class)
+                .withName("ShowQuotas")
+                .withUri("/v2/{project_id}/quotas")
                 .withContentType("application/json");
 
         // requests

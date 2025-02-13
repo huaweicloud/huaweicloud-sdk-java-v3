@@ -103,6 +103,11 @@ public class CreateInstanceReq {
     private String engineVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_acl")
+
+    private Boolean enableAcl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_space")
 
     private Integer storageSpace;
@@ -428,13 +433,30 @@ public class CreateInstanceReq {
         this.engineVersion = engineVersion;
     }
 
+    public CreateInstanceReq withEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
+        return this;
+    }
+
+    /**
+     * ACL访问控制（仅AMQP版本支持此参数）
+     * @return enableAcl
+     */
+    public Boolean getEnableAcl() {
+        return enableAcl;
+    }
+
+    public void setEnableAcl(Boolean enableAcl) {
+        this.enableAcl = enableAcl;
+    }
+
     public CreateInstanceReq withStorageSpace(Integer storageSpace) {
         this.storageSpace = storageSpace;
         return this;
     }
 
     /**
-     * 消息存储空间，单位GB。   [- 单机RabbitMQ实例的存储空间的取值范围100GB~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)    [- 单机RabbitMQ实例的存储空间的取值范围100GB~30000GB。](tag:hcs)    [- 集群RabbitMQ实例的存储空间的取值范围为100GB*节点数~90000GB、200GB*节点数~90000GB、300GB*节点数~90000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)    [- 集群RabbitMQ实例的存储空间的取值范围为100GB乘以代理数~30000GB乘以代理数。](tag:hcs) 
+     * 消息存储空间，单位GB。   [- 单机RabbitMQ实例的存储空间的取值范围100GB~90000GB。](tag:hws,hws_eu,hws_hk,ctc,g42,hk_g42,tm,hk_tm,sbc)    [- 单机RabbitMQ实例的存储空间的取值范围100GB~30000GB。](tag:hcs)    [- 集群RabbitMQ实例的存储空间的取值范围为100GB*节点数~90000GB、200GB*节点数~90000GB、300GB*节点数~90000GB。](tag:hws,hws_eu,hws_hk,ctc,g42,hk_g42,tm,hk_tm,sbc)    [- 集群RabbitMQ实例的存储空间的取值范围为100GB乘以代理数~30000GB乘以代理数。](tag:hcs) 
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -569,7 +591,7 @@ public class CreateInstanceReq {
     }
 
     /**
-     * 产品标识。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,cmcc,hws_eu,g42,hk_g42,tm,hk_tm,ocb,hws_ocb) [产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:hk_sbc,sbc) [产品ID可以从“其他接口 > 查询产品规格列表”获取。](tag:hcs)  如果产品ID为集群类型（即对应的type为cluster），broker_num字段为必选。
+     * 产品标识。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,hws_eu,g42,hk_g42,tm,hk_tm,sbc,hcs) [产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:cmcc)  如果产品ID为集群类型（即对应的type为cluster），broker_num字段为必选。
      * @return productId
      */
     public String getProductId() {
@@ -786,9 +808,9 @@ public class CreateInstanceReq {
         CreateInstanceReq that = (CreateInstanceReq) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.engine, that.engine) && Objects.equals(this.engineVersion, that.engineVersion)
-            && Objects.equals(this.storageSpace, that.storageSpace) && Objects.equals(this.accessUser, that.accessUser)
-            && Objects.equals(this.password, that.password) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.enableAcl, that.enableAcl) && Objects.equals(this.storageSpace, that.storageSpace)
+            && Objects.equals(this.accessUser, that.accessUser) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.availableZones, that.availableZones)
             && Objects.equals(this.productId, that.productId) && Objects.equals(this.brokerNum, that.brokerNum)
             && Objects.equals(this.maintainBegin, that.maintainBegin)
@@ -806,6 +828,7 @@ public class CreateInstanceReq {
             description,
             engine,
             engineVersion,
+            enableAcl,
             storageSpace,
             accessUser,
             password,
@@ -834,6 +857,7 @@ public class CreateInstanceReq {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
+        sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("    storageSpace: ").append(toIndentedString(storageSpace)).append("\n");
         sb.append("    accessUser: ").append(toIndentedString(accessUser)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");

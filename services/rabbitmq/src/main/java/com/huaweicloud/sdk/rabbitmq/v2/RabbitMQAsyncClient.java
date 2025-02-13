@@ -37,6 +37,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteQueueInfoRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteQueueInfoResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteUserRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.DeleteUserResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.EnableDnsRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ListBackgroundTasksRequest;
@@ -79,6 +81,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowMaintainWindowsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQueueDetailsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQueueDetailsResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsRequest;
@@ -202,7 +206,7 @@ public class RabbitMQAsyncClient {
     /**
      * 创建实例
      *
-     * 创建实例[，该接口支持创建按需[和包周期](tag:hws,hws_eu,hws_hk,ctc,cmcc)计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,cmcc)。
+     * 创建实例[，该接口支持创建按需[和包周期](tag:hws,hws_eu,hws_hk,ctc,cmcc)计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,cmcc,sbc)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -217,7 +221,7 @@ public class RabbitMQAsyncClient {
     /**
      * 创建实例
      *
-     * 创建实例[，该接口支持创建按需[和包周期](tag:hws,hws_eu,hws_hk,ctc,cmcc)计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,cmcc)。
+     * 创建实例[，该接口支持创建按需[和包周期](tag:hws,hws_eu,hws_hk,ctc,cmcc)计费方式的实例](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,cmcc,sbc)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -342,6 +346,34 @@ public class RabbitMQAsyncClient {
      */
     public AsyncInvoker<DeleteUserRequest, DeleteUserResponse> deleteUserAsyncInvoker(DeleteUserRequest request) {
         return new AsyncInvoker<>(request, RabbitMQMeta.deleteUser, hcClient);
+    }
+
+    /**
+     * 开启RabbitMQ实例域名访问能力
+     *
+     * 开启RabbitMQ实例域名访问功能后，客户端可以通过域名连接RabbitMQ实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDnsRequest 请求对象
+     * @return CompletableFuture<EnableDnsResponse>
+     */
+    public CompletableFuture<EnableDnsResponse> enableDnsAsync(EnableDnsRequest request) {
+        return hcClient.asyncInvokeHttp(request, RabbitMQMeta.enableDns);
+    }
+
+    /**
+     * 开启RabbitMQ实例域名访问能力
+     *
+     * 开启RabbitMQ实例域名访问功能后，客户端可以通过域名连接RabbitMQ实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDnsRequest 请求对象
+     * @return AsyncInvoker<EnableDnsRequest, EnableDnsResponse>
+     */
+    public AsyncInvoker<EnableDnsRequest, EnableDnsResponse> enableDnsAsyncInvoker(EnableDnsRequest request) {
+        return new AsyncInvoker<>(request, RabbitMQMeta.enableDns, hcClient);
     }
 
     /**
@@ -820,6 +852,34 @@ public class RabbitMQAsyncClient {
     public AsyncInvoker<ShowMaintainWindowsRequest, ShowMaintainWindowsResponse> showMaintainWindowsAsyncInvoker(
         ShowMaintainWindowsRequest request) {
         return new AsyncInvoker<>(request, RabbitMQMeta.showMaintainWindows, hcClient);
+    }
+
+    /**
+     * 查看租户配额
+     *
+     * 查询租户最大可以创建的实例个数和已创建的实例个数，以及每个实例最大可以创建标签的个数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowQuotasRequest 请求对象
+     * @return CompletableFuture<ShowQuotasResponse>
+     */
+    public CompletableFuture<ShowQuotasResponse> showQuotasAsync(ShowQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, RabbitMQMeta.showQuotas);
+    }
+
+    /**
+     * 查看租户配额
+     *
+     * 查询租户最大可以创建的实例个数和已创建的实例个数，以及每个实例最大可以创建标签的个数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowQuotasRequest 请求对象
+     * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
+     */
+    public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
+        return new AsyncInvoker<>(request, RabbitMQMeta.showQuotas, hcClient);
     }
 
     /**

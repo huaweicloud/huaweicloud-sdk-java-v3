@@ -12,25 +12,25 @@ import java.util.Objects;
 public class UpdateNotifyPolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "body")
+    @JsonProperty(value = "request_id")
 
-    private String body;
+    private String requestId;
 
-    public UpdateNotifyPolicyResponse withBody(String body) {
-        this.body = body;
+    public UpdateNotifyPolicyResponse withRequestId(String requestId) {
+        this.requestId = requestId;
         return this;
     }
 
     /**
-     * Get body
-     * @return body
+     * 请求的唯一标识ID
+     * @return requestId
      */
-    public String getBody() {
-        return body;
+    public String getRequestId() {
+        return requestId;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
     @Override
@@ -42,19 +42,19 @@ public class UpdateNotifyPolicyResponse extends SdkResponse {
             return false;
         }
         UpdateNotifyPolicyResponse that = (UpdateNotifyPolicyResponse) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.requestId, that.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(requestId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateNotifyPolicyResponse {\n");
-        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

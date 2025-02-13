@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * TopicAttribute
@@ -14,36 +13,27 @@ public class TopicAttribute {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "access_policy")
 
-    private AccessPolicy accessPolicy;
+    private String accessPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "introduction")
 
     private String introduction;
 
-    public TopicAttribute withAccessPolicy(AccessPolicy accessPolicy) {
+    public TopicAttribute withAccessPolicy(String accessPolicy) {
         this.accessPolicy = accessPolicy;
         return this;
     }
 
-    public TopicAttribute withAccessPolicy(Consumer<AccessPolicy> accessPolicySetter) {
-        if (this.accessPolicy == null) {
-            this.accessPolicy = new AccessPolicy();
-            accessPolicySetter.accept(this.accessPolicy);
-        }
-
-        return this;
-    }
-
     /**
-     * Get accessPolicy
+     * topic的访问策略
      * @return accessPolicy
      */
-    public AccessPolicy getAccessPolicy() {
+    public String getAccessPolicy() {
         return accessPolicy;
     }
 
-    public void setAccessPolicy(AccessPolicy accessPolicy) {
+    public void setAccessPolicy(String accessPolicy) {
         this.accessPolicy = accessPolicy;
     }
 

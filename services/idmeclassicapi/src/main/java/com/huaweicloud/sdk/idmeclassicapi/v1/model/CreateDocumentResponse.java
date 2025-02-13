@@ -68,7 +68,7 @@ public class CreateDocumentResponse extends SdkResponse {
     }
 
     /**
-     * Get data
+     * **参数解释：**  请求数据。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return data
      */
     public List<StructuredDocView> getData() {

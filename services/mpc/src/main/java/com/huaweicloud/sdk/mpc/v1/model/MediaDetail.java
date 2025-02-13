@@ -29,6 +29,11 @@ public class MediaDetail {
     private List<OutputVideoPara> outputVideoParas = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "replace_sub_index")
+
+    private List<String> replaceSubIndex = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_thumbnail_para")
 
     private OutputThumbnailPara outputThumbnailPara;
@@ -130,6 +135,39 @@ public class MediaDetail {
         this.outputVideoParas = outputVideoParas;
     }
 
+    public MediaDetail withReplaceSubIndex(List<String> replaceSubIndex) {
+        this.replaceSubIndex = replaceSubIndex;
+        return this;
+    }
+
+    public MediaDetail addReplaceSubIndexItem(String replaceSubIndexItem) {
+        if (this.replaceSubIndex == null) {
+            this.replaceSubIndex = new ArrayList<>();
+        }
+        this.replaceSubIndex.add(replaceSubIndexItem);
+        return this;
+    }
+
+    public MediaDetail withReplaceSubIndex(Consumer<List<String>> replaceSubIndexSetter) {
+        if (this.replaceSubIndex == null) {
+            this.replaceSubIndex = new ArrayList<>();
+        }
+        replaceSubIndexSetter.accept(this.replaceSubIndex);
+        return this;
+    }
+
+    /**
+     * 被替换的子索引文件 
+     * @return replaceSubIndex
+     */
+    public List<String> getReplaceSubIndex() {
+        return replaceSubIndex;
+    }
+
+    public void setReplaceSubIndex(List<String> replaceSubIndex) {
+        this.replaceSubIndex = replaceSubIndex;
+    }
+
     public MediaDetail withOutputThumbnailPara(OutputThumbnailPara outputThumbnailPara) {
         this.outputThumbnailPara = outputThumbnailPara;
         return this;
@@ -193,13 +231,15 @@ public class MediaDetail {
         MediaDetail that = (MediaDetail) obj;
         return Objects.equals(this.features, that.features) && Objects.equals(this.originPara, that.originPara)
             && Objects.equals(this.outputVideoParas, that.outputVideoParas)
+            && Objects.equals(this.replaceSubIndex, that.replaceSubIndex)
             && Objects.equals(this.outputThumbnailPara, that.outputThumbnailPara)
             && Objects.equals(this.outputWatermarkParas, that.outputWatermarkParas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(features, originPara, outputVideoParas, outputThumbnailPara, outputWatermarkParas);
+        return Objects
+            .hash(features, originPara, outputVideoParas, replaceSubIndex, outputThumbnailPara, outputWatermarkParas);
     }
 
     @Override
@@ -209,6 +249,7 @@ public class MediaDetail {
         sb.append("    features: ").append(toIndentedString(features)).append("\n");
         sb.append("    originPara: ").append(toIndentedString(originPara)).append("\n");
         sb.append("    outputVideoParas: ").append(toIndentedString(outputVideoParas)).append("\n");
+        sb.append("    replaceSubIndex: ").append(toIndentedString(replaceSubIndex)).append("\n");
         sb.append("    outputThumbnailPara: ").append(toIndentedString(outputThumbnailPara)).append("\n");
         sb.append("    outputWatermarkParas: ").append(toIndentedString(outputWatermarkParas)).append("\n");
         sb.append("}");

@@ -18,10 +18,80 @@ import java.util.function.Consumer;
  */
 public class VolumeSpec {
 
+    /**
+     * 资源类型，当前只支持“obs”和“sfs”。
+     */
+    public static final class ResourceTypeEnum {
+
+        /**
+         * Enum SFS for value: "sfs"
+         */
+        public static final ResourceTypeEnum SFS = new ResourceTypeEnum("sfs");
+
+        /**
+         * Enum OBS for value: "obs"
+         */
+        public static final ResourceTypeEnum OBS = new ResourceTypeEnum("obs");
+
+        private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ResourceTypeEnum> createStaticFields() {
+            Map<String, ResourceTypeEnum> map = new HashMap<>();
+            map.put("sfs", SFS);
+            map.put("obs", OBS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ResourceTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ResourceTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
+        }
+
+        public static ResourceTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ResourceTypeEnum) {
+                return this.value.equals(((ResourceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_type")
 
-    private String resourceType;
+    private ResourceTypeEnum resourceType;
 
     /**
      * 对象存储类型。
@@ -114,7 +184,7 @@ public class VolumeSpec {
 
     private List<ResourcesCredential> resourcesCredentials = null;
 
-    public VolumeSpec withResourceType(String resourceType) {
+    public VolumeSpec withResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
         return this;
     }
@@ -123,11 +193,11 @@ public class VolumeSpec {
      * 资源类型，当前只支持“obs”和“sfs”。
      * @return resourceType
      */
-    public String getResourceType() {
+    public ResourceTypeEnum getResourceType() {
         return resourceType;
     }
 
-    public void setResourceType(String resourceType) {
+    public void setResourceType(ResourceTypeEnum resourceType) {
         this.resourceType = resourceType;
     }
 

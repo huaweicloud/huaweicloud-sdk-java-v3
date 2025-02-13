@@ -93,7 +93,7 @@ public class ListEnginePropertiesEntity {
     }
 
     /**
-     * 每个Broker的最大对列。
+     * 每个Broker的最大队列。
      * @return maxQueuePerBroker
      */
     public String getMaxQueuePerBroker() {

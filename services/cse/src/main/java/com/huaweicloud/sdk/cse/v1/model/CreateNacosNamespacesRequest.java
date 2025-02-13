@@ -21,17 +21,17 @@ public class CreateNacosNamespacesRequest {
     private String xEnterpriseProjectID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "custom_namespace_id")
+    @JsonProperty(value = "customNamespaceId")
 
     private String customNamespaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "namespace_name")
+    @JsonProperty(value = "namespaceName")
 
     private String namespaceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "namespace_desc")
+    @JsonProperty(value = "namespaceDesc")
 
     private String namespaceDesc;
 

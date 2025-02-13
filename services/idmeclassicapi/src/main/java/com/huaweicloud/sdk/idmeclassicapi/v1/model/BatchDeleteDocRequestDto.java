@@ -84,7 +84,7 @@ public class BatchDeleteDocRequestDto {
     }
 
     /**
-     * **参数解释**：  是否检查文档删除权限。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * **参数解释**：  是否检查文档删除权限。  **约束限制**：  不涉及。  **取值范围**：  - true：检查。 - false：不检查。  **默认取值**：  true。
      * @return isCheck
      */
     public Boolean getIsCheck() {

@@ -34,6 +34,11 @@ public class CreateTranscodingReq {
     private List<AvParameters> avParameters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "additional_manifests")
+
+    private List<AdditionalManifests> additionalManifests = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "output_filenames")
 
     private List<String> outputFilenames = null;
@@ -209,6 +214,39 @@ public class CreateTranscodingReq {
 
     public void setAvParameters(List<AvParameters> avParameters) {
         this.avParameters = avParameters;
+    }
+
+    public CreateTranscodingReq withAdditionalManifests(List<AdditionalManifests> additionalManifests) {
+        this.additionalManifests = additionalManifests;
+        return this;
+    }
+
+    public CreateTranscodingReq addAdditionalManifestsItem(AdditionalManifests additionalManifestsItem) {
+        if (this.additionalManifests == null) {
+            this.additionalManifests = new ArrayList<>();
+        }
+        this.additionalManifests.add(additionalManifestsItem);
+        return this;
+    }
+
+    public CreateTranscodingReq withAdditionalManifests(Consumer<List<AdditionalManifests>> additionalManifestsSetter) {
+        if (this.additionalManifests == null) {
+            this.additionalManifests = new ArrayList<>();
+        }
+        additionalManifestsSetter.accept(this.additionalManifests);
+        return this;
+    }
+
+    /**
+     * 主索引定制参数。 
+     * @return additionalManifests
+     */
+    public List<AdditionalManifests> getAdditionalManifests() {
+        return additionalManifests;
+    }
+
+    public void setAdditionalManifests(List<AdditionalManifests> additionalManifests) {
+        this.additionalManifests = additionalManifests;
     }
 
     public CreateTranscodingReq withOutputFilenames(List<String> outputFilenames) {
@@ -533,6 +571,7 @@ public class CreateTranscodingReq {
         return Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
             && Objects.equals(this.transTemplateId, that.transTemplateId)
             && Objects.equals(this.avParameters, that.avParameters)
+            && Objects.equals(this.additionalManifests, that.additionalManifests)
             && Objects.equals(this.outputFilenames, that.outputFilenames)
             && Objects.equals(this.userData, that.userData) && Objects.equals(this.watermarks, that.watermarks)
             && Objects.equals(this.thumbnail, that.thumbnail) && Objects.equals(this.priority, that.priority)
@@ -548,6 +587,7 @@ public class CreateTranscodingReq {
             output,
             transTemplateId,
             avParameters,
+            additionalManifests,
             outputFilenames,
             userData,
             watermarks,
@@ -570,6 +610,7 @@ public class CreateTranscodingReq {
         sb.append("    output: ").append(toIndentedString(output)).append("\n");
         sb.append("    transTemplateId: ").append(toIndentedString(transTemplateId)).append("\n");
         sb.append("    avParameters: ").append(toIndentedString(avParameters)).append("\n");
+        sb.append("    additionalManifests: ").append(toIndentedString(additionalManifests)).append("\n");
         sb.append("    outputFilenames: ").append(toIndentedString(outputFilenames)).append("\n");
         sb.append("    userData: ").append(toIndentedString(userData)).append("\n");
         sb.append("    watermarks: ").append(toIndentedString(watermarks)).append("\n");

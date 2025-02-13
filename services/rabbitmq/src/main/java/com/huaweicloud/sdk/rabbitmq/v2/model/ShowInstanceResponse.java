@@ -142,9 +142,29 @@ public class ShowInstanceResponse extends SdkResponse {
     private Integer usedStorageSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dns_enable")
+
+    private Boolean dnsEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connect_address")
 
     private String connectAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "connect_domain_name")
+
+    private String connectDomainName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_connect_address")
+
+    private String publicConnectAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_connect_domain_name")
+
+    private String publicConnectDomainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "port")
@@ -235,6 +255,21 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonProperty(value = "management_connect_address")
 
     private String managementConnectAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "management_connect_domain_name")
+
+    private String managementConnectDomainName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_management_connect_address")
+
+    private String publicManagementConnectAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_management_connect_domain_name")
+
+    private String publicManagementConnectDomainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ssl_enable")
@@ -355,6 +390,11 @@ public class ShowInstanceResponse extends SdkResponse {
     @JsonProperty(value = "available_zones")
 
     private List<String> availableZones = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "available_zone_names")
+
+    private List<String> availableZoneNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_storage_space")
@@ -522,13 +562,30 @@ public class ShowInstanceResponse extends SdkResponse {
         this.usedStorageSpace = usedStorageSpace;
     }
 
+    public ShowInstanceResponse withDnsEnable(Boolean dnsEnable) {
+        this.dnsEnable = dnsEnable;
+        return this;
+    }
+
+    /**
+     * 实例是否开启域名访问功能。 - true：开启 - false：未开启
+     * @return dnsEnable
+     */
+    public Boolean getDnsEnable() {
+        return dnsEnable;
+    }
+
+    public void setDnsEnable(Boolean dnsEnable) {
+        this.dnsEnable = dnsEnable;
+    }
+
     public ShowInstanceResponse withConnectAddress(String connectAddress) {
         this.connectAddress = connectAddress;
         return this;
     }
 
     /**
-     * 实例连接IP地址。
+     * 实例内网连接IP地址。
      * @return connectAddress
      */
     public String getConnectAddress() {
@@ -537,6 +594,57 @@ public class ShowInstanceResponse extends SdkResponse {
 
     public void setConnectAddress(String connectAddress) {
         this.connectAddress = connectAddress;
+    }
+
+    public ShowInstanceResponse withConnectDomainName(String connectDomainName) {
+        this.connectDomainName = connectDomainName;
+        return this;
+    }
+
+    /**
+     * 实例内网连接域名。
+     * @return connectDomainName
+     */
+    public String getConnectDomainName() {
+        return connectDomainName;
+    }
+
+    public void setConnectDomainName(String connectDomainName) {
+        this.connectDomainName = connectDomainName;
+    }
+
+    public ShowInstanceResponse withPublicConnectAddress(String publicConnectAddress) {
+        this.publicConnectAddress = publicConnectAddress;
+        return this;
+    }
+
+    /**
+     * 实例公网连接IP地址。
+     * @return publicConnectAddress
+     */
+    public String getPublicConnectAddress() {
+        return publicConnectAddress;
+    }
+
+    public void setPublicConnectAddress(String publicConnectAddress) {
+        this.publicConnectAddress = publicConnectAddress;
+    }
+
+    public ShowInstanceResponse withPublicConnectDomainName(String publicConnectDomainName) {
+        this.publicConnectDomainName = publicConnectDomainName;
+        return this;
+    }
+
+    /**
+     * 实例公网连接域名。
+     * @return publicConnectDomainName
+     */
+    public String getPublicConnectDomainName() {
+        return publicConnectDomainName;
+    }
+
+    public void setPublicConnectDomainName(String publicConnectDomainName) {
+        this.publicConnectDomainName = publicConnectDomainName;
     }
 
     public ShowInstanceResponse withPort(Integer port) {
@@ -613,7 +721,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 资源规格标识。   [- dms.instance.rabbitmq.single.c3.2u4g：RabbitMQ单机，vm规格2u4g   - dms.instance.rabbitmq.single.c3.4u8g：RabbitMQ单机，vm规格4u8g   - dms.instance.rabbitmq.single.c3.8u16g：RabbitMQ单机，vm规格8u16g   - dms.instance.rabbitmq.single.c3.16u32g：RabbitMQ单机，vm规格16u32g   - dms.instance.rabbitmq.cluster.c3.4u8g.3：RabbitMQ集群，vm规格4u8g，3个节点   - dms.instance.rabbitmq.cluster.c3.4u8g.5：RabbitMQ集群，vm规格4u8g，5个节点   - dms.instance.rabbitmq.cluster.c3.4u8g.7：RabbitMQ集群，vm规格4u8g，7个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.3：RabbitMQ集群，vm规格8u16g，3个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.5：RabbitMQ集群，vm规格8u16g，5个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.7：RabbitMQ集群，vm规格8u16g，7个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.3：RabbitMQ集群，vm规格16u32g，3个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.5：RabbitMQ集群，vm规格16u32g，5个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.7：RabbitMQ集群，vm规格16u32g，7个节点](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm)
+     * 资源规格标识。   [- dms.instance.rabbitmq.single.c3.2u4g：RabbitMQ单机，vm规格2u4g   - dms.instance.rabbitmq.single.c3.4u8g：RabbitMQ单机，vm规格4u8g   - dms.instance.rabbitmq.single.c3.8u16g：RabbitMQ单机，vm规格8u16g   - dms.instance.rabbitmq.single.c3.16u32g：RabbitMQ单机，vm规格16u32g   - dms.instance.rabbitmq.cluster.c3.4u8g.3：RabbitMQ集群，vm规格4u8g，3个节点   - dms.instance.rabbitmq.cluster.c3.4u8g.5：RabbitMQ集群，vm规格4u8g，5个节点   - dms.instance.rabbitmq.cluster.c3.4u8g.7：RabbitMQ集群，vm规格4u8g，7个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.3：RabbitMQ集群，vm规格8u16g，3个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.5：RabbitMQ集群，vm规格8u16g，5个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.7：RabbitMQ集群，vm规格8u16g，7个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.3：RabbitMQ集群，vm规格16u32g，3个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.5：RabbitMQ集群，vm规格16u32g，5个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.7：RabbitMQ集群，vm规格16u32g，7个节点](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,sbc)
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -845,6 +953,57 @@ public class ShowInstanceResponse extends SdkResponse {
         this.managementConnectAddress = managementConnectAddress;
     }
 
+    public ShowInstanceResponse withManagementConnectDomainName(String managementConnectDomainName) {
+        this.managementConnectDomainName = managementConnectDomainName;
+        return this;
+    }
+
+    /**
+     * RabbitMQ实例的管理域名。
+     * @return managementConnectDomainName
+     */
+    public String getManagementConnectDomainName() {
+        return managementConnectDomainName;
+    }
+
+    public void setManagementConnectDomainName(String managementConnectDomainName) {
+        this.managementConnectDomainName = managementConnectDomainName;
+    }
+
+    public ShowInstanceResponse withPublicManagementConnectAddress(String publicManagementConnectAddress) {
+        this.publicManagementConnectAddress = publicManagementConnectAddress;
+        return this;
+    }
+
+    /**
+     * RabbitMQ实例的公网管理地址。
+     * @return publicManagementConnectAddress
+     */
+    public String getPublicManagementConnectAddress() {
+        return publicManagementConnectAddress;
+    }
+
+    public void setPublicManagementConnectAddress(String publicManagementConnectAddress) {
+        this.publicManagementConnectAddress = publicManagementConnectAddress;
+    }
+
+    public ShowInstanceResponse withPublicManagementConnectDomainName(String publicManagementConnectDomainName) {
+        this.publicManagementConnectDomainName = publicManagementConnectDomainName;
+        return this;
+    }
+
+    /**
+     * RabbitMQ实例的公网管理域名。
+     * @return publicManagementConnectDomainName
+     */
+    public String getPublicManagementConnectDomainName() {
+        return publicManagementConnectDomainName;
+    }
+
+    public void setPublicManagementConnectDomainName(String publicManagementConnectDomainName) {
+        this.publicManagementConnectDomainName = publicManagementConnectDomainName;
+    }
+
     public ShowInstanceResponse withSslEnable(Boolean sslEnable) {
         this.sslEnable = sslEnable;
         return this;
@@ -1031,6 +1190,39 @@ public class ShowInstanceResponse extends SdkResponse {
         this.availableZones = availableZones;
     }
 
+    public ShowInstanceResponse withAvailableZoneNames(List<String> availableZoneNames) {
+        this.availableZoneNames = availableZoneNames;
+        return this;
+    }
+
+    public ShowInstanceResponse addAvailableZoneNamesItem(String availableZoneNamesItem) {
+        if (this.availableZoneNames == null) {
+            this.availableZoneNames = new ArrayList<>();
+        }
+        this.availableZoneNames.add(availableZoneNamesItem);
+        return this;
+    }
+
+    public ShowInstanceResponse withAvailableZoneNames(Consumer<List<String>> availableZoneNamesSetter) {
+        if (this.availableZoneNames == null) {
+            this.availableZoneNames = new ArrayList<>();
+        }
+        availableZoneNamesSetter.accept(this.availableZoneNames);
+        return this;
+    }
+
+    /**
+     * 实例节点所在的可用区，返回“可用区名称”。
+     * @return availableZoneNames
+     */
+    public List<String> getAvailableZoneNames() {
+        return availableZoneNames;
+    }
+
+    public void setAvailableZoneNames(List<String> availableZoneNames) {
+        this.availableZoneNames = availableZoneNames;
+    }
+
     public ShowInstanceResponse withTotalStorageSpace(Integer totalStorageSpace) {
         this.totalStorageSpace = totalStorageSpace;
         return this;
@@ -1180,9 +1372,13 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.specification, that.specification)
             && Objects.equals(this.storageSpace, that.storageSpace)
             && Objects.equals(this.usedStorageSpace, that.usedStorageSpace)
-            && Objects.equals(this.connectAddress, that.connectAddress) && Objects.equals(this.port, that.port)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.dnsEnable, that.dnsEnable)
+            && Objects.equals(this.connectAddress, that.connectAddress)
+            && Objects.equals(this.connectDomainName, that.connectDomainName)
+            && Objects.equals(this.publicConnectAddress, that.publicConnectAddress)
+            && Objects.equals(this.publicConnectDomainName, that.publicConnectDomainName)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
             && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.vpcId, that.vpcId)
             && Objects.equals(this.vpcName, that.vpcName) && Objects.equals(this.createdAt, that.createdAt)
@@ -1193,6 +1389,9 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.publicipAddress, that.publicipAddress)
             && Objects.equals(this.publicipId, that.publicipId)
             && Objects.equals(this.managementConnectAddress, that.managementConnectAddress)
+            && Objects.equals(this.managementConnectDomainName, that.managementConnectDomainName)
+            && Objects.equals(this.publicManagementConnectAddress, that.publicManagementConnectAddress)
+            && Objects.equals(this.publicManagementConnectDomainName, that.publicManagementConnectDomainName)
             && Objects.equals(this.sslEnable, that.sslEnable)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.isLogicalVolume, that.isLogicalVolume)
@@ -1201,6 +1400,7 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.securityGroupName, that.securityGroupName)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.availableZoneNames, that.availableZoneNames)
             && Objects.equals(this.totalStorageSpace, that.totalStorageSpace)
             && Objects.equals(this.storageResourceId, that.storageResourceId)
             && Objects.equals(this.storageSpecCode, that.storageSpecCode)
@@ -1219,7 +1419,11 @@ public class ShowInstanceResponse extends SdkResponse {
             specification,
             storageSpace,
             usedStorageSpace,
+            dnsEnable,
             connectAddress,
+            connectDomainName,
+            publicConnectAddress,
+            publicConnectDomainName,
             port,
             status,
             description,
@@ -1238,6 +1442,9 @@ public class ShowInstanceResponse extends SdkResponse {
             publicipAddress,
             publicipId,
             managementConnectAddress,
+            managementConnectDomainName,
+            publicManagementConnectAddress,
+            publicManagementConnectDomainName,
             sslEnable,
             enterpriseProjectId,
             isLogicalVolume,
@@ -1248,6 +1455,7 @@ public class ShowInstanceResponse extends SdkResponse {
             securityGroupName,
             subnetId,
             availableZones,
+            availableZoneNames,
             totalStorageSpace,
             storageResourceId,
             storageSpecCode,
@@ -1268,7 +1476,11 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    specification: ").append(toIndentedString(specification)).append("\n");
         sb.append("    storageSpace: ").append(toIndentedString(storageSpace)).append("\n");
         sb.append("    usedStorageSpace: ").append(toIndentedString(usedStorageSpace)).append("\n");
+        sb.append("    dnsEnable: ").append(toIndentedString(dnsEnable)).append("\n");
         sb.append("    connectAddress: ").append(toIndentedString(connectAddress)).append("\n");
+        sb.append("    connectDomainName: ").append(toIndentedString(connectDomainName)).append("\n");
+        sb.append("    publicConnectAddress: ").append(toIndentedString(publicConnectAddress)).append("\n");
+        sb.append("    publicConnectDomainName: ").append(toIndentedString(publicConnectDomainName)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
@@ -1287,6 +1499,15 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    publicipAddress: ").append(toIndentedString(publicipAddress)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("    managementConnectAddress: ").append(toIndentedString(managementConnectAddress)).append("\n");
+        sb.append("    managementConnectDomainName: ")
+            .append(toIndentedString(managementConnectDomainName))
+            .append("\n");
+        sb.append("    publicManagementConnectAddress: ")
+            .append(toIndentedString(publicManagementConnectAddress))
+            .append("\n");
+        sb.append("    publicManagementConnectDomainName: ")
+            .append(toIndentedString(publicManagementConnectDomainName))
+            .append("\n");
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    isLogicalVolume: ").append(toIndentedString(isLogicalVolume)).append("\n");
@@ -1297,6 +1518,7 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    securityGroupName: ").append(toIndentedString(securityGroupName)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
+        sb.append("    availableZoneNames: ").append(toIndentedString(availableZoneNames)).append("\n");
         sb.append("    totalStorageSpace: ").append(toIndentedString(totalStorageSpace)).append("\n");
         sb.append("    storageResourceId: ").append(toIndentedString(storageResourceId)).append("\n");
         sb.append("    storageSpecCode: ").append(toIndentedString(storageSpecCode)).append("\n");

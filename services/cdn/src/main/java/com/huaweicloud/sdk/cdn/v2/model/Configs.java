@@ -193,6 +193,11 @@ public class Configs {
 
     private List<AccessAreaFilter> accessAreaFilter = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_cert")
+
+    private ClientCert clientCert;
+
     public Configs withBusinessType(String businessType) {
         this.businessType = businessType;
         return this;
@@ -1132,6 +1137,32 @@ public class Configs {
         this.accessAreaFilter = accessAreaFilter;
     }
 
+    public Configs withClientCert(ClientCert clientCert) {
+        this.clientCert = clientCert;
+        return this;
+    }
+
+    public Configs withClientCert(Consumer<ClientCert> clientCertSetter) {
+        if (this.clientCert == null) {
+            this.clientCert = new ClientCert();
+            clientCertSetter.accept(this.clientCert);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get clientCert
+     * @return clientCert
+     */
+    public ClientCert getClientCert() {
+        return clientCert;
+    }
+
+    public void setClientCert(ClientCert clientCert) {
+        this.clientCert = clientCert;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1168,7 +1199,8 @@ public class Configs {
             && Objects.equals(this.errorCodeRedirectRules, that.errorCodeRedirectRules)
             && Objects.equals(this.sni, that.sni) && Objects.equals(this.requestUrlRewrite, that.requestUrlRewrite)
             && Objects.equals(this.browserCacheRules, that.browserCacheRules)
-            && Objects.equals(this.accessAreaFilter, that.accessAreaFilter);
+            && Objects.equals(this.accessAreaFilter, that.accessAreaFilter)
+            && Objects.equals(this.clientCert, that.clientCert);
     }
 
     @Override
@@ -1208,7 +1240,8 @@ public class Configs {
             sni,
             requestUrlRewrite,
             browserCacheRules,
-            accessAreaFilter);
+            accessAreaFilter,
+            clientCert);
     }
 
     @Override
@@ -1251,6 +1284,7 @@ public class Configs {
         sb.append("    requestUrlRewrite: ").append(toIndentedString(requestUrlRewrite)).append("\n");
         sb.append("    browserCacheRules: ").append(toIndentedString(browserCacheRules)).append("\n");
         sb.append("    accessAreaFilter: ").append(toIndentedString(accessAreaFilter)).append("\n");
+        sb.append("    clientCert: ").append(toIndentedString(clientCert)).append("\n");
         sb.append("}");
         return sb.toString();
     }

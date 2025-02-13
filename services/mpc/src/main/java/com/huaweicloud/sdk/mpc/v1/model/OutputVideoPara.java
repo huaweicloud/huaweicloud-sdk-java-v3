@@ -42,6 +42,11 @@ public class OutputVideoPara {
     private String fileName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "manifest_name")
+
+    private String manifestName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "conver_duration")
 
     private Double converDuration;
@@ -175,6 +180,23 @@ public class OutputVideoPara {
         this.fileName = fileName;
     }
 
+    public OutputVideoPara withManifestName(String manifestName) {
+        this.manifestName = manifestName;
+        return this;
+    }
+
+    /**
+     * 独立mpd索引文件名 
+     * @return manifestName
+     */
+    public String getManifestName() {
+        return manifestName;
+    }
+
+    public void setManifestName(String manifestName) {
+        this.manifestName = manifestName;
+    }
+
     public OutputVideoPara withConverDuration(Double converDuration) {
         this.converDuration = converDuration;
         return this;
@@ -232,12 +254,13 @@ public class OutputVideoPara {
         return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.size, that.size)
             && Objects.equals(this.pack, that.pack) && Objects.equals(this.video, that.video)
             && Objects.equals(this.audio, that.audio) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.manifestName, that.manifestName)
             && Objects.equals(this.converDuration, that.converDuration) && Objects.equals(this.error, that.error);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templateId, size, pack, video, audio, fileName, converDuration, error);
+        return Objects.hash(templateId, size, pack, video, audio, fileName, manifestName, converDuration, error);
     }
 
     @Override
@@ -250,6 +273,7 @@ public class OutputVideoPara {
         sb.append("    video: ").append(toIndentedString(video)).append("\n");
         sb.append("    audio: ").append(toIndentedString(audio)).append("\n");
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
+        sb.append("    manifestName: ").append(toIndentedString(manifestName)).append("\n");
         sb.append("    converDuration: ").append(toIndentedString(converDuration)).append("\n");
         sb.append("    error: ").append(toIndentedString(error)).append("\n");
         sb.append("}");

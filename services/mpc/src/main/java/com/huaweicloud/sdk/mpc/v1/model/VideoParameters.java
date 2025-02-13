@@ -161,6 +161,11 @@ public class VideoParameters {
 
     private Integer blackCut;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stream_name")
+
+    private String streamName;
+
     public VideoParameters withOutputPolicy(OutputPolicyEnum outputPolicy) {
         this.outputPolicy = outputPolicy;
         return this;
@@ -423,6 +428,23 @@ public class VideoParameters {
         this.blackCut = blackCut;
     }
 
+    public VideoParameters withStreamName(String streamName) {
+        this.streamName = streamName;
+        return this;
+    }
+
+    /**
+     * 流名称 
+     * @return streamName
+     */
+    public String getStreamName() {
+        return streamName;
+    }
+
+    public void setStreamName(String streamName) {
+        this.streamName = streamName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -439,7 +461,7 @@ public class VideoParameters {
             && Objects.equals(this.maxIframesInterval, that.maxIframesInterval)
             && Objects.equals(this.bframesCount, that.bframesCount) && Objects.equals(this.frameRate, that.frameRate)
             && Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height)
-            && Objects.equals(this.blackCut, that.blackCut);
+            && Objects.equals(this.blackCut, that.blackCut) && Objects.equals(this.streamName, that.streamName);
     }
 
     @Override
@@ -457,7 +479,8 @@ public class VideoParameters {
             frameRate,
             width,
             height,
-            blackCut);
+            blackCut,
+            streamName);
     }
 
     @Override
@@ -478,6 +501,7 @@ public class VideoParameters {
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    blackCut: ").append(toIndentedString(blackCut)).append("\n");
+        sb.append("    streamName: ").append(toIndentedString(streamName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

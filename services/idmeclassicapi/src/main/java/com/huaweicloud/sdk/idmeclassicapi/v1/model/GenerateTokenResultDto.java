@@ -36,7 +36,7 @@ public class GenerateTokenResultDto {
     }
 
     /**
-     * **参数解释**：  认证token。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * **参数解释**：  认证token。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
      * @return token
      */
     public String getToken() {
@@ -53,7 +53,7 @@ public class GenerateTokenResultDto {
     }
 
     /**
-     * **参数解释**：  用户id。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * **参数解释**：  用户ID。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
      * @return userId
      */
     public String getUserId() {
@@ -70,7 +70,7 @@ public class GenerateTokenResultDto {
     }
 
     /**
-     * **参数解释**：  用户名。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * **参数解释**：  用户名。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
      * @return userName
      */
     public String getUserName() {
@@ -87,7 +87,7 @@ public class GenerateTokenResultDto {
     }
 
     /**
-     * **参数解释**：  应用id。  **约束限制**：  不涉及。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
+     * **参数解释**：  应用ID。  **取值范围**：  不涉及。  **默认取值**：  不涉及。
      * @return appId
      */
     public String getAppId() {

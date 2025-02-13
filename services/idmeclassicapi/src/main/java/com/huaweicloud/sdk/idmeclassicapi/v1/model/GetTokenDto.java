@@ -26,7 +26,7 @@ public class GetTokenDto {
     }
 
     /**
-     * **参数解释**：  认证类型。  **约束限制**：  不涉及。  **取值范围**：  - read: 只读 - write: 读写  **默认取值**：  不涉及。
+     * **参数解释**：  认证类型。  **约束限制**：  不涉及。  **取值范围**：  - read：只读。 - write：读写。  **默认取值**：  不涉及。
      * @return authType
      */
     public String getAuthType() {

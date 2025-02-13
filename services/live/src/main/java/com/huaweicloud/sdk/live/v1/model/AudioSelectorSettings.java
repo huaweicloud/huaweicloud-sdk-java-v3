@@ -21,6 +21,11 @@ public class AudioSelectorSettings {
 
     private AudioSelectorPidSelection audioPidSelection;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_hls_selection")
+
+    private AudioSelectorHlsSelection audioHlsSelection;
+
     public AudioSelectorSettings withAudioLanguageSelection(AudioSelectorLangSelection audioLanguageSelection) {
         this.audioLanguageSelection = audioLanguageSelection;
         return this;
@@ -74,6 +79,32 @@ public class AudioSelectorSettings {
         this.audioPidSelection = audioPidSelection;
     }
 
+    public AudioSelectorSettings withAudioHlsSelection(AudioSelectorHlsSelection audioHlsSelection) {
+        this.audioHlsSelection = audioHlsSelection;
+        return this;
+    }
+
+    public AudioSelectorSettings withAudioHlsSelection(Consumer<AudioSelectorHlsSelection> audioHlsSelectionSetter) {
+        if (this.audioHlsSelection == null) {
+            this.audioHlsSelection = new AudioSelectorHlsSelection();
+            audioHlsSelectionSetter.accept(this.audioHlsSelection);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get audioHlsSelection
+     * @return audioHlsSelection
+     */
+    public AudioSelectorHlsSelection getAudioHlsSelection() {
+        return audioHlsSelection;
+    }
+
+    public void setAudioHlsSelection(AudioSelectorHlsSelection audioHlsSelection) {
+        this.audioHlsSelection = audioHlsSelection;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -84,12 +115,13 @@ public class AudioSelectorSettings {
         }
         AudioSelectorSettings that = (AudioSelectorSettings) obj;
         return Objects.equals(this.audioLanguageSelection, that.audioLanguageSelection)
-            && Objects.equals(this.audioPidSelection, that.audioPidSelection);
+            && Objects.equals(this.audioPidSelection, that.audioPidSelection)
+            && Objects.equals(this.audioHlsSelection, that.audioHlsSelection);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(audioLanguageSelection, audioPidSelection);
+        return Objects.hash(audioLanguageSelection, audioPidSelection, audioHlsSelection);
     }
 
     @Override
@@ -98,6 +130,7 @@ public class AudioSelectorSettings {
         sb.append("class AudioSelectorSettings {\n");
         sb.append("    audioLanguageSelection: ").append(toIndentedString(audioLanguageSelection)).append("\n");
         sb.append("    audioPidSelection: ").append(toIndentedString(audioPidSelection)).append("\n");
+        sb.append("    audioHlsSelection: ").append(toIndentedString(audioHlsSelection)).append("\n");
         sb.append("}");
         return sb.toString();
     }

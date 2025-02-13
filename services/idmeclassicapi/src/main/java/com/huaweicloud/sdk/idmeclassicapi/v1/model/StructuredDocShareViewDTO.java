@@ -319,7 +319,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释**：  被分享用户名。  **约束限制**：  不涉及。  **取值范围**：  - all: 所有人。  **默认取值**：  不涉及。
+     * **参数解释**：  被分享用户名。  **约束限制**：  不涉及。  **取值范围**：  all：表示所有人。  **默认取值**：  不涉及。
      * @return sharedUserName
      */
     public String getSharedUserName() {
@@ -336,7 +336,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释**：  被分享用户UserId。  **约束限制**：  不涉及。  **取值范围**：  - all: 所有人。  **默认取值**：  不涉及。
+     * **参数解释**：  被分享用户UserId。  **约束限制**：  不涉及。  **取值范围**：  all：表示所有人。  **默认取值**：  不涉及。
      * @return sharedUserId
      */
     public String getSharedUserId() {
@@ -353,7 +353,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释**：  认证类型。  **约束限制**：  不涉及。  **取值范围**：  - read: 只读 - write: 读写  **默认取值**：  不涉及。
+     * **参数解释**：  认证类型。  **约束限制**：  不涉及。  **取值范围**：  - read：只读。 - write：读写。  **默认取值**：  不涉及。
      * @return authType
      */
     public String getAuthType() {
@@ -370,7 +370,7 @@ public class StructuredDocShareViewDTO {
     }
 
     /**
-     * **参数解释**：  被分享用户UserId。  **约束限制**：  不涉及。  **取值范围**：  - all: 所有人。  **默认取值**：  不涉及。
+     * **参数解释**：  被分享用户UserId。  **约束限制**：  不涉及。  **取值范围**：  all：表示所有人。  **默认取值**：  不涉及。
      * @return shareUserId
      */
     public String getShareUserId() {

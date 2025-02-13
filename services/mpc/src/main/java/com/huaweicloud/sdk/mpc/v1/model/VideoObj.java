@@ -25,6 +25,11 @@ public class VideoObj {
 
     private Integer bitrate;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stream_name")
+
+    private String streamName;
+
     public VideoObj withWidth(Integer width) {
         this.width = width;
         return this;
@@ -82,6 +87,23 @@ public class VideoObj {
         this.bitrate = bitrate;
     }
 
+    public VideoObj withStreamName(String streamName) {
+        this.streamName = streamName;
+        return this;
+    }
+
+    /**
+     * 流名称 
+     * @return streamName
+     */
+    public String getStreamName() {
+        return streamName;
+    }
+
+    public void setStreamName(String streamName) {
+        this.streamName = streamName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -92,12 +114,12 @@ public class VideoObj {
         }
         VideoObj that = (VideoObj) obj;
         return Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height)
-            && Objects.equals(this.bitrate, that.bitrate);
+            && Objects.equals(this.bitrate, that.bitrate) && Objects.equals(this.streamName, that.streamName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, height, bitrate);
+        return Objects.hash(width, height, bitrate, streamName);
     }
 
     @Override
@@ -107,6 +129,7 @@ public class VideoObj {
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    bitrate: ").append(toIndentedString(bitrate)).append("\n");
+        sb.append("    streamName: ").append(toIndentedString(streamName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

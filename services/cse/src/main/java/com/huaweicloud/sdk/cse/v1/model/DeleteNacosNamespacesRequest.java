@@ -21,7 +21,7 @@ public class DeleteNacosNamespacesRequest {
     private String xEnterpriseProjectID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "namespace_id")
+    @JsonProperty(value = "namespaceId")
 
     private String namespaceId;
 

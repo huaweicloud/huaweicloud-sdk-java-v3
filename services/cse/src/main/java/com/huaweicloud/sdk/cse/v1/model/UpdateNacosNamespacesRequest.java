@@ -26,12 +26,12 @@ public class UpdateNacosNamespacesRequest {
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "namespace_show_name")
+    @JsonProperty(value = "namespaceShowName")
 
     private String namespaceShowName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "namespace_desc")
+    @JsonProperty(value = "namespaceDesc")
 
     private String namespaceDesc;
 

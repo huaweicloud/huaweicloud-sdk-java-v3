@@ -23,6 +23,11 @@ public class TranscodeDetail {
 
     private SourceInfo inputFile;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "replace_sub_index")
+
+    private List<String> replaceSubIndex = null;
+
     public TranscodeDetail withMultitaskInfo(List<MultiTaskInfo> multitaskInfo) {
         this.multitaskInfo = multitaskInfo;
         return this;
@@ -82,6 +87,39 @@ public class TranscodeDetail {
         this.inputFile = inputFile;
     }
 
+    public TranscodeDetail withReplaceSubIndex(List<String> replaceSubIndex) {
+        this.replaceSubIndex = replaceSubIndex;
+        return this;
+    }
+
+    public TranscodeDetail addReplaceSubIndexItem(String replaceSubIndexItem) {
+        if (this.replaceSubIndex == null) {
+            this.replaceSubIndex = new ArrayList<>();
+        }
+        this.replaceSubIndex.add(replaceSubIndexItem);
+        return this;
+    }
+
+    public TranscodeDetail withReplaceSubIndex(Consumer<List<String>> replaceSubIndexSetter) {
+        if (this.replaceSubIndex == null) {
+            this.replaceSubIndex = new ArrayList<>();
+        }
+        replaceSubIndexSetter.accept(this.replaceSubIndex);
+        return this;
+    }
+
+    /**
+     * 被替换的子索引文件 
+     * @return replaceSubIndex
+     */
+    public List<String> getReplaceSubIndex() {
+        return replaceSubIndex;
+    }
+
+    public void setReplaceSubIndex(List<String> replaceSubIndex) {
+        this.replaceSubIndex = replaceSubIndex;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -91,12 +129,13 @@ public class TranscodeDetail {
             return false;
         }
         TranscodeDetail that = (TranscodeDetail) obj;
-        return Objects.equals(this.multitaskInfo, that.multitaskInfo) && Objects.equals(this.inputFile, that.inputFile);
+        return Objects.equals(this.multitaskInfo, that.multitaskInfo) && Objects.equals(this.inputFile, that.inputFile)
+            && Objects.equals(this.replaceSubIndex, that.replaceSubIndex);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(multitaskInfo, inputFile);
+        return Objects.hash(multitaskInfo, inputFile, replaceSubIndex);
     }
 
     @Override
@@ -105,6 +144,7 @@ public class TranscodeDetail {
         sb.append("class TranscodeDetail {\n");
         sb.append("    multitaskInfo: ").append(toIndentedString(multitaskInfo)).append("\n");
         sb.append("    inputFile: ").append(toIndentedString(inputFile)).append("\n");
+        sb.append("    replaceSubIndex: ").append(toIndentedString(replaceSubIndex)).append("\n");
         sb.append("}");
         return sb.toString();
     }

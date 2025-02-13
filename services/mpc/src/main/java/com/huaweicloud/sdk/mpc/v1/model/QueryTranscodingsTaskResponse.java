@@ -208,6 +208,11 @@ public class QueryTranscodingsTaskResponse {
 
     private List<AvParameters> avParameters = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "additional_manifests")
+
+    private List<AdditionalManifests> additionalManifests = null;
+
     public QueryTranscodingsTaskResponse withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
@@ -616,6 +621,40 @@ public class QueryTranscodingsTaskResponse {
         this.avParameters = avParameters;
     }
 
+    public QueryTranscodingsTaskResponse withAdditionalManifests(List<AdditionalManifests> additionalManifests) {
+        this.additionalManifests = additionalManifests;
+        return this;
+    }
+
+    public QueryTranscodingsTaskResponse addAdditionalManifestsItem(AdditionalManifests additionalManifestsItem) {
+        if (this.additionalManifests == null) {
+            this.additionalManifests = new ArrayList<>();
+        }
+        this.additionalManifests.add(additionalManifestsItem);
+        return this;
+    }
+
+    public QueryTranscodingsTaskResponse withAdditionalManifests(
+        Consumer<List<AdditionalManifests>> additionalManifestsSetter) {
+        if (this.additionalManifests == null) {
+            this.additionalManifests = new ArrayList<>();
+        }
+        additionalManifestsSetter.accept(this.additionalManifests);
+        return this;
+    }
+
+    /**
+     * 主索引定制参数。 
+     * @return additionalManifests
+     */
+    public List<AdditionalManifests> getAdditionalManifests() {
+        return additionalManifests;
+    }
+
+    public void setAdditionalManifests(List<AdditionalManifests> additionalManifests) {
+        this.additionalManifests = additionalManifests;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -634,7 +673,8 @@ public class QueryTranscodingsTaskResponse {
             && Objects.equals(this.tips, that.tips) && Objects.equals(this.transcodeDetail, that.transcodeDetail)
             && Objects.equals(this.thumbnailOutput, that.thumbnailOutput)
             && Objects.equals(this.thumbnailOutputname, that.thumbnailOutputname)
-            && Objects.equals(this.picInfo, that.picInfo) && Objects.equals(this.avParameters, that.avParameters);
+            && Objects.equals(this.picInfo, that.picInfo) && Objects.equals(this.avParameters, that.avParameters)
+            && Objects.equals(this.additionalManifests, that.additionalManifests);
     }
 
     @Override
@@ -656,7 +696,8 @@ public class QueryTranscodingsTaskResponse {
             thumbnailOutput,
             thumbnailOutputname,
             picInfo,
-            avParameters);
+            avParameters,
+            additionalManifests);
     }
 
     @Override
@@ -681,6 +722,7 @@ public class QueryTranscodingsTaskResponse {
         sb.append("    thumbnailOutputname: ").append(toIndentedString(thumbnailOutputname)).append("\n");
         sb.append("    picInfo: ").append(toIndentedString(picInfo)).append("\n");
         sb.append("    avParameters: ").append(toIndentedString(avParameters)).append("\n");
+        sb.append("    additionalManifests: ").append(toIndentedString(additionalManifests)).append("\n");
         sb.append("}");
         return sb.toString();
     }

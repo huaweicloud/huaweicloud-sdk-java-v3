@@ -34,6 +34,11 @@ public class SourceInfo {
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "manifest_name")
+
+    private String manifestName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "video_info")
 
     private VideoInfo videoInfo;
@@ -117,6 +122,23 @@ public class SourceInfo {
         this.size = size;
     }
 
+    public SourceInfo withManifestName(String manifestName) {
+        this.manifestName = manifestName;
+        return this;
+    }
+
+    /**
+     * 独立mpd索引文件名 
+     * @return manifestName
+     */
+    public String getManifestName() {
+        return manifestName;
+    }
+
+    public void setManifestName(String manifestName) {
+        this.manifestName = manifestName;
+    }
+
     public SourceInfo withVideoInfo(VideoInfo videoInfo) {
         this.videoInfo = videoInfo;
         return this;
@@ -187,12 +209,13 @@ public class SourceInfo {
         SourceInfo that = (SourceInfo) obj;
         return Objects.equals(this.duration, that.duration) && Objects.equals(this.durationMs, that.durationMs)
             && Objects.equals(this.format, that.format) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.videoInfo, that.videoInfo) && Objects.equals(this.audioInfo, that.audioInfo);
+            && Objects.equals(this.manifestName, that.manifestName) && Objects.equals(this.videoInfo, that.videoInfo)
+            && Objects.equals(this.audioInfo, that.audioInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(duration, durationMs, format, size, videoInfo, audioInfo);
+        return Objects.hash(duration, durationMs, format, size, manifestName, videoInfo, audioInfo);
     }
 
     @Override
@@ -203,6 +226,7 @@ public class SourceInfo {
         sb.append("    durationMs: ").append(toIndentedString(durationMs)).append("\n");
         sb.append("    format: ").append(toIndentedString(format)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    manifestName: ").append(toIndentedString(manifestName)).append("\n");
         sb.append("    videoInfo: ").append(toIndentedString(videoInfo)).append("\n");
         sb.append("    audioInfo: ").append(toIndentedString(audioInfo)).append("\n");
         sb.append("}");

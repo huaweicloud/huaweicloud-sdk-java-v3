@@ -30,6 +30,11 @@ public class VideoAndTemplate {
 
     private Integer bitrate;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stream_name")
+
+    private String streamName;
+
     public VideoAndTemplate withTemplateId(Integer templateId) {
         this.templateId = templateId;
         return this;
@@ -106,6 +111,23 @@ public class VideoAndTemplate {
         this.bitrate = bitrate;
     }
 
+    public VideoAndTemplate withStreamName(String streamName) {
+        this.streamName = streamName;
+        return this;
+    }
+
+    /**
+     * 流名称 
+     * @return streamName
+     */
+    public String getStreamName() {
+        return streamName;
+    }
+
+    public void setStreamName(String streamName) {
+        this.streamName = streamName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -116,12 +138,13 @@ public class VideoAndTemplate {
         }
         VideoAndTemplate that = (VideoAndTemplate) obj;
         return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.width, that.width)
-            && Objects.equals(this.height, that.height) && Objects.equals(this.bitrate, that.bitrate);
+            && Objects.equals(this.height, that.height) && Objects.equals(this.bitrate, that.bitrate)
+            && Objects.equals(this.streamName, that.streamName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templateId, width, height, bitrate);
+        return Objects.hash(templateId, width, height, bitrate, streamName);
     }
 
     @Override
@@ -132,6 +155,7 @@ public class VideoAndTemplate {
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("    bitrate: ").append(toIndentedString(bitrate)).append("\n");
+        sb.append("    streamName: ").append(toIndentedString(streamName)).append("\n");
         sb.append("}");
         return sb.toString();
     }
