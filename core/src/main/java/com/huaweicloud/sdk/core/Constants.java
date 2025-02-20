@@ -99,6 +99,8 @@ public final class Constants {
 
         public static final String BINARY_OCTET_STREAM = "binary/octet-stream";
 
+        public static final String APPLICATION_ZIP = "application/zip";
+
         public static final String APPLICATION_BSON = "application/bson";
 
         public static final String APPLICATION_XML = "application/xml";

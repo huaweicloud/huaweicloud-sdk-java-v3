@@ -8,6 +8,8 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsRequest;
+import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyResponse;
@@ -44,6 +46,7 @@ import com.huaweicloud.sdk.csms.v1.model.DownloadSecretBlobResponse;
 import com.huaweicloud.sdk.csms.v1.model.GenerateRandomPasswordRequest;
 import com.huaweicloud.sdk.csms.v1.model.GenerateRandomPasswordResponse;
 import com.huaweicloud.sdk.csms.v1.model.GrantSecretReqBody;
+import com.huaweicloud.sdk.csms.v1.model.ImportSecretsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListGrantsRequest;
 import com.huaweicloud.sdk.csms.v1.model.ListGrantsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ListNotificationRecordsRequest;
@@ -81,6 +84,8 @@ import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowUserDetailRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowUserDetailResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateGrantRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateGrantResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretEventRequest;
@@ -125,6 +130,29 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagsRequestBody.class),
             f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getBody, BatchCreateOrDeleteTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchImportSecretsRequest, BatchImportSecretsResponse> batchImportSecrets =
+        genForBatchImportSecrets();
+
+    private static HttpRequestDef<BatchImportSecretsRequest, BatchImportSecretsResponse> genForBatchImportSecrets() {
+        // basic
+        HttpRequestDef.Builder<BatchImportSecretsRequest, BatchImportSecretsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchImportSecretsRequest.class, BatchImportSecretsResponse.class)
+                .withName("BatchImportSecrets")
+                .withUri("/v1/{project_id}/secrets/batch-import")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ImportSecretsRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportSecretsRequest.class),
+            f -> f.withMarshaller(BatchImportSecretsRequest::getBody, BatchImportSecretsRequest::setBody));
 
         // response
 
@@ -964,6 +992,29 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSecretVersionRequest::getVersionId, ShowSecretVersionRequest::setVersionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUserDetailRequest, ShowUserDetailResponse> showUserDetail =
+        genForShowUserDetail();
+
+    private static HttpRequestDef<ShowUserDetailRequest, ShowUserDetailResponse> genForShowUserDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowUserDetailRequest, ShowUserDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowUserDetailRequest.class, ShowUserDetailResponse.class)
+                .withName("ShowUserDetail")
+                .withUri("/v1/csms/users/{user_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUserDetailRequest::getUserId, ShowUserDetailRequest::setUserId));
 
         // response
 

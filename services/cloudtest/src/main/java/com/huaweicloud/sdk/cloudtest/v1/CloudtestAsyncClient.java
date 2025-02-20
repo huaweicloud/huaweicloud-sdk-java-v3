@@ -1,5 +1,7 @@
 package com.huaweicloud.sdk.cloudtest.v1;
 
+import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseRequest;
@@ -308,6 +310,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateVersionTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateVersionTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UploadStepImgRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UploadStepImgResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -4195,6 +4199,35 @@ public class CloudtestAsyncClient {
     }
 
     /**
+     * 上传测试步骤图片
+     *
+     * 对外API
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadStepImgRequest 请求对象
+     * @return CompletableFuture<UploadStepImgResponse>
+     */
+    public CompletableFuture<UploadStepImgResponse> uploadStepImgAsync(UploadStepImgRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.uploadStepImg);
+    }
+
+    /**
+     * 上传测试步骤图片
+     *
+     * 对外API
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadStepImgRequest 请求对象
+     * @return AsyncInvoker<UploadStepImgRequest, UploadStepImgResponse>
+     */
+    public AsyncInvoker<UploadStepImgRequest, UploadStepImgResponse> uploadStepImgAsyncInvoker(
+        UploadStepImgRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.uploadStepImg, hcClient);
+    }
+
+    /**
      * 批量删除因子
      *
      * 批量删除因子
@@ -4837,6 +4870,34 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<UpdateMindmapNameRequest, UpdateMindmapNameResponse> updateMindmapNameAsyncInvoker(
         UpdateMindmapNameRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.updateMindmapName, hcClient);
+    }
+
+    /**
+     * 添加目录信息
+     *
+     * 添加目录信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFeatureRequest 请求对象
+     * @return CompletableFuture<AddFeatureResponse>
+     */
+    public CompletableFuture<AddFeatureResponse> addFeatureAsync(AddFeatureRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.addFeature);
+    }
+
+    /**
+     * 添加目录信息
+     *
+     * 添加目录信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFeatureRequest 请求对象
+     * @return AsyncInvoker<AddFeatureRequest, AddFeatureResponse>
+     */
+    public AsyncInvoker<AddFeatureRequest, AddFeatureResponse> addFeatureAsyncInvoker(AddFeatureRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.addFeature, hcClient);
     }
 
 }

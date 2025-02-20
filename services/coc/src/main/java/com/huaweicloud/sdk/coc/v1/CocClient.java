@@ -1,5 +1,9 @@
 package com.huaweicloud.sdk.coc.v1;
 
+import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewRequest;
+import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewResponse;
+import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
+import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesRequest;
@@ -30,6 +34,8 @@ import com.huaweicloud.sdk.coc.v1.model.GetScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListApplicationModelRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListApplicationModelResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
@@ -38,6 +44,8 @@ import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListResourceRequest;
@@ -107,6 +115,64 @@ public class CocClient {
     public SyncInvoker<ListApplicationsRequest, ListApplicationsResponse> listApplicationsInvoker(
         ListApplicationsRequest request) {
         return new SyncInvoker<>(request, CocMeta.listApplications, hcClient);
+    }
+
+    /**
+     * 查询下一级的子应用、组件、分组
+     *
+     * 查询下一级的子应用、组件、分组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListApplicationModelRequest 请求对象
+     * @return ListApplicationModelResponse
+     */
+    public ListApplicationModelResponse listApplicationModel(ListApplicationModelRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.listApplicationModel);
+    }
+
+    /**
+     * 查询下一级的子应用、组件、分组
+     *
+     * 查询下一级的子应用、组件、分组
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListApplicationModelRequest 请求对象
+     * @return SyncInvoker<ListApplicationModelRequest, ListApplicationModelResponse>
+     */
+    public SyncInvoker<ListApplicationModelRequest, ListApplicationModelResponse> listApplicationModelInvoker(
+        ListApplicationModelRequest request) {
+        return new SyncInvoker<>(request, CocMeta.listApplicationModel, hcClient);
+    }
+
+    /**
+     * 批量创建应用视图
+     *
+     * 批量创建应用视图
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateApplicationViewRequest 请求对象
+     * @return BatchCreateApplicationViewResponse
+     */
+    public BatchCreateApplicationViewResponse batchCreateApplicationView(BatchCreateApplicationViewRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.batchCreateApplicationView);
+    }
+
+    /**
+     * 批量创建应用视图
+     *
+     * 批量创建应用视图
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateApplicationViewRequest 请求对象
+     * @return SyncInvoker<BatchCreateApplicationViewRequest, BatchCreateApplicationViewResponse>
+     */
+    public SyncInvoker<BatchCreateApplicationViewRequest, BatchCreateApplicationViewResponse> batchCreateApplicationViewInvoker(
+        BatchCreateApplicationViewRequest request) {
+        return new SyncInvoker<>(request, CocMeta.batchCreateApplicationView, hcClient);
     }
 
     /**
@@ -428,6 +494,64 @@ public class CocClient {
     public SyncInvoker<ListAuthorizableTicketsExternalRequest, ListAuthorizableTicketsExternalResponse> listAuthorizableTicketsExternalInvoker(
         ListAuthorizableTicketsExternalRequest request) {
         return new SyncInvoker<>(request, CocMeta.listAuthorizableTicketsExternal, hcClient);
+    }
+
+    /**
+     * 查询用户在云厂商中的资源
+     *
+     * 查询用户在云厂商中的资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMultiCloudResourcesRequest 请求对象
+     * @return ListMultiCloudResourcesResponse
+     */
+    public ListMultiCloudResourcesResponse listMultiCloudResources(ListMultiCloudResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.listMultiCloudResources);
+    }
+
+    /**
+     * 查询用户在云厂商中的资源
+     *
+     * 查询用户在云厂商中的资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListMultiCloudResourcesRequest 请求对象
+     * @return SyncInvoker<ListMultiCloudResourcesRequest, ListMultiCloudResourcesResponse>
+     */
+    public SyncInvoker<ListMultiCloudResourcesRequest, ListMultiCloudResourcesResponse> listMultiCloudResourcesInvoker(
+        ListMultiCloudResourcesRequest request) {
+        return new SyncInvoker<>(request, CocMeta.listMultiCloudResources, hcClient);
+    }
+
+    /**
+     * 查询用户各种资源总数
+     *
+     * 查询用户各种资源总数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountMultiResourcesRequest 请求对象
+     * @return CountMultiResourcesResponse
+     */
+    public CountMultiResourcesResponse countMultiResources(CountMultiResourcesRequest request) {
+        return hcClient.syncInvokeHttp(request, CocMeta.countMultiResources);
+    }
+
+    /**
+     * 查询用户各种资源总数
+     *
+     * 查询用户各种资源总数
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CountMultiResourcesRequest 请求对象
+     * @return SyncInvoker<CountMultiResourcesRequest, CountMultiResourcesResponse>
+     */
+    public SyncInvoker<CountMultiResourcesRequest, CountMultiResourcesResponse> countMultiResourcesInvoker(
+        CountMultiResourcesRequest request) {
+        return new SyncInvoker<>(request, CocMeta.countMultiResources, hcClient);
     }
 
     /**

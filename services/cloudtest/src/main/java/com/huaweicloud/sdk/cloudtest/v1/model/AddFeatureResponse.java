@@ -2,14 +2,15 @@ package com.huaweicloud.sdk.cloudtest.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * api 返回的数据格式
+ * Response Object
  */
-public class ApiResultTestCaseVo {
+public class AddFeatureResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -19,7 +20,7 @@ public class ApiResultTestCaseVo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private ResultValueTestCaseVo result;
+    private ResultValueTestItemVo result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error")
@@ -36,7 +37,7 @@ public class ApiResultTestCaseVo {
 
     private String serverAddress;
 
-    public ApiResultTestCaseVo withStatus(String status) {
+    public AddFeatureResponse withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -53,14 +54,14 @@ public class ApiResultTestCaseVo {
         this.status = status;
     }
 
-    public ApiResultTestCaseVo withResult(ResultValueTestCaseVo result) {
+    public AddFeatureResponse withResult(ResultValueTestItemVo result) {
         this.result = result;
         return this;
     }
 
-    public ApiResultTestCaseVo withResult(Consumer<ResultValueTestCaseVo> resultSetter) {
+    public AddFeatureResponse withResult(Consumer<ResultValueTestItemVo> resultSetter) {
         if (this.result == null) {
-            this.result = new ResultValueTestCaseVo();
+            this.result = new ResultValueTestItemVo();
             resultSetter.accept(this.result);
         }
 
@@ -71,20 +72,20 @@ public class ApiResultTestCaseVo {
      * Get result
      * @return result
      */
-    public ResultValueTestCaseVo getResult() {
+    public ResultValueTestItemVo getResult() {
         return result;
     }
 
-    public void setResult(ResultValueTestCaseVo result) {
+    public void setResult(ResultValueTestItemVo result) {
         this.result = result;
     }
 
-    public ApiResultTestCaseVo withError(ApiError error) {
+    public AddFeatureResponse withError(ApiError error) {
         this.error = error;
         return this;
     }
 
-    public ApiResultTestCaseVo withError(Consumer<ApiError> errorSetter) {
+    public AddFeatureResponse withError(Consumer<ApiError> errorSetter) {
         if (this.error == null) {
             this.error = new ApiError();
             errorSetter.accept(this.error);
@@ -105,7 +106,7 @@ public class ApiResultTestCaseVo {
         this.error = error;
     }
 
-    public ApiResultTestCaseVo withRequestId(String requestId) {
+    public AddFeatureResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
     }
@@ -122,7 +123,7 @@ public class ApiResultTestCaseVo {
         this.requestId = requestId;
     }
 
-    public ApiResultTestCaseVo withServerAddress(String serverAddress) {
+    public AddFeatureResponse withServerAddress(String serverAddress) {
         this.serverAddress = serverAddress;
         return this;
     }
@@ -147,7 +148,7 @@ public class ApiResultTestCaseVo {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiResultTestCaseVo that = (ApiResultTestCaseVo) obj;
+        AddFeatureResponse that = (AddFeatureResponse) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
             && Objects.equals(this.error, that.error) && Objects.equals(this.requestId, that.requestId)
             && Objects.equals(this.serverAddress, that.serverAddress);
@@ -161,7 +162,7 @@ public class ApiResultTestCaseVo {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ApiResultTestCaseVo {\n");
+        sb.append("class AddFeatureResponse {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    error: ").append(toIndentedString(error)).append("\n");

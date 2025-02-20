@@ -68,6 +68,11 @@ public class ActionParams {
 
     private ReplayConfigInfo replayConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repair_info")
+
+    private ActionParamsRepairInfo repairInfo;
+
     public ActionParams withEndpoints(List<JobEndpointInfo> endpoints) {
         this.endpoints = endpoints;
         return this;
@@ -307,6 +312,32 @@ public class ActionParams {
         this.replayConfig = replayConfig;
     }
 
+    public ActionParams withRepairInfo(ActionParamsRepairInfo repairInfo) {
+        this.repairInfo = repairInfo;
+        return this;
+    }
+
+    public ActionParams withRepairInfo(Consumer<ActionParamsRepairInfo> repairInfoSetter) {
+        if (this.repairInfo == null) {
+            this.repairInfo = new ActionParamsRepairInfo();
+            repairInfoSetter.accept(this.repairInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get repairInfo
+     * @return repairInfo
+     */
+    public ActionParamsRepairInfo getRepairInfo() {
+        return repairInfo;
+    }
+
+    public void setRepairInfo(ActionParamsRepairInfo repairInfo) {
+        this.repairInfo = repairInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -324,7 +355,7 @@ public class ActionParams {
             && Objects.equals(this.isOnlyInitTask, that.isOnlyInitTask)
             && Objects.equals(this.forceDelete, that.forceDelete)
             && Objects.equals(this.publicIpConfig, that.publicIpConfig)
-            && Objects.equals(this.replayConfig, that.replayConfig);
+            && Objects.equals(this.replayConfig, that.replayConfig) && Objects.equals(this.repairInfo, that.repairInfo);
     }
 
     @Override
@@ -339,7 +370,8 @@ public class ActionParams {
             isOnlyInitTask,
             forceDelete,
             publicIpConfig,
-            replayConfig);
+            replayConfig,
+            repairInfo);
     }
 
     @Override
@@ -357,6 +389,7 @@ public class ActionParams {
         sb.append("    forceDelete: ").append(toIndentedString(forceDelete)).append("\n");
         sb.append("    publicIpConfig: ").append(toIndentedString(publicIpConfig)).append("\n");
         sb.append("    replayConfig: ").append(toIndentedString(replayConfig)).append("\n");
+        sb.append("    repairInfo: ").append(toIndentedString(repairInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

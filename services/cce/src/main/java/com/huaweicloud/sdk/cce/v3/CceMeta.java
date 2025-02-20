@@ -2037,19 +2037,19 @@ public class CceMeta {
                 ShowClusterSupportConfigurationRequest::setClusterId));
         builder.<String>withRequestField("cluster_type",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getClusterType,
                 ShowClusterSupportConfigurationRequest::setClusterType));
         builder.<String>withRequestField("cluster_version",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getClusterVersion,
                 ShowClusterSupportConfigurationRequest::setClusterVersion));
         builder.<String>withRequestField("network_mode",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterSupportConfigurationRequest::getNetworkMode,
                 ShowClusterSupportConfigurationRequest::setNetworkMode));

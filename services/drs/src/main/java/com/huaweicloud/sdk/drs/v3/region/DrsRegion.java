@@ -76,6 +76,8 @@ public class DrsRegion {
     public static final Region AP_SOUTHEAST_5 =
         new Region("ap-southeast-5", "https://drs.ap-southeast-5.myhuaweicloud.com");
 
+    public static final Region CN_EAST_5 = new Region("cn-east-5", "https://drs.cn-east-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DRS");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -109,6 +111,7 @@ public class DrsRegion {
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         map.put("ru-northwest-2", RU_NORTHWEST_2);
         map.put("ap-southeast-5", AP_SOUTHEAST_5);
+        map.put("cn-east-5", CN_EAST_5);
         return Collections.unmodifiableMap(map);
     }
 

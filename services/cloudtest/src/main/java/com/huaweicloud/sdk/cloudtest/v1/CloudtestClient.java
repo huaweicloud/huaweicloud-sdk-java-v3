@@ -1,5 +1,7 @@
 package com.huaweicloud.sdk.cloudtest.v1;
 
+import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseRequest;
@@ -308,6 +310,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateVersionTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateVersionTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UploadStepImgRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UploadStepImgResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
@@ -4135,6 +4139,34 @@ public class CloudtestClient {
     }
 
     /**
+     * 上传测试步骤图片
+     *
+     * 对外API
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadStepImgRequest 请求对象
+     * @return UploadStepImgResponse
+     */
+    public UploadStepImgResponse uploadStepImg(UploadStepImgRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.uploadStepImg);
+    }
+
+    /**
+     * 上传测试步骤图片
+     *
+     * 对外API
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadStepImgRequest 请求对象
+     * @return SyncInvoker<UploadStepImgRequest, UploadStepImgResponse>
+     */
+    public SyncInvoker<UploadStepImgRequest, UploadStepImgResponse> uploadStepImgInvoker(UploadStepImgRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.uploadStepImg, hcClient);
+    }
+
+    /**
      * 批量删除因子
      *
      * 批量删除因子
@@ -4766,6 +4798,34 @@ public class CloudtestClient {
     public SyncInvoker<UpdateMindmapNameRequest, UpdateMindmapNameResponse> updateMindmapNameInvoker(
         UpdateMindmapNameRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.updateMindmapName, hcClient);
+    }
+
+    /**
+     * 添加目录信息
+     *
+     * 添加目录信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFeatureRequest 请求对象
+     * @return AddFeatureResponse
+     */
+    public AddFeatureResponse addFeature(AddFeatureRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.addFeature);
+    }
+
+    /**
+     * 添加目录信息
+     *
+     * 添加目录信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFeatureRequest 请求对象
+     * @return SyncInvoker<AddFeatureRequest, AddFeatureResponse>
+     */
+    public SyncInvoker<AddFeatureRequest, AddFeatureResponse> addFeatureInvoker(AddFeatureRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.addFeature, hcClient);
     }
 
 }

@@ -1818,12 +1818,6 @@ public class HssMeta {
                 ListDownloadExportedFileRequest::setRegion));
 
         // response
-        builder.<String>withResponseField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListDownloadExportedFileResponse::getBody,
-                ListDownloadExportedFileResponse::setBody));
 
         return builder.build();
     }

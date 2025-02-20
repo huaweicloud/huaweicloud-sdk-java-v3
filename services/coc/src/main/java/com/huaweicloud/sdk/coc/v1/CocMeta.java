@@ -1,6 +1,11 @@
 package com.huaweicloud.sdk.coc.v1;
 
 import com.huaweicloud.sdk.coc.v1.model.AddScriptModel;
+import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewRequest;
+import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewResponse;
+import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
+import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesRequest;
@@ -37,6 +42,8 @@ import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleExternalIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.JobScriptOrderOperationBody;
+import com.huaweicloud.sdk.coc.v1.model.ListApplicationModelRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListApplicationModelResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
@@ -46,6 +53,8 @@ import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListResourceRequest;
@@ -129,6 +138,78 @@ public class CocMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListApplicationsRequest::getLimit, ListApplicationsRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApplicationModelRequest, ListApplicationModelResponse> listApplicationModel =
+        genForListApplicationModel();
+
+    private static HttpRequestDef<ListApplicationModelRequest, ListApplicationModelResponse> genForListApplicationModel() {
+        // basic
+        HttpRequestDef.Builder<ListApplicationModelRequest, ListApplicationModelResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListApplicationModelRequest.class, ListApplicationModelResponse.class)
+            .withName("ListApplicationModel")
+            .withUri("/v1/application-model/next")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplicationModelRequest::getApplicationId,
+                ListApplicationModelRequest::setApplicationId));
+        builder.<String>withRequestField("component_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplicationModelRequest::getComponentId,
+                ListApplicationModelRequest::setComponentId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApplicationModelRequest::getLimit, ListApplicationModelRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListApplicationModelRequest::getMarker, ListApplicationModelRequest::setMarker));
+        builder.<Integer>withRequestField("page_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListApplicationModelRequest::getPageNo, ListApplicationModelRequest::setPageNo));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateApplicationViewRequest, BatchCreateApplicationViewResponse> batchCreateApplicationView =
+        genForBatchCreateApplicationView();
+
+    private static HttpRequestDef<BatchCreateApplicationViewRequest, BatchCreateApplicationViewResponse> genForBatchCreateApplicationView() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateApplicationViewRequest, BatchCreateApplicationViewResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchCreateApplicationViewRequest.class,
+                    BatchCreateApplicationViewResponse.class)
+                .withName("BatchCreateApplicationView")
+                .withUri("/v1/application-view/batch-create")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<BatchCreateApplicationViewRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchCreateApplicationViewRequestBody.class),
+            f -> f.withMarshaller(BatchCreateApplicationViewRequest::getBody,
+                BatchCreateApplicationViewRequest::setBody));
 
         // response
 
@@ -548,6 +629,103 @@ public class CocMeta {
             TypeCasts.uncheckedConversion(ListAuthorizableTicketsReq.class),
             f -> f.withMarshaller(ListAuthorizableTicketsExternalRequest::getBody,
                 ListAuthorizableTicketsExternalRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListMultiCloudResourcesRequest, ListMultiCloudResourcesResponse> listMultiCloudResources =
+        genForListMultiCloudResources();
+
+    private static HttpRequestDef<ListMultiCloudResourcesRequest, ListMultiCloudResourcesResponse> genForListMultiCloudResources() {
+        // basic
+        HttpRequestDef.Builder<ListMultiCloudResourcesRequest, ListMultiCloudResourcesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListMultiCloudResourcesRequest.class, ListMultiCloudResourcesResponse.class)
+            .withName("ListMultiCloudResources")
+            .withUri("/v1/multicloud-resources")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vendor",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getVendor,
+                ListMultiCloudResourcesRequest::setVendor));
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getType, ListMultiCloudResourcesRequest::setType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getLimit, ListMultiCloudResourcesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getMarker,
+                ListMultiCloudResourcesRequest::setMarker));
+        builder.<List<String>>withRequestField("resource_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getResourceIdList,
+                ListMultiCloudResourcesRequest::setResourceIdList));
+        builder.<List<String>>withRequestField("name_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getNameList,
+                ListMultiCloudResourcesRequest::setNameList));
+        builder.<List<String>>withRequestField("region_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMultiCloudResourcesRequest::getRegionIdList,
+                ListMultiCloudResourcesRequest::setRegionIdList));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CountMultiResourcesRequest, CountMultiResourcesResponse> countMultiResources =
+        genForCountMultiResources();
+
+    private static HttpRequestDef<CountMultiResourcesRequest, CountMultiResourcesResponse> genForCountMultiResources() {
+        // basic
+        HttpRequestDef.Builder<CountMultiResourcesRequest, CountMultiResourcesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, CountMultiResourcesRequest.class, CountMultiResourcesResponse.class)
+                .withName("CountMultiResources")
+                .withUri("/v1/resources/multi-count")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vendor",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountMultiResourcesRequest::getVendor, CountMultiResourcesRequest::setVendor));
+        builder.<String>withRequestField("view_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountMultiResourcesRequest::getViewId, CountMultiResourcesRequest::setViewId));
+        builder.<Boolean>withRequestField("is_resource",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(CountMultiResourcesRequest::getIsResource,
+                CountMultiResourcesRequest::setIsResource));
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CountMultiResourcesRequest::getRegionId, CountMultiResourcesRequest::setRegionId));
 
         // response
 

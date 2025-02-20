@@ -134,6 +134,11 @@ public class FlightItineraryResult {
     private String issueStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gp_number")
+
+    private String gpNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "itinerary_list")
 
     private List<ItineraryList> itineraryList = null;
@@ -553,6 +558,23 @@ public class FlightItineraryResult {
         this.issueStatus = issueStatus;
     }
 
+    public FlightItineraryResult withGpNumber(String gpNumber) {
+        this.gpNumber = gpNumber;
+        return this;
+    }
+
+    /**
+     * gp单号。 
+     * @return gpNumber
+     */
+    public String getGpNumber() {
+        return gpNumber;
+    }
+
+    public void setGpNumber(String gpNumber) {
+        this.gpNumber = gpNumber;
+    }
+
     public FlightItineraryResult withItineraryList(List<ItineraryList> itineraryList) {
         this.itineraryList = itineraryList;
         return this;
@@ -627,7 +649,7 @@ public class FlightItineraryResult {
             && Objects.equals(this.taxRate, that.taxRate) && Objects.equals(this.buyerName, that.buyerName)
             && Objects.equals(this.buyerId, that.buyerId) && Objects.equals(this.number, that.number)
             && Objects.equals(this.internationalFlag, that.internationalFlag)
-            && Objects.equals(this.issueStatus, that.issueStatus)
+            && Objects.equals(this.issueStatus, that.issueStatus) && Objects.equals(this.gpNumber, that.gpNumber)
             && Objects.equals(this.itineraryList, that.itineraryList)
             && Objects.equals(this.confidence, that.confidence);
     }
@@ -658,6 +680,7 @@ public class FlightItineraryResult {
             number,
             internationalFlag,
             issueStatus,
+            gpNumber,
             itineraryList,
             confidence);
     }
@@ -690,6 +713,7 @@ public class FlightItineraryResult {
         sb.append("    number: ").append(toIndentedString(number)).append("\n");
         sb.append("    internationalFlag: ").append(toIndentedString(internationalFlag)).append("\n");
         sb.append("    issueStatus: ").append(toIndentedString(issueStatus)).append("\n");
+        sb.append("    gpNumber: ").append(toIndentedString(gpNumber)).append("\n");
         sb.append("    itineraryList: ").append(toIndentedString(itineraryList)).append("\n");
         sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
         sb.append("}");

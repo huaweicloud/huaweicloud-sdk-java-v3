@@ -22,7 +22,7 @@ public class ListInstanceTopSlowLogResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top_avg_query_time_slow_logs")
 
-    private List<TopInstanceSlowLogTopAvgQueryTimeSlowLogs> topAvgQueryTimeSlowLogs = null;
+    private List<TopInstanceSlowLogTopExecuteSlowLogs> topAvgQueryTimeSlowLogs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "top_max_query_time_slow_logs")
@@ -71,13 +71,13 @@ public class ListInstanceTopSlowLogResponse extends SdkResponse {
     }
 
     public ListInstanceTopSlowLogResponse withTopAvgQueryTimeSlowLogs(
-        List<TopInstanceSlowLogTopAvgQueryTimeSlowLogs> topAvgQueryTimeSlowLogs) {
+        List<TopInstanceSlowLogTopExecuteSlowLogs> topAvgQueryTimeSlowLogs) {
         this.topAvgQueryTimeSlowLogs = topAvgQueryTimeSlowLogs;
         return this;
     }
 
     public ListInstanceTopSlowLogResponse addTopAvgQueryTimeSlowLogsItem(
-        TopInstanceSlowLogTopAvgQueryTimeSlowLogs topAvgQueryTimeSlowLogsItem) {
+        TopInstanceSlowLogTopExecuteSlowLogs topAvgQueryTimeSlowLogsItem) {
         if (this.topAvgQueryTimeSlowLogs == null) {
             this.topAvgQueryTimeSlowLogs = new ArrayList<>();
         }
@@ -86,7 +86,7 @@ public class ListInstanceTopSlowLogResponse extends SdkResponse {
     }
 
     public ListInstanceTopSlowLogResponse withTopAvgQueryTimeSlowLogs(
-        Consumer<List<TopInstanceSlowLogTopAvgQueryTimeSlowLogs>> topAvgQueryTimeSlowLogsSetter) {
+        Consumer<List<TopInstanceSlowLogTopExecuteSlowLogs>> topAvgQueryTimeSlowLogsSetter) {
         if (this.topAvgQueryTimeSlowLogs == null) {
             this.topAvgQueryTimeSlowLogs = new ArrayList<>();
         }
@@ -98,11 +98,11 @@ public class ListInstanceTopSlowLogResponse extends SdkResponse {
      * 平均执行时间列表
      * @return topAvgQueryTimeSlowLogs
      */
-    public List<TopInstanceSlowLogTopAvgQueryTimeSlowLogs> getTopAvgQueryTimeSlowLogs() {
+    public List<TopInstanceSlowLogTopExecuteSlowLogs> getTopAvgQueryTimeSlowLogs() {
         return topAvgQueryTimeSlowLogs;
     }
 
-    public void setTopAvgQueryTimeSlowLogs(List<TopInstanceSlowLogTopAvgQueryTimeSlowLogs> topAvgQueryTimeSlowLogs) {
+    public void setTopAvgQueryTimeSlowLogs(List<TopInstanceSlowLogTopExecuteSlowLogs> topAvgQueryTimeSlowLogs) {
         this.topAvgQueryTimeSlowLogs = topAvgQueryTimeSlowLogs;
     }
 

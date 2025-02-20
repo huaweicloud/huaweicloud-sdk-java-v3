@@ -92,7 +92,7 @@ public class DefaultHttpListener implements Interceptor {
                 Buffer buffer = new Buffer();
                 body.writeTo(buffer);
                 reqBody = buffer.readUtf8();
-            } else if (HttpUtils.isOctetStreamContentType(contentType)) {
+            } else if (HttpUtils.isFileStreamContentType(contentType)) {
                 reqBody = body.contentLength() > 0 || body.contentLength() == -1 ? "******" : null;
             }
         }
@@ -146,7 +146,7 @@ public class DefaultHttpListener implements Interceptor {
                 if (HttpUtils.isTextBasedContentType(contentType)) {
                     respBody = body.string();
                     responseBuilder.body(createResponseBody(respBody, body.contentType()));
-                } else if (HttpUtils.isOctetStreamContentType(contentType)) {
+                } else if (HttpUtils.isFileStreamContentType(contentType)) {
                     respBody = body.contentLength() > 0 || body.contentLength() == -1 ? "******" : null;
                 }
             }

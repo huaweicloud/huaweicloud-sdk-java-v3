@@ -153,6 +153,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowReplicationJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplicationJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowTimelineRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowTimelineResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowUpdateObjectSavingStatusRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowUpdateObjectSavingStatusResponse;
 import com.huaweicloud.sdk.drs.v5.model.StopJobActionRequest;
@@ -2426,6 +2428,35 @@ public class DrsAsyncClient {
     public AsyncInvoker<ShowSupportObjectTypeRequest, ShowSupportObjectTypeResponse> showSupportObjectTypeAsyncInvoker(
         ShowSupportObjectTypeRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.showSupportObjectType, hcClient);
+    }
+
+    /**
+     * 展示时间轴
+     *
+     * 指定不同的任务ID可以展示当前任务创建时间、启动时间、重试、重置等操作的时间轴信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTimelineRequest 请求对象
+     * @return CompletableFuture<ShowTimelineResponse>
+     */
+    public CompletableFuture<ShowTimelineResponse> showTimelineAsync(ShowTimelineRequest request) {
+        return hcClient.asyncInvokeHttp(request, DrsMeta.showTimeline);
+    }
+
+    /**
+     * 展示时间轴
+     *
+     * 指定不同的任务ID可以展示当前任务创建时间、启动时间、重试、重置等操作的时间轴信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTimelineRequest 请求对象
+     * @return AsyncInvoker<ShowTimelineRequest, ShowTimelineResponse>
+     */
+    public AsyncInvoker<ShowTimelineRequest, ShowTimelineResponse> showTimelineAsyncInvoker(
+        ShowTimelineRequest request) {
+        return new AsyncInvoker<>(request, DrsMeta.showTimeline, hcClient);
     }
 
     /**

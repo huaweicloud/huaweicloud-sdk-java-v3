@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
+import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsRequest;
+import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateGrantsRequest;
@@ -69,6 +71,8 @@ import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowUserDetailRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowUserDetailResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateGrantRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateGrantResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretEventRequest;
@@ -122,6 +126,35 @@ public class CsmsClient {
     public SyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTagsInvoker(
         BatchCreateOrDeleteTagsRequest request) {
         return new SyncInvoker<>(request, CsmsMeta.batchCreateOrDeleteTags, hcClient);
+    }
+
+    /**
+     * 批量导入凭据
+     *
+     * 批量导入凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchImportSecretsRequest 请求对象
+     * @return BatchImportSecretsResponse
+     */
+    public BatchImportSecretsResponse batchImportSecrets(BatchImportSecretsRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.batchImportSecrets);
+    }
+
+    /**
+     * 批量导入凭据
+     *
+     * 批量导入凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchImportSecretsRequest 请求对象
+     * @return SyncInvoker<BatchImportSecretsRequest, BatchImportSecretsResponse>
+     */
+    public SyncInvoker<BatchImportSecretsRequest, BatchImportSecretsResponse> batchImportSecretsInvoker(
+        BatchImportSecretsRequest request) {
+        return new SyncInvoker<>(request, CsmsMeta.batchImportSecrets, hcClient);
     }
 
     /**
@@ -1048,6 +1081,35 @@ public class CsmsClient {
     public SyncInvoker<ShowSecretVersionRequest, ShowSecretVersionResponse> showSecretVersionInvoker(
         ShowSecretVersionRequest request) {
         return new SyncInvoker<>(request, CsmsMeta.showSecretVersion, hcClient);
+    }
+
+    /**
+     * 获取用户详情
+     *
+     * 根据用户id查询用户详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUserDetailRequest 请求对象
+     * @return ShowUserDetailResponse
+     */
+    public ShowUserDetailResponse showUserDetail(ShowUserDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, CsmsMeta.showUserDetail);
+    }
+
+    /**
+     * 获取用户详情
+     *
+     * 根据用户id查询用户详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUserDetailRequest 请求对象
+     * @return SyncInvoker<ShowUserDetailRequest, ShowUserDetailResponse>
+     */
+    public SyncInvoker<ShowUserDetailRequest, ShowUserDetailResponse> showUserDetailInvoker(
+        ShowUserDetailRequest request) {
+        return new SyncInvoker<>(request, CsmsMeta.showUserDetail, hcClient);
     }
 
     /**

@@ -11,9 +11,9 @@ import java.util.Objects;
 public class ClientCert {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "validation")
+    @JsonProperty(value = "status")
 
-    private Integer validation;
+    private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trusted_cert")
@@ -25,21 +25,21 @@ public class ClientCert {
 
     private String hosts;
 
-    public ClientCert withValidation(Integer validation) {
-        this.validation = validation;
+    public ClientCert withStatus(String status) {
+        this.status = status;
         return this;
     }
 
     /**
-     * 客户端证书配置开关，1：打开；0：关闭。
-     * @return validation
+     * 客户端证书配置开关，on：打开；off：关闭。
+     * @return status
      */
-    public Integer getValidation() {
-        return validation;
+    public String getStatus() {
+        return status;
     }
 
-    public void setValidation(Integer validation) {
-        this.validation = validation;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public ClientCert withTrustedCert(String trustedCert) {
@@ -85,20 +85,20 @@ public class ClientCert {
             return false;
         }
         ClientCert that = (ClientCert) obj;
-        return Objects.equals(this.validation, that.validation) && Objects.equals(this.trustedCert, that.trustedCert)
+        return Objects.equals(this.status, that.status) && Objects.equals(this.trustedCert, that.trustedCert)
             && Objects.equals(this.hosts, that.hosts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(validation, trustedCert, hosts);
+        return Objects.hash(status, trustedCert, hosts);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ClientCert {\n");
-        sb.append("    validation: ").append(toIndentedString(validation)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    trustedCert: ").append(toIndentedString(trustedCert)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
         sb.append("}");

@@ -96,7 +96,7 @@ public class ShowJobDetailRequest {
     private XLanguageEnum xLanguage;
 
     /**
-     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。
+     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。
      */
     public static final class TypeEnum {
 
@@ -150,6 +150,31 @@ public class ShowJobDetailRequest {
          */
         public static final TypeEnum CLOUD_CONNECTION = new TypeEnum("cloud_connection");
 
+        /**
+         * Enum DIAGNOSIS for value: "diagnosis"
+         */
+        public static final TypeEnum DIAGNOSIS = new TypeEnum("diagnosis");
+
+        /**
+         * Enum DIAGNOSIS_HISTORY for value: "diagnosis_history"
+         */
+        public static final TypeEnum DIAGNOSIS_HISTORY = new TypeEnum("diagnosis_history");
+
+        /**
+         * Enum REPAIR_PROGRESS for value: "repair_progress"
+         */
+        public static final TypeEnum REPAIR_PROGRESS = new TypeEnum("repair_progress");
+
+        /**
+         * Enum REPAIR_DETAIL for value: "repair_detail"
+         */
+        public static final TypeEnum REPAIR_DETAIL = new TypeEnum("repair_detail");
+
+        /**
+         * Enum REPAIR_EXPORT_STATUS for value: "repair_export_status"
+         */
+        public static final TypeEnum REPAIR_EXPORT_STATUS = new TypeEnum("repair_export_status");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -164,6 +189,11 @@ public class ShowJobDetailRequest {
             map.put("file", FILE);
             map.put("is_writable", IS_WRITABLE);
             map.put("cloud_connection", CLOUD_CONNECTION);
+            map.put("diagnosis", DIAGNOSIS);
+            map.put("diagnosis_history", DIAGNOSIS_HISTORY);
+            map.put("repair_progress", REPAIR_PROGRESS);
+            map.put("repair_detail", REPAIR_DETAIL);
+            map.put("repair_export_status", REPAIR_EXPORT_STATUS);
             return Collections.unmodifiableMap(map);
         }
 
@@ -620,7 +650,7 @@ public class ShowJobDetailRequest {
     }
 
     /**
-     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。
+     * 任务详情类型。取值： - overview：任务概览信息。 - detail：任务基本信息。 - network：测试连接结果信息，需配合query_id参数一起查询。 - precheck：预检查结果信息，需配合query_id参数一起查询。 - progress：任务进度信息。 - log：任务日志信息，支持分页查询参数offset与limit。 - compare：查询对比任务。 - file：对象导入信息。 - is_writable：目标库解除只读结果。 - cloud_connection：录制回放他云连通性测试，需配合query_id参数一起查询。 - diagnosis：查询一键诊断结果，需配合query_id参数一起查询。 - diagnosis_history：查询一键诊断结果历史，需配合query_id参数一起查询。 - repair_progress：数据修复进度，需配合query_id参数一起查询。 - repair_detail：数据修复详情，需配合query_id参数一起查询。 - repair_export_status：查询数据修复SQL导出状态，需配合compare_task_id参数一起查询。
      * @return type
      */
     public TypeEnum getType() {

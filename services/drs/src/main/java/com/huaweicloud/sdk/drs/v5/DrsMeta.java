@@ -181,6 +181,8 @@ import com.huaweicloud.sdk.drs.v5.model.ShowReplicationJobRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowReplicationJobResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowSupportObjectTypeResponse;
+import com.huaweicloud.sdk.drs.v5.model.ShowTimelineRequest;
+import com.huaweicloud.sdk.drs.v5.model.ShowTimelineResponse;
 import com.huaweicloud.sdk.drs.v5.model.ShowUpdateObjectSavingStatusRequest;
 import com.huaweicloud.sdk.drs.v5.model.ShowUpdateObjectSavingStatusResponse;
 import com.huaweicloud.sdk.drs.v5.model.SingleCreateJobReq;
@@ -3139,6 +3141,43 @@ public class DrsMeta {
             TypeCasts.uncheckedConversion(ShowSupportObjectTypeRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowSupportObjectTypeRequest::getXLanguage,
                 ShowSupportObjectTypeRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTimelineRequest, ShowTimelineResponse> showTimeline = genForShowTimeline();
+
+    private static HttpRequestDef<ShowTimelineRequest, ShowTimelineResponse> genForShowTimeline() {
+        // basic
+        HttpRequestDef.Builder<ShowTimelineRequest, ShowTimelineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTimelineRequest.class, ShowTimelineResponse.class)
+                .withName("ShowTimeline")
+                .withUri("/v5/{project_id}/jobs/{job_id}/timelines")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTimelineRequest::getJobId, ShowTimelineRequest::setJobId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTimelineRequest::getLimit, ShowTimelineRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTimelineRequest::getOffset, ShowTimelineRequest::setOffset));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTimelineRequest::getXLanguage, ShowTimelineRequest::setXLanguage));
 
         // response
 

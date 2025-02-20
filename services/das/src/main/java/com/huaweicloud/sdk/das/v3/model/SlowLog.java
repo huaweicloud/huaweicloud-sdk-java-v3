@@ -16,6 +16,11 @@ public class SlowLog {
     private String sql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sql_template_id")
+
+    private String sqlTemplateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "database")
 
     private String database;
@@ -70,6 +75,23 @@ public class SlowLog {
 
     public void setSql(String sql) {
         this.sql = sql;
+    }
+
+    public SlowLog withSqlTemplateId(String sqlTemplateId) {
+        this.sqlTemplateId = sqlTemplateId;
+        return this;
+    }
+
+    /**
+     * SQL模板ID。
+     * @return sqlTemplateId
+     */
+    public String getSqlTemplateId() {
+        return sqlTemplateId;
+    }
+
+    public void setSqlTemplateId(String sqlTemplateId) {
+        this.sqlTemplateId = sqlTemplateId;
     }
 
     public SlowLog withDatabase(String database) {
@@ -217,16 +239,17 @@ public class SlowLog {
             return false;
         }
         SlowLog that = (SlowLog) obj;
-        return Objects.equals(this.sql, that.sql) && Objects.equals(this.database, that.database)
-            && Objects.equals(this.client, that.client) && Objects.equals(this.user, that.user)
-            && Objects.equals(this.executeAt, that.executeAt) && Objects.equals(this.queryTime, that.queryTime)
-            && Objects.equals(this.lockTime, that.lockTime) && Objects.equals(this.rowsExamined, that.rowsExamined)
-            && Objects.equals(this.rowsSent, that.rowsSent);
+        return Objects.equals(this.sql, that.sql) && Objects.equals(this.sqlTemplateId, that.sqlTemplateId)
+            && Objects.equals(this.database, that.database) && Objects.equals(this.client, that.client)
+            && Objects.equals(this.user, that.user) && Objects.equals(this.executeAt, that.executeAt)
+            && Objects.equals(this.queryTime, that.queryTime) && Objects.equals(this.lockTime, that.lockTime)
+            && Objects.equals(this.rowsExamined, that.rowsExamined) && Objects.equals(this.rowsSent, that.rowsSent);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sql, database, client, user, executeAt, queryTime, lockTime, rowsExamined, rowsSent);
+        return Objects
+            .hash(sql, sqlTemplateId, database, client, user, executeAt, queryTime, lockTime, rowsExamined, rowsSent);
     }
 
     @Override
@@ -234,6 +257,7 @@ public class SlowLog {
         StringBuilder sb = new StringBuilder();
         sb.append("class SlowLog {\n");
         sb.append("    sql: ").append(toIndentedString(sql)).append("\n");
+        sb.append("    sqlTemplateId: ").append(toIndentedString(sqlTemplateId)).append("\n");
         sb.append("    database: ").append(toIndentedString(database)).append("\n");
         sb.append("    client: ").append(toIndentedString(client)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");

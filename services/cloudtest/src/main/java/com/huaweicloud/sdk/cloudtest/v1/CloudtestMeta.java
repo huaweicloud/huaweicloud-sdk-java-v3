@@ -1,12 +1,14 @@
 package com.huaweicloud.sdk.cloudtest.v1;
 
+import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddRelationsInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddResourceInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddTestItemInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.AlarmStatisticsQuery;
 import com.huaweicloud.sdk.cloudtest.v1.model.AlertStatisticsDto;
-import com.huaweicloud.sdk.cloudtest.v1.model.ApiResultTestCaseVo;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorRequest;
@@ -381,6 +383,9 @@ import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateUserDnsMappingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateVersionTestCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateVersionTestCaseResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.UploadStepImgRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.UploadStepImgRequestBody;
+import com.huaweicloud.sdk.cloudtest.v1.model.UploadStepImgResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -970,10 +975,10 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateVersionTestCaseRequest::getVersionId,
                 CreateVersionTestCaseRequest::setVersionId));
-        builder.<ApiResultTestCaseVo>withRequestField("body",
+        builder.<TestCaseInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ApiResultTestCaseVo.class),
+            TypeCasts.uncheckedConversion(TestCaseInfo.class),
             f -> f.withMarshaller(CreateVersionTestCaseRequest::getBody, CreateVersionTestCaseRequest::setBody));
 
         // response
@@ -4570,6 +4575,34 @@ public class CloudtestMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UploadStepImgRequest, UploadStepImgResponse> uploadStepImg =
+        genForUploadStepImg();
+
+    private static HttpRequestDef<UploadStepImgRequest, UploadStepImgResponse> genForUploadStepImg() {
+        // basic
+        HttpRequestDef.Builder<UploadStepImgRequest, UploadStepImgResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadStepImgRequest.class, UploadStepImgResponse.class)
+                .withName("UploadStepImg")
+                .withUri("/v4/{project_id}/images/upload")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadStepImgRequest::getProjectId, UploadStepImgRequest::setProjectId));
+        builder.<UploadStepImgRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadStepImgRequestBody.class),
+            f -> f.withMarshaller(UploadStepImgRequest::getBody, UploadStepImgRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteFacotrByIdsRequest, BatchDeleteFacotrByIdsResponse> batchDeleteFacotrByIds =
         genForBatchDeleteFacotrByIds();
 
@@ -5218,6 +5251,28 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateMindmapNameRequest::getName, UpdateMindmapNameRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddFeatureRequest, AddFeatureResponse> addFeature = genForAddFeature();
+
+    private static HttpRequestDef<AddFeatureRequest, AddFeatureResponse> genForAddFeature() {
+        // basic
+        HttpRequestDef.Builder<AddFeatureRequest, AddFeatureResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddFeatureRequest.class, AddFeatureResponse.class)
+                .withName("AddFeature")
+                .withUri("/v4/features")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AddTestItemInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddTestItemInfo.class),
+            f -> f.withMarshaller(AddFeatureRequest::getBody, AddFeatureRequest::setBody));
 
         // response
 

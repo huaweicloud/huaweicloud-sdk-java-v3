@@ -40,6 +40,8 @@ import com.huaweicloud.sdk.das.v3.model.DeleteProcessResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesBody;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportFullSqlDetailsRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportFullSqlDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowQueryLogsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowQueryLogsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlStatisticsRequest;
@@ -63,6 +65,8 @@ import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksRequest;
+import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
@@ -135,6 +139,8 @@ import com.huaweicloud.sdk.das.v3.model.UpdateDbUserResponse;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesBody;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.UpdateSqlLimitRulesResponse;
+
+import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class DasMeta {
@@ -578,6 +584,183 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteSqlLimitRulesBody.class),
             f -> f.withMarshaller(DeleteSqlLimitRulesRequest::getBody, DeleteSqlLimitRulesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExportFullSqlDetailsRequest, ExportFullSqlDetailsResponse> exportFullSqlDetails =
+        genForExportFullSqlDetails();
+
+    private static HttpRequestDef<ExportFullSqlDetailsRequest, ExportFullSqlDetailsResponse> genForExportFullSqlDetails() {
+        // basic
+        HttpRequestDef.Builder<ExportFullSqlDetailsRequest, ExportFullSqlDetailsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ExportFullSqlDetailsRequest.class, ExportFullSqlDetailsResponse.class)
+            .withName("ExportFullSqlDetails")
+            .withUri("/v3/{project_id}/instances/{instance_id}/full-sql-search")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getInstanceId,
+                ExportFullSqlDetailsRequest::setInstanceId));
+        builder.<Long>withRequestField("start_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getStartAt, ExportFullSqlDetailsRequest::setStartAt));
+        builder.<Long>withRequestField("end_at",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getEndAt, ExportFullSqlDetailsRequest::setEndAt));
+        builder.<List<Long>>withRequestField("task_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getTaskIds, ExportFullSqlDetailsRequest::setTaskIds));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getNodeId, ExportFullSqlDetailsRequest::setNodeId));
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getKeyword, ExportFullSqlDetailsRequest::setKeyword));
+        builder.<String>withRequestField("fuzzy",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getFuzzy, ExportFullSqlDetailsRequest::setFuzzy));
+        builder.<String>withRequestField("user_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getUserList, ExportFullSqlDetailsRequest::setUserList));
+        builder.<String>withRequestField("db_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getDbList, ExportFullSqlDetailsRequest::setDbList));
+        builder.<String>withRequestField("operation_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getOperationList,
+                ExportFullSqlDetailsRequest::setOperationList));
+        builder.<String>withRequestField("client_ip_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getClientIpList,
+                ExportFullSqlDetailsRequest::setClientIpList));
+        builder.<String>withRequestField("thread_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getThreadIdList,
+                ExportFullSqlDetailsRequest::setThreadIdList));
+        builder.<String>withRequestField("trx_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getTrxIdList,
+                ExportFullSqlDetailsRequest::setTrxIdList));
+        builder.<String>withRequestField("session_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getSessionIdList,
+                ExportFullSqlDetailsRequest::setSessionIdList));
+        builder.<String>withRequestField("status_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getStatusList,
+                ExportFullSqlDetailsRequest::setStatusList));
+        builder.<String>withRequestField("sql_template_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getSqlTemplateIds,
+                ExportFullSqlDetailsRequest::setSqlTemplateIds));
+        builder.<Double>withRequestField("cost_min",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Double.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getCostMin, ExportFullSqlDetailsRequest::setCostMin));
+        builder.<Double>withRequestField("cost_max",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Double.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getCostMax, ExportFullSqlDetailsRequest::setCostMax));
+        builder.<Long>withRequestField("scan_min",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getScanMin, ExportFullSqlDetailsRequest::setScanMin));
+        builder.<Long>withRequestField("scan_max",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getScanMax, ExportFullSqlDetailsRequest::setScanMax));
+        builder.<Long>withRequestField("affect_min",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getAffectMin,
+                ExportFullSqlDetailsRequest::setAffectMin));
+        builder.<Long>withRequestField("affect_max",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getAffectMax,
+                ExportFullSqlDetailsRequest::setAffectMax));
+        builder.<Long>withRequestField("return_min",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getReturnMin,
+                ExportFullSqlDetailsRequest::setReturnMin));
+        builder.<Long>withRequestField("return_max",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getReturnMax,
+                ExportFullSqlDetailsRequest::setReturnMax));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getSortField,
+                ExportFullSqlDetailsRequest::setSortField));
+        builder.<Boolean>withRequestField("asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getAsc, ExportFullSqlDetailsRequest::setAsc));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getPage, ExportFullSqlDetailsRequest::setPage));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getLimit, ExportFullSqlDetailsRequest::setLimit));
+        builder.<ExportFullSqlDetailsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExportFullSqlDetailsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExportFullSqlDetailsRequest::getXLanguage,
+                ExportFullSqlDetailsRequest::setXLanguage));
 
         // response
 
@@ -1136,6 +1319,116 @@ public class DasMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListDbUsersRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ListDbUsersRequest::getXLanguage, ListDbUsersRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFullSqlTasksRequest, ListFullSqlTasksResponse> listFullSqlTasks =
+        genForListFullSqlTasks();
+
+    private static HttpRequestDef<ListFullSqlTasksRequest, ListFullSqlTasksResponse> genForListFullSqlTasks() {
+        // basic
+        HttpRequestDef.Builder<ListFullSqlTasksRequest, ListFullSqlTasksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFullSqlTasksRequest.class, ListFullSqlTasksResponse.class)
+                .withName("ListFullSqlTasks")
+                .withUri("/v3/{project_id}/instances/{instance_id}/full-sql-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getInstanceId, ListFullSqlTasksRequest::setInstanceId));
+        builder.<Long>withRequestField("range_left",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getRangeLeft, ListFullSqlTasksRequest::setRangeLeft));
+        builder.<Long>withRequestField("range_right",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getRangeRight, ListFullSqlTasksRequest::setRangeRight));
+        builder.<Long>withRequestField("create_at_left",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getCreateAtLeft, ListFullSqlTasksRequest::setCreateAtLeft));
+        builder.<Long>withRequestField("create_at_right",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getCreateAtRight,
+                ListFullSqlTasksRequest::setCreateAtRight));
+        builder.<String>withRequestField("user",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getUser, ListFullSqlTasksRequest::setUser));
+        builder.<String>withRequestField("keyword",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getKeyword, ListFullSqlTasksRequest::setKeyword));
+        builder.<String>withRequestField("db_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getDbName, ListFullSqlTasksRequest::setDbName));
+        builder.<String>withRequestField("operation",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getOperation, ListFullSqlTasksRequest::setOperation));
+        builder.<String>withRequestField("thread_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getThreadId, ListFullSqlTasksRequest::setThreadId));
+        builder.<String>withRequestField("trx_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getTrxId, ListFullSqlTasksRequest::setTrxId));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getStatus, ListFullSqlTasksRequest::setStatus));
+        builder.<String>withRequestField("sql_template_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getSqlTemplateId,
+                ListFullSqlTasksRequest::setSqlTemplateId));
+        builder.<String>withRequestField("sort_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getSortField, ListFullSqlTasksRequest::setSortField));
+        builder.<Boolean>withRequestField("asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getAsc, ListFullSqlTasksRequest::setAsc));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getPage, ListFullSqlTasksRequest::setPage));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getLimit, ListFullSqlTasksRequest::setLimit));
+        builder.<ListFullSqlTasksRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListFullSqlTasksRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListFullSqlTasksRequest::getXLanguage, ListFullSqlTasksRequest::setXLanguage));
 
         // response
 

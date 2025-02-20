@@ -138,6 +138,81 @@ public class DataProcessInfo {
 
     private SourceEnum source;
 
+    /**
+     * 数据加工规则作用级别 - table 表示数据同步时的过滤 - combinations 表示组合集，对多个表的操作  当进行数据过滤规则校验，必填 当需要更新数据加工规则（数据过滤、列加工等）时，必填
+     */
+    public static final class ProcessRuleLevelEnum {
+
+        /**
+         * Enum TABLE for value: "table"
+         */
+        public static final ProcessRuleLevelEnum TABLE = new ProcessRuleLevelEnum("table");
+
+        /**
+         * Enum COMBINATIONS for value: "combinations"
+         */
+        public static final ProcessRuleLevelEnum COMBINATIONS = new ProcessRuleLevelEnum("combinations");
+
+        private static final Map<String, ProcessRuleLevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProcessRuleLevelEnum> createStaticFields() {
+            Map<String, ProcessRuleLevelEnum> map = new HashMap<>();
+            map.put("table", TABLE);
+            map.put("combinations", COMBINATIONS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProcessRuleLevelEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProcessRuleLevelEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProcessRuleLevelEnum(value));
+        }
+
+        public static ProcessRuleLevelEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProcessRuleLevelEnum) {
+                return this.value.equals(((ProcessRuleLevelEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_rule_level")
+
+    private ProcessRuleLevelEnum processRuleLevel;
+
     public DataProcessInfo withFilterConditions(List<DataFilteringCondition> filterConditions) {
         this.filterConditions = filterConditions;
         return this;
@@ -160,7 +235,7 @@ public class DataProcessInfo {
     }
 
     /**
-     * 指定任务数据加工规则请求体
+     * 指定任务数据加工规则请求体,  当进行数据过滤规则校验，必填 当数据过滤规则校验通过，需要更新数据过滤规则时，必填
      * @return filterConditions
      */
     public List<DataFilteringCondition> getFilterConditions() {
@@ -383,6 +458,23 @@ public class DataProcessInfo {
         this.source = source;
     }
 
+    public DataProcessInfo withProcessRuleLevel(ProcessRuleLevelEnum processRuleLevel) {
+        this.processRuleLevel = processRuleLevel;
+        return this;
+    }
+
+    /**
+     * 数据加工规则作用级别 - table 表示数据同步时的过滤 - combinations 表示组合集，对多个表的操作  当进行数据过滤规则校验，必填 当需要更新数据加工规则（数据过滤、列加工等）时，必填
+     * @return processRuleLevel
+     */
+    public ProcessRuleLevelEnum getProcessRuleLevel() {
+        return processRuleLevel;
+    }
+
+    public void setProcessRuleLevel(ProcessRuleLevelEnum processRuleLevel) {
+        this.processRuleLevel = processRuleLevel;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -399,7 +491,7 @@ public class DataProcessInfo {
             && Objects.equals(this.dbObjectColumnInfo, that.dbObjectColumnInfo)
             && Objects.equals(this.dbOrTableRenameRule, that.dbOrTableRenameRule)
             && Objects.equals(this.dbObject, that.dbObject) && Objects.equals(this.isSynchronized, that.isSynchronized)
-            && Objects.equals(this.source, that.source);
+            && Objects.equals(this.source, that.source) && Objects.equals(this.processRuleLevel, that.processRuleLevel);
     }
 
     @Override
@@ -413,7 +505,8 @@ public class DataProcessInfo {
             dbOrTableRenameRule,
             dbObject,
             isSynchronized,
-            source);
+            source,
+            processRuleLevel);
     }
 
     @Override
@@ -430,6 +523,7 @@ public class DataProcessInfo {
         sb.append("    dbObject: ").append(toIndentedString(dbObject)).append("\n");
         sb.append("    isSynchronized: ").append(toIndentedString(isSynchronized)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
+        sb.append("    processRuleLevel: ").append(toIndentedString(processRuleLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -39,6 +39,12 @@ public final class HttpUtils {
             Constants.MEDIATYPE.BINARY_OCTET_STREAM
     );
 
+    private static final List<String> FILE_STREAM_CONTENT_TYPES = Arrays.asList(
+            Constants.MEDIATYPE.APPLICATION_OCTET_STREAM,
+            Constants.MEDIATYPE.BINARY_OCTET_STREAM,
+            Constants.MEDIATYPE.APPLICATION_ZIP
+    );
+
     private HttpUtils() {
 
     }
@@ -58,6 +64,17 @@ public final class HttpUtils {
         if (!StringUtils.isEmpty(contentType)) {
             for (String octetStreamContentType : OCTET_STREAM_CONTENT_TYPES) {
                 if (contentType.startsWith(octetStreamContentType)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean isFileStreamContentType(String contentType) {
+        if (!StringUtils.isEmpty(contentType)) {
+            for (String fileStreamContentType : FILE_STREAM_CONTENT_TYPES) {
+                if (contentType.startsWith(fileStreamContentType)) {
                     return true;
                 }
             }

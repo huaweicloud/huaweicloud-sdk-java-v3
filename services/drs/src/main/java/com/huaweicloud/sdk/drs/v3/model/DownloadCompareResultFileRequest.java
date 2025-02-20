@@ -184,7 +184,7 @@ public class DownloadCompareResultFileRequest implements ProgressRequest {
     }
 
     /**
-     * 对比任务类型： - contents： 内容对比。 - lines：行数对比。 - random：抽样对比。 - objects_comparison：对象对比。
+     * 对比任务类型： - contents： 内容对比。 - lines：行数对比。 - random：抽样对比。 - objects_comparison：对象对比。 - repair_data：数据修复。
      * @return compareType
      */
     public String getCompareType() {

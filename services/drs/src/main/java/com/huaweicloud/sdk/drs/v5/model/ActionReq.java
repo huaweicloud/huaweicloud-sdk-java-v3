@@ -22,7 +22,7 @@ public class ActionReq {
     private String jobId;
 
     /**
-     * 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务，需要先调用预检查接口并且预检查通过率为100%。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。 - set_readonly: 灾备任务目标库设置只读。
+     * 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务，需要先调用预检查接口并且预检查通过率为100%。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。 - set_readonly: 灾备任务目标库设置只读。 - diagnosis：一键诊断。 - start_repair：开始数据修复。 - stop_repair：停止数据修复。
      */
     public static final class ActionNameEnum {
 
@@ -111,6 +111,21 @@ public class ActionReq {
          */
         public static final ActionNameEnum SET_READONLY = new ActionNameEnum("set_readonly");
 
+        /**
+         * Enum DIAGNOSIS_ for value: "diagnosis：一键诊断。"
+         */
+        public static final ActionNameEnum DIAGNOSIS_ = new ActionNameEnum("diagnosis：一键诊断。");
+
+        /**
+         * Enum START_REPAIR_ for value: "start_repair：开始数据修复。"
+         */
+        public static final ActionNameEnum START_REPAIR_ = new ActionNameEnum("start_repair：开始数据修复。");
+
+        /**
+         * Enum STOP_REPAIR_ for value: "stop_repair：停止数据修复。"
+         */
+        public static final ActionNameEnum STOP_REPAIR_ = new ActionNameEnum("stop_repair：停止数据修复。");
+
         private static final Map<String, ActionNameEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ActionNameEnum> createStaticFields() {
@@ -132,6 +147,9 @@ public class ActionReq {
             map.put("set_writable", SET_WRITABLE);
             map.put("cloud_connection", CLOUD_CONNECTION);
             map.put("set_readonly", SET_READONLY);
+            map.put("diagnosis：一键诊断。", DIAGNOSIS_);
+            map.put("start_repair：开始数据修复。", START_REPAIR_);
+            map.put("stop_repair：停止数据修复。", STOP_REPAIR_);
             return Collections.unmodifiableMap(map);
         }
 
@@ -214,7 +232,7 @@ public class ActionReq {
     }
 
     /**
-     * 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务，需要先调用预检查接口并且预检查通过率为100%。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。 - set_readonly: 灾备任务目标库设置只读。
+     * 操作任务动作名称。取值： - network：测试连接源库/目标库。 - precheck：执行预检查。 - start：启动任务。 - stop：暂停任务。 - restart：重试任务。 - reset：重置任务，需要先调用预检查接口并且预检查通过率为100%。 - terminate：结束任务。 - skip_precheck：跳过预检查。 - create_compare：创建对比任务。 - cancel_compare：取消对比任务。 - column_limit：字段过滤。 - reload_parameters：重新加载任务参数。 - bind_eip：绑定公网IP。 - unbind_eip：解绑公网IP。 - set_writable：目标库解除只读。 - cloud_connection：录制回放他云连通性测试。 - set_readonly: 灾备任务目标库设置只读。 - diagnosis：一键诊断。 - start_repair：开始数据修复。 - stop_repair：停止数据修复。
      * @return actionName
      */
     public ActionNameEnum getActionName() {

@@ -477,6 +477,26 @@ public class JobDetailResp {
 
     private IsWritableEnum isWritable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "diagnoses")
+
+    private List<QueryDiagnosisResult> diagnoses = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repair_progress_info")
+
+    private JobDetailRespRepairProgressInfo repairProgressInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repair_detail_info")
+
+    private QueryRepairDetailResp repairDetailInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "repair_export_status")
+
+    private String repairExportStatus;
+
     public JobDetailResp withId(String id) {
         this.id = id;
         return this;
@@ -1268,6 +1288,108 @@ public class JobDetailResp {
         this.isWritable = isWritable;
     }
 
+    public JobDetailResp withDiagnoses(List<QueryDiagnosisResult> diagnoses) {
+        this.diagnoses = diagnoses;
+        return this;
+    }
+
+    public JobDetailResp addDiagnosesItem(QueryDiagnosisResult diagnosesItem) {
+        if (this.diagnoses == null) {
+            this.diagnoses = new ArrayList<>();
+        }
+        this.diagnoses.add(diagnosesItem);
+        return this;
+    }
+
+    public JobDetailResp withDiagnoses(Consumer<List<QueryDiagnosisResult>> diagnosesSetter) {
+        if (this.diagnoses == null) {
+            this.diagnoses = new ArrayList<>();
+        }
+        diagnosesSetter.accept(this.diagnoses);
+        return this;
+    }
+
+    /**
+     * 一键诊断结果。
+     * @return diagnoses
+     */
+    public List<QueryDiagnosisResult> getDiagnoses() {
+        return diagnoses;
+    }
+
+    public void setDiagnoses(List<QueryDiagnosisResult> diagnoses) {
+        this.diagnoses = diagnoses;
+    }
+
+    public JobDetailResp withRepairProgressInfo(JobDetailRespRepairProgressInfo repairProgressInfo) {
+        this.repairProgressInfo = repairProgressInfo;
+        return this;
+    }
+
+    public JobDetailResp withRepairProgressInfo(Consumer<JobDetailRespRepairProgressInfo> repairProgressInfoSetter) {
+        if (this.repairProgressInfo == null) {
+            this.repairProgressInfo = new JobDetailRespRepairProgressInfo();
+            repairProgressInfoSetter.accept(this.repairProgressInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get repairProgressInfo
+     * @return repairProgressInfo
+     */
+    public JobDetailRespRepairProgressInfo getRepairProgressInfo() {
+        return repairProgressInfo;
+    }
+
+    public void setRepairProgressInfo(JobDetailRespRepairProgressInfo repairProgressInfo) {
+        this.repairProgressInfo = repairProgressInfo;
+    }
+
+    public JobDetailResp withRepairDetailInfo(QueryRepairDetailResp repairDetailInfo) {
+        this.repairDetailInfo = repairDetailInfo;
+        return this;
+    }
+
+    public JobDetailResp withRepairDetailInfo(Consumer<QueryRepairDetailResp> repairDetailInfoSetter) {
+        if (this.repairDetailInfo == null) {
+            this.repairDetailInfo = new QueryRepairDetailResp();
+            repairDetailInfoSetter.accept(this.repairDetailInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get repairDetailInfo
+     * @return repairDetailInfo
+     */
+    public QueryRepairDetailResp getRepairDetailInfo() {
+        return repairDetailInfo;
+    }
+
+    public void setRepairDetailInfo(QueryRepairDetailResp repairDetailInfo) {
+        this.repairDetailInfo = repairDetailInfo;
+    }
+
+    public JobDetailResp withRepairExportStatus(String repairExportStatus) {
+        this.repairExportStatus = repairExportStatus;
+        return this;
+    }
+
+    /**
+     * 修复SQL导出状态。
+     * @return repairExportStatus
+     */
+    public String getRepairExportStatus() {
+        return repairExportStatus;
+    }
+
+    public void setRepairExportStatus(String repairExportStatus) {
+        this.repairExportStatus = repairExportStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1298,7 +1420,11 @@ public class JobDetailResp {
             && Objects.equals(this.connectionManagement, that.connectionManagement)
             && Objects.equals(this.publicIpList, that.publicIpList)
             && Objects.equals(this.bindPublicIpState, that.bindPublicIpState)
-            && Objects.equals(this.children, that.children) && Objects.equals(this.isWritable, that.isWritable);
+            && Objects.equals(this.children, that.children) && Objects.equals(this.isWritable, that.isWritable)
+            && Objects.equals(this.diagnoses, that.diagnoses)
+            && Objects.equals(this.repairProgressInfo, that.repairProgressInfo)
+            && Objects.equals(this.repairDetailInfo, that.repairDetailInfo)
+            && Objects.equals(this.repairExportStatus, that.repairExportStatus);
     }
 
     @Override
@@ -1333,7 +1459,11 @@ public class JobDetailResp {
             publicIpList,
             bindPublicIpState,
             children,
-            isWritable);
+            isWritable,
+            diagnoses,
+            repairProgressInfo,
+            repairDetailInfo,
+            repairExportStatus);
     }
 
     @Override
@@ -1373,6 +1503,10 @@ public class JobDetailResp {
         sb.append("    bindPublicIpState: ").append(toIndentedString(bindPublicIpState)).append("\n");
         sb.append("    children: ").append(toIndentedString(children)).append("\n");
         sb.append("    isWritable: ").append(toIndentedString(isWritable)).append("\n");
+        sb.append("    diagnoses: ").append(toIndentedString(diagnoses)).append("\n");
+        sb.append("    repairProgressInfo: ").append(toIndentedString(repairProgressInfo)).append("\n");
+        sb.append("    repairDetailInfo: ").append(toIndentedString(repairDetailInfo)).append("\n");
+        sb.append("    repairExportStatus: ").append(toIndentedString(repairExportStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

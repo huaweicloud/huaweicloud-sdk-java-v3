@@ -27,6 +27,8 @@ import com.huaweicloud.sdk.das.v3.model.DeleteProcessRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteProcessResponse;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesRequest;
 import com.huaweicloud.sdk.das.v3.model.DeleteSqlLimitRulesResponse;
+import com.huaweicloud.sdk.das.v3.model.ExportFullSqlDetailsRequest;
+import com.huaweicloud.sdk.das.v3.model.ExportFullSqlDetailsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowQueryLogsRequest;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowQueryLogsResponse;
 import com.huaweicloud.sdk.das.v3.model.ExportSlowSqlStatisticsRequest;
@@ -49,6 +51,8 @@ import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesResponse;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksRequest;
+import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksResponse;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.ListHealthReportTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ListInnodbLocksRequest;
@@ -564,6 +568,35 @@ public class DasClient {
     }
 
     /**
+     * 导出全量SQL明细
+     *
+     * 全量SQL开关打开后，创建SQL洞察任务，支持按节点、用户名、数据库、操作类型等导出全量SQL明细数据。该功能仅支持付费实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportFullSqlDetailsRequest 请求对象
+     * @return ExportFullSqlDetailsResponse
+     */
+    public ExportFullSqlDetailsResponse exportFullSqlDetails(ExportFullSqlDetailsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.exportFullSqlDetails);
+    }
+
+    /**
+     * 导出全量SQL明细
+     *
+     * 全量SQL开关打开后，创建SQL洞察任务，支持按节点、用户名、数据库、操作类型等导出全量SQL明细数据。该功能仅支持付费实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExportFullSqlDetailsRequest 请求对象
+     * @return SyncInvoker<ExportFullSqlDetailsRequest, ExportFullSqlDetailsResponse>
+     */
+    public SyncInvoker<ExportFullSqlDetailsRequest, ExportFullSqlDetailsResponse> exportFullSqlDetailsInvoker(
+        ExportFullSqlDetailsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.exportFullSqlDetails, hcClient);
+    }
+
+    /**
      * 导出慢SQL数据
      *
      * DAS收集慢SQL开关打开后，一次性导出指定时间范围内的慢SQL数据，支持分页滚动获取。免费实例仅支持查看最近一小时数据。
@@ -854,6 +887,35 @@ public class DasClient {
      */
     public SyncInvoker<ListDbUsersRequest, ListDbUsersResponse> listDbUsersInvoker(ListDbUsersRequest request) {
         return new SyncInvoker<>(request, DasMeta.listDbUsers, hcClient);
+    }
+
+    /**
+     * 查询SQL洞察任务列表
+     *
+     * 全量SQL开关打开后，查询SQL洞察任务列表。该功能仅支持付费实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFullSqlTasksRequest 请求对象
+     * @return ListFullSqlTasksResponse
+     */
+    public ListFullSqlTasksResponse listFullSqlTasks(ListFullSqlTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listFullSqlTasks);
+    }
+
+    /**
+     * 查询SQL洞察任务列表
+     *
+     * 全量SQL开关打开后，查询SQL洞察任务列表。该功能仅支持付费实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFullSqlTasksRequest 请求对象
+     * @return SyncInvoker<ListFullSqlTasksRequest, ListFullSqlTasksResponse>
+     */
+    public SyncInvoker<ListFullSqlTasksRequest, ListFullSqlTasksResponse> listFullSqlTasksInvoker(
+        ListFullSqlTasksRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listFullSqlTasks, hcClient);
     }
 
     /**
