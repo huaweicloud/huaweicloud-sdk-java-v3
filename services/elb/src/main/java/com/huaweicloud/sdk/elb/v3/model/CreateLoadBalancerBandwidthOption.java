@@ -26,7 +26,7 @@ public class CreateLoadBalancerBandwidthOption {
     private Integer size;
 
     /**
-     * 参数解释：计费模式。bandwidth 按带宽计费；traffic 按流量计费。  约束限制：当id字段为null时，charge_mode是必须的。  [当前仅支持traffic按流量计费。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  取值范围：  - bandwidth：按带宽计费。  - traffic： 按流量计费。
+     * 参数解释：计费模式。bandwidth 按带宽计费；traffic 按流量计费。  约束限制：当id字段为null时，charge_mode是必须的。  [当前仅支持traffic按流量计费。](tag:hws_eu,g42,hk_g42,dt,hcso_dt)  取值范围：  - bandwidth：按带宽计费。  - traffic： 按流量计费。
      */
     public static final class ChargeModeEnum {
 
@@ -227,7 +227,7 @@ public class CreateLoadBalancerBandwidthOption {
     }
 
     /**
-     * 参数解释：计费模式。bandwidth 按带宽计费；traffic 按流量计费。  约束限制：当id字段为null时，charge_mode是必须的。  [当前仅支持traffic按流量计费。](tag:hws_eu,g42,hk_g42,dt,dt_test,hcso_dt)  取值范围：  - bandwidth：按带宽计费。  - traffic： 按流量计费。
+     * 参数解释：计费模式。bandwidth 按带宽计费；traffic 按流量计费。  约束限制：当id字段为null时，charge_mode是必须的。  [当前仅支持traffic按流量计费。](tag:hws_eu,g42,hk_g42,dt,hcso_dt)  取值范围：  - bandwidth：按带宽计费。  - traffic： 按流量计费。
      * @return chargeMode
      */
     public ChargeModeEnum getChargeMode() {

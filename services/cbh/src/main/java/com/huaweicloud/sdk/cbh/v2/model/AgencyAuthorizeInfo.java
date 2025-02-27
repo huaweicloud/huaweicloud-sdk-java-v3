@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 获取云堡垒机委托授权凭据管理、密钥管理服务权限列表返回对象。
+ * 设置云堡垒机委托授权凭据管理、密钥管理服务权限请求对象。（kms和csms必须传一个）
  */
 public class AgencyAuthorizeInfo {
 

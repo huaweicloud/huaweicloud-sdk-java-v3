@@ -10,6 +10,7 @@ import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
 import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsResponse;
+import com.huaweicloud.sdk.csms.v1.model.ChangeUsersPassword;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyResponse;
@@ -97,6 +98,8 @@ import com.huaweicloud.sdk.csms.v1.model.UpdateSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageResponse;
+import com.huaweicloud.sdk.csms.v1.model.UpdateUserPasswordRequest;
+import com.huaweicloud.sdk.csms.v1.model.UpdateUserPasswordResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateVersionRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.UpdateVersionResponse;
@@ -1130,6 +1133,29 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecretStageRequestBody.class),
             f -> f.withMarshaller(UpdateSecretStageRequest::getBody, UpdateSecretStageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateUserPasswordRequest, UpdateUserPasswordResponse> updateUserPassword =
+        genForUpdateUserPassword();
+
+    private static HttpRequestDef<UpdateUserPasswordRequest, UpdateUserPasswordResponse> genForUpdateUserPassword() {
+        // basic
+        HttpRequestDef.Builder<UpdateUserPasswordRequest, UpdateUserPasswordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateUserPasswordRequest.class, UpdateUserPasswordResponse.class)
+                .withName("UpdateUserPassword")
+                .withUri("/v1/csms/users/change-password")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ChangeUsersPassword>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeUsersPassword.class),
+            f -> f.withMarshaller(UpdateUserPasswordRequest::getBody, UpdateUserPasswordRequest::setBody));
 
         // response
 

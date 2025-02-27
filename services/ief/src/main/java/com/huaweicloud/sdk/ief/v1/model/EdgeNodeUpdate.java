@@ -72,7 +72,7 @@ public class EdgeNodeUpdate {
     }
 
     /**
-     * 边缘节点日志配置
+     * 边缘节点日志配置，当用户未配置日志相关字段时，将默认打开日志上传到云端功能。
      * @return logConfigs
      */
     public List<LogConfigs> getLogConfigs() {
@@ -105,7 +105,7 @@ public class EdgeNodeUpdate {
     }
 
     /**
-     * NTP服务器地址，每个节点最多仅能配置两个。D310表示D310类型；D910表示D910类型；不填表示为D310类型。
+     * NTP服务器地址，每个节点最多仅能配置两个。
      * @return ntpServers
      */
     public List<String> getNtpServers() {

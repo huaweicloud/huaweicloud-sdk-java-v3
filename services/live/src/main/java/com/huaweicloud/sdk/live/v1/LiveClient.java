@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.live.v1.model.CreateRecordIndexRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordIndexResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordRuleRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateScheduleRecordTasksRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateScheduleRecordTasksResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateSnapshotConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateSnapshotConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenRequest;
@@ -47,6 +49,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRefererChainRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteRefererChainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteScheduleRecordTasksRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteScheduleRecordTasksResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteSnapshotConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteSnapshotConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenRequest;
@@ -77,6 +81,8 @@ import com.huaweicloud.sdk.live.v1.model.ListRecordContentsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListRecordContentsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListRecordRulesRequest;
 import com.huaweicloud.sdk.live.v1.model.ListRecordRulesResponse;
+import com.huaweicloud.sdk.live.v1.model.ListScheduleRecordTasksRequest;
+import com.huaweicloud.sdk.live.v1.model.ListScheduleRecordTasksResponse;
 import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenRequest;
@@ -334,6 +340,35 @@ public class LiveClient {
     public SyncInvoker<CreateRecordRuleRequest, CreateRecordRuleResponse> createRecordRuleInvoker(
         CreateRecordRuleRequest request) {
         return new SyncInvoker<>(request, LiveMeta.createRecordRule, hcClient);
+    }
+
+    /**
+     * 创建计划录制任务
+     *
+     * 通过使用指定录制模板ID对应的配置创建一个在指定时间启动、结束的录制任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateScheduleRecordTasksRequest 请求对象
+     * @return CreateScheduleRecordTasksResponse
+     */
+    public CreateScheduleRecordTasksResponse createScheduleRecordTasks(CreateScheduleRecordTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.createScheduleRecordTasks);
+    }
+
+    /**
+     * 创建计划录制任务
+     *
+     * 通过使用指定录制模板ID对应的配置创建一个在指定时间启动、结束的录制任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateScheduleRecordTasksRequest 请求对象
+     * @return SyncInvoker<CreateScheduleRecordTasksRequest, CreateScheduleRecordTasksResponse>
+     */
+    public SyncInvoker<CreateScheduleRecordTasksRequest, CreateScheduleRecordTasksResponse> createScheduleRecordTasksInvoker(
+        CreateScheduleRecordTasksRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.createScheduleRecordTasks, hcClient);
     }
 
     /**
@@ -652,6 +687,35 @@ public class LiveClient {
     public SyncInvoker<DeleteRefererChainRequest, DeleteRefererChainResponse> deleteRefererChainInvoker(
         DeleteRefererChainRequest request) {
         return new SyncInvoker<>(request, LiveMeta.deleteRefererChain, hcClient);
+    }
+
+    /**
+     * 停止计划录制任务
+     *
+     * 停止计划录制任务，当前的录制任务会中止并生产录制文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduleRecordTasksRequest 请求对象
+     * @return DeleteScheduleRecordTasksResponse
+     */
+    public DeleteScheduleRecordTasksResponse deleteScheduleRecordTasks(DeleteScheduleRecordTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.deleteScheduleRecordTasks);
+    }
+
+    /**
+     * 停止计划录制任务
+     *
+     * 停止计划录制任务，当前的录制任务会中止并生产录制文件。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduleRecordTasksRequest 请求对象
+     * @return SyncInvoker<DeleteScheduleRecordTasksRequest, DeleteScheduleRecordTasksResponse>
+     */
+    public SyncInvoker<DeleteScheduleRecordTasksRequest, DeleteScheduleRecordTasksResponse> deleteScheduleRecordTasksInvoker(
+        DeleteScheduleRecordTasksRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.deleteScheduleRecordTasks, hcClient);
     }
 
     /**
@@ -1034,6 +1098,35 @@ public class LiveClient {
     public SyncInvoker<ListRecordRulesRequest, ListRecordRulesResponse> listRecordRulesInvoker(
         ListRecordRulesRequest request) {
         return new SyncInvoker<>(request, LiveMeta.listRecordRules, hcClient);
+    }
+
+    /**
+     * 查询计划录制任务
+     *
+     * 查询指定时间范围内启动和结束的计划录制任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduleRecordTasksRequest 请求对象
+     * @return ListScheduleRecordTasksResponse
+     */
+    public ListScheduleRecordTasksResponse listScheduleRecordTasks(ListScheduleRecordTasksRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.listScheduleRecordTasks);
+    }
+
+    /**
+     * 查询计划录制任务
+     *
+     * 查询指定时间范围内启动和结束的计划录制任务列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduleRecordTasksRequest 请求对象
+     * @return SyncInvoker<ListScheduleRecordTasksRequest, ListScheduleRecordTasksResponse>
+     */
+    public SyncInvoker<ListScheduleRecordTasksRequest, ListScheduleRecordTasksResponse> listScheduleRecordTasksInvoker(
+        ListScheduleRecordTasksRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.listScheduleRecordTasks, hcClient);
     }
 
     /**

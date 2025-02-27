@@ -42,6 +42,9 @@ import com.huaweicloud.sdk.iotda.v5.model.BindDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.BindTagsDTO;
 import com.huaweicloud.sdk.iotda.v5.model.BroadcastMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.BroadcastMessageResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ChangeGateway;
+import com.huaweicloud.sdk.iotda.v5.model.ChangeGatewayRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ChangeGatewayResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ChangeRuleStatusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ChangeRuleStatusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateRequest;
@@ -2287,6 +2290,39 @@ public class IoTDAMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddDevice.class),
             f -> f.withMarshaller(AddDeviceRequest::getBody, AddDeviceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeGatewayRequest, ChangeGatewayResponse> changeGateway =
+        genForChangeGateway();
+
+    private static HttpRequestDef<ChangeGatewayRequest, ChangeGatewayResponse> genForChangeGateway() {
+        // basic
+        HttpRequestDef.Builder<ChangeGatewayRequest, ChangeGatewayResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeGatewayRequest.class, ChangeGatewayResponse.class)
+                .withName("ChangeGateway")
+                .withUri("/v5/iot/{project_id}/devices/{device_id}/change-gateway")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("device_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeGatewayRequest::getDeviceId, ChangeGatewayRequest::setDeviceId));
+        builder.<String>withRequestField("Instance-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ChangeGatewayRequest::getInstanceId, ChangeGatewayRequest::setInstanceId));
+        builder.<ChangeGateway>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeGateway.class),
+            f -> f.withMarshaller(ChangeGatewayRequest::getBody, ChangeGatewayRequest::setBody));
 
         // response
 

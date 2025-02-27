@@ -2170,6 +2170,23 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCertificatesRequest::getCertificate, ListCertificatesRequest::setCertificate));
+        builder.<String>withRequestField("source",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getSource, ListCertificatesRequest::setSource));
+        builder.<ListCertificatesRequest.ProtectionStatusEnum>withRequestField("protection_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListCertificatesRequest.ProtectionStatusEnum.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getProtectionStatus,
+                ListCertificatesRequest::setProtectionStatus));
+        builder.<String>withRequestField("protection_reason",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getProtectionReason,
+                ListCertificatesRequest::setProtectionReason));
 
         // response
 

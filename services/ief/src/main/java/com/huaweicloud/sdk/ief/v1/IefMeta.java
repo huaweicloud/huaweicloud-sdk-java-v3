@@ -97,7 +97,6 @@ import com.huaweicloud.sdk.ief.v1.model.Deployment;
 import com.huaweicloud.sdk.ief.v1.model.DeviceTemplate;
 import com.huaweicloud.sdk.ief.v1.model.DeviceTemplateUpdate;
 import com.huaweicloud.sdk.ief.v1.model.Devices;
-import com.huaweicloud.sdk.ief.v1.model.EdgeGroupCertListResp;
 import com.huaweicloud.sdk.ief.v1.model.EdgeGroupCertRequest;
 import com.huaweicloud.sdk.ief.v1.model.EdgeGroupRequest;
 import com.huaweicloud.sdk.ief.v1.model.EdgeGroupUpdateRequest;
@@ -262,8 +261,6 @@ import com.huaweicloud.sdk.ief.v1.model.UpdateServiceResponse;
 import com.huaweicloud.sdk.ief.v1.model.UpgradeEdgeNodeRequest;
 import com.huaweicloud.sdk.ief.v1.model.UpgradeEdgeNodeResponse;
 import com.huaweicloud.sdk.ief.v1.model.Version;
-
-import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class IefMeta {
@@ -1894,12 +1891,11 @@ public class IefMeta {
                 ListEdgeGroupCertsRequest::setIefInstanceId));
 
         // response
-        builder.<List<EdgeGroupCertListResp>>withResponseField("body",
+        builder.<Object>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(List.class),
-            f -> f.withMarshaller(ListEdgeGroupCertsResponse::getBody, ListEdgeGroupCertsResponse::setBody)
-                .withInnerContainerType(EdgeGroupCertListResp.class));
+            Object.class,
+            f -> f.withMarshaller(ListEdgeGroupCertsResponse::getBody, ListEdgeGroupCertsResponse::setBody));
 
         return builder.build();
     }

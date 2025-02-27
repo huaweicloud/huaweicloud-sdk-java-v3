@@ -18,7 +18,7 @@ public class ResetPassword {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
 
-    private Object serverId;
+    private String serverId;
 
     public ResetPassword withNewPassword(String newPassword) {
         this.newPassword = newPassword;
@@ -37,20 +37,20 @@ public class ResetPassword {
         this.newPassword = newPassword;
     }
 
-    public ResetPassword withServerId(Object serverId) {
+    public ResetPassword withServerId(String serverId) {
         this.serverId = serverId;
         return this;
     }
 
     /**
-     * Get serverId
+     * 云堡垒机实例ID，使用UUID格式表示。
      * @return serverId
      */
-    public Object getServerId() {
+    public String getServerId() {
         return serverId;
     }
 
-    public void setServerId(Object serverId) {
+    public void setServerId(String serverId) {
         this.serverId = serverId;
     }
 

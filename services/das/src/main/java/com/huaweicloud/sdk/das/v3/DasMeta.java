@@ -20,6 +20,9 @@ import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportReq;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionReq;
+import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequestBody;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsResponse;
@@ -63,6 +66,8 @@ import com.huaweicloud.sdk.das.v3.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListConnectionsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListConnectionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksRequest;
@@ -145,6 +150,159 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class DasMeta {
 
+    public static final HttpRequestDef<CancelShareConnectionsRequest, CancelShareConnectionsResponse> cancelShareConnections =
+        genForCancelShareConnections();
+
+    private static HttpRequestDef<CancelShareConnectionsRequest, CancelShareConnectionsResponse> genForCancelShareConnections() {
+        // basic
+        HttpRequestDef.Builder<CancelShareConnectionsRequest, CancelShareConnectionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, CancelShareConnectionsRequest.class, CancelShareConnectionsResponse.class)
+            .withName("CancelShareConnections")
+            .withUri("/v3/{project_id}/connections/share")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelShareConnectionsRequest::getXLanguage,
+                CancelShareConnectionsRequest::setXLanguage));
+        builder.<CancelShareConnectionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CancelShareConnectionsRequestBody.class),
+            f -> f.withMarshaller(CancelShareConnectionsRequest::getBody, CancelShareConnectionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateInstanceConnectionRequest, CreateInstanceConnectionResponse> createInstanceConnection =
+        genForCreateInstanceConnection();
+
+    private static HttpRequestDef<CreateInstanceConnectionRequest, CreateInstanceConnectionResponse> genForCreateInstanceConnection() {
+        // basic
+        HttpRequestDef.Builder<CreateInstanceConnectionRequest, CreateInstanceConnectionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateInstanceConnectionRequest.class, CreateInstanceConnectionResponse.class)
+                .withName("CreateInstanceConnection")
+                .withUri("/v3/{project_id}/instances/{instance_id}/create-connection")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInstanceConnectionRequest::getInstanceId,
+                CreateInstanceConnectionRequest::setInstanceId));
+        builder.<CreateInstanceConnectionRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateInstanceConnectionRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateInstanceConnectionRequest::getXLanguage,
+                CreateInstanceConnectionRequest::setXLanguage));
+        builder.<CreateInstanceConnectionReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateInstanceConnectionReq.class),
+            f -> f.withMarshaller(CreateInstanceConnectionRequest::getBody, CreateInstanceConnectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateShareConnectionsRequest, CreateShareConnectionsResponse> createShareConnections =
+        genForCreateShareConnections();
+
+    private static HttpRequestDef<CreateShareConnectionsRequest, CreateShareConnectionsResponse> genForCreateShareConnections() {
+        // basic
+        HttpRequestDef.Builder<CreateShareConnectionsRequest, CreateShareConnectionsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateShareConnectionsRequest.class, CreateShareConnectionsResponse.class)
+            .withName("CreateShareConnections")
+            .withUri("/v3/{project_id}/connections/share")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateShareConnectionsRequest::getXLanguage,
+                CreateShareConnectionsRequest::setXLanguage));
+        builder.<CreateShareConnectionsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateShareConnectionsRequestBody.class),
+            f -> f.withMarshaller(CreateShareConnectionsRequest::getBody, CreateShareConnectionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> listConnections =
+        genForListConnections();
+
+    private static HttpRequestDef<ListConnectionsRequest, ListConnectionsResponse> genForListConnections() {
+        // basic
+        HttpRequestDef.Builder<ListConnectionsRequest, ListConnectionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListConnectionsRequest.class, ListConnectionsResponse.class)
+                .withName("ListConnections")
+                .withUri("/v3/{project_id}/list-connections")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("condition",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getCondition, ListConnectionsRequest::setCondition));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getOffset, ListConnectionsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getLimit, ListConnectionsRequest::setLimit));
+        builder.<ListConnectionsRequest.NetworkTypeEnum>withRequestField("network_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListConnectionsRequest.NetworkTypeEnum.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getNetworkType, ListConnectionsRequest::setNetworkType));
+        builder.<String>withRequestField("datastore_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getDatastoreType, ListConnectionsRequest::setDatastoreType));
+        builder.<ListConnectionsRequest.ConnectionTypeEnum>withRequestField("connection_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListConnectionsRequest.ConnectionTypeEnum.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getConnectionType,
+                ListConnectionsRequest::setConnectionType));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getInstanceId, ListConnectionsRequest::setInstanceId));
+        builder.<ListConnectionsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListConnectionsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListConnectionsRequest::getXLanguage, ListConnectionsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
         genForListApiVersions();
 
@@ -180,35 +338,6 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApiVersionRequest::getVersion, ShowApiVersionRequest::setVersion));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CancelShareConnectionsRequest, CancelShareConnectionsResponse> cancelShareConnections =
-        genForCancelShareConnections();
-
-    private static HttpRequestDef<CancelShareConnectionsRequest, CancelShareConnectionsResponse> genForCancelShareConnections() {
-        // basic
-        HttpRequestDef.Builder<CancelShareConnectionsRequest, CancelShareConnectionsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, CancelShareConnectionsRequest.class, CancelShareConnectionsResponse.class)
-            .withName("CancelShareConnections")
-            .withUri("/v3/{project_id}/connections/share")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CancelShareConnectionsRequest::getXLanguage,
-                CancelShareConnectionsRequest::setXLanguage));
-        builder.<CancelShareConnectionsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CancelShareConnectionsRequestBody.class),
-            f -> f.withMarshaller(CancelShareConnectionsRequest::getBody, CancelShareConnectionsRequest::setBody));
 
         // response
 
@@ -355,35 +484,6 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateHealthReportReq.class),
             f -> f.withMarshaller(CreateHealthReportTaskRequest::getBody, CreateHealthReportTaskRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateShareConnectionsRequest, CreateShareConnectionsResponse> createShareConnections =
-        genForCreateShareConnections();
-
-    private static HttpRequestDef<CreateShareConnectionsRequest, CreateShareConnectionsResponse> genForCreateShareConnections() {
-        // basic
-        HttpRequestDef.Builder<CreateShareConnectionsRequest, CreateShareConnectionsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, CreateShareConnectionsRequest.class, CreateShareConnectionsResponse.class)
-            .withName("CreateShareConnections")
-            .withUri("/v3/{project_id}/connections/share")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateShareConnectionsRequest::getXLanguage,
-                CreateShareConnectionsRequest::setXLanguage));
-        builder.<CreateShareConnectionsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateShareConnectionsRequestBody.class),
-            f -> f.withMarshaller(CreateShareConnectionsRequest::getBody, CreateShareConnectionsRequest::setBody));
 
         // response
 

@@ -81,6 +81,8 @@ import com.huaweicloud.sdk.csms.v1.model.UpdateSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageResponse;
+import com.huaweicloud.sdk.csms.v1.model.UpdateUserPasswordRequest;
+import com.huaweicloud.sdk.csms.v1.model.UpdateUserPasswordResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateVersionResponse;
 import com.huaweicloud.sdk.csms.v1.model.UploadSecretBlobRequest;
@@ -1240,6 +1242,35 @@ public class CsmsAsyncClient {
     public AsyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse> updateSecretStageAsyncInvoker(
         UpdateSecretStageRequest request) {
         return new AsyncInvoker<>(request, CsmsMeta.updateSecretStage, hcClient);
+    }
+
+    /**
+     * 修改用户密码
+     *
+     * 修改用户密码
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateUserPasswordRequest 请求对象
+     * @return CompletableFuture<UpdateUserPasswordResponse>
+     */
+    public CompletableFuture<UpdateUserPasswordResponse> updateUserPasswordAsync(UpdateUserPasswordRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.updateUserPassword);
+    }
+
+    /**
+     * 修改用户密码
+     *
+     * 修改用户密码
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateUserPasswordRequest 请求对象
+     * @return AsyncInvoker<UpdateUserPasswordRequest, UpdateUserPasswordResponse>
+     */
+    public AsyncInvoker<UpdateUserPasswordRequest, UpdateUserPasswordResponse> updateUserPasswordAsyncInvoker(
+        UpdateUserPasswordRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.updateUserPassword, hcClient);
     }
 
     /**

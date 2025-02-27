@@ -13,7 +13,7 @@ public class ChangeInstanceRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
 
-    private Object serverId;
+    private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "new_resource_spec_code")
@@ -30,20 +30,20 @@ public class ChangeInstanceRequestBody {
 
     private Integer isAutoPay;
 
-    public ChangeInstanceRequestBody withServerId(Object serverId) {
+    public ChangeInstanceRequestBody withServerId(String serverId) {
         this.serverId = serverId;
         return this;
     }
 
     /**
-     * Get serverId
+     * 云堡垒机实例ID，使用UUID格式表示。
      * @return serverId
      */
-    public Object getServerId() {
+    public String getServerId() {
         return serverId;
     }
 
-    public void setServerId(Object serverId) {
+    public void setServerId(String serverId) {
         this.serverId = serverId;
     }
 

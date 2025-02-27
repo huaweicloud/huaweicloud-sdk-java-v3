@@ -58,7 +58,7 @@ public class Error {
     }
 
     /**
-     * 铂金版实例ID，如果为空则表示是专业版实例。
+     * [铂金版实例ID，如果为空则表示是专业版实例。](tag:hws,hws_hk)[铂金版实例ID](tag:hcs,hcs_sm)
      * @return iefInstanceId
      */
     public String getIefInstanceId() {

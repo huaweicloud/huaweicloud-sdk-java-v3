@@ -7163,6 +7163,12 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListStarRocksDbParametersRequest::getAddTaskScenario,
                 ListStarRocksDbParametersRequest::setAddTaskScenario));
+        builder.<String>withRequestField("main_task_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListStarRocksDbParametersRequest::getMainTaskName,
+                ListStarRocksDbParametersRequest::setMainTaskName));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NON_NULL_NON_EMPTY,

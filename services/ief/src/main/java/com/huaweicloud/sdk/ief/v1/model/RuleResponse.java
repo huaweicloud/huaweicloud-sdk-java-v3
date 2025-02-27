@@ -157,7 +157,7 @@ public class RuleResponse {
     }
 
     /**
-     * 铂金版实例ID，如果为空则表示是专业版实例。
+     * [铂金版实例ID，如果为空则表示是专业版实例。](tag:hws,hws_hk)[铂金版实例ID](tag:hcs,hcs_sm)
      * @return iefInstanceId
      */
     public String getIefInstanceId() {
@@ -191,7 +191,7 @@ public class RuleResponse {
     }
 
     /**
-     * 规则名称，只允许中文字符、英文字符、数字、下划线、中划线，最大长度64 同一个帐号中创建的规则名唯一
+     * 规则名称，只允许中文字符、英文字符、数字、下划线、中划线，最大长度64 同一个账号中创建的规则名唯一
      * @return name
      */
     public String getName() {
@@ -267,7 +267,7 @@ public class RuleResponse {
     }
 
     /**
-     * 源端点资源。 示例： - rest: path取值需要为标准URI格式。 {\"path\":\"/a/b/c\"} - eventbus: {\"topic\": \"<project id>/nodes/<node id>/user/<租户自定义且满足eventbus topic要求的字符串>\",\"node_id\":\"<node id>\"}
+     * 源端点资源。示例： - rest: {\"path\":\"\\<standard uri format\\>\"} - eventbus: {\"topic\":\"\\<project id\\>/nodes/\\<node id\\>/user/\\<租户自定义且满足eventbus topic要求的字符串\\>\",\"node_id\":\"\\<node id\\>\"} 
      * @return sourceResource
      */
     public Map<String, String> getSourceResource() {

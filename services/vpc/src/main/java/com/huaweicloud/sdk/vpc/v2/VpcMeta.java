@@ -1046,10 +1046,10 @@ public class VpcMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPortsRequest::getName, ListPortsRequest::setName));
-        builder.<String>withRequestField("id",
+        builder.<List<String>>withRequestField("id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListPortsRequest::getId, ListPortsRequest::setId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,

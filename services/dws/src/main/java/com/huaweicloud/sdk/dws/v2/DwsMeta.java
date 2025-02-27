@@ -2411,6 +2411,12 @@ public class DwsMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClustersRequest::getEnterpriseProjectId,
+                ListClustersRequest::setEnterpriseProjectId));
 
         // response
 

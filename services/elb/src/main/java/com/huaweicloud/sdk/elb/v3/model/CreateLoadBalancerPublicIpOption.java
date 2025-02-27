@@ -42,7 +42,7 @@ public class CreateLoadBalancerPublicIpOption {
     }
 
     /**
-     * 参数解释：IP版本。  约束限制：取值只有4和6。4：IPv4, 6: IPv6。 [不支持IPv6，请勿设置为6。](tag:dt,dt_test)  取值范围：  - 4：表示IPv4。  - 6：表示IPv6。  默认取值：4
+     * 参数解释：IP版本。  约束限制：取值只有4和6。4：IPv4, 6: IPv6。 [不支持IPv6，请勿设置为6。](tag:dt)  取值范围：  - 4：表示IPv4。  - 6：表示IPv6。  默认取值：4
      * @return ipVersion
      */
     public Integer getIpVersion() {

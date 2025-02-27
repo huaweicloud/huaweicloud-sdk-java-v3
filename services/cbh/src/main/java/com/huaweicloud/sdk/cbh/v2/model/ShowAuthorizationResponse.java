@@ -15,16 +15,16 @@ public class ShowAuthorizationResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "authorization")
 
-    private AgencyAuthorizeInfo authorization;
+    private AgencyAuthorizeInfoRsp authorization;
 
-    public ShowAuthorizationResponse withAuthorization(AgencyAuthorizeInfo authorization) {
+    public ShowAuthorizationResponse withAuthorization(AgencyAuthorizeInfoRsp authorization) {
         this.authorization = authorization;
         return this;
     }
 
-    public ShowAuthorizationResponse withAuthorization(Consumer<AgencyAuthorizeInfo> authorizationSetter) {
+    public ShowAuthorizationResponse withAuthorization(Consumer<AgencyAuthorizeInfoRsp> authorizationSetter) {
         if (this.authorization == null) {
-            this.authorization = new AgencyAuthorizeInfo();
+            this.authorization = new AgencyAuthorizeInfoRsp();
             authorizationSetter.accept(this.authorization);
         }
 
@@ -35,11 +35,11 @@ public class ShowAuthorizationResponse extends SdkResponse {
      * Get authorization
      * @return authorization
      */
-    public AgencyAuthorizeInfo getAuthorization() {
+    public AgencyAuthorizeInfoRsp getAuthorization() {
         return authorization;
     }
 
-    public void setAuthorization(AgencyAuthorizeInfo authorization) {
+    public void setAuthorization(AgencyAuthorizeInfoRsp authorization) {
         this.authorization = authorization;
     }
 

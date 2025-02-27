@@ -18,11 +18,6 @@ public class ImportSecretsRequest {
 
     private List<CreateSecretRequestBody> secrets = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "total")
-
-    private Integer total;
-
     public ImportSecretsRequest withSecrets(List<CreateSecretRequestBody> secrets) {
         this.secrets = secrets;
         return this;
@@ -56,23 +51,6 @@ public class ImportSecretsRequest {
         this.secrets = secrets;
     }
 
-    public ImportSecretsRequest withTotal(Integer total) {
-        this.total = total;
-        return this;
-    }
-
-    /**
-     * 导入数据条数
-     * @return total
-     */
-    public Integer getTotal() {
-        return total;
-    }
-
-    public void setTotal(Integer total) {
-        this.total = total;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -82,12 +60,12 @@ public class ImportSecretsRequest {
             return false;
         }
         ImportSecretsRequest that = (ImportSecretsRequest) obj;
-        return Objects.equals(this.secrets, that.secrets) && Objects.equals(this.total, that.total);
+        return Objects.equals(this.secrets, that.secrets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(secrets, total);
+        return Objects.hash(secrets);
     }
 
     @Override
@@ -95,7 +73,6 @@ public class ImportSecretsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ImportSecretsRequest {\n");
         sb.append("    secrets: ").append(toIndentedString(secrets)).append("\n");
-        sb.append("    total: ").append(toIndentedString(total)).append("\n");
         sb.append("}");
         return sb.toString();
     }

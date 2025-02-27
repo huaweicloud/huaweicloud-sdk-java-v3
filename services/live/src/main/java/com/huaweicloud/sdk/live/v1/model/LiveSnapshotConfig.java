@@ -126,6 +126,86 @@ public class LiveSnapshotConfig {
 
     private String callBackUrl;
 
+    /**
+     * 截图存储文件访问协议， 仅支持http、https格式
+     */
+    public static final class ImageAccessProtocolEnum {
+
+        /**
+         * Enum HTTP for value: "http"
+         */
+        public static final ImageAccessProtocolEnum HTTP = new ImageAccessProtocolEnum("http");
+
+        /**
+         * Enum HTTPS for value: "https"
+         */
+        public static final ImageAccessProtocolEnum HTTPS = new ImageAccessProtocolEnum("https");
+
+        private static final Map<String, ImageAccessProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ImageAccessProtocolEnum> createStaticFields() {
+            Map<String, ImageAccessProtocolEnum> map = new HashMap<>();
+            map.put("http", HTTP);
+            map.put("https", HTTPS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ImageAccessProtocolEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ImageAccessProtocolEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImageAccessProtocolEnum(value));
+        }
+
+        public static ImageAccessProtocolEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ImageAccessProtocolEnum) {
+                return this.value.equals(((ImageAccessProtocolEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_access_protocol")
+
+    private ImageAccessProtocolEnum imageAccessProtocol;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_access_domain")
+
+    private String imageAccessDomain;
+
     public LiveSnapshotConfig withDomain(String domain) {
         this.domain = domain;
         return this;
@@ -271,6 +351,40 @@ public class LiveSnapshotConfig {
         this.callBackUrl = callBackUrl;
     }
 
+    public LiveSnapshotConfig withImageAccessProtocol(ImageAccessProtocolEnum imageAccessProtocol) {
+        this.imageAccessProtocol = imageAccessProtocol;
+        return this;
+    }
+
+    /**
+     * 截图存储文件访问协议， 仅支持http、https格式
+     * @return imageAccessProtocol
+     */
+    public ImageAccessProtocolEnum getImageAccessProtocol() {
+        return imageAccessProtocol;
+    }
+
+    public void setImageAccessProtocol(ImageAccessProtocolEnum imageAccessProtocol) {
+        this.imageAccessProtocol = imageAccessProtocol;
+    }
+
+    public LiveSnapshotConfig withImageAccessDomain(String imageAccessDomain) {
+        this.imageAccessDomain = imageAccessDomain;
+        return this;
+    }
+
+    /**
+     * 截图存储文件访问域名
+     * @return imageAccessDomain
+     */
+    public String getImageAccessDomain() {
+        return imageAccessDomain;
+    }
+
+    public void setImageAccessDomain(String imageAccessDomain) {
+        this.imageAccessDomain = imageAccessDomain;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -285,13 +399,23 @@ public class LiveSnapshotConfig {
             && Objects.equals(this.objectWriteMode, that.objectWriteMode)
             && Objects.equals(this.obsLocation, that.obsLocation)
             && Objects.equals(this.callBackEnable, that.callBackEnable)
-            && Objects.equals(this.callBackUrl, that.callBackUrl);
+            && Objects.equals(this.callBackUrl, that.callBackUrl)
+            && Objects.equals(this.imageAccessProtocol, that.imageAccessProtocol)
+            && Objects.equals(this.imageAccessDomain, that.imageAccessDomain);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(domain, appName, authKey, timeInterval, objectWriteMode, obsLocation, callBackEnable, callBackUrl);
+        return Objects.hash(domain,
+            appName,
+            authKey,
+            timeInterval,
+            objectWriteMode,
+            obsLocation,
+            callBackEnable,
+            callBackUrl,
+            imageAccessProtocol,
+            imageAccessDomain);
     }
 
     @Override
@@ -306,6 +430,8 @@ public class LiveSnapshotConfig {
         sb.append("    obsLocation: ").append(toIndentedString(obsLocation)).append("\n");
         sb.append("    callBackEnable: ").append(toIndentedString(callBackEnable)).append("\n");
         sb.append("    callBackUrl: ").append(toIndentedString(callBackUrl)).append("\n");
+        sb.append("    imageAccessProtocol: ").append(toIndentedString(imageAccessProtocol)).append("\n");
+        sb.append("    imageAccessDomain: ").append(toIndentedString(imageAccessDomain)).append("\n");
         sb.append("}");
         return sb.toString();
     }

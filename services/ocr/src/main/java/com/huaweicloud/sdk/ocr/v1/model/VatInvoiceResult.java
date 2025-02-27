@@ -283,6 +283,11 @@ public class VatInvoiceResult {
 
     private List<BelongItemList> belongItemList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "passenger_travel_item_list")
+
+    private List<PassengerTravelItemList> passengerTravelItemList = null;
+
     public VatInvoiceResult withTitle(String title) {
         this.title = title;
         return this;
@@ -306,7 +311,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 增值税发票类型，可选值包括： - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - special_electronic: 增值税电子专用发票  - toll: 增值税电子普通发票（通行费）  - roll: 增值税普通发票（卷票）  - fully_digitalized_special_electronic: 全电专用发票  - fully_digitalized_normal_electronic: 全电普通发票 
+     * 增值税发票类型，取值包括： - special: 增值税专用发票  - normal: 增值税普通发票  - electronic: 增值税电子普通发票  - special_electronic: 增值税电子专用发票  - toll: 增值税电子普通发票（通行费）  - roll: 增值税普通发票（卷票）  - fully_digitalized_special_electronic: 全电专用发票  - fully_digitalized_normal_electronic: 全电普通发票 
      * @return type
      */
     public String getType() {
@@ -323,7 +328,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 增值税发票左上角标志。当“advanced_mode”设置为“true”时才返回。包含：通行费、代开。 
+     * 增值税发票左上角标志。取值包含：通行费、代开、成品油、收购、机动车、旅客运输服务。 当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return invoiceTag
      */
     public String getInvoiceTag() {
@@ -374,7 +379,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 发票联次。 当“advanced_mode”设置为“true”时才返回。 
+     * 发票联次。  当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return serialNumber
      */
     public String getSerialNumber() {
@@ -391,7 +396,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 发票归属地。 当“advanced_mode”设置为“true”时才返回。 
+     * 发票归属地。  当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return attribution
      */
     public String getAttribution() {
@@ -424,7 +429,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 发票监制章。 当“advanced_mode”设置为“true”时才返回。 
+     * 发票监制章。  当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return supervisionSeal
      */
     public List<String> getSupervisionSeal() {
@@ -458,7 +463,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 机打代码。当“advanced_mode”设置为“true”时才返回。 
+     * 机打代码。 当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return printCode
      */
     public String getPrintCode() {
@@ -475,7 +480,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 机器编号。 当“advanced_mode”设置为“true”时才返回。 
+     * 机器编号。  当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return machineNumber
      */
     public String getMachineNumber() {
@@ -492,7 +497,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 机打号码。 当“advanced_mode”设置为“true”时才返回 
+     * 机打号码。  当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return printNumber
      */
     public String getPrintNumber() {
@@ -764,7 +769,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 价税合计（大写）。 当“advanced_mode”设置为“true”时才返回。 
+     * 价税合计（大写）。  当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return totalInWords
      */
     public String getTotalInWords() {
@@ -781,7 +786,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 备注。 当“advanced_mode”设置为“true”时才返回。 
+     * 备注。  当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return remarks
      */
     public String getRemarks() {
@@ -798,7 +803,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 收款人。 当“advanced_mode”设置为“true”时才返回。 
+     * 收款人。  当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return receiver
      */
     public String getReceiver() {
@@ -815,7 +820,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 复核。 当“advanced_mode”设置为“true”时才返回。 
+     * 复核。  当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return reviewer
      */
     public String getReviewer() {
@@ -832,7 +837,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 开票人。 当“advanced_mode”设置为“true”时才返回。 
+     * 开票人。  当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return issuer
      */
     public String getIssuer() {
@@ -865,7 +870,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 销售方发票专用章。 当“advanced_mode”设置为“true”时才返回。 
+     * 销售方发票专用章。  当\"advanced_mode\"设置为\"true\"时才返回。 
      * @return sellerSeal
      */
     public List<String> getSellerSeal() {
@@ -966,7 +971,7 @@ public class VatInvoiceResult {
     }
 
     /**
-     * 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当“return_text_location”设置为“true”时才返回。 
+     * 文本框在原图位置。输出左上、右上、右下、左下四个点坐标。当\"return_text_location\"设置为“true”时才返回。 
      * @return textLocation
      */
     public Object getTextLocation() {
@@ -1265,6 +1270,40 @@ public class VatInvoiceResult {
         this.belongItemList = belongItemList;
     }
 
+    public VatInvoiceResult withPassengerTravelItemList(List<PassengerTravelItemList> passengerTravelItemList) {
+        this.passengerTravelItemList = passengerTravelItemList;
+        return this;
+    }
+
+    public VatInvoiceResult addPassengerTravelItemListItem(PassengerTravelItemList passengerTravelItemListItem) {
+        if (this.passengerTravelItemList == null) {
+            this.passengerTravelItemList = new ArrayList<>();
+        }
+        this.passengerTravelItemList.add(passengerTravelItemListItem);
+        return this;
+    }
+
+    public VatInvoiceResult withPassengerTravelItemList(
+        Consumer<List<PassengerTravelItemList>> passengerTravelItemListSetter) {
+        if (this.passengerTravelItemList == null) {
+            this.passengerTravelItemList = new ArrayList<>();
+        }
+        passengerTravelItemListSetter.accept(this.passengerTravelItemList);
+        return this;
+    }
+
+    /**
+     * 旅客运输服务的出行信息列表。 当传入图片为旅客运输服务发票时返回此字段。 
+     * @return passengerTravelItemList
+     */
+    public List<PassengerTravelItemList> getPassengerTravelItemList() {
+        return passengerTravelItemList;
+    }
+
+    public void setPassengerTravelItemList(List<PassengerTravelItemList> passengerTravelItemList) {
+        this.passengerTravelItemList = passengerTravelItemList;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1311,7 +1350,8 @@ public class VatInvoiceResult {
             && Objects.equals(this.belongSubtotalTax, that.belongSubtotalTax)
             && Objects.equals(this.belongDiscountAmount, that.belongDiscountAmount)
             && Objects.equals(this.belongDiscountTax, that.belongDiscountTax)
-            && Objects.equals(this.belongItemList, that.belongItemList);
+            && Objects.equals(this.belongItemList, that.belongItemList)
+            && Objects.equals(this.passengerTravelItemList, that.passengerTravelItemList);
     }
 
     @Override
@@ -1369,7 +1409,8 @@ public class VatInvoiceResult {
             belongSubtotalTax,
             belongDiscountAmount,
             belongDiscountTax,
-            belongItemList);
+            belongItemList,
+            passengerTravelItemList);
     }
 
     @Override
@@ -1430,6 +1471,7 @@ public class VatInvoiceResult {
         sb.append("    belongDiscountAmount: ").append(toIndentedString(belongDiscountAmount)).append("\n");
         sb.append("    belongDiscountTax: ").append(toIndentedString(belongDiscountTax)).append("\n");
         sb.append("    belongItemList: ").append(toIndentedString(belongItemList)).append("\n");
+        sb.append("    passengerTravelItemList: ").append(toIndentedString(passengerTravelItemList)).append("\n");
         sb.append("}");
         return sb.toString();
     }

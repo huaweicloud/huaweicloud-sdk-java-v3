@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -17,26 +14,10 @@ public class ListEdgeGroupCertsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private List<EdgeGroupCertListResp> body = null;
+    private Object body;
 
-    public ListEdgeGroupCertsResponse withBody(List<EdgeGroupCertListResp> body) {
+    public ListEdgeGroupCertsResponse withBody(Object body) {
         this.body = body;
-        return this;
-    }
-
-    public ListEdgeGroupCertsResponse addBodyItem(EdgeGroupCertListResp bodyItem) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        this.body.add(bodyItem);
-        return this;
-    }
-
-    public ListEdgeGroupCertsResponse withBody(Consumer<List<EdgeGroupCertListResp>> bodySetter) {
-        if (this.body == null) {
-            this.body = new ArrayList<>();
-        }
-        bodySetter.accept(this.body);
         return this;
     }
 
@@ -44,11 +25,11 @@ public class ListEdgeGroupCertsResponse extends SdkResponse {
      * Get body
      * @return body
      */
-    public List<EdgeGroupCertListResp> getBody() {
+    public Object getBody() {
         return body;
     }
 
-    public void setBody(List<EdgeGroupCertListResp> body) {
+    public void setBody(Object body) {
         this.body = body;
     }
 

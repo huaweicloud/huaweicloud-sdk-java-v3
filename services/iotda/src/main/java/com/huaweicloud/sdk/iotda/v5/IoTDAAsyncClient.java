@@ -25,6 +25,8 @@ import com.huaweicloud.sdk.iotda.v5.model.BindDevicePolicyRequest;
 import com.huaweicloud.sdk.iotda.v5.model.BindDevicePolicyResponse;
 import com.huaweicloud.sdk.iotda.v5.model.BroadcastMessageRequest;
 import com.huaweicloud.sdk.iotda.v5.model.BroadcastMessageResponse;
+import com.huaweicloud.sdk.iotda.v5.model.ChangeGatewayRequest;
+import com.huaweicloud.sdk.iotda.v5.model.ChangeGatewayResponse;
 import com.huaweicloud.sdk.iotda.v5.model.ChangeRuleStatusRequest;
 import com.huaweicloud.sdk.iotda.v5.model.ChangeRuleStatusResponse;
 import com.huaweicloud.sdk.iotda.v5.model.CheckCertificateRequest;
@@ -1876,6 +1878,47 @@ public class IoTDAAsyncClient {
      */
     public AsyncInvoker<AddDeviceRequest, AddDeviceResponse> addDeviceAsyncInvoker(AddDeviceRequest request) {
         return new AsyncInvoker<>(request, IoTDAMeta.addDevice, hcClient);
+    }
+
+    /**
+     * 修改设备网关
+     *
+     * 应用服务器可调用此接口在物联网平台修改子设备网关。
+     * - 只允许子设备修改网关。
+     * - 目标网关必须和当前设备在同一个资源空间。
+     * - 网关id不能和当前子设备网关id相同。
+     * - 设备如果有下级子设备，则不允许切换网关。
+     * - 支持多级子设备，当前最大支持二级子设备。
+     * - 该接口仅支持创建单个设备切换网关，如需批量切换设备网关，请参见 [[创建批量任务](https://support.huaweicloud.com/api-iothub/iot_06_v5_0045.html)](tag:hws)[[创建批量任务](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_0045.html)](tag:hws_hk)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeGatewayRequest 请求对象
+     * @return CompletableFuture<ChangeGatewayResponse>
+     */
+    public CompletableFuture<ChangeGatewayResponse> changeGatewayAsync(ChangeGatewayRequest request) {
+        return hcClient.asyncInvokeHttp(request, IoTDAMeta.changeGateway);
+    }
+
+    /**
+     * 修改设备网关
+     *
+     * 应用服务器可调用此接口在物联网平台修改子设备网关。
+     * - 只允许子设备修改网关。
+     * - 目标网关必须和当前设备在同一个资源空间。
+     * - 网关id不能和当前子设备网关id相同。
+     * - 设备如果有下级子设备，则不允许切换网关。
+     * - 支持多级子设备，当前最大支持二级子设备。
+     * - 该接口仅支持创建单个设备切换网关，如需批量切换设备网关，请参见 [[创建批量任务](https://support.huaweicloud.com/api-iothub/iot_06_v5_0045.html)](tag:hws)[[创建批量任务](https://support.huaweicloud.com/intl/zh-cn/api-iothub/iot_06_v5_0045.html)](tag:hws_hk)。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeGatewayRequest 请求对象
+     * @return AsyncInvoker<ChangeGatewayRequest, ChangeGatewayResponse>
+     */
+    public AsyncInvoker<ChangeGatewayRequest, ChangeGatewayResponse> changeGatewayAsyncInvoker(
+        ChangeGatewayRequest request) {
+        return new AsyncInvoker<>(request, IoTDAMeta.changeGateway, hcClient);
     }
 
     /**

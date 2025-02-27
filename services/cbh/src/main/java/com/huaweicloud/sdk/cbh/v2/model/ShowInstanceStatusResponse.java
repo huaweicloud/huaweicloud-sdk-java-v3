@@ -24,7 +24,7 @@ public class ShowInstanceStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_id")
 
-    private Object serverId;
+    private String serverId;
 
     public ShowInstanceStatusResponse withName(String name) {
         this.name = name;
@@ -60,20 +60,20 @@ public class ShowInstanceStatusResponse extends SdkResponse {
         this.status = status;
     }
 
-    public ShowInstanceStatusResponse withServerId(Object serverId) {
+    public ShowInstanceStatusResponse withServerId(String serverId) {
         this.serverId = serverId;
         return this;
     }
 
     /**
-     * Get serverId
+     * 云堡垒机实例ID，使用UUID格式表示。
      * @return serverId
      */
-    public Object getServerId() {
+    public String getServerId() {
         return serverId;
     }
 
-    public void setServerId(Object serverId) {
+    public void setServerId(String serverId) {
         this.serverId = serverId;
     }
 

@@ -287,7 +287,7 @@ public class CreateCertificateOption {
     }
 
     /**
-     * 证书所属的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,dt_test,hcso_dt)
+     * 证书所属的企业项目ID。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

@@ -26,7 +26,7 @@ public class ListPortsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "id")
 
-    private String id;
+    private List<String> id = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -265,8 +265,24 @@ public class ListPortsRequest {
         this.name = name;
     }
 
-    public ListPortsRequest withId(String id) {
+    public ListPortsRequest withId(List<String> id) {
         this.id = id;
+        return this;
+    }
+
+    public ListPortsRequest addIdItem(String idItem) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        this.id.add(idItem);
+        return this;
+    }
+
+    public ListPortsRequest withId(Consumer<List<String>> idSetter) {
+        if (this.id == null) {
+            this.id = new ArrayList<>();
+        }
+        idSetter.accept(this.id);
         return this;
     }
 
@@ -274,11 +290,11 @@ public class ListPortsRequest {
      * 按照port_id过滤查询
      * @return id
      */
-    public String getId() {
+    public List<String> getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(List<String> id) {
         this.id = id;
     }
 

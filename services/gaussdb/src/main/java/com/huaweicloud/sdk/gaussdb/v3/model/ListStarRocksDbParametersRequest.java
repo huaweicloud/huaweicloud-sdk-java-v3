@@ -25,6 +25,11 @@ public class ListStarRocksDbParametersRequest {
 
     private String addTaskScenario;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "main_task_name")
+
+    private String mainTaskName;
+
     public ListStarRocksDbParametersRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
@@ -78,6 +83,23 @@ public class ListStarRocksDbParametersRequest {
         this.addTaskScenario = addTaskScenario;
     }
 
+    public ListStarRocksDbParametersRequest withMainTaskName(String mainTaskName) {
+        this.mainTaskName = mainTaskName;
+        return this;
+    }
+
+    /**
+     * **参数解释**：  新增子任务相应的主任务名。  **约束限制**：  非必填。  **取值范围**：  不涉及。  **默认值**：  不涉及。
+     * @return mainTaskName
+     */
+    public String getMainTaskName() {
+        return mainTaskName;
+    }
+
+    public void setMainTaskName(String mainTaskName) {
+        this.mainTaskName = mainTaskName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +110,13 @@ public class ListStarRocksDbParametersRequest {
         }
         ListStarRocksDbParametersRequest that = (ListStarRocksDbParametersRequest) obj;
         return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.xLanguage, that.xLanguage)
-            && Objects.equals(this.addTaskScenario, that.addTaskScenario);
+            && Objects.equals(this.addTaskScenario, that.addTaskScenario)
+            && Objects.equals(this.mainTaskName, that.mainTaskName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, xLanguage, addTaskScenario);
+        return Objects.hash(instanceId, xLanguage, addTaskScenario, mainTaskName);
     }
 
     @Override
@@ -103,6 +126,7 @@ public class ListStarRocksDbParametersRequest {
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    addTaskScenario: ").append(toIndentedString(addTaskScenario)).append("\n");
+        sb.append("    mainTaskName: ").append(toIndentedString(mainTaskName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

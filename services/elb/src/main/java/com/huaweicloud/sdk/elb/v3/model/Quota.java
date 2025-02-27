@@ -281,7 +281,7 @@ public class Quota {
     }
 
     /**
-     * 单个监听器下的pool的配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * 单个pool器关联的监听器配额。  取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
      * @return listenersPerPool
      */
     public Integer getListenersPerPool() {

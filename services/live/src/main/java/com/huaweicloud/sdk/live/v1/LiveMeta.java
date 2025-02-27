@@ -24,6 +24,8 @@ import com.huaweicloud.sdk.live.v1.model.CreateRecordIndexRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordIndexResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordRuleRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateRecordRuleResponse;
+import com.huaweicloud.sdk.live.v1.model.CreateScheduleRecordTasksRequest;
+import com.huaweicloud.sdk.live.v1.model.CreateScheduleRecordTasksResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateSnapshotConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.CreateSnapshotConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.CreateStreamForbiddenRequest;
@@ -53,6 +55,8 @@ import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteRecordRuleResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteRefererChainRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteRefererChainResponse;
+import com.huaweicloud.sdk.live.v1.model.DeleteScheduleRecordTasksRequest;
+import com.huaweicloud.sdk.live.v1.model.DeleteScheduleRecordTasksResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteSnapshotConfigRequest;
 import com.huaweicloud.sdk.live.v1.model.DeleteSnapshotConfigResponse;
 import com.huaweicloud.sdk.live.v1.model.DeleteStreamForbiddenRequest;
@@ -89,6 +93,8 @@ import com.huaweicloud.sdk.live.v1.model.ListRecordContentsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListRecordContentsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListRecordRulesRequest;
 import com.huaweicloud.sdk.live.v1.model.ListRecordRulesResponse;
+import com.huaweicloud.sdk.live.v1.model.ListScheduleRecordTasksRequest;
+import com.huaweicloud.sdk.live.v1.model.ListScheduleRecordTasksResponse;
 import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsRequest;
 import com.huaweicloud.sdk.live.v1.model.ListSnapshotConfigsResponse;
 import com.huaweicloud.sdk.live.v1.model.ListStreamForbiddenRequest;
@@ -127,6 +133,7 @@ import com.huaweicloud.sdk.live.v1.model.RecordIndexRequestBody;
 import com.huaweicloud.sdk.live.v1.model.RecordRuleRequest;
 import com.huaweicloud.sdk.live.v1.model.RunRecordRequest;
 import com.huaweicloud.sdk.live.v1.model.RunRecordResponse;
+import com.huaweicloud.sdk.live.v1.model.ScheduleRecordTasksReq;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainInfo;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainRequest;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainResponse;
@@ -333,6 +340,39 @@ public class LiveMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateScheduleRecordTasksRequest, CreateScheduleRecordTasksResponse> createScheduleRecordTasks =
+        genForCreateScheduleRecordTasks();
+
+    private static HttpRequestDef<CreateScheduleRecordTasksRequest, CreateScheduleRecordTasksResponse> genForCreateScheduleRecordTasks() {
+        // basic
+        HttpRequestDef.Builder<CreateScheduleRecordTasksRequest, CreateScheduleRecordTasksResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateScheduleRecordTasksRequest.class,
+                    CreateScheduleRecordTasksResponse.class)
+                .withName("CreateScheduleRecordTasks")
+                .withUri("/v1/{project_id}/schedule/record/tasks")
+                .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<ScheduleRecordTasksReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ScheduleRecordTasksReq.class),
+            f -> f.withMarshaller(CreateScheduleRecordTasksRequest::getBody,
+                CreateScheduleRecordTasksRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateScheduleRecordTasksResponse::getXRequestId,
+                CreateScheduleRecordTasksResponse::setXRequestId));
         return builder.build();
     }
 
@@ -599,6 +639,39 @@ public class LiveMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteScheduleRecordTasksRequest, DeleteScheduleRecordTasksResponse> deleteScheduleRecordTasks =
+        genForDeleteScheduleRecordTasks();
+
+    private static HttpRequestDef<DeleteScheduleRecordTasksRequest, DeleteScheduleRecordTasksResponse> genForDeleteScheduleRecordTasks() {
+        // basic
+        HttpRequestDef.Builder<DeleteScheduleRecordTasksRequest, DeleteScheduleRecordTasksResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteScheduleRecordTasksRequest.class,
+                    DeleteScheduleRecordTasksResponse.class)
+                .withName("DeleteScheduleRecordTasks")
+                .withUri("/v1/{project_id}/schedule/record/tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduleRecordTasksRequest::getTaskId,
+                DeleteScheduleRecordTasksRequest::setTaskId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteScheduleRecordTasksResponse::getXRequestId,
+                DeleteScheduleRecordTasksResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1055,6 +1128,76 @@ public class LiveMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScheduleRecordTasksRequest, ListScheduleRecordTasksResponse> listScheduleRecordTasks =
+        genForListScheduleRecordTasks();
+
+    private static HttpRequestDef<ListScheduleRecordTasksRequest, ListScheduleRecordTasksResponse> genForListScheduleRecordTasks() {
+        // basic
+        HttpRequestDef.Builder<ListScheduleRecordTasksRequest, ListScheduleRecordTasksResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListScheduleRecordTasksRequest.class, ListScheduleRecordTasksResponse.class)
+            .withName("ListScheduleRecordTasks")
+            .withUri("/v1/{project_id}/schedule/record/tasks")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListScheduleRecordTasksRequest::getStartTime,
+                ListScheduleRecordTasksRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListScheduleRecordTasksRequest::getEndTime,
+                ListScheduleRecordTasksRequest::setEndTime));
+        builder.<String>withRequestField("domain",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleRecordTasksRequest::getDomain,
+                ListScheduleRecordTasksRequest::setDomain));
+        builder.<String>withRequestField("app",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleRecordTasksRequest::getApp, ListScheduleRecordTasksRequest::setApp));
+        builder.<String>withRequestField("stream",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleRecordTasksRequest::getStream,
+                ListScheduleRecordTasksRequest::setStream));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleRecordTasksRequest::getTaskId,
+                ListScheduleRecordTasksRequest::setTaskId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduleRecordTasksRequest::getOffset,
+                ListScheduleRecordTasksRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduleRecordTasksRequest::getLimit, ListScheduleRecordTasksRequest::setLimit));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListScheduleRecordTasksResponse::getXRequestId,
+                ListScheduleRecordTasksResponse::setXRequestId));
         return builder.build();
     }
 

@@ -35,6 +35,11 @@ public class Volumes {
 
     private Boolean readOnly;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_mode")
+
+    private Integer defaultMode;
+
     public Volumes withName(String name) {
         this.name = name;
         return this;
@@ -120,6 +125,23 @@ public class Volumes {
         this.readOnly = readOnly;
     }
 
+    public Volumes withDefaultMode(Integer defaultMode) {
+        this.defaultMode = defaultMode;
+        return this;
+    }
+
+    /**
+     * 挂载的文件权限，仅configMap和secret类型生效，填写值为十进制表示的linux文件权限，默认为420（对应权限644）
+     * @return defaultMode
+     */
+    public Integer getDefaultMode() {
+        return defaultMode;
+    }
+
+    public void setDefaultMode(Integer defaultMode) {
+        this.defaultMode = defaultMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +153,12 @@ public class Volumes {
         Volumes that = (Volumes) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
             && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
-            && Objects.equals(this.readOnly, that.readOnly);
+            && Objects.equals(this.readOnly, that.readOnly) && Objects.equals(this.defaultMode, that.defaultMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, source, destination, readOnly);
+        return Objects.hash(name, type, source, destination, readOnly, defaultMode);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class Volumes {
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    readOnly: ").append(toIndentedString(readOnly)).append("\n");
+        sb.append("    defaultMode: ").append(toIndentedString(defaultMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

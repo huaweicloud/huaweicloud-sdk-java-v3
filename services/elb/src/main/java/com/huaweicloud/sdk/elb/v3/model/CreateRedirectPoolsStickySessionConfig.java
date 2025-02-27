@@ -43,7 +43,7 @@ public class CreateRedirectPoolsStickySessionConfig {
     }
 
     /**
-     * 参数解释：会话保持的时间。  取值范围：1-1440（分钟）  默认取值：1440  [荷兰region不支持QUIC。](tag:dt,dt_test)
+     * 参数解释：会话保持的时间。  取值范围：1-1440（分钟）  默认取值：1440  [荷兰region不支持QUIC。](tag:dt)
      * @return timeout
      */
     public Integer getTimeout() {

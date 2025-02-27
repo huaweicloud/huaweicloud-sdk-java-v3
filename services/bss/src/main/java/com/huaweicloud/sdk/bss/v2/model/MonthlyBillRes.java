@@ -254,6 +254,11 @@ public class MonthlyBillRes {
 
     private String beId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extend_params")
+
+    private ResRelation extendParams;
+
     public MonthlyBillRes withCycle(String cycle) {
         this.cycle = cycle;
         return this;
@@ -1086,6 +1091,32 @@ public class MonthlyBillRes {
         this.beId = beId;
     }
 
+    public MonthlyBillRes withExtendParams(ResRelation extendParams) {
+        this.extendParams = extendParams;
+        return this;
+    }
+
+    public MonthlyBillRes withExtendParams(Consumer<ResRelation> extendParamsSetter) {
+        if (this.extendParams == null) {
+            this.extendParams = new ResRelation();
+            extendParamsSetter.accept(this.extendParams);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get extendParams
+     * @return extendParams
+     */
+    public ResRelation getExtendParams() {
+        return extendParams;
+    }
+
+    public void setExtendParams(ResRelation extendParams) {
+        this.extendParams = extendParams;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1132,7 +1163,7 @@ public class MonthlyBillRes {
             && Objects.equals(this.payerAccountId, that.payerAccountId)
             && Objects.equals(this.effectiveTime, that.effectiveTime)
             && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.consumeTime, that.consumeTime)
-            && Objects.equals(this.beId, that.beId);
+            && Objects.equals(this.beId, that.beId) && Objects.equals(this.extendParams, that.extendParams);
     }
 
     @Override
@@ -1184,7 +1215,8 @@ public class MonthlyBillRes {
             effectiveTime,
             expireTime,
             consumeTime,
-            beId);
+            beId,
+            extendParams);
     }
 
     @Override
@@ -1239,6 +1271,7 @@ public class MonthlyBillRes {
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    consumeTime: ").append(toIndentedString(consumeTime)).append("\n");
         sb.append("    beId: ").append(toIndentedString(beId)).append("\n");
+        sb.append("    extendParams: ").append(toIndentedString(extendParams)).append("\n");
         sb.append("}");
         return sb.toString();
     }

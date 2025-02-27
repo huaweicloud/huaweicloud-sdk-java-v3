@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 边缘节点日志配置
+ * 边缘节点日志配置。当用户未填写日志配置相关字段时，将默认打开日志上传到云端功能。
  */
 public class LogConfigs {
 

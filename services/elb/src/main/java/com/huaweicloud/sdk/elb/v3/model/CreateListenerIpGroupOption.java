@@ -123,7 +123,7 @@ public class CreateListenerIpGroupOption {
     }
 
     /**
-     * 参数解释：访问控制组的状态。  取值范围： - true：开启访问控制，默认值。 - flase：关闭访问控制。
+     * 参数解释：访问控制组的状态。  取值范围： - true：开启访问控制，默认值。 - false：关闭访问控制。
      * @return enableIpgroup
      */
     public Boolean getEnableIpgroup() {

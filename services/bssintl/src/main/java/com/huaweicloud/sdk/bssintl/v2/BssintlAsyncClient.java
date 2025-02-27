@@ -34,6 +34,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListCustomerselfResourceRecordDetail
 import com.huaweicloud.sdk.bssintl.v2.model.ListCustomerselfResourceRecordDetailsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListCustomerselfResourceRecordsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListCustomerselfResourceRecordsResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListEnterpriseSubCustomersRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListEnterpriseSubCustomersResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListFreeResourceInfosRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListFreeResourceInfosResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListFreeResourceUsagesRequest;
@@ -618,6 +620,36 @@ public class BssintlAsyncClient {
     public AsyncInvoker<ListCustomerselfResourceRecordsRequest, ListCustomerselfResourceRecordsResponse> listCustomerselfResourceRecordsAsyncInvoker(
         ListCustomerselfResourceRecordsRequest request) {
         return new AsyncInvoker<>(request, BssintlMeta.listCustomerselfResourceRecords, hcClient);
+    }
+
+    /**
+     * 查询企业子账号列表
+     *
+     * 企业主账号在自建平台查询企业子账号信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEnterpriseSubCustomersRequest 请求对象
+     * @return CompletableFuture<ListEnterpriseSubCustomersResponse>
+     */
+    public CompletableFuture<ListEnterpriseSubCustomersResponse> listEnterpriseSubCustomersAsync(
+        ListEnterpriseSubCustomersRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssintlMeta.listEnterpriseSubCustomers);
+    }
+
+    /**
+     * 查询企业子账号列表
+     *
+     * 企业主账号在自建平台查询企业子账号信息列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEnterpriseSubCustomersRequest 请求对象
+     * @return AsyncInvoker<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse>
+     */
+    public AsyncInvoker<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> listEnterpriseSubCustomersAsyncInvoker(
+        ListEnterpriseSubCustomersRequest request) {
+        return new AsyncInvoker<>(request, BssintlMeta.listEnterpriseSubCustomers, hcClient);
     }
 
     /**

@@ -42,6 +42,8 @@ import com.huaweicloud.sdk.bssintl.v2.model.ListCustomerselfResourceRecordDetail
 import com.huaweicloud.sdk.bssintl.v2.model.ListCustomerselfResourceRecordDetailsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListCustomerselfResourceRecordsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListCustomerselfResourceRecordsResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ListEnterpriseSubCustomersRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ListEnterpriseSubCustomersResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ListFreeResourceInfosReq;
 import com.huaweicloud.sdk.bssintl.v2.model.ListFreeResourceInfosRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ListFreeResourceInfosResponse;
@@ -737,6 +739,63 @@ public class BssintlMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListCustomerselfResourceRecordsRequest::getXLanguage,
                 ListCustomerselfResourceRecordsRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> listEnterpriseSubCustomers =
+        genForListEnterpriseSubCustomers();
+
+    private static HttpRequestDef<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> genForListEnterpriseSubCustomers() {
+        // basic
+        HttpRequestDef.Builder<ListEnterpriseSubCustomersRequest, ListEnterpriseSubCustomersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListEnterpriseSubCustomersRequest.class,
+                    ListEnterpriseSubCustomersResponse.class)
+                .withName("ListEnterpriseSubCustomers")
+                .withUri("/v2/enterprises/multi-accounts/sub-customers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("sub_customer_account_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getSubCustomerAccountName,
+                ListEnterpriseSubCustomersRequest::setSubCustomerAccountName));
+        builder.<String>withRequestField("sub_customer_display_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getSubCustomerDisplayName,
+                ListEnterpriseSubCustomersRequest::setSubCustomerDisplayName));
+        builder.<Integer>withRequestField("fuzzy_query",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getFuzzyQuery,
+                ListEnterpriseSubCustomersRequest::setFuzzyQuery));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getOffset,
+                ListEnterpriseSubCustomersRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getLimit,
+                ListEnterpriseSubCustomersRequest::setLimit));
+        builder.<String>withRequestField("org_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEnterpriseSubCustomersRequest::getOrgId,
+                ListEnterpriseSubCustomersRequest::setOrgId));
 
         // response
 

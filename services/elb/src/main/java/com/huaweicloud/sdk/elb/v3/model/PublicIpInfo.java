@@ -65,7 +65,7 @@ public class PublicIpInfo {
     }
 
     /**
-     * 参数解释：IP版本信息。  取值范围：4和6 4：IPv4 6：IPv6  [不支持IPv6，请勿设置为6。](tag:dt,dt_test)
+     * 参数解释：IP版本信息。  取值范围：4和6 4：IPv4 6：IPv6  [不支持IPv6，请勿设置为6。](tag:dt)
      * @return ipVersion
      */
     public Integer getIpVersion() {

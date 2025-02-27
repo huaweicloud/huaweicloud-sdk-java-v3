@@ -26,7 +26,7 @@ public class Annotations {
     }
 
     /**
-     * 生成ranktablefile。该参数目前只支持赋值\"ascend-1980\"，指昇腾D910。
+     * 生成ranktablefile。该参数目前只支持赋值\"ascend-1980\"。
      * @return ringController
      */
     public String getRingController() {

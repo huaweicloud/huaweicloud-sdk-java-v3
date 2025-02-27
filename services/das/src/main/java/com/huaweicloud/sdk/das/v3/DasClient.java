@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeTransactionSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateHealthReportTaskResponse;
+import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionRequest;
+import com.huaweicloud.sdk.das.v3.model.CreateInstanceConnectionResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CreateShareConnectionsResponse;
 import com.huaweicloud.sdk.das.v3.model.CreateSpaceAnalysisTaskRequest;
@@ -49,6 +51,8 @@ import com.huaweicloud.sdk.das.v3.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.das.v3.model.ListApiVersionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesRequest;
 import com.huaweicloud.sdk.das.v3.model.ListCloudDbaInstancesResponse;
+import com.huaweicloud.sdk.das.v3.model.ListConnectionsRequest;
+import com.huaweicloud.sdk.das.v3.model.ListConnectionsResponse;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.das.v3.model.ListDbUsersResponse;
 import com.huaweicloud.sdk.das.v3.model.ListFullSqlTasksRequest;
@@ -132,6 +136,126 @@ public class DasClient {
     }
 
     /**
+     * 删除共享链接
+     *
+     * 删除共享链接，
+     * 用于用户删除共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelShareConnectionsRequest 请求对象
+     * @return CancelShareConnectionsResponse
+     */
+    public CancelShareConnectionsResponse cancelShareConnections(CancelShareConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.cancelShareConnections);
+    }
+
+    /**
+     * 删除共享链接
+     *
+     * 删除共享链接，
+     * 用于用户删除共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelShareConnectionsRequest 请求对象
+     * @return SyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse>
+     */
+    public SyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse> cancelShareConnectionsInvoker(
+        CancelShareConnectionsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.cancelShareConnections, hcClient);
+    }
+
+    /**
+     * 创建实例连接
+     *
+     * 创建实例连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInstanceConnectionRequest 请求对象
+     * @return CreateInstanceConnectionResponse
+     */
+    public CreateInstanceConnectionResponse createInstanceConnection(CreateInstanceConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.createInstanceConnection);
+    }
+
+    /**
+     * 创建实例连接
+     *
+     * 创建实例连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInstanceConnectionRequest 请求对象
+     * @return SyncInvoker<CreateInstanceConnectionRequest, CreateInstanceConnectionResponse>
+     */
+    public SyncInvoker<CreateInstanceConnectionRequest, CreateInstanceConnectionResponse> createInstanceConnectionInvoker(
+        CreateInstanceConnectionRequest request) {
+        return new SyncInvoker<>(request, DasMeta.createInstanceConnection, hcClient);
+    }
+
+    /**
+     * 设置共享链接
+     *
+     * 设置共享链接，
+     * 用于用户添加共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateShareConnectionsRequest 请求对象
+     * @return CreateShareConnectionsResponse
+     */
+    public CreateShareConnectionsResponse createShareConnections(CreateShareConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.createShareConnections);
+    }
+
+    /**
+     * 设置共享链接
+     *
+     * 设置共享链接，
+     * 用于用户添加共享链接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateShareConnectionsRequest 请求对象
+     * @return SyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse>
+     */
+    public SyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse> createShareConnectionsInvoker(
+        CreateShareConnectionsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.createShareConnections, hcClient);
+    }
+
+    /**
+     * 查询实例连接列表
+     *
+     * 查询实例连接列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConnectionsRequest 请求对象
+     * @return ListConnectionsResponse
+     */
+    public ListConnectionsResponse listConnections(ListConnectionsRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.listConnections);
+    }
+
+    /**
+     * 查询实例连接列表
+     *
+     * 查询实例连接列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListConnectionsRequest 请求对象
+     * @return SyncInvoker<ListConnectionsRequest, ListConnectionsResponse>
+     */
+    public SyncInvoker<ListConnectionsRequest, ListConnectionsResponse> listConnectionsInvoker(
+        ListConnectionsRequest request) {
+        return new SyncInvoker<>(request, DasMeta.listConnections, hcClient);
+    }
+
+    /**
      * 查询API版本列表
      *
      * 查询API版本列表
@@ -187,37 +311,6 @@ public class DasClient {
     public SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionInvoker(
         ShowApiVersionRequest request) {
         return new SyncInvoker<>(request, DasMeta.showApiVersion, hcClient);
-    }
-
-    /**
-     * 删除共享链接
-     *
-     * 删除共享链接，
-     * 用于用户删除共享链接
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CancelShareConnectionsRequest 请求对象
-     * @return CancelShareConnectionsResponse
-     */
-    public CancelShareConnectionsResponse cancelShareConnections(CancelShareConnectionsRequest request) {
-        return hcClient.syncInvokeHttp(request, DasMeta.cancelShareConnections);
-    }
-
-    /**
-     * 删除共享链接
-     *
-     * 删除共享链接，
-     * 用于用户删除共享链接
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CancelShareConnectionsRequest 请求对象
-     * @return SyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse>
-     */
-    public SyncInvoker<CancelShareConnectionsRequest, CancelShareConnectionsResponse> cancelShareConnectionsInvoker(
-        CancelShareConnectionsRequest request) {
-        return new SyncInvoker<>(request, DasMeta.cancelShareConnections, hcClient);
     }
 
     /**
@@ -337,37 +430,6 @@ public class DasClient {
     public SyncInvoker<CreateHealthReportTaskRequest, CreateHealthReportTaskResponse> createHealthReportTaskInvoker(
         CreateHealthReportTaskRequest request) {
         return new SyncInvoker<>(request, DasMeta.createHealthReportTask, hcClient);
-    }
-
-    /**
-     * 设置共享链接
-     *
-     * 设置共享链接，
-     * 用于用户添加共享链接
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateShareConnectionsRequest 请求对象
-     * @return CreateShareConnectionsResponse
-     */
-    public CreateShareConnectionsResponse createShareConnections(CreateShareConnectionsRequest request) {
-        return hcClient.syncInvokeHttp(request, DasMeta.createShareConnections);
-    }
-
-    /**
-     * 设置共享链接
-     *
-     * 设置共享链接，
-     * 用于用户添加共享链接
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateShareConnectionsRequest 请求对象
-     * @return SyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse>
-     */
-    public SyncInvoker<CreateShareConnectionsRequest, CreateShareConnectionsResponse> createShareConnectionsInvoker(
-        CreateShareConnectionsRequest request) {
-        return new SyncInvoker<>(request, DasMeta.createShareConnections, hcClient);
     }
 
     /**

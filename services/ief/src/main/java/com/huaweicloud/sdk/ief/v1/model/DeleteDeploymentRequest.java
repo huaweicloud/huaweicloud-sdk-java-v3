@@ -65,7 +65,7 @@ public class DeleteDeploymentRequest {
     }
 
     /**
-     * 是否强制删除。默认为false。
+     * 是否强制删除。默认为false。 如果强制删除，则会忽略边缘节点是否有残留应用，直接删除云端应用。 如果不强制删除，则会等待边缘节点的应用删除成功后，再删除云端应用。
      * @return forceDelete
      */
     public String getForceDelete() {

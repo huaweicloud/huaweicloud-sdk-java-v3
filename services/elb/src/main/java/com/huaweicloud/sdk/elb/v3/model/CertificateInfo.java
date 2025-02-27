@@ -381,7 +381,7 @@ public class CertificateInfo {
     }
 
     /**
-     * 证书指纹
+     * 证书指纹。
      * @return fingerprint
      */
     public String getFingerprint() {
