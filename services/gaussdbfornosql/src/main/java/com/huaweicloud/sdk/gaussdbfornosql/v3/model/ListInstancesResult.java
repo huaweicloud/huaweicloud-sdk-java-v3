@@ -39,6 +39,11 @@ public class ListInstancesResult {
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_type")
+
+    private String productType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
     private String region;
@@ -212,7 +217,7 @@ public class ListInstancesResult {
     }
 
     /**
-     * 实例类型。与请求参数相同。
+     * 实例类型。 -  取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis Proxy经典部署模式集群实例类型。  -  取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。 -  取值为“RedisCluster”，表示GeminiDB Redis Cluster经典部署模式集群实例类型。 -  取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。  -  取值为“InfluxdbSingle”，表示GeminiDB Influx经典部署模式单节点实例类型。 -  取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。 -  如果不传datastore_type参数，自动忽略该参数设置。 -  默认取值：不涉及。
      * @return mode
      */
     public String getMode() {
@@ -221,6 +226,23 @@ public class ListInstancesResult {
 
     public void setMode(String mode) {
         this.mode = mode;
+    }
+
+    public ListInstancesResult withProductType(String productType) {
+        this.productType = productType;
+        return this;
+    }
+
+    /**
+     * 产品类型。 GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
+     * @return productType
+     */
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 
     public ListInstancesResult withRegion(String region) {
@@ -624,11 +646,11 @@ public class ListInstancesResult {
         ListInstancesResult that = (ListInstancesResult) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.status, that.status) && Objects.equals(this.port, that.port)
-            && Objects.equals(this.mode, that.mode) && Objects.equals(this.region, that.region)
-            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.engine, that.engine)
-            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated)
-            && Objects.equals(this.dbUserName, that.dbUserName) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.productType, that.productType)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.engine, that.engine) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.dbUserName, that.dbUserName)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.backupStrategy, that.backupStrategy) && Objects.equals(this.payMode, that.payMode)
             && Objects.equals(this.maintenanceWindow, that.maintenanceWindow)
@@ -647,6 +669,7 @@ public class ListInstancesResult {
             status,
             port,
             mode,
+            productType,
             region,
             datastore,
             engine,
@@ -678,6 +701,7 @@ public class ListInstancesResult {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");

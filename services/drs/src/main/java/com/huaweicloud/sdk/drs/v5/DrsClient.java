@@ -385,6 +385,7 @@ public class DrsClient {
      * @param request BatchTagActionRequest 请求对象
      * @return BatchTagActionResponse
      */
+    @Deprecated
     public BatchTagActionResponse batchTagAction(BatchTagActionRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.batchTagAction);
     }
@@ -399,6 +400,7 @@ public class DrsClient {
      * @param request BatchTagActionRequest 请求对象
      * @return SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>
      */
+    @Deprecated
     public SyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionInvoker(
         BatchTagActionRequest request) {
         return new SyncInvoker<>(request, DrsMeta.batchTagAction, hcClient);
@@ -532,6 +534,7 @@ public class DrsClient {
      * @param request CollectDbObjectsAsyncRequest 请求对象
      * @return CollectDbObjectsAsyncResponse
      */
+    @Deprecated
     public CollectDbObjectsAsyncResponse collectDbObjectsAsync(CollectDbObjectsAsyncRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.collectDbObjectsAsync);
     }
@@ -549,6 +552,7 @@ public class DrsClient {
      * @param request CollectDbObjectsAsyncRequest 请求对象
      * @return SyncInvoker<CollectDbObjectsAsyncRequest, CollectDbObjectsAsyncResponse>
      */
+    @Deprecated
     public SyncInvoker<CollectDbObjectsAsyncRequest, CollectDbObjectsAsyncResponse> collectDbObjectsAsyncInvoker(
         CollectDbObjectsAsyncRequest request) {
         return new SyncInvoker<>(request, DrsMeta.collectDbObjectsAsync, hcClient);
@@ -1183,6 +1187,7 @@ public class DrsClient {
      * @param request ListDbObjectsRequest 请求对象
      * @return ListDbObjectsResponse
      */
+    @Deprecated
     public ListDbObjectsResponse listDbObjects(ListDbObjectsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listDbObjects);
     }
@@ -1197,6 +1202,7 @@ public class DrsClient {
      * @param request ListDbObjectsRequest 请求对象
      * @return SyncInvoker<ListDbObjectsRequest, ListDbObjectsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListDbObjectsRequest, ListDbObjectsResponse> listDbObjectsInvoker(ListDbObjectsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listDbObjects, hcClient);
     }
@@ -1444,6 +1450,7 @@ public class DrsClient {
      * @param request ListProjectTagsRequest 请求对象
      * @return ListProjectTagsResponse
      */
+    @Deprecated
     public ListProjectTagsResponse listProjectTags(ListProjectTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.listProjectTags);
     }
@@ -1458,6 +1465,7 @@ public class DrsClient {
      * @param request ListProjectTagsRequest 请求对象
      * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
+    @Deprecated
     public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(
         ListProjectTagsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.listProjectTags, hcClient);
@@ -2115,6 +2123,7 @@ public class DrsClient {
      * @param request ShowInstanceTagsRequest 请求对象
      * @return ShowInstanceTagsResponse
      */
+    @Deprecated
     public ShowInstanceTagsResponse showInstanceTags(ShowInstanceTagsRequest request) {
         return hcClient.syncInvokeHttp(request, DrsMeta.showInstanceTags);
     }
@@ -2129,6 +2138,7 @@ public class DrsClient {
      * @param request ShowInstanceTagsRequest 请求对象
      * @return SyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse>
      */
+    @Deprecated
     public SyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse> showInstanceTagsInvoker(
         ShowInstanceTagsRequest request) {
         return new SyncInvoker<>(request, DrsMeta.showInstanceTags, hcClient);

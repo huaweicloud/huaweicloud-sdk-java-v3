@@ -85,6 +85,11 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     private String imei;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private Integer type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "traffic_type")
 
     private String trafficType;
@@ -98,6 +103,11 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     @JsonProperty(value = "availability_zone")
 
     private String availabilityZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_encrypt")
+
+    private Boolean hasEncrypt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
@@ -384,6 +394,25 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
         this.imei = imei;
     }
 
+    public ShowCloudPhoneDetailResponse withType(Integer type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 云手机类型。 - 0：普通云手机
+     * minimum: -128
+     * maximum: 128
+     * @return type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
     public ShowCloudPhoneDetailResponse withTrafficType(String trafficType) {
         this.trafficType = trafficType;
         return this;
@@ -426,7 +455,7 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     /**
-     * 云手机服务器所在的可用区。
+     * 云手机服务器所在的可用区。[如上海一可用区1为cn-east-3a。](tag:hws,hws_hk,cmcc)
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -435,6 +464,23 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
 
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
+    }
+
+    public ShowCloudPhoneDetailResponse withHasEncrypt(Boolean hasEncrypt) {
+        this.hasEncrypt = hasEncrypt;
+        return this;
+    }
+
+    /**
+     * 当前手机是否开启文件级加密。
+     * @return hasEncrypt
+     */
+    public Boolean getHasEncrypt() {
+        return hasEncrypt;
+    }
+
+    public void setHasEncrypt(Boolean hasEncrypt) {
+        this.hasEncrypt = hasEncrypt;
     }
 
     public ShowCloudPhoneDetailResponse withCreateTime(String createTime) {
@@ -488,9 +534,11 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
             && Objects.equals(this.accessInfos, that.accessInfos) && Objects.equals(this.property, that.property)
             && Objects.equals(this.metadata, that.metadata)
             && Objects.equals(this.phoneDataVolume, that.phoneDataVolume) && Objects.equals(this.imei, that.imei)
-            && Objects.equals(this.trafficType, that.trafficType) && Objects.equals(this.volumeMode, that.volumeMode)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.trafficType, that.trafficType)
+            && Objects.equals(this.volumeMode, that.volumeMode)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.hasEncrypt, that.hasEncrypt) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
@@ -509,9 +557,11 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
             metadata,
             phoneDataVolume,
             imei,
+            type,
             trafficType,
             volumeMode,
             availabilityZone,
+            hasEncrypt,
             createTime,
             updateTime);
     }
@@ -534,9 +584,11 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("    phoneDataVolume: ").append(toIndentedString(phoneDataVolume)).append("\n");
         sb.append("    imei: ").append(toIndentedString(imei)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    trafficType: ").append(toIndentedString(trafficType)).append("\n");
         sb.append("    volumeMode: ").append(toIndentedString(volumeMode)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    hasEncrypt: ").append(toIndentedString(hasEncrypt)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

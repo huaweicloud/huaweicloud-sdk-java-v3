@@ -1,13 +1,8 @@
 package com.huaweicloud.sdk.coc.v1.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -21,86 +16,10 @@ public class ScriptExecuteInputParam {
 
     private String paramName;
 
-    /**
-     * 脚本入参的值，默认必填。有引用参数（param_refer不为空）时，允许为空
-     */
-    public static final class ParamValueEnum {
-
-        /**
-         * Enum _2 for value: "^((?!\\.{2"
-         */
-        public static final ParamValueEnum _2 = new ParamValueEnum("^((?!\\.{2");
-
-        /**
-         * Enum _A_ZA_Z0_9__X20_ for value: "})[a-zA-Z0-9_\\-/\\.\\x20\\?:\""
-         */
-        public static final ParamValueEnum _A_ZA_Z0_9__X20_ = new ParamValueEnum("})[a-zA-Z0-9_\\-/\\.\\x20\\?:\"");
-
-        /**
-         * Enum _ for value: "=+@\\\\\\[\\{\\]\\}])*$"
-         */
-        public static final ParamValueEnum _ = new ParamValueEnum("=+@\\\\\\[\\{\\]\\}])*$");
-
-        private static final Map<String, ParamValueEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, ParamValueEnum> createStaticFields() {
-            Map<String, ParamValueEnum> map = new HashMap<>();
-            map.put("^((?!\\.{2", _2);
-            map.put("})[a-zA-Z0-9_\\-/\\.\\x20\\?:\"", _A_ZA_Z0_9__X20_);
-            map.put("=+@\\\\\\[\\{\\]\\}])*$", _);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        ParamValueEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static ParamValueEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ParamValueEnum(value));
-        }
-
-        public static ParamValueEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof ParamValueEnum) {
-                return this.value.equals(((ParamValueEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param_value")
 
-    private ParamValueEnum paramValue;
+    private String paramValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "param_order")
@@ -129,20 +48,20 @@ public class ScriptExecuteInputParam {
         this.paramName = paramName;
     }
 
-    public ScriptExecuteInputParam withParamValue(ParamValueEnum paramValue) {
+    public ScriptExecuteInputParam withParamValue(String paramValue) {
         this.paramValue = paramValue;
         return this;
     }
 
     /**
-     * 脚本入参的值，默认必填。有引用参数（param_refer不为空）时，允许为空
+     * 脚本入参的值，默认必填。有引用参数（param_refer不为空）时，允许为空 1.参数长度为1-4096位 2.可以包含大写字母、小写字母、数字及特殊字符(_-/.* ?:\",=+@#\\[{]}) 3.禁止出现连续'.'
      * @return paramValue
      */
-    public ParamValueEnum getParamValue() {
+    public String getParamValue() {
         return paramValue;
     }
 
-    public void setParamValue(ParamValueEnum paramValue) {
+    public void setParamValue(String paramValue) {
         this.paramValue = paramValue;
     }
 

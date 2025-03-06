@@ -8,20 +8,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * API类型，固定值“eip”，该值不可修改。
+ * API类型，固定值“Eip”，该值不可修改。
  */
 public class EipKindObj {
 
     /**
-     * Enum EIP for value: "eip"
+     * Enum EIP for value: "Eip"
      */
-    public static final EipKindObj EIP = new EipKindObj("eip");
+    public static final EipKindObj EIP = new EipKindObj("Eip");
 
     private static final Map<String, EipKindObj> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, EipKindObj> createStaticFields() {
         Map<String, EipKindObj> map = new HashMap<>();
-        map.put("eip", EIP);
+        map.put("Eip", EIP);
         return Collections.unmodifiableMap(map);
     }
 

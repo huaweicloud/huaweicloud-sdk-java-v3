@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ConfirmRestoredDataRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ConfirmRestoredDataResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CopyConfigurationRequest;
@@ -41,6 +43,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateRestoreInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateRestoreInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateScheduleTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateSlowLogDownloadRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateSlowLogDownloadResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteConfigurationRequest;
@@ -59,6 +63,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteLimitTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteScheduleTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginRequest;
@@ -115,6 +121,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHistoryOperationsReq
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHistoryOperationsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceDetailsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceDetailsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceEngineDetailRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceEngineDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceErrorLogsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceErrorLogsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceTagsRequest;
@@ -149,6 +157,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestorableInstancesR
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestorableInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsRequest;
@@ -420,6 +430,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<BatchShowUpgradeCandidateVersionsRequest, BatchShowUpgradeCandidateVersionsResponse> batchShowUpgradeCandidateVersionsAsyncInvoker(
         BatchShowUpgradeCandidateVersionsRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.batchShowUpgradeCandidateVersions, hcClient);
+    }
+
+    /**
+     * 取消定时任务
+     *
+     * 取消定时任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelScheduleTaskRequest 请求对象
+     * @return CompletableFuture<CancelScheduleTaskResponse>
+     */
+    public CompletableFuture<CancelScheduleTaskResponse> cancelScheduleTaskAsync(CancelScheduleTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.cancelScheduleTask);
+    }
+
+    /**
+     * 取消定时任务
+     *
+     * 取消定时任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CancelScheduleTaskRequest 请求对象
+     * @return AsyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse>
+     */
+    public AsyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse> cancelScheduleTaskAsyncInvoker(
+        CancelScheduleTaskRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.cancelScheduleTask, hcClient);
     }
 
     /**
@@ -805,6 +844,35 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 批量实例内核版本定时升级
+     *
+     * 批量实例内核版本定时升级
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateScheduleTaskRequest 请求对象
+     * @return CompletableFuture<CreateScheduleTaskResponse>
+     */
+    public CompletableFuture<CreateScheduleTaskResponse> createScheduleTaskAsync(CreateScheduleTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.createScheduleTask);
+    }
+
+    /**
+     * 批量实例内核版本定时升级
+     *
+     * 批量实例内核版本定时升级
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateScheduleTaskRequest 请求对象
+     * @return AsyncInvoker<CreateScheduleTaskRequest, CreateScheduleTaskResponse>
+     */
+    public AsyncInvoker<CreateScheduleTaskRequest, CreateScheduleTaskResponse> createScheduleTaskAsyncInvoker(
+        CreateScheduleTaskRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.createScheduleTask, hcClient);
+    }
+
+    /**
      * 创建慢日志下载信息
      *
      * 创建慢日志下载信息
@@ -1035,6 +1103,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackupAsyncInvoker(
         DeleteManualBackupRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 删除定时任务信息
+     *
+     * 删除定时任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduleTaskRequest 请求对象
+     * @return CompletableFuture<DeleteScheduleTaskResponse>
+     */
+    public CompletableFuture<DeleteScheduleTaskResponse> deleteScheduleTaskAsync(DeleteScheduleTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.deleteScheduleTask);
+    }
+
+    /**
+     * 删除定时任务信息
+     *
+     * 删除定时任务信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduleTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteScheduleTaskRequest, DeleteScheduleTaskResponse>
+     */
+    public AsyncInvoker<DeleteScheduleTaskRequest, DeleteScheduleTaskResponse> deleteScheduleTaskAsyncInvoker(
+        DeleteScheduleTaskRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.deleteScheduleTask, hcClient);
     }
 
     /**
@@ -1856,6 +1953,36 @@ public class GaussDBforopenGaussAsyncClient {
     }
 
     /**
+     * 查看实例引擎版本分布
+     *
+     * 查看实例引擎版本分布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceEngineDetailRequest 请求对象
+     * @return CompletableFuture<ListInstanceEngineDetailResponse>
+     */
+    public CompletableFuture<ListInstanceEngineDetailResponse> listInstanceEngineDetailAsync(
+        ListInstanceEngineDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listInstanceEngineDetail);
+    }
+
+    /**
+     * 查看实例引擎版本分布
+     *
+     * 查看实例引擎版本分布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceEngineDetailRequest 请求对象
+     * @return AsyncInvoker<ListInstanceEngineDetailRequest, ListInstanceEngineDetailResponse>
+     */
+    public AsyncInvoker<ListInstanceEngineDetailRequest, ListInstanceEngineDetailResponse> listInstanceEngineDetailAsyncInvoker(
+        ListInstanceEngineDetailRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listInstanceEngineDetail, hcClient);
+    }
+
+    /**
      * 查询错误日志下载链接
      *
      * 查询数据库错误日志下载链接。
@@ -2299,6 +2426,35 @@ public class GaussDBforopenGaussAsyncClient {
     public AsyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse> listRestoreTimesAsyncInvoker(
         ListRestoreTimesRequest request) {
         return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listRestoreTimes, hcClient);
+    }
+
+    /**
+     * 查看定时任务列表
+     *
+     * 查看定时任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduleTaskRequest 请求对象
+     * @return CompletableFuture<ListScheduleTaskResponse>
+     */
+    public CompletableFuture<ListScheduleTaskResponse> listScheduleTaskAsync(ListScheduleTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforopenGaussMeta.listScheduleTask);
+    }
+
+    /**
+     * 查看定时任务列表
+     *
+     * 查看定时任务列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduleTaskRequest 请求对象
+     * @return AsyncInvoker<ListScheduleTaskRequest, ListScheduleTaskResponse>
+     */
+    public AsyncInvoker<ListScheduleTaskRequest, ListScheduleTaskResponse> listScheduleTaskAsyncInvoker(
+        ListScheduleTaskRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforopenGaussMeta.listScheduleTask, hcClient);
     }
 
     /**

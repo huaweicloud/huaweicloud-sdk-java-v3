@@ -41,7 +41,7 @@ public class ScriptParamDefine {
     }
 
     /**
-     * 参数名称：只支持英文、数字、下划线
+     * 参数名仅支持字母、数字以及下划线
      * @return paramName
      */
     public String getParamName() {
@@ -58,7 +58,7 @@ public class ScriptParamDefine {
     }
 
     /**
-     * 参数默认值，默认必填，如果有参数引用，可为空
+     * 1.参数长度为1-4096位 2.可以包含大写字母、小写字母、数字及特殊字符(_-/.* ?:\",=+@#\\[{]}) 3.禁止出现连续'.'
      * @return paramValue
      */
     public String getParamValue() {

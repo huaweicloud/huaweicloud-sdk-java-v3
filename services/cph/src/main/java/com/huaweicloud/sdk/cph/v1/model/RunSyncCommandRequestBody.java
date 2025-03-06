@@ -89,7 +89,7 @@ public class RunSyncCommandRequestBody {
     }
 
     /**
-     * 云手机ID列表。 server_ids参数不存在时必选，同时存在只处理phone_ids。
+     * 云手机ID列表。 server_ids参数不存在时必选，同时存在只处理phone_ids。最多支持传入15个phone_id。
      * @return phoneIds
      */
     public List<String> getPhoneIds() {

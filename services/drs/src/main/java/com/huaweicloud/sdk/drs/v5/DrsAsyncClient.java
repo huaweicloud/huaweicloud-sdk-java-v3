@@ -389,6 +389,7 @@ public class DrsAsyncClient {
      * @param request BatchTagActionRequest 请求对象
      * @return CompletableFuture<BatchTagActionResponse>
      */
+    @Deprecated
     public CompletableFuture<BatchTagActionResponse> batchTagActionAsync(BatchTagActionRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.batchTagAction);
     }
@@ -403,6 +404,7 @@ public class DrsAsyncClient {
      * @param request BatchTagActionRequest 请求对象
      * @return AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse>
      */
+    @Deprecated
     public AsyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionAsyncInvoker(
         BatchTagActionRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.batchTagAction, hcClient);
@@ -536,6 +538,7 @@ public class DrsAsyncClient {
      * @param request CollectDbObjectsAsyncRequest 请求对象
      * @return CompletableFuture<CollectDbObjectsAsyncResponse>
      */
+    @Deprecated
     public CompletableFuture<CollectDbObjectsAsyncResponse> collectDbObjectsAsyncAsync(
         CollectDbObjectsAsyncRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.collectDbObjectsAsync);
@@ -554,6 +557,7 @@ public class DrsAsyncClient {
      * @param request CollectDbObjectsAsyncRequest 请求对象
      * @return AsyncInvoker<CollectDbObjectsAsyncRequest, CollectDbObjectsAsyncResponse>
      */
+    @Deprecated
     public AsyncInvoker<CollectDbObjectsAsyncRequest, CollectDbObjectsAsyncResponse> collectDbObjectsAsyncAsyncInvoker(
         CollectDbObjectsAsyncRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.collectDbObjectsAsync, hcClient);
@@ -1197,6 +1201,7 @@ public class DrsAsyncClient {
      * @param request ListDbObjectsRequest 请求对象
      * @return CompletableFuture<ListDbObjectsResponse>
      */
+    @Deprecated
     public CompletableFuture<ListDbObjectsResponse> listDbObjectsAsync(ListDbObjectsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listDbObjects);
     }
@@ -1211,6 +1216,7 @@ public class DrsAsyncClient {
      * @param request ListDbObjectsRequest 请求对象
      * @return AsyncInvoker<ListDbObjectsRequest, ListDbObjectsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListDbObjectsRequest, ListDbObjectsResponse> listDbObjectsAsyncInvoker(
         ListDbObjectsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listDbObjects, hcClient);
@@ -1460,6 +1466,7 @@ public class DrsAsyncClient {
      * @param request ListProjectTagsRequest 请求对象
      * @return CompletableFuture<ListProjectTagsResponse>
      */
+    @Deprecated
     public CompletableFuture<ListProjectTagsResponse> listProjectTagsAsync(ListProjectTagsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.listProjectTags);
     }
@@ -1474,6 +1481,7 @@ public class DrsAsyncClient {
      * @param request ListProjectTagsRequest 请求对象
      * @return AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsAsyncInvoker(
         ListProjectTagsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.listProjectTags, hcClient);
@@ -2139,6 +2147,7 @@ public class DrsAsyncClient {
      * @param request ShowInstanceTagsRequest 请求对象
      * @return CompletableFuture<ShowInstanceTagsResponse>
      */
+    @Deprecated
     public CompletableFuture<ShowInstanceTagsResponse> showInstanceTagsAsync(ShowInstanceTagsRequest request) {
         return hcClient.asyncInvokeHttp(request, DrsMeta.showInstanceTags);
     }
@@ -2153,6 +2162,7 @@ public class DrsAsyncClient {
      * @param request ShowInstanceTagsRequest 请求对象
      * @return AsyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse>
      */
+    @Deprecated
     public AsyncInvoker<ShowInstanceTagsRequest, ShowInstanceTagsResponse> showInstanceTagsAsyncInvoker(
         ShowInstanceTagsRequest request) {
         return new AsyncInvoker<>(request, DrsMeta.showInstanceTags, hcClient);

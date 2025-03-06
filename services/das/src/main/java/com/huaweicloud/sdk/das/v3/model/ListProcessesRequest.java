@@ -148,7 +148,7 @@ public class ListProcessesRequest {
     }
 
     /**
-     * 数据库用户ID。每个用户需绑定一个数据库账号（数据库用户由“注册数据库用户”接口创建）。
+     * 数据库用户ID。用户使用数据库账号与数据库建立的连接ID（数据库用户ID由注册数据库用户接口创建）。
      * @return dbUserId
      */
     public String getDbUserId() {

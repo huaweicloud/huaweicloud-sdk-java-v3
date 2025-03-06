@@ -11,6 +11,11 @@ import java.util.Objects;
 public class ShowCloudPhoneServerDetailResponseBodyMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charging_mode")
+
+    private Integer chargingMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_id")
 
     private String productId;
@@ -19,6 +24,25 @@ public class ShowCloudPhoneServerDetailResponseBodyMetadata {
     @JsonProperty(value = "order_id")
 
     private String orderId;
+
+    public ShowCloudPhoneServerDetailResponseBodyMetadata withChargingMode(Integer chargingMode) {
+        this.chargingMode = chargingMode;
+        return this;
+    }
+
+    /**
+     * 计费类型。 [- 0：包周期](tag:hws,hws_hk,cmcc)
+     * minimum: 0
+     * maximum: 128
+     * @return chargingMode
+     */
+    public Integer getChargingMode() {
+        return chargingMode;
+    }
+
+    public void setChargingMode(Integer chargingMode) {
+        this.chargingMode = chargingMode;
+    }
 
     public ShowCloudPhoneServerDetailResponseBodyMetadata withProductId(String productId) {
         this.productId = productId;
@@ -63,18 +87,20 @@ public class ShowCloudPhoneServerDetailResponseBodyMetadata {
             return false;
         }
         ShowCloudPhoneServerDetailResponseBodyMetadata that = (ShowCloudPhoneServerDetailResponseBodyMetadata) obj;
-        return Objects.equals(this.productId, that.productId) && Objects.equals(this.orderId, that.orderId);
+        return Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId, orderId);
+        return Objects.hash(chargingMode, productId, orderId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowCloudPhoneServerDetailResponseBodyMetadata {\n");
+        sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("}");

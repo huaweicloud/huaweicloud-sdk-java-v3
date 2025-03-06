@@ -15,11 +15,6 @@ public class ListNoticeRulesRequest {
 
     private String xEnterpriseProjectID;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Environment-ID")
-
-    private String xEnvironmentID;
-
     public ListNoticeRulesRequest withXEnterpriseProjectID(String xEnterpriseProjectID) {
         this.xEnterpriseProjectID = xEnterpriseProjectID;
         return this;
@@ -39,25 +34,6 @@ public class ListNoticeRulesRequest {
         this.xEnterpriseProjectID = xEnterpriseProjectID;
     }
 
-    public ListNoticeRulesRequest withXEnvironmentID(String xEnvironmentID) {
-        this.xEnvironmentID = xEnvironmentID;
-        return this;
-    }
-
-    /**
-     * 环境ID。      - 获取环境ID，通过《[云应用引擎API参考](https://support.huaweicloud.com/api-cae/ListEnvironments.html)》的“获取环境列表”章节获取环境信息。     - 请求响应成功后在响应体的items数组中的一个元素即为一个环境的信息，其中id字段即是环境ID。
-     * @return xEnvironmentID
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Environment-ID")
-    public String getXEnvironmentID() {
-        return xEnvironmentID;
-    }
-
-    public void setXEnvironmentID(String xEnvironmentID) {
-        this.xEnvironmentID = xEnvironmentID;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -67,13 +43,12 @@ public class ListNoticeRulesRequest {
             return false;
         }
         ListNoticeRulesRequest that = (ListNoticeRulesRequest) obj;
-        return Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
-            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID);
+        return Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xEnterpriseProjectID, xEnvironmentID);
+        return Objects.hash(xEnterpriseProjectID);
     }
 
     @Override
@@ -81,7 +56,6 @@ public class ListNoticeRulesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListNoticeRulesRequest {\n");
         sb.append("    xEnterpriseProjectID: ").append(toIndentedString(xEnterpriseProjectID)).append("\n");
-        sb.append("    xEnvironmentID: ").append(toIndentedString(xEnvironmentID)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -64,6 +64,16 @@ public class CreateXdmApplicationRequestBody {
     private String certifiedDataSourceNumber;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_type")
+
+    private String appType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permission_control")
+
+    private String permissionControl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "integration_mode")
 
     private String integrationMode;
@@ -259,6 +269,40 @@ public class CreateXdmApplicationRequestBody {
         this.certifiedDataSourceNumber = certifiedDataSourceNumber;
     }
 
+    public CreateXdmApplicationRequestBody withAppType(String appType) {
+        this.appType = appType;
+        return this;
+    }
+
+    /**
+     * App类型。 - default：基础版（体验版） - lite：轻量版
+     * @return appType
+     */
+    public String getAppType() {
+        return appType;
+    }
+
+    public void setAppType(String appType) {
+        this.appType = appType;
+    }
+
+    public CreateXdmApplicationRequestBody withPermissionControl(String permissionControl) {
+        this.permissionControl = permissionControl;
+        return this;
+    }
+
+    /**
+     * App权限控制。 - NONE：关闭权限校验 - ALL：开启所有校验
+     * @return permissionControl
+     */
+    public String getPermissionControl() {
+        return permissionControl;
+    }
+
+    public void setPermissionControl(String permissionControl) {
+        this.permissionControl = permissionControl;
+    }
+
     public CreateXdmApplicationRequestBody withIntegrationMode(String integrationMode) {
         this.integrationMode = integrationMode;
         return this;
@@ -309,6 +353,8 @@ public class CreateXdmApplicationRequestBody {
             && Objects.equals(this.appUserList, that.appUserList)
             && Objects.equals(this.certifiedDataSourceName, that.certifiedDataSourceName)
             && Objects.equals(this.certifiedDataSourceNumber, that.certifiedDataSourceNumber)
+            && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.permissionControl, that.permissionControl)
             && Objects.equals(this.integrationMode, that.integrationMode)
             && Objects.equals(this.metadataSynchronization, that.metadataSynchronization);
     }
@@ -325,6 +371,8 @@ public class CreateXdmApplicationRequestBody {
             appUserList,
             certifiedDataSourceName,
             certifiedDataSourceNumber,
+            appType,
+            permissionControl,
             integrationMode,
             metadataSynchronization);
     }
@@ -343,6 +391,8 @@ public class CreateXdmApplicationRequestBody {
         sb.append("    appUserList: ").append(toIndentedString(appUserList)).append("\n");
         sb.append("    certifiedDataSourceName: ").append(toIndentedString(certifiedDataSourceName)).append("\n");
         sb.append("    certifiedDataSourceNumber: ").append(toIndentedString(certifiedDataSourceNumber)).append("\n");
+        sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
+        sb.append("    permissionControl: ").append(toIndentedString(permissionControl)).append("\n");
         sb.append("    integrationMode: ").append(toIndentedString(integrationMode)).append("\n");
         sb.append("    metadataSynchronization: ").append(toIndentedString(metadataSynchronization)).append("\n");
         sb.append("}");

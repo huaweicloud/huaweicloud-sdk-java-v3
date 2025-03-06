@@ -187,12 +187,15 @@ import com.huaweicloud.sdk.ecs.v2.model.ShowServerRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerTagsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ShowServerTagsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateNicInfoRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceReq;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataResponse;
@@ -2456,6 +2459,40 @@ public class EcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateServerBlockDeviceReq.class),
             f -> f.withMarshaller(UpdateServerBlockDeviceRequest::getBody, UpdateServerBlockDeviceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateServerInterfaceRequest, UpdateServerInterfaceResponse> updateServerInterface =
+        genForUpdateServerInterface();
+
+    private static HttpRequestDef<UpdateServerInterfaceRequest, UpdateServerInterfaceResponse> genForUpdateServerInterface() {
+        // basic
+        HttpRequestDef.Builder<UpdateServerInterfaceRequest, UpdateServerInterfaceResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateServerInterfaceRequest.class, UpdateServerInterfaceResponse.class)
+            .withName("UpdateServerInterface")
+            .withUri("/v1/{project_id}/cloudservers/{server_id}/os-interface/{port_id}")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateServerInterfaceRequest::getServerId,
+                UpdateServerInterfaceRequest::setServerId));
+        builder.<String>withRequestField("port_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateServerInterfaceRequest::getPortId, UpdateServerInterfaceRequest::setPortId));
+        builder.<UpdateNicInfoRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateNicInfoRequestBody.class),
+            f -> f.withMarshaller(UpdateServerInterfaceRequest::getBody, UpdateServerInterfaceRequest::setBody));
 
         // response
 

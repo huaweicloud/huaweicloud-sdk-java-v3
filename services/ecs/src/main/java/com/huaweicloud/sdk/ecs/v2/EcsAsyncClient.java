@@ -151,6 +151,8 @@ import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerRequest;
@@ -1241,7 +1243,6 @@ public class EcsAsyncClient {
      * @param request ListServerAzInfoRequest 请求对象
      * @return CompletableFuture<ListServerAzInfoResponse>
      */
-    @Deprecated
     public CompletableFuture<ListServerAzInfoResponse> listServerAzInfoAsync(ListServerAzInfoRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.listServerAzInfo);
     }
@@ -1256,7 +1257,6 @@ public class EcsAsyncClient {
      * @param request ListServerAzInfoRequest 请求对象
      * @return AsyncInvoker<ListServerAzInfoRequest, ListServerAzInfoResponse>
      */
-    @Deprecated
     public AsyncInvoker<ListServerAzInfoRequest, ListServerAzInfoResponse> listServerAzInfoAsyncInvoker(
         ListServerAzInfoRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.listServerAzInfo, hcClient);
@@ -1716,6 +1716,7 @@ public class EcsAsyncClient {
      * @param request NovaListAvailabilityZonesRequest 请求对象
      * @return CompletableFuture<NovaListAvailabilityZonesResponse>
      */
+    @Deprecated
     public CompletableFuture<NovaListAvailabilityZonesResponse> novaListAvailabilityZonesAsync(
         NovaListAvailabilityZonesRequest request) {
         return hcClient.asyncInvokeHttp(request, EcsMeta.novaListAvailabilityZones);
@@ -1731,6 +1732,7 @@ public class EcsAsyncClient {
      * @param request NovaListAvailabilityZonesRequest 请求对象
      * @return AsyncInvoker<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse>
      */
+    @Deprecated
     public AsyncInvoker<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse> novaListAvailabilityZonesAsyncInvoker(
         NovaListAvailabilityZonesRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.novaListAvailabilityZones, hcClient);
@@ -2494,6 +2496,36 @@ public class EcsAsyncClient {
     public AsyncInvoker<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse> updateServerBlockDeviceAsyncInvoker(
         UpdateServerBlockDeviceRequest request) {
         return new AsyncInvoker<>(request, EcsMeta.updateServerBlockDevice, hcClient);
+    }
+
+    /**
+     * 更新云服务器网卡挂载信息
+     *
+     * 更新云服务器网卡挂载信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServerInterfaceRequest 请求对象
+     * @return CompletableFuture<UpdateServerInterfaceResponse>
+     */
+    public CompletableFuture<UpdateServerInterfaceResponse> updateServerInterfaceAsync(
+        UpdateServerInterfaceRequest request) {
+        return hcClient.asyncInvokeHttp(request, EcsMeta.updateServerInterface);
+    }
+
+    /**
+     * 更新云服务器网卡挂载信息
+     *
+     * 更新云服务器网卡挂载信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServerInterfaceRequest 请求对象
+     * @return AsyncInvoker<UpdateServerInterfaceRequest, UpdateServerInterfaceResponse>
+     */
+    public AsyncInvoker<UpdateServerInterfaceRequest, UpdateServerInterfaceResponse> updateServerInterfaceAsyncInvoker(
+        UpdateServerInterfaceRequest request) {
+        return new AsyncInvoker<>(request, EcsMeta.updateServerInterface, hcClient);
     }
 
     /**

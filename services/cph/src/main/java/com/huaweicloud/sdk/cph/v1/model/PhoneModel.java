@@ -90,6 +90,16 @@ public class PhoneModel {
 
     private Integer volumeMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "render_fps")
+
+    private Integer renderFps;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stream_fps")
+
+    private Integer streamFps;
+
     public PhoneModel withServerModelName(String serverModelName) {
         this.serverModelName = serverModelName;
         return this;
@@ -187,7 +197,7 @@ public class PhoneModel {
     }
 
     /**
-     * 系统存储大小，单位：GB。
+     * 系统存储大小，单位：GiB。
      * minimum: 0
      * maximum: 8096
      * @return disk
@@ -380,6 +390,44 @@ public class PhoneModel {
         this.volumeMode = volumeMode;
     }
 
+    public PhoneModel withRenderFps(Integer renderFps) {
+        this.renderFps = renderFps;
+        return this;
+    }
+
+    /**
+     * 渲染帧率。
+     * minimum: 0
+     * maximum: 256
+     * @return renderFps
+     */
+    public Integer getRenderFps() {
+        return renderFps;
+    }
+
+    public void setRenderFps(Integer renderFps) {
+        this.renderFps = renderFps;
+    }
+
+    public PhoneModel withStreamFps(Integer streamFps) {
+        this.streamFps = streamFps;
+        return this;
+    }
+
+    /**
+     * 出流帧率。
+     * minimum: 0
+     * maximum: 256
+     * @return streamFps
+     */
+    public Integer getStreamFps() {
+        return streamFps;
+    }
+
+    public void setStreamFps(Integer streamFps) {
+        this.streamFps = streamFps;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -397,7 +445,8 @@ public class PhoneModel {
             && Objects.equals(this.phoneCapacity, that.phoneCapacity)
             && Objects.equals(this.imageLabel, that.imageLabel) && Objects.equals(this.productType, that.productType)
             && Objects.equals(this.phoneModelVersion, that.phoneModelVersion) && Objects.equals(this.dpi, that.dpi)
-            && Objects.equals(this.fps, that.fps) && Objects.equals(this.volumeMode, that.volumeMode);
+            && Objects.equals(this.fps, that.fps) && Objects.equals(this.volumeMode, that.volumeMode)
+            && Objects.equals(this.renderFps, that.renderFps) && Objects.equals(this.streamFps, that.streamFps);
     }
 
     @Override
@@ -417,7 +466,9 @@ public class PhoneModel {
             phoneModelVersion,
             dpi,
             fps,
-            volumeMode);
+            volumeMode,
+            renderFps,
+            streamFps);
     }
 
     @Override
@@ -440,6 +491,8 @@ public class PhoneModel {
         sb.append("    dpi: ").append(toIndentedString(dpi)).append("\n");
         sb.append("    fps: ").append(toIndentedString(fps)).append("\n");
         sb.append("    volumeMode: ").append(toIndentedString(volumeMode)).append("\n");
+        sb.append("    renderFps: ").append(toIndentedString(renderFps)).append("\n");
+        sb.append("    streamFps: ").append(toIndentedString(streamFps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

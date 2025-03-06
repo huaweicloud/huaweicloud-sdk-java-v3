@@ -16,6 +16,16 @@ public class UpdateServerNameResponse extends SdkResponse {
 
     private String requestId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_msg")
+
+    private String errorMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
     public UpdateServerNameResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -33,6 +43,40 @@ public class UpdateServerNameResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    public UpdateServerNameResponse withErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+
+    /**
+     * 任务错误码说明。
+     * @return errorMsg
+     */
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+
+    public UpdateServerNameResponse withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
+     * 任务错误码。
+     * @return errorCode
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +86,13 @@ public class UpdateServerNameResponse extends SdkResponse {
             return false;
         }
         UpdateServerNameResponse that = (UpdateServerNameResponse) obj;
-        return Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId);
+        return Objects.hash(requestId, errorMsg, errorCode);
     }
 
     @Override
@@ -55,6 +100,8 @@ public class UpdateServerNameResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateServerNameResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

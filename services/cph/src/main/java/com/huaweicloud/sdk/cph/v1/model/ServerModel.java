@@ -37,6 +37,11 @@ public class ServerModel {
     private ServerModelExtendSpec extendSpec;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "disk_max_num")
+
+    private Integer diskMaxNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_type")
 
     private Integer productType;
@@ -144,6 +149,25 @@ public class ServerModel {
         this.extendSpec = extendSpec;
     }
 
+    public ServerModel withDiskMaxNum(Integer diskMaxNum) {
+        this.diskMaxNum = diskMaxNum;
+        return this;
+    }
+
+    /**
+     * 云手机服务器最大挂载磁盘数量。值为0时表示该机型磁盘为本地盘。
+     * minimum: 0
+     * maximum: 500
+     * @return diskMaxNum
+     */
+    public Integer getDiskMaxNum() {
+        return diskMaxNum;
+    }
+
+    public void setDiskMaxNum(Integer diskMaxNum) {
+        this.diskMaxNum = diskMaxNum;
+    }
+
     public ServerModel withProductType(Integer productType) {
         this.productType = productType;
         return this;
@@ -194,12 +218,13 @@ public class ServerModel {
         return Objects.equals(this.serverModelName, that.serverModelName)
             && Objects.equals(this.serverType, that.serverType) && Objects.equals(this.cpu, that.cpu)
             && Objects.equals(this.memory, that.memory) && Objects.equals(this.extendSpec, that.extendSpec)
-            && Objects.equals(this.productType, that.productType) && Objects.equals(this.freeSize, that.freeSize);
+            && Objects.equals(this.diskMaxNum, that.diskMaxNum) && Objects.equals(this.productType, that.productType)
+            && Objects.equals(this.freeSize, that.freeSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serverModelName, serverType, cpu, memory, extendSpec, productType, freeSize);
+        return Objects.hash(serverModelName, serverType, cpu, memory, extendSpec, diskMaxNum, productType, freeSize);
     }
 
     @Override
@@ -211,6 +236,7 @@ public class ServerModel {
         sb.append("    cpu: ").append(toIndentedString(cpu)).append("\n");
         sb.append("    memory: ").append(toIndentedString(memory)).append("\n");
         sb.append("    extendSpec: ").append(toIndentedString(extendSpec)).append("\n");
+        sb.append("    diskMaxNum: ").append(toIndentedString(diskMaxNum)).append("\n");
         sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
         sb.append("    freeSize: ").append(toIndentedString(freeSize)).append("\n");
         sb.append("}");

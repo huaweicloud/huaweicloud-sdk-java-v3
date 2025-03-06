@@ -11496,7 +11496,7 @@ public class DataArtsStudioMeta {
         // requests
         builder.<ShowDesignOperationResultRequest.OperationTypeEnum>withRequestField("operation_type",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ShowDesignOperationResultRequest.OperationTypeEnum.class),
             f -> f.withMarshaller(ShowDesignOperationResultRequest::getOperationType,
                 ShowDesignOperationResultRequest::setOperationType));

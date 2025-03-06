@@ -93,6 +93,11 @@ public class CreateNet2CloudPhoneServerRequestBody {
 
     private String availabilityZone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "property")
+
+    private String property;
+
     public CreateNet2CloudPhoneServerRequestBody withServerName(String serverName) {
         this.serverName = serverName;
         return this;
@@ -445,7 +450,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     /**
-     * 待创建云服务器所在的可用区，需要指定可用区（AZ）的名称。如上海一可用区1为cn-east-3a。
+     * 待创建云服务器所在的可用区，需要指定可用区（AZ）的名称。[如上海一可用区1为cn-east-3a。](tag:hws,hws_hk,cmcc)
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -454,6 +459,23 @@ public class CreateNet2CloudPhoneServerRequestBody {
 
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
+    }
+
+    public CreateNet2CloudPhoneServerRequestBody withProperty(String property) {
+        this.property = property;
+        return this;
+    }
+
+    /**
+     * 云手机属性列表，为Json格式字符串。只可以预置有权限修改的属性。字符串长度[1,8192]。
+     * @return property
+     */
+    public String getProperty() {
+        return property;
+    }
+
+    public void setProperty(String property) {
+        this.property = property;
     }
 
     @Override
@@ -476,7 +498,8 @@ public class CreateNet2CloudPhoneServerRequestBody {
             && Objects.equals(this.phoneDataVolume, that.phoneDataVolume)
             && Objects.equals(this.serverShareDataVolume, that.serverShareDataVolume)
             && Objects.equals(this.bandWidth, that.bandWidth)
-            && Objects.equals(this.availabilityZone, that.availabilityZone);
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.property, that.property);
     }
 
     @Override
@@ -496,7 +519,8 @@ public class CreateNet2CloudPhoneServerRequestBody {
             phoneDataVolume,
             serverShareDataVolume,
             bandWidth,
-            availabilityZone);
+            availabilityZone,
+            property);
     }
 
     @Override
@@ -519,6 +543,7 @@ public class CreateNet2CloudPhoneServerRequestBody {
         sb.append("    serverShareDataVolume: ").append(toIndentedString(serverShareDataVolume)).append("\n");
         sb.append("    bandWidth: ").append(toIndentedString(bandWidth)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    property: ").append(toIndentedString(property)).append("\n");
         sb.append("}");
         return sb.toString();
     }

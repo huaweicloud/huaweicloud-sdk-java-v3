@@ -25,6 +25,16 @@ public class BankReceiptRequestBody {
 
     private Integer pageNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "single_orientation_mode")
+
+    private Boolean singleOrientationMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "erase_seal")
+
+    private Boolean eraseSeal;
+
     public BankReceiptRequestBody withData(String data) {
         this.data = data;
         return this;
@@ -76,6 +86,40 @@ public class BankReceiptRequestBody {
         this.pageNum = pageNum;
     }
 
+    public BankReceiptRequestBody withSingleOrientationMode(Boolean singleOrientationMode) {
+        this.singleOrientationMode = singleOrientationMode;
+        return this;
+    }
+
+    /**
+     * 单朝向模式开关。可选值包括： - true：打开单朝向模式。 - false：关闭单朝向模式。  图片文字方向一致时，打开该开关可提升识别精度；图片文字方向不一致时，关闭该开关可支持多朝向文字识别。未传入该参数时默认为\"true\"，既默认图片中的文字方向为单朝向。 
+     * @return singleOrientationMode
+     */
+    public Boolean getSingleOrientationMode() {
+        return singleOrientationMode;
+    }
+
+    public void setSingleOrientationMode(Boolean singleOrientationMode) {
+        this.singleOrientationMode = singleOrientationMode;
+    }
+
+    public BankReceiptRequestBody withEraseSeal(Boolean eraseSeal) {
+        this.eraseSeal = eraseSeal;
+        return this;
+    }
+
+    /**
+     * 是否打开印章擦除功能。可选值包括： - true：打开印章擦除功能。 - false：关闭印章擦除功能。  开启后，可提升印章遮挡区域的文字识别精度。 
+     * @return eraseSeal
+     */
+    public Boolean getEraseSeal() {
+        return eraseSeal;
+    }
+
+    public void setEraseSeal(Boolean eraseSeal) {
+        this.eraseSeal = eraseSeal;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +130,14 @@ public class BankReceiptRequestBody {
         }
         BankReceiptRequestBody that = (BankReceiptRequestBody) obj;
         return Objects.equals(this.data, that.data) && Objects.equals(this.url, that.url)
-            && Objects.equals(this.pageNum, that.pageNum);
+            && Objects.equals(this.pageNum, that.pageNum)
+            && Objects.equals(this.singleOrientationMode, that.singleOrientationMode)
+            && Objects.equals(this.eraseSeal, that.eraseSeal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(data, url, pageNum);
+        return Objects.hash(data, url, pageNum, singleOrientationMode, eraseSeal);
     }
 
     @Override
@@ -101,6 +147,8 @@ public class BankReceiptRequestBody {
         sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    pageNum: ").append(toIndentedString(pageNum)).append("\n");
+        sb.append("    singleOrientationMode: ").append(toIndentedString(singleOrientationMode)).append("\n");
+        sb.append("    eraseSeal: ").append(toIndentedString(eraseSeal)).append("\n");
         sb.append("}");
         return sb.toString();
     }

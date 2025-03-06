@@ -65,7 +65,7 @@ public class ListCloudPhonesRequest {
     }
 
     /**
-     * 每页返回的资源个数。取值范围：1~200（默认值为200），一般设置为10、20、50。
+     * 每页返回的资源个数。取值范围：1~200（默认值为100），一般设置为10、20、50。
      * minimum: 0
      * maximum: 8096
      * @return limit

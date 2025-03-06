@@ -40,6 +40,11 @@ public class PhoneImage {
 
     private String imageId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_support_encrypt")
+
+    private Boolean isSupportEncrypt;
+
     public PhoneImage withImageName(String imageName) {
         this.imageName = imageName;
         return this;
@@ -144,6 +149,23 @@ public class PhoneImage {
         this.imageId = imageId;
     }
 
+    public PhoneImage withIsSupportEncrypt(Boolean isSupportEncrypt) {
+        this.isSupportEncrypt = isSupportEncrypt;
+        return this;
+    }
+
+    /**
+     * 当前镜像是否支持文件级加密
+     * @return isSupportEncrypt
+     */
+    public Boolean getIsSupportEncrypt() {
+        return isSupportEncrypt;
+    }
+
+    public void setIsSupportEncrypt(Boolean isSupportEncrypt) {
+        this.isSupportEncrypt = isSupportEncrypt;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -155,12 +177,13 @@ public class PhoneImage {
         PhoneImage that = (PhoneImage) obj;
         return Objects.equals(this.imageName, that.imageName) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.isPublic, that.isPublic) && Objects.equals(this.osName, that.osName)
-            && Objects.equals(this.imageLabel, that.imageLabel) && Objects.equals(this.imageId, that.imageId);
+            && Objects.equals(this.imageLabel, that.imageLabel) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.isSupportEncrypt, that.isSupportEncrypt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(imageName, osType, isPublic, osName, imageLabel, imageId);
+        return Objects.hash(imageName, osType, isPublic, osName, imageLabel, imageId, isSupportEncrypt);
     }
 
     @Override
@@ -173,6 +196,7 @@ public class PhoneImage {
         sb.append("    osName: ").append(toIndentedString(osName)).append("\n");
         sb.append("    imageLabel: ").append(toIndentedString(imageLabel)).append("\n");
         sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+        sb.append("    isSupportEncrypt: ").append(toIndentedString(isSupportEncrypt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

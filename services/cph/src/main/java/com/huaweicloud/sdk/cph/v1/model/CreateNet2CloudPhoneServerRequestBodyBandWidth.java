@@ -36,7 +36,7 @@ public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
     }
 
     /**
-     * 云手机服务器的带宽唯一标识。
+     * 云手机服务器的带宽唯一标识，选共享带宽时必选。
      * @return bandWidthId
      */
     public String getBandWidthId() {
@@ -53,7 +53,7 @@ public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
     }
 
     /**
-     * 云手机服务器的带宽大小。
+     * 云手机服务器的带宽大小，选独享带宽时必选。
      * minimum: 0
      * maximum: 8096
      * @return bandWidthSize

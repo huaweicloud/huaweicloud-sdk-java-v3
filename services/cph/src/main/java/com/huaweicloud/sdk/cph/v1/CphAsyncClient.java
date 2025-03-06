@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelRequest;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerModelResponse;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerRequest;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerResponse;
+import com.huaweicloud.sdk.cph.v1.model.CreateCloudPhoneSingleServerRequest;
+import com.huaweicloud.sdk.cph.v1.model.CreateCloudPhoneSingleServerResponse;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerRequest;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerResponse;
 import com.huaweicloud.sdk.cph.v1.model.DeleteCloudPhoneServerRequest;
@@ -31,6 +33,8 @@ import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsRequest;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsResponse;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesRequest;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesResponse;
+import com.huaweicloud.sdk.cph.v1.model.ExpandPhoneDataVolumeSizeRequest;
+import com.huaweicloud.sdk.cph.v1.model.ExpandPhoneDataVolumeSizeResponse;
 import com.huaweicloud.sdk.cph.v1.model.ImportTrafficRequest;
 import com.huaweicloud.sdk.cph.v1.model.ImportTrafficResponse;
 import com.huaweicloud.sdk.cph.v1.model.InstallApkRequest;
@@ -95,6 +99,8 @@ import com.huaweicloud.sdk.cph.v1.model.UpdateBandwidthRequest;
 import com.huaweicloud.sdk.cph.v1.model.UpdateBandwidthResponse;
 import com.huaweicloud.sdk.cph.v1.model.UpdateCloudPhonePropertyRequest;
 import com.huaweicloud.sdk.cph.v1.model.UpdateCloudPhonePropertyResponse;
+import com.huaweicloud.sdk.cph.v1.model.UpdateImageMemberRequest;
+import com.huaweicloud.sdk.cph.v1.model.UpdateImageMemberResponse;
 import com.huaweicloud.sdk.cph.v1.model.UpdateKeypairRequest;
 import com.huaweicloud.sdk.cph.v1.model.UpdateKeypairResponse;
 import com.huaweicloud.sdk.cph.v1.model.UpdatePhoneNameRequest;
@@ -122,6 +128,7 @@ public class CphAsyncClient {
      *
      * 镜像共享,共享镜像给指定账号。
      * - 镜像只能共享给同region下的其他华为云账号(project_id)。
+     * - 同一镜像最多只能共享给10个其他账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -137,6 +144,7 @@ public class CphAsyncClient {
      *
      * 镜像共享,共享镜像给指定账号。
      * - 镜像只能共享给同region下的其他华为云账号(project_id)。
+     * - 同一镜像最多只能共享给10个其他账号。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -243,6 +251,8 @@ public class CphAsyncClient {
      * 
      * 高版本手机导出的数据无法在低版本手机内恢复。低版本手机导出的数据可以在高版本手机内恢复，但可能会在极少数场景下有不兼容的风险。因此推荐您在同版本手机间进行导出与恢复。
      * 
+     * 手机在运行状态会有数据缓存，直接运行恢复的文件可能带来访问失败、应用崩溃等现象，建议在还原成功后重启手机，以保证云手机稳定运行。
+     * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
      * @param request BatchImportCloudPhoneDataRequest 请求对象
@@ -259,6 +269,8 @@ public class CphAsyncClient {
      * 批量恢复数据到云手机中。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
      * 
      * 高版本手机导出的数据无法在低版本手机内恢复。低版本手机导出的数据可以在高版本手机内恢复，但可能会在极少数场景下有不兼容的风险。因此推荐您在同版本手机间进行导出与恢复。
+     * 
+     * 手机在运行状态会有数据缓存，直接运行恢复的文件可能带来访问失败、应用崩溃等现象，建议在还原成功后重启手机，以保证云手机稳定运行。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -333,7 +345,7 @@ public class CphAsyncClient {
     /**
      * 变更云手机服务器规格
      *
-     * 变更云手机服务器规格。变更的目标规格也必须为特殊的规格才可变更。接口调用成功后，大约2分钟左右规格会变更结束，在订单中心可以查看到变更的订单状态为成功，且查询服务器的详细信息，可以查看到服务器规格名称已经变成新的规格名称。
+     * 变更云手机服务器规格。接口调用成功后，大约2分钟左右规格会变更结束，在订单中心可以查看到变更的订单状态为成功，且查询服务器的详细信息，可以查看到服务器规格名称已经变成新的规格名称。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -348,7 +360,7 @@ public class CphAsyncClient {
     /**
      * 变更云手机服务器规格
      *
-     * 变更云手机服务器规格。变更的目标规格也必须为特殊的规格才可变更。接口调用成功后，大约2分钟左右规格会变更结束，在订单中心可以查看到变更的订单状态为成功，且查询服务器的详细信息，可以查看到服务器规格名称已经变成新的规格名称。
+     * 变更云手机服务器规格。接口调用成功后，大约2分钟左右规格会变更结束，在订单中心可以查看到变更的订单状态为成功，且查询服务器的详细信息，可以查看到服务器规格名称已经变成新的规格名称。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -361,13 +373,40 @@ public class CphAsyncClient {
     }
 
     /**
+     * 创建云手机裸服务器
+     *
+     * 该接口创建的服务器仅包含服务器和服务器的镜像，不包含云手机实例和镜像等内容。若需要创建包含云手机实例的服务器，请使用创建云手机服务器接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCloudPhoneSingleServerRequest 请求对象
+     * @return CompletableFuture<CreateCloudPhoneSingleServerResponse>
+     */
+    public CompletableFuture<CreateCloudPhoneSingleServerResponse> createCloudPhoneSingleServerAsync(
+        CreateCloudPhoneSingleServerRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.createCloudPhoneSingleServer);
+    }
+
+    /**
+     * 创建云手机裸服务器
+     *
+     * 该接口创建的服务器仅包含服务器和服务器的镜像，不包含云手机实例和镜像等内容。若需要创建包含云手机实例的服务器，请使用创建云手机服务器接口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCloudPhoneSingleServerRequest 请求对象
+     * @return AsyncInvoker<CreateCloudPhoneSingleServerRequest, CreateCloudPhoneSingleServerResponse>
+     */
+    public AsyncInvoker<CreateCloudPhoneSingleServerRequest, CreateCloudPhoneSingleServerResponse> createCloudPhoneSingleServerAsyncInvoker(
+        CreateCloudPhoneSingleServerRequest request) {
+        return new AsyncInvoker<>(request, CphMeta.createCloudPhoneSingleServer, hcClient);
+    }
+
+    /**
      * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)云手机服务器
      *
      * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)云手机服务器，支持您复用已有的VPC网络管理云手机服务器，支持云手机服务器复用您已[创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)的共享带宽等资源。
-     * - 请确保您已具有虚拟私有云资源，创建服务器需要指定一个已有的虚拟私有云，否则无法创建服务器。同时请确保您的账号至少具有VPC ReadOnlyAccess权限，以便虚拟私有云资源可以被选取到。
-     * - 请确保您的账号已成功创建密钥对，并具有查询密钥对列表的细粒度权限ecs:serverKeypairs:list。若需要创建密钥对，请确保账号具有创建密钥对的细粒度权限ecs:serverKeypairs:create。
-     * - 请确保已正确创建委托（委托名称cph_admin_trust，委托服务CPH），委托未被删除， 确保委托包含VPC FullAccess权限，委托及权限校验失败将导致云服务器创建失败。创建委托时委托类型选择“云服务”，云服务选择“CPH”，即允许CPH调用云服务。
-     * - 请确保您使用的账号具有Security Administrator权限。
+     * - 请确保您使用的账号具有CPH AgencyDependencyAccess权限。
      * - 请确保您有足够的服务器及网络配额，配额校验不通过将导致创建失败。
      * [- 当前只支持按需创建。](tag:fcs)
      * 
@@ -385,10 +424,7 @@ public class CphAsyncClient {
      * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)云手机服务器
      *
      * [创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)云手机服务器，支持您复用已有的VPC网络管理云手机服务器，支持云手机服务器复用您已[创建](tag:fcs)[购买](tag:hws,hws_hk,cmcc)的共享带宽等资源。
-     * - 请确保您已具有虚拟私有云资源，创建服务器需要指定一个已有的虚拟私有云，否则无法创建服务器。同时请确保您的账号至少具有VPC ReadOnlyAccess权限，以便虚拟私有云资源可以被选取到。
-     * - 请确保您的账号已成功创建密钥对，并具有查询密钥对列表的细粒度权限ecs:serverKeypairs:list。若需要创建密钥对，请确保账号具有创建密钥对的细粒度权限ecs:serverKeypairs:create。
-     * - 请确保已正确创建委托（委托名称cph_admin_trust，委托服务CPH），委托未被删除， 确保委托包含VPC FullAccess权限，委托及权限校验失败将导致云服务器创建失败。创建委托时委托类型选择“云服务”，云服务选择“CPH”，即允许CPH调用云服务。
-     * - 请确保您使用的账号具有Security Administrator权限。
+     * - 请确保您使用的账号具有CPH AgencyDependencyAccess权限。
      * - 请确保您有足够的服务器及网络配额，配额校验不通过将导致创建失败。
      * [- 当前只支持按需创建。](tag:fcs)
      * 
@@ -435,7 +471,7 @@ public class CphAsyncClient {
     /**
      * 删除镜像
      *
-     * 删除镜像
+     * 删除自定义镜像
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -449,7 +485,7 @@ public class CphAsyncClient {
     /**
      * 删除镜像
      *
-     * 删除镜像
+     * 删除自定义镜像
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -545,6 +581,38 @@ public class CphAsyncClient {
     public AsyncInvoker<DeleteShareFilesRequest, DeleteShareFilesResponse> deleteShareFilesAsyncInvoker(
         DeleteShareFilesRequest request) {
         return new AsyncInvoker<>(request, CphMeta.deleteShareFiles, hcClient);
+    }
+
+    /**
+     * 扩容云手机数据盘大小
+     *
+     * 扩容云手机数据盘大小
+     * - 注意: 本接口会产生扩容新增容量的费用，新增容量不算入服务器免费存储额度内。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExpandPhoneDataVolumeSizeRequest 请求对象
+     * @return CompletableFuture<ExpandPhoneDataVolumeSizeResponse>
+     */
+    public CompletableFuture<ExpandPhoneDataVolumeSizeResponse> expandPhoneDataVolumeSizeAsync(
+        ExpandPhoneDataVolumeSizeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.expandPhoneDataVolumeSize);
+    }
+
+    /**
+     * 扩容云手机数据盘大小
+     *
+     * 扩容云手机数据盘大小
+     * - 注意: 本接口会产生扩容新增容量的费用，新增容量不算入服务器免费存储额度内。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExpandPhoneDataVolumeSizeRequest 请求对象
+     * @return AsyncInvoker<ExpandPhoneDataVolumeSizeRequest, ExpandPhoneDataVolumeSizeResponse>
+     */
+    public AsyncInvoker<ExpandPhoneDataVolumeSizeRequest, ExpandPhoneDataVolumeSizeResponse> expandPhoneDataVolumeSizeAsyncInvoker(
+        ExpandPhoneDataVolumeSizeRequest request) {
+        return new AsyncInvoker<>(request, CphMeta.expandPhoneDataVolumeSize, hcClient);
     }
 
     /**
@@ -788,9 +856,9 @@ public class CphAsyncClient {
     }
 
     /**
-     * 查询镜像列表
+     * 查询自定义镜像列表
      *
-     * 查询镜像列表
+     * 查询自定义镜像列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -802,9 +870,9 @@ public class CphAsyncClient {
     }
 
     /**
-     * 查询镜像列表
+     * 查询自定义镜像列表
      *
-     * 查询镜像列表
+     * 查询自定义镜像列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -963,9 +1031,9 @@ public class CphAsyncClient {
     /**
      * 推送共享应用
      *
-     * 推送应用tar文件至共享应用存储目录中，该功能仅在支持共享应用的云手机规格上可实现。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
+     * 推送应用tar文件至共享应用存储目录中，该功能仅在支持共享应用的云手机服务器上可实现。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
      * 
-     * 注意：不能向低版本服务器推送高版本手机导出的应用包，否则可能会造成兼容性问题。如果您使用的是physical.kg1.4xlarge.a.cp服务器规格，请确保共享应用的可用空间大于两倍的tar包
+     * 注意：不能向存在低安卓版本云手机的服务器推送高安卓版本手机导出的应用包，否则可能会造成手机数据兼容性问题。如果您使用的是physical.kg1.4xlarge.a.cp服务器规格，请确保共享存储的可用空间大于两倍的tar包大小
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -979,9 +1047,9 @@ public class CphAsyncClient {
     /**
      * 推送共享应用
      *
-     * 推送应用tar文件至共享应用存储目录中，该功能仅在支持共享应用的云手机规格上可实现。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
+     * 推送应用tar文件至共享应用存储目录中，该功能仅在支持共享应用的云手机服务器上可实现。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
      * 
-     * 注意：不能向低版本服务器推送高版本手机导出的应用包，否则可能会造成兼容性问题。如果您使用的是physical.kg1.4xlarge.a.cp服务器规格，请确保共享应用的可用空间大于两倍的tar包
+     * 注意：不能向存在低安卓版本云手机的服务器推送高安卓版本手机导出的应用包，否则可能会造成手机数据兼容性问题。如果您使用的是physical.kg1.4xlarge.a.cp服务器规格，请确保共享存储的可用空间大于两倍的tar包大小
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1345,6 +1413,35 @@ public class CphAsyncClient {
     }
 
     /**
+     * 更新共享镜像接受信息
+     *
+     * 用户收到共享镜像后，选择接受或拒绝共享镜像。未接受的共享镜像无法使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateImageMemberRequest 请求对象
+     * @return CompletableFuture<UpdateImageMemberResponse>
+     */
+    public CompletableFuture<UpdateImageMemberResponse> updateImageMemberAsync(UpdateImageMemberRequest request) {
+        return hcClient.asyncInvokeHttp(request, CphMeta.updateImageMember);
+    }
+
+    /**
+     * 更新共享镜像接受信息
+     *
+     * 用户收到共享镜像后，选择接受或拒绝共享镜像。未接受的共享镜像无法使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateImageMemberRequest 请求对象
+     * @return AsyncInvoker<UpdateImageMemberRequest, UpdateImageMemberResponse>
+     */
+    public AsyncInvoker<UpdateImageMemberRequest, UpdateImageMemberResponse> updateImageMemberAsyncInvoker(
+        UpdateImageMemberRequest request) {
+        return new AsyncInvoker<>(request, CphMeta.updateImageMember, hcClient);
+    }
+
+    /**
      * 更改密钥对
      *
      * 修改连接云手机的密钥对。
@@ -1437,7 +1534,7 @@ public class CphAsyncClient {
      * 在云手机中安装apk。系统会将指定的apk文件下载后直接安装到云手机中。
      * 支持安装单apk应用和多apk应用。可使用install命令安装单apk应用，一次只支持安装一个apk，如果一次传多个apk只有第一个安装成功；可使用install-multiple命令安装多apk应用（多apk应用为单个应用拆分成多个apk），一次只支持同一个应用的多个apk。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
      * - 管理面性能有限，对相同服务器批量执行的ADB命令，将会阻塞云手机其他任务执行。
-     * - 建议通过开发应用市场的方式安装apk。允许安装的apk大小限制为2G（即不可将obs桶内大于2G的apk安装到手机中），超过限制将返回错误。
+     * - 允许安装的apk大小限制为2G（即不可将obs桶内大于2G的apk安装到手机中），超过限制将返回错误。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1454,7 +1551,7 @@ public class CphAsyncClient {
      * 在云手机中安装apk。系统会将指定的apk文件下载后直接安装到云手机中。
      * 支持安装单apk应用和多apk应用。可使用install命令安装单apk应用，一次只支持安装一个apk，如果一次传多个apk只有第一个安装成功；可使用install-multiple命令安装多apk应用（多apk应用为单个应用拆分成多个apk），一次只支持同一个应用的多个apk。该接口为异步接口。[接口调用前请先确保已完成CPH服务操作OBS桶的委托授权。委托CPH操作OBS桶请参见[委托CPH操作OBS桶](https://support.huaweicloud.com/bestpractice-cph/cph_bp_0050.html)。](tag:hws)
      * - 管理面性能有限，对相同服务器批量执行的ADB命令，将会阻塞云手机其他任务执行。
-     * - 建议通过开发应用市场的方式安装apk。允许安装的apk大小限制为2G（即不可将obs桶内大于2G的apk安装到手机中），超过限制将返回错误。
+     * - 允许安装的apk大小限制为2G（即不可将obs桶内大于2G的apk安装到手机中），超过限制将返回错误。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1500,7 +1597,7 @@ public class CphAsyncClient {
     }
 
     /**
-     * 执行异步adb命令
+     * 异步执行adb命令
      *
      * 在云手机中执行shell命令。该接口为异步接口。
      * - 管理面性能有限，对相同服务器批量执行的ADB命令，将会阻塞云手机其他任务执行。
@@ -1515,7 +1612,7 @@ public class CphAsyncClient {
     }
 
     /**
-     * 执行异步adb命令
+     * 异步执行adb命令
      *
      * 在云手机中执行shell命令。该接口为异步接口。
      * - 管理面性能有限，对相同服务器批量执行的ADB命令，将会阻塞云手机其他任务执行。
@@ -1531,7 +1628,7 @@ public class CphAsyncClient {
     }
 
     /**
-     * 执行同步adb命令
+     * 同步执行adb命令
      *
      * 在云手机中同步执行命令并返回命令执行的输出信息，该接口仅支持adb shell命令的执行。1分钟内每个用户调用接口次数上限为6次，每个云手机允许执行命令超时时间为2秒，接口时间不超过30秒，执行云手机数越多，接口耗时相应越长。
      * 
@@ -1545,7 +1642,7 @@ public class CphAsyncClient {
     }
 
     /**
-     * 执行同步adb命令
+     * 同步执行adb命令
      *
      * 在云手机中同步执行命令并返回命令执行的输出信息，该接口仅支持adb shell命令的执行。1分钟内每个用户调用接口次数上限为6次，每个云手机允许执行命令超时时间为2秒，接口时间不超过30秒，执行云手机数越多，接口耗时相应越长。
      * 

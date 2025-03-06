@@ -99,6 +99,8 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteDataSourceRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteDataSourceResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteDisasterRecoveryResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteDwsClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteDwsClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterRequest;
@@ -301,6 +303,8 @@ import com.huaweicloud.sdk.dws.v2.model.ShowClusterFlavorRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowClusterFlavorResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowClustersRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowClustersResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseAuthorityRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseAuthorityResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseOmUserStatusRequest;
@@ -1354,6 +1358,41 @@ public class DwsMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteDisasterRecoveryResponse::getBody, DeleteDisasterRecoveryResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDwsClusterRequest, DeleteDwsClusterResponse> deleteDwsCluster =
+        genForDeleteDwsCluster();
+
+    private static HttpRequestDef<DeleteDwsClusterRequest, DeleteDwsClusterResponse> genForDeleteDwsCluster() {
+        // basic
+        HttpRequestDef.Builder<DeleteDwsClusterRequest, DeleteDwsClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDwsClusterRequest.class, DeleteDwsClusterResponse.class)
+                .withName("DeleteDwsCluster")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDwsClusterRequest::getClusterId, DeleteDwsClusterRequest::setClusterId));
+        builder.<String>withRequestField("keep_last_manual_backup",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDwsClusterRequest::getKeepLastManualBackup,
+                DeleteDwsClusterRequest::setKeepLastManualBackup));
+        builder.<String>withRequestField("release_eip_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDwsClusterRequest::getReleaseEipType,
+                DeleteDwsClusterRequest::setReleaseEipType));
+
+        // response
 
         return builder.build();
     }
@@ -4239,6 +4278,23 @@ public class DwsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterRedistributionRequest::getType,
                 ShowClusterRedistributionRequest::setType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowClustersRequest, ShowClustersResponse> showClusters = genForShowClusters();
+
+    private static HttpRequestDef<ShowClustersRequest, ShowClustersResponse> genForShowClusters() {
+        // basic
+        HttpRequestDef.Builder<ShowClustersRequest, ShowClustersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowClustersRequest.class, ShowClustersResponse.class)
+                .withName("ShowClusters")
+                .withUri("/v2/{project_id}/clusters")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

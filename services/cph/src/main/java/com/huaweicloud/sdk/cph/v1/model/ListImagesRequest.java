@@ -61,7 +61,7 @@ public class ListImagesRequest {
     }
 
     /**
-     * 镜像类型。 - public：公共镜像 - private：私有镜像 - share：共享镜像
+     * 镜像类型。 - private：私有镜像 - share：共享镜像
      * @return imageType
      */
     public String getImageType() {

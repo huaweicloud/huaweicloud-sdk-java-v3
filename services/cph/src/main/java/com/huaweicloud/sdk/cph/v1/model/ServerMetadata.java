@@ -20,6 +20,11 @@ public class ServerMetadata {
 
     private String orderId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "charging_mode")
+
+    private Integer chargingMode;
+
     public ServerMetadata withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -54,6 +59,25 @@ public class ServerMetadata {
         this.orderId = orderId;
     }
 
+    public ServerMetadata withChargingMode(Integer chargingMode) {
+        this.chargingMode = chargingMode;
+        return this;
+    }
+
+    /**
+     * 计费类型。 [- 0：包周期](tag:hws,hws_hk,cmcc) [- 1：按需](tag:fcs)
+     * minimum: 0
+     * maximum: 1
+     * @return chargingMode
+     */
+    public Integer getChargingMode() {
+        return chargingMode;
+    }
+
+    public void setChargingMode(Integer chargingMode) {
+        this.chargingMode = chargingMode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +87,13 @@ public class ServerMetadata {
             return false;
         }
         ServerMetadata that = (ServerMetadata) obj;
-        return Objects.equals(this.productId, that.productId) && Objects.equals(this.orderId, that.orderId);
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.chargingMode, that.chargingMode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productId, orderId);
+        return Objects.hash(productId, orderId, chargingMode);
     }
 
     @Override
@@ -77,6 +102,7 @@ public class ServerMetadata {
         sb.append("class ServerMetadata {\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

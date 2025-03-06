@@ -16,6 +16,16 @@ public class ListFlavorInfosRequest {
     private String engineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_type")
+
+    private String productType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
 
     private Integer offset;
@@ -40,6 +50,40 @@ public class ListFlavorInfosRequest {
 
     public void setEngineName(String engineName) {
         this.engineName = engineName;
+    }
+
+    public ListFlavorInfosRequest withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * - 取值为“CloudNativeCluster”, 表示查询云原生部署模式支持的规格。 - 不传该参数表示查询数据库类型下的所有经典部署模式支持的规格。
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
+    public ListFlavorInfosRequest withProductType(String productType) {
+        this.productType = productType;
+        return this;
+    }
+
+    /**
+     * 产品类型。   - Standard 标准型   - Capacity 容量型 当创建GeminiDB Redis云原生部署模式集群类型必传此参数。
+     * @return productType
+     */
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 
     public ListFlavorInfosRequest withOffset(Integer offset) {
@@ -85,13 +129,14 @@ public class ListFlavorInfosRequest {
             return false;
         }
         ListFlavorInfosRequest that = (ListFlavorInfosRequest) obj;
-        return Objects.equals(this.engineName, that.engineName) && Objects.equals(this.offset, that.offset)
+        return Objects.equals(this.engineName, that.engineName) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.productType, that.productType) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engineName, offset, limit);
+        return Objects.hash(engineName, mode, productType, offset, limit);
     }
 
     @Override
@@ -99,6 +144,8 @@ public class ListFlavorInfosRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFlavorInfosRequest {\n");
         sb.append("    engineName: ").append(toIndentedString(engineName)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("}");

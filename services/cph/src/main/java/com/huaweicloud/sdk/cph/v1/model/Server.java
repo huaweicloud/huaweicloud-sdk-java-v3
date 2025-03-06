@@ -131,7 +131,7 @@ public class Server {
     }
 
     /**
-     * 云手机服务器所在的可用区。
+     * 云手机服务器所在的可用区。[如上海一可用区1为cn-east-3a。](tag:hws,hws_hk,cmcc)
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -353,7 +353,7 @@ public class Server {
     }
 
     /**
-     * 云手机服务器的项目ID。
+     * 云手机服务器的项目ID。用于对使用系统定义网络的服务器创建对等连接，并非租户的项目ID。
      * @return resourceProjectId
      */
     public String getResourceProjectId() {

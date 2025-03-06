@@ -51,7 +51,7 @@ public class ConnectInfoAccessInfo {
     }
 
     /**
-     * 云手机实例的访问IP
+     * 云手机实例的公网访问IP
      * @return accessIp
      */
     public String getAccessIp() {

@@ -209,7 +209,7 @@ public class ListImagesView {
     }
 
     /**
-     * 镜像类型 公共镜像：public 私有镜像：private 共享镜像：share
+     * 镜像类型 私有镜像：private 共享镜像：share
      * @return imageType
      */
     public String getImageType() {

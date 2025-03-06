@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 云手机服务器的属性描述，不超过512个字节。
@@ -49,6 +50,11 @@ public class ServerModelExtendSpec {
     @JsonProperty(value = "numa_count")
 
     private Integer numaCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_volume")
+
+    private ServerModelExtendSpecOsVolume osVolume;
 
     public ServerModelExtendSpec withCpu(String cpu) {
         this.cpu = cpu;
@@ -190,6 +196,32 @@ public class ServerModelExtendSpec {
         this.numaCount = numaCount;
     }
 
+    public ServerModelExtendSpec withOsVolume(ServerModelExtendSpecOsVolume osVolume) {
+        this.osVolume = osVolume;
+        return this;
+    }
+
+    public ServerModelExtendSpec withOsVolume(Consumer<ServerModelExtendSpecOsVolume> osVolumeSetter) {
+        if (this.osVolume == null) {
+            this.osVolume = new ServerModelExtendSpecOsVolume();
+            osVolumeSetter.accept(this.osVolume);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get osVolume
+     * @return osVolume
+     */
+    public ServerModelExtendSpecOsVolume getOsVolume() {
+        return osVolume;
+    }
+
+    public void setOsVolume(ServerModelExtendSpecOsVolume osVolume) {
+        this.osVolume = osVolume;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -202,12 +234,13 @@ public class ServerModelExtendSpec {
         return Objects.equals(this.cpu, that.cpu) && Objects.equals(this.memory, that.memory)
             && Objects.equals(this.disk, that.disk) && Objects.equals(this.networkInterface, that.networkInterface)
             && Objects.equals(this.gpu, that.gpu) && Objects.equals(this.bmsFlavor, that.bmsFlavor)
-            && Objects.equals(this.gpuCount, that.gpuCount) && Objects.equals(this.numaCount, that.numaCount);
+            && Objects.equals(this.gpuCount, that.gpuCount) && Objects.equals(this.numaCount, that.numaCount)
+            && Objects.equals(this.osVolume, that.osVolume);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cpu, memory, disk, networkInterface, gpu, bmsFlavor, gpuCount, numaCount);
+        return Objects.hash(cpu, memory, disk, networkInterface, gpu, bmsFlavor, gpuCount, numaCount, osVolume);
     }
 
     @Override
@@ -222,6 +255,7 @@ public class ServerModelExtendSpec {
         sb.append("    bmsFlavor: ").append(toIndentedString(bmsFlavor)).append("\n");
         sb.append("    gpuCount: ").append(toIndentedString(gpuCount)).append("\n");
         sb.append("    numaCount: ").append(toIndentedString(numaCount)).append("\n");
+        sb.append("    osVolume: ").append(toIndentedString(osVolume)).append("\n");
         sb.append("}");
         return sb.toString();
     }

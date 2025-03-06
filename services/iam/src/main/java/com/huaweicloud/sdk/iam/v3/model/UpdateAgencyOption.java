@@ -28,7 +28,7 @@ public class UpdateAgencyOption {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "duration")
 
-    private String duration;
+    private Object duration;
 
     public UpdateAgencyOption withTrustDomainId(String trustDomainId) {
         this.trustDomainId = trustDomainId;
@@ -81,7 +81,7 @@ public class UpdateAgencyOption {
         this.description = description;
     }
 
-    public UpdateAgencyOption withDuration(String duration) {
+    public UpdateAgencyOption withDuration(Object duration) {
         this.duration = duration;
         return this;
     }
@@ -90,11 +90,11 @@ public class UpdateAgencyOption {
      * 委托的期限，单位为“天”。默认为FOREVER。取值为“FOREVER\"表示委托的期限为永久，取值为\"ONEDAY\"表示委托的期限为一天,取值为自定义天数表示委托的期限为有限天数，如20。四个参数至少填写一个。
      * @return duration
      */
-    public String getDuration() {
+    public Object getDuration() {
         return duration;
     }
 
-    public void setDuration(String duration) {
+    public void setDuration(Object duration) {
         this.duration = duration;
     }
 

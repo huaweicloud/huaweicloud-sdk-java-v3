@@ -59,6 +59,11 @@ public class CreateInstanceRequestBody {
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_type")
+
+    private String productType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "flavor")
 
     private List<CreateInstanceFlavorOption> flavor = null;
@@ -259,7 +264,7 @@ public class CreateInstanceRequestBody {
     }
 
     /**
-     * 实例类型。   - GeminiDB Cassandra支持集群类型，取值为“Cluster”。   - GeminiDB Mongo4.0版本支持副本集类型，取值为“ReplicaSet”。   - GeminiDB Influx支持集群类型，取值为“Cluster”。   - GeminiDB Influx支持单节点类型，取值为“InfluxdbSingle”。   - GeminiDB redis支持集群类型，取值为“Cluster”。   - GeminiDB redis支持主备类型，取值为“Replication”。
+     * 实例类型。   -  GeminiDB Cassandra支持经典部署模式集群类型，取值为“Cluster”。   -  GeminiDB Cassandra支持云原生部署模式集群类型，取值“CloudNativeCluster”。   -  GeminiDB Mongo4.0版本支持副本集类型，取值为“ReplicaSet”。   -  GeminiDB Influx支持经典部署模式集群类型，取值为“Cluster”。   -  GeminiDB Influx支持云原生部署模式集群类型，取值为“CloudNativeCluster”。   -  GeminiDB Influx支持经典部署模式单节点类型，取值为“InfluxdbSingle”。   -  GeminiDB Redis支持经典部署模式Proxy集群类型，取值为“Cluster”。   -  GeminiDB redis支持云原生部署模式集群类型，取值为“CloudNativeCluster”。   -  GeminiDB Redis支持经典部署模式Cluster集群类型，取值为“RedisCluster”   -  GeminiDB Redis支持经典部署模式主备类型，取值为“Replication”。
      * @return mode
      */
     public String getMode() {
@@ -268,6 +273,23 @@ public class CreateInstanceRequestBody {
 
     public void setMode(String mode) {
         this.mode = mode;
+    }
+
+    public CreateInstanceRequestBody withProductType(String productType) {
+        this.productType = productType;
+        return this;
+    }
+
+    /**
+     * 产品类型。   -  Capacity 容量型   -  Standard 标准型 当创建GeminiDB Redis云原生部署模式集群类型必传此参数。
+     * @return productType
+     */
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 
     public CreateInstanceRequestBody withFlavor(List<CreateInstanceFlavorOption> flavor) {
@@ -507,7 +529,8 @@ public class CreateInstanceRequestBody {
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.password, that.password) && Objects.equals(this.mode, that.mode)
-            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.configurationId, that.configurationId)
+            && Objects.equals(this.productType, that.productType) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.configurationId, that.configurationId)
             && Objects.equals(this.backupStrategy, that.backupStrategy)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
@@ -527,6 +550,7 @@ public class CreateInstanceRequestBody {
             securityGroupId,
             password,
             mode,
+            productType,
             flavor,
             configurationId,
             backupStrategy,
@@ -552,6 +576,7 @@ public class CreateInstanceRequestBody {
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    configurationId: ").append(toIndentedString(configurationId)).append("\n");
         sb.append("    backupStrategy: ").append(toIndentedString(backupStrategy)).append("\n");

@@ -110,6 +110,16 @@ public class ShowInstanceBeanResponse {
 
     private String orderId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_ssl")
+
+    private Boolean enableSsl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_ref")
+
+    private String flavorRef;
+
     public ShowInstanceBeanResponse withId(String id) {
         this.id = id;
         return this;
@@ -450,6 +460,40 @@ public class ShowInstanceBeanResponse {
         this.orderId = orderId;
     }
 
+    public ShowInstanceBeanResponse withEnableSsl(Boolean enableSsl) {
+        this.enableSsl = enableSsl;
+        return this;
+    }
+
+    /**
+     * 是否开启SSL。
+     * @return enableSsl
+     */
+    public Boolean getEnableSsl() {
+        return enableSsl;
+    }
+
+    public void setEnableSsl(Boolean enableSsl) {
+        this.enableSsl = enableSsl;
+    }
+
+    public ShowInstanceBeanResponse withFlavorRef(String flavorRef) {
+        this.flavorRef = flavorRef;
+        return this;
+    }
+
+    /**
+     * 规格码。
+     * @return flavorRef
+     */
+    public String getFlavorRef() {
+        return flavorRef;
+    }
+
+    public void setFlavorRef(String flavorRef) {
+        this.flavorRef = flavorRef;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -470,7 +514,8 @@ public class ShowInstanceBeanResponse {
             && Objects.equals(this.nodeStatus, that.nodeStatus)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.engineVersion, that.engineVersion)
-            && Objects.equals(this.orderId, that.orderId);
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.enableSsl, that.enableSsl)
+            && Objects.equals(this.flavorRef, that.flavorRef);
     }
 
     @Override
@@ -494,7 +539,9 @@ public class ShowInstanceBeanResponse {
             enterpriseProjectId,
             projectId,
             engineVersion,
-            orderId);
+            orderId,
+            enableSsl,
+            flavorRef);
     }
 
     @Override
@@ -521,6 +568,8 @@ public class ShowInstanceBeanResponse {
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    engineVersion: ").append(toIndentedString(engineVersion)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    enableSsl: ").append(toIndentedString(enableSsl)).append("\n");
+        sb.append("    flavorRef: ").append(toIndentedString(flavorRef)).append("\n");
         sb.append("}");
         return sb.toString();
     }

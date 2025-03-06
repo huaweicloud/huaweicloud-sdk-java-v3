@@ -1410,12 +1410,6 @@ public class CaeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateNoticeRuleRequest::getXEnterpriseProjectID,
                 CreateNoticeRuleRequest::setXEnterpriseProjectID));
-        builder.<String>withRequestField("X-Environment-ID",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateNoticeRuleRequest::getXEnvironmentID,
-                CreateNoticeRuleRequest::setXEnvironmentID));
         builder.<CreateNoticeRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1450,12 +1444,6 @@ public class CaeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteNoticeRuleRequest::getXEnterpriseProjectID,
                 DeleteNoticeRuleRequest::setXEnterpriseProjectID));
-        builder.<String>withRequestField("X-Environment-ID",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteNoticeRuleRequest::getXEnvironmentID,
-                DeleteNoticeRuleRequest::setXEnvironmentID));
 
         // response
         builder.<String>withResponseField("body",
@@ -1485,12 +1473,6 @@ public class CaeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNoticeRulesRequest::getXEnterpriseProjectID,
                 ListNoticeRulesRequest::setXEnterpriseProjectID));
-        builder.<String>withRequestField("X-Environment-ID",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNoticeRulesRequest::getXEnvironmentID,
-                ListNoticeRulesRequest::setXEnvironmentID));
 
         // response
 
@@ -1520,11 +1502,6 @@ public class CaeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowNoticeRuleRequest::getXEnterpriseProjectID,
                 ShowNoticeRuleRequest::setXEnterpriseProjectID));
-        builder.<String>withRequestField("X-Environment-ID",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNoticeRuleRequest::getXEnvironmentID, ShowNoticeRuleRequest::setXEnvironmentID));
 
         // response
 
@@ -1554,12 +1531,6 @@ public class CaeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateNoticeRuleRequest::getXEnterpriseProjectID,
                 UpdateNoticeRuleRequest::setXEnterpriseProjectID));
-        builder.<String>withRequestField("X-Environment-ID",
-            LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateNoticeRuleRequest::getXEnvironmentID,
-                UpdateNoticeRuleRequest::setXEnvironmentID));
         builder.<UpdateNoticeRuleReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

@@ -216,6 +216,7 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResizeInstanceVolumeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResizeInstanceVolumeRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ResizeInstanceVolumeResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestartInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.RestoreExistingInstanceResponse;
@@ -1584,6 +1585,16 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorInfosRequest::getEngineName, ListFlavorInfosRequest::setEngineName));
+        builder.<String>withRequestField("mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorInfosRequest::getMode, ListFlavorInfosRequest::setMode));
+        builder.<String>withRequestField("product_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorInfosRequest::getProductType, ListFlavorInfosRequest::setProductType));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2877,6 +2888,11 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestartInstanceRequest::getInstanceId, RestartInstanceRequest::setInstanceId));
+        builder.<RestartInstanceRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RestartInstanceRequestBody.class),
+            f -> f.withMarshaller(RestartInstanceRequest::getBody, RestartInstanceRequest::setBody));
 
         // response
 
@@ -3829,6 +3845,11 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowQuotasRequest::getMode, ShowQuotasRequest::setMode));
+        builder.<String>withRequestField("product_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowQuotasRequest::getProductType, ShowQuotasRequest::setProductType));
 
         // response
 

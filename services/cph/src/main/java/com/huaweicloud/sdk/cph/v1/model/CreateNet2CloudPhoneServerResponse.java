@@ -34,6 +34,16 @@ public class CreateNet2CloudPhoneServerResponse extends SdkResponse {
 
     private List<String> serverIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_msg")
+
+    private String errorMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
     public CreateNet2CloudPhoneServerResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -118,6 +128,40 @@ public class CreateNet2CloudPhoneServerResponse extends SdkResponse {
         this.serverIds = serverIds;
     }
 
+    public CreateNet2CloudPhoneServerResponse withErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+
+    /**
+     * 任务错误码说明。
+     * @return errorMsg
+     */
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+
+    public CreateNet2CloudPhoneServerResponse withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
+     * 任务错误码。
+     * @return errorCode
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -128,12 +172,13 @@ public class CreateNet2CloudPhoneServerResponse extends SdkResponse {
         }
         CreateNet2CloudPhoneServerResponse that = (CreateNet2CloudPhoneServerResponse) obj;
         return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.orderId, that.orderId)
-            && Objects.equals(this.productId, that.productId) && Objects.equals(this.serverIds, that.serverIds);
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.serverIds, that.serverIds)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, orderId, productId, serverIds);
+        return Objects.hash(requestId, orderId, productId, serverIds, errorMsg, errorCode);
     }
 
     @Override
@@ -144,6 +189,8 @@ public class CreateNet2CloudPhoneServerResponse extends SdkResponse {
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
         sb.append("    serverIds: ").append(toIndentedString(serverIds)).append("\n");
+        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

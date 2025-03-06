@@ -16,11 +16,6 @@ public class ShowNoticeRuleRequest {
     private String xEnterpriseProjectID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Environment-ID")
-
-    private String xEnvironmentID;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "rule_id")
 
     private String ruleId;
@@ -42,25 +37,6 @@ public class ShowNoticeRuleRequest {
 
     public void setXEnterpriseProjectID(String xEnterpriseProjectID) {
         this.xEnterpriseProjectID = xEnterpriseProjectID;
-    }
-
-    public ShowNoticeRuleRequest withXEnvironmentID(String xEnvironmentID) {
-        this.xEnvironmentID = xEnvironmentID;
-        return this;
-    }
-
-    /**
-     * 环境ID。      - 获取环境ID，通过《[云应用引擎API参考](https://support.huaweicloud.com/api-cae/ListEnvironments.html)》的“获取环境列表”章节获取环境信息。     - 请求响应成功后在响应体的items数组中的一个元素即为一个环境的信息，其中id字段即是环境ID。
-     * @return xEnvironmentID
-     */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Environment-ID")
-    public String getXEnvironmentID() {
-        return xEnvironmentID;
-    }
-
-    public void setXEnvironmentID(String xEnvironmentID) {
-        this.xEnvironmentID = xEnvironmentID;
     }
 
     public ShowNoticeRuleRequest withRuleId(String ruleId) {
@@ -90,12 +66,12 @@ public class ShowNoticeRuleRequest {
         }
         ShowNoticeRuleRequest that = (ShowNoticeRuleRequest) obj;
         return Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
-            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID) && Objects.equals(this.ruleId, that.ruleId);
+            && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xEnterpriseProjectID, xEnvironmentID, ruleId);
+        return Objects.hash(xEnterpriseProjectID, ruleId);
     }
 
     @Override
@@ -103,7 +79,6 @@ public class ShowNoticeRuleRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowNoticeRuleRequest {\n");
         sb.append("    xEnterpriseProjectID: ").append(toIndentedString(xEnterpriseProjectID)).append("\n");
-        sb.append("    xEnvironmentID: ").append(toIndentedString(xEnvironmentID)).append("\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
         sb.append("}");
         return sb.toString();

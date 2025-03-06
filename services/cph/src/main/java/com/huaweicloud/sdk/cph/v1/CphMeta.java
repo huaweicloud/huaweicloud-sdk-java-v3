@@ -29,6 +29,9 @@ import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerRequest;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.ChangeCloudPhoneServerResponse;
 import com.huaweicloud.sdk.cph.v1.model.ConnectionRequestBody;
+import com.huaweicloud.sdk.cph.v1.model.CreateCloudPhoneSingleServerRequest;
+import com.huaweicloud.sdk.cph.v1.model.CreateCloudPhoneSingleServerRequestBody;
+import com.huaweicloud.sdk.cph.v1.model.CreateCloudPhoneSingleServerResponse;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerRequest;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.CreateNet2CloudPhoneServerResponse;
@@ -45,6 +48,9 @@ import com.huaweicloud.sdk.cph.v1.model.DeleteShareAppsResponse;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesRequest;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.DeleteShareFilesResponse;
+import com.huaweicloud.sdk.cph.v1.model.ExpandPhoneDataVolumeSizeRequest;
+import com.huaweicloud.sdk.cph.v1.model.ExpandPhoneDataVolumeSizeRequestBody;
+import com.huaweicloud.sdk.cph.v1.model.ExpandPhoneDataVolumeSizeResponse;
 import com.huaweicloud.sdk.cph.v1.model.ImportTrafficRequest;
 import com.huaweicloud.sdk.cph.v1.model.ImportTrafficRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.ImportTrafficResponse;
@@ -125,6 +131,9 @@ import com.huaweicloud.sdk.cph.v1.model.UpdateBandwidthResponse;
 import com.huaweicloud.sdk.cph.v1.model.UpdateCloudPhonePropertyRequest;
 import com.huaweicloud.sdk.cph.v1.model.UpdateCloudPhonePropertyRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.UpdateCloudPhonePropertyResponse;
+import com.huaweicloud.sdk.cph.v1.model.UpdateImageMemberRequest;
+import com.huaweicloud.sdk.cph.v1.model.UpdateImageMemberRequestBody;
+import com.huaweicloud.sdk.cph.v1.model.UpdateImageMemberResponse;
 import com.huaweicloud.sdk.cph.v1.model.UpdateKeypairRequest;
 import com.huaweicloud.sdk.cph.v1.model.UpdateKeypairRequestBody;
 import com.huaweicloud.sdk.cph.v1.model.UpdateKeypairResponse;
@@ -369,6 +378,33 @@ public class CphMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateCloudPhoneSingleServerRequest, CreateCloudPhoneSingleServerResponse> createCloudPhoneSingleServer =
+        genForCreateCloudPhoneSingleServer();
+
+    private static HttpRequestDef<CreateCloudPhoneSingleServerRequest, CreateCloudPhoneSingleServerResponse> genForCreateCloudPhoneSingleServer() {
+        // basic
+        HttpRequestDef.Builder<CreateCloudPhoneSingleServerRequest, CreateCloudPhoneSingleServerResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateCloudPhoneSingleServerRequest.class,
+                    CreateCloudPhoneSingleServerResponse.class)
+                .withName("CreateCloudPhoneSingleServer")
+                .withUri("/v2.1/{project_id}/cloud-phone/servers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateCloudPhoneSingleServerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCloudPhoneSingleServerRequestBody.class),
+            f -> f.withMarshaller(CreateCloudPhoneSingleServerRequest::getBody,
+                CreateCloudPhoneSingleServerRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateNet2CloudPhoneServerRequest, CreateNet2CloudPhoneServerResponse> createNet2CloudPhoneServer =
         genForCreateNet2CloudPhoneServer();
 
@@ -509,6 +545,33 @@ public class CphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeleteShareFilesRequestBody.class),
             f -> f.withMarshaller(DeleteShareFilesRequest::getBody, DeleteShareFilesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExpandPhoneDataVolumeSizeRequest, ExpandPhoneDataVolumeSizeResponse> expandPhoneDataVolumeSize =
+        genForExpandPhoneDataVolumeSize();
+
+    private static HttpRequestDef<ExpandPhoneDataVolumeSizeRequest, ExpandPhoneDataVolumeSizeResponse> genForExpandPhoneDataVolumeSize() {
+        // basic
+        HttpRequestDef.Builder<ExpandPhoneDataVolumeSizeRequest, ExpandPhoneDataVolumeSizeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExpandPhoneDataVolumeSizeRequest.class,
+                    ExpandPhoneDataVolumeSizeResponse.class)
+                .withName("ExpandPhoneDataVolumeSize")
+                .withUri("/v1/{project_id}/cloud-phone/phones/expand-volume")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ExpandPhoneDataVolumeSizeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExpandPhoneDataVolumeSizeRequestBody.class),
+            f -> f.withMarshaller(ExpandPhoneDataVolumeSizeRequest::getBody,
+                ExpandPhoneDataVolumeSizeRequest::setBody));
 
         // response
 
@@ -1329,6 +1392,34 @@ public class CphMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCloudPhonePropertyRequestBody.class),
             f -> f.withMarshaller(UpdateCloudPhonePropertyRequest::getBody, UpdateCloudPhonePropertyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateImageMemberRequest, UpdateImageMemberResponse> updateImageMember =
+        genForUpdateImageMember();
+
+    private static HttpRequestDef<UpdateImageMemberRequest, UpdateImageMemberResponse> genForUpdateImageMember() {
+        // basic
+        HttpRequestDef.Builder<UpdateImageMemberRequest, UpdateImageMemberResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateImageMemberRequest.class, UpdateImageMemberResponse.class)
+                .withName("UpdateImageMember")
+                .withUri("/v1/{project_id}/cloud-phone/images/{image_id}/members")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateImageMemberRequest::getImageId, UpdateImageMemberRequest::setImageId));
+        builder.<UpdateImageMemberRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateImageMemberRequestBody.class),
+            f -> f.withMarshaller(UpdateImageMemberRequest::getBody, UpdateImageMemberRequest::setBody));
 
         // response
 

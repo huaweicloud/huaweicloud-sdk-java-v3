@@ -27,6 +27,11 @@ public class RecycleInstance {
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_type")
+
+    private String productType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore")
 
     private RecycleDatastore datastore;
@@ -101,7 +106,7 @@ public class RecycleInstance {
     }
 
     /**
-     * 实例类型。   - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis集群实例类型。   - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。   - 取值为“InfluxdbSingle”，表示GeminiDB Influx单节点实例类型。   - 取值为“Replication”，表示GeminiDB Redis主备版实例类型。
+     * 实例类型。   - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis 经典部署模式Proxy 集群实例类型。   - 取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。   - 取值为“RedisCluster”，表示GeminiDB Redis经典部署模式Cluster集群实例类型。   - 取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。   - 取值为“InfluxdbSingle”，表示GeminiDB Influx 经典部署模式单节点实例类型。   - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。
      * @return mode
      */
     public String getMode() {
@@ -110,6 +115,23 @@ public class RecycleInstance {
 
     public void setMode(String mode) {
         this.mode = mode;
+    }
+
+    public RecycleInstance withProductType(String productType) {
+        this.productType = productType;
+        return this;
+    }
+
+    /**
+     * 产品类型。 GeminiDB Redis云原生部署模式集群涉及此字段，取值：   -  Standard 标准型   -  Capacity 容量型
+     * @return productType
+     */
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
     }
 
     public RecycleInstance withDatastore(RecycleDatastore datastore) {
@@ -250,8 +272,8 @@ public class RecycleInstance {
         }
         RecycleInstance that = (RecycleInstance) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.mode, that.mode) && Objects.equals(this.datastore, that.datastore)
-            && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.productType, that.productType)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.chargeMode, that.chargeMode)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.deletedAt, that.deletedAt) && Objects.equals(this.retainedUntil, that.retainedUntil);
@@ -262,6 +284,7 @@ public class RecycleInstance {
         return Objects.hash(id,
             name,
             mode,
+            productType,
             datastore,
             chargeMode,
             enterpriseProjectId,
@@ -278,6 +301,7 @@ public class RecycleInstance {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
+        sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
         sb.append("    datastore: ").append(toIndentedString(datastore)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

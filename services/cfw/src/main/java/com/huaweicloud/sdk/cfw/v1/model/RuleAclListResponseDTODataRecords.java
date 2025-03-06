@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -20,6 +22,11 @@ public class RuleAclListResponseDTODataRecords {
     @JsonProperty(value = "rule_id")
 
     private String ruleId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "applications")
+
+    private List<String> applications = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address_type")
@@ -272,6 +279,39 @@ public class RuleAclListResponseDTODataRecords {
 
     public void setRuleId(String ruleId) {
         this.ruleId = ruleId;
+    }
+
+    public RuleAclListResponseDTODataRecords withApplications(List<String> applications) {
+        this.applications = applications;
+        return this;
+    }
+
+    public RuleAclListResponseDTODataRecords addApplicationsItem(String applicationsItem) {
+        if (this.applications == null) {
+            this.applications = new ArrayList<>();
+        }
+        this.applications.add(applicationsItem);
+        return this;
+    }
+
+    public RuleAclListResponseDTODataRecords withApplications(Consumer<List<String>> applicationsSetter) {
+        if (this.applications == null) {
+            this.applications = new ArrayList<>();
+        }
+        applicationsSetter.accept(this.applications);
+        return this;
+    }
+
+    /**
+     * 应用列表
+     * @return applications
+     */
+    public List<String> getApplications() {
+        return applications;
+    }
+
+    public void setApplications(List<String> applications) {
+        this.applications = applications;
     }
 
     public RuleAclListResponseDTODataRecords withAddressType(Integer addressType) {
@@ -625,10 +665,10 @@ public class RuleAclListResponseDTODataRecords {
             return false;
         }
         RuleAclListResponseDTODataRecords that = (RuleAclListResponseDTODataRecords) obj;
-        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.addressType, that.addressType)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.direction, that.direction)
-            && Objects.equals(this.actionType, that.actionType) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.description, that.description)
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.applications, that.applications)
+            && Objects.equals(this.addressType, that.addressType) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.direction, that.direction) && Objects.equals(this.actionType, that.actionType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
             && Objects.equals(this.longConnectTime, that.longConnectTime)
             && Objects.equals(this.longConnectEnable, that.longConnectEnable)
             && Objects.equals(this.longConnectTimeHour, that.longConnectTimeHour)
@@ -643,6 +683,7 @@ public class RuleAclListResponseDTODataRecords {
     @Override
     public int hashCode() {
         return Objects.hash(ruleId,
+            applications,
             addressType,
             name,
             direction,
@@ -668,6 +709,7 @@ public class RuleAclListResponseDTODataRecords {
         StringBuilder sb = new StringBuilder();
         sb.append("class RuleAclListResponseDTODataRecords {\n");
         sb.append("    ruleId: ").append(toIndentedString(ruleId)).append("\n");
+        sb.append("    applications: ").append(toIndentedString(applications)).append("\n");
         sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    direction: ").append(toIndentedString(direction)).append("\n");

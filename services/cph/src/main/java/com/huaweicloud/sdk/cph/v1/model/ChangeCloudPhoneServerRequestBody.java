@@ -61,7 +61,7 @@ public class ChangeCloudPhoneServerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "phone_data_volume")
 
-    private CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume phoneDataVolume;
+    private ChangeCloudPhoneServerRequestBodyPhoneDataVolume phoneDataVolume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "server_share_data_volume")
@@ -72,6 +72,11 @@ public class ChangeCloudPhoneServerRequestBody {
     @JsonProperty(value = "band_width")
 
     private ChangeCloudPhoneServerRequestBodyBandWidth bandWidth;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "property")
+
+    private String property;
 
     public ChangeCloudPhoneServerRequestBody withPhoneModelName(String phoneModelName) {
         this.phoneModelName = phoneModelName;
@@ -281,15 +286,15 @@ public class ChangeCloudPhoneServerRequestBody {
     }
 
     public ChangeCloudPhoneServerRequestBody withPhoneDataVolume(
-        CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume phoneDataVolume) {
+        ChangeCloudPhoneServerRequestBodyPhoneDataVolume phoneDataVolume) {
         this.phoneDataVolume = phoneDataVolume;
         return this;
     }
 
     public ChangeCloudPhoneServerRequestBody withPhoneDataVolume(
-        Consumer<CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume> phoneDataVolumeSetter) {
+        Consumer<ChangeCloudPhoneServerRequestBodyPhoneDataVolume> phoneDataVolumeSetter) {
         if (this.phoneDataVolume == null) {
-            this.phoneDataVolume = new CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume();
+            this.phoneDataVolume = new ChangeCloudPhoneServerRequestBodyPhoneDataVolume();
             phoneDataVolumeSetter.accept(this.phoneDataVolume);
         }
 
@@ -300,11 +305,11 @@ public class ChangeCloudPhoneServerRequestBody {
      * Get phoneDataVolume
      * @return phoneDataVolume
      */
-    public CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume getPhoneDataVolume() {
+    public ChangeCloudPhoneServerRequestBodyPhoneDataVolume getPhoneDataVolume() {
         return phoneDataVolume;
     }
 
-    public void setPhoneDataVolume(CreateNet2CloudPhoneServerRequestBodyPhoneDataVolume phoneDataVolume) {
+    public void setPhoneDataVolume(ChangeCloudPhoneServerRequestBodyPhoneDataVolume phoneDataVolume) {
         this.phoneDataVolume = phoneDataVolume;
     }
 
@@ -363,6 +368,23 @@ public class ChangeCloudPhoneServerRequestBody {
         this.bandWidth = bandWidth;
     }
 
+    public ChangeCloudPhoneServerRequestBody withProperty(String property) {
+        this.property = property;
+        return this;
+    }
+
+    /**
+     * 云手机属性列表，为Json格式字符串。只可以预置有权限修改的属性。字符串长度[1,8192]。
+     * @return property
+     */
+    public String getProperty() {
+        return property;
+    }
+
+    public void setProperty(String property) {
+        this.property = property;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -379,7 +401,7 @@ public class ChangeCloudPhoneServerRequestBody {
             && Objects.equals(this.phoneCountPerIp, that.phoneCountPerIp)
             && Objects.equals(this.phoneDataVolume, that.phoneDataVolume)
             && Objects.equals(this.serverShareDataVolume, that.serverShareDataVolume)
-            && Objects.equals(this.bandWidth, that.bandWidth);
+            && Objects.equals(this.bandWidth, that.bandWidth) && Objects.equals(this.property, that.property);
     }
 
     @Override
@@ -395,7 +417,8 @@ public class ChangeCloudPhoneServerRequestBody {
             phoneCountPerIp,
             phoneDataVolume,
             serverShareDataVolume,
-            bandWidth);
+            bandWidth,
+            property);
     }
 
     @Override
@@ -414,6 +437,7 @@ public class ChangeCloudPhoneServerRequestBody {
         sb.append("    phoneDataVolume: ").append(toIndentedString(phoneDataVolume)).append("\n");
         sb.append("    serverShareDataVolume: ").append(toIndentedString(serverShareDataVolume)).append("\n");
         sb.append("    bandWidth: ").append(toIndentedString(bandWidth)).append("\n");
+        sb.append("    property: ").append(toIndentedString(property)).append("\n");
         sb.append("}");
         return sb.toString();
     }

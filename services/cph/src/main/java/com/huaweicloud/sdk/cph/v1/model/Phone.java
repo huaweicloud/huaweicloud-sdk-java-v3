@@ -82,6 +82,11 @@ public class Phone {
     private PhoneMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_encrypt")
+
+    private Boolean hasEncrypt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -216,7 +221,7 @@ public class Phone {
     }
 
     /**
-     * 云手机状态。 - 0: 创建中 - 1：创建中 - 2：运行中 - 3：重置中 - 4：重启中 - 6：冻结 - 7：正在关机 - 8：已关机 - -5：重置失败 - -6：重启失败 - -7：手机异常 - -8：创建失败 - -9：关机失败
+     * 云手机状态。 - 1：创建中 - 2：运行中 - 3：重置中 - 4：重启中 - 6：冻结 - 7：正在关机 - 8：已关机 - -5：重置失败 - -6：重启失败 - -7：手机异常 - -8：创建失败 - -9：关机失败
      * minimum: -128
      * maximum: 128
      * @return status
@@ -307,7 +312,7 @@ public class Phone {
     }
 
     /**
-     * 云手机服务器所在的可用区。
+     * 云手机服务器所在的可用区。[如上海一可用区1为cn-east-3a。](tag:hws,hws_hk,cmcc)
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -342,6 +347,23 @@ public class Phone {
 
     public void setMetadata(PhoneMetadata metadata) {
         this.metadata = metadata;
+    }
+
+    public Phone withHasEncrypt(Boolean hasEncrypt) {
+        this.hasEncrypt = hasEncrypt;
+        return this;
+    }
+
+    /**
+     * 当前手机是否开启文件级加密
+     * @return hasEncrypt
+     */
+    public Boolean getHasEncrypt() {
+        return hasEncrypt;
+    }
+
+    public void setHasEncrypt(Boolean hasEncrypt) {
+        this.hasEncrypt = hasEncrypt;
     }
 
     public Phone withCreateTime(String createTime) {
@@ -394,8 +416,8 @@ public class Phone {
             && Objects.equals(this.type, that.type) && Objects.equals(this.imei, that.imei)
             && Objects.equals(this.trafficType, that.trafficType) && Objects.equals(this.volumeMode, that.volumeMode)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
-            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.hasEncrypt, that.hasEncrypt)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
@@ -414,6 +436,7 @@ public class Phone {
             volumeMode,
             availabilityZone,
             metadata,
+            hasEncrypt,
             createTime,
             updateTime);
     }
@@ -436,6 +459,7 @@ public class Phone {
         sb.append("    volumeMode: ").append(toIndentedString(volumeMode)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("    hasEncrypt: ").append(toIndentedString(hasEncrypt)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

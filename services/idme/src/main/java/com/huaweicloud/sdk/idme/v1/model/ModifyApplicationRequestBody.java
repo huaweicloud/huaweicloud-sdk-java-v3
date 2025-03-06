@@ -29,6 +29,11 @@ public class ModifyApplicationRequestBody {
     private String descriptionEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permission_control")
+
+    private String permissionControl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_user_list")
 
     private List<AppUserList> appUserList = null;
@@ -84,6 +89,23 @@ public class ModifyApplicationRequestBody {
         this.descriptionEn = descriptionEn;
     }
 
+    public ModifyApplicationRequestBody withPermissionControl(String permissionControl) {
+        this.permissionControl = permissionControl;
+        return this;
+    }
+
+    /**
+     * app权限控制。 - NONE：关闭权限校验 - ALL：开启所有校验
+     * @return permissionControl
+     */
+    public String getPermissionControl() {
+        return permissionControl;
+    }
+
+    public void setPermissionControl(String permissionControl) {
+        this.permissionControl = permissionControl;
+    }
+
     public ModifyApplicationRequestBody withAppUserList(List<AppUserList> appUserList) {
         this.appUserList = appUserList;
         return this;
@@ -128,12 +150,13 @@ public class ModifyApplicationRequestBody {
         ModifyApplicationRequestBody that = (ModifyApplicationRequestBody) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.description, that.description)
             && Objects.equals(this.descriptionEn, that.descriptionEn)
+            && Objects.equals(this.permissionControl, that.permissionControl)
             && Objects.equals(this.appUserList, that.appUserList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, description, descriptionEn, appUserList);
+        return Objects.hash(id, description, descriptionEn, permissionControl, appUserList);
     }
 
     @Override
@@ -143,6 +166,7 @@ public class ModifyApplicationRequestBody {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    descriptionEn: ").append(toIndentedString(descriptionEn)).append("\n");
+        sb.append("    permissionControl: ").append(toIndentedString(permissionControl)).append("\n");
         sb.append("    appUserList: ").append(toIndentedString(appUserList)).append("\n");
         sb.append("}");
         return sb.toString();

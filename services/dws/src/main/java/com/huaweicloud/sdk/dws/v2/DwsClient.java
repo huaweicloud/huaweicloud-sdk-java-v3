@@ -73,6 +73,8 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteDataSourceRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteDataSourceResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteDisasterRecoveryResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteDwsClusterRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteDwsClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterRequest;
@@ -253,6 +255,8 @@ import com.huaweicloud.sdk.dws.v2.model.ShowClusterFlavorRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowClusterFlavorResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowClusterRedistributionResponse;
+import com.huaweicloud.sdk.dws.v2.model.ShowClustersRequest;
+import com.huaweicloud.sdk.dws.v2.model.ShowClustersResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseAuthorityRequest;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseAuthorityResponse;
 import com.huaweicloud.sdk.dws.v2.model.ShowDatabaseOmUserStatusRequest;
@@ -1377,6 +1381,35 @@ public class DwsClient {
     public SyncInvoker<DeleteDisasterRecoveryRequest, DeleteDisasterRecoveryResponse> deleteDisasterRecoveryInvoker(
         DeleteDisasterRecoveryRequest request) {
         return new SyncInvoker<>(request, DwsMeta.deleteDisasterRecovery, hcClient);
+    }
+
+    /**
+     * 删除集群V2
+     *
+     * 此接口用于删除集群。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDwsClusterRequest 请求对象
+     * @return DeleteDwsClusterResponse
+     */
+    public DeleteDwsClusterResponse deleteDwsCluster(DeleteDwsClusterRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.deleteDwsCluster);
+    }
+
+    /**
+     * 删除集群V2
+     *
+     * 此接口用于删除集群。集群删除后将释放此集群的所有资源，包括客户数据。为了安全起见，请在删除集群前为这个集群创建快照。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDwsClusterRequest 请求对象
+     * @return SyncInvoker<DeleteDwsClusterRequest, DeleteDwsClusterResponse>
+     */
+    public SyncInvoker<DeleteDwsClusterRequest, DeleteDwsClusterResponse> deleteDwsClusterInvoker(
+        DeleteDwsClusterRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.deleteDwsCluster, hcClient);
     }
 
     /**
@@ -4001,6 +4034,34 @@ public class DwsClient {
     public SyncInvoker<ShowClusterRedistributionRequest, ShowClusterRedistributionResponse> showClusterRedistributionInvoker(
         ShowClusterRedistributionRequest request) {
         return new SyncInvoker<>(request, DwsMeta.showClusterRedistribution, hcClient);
+    }
+
+    /**
+     * 查询集群列表V2
+     *
+     * 该接口用于查询并显示集群列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClustersRequest 请求对象
+     * @return ShowClustersResponse
+     */
+    public ShowClustersResponse showClusters(ShowClustersRequest request) {
+        return hcClient.syncInvokeHttp(request, DwsMeta.showClusters);
+    }
+
+    /**
+     * 查询集群列表V2
+     *
+     * 该接口用于查询并显示集群列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowClustersRequest 请求对象
+     * @return SyncInvoker<ShowClustersRequest, ShowClustersResponse>
+     */
+    public SyncInvoker<ShowClustersRequest, ShowClustersResponse> showClustersInvoker(ShowClustersRequest request) {
+        return new SyncInvoker<>(request, DwsMeta.showClusters, hcClient);
     }
 
     /**

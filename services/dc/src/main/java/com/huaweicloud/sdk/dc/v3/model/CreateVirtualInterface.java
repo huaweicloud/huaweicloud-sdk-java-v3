@@ -229,6 +229,11 @@ public class CreateVirtualInterface {
 
     private String vgwId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gateway_id")
+
+    private String gatewayId;
+
     /**
      * 路由模式：static/bgp
      */
@@ -579,6 +584,23 @@ public class CreateVirtualInterface {
         this.vgwId = vgwId;
     }
 
+    public CreateVirtualInterface withGatewayId(String gatewayId) {
+        this.gatewayId = gatewayId;
+        return this;
+    }
+
+    /**
+     * 虚拟接口关联的网关的ID。 当虚拟接口接入网关类型为全域接入网关时该参数必填，gateway_id值为全域接入网关的id
+     * @return gatewayId
+     */
+    public String getGatewayId() {
+        return gatewayId;
+    }
+
+    public void setGatewayId(String gatewayId) {
+        this.gatewayId = gatewayId;
+    }
+
     public CreateVirtualInterface withRouteMode(RouteModeEnum routeMode) {
         this.routeMode = routeMode;
         return this;
@@ -834,8 +856,9 @@ public class CreateVirtualInterface {
             && Objects.equals(this.addressFamily, that.addressFamily)
             && Objects.equals(this.localGatewayV6Ip, that.localGatewayV6Ip)
             && Objects.equals(this.remoteGatewayV6Ip, that.remoteGatewayV6Ip) && Objects.equals(this.vgwId, that.vgwId)
-            && Objects.equals(this.routeMode, that.routeMode) && Objects.equals(this.bgpAsn, that.bgpAsn)
-            && Objects.equals(this.bgpMd5, that.bgpMd5) && Objects.equals(this.remoteEpGroup, that.remoteEpGroup)
+            && Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.routeMode, that.routeMode)
+            && Objects.equals(this.bgpAsn, that.bgpAsn) && Objects.equals(this.bgpMd5, that.bgpMd5)
+            && Objects.equals(this.remoteEpGroup, that.remoteEpGroup)
             && Objects.equals(this.serviceEpGroup, that.serviceEpGroup)
             && Objects.equals(this.enableBfd, that.enableBfd) && Objects.equals(this.enableNqa, that.enableNqa)
             && Objects.equals(this.lagId, that.lagId) && Objects.equals(this.resourceTenantId, that.resourceTenantId)
@@ -858,6 +881,7 @@ public class CreateVirtualInterface {
             localGatewayV6Ip,
             remoteGatewayV6Ip,
             vgwId,
+            gatewayId,
             routeMode,
             bgpAsn,
             bgpMd5,
@@ -888,6 +912,7 @@ public class CreateVirtualInterface {
         sb.append("    localGatewayV6Ip: ").append(toIndentedString(localGatewayV6Ip)).append("\n");
         sb.append("    remoteGatewayV6Ip: ").append(toIndentedString(remoteGatewayV6Ip)).append("\n");
         sb.append("    vgwId: ").append(toIndentedString(vgwId)).append("\n");
+        sb.append("    gatewayId: ").append(toIndentedString(gatewayId)).append("\n");
         sb.append("    routeMode: ").append(toIndentedString(routeMode)).append("\n");
         sb.append("    bgpAsn: ").append(toIndentedString(bgpAsn)).append("\n");
         sb.append("    bgpMd5: ").append(toIndentedString(bgpMd5)).append("\n");

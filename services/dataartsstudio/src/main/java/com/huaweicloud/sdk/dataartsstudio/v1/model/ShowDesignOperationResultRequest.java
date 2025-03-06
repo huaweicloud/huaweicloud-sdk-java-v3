@@ -26,24 +26,9 @@ public class ShowDesignOperationResultRequest {
     private String xProjectId;
 
     /**
-     * 批量操作类型。 枚举值：   - PUBLISH: 发布   - ADD_TAGS: 打标签   - APPROVAL: 审批   - ER_REVERSE_DB: 关系建模逆向数据库   - CODETABLE_REVERSE_DB: 码表逆向数据库   - DIMENSION_REVERSE_DB: 维度逆向数据库   - FACT_LOGIC_TABLE_REVERSE_DB: 事实表逆向数据库   - SYNC_TABLES: 同步元模型   - IMPORT_STANDARD: 导入数据标准   - IMPORT_CODETABLE: 导入码表   - IMPORT_ER_TABLE: 导入关系建模（逻辑实体/物理表）   - IMPORT_BUSINESS: 导入业务分层（主题）   - TRANSFORM_LOGIC_MODEL: 逻辑模型转物理模型   - PUBLISH_CODETABLE: 发布码表   - PUBLISH_STANDARD: 发布数据标准   - TABLE_MODEL_RELOCATE: 关系建模业务表批量修改主题   - DIMENSION_RELOCATE: 维度批量修改主题   - FACT_LOGIC_TABLE_RELOCATE: 事实表批量修改主题   - AGGREGATION_LOGIC_TABLE_RELOCATE: 汇总表批量修改主题   - ATOMIC_INDEX_RELOCATE: 原子指标批量修改主题   - DERIVATIVE_INDEX_RELOCATE: 衍生指标批量修改主题   - COMPOUND_METRIC_RELOCATE: 复合指标批量修改主题   - BIZ_METRIC_RELOCATE: 业务指标批量修改流程   - CODE_TABLE_RELOCATE: 码表批量修改目录   - STANDARD_ELEMENT_RELOCATE: 数据标准批量修改目录   - INFO_ARCH_RELOCATE: 信息架构批量修改主题 
+     * 批量操作类型。 枚举值：   - ER_REVERSE_DB: 关系建模逆向数据库   - TRANSFORM_LOGIC_MODEL: 逻辑模型转物理模型 
      */
     public static final class OperationTypeEnum {
-
-        /**
-         * Enum PUBLISH for value: "PUBLISH"
-         */
-        public static final OperationTypeEnum PUBLISH = new OperationTypeEnum("PUBLISH");
-
-        /**
-         * Enum ADD_TAGS for value: "ADD_TAGS"
-         */
-        public static final OperationTypeEnum ADD_TAGS = new OperationTypeEnum("ADD_TAGS");
-
-        /**
-         * Enum APPROVAL for value: "APPROVAL"
-         */
-        public static final OperationTypeEnum APPROVAL = new OperationTypeEnum("APPROVAL");
 
         /**
          * Enum ER_REVERSE_DB for value: "ER_REVERSE_DB"
@@ -51,151 +36,16 @@ public class ShowDesignOperationResultRequest {
         public static final OperationTypeEnum ER_REVERSE_DB = new OperationTypeEnum("ER_REVERSE_DB");
 
         /**
-         * Enum CODETABLE_REVERSE_DB for value: "CODETABLE_REVERSE_DB"
-         */
-        public static final OperationTypeEnum CODETABLE_REVERSE_DB = new OperationTypeEnum("CODETABLE_REVERSE_DB");
-
-        /**
-         * Enum DIMENSION_REVERSE_DB for value: "DIMENSION_REVERSE_DB"
-         */
-        public static final OperationTypeEnum DIMENSION_REVERSE_DB = new OperationTypeEnum("DIMENSION_REVERSE_DB");
-
-        /**
-         * Enum FACT_LOGIC_TABLE_REVERSE_DB for value: "FACT_LOGIC_TABLE_REVERSE_DB"
-         */
-        public static final OperationTypeEnum FACT_LOGIC_TABLE_REVERSE_DB =
-            new OperationTypeEnum("FACT_LOGIC_TABLE_REVERSE_DB");
-
-        /**
-         * Enum SYNC_TABLES for value: "SYNC_TABLES"
-         */
-        public static final OperationTypeEnum SYNC_TABLES = new OperationTypeEnum("SYNC_TABLES");
-
-        /**
-         * Enum IMPORT_STANDARD for value: "IMPORT_STANDARD"
-         */
-        public static final OperationTypeEnum IMPORT_STANDARD = new OperationTypeEnum("IMPORT_STANDARD");
-
-        /**
-         * Enum IMPORT_CODETABLE for value: "IMPORT_CODETABLE"
-         */
-        public static final OperationTypeEnum IMPORT_CODETABLE = new OperationTypeEnum("IMPORT_CODETABLE");
-
-        /**
-         * Enum IMPORT_ER_TABLE for value: "IMPORT_ER_TABLE"
-         */
-        public static final OperationTypeEnum IMPORT_ER_TABLE = new OperationTypeEnum("IMPORT_ER_TABLE");
-
-        /**
-         * Enum IMPORT_BUSINESS for value: "IMPORT_BUSINESS"
-         */
-        public static final OperationTypeEnum IMPORT_BUSINESS = new OperationTypeEnum("IMPORT_BUSINESS");
-
-        /**
          * Enum TRANSFORM_LOGIC_MODEL for value: "TRANSFORM_LOGIC_MODEL"
          */
         public static final OperationTypeEnum TRANSFORM_LOGIC_MODEL = new OperationTypeEnum("TRANSFORM_LOGIC_MODEL");
-
-        /**
-         * Enum PUBLISH_CODETABLE for value: "PUBLISH_CODETABLE"
-         */
-        public static final OperationTypeEnum PUBLISH_CODETABLE = new OperationTypeEnum("PUBLISH_CODETABLE");
-
-        /**
-         * Enum PUBLISH_STANDARD for value: "PUBLISH_STANDARD"
-         */
-        public static final OperationTypeEnum PUBLISH_STANDARD = new OperationTypeEnum("PUBLISH_STANDARD");
-
-        /**
-         * Enum TABLE_MODEL_RELOCATE for value: "TABLE_MODEL_RELOCATE"
-         */
-        public static final OperationTypeEnum TABLE_MODEL_RELOCATE = new OperationTypeEnum("TABLE_MODEL_RELOCATE");
-
-        /**
-         * Enum DIMENSION_RELOCATE for value: "DIMENSION_RELOCATE"
-         */
-        public static final OperationTypeEnum DIMENSION_RELOCATE = new OperationTypeEnum("DIMENSION_RELOCATE");
-
-        /**
-         * Enum FACT_LOGIC_TABLE_RELOCATE for value: "FACT_LOGIC_TABLE_RELOCATE"
-         */
-        public static final OperationTypeEnum FACT_LOGIC_TABLE_RELOCATE =
-            new OperationTypeEnum("FACT_LOGIC_TABLE_RELOCATE");
-
-        /**
-         * Enum AGGREGATION_LOGIC_TABLE_RELOCATE for value: "AGGREGATION_LOGIC_TABLE_RELOCATE"
-         */
-        public static final OperationTypeEnum AGGREGATION_LOGIC_TABLE_RELOCATE =
-            new OperationTypeEnum("AGGREGATION_LOGIC_TABLE_RELOCATE");
-
-        /**
-         * Enum ATOMIC_INDEX_RELOCATE for value: "ATOMIC_INDEX_RELOCATE"
-         */
-        public static final OperationTypeEnum ATOMIC_INDEX_RELOCATE = new OperationTypeEnum("ATOMIC_INDEX_RELOCATE");
-
-        /**
-         * Enum DERIVATIVE_INDEX_RELOCATE for value: "DERIVATIVE_INDEX_RELOCATE"
-         */
-        public static final OperationTypeEnum DERIVATIVE_INDEX_RELOCATE =
-            new OperationTypeEnum("DERIVATIVE_INDEX_RELOCATE");
-
-        /**
-         * Enum COMPOUND_METRIC_RELOCATE for value: "COMPOUND_METRIC_RELOCATE"
-         */
-        public static final OperationTypeEnum COMPOUND_METRIC_RELOCATE =
-            new OperationTypeEnum("COMPOUND_METRIC_RELOCATE");
-
-        /**
-         * Enum BIZ_METRIC_RELOCATE for value: "BIZ_METRIC_RELOCATE"
-         */
-        public static final OperationTypeEnum BIZ_METRIC_RELOCATE = new OperationTypeEnum("BIZ_METRIC_RELOCATE");
-
-        /**
-         * Enum CODE_TABLE_RELOCATE for value: "CODE_TABLE_RELOCATE"
-         */
-        public static final OperationTypeEnum CODE_TABLE_RELOCATE = new OperationTypeEnum("CODE_TABLE_RELOCATE");
-
-        /**
-         * Enum STANDARD_ELEMENT_RELOCATE for value: "STANDARD_ELEMENT_RELOCATE"
-         */
-        public static final OperationTypeEnum STANDARD_ELEMENT_RELOCATE =
-            new OperationTypeEnum("STANDARD_ELEMENT_RELOCATE");
-
-        /**
-         * Enum INFO_ARCH_RELOCATE for value: "INFO_ARCH_RELOCATE"
-         */
-        public static final OperationTypeEnum INFO_ARCH_RELOCATE = new OperationTypeEnum("INFO_ARCH_RELOCATE");
 
         private static final Map<String, OperationTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, OperationTypeEnum> createStaticFields() {
             Map<String, OperationTypeEnum> map = new HashMap<>();
-            map.put("PUBLISH", PUBLISH);
-            map.put("ADD_TAGS", ADD_TAGS);
-            map.put("APPROVAL", APPROVAL);
             map.put("ER_REVERSE_DB", ER_REVERSE_DB);
-            map.put("CODETABLE_REVERSE_DB", CODETABLE_REVERSE_DB);
-            map.put("DIMENSION_REVERSE_DB", DIMENSION_REVERSE_DB);
-            map.put("FACT_LOGIC_TABLE_REVERSE_DB", FACT_LOGIC_TABLE_REVERSE_DB);
-            map.put("SYNC_TABLES", SYNC_TABLES);
-            map.put("IMPORT_STANDARD", IMPORT_STANDARD);
-            map.put("IMPORT_CODETABLE", IMPORT_CODETABLE);
-            map.put("IMPORT_ER_TABLE", IMPORT_ER_TABLE);
-            map.put("IMPORT_BUSINESS", IMPORT_BUSINESS);
             map.put("TRANSFORM_LOGIC_MODEL", TRANSFORM_LOGIC_MODEL);
-            map.put("PUBLISH_CODETABLE", PUBLISH_CODETABLE);
-            map.put("PUBLISH_STANDARD", PUBLISH_STANDARD);
-            map.put("TABLE_MODEL_RELOCATE", TABLE_MODEL_RELOCATE);
-            map.put("DIMENSION_RELOCATE", DIMENSION_RELOCATE);
-            map.put("FACT_LOGIC_TABLE_RELOCATE", FACT_LOGIC_TABLE_RELOCATE);
-            map.put("AGGREGATION_LOGIC_TABLE_RELOCATE", AGGREGATION_LOGIC_TABLE_RELOCATE);
-            map.put("ATOMIC_INDEX_RELOCATE", ATOMIC_INDEX_RELOCATE);
-            map.put("DERIVATIVE_INDEX_RELOCATE", DERIVATIVE_INDEX_RELOCATE);
-            map.put("COMPOUND_METRIC_RELOCATE", COMPOUND_METRIC_RELOCATE);
-            map.put("BIZ_METRIC_RELOCATE", BIZ_METRIC_RELOCATE);
-            map.put("CODE_TABLE_RELOCATE", CODE_TABLE_RELOCATE);
-            map.put("STANDARD_ELEMENT_RELOCATE", STANDARD_ELEMENT_RELOCATE);
-            map.put("INFO_ARCH_RELOCATE", INFO_ARCH_RELOCATE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -307,7 +157,7 @@ public class ShowDesignOperationResultRequest {
     }
 
     /**
-     * 批量操作类型。 枚举值：   - PUBLISH: 发布   - ADD_TAGS: 打标签   - APPROVAL: 审批   - ER_REVERSE_DB: 关系建模逆向数据库   - CODETABLE_REVERSE_DB: 码表逆向数据库   - DIMENSION_REVERSE_DB: 维度逆向数据库   - FACT_LOGIC_TABLE_REVERSE_DB: 事实表逆向数据库   - SYNC_TABLES: 同步元模型   - IMPORT_STANDARD: 导入数据标准   - IMPORT_CODETABLE: 导入码表   - IMPORT_ER_TABLE: 导入关系建模（逻辑实体/物理表）   - IMPORT_BUSINESS: 导入业务分层（主题）   - TRANSFORM_LOGIC_MODEL: 逻辑模型转物理模型   - PUBLISH_CODETABLE: 发布码表   - PUBLISH_STANDARD: 发布数据标准   - TABLE_MODEL_RELOCATE: 关系建模业务表批量修改主题   - DIMENSION_RELOCATE: 维度批量修改主题   - FACT_LOGIC_TABLE_RELOCATE: 事实表批量修改主题   - AGGREGATION_LOGIC_TABLE_RELOCATE: 汇总表批量修改主题   - ATOMIC_INDEX_RELOCATE: 原子指标批量修改主题   - DERIVATIVE_INDEX_RELOCATE: 衍生指标批量修改主题   - COMPOUND_METRIC_RELOCATE: 复合指标批量修改主题   - BIZ_METRIC_RELOCATE: 业务指标批量修改流程   - CODE_TABLE_RELOCATE: 码表批量修改目录   - STANDARD_ELEMENT_RELOCATE: 数据标准批量修改目录   - INFO_ARCH_RELOCATE: 信息架构批量修改主题 
+     * 批量操作类型。 枚举值：   - ER_REVERSE_DB: 关系建模逆向数据库   - TRANSFORM_LOGIC_MODEL: 逻辑模型转物理模型 
      * @return operationType
      */
     public OperationTypeEnum getOperationType() {

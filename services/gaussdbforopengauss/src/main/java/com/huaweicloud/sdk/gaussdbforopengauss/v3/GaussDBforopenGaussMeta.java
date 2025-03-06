@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.AttachEipResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BatchShowUpgradeCandidateVersionsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindEIPRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ConfirmRestoredDataRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ConfirmRestoredDataResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CopyConfigurationRequest;
@@ -52,6 +54,9 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateManualBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateRestoreInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateRestoreInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateScheduleTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateScheduleTaskRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateSlowLogDownloadRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateSlowLogDownloadResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DbUserPwdRequest;
@@ -72,6 +77,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteLimitTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteLimitTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteScheduleTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBUpgradeInstancesVersionRequest;
@@ -134,6 +141,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHistoryOperationsReq
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHistoryOperationsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceDetailsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceDetailsResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceEngineDetailRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceEngineDetailResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceErrorLogsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceErrorLogsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListInstanceTagsRequest;
@@ -169,6 +178,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestorableInstancesR
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestorableInstancesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListRestoreTimesResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListStorageTypesResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsRequest;
@@ -478,6 +489,34 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(UpgradeInstancesRequestBody.class),
             f -> f.withMarshaller(BatchShowUpgradeCandidateVersionsRequest::getBody,
                 BatchShowUpgradeCandidateVersionsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CancelScheduleTaskRequest, CancelScheduleTaskResponse> cancelScheduleTask =
+        genForCancelScheduleTask();
+
+    private static HttpRequestDef<CancelScheduleTaskRequest, CancelScheduleTaskResponse> genForCancelScheduleTask() {
+        // basic
+        HttpRequestDef.Builder<CancelScheduleTaskRequest, CancelScheduleTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, CancelScheduleTaskRequest.class, CancelScheduleTaskResponse.class)
+                .withName("CancelScheduleTask")
+                .withUri("/v3/{project_id}/instances/schedule-task/{task_id}/cancel")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CancelScheduleTaskRequest::getTaskId, CancelScheduleTaskRequest::setTaskId));
+        builder.<CancelScheduleTaskRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CancelScheduleTaskRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CancelScheduleTaskRequest::getXLanguage, CancelScheduleTaskRequest::setXLanguage));
 
         // response
 
@@ -888,6 +927,34 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateScheduleTaskRequest, CreateScheduleTaskResponse> createScheduleTask =
+        genForCreateScheduleTask();
+
+    private static HttpRequestDef<CreateScheduleTaskRequest, CreateScheduleTaskResponse> genForCreateScheduleTask() {
+        // basic
+        HttpRequestDef.Builder<CreateScheduleTaskRequest, CreateScheduleTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateScheduleTaskRequest.class, CreateScheduleTaskResponse.class)
+                .withName("CreateScheduleTask")
+                .withUri("/v3/{project_id}/instances/db-upgrade/schedule-task")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateScheduleTaskRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateScheduleTaskRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateScheduleTaskRequest::getXLanguage, CreateScheduleTaskRequest::setXLanguage));
+        builder.<CreateScheduleTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateScheduleTaskRequestBody.class),
+            f -> f.withMarshaller(CreateScheduleTaskRequest::getBody, CreateScheduleTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSlowLogDownloadRequest, CreateSlowLogDownloadResponse> createSlowLogDownload =
         genForCreateSlowLogDownload();
 
@@ -1124,6 +1191,34 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteManualBackupRequest::getXLanguage, DeleteManualBackupRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteScheduleTaskRequest, DeleteScheduleTaskResponse> deleteScheduleTask =
+        genForDeleteScheduleTask();
+
+    private static HttpRequestDef<DeleteScheduleTaskRequest, DeleteScheduleTaskResponse> genForDeleteScheduleTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteScheduleTaskRequest, DeleteScheduleTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteScheduleTaskRequest.class, DeleteScheduleTaskResponse.class)
+                .withName("DeleteScheduleTask")
+                .withUri("/v3/{project_id}/instances/schedule-task/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduleTaskRequest::getTaskId, DeleteScheduleTaskRequest::setTaskId));
+        builder.<DeleteScheduleTaskRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteScheduleTaskRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteScheduleTaskRequest::getXLanguage, DeleteScheduleTaskRequest::setXLanguage));
 
         // response
 
@@ -2294,6 +2389,43 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListInstanceEngineDetailRequest, ListInstanceEngineDetailResponse> listInstanceEngineDetail =
+        genForListInstanceEngineDetail();
+
+    private static HttpRequestDef<ListInstanceEngineDetailRequest, ListInstanceEngineDetailResponse> genForListInstanceEngineDetail() {
+        // basic
+        HttpRequestDef.Builder<ListInstanceEngineDetailRequest, ListInstanceEngineDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListInstanceEngineDetailRequest.class, ListInstanceEngineDetailResponse.class)
+                .withName("ListInstanceEngineDetail")
+                .withUri("/v3/{project_id}/datastore/instances")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceEngineDetailRequest::getOffset,
+                ListInstanceEngineDetailRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInstanceEngineDetailRequest::getLimit,
+                ListInstanceEngineDetailRequest::setLimit));
+        builder.<ListInstanceEngineDetailRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListInstanceEngineDetailRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListInstanceEngineDetailRequest::getXLanguage,
+                ListInstanceEngineDetailRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListInstanceErrorLogsRequest, ListInstanceErrorLogsResponse> listInstanceErrorLogs =
         genForListInstanceErrorLogs();
 
@@ -2939,6 +3071,64 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRestoreTimesRequest::getXLanguage, ListRestoreTimesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScheduleTaskRequest, ListScheduleTaskResponse> listScheduleTask =
+        genForListScheduleTask();
+
+    private static HttpRequestDef<ListScheduleTaskRequest, ListScheduleTaskResponse> genForListScheduleTask() {
+        // basic
+        HttpRequestDef.Builder<ListScheduleTaskRequest, ListScheduleTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScheduleTaskRequest.class, ListScheduleTaskResponse.class)
+                .withName("ListScheduleTask")
+                .withUri("/v3/{project_id}/instances/schedule-tasks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleTaskRequest::getInstanceId, ListScheduleTaskRequest::setInstanceId));
+        builder.<ListScheduleTaskRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListScheduleTaskRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListScheduleTaskRequest::getStatus, ListScheduleTaskRequest::setStatus));
+        builder.<ListScheduleTaskRequest.NameEnum>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListScheduleTaskRequest.NameEnum.class),
+            f -> f.withMarshaller(ListScheduleTaskRequest::getName, ListScheduleTaskRequest::setName));
+        builder.<String>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleTaskRequest::getStartTime, ListScheduleTaskRequest::setStartTime));
+        builder.<String>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduleTaskRequest::getEndTime, ListScheduleTaskRequest::setEndTime));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduleTaskRequest::getOffset, ListScheduleTaskRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduleTaskRequest::getLimit, ListScheduleTaskRequest::setLimit));
+        builder.<ListScheduleTaskRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListScheduleTaskRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListScheduleTaskRequest::getXLanguage, ListScheduleTaskRequest::setXLanguage));
 
         // response
 

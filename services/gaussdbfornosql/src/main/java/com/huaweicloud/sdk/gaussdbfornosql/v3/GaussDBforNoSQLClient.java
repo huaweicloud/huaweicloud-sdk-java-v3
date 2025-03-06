@@ -2652,9 +2652,9 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
-     * 重启实例的数据库服务
+     * 重启实例或节点的数据库服务
      *
-     * 重启实例的数据库服务。
+     * 重启实例或节点的数据库服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2666,9 +2666,9 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
-     * 重启实例的数据库服务
+     * 重启实例或节点的数据库服务
      *
-     * 重启实例的数据库服务。
+     * 重启实例或节点的数据库服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

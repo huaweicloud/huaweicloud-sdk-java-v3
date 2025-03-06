@@ -26,6 +26,16 @@ public class ChangeCloudPhoneServerResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_msg")
+
+    private String errorMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
     public ChangeCloudPhoneServerResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -77,6 +87,40 @@ public class ChangeCloudPhoneServerResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    public ChangeCloudPhoneServerResponse withErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+
+    /**
+     * 任务错误码说明。
+     * @return errorMsg
+     */
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+
+    public ChangeCloudPhoneServerResponse withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
+     * 任务错误码。
+     * @return errorCode
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +131,13 @@ public class ChangeCloudPhoneServerResponse extends SdkResponse {
         }
         ChangeCloudPhoneServerResponse that = (ChangeCloudPhoneServerResponse) obj;
         return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.serverId, that.serverId)
-            && Objects.equals(this.jobId, that.jobId);
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, serverId, jobId);
+        return Objects.hash(requestId, serverId, jobId, errorMsg, errorCode);
     }
 
     @Override
@@ -102,6 +147,8 @@ public class ChangeCloudPhoneServerResponse extends SdkResponse {
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

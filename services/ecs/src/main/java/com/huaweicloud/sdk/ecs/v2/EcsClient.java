@@ -151,6 +151,8 @@ import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerAutoTerminateTimeResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerBlockDeviceResponse;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceRequest;
+import com.huaweicloud.sdk.ecs.v2.model.UpdateServerInterfaceResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataRequest;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerMetadataResponse;
 import com.huaweicloud.sdk.ecs.v2.model.UpdateServerRequest;
@@ -1221,7 +1223,6 @@ public class EcsClient {
      * @param request ListServerAzInfoRequest 请求对象
      * @return ListServerAzInfoResponse
      */
-    @Deprecated
     public ListServerAzInfoResponse listServerAzInfo(ListServerAzInfoRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.listServerAzInfo);
     }
@@ -1236,7 +1237,6 @@ public class EcsClient {
      * @param request ListServerAzInfoRequest 请求对象
      * @return SyncInvoker<ListServerAzInfoRequest, ListServerAzInfoResponse>
      */
-    @Deprecated
     public SyncInvoker<ListServerAzInfoRequest, ListServerAzInfoResponse> listServerAzInfoInvoker(
         ListServerAzInfoRequest request) {
         return new SyncInvoker<>(request, EcsMeta.listServerAzInfo, hcClient);
@@ -1692,6 +1692,7 @@ public class EcsClient {
      * @param request NovaListAvailabilityZonesRequest 请求对象
      * @return NovaListAvailabilityZonesResponse
      */
+    @Deprecated
     public NovaListAvailabilityZonesResponse novaListAvailabilityZones(NovaListAvailabilityZonesRequest request) {
         return hcClient.syncInvokeHttp(request, EcsMeta.novaListAvailabilityZones);
     }
@@ -1706,6 +1707,7 @@ public class EcsClient {
      * @param request NovaListAvailabilityZonesRequest 请求对象
      * @return SyncInvoker<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse>
      */
+    @Deprecated
     public SyncInvoker<NovaListAvailabilityZonesRequest, NovaListAvailabilityZonesResponse> novaListAvailabilityZonesInvoker(
         NovaListAvailabilityZonesRequest request) {
         return new SyncInvoker<>(request, EcsMeta.novaListAvailabilityZones, hcClient);
@@ -2458,6 +2460,35 @@ public class EcsClient {
     public SyncInvoker<UpdateServerBlockDeviceRequest, UpdateServerBlockDeviceResponse> updateServerBlockDeviceInvoker(
         UpdateServerBlockDeviceRequest request) {
         return new SyncInvoker<>(request, EcsMeta.updateServerBlockDevice, hcClient);
+    }
+
+    /**
+     * 更新云服务器网卡挂载信息
+     *
+     * 更新云服务器网卡挂载信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServerInterfaceRequest 请求对象
+     * @return UpdateServerInterfaceResponse
+     */
+    public UpdateServerInterfaceResponse updateServerInterface(UpdateServerInterfaceRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.updateServerInterface);
+    }
+
+    /**
+     * 更新云服务器网卡挂载信息
+     *
+     * 更新云服务器网卡挂载信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateServerInterfaceRequest 请求对象
+     * @return SyncInvoker<UpdateServerInterfaceRequest, UpdateServerInterfaceResponse>
+     */
+    public SyncInvoker<UpdateServerInterfaceRequest, UpdateServerInterfaceResponse> updateServerInterfaceInvoker(
+        UpdateServerInterfaceRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.updateServerInterface, hcClient);
     }
 
     /**

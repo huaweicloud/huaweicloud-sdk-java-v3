@@ -126,6 +126,11 @@ public class LiveSnapshotConfig {
 
     private String callBackUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_object_format")
+
+    private String imageObjectFormat;
+
     /**
      * 截图存储文件访问协议， 仅支持http、https格式
      */
@@ -351,6 +356,23 @@ public class LiveSnapshotConfig {
         this.callBackUrl = callBackUrl;
     }
 
+    public LiveSnapshotConfig withImageObjectFormat(String imageObjectFormat) {
+        this.imageObjectFormat = imageObjectFormat;
+        return this;
+    }
+
+    /**
+     * 截图存储文件命名规则， 仅支持jpg格式 包含 - '{obs_object}' OBS存储路径，即obs_location.object的值  - '{domain}' 域名 - '{app}' 应用名 - '{stream}'  流名  其中实时截图模式下  - '{unix_time}'  时间戳，秒 - '{unix_time_milli}'  时间戳，毫秒 - '{fmt_time_utc}'   格式化UTC时间, 格式：YYYYMMDDhhmmss, 如20060102070405 - '{fmt_time_local}'  格式化本地时间, 格式：YYYYMMDDhhmmss，如20060102150405 必选一个时间类型模板
+     * @return imageObjectFormat
+     */
+    public String getImageObjectFormat() {
+        return imageObjectFormat;
+    }
+
+    public void setImageObjectFormat(String imageObjectFormat) {
+        this.imageObjectFormat = imageObjectFormat;
+    }
+
     public LiveSnapshotConfig withImageAccessProtocol(ImageAccessProtocolEnum imageAccessProtocol) {
         this.imageAccessProtocol = imageAccessProtocol;
         return this;
@@ -400,6 +422,7 @@ public class LiveSnapshotConfig {
             && Objects.equals(this.obsLocation, that.obsLocation)
             && Objects.equals(this.callBackEnable, that.callBackEnable)
             && Objects.equals(this.callBackUrl, that.callBackUrl)
+            && Objects.equals(this.imageObjectFormat, that.imageObjectFormat)
             && Objects.equals(this.imageAccessProtocol, that.imageAccessProtocol)
             && Objects.equals(this.imageAccessDomain, that.imageAccessDomain);
     }
@@ -414,6 +437,7 @@ public class LiveSnapshotConfig {
             obsLocation,
             callBackEnable,
             callBackUrl,
+            imageObjectFormat,
             imageAccessProtocol,
             imageAccessDomain);
     }
@@ -430,6 +454,7 @@ public class LiveSnapshotConfig {
         sb.append("    obsLocation: ").append(toIndentedString(obsLocation)).append("\n");
         sb.append("    callBackEnable: ").append(toIndentedString(callBackEnable)).append("\n");
         sb.append("    callBackUrl: ").append(toIndentedString(callBackUrl)).append("\n");
+        sb.append("    imageObjectFormat: ").append(toIndentedString(imageObjectFormat)).append("\n");
         sb.append("    imageAccessProtocol: ").append(toIndentedString(imageAccessProtocol)).append("\n");
         sb.append("    imageAccessDomain: ").append(toIndentedString(imageAccessDomain)).append("\n");
         sb.append("}");

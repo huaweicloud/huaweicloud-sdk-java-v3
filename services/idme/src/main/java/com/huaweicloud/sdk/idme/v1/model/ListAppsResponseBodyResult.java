@@ -83,6 +83,16 @@ public class ListAppsResponseBodyResult {
 
     private List<String> owners = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_type")
+
+    private String appType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "permission_control")
+
+    private String permissionControl;
+
     public ListAppsResponseBodyResult withId(String id) {
         this.id = id;
         return this;
@@ -337,6 +347,40 @@ public class ListAppsResponseBodyResult {
         this.owners = owners;
     }
 
+    public ListAppsResponseBodyResult withAppType(String appType) {
+        this.appType = appType;
+        return this;
+    }
+
+    /**
+     * App类型。
+     * @return appType
+     */
+    public String getAppType() {
+        return appType;
+    }
+
+    public void setAppType(String appType) {
+        this.appType = appType;
+    }
+
+    public ListAppsResponseBodyResult withPermissionControl(String permissionControl) {
+        this.permissionControl = permissionControl;
+        return this;
+    }
+
+    /**
+     * App权限控制。
+     * @return permissionControl
+     */
+    public String getPermissionControl() {
+        return permissionControl;
+    }
+
+    public void setPermissionControl(String permissionControl) {
+        this.permissionControl = permissionControl;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -352,7 +396,9 @@ public class ListAppsResponseBodyResult {
             && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.nameCn, that.nameCn)
             && Objects.equals(this.nameEn, that.nameEn) && Objects.equals(this.descCn, that.descCn)
             && Objects.equals(this.descEn, that.descEn) && Objects.equals(this.databaseType, that.databaseType)
-            && Objects.equals(this.environment, that.environment) && Objects.equals(this.owners, that.owners);
+            && Objects.equals(this.environment, that.environment) && Objects.equals(this.owners, that.owners)
+            && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.permissionControl, that.permissionControl);
     }
 
     @Override
@@ -370,7 +416,9 @@ public class ListAppsResponseBodyResult {
             descEn,
             databaseType,
             environment,
-            owners);
+            owners,
+            appType,
+            permissionControl);
     }
 
     @Override
@@ -391,6 +439,8 @@ public class ListAppsResponseBodyResult {
         sb.append("    databaseType: ").append(toIndentedString(databaseType)).append("\n");
         sb.append("    environment: ").append(toIndentedString(environment)).append("\n");
         sb.append("    owners: ").append(toIndentedString(owners)).append("\n");
+        sb.append("    appType: ").append(toIndentedString(appType)).append("\n");
+        sb.append("    permissionControl: ").append(toIndentedString(permissionControl)).append("\n");
         sb.append("}");
         return sb.toString();
     }
