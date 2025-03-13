@@ -42,6 +42,8 @@ import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotKubernetesClusterCertRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotKubernetesClusterCertResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotMaintenanceWindowRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotMaintenanceWindowResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotPostCheckRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotPostCheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotPreCheckRequest;
@@ -74,6 +76,7 @@ import com.huaweicloud.sdk.cce.v3.model.CreateReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.CreateUpgradeWorkFlowResponse;
+import com.huaweicloud.sdk.cce.v3.model.DelayUpgradePlanRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotAddonInstanceRequest;
@@ -82,6 +85,8 @@ import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotMaintenanceWindowRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotMaintenanceWindowResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteChartRequest;
@@ -127,6 +132,8 @@ import com.huaweicloud.sdk.cce.v3.model.ListAutopilotReleasesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotReleasesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradeClusterTasksRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradeClusterTasksResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradePlansRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradePlansResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradeWorkFlowsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradeWorkFlowsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListChartsRequest;
@@ -153,6 +160,7 @@ import com.huaweicloud.sdk.cce.v3.model.ListUpgradeClusterTasksRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListUpgradeClusterTasksResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListUpgradeWorkFlowsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListUpgradeWorkFlowsResponse;
+import com.huaweicloud.sdk.cce.v3.model.MaintenanceWindow;
 import com.huaweicloud.sdk.cce.v3.model.MasterEIPRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeResponse;
@@ -206,6 +214,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterUpgradeInfoResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotJobResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotMaintenanceWindowRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotMaintenanceWindowResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotPreCheckRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotPreCheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotQuotasRequest;
@@ -277,8 +287,12 @@ import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterEipRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterEipResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotMaintenanceWindowRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotMaintenanceWindowResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotReleaseResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotUpgradePlanRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotUpgradePlanResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateChartRequestBody;
 import com.huaweicloud.sdk.cce.v3.model.UpdateChartResponse;
@@ -3128,6 +3142,39 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateAutopilotMaintenanceWindowRequest, CreateAutopilotMaintenanceWindowResponse> createAutopilotMaintenanceWindow =
+        genForCreateAutopilotMaintenanceWindow();
+
+    private static HttpRequestDef<CreateAutopilotMaintenanceWindowRequest, CreateAutopilotMaintenanceWindowResponse> genForCreateAutopilotMaintenanceWindow() {
+        // basic
+        HttpRequestDef.Builder<CreateAutopilotMaintenanceWindowRequest, CreateAutopilotMaintenanceWindowResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateAutopilotMaintenanceWindowRequest.class,
+                    CreateAutopilotMaintenanceWindowResponse.class)
+                .withName("CreateAutopilotMaintenanceWindow")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/maintenancewindows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAutopilotMaintenanceWindowRequest::getClusterId,
+                CreateAutopilotMaintenanceWindowRequest::setClusterId));
+        builder.<MaintenanceWindow>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MaintenanceWindow.class),
+            f -> f.withMarshaller(CreateAutopilotMaintenanceWindowRequest::getBody,
+                CreateAutopilotMaintenanceWindowRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateAutopilotPostCheckRequest, CreateAutopilotPostCheckResponse> createAutopilotPostCheck =
         genForCreateAutopilotPostCheck();
 
@@ -3370,6 +3417,33 @@ public class CceMeta {
             TypeCasts.uncheckedConversion(DeleteAutopilotClusterRequest.LtsReclaimPolicyEnum.class),
             f -> f.withMarshaller(DeleteAutopilotClusterRequest::getLtsReclaimPolicy,
                 DeleteAutopilotClusterRequest::setLtsReclaimPolicy));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteAutopilotMaintenanceWindowRequest, DeleteAutopilotMaintenanceWindowResponse> deleteAutopilotMaintenanceWindow =
+        genForDeleteAutopilotMaintenanceWindow();
+
+    private static HttpRequestDef<DeleteAutopilotMaintenanceWindowRequest, DeleteAutopilotMaintenanceWindowResponse> genForDeleteAutopilotMaintenanceWindow() {
+        // basic
+        HttpRequestDef.Builder<DeleteAutopilotMaintenanceWindowRequest, DeleteAutopilotMaintenanceWindowResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteAutopilotMaintenanceWindowRequest.class,
+                    DeleteAutopilotMaintenanceWindowResponse.class)
+                .withName("DeleteAutopilotMaintenanceWindow")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/maintenancewindows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteAutopilotMaintenanceWindowRequest::getClusterId,
+                DeleteAutopilotMaintenanceWindowRequest::setClusterId));
 
         // response
 
@@ -3720,6 +3794,33 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAutopilotUpgradePlansRequest, ListAutopilotUpgradePlansResponse> listAutopilotUpgradePlans =
+        genForListAutopilotUpgradePlans();
+
+    private static HttpRequestDef<ListAutopilotUpgradePlansRequest, ListAutopilotUpgradePlansResponse> genForListAutopilotUpgradePlans() {
+        // basic
+        HttpRequestDef.Builder<ListAutopilotUpgradePlansRequest, ListAutopilotUpgradePlansResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAutopilotUpgradePlansRequest.class,
+                    ListAutopilotUpgradePlansResponse.class)
+                .withName("ListAutopilotUpgradePlans")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/upgradeplans")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAutopilotUpgradePlansRequest::getClusterId,
+                ListAutopilotUpgradePlansRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAutopilotUpgradeWorkFlowsRequest, ListAutopilotUpgradeWorkFlowsResponse> listAutopilotUpgradeWorkFlows =
         genForListAutopilotUpgradeWorkFlows();
 
@@ -3987,6 +4088,33 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAutopilotJobRequest::getJobId, ShowAutopilotJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutopilotMaintenanceWindowRequest, ShowAutopilotMaintenanceWindowResponse> showAutopilotMaintenanceWindow =
+        genForShowAutopilotMaintenanceWindow();
+
+    private static HttpRequestDef<ShowAutopilotMaintenanceWindowRequest, ShowAutopilotMaintenanceWindowResponse> genForShowAutopilotMaintenanceWindow() {
+        // basic
+        HttpRequestDef.Builder<ShowAutopilotMaintenanceWindowRequest, ShowAutopilotMaintenanceWindowResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAutopilotMaintenanceWindowRequest.class,
+                    ShowAutopilotMaintenanceWindowResponse.class)
+                .withName("ShowAutopilotMaintenanceWindow")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/maintenancewindows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutopilotMaintenanceWindowRequest::getClusterId,
+                ShowAutopilotMaintenanceWindowRequest::setClusterId));
 
         // response
 
@@ -4333,6 +4461,39 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateAutopilotMaintenanceWindowRequest, UpdateAutopilotMaintenanceWindowResponse> updateAutopilotMaintenanceWindow =
+        genForUpdateAutopilotMaintenanceWindow();
+
+    private static HttpRequestDef<UpdateAutopilotMaintenanceWindowRequest, UpdateAutopilotMaintenanceWindowResponse> genForUpdateAutopilotMaintenanceWindow() {
+        // basic
+        HttpRequestDef.Builder<UpdateAutopilotMaintenanceWindowRequest, UpdateAutopilotMaintenanceWindowResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateAutopilotMaintenanceWindowRequest.class,
+                    UpdateAutopilotMaintenanceWindowResponse.class)
+                .withName("UpdateAutopilotMaintenanceWindow")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/maintenancewindows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutopilotMaintenanceWindowRequest::getClusterId,
+                UpdateAutopilotMaintenanceWindowRequest::setClusterId));
+        builder.<MaintenanceWindow>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(MaintenanceWindow.class),
+            f -> f.withMarshaller(UpdateAutopilotMaintenanceWindowRequest::getBody,
+                UpdateAutopilotMaintenanceWindowRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAutopilotReleaseRequest, UpdateAutopilotReleaseResponse> updateAutopilotRelease =
         genForUpdateAutopilotRelease();
 
@@ -4367,6 +4528,45 @@ public class CceMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateReleaseReqBody.class),
             f -> f.withMarshaller(UpdateAutopilotReleaseRequest::getBody, UpdateAutopilotReleaseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateAutopilotUpgradePlanRequest, UpdateAutopilotUpgradePlanResponse> updateAutopilotUpgradePlan =
+        genForUpdateAutopilotUpgradePlan();
+
+    private static HttpRequestDef<UpdateAutopilotUpgradePlanRequest, UpdateAutopilotUpgradePlanResponse> genForUpdateAutopilotUpgradePlan() {
+        // basic
+        HttpRequestDef.Builder<UpdateAutopilotUpgradePlanRequest, UpdateAutopilotUpgradePlanResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateAutopilotUpgradePlanRequest.class,
+                    UpdateAutopilotUpgradePlanResponse.class)
+                .withName("UpdateAutopilotUpgradePlan")
+                .withUri("/autopilot/v3/projects/{project_id}/clusters/{cluster_id}/upgradeplans/{upgrade_plan_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutopilotUpgradePlanRequest::getClusterId,
+                UpdateAutopilotUpgradePlanRequest::setClusterId));
+        builder.<String>withRequestField("upgrade_plan_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateAutopilotUpgradePlanRequest::getUpgradePlanId,
+                UpdateAutopilotUpgradePlanRequest::setUpgradePlanId));
+        builder.<DelayUpgradePlanRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DelayUpgradePlanRequestBody.class),
+            f -> f.withMarshaller(UpdateAutopilotUpgradePlanRequest::getBody,
+                UpdateAutopilotUpgradePlanRequest::setBody));
 
         // response
 

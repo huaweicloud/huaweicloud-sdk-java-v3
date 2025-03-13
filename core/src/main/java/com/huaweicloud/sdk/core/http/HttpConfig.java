@@ -23,7 +23,6 @@ package com.huaweicloud.sdk.core.http;
 
 import com.huaweicloud.sdk.core.HttpListener;
 import com.huaweicloud.sdk.core.auth.SigningAlgorithm;
-import com.huaweicloud.sdk.core.utils.RandomUtils;
 import okhttp3.ConnectionPool;
 import okhttp3.Dispatcher;
 import okhttp3.Dns;
@@ -37,7 +36,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ForkJoinPool;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author HuaweiCloud_SDK
@@ -75,11 +73,11 @@ public class HttpConfig {
 
     private SigningAlgorithm signingAlgorithm = SigningAlgorithm.getDefault();
 
-    private SecureRandom secureRandom = RandomUtils.getDefaultSecureRandom();
+    private SecureRandom secureRandom;
 
-    private ConnectionPool connectionPool = new ConnectionPool(5, 5L, TimeUnit.MINUTES);
+    private ConnectionPool connectionPool;
 
-    private ExecutorService executorService = new ForkJoinPool();
+    private ExecutorService executorService;
 
     private Dispatcher dispatcher;
 
@@ -88,8 +86,7 @@ public class HttpConfig {
     private Dns dns;
 
     /**
-     * @deprecated
-     * use {@link #getConnectionTimeout()} instead
+     * @deprecated use {@link #getConnectionTimeout()} instead
      */
     @Deprecated
     public int getTimeout() {
@@ -97,8 +94,7 @@ public class HttpConfig {
     }
 
     /**
-     * @deprecated
-     * use {@link #setConnectionTimeout(int connectionTimeout)} instead
+     * @deprecated use {@link #setConnectionTimeout(int connectionTimeout)} instead
      */
     @Deprecated
     public void setTimeout(int timeout) {
@@ -106,8 +102,7 @@ public class HttpConfig {
     }
 
     /**
-     * @deprecated
-     * use {@link #withConnectionTimeout(int connectionTimeout)} instead
+     * @deprecated use {@link #withConnectionTimeout(int connectionTimeout)} instead
      */
     @Deprecated
     public HttpConfig withTimeout(int timeout) {
@@ -173,7 +168,7 @@ public class HttpConfig {
     }
 
     public ExecutorService getExecutorService() {
-        return executorService;
+        return Objects.nonNull(executorService) ? executorService : DefaultExecutorHolder.INSTANCE;
     }
 
     public void setExecutorService(ExecutorService executorService) {
@@ -418,5 +413,9 @@ public class HttpConfig {
     public HttpConfig withDns(Dns dns) {
         setDns(dns);
         return this;
+    }
+
+    private static class DefaultExecutorHolder {
+        private static final ExecutorService INSTANCE = new ForkJoinPool();
     }
 }

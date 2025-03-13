@@ -146,6 +146,11 @@ public class ClusterDetail {
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "order_id")
+
+    private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "private_ip")
 
     private List<String> privateIp = null;
@@ -710,6 +715,23 @@ public class ClusterDetail {
         this.securityGroupId = securityGroupId;
     }
 
+    public ClusterDetail withOrderId(String orderId) {
+        this.orderId = orderId;
+        return this;
+    }
+
+    /**
+     * 订单ID，仅包周期场景返回。
+     * @return orderId
+     */
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
+    }
+
     public ClusterDetail withPrivateIp(List<String> privateIp) {
         this.privateIp = privateIp;
         return this;
@@ -872,7 +894,7 @@ public class ClusterDetail {
             && Objects.equals(this.subStatus, that.subStatus) && Objects.equals(this.taskStatus, that.taskStatus)
             && Objects.equals(this.parameterGroup, that.parameterGroup)
             && Objects.equals(this.nodeTypeId, that.nodeTypeId)
-            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.privateIp, that.privateIp)
             && Objects.equals(this.maintainWindow, that.maintainWindow)
             && Objects.equals(this.resizeInfo, that.resizeInfo)
@@ -907,6 +929,7 @@ public class ClusterDetail {
             parameterGroup,
             nodeTypeId,
             securityGroupId,
+            orderId,
             privateIp,
             maintainWindow,
             resizeInfo,
@@ -944,6 +967,7 @@ public class ClusterDetail {
         sb.append("    parameterGroup: ").append(toIndentedString(parameterGroup)).append("\n");
         sb.append("    nodeTypeId: ").append(toIndentedString(nodeTypeId)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
+        sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    maintainWindow: ").append(toIndentedString(maintainWindow)).append("\n");
         sb.append("    resizeInfo: ").append(toIndentedString(resizeInfo)).append("\n");

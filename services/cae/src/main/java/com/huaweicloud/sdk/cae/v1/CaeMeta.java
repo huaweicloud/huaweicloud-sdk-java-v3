@@ -29,6 +29,9 @@ import com.huaweicloud.sdk.cae.v1.model.CreateMonitorSystemResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateNoticeRuleReq;
 import com.huaweicloud.sdk.cae.v1.model.CreateNoticeRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateNoticeRuleResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateOrUpdateSecretReq;
+import com.huaweicloud.sdk.cae.v1.model.CreateSecretRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateSecretResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleReq;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleResponse;
@@ -51,6 +54,8 @@ import com.huaweicloud.sdk.cae.v1.model.DeleteEnvironmentRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteEnvironmentResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteNoticeRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteNoticeRuleResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteSecretRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteSecretResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteVolumeRequest;
@@ -76,12 +81,16 @@ import com.huaweicloud.sdk.cae.v1.model.ListComponentsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListDomainsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListEffectiveComponentsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListEffectiveComponentsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListEipsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListEipsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListNoticeRulesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListNoticeRulesResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListSecretsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListSecretsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListVolumesRequest;
@@ -117,6 +126,8 @@ import com.huaweicloud.sdk.cae.v1.model.UpdateMonitorSystemResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateNoticeRuleReq;
 import com.huaweicloud.sdk.cae.v1.model.UpdateNoticeRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateNoticeRuleResponse;
+import com.huaweicloud.sdk.cae.v1.model.UpdateSecretRequest;
+import com.huaweicloud.sdk.cae.v1.model.UpdateSecretResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleReq;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleResponse;
@@ -1536,6 +1547,153 @@ public class CaeMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateNoticeRuleReq.class),
             f -> f.withMarshaller(UpdateNoticeRuleRequest::getBody, UpdateNoticeRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecretRequest, CreateSecretResponse> createSecret = genForCreateSecret();
+
+    private static HttpRequestDef<CreateSecretRequest, CreateSecretResponse> genForCreateSecret() {
+        // basic
+        HttpRequestDef.Builder<CreateSecretRequest, CreateSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateSecretRequest.class, CreateSecretResponse.class)
+                .withName("CreateSecret")
+                .withUri("/v1/{project_id}/cae/dew-secrets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecretRequest::getXEnterpriseProjectID,
+                CreateSecretRequest::setXEnterpriseProjectID));
+        builder.<String>withRequestField("X-Environment-ID",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecretRequest::getXEnvironmentID, CreateSecretRequest::setXEnvironmentID));
+        builder.<CreateOrUpdateSecretReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOrUpdateSecretReq.class),
+            f -> f.withMarshaller(CreateSecretRequest::getBody, CreateSecretRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> deleteSecret = genForDeleteSecret();
+
+    private static HttpRequestDef<DeleteSecretRequest, DeleteSecretResponse> genForDeleteSecret() {
+        // basic
+        HttpRequestDef.Builder<DeleteSecretRequest, DeleteSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteSecretRequest.class, DeleteSecretResponse.class)
+                .withName("DeleteSecret")
+                .withUri("/v1/{project_id}/cae/dew-secrets/{secret_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecretRequest::getSecretId, DeleteSecretRequest::setSecretId));
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecretRequest::getXEnterpriseProjectID,
+                DeleteSecretRequest::setXEnterpriseProjectID));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEffectiveComponentsRequest, ListEffectiveComponentsResponse> listEffectiveComponents =
+        genForListEffectiveComponents();
+
+    private static HttpRequestDef<ListEffectiveComponentsRequest, ListEffectiveComponentsResponse> genForListEffectiveComponents() {
+        // basic
+        HttpRequestDef.Builder<ListEffectiveComponentsRequest, ListEffectiveComponentsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListEffectiveComponentsRequest.class, ListEffectiveComponentsResponse.class)
+            .withName("ListEffectiveComponents")
+            .withUri("/v1/{project_id}/cae/dew-secrets/{secret_id}/effective-components")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEffectiveComponentsRequest::getSecretId,
+                ListEffectiveComponentsRequest::setSecretId));
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEffectiveComponentsRequest::getXEnterpriseProjectID,
+                ListEffectiveComponentsRequest::setXEnterpriseProjectID));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecretsRequest, ListSecretsResponse> listSecrets = genForListSecrets();
+
+    private static HttpRequestDef<ListSecretsRequest, ListSecretsResponse> genForListSecrets() {
+        // basic
+        HttpRequestDef.Builder<ListSecretsRequest, ListSecretsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSecretsRequest.class, ListSecretsResponse.class)
+                .withName("ListSecrets")
+                .withUri("/v1/{project_id}/cae/dew-secrets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecretsRequest::getXEnterpriseProjectID,
+                ListSecretsRequest::setXEnterpriseProjectID));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> updateSecret = genForUpdateSecret();
+
+    private static HttpRequestDef<UpdateSecretRequest, UpdateSecretResponse> genForUpdateSecret() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecretRequest, UpdateSecretResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateSecretRequest.class, UpdateSecretResponse.class)
+                .withName("UpdateSecret")
+                .withUri("/v1/{project_id}/cae/dew-secrets/{secret_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("secret_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecretRequest::getSecretId, UpdateSecretRequest::setSecretId));
+        builder.<String>withRequestField("X-Enterprise-Project-ID",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecretRequest::getXEnterpriseProjectID,
+                UpdateSecretRequest::setXEnterpriseProjectID));
+        builder.<CreateOrUpdateSecretReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOrUpdateSecretReq.class),
+            f -> f.withMarshaller(UpdateSecretRequest::getBody, UpdateSecretRequest::setBody));
 
         // response
 

@@ -10,8 +10,14 @@ import com.huaweicloud.sdk.vpn.v5.model.AddVpnUsersToGroupRequest;
 import com.huaweicloud.sdk.vpn.v5.model.AddVpnUsersToGroupResponse;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateResourceTagsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnUsersRequest;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnUsersRequestBody;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnUsersResponse;
 import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteResourceTagsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteResourceTagsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteVpnUsersRequest;
+import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteVpnUsersRequestBody;
+import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteVpnUsersResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CheckClientCaCertificateRequest;
 import com.huaweicloud.sdk.vpn.v5.model.CheckClientCaCertificateResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CountResourcesByTagsRequest;
@@ -72,6 +78,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ListCgwsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListCgwsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListConnectionMonitorsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListConnectionMonitorsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListExtendedAvailabilityZonesRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListExtendedAvailabilityZonesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwAvailabilityZonesRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwAvailabilityZonesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwConnectionsRequest;
@@ -650,6 +658,16 @@ public class VpnMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListP2cVgwsRequest::getLimit, ListP2cVgwsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListP2cVgwsRequest::getMarker, ListP2cVgwsRequest::setMarker));
 
         // response
 
@@ -1327,6 +1345,27 @@ public class VpnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListExtendedAvailabilityZonesRequest, ListExtendedAvailabilityZonesResponse> listExtendedAvailabilityZones =
+        genForListExtendedAvailabilityZones();
+
+    private static HttpRequestDef<ListExtendedAvailabilityZonesRequest, ListExtendedAvailabilityZonesResponse> genForListExtendedAvailabilityZones() {
+        // basic
+        HttpRequestDef.Builder<ListExtendedAvailabilityZonesRequest, ListExtendedAvailabilityZonesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListExtendedAvailabilityZonesRequest.class,
+                    ListExtendedAvailabilityZonesResponse.class)
+                .withName("ListExtendedAvailabilityZones")
+                .withUri("/v5.1/{project_id}/vpn-gateways/availability-zones")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListVgwsRequest, ListVgwsResponse> listVgws = genForListVgws();
 
     private static HttpRequestDef<ListVgwsRequest, ListVgwsResponse> genForListVgws() {
@@ -1648,6 +1687,17 @@ public class VpnMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListVpnServersByProjectRequest::getLimit, ListVpnServersByProjectRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVpnServersByProjectRequest::getMarker,
+                ListVpnServersByProjectRequest::setMarker));
 
         // response
 
@@ -1720,6 +1770,82 @@ public class VpnMeta {
             String.class,
             f -> f.withMarshaller(UpdateVpnServerResponse::getHeaderResponseToken,
                 UpdateVpnServerResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateVpnUsersRequest, BatchCreateVpnUsersResponse> batchCreateVpnUsers =
+        genForBatchCreateVpnUsers();
+
+    private static HttpRequestDef<BatchCreateVpnUsersRequest, BatchCreateVpnUsersResponse> genForBatchCreateVpnUsers() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateVpnUsersRequest, BatchCreateVpnUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateVpnUsersRequest.class, BatchCreateVpnUsersResponse.class)
+                .withName("BatchCreateVpnUsers")
+                .withUri("/v5/{project_id}/p2c-vpn-gateways/vpn-servers/{vpn_server_id}/users/batch-create")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpn_server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateVpnUsersRequest::getVpnServerId,
+                BatchCreateVpnUsersRequest::setVpnServerId));
+        builder.<String>withRequestField("X-Client-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateVpnUsersRequest::getXClientToken,
+                BatchCreateVpnUsersRequest::setXClientToken));
+        builder.<BatchCreateVpnUsersRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateVpnUsersRequestBody.class),
+            f -> f.withMarshaller(BatchCreateVpnUsersRequest::getBody, BatchCreateVpnUsersRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("header-response-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchCreateVpnUsersResponse::getHeaderResponseToken,
+                BatchCreateVpnUsersResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteVpnUsersRequest, BatchDeleteVpnUsersResponse> batchDeleteVpnUsers =
+        genForBatchDeleteVpnUsers();
+
+    private static HttpRequestDef<BatchDeleteVpnUsersRequest, BatchDeleteVpnUsersResponse> genForBatchDeleteVpnUsers() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteVpnUsersRequest, BatchDeleteVpnUsersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchDeleteVpnUsersRequest.class, BatchDeleteVpnUsersResponse.class)
+                .withName("BatchDeleteVpnUsers")
+                .withUri("/v5/{project_id}/p2c-vpn-gateways/vpn-servers/{vpn_server_id}/users/batch-delete")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpn_server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteVpnUsersRequest::getVpnServerId,
+                BatchDeleteVpnUsersRequest::setVpnServerId));
+        builder.<BatchDeleteVpnUsersRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteVpnUsersRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteVpnUsersRequest::getBody, BatchDeleteVpnUsersRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("header-response-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(BatchDeleteVpnUsersResponse::getHeaderResponseToken,
+                BatchDeleteVpnUsersResponse::setHeaderResponseToken));
         return builder.build();
     }
 

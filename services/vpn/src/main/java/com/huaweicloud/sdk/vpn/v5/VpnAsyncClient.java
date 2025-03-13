@@ -7,8 +7,12 @@ import com.huaweicloud.sdk.vpn.v5.model.AddVpnUsersToGroupRequest;
 import com.huaweicloud.sdk.vpn.v5.model.AddVpnUsersToGroupResponse;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateResourceTagsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.BatchCreateResourceTagsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnUsersRequest;
+import com.huaweicloud.sdk.vpn.v5.model.BatchCreateVpnUsersResponse;
 import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteResourceTagsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteResourceTagsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteVpnUsersRequest;
+import com.huaweicloud.sdk.vpn.v5.model.BatchDeleteVpnUsersResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CheckClientCaCertificateRequest;
 import com.huaweicloud.sdk.vpn.v5.model.CheckClientCaCertificateResponse;
 import com.huaweicloud.sdk.vpn.v5.model.CountResourcesByTagsRequest;
@@ -57,6 +61,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ListCgwsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListCgwsResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListConnectionMonitorsRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListConnectionMonitorsResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ListExtendedAvailabilityZonesRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ListExtendedAvailabilityZonesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwAvailabilityZonesRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwAvailabilityZonesResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ListP2cVgwConnectionsRequest;
@@ -1260,6 +1266,36 @@ public class VpnAsyncClient {
     }
 
     /**
+     * 查询VPN网关可用区
+     *
+     * 查询VPN网关可用区
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExtendedAvailabilityZonesRequest 请求对象
+     * @return CompletableFuture<ListExtendedAvailabilityZonesResponse>
+     */
+    public CompletableFuture<ListExtendedAvailabilityZonesResponse> listExtendedAvailabilityZonesAsync(
+        ListExtendedAvailabilityZonesRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.listExtendedAvailabilityZones);
+    }
+
+    /**
+     * 查询VPN网关可用区
+     *
+     * 查询VPN网关可用区
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExtendedAvailabilityZonesRequest 请求对象
+     * @return AsyncInvoker<ListExtendedAvailabilityZonesRequest, ListExtendedAvailabilityZonesResponse>
+     */
+    public AsyncInvoker<ListExtendedAvailabilityZonesRequest, ListExtendedAvailabilityZonesResponse> listExtendedAvailabilityZonesAsyncInvoker(
+        ListExtendedAvailabilityZonesRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.listExtendedAvailabilityZones, hcClient);
+    }
+
+    /**
      * 查询VPN网关列表
      *
      * 查询VPN网关列表
@@ -1636,6 +1672,64 @@ public class VpnAsyncClient {
     public AsyncInvoker<UpdateVpnServerRequest, UpdateVpnServerResponse> updateVpnServerAsyncInvoker(
         UpdateVpnServerRequest request) {
         return new AsyncInvoker<>(request, VpnMeta.updateVpnServer, hcClient);
+    }
+
+    /**
+     * 批量创建VPN用户
+     *
+     * 批量创建P2C VPN用户
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateVpnUsersRequest 请求对象
+     * @return CompletableFuture<BatchCreateVpnUsersResponse>
+     */
+    public CompletableFuture<BatchCreateVpnUsersResponse> batchCreateVpnUsersAsync(BatchCreateVpnUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.batchCreateVpnUsers);
+    }
+
+    /**
+     * 批量创建VPN用户
+     *
+     * 批量创建P2C VPN用户
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateVpnUsersRequest 请求对象
+     * @return AsyncInvoker<BatchCreateVpnUsersRequest, BatchCreateVpnUsersResponse>
+     */
+    public AsyncInvoker<BatchCreateVpnUsersRequest, BatchCreateVpnUsersResponse> batchCreateVpnUsersAsyncInvoker(
+        BatchCreateVpnUsersRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.batchCreateVpnUsers, hcClient);
+    }
+
+    /**
+     * 批量删除VPN用户
+     *
+     * 批量删除P2C VPN用户
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteVpnUsersRequest 请求对象
+     * @return CompletableFuture<BatchDeleteVpnUsersResponse>
+     */
+    public CompletableFuture<BatchDeleteVpnUsersResponse> batchDeleteVpnUsersAsync(BatchDeleteVpnUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.batchDeleteVpnUsers);
+    }
+
+    /**
+     * 批量删除VPN用户
+     *
+     * 批量删除P2C VPN用户
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteVpnUsersRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteVpnUsersRequest, BatchDeleteVpnUsersResponse>
+     */
+    public AsyncInvoker<BatchDeleteVpnUsersRequest, BatchDeleteVpnUsersResponse> batchDeleteVpnUsersAsyncInvoker(
+        BatchDeleteVpnUsersRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.batchDeleteVpnUsers, hcClient);
     }
 
     /**

@@ -253,6 +253,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListVolumeInfoRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListVolumeInfoResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesResponse;
 import com.huaweicloud.sdk.rds.v3.model.MigrateFollowerRequest;
@@ -2943,6 +2945,35 @@ public class RdsAsyncClient {
     public AsyncInvoker<ListUpgradeHistoriesRequest, ListUpgradeHistoriesResponse> listUpgradeHistoriesAsyncInvoker(
         ListUpgradeHistoriesRequest request) {
         return new AsyncInvoker<>(request, RdsMeta.listUpgradeHistories, hcClient);
+    }
+
+    /**
+     * 查询实例的磁盘信息
+     *
+     * 查询实例的磁盘信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVolumeInfoRequest 请求对象
+     * @return CompletableFuture<ListVolumeInfoResponse>
+     */
+    public CompletableFuture<ListVolumeInfoResponse> listVolumeInfoAsync(ListVolumeInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, RdsMeta.listVolumeInfo);
+    }
+
+    /**
+     * 查询实例的磁盘信息
+     *
+     * 查询实例的磁盘信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListVolumeInfoRequest 请求对象
+     * @return AsyncInvoker<ListVolumeInfoRequest, ListVolumeInfoResponse>
+     */
+    public AsyncInvoker<ListVolumeInfoRequest, ListVolumeInfoResponse> listVolumeInfoAsyncInvoker(
+        ListVolumeInfoRequest request) {
+        return new AsyncInvoker<>(request, RdsMeta.listVolumeInfo, hcClient);
     }
 
     /**

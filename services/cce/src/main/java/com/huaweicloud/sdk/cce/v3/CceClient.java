@@ -28,6 +28,8 @@ import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotClusterResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotKubernetesClusterCertRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotKubernetesClusterCertResponse;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotMaintenanceWindowRequest;
+import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotMaintenanceWindowResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotPostCheckRequest;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotPostCheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.CreateAutopilotPreCheckRequest;
@@ -66,6 +68,8 @@ import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotMaintenanceWindowRequest;
+import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotMaintenanceWindowResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.DeleteAutopilotReleaseResponse;
 import com.huaweicloud.sdk.cce.v3.model.DeleteChartRequest;
@@ -110,6 +114,8 @@ import com.huaweicloud.sdk.cce.v3.model.ListAutopilotReleasesRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotReleasesResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradeClusterTasksRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradeClusterTasksResponse;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradePlansRequest;
+import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradePlansResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradeWorkFlowsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListAutopilotUpgradeWorkFlowsResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListChartsRequest;
@@ -174,6 +180,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterUpgradeInfoRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotClusterUpgradeInfoResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotJobRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotJobResponse;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotMaintenanceWindowRequest;
+import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotMaintenanceWindowResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotPreCheckRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotPreCheckResponse;
 import com.huaweicloud.sdk.cce.v3.model.ShowAutopilotQuotasRequest;
@@ -244,8 +252,12 @@ import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterEipRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterEipResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotClusterResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotMaintenanceWindowRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotMaintenanceWindowResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotReleaseRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotReleaseResponse;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotUpgradePlanRequest;
+import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotUpgradePlanResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateChartRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateChartResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateClusterEipRequest;
@@ -3177,6 +3189,36 @@ public class CceClient {
     }
 
     /**
+     * 创建集群维护窗口
+     *
+     * 该API用于创建集群维护窗口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAutopilotMaintenanceWindowRequest 请求对象
+     * @return CreateAutopilotMaintenanceWindowResponse
+     */
+    public CreateAutopilotMaintenanceWindowResponse createAutopilotMaintenanceWindow(
+        CreateAutopilotMaintenanceWindowRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.createAutopilotMaintenanceWindow);
+    }
+
+    /**
+     * 创建集群维护窗口
+     *
+     * 该API用于创建集群维护窗口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAutopilotMaintenanceWindowRequest 请求对象
+     * @return SyncInvoker<CreateAutopilotMaintenanceWindowRequest, CreateAutopilotMaintenanceWindowResponse>
+     */
+    public SyncInvoker<CreateAutopilotMaintenanceWindowRequest, CreateAutopilotMaintenanceWindowResponse> createAutopilotMaintenanceWindowInvoker(
+        CreateAutopilotMaintenanceWindowRequest request) {
+        return new SyncInvoker<>(request, CceMeta.createAutopilotMaintenanceWindow, hcClient);
+    }
+
+    /**
      * 集群升级后确认
      *
      * 集群升级后确认，该接口建议配合Console使用，主要用于升级步骤完成后，客户确认集群状态和业务正常后做反馈。
@@ -3383,6 +3425,36 @@ public class CceClient {
     public SyncInvoker<DeleteAutopilotClusterRequest, DeleteAutopilotClusterResponse> deleteAutopilotClusterInvoker(
         DeleteAutopilotClusterRequest request) {
         return new SyncInvoker<>(request, CceMeta.deleteAutopilotCluster, hcClient);
+    }
+
+    /**
+     * 删除集群维护窗口
+     *
+     * 该API用于删除集群维护窗口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAutopilotMaintenanceWindowRequest 请求对象
+     * @return DeleteAutopilotMaintenanceWindowResponse
+     */
+    public DeleteAutopilotMaintenanceWindowResponse deleteAutopilotMaintenanceWindow(
+        DeleteAutopilotMaintenanceWindowRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.deleteAutopilotMaintenanceWindow);
+    }
+
+    /**
+     * 删除集群维护窗口
+     *
+     * 该API用于删除集群维护窗口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteAutopilotMaintenanceWindowRequest 请求对象
+     * @return SyncInvoker<DeleteAutopilotMaintenanceWindowRequest, DeleteAutopilotMaintenanceWindowResponse>
+     */
+    public SyncInvoker<DeleteAutopilotMaintenanceWindowRequest, DeleteAutopilotMaintenanceWindowResponse> deleteAutopilotMaintenanceWindowInvoker(
+        DeleteAutopilotMaintenanceWindowRequest request) {
+        return new SyncInvoker<>(request, CceMeta.deleteAutopilotMaintenanceWindow, hcClient);
     }
 
     /**
@@ -3738,6 +3810,35 @@ public class CceClient {
     }
 
     /**
+     * 获取自动升级计划
+     *
+     * 该API用于获取集群自动升级计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAutopilotUpgradePlansRequest 请求对象
+     * @return ListAutopilotUpgradePlansResponse
+     */
+    public ListAutopilotUpgradePlansResponse listAutopilotUpgradePlans(ListAutopilotUpgradePlansRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.listAutopilotUpgradePlans);
+    }
+
+    /**
+     * 获取自动升级计划
+     *
+     * 该API用于获取集群自动升级计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAutopilotUpgradePlansRequest 请求对象
+     * @return SyncInvoker<ListAutopilotUpgradePlansRequest, ListAutopilotUpgradePlansResponse>
+     */
+    public SyncInvoker<ListAutopilotUpgradePlansRequest, ListAutopilotUpgradePlansResponse> listAutopilotUpgradePlansInvoker(
+        ListAutopilotUpgradePlansRequest request) {
+        return new SyncInvoker<>(request, CceMeta.listAutopilotUpgradePlans, hcClient);
+    }
+
+    /**
      * 获取UpgradeWorkFlows列表
      *
      * 获取历史集群升级引导任务列表
@@ -4046,6 +4147,36 @@ public class CceClient {
     public SyncInvoker<ShowAutopilotJobRequest, ShowAutopilotJobResponse> showAutopilotJobInvoker(
         ShowAutopilotJobRequest request) {
         return new SyncInvoker<>(request, CceMeta.showAutopilotJob, hcClient);
+    }
+
+    /**
+     * 获取集群维护窗口
+     *
+     * 该API用于获取集群维护窗口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutopilotMaintenanceWindowRequest 请求对象
+     * @return ShowAutopilotMaintenanceWindowResponse
+     */
+    public ShowAutopilotMaintenanceWindowResponse showAutopilotMaintenanceWindow(
+        ShowAutopilotMaintenanceWindowRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.showAutopilotMaintenanceWindow);
+    }
+
+    /**
+     * 获取集群维护窗口
+     *
+     * 该API用于获取集群维护窗口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutopilotMaintenanceWindowRequest 请求对象
+     * @return SyncInvoker<ShowAutopilotMaintenanceWindowRequest, ShowAutopilotMaintenanceWindowResponse>
+     */
+    public SyncInvoker<ShowAutopilotMaintenanceWindowRequest, ShowAutopilotMaintenanceWindowResponse> showAutopilotMaintenanceWindowInvoker(
+        ShowAutopilotMaintenanceWindowRequest request) {
+        return new SyncInvoker<>(request, CceMeta.showAutopilotMaintenanceWindow, hcClient);
     }
 
     /**
@@ -4380,6 +4511,36 @@ public class CceClient {
     }
 
     /**
+     * 更新集群维护窗口
+     *
+     * 该API用于更新集群维护窗口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAutopilotMaintenanceWindowRequest 请求对象
+     * @return UpdateAutopilotMaintenanceWindowResponse
+     */
+    public UpdateAutopilotMaintenanceWindowResponse updateAutopilotMaintenanceWindow(
+        UpdateAutopilotMaintenanceWindowRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.updateAutopilotMaintenanceWindow);
+    }
+
+    /**
+     * 更新集群维护窗口
+     *
+     * 该API用于更新集群维护窗口。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAutopilotMaintenanceWindowRequest 请求对象
+     * @return SyncInvoker<UpdateAutopilotMaintenanceWindowRequest, UpdateAutopilotMaintenanceWindowResponse>
+     */
+    public SyncInvoker<UpdateAutopilotMaintenanceWindowRequest, UpdateAutopilotMaintenanceWindowResponse> updateAutopilotMaintenanceWindowInvoker(
+        UpdateAutopilotMaintenanceWindowRequest request) {
+        return new SyncInvoker<>(request, CceMeta.updateAutopilotMaintenanceWindow, hcClient);
+    }
+
+    /**
      * 更新指定模板实例
      *
      * 更新指定模板实例
@@ -4406,6 +4567,35 @@ public class CceClient {
     public SyncInvoker<UpdateAutopilotReleaseRequest, UpdateAutopilotReleaseResponse> updateAutopilotReleaseInvoker(
         UpdateAutopilotReleaseRequest request) {
         return new SyncInvoker<>(request, CceMeta.updateAutopilotRelease, hcClient);
+    }
+
+    /**
+     * 延期自动升级计划
+     *
+     * 该API用于延期集群自动升级计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAutopilotUpgradePlanRequest 请求对象
+     * @return UpdateAutopilotUpgradePlanResponse
+     */
+    public UpdateAutopilotUpgradePlanResponse updateAutopilotUpgradePlan(UpdateAutopilotUpgradePlanRequest request) {
+        return hcClient.syncInvokeHttp(request, CceMeta.updateAutopilotUpgradePlan);
+    }
+
+    /**
+     * 延期自动升级计划
+     *
+     * 该API用于延期集群自动升级计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAutopilotUpgradePlanRequest 请求对象
+     * @return SyncInvoker<UpdateAutopilotUpgradePlanRequest, UpdateAutopilotUpgradePlanResponse>
+     */
+    public SyncInvoker<UpdateAutopilotUpgradePlanRequest, UpdateAutopilotUpgradePlanResponse> updateAutopilotUpgradePlanInvoker(
+        UpdateAutopilotUpgradePlanRequest request) {
+        return new SyncInvoker<>(request, CceMeta.updateAutopilotUpgradePlan, hcClient);
     }
 
     /**

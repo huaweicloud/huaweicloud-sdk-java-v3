@@ -302,6 +302,8 @@ import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListUpdateBackupEnhancePolicyResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListUpgradeHistoriesResponse;
+import com.huaweicloud.sdk.rds.v3.model.ListVolumeInfoRequest;
+import com.huaweicloud.sdk.rds.v3.model.ListVolumeInfoResponse;
 import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesRequest;
 import com.huaweicloud.sdk.rds.v3.model.ListXellogFilesResponse;
 import com.huaweicloud.sdk.rds.v3.model.LogReplayDatabaseReq;
@@ -3612,6 +3614,39 @@ public class RdsMeta {
                 ListUpgradeHistoriesRequest::setXLanguage));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListVolumeInfoRequest, ListVolumeInfoResponse> listVolumeInfo =
+        genForListVolumeInfo();
+
+    private static HttpRequestDef<ListVolumeInfoRequest, ListVolumeInfoResponse> genForListVolumeInfo() {
+        // basic
+        HttpRequestDef.Builder<ListVolumeInfoRequest, ListVolumeInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListVolumeInfoRequest.class, ListVolumeInfoResponse.class)
+                .withName("ListVolumeInfo")
+                .withUri("/v3/{project_id}/instances/{instance_id}/volumes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVolumeInfoRequest::getInstanceId, ListVolumeInfoRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListVolumeInfoRequest::getXLanguage, ListVolumeInfoRequest::setXLanguage));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListVolumeInfoResponse::getBody, ListVolumeInfoResponse::setBody));
 
         return builder.build();
     }

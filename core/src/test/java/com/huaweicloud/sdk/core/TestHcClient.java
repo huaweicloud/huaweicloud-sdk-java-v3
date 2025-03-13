@@ -149,6 +149,12 @@ public class TestHcClient {
                         .withBody("")
                         .withStatus(200)));
 
+        wireMockRule.stubFor(WireMock.get("/")
+                .willReturn(WireMock.aResponse()
+                        .withHeader("Content-Type", MEDIATYPE.APPLICATION_JSON)
+                        .withBody("")
+                        .withStatus(200)));
+
         wireMockRule.start();
 
         hcClient = TestUtils.createHcClient(
@@ -303,6 +309,16 @@ public class TestHcClient {
                     }
                 });
         Assert.assertEquals(200, response.getHttpStatusCode());
+    }
+
+    @Test
+    public void testMultipleClients() {
+        for (int i = 0; i < 100; i++) {
+            HttpRequestDef reqDef = new HttpRequestDef.Builder(HttpMethod.GET, Object.class, SdkResponse.class)
+                    .withName("testMultipleClients").withContentType("application/json").build();
+            SdkResponse response = (SdkResponse) hcClient.syncInvokeHttp(new Object(), reqDef);
+            Assert.assertEquals(200, response.getHttpStatusCode());
+        }
     }
 
     public CompletableFuture<TestHttpRequestDef.TestCustomAuthorizationResponse> callCustomAuthorizationAsync(

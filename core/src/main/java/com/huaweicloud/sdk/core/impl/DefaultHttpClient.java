@@ -38,6 +38,7 @@ import com.huaweicloud.sdk.core.progress.RepeatableRequestEntity;
 import com.huaweicloud.sdk.core.progress.SimpleProgressManager;
 import com.huaweicloud.sdk.core.ssl.IgnoreSSLVerificationFactory;
 import com.huaweicloud.sdk.core.utils.ExceptionUtils;
+import com.huaweicloud.sdk.core.utils.RandomUtils;
 import com.huaweicloud.sdk.core.utils.StringUtils;
 import okhttp3.Authenticator;
 import okhttp3.Call;
@@ -67,6 +68,7 @@ import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
+import java.security.SecureRandom;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Objects;
@@ -104,7 +106,9 @@ public class DefaultHttpClient implements HttpClient {
     public DefaultHttpClient withHttpConfig(HttpConfig httpConfig) {
         this.httpConfig = httpConfig;
         OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder().followRedirects(httpConfig.isAllowRedirects());
-        clientBuilder.connectionPool(httpConfig.getConnectionPool());
+        if (Objects.nonNull(httpConfig.getConnectionPool())) {
+            clientBuilder.connectionPool(httpConfig.getConnectionPool());
+        }
         if (Objects.nonNull(httpConfig.getDispatcher())) {
             clientBuilder.dispatcher(httpConfig.getDispatcher());
         }
@@ -124,9 +128,11 @@ public class DefaultHttpClient implements HttpClient {
         }
 
         if (httpConfig.isIgnoreSSLVerification()) {
+            SecureRandom secureRandom = Objects.nonNull(httpConfig.getSecureRandom())
+                    ? httpConfig.getSecureRandom() : RandomUtils.getDefaultSecureRandom();
             clientBuilder.hostnameVerifier(IgnoreSSLVerificationFactory.getHostnameVerifier())
                     .sslSocketFactory(
-                            IgnoreSSLVerificationFactory.getSSLContext(httpConfig.getSecureRandom()).getSocketFactory(),
+                            IgnoreSSLVerificationFactory.getSSLContext(secureRandom).getSocketFactory(),
                             IgnoreSSLVerificationFactory.getTrustAllManager());
         }
 

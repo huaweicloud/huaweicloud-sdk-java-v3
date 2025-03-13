@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AcceptSecurityApplicationRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.AcceptSecurityApplicationResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AddDesignEntityTagsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AddDesignEntityTagsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AddTagToAssetRequest;
@@ -58,6 +60,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermission
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchCreateSecurityPermissionSetPermissionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteBaseDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeletePolicySetsDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteResourcePolicyDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteRuleGroupsBaseDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteRulesBaseDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecrecyLevelDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityDataClassificationRuleRequest;
@@ -68,6 +72,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermission
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetMembersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetPermissionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityPermissionSetPermissionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityResourcePermissionPoliciesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecurityResourcePermissionPoliciesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecuritySecrecyLevelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteSecuritySecrecyLevelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchDeleteTemplatesRequest;
@@ -107,6 +113,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CheckDimensionStatusRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CheckDimensionStatusResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CheckFactLogicTableStatusRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CheckFactLogicTableStatusResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CheckSecurityDataClassificationCombineRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CheckSecurityDataClassificationCombineRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CodeTableFieldValueUpdateVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CodeTableVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CompareDesignVersionsRequest;
@@ -168,6 +176,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateOrUpdateEntitiesRespons
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecrecyLevelDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityAssignedQueueResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationCombineRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationCombineRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleGroupRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleGroupResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityDynamicMaskingPolicyRequest;
@@ -178,6 +190,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetPe
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetPermissionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityPermissionSetResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityResourcePermissionPolicyRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecurityResourcePermissionPolicyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecuritySecrecyLevelRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateSecuritySecrecyLevelResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateServiceCatalogRequest;
@@ -200,6 +214,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateWorkspaceParams;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateWorkspaceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateWorkspaceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CustomizedFieldsVOList;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationCombineRuleCheckDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationCombineRuleDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationGroupCreateDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationGroupUpdateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationRuleEnableDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationRuleOperateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DataEntityWithExtInfo;
@@ -210,6 +228,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugDataconnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugSecurityDlfDataWareHousesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugSecurityDlfDataWareHousesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeclineSecurityApplicationRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeclineSecurityApplicationResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteApiRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteApiResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteAppRequest;
@@ -250,6 +270,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteEntityRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteEntityResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityAssignedQueueRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityAssignedQueueResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleGroupRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleGroupResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeleteSecurityLevelFromEntityRequest;
@@ -280,14 +302,18 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DeployFactoryPackagesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DerivativeIndexVO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DiagnoseTypeDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DimensionVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DirectoryVO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DlsAdmin;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DynamicMaskingPolicyCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DynamicMaskingPolicyUpdateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.EntityWithExtInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.EnvRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteSecurityDiagnoseRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteSecurityDiagnoseResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteTaskActionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportDataServiceExcelRequest;
@@ -306,6 +332,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ExportParam;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.FgacUpdateReq;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.GatewayDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.IdsParam;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportBuiltinCategoryParam;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportCatalogsResponse;
@@ -319,6 +346,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportModelsRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportModelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportResultRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportResultResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportSecurityBuiltinCategoryGroupsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ImportSecurityBuiltinCategoryGroupsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.InitializeStandardTemplateRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.InitializeStandardTemplateResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.JobAndNodeInfo;
@@ -435,8 +464,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListRelationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListReleasePackagesRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSchemasResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityApprovalsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityApprovalsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityAssignedQueuesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityAssignedQueuesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataCategoriesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataCategoriesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRuleGroupsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRuleGroupsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDataClassificationRulesRequest;
@@ -459,12 +492,16 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetPerm
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetPermissionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityResourcePermissionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityResourcePermissionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityRoleActionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityRoleActionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySecrecyLevelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySecrecyLevelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataOverviewsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataOverviewsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityUnreasonablePermissionsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityUnreasonablePermissionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSubjectLevelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSubjectLevelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsRequest;
@@ -488,6 +525,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.MigrateCatalogRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.MigrateCatalogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifyCustomizedFieldsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifyCustomizedFieldsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifySecurityAdminRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifySecurityAdminResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ObjectIdInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenApiParaForCheckMessage;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenApplyIdsForApproveApply;
@@ -499,6 +538,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ParseUserBehaviorRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ParseUserBehaviorResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PayForDgcOneKeyRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PayForDgcOneKeyResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionResourcePolicyCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetMemberBatchCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.PermissionSetMemberCreateDTO;
@@ -510,6 +550,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.QueryTaskRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.QueueSrcAssignCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.QueueSrcAssignEntity;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.QueueSrcAssignUpdateDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ReasonDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignEntityTagsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignEntityTagsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.RemoveDesignQualityInfosRequest;
@@ -673,18 +714,30 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQueuesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowQueuesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowRelationByIdResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityAdminRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityAdminResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleGroupRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleGroupResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDataClassificationRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDatasourceProtectionDiagnoseResultRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDatasourceProtectionDiagnoseResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDynamicMaskingPolicyRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityDynamicMaskingPolicyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityMemberSyncTaskRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityMemberSyncTaskResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityNoMaskingTableResultRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityNoMaskingTableResultResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionManagementDiagnoseResultRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionManagementDiagnoseResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionSetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityPermissionSetResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityResourcePermissionPolicyRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecurityResourcePermissionPolicyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecuritySecrecyLevelRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecuritySecrecyLevelResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecuritySensitiveDataDiagnoseResultRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowSecuritySensitiveDataDiagnoseResultResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardByIdRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowStandardTemplateRequest;
@@ -721,6 +774,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.TableModelVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TagRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TemplateListRO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.TemplateRO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UnpublishSecurityApplicationRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UnpublishSecurityApplicationResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateApiRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateApiResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateAppRequest;
@@ -756,6 +811,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateFactoryJobNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecrecyLevelDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityAssignedQueueResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationCombineRuleRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationCombineRuleResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleGroupRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleGroupResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDynamicMaskingPolicyRequest;
@@ -764,6 +823,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPe
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityResourcePermissionPolicyRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityResourcePermissionPolicyResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityRuleEnableStatusRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityRuleEnableStatusResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecuritySecrecyLevelRequest;
@@ -794,6 +855,44 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class DataArtsStudioMeta {
+
+    public static final HttpRequestDef<AcceptSecurityApplicationRequest, AcceptSecurityApplicationResponse> acceptSecurityApplication =
+        genForAcceptSecurityApplication();
+
+    private static HttpRequestDef<AcceptSecurityApplicationRequest, AcceptSecurityApplicationResponse> genForAcceptSecurityApplication() {
+        // basic
+        HttpRequestDef.Builder<AcceptSecurityApplicationRequest, AcceptSecurityApplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AcceptSecurityApplicationRequest.class,
+                    AcceptSecurityApplicationResponse.class)
+                .withName("AcceptSecurityApplication")
+                .withUri("/v1/{project_id}/security/permission-approve/approve/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptSecurityApplicationRequest::getId, AcceptSecurityApplicationRequest::setId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptSecurityApplicationRequest::getWorkspace,
+                AcceptSecurityApplicationRequest::setWorkspace));
+        builder.<ReasonDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReasonDTO.class),
+            f -> f.withMarshaller(AcceptSecurityApplicationRequest::getBody,
+                AcceptSecurityApplicationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<AddDesignEntityTagsRequest, AddDesignEntityTagsResponse> addDesignEntityTags =
         genForAddDesignEntityTags();
@@ -1374,6 +1473,39 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchDeleteSecurityResourcePermissionPoliciesRequest, BatchDeleteSecurityResourcePermissionPoliciesResponse> batchDeleteSecurityResourcePermissionPolicies =
+        genForBatchDeleteSecurityResourcePermissionPolicies();
+
+    private static HttpRequestDef<BatchDeleteSecurityResourcePermissionPoliciesRequest, BatchDeleteSecurityResourcePermissionPoliciesResponse> genForBatchDeleteSecurityResourcePermissionPolicies() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteSecurityResourcePermissionPoliciesRequest, BatchDeleteSecurityResourcePermissionPoliciesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchDeleteSecurityResourcePermissionPoliciesRequest.class,
+                    BatchDeleteSecurityResourcePermissionPoliciesResponse.class)
+                .withName("BatchDeleteSecurityResourcePermissionPolicies")
+                .withUri("/v1/{project_id}/security/permission-resource/batch-delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteSecurityResourcePermissionPoliciesRequest::getWorkspace,
+                BatchDeleteSecurityResourcePermissionPoliciesRequest::setWorkspace));
+        builder.<BatchDeleteResourcePolicyDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteResourcePolicyDTO.class),
+            f -> f.withMarshaller(BatchDeleteSecurityResourcePermissionPoliciesRequest::getBody,
+                BatchDeleteSecurityResourcePermissionPoliciesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeleteSecuritySecrecyLevelsRequest, BatchDeleteSecuritySecrecyLevelsResponse> batchDeleteSecuritySecrecyLevels =
         genForBatchDeleteSecuritySecrecyLevels();
 
@@ -1758,6 +1890,39 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CheckFactLogicTableStatusRequest::getXProjectId,
                 CheckFactLogicTableStatusRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckSecurityDataClassificationCombineRuleRequest, CheckSecurityDataClassificationCombineRuleResponse> checkSecurityDataClassificationCombineRule =
+        genForCheckSecurityDataClassificationCombineRule();
+
+    private static HttpRequestDef<CheckSecurityDataClassificationCombineRuleRequest, CheckSecurityDataClassificationCombineRuleResponse> genForCheckSecurityDataClassificationCombineRule() {
+        // basic
+        HttpRequestDef.Builder<CheckSecurityDataClassificationCombineRuleRequest, CheckSecurityDataClassificationCombineRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CheckSecurityDataClassificationCombineRuleRequest.class,
+                    CheckSecurityDataClassificationCombineRuleResponse.class)
+                .withName("CheckSecurityDataClassificationCombineRule")
+                .withUri("/v1/{project_id}/security/data-classification/rule/check")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckSecurityDataClassificationCombineRuleRequest::getWorkspace,
+                CheckSecurityDataClassificationCombineRuleRequest::setWorkspace));
+        builder.<DataClassificationCombineRuleCheckDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataClassificationCombineRuleCheckDTO.class),
+            f -> f.withMarshaller(CheckSecurityDataClassificationCombineRuleRequest::getBody,
+                CheckSecurityDataClassificationCombineRuleRequest::setBody));
 
         // response
 
@@ -2677,6 +2842,39 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateSecurityDataClassificationCombineRuleRequest, CreateSecurityDataClassificationCombineRuleResponse> createSecurityDataClassificationCombineRule =
+        genForCreateSecurityDataClassificationCombineRule();
+
+    private static HttpRequestDef<CreateSecurityDataClassificationCombineRuleRequest, CreateSecurityDataClassificationCombineRuleResponse> genForCreateSecurityDataClassificationCombineRule() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityDataClassificationCombineRuleRequest, CreateSecurityDataClassificationCombineRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSecurityDataClassificationCombineRuleRequest.class,
+                    CreateSecurityDataClassificationCombineRuleResponse.class)
+                .withName("CreateSecurityDataClassificationCombineRule")
+                .withUri("/v1/{project_id}/security/data-classification/rule/combine")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityDataClassificationCombineRuleRequest::getWorkspace,
+                CreateSecurityDataClassificationCombineRuleRequest::setWorkspace));
+        builder.<DataClassificationCombineRuleDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataClassificationCombineRuleDTO.class),
+            f -> f.withMarshaller(CreateSecurityDataClassificationCombineRuleRequest::getBody,
+                CreateSecurityDataClassificationCombineRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSecurityDataClassificationRuleRequest, CreateSecurityDataClassificationRuleResponse> createSecurityDataClassificationRule =
         genForCreateSecurityDataClassificationRule();
 
@@ -2704,6 +2902,39 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(DataClassificationRuleOperateDTO.class),
             f -> f.withMarshaller(CreateSecurityDataClassificationRuleRequest::getBody,
                 CreateSecurityDataClassificationRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecurityDataClassificationRuleGroupRequest, CreateSecurityDataClassificationRuleGroupResponse> createSecurityDataClassificationRuleGroup =
+        genForCreateSecurityDataClassificationRuleGroup();
+
+    private static HttpRequestDef<CreateSecurityDataClassificationRuleGroupRequest, CreateSecurityDataClassificationRuleGroupResponse> genForCreateSecurityDataClassificationRuleGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityDataClassificationRuleGroupRequest, CreateSecurityDataClassificationRuleGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSecurityDataClassificationRuleGroupRequest.class,
+                    CreateSecurityDataClassificationRuleGroupResponse.class)
+                .withName("CreateSecurityDataClassificationRuleGroup")
+                .withUri("/v1/{project_id}/security/data-classification/rule/group")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityDataClassificationRuleGroupRequest::getWorkspace,
+                CreateSecurityDataClassificationRuleGroupRequest::setWorkspace));
+        builder.<DataClassificationGroupCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataClassificationGroupCreateDTO.class),
+            f -> f.withMarshaller(CreateSecurityDataClassificationRuleGroupRequest::getBody,
+                CreateSecurityDataClassificationRuleGroupRequest::setBody));
 
         // response
 
@@ -2848,6 +3079,39 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(PermissionSetPermissionCreateDTO.class),
             f -> f.withMarshaller(CreateSecurityPermissionSetPermissionRequest::getBody,
                 CreateSecurityPermissionSetPermissionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateSecurityResourcePermissionPolicyRequest, CreateSecurityResourcePermissionPolicyResponse> createSecurityResourcePermissionPolicy =
+        genForCreateSecurityResourcePermissionPolicy();
+
+    private static HttpRequestDef<CreateSecurityResourcePermissionPolicyRequest, CreateSecurityResourcePermissionPolicyResponse> genForCreateSecurityResourcePermissionPolicy() {
+        // basic
+        HttpRequestDef.Builder<CreateSecurityResourcePermissionPolicyRequest, CreateSecurityResourcePermissionPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateSecurityResourcePermissionPolicyRequest.class,
+                    CreateSecurityResourcePermissionPolicyResponse.class)
+                .withName("CreateSecurityResourcePermissionPolicy")
+                .withUri("/v1/{project_id}/security/permission-resource")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateSecurityResourcePermissionPolicyRequest::getWorkspace,
+                CreateSecurityResourcePermissionPolicyRequest::setWorkspace));
+        builder.<PermissionResourcePolicyCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PermissionResourcePolicyCreateDTO.class),
+            f -> f.withMarshaller(CreateSecurityResourcePermissionPolicyRequest::getBody,
+                CreateSecurityResourcePermissionPolicyRequest::setBody));
 
         // response
 
@@ -3231,6 +3495,44 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DebugSecurityDlfDataWareHousesRequest::getWorkspace,
                 DebugSecurityDlfDataWareHousesRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeclineSecurityApplicationRequest, DeclineSecurityApplicationResponse> declineSecurityApplication =
+        genForDeclineSecurityApplication();
+
+    private static HttpRequestDef<DeclineSecurityApplicationRequest, DeclineSecurityApplicationResponse> genForDeclineSecurityApplication() {
+        // basic
+        HttpRequestDef.Builder<DeclineSecurityApplicationRequest, DeclineSecurityApplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DeclineSecurityApplicationRequest.class,
+                    DeclineSecurityApplicationResponse.class)
+                .withName("DeclineSecurityApplication")
+                .withUri("/v1/{project_id}/security/permission-approve/reject/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeclineSecurityApplicationRequest::getId, DeclineSecurityApplicationRequest::setId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeclineSecurityApplicationRequest::getWorkspace,
+                DeclineSecurityApplicationRequest::setWorkspace));
+        builder.<ReasonDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReasonDTO.class),
+            f -> f.withMarshaller(DeclineSecurityApplicationRequest::getBody,
+                DeclineSecurityApplicationRequest::setBody));
 
         // response
 
@@ -3933,6 +4235,39 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteSecurityDataClassificationRuleGroupRequest, DeleteSecurityDataClassificationRuleGroupResponse> deleteSecurityDataClassificationRuleGroup =
+        genForDeleteSecurityDataClassificationRuleGroup();
+
+    private static HttpRequestDef<DeleteSecurityDataClassificationRuleGroupRequest, DeleteSecurityDataClassificationRuleGroupResponse> genForDeleteSecurityDataClassificationRuleGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteSecurityDataClassificationRuleGroupRequest, DeleteSecurityDataClassificationRuleGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DeleteSecurityDataClassificationRuleGroupRequest.class,
+                    DeleteSecurityDataClassificationRuleGroupResponse.class)
+                .withName("DeleteSecurityDataClassificationRuleGroup")
+                .withUri("/v1/{project_id}/security/data-classification/rule/group/batch-delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSecurityDataClassificationRuleGroupRequest::getWorkspace,
+                DeleteSecurityDataClassificationRuleGroupRequest::setWorkspace));
+        builder.<BatchDeleteRuleGroupsBaseDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteRuleGroupsBaseDTO.class),
+            f -> f.withMarshaller(DeleteSecurityDataClassificationRuleGroupRequest::getBody,
+                DeleteSecurityDataClassificationRuleGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteSecurityLevelFromEntityRequest, DeleteSecurityLevelFromEntityResponse> deleteSecurityLevelFromEntity =
         genForDeleteSecurityLevelFromEntity();
 
@@ -4351,6 +4686,35 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExecuteSecurityDiagnoseRequest, ExecuteSecurityDiagnoseResponse> executeSecurityDiagnose =
+        genForExecuteSecurityDiagnose();
+
+    private static HttpRequestDef<ExecuteSecurityDiagnoseRequest, ExecuteSecurityDiagnoseResponse> genForExecuteSecurityDiagnose() {
+        // basic
+        HttpRequestDef.Builder<ExecuteSecurityDiagnoseRequest, ExecuteSecurityDiagnoseResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ExecuteSecurityDiagnoseRequest.class, ExecuteSecurityDiagnoseResponse.class)
+            .withName("ExecuteSecurityDiagnose")
+            .withUri("/v1/{project_id}/security/diagnose/rescan")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteSecurityDiagnoseRequest::getWorkspace,
+                ExecuteSecurityDiagnoseRequest::setWorkspace));
+        builder.<DiagnoseTypeDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DiagnoseTypeDTO.class),
+            f -> f.withMarshaller(ExecuteSecurityDiagnoseRequest::getBody, ExecuteSecurityDiagnoseRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ExecuteTaskActionRequest, ExecuteTaskActionResponse> executeTaskAction =
         genForExecuteTaskAction();
 
@@ -4662,6 +5026,45 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ImportResultRequest::getXProjectId, ImportResultRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ImportSecurityBuiltinCategoryGroupsRequest, ImportSecurityBuiltinCategoryGroupsResponse> importSecurityBuiltinCategoryGroups =
+        genForImportSecurityBuiltinCategoryGroups();
+
+    private static HttpRequestDef<ImportSecurityBuiltinCategoryGroupsRequest, ImportSecurityBuiltinCategoryGroupsResponse> genForImportSecurityBuiltinCategoryGroups() {
+        // basic
+        HttpRequestDef.Builder<ImportSecurityBuiltinCategoryGroupsRequest, ImportSecurityBuiltinCategoryGroupsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ImportSecurityBuiltinCategoryGroupsRequest.class,
+                    ImportSecurityBuiltinCategoryGroupsResponse.class)
+                .withName("ImportSecurityBuiltinCategoryGroups")
+                .withUri("/v1/{project_id}/security/data-category/import-builtin-category")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ImportSecurityBuiltinCategoryGroupsRequest::getWorkspace,
+                ImportSecurityBuiltinCategoryGroupsRequest::setWorkspace));
+        builder.<ImportSecurityBuiltinCategoryGroupsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportSecurityBuiltinCategoryGroupsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ImportSecurityBuiltinCategoryGroupsRequest::getXLanguage,
+                ImportSecurityBuiltinCategoryGroupsRequest::setXLanguage));
+        builder.<ImportBuiltinCategoryParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ImportBuiltinCategoryParam.class),
+            f -> f.withMarshaller(ImportSecurityBuiltinCategoryGroupsRequest::getBody,
+                ImportSecurityBuiltinCategoryGroupsRequest::setBody));
 
         // response
 
@@ -7621,6 +8024,87 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecurityApprovalsRequest, ListSecurityApprovalsResponse> listSecurityApprovals =
+        genForListSecurityApprovals();
+
+    private static HttpRequestDef<ListSecurityApprovalsRequest, ListSecurityApprovalsResponse> genForListSecurityApprovals() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityApprovalsRequest, ListSecurityApprovalsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListSecurityApprovalsRequest.class, ListSecurityApprovalsResponse.class)
+            .withName("ListSecurityApprovals")
+            .withUri("/v1/{project_id}/security/openapi/permission-approve/approvals")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityApprovalsRequest::getLimit, ListSecurityApprovalsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityApprovalsRequest::getOffset, ListSecurityApprovalsRequest::setOffset));
+        builder.<String>withRequestField("proposer_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityApprovalsRequest::getProposerName,
+                ListSecurityApprovalsRequest::setProposerName));
+        builder.<String>withRequestField("approval_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityApprovalsRequest::getApprovalId,
+                ListSecurityApprovalsRequest::setApprovalId));
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityApprovalsRequest::getWorkspaceId,
+                ListSecurityApprovalsRequest::setWorkspaceId));
+        builder.<List<Integer>>withRequestField("status_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSecurityApprovalsRequest::getStatusList,
+                ListSecurityApprovalsRequest::setStatusList));
+        builder.<Long>withRequestField("application_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSecurityApprovalsRequest::getApplicationStartTime,
+                ListSecurityApprovalsRequest::setApplicationStartTime));
+        builder.<Long>withRequestField("application_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListSecurityApprovalsRequest::getApplicationEndTime,
+                ListSecurityApprovalsRequest::setApplicationEndTime));
+        builder.<Boolean>withRequestField("order_by_desc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityApprovalsRequest::getOrderByDesc,
+                ListSecurityApprovalsRequest::setOrderByDesc));
+        builder.<ListSecurityApprovalsRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityApprovalsRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListSecurityApprovalsRequest::getOrderBy, ListSecurityApprovalsRequest::setOrderBy));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityApprovalsRequest::getWorkspace,
+                ListSecurityApprovalsRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSecurityAssignedQueuesRequest, ListSecurityAssignedQueuesResponse> listSecurityAssignedQueues =
         genForListSecurityAssignedQueues();
 
@@ -7666,6 +8150,45 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecurityAssignedQueuesRequest::getWorkspace,
                 ListSecurityAssignedQueuesRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityDataCategoriesRequest, ListSecurityDataCategoriesResponse> listSecurityDataCategories =
+        genForListSecurityDataCategories();
+
+    private static HttpRequestDef<ListSecurityDataCategoriesRequest, ListSecurityDataCategoriesResponse> genForListSecurityDataCategories() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityDataCategoriesRequest, ListSecurityDataCategoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityDataCategoriesRequest.class,
+                    ListSecurityDataCategoriesResponse.class)
+                .withName("ListSecurityDataCategories")
+                .withUri("/v1/{project_id}/security/data-category")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityDataCategoriesRequest::getLimit,
+                ListSecurityDataCategoriesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityDataCategoriesRequest::getOffset,
+                ListSecurityDataCategoriesRequest::setOffset));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityDataCategoriesRequest::getWorkspace,
+                ListSecurityDataCategoriesRequest::setWorkspace));
 
         // response
 
@@ -8437,6 +8960,75 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecurityResourcePermissionsRequest, ListSecurityResourcePermissionsResponse> listSecurityResourcePermissions =
+        genForListSecurityResourcePermissions();
+
+    private static HttpRequestDef<ListSecurityResourcePermissionsRequest, ListSecurityResourcePermissionsResponse> genForListSecurityResourcePermissions() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityResourcePermissionsRequest, ListSecurityResourcePermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityResourcePermissionsRequest.class,
+                    ListSecurityResourcePermissionsResponse.class)
+                .withName("ListSecurityResourcePermissions")
+                .withUri("/v1/{project_id}/security/permission-resource")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityResourcePermissionsRequest::getLimit,
+                ListSecurityResourcePermissionsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityResourcePermissionsRequest::getOffset,
+                ListSecurityResourcePermissionsRequest::setOffset));
+        builder.<String>withRequestField("policy_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityResourcePermissionsRequest::getPolicyName,
+                ListSecurityResourcePermissionsRequest::setPolicyName));
+        builder.<String>withRequestField("resource_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityResourcePermissionsRequest::getResourceName,
+                ListSecurityResourcePermissionsRequest::setResourceName));
+        builder.<String>withRequestField("member_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityResourcePermissionsRequest::getMemberName,
+                ListSecurityResourcePermissionsRequest::setMemberName));
+        builder.<ListSecurityResourcePermissionsRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityResourcePermissionsRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListSecurityResourcePermissionsRequest::getOrderBy,
+                ListSecurityResourcePermissionsRequest::setOrderBy));
+        builder.<Boolean>withRequestField("order_by_asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityResourcePermissionsRequest::getOrderByAsc,
+                ListSecurityResourcePermissionsRequest::setOrderByAsc));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityResourcePermissionsRequest::getWorkspace,
+                ListSecurityResourcePermissionsRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSecurityRoleActionsRequest, ListSecurityRoleActionsResponse> listSecurityRoleActions =
         genForListSecurityRoleActions();
 
@@ -8568,6 +9160,63 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecuritySensitiveDataOverviewsRequest::getWorkspace,
                 ListSecuritySensitiveDataOverviewsRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityUnreasonablePermissionsRequest, ListSecurityUnreasonablePermissionsResponse> listSecurityUnreasonablePermissions =
+        genForListSecurityUnreasonablePermissions();
+
+    private static HttpRequestDef<ListSecurityUnreasonablePermissionsRequest, ListSecurityUnreasonablePermissionsResponse> genForListSecurityUnreasonablePermissions() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityUnreasonablePermissionsRequest, ListSecurityUnreasonablePermissionsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityUnreasonablePermissionsRequest.class,
+                    ListSecurityUnreasonablePermissionsResponse.class)
+                .withName("ListSecurityUnreasonablePermissions")
+                .withUri("/v1/{project_id}/security/diagnose/unreasonable-permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityUnreasonablePermissionsRequest::getLimit,
+                ListSecurityUnreasonablePermissionsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityUnreasonablePermissionsRequest::getOffset,
+                ListSecurityUnreasonablePermissionsRequest::setOffset));
+        builder.<String>withRequestField("diagnose_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityUnreasonablePermissionsRequest::getDiagnoseId,
+                ListSecurityUnreasonablePermissionsRequest::setDiagnoseId));
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityUnreasonablePermissionsRequest::getUserName,
+                ListSecurityUnreasonablePermissionsRequest::setUserName));
+        builder.<ListSecurityUnreasonablePermissionsRequest.DatasourceTypeEnum>withRequestField("datasource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityUnreasonablePermissionsRequest.DatasourceTypeEnum.class),
+            f -> f.withMarshaller(ListSecurityUnreasonablePermissionsRequest::getDatasourceType,
+                ListSecurityUnreasonablePermissionsRequest::setDatasourceType));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityUnreasonablePermissionsRequest::getWorkspace,
+                ListSecurityUnreasonablePermissionsRequest::setWorkspace));
 
         // response
 
@@ -9004,6 +9653,34 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CustomizedFieldsVOList.class),
             f -> f.withMarshaller(ModifyCustomizedFieldsRequest::getBody, ModifyCustomizedFieldsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifySecurityAdminRequest, ModifySecurityAdminResponse> modifySecurityAdmin =
+        genForModifySecurityAdmin();
+
+    private static HttpRequestDef<ModifySecurityAdminRequest, ModifySecurityAdminResponse> genForModifySecurityAdmin() {
+        // basic
+        HttpRequestDef.Builder<ModifySecurityAdminRequest, ModifySecurityAdminResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ModifySecurityAdminRequest.class, ModifySecurityAdminResponse.class)
+                .withName("ModifySecurityAdmin")
+                .withUri("/v1/{project_id}/security/admin")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifySecurityAdminRequest::getWorkspace, ModifySecurityAdminRequest::setWorkspace));
+        builder.<DlsAdmin>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DlsAdmin.class),
+            f -> f.withMarshaller(ModifySecurityAdminRequest::getBody, ModifySecurityAdminRequest::setBody));
 
         // response
 
@@ -12409,6 +13086,29 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSecurityAdminRequest, ShowSecurityAdminResponse> showSecurityAdmin =
+        genForShowSecurityAdmin();
+
+    private static HttpRequestDef<ShowSecurityAdminRequest, ShowSecurityAdminResponse> genForShowSecurityAdmin() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityAdminRequest, ShowSecurityAdminResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSecurityAdminRequest.class, ShowSecurityAdminResponse.class)
+                .withName("ShowSecurityAdmin")
+                .withUri("/v1/{project_id}/security/admin")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityAdminRequest::getWorkspace, ShowSecurityAdminRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSecurityDataClassificationRuleRequest, ShowSecurityDataClassificationRuleResponse> showSecurityDataClassificationRule =
         genForShowSecurityDataClassificationRule();
 
@@ -12469,6 +13169,33 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSecurityDataClassificationRuleGroupRequest::getWorkspace,
                 ShowSecurityDataClassificationRuleGroupRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecurityDatasourceProtectionDiagnoseResultRequest, ShowSecurityDatasourceProtectionDiagnoseResultResponse> showSecurityDatasourceProtectionDiagnoseResult =
+        genForShowSecurityDatasourceProtectionDiagnoseResult();
+
+    private static HttpRequestDef<ShowSecurityDatasourceProtectionDiagnoseResultRequest, ShowSecurityDatasourceProtectionDiagnoseResultResponse> genForShowSecurityDatasourceProtectionDiagnoseResult() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityDatasourceProtectionDiagnoseResultRequest, ShowSecurityDatasourceProtectionDiagnoseResultResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityDatasourceProtectionDiagnoseResultRequest.class,
+                    ShowSecurityDatasourceProtectionDiagnoseResultResponse.class)
+                .withName("ShowSecurityDatasourceProtectionDiagnoseResult")
+                .withUri("/v1/{project_id}/security/diagnose/datasource-protection")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityDatasourceProtectionDiagnoseResultRequest::getWorkspace,
+                ShowSecurityDatasourceProtectionDiagnoseResultRequest::setWorkspace));
 
         // response
 
@@ -12541,6 +13268,96 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSecurityNoMaskingTableResultRequest, ShowSecurityNoMaskingTableResultResponse> showSecurityNoMaskingTableResult =
+        genForShowSecurityNoMaskingTableResult();
+
+    private static HttpRequestDef<ShowSecurityNoMaskingTableResultRequest, ShowSecurityNoMaskingTableResultResponse> genForShowSecurityNoMaskingTableResult() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityNoMaskingTableResultRequest, ShowSecurityNoMaskingTableResultResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityNoMaskingTableResultRequest.class,
+                    ShowSecurityNoMaskingTableResultResponse.class)
+                .withName("ShowSecurityNoMaskingTableResult")
+                .withUri("/v1/{project_id}/security/diagnose/masking-result")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowSecurityNoMaskingTableResultRequest::getLimit,
+                ShowSecurityNoMaskingTableResultRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowSecurityNoMaskingTableResultRequest::getOffset,
+                ShowSecurityNoMaskingTableResultRequest::setOffset));
+        builder.<String>withRequestField("diagnose_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityNoMaskingTableResultRequest::getDiagnoseId,
+                ShowSecurityNoMaskingTableResultRequest::setDiagnoseId));
+        builder.<ShowSecurityNoMaskingTableResultRequest.DatasourceTypeEnum>withRequestField("datasource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowSecurityNoMaskingTableResultRequest.DatasourceTypeEnum.class),
+            f -> f.withMarshaller(ShowSecurityNoMaskingTableResultRequest::getDatasourceType,
+                ShowSecurityNoMaskingTableResultRequest::setDatasourceType));
+        builder.<String>withRequestField("database",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityNoMaskingTableResultRequest::getDatabase,
+                ShowSecurityNoMaskingTableResultRequest::setDatabase));
+        builder.<String>withRequestField("cluster_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityNoMaskingTableResultRequest::getClusterName,
+                ShowSecurityNoMaskingTableResultRequest::setClusterName));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityNoMaskingTableResultRequest::getWorkspace,
+                ShowSecurityNoMaskingTableResultRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecurityPermissionManagementDiagnoseResultRequest, ShowSecurityPermissionManagementDiagnoseResultResponse> showSecurityPermissionManagementDiagnoseResult =
+        genForShowSecurityPermissionManagementDiagnoseResult();
+
+    private static HttpRequestDef<ShowSecurityPermissionManagementDiagnoseResultRequest, ShowSecurityPermissionManagementDiagnoseResultResponse> genForShowSecurityPermissionManagementDiagnoseResult() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityPermissionManagementDiagnoseResultRequest, ShowSecurityPermissionManagementDiagnoseResultResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityPermissionManagementDiagnoseResultRequest.class,
+                    ShowSecurityPermissionManagementDiagnoseResultResponse.class)
+                .withName("ShowSecurityPermissionManagementDiagnoseResult")
+                .withUri("/v1/{project_id}/security/diagnose/permission-management")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityPermissionManagementDiagnoseResultRequest::getWorkspace,
+                ShowSecurityPermissionManagementDiagnoseResultRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSecurityPermissionSetRequest, ShowSecurityPermissionSetResponse> showSecurityPermissionSet =
         genForShowSecurityPermissionSet();
 
@@ -12574,6 +13391,39 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSecurityResourcePermissionPolicyRequest, ShowSecurityResourcePermissionPolicyResponse> showSecurityResourcePermissionPolicy =
+        genForShowSecurityResourcePermissionPolicy();
+
+    private static HttpRequestDef<ShowSecurityResourcePermissionPolicyRequest, ShowSecurityResourcePermissionPolicyResponse> genForShowSecurityResourcePermissionPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowSecurityResourcePermissionPolicyRequest, ShowSecurityResourcePermissionPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecurityResourcePermissionPolicyRequest.class,
+                    ShowSecurityResourcePermissionPolicyResponse.class)
+                .withName("ShowSecurityResourcePermissionPolicy")
+                .withUri("/v1/{project_id}/security/permission-resource/{policy_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityResourcePermissionPolicyRequest::getPolicyId,
+                ShowSecurityResourcePermissionPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecurityResourcePermissionPolicyRequest::getWorkspace,
+                ShowSecurityResourcePermissionPolicyRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowSecuritySecrecyLevelRequest, ShowSecuritySecrecyLevelResponse> showSecuritySecrecyLevel =
         genForShowSecuritySecrecyLevel();
 
@@ -12598,6 +13448,33 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSecuritySecrecyLevelRequest::getWorkspace,
                 ShowSecuritySecrecyLevelRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSecuritySensitiveDataDiagnoseResultRequest, ShowSecuritySensitiveDataDiagnoseResultResponse> showSecuritySensitiveDataDiagnoseResult =
+        genForShowSecuritySensitiveDataDiagnoseResult();
+
+    private static HttpRequestDef<ShowSecuritySensitiveDataDiagnoseResultRequest, ShowSecuritySensitiveDataDiagnoseResultResponse> genForShowSecuritySensitiveDataDiagnoseResult() {
+        // basic
+        HttpRequestDef.Builder<ShowSecuritySensitiveDataDiagnoseResultRequest, ShowSecuritySensitiveDataDiagnoseResultResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSecuritySensitiveDataDiagnoseResultRequest.class,
+                    ShowSecuritySensitiveDataDiagnoseResultResponse.class)
+                .withName("ShowSecuritySensitiveDataDiagnoseResult")
+                .withUri("/v1/{project_id}/security/diagnose/sensitive-data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSecuritySensitiveDataDiagnoseResultRequest::getWorkspace,
+                ShowSecuritySensitiveDataDiagnoseResultRequest::setWorkspace));
 
         // response
 
@@ -13056,6 +13933,39 @@ public class DataArtsStudioMeta {
             String.class,
             f -> f.withMarshaller(StopFactorySupplementDataInstanceResponse::getXRequestId,
                 StopFactorySupplementDataInstanceResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnpublishSecurityApplicationRequest, UnpublishSecurityApplicationResponse> unpublishSecurityApplication =
+        genForUnpublishSecurityApplication();
+
+    private static HttpRequestDef<UnpublishSecurityApplicationRequest, UnpublishSecurityApplicationResponse> genForUnpublishSecurityApplication() {
+        // basic
+        HttpRequestDef.Builder<UnpublishSecurityApplicationRequest, UnpublishSecurityApplicationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UnpublishSecurityApplicationRequest.class,
+                    UnpublishSecurityApplicationResponse.class)
+                .withName("UnpublishSecurityApplication")
+                .withUri("/v1/{project_id}/security/permission-application/applications/{id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnpublishSecurityApplicationRequest::getId,
+                UnpublishSecurityApplicationRequest::setId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnpublishSecurityApplicationRequest::getWorkspace,
+                UnpublishSecurityApplicationRequest::setWorkspace));
+
+        // response
+
         return builder.build();
     }
 
@@ -13626,6 +14536,45 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateSecurityDataClassificationCombineRuleRequest, UpdateSecurityDataClassificationCombineRuleResponse> updateSecurityDataClassificationCombineRule =
+        genForUpdateSecurityDataClassificationCombineRule();
+
+    private static HttpRequestDef<UpdateSecurityDataClassificationCombineRuleRequest, UpdateSecurityDataClassificationCombineRuleResponse> genForUpdateSecurityDataClassificationCombineRule() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityDataClassificationCombineRuleRequest, UpdateSecurityDataClassificationCombineRuleResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSecurityDataClassificationCombineRuleRequest.class,
+                    UpdateSecurityDataClassificationCombineRuleResponse.class)
+                .withName("UpdateSecurityDataClassificationCombineRule")
+                .withUri("/v1/{project_id}/security/data-classification/rule/combine/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityDataClassificationCombineRuleRequest::getId,
+                UpdateSecurityDataClassificationCombineRuleRequest::setId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityDataClassificationCombineRuleRequest::getWorkspace,
+                UpdateSecurityDataClassificationCombineRuleRequest::setWorkspace));
+        builder.<DataClassificationCombineRuleDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataClassificationCombineRuleDTO.class),
+            f -> f.withMarshaller(UpdateSecurityDataClassificationCombineRuleRequest::getBody,
+                UpdateSecurityDataClassificationCombineRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateSecurityDataClassificationRuleRequest, UpdateSecurityDataClassificationRuleResponse> updateSecurityDataClassificationRule =
         genForUpdateSecurityDataClassificationRule();
 
@@ -13659,6 +14608,45 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(DataClassificationRuleOperateDTO.class),
             f -> f.withMarshaller(UpdateSecurityDataClassificationRuleRequest::getBody,
                 UpdateSecurityDataClassificationRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityDataClassificationRuleGroupRequest, UpdateSecurityDataClassificationRuleGroupResponse> updateSecurityDataClassificationRuleGroup =
+        genForUpdateSecurityDataClassificationRuleGroup();
+
+    private static HttpRequestDef<UpdateSecurityDataClassificationRuleGroupRequest, UpdateSecurityDataClassificationRuleGroupResponse> genForUpdateSecurityDataClassificationRuleGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityDataClassificationRuleGroupRequest, UpdateSecurityDataClassificationRuleGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSecurityDataClassificationRuleGroupRequest.class,
+                    UpdateSecurityDataClassificationRuleGroupResponse.class)
+                .withName("UpdateSecurityDataClassificationRuleGroup")
+                .withUri("/v1/{project_id}/security/data-classification/rule/group/{id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityDataClassificationRuleGroupRequest::getId,
+                UpdateSecurityDataClassificationRuleGroupRequest::setId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityDataClassificationRuleGroupRequest::getWorkspace,
+                UpdateSecurityDataClassificationRuleGroupRequest::setWorkspace));
+        builder.<DataClassificationGroupUpdateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataClassificationGroupUpdateDTO.class),
+            f -> f.withMarshaller(UpdateSecurityDataClassificationRuleGroupRequest::getBody,
+                UpdateSecurityDataClassificationRuleGroupRequest::setBody));
 
         // response
 
@@ -13782,6 +14770,45 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(PermissionSetPermissionUpdateDTO.class),
             f -> f.withMarshaller(UpdateSecurityPermissionSetPermissionRequest::getBody,
                 UpdateSecurityPermissionSetPermissionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityResourcePermissionPolicyRequest, UpdateSecurityResourcePermissionPolicyResponse> updateSecurityResourcePermissionPolicy =
+        genForUpdateSecurityResourcePermissionPolicy();
+
+    private static HttpRequestDef<UpdateSecurityResourcePermissionPolicyRequest, UpdateSecurityResourcePermissionPolicyResponse> genForUpdateSecurityResourcePermissionPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityResourcePermissionPolicyRequest, UpdateSecurityResourcePermissionPolicyResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSecurityResourcePermissionPolicyRequest.class,
+                    UpdateSecurityResourcePermissionPolicyResponse.class)
+                .withName("UpdateSecurityResourcePermissionPolicy")
+                .withUri("/v1/{project_id}/security/permission-resource/{policy_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("policy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityResourcePermissionPolicyRequest::getPolicyId,
+                UpdateSecurityResourcePermissionPolicyRequest::setPolicyId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityResourcePermissionPolicyRequest::getWorkspace,
+                UpdateSecurityResourcePermissionPolicyRequest::setWorkspace));
+        builder.<PermissionResourcePolicyCreateDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(PermissionResourcePolicyCreateDTO.class),
+            f -> f.withMarshaller(UpdateSecurityResourcePermissionPolicyRequest::getBody,
+                UpdateSecurityResourcePermissionPolicyRequest::setBody));
 
         // response
 

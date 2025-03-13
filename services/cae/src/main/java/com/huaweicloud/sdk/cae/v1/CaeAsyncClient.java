@@ -20,6 +20,8 @@ import com.huaweicloud.sdk.cae.v1.model.CreateMonitorSystemRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateMonitorSystemResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateNoticeRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateNoticeRuleResponse;
+import com.huaweicloud.sdk.cae.v1.model.CreateSecretRequest;
+import com.huaweicloud.sdk.cae.v1.model.CreateSecretResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.CreateTimerRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.CreateVolumeRequest;
@@ -40,6 +42,8 @@ import com.huaweicloud.sdk.cae.v1.model.DeleteEnvironmentRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteEnvironmentResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteNoticeRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteNoticeRuleResponse;
+import com.huaweicloud.sdk.cae.v1.model.DeleteSecretRequest;
+import com.huaweicloud.sdk.cae.v1.model.DeleteSecretResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.DeleteTimerRuleResponse;
 import com.huaweicloud.sdk.cae.v1.model.DeleteVolumeRequest;
@@ -64,12 +68,16 @@ import com.huaweicloud.sdk.cae.v1.model.ListComponentsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListComponentsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListDomainsResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListEffectiveComponentsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListEffectiveComponentsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListEipsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListEipsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListEnvironmentsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListNoticeRulesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListNoticeRulesResponse;
+import com.huaweicloud.sdk.cae.v1.model.ListSecretsRequest;
+import com.huaweicloud.sdk.cae.v1.model.ListSecretsResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesRequest;
 import com.huaweicloud.sdk.cae.v1.model.ListTimerRulesResponse;
 import com.huaweicloud.sdk.cae.v1.model.ListVolumesRequest;
@@ -100,6 +108,8 @@ import com.huaweicloud.sdk.cae.v1.model.UpdateMonitorSystemRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateMonitorSystemResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateNoticeRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateNoticeRuleResponse;
+import com.huaweicloud.sdk.cae.v1.model.UpdateSecretRequest;
+import com.huaweicloud.sdk.cae.v1.model.UpdateSecretResponse;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleRequest;
 import com.huaweicloud.sdk.cae.v1.model.UpdateTimerRuleResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -1280,6 +1290,151 @@ public class CaeAsyncClient {
     public AsyncInvoker<UpdateNoticeRuleRequest, UpdateNoticeRuleResponse> updateNoticeRuleAsyncInvoker(
         UpdateNoticeRuleRequest request) {
         return new AsyncInvoker<>(request, CaeMeta.updateNoticeRule, hcClient);
+    }
+
+    /**
+     * 关联租户已注册的凭据。
+     *
+     * 关联租户已注册的凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecretRequest 请求对象
+     * @return CompletableFuture<CreateSecretResponse>
+     */
+    public CompletableFuture<CreateSecretResponse> createSecretAsync(CreateSecretRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.createSecret);
+    }
+
+    /**
+     * 关联租户已注册的凭据。
+     *
+     * 关联租户已注册的凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateSecretRequest 请求对象
+     * @return AsyncInvoker<CreateSecretRequest, CreateSecretResponse>
+     */
+    public AsyncInvoker<CreateSecretRequest, CreateSecretResponse> createSecretAsyncInvoker(
+        CreateSecretRequest request) {
+        return new AsyncInvoker<>(request, CaeMeta.createSecret, hcClient);
+    }
+
+    /**
+     * 删除用户已在DEW服务上注册的凭据。
+     *
+     * 删除用户已在DEW服务上注册的凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSecretRequest 请求对象
+     * @return CompletableFuture<DeleteSecretResponse>
+     */
+    public CompletableFuture<DeleteSecretResponse> deleteSecretAsync(DeleteSecretRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.deleteSecret);
+    }
+
+    /**
+     * 删除用户已在DEW服务上注册的凭据。
+     *
+     * 删除用户已在DEW服务上注册的凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSecretRequest 请求对象
+     * @return AsyncInvoker<DeleteSecretRequest, DeleteSecretResponse>
+     */
+    public AsyncInvoker<DeleteSecretRequest, DeleteSecretResponse> deleteSecretAsyncInvoker(
+        DeleteSecretRequest request) {
+        return new AsyncInvoker<>(request, CaeMeta.deleteSecret, hcClient);
+    }
+
+    /**
+     * 获取当前正在使用对应凭据组件列表。
+     *
+     * 获取当前正在使用的对应凭据组件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEffectiveComponentsRequest 请求对象
+     * @return CompletableFuture<ListEffectiveComponentsResponse>
+     */
+    public CompletableFuture<ListEffectiveComponentsResponse> listEffectiveComponentsAsync(
+        ListEffectiveComponentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.listEffectiveComponents);
+    }
+
+    /**
+     * 获取当前正在使用对应凭据组件列表。
+     *
+     * 获取当前正在使用的对应凭据组件列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEffectiveComponentsRequest 请求对象
+     * @return AsyncInvoker<ListEffectiveComponentsRequest, ListEffectiveComponentsResponse>
+     */
+    public AsyncInvoker<ListEffectiveComponentsRequest, ListEffectiveComponentsResponse> listEffectiveComponentsAsyncInvoker(
+        ListEffectiveComponentsRequest request) {
+        return new AsyncInvoker<>(request, CaeMeta.listEffectiveComponents, hcClient);
+    }
+
+    /**
+     * 获取用户现有的凭据。
+     *
+     * 获取用户现有的凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecretsRequest 请求对象
+     * @return CompletableFuture<ListSecretsResponse>
+     */
+    public CompletableFuture<ListSecretsResponse> listSecretsAsync(ListSecretsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.listSecrets);
+    }
+
+    /**
+     * 获取用户现有的凭据。
+     *
+     * 获取用户现有的凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSecretsRequest 请求对象
+     * @return AsyncInvoker<ListSecretsRequest, ListSecretsResponse>
+     */
+    public AsyncInvoker<ListSecretsRequest, ListSecretsResponse> listSecretsAsyncInvoker(ListSecretsRequest request) {
+        return new AsyncInvoker<>(request, CaeMeta.listSecrets, hcClient);
+    }
+
+    /**
+     * 修改用户已在DEW服务上注册的凭据版本。
+     *
+     * 修改用户已在DEW服务上注册的凭据版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecretRequest 请求对象
+     * @return CompletableFuture<UpdateSecretResponse>
+     */
+    public CompletableFuture<UpdateSecretResponse> updateSecretAsync(UpdateSecretRequest request) {
+        return hcClient.asyncInvokeHttp(request, CaeMeta.updateSecret);
+    }
+
+    /**
+     * 修改用户已在DEW服务上注册的凭据版本。
+     *
+     * 修改用户已在DEW服务上注册的凭据版本。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecretRequest 请求对象
+     * @return AsyncInvoker<UpdateSecretRequest, UpdateSecretResponse>
+     */
+    public AsyncInvoker<UpdateSecretRequest, UpdateSecretResponse> updateSecretAsyncInvoker(
+        UpdateSecretRequest request) {
+        return new AsyncInvoker<>(request, CaeMeta.updateSecret, hcClient);
     }
 
     /**

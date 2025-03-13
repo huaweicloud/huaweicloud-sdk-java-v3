@@ -35,6 +35,16 @@ public class CreatePrivateProviderRequestBody {
 
     private String functionGraphUrn;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "provider_agency_urn")
+
+    private String providerAgencyUrn;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "provider_agency_name")
+
+    private String providerAgencyName;
+
     public CreatePrivateProviderRequestBody withProviderName(String providerName) {
         this.providerName = providerName;
         return this;
@@ -120,6 +130,40 @@ public class CreatePrivateProviderRequestBody {
         this.functionGraphUrn = functionGraphUrn;
     }
 
+    public CreatePrivateProviderRequestBody withProviderAgencyUrn(String providerAgencyUrn) {
+        this.providerAgencyUrn = providerAgencyUrn;
+        return this;
+    }
+
+    /**
+     * 自定义provider所绑定的IAM委托URN，provider_agency_name和provider_agency_urn最多只能提供一个。
+     * @return providerAgencyUrn
+     */
+    public String getProviderAgencyUrn() {
+        return providerAgencyUrn;
+    }
+
+    public void setProviderAgencyUrn(String providerAgencyUrn) {
+        this.providerAgencyUrn = providerAgencyUrn;
+    }
+
+    public CreatePrivateProviderRequestBody withProviderAgencyName(String providerAgencyName) {
+        this.providerAgencyName = providerAgencyName;
+        return this;
+    }
+
+    /**
+     * 自定义provider所绑定的IAM委托名称，provider_agency_name和provider_agency_urn最多只能提供一个。
+     * @return providerAgencyName
+     */
+    public String getProviderAgencyName() {
+        return providerAgencyName;
+    }
+
+    public void setProviderAgencyName(String providerAgencyName) {
+        this.providerAgencyName = providerAgencyName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -133,12 +177,20 @@ public class CreatePrivateProviderRequestBody {
             && Objects.equals(this.providerDescription, that.providerDescription)
             && Objects.equals(this.providerVersion, that.providerVersion)
             && Objects.equals(this.versionDescription, that.versionDescription)
-            && Objects.equals(this.functionGraphUrn, that.functionGraphUrn);
+            && Objects.equals(this.functionGraphUrn, that.functionGraphUrn)
+            && Objects.equals(this.providerAgencyUrn, that.providerAgencyUrn)
+            && Objects.equals(this.providerAgencyName, that.providerAgencyName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(providerName, providerDescription, providerVersion, versionDescription, functionGraphUrn);
+        return Objects.hash(providerName,
+            providerDescription,
+            providerVersion,
+            versionDescription,
+            functionGraphUrn,
+            providerAgencyUrn,
+            providerAgencyName);
     }
 
     @Override
@@ -150,6 +202,8 @@ public class CreatePrivateProviderRequestBody {
         sb.append("    providerVersion: ").append(toIndentedString(providerVersion)).append("\n");
         sb.append("    versionDescription: ").append(toIndentedString(versionDescription)).append("\n");
         sb.append("    functionGraphUrn: ").append(toIndentedString(functionGraphUrn)).append("\n");
+        sb.append("    providerAgencyUrn: ").append(toIndentedString(providerAgencyUrn)).append("\n");
+        sb.append("    providerAgencyName: ").append(toIndentedString(providerAgencyName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

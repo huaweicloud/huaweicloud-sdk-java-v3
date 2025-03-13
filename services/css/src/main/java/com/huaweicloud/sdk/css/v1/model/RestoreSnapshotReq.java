@@ -30,6 +30,11 @@ public class RestoreSnapshotReq {
 
     private String renameReplacement;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "replace_exist_indices")
+
+    private Boolean replaceExistIndices;
+
     public RestoreSnapshotReq withTargetCluster(String targetCluster) {
         this.targetCluster = targetCluster;
         return this;
@@ -98,6 +103,23 @@ public class RestoreSnapshotReq {
         this.renameReplacement = renameReplacement;
     }
 
+    public RestoreSnapshotReq withReplaceExistIndices(Boolean replaceExistIndices) {
+        this.replaceExistIndices = replaceExistIndices;
+        return this;
+    }
+
+    /**
+     * 替换已存在的索引。    
+     * @return replaceExistIndices
+     */
+    public Boolean getReplaceExistIndices() {
+        return replaceExistIndices;
+    }
+
+    public void setReplaceExistIndices(Boolean replaceExistIndices) {
+        this.replaceExistIndices = replaceExistIndices;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +131,13 @@ public class RestoreSnapshotReq {
         RestoreSnapshotReq that = (RestoreSnapshotReq) obj;
         return Objects.equals(this.targetCluster, that.targetCluster) && Objects.equals(this.indices, that.indices)
             && Objects.equals(this.renamePattern, that.renamePattern)
-            && Objects.equals(this.renameReplacement, that.renameReplacement);
+            && Objects.equals(this.renameReplacement, that.renameReplacement)
+            && Objects.equals(this.replaceExistIndices, that.replaceExistIndices);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetCluster, indices, renamePattern, renameReplacement);
+        return Objects.hash(targetCluster, indices, renamePattern, renameReplacement, replaceExistIndices);
     }
 
     @Override
@@ -125,6 +148,7 @@ public class RestoreSnapshotReq {
         sb.append("    indices: ").append(toIndentedString(indices)).append("\n");
         sb.append("    renamePattern: ").append(toIndentedString(renamePattern)).append("\n");
         sb.append("    renameReplacement: ").append(toIndentedString(renameReplacement)).append("\n");
+        sb.append("    replaceExistIndices: ").append(toIndentedString(replaceExistIndices)).append("\n");
         sb.append("}");
         return sb.toString();
     }

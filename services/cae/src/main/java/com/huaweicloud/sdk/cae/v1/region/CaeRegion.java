@@ -29,6 +29,15 @@ public class CaeRegion {
     public static final Region AF_SOUTH_1 =
         new Region("af-south-1", "https://cae.af-south-1.myhuaweicloud.com", "https://cae.af-south-1.myhuaweicloud.cn");
 
+    public static final Region ME_EAST_1 =
+        new Region("me-east-1", "https://cae.me-east-1.myhuaweicloud.com", "https://cae.me-east-1.myhuaweicloud.cn");
+
+    public static final Region LA_NORTH_2 =
+        new Region("la-north-2", "https://cae.la-north-2.myhuaweicloud.com", "https://cae.la-north-2.myhuaweicloud.cn");
+
+    public static final Region TR_WEST_1 =
+        new Region("tr-west-1", "https://cae.tr-west-1.myhuaweicloud.com", "https://cae.tr-west-1.myhuaweicloud.cn");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("CAE");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -40,6 +49,9 @@ public class CaeRegion {
         map.put("cn-south-1", CN_SOUTH_1);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
         map.put("af-south-1", AF_SOUTH_1);
+        map.put("me-east-1", ME_EAST_1);
+        map.put("la-north-2", LA_NORTH_2);
+        map.put("tr-west-1", TR_WEST_1);
         return Collections.unmodifiableMap(map);
     }
 
