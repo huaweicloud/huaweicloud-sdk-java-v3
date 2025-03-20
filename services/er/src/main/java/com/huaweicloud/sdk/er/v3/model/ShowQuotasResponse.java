@@ -19,6 +19,11 @@ public class ShowQuotasResponse extends SdkResponse {
 
     private List<Quota> quotas = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ShowQuotasResponse withQuotas(List<Quota> quotas) {
         this.quotas = quotas;
         return this;
@@ -52,6 +57,32 @@ public class ShowQuotasResponse extends SdkResponse {
         this.quotas = quotas;
     }
 
+    public ShowQuotasResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ShowQuotasResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -61,12 +92,12 @@ public class ShowQuotasResponse extends SdkResponse {
             return false;
         }
         ShowQuotasResponse that = (ShowQuotasResponse) obj;
-        return Objects.equals(this.quotas, that.quotas);
+        return Objects.equals(this.quotas, that.quotas) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(quotas);
+        return Objects.hash(quotas, pageInfo);
     }
 
     @Override
@@ -74,6 +105,7 @@ public class ShowQuotasResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowQuotasResponse {\n");
         sb.append("    quotas: ").append(toIndentedString(quotas)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

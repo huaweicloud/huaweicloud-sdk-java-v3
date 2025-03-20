@@ -467,4 +467,13 @@ public final class JsonUtils {
         }
     }
 
+    public static <T> T fromStream(InputStream is, TypeReference<T> type) {
+        try {
+            return objectMapperIgnoreUnknown.readValue(is, type);
+        } catch (IOException e) {
+            logger.error("[Method fromStream] Internal Error occurs: ", e);
+            throw new SdkException(e);
+        }
+    }
+
 }

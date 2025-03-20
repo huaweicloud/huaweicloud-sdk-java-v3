@@ -298,9 +298,9 @@ public class OsmAsyncClient {
     }
 
     /**
-     * 租户确认授权
+     * 确认授权
      *
-     * 租户确认授权
+     * 确认授权
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -313,9 +313,9 @@ public class OsmAsyncClient {
     }
 
     /**
-     * 租户确认授权
+     * 确认授权
      *
-     * 租户确认授权
+     * 确认授权
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2515,7 +2515,7 @@ public class OsmAsyncClient {
     /**
      * 查询提单权限
      *
-     * 查询提单权限
+     * 查询是否开启提单权限限制，主账号可以操作开启，开启之后子账号默认无法提单
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2530,7 +2530,7 @@ public class OsmAsyncClient {
     /**
      * 查询提单权限
      *
-     * 查询提单权限
+     * 查询是否开启提单权限限制，主账号可以操作开启，开启之后子账号默认无法提单
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

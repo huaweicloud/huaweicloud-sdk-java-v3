@@ -25,6 +25,11 @@ public class CreateRoute {
 
     private Boolean isBlackhole;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public CreateRoute withDestination(String destination) {
         this.destination = destination;
         return this;
@@ -76,6 +81,23 @@ public class CreateRoute {
         this.isBlackhole = isBlackhole;
     }
 
+    public CreateRoute withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 路由描述信息
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +109,12 @@ public class CreateRoute {
         CreateRoute that = (CreateRoute) obj;
         return Objects.equals(this.destination, that.destination)
             && Objects.equals(this.attachmentId, that.attachmentId)
-            && Objects.equals(this.isBlackhole, that.isBlackhole);
+            && Objects.equals(this.isBlackhole, that.isBlackhole) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(destination, attachmentId, isBlackhole);
+        return Objects.hash(destination, attachmentId, isBlackhole, description);
     }
 
     @Override
@@ -102,6 +124,7 @@ public class CreateRoute {
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("    attachmentId: ").append(toIndentedString(attachmentId)).append("\n");
         sb.append("    isBlackhole: ").append(toIndentedString(isBlackhole)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

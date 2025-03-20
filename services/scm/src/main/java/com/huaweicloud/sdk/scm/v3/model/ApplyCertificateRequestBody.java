@@ -383,7 +383,7 @@ public class ApplyCertificateRequestBody {
     }
 
     /**
-     * 域名验证方式。 - DNS: DNS验证，指在域名管理平台通过解析指定的DNS记录，验证域名所有权。 - FILE: 文件验证，指通过在服务器上创建指定文件的方式来验证域名所有权。 - EMAIL: 邮箱验证，指登录域名管理员邮箱，接收域名确认邮件并根据提示进行操作来验证域名所有权。 DV域名型和DV基础版证书（GeoTrust入门级SSL证书和DigiCert免费SSL证书）默认通过“DNS验证”方式进行验证。 纯IP（公网IP）的证书仅支持通过“文件验证”方式进行验证，且仅纯IP证书支持“文件验证”方式验证。
+     * 域名验证方式。 - DNS：DNS验证，指在域名管理平台通过解析指定的DNS记录，验证域名所有权。 - FILE：文件验证，指通过在服务器上创建指定文件的方式来验证域名所有权。 - EMAIL：邮箱验证，指登录域名管理员邮箱，接收域名确认邮件并根据提示进行操作来验证域名所有权。 DV域名型和DV基础版证书（GeoTrust入门级SSL证书和DigiCert免费SSL证书）默认通过“DNS验证”方式进行验证。 纯IP（公网IP）的证书仅支持通过“文件验证”方式进行验证，且仅纯IP证书支持“文件验证”方式验证。
      * @return domainMethod
      */
     public String getDomainMethod() {
@@ -417,7 +417,7 @@ public class ApplyCertificateRequestBody {
     }
 
     /**
-     * 签名算法。Geo OV证书必填 - DEFAULT - SHA-256
+     * 签名算法。Geo OV证书必填。 - DEFAULT - SHA-256
      * @return caHashAlgorithm
      */
     public String getCaHashAlgorithm() {

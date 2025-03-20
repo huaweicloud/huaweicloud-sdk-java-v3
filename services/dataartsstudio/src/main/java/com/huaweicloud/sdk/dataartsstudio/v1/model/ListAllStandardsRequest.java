@@ -36,6 +36,11 @@ public class ListAllStandardsRequest {
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "need_path")
+
+    private Boolean needPath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -132,6 +137,23 @@ public class ListAllStandardsRequest {
         this.endTime = endTime;
     }
 
+    public ListAllStandardsRequest withNeedPath(Boolean needPath) {
+        this.needPath = needPath;
+        return this;
+    }
+
+    /**
+     * 查询数据标准目录时，是否查询数据标准目录信息。
+     * @return needPath
+     */
+    public Boolean getNeedPath() {
+        return needPath;
+    }
+
+    public void setNeedPath(Boolean needPath) {
+        this.needPath = needPath;
+    }
+
     public ListAllStandardsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -178,13 +200,13 @@ public class ListAllStandardsRequest {
         ListAllStandardsRequest that = (ListAllStandardsRequest) obj;
         return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.xProjectId, that.xProjectId)
             && Objects.equals(this.directoryId, that.directoryId) && Objects.equals(this.beginTime, that.beginTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.needPath, that.needPath)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(workspace, xProjectId, directoryId, beginTime, endTime, limit, offset);
+        return Objects.hash(workspace, xProjectId, directoryId, beginTime, endTime, needPath, limit, offset);
     }
 
     @Override
@@ -196,6 +218,7 @@ public class ListAllStandardsRequest {
         sb.append("    directoryId: ").append(toIndentedString(directoryId)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    needPath: ").append(toIndentedString(needPath)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

@@ -296,6 +296,12 @@ public class ScmMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListCertificatesRequest::getOwnedBySelf, ListCertificatesRequest::setOwnedBySelf));
+        builder.<Integer>withRequestField("expired_days_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getExpiredDaysSince,
+                ListCertificatesRequest::setExpiredDaysSince));
 
         // response
 

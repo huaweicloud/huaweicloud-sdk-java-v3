@@ -77,6 +77,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ListServerInterfacesRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerInterfacesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerTagsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerTagsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListServerVolumeAttachmentsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListServerVolumeAttachmentsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServersByTagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServersByTagResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServersDetailsRequest;
@@ -1364,6 +1366,35 @@ public class EcsClient {
     public SyncInvoker<ListServerTagsRequest, ListServerTagsResponse> listServerTagsInvoker(
         ListServerTagsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.listServerTags, hcClient);
+    }
+
+    /**
+     * 查询弹性云服务器挂载磁盘列表信息
+     *
+     * 查询弹性云服务器挂载的磁盘信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServerVolumeAttachmentsRequest 请求对象
+     * @return ListServerVolumeAttachmentsResponse
+     */
+    public ListServerVolumeAttachmentsResponse listServerVolumeAttachments(ListServerVolumeAttachmentsRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.listServerVolumeAttachments);
+    }
+
+    /**
+     * 查询弹性云服务器挂载磁盘列表信息
+     *
+     * 查询弹性云服务器挂载的磁盘信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListServerVolumeAttachmentsRequest 请求对象
+     * @return SyncInvoker<ListServerVolumeAttachmentsRequest, ListServerVolumeAttachmentsResponse>
+     */
+    public SyncInvoker<ListServerVolumeAttachmentsRequest, ListServerVolumeAttachmentsResponse> listServerVolumeAttachmentsInvoker(
+        ListServerVolumeAttachmentsRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.listServerVolumeAttachments, hcClient);
     }
 
     /**

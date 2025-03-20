@@ -59,6 +59,11 @@ public class Route {
 
     private OffsetDateTime updatedAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public Route withId(String id) {
         this.id = id;
         return this;
@@ -228,6 +233,23 @@ public class Route {
         this.updatedAt = updatedAt;
     }
 
+    public Route withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 路由描述信息
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -241,12 +263,21 @@ public class Route {
             && Objects.equals(this.state, that.state) && Objects.equals(this.isBlackhole, that.isBlackhole)
             && Objects.equals(this.destination, that.destination) && Objects.equals(this.attachments, that.attachments)
             && Objects.equals(this.routeTableId, that.routeTableId) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, state, isBlackhole, destination, attachments, routeTableId, createdAt, updatedAt);
+        return Objects.hash(id,
+            type,
+            state,
+            isBlackhole,
+            destination,
+            attachments,
+            routeTableId,
+            createdAt,
+            updatedAt,
+            description);
     }
 
     @Override
@@ -262,6 +293,7 @@ public class Route {
         sb.append("    routeTableId: ").append(toIndentedString(routeTableId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

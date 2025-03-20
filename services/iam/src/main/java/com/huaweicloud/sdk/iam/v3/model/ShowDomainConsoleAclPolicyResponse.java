@@ -15,17 +15,16 @@ public class ShowDomainConsoleAclPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "console_acl_policy")
 
-    private ConsoleAclPolicyResult consoleAclPolicy;
+    private AclPolicyResult consoleAclPolicy;
 
-    public ShowDomainConsoleAclPolicyResponse withConsoleAclPolicy(ConsoleAclPolicyResult consoleAclPolicy) {
+    public ShowDomainConsoleAclPolicyResponse withConsoleAclPolicy(AclPolicyResult consoleAclPolicy) {
         this.consoleAclPolicy = consoleAclPolicy;
         return this;
     }
 
-    public ShowDomainConsoleAclPolicyResponse withConsoleAclPolicy(
-        Consumer<ConsoleAclPolicyResult> consoleAclPolicySetter) {
+    public ShowDomainConsoleAclPolicyResponse withConsoleAclPolicy(Consumer<AclPolicyResult> consoleAclPolicySetter) {
         if (this.consoleAclPolicy == null) {
-            this.consoleAclPolicy = new ConsoleAclPolicyResult();
+            this.consoleAclPolicy = new AclPolicyResult();
             consoleAclPolicySetter.accept(this.consoleAclPolicy);
         }
 
@@ -36,11 +35,11 @@ public class ShowDomainConsoleAclPolicyResponse extends SdkResponse {
      * Get consoleAclPolicy
      * @return consoleAclPolicy
      */
-    public ConsoleAclPolicyResult getConsoleAclPolicy() {
+    public AclPolicyResult getConsoleAclPolicy() {
         return consoleAclPolicy;
     }
 
-    public void setConsoleAclPolicy(ConsoleAclPolicyResult consoleAclPolicy) {
+    public void setConsoleAclPolicy(AclPolicyResult consoleAclPolicy) {
         this.consoleAclPolicy = consoleAclPolicy;
     }
 

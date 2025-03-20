@@ -50,6 +50,11 @@ public class ListCertificatesRequest {
 
     private Boolean ownedBySelf;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expired_days_since")
+
+    private Integer expiredDaysSince;
+
     public ListCertificatesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -77,6 +82,7 @@ public class ListCertificatesRequest {
     /**
      * 偏移量。
      * minimum: 0
+     * maximum: 100
      * @return offset
      */
     public Integer getOffset() {
@@ -144,7 +150,7 @@ public class ListCertificatesRequest {
     }
 
     /**
-     * 企业多项目ID。用户未开通企业多项目时，不需要输入该字段。 用户开通企业多项目时，查询资源可以输入该字段。 若用户不输入该字段，默认查询租户所有有权限的企业多项目下的资源。 此时“enterprise_project_id”取值为“all”。 若用户输入该字段，取值满足以下任一条件.  取值为“all”  取值为“0”  满足正则匹配：“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”
+     * 企业多项目ID。用户未开通企业多项目时，不需要输入该字段。 用户开通企业多项目时，查询资源可以输入该字段。 若用户不输入该字段，默认查询租户所有有权限的企业多项目下的资源。 此时“enterprise_project_id”取值为“all”。 若用户输入该字段，取值满足以下任一条件。 - 取值为“all” - 取值为“0” - 满足正则匹配：“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -161,7 +167,7 @@ public class ListCertificatesRequest {
     }
 
     /**
-     * 是否支持部署。
+     * 是否仅筛选支持部署的证书。
      * @return deploySupport
      */
     public Boolean getDeploySupport() {
@@ -189,6 +195,25 @@ public class ListCertificatesRequest {
         this.ownedBySelf = ownedBySelf;
     }
 
+    public ListCertificatesRequest withExpiredDaysSince(Integer expiredDaysSince) {
+        this.expiredDaysSince = expiredDaysSince;
+        return this;
+    }
+
+    /**
+     * 证书在有效期内及最多过期xx天。
+     * minimum: 0
+     * maximum: 1095
+     * @return expiredDaysSince
+     */
+    public Integer getExpiredDaysSince() {
+        return expiredDaysSince;
+    }
+
+    public void setExpiredDaysSince(Integer expiredDaysSince) {
+        this.expiredDaysSince = expiredDaysSince;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -203,12 +228,21 @@ public class ListCertificatesRequest {
             && Objects.equals(this.status, that.status)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.deploySupport, that.deploySupport)
-            && Objects.equals(this.ownedBySelf, that.ownedBySelf);
+            && Objects.equals(this.ownedBySelf, that.ownedBySelf)
+            && Objects.equals(this.expiredDaysSince, that.expiredDaysSince);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, offset, sortDir, sortKey, status, enterpriseProjectId, deploySupport, ownedBySelf);
+        return Objects.hash(limit,
+            offset,
+            sortDir,
+            sortKey,
+            status,
+            enterpriseProjectId,
+            deploySupport,
+            ownedBySelf,
+            expiredDaysSince);
     }
 
     @Override
@@ -223,6 +257,7 @@ public class ListCertificatesRequest {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    deploySupport: ").append(toIndentedString(deploySupport)).append("\n");
         sb.append("    ownedBySelf: ").append(toIndentedString(ownedBySelf)).append("\n");
+        sb.append("    expiredDaysSince: ").append(toIndentedString(expiredDaysSince)).append("\n");
         sb.append("}");
         return sb.toString();
     }

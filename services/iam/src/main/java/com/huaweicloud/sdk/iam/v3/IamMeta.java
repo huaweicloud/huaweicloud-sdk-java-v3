@@ -60,6 +60,9 @@ import com.huaweicloud.sdk.iam.v3.model.CreateTemporaryAccessKeyByTokenRequestBo
 import com.huaweicloud.sdk.iam.v3.model.CreateTemporaryAccessKeyByTokenResponse;
 import com.huaweicloud.sdk.iam.v3.model.CreateTokenWithIdTokenRequest;
 import com.huaweicloud.sdk.iam.v3.model.CreateTokenWithIdTokenResponse;
+import com.huaweicloud.sdk.iam.v3.model.CreateUnscopeTokenByIdpInitiatedRequest;
+import com.huaweicloud.sdk.iam.v3.model.CreateUnscopeTokenByIdpInitiatedRequestBody;
+import com.huaweicloud.sdk.iam.v3.model.CreateUnscopeTokenByIdpInitiatedResponse;
 import com.huaweicloud.sdk.iam.v3.model.CreateUnscopedTokenWithIdTokenRequest;
 import com.huaweicloud.sdk.iam.v3.model.CreateUnscopedTokenWithIdTokenResponse;
 import com.huaweicloud.sdk.iam.v3.model.CreateUserRequest;
@@ -948,6 +951,45 @@ public class IamMeta {
             String.class,
             f -> f.withMarshaller(CreateTokenWithIdTokenResponse::getXSubjectToken,
                 CreateTokenWithIdTokenResponse::setXSubjectToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse> createUnscopeTokenByIdpInitiated =
+        genForCreateUnscopeTokenByIdpInitiated();
+
+    private static HttpRequestDef<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse> genForCreateUnscopeTokenByIdpInitiated() {
+        // basic
+        HttpRequestDef.Builder<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateUnscopeTokenByIdpInitiatedRequest.class,
+                    CreateUnscopeTokenByIdpInitiatedResponse.class)
+                .withName("CreateUnscopeTokenByIdpInitiated")
+                .withUri("/v3.0/OS-FEDERATION/tokens")
+                .withContentType("application/x-www-form-urlencoded");
+
+        // requests
+        builder.<String>withRequestField("X-Idp-Id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateUnscopeTokenByIdpInitiatedRequest::getXIdpId,
+                CreateUnscopeTokenByIdpInitiatedRequest::setXIdpId));
+        builder.<CreateUnscopeTokenByIdpInitiatedRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateUnscopeTokenByIdpInitiatedRequestBody.class),
+            f -> f.withMarshaller(CreateUnscopeTokenByIdpInitiatedRequest::getBody,
+                CreateUnscopeTokenByIdpInitiatedRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Subject-Token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateUnscopeTokenByIdpInitiatedResponse::getXSubjectToken,
+                CreateUnscopeTokenByIdpInitiatedResponse::setXSubjectToken));
         return builder.build();
     }
 

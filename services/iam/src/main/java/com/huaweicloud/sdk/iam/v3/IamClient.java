@@ -45,6 +45,8 @@ import com.huaweicloud.sdk.iam.v3.model.CreateTemporaryAccessKeyByTokenRequest;
 import com.huaweicloud.sdk.iam.v3.model.CreateTemporaryAccessKeyByTokenResponse;
 import com.huaweicloud.sdk.iam.v3.model.CreateTokenWithIdTokenRequest;
 import com.huaweicloud.sdk.iam.v3.model.CreateTokenWithIdTokenResponse;
+import com.huaweicloud.sdk.iam.v3.model.CreateUnscopeTokenByIdpInitiatedRequest;
+import com.huaweicloud.sdk.iam.v3.model.CreateUnscopeTokenByIdpInitiatedResponse;
 import com.huaweicloud.sdk.iam.v3.model.CreateUnscopedTokenWithIdTokenRequest;
 import com.huaweicloud.sdk.iam.v3.model.CreateUnscopedTokenWithIdTokenResponse;
 import com.huaweicloud.sdk.iam.v3.model.CreateUserRequest;
@@ -911,6 +913,46 @@ public class IamClient {
     public SyncInvoker<CreateTokenWithIdTokenRequest, CreateTokenWithIdTokenResponse> createTokenWithIdTokenInvoker(
         CreateTokenWithIdTokenRequest request) {
         return new SyncInvoker<>(request, IamMeta.createTokenWithIdToken, hcClient);
+    }
+
+    /**
+     * 获取联邦认证unscoped token(IdP initiated)
+     *
+     * 该接口可以用于通过IdP initiated的联邦认证方式获取unscoped token。
+     * 
+     * Unscoped token不能用来鉴权，若联邦用户需要使用token进行鉴权，请参考[获取联邦认证scoped token](https://support.huaweicloud.com/api-iam/iam_13_0604.html)获取scoped token。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * &gt; - 该接口支持在命令行侧调用，需要客户端使用IdP initiated的联邦认证方式获取SAMLResponse，并采用浏览器提交表单数据的方式，获取unscoped token。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateUnscopeTokenByIdpInitiatedRequest 请求对象
+     * @return CreateUnscopeTokenByIdpInitiatedResponse
+     */
+    public CreateUnscopeTokenByIdpInitiatedResponse createUnscopeTokenByIdpInitiated(
+        CreateUnscopeTokenByIdpInitiatedRequest request) {
+        return hcClient.syncInvokeHttp(request, IamMeta.createUnscopeTokenByIdpInitiated);
+    }
+
+    /**
+     * 获取联邦认证unscoped token(IdP initiated)
+     *
+     * 该接口可以用于通过IdP initiated的联邦认证方式获取unscoped token。
+     * 
+     * Unscoped token不能用来鉴权，若联邦用户需要使用token进行鉴权，请参考[获取联邦认证scoped token](https://support.huaweicloud.com/api-iam/iam_13_0604.html)获取scoped token。
+     * 
+     * 该接口可以使用全局区域的Endpoint和其他区域的Endpoint调用。IAM的Endpoint请参见：[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+     * &gt; - 该接口支持在命令行侧调用，需要客户端使用IdP initiated的联邦认证方式获取SAMLResponse，并采用浏览器提交表单数据的方式，获取unscoped token。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateUnscopeTokenByIdpInitiatedRequest 请求对象
+     * @return SyncInvoker<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse>
+     */
+    public SyncInvoker<CreateUnscopeTokenByIdpInitiatedRequest, CreateUnscopeTokenByIdpInitiatedResponse> createUnscopeTokenByIdpInitiatedInvoker(
+        CreateUnscopeTokenByIdpInitiatedRequest request) {
+        return new SyncInvoker<>(request, IamMeta.createUnscopeTokenByIdpInitiated, hcClient);
     }
 
     /**

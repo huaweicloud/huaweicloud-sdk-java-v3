@@ -103,6 +103,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ListServerInterfacesRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerInterfacesResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerTagsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerTagsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListServerVolumeAttachmentsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListServerVolumeAttachmentsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServersByTagRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServersByTagRequestBody;
 import com.huaweicloud.sdk.ecs.v2.model.ListServersByTagResponse;
@@ -1377,6 +1379,33 @@ public class EcsMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListServerVolumeAttachmentsRequest, ListServerVolumeAttachmentsResponse> listServerVolumeAttachments =
+        genForListServerVolumeAttachments();
+
+    private static HttpRequestDef<ListServerVolumeAttachmentsRequest, ListServerVolumeAttachmentsResponse> genForListServerVolumeAttachments() {
+        // basic
+        HttpRequestDef.Builder<ListServerVolumeAttachmentsRequest, ListServerVolumeAttachmentsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListServerVolumeAttachmentsRequest.class,
+                    ListServerVolumeAttachmentsResponse.class)
+                .withName("ListServerVolumeAttachments")
+                .withUri("/v1/{project_id}/cloudservers/{server_id}/os-volume_attachments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("server_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListServerVolumeAttachmentsRequest::getServerId,
+                ListServerVolumeAttachmentsRequest::setServerId));
 
         // response
 

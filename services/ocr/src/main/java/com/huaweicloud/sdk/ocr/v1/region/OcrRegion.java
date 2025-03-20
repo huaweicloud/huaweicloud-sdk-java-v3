@@ -14,31 +14,38 @@ import java.util.stream.Collectors;
 
 public class OcrRegion {
 
-    public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://ocr.cn-north-4.myhuaweicloud.com");
+    public static final Region CN_NORTH_4 =
+        new Region("cn-north-4", "https://ocr.cn-north-4.myhuaweicloud.com", "https://ocr.cn-north-4.myhuaweicloud.cn");
 
-    public static final Region CN_SOUTH_1 = new Region("cn-south-1", "https://ocr.cn-south-1.myhuaweicloud.com");
+    public static final Region CN_SOUTH_1 =
+        new Region("cn-south-1", "https://ocr.cn-south-1.myhuaweicloud.com", "https://ocr.cn-south-1.myhuaweicloud.cn");
 
-    public static final Region CN_EAST_3 = new Region("cn-east-3", "https://ocr.cn-east-3.myhuaweicloud.com");
+    public static final Region CN_EAST_3 =
+        new Region("cn-east-3", "https://ocr.cn-east-3.myhuaweicloud.com", "https://ocr.cn-east-3.myhuaweicloud.cn");
 
-    public static final Region CN_NORTH_1 = new Region("cn-north-1", "https://ocr.cn-north-1.myhuaweicloud.com");
+    public static final Region CN_NORTH_1 =
+        new Region("cn-north-1", "https://ocr.cn-north-1.myhuaweicloud.com", "https://ocr.cn-north-1.myhuaweicloud.cn");
 
-    public static final Region AP_SOUTHEAST_2 =
-        new Region("ap-southeast-2", "https://ocr.ap-southeast-2.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_2 = new Region("ap-southeast-2",
+        "https://ocr.ap-southeast-2.myhuaweicloud.com", "https://ocr.ap-southeast-2.myhuaweicloud.cn");
 
-    public static final Region CN_SOUTHWEST_2 =
-        new Region("cn-southwest-2", "https://ocr.cn-southwest-2.myhuaweicloud.com");
+    public static final Region CN_SOUTHWEST_2 = new Region("cn-southwest-2",
+        "https://ocr.cn-southwest-2.myhuaweicloud.com", "https://ocr.cn-southwest-2.myhuaweicloud.cn");
 
-    public static final Region AP_SOUTHEAST_1 =
-        new Region("ap-southeast-1", "https://ocr.ap-southeast-1.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
+        "https://ocr.ap-southeast-1.myhuaweicloud.com", "https://ocr.ap-southeast-1.myhuaweicloud.cn");
 
-    public static final Region AP_SOUTHEAST_3 =
-        new Region("ap-southeast-3", "https://ocr.ap-southeast-3.myhuaweicloud.com");
+    public static final Region AP_SOUTHEAST_3 = new Region("ap-southeast-3",
+        "https://ocr.ap-southeast-3.myhuaweicloud.com", "https://ocr.ap-southeast-3.myhuaweicloud.cn");
 
-    public static final Region LA_SOUTH_2 = new Region("la-south-2", "https://ocr.la-south-2.myhuaweicloud.com");
+    public static final Region LA_SOUTH_2 =
+        new Region("la-south-2", "https://ocr.la-south-2.myhuaweicloud.com", "https://ocr.la-south-2.myhuaweicloud.cn");
 
-    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://ocr.af-south-1.myhuaweicloud.com");
+    public static final Region AF_SOUTH_1 =
+        new Region("af-south-1", "https://ocr.af-south-1.myhuaweicloud.com", "https://ocr.af-south-1.myhuaweicloud.cn");
 
-    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://ocr.la-north-2.myhuaweicloud.com");
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://ocr.la-north-2.myhuaweicloud.com",
+        "https://ocr.la-north-2.myhuaweicloud.lat");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("OCR");
 

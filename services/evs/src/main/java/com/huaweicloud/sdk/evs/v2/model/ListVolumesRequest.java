@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.evs.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -99,6 +104,95 @@ public class ListVolumesRequest {
     @JsonProperty(value = "server_id")
 
     private String serverId;
+
+    /**
+     * 查询不包含所选元数据的云硬盘
+     */
+    public static final class NotMetadataEnum {
+
+        /**
+         * Enum _HW_PASSTHROUGH_TRUE_ for value: "{\"hw:passthrough\":true}"
+         */
+        public static final NotMetadataEnum _HW_PASSTHROUGH_TRUE_ = new NotMetadataEnum("{\"hw:passthrough\":true}");
+
+        /**
+         * Enum _HW_PASSTHROUGH_FALSE_ for value: "{\"hw:passthrough\":false}"
+         */
+        public static final NotMetadataEnum _HW_PASSTHROUGH_FALSE_ = new NotMetadataEnum("{\"hw:passthrough\":false}");
+
+        /**
+         * Enum ___SYSTEM__ENCRYPTED_1_ for value: "{\"__system__encrypted\":1}"
+         */
+        public static final NotMetadataEnum ___SYSTEM__ENCRYPTED_1_ =
+            new NotMetadataEnum("{\"__system__encrypted\":1}");
+
+        /**
+         * Enum ___SYSTEM__ENCRYPTED_0_ for value: "{\"__system__encrypted\":0}"
+         */
+        public static final NotMetadataEnum ___SYSTEM__ENCRYPTED_0_ =
+            new NotMetadataEnum("{\"__system__encrypted\":0}");
+
+        private static final Map<String, NotMetadataEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, NotMetadataEnum> createStaticFields() {
+            Map<String, NotMetadataEnum> map = new HashMap<>();
+            map.put("{\"hw:passthrough\":true}", _HW_PASSTHROUGH_TRUE_);
+            map.put("{\"hw:passthrough\":false}", _HW_PASSTHROUGH_FALSE_);
+            map.put("{\"__system__encrypted\":1}", ___SYSTEM__ENCRYPTED_1_);
+            map.put("{\"__system__encrypted\":0}", ___SYSTEM__ENCRYPTED_0_);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        NotMetadataEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static NotMetadataEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NotMetadataEnum(value));
+        }
+
+        public static NotMetadataEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof NotMetadataEnum) {
+                return this.value.equals(((NotMetadataEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "not_metadata")
+
+    private NotMetadataEnum notMetadata;
 
     public ListVolumesRequest withMarker(String marker) {
         this.marker = marker;
@@ -408,6 +502,23 @@ public class ListVolumesRequest {
         this.serverId = serverId;
     }
 
+    public ListVolumesRequest withNotMetadata(NotMetadataEnum notMetadata) {
+        this.notMetadata = notMetadata;
+        return this;
+    }
+
+    /**
+     * 查询不包含所选元数据的云硬盘
+     * @return notMetadata
+     */
+    public NotMetadataEnum getNotMetadata() {
+        return notMetadata;
+    }
+
+    public void setNotMetadata(NotMetadataEnum notMetadata) {
+        this.notMetadata = notMetadata;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -427,7 +538,7 @@ public class ListVolumesRequest {
             && Objects.equals(this.dedicatedStorageName, that.dedicatedStorageName)
             && Objects.equals(this.volumeTypeId, that.volumeTypeId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.ids, that.ids) && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.serverId, that.serverId);
+            && Objects.equals(this.serverId, that.serverId) && Objects.equals(this.notMetadata, that.notMetadata);
     }
 
     @Override
@@ -449,7 +560,8 @@ public class ListVolumesRequest {
             id,
             ids,
             enterpriseProjectId,
-            serverId);
+            serverId,
+            notMetadata);
     }
 
     @Override
@@ -474,6 +586,7 @@ public class ListVolumesRequest {
         sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    serverId: ").append(toIndentedString(serverId)).append("\n");
+        sb.append("    notMetadata: ").append(toIndentedString(notMetadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

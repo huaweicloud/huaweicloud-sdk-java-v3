@@ -9,22 +9,14 @@ import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationRequest;
 import com.huaweicloud.sdk.moderation.v3.model.CheckImageModerationResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCloseAudioStreamModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCloseAudioStreamModerationJobResponse;
-import com.huaweicloud.sdk.moderation.v3.model.RunCloseVideoStreamModerationJobRequest;
-import com.huaweicloud.sdk.moderation.v3.model.RunCloseVideoStreamModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioStreamModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateAudioStreamModerationJobResponse;
-import com.huaweicloud.sdk.moderation.v3.model.RunCreateDocumentModerationJobRequest;
-import com.huaweicloud.sdk.moderation.v3.model.RunCreateDocumentModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoModerationJobResponse;
-import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoStreamModerationJobRequest;
-import com.huaweicloud.sdk.moderation.v3.model.RunCreateVideoStreamModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryAudioModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryAudioModerationJobResponse;
-import com.huaweicloud.sdk.moderation.v3.model.RunQueryDocumentModerationJobRequest;
-import com.huaweicloud.sdk.moderation.v3.model.RunQueryDocumentModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryVideoModerationJobRequest;
 import com.huaweicloud.sdk.moderation.v3.model.RunQueryVideoModerationJobResponse;
 import com.huaweicloud.sdk.moderation.v3.model.RunTextModerationRequest;
@@ -135,36 +127,6 @@ public class ModerationAsyncClient {
     }
 
     /**
-     * 关闭视频流内容审核作业
-     *
-     * 关闭视频流审核接口
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RunCloseVideoStreamModerationJobRequest 请求对象
-     * @return CompletableFuture<RunCloseVideoStreamModerationJobResponse>
-     */
-    public CompletableFuture<RunCloseVideoStreamModerationJobResponse> runCloseVideoStreamModerationJobAsync(
-        RunCloseVideoStreamModerationJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModerationMeta.runCloseVideoStreamModerationJob);
-    }
-
-    /**
-     * 关闭视频流内容审核作业
-     *
-     * 关闭视频流审核接口
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RunCloseVideoStreamModerationJobRequest 请求对象
-     * @return AsyncInvoker<RunCloseVideoStreamModerationJobRequest, RunCloseVideoStreamModerationJobResponse>
-     */
-    public AsyncInvoker<RunCloseVideoStreamModerationJobRequest, RunCloseVideoStreamModerationJobResponse> runCloseVideoStreamModerationJobAsyncInvoker(
-        RunCloseVideoStreamModerationJobRequest request) {
-        return new AsyncInvoker<>(request, ModerationMeta.runCloseVideoStreamModerationJob, hcClient);
-    }
-
-    /**
      * 创建音频内容审核作业
      *
      * 分析并识别用户上传的音频内容是否有敏感内容（如色情、政治等），并将识别结果返回给用户
@@ -225,36 +187,6 @@ public class ModerationAsyncClient {
     }
 
     /**
-     * 创建文档内容审核作业
-     *
-     * 创建文档内容审核作业，创建成功会将作业ID返回给用户
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RunCreateDocumentModerationJobRequest 请求对象
-     * @return CompletableFuture<RunCreateDocumentModerationJobResponse>
-     */
-    public CompletableFuture<RunCreateDocumentModerationJobResponse> runCreateDocumentModerationJobAsync(
-        RunCreateDocumentModerationJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModerationMeta.runCreateDocumentModerationJob);
-    }
-
-    /**
-     * 创建文档内容审核作业
-     *
-     * 创建文档内容审核作业，创建成功会将作业ID返回给用户
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RunCreateDocumentModerationJobRequest 请求对象
-     * @return AsyncInvoker<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse>
-     */
-    public AsyncInvoker<RunCreateDocumentModerationJobRequest, RunCreateDocumentModerationJobResponse> runCreateDocumentModerationJobAsyncInvoker(
-        RunCreateDocumentModerationJobRequest request) {
-        return new AsyncInvoker<>(request, ModerationMeta.runCreateDocumentModerationJob, hcClient);
-    }
-
-    /**
      * 创建视频内容审核作业
      *
      * 创建视频内容审核作业，创建成功会将作业ID返回给用户
@@ -285,36 +217,6 @@ public class ModerationAsyncClient {
     }
 
     /**
-     * 创建视频流内容审核作业
-     *
-     * 创建视频流内容审核作业，创建成功会将作业ID返回给用户
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RunCreateVideoStreamModerationJobRequest 请求对象
-     * @return CompletableFuture<RunCreateVideoStreamModerationJobResponse>
-     */
-    public CompletableFuture<RunCreateVideoStreamModerationJobResponse> runCreateVideoStreamModerationJobAsync(
-        RunCreateVideoStreamModerationJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModerationMeta.runCreateVideoStreamModerationJob);
-    }
-
-    /**
-     * 创建视频流内容审核作业
-     *
-     * 创建视频流内容审核作业，创建成功会将作业ID返回给用户
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RunCreateVideoStreamModerationJobRequest 请求对象
-     * @return AsyncInvoker<RunCreateVideoStreamModerationJobRequest, RunCreateVideoStreamModerationJobResponse>
-     */
-    public AsyncInvoker<RunCreateVideoStreamModerationJobRequest, RunCreateVideoStreamModerationJobResponse> runCreateVideoStreamModerationJobAsyncInvoker(
-        RunCreateVideoStreamModerationJobRequest request) {
-        return new AsyncInvoker<>(request, ModerationMeta.runCreateVideoStreamModerationJob, hcClient);
-    }
-
-    /**
      * 查询音频内容审核作业
      *
      * 
@@ -340,36 +242,6 @@ public class ModerationAsyncClient {
     public AsyncInvoker<RunQueryAudioModerationJobRequest, RunQueryAudioModerationJobResponse> runQueryAudioModerationJobAsyncInvoker(
         RunQueryAudioModerationJobRequest request) {
         return new AsyncInvoker<>(request, ModerationMeta.runQueryAudioModerationJob, hcClient);
-    }
-
-    /**
-     * 查询文档审核作业结果
-     *
-     * 查询文档审核结果接口
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RunQueryDocumentModerationJobRequest 请求对象
-     * @return CompletableFuture<RunQueryDocumentModerationJobResponse>
-     */
-    public CompletableFuture<RunQueryDocumentModerationJobResponse> runQueryDocumentModerationJobAsync(
-        RunQueryDocumentModerationJobRequest request) {
-        return hcClient.asyncInvokeHttp(request, ModerationMeta.runQueryDocumentModerationJob);
-    }
-
-    /**
-     * 查询文档审核作业结果
-     *
-     * 查询文档审核结果接口
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request RunQueryDocumentModerationJobRequest 请求对象
-     * @return AsyncInvoker<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse>
-     */
-    public AsyncInvoker<RunQueryDocumentModerationJobRequest, RunQueryDocumentModerationJobResponse> runQueryDocumentModerationJobAsyncInvoker(
-        RunQueryDocumentModerationJobRequest request) {
-        return new AsyncInvoker<>(request, ModerationMeta.runQueryDocumentModerationJob, hcClient);
     }
 
     /**

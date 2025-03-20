@@ -221,6 +221,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationGroupUpdate
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationRuleEnableDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DataClassificationRuleOperateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DataEntityWithExtInfo;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.DataLayerVOList;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DataProfileRO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugApiRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DebugApiResponse;
@@ -421,6 +422,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataconnectionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataconnectionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDerivativeIndexesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDerivativeIndexesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDesignDataLayersRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDesignDataLayersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDimensionGroupsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDimensionGroupsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDimensionLogicTablesRequest;
@@ -796,6 +799,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexReques
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignCompoundMetricRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignCompoundMetricResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDataLayersRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDataLayersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDerivativeIndexRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDerivativeIndexResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDimensionRequest;
@@ -5303,6 +5308,11 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAllStandardsRequest::getEndTime, ListAllStandardsRequest::setEndTime));
+        builder.<Boolean>withRequestField("need_path",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListAllStandardsRequest::getNeedPath, ListAllStandardsRequest::setNeedPath));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -6851,6 +6861,46 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDerivativeIndexesRequest::getXProjectId,
                 ListDerivativeIndexesRequest::setXProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDesignDataLayersRequest, ListDesignDataLayersResponse> listDesignDataLayers =
+        genForListDesignDataLayers();
+
+    private static HttpRequestDef<ListDesignDataLayersRequest, ListDesignDataLayersResponse> genForListDesignDataLayers() {
+        // basic
+        HttpRequestDef.Builder<ListDesignDataLayersRequest, ListDesignDataLayersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDesignDataLayersRequest.class, ListDesignDataLayersResponse.class)
+            .withName("ListDesignDataLayers")
+            .withUri("/v1/{project_id}/design/data-layers")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesignDataLayersRequest::getLimit, ListDesignDataLayersRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDesignDataLayersRequest::getOffset, ListDesignDataLayersRequest::setOffset));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesignDataLayersRequest::getWorkspace,
+                ListDesignDataLayersRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDesignDataLayersRequest::getXProjectId,
+                ListDesignDataLayersRequest::setXProjectId));
 
         // response
 
@@ -14297,6 +14347,41 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(CompoundMetricVO.class),
             f -> f.withMarshaller(UpdateDesignCompoundMetricRequest::getBody,
                 UpdateDesignCompoundMetricRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDesignDataLayersRequest, UpdateDesignDataLayersResponse> updateDesignDataLayers =
+        genForUpdateDesignDataLayers();
+
+    private static HttpRequestDef<UpdateDesignDataLayersRequest, UpdateDesignDataLayersResponse> genForUpdateDesignDataLayers() {
+        // basic
+        HttpRequestDef.Builder<UpdateDesignDataLayersRequest, UpdateDesignDataLayersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateDesignDataLayersRequest.class, UpdateDesignDataLayersResponse.class)
+            .withName("UpdateDesignDataLayers")
+            .withUri("/v1/{project_id}/design/data-layers")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignDataLayersRequest::getWorkspace,
+                UpdateDesignDataLayersRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDesignDataLayersRequest::getXProjectId,
+                UpdateDesignDataLayersRequest::setXProjectId));
+        builder.<DataLayerVOList>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DataLayerVOList.class),
+            f -> f.withMarshaller(UpdateDesignDataLayersRequest::getBody, UpdateDesignDataLayersRequest::setBody));
 
         // response
 

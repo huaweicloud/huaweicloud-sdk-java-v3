@@ -339,6 +339,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataconnectionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataconnectionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDerivativeIndexesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDerivativeIndexesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDesignDataLayersRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDesignDataLayersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDimensionGroupsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDimensionGroupsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDimensionLogicTablesRequest;
@@ -677,6 +679,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexReques
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAtomicIndexResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignCompoundMetricRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignCompoundMetricResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDataLayersRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDataLayersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDerivativeIndexRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDerivativeIndexResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignDimensionRequest;
@@ -5307,6 +5311,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<ListDerivativeIndexesRequest, ListDerivativeIndexesResponse> listDerivativeIndexesInvoker(
         ListDerivativeIndexesRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.listDerivativeIndexes, hcClient);
+    }
+
+    /**
+     * 获取数仓分层信息
+     *
+     * 获取数仓分层信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesignDataLayersRequest 请求对象
+     * @return ListDesignDataLayersResponse
+     */
+    public ListDesignDataLayersResponse listDesignDataLayers(ListDesignDataLayersRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listDesignDataLayers);
+    }
+
+    /**
+     * 获取数仓分层信息
+     *
+     * 获取数仓分层信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDesignDataLayersRequest 请求对象
+     * @return SyncInvoker<ListDesignDataLayersRequest, ListDesignDataLayersResponse>
+     */
+    public SyncInvoker<ListDesignDataLayersRequest, ListDesignDataLayersResponse> listDesignDataLayersInvoker(
+        ListDesignDataLayersRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listDesignDataLayers, hcClient);
     }
 
     /**
@@ -10042,6 +10075,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<UpdateDesignCompoundMetricRequest, UpdateDesignCompoundMetricResponse> updateDesignCompoundMetricInvoker(
         UpdateDesignCompoundMetricRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.updateDesignCompoundMetric, hcClient);
+    }
+
+    /**
+     * 修改或删除数仓分层
+     *
+     * 修改或删除数仓分层
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignDataLayersRequest 请求对象
+     * @return UpdateDesignDataLayersResponse
+     */
+    public UpdateDesignDataLayersResponse updateDesignDataLayers(UpdateDesignDataLayersRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.updateDesignDataLayers);
+    }
+
+    /**
+     * 修改或删除数仓分层
+     *
+     * 修改或删除数仓分层
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDesignDataLayersRequest 请求对象
+     * @return SyncInvoker<UpdateDesignDataLayersRequest, UpdateDesignDataLayersResponse>
+     */
+    public SyncInvoker<UpdateDesignDataLayersRequest, UpdateDesignDataLayersResponse> updateDesignDataLayersInvoker(
+        UpdateDesignDataLayersRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.updateDesignDataLayers, hcClient);
     }
 
     /**

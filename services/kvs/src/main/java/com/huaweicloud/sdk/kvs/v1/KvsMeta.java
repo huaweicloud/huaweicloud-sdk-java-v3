@@ -13,6 +13,8 @@ import com.huaweicloud.sdk.kvs.v1.model.CreateTableRequest;
 import com.huaweicloud.sdk.kvs.v1.model.CreateTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.DeleteKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.DeleteKvResponse;
+import com.huaweicloud.sdk.kvs.v1.model.DeleteTableRequest;
+import com.huaweicloud.sdk.kvs.v1.model.DeleteTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.DescribeTableRequest;
 import com.huaweicloud.sdk.kvs.v1.model.DescribeTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.GetKvRequest;
@@ -49,6 +51,28 @@ public class KvsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateTableRequest::getStoreName, CreateTableRequest::setStoreName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTableRequest, DeleteTableResponse> deleteTable = genForDeleteTable();
+
+    private static HttpRequestDef<DeleteTableRequest, DeleteTableResponse> genForDeleteTable() {
+        // basic
+        HttpRequestDef.Builder<DeleteTableRequest, DeleteTableResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DeleteTableRequest.class, DeleteTableResponse.class)
+                .withName("DeleteTable")
+                .withUri("/v1/delete-table")
+                .withContentType("application/bson");
+
+        // requests
+        builder.<String>withRequestField("store_name",
+            LocationType.Cname,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTableRequest::getStoreName, DeleteTableRequest::setStoreName));
 
         // response
 

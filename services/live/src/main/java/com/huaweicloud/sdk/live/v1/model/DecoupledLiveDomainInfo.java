@@ -320,7 +320,7 @@ public class DecoupledLiveDomainInfo {
     private String statusDescribe;
 
     /**
-     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球加速区域 
      */
     public static final class ServiceAreaEnum {
 
@@ -334,12 +334,18 @@ public class DecoupledLiveDomainInfo {
          */
         public static final ServiceAreaEnum OUTSIDE_MAINLAND_CHINA = new ServiceAreaEnum("outside_mainland_china");
 
+        /**
+         * Enum GLOBAL for value: "global"
+         */
+        public static final ServiceAreaEnum GLOBAL = new ServiceAreaEnum("global");
+
         private static final Map<String, ServiceAreaEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ServiceAreaEnum> createStaticFields() {
             Map<String, ServiceAreaEnum> map = new HashMap<>();
             map.put("mainland_china", MAINLAND_CHINA);
             map.put("outside_mainland_china", OUTSIDE_MAINLAND_CHINA);
+            map.put("global", GLOBAL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -398,6 +404,81 @@ public class DecoupledLiveDomainInfo {
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    /**
+     * 域名支持的拉流协议；仅domain_type为pull时生效。若不填写此字段，视为默认支持FLV、RTMP拉流协议 - flv_rtmp表示支持FLV、RTMP协议 - hls表示支持HLS协议 
+     */
+    public static final class PullProtocolEnum {
+
+        /**
+         * Enum FLV_RTMP for value: "flv_rtmp"
+         */
+        public static final PullProtocolEnum FLV_RTMP = new PullProtocolEnum("flv_rtmp");
+
+        /**
+         * Enum HLS for value: "hls"
+         */
+        public static final PullProtocolEnum HLS = new PullProtocolEnum("hls");
+
+        private static final Map<String, PullProtocolEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PullProtocolEnum> createStaticFields() {
+            Map<String, PullProtocolEnum> map = new HashMap<>();
+            map.put("flv_rtmp", FLV_RTMP);
+            map.put("hls", HLS);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PullProtocolEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PullProtocolEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PullProtocolEnum(value));
+        }
+
+        public static PullProtocolEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PullProtocolEnum) {
+                return this.value.equals(((PullProtocolEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pull_protocol")
+
+    private PullProtocolEnum pullProtocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_ipv6")
@@ -563,7 +644,7 @@ public class DecoupledLiveDomainInfo {
     }
 
     /**
-     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 
+     * 域名应用区域 - mainland_china表示中国大陆区域 - outside_mainland_china表示中国大陆以外区域 - global表示全球加速区域 
      * @return serviceArea
      */
     public ServiceAreaEnum getServiceArea() {
@@ -589,6 +670,23 @@ public class DecoupledLiveDomainInfo {
 
     public void setEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
+    }
+
+    public DecoupledLiveDomainInfo withPullProtocol(PullProtocolEnum pullProtocol) {
+        this.pullProtocol = pullProtocol;
+        return this;
+    }
+
+    /**
+     * 域名支持的拉流协议；仅domain_type为pull时生效。若不填写此字段，视为默认支持FLV、RTMP拉流协议 - flv_rtmp表示支持FLV、RTMP协议 - hls表示支持HLS协议 
+     * @return pullProtocol
+     */
+    public PullProtocolEnum getPullProtocol() {
+        return pullProtocol;
+    }
+
+    public void setPullProtocol(PullProtocolEnum pullProtocol) {
+        this.pullProtocol = pullProtocol;
     }
 
     public DecoupledLiveDomainInfo withIsIpv6(Boolean isIpv6) {
@@ -625,7 +723,7 @@ public class DecoupledLiveDomainInfo {
             && Objects.equals(this.statusDescribe, that.statusDescribe)
             && Objects.equals(this.serviceArea, that.serviceArea)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.isIpv6, that.isIpv6);
+            && Objects.equals(this.pullProtocol, that.pullProtocol) && Objects.equals(this.isIpv6, that.isIpv6);
     }
 
     @Override
@@ -641,6 +739,7 @@ public class DecoupledLiveDomainInfo {
             statusDescribe,
             serviceArea,
             enterpriseProjectId,
+            pullProtocol,
             isIpv6);
     }
 
@@ -659,6 +758,7 @@ public class DecoupledLiveDomainInfo {
         sb.append("    statusDescribe: ").append(toIndentedString(statusDescribe)).append("\n");
         sb.append("    serviceArea: ").append(toIndentedString(serviceArea)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    pullProtocol: ").append(toIndentedString(pullProtocol)).append("\n");
         sb.append("    isIpv6: ").append(toIndentedString(isIpv6)).append("\n");
         sb.append("}");
         return sb.toString();

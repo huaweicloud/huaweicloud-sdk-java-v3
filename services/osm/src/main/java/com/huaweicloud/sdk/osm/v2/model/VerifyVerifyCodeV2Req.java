@@ -80,7 +80,7 @@ public class VerifyVerifyCodeV2Req {
     }
 
     /**
-     * 联系方式的类型。0：短信；1：邮件
+     * 联系方式的类型，0：短信；1：邮件
      * minimum: 0
      * maximum: 1
      * @return contactWay

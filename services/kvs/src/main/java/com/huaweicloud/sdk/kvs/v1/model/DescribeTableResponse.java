@@ -56,6 +56,12 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
 
     private TtlSpecification ttlSpecification;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sse_specification")
+    @BsonProperty(value = "sse_specification")
+
+    private SseSpecification sseSpecification;
+
     private static Codec<DescribeTableResponse> codec;
 
     public DescribeTableResponse withTableName(String tableName) {
@@ -222,6 +228,32 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
         this.ttlSpecification = ttlSpecification;
     }
 
+    public DescribeTableResponse withSseSpecification(SseSpecification sseSpecification) {
+        this.sseSpecification = sseSpecification;
+        return this;
+    }
+
+    public DescribeTableResponse withSseSpecification(Consumer<SseSpecification> sseSpecificationSetter) {
+        if (this.sseSpecification == null) {
+            this.sseSpecification = new SseSpecification();
+            sseSpecificationSetter.accept(this.sseSpecification);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sseSpecification
+     * @return sseSpecification
+     */
+    public SseSpecification getSseSpecification() {
+        return sseSpecification;
+    }
+
+    public void setSseSpecification(SseSpecification sseSpecification) {
+        this.sseSpecification = sseSpecification;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -236,7 +268,8 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
             && Objects.equals(this.localSecondaryIndexSchema, that.localSecondaryIndexSchema)
             && Objects.equals(this.globalSecondaryIndexSchema, that.globalSecondaryIndexSchema)
             && Objects.equals(this.runTimeInfo, that.runTimeInfo)
-            && Objects.equals(this.ttlSpecification, that.ttlSpecification);
+            && Objects.equals(this.ttlSpecification, that.ttlSpecification)
+            && Objects.equals(this.sseSpecification, that.sseSpecification);
     }
 
     @Override
@@ -246,7 +279,8 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
             localSecondaryIndexSchema,
             globalSecondaryIndexSchema,
             runTimeInfo,
-            ttlSpecification);
+            ttlSpecification,
+            sseSpecification);
     }
 
     @Override
@@ -259,6 +293,7 @@ public class DescribeTableResponse extends SdkBsonDocResponse {
         sb.append("    globalSecondaryIndexSchema: ").append(toIndentedString(globalSecondaryIndexSchema)).append("\n");
         sb.append("    runTimeInfo: ").append(toIndentedString(runTimeInfo)).append("\n");
         sb.append("    ttlSpecification: ").append(toIndentedString(ttlSpecification)).append("\n");
+        sb.append("    sseSpecification: ").append(toIndentedString(sseSpecification)).append("\n");
         sb.append("}");
         return sb.toString();
     }

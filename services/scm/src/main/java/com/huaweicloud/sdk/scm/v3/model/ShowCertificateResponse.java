@@ -120,6 +120,21 @@ public class ShowCertificateResponse extends SdkResponse {
     private String fingerprint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "shared")
+
+    private Boolean shared;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "application_info")
+
+    private ShowCertificateResponseBodyApplicationInfo applicationInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -392,7 +407,7 @@ public class ShowCertificateResponse extends SdkResponse {
     }
 
     /**
-     * 多域名类型，取值如下： - primary_single 主单 - primary_wildcard 主泛
+     * 多域名类型，取值如下： - primary_single：主单域名 - primary_wildcard：主泛域名
      * @return multiDomainType
      */
     public String getMultiDomainType() {
@@ -492,6 +507,67 @@ public class ShowCertificateResponse extends SdkResponse {
         this.fingerprint = fingerprint;
     }
 
+    public ShowCertificateResponse withShared(Boolean shared) {
+        this.shared = shared;
+        return this;
+    }
+
+    /**
+     * 是否是共享资源。
+     * @return shared
+     */
+    public Boolean getShared() {
+        return shared;
+    }
+
+    public void setShared(Boolean shared) {
+        this.shared = shared;
+    }
+
+    public ShowCertificateResponse withApplicationInfo(ShowCertificateResponseBodyApplicationInfo applicationInfo) {
+        this.applicationInfo = applicationInfo;
+        return this;
+    }
+
+    public ShowCertificateResponse withApplicationInfo(
+        Consumer<ShowCertificateResponseBodyApplicationInfo> applicationInfoSetter) {
+        if (this.applicationInfo == null) {
+            this.applicationInfo = new ShowCertificateResponseBodyApplicationInfo();
+            applicationInfoSetter.accept(this.applicationInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get applicationInfo
+     * @return applicationInfo
+     */
+    public ShowCertificateResponseBodyApplicationInfo getApplicationInfo() {
+        return applicationInfo;
+    }
+
+    public void setApplicationInfo(ShowCertificateResponseBodyApplicationInfo applicationInfo) {
+        this.applicationInfo = applicationInfo;
+    }
+
+    public ShowCertificateResponse withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 证书的描述。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public ShowCertificateResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -564,7 +640,9 @@ public class ShowCertificateResponse extends SdkResponse {
             && Objects.equals(this.multiDomainType, that.multiDomainType) && Objects.equals(this.domain, that.domain)
             && Objects.equals(this.sans, that.sans) && Objects.equals(this.domainCount, that.domainCount)
             && Objects.equals(this.wildcardCount, that.wildcardCount)
-            && Objects.equals(this.fingerprint, that.fingerprint)
+            && Objects.equals(this.fingerprint, that.fingerprint) && Objects.equals(this.shared, that.shared)
+            && Objects.equals(this.applicationInfo, that.applicationInfo)
+            && Objects.equals(this.description, that.description)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.authentification, that.authentification);
     }
@@ -592,6 +670,9 @@ public class ShowCertificateResponse extends SdkResponse {
             domainCount,
             wildcardCount,
             fingerprint,
+            shared,
+            applicationInfo,
+            description,
             enterpriseProjectId,
             authentification);
     }
@@ -621,6 +702,9 @@ public class ShowCertificateResponse extends SdkResponse {
         sb.append("    domainCount: ").append(toIndentedString(domainCount)).append("\n");
         sb.append("    wildcardCount: ").append(toIndentedString(wildcardCount)).append("\n");
         sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
+        sb.append("    shared: ").append(toIndentedString(shared)).append("\n");
+        sb.append("    applicationInfo: ").append(toIndentedString(applicationInfo)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    authentification: ").append(toIndentedString(authentification)).append("\n");
         sb.append("}");

@@ -85,7 +85,7 @@ public class CreateScoreV2Req {
     }
 
     /**
-     * 组id
+     * 华为云IAM组id，操作查询同组其他工单时，该id必传
      * @return groupId
      */
     public String getGroupId() {

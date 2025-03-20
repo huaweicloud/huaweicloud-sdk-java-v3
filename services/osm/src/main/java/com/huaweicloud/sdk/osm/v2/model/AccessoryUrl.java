@@ -16,6 +16,11 @@ public class AccessoryUrl {
     private String accessoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "accessory_name")
+
+    private String accessoryName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "accessory_url")
 
     private String accessoryUrl;
@@ -35,6 +40,23 @@ public class AccessoryUrl {
 
     public void setAccessoryId(String accessoryId) {
         this.accessoryId = accessoryId;
+    }
+
+    public AccessoryUrl withAccessoryName(String accessoryName) {
+        this.accessoryName = accessoryName;
+        return this;
+    }
+
+    /**
+     * 文件名称
+     * @return accessoryName
+     */
+    public String getAccessoryName() {
+        return accessoryName;
+    }
+
+    public void setAccessoryName(String accessoryName) {
+        this.accessoryName = accessoryName;
     }
 
     public AccessoryUrl withAccessoryUrl(String accessoryUrl) {
@@ -64,12 +86,13 @@ public class AccessoryUrl {
         }
         AccessoryUrl that = (AccessoryUrl) obj;
         return Objects.equals(this.accessoryId, that.accessoryId)
+            && Objects.equals(this.accessoryName, that.accessoryName)
             && Objects.equals(this.accessoryUrl, that.accessoryUrl);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(accessoryId, accessoryUrl);
+        return Objects.hash(accessoryId, accessoryName, accessoryUrl);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class AccessoryUrl {
         StringBuilder sb = new StringBuilder();
         sb.append("class AccessoryUrl {\n");
         sb.append("    accessoryId: ").append(toIndentedString(accessoryId)).append("\n");
+        sb.append("    accessoryName: ").append(toIndentedString(accessoryName)).append("\n");
         sb.append("    accessoryUrl: ").append(toIndentedString(accessoryUrl)).append("\n");
         sb.append("}");
         return sb.toString();

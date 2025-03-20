@@ -180,7 +180,7 @@ public class CreateCsrRequestBody {
     }
 
     /**
-     * 城市，用途为企业证书场景下必填。当“usage”取值为“ENTERPRISE”时，本参数必填。取值示例：北京市。
+     * 城市。当“usage”取值为“ENTERPRISE”时，本参数必填。取值示例：北京市。
      * @return companyCity
      */
     public String getCompanyCity() {
@@ -197,7 +197,7 @@ public class CreateCsrRequestBody {
     }
 
     /**
-     * 公司名称，用途为企业证书场景下必填。当“usage”取值为“ENTERPRISE”时，本参数必填。
+     * 公司名称。当“usage”取值为“ENTERPRISE”时，本参数必填。
      * @return companyName
      */
     public String getCompanyName() {

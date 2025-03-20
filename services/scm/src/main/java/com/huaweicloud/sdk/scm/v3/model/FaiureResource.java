@@ -26,7 +26,7 @@ public class FaiureResource {
     }
 
     /**
-     * 部署失败的资源信息,部署WAF与ELB时，此字段为资源ID，部署CDN时，本字段为加速域名。
+     * 部署失败的资源信息，部署WAF与ELB时，此字段为资源ID，部署CDN时，本字段为加速域名。
      * @return resource
      */
     public String getResource() {

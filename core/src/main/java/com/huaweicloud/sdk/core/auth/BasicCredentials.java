@@ -106,7 +106,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                 return this;
             }
 
-            String iamEndpoint = getUsedIamEndpoint();
+            String iamEndpoint = getUsedIamEndpoint(regionId);
             HcClient inner = hcClient.overrideEndpoints(Collections.singletonList(iamEndpoint));
 
             Function<HttpRequest, Boolean> derivedPredicate = getDerivedPredicate();

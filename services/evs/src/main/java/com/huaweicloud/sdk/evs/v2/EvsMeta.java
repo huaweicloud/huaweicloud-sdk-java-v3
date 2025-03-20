@@ -653,6 +653,11 @@ public class EvsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListVolumesRequest::getServerId, ListVolumesRequest::setServerId));
+        builder.<ListVolumesRequest.NotMetadataEnum>withRequestField("not_metadata",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListVolumesRequest.NotMetadataEnum.class),
+            f -> f.withMarshaller(ListVolumesRequest::getNotMetadata, ListVolumesRequest::setNotMetadata));
 
         // response
 

@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.scm.v3.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * PurchaseCertificateRequestBody
@@ -74,6 +77,11 @@ public class PurchaseCertificateRequestBody {
     @JsonProperty(value = "order_id")
 
     private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ScsResourceTag> tags = null;
 
     public PurchaseCertificateRequestBody withCertBrand(String certBrand) {
         this.certBrand = certBrand;
@@ -206,7 +214,7 @@ public class PurchaseCertificateRequestBody {
     }
 
     /**
-     * 多域名中的主域名类型 - SINGLE_DOMAIN：主单域名 - WILDCARD_DOMAIN：主泛域名
+     * 多域名中的主域名类型。 - SINGLE_DOMAIN：主单域名 - WILDCARD_DOMAIN：主泛域名
      * @return primaryDomainType
      */
     public String getPrimaryDomainType() {
@@ -278,7 +286,7 @@ public class PurchaseCertificateRequestBody {
     }
 
     /**
-     * 企业多项目ID。用户未开通企业多项目时，不需要输入该字段。 用户开通企业多项目时，查询资源可以输入该字段。 若用户不输入该字段，默认查询租户所有有权限的企业多项目下的资源。 此时“enterprise_project_id”取值为“all”。 若用户输入该字段，取值满足以下任一条件.  取值为“all”  取值为“0”  满足正则匹配：“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”
+     * 企业多项目ID。用户未开通企业多项目时，不需要输入该字段。 用户开通企业多项目时，查询资源可以输入该字段。 若用户不输入该字段，默认查询租户所有有权限的企业多项目下的资源。 此时“enterprise_project_id”取值为“all”。 若用户输入该字段，取值满足以下任一条件。 - 取值为“all” - 取值为“0” - 满足正则匹配：“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -295,7 +303,7 @@ public class PurchaseCertificateRequestBody {
     }
 
     /**
-     * 订单号。仅组合购场景使用
+     * 订单号。仅组合购买场景使用。
      * @return orderId
      */
     public String getOrderId() {
@@ -304,6 +312,39 @@ public class PurchaseCertificateRequestBody {
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
+    }
+
+    public PurchaseCertificateRequestBody withTags(List<ScsResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public PurchaseCertificateRequestBody addTagsItem(ScsResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public PurchaseCertificateRequestBody withTags(Consumer<List<ScsResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表。
+     * @return tags
+     */
+    public List<ScsResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ScsResourceTag> tags) {
+        this.tags = tags;
     }
 
     @Override
@@ -326,7 +367,7 @@ public class PurchaseCertificateRequestBody {
             && Objects.equals(this.wildcardDomainNumber, that.wildcardDomainNumber)
             && Objects.equals(this.isAutoPay, that.isAutoPay)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.orderId, that.orderId);
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -343,7 +384,8 @@ public class PurchaseCertificateRequestBody {
             wildcardDomainNumber,
             isAutoPay,
             enterpriseProjectId,
-            orderId);
+            orderId,
+            tags);
     }
 
     @Override
@@ -363,6 +405,7 @@ public class PurchaseCertificateRequestBody {
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();
     }

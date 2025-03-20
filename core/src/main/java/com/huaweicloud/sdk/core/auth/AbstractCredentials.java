@@ -205,8 +205,15 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
             return iamEndpoint;
         }
 
-        String env = System.getenv(Constants.IAM_ENDPOINT_ENV_NAME);
-        return StringUtils.isEmpty(env) ? Constants.DEFAULT_IAM_ENDPOINT : env;
+        return Iam.getEndpoint();
+    }
+
+    protected String getUsedIamEndpoint(String regionId) {
+        if (!StringUtils.isEmpty(iamEndpoint)) {
+            return iamEndpoint;
+        }
+
+        return Iam.getEndpoint(regionId);
     }
 
     protected boolean isDerivedAuth(HttpRequest httpRequest) {

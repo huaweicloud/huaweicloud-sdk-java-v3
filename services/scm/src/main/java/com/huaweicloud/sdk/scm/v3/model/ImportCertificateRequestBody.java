@@ -31,6 +31,11 @@ public class ImportCertificateRequestBody {
     private String privateKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duplicate_check")
+
+    private Boolean duplicateCheck;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -51,7 +56,7 @@ public class ImportCertificateRequestBody {
     }
 
     /**
-     * 证书名称。字符长度为3~63位。
+     * 证书名称。字符长度为3~63位, 请输入英文字符，数字，下划线，中划线，英文句点。
      * @return name
      */
     public String getName() {
@@ -113,13 +118,30 @@ public class ImportCertificateRequestBody {
         this.privateKey = privateKey;
     }
 
+    public ImportCertificateRequestBody withDuplicateCheck(Boolean duplicateCheck) {
+        this.duplicateCheck = duplicateCheck;
+        return this;
+    }
+
+    /**
+     * 是否允许上传相同证书。 - true：同意上传相同证书议。 - false：不同意上传相同证书。
+     * @return duplicateCheck
+     */
+    public Boolean getDuplicateCheck() {
+        return duplicateCheck;
+    }
+
+    public void setDuplicateCheck(Boolean duplicateCheck) {
+        this.duplicateCheck = duplicateCheck;
+    }
+
     public ImportCertificateRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 企业多项目ID。用户未开通企业多项目时，不需要输入该字段。 用户开通企业多项目时，查询资源可以输入该字段。 若用户不输入该字段，默认查询租户所有有权限的企业多项目下的资源。 此时“enterprise_project_id”取值为“all”。 若用户输入该字段，取值满足以下任一条件.  取值为“all”  取值为“0”  满足正则匹配：“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”
+     * 企业多项目ID。用户未开通企业多项目时，不需要输入该字段。 用户开通企业多项目时，查询资源可以输入该字段。 若用户不输入该字段，默认查询租户所有有权限的企业多项目下的资源。 此时“enterprise_project_id”取值为“all”。 若用户输入该字段，取值满足以下任一条件。 - 取值为“all” - 取值为“0” - 满足正则匹配：“^[0-9a-z]{8}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{4}-[0-9a-z]{12}$”
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -176,6 +198,7 @@ public class ImportCertificateRequestBody {
         return Objects.equals(this.name, that.name) && Objects.equals(this.certificate, that.certificate)
             && Objects.equals(this.certificateChain, that.certificateChain)
             && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.duplicateCheck, that.duplicateCheck)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.encCertificate, that.encCertificate)
             && Objects.equals(this.encPrivateKey, that.encPrivateKey);
@@ -183,8 +206,14 @@ public class ImportCertificateRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(name, certificate, certificateChain, privateKey, enterpriseProjectId, encCertificate, encPrivateKey);
+        return Objects.hash(name,
+            certificate,
+            certificateChain,
+            privateKey,
+            duplicateCheck,
+            enterpriseProjectId,
+            encCertificate,
+            encPrivateKey);
     }
 
     @Override
@@ -195,6 +224,7 @@ public class ImportCertificateRequestBody {
         sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
         sb.append("    certificateChain: ").append(toIndentedString(certificateChain)).append("\n");
         sb.append("    privateKey: ").append(toIndentedString(privateKey)).append("\n");
+        sb.append("    duplicateCheck: ").append(toIndentedString(duplicateCheck)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    encCertificate: ").append(toIndentedString(encCertificate)).append("\n");
         sb.append("    encPrivateKey: ").append(toIndentedString(encPrivateKey)).append("\n");

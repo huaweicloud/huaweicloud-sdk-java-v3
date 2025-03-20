@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.kvs.v1.model.CreateTableRequest;
 import com.huaweicloud.sdk.kvs.v1.model.CreateTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.DeleteKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.DeleteKvResponse;
+import com.huaweicloud.sdk.kvs.v1.model.DeleteTableRequest;
+import com.huaweicloud.sdk.kvs.v1.model.DeleteTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.DescribeTableRequest;
 import com.huaweicloud.sdk.kvs.v1.model.DescribeTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.GetKvRequest;
@@ -78,6 +80,34 @@ public class KvsAsyncClient implements IKvsAsyncClient {
      */
     public AsyncInvoker<CreateTableRequest, CreateTableResponse> createTableAsyncInvoker(CreateTableRequest request) {
         return new AsyncInvoker<>(request, KvsMeta.createTable, hcClient);
+    }
+
+    /**
+     * 删除表
+     *
+     * 删除指定表及所有kv文档，表标记为删除后，空间不会立刻释放，并发的读写访问仍需继续完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTableRequest 请求对象
+     * @return CompletableFuture<DeleteTableResponse>
+     */
+    public CompletableFuture<DeleteTableResponse> deleteTableAsync(DeleteTableRequest request) {
+        return hcClient.asyncInvokeHttp(request, KvsMeta.deleteTable);
+    }
+
+    /**
+     * 删除表
+     *
+     * 删除指定表及所有kv文档，表标记为删除后，空间不会立刻释放，并发的读写访问仍需继续完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTableRequest 请求对象
+     * @return AsyncInvoker<DeleteTableRequest, DeleteTableResponse>
+     */
+    public AsyncInvoker<DeleteTableRequest, DeleteTableResponse> deleteTableAsyncInvoker(DeleteTableRequest request) {
+        return new AsyncInvoker<>(request, KvsMeta.deleteTable, hcClient);
     }
 
     /**

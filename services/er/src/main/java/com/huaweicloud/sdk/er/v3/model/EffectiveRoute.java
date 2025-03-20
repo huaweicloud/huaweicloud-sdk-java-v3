@@ -38,6 +38,11 @@ public class EffectiveRoute {
 
     private String routeType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public EffectiveRoute withRouteId(String routeId) {
         this.routeId = routeId;
         return this;
@@ -139,6 +144,23 @@ public class EffectiveRoute {
         this.routeType = routeType;
     }
 
+    public EffectiveRoute withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 路由描述信息
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -150,12 +172,12 @@ public class EffectiveRoute {
         EffectiveRoute that = (EffectiveRoute) obj;
         return Objects.equals(this.routeId, that.routeId) && Objects.equals(this.destination, that.destination)
             && Objects.equals(this.nextHops, that.nextHops) && Objects.equals(this.isBlackhole, that.isBlackhole)
-            && Objects.equals(this.routeType, that.routeType);
+            && Objects.equals(this.routeType, that.routeType) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(routeId, destination, nextHops, isBlackhole, routeType);
+        return Objects.hash(routeId, destination, nextHops, isBlackhole, routeType, description);
     }
 
     @Override
@@ -167,6 +189,7 @@ public class EffectiveRoute {
         sb.append("    nextHops: ").append(toIndentedString(nextHops)).append("\n");
         sb.append("    isBlackhole: ").append(toIndentedString(isBlackhole)).append("\n");
         sb.append("    routeType: ").append(toIndentedString(routeType)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

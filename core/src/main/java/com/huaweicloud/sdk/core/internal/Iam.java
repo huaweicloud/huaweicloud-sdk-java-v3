@@ -21,6 +21,7 @@
 
 package com.huaweicloud.sdk.core.internal;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.huaweicloud.sdk.core.Constants;
 import com.huaweicloud.sdk.core.exception.ClientRequestException;
 import com.huaweicloud.sdk.core.exception.SdkErrorMessage;
@@ -40,11 +41,17 @@ import com.huaweicloud.sdk.core.internal.model.GetIdTokenRequestBody;
 import com.huaweicloud.sdk.core.internal.model.GetIdTokenScopeDomainOrProjectBody;
 import com.huaweicloud.sdk.core.utils.ExceptionUtils;
 import com.huaweicloud.sdk.core.utils.JsonUtils;
+import com.huaweicloud.sdk.core.utils.StringUtils;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
@@ -55,7 +62,36 @@ public class Iam {
 
     private static final String CREATE_TOKEN_WITH_ID_TOKEN_URI = "/v3.0/OS-AUTH/id-token/tokens";
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(Iam.class);
 
+    private static final Map<String, String> ENDPOINTS = processEndpoints();
+
+    private static Map<String, String> processEndpoints() {
+        try (InputStream inputStream = Iam.class.getClassLoader()
+                .getResourceAsStream("iam_endpoints.json")) {
+            if (inputStream == null) {
+                LOGGER.warn("cannot find iam endpoints config file, use default");
+                return new HashMap<>();
+            }
+            return JsonUtils.fromStream(inputStream, new TypeReference<Map<String, String>>() {
+            });
+        } catch (Exception e) {
+            LOGGER.warn("load iam endpoints error, %s", e);
+            return new HashMap<>();
+        }
+    }
+
+    public static String getEndpoint() {
+        String env = System.getenv(Constants.IAM_ENDPOINT_ENV_NAME);
+        return StringUtils.isEmpty(env) ? Constants.DEFAULT_IAM_ENDPOINT : env;
+    }
+
+    public static String getEndpoint(String regionId) {
+        if (ENDPOINTS.containsKey(regionId)) {
+            return ENDPOINTS.get(regionId);
+        }
+        return getEndpoint();
+    }
 
     public static Credential getCredentialFromMetadata() {
         OkHttpClient client = new OkHttpClient.Builder().connectTimeout(3, TimeUnit.SECONDS).build();

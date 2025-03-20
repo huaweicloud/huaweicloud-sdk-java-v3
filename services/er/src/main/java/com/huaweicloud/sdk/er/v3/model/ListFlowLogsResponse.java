@@ -25,6 +25,11 @@ public class ListFlowLogsResponse extends SdkResponse {
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Long totalCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page_info")
 
     private PageInfo pageInfo;
@@ -79,6 +84,23 @@ public class ListFlowLogsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    public ListFlowLogsResponse withTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 总计数量
+     * @return totalCount
+     */
+    public Long getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Long totalCount) {
+        this.totalCount = totalCount;
+    }
+
     public ListFlowLogsResponse withPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
         return this;
@@ -115,12 +137,12 @@ public class ListFlowLogsResponse extends SdkResponse {
         }
         ListFlowLogsResponse that = (ListFlowLogsResponse) obj;
         return Objects.equals(this.flowLogs, that.flowLogs) && Objects.equals(this.requestId, that.requestId)
-            && Objects.equals(this.pageInfo, that.pageInfo);
+            && Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flowLogs, requestId, pageInfo);
+        return Objects.hash(flowLogs, requestId, totalCount, pageInfo);
     }
 
     @Override
@@ -129,6 +151,7 @@ public class ListFlowLogsResponse extends SdkResponse {
         sb.append("class ListFlowLogsResponse {\n");
         sb.append("    flowLogs: ").append(toIndentedString(flowLogs)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
         sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();

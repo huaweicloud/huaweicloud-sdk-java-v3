@@ -239,7 +239,7 @@ public class ScmAsyncClient {
     /**
      * 导入证书
      *
-     * 导入证书到SCM服务管理。
+     * 导入证书到CCM服务管理。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -253,7 +253,7 @@ public class ScmAsyncClient {
     /**
      * 导入证书
      *
-     * 导入证书到SCM服务管理。
+     * 导入证书到CCM服务管理。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -297,7 +297,7 @@ public class ScmAsyncClient {
     /**
      * 查询已部署资源
      *
-     * 查询证书已部署的具体资源。针对已签发和上传的非国密证书
+     * 查询证书已部署的具体资源。针对已签发和上传的非国密证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -312,7 +312,7 @@ public class ScmAsyncClient {
     /**
      * 查询已部署资源
      *
-     * 查询证书已部署的具体资源。针对已签发和上传的非国密证书
+     * 查询证书已部署的具体资源。针对已签发和上传的非国密证书。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

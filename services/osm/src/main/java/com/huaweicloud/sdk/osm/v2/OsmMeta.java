@@ -1427,7 +1427,7 @@ public class OsmMeta {
         // requests
         builder.<String>withRequestField("group_id",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAccessoryAccessUrlsRequest::getGroupId,
                 ListAccessoryAccessUrlsRequest::setGroupId));
@@ -2875,10 +2875,10 @@ public class OsmMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("privilege",
+        builder.<ListPrivilegesRequest.PrivilegeEnum>withRequestField("privilege",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListPrivilegesRequest.PrivilegeEnum.class),
             f -> f.withMarshaller(ListPrivilegesRequest::getPrivilege, ListPrivilegesRequest::setPrivilege));
         builder.<Integer>withRequestField("X-Site",
             LocationType.Header,
@@ -3654,7 +3654,7 @@ public class OsmMeta {
             f -> f.withMarshaller(ShowCaseExtendsParamRequest::getCaseId, ShowCaseExtendsParamRequest::setCaseId));
         builder.<String>withRequestField("group_id",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowCaseExtendsParamRequest::getGroupId, ShowCaseExtendsParamRequest::setGroupId));
         builder.<Integer>withRequestField("X-Site",
@@ -3838,10 +3838,10 @@ public class OsmMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("agreement_type",
+        builder.<ShowLatestPublishedAgreementRequest.AgreementTypeEnum>withRequestField("agreement_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ShowLatestPublishedAgreementRequest.AgreementTypeEnum.class),
             f -> f.withMarshaller(ShowLatestPublishedAgreementRequest::getAgreementType,
                 ShowLatestPublishedAgreementRequest::setAgreementType));
         builder.<Integer>withRequestField("X-Site",
@@ -4077,10 +4077,10 @@ public class OsmMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("agreement_type",
+        builder.<ShowSignedLatestPublishedAgreementRequest.AgreementTypeEnum>withRequestField("agreement_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ShowSignedLatestPublishedAgreementRequest.AgreementTypeEnum.class),
             f -> f.withMarshaller(ShowSignedLatestPublishedAgreementRequest::getAgreementType,
                 ShowSignedLatestPublishedAgreementRequest::setAgreementType));
         builder.<Integer>withRequestField("X-Site",

@@ -86,6 +86,11 @@ public class CertificateDetail {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -351,6 +356,23 @@ public class CertificateDetail {
         this.description = description;
     }
 
+    public CertificateDetail withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * 账号ID。
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
     public CertificateDetail withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
@@ -386,7 +408,7 @@ public class CertificateDetail {
             && Objects.equals(this.validityPeriod, that.validityPeriod) && Objects.equals(this.status, that.status)
             && Objects.equals(this.domainCount, that.domainCount)
             && Objects.equals(this.wildcardCount, that.wildcardCount)
-            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.domainId, that.domainId)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
@@ -407,6 +429,7 @@ public class CertificateDetail {
             domainCount,
             wildcardCount,
             description,
+            domainId,
             enterpriseProjectId);
     }
 
@@ -429,6 +452,7 @@ public class CertificateDetail {
         sb.append("    domainCount: ").append(toIndentedString(domainCount)).append("\n");
         sb.append("    wildcardCount: ").append(toIndentedString(wildcardCount)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();

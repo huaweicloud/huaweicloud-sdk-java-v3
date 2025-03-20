@@ -338,8 +338,8 @@ VpcClient client = VpcClient.newBuilder()
 // 根据需要配置网络代理，网络代理默认的协议为 `http` 协议
 HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig()
     // 请根据实际情况替换示例中的代理地址和端口号
-    .withProxyHost("proxy.huaweicloud.com")
-    .withProxyPort(8080)
+    .withProxyHost("proxy.xxx.com")
+    .withProxyPort(12345)
     // 如果代理需要认证，请配置用户名和密码
     // 本示例中的账号和密码保存在环境变量中，运行本示例前请先在本地环境中配置环境变量PROXY_USERNAME和PROXY_PASSWORD
     .withProxyUsername(System.getenv("PROXY_USERNAME"))
@@ -425,6 +425,8 @@ Global 级服务使用 GlobalCredentials 初始化，需要提供 domainId 。
 
 #### 2.1 使用永久 AK 和 SK [:top:](#用户手册-top)
 
+获取AK/SK请参考 https://support.huaweicloud.com/devg-apisign/api-sign-provide-aksk.html
+
 **认证参数说明**：
 
 - `ak` - 华为云账号 Access Key
@@ -437,20 +439,12 @@ import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.GlobalCredentials;
 
 // Region级服务
-String ak = System.getenv("HUAWEICLOUD_SDK_AK");
-String sk = System.getenv("HUAWEICLOUD_SDK_SK");
-String projectId = "{your projectId string}";
-
 BasicCredentials basicCredentials = new BasicCredentials()
     .withAk(ak)
     .withSk(sk)
     .withProjectId(projectId);
 
 // Global级服务
-String ak = System.getenv("HUAWEICLOUD_SDK_AK");
-String sk = System.getenv("HUAWEICLOUD_SDK_SK");
-String domainId = "{your domainId string}";
-
 GlobalCredentials globalCredentials = new GlobalCredentials()
     .withAk(ak)
     .withSk(sk)
@@ -487,11 +481,6 @@ import com.huaweicloud.sdk.core.auth.BasicCredentials;
 import com.huaweicloud.sdk.core.auth.GlobalCredentials;
 
 // Region级服务
-String ak = System.getenv("HUAWEICLOUD_SDK_AK");
-String sk = System.getenv("HUAWEICLOUD_SDK_SK");
-String securityToken = System.getenv("HUAWEICLOUD_SDK_SECURITY_TOKEN");
-String projectId = "{your projectId string}";
-
 BasicCredentials basicCredentials = new BasicCredentials()
     .withAk(ak)
     .withSk(sk)
@@ -499,11 +488,6 @@ BasicCredentials basicCredentials = new BasicCredentials()
     .withProjectId(projectId)
 
 // Global级服务
-String ak = System.getenv("HUAWEICLOUD_SDK_AK");
-String sk = System.getenv("HUAWEICLOUD_SDK_SK");
-String securityToken = System.getenv("HUAWEICLOUD_SDK_SECURITY_TOKEN");
-String domainId = "{your domainId string}";
-
 GlobalCredentials globalCredentials = new GlobalCredentials()
     .withAk(ak)
     .withSk(sk)
@@ -787,20 +771,18 @@ ICredential cred = chain.getCredentials();
 #### 3.1 指定云服务 Endpoint 方式 [:top:](#用户手册-top)
 
 ``` java
-// 指定终端节点，以 VPC 服务北京四的 endpoint 为例
-String endpoint = "https://vpc.cn-north-4.myhuaweicloud.com";
-
 // 初始化客户端认证信息，需要填写相应 projectId/domainId，以初始化 BasicCredentials 为例
 BasicCredentials basicCredentials = new BasicCredentials()
-    .withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
-    .withSk(System.getenv("HUAWEICLOUD_SDK_SK"))
-    .withProjectId("{your projectId string}");
+    .withAk(ak)
+    .withSk(sk)
+    .withProjectId(projectId);
 
 // 初始化指定云服务的客户端 {Service}Client ，以初始化 Region 级服务 VPC 的 VpcClient 为例
 VpcClient vpcClient = VpcClient.newBuilder()
     .withHttpConfig(config)
     .withCredential(basicCredentials)
-    .withEndpoint(endpoint)
+    // 指定终端节点，以 VPC 服务北京四的 endpoint 为例
+    .withEndpoint("https://vpc.cn-north-4.myhuaweicloud.com")
     .build();
 ```
 
@@ -818,12 +800,11 @@ import com.huaweicloud.sdk.iam.v3.region.IamRegion;
 
 // 初始化客户端认证信息，使用当前客户端初始化方式可不填 projectId/domainId，以初始化 GlobalCredentials 为例
 GlobalCredentials globalCredentials = new GlobalCredentials()
-    .withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
-    .withSk(System.getenv("HUAWEICLOUD_SDK_SK"));
+    .withAk(ak)
+    .withSk(sk);
 
 // 初始化指定云服务的客户端 {Service}Client ，以初始化 Global 级服务 IAM 的 IamClient 为例
 IamClient iamClient = IamClient.newBuilder()
-    .withHttpConfig(config)
     .withCredential(globalCredentials)
     .withRegion(IamRegion.CN_NORTH_4)
     .build();
@@ -873,11 +854,10 @@ set HUAWEICLOUD_SDK_IAM_ENDPOINT=https://iam.cn-north-4.myhuaweicloud.com
 ```java
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
 
-String iamEndpoint = "https://iam.cn-north-4.myhuaweicloud.com";
 BasicCredentials credentials = new BasicCredentials()
-	.withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
-    .withSk(System.getenv("HUAWEICLOUD_SDK_SK"))
-    .withIamEndpoint(iamEndpoint);
+	.withAk(ak)
+    .withSk(sk)
+    .withIamEndpoint("https://iam.cn-north-4.myhuaweicloud.com");
 ```
 
 ##### 3.3.2 Region配置 [:top:](#用户手册-top)
@@ -1003,7 +983,6 @@ try {
 ``` java
 // 初始化异步客户端，以初始化 VpcAsyncClient 为例
 VpcAsyncClient vpcAsyncClient = VpcAsyncClient.newBuilder()
-    .withHttpConfig(config)
     .withCredential(basicCredentials)
     .withEndpoint(endpoint)
     .build();
@@ -1155,7 +1134,6 @@ VpcClient vpcClient = VpcClient.newBuilder()
 EcsClient client = EcsClient.newBuilder()
     .withCredential(basicCredentials)
     .withRegion(EcsRegion.CN_NORTH_4)
-    .withHttpConfig(config)
     .build();
 
 String jobId = "{valid job id}";
@@ -1212,7 +1190,6 @@ public static <ResT> BiFunction<ResT, SdkException, Boolean> defaultRetryConditi
 EcsClient client = EcsClient.newBuilder()
     .withCredential(basicCredentials)
     .withRegion(EcsRegion.CN_NORTH_4)
-    .withHttpConfig(config)
     .build();
 
 String jobId = "{valid job id}";
@@ -1241,7 +1218,6 @@ try {
 EcsAsyncClient asyncClient = EcsAsyncClient.newBuilder()
     .withCredential(basicCredentials)
     .withRegion(EcsRegion.CN_NORTH_4)
-    .withHttpConfig(config)
     .build();
 
 String jobId = "{valid job id}";
@@ -1491,18 +1467,17 @@ public class ObsDemo {
 #### 9.1 云联盟场景如何调用 [:top:](#用户手册-top)
 
 ```java
-// 指定终端节点，以 云联盟都柏林节点调用 VPC 服务为例
-String endpoint = "https://vpc.eu-west-101.myhuaweicloud.com";
-
 // 初始化客户端认证信息，需要填写相应 projectId/domainId，以初始化 BasicCredentials 为例
 BasicCredentials basicCredentials = new BasicCredentials()
-	.withAk(System.getenv("HUAWEICLOUD_SDK_AK"))
-	.withSk(System.getenv("HUAWEICLOUD_SDK_SK"))
-	.withProjectId("{your projectId string}");
+    // 请使用华为云AK/SK, 非云联盟AK/SK
+	.withAk(ak)
+	.withSk(sk)
+	.withProjectId(projectId);
 
 // 初始化指定云服务的客户端 {Service}Client，以初始化 Region 级服务 VPC 的 VpcClient 为例
 VpcClient vpcClient = VpcClient.newBuilder()
 	.withCredential(basicCredentials)
-	.withEndpoint(endpoint)
+	// 指定终端节点，以 云联盟都柏林节点调用 VPC 服务为例
+	.withEndpoint("https://vpc.eu-west-101.myhuaweicloud.com")
 	.build();
 ```

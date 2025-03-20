@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.osm.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -10,10 +15,86 @@ import java.util.Objects;
  */
 public class ShowSignedLatestPublishedAgreementRequest {
 
+    /**
+     * 协议类型，0 新建工单-普通用户，1 新建工单-ISV用户，2 授权
+     */
+    public static final class AgreementTypeEnum {
+
+        /**
+         * Enum _0 for value: "0"
+         */
+        public static final AgreementTypeEnum _0 = new AgreementTypeEnum("0");
+
+        /**
+         * Enum _1 for value: "1"
+         */
+        public static final AgreementTypeEnum _1 = new AgreementTypeEnum("1");
+
+        /**
+         * Enum _2 for value: "2"
+         */
+        public static final AgreementTypeEnum _2 = new AgreementTypeEnum("2");
+
+        private static final Map<String, AgreementTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AgreementTypeEnum> createStaticFields() {
+            Map<String, AgreementTypeEnum> map = new HashMap<>();
+            map.put("0", _0);
+            map.put("1", _1);
+            map.put("2", _2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AgreementTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AgreementTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AgreementTypeEnum(value));
+        }
+
+        public static AgreementTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AgreementTypeEnum) {
+                return this.value.equals(((AgreementTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agreement_type")
 
-    private String agreementType;
+    private AgreementTypeEnum agreementType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Site")
@@ -30,20 +111,20 @@ public class ShowSignedLatestPublishedAgreementRequest {
 
     private String xTimeZone;
 
-    public ShowSignedLatestPublishedAgreementRequest withAgreementType(String agreementType) {
+    public ShowSignedLatestPublishedAgreementRequest withAgreementType(AgreementTypeEnum agreementType) {
         this.agreementType = agreementType;
         return this;
     }
 
     /**
-     * 协议类型
+     * 协议类型，0 新建工单-普通用户，1 新建工单-ISV用户，2 授权
      * @return agreementType
      */
-    public String getAgreementType() {
+    public AgreementTypeEnum getAgreementType() {
         return agreementType;
     }
 
-    public void setAgreementType(String agreementType) {
+    public void setAgreementType(AgreementTypeEnum agreementType) {
         this.agreementType = agreementType;
     }
 

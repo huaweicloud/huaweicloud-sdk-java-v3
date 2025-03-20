@@ -15,6 +15,8 @@ import com.huaweicloud.sdk.kvs.v1.model.CreateTableRequest;
 import com.huaweicloud.sdk.kvs.v1.model.CreateTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.DeleteKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.DeleteKvResponse;
+import com.huaweicloud.sdk.kvs.v1.model.DeleteTableRequest;
+import com.huaweicloud.sdk.kvs.v1.model.DeleteTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.DescribeTableRequest;
 import com.huaweicloud.sdk.kvs.v1.model.DescribeTableResponse;
 import com.huaweicloud.sdk.kvs.v1.model.GetKvRequest;
@@ -139,6 +141,48 @@ public class MultiChannelKvsAsyncClient extends AbstractMultiChannelKvsClient im
     */
     public AsyncInvoker<CreateTableRequest, CreateTableResponse> createTableAsyncInvoker(CreateTableRequest request) {
         return getKvsClientByPolling().getKvsAsyncClient().createTableAsyncInvoker(request);
+    }
+
+    /**
+    * 删除表
+    *
+        * 删除指定表及所有kv文档，表标记为删除后，空间不会立刻释放，并发的读写访问仍需继续完成。
+        * 
+        * Please refer to HUAWEI cloud API Explorer for details.
+    *
+    * @param request DeleteTableRequest 请求对象
+    * @return DeleteTableResponse
+    */
+    public CompletableFuture<DeleteTableResponse> deleteTableAsync(DeleteTableRequest request) {
+        int retryCount = 0;
+        while (retryCount < getConfig().getApiRetryCount()) {
+            ManagedKvsClient client = getKvsClientByPolling(retryCount);
+            try {
+                return client.getKvsAsyncClient().deleteTableAsync(request);
+            } catch (RequestTimeoutException | ConnectionException e) {
+                client.setIsUsable(false);
+                retryCount++;
+                LOG.warn(
+                    "this is client " + client.getEndpointName() + " deleteTable throwing Exception " + retryCount
+                        + " time. errorInfo: " + e,
+                    e);
+            }
+        }
+        throw new SdkException("retry deleteTable " + retryCount + " times, and failed!");
+    }
+
+    /**
+    * 删除表
+    *
+        * 删除指定表及所有kv文档，表标记为删除后，空间不会立刻释放，并发的读写访问仍需继续完成。
+        * 
+        * Please refer to HUAWEI cloud API Explorer for details.
+    *
+    * @param request DeleteTableRequest 请求对象
+    * @return SyncInvoker<DeleteTableRequest, DeleteTableResponse>
+    */
+    public AsyncInvoker<DeleteTableRequest, DeleteTableResponse> deleteTableAsyncInvoker(DeleteTableRequest request) {
+        return getKvsClientByPolling().getKvsAsyncClient().deleteTableAsyncInvoker(request);
     }
 
     /**

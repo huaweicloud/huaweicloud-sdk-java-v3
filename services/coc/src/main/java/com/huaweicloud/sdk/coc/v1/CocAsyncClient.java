@@ -12,12 +12,20 @@ import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportPrometheusEventRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportPrometheusEventResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomResponse;
+import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ExecutePublicScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.ExecutePublicScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteScriptRequest;
@@ -34,22 +42,34 @@ import com.huaweicloud.sdk.coc.v1.model.GetScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationModelRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationModelResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListCceCompliantRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListCceCompliantResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListInterruptRecordsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListInterruptRecordsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListPersonnelRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListPersonnelResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskHistoryRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskHistoryResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptJobBatchesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptJobBatchesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptJobsRequest;
@@ -60,14 +80,32 @@ import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowAccountRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowAccountResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowAlarmRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowPatchBaselineRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowPatchBaselineResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowSlaCustomizedTemplateRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowSlaCustomizedTemplateResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowSlaOrderRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowSlaOrderResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowSloDetailRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowSloDetailResponse;
+import com.huaweicloud.sdk.coc.v1.model.SyncAddPersonnelRequest;
+import com.huaweicloud.sdk.coc.v1.model.SyncAddPersonnelResponse;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScriptResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -88,6 +126,92 @@ public class CocAsyncClient {
         ClientBuilder<CocAsyncClient> clientBuilder =
             new ClientBuilder<>(CocAsyncClient::new, "GlobalCredentials,BasicCredentials");
         return clientBuilder;
+    }
+
+    /**
+     * 查询客户账号
+     *
+     * show account ，使用场景：托管功能 sre 账号使用，查询自己管理的客户账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAccountRequest 请求对象
+     * @return CompletableFuture<ShowAccountResponse>
+     */
+    public CompletableFuture<ShowAccountResponse> showAccountAsync(ShowAccountRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.showAccount);
+    }
+
+    /**
+     * 查询客户账号
+     *
+     * show account ，使用场景：托管功能 sre 账号使用，查询自己管理的客户账号
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAccountRequest 请求对象
+     * @return AsyncInvoker<ShowAccountRequest, ShowAccountResponse>
+     */
+    public AsyncInvoker<ShowAccountRequest, ShowAccountResponse> showAccountAsyncInvoker(ShowAccountRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.showAccount, hcClient);
+    }
+
+    /**
+     * 查询告警工单历史
+     *
+     * 查询告警工单历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmHandleHistoriesRequest 请求对象
+     * @return CompletableFuture<ListAlarmHandleHistoriesResponse>
+     */
+    public CompletableFuture<ListAlarmHandleHistoriesResponse> listAlarmHandleHistoriesAsync(
+        ListAlarmHandleHistoriesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listAlarmHandleHistories);
+    }
+
+    /**
+     * 查询告警工单历史
+     *
+     * 查询告警工单历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAlarmHandleHistoriesRequest 请求对象
+     * @return AsyncInvoker<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse>
+     */
+    public AsyncInvoker<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse> listAlarmHandleHistoriesAsyncInvoker(
+        ListAlarmHandleHistoriesRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listAlarmHandleHistories, hcClient);
+    }
+
+    /**
+     * 查询Alarm
+     *
+     * Get alarm info by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlarmRequest 请求对象
+     * @return CompletableFuture<ShowAlarmResponse>
+     */
+    public CompletableFuture<ShowAlarmResponse> showAlarmAsync(ShowAlarmRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.showAlarm);
+    }
+
+    /**
+     * 查询Alarm
+     *
+     * Get alarm info by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAlarmRequest 请求对象
+     * @return AsyncInvoker<ShowAlarmRequest, ShowAlarmResponse>
+     */
+    public AsyncInvoker<ShowAlarmRequest, ShowAlarmResponse> showAlarmAsyncInvoker(ShowAlarmRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.showAlarm, hcClient);
     }
 
     /**
@@ -177,6 +301,64 @@ public class CocAsyncClient {
     public AsyncInvoker<BatchCreateApplicationViewRequest, BatchCreateApplicationViewResponse> batchCreateApplicationViewAsyncInvoker(
         BatchCreateApplicationViewRequest request) {
         return new AsyncInvoker<>(request, CocMeta.batchCreateApplicationView, hcClient);
+    }
+
+    /**
+     * 查询Baseline
+     *
+     * Get baseline info by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPatchBaselineRequest 请求对象
+     * @return CompletableFuture<ShowPatchBaselineResponse>
+     */
+    public CompletableFuture<ShowPatchBaselineResponse> showPatchBaselineAsync(ShowPatchBaselineRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.showPatchBaseline);
+    }
+
+    /**
+     * 查询Baseline
+     *
+     * Get baseline info by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowPatchBaselineRequest 请求对象
+     * @return AsyncInvoker<ShowPatchBaselineRequest, ShowPatchBaselineResponse>
+     */
+    public AsyncInvoker<ShowPatchBaselineRequest, ShowPatchBaselineResponse> showPatchBaselineAsyncInvoker(
+        ShowPatchBaselineRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.showPatchBaseline, hcClient);
+    }
+
+    /**
+     * 获取合规性报告cce信息
+     *
+     * 分页获取合规性报告cce信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCceCompliantRequest 请求对象
+     * @return CompletableFuture<ListCceCompliantResponse>
+     */
+    public CompletableFuture<ListCceCompliantResponse> listCceCompliantAsync(ListCceCompliantRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listCceCompliant);
+    }
+
+    /**
+     * 获取合规性报告cce信息
+     *
+     * 分页获取合规性报告cce信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCceCompliantRequest 请求对象
+     * @return AsyncInvoker<ListCceCompliantRequest, ListCceCompliantResponse>
+     */
+    public AsyncInvoker<ListCceCompliantRequest, ListCceCompliantResponse> listCceCompliantAsyncInvoker(
+        ListCceCompliantRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listCceCompliant, hcClient);
     }
 
     /**
@@ -536,6 +718,64 @@ public class CocAsyncClient {
     }
 
     /**
+     * 查询人员列表
+     *
+     * 获取人员列表（公网调用）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPersonnelRequest 请求对象
+     * @return CompletableFuture<ListPersonnelResponse>
+     */
+    public CompletableFuture<ListPersonnelResponse> listPersonnelAsync(ListPersonnelRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listPersonnel);
+    }
+
+    /**
+     * 查询人员列表
+     *
+     * 获取人员列表（公网调用）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListPersonnelRequest 请求对象
+     * @return AsyncInvoker<ListPersonnelRequest, ListPersonnelResponse>
+     */
+    public AsyncInvoker<ListPersonnelRequest, ListPersonnelResponse> listPersonnelAsyncInvoker(
+        ListPersonnelRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listPersonnel, hcClient);
+    }
+
+    /**
+     * 同步人员
+     *
+     * 同步人员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncAddPersonnelRequest 请求对象
+     * @return CompletableFuture<SyncAddPersonnelResponse>
+     */
+    public CompletableFuture<SyncAddPersonnelResponse> syncAddPersonnelAsync(SyncAddPersonnelRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.syncAddPersonnel);
+    }
+
+    /**
+     * 同步人员
+     *
+     * 同步人员
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SyncAddPersonnelRequest 请求对象
+     * @return AsyncInvoker<SyncAddPersonnelRequest, SyncAddPersonnelResponse>
+     */
+    public AsyncInvoker<SyncAddPersonnelRequest, SyncAddPersonnelResponse> syncAddPersonnelAsyncInvoker(
+        SyncAddPersonnelRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.syncAddPersonnel, hcClient);
+    }
+
+    /**
      * 查询用户各种资源总数
      *
      * 查询用户各种资源总数
@@ -620,6 +860,240 @@ public class CocAsyncClient {
     public AsyncInvoker<SyncResourceRequest, SyncResourceResponse> syncResourceAsyncInvoker(
         SyncResourceRequest request) {
         return new AsyncInvoker<>(request, CocMeta.syncResource, hcClient);
+    }
+
+    /**
+     * 新建定时运维
+     *
+     * Create Scheduled Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateScheduledTaskRequest 请求对象
+     * @return CompletableFuture<CreateScheduledTaskResponse>
+     */
+    public CompletableFuture<CreateScheduledTaskResponse> createScheduledTaskAsync(CreateScheduledTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.createScheduledTask);
+    }
+
+    /**
+     * 新建定时运维
+     *
+     * Create Scheduled Task
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateScheduledTaskRequest 请求对象
+     * @return AsyncInvoker<CreateScheduledTaskRequest, CreateScheduledTaskResponse>
+     */
+    public AsyncInvoker<CreateScheduledTaskRequest, CreateScheduledTaskResponse> createScheduledTaskAsyncInvoker(
+        CreateScheduledTaskRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.createScheduledTask, hcClient);
+    }
+
+    /**
+     * 删除ScheduledTask
+     *
+     * Delete scheduled task by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduledTaskRequest 请求对象
+     * @return CompletableFuture<DeleteScheduledTaskResponse>
+     */
+    public CompletableFuture<DeleteScheduledTaskResponse> deleteScheduledTaskAsync(DeleteScheduledTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.deleteScheduledTask);
+    }
+
+    /**
+     * 删除ScheduledTask
+     *
+     * Delete scheduled task by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteScheduledTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse>
+     */
+    public AsyncInvoker<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> deleteScheduledTaskAsyncInvoker(
+        DeleteScheduledTaskRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.deleteScheduledTask, hcClient);
+    }
+
+    /**
+     * 禁用ScheduledTask
+     *
+     * Disable scheduled task by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableScheduledTaskRequest 请求对象
+     * @return CompletableFuture<DisableScheduledTaskResponse>
+     */
+    public CompletableFuture<DisableScheduledTaskResponse> disableScheduledTaskAsync(
+        DisableScheduledTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.disableScheduledTask);
+    }
+
+    /**
+     * 禁用ScheduledTask
+     *
+     * Disable scheduled task by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableScheduledTaskRequest 请求对象
+     * @return AsyncInvoker<DisableScheduledTaskRequest, DisableScheduledTaskResponse>
+     */
+    public AsyncInvoker<DisableScheduledTaskRequest, DisableScheduledTaskResponse> disableScheduledTaskAsyncInvoker(
+        DisableScheduledTaskRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.disableScheduledTask, hcClient);
+    }
+
+    /**
+     * 启用ScheduledTask
+     *
+     * Enable scheduled task by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableScheduledTaskRequest 请求对象
+     * @return CompletableFuture<EnableScheduledTaskResponse>
+     */
+    public CompletableFuture<EnableScheduledTaskResponse> enableScheduledTaskAsync(EnableScheduledTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.enableScheduledTask);
+    }
+
+    /**
+     * 启用ScheduledTask
+     *
+     * Enable scheduled task by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableScheduledTaskRequest 请求对象
+     * @return AsyncInvoker<EnableScheduledTaskRequest, EnableScheduledTaskResponse>
+     */
+    public AsyncInvoker<EnableScheduledTaskRequest, EnableScheduledTaskResponse> enableScheduledTaskAsyncInvoker(
+        EnableScheduledTaskRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.enableScheduledTask, hcClient);
+    }
+
+    /**
+     * 查询ScheduledTask列表
+     *
+     * Get ScheduledTask infos
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTaskRequest 请求对象
+     * @return CompletableFuture<ListScheduledTaskResponse>
+     */
+    public CompletableFuture<ListScheduledTaskResponse> listScheduledTaskAsync(ListScheduledTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listScheduledTask);
+    }
+
+    /**
+     * 查询ScheduledTask列表
+     *
+     * Get ScheduledTask infos
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTaskRequest 请求对象
+     * @return AsyncInvoker<ListScheduledTaskRequest, ListScheduledTaskResponse>
+     */
+    public AsyncInvoker<ListScheduledTaskRequest, ListScheduledTaskResponse> listScheduledTaskAsyncInvoker(
+        ListScheduledTaskRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listScheduledTask, hcClient);
+    }
+
+    /**
+     * 查询定时运维历史记录
+     *
+     * get scheduled task history list
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTaskHistoryRequest 请求对象
+     * @return CompletableFuture<ListScheduledTaskHistoryResponse>
+     */
+    public CompletableFuture<ListScheduledTaskHistoryResponse> listScheduledTaskHistoryAsync(
+        ListScheduledTaskHistoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listScheduledTaskHistory);
+    }
+
+    /**
+     * 查询定时运维历史记录
+     *
+     * get scheduled task history list
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledTaskHistoryRequest 请求对象
+     * @return AsyncInvoker<ListScheduledTaskHistoryRequest, ListScheduledTaskHistoryResponse>
+     */
+    public AsyncInvoker<ListScheduledTaskHistoryRequest, ListScheduledTaskHistoryResponse> listScheduledTaskHistoryAsyncInvoker(
+        ListScheduledTaskHistoryRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listScheduledTaskHistory, hcClient);
+    }
+
+    /**
+     * 查询ScheduledTask
+     *
+     * Get ScheduledTask info by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowScheduledTaskRequest 请求对象
+     * @return CompletableFuture<ShowScheduledTaskResponse>
+     */
+    public CompletableFuture<ShowScheduledTaskResponse> showScheduledTaskAsync(ShowScheduledTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.showScheduledTask);
+    }
+
+    /**
+     * 查询ScheduledTask
+     *
+     * Get ScheduledTask info by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowScheduledTaskRequest 请求对象
+     * @return AsyncInvoker<ShowScheduledTaskRequest, ShowScheduledTaskResponse>
+     */
+    public AsyncInvoker<ShowScheduledTaskRequest, ShowScheduledTaskResponse> showScheduledTaskAsyncInvoker(
+        ShowScheduledTaskRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.showScheduledTask, hcClient);
+    }
+
+    /**
+     * 修改ScheduledTask
+     *
+     * Update ScheduledTask
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledTaskRequest 请求对象
+     * @return CompletableFuture<UpdateScheduledTaskResponse>
+     */
+    public CompletableFuture<UpdateScheduledTaskResponse> updateScheduledTaskAsync(UpdateScheduledTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.updateScheduledTask);
+    }
+
+    /**
+     * 修改ScheduledTask
+     *
+     * Update ScheduledTask
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateScheduledTaskRequest 请求对象
+     * @return AsyncInvoker<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse>
+     */
+    public AsyncInvoker<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> updateScheduledTaskAsyncInvoker(
+        UpdateScheduledTaskRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.updateScheduledTask, hcClient);
     }
 
     /**
@@ -1139,6 +1613,124 @@ public class CocAsyncClient {
     public AsyncInvoker<ListPublicScriptsRequest, ListPublicScriptsResponse> listPublicScriptsAsyncInvoker(
         ListPublicScriptsRequest request) {
         return new AsyncInvoker<>(request, CocMeta.listPublicScripts, hcClient);
+    }
+
+    /**
+     * 查询Sla模板详情
+     *
+     * Get Sla Template info by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlaCustomizedTemplateRequest 请求对象
+     * @return CompletableFuture<ShowSlaCustomizedTemplateResponse>
+     */
+    public CompletableFuture<ShowSlaCustomizedTemplateResponse> showSlaCustomizedTemplateAsync(
+        ShowSlaCustomizedTemplateRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.showSlaCustomizedTemplate);
+    }
+
+    /**
+     * 查询Sla模板详情
+     *
+     * Get Sla Template info by id
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlaCustomizedTemplateRequest 请求对象
+     * @return AsyncInvoker<ShowSlaCustomizedTemplateRequest, ShowSlaCustomizedTemplateResponse>
+     */
+    public AsyncInvoker<ShowSlaCustomizedTemplateRequest, ShowSlaCustomizedTemplateResponse> showSlaCustomizedTemplateAsyncInvoker(
+        ShowSlaCustomizedTemplateRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.showSlaCustomizedTemplate, hcClient);
+    }
+
+    /**
+     * 查询SLA工单信息
+     *
+     * SLA 工单信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlaOrderRequest 请求对象
+     * @return CompletableFuture<ShowSlaOrderResponse>
+     */
+    public CompletableFuture<ShowSlaOrderResponse> showSlaOrderAsync(ShowSlaOrderRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.showSlaOrder);
+    }
+
+    /**
+     * 查询SLA工单信息
+     *
+     * SLA 工单信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSlaOrderRequest 请求对象
+     * @return AsyncInvoker<ShowSlaOrderRequest, ShowSlaOrderResponse>
+     */
+    public AsyncInvoker<ShowSlaOrderRequest, ShowSlaOrderResponse> showSlaOrderAsyncInvoker(
+        ShowSlaOrderRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.showSlaOrder, hcClient);
+    }
+
+    /**
+     * 查询中断记录
+     *
+     * 查询中断记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInterruptRecordsRequest 请求对象
+     * @return CompletableFuture<ListInterruptRecordsResponse>
+     */
+    public CompletableFuture<ListInterruptRecordsResponse> listInterruptRecordsAsync(
+        ListInterruptRecordsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listInterruptRecords);
+    }
+
+    /**
+     * 查询中断记录
+     *
+     * 查询中断记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInterruptRecordsRequest 请求对象
+     * @return AsyncInvoker<ListInterruptRecordsRequest, ListInterruptRecordsResponse>
+     */
+    public AsyncInvoker<ListInterruptRecordsRequest, ListInterruptRecordsResponse> listInterruptRecordsAsyncInvoker(
+        ListInterruptRecordsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listInterruptRecords, hcClient);
+    }
+
+    /**
+     * 查询SLO详情
+     *
+     * 查询SLO详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSloDetailRequest 请求对象
+     * @return CompletableFuture<ShowSloDetailResponse>
+     */
+    public CompletableFuture<ShowSloDetailResponse> showSloDetailAsync(ShowSloDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.showSloDetail);
+    }
+
+    /**
+     * 查询SLO详情
+     *
+     * 查询SLO详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSloDetailRequest 请求对象
+     * @return AsyncInvoker<ShowSloDetailRequest, ShowSloDetailResponse>
+     */
+    public AsyncInvoker<ShowSloDetailRequest, ShowSloDetailResponse> showSloDetailAsyncInvoker(
+        ShowSloDetailRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.showSloDetail, hcClient);
     }
 
     /**

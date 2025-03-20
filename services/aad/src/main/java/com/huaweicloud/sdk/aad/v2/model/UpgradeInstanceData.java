@@ -45,6 +45,11 @@ public class UpgradeInstanceData {
 
     private Integer elasticServiceBandwidth;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "basic_qps")
+
+    private Integer basicQps;
+
     public UpgradeInstanceData withBasicBandwidth(String basicBandwidth) {
         this.basicBandwidth = basicBandwidth;
         return this;
@@ -164,6 +169,23 @@ public class UpgradeInstanceData {
         this.elasticServiceBandwidth = elasticServiceBandwidth;
     }
 
+    public UpgradeInstanceData withBasicQps(Integer basicQps) {
+        this.basicQps = basicQps;
+        return this;
+    }
+
+    /**
+     * 业务QPS(如果实例没购买过QPS，需要在页面上升级一次规格开通QPS，之后才可以通过接口修改规格)
+     * @return basicQps
+     */
+    public Integer getBasicQps() {
+        return basicQps;
+    }
+
+    public void setBasicQps(Integer basicQps) {
+        this.basicQps = basicQps;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -178,7 +200,8 @@ public class UpgradeInstanceData {
             && Objects.equals(this.serviceBandwidth, that.serviceBandwidth)
             && Objects.equals(this.portNum, that.portNum) && Objects.equals(this.bindDomainNum, that.bindDomainNum)
             && Objects.equals(this.elasticServiceBandwidthType, that.elasticServiceBandwidthType)
-            && Objects.equals(this.elasticServiceBandwidth, that.elasticServiceBandwidth);
+            && Objects.equals(this.elasticServiceBandwidth, that.elasticServiceBandwidth)
+            && Objects.equals(this.basicQps, that.basicQps);
     }
 
     @Override
@@ -189,7 +212,8 @@ public class UpgradeInstanceData {
             portNum,
             bindDomainNum,
             elasticServiceBandwidthType,
-            elasticServiceBandwidth);
+            elasticServiceBandwidth,
+            basicQps);
     }
 
     @Override
@@ -205,6 +229,7 @@ public class UpgradeInstanceData {
             .append(toIndentedString(elasticServiceBandwidthType))
             .append("\n");
         sb.append("    elasticServiceBandwidth: ").append(toIndentedString(elasticServiceBandwidth)).append("\n");
+        sb.append("    basicQps: ").append(toIndentedString(basicQps)).append("\n");
         sb.append("}");
         return sb.toString();
     }

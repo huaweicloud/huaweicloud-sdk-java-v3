@@ -16,14 +16,23 @@ import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportPrometheusEventRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportPrometheusEventResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomResponse;
+import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.EditScriptModel;
+import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ExecutePublicScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.ExecutePublicScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteScriptRequest;
@@ -42,6 +51,8 @@ import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleExternalIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.JobScriptOrderOperationBody;
+import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationModelRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationModelResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationsRequest;
@@ -49,16 +60,26 @@ import com.huaweicloud.sdk.coc.v1.model.ListApplicationsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsReq;
+import com.huaweicloud.sdk.coc.v1.model.ListCceCompliantRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListCceCompliantResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListInterruptRecordsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListInterruptRecordsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListPersonnelRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListPersonnelResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskHistoryRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskHistoryResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptJobBatchesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptJobBatchesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptJobsRequest;
@@ -72,16 +93,35 @@ import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobResponse;
 import com.huaweicloud.sdk.coc.v1.model.ReportCustomEventRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.ScheduledTaskRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.ScriptExecuteModel;
+import com.huaweicloud.sdk.coc.v1.model.ShowAccountRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowAccountResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowAlarmRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowPatchBaselineRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowPatchBaselineResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowSlaCustomizedTemplateRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowSlaCustomizedTemplateResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowSlaOrderRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowSlaOrderResponse;
+import com.huaweicloud.sdk.coc.v1.model.ShowSloDetailRequest;
+import com.huaweicloud.sdk.coc.v1.model.ShowSloDetailResponse;
+import com.huaweicloud.sdk.coc.v1.model.SyncAddPersonnelRequest;
+import com.huaweicloud.sdk.coc.v1.model.SyncAddPersonnelResponse;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceReq;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScriptResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
@@ -95,6 +135,107 @@ import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class CocMeta {
+
+    public static final HttpRequestDef<ShowAccountRequest, ShowAccountResponse> showAccount = genForShowAccount();
+
+    private static HttpRequestDef<ShowAccountRequest, ShowAccountResponse> genForShowAccount() {
+        // basic
+        HttpRequestDef.Builder<ShowAccountRequest, ShowAccountResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAccountRequest.class, ShowAccountResponse.class)
+                .withName("ShowAccount")
+                .withUri("/v1/host/accounts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAccountRequest::getName, ShowAccountRequest::setName));
+        builder.<String>withRequestField("delegator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAccountRequest::getDelegator, ShowAccountRequest::setDelegator));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAccountRequest::getStatus, ShowAccountRequest::setStatus));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAccountRequest::getOffset, ShowAccountRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowAccountRequest::getLimit, ShowAccountRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse> listAlarmHandleHistories =
+        genForListAlarmHandleHistories();
+
+    private static HttpRequestDef<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse> genForListAlarmHandleHistories() {
+        // basic
+        HttpRequestDef.Builder<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListAlarmHandleHistoriesRequest.class, ListAlarmHandleHistoriesResponse.class)
+                .withName("ListAlarmHandleHistories")
+                .withUri("/v1/alarm-mgmt/alarm/{alarm_id}/handle-histories")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmHandleHistoriesRequest::getAlarmId,
+                ListAlarmHandleHistoriesRequest::setAlarmId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAlarmHandleHistoriesRequest::getOffset,
+                ListAlarmHandleHistoriesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListAlarmHandleHistoriesRequest::getLimit,
+                ListAlarmHandleHistoriesRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAlarmRequest, ShowAlarmResponse> showAlarm = genForShowAlarm();
+
+    private static HttpRequestDef<ShowAlarmRequest, ShowAlarmResponse> genForShowAlarm() {
+        // basic
+        HttpRequestDef.Builder<ShowAlarmRequest, ShowAlarmResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAlarmRequest.class, ShowAlarmResponse.class)
+                .withName("ShowAlarm")
+                .withUri("/v1/alarm-mgmt/alarm/{alarm_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("alarm_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAlarmRequest::getAlarmId, ShowAlarmRequest::setAlarmId));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<ListApplicationsRequest, ListApplicationsResponse> listApplications =
         genForListApplications();
@@ -210,6 +351,57 @@ public class CocMeta {
             TypeCasts.uncheckedConversion(BatchCreateApplicationViewRequestBody.class),
             f -> f.withMarshaller(BatchCreateApplicationViewRequest::getBody,
                 BatchCreateApplicationViewRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPatchBaselineRequest, ShowPatchBaselineResponse> showPatchBaseline =
+        genForShowPatchBaseline();
+
+    private static HttpRequestDef<ShowPatchBaselineRequest, ShowPatchBaselineResponse> genForShowPatchBaseline() {
+        // basic
+        HttpRequestDef.Builder<ShowPatchBaselineRequest, ShowPatchBaselineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPatchBaselineRequest.class, ShowPatchBaselineResponse.class)
+                .withName("ShowPatchBaseline")
+                .withUri("/v1/patch/baseline/{baseline_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("baseline_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPatchBaselineRequest::getBaselineId, ShowPatchBaselineRequest::setBaselineId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCceCompliantRequest, ListCceCompliantResponse> listCceCompliant =
+        genForListCceCompliant();
+
+    private static HttpRequestDef<ListCceCompliantRequest, ListCceCompliantResponse> genForListCceCompliant() {
+        // basic
+        HttpRequestDef.Builder<ListCceCompliantRequest, ListCceCompliantResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCceCompliantRequest.class, ListCceCompliantResponse.class)
+                .withName("ListCceCompliant")
+                .withUri("/v1/patch/cce/compliant")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCceCompliantRequest::getOffset, ListCceCompliantRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCceCompliantRequest::getLimit, ListCceCompliantRequest::setLimit));
 
         // response
 
@@ -693,6 +885,62 @@ public class CocMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListPersonnelRequest, ListPersonnelResponse> listPersonnel =
+        genForListPersonnel();
+
+    private static HttpRequestDef<ListPersonnelRequest, ListPersonnelResponse> genForListPersonnel() {
+        // basic
+        HttpRequestDef.Builder<ListPersonnelRequest, ListPersonnelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPersonnelRequest.class, ListPersonnelResponse.class)
+                .withName("ListPersonnel")
+                .withUri("/v1/personnel")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Boolean>withRequestField("has_mobile",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListPersonnelRequest::getHasMobile, ListPersonnelRequest::setHasMobile));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPersonnelRequest::getName, ListPersonnelRequest::setName));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListPersonnelRequest::getOffset, ListPersonnelRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPersonnelRequest::getLimit, ListPersonnelRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SyncAddPersonnelRequest, SyncAddPersonnelResponse> syncAddPersonnel =
+        genForSyncAddPersonnel();
+
+    private static HttpRequestDef<SyncAddPersonnelRequest, SyncAddPersonnelResponse> genForSyncAddPersonnel() {
+        // basic
+        HttpRequestDef.Builder<SyncAddPersonnelRequest, SyncAddPersonnelResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, SyncAddPersonnelRequest.class, SyncAddPersonnelResponse.class)
+                .withName("SyncAddPersonnel")
+                .withUri("/v1/sync/{domain_id}/personnels")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CountMultiResourcesRequest, CountMultiResourcesResponse> countMultiResources =
         genForCountMultiResources();
 
@@ -890,6 +1138,371 @@ public class CocMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SyncResourceReq.class),
             f -> f.withMarshaller(SyncResourceRequest::getBody, SyncResourceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateScheduledTaskRequest, CreateScheduledTaskResponse> createScheduledTask =
+        genForCreateScheduledTask();
+
+    private static HttpRequestDef<CreateScheduledTaskRequest, CreateScheduledTaskResponse> genForCreateScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<CreateScheduledTaskRequest, CreateScheduledTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateScheduledTaskRequest.class, CreateScheduledTaskResponse.class)
+                .withName("CreateScheduledTask")
+                .withUri("/v1/schedule/task")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ScheduledTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ScheduledTaskRequestBody.class),
+            f -> f.withMarshaller(CreateScheduledTaskRequest::getBody, CreateScheduledTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> deleteScheduledTask =
+        genForDeleteScheduledTask();
+
+    private static HttpRequestDef<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> genForDeleteScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteScheduledTaskRequest, DeleteScheduledTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteScheduledTaskRequest.class, DeleteScheduledTaskResponse.class)
+            .withName("DeleteScheduledTask")
+            .withUri("/v1/schedule/task/{task_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteScheduledTaskRequest::getTaskId, DeleteScheduledTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisableScheduledTaskRequest, DisableScheduledTaskResponse> disableScheduledTask =
+        genForDisableScheduledTask();
+
+    private static HttpRequestDef<DisableScheduledTaskRequest, DisableScheduledTaskResponse> genForDisableScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<DisableScheduledTaskRequest, DisableScheduledTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DisableScheduledTaskRequest.class, DisableScheduledTaskResponse.class)
+            .withName("DisableScheduledTask")
+            .withUri("/v1/schedule/task/{task_id}/disable")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableScheduledTaskRequest::getTaskId, DisableScheduledTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableScheduledTaskRequest, EnableScheduledTaskResponse> enableScheduledTask =
+        genForEnableScheduledTask();
+
+    private static HttpRequestDef<EnableScheduledTaskRequest, EnableScheduledTaskResponse> genForEnableScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<EnableScheduledTaskRequest, EnableScheduledTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableScheduledTaskRequest.class, EnableScheduledTaskResponse.class)
+                .withName("EnableScheduledTask")
+                .withUri("/v1/schedule/task/{task_id}/enable")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableScheduledTaskRequest::getTaskId, EnableScheduledTaskRequest::setTaskId));
+        builder.<EnableScheduledTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(EnableScheduledTaskRequestBody.class),
+            f -> f.withMarshaller(EnableScheduledTaskRequest::getBody, EnableScheduledTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScheduledTaskRequest, ListScheduledTaskResponse> listScheduledTask =
+        genForListScheduledTask();
+
+    private static HttpRequestDef<ListScheduledTaskRequest, ListScheduledTaskResponse> genForListScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<ListScheduledTaskRequest, ListScheduledTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScheduledTaskRequest.class, ListScheduledTaskResponse.class)
+                .withName("ListScheduledTask")
+                .withUri("/v1/schedule/task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getEnterpriseProjectId,
+                ListScheduledTaskRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getTaskId, ListScheduledTaskRequest::setTaskId));
+        builder.<String>withRequestField("task_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getTaskName, ListScheduledTaskRequest::setTaskName));
+        builder.<ListScheduledTaskRequest.ScheduledTypeEnum>withRequestField("scheduled_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListScheduledTaskRequest.ScheduledTypeEnum.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getScheduledType,
+                ListScheduledTaskRequest::setScheduledType));
+        builder.<ListScheduledTaskRequest.TaskTypeEnum>withRequestField("task_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListScheduledTaskRequest.TaskTypeEnum.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getTaskType, ListScheduledTaskRequest::setTaskType));
+        builder.<ListScheduledTaskRequest.AssociatedTaskTypeEnum>withRequestField("associated_task_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListScheduledTaskRequest.AssociatedTaskTypeEnum.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getAssociatedTaskType,
+                ListScheduledTaskRequest::setAssociatedTaskType));
+        builder.<String>withRequestField("risk_level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getRiskLevel, ListScheduledTaskRequest::setRiskLevel));
+        builder.<String>withRequestField("created_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getCreatedBy, ListScheduledTaskRequest::setCreatedBy));
+        builder.<String>withRequestField("reviewer",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getReviewer, ListScheduledTaskRequest::setReviewer));
+        builder.<String>withRequestField("reviewer_user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getReviewerUserName,
+                ListScheduledTaskRequest::setReviewerUserName));
+        builder.<ListScheduledTaskRequest.ApproveStatusEnum>withRequestField("approve_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListScheduledTaskRequest.ApproveStatusEnum.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getApproveStatus,
+                ListScheduledTaskRequest::setApproveStatus));
+        builder.<ListScheduledTaskRequest.LastExecutionStatusEnum>withRequestField("last_execution_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListScheduledTaskRequest.LastExecutionStatusEnum.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getLastExecutionStatus,
+                ListScheduledTaskRequest::setLastExecutionStatus));
+        builder.<Long>withRequestField("last_execution_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getLastExecutionStartTime,
+                ListScheduledTaskRequest::setLastExecutionStartTime));
+        builder.<Long>withRequestField("last_execution_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getLastExecutionEndTime,
+                ListScheduledTaskRequest::setLastExecutionEndTime));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getMarker, ListScheduledTaskRequest::setMarker));
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getRegionId, ListScheduledTaskRequest::setRegionId));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getResourceId, ListScheduledTaskRequest::setResourceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getOffset, ListScheduledTaskRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledTaskRequest::getLimit, ListScheduledTaskRequest::setLimit));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScheduledTaskHistoryRequest, ListScheduledTaskHistoryResponse> listScheduledTaskHistory =
+        genForListScheduledTaskHistory();
+
+    private static HttpRequestDef<ListScheduledTaskHistoryRequest, ListScheduledTaskHistoryResponse> genForListScheduledTaskHistory() {
+        // basic
+        HttpRequestDef.Builder<ListScheduledTaskHistoryRequest, ListScheduledTaskHistoryResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ListScheduledTaskHistoryRequest.class, ListScheduledTaskHistoryResponse.class)
+                .withName("ListScheduledTaskHistory")
+                .withUri("/v1/schedule/task/history")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getTaskId,
+                ListScheduledTaskHistoryRequest::setTaskId));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getId, ListScheduledTaskHistoryRequest::setId));
+        builder.<String>withRequestField("region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getRegion,
+                ListScheduledTaskHistoryRequest::setRegion));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getStatus,
+                ListScheduledTaskHistoryRequest::setStatus));
+        builder.<Long>withRequestField("started_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getStartedStartTime,
+                ListScheduledTaskHistoryRequest::setStartedStartTime));
+        builder.<Long>withRequestField("started_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getStartedEndTime,
+                ListScheduledTaskHistoryRequest::setStartedEndTime));
+        builder.<Long>withRequestField("finished_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getFinishedStartTime,
+                ListScheduledTaskHistoryRequest::setFinishedStartTime));
+        builder.<Long>withRequestField("finished_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getFinishedEndTime,
+                ListScheduledTaskHistoryRequest::setFinishedEndTime));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getMarker,
+                ListScheduledTaskHistoryRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getOffset,
+                ListScheduledTaskHistoryRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getLimit,
+                ListScheduledTaskHistoryRequest::setLimit));
+        builder.<ListScheduledTaskHistoryRequest.SortKeyEnum>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListScheduledTaskHistoryRequest.SortKeyEnum.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getSortKey,
+                ListScheduledTaskHistoryRequest::setSortKey));
+        builder.<ListScheduledTaskHistoryRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListScheduledTaskHistoryRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListScheduledTaskHistoryRequest::getSortDir,
+                ListScheduledTaskHistoryRequest::setSortDir));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowScheduledTaskRequest, ShowScheduledTaskResponse> showScheduledTask =
+        genForShowScheduledTask();
+
+    private static HttpRequestDef<ShowScheduledTaskRequest, ShowScheduledTaskResponse> genForShowScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<ShowScheduledTaskRequest, ShowScheduledTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowScheduledTaskRequest.class, ShowScheduledTaskResponse.class)
+                .withName("ShowScheduledTask")
+                .withUri("/v1/schedule/task/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowScheduledTaskRequest::getTaskId, ShowScheduledTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> updateScheduledTask =
+        genForUpdateScheduledTask();
+
+    private static HttpRequestDef<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> genForUpdateScheduledTask() {
+        // basic
+        HttpRequestDef.Builder<UpdateScheduledTaskRequest, UpdateScheduledTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateScheduledTaskRequest.class, UpdateScheduledTaskResponse.class)
+                .withName("UpdateScheduledTask")
+                .withUri("/v1/schedule/task/{task_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getTaskId, UpdateScheduledTaskRequest::setTaskId));
+        builder.<ScheduledTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ScheduledTaskRequestBody.class),
+            f -> f.withMarshaller(UpdateScheduledTaskRequest::getBody, UpdateScheduledTaskRequest::setBody));
 
         // response
 
@@ -1589,6 +2202,132 @@ public class CocMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPublicScriptsRequest::getXUserProfile,
                 ListPublicScriptsRequest::setXUserProfile));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSlaCustomizedTemplateRequest, ShowSlaCustomizedTemplateResponse> showSlaCustomizedTemplate =
+        genForShowSlaCustomizedTemplate();
+
+    private static HttpRequestDef<ShowSlaCustomizedTemplateRequest, ShowSlaCustomizedTemplateResponse> genForShowSlaCustomizedTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowSlaCustomizedTemplateRequest, ShowSlaCustomizedTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowSlaCustomizedTemplateRequest.class,
+                    ShowSlaCustomizedTemplateResponse.class)
+                .withName("ShowSlaCustomizedTemplate")
+                .withUri("/v1/sla-mgmt/customized-template/{template_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("template_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSlaCustomizedTemplateRequest::getTemplateId,
+                ShowSlaCustomizedTemplateRequest::setTemplateId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSlaOrderRequest, ShowSlaOrderResponse> showSlaOrder = genForShowSlaOrder();
+
+    private static HttpRequestDef<ShowSlaOrderRequest, ShowSlaOrderResponse> genForShowSlaOrder() {
+        // basic
+        HttpRequestDef.Builder<ShowSlaOrderRequest, ShowSlaOrderResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSlaOrderRequest.class, ShowSlaOrderResponse.class)
+                .withName("ShowSlaOrder")
+                .withUri("/v1/sla-mgmt/orders/{order_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("order_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSlaOrderRequest::getOrderId, ShowSlaOrderRequest::setOrderId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInterruptRecordsRequest, ListInterruptRecordsResponse> listInterruptRecords =
+        genForListInterruptRecords();
+
+    private static HttpRequestDef<ListInterruptRecordsRequest, ListInterruptRecordsResponse> genForListInterruptRecords() {
+        // basic
+        HttpRequestDef.Builder<ListInterruptRecordsRequest, ListInterruptRecordsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListInterruptRecordsRequest.class, ListInterruptRecordsResponse.class)
+            .withName("ListInterruptRecords")
+            .withUri("/v1/slo-mgmt/slos/{slo_id}/interrupt-records")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("slo_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInterruptRecordsRequest::getSloId, ListInterruptRecordsRequest::setSloId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInterruptRecordsRequest::getOffset, ListInterruptRecordsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInterruptRecordsRequest::getLimit, ListInterruptRecordsRequest::setLimit));
+        builder.<String>withRequestField("source_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInterruptRecordsRequest::getSourceId, ListInterruptRecordsRequest::setSourceId));
+        builder.<String>withRequestField("region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInterruptRecordsRequest::getRegionId, ListInterruptRecordsRequest::setRegionId));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListInterruptRecordsRequest::getStartTime,
+                ListInterruptRecordsRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListInterruptRecordsRequest::getEndTime, ListInterruptRecordsRequest::setEndTime));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSloDetailRequest, ShowSloDetailResponse> showSloDetail =
+        genForShowSloDetail();
+
+    private static HttpRequestDef<ShowSloDetailRequest, ShowSloDetailResponse> genForShowSloDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowSloDetailRequest, ShowSloDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSloDetailRequest.class, ShowSloDetailResponse.class)
+                .withName("ShowSloDetail")
+                .withUri("/v1/slo-mgmt/slos/{slo_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("slo_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSloDetailRequest::getSloId, ShowSloDetailRequest::setSloId));
 
         // response
 

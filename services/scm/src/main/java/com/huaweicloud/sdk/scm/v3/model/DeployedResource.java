@@ -36,7 +36,7 @@ public class DeployedResource {
     }
 
     /**
-     * 资源Id,部署WAF与ELB时，必传此字段。
+     * 资源Id，部署WAF与ELB时，必传此字段。
      * @return id
      */
     public String getId() {

@@ -68,6 +68,12 @@ public class CreateTableResponse extends SdkBsonDocResponse {
 
     private TtlSpecification ttlSpecification;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sse_specification")
+    @BsonProperty(value = "sse_specification")
+
+    private SseSpecification sseSpecification;
+
     private static Codec<CreateTableResponse> codec;
 
     public CreateTableResponse withTableName(String tableName) {
@@ -276,6 +282,32 @@ public class CreateTableResponse extends SdkBsonDocResponse {
         this.ttlSpecification = ttlSpecification;
     }
 
+    public CreateTableResponse withSseSpecification(SseSpecification sseSpecification) {
+        this.sseSpecification = sseSpecification;
+        return this;
+    }
+
+    public CreateTableResponse withSseSpecification(Consumer<SseSpecification> sseSpecificationSetter) {
+        if (this.sseSpecification == null) {
+            this.sseSpecification = new SseSpecification();
+            sseSpecificationSetter.accept(this.sseSpecification);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get sseSpecification
+     * @return sseSpecification
+     */
+    public SseSpecification getSseSpecification() {
+        return sseSpecification;
+    }
+
+    public void setSseSpecification(SseSpecification sseSpecification) {
+        this.sseSpecification = sseSpecification;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -291,7 +323,8 @@ public class CreateTableResponse extends SdkBsonDocResponse {
             && Objects.equals(this.localSecondaryIndexSchema, that.localSecondaryIndexSchema)
             && Objects.equals(this.globalSecondaryIndexSchema, that.globalSecondaryIndexSchema)
             && Objects.equals(this.preSplitKeyOptions, that.preSplitKeyOptions)
-            && Objects.equals(this.ttlSpecification, that.ttlSpecification);
+            && Objects.equals(this.ttlSpecification, that.ttlSpecification)
+            && Objects.equals(this.sseSpecification, that.sseSpecification);
     }
 
     @Override
@@ -303,7 +336,8 @@ public class CreateTableResponse extends SdkBsonDocResponse {
             localSecondaryIndexSchema,
             globalSecondaryIndexSchema,
             preSplitKeyOptions,
-            ttlSpecification);
+            ttlSpecification,
+            sseSpecification);
     }
 
     @Override
@@ -318,6 +352,7 @@ public class CreateTableResponse extends SdkBsonDocResponse {
         sb.append("    globalSecondaryIndexSchema: ").append(toIndentedString(globalSecondaryIndexSchema)).append("\n");
         sb.append("    preSplitKeyOptions: ").append(toIndentedString(preSplitKeyOptions)).append("\n");
         sb.append("    ttlSpecification: ").append(toIndentedString(ttlSpecification)).append("\n");
+        sb.append("    sseSpecification: ").append(toIndentedString(sseSpecification)).append("\n");
         sb.append("}");
         return sb.toString();
     }

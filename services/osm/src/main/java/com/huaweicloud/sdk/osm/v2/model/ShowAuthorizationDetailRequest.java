@@ -58,7 +58,7 @@ public class ShowAuthorizationDetailRequest {
     }
 
     /**
-     * 组id
+     * 华为云IAM组id，同组其他工单时，该id必传
      * @return groupId
      */
     public String getGroupId() {

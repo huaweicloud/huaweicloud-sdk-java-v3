@@ -63,7 +63,7 @@ public class CheckNeedVerifyRequest {
     }
 
     /**
-     * 联系方式类型
+     * 联系方式类型，0: 手机; 1: 邮箱
      * minimum: 0
      * maximum: 1
      * @return contactWay
