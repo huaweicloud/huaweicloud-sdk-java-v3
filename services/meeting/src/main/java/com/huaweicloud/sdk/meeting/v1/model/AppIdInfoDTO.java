@@ -68,7 +68,7 @@ public class AppIdInfoDTO {
     }
 
     /**
-     * 企业应用
+     * 企业应用ID
      * @return appId
      */
     public String getAppId() {

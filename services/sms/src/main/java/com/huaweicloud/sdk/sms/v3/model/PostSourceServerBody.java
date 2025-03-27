@@ -359,7 +359,7 @@ public class PostSourceServerBody {
     private String kernelVersion;
 
     /**
-     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中
      */
     public static final class MigrationCycleEnum {
 
@@ -458,7 +458,7 @@ public class PostSourceServerBody {
     private MigrationCycleEnum migrationCycle;
 
     /**
-     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败
      */
     public static final class StateEnum {
 
@@ -522,6 +522,21 @@ public class PostSourceServerBody {
          */
         public static final StateEnum FINISHED = new StateEnum("finished");
 
+        /**
+         * Enum CLEARING for value: "clearing"
+         */
+        public static final StateEnum CLEARING = new StateEnum("clearing");
+
+        /**
+         * Enum CLEARED for value: "cleared"
+         */
+        public static final StateEnum CLEARED = new StateEnum("cleared");
+
+        /**
+         * Enum CLEARFAILED for value: "clearfailed"
+         */
+        public static final StateEnum CLEARFAILED = new StateEnum("clearfailed");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -538,6 +553,9 @@ public class PostSourceServerBody {
             map.put("cloning", CLONING);
             map.put("cutovering", CUTOVERING);
             map.put("finished", FINISHED);
+            map.put("clearing", CLEARING);
+            map.put("cleared", CLEARED);
+            map.put("clearfailed", CLEARFAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -682,6 +700,128 @@ public class PostSourceServerBody {
     @JsonProperty(value = "io_read_wait")
 
     private Double ioReadWait;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_tc")
+
+    private Boolean hasTc;
+
+    /**
+     * 平台信息: hw：华为  ali：阿里 aws：亚马逊 azure：微软云 gcp：谷歌云 tencent：腾讯云 vmware hyperv other：其他
+     */
+    public static final class PlatformEnum {
+
+        /**
+         * Enum HW for value: "hw"
+         */
+        public static final PlatformEnum HW = new PlatformEnum("hw");
+
+        /**
+         * Enum ALI for value: "ali"
+         */
+        public static final PlatformEnum ALI = new PlatformEnum("ali");
+
+        /**
+         * Enum AWS for value: "aws"
+         */
+        public static final PlatformEnum AWS = new PlatformEnum("aws");
+
+        /**
+         * Enum AZURE for value: "azure"
+         */
+        public static final PlatformEnum AZURE = new PlatformEnum("azure");
+
+        /**
+         * Enum GCP for value: "gcp"
+         */
+        public static final PlatformEnum GCP = new PlatformEnum("gcp");
+
+        /**
+         * Enum TENCENT for value: "tencent"
+         */
+        public static final PlatformEnum TENCENT = new PlatformEnum("tencent");
+
+        /**
+         * Enum VMWARE for value: "vmware"
+         */
+        public static final PlatformEnum VMWARE = new PlatformEnum("vmware");
+
+        /**
+         * Enum HYPERV for value: "hyperv"
+         */
+        public static final PlatformEnum HYPERV = new PlatformEnum("hyperv");
+
+        /**
+         * Enum OTHER for value: "other"
+         */
+        public static final PlatformEnum OTHER = new PlatformEnum("other");
+
+        private static final Map<String, PlatformEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PlatformEnum> createStaticFields() {
+            Map<String, PlatformEnum> map = new HashMap<>();
+            map.put("hw", HW);
+            map.put("ali", ALI);
+            map.put("aws", AWS);
+            map.put("azure", AZURE);
+            map.put("gcp", GCP);
+            map.put("tencent", TENCENT);
+            map.put("vmware", VMWARE);
+            map.put("hyperv", HYPERV);
+            map.put("other", OTHER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PlatformEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PlatformEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PlatformEnum(value));
+        }
+
+        public static PlatformEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PlatformEnum) {
+                return this.value.equals(((PlatformEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "platform")
+
+    private PlatformEnum platform;
 
     public PostSourceServerBody withId(String id) {
         this.id = id;
@@ -1199,7 +1339,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中
      * @return migrationCycle
      */
     public MigrationCycleEnum getMigrationCycle() {
@@ -1216,7 +1356,7 @@ public class PostSourceServerBody {
     }
 
     /**
-     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败
      * @return state
      */
     public StateEnum getState() {
@@ -1280,6 +1420,40 @@ public class PostSourceServerBody {
         this.ioReadWait = ioReadWait;
     }
 
+    public PostSourceServerBody withHasTc(Boolean hasTc) {
+        this.hasTc = hasTc;
+        return this;
+    }
+
+    /**
+     * 是否安装tc组件，Linux系统此参数为必选
+     * @return hasTc
+     */
+    public Boolean getHasTc() {
+        return hasTc;
+    }
+
+    public void setHasTc(Boolean hasTc) {
+        this.hasTc = hasTc;
+    }
+
+    public PostSourceServerBody withPlatform(PlatformEnum platform) {
+        this.platform = platform;
+        return this;
+    }
+
+    /**
+     * 平台信息: hw：华为  ali：阿里 aws：亚马逊 azure：微软云 gcp：谷歌云 tencent：腾讯云 vmware hyperv other：其他
+     * @return platform
+     */
+    public PlatformEnum getPlatform() {
+        return platform;
+    }
+
+    public void setPlatform(PlatformEnum platform) {
+        this.platform = platform;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1308,7 +1482,8 @@ public class PostSourceServerBody {
             && Objects.equals(this.kernelVersion, that.kernelVersion)
             && Objects.equals(this.migrationCycle, that.migrationCycle) && Objects.equals(this.state, that.state)
             && Objects.equals(this.oemSystem, that.oemSystem) && Objects.equals(this.startType, that.startType)
-            && Objects.equals(this.ioReadWait, that.ioReadWait);
+            && Objects.equals(this.ioReadWait, that.ioReadWait) && Objects.equals(this.hasTc, that.hasTc)
+            && Objects.equals(this.platform, that.platform);
     }
 
     @Override
@@ -1343,7 +1518,9 @@ public class PostSourceServerBody {
             state,
             oemSystem,
             startType,
-            ioReadWait);
+            ioReadWait,
+            hasTc,
+            platform);
     }
 
     @Override
@@ -1381,6 +1558,8 @@ public class PostSourceServerBody {
         sb.append("    oemSystem: ").append(toIndentedString(oemSystem)).append("\n");
         sb.append("    startType: ").append(toIndentedString(startType)).append("\n");
         sb.append("    ioReadWait: ").append(toIndentedString(ioReadWait)).append("\n");
+        sb.append("    hasTc: ").append(toIndentedString(hasTc)).append("\n");
+        sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
         sb.append("}");
         return sb.toString();
     }

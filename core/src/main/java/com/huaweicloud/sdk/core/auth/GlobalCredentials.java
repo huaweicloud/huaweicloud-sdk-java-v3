@@ -39,6 +39,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
@@ -182,7 +183,7 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
         authToken = response.getSubjectToken();
         try {
             String expiredTime = response.getToken().getExpiresAt().replace("000Z", "Z");
-            expiredAt = new SimpleDateFormat(Iam.EXPIRED_DATE_FORMAT).parse(expiredTime).getTime();
+            expiredAt = new SimpleDateFormat(Iam.EXPIRED_DATE_FORMAT, Locale.US).parse(expiredTime).getTime();
         } catch (ParseException e) {
             throw new SdkException(e);
         }

@@ -20,7 +20,7 @@ public class ShowCommandResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command_param")
 
-    private ComandParam commandParam;
+    private CommandParam commandParam;
 
     public ShowCommandResponse withCommandName(String commandName) {
         this.commandName = commandName;
@@ -28,7 +28,7 @@ public class ShowCommandResponse extends SdkResponse {
     }
 
     /**
-     * 命令名称，分为：START、STOP、DELETE、SYNC
+     * 命令名称，分为：START、STOP、DELETE、SYNC、SKIP
      * @return commandName
      */
     public String getCommandName() {
@@ -39,14 +39,14 @@ public class ShowCommandResponse extends SdkResponse {
         this.commandName = commandName;
     }
 
-    public ShowCommandResponse withCommandParam(ComandParam commandParam) {
+    public ShowCommandResponse withCommandParam(CommandParam commandParam) {
         this.commandParam = commandParam;
         return this;
     }
 
-    public ShowCommandResponse withCommandParam(Consumer<ComandParam> commandParamSetter) {
+    public ShowCommandResponse withCommandParam(Consumer<CommandParam> commandParamSetter) {
         if (this.commandParam == null) {
-            this.commandParam = new ComandParam();
+            this.commandParam = new CommandParam();
             commandParamSetter.accept(this.commandParam);
         }
 
@@ -57,11 +57,11 @@ public class ShowCommandResponse extends SdkResponse {
      * Get commandParam
      * @return commandParam
      */
-    public ComandParam getCommandParam() {
+    public CommandParam getCommandParam() {
         return commandParam;
     }
 
-    public void setCommandParam(ComandParam commandParam) {
+    public void setCommandParam(CommandParam commandParam) {
         this.commandParam = commandParam;
     }
 

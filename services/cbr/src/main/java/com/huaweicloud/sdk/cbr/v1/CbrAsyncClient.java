@@ -14,6 +14,8 @@ import com.huaweicloud.sdk.cbr.v1.model.BatchUpdateVaultRequest;
 import com.huaweicloud.sdk.cbr.v1.model.BatchUpdateVaultResponse;
 import com.huaweicloud.sdk.cbr.v1.model.ChangeOrderRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ChangeOrderResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ChangeVaultChargeModeRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ChangeVaultChargeModeResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CheckAgentRequest;
 import com.huaweicloud.sdk.cbr.v1.model.CheckAgentResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CopyBackupRequest;
@@ -376,6 +378,38 @@ public class CbrAsyncClient {
      */
     public AsyncInvoker<ChangeOrderRequest, ChangeOrderResponse> changeOrderAsyncInvoker(ChangeOrderRequest request) {
         return new AsyncInvoker<>(request, CbrMeta.changeOrder, hcClient);
+    }
+
+    /**
+     * 修改付费模式
+     *
+     * 修改资源的付费模式，暂时只支持按需资源转包周期资源。
+     * &gt; 该接口目前输入公测阶段，部分region暂时无法使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeVaultChargeModeRequest 请求对象
+     * @return CompletableFuture<ChangeVaultChargeModeResponse>
+     */
+    public CompletableFuture<ChangeVaultChargeModeResponse> changeVaultChargeModeAsync(
+        ChangeVaultChargeModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, CbrMeta.changeVaultChargeMode);
+    }
+
+    /**
+     * 修改付费模式
+     *
+     * 修改资源的付费模式，暂时只支持按需资源转包周期资源。
+     * &gt; 该接口目前输入公测阶段，部分region暂时无法使用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeVaultChargeModeRequest 请求对象
+     * @return AsyncInvoker<ChangeVaultChargeModeRequest, ChangeVaultChargeModeResponse>
+     */
+    public AsyncInvoker<ChangeVaultChargeModeRequest, ChangeVaultChargeModeResponse> changeVaultChargeModeAsyncInvoker(
+        ChangeVaultChargeModeRequest request) {
+        return new AsyncInvoker<>(request, CbrMeta.changeVaultChargeMode, hcClient);
     }
 
     /**

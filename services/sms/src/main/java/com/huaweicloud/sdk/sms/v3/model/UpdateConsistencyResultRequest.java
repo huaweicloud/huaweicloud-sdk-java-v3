@@ -19,7 +19,7 @@ public class UpdateConsistencyResultRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ConsistencyResultRequestBody body;
+    private SetConsistencyResultRequestBody body;
 
     public UpdateConsistencyResultRequest withTaskId(String taskId) {
         this.taskId = taskId;
@@ -38,14 +38,14 @@ public class UpdateConsistencyResultRequest {
         this.taskId = taskId;
     }
 
-    public UpdateConsistencyResultRequest withBody(ConsistencyResultRequestBody body) {
+    public UpdateConsistencyResultRequest withBody(SetConsistencyResultRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateConsistencyResultRequest withBody(Consumer<ConsistencyResultRequestBody> bodySetter) {
+    public UpdateConsistencyResultRequest withBody(Consumer<SetConsistencyResultRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new ConsistencyResultRequestBody();
+            this.body = new SetConsistencyResultRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdateConsistencyResultRequest {
      * Get body
      * @return body
      */
-    public ConsistencyResultRequestBody getBody() {
+    public SetConsistencyResultRequestBody getBody() {
         return body;
     }
 
-    public void setBody(ConsistencyResultRequestBody body) {
+    public void setBody(SetConsistencyResultRequestBody body) {
         this.body = body;
     }
 

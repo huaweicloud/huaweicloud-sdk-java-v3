@@ -15,66 +15,64 @@ import java.util.function.Consumer;
 public class ShowConsistencyResultResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "consistency_result")
+    @JsonProperty(value = "result_list")
 
-    private List<ConsistencyResult> consistencyResult = null;
+    private List<ConsistencyResultRequestBodyResultList> resultList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "finished_time")
+    @JsonProperty(value = "task_id")
 
-    private Long finishedTime;
+    private String taskId;
 
-    public ShowConsistencyResultResponse withConsistencyResult(List<ConsistencyResult> consistencyResult) {
-        this.consistencyResult = consistencyResult;
+    public ShowConsistencyResultResponse withResultList(List<ConsistencyResultRequestBodyResultList> resultList) {
+        this.resultList = resultList;
         return this;
     }
 
-    public ShowConsistencyResultResponse addConsistencyResultItem(ConsistencyResult consistencyResultItem) {
-        if (this.consistencyResult == null) {
-            this.consistencyResult = new ArrayList<>();
+    public ShowConsistencyResultResponse addResultListItem(ConsistencyResultRequestBodyResultList resultListItem) {
+        if (this.resultList == null) {
+            this.resultList = new ArrayList<>();
         }
-        this.consistencyResult.add(consistencyResultItem);
+        this.resultList.add(resultListItem);
         return this;
     }
 
-    public ShowConsistencyResultResponse withConsistencyResult(
-        Consumer<List<ConsistencyResult>> consistencyResultSetter) {
-        if (this.consistencyResult == null) {
-            this.consistencyResult = new ArrayList<>();
+    public ShowConsistencyResultResponse withResultList(
+        Consumer<List<ConsistencyResultRequestBodyResultList>> resultListSetter) {
+        if (this.resultList == null) {
+            this.resultList = new ArrayList<>();
         }
-        consistencyResultSetter.accept(this.consistencyResult);
+        resultListSetter.accept(this.resultList);
         return this;
     }
 
     /**
-     * 校验结果
-     * @return consistencyResult
+     * 一致性校验结果列表
+     * @return resultList
      */
-    public List<ConsistencyResult> getConsistencyResult() {
-        return consistencyResult;
+    public List<ConsistencyResultRequestBodyResultList> getResultList() {
+        return resultList;
     }
 
-    public void setConsistencyResult(List<ConsistencyResult> consistencyResult) {
-        this.consistencyResult = consistencyResult;
+    public void setResultList(List<ConsistencyResultRequestBodyResultList> resultList) {
+        this.resultList = resultList;
     }
 
-    public ShowConsistencyResultResponse withFinishedTime(Long finishedTime) {
-        this.finishedTime = finishedTime;
+    public ShowConsistencyResultResponse withTaskId(String taskId) {
+        this.taskId = taskId;
         return this;
     }
 
     /**
-     * 检验完成时间
-     * minimum: 0
-     * maximum: 100000000000
-     * @return finishedTime
+     * 任务id
+     * @return taskId
      */
-    public Long getFinishedTime() {
-        return finishedTime;
+    public String getTaskId() {
+        return taskId;
     }
 
-    public void setFinishedTime(Long finishedTime) {
-        this.finishedTime = finishedTime;
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
     }
 
     @Override
@@ -86,21 +84,20 @@ public class ShowConsistencyResultResponse extends SdkResponse {
             return false;
         }
         ShowConsistencyResultResponse that = (ShowConsistencyResultResponse) obj;
-        return Objects.equals(this.consistencyResult, that.consistencyResult)
-            && Objects.equals(this.finishedTime, that.finishedTime);
+        return Objects.equals(this.resultList, that.resultList) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(consistencyResult, finishedTime);
+        return Objects.hash(resultList, taskId);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowConsistencyResultResponse {\n");
-        sb.append("    consistencyResult: ").append(toIndentedString(consistencyResult)).append("\n");
-        sb.append("    finishedTime: ").append(toIndentedString(finishedTime)).append("\n");
+        sb.append("    resultList: ").append(toIndentedString(resultList)).append("\n");
+        sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

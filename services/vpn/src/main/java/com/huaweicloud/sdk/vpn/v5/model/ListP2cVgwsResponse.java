@@ -20,6 +20,16 @@ public class ListP2cVgwsResponse extends SdkResponse {
     private List<ShowResponseP2cVgw> p2cVpnGateways = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
     private String requestId;
@@ -57,6 +67,49 @@ public class ListP2cVgwsResponse extends SdkResponse {
         this.p2cVpnGateways = p2cVpnGateways;
     }
 
+    public ListP2cVgwsResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 总数
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public ListP2cVgwsResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListP2cVgwsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     public ListP2cVgwsResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -84,12 +137,13 @@ public class ListP2cVgwsResponse extends SdkResponse {
         }
         ListP2cVgwsResponse that = (ListP2cVgwsResponse) obj;
         return Objects.equals(this.p2cVpnGateways, that.p2cVpnGateways)
+            && Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.pageInfo, that.pageInfo)
             && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(p2cVpnGateways, requestId);
+        return Objects.hash(p2cVpnGateways, totalCount, pageInfo, requestId);
     }
 
     @Override
@@ -97,6 +151,8 @@ public class ListP2cVgwsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListP2cVgwsResponse {\n");
         sb.append("    p2cVpnGateways: ").append(toIndentedString(p2cVpnGateways)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();

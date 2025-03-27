@@ -181,6 +181,21 @@ public class PostTask {
 
     private Boolean startNetworkCheck;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "speed_limit")
+
+    private Integer speedLimit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "over_speed_threshold")
+
+    private Double overSpeedThreshold;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_need_consistency_check")
+
+    private Boolean isNeedConsistencyCheck;
+
     public PostTask withName(String name) {
         this.name = name;
         return this;
@@ -410,6 +425,8 @@ public class PostTask {
 
     /**
      * 优先级。默认为1
+     * minimum: 0
+     * maximum: 65535
      * @return priority
      */
     public Integer getPriority() {
@@ -522,6 +539,61 @@ public class PostTask {
         this.startNetworkCheck = startNetworkCheck;
     }
 
+    public PostTask withSpeedLimit(Integer speedLimit) {
+        this.speedLimit = speedLimit;
+        return this;
+    }
+
+    /**
+     * 迁移速率限制值
+     * minimum: 0
+     * maximum: 10000
+     * @return speedLimit
+     */
+    public Integer getSpeedLimit() {
+        return speedLimit;
+    }
+
+    public void setSpeedLimit(Integer speedLimit) {
+        this.speedLimit = speedLimit;
+    }
+
+    public PostTask withOverSpeedThreshold(Double overSpeedThreshold) {
+        this.overSpeedThreshold = overSpeedThreshold;
+        return this;
+    }
+
+    /**
+     * 停止迁移的超速阈值。 是一个迁移速率的保护机制，超出该阈值会停止任务。它主要用于控制迁移过程中资源（特别是网络带宽）的消耗，确保系统的整体性能不受单一迁移任务影响 单位是百分比
+     * minimum: 1E+1
+     * maximum: 1E+2
+     * @return overSpeedThreshold
+     */
+    public Double getOverSpeedThreshold() {
+        return overSpeedThreshold;
+    }
+
+    public void setOverSpeedThreshold(Double overSpeedThreshold) {
+        this.overSpeedThreshold = overSpeedThreshold;
+    }
+
+    public PostTask withIsNeedConsistencyCheck(Boolean isNeedConsistencyCheck) {
+        this.isNeedConsistencyCheck = isNeedConsistencyCheck;
+        return this;
+    }
+
+    /**
+     * 是否进行一致性校验
+     * @return isNeedConsistencyCheck
+     */
+    public Boolean getIsNeedConsistencyCheck() {
+        return isNeedConsistencyCheck;
+    }
+
+    public void setIsNeedConsistencyCheck(Boolean isNeedConsistencyCheck) {
+        this.isNeedConsistencyCheck = isNeedConsistencyCheck;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -542,7 +614,10 @@ public class PostTask {
             && Objects.equals(this.vmTemplateId, that.vmTemplateId)
             && Objects.equals(this.usePublicIp, that.usePublicIp) && Objects.equals(this.useIpv6, that.useIpv6)
             && Objects.equals(this.syncing, that.syncing) && Objects.equals(this.existServer, that.existServer)
-            && Objects.equals(this.startNetworkCheck, that.startNetworkCheck);
+            && Objects.equals(this.startNetworkCheck, that.startNetworkCheck)
+            && Objects.equals(this.speedLimit, that.speedLimit)
+            && Objects.equals(this.overSpeedThreshold, that.overSpeedThreshold)
+            && Objects.equals(this.isNeedConsistencyCheck, that.isNeedConsistencyCheck);
     }
 
     @Override
@@ -565,7 +640,10 @@ public class PostTask {
             useIpv6,
             syncing,
             existServer,
-            startNetworkCheck);
+            startNetworkCheck,
+            speedLimit,
+            overSpeedThreshold,
+            isNeedConsistencyCheck);
     }
 
     @Override
@@ -591,6 +669,9 @@ public class PostTask {
         sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
         sb.append("    existServer: ").append(toIndentedString(existServer)).append("\n");
         sb.append("    startNetworkCheck: ").append(toIndentedString(startNetworkCheck)).append("\n");
+        sb.append("    speedLimit: ").append(toIndentedString(speedLimit)).append("\n");
+        sb.append("    overSpeedThreshold: ").append(toIndentedString(overSpeedThreshold)).append("\n");
+        sb.append("    isNeedConsistencyCheck: ").append(toIndentedString(isNeedConsistencyCheck)).append("\n");
         sb.append("}");
         return sb.toString();
     }

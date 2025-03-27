@@ -55,6 +55,11 @@ public class AdjustRecordV3 {
 
     private String transId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "memo")
+
+    private String memo;
+
     public AdjustRecordV3 withCustomerId(String customerId) {
         this.customerId = customerId;
         return this;
@@ -208,6 +213,23 @@ public class AdjustRecordV3 {
         this.transId = transId;
     }
 
+    public AdjustRecordV3 withMemo(String memo) {
+        this.memo = memo;
+        return this;
+    }
+
+    /**
+     * 备注。
+     * @return memo
+     */
+    public String getMemo() {
+        return memo;
+    }
+
+    public void setMemo(String memo) {
+        this.memo = memo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -221,7 +243,7 @@ public class AdjustRecordV3 {
             && Objects.equals(this.operationType, that.operationType) && Objects.equals(this.amount, that.amount)
             && Objects.equals(this.currency, that.currency) && Objects.equals(this.applyScene, that.applyScene)
             && Objects.equals(this.operationTime, that.operationTime) && Objects.equals(this.measureId, that.measureId)
-            && Objects.equals(this.transId, that.transId);
+            && Objects.equals(this.transId, that.transId) && Objects.equals(this.memo, that.memo);
     }
 
     @Override
@@ -234,7 +256,8 @@ public class AdjustRecordV3 {
             applyScene,
             operationTime,
             measureId,
-            transId);
+            transId,
+            memo);
     }
 
     @Override
@@ -250,6 +273,7 @@ public class AdjustRecordV3 {
         sb.append("    operationTime: ").append(toIndentedString(operationTime)).append("\n");
         sb.append("    measureId: ").append(toIndentedString(measureId)).append("\n");
         sb.append("    transId: ").append(toIndentedString(transId)).append("\n");
+        sb.append("    memo: ").append(toIndentedString(memo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

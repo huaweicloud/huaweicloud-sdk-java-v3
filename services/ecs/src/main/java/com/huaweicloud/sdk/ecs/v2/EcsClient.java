@@ -67,6 +67,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListScheduledEventsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListScheduledEventsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerAzInfoRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerAzInfoResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerBlockDevicesRequest;
@@ -1213,6 +1215,37 @@ public class EcsClient {
     public SyncInvoker<ListResizeFlavorsRequest, ListResizeFlavorsResponse> listResizeFlavorsInvoker(
         ListResizeFlavorsRequest request) {
         return new SyncInvoker<>(request, EcsMeta.listResizeFlavors, hcClient);
+    }
+
+    /**
+     * 查询计划事件列表
+     *
+     * 查询计划事件列表
+     * 支持查看过去7天内计划事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledEventsRequest 请求对象
+     * @return ListScheduledEventsResponse
+     */
+    public ListScheduledEventsResponse listScheduledEvents(ListScheduledEventsRequest request) {
+        return hcClient.syncInvokeHttp(request, EcsMeta.listScheduledEvents);
+    }
+
+    /**
+     * 查询计划事件列表
+     *
+     * 查询计划事件列表
+     * 支持查看过去7天内计划事件
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScheduledEventsRequest 请求对象
+     * @return SyncInvoker<ListScheduledEventsRequest, ListScheduledEventsResponse>
+     */
+    public SyncInvoker<ListScheduledEventsRequest, ListScheduledEventsResponse> listScheduledEventsInvoker(
+        ListScheduledEventsRequest request) {
+        return new SyncInvoker<>(request, EcsMeta.listScheduledEvents, hcClient);
     }
 
     /**

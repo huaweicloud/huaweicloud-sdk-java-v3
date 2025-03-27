@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 import java.util.Objects;
 
 /**
- * 企业项目ID
+ * 企业项目ID，不填时会使用默认的企业项目ID
  */
 public class EnterpriseProjectID {
 

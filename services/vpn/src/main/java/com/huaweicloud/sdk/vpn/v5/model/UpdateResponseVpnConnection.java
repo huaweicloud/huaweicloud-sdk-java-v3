@@ -145,6 +145,11 @@ public class UpdateResponseVpnConnection {
     private Boolean enableNqa;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_hub")
+
+    private Boolean enableHub;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_rules")
 
     private List<PolicyRule> policyRules = null;
@@ -188,6 +193,26 @@ public class UpdateResponseVpnConnection {
     @JsonProperty(value = "tags")
 
     private List<VpnResourceTag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "peer_subnets_v6")
+
+    private List<String> peerSubnetsV6 = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tunnel_local_address_v6")
+
+    private String tunnelLocalAddressV6;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tunnel_peer_address_v6")
+
+    private String tunnelPeerAddressV6;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "policy_rules_v6")
+
+    private List<PolicyRule> policyRulesV6 = null;
 
     public UpdateResponseVpnConnection withId(String id) {
         this.id = id;
@@ -373,6 +398,23 @@ public class UpdateResponseVpnConnection {
 
     public void setEnableNqa(Boolean enableNqa) {
         this.enableNqa = enableNqa;
+    }
+
+    public UpdateResponseVpnConnection withEnableHub(Boolean enableHub) {
+        this.enableHub = enableHub;
+        return this;
+    }
+
+    /**
+     * 开启分支互联
+     * @return enableHub
+     */
+    public Boolean getEnableHub() {
+        return enableHub;
+    }
+
+    public void setEnableHub(Boolean enableHub) {
+        this.enableHub = enableHub;
     }
 
     public UpdateResponseVpnConnection withPolicyRules(List<PolicyRule> policyRules) {
@@ -578,6 +620,106 @@ public class UpdateResponseVpnConnection {
         this.tags = tags;
     }
 
+    public UpdateResponseVpnConnection withPeerSubnetsV6(List<String> peerSubnetsV6) {
+        this.peerSubnetsV6 = peerSubnetsV6;
+        return this;
+    }
+
+    public UpdateResponseVpnConnection addPeerSubnetsV6Item(String peerSubnetsV6Item) {
+        if (this.peerSubnetsV6 == null) {
+            this.peerSubnetsV6 = new ArrayList<>();
+        }
+        this.peerSubnetsV6.add(peerSubnetsV6Item);
+        return this;
+    }
+
+    public UpdateResponseVpnConnection withPeerSubnetsV6(Consumer<List<String>> peerSubnetsV6Setter) {
+        if (this.peerSubnetsV6 == null) {
+            this.peerSubnetsV6 = new ArrayList<>();
+        }
+        peerSubnetsV6Setter.accept(this.peerSubnetsV6);
+        return this;
+    }
+
+    /**
+     * 使能ipv6的对端子网
+     * @return peerSubnetsV6
+     */
+    public List<String> getPeerSubnetsV6() {
+        return peerSubnetsV6;
+    }
+
+    public void setPeerSubnetsV6(List<String> peerSubnetsV6) {
+        this.peerSubnetsV6 = peerSubnetsV6;
+    }
+
+    public UpdateResponseVpnConnection withTunnelLocalAddressV6(String tunnelLocalAddressV6) {
+        this.tunnelLocalAddressV6 = tunnelLocalAddressV6;
+        return this;
+    }
+
+    /**
+     * 本端ipv6隧道口地址
+     * @return tunnelLocalAddressV6
+     */
+    public String getTunnelLocalAddressV6() {
+        return tunnelLocalAddressV6;
+    }
+
+    public void setTunnelLocalAddressV6(String tunnelLocalAddressV6) {
+        this.tunnelLocalAddressV6 = tunnelLocalAddressV6;
+    }
+
+    public UpdateResponseVpnConnection withTunnelPeerAddressV6(String tunnelPeerAddressV6) {
+        this.tunnelPeerAddressV6 = tunnelPeerAddressV6;
+        return this;
+    }
+
+    /**
+     * 对端ipv6隧道口地址
+     * @return tunnelPeerAddressV6
+     */
+    public String getTunnelPeerAddressV6() {
+        return tunnelPeerAddressV6;
+    }
+
+    public void setTunnelPeerAddressV6(String tunnelPeerAddressV6) {
+        this.tunnelPeerAddressV6 = tunnelPeerAddressV6;
+    }
+
+    public UpdateResponseVpnConnection withPolicyRulesV6(List<PolicyRule> policyRulesV6) {
+        this.policyRulesV6 = policyRulesV6;
+        return this;
+    }
+
+    public UpdateResponseVpnConnection addPolicyRulesV6Item(PolicyRule policyRulesV6Item) {
+        if (this.policyRulesV6 == null) {
+            this.policyRulesV6 = new ArrayList<>();
+        }
+        this.policyRulesV6.add(policyRulesV6Item);
+        return this;
+    }
+
+    public UpdateResponseVpnConnection withPolicyRulesV6(Consumer<List<PolicyRule>> policyRulesV6Setter) {
+        if (this.policyRulesV6 == null) {
+            this.policyRulesV6 = new ArrayList<>();
+        }
+        policyRulesV6Setter.accept(this.policyRulesV6);
+        return this;
+    }
+
+    /**
+     * 策略模式的ipv6策略规则组
+     * @return policyRulesV6
+     */
+    public List<PolicyRule> getPolicyRulesV6() {
+        return policyRulesV6;
+    }
+
+    public void setPolicyRulesV6(List<PolicyRule> policyRulesV6) {
+        this.policyRulesV6 = policyRulesV6;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -593,12 +735,17 @@ public class UpdateResponseVpnConnection {
             && Objects.equals(this.peerSubnets, that.peerSubnets)
             && Objects.equals(this.tunnelLocalAddress, that.tunnelLocalAddress)
             && Objects.equals(this.tunnelPeerAddress, that.tunnelPeerAddress)
-            && Objects.equals(this.enableNqa, that.enableNqa) && Objects.equals(this.policyRules, that.policyRules)
-            && Objects.equals(this.ikepolicy, that.ikepolicy) && Objects.equals(this.ipsecpolicy, that.ipsecpolicy)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.enableNqa, that.enableNqa) && Objects.equals(this.enableHub, that.enableHub)
+            && Objects.equals(this.policyRules, that.policyRules) && Objects.equals(this.ikepolicy, that.ikepolicy)
+            && Objects.equals(this.ipsecpolicy, that.ipsecpolicy) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.connectionMonitorId, that.connectionMonitorId)
-            && Objects.equals(this.haRole, that.haRole) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.haRole, that.haRole) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.peerSubnetsV6, that.peerSubnetsV6)
+            && Objects.equals(this.tunnelLocalAddressV6, that.tunnelLocalAddressV6)
+            && Objects.equals(this.tunnelPeerAddressV6, that.tunnelPeerAddressV6)
+            && Objects.equals(this.policyRulesV6, that.policyRulesV6);
     }
 
     @Override
@@ -613,6 +760,7 @@ public class UpdateResponseVpnConnection {
             tunnelLocalAddress,
             tunnelPeerAddress,
             enableNqa,
+            enableHub,
             policyRules,
             ikepolicy,
             ipsecpolicy,
@@ -621,7 +769,11 @@ public class UpdateResponseVpnConnection {
             enterpriseProjectId,
             connectionMonitorId,
             haRole,
-            tags);
+            tags,
+            peerSubnetsV6,
+            tunnelLocalAddressV6,
+            tunnelPeerAddressV6,
+            policyRulesV6);
     }
 
     @Override
@@ -638,6 +790,7 @@ public class UpdateResponseVpnConnection {
         sb.append("    tunnelLocalAddress: ").append(toIndentedString(tunnelLocalAddress)).append("\n");
         sb.append("    tunnelPeerAddress: ").append(toIndentedString(tunnelPeerAddress)).append("\n");
         sb.append("    enableNqa: ").append(toIndentedString(enableNqa)).append("\n");
+        sb.append("    enableHub: ").append(toIndentedString(enableHub)).append("\n");
         sb.append("    policyRules: ").append(toIndentedString(policyRules)).append("\n");
         sb.append("    ikepolicy: ").append(toIndentedString(ikepolicy)).append("\n");
         sb.append("    ipsecpolicy: ").append(toIndentedString(ipsecpolicy)).append("\n");
@@ -647,6 +800,10 @@ public class UpdateResponseVpnConnection {
         sb.append("    connectionMonitorId: ").append(toIndentedString(connectionMonitorId)).append("\n");
         sb.append("    haRole: ").append(toIndentedString(haRole)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    peerSubnetsV6: ").append(toIndentedString(peerSubnetsV6)).append("\n");
+        sb.append("    tunnelLocalAddressV6: ").append(toIndentedString(tunnelLocalAddressV6)).append("\n");
+        sb.append("    tunnelPeerAddressV6: ").append(toIndentedString(tunnelPeerAddressV6)).append("\n");
+        sb.append("    policyRulesV6: ").append(toIndentedString(policyRulesV6)).append("\n");
         sb.append("}");
         return sb.toString();
     }

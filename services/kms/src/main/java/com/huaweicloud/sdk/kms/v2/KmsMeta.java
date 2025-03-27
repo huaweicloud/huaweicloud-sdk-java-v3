@@ -25,6 +25,9 @@ import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyWithoutPlaintextRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyWithoutPlaintextResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateEcDatakeyPairRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateEcDatakeyPairRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.CreateEcDatakeyPairResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateGrantRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateGrantRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.CreateGrantResponse;
@@ -41,6 +44,9 @@ import com.huaweicloud.sdk.kms.v2.model.CreateParametersForImportRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateParametersForImportResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateRandomRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateRandomResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairRequestBody;
+import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairResponse;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataRequest;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataRequestBody;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataResponse;
@@ -347,6 +353,29 @@ public class KmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateEcDatakeyPairRequest, CreateEcDatakeyPairResponse> createEcDatakeyPair =
+        genForCreateEcDatakeyPair();
+
+    private static HttpRequestDef<CreateEcDatakeyPairRequest, CreateEcDatakeyPairResponse> genForCreateEcDatakeyPair() {
+        // basic
+        HttpRequestDef.Builder<CreateEcDatakeyPairRequest, CreateEcDatakeyPairResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEcDatakeyPairRequest.class, CreateEcDatakeyPairResponse.class)
+                .withName("CreateEcDatakeyPair")
+                .withUri("/v1.0/{project_id}/kms/create-ec-datakey-pair")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateEcDatakeyPairRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateEcDatakeyPairRequestBody.class),
+            f -> f.withMarshaller(CreateEcDatakeyPairRequest::getBody, CreateEcDatakeyPairRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateGrantRequest, CreateGrantResponse> createGrant = genForCreateGrant();
 
     private static HttpRequestDef<CreateGrantRequest, CreateGrantResponse> genForCreateGrant() {
@@ -484,6 +513,29 @@ public class KmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(GenRandomRequestBody.class),
             f -> f.withMarshaller(CreateRandomRequest::getBody, CreateRandomRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRsaDatakeyPairRequest, CreateRsaDatakeyPairResponse> createRsaDatakeyPair =
+        genForCreateRsaDatakeyPair();
+
+    private static HttpRequestDef<CreateRsaDatakeyPairRequest, CreateRsaDatakeyPairResponse> genForCreateRsaDatakeyPair() {
+        // basic
+        HttpRequestDef.Builder<CreateRsaDatakeyPairRequest, CreateRsaDatakeyPairResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateRsaDatakeyPairRequest.class, CreateRsaDatakeyPairResponse.class)
+            .withName("CreateRsaDatakeyPair")
+            .withUri("/v1.0/{project_id}/kms/create-rsa-datakey-pair")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<CreateRsaDatakeyPairRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateRsaDatakeyPairRequestBody.class),
+            f -> f.withMarshaller(CreateRsaDatakeyPairRequest::getBody, CreateRsaDatakeyPairRequest::setBody));
 
         // response
 

@@ -15,11 +15,6 @@ public class UploadLogRequestBody {
 
     private String logBucket;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "log_expire")
-
-    private Integer logExpire;
-
     public UploadLogRequestBody withLogBucket(String logBucket) {
         this.logBucket = logBucket;
         return this;
@@ -37,25 +32,6 @@ public class UploadLogRequestBody {
         this.logBucket = logBucket;
     }
 
-    public UploadLogRequestBody withLogExpire(Integer logExpire) {
-        this.logExpire = logExpire;
-        return this;
-    }
-
-    /**
-     * 指定有效期
-     * minimum: 300
-     * maximum: 64800
-     * @return logExpire
-     */
-    public Integer getLogExpire() {
-        return logExpire;
-    }
-
-    public void setLogExpire(Integer logExpire) {
-        this.logExpire = logExpire;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -65,12 +41,12 @@ public class UploadLogRequestBody {
             return false;
         }
         UploadLogRequestBody that = (UploadLogRequestBody) obj;
-        return Objects.equals(this.logBucket, that.logBucket) && Objects.equals(this.logExpire, that.logExpire);
+        return Objects.equals(this.logBucket, that.logBucket);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logBucket, logExpire);
+        return Objects.hash(logBucket);
     }
 
     @Override
@@ -78,7 +54,6 @@ public class UploadLogRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UploadLogRequestBody {\n");
         sb.append("    logBucket: ").append(toIndentedString(logBucket)).append("\n");
-        sb.append("    logExpire: ").append(toIndentedString(logExpire)).append("\n");
         sb.append("}");
         return sb.toString();
     }

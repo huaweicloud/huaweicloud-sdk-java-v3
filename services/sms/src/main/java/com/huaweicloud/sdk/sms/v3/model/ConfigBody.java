@@ -31,7 +31,7 @@ public class ConfigBody {
     }
 
     /**
-     * 配置类型，分为：\"EXCLUDE_MIGRATE_PATH\"，\"SYNC_EXCLUDE_PATH\"，\"ONLY_SYNC_PATH\"等
+     * 配置类型，分为：”EXCLUDE_MIGRATE_PATH\"，\"SYNC_EXCLUDE_PATH\"，\"ONLY_SYNC_PATH\"等
      * @return configKey
      */
     public String getConfigKey() {

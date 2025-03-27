@@ -113,6 +113,11 @@ public class UpdateServerRequest {
 
     private ClientAuthTypeEnum clientAuthType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dns_servers")
+
+    private List<String> dnsServers = null;
+
     public UpdateServerRequest withClientCidr(String clientCidr) {
         this.clientCidr = clientCidr;
         return this;
@@ -233,6 +238,39 @@ public class UpdateServerRequest {
         this.clientAuthType = clientAuthType;
     }
 
+    public UpdateServerRequest withDnsServers(List<String> dnsServers) {
+        this.dnsServers = dnsServers;
+        return this;
+    }
+
+    public UpdateServerRequest addDnsServersItem(String dnsServersItem) {
+        if (this.dnsServers == null) {
+            this.dnsServers = new ArrayList<>();
+        }
+        this.dnsServers.add(dnsServersItem);
+        return this;
+    }
+
+    public UpdateServerRequest withDnsServers(Consumer<List<String>> dnsServersSetter) {
+        if (this.dnsServers == null) {
+            this.dnsServers = new ArrayList<>();
+        }
+        dnsServersSetter.accept(this.dnsServers);
+        return this;
+    }
+
+    /**
+     * DNS服务器列表，最多两个DNS
+     * @return dnsServers
+     */
+    public List<String> getDnsServers() {
+        return dnsServers;
+    }
+
+    public void setDnsServers(List<String> dnsServers) {
+        this.dnsServers = dnsServers;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -245,12 +283,13 @@ public class UpdateServerRequest {
         return Objects.equals(this.clientCidr, that.clientCidr) && Objects.equals(this.localSubnets, that.localSubnets)
             && Objects.equals(this.serverCertificate, that.serverCertificate)
             && Objects.equals(this.sslOptions, that.sslOptions)
-            && Objects.equals(this.clientAuthType, that.clientAuthType);
+            && Objects.equals(this.clientAuthType, that.clientAuthType)
+            && Objects.equals(this.dnsServers, that.dnsServers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clientCidr, localSubnets, serverCertificate, sslOptions, clientAuthType);
+        return Objects.hash(clientCidr, localSubnets, serverCertificate, sslOptions, clientAuthType, dnsServers);
     }
 
     @Override
@@ -262,6 +301,7 @@ public class UpdateServerRequest {
         sb.append("    serverCertificate: ").append(toIndentedString(serverCertificate)).append("\n");
         sb.append("    sslOptions: ").append(toIndentedString(sslOptions)).append("\n");
         sb.append("    clientAuthType: ").append(toIndentedString(clientAuthType)).append("\n");
+        sb.append("    dnsServers: ").append(toIndentedString(dnsServers)).append("\n");
         sb.append("}");
         return sb.toString();
     }

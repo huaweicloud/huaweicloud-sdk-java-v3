@@ -38,6 +38,11 @@ public class CreateSubCustomerReqV2 {
 
     private NewCustomerV2 newSubCustomer;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "financial_custody")
+
+    private Integer financialCustody;
+
     public CreateSubCustomerReqV2 withPartyId(String partyId) {
         this.partyId = partyId;
         return this;
@@ -113,7 +118,7 @@ public class CreateSubCustomerReqV2 {
     }
 
     /**
-     * 申请的权限列表。 支持的权限项请参见下表。
+     * 申请的权限列表。 支持的权限项请参见下表。当financial_custody为1时，此参数不生效，默认指定权限项：READ_FINANCE_INFO、READ_CONSUME_BILL、SHARE-BIZ-DISCOUNT-TO-SUB。
      * @return permissionIds
      */
     public List<String> getPermissionIds() {
@@ -150,6 +155,25 @@ public class CreateSubCustomerReqV2 {
         this.newSubCustomer = newSubCustomer;
     }
 
+    public CreateSubCustomerReqV2 withFinancialCustody(Integer financialCustody) {
+        this.financialCustody = financialCustody;
+        return this;
+    }
+
+    /**
+     * 是否开通财务托管，0：不开通；1：开通。默认值0，默认不开通。
+     * minimum: 0
+     * maximum: 1
+     * @return financialCustody
+     */
+    public Integer getFinancialCustody() {
+        return financialCustody;
+    }
+
+    public void setFinancialCustody(Integer financialCustody) {
+        this.financialCustody = financialCustody;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -162,12 +186,14 @@ public class CreateSubCustomerReqV2 {
         return Objects.equals(this.partyId, that.partyId) && Objects.equals(this.displayName, that.displayName)
             && Objects.equals(this.subCustomerAssociationType, that.subCustomerAssociationType)
             && Objects.equals(this.permissionIds, that.permissionIds)
-            && Objects.equals(this.newSubCustomer, that.newSubCustomer);
+            && Objects.equals(this.newSubCustomer, that.newSubCustomer)
+            && Objects.equals(this.financialCustody, that.financialCustody);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(partyId, displayName, subCustomerAssociationType, permissionIds, newSubCustomer);
+        return Objects
+            .hash(partyId, displayName, subCustomerAssociationType, permissionIds, newSubCustomer, financialCustody);
     }
 
     @Override
@@ -179,6 +205,7 @@ public class CreateSubCustomerReqV2 {
         sb.append("    subCustomerAssociationType: ").append(toIndentedString(subCustomerAssociationType)).append("\n");
         sb.append("    permissionIds: ").append(toIndentedString(permissionIds)).append("\n");
         sb.append("    newSubCustomer: ").append(toIndentedString(newSubCustomer)).append("\n");
+        sb.append("    financialCustody: ").append(toIndentedString(financialCustody)).append("\n");
         sb.append("}");
         return sb.toString();
     }

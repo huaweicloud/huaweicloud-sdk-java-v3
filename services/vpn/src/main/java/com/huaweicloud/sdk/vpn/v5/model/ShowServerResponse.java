@@ -60,6 +60,11 @@ public class ShowServerResponse {
     private ShowServerResponseSslOptions sslOptions;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dns_servers")
+
+    private List<String> dnsServers = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -279,6 +284,39 @@ public class ShowServerResponse {
         this.sslOptions = sslOptions;
     }
 
+    public ShowServerResponse withDnsServers(List<String> dnsServers) {
+        this.dnsServers = dnsServers;
+        return this;
+    }
+
+    public ShowServerResponse addDnsServersItem(String dnsServersItem) {
+        if (this.dnsServers == null) {
+            this.dnsServers = new ArrayList<>();
+        }
+        this.dnsServers.add(dnsServersItem);
+        return this;
+    }
+
+    public ShowServerResponse withDnsServers(Consumer<List<String>> dnsServersSetter) {
+        if (this.dnsServers == null) {
+            this.dnsServers = new ArrayList<>();
+        }
+        dnsServersSetter.accept(this.dnsServers);
+        return this;
+    }
+
+    /**
+     * DNS服务器列表
+     * @return dnsServers
+     */
+    public List<String> getDnsServers() {
+        return dnsServers;
+    }
+
+    public void setDnsServers(List<String> dnsServers) {
+        this.dnsServers = dnsServers;
+    }
+
     public ShowServerResponse withStatus(String status) {
         this.status = status;
         return this;
@@ -345,8 +383,9 @@ public class ShowServerResponse {
             && Objects.equals(this.tunnelProtocol, that.tunnelProtocol)
             && Objects.equals(this.serverCertificate, that.serverCertificate)
             && Objects.equals(this.clientCaCertificates, that.clientCaCertificates)
-            && Objects.equals(this.sslOptions, that.sslOptions) && Objects.equals(this.status, that.status)
-            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.sslOptions, that.sslOptions) && Objects.equals(this.dnsServers, that.dnsServers)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
@@ -360,6 +399,7 @@ public class ShowServerResponse {
             serverCertificate,
             clientCaCertificates,
             sslOptions,
+            dnsServers,
             status,
             createdAt,
             updatedAt);
@@ -378,6 +418,7 @@ public class ShowServerResponse {
         sb.append("    serverCertificate: ").append(toIndentedString(serverCertificate)).append("\n");
         sb.append("    clientCaCertificates: ").append(toIndentedString(clientCaCertificates)).append("\n");
         sb.append("    sslOptions: ").append(toIndentedString(sslOptions)).append("\n");
+        sb.append("    dnsServers: ").append(toIndentedString(dnsServers)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

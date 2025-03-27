@@ -24,7 +24,7 @@ public class PutTaskReq {
     private String name;
 
     /**
-     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
+     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移
      */
     public static final class TypeEnum {
 
@@ -179,7 +179,7 @@ public class PutTaskReq {
     private String id;
 
     /**
-     * 进程优先级  0：低  1：标准（默认）  2：高 
+     * 进程优先级  0：低  1：标准（默认）  2：高
      */
     public static final class PriorityEnum {
 
@@ -412,7 +412,7 @@ public class PutTaskReq {
     }
 
     /**
-     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移 
+     * 任务类型，创建时必选，更新时可选 MIGRATE_FILE:文件级迁移 MIGRATE_BLOCK:块级迁移
      * @return type
      */
     public TypeEnum getType() {
@@ -463,7 +463,7 @@ public class PutTaskReq {
     }
 
     /**
-     * 进程优先级  0：低  1：标准（默认）  2：高 
+     * 进程优先级  0：低  1：标准（默认）  2：高
      * minimum: 0
      * maximum: 2
      * @return priority
@@ -499,7 +499,7 @@ public class PutTaskReq {
     }
 
     /**
-     * 迁移完成后是否启动目的端服务器  true：启动  false：停止 
+     * 迁移完成后是否启动目的端服务器  true：启动  false：停止
      * @return startTargetServer
      */
     public Boolean getStartTargetServer() {
@@ -550,7 +550,7 @@ public class PutTaskReq {
     }
 
     /**
-     * 目的端服务器的IP地址。  公网迁移时请填写弹性IP地址  专线迁移时请填写私有IP地址 
+     * 目的端服务器的IP地址。  公网迁移时请填写弹性IP地址  专线迁移时请填写私有IP地址
      * @return migrationIp
      */
     public String getMigrationIp() {

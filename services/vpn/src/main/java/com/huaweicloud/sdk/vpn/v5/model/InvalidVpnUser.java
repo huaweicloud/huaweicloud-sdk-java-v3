@@ -26,6 +26,11 @@ public class InvalidVpnUser {
     private String userGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "static_ip")
+
+    private String staticIp;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cause")
 
     private String cause;
@@ -81,6 +86,23 @@ public class InvalidVpnUser {
         this.userGroupName = userGroupName;
     }
 
+    public InvalidVpnUser withStaticIp(String staticIp) {
+        this.staticIp = staticIp;
+        return this;
+    }
+
+    /**
+     * 静态客户端IP地址，默认值disable，表示随机分配客户端IP
+     * @return staticIp
+     */
+    public String getStaticIp() {
+        return staticIp;
+    }
+
+    public void setStaticIp(String staticIp) {
+        this.staticIp = staticIp;
+    }
+
     public InvalidVpnUser withCause(String cause) {
         this.cause = cause;
         return this;
@@ -108,12 +130,13 @@ public class InvalidVpnUser {
         }
         InvalidVpnUser that = (InvalidVpnUser) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.userGroupName, that.userGroupName) && Objects.equals(this.cause, that.cause);
+            && Objects.equals(this.userGroupName, that.userGroupName) && Objects.equals(this.staticIp, that.staticIp)
+            && Objects.equals(this.cause, that.cause);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, userGroupName, cause);
+        return Objects.hash(name, description, userGroupName, staticIp, cause);
     }
 
     @Override
@@ -123,6 +146,7 @@ public class InvalidVpnUser {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    userGroupName: ").append(toIndentedString(userGroupName)).append("\n");
+        sb.append("    staticIp: ").append(toIndentedString(staticIp)).append("\n");
         sb.append("    cause: ").append(toIndentedString(cause)).append("\n");
         sb.append("}");
         return sb.toString();

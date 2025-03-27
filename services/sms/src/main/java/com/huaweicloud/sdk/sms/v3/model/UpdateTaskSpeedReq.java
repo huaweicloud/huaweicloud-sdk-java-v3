@@ -227,6 +227,41 @@ public class UpdateTaskSpeedReq {
 
     private Long remainTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_cpu_usage")
+
+    private Double totalCpuUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_cpu_usage")
+
+    private Double agentCpuUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_mem_usage")
+
+    private Double totalMemUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_mem_usage")
+
+    private Double agentMemUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_disk_io")
+
+    private Double totalDiskIo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_disk_io")
+
+    private Double agentDiskIo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_time")
+
+    private String agentTime;
+
     public UpdateTaskSpeedReq withSubtaskName(SubtaskNameEnum subtaskName) {
         this.subtaskName = subtaskName;
         return this;
@@ -375,6 +410,137 @@ public class UpdateTaskSpeedReq {
         this.remainTime = remainTime;
     }
 
+    public UpdateTaskSpeedReq withTotalCpuUsage(Double totalCpuUsage) {
+        this.totalCpuUsage = totalCpuUsage;
+        return this;
+    }
+
+    /**
+     * 主机的CPU使用率，0到100，单位是百分比
+     * minimum: 0
+     * maximum: 1E+2
+     * @return totalCpuUsage
+     */
+    public Double getTotalCpuUsage() {
+        return totalCpuUsage;
+    }
+
+    public void setTotalCpuUsage(Double totalCpuUsage) {
+        this.totalCpuUsage = totalCpuUsage;
+    }
+
+    public UpdateTaskSpeedReq withAgentCpuUsage(Double agentCpuUsage) {
+        this.agentCpuUsage = agentCpuUsage;
+        return this;
+    }
+
+    /**
+     * Agent的CPU使用率，0到100，单位是百分比
+     * minimum: 0
+     * maximum: 1E+2
+     * @return agentCpuUsage
+     */
+    public Double getAgentCpuUsage() {
+        return agentCpuUsage;
+    }
+
+    public void setAgentCpuUsage(Double agentCpuUsage) {
+        this.agentCpuUsage = agentCpuUsage;
+    }
+
+    public UpdateTaskSpeedReq withTotalMemUsage(Double totalMemUsage) {
+        this.totalMemUsage = totalMemUsage;
+        return this;
+    }
+
+    /**
+     * 主机的内存使用值，单位是MB
+     * minimum: 0
+     * maximum: 1048576
+     * @return totalMemUsage
+     */
+    public Double getTotalMemUsage() {
+        return totalMemUsage;
+    }
+
+    public void setTotalMemUsage(Double totalMemUsage) {
+        this.totalMemUsage = totalMemUsage;
+    }
+
+    public UpdateTaskSpeedReq withAgentMemUsage(Double agentMemUsage) {
+        this.agentMemUsage = agentMemUsage;
+        return this;
+    }
+
+    /**
+     * Agent的内存使用值，单位是MB
+     * minimum: 0
+     * maximum: 1048576
+     * @return agentMemUsage
+     */
+    public Double getAgentMemUsage() {
+        return agentMemUsage;
+    }
+
+    public void setAgentMemUsage(Double agentMemUsage) {
+        this.agentMemUsage = agentMemUsage;
+    }
+
+    public UpdateTaskSpeedReq withTotalDiskIo(Double totalDiskIo) {
+        this.totalDiskIo = totalDiskIo;
+        return this;
+    }
+
+    /**
+     * 主机的磁盘I/O值，单位是MB/s
+     * minimum: 0
+     * maximum: 1E+4
+     * @return totalDiskIo
+     */
+    public Double getTotalDiskIo() {
+        return totalDiskIo;
+    }
+
+    public void setTotalDiskIo(Double totalDiskIo) {
+        this.totalDiskIo = totalDiskIo;
+    }
+
+    public UpdateTaskSpeedReq withAgentDiskIo(Double agentDiskIo) {
+        this.agentDiskIo = agentDiskIo;
+        return this;
+    }
+
+    /**
+     * Agent的磁盘I/O值，单位是MB/s
+     * minimum: 0
+     * maximum: 1E+4
+     * @return agentDiskIo
+     */
+    public Double getAgentDiskIo() {
+        return agentDiskIo;
+    }
+
+    public void setAgentDiskIo(Double agentDiskIo) {
+        this.agentDiskIo = agentDiskIo;
+    }
+
+    public UpdateTaskSpeedReq withAgentTime(String agentTime) {
+        this.agentTime = agentTime;
+        return this;
+    }
+
+    /**
+     * Agent的当前时间，用于超速检测，因为限速值是可以分时间段设置的
+     * @return agentTime
+     */
+    public String getAgentTime() {
+        return agentTime;
+    }
+
+    public void setAgentTime(String agentTime) {
+        this.agentTime = agentTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -388,7 +554,13 @@ public class UpdateTaskSpeedReq {
             && Objects.equals(this.replicatesize, that.replicatesize) && Objects.equals(this.totalsize, that.totalsize)
             && Objects.equals(this.processTrace, that.processTrace)
             && Objects.equals(this.migrateSpeed, that.migrateSpeed)
-            && Objects.equals(this.compressRate, that.compressRate) && Objects.equals(this.remainTime, that.remainTime);
+            && Objects.equals(this.compressRate, that.compressRate) && Objects.equals(this.remainTime, that.remainTime)
+            && Objects.equals(this.totalCpuUsage, that.totalCpuUsage)
+            && Objects.equals(this.agentCpuUsage, that.agentCpuUsage)
+            && Objects.equals(this.totalMemUsage, that.totalMemUsage)
+            && Objects.equals(this.agentMemUsage, that.agentMemUsage)
+            && Objects.equals(this.totalDiskIo, that.totalDiskIo) && Objects.equals(this.agentDiskIo, that.agentDiskIo)
+            && Objects.equals(this.agentTime, that.agentTime);
     }
 
     @Override
@@ -400,7 +572,14 @@ public class UpdateTaskSpeedReq {
             processTrace,
             migrateSpeed,
             compressRate,
-            remainTime);
+            remainTime,
+            totalCpuUsage,
+            agentCpuUsage,
+            totalMemUsage,
+            agentMemUsage,
+            totalDiskIo,
+            agentDiskIo,
+            agentTime);
     }
 
     @Override
@@ -415,6 +594,13 @@ public class UpdateTaskSpeedReq {
         sb.append("    migrateSpeed: ").append(toIndentedString(migrateSpeed)).append("\n");
         sb.append("    compressRate: ").append(toIndentedString(compressRate)).append("\n");
         sb.append("    remainTime: ").append(toIndentedString(remainTime)).append("\n");
+        sb.append("    totalCpuUsage: ").append(toIndentedString(totalCpuUsage)).append("\n");
+        sb.append("    agentCpuUsage: ").append(toIndentedString(agentCpuUsage)).append("\n");
+        sb.append("    totalMemUsage: ").append(toIndentedString(totalMemUsage)).append("\n");
+        sb.append("    agentMemUsage: ").append(toIndentedString(agentMemUsage)).append("\n");
+        sb.append("    totalDiskIo: ").append(toIndentedString(totalDiskIo)).append("\n");
+        sb.append("    agentDiskIo: ").append(toIndentedString(agentDiskIo)).append("\n");
+        sb.append("    agentTime: ").append(toIndentedString(agentTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

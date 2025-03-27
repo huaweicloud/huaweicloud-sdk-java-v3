@@ -129,7 +129,7 @@ public class SourceServersResponseBody {
     private Boolean oemSystem;
 
     /**
-     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败
      */
     public static final class StateEnum {
 
@@ -193,6 +193,21 @@ public class SourceServersResponseBody {
          */
         public static final StateEnum FINISHED = new StateEnum("finished");
 
+        /**
+         * Enum CLEARING for value: "clearing"
+         */
+        public static final StateEnum CLEARING = new StateEnum("clearing");
+
+        /**
+         * Enum CLEARED for value: "cleared"
+         */
+        public static final StateEnum CLEARED = new StateEnum("cleared");
+
+        /**
+         * Enum CLEARFAILED for value: "clearfailed"
+         */
+        public static final StateEnum CLEARFAILED = new StateEnum("clearfailed");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -209,6 +224,9 @@ public class SourceServersResponseBody {
             map.put("cloning", CLONING);
             map.put("cutovering", CUTOVERING);
             map.put("finished", FINISHED);
+            map.put("clearing", CLEARING);
+            map.put("cleared", CLEARED);
+            map.put("clearfailed", CLEARFAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -314,7 +332,7 @@ public class SourceServersResponseBody {
     private Long lastVisitTime;
 
     /**
-     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中
      */
     public static final class MigrationCycleEnum {
 
@@ -421,6 +439,11 @@ public class SourceServersResponseBody {
     @JsonProperty(value = "is_consistency_result_exist")
 
     private Boolean isConsistencyResultExist;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_tc")
+
+    private Boolean hasTc;
 
     public SourceServersResponseBody withId(String id) {
         this.id = id;
@@ -566,7 +589,7 @@ public class SourceServersResponseBody {
     }
 
     /**
-     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败
      * @return state
      */
     public StateEnum getState() {
@@ -799,7 +822,7 @@ public class SourceServersResponseBody {
     }
 
     /**
-     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中
      * @return migrationCycle
      */
     public MigrationCycleEnum getMigrationCycle() {
@@ -846,6 +869,23 @@ public class SourceServersResponseBody {
         this.isConsistencyResultExist = isConsistencyResultExist;
     }
 
+    public SourceServersResponseBody withHasTc(Boolean hasTc) {
+        this.hasTc = hasTc;
+        return this;
+    }
+
+    /**
+     * 是否安装tc组件，Linux系统此参数为必选
+     * @return hasTc
+     */
+    public Boolean getHasTc() {
+        return hasTc;
+    }
+
+    public void setHasTc(Boolean hasTc) {
+        this.hasTc = hasTc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -869,7 +909,8 @@ public class SourceServersResponseBody {
             && Objects.equals(this.totalsize, that.totalsize) && Objects.equals(this.lastVisitTime, that.lastVisitTime)
             && Objects.equals(this.migrationCycle, that.migrationCycle)
             && Objects.equals(this.stateActionTime, that.stateActionTime)
-            && Objects.equals(this.isConsistencyResultExist, that.isConsistencyResultExist);
+            && Objects.equals(this.isConsistencyResultExist, that.isConsistencyResultExist)
+            && Objects.equals(this.hasTc, that.hasTc);
     }
 
     @Override
@@ -895,7 +936,8 @@ public class SourceServersResponseBody {
             lastVisitTime,
             migrationCycle,
             stateActionTime,
-            isConsistencyResultExist);
+            isConsistencyResultExist,
+            hasTc);
     }
 
     @Override
@@ -924,6 +966,7 @@ public class SourceServersResponseBody {
         sb.append("    migrationCycle: ").append(toIndentedString(migrationCycle)).append("\n");
         sb.append("    stateActionTime: ").append(toIndentedString(stateActionTime)).append("\n");
         sb.append("    isConsistencyResultExist: ").append(toIndentedString(isConsistencyResultExist)).append("\n");
+        sb.append("    hasTc: ").append(toIndentedString(hasTc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

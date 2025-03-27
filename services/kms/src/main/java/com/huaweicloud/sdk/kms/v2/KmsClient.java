@@ -19,6 +19,8 @@ import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyWithoutPlaintextRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateDatakeyWithoutPlaintextResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateEcDatakeyPairRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateEcDatakeyPairResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateGrantRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateGrantResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateKeyRequest;
@@ -31,6 +33,8 @@ import com.huaweicloud.sdk.kms.v2.model.CreateParametersForImportRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateParametersForImportResponse;
 import com.huaweicloud.sdk.kms.v2.model.CreateRandomRequest;
 import com.huaweicloud.sdk.kms.v2.model.CreateRandomResponse;
+import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairRequest;
+import com.huaweicloud.sdk.kms.v2.model.CreateRsaDatakeyPairResponse;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataRequest;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDataResponse;
 import com.huaweicloud.sdk.kms.v2.model.DecryptDatakeyRequest;
@@ -380,6 +384,35 @@ public class KmsClient {
     }
 
     /**
+     * 创建EC数据密钥对
+     *
+     * - 功能介绍：创建EC数据密钥对，返回结果包含明文公钥和密文私钥，根据参数决定是否返回明文私钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateEcDatakeyPairRequest 请求对象
+     * @return CreateEcDatakeyPairResponse
+     */
+    public CreateEcDatakeyPairResponse createEcDatakeyPair(CreateEcDatakeyPairRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.createEcDatakeyPair);
+    }
+
+    /**
+     * 创建EC数据密钥对
+     *
+     * - 功能介绍：创建EC数据密钥对，返回结果包含明文公钥和密文私钥，根据参数决定是否返回明文私钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateEcDatakeyPairRequest 请求对象
+     * @return SyncInvoker<CreateEcDatakeyPairRequest, CreateEcDatakeyPairResponse>
+     */
+    public SyncInvoker<CreateEcDatakeyPairRequest, CreateEcDatakeyPairResponse> createEcDatakeyPairInvoker(
+        CreateEcDatakeyPairRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.createEcDatakeyPair, hcClient);
+    }
+
+    /**
      * 创建授权
      *
      * - 功能介绍：创建授权，被授权用户可以对授权密钥进行操作。
@@ -559,6 +592,35 @@ public class KmsClient {
      */
     public SyncInvoker<CreateRandomRequest, CreateRandomResponse> createRandomInvoker(CreateRandomRequest request) {
         return new SyncInvoker<>(request, KmsMeta.createRandom, hcClient);
+    }
+
+    /**
+     * 创建RSA数据密钥对
+     *
+     * - 功能介绍：创建rsa数据密钥对，返回结果包含明文公钥和密文私钥，根据参数决定是否返回明文私钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRsaDatakeyPairRequest 请求对象
+     * @return CreateRsaDatakeyPairResponse
+     */
+    public CreateRsaDatakeyPairResponse createRsaDatakeyPair(CreateRsaDatakeyPairRequest request) {
+        return hcClient.syncInvokeHttp(request, KmsMeta.createRsaDatakeyPair);
+    }
+
+    /**
+     * 创建RSA数据密钥对
+     *
+     * - 功能介绍：创建rsa数据密钥对，返回结果包含明文公钥和密文私钥，根据参数决定是否返回明文私钥。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRsaDatakeyPairRequest 请求对象
+     * @return SyncInvoker<CreateRsaDatakeyPairRequest, CreateRsaDatakeyPairResponse>
+     */
+    public SyncInvoker<CreateRsaDatakeyPairRequest, CreateRsaDatakeyPairResponse> createRsaDatakeyPairInvoker(
+        CreateRsaDatakeyPairRequest request) {
+        return new SyncInvoker<>(request, KmsMeta.createRsaDatakeyPair, hcClient);
     }
 
     /**

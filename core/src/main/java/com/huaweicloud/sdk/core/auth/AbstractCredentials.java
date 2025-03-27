@@ -36,6 +36,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 import java.util.Objects;
 import java.util.function.Function;
 
@@ -259,7 +260,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         securityToken = credential.getSecurityToken();
         try {
             String expiredTime = credential.getExpiresAt().replace("000Z", "Z");
-            expiredAt = new SimpleDateFormat(Iam.EXPIRED_DATE_FORMAT).parse(expiredTime).getTime();
+            expiredAt = new SimpleDateFormat(Iam.EXPIRED_DATE_FORMAT, Locale.US).parse(expiredTime).getTime();
         } catch (ParseException e) {
             throw new SdkException(e);
         }

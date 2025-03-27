@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
@@ -19,7 +20,7 @@ public class ChangeOrderResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retCode")
 
-    private String retCode;
+    private BigDecimal retCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "retMsg")
@@ -43,7 +44,7 @@ public class ChangeOrderResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
-    public ChangeOrderResponse withRetCode(String retCode) {
+    public ChangeOrderResponse withRetCode(BigDecimal retCode) {
         this.retCode = retCode;
         return this;
     }
@@ -52,11 +53,11 @@ public class ChangeOrderResponse extends SdkResponse {
      * 变更状态码
      * @return retCode
      */
-    public String getRetCode() {
+    public BigDecimal getRetCode() {
         return retCode;
     }
 
-    public void setRetCode(String retCode) {
+    public void setRetCode(BigDecimal retCode) {
         this.retCode = retCode;
     }
 

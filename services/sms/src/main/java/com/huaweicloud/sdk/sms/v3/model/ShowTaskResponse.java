@@ -395,6 +395,36 @@ public class ShowTaskResponse extends SdkResponse {
 
     private NetworkCheckInfoRequestBody networkCheckInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_cpu_usage")
+
+    private Double totalCpuUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_cpu_usage")
+
+    private Double agentCpuUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_mem_usage")
+
+    private Double totalMemUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_mem_usage")
+
+    private Double agentMemUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_disk_io")
+
+    private Double totalDiskIo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_disk_io")
+
+    private Double agentDiskIo;
+
     public ShowTaskResponse withName(String name) {
         this.name = name;
         return this;
@@ -1011,6 +1041,120 @@ public class ShowTaskResponse extends SdkResponse {
         this.networkCheckInfo = networkCheckInfo;
     }
 
+    public ShowTaskResponse withTotalCpuUsage(Double totalCpuUsage) {
+        this.totalCpuUsage = totalCpuUsage;
+        return this;
+    }
+
+    /**
+     * 主机的CPU使用率，单位是百分比
+     * minimum: 0
+     * maximum: 1E+2
+     * @return totalCpuUsage
+     */
+    public Double getTotalCpuUsage() {
+        return totalCpuUsage;
+    }
+
+    public void setTotalCpuUsage(Double totalCpuUsage) {
+        this.totalCpuUsage = totalCpuUsage;
+    }
+
+    public ShowTaskResponse withAgentCpuUsage(Double agentCpuUsage) {
+        this.agentCpuUsage = agentCpuUsage;
+        return this;
+    }
+
+    /**
+     * Agent的CPU使用率，单位是百分比
+     * minimum: 0
+     * maximum: 1E+2
+     * @return agentCpuUsage
+     */
+    public Double getAgentCpuUsage() {
+        return agentCpuUsage;
+    }
+
+    public void setAgentCpuUsage(Double agentCpuUsage) {
+        this.agentCpuUsage = agentCpuUsage;
+    }
+
+    public ShowTaskResponse withTotalMemUsage(Double totalMemUsage) {
+        this.totalMemUsage = totalMemUsage;
+        return this;
+    }
+
+    /**
+     * 主机的内存使用值，单位是MB
+     * minimum: 0
+     * maximum: 1048576
+     * @return totalMemUsage
+     */
+    public Double getTotalMemUsage() {
+        return totalMemUsage;
+    }
+
+    public void setTotalMemUsage(Double totalMemUsage) {
+        this.totalMemUsage = totalMemUsage;
+    }
+
+    public ShowTaskResponse withAgentMemUsage(Double agentMemUsage) {
+        this.agentMemUsage = agentMemUsage;
+        return this;
+    }
+
+    /**
+     * Agent的内存使用值，单位是MB
+     * minimum: 0
+     * maximum: 1048576
+     * @return agentMemUsage
+     */
+    public Double getAgentMemUsage() {
+        return agentMemUsage;
+    }
+
+    public void setAgentMemUsage(Double agentMemUsage) {
+        this.agentMemUsage = agentMemUsage;
+    }
+
+    public ShowTaskResponse withTotalDiskIo(Double totalDiskIo) {
+        this.totalDiskIo = totalDiskIo;
+        return this;
+    }
+
+    /**
+     * 主机的磁盘I/O值，单位是MB/s
+     * minimum: 0
+     * maximum: 1E+4
+     * @return totalDiskIo
+     */
+    public Double getTotalDiskIo() {
+        return totalDiskIo;
+    }
+
+    public void setTotalDiskIo(Double totalDiskIo) {
+        this.totalDiskIo = totalDiskIo;
+    }
+
+    public ShowTaskResponse withAgentDiskIo(Double agentDiskIo) {
+        this.agentDiskIo = agentDiskIo;
+        return this;
+    }
+
+    /**
+     * Agent的磁盘I/O值，单位是MB/s
+     * minimum: 0
+     * maximum: 1E+4
+     * @return agentDiskIo
+     */
+    public Double getAgentDiskIo() {
+        return agentDiskIo;
+    }
+
+    public void setAgentDiskIo(Double agentDiskIo) {
+        this.agentDiskIo = agentDiskIo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1040,7 +1184,12 @@ public class ShowTaskResponse extends SdkResponse {
             && Objects.equals(this.remainSeconds, that.remainSeconds)
             && Objects.equals(this.targetSnapshotId, that.targetSnapshotId)
             && Objects.equals(this.cloneServer, that.cloneServer) && Objects.equals(this.subTasks, that.subTasks)
-            && Objects.equals(this.networkCheckInfo, that.networkCheckInfo);
+            && Objects.equals(this.networkCheckInfo, that.networkCheckInfo)
+            && Objects.equals(this.totalCpuUsage, that.totalCpuUsage)
+            && Objects.equals(this.agentCpuUsage, that.agentCpuUsage)
+            && Objects.equals(this.totalMemUsage, that.totalMemUsage)
+            && Objects.equals(this.agentMemUsage, that.agentMemUsage)
+            && Objects.equals(this.totalDiskIo, that.totalDiskIo) && Objects.equals(this.agentDiskIo, that.agentDiskIo);
     }
 
     @Override
@@ -1076,7 +1225,13 @@ public class ShowTaskResponse extends SdkResponse {
             targetSnapshotId,
             cloneServer,
             subTasks,
-            networkCheckInfo);
+            networkCheckInfo,
+            totalCpuUsage,
+            agentCpuUsage,
+            totalMemUsage,
+            agentMemUsage,
+            totalDiskIo,
+            agentDiskIo);
     }
 
     @Override
@@ -1115,6 +1270,12 @@ public class ShowTaskResponse extends SdkResponse {
         sb.append("    cloneServer: ").append(toIndentedString(cloneServer)).append("\n");
         sb.append("    subTasks: ").append(toIndentedString(subTasks)).append("\n");
         sb.append("    networkCheckInfo: ").append(toIndentedString(networkCheckInfo)).append("\n");
+        sb.append("    totalCpuUsage: ").append(toIndentedString(totalCpuUsage)).append("\n");
+        sb.append("    agentCpuUsage: ").append(toIndentedString(agentCpuUsage)).append("\n");
+        sb.append("    totalMemUsage: ").append(toIndentedString(totalMemUsage)).append("\n");
+        sb.append("    agentMemUsage: ").append(toIndentedString(agentMemUsage)).append("\n");
+        sb.append("    totalDiskIo: ").append(toIndentedString(totalDiskIo)).append("\n");
+        sb.append("    agentDiskIo: ").append(toIndentedString(agentDiskIo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

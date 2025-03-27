@@ -9,26 +9,65 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 一致性校验的结果body体
+ * ConsistencyResultRequestBodyResultList
  */
-public class ConsistencyResultRequestBody {
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "consistency_result")
-
-    private List<ConsistencyResult> consistencyResult = null;
+public class ConsistencyResultRequestBodyResultList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "finished_time")
 
     private Long finishedTime;
 
-    public ConsistencyResultRequestBody withConsistencyResult(List<ConsistencyResult> consistencyResult) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "check_result")
+
+    private String checkResult;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consistency_result")
+
+    private List<ConsistencyResult> consistencyResult = null;
+
+    public ConsistencyResultRequestBodyResultList withFinishedTime(Long finishedTime) {
+        this.finishedTime = finishedTime;
+        return this;
+    }
+
+    /**
+     * 校验完成时间
+     * @return finishedTime
+     */
+    public Long getFinishedTime() {
+        return finishedTime;
+    }
+
+    public void setFinishedTime(Long finishedTime) {
+        this.finishedTime = finishedTime;
+    }
+
+    public ConsistencyResultRequestBodyResultList withCheckResult(String checkResult) {
+        this.checkResult = checkResult;
+        return this;
+    }
+
+    /**
+     * 校验结果
+     * @return checkResult
+     */
+    public String getCheckResult() {
+        return checkResult;
+    }
+
+    public void setCheckResult(String checkResult) {
+        this.checkResult = checkResult;
+    }
+
+    public ConsistencyResultRequestBodyResultList withConsistencyResult(List<ConsistencyResult> consistencyResult) {
         this.consistencyResult = consistencyResult;
         return this;
     }
 
-    public ConsistencyResultRequestBody addConsistencyResultItem(ConsistencyResult consistencyResultItem) {
+    public ConsistencyResultRequestBodyResultList addConsistencyResultItem(ConsistencyResult consistencyResultItem) {
         if (this.consistencyResult == null) {
             this.consistencyResult = new ArrayList<>();
         }
@@ -36,7 +75,7 @@ public class ConsistencyResultRequestBody {
         return this;
     }
 
-    public ConsistencyResultRequestBody withConsistencyResult(
+    public ConsistencyResultRequestBodyResultList withConsistencyResult(
         Consumer<List<ConsistencyResult>> consistencyResultSetter) {
         if (this.consistencyResult == null) {
             this.consistencyResult = new ArrayList<>();
@@ -57,25 +96,6 @@ public class ConsistencyResultRequestBody {
         this.consistencyResult = consistencyResult;
     }
 
-    public ConsistencyResultRequestBody withFinishedTime(Long finishedTime) {
-        this.finishedTime = finishedTime;
-        return this;
-    }
-
-    /**
-     * 检验完成时间
-     * minimum: 0
-     * maximum: 100000000000
-     * @return finishedTime
-     */
-    public Long getFinishedTime() {
-        return finishedTime;
-    }
-
-    public void setFinishedTime(Long finishedTime) {
-        this.finishedTime = finishedTime;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -84,22 +104,24 @@ public class ConsistencyResultRequestBody {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConsistencyResultRequestBody that = (ConsistencyResultRequestBody) obj;
-        return Objects.equals(this.consistencyResult, that.consistencyResult)
-            && Objects.equals(this.finishedTime, that.finishedTime);
+        ConsistencyResultRequestBodyResultList that = (ConsistencyResultRequestBodyResultList) obj;
+        return Objects.equals(this.finishedTime, that.finishedTime)
+            && Objects.equals(this.checkResult, that.checkResult)
+            && Objects.equals(this.consistencyResult, that.consistencyResult);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(consistencyResult, finishedTime);
+        return Objects.hash(finishedTime, checkResult, consistencyResult);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ConsistencyResultRequestBody {\n");
-        sb.append("    consistencyResult: ").append(toIndentedString(consistencyResult)).append("\n");
+        sb.append("class ConsistencyResultRequestBodyResultList {\n");
         sb.append("    finishedTime: ").append(toIndentedString(finishedTime)).append("\n");
+        sb.append("    checkResult: ").append(toIndentedString(checkResult)).append("\n");
+        sb.append("    consistencyResult: ").append(toIndentedString(consistencyResult)).append("\n");
         sb.append("}");
         return sb.toString();
     }

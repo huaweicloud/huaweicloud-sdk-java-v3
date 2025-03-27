@@ -478,6 +478,36 @@ public class TasksResponseBody {
 
     private List<ConfigBody> specialConfig = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_cpu_usage")
+
+    private Double totalCpuUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_cpu_usage")
+
+    private Double agentCpuUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_mem_usage")
+
+    private Double totalMemUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_mem_usage")
+
+    private Double agentMemUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_disk_io")
+
+    private Double totalDiskIo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "agent_disk_io")
+
+    private Double agentDiskIo;
+
     public TasksResponseBody withId(String id) {
         this.id = id;
         return this;
@@ -968,6 +998,120 @@ public class TasksResponseBody {
         this.specialConfig = specialConfig;
     }
 
+    public TasksResponseBody withTotalCpuUsage(Double totalCpuUsage) {
+        this.totalCpuUsage = totalCpuUsage;
+        return this;
+    }
+
+    /**
+     * 主机的CPU使用率，单位是百分比
+     * minimum: 0
+     * maximum: 1E+2
+     * @return totalCpuUsage
+     */
+    public Double getTotalCpuUsage() {
+        return totalCpuUsage;
+    }
+
+    public void setTotalCpuUsage(Double totalCpuUsage) {
+        this.totalCpuUsage = totalCpuUsage;
+    }
+
+    public TasksResponseBody withAgentCpuUsage(Double agentCpuUsage) {
+        this.agentCpuUsage = agentCpuUsage;
+        return this;
+    }
+
+    /**
+     * Agent的CPU使用率，单位是百分比
+     * minimum: 0
+     * maximum: 1E+2
+     * @return agentCpuUsage
+     */
+    public Double getAgentCpuUsage() {
+        return agentCpuUsage;
+    }
+
+    public void setAgentCpuUsage(Double agentCpuUsage) {
+        this.agentCpuUsage = agentCpuUsage;
+    }
+
+    public TasksResponseBody withTotalMemUsage(Double totalMemUsage) {
+        this.totalMemUsage = totalMemUsage;
+        return this;
+    }
+
+    /**
+     * 主机的内存使用值，单位是MB
+     * minimum: 0
+     * maximum: 1048576
+     * @return totalMemUsage
+     */
+    public Double getTotalMemUsage() {
+        return totalMemUsage;
+    }
+
+    public void setTotalMemUsage(Double totalMemUsage) {
+        this.totalMemUsage = totalMemUsage;
+    }
+
+    public TasksResponseBody withAgentMemUsage(Double agentMemUsage) {
+        this.agentMemUsage = agentMemUsage;
+        return this;
+    }
+
+    /**
+     * Agent的内存使用值，单位是MB
+     * minimum: 0
+     * maximum: 1048576
+     * @return agentMemUsage
+     */
+    public Double getAgentMemUsage() {
+        return agentMemUsage;
+    }
+
+    public void setAgentMemUsage(Double agentMemUsage) {
+        this.agentMemUsage = agentMemUsage;
+    }
+
+    public TasksResponseBody withTotalDiskIo(Double totalDiskIo) {
+        this.totalDiskIo = totalDiskIo;
+        return this;
+    }
+
+    /**
+     * 主机的磁盘I/O值，单位是MB/s
+     * minimum: 0
+     * maximum: 1E+4
+     * @return totalDiskIo
+     */
+    public Double getTotalDiskIo() {
+        return totalDiskIo;
+    }
+
+    public void setTotalDiskIo(Double totalDiskIo) {
+        this.totalDiskIo = totalDiskIo;
+    }
+
+    public TasksResponseBody withAgentDiskIo(Double agentDiskIo) {
+        this.agentDiskIo = agentDiskIo;
+        return this;
+    }
+
+    /**
+     * Agent的磁盘I/O值，单位是MB/s
+     * minimum: 0
+     * maximum: 1E+4
+     * @return agentDiskIo
+     */
+    public Double getAgentDiskIo() {
+        return agentDiskIo;
+    }
+
+    public void setAgentDiskIo(Double agentDiskIo) {
+        this.agentDiskIo = agentDiskIo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -993,7 +1137,12 @@ public class TasksResponseBody {
             && Objects.equals(this.logCollectStatus, that.logCollectStatus)
             && Objects.equals(this.cloneServer, that.cloneServer) && Objects.equals(this.syncing, that.syncing)
             && Objects.equals(this.networkCheckInfo, that.networkCheckInfo)
-            && Objects.equals(this.specialConfig, that.specialConfig);
+            && Objects.equals(this.specialConfig, that.specialConfig)
+            && Objects.equals(this.totalCpuUsage, that.totalCpuUsage)
+            && Objects.equals(this.agentCpuUsage, that.agentCpuUsage)
+            && Objects.equals(this.totalMemUsage, that.totalMemUsage)
+            && Objects.equals(this.agentMemUsage, that.agentMemUsage)
+            && Objects.equals(this.totalDiskIo, that.totalDiskIo) && Objects.equals(this.agentDiskIo, that.agentDiskIo);
     }
 
     @Override
@@ -1021,7 +1170,13 @@ public class TasksResponseBody {
             cloneServer,
             syncing,
             networkCheckInfo,
-            specialConfig);
+            specialConfig,
+            totalCpuUsage,
+            agentCpuUsage,
+            totalMemUsage,
+            agentMemUsage,
+            totalDiskIo,
+            agentDiskIo);
     }
 
     @Override
@@ -1052,6 +1207,12 @@ public class TasksResponseBody {
         sb.append("    syncing: ").append(toIndentedString(syncing)).append("\n");
         sb.append("    networkCheckInfo: ").append(toIndentedString(networkCheckInfo)).append("\n");
         sb.append("    specialConfig: ").append(toIndentedString(specialConfig)).append("\n");
+        sb.append("    totalCpuUsage: ").append(toIndentedString(totalCpuUsage)).append("\n");
+        sb.append("    agentCpuUsage: ").append(toIndentedString(agentCpuUsage)).append("\n");
+        sb.append("    totalMemUsage: ").append(toIndentedString(totalMemUsage)).append("\n");
+        sb.append("    agentMemUsage: ").append(toIndentedString(agentMemUsage)).append("\n");
+        sb.append("    totalDiskIo: ").append(toIndentedString(totalDiskIo)).append("\n");
+        sb.append("    agentDiskIo: ").append(toIndentedString(agentDiskIo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

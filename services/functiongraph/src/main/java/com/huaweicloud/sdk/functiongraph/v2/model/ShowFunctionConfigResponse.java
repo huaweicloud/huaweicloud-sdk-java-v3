@@ -677,6 +677,11 @@ public class ShowFunctionConfigResponse extends SdkResponse {
     private Boolean isReturnStream;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_lts_log")
+
+    private Boolean enableLtsLog;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lts_custom_tag")
 
     private Map<String, String> ltsCustomTag = null;
@@ -1760,6 +1765,23 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         this.isReturnStream = isReturnStream;
     }
 
+    public ShowFunctionConfigResponse withEnableLtsLog(Boolean enableLtsLog) {
+        this.enableLtsLog = enableLtsLog;
+        return this;
+    }
+
+    /**
+     * 是否开启日志。
+     * @return enableLtsLog
+     */
+    public Boolean getEnableLtsLog() {
+        return enableLtsLog;
+    }
+
+    public void setEnableLtsLog(Boolean enableLtsLog) {
+        this.enableLtsLog = enableLtsLog;
+    }
+
     public ShowFunctionConfigResponse withLtsCustomTag(Map<String, String> ltsCustomTag) {
         this.ltsCustomTag = ltsCustomTag;
         return this;
@@ -1843,6 +1865,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.allowEphemeralStorage, that.allowEphemeralStorage)
             && Objects.equals(this.networkController, that.networkController)
             && Objects.equals(this.isReturnStream, that.isReturnStream)
+            && Objects.equals(this.enableLtsLog, that.enableLtsLog)
             && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
     }
 
@@ -1906,6 +1929,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             allowEphemeralStorage,
             networkController,
             isReturnStream,
+            enableLtsLog,
             ltsCustomTag);
     }
 
@@ -1971,6 +1995,7 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         sb.append("    allowEphemeralStorage: ").append(toIndentedString(allowEphemeralStorage)).append("\n");
         sb.append("    networkController: ").append(toIndentedString(networkController)).append("\n");
         sb.append("    isReturnStream: ").append(toIndentedString(isReturnStream)).append("\n");
+        sb.append("    enableLtsLog: ").append(toIndentedString(enableLtsLog)).append("\n");
         sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
         sb.append("}");
         return sb.toString();

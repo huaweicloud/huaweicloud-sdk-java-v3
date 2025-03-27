@@ -28,7 +28,7 @@ public class ProfileRegionProvider implements IRegionProvider {
     private final String serviceName;
 
     public ProfileRegionProvider(String serviceName) {
-        this.serviceName = serviceName.toUpperCase(Locale.ROOT);
+        this.serviceName = serviceName.toUpperCase(Locale.US);
     }
 
     @Override

@@ -22,7 +22,7 @@ public class UpdateMigprojectResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 修改默认迁移项目信息成功
      * @return body
      */
     public String getBody() {

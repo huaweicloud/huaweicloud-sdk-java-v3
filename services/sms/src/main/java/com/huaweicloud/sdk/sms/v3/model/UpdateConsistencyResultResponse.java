@@ -22,7 +22,7 @@ public class UpdateConsistencyResultResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 更新一致性校验结果成功。
      * @return body
      */
     public String getBody() {

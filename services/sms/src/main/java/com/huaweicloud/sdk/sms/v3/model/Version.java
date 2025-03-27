@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * API版本
+ * 查询主机迁移服务指定API版本信息成功
  */
 public class Version {
 

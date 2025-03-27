@@ -130,7 +130,7 @@ public class ProfileRegionCache {
                     continue;
                 }
                 Region region = new Region(id, endpoints.toArray(new String[0]));
-                result.put(next.getKey().toString().toUpperCase(Locale.ROOT) + id, region);
+                result.put(next.getKey().toString().toUpperCase(Locale.US) + id, region);
             }
         }
         return result;

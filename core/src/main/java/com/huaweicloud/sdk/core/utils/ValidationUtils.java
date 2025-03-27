@@ -24,14 +24,14 @@ public final class ValidationUtils {
      */
     public static int assertIntIsPositive(int value, String name) {
         if (value < 0) {
-            throw new IllegalArgumentException(String.format(Locale.ROOT, "%s must be positive", name));
+            throw new IllegalArgumentException(String.format(Locale.US, "%s must be positive", name));
         }
         return value;
     }
 
     public static int assertIntIsInRange(int value, int min, int max, String name) {
         if (value < min || value > max) {
-            throw new IllegalArgumentException(String.format(Locale.ROOT,
+            throw new IllegalArgumentException(String.format(Locale.US,
                     "%s(%d) must be between %d and %d!", name, value, min, max));
         }
         return value;

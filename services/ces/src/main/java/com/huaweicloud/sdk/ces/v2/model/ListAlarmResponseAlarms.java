@@ -379,7 +379,7 @@ public class ListAlarmResponseAlarms {
     }
 
     /**
-     * 企业项目ID
+     * 企业项目ID，不填时会使用默认的企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

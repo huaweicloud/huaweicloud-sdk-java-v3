@@ -17,6 +17,12 @@ import java.util.function.Consumer;
 public class UpdateFields {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "upsert")
+    @BsonProperty(value = "upsert")
+
+    private Document upsert;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "set")
     @BsonProperty(value = "set")
 
@@ -39,6 +45,23 @@ public class UpdateFields {
     @BsonProperty(value = "insert")
 
     private Document insert;
+
+    public UpdateFields withUpsert(Document upsert) {
+        this.upsert = upsert;
+        return this;
+    }
+
+    /**
+     * 文档不存在时，插入该完整文档。
+     * @return upsert
+     */
+    public Document getUpsert() {
+        return upsert;
+    }
+
+    public void setUpsert(Document upsert) {
+        this.upsert = upsert;
+    }
 
     public UpdateFields withSet(Document set) {
         this.set = set;
@@ -133,19 +156,21 @@ public class UpdateFields {
             return false;
         }
         UpdateFields that = (UpdateFields) obj;
-        return Objects.equals(this.set, that.set) && Objects.equals(this.add, that.add)
-            && Objects.equals(this.rmv, that.rmv) && Objects.equals(this.insert, that.insert);
+        return Objects.equals(this.upsert, that.upsert) && Objects.equals(this.set, that.set)
+            && Objects.equals(this.add, that.add) && Objects.equals(this.rmv, that.rmv)
+            && Objects.equals(this.insert, that.insert);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(set, add, rmv, insert);
+        return Objects.hash(upsert, set, add, rmv, insert);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateFields {\n");
+        sb.append("    upsert: ").append(toIndentedString(upsert)).append("\n");
         sb.append("    set: ").append(toIndentedString(set)).append("\n");
         sb.append("    add: ").append(toIndentedString(add)).append("\n");
         sb.append("    rmv: ").append(toIndentedString(rmv)).append("\n");

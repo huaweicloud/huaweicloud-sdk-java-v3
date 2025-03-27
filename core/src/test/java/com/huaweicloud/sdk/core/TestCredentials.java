@@ -119,7 +119,7 @@ public class TestCredentials {
                         .withStatus(200)));
         wireMockRule.start();
 
-        String iamEndpoint = String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        String iamEndpoint = String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort());
         BasicCredentials credentials = new BasicCredentials().withAk("ak").withSk("sk").withIamEndpoint(iamEndpoint);
         HcClient hcClient = TestUtils.createHcClient(LOGGER, iamEndpoint, credentials);
         credentials.processAuthParams(hcClient, "region-id-1").get();
@@ -136,7 +136,7 @@ public class TestCredentials {
                         .withStatus(200)));
         wireMockRule.start();
 
-        String iamEndpoint = String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        String iamEndpoint = String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort());
         BasicCredentials credentials = new BasicCredentials().withAk("ak").withSk("sk").withIamEndpoint(iamEndpoint);
         HcClient hcClient = TestUtils.createHcClient(LOGGER, iamEndpoint, credentials);
         try {
@@ -161,7 +161,7 @@ public class TestCredentials {
                         .withStatus(200)));
         wireMockRule.start();
 
-        String iamEndpoint = String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        String iamEndpoint = String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort());
         BasicCredentials credentials = new BasicCredentials().withAk("ak").withSk("sk").withIamEndpoint(iamEndpoint);
         HcClient hcClient = TestUtils.createHcClient(LOGGER, iamEndpoint, credentials);
         try {
@@ -186,7 +186,7 @@ public class TestCredentials {
                         .withStatus(200)));
         wireMockRule.start();
 
-        String iamEndpoint = String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        String iamEndpoint = String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort());
         GlobalCredentials credentials = new GlobalCredentials().withAk("ak1").withSk("sk1").withIamEndpoint(iamEndpoint);
         HcClient hcClient = TestUtils.createHcClient(LOGGER, iamEndpoint, credentials);
         credentials.processAuthParams(hcClient, "region-id").get();
@@ -203,7 +203,7 @@ public class TestCredentials {
                         .withStatus(200)));
         wireMockRule.start();
 
-        String iamEndpoint = String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        String iamEndpoint = String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort());
         GlobalCredentials credentials = new GlobalCredentials().withAk("ak2").withSk("sk2").withIamEndpoint(iamEndpoint);
         HcClient hcClient = TestUtils.createHcClient(LOGGER, iamEndpoint, credentials);
         try {

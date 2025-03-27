@@ -27,6 +27,9 @@ import com.huaweicloud.sdk.cbr.v1.model.CbcOrderChange;
 import com.huaweicloud.sdk.cbr.v1.model.CbcUpdate;
 import com.huaweicloud.sdk.cbr.v1.model.ChangeOrderRequest;
 import com.huaweicloud.sdk.cbr.v1.model.ChangeOrderResponse;
+import com.huaweicloud.sdk.cbr.v1.model.ChangeToPeriod;
+import com.huaweicloud.sdk.cbr.v1.model.ChangeVaultChargeModeRequest;
+import com.huaweicloud.sdk.cbr.v1.model.ChangeVaultChargeModeResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CheckAgentRequest;
 import com.huaweicloud.sdk.cbr.v1.model.CheckAgentResponse;
 import com.huaweicloud.sdk.cbr.v1.model.CheckpointReplicateReq;
@@ -368,6 +371,29 @@ public class CbrMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CbcOrderChange.class),
             f -> f.withMarshaller(ChangeOrderRequest::getBody, ChangeOrderRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeVaultChargeModeRequest, ChangeVaultChargeModeResponse> changeVaultChargeMode =
+        genForChangeVaultChargeMode();
+
+    private static HttpRequestDef<ChangeVaultChargeModeRequest, ChangeVaultChargeModeResponse> genForChangeVaultChargeMode() {
+        // basic
+        HttpRequestDef.Builder<ChangeVaultChargeModeRequest, ChangeVaultChargeModeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ChangeVaultChargeModeRequest.class, ChangeVaultChargeModeResponse.class)
+            .withName("ChangeVaultChargeMode")
+            .withUri("/v3/{project_id}/vaults/change-charge-mode")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ChangeToPeriod>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeToPeriod.class),
+            f -> f.withMarshaller(ChangeVaultChargeModeRequest::getBody, ChangeVaultChargeModeRequest::setBody));
 
         // response
 

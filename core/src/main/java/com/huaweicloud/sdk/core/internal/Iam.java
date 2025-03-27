@@ -87,10 +87,15 @@ public class Iam {
     }
 
     public static String getEndpoint(String regionId) {
+        String env = System.getenv(Constants.IAM_ENDPOINT_ENV_NAME);
+        if (!StringUtils.isEmpty(env)) {
+            return env;
+        }
+
         if (ENDPOINTS.containsKey(regionId)) {
             return ENDPOINTS.get(regionId);
         }
-        return getEndpoint();
+        return Constants.DEFAULT_IAM_ENDPOINT;
     }
 
     public static Credential getCredentialFromMetadata() {

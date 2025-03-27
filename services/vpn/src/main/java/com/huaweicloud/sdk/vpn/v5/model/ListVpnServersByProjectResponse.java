@@ -20,6 +20,16 @@ public class ListVpnServersByProjectResponse extends SdkResponse {
     private List<ShowServerResponse> vpnServers = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_count")
+
+    private Integer totalCount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
     private String requestId;
@@ -60,6 +70,49 @@ public class ListVpnServersByProjectResponse extends SdkResponse {
 
     public void setVpnServers(List<ShowServerResponse> vpnServers) {
         this.vpnServers = vpnServers;
+    }
+
+    public ListVpnServersByProjectResponse withTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+        return this;
+    }
+
+    /**
+     * 总数
+     * @return totalCount
+     */
+    public Integer getTotalCount() {
+        return totalCount;
+    }
+
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public ListVpnServersByProjectResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListVpnServersByProjectResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
     }
 
     public ListVpnServersByProjectResponse withRequestId(String requestId) {
@@ -105,13 +158,14 @@ public class ListVpnServersByProjectResponse extends SdkResponse {
             return false;
         }
         ListVpnServersByProjectResponse that = (ListVpnServersByProjectResponse) obj;
-        return Objects.equals(this.vpnServers, that.vpnServers) && Objects.equals(this.requestId, that.requestId)
+        return Objects.equals(this.vpnServers, that.vpnServers) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.pageInfo, that.pageInfo) && Objects.equals(this.requestId, that.requestId)
             && Objects.equals(this.headerResponseToken, that.headerResponseToken);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vpnServers, requestId, headerResponseToken);
+        return Objects.hash(vpnServers, totalCount, pageInfo, requestId, headerResponseToken);
     }
 
     @Override
@@ -119,6 +173,8 @@ public class ListVpnServersByProjectResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListVpnServersByProjectResponse {\n");
         sb.append("    vpnServers: ").append(toIndentedString(vpnServers)).append("\n");
+        sb.append("    totalCount: ").append(toIndentedString(totalCount)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    headerResponseToken: ").append(toIndentedString(headerResponseToken)).append("\n");
         sb.append("}");

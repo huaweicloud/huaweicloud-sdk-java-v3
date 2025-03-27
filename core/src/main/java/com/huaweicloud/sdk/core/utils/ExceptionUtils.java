@@ -130,7 +130,7 @@ public final class ExceptionUtils {
 
     public static void mapSocketTimeoutException(String originMsg, Throwable cause) {
         // distinguish connection timeout and other timeout, ConnectionTimeoutException should be retried
-        if (cause.getMessage().toLowerCase(Locale.ROOT).contains(CONNECT_TIMEOUT_MSG)) {
+        if (cause.getMessage().toLowerCase(Locale.US).contains(CONNECT_TIMEOUT_MSG)) {
             throw new ConnectionTimeoutException(cause);
         }
         // if idempotent of the interfaces has been realized, CallTimeoutException could be retried

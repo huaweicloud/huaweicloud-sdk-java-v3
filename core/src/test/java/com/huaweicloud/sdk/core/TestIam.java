@@ -29,9 +29,6 @@ public class TestIam {
     public void testGetEndpoint() {
         String endpoint1 = Iam.getEndpoint();
         String endpoint2 = Iam.getEndpoint("test");
-        String endpoint3 = Iam.getEndpoint("cn-north-4");
-
         Assert.assertEquals(endpoint1, endpoint2);
-        Assert.assertNotEquals(endpoint1, endpoint3);
     }
 }

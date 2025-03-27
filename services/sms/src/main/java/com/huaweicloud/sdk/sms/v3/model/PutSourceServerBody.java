@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 修改源端信息json的请求体，当前只支持修改源端服务器名称和迁移项目ID
+ * 修改源端信息json的请求体
  */
 public class PutSourceServerBody {
 

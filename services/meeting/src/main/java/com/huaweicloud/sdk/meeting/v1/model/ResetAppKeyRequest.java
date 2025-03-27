@@ -67,7 +67,7 @@ public class ResetAppKeyRequest {
     }
 
     /**
-     * 需要修改的app
+     * 企业应用ID
      * @return appId
      */
     public String getAppId() {

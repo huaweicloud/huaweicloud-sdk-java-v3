@@ -70,7 +70,7 @@ public class ProfileCredentialProvider implements ICredentialProvider {
     private final String credentialType;
 
     public ProfileCredentialProvider(String credentialType) {
-        this.credentialType = credentialType.toLowerCase(Locale.ROOT);
+        this.credentialType = credentialType.toLowerCase(Locale.US);
     }
 
     public static ProfileCredentialProvider getBasicCredentialProfileProvider() {

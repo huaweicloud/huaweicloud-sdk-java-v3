@@ -25,6 +25,11 @@ public class SpeedLimitlJson {
 
     private Integer speed;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "over_speed_threshold")
+
+    private Double overSpeedThreshold;
+
     public SpeedLimitlJson withStart(String start) {
         this.start = start;
         return this;
@@ -78,6 +83,25 @@ public class SpeedLimitlJson {
         this.speed = speed;
     }
 
+    public SpeedLimitlJson withOverSpeedThreshold(Double overSpeedThreshold) {
+        this.overSpeedThreshold = overSpeedThreshold;
+        return this;
+    }
+
+    /**
+     * 停止迁移的超速阈值。 是一个迁移速率的保护机制，超出该阈值会停止任务。它主要用于控制迁移过程中资源（特别是网络带宽）的消耗，确保系统的整体性能不受单一迁移任务影响 单位是百分比
+     * minimum: 1E+1
+     * maximum: 1E+2
+     * @return overSpeedThreshold
+     */
+    public Double getOverSpeedThreshold() {
+        return overSpeedThreshold;
+    }
+
+    public void setOverSpeedThreshold(Double overSpeedThreshold) {
+        this.overSpeedThreshold = overSpeedThreshold;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +112,13 @@ public class SpeedLimitlJson {
         }
         SpeedLimitlJson that = (SpeedLimitlJson) obj;
         return Objects.equals(this.start, that.start) && Objects.equals(this.end, that.end)
-            && Objects.equals(this.speed, that.speed);
+            && Objects.equals(this.speed, that.speed)
+            && Objects.equals(this.overSpeedThreshold, that.overSpeedThreshold);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(start, end, speed);
+        return Objects.hash(start, end, speed, overSpeedThreshold);
     }
 
     @Override
@@ -103,6 +128,7 @@ public class SpeedLimitlJson {
         sb.append("    start: ").append(toIndentedString(start)).append("\n");
         sb.append("    end: ").append(toIndentedString(end)).append("\n");
         sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
+        sb.append("    overSpeedThreshold: ").append(toIndentedString(overSpeedThreshold)).append("\n");
         sb.append("}");
         return sb.toString();
     }

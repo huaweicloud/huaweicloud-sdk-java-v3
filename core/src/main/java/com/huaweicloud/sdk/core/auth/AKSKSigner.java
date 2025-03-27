@@ -132,7 +132,7 @@ public class AKSKSigner implements IAKSKSigner {
         // The signing information can be either in a query string value or in
         // a header named Authorization. This code shows how to use a header.
         // Create authorization header and add to request headers
-        String authorization = String.format(Locale.ROOT, "%s Access=%s, SignedHeaders=%s, Signature=%s",
+        String authorization = String.format(Locale.US, "%s Access=%s, SignedHeaders=%s, Signature=%s",
                 algorithm, credentials.getAk(), signedHeaderNames, signature);
         authenticationHeaders.put(Constants.AUTHORIZATION, authorization);
         return authenticationHeaders;
@@ -147,7 +147,7 @@ public class AKSKSigner implements IAKSKSigner {
             return request.getHeader(Constants.X_SDK_DATE);
         }
 
-        SimpleDateFormat isoDateFormat = new SimpleDateFormat(Constants.ISO_8601_BASIC_FORMAT);
+        SimpleDateFormat isoDateFormat = new SimpleDateFormat(Constants.ISO_8601_BASIC_FORMAT, Locale.US);
         isoDateFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
         String dateTimeStamp = isoDateFormat.format(new Date());
         authenticationHeaders.put(Constants.X_SDK_DATE, dateTimeStamp);
@@ -163,9 +163,9 @@ public class AKSKSigner implements IAKSKSigner {
                 .entrySet().stream()
                 .filter(entry -> !(entry.getKey().equalsIgnoreCase(Constants.CONTENT_TYPE)
                         || entry.getKey().contains("_"))).collect(Collectors.toMap(
-                        entry -> entry.getKey().toLowerCase(Locale.ROOT), entry -> entry.getValue().get(0))));
+                        entry -> entry.getKey().toLowerCase(Locale.US), entry -> entry.getValue().get(0))));
         allHeaders.putAll(authenticationHeaders.entrySet().stream()
-                .collect(Collectors.toMap(entry -> entry.getKey().toLowerCase(Locale.ROOT), Map.Entry::getValue)));
+                .collect(Collectors.toMap(entry -> entry.getKey().toLowerCase(Locale.US), Map.Entry::getValue)));
         return allHeaders;
     }
 
@@ -216,7 +216,7 @@ public class AKSKSigner implements IAKSKSigner {
     protected String buildCanonicalHeaders(Map<String, String> headers) {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, String> entry : headers.entrySet()) {
-            sb.append(entry.getKey().toLowerCase(Locale.ROOT)).append(":").append(entry.getValue())
+            sb.append(entry.getKey().toLowerCase(Locale.US)).append(":").append(entry.getValue())
                     .append(Constants.LINE_SEPARATOR);
         }
         return sb.toString();

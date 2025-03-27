@@ -129,6 +129,7 @@ public class SmsClient {
      * @param request CheckNetAclRequest 请求对象
      * @return CheckNetAclResponse
      */
+    @Deprecated
     public CheckNetAclResponse checkNetAcl(CheckNetAclRequest request) {
         return hcClient.syncInvokeHttp(request, SmsMeta.checkNetAcl);
     }
@@ -143,6 +144,7 @@ public class SmsClient {
      * @param request CheckNetAclRequest 请求对象
      * @return SyncInvoker<CheckNetAclRequest, CheckNetAclResponse>
      */
+    @Deprecated
     public SyncInvoker<CheckNetAclRequest, CheckNetAclResponse> checkNetAclInvoker(CheckNetAclRequest request) {
         return new SyncInvoker<>(request, SmsMeta.checkNetAcl, hcClient);
     }
@@ -661,9 +663,9 @@ public class SmsClient {
     }
 
     /**
-     * 获取SSL目的端证书和私钥
+     * 获取SSL证书和私钥
      *
-     * 当源端服务器为Windows操作系统时，安装在源端服务器上的迁移Agent通过SSLSocket同目的端服务器通信，该接口用于下载目的端服务器所需要的证书和私钥(PEM格式)。
+     * 当迁移采用块级迁移的方式时，安装在源端服务器上的迁移Agent通过SSLSocket同目的端服务器通信，该接口用于下载迁移传输过程所需要的证书和私钥(PEM格式)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -675,9 +677,9 @@ public class SmsClient {
     }
 
     /**
-     * 获取SSL目的端证书和私钥
+     * 获取SSL证书和私钥
      *
-     * 当源端服务器为Windows操作系统时，安装在源端服务器上的迁移Agent通过SSLSocket同目的端服务器通信，该接口用于下载目的端服务器所需要的证书和私钥(PEM格式)。
+     * 当迁移采用块级迁移的方式时，安装在源端服务器上的迁移Agent通过SSLSocket同目的端服务器通信，该接口用于下载迁移传输过程所需要的证书和私钥(PEM格式)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -719,7 +721,7 @@ public class SmsClient {
     /**
      * 查询配置资源
      *
-     * 使用该接口查询任指定任务的指定配置类型的配置信息
+     * 使用该接口查询指定任务的指定配置类型的配置信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -733,7 +735,7 @@ public class SmsClient {
     /**
      * 查询配置资源
      *
-     * 使用该接口查询任指定任务的指定配置类型的配置信息
+     * 使用该接口查询指定任务的指定配置类型的配置信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -927,6 +929,7 @@ public class SmsClient {
      * @param request ShowSha256Request 请求对象
      * @return ShowSha256Response
      */
+    @Deprecated
     public ShowSha256Response showSha256(ShowSha256Request request) {
         return hcClient.syncInvokeHttp(request, SmsMeta.showSha256);
     }
@@ -941,6 +944,7 @@ public class SmsClient {
      * @param request ShowSha256Request 请求对象
      * @return SyncInvoker<ShowSha256Request, ShowSha256Response>
      */
+    @Deprecated
     public SyncInvoker<ShowSha256Request, ShowSha256Response> showSha256Invoker(ShowSha256Request request) {
         return new SyncInvoker<>(request, SmsMeta.showSha256, hcClient);
     }
@@ -1069,6 +1073,7 @@ public class SmsClient {
      * @param request UnlockTargetEcsRequest 请求对象
      * @return UnlockTargetEcsResponse
      */
+    @Deprecated
     public UnlockTargetEcsResponse unlockTargetEcs(UnlockTargetEcsRequest request) {
         return hcClient.syncInvokeHttp(request, SmsMeta.unlockTargetEcs);
     }
@@ -1083,6 +1088,7 @@ public class SmsClient {
      * @param request UnlockTargetEcsRequest 请求对象
      * @return SyncInvoker<UnlockTargetEcsRequest, UnlockTargetEcsResponse>
      */
+    @Deprecated
     public SyncInvoker<UnlockTargetEcsRequest, UnlockTargetEcsResponse> unlockTargetEcsInvoker(
         UnlockTargetEcsRequest request) {
         return new SyncInvoker<>(request, SmsMeta.unlockTargetEcs, hcClient);
@@ -1292,9 +1298,9 @@ public class SmsClient {
     }
 
     /**
-     * 修改指定ID的源端服务器名称
+     * 修改指定ID的源端服务器信息
      *
-     * 该功能用来修改SMS服务端的源端名称，方便用户对源端进行管理。
+     * 该功能用来修改SMS服务端的源端信息，方便用户对源端进行管理。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1306,9 +1312,9 @@ public class SmsClient {
     }
 
     /**
-     * 修改指定ID的源端服务器名称
+     * 修改指定ID的源端服务器信息
      *
-     * 该功能用来修改SMS服务端的源端名称，方便用户对源端进行管理。
+     * 该功能用来修改SMS服务端的源端信息，方便用户对源端进行管理。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1380,7 +1386,6 @@ public class SmsClient {
      * 上报数据迁移进度和速率
      *
      * 此接口由安装在源端服务器上的迁移Agent在数据迁移阶段调用，用来将迁移的具体进度上报给SMS服务端。
-     * 
      * 迁移Agent自动调用此接口用于上报数据迁移进度，您无需调用此接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1396,7 +1401,6 @@ public class SmsClient {
      * 上报数据迁移进度和速率
      *
      * 此接口由安装在源端服务器上的迁移Agent在数据迁移阶段调用，用来将迁移的具体进度上报给SMS服务端。
-     * 
      * 迁移Agent自动调用此接口用于上报数据迁移进度，您无需调用此接口。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -1412,7 +1416,7 @@ public class SmsClient {
     /**
      * 管理迁移任务
      *
-     * 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，回滚失败迁移任务。
+     * 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，回滚失败迁移任务，删除快照资源。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1426,7 +1430,7 @@ public class SmsClient {
     /**
      * 管理迁移任务
      *
-     * 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，回滚失败迁移任务。
+     * 管理迁移任务，包括启动任务，暂停任务，同步任务，日志上传，回滚失败迁移任务，删除快照资源。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -60,7 +60,7 @@ public class ConsistencyResult {
     /**
      * 文件总数
      * minimum: 0
-     * maximum: 100000
+     * maximum: 1000000
      * @return numTotalFiles
      */
     public Integer getNumTotalFiles() {
@@ -79,7 +79,7 @@ public class ConsistencyResult {
     /**
      * 差异文件数量
      * minimum: 0
-     * maximum: 100000
+     * maximum: 1000000
      * @return numDifferentFiles
      */
     public Integer getNumDifferentFiles() {
@@ -98,7 +98,7 @@ public class ConsistencyResult {
     /**
      * 目的端缺少文件数量
      * minimum: 0
-     * maximum: 100000
+     * maximum: 1000000
      * @return numTargetMissFiles
      */
     public Integer getNumTargetMissFiles() {
@@ -117,7 +117,7 @@ public class ConsistencyResult {
     /**
      * 目的端多余文件数量
      * minimum: 0
-     * maximum: 100000
+     * maximum: 1000000
      * @return numTargetMoreFiles
      */
     public Integer getNumTargetMoreFiles() {

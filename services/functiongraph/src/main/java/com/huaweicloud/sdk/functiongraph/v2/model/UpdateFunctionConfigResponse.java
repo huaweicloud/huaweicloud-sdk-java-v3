@@ -632,6 +632,11 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
     private Boolean isReturnStream;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_lts_log")
+
+    private Boolean enableLtsLog;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lts_custom_tag")
 
     private Map<String, String> ltsCustomTag = null;
@@ -1521,6 +1526,23 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         this.isReturnStream = isReturnStream;
     }
 
+    public UpdateFunctionConfigResponse withEnableLtsLog(Boolean enableLtsLog) {
+        this.enableLtsLog = enableLtsLog;
+        return this;
+    }
+
+    /**
+     * 是否开启日志。
+     * @return enableLtsLog
+     */
+    public Boolean getEnableLtsLog() {
+        return enableLtsLog;
+    }
+
+    public void setEnableLtsLog(Boolean enableLtsLog) {
+        this.enableLtsLog = enableLtsLog;
+    }
+
     public UpdateFunctionConfigResponse withLtsCustomTag(Map<String, String> ltsCustomTag) {
         this.ltsCustomTag = ltsCustomTag;
         return this;
@@ -1597,6 +1619,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.enableAuthInHeader, that.enableAuthInHeader)
             && Objects.equals(this.customImage, that.customImage)
             && Objects.equals(this.isReturnStream, that.isReturnStream)
+            && Objects.equals(this.enableLtsLog, that.enableLtsLog)
             && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
     }
 
@@ -1651,6 +1674,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             enableAuthInHeader,
             customImage,
             isReturnStream,
+            enableLtsLog,
             ltsCustomTag);
     }
 
@@ -1707,6 +1731,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
         sb.append("    customImage: ").append(toIndentedString(customImage)).append("\n");
         sb.append("    isReturnStream: ").append(toIndentedString(isReturnStream)).append("\n");
+        sb.append("    enableLtsLog: ").append(toIndentedString(enableLtsLog)).append("\n");
         sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
         sb.append("}");
         return sb.toString();

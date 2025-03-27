@@ -32,7 +32,7 @@ public class MetadataCredentialProvider implements ICredentialProvider {
     private final String credentialType;
 
     public MetadataCredentialProvider(String credentialType) {
-        this.credentialType = credentialType.toLowerCase(Locale.ROOT);
+        this.credentialType = credentialType.toLowerCase(Locale.US);
     }
 
     public static MetadataCredentialProvider getBasicCredentialMetadataProvider() {

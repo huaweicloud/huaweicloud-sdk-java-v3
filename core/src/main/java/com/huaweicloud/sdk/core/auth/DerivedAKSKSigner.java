@@ -101,7 +101,7 @@ public class DerivedAKSKSigner extends AKSKSigner {
         String canonicalRequestHash = BinaryUtils.toHex(hasher.hash(canonicalRequest.getBytes(StandardCharsets.UTF_8)));
 
         String dateStr = dateTimeStamp.substring(0, 8);
-        String info = String.format(Locale.ROOT, "%s/%s/%s",
+        String info = String.format(Locale.US, "%s/%s/%s",
                 dateStr, credentials.regionId, credentials.derivedAuthServiceName);
         String stringToSign = buildStringToSign(V_11_HMAC_SHA_256, dateTimeStamp, info, canonicalRequestHash);
 
@@ -109,7 +109,7 @@ public class DerivedAKSKSigner extends AKSKSigner {
         HmacSigningKey hmacSigningKey = new HmacSigningKey(hasher, derivationKey.getBytes(StandardCharsets.UTF_8));
         String signature = buildSignature(stringToSign, hmacSigningKey);
 
-        String authorization = String.format(Locale.ROOT, "%s Credential=%s/%s, SignedHeaders=%s, Signature=%s",
+        String authorization = String.format(Locale.US, "%s Credential=%s/%s, SignedHeaders=%s, Signature=%s",
                 V_11_HMAC_SHA_256, credentials.getAk(), info, signedHeaderNames, signature);
         authenticationHeaders.put(Constants.AUTHORIZATION, authorization);
         return authenticationHeaders;
@@ -157,7 +157,7 @@ public class DerivedAKSKSigner extends AKSKSigner {
                 }
                 sb.append(hex);
             }
-            return sb.toString().toLowerCase(Locale.ROOT);
+            return sb.toString().toLowerCase(Locale.US);
         }
 
         private static byte[] extract(byte[] ikm, byte[] salt, String hmacAlgorithm)

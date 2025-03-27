@@ -56,6 +56,8 @@ import com.huaweicloud.sdk.vpn.v5.model.DeleteClientCaRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteClientCaResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteConnectionMonitorRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteConnectionMonitorResponse;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwConnectionRequest;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwConnectionResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteResourcesTagsRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwResponse;
@@ -63,11 +65,14 @@ import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnAccessPolicyRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnAccessPolicyResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionResponse;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionsLogConfigRequest;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionsLogConfigResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserGroupRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserGroupResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ExportClientConfigRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ExportClientConfigRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.ExportClientConfigResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ImportClientCaCertificateRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.ImportClientCaRequest;
@@ -129,8 +134,12 @@ import com.huaweicloud.sdk.vpn.v5.model.ShowVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnAccessPolicyRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnAccessPolicyResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionLogRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionLogResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionsLogConfigRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionsLogConfigResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnGatewayCertificateRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnGatewayCertificateResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnUserGroupRequest;
@@ -161,7 +170,10 @@ import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnAccessPolicyResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnConnectionRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnConnectionResponse;
+import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnConnectionsLogConfigRequest;
+import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnConnectionsLogConfigResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnGatewayCertificateRequestBody;
+import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnLogConfigRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnServerRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnServerResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnUserGroupRequest;
@@ -583,6 +595,42 @@ public class VpnMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteP2cVgwConnectionRequest, DeleteP2cVgwConnectionResponse> deleteP2cVgwConnection =
+        genForDeleteP2cVgwConnection();
+
+    private static HttpRequestDef<DeleteP2cVgwConnectionRequest, DeleteP2cVgwConnectionResponse> genForDeleteP2cVgwConnection() {
+        // basic
+        HttpRequestDef.Builder<DeleteP2cVgwConnectionRequest, DeleteP2cVgwConnectionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DeleteP2cVgwConnectionRequest.class, DeleteP2cVgwConnectionResponse.class)
+            .withName("DeleteP2cVgwConnection")
+            .withUri("/v5/{project_id}/p2c-vpn-gateways/{p2c_vgw_id}/connections/{connection_id}/disconnect")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("p2c_vgw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteP2cVgwConnectionRequest::getP2cVgwId,
+                DeleteP2cVgwConnectionRequest::setP2cVgwId));
+        builder.<String>withRequestField("connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteP2cVgwConnectionRequest::getConnectionId,
+                DeleteP2cVgwConnectionRequest::setConnectionId));
+
+        // response
+
+        builder.<String>withResponseField("header-response-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteP2cVgwConnectionResponse::getHeaderResponseToken,
+                DeleteP2cVgwConnectionResponse::setHeaderResponseToken));
         return builder.build();
     }
 
@@ -1242,6 +1290,36 @@ public class VpnMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowVpnConnectionLogRequest, ShowVpnConnectionLogResponse> showVpnConnectionLog =
+        genForShowVpnConnectionLog();
+
+    private static HttpRequestDef<ShowVpnConnectionLogRequest, ShowVpnConnectionLogResponse> genForShowVpnConnectionLog() {
+        // basic
+        HttpRequestDef.Builder<ShowVpnConnectionLogRequest, ShowVpnConnectionLogResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowVpnConnectionLogRequest.class, ShowVpnConnectionLogResponse.class)
+            .withName("ShowVpnConnectionLog")
+            .withUri("/v5/{project_id}/vpn-connection/{vpn_connection_id}/log")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpn_connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVpnConnectionLogRequest::getVpnConnectionId,
+                ShowVpnConnectionLogRequest::setVpnConnectionId));
+
+        // response
+
+        builder.<String>withResponseField("header-response-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowVpnConnectionLogResponse::getHeaderResponseToken,
+                ShowVpnConnectionLogResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateVpnConnectionRequest, UpdateVpnConnectionResponse> updateVpnConnection =
         genForUpdateVpnConnection();
 
@@ -1274,6 +1352,105 @@ public class VpnMeta {
             String.class,
             f -> f.withMarshaller(UpdateVpnConnectionResponse::getHeaderResponseToken,
                 UpdateVpnConnectionResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteVpnConnectionsLogConfigRequest, DeleteVpnConnectionsLogConfigResponse> deleteVpnConnectionsLogConfig =
+        genForDeleteVpnConnectionsLogConfig();
+
+    private static HttpRequestDef<DeleteVpnConnectionsLogConfigRequest, DeleteVpnConnectionsLogConfigResponse> genForDeleteVpnConnectionsLogConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteVpnConnectionsLogConfigRequest, DeleteVpnConnectionsLogConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteVpnConnectionsLogConfigRequest.class,
+                    DeleteVpnConnectionsLogConfigResponse.class)
+                .withName("DeleteVpnConnectionsLogConfig")
+                .withUri("/v5/{project_id}/p2c-vpn-gateways/{p2c_vgw_id}/log-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("p2c_vgw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteVpnConnectionsLogConfigRequest::getP2cVgwId,
+                DeleteVpnConnectionsLogConfigRequest::setP2cVgwId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVpnConnectionsLogConfigRequest, ShowVpnConnectionsLogConfigResponse> showVpnConnectionsLogConfig =
+        genForShowVpnConnectionsLogConfig();
+
+    private static HttpRequestDef<ShowVpnConnectionsLogConfigRequest, ShowVpnConnectionsLogConfigResponse> genForShowVpnConnectionsLogConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowVpnConnectionsLogConfigRequest, ShowVpnConnectionsLogConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowVpnConnectionsLogConfigRequest.class,
+                    ShowVpnConnectionsLogConfigResponse.class)
+                .withName("ShowVpnConnectionsLogConfig")
+                .withUri("/v5/{project_id}/p2c-vpn-gateways/{p2c_vgw_id}/log-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("p2c_vgw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVpnConnectionsLogConfigRequest::getP2cVgwId,
+                ShowVpnConnectionsLogConfigRequest::setP2cVgwId));
+
+        // response
+
+        builder.<String>withResponseField("header-response-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowVpnConnectionsLogConfigResponse::getHeaderResponseToken,
+                ShowVpnConnectionsLogConfigResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateVpnConnectionsLogConfigRequest, UpdateVpnConnectionsLogConfigResponse> updateVpnConnectionsLogConfig =
+        genForUpdateVpnConnectionsLogConfig();
+
+    private static HttpRequestDef<UpdateVpnConnectionsLogConfigRequest, UpdateVpnConnectionsLogConfigResponse> genForUpdateVpnConnectionsLogConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateVpnConnectionsLogConfigRequest, UpdateVpnConnectionsLogConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateVpnConnectionsLogConfigRequest.class,
+                    UpdateVpnConnectionsLogConfigResponse.class)
+                .withName("UpdateVpnConnectionsLogConfig")
+                .withUri("/v5/{project_id}/p2c-vpn-gateways/{p2c_vgw_id}/log-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("p2c_vgw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateVpnConnectionsLogConfigRequest::getP2cVgwId,
+                UpdateVpnConnectionsLogConfigRequest::setP2cVgwId));
+        builder.<UpdateVpnLogConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateVpnLogConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateVpnConnectionsLogConfigRequest::getBody,
+                UpdateVpnConnectionsLogConfigRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("header-response-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateVpnConnectionsLogConfigResponse::getHeaderResponseToken,
+                UpdateVpnConnectionsLogConfigResponse::setHeaderResponseToken));
         return builder.build();
     }
 
@@ -1663,6 +1840,11 @@ public class VpnMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportClientConfigRequest::getVpnServerId,
                 ExportClientConfigRequest::setVpnServerId));
+        builder.<ExportClientConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExportClientConfigRequestBody.class),
+            f -> f.withMarshaller(ExportClientConfigRequest::getBody, ExportClientConfigRequest::setBody));
 
         // response
 

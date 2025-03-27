@@ -33,7 +33,7 @@ public class EnvRegionProvider implements IRegionProvider {
     private final String serviceName;
 
     public EnvRegionProvider(String serviceName) {
-        this.serviceName = serviceName.toUpperCase(Locale.ROOT);
+        this.serviceName = serviceName.toUpperCase(Locale.US);
     }
 
     @Override
@@ -43,7 +43,7 @@ public class EnvRegionProvider implements IRegionProvider {
             return region;
         }
         String envName = String.format("%s_%s_%s", ENV_REGION_PREFIX, serviceName,
-                regionId.replaceAll("-", "_").toUpperCase(Locale.ROOT));
+                regionId.replaceAll("-", "_").toUpperCase(Locale.US));
         String endpoint = System.getenv(envName);
         if (StringUtils.isEmpty(endpoint)) {
             return null;

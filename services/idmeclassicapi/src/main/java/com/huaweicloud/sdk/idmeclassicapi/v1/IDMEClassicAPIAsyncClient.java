@@ -165,6 +165,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteByConditionU
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteByConditionUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsPageRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsPageResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowTagRequest;
@@ -2630,6 +2632,35 @@ public class IDMEClassicAPIAsyncClient {
     public AsyncInvoker<ShowLogicalDeleteUsingPostRequest, ShowLogicalDeleteUsingPostResponse> showLogicalDeleteUsingPostAsyncInvoker(
         ShowLogicalDeleteUsingPostRequest request) {
         return new AsyncInvoker<>(request, IDMEClassicAPIMeta.showLogicalDeleteUsingPost, hcClient);
+    }
+
+    /**
+     * 分页查询数据实例的统计信息
+     *
+     * 分页查询数据实例的统计信息，支持分组和简单函数分页统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStaticsPageRequest 请求对象
+     * @return CompletableFuture<ShowStaticsPageResponse>
+     */
+    public CompletableFuture<ShowStaticsPageResponse> showStaticsPageAsync(ShowStaticsPageRequest request) {
+        return hcClient.asyncInvokeHttp(request, IDMEClassicAPIMeta.showStaticsPage);
+    }
+
+    /**
+     * 分页查询数据实例的统计信息
+     *
+     * 分页查询数据实例的统计信息，支持分组和简单函数分页统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStaticsPageRequest 请求对象
+     * @return AsyncInvoker<ShowStaticsPageRequest, ShowStaticsPageResponse>
+     */
+    public AsyncInvoker<ShowStaticsPageRequest, ShowStaticsPageResponse> showStaticsPageAsyncInvoker(
+        ShowStaticsPageRequest request) {
+        return new AsyncInvoker<>(request, IDMEClassicAPIMeta.showStaticsPage, hcClient);
     }
 
     /**

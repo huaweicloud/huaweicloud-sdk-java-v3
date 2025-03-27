@@ -682,6 +682,11 @@ public class CreateFunctionResponse extends SdkResponse {
     private Boolean enableAuthInHeader;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_lts_log")
+
+    private Boolean enableLtsLog;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lts_custom_tag")
 
     private Map<String, String> ltsCustomTag = null;
@@ -1782,6 +1787,23 @@ public class CreateFunctionResponse extends SdkResponse {
         this.enableAuthInHeader = enableAuthInHeader;
     }
 
+    public CreateFunctionResponse withEnableLtsLog(Boolean enableLtsLog) {
+        this.enableLtsLog = enableLtsLog;
+        return this;
+    }
+
+    /**
+     * 是否开启日志。
+     * @return enableLtsLog
+     */
+    public Boolean getEnableLtsLog() {
+        return enableLtsLog;
+    }
+
+    public void setEnableLtsLog(Boolean enableLtsLog) {
+        this.enableLtsLog = enableLtsLog;
+    }
+
     public CreateFunctionResponse withLtsCustomTag(Map<String, String> ltsCustomTag) {
         this.ltsCustomTag = ltsCustomTag;
         return this;
@@ -1868,6 +1890,7 @@ public class CreateFunctionResponse extends SdkResponse {
             && Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.isReturnStream, that.isReturnStream)
             && Objects.equals(this.enableAuthInHeader, that.enableAuthInHeader)
+            && Objects.equals(this.enableLtsLog, that.enableLtsLog)
             && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
     }
 
@@ -1932,6 +1955,7 @@ public class CreateFunctionResponse extends SdkResponse {
             resourceId,
             isReturnStream,
             enableAuthInHeader,
+            enableLtsLog,
             ltsCustomTag);
     }
 
@@ -1998,6 +2022,7 @@ public class CreateFunctionResponse extends SdkResponse {
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    isReturnStream: ").append(toIndentedString(isReturnStream)).append("\n");
         sb.append("    enableAuthInHeader: ").append(toIndentedString(enableAuthInHeader)).append("\n");
+        sb.append("    enableLtsLog: ").append(toIndentedString(enableLtsLog)).append("\n");
         sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
         sb.append("}");
         return sb.toString();

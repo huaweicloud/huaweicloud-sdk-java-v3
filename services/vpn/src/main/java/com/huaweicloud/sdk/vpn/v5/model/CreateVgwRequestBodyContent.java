@@ -98,6 +98,81 @@ public class CreateVgwRequestBodyContent {
 
     private AttachmentTypeEnum attachmentType;
 
+    /**
+     * 网关的IP协议版本
+     */
+    public static final class IpVersionEnum {
+
+        /**
+         * Enum IPV4 for value: "ipv4"
+         */
+        public static final IpVersionEnum IPV4 = new IpVersionEnum("ipv4");
+
+        /**
+         * Enum IPV6 for value: "ipv6"
+         */
+        public static final IpVersionEnum IPV6 = new IpVersionEnum("ipv6");
+
+        private static final Map<String, IpVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IpVersionEnum> createStaticFields() {
+            Map<String, IpVersionEnum> map = new HashMap<>();
+            map.put("ipv4", IPV4);
+            map.put("ipv6", IPV6);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        IpVersionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IpVersionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
+        }
+
+        public static IpVersionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IpVersionEnum) {
+                return this.value.equals(((IpVersionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_version")
+
+    private IpVersionEnum ipVersion;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "er_id")
 
@@ -112,6 +187,11 @@ public class CreateVgwRequestBodyContent {
     @JsonProperty(value = "local_subnets")
 
     private List<String> localSubnets = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "local_subnets_v6")
+
+    private List<String> localSubnetsV6 = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connect_subnet")
@@ -144,6 +224,11 @@ public class CreateVgwRequestBodyContent {
         public static final FlavorEnum PROFESSIONAL2 = new FlavorEnum("Professional2");
 
         /**
+         * Enum PROFESSIONAL3 for value: "Professional3"
+         */
+        public static final FlavorEnum PROFESSIONAL3 = new FlavorEnum("Professional3");
+
+        /**
          * Enum PROFESSIONAL1_NONFIXEDIP for value: "Professional1-NonFixedIP"
          */
         public static final FlavorEnum PROFESSIONAL1_NONFIXEDIP = new FlavorEnum("Professional1-NonFixedIP");
@@ -153,6 +238,16 @@ public class CreateVgwRequestBodyContent {
          */
         public static final FlavorEnum PROFESSIONAL2_NONFIXEDIP = new FlavorEnum("Professional2-NonFixedIP");
 
+        /**
+         * Enum PROFESSIONAL3_NONFIXEDIP for value: "Professional3-NonFixedIP"
+         */
+        public static final FlavorEnum PROFESSIONAL3_NONFIXEDIP = new FlavorEnum("Professional3-NonFixedIP");
+
+        /**
+         * Enum GM for value: "GM"
+         */
+        public static final FlavorEnum GM = new FlavorEnum("GM");
+
         private static final Map<String, FlavorEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, FlavorEnum> createStaticFields() {
@@ -160,8 +255,11 @@ public class CreateVgwRequestBodyContent {
             map.put("Basic", BASIC);
             map.put("Professional1", PROFESSIONAL1);
             map.put("Professional2", PROFESSIONAL2);
+            map.put("Professional3", PROFESSIONAL3);
             map.put("Professional1-NonFixedIP", PROFESSIONAL1_NONFIXEDIP);
             map.put("Professional2-NonFixedIP", PROFESSIONAL2_NONFIXEDIP);
+            map.put("Professional3-NonFixedIP", PROFESSIONAL3_NONFIXEDIP);
+            map.put("GM", GM);
             return Collections.unmodifiableMap(map);
         }
 
@@ -445,6 +543,23 @@ public class CreateVgwRequestBodyContent {
         this.attachmentType = attachmentType;
     }
 
+    public CreateVgwRequestBodyContent withIpVersion(IpVersionEnum ipVersion) {
+        this.ipVersion = ipVersion;
+        return this;
+    }
+
+    /**
+     * 网关的IP协议版本
+     * @return ipVersion
+     */
+    public IpVersionEnum getIpVersion() {
+        return ipVersion;
+    }
+
+    public void setIpVersion(IpVersionEnum ipVersion) {
+        this.ipVersion = ipVersion;
+    }
+
     public CreateVgwRequestBodyContent withErId(String erId) {
         this.erId = erId;
         return this;
@@ -501,7 +616,7 @@ public class CreateVgwRequestBodyContent {
     }
 
     /**
-     * 本端子网，当attachment_type配置为\"vpc\"时必填，否则不填
+     * 本端子网，当attachment_type配置为\"vpc\"且ip_version为\"ipv4\"时必填，否则不填
      * @return localSubnets
      */
     public List<String> getLocalSubnets() {
@@ -510,6 +625,39 @@ public class CreateVgwRequestBodyContent {
 
     public void setLocalSubnets(List<String> localSubnets) {
         this.localSubnets = localSubnets;
+    }
+
+    public CreateVgwRequestBodyContent withLocalSubnetsV6(List<String> localSubnetsV6) {
+        this.localSubnetsV6 = localSubnetsV6;
+        return this;
+    }
+
+    public CreateVgwRequestBodyContent addLocalSubnetsV6Item(String localSubnetsV6Item) {
+        if (this.localSubnetsV6 == null) {
+            this.localSubnetsV6 = new ArrayList<>();
+        }
+        this.localSubnetsV6.add(localSubnetsV6Item);
+        return this;
+    }
+
+    public CreateVgwRequestBodyContent withLocalSubnetsV6(Consumer<List<String>> localSubnetsV6Setter) {
+        if (this.localSubnetsV6 == null) {
+            this.localSubnetsV6 = new ArrayList<>();
+        }
+        localSubnetsV6Setter.accept(this.localSubnetsV6);
+        return this;
+    }
+
+    /**
+     * 使能ipv6的本端子网，当attachment_type配置为\"vpc\"且ip_version为\"ipv6\"时必填，否则不填
+     * @return localSubnetsV6
+     */
+    public List<String> getLocalSubnetsV6() {
+        return localSubnetsV6;
+    }
+
+    public void setLocalSubnetsV6(List<String> localSubnetsV6) {
+        this.localSubnetsV6 = localSubnetsV6;
     }
 
     public CreateVgwRequestBodyContent withConnectSubnet(String connectSubnet) {
@@ -812,8 +960,9 @@ public class CreateVgwRequestBodyContent {
         }
         CreateVgwRequestBodyContent that = (CreateVgwRequestBodyContent) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.attachmentType, that.attachmentType)
-            && Objects.equals(this.erId, that.erId) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.localSubnets, that.localSubnets)
+            && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.erId, that.erId)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.localSubnets, that.localSubnets)
+            && Objects.equals(this.localSubnetsV6, that.localSubnetsV6)
             && Objects.equals(this.connectSubnet, that.connectSubnet) && Objects.equals(this.bgpAsn, that.bgpAsn)
             && Objects.equals(this.flavor, that.flavor)
             && Objects.equals(this.availabilityZoneIds, that.availabilityZoneIds)
@@ -830,9 +979,11 @@ public class CreateVgwRequestBodyContent {
     public int hashCode() {
         return Objects.hash(name,
             attachmentType,
+            ipVersion,
             erId,
             vpcId,
             localSubnets,
+            localSubnetsV6,
             connectSubnet,
             bgpAsn,
             flavor,
@@ -855,9 +1006,11 @@ public class CreateVgwRequestBodyContent {
         sb.append("class CreateVgwRequestBodyContent {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    attachmentType: ").append(toIndentedString(attachmentType)).append("\n");
+        sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    erId: ").append(toIndentedString(erId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    localSubnets: ").append(toIndentedString(localSubnets)).append("\n");
+        sb.append("    localSubnetsV6: ").append(toIndentedString(localSubnetsV6)).append("\n");
         sb.append("    connectSubnet: ").append(toIndentedString(connectSubnet)).append("\n");
         sb.append("    bgpAsn: ").append(toIndentedString(bgpAsn)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");

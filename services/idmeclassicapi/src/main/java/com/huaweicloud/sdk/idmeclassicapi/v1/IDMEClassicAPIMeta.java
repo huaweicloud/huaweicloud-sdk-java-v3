@@ -238,6 +238,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteByConditionU
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteByConditionUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsPageRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsPageResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowTagRequest;
@@ -3559,6 +3561,85 @@ public class IDMEClassicAPIMeta {
             TypeCasts.uncheckedConversion(RDMParamVOPersistObjectIdModifierDTO.class),
             f -> f.withMarshaller(ShowLogicalDeleteUsingPostRequest::getBody,
                 ShowLogicalDeleteUsingPostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowStaticsPageRequest, ShowStaticsPageResponse> showStaticsPage =
+        genForShowStaticsPage();
+
+    private static HttpRequestDef<ShowStaticsPageRequest, ShowStaticsPageResponse> genForShowStaticsPage() {
+        // basic
+        HttpRequestDef.Builder<ShowStaticsPageRequest, ShowStaticsPageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ShowStaticsPageRequest.class, ShowStaticsPageResponse.class)
+                .withName("ShowStaticsPage")
+                .withUri(
+                    "/rdm_{identifier}_app/publicservices/api/{modelName}/staticsPage/{pageSizePath}/{curPagePath}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("modelName",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStaticsPageRequest::getModelName, ShowStaticsPageRequest::setModelName));
+        builder.<String>withRequestField("identifier",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowStaticsPageRequest::getIdentifier, ShowStaticsPageRequest::setIdentifier));
+        builder.<Integer>withRequestField("pageSizePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStaticsPageRequest::getPageSizePath, ShowStaticsPageRequest::setPageSizePath));
+        builder.<Integer>withRequestField("curPagePath",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStaticsPageRequest::getCurPagePath, ShowStaticsPageRequest::setCurPagePath));
+        builder.<Integer>withRequestField("curPage",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStaticsPageRequest::getCurPage, ShowStaticsPageRequest::setCurPage));
+        builder.<Integer>withRequestField("endIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStaticsPageRequest::getEndIndex, ShowStaticsPageRequest::setEndIndex));
+        builder.<Integer>withRequestField("maxPageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStaticsPageRequest::getMaxPageSize, ShowStaticsPageRequest::setMaxPageSize));
+        builder.<Integer>withRequestField("pageSize",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStaticsPageRequest::getPageSize, ShowStaticsPageRequest::setPageSize));
+        builder.<Integer>withRequestField("startIndex",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStaticsPageRequest::getStartIndex, ShowStaticsPageRequest::setStartIndex));
+        builder.<Integer>withRequestField("totalPages",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStaticsPageRequest::getTotalPages, ShowStaticsPageRequest::setTotalPages));
+        builder.<Integer>withRequestField("totalRows",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowStaticsPageRequest::getTotalRows, ShowStaticsPageRequest::setTotalRows));
+        builder.<RDMParamVOQueryRequestStaticsVo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RDMParamVOQueryRequestStaticsVo.class),
+            f -> f.withMarshaller(ShowStaticsPageRequest::getBody, ShowStaticsPageRequest::setBody));
 
         // response
 

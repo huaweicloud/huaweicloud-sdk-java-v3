@@ -21,6 +21,11 @@ public class NetWork {
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ipv6")
+
+    private String ipv6;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "netmask")
 
     private String netmask;
@@ -77,6 +82,23 @@ public class NetWork {
 
     public void setIp(String ip) {
         this.ip = ip;
+    }
+
+    public NetWork withIpv6(String ipv6) {
+        this.ipv6 = ipv6;
+        return this;
+    }
+
+    /**
+     * IPv6地址
+     * @return ipv6
+     */
+    public String getIpv6() {
+        return ipv6;
+    }
+
+    public void setIpv6(String ipv6) {
+        this.ipv6 = ipv6;
     }
 
     public NetWork withNetmask(String netmask) {
@@ -176,14 +198,14 @@ public class NetWork {
         }
         NetWork that = (NetWork) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.ip, that.ip)
-            && Objects.equals(this.netmask, that.netmask) && Objects.equals(this.gateway, that.gateway)
-            && Objects.equals(this.mtu, that.mtu) && Objects.equals(this.mac, that.mac)
-            && Objects.equals(this.id, that.id);
+            && Objects.equals(this.ipv6, that.ipv6) && Objects.equals(this.netmask, that.netmask)
+            && Objects.equals(this.gateway, that.gateway) && Objects.equals(this.mtu, that.mtu)
+            && Objects.equals(this.mac, that.mac) && Objects.equals(this.id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, ip, netmask, gateway, mtu, mac, id);
+        return Objects.hash(name, ip, ipv6, netmask, gateway, mtu, mac, id);
     }
 
     @Override
@@ -192,6 +214,7 @@ public class NetWork {
         sb.append("class NetWork {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    ip: ").append(toIndentedString(ip)).append("\n");
+        sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
         sb.append("    netmask: ").append(toIndentedString(netmask)).append("\n");
         sb.append("    gateway: ").append(toIndentedString(gateway)).append("\n");
         sb.append("    mtu: ").append(toIndentedString(mtu)).append("\n");

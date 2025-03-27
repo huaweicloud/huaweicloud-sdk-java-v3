@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -14,6 +15,11 @@ public class ExportClientConfigRequest {
     @JsonProperty(value = "vpn_server_id")
 
     private String vpnServerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private ExportClientConfigRequestBody body;
 
     public ExportClientConfigRequest withVpnServerId(String vpnServerId) {
         this.vpnServerId = vpnServerId;
@@ -32,6 +38,32 @@ public class ExportClientConfigRequest {
         this.vpnServerId = vpnServerId;
     }
 
+    public ExportClientConfigRequest withBody(ExportClientConfigRequestBody body) {
+        this.body = body;
+        return this;
+    }
+
+    public ExportClientConfigRequest withBody(Consumer<ExportClientConfigRequestBody> bodySetter) {
+        if (this.body == null) {
+            this.body = new ExportClientConfigRequestBody();
+            bodySetter.accept(this.body);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get body
+     * @return body
+     */
+    public ExportClientConfigRequestBody getBody() {
+        return body;
+    }
+
+    public void setBody(ExportClientConfigRequestBody body) {
+        this.body = body;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +73,12 @@ public class ExportClientConfigRequest {
             return false;
         }
         ExportClientConfigRequest that = (ExportClientConfigRequest) obj;
-        return Objects.equals(this.vpnServerId, that.vpnServerId);
+        return Objects.equals(this.vpnServerId, that.vpnServerId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vpnServerId);
+        return Objects.hash(vpnServerId, body);
     }
 
     @Override
@@ -54,6 +86,7 @@ public class ExportClientConfigRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ExportClientConfigRequest {\n");
         sb.append("    vpnServerId: ").append(toIndentedString(vpnServerId)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }

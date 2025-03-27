@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * 命令响应参数
  */
-public class ComandParam {
+public class CommandParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "task_id")
@@ -20,7 +20,7 @@ public class ComandParam {
 
     private String bucket;
 
-    public ComandParam withTaskId(String taskId) {
+    public CommandParam withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
@@ -37,7 +37,7 @@ public class ComandParam {
         this.taskId = taskId;
     }
 
-    public ComandParam withBucket(String bucket) {
+    public CommandParam withBucket(String bucket) {
         this.bucket = bucket;
         return this;
     }
@@ -62,7 +62,7 @@ public class ComandParam {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComandParam that = (ComandParam) obj;
+        CommandParam that = (CommandParam) obj;
         return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.bucket, that.bucket);
     }
 
@@ -74,7 +74,7 @@ public class ComandParam {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ComandParam {\n");
+        sb.append("class CommandParam {\n");
         sb.append("    taskId: ").append(toIndentedString(taskId)).append("\n");
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
         sb.append("}");

@@ -11,7 +11,6 @@ import com.huaweicloud.sdk.sms.v3.model.CollectLogRequest;
 import com.huaweicloud.sdk.sms.v3.model.CollectLogResponse;
 import com.huaweicloud.sdk.sms.v3.model.CommandBody;
 import com.huaweicloud.sdk.sms.v3.model.ConfigurationRequestBody;
-import com.huaweicloud.sdk.sms.v3.model.ConsistencyResultRequestBody;
 import com.huaweicloud.sdk.sms.v3.model.CreateMigprojectRequest;
 import com.huaweicloud.sdk.sms.v3.model.CreateMigprojectResponse;
 import com.huaweicloud.sdk.sms.v3.model.CreatePrivacyAgreementsRequest;
@@ -61,6 +60,7 @@ import com.huaweicloud.sdk.sms.v3.model.PutSourceServerBody;
 import com.huaweicloud.sdk.sms.v3.model.PutTaskReq;
 import com.huaweicloud.sdk.sms.v3.model.RegisterServerRequest;
 import com.huaweicloud.sdk.sms.v3.model.RegisterServerResponse;
+import com.huaweicloud.sdk.sms.v3.model.SetConsistencyResultRequestBody;
 import com.huaweicloud.sdk.sms.v3.model.ShowApiVersionRequest;
 import com.huaweicloud.sdk.sms.v3.model.ShowApiVersionResponse;
 import com.huaweicloud.sdk.sms.v3.model.ShowCertKeyRequest;
@@ -165,6 +165,11 @@ public class SmsMeta {
             f -> f.withMarshaller(CheckNetAclRequest::getOsType, CheckNetAclRequest::setOsType));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CheckNetAclResponse::getBody, CheckNetAclResponse::setBody));
 
         return builder.build();
     }
@@ -192,6 +197,11 @@ public class SmsMeta {
             f -> f.withMarshaller(CollectLogRequest::getBody, CollectLogRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CollectLogResponse::getBody, CollectLogResponse::setBody));
 
         return builder.build();
     }
@@ -306,6 +316,11 @@ public class SmsMeta {
             f -> f.withMarshaller(DeleteMigprojectRequest::getMigProjectId, DeleteMigprojectRequest::setMigProjectId));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteMigprojectResponse::getBody, DeleteMigprojectResponse::setBody));
 
         return builder.build();
     }
@@ -373,6 +388,11 @@ public class SmsMeta {
             f -> f.withMarshaller(DeleteTaskRequest::getTaskId, DeleteTaskRequest::setTaskId));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTaskResponse::getBody, DeleteTaskResponse::setBody));
 
         return builder.build();
     }
@@ -395,6 +415,11 @@ public class SmsMeta {
             f -> f.withMarshaller(DeleteTasksRequest::getBody, DeleteTasksRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTasksResponse::getBody, DeleteTasksResponse::setBody));
 
         return builder.build();
     }
@@ -418,6 +443,11 @@ public class SmsMeta {
             f -> f.withMarshaller(DeleteTemplateRequest::getId, DeleteTemplateRequest::setId));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTemplateResponse::getBody, DeleteTemplateResponse::setBody));
 
         return builder.build();
     }
@@ -441,6 +471,11 @@ public class SmsMeta {
             f -> f.withMarshaller(DeleteTemplatesRequest::getBody, DeleteTemplatesRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteTemplatesResponse::getBody, DeleteTemplatesResponse::setBody));
 
         return builder.build();
     }
@@ -1039,6 +1074,11 @@ public class SmsMeta {
             f -> f.withMarshaller(UnlockTargetEcsRequest::getTaskId, UnlockTargetEcsRequest::setTaskId));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UnlockTargetEcsResponse::getBody, UnlockTargetEcsResponse::setBody));
 
         return builder.build();
     }
@@ -1067,6 +1107,11 @@ public class SmsMeta {
             f -> f.withMarshaller(UpdateCommandResultRequest::getBody, UpdateCommandResultRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateCommandResultResponse::getBody, UpdateCommandResultResponse::setBody));
 
         return builder.build();
     }
@@ -1089,10 +1134,10 @@ public class SmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateConsistencyResultRequest::getTaskId,
                 UpdateConsistencyResultRequest::setTaskId));
-        builder.<ConsistencyResultRequestBody>withRequestField("body",
+        builder.<SetConsistencyResultRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ConsistencyResultRequestBody.class),
+            TypeCasts.uncheckedConversion(SetConsistencyResultRequestBody.class),
             f -> f.withMarshaller(UpdateConsistencyResultRequest::getBody, UpdateConsistencyResultRequest::setBody));
 
         // response
@@ -1129,6 +1174,11 @@ public class SmsMeta {
             f -> f.withMarshaller(UpdateCopyStateRequest::getBody, UpdateCopyStateRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateCopyStateResponse::getBody, UpdateCopyStateResponse::setBody));
 
         return builder.build();
     }
@@ -1153,6 +1203,11 @@ public class SmsMeta {
                 UpdateDefaultMigprojectRequest::setMigProjectId));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDefaultMigprojectResponse::getBody, UpdateDefaultMigprojectResponse::setBody));
 
         return builder.build();
     }
@@ -1302,6 +1357,11 @@ public class SmsMeta {
             f -> f.withMarshaller(UpdateSpeedRequest::getBody, UpdateSpeedRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateSpeedResponse::getBody, UpdateSpeedResponse::setBody));
 
         return builder.build();
     }
@@ -1362,6 +1422,11 @@ public class SmsMeta {
             f -> f.withMarshaller(UpdateTaskSpeedRequest::getBody, UpdateTaskSpeedRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateTaskSpeedResponse::getBody, UpdateTaskSpeedResponse::setBody));
 
         return builder.build();
     }
@@ -1390,6 +1455,11 @@ public class SmsMeta {
             f -> f.withMarshaller(UpdateTaskStatusRequest::getBody, UpdateTaskStatusRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateTaskStatusResponse::getBody, UpdateTaskStatusResponse::setBody));
 
         return builder.build();
     }
@@ -1418,6 +1488,11 @@ public class SmsMeta {
             f -> f.withMarshaller(UpdateTemplateRequest::getBody, UpdateTemplateRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateTemplateResponse::getBody, UpdateTemplateResponse::setBody));
 
         return builder.build();
     }
@@ -1451,6 +1526,12 @@ public class SmsMeta {
                 UploadSpecialConfigurationSettingRequest::setBody));
 
         // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UploadSpecialConfigurationSettingResponse::getBody,
+                UploadSpecialConfigurationSettingResponse::setBody));
 
         return builder.build();
     }

@@ -74,7 +74,7 @@ public class TestFormDataClient {
         wireMockRule.start();
 
         hcClient = TestUtils.createHcClient(
-                LOGGER, String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort()));
+                LOGGER, String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort()));
     }
 
     @After

@@ -116,7 +116,7 @@ public class SourceServerResponse {
     private Boolean oemSystem;
 
     /**
-     * 当前源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 testing：测试中 finished：启动目的端完成
+     * 当前源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 testing：测试中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败
      */
     public static final class StateEnum {
 
@@ -180,6 +180,21 @@ public class SourceServerResponse {
          */
         public static final StateEnum FINISHED = new StateEnum("finished");
 
+        /**
+         * Enum CLEARING for value: "clearing"
+         */
+        public static final StateEnum CLEARING = new StateEnum("clearing");
+
+        /**
+         * Enum CLEARED for value: "cleared"
+         */
+        public static final StateEnum CLEARED = new StateEnum("cleared");
+
+        /**
+         * Enum CLEARFAILED for value: "clearfailed"
+         */
+        public static final StateEnum CLEARFAILED = new StateEnum("clearfailed");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -196,6 +211,9 @@ public class SourceServerResponse {
             map.put("cloning", CLONING);
             map.put("testing", TESTING);
             map.put("finished", FINISHED);
+            map.put("clearing", CLEARING);
+            map.put("cleared", CLEARED);
+            map.put("clearfailed", CLEARFAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -457,7 +475,7 @@ public class SourceServerResponse {
     }
 
     /**
-     * 当前源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 testing：测试中 finished：启动目的端完成
+     * 当前源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 testing：测试中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败
      * @return state
      */
     public StateEnum getState() {

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class ListServersRequest {
 
     /**
-     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败
      */
     public static final class StateEnum {
 
@@ -56,6 +56,11 @@ public class ListServersRequest {
         public static final StateEnum STOPPED = new StateEnum("stopped");
 
         /**
+         * Enum SKIPPING for value: "skipping"
+         */
+        public static final StateEnum SKIPPING = new StateEnum("skipping");
+
+        /**
          * Enum DELETING for value: "deleting"
          */
         public static final StateEnum DELETING = new StateEnum("deleting");
@@ -80,6 +85,21 @@ public class ListServersRequest {
          */
         public static final StateEnum FINISHED = new StateEnum("finished");
 
+        /**
+         * Enum CLEARING for value: "clearing"
+         */
+        public static final StateEnum CLEARING = new StateEnum("clearing");
+
+        /**
+         * Enum CLEARED for value: "cleared"
+         */
+        public static final StateEnum CLEARED = new StateEnum("cleared");
+
+        /**
+         * Enum CLEARFAILED for value: "clearfailed"
+         */
+        public static final StateEnum CLEARFAILED = new StateEnum("clearfailed");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -91,11 +111,15 @@ public class ListServersRequest {
             map.put("syncing", SYNCING);
             map.put("stopping", STOPPING);
             map.put("stopped", STOPPED);
+            map.put("skipping", SKIPPING);
             map.put("deleting", DELETING);
             map.put("error", ERROR);
             map.put("cloning", CLONING);
             map.put("cutovering", CUTOVERING);
             map.put("finished", FINISHED);
+            map.put("clearing", CLEARING);
+            map.put("cleared", CLEARED);
+            map.put("clearfailed", CLEARFAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -300,7 +324,7 @@ public class ListServersRequest {
     }
 
     /**
-     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成
+     * 源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 cutovering：启动目的端中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败
      * @return state
      */
     public StateEnum getState() {

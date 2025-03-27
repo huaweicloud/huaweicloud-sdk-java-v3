@@ -158,7 +158,7 @@ public class TestHcClient {
         wireMockRule.start();
 
         hcClient = TestUtils.createHcClient(
-                LOGGER, String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort()));
+                LOGGER, String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort()));
     }
 
     @After
@@ -282,7 +282,7 @@ public class TestHcClient {
 
     @Test
     public void testExtraHeaders() {
-        String endpoint = String.format(Locale.ROOT, "https://127.0.0.1:%d", wireMockRule.httpsPort());
+        String endpoint = String.format(Locale.US, "https://127.0.0.1:%d", wireMockRule.httpsPort());
         HcClient client = new HcClient(HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true))
                 .withCredential(new BasicCredentials().withAk("test").withSk("test"))
                 .withEndpoints(Collections.singletonList(endpoint))
@@ -334,7 +334,7 @@ public class TestHcClient {
 
         @Override
         public void progressChanged(ProgressStatus status) {
-            LOGGER.info(String.format(Locale.ROOT,
+            LOGGER.info(String.format(Locale.US,
                     "AverageSpeed: %f, TransferPercentage: %d%%",
                     status.getAverageSpeed(), status.getTransferPercentage()));
 

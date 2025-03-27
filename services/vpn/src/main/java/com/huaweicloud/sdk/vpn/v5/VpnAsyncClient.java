@@ -41,12 +41,16 @@ import com.huaweicloud.sdk.vpn.v5.model.DeleteClientCaRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteClientCaResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteConnectionMonitorRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteConnectionMonitorResponse;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwConnectionRequest;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteP2cVgwConnectionResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnAccessPolicyRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnAccessPolicyResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionResponse;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionsLogConfigRequest;
+import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnConnectionsLogConfigResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserGroupRequest;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserGroupResponse;
 import com.huaweicloud.sdk.vpn.v5.model.DeleteVpnUserRequest;
@@ -109,8 +113,12 @@ import com.huaweicloud.sdk.vpn.v5.model.ShowVgwRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVgwResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnAccessPolicyRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnAccessPolicyResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionLogRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionLogResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionsLogConfigRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionsLogConfigResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnGatewayCertificateRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnGatewayCertificateResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnUserGroupRequest;
@@ -133,6 +141,8 @@ import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnAccessPolicyRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnAccessPolicyResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnConnectionRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnConnectionResponse;
+import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnConnectionsLogConfigRequest;
+import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnConnectionsLogConfigResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnServerRequest;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnServerResponse;
 import com.huaweicloud.sdk.vpn.v5.model.UpdateVpnUserGroupRequest;
@@ -561,6 +571,36 @@ public class VpnAsyncClient {
      */
     public AsyncInvoker<UpdateCgwRequest, UpdateCgwResponse> updateCgwAsyncInvoker(UpdateCgwRequest request) {
         return new AsyncInvoker<>(request, VpnMeta.updateCgw, hcClient);
+    }
+
+    /**
+     * 断开P2C VPN网关连接
+     *
+     * 断开P2C VPN网关连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteP2cVgwConnectionRequest 请求对象
+     * @return CompletableFuture<DeleteP2cVgwConnectionResponse>
+     */
+    public CompletableFuture<DeleteP2cVgwConnectionResponse> deleteP2cVgwConnectionAsync(
+        DeleteP2cVgwConnectionRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.deleteP2cVgwConnection);
+    }
+
+    /**
+     * 断开P2C VPN网关连接
+     *
+     * 断开P2C VPN网关连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteP2cVgwConnectionRequest 请求对象
+     * @return AsyncInvoker<DeleteP2cVgwConnectionRequest, DeleteP2cVgwConnectionResponse>
+     */
+    public AsyncInvoker<DeleteP2cVgwConnectionRequest, DeleteP2cVgwConnectionResponse> deleteP2cVgwConnectionAsyncInvoker(
+        DeleteP2cVgwConnectionRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.deleteP2cVgwConnection, hcClient);
     }
 
     /**
@@ -1151,6 +1191,36 @@ public class VpnAsyncClient {
     }
 
     /**
+     * 查询VPN连接日志
+     *
+     * 根据连接ID，查询指定的VPN连接日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVpnConnectionLogRequest 请求对象
+     * @return CompletableFuture<ShowVpnConnectionLogResponse>
+     */
+    public CompletableFuture<ShowVpnConnectionLogResponse> showVpnConnectionLogAsync(
+        ShowVpnConnectionLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.showVpnConnectionLog);
+    }
+
+    /**
+     * 查询VPN连接日志
+     *
+     * 根据连接ID，查询指定的VPN连接日志
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVpnConnectionLogRequest 请求对象
+     * @return AsyncInvoker<ShowVpnConnectionLogRequest, ShowVpnConnectionLogResponse>
+     */
+    public AsyncInvoker<ShowVpnConnectionLogRequest, ShowVpnConnectionLogResponse> showVpnConnectionLogAsyncInvoker(
+        ShowVpnConnectionLogRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.showVpnConnectionLog, hcClient);
+    }
+
+    /**
      * 更新VPN连接
      *
      * 根据连接ID，更新指定的VPN连接的参数
@@ -1177,6 +1247,96 @@ public class VpnAsyncClient {
     public AsyncInvoker<UpdateVpnConnectionRequest, UpdateVpnConnectionResponse> updateVpnConnectionAsyncInvoker(
         UpdateVpnConnectionRequest request) {
         return new AsyncInvoker<>(request, VpnMeta.updateVpnConnection, hcClient);
+    }
+
+    /**
+     * 删除VPN连接日志配置
+     *
+     * 删除VPN连接日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVpnConnectionsLogConfigRequest 请求对象
+     * @return CompletableFuture<DeleteVpnConnectionsLogConfigResponse>
+     */
+    public CompletableFuture<DeleteVpnConnectionsLogConfigResponse> deleteVpnConnectionsLogConfigAsync(
+        DeleteVpnConnectionsLogConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.deleteVpnConnectionsLogConfig);
+    }
+
+    /**
+     * 删除VPN连接日志配置
+     *
+     * 删除VPN连接日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteVpnConnectionsLogConfigRequest 请求对象
+     * @return AsyncInvoker<DeleteVpnConnectionsLogConfigRequest, DeleteVpnConnectionsLogConfigResponse>
+     */
+    public AsyncInvoker<DeleteVpnConnectionsLogConfigRequest, DeleteVpnConnectionsLogConfigResponse> deleteVpnConnectionsLogConfigAsyncInvoker(
+        DeleteVpnConnectionsLogConfigRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.deleteVpnConnectionsLogConfig, hcClient);
+    }
+
+    /**
+     * 查询VPN连接日志配置
+     *
+     * 查询VPN连接日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVpnConnectionsLogConfigRequest 请求对象
+     * @return CompletableFuture<ShowVpnConnectionsLogConfigResponse>
+     */
+    public CompletableFuture<ShowVpnConnectionsLogConfigResponse> showVpnConnectionsLogConfigAsync(
+        ShowVpnConnectionsLogConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.showVpnConnectionsLogConfig);
+    }
+
+    /**
+     * 查询VPN连接日志配置
+     *
+     * 查询VPN连接日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVpnConnectionsLogConfigRequest 请求对象
+     * @return AsyncInvoker<ShowVpnConnectionsLogConfigRequest, ShowVpnConnectionsLogConfigResponse>
+     */
+    public AsyncInvoker<ShowVpnConnectionsLogConfigRequest, ShowVpnConnectionsLogConfigResponse> showVpnConnectionsLogConfigAsyncInvoker(
+        ShowVpnConnectionsLogConfigRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.showVpnConnectionsLogConfig, hcClient);
+    }
+
+    /**
+     * 更新VPN连接日志配置
+     *
+     * 更新VPN连接日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVpnConnectionsLogConfigRequest 请求对象
+     * @return CompletableFuture<UpdateVpnConnectionsLogConfigResponse>
+     */
+    public CompletableFuture<UpdateVpnConnectionsLogConfigResponse> updateVpnConnectionsLogConfigAsync(
+        UpdateVpnConnectionsLogConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, VpnMeta.updateVpnConnectionsLogConfig);
+    }
+
+    /**
+     * 更新VPN连接日志配置
+     *
+     * 更新VPN连接日志配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateVpnConnectionsLogConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateVpnConnectionsLogConfigRequest, UpdateVpnConnectionsLogConfigResponse>
+     */
+    public AsyncInvoker<UpdateVpnConnectionsLogConfigRequest, UpdateVpnConnectionsLogConfigResponse> updateVpnConnectionsLogConfigAsyncInvoker(
+        UpdateVpnConnectionsLogConfigRequest request) {
+        return new AsyncInvoker<>(request, VpnMeta.updateVpnConnectionsLogConfig, hcClient);
     }
 
     /**

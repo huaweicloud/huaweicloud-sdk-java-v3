@@ -22,7 +22,7 @@ public class UpdateNetworkCheckInfoResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 更新网络检测结果成功。
      * @return body
      */
     public String getBody() {

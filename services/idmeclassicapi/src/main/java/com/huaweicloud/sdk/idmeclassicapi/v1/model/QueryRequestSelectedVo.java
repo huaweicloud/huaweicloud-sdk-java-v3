@@ -83,6 +83,11 @@ public class QueryRequestSelectedVo {
 
     private List<SortInfoVo> sorts = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isTransformResBody")
+
+    private Boolean isTransformResBody;
+
     public QueryRequestSelectedVo withCharacterSet(CharacterSetEnum characterSet) {
         this.characterSet = characterSet;
         return this;
@@ -131,7 +136,7 @@ public class QueryRequestSelectedVo {
     }
 
     /**
-     * **参数解释：**  查询条件。  此参数已废弃，不建议继续使用，建议使用替代参数filter。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  查询条件。  此参数已废弃，不建议继续使用，建议使用替代参数filter。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return conditions
      */
     public List<QueryCondition> getConditions() {
@@ -148,7 +153,7 @@ public class QueryRequestSelectedVo {
     }
 
     /**
-     * **参数解释：**  是否加密。  **约束限制：**  不涉及。  **取值范围：**  - true：加密。 - false：不加密。  **默认取值：**  false。 
+     * **参数解释：**  是否加密。  **约束限制：**  不涉及。  **取值范围：**  - true：加密。 - false：不加密。  **默认取值：**  false。
      * @return decrypt
      */
     public Boolean getDecrypt() {
@@ -165,7 +170,7 @@ public class QueryRequestSelectedVo {
     }
 
     /**
-     * **参数解释：**  实体类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  实体类型。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return entityType
      */
     public String getEntityType() {
@@ -208,7 +213,7 @@ public class QueryRequestSelectedVo {
     }
 
     /**
-     * **参数解释：**  是否需要查询总记录数。  **约束限制：**  不涉及。  **取值范围：**  - true：需要。 - false：不需要。  **默认取值：**  不涉及。 
+     * **参数解释：**  是否需要查询总记录数。  **约束限制：**  不涉及。  **取值范围：**  - true：需要。 - false：不需要。  **默认取值：**  不涉及。
      * @return isNeedTotal
      */
     public Boolean getIsNeedTotal() {
@@ -225,7 +230,7 @@ public class QueryRequestSelectedVo {
     }
 
     /**
-     * **参数解释：**  是否需要展示所有参考对象信息。  **约束限制：**  不涉及。  **取值范围：**  - true：需要。 - false：不需要。  **默认取值：**  不涉及。 
+     * **参数解释：**  是否需要展示所有参考对象信息。  **约束限制：**  不涉及。  **取值范围：**  - true：需要。 - false：不需要。  **默认取值：**  不涉及。
      * @return isPresentAll
      */
     public Boolean getIsPresentAll() {
@@ -258,7 +263,7 @@ public class QueryRequestSelectedVo {
     }
 
     /**
-     * **参数解释：**  需要展示详细信息的参考对象。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  需要展示详细信息的参考对象。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return needPresentDetail
      */
     public List<String> getNeedPresentDetail() {
@@ -275,7 +280,7 @@ public class QueryRequestSelectedVo {
     }
 
     /**
-     * **参数解释：**  按某个字段进行排序。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  按某个字段进行排序。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -292,7 +297,7 @@ public class QueryRequestSelectedVo {
     }
 
     /**
-     * **参数解释：**  排序字段的表别名。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  排序字段的表别名。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return orderByTableAlias
      */
     public String getOrderByTableAlias() {
@@ -309,7 +314,7 @@ public class QueryRequestSelectedVo {
     }
 
     /**
-     * **参数解释：**  多租查询参数。  **约束限制：**  不涉及。  **取值范围：**  - EXCLUDE_PUBLIC_DATA：不包括公共数据。 - INCLUDE_PUBLIC_DATA：包括公共数据。 - ONLY_NEED_PUBLIC_DATA：只有公共数据。  **默认取值：**  不涉及。 
+     * **参数解释：**  多租查询参数。  **约束限制：**  不涉及。  **取值范围：**  - EXCLUDE_PUBLIC_DATA：不包括公共数据。 - INCLUDE_PUBLIC_DATA：包括公共数据。 - ONLY_NEED_PUBLIC_DATA：只有公共数据。  **默认取值：**  不涉及。
      * @return publicData
      */
     public String getPublicData() {
@@ -342,7 +347,7 @@ public class QueryRequestSelectedVo {
     }
 
     /**
-     * **参数解释：**  指定需返回的属性。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  指定需返回的属性。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return selectedField
      */
     public List<SelectedField> getSelectedField() {
@@ -359,7 +364,7 @@ public class QueryRequestSelectedVo {
     }
 
     /**
-     * **参数解释：**  排序方向。  **约束限制：**  不涉及。  **取值范围：**  - ASC：表示升序。 - DESC：表示降序。  **默认取值：**  不涉及。 
+     * **参数解释：**  排序方向。  **约束限制：**  不涉及。  **取值范围：**  - ASC：表示升序。 - DESC：表示降序。  **默认取值：**  不涉及。
      * @return sort
      */
     public String getSort() {
@@ -392,7 +397,7 @@ public class QueryRequestSelectedVo {
     }
 
     /**
-     * **参数解释：**  排序。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。 
+     * **参数解释：**  排序。  **约束限制：**  不涉及。  **取值范围：**  不涉及。  **默认取值：**  不涉及。
      * @return sorts
      */
     public List<SortInfoVo> getSorts() {
@@ -401,6 +406,23 @@ public class QueryRequestSelectedVo {
 
     public void setSorts(List<SortInfoVo> sorts) {
         this.sorts = sorts;
+    }
+
+    public QueryRequestSelectedVo withIsTransformResBody(Boolean isTransformResBody) {
+        this.isTransformResBody = isTransformResBody;
+        return this;
+    }
+
+    /**
+     * **参数解释：**  是否需要格式化分类属性。  **约束限制：**  不涉及。  **取值范围：**  - true：需要格式化分类属性。 - false：不需要格式化分类属性。  **默认取值：**  不涉及。
+     * @return isTransformResBody
+     */
+    public Boolean getIsTransformResBody() {
+        return isTransformResBody;
+    }
+
+    public void setIsTransformResBody(Boolean isTransformResBody) {
+        this.isTransformResBody = isTransformResBody;
     }
 
     @Override
@@ -421,7 +443,8 @@ public class QueryRequestSelectedVo {
             && Objects.equals(this.orderByTableAlias, that.orderByTableAlias)
             && Objects.equals(this.publicData, that.publicData)
             && Objects.equals(this.selectedField, that.selectedField) && Objects.equals(this.sort, that.sort)
-            && Objects.equals(this.sorts, that.sorts);
+            && Objects.equals(this.sorts, that.sorts)
+            && Objects.equals(this.isTransformResBody, that.isTransformResBody);
     }
 
     @Override
@@ -439,7 +462,8 @@ public class QueryRequestSelectedVo {
             publicData,
             selectedField,
             sort,
-            sorts);
+            sorts,
+            isTransformResBody);
     }
 
     @Override
@@ -460,6 +484,7 @@ public class QueryRequestSelectedVo {
         sb.append("    selectedField: ").append(toIndentedString(selectedField)).append("\n");
         sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
         sb.append("    sorts: ").append(toIndentedString(sorts)).append("\n");
+        sb.append("    isTransformResBody: ").append(toIndentedString(isTransformResBody)).append("\n");
         sb.append("}");
         return sb.toString();
     }

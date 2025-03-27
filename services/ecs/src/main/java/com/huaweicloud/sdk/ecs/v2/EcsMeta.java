@@ -93,6 +93,8 @@ import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListFlavorsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListResizeFlavorsResponse;
+import com.huaweicloud.sdk.ecs.v2.model.ListScheduledEventsRequest;
+import com.huaweicloud.sdk.ecs.v2.model.ListScheduledEventsResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerAzInfoRequest;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerAzInfoResponse;
 import com.huaweicloud.sdk.ecs.v2.model.ListServerBlockDevicesRequest;
@@ -1268,6 +1270,67 @@ public class EcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResizeFlavorsRequest::getSourceFlavorName,
                 ListResizeFlavorsRequest::setSourceFlavorName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListScheduledEventsRequest, ListScheduledEventsResponse> listScheduledEvents =
+        genForListScheduledEvents();
+
+    private static HttpRequestDef<ListScheduledEventsRequest, ListScheduledEventsResponse> genForListScheduledEvents() {
+        // basic
+        HttpRequestDef.Builder<ListScheduledEventsRequest, ListScheduledEventsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListScheduledEventsRequest.class, ListScheduledEventsResponse.class)
+                .withName("ListScheduledEvents")
+                .withUri("/v3/{project_id}/instance-scheduled-events")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getMarker, ListScheduledEventsRequest::setMarker));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getId, ListScheduledEventsRequest::setId));
+        builder.<List<String>>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getInstanceId,
+                ListScheduledEventsRequest::setInstanceId));
+        builder.<List<String>>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getType, ListScheduledEventsRequest::setType));
+        builder.<List<String>>withRequestField("state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getState, ListScheduledEventsRequest::setState));
+        builder.<String>withRequestField("publish_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getPublishSince,
+                ListScheduledEventsRequest::setPublishSince));
+        builder.<String>withRequestField("publish_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getPublishUntil,
+                ListScheduledEventsRequest::setPublishUntil));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListScheduledEventsRequest::getLimit, ListScheduledEventsRequest::setLimit));
 
         // response
 

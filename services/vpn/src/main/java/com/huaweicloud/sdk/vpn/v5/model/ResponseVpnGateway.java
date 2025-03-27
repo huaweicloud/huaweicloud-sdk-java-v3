@@ -109,6 +109,81 @@ public class ResponseVpnGateway {
 
     private AttachmentTypeEnum attachmentType;
 
+    /**
+     * 网关的IP协议版本
+     */
+    public static final class IpVersionEnum {
+
+        /**
+         * Enum IPV4 for value: "ipv4"
+         */
+        public static final IpVersionEnum IPV4 = new IpVersionEnum("ipv4");
+
+        /**
+         * Enum IPV6 for value: "ipv6"
+         */
+        public static final IpVersionEnum IPV6 = new IpVersionEnum("ipv6");
+
+        private static final Map<String, IpVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IpVersionEnum> createStaticFields() {
+            Map<String, IpVersionEnum> map = new HashMap<>();
+            map.put("ipv4", IPV4);
+            map.put("ipv6", IPV6);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        IpVersionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IpVersionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
+        }
+
+        public static IpVersionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IpVersionEnum) {
+                return this.value.equals(((IpVersionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_version")
+
+    private IpVersionEnum ipVersion;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_id")
 
@@ -120,6 +195,11 @@ public class ResponseVpnGateway {
     private String erId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "er_attachment_id")
+
+    private String erAttachmentId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
     private String vpcId;
@@ -128,6 +208,11 @@ public class ResponseVpnGateway {
     @JsonProperty(value = "local_subnets")
 
     private List<String> localSubnets = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "local_subnets_v6")
+
+    private List<String> localSubnetsV6 = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connect_subnet")
@@ -245,6 +330,11 @@ public class ResponseVpnGateway {
     private List<String> availabilityZoneIds = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_border_group")
+
+    private String publicBorderGroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_number")
 
     private Integer connectionNumber;
@@ -298,6 +388,11 @@ public class ResponseVpnGateway {
     @JsonProperty(value = "supported_flavors")
 
     private List<String> supportedFlavors = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supported_features")
+
+    private List<String> supportedFeatures = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "tags")
@@ -372,6 +467,23 @@ public class ResponseVpnGateway {
         this.attachmentType = attachmentType;
     }
 
+    public ResponseVpnGateway withIpVersion(IpVersionEnum ipVersion) {
+        this.ipVersion = ipVersion;
+        return this;
+    }
+
+    /**
+     * 网关的IP协议版本
+     * @return ipVersion
+     */
+    public IpVersionEnum getIpVersion() {
+        return ipVersion;
+    }
+
+    public void setIpVersion(IpVersionEnum ipVersion) {
+        this.ipVersion = ipVersion;
+    }
+
     public ResponseVpnGateway withCertificateId(String certificateId) {
         this.certificateId = certificateId;
         return this;
@@ -404,6 +516,23 @@ public class ResponseVpnGateway {
 
     public void setErId(String erId) {
         this.erId = erId;
+    }
+
+    public ResponseVpnGateway withErAttachmentId(String erAttachmentId) {
+        this.erAttachmentId = erAttachmentId;
+        return this;
+    }
+
+    /**
+     * VPN网关关联的ER连接ID
+     * @return erAttachmentId
+     */
+    public String getErAttachmentId() {
+        return erAttachmentId;
+    }
+
+    public void setErAttachmentId(String erAttachmentId) {
+        this.erAttachmentId = erAttachmentId;
     }
 
     public ResponseVpnGateway withVpcId(String vpcId) {
@@ -454,6 +583,39 @@ public class ResponseVpnGateway {
 
     public void setLocalSubnets(List<String> localSubnets) {
         this.localSubnets = localSubnets;
+    }
+
+    public ResponseVpnGateway withLocalSubnetsV6(List<String> localSubnetsV6) {
+        this.localSubnetsV6 = localSubnetsV6;
+        return this;
+    }
+
+    public ResponseVpnGateway addLocalSubnetsV6Item(String localSubnetsV6Item) {
+        if (this.localSubnetsV6 == null) {
+            this.localSubnetsV6 = new ArrayList<>();
+        }
+        this.localSubnetsV6.add(localSubnetsV6Item);
+        return this;
+    }
+
+    public ResponseVpnGateway withLocalSubnetsV6(Consumer<List<String>> localSubnetsV6Setter) {
+        if (this.localSubnetsV6 == null) {
+            this.localSubnetsV6 = new ArrayList<>();
+        }
+        localSubnetsV6Setter.accept(this.localSubnetsV6);
+        return this;
+    }
+
+    /**
+     * 使能ipv6的本端子网
+     * @return localSubnetsV6
+     */
+    public List<String> getLocalSubnetsV6() {
+        return localSubnetsV6;
+    }
+
+    public void setLocalSubnetsV6(List<String> localSubnetsV6) {
+        this.localSubnetsV6 = localSubnetsV6;
     }
 
     public ResponseVpnGateway withConnectSubnet(String connectSubnet) {
@@ -625,6 +787,23 @@ public class ResponseVpnGateway {
 
     public void setAvailabilityZoneIds(List<String> availabilityZoneIds) {
         this.availabilityZoneIds = availabilityZoneIds;
+    }
+
+    public ResponseVpnGateway withPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
+        return this;
+    }
+
+    /**
+     * 公共边界组
+     * @return publicBorderGroup
+     */
+    public String getPublicBorderGroup() {
+        return publicBorderGroup;
+    }
+
+    public void setPublicBorderGroup(String publicBorderGroup) {
+        this.publicBorderGroup = publicBorderGroup;
     }
 
     public ResponseVpnGateway withConnectionNumber(Integer connectionNumber) {
@@ -857,6 +1036,39 @@ public class ResponseVpnGateway {
         this.supportedFlavors = supportedFlavors;
     }
 
+    public ResponseVpnGateway withSupportedFeatures(List<String> supportedFeatures) {
+        this.supportedFeatures = supportedFeatures;
+        return this;
+    }
+
+    public ResponseVpnGateway addSupportedFeaturesItem(String supportedFeaturesItem) {
+        if (this.supportedFeatures == null) {
+            this.supportedFeatures = new ArrayList<>();
+        }
+        this.supportedFeatures.add(supportedFeaturesItem);
+        return this;
+    }
+
+    public ResponseVpnGateway withSupportedFeatures(Consumer<List<String>> supportedFeaturesSetter) {
+        if (this.supportedFeatures == null) {
+            this.supportedFeatures = new ArrayList<>();
+        }
+        supportedFeaturesSetter.accept(this.supportedFeatures);
+        return this;
+    }
+
+    /**
+     * 网关可支持的特性功能
+     * @return supportedFeatures
+     */
+    public List<String> getSupportedFeatures() {
+        return supportedFeatures;
+    }
+
+    public void setSupportedFeatures(List<String> supportedFeatures) {
+        this.supportedFeatures = supportedFeatures;
+    }
+
     public ResponseVpnGateway withTags(List<VpnResourceTag> tags) {
         this.tags = tags;
         return this;
@@ -901,8 +1113,10 @@ public class ResponseVpnGateway {
         ResponseVpnGateway that = (ResponseVpnGateway) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.status, that.status) && Objects.equals(this.attachmentType, that.attachmentType)
-            && Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.erId, that.erId)
+            && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.certificateId, that.certificateId)
+            && Objects.equals(this.erId, that.erId) && Objects.equals(this.erAttachmentId, that.erAttachmentId)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.localSubnets, that.localSubnets)
+            && Objects.equals(this.localSubnetsV6, that.localSubnetsV6)
             && Objects.equals(this.connectSubnet, that.connectSubnet)
             && Objects.equals(this.networkType, that.networkType) && Objects.equals(this.accessVpcId, that.accessVpcId)
             && Objects.equals(this.accessSubnetId, that.accessSubnetId)
@@ -910,6 +1124,7 @@ public class ResponseVpnGateway {
             && Objects.equals(this.accessPrivateIp2, that.accessPrivateIp2) && Objects.equals(this.bgpAsn, that.bgpAsn)
             && Objects.equals(this.flavor, that.flavor)
             && Objects.equals(this.availabilityZoneIds, that.availabilityZoneIds)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
             && Objects.equals(this.connectionNumber, that.connectionNumber)
             && Objects.equals(this.usedConnectionNumber, that.usedConnectionNumber)
             && Objects.equals(this.usedConnectionGroup, that.usedConnectionGroup)
@@ -918,7 +1133,8 @@ public class ResponseVpnGateway {
             && Objects.equals(this.eip2, that.eip2) && Objects.equals(this.createdAt, that.createdAt)
             && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.policyTemplate, that.policyTemplate)
-            && Objects.equals(this.supportedFlavors, that.supportedFlavors) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.supportedFlavors, that.supportedFlavors)
+            && Objects.equals(this.supportedFeatures, that.supportedFeatures) && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -927,10 +1143,13 @@ public class ResponseVpnGateway {
             name,
             status,
             attachmentType,
+            ipVersion,
             certificateId,
             erId,
+            erAttachmentId,
             vpcId,
             localSubnets,
+            localSubnetsV6,
             connectSubnet,
             networkType,
             accessVpcId,
@@ -940,6 +1159,7 @@ public class ResponseVpnGateway {
             bgpAsn,
             flavor,
             availabilityZoneIds,
+            publicBorderGroup,
             connectionNumber,
             usedConnectionNumber,
             usedConnectionGroup,
@@ -951,6 +1171,7 @@ public class ResponseVpnGateway {
             updatedAt,
             policyTemplate,
             supportedFlavors,
+            supportedFeatures,
             tags);
     }
 
@@ -962,10 +1183,13 @@ public class ResponseVpnGateway {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    attachmentType: ").append(toIndentedString(attachmentType)).append("\n");
+        sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("    erId: ").append(toIndentedString(erId)).append("\n");
+        sb.append("    erAttachmentId: ").append(toIndentedString(erAttachmentId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    localSubnets: ").append(toIndentedString(localSubnets)).append("\n");
+        sb.append("    localSubnetsV6: ").append(toIndentedString(localSubnetsV6)).append("\n");
         sb.append("    connectSubnet: ").append(toIndentedString(connectSubnet)).append("\n");
         sb.append("    networkType: ").append(toIndentedString(networkType)).append("\n");
         sb.append("    accessVpcId: ").append(toIndentedString(accessVpcId)).append("\n");
@@ -975,6 +1199,7 @@ public class ResponseVpnGateway {
         sb.append("    bgpAsn: ").append(toIndentedString(bgpAsn)).append("\n");
         sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
         sb.append("    availabilityZoneIds: ").append(toIndentedString(availabilityZoneIds)).append("\n");
+        sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("    connectionNumber: ").append(toIndentedString(connectionNumber)).append("\n");
         sb.append("    usedConnectionNumber: ").append(toIndentedString(usedConnectionNumber)).append("\n");
         sb.append("    usedConnectionGroup: ").append(toIndentedString(usedConnectionGroup)).append("\n");
@@ -986,6 +1211,7 @@ public class ResponseVpnGateway {
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    policyTemplate: ").append(toIndentedString(policyTemplate)).append("\n");
         sb.append("    supportedFlavors: ").append(toIndentedString(supportedFlavors)).append("\n");
+        sb.append("    supportedFeatures: ").append(toIndentedString(supportedFeatures)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("}");
         return sb.toString();

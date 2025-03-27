@@ -103,6 +103,81 @@ public class CreateResponseVpnGateway {
 
     private AttachmentTypeEnum attachmentType;
 
+    /**
+     * 网关的IP协议版本
+     */
+    public static final class IpVersionEnum {
+
+        /**
+         * Enum IPV4 for value: "ipv4"
+         */
+        public static final IpVersionEnum IPV4 = new IpVersionEnum("ipv4");
+
+        /**
+         * Enum IPV6 for value: "ipv6"
+         */
+        public static final IpVersionEnum IPV6 = new IpVersionEnum("ipv6");
+
+        private static final Map<String, IpVersionEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, IpVersionEnum> createStaticFields() {
+            Map<String, IpVersionEnum> map = new HashMap<>();
+            map.put("ipv4", IPV4);
+            map.put("ipv6", IPV6);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        IpVersionEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static IpVersionEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
+        }
+
+        public static IpVersionEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof IpVersionEnum) {
+                return this.value.equals(((IpVersionEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ip_version")
+
+    private IpVersionEnum ipVersion;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "certificate_id")
 
@@ -122,6 +197,11 @@ public class CreateResponseVpnGateway {
     @JsonProperty(value = "local_subnets")
 
     private List<String> localSubnets = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "local_subnets_v6")
+
+    private List<String> localSubnetsV6 = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connect_subnet")
@@ -309,6 +389,23 @@ public class CreateResponseVpnGateway {
         this.attachmentType = attachmentType;
     }
 
+    public CreateResponseVpnGateway withIpVersion(IpVersionEnum ipVersion) {
+        this.ipVersion = ipVersion;
+        return this;
+    }
+
+    /**
+     * 网关的IP协议版本
+     * @return ipVersion
+     */
+    public IpVersionEnum getIpVersion() {
+        return ipVersion;
+    }
+
+    public void setIpVersion(IpVersionEnum ipVersion) {
+        this.ipVersion = ipVersion;
+    }
+
     public CreateResponseVpnGateway withCertificateId(String certificateId) {
         this.certificateId = certificateId;
         return this;
@@ -391,6 +488,39 @@ public class CreateResponseVpnGateway {
 
     public void setLocalSubnets(List<String> localSubnets) {
         this.localSubnets = localSubnets;
+    }
+
+    public CreateResponseVpnGateway withLocalSubnetsV6(List<String> localSubnetsV6) {
+        this.localSubnetsV6 = localSubnetsV6;
+        return this;
+    }
+
+    public CreateResponseVpnGateway addLocalSubnetsV6Item(String localSubnetsV6Item) {
+        if (this.localSubnetsV6 == null) {
+            this.localSubnetsV6 = new ArrayList<>();
+        }
+        this.localSubnetsV6.add(localSubnetsV6Item);
+        return this;
+    }
+
+    public CreateResponseVpnGateway withLocalSubnetsV6(Consumer<List<String>> localSubnetsV6Setter) {
+        if (this.localSubnetsV6 == null) {
+            this.localSubnetsV6 = new ArrayList<>();
+        }
+        localSubnetsV6Setter.accept(this.localSubnetsV6);
+        return this;
+    }
+
+    /**
+     * 使能ipv6的本端子网
+     * @return localSubnetsV6
+     */
+    public List<String> getLocalSubnetsV6() {
+        return localSubnetsV6;
+    }
+
+    public void setLocalSubnetsV6(List<String> localSubnetsV6) {
+        this.localSubnetsV6 = localSubnetsV6;
     }
 
     public CreateResponseVpnGateway withConnectSubnet(String connectSubnet) {
@@ -652,8 +782,10 @@ public class CreateResponseVpnGateway {
         CreateResponseVpnGateway that = (CreateResponseVpnGateway) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.attachmentType, that.attachmentType)
-            && Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.erId, that.erId)
-            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.localSubnets, that.localSubnets)
+            && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.certificateId, that.certificateId)
+            && Objects.equals(this.erId, that.erId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.localSubnets, that.localSubnets)
+            && Objects.equals(this.localSubnetsV6, that.localSubnetsV6)
             && Objects.equals(this.connectSubnet, that.connectSubnet)
             && Objects.equals(this.networkType, that.networkType) && Objects.equals(this.accessVpcId, that.accessVpcId)
             && Objects.equals(this.accessSubnetId, that.accessSubnetId) && Objects.equals(this.bgpAsn, that.bgpAsn)
@@ -670,10 +802,12 @@ public class CreateResponseVpnGateway {
         return Objects.hash(id,
             name,
             attachmentType,
+            ipVersion,
             certificateId,
             erId,
             vpcId,
             localSubnets,
+            localSubnetsV6,
             connectSubnet,
             networkType,
             accessVpcId,
@@ -696,10 +830,12 @@ public class CreateResponseVpnGateway {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    attachmentType: ").append(toIndentedString(attachmentType)).append("\n");
+        sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
         sb.append("    erId: ").append(toIndentedString(erId)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    localSubnets: ").append(toIndentedString(localSubnets)).append("\n");
+        sb.append("    localSubnetsV6: ").append(toIndentedString(localSubnetsV6)).append("\n");
         sb.append("    connectSubnet: ").append(toIndentedString(connectSubnet)).append("\n");
         sb.append("    networkType: ").append(toIndentedString(networkType)).append("\n");
         sb.append("    accessVpcId: ").append(toIndentedString(accessVpcId)).append("\n");

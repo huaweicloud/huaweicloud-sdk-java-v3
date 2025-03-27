@@ -766,6 +766,12 @@ public class VodMeta {
             .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTranscodeProductRequest::getXSdkDate,
+                DeleteTranscodeProductRequest::setXSdkDate));
         builder.<DeleteTranscodeProductReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1263,6 +1269,11 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifySubtitleRequest::getXSdkDate, ModifySubtitleRequest::setXSdkDate));
         builder.<SubtitleModifyReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1880,6 +1891,11 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateStorageModeRequest::getXSdkDate, UpdateStorageModeRequest::setXSdkDate));
         builder.<UpdateStorageModeReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

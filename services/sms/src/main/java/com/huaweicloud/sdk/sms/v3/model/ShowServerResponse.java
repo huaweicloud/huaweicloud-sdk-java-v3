@@ -65,7 +65,7 @@ public class ShowServerResponse extends SdkResponse {
     private Boolean oemSystem;
 
     /**
-     * 当前源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 testing：测试中 finished：启动目的端完成
+     * 当前源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 testing：测试中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败
      */
     public static final class StateEnum {
 
@@ -129,6 +129,21 @@ public class ShowServerResponse extends SdkResponse {
          */
         public static final StateEnum FINISHED = new StateEnum("finished");
 
+        /**
+         * Enum CLEARING for value: "clearing"
+         */
+        public static final StateEnum CLEARING = new StateEnum("clearing");
+
+        /**
+         * Enum CLEARED for value: "cleared"
+         */
+        public static final StateEnum CLEARED = new StateEnum("cleared");
+
+        /**
+         * Enum CLEARFAILED for value: "clearfailed"
+         */
+        public static final StateEnum CLEARFAILED = new StateEnum("clearfailed");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -145,6 +160,9 @@ public class ShowServerResponse extends SdkResponse {
             map.put("cloning", CLONING);
             map.put("testing", TESTING);
             map.put("finished", FINISHED);
+            map.put("clearing", CLEARING);
+            map.put("cleared", CLEARED);
+            map.put("clearfailed", CLEARFAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -325,7 +343,7 @@ public class ShowServerResponse extends SdkResponse {
     private List<EnvironmentCheck> checks = null;
 
     /**
-     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中
      */
     public static final class MigrationCycleEnum {
 
@@ -452,6 +470,11 @@ public class ShowServerResponse extends SdkResponse {
     @JsonProperty(value = "agent_version")
 
     private String agentVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_tc")
+
+    private Boolean hasTc;
 
     public ShowServerResponse withId(String id) {
         this.id = id;
@@ -614,7 +637,7 @@ public class ShowServerResponse extends SdkResponse {
     }
 
     /**
-     * 当前源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 deleting：删除中 error：错误 cloning：等待克隆完成 testing：测试中 finished：启动目的端完成
+     * 当前源端服务器状态 unavailable：环境校验不通过 waiting：等待 initialize：初始化 replicate：复制 syncing：持续同步 stopping：暂停中 stopped：已暂停 skipping：跳过中 deleting：删除中 error：错误 cloning：等待克隆完成 testing：测试中 finished：启动目的端完成 clearing: 清理快照资源中 cleared：清理快照资源完成 clearfailed：清理快照资源失败
      * @return state
      */
     public StateEnum getState() {
@@ -920,7 +943,7 @@ public class ShowServerResponse extends SdkResponse {
     }
 
     /**
-     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中
      * @return migrationCycle
      */
     public MigrationCycleEnum getMigrationCycle() {
@@ -1043,6 +1066,23 @@ public class ShowServerResponse extends SdkResponse {
         this.agentVersion = agentVersion;
     }
 
+    public ShowServerResponse withHasTc(Boolean hasTc) {
+        this.hasTc = hasTc;
+        return this;
+    }
+
+    /**
+     * 是否安装tc组件，Linux系统此参数为必选
+     * @return hasTc
+     */
+    public Boolean getHasTc() {
+        return hasTc;
+    }
+
+    public void setHasTc(Boolean hasTc) {
+        this.hasTc = hasTc;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1069,7 +1109,7 @@ public class ShowServerResponse extends SdkResponse {
             && Objects.equals(this.replicatesize, that.replicatesize) && Objects.equals(this.totalsize, that.totalsize)
             && Objects.equals(this.lastVisitTime, that.lastVisitTime)
             && Objects.equals(this.stageActionTime, that.stageActionTime)
-            && Objects.equals(this.agentVersion, that.agentVersion);
+            && Objects.equals(this.agentVersion, that.agentVersion) && Objects.equals(this.hasTc, that.hasTc);
     }
 
     @Override
@@ -1101,7 +1141,8 @@ public class ShowServerResponse extends SdkResponse {
             totalsize,
             lastVisitTime,
             stageActionTime,
-            agentVersion);
+            agentVersion,
+            hasTc);
     }
 
     @Override
@@ -1136,6 +1177,7 @@ public class ShowServerResponse extends SdkResponse {
         sb.append("    lastVisitTime: ").append(toIndentedString(lastVisitTime)).append("\n");
         sb.append("    stageActionTime: ").append(toIndentedString(stageActionTime)).append("\n");
         sb.append("    agentVersion: ").append(toIndentedString(agentVersion)).append("\n");
+        sb.append("    hasTc: ").append(toIndentedString(hasTc)).append("\n");
         sb.append("}");
         return sb.toString();
     }

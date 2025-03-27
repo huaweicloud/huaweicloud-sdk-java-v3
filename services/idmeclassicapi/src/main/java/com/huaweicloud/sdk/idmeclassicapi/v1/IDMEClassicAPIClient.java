@@ -165,6 +165,8 @@ import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteByConditionU
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteByConditionUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowLogicalDeleteUsingPostResponse;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsPageRequest;
+import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsPageResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsUsingPostRequest;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowStaticsUsingPostResponse;
 import com.huaweicloud.sdk.idmeclassicapi.v1.model.ShowTagRequest;
@@ -2594,6 +2596,35 @@ public class IDMEClassicAPIClient {
     public SyncInvoker<ShowLogicalDeleteUsingPostRequest, ShowLogicalDeleteUsingPostResponse> showLogicalDeleteUsingPostInvoker(
         ShowLogicalDeleteUsingPostRequest request) {
         return new SyncInvoker<>(request, IDMEClassicAPIMeta.showLogicalDeleteUsingPost, hcClient);
+    }
+
+    /**
+     * 分页查询数据实例的统计信息
+     *
+     * 分页查询数据实例的统计信息，支持分组和简单函数分页统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStaticsPageRequest 请求对象
+     * @return ShowStaticsPageResponse
+     */
+    public ShowStaticsPageResponse showStaticsPage(ShowStaticsPageRequest request) {
+        return hcClient.syncInvokeHttp(request, IDMEClassicAPIMeta.showStaticsPage);
+    }
+
+    /**
+     * 分页查询数据实例的统计信息
+     *
+     * 分页查询数据实例的统计信息，支持分组和简单函数分页统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowStaticsPageRequest 请求对象
+     * @return SyncInvoker<ShowStaticsPageRequest, ShowStaticsPageResponse>
+     */
+    public SyncInvoker<ShowStaticsPageRequest, ShowStaticsPageResponse> showStaticsPageInvoker(
+        ShowStaticsPageRequest request) {
+        return new SyncInvoker<>(request, IDMEClassicAPIMeta.showStaticsPage, hcClient);
     }
 
     /**

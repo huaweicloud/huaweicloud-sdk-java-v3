@@ -395,6 +395,11 @@ public class UpdateFunctionConfigRequestBody {
     private Boolean enableClassIsolation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_lts_log")
+
+    private Boolean enableLtsLog;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lts_custom_tag")
 
     private Map<String, String> ltsCustomTag = null;
@@ -1032,6 +1037,23 @@ public class UpdateFunctionConfigRequestBody {
         this.enableClassIsolation = enableClassIsolation;
     }
 
+    public UpdateFunctionConfigRequestBody withEnableLtsLog(Boolean enableLtsLog) {
+        this.enableLtsLog = enableLtsLog;
+        return this;
+    }
+
+    /**
+     * 是否开启日志。
+     * @return enableLtsLog
+     */
+    public Boolean getEnableLtsLog() {
+        return enableLtsLog;
+    }
+
+    public void setEnableLtsLog(Boolean enableLtsLog) {
+        this.enableLtsLog = enableLtsLog;
+    }
+
     public UpdateFunctionConfigRequestBody withLtsCustomTag(Map<String, String> ltsCustomTag) {
         this.ltsCustomTag = ltsCustomTag;
         return this;
@@ -1101,6 +1123,7 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.restoreHookTimeout, that.restoreHookTimeout)
             && Objects.equals(this.heartbeatHandler, that.heartbeatHandler)
             && Objects.equals(this.enableClassIsolation, that.enableClassIsolation)
+            && Objects.equals(this.enableLtsLog, that.enableLtsLog)
             && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
     }
 
@@ -1140,6 +1163,7 @@ public class UpdateFunctionConfigRequestBody {
             restoreHookTimeout,
             heartbeatHandler,
             enableClassIsolation,
+            enableLtsLog,
             ltsCustomTag);
     }
 
@@ -1181,6 +1205,7 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    restoreHookTimeout: ").append(toIndentedString(restoreHookTimeout)).append("\n");
         sb.append("    heartbeatHandler: ").append(toIndentedString(heartbeatHandler)).append("\n");
         sb.append("    enableClassIsolation: ").append(toIndentedString(enableClassIsolation)).append("\n");
+        sb.append("    enableLtsLog: ").append(toIndentedString(enableLtsLog)).append("\n");
         sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
         sb.append("}");
         return sb.toString();

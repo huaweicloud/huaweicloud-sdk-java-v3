@@ -540,6 +540,11 @@ public class CreateFunctionRequestBody {
     private Boolean enableDynamicMemory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_lts_log")
+
+    private Boolean enableLtsLog;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "lts_custom_tag")
 
     private Map<String, String> ltsCustomTag = null;
@@ -1141,6 +1146,23 @@ public class CreateFunctionRequestBody {
         this.enableDynamicMemory = enableDynamicMemory;
     }
 
+    public CreateFunctionRequestBody withEnableLtsLog(Boolean enableLtsLog) {
+        this.enableLtsLog = enableLtsLog;
+        return this;
+    }
+
+    /**
+     * 是否开启日志，缺省值为false。创建函数时，若此开关为true，且未传入log_config，则由FunctionGraph自动创建日志组日志流。
+     * @return enableLtsLog
+     */
+    public Boolean getEnableLtsLog() {
+        return enableLtsLog;
+    }
+
+    public void setEnableLtsLog(Boolean enableLtsLog) {
+        this.enableLtsLog = enableLtsLog;
+    }
+
     public CreateFunctionRequestBody withLtsCustomTag(Map<String, String> ltsCustomTag) {
         this.ltsCustomTag = ltsCustomTag;
         return this;
@@ -1204,6 +1226,7 @@ public class CreateFunctionRequestBody {
             && Objects.equals(this.networkController, that.networkController)
             && Objects.equals(this.isStatefulFunction, that.isStatefulFunction)
             && Objects.equals(this.enableDynamicMemory, that.enableDynamicMemory)
+            && Objects.equals(this.enableLtsLog, that.enableLtsLog)
             && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
     }
 
@@ -1240,6 +1263,7 @@ public class CreateFunctionRequestBody {
             networkController,
             isStatefulFunction,
             enableDynamicMemory,
+            enableLtsLog,
             ltsCustomTag);
     }
 
@@ -1278,6 +1302,7 @@ public class CreateFunctionRequestBody {
         sb.append("    networkController: ").append(toIndentedString(networkController)).append("\n");
         sb.append("    isStatefulFunction: ").append(toIndentedString(isStatefulFunction)).append("\n");
         sb.append("    enableDynamicMemory: ").append(toIndentedString(enableDynamicMemory)).append("\n");
+        sb.append("    enableLtsLog: ").append(toIndentedString(enableLtsLog)).append("\n");
         sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
         sb.append("}");
         return sb.toString();

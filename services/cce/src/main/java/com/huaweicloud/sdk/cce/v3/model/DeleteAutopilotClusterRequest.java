@@ -486,44 +486,33 @@ public class DeleteAutopilotClusterRequest {
     private DeleteSfs30Enum deleteSfs30;
 
     /**
-     * 是否删除LTS LogStream（日志流）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     * 是否删除LTS资源（日志组/日志流）。 枚举取值： - Delete_Log_Group：删除日志组，失败则忽略，并继续执行后续流程。 - Delete_Master_Log_Stream：删除Master接入日志流，失败则忽略，并继续执行后续流程，默认选项。 - Retain：跳过删除流程。
      */
     public static final class LtsReclaimPolicyEnum {
 
         /**
-         * Enum TRUE for value: "true"
+         * Enum DELETE_LOG_GROUP for value: "Delete_Log_Group"
          */
-        public static final LtsReclaimPolicyEnum TRUE = new LtsReclaimPolicyEnum("true");
+        public static final LtsReclaimPolicyEnum DELETE_LOG_GROUP = new LtsReclaimPolicyEnum("Delete_Log_Group");
 
         /**
-         * Enum BLOCK for value: "block"
+         * Enum DELETE_MASTER_LOG_STREAM for value: "Delete_Master_Log_Stream"
          */
-        public static final LtsReclaimPolicyEnum BLOCK = new LtsReclaimPolicyEnum("block");
+        public static final LtsReclaimPolicyEnum DELETE_MASTER_LOG_STREAM =
+            new LtsReclaimPolicyEnum("Delete_Master_Log_Stream");
 
         /**
-         * Enum TRY for value: "try"
+         * Enum RETAIN for value: "Retain"
          */
-        public static final LtsReclaimPolicyEnum TRY = new LtsReclaimPolicyEnum("try");
-
-        /**
-         * Enum FALSE for value: "false"
-         */
-        public static final LtsReclaimPolicyEnum FALSE = new LtsReclaimPolicyEnum("false");
-
-        /**
-         * Enum SKIP for value: "skip"
-         */
-        public static final LtsReclaimPolicyEnum SKIP = new LtsReclaimPolicyEnum("skip");
+        public static final LtsReclaimPolicyEnum RETAIN = new LtsReclaimPolicyEnum("Retain");
 
         private static final Map<String, LtsReclaimPolicyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, LtsReclaimPolicyEnum> createStaticFields() {
             Map<String, LtsReclaimPolicyEnum> map = new HashMap<>();
-            map.put("true", TRUE);
-            map.put("block", BLOCK);
-            map.put("try", TRY);
-            map.put("false", FALSE);
-            map.put("skip", SKIP);
+            map.put("Delete_Log_Group", DELETE_LOG_GROUP);
+            map.put("Delete_Master_Log_Stream", DELETE_MASTER_LOG_STREAM);
+            map.put("Retain", RETAIN);
             return Collections.unmodifiableMap(map);
         }
 
@@ -686,7 +675,7 @@ public class DeleteAutopilotClusterRequest {
     }
 
     /**
-     * 是否删除LTS LogStream（日志流）， 枚举取值： - true或block (执行删除流程，失败则阻塞后续流程) - try (执行删除流程，失败则忽略，并继续执行后续流程) - false或skip (跳过删除流程，默认选项)
+     * 是否删除LTS资源（日志组/日志流）。 枚举取值： - Delete_Log_Group：删除日志组，失败则忽略，并继续执行后续流程。 - Delete_Master_Log_Stream：删除Master接入日志流，失败则忽略，并继续执行后续流程，默认选项。 - Retain：跳过删除流程。
      * @return ltsReclaimPolicy
      */
     public LtsReclaimPolicyEnum getLtsReclaimPolicy() {

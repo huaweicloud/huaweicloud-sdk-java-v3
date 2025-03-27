@@ -206,7 +206,7 @@ public class TargetServer {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "btrfs_list")
 
-    private List<String> btrfsList = null;
+    private List<BtrfsFileSystem> btrfsList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "networks")
@@ -520,12 +520,12 @@ public class TargetServer {
         this.memory = memory;
     }
 
-    public TargetServer withBtrfsList(List<String> btrfsList) {
+    public TargetServer withBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
         return this;
     }
 
-    public TargetServer addBtrfsListItem(String btrfsListItem) {
+    public TargetServer addBtrfsListItem(BtrfsFileSystem btrfsListItem) {
         if (this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
@@ -533,7 +533,7 @@ public class TargetServer {
         return this;
     }
 
-    public TargetServer withBtrfsList(Consumer<List<String>> btrfsListSetter) {
+    public TargetServer withBtrfsList(Consumer<List<BtrfsFileSystem>> btrfsListSetter) {
         if (this.btrfsList == null) {
             this.btrfsList = new ArrayList<>();
         }
@@ -545,11 +545,11 @@ public class TargetServer {
      * Linux 必选，源端的Btrfs信息。如果源端不存在Btrfs，则为[]
      * @return btrfsList
      */
-    public List<String> getBtrfsList() {
+    public List<BtrfsFileSystem> getBtrfsList() {
         return btrfsList;
     }
 
-    public void setBtrfsList(List<String> btrfsList) {
+    public void setBtrfsList(List<BtrfsFileSystem> btrfsList) {
         this.btrfsList = btrfsList;
     }
 

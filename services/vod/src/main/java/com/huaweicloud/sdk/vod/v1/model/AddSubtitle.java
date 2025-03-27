@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 public class AddSubtitle {
 
     /**
-     * 字幕类型，字幕封装当前仅支持VTT
+     * 字幕类型，字幕封装当前仅支持VTT和SRT
      */
     public static final class TypeEnum {
 
@@ -26,11 +26,17 @@ public class AddSubtitle {
          */
         public static final TypeEnum VTT = new TypeEnum("VTT");
 
+        /**
+         * Enum SRT for value: "SRT"
+         */
+        public static final TypeEnum SRT = new TypeEnum("SRT");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
             Map<String, TypeEnum> map = new HashMap<>();
             map.put("VTT", VTT);
+            map.put("SRT", SRT);
             return Collections.unmodifiableMap(map);
         }
 
@@ -101,7 +107,7 @@ public class AddSubtitle {
     }
 
     /**
-     * 字幕类型，字幕封装当前仅支持VTT
+     * 字幕类型，字幕封装当前仅支持VTT和SRT
      * @return type
      */
     public TypeEnum getType() {

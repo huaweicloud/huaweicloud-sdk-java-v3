@@ -22,7 +22,7 @@ public class CreatePrivacyAgreementsResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 请求成功
      * @return body
      */
     public String getBody() {

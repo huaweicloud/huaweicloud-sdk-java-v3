@@ -88,7 +88,7 @@ public class TestRegionWithoutId {
 
         wireMockRule.start();
 
-        String iamEndpoint = String.format(Locale.ROOT, "http://127.0.0.1:%d", wireMockRule.port());
+        String iamEndpoint = String.format(Locale.US, "http://127.0.0.1:%d", wireMockRule.port());
         BASIC_CREDENTIALS.withIamEndpoint(iamEndpoint);
         GLOBAL_CREDENTIALS.withIamEndpoint(iamEndpoint);
     }

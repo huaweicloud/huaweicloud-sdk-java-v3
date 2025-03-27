@@ -90,6 +90,11 @@ public class ShowResponseP2cVgw {
     private Integer frozenEffect;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "version")
+
+    private String version;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
@@ -395,6 +400,23 @@ public class ShowResponseP2cVgw {
         this.frozenEffect = frozenEffect;
     }
 
+    public ShowResponseP2cVgw withVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * 网关版本
+     * @return version
+     */
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
     public ShowResponseP2cVgw withCreatedAt(OffsetDateTime createdAt) {
         this.createdAt = createdAt;
         return this;
@@ -447,8 +469,8 @@ public class ShowResponseP2cVgw {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.adminStateUp, that.adminStateUp)
-            && Objects.equals(this.frozenEffect, that.frozenEffect) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.frozenEffect, that.frozenEffect) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override
@@ -468,6 +490,7 @@ public class ShowResponseP2cVgw {
             orderId,
             adminStateUp,
             frozenEffect,
+            version,
             createdAt,
             updatedAt);
     }
@@ -491,6 +514,7 @@ public class ShowResponseP2cVgw {
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    frozenEffect: ").append(toIndentedString(frozenEffect)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("}");

@@ -16,7 +16,7 @@ import java.util.Objects;
 public class PutCopyStateReq {
 
     /**
-     * 源端服务器状 UNAVAILABLE：环境校验不通过 WAITING：等待 INIT：初始化 REPLICATE：复制 SYNCING：持续同步 STOPPING：暂停中 STOPPED：已暂停 DELETING：删除中 ERROR：错误 CLONING：等待克隆完成 CUTOVERING：启动目的端中 FINISHED：启动目的端完成
+     * 源端服务器状态 UNAVAILABLE：环境校验不通过 WAITING：等待 INIT：初始化 REPLICATE：复制 SYNCING：持续同步 STOPPING：暂停中 STOPPED：已暂停 SKIPPING：跳过中 DELETING：删除中 ERROR：错误 CLONING：等待克隆完成 CUTOVERING：启动目的端中 FINISHED：启动目的端完成 CLEARING: 清理快照资源中 CLEARED：清理快照资源完成 CLEARFAILED：清理快照资源失败
      */
     public static final class CopystateEnum {
 
@@ -56,6 +56,11 @@ public class PutCopyStateReq {
         public static final CopystateEnum STOPPED = new CopystateEnum("STOPPED");
 
         /**
+         * Enum SKIPPING for value: "SKIPPING"
+         */
+        public static final CopystateEnum SKIPPING = new CopystateEnum("SKIPPING");
+
+        /**
          * Enum DELETING for value: "DELETING"
          */
         public static final CopystateEnum DELETING = new CopystateEnum("DELETING");
@@ -80,6 +85,21 @@ public class PutCopyStateReq {
          */
         public static final CopystateEnum FINISHED = new CopystateEnum("FINISHED");
 
+        /**
+         * Enum CLEARING for value: "clearing"
+         */
+        public static final CopystateEnum CLEARING = new CopystateEnum("clearing");
+
+        /**
+         * Enum CLEARED for value: "cleared"
+         */
+        public static final CopystateEnum CLEARED = new CopystateEnum("cleared");
+
+        /**
+         * Enum CLEARFAILED for value: "clearfailed"
+         */
+        public static final CopystateEnum CLEARFAILED = new CopystateEnum("clearfailed");
+
         private static final Map<String, CopystateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CopystateEnum> createStaticFields() {
@@ -91,11 +111,15 @@ public class PutCopyStateReq {
             map.put("SYNCING", SYNCING);
             map.put("STOPPING", STOPPING);
             map.put("STOPPED", STOPPED);
+            map.put("SKIPPING", SKIPPING);
             map.put("DELETING", DELETING);
             map.put("ERROR", ERROR);
             map.put("CLONING", CLONING);
             map.put("CUTOVERING", CUTOVERING);
             map.put("FINISHED", FINISHED);
+            map.put("clearing", CLEARING);
+            map.put("cleared", CLEARED);
+            map.put("clearfailed", CLEARFAILED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -255,7 +279,7 @@ public class PutCopyStateReq {
     }
 
     /**
-     * 源端服务器状 UNAVAILABLE：环境校验不通过 WAITING：等待 INIT：初始化 REPLICATE：复制 SYNCING：持续同步 STOPPING：暂停中 STOPPED：已暂停 DELETING：删除中 ERROR：错误 CLONING：等待克隆完成 CUTOVERING：启动目的端中 FINISHED：启动目的端完成
+     * 源端服务器状态 UNAVAILABLE：环境校验不通过 WAITING：等待 INIT：初始化 REPLICATE：复制 SYNCING：持续同步 STOPPING：暂停中 STOPPED：已暂停 SKIPPING：跳过中 DELETING：删除中 ERROR：错误 CLONING：等待克隆完成 CUTOVERING：启动目的端中 FINISHED：启动目的端完成 CLEARING: 清理快照资源中 CLEARED：清理快照资源完成 CLEARFAILED：清理快照资源失败
      * @return copystate
      */
     public CopystateEnum getCopystate() {

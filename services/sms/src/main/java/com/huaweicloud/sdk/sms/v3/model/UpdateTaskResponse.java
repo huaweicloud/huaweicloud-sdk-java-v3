@@ -22,7 +22,7 @@ public class UpdateTaskResponse extends SdkResponse {
     }
 
     /**
-     * Get body
+     * 更新指定ID的迁移任务
      * @return body
      */
     public String getBody() {

@@ -41,7 +41,7 @@ public class EnvCredentialProvider implements ICredentialProvider {
     private final String credentialType;
 
     public EnvCredentialProvider(String credentialType) {
-        this.credentialType = credentialType.toLowerCase(Locale.ROOT);
+        this.credentialType = credentialType.toLowerCase(Locale.US);
     }
 
     public static EnvCredentialProvider getBasicCredentialEnvProvider() {

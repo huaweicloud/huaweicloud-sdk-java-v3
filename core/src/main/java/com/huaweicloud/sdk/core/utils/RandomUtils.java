@@ -29,7 +29,7 @@ public class RandomUtils {
     public static SecureRandom getDefaultSecureRandom() {
         String os = System.getProperty("os.name");
         try {
-            if (os != null && os.toLowerCase(Locale.ROOT).startsWith("win")) {
+            if (os != null && os.toLowerCase(Locale.US).startsWith("win")) {
                 return SecureRandom.getInstanceStrong();
             } else {
                 return SecureRandom.getInstance("NativePRNGNonBlocking");

@@ -126,7 +126,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
                 projectId = projects.get(0).getId();
             } else if (projects.size() < 1) {
 
-                throw new SdkException(String.format(Locale.ROOT,
+                throw new SdkException(String.format(Locale.US,
                         "Failed to get project id of region '%s' automatically, X-IAM-Trace-Id=%s."
                         , regionId, response.getTraceId()) +
                         " Confirm that the project exists in your account," +
@@ -135,7 +135,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
             } else {
                 String projectIds = projects.stream().map(Project::getId).collect(Collectors.joining(","));
 
-                throw new SdkException(String.format(Locale.ROOT,
+                throw new SdkException(String.format(Locale.US,
                         "Multiple project ids found: [%s], X-IAM-Trace-Id=%s. ",
                         projectIds, response.getTraceId()) +
                         "Please select one when initializing the credentials: " +
@@ -215,7 +215,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
         authToken = response.getSubjectToken();
         try {
             String expiredTime = response.getToken().getExpiresAt().replace("000Z", "Z");
-            expiredAt = new SimpleDateFormat(Iam.EXPIRED_DATE_FORMAT).parse(expiredTime).getTime();
+            expiredAt = new SimpleDateFormat(Iam.EXPIRED_DATE_FORMAT, Locale.US).parse(expiredTime).getTime();
         } catch (ParseException e) {
             throw new SdkException(e);
         }

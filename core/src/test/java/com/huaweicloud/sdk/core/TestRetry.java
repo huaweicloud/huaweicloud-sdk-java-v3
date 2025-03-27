@@ -58,7 +58,7 @@ public class TestRetry {
         return new HcClient(HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true))
                 .withCredential(new BasicCredentials().withAk("ak").withSk("sk"))
                 .withEndpoints(Arrays.asList(
-                        String.format(Locale.ROOT, "https://127.0.0.1:%d", port)));
+                        String.format(Locale.US, "https://127.0.0.1:%d", port)));
     }
 
     @Before
