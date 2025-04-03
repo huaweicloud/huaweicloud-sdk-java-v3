@@ -157,6 +157,11 @@ public class CreateAsyncTtsJobRequestBody {
     private Integer srtLineLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "slice_segments")
+
+    private Boolean sliceSegments;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "channels")
 
     private Integer channels;
@@ -175,6 +180,11 @@ public class CreateAsyncTtsJobRequestBody {
     @JsonProperty(value = "action_output_external_url")
 
     private String actionOutputExternalUrl;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_vocabulary_config_enable")
+
+    private Boolean isVocabularyConfigEnable;
 
     public CreateAsyncTtsJobRequestBody withText(String text) {
         this.text = text;
@@ -435,6 +445,23 @@ public class CreateAsyncTtsJobRequestBody {
         this.srtLineLimit = srtLineLimit;
     }
 
+    public CreateAsyncTtsJobRequestBody withSliceSegments(Boolean sliceSegments) {
+        this.sliceSegments = sliceSegments;
+        return this;
+    }
+
+    /**
+     * 是否对文本进行分段
+     * @return sliceSegments
+     */
+    public Boolean getSliceSegments() {
+        return sliceSegments;
+    }
+
+    public void setSliceSegments(Boolean sliceSegments) {
+        this.sliceSegments = sliceSegments;
+    }
+
     public CreateAsyncTtsJobRequestBody withChannels(Integer channels) {
         this.channels = channels;
         return this;
@@ -505,6 +532,23 @@ public class CreateAsyncTtsJobRequestBody {
         this.actionOutputExternalUrl = actionOutputExternalUrl;
     }
 
+    public CreateAsyncTtsJobRequestBody withIsVocabularyConfigEnable(Boolean isVocabularyConfigEnable) {
+        this.isVocabularyConfigEnable = isVocabularyConfigEnable;
+        return this;
+    }
+
+    /**
+     * 是否应用当前租户的读法配置
+     * @return isVocabularyConfigEnable
+     */
+    public Boolean getIsVocabularyConfigEnable() {
+        return isVocabularyConfigEnable;
+    }
+
+    public void setIsVocabularyConfigEnable(Boolean isVocabularyConfigEnable) {
+        this.isVocabularyConfigEnable = isVocabularyConfigEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -523,10 +567,11 @@ public class CreateAsyncTtsJobRequestBody {
             && Objects.equals(this.silenceTimeMs, that.silenceTimeMs)
             && Objects.equals(this.callbackConfig, that.callbackConfig) && Objects.equals(this.genSrt, that.genSrt)
             && Objects.equals(this.srtLen, that.srtLen) && Objects.equals(this.srtLineLimit, that.srtLineLimit)
-            && Objects.equals(this.channels, that.channels)
+            && Objects.equals(this.sliceSegments, that.sliceSegments) && Objects.equals(this.channels, that.channels)
             && Objects.equals(this.outputExternalUrl, that.outputExternalUrl)
             && Objects.equals(this.srtOutputExternalUrl, that.srtOutputExternalUrl)
-            && Objects.equals(this.actionOutputExternalUrl, that.actionOutputExternalUrl);
+            && Objects.equals(this.actionOutputExternalUrl, that.actionOutputExternalUrl)
+            && Objects.equals(this.isVocabularyConfigEnable, that.isVocabularyConfigEnable);
     }
 
     @Override
@@ -545,10 +590,12 @@ public class CreateAsyncTtsJobRequestBody {
             genSrt,
             srtLen,
             srtLineLimit,
+            sliceSegments,
             channels,
             outputExternalUrl,
             srtOutputExternalUrl,
-            actionOutputExternalUrl);
+            actionOutputExternalUrl,
+            isVocabularyConfigEnable);
     }
 
     @Override
@@ -569,10 +616,12 @@ public class CreateAsyncTtsJobRequestBody {
         sb.append("    genSrt: ").append(toIndentedString(genSrt)).append("\n");
         sb.append("    srtLen: ").append(toIndentedString(srtLen)).append("\n");
         sb.append("    srtLineLimit: ").append(toIndentedString(srtLineLimit)).append("\n");
+        sb.append("    sliceSegments: ").append(toIndentedString(sliceSegments)).append("\n");
         sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
         sb.append("    outputExternalUrl: ").append(toIndentedString(outputExternalUrl)).append("\n");
         sb.append("    srtOutputExternalUrl: ").append(toIndentedString(srtOutputExternalUrl)).append("\n");
         sb.append("    actionOutputExternalUrl: ").append(toIndentedString(actionOutputExternalUrl)).append("\n");
+        sb.append("    isVocabularyConfigEnable: ").append(toIndentedString(isVocabularyConfigEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

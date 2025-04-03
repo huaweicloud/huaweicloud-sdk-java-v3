@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.dataartsstudio.v1.model;
+package com.huaweicloud.sdk.metastudio.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -6,30 +6,32 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * data，统一的返回结果的最外层数据结构。
+ * 图层旋转配置。
  */
-public class UpdateBizMetricResultData {
+public class LayerRotationConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "value")
+    @JsonProperty(value = "angle")
 
-    private Object value;
+    private Integer angle;
 
-    public UpdateBizMetricResultData withValue(Object value) {
-        this.value = value;
+    public LayerRotationConfig withAngle(Integer angle) {
+        this.angle = angle;
         return this;
     }
 
     /**
-     * value，统一的返回结果的外层数据结构。
-     * @return value
+     * **参数解释**： 旋转角度。 **取值范围**： 角度范围0-360度。 **默认取值**： 0度。 **约束限制**： 以素材中心点旋转。
+     * minimum: 0
+     * maximum: 360
+     * @return angle
      */
-    public Object getValue() {
-        return value;
+    public Integer getAngle() {
+        return angle;
     }
 
-    public void setValue(Object value) {
-        this.value = value;
+    public void setAngle(Integer angle) {
+        this.angle = angle;
     }
 
     @Override
@@ -40,20 +42,20 @@ public class UpdateBizMetricResultData {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBizMetricResultData that = (UpdateBizMetricResultData) obj;
-        return Objects.equals(this.value, that.value);
+        LayerRotationConfig that = (LayerRotationConfig) obj;
+        return Objects.equals(this.angle, that.angle);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
+        return Objects.hash(angle);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateBizMetricResultData {\n");
-        sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("class LayerRotationConfig {\n");
+        sb.append("    angle: ").append(toIndentedString(angle)).append("\n");
         sb.append("}");
         return sb.toString();
     }

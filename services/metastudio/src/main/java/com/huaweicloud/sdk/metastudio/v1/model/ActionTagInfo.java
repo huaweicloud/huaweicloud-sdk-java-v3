@@ -21,6 +21,11 @@ public class ActionTagInfo {
     private String actionNameEn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_duration")
+
+    private Float actionDuration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "catalog")
 
     private String catalog;
@@ -67,6 +72,25 @@ public class ActionTagInfo {
 
     public void setActionNameEn(String actionNameEn) {
         this.actionNameEn = actionNameEn;
+    }
+
+    public ActionTagInfo withActionDuration(Float actionDuration) {
+        this.actionDuration = actionDuration;
+        return this;
+    }
+
+    /**
+     * 动作时长
+     * minimum: 0
+     * maximum: 1E+2
+     * @return actionDuration
+     */
+    public Float getActionDuration() {
+        return actionDuration;
+    }
+
+    public void setActionDuration(Float actionDuration) {
+        this.actionDuration = actionDuration;
     }
 
     public ActionTagInfo withCatalog(String catalog) {
@@ -130,13 +154,14 @@ public class ActionTagInfo {
         }
         ActionTagInfo that = (ActionTagInfo) obj;
         return Objects.equals(this.actionNameZh, that.actionNameZh)
-            && Objects.equals(this.actionNameEn, that.actionNameEn) && Objects.equals(this.catalog, that.catalog)
+            && Objects.equals(this.actionNameEn, that.actionNameEn)
+            && Objects.equals(this.actionDuration, that.actionDuration) && Objects.equals(this.catalog, that.catalog)
             && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.tag, that.tag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(actionNameZh, actionNameEn, catalog, fileName, tag);
+        return Objects.hash(actionNameZh, actionNameEn, actionDuration, catalog, fileName, tag);
     }
 
     @Override
@@ -145,6 +170,7 @@ public class ActionTagInfo {
         sb.append("class ActionTagInfo {\n");
         sb.append("    actionNameZh: ").append(toIndentedString(actionNameZh)).append("\n");
         sb.append("    actionNameEn: ").append(toIndentedString(actionNameEn)).append("\n");
+        sb.append("    actionDuration: ").append(toIndentedString(actionDuration)).append("\n");
         sb.append("    catalog: ").append(toIndentedString(catalog)).append("\n");
         sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");

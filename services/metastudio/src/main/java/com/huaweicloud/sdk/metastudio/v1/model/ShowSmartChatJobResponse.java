@@ -270,6 +270,11 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     private String chatAccessAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_access_rest_address")
+
+    private String chatAccessRestAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_transparent")
 
     private Boolean isTransparent;
@@ -682,6 +687,23 @@ public class ShowSmartChatJobResponse extends SdkResponse {
         this.chatAccessAddress = chatAccessAddress;
     }
 
+    public ShowSmartChatJobResponse withChatAccessRestAddress(String chatAccessRestAddress) {
+        this.chatAccessRestAddress = chatAccessRestAddress;
+        return this;
+    }
+
+    /**
+     * 智能交互Rest接口接入地址。
+     * @return chatAccessRestAddress
+     */
+    public String getChatAccessRestAddress() {
+        return chatAccessRestAddress;
+    }
+
+    public void setChatAccessRestAddress(String chatAccessRestAddress) {
+        this.chatAccessRestAddress = chatAccessRestAddress;
+    }
+
     public ShowSmartChatJobResponse withIsTransparent(Boolean isTransparent) {
         this.isTransparent = isTransparent;
         return this;
@@ -756,6 +778,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
             && Objects.equals(this.chatState, that.chatState) && Objects.equals(this.language, that.language)
             && Objects.equals(this.chatVideoType, that.chatVideoType)
             && Objects.equals(this.chatAccessAddress, that.chatAccessAddress)
+            && Objects.equals(this.chatAccessRestAddress, that.chatAccessRestAddress)
             && Objects.equals(this.isTransparent, that.isTransparent)
             && Objects.equals(this.defaultLanguage, that.defaultLanguage)
             && Objects.equals(this.xRequestId, that.xRequestId);
@@ -779,6 +802,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
             language,
             chatVideoType,
             chatAccessAddress,
+            chatAccessRestAddress,
             isTransparent,
             defaultLanguage,
             xRequestId);
@@ -804,6 +828,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
         sb.append("    language: ").append(toIndentedString(language)).append("\n");
         sb.append("    chatVideoType: ").append(toIndentedString(chatVideoType)).append("\n");
         sb.append("    chatAccessAddress: ").append(toIndentedString(chatAccessAddress)).append("\n");
+        sb.append("    chatAccessRestAddress: ").append(toIndentedString(chatAccessRestAddress)).append("\n");
         sb.append("    isTransparent: ").append(toIndentedString(isTransparent)).append("\n");
         sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");

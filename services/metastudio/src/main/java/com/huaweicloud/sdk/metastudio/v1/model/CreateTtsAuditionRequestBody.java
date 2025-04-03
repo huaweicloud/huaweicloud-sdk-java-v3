@@ -55,6 +55,11 @@ public class CreateTtsAuditionRequestBody {
 
     private Integer channels;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_vocabulary_config_enable")
+
+    private Boolean isVocabularyConfigEnable;
+
     public CreateTtsAuditionRequestBody withText(String text) {
         this.text = text;
         return this;
@@ -216,6 +221,23 @@ public class CreateTtsAuditionRequestBody {
         this.channels = channels;
     }
 
+    public CreateTtsAuditionRequestBody withIsVocabularyConfigEnable(Boolean isVocabularyConfigEnable) {
+        this.isVocabularyConfigEnable = isVocabularyConfigEnable;
+        return this;
+    }
+
+    /**
+     * 是否应用当前租户的读法配置
+     * @return isVocabularyConfigEnable
+     */
+    public Boolean getIsVocabularyConfigEnable() {
+        return isVocabularyConfigEnable;
+    }
+
+    public void setIsVocabularyConfigEnable(Boolean isVocabularyConfigEnable) {
+        this.isVocabularyConfigEnable = isVocabularyConfigEnable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -229,12 +251,22 @@ public class CreateTtsAuditionRequestBody {
             && Objects.equals(this.emotion, that.emotion) && Objects.equals(this.speed, that.speed)
             && Objects.equals(this.pitch, that.pitch) && Objects.equals(this.volume, that.volume)
             && Objects.equals(this.businessType, that.businessType) && Objects.equals(this.style, that.style)
-            && Objects.equals(this.channels, that.channels);
+            && Objects.equals(this.channels, that.channels)
+            && Objects.equals(this.isVocabularyConfigEnable, that.isVocabularyConfigEnable);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(text, ttsText, emotion, speed, pitch, volume, businessType, style, channels);
+        return Objects.hash(text,
+            ttsText,
+            emotion,
+            speed,
+            pitch,
+            volume,
+            businessType,
+            style,
+            channels,
+            isVocabularyConfigEnable);
     }
 
     @Override
@@ -250,6 +282,7 @@ public class CreateTtsAuditionRequestBody {
         sb.append("    businessType: ").append(toIndentedString(businessType)).append("\n");
         sb.append("    style: ").append(toIndentedString(style)).append("\n");
         sb.append("    channels: ").append(toIndentedString(channels)).append("\n");
+        sb.append("    isVocabularyConfigEnable: ").append(toIndentedString(isVocabularyConfigEnable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -219,6 +219,89 @@ public class ApiParam {
 
     private String endTime;
 
+    /**
+     * Gets or Sets authorizationStatusType
+     */
+    public static final class AuthorizationStatusTypeEnum {
+
+        /**
+         * Enum NO_AUTHORIZATION_REQUIRED for value: "NO_AUTHORIZATION_REQUIRED"
+         */
+        public static final AuthorizationStatusTypeEnum NO_AUTHORIZATION_REQUIRED =
+            new AuthorizationStatusTypeEnum("NO_AUTHORIZATION_REQUIRED");
+
+        /**
+         * Enum UNAUTHORIZED for value: "UNAUTHORIZED"
+         */
+        public static final AuthorizationStatusTypeEnum UNAUTHORIZED = new AuthorizationStatusTypeEnum("UNAUTHORIZED");
+
+        /**
+         * Enum AUTHORIZED for value: "AUTHORIZED"
+         */
+        public static final AuthorizationStatusTypeEnum AUTHORIZED = new AuthorizationStatusTypeEnum("AUTHORIZED");
+
+        private static final Map<String, AuthorizationStatusTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AuthorizationStatusTypeEnum> createStaticFields() {
+            Map<String, AuthorizationStatusTypeEnum> map = new HashMap<>();
+            map.put("NO_AUTHORIZATION_REQUIRED", NO_AUTHORIZATION_REQUIRED);
+            map.put("UNAUTHORIZED", UNAUTHORIZED);
+            map.put("AUTHORIZED", AUTHORIZED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AuthorizationStatusTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AuthorizationStatusTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new AuthorizationStatusTypeEnum(value));
+        }
+
+        public static AuthorizationStatusTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AuthorizationStatusTypeEnum) {
+                return this.value.equals(((AuthorizationStatusTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorization_status_type")
+
+    private AuthorizationStatusTypeEnum authorizationStatusType;
+
     public ApiParam withName(String name) {
         this.name = name;
         return this;
@@ -388,6 +471,23 @@ public class ApiParam {
         this.endTime = endTime;
     }
 
+    public ApiParam withAuthorizationStatusType(AuthorizationStatusTypeEnum authorizationStatusType) {
+        this.authorizationStatusType = authorizationStatusType;
+        return this;
+    }
+
+    /**
+     * Get authorizationStatusType
+     * @return authorizationStatusType
+     */
+    public AuthorizationStatusTypeEnum getAuthorizationStatusType() {
+        return authorizationStatusType;
+    }
+
+    public void setAuthorizationStatusType(AuthorizationStatusTypeEnum authorizationStatusType) {
+        this.authorizationStatusType = authorizationStatusType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -402,7 +502,8 @@ public class ApiParam {
             && Objects.equals(this.tableName, that.tableName)
             && Objects.equals(this.publishStatusType, that.publishStatusType)
             && Objects.equals(this.apiSpecificTypeStr, that.apiSpecificTypeStr)
-            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.authorizationStatusType, that.authorizationStatusType);
     }
 
     @Override
@@ -415,7 +516,8 @@ public class ApiParam {
             publishStatusType,
             apiSpecificTypeStr,
             startTime,
-            endTime);
+            endTime,
+            authorizationStatusType);
     }
 
     @Override
@@ -431,6 +533,7 @@ public class ApiParam {
         sb.append("    apiSpecificTypeStr: ").append(toIndentedString(apiSpecificTypeStr)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    authorizationStatusType: ").append(toIndentedString(authorizationStatusType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

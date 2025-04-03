@@ -14,11 +14,6 @@ import java.util.function.Consumer;
 public class PolicyRule {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "rule_index")
-
-    private Integer ruleIndex;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "source")
 
     private String source;
@@ -27,23 +22,6 @@ public class PolicyRule {
     @JsonProperty(value = "destination")
 
     private List<String> destination = null;
-
-    public PolicyRule withRuleIndex(Integer ruleIndex) {
-        this.ruleIndex = ruleIndex;
-        return this;
-    }
-
-    /**
-     * 规则ID
-     * @return ruleIndex
-     */
-    public Integer getRuleIndex() {
-        return ruleIndex;
-    }
-
-    public void setRuleIndex(Integer ruleIndex) {
-        this.ruleIndex = ruleIndex;
-    }
 
     public PolicyRule withSource(String source) {
         this.source = source;
@@ -104,20 +82,18 @@ public class PolicyRule {
             return false;
         }
         PolicyRule that = (PolicyRule) obj;
-        return Objects.equals(this.ruleIndex, that.ruleIndex) && Objects.equals(this.source, that.source)
-            && Objects.equals(this.destination, that.destination);
+        return Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ruleIndex, source, destination);
+        return Objects.hash(source, destination);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class PolicyRule {\n");
-        sb.append("    ruleIndex: ").append(toIndentedString(ruleIndex)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
         sb.append("}");

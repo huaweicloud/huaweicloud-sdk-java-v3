@@ -470,6 +470,11 @@ public class ListAssetsRequest {
 
     private SupportedServiceEnum supportedService;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_user_id")
+
+    private String appUserId;
+
     public ListAssetsRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -1054,6 +1059,23 @@ public class ListAssetsRequest {
         this.supportedService = supportedService;
     }
 
+    public ListAssetsRequest withAppUserId(String appUserId) {
+        this.appUserId = appUserId;
+        return this;
+    }
+
+    /**
+     * 第三方用户ID。不允许输入中文。
+     * @return appUserId
+     */
+    public String getAppUserId() {
+        return appUserId;
+    }
+
+    public void setAppUserId(String appUserId) {
+        this.appUserId = appUserId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1082,7 +1104,8 @@ public class ListAssetsRequest {
             && Objects.equals(this.humanModel2dVersion, that.humanModel2dVersion)
             && Objects.equals(this.includeDeviceName, that.includeDeviceName)
             && Objects.equals(this.excludeDeviceName, that.excludeDeviceName)
-            && Objects.equals(this.supportedService, that.supportedService);
+            && Objects.equals(this.supportedService, that.supportedService)
+            && Objects.equals(this.appUserId, that.appUserId);
     }
 
     @Override
@@ -1118,7 +1141,8 @@ public class ListAssetsRequest {
             humanModel2dVersion,
             includeDeviceName,
             excludeDeviceName,
-            supportedService);
+            supportedService,
+            appUserId);
     }
 
     @Override
@@ -1157,6 +1181,7 @@ public class ListAssetsRequest {
         sb.append("    includeDeviceName: ").append(toIndentedString(includeDeviceName)).append("\n");
         sb.append("    excludeDeviceName: ").append(toIndentedString(excludeDeviceName)).append("\n");
         sb.append("    supportedService: ").append(toIndentedString(supportedService)).append("\n");
+        sb.append("    appUserId: ").append(toIndentedString(appUserId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

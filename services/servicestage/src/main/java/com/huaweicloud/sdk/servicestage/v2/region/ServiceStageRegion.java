@@ -59,6 +59,9 @@ public class ServiceStageRegion {
     public static final Region RU_MOSCOW_1 =
         new Region("ru-moscow-1", "https://servicestage.ru-moscow-1.myhuaweicloud.com");
 
+    public static final Region MY_KUALALUMPUR_1 =
+        new Region("my-kualalumpur-1", "https://servicestage.my-kualalumpur-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("SERVICESTAGE");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -81,6 +84,7 @@ public class ServiceStageRegion {
         map.put("tr-west-1", TR_WEST_1);
         map.put("ap-southeast-4", AP_SOUTHEAST_4);
         map.put("ru-moscow-1", RU_MOSCOW_1);
+        map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         return Collections.unmodifiableMap(map);
     }
 

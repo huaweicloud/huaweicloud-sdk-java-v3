@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class ConfirmSmartLiveRoomRequest {
+public class ConfirmSmarLiveRoomRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "room_id")
@@ -39,15 +39,15 @@ public class ConfirmSmartLiveRoomRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ConfirmSmartLiveRoomReq body;
+    private ConfirmSmarLiveRoomReq body;
 
-    public ConfirmSmartLiveRoomRequest withRoomId(String roomId) {
+    public ConfirmSmarLiveRoomRequest withRoomId(String roomId) {
         this.roomId = roomId;
         return this;
     }
 
     /**
-     * 剧本ID。
+     * 直播间ID。
      * @return roomId
      */
     public String getRoomId() {
@@ -58,7 +58,7 @@ public class ConfirmSmartLiveRoomRequest {
         this.roomId = roomId;
     }
 
-    public ConfirmSmartLiveRoomRequest withAuthorization(String authorization) {
+    public ConfirmSmarLiveRoomRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
     }
@@ -75,7 +75,7 @@ public class ConfirmSmartLiveRoomRequest {
         this.authorization = authorization;
     }
 
-    public ConfirmSmartLiveRoomRequest withXSdkDate(String xSdkDate) {
+    public ConfirmSmarLiveRoomRequest withXSdkDate(String xSdkDate) {
         this.xSdkDate = xSdkDate;
         return this;
     }
@@ -94,7 +94,7 @@ public class ConfirmSmartLiveRoomRequest {
         this.xSdkDate = xSdkDate;
     }
 
-    public ConfirmSmartLiveRoomRequest withXProjectId(String xProjectId) {
+    public ConfirmSmarLiveRoomRequest withXProjectId(String xProjectId) {
         this.xProjectId = xProjectId;
         return this;
     }
@@ -113,7 +113,7 @@ public class ConfirmSmartLiveRoomRequest {
         this.xProjectId = xProjectId;
     }
 
-    public ConfirmSmartLiveRoomRequest withXAppUserId(String xAppUserId) {
+    public ConfirmSmarLiveRoomRequest withXAppUserId(String xAppUserId) {
         this.xAppUserId = xAppUserId;
         return this;
     }
@@ -132,14 +132,14 @@ public class ConfirmSmartLiveRoomRequest {
         this.xAppUserId = xAppUserId;
     }
 
-    public ConfirmSmartLiveRoomRequest withBody(ConfirmSmartLiveRoomReq body) {
+    public ConfirmSmarLiveRoomRequest withBody(ConfirmSmarLiveRoomReq body) {
         this.body = body;
         return this;
     }
 
-    public ConfirmSmartLiveRoomRequest withBody(Consumer<ConfirmSmartLiveRoomReq> bodySetter) {
+    public ConfirmSmarLiveRoomRequest withBody(Consumer<ConfirmSmarLiveRoomReq> bodySetter) {
         if (this.body == null) {
-            this.body = new ConfirmSmartLiveRoomReq();
+            this.body = new ConfirmSmarLiveRoomReq();
             bodySetter.accept(this.body);
         }
 
@@ -150,11 +150,11 @@ public class ConfirmSmartLiveRoomRequest {
      * Get body
      * @return body
      */
-    public ConfirmSmartLiveRoomReq getBody() {
+    public ConfirmSmarLiveRoomReq getBody() {
         return body;
     }
 
-    public void setBody(ConfirmSmartLiveRoomReq body) {
+    public void setBody(ConfirmSmarLiveRoomReq body) {
         this.body = body;
     }
 
@@ -166,7 +166,7 @@ public class ConfirmSmartLiveRoomRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfirmSmartLiveRoomRequest that = (ConfirmSmartLiveRoomRequest) obj;
+        ConfirmSmarLiveRoomRequest that = (ConfirmSmarLiveRoomRequest) obj;
         return Objects.equals(this.roomId, that.roomId) && Objects.equals(this.authorization, that.authorization)
             && Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.xProjectId, that.xProjectId)
             && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.body, that.body);
@@ -180,7 +180,7 @@ public class ConfirmSmartLiveRoomRequest {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ConfirmSmartLiveRoomRequest {\n");
+        sb.append("class ConfirmSmarLiveRoomRequest {\n");
         sb.append("    roomId: ").append(toIndentedString(roomId)).append("\n");
         sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");

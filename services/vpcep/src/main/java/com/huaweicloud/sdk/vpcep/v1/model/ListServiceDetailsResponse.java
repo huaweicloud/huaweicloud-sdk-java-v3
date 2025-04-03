@@ -56,6 +56,11 @@ public class ListServiceDetailsResponse extends SdkResponse {
     private String serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supported_editions")
+
+    private List<String> supportedEditions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created_at")
 
     private OffsetDateTime createdAt;
@@ -244,6 +249,39 @@ public class ListServiceDetailsResponse extends SdkResponse {
 
     public void setServiceType(String serviceType) {
         this.serviceType = serviceType;
+    }
+
+    public ListServiceDetailsResponse withSupportedEditions(List<String> supportedEditions) {
+        this.supportedEditions = supportedEditions;
+        return this;
+    }
+
+    public ListServiceDetailsResponse addSupportedEditionsItem(String supportedEditionsItem) {
+        if (this.supportedEditions == null) {
+            this.supportedEditions = new ArrayList<>();
+        }
+        this.supportedEditions.add(supportedEditionsItem);
+        return this;
+    }
+
+    public ListServiceDetailsResponse withSupportedEditions(Consumer<List<String>> supportedEditionsSetter) {
+        if (this.supportedEditions == null) {
+            this.supportedEditions = new ArrayList<>();
+        }
+        supportedEditionsSetter.accept(this.supportedEditions);
+        return this;
+    }
+
+    /**
+     * 终端节点服务支持的类型，取值范围为profession-专业型，basic-基础型
+     * @return supportedEditions
+     */
+    public List<String> getSupportedEditions() {
+        return supportedEditions;
+    }
+
+    public void setSupportedEditions(List<String> supportedEditions) {
+        this.supportedEditions = supportedEditions;
     }
 
     public ListServiceDetailsResponse withCreatedAt(OffsetDateTime createdAt) {
@@ -494,6 +532,7 @@ public class ListServiceDetailsResponse extends SdkResponse {
             && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.serverType, that.serverType)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.approvalEnabled, that.approvalEnabled)
             && Objects.equals(this.status, that.status) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.supportedEditions, that.supportedEditions)
             && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.cidrType, that.cidrType)
             && Objects.equals(this.ip, that.ip) && Objects.equals(this.ports, that.ports)
@@ -512,6 +551,7 @@ public class ListServiceDetailsResponse extends SdkResponse {
             approvalEnabled,
             status,
             serviceType,
+            supportedEditions,
             createdAt,
             updatedAt,
             projectId,
@@ -537,6 +577,7 @@ public class ListServiceDetailsResponse extends SdkResponse {
         sb.append("    approvalEnabled: ").append(toIndentedString(approvalEnabled)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
+        sb.append("    supportedEditions: ").append(toIndentedString(supportedEditions)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");

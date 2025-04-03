@@ -325,6 +325,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListConsistencyTaskRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListConsistencyTaskResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataArtsStudioInstancesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataArtsStudioInstancesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstanceAccesslogsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstanceAccesslogsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstancesDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstancesDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstancesOverviewRequest;
@@ -671,6 +673,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableValuesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableValuesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceLtsLogRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceLtsLogResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceObsLogRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceObsLogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicTableRequest;
@@ -5107,6 +5113,36 @@ public class DataArtsStudioClient {
     public SyncInvoker<ListDataArtsStudioInstancesRequest, ListDataArtsStudioInstancesResponse> listDataArtsStudioInstancesInvoker(
         ListDataArtsStudioInstancesRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.listDataArtsStudioInstances, hcClient);
+    }
+
+    /**
+     * 查询数据服务集群访问日志列表
+     *
+     * 查询数据服务集群访问日志列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDataServiceInstanceAccesslogsRequest 请求对象
+     * @return ListDataServiceInstanceAccesslogsResponse
+     */
+    public ListDataServiceInstanceAccesslogsResponse listDataServiceInstanceAccesslogs(
+        ListDataServiceInstanceAccesslogsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listDataServiceInstanceAccesslogs);
+    }
+
+    /**
+     * 查询数据服务集群访问日志列表
+     *
+     * 查询数据服务集群访问日志列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDataServiceInstanceAccesslogsRequest 请求对象
+     * @return SyncInvoker<ListDataServiceInstanceAccesslogsRequest, ListDataServiceInstanceAccesslogsResponse>
+     */
+    public SyncInvoker<ListDataServiceInstanceAccesslogsRequest, ListDataServiceInstanceAccesslogsResponse> listDataServiceInstanceAccesslogsInvoker(
+        ListDataServiceInstanceAccesslogsRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listDataServiceInstanceAccesslogs, hcClient);
     }
 
     /**
@@ -9958,6 +9994,66 @@ public class DataArtsStudioClient {
     public SyncInvoker<UpdateCodeTableValuesRequest, UpdateCodeTableValuesResponse> updateCodeTableValuesInvoker(
         UpdateCodeTableValuesRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.updateCodeTableValues, hcClient);
+    }
+
+    /**
+     * 开启数据服务集群LTS日志转储
+     *
+     * 开启数据服务集群LTS日志转储。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDataServiceInstanceLtsLogRequest 请求对象
+     * @return UpdateDataServiceInstanceLtsLogResponse
+     */
+    public UpdateDataServiceInstanceLtsLogResponse updateDataServiceInstanceLtsLog(
+        UpdateDataServiceInstanceLtsLogRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.updateDataServiceInstanceLtsLog);
+    }
+
+    /**
+     * 开启数据服务集群LTS日志转储
+     *
+     * 开启数据服务集群LTS日志转储。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDataServiceInstanceLtsLogRequest 请求对象
+     * @return SyncInvoker<UpdateDataServiceInstanceLtsLogRequest, UpdateDataServiceInstanceLtsLogResponse>
+     */
+    public SyncInvoker<UpdateDataServiceInstanceLtsLogRequest, UpdateDataServiceInstanceLtsLogResponse> updateDataServiceInstanceLtsLogInvoker(
+        UpdateDataServiceInstanceLtsLogRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.updateDataServiceInstanceLtsLog, hcClient);
+    }
+
+    /**
+     * 开启数据服务集群OBS日志转储
+     *
+     * 开启数据服务集群OBS日志转储。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDataServiceInstanceObsLogRequest 请求对象
+     * @return UpdateDataServiceInstanceObsLogResponse
+     */
+    public UpdateDataServiceInstanceObsLogResponse updateDataServiceInstanceObsLog(
+        UpdateDataServiceInstanceObsLogRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.updateDataServiceInstanceObsLog);
+    }
+
+    /**
+     * 开启数据服务集群OBS日志转储
+     *
+     * 开启数据服务集群OBS日志转储。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDataServiceInstanceObsLogRequest 请求对象
+     * @return SyncInvoker<UpdateDataServiceInstanceObsLogRequest, UpdateDataServiceInstanceObsLogResponse>
+     */
+    public SyncInvoker<UpdateDataServiceInstanceObsLogRequest, UpdateDataServiceInstanceObsLogResponse> updateDataServiceInstanceObsLogInvoker(
+        UpdateDataServiceInstanceObsLogRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.updateDataServiceInstanceObsLog, hcClient);
     }
 
     /**

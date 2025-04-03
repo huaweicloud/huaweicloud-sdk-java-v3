@@ -93,6 +93,16 @@ public class PostAlarmsReqV2 {
 
     private Boolean notificationEnabled;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_name")
+
+    private String productName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_level")
+
+    private ResourceLevel resourceLevel;
+
     public PostAlarmsReqV2 withName(String name) {
         this.name = name;
         return this;
@@ -445,6 +455,40 @@ public class PostAlarmsReqV2 {
         this.notificationEnabled = notificationEnabled;
     }
 
+    public PostAlarmsReqV2 withProductName(String productName) {
+        this.productName = productName;
+        return this;
+    }
+
+    /**
+     * 产品层级跨纬规则创建时需要指明的规则产品名称，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"
+     * @return productName
+     */
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public PostAlarmsReqV2 withResourceLevel(ResourceLevel resourceLevel) {
+        this.resourceLevel = resourceLevel;
+        return this;
+    }
+
+    /**
+     * Get resourceLevel
+     * @return resourceLevel
+     */
+    public ResourceLevel getResourceLevel() {
+        return resourceLevel;
+    }
+
+    public void setResourceLevel(ResourceLevel resourceLevel) {
+        this.resourceLevel = resourceLevel;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -466,7 +510,9 @@ public class PostAlarmsReqV2 {
             && Objects.equals(this.notificationEndTime, that.notificationEndTime)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.enabled, that.enabled)
-            && Objects.equals(this.notificationEnabled, that.notificationEnabled);
+            && Objects.equals(this.notificationEnabled, that.notificationEnabled)
+            && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.resourceLevel, that.resourceLevel);
     }
 
     @Override
@@ -486,7 +532,9 @@ public class PostAlarmsReqV2 {
             notificationEndTime,
             enterpriseProjectId,
             enabled,
-            notificationEnabled);
+            notificationEnabled,
+            productName,
+            resourceLevel);
     }
 
     @Override
@@ -509,6 +557,8 @@ public class PostAlarmsReqV2 {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    notificationEnabled: ").append(toIndentedString(notificationEnabled)).append("\n");
+        sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
+        sb.append("    resourceLevel: ").append(toIndentedString(resourceLevel)).append("\n");
         sb.append("}");
         return sb.toString();
     }

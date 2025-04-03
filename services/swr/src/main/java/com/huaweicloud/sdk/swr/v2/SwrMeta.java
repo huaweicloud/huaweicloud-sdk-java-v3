@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.swr.v2.model.CreateAuthorizationTokenRequest;
+import com.huaweicloud.sdk.swr.v2.model.CreateAuthorizationTokenResponse;
 import com.huaweicloud.sdk.swr.v2.model.CreateImageSyncRepoRequest;
 import com.huaweicloud.sdk.swr.v2.model.CreateImageSyncRepoRequestBody;
 import com.huaweicloud.sdk.swr.v2.model.CreateImageSyncRepoResponse;
@@ -130,6 +132,37 @@ import java.util.List;
 
 @SuppressWarnings("unchecked")
 public class SwrMeta {
+
+    public static final HttpRequestDef<CreateAuthorizationTokenRequest, CreateAuthorizationTokenResponse> createAuthorizationToken =
+        genForCreateAuthorizationToken();
+
+    private static HttpRequestDef<CreateAuthorizationTokenRequest, CreateAuthorizationTokenResponse> genForCreateAuthorizationToken() {
+        // basic
+        HttpRequestDef.Builder<CreateAuthorizationTokenRequest, CreateAuthorizationTokenResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateAuthorizationTokenRequest.class, CreateAuthorizationTokenResponse.class)
+                .withName("CreateAuthorizationToken")
+                .withUri("/v2/manage/utils/authorizationtoken")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        builder.<String>withResponseField("X-Swr-Dockerlogin",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAuthorizationTokenResponse::getXSwrDockerlogin,
+                CreateAuthorizationTokenResponse::setXSwrDockerlogin));
+        builder.<String>withResponseField("x-swr-expireat",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateAuthorizationTokenResponse::getXSwrExpireat,
+                CreateAuthorizationTokenResponse::setXSwrExpireat));
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateImageSyncRepoRequest, CreateImageSyncRepoResponse> createImageSyncRepo =
         genForCreateImageSyncRepo();

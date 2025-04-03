@@ -92,7 +92,7 @@ public class VideoConfig {
     private ClipModeEnum clipMode;
 
     /**
-     * **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8编码。  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。  **默认取值**： 不涉及
+     * **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： 不涉及
      */
     public static final class CodecEnum {
 
@@ -111,6 +111,11 @@ public class VideoConfig {
          */
         public static final CodecEnum VP9 = new CodecEnum("VP9");
 
+        /**
+         * Enum QTRLE for value: "QTRLE"
+         */
+        public static final CodecEnum QTRLE = new CodecEnum("QTRLE");
+
         private static final Map<String, CodecEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, CodecEnum> createStaticFields() {
@@ -118,6 +123,7 @@ public class VideoConfig {
             map.put("H264", H264);
             map.put("VP8", VP8);
             map.put("VP9", VP9);
+            map.put("QTRLE", QTRLE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -326,7 +332,7 @@ public class VideoConfig {
     }
 
     /**
-     * **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8编码。  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。  **默认取值**： 不涉及
+     * **参数解释**： 视频编码格式及视频文件格式。 **约束限制**： 仅分身数字人视频制作支持VP8和QTRLE编码。QTRLE编码时文本驱动字符数限制小于1500字，音频驱动音频长度小于5分钟。 QTRLE编码需要先申请开通白名单后才能使用  **取值范围**： * H264：h264编码，输出mp4文件。 * VP8：vp8编码，输出webm文件。 * QTRLE：qtrle ，输出mov文件。  **默认取值**： 不涉及
      * @return codec
      */
     public CodecEnum getCodec() {

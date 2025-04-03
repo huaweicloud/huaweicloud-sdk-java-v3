@@ -69,16 +69,6 @@ public class UpdateVpnConnectionRequestBodyContent {
     private List<String> peerSubnetsV6 = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tunnel_local_address_v6")
-
-    private String tunnelLocalAddressV6;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tunnel_peer_address_v6")
-
-    private String tunnelPeerAddressV6;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_rules_v6")
 
     private List<PolicyRule> policyRulesV6 = null;
@@ -336,40 +326,6 @@ public class UpdateVpnConnectionRequestBodyContent {
         this.peerSubnetsV6 = peerSubnetsV6;
     }
 
-    public UpdateVpnConnectionRequestBodyContent withTunnelLocalAddressV6(String tunnelLocalAddressV6) {
-        this.tunnelLocalAddressV6 = tunnelLocalAddressV6;
-        return this;
-    }
-
-    /**
-     * 本端ipv6隧道口地址
-     * @return tunnelLocalAddressV6
-     */
-    public String getTunnelLocalAddressV6() {
-        return tunnelLocalAddressV6;
-    }
-
-    public void setTunnelLocalAddressV6(String tunnelLocalAddressV6) {
-        this.tunnelLocalAddressV6 = tunnelLocalAddressV6;
-    }
-
-    public UpdateVpnConnectionRequestBodyContent withTunnelPeerAddressV6(String tunnelPeerAddressV6) {
-        this.tunnelPeerAddressV6 = tunnelPeerAddressV6;
-        return this;
-    }
-
-    /**
-     * 对端ipv6隧道口地址
-     * @return tunnelPeerAddressV6
-     */
-    public String getTunnelPeerAddressV6() {
-        return tunnelPeerAddressV6;
-    }
-
-    public void setTunnelPeerAddressV6(String tunnelPeerAddressV6) {
-        this.tunnelPeerAddressV6 = tunnelPeerAddressV6;
-    }
-
     public UpdateVpnConnectionRequestBodyContent withPolicyRulesV6(List<PolicyRule> policyRulesV6) {
         this.policyRulesV6 = policyRulesV6;
         return this;
@@ -420,8 +376,6 @@ public class UpdateVpnConnectionRequestBodyContent {
             && Objects.equals(this.policyRules, that.policyRules) && Objects.equals(this.ikepolicy, that.ikepolicy)
             && Objects.equals(this.ipsecpolicy, that.ipsecpolicy)
             && Objects.equals(this.peerSubnetsV6, that.peerSubnetsV6)
-            && Objects.equals(this.tunnelLocalAddressV6, that.tunnelLocalAddressV6)
-            && Objects.equals(this.tunnelPeerAddressV6, that.tunnelPeerAddressV6)
             && Objects.equals(this.policyRulesV6, that.policyRulesV6);
     }
 
@@ -438,8 +392,6 @@ public class UpdateVpnConnectionRequestBodyContent {
             ikepolicy,
             ipsecpolicy,
             peerSubnetsV6,
-            tunnelLocalAddressV6,
-            tunnelPeerAddressV6,
             policyRulesV6);
     }
 
@@ -458,8 +410,6 @@ public class UpdateVpnConnectionRequestBodyContent {
         sb.append("    ikepolicy: ").append(toIndentedString(ikepolicy)).append("\n");
         sb.append("    ipsecpolicy: ").append(toIndentedString(ipsecpolicy)).append("\n");
         sb.append("    peerSubnetsV6: ").append(toIndentedString(peerSubnetsV6)).append("\n");
-        sb.append("    tunnelLocalAddressV6: ").append(toIndentedString(tunnelLocalAddressV6)).append("\n");
-        sb.append("    tunnelPeerAddressV6: ").append(toIndentedString(tunnelPeerAddressV6)).append("\n");
         sb.append("    policyRulesV6: ").append(toIndentedString(policyRulesV6)).append("\n");
         sb.append("}");
         return sb.toString();

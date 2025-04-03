@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 剧本播放策略
@@ -198,6 +199,11 @@ public class PlayPolicy {
 
     private Boolean needIndependentCaptureClient;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "live_exit_config")
+
+    private LiveExitConfig liveExitConfig;
+
     public PlayPolicy withRepeatCount(Integer repeatCount) {
         this.repeatCount = repeatCount;
         return this;
@@ -285,6 +291,32 @@ public class PlayPolicy {
         this.needIndependentCaptureClient = needIndependentCaptureClient;
     }
 
+    public PlayPolicy withLiveExitConfig(LiveExitConfig liveExitConfig) {
+        this.liveExitConfig = liveExitConfig;
+        return this;
+    }
+
+    public PlayPolicy withLiveExitConfig(Consumer<LiveExitConfig> liveExitConfigSetter) {
+        if (this.liveExitConfig == null) {
+            this.liveExitConfig = new LiveExitConfig();
+            liveExitConfigSetter.accept(this.liveExitConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get liveExitConfig
+     * @return liveExitConfig
+     */
+    public LiveExitConfig getLiveExitConfig() {
+        return liveExitConfig;
+    }
+
+    public void setLiveExitConfig(LiveExitConfig liveExitConfig) {
+        this.liveExitConfig = liveExitConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -297,12 +329,14 @@ public class PlayPolicy {
         return Objects.equals(this.repeatCount, that.repeatCount)
             && Objects.equals(this.autoPlayScript, that.autoPlayScript) && Objects.equals(this.playMode, that.playMode)
             && Objects.equals(this.randomPlayMode, that.randomPlayMode)
-            && Objects.equals(this.needIndependentCaptureClient, that.needIndependentCaptureClient);
+            && Objects.equals(this.needIndependentCaptureClient, that.needIndependentCaptureClient)
+            && Objects.equals(this.liveExitConfig, that.liveExitConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(repeatCount, autoPlayScript, playMode, randomPlayMode, needIndependentCaptureClient);
+        return Objects
+            .hash(repeatCount, autoPlayScript, playMode, randomPlayMode, needIndependentCaptureClient, liveExitConfig);
     }
 
     @Override
@@ -316,6 +350,7 @@ public class PlayPolicy {
         sb.append("    needIndependentCaptureClient: ")
             .append(toIndentedString(needIndependentCaptureClient))
             .append("\n");
+        sb.append("    liveExitConfig: ").append(toIndentedString(liveExitConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

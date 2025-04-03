@@ -40,6 +40,11 @@ public class ClusterUpgradeAction {
 
     private String targetVersion;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isOnlyUpgrade")
+
+    private Boolean isOnlyUpgrade;
+
     public ClusterUpgradeAction withAddons(List<UpgradeAddonConfig> addons) {
         this.addons = addons;
         return this;
@@ -182,6 +187,23 @@ public class ClusterUpgradeAction {
         this.targetVersion = targetVersion;
     }
 
+    public ClusterUpgradeAction withIsOnlyUpgrade(Boolean isOnlyUpgrade) {
+        this.isOnlyUpgrade = isOnlyUpgrade;
+        return this;
+    }
+
+    /**
+     * 是否在集群升级流程中执行升级前检查。默认为false，表示会执行升级前检查，如果您在集群升级编排中调用了升级前检查的API，则升级时可用将该字段置为false，不再额外执行一次检查
+     * @return isOnlyUpgrade
+     */
+    public Boolean getIsOnlyUpgrade() {
+        return isOnlyUpgrade;
+    }
+
+    public void setIsOnlyUpgrade(Boolean isOnlyUpgrade) {
+        this.isOnlyUpgrade = isOnlyUpgrade;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -193,12 +215,13 @@ public class ClusterUpgradeAction {
         ClusterUpgradeAction that = (ClusterUpgradeAction) obj;
         return Objects.equals(this.addons, that.addons) && Objects.equals(this.nodeOrder, that.nodeOrder)
             && Objects.equals(this.nodePoolOrder, that.nodePoolOrder) && Objects.equals(this.strategy, that.strategy)
-            && Objects.equals(this.targetVersion, that.targetVersion);
+            && Objects.equals(this.targetVersion, that.targetVersion)
+            && Objects.equals(this.isOnlyUpgrade, that.isOnlyUpgrade);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(addons, nodeOrder, nodePoolOrder, strategy, targetVersion);
+        return Objects.hash(addons, nodeOrder, nodePoolOrder, strategy, targetVersion, isOnlyUpgrade);
     }
 
     @Override
@@ -210,6 +233,7 @@ public class ClusterUpgradeAction {
         sb.append("    nodePoolOrder: ").append(toIndentedString(nodePoolOrder)).append("\n");
         sb.append("    strategy: ").append(toIndentedString(strategy)).append("\n");
         sb.append("    targetVersion: ").append(toIndentedString(targetVersion)).append("\n");
+        sb.append("    isOnlyUpgrade: ").append(toIndentedString(isOnlyUpgrade)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -116,6 +116,11 @@ public class DatasourceOrderPara {
 
     private Integer order;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "description")
+
+    private String description;
+
     public DatasourceOrderPara withName(String name) {
         this.name = name;
         return this;
@@ -201,6 +206,23 @@ public class DatasourceOrderPara {
         this.order = order;
     }
 
+    public DatasourceOrderPara withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    /**
+     * 排序参数描述信息。
+     * @return description
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -212,12 +234,12 @@ public class DatasourceOrderPara {
         DatasourceOrderPara that = (DatasourceOrderPara) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.field, that.field)
             && Objects.equals(this.optional, that.optional) && Objects.equals(this.sort, that.sort)
-            && Objects.equals(this.order, that.order);
+            && Objects.equals(this.order, that.order) && Objects.equals(this.description, that.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, field, optional, sort, order);
+        return Objects.hash(name, field, optional, sort, order, description);
     }
 
     @Override
@@ -229,6 +251,7 @@ public class DatasourceOrderPara {
         sb.append("    optional: ").append(toIndentedString(optional)).append("\n");
         sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
         sb.append("    order: ").append(toIndentedString(order)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("}");
         return sb.toString();
     }

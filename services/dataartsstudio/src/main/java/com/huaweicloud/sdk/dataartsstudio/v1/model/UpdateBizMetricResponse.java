@@ -15,16 +15,16 @@ public class UpdateBizMetricResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "data")
 
-    private UpdateBizMetricResultData data;
+    private CreateBizMetricResultData data;
 
-    public UpdateBizMetricResponse withData(UpdateBizMetricResultData data) {
+    public UpdateBizMetricResponse withData(CreateBizMetricResultData data) {
         this.data = data;
         return this;
     }
 
-    public UpdateBizMetricResponse withData(Consumer<UpdateBizMetricResultData> dataSetter) {
+    public UpdateBizMetricResponse withData(Consumer<CreateBizMetricResultData> dataSetter) {
         if (this.data == null) {
-            this.data = new UpdateBizMetricResultData();
+            this.data = new CreateBizMetricResultData();
             dataSetter.accept(this.data);
         }
 
@@ -35,11 +35,11 @@ public class UpdateBizMetricResponse extends SdkResponse {
      * Get data
      * @return data
      */
-    public UpdateBizMetricResultData getData() {
+    public CreateBizMetricResultData getData() {
         return data;
     }
 
-    public void setData(UpdateBizMetricResultData data) {
+    public void setData(CreateBizMetricResultData data) {
         this.data = data;
     }
 

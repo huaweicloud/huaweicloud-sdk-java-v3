@@ -392,6 +392,11 @@ public class DatasourceConfig {
 
     private List<DatasourceOrderPara> orderParas = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total_size_sql")
+
+    private String totalSizeSql;
+
     public DatasourceConfig withType(TypeEnum type) {
         this.type = type;
         return this;
@@ -678,6 +683,23 @@ public class DatasourceConfig {
         this.orderParas = orderParas;
     }
 
+    public DatasourceConfig withTotalSizeSql(String totalSizeSql) {
+        this.totalSizeSql = totalSizeSql;
+        return this;
+    }
+
+    /**
+     * 总条数计算脚本SQL。
+     * @return totalSizeSql
+     */
+    public String getTotalSizeSql() {
+        return totalSizeSql;
+    }
+
+    public void setTotalSizeSql(String totalSizeSql) {
+        this.totalSizeSql = totalSizeSql;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -694,7 +716,7 @@ public class DatasourceConfig {
             && Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.pagination, that.pagination)
             && Objects.equals(this.sql, that.sql) && Objects.equals(this.backendParas, that.backendParas)
             && Objects.equals(this.responseParas, that.responseParas)
-            && Objects.equals(this.orderParas, that.orderParas);
+            && Objects.equals(this.orderParas, that.orderParas) && Objects.equals(this.totalSizeSql, that.totalSizeSql);
     }
 
     @Override
@@ -712,7 +734,8 @@ public class DatasourceConfig {
             sql,
             backendParas,
             responseParas,
-            orderParas);
+            orderParas,
+            totalSizeSql);
     }
 
     @Override
@@ -733,6 +756,7 @@ public class DatasourceConfig {
         sb.append("    backendParas: ").append(toIndentedString(backendParas)).append("\n");
         sb.append("    responseParas: ").append(toIndentedString(responseParas)).append("\n");
         sb.append("    orderParas: ").append(toIndentedString(orderParas)).append("\n");
+        sb.append("    totalSizeSql: ").append(toIndentedString(totalSizeSql)).append("\n");
         sb.append("}");
         return sb.toString();
     }

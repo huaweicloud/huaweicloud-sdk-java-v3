@@ -124,7 +124,7 @@ public class Show2DDigitalHumanVideoResponse extends SdkResponse {
     private StateEnum state;
 
     /**
-     * 任务类型。 * 2D_DIGITAL_HUMAN_VIDEO: 分身数字人视频制作任务 * PHOTO_DIGITAL_HUMAN_VIDEO: 照片数字人视频制作任务
+     * 任务类型。 * 2D_DIGITAL_HUMAN_VIDEO: 分身数字人视频制作任务 * DIGITAL_HUMAN_PHOTO_VIDEO: 照片数字人视频制作任务
      */
     public static final class JobTypeEnum {
 
@@ -388,7 +388,7 @@ public class Show2DDigitalHumanVideoResponse extends SdkResponse {
     }
 
     /**
-     * 任务类型。 * 2D_DIGITAL_HUMAN_VIDEO: 分身数字人视频制作任务 * PHOTO_DIGITAL_HUMAN_VIDEO: 照片数字人视频制作任务
+     * 任务类型。 * 2D_DIGITAL_HUMAN_VIDEO: 分身数字人视频制作任务 * DIGITAL_HUMAN_PHOTO_VIDEO: 照片数字人视频制作任务
      * @return jobType
      */
     public JobTypeEnum getJobType() {

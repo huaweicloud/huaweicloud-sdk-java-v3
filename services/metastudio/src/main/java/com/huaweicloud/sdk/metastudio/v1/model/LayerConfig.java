@@ -124,6 +124,11 @@ public class LayerConfig {
     private LayerSizeConfig size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rotation")
+
+    private LayerRotationConfig rotation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "image_config")
 
     private ImageLayerConfig imageConfig;
@@ -241,6 +246,32 @@ public class LayerConfig {
         this.size = size;
     }
 
+    public LayerConfig withRotation(LayerRotationConfig rotation) {
+        this.rotation = rotation;
+        return this;
+    }
+
+    public LayerConfig withRotation(Consumer<LayerRotationConfig> rotationSetter) {
+        if (this.rotation == null) {
+            this.rotation = new LayerRotationConfig();
+            rotationSetter.accept(this.rotation);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get rotation
+     * @return rotation
+     */
+    public LayerRotationConfig getRotation() {
+        return rotation;
+    }
+
+    public void setRotation(LayerRotationConfig rotation) {
+        this.rotation = rotation;
+    }
+
     public LayerConfig withImageConfig(ImageLayerConfig imageConfig) {
         this.imageConfig = imageConfig;
         return this;
@@ -330,13 +361,15 @@ public class LayerConfig {
         LayerConfig that = (LayerConfig) obj;
         return Objects.equals(this.layerType, that.layerType) && Objects.equals(this.assetId, that.assetId)
             && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.position, that.position)
-            && Objects.equals(this.size, that.size) && Objects.equals(this.imageConfig, that.imageConfig)
-            && Objects.equals(this.videoConfig, that.videoConfig) && Objects.equals(this.textConfig, that.textConfig);
+            && Objects.equals(this.size, that.size) && Objects.equals(this.rotation, that.rotation)
+            && Objects.equals(this.imageConfig, that.imageConfig) && Objects.equals(this.videoConfig, that.videoConfig)
+            && Objects.equals(this.textConfig, that.textConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(layerType, assetId, groupId, position, size, imageConfig, videoConfig, textConfig);
+        return Objects
+            .hash(layerType, assetId, groupId, position, size, rotation, imageConfig, videoConfig, textConfig);
     }
 
     @Override
@@ -348,6 +381,7 @@ public class LayerConfig {
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    position: ").append(toIndentedString(position)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    rotation: ").append(toIndentedString(rotation)).append("\n");
         sb.append("    imageConfig: ").append(toIndentedString(imageConfig)).append("\n");
         sb.append("    videoConfig: ").append(toIndentedString(videoConfig)).append("\n");
         sb.append("    textConfig: ").append(toIndentedString(textConfig)).append("\n");

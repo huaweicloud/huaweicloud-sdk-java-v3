@@ -86,16 +86,6 @@ public class NodeExtendParam {
     private String alphaCceNodeImageID;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nicMultiqueue")
-
-    private String nicMultiqueue;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "nicThreshold")
-
-    private String nicThreshold;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "chargingMode")
 
     private Integer chargingMode;
@@ -437,40 +427,6 @@ public class NodeExtendParam {
         this.alphaCceNodeImageID = alphaCceNodeImageID;
     }
 
-    public NodeExtendParam withNicMultiqueue(String nicMultiqueue) {
-        this.nicMultiqueue = nicMultiqueue;
-        return this;
-    }
-
-    /**
-     * - 弹性网卡队列数配置，默认配置示例如下：  ``` \"[{\\\"queue\\\":4}]\" ```  包含如下字段： - queue: 弹性网卡队列数。 - 仅在turbo集群的BMS节点时，该字段才可配置。 - 当前支持可配置队列数以及弹性网卡数：{\"1\":128, \"2\":92, \"4\":92, \"8\":32, \"16\":16,\"28\":9}, 既1弹性网卡队列可绑定128张弹性网卡，2队列弹性网卡可绑定92张，以此类推。 - 弹性网卡队列数越多，性能越强，但可绑定弹性网卡数越少，请根据您的需求进行配置（创建后不可修改）。 
-     * @return nicMultiqueue
-     */
-    public String getNicMultiqueue() {
-        return nicMultiqueue;
-    }
-
-    public void setNicMultiqueue(String nicMultiqueue) {
-        this.nicMultiqueue = nicMultiqueue;
-    }
-
-    public NodeExtendParam withNicThreshold(String nicThreshold) {
-        this.nicThreshold = nicThreshold;
-        return this;
-    }
-
-    /**
-     * - 弹性网卡预绑定比例配置，默认配置示例如下： ``` \"0.3:0.6\" ```   - 第一位小数：预绑定低水位，弹性网卡预绑定的最低比例（最小预绑定弹性网卡数 = ⌊节点的总弹性网卡数 * 预绑定低水位⌋）   - 第二位小数：预绑定高水位，弹性网卡预绑定的最高比例（最大预绑定弹性网卡数 = ⌊节点的总弹性网卡数 * 预绑定高水位⌋）   - BMS节点上绑定的弹性网卡数：Pod正在使用的弹性网卡数 + 最小预绑定弹性网卡数 < BMS节点上绑定的弹性网卡数 < Pod正在使用的弹性网卡数 + 最大预绑定弹性网卡数   - BMS节点上当预绑定弹性网卡数 < 最小预绑定弹性网卡数时：会绑定弹性网卡，使得预绑定弹性网卡数 = 最小预绑定弹性网卡数   - BMS节点上当预绑定弹性网卡数 > 最大预绑定弹性网卡数时：会定时解绑弹性网卡（约2分钟一次），直到预绑定弹性网卡数 = 最大预绑定弹性网卡数   - 取值范围：[0.0, 1.0]; 一位小数; 低水位 <= 高水位 - 仅在turbo集群的BMS节点时，该字段才可配置。 - 弹性网卡预绑定能加快工作负载的创建，但会占用IP，请根据您的需求进行配置。 
-     * @return nicThreshold
-     */
-    public String getNicThreshold() {
-        return nicThreshold;
-    }
-
-    public void setNicThreshold(String nicThreshold) {
-        this.nicThreshold = nicThreshold;
-    }
-
     public NodeExtendParam withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
         return this;
@@ -593,8 +549,6 @@ public class NodeExtendParam {
             && Objects.equals(this.alphaCcePreInstall, that.alphaCcePreInstall)
             && Objects.equals(this.alphaCcePostInstall, that.alphaCcePostInstall)
             && Objects.equals(this.alphaCceNodeImageID, that.alphaCceNodeImageID)
-            && Objects.equals(this.nicMultiqueue, that.nicMultiqueue)
-            && Objects.equals(this.nicThreshold, that.nicThreshold)
             && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.agencyName, that.agencyName)
             && Objects.equals(this.kubeReservedMem, that.kubeReservedMem)
             && Objects.equals(this.systemReservedMem, that.systemReservedMem)
@@ -618,8 +572,6 @@ public class NodeExtendParam {
             alphaCcePreInstall,
             alphaCcePostInstall,
             alphaCceNodeImageID,
-            nicMultiqueue,
-            nicThreshold,
             chargingMode,
             agencyName,
             kubeReservedMem,
@@ -646,8 +598,6 @@ public class NodeExtendParam {
         sb.append("    alphaCcePreInstall: ").append(toIndentedString(alphaCcePreInstall)).append("\n");
         sb.append("    alphaCcePostInstall: ").append(toIndentedString(alphaCcePostInstall)).append("\n");
         sb.append("    alphaCceNodeImageID: ").append(toIndentedString(alphaCceNodeImageID)).append("\n");
-        sb.append("    nicMultiqueue: ").append(toIndentedString(nicMultiqueue)).append("\n");
-        sb.append("    nicThreshold: ").append(toIndentedString(nicThreshold)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    agencyName: ").append(toIndentedString(agencyName)).append("\n");
         sb.append("    kubeReservedMem: ").append(toIndentedString(kubeReservedMem)).append("\n");

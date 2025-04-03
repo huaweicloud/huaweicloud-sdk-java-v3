@@ -133,6 +133,11 @@ public class StartSmartLiveReq {
 
     private CoStreamerConfig coStreamerConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_run_config")
+
+    private LiveJobRunConfig jobRunConfig;
+
     public StartSmartLiveReq withVideoConfig(VideoConfig videoConfig) {
         this.videoConfig = videoConfig;
         return this;
@@ -364,6 +369,32 @@ public class StartSmartLiveReq {
         this.coStreamerConfig = coStreamerConfig;
     }
 
+    public StartSmartLiveReq withJobRunConfig(LiveJobRunConfig jobRunConfig) {
+        this.jobRunConfig = jobRunConfig;
+        return this;
+    }
+
+    public StartSmartLiveReq withJobRunConfig(Consumer<LiveJobRunConfig> jobRunConfigSetter) {
+        if (this.jobRunConfig == null) {
+            this.jobRunConfig = new LiveJobRunConfig();
+            jobRunConfigSetter.accept(this.jobRunConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get jobRunConfig
+     * @return jobRunConfig
+     */
+    public LiveJobRunConfig getJobRunConfig() {
+        return jobRunConfig;
+    }
+
+    public void setJobRunConfig(LiveJobRunConfig jobRunConfig) {
+        this.jobRunConfig = jobRunConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -379,7 +410,8 @@ public class StartSmartLiveReq {
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
             && Objects.equals(this.rtcCallbackConfig, that.rtcCallbackConfig)
             && Objects.equals(this.viewMode, that.viewMode)
-            && Objects.equals(this.coStreamerConfig, that.coStreamerConfig);
+            && Objects.equals(this.coStreamerConfig, that.coStreamerConfig)
+            && Objects.equals(this.jobRunConfig, that.jobRunConfig);
     }
 
     @Override
@@ -392,7 +424,8 @@ public class StartSmartLiveReq {
             liveEventCallbackConfig,
             rtcCallbackConfig,
             viewMode,
-            coStreamerConfig);
+            coStreamerConfig,
+            jobRunConfig);
     }
 
     @Override
@@ -408,6 +441,7 @@ public class StartSmartLiveReq {
         sb.append("    rtcCallbackConfig: ").append(toIndentedString(rtcCallbackConfig)).append("\n");
         sb.append("    viewMode: ").append(toIndentedString(viewMode)).append("\n");
         sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
+        sb.append("    jobRunConfig: ").append(toIndentedString(jobRunConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

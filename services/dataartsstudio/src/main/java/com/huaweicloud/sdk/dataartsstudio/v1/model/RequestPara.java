@@ -199,6 +199,11 @@ public class RequestPara {
 
     private String defaultValue;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "support_null")
+
+    private Boolean supportNull;
+
     public RequestPara withName(String name) {
         this.name = name;
         return this;
@@ -318,6 +323,23 @@ public class RequestPara {
         this.defaultValue = defaultValue;
     }
 
+    public RequestPara withSupportNull(Boolean supportNull) {
+        this.supportNull = supportNull;
+        return this;
+    }
+
+    /**
+     * 支持NULL值。
+     * @return supportNull
+     */
+    public Boolean getSupportNull() {
+        return supportNull;
+    }
+
+    public void setSupportNull(Boolean supportNull) {
+        this.supportNull = supportNull;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -330,12 +352,13 @@ public class RequestPara {
         return Objects.equals(this.name, that.name) && Objects.equals(this.position, that.position)
             && Objects.equals(this.type, that.type) && Objects.equals(this.description, that.description)
             && Objects.equals(this.necessary, that.necessary) && Objects.equals(this.exampleValue, that.exampleValue)
-            && Objects.equals(this.defaultValue, that.defaultValue);
+            && Objects.equals(this.defaultValue, that.defaultValue)
+            && Objects.equals(this.supportNull, that.supportNull);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, position, type, description, necessary, exampleValue, defaultValue);
+        return Objects.hash(name, position, type, description, necessary, exampleValue, defaultValue, supportNull);
     }
 
     @Override
@@ -349,6 +372,7 @@ public class RequestPara {
         sb.append("    necessary: ").append(toIndentedString(necessary)).append("\n");
         sb.append("    exampleValue: ").append(toIndentedString(exampleValue)).append("\n");
         sb.append("    defaultValue: ").append(toIndentedString(defaultValue)).append("\n");
+        sb.append("    supportNull: ").append(toIndentedString(supportNull)).append("\n");
         sb.append("}");
         return sb.toString();
     }

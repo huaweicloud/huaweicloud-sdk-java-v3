@@ -215,6 +215,16 @@ public class ShowVideoScriptResponse extends SdkResponse {
     private ReviewConfig reviewConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_files")
+
+    private ShootScriptAudioFiles audioFiles;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_config")
+
+    private ActionConfig actionConfig;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shoot_scripts")
 
     private List<ShootScriptShowItem> shootScripts = null;
@@ -233,11 +243,6 @@ public class ShowVideoScriptResponse extends SdkResponse {
     @JsonProperty(value = "update_time")
 
     private String updateTime;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "audio_files")
-
-    private ShootScriptAudioFiles audioFiles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "script_cover_url")
@@ -473,6 +478,58 @@ public class ShowVideoScriptResponse extends SdkResponse {
         this.reviewConfig = reviewConfig;
     }
 
+    public ShowVideoScriptResponse withAudioFiles(ShootScriptAudioFiles audioFiles) {
+        this.audioFiles = audioFiles;
+        return this;
+    }
+
+    public ShowVideoScriptResponse withAudioFiles(Consumer<ShootScriptAudioFiles> audioFilesSetter) {
+        if (this.audioFiles == null) {
+            this.audioFiles = new ShootScriptAudioFiles();
+            audioFilesSetter.accept(this.audioFiles);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get audioFiles
+     * @return audioFiles
+     */
+    public ShootScriptAudioFiles getAudioFiles() {
+        return audioFiles;
+    }
+
+    public void setAudioFiles(ShootScriptAudioFiles audioFiles) {
+        this.audioFiles = audioFiles;
+    }
+
+    public ShowVideoScriptResponse withActionConfig(ActionConfig actionConfig) {
+        this.actionConfig = actionConfig;
+        return this;
+    }
+
+    public ShowVideoScriptResponse withActionConfig(Consumer<ActionConfig> actionConfigSetter) {
+        if (this.actionConfig == null) {
+            this.actionConfig = new ActionConfig();
+            actionConfigSetter.accept(this.actionConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get actionConfig
+     * @return actionConfig
+     */
+    public ActionConfig getActionConfig() {
+        return actionConfig;
+    }
+
+    public void setActionConfig(ActionConfig actionConfig) {
+        this.actionConfig = actionConfig;
+    }
+
     public ShowVideoScriptResponse withShootScripts(List<ShootScriptShowItem> shootScripts) {
         this.shootScripts = shootScripts;
         return this;
@@ -557,32 +614,6 @@ public class ShowVideoScriptResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    public ShowVideoScriptResponse withAudioFiles(ShootScriptAudioFiles audioFiles) {
-        this.audioFiles = audioFiles;
-        return this;
-    }
-
-    public ShowVideoScriptResponse withAudioFiles(Consumer<ShootScriptAudioFiles> audioFilesSetter) {
-        if (this.audioFiles == null) {
-            this.audioFiles = new ShootScriptAudioFiles();
-            audioFilesSetter.accept(this.audioFiles);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get audioFiles
-     * @return audioFiles
-     */
-    public ShootScriptAudioFiles getAudioFiles() {
-        return audioFiles;
-    }
-
-    public void setAudioFiles(ShootScriptAudioFiles audioFiles) {
-        this.audioFiles = audioFiles;
-    }
-
     public ShowVideoScriptResponse withScriptCoverUrl(String scriptCoverUrl) {
         this.scriptCoverUrl = scriptCoverUrl;
         return this;
@@ -635,10 +666,10 @@ public class ShowVideoScriptResponse extends SdkResponse {
             && Objects.equals(this.voiceConfig, that.voiceConfig) && Objects.equals(this.videoConfig, that.videoConfig)
             && Objects.equals(this.sceneAssetId, that.sceneAssetId) && Objects.equals(this.privData, that.privData)
             && Objects.equals(this.backgroundMusicConfig, that.backgroundMusicConfig)
-            && Objects.equals(this.reviewConfig, that.reviewConfig)
+            && Objects.equals(this.reviewConfig, that.reviewConfig) && Objects.equals(this.audioFiles, that.audioFiles)
+            && Objects.equals(this.actionConfig, that.actionConfig)
             && Objects.equals(this.shootScripts, that.shootScripts) && Objects.equals(this.scriptId, that.scriptId)
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
-            && Objects.equals(this.audioFiles, that.audioFiles)
             && Objects.equals(this.scriptCoverUrl, that.scriptCoverUrl)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
@@ -656,11 +687,12 @@ public class ShowVideoScriptResponse extends SdkResponse {
             privData,
             backgroundMusicConfig,
             reviewConfig,
+            audioFiles,
+            actionConfig,
             shootScripts,
             scriptId,
             createTime,
             updateTime,
-            audioFiles,
             scriptCoverUrl,
             xRequestId);
     }
@@ -680,11 +712,12 @@ public class ShowVideoScriptResponse extends SdkResponse {
         sb.append("    privData: ").append(toIndentedString(privData)).append("\n");
         sb.append("    backgroundMusicConfig: ").append(toIndentedString(backgroundMusicConfig)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
+        sb.append("    audioFiles: ").append(toIndentedString(audioFiles)).append("\n");
+        sb.append("    actionConfig: ").append(toIndentedString(actionConfig)).append("\n");
         sb.append("    shootScripts: ").append(toIndentedString(shootScripts)).append("\n");
         sb.append("    scriptId: ").append(toIndentedString(scriptId)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
-        sb.append("    audioFiles: ").append(toIndentedString(audioFiles)).append("\n");
         sb.append("    scriptCoverUrl: ").append(toIndentedString(scriptCoverUrl)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");

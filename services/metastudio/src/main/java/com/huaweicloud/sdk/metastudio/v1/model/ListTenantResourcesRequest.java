@@ -80,6 +80,11 @@ public class ListTenantResourcesRequest {
 
     private String subResource;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Integer status;
+
     public ListTenantResourcesRequest withAuthorization(String authorization) {
         this.authorization = authorization;
         return this;
@@ -326,6 +331,23 @@ public class ListTenantResourcesRequest {
         this.subResource = subResource;
     }
 
+    public ListTenantResourcesRequest withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 资源状态。
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -343,7 +365,7 @@ public class ListTenantResourcesRequest {
             && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.resourceExpireStartTime, that.resourceExpireStartTime)
             && Objects.equals(this.resourceExpireEndTime, that.resourceExpireEndTime)
-            && Objects.equals(this.subResource, that.subResource);
+            && Objects.equals(this.subResource, that.subResource) && Objects.equals(this.status, that.status);
     }
 
     @Override
@@ -361,7 +383,8 @@ public class ListTenantResourcesRequest {
             chargingMode,
             resourceExpireStartTime,
             resourceExpireEndTime,
-            subResource);
+            subResource,
+            status);
     }
 
     @Override
@@ -382,6 +405,7 @@ public class ListTenantResourcesRequest {
         sb.append("    resourceExpireStartTime: ").append(toIndentedString(resourceExpireStartTime)).append("\n");
         sb.append("    resourceExpireEndTime: ").append(toIndentedString(resourceExpireEndTime)).append("\n");
         sb.append("    subResource: ").append(toIndentedString(subResource)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -58,6 +58,11 @@ public class Create2DDigitalHumanVideoReq {
 
     private CallBackConfig callbackConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "action_config")
+
+    private ActionConfig actionConfig;
+
     public Create2DDigitalHumanVideoReq withScriptId(String scriptId) {
         this.scriptId = scriptId;
         return this;
@@ -282,6 +287,32 @@ public class Create2DDigitalHumanVideoReq {
         this.callbackConfig = callbackConfig;
     }
 
+    public Create2DDigitalHumanVideoReq withActionConfig(ActionConfig actionConfig) {
+        this.actionConfig = actionConfig;
+        return this;
+    }
+
+    public Create2DDigitalHumanVideoReq withActionConfig(Consumer<ActionConfig> actionConfigSetter) {
+        if (this.actionConfig == null) {
+            this.actionConfig = new ActionConfig();
+            actionConfigSetter.accept(this.actionConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get actionConfig
+     * @return actionConfig
+     */
+    public ActionConfig getActionConfig() {
+        return actionConfig;
+    }
+
+    public void setActionConfig(ActionConfig actionConfig) {
+        this.actionConfig = actionConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -297,7 +328,8 @@ public class Create2DDigitalHumanVideoReq {
             && Objects.equals(this.outputAssetConfig, that.outputAssetConfig)
             && Objects.equals(this.backgroundMusicConfig, that.backgroundMusicConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig)
-            && Objects.equals(this.callbackConfig, that.callbackConfig);
+            && Objects.equals(this.callbackConfig, that.callbackConfig)
+            && Objects.equals(this.actionConfig, that.actionConfig);
     }
 
     @Override
@@ -310,7 +342,8 @@ public class Create2DDigitalHumanVideoReq {
             outputAssetConfig,
             backgroundMusicConfig,
             reviewConfig,
-            callbackConfig);
+            callbackConfig,
+            actionConfig);
     }
 
     @Override
@@ -326,6 +359,7 @@ public class Create2DDigitalHumanVideoReq {
         sb.append("    backgroundMusicConfig: ").append(toIndentedString(backgroundMusicConfig)).append("\n");
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    callbackConfig: ").append(toIndentedString(callbackConfig)).append("\n");
+        sb.append("    actionConfig: ").append(toIndentedString(actionConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

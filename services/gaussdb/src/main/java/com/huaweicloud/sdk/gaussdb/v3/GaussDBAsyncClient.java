@@ -405,6 +405,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissio
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarrocksParamsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarrocksParamsResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTaurusNodeDataIpRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTaurusNodeDataIpResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseRequest;
@@ -4475,6 +4477,36 @@ public class GaussDBAsyncClient {
     public AsyncInvoker<UpdateSlowlogSensitiveSwitchRequest, UpdateSlowlogSensitiveSwitchResponse> updateSlowlogSensitiveSwitchAsyncInvoker(
         UpdateSlowlogSensitiveSwitchRequest request) {
         return new AsyncInvoker<>(request, GaussDBMeta.updateSlowlogSensitiveSwitch, hcClient);
+    }
+
+    /**
+     * 修改只读节点的读内网地址
+     *
+     * 修改只读节点的读内网地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTaurusNodeDataIpRequest 请求对象
+     * @return CompletableFuture<UpdateTaurusNodeDataIpResponse>
+     */
+    public CompletableFuture<UpdateTaurusNodeDataIpResponse> updateTaurusNodeDataIpAsync(
+        UpdateTaurusNodeDataIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBMeta.updateTaurusNodeDataIp);
+    }
+
+    /**
+     * 修改只读节点的读内网地址
+     *
+     * 修改只读节点的读内网地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTaurusNodeDataIpRequest 请求对象
+     * @return AsyncInvoker<UpdateTaurusNodeDataIpRequest, UpdateTaurusNodeDataIpResponse>
+     */
+    public AsyncInvoker<UpdateTaurusNodeDataIpRequest, UpdateTaurusNodeDataIpResponse> updateTaurusNodeDataIpAsyncInvoker(
+        UpdateTaurusNodeDataIpRequest request) {
+        return new AsyncInvoker<>(request, GaussDBMeta.updateTaurusNodeDataIp, hcClient);
     }
 
     /**

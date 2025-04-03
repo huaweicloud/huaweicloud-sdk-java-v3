@@ -408,6 +408,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListConsistencyTaskRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListConsistencyTaskResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataArtsStudioInstancesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataArtsStudioInstancesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstanceAccesslogsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstanceAccesslogsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstancesDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstancesDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDataServiceInstancesOverviewRequest;
@@ -519,6 +521,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspacesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceusersRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListWorkspaceusersResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.LtsLogDump;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.MallParaDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.MetadataCollectionTask;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.MetricOpenSearchParams;
@@ -531,6 +534,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifyCustomizedFieldsRespons
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifySecurityAdminRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ModifySecurityAdminResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ObjectIdInfo;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ObsLogDump;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenApiParaForCheckMessage;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenApplyIdsForApproveApply;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.OpenBulkClassifications;
@@ -791,6 +795,10 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableValuesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateCodeTableValuesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceLtsLogRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceLtsLogResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceObsLogRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataServiceInstanceObsLogResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDataconnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateDesignAggregationLogicTableRequest;
@@ -6472,6 +6480,45 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListDataArtsStudioInstancesRequest::getOffset,
                 ListDataArtsStudioInstancesRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDataServiceInstanceAccesslogsRequest, ListDataServiceInstanceAccesslogsResponse> listDataServiceInstanceAccesslogs =
+        genForListDataServiceInstanceAccesslogs();
+
+    private static HttpRequestDef<ListDataServiceInstanceAccesslogsRequest, ListDataServiceInstanceAccesslogsResponse> genForListDataServiceInstanceAccesslogs() {
+        // basic
+        HttpRequestDef.Builder<ListDataServiceInstanceAccesslogsRequest, ListDataServiceInstanceAccesslogsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDataServiceInstanceAccesslogsRequest.class,
+                    ListDataServiceInstanceAccesslogsResponse.class)
+                .withName("ListDataServiceInstanceAccesslogs")
+                .withUri("/v1/{project_id}/service/instances/{instance_id}/accesslog")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataServiceInstanceAccesslogsRequest::getInstanceId,
+                ListDataServiceInstanceAccesslogsRequest::setInstanceId));
+        builder.<Boolean>withRequestField("is_api",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListDataServiceInstanceAccesslogsRequest::getIsApi,
+                ListDataServiceInstanceAccesslogsRequest::setIsApi));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDataServiceInstanceAccesslogsRequest::getWorkspace,
+                ListDataServiceInstanceAccesslogsRequest::setWorkspace));
 
         // response
 
@@ -14199,6 +14246,96 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CodeTableFieldValueUpdateVO.class),
             f -> f.withMarshaller(UpdateCodeTableValuesRequest::getBody, UpdateCodeTableValuesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDataServiceInstanceLtsLogRequest, UpdateDataServiceInstanceLtsLogResponse> updateDataServiceInstanceLtsLog =
+        genForUpdateDataServiceInstanceLtsLog();
+
+    private static HttpRequestDef<UpdateDataServiceInstanceLtsLogRequest, UpdateDataServiceInstanceLtsLogResponse> genForUpdateDataServiceInstanceLtsLog() {
+        // basic
+        HttpRequestDef.Builder<UpdateDataServiceInstanceLtsLogRequest, UpdateDataServiceInstanceLtsLogResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDataServiceInstanceLtsLogRequest.class,
+                    UpdateDataServiceInstanceLtsLogResponse.class)
+                .withName("UpdateDataServiceInstanceLtsLog")
+                .withUri("/v1/{project_id}/service/instances/{instance_id}/lts-log-dump")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDataServiceInstanceLtsLogRequest::getInstanceId,
+                UpdateDataServiceInstanceLtsLogRequest::setInstanceId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDataServiceInstanceLtsLogRequest::getWorkspace,
+                UpdateDataServiceInstanceLtsLogRequest::setWorkspace));
+        builder.<UpdateDataServiceInstanceLtsLogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateDataServiceInstanceLtsLogRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(UpdateDataServiceInstanceLtsLogRequest::getDlmType,
+                UpdateDataServiceInstanceLtsLogRequest::setDlmType));
+        builder.<LtsLogDump>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LtsLogDump.class),
+            f -> f.withMarshaller(UpdateDataServiceInstanceLtsLogRequest::getBody,
+                UpdateDataServiceInstanceLtsLogRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDataServiceInstanceObsLogRequest, UpdateDataServiceInstanceObsLogResponse> updateDataServiceInstanceObsLog =
+        genForUpdateDataServiceInstanceObsLog();
+
+    private static HttpRequestDef<UpdateDataServiceInstanceObsLogRequest, UpdateDataServiceInstanceObsLogResponse> genForUpdateDataServiceInstanceObsLog() {
+        // basic
+        HttpRequestDef.Builder<UpdateDataServiceInstanceObsLogRequest, UpdateDataServiceInstanceObsLogResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateDataServiceInstanceObsLogRequest.class,
+                    UpdateDataServiceInstanceObsLogResponse.class)
+                .withName("UpdateDataServiceInstanceObsLog")
+                .withUri("/v1/{project_id}/service/instances/{instance_id}/obs-log-dump")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDataServiceInstanceObsLogRequest::getInstanceId,
+                UpdateDataServiceInstanceObsLogRequest::setInstanceId));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDataServiceInstanceObsLogRequest::getWorkspace,
+                UpdateDataServiceInstanceObsLogRequest::setWorkspace));
+        builder.<UpdateDataServiceInstanceObsLogRequest.DlmTypeEnum>withRequestField("Dlm-Type",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateDataServiceInstanceObsLogRequest.DlmTypeEnum.class),
+            f -> f.withMarshaller(UpdateDataServiceInstanceObsLogRequest::getDlmType,
+                UpdateDataServiceInstanceObsLogRequest::setDlmType));
+        builder.<ObsLogDump>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ObsLogDump.class),
+            f -> f.withMarshaller(UpdateDataServiceInstanceObsLogRequest::getBody,
+                UpdateDataServiceInstanceObsLogRequest::setBody));
 
         // response
 

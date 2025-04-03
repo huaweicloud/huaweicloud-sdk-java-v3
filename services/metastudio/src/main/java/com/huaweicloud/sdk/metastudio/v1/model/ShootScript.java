@@ -99,6 +99,11 @@ public class ShootScript {
     private TextConfig textConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_duration")
+
+    private Float audioDuration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "audio_drive_action_config")
 
     private List<AudioDriveActionConfig> audioDriveActionConfig = null;
@@ -164,6 +169,25 @@ public class ShootScript {
 
     public void setTextConfig(TextConfig textConfig) {
         this.textConfig = textConfig;
+    }
+
+    public ShootScript withAudioDuration(Float audioDuration) {
+        this.audioDuration = audioDuration;
+        return this;
+    }
+
+    /**
+     * 语音驱动时，音频时长，单位秒。 > * 创建剧本时此参数可以不设置，音频文件上传成功后，通过更新剧本接口设置 > * 查询剧本详情时，返回音频时长，用于预估视频时长
+     * minimum: 0
+     * maximum: 3.6E+4
+     * @return audioDuration
+     */
+    public Float getAudioDuration() {
+        return audioDuration;
+    }
+
+    public void setAudioDuration(Float audioDuration) {
+        this.audioDuration = audioDuration;
     }
 
     public ShootScript withAudioDriveActionConfig(List<AudioDriveActionConfig> audioDriveActionConfig) {
@@ -318,6 +342,7 @@ public class ShootScript {
         }
         ShootScript that = (ShootScript) obj;
         return Objects.equals(this.scriptType, that.scriptType) && Objects.equals(this.textConfig, that.textConfig)
+            && Objects.equals(this.audioDuration, that.audioDuration)
             && Objects.equals(this.audioDriveActionConfig, that.audioDriveActionConfig)
             && Objects.equals(this.audioDriveFileExternalUrl, that.audioDriveFileExternalUrl)
             && Objects.equals(this.backgroundConfig, that.backgroundConfig)
@@ -328,6 +353,7 @@ public class ShootScript {
     public int hashCode() {
         return Objects.hash(scriptType,
             textConfig,
+            audioDuration,
             audioDriveActionConfig,
             audioDriveFileExternalUrl,
             backgroundConfig,
@@ -341,6 +367,7 @@ public class ShootScript {
         sb.append("class ShootScript {\n");
         sb.append("    scriptType: ").append(toIndentedString(scriptType)).append("\n");
         sb.append("    textConfig: ").append(toIndentedString(textConfig)).append("\n");
+        sb.append("    audioDuration: ").append(toIndentedString(audioDuration)).append("\n");
         sb.append("    audioDriveActionConfig: ").append(toIndentedString(audioDriveActionConfig)).append("\n");
         sb.append("    audioDriveFileExternalUrl: ").append(toIndentedString(audioDriveFileExternalUrl)).append("\n");
         sb.append("    backgroundConfig: ").append(toIndentedString(backgroundConfig)).append("\n");

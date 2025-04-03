@@ -17,8 +17,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmartLiveRoomRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmarLiveRoomRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmarLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CopyVideoScriptsRequest;
@@ -67,6 +67,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateLargeFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateLargeFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateLivePlatformRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateLivePlatformResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateMetaStudioOrdersRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateMetaStudioOrdersResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateOnceCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateOnceCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePacifyWordsRequest;
@@ -837,9 +839,10 @@ public class MetaStudioAsyncClient {
      * 创建资产
      *
      * 该接口用于在资产库中添加上传新的媒体资产。可上传的资产类型包括：分身数字人模型、背景图片、素材图片、素材视频、PPT等。
+     * &gt; 上传的图片、视频和背景图片，如果需要在视频制作素材中可见，需要设置system_properties。
      * &gt; - 资产类型是IMAGE时，通过system_properties来区分背景图片（BACKGROUND_IMG）、素材图片（MATERIAL_IMG）。
      * &gt; - 资产类型是VIDEO时，通过system_properties来区分素材视频（MATERIAL_VIDEO）、名片视频（BUSSINESS_CARD_VIDEO）。
-     * &gt; - MetaStudio平台生成的视频，system_properties带CREATED_BY_PLATFORM。
+     * &gt; MetaStudio平台生成的视频，system_properties带CREATED_BY_PLATFORM。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -854,9 +857,10 @@ public class MetaStudioAsyncClient {
      * 创建资产
      *
      * 该接口用于在资产库中添加上传新的媒体资产。可上传的资产类型包括：分身数字人模型、背景图片、素材图片、素材视频、PPT等。
+     * &gt; 上传的图片、视频和背景图片，如果需要在视频制作素材中可见，需要设置system_properties。
      * &gt; - 资产类型是IMAGE时，通过system_properties来区分背景图片（BACKGROUND_IMG）、素材图片（MATERIAL_IMG）。
      * &gt; - 资产类型是VIDEO时，通过system_properties来区分素材视频（MATERIAL_VIDEO）、名片视频（BUSSINESS_CARD_VIDEO）。
-     * &gt; - MetaStudio平台生成的视频，system_properties带CREATED_BY_PLATFORM。
+     * &gt; MetaStudio平台生成的视频，system_properties带CREATED_BY_PLATFORM。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1956,7 +1960,7 @@ public class MetaStudioAsyncClient {
     /**
      * 创建知识库意图和问法
      *
-     * 该接口用于创建知识库意图和问法。一个意图包含一个主题，一个答案，若干个问法等。
+     * 该接口用于创建知识库意图和问法。一个意图包含一个主题，一个答案，若干个问法等。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1971,7 +1975,7 @@ public class MetaStudioAsyncClient {
     /**
      * 创建知识库意图和问法
      *
-     * 该接口用于创建知识库意图和问法。一个意图包含一个主题，一个答案，若干个问法等。
+     * 该接口用于创建知识库意图和问法。一个意图包含一个主题，一个答案，若干个问法等。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1986,7 +1990,7 @@ public class MetaStudioAsyncClient {
     /**
      * 创建知识库意图
      *
-     * 该接口用于创建知识库意图。一个意图包含一个主题，一个答案，若干个问法等。
+     * 该接口用于创建知识库意图。一个意图包含一个主题，一个答案，若干个问法等。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2001,7 +2005,7 @@ public class MetaStudioAsyncClient {
     /**
      * 创建知识库意图
      *
-     * 该接口用于创建知识库意图。一个意图包含一个主题，一个答案，若干个问法等。
+     * 该接口用于创建知识库意图。一个意图包含一个主题，一个答案，若干个问法等。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2016,7 +2020,7 @@ public class MetaStudioAsyncClient {
     /**
      * 删除知识库意图
      *
-     * 该接口用于删除知识库意图。
+     * 该接口用于删除知识库意图。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2031,7 +2035,7 @@ public class MetaStudioAsyncClient {
     /**
      * 删除知识库意图
      *
-     * 该接口用于删除知识库意图。
+     * 该接口用于删除知识库意图。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2046,7 +2050,7 @@ public class MetaStudioAsyncClient {
     /**
      * 查询知识库意图列表
      *
-     * 该接口用于查询知识库意图列表。
+     * 该接口用于查询知识库意图列表。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2060,7 +2064,7 @@ public class MetaStudioAsyncClient {
     /**
      * 查询知识库意图列表
      *
-     * 该接口用于查询知识库意图列表。
+     * 该接口用于查询知识库意图列表。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2075,7 +2079,7 @@ public class MetaStudioAsyncClient {
     /**
      * 查询知识库意图详情
      *
-     * 该接口用于查询知识库意图详情。
+     * 该接口用于查询知识库意图详情。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2089,7 +2093,7 @@ public class MetaStudioAsyncClient {
     /**
      * 查询知识库意图详情
      *
-     * 该接口用于查询知识库意图详情。
+     * 该接口用于查询知识库意图详情。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2104,7 +2108,7 @@ public class MetaStudioAsyncClient {
     /**
      * 修改知识库意图
      *
-     * 该接口用于修改知识库意图。
+     * 该接口用于修改知识库意图。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2119,7 +2123,7 @@ public class MetaStudioAsyncClient {
     /**
      * 修改知识库意图
      *
-     * 该接口用于修改知识库意图。
+     * 该接口用于修改知识库意图。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2134,7 +2138,7 @@ public class MetaStudioAsyncClient {
     /**
      * 批量创建知识库问法
      *
-     * 该接口用于批量创建知识库问法。
+     * 该接口用于批量创建知识库问法。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2149,7 +2153,7 @@ public class MetaStudioAsyncClient {
     /**
      * 批量创建知识库问法
      *
-     * 该接口用于批量创建知识库问法。
+     * 该接口用于批量创建知识库问法。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2164,7 +2168,7 @@ public class MetaStudioAsyncClient {
     /**
      * 创建知识库问法
      *
-     * 该接口用于创建知识库问法。
+     * 该接口用于创建知识库问法。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2179,7 +2183,7 @@ public class MetaStudioAsyncClient {
     /**
      * 创建知识库问法
      *
-     * 该接口用于创建知识库问法。
+     * 该接口用于创建知识库问法。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2194,7 +2198,7 @@ public class MetaStudioAsyncClient {
     /**
      * 删除知识库问法
      *
-     * 该接口用于删除知识库问法。
+     * 该接口用于删除知识库问法。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2209,7 +2213,7 @@ public class MetaStudioAsyncClient {
     /**
      * 删除知识库问法
      *
-     * 该接口用于删除知识库问法。
+     * 该接口用于删除知识库问法。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2224,7 +2228,7 @@ public class MetaStudioAsyncClient {
     /**
      * 查询知识库问法列表
      *
-     * 该接口用于查询知识库问法列表。
+     * 该接口用于查询知识库问法列表。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2239,7 +2243,7 @@ public class MetaStudioAsyncClient {
     /**
      * 查询知识库问法列表
      *
-     * 该接口用于查询知识库问法列表。
+     * 该接口用于查询知识库问法列表。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2254,7 +2258,7 @@ public class MetaStudioAsyncClient {
     /**
      * 查询知识库问法详情
      *
-     * 该接口用于查询知识库问法详情。
+     * 该接口用于查询知识库问法详情。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2269,7 +2273,7 @@ public class MetaStudioAsyncClient {
     /**
      * 查询知识库问法详情
      *
-     * 该接口用于查询知识库问法详情。
+     * 该接口用于查询知识库问法详情。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2284,7 +2288,7 @@ public class MetaStudioAsyncClient {
     /**
      * 批量修改知识库问法
      *
-     * 该接口用于批量修改知识库问法。
+     * 该接口用于批量修改知识库问法。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2299,7 +2303,7 @@ public class MetaStudioAsyncClient {
     /**
      * 批量修改知识库问法
      *
-     * 该接口用于批量修改知识库问法。
+     * 该接口用于批量修改知识库问法。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2314,7 +2318,7 @@ public class MetaStudioAsyncClient {
     /**
      * 修改知识库问法
      *
-     * 该接口用于修改知识库问法。
+     * 该接口用于修改知识库问法。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2329,7 +2333,7 @@ public class MetaStudioAsyncClient {
     /**
      * 修改知识库问法
      *
-     * 该接口用于修改知识库问法。
+     * 该接口用于修改知识库问法。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2344,7 +2348,7 @@ public class MetaStudioAsyncClient {
     /**
      * 创建知识库技能
      *
-     * 该接口用于创建知识库技能。一个技能用于特定场景的交互问答，包含若干个意图等。
+     * 该接口用于创建知识库技能。一个技能用于特定场景的交互问答，包含若干个意图等。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2359,7 +2363,7 @@ public class MetaStudioAsyncClient {
     /**
      * 创建知识库技能
      *
-     * 该接口用于创建知识库技能。一个技能用于特定场景的交互问答，包含若干个意图等。
+     * 该接口用于创建知识库技能。一个技能用于特定场景的交互问答，包含若干个意图等。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2374,7 +2378,7 @@ public class MetaStudioAsyncClient {
     /**
      * 删除知识库技能
      *
-     * 该接口用于删除知识库技能。
+     * 该接口用于删除知识库技能。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2389,7 +2393,7 @@ public class MetaStudioAsyncClient {
     /**
      * 删除知识库技能
      *
-     * 该接口用于删除知识库技能。
+     * 该接口用于删除知识库技能。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2404,7 +2408,7 @@ public class MetaStudioAsyncClient {
     /**
      * 导出知识库技能
      *
-     * 该接口用于导出知识库技能。
+     * 该接口用于导出知识库技能。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2419,7 +2423,7 @@ public class MetaStudioAsyncClient {
     /**
      * 导出知识库技能
      *
-     * 该接口用于导出知识库技能。
+     * 该接口用于导出知识库技能。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2434,7 +2438,7 @@ public class MetaStudioAsyncClient {
     /**
      * 查询知识库技能列表
      *
-     * 该接口用于查询知识库技能列表。
+     * 该接口用于查询知识库技能列表。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2448,7 +2452,7 @@ public class MetaStudioAsyncClient {
     /**
      * 查询知识库技能列表
      *
-     * 该接口用于查询知识库技能列表。
+     * 该接口用于查询知识库技能列表。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2463,7 +2467,7 @@ public class MetaStudioAsyncClient {
     /**
      * 查询知识库技能详情
      *
-     * 该接口用于查询知识库技能详情。
+     * 该接口用于查询知识库技能详情。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2477,7 +2481,7 @@ public class MetaStudioAsyncClient {
     /**
      * 查询知识库技能详情
      *
-     * 该接口用于查询知识库技能详情。
+     * 该接口用于查询知识库技能详情。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2492,7 +2496,7 @@ public class MetaStudioAsyncClient {
     /**
      * 修改知识库技能
      *
-     * 该接口用于修改知识库技能。
+     * 该接口用于修改知识库技能。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2507,7 +2511,7 @@ public class MetaStudioAsyncClient {
     /**
      * 修改知识库技能
      *
-     * 该接口用于修改知识库技能。
+     * 该接口用于修改知识库技能。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2723,6 +2727,36 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<CreateOnceCodeRequest, CreateOnceCodeResponse> createOnceCodeAsyncInvoker(
         CreateOnceCodeRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.createOnceCode, hcClient);
+    }
+
+    /**
+     * 订购metastudio云服务产品
+     *
+     * 该接口用于订购MetaStudio服务的包周期,一次性,按需套餐包产品
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateMetaStudioOrdersRequest 请求对象
+     * @return CompletableFuture<CreateMetaStudioOrdersResponse>
+     */
+    public CompletableFuture<CreateMetaStudioOrdersResponse> createMetaStudioOrdersAsync(
+        CreateMetaStudioOrdersRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createMetaStudioOrders);
+    }
+
+    /**
+     * 订购metastudio云服务产品
+     *
+     * 该接口用于订购MetaStudio服务的包周期,一次性,按需套餐包产品
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateMetaStudioOrdersRequest 请求对象
+     * @return AsyncInvoker<CreateMetaStudioOrdersRequest, CreateMetaStudioOrdersResponse>
+     */
+    public AsyncInvoker<CreateMetaStudioOrdersRequest, CreateMetaStudioOrdersResponse> createMetaStudioOrdersAsyncInvoker(
+        CreateMetaStudioOrdersRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createMetaStudioOrders, hcClient);
     }
 
     /**
@@ -3958,12 +3992,11 @@ public class MetaStudioAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ConfirmSmartLiveRoomRequest 请求对象
-     * @return CompletableFuture<ConfirmSmartLiveRoomResponse>
+     * @param request ConfirmSmarLiveRoomRequest 请求对象
+     * @return CompletableFuture<ConfirmSmarLiveRoomResponse>
      */
-    public CompletableFuture<ConfirmSmartLiveRoomResponse> confirmSmartLiveRoomAsync(
-        ConfirmSmartLiveRoomRequest request) {
-        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.confirmSmartLiveRoom);
+    public CompletableFuture<ConfirmSmarLiveRoomResponse> confirmSmarLiveRoomAsync(ConfirmSmarLiveRoomRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.confirmSmarLiveRoom);
     }
 
     /**
@@ -3973,12 +4006,12 @@ public class MetaStudioAsyncClient {
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ConfirmSmartLiveRoomRequest 请求对象
-     * @return AsyncInvoker<ConfirmSmartLiveRoomRequest, ConfirmSmartLiveRoomResponse>
+     * @param request ConfirmSmarLiveRoomRequest 请求对象
+     * @return AsyncInvoker<ConfirmSmarLiveRoomRequest, ConfirmSmarLiveRoomResponse>
      */
-    public AsyncInvoker<ConfirmSmartLiveRoomRequest, ConfirmSmartLiveRoomResponse> confirmSmartLiveRoomAsyncInvoker(
-        ConfirmSmartLiveRoomRequest request) {
-        return new AsyncInvoker<>(request, MetaStudioMeta.confirmSmartLiveRoom, hcClient);
+    public AsyncInvoker<ConfirmSmarLiveRoomRequest, ConfirmSmarLiveRoomResponse> confirmSmarLiveRoomAsyncInvoker(
+        ConfirmSmarLiveRoomRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.confirmSmarLiveRoom, hcClient);
     }
 
     /**
@@ -4366,7 +4399,7 @@ public class MetaStudioAsyncClient {
      * 查看租户资源列表
      *
      * 查看租户资源列表。
-     * &gt; 按需套餐包用量本接口无法查询，需要调用CBC接口查询。[按需套餐包用量查询](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0001239.html)和[查询资源包信息](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0000511.html)。
+     *  &gt; 按需套餐包用量本接口无法查询，需要调用CBC接口查询，详见[按需套餐包用量查询](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0001239.html)和[查询资源包信息](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0000511.html)。
      * &gt; 各种资源的计费方式请参考[计费说明](https://support.huaweicloud.com/productdesc-metastudio/metastudio_01_0006.html)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -4382,7 +4415,7 @@ public class MetaStudioAsyncClient {
      * 查看租户资源列表
      *
      * 查看租户资源列表。
-     * &gt; 按需套餐包用量本接口无法查询，需要调用CBC接口查询。[按需套餐包用量查询](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0001239.html)和[查询资源包信息](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0000511.html)。
+     *  &gt; 按需套餐包用量本接口无法查询，需要调用CBC接口查询，详见[按需套餐包用量查询](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0001239.html)和[查询资源包信息](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0000511.html)。
      * &gt; 各种资源的计费方式请参考[计费说明](https://support.huaweicloud.com/productdesc-metastudio/metastudio_01_0006.html)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -4399,7 +4432,7 @@ public class MetaStudioAsyncClient {
      * 查看租户资源用量信息
      *
      * 查询租户一次性和包周期（包年/包月）资源用量信息。
-     * &gt; 按需套餐包用量本接口无法查询，需要调用CBC接口查询。[按需套餐包用量查询](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0001239.html)和[查询资源包信息](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0000511.html)。
+     * &gt; 按需套餐包用量本接口无法查询，需要调用CBC接口查询，详见[按需套餐包用量查询](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0001239.html)和[查询资源包信息](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0000511.html)。
      * &gt; 各种资源的计费方式请参考[计费说明](https://support.huaweicloud.com/productdesc-metastudio/metastudio_01_0006.html)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -4415,7 +4448,7 @@ public class MetaStudioAsyncClient {
      * 查看租户资源用量信息
      *
      * 查询租户一次性和包周期（包年/包月）资源用量信息。
-     * &gt; 按需套餐包用量本接口无法查询，需要调用CBC接口查询。[按需套餐包用量查询](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0001239.html)和[查询资源包信息](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0000511.html)。
+     * &gt; 按需套餐包用量本接口无法查询，需要调用CBC接口查询，详见[按需套餐包用量查询](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0001239.html)和[查询资源包信息](https://cbc.huaweicloud.com/bm/support/api-apidt/CBCInterface_0000511.html)。
      * &gt; 各种资源的计费方式请参考[计费说明](https://support.huaweicloud.com/productdesc-metastudio/metastudio_01_0006.html)。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.

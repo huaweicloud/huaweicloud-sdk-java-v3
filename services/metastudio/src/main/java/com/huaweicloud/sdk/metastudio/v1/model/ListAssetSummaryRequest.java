@@ -22,6 +22,11 @@ public class ListAssetSummaryRequest {
     private String xSdkDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-App-UserId")
+
+    private String xAppUserId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ListAssetSummarysReq body;
@@ -62,6 +67,25 @@ public class ListAssetSummaryRequest {
         this.xSdkDate = xSdkDate;
     }
 
+    public ListAssetSummaryRequest withXAppUserId(String xAppUserId) {
+        this.xAppUserId = xAppUserId;
+        return this;
+    }
+
+    /**
+     * 第三方用户ID。不允许输入中文。
+     * @return xAppUserId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "X-App-UserId")
+    public String getXAppUserId() {
+        return xAppUserId;
+    }
+
+    public void setXAppUserId(String xAppUserId) {
+        this.xAppUserId = xAppUserId;
+    }
+
     public ListAssetSummaryRequest withBody(ListAssetSummarysReq body) {
         this.body = body;
         return this;
@@ -98,12 +122,12 @@ public class ListAssetSummaryRequest {
         }
         ListAssetSummaryRequest that = (ListAssetSummaryRequest) obj;
         return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorization, xSdkDate, body);
+        return Objects.hash(authorization, xSdkDate, xAppUserId, body);
     }
 
     @Override
@@ -112,6 +136,7 @@ public class ListAssetSummaryRequest {
         sb.append("class ListAssetSummaryRequest {\n");
         sb.append("    authorization: ").append(toIndentedString(authorization)).append("\n");
         sb.append("    xSdkDate: ").append(toIndentedString(xSdkDate)).append("\n");
+        sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

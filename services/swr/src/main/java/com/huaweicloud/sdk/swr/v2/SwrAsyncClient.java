@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.swr.v2;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.swr.v2.model.CreateAuthorizationTokenRequest;
+import com.huaweicloud.sdk.swr.v2.model.CreateAuthorizationTokenResponse;
 import com.huaweicloud.sdk.swr.v2.model.CreateImageSyncRepoRequest;
 import com.huaweicloud.sdk.swr.v2.model.CreateImageSyncRepoResponse;
 import com.huaweicloud.sdk.swr.v2.model.CreateManualImageSyncRepoRequest;
@@ -115,6 +117,36 @@ public class SwrAsyncClient {
     public static ClientBuilder<SwrAsyncClient> newBuilder() {
         ClientBuilder<SwrAsyncClient> clientBuilder = new ClientBuilder<>(SwrAsyncClient::new);
         return clientBuilder;
+    }
+
+    /**
+     * 生成增强型登录指令(新)
+     *
+     * 调用该接口，通过获取响应消息头的X-Swr-Dockerlogin的值及响应消息体的host值，可生成增强型登录指令,注：此接口只支持IAM新平面的调用方式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuthorizationTokenRequest 请求对象
+     * @return CompletableFuture<CreateAuthorizationTokenResponse>
+     */
+    public CompletableFuture<CreateAuthorizationTokenResponse> createAuthorizationTokenAsync(
+        CreateAuthorizationTokenRequest request) {
+        return hcClient.asyncInvokeHttp(request, SwrMeta.createAuthorizationToken);
+    }
+
+    /**
+     * 生成增强型登录指令(新)
+     *
+     * 调用该接口，通过获取响应消息头的X-Swr-Dockerlogin的值及响应消息体的host值，可生成增强型登录指令,注：此接口只支持IAM新平面的调用方式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAuthorizationTokenRequest 请求对象
+     * @return AsyncInvoker<CreateAuthorizationTokenRequest, CreateAuthorizationTokenResponse>
+     */
+    public AsyncInvoker<CreateAuthorizationTokenRequest, CreateAuthorizationTokenResponse> createAuthorizationTokenAsyncInvoker(
+        CreateAuthorizationTokenRequest request) {
+        return new AsyncInvoker<>(request, SwrMeta.createAuthorizationToken, hcClient);
     }
 
     /**

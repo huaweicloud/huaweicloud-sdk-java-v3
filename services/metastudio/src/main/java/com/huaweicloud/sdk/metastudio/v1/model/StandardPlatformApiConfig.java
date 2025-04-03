@@ -16,7 +16,7 @@ import java.util.Objects;
 public class StandardPlatformApiConfig {
 
     /**
-     * API类型
+     * API类型。 * PRODUCT_QUERY: 查询商品 * LIVE_EVENT_CALLBACK: 直播事件回调
      */
     public static final class ApiTypeEnum {
 
@@ -101,7 +101,7 @@ public class StandardPlatformApiConfig {
     }
 
     /**
-     * API类型
+     * API类型。 * PRODUCT_QUERY: 查询商品 * LIVE_EVENT_CALLBACK: 直播事件回调
      * @return apiType
      */
     public ApiTypeEnum getApiType() {

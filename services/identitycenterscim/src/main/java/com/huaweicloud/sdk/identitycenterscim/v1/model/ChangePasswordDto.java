@@ -1,38 +1,35 @@
-package com.huaweicloud.sdk.metastudio.v1.model;
+package com.huaweicloud.sdk.identitycenterscim.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * Response Object
+ * ChangePasswordDto
  */
-public class ConfirmSmartLiveRoomResponse extends SdkResponse {
+public class ChangePasswordDto {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Request-Id")
+    @JsonProperty(value = "supported")
 
-    private String xRequestId;
+    private Boolean supported;
 
-    public ConfirmSmartLiveRoomResponse withXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
+    public ChangePasswordDto withSupported(Boolean supported) {
+        this.supported = supported;
         return this;
     }
 
     /**
-     * Get xRequestId
-     * @return xRequestId
+     * 一个布尔值，表示服务提供商是否支持这种操作
+     * @return supported
      */
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "X-Request-Id")
-    public String getXRequestId() {
-        return xRequestId;
+    public Boolean getSupported() {
+        return supported;
     }
 
-    public void setXRequestId(String xRequestId) {
-        this.xRequestId = xRequestId;
+    public void setSupported(Boolean supported) {
+        this.supported = supported;
     }
 
     @Override
@@ -43,20 +40,20 @@ public class ConfirmSmartLiveRoomResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfirmSmartLiveRoomResponse that = (ConfirmSmartLiveRoomResponse) obj;
-        return Objects.equals(this.xRequestId, that.xRequestId);
+        ChangePasswordDto that = (ChangePasswordDto) obj;
+        return Objects.equals(this.supported, that.supported);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xRequestId);
+        return Objects.hash(supported);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ConfirmSmartLiveRoomResponse {\n");
-        sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
+        sb.append("class ChangePasswordDto {\n");
+        sb.append("    supported: ").append(toIndentedString(supported)).append("\n");
         sb.append("}");
         return sb.toString();
     }

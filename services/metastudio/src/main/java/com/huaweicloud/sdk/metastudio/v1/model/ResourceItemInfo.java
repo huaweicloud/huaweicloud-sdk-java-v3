@@ -5,11 +5,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 资源使用信息
@@ -25,6 +25,11 @@ public class ResourceItemInfo {
     @JsonProperty(value = "order_id")
 
     private String orderId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bound_asset")
+
+    private BoundAssetInfo boundAsset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_expire_time")
@@ -276,12 +281,17 @@ public class ResourceItemInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private BigDecimal amount;
+    private Float amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage")
 
-    private BigDecimal usage;
+    private Float usage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private Integer status;
 
     /**
      * 单位。 * NUM：个数(形象/声音) * MIN：分钟（视频制作） * HOUR：小时 （直播） * CHANNEL：路（直播/交互） * GB：GB(资产管理) * MILLION_WORDS：百万字 * TEN_THOUSAND_WORDS：万字 * TIME：次
@@ -428,6 +438,32 @@ public class ResourceItemInfo {
         this.orderId = orderId;
     }
 
+    public ResourceItemInfo withBoundAsset(BoundAssetInfo boundAsset) {
+        this.boundAsset = boundAsset;
+        return this;
+    }
+
+    public ResourceItemInfo withBoundAsset(Consumer<BoundAssetInfo> boundAssetSetter) {
+        if (this.boundAsset == null) {
+            this.boundAsset = new BoundAssetInfo();
+            boundAssetSetter.accept(this.boundAsset);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get boundAsset
+     * @return boundAsset
+     */
+    public BoundAssetInfo getBoundAsset() {
+        return boundAsset;
+    }
+
+    public void setBoundAsset(BoundAssetInfo boundAsset) {
+        this.boundAsset = boundAsset;
+    }
+
     public ResourceItemInfo withResourceExpireTime(String resourceExpireTime) {
         this.resourceExpireTime = resourceExpireTime;
         return this;
@@ -547,7 +583,7 @@ public class ResourceItemInfo {
         this.resourceSource = resourceSource;
     }
 
-    public ResourceItemInfo withAmount(BigDecimal amount) {
+    public ResourceItemInfo withAmount(Float amount) {
         this.amount = amount;
         return this;
     }
@@ -558,15 +594,15 @@ public class ResourceItemInfo {
      * maximum: 1E+6
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Float getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Float amount) {
         this.amount = amount;
     }
 
-    public ResourceItemInfo withUsage(BigDecimal usage) {
+    public ResourceItemInfo withUsage(Float usage) {
         this.usage = usage;
         return this;
     }
@@ -577,12 +613,31 @@ public class ResourceItemInfo {
      * maximum: 1E+6
      * @return usage
      */
-    public BigDecimal getUsage() {
+    public Float getUsage() {
         return usage;
     }
 
-    public void setUsage(BigDecimal usage) {
+    public void setUsage(Float usage) {
         this.usage = usage;
+    }
+
+    public ResourceItemInfo withStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 资源状态 0:正常 1:冻结
+     * minimum: 0
+     * maximum: 10
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public ResourceItemInfo withUnit(UnitEnum unit) {
@@ -612,6 +667,7 @@ public class ResourceItemInfo {
         }
         ResourceItemInfo that = (ResourceItemInfo) obj;
         return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.boundAsset, that.boundAsset)
             && Objects.equals(this.resourceExpireTime, that.resourceExpireTime)
             && Objects.equals(this.resourceType, that.resourceType)
             && Objects.equals(this.businessType, that.businessType)
@@ -619,13 +675,15 @@ public class ResourceItemInfo {
             && Objects.equals(this.isSubResource, that.isSubResource)
             && Objects.equals(this.chargingMode, that.chargingMode)
             && Objects.equals(this.resourceSource, that.resourceSource) && Objects.equals(this.amount, that.amount)
-            && Objects.equals(this.usage, that.usage) && Objects.equals(this.unit, that.unit);
+            && Objects.equals(this.usage, that.usage) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.unit, that.unit);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(resourceId,
             orderId,
+            boundAsset,
             resourceExpireTime,
             resourceType,
             businessType,
@@ -635,6 +693,7 @@ public class ResourceItemInfo {
             resourceSource,
             amount,
             usage,
+            status,
             unit);
     }
 
@@ -644,6 +703,7 @@ public class ResourceItemInfo {
         sb.append("class ResourceItemInfo {\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
+        sb.append("    boundAsset: ").append(toIndentedString(boundAsset)).append("\n");
         sb.append("    resourceExpireTime: ").append(toIndentedString(resourceExpireTime)).append("\n");
         sb.append("    resourceType: ").append(toIndentedString(resourceType)).append("\n");
         sb.append("    businessType: ").append(toIndentedString(businessType)).append("\n");
@@ -653,6 +713,7 @@ public class ResourceItemInfo {
         sb.append("    resourceSource: ").append(toIndentedString(resourceSource)).append("\n");
         sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
         sb.append("    usage: ").append(toIndentedString(usage)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("}");
         return sb.toString();

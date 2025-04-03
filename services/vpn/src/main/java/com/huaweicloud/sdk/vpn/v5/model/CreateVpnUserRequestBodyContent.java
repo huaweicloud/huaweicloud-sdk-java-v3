@@ -30,6 +30,11 @@ public class CreateVpnUserRequestBodyContent {
 
     private String userGroupId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "static_ip")
+
+    private String staticIp;
+
     public CreateVpnUserRequestBodyContent withName(String name) {
         this.name = name;
         return this;
@@ -98,6 +103,23 @@ public class CreateVpnUserRequestBodyContent {
         this.userGroupId = userGroupId;
     }
 
+    public CreateVpnUserRequestBodyContent withStaticIp(String staticIp) {
+        this.staticIp = staticIp;
+        return this;
+    }
+
+    /**
+     * 静态客户端IP地址，默认值disable，表示随机分配客户端IP
+     * @return staticIp
+     */
+    public String getStaticIp() {
+        return staticIp;
+    }
+
+    public void setStaticIp(String staticIp) {
+        this.staticIp = staticIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -108,12 +130,13 @@ public class CreateVpnUserRequestBodyContent {
         }
         CreateVpnUserRequestBodyContent that = (CreateVpnUserRequestBodyContent) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.password, that.password)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.userGroupId, that.userGroupId);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.userGroupId, that.userGroupId)
+            && Objects.equals(this.staticIp, that.staticIp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, password, description, userGroupId);
+        return Objects.hash(name, password, description, userGroupId, staticIp);
     }
 
     @Override
@@ -124,6 +147,7 @@ public class CreateVpnUserRequestBodyContent {
         sb.append("    password: ").append(toIndentedString(password)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    userGroupId: ").append(toIndentedString(userGroupId)).append("\n");
+        sb.append("    staticIp: ").append(toIndentedString(staticIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

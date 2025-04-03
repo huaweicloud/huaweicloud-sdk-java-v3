@@ -60,6 +60,16 @@ public class UpdatePolicy {
 
     private Integer level;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "namespace")
+
+    private String namespace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dimension_name")
+
+    private String dimensionName;
+
     public UpdatePolicy withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
@@ -240,6 +250,40 @@ public class UpdatePolicy {
         this.level = level;
     }
 
+    public UpdatePolicy withNamespace(String namespace) {
+        this.namespace = namespace;
+        return this;
+    }
+
+    /**
+     * 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
+     * @return namespace
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public UpdatePolicy withDimensionName(String dimensionName) {
+        this.dimensionName = dimensionName;
+        return this;
+    }
+
+    /**
+     * 资源维度，必须以字母开头，多维度用\",\"分割，只能包含0-9/a-z/A-Z/_/-，每个维度的最大长度为32
+     * @return dimensionName
+     */
+    public String getDimensionName() {
+        return dimensionName;
+    }
+
+    public void setDimensionName(String dimensionName) {
+        this.dimensionName = dimensionName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -254,13 +298,24 @@ public class UpdatePolicy {
             && Objects.equals(this.comparisonOperator, that.comparisonOperator)
             && Objects.equals(this.value, that.value) && Objects.equals(this.unit, that.unit)
             && Objects.equals(this.type, that.type) && Objects.equals(this.count, that.count)
-            && Objects.equals(this.suppressDuration, that.suppressDuration) && Objects.equals(this.level, that.level);
+            && Objects.equals(this.suppressDuration, that.suppressDuration) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimensionName, that.dimensionName);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(metricName, period, filter, comparisonOperator, value, unit, type, count, suppressDuration, level);
+        return Objects.hash(metricName,
+            period,
+            filter,
+            comparisonOperator,
+            value,
+            unit,
+            type,
+            count,
+            suppressDuration,
+            level,
+            namespace,
+            dimensionName);
     }
 
     @Override
@@ -277,6 +332,8 @@ public class UpdatePolicy {
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    suppressDuration: ").append(toIndentedString(suppressDuration)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    dimensionName: ").append(toIndentedString(dimensionName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -132,7 +132,7 @@ public class TriggerCondition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_times")
 
-    private String triggerTimes;
+    private Integer triggerTimes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "trigger_interval")
@@ -606,7 +606,7 @@ public class TriggerCondition {
         this.promqlExpr = promqlExpr;
     }
 
-    public TriggerCondition withTriggerTimes(String triggerTimes) {
+    public TriggerCondition withTriggerTimes(Integer triggerTimes) {
         this.triggerTimes = triggerTimes;
         return this;
     }
@@ -615,11 +615,11 @@ public class TriggerCondition {
      * 连续周期个数。
      * @return triggerTimes
      */
-    public String getTriggerTimes() {
+    public Integer getTriggerTimes() {
         return triggerTimes;
     }
 
-    public void setTriggerTimes(String triggerTimes) {
+    public void setTriggerTimes(Integer triggerTimes) {
         this.triggerTimes = triggerTimes;
     }
 

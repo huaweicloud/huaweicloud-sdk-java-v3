@@ -46,7 +46,7 @@ public class ShowSmartLiveRequest {
     }
 
     /**
-     * 剧本ID。
+     * 直播间ID。
      * @return roomId
      */
     public String getRoomId() {

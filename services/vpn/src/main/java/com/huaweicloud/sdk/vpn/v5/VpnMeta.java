@@ -142,6 +142,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionsLogConfigRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionsLogConfigResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnGatewayCertificateRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnGatewayCertificateResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ShowVpnGatewayRoutingTableRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ShowVpnGatewayRoutingTableResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnUserGroupRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnUserGroupResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnUserRequest;
@@ -1586,6 +1588,57 @@ public class VpnMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowVgwRequest::getVgwId, ShowVgwRequest::setVgwId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowVpnGatewayRoutingTableRequest, ShowVpnGatewayRoutingTableResponse> showVpnGatewayRoutingTable =
+        genForShowVpnGatewayRoutingTable();
+
+    private static HttpRequestDef<ShowVpnGatewayRoutingTableRequest, ShowVpnGatewayRoutingTableResponse> genForShowVpnGatewayRoutingTable() {
+        // basic
+        HttpRequestDef.Builder<ShowVpnGatewayRoutingTableRequest, ShowVpnGatewayRoutingTableResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowVpnGatewayRoutingTableRequest.class,
+                    ShowVpnGatewayRoutingTableResponse.class)
+                .withName("ShowVpnGatewayRoutingTable")
+                .withUri("/v5/{project_id}/vpn-gateways/{vgw_id}/routing-table")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vgw_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVpnGatewayRoutingTableRequest::getVgwId,
+                ShowVpnGatewayRoutingTableRequest::setVgwId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowVpnGatewayRoutingTableRequest::getLimit,
+                ShowVpnGatewayRoutingTableRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowVpnGatewayRoutingTableRequest::getMarker,
+                ShowVpnGatewayRoutingTableRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowVpnGatewayRoutingTableRequest::getOffset,
+                ShowVpnGatewayRoutingTableRequest::setOffset));
+        builder.<Boolean>withRequestField("is_include_nexthop_resource",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ShowVpnGatewayRoutingTableRequest::getIsIncludeNexthopResource,
+                ShowVpnGatewayRoutingTableRequest::setIsIncludeNexthopResource));
 
         // response
 

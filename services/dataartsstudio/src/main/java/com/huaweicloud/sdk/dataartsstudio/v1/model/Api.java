@@ -39,9 +39,41 @@ public class Api {
     private Boolean logFlag;
 
     /**
-     * Api类型
+     * Gets or Sets apiType
      */
     public static final class ApiTypeEnum {
+
+        /**
+         * Enum API_SPECIFIC_TYPE_CONFIGURATION for value: "API_SPECIFIC_TYPE_CONFIGURATION"
+         */
+        public static final ApiTypeEnum API_SPECIFIC_TYPE_CONFIGURATION =
+            new ApiTypeEnum("API_SPECIFIC_TYPE_CONFIGURATION");
+
+        /**
+         * Enum API_SPECIFIC_TYPE_SCRIPT for value: "API_SPECIFIC_TYPE_SCRIPT"
+         */
+        public static final ApiTypeEnum API_SPECIFIC_TYPE_SCRIPT = new ApiTypeEnum("API_SPECIFIC_TYPE_SCRIPT");
+
+        /**
+         * Enum API_SPECIFIC_TYPE_MYBATIS for value: "API_SPECIFIC_TYPE_MYBATIS"
+         */
+        public static final ApiTypeEnum API_SPECIFIC_TYPE_MYBATIS = new ApiTypeEnum("API_SPECIFIC_TYPE_MYBATIS");
+
+        /**
+         * Enum API_SPECIFIC_TYPE_GROOVY for value: "API_SPECIFIC_TYPE_GROOVY"
+         */
+        public static final ApiTypeEnum API_SPECIFIC_TYPE_GROOVY = new ApiTypeEnum("API_SPECIFIC_TYPE_GROOVY");
+
+        /**
+         * Enum API_SPECIFIC_TYPE_REGISTER for value: "API_SPECIFIC_TYPE_REGISTER"
+         */
+        public static final ApiTypeEnum API_SPECIFIC_TYPE_REGISTER = new ApiTypeEnum("API_SPECIFIC_TYPE_REGISTER");
+
+        /**
+         * Enum API_SPECIFIC_TYPE_ORCHESTRATE for value: "API_SPECIFIC_TYPE_ORCHESTRATE"
+         */
+        public static final ApiTypeEnum API_SPECIFIC_TYPE_ORCHESTRATE =
+            new ApiTypeEnum("API_SPECIFIC_TYPE_ORCHESTRATE");
 
         /**
          * Enum API_TYPE_CREATE for value: "API_TYPE_CREATE"
@@ -57,6 +89,12 @@ public class Api {
 
         private static Map<String, ApiTypeEnum> createStaticFields() {
             Map<String, ApiTypeEnum> map = new HashMap<>();
+            map.put("API_SPECIFIC_TYPE_CONFIGURATION", API_SPECIFIC_TYPE_CONFIGURATION);
+            map.put("API_SPECIFIC_TYPE_SCRIPT", API_SPECIFIC_TYPE_SCRIPT);
+            map.put("API_SPECIFIC_TYPE_MYBATIS", API_SPECIFIC_TYPE_MYBATIS);
+            map.put("API_SPECIFIC_TYPE_GROOVY", API_SPECIFIC_TYPE_GROOVY);
+            map.put("API_SPECIFIC_TYPE_REGISTER", API_SPECIFIC_TYPE_REGISTER);
+            map.put("API_SPECIFIC_TYPE_ORCHESTRATE", API_SPECIFIC_TYPE_ORCHESTRATE);
             map.put("API_TYPE_CREATE", API_TYPE_CREATE);
             map.put("API_TYPE_REGISTER", API_TYPE_REGISTER);
             return Collections.unmodifiableMap(map);
@@ -194,80 +232,10 @@ public class Api {
 
     private AuthTypeEnum authType;
 
-    /**
-     * 发布类型
-     */
-    public static final class PublishTypeEnum {
-
-        /**
-         * Enum PUBLISH_TYPE_PUBLIC for value: "PUBLISH_TYPE_PUBLIC"
-         */
-        public static final PublishTypeEnum PUBLISH_TYPE_PUBLIC = new PublishTypeEnum("PUBLISH_TYPE_PUBLIC");
-
-        /**
-         * Enum PUBLISH_TYPE_PRIVATE for value: "PUBLISH_TYPE_PRIVATE"
-         */
-        public static final PublishTypeEnum PUBLISH_TYPE_PRIVATE = new PublishTypeEnum("PUBLISH_TYPE_PRIVATE");
-
-        private static final Map<String, PublishTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, PublishTypeEnum> createStaticFields() {
-            Map<String, PublishTypeEnum> map = new HashMap<>();
-            map.put("PUBLISH_TYPE_PUBLIC", PUBLISH_TYPE_PUBLIC);
-            map.put("PUBLISH_TYPE_PRIVATE", PUBLISH_TYPE_PRIVATE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        PublishTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static PublishTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PublishTypeEnum(value));
-        }
-
-        public static PublishTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof PublishTypeEnum) {
-                return this.value.equals(((PublishTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "publish_type")
+    @JsonProperty(value = "retention_period")
 
-    private PublishTypeEnum publishType;
+    private Integer retentionPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "manager")
@@ -280,7 +248,7 @@ public class Api {
     private String path;
 
     /**
-     * api 协议
+     * Gets or Sets protocol
      */
     public static final class ProtocolEnum {
 
@@ -355,7 +323,7 @@ public class Api {
     private ProtocolEnum protocol;
 
     /**
-     * 请求类型
+     * Gets or Sets requestType
      */
     public static final class RequestTypeEnum {
 
@@ -435,7 +403,7 @@ public class Api {
     private List<String> tags = null;
 
     /**
-     * 可见性
+     * Gets or Sets visibility
      */
     public static final class VisibilityEnum {
 
@@ -514,6 +482,106 @@ public class Api {
     @JsonProperty(value = "visibility")
 
     private VisibilityEnum visibility;
+
+    /**
+     * Gets or Sets publishType
+     */
+    public static final class PublishTypeEnum {
+
+        /**
+         * Enum PUBLISH_TYPE_PUBLIC for value: "PUBLISH_TYPE_PUBLIC"
+         */
+        public static final PublishTypeEnum PUBLISH_TYPE_PUBLIC = new PublishTypeEnum("PUBLISH_TYPE_PUBLIC");
+
+        /**
+         * Enum PUBLISH_TYPE_PRIVATE for value: "PUBLISH_TYPE_PRIVATE"
+         */
+        public static final PublishTypeEnum PUBLISH_TYPE_PRIVATE = new PublishTypeEnum("PUBLISH_TYPE_PRIVATE");
+
+        private static final Map<String, PublishTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, PublishTypeEnum> createStaticFields() {
+            Map<String, PublishTypeEnum> map = new HashMap<>();
+            map.put("PUBLISH_TYPE_PUBLIC", PUBLISH_TYPE_PUBLIC);
+            map.put("PUBLISH_TYPE_PRIVATE", PUBLISH_TYPE_PRIVATE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        PublishTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static PublishTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PublishTypeEnum(value));
+        }
+
+        public static PublishTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof PublishTypeEnum) {
+                return this.value.equals(((PublishTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publish_type")
+
+    private PublishTypeEnum publishType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_mask_switch")
+
+    private Boolean dataMaskSwitch;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_mask_paras")
+
+    private List<DataMaskParas> dataMaskParas = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "body")
+
+    private String body;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "datasource_config_list")
+
+    private List<DatasourceConfig> datasourceConfigList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "groovy_content")
+
+    private String groovyContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_paras")
@@ -604,7 +672,7 @@ public class Api {
     }
 
     /**
-     * Api类型
+     * Get apiType
      * @return apiType
      */
     public ApiTypeEnum getApiType() {
@@ -632,21 +700,21 @@ public class Api {
         this.authType = authType;
     }
 
-    public Api withPublishType(PublishTypeEnum publishType) {
-        this.publishType = publishType;
+    public Api withRetentionPeriod(Integer retentionPeriod) {
+        this.retentionPeriod = retentionPeriod;
         return this;
     }
 
     /**
-     * 发布类型
-     * @return publishType
+     * 最低保留期限，单位小时。
+     * @return retentionPeriod
      */
-    public PublishTypeEnum getPublishType() {
-        return publishType;
+    public Integer getRetentionPeriod() {
+        return retentionPeriod;
     }
 
-    public void setPublishType(PublishTypeEnum publishType) {
-        this.publishType = publishType;
+    public void setRetentionPeriod(Integer retentionPeriod) {
+        this.retentionPeriod = retentionPeriod;
     }
 
     public Api withManager(String manager) {
@@ -655,7 +723,7 @@ public class Api {
     }
 
     /**
-     * api 审核人
+     * API审核人。
      * @return manager
      */
     public String getManager() {
@@ -672,7 +740,7 @@ public class Api {
     }
 
     /**
-     * api路径
+     * API路径。
      * @return path
      */
     public String getPath() {
@@ -689,7 +757,7 @@ public class Api {
     }
 
     /**
-     * api 协议
+     * Get protocol
      * @return protocol
      */
     public ProtocolEnum getProtocol() {
@@ -706,7 +774,7 @@ public class Api {
     }
 
     /**
-     * 请求类型
+     * Get requestType
      * @return requestType
      */
     public RequestTypeEnum getRequestType() {
@@ -739,7 +807,7 @@ public class Api {
     }
 
     /**
-     * 标签
+     * 标签。
      * @return tags
      */
     public List<String> getTags() {
@@ -756,7 +824,7 @@ public class Api {
     }
 
     /**
-     * 可见性
+     * Get visibility
      * @return visibility
      */
     public VisibilityEnum getVisibility() {
@@ -765,6 +833,140 @@ public class Api {
 
     public void setVisibility(VisibilityEnum visibility) {
         this.visibility = visibility;
+    }
+
+    public Api withPublishType(PublishTypeEnum publishType) {
+        this.publishType = publishType;
+        return this;
+    }
+
+    /**
+     * Get publishType
+     * @return publishType
+     */
+    public PublishTypeEnum getPublishType() {
+        return publishType;
+    }
+
+    public void setPublishType(PublishTypeEnum publishType) {
+        this.publishType = publishType;
+    }
+
+    public Api withDataMaskSwitch(Boolean dataMaskSwitch) {
+        this.dataMaskSwitch = dataMaskSwitch;
+        return this;
+    }
+
+    /**
+     * 数据脱敏开关。
+     * @return dataMaskSwitch
+     */
+    public Boolean getDataMaskSwitch() {
+        return dataMaskSwitch;
+    }
+
+    public void setDataMaskSwitch(Boolean dataMaskSwitch) {
+        this.dataMaskSwitch = dataMaskSwitch;
+    }
+
+    public Api withDataMaskParas(List<DataMaskParas> dataMaskParas) {
+        this.dataMaskParas = dataMaskParas;
+        return this;
+    }
+
+    public Api addDataMaskParasItem(DataMaskParas dataMaskParasItem) {
+        if (this.dataMaskParas == null) {
+            this.dataMaskParas = new ArrayList<>();
+        }
+        this.dataMaskParas.add(dataMaskParasItem);
+        return this;
+    }
+
+    public Api withDataMaskParas(Consumer<List<DataMaskParas>> dataMaskParasSetter) {
+        if (this.dataMaskParas == null) {
+            this.dataMaskParas = new ArrayList<>();
+        }
+        dataMaskParasSetter.accept(this.dataMaskParas);
+        return this;
+    }
+
+    /**
+     * 数据脱敏配置。
+     * @return dataMaskParas
+     */
+    public List<DataMaskParas> getDataMaskParas() {
+        return dataMaskParas;
+    }
+
+    public void setDataMaskParas(List<DataMaskParas> dataMaskParas) {
+        this.dataMaskParas = dataMaskParas;
+    }
+
+    public Api withBody(String body) {
+        this.body = body;
+        return this;
+    }
+
+    /**
+     * 请求体内容描述，仅注册类API使用。
+     * @return body
+     */
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public Api withDatasourceConfigList(List<DatasourceConfig> datasourceConfigList) {
+        this.datasourceConfigList = datasourceConfigList;
+        return this;
+    }
+
+    public Api addDatasourceConfigListItem(DatasourceConfig datasourceConfigListItem) {
+        if (this.datasourceConfigList == null) {
+            this.datasourceConfigList = new ArrayList<>();
+        }
+        this.datasourceConfigList.add(datasourceConfigListItem);
+        return this;
+    }
+
+    public Api withDatasourceConfigList(Consumer<List<DatasourceConfig>> datasourceConfigListSetter) {
+        if (this.datasourceConfigList == null) {
+            this.datasourceConfigList = new ArrayList<>();
+        }
+        datasourceConfigListSetter.accept(this.datasourceConfigList);
+        return this;
+    }
+
+    /**
+     * 多数据源配置信息，仅Groovy类API使用。
+     * @return datasourceConfigList
+     */
+    public List<DatasourceConfig> getDatasourceConfigList() {
+        return datasourceConfigList;
+    }
+
+    public void setDatasourceConfigList(List<DatasourceConfig> datasourceConfigList) {
+        this.datasourceConfigList = datasourceConfigList;
+    }
+
+    public Api withGroovyContent(String groovyContent) {
+        this.groovyContent = groovyContent;
+        return this;
+    }
+
+    /**
+     * Groovy文本，仅Groovy类API使用。
+     * @return groovyContent
+     */
+    public String getGroovyContent() {
+        return groovyContent;
+    }
+
+    public void setGroovyContent(String groovyContent) {
+        this.groovyContent = groovyContent;
     }
 
     public Api withRequestParas(List<RequestPara> requestParas) {
@@ -789,7 +991,7 @@ public class Api {
     }
 
     /**
-     * API请求参数列表
+     * API请求参数列表。
      * @return requestParas
      */
     public List<RequestPara> getRequestParas() {
@@ -864,10 +1066,15 @@ public class Api {
         return Objects.equals(this.catalogId, that.catalogId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.logFlag, that.logFlag)
             && Objects.equals(this.apiType, that.apiType) && Objects.equals(this.authType, that.authType)
-            && Objects.equals(this.publishType, that.publishType) && Objects.equals(this.manager, that.manager)
+            && Objects.equals(this.retentionPeriod, that.retentionPeriod) && Objects.equals(this.manager, that.manager)
             && Objects.equals(this.path, that.path) && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.requestType, that.requestType) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.visibility, that.visibility) && Objects.equals(this.requestParas, that.requestParas)
+            && Objects.equals(this.visibility, that.visibility) && Objects.equals(this.publishType, that.publishType)
+            && Objects.equals(this.dataMaskSwitch, that.dataMaskSwitch)
+            && Objects.equals(this.dataMaskParas, that.dataMaskParas) && Objects.equals(this.body, that.body)
+            && Objects.equals(this.datasourceConfigList, that.datasourceConfigList)
+            && Objects.equals(this.groovyContent, that.groovyContent)
+            && Objects.equals(this.requestParas, that.requestParas)
             && Objects.equals(this.datasourceConfig, that.datasourceConfig)
             && Objects.equals(this.backendConfig, that.backendConfig);
     }
@@ -880,13 +1087,19 @@ public class Api {
             logFlag,
             apiType,
             authType,
-            publishType,
+            retentionPeriod,
             manager,
             path,
             protocol,
             requestType,
             tags,
             visibility,
+            publishType,
+            dataMaskSwitch,
+            dataMaskParas,
+            body,
+            datasourceConfigList,
+            groovyContent,
             requestParas,
             datasourceConfig,
             backendConfig);
@@ -902,13 +1115,19 @@ public class Api {
         sb.append("    logFlag: ").append(toIndentedString(logFlag)).append("\n");
         sb.append("    apiType: ").append(toIndentedString(apiType)).append("\n");
         sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
-        sb.append("    publishType: ").append(toIndentedString(publishType)).append("\n");
+        sb.append("    retentionPeriod: ").append(toIndentedString(retentionPeriod)).append("\n");
         sb.append("    manager: ").append(toIndentedString(manager)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    requestType: ").append(toIndentedString(requestType)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
+        sb.append("    publishType: ").append(toIndentedString(publishType)).append("\n");
+        sb.append("    dataMaskSwitch: ").append(toIndentedString(dataMaskSwitch)).append("\n");
+        sb.append("    dataMaskParas: ").append(toIndentedString(dataMaskParas)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("    datasourceConfigList: ").append(toIndentedString(datasourceConfigList)).append("\n");
+        sb.append("    groovyContent: ").append(toIndentedString(groovyContent)).append("\n");
         sb.append("    requestParas: ").append(toIndentedString(requestParas)).append("\n");
         sb.append("    datasourceConfig: ").append(toIndentedString(datasourceConfig)).append("\n");
         sb.append("    backendConfig: ").append(toIndentedString(backendConfig)).append("\n");

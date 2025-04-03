@@ -13,7 +13,7 @@ import java.util.Objects;
 /**
  * 确认直播间剧本请求
  */
-public class ConfirmSmartLiveRoomReq {
+public class ConfirmSmarLiveRoomReq {
 
     /**
      * 确认操作。 * confirm: 确认。 * reject: 拒绝。
@@ -95,7 +95,7 @@ public class ConfirmSmartLiveRoomReq {
 
     private String scriptVersion;
 
-    public ConfirmSmartLiveRoomReq withAction(ActionEnum action) {
+    public ConfirmSmarLiveRoomReq withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
@@ -112,7 +112,7 @@ public class ConfirmSmartLiveRoomReq {
         this.action = action;
     }
 
-    public ConfirmSmartLiveRoomReq withScriptVersion(String scriptVersion) {
+    public ConfirmSmarLiveRoomReq withScriptVersion(String scriptVersion) {
         this.scriptVersion = scriptVersion;
         return this;
     }
@@ -137,7 +137,7 @@ public class ConfirmSmartLiveRoomReq {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfirmSmartLiveRoomReq that = (ConfirmSmartLiveRoomReq) obj;
+        ConfirmSmarLiveRoomReq that = (ConfirmSmarLiveRoomReq) obj;
         return Objects.equals(this.action, that.action) && Objects.equals(this.scriptVersion, that.scriptVersion);
     }
 
@@ -149,7 +149,7 @@ public class ConfirmSmartLiveRoomReq {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ConfirmSmartLiveRoomReq {\n");
+        sb.append("class ConfirmSmarLiveRoomReq {\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    scriptVersion: ").append(toIndentedString(scriptVersion)).append("\n");
         sb.append("}");

@@ -512,6 +512,16 @@ public class AggregationLogicTableVO {
 
     private EnvTypeEnum envType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model_id")
+
+    private String modelId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model")
+
+    private WorkspaceVO model;
+
     public AggregationLogicTableVO withId(String id) {
         this.id = id;
         return this;
@@ -1711,6 +1721,49 @@ public class AggregationLogicTableVO {
         this.envType = envType;
     }
 
+    public AggregationLogicTableVO withModelId(String modelId) {
+        this.modelId = modelId;
+        return this;
+    }
+
+    /**
+     * 所属模型ID，ID字符串。
+     * @return modelId
+     */
+    public String getModelId() {
+        return modelId;
+    }
+
+    public void setModelId(String modelId) {
+        this.modelId = modelId;
+    }
+
+    public AggregationLogicTableVO withModel(WorkspaceVO model) {
+        this.model = model;
+        return this;
+    }
+
+    public AggregationLogicTableVO withModel(Consumer<WorkspaceVO> modelSetter) {
+        if (this.model == null) {
+            this.model = new WorkspaceVO();
+            modelSetter.accept(this.model);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get model
+     * @return model
+     */
+    public WorkspaceVO getModel() {
+        return model;
+    }
+
+    public void setModel(WorkspaceVO model) {
+        this.model = model;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1763,7 +1816,8 @@ public class AggregationLogicTableVO {
             && Objects.equals(this.sql, that.sql) && Objects.equals(this.devVersion, that.devVersion)
             && Objects.equals(this.prodVersion, that.prodVersion)
             && Objects.equals(this.devVersionName, that.devVersionName)
-            && Objects.equals(this.prodVersionName, that.prodVersionName) && Objects.equals(this.envType, that.envType);
+            && Objects.equals(this.prodVersionName, that.prodVersionName) && Objects.equals(this.envType, that.envType)
+            && Objects.equals(this.modelId, that.modelId) && Objects.equals(this.model, that.model);
     }
 
     @Override
@@ -1834,7 +1888,9 @@ public class AggregationLogicTableVO {
             prodVersion,
             devVersionName,
             prodVersionName,
-            envType);
+            envType,
+            modelId,
+            model);
     }
 
     @Override
@@ -1908,6 +1964,8 @@ public class AggregationLogicTableVO {
         sb.append("    devVersionName: ").append(toIndentedString(devVersionName)).append("\n");
         sb.append("    prodVersionName: ").append(toIndentedString(prodVersionName)).append("\n");
         sb.append("    envType: ").append(toIndentedString(envType)).append("\n");
+        sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
+        sb.append("    model: ").append(toIndentedString(model)).append("\n");
         sb.append("}");
         return sb.toString();
     }

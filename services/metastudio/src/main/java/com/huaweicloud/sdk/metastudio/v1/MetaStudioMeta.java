@@ -23,9 +23,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CommitVoiceTrainingJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmFileUploadResponse;
-import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmartLiveRoomReq;
-import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmartLiveRoomRequest;
-import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmartLiveRoomResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmarLiveRoomReq;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmarLiveRoomRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ConfirmSmarLiveRoomResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ConfirmTrainingSegmentResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ControlDigitalHumanLiveReq;
@@ -92,6 +92,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateLargeFileResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateLivePlatformReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateLivePlatformRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateLivePlatformResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateMetaStudioOrdersReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateMetaStudioOrdersRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateMetaStudioOrdersResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateOnceCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateOnceCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreatePacifyWordsReq;
@@ -1298,6 +1301,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAssetSummaryRequest::getXSdkDate, ListAssetSummaryRequest::setXSdkDate));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetSummaryRequest::getXAppUserId, ListAssetSummaryRequest::setXAppUserId));
         builder.<ListAssetSummarysReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1472,6 +1480,11 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ListAssetsRequest.SupportedServiceEnum.class),
             f -> f.withMarshaller(ListAssetsRequest::getSupportedService, ListAssetsRequest::setSupportedService));
+        builder.<String>withRequestField("app_user_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAssetsRequest::getAppUserId, ListAssetsRequest::setAppUserId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -4814,6 +4827,53 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateMetaStudioOrdersRequest, CreateMetaStudioOrdersResponse> createMetaStudioOrders =
+        genForCreateMetaStudioOrders();
+
+    private static HttpRequestDef<CreateMetaStudioOrdersRequest, CreateMetaStudioOrdersResponse> genForCreateMetaStudioOrders() {
+        // basic
+        HttpRequestDef.Builder<CreateMetaStudioOrdersRequest, CreateMetaStudioOrdersResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateMetaStudioOrdersRequest.class, CreateMetaStudioOrdersResponse.class)
+            .withName("CreateMetaStudioOrders")
+            .withUri("/v1/{project_id}/mss/public/orders")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMetaStudioOrdersRequest::getAuthorization,
+                CreateMetaStudioOrdersRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMetaStudioOrdersRequest::getXSdkDate,
+                CreateMetaStudioOrdersRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMetaStudioOrdersRequest::getXProjectId,
+                CreateMetaStudioOrdersRequest::setXProjectId));
+        builder.<CreateMetaStudioOrdersReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateMetaStudioOrdersReq.class),
+            f -> f.withMarshaller(CreateMetaStudioOrdersRequest::getBody, CreateMetaStudioOrdersRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateMetaStudioOrdersResponse::getXRequestId,
+                CreateMetaStudioOrdersResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<BatchDeletePacifyWordsRequest, BatchDeletePacifyWordsResponse> batchDeletePacifyWords =
         genForBatchDeletePacifyWords();
 
@@ -7273,51 +7333,51 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ConfirmSmartLiveRoomRequest, ConfirmSmartLiveRoomResponse> confirmSmartLiveRoom =
-        genForConfirmSmartLiveRoom();
+    public static final HttpRequestDef<ConfirmSmarLiveRoomRequest, ConfirmSmarLiveRoomResponse> confirmSmarLiveRoom =
+        genForConfirmSmarLiveRoom();
 
-    private static HttpRequestDef<ConfirmSmartLiveRoomRequest, ConfirmSmartLiveRoomResponse> genForConfirmSmartLiveRoom() {
+    private static HttpRequestDef<ConfirmSmarLiveRoomRequest, ConfirmSmarLiveRoomResponse> genForConfirmSmarLiveRoom() {
         // basic
-        HttpRequestDef.Builder<ConfirmSmartLiveRoomRequest, ConfirmSmartLiveRoomResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, ConfirmSmartLiveRoomRequest.class, ConfirmSmartLiveRoomResponse.class)
-            .withName("ConfirmSmartLiveRoom")
-            .withUri("/v1/{project_id}/smart-live-rooms/{room_id}/confirm")
-            .withContentType("application/json");
+        HttpRequestDef.Builder<ConfirmSmarLiveRoomRequest, ConfirmSmarLiveRoomResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ConfirmSmarLiveRoomRequest.class, ConfirmSmarLiveRoomResponse.class)
+                .withName("ConfirmSmarLiveRoom")
+                .withUri("/v1/{project_id}/smart-live-rooms/{room_id}/confirm")
+                .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("room_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmSmartLiveRoomRequest::getRoomId, ConfirmSmartLiveRoomRequest::setRoomId));
+            f -> f.withMarshaller(ConfirmSmarLiveRoomRequest::getRoomId, ConfirmSmarLiveRoomRequest::setRoomId));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmSmartLiveRoomRequest::getAuthorization,
-                ConfirmSmartLiveRoomRequest::setAuthorization));
+            f -> f.withMarshaller(ConfirmSmarLiveRoomRequest::getAuthorization,
+                ConfirmSmarLiveRoomRequest::setAuthorization));
         builder.<String>withRequestField("X-Sdk-Date",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmSmartLiveRoomRequest::getXSdkDate, ConfirmSmartLiveRoomRequest::setXSdkDate));
+            f -> f.withMarshaller(ConfirmSmarLiveRoomRequest::getXSdkDate, ConfirmSmarLiveRoomRequest::setXSdkDate));
         builder.<String>withRequestField("X-Project-Id",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmSmartLiveRoomRequest::getXProjectId,
-                ConfirmSmartLiveRoomRequest::setXProjectId));
+            f -> f.withMarshaller(ConfirmSmarLiveRoomRequest::getXProjectId,
+                ConfirmSmarLiveRoomRequest::setXProjectId));
         builder.<String>withRequestField("X-App-UserId",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ConfirmSmartLiveRoomRequest::getXAppUserId,
-                ConfirmSmartLiveRoomRequest::setXAppUserId));
-        builder.<ConfirmSmartLiveRoomReq>withRequestField("body",
+            f -> f.withMarshaller(ConfirmSmarLiveRoomRequest::getXAppUserId,
+                ConfirmSmarLiveRoomRequest::setXAppUserId));
+        builder.<ConfirmSmarLiveRoomReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ConfirmSmartLiveRoomReq.class),
-            f -> f.withMarshaller(ConfirmSmartLiveRoomRequest::getBody, ConfirmSmartLiveRoomRequest::setBody));
+            TypeCasts.uncheckedConversion(ConfirmSmarLiveRoomReq.class),
+            f -> f.withMarshaller(ConfirmSmarLiveRoomRequest::getBody, ConfirmSmarLiveRoomRequest::setBody));
 
         // response
 
@@ -7325,8 +7385,8 @@ public class MetaStudioMeta {
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(ConfirmSmartLiveRoomResponse::getXRequestId,
-                ConfirmSmartLiveRoomResponse::setXRequestId));
+            f -> f.withMarshaller(ConfirmSmarLiveRoomResponse::getXRequestId,
+                ConfirmSmarLiveRoomResponse::setXRequestId));
         return builder.build();
     }
 
@@ -8207,6 +8267,11 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTenantResourcesRequest::getSubResource,
                 ListTenantResourcesRequest::setSubResource));
+        builder.<Integer>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTenantResourcesRequest::getStatus, ListTenantResourcesRequest::setStatus));
         builder.<String>withRequestField("Authorization",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -261,12 +260,12 @@ public class ResourceUsageInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "amount")
 
-    private BigDecimal amount;
+    private Float amount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "usage")
 
-    private BigDecimal usage;
+    private Float usage;
 
     /**
      * 单位。 * NUM：个数(形象/声音) * MIN：分钟（视频制作） * HOUR：小时 （直播） * CHANNEL：路（直播/交互） * GB：GB(资产管理) * MILLION_WORDS：百万字 * TEN_THOUSAND_WORDS：万字 * TIME：次
@@ -481,7 +480,7 @@ public class ResourceUsageInfo {
         this.resourceSource = resourceSource;
     }
 
-    public ResourceUsageInfo withAmount(BigDecimal amount) {
+    public ResourceUsageInfo withAmount(Float amount) {
         this.amount = amount;
         return this;
     }
@@ -492,15 +491,15 @@ public class ResourceUsageInfo {
      * maximum: 1E+6
      * @return amount
      */
-    public BigDecimal getAmount() {
+    public Float getAmount() {
         return amount;
     }
 
-    public void setAmount(BigDecimal amount) {
+    public void setAmount(Float amount) {
         this.amount = amount;
     }
 
-    public ResourceUsageInfo withUsage(BigDecimal usage) {
+    public ResourceUsageInfo withUsage(Float usage) {
         this.usage = usage;
         return this;
     }
@@ -511,11 +510,11 @@ public class ResourceUsageInfo {
      * maximum: 1E+6
      * @return usage
      */
-    public BigDecimal getUsage() {
+    public Float getUsage() {
         return usage;
     }
 
-    public void setUsage(BigDecimal usage) {
+    public void setUsage(Float usage) {
         this.usage = usage;
     }
 

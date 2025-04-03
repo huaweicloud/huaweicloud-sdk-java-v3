@@ -384,6 +384,16 @@ public class FactLogicTableVO {
 
     private List<SecrecyLevelVO> secrecyLevels = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model_id")
+
+    private String modelId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "model")
+
+    private WorkspaceVO model;
+
     public FactLogicTableVO withId(String id) {
         this.id = id;
         return this;
@@ -1533,6 +1543,49 @@ public class FactLogicTableVO {
         this.secrecyLevels = secrecyLevels;
     }
 
+    public FactLogicTableVO withModelId(String modelId) {
+        this.modelId = modelId;
+        return this;
+    }
+
+    /**
+     * 所属模型ID，ID字符串。
+     * @return modelId
+     */
+    public String getModelId() {
+        return modelId;
+    }
+
+    public void setModelId(String modelId) {
+        this.modelId = modelId;
+    }
+
+    public FactLogicTableVO withModel(WorkspaceVO model) {
+        this.model = model;
+        return this;
+    }
+
+    public FactLogicTableVO withModel(Consumer<WorkspaceVO> modelSetter) {
+        if (this.model == null) {
+            this.model = new WorkspaceVO();
+            modelSetter.accept(this.model);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get model
+     * @return model
+     */
+    public WorkspaceVO getModel() {
+        return model;
+    }
+
+    public void setModel(WorkspaceVO model) {
+        this.model = model;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1578,7 +1631,8 @@ public class FactLogicTableVO {
             && Objects.equals(this.prodVersion, that.prodVersion)
             && Objects.equals(this.devVersionName, that.devVersionName)
             && Objects.equals(this.prodVersionName, that.prodVersionName) && Objects.equals(this.envType, that.envType)
-            && Objects.equals(this.secrecyLevels, that.secrecyLevels);
+            && Objects.equals(this.secrecyLevels, that.secrecyLevels) && Objects.equals(this.modelId, that.modelId)
+            && Objects.equals(this.model, that.model);
     }
 
     @Override
@@ -1641,7 +1695,9 @@ public class FactLogicTableVO {
             devVersionName,
             prodVersionName,
             envType,
-            secrecyLevels);
+            secrecyLevels,
+            modelId,
+            model);
     }
 
     @Override
@@ -1707,6 +1763,8 @@ public class FactLogicTableVO {
         sb.append("    prodVersionName: ").append(toIndentedString(prodVersionName)).append("\n");
         sb.append("    envType: ").append(toIndentedString(envType)).append("\n");
         sb.append("    secrecyLevels: ").append(toIndentedString(secrecyLevels)).append("\n");
+        sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
+        sb.append("    model: ").append(toIndentedString(model)).append("\n");
         sb.append("}");
         return sb.toString();
     }

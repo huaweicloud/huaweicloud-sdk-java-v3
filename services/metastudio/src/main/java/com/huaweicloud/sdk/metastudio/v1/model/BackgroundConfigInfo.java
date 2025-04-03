@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 背景配置。
@@ -123,6 +124,11 @@ public class BackgroundConfigInfo {
 
     private String backgroundAssetId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "background_image_config")
+
+    private BackgroundImageConfig backgroundImageConfig;
+
     public BackgroundConfigInfo withBackgroundType(BackgroundTypeEnum backgroundType) {
         this.backgroundType = backgroundType;
         return this;
@@ -191,6 +197,32 @@ public class BackgroundConfigInfo {
         this.backgroundAssetId = backgroundAssetId;
     }
 
+    public BackgroundConfigInfo withBackgroundImageConfig(BackgroundImageConfig backgroundImageConfig) {
+        this.backgroundImageConfig = backgroundImageConfig;
+        return this;
+    }
+
+    public BackgroundConfigInfo withBackgroundImageConfig(Consumer<BackgroundImageConfig> backgroundImageConfigSetter) {
+        if (this.backgroundImageConfig == null) {
+            this.backgroundImageConfig = new BackgroundImageConfig();
+            backgroundImageConfigSetter.accept(this.backgroundImageConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get backgroundImageConfig
+     * @return backgroundImageConfig
+     */
+    public BackgroundImageConfig getBackgroundImageConfig() {
+        return backgroundImageConfig;
+    }
+
+    public void setBackgroundImageConfig(BackgroundImageConfig backgroundImageConfig) {
+        this.backgroundImageConfig = backgroundImageConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -203,12 +235,14 @@ public class BackgroundConfigInfo {
         return Objects.equals(this.backgroundType, that.backgroundType)
             && Objects.equals(this.backgroundConfig, that.backgroundConfig)
             && Objects.equals(this.backgroundColorConfig, that.backgroundColorConfig)
-            && Objects.equals(this.backgroundAssetId, that.backgroundAssetId);
+            && Objects.equals(this.backgroundAssetId, that.backgroundAssetId)
+            && Objects.equals(this.backgroundImageConfig, that.backgroundImageConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(backgroundType, backgroundConfig, backgroundColorConfig, backgroundAssetId);
+        return Objects
+            .hash(backgroundType, backgroundConfig, backgroundColorConfig, backgroundAssetId, backgroundImageConfig);
     }
 
     @Override
@@ -219,6 +253,7 @@ public class BackgroundConfigInfo {
         sb.append("    backgroundConfig: ").append(toIndentedString(backgroundConfig)).append("\n");
         sb.append("    backgroundColorConfig: ").append(toIndentedString(backgroundColorConfig)).append("\n");
         sb.append("    backgroundAssetId: ").append(toIndentedString(backgroundAssetId)).append("\n");
+        sb.append("    backgroundImageConfig: ").append(toIndentedString(backgroundImageConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

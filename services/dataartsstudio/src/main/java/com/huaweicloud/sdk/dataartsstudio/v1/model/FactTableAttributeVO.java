@@ -44,6 +44,11 @@ public class FactTableAttributeVO {
     private DimensionVO dimension;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dimension_attr_id")
+
+    private String dimensionAttrId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_primary_key")
 
     private Boolean isPrimaryKey;
@@ -237,6 +242,23 @@ public class FactTableAttributeVO {
 
     public void setDimension(DimensionVO dimension) {
         this.dimension = dimension;
+    }
+
+    public FactTableAttributeVO withDimensionAttrId(String dimensionAttrId) {
+        this.dimensionAttrId = dimensionAttrId;
+        return this;
+    }
+
+    /**
+     * 维度属性ID，ID字符串。
+     * @return dimensionAttrId
+     */
+    public String getDimensionAttrId() {
+        return dimensionAttrId;
+    }
+
+    public void setDimensionAttrId(String dimensionAttrId) {
+        this.dimensionAttrId = dimensionAttrId;
     }
 
     public FactTableAttributeVO withIsPrimaryKey(Boolean isPrimaryKey) {
@@ -588,6 +610,7 @@ public class FactTableAttributeVO {
         return Objects.equals(this.id, that.id) && Objects.equals(this.factLogicTableId, that.factLogicTableId)
             && Objects.equals(this.ordinal, that.ordinal) && Objects.equals(this.dimensionId, that.dimensionId)
             && Objects.equals(this.role, that.role) && Objects.equals(this.dimension, that.dimension)
+            && Objects.equals(this.dimensionAttrId, that.dimensionAttrId)
             && Objects.equals(this.isPrimaryKey, that.isPrimaryKey)
             && Objects.equals(this.isPartitionKey, that.isPartitionKey)
             && Objects.equals(this.isForeignKey, that.isForeignKey)
@@ -610,6 +633,7 @@ public class FactTableAttributeVO {
             dimensionId,
             role,
             dimension,
+            dimensionAttrId,
             isPrimaryKey,
             isPartitionKey,
             isForeignKey,
@@ -639,6 +663,7 @@ public class FactTableAttributeVO {
         sb.append("    dimensionId: ").append(toIndentedString(dimensionId)).append("\n");
         sb.append("    role: ").append(toIndentedString(role)).append("\n");
         sb.append("    dimension: ").append(toIndentedString(dimension)).append("\n");
+        sb.append("    dimensionAttrId: ").append(toIndentedString(dimensionAttrId)).append("\n");
         sb.append("    isPrimaryKey: ").append(toIndentedString(isPrimaryKey)).append("\n");
         sb.append("    isPartitionKey: ").append(toIndentedString(isPartitionKey)).append("\n");
         sb.append("    isForeignKey: ").append(toIndentedString(isForeignKey)).append("\n");

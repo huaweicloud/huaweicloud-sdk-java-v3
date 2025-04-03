@@ -46,6 +46,11 @@ public class VpnUser {
 
     private OffsetDateTime updatedAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "static_ip")
+
+    private String staticIp;
+
     public VpnUser withId(String id) {
         this.id = id;
         return this;
@@ -165,6 +170,23 @@ public class VpnUser {
         this.updatedAt = updatedAt;
     }
 
+    public VpnUser withStaticIp(String staticIp) {
+        this.staticIp = staticIp;
+        return this;
+    }
+
+    /**
+     * 静态客户端IP地址，disable表示随机分配客户端IP
+     * @return staticIp
+     */
+    public String getStaticIp() {
+        return staticIp;
+    }
+
+    public void setStaticIp(String staticIp) {
+        this.staticIp = staticIp;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -177,12 +199,12 @@ public class VpnUser {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description) && Objects.equals(this.userGroupId, that.userGroupId)
             && Objects.equals(this.userGroupName, that.userGroupName) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.staticIp, that.staticIp);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, userGroupId, userGroupName, createdAt, updatedAt);
+        return Objects.hash(id, name, description, userGroupId, userGroupName, createdAt, updatedAt, staticIp);
     }
 
     @Override
@@ -196,6 +218,7 @@ public class VpnUser {
         sb.append("    userGroupName: ").append(toIndentedString(userGroupName)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    staticIp: ").append(toIndentedString(staticIp)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -200,16 +200,6 @@ public class UpdateResponseVpnConnection {
     private List<String> peerSubnetsV6 = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tunnel_local_address_v6")
-
-    private String tunnelLocalAddressV6;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tunnel_peer_address_v6")
-
-    private String tunnelPeerAddressV6;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_rules_v6")
 
     private List<PolicyRule> policyRulesV6 = null;
@@ -653,40 +643,6 @@ public class UpdateResponseVpnConnection {
         this.peerSubnetsV6 = peerSubnetsV6;
     }
 
-    public UpdateResponseVpnConnection withTunnelLocalAddressV6(String tunnelLocalAddressV6) {
-        this.tunnelLocalAddressV6 = tunnelLocalAddressV6;
-        return this;
-    }
-
-    /**
-     * 本端ipv6隧道口地址
-     * @return tunnelLocalAddressV6
-     */
-    public String getTunnelLocalAddressV6() {
-        return tunnelLocalAddressV6;
-    }
-
-    public void setTunnelLocalAddressV6(String tunnelLocalAddressV6) {
-        this.tunnelLocalAddressV6 = tunnelLocalAddressV6;
-    }
-
-    public UpdateResponseVpnConnection withTunnelPeerAddressV6(String tunnelPeerAddressV6) {
-        this.tunnelPeerAddressV6 = tunnelPeerAddressV6;
-        return this;
-    }
-
-    /**
-     * 对端ipv6隧道口地址
-     * @return tunnelPeerAddressV6
-     */
-    public String getTunnelPeerAddressV6() {
-        return tunnelPeerAddressV6;
-    }
-
-    public void setTunnelPeerAddressV6(String tunnelPeerAddressV6) {
-        this.tunnelPeerAddressV6 = tunnelPeerAddressV6;
-    }
-
     public UpdateResponseVpnConnection withPolicyRulesV6(List<PolicyRule> policyRulesV6) {
         this.policyRulesV6 = policyRulesV6;
         return this;
@@ -743,8 +699,6 @@ public class UpdateResponseVpnConnection {
             && Objects.equals(this.connectionMonitorId, that.connectionMonitorId)
             && Objects.equals(this.haRole, that.haRole) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.peerSubnetsV6, that.peerSubnetsV6)
-            && Objects.equals(this.tunnelLocalAddressV6, that.tunnelLocalAddressV6)
-            && Objects.equals(this.tunnelPeerAddressV6, that.tunnelPeerAddressV6)
             && Objects.equals(this.policyRulesV6, that.policyRulesV6);
     }
 
@@ -771,8 +725,6 @@ public class UpdateResponseVpnConnection {
             haRole,
             tags,
             peerSubnetsV6,
-            tunnelLocalAddressV6,
-            tunnelPeerAddressV6,
             policyRulesV6);
     }
 
@@ -801,8 +753,6 @@ public class UpdateResponseVpnConnection {
         sb.append("    haRole: ").append(toIndentedString(haRole)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    peerSubnetsV6: ").append(toIndentedString(peerSubnetsV6)).append("\n");
-        sb.append("    tunnelLocalAddressV6: ").append(toIndentedString(tunnelLocalAddressV6)).append("\n");
-        sb.append("    tunnelPeerAddressV6: ").append(toIndentedString(tunnelPeerAddressV6)).append("\n");
         sb.append("    policyRulesV6: ").append(toIndentedString(policyRulesV6)).append("\n");
         sb.append("}");
         return sb.toString();

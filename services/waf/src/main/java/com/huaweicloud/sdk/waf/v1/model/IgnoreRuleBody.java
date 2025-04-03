@@ -198,7 +198,7 @@ public class IgnoreRuleBody {
     }
 
     /**
-     * 版本号，0代表v1旧版本，1代表v2新版本；mode为0时，不存在conditions字段，存在url和url_logic字段；mode为1时，不存在url和url_logic字段，存在conditions字段
+     * 版本号，0代表v1旧版本，1代表v2新版本；mode为0时，不存在conditions和multi_conditions字段，存在url和url_logic字段；mode为1时，不存在url和url_logic字段，存在conditions或multi_conditions字段，具体以实际返回结果为准
      * @return mode
      */
     public Integer getMode() {

@@ -110,6 +110,11 @@ public class ServiceList {
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "supported_editions")
+
+    private List<String> supportedEditions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_border_group")
 
     private String publicBorderGroup;
@@ -491,6 +496,39 @@ public class ServiceList {
         this.description = description;
     }
 
+    public ServiceList withSupportedEditions(List<String> supportedEditions) {
+        this.supportedEditions = supportedEditions;
+        return this;
+    }
+
+    public ServiceList addSupportedEditionsItem(String supportedEditionsItem) {
+        if (this.supportedEditions == null) {
+            this.supportedEditions = new ArrayList<>();
+        }
+        this.supportedEditions.add(supportedEditionsItem);
+        return this;
+    }
+
+    public ServiceList withSupportedEditions(Consumer<List<String>> supportedEditionsSetter) {
+        if (this.supportedEditions == null) {
+            this.supportedEditions = new ArrayList<>();
+        }
+        supportedEditionsSetter.accept(this.supportedEditions);
+        return this;
+    }
+
+    /**
+     * 终端节点服务支持的类型，取值范围为profession-专业型，basic-基础型
+     * @return supportedEditions
+     */
+    public List<String> getSupportedEditions() {
+        return supportedEditions;
+    }
+
+    public void setSupportedEditions(List<String> supportedEditions) {
+        this.supportedEditions = supportedEditions;
+    }
+
     public ServiceList withPublicBorderGroup(String publicBorderGroup) {
         this.publicBorderGroup = publicBorderGroup;
         return this;
@@ -544,6 +582,7 @@ public class ServiceList {
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.connectionCount, that.connectionCount)
             && Objects.equals(this.tcpProxy, that.tcpProxy) && Objects.equals(this.error, that.error)
             && Objects.equals(this.description, that.description)
+            && Objects.equals(this.supportedEditions, that.supportedEditions)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
             && Objects.equals(this.enablePolicy, that.enablePolicy);
     }
@@ -569,6 +608,7 @@ public class ServiceList {
             tcpProxy,
             error,
             description,
+            supportedEditions,
             publicBorderGroup,
             enablePolicy);
     }
@@ -596,6 +636,7 @@ public class ServiceList {
         sb.append("    tcpProxy: ").append(toIndentedString(tcpProxy)).append("\n");
         sb.append("    error: ").append(toIndentedString(error)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    supportedEditions: ").append(toIndentedString(supportedEditions)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("    enablePolicy: ").append(toIndentedString(enablePolicy)).append("\n");
         sb.append("}");

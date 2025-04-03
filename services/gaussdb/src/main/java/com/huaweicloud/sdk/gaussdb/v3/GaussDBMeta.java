@@ -254,6 +254,7 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMySqlProxyRouteModeRespon
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMysqlDnsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyGaussMysqlDnsResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyInternalIpRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyNodeDataIpRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyNodePriorityRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyNodePriorityRequestBody;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyNodePriorityResponse;
@@ -516,6 +517,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissio
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarrocksParamsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarrocksParamsResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTaurusNodeDataIpRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTaurusNodeDataIpResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeDatabaseRequest;
@@ -5741,6 +5744,46 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(UpdateSlowlogSensitiveSwitchRequestBody.class),
             f -> f.withMarshaller(UpdateSlowlogSensitiveSwitchRequest::getBody,
                 UpdateSlowlogSensitiveSwitchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTaurusNodeDataIpRequest, UpdateTaurusNodeDataIpResponse> updateTaurusNodeDataIp =
+        genForUpdateTaurusNodeDataIp();
+
+    private static HttpRequestDef<UpdateTaurusNodeDataIpRequest, UpdateTaurusNodeDataIpResponse> genForUpdateTaurusNodeDataIp() {
+        // basic
+        HttpRequestDef.Builder<UpdateTaurusNodeDataIpRequest, UpdateTaurusNodeDataIpResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateTaurusNodeDataIpRequest.class, UpdateTaurusNodeDataIpResponse.class)
+            .withName("UpdateTaurusNodeDataIp")
+            .withUri("/v3/{project_id}/instances/{instance_id}/{node_id}/internal-ip")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTaurusNodeDataIpRequest::getInstanceId,
+                UpdateTaurusNodeDataIpRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTaurusNodeDataIpRequest::getNodeId, UpdateTaurusNodeDataIpRequest::setNodeId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTaurusNodeDataIpRequest::getXLanguage,
+                UpdateTaurusNodeDataIpRequest::setXLanguage));
+        builder.<ModifyNodeDataIpRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyNodeDataIpRequest.class),
+            f -> f.withMarshaller(UpdateTaurusNodeDataIpRequest::getBody, UpdateTaurusNodeDataIpRequest::setBody));
 
         // response
 

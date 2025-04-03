@@ -25,6 +25,16 @@ public class VideoLayerConfig {
 
     private Integer loopCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "video_sound")
+
+    private Integer videoSound;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_play_the_entire_video")
+
+    private Boolean isPlayTheEntireVideo;
+
     public VideoLayerConfig withVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
         return this;
@@ -78,6 +88,42 @@ public class VideoLayerConfig {
         this.loopCount = loopCount;
     }
 
+    public VideoLayerConfig withVideoSound(Integer videoSound) {
+        this.videoSound = videoSound;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 视频声音大小，0 - 100，表示开启视频声音原视频音量的百分比  特殊取值： * 0：表示不开启声音（默认值）  **约束限制**： 不涉及。
+     * minimum: 0
+     * maximum: 100
+     * @return videoSound
+     */
+    public Integer getVideoSound() {
+        return videoSound;
+    }
+
+    public void setVideoSound(Integer videoSound) {
+        this.videoSound = videoSound;
+    }
+
+    public VideoLayerConfig withIsPlayTheEntireVideo(Boolean isPlayTheEntireVideo) {
+        this.isPlayTheEntireVideo = isPlayTheEntireVideo;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否播放完整个视频，true表示播放完整个视频，false表示当场景文本/音频结束时，视频也同时不再播放。  特殊取值： 默认值为false  **约束限制**： 不涉及。
+     * @return isPlayTheEntireVideo
+     */
+    public Boolean getIsPlayTheEntireVideo() {
+        return isPlayTheEntireVideo;
+    }
+
+    public void setIsPlayTheEntireVideo(Boolean isPlayTheEntireVideo) {
+        this.isPlayTheEntireVideo = isPlayTheEntireVideo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +134,13 @@ public class VideoLayerConfig {
         }
         VideoLayerConfig that = (VideoLayerConfig) obj;
         return Objects.equals(this.videoUrl, that.videoUrl) && Objects.equals(this.videoCoverUrl, that.videoCoverUrl)
-            && Objects.equals(this.loopCount, that.loopCount);
+            && Objects.equals(this.loopCount, that.loopCount) && Objects.equals(this.videoSound, that.videoSound)
+            && Objects.equals(this.isPlayTheEntireVideo, that.isPlayTheEntireVideo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(videoUrl, videoCoverUrl, loopCount);
+        return Objects.hash(videoUrl, videoCoverUrl, loopCount, videoSound, isPlayTheEntireVideo);
     }
 
     @Override
@@ -103,6 +150,8 @@ public class VideoLayerConfig {
         sb.append("    videoUrl: ").append(toIndentedString(videoUrl)).append("\n");
         sb.append("    videoCoverUrl: ").append(toIndentedString(videoCoverUrl)).append("\n");
         sb.append("    loopCount: ").append(toIndentedString(loopCount)).append("\n");
+        sb.append("    videoSound: ").append(toIndentedString(videoSound)).append("\n");
+        sb.append("    isPlayTheEntireVideo: ").append(toIndentedString(isPlayTheEntireVideo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

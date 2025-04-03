@@ -121,6 +121,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionsLogConfigRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnConnectionsLogConfigResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnGatewayCertificateRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnGatewayCertificateResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ShowVpnGatewayRoutingTableRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ShowVpnGatewayRoutingTableResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnUserGroupRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnUserGroupResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowVpnUserRequest;
@@ -1487,6 +1489,33 @@ public class VpnClient {
      */
     public SyncInvoker<ShowVgwRequest, ShowVgwResponse> showVgwInvoker(ShowVgwRequest request) {
         return new SyncInvoker<>(request, VpnMeta.showVgw, hcClient);
+    }
+
+    /**
+     * 查询VPN网关路由表
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVpnGatewayRoutingTableRequest 请求对象
+     * @return ShowVpnGatewayRoutingTableResponse
+     */
+    public ShowVpnGatewayRoutingTableResponse showVpnGatewayRoutingTable(ShowVpnGatewayRoutingTableRequest request) {
+        return hcClient.syncInvokeHttp(request, VpnMeta.showVpnGatewayRoutingTable);
+    }
+
+    /**
+     * 查询VPN网关路由表
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowVpnGatewayRoutingTableRequest 请求对象
+     * @return SyncInvoker<ShowVpnGatewayRoutingTableRequest, ShowVpnGatewayRoutingTableResponse>
+     */
+    public SyncInvoker<ShowVpnGatewayRoutingTableRequest, ShowVpnGatewayRoutingTableResponse> showVpnGatewayRoutingTableInvoker(
+        ShowVpnGatewayRoutingTableRequest request) {
+        return new SyncInvoker<>(request, VpnMeta.showVpnGatewayRoutingTable, hcClient);
     }
 
     /**

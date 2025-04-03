@@ -192,11 +192,6 @@ public class AutopilotClusterSpec {
     private Boolean enableSWRImageAccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enableAutopilot")
-
-    private Boolean enableAutopilot;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ipv6enable")
 
     private Boolean ipv6enable;
@@ -492,23 +487,6 @@ public class AutopilotClusterSpec {
 
     public void setEnableSWRImageAccess(Boolean enableSWRImageAccess) {
         this.enableSWRImageAccess = enableSWRImageAccess;
-    }
-
-    public AutopilotClusterSpec withEnableAutopilot(Boolean enableAutopilot) {
-        this.enableAutopilot = enableAutopilot;
-        return this;
-    }
-
-    /**
-     * 是否为Autopilot集群。
-     * @return enableAutopilot
-     */
-    public Boolean getEnableAutopilot() {
-        return enableAutopilot;
-    }
-
-    public void setEnableAutopilot(Boolean enableAutopilot) {
-        this.enableAutopilot = enableAutopilot;
     }
 
     public AutopilotClusterSpec withIpv6enable(Boolean ipv6enable) {
@@ -835,7 +813,6 @@ public class AutopilotClusterSpec {
             && Objects.equals(this.description, that.description) && Objects.equals(this.customSan, that.customSan)
             && Objects.equals(this.enableSnat, that.enableSnat)
             && Objects.equals(this.enableSWRImageAccess, that.enableSWRImageAccess)
-            && Objects.equals(this.enableAutopilot, that.enableAutopilot)
             && Objects.equals(this.ipv6enable, that.ipv6enable) && Objects.equals(this.hostNetwork, that.hostNetwork)
             && Objects.equals(this.containerNetwork, that.containerNetwork)
             && Objects.equals(this.eniNetwork, that.eniNetwork)
@@ -860,7 +837,6 @@ public class AutopilotClusterSpec {
             customSan,
             enableSnat,
             enableSWRImageAccess,
-            enableAutopilot,
             ipv6enable,
             hostNetwork,
             containerNetwork,
@@ -889,7 +865,6 @@ public class AutopilotClusterSpec {
         sb.append("    customSan: ").append(toIndentedString(customSan)).append("\n");
         sb.append("    enableSnat: ").append(toIndentedString(enableSnat)).append("\n");
         sb.append("    enableSWRImageAccess: ").append(toIndentedString(enableSWRImageAccess)).append("\n");
-        sb.append("    enableAutopilot: ").append(toIndentedString(enableAutopilot)).append("\n");
         sb.append("    ipv6enable: ").append(toIndentedString(ipv6enable)).append("\n");
         sb.append("    hostNetwork: ").append(toIndentedString(hostNetwork)).append("\n");
         sb.append("    containerNetwork: ").append(toIndentedString(containerNetwork)).append("\n");

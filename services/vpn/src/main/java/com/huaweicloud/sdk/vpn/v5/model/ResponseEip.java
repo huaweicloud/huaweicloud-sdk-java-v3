@@ -141,6 +141,11 @@ public class ResponseEip {
 
     private String bandwidthBillingInfo;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "share_type")
+
+    private String shareType;
+
     public ResponseEip withId(String id) {
         this.id = id;
         return this;
@@ -313,6 +318,23 @@ public class ResponseEip {
         this.bandwidthBillingInfo = bandwidthBillingInfo;
     }
 
+    public ResponseEip withShareType(String shareType) {
+        this.shareType = shareType;
+        return this;
+    }
+
+    /**
+     * 功能说明：类型  \"WHOLE\"为共享带宽，\"PER\"为独占带宽
+     * @return shareType
+     */
+    public String getShareType() {
+        return shareType;
+    }
+
+    public void setShareType(String shareType) {
+        this.shareType = shareType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -328,7 +350,8 @@ public class ResponseEip {
             && Objects.equals(this.bandwidthId, that.bandwidthId)
             && Objects.equals(this.bandwidthSize, that.bandwidthSize)
             && Objects.equals(this.bandwidthName, that.bandwidthName)
-            && Objects.equals(this.bandwidthBillingInfo, that.bandwidthBillingInfo);
+            && Objects.equals(this.bandwidthBillingInfo, that.bandwidthBillingInfo)
+            && Objects.equals(this.shareType, that.shareType);
     }
 
     @Override
@@ -342,7 +365,8 @@ public class ResponseEip {
             bandwidthId,
             bandwidthSize,
             bandwidthName,
-            bandwidthBillingInfo);
+            bandwidthBillingInfo,
+            shareType);
     }
 
     @Override
@@ -359,6 +383,7 @@ public class ResponseEip {
         sb.append("    bandwidthSize: ").append(toIndentedString(bandwidthSize)).append("\n");
         sb.append("    bandwidthName: ").append(toIndentedString(bandwidthName)).append("\n");
         sb.append("    bandwidthBillingInfo: ").append(toIndentedString(bandwidthBillingInfo)).append("\n");
+        sb.append("    shareType: ").append(toIndentedString(shareType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

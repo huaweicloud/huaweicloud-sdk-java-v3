@@ -205,6 +205,87 @@ public class ShowSmartLiveResponse extends SdkResponse {
 
     private PlatformLiveDetailInfo relationLivePlatformInfo;
 
+    /**
+     * 使用的资源类型。 * PERIOD：包周期资源 * ONDEMAND：按需资源 * UNKNOW：未知资源类型。
+     */
+    public static final class UsedResourceTypeEnum {
+
+        /**
+         * Enum PERIOD for value: "PERIOD"
+         */
+        public static final UsedResourceTypeEnum PERIOD = new UsedResourceTypeEnum("PERIOD");
+
+        /**
+         * Enum ONDEMAND for value: "ONDEMAND"
+         */
+        public static final UsedResourceTypeEnum ONDEMAND = new UsedResourceTypeEnum("ONDEMAND");
+
+        /**
+         * Enum UNKNOW for value: "UNKNOW"
+         */
+        public static final UsedResourceTypeEnum UNKNOW = new UsedResourceTypeEnum("UNKNOW");
+
+        private static final Map<String, UsedResourceTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, UsedResourceTypeEnum> createStaticFields() {
+            Map<String, UsedResourceTypeEnum> map = new HashMap<>();
+            map.put("PERIOD", PERIOD);
+            map.put("ONDEMAND", ONDEMAND);
+            map.put("UNKNOW", UNKNOW);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        UsedResourceTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static UsedResourceTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UsedResourceTypeEnum(value));
+        }
+
+        public static UsedResourceTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof UsedResourceTypeEnum) {
+                return this.value.equals(((UsedResourceTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "used_resource_type")
+
+    private UsedResourceTypeEnum usedResourceType;
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
@@ -619,6 +700,23 @@ public class ShowSmartLiveResponse extends SdkResponse {
         this.relationLivePlatformInfo = relationLivePlatformInfo;
     }
 
+    public ShowSmartLiveResponse withUsedResourceType(UsedResourceTypeEnum usedResourceType) {
+        this.usedResourceType = usedResourceType;
+        return this;
+    }
+
+    /**
+     * 使用的资源类型。 * PERIOD：包周期资源 * ONDEMAND：按需资源 * UNKNOW：未知资源类型。
+     * @return usedResourceType
+     */
+    public UsedResourceTypeEnum getUsedResourceType() {
+        return usedResourceType;
+    }
+
+    public void setUsedResourceType(UsedResourceTypeEnum usedResourceType) {
+        this.usedResourceType = usedResourceType;
+    }
+
     public ShowSmartLiveResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -662,6 +760,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
             && Objects.equals(this.coStreamerConfig, that.coStreamerConfig)
             && Objects.equals(this.liveJobLog, that.liveJobLog)
             && Objects.equals(this.relationLivePlatformInfo, that.relationLivePlatformInfo)
+            && Objects.equals(this.usedResourceType, that.usedResourceType)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
@@ -687,6 +786,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
             coStreamerConfig,
             liveJobLog,
             relationLivePlatformInfo,
+            usedResourceType,
             xRequestId);
     }
 
@@ -714,6 +814,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
         sb.append("    coStreamerConfig: ").append(toIndentedString(coStreamerConfig)).append("\n");
         sb.append("    liveJobLog: ").append(toIndentedString(liveJobLog)).append("\n");
         sb.append("    relationLivePlatformInfo: ").append(toIndentedString(relationLivePlatformInfo)).append("\n");
+        sb.append("    usedResourceType: ").append(toIndentedString(usedResourceType)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

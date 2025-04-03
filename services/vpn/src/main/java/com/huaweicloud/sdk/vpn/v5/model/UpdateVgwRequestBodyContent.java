@@ -24,6 +24,11 @@ public class UpdateVgwRequestBodyContent {
     private List<String> localSubnets = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "local_subnets_v6")
+
+    private List<String> localSubnetsV6 = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "eip_id_1")
 
     private String eipId1;
@@ -86,6 +91,39 @@ public class UpdateVgwRequestBodyContent {
 
     public void setLocalSubnets(List<String> localSubnets) {
         this.localSubnets = localSubnets;
+    }
+
+    public UpdateVgwRequestBodyContent withLocalSubnetsV6(List<String> localSubnetsV6) {
+        this.localSubnetsV6 = localSubnetsV6;
+        return this;
+    }
+
+    public UpdateVgwRequestBodyContent addLocalSubnetsV6Item(String localSubnetsV6Item) {
+        if (this.localSubnetsV6 == null) {
+            this.localSubnetsV6 = new ArrayList<>();
+        }
+        this.localSubnetsV6.add(localSubnetsV6Item);
+        return this;
+    }
+
+    public UpdateVgwRequestBodyContent withLocalSubnetsV6(Consumer<List<String>> localSubnetsV6Setter) {
+        if (this.localSubnetsV6 == null) {
+            this.localSubnetsV6 = new ArrayList<>();
+        }
+        localSubnetsV6Setter.accept(this.localSubnetsV6);
+        return this;
+    }
+
+    /**
+     * 使能ipv6的本端子网
+     * @return localSubnetsV6
+     */
+    public List<String> getLocalSubnetsV6() {
+        return localSubnetsV6;
+    }
+
+    public void setLocalSubnetsV6(List<String> localSubnetsV6) {
+        this.localSubnetsV6 = localSubnetsV6;
     }
 
     public UpdateVgwRequestBodyContent withEipId1(String eipId1) {
@@ -158,13 +196,13 @@ public class UpdateVgwRequestBodyContent {
         }
         UpdateVgwRequestBodyContent that = (UpdateVgwRequestBodyContent) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.localSubnets, that.localSubnets)
-            && Objects.equals(this.eipId1, that.eipId1) && Objects.equals(this.eipId2, that.eipId2)
-            && Objects.equals(this.policyTemplate, that.policyTemplate);
+            && Objects.equals(this.localSubnetsV6, that.localSubnetsV6) && Objects.equals(this.eipId1, that.eipId1)
+            && Objects.equals(this.eipId2, that.eipId2) && Objects.equals(this.policyTemplate, that.policyTemplate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, localSubnets, eipId1, eipId2, policyTemplate);
+        return Objects.hash(name, localSubnets, localSubnetsV6, eipId1, eipId2, policyTemplate);
     }
 
     @Override
@@ -173,6 +211,7 @@ public class UpdateVgwRequestBodyContent {
         sb.append("class UpdateVgwRequestBodyContent {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    localSubnets: ").append(toIndentedString(localSubnets)).append("\n");
+        sb.append("    localSubnetsV6: ").append(toIndentedString(localSubnetsV6)).append("\n");
         sb.append("    eipId1: ").append(toIndentedString(eipId1)).append("\n");
         sb.append("    eipId2: ").append(toIndentedString(eipId2)).append("\n");
         sb.append("    policyTemplate: ").append(toIndentedString(policyTemplate)).append("\n");

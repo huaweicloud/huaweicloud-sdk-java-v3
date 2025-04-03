@@ -25,6 +25,11 @@ public class ShootScriptAudioFileItem {
 
     private String audioFileDownloadUrl;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "audio_id")
+
+    private Integer audioId;
+
     public ShootScriptAudioFileItem withSequenceNo(Integer sequenceNo) {
         this.sequenceNo = sequenceNo;
         return this;
@@ -78,6 +83,25 @@ public class ShootScriptAudioFileItem {
         this.audioFileDownloadUrl = audioFileDownloadUrl;
     }
 
+    public ShootScriptAudioFileItem withAudioId(Integer audioId) {
+        this.audioId = audioId;
+        return this;
+    }
+
+    /**
+     * audio id
+     * minimum: 0
+     * maximum: 10000
+     * @return audioId
+     */
+    public Integer getAudioId() {
+        return audioId;
+    }
+
+    public void setAudioId(Integer audioId) {
+        this.audioId = audioId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -89,12 +113,13 @@ public class ShootScriptAudioFileItem {
         ShootScriptAudioFileItem that = (ShootScriptAudioFileItem) obj;
         return Objects.equals(this.sequenceNo, that.sequenceNo)
             && Objects.equals(this.audioFileUploadUrl, that.audioFileUploadUrl)
-            && Objects.equals(this.audioFileDownloadUrl, that.audioFileDownloadUrl);
+            && Objects.equals(this.audioFileDownloadUrl, that.audioFileDownloadUrl)
+            && Objects.equals(this.audioId, that.audioId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sequenceNo, audioFileUploadUrl, audioFileDownloadUrl);
+        return Objects.hash(sequenceNo, audioFileUploadUrl, audioFileDownloadUrl, audioId);
     }
 
     @Override
@@ -104,6 +129,7 @@ public class ShootScriptAudioFileItem {
         sb.append("    sequenceNo: ").append(toIndentedString(sequenceNo)).append("\n");
         sb.append("    audioFileUploadUrl: ").append(toIndentedString(audioFileUploadUrl)).append("\n");
         sb.append("    audioFileDownloadUrl: ").append(toIndentedString(audioFileDownloadUrl)).append("\n");
+        sb.append("    audioId: ").append(toIndentedString(audioId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

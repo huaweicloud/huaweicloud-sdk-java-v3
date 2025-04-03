@@ -405,6 +405,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissio
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarRocksDatabaseUserPermissionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarrocksParamsRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateStarrocksParamsResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTaurusNodeDataIpRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTaurusNodeDataIpResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpdateTransactionSplitStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.UpgradeGaussMySqlInstanceDatabaseRequest;
@@ -4411,6 +4413,35 @@ public class GaussDBClient {
     public SyncInvoker<UpdateSlowlogSensitiveSwitchRequest, UpdateSlowlogSensitiveSwitchResponse> updateSlowlogSensitiveSwitchInvoker(
         UpdateSlowlogSensitiveSwitchRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.updateSlowlogSensitiveSwitch, hcClient);
+    }
+
+    /**
+     * 修改只读节点的读内网地址
+     *
+     * 修改只读节点的读内网地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTaurusNodeDataIpRequest 请求对象
+     * @return UpdateTaurusNodeDataIpResponse
+     */
+    public UpdateTaurusNodeDataIpResponse updateTaurusNodeDataIp(UpdateTaurusNodeDataIpRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateTaurusNodeDataIp);
+    }
+
+    /**
+     * 修改只读节点的读内网地址
+     *
+     * 修改只读节点的读内网地址。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTaurusNodeDataIpRequest 请求对象
+     * @return SyncInvoker<UpdateTaurusNodeDataIpRequest, UpdateTaurusNodeDataIpResponse>
+     */
+    public SyncInvoker<UpdateTaurusNodeDataIpRequest, UpdateTaurusNodeDataIpResponse> updateTaurusNodeDataIpInvoker(
+        UpdateTaurusNodeDataIpRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateTaurusNodeDataIp, hcClient);
     }
 
     /**

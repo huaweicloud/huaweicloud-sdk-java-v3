@@ -40,6 +40,11 @@ public class StartSmartLiveResponse extends SdkResponse {
     private List<LiveWarningItem> liveWarningInfo = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit_duration")
+
+    private Integer limitDuration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
 
     private String xRequestId;
@@ -164,6 +169,25 @@ public class StartSmartLiveResponse extends SdkResponse {
         this.liveWarningInfo = liveWarningInfo;
     }
 
+    public StartSmartLiveResponse withLimitDuration(Integer limitDuration) {
+        this.limitDuration = limitDuration;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 配置的最大直播时长。单位小时。 0 为不限制。 **约束限制**： 停止直播逻辑配置为立即停止则直播停止误差在5分钟之内。其他逻辑则加上处理时长。 **默认取值**： 不设置则表示不限时。
+     * minimum: 0
+     * maximum: 168
+     * @return limitDuration
+     */
+    public Integer getLimitDuration() {
+        return limitDuration;
+    }
+
+    public void setLimitDuration(Integer limitDuration) {
+        this.limitDuration = limitDuration;
+    }
+
     public StartSmartLiveResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -196,13 +220,19 @@ public class StartSmartLiveResponse extends SdkResponse {
             && Objects.equals(this.liveEventReportUrl, that.liveEventReportUrl)
             && Objects.equals(this.liveEventCallbackConfig, that.liveEventCallbackConfig)
             && Objects.equals(this.liveWarningInfo, that.liveWarningInfo)
+            && Objects.equals(this.limitDuration, that.limitDuration)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(jobId, rtcRoomInfo, liveEventReportUrl, liveEventCallbackConfig, liveWarningInfo, xRequestId);
+        return Objects.hash(jobId,
+            rtcRoomInfo,
+            liveEventReportUrl,
+            liveEventCallbackConfig,
+            liveWarningInfo,
+            limitDuration,
+            xRequestId);
     }
 
     @Override
@@ -214,6 +244,7 @@ public class StartSmartLiveResponse extends SdkResponse {
         sb.append("    liveEventReportUrl: ").append(toIndentedString(liveEventReportUrl)).append("\n");
         sb.append("    liveEventCallbackConfig: ").append(toIndentedString(liveEventCallbackConfig)).append("\n");
         sb.append("    liveWarningInfo: ").append(toIndentedString(liveWarningInfo)).append("\n");
+        sb.append("    limitDuration: ").append(toIndentedString(limitDuration)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

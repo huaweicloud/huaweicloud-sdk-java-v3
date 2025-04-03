@@ -346,6 +346,88 @@ public class ApiOverview {
 
     private Long createTime;
 
+    /**
+     * Gets or Sets authorizationStatus
+     */
+    public static final class AuthorizationStatusEnum {
+
+        /**
+         * Enum NO_AUTHORIZATION_REQUIRED for value: "NO_AUTHORIZATION_REQUIRED"
+         */
+        public static final AuthorizationStatusEnum NO_AUTHORIZATION_REQUIRED =
+            new AuthorizationStatusEnum("NO_AUTHORIZATION_REQUIRED");
+
+        /**
+         * Enum UNAUTHORIZED for value: "UNAUTHORIZED"
+         */
+        public static final AuthorizationStatusEnum UNAUTHORIZED = new AuthorizationStatusEnum("UNAUTHORIZED");
+
+        /**
+         * Enum AUTHORIZED for value: "AUTHORIZED"
+         */
+        public static final AuthorizationStatusEnum AUTHORIZED = new AuthorizationStatusEnum("AUTHORIZED");
+
+        private static final Map<String, AuthorizationStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, AuthorizationStatusEnum> createStaticFields() {
+            Map<String, AuthorizationStatusEnum> map = new HashMap<>();
+            map.put("NO_AUTHORIZATION_REQUIRED", NO_AUTHORIZATION_REQUIRED);
+            map.put("UNAUTHORIZED", UNAUTHORIZED);
+            map.put("AUTHORIZED", AUTHORIZED);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        AuthorizationStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AuthorizationStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthorizationStatusEnum(value));
+        }
+
+        public static AuthorizationStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AuthorizationStatusEnum) {
+                return this.value.equals(((AuthorizationStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "authorization_status")
+
+    private AuthorizationStatusEnum authorizationStatus;
+
     public ApiOverview withId(String id) {
         this.id = id;
         return this;
@@ -549,6 +631,23 @@ public class ApiOverview {
         this.createTime = createTime;
     }
 
+    public ApiOverview withAuthorizationStatus(AuthorizationStatusEnum authorizationStatus) {
+        this.authorizationStatus = authorizationStatus;
+        return this;
+    }
+
+    /**
+     * Get authorizationStatus
+     * @return authorizationStatus
+     */
+    public AuthorizationStatusEnum getAuthorizationStatus() {
+        return authorizationStatus;
+    }
+
+    public void setAuthorizationStatus(AuthorizationStatusEnum authorizationStatus) {
+        this.authorizationStatus = authorizationStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -563,7 +662,8 @@ public class ApiOverview {
             && Objects.equals(this.status, that.status) && Objects.equals(this.debugStatus, that.debugStatus)
             && Objects.equals(this.publishMessages, that.publishMessages) && Objects.equals(this.type, that.type)
             && Objects.equals(this.manager, that.manager) && Objects.equals(this.createUser, that.createUser)
-            && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.authorizationStatus, that.authorizationStatus);
     }
 
     @Override
@@ -578,7 +678,8 @@ public class ApiOverview {
             type,
             manager,
             createUser,
-            createTime);
+            createTime,
+            authorizationStatus);
     }
 
     @Override
@@ -596,6 +697,7 @@ public class ApiOverview {
         sb.append("    manager: ").append(toIndentedString(manager)).append("\n");
         sb.append("    createUser: ").append(toIndentedString(createUser)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    authorizationStatus: ").append(toIndentedString(authorizationStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }
