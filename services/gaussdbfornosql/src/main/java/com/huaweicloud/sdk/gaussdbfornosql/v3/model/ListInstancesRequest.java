@@ -21,14 +21,14 @@ public class ListInstancesRequest {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "mode")
-
-    private String mode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "datastore_type")
 
     private String datastoreType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
@@ -84,23 +84,6 @@ public class ListInstancesRequest {
         this.name = name;
     }
 
-    public ListInstancesRequest withMode(String mode) {
-        this.mode = mode;
-        return this;
-    }
-
-    /**
-     * 实例类型。   - 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis集群实例类型。   - 取值为“Sharding”，表示GeminiDB Mongo集群实例类型。   - 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。   - 取值为“InfluxdbCluster”，表示GeminiDB Influx集群实例类型。   - 取值为“InfluxdbSingle”，表示GeminiDB Influx单节点实例类型。   - 取值为“RedisReplica”，表示GeminiDB Redis性能版实例类型。   - 取值为“Replication”，表示GeminiDB Redis主备版实例类型。
-     * @return mode
-     */
-    public String getMode() {
-        return mode;
-    }
-
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
-
     public ListInstancesRequest withDatastoreType(String datastoreType) {
         this.datastoreType = datastoreType;
         return this;
@@ -116,6 +99,23 @@ public class ListInstancesRequest {
 
     public void setDatastoreType(String datastoreType) {
         this.datastoreType = datastoreType;
+    }
+
+    public ListInstancesRequest withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 实例类型。   -  取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis Proxy经典部署模式集群实例类型。    -  取值为“CloudNativeCluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis云原生部署模式集群实例类型。   -  取值为“RedisCluster”，表示GeminiDB Redis Cluster经典部署模式集群实例类型。   -  取值为“Replication”，表示GeminiDB Redis经典部署模式主备实例类型。    -  取值为“InfluxdbSingle”，表示GeminiDB Influx经典部署模式单节点实例类型。   -  取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。   -  如果不传datastore_type参数，自动忽略该参数设置。   -  默认取值：不涉及。
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
     }
 
     public ListInstancesRequest withVpcId(String vpcId) {
@@ -196,14 +196,14 @@ public class ListInstancesRequest {
         }
         ListInstancesRequest that = (ListInstancesRequest) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.mode, that.mode) && Objects.equals(this.datastoreType, that.datastoreType)
+            && Objects.equals(this.datastoreType, that.datastoreType) && Objects.equals(this.mode, that.mode)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
             && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, mode, datastoreType, vpcId, subnetId, offset, limit);
+        return Objects.hash(id, name, datastoreType, mode, vpcId, subnetId, offset, limit);
     }
 
     @Override
@@ -212,8 +212,8 @@ public class ListInstancesRequest {
         sb.append("class ListInstancesRequest {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    datastoreType: ").append(toIndentedString(datastoreType)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

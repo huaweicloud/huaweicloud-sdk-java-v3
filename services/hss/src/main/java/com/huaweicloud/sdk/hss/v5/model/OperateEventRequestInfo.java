@@ -61,7 +61,7 @@ public class OperateEventRequestInfo {
     }
 
     /**
-     * 事件编号
+     * 事件ID
      * @return eventId
      */
     public String getEventId() {

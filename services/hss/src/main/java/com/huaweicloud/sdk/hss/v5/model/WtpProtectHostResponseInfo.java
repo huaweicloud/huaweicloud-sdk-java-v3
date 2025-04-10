@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * WtpProtectHostResponseInfo
@@ -39,6 +40,11 @@ public class WtpProtectHostResponseInfo {
     @JsonProperty(value = "group_name")
 
     private String groupName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asset_value")
+
+    private String assetValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "os_bit")
@@ -81,9 +87,34 @@ public class WtpProtectHostResponseInfo {
     private String scheduledShutdownStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_name")
+
+    private String osName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_version")
+
+    private String osVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_status")
+
+    private String hostStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_status")
 
     private String agentStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protect_dir_num")
+
+    private Integer protectDirNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remote_backbup_info")
+
+    private WtpRemoteBackupResponseInfo remoteBackbupInfo;
 
     public WtpProtectHostResponseInfo withHostName(String hostName) {
         this.hostName = hostName;
@@ -187,6 +218,23 @@ public class WtpProtectHostResponseInfo {
         this.groupName = groupName;
     }
 
+    public WtpProtectHostResponseInfo withAssetValue(String assetValue) {
+        this.assetValue = assetValue;
+        return this;
+    }
+
+    /**
+     * 资产重要性，包含如下3种   - important ：重要资产   - common ：一般资产   - test ：测试资产
+     * @return assetValue
+     */
+    public String getAssetValue() {
+        return assetValue;
+    }
+
+    public void setAssetValue(String assetValue) {
+        this.assetValue = assetValue;
+    }
+
     public WtpProtectHostResponseInfo withOsBit(String osBit) {
         this.osBit = osBit;
         return this;
@@ -227,7 +275,7 @@ public class WtpProtectHostResponseInfo {
     }
 
     /**
-     * 防护状态   - closed : 未开启   - opened : 防护中
+     * 防护状态   - opening : 正在开启   - opened : 防护中   - open_failed : 防护失败   - partial_protection : 部分防护   - protection_interruption : 防护中断
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -329,6 +377,57 @@ public class WtpProtectHostResponseInfo {
         this.scheduledShutdownStatus = scheduledShutdownStatus;
     }
 
+    public WtpProtectHostResponseInfo withOsName(String osName) {
+        this.osName = osName;
+        return this;
+    }
+
+    /**
+     * 系统名称
+     * @return osName
+     */
+    public String getOsName() {
+        return osName;
+    }
+
+    public void setOsName(String osName) {
+        this.osName = osName;
+    }
+
+    public WtpProtectHostResponseInfo withOsVersion(String osVersion) {
+        this.osVersion = osVersion;
+        return this;
+    }
+
+    /**
+     * 系统版本
+     * @return osVersion
+     */
+    public String getOsVersion() {
+        return osVersion;
+    }
+
+    public void setOsVersion(String osVersion) {
+        this.osVersion = osVersion;
+    }
+
+    public WtpProtectHostResponseInfo withHostStatus(String hostStatus) {
+        this.hostStatus = hostStatus;
+        return this;
+    }
+
+    /**
+     * 服务器状态，包含如下4种。   - ACTIVE ：运行中。   - SHUTOFF ：关机。   - BUILDING ：创建中。   - ERROR ：故障。
+     * @return hostStatus
+     */
+    public String getHostStatus() {
+        return hostStatus;
+    }
+
+    public void setHostStatus(String hostStatus) {
+        this.hostStatus = hostStatus;
+    }
+
     public WtpProtectHostResponseInfo withAgentStatus(String agentStatus) {
         this.agentStatus = agentStatus;
         return this;
@@ -346,6 +445,52 @@ public class WtpProtectHostResponseInfo {
         this.agentStatus = agentStatus;
     }
 
+    public WtpProtectHostResponseInfo withProtectDirNum(Integer protectDirNum) {
+        this.protectDirNum = protectDirNum;
+        return this;
+    }
+
+    /**
+     * 防护目录数
+     * minimum: 0
+     * maximum: 50
+     * @return protectDirNum
+     */
+    public Integer getProtectDirNum() {
+        return protectDirNum;
+    }
+
+    public void setProtectDirNum(Integer protectDirNum) {
+        this.protectDirNum = protectDirNum;
+    }
+
+    public WtpProtectHostResponseInfo withRemoteBackbupInfo(WtpRemoteBackupResponseInfo remoteBackbupInfo) {
+        this.remoteBackbupInfo = remoteBackbupInfo;
+        return this;
+    }
+
+    public WtpProtectHostResponseInfo withRemoteBackbupInfo(
+        Consumer<WtpRemoteBackupResponseInfo> remoteBackbupInfoSetter) {
+        if (this.remoteBackbupInfo == null) {
+            this.remoteBackbupInfo = new WtpRemoteBackupResponseInfo();
+            remoteBackbupInfoSetter.accept(this.remoteBackbupInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get remoteBackbupInfo
+     * @return remoteBackbupInfo
+     */
+    public WtpRemoteBackupResponseInfo getRemoteBackbupInfo() {
+        return remoteBackbupInfo;
+    }
+
+    public void setRemoteBackbupInfo(WtpRemoteBackupResponseInfo remoteBackbupInfo) {
+        this.remoteBackbupInfo = remoteBackbupInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -358,14 +503,17 @@ public class WtpProtectHostResponseInfo {
         return Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostId, that.hostId)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.privateIp, that.privateIp)
             && Objects.equals(this.ipv6, that.ipv6) && Objects.equals(this.groupName, that.groupName)
-            && Objects.equals(this.osBit, that.osBit) && Objects.equals(this.osType, that.osType)
-            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.osBit, that.osBit)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.raspProtectStatus, that.raspProtectStatus)
             && Objects.equals(this.antiTamperingTimes, that.antiTamperingTimes)
             && Objects.equals(this.detectTamperingTimes, that.detectTamperingTimes)
             && Objects.equals(this.lastDetectTime, that.lastDetectTime)
             && Objects.equals(this.scheduledShutdownStatus, that.scheduledShutdownStatus)
-            && Objects.equals(this.agentStatus, that.agentStatus);
+            && Objects.equals(this.osName, that.osName) && Objects.equals(this.osVersion, that.osVersion)
+            && Objects.equals(this.hostStatus, that.hostStatus) && Objects.equals(this.agentStatus, that.agentStatus)
+            && Objects.equals(this.protectDirNum, that.protectDirNum)
+            && Objects.equals(this.remoteBackbupInfo, that.remoteBackbupInfo);
     }
 
     @Override
@@ -376,6 +524,7 @@ public class WtpProtectHostResponseInfo {
             privateIp,
             ipv6,
             groupName,
+            assetValue,
             osBit,
             osType,
             protectStatus,
@@ -384,7 +533,12 @@ public class WtpProtectHostResponseInfo {
             detectTamperingTimes,
             lastDetectTime,
             scheduledShutdownStatus,
-            agentStatus);
+            osName,
+            osVersion,
+            hostStatus,
+            agentStatus,
+            protectDirNum,
+            remoteBackbupInfo);
     }
 
     @Override
@@ -397,6 +551,7 @@ public class WtpProtectHostResponseInfo {
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    ipv6: ").append(toIndentedString(ipv6)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    osBit: ").append(toIndentedString(osBit)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
@@ -405,7 +560,12 @@ public class WtpProtectHostResponseInfo {
         sb.append("    detectTamperingTimes: ").append(toIndentedString(detectTamperingTimes)).append("\n");
         sb.append("    lastDetectTime: ").append(toIndentedString(lastDetectTime)).append("\n");
         sb.append("    scheduledShutdownStatus: ").append(toIndentedString(scheduledShutdownStatus)).append("\n");
+        sb.append("    osName: ").append(toIndentedString(osName)).append("\n");
+        sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
+        sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
+        sb.append("    protectDirNum: ").append(toIndentedString(protectDirNum)).append("\n");
+        sb.append("    remoteBackbupInfo: ").append(toIndentedString(remoteBackbupInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

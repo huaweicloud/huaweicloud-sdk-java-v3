@@ -26,7 +26,7 @@ public class UpdateDatabasesRequestBody {
     }
 
     /**
-     * 对实例的操作: - flush:清理数据
+     * 对实例的操作:  flush:清理数据
      * @return action
      */
     public String getAction() {

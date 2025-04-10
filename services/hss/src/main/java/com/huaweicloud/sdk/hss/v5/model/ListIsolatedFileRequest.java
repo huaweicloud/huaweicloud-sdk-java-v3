@@ -60,6 +60,26 @@ public class ListIsolatedFileRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "isolation_status")
+
+    private String isolationStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "last_days")
+
+    private Integer lastDays;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "begin_time")
+
+    private Long beginTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "end_time")
+
+    private Long endTime;
+
     public ListIsolatedFileRequest withRegion(String region) {
         this.region = region;
         return this;
@@ -83,7 +103,7 @@ public class ListIsolatedFileRequest {
     }
 
     /**
-     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -234,6 +254,76 @@ public class ListIsolatedFileRequest {
         this.limit = limit;
     }
 
+    public ListIsolatedFileRequest withIsolationStatus(String isolationStatus) {
+        this.isolationStatus = isolationStatus;
+        return this;
+    }
+
+    /**
+     * 隔离状态，包含如下:   - isolated : 已隔离   - restored : 已恢复   - isolating : 已下发隔离任务   - restoring : 已下发恢复任务
+     * @return isolationStatus
+     */
+    public String getIsolationStatus() {
+        return isolationStatus;
+    }
+
+    public void setIsolationStatus(String isolationStatus) {
+        this.isolationStatus = isolationStatus;
+    }
+
+    public ListIsolatedFileRequest withLastDays(Integer lastDays) {
+        this.lastDays = lastDays;
+        return this;
+    }
+
+    /**
+     * 查询时间范围天数，与自定义查询时间begin_time，end_time互斥
+     * minimum: 1
+     * maximum: 30
+     * @return lastDays
+     */
+    public Integer getLastDays() {
+        return lastDays;
+    }
+
+    public void setLastDays(Integer lastDays) {
+        this.lastDays = lastDays;
+    }
+
+    public ListIsolatedFileRequest withBeginTime(Long beginTime) {
+        this.beginTime = beginTime;
+        return this;
+    }
+
+    /**
+     * 自定义查询时间，与查询时间范围天数互斥，查询时间段的起始时间，毫秒级时间戳，end_time减去begin_time小于等于2天，与查询时间范围天数互斥
+     * @return beginTime
+     */
+    public Long getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(Long beginTime) {
+        this.beginTime = beginTime;
+    }
+
+    public ListIsolatedFileRequest withEndTime(Long endTime) {
+        this.endTime = endTime;
+        return this;
+    }
+
+    /**
+     * 自定义时间，查询时间段的终止时间，毫秒级时间戳，end_time减去begin_time小于等于2天，与查询时间范围天数互斥
+     * @return endTime
+     */
+    public Long getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Long endTime) {
+        this.endTime = endTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -248,7 +338,10 @@ public class ListIsolatedFileRequest {
             && Objects.equals(this.filePath, that.filePath) && Objects.equals(this.hostName, that.hostName)
             && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.publicIp, that.publicIp)
             && Objects.equals(this.fileHash, that.fileHash) && Objects.equals(this.assetValue, that.assetValue)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.isolationStatus, that.isolationStatus)
+            && Objects.equals(this.lastDays, that.lastDays) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override
@@ -262,7 +355,11 @@ public class ListIsolatedFileRequest {
             fileHash,
             assetValue,
             offset,
-            limit);
+            limit,
+            isolationStatus,
+            lastDays,
+            beginTime,
+            endTime);
     }
 
     @Override
@@ -279,6 +376,10 @@ public class ListIsolatedFileRequest {
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    isolationStatus: ").append(toIndentedString(isolationStatus)).append("\n");
+        sb.append("    lastDays: ").append(toIndentedString(lastDays)).append("\n");
+        sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
+        sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

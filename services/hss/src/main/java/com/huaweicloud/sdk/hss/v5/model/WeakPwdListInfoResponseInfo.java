@@ -39,6 +39,11 @@ public class WeakPwdListInfoResponseInfo {
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private Long updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weak_pwd_accounts")
 
     private List<WeakPwdAccountInfoResponseInfo> weakPwdAccounts = null;
@@ -128,6 +133,25 @@ public class WeakPwdListInfoResponseInfo {
         this.publicIp = publicIp;
     }
 
+    public WeakPwdListInfoResponseInfo withUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * 最近扫描时间，时间戳单位：毫秒
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return updateTime
+     */
+    public Long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+    }
+
     public WeakPwdListInfoResponseInfo withWeakPwdAccounts(List<WeakPwdAccountInfoResponseInfo> weakPwdAccounts) {
         this.weakPwdAccounts = weakPwdAccounts;
         return this;
@@ -173,13 +197,13 @@ public class WeakPwdListInfoResponseInfo {
         WeakPwdListInfoResponseInfo that = (WeakPwdListInfoResponseInfo) obj;
         return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
             && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.privateIp, that.privateIp)
-            && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.weakPwdAccounts, that.weakPwdAccounts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId, hostName, hostIp, privateIp, publicIp, weakPwdAccounts);
+        return Objects.hash(hostId, hostName, hostIp, privateIp, publicIp, updateTime, weakPwdAccounts);
     }
 
     @Override
@@ -191,6 +215,7 @@ public class WeakPwdListInfoResponseInfo {
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    weakPwdAccounts: ").append(toIndentedString(weakPwdAccounts)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -180,7 +180,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * 软件更新时间
+     * 软件更新时间，单位毫秒
      * minimum: 0
      * maximum: 4824430336000
      * @return updateTime
@@ -199,7 +199,7 @@ public class AppChangeResponseInfo {
     }
 
     /**
-     * 最近扫描时间
+     * 最近扫描时间，单位毫秒
      * minimum: 0
      * maximum: 4824430336000
      * @return recentScanTime

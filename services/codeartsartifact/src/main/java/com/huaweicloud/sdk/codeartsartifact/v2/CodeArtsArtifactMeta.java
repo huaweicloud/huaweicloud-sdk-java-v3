@@ -62,6 +62,8 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowStorageRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowStorageResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserPrivilegesRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserPrivilegesResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.TrashArtifactModelForDelete;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateArtifactoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateArtifactoryResponse;
@@ -972,6 +974,29 @@ public class CodeArtsArtifactMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowStorageRequest::getInProject, ShowStorageRequest::setInProject));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowUserPrivilegesRequest, ShowUserPrivilegesResponse> showUserPrivileges =
+        genForShowUserPrivileges();
+
+    private static HttpRequestDef<ShowUserPrivilegesRequest, ShowUserPrivilegesResponse> genForShowUserPrivileges() {
+        // basic
+        HttpRequestDef.Builder<ShowUserPrivilegesRequest, ShowUserPrivilegesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowUserPrivilegesRequest.class, ShowUserPrivilegesResponse.class)
+                .withName("ShowUserPrivileges")
+                .withUri("/cloudartifact/v3/user/{project_id}/privileges")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowUserPrivilegesRequest::getProjectId, ShowUserPrivilegesRequest::setProjectId));
 
         // response
 

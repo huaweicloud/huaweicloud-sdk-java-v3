@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.cloudpond.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -20,6 +22,11 @@ public class MarketOptions {
     @JsonProperty(value = "prepaid_options")
 
     private PrepaidOptions prepaidOptions;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "strategies")
+
+    private List<Strategy> strategies = null;
 
     public MarketOptions withChargeMode(ChargeMode chargeMode) {
         this.chargeMode = chargeMode;
@@ -64,6 +71,39 @@ public class MarketOptions {
         this.prepaidOptions = prepaidOptions;
     }
 
+    public MarketOptions withStrategies(List<Strategy> strategies) {
+        this.strategies = strategies;
+        return this;
+    }
+
+    public MarketOptions addStrategiesItem(Strategy strategiesItem) {
+        if (this.strategies == null) {
+            this.strategies = new ArrayList<>();
+        }
+        this.strategies.add(strategiesItem);
+        return this;
+    }
+
+    public MarketOptions withStrategies(Consumer<List<Strategy>> strategiesSetter) {
+        if (this.strategies == null) {
+            this.strategies = new ArrayList<>();
+        }
+        strategiesSetter.accept(this.strategies);
+        return this;
+    }
+
+    /**
+     * Get strategies
+     * @return strategies
+     */
+    public List<Strategy> getStrategies() {
+        return strategies;
+    }
+
+    public void setStrategies(List<Strategy> strategies) {
+        this.strategies = strategies;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -74,12 +114,13 @@ public class MarketOptions {
         }
         MarketOptions that = (MarketOptions) obj;
         return Objects.equals(this.chargeMode, that.chargeMode)
-            && Objects.equals(this.prepaidOptions, that.prepaidOptions);
+            && Objects.equals(this.prepaidOptions, that.prepaidOptions)
+            && Objects.equals(this.strategies, that.strategies);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(chargeMode, prepaidOptions);
+        return Objects.hash(chargeMode, prepaidOptions, strategies);
     }
 
     @Override
@@ -88,6 +129,7 @@ public class MarketOptions {
         sb.append("class MarketOptions {\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
         sb.append("    prepaidOptions: ").append(toIndentedString(prepaidOptions)).append("\n");
+        sb.append("    strategies: ").append(toIndentedString(strategies)).append("\n");
         sb.append("}");
         return sb.toString();
     }

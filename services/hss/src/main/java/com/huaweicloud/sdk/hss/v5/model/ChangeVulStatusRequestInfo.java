@@ -59,7 +59,7 @@ public class ChangeVulStatusRequestInfo {
     }
 
     /**
-     * 操作类型 - ignore : 忽略 - not_ignore : 取消忽略 - immediate_repair : 修复 - manual_repair: 人工修复 - verify : 验证 - add_to_whitelist : 加入白名单
+     * 操作类型，包含如下几种： - ignore : 忽略 - not_ignore : 取消忽略 - immediate_repair : 修复 - manual_repair: 人工修复 - verify : 验证 - add_to_whitelist : 加入白名单
      * @return operateType
      */
     public String getOperateType() {

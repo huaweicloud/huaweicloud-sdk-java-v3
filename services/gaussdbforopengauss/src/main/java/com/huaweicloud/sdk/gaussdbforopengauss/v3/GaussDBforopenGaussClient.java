@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CopyConfigurationRequest
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CopyConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateConfigurationTemplateRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateConfigurationTemplateResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateCrossCloudConstructDisasterRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateCrossCloudConstructDisasterResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDatabaseInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDatabaseInstanceResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDatabaseRequest;
@@ -67,6 +69,22 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteScheduleTaskReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterDataCacheEndRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterDataCacheEndResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterDataCacheStartRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterDataCacheStartResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterEndSimulationRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterEndSimulationResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterRecoveryFailoverRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterRecoveryFailoverResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterRestoreRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterRestoreResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterStartSimulationRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterStartSimulationResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterSwitchoverRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterSwitchoverResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudReleaseDisasterRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudReleaseDisasterResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstallKernelPluginResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListApplicableInstancesRequest;
@@ -107,6 +125,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbFlavorsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbFlavorsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDisasterRecoveryRecordRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDisasterRecoveryRecordResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesRequest;
@@ -171,6 +191,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetDrConfigRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetDrConfigResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetPwdResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResizeInstanceFlavorRequest;
@@ -203,6 +225,10 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBatchUpgradeCandidat
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBatchUpgradeCandidateVersionsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowConfigurationDetailRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowConfigurationDetailResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowCrossCloudDisasterInstanceMonitorRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowCrossCloudDisasterInstanceMonitorResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowCrossCloudDisasterRelationsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowCrossCloudDisasterRelationsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowDeploymentFormRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowDeploymentFormResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowErrorLogSwitchStatusRequest;
@@ -542,6 +568,36 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse> createConfigurationTemplateInvoker(
         CreateConfigurationTemplateRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.createConfigurationTemplate, hcClient);
+    }
+
+    /**
+     * 搭建容灾关系
+     *
+     * 搭建容灾关系（从主实例端下发）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCrossCloudConstructDisasterRequest 请求对象
+     * @return CreateCrossCloudConstructDisasterResponse
+     */
+    public CreateCrossCloudConstructDisasterResponse createCrossCloudConstructDisaster(
+        CreateCrossCloudConstructDisasterRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.createCrossCloudConstructDisaster);
+    }
+
+    /**
+     * 搭建容灾关系
+     *
+     * 搭建容灾关系（从主实例端下发）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCrossCloudConstructDisasterRequest 请求对象
+     * @return SyncInvoker<CreateCrossCloudConstructDisasterRequest, CreateCrossCloudConstructDisasterResponse>
+     */
+    public SyncInvoker<CreateCrossCloudConstructDisasterRequest, CreateCrossCloudConstructDisasterResponse> createCrossCloudConstructDisasterInvoker(
+        CreateCrossCloudConstructDisasterRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.createCrossCloudConstructDisaster, hcClient);
     }
 
     /**
@@ -1151,6 +1207,246 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 主实例结束容灾日志保持
+     *
+     * 结束stream流式容灾的日志保持功能，目前只有stream流容灾支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterDataCacheEndRequest 请求对象
+     * @return ExecuteCrossCloudDisasterDataCacheEndResponse
+     */
+    public ExecuteCrossCloudDisasterDataCacheEndResponse executeCrossCloudDisasterDataCacheEnd(
+        ExecuteCrossCloudDisasterDataCacheEndRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterDataCacheEnd);
+    }
+
+    /**
+     * 主实例结束容灾日志保持
+     *
+     * 结束stream流式容灾的日志保持功能，目前只有stream流容灾支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterDataCacheEndRequest 请求对象
+     * @return SyncInvoker<ExecuteCrossCloudDisasterDataCacheEndRequest, ExecuteCrossCloudDisasterDataCacheEndResponse>
+     */
+    public SyncInvoker<ExecuteCrossCloudDisasterDataCacheEndRequest, ExecuteCrossCloudDisasterDataCacheEndResponse> executeCrossCloudDisasterDataCacheEndInvoker(
+        ExecuteCrossCloudDisasterDataCacheEndRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterDataCacheEnd, hcClient);
+    }
+
+    /**
+     * 开始日志保持
+     *
+     * 主实例开始容灾日志保持，目前只有stream流容灾支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterDataCacheStartRequest 请求对象
+     * @return ExecuteCrossCloudDisasterDataCacheStartResponse
+     */
+    public ExecuteCrossCloudDisasterDataCacheStartResponse executeCrossCloudDisasterDataCacheStart(
+        ExecuteCrossCloudDisasterDataCacheStartRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterDataCacheStart);
+    }
+
+    /**
+     * 开始日志保持
+     *
+     * 主实例开始容灾日志保持，目前只有stream流容灾支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterDataCacheStartRequest 请求对象
+     * @return SyncInvoker<ExecuteCrossCloudDisasterDataCacheStartRequest, ExecuteCrossCloudDisasterDataCacheStartResponse>
+     */
+    public SyncInvoker<ExecuteCrossCloudDisasterDataCacheStartRequest, ExecuteCrossCloudDisasterDataCacheStartResponse> executeCrossCloudDisasterDataCacheStartInvoker(
+        ExecuteCrossCloudDisasterDataCacheStartRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterDataCacheStart, hcClient);
+    }
+
+    /**
+     * 结束容灾演练
+     *
+     * 灾备实例结束容灾演练，目前只有stream流容灾支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterEndSimulationRequest 请求对象
+     * @return ExecuteCrossCloudDisasterEndSimulationResponse
+     */
+    public ExecuteCrossCloudDisasterEndSimulationResponse executeCrossCloudDisasterEndSimulation(
+        ExecuteCrossCloudDisasterEndSimulationRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterEndSimulation);
+    }
+
+    /**
+     * 结束容灾演练
+     *
+     * 灾备实例结束容灾演练，目前只有stream流容灾支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterEndSimulationRequest 请求对象
+     * @return SyncInvoker<ExecuteCrossCloudDisasterEndSimulationRequest, ExecuteCrossCloudDisasterEndSimulationResponse>
+     */
+    public SyncInvoker<ExecuteCrossCloudDisasterEndSimulationRequest, ExecuteCrossCloudDisasterEndSimulationResponse> executeCrossCloudDisasterEndSimulationInvoker(
+        ExecuteCrossCloudDisasterEndSimulationRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterEndSimulation, hcClient);
+    }
+
+    /**
+     * 备实例容灾升主
+     *
+     * 容灾升主failover（灾备实例端下发）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterRecoveryFailoverRequest 请求对象
+     * @return ExecuteCrossCloudDisasterRecoveryFailoverResponse
+     */
+    public ExecuteCrossCloudDisasterRecoveryFailoverResponse executeCrossCloudDisasterRecoveryFailover(
+        ExecuteCrossCloudDisasterRecoveryFailoverRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterRecoveryFailover);
+    }
+
+    /**
+     * 备实例容灾升主
+     *
+     * 容灾升主failover（灾备实例端下发）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterRecoveryFailoverRequest 请求对象
+     * @return SyncInvoker<ExecuteCrossCloudDisasterRecoveryFailoverRequest, ExecuteCrossCloudDisasterRecoveryFailoverResponse>
+     */
+    public SyncInvoker<ExecuteCrossCloudDisasterRecoveryFailoverRequest, ExecuteCrossCloudDisasterRecoveryFailoverResponse> executeCrossCloudDisasterRecoveryFailoverInvoker(
+        ExecuteCrossCloudDisasterRecoveryFailoverRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterRecoveryFailover, hcClient);
+    }
+
+    /**
+     * 重建容灾关系
+     *
+     * 流容灾备升主选择支持容灾回切，实现容灾关系的重建任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterRestoreRequest 请求对象
+     * @return ExecuteCrossCloudDisasterRestoreResponse
+     */
+    public ExecuteCrossCloudDisasterRestoreResponse executeCrossCloudDisasterRestore(
+        ExecuteCrossCloudDisasterRestoreRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterRestore);
+    }
+
+    /**
+     * 重建容灾关系
+     *
+     * 流容灾备升主选择支持容灾回切，实现容灾关系的重建任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterRestoreRequest 请求对象
+     * @return SyncInvoker<ExecuteCrossCloudDisasterRestoreRequest, ExecuteCrossCloudDisasterRestoreResponse>
+     */
+    public SyncInvoker<ExecuteCrossCloudDisasterRestoreRequest, ExecuteCrossCloudDisasterRestoreResponse> executeCrossCloudDisasterRestoreInvoker(
+        ExecuteCrossCloudDisasterRestoreRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterRestore, hcClient);
+    }
+
+    /**
+     * 开始容灾演练
+     *
+     * 开始容灾演练，目前只有stream流容灾支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterStartSimulationRequest 请求对象
+     * @return ExecuteCrossCloudDisasterStartSimulationResponse
+     */
+    public ExecuteCrossCloudDisasterStartSimulationResponse executeCrossCloudDisasterStartSimulation(
+        ExecuteCrossCloudDisasterStartSimulationRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterStartSimulation);
+    }
+
+    /**
+     * 开始容灾演练
+     *
+     * 开始容灾演练，目前只有stream流容灾支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterStartSimulationRequest 请求对象
+     * @return SyncInvoker<ExecuteCrossCloudDisasterStartSimulationRequest, ExecuteCrossCloudDisasterStartSimulationResponse>
+     */
+    public SyncInvoker<ExecuteCrossCloudDisasterStartSimulationRequest, ExecuteCrossCloudDisasterStartSimulationResponse> executeCrossCloudDisasterStartSimulationInvoker(
+        ExecuteCrossCloudDisasterStartSimulationRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterStartSimulation, hcClient);
+    }
+
+    /**
+     * 灾备实例主从切换
+     *
+     * 容灾switchover（可在主备任一一端下发）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterSwitchoverRequest 请求对象
+     * @return ExecuteCrossCloudDisasterSwitchoverResponse
+     */
+    public ExecuteCrossCloudDisasterSwitchoverResponse executeCrossCloudDisasterSwitchover(
+        ExecuteCrossCloudDisasterSwitchoverRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterSwitchover);
+    }
+
+    /**
+     * 灾备实例主从切换
+     *
+     * 容灾switchover（可在主备任一一端下发）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudDisasterSwitchoverRequest 请求对象
+     * @return SyncInvoker<ExecuteCrossCloudDisasterSwitchoverRequest, ExecuteCrossCloudDisasterSwitchoverResponse>
+     */
+    public SyncInvoker<ExecuteCrossCloudDisasterSwitchoverRequest, ExecuteCrossCloudDisasterSwitchoverResponse> executeCrossCloudDisasterSwitchoverInvoker(
+        ExecuteCrossCloudDisasterSwitchoverRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.executeCrossCloudDisasterSwitchover, hcClient);
+    }
+
+    /**
+     * 解除容灾关系
+     *
+     * 解除容灾（从容灾主集群下发）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudReleaseDisasterRequest 请求对象
+     * @return ExecuteCrossCloudReleaseDisasterResponse
+     */
+    public ExecuteCrossCloudReleaseDisasterResponse executeCrossCloudReleaseDisaster(
+        ExecuteCrossCloudReleaseDisasterRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.executeCrossCloudReleaseDisaster);
+    }
+
+    /**
+     * 解除容灾关系
+     *
+     * 解除容灾（从容灾主集群下发）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteCrossCloudReleaseDisasterRequest 请求对象
+     * @return SyncInvoker<ExecuteCrossCloudReleaseDisasterRequest, ExecuteCrossCloudReleaseDisasterResponse>
+     */
+    public SyncInvoker<ExecuteCrossCloudReleaseDisasterRequest, ExecuteCrossCloudReleaseDisasterResponse> executeCrossCloudReleaseDisasterInvoker(
+        ExecuteCrossCloudReleaseDisasterRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.executeCrossCloudReleaseDisaster, hcClient);
+    }
+
+    /**
      * 安装插件
      *
      * 安装插件
@@ -1723,6 +2019,35 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<ListDbUsersRequest, ListDbUsersResponse> listDbUsersInvoker(ListDbUsersRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDbUsers, hcClient);
+    }
+
+    /**
+     * 查询操作记录
+     *
+     * 查询容灾操作记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDisasterRecoveryRecordRequest 请求对象
+     * @return ListDisasterRecoveryRecordResponse
+     */
+    public ListDisasterRecoveryRecordResponse listDisasterRecoveryRecord(ListDisasterRecoveryRecordRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listDisasterRecoveryRecord);
+    }
+
+    /**
+     * 查询操作记录
+     *
+     * 查询容灾操作记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDisasterRecoveryRecordRequest 请求对象
+     * @return SyncInvoker<ListDisasterRecoveryRecordRequest, ListDisasterRecoveryRecordResponse>
+     */
+    public SyncInvoker<ListDisasterRecoveryRecordRequest, ListDisasterRecoveryRecordResponse> listDisasterRecoveryRecordInvoker(
+        ListDisasterRecoveryRecordRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listDisasterRecoveryRecord, hcClient);
     }
 
     /**
@@ -2594,6 +2919,34 @@ public class GaussDBforopenGaussClient {
     }
 
     /**
+     * 重置容灾配置
+     *
+     * 重置容灾网络等配置。1.将自动“创建委托”以授权DBS云服务访问VPC资源信息、查询IAAS接口。2.重置实例容灾网络等配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetDrConfigRequest 请求对象
+     * @return ResetDrConfigResponse
+     */
+    public ResetDrConfigResponse resetDrConfig(ResetDrConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.resetDrConfig);
+    }
+
+    /**
+     * 重置容灾配置
+     *
+     * 重置容灾网络等配置。1.将自动“创建委托”以授权DBS云服务访问VPC资源信息、查询IAAS接口。2.重置实例容灾网络等配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetDrConfigRequest 请求对象
+     * @return SyncInvoker<ResetDrConfigRequest, ResetDrConfigResponse>
+     */
+    public SyncInvoker<ResetDrConfigRequest, ResetDrConfigResponse> resetDrConfigInvoker(ResetDrConfigRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.resetDrConfig, hcClient);
+    }
+
+    /**
      * 重置数据库密码。
      *
      * 重置数据库密码。
@@ -3054,6 +3407,66 @@ public class GaussDBforopenGaussClient {
     public SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> showConfigurationDetailInvoker(
         ShowConfigurationDetailRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showConfigurationDetail, hcClient);
+    }
+
+    /**
+     * 查询实例容灾监控实时状态
+     *
+     * 查询实例容灾监控实时状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCrossCloudDisasterInstanceMonitorRequest 请求对象
+     * @return ShowCrossCloudDisasterInstanceMonitorResponse
+     */
+    public ShowCrossCloudDisasterInstanceMonitorResponse showCrossCloudDisasterInstanceMonitor(
+        ShowCrossCloudDisasterInstanceMonitorRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showCrossCloudDisasterInstanceMonitor);
+    }
+
+    /**
+     * 查询实例容灾监控实时状态
+     *
+     * 查询实例容灾监控实时状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCrossCloudDisasterInstanceMonitorRequest 请求对象
+     * @return SyncInvoker<ShowCrossCloudDisasterInstanceMonitorRequest, ShowCrossCloudDisasterInstanceMonitorResponse>
+     */
+    public SyncInvoker<ShowCrossCloudDisasterInstanceMonitorRequest, ShowCrossCloudDisasterInstanceMonitorResponse> showCrossCloudDisasterInstanceMonitorInvoker(
+        ShowCrossCloudDisasterInstanceMonitorRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showCrossCloudDisasterInstanceMonitor, hcClient);
+    }
+
+    /**
+     * 查询容灾关系列表
+     *
+     * 查询容灾关系列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCrossCloudDisasterRelationsRequest 请求对象
+     * @return ShowCrossCloudDisasterRelationsResponse
+     */
+    public ShowCrossCloudDisasterRelationsResponse showCrossCloudDisasterRelations(
+        ShowCrossCloudDisasterRelationsRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.showCrossCloudDisasterRelations);
+    }
+
+    /**
+     * 查询容灾关系列表
+     *
+     * 查询容灾关系列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCrossCloudDisasterRelationsRequest 请求对象
+     * @return SyncInvoker<ShowCrossCloudDisasterRelationsRequest, ShowCrossCloudDisasterRelationsResponse>
+     */
+    public SyncInvoker<ShowCrossCloudDisasterRelationsRequest, ShowCrossCloudDisasterRelationsResponse> showCrossCloudDisasterRelationsInvoker(
+        ShowCrossCloudDisasterRelationsRequest request) {
+        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.showCrossCloudDisasterRelations, hcClient);
     }
 
     /**

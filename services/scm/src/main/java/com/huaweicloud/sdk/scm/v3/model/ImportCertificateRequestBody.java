@@ -124,7 +124,7 @@ public class ImportCertificateRequestBody {
     }
 
     /**
-     * 是否允许上传相同证书。 - true：同意上传相同证书议。 - false：不同意上传相同证书。
+     * 是否允许上传相同证书。 - true：同意上传相同证书。 - false：不同意上传相同证书。
      * @return duplicateCheck
      */
     public Boolean getDuplicateCheck() {

@@ -40,6 +40,11 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
     private String datastoreName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
     private String created;
@@ -139,6 +144,23 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.datastoreName = datastoreName;
     }
 
+    public ShowConfigurationDetailResponse withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 【参数解释】 数据库实例类型。 【取值范围】 GeminiDB Cassandra经典部署模式集群类型为\"Cluster\"。 GeminiDB Cassandra云原生部署模式集群类型为\"CloudNativeCluster\"。 GeminiDB Mongo副本集类型为\"ReplicaSet\"。 GeminiDB Mongo集群类型为\"Sharding\"。 GeminiDB Influx经典部署模式集群类型为\"Cluster\"。 GeminiDB Redis经典部署模式集群类型为“Cluster”。
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
     public ShowConfigurationDetailResponse withCreated(String created) {
         this.created = created;
         return this;
@@ -221,8 +243,8 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.datastoreVersionName, that.datastoreVersionName)
-            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.created, that.created)
-            && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated)
             && Objects.equals(this.configurationParameters, that.configurationParameters);
     }
 
@@ -233,6 +255,7 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
             description,
             datastoreVersionName,
             datastoreName,
+            mode,
             created,
             updated,
             configurationParameters);
@@ -247,6 +270,7 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    datastoreVersionName: ").append(toIndentedString(datastoreVersionName)).append("\n");
         sb.append("    datastoreName: ").append(toIndentedString(datastoreName)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("    configurationParameters: ").append(toIndentedString(configurationParameters)).append("\n");

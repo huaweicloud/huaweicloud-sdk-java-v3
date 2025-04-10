@@ -36,6 +36,11 @@ public class CreateConfigurationResult {
     private String datastoreName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "mode")
+
+    private String mode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "created")
 
     private String created;
@@ -130,6 +135,23 @@ public class CreateConfigurationResult {
         this.datastoreName = datastoreName;
     }
 
+    public CreateConfigurationResult withMode(String mode) {
+        this.mode = mode;
+        return this;
+    }
+
+    /**
+     * 【参数解释】 数据库实例类型。 【取值范围】 - GeminiDB Mongo 副本集实例取值为\"ReplicaSet\"。 - GeminiDB Influx 单节点实例取值为\"InfluxdbSingle\"。 - GeminiDB Cassandra云原生部署模式实例取值为\"CloudNativeCluster\"。
+     * @return mode
+     */
+    public String getMode() {
+        return mode;
+    }
+
+    public void setMode(String mode) {
+        this.mode = mode;
+    }
+
     public CreateConfigurationResult withCreated(String created) {
         this.created = created;
         return this;
@@ -176,13 +198,13 @@ public class CreateConfigurationResult {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.datastoreVersionName, that.datastoreVersionName)
-            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.created, that.created)
-            && Objects.equals(this.updated, that.updated);
+            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, datastoreVersionName, datastoreName, created, updated);
+        return Objects.hash(id, name, description, datastoreVersionName, datastoreName, mode, created, updated);
     }
 
     @Override
@@ -194,6 +216,7 @@ public class CreateConfigurationResult {
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    datastoreVersionName: ").append(toIndentedString(datastoreVersionName)).append("\n");
         sb.append("    datastoreName: ").append(toIndentedString(datastoreName)).append("\n");
+        sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    created: ").append(toIndentedString(created)).append("\n");
         sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
         sb.append("}");

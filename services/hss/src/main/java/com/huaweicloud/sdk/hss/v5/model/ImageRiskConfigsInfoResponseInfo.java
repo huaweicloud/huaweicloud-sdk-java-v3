@@ -102,7 +102,7 @@ public class ImageRiskConfigsInfoResponseInfo {
     }
 
     /**
-     * 标准类型，包含如下:     - cn_standard : 等保合规标准     - hw_standard : 云安全实践标准
+     * 标准类型，包含如下:   - cn_standard : 等保合规标准   - hw_standard : 云安全实践标准
      * @return standard
      */
     public String getStandard() {

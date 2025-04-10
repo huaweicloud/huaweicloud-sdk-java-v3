@@ -58,6 +58,11 @@ public class VulScanTaskInfo {
 
     private Integer failedHostNum;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "estimated_time")
+
+    private Integer estimatedTime;
+
     public VulScanTaskInfo withId(String id) {
         this.id = id;
         return this;
@@ -237,6 +242,25 @@ public class VulScanTaskInfo {
         this.failedHostNum = failedHostNum;
     }
 
+    public VulScanTaskInfo withEstimatedTime(Integer estimatedTime) {
+        this.estimatedTime = estimatedTime;
+        return this;
+    }
+
+    /**
+     * 预计完成时间
+     * minimum: 0
+     * maximum: 2147483647
+     * @return estimatedTime
+     */
+    public Integer getEstimatedTime() {
+        return estimatedTime;
+    }
+
+    public void setEstimatedTime(Integer estimatedTime) {
+        this.estimatedTime = estimatedTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -251,7 +275,8 @@ public class VulScanTaskInfo {
             && Objects.equals(this.scanVulTypes, that.scanVulTypes) && Objects.equals(this.status, that.status)
             && Objects.equals(this.scanningHostNum, that.scanningHostNum)
             && Objects.equals(this.successHostNum, that.successHostNum)
-            && Objects.equals(this.failedHostNum, that.failedHostNum);
+            && Objects.equals(this.failedHostNum, that.failedHostNum)
+            && Objects.equals(this.estimatedTime, that.estimatedTime);
     }
 
     @Override
@@ -264,7 +289,8 @@ public class VulScanTaskInfo {
             status,
             scanningHostNum,
             successHostNum,
-            failedHostNum);
+            failedHostNum,
+            estimatedTime);
     }
 
     @Override
@@ -280,6 +306,7 @@ public class VulScanTaskInfo {
         sb.append("    scanningHostNum: ").append(toIndentedString(scanningHostNum)).append("\n");
         sb.append("    successHostNum: ").append(toIndentedString(successHostNum)).append("\n");
         sb.append("    failedHostNum: ").append(toIndentedString(failedHostNum)).append("\n");
+        sb.append("    estimatedTime: ").append(toIndentedString(estimatedTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

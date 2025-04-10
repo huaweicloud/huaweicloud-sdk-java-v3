@@ -51,6 +51,11 @@ public class ListImageRiskConfigRulesRequest {
     private String imageVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_id")
+
+    private String imageId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_name")
 
     private String checkName;
@@ -103,7 +108,7 @@ public class ListImageRiskConfigRulesRequest {
     }
 
     /**
-     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -218,6 +223,23 @@ public class ListImageRiskConfigRulesRequest {
 
     public void setImageVersion(String imageVersion) {
         this.imageVersion = imageVersion;
+    }
+
+    public ListImageRiskConfigRulesRequest withImageId(String imageId) {
+        this.imageId = imageId;
+        return this;
+    }
+
+    /**
+     * 镜像id
+     * @return imageId
+     */
+    public String getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
     }
 
     public ListImageRiskConfigRulesRequest withCheckName(String checkName) {
@@ -336,8 +358,8 @@ public class ListImageRiskConfigRulesRequest {
             && Objects.equals(this.imageType, that.imageType) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.namespace, that.namespace)
             && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.imageVersion, that.imageVersion)
-            && Objects.equals(this.checkName, that.checkName) && Objects.equals(this.standard, that.standard)
-            && Objects.equals(this.resultType, that.resultType)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.checkName, that.checkName)
+            && Objects.equals(this.standard, that.standard) && Objects.equals(this.resultType, that.resultType)
             && Objects.equals(this.checkRuleName, that.checkRuleName) && Objects.equals(this.severity, that.severity)
             && Objects.equals(this.instanceId, that.instanceId);
     }
@@ -352,6 +374,7 @@ public class ListImageRiskConfigRulesRequest {
             namespace,
             imageName,
             imageVersion,
+            imageId,
             checkName,
             standard,
             resultType,
@@ -372,6 +395,7 @@ public class ListImageRiskConfigRulesRequest {
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
         sb.append("    imageVersion: ").append(toIndentedString(imageVersion)).append("\n");
+        sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    checkName: ").append(toIndentedString(checkName)).append("\n");
         sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
         sb.append("    resultType: ").append(toIndentedString(resultType)).append("\n");

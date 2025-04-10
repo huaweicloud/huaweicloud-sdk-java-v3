@@ -99,7 +99,7 @@ public class ShowBackupPolicyInfoResponse extends SdkResponse {
     }
 
     /**
-     * 备份类型。备份（backup）、复制(replication)，包含如下2种。   - backup ：备份。   - replication ：复制。
+     * 备份类型。当前包含如下1种。   - backup ：备份
      * @return operationType
      */
     public String getOperationType() {

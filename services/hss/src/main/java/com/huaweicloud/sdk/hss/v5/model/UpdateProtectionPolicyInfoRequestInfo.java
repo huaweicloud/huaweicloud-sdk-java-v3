@@ -68,6 +68,11 @@ public class UpdateProtectionPolicyInfoRequestInfo {
 
     private List<TrustProcessInfo> processWhitelist = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ai_protection_status")
+
+    private String aiProtectionStatus;
+
     public UpdateProtectionPolicyInfoRequestInfo withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
@@ -288,6 +293,23 @@ public class UpdateProtectionPolicyInfoRequestInfo {
         this.processWhitelist = processWhitelist;
     }
 
+    public UpdateProtectionPolicyInfoRequestInfo withAiProtectionStatus(String aiProtectionStatus) {
+        this.aiProtectionStatus = aiProtectionStatus;
+        return this;
+    }
+
+    /**
+     * 是否开启AI勒索防护，包含如下1种, 默认为开启AI勒索防护。   - opened ：开启。   - closed ：关闭。            
+     * @return aiProtectionStatus
+     */
+    public String getAiProtectionStatus() {
+        return aiProtectionStatus;
+    }
+
+    public void setAiProtectionStatus(String aiProtectionStatus) {
+        this.aiProtectionStatus = aiProtectionStatus;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -306,7 +328,8 @@ public class UpdateProtectionPolicyInfoRequestInfo {
             && Objects.equals(this.agentIdList, that.agentIdList)
             && Objects.equals(this.operatingSystem, that.operatingSystem)
             && Objects.equals(this.runtimeDetectionStatus, that.runtimeDetectionStatus)
-            && Objects.equals(this.processWhitelist, that.processWhitelist);
+            && Objects.equals(this.processWhitelist, that.processWhitelist)
+            && Objects.equals(this.aiProtectionStatus, that.aiProtectionStatus);
     }
 
     @Override
@@ -321,7 +344,8 @@ public class UpdateProtectionPolicyInfoRequestInfo {
             agentIdList,
             operatingSystem,
             runtimeDetectionStatus,
-            processWhitelist);
+            processWhitelist,
+            aiProtectionStatus);
     }
 
     @Override
@@ -339,6 +363,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
         sb.append("    operatingSystem: ").append(toIndentedString(operatingSystem)).append("\n");
         sb.append("    runtimeDetectionStatus: ").append(toIndentedString(runtimeDetectionStatus)).append("\n");
         sb.append("    processWhitelist: ").append(toIndentedString(processWhitelist)).append("\n");
+        sb.append("    aiProtectionStatus: ").append(toIndentedString(aiProtectionStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -46,6 +46,16 @@ public class ContainerNodeInfo {
     private Boolean protectInterrupt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protect_degradation")
+
+    private Boolean protectDegradation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "degradation_reason")
+
+    private String degradationReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_tags")
 
     private String containerTags;
@@ -222,6 +232,40 @@ public class ContainerNodeInfo {
 
     public void setProtectInterrupt(Boolean protectInterrupt) {
         this.protectInterrupt = protectInterrupt;
+    }
+
+    public ContainerNodeInfo withProtectDegradation(Boolean protectDegradation) {
+        this.protectDegradation = protectDegradation;
+        return this;
+    }
+
+    /**
+     * 防护是否降级
+     * @return protectDegradation
+     */
+    public Boolean getProtectDegradation() {
+        return protectDegradation;
+    }
+
+    public void setProtectDegradation(Boolean protectDegradation) {
+        this.protectDegradation = protectDegradation;
+    }
+
+    public ContainerNodeInfo withDegradationReason(String degradationReason) {
+        this.degradationReason = degradationReason;
+        return this;
+    }
+
+    /**
+     * 防护降级原因
+     * @return degradationReason
+     */
+    public String getDegradationReason() {
+        return degradationReason;
+    }
+
+    public void setDegradationReason(String degradationReason) {
+        this.degradationReason = degradationReason;
     }
 
     public ContainerNodeInfo withContainerTags(String containerTags) {
@@ -448,6 +492,8 @@ public class ContainerNodeInfo {
             && Objects.equals(this.agentStatus, that.agentStatus)
             && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.protectInterrupt, that.protectInterrupt)
+            && Objects.equals(this.protectDegradation, that.protectDegradation)
+            && Objects.equals(this.degradationReason, that.degradationReason)
             && Objects.equals(this.containerTags, that.containerTags) && Objects.equals(this.privateIp, that.privateIp)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.resourceId, that.resourceId)
             && Objects.equals(this.groupName, that.groupName)
@@ -467,6 +513,8 @@ public class ContainerNodeInfo {
             agentStatus,
             protectStatus,
             protectInterrupt,
+            protectDegradation,
+            degradationReason,
             containerTags,
             privateIp,
             publicIp,
@@ -492,6 +540,8 @@ public class ContainerNodeInfo {
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    protectInterrupt: ").append(toIndentedString(protectInterrupt)).append("\n");
+        sb.append("    protectDegradation: ").append(toIndentedString(protectDegradation)).append("\n");
+        sb.append("    degradationReason: ").append(toIndentedString(degradationReason)).append("\n");
         sb.append("    containerTags: ").append(toIndentedString(containerTags)).append("\n");
         sb.append("    privateIp: ").append(toIndentedString(privateIp)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");

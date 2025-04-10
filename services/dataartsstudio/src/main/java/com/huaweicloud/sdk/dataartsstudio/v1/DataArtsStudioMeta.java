@@ -32,8 +32,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ApigRoleVo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApigWorkspaceUserDto;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AppRequestDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AppUpdateDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ApplySecurityTableAuthorityRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ApplySecurityTableAuthorityResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ApplyTableAuthorityRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApprovalBatchParam;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApprovalInfoParam;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ApproveResult;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ApproverParam;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateClassificationToEntityRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AssociateClassificationToEntityResponse;
@@ -48,6 +52,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeDataConnectionReques
 import com.huaweicloud.sdk.dataartsstudio.v1.model.AuthorizeDataConnectionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveApplyRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveApplyResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveRequestBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveSecurityApplicationsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchApproveSecurityApplicationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationToEntitiesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateClassificationToEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchAssociateSecurityLevelToEntitiesRequest;
@@ -83,10 +90,13 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchOfflineResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchPublishResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchRecommendationRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchRejectSecurityApplicationsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchRejectSecurityApplicationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchSyncMetadataResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchTagRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchTagResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchUpdatePermissionExpireTimeDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchUpdateSecurityDlfDataWareHousesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BatchUpdateSecurityDlfDataWareHousesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.BehaviorRestBody;
@@ -489,8 +499,12 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDlfDataWareHouses
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDlfDataWareHousesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDynamicMaskingPoliciesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityDynamicMaskingPoliciesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberPermissionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberPermissionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberSyncTasksResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberTablePermissionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityMemberTablePermissionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetMembersResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityPermissionSetPermissionsRequest;
@@ -505,10 +519,15 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySecrecyLevelsRequ
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySecrecyLevelsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataOverviewsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecuritySensitiveDataOverviewsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityTableApproversRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityTableApproversResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityUnreasonablePermissionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityUnreasonablePermissionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityUserTablePermissionRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSecurityUserTablePermissionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSubjectLevelsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListSubjectLevelsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableApproversRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelRelationsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListTableModelsRequest;
@@ -610,6 +629,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchSubjectResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchVersionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SearchVersionsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.SecurityListUserTableList;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SetFactoryJobTagsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SetFactoryJobTagsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.SetJobTagsRequestBody;
@@ -832,6 +852,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificat
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDataClassificationRuleResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDynamicMaskingPolicyRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityDynamicMaskingPolicyResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityMemberPermissionExpireTimeRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityMemberPermissionExpireTimeResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetPermissionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.UpdateSecurityPermissionSetRequest;
@@ -1012,6 +1034,33 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ApplySecurityTableAuthorityRequest, ApplySecurityTableAuthorityResponse> applySecurityTableAuthority =
+        genForApplySecurityTableAuthority();
+
+    private static HttpRequestDef<ApplySecurityTableAuthorityRequest, ApplySecurityTableAuthorityResponse> genForApplySecurityTableAuthority() {
+        // basic
+        HttpRequestDef.Builder<ApplySecurityTableAuthorityRequest, ApplySecurityTableAuthorityResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ApplySecurityTableAuthorityRequest.class,
+                    ApplySecurityTableAuthorityResponse.class)
+                .withName("ApplySecurityTableAuthority")
+                .withUri("/v1/{project_id}/security/permission-application/table")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ApplyTableAuthorityRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ApplyTableAuthorityRequestBody.class),
+            f -> f.withMarshaller(ApplySecurityTableAuthorityRequest::getBody,
+                ApplySecurityTableAuthorityRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AssociateClassificationToEntityRequest, AssociateClassificationToEntityResponse> associateClassificationToEntity =
         genForAssociateClassificationToEntity();
 
@@ -1149,6 +1198,47 @@ public class DataArtsStudioMeta {
             f -> f.withMarshaller(BatchApproveApplyRequest::getBody, BatchApproveApplyRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchApproveSecurityApplicationsRequest, BatchApproveSecurityApplicationsResponse> batchApproveSecurityApplications =
+        genForBatchApproveSecurityApplications();
+
+    private static HttpRequestDef<BatchApproveSecurityApplicationsRequest, BatchApproveSecurityApplicationsResponse> genForBatchApproveSecurityApplications() {
+        // basic
+        HttpRequestDef.Builder<BatchApproveSecurityApplicationsRequest, BatchApproveSecurityApplicationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchApproveSecurityApplicationsRequest.class,
+                    BatchApproveSecurityApplicationsResponse.class)
+                .withName("BatchApproveSecurityApplications")
+                .withUri("/v1/{project_id}/security/openapi/permission-approve/batch-approve")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchApproveSecurityApplicationsRequest::getWorkspace,
+                BatchApproveSecurityApplicationsRequest::setWorkspace));
+        builder.<BatchApproveRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchApproveRequestBody.class),
+            f -> f.withMarshaller(BatchApproveSecurityApplicationsRequest::getBody,
+                BatchApproveSecurityApplicationsRequest::setBody));
+
+        // response
+        builder.<List<ApproveResult>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(BatchApproveSecurityApplicationsResponse::getBody,
+                    BatchApproveSecurityApplicationsResponse::setBody)
+                .withInnerContainerType(ApproveResult.class));
 
         return builder.build();
     }
@@ -1641,6 +1731,47 @@ public class DataArtsStudioMeta {
             f -> f.withMarshaller(BatchPublishRequest::getBody, BatchPublishRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchRejectSecurityApplicationsRequest, BatchRejectSecurityApplicationsResponse> batchRejectSecurityApplications =
+        genForBatchRejectSecurityApplications();
+
+    private static HttpRequestDef<BatchRejectSecurityApplicationsRequest, BatchRejectSecurityApplicationsResponse> genForBatchRejectSecurityApplications() {
+        // basic
+        HttpRequestDef.Builder<BatchRejectSecurityApplicationsRequest, BatchRejectSecurityApplicationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    BatchRejectSecurityApplicationsRequest.class,
+                    BatchRejectSecurityApplicationsResponse.class)
+                .withName("BatchRejectSecurityApplications")
+                .withUri("/v1/{project_id}/security/openapi/permission-approve/batch-reject")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchRejectSecurityApplicationsRequest::getWorkspace,
+                BatchRejectSecurityApplicationsRequest::setWorkspace));
+        builder.<BatchApproveRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchApproveRequestBody.class),
+            f -> f.withMarshaller(BatchRejectSecurityApplicationsRequest::getBody,
+                BatchRejectSecurityApplicationsRequest::setBody));
+
+        // response
+        builder.<List<ApproveResult>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f
+                .withMarshaller(BatchRejectSecurityApplicationsResponse::getBody,
+                    BatchRejectSecurityApplicationsResponse::setBody)
+                .withInnerContainerType(ApproveResult.class));
 
         return builder.build();
     }
@@ -8703,6 +8834,93 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecurityMemberPermissionRequest, ListSecurityMemberPermissionResponse> listSecurityMemberPermission =
+        genForListSecurityMemberPermission();
+
+    private static HttpRequestDef<ListSecurityMemberPermissionRequest, ListSecurityMemberPermissionResponse> genForListSecurityMemberPermission() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityMemberPermissionRequest, ListSecurityMemberPermissionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityMemberPermissionRequest.class,
+                    ListSecurityMemberPermissionResponse.class)
+                .withName("ListSecurityMemberPermission")
+                .withUri("/v1/{project_id}/security/permission-governance/my-permissions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionRequest::getUserName,
+                ListSecurityMemberPermissionRequest::setUserName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionRequest::getLimit,
+                ListSecurityMemberPermissionRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionRequest::getOffset,
+                ListSecurityMemberPermissionRequest::setOffset));
+        builder.<ListSecurityMemberPermissionRequest.DatasourceTypeEnum>withRequestField("datasource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberPermissionRequest.DatasourceTypeEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionRequest::getDatasourceType,
+                ListSecurityMemberPermissionRequest::setDatasourceType));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionRequest::getDatabaseName,
+                ListSecurityMemberPermissionRequest::setDatabaseName));
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionRequest::getTableName,
+                ListSecurityMemberPermissionRequest::setTableName));
+        builder.<ListSecurityMemberPermissionRequest.AccountTypeEnum>withRequestField("account_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberPermissionRequest.AccountTypeEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionRequest::getAccountType,
+                ListSecurityMemberPermissionRequest::setAccountType));
+        builder.<ListSecurityMemberPermissionRequest.ExpireStatusEnum>withRequestField("expire_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberPermissionRequest.ExpireStatusEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionRequest::getExpireStatus,
+                ListSecurityMemberPermissionRequest::setExpireStatus));
+        builder.<ListSecurityMemberPermissionRequest.OrderByEnum>withRequestField("order_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberPermissionRequest.OrderByEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionRequest::getOrderBy,
+                ListSecurityMemberPermissionRequest::setOrderBy));
+        builder.<Boolean>withRequestField("order_by_asc",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionRequest::getOrderByAsc,
+                ListSecurityMemberPermissionRequest::setOrderByAsc));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberPermissionRequest::getWorkspace,
+                ListSecurityMemberPermissionRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSecurityMemberSyncTasksRequest, ListSecurityMemberSyncTasksResponse> listSecurityMemberSyncTasks =
         genForListSecurityMemberSyncTasks();
 
@@ -8772,6 +8990,99 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecurityMemberSyncTasksRequest::getWorkspace,
                 ListSecurityMemberSyncTasksRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityMemberTablePermissionRequest, ListSecurityMemberTablePermissionResponse> listSecurityMemberTablePermission =
+        genForListSecurityMemberTablePermission();
+
+    private static HttpRequestDef<ListSecurityMemberTablePermissionRequest, ListSecurityMemberTablePermissionResponse> genForListSecurityMemberTablePermission() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityMemberTablePermissionRequest, ListSecurityMemberTablePermissionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListSecurityMemberTablePermissionRequest.class,
+                    ListSecurityMemberTablePermissionResponse.class)
+                .withName("ListSecurityMemberTablePermission")
+                .withUri("/v1/{project_id}/security/member-permission/{user_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("user_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberTablePermissionRequest::getUserId,
+                ListSecurityMemberTablePermissionRequest::setUserId));
+        builder.<ListSecurityMemberTablePermissionRequest.FeatureEnum>withRequestField("feature",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberTablePermissionRequest.FeatureEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberTablePermissionRequest::getFeature,
+                ListSecurityMemberTablePermissionRequest::setFeature));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityMemberTablePermissionRequest::getLimit,
+                ListSecurityMemberTablePermissionRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSecurityMemberTablePermissionRequest::getOffset,
+                ListSecurityMemberTablePermissionRequest::setOffset));
+        builder.<ListSecurityMemberTablePermissionRequest.DatasourceTypeEnum>withRequestField("datasource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListSecurityMemberTablePermissionRequest.DatasourceTypeEnum.class),
+            f -> f.withMarshaller(ListSecurityMemberTablePermissionRequest::getDatasourceType,
+                ListSecurityMemberTablePermissionRequest::setDatasourceType));
+        builder.<String>withRequestField("cluster_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberTablePermissionRequest::getClusterName,
+                ListSecurityMemberTablePermissionRequest::setClusterName));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberTablePermissionRequest::getDatabaseName,
+                ListSecurityMemberTablePermissionRequest::setDatabaseName));
+        builder.<String>withRequestField("schema_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberTablePermissionRequest::getSchemaName,
+                ListSecurityMemberTablePermissionRequest::setSchemaName));
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberTablePermissionRequest::getTableName,
+                ListSecurityMemberTablePermissionRequest::setTableName));
+        builder.<String>withRequestField("fuzzy_table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberTablePermissionRequest::getFuzzyTableName,
+                ListSecurityMemberTablePermissionRequest::setFuzzyTableName));
+        builder.<List<String>>withRequestField("workspace_ids",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListSecurityMemberTablePermissionRequest::getWorkspaceIds,
+                ListSecurityMemberTablePermissionRequest::setWorkspaceIds));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityMemberTablePermissionRequest::getWorkspace,
+                ListSecurityMemberTablePermissionRequest::setWorkspace));
 
         // response
 
@@ -9263,6 +9574,33 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListSecurityTableApproversRequest, ListSecurityTableApproversResponse> listSecurityTableApprovers =
+        genForListSecurityTableApprovers();
+
+    private static HttpRequestDef<ListSecurityTableApproversRequest, ListSecurityTableApproversResponse> genForListSecurityTableApprovers() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityTableApproversRequest, ListSecurityTableApproversResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListSecurityTableApproversRequest.class,
+                    ListSecurityTableApproversResponse.class)
+                .withName("ListSecurityTableApprovers")
+                .withUri("/v1/{project_id}/security/permission-application/table/approvers")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ListTableApproversRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTableApproversRequestBody.class),
+            f -> f.withMarshaller(ListSecurityTableApproversRequest::getBody,
+                ListSecurityTableApproversRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListSecurityUnreasonablePermissionsRequest, ListSecurityUnreasonablePermissionsResponse> listSecurityUnreasonablePermissions =
         genForListSecurityUnreasonablePermissions();
 
@@ -9314,6 +9652,39 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecurityUnreasonablePermissionsRequest::getWorkspace,
                 ListSecurityUnreasonablePermissionsRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSecurityUserTablePermissionRequest, ListSecurityUserTablePermissionResponse> listSecurityUserTablePermission =
+        genForListSecurityUserTablePermission();
+
+    private static HttpRequestDef<ListSecurityUserTablePermissionRequest, ListSecurityUserTablePermissionResponse> genForListSecurityUserTablePermission() {
+        // basic
+        HttpRequestDef.Builder<ListSecurityUserTablePermissionRequest, ListSecurityUserTablePermissionResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ListSecurityUserTablePermissionRequest.class,
+                    ListSecurityUserTablePermissionResponse.class)
+                .withName("ListSecurityUserTablePermission")
+                .withUri("/v1/{project_id}/security/permission-application/user-table-permissions")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSecurityUserTablePermissionRequest::getInstance,
+                ListSecurityUserTablePermissionRequest::setInstance));
+        builder.<SecurityListUserTableList>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(SecurityListUserTableList.class),
+            f -> f.withMarshaller(ListSecurityUserTablePermissionRequest::getBody,
+                ListSecurityUserTablePermissionRequest::setBody));
 
         // response
 
@@ -14908,6 +15279,39 @@ public class DataArtsStudioMeta {
             TypeCasts.uncheckedConversion(DynamicMaskingPolicyUpdateDTO.class),
             f -> f.withMarshaller(UpdateSecurityDynamicMaskingPolicyRequest::getBody,
                 UpdateSecurityDynamicMaskingPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecurityMemberPermissionExpireTimeRequest, UpdateSecurityMemberPermissionExpireTimeResponse> updateSecurityMemberPermissionExpireTime =
+        genForUpdateSecurityMemberPermissionExpireTime();
+
+    private static HttpRequestDef<UpdateSecurityMemberPermissionExpireTimeRequest, UpdateSecurityMemberPermissionExpireTimeResponse> genForUpdateSecurityMemberPermissionExpireTime() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecurityMemberPermissionExpireTimeRequest, UpdateSecurityMemberPermissionExpireTimeResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateSecurityMemberPermissionExpireTimeRequest.class,
+                    UpdateSecurityMemberPermissionExpireTimeResponse.class)
+                .withName("UpdateSecurityMemberPermissionExpireTime")
+                .withUri("/v1/{project_id}/security/permission-governance/batch-update-expire-time")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSecurityMemberPermissionExpireTimeRequest::getWorkspace,
+                UpdateSecurityMemberPermissionExpireTimeRequest::setWorkspace));
+        builder.<BatchUpdatePermissionExpireTimeDTO>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdatePermissionExpireTimeDTO.class),
+            f -> f.withMarshaller(UpdateSecurityMemberPermissionExpireTimeRequest::getBody,
+                UpdateSecurityMemberPermissionExpireTimeRequest::setBody));
 
         // response
 

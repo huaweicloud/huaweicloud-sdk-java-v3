@@ -41,6 +41,11 @@ public class ShowImageCheckRuleDetailRequest {
     private String imageVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_id")
+
+    private String imageId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_name")
 
     private String checkName;
@@ -88,7 +93,7 @@ public class ShowImageCheckRuleDetailRequest {
     }
 
     /**
-     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -165,6 +170,23 @@ public class ShowImageCheckRuleDetailRequest {
 
     public void setImageVersion(String imageVersion) {
         this.imageVersion = imageVersion;
+    }
+
+    public ShowImageCheckRuleDetailRequest withImageId(String imageId) {
+        this.imageId = imageId;
+        return this;
+    }
+
+    /**
+     * 镜像id
+     * @return imageId
+     */
+    public String getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
     }
 
     public ShowImageCheckRuleDetailRequest withCheckName(String checkName) {
@@ -265,9 +287,9 @@ public class ShowImageCheckRuleDetailRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.imageType, that.imageType) && Objects.equals(this.namespace, that.namespace)
             && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.imageVersion, that.imageVersion)
-            && Objects.equals(this.checkName, that.checkName) && Objects.equals(this.checkType, that.checkType)
-            && Objects.equals(this.checkRuleId, that.checkRuleId) && Objects.equals(this.standard, that.standard)
-            && Objects.equals(this.instanceId, that.instanceId);
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.checkName, that.checkName)
+            && Objects.equals(this.checkType, that.checkType) && Objects.equals(this.checkRuleId, that.checkRuleId)
+            && Objects.equals(this.standard, that.standard) && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override
@@ -278,6 +300,7 @@ public class ShowImageCheckRuleDetailRequest {
             namespace,
             imageName,
             imageVersion,
+            imageId,
             checkName,
             checkType,
             checkRuleId,
@@ -295,6 +318,7 @@ public class ShowImageCheckRuleDetailRequest {
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");
         sb.append("    imageVersion: ").append(toIndentedString(imageVersion)).append("\n");
+        sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    checkName: ").append(toIndentedString(checkName)).append("\n");
         sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
         sb.append("    checkRuleId: ").append(toIndentedString(checkRuleId)).append("\n");

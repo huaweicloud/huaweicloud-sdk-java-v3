@@ -3,7 +3,10 @@ package com.huaweicloud.sdk.hss.v5.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 隔离事件详情
@@ -106,6 +109,11 @@ public class IsolateEventResponseInfo {
     private Long occurTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "recent_time")
+
+    private Long recentTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "handle_time")
 
     private Long handleTime;
@@ -126,9 +134,109 @@ public class IsolateEventResponseInfo {
     private String handler;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "memo")
+
+    private String memo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operate_accept_list")
+
+    private List<String> operateAcceptList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operate_detail_list")
+
+    private List<EventDetailResponseInfo> operateDetailList = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "forensic_info")
+
+    private Object forensicInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_info")
+
+    private Object resourceInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "geo_info")
+
+    private Object geoInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "network_info")
+
+    private Object networkInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_info")
+
+    private Object appInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "system_info")
+
+    private Object systemInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "malware_info")
+
+    private Object malwareInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extend_info")
+
+    private Object extendInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "recommendation")
 
     private String recommendation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "att_ck")
+
+    private String attCk;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "event_details")
+
+    private String eventDetails;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "confidence")
+
+    private Integer confidence;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "process_info_list")
+
+    private Object processInfoList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_info_list")
+
+    private Object userInfoList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "file_info_list")
+
+    private Object fileInfoList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "registry_info_list")
+
+    private Object registryInfoList;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_info")
+
+    private Object clusterInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tag_list")
+
+    private List<String> tagList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
@@ -145,13 +253,18 @@ public class IsolateEventResponseInfo {
 
     private Integer eventCount;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
     public IsolateEventResponseInfo withEventId(String eventId) {
         this.eventId = eventId;
         return this;
     }
 
     /**
-     * 事件编号
+     * 事件ID
      * @return eventId
      */
     public String getEventId() {
@@ -472,13 +585,32 @@ public class IsolateEventResponseInfo {
         this.occurTime = occurTime;
     }
 
+    public IsolateEventResponseInfo withRecentTime(Long recentTime) {
+        this.recentTime = recentTime;
+        return this;
+    }
+
+    /**
+     * 发生时间，毫秒
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return recentTime
+     */
+    public Long getRecentTime() {
+        return recentTime;
+    }
+
+    public void setRecentTime(Long recentTime) {
+        this.recentTime = recentTime;
+    }
+
     public IsolateEventResponseInfo withHandleTime(Long handleTime) {
         this.handleTime = handleTime;
         return this;
     }
 
     /**
-     * 处理时间，毫秒，已处理的告警才有
+     * 处置时间，毫秒，已处理的告警才有
      * minimum: 0
      * maximum: 9223372036854775807
      * @return handleTime
@@ -542,6 +674,226 @@ public class IsolateEventResponseInfo {
         this.handler = handler;
     }
 
+    public IsolateEventResponseInfo withMemo(String memo) {
+        this.memo = memo;
+        return this;
+    }
+
+    /**
+     * 手动处理的备注
+     * @return memo
+     */
+    public String getMemo() {
+        return memo;
+    }
+
+    public void setMemo(String memo) {
+        this.memo = memo;
+    }
+
+    public IsolateEventResponseInfo withOperateAcceptList(List<String> operateAcceptList) {
+        this.operateAcceptList = operateAcceptList;
+        return this;
+    }
+
+    public IsolateEventResponseInfo addOperateAcceptListItem(String operateAcceptListItem) {
+        if (this.operateAcceptList == null) {
+            this.operateAcceptList = new ArrayList<>();
+        }
+        this.operateAcceptList.add(operateAcceptListItem);
+        return this;
+    }
+
+    public IsolateEventResponseInfo withOperateAcceptList(Consumer<List<String>> operateAcceptListSetter) {
+        if (this.operateAcceptList == null) {
+            this.operateAcceptList = new ArrayList<>();
+        }
+        operateAcceptListSetter.accept(this.operateAcceptList);
+        return this;
+    }
+
+    /**
+     * 支持的处理操作
+     * @return operateAcceptList
+     */
+    public List<String> getOperateAcceptList() {
+        return operateAcceptList;
+    }
+
+    public void setOperateAcceptList(List<String> operateAcceptList) {
+        this.operateAcceptList = operateAcceptList;
+    }
+
+    public IsolateEventResponseInfo withOperateDetailList(List<EventDetailResponseInfo> operateDetailList) {
+        this.operateDetailList = operateDetailList;
+        return this;
+    }
+
+    public IsolateEventResponseInfo addOperateDetailListItem(EventDetailResponseInfo operateDetailListItem) {
+        if (this.operateDetailList == null) {
+            this.operateDetailList = new ArrayList<>();
+        }
+        this.operateDetailList.add(operateDetailListItem);
+        return this;
+    }
+
+    public IsolateEventResponseInfo withOperateDetailList(
+        Consumer<List<EventDetailResponseInfo>> operateDetailListSetter) {
+        if (this.operateDetailList == null) {
+            this.operateDetailList = new ArrayList<>();
+        }
+        operateDetailListSetter.accept(this.operateDetailList);
+        return this;
+    }
+
+    /**
+     * 操作详情信息列表（页面不展示）
+     * @return operateDetailList
+     */
+    public List<EventDetailResponseInfo> getOperateDetailList() {
+        return operateDetailList;
+    }
+
+    public void setOperateDetailList(List<EventDetailResponseInfo> operateDetailList) {
+        this.operateDetailList = operateDetailList;
+    }
+
+    public IsolateEventResponseInfo withForensicInfo(Object forensicInfo) {
+        this.forensicInfo = forensicInfo;
+        return this;
+    }
+
+    /**
+     * 取证信息
+     * @return forensicInfo
+     */
+    public Object getForensicInfo() {
+        return forensicInfo;
+    }
+
+    public void setForensicInfo(Object forensicInfo) {
+        this.forensicInfo = forensicInfo;
+    }
+
+    public IsolateEventResponseInfo withResourceInfo(Object resourceInfo) {
+        this.resourceInfo = resourceInfo;
+        return this;
+    }
+
+    /**
+     * 资源信息
+     * @return resourceInfo
+     */
+    public Object getResourceInfo() {
+        return resourceInfo;
+    }
+
+    public void setResourceInfo(Object resourceInfo) {
+        this.resourceInfo = resourceInfo;
+    }
+
+    public IsolateEventResponseInfo withGeoInfo(Object geoInfo) {
+        this.geoInfo = geoInfo;
+        return this;
+    }
+
+    /**
+     * 地理信息
+     * @return geoInfo
+     */
+    public Object getGeoInfo() {
+        return geoInfo;
+    }
+
+    public void setGeoInfo(Object geoInfo) {
+        this.geoInfo = geoInfo;
+    }
+
+    public IsolateEventResponseInfo withNetworkInfo(Object networkInfo) {
+        this.networkInfo = networkInfo;
+        return this;
+    }
+
+    /**
+     * 网络信息
+     * @return networkInfo
+     */
+    public Object getNetworkInfo() {
+        return networkInfo;
+    }
+
+    public void setNetworkInfo(Object networkInfo) {
+        this.networkInfo = networkInfo;
+    }
+
+    public IsolateEventResponseInfo withAppInfo(Object appInfo) {
+        this.appInfo = appInfo;
+        return this;
+    }
+
+    /**
+     * 应用信息
+     * @return appInfo
+     */
+    public Object getAppInfo() {
+        return appInfo;
+    }
+
+    public void setAppInfo(Object appInfo) {
+        this.appInfo = appInfo;
+    }
+
+    public IsolateEventResponseInfo withSystemInfo(Object systemInfo) {
+        this.systemInfo = systemInfo;
+        return this;
+    }
+
+    /**
+     * 系统信息
+     * @return systemInfo
+     */
+    public Object getSystemInfo() {
+        return systemInfo;
+    }
+
+    public void setSystemInfo(Object systemInfo) {
+        this.systemInfo = systemInfo;
+    }
+
+    public IsolateEventResponseInfo withMalwareInfo(Object malwareInfo) {
+        this.malwareInfo = malwareInfo;
+        return this;
+    }
+
+    /**
+     * 恶意软件信息
+     * @return malwareInfo
+     */
+    public Object getMalwareInfo() {
+        return malwareInfo;
+    }
+
+    public void setMalwareInfo(Object malwareInfo) {
+        this.malwareInfo = malwareInfo;
+    }
+
+    public IsolateEventResponseInfo withExtendInfo(Object extendInfo) {
+        this.extendInfo = extendInfo;
+        return this;
+    }
+
+    /**
+     * 扩展信息
+     * @return extendInfo
+     */
+    public Object getExtendInfo() {
+        return extendInfo;
+    }
+
+    public void setExtendInfo(Object extendInfo) {
+        this.extendInfo = extendInfo;
+    }
+
     public IsolateEventResponseInfo withRecommendation(String recommendation) {
         this.recommendation = recommendation;
         return this;
@@ -557,6 +909,177 @@ public class IsolateEventResponseInfo {
 
     public void setRecommendation(String recommendation) {
         this.recommendation = recommendation;
+    }
+
+    public IsolateEventResponseInfo withAttCk(String attCk) {
+        this.attCk = attCk;
+        return this;
+    }
+
+    /**
+     * att_ck 标识
+     * @return attCk
+     */
+    public String getAttCk() {
+        return attCk;
+    }
+
+    public void setAttCk(String attCk) {
+        this.attCk = attCk;
+    }
+
+    public IsolateEventResponseInfo withEventDetails(String eventDetails) {
+        this.eventDetails = eventDetails;
+        return this;
+    }
+
+    /**
+     * 事件简述信息
+     * @return eventDetails
+     */
+    public String getEventDetails() {
+        return eventDetails;
+    }
+
+    public void setEventDetails(String eventDetails) {
+        this.eventDetails = eventDetails;
+    }
+
+    public IsolateEventResponseInfo withConfidence(Integer confidence) {
+        this.confidence = confidence;
+        return this;
+    }
+
+    /**
+     * 置信度。当前只有情报和av类告警展示该字段。
+     * minimum: 0
+     * maximum: 2147483647
+     * @return confidence
+     */
+    public Integer getConfidence() {
+        return confidence;
+    }
+
+    public void setConfidence(Integer confidence) {
+        this.confidence = confidence;
+    }
+
+    public IsolateEventResponseInfo withProcessInfoList(Object processInfoList) {
+        this.processInfoList = processInfoList;
+        return this;
+    }
+
+    /**
+     * 进程信息列表
+     * @return processInfoList
+     */
+    public Object getProcessInfoList() {
+        return processInfoList;
+    }
+
+    public void setProcessInfoList(Object processInfoList) {
+        this.processInfoList = processInfoList;
+    }
+
+    public IsolateEventResponseInfo withUserInfoList(Object userInfoList) {
+        this.userInfoList = userInfoList;
+        return this;
+    }
+
+    /**
+     * 用户信息列表
+     * @return userInfoList
+     */
+    public Object getUserInfoList() {
+        return userInfoList;
+    }
+
+    public void setUserInfoList(Object userInfoList) {
+        this.userInfoList = userInfoList;
+    }
+
+    public IsolateEventResponseInfo withFileInfoList(Object fileInfoList) {
+        this.fileInfoList = fileInfoList;
+        return this;
+    }
+
+    /**
+     * 文件信息列表
+     * @return fileInfoList
+     */
+    public Object getFileInfoList() {
+        return fileInfoList;
+    }
+
+    public void setFileInfoList(Object fileInfoList) {
+        this.fileInfoList = fileInfoList;
+    }
+
+    public IsolateEventResponseInfo withRegistryInfoList(Object registryInfoList) {
+        this.registryInfoList = registryInfoList;
+        return this;
+    }
+
+    /**
+     * 注册表信息列表
+     * @return registryInfoList
+     */
+    public Object getRegistryInfoList() {
+        return registryInfoList;
+    }
+
+    public void setRegistryInfoList(Object registryInfoList) {
+        this.registryInfoList = registryInfoList;
+    }
+
+    public IsolateEventResponseInfo withClusterInfo(Object clusterInfo) {
+        this.clusterInfo = clusterInfo;
+        return this;
+    }
+
+    /**
+     * 注册表信息列表
+     * @return clusterInfo
+     */
+    public Object getClusterInfo() {
+        return clusterInfo;
+    }
+
+    public void setClusterInfo(Object clusterInfo) {
+        this.clusterInfo = clusterInfo;
+    }
+
+    public IsolateEventResponseInfo withTagList(List<String> tagList) {
+        this.tagList = tagList;
+        return this;
+    }
+
+    public IsolateEventResponseInfo addTagListItem(String tagListItem) {
+        if (this.tagList == null) {
+            this.tagList = new ArrayList<>();
+        }
+        this.tagList.add(tagListItem);
+        return this;
+    }
+
+    public IsolateEventResponseInfo withTagList(Consumer<List<String>> tagListSetter) {
+        if (this.tagList == null) {
+            this.tagList = new ArrayList<>();
+        }
+        tagListSetter.accept(this.tagList);
+        return this;
+    }
+
+    /**
+     * 标签列表
+     * @return tagList
+     */
+    public List<String> getTagList() {
+        return tagList;
+    }
+
+    public void setTagList(List<String> tagList) {
+        this.tagList = tagList;
     }
 
     public IsolateEventResponseInfo withDescription(String description) {
@@ -612,6 +1135,23 @@ public class IsolateEventResponseInfo {
         this.eventCount = eventCount;
     }
 
+    public IsolateEventResponseInfo withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * 集群id
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -631,12 +1171,26 @@ public class IsolateEventResponseInfo {
             && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.attackPhase, that.attackPhase)
             && Objects.equals(this.attackTag, that.attackTag) && Objects.equals(this.occurTime, that.occurTime)
-            && Objects.equals(this.handleTime, that.handleTime) && Objects.equals(this.handleStatus, that.handleStatus)
+            && Objects.equals(this.recentTime, that.recentTime) && Objects.equals(this.handleTime, that.handleTime)
+            && Objects.equals(this.handleStatus, that.handleStatus)
             && Objects.equals(this.handleMethod, that.handleMethod) && Objects.equals(this.handler, that.handler)
-            && Objects.equals(this.recommendation, that.recommendation)
+            && Objects.equals(this.memo, that.memo) && Objects.equals(this.operateAcceptList, that.operateAcceptList)
+            && Objects.equals(this.operateDetailList, that.operateDetailList)
+            && Objects.equals(this.forensicInfo, that.forensicInfo)
+            && Objects.equals(this.resourceInfo, that.resourceInfo) && Objects.equals(this.geoInfo, that.geoInfo)
+            && Objects.equals(this.networkInfo, that.networkInfo) && Objects.equals(this.appInfo, that.appInfo)
+            && Objects.equals(this.systemInfo, that.systemInfo) && Objects.equals(this.malwareInfo, that.malwareInfo)
+            && Objects.equals(this.extendInfo, that.extendInfo)
+            && Objects.equals(this.recommendation, that.recommendation) && Objects.equals(this.attCk, that.attCk)
+            && Objects.equals(this.eventDetails, that.eventDetails) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.processInfoList, that.processInfoList)
+            && Objects.equals(this.userInfoList, that.userInfoList)
+            && Objects.equals(this.fileInfoList, that.fileInfoList)
+            && Objects.equals(this.registryInfoList, that.registryInfoList)
+            && Objects.equals(this.clusterInfo, that.clusterInfo) && Objects.equals(this.tagList, that.tagList)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.eventAbstract, that.eventAbstract)
-            && Objects.equals(this.eventCount, that.eventCount);
+            && Objects.equals(this.eventCount, that.eventCount) && Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override
@@ -660,14 +1214,36 @@ public class IsolateEventResponseInfo {
             attackPhase,
             attackTag,
             occurTime,
+            recentTime,
             handleTime,
             handleStatus,
             handleMethod,
             handler,
+            memo,
+            operateAcceptList,
+            operateDetailList,
+            forensicInfo,
+            resourceInfo,
+            geoInfo,
+            networkInfo,
+            appInfo,
+            systemInfo,
+            malwareInfo,
+            extendInfo,
             recommendation,
+            attCk,
+            eventDetails,
+            confidence,
+            processInfoList,
+            userInfoList,
+            fileInfoList,
+            registryInfoList,
+            clusterInfo,
+            tagList,
             description,
             eventAbstract,
-            eventCount);
+            eventCount,
+            clusterId);
     }
 
     @Override
@@ -693,14 +1269,36 @@ public class IsolateEventResponseInfo {
         sb.append("    attackPhase: ").append(toIndentedString(attackPhase)).append("\n");
         sb.append("    attackTag: ").append(toIndentedString(attackTag)).append("\n");
         sb.append("    occurTime: ").append(toIndentedString(occurTime)).append("\n");
+        sb.append("    recentTime: ").append(toIndentedString(recentTime)).append("\n");
         sb.append("    handleTime: ").append(toIndentedString(handleTime)).append("\n");
         sb.append("    handleStatus: ").append(toIndentedString(handleStatus)).append("\n");
         sb.append("    handleMethod: ").append(toIndentedString(handleMethod)).append("\n");
         sb.append("    handler: ").append(toIndentedString(handler)).append("\n");
+        sb.append("    memo: ").append(toIndentedString(memo)).append("\n");
+        sb.append("    operateAcceptList: ").append(toIndentedString(operateAcceptList)).append("\n");
+        sb.append("    operateDetailList: ").append(toIndentedString(operateDetailList)).append("\n");
+        sb.append("    forensicInfo: ").append(toIndentedString(forensicInfo)).append("\n");
+        sb.append("    resourceInfo: ").append(toIndentedString(resourceInfo)).append("\n");
+        sb.append("    geoInfo: ").append(toIndentedString(geoInfo)).append("\n");
+        sb.append("    networkInfo: ").append(toIndentedString(networkInfo)).append("\n");
+        sb.append("    appInfo: ").append(toIndentedString(appInfo)).append("\n");
+        sb.append("    systemInfo: ").append(toIndentedString(systemInfo)).append("\n");
+        sb.append("    malwareInfo: ").append(toIndentedString(malwareInfo)).append("\n");
+        sb.append("    extendInfo: ").append(toIndentedString(extendInfo)).append("\n");
         sb.append("    recommendation: ").append(toIndentedString(recommendation)).append("\n");
+        sb.append("    attCk: ").append(toIndentedString(attCk)).append("\n");
+        sb.append("    eventDetails: ").append(toIndentedString(eventDetails)).append("\n");
+        sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
+        sb.append("    processInfoList: ").append(toIndentedString(processInfoList)).append("\n");
+        sb.append("    userInfoList: ").append(toIndentedString(userInfoList)).append("\n");
+        sb.append("    fileInfoList: ").append(toIndentedString(fileInfoList)).append("\n");
+        sb.append("    registryInfoList: ").append(toIndentedString(registryInfoList)).append("\n");
+        sb.append("    clusterInfo: ").append(toIndentedString(clusterInfo)).append("\n");
+        sb.append("    tagList: ").append(toIndentedString(tagList)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    eventAbstract: ").append(toIndentedString(eventAbstract)).append("\n");
         sb.append("    eventCount: ").append(toIndentedString(eventCount)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

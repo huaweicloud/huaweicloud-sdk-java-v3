@@ -48,6 +48,11 @@ public class VulScanTaskHostInfo {
 
     private List<VulScanTaskHostInfoFailedReasons> failedReasons = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vul_scan_details")
+
+    private List<VulScanTaskHostInfoVulScanDetails> vulScanDetails = null;
+
     public VulScanTaskHostInfo withHostId(String hostId) {
         this.hostId = hostId;
         return this;
@@ -183,6 +188,40 @@ public class VulScanTaskHostInfo {
         this.failedReasons = failedReasons;
     }
 
+    public VulScanTaskHostInfo withVulScanDetails(List<VulScanTaskHostInfoVulScanDetails> vulScanDetails) {
+        this.vulScanDetails = vulScanDetails;
+        return this;
+    }
+
+    public VulScanTaskHostInfo addVulScanDetailsItem(VulScanTaskHostInfoVulScanDetails vulScanDetailsItem) {
+        if (this.vulScanDetails == null) {
+            this.vulScanDetails = new ArrayList<>();
+        }
+        this.vulScanDetails.add(vulScanDetailsItem);
+        return this;
+    }
+
+    public VulScanTaskHostInfo withVulScanDetails(
+        Consumer<List<VulScanTaskHostInfoVulScanDetails>> vulScanDetailsSetter) {
+        if (this.vulScanDetails == null) {
+            this.vulScanDetails = new ArrayList<>();
+        }
+        vulScanDetailsSetter.accept(this.vulScanDetails);
+        return this;
+    }
+
+    /**
+     * 该主机的扫描详情信息
+     * @return vulScanDetails
+     */
+    public List<VulScanTaskHostInfoVulScanDetails> getVulScanDetails() {
+        return vulScanDetails;
+    }
+
+    public void setVulScanDetails(List<VulScanTaskHostInfoVulScanDetails> vulScanDetails) {
+        this.vulScanDetails = vulScanDetails;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -195,12 +234,14 @@ public class VulScanTaskHostInfo {
         return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.privateIp, that.privateIp)
             && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.scanStatus, that.scanStatus)
-            && Objects.equals(this.failedReasons, that.failedReasons);
+            && Objects.equals(this.failedReasons, that.failedReasons)
+            && Objects.equals(this.vulScanDetails, that.vulScanDetails);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId, hostName, publicIp, privateIp, assetValue, scanStatus, failedReasons);
+        return Objects
+            .hash(hostId, hostName, publicIp, privateIp, assetValue, scanStatus, failedReasons, vulScanDetails);
     }
 
     @Override
@@ -214,6 +255,7 @@ public class VulScanTaskHostInfo {
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    scanStatus: ").append(toIndentedString(scanStatus)).append("\n");
         sb.append("    failedReasons: ").append(toIndentedString(failedReasons)).append("\n");
+        sb.append("    vulScanDetails: ").append(toIndentedString(vulScanDetails)).append("\n");
         sb.append("}");
         return sb.toString();
     }

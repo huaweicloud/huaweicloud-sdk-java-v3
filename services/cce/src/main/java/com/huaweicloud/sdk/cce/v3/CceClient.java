@@ -304,6 +304,14 @@ public class CceClient {
 
     public static ClientBuilder<CceClient> newBuilder() {
         ClientBuilder<CceClient> clientBuilder = new ClientBuilder<>(CceClient::new);
+        try {
+            Class<?> exceptionHandler = Class.forName("com.huaweicloud.sdk.core.exception.ExceptionHandler");
+            clientBuilder.getClass()
+                .getMethod("withExceptionHandler", exceptionHandler)
+                .invoke(clientBuilder, new CceExceptionHandler());
+        } catch (IllegalAccessException | ClassNotFoundException | NoSuchMethodException
+            | java.lang.reflect.InvocationTargetException ignore) {
+        }
         return clientBuilder;
     }
 

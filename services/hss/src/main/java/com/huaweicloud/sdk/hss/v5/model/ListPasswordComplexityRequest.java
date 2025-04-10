@@ -31,6 +31,11 @@ public class ListPasswordComplexityRequest {
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "result_type")
+
+    private String resultType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -46,7 +51,7 @@ public class ListPasswordComplexityRequest {
     }
 
     /**
-     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -108,6 +113,23 @@ public class ListPasswordComplexityRequest {
         this.hostId = hostId;
     }
 
+    public ListPasswordComplexityRequest withResultType(String resultType) {
+        this.resultType = resultType;
+        return this;
+    }
+
+    /**
+     * 结果类型  - \"unhandled\"#未忽略的  - \"ignored\"#已忽略的
+     * @return resultType
+     */
+    public String getResultType() {
+        return resultType;
+    }
+
+    public void setResultType(String resultType) {
+        this.resultType = resultType;
+    }
+
     public ListPasswordComplexityRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -157,13 +179,13 @@ public class ListPasswordComplexityRequest {
         ListPasswordComplexityRequest that = (ListPasswordComplexityRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
-            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.resultType, that.resultType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, hostName, hostIp, hostId, limit, offset);
+        return Objects.hash(enterpriseProjectId, hostName, hostIp, hostId, resultType, limit, offset);
     }
 
     @Override
@@ -174,6 +196,7 @@ public class ListPasswordComplexityRequest {
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
+        sb.append("    resultType: ").append(toIndentedString(resultType)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

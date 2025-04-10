@@ -40,6 +40,11 @@ public class ListPolicyGroupRequest {
 
     private Boolean containerMode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
     public ListPolicyGroupRequest withRegion(String region) {
         this.region = region;
         return this;
@@ -63,7 +68,7 @@ public class ListPolicyGroupRequest {
     }
 
     /**
-     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -146,6 +151,23 @@ public class ListPolicyGroupRequest {
         this.containerMode = containerMode;
     }
 
+    public ListPolicyGroupRequest withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 策略组id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -158,12 +180,13 @@ public class ListPolicyGroupRequest {
         return Objects.equals(this.region, that.region)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.containerMode, that.containerMode);
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.containerMode, that.containerMode)
+            && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(region, enterpriseProjectId, groupName, offset, limit, containerMode);
+        return Objects.hash(region, enterpriseProjectId, groupName, offset, limit, containerMode, groupId);
     }
 
     @Override
@@ -176,6 +199,7 @@ public class ListPolicyGroupRequest {
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    containerMode: ").append(toIndentedString(containerMode)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

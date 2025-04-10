@@ -1304,6 +1304,18 @@ public class GaussDBforNoSQLMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListConfigurationTemplatesRequest::getLimit,
                 ListConfigurationTemplatesRequest::setLimit));
+        builder.<String>withRequestField("datastore_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigurationTemplatesRequest::getDatastoreName,
+                ListConfigurationTemplatesRequest::setDatastoreName));
+        builder.<String>withRequestField("mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigurationTemplatesRequest::getMode,
+                ListConfigurationTemplatesRequest::setMode));
 
         // response
 
@@ -1322,6 +1334,17 @@ public class GaussDBforNoSQLMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<String>withRequestField("datastore_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigurationsRequest::getDatastoreName,
+                ListConfigurationsRequest::setDatastoreName));
+        builder.<String>withRequestField("mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListConfigurationsRequest::getMode, ListConfigurationsRequest::setMode));
 
         // response
 
@@ -1802,16 +1825,16 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getName, ListInstancesRequest::setName));
-        builder.<String>withRequestField("mode",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInstancesRequest::getMode, ListInstancesRequest::setMode));
         builder.<String>withRequestField("datastore_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListInstancesRequest::getDatastoreType, ListInstancesRequest::setDatastoreType));
+        builder.<String>withRequestField("mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesRequest::getMode, ListInstancesRequest::setMode));
         builder.<String>withRequestField("vpc_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

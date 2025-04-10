@@ -37,6 +37,16 @@ public class ExportVulsRequest {
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "export_size")
+
+    private Integer exportSize;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "category")
+
+    private String category;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -82,16 +92,6 @@ public class ExportVulsRequest {
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "export_size")
-
-    private Integer exportSize;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "category")
-
-    private String category;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private ExportVulRequestBody body;
@@ -102,7 +102,7 @@ public class ExportVulsRequest {
     }
 
     /**
-     * 企业租户ID，查询所有企业项目时填写：all_granted_eps
+     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -179,6 +179,42 @@ public class ExportVulsRequest {
 
     public void setHostId(String hostId) {
         this.hostId = hostId;
+    }
+
+    public ExportVulsRequest withExportSize(Integer exportSize) {
+        this.exportSize = exportSize;
+        return this;
+    }
+
+    /**
+     * 导出数据条数
+     * minimum: 1
+     * maximum: 200000
+     * @return exportSize
+     */
+    public Integer getExportSize() {
+        return exportSize;
+    }
+
+    public void setExportSize(Integer exportSize) {
+        this.exportSize = exportSize;
+    }
+
+    public ExportVulsRequest withCategory(String category) {
+        this.category = category;
+        return this;
+    }
+
+    /**
+     * 导出漏洞数据类别:   - vul ：漏洞   - host: 主机漏洞
+     * @return category
+     */
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public ExportVulsRequest withLimit(Integer limit) {
@@ -338,42 +374,6 @@ public class ExportVulsRequest {
         this.groupName = groupName;
     }
 
-    public ExportVulsRequest withExportSize(Integer exportSize) {
-        this.exportSize = exportSize;
-        return this;
-    }
-
-    /**
-     * 导出数据条数
-     * minimum: 1
-     * maximum: 200000
-     * @return exportSize
-     */
-    public Integer getExportSize() {
-        return exportSize;
-    }
-
-    public void setExportSize(Integer exportSize) {
-        this.exportSize = exportSize;
-    }
-
-    public ExportVulsRequest withCategory(String category) {
-        this.category = category;
-        return this;
-    }
-
-    /**
-     * 导出漏洞数据类别:   - vul ：漏洞   - host: 主机漏洞
-     * @return category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     public ExportVulsRequest withBody(ExportVulRequestBody body) {
         this.body = body;
         return this;
@@ -412,12 +412,12 @@ public class ExportVulsRequest {
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.type, that.type) && Objects.equals(this.vulId, that.vulId)
             && Objects.equals(this.vulName, that.vulName) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.exportSize, that.exportSize) && Objects.equals(this.category, that.category)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.repairPriority, that.repairPriority)
             && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.cveId, that.cveId)
             && Objects.equals(this.labelList, that.labelList) && Objects.equals(this.status, that.status)
             && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.groupName, that.groupName)
-            && Objects.equals(this.exportSize, that.exportSize) && Objects.equals(this.category, that.category)
             && Objects.equals(this.body, that.body);
     }
 
@@ -428,6 +428,8 @@ public class ExportVulsRequest {
             vulId,
             vulName,
             hostId,
+            exportSize,
+            category,
             limit,
             offset,
             repairPriority,
@@ -437,8 +439,6 @@ public class ExportVulsRequest {
             status,
             assetValue,
             groupName,
-            exportSize,
-            category,
             body);
     }
 
@@ -451,6 +451,8 @@ public class ExportVulsRequest {
         sb.append("    vulId: ").append(toIndentedString(vulId)).append("\n");
         sb.append("    vulName: ").append(toIndentedString(vulName)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
+        sb.append("    exportSize: ").append(toIndentedString(exportSize)).append("\n");
+        sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    repairPriority: ").append(toIndentedString(repairPriority)).append("\n");
@@ -460,8 +462,6 @@ public class ExportVulsRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
-        sb.append("    exportSize: ").append(toIndentedString(exportSize)).append("\n");
-        sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

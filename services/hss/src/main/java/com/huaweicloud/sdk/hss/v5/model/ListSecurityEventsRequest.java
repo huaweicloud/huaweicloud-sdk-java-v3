@@ -128,6 +128,11 @@ public class ListSecurityEventsRequest {
 
     private String eventName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_block")
+
+    private Boolean autoBlock;
+
     public ListSecurityEventsRequest withCategory(String category) {
         this.category = category;
         return this;
@@ -168,7 +173,7 @@ public class ListSecurityEventsRequest {
     }
 
     /**
-     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -589,6 +594,23 @@ public class ListSecurityEventsRequest {
         this.eventName = eventName;
     }
 
+    public ListSecurityEventsRequest withAutoBlock(Boolean autoBlock) {
+        this.autoBlock = autoBlock;
+        return this;
+    }
+
+    /**
+     * 是否自动阻断告警
+     * @return autoBlock
+     */
+    public Boolean getAutoBlock() {
+        return autoBlock;
+    }
+
+    public void setAutoBlock(Boolean autoBlock) {
+        this.autoBlock = autoBlock;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -609,7 +631,8 @@ public class ListSecurityEventsRequest {
             && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.eventClassIds, that.eventClassIds)
             && Objects.equals(this.severityList, that.severityList) && Objects.equals(this.attackTag, that.attackTag)
             && Objects.equals(this.assetValue, that.assetValue) && Objects.equals(this.tagList, that.tagList)
-            && Objects.equals(this.attCk, that.attCk) && Objects.equals(this.eventName, that.eventName);
+            && Objects.equals(this.attCk, that.attCk) && Objects.equals(this.eventName, that.eventName)
+            && Objects.equals(this.autoBlock, that.autoBlock);
     }
 
     @Override
@@ -636,7 +659,8 @@ public class ListSecurityEventsRequest {
             assetValue,
             tagList,
             attCk,
-            eventName);
+            eventName,
+            autoBlock);
     }
 
     @Override
@@ -666,6 +690,7 @@ public class ListSecurityEventsRequest {
         sb.append("    tagList: ").append(toIndentedString(tagList)).append("\n");
         sb.append("    attCk: ").append(toIndentedString(attCk)).append("\n");
         sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
+        sb.append("    autoBlock: ").append(toIndentedString(autoBlock)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -22,6 +22,11 @@ public class ChangeCheckRuleActionRequest {
     private String hostId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "check_cce")
+
+    private Boolean checkCce;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "action")
 
     private String action;
@@ -37,7 +42,7 @@ public class ChangeCheckRuleActionRequest {
     }
 
     /**
-     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -63,6 +68,23 @@ public class ChangeCheckRuleActionRequest {
 
     public void setHostId(String hostId) {
         this.hostId = hostId;
+    }
+
+    public ChangeCheckRuleActionRequest withCheckCce(Boolean checkCce) {
+        this.checkCce = checkCce;
+        return this;
+    }
+
+    /**
+     * 是否校验cce
+     * @return checkCce
+     */
+    public Boolean getCheckCce() {
+        return checkCce;
+    }
+
+    public void setCheckCce(Boolean checkCce) {
+        this.checkCce = checkCce;
     }
 
     public ChangeCheckRuleActionRequest withAction(String action) {
@@ -118,13 +140,13 @@ public class ChangeCheckRuleActionRequest {
         }
         ChangeCheckRuleActionRequest that = (ChangeCheckRuleActionRequest) obj;
         return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.action, that.action)
-            && Objects.equals(this.body, that.body);
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.checkCce, that.checkCce)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, hostId, action, body);
+        return Objects.hash(enterpriseProjectId, hostId, checkCce, action, body);
     }
 
     @Override
@@ -133,6 +155,7 @@ public class ChangeCheckRuleActionRequest {
         sb.append("class ChangeCheckRuleActionRequest {\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
+        sb.append("    checkCce: ").append(toIndentedString(checkCce)).append("\n");
         sb.append("    action: ").append(toIndentedString(action)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

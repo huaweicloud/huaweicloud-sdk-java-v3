@@ -56,6 +56,11 @@ public class ListWtpProtectHostRequest {
     private String protectStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "wtp_status")
+
+    private String wtpStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "agent_status")
 
     private String agentStatus;
@@ -93,7 +98,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * 企业项目ID
+     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -212,7 +217,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * 防护状态   - closed : 未开启   - opened : 防护中
+     * 配额状态   - opened : 已绑定网页防篡改配额
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -221,6 +226,23 @@ public class ListWtpProtectHostRequest {
 
     public void setProtectStatus(String protectStatus) {
         this.protectStatus = protectStatus;
+    }
+
+    public ListWtpProtectHostRequest withWtpStatus(String wtpStatus) {
+        this.wtpStatus = wtpStatus;
+        return this;
+    }
+
+    /**
+     * 网页防篡改防护状态   - opened : 防护汇总   - opening : 正在开启   - open_failed : 防护失败   - partial_protection : 部分防护   - protection_interruption : 防护中断
+     * @return wtpStatus
+     */
+    public String getWtpStatus() {
+        return wtpStatus;
+    }
+
+    public void setWtpStatus(String wtpStatus) {
+        this.wtpStatus = wtpStatus;
     }
 
     public ListWtpProtectHostRequest withAgentStatus(String agentStatus) {
@@ -292,7 +314,7 @@ public class ListWtpProtectHostRequest {
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostId, that.hostId)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.privateIp, that.privateIp)
             && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.osType, that.osType)
-            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.protectStatus, that.protectStatus) && Objects.equals(this.wtpStatus, that.wtpStatus)
             && Objects.equals(this.agentStatus, that.agentStatus) && Objects.equals(this.limit, that.limit)
             && Objects.equals(this.offset, that.offset);
     }
@@ -308,6 +330,7 @@ public class ListWtpProtectHostRequest {
             groupName,
             osType,
             protectStatus,
+            wtpStatus,
             agentStatus,
             limit,
             offset);
@@ -326,6 +349,7 @@ public class ListWtpProtectHostRequest {
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
         sb.append("    osType: ").append(toIndentedString(osType)).append("\n");
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
+        sb.append("    wtpStatus: ").append(toIndentedString(wtpStatus)).append("\n");
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");

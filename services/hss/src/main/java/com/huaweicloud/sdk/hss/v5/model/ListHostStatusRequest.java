@@ -81,6 +81,11 @@ public class ListHostStatusRequest {
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_id")
+
+    private String vpcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region")
 
     private String region;
@@ -89,6 +94,26 @@ public class ListHostStatusRequest {
     @JsonProperty(value = "has_intrusion")
 
     private Boolean hasIntrusion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_vul")
+
+    private Boolean hasVul;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "has_baseline")
+
+    private Boolean hasBaseline;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_key")
+
+    private String sortKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_dir")
+
+    private String sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_group_id")
@@ -109,6 +134,11 @@ public class ListHostStatusRequest {
     @JsonProperty(value = "refresh")
 
     private Boolean refresh;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "get_common_login_locations")
+
+    private Boolean getCommonLoginLocations;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "above_version")
@@ -141,6 +171,31 @@ public class ListHostStatusRequest {
     private Boolean agentUpgradable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "install_mode")
+
+    private Boolean installMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "binding_key")
+
+    private Boolean bindingKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protect_interrupt")
+
+    private Boolean protectInterrupt;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "incluster")
+
+    private Boolean incluster;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protect_degradation")
+
+    private Boolean protectDegradation;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -156,7 +211,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -343,7 +398,7 @@ public class ListHostStatusRequest {
     }
 
     /**
-     * 防护状态，包含如下2种。   - closed ：关闭。   - opened ：开启。
+     * 防护状态，包含如下2种。   - closed ：关闭。   - opened ：开启。   - protection_exception ：防护异常。
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -388,6 +443,23 @@ public class ListHostStatusRequest {
         this.groupName = groupName;
     }
 
+    public ListHostStatusRequest withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    /**
+     * vpc id
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
     public ListHostStatusRequest withRegion(String region) {
         this.region = region;
         return this;
@@ -420,6 +492,74 @@ public class ListHostStatusRequest {
 
     public void setHasIntrusion(Boolean hasIntrusion) {
         this.hasIntrusion = hasIntrusion;
+    }
+
+    public ListHostStatusRequest withHasVul(Boolean hasVul) {
+        this.hasVul = hasVul;
+        return this;
+    }
+
+    /**
+     * 存在漏洞风险
+     * @return hasVul
+     */
+    public Boolean getHasVul() {
+        return hasVul;
+    }
+
+    public void setHasVul(Boolean hasVul) {
+        this.hasVul = hasVul;
+    }
+
+    public ListHostStatusRequest withHasBaseline(Boolean hasBaseline) {
+        this.hasBaseline = hasBaseline;
+        return this;
+    }
+
+    /**
+     * 存在基线风险
+     * @return hasBaseline
+     */
+    public Boolean getHasBaseline() {
+        return hasBaseline;
+    }
+
+    public void setHasBaseline(Boolean hasBaseline) {
+        this.hasBaseline = hasBaseline;
+    }
+
+    public ListHostStatusRequest withSortKey(String sortKey) {
+        this.sortKey = sortKey;
+        return this;
+    }
+
+    /**
+     * 排序字段，只支持risk_num - risk_num：风险总量
+     * @return sortKey
+     */
+    public String getSortKey() {
+        return sortKey;
+    }
+
+    public void setSortKey(String sortKey) {
+        this.sortKey = sortKey;
+    }
+
+    public ListHostStatusRequest withSortDir(String sortDir) {
+        this.sortDir = sortDir;
+        return this;
+    }
+
+    /**
+     * 排序的顺序 - asc: 正序 - desc: 倒序
+     * @return sortDir
+     */
+    public String getSortDir() {
+        return sortDir;
+    }
+
+    public void setSortDir(String sortDir) {
+        this.sortDir = sortDir;
     }
 
     public ListHostStatusRequest withPolicyGroupId(String policyGroupId) {
@@ -488,6 +628,23 @@ public class ListHostStatusRequest {
 
     public void setRefresh(Boolean refresh) {
         this.refresh = refresh;
+    }
+
+    public ListHostStatusRequest withGetCommonLoginLocations(Boolean getCommonLoginLocations) {
+        this.getCommonLoginLocations = getCommonLoginLocations;
+        return this;
+    }
+
+    /**
+     * 是否获取主机常用登录地信息
+     * @return getCommonLoginLocations
+     */
+    public Boolean getGetCommonLoginLocations() {
+        return getCommonLoginLocations;
+    }
+
+    public void setGetCommonLoginLocations(Boolean getCommonLoginLocations) {
+        this.getCommonLoginLocations = getCommonLoginLocations;
     }
 
     public ListHostStatusRequest withAboveVersion(Boolean aboveVersion) {
@@ -592,6 +749,91 @@ public class ListHostStatusRequest {
         this.agentUpgradable = agentUpgradable;
     }
 
+    public ListHostStatusRequest withInstallMode(Boolean installMode) {
+        this.installMode = installMode;
+        return this;
+    }
+
+    /**
+     * 是否安装模式场景
+     * @return installMode
+     */
+    public Boolean getInstallMode() {
+        return installMode;
+    }
+
+    public void setInstallMode(Boolean installMode) {
+        this.installMode = installMode;
+    }
+
+    public ListHostStatusRequest withBindingKey(Boolean bindingKey) {
+        this.bindingKey = bindingKey;
+        return this;
+    }
+
+    /**
+     * 是否绑定DEW密钥
+     * @return bindingKey
+     */
+    public Boolean getBindingKey() {
+        return bindingKey;
+    }
+
+    public void setBindingKey(Boolean bindingKey) {
+        this.bindingKey = bindingKey;
+    }
+
+    public ListHostStatusRequest withProtectInterrupt(Boolean protectInterrupt) {
+        this.protectInterrupt = protectInterrupt;
+        return this;
+    }
+
+    /**
+     * 是否防护中断
+     * @return protectInterrupt
+     */
+    public Boolean getProtectInterrupt() {
+        return protectInterrupt;
+    }
+
+    public void setProtectInterrupt(Boolean protectInterrupt) {
+        this.protectInterrupt = protectInterrupt;
+    }
+
+    public ListHostStatusRequest withIncluster(Boolean incluster) {
+        this.incluster = incluster;
+        return this;
+    }
+
+    /**
+     * 是否集群内节点
+     * @return incluster
+     */
+    public Boolean getIncluster() {
+        return incluster;
+    }
+
+    public void setIncluster(Boolean incluster) {
+        this.incluster = incluster;
+    }
+
+    public ListHostStatusRequest withProtectDegradation(Boolean protectDegradation) {
+        this.protectDegradation = protectDegradation;
+        return this;
+    }
+
+    /**
+     * 是否防护降级
+     * @return protectDegradation
+     */
+    public Boolean getProtectDegradation() {
+        return protectDegradation;
+    }
+
+    public void setProtectDegradation(Boolean protectDegradation) {
+        this.protectDegradation = protectDegradation;
+    }
+
     public ListHostStatusRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -646,16 +888,23 @@ public class ListHostStatusRequest {
             && Objects.equals(this.osType, that.osType) && Objects.equals(this.privateIp, that.privateIp)
             && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.ipAddr, that.ipAddr)
             && Objects.equals(this.protectStatus, that.protectStatus) && Objects.equals(this.groupId, that.groupId)
-            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.region, that.region)
-            && Objects.equals(this.hasIntrusion, that.hasIntrusion)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.hasIntrusion, that.hasIntrusion)
+            && Objects.equals(this.hasVul, that.hasVul) && Objects.equals(this.hasBaseline, that.hasBaseline)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
             && Objects.equals(this.policyGroupId, that.policyGroupId)
             && Objects.equals(this.policyGroupName, that.policyGroupName)
             && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.refresh, that.refresh)
+            && Objects.equals(this.getCommonLoginLocations, that.getCommonLoginLocations)
             && Objects.equals(this.aboveVersion, that.aboveVersion)
             && Objects.equals(this.outsideHost, that.outsideHost) && Objects.equals(this.assetValue, that.assetValue)
             && Objects.equals(this.label, that.label) && Objects.equals(this.serverGroup, that.serverGroup)
-            && Objects.equals(this.agentUpgradable, that.agentUpgradable) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.agentUpgradable, that.agentUpgradable)
+            && Objects.equals(this.installMode, that.installMode) && Objects.equals(this.bindingKey, that.bindingKey)
+            && Objects.equals(this.protectInterrupt, that.protectInterrupt)
+            && Objects.equals(this.incluster, that.incluster)
+            && Objects.equals(this.protectDegradation, that.protectDegradation)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override
@@ -674,18 +923,29 @@ public class ListHostStatusRequest {
             protectStatus,
             groupId,
             groupName,
+            vpcId,
             region,
             hasIntrusion,
+            hasVul,
+            hasBaseline,
+            sortKey,
+            sortDir,
             policyGroupId,
             policyGroupName,
             chargingMode,
             refresh,
+            getCommonLoginLocations,
             aboveVersion,
             outsideHost,
             assetValue,
             label,
             serverGroup,
             agentUpgradable,
+            installMode,
+            bindingKey,
+            protectInterrupt,
+            incluster,
+            protectDegradation,
             limit,
             offset);
     }
@@ -708,18 +968,29 @@ public class ListHostStatusRequest {
         sb.append("    protectStatus: ").append(toIndentedString(protectStatus)).append("\n");
         sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("    hasIntrusion: ").append(toIndentedString(hasIntrusion)).append("\n");
+        sb.append("    hasVul: ").append(toIndentedString(hasVul)).append("\n");
+        sb.append("    hasBaseline: ").append(toIndentedString(hasBaseline)).append("\n");
+        sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
+        sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    policyGroupId: ").append(toIndentedString(policyGroupId)).append("\n");
         sb.append("    policyGroupName: ").append(toIndentedString(policyGroupName)).append("\n");
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    refresh: ").append(toIndentedString(refresh)).append("\n");
+        sb.append("    getCommonLoginLocations: ").append(toIndentedString(getCommonLoginLocations)).append("\n");
         sb.append("    aboveVersion: ").append(toIndentedString(aboveVersion)).append("\n");
         sb.append("    outsideHost: ").append(toIndentedString(outsideHost)).append("\n");
         sb.append("    assetValue: ").append(toIndentedString(assetValue)).append("\n");
         sb.append("    label: ").append(toIndentedString(label)).append("\n");
         sb.append("    serverGroup: ").append(toIndentedString(serverGroup)).append("\n");
         sb.append("    agentUpgradable: ").append(toIndentedString(agentUpgradable)).append("\n");
+        sb.append("    installMode: ").append(toIndentedString(installMode)).append("\n");
+        sb.append("    bindingKey: ").append(toIndentedString(bindingKey)).append("\n");
+        sb.append("    protectInterrupt: ").append(toIndentedString(protectInterrupt)).append("\n");
+        sb.append("    incluster: ").append(toIndentedString(incluster)).append("\n");
+        sb.append("    protectDegradation: ").append(toIndentedString(protectDegradation)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

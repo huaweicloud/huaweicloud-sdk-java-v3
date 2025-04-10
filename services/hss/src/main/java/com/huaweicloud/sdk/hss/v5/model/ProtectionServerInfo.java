@@ -12,6 +12,16 @@ import java.util.function.Consumer;
 public class ProtectionServerInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id")
 
     private String hostId;
@@ -175,6 +185,40 @@ public class ProtectionServerInfo {
     @JsonProperty(value = "resources_num")
 
     private Integer resourcesNum;
+
+    public ProtectionServerInfo withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 项目ID
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public ProtectionServerInfo withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+    }
 
     public ProtectionServerInfo withHostId(String hostId) {
         this.hostId = hostId;
@@ -767,7 +811,9 @@ public class ProtectionServerInfo {
             return false;
         }
         ProtectionServerInfo that = (ProtectionServerInfo) obj;
-        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.agentId, that.agentId)
+        return Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.agentId, that.agentId)
             && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
             && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.osType, that.osType)
             && Objects.equals(this.osName, that.osName) && Objects.equals(this.hostStatus, that.hostStatus)
@@ -796,7 +842,9 @@ public class ProtectionServerInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId,
+        return Objects.hash(projectId,
+            enterpriseProjectId,
+            hostId,
             agentId,
             hostName,
             hostIp,
@@ -835,6 +883,8 @@ public class ProtectionServerInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ProtectionServerInfo {\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");

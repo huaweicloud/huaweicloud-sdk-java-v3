@@ -25,6 +25,16 @@ public class WeakPwdAccountInfoResponseInfo {
 
     private Integer duration;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "desensitized_weak_passwords")
+
+    private String desensitizedWeakPasswords;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "suggestion")
+
+    private String suggestion;
+
     public WeakPwdAccountInfoResponseInfo withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -78,6 +88,40 @@ public class WeakPwdAccountInfoResponseInfo {
         this.duration = duration;
     }
 
+    public WeakPwdAccountInfoResponseInfo withDesensitizedWeakPasswords(String desensitizedWeakPasswords) {
+        this.desensitizedWeakPasswords = desensitizedWeakPasswords;
+        return this;
+    }
+
+    /**
+     * 脱敏弱口令
+     * @return desensitizedWeakPasswords
+     */
+    public String getDesensitizedWeakPasswords() {
+        return desensitizedWeakPasswords;
+    }
+
+    public void setDesensitizedWeakPasswords(String desensitizedWeakPasswords) {
+        this.desensitizedWeakPasswords = desensitizedWeakPasswords;
+    }
+
+    public WeakPwdAccountInfoResponseInfo withSuggestion(String suggestion) {
+        this.suggestion = suggestion;
+        return this;
+    }
+
+    /**
+     * 修改建议
+     * @return suggestion
+     */
+    public String getSuggestion() {
+        return suggestion;
+    }
+
+    public void setSuggestion(String suggestion) {
+        this.suggestion = suggestion;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +132,14 @@ public class WeakPwdAccountInfoResponseInfo {
         }
         WeakPwdAccountInfoResponseInfo that = (WeakPwdAccountInfoResponseInfo) obj;
         return Objects.equals(this.userName, that.userName) && Objects.equals(this.serviceType, that.serviceType)
-            && Objects.equals(this.duration, that.duration);
+            && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.desensitizedWeakPasswords, that.desensitizedWeakPasswords)
+            && Objects.equals(this.suggestion, that.suggestion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, serviceType, duration);
+        return Objects.hash(userName, serviceType, duration, desensitizedWeakPasswords, suggestion);
     }
 
     @Override
@@ -103,6 +149,8 @@ public class WeakPwdAccountInfoResponseInfo {
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("    desensitizedWeakPasswords: ").append(toIndentedString(desensitizedWeakPasswords)).append("\n");
+        sb.append("    suggestion: ").append(toIndentedString(suggestion)).append("\n");
         sb.append("}");
         return sb.toString();
     }

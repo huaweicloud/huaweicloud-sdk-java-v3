@@ -52,6 +52,8 @@ import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowRepositoryResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowStorageRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowStorageResponse;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserPrivilegesRequest;
+import com.huaweicloud.sdk.codeartsartifact.v2.model.ShowUserPrivilegesResponse;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateArtifactoryRequest;
 import com.huaweicloud.sdk.codeartsartifact.v2.model.UpdateArtifactoryResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -823,6 +825,35 @@ public class CodeArtsArtifactClient {
      */
     public SyncInvoker<ShowStorageRequest, ShowStorageResponse> showStorageInvoker(ShowStorageRequest request) {
         return new SyncInvoker<>(request, CodeArtsArtifactMeta.showStorage, hcClient);
+    }
+
+    /**
+     * 查询用户在项目下的权限
+     *
+     * 查询用户在项目下的权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUserPrivilegesRequest 请求对象
+     * @return ShowUserPrivilegesResponse
+     */
+    public ShowUserPrivilegesResponse showUserPrivileges(ShowUserPrivilegesRequest request) {
+        return hcClient.syncInvokeHttp(request, CodeArtsArtifactMeta.showUserPrivileges);
+    }
+
+    /**
+     * 查询用户在项目下的权限
+     *
+     * 查询用户在项目下的权限
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowUserPrivilegesRequest 请求对象
+     * @return SyncInvoker<ShowUserPrivilegesRequest, ShowUserPrivilegesResponse>
+     */
+    public SyncInvoker<ShowUserPrivilegesRequest, ShowUserPrivilegesResponse> showUserPrivilegesInvoker(
+        ShowUserPrivilegesRequest request) {
+        return new SyncInvoker<>(request, CodeArtsArtifactMeta.showUserPrivileges, hcClient);
     }
 
     /**

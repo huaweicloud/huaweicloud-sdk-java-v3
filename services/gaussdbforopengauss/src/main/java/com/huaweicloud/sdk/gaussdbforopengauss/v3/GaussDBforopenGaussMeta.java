@@ -23,11 +23,14 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CancelScheduleTaskResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ConfirmRestoredDataRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ConfirmRestoredDataResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ConstructReq;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CopyConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CopyConfigurationResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateConfigurationTemplateRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateConfigurationTemplateRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateConfigurationTemplateResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateCrossCloudConstructDisasterRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateCrossCloudConstructDisasterResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDatabaseInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDatabaseInstanceRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateDatabaseInstanceResponse;
@@ -79,8 +82,29 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupReques
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteManualBackupResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteScheduleTaskRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DeleteScheduleTaskResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DisasterFailoverReqBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DisasterRecoverStartSimulationRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DisasterRecoverStartXlogKeepRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DisasterRecoverStopSimulationRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DisasterRecoverStopXlogKeepRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.DownloadBackupResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterDataCacheEndRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterDataCacheEndResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterDataCacheStartRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterDataCacheStartResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterEndSimulationRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterEndSimulationResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterRecoveryFailoverRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterRecoveryFailoverResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterRestoreRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterRestoreResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterStartSimulationRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterStartSimulationResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterSwitchoverRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudDisasterSwitchoverResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudReleaseDisasterRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ExecuteCrossCloudReleaseDisasterResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBUpgradeInstancesVersionRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenDatabaseForCreation;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenGaussDatabaseSchemaReq;
@@ -127,6 +151,8 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbFlavorsRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbFlavorsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbUsersRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDbUsersResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDisasterRecoveryRecordRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDisasterRecoveryRecordResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListEpsQuotasResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFeaturesRequest;
@@ -203,14 +229,19 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ParamGroupDiffRequestBod
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.PluginExtensions;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.PwdResetRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RecyclePolicyRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ReleaseDisasterReq;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetDrConfigRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetDrConfigRequestBody;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetDrConfigResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetPwdRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetPwdResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResizeInstanceFlavorRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResizeInstanceFlavorResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestartInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestartInstanceResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreDisasterReq;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestoreInstanceResponse;
@@ -242,6 +273,10 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBatchUpgradeCandidat
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowBatchUpgradeCandidateVersionsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowConfigurationDetailRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowConfigurationDetailResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowCrossCloudDisasterInstanceMonitorRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowCrossCloudDisasterInstanceMonitorResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowCrossCloudDisasterRelationsRequest;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowCrossCloudDisasterRelationsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowDeploymentFormRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowDeploymentFormResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ShowErrorLogSwitchStatusRequest;
@@ -292,6 +327,7 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchConfigurationRespo
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchShardResponse;
+import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SwitchoverReq;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SyncLimitDataRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.SyncLimitDataResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.UpdateFeaturesRequest;
@@ -612,6 +648,45 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(CreateConfigurationTemplateRequestBody.class),
             f -> f.withMarshaller(CreateConfigurationTemplateRequest::getBody,
                 CreateConfigurationTemplateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCrossCloudConstructDisasterRequest, CreateCrossCloudConstructDisasterResponse> createCrossCloudConstructDisaster =
+        genForCreateCrossCloudConstructDisaster();
+
+    private static HttpRequestDef<CreateCrossCloudConstructDisasterRequest, CreateCrossCloudConstructDisasterResponse> genForCreateCrossCloudConstructDisaster() {
+        // basic
+        HttpRequestDef.Builder<CreateCrossCloudConstructDisasterRequest, CreateCrossCloudConstructDisasterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateCrossCloudConstructDisasterRequest.class,
+                    CreateCrossCloudConstructDisasterResponse.class)
+                .withName("CreateCrossCloudConstructDisaster")
+                .withUri("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/construct")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCrossCloudConstructDisasterRequest::getInstanceId,
+                CreateCrossCloudConstructDisasterRequest::setInstanceId));
+        builder.<CreateCrossCloudConstructDisasterRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateCrossCloudConstructDisasterRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(CreateCrossCloudConstructDisasterRequest::getXLanguage,
+                CreateCrossCloudConstructDisasterRequest::setXLanguage));
+        builder.<ConstructReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ConstructReq.class),
+            f -> f.withMarshaller(CreateCrossCloudConstructDisasterRequest::getBody,
+                CreateCrossCloudConstructDisasterRequest::setBody));
 
         // response
 
@@ -1247,6 +1322,318 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadBackupRequest::getXLanguage, DownloadBackupRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteCrossCloudDisasterDataCacheEndRequest, ExecuteCrossCloudDisasterDataCacheEndResponse> executeCrossCloudDisasterDataCacheEnd =
+        genForExecuteCrossCloudDisasterDataCacheEnd();
+
+    private static HttpRequestDef<ExecuteCrossCloudDisasterDataCacheEndRequest, ExecuteCrossCloudDisasterDataCacheEndResponse> genForExecuteCrossCloudDisasterDataCacheEnd() {
+        // basic
+        HttpRequestDef.Builder<ExecuteCrossCloudDisasterDataCacheEndRequest, ExecuteCrossCloudDisasterDataCacheEndResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteCrossCloudDisasterDataCacheEndRequest.class,
+                    ExecuteCrossCloudDisasterDataCacheEndResponse.class)
+                .withName("ExecuteCrossCloudDisasterDataCacheEnd")
+                .withUri("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/keep-log-stop")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterDataCacheEndRequest::getInstanceId,
+                ExecuteCrossCloudDisasterDataCacheEndRequest::setInstanceId));
+        builder.<ExecuteCrossCloudDisasterDataCacheEndRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExecuteCrossCloudDisasterDataCacheEndRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterDataCacheEndRequest::getXLanguage,
+                ExecuteCrossCloudDisasterDataCacheEndRequest::setXLanguage));
+        builder.<DisasterRecoverStopXlogKeepRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisasterRecoverStopXlogKeepRequestBody.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterDataCacheEndRequest::getBody,
+                ExecuteCrossCloudDisasterDataCacheEndRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteCrossCloudDisasterDataCacheStartRequest, ExecuteCrossCloudDisasterDataCacheStartResponse> executeCrossCloudDisasterDataCacheStart =
+        genForExecuteCrossCloudDisasterDataCacheStart();
+
+    private static HttpRequestDef<ExecuteCrossCloudDisasterDataCacheStartRequest, ExecuteCrossCloudDisasterDataCacheStartResponse> genForExecuteCrossCloudDisasterDataCacheStart() {
+        // basic
+        HttpRequestDef.Builder<ExecuteCrossCloudDisasterDataCacheStartRequest, ExecuteCrossCloudDisasterDataCacheStartResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteCrossCloudDisasterDataCacheStartRequest.class,
+                    ExecuteCrossCloudDisasterDataCacheStartResponse.class)
+                .withName("ExecuteCrossCloudDisasterDataCacheStart")
+                .withUri("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/keep-log-start")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterDataCacheStartRequest::getInstanceId,
+                ExecuteCrossCloudDisasterDataCacheStartRequest::setInstanceId));
+        builder.<ExecuteCrossCloudDisasterDataCacheStartRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExecuteCrossCloudDisasterDataCacheStartRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterDataCacheStartRequest::getXLanguage,
+                ExecuteCrossCloudDisasterDataCacheStartRequest::setXLanguage));
+        builder.<DisasterRecoverStartXlogKeepRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisasterRecoverStartXlogKeepRequestBody.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterDataCacheStartRequest::getBody,
+                ExecuteCrossCloudDisasterDataCacheStartRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteCrossCloudDisasterEndSimulationRequest, ExecuteCrossCloudDisasterEndSimulationResponse> executeCrossCloudDisasterEndSimulation =
+        genForExecuteCrossCloudDisasterEndSimulation();
+
+    private static HttpRequestDef<ExecuteCrossCloudDisasterEndSimulationRequest, ExecuteCrossCloudDisasterEndSimulationResponse> genForExecuteCrossCloudDisasterEndSimulation() {
+        // basic
+        HttpRequestDef.Builder<ExecuteCrossCloudDisasterEndSimulationRequest, ExecuteCrossCloudDisasterEndSimulationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteCrossCloudDisasterEndSimulationRequest.class,
+                    ExecuteCrossCloudDisasterEndSimulationResponse.class)
+                .withName("ExecuteCrossCloudDisasterEndSimulation")
+                .withUri("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/simulation-stop")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterEndSimulationRequest::getInstanceId,
+                ExecuteCrossCloudDisasterEndSimulationRequest::setInstanceId));
+        builder.<ExecuteCrossCloudDisasterEndSimulationRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExecuteCrossCloudDisasterEndSimulationRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterEndSimulationRequest::getXLanguage,
+                ExecuteCrossCloudDisasterEndSimulationRequest::setXLanguage));
+        builder.<DisasterRecoverStopSimulationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisasterRecoverStopSimulationRequestBody.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterEndSimulationRequest::getBody,
+                ExecuteCrossCloudDisasterEndSimulationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteCrossCloudDisasterRecoveryFailoverRequest, ExecuteCrossCloudDisasterRecoveryFailoverResponse> executeCrossCloudDisasterRecoveryFailover =
+        genForExecuteCrossCloudDisasterRecoveryFailover();
+
+    private static HttpRequestDef<ExecuteCrossCloudDisasterRecoveryFailoverRequest, ExecuteCrossCloudDisasterRecoveryFailoverResponse> genForExecuteCrossCloudDisasterRecoveryFailover() {
+        // basic
+        HttpRequestDef.Builder<ExecuteCrossCloudDisasterRecoveryFailoverRequest, ExecuteCrossCloudDisasterRecoveryFailoverResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteCrossCloudDisasterRecoveryFailoverRequest.class,
+                    ExecuteCrossCloudDisasterRecoveryFailoverResponse.class)
+                .withName("ExecuteCrossCloudDisasterRecoveryFailover")
+                .withUri("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/failover")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterRecoveryFailoverRequest::getInstanceId,
+                ExecuteCrossCloudDisasterRecoveryFailoverRequest::setInstanceId));
+        builder.<ExecuteCrossCloudDisasterRecoveryFailoverRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExecuteCrossCloudDisasterRecoveryFailoverRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterRecoveryFailoverRequest::getXLanguage,
+                ExecuteCrossCloudDisasterRecoveryFailoverRequest::setXLanguage));
+        builder.<DisasterFailoverReqBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisasterFailoverReqBody.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterRecoveryFailoverRequest::getBody,
+                ExecuteCrossCloudDisasterRecoveryFailoverRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteCrossCloudDisasterRestoreRequest, ExecuteCrossCloudDisasterRestoreResponse> executeCrossCloudDisasterRestore =
+        genForExecuteCrossCloudDisasterRestore();
+
+    private static HttpRequestDef<ExecuteCrossCloudDisasterRestoreRequest, ExecuteCrossCloudDisasterRestoreResponse> genForExecuteCrossCloudDisasterRestore() {
+        // basic
+        HttpRequestDef.Builder<ExecuteCrossCloudDisasterRestoreRequest, ExecuteCrossCloudDisasterRestoreResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteCrossCloudDisasterRestoreRequest.class,
+                    ExecuteCrossCloudDisasterRestoreResponse.class)
+                .withName("ExecuteCrossCloudDisasterRestore")
+                .withUri("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/restore")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterRestoreRequest::getInstanceId,
+                ExecuteCrossCloudDisasterRestoreRequest::setInstanceId));
+        builder.<ExecuteCrossCloudDisasterRestoreRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExecuteCrossCloudDisasterRestoreRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterRestoreRequest::getXLanguage,
+                ExecuteCrossCloudDisasterRestoreRequest::setXLanguage));
+        builder.<RestoreDisasterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RestoreDisasterReq.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterRestoreRequest::getBody,
+                ExecuteCrossCloudDisasterRestoreRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteCrossCloudDisasterStartSimulationRequest, ExecuteCrossCloudDisasterStartSimulationResponse> executeCrossCloudDisasterStartSimulation =
+        genForExecuteCrossCloudDisasterStartSimulation();
+
+    private static HttpRequestDef<ExecuteCrossCloudDisasterStartSimulationRequest, ExecuteCrossCloudDisasterStartSimulationResponse> genForExecuteCrossCloudDisasterStartSimulation() {
+        // basic
+        HttpRequestDef.Builder<ExecuteCrossCloudDisasterStartSimulationRequest, ExecuteCrossCloudDisasterStartSimulationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteCrossCloudDisasterStartSimulationRequest.class,
+                    ExecuteCrossCloudDisasterStartSimulationResponse.class)
+                .withName("ExecuteCrossCloudDisasterStartSimulation")
+                .withUri("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/simulation-start")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterStartSimulationRequest::getInstanceId,
+                ExecuteCrossCloudDisasterStartSimulationRequest::setInstanceId));
+        builder.<ExecuteCrossCloudDisasterStartSimulationRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExecuteCrossCloudDisasterStartSimulationRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterStartSimulationRequest::getXLanguage,
+                ExecuteCrossCloudDisasterStartSimulationRequest::setXLanguage));
+        builder.<DisasterRecoverStartSimulationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisasterRecoverStartSimulationRequestBody.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterStartSimulationRequest::getBody,
+                ExecuteCrossCloudDisasterStartSimulationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteCrossCloudDisasterSwitchoverRequest, ExecuteCrossCloudDisasterSwitchoverResponse> executeCrossCloudDisasterSwitchover =
+        genForExecuteCrossCloudDisasterSwitchover();
+
+    private static HttpRequestDef<ExecuteCrossCloudDisasterSwitchoverRequest, ExecuteCrossCloudDisasterSwitchoverResponse> genForExecuteCrossCloudDisasterSwitchover() {
+        // basic
+        HttpRequestDef.Builder<ExecuteCrossCloudDisasterSwitchoverRequest, ExecuteCrossCloudDisasterSwitchoverResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteCrossCloudDisasterSwitchoverRequest.class,
+                    ExecuteCrossCloudDisasterSwitchoverResponse.class)
+                .withName("ExecuteCrossCloudDisasterSwitchover")
+                .withUri("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/switchover")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterSwitchoverRequest::getInstanceId,
+                ExecuteCrossCloudDisasterSwitchoverRequest::setInstanceId));
+        builder.<ExecuteCrossCloudDisasterSwitchoverRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExecuteCrossCloudDisasterSwitchoverRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterSwitchoverRequest::getXLanguage,
+                ExecuteCrossCloudDisasterSwitchoverRequest::setXLanguage));
+        builder.<SwitchoverReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchoverReq.class),
+            f -> f.withMarshaller(ExecuteCrossCloudDisasterSwitchoverRequest::getBody,
+                ExecuteCrossCloudDisasterSwitchoverRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteCrossCloudReleaseDisasterRequest, ExecuteCrossCloudReleaseDisasterResponse> executeCrossCloudReleaseDisaster =
+        genForExecuteCrossCloudReleaseDisaster();
+
+    private static HttpRequestDef<ExecuteCrossCloudReleaseDisasterRequest, ExecuteCrossCloudReleaseDisasterResponse> genForExecuteCrossCloudReleaseDisaster() {
+        // basic
+        HttpRequestDef.Builder<ExecuteCrossCloudReleaseDisasterRequest, ExecuteCrossCloudReleaseDisasterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteCrossCloudReleaseDisasterRequest.class,
+                    ExecuteCrossCloudReleaseDisasterResponse.class)
+                .withName("ExecuteCrossCloudReleaseDisaster")
+                .withUri("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/release")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteCrossCloudReleaseDisasterRequest::getInstanceId,
+                ExecuteCrossCloudReleaseDisasterRequest::setInstanceId));
+        builder.<ExecuteCrossCloudReleaseDisasterRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ExecuteCrossCloudReleaseDisasterRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ExecuteCrossCloudReleaseDisasterRequest::getXLanguage,
+                ExecuteCrossCloudReleaseDisasterRequest::setXLanguage));
+        builder.<ReleaseDisasterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ReleaseDisasterReq.class),
+            f -> f.withMarshaller(ExecuteCrossCloudReleaseDisasterRequest::getBody,
+                ExecuteCrossCloudReleaseDisasterRequest::setBody));
 
         // response
 
@@ -2083,6 +2470,63 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDbUsersRequest::getXLanguage, ListDbUsersRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDisasterRecoveryRecordRequest, ListDisasterRecoveryRecordResponse> listDisasterRecoveryRecord =
+        genForListDisasterRecoveryRecord();
+
+    private static HttpRequestDef<ListDisasterRecoveryRecordRequest, ListDisasterRecoveryRecordResponse> genForListDisasterRecoveryRecord() {
+        // basic
+        HttpRequestDef.Builder<ListDisasterRecoveryRecordRequest, ListDisasterRecoveryRecordResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListDisasterRecoveryRecordRequest.class,
+                    ListDisasterRecoveryRecordResponse.class)
+                .withName("ListDisasterRecoveryRecord")
+                .withUri("/v3/{project_id}/instances/{instance_id}/disaster-recovery/records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDisasterRecoveryRecordRequest::getInstanceId,
+                ListDisasterRecoveryRecordRequest::setInstanceId));
+        builder.<String>withRequestField("entity_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDisasterRecoveryRecordRequest::getEntityId,
+                ListDisasterRecoveryRecordRequest::setEntityId));
+        builder.<ListDisasterRecoveryRecordRequest.EntityTypeEnum>withRequestField("entity_type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListDisasterRecoveryRecordRequest.EntityTypeEnum.class),
+            f -> f.withMarshaller(ListDisasterRecoveryRecordRequest::getEntityType,
+                ListDisasterRecoveryRecordRequest::setEntityType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDisasterRecoveryRecordRequest::getLimit,
+                ListDisasterRecoveryRecordRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDisasterRecoveryRecordRequest::getOffset,
+                ListDisasterRecoveryRecordRequest::setOffset));
+        builder.<ListDisasterRecoveryRecordRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDisasterRecoveryRecordRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListDisasterRecoveryRecordRequest::getXLanguage,
+                ListDisasterRecoveryRecordRequest::setXLanguage));
 
         // response
 
@@ -3361,6 +3805,39 @@ public class GaussDBforopenGaussMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ResetDrConfigRequest, ResetDrConfigResponse> resetDrConfig =
+        genForResetDrConfig();
+
+    private static HttpRequestDef<ResetDrConfigRequest, ResetDrConfigResponse> genForResetDrConfig() {
+        // basic
+        HttpRequestDef.Builder<ResetDrConfigRequest, ResetDrConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResetDrConfigRequest.class, ResetDrConfigResponse.class)
+                .withName("ResetDrConfig")
+                .withUri("/v3.5/{project_id}/instances/{instance_id}/reset-dr-config")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetDrConfigRequest::getInstanceId, ResetDrConfigRequest::setInstanceId));
+        builder.<ResetDrConfigRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ResetDrConfigRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ResetDrConfigRequest::getXLanguage, ResetDrConfigRequest::setXLanguage));
+        builder.<ResetDrConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ResetDrConfigRequestBody.class),
+            f -> f.withMarshaller(ResetDrConfigRequest::getBody, ResetDrConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetPwdRequest, ResetPwdResponse> resetPwd = genForResetPwd();
 
     private static HttpRequestDef<ResetPwdRequest, ResetPwdResponse> genForResetPwd() {
@@ -3861,6 +4338,114 @@ public class GaussDBforopenGaussMeta {
             TypeCasts.uncheckedConversion(ShowConfigurationDetailRequest.XLanguageEnum.class),
             f -> f.withMarshaller(ShowConfigurationDetailRequest::getXLanguage,
                 ShowConfigurationDetailRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCrossCloudDisasterInstanceMonitorRequest, ShowCrossCloudDisasterInstanceMonitorResponse> showCrossCloudDisasterInstanceMonitor =
+        genForShowCrossCloudDisasterInstanceMonitor();
+
+    private static HttpRequestDef<ShowCrossCloudDisasterInstanceMonitorRequest, ShowCrossCloudDisasterInstanceMonitorResponse> genForShowCrossCloudDisasterInstanceMonitor() {
+        // basic
+        HttpRequestDef.Builder<ShowCrossCloudDisasterInstanceMonitorRequest, ShowCrossCloudDisasterInstanceMonitorResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowCrossCloudDisasterInstanceMonitorRequest.class,
+                    ShowCrossCloudDisasterInstanceMonitorResponse.class)
+                .withName("ShowCrossCloudDisasterInstanceMonitor")
+                .withUri("/v3.5/{project_id}/instances/{instance_id}/disaster-recovery/monitor")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCrossCloudDisasterInstanceMonitorRequest::getInstanceId,
+                ShowCrossCloudDisasterInstanceMonitorRequest::setInstanceId));
+        builder.<ShowCrossCloudDisasterInstanceMonitorRequest.DisasterTypeEnum>withRequestField("disaster_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowCrossCloudDisasterInstanceMonitorRequest.DisasterTypeEnum.class),
+            f -> f.withMarshaller(ShowCrossCloudDisasterInstanceMonitorRequest::getDisasterType,
+                ShowCrossCloudDisasterInstanceMonitorRequest::setDisasterType));
+        builder.<ShowCrossCloudDisasterInstanceMonitorRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowCrossCloudDisasterInstanceMonitorRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowCrossCloudDisasterInstanceMonitorRequest::getXLanguage,
+                ShowCrossCloudDisasterInstanceMonitorRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCrossCloudDisasterRelationsRequest, ShowCrossCloudDisasterRelationsResponse> showCrossCloudDisasterRelations =
+        genForShowCrossCloudDisasterRelations();
+
+    private static HttpRequestDef<ShowCrossCloudDisasterRelationsRequest, ShowCrossCloudDisasterRelationsResponse> genForShowCrossCloudDisasterRelations() {
+        // basic
+        HttpRequestDef.Builder<ShowCrossCloudDisasterRelationsRequest, ShowCrossCloudDisasterRelationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowCrossCloudDisasterRelationsRequest.class,
+                    ShowCrossCloudDisasterRelationsResponse.class)
+                .withName("ShowCrossCloudDisasterRelations")
+                .withUri("/v3.5/{project_id}/disaster-recovery/relations")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowCrossCloudDisasterRelationsRequest::getLimit,
+                ShowCrossCloudDisasterRelationsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowCrossCloudDisasterRelationsRequest::getOffset,
+                ShowCrossCloudDisasterRelationsRequest::setOffset));
+        builder.<String>withRequestField("instance_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCrossCloudDisasterRelationsRequest::getInstanceName,
+                ShowCrossCloudDisasterRelationsRequest::setInstanceName));
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCrossCloudDisasterRelationsRequest::getInstanceId,
+                ShowCrossCloudDisasterRelationsRequest::setInstanceId));
+        builder.<ShowCrossCloudDisasterRelationsRequest.DrRoleEnum>withRequestField("dr_role",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowCrossCloudDisasterRelationsRequest.DrRoleEnum.class),
+            f -> f.withMarshaller(ShowCrossCloudDisasterRelationsRequest::getDrRole,
+                ShowCrossCloudDisasterRelationsRequest::setDrRole));
+        builder.<ShowCrossCloudDisasterRelationsRequest.DrTypeEnum>withRequestField("dr_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowCrossCloudDisasterRelationsRequest.DrTypeEnum.class),
+            f -> f.withMarshaller(ShowCrossCloudDisasterRelationsRequest::getDrType,
+                ShowCrossCloudDisasterRelationsRequest::setDrType));
+        builder.<ShowCrossCloudDisasterRelationsRequest.DrStatusEnum>withRequestField("dr_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowCrossCloudDisasterRelationsRequest.DrStatusEnum.class),
+            f -> f.withMarshaller(ShowCrossCloudDisasterRelationsRequest::getDrStatus,
+                ShowCrossCloudDisasterRelationsRequest::setDrStatus));
+        builder.<ShowCrossCloudDisasterRelationsRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ShowCrossCloudDisasterRelationsRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ShowCrossCloudDisasterRelationsRequest::getXLanguage,
+                ShowCrossCloudDisasterRelationsRequest::setXLanguage));
 
         // response
 

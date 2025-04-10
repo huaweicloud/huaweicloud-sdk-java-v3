@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.hss.v5.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -47,6 +52,21 @@ public class Host {
     @JsonProperty(value = "enterprise_project_name")
 
     private String enterpriseProjectName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_name")
+
+    private String osName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os_version")
+
+    private String osVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kernel_version")
+
+    private String kernelVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_status")
@@ -203,6 +223,137 @@ public class Host {
 
     private Boolean protectInterrupt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protect_degradation")
+
+    private Boolean protectDegradation;
+
+    /**
+     * 服务器来源
+     */
+    public static final class HostSourcesEnum {
+
+        /**
+         * Enum ECS for value: "ecs"
+         */
+        public static final HostSourcesEnum ECS = new HostSourcesEnum("ecs");
+
+        /**
+         * Enum OUTSIDE for value: "outside"
+         */
+        public static final HostSourcesEnum OUTSIDE = new HostSourcesEnum("outside");
+
+        /**
+         * Enum WORKSPACE for value: "workspace"
+         */
+        public static final HostSourcesEnum WORKSPACE = new HostSourcesEnum("workspace");
+
+        private static final Map<String, HostSourcesEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, HostSourcesEnum> createStaticFields() {
+            Map<String, HostSourcesEnum> map = new HashMap<>();
+            map.put("ecs", ECS);
+            map.put("outside", OUTSIDE);
+            map.put("workspace", WORKSPACE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        HostSourcesEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static HostSourcesEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HostSourcesEnum(value));
+        }
+
+        public static HostSourcesEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof HostSourcesEnum) {
+                return this.value.equals(((HostSourcesEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "host_sources")
+
+    private HostSourcesEnum hostSources;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "interrupt_reason")
+
+    private String interruptReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "degradation_reason")
+
+    private String degradationReason;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_name")
+
+    private String keyName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_open_version")
+
+    private String autoOpenVersion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "install_progress")
+
+    private Integer installProgress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "vpc_id")
+
+    private String vpcId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "common_login_area_codes")
+
+    private List<Integer> commonLoginAreaCodes = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_name")
+
+    private String clusterName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
     public Host withHostName(String hostName) {
         this.hostName = hostName;
         return this;
@@ -322,6 +473,57 @@ public class Host {
         this.enterpriseProjectName = enterpriseProjectName;
     }
 
+    public Host withOsName(String osName) {
+        this.osName = osName;
+        return this;
+    }
+
+    /**
+     * 系统名称
+     * @return osName
+     */
+    public String getOsName() {
+        return osName;
+    }
+
+    public void setOsName(String osName) {
+        this.osName = osName;
+    }
+
+    public Host withOsVersion(String osVersion) {
+        this.osVersion = osVersion;
+        return this;
+    }
+
+    /**
+     * 系统版本
+     * @return osVersion
+     */
+    public String getOsVersion() {
+        return osVersion;
+    }
+
+    public void setOsVersion(String osVersion) {
+        this.osVersion = osVersion;
+    }
+
+    public Host withKernelVersion(String kernelVersion) {
+        this.kernelVersion = kernelVersion;
+        return this;
+    }
+
+    /**
+     * 内核版本
+     * @return kernelVersion
+     */
+    public String getKernelVersion() {
+        return kernelVersion;
+    }
+
+    public void setKernelVersion(String kernelVersion) {
+        this.kernelVersion = kernelVersion;
+    }
+
     public Host withHostStatus(String hostStatus) {
         this.hostStatus = hostStatus;
         return this;
@@ -396,7 +598,7 @@ public class Host {
     }
 
     /**
-     * 防护状态，包含如下2种。 - closed ：未防护。 - opened ：防护中。
+     * 防护状态，包含如下2种。 - closed ：未防护。 - opened ：防护中。 - protection_exception ：防护异常。
      * @return protectStatus
      */
     public String getProtectStatus() {
@@ -881,6 +1083,211 @@ public class Host {
         this.protectInterrupt = protectInterrupt;
     }
 
+    public Host withProtectDegradation(Boolean protectDegradation) {
+        this.protectDegradation = protectDegradation;
+        return this;
+    }
+
+    /**
+     * 防护是否降级
+     * @return protectDegradation
+     */
+    public Boolean getProtectDegradation() {
+        return protectDegradation;
+    }
+
+    public void setProtectDegradation(Boolean protectDegradation) {
+        this.protectDegradation = protectDegradation;
+    }
+
+    public Host withHostSources(HostSourcesEnum hostSources) {
+        this.hostSources = hostSources;
+        return this;
+    }
+
+    /**
+     * 服务器来源
+     * @return hostSources
+     */
+    public HostSourcesEnum getHostSources() {
+        return hostSources;
+    }
+
+    public void setHostSources(HostSourcesEnum hostSources) {
+        this.hostSources = hostSources;
+    }
+
+    public Host withInterruptReason(String interruptReason) {
+        this.interruptReason = interruptReason;
+        return this;
+    }
+
+    /**
+     * 防护中断原因
+     * @return interruptReason
+     */
+    public String getInterruptReason() {
+        return interruptReason;
+    }
+
+    public void setInterruptReason(String interruptReason) {
+        this.interruptReason = interruptReason;
+    }
+
+    public Host withDegradationReason(String degradationReason) {
+        this.degradationReason = degradationReason;
+        return this;
+    }
+
+    /**
+     * 防护降级原因
+     * @return degradationReason
+     */
+    public String getDegradationReason() {
+        return degradationReason;
+    }
+
+    public void setDegradationReason(String degradationReason) {
+        this.degradationReason = degradationReason;
+    }
+
+    public Host withKeyName(String keyName) {
+        this.keyName = keyName;
+        return this;
+    }
+
+    /**
+     * 使用的密钥对名称
+     * @return keyName
+     */
+    public String getKeyName() {
+        return keyName;
+    }
+
+    public void setKeyName(String keyName) {
+        this.keyName = keyName;
+    }
+
+    public Host withAutoOpenVersion(String autoOpenVersion) {
+        this.autoOpenVersion = autoOpenVersion;
+        return this;
+    }
+
+    /**
+     * cce购买主机
+     * @return autoOpenVersion
+     */
+    public String getAutoOpenVersion() {
+        return autoOpenVersion;
+    }
+
+    public void setAutoOpenVersion(String autoOpenVersion) {
+        this.autoOpenVersion = autoOpenVersion;
+    }
+
+    public Host withInstallProgress(Integer installProgress) {
+        this.installProgress = installProgress;
+        return this;
+    }
+
+    /**
+     * 安装进度
+     * minimum: 0
+     * maximum: 100
+     * @return installProgress
+     */
+    public Integer getInstallProgress() {
+        return installProgress;
+    }
+
+    public void setInstallProgress(Integer installProgress) {
+        this.installProgress = installProgress;
+    }
+
+    public Host withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+
+    /**
+     * vpc id
+     * @return vpcId
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    public Host withCommonLoginAreaCodes(List<Integer> commonLoginAreaCodes) {
+        this.commonLoginAreaCodes = commonLoginAreaCodes;
+        return this;
+    }
+
+    public Host addCommonLoginAreaCodesItem(Integer commonLoginAreaCodesItem) {
+        if (this.commonLoginAreaCodes == null) {
+            this.commonLoginAreaCodes = new ArrayList<>();
+        }
+        this.commonLoginAreaCodes.add(commonLoginAreaCodesItem);
+        return this;
+    }
+
+    public Host withCommonLoginAreaCodes(Consumer<List<Integer>> commonLoginAreaCodesSetter) {
+        if (this.commonLoginAreaCodes == null) {
+            this.commonLoginAreaCodes = new ArrayList<>();
+        }
+        commonLoginAreaCodesSetter.accept(this.commonLoginAreaCodes);
+        return this;
+    }
+
+    /**
+     * 后台识别服务器常用登录地编号
+     * @return commonLoginAreaCodes
+     */
+    public List<Integer> getCommonLoginAreaCodes() {
+        return commonLoginAreaCodes;
+    }
+
+    public void setCommonLoginAreaCodes(List<Integer> commonLoginAreaCodes) {
+        this.commonLoginAreaCodes = commonLoginAreaCodes;
+    }
+
+    public Host withClusterName(String clusterName) {
+        this.clusterName = clusterName;
+        return this;
+    }
+
+    /**
+     * 集群名称
+     * @return clusterName
+     */
+    public String getClusterName() {
+        return clusterName;
+    }
+
+    public void setClusterName(String clusterName) {
+        this.clusterName = clusterName;
+    }
+
+    public Host withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * 集群id
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -895,6 +1302,8 @@ public class Host {
             && Objects.equals(this.publicIp, that.publicIp)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.osName, that.osName) && Objects.equals(this.osVersion, that.osVersion)
+            && Objects.equals(this.kernelVersion, that.kernelVersion)
             && Objects.equals(this.hostStatus, that.hostStatus) && Objects.equals(this.agentStatus, that.agentStatus)
             && Objects.equals(this.installResultCode, that.installResultCode)
             && Objects.equals(this.version, that.version) && Objects.equals(this.protectStatus, that.protectStatus)
@@ -913,7 +1322,15 @@ public class Host {
             && Objects.equals(this.upgradeStatus, that.upgradeStatus)
             && Objects.equals(this.upgradeResultCode, that.upgradeResultCode)
             && Objects.equals(this.upgradable, that.upgradable) && Objects.equals(this.openTime, that.openTime)
-            && Objects.equals(this.protectInterrupt, that.protectInterrupt);
+            && Objects.equals(this.protectInterrupt, that.protectInterrupt)
+            && Objects.equals(this.protectDegradation, that.protectDegradation)
+            && Objects.equals(this.hostSources, that.hostSources)
+            && Objects.equals(this.interruptReason, that.interruptReason)
+            && Objects.equals(this.degradationReason, that.degradationReason)
+            && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.autoOpenVersion, that.autoOpenVersion)
+            && Objects.equals(this.installProgress, that.installProgress) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.commonLoginAreaCodes, that.commonLoginAreaCodes)
+            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override
@@ -925,6 +1342,9 @@ public class Host {
             publicIp,
             enterpriseProjectId,
             enterpriseProjectName,
+            osName,
+            osVersion,
+            kernelVersion,
             hostStatus,
             agentStatus,
             installResultCode,
@@ -955,7 +1375,18 @@ public class Host {
             upgradeResultCode,
             upgradable,
             openTime,
-            protectInterrupt);
+            protectInterrupt,
+            protectDegradation,
+            hostSources,
+            interruptReason,
+            degradationReason,
+            keyName,
+            autoOpenVersion,
+            installProgress,
+            vpcId,
+            commonLoginAreaCodes,
+            clusterName,
+            clusterId);
     }
 
     @Override
@@ -969,6 +1400,9 @@ public class Host {
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");
+        sb.append("    osName: ").append(toIndentedString(osName)).append("\n");
+        sb.append("    osVersion: ").append(toIndentedString(osVersion)).append("\n");
+        sb.append("    kernelVersion: ").append(toIndentedString(kernelVersion)).append("\n");
         sb.append("    hostStatus: ").append(toIndentedString(hostStatus)).append("\n");
         sb.append("    agentStatus: ").append(toIndentedString(agentStatus)).append("\n");
         sb.append("    installResultCode: ").append(toIndentedString(installResultCode)).append("\n");
@@ -1000,6 +1434,17 @@ public class Host {
         sb.append("    upgradable: ").append(toIndentedString(upgradable)).append("\n");
         sb.append("    openTime: ").append(toIndentedString(openTime)).append("\n");
         sb.append("    protectInterrupt: ").append(toIndentedString(protectInterrupt)).append("\n");
+        sb.append("    protectDegradation: ").append(toIndentedString(protectDegradation)).append("\n");
+        sb.append("    hostSources: ").append(toIndentedString(hostSources)).append("\n");
+        sb.append("    interruptReason: ").append(toIndentedString(interruptReason)).append("\n");
+        sb.append("    degradationReason: ").append(toIndentedString(degradationReason)).append("\n");
+        sb.append("    keyName: ").append(toIndentedString(keyName)).append("\n");
+        sb.append("    autoOpenVersion: ").append(toIndentedString(autoOpenVersion)).append("\n");
+        sb.append("    installProgress: ").append(toIndentedString(installProgress)).append("\n");
+        sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
+        sb.append("    commonLoginAreaCodes: ").append(toIndentedString(commonLoginAreaCodes)).append("\n");
+        sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

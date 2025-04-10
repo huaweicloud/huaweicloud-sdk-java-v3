@@ -22,6 +22,11 @@ public class CreateEdgeSite {
     private String regionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "project_id")
+
+    private String projectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -68,6 +73,23 @@ public class CreateEdgeSite {
 
     public void setRegionId(String regionId) {
         this.regionId = regionId;
+    }
+
+    public CreateEdgeSite withProjectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    /**
+     * 边缘小站所属项目ID
+     * @return projectId
+     */
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
     public CreateEdgeSite withDescription(String description) {
@@ -140,13 +162,14 @@ public class CreateEdgeSite {
         }
         CreateEdgeSite that = (CreateEdgeSite) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.regionId, that.regionId)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.location, that.location)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, regionId, description, location, enterpriseProjectId);
+        return Objects.hash(name, regionId, projectId, description, location, enterpriseProjectId);
     }
 
     @Override
@@ -155,6 +178,7 @@ public class CreateEdgeSite {
         sb.append("class CreateEdgeSite {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
+        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    location: ").append(toIndentedString(location)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");

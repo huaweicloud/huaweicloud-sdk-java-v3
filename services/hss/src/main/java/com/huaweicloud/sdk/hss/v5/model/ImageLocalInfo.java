@@ -110,6 +110,11 @@ public class ImageLocalInfo {
 
     private String agentId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "non_scan_reason")
+
+    private String nonScanReason;
+
     public ImageLocalInfo withImageName(String imageName) {
         this.imageName = imageName;
         return this;
@@ -468,6 +473,23 @@ public class ImageLocalInfo {
         this.agentId = agentId;
     }
 
+    public ImageLocalInfo withNonScanReason(String nonScanReason) {
+        this.nonScanReason = nonScanReason;
+        return this;
+    }
+
+    /**
+     * 该镜像不支持扫描的原因；若该字段为空则表示镜像可以扫描
+     * @return nonScanReason
+     */
+    public String getNonScanReason() {
+        return nonScanReason;
+    }
+
+    public void setNonScanReason(String nonScanReason) {
+        this.nonScanReason = nonScanReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -490,7 +512,8 @@ public class ImageLocalInfo {
             && Objects.equals(this.componentNum, that.componentNum)
             && Objects.equals(this.scanFailedDesc, that.scanFailedDesc)
             && Objects.equals(this.severityLevel, that.severityLevel) && Objects.equals(this.hostName, that.hostName)
-            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.agentId, that.agentId);
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.agentId, that.agentId)
+            && Objects.equals(this.nonScanReason, that.nonScanReason);
     }
 
     @Override
@@ -514,7 +537,8 @@ public class ImageLocalInfo {
             severityLevel,
             hostName,
             hostId,
-            agentId);
+            agentId,
+            nonScanReason);
     }
 
     @Override
@@ -541,6 +565,7 @@ public class ImageLocalInfo {
         sb.append("    hostName: ").append(toIndentedString(hostName)).append("\n");
         sb.append("    hostId: ").append(toIndentedString(hostId)).append("\n");
         sb.append("    agentId: ").append(toIndentedString(agentId)).append("\n");
+        sb.append("    nonScanReason: ").append(toIndentedString(nonScanReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

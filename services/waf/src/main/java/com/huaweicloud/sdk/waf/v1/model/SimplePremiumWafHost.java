@@ -3,7 +3,9 @@ package com.huaweicloud.sdk.waf.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -72,6 +74,21 @@ public class SimplePremiumWafHost {
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_ids")
+
+    private List<String> poolIds = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "loadbalancer_id")
+
+    private String loadbalancerId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protocol_port")
+
+    private String protocolPort;
 
     public SimplePremiumWafHost withId(String id) {
         this.id = id;
@@ -302,6 +319,73 @@ public class SimplePremiumWafHost {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public SimplePremiumWafHost withPoolIds(List<String> poolIds) {
+        this.poolIds = poolIds;
+        return this;
+    }
+
+    public SimplePremiumWafHost addPoolIdsItem(String poolIdsItem) {
+        if (this.poolIds == null) {
+            this.poolIds = new ArrayList<>();
+        }
+        this.poolIds.add(poolIdsItem);
+        return this;
+    }
+
+    public SimplePremiumWafHost withPoolIds(Consumer<List<String>> poolIdsSetter) {
+        if (this.poolIds == null) {
+            this.poolIds = new ArrayList<>();
+        }
+        poolIdsSetter.accept(this.poolIds);
+        return this;
+    }
+
+    /**
+     * 云模式elb接入域名返回此字段，表示域名所属独享引擎组
+     * @return poolIds
+     */
+    public List<String> getPoolIds() {
+        return poolIds;
+    }
+
+    public void setPoolIds(List<String> poolIds) {
+        this.poolIds = poolIds;
+    }
+
+    public SimplePremiumWafHost withLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+        return this;
+    }
+
+    /**
+     * 云模式elb接入域名返回此字段，表示负载均衡器（ELB）id
+     * @return loadbalancerId
+     */
+    public String getLoadbalancerId() {
+        return loadbalancerId;
+    }
+
+    public void setLoadbalancerId(String loadbalancerId) {
+        this.loadbalancerId = loadbalancerId;
+    }
+
+    public SimplePremiumWafHost withProtocolPort(String protocolPort) {
+        this.protocolPort = protocolPort;
+        return this;
+    }
+
+    /**
+     * 云模式elb接入域名返回此字段，表示业务端口
+     * @return protocolPort
+     */
+    public String getProtocolPort() {
+        return protocolPort;
+    }
+
+    public void setProtocolPort(String protocolPort) {
+        this.protocolPort = protocolPort;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -317,7 +401,9 @@ public class SimplePremiumWafHost {
             && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.protectStatus, that.protectStatus)
             && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.webTag, that.webTag)
             && Objects.equals(this.hostid, that.hostid)
-            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.poolIds, that.poolIds) && Objects.equals(this.loadbalancerId, that.loadbalancerId)
+            && Objects.equals(this.protocolPort, that.protocolPort);
     }
 
     @Override
@@ -333,7 +419,10 @@ public class SimplePremiumWafHost {
             accessStatus,
             webTag,
             hostid,
-            enterpriseProjectId);
+            enterpriseProjectId,
+            poolIds,
+            loadbalancerId,
+            protocolPort);
     }
 
     @Override
@@ -352,6 +441,9 @@ public class SimplePremiumWafHost {
         sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
         sb.append("    hostid: ").append(toIndentedString(hostid)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    poolIds: ").append(toIndentedString(poolIds)).append("\n");
+        sb.append("    loadbalancerId: ").append(toIndentedString(loadbalancerId)).append("\n");
+        sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
         sb.append("}");
         return sb.toString();
     }

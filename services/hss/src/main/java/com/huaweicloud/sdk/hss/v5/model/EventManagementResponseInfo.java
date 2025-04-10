@@ -229,7 +229,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 事件编号
+     * 事件ID
      * @return eventId
      */
     public String getEventId() {
@@ -556,7 +556,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 处理时间，毫秒，已处理的告警才有
+     * 处置时间，毫秒，已处理的告警才有
      * minimum: 0
      * maximum: 9223372036854775807
      * @return handleTime

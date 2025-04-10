@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 事件编号
+ * 事件ID
  */
 public class EventId {
 

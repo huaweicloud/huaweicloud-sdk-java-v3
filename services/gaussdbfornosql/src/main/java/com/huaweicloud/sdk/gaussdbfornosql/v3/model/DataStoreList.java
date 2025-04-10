@@ -65,7 +65,7 @@ public class DataStoreList {
     }
 
     /**
-     * 实例类型。 取值为“Cluster”，表示GeminiDB Cassandra、GeminiDB Influx、GeminiDB Redis集群实例类型。 取值为“InfluxdbSingle”，表示GeminiDB Influx单节点实例类型。 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。
+     * 数据库实例类型。 取值范围： 取值为“Cluster”，表示GeminiDB Cassandra经典部署模式集群、GeminiDB Influx经典部署模式集群、GeminiDB Redis Proxy集群经典部署模式集群实例类型。 取值为“CloudNativeCluster”, 表示GeminiDB Cassandra云原生部署模式实例类型。 取值为“InfluxdbSingle”，表示GeminiDB Influx经典部署模式单节点类型实例类型。 取值为“ReplicaSet”，表示GeminiDB Mongo副本集实例类型。
      * @return mode
      */
     public String getMode() {

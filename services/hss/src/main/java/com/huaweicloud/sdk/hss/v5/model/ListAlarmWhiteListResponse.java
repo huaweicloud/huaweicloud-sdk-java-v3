@@ -20,6 +20,16 @@ public class ListAlarmWhiteListResponse extends SdkResponse {
     private Integer totalNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "remain_num")
+
+    private Integer remainNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit_num")
+
+    private Integer limitNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_type_list")
 
     private List<Integer> eventTypeList = null;
@@ -46,6 +56,40 @@ public class ListAlarmWhiteListResponse extends SdkResponse {
 
     public void setTotalNum(Integer totalNum) {
         this.totalNum = totalNum;
+    }
+
+    public ListAlarmWhiteListResponse withRemainNum(Integer remainNum) {
+        this.remainNum = remainNum;
+        return this;
+    }
+
+    /**
+     * 可继续添加的白名单数量
+     * @return remainNum
+     */
+    public Integer getRemainNum() {
+        return remainNum;
+    }
+
+    public void setRemainNum(Integer remainNum) {
+        this.remainNum = remainNum;
+    }
+
+    public ListAlarmWhiteListResponse withLimitNum(Integer limitNum) {
+        this.limitNum = limitNum;
+        return this;
+    }
+
+    /**
+     * 白名单数量上限
+     * @return limitNum
+     */
+    public Integer getLimitNum() {
+        return limitNum;
+    }
+
+    public void setLimitNum(Integer limitNum) {
+        this.limitNum = limitNum;
     }
 
     public ListAlarmWhiteListResponse withEventTypeList(List<Integer> eventTypeList) {
@@ -123,13 +167,14 @@ public class ListAlarmWhiteListResponse extends SdkResponse {
             return false;
         }
         ListAlarmWhiteListResponse that = (ListAlarmWhiteListResponse) obj;
-        return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.eventTypeList, that.eventTypeList)
+        return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.remainNum, that.remainNum)
+            && Objects.equals(this.limitNum, that.limitNum) && Objects.equals(this.eventTypeList, that.eventTypeList)
             && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(totalNum, eventTypeList, dataList);
+        return Objects.hash(totalNum, remainNum, limitNum, eventTypeList, dataList);
     }
 
     @Override
@@ -137,6 +182,8 @@ public class ListAlarmWhiteListResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListAlarmWhiteListResponse {\n");
         sb.append("    totalNum: ").append(toIndentedString(totalNum)).append("\n");
+        sb.append("    remainNum: ").append(toIndentedString(remainNum)).append("\n");
+        sb.append("    limitNum: ").append(toIndentedString(limitNum)).append("\n");
         sb.append("    eventTypeList: ").append(toIndentedString(eventTypeList)).append("\n");
         sb.append("    dataList: ").append(toIndentedString(dataList)).append("\n");
         sb.append("}");

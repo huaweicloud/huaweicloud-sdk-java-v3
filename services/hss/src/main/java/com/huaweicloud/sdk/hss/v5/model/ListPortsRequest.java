@@ -36,6 +36,11 @@ public class ListPortsRequest {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
@@ -142,13 +147,30 @@ public class ListPortsRequest {
         this.type = type;
     }
 
+    public ListPortsRequest withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 端口状态，包含如下： - danger：危险端口 - unknow: 无已知危险的端口
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public ListPortsRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 企业项目ID，查询所有企业项目时填写：all_granted_eps
+     * 主机所属的企业项目ID。 开通企业项目功能后才需要配置企业项目。 企业项目ID默认取值为“0”，表示默认企业项目。如果需要查询所有企业项目下的主机，请传参“all_granted_eps”。如果您只有某个企业项目的权限，则需要传递该企业项目ID，查询该企业项目下的主机，否则会因权限不足而报错。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -225,7 +247,7 @@ public class ListPortsRequest {
         ListPortsRequest that = (ListPortsRequest) obj;
         return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
             && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.port, that.port)
-            && Objects.equals(this.type, that.type)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
             && Objects.equals(this.category, that.category);
@@ -233,7 +255,7 @@ public class ListPortsRequest {
 
     @Override
     public int hashCode() {
-        return Objects.hash(hostId, hostName, hostIp, port, type, enterpriseProjectId, limit, offset, category);
+        return Objects.hash(hostId, hostName, hostIp, port, type, status, enterpriseProjectId, limit, offset, category);
     }
 
     @Override
@@ -245,6 +267,7 @@ public class ListPortsRequest {
         sb.append("    hostIp: ").append(toIndentedString(hostIp)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
