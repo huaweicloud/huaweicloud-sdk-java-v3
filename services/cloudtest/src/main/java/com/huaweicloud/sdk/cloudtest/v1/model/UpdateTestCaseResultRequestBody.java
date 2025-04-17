@@ -19,6 +19,11 @@ public class UpdateTestCaseResultRequestBody {
     private Integer serviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "plan_id")
+
+    private String planId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "execute_list")
 
     private List<UpdateTestCaseResultBean> executeList = null;
@@ -38,6 +43,23 @@ public class UpdateTestCaseResultRequestBody {
 
     public void setServiceId(Integer serviceId) {
         this.serviceId = serviceId;
+    }
+
+    public UpdateTestCaseResultRequestBody withPlanId(String planId) {
+        this.planId = planId;
+        return this;
+    }
+
+    /**
+     * 测试计划id
+     * @return planId
+     */
+    public String getPlanId() {
+        return planId;
+    }
+
+    public void setPlanId(String planId) {
+        this.planId = planId;
     }
 
     public UpdateTestCaseResultRequestBody withExecuteList(List<UpdateTestCaseResultBean> executeList) {
@@ -82,12 +104,13 @@ public class UpdateTestCaseResultRequestBody {
             return false;
         }
         UpdateTestCaseResultRequestBody that = (UpdateTestCaseResultRequestBody) obj;
-        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.executeList, that.executeList);
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.planId, that.planId)
+            && Objects.equals(this.executeList, that.executeList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(serviceId, executeList);
+        return Objects.hash(serviceId, planId, executeList);
     }
 
     @Override
@@ -95,6 +118,7 @@ public class UpdateTestCaseResultRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateTestCaseResultRequestBody {\n");
         sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
+        sb.append("    planId: ").append(toIndentedString(planId)).append("\n");
         sb.append("    executeList: ").append(toIndentedString(executeList)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -367,6 +367,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryScriptsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryScriptsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskOverviewRequest;
@@ -5743,6 +5745,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<ListFactoryReleasePackagesRequest, ListFactoryReleasePackagesResponse> listFactoryReleasePackagesInvoker(
         ListFactoryReleasePackagesRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.listFactoryReleasePackages, hcClient);
+    }
+
+    /**
+     * 查询脚本列表
+     *
+     * 此接口用来查询脚本列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryScriptsRequest 请求对象
+     * @return ListFactoryScriptsResponse
+     */
+    public ListFactoryScriptsResponse listFactoryScripts(ListFactoryScriptsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listFactoryScripts);
+    }
+
+    /**
+     * 查询脚本列表
+     *
+     * 此接口用来查询脚本列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryScriptsRequest 请求对象
+     * @return SyncInvoker<ListFactoryScriptsRequest, ListFactoryScriptsResponse>
+     */
+    public SyncInvoker<ListFactoryScriptsRequest, ListFactoryScriptsResponse> listFactoryScriptsInvoker(
+        ListFactoryScriptsRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listFactoryScripts, hcClient);
     }
 
     /**

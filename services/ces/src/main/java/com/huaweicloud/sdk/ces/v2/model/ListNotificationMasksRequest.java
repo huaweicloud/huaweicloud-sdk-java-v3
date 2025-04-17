@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.ces.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -20,6 +25,156 @@ public class ListNotificationMasksRequest {
     @JsonProperty(value = "limit")
 
     private Integer limit;
+
+    /**
+     * 排序关键字，与sort_dir同时使用。 目前只支持create_time与update_time create_time表示按创建时间排序，update_time表示按修改时间排序
+     */
+    public static final class SortKeyEnum {
+
+        /**
+         * Enum CREATE_TIME for value: "create_time"
+         */
+        public static final SortKeyEnum CREATE_TIME = new SortKeyEnum("create_time");
+
+        /**
+         * Enum UPDATE_TIME for value: "update_time"
+         */
+        public static final SortKeyEnum UPDATE_TIME = new SortKeyEnum("update_time");
+
+        private static final Map<String, SortKeyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortKeyEnum> createStaticFields() {
+            Map<String, SortKeyEnum> map = new HashMap<>();
+            map.put("create_time", CREATE_TIME);
+            map.put("update_time", UPDATE_TIME);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SortKeyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortKeyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
+        }
+
+        public static SortKeyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SortKeyEnum) {
+                return this.value.equals(((SortKeyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_key")
+
+    private SortKeyEnum sortKey;
+
+    /**
+     * 排序顺序，与sort_key同时使用。DESC表示降序排序；ASC表示升序排序；
+     */
+    public static final class SortDirEnum {
+
+        /**
+         * Enum ASC for value: "ASC"
+         */
+        public static final SortDirEnum ASC = new SortDirEnum("ASC");
+
+        /**
+         * Enum DESC for value: "DESC"
+         */
+        public static final SortDirEnum DESC = new SortDirEnum("DESC");
+
+        private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortDirEnum> createStaticFields() {
+            Map<String, SortDirEnum> map = new HashMap<>();
+            map.put("ASC", ASC);
+            map.put("DESC", DESC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SortDirEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortDirEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
+        }
+
+        public static SortDirEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SortDirEnum) {
+                return this.value.equals(((SortDirEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sort_dir")
+
+    private SortDirEnum sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
@@ -64,6 +219,40 @@ public class ListNotificationMasksRequest {
         this.limit = limit;
     }
 
+    public ListNotificationMasksRequest withSortKey(SortKeyEnum sortKey) {
+        this.sortKey = sortKey;
+        return this;
+    }
+
+    /**
+     * 排序关键字，与sort_dir同时使用。 目前只支持create_time与update_time create_time表示按创建时间排序，update_time表示按修改时间排序
+     * @return sortKey
+     */
+    public SortKeyEnum getSortKey() {
+        return sortKey;
+    }
+
+    public void setSortKey(SortKeyEnum sortKey) {
+        this.sortKey = sortKey;
+    }
+
+    public ListNotificationMasksRequest withSortDir(SortDirEnum sortDir) {
+        this.sortDir = sortDir;
+        return this;
+    }
+
+    /**
+     * 排序顺序，与sort_key同时使用。DESC表示降序排序；ASC表示升序排序；
+     * @return sortDir
+     */
+    public SortDirEnum getSortDir() {
+        return sortDir;
+    }
+
+    public void setSortDir(SortDirEnum sortDir) {
+        this.sortDir = sortDir;
+    }
+
     public ListNotificationMasksRequest withBody(ListNotificationMaskRequestBody body) {
         this.body = body;
         return this;
@@ -100,12 +289,13 @@ public class ListNotificationMasksRequest {
         }
         ListNotificationMasksRequest that = (ListNotificationMasksRequest) obj;
         return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
             && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(offset, limit, body);
+        return Objects.hash(offset, limit, sortKey, sortDir, body);
     }
 
     @Override
@@ -114,6 +304,8 @@ public class ListNotificationMasksRequest {
         sb.append("class ListNotificationMasksRequest {\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    sortKey: ").append(toIndentedString(sortKey)).append("\n");
+        sb.append("    sortDir: ").append(toIndentedString(sortDir)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

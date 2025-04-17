@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * ExtraInfo
+ * 指标信息
  */
 public class ExtraInfo {
 

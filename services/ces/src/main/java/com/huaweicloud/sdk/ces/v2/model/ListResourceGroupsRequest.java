@@ -41,7 +41,7 @@ public class ListResourceGroupsRequest {
     private Integer limit;
 
     /**
-     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型
+     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型,COMB（智能添加-组合匹配）,NAME（资源名称模糊匹配）
      */
     public static final class TypeEnum {
 
@@ -60,6 +60,16 @@ public class ListResourceGroupsRequest {
          */
         public static final TypeEnum MANUAL = new TypeEnum("Manual");
 
+        /**
+         * Enum COMB for value: "COMB"
+         */
+        public static final TypeEnum COMB = new TypeEnum("COMB");
+
+        /**
+         * Enum NAME for value: "NAME"
+         */
+        public static final TypeEnum NAME = new TypeEnum("NAME");
+
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, TypeEnum> createStaticFields() {
@@ -67,6 +77,8 @@ public class ListResourceGroupsRequest {
             map.put("EPS", EPS);
             map.put("TAG", TAG);
             map.put("Manual", MANUAL);
+            map.put("COMB", COMB);
+            map.put("NAME", NAME);
             return Collections.unmodifiableMap(map);
         }
 
@@ -216,7 +228,7 @@ public class ListResourceGroupsRequest {
     }
 
     /**
-     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型
+     * 资源分组添加资源方式，取值只能为EPS（同步企业项目）,TAG（标签动态匹配）,Manual（手动添加），不传代表查询所有资源分组类型,COMB（智能添加-组合匹配）,NAME（资源名称模糊匹配）
      * @return type
      */
     public TypeEnum getType() {

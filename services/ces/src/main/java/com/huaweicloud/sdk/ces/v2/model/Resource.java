@@ -21,7 +21,7 @@ public class Resource {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimensions")
 
-    private List<Dimension2> dimensions = null;
+    private List<ResourceDimension> dimensions = null;
 
     public Resource withNamespace(String namespace) {
         this.namespace = namespace;
@@ -29,7 +29,7 @@ public class Resource {
     }
 
     /**
-     * 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
+     * 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
      * @return namespace
      */
     public String getNamespace() {
@@ -40,12 +40,12 @@ public class Resource {
         this.namespace = namespace;
     }
 
-    public Resource withDimensions(List<Dimension2> dimensions) {
+    public Resource withDimensions(List<ResourceDimension> dimensions) {
         this.dimensions = dimensions;
         return this;
     }
 
-    public Resource addDimensionsItem(Dimension2 dimensionsItem) {
+    public Resource addDimensionsItem(ResourceDimension dimensionsItem) {
         if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -53,7 +53,7 @@ public class Resource {
         return this;
     }
 
-    public Resource withDimensions(Consumer<List<Dimension2>> dimensionsSetter) {
+    public Resource withDimensions(Consumer<List<ResourceDimension>> dimensionsSetter) {
         if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -65,11 +65,11 @@ public class Resource {
      * 资源的维度信息
      * @return dimensions
      */
-    public List<Dimension2> getDimensions() {
+    public List<ResourceDimension> getDimensions() {
         return dimensions;
     }
 
-    public void setDimensions(List<Dimension2> dimensions) {
+    public void setDimensions(List<ResourceDimension> dimensions) {
         this.dimensions = dimensions;
     }
 

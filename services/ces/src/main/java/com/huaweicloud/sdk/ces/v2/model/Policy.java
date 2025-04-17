@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Policy
@@ -34,6 +35,11 @@ public class Policy {
     @JsonProperty(value = "value")
 
     private Double value;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hierarchical_value")
+
+    private HierarchicalValue hierarchicalValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
@@ -71,7 +77,7 @@ public class Policy {
     }
 
     /**
-     * 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务的指标名称可查看：“[服务指标名称](ces_03_0059.xml)”。
      * @return metricName
      */
     public String getMetricName() {
@@ -88,7 +94,7 @@ public class Policy {
     }
 
     /**
-     * 指标周期，单位是秒； 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算；如想了解各个云服务的指标原始周期可以参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)， 300代表指标按5分钟聚合周期为一个数据点参与告警计算。
+     * 指标周期，单位是秒； 0是默认值，例如事件类告警该字段就用0即可； 1代表指标的原始周期，比如RDS监控指标原始周期是60s，表示该RDS指标按60s周期为一个数据点参与告警计算；如想了解各个云服务的指标原始周期可以参考“[支持服务列表](ces_03_0059.xml)”，300代表指标按5分钟聚合周期为一个数据点参与告警计算。
      * minimum: 0
      * maximum: 86400
      * @return period
@@ -124,7 +130,7 @@ public class Policy {
     }
 
     /**
-     * 告警阈值的比较条件，支持的值为(>|<|>=|<=|=|!=|cycle_decrease|cycle_increase|cycle_wave)，cycle_decrease为环比下降，cycle_increase为环比上升，cycle_wave为环比波动
+     * 阈值符号, 支持的值为(>|<|>=|<=|=|!=|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动； 指标告警可以使用的阈值符号有>、>=、<、<=、=、!=、cycle_decrease、cycle_increase、cycle_wave； 事件告警可以使用的阈值符号为>、>=、<、<=、=、!=； 
      * @return comparisonOperator
      */
     public String getComparisonOperator() {
@@ -141,7 +147,7 @@ public class Policy {
     }
 
     /**
-     * 阈值
+     * 告警阈值。单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准。取值范围[0, Number.MAX_VALUE]，Number.MAX_VALUE值为1.7976931348623157e+108。具体阈值取值请参见附录中各服务监控指标中取值范围，如支持监控的服务列表中ECS的CPU使用率cpu_util取值范围可配置80。 [具体阈值取值请参见附录中各服务监控指标中取值范围，如[支持监控的服务列表](ces_03_0059.xml)中ECS的CPU使用率cpu_util取值范围可配置80。](tag: dt,g42,dt_test,hk_g42,hk_sbc,hws,hws_hk,ocb,sbc,tm) 
      * minimum: 0
      * maximum: 1.7976931348623156E+108
      * @return value
@@ -154,13 +160,39 @@ public class Policy {
         this.value = value;
     }
 
+    public Policy withHierarchicalValue(HierarchicalValue hierarchicalValue) {
+        this.hierarchicalValue = hierarchicalValue;
+        return this;
+    }
+
+    public Policy withHierarchicalValue(Consumer<HierarchicalValue> hierarchicalValueSetter) {
+        if (this.hierarchicalValue == null) {
+            this.hierarchicalValue = new HierarchicalValue();
+            hierarchicalValueSetter.accept(this.hierarchicalValue);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hierarchicalValue
+     * @return hierarchicalValue
+     */
+    public HierarchicalValue getHierarchicalValue() {
+        return hierarchicalValue;
+    }
+
+    public void setHierarchicalValue(HierarchicalValue hierarchicalValue) {
+        this.hierarchicalValue = hierarchicalValue;
+    }
+
     public Policy withUnit(String unit) {
         this.unit = unit;
         return this;
     }
 
     /**
-     * 单位
+     * 数据的单位。
      * @return unit
      */
     public String getUnit() {
@@ -215,7 +247,7 @@ public class Policy {
     }
 
     /**
-     * 告警级别, 1为紧急，2为重要，3为次要，4为提示
+     * 告警级别, 1为紧急，2为重要，3为次要，4为提示。默认值为2。
      * minimum: 1
      * maximum: 4
      * @return level
@@ -234,7 +266,7 @@ public class Policy {
     }
 
     /**
-     * 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
+     * 产品层级规则增加namespace（服务命名空间）和dimension_name（服务维度名称）指明生效策略归属。各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
      * @return namespace
      */
     public String getNamespace() {
@@ -251,7 +283,7 @@ public class Policy {
     }
 
     /**
-     * 资源维度，必须以字母开头，多维度用\",\"分割，只能包含0-9/a-z/A-Z/_/-，每个维度的最大长度为32
+     * 产品层级规则增加namespace（服务命名空间）和dimension_name（服务维度名称）指明生效策略归属，目前最大支持4个维度，各服务资源的指标维度名称可查看：“[服务维度名称](ces_03_0059.xml)”
      * @return dimensionName
      */
     public String getDimensionName() {
@@ -274,10 +306,10 @@ public class Policy {
         return Objects.equals(this.metricName, that.metricName) && Objects.equals(this.period, that.period)
             && Objects.equals(this.filter, that.filter)
             && Objects.equals(this.comparisonOperator, that.comparisonOperator)
-            && Objects.equals(this.value, that.value) && Objects.equals(this.unit, that.unit)
-            && Objects.equals(this.count, that.count) && Objects.equals(this.suppressDuration, that.suppressDuration)
-            && Objects.equals(this.level, that.level) && Objects.equals(this.namespace, that.namespace)
-            && Objects.equals(this.dimensionName, that.dimensionName);
+            && Objects.equals(this.value, that.value) && Objects.equals(this.hierarchicalValue, that.hierarchicalValue)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.suppressDuration, that.suppressDuration) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimensionName, that.dimensionName);
     }
 
     @Override
@@ -287,6 +319,7 @@ public class Policy {
             filter,
             comparisonOperator,
             value,
+            hierarchicalValue,
             unit,
             count,
             suppressDuration,
@@ -304,6 +337,7 @@ public class Policy {
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("    comparisonOperator: ").append(toIndentedString(comparisonOperator)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    hierarchicalValue: ").append(toIndentedString(hierarchicalValue)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    suppressDuration: ").append(toIndentedString(suppressDuration)).append("\n");

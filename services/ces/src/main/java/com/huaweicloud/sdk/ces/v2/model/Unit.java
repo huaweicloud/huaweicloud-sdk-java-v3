@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 import java.util.Objects;
 
 /**
- * 单位
+ * 数据的单位。
  */
 public class Unit {
 

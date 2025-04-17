@@ -109,19 +109,9 @@ public class CreateInstanceRequestBody {
     private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ipv6_enabled")
-
-    private Boolean ipv6Enabled;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zone_detail")
 
     private AvailabilityZoneDetail availabilityZoneDetail;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "lb_access_control_settings")
-
-    private LbAccessControlSettings lbAccessControlSettings;
 
     public CreateInstanceRequestBody withName(String name) {
         this.name = name;
@@ -498,23 +488,6 @@ public class CreateInstanceRequestBody {
         this.port = port;
     }
 
-    public CreateInstanceRequestBody withIpv6Enabled(Boolean ipv6Enabled) {
-        this.ipv6Enabled = ipv6Enabled;
-        return this;
-    }
-
-    /**
-     * 是否启用IPv6。默认 - true: 启用IPv6。 - false: 不启用IPv6，默认为不启用。
-     * @return ipv6Enabled
-     */
-    public Boolean getIpv6Enabled() {
-        return ipv6Enabled;
-    }
-
-    public void setIpv6Enabled(Boolean ipv6Enabled) {
-        this.ipv6Enabled = ipv6Enabled;
-    }
-
     public CreateInstanceRequestBody withAvailabilityZoneDetail(AvailabilityZoneDetail availabilityZoneDetail) {
         this.availabilityZoneDetail = availabilityZoneDetail;
         return this;
@@ -542,33 +515,6 @@ public class CreateInstanceRequestBody {
         this.availabilityZoneDetail = availabilityZoneDetail;
     }
 
-    public CreateInstanceRequestBody withLbAccessControlSettings(LbAccessControlSettings lbAccessControlSettings) {
-        this.lbAccessControlSettings = lbAccessControlSettings;
-        return this;
-    }
-
-    public CreateInstanceRequestBody withLbAccessControlSettings(
-        Consumer<LbAccessControlSettings> lbAccessControlSettingsSetter) {
-        if (this.lbAccessControlSettings == null) {
-            this.lbAccessControlSettings = new LbAccessControlSettings();
-            lbAccessControlSettingsSetter.accept(this.lbAccessControlSettings);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get lbAccessControlSettings
-     * @return lbAccessControlSettings
-     */
-    public LbAccessControlSettings getLbAccessControlSettings() {
-        return lbAccessControlSettings;
-    }
-
-    public void setLbAccessControlSettings(LbAccessControlSettings lbAccessControlSettings) {
-        this.lbAccessControlSettings = lbAccessControlSettings;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -590,9 +536,7 @@ public class CreateInstanceRequestBody {
             && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
             && Objects.equals(this.sslOption, that.sslOption) && Objects.equals(this.chargeInfo, that.chargeInfo)
             && Objects.equals(this.restoreInfo, that.restoreInfo) && Objects.equals(this.port, that.port)
-            && Objects.equals(this.ipv6Enabled, that.ipv6Enabled)
-            && Objects.equals(this.availabilityZoneDetail, that.availabilityZoneDetail)
-            && Objects.equals(this.lbAccessControlSettings, that.lbAccessControlSettings);
+            && Objects.equals(this.availabilityZoneDetail, that.availabilityZoneDetail);
     }
 
     @Override
@@ -616,9 +560,7 @@ public class CreateInstanceRequestBody {
             chargeInfo,
             restoreInfo,
             port,
-            ipv6Enabled,
-            availabilityZoneDetail,
-            lbAccessControlSettings);
+            availabilityZoneDetail);
     }
 
     @Override
@@ -644,9 +586,7 @@ public class CreateInstanceRequestBody {
         sb.append("    chargeInfo: ").append(toIndentedString(chargeInfo)).append("\n");
         sb.append("    restoreInfo: ").append(toIndentedString(restoreInfo)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
-        sb.append("    ipv6Enabled: ").append(toIndentedString(ipv6Enabled)).append("\n");
         sb.append("    availabilityZoneDetail: ").append(toIndentedString(availabilityZoneDetail)).append("\n");
-        sb.append("    lbAccessControlSettings: ").append(toIndentedString(lbAccessControlSettings)).append("\n");
         sb.append("}");
         return sb.toString();
     }

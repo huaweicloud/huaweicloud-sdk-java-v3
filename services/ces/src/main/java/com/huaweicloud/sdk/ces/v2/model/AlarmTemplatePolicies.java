@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * AlarmTemplatePolicies
@@ -35,6 +36,11 @@ public class AlarmTemplatePolicies {
      * 告警条件判断周期,单位为秒
      */
     public static final class PeriodEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0
+         */
+        public static final PeriodEnum NUMBER_0 = new PeriodEnum(0);
 
         /**
          * Enum NUMBER_1 for value: 1
@@ -70,6 +76,7 @@ public class AlarmTemplatePolicies {
 
         private static Map<Integer, PeriodEnum> createStaticFields() {
             Map<Integer, PeriodEnum> map = new HashMap<>();
+            map.put(0, NUMBER_0);
             map.put(1, NUMBER_1);
             map.put(300, NUMBER_300);
             map.put(1200, NUMBER_1200);
@@ -144,6 +151,11 @@ public class AlarmTemplatePolicies {
     @JsonProperty(value = "value")
 
     private BigDecimal value;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hierarchical_value")
+
+    private HierarchicalValue hierarchicalValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
@@ -283,13 +295,18 @@ public class AlarmTemplatePolicies {
 
     private SuppressDurationEnum suppressDuration;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "selected_unit")
+
+    private String selectedUnit;
+
     public AlarmTemplatePolicies withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
 
     /**
-     * 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
+     * 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
      * @return namespace
      */
     public String getNamespace() {
@@ -306,7 +323,7 @@ public class AlarmTemplatePolicies {
     }
 
     /**
-     * 资源维度，必须以字母开头，多维度用\",\"分割，只能包含0-9/a-z/A-Z/_/-，每个维度的最大长度为32
+     * 资源维度，必须以字母开头，多维度用\",\"分割，只能包含0-9/a-z/A-Z/_/-，每个维度的最大长度为32, 事件告警模板DimensionName为空
      * @return dimensionName
      */
     public String getDimensionName() {
@@ -323,7 +340,7 @@ public class AlarmTemplatePolicies {
     }
 
     /**
-     * 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务的指标名称可查看：“[服务指标名称](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)”。
+     * 资源的监控指标名称，必须以字母开头，只能包含0-9/a-z/A-Z/_，字符长度最短为1，最大为64；如：弹性云服务器中的监控指标cpu_util，表示弹性服务器的CPU使用率；文档数据库中的指标mongo001_command_ps，表示command执行频率；各服务的指标名称可查看：“[服务指标名称](ces_03_0059.xml)”。
      * @return metricName
      */
     public String getMetricName() {
@@ -374,7 +391,7 @@ public class AlarmTemplatePolicies {
     }
 
     /**
-     * 告警阈值的比较条件，支持的值为(>|<|>=|<=|=|!=|cycle_decrease|cycle_increase|cycle_wave)，cycle_decrease为环比下降，cycle_increase为环比上升，cycle_wave为环比波动
+     * 阈值符号, 支持的值为(>|<|>=|<=|=|!=|cycle_decrease|cycle_increase|cycle_wave);cycle_decrease为环比下降,cycle_increase为环比上升,cycle_wave为环比波动； 指标告警可以使用的阈值符号有>、>=、<、<=、=、!=、cycle_decrease、cycle_increase、cycle_wave； 事件告警可以使用的阈值符号为>、>=、<、<=、=、!=； 
      * @return comparisonOperator
      */
     public String getComparisonOperator() {
@@ -391,7 +408,7 @@ public class AlarmTemplatePolicies {
     }
 
     /**
-     * 告警阈值
+     * 告警阈值。单一阈值时value和alarm_level配对使用，当hierarchical_value和value同时使用时以hierarchical_value为准
      * minimum: 0
      * maximum: 2.34854258277383E+108
      * @return value
@@ -402,6 +419,32 @@ public class AlarmTemplatePolicies {
 
     public void setValue(BigDecimal value) {
         this.value = value;
+    }
+
+    public AlarmTemplatePolicies withHierarchicalValue(HierarchicalValue hierarchicalValue) {
+        this.hierarchicalValue = hierarchicalValue;
+        return this;
+    }
+
+    public AlarmTemplatePolicies withHierarchicalValue(Consumer<HierarchicalValue> hierarchicalValueSetter) {
+        if (this.hierarchicalValue == null) {
+            this.hierarchicalValue = new HierarchicalValue();
+            hierarchicalValueSetter.accept(this.hierarchicalValue);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hierarchicalValue
+     * @return hierarchicalValue
+     */
+    public HierarchicalValue getHierarchicalValue() {
+        return hierarchicalValue;
+    }
+
+    public void setHierarchicalValue(HierarchicalValue hierarchicalValue) {
+        this.hierarchicalValue = hierarchicalValue;
     }
 
     public AlarmTemplatePolicies withUnit(String unit) {
@@ -427,7 +470,7 @@ public class AlarmTemplatePolicies {
     }
 
     /**
-     * 次数，事件告警时参数值为1~180（包括1和180）；指标告警和站点告警时，次数采用枚举值，枚举值分别为：1、2、3、4、5、10、15、30、60、90、120、180
+     * 告警连续触发次数，事件告警时参数值为1~180（包括1和180）；指标告警和站点告警时，次数采用枚举值，枚举值分别为：1、2、3、4、5、10、15、30、60、90、120、180
      * minimum: 1
      * maximum: 180
      * @return count
@@ -476,6 +519,23 @@ public class AlarmTemplatePolicies {
         this.suppressDuration = suppressDuration;
     }
 
+    public AlarmTemplatePolicies withSelectedUnit(String selectedUnit) {
+        this.selectedUnit = selectedUnit;
+        return this;
+    }
+
+    /**
+     * 用户在页面中选择的指标单位， 用于后续指标数据回显和计算
+     * @return selectedUnit
+     */
+    public String getSelectedUnit() {
+        return selectedUnit;
+    }
+
+    public void setSelectedUnit(String selectedUnit) {
+        this.selectedUnit = selectedUnit;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -489,9 +549,11 @@ public class AlarmTemplatePolicies {
             && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.period, that.period)
             && Objects.equals(this.filter, that.filter)
             && Objects.equals(this.comparisonOperator, that.comparisonOperator)
-            && Objects.equals(this.value, that.value) && Objects.equals(this.unit, that.unit)
-            && Objects.equals(this.count, that.count) && Objects.equals(this.alarmLevel, that.alarmLevel)
-            && Objects.equals(this.suppressDuration, that.suppressDuration);
+            && Objects.equals(this.value, that.value) && Objects.equals(this.hierarchicalValue, that.hierarchicalValue)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.alarmLevel, that.alarmLevel)
+            && Objects.equals(this.suppressDuration, that.suppressDuration)
+            && Objects.equals(this.selectedUnit, that.selectedUnit);
     }
 
     @Override
@@ -503,10 +565,12 @@ public class AlarmTemplatePolicies {
             filter,
             comparisonOperator,
             value,
+            hierarchicalValue,
             unit,
             count,
             alarmLevel,
-            suppressDuration);
+            suppressDuration,
+            selectedUnit);
     }
 
     @Override
@@ -520,10 +584,12 @@ public class AlarmTemplatePolicies {
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("    comparisonOperator: ").append(toIndentedString(comparisonOperator)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    hierarchicalValue: ").append(toIndentedString(hierarchicalValue)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    alarmLevel: ").append(toIndentedString(alarmLevel)).append("\n");
         sb.append("    suppressDuration: ").append(toIndentedString(suppressDuration)).append("\n");
+        sb.append("    selectedUnit: ").append(toIndentedString(selectedUnit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

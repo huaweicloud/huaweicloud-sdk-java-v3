@@ -45,6 +45,21 @@ public class ApplicationQueryResponseData {
 
     private String path;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_collection")
+
+    private Boolean isCollection;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private String createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private String updateTime;
+
     public ApplicationQueryResponseData withId(String id) {
         this.id = id;
         return this;
@@ -164,6 +179,57 @@ public class ApplicationQueryResponseData {
         this.path = path;
     }
 
+    public ApplicationQueryResponseData withIsCollection(Boolean isCollection) {
+        this.isCollection = isCollection;
+        return this;
+    }
+
+    /**
+     * 是否为收藏应用
+     * @return isCollection
+     */
+    public Boolean getIsCollection() {
+        return isCollection;
+    }
+
+    public void setIsCollection(Boolean isCollection) {
+        this.isCollection = isCollection;
+    }
+
+    public ApplicationQueryResponseData withCreateTime(String createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * 创建时间
+     * @return createTime
+     */
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public ApplicationQueryResponseData withUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * 修改时间
+     * @return updateTime
+     */
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +242,14 @@ public class ApplicationQueryResponseData {
         return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
             && Objects.equals(this.code, that.code) && Objects.equals(this.domainId, that.domainId)
             && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.path, that.path);
+            && Objects.equals(this.path, that.path) && Objects.equals(this.isCollection, that.isCollection)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, code, domainId, parentId, description, path);
+        return Objects
+            .hash(id, name, code, domainId, parentId, description, path, isCollection, createTime, updateTime);
     }
 
     @Override
@@ -195,6 +263,9 @@ public class ApplicationQueryResponseData {
         sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
+        sb.append("    isCollection: ").append(toIndentedString(isCollection)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

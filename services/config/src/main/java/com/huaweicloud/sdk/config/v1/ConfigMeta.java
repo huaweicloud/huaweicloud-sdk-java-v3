@@ -1960,6 +1960,18 @@ public class ConfigMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBuiltInPolicyDefinitionsRequest::getLimit,
+                ListBuiltInPolicyDefinitionsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBuiltInPolicyDefinitionsRequest::getMarker,
+                ListBuiltInPolicyDefinitionsRequest::setMarker));
         builder.<String>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,
@@ -2906,6 +2918,16 @@ public class ConfigMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRegionsRequest::getLimit, ListRegionsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegionsRequest::getMarker, ListRegionsRequest::setMarker));
         builder.<ListRegionsRequest.XLanguageEnum>withRequestField("X-Language",
             LocationType.Header,
             FieldExistence.NULL_IGNORE,

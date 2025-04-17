@@ -151,7 +151,7 @@ public class StartSmartChatJobResponse extends SdkResponse {
     private Boolean isTransparent;
 
     /**
-     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
      */
     public static final class DefaultLanguageEnum {
 
@@ -165,12 +165,36 @@ public class StartSmartChatJobResponse extends SdkResponse {
          */
         public static final DefaultLanguageEnum EN = new DefaultLanguageEnum("EN");
 
+        /**
+         * Enum ESP for value: "ESP"
+         */
+        public static final DefaultLanguageEnum ESP = new DefaultLanguageEnum("ESP");
+
+        /**
+         * Enum POR for value: "por"
+         */
+        public static final DefaultLanguageEnum POR = new DefaultLanguageEnum("por");
+
+        /**
+         * Enum ARABIC for value: "Arabic"
+         */
+        public static final DefaultLanguageEnum ARABIC = new DefaultLanguageEnum("Arabic");
+
+        /**
+         * Enum THAI for value: "Thai"
+         */
+        public static final DefaultLanguageEnum THAI = new DefaultLanguageEnum("Thai");
+
         private static final Map<String, DefaultLanguageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DefaultLanguageEnum> createStaticFields() {
             Map<String, DefaultLanguageEnum> map = new HashMap<>();
             map.put("CN", CN);
             map.put("EN", EN);
+            map.put("ESP", ESP);
+            map.put("por", POR);
+            map.put("Arabic", ARABIC);
+            map.put("Thai", THAI);
             return Collections.unmodifiableMap(map);
         }
 
@@ -467,7 +491,7 @@ public class StartSmartChatJobResponse extends SdkResponse {
     }
 
     /**
-     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
      * @return defaultLanguage
      */
     public DefaultLanguageEnum getDefaultLanguage() {

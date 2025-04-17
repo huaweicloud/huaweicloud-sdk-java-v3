@@ -52,6 +52,8 @@ public class DailyData {
 
     /**
      * 开始时间
+     * minimum: 1
+     * maximum: 9999999999999
      * @return periodStart
      */
     public Long getPeriodStart() {
@@ -69,6 +71,8 @@ public class DailyData {
 
     /**
      * 入流量（bit/s）
+     * minimum: 0
+     * maximum: 2147483647
      * @return bpsIn
      */
     public Integer getBpsIn() {
@@ -86,6 +90,8 @@ public class DailyData {
 
     /**
      * 攻击流量（bit/s）
+     * minimum: 0
+     * maximum: 2147483647
      * @return bpsAttack
      */
     public Long getBpsAttack() {
@@ -103,6 +109,8 @@ public class DailyData {
 
     /**
      * 总流量
+     * minimum: 0
+     * maximum: 2147483647
      * @return totalBps
      */
     public Long getTotalBps() {
@@ -120,6 +128,8 @@ public class DailyData {
 
     /**
      * 入报文速率（个/s）
+     * minimum: 0
+     * maximum: 2147483647
      * @return ppsIn
      */
     public Long getPpsIn() {
@@ -137,6 +147,8 @@ public class DailyData {
 
     /**
      * 攻击文速率（个/s）
+     * minimum: 0
+     * maximum: 2147483647
      * @return ppsAttack
      */
     public Long getPpsAttack() {
@@ -154,6 +166,8 @@ public class DailyData {
 
     /**
      * 总报文速率
+     * minimum: 0
+     * maximum: 2147483647
      * @return totalPps
      */
     public Long getTotalPps() {

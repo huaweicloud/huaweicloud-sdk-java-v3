@@ -158,6 +158,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListTestReportsByConditionRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestReportsByConditionResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestTypesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestTypesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasePlansRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasePlansResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasesByProjectIssuesRelationRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasesByProjectIssuesRelationResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListUsageInfosRequest;
@@ -4826,6 +4828,35 @@ public class CloudtestClient {
      */
     public SyncInvoker<AddFeatureRequest, AddFeatureResponse> addFeatureInvoker(AddFeatureRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.addFeature, hcClient);
+    }
+
+    /**
+     * 根据测试用例URI或用例编号查询测试用例对应的测试计划
+     *
+     * 根据测试用例URI或用例编号查询测试用例对应的测试计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTestcasePlansRequest 请求对象
+     * @return ListTestcasePlansResponse
+     */
+    public ListTestcasePlansResponse listTestcasePlans(ListTestcasePlansRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.listTestcasePlans);
+    }
+
+    /**
+     * 根据测试用例URI或用例编号查询测试用例对应的测试计划
+     *
+     * 根据测试用例URI或用例编号查询测试用例对应的测试计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTestcasePlansRequest 请求对象
+     * @return SyncInvoker<ListTestcasePlansRequest, ListTestcasePlansResponse>
+     */
+    public SyncInvoker<ListTestcasePlansRequest, ListTestcasePlansResponse> listTestcasePlansInvoker(
+        ListTestcasePlansRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.listTestcasePlans, hcClient);
     }
 
 }

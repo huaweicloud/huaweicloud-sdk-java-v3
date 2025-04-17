@@ -1,11 +1,16 @@
 package com.huaweicloud.sdk.ces.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -28,6 +33,96 @@ public class UpdateNotificationMasksRequestBody {
     @JsonProperty(value = "relation_type")
 
     private RelationType relationType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metric_names")
+
+    private List<String> metricNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_metrics")
+
+    private List<ProductMetric> productMetrics = null;
+
+    /**
+     * dimension: 子维度,product: 云产品
+     */
+    public static final class ResourceLevelEnum {
+
+        /**
+         * Enum DIMENSION for value: "dimension"
+         */
+        public static final ResourceLevelEnum DIMENSION = new ResourceLevelEnum("dimension");
+
+        /**
+         * Enum PRODUCT for value: "product"
+         */
+        public static final ResourceLevelEnum PRODUCT = new ResourceLevelEnum("product");
+
+        private static final Map<String, ResourceLevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ResourceLevelEnum> createStaticFields() {
+            Map<String, ResourceLevelEnum> map = new HashMap<>();
+            map.put("dimension", DIMENSION);
+            map.put("product", PRODUCT);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ResourceLevelEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ResourceLevelEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceLevelEnum(value));
+        }
+
+        public static ResourceLevelEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ResourceLevelEnum) {
+                return this.value.equals(((ResourceLevelEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_level")
+
+    private ResourceLevelEnum resourceLevel;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "product_name")
+
+    private String productName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
@@ -124,6 +219,106 @@ public class UpdateNotificationMasksRequestBody {
 
     public void setRelationType(RelationType relationType) {
         this.relationType = relationType;
+    }
+
+    public UpdateNotificationMasksRequestBody withMetricNames(List<String> metricNames) {
+        this.metricNames = metricNames;
+        return this;
+    }
+
+    public UpdateNotificationMasksRequestBody addMetricNamesItem(String metricNamesItem) {
+        if (this.metricNames == null) {
+            this.metricNames = new ArrayList<>();
+        }
+        this.metricNames.add(metricNamesItem);
+        return this;
+    }
+
+    public UpdateNotificationMasksRequestBody withMetricNames(Consumer<List<String>> metricNamesSetter) {
+        if (this.metricNames == null) {
+            this.metricNames = new ArrayList<>();
+        }
+        metricNamesSetter.accept(this.metricNames);
+        return this;
+    }
+
+    /**
+     * 关联指标名称，relation_type为RESOURCE可选填，不填视为对资源所有指标进行告警屏蔽
+     * @return metricNames
+     */
+    public List<String> getMetricNames() {
+        return metricNames;
+    }
+
+    public void setMetricNames(List<String> metricNames) {
+        this.metricNames = metricNames;
+    }
+
+    public UpdateNotificationMasksRequestBody withProductMetrics(List<ProductMetric> productMetrics) {
+        this.productMetrics = productMetrics;
+        return this;
+    }
+
+    public UpdateNotificationMasksRequestBody addProductMetricsItem(ProductMetric productMetricsItem) {
+        if (this.productMetrics == null) {
+            this.productMetrics = new ArrayList<>();
+        }
+        this.productMetrics.add(productMetricsItem);
+        return this;
+    }
+
+    public UpdateNotificationMasksRequestBody withProductMetrics(Consumer<List<ProductMetric>> productMetricsSetter) {
+        if (this.productMetrics == null) {
+            this.productMetrics = new ArrayList<>();
+        }
+        productMetricsSetter.accept(this.productMetrics);
+        return this;
+    }
+
+    /**
+     * 按云产品维度屏蔽时的指标信息
+     * @return productMetrics
+     */
+    public List<ProductMetric> getProductMetrics() {
+        return productMetrics;
+    }
+
+    public void setProductMetrics(List<ProductMetric> productMetrics) {
+        this.productMetrics = productMetrics;
+    }
+
+    public UpdateNotificationMasksRequestBody withResourceLevel(ResourceLevelEnum resourceLevel) {
+        this.resourceLevel = resourceLevel;
+        return this;
+    }
+
+    /**
+     * dimension: 子维度,product: 云产品
+     * @return resourceLevel
+     */
+    public ResourceLevelEnum getResourceLevel() {
+        return resourceLevel;
+    }
+
+    public void setResourceLevel(ResourceLevelEnum resourceLevel) {
+        this.resourceLevel = resourceLevel;
+    }
+
+    public UpdateNotificationMasksRequestBody withProductName(String productName) {
+        this.productName = productName;
+        return this;
+    }
+
+    /**
+     * 资源为云产品时云产品名称
+     * @return productName
+     */
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public UpdateNotificationMasksRequestBody withResources(List<Resource> resources) {
@@ -254,7 +449,11 @@ public class UpdateNotificationMasksRequestBody {
         }
         UpdateNotificationMasksRequestBody that = (UpdateNotificationMasksRequestBody) obj;
         return Objects.equals(this.maskName, that.maskName) && Objects.equals(this.relationIds, that.relationIds)
-            && Objects.equals(this.relationType, that.relationType) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.relationType, that.relationType)
+            && Objects.equals(this.metricNames, that.metricNames)
+            && Objects.equals(this.productMetrics, that.productMetrics)
+            && Objects.equals(this.resourceLevel, that.resourceLevel)
+            && Objects.equals(this.productName, that.productName) && Objects.equals(this.resources, that.resources)
             && Objects.equals(this.maskType, that.maskType) && Objects.equals(this.startDate, that.startDate)
             && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endDate, that.endDate)
             && Objects.equals(this.endTime, that.endTime);
@@ -262,8 +461,19 @@ public class UpdateNotificationMasksRequestBody {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(maskName, relationIds, relationType, resources, maskType, startDate, startTime, endDate, endTime);
+        return Objects.hash(maskName,
+            relationIds,
+            relationType,
+            metricNames,
+            productMetrics,
+            resourceLevel,
+            productName,
+            resources,
+            maskType,
+            startDate,
+            startTime,
+            endDate,
+            endTime);
     }
 
     @Override
@@ -273,6 +483,10 @@ public class UpdateNotificationMasksRequestBody {
         sb.append("    maskName: ").append(toIndentedString(maskName)).append("\n");
         sb.append("    relationIds: ").append(toIndentedString(relationIds)).append("\n");
         sb.append("    relationType: ").append(toIndentedString(relationType)).append("\n");
+        sb.append("    metricNames: ").append(toIndentedString(metricNames)).append("\n");
+        sb.append("    productMetrics: ").append(toIndentedString(productMetrics)).append("\n");
+        sb.append("    resourceLevel: ").append(toIndentedString(resourceLevel)).append("\n");
+        sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    maskType: ").append(toIndentedString(maskType)).append("\n");
         sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");

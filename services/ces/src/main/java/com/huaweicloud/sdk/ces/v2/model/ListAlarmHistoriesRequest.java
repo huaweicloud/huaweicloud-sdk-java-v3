@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
@@ -18,7 +21,7 @@ public class ListAlarmHistoriesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "alarm_id")
 
-    private String alarmId;
+    private List<String> alarmId = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_id")
@@ -29,6 +32,112 @@ public class ListAlarmHistoriesRequest {
     @JsonProperty(value = "name")
 
     private String name;
+
+    /**
+     * Gets or Sets status
+     */
+    public static final class StatusEnum {
+
+        /**
+         * Enum OK for value: "ok"
+         */
+        public static final StatusEnum OK = new StatusEnum("ok");
+
+        /**
+         * Enum ALARM for value: "alarm"
+         */
+        public static final StatusEnum ALARM = new StatusEnum("alarm");
+
+        /**
+         * Enum INVALID for value: "invalid"
+         */
+        public static final StatusEnum INVALID = new StatusEnum("invalid");
+
+        private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, StatusEnum> createStaticFields() {
+            Map<String, StatusEnum> map = new HashMap<>();
+            map.put("ok", OK);
+            map.put("alarm", ALARM);
+            map.put("invalid", INVALID);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        StatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static StatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
+        }
+
+        public static StatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof StatusEnum) {
+                return this.value.equals(((StatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private List<StatusEnum> status = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "level")
+
+    private Integer level;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "namespace")
+
+    private String namespace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "resource_id")
+
+    private String resourceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "from")
+
+    private String from;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "to")
+
+    private String to;
 
     /**
      * 告警类型，event：查询事件类型告警，metric：查询指标类型告警
@@ -106,34 +215,14 @@ public class ListAlarmHistoriesRequest {
     private AlarmTypeEnum alarmType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
+    @JsonProperty(value = "create_time_from")
 
-    private String status;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "level")
-
-    private Integer level;
+    private String createTimeFrom;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "namespace")
+    @JsonProperty(value = "create_time_to")
 
-    private String namespace;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resource_id")
-
-    private String resourceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "from")
-
-    private String from;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "to")
-
-    private String to;
+    private String createTimeTo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "offset")
@@ -232,8 +321,24 @@ public class ListAlarmHistoriesRequest {
 
     private OrderByEnum orderBy;
 
-    public ListAlarmHistoriesRequest withAlarmId(String alarmId) {
+    public ListAlarmHistoriesRequest withAlarmId(List<String> alarmId) {
         this.alarmId = alarmId;
+        return this;
+    }
+
+    public ListAlarmHistoriesRequest addAlarmIdItem(String alarmIdItem) {
+        if (this.alarmId == null) {
+            this.alarmId = new ArrayList<>();
+        }
+        this.alarmId.add(alarmIdItem);
+        return this;
+    }
+
+    public ListAlarmHistoriesRequest withAlarmId(Consumer<List<String>> alarmIdSetter) {
+        if (this.alarmId == null) {
+            this.alarmId = new ArrayList<>();
+        }
+        alarmIdSetter.accept(this.alarmId);
         return this;
     }
 
@@ -241,11 +346,11 @@ public class ListAlarmHistoriesRequest {
      * 告警ID,以al开头，后跟22位由字母或数字组成的字符串
      * @return alarmId
      */
-    public String getAlarmId() {
+    public List<String> getAlarmId() {
         return alarmId;
     }
 
-    public void setAlarmId(String alarmId) {
+    public void setAlarmId(List<String> alarmId) {
         this.alarmId = alarmId;
     }
 
@@ -283,25 +388,24 @@ public class ListAlarmHistoriesRequest {
         this.name = name;
     }
 
-    public ListAlarmHistoriesRequest withAlarmType(AlarmTypeEnum alarmType) {
-        this.alarmType = alarmType;
+    public ListAlarmHistoriesRequest withStatus(List<StatusEnum> status) {
+        this.status = status;
         return this;
     }
 
-    /**
-     * 告警类型，event：查询事件类型告警，metric：查询指标类型告警
-     * @return alarmType
-     */
-    public AlarmTypeEnum getAlarmType() {
-        return alarmType;
+    public ListAlarmHistoriesRequest addStatusItem(StatusEnum statusItem) {
+        if (this.status == null) {
+            this.status = new ArrayList<>();
+        }
+        this.status.add(statusItem);
+        return this;
     }
 
-    public void setAlarmType(AlarmTypeEnum alarmType) {
-        this.alarmType = alarmType;
-    }
-
-    public ListAlarmHistoriesRequest withStatus(String status) {
-        this.status = status;
+    public ListAlarmHistoriesRequest withStatus(Consumer<List<StatusEnum>> statusSetter) {
+        if (this.status == null) {
+            this.status = new ArrayList<>();
+        }
+        statusSetter.accept(this.status);
         return this;
     }
 
@@ -309,11 +413,11 @@ public class ListAlarmHistoriesRequest {
      * 告警规则状态, ok为正常，alarm为告警，invalid为已失效
      * @return status
      */
-    public String getStatus() {
+    public List<StatusEnum> getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(List<StatusEnum> status) {
         this.status = status;
     }
 
@@ -342,7 +446,7 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
+     * 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
      * @return namespace
      */
     public String getNamespace() {
@@ -376,7 +480,7 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * 查询告警记录的起始时间，例如：2022-02-10T10:05:46+08:00
+     * 查询告警记录的起始更新时间，例如：2022-02-10T10:05:46+08:00
      * @return from
      */
     public String getFrom() {
@@ -393,7 +497,7 @@ public class ListAlarmHistoriesRequest {
     }
 
     /**
-     * 查询告警记录的截止时间，例如：2022-02-10T10:05:47+08:00
+     * 查询告警记录的截止更新时间，例如：2022-02-10T10:05:47+08:00
      * @return to
      */
     public String getTo() {
@@ -404,6 +508,57 @@ public class ListAlarmHistoriesRequest {
         this.to = to;
     }
 
+    public ListAlarmHistoriesRequest withAlarmType(AlarmTypeEnum alarmType) {
+        this.alarmType = alarmType;
+        return this;
+    }
+
+    /**
+     * 告警类型，event：查询事件类型告警，metric：查询指标类型告警
+     * @return alarmType
+     */
+    public AlarmTypeEnum getAlarmType() {
+        return alarmType;
+    }
+
+    public void setAlarmType(AlarmTypeEnum alarmType) {
+        this.alarmType = alarmType;
+    }
+
+    public ListAlarmHistoriesRequest withCreateTimeFrom(String createTimeFrom) {
+        this.createTimeFrom = createTimeFrom;
+        return this;
+    }
+
+    /**
+     * 查询告警记录的起始创建时间，例如：2022-02-10T10:05:46+08:00
+     * @return createTimeFrom
+     */
+    public String getCreateTimeFrom() {
+        return createTimeFrom;
+    }
+
+    public void setCreateTimeFrom(String createTimeFrom) {
+        this.createTimeFrom = createTimeFrom;
+    }
+
+    public ListAlarmHistoriesRequest withCreateTimeTo(String createTimeTo) {
+        this.createTimeTo = createTimeTo;
+        return this;
+    }
+
+    /**
+     * 查询告警记录的截止创建时间，例如：2022-02-10T10:05:47+08:00
+     * @return createTimeTo
+     */
+    public String getCreateTimeTo() {
+        return createTimeTo;
+    }
+
+    public void setCreateTimeTo(String createTimeTo) {
+        this.createTimeTo = createTimeTo;
+    }
+
     public ListAlarmHistoriesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
@@ -412,7 +567,7 @@ public class ListAlarmHistoriesRequest {
     /**
      * 分页偏移量
      * minimum: 0
-     * maximum: 999999
+     * maximum: 1000000000
      * @return offset
      */
     public Integer getOffset() {
@@ -469,12 +624,13 @@ public class ListAlarmHistoriesRequest {
         }
         ListAlarmHistoriesRequest that = (ListAlarmHistoriesRequest) obj;
         return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.recordId, that.recordId)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.alarmType, that.alarmType)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.level, that.level)
-            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.resourceId, that.resourceId)
-            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.orderBy, that.orderBy);
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.from, that.from)
+            && Objects.equals(this.to, that.to) && Objects.equals(this.alarmType, that.alarmType)
+            && Objects.equals(this.createTimeFrom, that.createTimeFrom)
+            && Objects.equals(this.createTimeTo, that.createTimeTo) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.orderBy, that.orderBy);
     }
 
     @Override
@@ -482,13 +638,15 @@ public class ListAlarmHistoriesRequest {
         return Objects.hash(alarmId,
             recordId,
             name,
-            alarmType,
             status,
             level,
             namespace,
             resourceId,
             from,
             to,
+            alarmType,
+            createTimeFrom,
+            createTimeTo,
             offset,
             limit,
             orderBy);
@@ -501,13 +659,15 @@ public class ListAlarmHistoriesRequest {
         sb.append("    alarmId: ").append(toIndentedString(alarmId)).append("\n");
         sb.append("    recordId: ").append(toIndentedString(recordId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    alarmType: ").append(toIndentedString(alarmType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
         sb.append("    from: ").append(toIndentedString(from)).append("\n");
         sb.append("    to: ").append(toIndentedString(to)).append("\n");
+        sb.append("    alarmType: ").append(toIndentedString(alarmType)).append("\n");
+        sb.append("    createTimeFrom: ").append(toIndentedString(createTimeFrom)).append("\n");
+        sb.append("    createTimeTo: ").append(toIndentedString(createTimeTo)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");

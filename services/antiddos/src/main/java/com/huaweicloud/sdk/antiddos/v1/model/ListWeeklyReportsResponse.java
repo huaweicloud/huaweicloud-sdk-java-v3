@@ -36,6 +36,8 @@ public class ListWeeklyReportsResponse extends SdkResponse {
 
     /**
      * 一周内DDoS拦截次数
+     * minimum: 0
+     * maximum: 2147483647
      * @return ddosInterceptTimes
      */
     public Integer getDdosInterceptTimes() {

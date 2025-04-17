@@ -35,7 +35,7 @@ public class AlarmHistoryItemV2 {
     private String name;
 
     /**
-     * 告警记录的状态，取值为ok，alarm，invalid； ok为正常，alarm为告警，invalid为已失效。
+     * 告警记录的状态，取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。
      */
     public static final class StatusEnum {
 
@@ -54,6 +54,11 @@ public class AlarmHistoryItemV2 {
          */
         public static final StatusEnum INVALID = new StatusEnum("invalid");
 
+        /**
+         * Enum OK_MANUAL for value: "ok_manual"
+         */
+        public static final StatusEnum OK_MANUAL = new StatusEnum("ok_manual");
+
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StatusEnum> createStaticFields() {
@@ -61,6 +66,7 @@ public class AlarmHistoryItemV2 {
             map.put("ok", OK);
             map.put("alarm", ALARM);
             map.put("invalid", INVALID);
+            map.put("ok_manual", OK_MANUAL);
             return Collections.unmodifiableMap(map);
         }
 
@@ -324,7 +330,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 告警记录的状态，取值为ok，alarm，invalid； ok为正常，alarm为告警，invalid为已失效。
+     * 告警记录的状态，取值为ok，alarm，invalid, ok_manual； ok为正常，alarm为告警，invalid为已失效,ok_manual为手动恢复。
      * @return status
      */
     public StatusEnum getStatus() {
@@ -426,7 +432,7 @@ public class AlarmHistoryItemV2 {
     }
 
     /**
-     * 第一次告警时间戳，UTC时间
+     * 第一次告警时间，UTC时间
      * @return firstAlarmTime
      */
     public OffsetDateTime getFirstAlarmTime() {

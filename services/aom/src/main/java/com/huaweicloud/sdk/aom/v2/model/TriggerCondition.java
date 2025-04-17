@@ -270,7 +270,7 @@ public class TriggerCondition {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "query_param")
 
-    private String queryParam;
+    private Object queryParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "aom_monitor_level")
@@ -801,7 +801,7 @@ public class TriggerCondition {
         this.queryMatch = queryMatch;
     }
 
-    public TriggerCondition withQueryParam(String queryParam) {
+    public TriggerCondition withQueryParam(Object queryParam) {
         this.queryParam = queryParam;
         return this;
     }
@@ -810,11 +810,11 @@ public class TriggerCondition {
      * 查询参数
      * @return queryParam
      */
-    public String getQueryParam() {
+    public Object getQueryParam() {
         return queryParam;
     }
 
-    public void setQueryParam(String queryParam) {
+    public void setQueryParam(Object queryParam) {
         this.queryParam = queryParam;
     }
 

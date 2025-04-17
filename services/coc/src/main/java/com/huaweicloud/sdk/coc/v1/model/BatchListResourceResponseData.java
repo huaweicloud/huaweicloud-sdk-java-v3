@@ -85,6 +85,11 @@ public class BatchListResourceResponseData {
 
     private Boolean isDelegated;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "operable")
+
+    private String operable;
+
     public BatchListResourceResponseData withId(String id) {
         this.id = id;
         return this;
@@ -371,6 +376,23 @@ public class BatchListResourceResponseData {
         this.isDelegated = isDelegated;
     }
 
+    public BatchListResourceResponseData withOperable(String operable) {
+        this.operable = operable;
+        return this;
+    }
+
+    /**
+     * 用户定义资源是否可运维实例
+     * @return operable
+     */
+    public String getOperable() {
+        return operable;
+    }
+
+    public void setOperable(String operable) {
+        this.operable = operable;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -387,7 +409,7 @@ public class BatchListResourceResponseData {
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.agentId, that.agentId)
             && Objects.equals(this.agentState, that.agentState) && Objects.equals(this.properties, that.properties)
             && Objects.equals(this.ingestProperties, that.ingestProperties)
-            && Objects.equals(this.isDelegated, that.isDelegated);
+            && Objects.equals(this.isDelegated, that.isDelegated) && Objects.equals(this.operable, that.operable);
     }
 
     @Override
@@ -405,7 +427,8 @@ public class BatchListResourceResponseData {
             agentState,
             properties,
             ingestProperties,
-            isDelegated);
+            isDelegated,
+            operable);
     }
 
     @Override
@@ -426,6 +449,7 @@ public class BatchListResourceResponseData {
         sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("    ingestProperties: ").append(toIndentedString(ingestProperties)).append("\n");
         sb.append("    isDelegated: ").append(toIndentedString(isDelegated)).append("\n");
+        sb.append("    operable: ").append(toIndentedString(operable)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -45,6 +45,26 @@ public class DashBoardInfo {
 
     private Long createTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "widgets_num")
+
+    private Integer widgetsNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "namespace")
+
+    private String namespace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sub_product")
+
+    private String subProduct;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dashboard_template_id")
+
+    private String dashboardTemplateId;
+
     public DashBoardInfo withDashboardId(String dashboardId) {
         this.dashboardId = dashboardId;
         return this;
@@ -168,6 +188,76 @@ public class DashBoardInfo {
         this.createTime = createTime;
     }
 
+    public DashBoardInfo withWidgetsNum(Integer widgetsNum) {
+        this.widgetsNum = widgetsNum;
+        return this;
+    }
+
+    /**
+     * 看板下的视图总数
+     * minimum: 0
+     * maximum: 50
+     * @return widgetsNum
+     */
+    public Integer getWidgetsNum() {
+        return widgetsNum;
+    }
+
+    public void setWidgetsNum(Integer widgetsNum) {
+        this.widgetsNum = widgetsNum;
+    }
+
+    public DashBoardInfo withNamespace(String namespace) {
+        this.namespace = namespace;
+        return this;
+    }
+
+    /**
+     * 命名空间
+     * @return namespace
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public DashBoardInfo withSubProduct(String subProduct) {
+        this.subProduct = subProduct;
+        return this;
+    }
+
+    /**
+     * 子产品标识
+     * @return subProduct
+     */
+    public String getSubProduct() {
+        return subProduct;
+    }
+
+    public void setSubProduct(String subProduct) {
+        this.subProduct = subProduct;
+    }
+
+    public DashBoardInfo withDashboardTemplateId(String dashboardTemplateId) {
+        this.dashboardTemplateId = dashboardTemplateId;
+        return this;
+    }
+
+    /**
+     * 监控大盘模板id
+     * @return dashboardTemplateId
+     */
+    public String getDashboardTemplateId() {
+        return dashboardTemplateId;
+    }
+
+    public void setDashboardTemplateId(String dashboardTemplateId) {
+        this.dashboardTemplateId = dashboardTemplateId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -181,13 +271,25 @@ public class DashBoardInfo {
             && Objects.equals(this.dashboardName, that.dashboardName)
             && Objects.equals(this.enterpriseId, that.enterpriseId)
             && Objects.equals(this.rowWidgetNum, that.rowWidgetNum) && Objects.equals(this.isFavorite, that.isFavorite)
-            && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.createTime, that.createTime);
+            && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.widgetsNum, that.widgetsNum) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.subProduct, that.subProduct)
+            && Objects.equals(this.dashboardTemplateId, that.dashboardTemplateId);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(dashboardId, dashboardName, enterpriseId, rowWidgetNum, isFavorite, creatorName, createTime);
+        return Objects.hash(dashboardId,
+            dashboardName,
+            enterpriseId,
+            rowWidgetNum,
+            isFavorite,
+            creatorName,
+            createTime,
+            widgetsNum,
+            namespace,
+            subProduct,
+            dashboardTemplateId);
     }
 
     @Override
@@ -201,6 +303,10 @@ public class DashBoardInfo {
         sb.append("    isFavorite: ").append(toIndentedString(isFavorite)).append("\n");
         sb.append("    creatorName: ").append(toIndentedString(creatorName)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
+        sb.append("    widgetsNum: ").append(toIndentedString(widgetsNum)).append("\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    subProduct: ").append(toIndentedString(subProduct)).append("\n");
+        sb.append("    dashboardTemplateId: ").append(toIndentedString(dashboardTemplateId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

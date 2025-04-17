@@ -45,7 +45,7 @@ public class BatchDeleteAlarmTemplatesRequestBody {
     }
 
     /**
-     * 需要批量删除的告警模板的ID列表。未关联告警规则的模板可以批量删除多个；已关联告警规则的告警模板模板单次只允许删除一个，若同时删除多个已关联告警规则的告警模板，将返回异常
+     * 需要批量删除的告警模板的ID列表。未关联告警规则的模板可以批量删除多个；已关联告警规则的告警模板，单次只允许删除一个，若同时删除多个已关联告警规则的告警模板，将返回异常
      * @return templateIds
      */
     public List<String> getTemplateIds() {

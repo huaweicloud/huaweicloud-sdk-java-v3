@@ -14,16 +14,16 @@ public class DeleteDashboardsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private BatchDeleteDashboardRequestBody body;
+    private BatchDeleteDashboardsRequestBody body;
 
-    public DeleteDashboardsRequest withBody(BatchDeleteDashboardRequestBody body) {
+    public DeleteDashboardsRequest withBody(BatchDeleteDashboardsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public DeleteDashboardsRequest withBody(Consumer<BatchDeleteDashboardRequestBody> bodySetter) {
+    public DeleteDashboardsRequest withBody(Consumer<BatchDeleteDashboardsRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new BatchDeleteDashboardRequestBody();
+            this.body = new BatchDeleteDashboardsRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -34,11 +34,11 @@ public class DeleteDashboardsRequest {
      * Get body
      * @return body
      */
-    public BatchDeleteDashboardRequestBody getBody() {
+    public BatchDeleteDashboardsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(BatchDeleteDashboardRequestBody body) {
+    public void setBody(BatchDeleteDashboardsRequestBody body) {
         this.body = body;
     }
 

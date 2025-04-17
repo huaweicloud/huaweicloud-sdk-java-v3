@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.ces.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -37,16 +42,6 @@ public class PostAlarmsReqV2 {
     @JsonProperty(value = "resources")
 
     private List<List<Dimension>> resources = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "alarm_template_id")
-
-    private String alarmTemplateId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "tags")
-
-    private List<ResourceTag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
@@ -94,14 +89,94 @@ public class PostAlarmsReqV2 {
     private Boolean notificationEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alarm_template_id")
+
+    private String alarmTemplateId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "product_name")
 
     private String productName;
 
+    /**
+     * 产品层级跨纬规则创建时需要指明为产品层级规则，resource_level取值为product即为产品层级跨纬规则，不填或者取值为dimension则为旧的规则类型
+     */
+    public static final class ResourceLevelEnum {
+
+        /**
+         * Enum PRODUCT for value: "product"
+         */
+        public static final ResourceLevelEnum PRODUCT = new ResourceLevelEnum("product");
+
+        /**
+         * Enum DIMENSION for value: "dimension"
+         */
+        public static final ResourceLevelEnum DIMENSION = new ResourceLevelEnum("dimension");
+
+        private static final Map<String, ResourceLevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ResourceLevelEnum> createStaticFields() {
+            Map<String, ResourceLevelEnum> map = new HashMap<>();
+            map.put("product", PRODUCT);
+            map.put("dimension", DIMENSION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ResourceLevelEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ResourceLevelEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceLevelEnum(value));
+        }
+
+        public static ResourceLevelEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ResourceLevelEnum) {
+                return this.value.equals(((ResourceLevelEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_level")
 
-    private ResourceLevel resourceLevel;
+    private ResourceLevelEnum resourceLevel;
 
     public PostAlarmsReqV2 withName(String name) {
         this.name = name;
@@ -193,7 +268,7 @@ public class PostAlarmsReqV2 {
     }
 
     /**
-     * 资源列表，监控范围为指定资源时必传
+     * 资源列表，告警规则类型为全部资源、资源分组时，资源维度值传空；告警规则类型为指定资源时，资源维度值必填，可以同时指定监控多个资源。
      * @return resources
      */
     public List<List<Dimension>> getResources() {
@@ -202,56 +277,6 @@ public class PostAlarmsReqV2 {
 
     public void setResources(List<List<Dimension>> resources) {
         this.resources = resources;
-    }
-
-    public PostAlarmsReqV2 withAlarmTemplateId(String alarmTemplateId) {
-        this.alarmTemplateId = alarmTemplateId;
-        return this;
-    }
-
-    /**
-     * 告警规则关联告警模板ID
-     * @return alarmTemplateId
-     */
-    public String getAlarmTemplateId() {
-        return alarmTemplateId;
-    }
-
-    public void setAlarmTemplateId(String alarmTemplateId) {
-        this.alarmTemplateId = alarmTemplateId;
-    }
-
-    public PostAlarmsReqV2 withTags(List<ResourceTag> tags) {
-        this.tags = tags;
-        return this;
-    }
-
-    public PostAlarmsReqV2 addTagsItem(ResourceTag tagsItem) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        this.tags.add(tagsItem);
-        return this;
-    }
-
-    public PostAlarmsReqV2 withTags(Consumer<List<ResourceTag>> tagsSetter) {
-        if (this.tags == null) {
-            this.tags = new ArrayList<>();
-        }
-        tagsSetter.accept(this.tags);
-        return this;
-    }
-
-    /**
-     * 租户标签列表
-     * @return tags
-     */
-    public List<ResourceTag> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<ResourceTag> tags) {
-        this.tags = tags;
     }
 
     public PostAlarmsReqV2 withPolicies(List<Policy> policies) {
@@ -410,7 +435,7 @@ public class PostAlarmsReqV2 {
     }
 
     /**
-     * 企业项目ID，不填时会使用默认的企业项目ID
+     * 企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -455,6 +480,56 @@ public class PostAlarmsReqV2 {
         this.notificationEnabled = notificationEnabled;
     }
 
+    public PostAlarmsReqV2 withAlarmTemplateId(String alarmTemplateId) {
+        this.alarmTemplateId = alarmTemplateId;
+        return this;
+    }
+
+    /**
+     * 告警规则关联告警模板ID，如果传了，告警规则关联的策略会和告警模板策略联动变化
+     * @return alarmTemplateId
+     */
+    public String getAlarmTemplateId() {
+        return alarmTemplateId;
+    }
+
+    public void setAlarmTemplateId(String alarmTemplateId) {
+        this.alarmTemplateId = alarmTemplateId;
+    }
+
+    public PostAlarmsReqV2 withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public PostAlarmsReqV2 addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public PostAlarmsReqV2 withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 租户标签列表
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
     public PostAlarmsReqV2 withProductName(String productName) {
         this.productName = productName;
         return this;
@@ -472,20 +547,20 @@ public class PostAlarmsReqV2 {
         this.productName = productName;
     }
 
-    public PostAlarmsReqV2 withResourceLevel(ResourceLevel resourceLevel) {
+    public PostAlarmsReqV2 withResourceLevel(ResourceLevelEnum resourceLevel) {
         this.resourceLevel = resourceLevel;
         return this;
     }
 
     /**
-     * Get resourceLevel
+     * 产品层级跨纬规则创建时需要指明为产品层级规则，resource_level取值为product即为产品层级跨纬规则，不填或者取值为dimension则为旧的规则类型
      * @return resourceLevel
      */
-    public ResourceLevel getResourceLevel() {
+    public ResourceLevelEnum getResourceLevel() {
         return resourceLevel;
     }
 
-    public void setResourceLevel(ResourceLevel resourceLevel) {
+    public void setResourceLevel(ResourceLevelEnum resourceLevel) {
         this.resourceLevel = resourceLevel;
     }
 
@@ -501,16 +576,15 @@ public class PostAlarmsReqV2 {
         return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.namespace, that.namespace)
             && Objects.equals(this.resourceGroupId, that.resourceGroupId)
-            && Objects.equals(this.resources, that.resources)
-            && Objects.equals(this.alarmTemplateId, that.alarmTemplateId) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.policies, that.policies) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.alarmNotifications, that.alarmNotifications)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.policies, that.policies)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.alarmNotifications, that.alarmNotifications)
             && Objects.equals(this.okNotifications, that.okNotifications)
             && Objects.equals(this.notificationBeginTime, that.notificationBeginTime)
             && Objects.equals(this.notificationEndTime, that.notificationEndTime)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.enabled, that.enabled)
             && Objects.equals(this.notificationEnabled, that.notificationEnabled)
+            && Objects.equals(this.alarmTemplateId, that.alarmTemplateId) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.productName, that.productName)
             && Objects.equals(this.resourceLevel, that.resourceLevel);
     }
@@ -522,8 +596,6 @@ public class PostAlarmsReqV2 {
             namespace,
             resourceGroupId,
             resources,
-            alarmTemplateId,
-            tags,
             policies,
             type,
             alarmNotifications,
@@ -533,6 +605,8 @@ public class PostAlarmsReqV2 {
             enterpriseProjectId,
             enabled,
             notificationEnabled,
+            alarmTemplateId,
+            tags,
             productName,
             resourceLevel);
     }
@@ -546,8 +620,6 @@ public class PostAlarmsReqV2 {
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    resourceGroupId: ").append(toIndentedString(resourceGroupId)).append("\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
-        sb.append("    alarmTemplateId: ").append(toIndentedString(alarmTemplateId)).append("\n");
-        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    policies: ").append(toIndentedString(policies)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    alarmNotifications: ").append(toIndentedString(alarmNotifications)).append("\n");
@@ -557,6 +629,8 @@ public class PostAlarmsReqV2 {
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
         sb.append("    notificationEnabled: ").append(toIndentedString(notificationEnabled)).append("\n");
+        sb.append("    alarmTemplateId: ").append(toIndentedString(alarmTemplateId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
         sb.append("    resourceLevel: ").append(toIndentedString(resourceLevel)).append("\n");
         sb.append("}");

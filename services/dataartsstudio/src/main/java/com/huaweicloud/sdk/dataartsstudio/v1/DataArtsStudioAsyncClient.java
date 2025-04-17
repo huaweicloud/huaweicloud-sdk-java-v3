@@ -367,6 +367,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryScriptsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryScriptsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskOverviewRequest;
@@ -5809,6 +5811,35 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ListFactoryReleasePackagesRequest, ListFactoryReleasePackagesResponse> listFactoryReleasePackagesAsyncInvoker(
         ListFactoryReleasePackagesRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.listFactoryReleasePackages, hcClient);
+    }
+
+    /**
+     * 查询脚本列表
+     *
+     * 此接口用来查询脚本列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryScriptsRequest 请求对象
+     * @return CompletableFuture<ListFactoryScriptsResponse>
+     */
+    public CompletableFuture<ListFactoryScriptsResponse> listFactoryScriptsAsync(ListFactoryScriptsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listFactoryScripts);
+    }
+
+    /**
+     * 查询脚本列表
+     *
+     * 此接口用来查询脚本列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryScriptsRequest 请求对象
+     * @return AsyncInvoker<ListFactoryScriptsRequest, ListFactoryScriptsResponse>
+     */
+    public AsyncInvoker<ListFactoryScriptsRequest, ListFactoryScriptsResponse> listFactoryScriptsAsyncInvoker(
+        ListFactoryScriptsRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listFactoryScripts, hcClient);
     }
 
     /**

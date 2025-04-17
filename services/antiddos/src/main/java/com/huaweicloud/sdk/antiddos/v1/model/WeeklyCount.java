@@ -42,6 +42,8 @@ public class WeeklyCount {
 
     /**
      * DDoS拦截次数
+     * minimum: 0
+     * maximum: 2147483647
      * @return ddosInterceptTimes
      */
     public Integer getDdosInterceptTimes() {
@@ -59,6 +61,8 @@ public class WeeklyCount {
 
     /**
      * DDoS黑洞次数
+     * minimum: 0
+     * maximum: 2147483647
      * @return ddosBlackholeTimes
      */
     public Integer getDdosBlackholeTimes() {
@@ -76,6 +80,8 @@ public class WeeklyCount {
 
     /**
      * 最大攻击流量
+     * minimum: 0
+     * maximum: 2147483647
      * @return maxAttackBps
      */
     public Integer getMaxAttackBps() {
@@ -93,6 +99,8 @@ public class WeeklyCount {
 
     /**
      * 最大攻击连接数
+     * minimum: 0
+     * maximum: 2147483647
      * @return maxAttackConns
      */
     public Integer getMaxAttackConns() {
@@ -110,6 +118,8 @@ public class WeeklyCount {
 
     /**
      * 开始时间
+     * minimum: 0
+     * maximum: 999999999
      * @return periodStartDate
      */
     public Long getPeriodStartDate() {

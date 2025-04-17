@@ -21,9 +21,9 @@ public class ListTestReportsByConditionRequest {
     private Long pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "offset")
+    @JsonProperty(value = "page_no")
 
-    private Long offset;
+    private String pageNo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "key_word")
@@ -71,23 +71,21 @@ public class ListTestReportsByConditionRequest {
         this.pageSize = pageSize;
     }
 
-    public ListTestReportsByConditionRequest withOffset(Long offset) {
-        this.offset = offset;
+    public ListTestReportsByConditionRequest withPageNo(String pageNo) {
+        this.pageNo = pageNo;
         return this;
     }
 
     /**
-     * 页数，page_no大于等于1
-     * minimum: 0
-     * maximum: 20000
-     * @return offset
+     * 当前页数
+     * @return pageNo
      */
-    public Long getOffset() {
-        return offset;
+    public String getPageNo() {
+        return pageNo;
     }
 
-    public void setOffset(Long offset) {
-        this.offset = offset;
+    public void setPageNo(String pageNo) {
+        this.pageNo = pageNo;
     }
 
     public ListTestReportsByConditionRequest withKeyWord(String keyWord) {
@@ -134,13 +132,13 @@ public class ListTestReportsByConditionRequest {
         }
         ListTestReportsByConditionRequest that = (ListTestReportsByConditionRequest) obj;
         return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.pageSize, that.pageSize)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.keyWord, that.keyWord)
+            && Objects.equals(this.pageNo, that.pageNo) && Objects.equals(this.keyWord, that.keyWord)
             && Objects.equals(this.own, that.own);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, pageSize, offset, keyWord, own);
+        return Objects.hash(projectId, pageSize, pageNo, keyWord, own);
     }
 
     @Override
@@ -149,7 +147,7 @@ public class ListTestReportsByConditionRequest {
         sb.append("class ListTestReportsByConditionRequest {\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
-        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+        sb.append("    pageNo: ").append(toIndentedString(pageNo)).append("\n");
         sb.append("    keyWord: ").append(toIndentedString(keyWord)).append("\n");
         sb.append("    own: ").append(toIndentedString(own)).append("\n");
         sb.append("}");

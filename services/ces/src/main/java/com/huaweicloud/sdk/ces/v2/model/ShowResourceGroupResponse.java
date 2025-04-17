@@ -131,6 +131,11 @@ public class ShowResourceGroupResponse extends SdkResponse {
 
     private List<ResourceGroupTagRelation> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instances")
+
+    private List<Instance> instances = null;
+
     public ShowResourceGroupResponse withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
@@ -282,6 +287,39 @@ public class ShowResourceGroupResponse extends SdkResponse {
         this.tags = tags;
     }
 
+    public ShowResourceGroupResponse withInstances(List<Instance> instances) {
+        this.instances = instances;
+        return this;
+    }
+
+    public ShowResourceGroupResponse addInstancesItem(Instance instancesItem) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        this.instances.add(instancesItem);
+        return this;
+    }
+
+    public ShowResourceGroupResponse withInstances(Consumer<List<Instance>> instancesSetter) {
+        if (this.instances == null) {
+            this.instances = new ArrayList<>();
+        }
+        instancesSetter.accept(this.instances);
+        return this;
+    }
+
+    /**
+     * 实例名称匹配参数
+     * @return instances
+     */
+    public List<Instance> getInstances() {
+        return instances;
+    }
+
+    public void setInstances(List<Instance> instances) {
+        this.instances = instances;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -295,12 +333,13 @@ public class ShowResourceGroupResponse extends SdkResponse {
             && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.type, that.type) && Objects.equals(this.associationEpIds, that.associationEpIds)
-            && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.instances, that.instances);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(groupName, groupId, createTime, enterpriseProjectId, type, associationEpIds, tags);
+        return Objects
+            .hash(groupName, groupId, createTime, enterpriseProjectId, type, associationEpIds, tags, instances);
     }
 
     @Override
@@ -314,6 +353,7 @@ public class ShowResourceGroupResponse extends SdkResponse {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    associationEpIds: ").append(toIndentedString(associationEpIds)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    instances: ").append(toIndentedString(instances)).append("\n");
         sb.append("}");
         return sb.toString();
     }

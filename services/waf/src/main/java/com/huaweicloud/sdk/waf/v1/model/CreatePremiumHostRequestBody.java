@@ -80,6 +80,11 @@ public class CreatePremiumHostRequestBody {
 
     private String description;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "web_tag")
+
+    private String webTag;
+
     public CreatePremiumHostRequestBody withCertificateid(String certificateid) {
         this.certificateid = certificateid;
         return this;
@@ -342,6 +347,23 @@ public class CreatePremiumHostRequestBody {
         this.description = description;
     }
 
+    public CreatePremiumHostRequestBody withWebTag(String webTag) {
+        this.webTag = webTag;
+        return this;
+    }
+
+    /**
+     * 网站名称，对应WAF控制台域名详情中的网站名称
+     * @return webTag
+     */
+    public String getWebTag() {
+        return webTag;
+    }
+
+    public void setWebTag(String webTag) {
+        this.webTag = webTag;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -359,7 +381,7 @@ public class CreatePremiumHostRequestBody {
             && Objects.equals(this.forwardHeaderMap, that.forwardHeaderMap) && Objects.equals(this.mode, that.mode)
             && Objects.equals(this.loadbalancerId, that.loadbalancerId)
             && Objects.equals(this.listenerId, that.listenerId) && Objects.equals(this.protocolPort, that.protocolPort)
-            && Objects.equals(this.description, that.description);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.webTag, that.webTag);
     }
 
     @Override
@@ -376,7 +398,8 @@ public class CreatePremiumHostRequestBody {
             loadbalancerId,
             listenerId,
             protocolPort,
-            description);
+            description,
+            webTag);
     }
 
     @Override
@@ -396,6 +419,7 @@ public class CreatePremiumHostRequestBody {
         sb.append("    listenerId: ").append(toIndentedString(listenerId)).append("\n");
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    webTag: ").append(toIndentedString(webTag)).append("\n");
         sb.append("}");
         return sb.toString();
     }

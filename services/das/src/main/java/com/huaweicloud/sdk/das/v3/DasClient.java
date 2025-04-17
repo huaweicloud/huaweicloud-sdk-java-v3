@@ -3,8 +3,12 @@ package com.huaweicloud.sdk.das.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.das.v3.model.AddFullSqlTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.AddFullSqlTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
@@ -311,6 +315,64 @@ public class DasClient {
     public SyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionInvoker(
         ShowApiVersionRequest request) {
         return new SyncInvoker<>(request, DasMeta.showApiVersion, hcClient);
+    }
+
+    /**
+     * 创建全量SQL明细解析任务
+     *
+     * 创建全量SQL明细解析任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFullSqlTaskRequest 请求对象
+     * @return AddFullSqlTaskResponse
+     */
+    public AddFullSqlTaskResponse addFullSqlTask(AddFullSqlTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.addFullSqlTask);
+    }
+
+    /**
+     * 创建全量SQL明细解析任务
+     *
+     * 创建全量SQL明细解析任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFullSqlTaskRequest 请求对象
+     * @return SyncInvoker<AddFullSqlTaskRequest, AddFullSqlTaskResponse>
+     */
+    public SyncInvoker<AddFullSqlTaskRequest, AddFullSqlTaskResponse> addFullSqlTaskInvoker(
+        AddFullSqlTaskRequest request) {
+        return new SyncInvoker<>(request, DasMeta.addFullSqlTask, hcClient);
+    }
+
+    /**
+     * 设置付费模式
+     *
+     * 设置付费实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeChargeModeRequest 请求对象
+     * @return ChangeChargeModeResponse
+     */
+    public ChangeChargeModeResponse changeChargeMode(ChangeChargeModeRequest request) {
+        return hcClient.syncInvokeHttp(request, DasMeta.changeChargeMode);
+    }
+
+    /**
+     * 设置付费模式
+     *
+     * 设置付费实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeChargeModeRequest 请求对象
+     * @return SyncInvoker<ChangeChargeModeRequest, ChangeChargeModeResponse>
+     */
+    public SyncInvoker<ChangeChargeModeRequest, ChangeChargeModeResponse> changeChargeModeInvoker(
+        ChangeChargeModeRequest request) {
+        return new SyncInvoker<>(request, DasMeta.changeChargeMode, hcClient);
     }
 
     /**

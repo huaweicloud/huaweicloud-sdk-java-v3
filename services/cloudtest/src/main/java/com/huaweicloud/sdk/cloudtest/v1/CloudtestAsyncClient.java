@@ -158,6 +158,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListTestReportsByConditionRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestReportsByConditionResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestTypesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestTypesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasePlansRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasePlansResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasesByProjectIssuesRelationRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasesByProjectIssuesRelationResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListUsageInfosRequest;
@@ -4898,6 +4900,35 @@ public class CloudtestAsyncClient {
      */
     public AsyncInvoker<AddFeatureRequest, AddFeatureResponse> addFeatureAsyncInvoker(AddFeatureRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.addFeature, hcClient);
+    }
+
+    /**
+     * 根据测试用例URI或用例编号查询测试用例对应的测试计划
+     *
+     * 根据测试用例URI或用例编号查询测试用例对应的测试计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTestcasePlansRequest 请求对象
+     * @return CompletableFuture<ListTestcasePlansResponse>
+     */
+    public CompletableFuture<ListTestcasePlansResponse> listTestcasePlansAsync(ListTestcasePlansRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listTestcasePlans);
+    }
+
+    /**
+     * 根据测试用例URI或用例编号查询测试用例对应的测试计划
+     *
+     * 根据测试用例URI或用例编号查询测试用例对应的测试计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTestcasePlansRequest 请求对象
+     * @return AsyncInvoker<ListTestcasePlansRequest, ListTestcasePlansResponse>
+     */
+    public AsyncInvoker<ListTestcasePlansRequest, ListTestcasePlansResponse> listTestcasePlansAsyncInvoker(
+        ListTestcasePlansRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listTestcasePlans, hcClient);
     }
 
 }

@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.antiddos.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -30,10 +35,80 @@ public class DdosConfig {
 
     private Long cleaningAccessPosId;
 
+    /**
+     * 应用类型ID，固定值为0
+     */
+    public static final class AppTypeIdEnum {
+
+        /**
+         * Enum NUMBER_0 for value: 0L
+         */
+        public static final AppTypeIdEnum NUMBER_0 = new AppTypeIdEnum(0L);
+
+        /**
+         * Enum NUMBER_1 for value: 1L
+         */
+        public static final AppTypeIdEnum NUMBER_1 = new AppTypeIdEnum(1L);
+
+        private static final Map<Long, AppTypeIdEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<Long, AppTypeIdEnum> createStaticFields() {
+            Map<Long, AppTypeIdEnum> map = new HashMap<>();
+            map.put(0L, NUMBER_0);
+            map.put(1L, NUMBER_1);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private Long value;
+
+        AppTypeIdEnum(Long value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public Long getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static AppTypeIdEnum fromValue(Long value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppTypeIdEnum(value));
+        }
+
+        public static AppTypeIdEnum valueOf(Long value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof AppTypeIdEnum) {
+                return this.value.equals(((AppTypeIdEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "app_type_id")
 
-    private Long appTypeId;
+    private AppTypeIdEnum appTypeId;
 
     public DdosConfig withEnableL7(Boolean enableL7) {
         this.enableL7 = enableL7;
@@ -41,7 +116,7 @@ public class DdosConfig {
     }
 
     /**
-     * 是否开启L7层防护
+     * 是否开启L7层防护，固定值为fasle
      * @return enableL7
      */
     public Boolean getEnableL7() {
@@ -58,7 +133,9 @@ public class DdosConfig {
     }
 
     /**
-     * 流量分段ID，取值范围：1～9
+     * 流量分段ID，取值范围：1：10M;2：30M;3：50M;4：70M;5：100M;6：150M;7：200M;8：250M;9：300M;10：500M;11：800M;88：1000M;99：默认防护。
+     * minimum: 1
+     * maximum: 99
      * @return trafficPosId
      */
     public Long getTrafficPosId() {
@@ -75,7 +152,9 @@ public class DdosConfig {
     }
 
     /**
-     * HTTP请求数分段ID，取值范围：1～15
+     * HTTP请求数分段ID，固定值为1
+     * minimum: 1
+     * maximum: 15
      * @return httpRequestPosId
      */
     public Long getHttpRequestPosId() {
@@ -92,7 +171,9 @@ public class DdosConfig {
     }
 
     /**
-     * 清洗时访问限制分段ID，取值范围：1～8
+     * 清洗时访问限制分段ID，取值范围：1：10M;2：30M;3：50M;4：70M;5：100M;6：150M;7：200M;8：250M;9：300M;10：500M;11：800M;88：1000M;99：默认防护。
+     * minimum: 1
+     * maximum: 99
      * @return cleaningAccessPosId
      */
     public Long getCleaningAccessPosId() {
@@ -103,20 +184,20 @@ public class DdosConfig {
         this.cleaningAccessPosId = cleaningAccessPosId;
     }
 
-    public DdosConfig withAppTypeId(Long appTypeId) {
+    public DdosConfig withAppTypeId(AppTypeIdEnum appTypeId) {
         this.appTypeId = appTypeId;
         return this;
     }
 
     /**
-     * 应用类型ID，可选取值： - 0 - 1
+     * 应用类型ID，固定值为0
      * @return appTypeId
      */
-    public Long getAppTypeId() {
+    public AppTypeIdEnum getAppTypeId() {
         return appTypeId;
     }
 
-    public void setAppTypeId(Long appTypeId) {
+    public void setAppTypeId(AppTypeIdEnum appTypeId) {
         this.appTypeId = appTypeId;
     }
 

@@ -280,7 +280,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     private Boolean isTransparent;
 
     /**
-     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
      */
     public static final class DefaultLanguageEnum {
 
@@ -294,12 +294,36 @@ public class ShowSmartChatJobResponse extends SdkResponse {
          */
         public static final DefaultLanguageEnum EN = new DefaultLanguageEnum("EN");
 
+        /**
+         * Enum ESP for value: "ESP"
+         */
+        public static final DefaultLanguageEnum ESP = new DefaultLanguageEnum("ESP");
+
+        /**
+         * Enum POR for value: "por"
+         */
+        public static final DefaultLanguageEnum POR = new DefaultLanguageEnum("por");
+
+        /**
+         * Enum ARABIC for value: "Arabic"
+         */
+        public static final DefaultLanguageEnum ARABIC = new DefaultLanguageEnum("Arabic");
+
+        /**
+         * Enum THAI for value: "Thai"
+         */
+        public static final DefaultLanguageEnum THAI = new DefaultLanguageEnum("Thai");
+
         private static final Map<String, DefaultLanguageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DefaultLanguageEnum> createStaticFields() {
             Map<String, DefaultLanguageEnum> map = new HashMap<>();
             map.put("CN", CN);
             map.put("EN", EN);
+            map.put("ESP", ESP);
+            map.put("por", POR);
+            map.put("Arabic", ARABIC);
+            map.put("Thai", THAI);
             return Collections.unmodifiableMap(map);
         }
 
@@ -353,6 +377,11 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     @JsonProperty(value = "default_language")
 
     private DefaultLanguageEnum defaultLanguage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "client_id")
+
+    private String clientId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -727,7 +756,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     }
 
     /**
-     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：中文。 * EN：英文。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
      * @return defaultLanguage
      */
     public DefaultLanguageEnum getDefaultLanguage() {
@@ -736,6 +765,23 @@ public class ShowSmartChatJobResponse extends SdkResponse {
 
     public void setDefaultLanguage(DefaultLanguageEnum defaultLanguage) {
         this.defaultLanguage = defaultLanguage;
+    }
+
+    public ShowSmartChatJobResponse withClientId(String clientId) {
+        this.clientId = clientId;
+        return this;
+    }
+
+    /**
+     * clientId
+     * @return clientId
+     */
+    public String getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
     }
 
     public ShowSmartChatJobResponse withXRequestId(String xRequestId) {
@@ -781,7 +827,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
             && Objects.equals(this.chatAccessRestAddress, that.chatAccessRestAddress)
             && Objects.equals(this.isTransparent, that.isTransparent)
             && Objects.equals(this.defaultLanguage, that.defaultLanguage)
-            && Objects.equals(this.xRequestId, that.xRequestId);
+            && Objects.equals(this.clientId, that.clientId) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
@@ -805,6 +851,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
             chatAccessRestAddress,
             isTransparent,
             defaultLanguage,
+            clientId,
             xRequestId);
     }
 
@@ -831,6 +878,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
         sb.append("    chatAccessRestAddress: ").append(toIndentedString(chatAccessRestAddress)).append("\n");
         sb.append("    isTransparent: ").append(toIndentedString(isTransparent)).append("\n");
         sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");
+        sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

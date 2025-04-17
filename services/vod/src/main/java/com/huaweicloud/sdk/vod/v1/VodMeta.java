@@ -95,6 +95,9 @@ import com.huaweicloud.sdk.vod.v1.model.PublishAssetReq;
 import com.huaweicloud.sdk.vod.v1.model.PublishAssetsRequest;
 import com.huaweicloud.sdk.vod.v1.model.PublishAssetsResponse;
 import com.huaweicloud.sdk.vod.v1.model.QueryCategoryRsp;
+import com.huaweicloud.sdk.vod.v1.model.RefreshAssetRequest;
+import com.huaweicloud.sdk.vod.v1.model.RefreshAssetResponse;
+import com.huaweicloud.sdk.vod.v1.model.RefreshTaskReq;
 import com.huaweicloud.sdk.vod.v1.model.ShowAssetCipherRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowAssetCipherResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowAssetDetailRequest;
@@ -107,6 +110,8 @@ import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowPreheatingAssetRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowPreheatingAssetResponse;
+import com.huaweicloud.sdk.vod.v1.model.ShowRefreshResultRequest;
+import com.huaweicloud.sdk.vod.v1.model.ShowRefreshResultResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowStorageModeTypeRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowStorageModeTypeResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsRequest;
@@ -1341,6 +1346,33 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<RefreshAssetRequest, RefreshAssetResponse> refreshAsset = genForRefreshAsset();
+
+    private static HttpRequestDef<RefreshAssetRequest, RefreshAssetResponse> genForRefreshAsset() {
+        // basic
+        HttpRequestDef.Builder<RefreshAssetRequest, RefreshAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RefreshAssetRequest.class, RefreshAssetResponse.class)
+                .withName("RefreshAsset")
+                .withUri("/v1/{project_id}/asset/refresh")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RefreshAssetRequest::getXSdkDate, RefreshAssetRequest::setXSdkDate));
+        builder.<RefreshTaskReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RefreshTaskReq.class),
+            f -> f.withMarshaller(RefreshAssetRequest::getBody, RefreshAssetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowAssetCipherRequest, ShowAssetCipherResponse> showAssetCipher =
         genForShowAssetCipher();
 
@@ -1615,6 +1647,34 @@ public class VodMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowPreheatingAssetRequest::getXSdkDate, ShowPreheatingAssetRequest::setXSdkDate));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRefreshResultRequest, ShowRefreshResultResponse> showRefreshResult =
+        genForShowRefreshResult();
+
+    private static HttpRequestDef<ShowRefreshResultRequest, ShowRefreshResultResponse> genForShowRefreshResult() {
+        // basic
+        HttpRequestDef.Builder<ShowRefreshResultRequest, ShowRefreshResultResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRefreshResultRequest.class, ShowRefreshResultResponse.class)
+                .withName("ShowRefreshResult")
+                .withUri("/v1/{project_id}/asset/refresh")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRefreshResultRequest::getTaskId, ShowRefreshResultRequest::setTaskId));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRefreshResultRequest::getXSdkDate, ShowRefreshResultRequest::setXSdkDate));
 
         // response
 

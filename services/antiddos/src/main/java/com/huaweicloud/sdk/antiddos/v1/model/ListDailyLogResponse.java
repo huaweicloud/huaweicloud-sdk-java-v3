@@ -31,6 +31,8 @@ public class ListDailyLogResponse extends SdkResponse {
 
     /**
      * 弹性IP总数
+     * minimum: 0
+     * maximum: 2147483647
      * @return total
      */
     public Long getTotal() {

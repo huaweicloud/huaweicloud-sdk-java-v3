@@ -25,6 +25,11 @@ public class ShowWidgetResponse extends SdkResponse {
     private String widgetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metrics")
 
     private List<WidgetMetric> metrics = null;
@@ -45,7 +50,7 @@ public class ShowWidgetResponse extends SdkResponse {
     private Boolean thresholdEnabled;
 
     /**
-     * 监控视图图表类型, bar柱状图，line折线图
+     * 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
      */
     public static final class ViewEnum {
 
@@ -59,12 +64,36 @@ public class ShowWidgetResponse extends SdkResponse {
          */
         public static final ViewEnum LINE = new ViewEnum("line");
 
+        /**
+         * Enum BAR_CHART for value: "bar_chart"
+         */
+        public static final ViewEnum BAR_CHART = new ViewEnum("bar_chart");
+
+        /**
+         * Enum TABLE for value: "table"
+         */
+        public static final ViewEnum TABLE = new ViewEnum("table");
+
+        /**
+         * Enum CIRCULAR_BAR for value: "circular_bar"
+         */
+        public static final ViewEnum CIRCULAR_BAR = new ViewEnum("circular_bar");
+
+        /**
+         * Enum AREA_CHART for value: "area_chart"
+         */
+        public static final ViewEnum AREA_CHART = new ViewEnum("area_chart");
+
         private static final Map<String, ViewEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ViewEnum> createStaticFields() {
             Map<String, ViewEnum> map = new HashMap<>();
             map.put("bar", BAR);
             map.put("line", LINE);
+            map.put("bar_chart", BAR_CHART);
+            map.put("table", TABLE);
+            map.put("circular_bar", CIRCULAR_BAR);
+            map.put("area_chart", AREA_CHART);
             return Collections.unmodifiableMap(map);
         }
 
@@ -197,7 +226,7 @@ public class ShowWidgetResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
-    private UpdateWidgetInfoProperties properties;
+    private BaseWidgetInfoProperties properties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
@@ -229,6 +258,23 @@ public class ShowWidgetResponse extends SdkResponse {
 
     public void setWidgetId(String widgetId) {
         this.widgetId = widgetId;
+    }
+
+    public ShowWidgetResponse withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 视图分区id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
     public ShowWidgetResponse withMetrics(List<WidgetMetric> metrics) {
@@ -323,7 +369,7 @@ public class ShowWidgetResponse extends SdkResponse {
     }
 
     /**
-     * 监控视图图表类型, bar柱状图，line折线图
+     * 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
      * @return view
      */
     public ViewEnum getView() {
@@ -351,14 +397,14 @@ public class ShowWidgetResponse extends SdkResponse {
         this.metricDisplayMode = metricDisplayMode;
     }
 
-    public ShowWidgetResponse withProperties(UpdateWidgetInfoProperties properties) {
+    public ShowWidgetResponse withProperties(BaseWidgetInfoProperties properties) {
         this.properties = properties;
         return this;
     }
 
-    public ShowWidgetResponse withProperties(Consumer<UpdateWidgetInfoProperties> propertiesSetter) {
+    public ShowWidgetResponse withProperties(Consumer<BaseWidgetInfoProperties> propertiesSetter) {
         if (this.properties == null) {
-            this.properties = new UpdateWidgetInfoProperties();
+            this.properties = new BaseWidgetInfoProperties();
             propertiesSetter.accept(this.properties);
         }
 
@@ -369,11 +415,11 @@ public class ShowWidgetResponse extends SdkResponse {
      * Get properties
      * @return properties
      */
-    public UpdateWidgetInfoProperties getProperties() {
+    public BaseWidgetInfoProperties getProperties() {
         return properties;
     }
 
-    public void setProperties(UpdateWidgetInfoProperties properties) {
+    public void setProperties(BaseWidgetInfoProperties properties) {
         this.properties = properties;
     }
 
@@ -448,8 +494,9 @@ public class ShowWidgetResponse extends SdkResponse {
             return false;
         }
         ShowWidgetResponse that = (ShowWidgetResponse) obj;
-        return Objects.equals(this.widgetId, that.widgetId) && Objects.equals(this.metrics, that.metrics)
-            && Objects.equals(this.title, that.title) && Objects.equals(this.threshold, that.threshold)
+        return Objects.equals(this.widgetId, that.widgetId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.threshold, that.threshold)
             && Objects.equals(this.thresholdEnabled, that.thresholdEnabled) && Objects.equals(this.view, that.view)
             && Objects.equals(this.metricDisplayMode, that.metricDisplayMode)
             && Objects.equals(this.properties, that.properties) && Objects.equals(this.location, that.location)
@@ -459,6 +506,7 @@ public class ShowWidgetResponse extends SdkResponse {
     @Override
     public int hashCode() {
         return Objects.hash(widgetId,
+            groupId,
             metrics,
             title,
             threshold,
@@ -476,6 +524,7 @@ public class ShowWidgetResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowWidgetResponse {\n");
         sb.append("    widgetId: ").append(toIndentedString(widgetId)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
         sb.append("    title: ").append(toIndentedString(title)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");

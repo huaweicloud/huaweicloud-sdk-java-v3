@@ -15,6 +15,11 @@ import java.util.Objects;
  */
 public class VideoInfo {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "stream_name")
+
+    private String streamName;
+
     /**
      * 画质<br/> 4K默认分辨率3840*2160，码率8000kbit/s<br/> 2K默认分辨率2560*1440，码率7000kbit/s<br/> FULL_HD默认分辨率1920*1080，码率3000kbit/s<br/> HD默认分辨率1280*720，码率1000kbit/s<br/> SD默认分辨率854*480，码率600kbit/s<br/> FLUENT默认分辨率480*270，码率300kbit/s<br/> 
      */
@@ -140,6 +145,23 @@ public class VideoInfo {
 
     private Integer frameRate;
 
+    public VideoInfo withStreamName(String streamName) {
+        this.streamName = streamName;
+        return this;
+    }
+
+    /**
+     * 流名，流名仅支持数字、字母、下划线、中划线。 如果流名不填，则点播会按照video_stream_l{index}形式，生成一个流名。 
+     * @return streamName
+     */
+    public String getStreamName() {
+        return streamName;
+    }
+
+    public void setStreamName(String streamName) {
+        this.streamName = streamName;
+    }
+
     public VideoInfo withQuality(QualityEnum quality) {
         this.quality = quality;
         return this;
@@ -236,20 +258,21 @@ public class VideoInfo {
             return false;
         }
         VideoInfo that = (VideoInfo) obj;
-        return Objects.equals(this.quality, that.quality) && Objects.equals(this.width, that.width)
-            && Objects.equals(this.height, that.height) && Objects.equals(this.bitrate, that.bitrate)
-            && Objects.equals(this.frameRate, that.frameRate);
+        return Objects.equals(this.streamName, that.streamName) && Objects.equals(this.quality, that.quality)
+            && Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height)
+            && Objects.equals(this.bitrate, that.bitrate) && Objects.equals(this.frameRate, that.frameRate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(quality, width, height, bitrate, frameRate);
+        return Objects.hash(streamName, quality, width, height, bitrate, frameRate);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class VideoInfo {\n");
+        sb.append("    streamName: ").append(toIndentedString(streamName)).append("\n");
         sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
         sb.append("    width: ").append(toIndentedString(width)).append("\n");
         sb.append("    height: ").append(toIndentedString(height)).append("\n");

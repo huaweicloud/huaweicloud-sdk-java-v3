@@ -50,6 +50,21 @@ public class ThirdPartyModelConfig {
 
     private Boolean enableHotWords;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asr_type")
+
+    private AsrTypeEnum asrType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asr_account")
+
+    private String asrAccount;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asr_secret")
+
+    private String asrSecret;
+
     public ThirdPartyModelConfig withAppId(String appId) {
         this.appId = appId;
         return this;
@@ -179,7 +194,7 @@ public class ThirdPartyModelConfig {
     }
 
     /**
-     * 是否开启热词
+     * 是否开启热词（asr_type选择EI_SIS时生效）
      * @return enableHotWords
      */
     public Boolean getEnableHotWords() {
@@ -188,6 +203,57 @@ public class ThirdPartyModelConfig {
 
     public void setEnableHotWords(Boolean enableHotWords) {
         this.enableHotWords = enableHotWords;
+    }
+
+    public ThirdPartyModelConfig withAsrType(AsrTypeEnum asrType) {
+        this.asrType = asrType;
+        return this;
+    }
+
+    /**
+     * Get asrType
+     * @return asrType
+     */
+    public AsrTypeEnum getAsrType() {
+        return asrType;
+    }
+
+    public void setAsrType(AsrTypeEnum asrType) {
+        this.asrType = asrType;
+    }
+
+    public ThirdPartyModelConfig withAsrAccount(String asrAccount) {
+        this.asrAccount = asrAccount;
+        return this;
+    }
+
+    /**
+     * ASR帐号（asr_type选择EI_SIS时不需要配置）。
+     * @return asrAccount
+     */
+    public String getAsrAccount() {
+        return asrAccount;
+    }
+
+    public void setAsrAccount(String asrAccount) {
+        this.asrAccount = asrAccount;
+    }
+
+    public ThirdPartyModelConfig withAsrSecret(String asrSecret) {
+        this.asrSecret = asrSecret;
+        return this;
+    }
+
+    /**
+     * ASR密钥（asr_type选择EI_SIS时不需要配置）。
+     * @return asrSecret
+     */
+    public String getAsrSecret() {
+        return asrSecret;
+    }
+
+    public void setAsrSecret(String asrSecret) {
+        this.asrSecret = asrSecret;
     }
 
     @Override
@@ -203,12 +269,23 @@ public class ThirdPartyModelConfig {
             && Objects.equals(this.llmUrl, that.llmUrl) && Objects.equals(this.isStream, that.isStream)
             && Objects.equals(this.chatRounds, that.chatRounds) && Objects.equals(this.sisRegion, that.sisRegion)
             && Objects.equals(this.sisProjectId, that.sisProjectId)
-            && Objects.equals(this.enableHotWords, that.enableHotWords);
+            && Objects.equals(this.enableHotWords, that.enableHotWords) && Objects.equals(this.asrType, that.asrType)
+            && Objects.equals(this.asrAccount, that.asrAccount) && Objects.equals(this.asrSecret, that.asrSecret);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appId, appKey, llmUrl, isStream, chatRounds, sisRegion, sisProjectId, enableHotWords);
+        return Objects.hash(appId,
+            appKey,
+            llmUrl,
+            isStream,
+            chatRounds,
+            sisRegion,
+            sisProjectId,
+            enableHotWords,
+            asrType,
+            asrAccount,
+            asrSecret);
     }
 
     @Override
@@ -223,6 +300,9 @@ public class ThirdPartyModelConfig {
         sb.append("    sisRegion: ").append(toIndentedString(sisRegion)).append("\n");
         sb.append("    sisProjectId: ").append(toIndentedString(sisProjectId)).append("\n");
         sb.append("    enableHotWords: ").append(toIndentedString(enableHotWords)).append("\n");
+        sb.append("    asrType: ").append(toIndentedString(asrType)).append("\n");
+        sb.append("    asrAccount: ").append(toIndentedString(asrAccount)).append("\n");
+        sb.append("    asrSecret: ").append(toIndentedString(asrSecret)).append("\n");
         sb.append("}");
         return sb.toString();
     }

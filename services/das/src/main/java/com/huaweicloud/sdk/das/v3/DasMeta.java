@@ -5,10 +5,16 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.das.v3.model.AddFullSqlTaskBody;
+import com.huaweicloud.sdk.das.v3.model.AddFullSqlTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.AddFullSqlTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.ApiSetMetricCodeThresholdReq;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequestBody;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeBody;
+import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusBody;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusResponse;
@@ -338,6 +344,67 @@ public class DasMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowApiVersionRequest::getVersion, ShowApiVersionRequest::setVersion));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddFullSqlTaskRequest, AddFullSqlTaskResponse> addFullSqlTask =
+        genForAddFullSqlTask();
+
+    private static HttpRequestDef<AddFullSqlTaskRequest, AddFullSqlTaskResponse> genForAddFullSqlTask() {
+        // basic
+        HttpRequestDef.Builder<AddFullSqlTaskRequest, AddFullSqlTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddFullSqlTaskRequest.class, AddFullSqlTaskResponse.class)
+                .withName("AddFullSqlTask")
+                .withUri("/v3/{project_id}/instances/{instance_id}/full-sql/add-task")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddFullSqlTaskRequest::getInstanceId, AddFullSqlTaskRequest::setInstanceId));
+        builder.<AddFullSqlTaskRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AddFullSqlTaskRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(AddFullSqlTaskRequest::getXLanguage, AddFullSqlTaskRequest::setXLanguage));
+        builder.<AddFullSqlTaskBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddFullSqlTaskBody.class),
+            f -> f.withMarshaller(AddFullSqlTaskRequest::getBody, AddFullSqlTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ChangeChargeModeRequest, ChangeChargeModeResponse> changeChargeMode =
+        genForChangeChargeMode();
+
+    private static HttpRequestDef<ChangeChargeModeRequest, ChangeChargeModeResponse> genForChangeChargeMode() {
+        // basic
+        HttpRequestDef.Builder<ChangeChargeModeRequest, ChangeChargeModeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ChangeChargeModeRequest.class, ChangeChargeModeResponse.class)
+                .withName("ChangeChargeMode")
+                .withUri("/v3/{project_id}/cloud-dba/change-payment-mode")
+                .withContentType("application/json");
+
+        // requests
+        builder.<ChangeChargeModeRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ChangeChargeModeRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ChangeChargeModeRequest::getXLanguage, ChangeChargeModeRequest::setXLanguage));
+        builder.<ChangeChargeModeBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ChangeChargeModeBody.class),
+            f -> f.withMarshaller(ChangeChargeModeRequest::getBody, ChangeChargeModeRequest::setBody));
 
         // response
 

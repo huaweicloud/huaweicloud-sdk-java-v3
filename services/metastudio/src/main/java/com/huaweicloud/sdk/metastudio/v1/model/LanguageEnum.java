@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文 * EN：英文
+ * 智能交互语言 * zh_CN：简体中文（已下线，请使用CN） * en_US：英语（已下线，请使用EN） * CN：中文 * EN：英文 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
  */
 public class LanguageEnum {
 
@@ -32,6 +32,26 @@ public class LanguageEnum {
      */
     public static final LanguageEnum EN = new LanguageEnum("EN");
 
+    /**
+     * Enum ESP for value: "ESP"
+     */
+    public static final LanguageEnum ESP = new LanguageEnum("ESP");
+
+    /**
+     * Enum POR for value: "por"
+     */
+    public static final LanguageEnum POR = new LanguageEnum("por");
+
+    /**
+     * Enum ARABIC for value: "Arabic"
+     */
+    public static final LanguageEnum ARABIC = new LanguageEnum("Arabic");
+
+    /**
+     * Enum THAI for value: "Thai"
+     */
+    public static final LanguageEnum THAI = new LanguageEnum("Thai");
+
     private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
 
     private static Map<String, LanguageEnum> createStaticFields() {
@@ -40,6 +60,10 @@ public class LanguageEnum {
         map.put("en_US", EN_US);
         map.put("CN", CN);
         map.put("EN", EN);
+        map.put("ESP", ESP);
+        map.put("por", POR);
+        map.put("Arabic", ARABIC);
+        map.put("Thai", THAI);
         return Collections.unmodifiableMap(map);
     }
 

@@ -405,6 +405,85 @@ public class UpdateApiV2Response extends SdkResponse {
 
     private Boolean cors;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "trace_enabled")
+
+    private Boolean traceEnabled;
+
+    /**
+     * 采样策略，当选择开启链路追踪时，此字段必填。 - RATE：按比例采样 
+     */
+    public static final class SamplingStrategyEnum {
+
+        /**
+         * Enum RATE for value: "RATE"
+         */
+        public static final SamplingStrategyEnum RATE = new SamplingStrategyEnum("RATE");
+
+        private static final Map<String, SamplingStrategyEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SamplingStrategyEnum> createStaticFields() {
+            Map<String, SamplingStrategyEnum> map = new HashMap<>();
+            map.put("RATE", RATE);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SamplingStrategyEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SamplingStrategyEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SamplingStrategyEnum(value));
+        }
+
+        public static SamplingStrategyEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SamplingStrategyEnum) {
+                return this.value.equals(((SamplingStrategyEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sampling_strategy")
+
+    private SamplingStrategyEnum samplingStrategy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sampling_param")
+
+    private String samplingParam;
+
     /**
      * API的匹配方式 - SWA：前缀匹配 - NORMAL：正常匹配（绝对匹配） 默认：NORMAL
      */
@@ -984,6 +1063,57 @@ public class UpdateApiV2Response extends SdkResponse {
 
     public void setCors(Boolean cors) {
         this.cors = cors;
+    }
+
+    public UpdateApiV2Response withTraceEnabled(Boolean traceEnabled) {
+        this.traceEnabled = traceEnabled;
+        return this;
+    }
+
+    /**
+     * 是否开启链路追踪，默认关闭。
+     * @return traceEnabled
+     */
+    public Boolean getTraceEnabled() {
+        return traceEnabled;
+    }
+
+    public void setTraceEnabled(Boolean traceEnabled) {
+        this.traceEnabled = traceEnabled;
+    }
+
+    public UpdateApiV2Response withSamplingStrategy(SamplingStrategyEnum samplingStrategy) {
+        this.samplingStrategy = samplingStrategy;
+        return this;
+    }
+
+    /**
+     * 采样策略，当选择开启链路追踪时，此字段必填。 - RATE：按比例采样 
+     * @return samplingStrategy
+     */
+    public SamplingStrategyEnum getSamplingStrategy() {
+        return samplingStrategy;
+    }
+
+    public void setSamplingStrategy(SamplingStrategyEnum samplingStrategy) {
+        this.samplingStrategy = samplingStrategy;
+    }
+
+    public UpdateApiV2Response withSamplingParam(String samplingParam) {
+        this.samplingParam = samplingParam;
+        return this;
+    }
+
+    /**
+     * 采样参数。 - 当采样策略为RATE时，此字段取值为字符串化的整数，范围为0-100，缺省为'100'，'100'为采集每个请求，建议与后端应用的采样率保持一致。 
+     * @return samplingParam
+     */
+    public String getSamplingParam() {
+        return samplingParam;
+    }
+
+    public void setSamplingParam(String samplingParam) {
+        this.samplingParam = samplingParam;
     }
 
     public UpdateApiV2Response withMatchMode(MatchModeEnum matchMode) {
@@ -1760,7 +1890,9 @@ public class UpdateApiV2Response extends SdkResponse {
             && Objects.equals(this.version, that.version) && Objects.equals(this.reqProtocol, that.reqProtocol)
             && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.reqUri, that.reqUri)
             && Objects.equals(this.authType, that.authType) && Objects.equals(this.authOpt, that.authOpt)
-            && Objects.equals(this.cors, that.cors) && Objects.equals(this.matchMode, that.matchMode)
+            && Objects.equals(this.cors, that.cors) && Objects.equals(this.traceEnabled, that.traceEnabled)
+            && Objects.equals(this.samplingStrategy, that.samplingStrategy)
+            && Objects.equals(this.samplingParam, that.samplingParam) && Objects.equals(this.matchMode, that.matchMode)
             && Objects.equals(this.backendType, that.backendType) && Objects.equals(this.remark, that.remark)
             && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.bodyRemark, that.bodyRemark)
             && Objects.equals(this.resultNormalSample, that.resultNormalSample)
@@ -1794,6 +1926,9 @@ public class UpdateApiV2Response extends SdkResponse {
             authType,
             authOpt,
             cors,
+            traceEnabled,
+            samplingStrategy,
+            samplingParam,
             matchMode,
             backendType,
             remark,
@@ -1846,6 +1981,9 @@ public class UpdateApiV2Response extends SdkResponse {
         sb.append("    authType: ").append(toIndentedString(authType)).append("\n");
         sb.append("    authOpt: ").append(toIndentedString(authOpt)).append("\n");
         sb.append("    cors: ").append(toIndentedString(cors)).append("\n");
+        sb.append("    traceEnabled: ").append(toIndentedString(traceEnabled)).append("\n");
+        sb.append("    samplingStrategy: ").append(toIndentedString(samplingStrategy)).append("\n");
+        sb.append("    samplingParam: ").append(toIndentedString(samplingParam)).append("\n");
         sb.append("    matchMode: ").append(toIndentedString(matchMode)).append("\n");
         sb.append("    backendType: ").append(toIndentedString(backendType)).append("\n");
         sb.append("    remark: ").append(toIndentedString(remark)).append("\n");

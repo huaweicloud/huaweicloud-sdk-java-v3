@@ -3,8 +3,12 @@ package com.huaweicloud.sdk.das.v3;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+import com.huaweicloud.sdk.das.v3.model.AddFullSqlTaskRequest;
+import com.huaweicloud.sdk.das.v3.model.AddFullSqlTaskResponse;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsRequest;
 import com.huaweicloud.sdk.das.v3.model.CancelShareConnectionsResponse;
+import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeRequest;
+import com.huaweicloud.sdk.das.v3.model.ChangeChargeModeResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusRequest;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlLimitSwitchStatusResponse;
 import com.huaweicloud.sdk.das.v3.model.ChangeSqlSwitchRequest;
@@ -316,6 +320,64 @@ public class DasAsyncClient {
     public AsyncInvoker<ShowApiVersionRequest, ShowApiVersionResponse> showApiVersionAsyncInvoker(
         ShowApiVersionRequest request) {
         return new AsyncInvoker<>(request, DasMeta.showApiVersion, hcClient);
+    }
+
+    /**
+     * 创建全量SQL明细解析任务
+     *
+     * 创建全量SQL明细解析任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFullSqlTaskRequest 请求对象
+     * @return CompletableFuture<AddFullSqlTaskResponse>
+     */
+    public CompletableFuture<AddFullSqlTaskResponse> addFullSqlTaskAsync(AddFullSqlTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.addFullSqlTask);
+    }
+
+    /**
+     * 创建全量SQL明细解析任务
+     *
+     * 创建全量SQL明细解析任务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddFullSqlTaskRequest 请求对象
+     * @return AsyncInvoker<AddFullSqlTaskRequest, AddFullSqlTaskResponse>
+     */
+    public AsyncInvoker<AddFullSqlTaskRequest, AddFullSqlTaskResponse> addFullSqlTaskAsyncInvoker(
+        AddFullSqlTaskRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.addFullSqlTask, hcClient);
+    }
+
+    /**
+     * 设置付费模式
+     *
+     * 设置付费实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeChargeModeRequest 请求对象
+     * @return CompletableFuture<ChangeChargeModeResponse>
+     */
+    public CompletableFuture<ChangeChargeModeResponse> changeChargeModeAsync(ChangeChargeModeRequest request) {
+        return hcClient.asyncInvokeHttp(request, DasMeta.changeChargeMode);
+    }
+
+    /**
+     * 设置付费模式
+     *
+     * 设置付费实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ChangeChargeModeRequest 请求对象
+     * @return AsyncInvoker<ChangeChargeModeRequest, ChangeChargeModeResponse>
+     */
+    public AsyncInvoker<ChangeChargeModeRequest, ChangeChargeModeResponse> changeChargeModeAsyncInvoker(
+        ChangeChargeModeRequest request) {
+        return new AsyncInvoker<>(request, DasMeta.changeChargeMode, hcClient);
     }
 
     /**

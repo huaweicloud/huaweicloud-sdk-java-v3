@@ -19,7 +19,7 @@ public class UpdateOneClickAlarmNotificationsRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private PutAlarmNotificationReq body;
+    private UpdateOneClickAlarmNotificationsRequestBody body;
 
     public UpdateOneClickAlarmNotificationsRequest withOneClickAlarmId(String oneClickAlarmId) {
         this.oneClickAlarmId = oneClickAlarmId;
@@ -38,14 +38,15 @@ public class UpdateOneClickAlarmNotificationsRequest {
         this.oneClickAlarmId = oneClickAlarmId;
     }
 
-    public UpdateOneClickAlarmNotificationsRequest withBody(PutAlarmNotificationReq body) {
+    public UpdateOneClickAlarmNotificationsRequest withBody(UpdateOneClickAlarmNotificationsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateOneClickAlarmNotificationsRequest withBody(Consumer<PutAlarmNotificationReq> bodySetter) {
+    public UpdateOneClickAlarmNotificationsRequest withBody(
+        Consumer<UpdateOneClickAlarmNotificationsRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new PutAlarmNotificationReq();
+            this.body = new UpdateOneClickAlarmNotificationsRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +57,11 @@ public class UpdateOneClickAlarmNotificationsRequest {
      * Get body
      * @return body
      */
-    public PutAlarmNotificationReq getBody() {
+    public UpdateOneClickAlarmNotificationsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(PutAlarmNotificationReq body) {
+    public void setBody(UpdateOneClickAlarmNotificationsRequestBody body) {
         this.body = body;
     }
 

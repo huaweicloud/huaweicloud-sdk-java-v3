@@ -19,6 +19,11 @@ import java.util.function.Consumer;
 public class BaseWidgetInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metrics")
 
     private List<WidgetMetric> metrics = null;
@@ -39,7 +44,7 @@ public class BaseWidgetInfo {
     private Boolean thresholdEnabled;
 
     /**
-     * 监控视图图表类型, bar柱状图，line折线图
+     * 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
      */
     public static final class ViewEnum {
 
@@ -53,12 +58,36 @@ public class BaseWidgetInfo {
          */
         public static final ViewEnum LINE = new ViewEnum("line");
 
+        /**
+         * Enum BAR_CHART for value: "bar_chart"
+         */
+        public static final ViewEnum BAR_CHART = new ViewEnum("bar_chart");
+
+        /**
+         * Enum TABLE for value: "table"
+         */
+        public static final ViewEnum TABLE = new ViewEnum("table");
+
+        /**
+         * Enum CIRCULAR_BAR for value: "circular_bar"
+         */
+        public static final ViewEnum CIRCULAR_BAR = new ViewEnum("circular_bar");
+
+        /**
+         * Enum AREA_CHART for value: "area_chart"
+         */
+        public static final ViewEnum AREA_CHART = new ViewEnum("area_chart");
+
         private static final Map<String, ViewEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ViewEnum> createStaticFields() {
             Map<String, ViewEnum> map = new HashMap<>();
             map.put("bar", BAR);
             map.put("line", LINE);
+            map.put("bar_chart", BAR_CHART);
+            map.put("table", TABLE);
+            map.put("circular_bar", CIRCULAR_BAR);
+            map.put("area_chart", AREA_CHART);
             return Collections.unmodifiableMap(map);
         }
 
@@ -191,7 +220,7 @@ public class BaseWidgetInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
-    private UpdateWidgetInfoProperties properties;
+    private BaseWidgetInfoProperties properties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "location")
@@ -202,6 +231,23 @@ public class BaseWidgetInfo {
     @JsonProperty(value = "unit")
 
     private String unit;
+
+    public BaseWidgetInfo withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 视图分区id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
 
     public BaseWidgetInfo withMetrics(List<WidgetMetric> metrics) {
         this.metrics = metrics;
@@ -295,7 +341,7 @@ public class BaseWidgetInfo {
     }
 
     /**
-     * 监控视图图表类型, bar柱状图，line折线图
+     * 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
      * @return view
      */
     public ViewEnum getView() {
@@ -323,14 +369,14 @@ public class BaseWidgetInfo {
         this.metricDisplayMode = metricDisplayMode;
     }
 
-    public BaseWidgetInfo withProperties(UpdateWidgetInfoProperties properties) {
+    public BaseWidgetInfo withProperties(BaseWidgetInfoProperties properties) {
         this.properties = properties;
         return this;
     }
 
-    public BaseWidgetInfo withProperties(Consumer<UpdateWidgetInfoProperties> propertiesSetter) {
+    public BaseWidgetInfo withProperties(Consumer<BaseWidgetInfoProperties> propertiesSetter) {
         if (this.properties == null) {
-            this.properties = new UpdateWidgetInfoProperties();
+            this.properties = new BaseWidgetInfoProperties();
             propertiesSetter.accept(this.properties);
         }
 
@@ -341,11 +387,11 @@ public class BaseWidgetInfo {
      * Get properties
      * @return properties
      */
-    public UpdateWidgetInfoProperties getProperties() {
+    public BaseWidgetInfoProperties getProperties() {
         return properties;
     }
 
-    public void setProperties(UpdateWidgetInfoProperties properties) {
+    public void setProperties(BaseWidgetInfoProperties properties) {
         this.properties = properties;
     }
 
@@ -401,8 +447,8 @@ public class BaseWidgetInfo {
             return false;
         }
         BaseWidgetInfo that = (BaseWidgetInfo) obj;
-        return Objects.equals(this.metrics, that.metrics) && Objects.equals(this.title, that.title)
-            && Objects.equals(this.threshold, that.threshold)
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.metrics, that.metrics)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.threshold, that.threshold)
             && Objects.equals(this.thresholdEnabled, that.thresholdEnabled) && Objects.equals(this.view, that.view)
             && Objects.equals(this.metricDisplayMode, that.metricDisplayMode)
             && Objects.equals(this.properties, that.properties) && Objects.equals(this.location, that.location)
@@ -411,14 +457,23 @@ public class BaseWidgetInfo {
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(metrics, title, threshold, thresholdEnabled, view, metricDisplayMode, properties, location, unit);
+        return Objects.hash(groupId,
+            metrics,
+            title,
+            threshold,
+            thresholdEnabled,
+            view,
+            metricDisplayMode,
+            properties,
+            location,
+            unit);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class BaseWidgetInfo {\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
         sb.append("    title: ").append(toIndentedString(title)).append("\n");
         sb.append("    threshold: ").append(toIndentedString(threshold)).append("\n");

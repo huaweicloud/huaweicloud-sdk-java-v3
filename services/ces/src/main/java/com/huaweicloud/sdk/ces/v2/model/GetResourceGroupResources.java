@@ -102,7 +102,17 @@ public class GetResourceGroupResources {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimensions")
 
-    private List<Dimension2> dimensions = null;
+    private List<ResourceDimension> dimensions = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private String tags;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enterprise_project_id")
+
+    private String enterpriseProjectId;
 
     public GetResourceGroupResources withStatus(StatusEnum status) {
         this.status = status;
@@ -121,12 +131,12 @@ public class GetResourceGroupResources {
         this.status = status;
     }
 
-    public GetResourceGroupResources withDimensions(List<Dimension2> dimensions) {
+    public GetResourceGroupResources withDimensions(List<ResourceDimension> dimensions) {
         this.dimensions = dimensions;
         return this;
     }
 
-    public GetResourceGroupResources addDimensionsItem(Dimension2 dimensionsItem) {
+    public GetResourceGroupResources addDimensionsItem(ResourceDimension dimensionsItem) {
         if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -134,7 +144,7 @@ public class GetResourceGroupResources {
         return this;
     }
 
-    public GetResourceGroupResources withDimensions(Consumer<List<Dimension2>> dimensionsSetter) {
+    public GetResourceGroupResources withDimensions(Consumer<List<ResourceDimension>> dimensionsSetter) {
         if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -146,12 +156,46 @@ public class GetResourceGroupResources {
      * 资源的维度信息
      * @return dimensions
      */
-    public List<Dimension2> getDimensions() {
+    public List<ResourceDimension> getDimensions() {
         return dimensions;
     }
 
-    public void setDimensions(List<Dimension2> dimensions) {
+    public void setDimensions(List<ResourceDimension> dimensions) {
         this.dimensions = dimensions;
+    }
+
+    public GetResourceGroupResources withTags(String tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    /**
+     * 资源的tag信息,格式为key/value的json字符串,样例为\"{\\\"sss\\\":\\\"aaa\\\"}\"
+     * @return tags
+     */
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
+    public GetResourceGroupResources withEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
+        return this;
+    }
+
+    /**
+     * 企业项目ID
+     * @return enterpriseProjectId
+     */
+    public String getEnterpriseProjectId() {
+        return enterpriseProjectId;
+    }
+
+    public void setEnterpriseProjectId(String enterpriseProjectId) {
+        this.enterpriseProjectId = enterpriseProjectId;
     }
 
     @Override
@@ -163,12 +207,14 @@ public class GetResourceGroupResources {
             return false;
         }
         GetResourceGroupResources that = (GetResourceGroupResources) obj;
-        return Objects.equals(this.status, that.status) && Objects.equals(this.dimensions, that.dimensions);
+        return Objects.equals(this.status, that.status) && Objects.equals(this.dimensions, that.dimensions)
+            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, dimensions);
+        return Objects.hash(status, dimensions, tags, enterpriseProjectId);
     }
 
     @Override
@@ -177,6 +223,8 @@ public class GetResourceGroupResources {
         sb.append("class GetResourceGroupResources {\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

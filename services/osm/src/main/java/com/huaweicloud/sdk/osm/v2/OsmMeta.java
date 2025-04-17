@@ -226,6 +226,9 @@ import com.huaweicloud.sdk.osm.v2.model.UpdateLabelsResponse;
 import com.huaweicloud.sdk.osm.v2.model.UpdateNewInstantMessagesReadRequest;
 import com.huaweicloud.sdk.osm.v2.model.UpdateNewInstantMessagesReadResponse;
 import com.huaweicloud.sdk.osm.v2.model.UpdateUnreadNewInstantMsgV2Req;
+import com.huaweicloud.sdk.osm.v2.model.UploadAccessoryRequest;
+import com.huaweicloud.sdk.osm.v2.model.UploadAccessoryRequestBody;
+import com.huaweicloud.sdk.osm.v2.model.UploadAccessoryResponse;
 import com.huaweicloud.sdk.osm.v2.model.UploadJsonAccessoriesRequest;
 import com.huaweicloud.sdk.osm.v2.model.UploadJsonAccessoriesResponse;
 import com.huaweicloud.sdk.osm.v2.model.VerifyHostV2Req;
@@ -4430,6 +4433,44 @@ public class OsmMeta {
             TypeCasts.uncheckedConversion(UpdateUnreadNewInstantMsgV2Req.class),
             f -> f.withMarshaller(UpdateNewInstantMessagesReadRequest::getBody,
                 UpdateNewInstantMessagesReadRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UploadAccessoryRequest, UploadAccessoryResponse> uploadAccessory =
+        genForUploadAccessory();
+
+    private static HttpRequestDef<UploadAccessoryRequest, UploadAccessoryResponse> genForUploadAccessory() {
+        // basic
+        HttpRequestDef.Builder<UploadAccessoryRequest, UploadAccessoryResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UploadAccessoryRequest.class, UploadAccessoryResponse.class)
+                .withName("UploadAccessory")
+                .withUri("/v2/servicerequest/accessorys")
+                .withContentType("multipart/form-data");
+
+        // requests
+        builder.<Integer>withRequestField("X-Site",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(UploadAccessoryRequest::getXSite, UploadAccessoryRequest::setXSite));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadAccessoryRequest::getXLanguage, UploadAccessoryRequest::setXLanguage));
+        builder.<String>withRequestField("X-Time-Zone",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UploadAccessoryRequest::getXTimeZone, UploadAccessoryRequest::setXTimeZone));
+        builder.<UploadAccessoryRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UploadAccessoryRequestBody.class),
+            f -> f.withMarshaller(UploadAccessoryRequest::getBody, UploadAccessoryRequest::setBody));
 
         // response
 

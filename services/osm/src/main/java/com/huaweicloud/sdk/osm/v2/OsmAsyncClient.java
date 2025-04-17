@@ -193,6 +193,8 @@ import com.huaweicloud.sdk.osm.v2.model.UpdateLabelsRequest;
 import com.huaweicloud.sdk.osm.v2.model.UpdateLabelsResponse;
 import com.huaweicloud.sdk.osm.v2.model.UpdateNewInstantMessagesReadRequest;
 import com.huaweicloud.sdk.osm.v2.model.UpdateNewInstantMessagesReadResponse;
+import com.huaweicloud.sdk.osm.v2.model.UploadAccessoryRequest;
+import com.huaweicloud.sdk.osm.v2.model.UploadAccessoryResponse;
 import com.huaweicloud.sdk.osm.v2.model.UploadJsonAccessoriesRequest;
 import com.huaweicloud.sdk.osm.v2.model.UploadJsonAccessoriesResponse;
 
@@ -2981,6 +2983,35 @@ public class OsmAsyncClient {
     public AsyncInvoker<UpdateNewInstantMessagesReadRequest, UpdateNewInstantMessagesReadResponse> updateNewInstantMessagesReadAsyncInvoker(
         UpdateNewInstantMessagesReadRequest request) {
         return new AsyncInvoker<>(request, OsmMeta.updateNewInstantMessagesRead, hcClient);
+    }
+
+    /**
+     * 上传附件
+     *
+     * 上传附件接口，使用form-data，上传附件需要满足\&quot;附件限制\&quot;返回的关于大小等限制
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadAccessoryRequest 请求对象
+     * @return CompletableFuture<UploadAccessoryResponse>
+     */
+    public CompletableFuture<UploadAccessoryResponse> uploadAccessoryAsync(UploadAccessoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, OsmMeta.uploadAccessory);
+    }
+
+    /**
+     * 上传附件
+     *
+     * 上传附件接口，使用form-data，上传附件需要满足\&quot;附件限制\&quot;返回的关于大小等限制
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UploadAccessoryRequest 请求对象
+     * @return AsyncInvoker<UploadAccessoryRequest, UploadAccessoryResponse>
+     */
+    public AsyncInvoker<UploadAccessoryRequest, UploadAccessoryResponse> uploadAccessoryAsyncInvoker(
+        UploadAccessoryRequest request) {
+        return new AsyncInvoker<>(request, OsmMeta.uploadAccessory, hcClient);
     }
 
     /**

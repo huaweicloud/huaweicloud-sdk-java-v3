@@ -41,13 +41,18 @@ public class ValidateRobotReq {
 
     private MobvoiConfig mobvoiConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "wise_brain_config")
+
+    private WiseBrainConfig wiseBrainConfig;
+
     public ValidateRobotReq withAppType(Integer appType) {
         this.appType = appType;
         return this;
     }
 
     /**
-     * 对接第三方应用厂商类型。 > 0：科大讯飞AIUI；1：华为云CBS；2：科大讯飞星火交互认知大模型；6：第三方语言模型；8：奇妙问
+     * 对接第三方应用厂商类型。 > 0：科大讯飞AIUI；1：华为云CBS；2：科大讯飞星火交互认知大模型；6：第三方语言模型；7：交互助手；8：奇妙问
      * minimum: 0
      * maximum: 32
      * @return appType
@@ -190,6 +195,32 @@ public class ValidateRobotReq {
         this.mobvoiConfig = mobvoiConfig;
     }
 
+    public ValidateRobotReq withWiseBrainConfig(WiseBrainConfig wiseBrainConfig) {
+        this.wiseBrainConfig = wiseBrainConfig;
+        return this;
+    }
+
+    public ValidateRobotReq withWiseBrainConfig(Consumer<WiseBrainConfig> wiseBrainConfigSetter) {
+        if (this.wiseBrainConfig == null) {
+            this.wiseBrainConfig = new WiseBrainConfig();
+            wiseBrainConfigSetter.accept(this.wiseBrainConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get wiseBrainConfig
+     * @return wiseBrainConfig
+     */
+    public WiseBrainConfig getWiseBrainConfig() {
+        return wiseBrainConfig;
+    }
+
+    public void setWiseBrainConfig(WiseBrainConfig wiseBrainConfig) {
+        this.wiseBrainConfig = wiseBrainConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -203,12 +234,19 @@ public class ValidateRobotReq {
             && Objects.equals(this.iflytekAiuiConfig, that.iflytekAiuiConfig)
             && Objects.equals(this.iflytekSpark, that.iflytekSpark)
             && Objects.equals(this.thirdPartyModelConfig, that.thirdPartyModelConfig)
-            && Objects.equals(this.mobvoiConfig, that.mobvoiConfig);
+            && Objects.equals(this.mobvoiConfig, that.mobvoiConfig)
+            && Objects.equals(this.wiseBrainConfig, that.wiseBrainConfig);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(appType, huaweiEiCbs, iflytekAiuiConfig, iflytekSpark, thirdPartyModelConfig, mobvoiConfig);
+        return Objects.hash(appType,
+            huaweiEiCbs,
+            iflytekAiuiConfig,
+            iflytekSpark,
+            thirdPartyModelConfig,
+            mobvoiConfig,
+            wiseBrainConfig);
     }
 
     @Override
@@ -221,6 +259,7 @@ public class ValidateRobotReq {
         sb.append("    iflytekSpark: ").append(toIndentedString(iflytekSpark)).append("\n");
         sb.append("    thirdPartyModelConfig: ").append(toIndentedString(thirdPartyModelConfig)).append("\n");
         sb.append("    mobvoiConfig: ").append(toIndentedString(mobvoiConfig)).append("\n");
+        sb.append("    wiseBrainConfig: ").append(toIndentedString(wiseBrainConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

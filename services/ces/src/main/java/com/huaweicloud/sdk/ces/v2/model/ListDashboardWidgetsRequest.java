@@ -15,6 +15,11 @@ public class ListDashboardWidgetsRequest {
 
     private String dashboardId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
     public ListDashboardWidgetsRequest withDashboardId(String dashboardId) {
         this.dashboardId = dashboardId;
         return this;
@@ -32,6 +37,23 @@ public class ListDashboardWidgetsRequest {
         this.dashboardId = dashboardId;
     }
 
+    public ListDashboardWidgetsRequest withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 视图所在的分组id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,12 @@ public class ListDashboardWidgetsRequest {
             return false;
         }
         ListDashboardWidgetsRequest that = (ListDashboardWidgetsRequest) obj;
-        return Objects.equals(this.dashboardId, that.dashboardId);
+        return Objects.equals(this.dashboardId, that.dashboardId) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dashboardId);
+        return Objects.hash(dashboardId, groupId);
     }
 
     @Override
@@ -54,6 +76,7 @@ public class ListDashboardWidgetsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListDashboardWidgetsRequest {\n");
         sb.append("    dashboardId: ").append(toIndentedString(dashboardId)).append("\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

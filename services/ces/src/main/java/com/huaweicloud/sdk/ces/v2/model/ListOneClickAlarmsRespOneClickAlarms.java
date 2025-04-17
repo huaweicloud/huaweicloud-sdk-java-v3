@@ -53,7 +53,7 @@ public class ListOneClickAlarmsRespOneClickAlarms {
     }
 
     /**
-     * 查询服务的命名空间，各服务命名空间请参考[服务命名空间](https://support.huaweicloud.com/usermanual-ces/zh-cn_topic_0202622212.html)
+     * 查询服务的命名空间，各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
      * @return namespace
      */
     public String getNamespace() {

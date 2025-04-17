@@ -88,7 +88,7 @@ public class SimplePremiumWafHost {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protocol_port")
 
-    private String protocolPort;
+    private Integer protocolPort;
 
     public SimplePremiumWafHost withId(String id) {
         this.id = id;
@@ -369,7 +369,7 @@ public class SimplePremiumWafHost {
         this.loadbalancerId = loadbalancerId;
     }
 
-    public SimplePremiumWafHost withProtocolPort(String protocolPort) {
+    public SimplePremiumWafHost withProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
         return this;
     }
@@ -378,11 +378,11 @@ public class SimplePremiumWafHost {
      * 云模式elb接入域名返回此字段，表示业务端口
      * @return protocolPort
      */
-    public String getProtocolPort() {
+    public Integer getProtocolPort() {
         return protocolPort;
     }
 
-    public void setProtocolPort(String protocolPort) {
+    public void setProtocolPort(Integer protocolPort) {
         this.protocolPort = protocolPort;
     }
 

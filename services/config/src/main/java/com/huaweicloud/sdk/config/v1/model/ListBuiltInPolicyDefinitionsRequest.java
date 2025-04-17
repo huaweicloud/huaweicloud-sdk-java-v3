@@ -15,6 +15,16 @@ public class ListBuiltInPolicyDefinitionsRequest {
 
     private String xLanguage;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
     public ListBuiltInPolicyDefinitionsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
@@ -34,6 +44,42 @@ public class ListBuiltInPolicyDefinitionsRequest {
         this.xLanguage = xLanguage;
     }
 
+    public ListBuiltInPolicyDefinitionsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 最大的返回数量
+     * minimum: 1
+     * maximum: 500
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListBuiltInPolicyDefinitionsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 分页参数，通过上一个请求中返回的marker信息作为输入，获取当前页
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -43,12 +89,13 @@ public class ListBuiltInPolicyDefinitionsRequest {
             return false;
         }
         ListBuiltInPolicyDefinitionsRequest that = (ListBuiltInPolicyDefinitionsRequest) obj;
-        return Objects.equals(this.xLanguage, that.xLanguage);
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage);
+        return Objects.hash(xLanguage, limit, marker);
     }
 
     @Override
@@ -56,6 +103,8 @@ public class ListBuiltInPolicyDefinitionsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBuiltInPolicyDefinitionsRequest {\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("}");
         return sb.toString();
     }

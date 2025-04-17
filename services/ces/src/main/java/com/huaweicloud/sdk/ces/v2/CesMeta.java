@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v2;
 
 import com.huaweicloud.sdk.ces.v2.model.AddAlarmRuleResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.AddAlarmRuleResourcesResponse;
+import com.huaweicloud.sdk.ces.v2.model.BaseWidgetInfo;
 import com.huaweicloud.sdk.ces.v2.model.BatchCreateResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchCreateResourcesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmRulesRequest;
@@ -10,7 +11,7 @@ import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmTemplatesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmTemplatesRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmTemplatesResponse;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteAlarmsRequestBody;
-import com.huaweicloud.sdk.ces.v2.model.BatchDeleteDashboardRequestBody;
+import com.huaweicloud.sdk.ces.v2.model.BatchDeleteDashboardsRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteNotificationMasksRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteNotificationMasksRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.BatchDeleteNotificationMasksResponse;
@@ -119,6 +120,7 @@ import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMaskRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMaskResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMasksRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupResponse;
@@ -586,12 +588,12 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateDashboardWidgetsRequest::getDashboardId,
                 CreateDashboardWidgetsRequest::setDashboardId));
-        builder.<List<Object>>withRequestField("body",
+        builder.<List<BaseWidgetInfo>>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(CreateDashboardWidgetsRequest::getBody, CreateDashboardWidgetsRequest::setBody)
-                .withInnerContainerType(Object.class));
+                .withInnerContainerType(BaseWidgetInfo.class));
 
         // response
 
@@ -709,10 +711,10 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<BatchDeleteDashboardRequestBody>withRequestField("body",
+        builder.<BatchDeleteDashboardsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BatchDeleteDashboardRequestBody.class),
+            TypeCasts.uncheckedConversion(BatchDeleteDashboardsRequestBody.class),
             f -> f.withMarshaller(DeleteDashboardsRequest::getBody, DeleteDashboardsRequest::setBody));
 
         // response
@@ -801,10 +803,10 @@ public class CesMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("alarm_id",
+        builder.<List<String>>withRequestField("alarm_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmId, ListAlarmHistoriesRequest::setAlarmId));
         builder.<String>withRequestField("record_id",
             LocationType.Query,
@@ -816,15 +818,10 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getName, ListAlarmHistoriesRequest::setName));
-        builder.<ListAlarmHistoriesRequest.AlarmTypeEnum>withRequestField("alarm_type",
+        builder.<List<ListAlarmHistoriesRequest.StatusEnum>>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListAlarmHistoriesRequest.AlarmTypeEnum.class),
-            f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmType, ListAlarmHistoriesRequest::setAlarmType));
-        builder.<String>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getStatus, ListAlarmHistoriesRequest::setStatus));
         builder.<Integer>withRequestField("level",
             LocationType.Query,
@@ -851,6 +848,23 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmHistoriesRequest::getTo, ListAlarmHistoriesRequest::setTo));
+        builder.<ListAlarmHistoriesRequest.AlarmTypeEnum>withRequestField("alarm_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAlarmHistoriesRequest.AlarmTypeEnum.class),
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getAlarmType, ListAlarmHistoriesRequest::setAlarmType));
+        builder.<String>withRequestField("create_time_from",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getCreateTimeFrom,
+                ListAlarmHistoriesRequest::setCreateTimeFrom));
+        builder.<String>withRequestField("create_time_to",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmHistoriesRequest::getCreateTimeTo,
+                ListAlarmHistoriesRequest::setCreateTimeTo));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -977,6 +991,16 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmRulesRequest::getEnterpriseProjectId,
                 ListAlarmRulesRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("product_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmRulesRequest::getProductName, ListAlarmRulesRequest::setProductName));
+        builder.<ListAlarmRulesRequest.ResourceLevelEnum>withRequestField("resource_level",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListAlarmRulesRequest.ResourceLevelEnum.class),
+            f -> f.withMarshaller(ListAlarmRulesRequest::getResourceLevel, ListAlarmRulesRequest::setResourceLevel));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -1076,6 +1100,12 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmTemplatesRequest::getTemplateName,
                 ListAlarmTemplatesRequest::setTemplateName));
+        builder.<String>withRequestField("product_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListAlarmTemplatesRequest::getProductName,
+                ListAlarmTemplatesRequest::setProductName));
 
         // response
 
@@ -1142,6 +1172,12 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDashboardInfosRequest::getDashboardId,
                 ListDashboardInfosRequest::setDashboardId));
+        builder.<ListDashboardInfosRequest.DashboardTypeEnum>withRequestField("dashboard_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListDashboardInfosRequest.DashboardTypeEnum.class),
+            f -> f.withMarshaller(ListDashboardInfosRequest::getDashboardType,
+                ListDashboardInfosRequest::setDashboardType));
 
         // response
 
@@ -1166,6 +1202,11 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDashboardWidgetsRequest::getDashboardId,
                 ListDashboardWidgetsRequest::setDashboardId));
+        builder.<String>withRequestField("group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDashboardWidgetsRequest::getGroupId, ListDashboardWidgetsRequest::setGroupId));
 
         // response
 
@@ -1233,6 +1274,16 @@ public class CesMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListNotificationMasksRequest::getLimit, ListNotificationMasksRequest::setLimit));
+        builder.<ListNotificationMasksRequest.SortKeyEnum>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListNotificationMasksRequest.SortKeyEnum.class),
+            f -> f.withMarshaller(ListNotificationMasksRequest::getSortKey, ListNotificationMasksRequest::setSortKey));
+        builder.<ListNotificationMasksRequest.SortDirEnum>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListNotificationMasksRequest.SortDirEnum.class),
+            f -> f.withMarshaller(ListNotificationMasksRequest::getSortDir, ListNotificationMasksRequest::setSortDir));
         builder.<ListNotificationMaskRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -1392,6 +1443,36 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceGroupsServicesResourcesRequest::getDimValue,
                 ListResourceGroupsServicesResourcesRequest::setDimValue));
+        builder.<String>withRequestField("tag",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceGroupsServicesResourcesRequest::getTag,
+                ListResourceGroupsServicesResourcesRequest::setTag));
+        builder.<String>withRequestField("extend_relation_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceGroupsServicesResourcesRequest::getExtendRelationId,
+                ListResourceGroupsServicesResourcesRequest::setExtendRelationId));
+        builder.<String>withRequestField("product_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceGroupsServicesResourcesRequest::getProductName,
+                ListResourceGroupsServicesResourcesRequest::setProductName));
+        builder.<String>withRequestField("resource_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResourceGroupsServicesResourcesRequest::getResourceName,
+                ListResourceGroupsServicesResourcesRequest::setResourceName));
+        builder.<ListResourceGroupsServicesResourcesRequest.EventStatusEnum>withRequestField("event_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListResourceGroupsServicesResourcesRequest.EventStatusEnum.class),
+            f -> f.withMarshaller(ListResourceGroupsServicesResourcesRequest::getEventStatus,
+                ListResourceGroupsServicesResourcesRequest::setEventStatus));
 
         // response
 
@@ -1632,10 +1713,10 @@ public class CesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateOneClickAlarmNotificationsRequest::getOneClickAlarmId,
                 UpdateOneClickAlarmNotificationsRequest::setOneClickAlarmId));
-        builder.<PutAlarmNotificationReq>withRequestField("body",
+        builder.<UpdateOneClickAlarmNotificationsRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(PutAlarmNotificationReq.class),
+            TypeCasts.uncheckedConversion(UpdateOneClickAlarmNotificationsRequestBody.class),
             f -> f.withMarshaller(UpdateOneClickAlarmNotificationsRequest::getBody,
                 UpdateOneClickAlarmNotificationsRequest::setBody));
 

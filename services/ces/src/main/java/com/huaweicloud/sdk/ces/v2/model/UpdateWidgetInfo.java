@@ -19,6 +19,11 @@ import java.util.function.Consumer;
 public class UpdateWidgetInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "group_id")
+
+    private String groupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "widget_id")
 
     private String widgetId;
@@ -44,7 +49,7 @@ public class UpdateWidgetInfo {
     private Boolean thresholdEnabled;
 
     /**
-     * 监控视图图表类型, bar柱状图，line折线图
+     * 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
      */
     public static final class ViewEnum {
 
@@ -58,12 +63,36 @@ public class UpdateWidgetInfo {
          */
         public static final ViewEnum LINE = new ViewEnum("line");
 
+        /**
+         * Enum BAR_CHART for value: "bar_chart"
+         */
+        public static final ViewEnum BAR_CHART = new ViewEnum("bar_chart");
+
+        /**
+         * Enum TABLE for value: "table"
+         */
+        public static final ViewEnum TABLE = new ViewEnum("table");
+
+        /**
+         * Enum CIRCULAR_BAR for value: "circular_bar"
+         */
+        public static final ViewEnum CIRCULAR_BAR = new ViewEnum("circular_bar");
+
+        /**
+         * Enum AREA_CHART for value: "area_chart"
+         */
+        public static final ViewEnum AREA_CHART = new ViewEnum("area_chart");
+
         private static final Map<String, ViewEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ViewEnum> createStaticFields() {
             Map<String, ViewEnum> map = new HashMap<>();
             map.put("bar", BAR);
             map.put("line", LINE);
+            map.put("bar_chart", BAR_CHART);
+            map.put("table", TABLE);
+            map.put("circular_bar", CIRCULAR_BAR);
+            map.put("area_chart", AREA_CHART);
             return Collections.unmodifiableMap(map);
         }
 
@@ -208,6 +237,23 @@ public class UpdateWidgetInfo {
 
     private String unit;
 
+    public UpdateWidgetInfo withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+
+    /**
+     * 视图分区id
+     * @return groupId
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
     public UpdateWidgetInfo withWidgetId(String widgetId) {
         this.widgetId = widgetId;
         return this;
@@ -317,7 +363,7 @@ public class UpdateWidgetInfo {
     }
 
     /**
-     * 监控视图图表类型, bar柱状图，line折线图
+     * 监控视图图表类型, bar条形图，line折线图，bar_chart柱状图，table表格，circular_bar环形柱状图，area_chart面积图
      * @return view
      */
     public ViewEnum getView() {
@@ -423,8 +469,9 @@ public class UpdateWidgetInfo {
             return false;
         }
         UpdateWidgetInfo that = (UpdateWidgetInfo) obj;
-        return Objects.equals(this.widgetId, that.widgetId) && Objects.equals(this.metrics, that.metrics)
-            && Objects.equals(this.title, that.title) && Objects.equals(this.threshold, that.threshold)
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.widgetId, that.widgetId)
+            && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.threshold, that.threshold)
             && Objects.equals(this.thresholdEnabled, that.thresholdEnabled) && Objects.equals(this.view, that.view)
             && Objects.equals(this.metricDisplayMode, that.metricDisplayMode)
             && Objects.equals(this.properties, that.properties) && Objects.equals(this.location, that.location)
@@ -433,7 +480,8 @@ public class UpdateWidgetInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(widgetId,
+        return Objects.hash(groupId,
+            widgetId,
             metrics,
             title,
             threshold,
@@ -449,6 +497,7 @@ public class UpdateWidgetInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateWidgetInfo {\n");
+        sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
         sb.append("    widgetId: ").append(toIndentedString(widgetId)).append("\n");
         sb.append("    metrics: ").append(toIndentedString(metrics)).append("\n");
         sb.append("    title: ").append(toIndentedString(title)).append("\n");

@@ -368,10 +368,14 @@ VpcClient client = VpcClient.newBuilder()
 
 #### 1.4 SSL Certification [:top:](#user-manual-top)
 
+The SDK uses **the Java default trust store**, which is the certificate in `$JAVA_HOME/lib/security/cacerts`. If **the certificate chain is incomplete or untrusted**, it may cause exceptions such as **SSLHandshakeException, SSLPeerUnverifiedException, and SunCertPathBuilderException**. You can use the Java built-in tool **keytool** to confirm whether there is a problem with the certificate.
+
+The SDK also supports **SSL skip verification** and **custom configuration**.
+
 Skip SSL certification:
 
 ``` java
-// Skip SSL certification checking while using https protocol if needed
+// Skip SSL certification checking while using https protocol if needed, do not use in production environments
 HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true);
 
 VpcClient client = VpcClient.newBuilder()

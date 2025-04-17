@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.antiddos.v1.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -15,10 +20,80 @@ public class ListDailyLogRequest {
 
     private String floatingIpId;
 
+    /**
+     * 可选范围： - desc：表示时间降序 - asc：表示时间升序 默认值为“desc”。
+     */
+    public static final class SortDirEnum {
+
+        /**
+         * Enum DESC for value: "desc"
+         */
+        public static final SortDirEnum DESC = new SortDirEnum("desc");
+
+        /**
+         * Enum ASC for value: "asc"
+         */
+        public static final SortDirEnum ASC = new SortDirEnum("asc");
+
+        private static final Map<String, SortDirEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, SortDirEnum> createStaticFields() {
+            Map<String, SortDirEnum> map = new HashMap<>();
+            map.put("desc", DESC);
+            map.put("asc", ASC);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        SortDirEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static SortDirEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
+        }
+
+        public static SortDirEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof SortDirEnum) {
+                return this.value.equals(((SortDirEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "sort_dir")
 
-    private String sortDir;
+    private SortDirEnum sortDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
@@ -52,7 +127,7 @@ public class ListDailyLogRequest {
         this.floatingIpId = floatingIpId;
     }
 
-    public ListDailyLogRequest withSortDir(String sortDir) {
+    public ListDailyLogRequest withSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
         return this;
     }
@@ -61,11 +136,11 @@ public class ListDailyLogRequest {
      * 可选范围： - desc：表示时间降序 - asc：表示时间升序 默认值为“desc”。
      * @return sortDir
      */
-    public String getSortDir() {
+    public SortDirEnum getSortDir() {
         return sortDir;
     }
 
-    public void setSortDir(String sortDir) {
+    public void setSortDir(SortDirEnum sortDir) {
         this.sortDir = sortDir;
     }
 

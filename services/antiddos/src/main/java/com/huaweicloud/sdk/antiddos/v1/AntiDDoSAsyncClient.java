@@ -4,30 +4,30 @@ import com.huaweicloud.sdk.antiddos.v1.model.CreateDefaultConfigRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.CreateDefaultConfigResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.DeleteDefaultConfigRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.DeleteDefaultConfigResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.EnableDefensePolicyRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.EnableDefensePolicyResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ListDDosStatusRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ListDDosStatusResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ListDailyLogRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ListDailyLogResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ListDailyReportRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ListDailyReportResponse;
-import com.huaweicloud.sdk.antiddos.v1.model.ListNewConfigsRequest;
-import com.huaweicloud.sdk.antiddos.v1.model.ListNewConfigsResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ListQuotaRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ListQuotaResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ListWeeklyReportsRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ListWeeklyReportsResponse;
-import com.huaweicloud.sdk.antiddos.v1.model.ShowAlertConfigRequest;
-import com.huaweicloud.sdk.antiddos.v1.model.ShowAlertConfigResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ShowDDosRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ShowDDosResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ShowDDosStatusRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ShowDDosStatusResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ShowDefaultConfigRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ShowDefaultConfigResponse;
-import com.huaweicloud.sdk.antiddos.v1.model.ShowNewTaskStatusRequest;
-import com.huaweicloud.sdk.antiddos.v1.model.ShowNewTaskStatusResponse;
-import com.huaweicloud.sdk.antiddos.v1.model.UpdateAlertConfigRequest;
-import com.huaweicloud.sdk.antiddos.v1.model.UpdateAlertConfigResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowLogConfigRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowLogConfigResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.UpdateDDosRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.UpdateDDosResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.UpdateLogConfigRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.UpdateLogConfigResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
 import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
@@ -106,35 +106,6 @@ public class AntiDDoSAsyncClient {
     }
 
     /**
-     * 查询告警配置信息
-     *
-     * 查询用户配置信息，用户可以通过此接口查询是否接收某类告警，同时可以配置是手机短信还是电子邮件接收告警信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAlertConfigRequest 请求对象
-     * @return CompletableFuture<ShowAlertConfigResponse>
-     */
-    public CompletableFuture<ShowAlertConfigResponse> showAlertConfigAsync(ShowAlertConfigRequest request) {
-        return hcClient.asyncInvokeHttp(request, AntiDDoSMeta.showAlertConfig);
-    }
-
-    /**
-     * 查询告警配置信息
-     *
-     * 查询用户配置信息，用户可以通过此接口查询是否接收某类告警，同时可以配置是手机短信还是电子邮件接收告警信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowAlertConfigRequest 请求对象
-     * @return AsyncInvoker<ShowAlertConfigRequest, ShowAlertConfigResponse>
-     */
-    public AsyncInvoker<ShowAlertConfigRequest, ShowAlertConfigResponse> showAlertConfigAsyncInvoker(
-        ShowAlertConfigRequest request) {
-        return new AsyncInvoker<>(request, AntiDDoSMeta.showAlertConfig, hcClient);
-    }
-
-    /**
      * 查询Ani-DDoS默认防护策略
      *
      * 查询用户配置的默认防护策略。
@@ -164,32 +135,32 @@ public class AntiDDoSAsyncClient {
     }
 
     /**
-     * 更新告警配置信息
+     * 开通DDoS服务
      *
-     * 更新用户配置信息，用户可以通过此接口更新是否接收某类告警，同时可以配置是手机短信还是电子邮件接收告警信息。
+     * 开通DDoS服务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdateAlertConfigRequest 请求对象
-     * @return CompletableFuture<UpdateAlertConfigResponse>
+     * @param request EnableDefensePolicyRequest 请求对象
+     * @return CompletableFuture<EnableDefensePolicyResponse>
      */
-    public CompletableFuture<UpdateAlertConfigResponse> updateAlertConfigAsync(UpdateAlertConfigRequest request) {
-        return hcClient.asyncInvokeHttp(request, AntiDDoSMeta.updateAlertConfig);
+    public CompletableFuture<EnableDefensePolicyResponse> enableDefensePolicyAsync(EnableDefensePolicyRequest request) {
+        return hcClient.asyncInvokeHttp(request, AntiDDoSMeta.enableDefensePolicy);
     }
 
     /**
-     * 更新告警配置信息
+     * 开通DDoS服务
      *
-     * 更新用户配置信息，用户可以通过此接口更新是否接收某类告警，同时可以配置是手机短信还是电子邮件接收告警信息。
+     * 开通DDoS服务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request UpdateAlertConfigRequest 请求对象
-     * @return AsyncInvoker<UpdateAlertConfigRequest, UpdateAlertConfigResponse>
+     * @param request EnableDefensePolicyRequest 请求对象
+     * @return AsyncInvoker<EnableDefensePolicyRequest, EnableDefensePolicyResponse>
      */
-    public AsyncInvoker<UpdateAlertConfigRequest, UpdateAlertConfigResponse> updateAlertConfigAsyncInvoker(
-        UpdateAlertConfigRequest request) {
-        return new AsyncInvoker<>(request, AntiDDoSMeta.updateAlertConfig, hcClient);
+    public AsyncInvoker<EnableDefensePolicyRequest, EnableDefensePolicyResponse> enableDefensePolicyAsyncInvoker(
+        EnableDefensePolicyRequest request) {
+        return new AsyncInvoker<>(request, AntiDDoSMeta.enableDefensePolicy, hcClient);
     }
 
     /**
@@ -280,32 +251,31 @@ public class AntiDDoSAsyncClient {
     }
 
     /**
-     * 查询Anti-DDoS配置可选范围
+     * 查询配额
      *
-     * 查询系统支持的Anti-DDoS防护策略配置的可选范围，用户根据范围列表选择适合自已业务的防护策略进行Anti-DDoS流量清洗。
+     * 查询配额
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListNewConfigsRequest 请求对象
-     * @return CompletableFuture<ListNewConfigsResponse>
+     * @param request ListQuotaRequest 请求对象
+     * @return CompletableFuture<ListQuotaResponse>
      */
-    public CompletableFuture<ListNewConfigsResponse> listNewConfigsAsync(ListNewConfigsRequest request) {
-        return hcClient.asyncInvokeHttp(request, AntiDDoSMeta.listNewConfigs);
+    public CompletableFuture<ListQuotaResponse> listQuotaAsync(ListQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, AntiDDoSMeta.listQuota);
     }
 
     /**
-     * 查询Anti-DDoS配置可选范围
+     * 查询配额
      *
-     * 查询系统支持的Anti-DDoS防护策略配置的可选范围，用户根据范围列表选择适合自已业务的防护策略进行Anti-DDoS流量清洗。
+     * 查询配额
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ListNewConfigsRequest 请求对象
-     * @return AsyncInvoker<ListNewConfigsRequest, ListNewConfigsResponse>
+     * @param request ListQuotaRequest 请求对象
+     * @return AsyncInvoker<ListQuotaRequest, ListQuotaResponse>
      */
-    public AsyncInvoker<ListNewConfigsRequest, ListNewConfigsResponse> listNewConfigsAsyncInvoker(
-        ListNewConfigsRequest request) {
-        return new AsyncInvoker<>(request, AntiDDoSMeta.listNewConfigs, hcClient);
+    public AsyncInvoker<ListQuotaRequest, ListQuotaResponse> listQuotaAsyncInvoker(ListQuotaRequest request) {
+        return new AsyncInvoker<>(request, AntiDDoSMeta.listQuota, hcClient);
     }
 
     /**
@@ -395,32 +365,32 @@ public class AntiDDoSAsyncClient {
     }
 
     /**
-     * 查询Anti-DDoS任务
+     * 查询全量日志设置
      *
-     * 用户查询指定的Anti-DDoS防护配置任务，得到任务当前执行的状态。
+     * 查询全量日志设置
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowNewTaskStatusRequest 请求对象
-     * @return CompletableFuture<ShowNewTaskStatusResponse>
+     * @param request ShowLogConfigRequest 请求对象
+     * @return CompletableFuture<ShowLogConfigResponse>
      */
-    public CompletableFuture<ShowNewTaskStatusResponse> showNewTaskStatusAsync(ShowNewTaskStatusRequest request) {
-        return hcClient.asyncInvokeHttp(request, AntiDDoSMeta.showNewTaskStatus);
+    public CompletableFuture<ShowLogConfigResponse> showLogConfigAsync(ShowLogConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, AntiDDoSMeta.showLogConfig);
     }
 
     /**
-     * 查询Anti-DDoS任务
+     * 查询全量日志设置
      *
-     * 用户查询指定的Anti-DDoS防护配置任务，得到任务当前执行的状态。
+     * 查询全量日志设置
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param request ShowNewTaskStatusRequest 请求对象
-     * @return AsyncInvoker<ShowNewTaskStatusRequest, ShowNewTaskStatusResponse>
+     * @param request ShowLogConfigRequest 请求对象
+     * @return AsyncInvoker<ShowLogConfigRequest, ShowLogConfigResponse>
      */
-    public AsyncInvoker<ShowNewTaskStatusRequest, ShowNewTaskStatusResponse> showNewTaskStatusAsyncInvoker(
-        ShowNewTaskStatusRequest request) {
-        return new AsyncInvoker<>(request, AntiDDoSMeta.showNewTaskStatus, hcClient);
+    public AsyncInvoker<ShowLogConfigRequest, ShowLogConfigResponse> showLogConfigAsyncInvoker(
+        ShowLogConfigRequest request) {
+        return new AsyncInvoker<>(request, AntiDDoSMeta.showLogConfig, hcClient);
     }
 
     /**
@@ -449,6 +419,35 @@ public class AntiDDoSAsyncClient {
      */
     public AsyncInvoker<UpdateDDosRequest, UpdateDDosResponse> updateDDosAsyncInvoker(UpdateDDosRequest request) {
         return new AsyncInvoker<>(request, AntiDDoSMeta.updateDDos, hcClient);
+    }
+
+    /**
+     * 更新用户全量日志设置
+     *
+     * 更新用户全量日志设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLogConfigRequest 请求对象
+     * @return CompletableFuture<UpdateLogConfigResponse>
+     */
+    public CompletableFuture<UpdateLogConfigResponse> updateLogConfigAsync(UpdateLogConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, AntiDDoSMeta.updateLogConfig);
+    }
+
+    /**
+     * 更新用户全量日志设置
+     *
+     * 更新用户全量日志设置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLogConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateLogConfigRequest, UpdateLogConfigResponse>
+     */
+    public AsyncInvoker<UpdateLogConfigRequest, UpdateLogConfigResponse> updateLogConfigAsyncInvoker(
+        UpdateLogConfigRequest request) {
+        return new AsyncInvoker<>(request, AntiDDoSMeta.updateLogConfig, hcClient);
     }
 
 }

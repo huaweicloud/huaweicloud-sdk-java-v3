@@ -369,10 +369,14 @@ VpcClient client = VpcClient.newBuilder()
 
 #### 1.4 SSL 配置 [:top:](#用户手册-top)
 
+SDK使用的是 **Java 默认信任库**，即 `$JAVA_HOME/lib/security/cacerts`中的证书，如果其中**证书链不完整或不受信任**可能会导致**SSLHandshakeException、SSLPeerUnverifiedException、SunCertPathBuilderException**等异常，可以通过 **Java自带工具 keytool** 确认证书是否存在问题。
+
+同时SDK也支持 **SSL跳过验证** 和 **自定义配置**。
+
 跳过验证：
 
 ``` java
-// 根据需要配置是否跳过SSL证书验证
+// 根据需要配置是否跳过SSL证书验证, 请勿用于生产环境
 HttpConfig httpConfig = HttpConfig.getDefaultHttpConfig().withIgnoreSSLVerification(true);
 
 VpcClient client = VpcClient.newBuilder()

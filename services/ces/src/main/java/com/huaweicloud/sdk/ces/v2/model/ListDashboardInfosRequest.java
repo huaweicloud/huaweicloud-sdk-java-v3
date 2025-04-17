@@ -1,8 +1,13 @@
 package com.huaweicloud.sdk.ces.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -29,6 +34,81 @@ public class ListDashboardInfosRequest {
     @JsonProperty(value = "dashboard_id")
 
     private String dashboardId;
+
+    /**
+     * 监控看板类型, monitor_dashboard表示监控大盘,other表示自定义看板
+     */
+    public static final class DashboardTypeEnum {
+
+        /**
+         * Enum MONITOR_DASHBOARD for value: "monitor_dashboard"
+         */
+        public static final DashboardTypeEnum MONITOR_DASHBOARD = new DashboardTypeEnum("monitor_dashboard");
+
+        /**
+         * Enum OTHER for value: "other"
+         */
+        public static final DashboardTypeEnum OTHER = new DashboardTypeEnum("other");
+
+        private static final Map<String, DashboardTypeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, DashboardTypeEnum> createStaticFields() {
+            Map<String, DashboardTypeEnum> map = new HashMap<>();
+            map.put("monitor_dashboard", MONITOR_DASHBOARD);
+            map.put("other", OTHER);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        DashboardTypeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static DashboardTypeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DashboardTypeEnum(value));
+        }
+
+        public static DashboardTypeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof DashboardTypeEnum) {
+                return this.value.equals(((DashboardTypeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dashboard_type")
+
+    private DashboardTypeEnum dashboardType;
 
     public ListDashboardInfosRequest withEnterpriseId(String enterpriseId) {
         this.enterpriseId = enterpriseId;
@@ -98,6 +178,23 @@ public class ListDashboardInfosRequest {
         this.dashboardId = dashboardId;
     }
 
+    public ListDashboardInfosRequest withDashboardType(DashboardTypeEnum dashboardType) {
+        this.dashboardType = dashboardType;
+        return this;
+    }
+
+    /**
+     * 监控看板类型, monitor_dashboard表示监控大盘,other表示自定义看板
+     * @return dashboardType
+     */
+    public DashboardTypeEnum getDashboardType() {
+        return dashboardType;
+    }
+
+    public void setDashboardType(DashboardTypeEnum dashboardType) {
+        this.dashboardType = dashboardType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -109,12 +206,13 @@ public class ListDashboardInfosRequest {
         ListDashboardInfosRequest that = (ListDashboardInfosRequest) obj;
         return Objects.equals(this.enterpriseId, that.enterpriseId) && Objects.equals(this.isFavorite, that.isFavorite)
             && Objects.equals(this.dashboardName, that.dashboardName)
-            && Objects.equals(this.dashboardId, that.dashboardId);
+            && Objects.equals(this.dashboardId, that.dashboardId)
+            && Objects.equals(this.dashboardType, that.dashboardType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseId, isFavorite, dashboardName, dashboardId);
+        return Objects.hash(enterpriseId, isFavorite, dashboardName, dashboardId, dashboardType);
     }
 
     @Override
@@ -125,6 +223,7 @@ public class ListDashboardInfosRequest {
         sb.append("    isFavorite: ").append(toIndentedString(isFavorite)).append("\n");
         sb.append("    dashboardName: ").append(toIndentedString(dashboardName)).append("\n");
         sb.append("    dashboardId: ").append(toIndentedString(dashboardId)).append("\n");
+        sb.append("    dashboardType: ").append(toIndentedString(dashboardType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

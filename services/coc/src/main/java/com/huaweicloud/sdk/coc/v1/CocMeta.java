@@ -595,7 +595,7 @@ public class CocMeta {
         HttpRequestDef.Builder<CreateReportCustomEventRequest, CreateReportCustomEventResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, CreateReportCustomEventRequest.class, CreateReportCustomEventResponse.class)
             .withName("CreateReportCustomEvent")
-            .withUri("/event/huawei/custom/{integration_key}")
+            .withUri("/v1/event/huawei/custom/{integration_key}")
             .withContentType("application/json; charset=utf-8");
 
         // requests

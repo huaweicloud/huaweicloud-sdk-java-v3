@@ -5,32 +5,33 @@ import com.huaweicloud.sdk.antiddos.v1.model.CreateDefaultConfigResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.DdosConfig;
 import com.huaweicloud.sdk.antiddos.v1.model.DeleteDefaultConfigRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.DeleteDefaultConfigResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.EnableDefensePolicyRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.EnableDefensePolicyResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ListDDosStatusRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ListDDosStatusResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ListDailyLogRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ListDailyLogResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ListDailyReportRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ListDailyReportResponse;
-import com.huaweicloud.sdk.antiddos.v1.model.ListNewConfigsRequest;
-import com.huaweicloud.sdk.antiddos.v1.model.ListNewConfigsResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ListQuotaRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ListQuotaResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ListWeeklyReportsRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ListWeeklyReportsResponse;
-import com.huaweicloud.sdk.antiddos.v1.model.ShowAlertConfigRequest;
-import com.huaweicloud.sdk.antiddos.v1.model.ShowAlertConfigResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.LtsConfigRequestAndResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.OpenAntiDDosServiceRequestBody;
 import com.huaweicloud.sdk.antiddos.v1.model.ShowDDosRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ShowDDosResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ShowDDosStatusRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ShowDDosStatusResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.ShowDefaultConfigRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.ShowDefaultConfigResponse;
-import com.huaweicloud.sdk.antiddos.v1.model.ShowNewTaskStatusRequest;
-import com.huaweicloud.sdk.antiddos.v1.model.ShowNewTaskStatusResponse;
-import com.huaweicloud.sdk.antiddos.v1.model.UpdateAlertConfigRequest;
-import com.huaweicloud.sdk.antiddos.v1.model.UpdateAlertConfigRequestBody;
-import com.huaweicloud.sdk.antiddos.v1.model.UpdateAlertConfigResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowLogConfigRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.ShowLogConfigResponse;
 import com.huaweicloud.sdk.antiddos.v1.model.UpdateAntiDDosServiceRequestBody;
 import com.huaweicloud.sdk.antiddos.v1.model.UpdateDDosRequest;
 import com.huaweicloud.sdk.antiddos.v1.model.UpdateDDosResponse;
+import com.huaweicloud.sdk.antiddos.v1.model.UpdateLogConfigRequest;
+import com.huaweicloud.sdk.antiddos.v1.model.UpdateLogConfigResponse;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -81,24 +82,6 @@ public class AntiDDoSMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAlertConfigRequest, ShowAlertConfigResponse> showAlertConfig =
-        genForShowAlertConfig();
-
-    private static HttpRequestDef<ShowAlertConfigRequest, ShowAlertConfigResponse> genForShowAlertConfig() {
-        // basic
-        HttpRequestDef.Builder<ShowAlertConfigRequest, ShowAlertConfigResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAlertConfigRequest.class, ShowAlertConfigResponse.class)
-                .withName("ShowAlertConfig")
-                .withUri("/v2/{project_id}/warnalert/alertconfig/query")
-                .withContentType("application/json");
-
-        // requests
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowDefaultConfigRequest, ShowDefaultConfigResponse> showDefaultConfig =
         genForShowDefaultConfig();
 
@@ -117,23 +100,29 @@ public class AntiDDoSMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAlertConfigRequest, UpdateAlertConfigResponse> updateAlertConfig =
-        genForUpdateAlertConfig();
+    public static final HttpRequestDef<EnableDefensePolicyRequest, EnableDefensePolicyResponse> enableDefensePolicy =
+        genForEnableDefensePolicy();
 
-    private static HttpRequestDef<UpdateAlertConfigRequest, UpdateAlertConfigResponse> genForUpdateAlertConfig() {
+    private static HttpRequestDef<EnableDefensePolicyRequest, EnableDefensePolicyResponse> genForEnableDefensePolicy() {
         // basic
-        HttpRequestDef.Builder<UpdateAlertConfigRequest, UpdateAlertConfigResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, UpdateAlertConfigRequest.class, UpdateAlertConfigResponse.class)
-                .withName("UpdateAlertConfig")
-                .withUri("/v2/{project_id}/warnalert/alertconfig/update")
+        HttpRequestDef.Builder<EnableDefensePolicyRequest, EnableDefensePolicyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableDefensePolicyRequest.class, EnableDefensePolicyResponse.class)
+                .withName("EnableDefensePolicy")
+                .withUri("/v1/{project_id}/antiddos/{floating_ip_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.<UpdateAlertConfigRequestBody>withRequestField("body",
+        builder.<String>withRequestField("floating_ip_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableDefensePolicyRequest::getFloatingIpId,
+                EnableDefensePolicyRequest::setFloatingIpId));
+        builder.<OpenAntiDDosServiceRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateAlertConfigRequestBody.class),
-            f -> f.withMarshaller(UpdateAlertConfigRequest::getBody, UpdateAlertConfigRequest::setBody));
+            TypeCasts.uncheckedConversion(OpenAntiDDosServiceRequestBody.class),
+            f -> f.withMarshaller(EnableDefensePolicyRequest::getBody, EnableDefensePolicyRequest::setBody));
 
         // response
 
@@ -194,10 +183,10 @@ public class AntiDDoSMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDailyLogRequest::getFloatingIpId, ListDailyLogRequest::setFloatingIpId));
-        builder.<String>withRequestField("sort_dir",
+        builder.<ListDailyLogRequest.SortDirEnum>withRequestField("sort_dir",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
+            TypeCasts.uncheckedConversion(ListDailyLogRequest.SortDirEnum.class),
             f -> f.withMarshaller(ListDailyLogRequest::getSortDir, ListDailyLogRequest::setSortDir));
         builder.<String>withRequestField("limit",
             LocationType.Query,
@@ -248,15 +237,14 @@ public class AntiDDoSMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListNewConfigsRequest, ListNewConfigsResponse> listNewConfigs =
-        genForListNewConfigs();
+    public static final HttpRequestDef<ListQuotaRequest, ListQuotaResponse> listQuota = genForListQuota();
 
-    private static HttpRequestDef<ListNewConfigsRequest, ListNewConfigsResponse> genForListNewConfigs() {
+    private static HttpRequestDef<ListQuotaRequest, ListQuotaResponse> genForListQuota() {
         // basic
-        HttpRequestDef.Builder<ListNewConfigsRequest, ListNewConfigsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListNewConfigsRequest.class, ListNewConfigsResponse.class)
-                .withName("ListNewConfigs")
-                .withUri("/v2/{project_id}/antiddos/query-config-list")
+        HttpRequestDef.Builder<ListQuotaRequest, ListQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListQuotaRequest.class, ListQuotaResponse.class)
+                .withName("ListQuota")
+                .withUri("/v1/{project_id}/antiddos/quotas")
                 .withContentType("application/json");
 
         // requests
@@ -345,23 +333,24 @@ public class AntiDDoSMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowNewTaskStatusRequest, ShowNewTaskStatusResponse> showNewTaskStatus =
-        genForShowNewTaskStatus();
+    public static final HttpRequestDef<ShowLogConfigRequest, ShowLogConfigResponse> showLogConfig =
+        genForShowLogConfig();
 
-    private static HttpRequestDef<ShowNewTaskStatusRequest, ShowNewTaskStatusResponse> genForShowNewTaskStatus() {
+    private static HttpRequestDef<ShowLogConfigRequest, ShowLogConfigResponse> genForShowLogConfig() {
         // basic
-        HttpRequestDef.Builder<ShowNewTaskStatusRequest, ShowNewTaskStatusResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowNewTaskStatusRequest.class, ShowNewTaskStatusResponse.class)
-                .withName("ShowNewTaskStatus")
-                .withUri("/v2/{project_id}/query-task-status")
+        HttpRequestDef.Builder<ShowLogConfigRequest, ShowLogConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLogConfigRequest.class, ShowLogConfigResponse.class)
+                .withName("ShowLogConfig")
+                .withUri("/v1/{project_id}/antiddos/lts-config")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("task_id",
+        builder.<String>withRequestField("enterprise_project_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowNewTaskStatusRequest::getTaskId, ShowNewTaskStatusRequest::setTaskId));
+            f -> f.withMarshaller(ShowLogConfigRequest::getEnterpriseProjectId,
+                ShowLogConfigRequest::setEnterpriseProjectId));
 
         // response
 
@@ -396,6 +385,40 @@ public class AntiDDoSMeta {
             f -> f.withMarshaller(UpdateDDosRequest::getBody, UpdateDDosRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLogConfigRequest, UpdateLogConfigResponse> updateLogConfig =
+        genForUpdateLogConfig();
+
+    private static HttpRequestDef<UpdateLogConfigRequest, UpdateLogConfigResponse> genForUpdateLogConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateLogConfigRequest, UpdateLogConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLogConfigRequest.class, UpdateLogConfigResponse.class)
+                .withName("UpdateLogConfig")
+                .withUri("/v1/{project_id}/antiddos/lts-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogConfigRequest::getEnterpriseProjectId,
+                UpdateLogConfigRequest::setEnterpriseProjectId));
+        builder.<LtsConfigRequestAndResponse>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LtsConfigRequestAndResponse.class),
+            f -> f.withMarshaller(UpdateLogConfigRequest::getBody, UpdateLogConfigRequest::setBody));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(UpdateLogConfigResponse::getBody, UpdateLogConfigResponse::setBody));
 
         return builder.build();
     }

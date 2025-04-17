@@ -120,6 +120,11 @@ public class NodeSpec {
 
     private String serverEnterpriseProjectID;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "partition")
+
+    private String partition;
+
     public NodeSpec withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
@@ -629,6 +634,23 @@ public class NodeSpec {
         this.serverEnterpriseProjectID = serverEnterpriseProjectID;
     }
 
+    public NodeSpec withPartition(String partition) {
+        this.partition = partition;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 表示节点所属分区。分区可以选择中心云[或者[边缘小站](https://support.huaweicloud.com/usermanual-cloudpond/ies_02_0401.html)。](tag:hws)[或者[边缘小站](https://support.huaweicloud.com/intl/zh-cn/usermanual-cloudpond/ies_02_0401.html)。](tag:hws_hk) **约束限制**： 仅开启了对分布式云支持的Turbo集群支持指定该字段。 **取值范围**： - center: 中心云 - 边缘小站的可用区ID  **默认取值**： 不涉及
+     * @return partition
+     */
+    public String getPartition() {
+        return partition;
+    }
+
+    public void setPartition(String partition) {
+        this.partition = partition;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -650,7 +672,8 @@ public class NodeSpec {
             && Objects.equals(this.initializedConditions, that.initializedConditions)
             && Objects.equals(this.extendParam, that.extendParam)
             && Objects.equals(this.hostnameConfig, that.hostnameConfig)
-            && Objects.equals(this.serverEnterpriseProjectID, that.serverEnterpriseProjectID);
+            && Objects.equals(this.serverEnterpriseProjectID, that.serverEnterpriseProjectID)
+            && Objects.equals(this.partition, that.partition);
     }
 
     @Override
@@ -675,7 +698,8 @@ public class NodeSpec {
             initializedConditions,
             extendParam,
             hostnameConfig,
-            serverEnterpriseProjectID);
+            serverEnterpriseProjectID,
+            partition);
     }
 
     @Override
@@ -703,6 +727,7 @@ public class NodeSpec {
         sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("    hostnameConfig: ").append(toIndentedString(hostnameConfig)).append("\n");
         sb.append("    serverEnterpriseProjectID: ").append(toIndentedString(serverEnterpriseProjectID)).append("\n");
+        sb.append("    partition: ").append(toIndentedString(partition)).append("\n");
         sb.append("}");
         return sb.toString();
     }

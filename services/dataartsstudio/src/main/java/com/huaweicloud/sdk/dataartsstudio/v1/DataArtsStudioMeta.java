@@ -454,6 +454,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryScriptsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryScriptsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskCompletionResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryTaskOverviewRequest;
@@ -7695,6 +7697,49 @@ public class DataArtsStudioMeta {
             String.class,
             f -> f.withMarshaller(ListFactoryReleasePackagesResponse::getXRequestId,
                 ListFactoryReleasePackagesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFactoryScriptsRequest, ListFactoryScriptsResponse> listFactoryScripts =
+        genForListFactoryScripts();
+
+    private static HttpRequestDef<ListFactoryScriptsRequest, ListFactoryScriptsResponse> genForListFactoryScripts() {
+        // basic
+        HttpRequestDef.Builder<ListFactoryScriptsRequest, ListFactoryScriptsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListFactoryScriptsRequest.class, ListFactoryScriptsResponse.class)
+                .withName("ListFactoryScripts")
+                .withUri("/v2/{project_id}/factory/scripts")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryScriptsRequest::getLimit, ListFactoryScriptsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryScriptsRequest::getOffset, ListFactoryScriptsRequest::setOffset));
+        builder.<String>withRequestField("script_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryScriptsRequest::getScriptName, ListFactoryScriptsRequest::setScriptName));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryScriptsRequest::getWorkspace, ListFactoryScriptsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryScriptsRequest::getXProjectId, ListFactoryScriptsRequest::setXProjectId));
+
+        // response
+
         return builder.build();
     }
 

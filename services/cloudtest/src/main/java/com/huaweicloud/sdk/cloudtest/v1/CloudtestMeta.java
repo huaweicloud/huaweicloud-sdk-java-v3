@@ -202,6 +202,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListTestReportsByConditionRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestReportsByConditionResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestTypesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestTypesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasePlansRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasePlansResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasesByProjectIssuesRelationRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTestcasesByProjectIssuesRelationResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListUsageInfosRequest;
@@ -357,6 +359,7 @@ import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanDetail;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanIssueDetail;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestPlanJournalList;
 import com.huaweicloud.sdk.cloudtest.v1.model.TestReportInfoRequestBody;
+import com.huaweicloud.sdk.cloudtest.v1.model.TestcasePlanQueryParam;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateAssetTreeRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateAssetTreeResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.UpdateBasicAwByIdRequest;
@@ -2322,12 +2325,12 @@ public class CloudtestMeta {
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(ListTestReportsByConditionRequest::getPageSize,
                 ListTestReportsByConditionRequest::setPageSize));
-        builder.<Long>withRequestField("offset",
+        builder.<String>withRequestField("page_no",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListTestReportsByConditionRequest::getOffset,
-                ListTestReportsByConditionRequest::setOffset));
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTestReportsByConditionRequest::getPageNo,
+                ListTestReportsByConditionRequest::setPageNo));
         builder.<String>withRequestField("key_word",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -5273,6 +5276,39 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddTestItemInfo.class),
             f -> f.withMarshaller(AddFeatureRequest::getBody, AddFeatureRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTestcasePlansRequest, ListTestcasePlansResponse> listTestcasePlans =
+        genForListTestcasePlans();
+
+    private static HttpRequestDef<ListTestcasePlansRequest, ListTestcasePlansResponse> genForListTestcasePlans() {
+        // basic
+        HttpRequestDef.Builder<ListTestcasePlansRequest, ListTestcasePlansResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListTestcasePlansRequest.class, ListTestcasePlansResponse.class)
+                .withName("ListTestcasePlans")
+                .withUri("/v4/{project_uuid}/branch/{branch_uri}/testcases/plans")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_uuid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTestcasePlansRequest::getProjectUuid, ListTestcasePlansRequest::setProjectUuid));
+        builder.<String>withRequestField("branch_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTestcasePlansRequest::getBranchUri, ListTestcasePlansRequest::setBranchUri));
+        builder.<TestcasePlanQueryParam>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(TestcasePlanQueryParam.class),
+            f -> f.withMarshaller(ListTestcasePlansRequest::getBody, ListTestcasePlansRequest::setBody));
 
         // response
 

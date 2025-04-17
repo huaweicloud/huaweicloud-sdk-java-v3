@@ -39,6 +39,11 @@ public class TransTemplateRsp {
     private Boolean isAutoEncrypt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "additional_manifests")
+
+    private List<AdditionalManifest> additionalManifests = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quality_info_list")
 
     private List<QualityInfoList> qualityInfoList = null;
@@ -141,6 +146,39 @@ public class TransTemplateRsp {
 
     public void setIsAutoEncrypt(Boolean isAutoEncrypt) {
         this.isAutoEncrypt = isAutoEncrypt;
+    }
+
+    public TransTemplateRsp withAdditionalManifests(List<AdditionalManifest> additionalManifests) {
+        this.additionalManifests = additionalManifests;
+        return this;
+    }
+
+    public TransTemplateRsp addAdditionalManifestsItem(AdditionalManifest additionalManifestsItem) {
+        if (this.additionalManifests == null) {
+            this.additionalManifests = new ArrayList<>();
+        }
+        this.additionalManifests.add(additionalManifestsItem);
+        return this;
+    }
+
+    public TransTemplateRsp withAdditionalManifests(Consumer<List<AdditionalManifest>> additionalManifestsSetter) {
+        if (this.additionalManifests == null) {
+            this.additionalManifests = new ArrayList<>();
+        }
+        additionalManifestsSetter.accept(this.additionalManifests);
+        return this;
+    }
+
+    /**
+     * 自定义索引后缀列表。
+     * @return additionalManifests
+     */
+    public List<AdditionalManifest> getAdditionalManifests() {
+        return additionalManifests;
+    }
+
+    public void setAdditionalManifests(List<AdditionalManifest> additionalManifests) {
+        this.additionalManifests = additionalManifests;
     }
 
     public TransTemplateRsp withQualityInfoList(List<QualityInfoList> qualityInfoList) {
@@ -264,6 +302,7 @@ public class TransTemplateRsp {
         return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
             && Objects.equals(this.isDefault, that.isDefault) && Objects.equals(this.type, that.type)
             && Objects.equals(this.isAutoEncrypt, that.isAutoEncrypt)
+            && Objects.equals(this.additionalManifests, that.additionalManifests)
             && Objects.equals(this.qualityInfoList, that.qualityInfoList)
             && Objects.equals(this.watermarkTemplateIds, that.watermarkTemplateIds)
             && Objects.equals(this.description, that.description) && Objects.equals(this.common, that.common);
@@ -276,6 +315,7 @@ public class TransTemplateRsp {
             isDefault,
             type,
             isAutoEncrypt,
+            additionalManifests,
             qualityInfoList,
             watermarkTemplateIds,
             description,
@@ -291,6 +331,7 @@ public class TransTemplateRsp {
         sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    isAutoEncrypt: ").append(toIndentedString(isAutoEncrypt)).append("\n");
+        sb.append("    additionalManifests: ").append(toIndentedString(additionalManifests)).append("\n");
         sb.append("    qualityInfoList: ").append(toIndentedString(qualityInfoList)).append("\n");
         sb.append("    watermarkTemplateIds: ").append(toIndentedString(watermarkTemplateIds)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");

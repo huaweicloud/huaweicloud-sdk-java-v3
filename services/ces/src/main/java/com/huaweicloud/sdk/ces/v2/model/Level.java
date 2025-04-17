@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 import java.util.Objects;
 
 /**
- * 告警级别, 1为紧急，2为重要，3为次要，4为提示
+ * 告警级别, 1为紧急，2为重要，3为次要，4为提示。默认值为2。
  */
 public class Level {
 

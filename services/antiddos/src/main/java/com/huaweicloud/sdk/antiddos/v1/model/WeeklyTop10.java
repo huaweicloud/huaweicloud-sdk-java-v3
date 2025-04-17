@@ -44,6 +44,8 @@ public class WeeklyTop10 {
 
     /**
      * DDoS拦截次数，包括清洗和黑洞
+     * minimum: 0
+     * maximum: 2147483647
      * @return times
      */
     public Integer getTimes() {

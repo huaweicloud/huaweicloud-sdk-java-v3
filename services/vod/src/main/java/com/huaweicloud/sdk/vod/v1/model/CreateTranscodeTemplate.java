@@ -29,6 +29,11 @@ public class CreateTranscodeTemplate {
     private Boolean isAutoEncrypt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "additional_manifests")
+
+    private List<AdditionalManifest> additionalManifests = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quality_info_list")
 
     private List<QualityInfoList> qualityInfoList = null;
@@ -97,6 +102,40 @@ public class CreateTranscodeTemplate {
 
     public void setIsAutoEncrypt(Boolean isAutoEncrypt) {
         this.isAutoEncrypt = isAutoEncrypt;
+    }
+
+    public CreateTranscodeTemplate withAdditionalManifests(List<AdditionalManifest> additionalManifests) {
+        this.additionalManifests = additionalManifests;
+        return this;
+    }
+
+    public CreateTranscodeTemplate addAdditionalManifestsItem(AdditionalManifest additionalManifestsItem) {
+        if (this.additionalManifests == null) {
+            this.additionalManifests = new ArrayList<>();
+        }
+        this.additionalManifests.add(additionalManifestsItem);
+        return this;
+    }
+
+    public CreateTranscodeTemplate withAdditionalManifests(
+        Consumer<List<AdditionalManifest>> additionalManifestsSetter) {
+        if (this.additionalManifests == null) {
+            this.additionalManifests = new ArrayList<>();
+        }
+        additionalManifestsSetter.accept(this.additionalManifests);
+        return this;
+    }
+
+    /**
+     * 自定义索引后缀列表，支持最大设置10个索引后缀。 如果填写索引后缀，则必须指定流名stream_name。 
+     * @return additionalManifests
+     */
+    public List<AdditionalManifest> getAdditionalManifests() {
+        return additionalManifests;
+    }
+
+    public void setAdditionalManifests(List<AdditionalManifest> additionalManifests) {
+        this.additionalManifests = additionalManifests;
     }
 
     public CreateTranscodeTemplate withQualityInfoList(List<QualityInfoList> qualityInfoList) {
@@ -219,6 +258,7 @@ public class CreateTranscodeTemplate {
         CreateTranscodeTemplate that = (CreateTranscodeTemplate) obj;
         return Objects.equals(this.name, that.name) && Objects.equals(this.isDefault, that.isDefault)
             && Objects.equals(this.isAutoEncrypt, that.isAutoEncrypt)
+            && Objects.equals(this.additionalManifests, that.additionalManifests)
             && Objects.equals(this.qualityInfoList, that.qualityInfoList) && Objects.equals(this.common, that.common)
             && Objects.equals(this.watermarkTemplateIds, that.watermarkTemplateIds)
             && Objects.equals(this.description, that.description);
@@ -226,7 +266,14 @@ public class CreateTranscodeTemplate {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, isDefault, isAutoEncrypt, qualityInfoList, common, watermarkTemplateIds, description);
+        return Objects.hash(name,
+            isDefault,
+            isAutoEncrypt,
+            additionalManifests,
+            qualityInfoList,
+            common,
+            watermarkTemplateIds,
+            description);
     }
 
     @Override
@@ -236,6 +283,7 @@ public class CreateTranscodeTemplate {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    isDefault: ").append(toIndentedString(isDefault)).append("\n");
         sb.append("    isAutoEncrypt: ").append(toIndentedString(isAutoEncrypt)).append("\n");
+        sb.append("    additionalManifests: ").append(toIndentedString(additionalManifests)).append("\n");
         sb.append("    qualityInfoList: ").append(toIndentedString(qualityInfoList)).append("\n");
         sb.append("    common: ").append(toIndentedString(common)).append("\n");
         sb.append("    watermarkTemplateIds: ").append(toIndentedString(watermarkTemplateIds)).append("\n");

@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.ces.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -93,10 +98,80 @@ public class ListAlarmResponseAlarms {
 
     private String productName;
 
+    /**
+     * 产品层级跨纬规则需要指明为产品层级规则，resource_level取值为product即为产品层级跨纬规则，不填或者取值为dimension则为旧的规则类型
+     */
+    public static final class ResourceLevelEnum {
+
+        /**
+         * Enum PRODUCT for value: "product"
+         */
+        public static final ResourceLevelEnum PRODUCT = new ResourceLevelEnum("product");
+
+        /**
+         * Enum DIMENSION for value: "dimension"
+         */
+        public static final ResourceLevelEnum DIMENSION = new ResourceLevelEnum("dimension");
+
+        private static final Map<String, ResourceLevelEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ResourceLevelEnum> createStaticFields() {
+            Map<String, ResourceLevelEnum> map = new HashMap<>();
+            map.put("product", PRODUCT);
+            map.put("dimension", DIMENSION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ResourceLevelEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ResourceLevelEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceLevelEnum(value));
+        }
+
+        public static ResourceLevelEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ResourceLevelEnum) {
+                return this.value.equals(((ResourceLevelEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resource_level")
 
-    private ResourceLevel resourceLevel;
+    private ResourceLevelEnum resourceLevel;
 
     public ListAlarmResponseAlarms withAlarmId(String alarmId) {
         this.alarmId = alarmId;
@@ -389,7 +464,7 @@ public class ListAlarmResponseAlarms {
     }
 
     /**
-     * 企业项目ID，不填时会使用默认的企业项目ID
+     * 企业项目ID
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -406,7 +481,7 @@ public class ListAlarmResponseAlarms {
     }
 
     /**
-     * 告警规则关联告警模板ID
+     * 告警规则关联告警模板ID，如果传了，告警规则关联的策略会和告警模板策略联动变化
      * @return alarmTemplateId
      */
     public String getAlarmTemplateId() {
@@ -423,7 +498,7 @@ public class ListAlarmResponseAlarms {
     }
 
     /**
-     * 产品层级跨纬规则创建时需要指明的规则产品名称，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"
+     * 产品层级跨纬规则需要指明的规则产品名称，一般由\"服务命名空间,服务首层维度名称\"组成，如\"SYS.ECS,instance_id\"
      * @return productName
      */
     public String getProductName() {
@@ -434,20 +509,20 @@ public class ListAlarmResponseAlarms {
         this.productName = productName;
     }
 
-    public ListAlarmResponseAlarms withResourceLevel(ResourceLevel resourceLevel) {
+    public ListAlarmResponseAlarms withResourceLevel(ResourceLevelEnum resourceLevel) {
         this.resourceLevel = resourceLevel;
         return this;
     }
 
     /**
-     * Get resourceLevel
+     * 产品层级跨纬规则需要指明为产品层级规则，resource_level取值为product即为产品层级跨纬规则，不填或者取值为dimension则为旧的规则类型
      * @return resourceLevel
      */
-    public ResourceLevel getResourceLevel() {
+    public ResourceLevelEnum getResourceLevel() {
         return resourceLevel;
     }
 
-    public void setResourceLevel(ResourceLevel resourceLevel) {
+    public void setResourceLevel(ResourceLevelEnum resourceLevel) {
         this.resourceLevel = resourceLevel;
     }
 

@@ -23,11 +23,6 @@ public class CreateAlarmTemplateRequestBody {
 
     private String templateName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "template_description")
-
-    private String templateDescription;
-
     /**
      * 自定义告警模板类型 0：指标 2： 事件
      */
@@ -104,6 +99,16 @@ public class CreateAlarmTemplateRequestBody {
     private TemplateTypeEnum templateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_description")
+
+    private String templateDescription;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_overwrite")
+
+    private Boolean isOverwrite;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
     private List<Policies> policies = null;
@@ -125,6 +130,23 @@ public class CreateAlarmTemplateRequestBody {
         this.templateName = templateName;
     }
 
+    public CreateAlarmTemplateRequestBody withTemplateType(TemplateTypeEnum templateType) {
+        this.templateType = templateType;
+        return this;
+    }
+
+    /**
+     * 自定义告警模板类型 0：指标 2： 事件
+     * @return templateType
+     */
+    public TemplateTypeEnum getTemplateType() {
+        return templateType;
+    }
+
+    public void setTemplateType(TemplateTypeEnum templateType) {
+        this.templateType = templateType;
+    }
+
     public CreateAlarmTemplateRequestBody withTemplateDescription(String templateDescription) {
         this.templateDescription = templateDescription;
         return this;
@@ -142,21 +164,21 @@ public class CreateAlarmTemplateRequestBody {
         this.templateDescription = templateDescription;
     }
 
-    public CreateAlarmTemplateRequestBody withTemplateType(TemplateTypeEnum templateType) {
-        this.templateType = templateType;
+    public CreateAlarmTemplateRequestBody withIsOverwrite(Boolean isOverwrite) {
+        this.isOverwrite = isOverwrite;
         return this;
     }
 
     /**
-     * 自定义告警模板类型 0：指标 2： 事件
-     * @return templateType
+     * 是否对模板名称已经存在的告警模板进行覆盖。true:覆盖同名告警模板；false：不覆盖，新建告警模板。
+     * @return isOverwrite
      */
-    public TemplateTypeEnum getTemplateType() {
-        return templateType;
+    public Boolean getIsOverwrite() {
+        return isOverwrite;
     }
 
-    public void setTemplateType(TemplateTypeEnum templateType) {
-        this.templateType = templateType;
+    public void setIsOverwrite(Boolean isOverwrite) {
+        this.isOverwrite = isOverwrite;
     }
 
     public CreateAlarmTemplateRequestBody withPolicies(List<Policies> policies) {
@@ -202,13 +224,14 @@ public class CreateAlarmTemplateRequestBody {
         }
         CreateAlarmTemplateRequestBody that = (CreateAlarmTemplateRequestBody) obj;
         return Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateType, that.templateType)
             && Objects.equals(this.templateDescription, that.templateDescription)
-            && Objects.equals(this.templateType, that.templateType) && Objects.equals(this.policies, that.policies);
+            && Objects.equals(this.isOverwrite, that.isOverwrite) && Objects.equals(this.policies, that.policies);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(templateName, templateDescription, templateType, policies);
+        return Objects.hash(templateName, templateType, templateDescription, isOverwrite, policies);
     }
 
     @Override
@@ -216,8 +239,9 @@ public class CreateAlarmTemplateRequestBody {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateAlarmTemplateRequestBody {\n");
         sb.append("    templateName: ").append(toIndentedString(templateName)).append("\n");
-        sb.append("    templateDescription: ").append(toIndentedString(templateDescription)).append("\n");
         sb.append("    templateType: ").append(toIndentedString(templateType)).append("\n");
+        sb.append("    templateDescription: ").append(toIndentedString(templateDescription)).append("\n");
+        sb.append("    isOverwrite: ").append(toIndentedString(isOverwrite)).append("\n");
         sb.append("    policies: ").append(toIndentedString(policies)).append("\n");
         sb.append("}");
         return sb.toString();

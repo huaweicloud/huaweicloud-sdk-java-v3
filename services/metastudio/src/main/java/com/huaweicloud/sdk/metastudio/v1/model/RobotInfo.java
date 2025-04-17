@@ -120,6 +120,16 @@ public class RobotInfo {
 
     private Boolean enableQuestionAudit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asr_type")
+
+    private AsrTypeEnum asrType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "asr_account")
+
+    private String asrAccount;
+
     public RobotInfo withRobotId(String robotId) {
         this.robotId = robotId;
         return this;
@@ -194,7 +204,7 @@ public class RobotInfo {
     }
 
     /**
-     * 对接第三方应用厂商类型。 > 0：科大讯飞AIUI；1：华为云CBS；2：科大讯飞星火交互认知大模型；5：第三方驱动；6：第三方语言模型；8：奇妙问
+     * 对接第三方应用厂商类型。 > 0：科大讯飞AIUI；1：华为云CBS；2：科大讯飞星火交互认知大模型；5：第三方驱动；6：第三方语言模型；7：交互助手；8：奇妙问
      * minimum: 0
      * maximum: 32
      * @return appType
@@ -504,6 +514,40 @@ public class RobotInfo {
         this.enableQuestionAudit = enableQuestionAudit;
     }
 
+    public RobotInfo withAsrType(AsrTypeEnum asrType) {
+        this.asrType = asrType;
+        return this;
+    }
+
+    /**
+     * Get asrType
+     * @return asrType
+     */
+    public AsrTypeEnum getAsrType() {
+        return asrType;
+    }
+
+    public void setAsrType(AsrTypeEnum asrType) {
+        this.asrType = asrType;
+    }
+
+    public RobotInfo withAsrAccount(String asrAccount) {
+        this.asrAccount = asrAccount;
+        return this;
+    }
+
+    /**
+     * ASR帐号。
+     * @return asrAccount
+     */
+    public String getAsrAccount() {
+        return asrAccount;
+    }
+
+    public void setAsrAccount(String asrAccount) {
+        this.asrAccount = asrAccount;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -525,7 +569,8 @@ public class RobotInfo {
             && Objects.equals(this.tailSilenceTime, that.tailSilenceTime) && Objects.equals(this.roleId, that.roleId)
             && Objects.equals(this.sisRegion, that.sisRegion) && Objects.equals(this.sisProjectId, that.sisProjectId)
             && Objects.equals(this.enableHotWords, that.enableHotWords)
-            && Objects.equals(this.enableQuestionAudit, that.enableQuestionAudit);
+            && Objects.equals(this.enableQuestionAudit, that.enableQuestionAudit)
+            && Objects.equals(this.asrType, that.asrType) && Objects.equals(this.asrAccount, that.asrAccount);
     }
 
     @Override
@@ -551,7 +596,9 @@ public class RobotInfo {
             sisRegion,
             sisProjectId,
             enableHotWords,
-            enableQuestionAudit);
+            enableQuestionAudit,
+            asrType,
+            asrAccount);
     }
 
     @Override
@@ -580,6 +627,8 @@ public class RobotInfo {
         sb.append("    sisProjectId: ").append(toIndentedString(sisProjectId)).append("\n");
         sb.append("    enableHotWords: ").append(toIndentedString(enableHotWords)).append("\n");
         sb.append("    enableQuestionAudit: ").append(toIndentedString(enableQuestionAudit)).append("\n");
+        sb.append("    asrType: ").append(toIndentedString(asrType)).append("\n");
+        sb.append("    asrAccount: ").append(toIndentedString(asrAccount)).append("\n");
         sb.append("}");
         return sb.toString();
     }
