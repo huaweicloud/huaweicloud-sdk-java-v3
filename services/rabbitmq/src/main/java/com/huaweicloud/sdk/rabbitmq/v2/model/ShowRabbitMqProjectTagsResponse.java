@@ -41,7 +41,7 @@ public class ShowRabbitMqProjectTagsResponse extends SdkResponse {
     }
 
     /**
-     * 标签列表
+     * **参数解释**： 标签列表。
      * @return tags
      */
     public List<TagMultyValueEntity> getTags() {

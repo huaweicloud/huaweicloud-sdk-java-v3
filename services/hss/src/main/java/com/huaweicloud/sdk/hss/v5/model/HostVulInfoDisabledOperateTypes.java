@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * VulHostInfoDisabledOperateTypes
+ * HostVulInfoDisabledOperateTypes
  */
-public class VulHostInfoDisabledOperateTypes {
+public class HostVulInfoDisabledOperateTypes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "operate_type")
@@ -20,7 +20,7 @@ public class VulHostInfoDisabledOperateTypes {
 
     private String reason;
 
-    public VulHostInfoDisabledOperateTypes withOperateType(String operateType) {
+    public HostVulInfoDisabledOperateTypes withOperateType(String operateType) {
         this.operateType = operateType;
         return this;
     }
@@ -37,7 +37,7 @@ public class VulHostInfoDisabledOperateTypes {
         this.operateType = operateType;
     }
 
-    public VulHostInfoDisabledOperateTypes withReason(String reason) {
+    public HostVulInfoDisabledOperateTypes withReason(String reason) {
         this.reason = reason;
         return this;
     }
@@ -62,7 +62,7 @@ public class VulHostInfoDisabledOperateTypes {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VulHostInfoDisabledOperateTypes that = (VulHostInfoDisabledOperateTypes) obj;
+        HostVulInfoDisabledOperateTypes that = (HostVulInfoDisabledOperateTypes) obj;
         return Objects.equals(this.operateType, that.operateType) && Objects.equals(this.reason, that.reason);
     }
 
@@ -74,7 +74,7 @@ public class VulHostInfoDisabledOperateTypes {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class VulHostInfoDisabledOperateTypes {\n");
+        sb.append("class HostVulInfoDisabledOperateTypes {\n");
         sb.append("    operateType: ").append(toIndentedString(operateType)).append("\n");
         sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("}");

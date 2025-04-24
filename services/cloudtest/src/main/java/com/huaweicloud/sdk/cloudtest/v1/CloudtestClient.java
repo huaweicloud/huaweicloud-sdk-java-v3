@@ -1,9 +1,13 @@
 package com.huaweicloud.sdk.cloudtest.v1;
 
+import com.huaweicloud.sdk.cloudtest.v1.model.AddCaseResultFourRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddCaseResultFourResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseResultLogRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseResultLogResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddRelationsByOneCaseResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.BatchAddResourcesForIteratorRequest;
@@ -332,6 +336,35 @@ public class CloudtestClient {
     }
 
     /**
+     * 设置用例结果
+     *
+     * 设置用例结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddCaseResultFourRequest 请求对象
+     * @return AddCaseResultFourResponse
+     */
+    public AddCaseResultFourResponse addCaseResultFour(AddCaseResultFourRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.addCaseResultFour);
+    }
+
+    /**
+     * 设置用例结果
+     *
+     * 设置用例结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddCaseResultFourRequest 请求对象
+     * @return SyncInvoker<AddCaseResultFourRequest, AddCaseResultFourResponse>
+     */
+    public SyncInvoker<AddCaseResultFourRequest, AddCaseResultFourResponse> addCaseResultFourInvoker(
+        AddCaseResultFourRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.addCaseResultFour, hcClient);
+    }
+
+    /**
      * 新增用例评论
      *
      * 新增用例评论
@@ -358,6 +391,35 @@ public class CloudtestClient {
     public SyncInvoker<AddTestCaseCommentRequest, AddTestCaseCommentResponse> addTestCaseCommentInvoker(
         AddTestCaseCommentRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.addTestCaseComment, hcClient);
+    }
+
+    /**
+     * 初始化用例执行记录
+     *
+     * 初始化用例执行记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddTestCaseResultLogRequest 请求对象
+     * @return AddTestCaseResultLogResponse
+     */
+    public AddTestCaseResultLogResponse addTestCaseResultLog(AddTestCaseResultLogRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.addTestCaseResultLog);
+    }
+
+    /**
+     * 初始化用例执行记录
+     *
+     * 初始化用例执行记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AddTestCaseResultLogRequest 请求对象
+     * @return SyncInvoker<AddTestCaseResultLogRequest, AddTestCaseResultLogResponse>
+     */
+    public SyncInvoker<AddTestCaseResultLogRequest, AddTestCaseResultLogResponse> addTestCaseResultLogInvoker(
+        AddTestCaseResultLogRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.addTestCaseResultLog, hcClient);
     }
 
     /**

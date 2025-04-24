@@ -1,4 +1,4 @@
-package com.huaweicloud.sdk.eg.v1.model;
+package com.huaweicloud.sdk.ims.v2.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,43 +9,43 @@ import java.util.function.Consumer;
 /**
  * Request Object
  */
-public class OperateSubscriptionRequest {
+public class BatchDeleteTagsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enterprise_project_id")
+    @JsonProperty(value = "image_id")
 
-    private String enterpriseProjectId;
+    private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private SubscriptionOperateReq body;
+    private BatchDeleteTagsRequestBody body;
 
-    public OperateSubscriptionRequest withEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
+    public BatchDeleteTagsRequest withImageId(String imageId) {
+        this.imageId = imageId;
         return this;
     }
 
     /**
-     * 创建订阅时所使用的企业项目id
-     * @return enterpriseProjectId
+     * 镜像ID。
+     * @return imageId
      */
-    public String getEnterpriseProjectId() {
-        return enterpriseProjectId;
+    public String getImageId() {
+        return imageId;
     }
 
-    public void setEnterpriseProjectId(String enterpriseProjectId) {
-        this.enterpriseProjectId = enterpriseProjectId;
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
     }
 
-    public OperateSubscriptionRequest withBody(SubscriptionOperateReq body) {
+    public BatchDeleteTagsRequest withBody(BatchDeleteTagsRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public OperateSubscriptionRequest withBody(Consumer<SubscriptionOperateReq> bodySetter) {
+    public BatchDeleteTagsRequest withBody(Consumer<BatchDeleteTagsRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new SubscriptionOperateReq();
+            this.body = new BatchDeleteTagsRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class OperateSubscriptionRequest {
      * Get body
      * @return body
      */
-    public SubscriptionOperateReq getBody() {
+    public BatchDeleteTagsRequestBody getBody() {
         return body;
     }
 
-    public void setBody(SubscriptionOperateReq body) {
+    public void setBody(BatchDeleteTagsRequestBody body) {
         this.body = body;
     }
 
@@ -72,21 +72,20 @@ public class OperateSubscriptionRequest {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperateSubscriptionRequest that = (OperateSubscriptionRequest) obj;
-        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.body, that.body);
+        BatchDeleteTagsRequest that = (BatchDeleteTagsRequest) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enterpriseProjectId, body);
+        return Objects.hash(imageId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class OperateSubscriptionRequest {\n");
-        sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("class BatchDeleteTagsRequest {\n");
+        sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

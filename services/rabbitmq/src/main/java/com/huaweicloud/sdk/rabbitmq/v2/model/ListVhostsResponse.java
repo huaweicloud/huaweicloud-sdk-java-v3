@@ -35,7 +35,7 @@ public class ListVhostsResponse extends SdkResponse {
     }
 
     /**
-     * 当前显示数量
+     * **参数解释**： 当前显示的Vhost数量 **取值范围**： 不涉及。
      * @return size
      */
     public Integer getSize() {
@@ -52,7 +52,7 @@ public class ListVhostsResponse extends SdkResponse {
     }
 
     /**
-     * 查询结果总数
+     * **参数解释**： 查询到的Vhost总数 **取值范围**： 不涉及。
      * @return total
      */
     public Integer getTotal() {
@@ -85,7 +85,7 @@ public class ListVhostsResponse extends SdkResponse {
     }
 
     /**
-     * 查询的Vhost信息列表
+     * **参数解释**： 查询的Vhost信息列表
      * @return items
      */
     public List<ShowVhostDetailResp> getItems() {

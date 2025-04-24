@@ -164,6 +164,16 @@ public class LoadBalancer {
     private String l7ScaleFlavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "gw_flavor_id")
+
+    private String gwFlavorId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "loadbalancer_type")
+
+    private String loadbalancerType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicips")
 
     private List<PublicIpInfo> publicips = null;
@@ -264,11 +274,6 @@ public class LoadBalancer {
     private String frozenScene;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ipv6_bandwidth")
-
-    private BandwidthRef ipv6Bandwidth;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deletion_protection_enable")
 
     private Boolean deletionProtectionEnable;
@@ -287,6 +292,96 @@ public class LoadBalancer {
     @JsonProperty(value = "charge_mode")
 
     private String chargeMode;
+
+    /**
+     * 参数解释：lb 模式，默认为lb，ep模式LB支持跨租户访问。  不支持该字段，请勿使用。
+     */
+    public static final class ServiceLbModeEnum {
+
+        /**
+         * Enum LB for value: "lb"
+         */
+        public static final ServiceLbModeEnum LB = new ServiceLbModeEnum("lb");
+
+        /**
+         * Enum EP for value: "ep"
+         */
+        public static final ServiceLbModeEnum EP = new ServiceLbModeEnum("ep");
+
+        private static final Map<String, ServiceLbModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ServiceLbModeEnum> createStaticFields() {
+            Map<String, ServiceLbModeEnum> map = new HashMap<>();
+            map.put("lb", LB);
+            map.put("ep", EP);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ServiceLbModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ServiceLbModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceLbModeEnum(value));
+        }
+
+        public static ServiceLbModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ServiceLbModeEnum) {
+                return this.value.equals(((ServiceLbModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "service_lb_mode")
+
+    private ServiceLbModeEnum serviceLbMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_type")
+
+    private String instanceType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "instance_id")
+
+    private String instanceId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "proxy_protocol_extensions")
+
+    private List<ProxyProtocolExtension> proxyProtocolExtensions = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "waf_failure_action")
@@ -956,6 +1051,40 @@ public class LoadBalancer {
         this.l7ScaleFlavorId = l7ScaleFlavorId;
     }
 
+    public LoadBalancer withGwFlavorId(String gwFlavorId) {
+        this.gwFlavorId = gwFlavorId;
+        return this;
+    }
+
+    /**
+     * 网关型LB的Flavor ID。  [使用说明：当gw_flavor_id不传时，会使用默认gateway flavor （默认gateway flavor根据不同局点有所不同，具体以实际值为准）。 ](tag:hws,hws_hk,hws_eu,ocb,ctc,hcs,g42,tm,cmcc,hk_g42,hws_ocb)  不支持该字段，请勿使用。
+     * @return gwFlavorId
+     */
+    public String getGwFlavorId() {
+        return gwFlavorId;
+    }
+
+    public void setGwFlavorId(String gwFlavorId) {
+        this.gwFlavorId = gwFlavorId;
+    }
+
+    public LoadBalancer withLoadbalancerType(String loadbalancerType) {
+        this.loadbalancerType = loadbalancerType;
+        return this;
+    }
+
+    /**
+     * 参数解释：负载均衡器类别。  取值范围： - gateway 表示网关类型负载均衡器。 - null 表示其他非网关类型负载均衡器。  默认取值：null。  不支持该字段，请勿使用。
+     * @return loadbalancerType
+     */
+    public String getLoadbalancerType() {
+        return loadbalancerType;
+    }
+
+    public void setLoadbalancerType(String loadbalancerType) {
+        this.loadbalancerType = loadbalancerType;
+    }
+
     public LoadBalancer withPublicips(List<PublicIpInfo> publicips) {
         this.publicips = publicips;
         return this;
@@ -1106,32 +1235,6 @@ public class LoadBalancer {
         this.frozenScene = frozenScene;
     }
 
-    public LoadBalancer withIpv6Bandwidth(BandwidthRef ipv6Bandwidth) {
-        this.ipv6Bandwidth = ipv6Bandwidth;
-        return this;
-    }
-
-    public LoadBalancer withIpv6Bandwidth(Consumer<BandwidthRef> ipv6BandwidthSetter) {
-        if (this.ipv6Bandwidth == null) {
-            this.ipv6Bandwidth = new BandwidthRef();
-            ipv6BandwidthSetter.accept(this.ipv6Bandwidth);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get ipv6Bandwidth
-     * @return ipv6Bandwidth
-     */
-    public BandwidthRef getIpv6Bandwidth() {
-        return ipv6Bandwidth;
-    }
-
-    public void setIpv6Bandwidth(BandwidthRef ipv6Bandwidth) {
-        this.ipv6Bandwidth = ipv6Bandwidth;
-    }
-
     public LoadBalancer withDeletionProtectionEnable(Boolean deletionProtectionEnable) {
         this.deletionProtectionEnable = deletionProtectionEnable;
         return this;
@@ -1198,7 +1301,7 @@ public class LoadBalancer {
     }
 
     /**
-     * 参数解释：负载均衡器实例的计费模式。  取值范围： - flavor：按规格计费 - lcu：按使用量计费 - 空值：若是共享型表示免费实例。若是独享型则与flavor模式一致，都是按规格计费。
+     * 参数解释：负载均衡器实例的计费模式。  取值范围： - flavor：按规格计费 - lcu：按使用量计费 - 空值：若是共享型表示免费实例。若是独享型则与flavor模式一致，都是按规格计费。  [不支持该字段，请勿使用。](tag:hws_hk,hws_eu,hws_eu_wb,hws_test,fcs,dt,hcso_dt,ctc,cmcc,tm,sbc,hk_sbc,hk_tm,hk_vdf,srg,g42,hk_g42)
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -1207,6 +1310,91 @@ public class LoadBalancer {
 
     public void setChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
+    }
+
+    public LoadBalancer withServiceLbMode(ServiceLbModeEnum serviceLbMode) {
+        this.serviceLbMode = serviceLbMode;
+        return this;
+    }
+
+    /**
+     * 参数解释：lb 模式，默认为lb，ep模式LB支持跨租户访问。  不支持该字段，请勿使用。
+     * @return serviceLbMode
+     */
+    public ServiceLbModeEnum getServiceLbMode() {
+        return serviceLbMode;
+    }
+
+    public void setServiceLbMode(ServiceLbModeEnum serviceLbMode) {
+        this.serviceLbMode = serviceLbMode;
+    }
+
+    public LoadBalancer withInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+        return this;
+    }
+
+    /**
+     * 参数解释：标识实例归属哪个内部服务。  不支持该字段，请勿使用。
+     * @return instanceType
+     */
+    public String getInstanceType() {
+        return instanceType;
+    }
+
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    public LoadBalancer withInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+        return this;
+    }
+
+    /**
+     * 参数解释：标识实例绑定内部服务的实例id。  不支持该字段，请勿使用。
+     * @return instanceId
+     */
+    public String getInstanceId() {
+        return instanceId;
+    }
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    public LoadBalancer withProxyProtocolExtensions(List<ProxyProtocolExtension> proxyProtocolExtensions) {
+        this.proxyProtocolExtensions = proxyProtocolExtensions;
+        return this;
+    }
+
+    public LoadBalancer addProxyProtocolExtensionsItem(ProxyProtocolExtension proxyProtocolExtensionsItem) {
+        if (this.proxyProtocolExtensions == null) {
+            this.proxyProtocolExtensions = new ArrayList<>();
+        }
+        this.proxyProtocolExtensions.add(proxyProtocolExtensionsItem);
+        return this;
+    }
+
+    public LoadBalancer withProxyProtocolExtensions(
+        Consumer<List<ProxyProtocolExtension>> proxyProtocolExtensionsSetter) {
+        if (this.proxyProtocolExtensions == null) {
+            this.proxyProtocolExtensions = new ArrayList<>();
+        }
+        proxyProtocolExtensionsSetter.accept(this.proxyProtocolExtensions);
+        return this;
+    }
+
+    /**
+     * 参数解释：pp扩展。  不支持该字段，请勿使用。
+     * @return proxyProtocolExtensions
+     */
+    public List<ProxyProtocolExtension> getProxyProtocolExtensions() {
+        return proxyProtocolExtensions;
+    }
+
+    public void setProxyProtocolExtensions(List<ProxyProtocolExtension> proxyProtocolExtensions) {
+        this.proxyProtocolExtensions = proxyProtocolExtensions;
     }
 
     public LoadBalancer withWafFailureAction(String wafFailureAction) {
@@ -1323,16 +1511,20 @@ public class LoadBalancer {
             && Objects.equals(this.l4ScaleFlavorId, that.l4ScaleFlavorId)
             && Objects.equals(this.l7FlavorId, that.l7FlavorId)
             && Objects.equals(this.l7ScaleFlavorId, that.l7ScaleFlavorId)
+            && Objects.equals(this.gwFlavorId, that.gwFlavorId)
+            && Objects.equals(this.loadbalancerType, that.loadbalancerType)
             && Objects.equals(this.publicips, that.publicips) && Objects.equals(this.globalEips, that.globalEips)
             && Objects.equals(this.elbVirsubnetIds, that.elbVirsubnetIds)
             && Objects.equals(this.elbVirsubnetType, that.elbVirsubnetType)
             && Objects.equals(this.ipTargetEnable, that.ipTargetEnable)
             && Objects.equals(this.frozenScene, that.frozenScene)
-            && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth)
             && Objects.equals(this.deletionProtectionEnable, that.deletionProtectionEnable)
             && Objects.equals(this.autoscaling, that.autoscaling)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
             && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.serviceLbMode, that.serviceLbMode)
+            && Objects.equals(this.instanceType, that.instanceType) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.proxyProtocolExtensions, that.proxyProtocolExtensions)
             && Objects.equals(this.wafFailureAction, that.wafFailureAction)
             && Objects.equals(this.protectionStatus, that.protectionStatus)
             && Objects.equals(this.protectionReason, that.protectionReason)
@@ -1370,17 +1562,22 @@ public class LoadBalancer {
             l4ScaleFlavorId,
             l7FlavorId,
             l7ScaleFlavorId,
+            gwFlavorId,
+            loadbalancerType,
             publicips,
             globalEips,
             elbVirsubnetIds,
             elbVirsubnetType,
             ipTargetEnable,
             frozenScene,
-            ipv6Bandwidth,
             deletionProtectionEnable,
             autoscaling,
             publicBorderGroup,
             chargeMode,
+            serviceLbMode,
+            instanceType,
+            instanceId,
+            proxyProtocolExtensions,
             wafFailureAction,
             protectionStatus,
             protectionReason,
@@ -1421,17 +1618,22 @@ public class LoadBalancer {
         sb.append("    l4ScaleFlavorId: ").append(toIndentedString(l4ScaleFlavorId)).append("\n");
         sb.append("    l7FlavorId: ").append(toIndentedString(l7FlavorId)).append("\n");
         sb.append("    l7ScaleFlavorId: ").append(toIndentedString(l7ScaleFlavorId)).append("\n");
+        sb.append("    gwFlavorId: ").append(toIndentedString(gwFlavorId)).append("\n");
+        sb.append("    loadbalancerType: ").append(toIndentedString(loadbalancerType)).append("\n");
         sb.append("    publicips: ").append(toIndentedString(publicips)).append("\n");
         sb.append("    globalEips: ").append(toIndentedString(globalEips)).append("\n");
         sb.append("    elbVirsubnetIds: ").append(toIndentedString(elbVirsubnetIds)).append("\n");
         sb.append("    elbVirsubnetType: ").append(toIndentedString(elbVirsubnetType)).append("\n");
         sb.append("    ipTargetEnable: ").append(toIndentedString(ipTargetEnable)).append("\n");
         sb.append("    frozenScene: ").append(toIndentedString(frozenScene)).append("\n");
-        sb.append("    ipv6Bandwidth: ").append(toIndentedString(ipv6Bandwidth)).append("\n");
         sb.append("    deletionProtectionEnable: ").append(toIndentedString(deletionProtectionEnable)).append("\n");
         sb.append("    autoscaling: ").append(toIndentedString(autoscaling)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("    chargeMode: ").append(toIndentedString(chargeMode)).append("\n");
+        sb.append("    serviceLbMode: ").append(toIndentedString(serviceLbMode)).append("\n");
+        sb.append("    instanceType: ").append(toIndentedString(instanceType)).append("\n");
+        sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    proxyProtocolExtensions: ").append(toIndentedString(proxyProtocolExtensions)).append("\n");
         sb.append("    wafFailureAction: ").append(toIndentedString(wafFailureAction)).append("\n");
         sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
         sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");

@@ -126,7 +126,7 @@ public class HostVulInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disabled_operate_types")
 
-    private List<VulHostInfoDisabledOperateTypes> disabledOperateTypes = null;
+    private List<HostVulInfoDisabledOperateTypes> disabledOperateTypes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repair_priority")
@@ -561,12 +561,12 @@ public class HostVulInfo {
         this.supportRestore = supportRestore;
     }
 
-    public HostVulInfo withDisabledOperateTypes(List<VulHostInfoDisabledOperateTypes> disabledOperateTypes) {
+    public HostVulInfo withDisabledOperateTypes(List<HostVulInfoDisabledOperateTypes> disabledOperateTypes) {
         this.disabledOperateTypes = disabledOperateTypes;
         return this;
     }
 
-    public HostVulInfo addDisabledOperateTypesItem(VulHostInfoDisabledOperateTypes disabledOperateTypesItem) {
+    public HostVulInfo addDisabledOperateTypesItem(HostVulInfoDisabledOperateTypes disabledOperateTypesItem) {
         if (this.disabledOperateTypes == null) {
             this.disabledOperateTypes = new ArrayList<>();
         }
@@ -575,7 +575,7 @@ public class HostVulInfo {
     }
 
     public HostVulInfo withDisabledOperateTypes(
-        Consumer<List<VulHostInfoDisabledOperateTypes>> disabledOperateTypesSetter) {
+        Consumer<List<HostVulInfoDisabledOperateTypes>> disabledOperateTypesSetter) {
         if (this.disabledOperateTypes == null) {
             this.disabledOperateTypes = new ArrayList<>();
         }
@@ -587,11 +587,11 @@ public class HostVulInfo {
      * 该漏洞不可进行的操作类型列表
      * @return disabledOperateTypes
      */
-    public List<VulHostInfoDisabledOperateTypes> getDisabledOperateTypes() {
+    public List<HostVulInfoDisabledOperateTypes> getDisabledOperateTypes() {
         return disabledOperateTypes;
     }
 
-    public void setDisabledOperateTypes(List<VulHostInfoDisabledOperateTypes> disabledOperateTypes) {
+    public void setDisabledOperateTypes(List<HostVulInfoDisabledOperateTypes> disabledOperateTypes) {
         this.disabledOperateTypes = disabledOperateTypes;
     }
 

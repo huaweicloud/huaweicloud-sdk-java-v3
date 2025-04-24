@@ -147,6 +147,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarrocksInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarrocksInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaurusDbNodeProcessesRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaurusDbNodeProcessesRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaurusDbNodeProcessesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DownloadSlowLogFileRequest;
@@ -238,6 +241,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDbParametersRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDbParametersResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarrocksInstanceInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarrocksInstanceInfoResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListTaurusDbNodeProcessesRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListTaurusDbNodeProcessesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.LtsLogErrorQueryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.LtsLogSlowQueryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAliasRequest;
@@ -1576,6 +1581,40 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> deleteSqlFilterRule =
+        genForDeleteSqlFilterRule();
+
+    private static HttpRequestDef<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> genForDeleteSqlFilterRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteSqlFilterRuleRequest.class, DeleteSqlFilterRuleResponse.class)
+            .withName("DeleteSqlFilterRule")
+            .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/rules")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getInstanceId,
+                DeleteSqlFilterRuleRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getXLanguage, DeleteSqlFilterRuleRequest::setXLanguage));
+        builder.<DeleteSqlFilterRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteSqlFilterRuleReq.class),
+            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getBody, DeleteSqlFilterRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteTaskRecordRequest, DeleteTaskRecordResponse> deleteTaskRecord =
         genForDeleteTaskRecord();
 
@@ -1605,6 +1644,51 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(DeleteTaskRecordResponse::getBody, DeleteTaskRecordResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTaurusDbNodeProcessesRequest, DeleteTaurusDbNodeProcessesResponse> deleteTaurusDbNodeProcesses =
+        genForDeleteTaurusDbNodeProcesses();
+
+    private static HttpRequestDef<DeleteTaurusDbNodeProcessesRequest, DeleteTaurusDbNodeProcessesResponse> genForDeleteTaurusDbNodeProcesses() {
+        // basic
+        HttpRequestDef.Builder<DeleteTaurusDbNodeProcessesRequest, DeleteTaurusDbNodeProcessesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteTaurusDbNodeProcessesRequest.class,
+                    DeleteTaurusDbNodeProcessesResponse.class)
+                .withName("DeleteTaurusDbNodeProcesses")
+                .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/processes")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTaurusDbNodeProcessesRequest::getInstanceId,
+                DeleteTaurusDbNodeProcessesRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTaurusDbNodeProcessesRequest::getNodeId,
+                DeleteTaurusDbNodeProcessesRequest::setNodeId));
+        builder.<DeleteTaurusDbNodeProcessesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteTaurusDbNodeProcessesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(DeleteTaurusDbNodeProcessesRequest::getXLanguage,
+                DeleteTaurusDbNodeProcessesRequest::setXLanguage));
+        builder.<DeleteTaurusDbNodeProcessesRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DeleteTaurusDbNodeProcessesRequestBody.class),
+            f -> f.withMarshaller(DeleteTaurusDbNodeProcessesRequest::getBody,
+                DeleteTaurusDbNodeProcessesRequest::setBody));
+
+        // response
 
         return builder.build();
     }
@@ -2838,6 +2922,57 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListTaurusDbNodeProcessesRequest, ListTaurusDbNodeProcessesResponse> listTaurusDbNodeProcesses =
+        genForListTaurusDbNodeProcesses();
+
+    private static HttpRequestDef<ListTaurusDbNodeProcessesRequest, ListTaurusDbNodeProcessesResponse> genForListTaurusDbNodeProcesses() {
+        // basic
+        HttpRequestDef.Builder<ListTaurusDbNodeProcessesRequest, ListTaurusDbNodeProcessesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListTaurusDbNodeProcessesRequest.class,
+                    ListTaurusDbNodeProcessesResponse.class)
+                .withName("ListTaurusDbNodeProcesses")
+                .withUri("/v3/{project_id}/instances/{instance_id}/nodes/{node_id}/processes")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaurusDbNodeProcessesRequest::getInstanceId,
+                ListTaurusDbNodeProcessesRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaurusDbNodeProcessesRequest::getNodeId,
+                ListTaurusDbNodeProcessesRequest::setNodeId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaurusDbNodeProcessesRequest::getOffset,
+                ListTaurusDbNodeProcessesRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListTaurusDbNodeProcessesRequest::getLimit,
+                ListTaurusDbNodeProcessesRequest::setLimit));
+        builder.<ListTaurusDbNodeProcessesRequest.XLanguageEnum>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTaurusDbNodeProcessesRequest.XLanguageEnum.class),
+            f -> f.withMarshaller(ListTaurusDbNodeProcessesRequest::getXLanguage,
+                ListTaurusDbNodeProcessesRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse> modifyBackupEncryptStatus =
         genForModifyBackupEncryptStatus();
 
@@ -3335,6 +3470,39 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SetRecyclePolicyRequestBody.class),
             f -> f.withMarshaller(SetRecyclePolicyRequest::getBody, SetRecyclePolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> setSqlFilterRule =
+        genForSetSqlFilterRule();
+
+    private static HttpRequestDef<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> genForSetSqlFilterRule() {
+        // basic
+        HttpRequestDef.Builder<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, SetSqlFilterRuleRequest.class, SetSqlFilterRuleResponse.class)
+                .withName("SetSqlFilterRule")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/rules")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetSqlFilterRuleRequest::getInstanceId, SetSqlFilterRuleRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetSqlFilterRuleRequest::getXLanguage, SetSqlFilterRuleRequest::setXLanguage));
+        builder.<OperateSqlFilterRuleReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OperateSqlFilterRuleReq.class),
+            f -> f.withMarshaller(SetSqlFilterRuleRequest::getBody, SetSqlFilterRuleRequest::setBody));
 
         // response
 
@@ -4531,6 +4699,74 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowSlowlogSensitiveStatusRequest::getXLanguage,
                 ShowSlowlogSensitiveStatusRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> showSqlFilterControl =
+        genForShowSqlFilterControl();
+
+    private static HttpRequestDef<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> genForShowSqlFilterControl() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowSqlFilterControlRequest.class, ShowSqlFilterControlResponse.class)
+            .withName("ShowSqlFilterControl")
+            .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/switch")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlFilterControlRequest::getInstanceId,
+                ShowSqlFilterControlRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlFilterControlRequest::getXLanguage,
+                ShowSqlFilterControlRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> showSqlFilterRule =
+        genForShowSqlFilterRule();
+
+    private static HttpRequestDef<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> genForShowSqlFilterRule() {
+        // basic
+        HttpRequestDef.Builder<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSqlFilterRuleRequest.class, ShowSqlFilterRuleResponse.class)
+                .withName("ShowSqlFilterRule")
+                .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/rules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getInstanceId, ShowSqlFilterRuleRequest::setInstanceId));
+        builder.<String>withRequestField("node_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getNodeId, ShowSqlFilterRuleRequest::setNodeId));
+        builder.<String>withRequestField("sql_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getSqlType, ShowSqlFilterRuleRequest::setSqlType));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getXLanguage, ShowSqlFilterRuleRequest::setXLanguage));
 
         // response
 
@@ -5744,6 +5980,41 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(UpdateSlowlogSensitiveSwitchRequestBody.class),
             f -> f.withMarshaller(UpdateSlowlogSensitiveSwitchRequest::getBody,
                 UpdateSlowlogSensitiveSwitchRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> updateSqlFilterControl =
+        genForUpdateSqlFilterControl();
+
+    private static HttpRequestDef<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> genForUpdateSqlFilterControl() {
+        // basic
+        HttpRequestDef.Builder<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateSqlFilterControlRequest.class, UpdateSqlFilterControlResponse.class)
+            .withName("UpdateSqlFilterControl")
+            .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/switch")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getInstanceId,
+                UpdateSqlFilterControlRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getXLanguage,
+                UpdateSqlFilterControlRequest::setXLanguage));
+        builder.<OperateSqlFilterControlReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(OperateSqlFilterControlReq.class),
+            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getBody, UpdateSqlFilterControlRequest::setBody));
 
         // response
 
@@ -8213,176 +8484,6 @@ public class GaussDBMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeSrKernelVersionRequestV3.class),
             f -> f.withMarshaller(UpgradeSrKernelVersionRequest::getBody, UpgradeSrKernelVersionRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> deleteSqlFilterRule =
-        genForDeleteSqlFilterRule();
-
-    private static HttpRequestDef<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> genForDeleteSqlFilterRule() {
-        // basic
-        HttpRequestDef.Builder<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> builder = HttpRequestDef
-            .builder(HttpMethod.DELETE, DeleteSqlFilterRuleRequest.class, DeleteSqlFilterRuleResponse.class)
-            .withName("DeleteSqlFilterRule")
-            .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/rules")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getInstanceId,
-                DeleteSqlFilterRuleRequest::setInstanceId));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getXLanguage, DeleteSqlFilterRuleRequest::setXLanguage));
-        builder.<DeleteSqlFilterRuleReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DeleteSqlFilterRuleReq.class),
-            f -> f.withMarshaller(DeleteSqlFilterRuleRequest::getBody, DeleteSqlFilterRuleRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> setSqlFilterRule =
-        genForSetSqlFilterRule();
-
-    private static HttpRequestDef<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> genForSetSqlFilterRule() {
-        // basic
-        HttpRequestDef.Builder<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, SetSqlFilterRuleRequest.class, SetSqlFilterRuleResponse.class)
-                .withName("SetSqlFilterRule")
-                .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/rules")
-                .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetSqlFilterRuleRequest::getInstanceId, SetSqlFilterRuleRequest::setInstanceId));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(SetSqlFilterRuleRequest::getXLanguage, SetSqlFilterRuleRequest::setXLanguage));
-        builder.<OperateSqlFilterRuleReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(OperateSqlFilterRuleReq.class),
-            f -> f.withMarshaller(SetSqlFilterRuleRequest::getBody, SetSqlFilterRuleRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> showSqlFilterControl =
-        genForShowSqlFilterControl();
-
-    private static HttpRequestDef<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> genForShowSqlFilterControl() {
-        // basic
-        HttpRequestDef.Builder<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ShowSqlFilterControlRequest.class, ShowSqlFilterControlResponse.class)
-            .withName("ShowSqlFilterControl")
-            .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/switch")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterControlRequest::getInstanceId,
-                ShowSqlFilterControlRequest::setInstanceId));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterControlRequest::getXLanguage,
-                ShowSqlFilterControlRequest::setXLanguage));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> showSqlFilterRule =
-        genForShowSqlFilterRule();
-
-    private static HttpRequestDef<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> genForShowSqlFilterRule() {
-        // basic
-        HttpRequestDef.Builder<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowSqlFilterRuleRequest.class, ShowSqlFilterRuleResponse.class)
-                .withName("ShowSqlFilterRule")
-                .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/rules")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getInstanceId, ShowSqlFilterRuleRequest::setInstanceId));
-        builder.<String>withRequestField("node_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getNodeId, ShowSqlFilterRuleRequest::setNodeId));
-        builder.<String>withRequestField("sql_type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getSqlType, ShowSqlFilterRuleRequest::setSqlType));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSqlFilterRuleRequest::getXLanguage, ShowSqlFilterRuleRequest::setXLanguage));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> updateSqlFilterControl =
-        genForUpdateSqlFilterControl();
-
-    private static HttpRequestDef<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> genForUpdateSqlFilterControl() {
-        // basic
-        HttpRequestDef.Builder<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, UpdateSqlFilterControlRequest.class, UpdateSqlFilterControlResponse.class)
-            .withName("UpdateSqlFilterControl")
-            .withUri("/v3/{project_id}/instances/{instance_id}/sql-filter/switch")
-            .withContentType("application/json;charset=UTF-8");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getInstanceId,
-                UpdateSqlFilterControlRequest::setInstanceId));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getXLanguage,
-                UpdateSqlFilterControlRequest::setXLanguage));
-        builder.<OperateSqlFilterControlReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(OperateSqlFilterControlReq.class),
-            f -> f.withMarshaller(UpdateSqlFilterControlRequest::getBody, UpdateSqlFilterControlRequest::setBody));
 
         // response
 

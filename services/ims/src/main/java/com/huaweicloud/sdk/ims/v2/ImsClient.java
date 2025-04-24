@@ -11,6 +11,8 @@ import com.huaweicloud.sdk.ims.v2.model.BatchAddOrDeleteTagsRequest;
 import com.huaweicloud.sdk.ims.v2.model.BatchAddOrDeleteTagsResponse;
 import com.huaweicloud.sdk.ims.v2.model.BatchDeleteMembersRequest;
 import com.huaweicloud.sdk.ims.v2.model.BatchDeleteMembersResponse;
+import com.huaweicloud.sdk.ims.v2.model.BatchDeleteTagsRequest;
+import com.huaweicloud.sdk.ims.v2.model.BatchDeleteTagsResponse;
 import com.huaweicloud.sdk.ims.v2.model.BatchUpdateMembersRequest;
 import com.huaweicloud.sdk.ims.v2.model.BatchUpdateMembersResponse;
 import com.huaweicloud.sdk.ims.v2.model.CopyImageCrossRegionRequest;
@@ -65,6 +67,8 @@ import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickRequest;
 import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickResponse;
 import com.huaweicloud.sdk.ims.v2.model.ListImageByTagsRequest;
 import com.huaweicloud.sdk.ims.v2.model.ListImageByTagsResponse;
+import com.huaweicloud.sdk.ims.v2.model.ListImageMembersRequest;
+import com.huaweicloud.sdk.ims.v2.model.ListImageMembersResponse;
 import com.huaweicloud.sdk.ims.v2.model.ListImageTagsRequest;
 import com.huaweicloud.sdk.ims.v2.model.ListImageTagsResponse;
 import com.huaweicloud.sdk.ims.v2.model.ListImagesRequest;
@@ -79,6 +83,8 @@ import com.huaweicloud.sdk.ims.v2.model.ListVersionsRequest;
 import com.huaweicloud.sdk.ims.v2.model.ListVersionsResponse;
 import com.huaweicloud.sdk.ims.v2.model.RegisterImageRequest;
 import com.huaweicloud.sdk.ims.v2.model.RegisterImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.ShowImageMemberRequest;
+import com.huaweicloud.sdk.ims.v2.model.ShowImageMemberResponse;
 import com.huaweicloud.sdk.ims.v2.model.ShowImageQuotaRequest;
 import com.huaweicloud.sdk.ims.v2.model.ShowImageQuotaResponse;
 import com.huaweicloud.sdk.ims.v2.model.ShowJobProgressRequest;
@@ -220,6 +226,35 @@ public class ImsClient {
     public SyncInvoker<BatchDeleteMembersRequest, BatchDeleteMembersResponse> batchDeleteMembersInvoker(
         BatchDeleteMembersRequest request) {
         return new SyncInvoker<>(request, ImsMeta.batchDeleteMembers, hcClient);
+    }
+
+    /**
+     * 批量删除镜像标签
+     *
+     * 该接口用于为指定镜像批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteTagsRequest 请求对象
+     * @return BatchDeleteTagsResponse
+     */
+    public BatchDeleteTagsResponse batchDeleteTags(BatchDeleteTagsRequest request) {
+        return hcClient.syncInvokeHttp(request, ImsMeta.batchDeleteTags);
+    }
+
+    /**
+     * 批量删除镜像标签
+     *
+     * 该接口用于为指定镜像批量删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchDeleteTagsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse>
+     */
+    public SyncInvoker<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTagsInvoker(
+        BatchDeleteTagsRequest request) {
+        return new SyncInvoker<>(request, ImsMeta.batchDeleteTags, hcClient);
     }
 
     /**
@@ -574,6 +609,35 @@ public class ImsClient {
     }
 
     /**
+     * 获取镜像成员列表
+     *
+     * 该接口用于共享镜像过程中，获取接受该镜像的成员列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListImageMembersRequest 请求对象
+     * @return ListImageMembersResponse
+     */
+    public ListImageMembersResponse listImageMembers(ListImageMembersRequest request) {
+        return hcClient.syncInvokeHttp(request, ImsMeta.listImageMembers);
+    }
+
+    /**
+     * 获取镜像成员列表
+     *
+     * 该接口用于共享镜像过程中，获取接受该镜像的成员列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListImageMembersRequest 请求对象
+     * @return SyncInvoker<ListImageMembersRequest, ListImageMembersResponse>
+     */
+    public SyncInvoker<ListImageMembersRequest, ListImageMembersResponse> listImageMembersInvoker(
+        ListImageMembersRequest request) {
+        return new SyncInvoker<>(request, ImsMeta.listImageMembers, hcClient);
+    }
+
+    /**
      * 查询镜像标签
      *
      * 该接口用于为查询指定镜像上的所有标签
@@ -755,6 +819,35 @@ public class ImsClient {
      */
     public SyncInvoker<RegisterImageRequest, RegisterImageResponse> registerImageInvoker(RegisterImageRequest request) {
         return new SyncInvoker<>(request, ImsMeta.registerImage, hcClient);
+    }
+
+    /**
+     * 获取镜像成员详情
+     *
+     * 该接口主要用于镜像共享中查询某个镜像成员的详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowImageMemberRequest 请求对象
+     * @return ShowImageMemberResponse
+     */
+    public ShowImageMemberResponse showImageMember(ShowImageMemberRequest request) {
+        return hcClient.syncInvokeHttp(request, ImsMeta.showImageMember);
+    }
+
+    /**
+     * 获取镜像成员详情
+     *
+     * 该接口主要用于镜像共享中查询某个镜像成员的详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowImageMemberRequest 请求对象
+     * @return SyncInvoker<ShowImageMemberRequest, ShowImageMemberResponse>
+     */
+    public SyncInvoker<ShowImageMemberRequest, ShowImageMemberResponse> showImageMemberInvoker(
+        ShowImageMemberRequest request) {
+        return new SyncInvoker<>(request, ImsMeta.showImageMember, hcClient);
     }
 
     /**

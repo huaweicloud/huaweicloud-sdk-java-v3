@@ -17,6 +17,9 @@ import com.huaweicloud.sdk.ims.v2.model.BatchAddOrDeleteTagsRequestBody;
 import com.huaweicloud.sdk.ims.v2.model.BatchAddOrDeleteTagsResponse;
 import com.huaweicloud.sdk.ims.v2.model.BatchDeleteMembersRequest;
 import com.huaweicloud.sdk.ims.v2.model.BatchDeleteMembersResponse;
+import com.huaweicloud.sdk.ims.v2.model.BatchDeleteTagsRequest;
+import com.huaweicloud.sdk.ims.v2.model.BatchDeleteTagsRequestBody;
+import com.huaweicloud.sdk.ims.v2.model.BatchDeleteTagsResponse;
 import com.huaweicloud.sdk.ims.v2.model.BatchUpdateMembersRequest;
 import com.huaweicloud.sdk.ims.v2.model.BatchUpdateMembersRequestBody;
 import com.huaweicloud.sdk.ims.v2.model.BatchUpdateMembersResponse;
@@ -84,6 +87,8 @@ import com.huaweicloud.sdk.ims.v2.model.ImportImageQuickResponse;
 import com.huaweicloud.sdk.ims.v2.model.ListImageByTagsRequest;
 import com.huaweicloud.sdk.ims.v2.model.ListImageByTagsRequestBody;
 import com.huaweicloud.sdk.ims.v2.model.ListImageByTagsResponse;
+import com.huaweicloud.sdk.ims.v2.model.ListImageMembersRequest;
+import com.huaweicloud.sdk.ims.v2.model.ListImageMembersResponse;
 import com.huaweicloud.sdk.ims.v2.model.ListImageTagsRequest;
 import com.huaweicloud.sdk.ims.v2.model.ListImageTagsResponse;
 import com.huaweicloud.sdk.ims.v2.model.ListImagesRequest;
@@ -101,6 +106,8 @@ import com.huaweicloud.sdk.ims.v2.model.QuickImportImageByFileRequestBody;
 import com.huaweicloud.sdk.ims.v2.model.RegisterImageRequest;
 import com.huaweicloud.sdk.ims.v2.model.RegisterImageRequestBody;
 import com.huaweicloud.sdk.ims.v2.model.RegisterImageResponse;
+import com.huaweicloud.sdk.ims.v2.model.ShowImageMemberRequest;
+import com.huaweicloud.sdk.ims.v2.model.ShowImageMemberResponse;
 import com.huaweicloud.sdk.ims.v2.model.ShowImageQuotaRequest;
 import com.huaweicloud.sdk.ims.v2.model.ShowImageQuotaResponse;
 import com.huaweicloud.sdk.ims.v2.model.ShowJobProgressRequest;
@@ -213,6 +220,34 @@ public class ImsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BatchAddMembersRequestBody.class),
             f -> f.withMarshaller(BatchDeleteMembersRequest::getBody, BatchDeleteMembersRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> batchDeleteTags =
+        genForBatchDeleteTags();
+
+    private static HttpRequestDef<BatchDeleteTagsRequest, BatchDeleteTagsResponse> genForBatchDeleteTags() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteTagsRequest, BatchDeleteTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, BatchDeleteTagsRequest.class, BatchDeleteTagsResponse.class)
+                .withName("BatchDeleteTags")
+                .withUri("/v1/{project_id}/cloudimages/{image_id}/tags/delete")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getImageId, BatchDeleteTagsRequest::setImageId));
+        builder.<BatchDeleteTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteTagsRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteTagsRequest::getBody, BatchDeleteTagsRequest::setBody));
 
         // response
 
@@ -484,6 +519,29 @@ public class ImsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListImageByTagsRequestBody.class),
             f -> f.withMarshaller(ListImageByTagsRequest::getBody, ListImageByTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListImageMembersRequest, ListImageMembersResponse> listImageMembers =
+        genForListImageMembers();
+
+    private static HttpRequestDef<ListImageMembersRequest, ListImageMembersResponse> genForListImageMembers() {
+        // basic
+        HttpRequestDef.Builder<ListImageMembersRequest, ListImageMembersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListImageMembersRequest.class, ListImageMembersResponse.class)
+                .withName("ListImageMembers")
+                .withUri("/v1/{project_id}/cloudimages/{image_id}/members")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListImageMembersRequest::getImageId, ListImageMembersRequest::setImageId));
 
         // response
 
@@ -880,6 +938,34 @@ public class ImsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RegisterImageRequestBody.class),
             f -> f.withMarshaller(RegisterImageRequest::getBody, RegisterImageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowImageMemberRequest, ShowImageMemberResponse> showImageMember =
+        genForShowImageMember();
+
+    private static HttpRequestDef<ShowImageMemberRequest, ShowImageMemberResponse> genForShowImageMember() {
+        // basic
+        HttpRequestDef.Builder<ShowImageMemberRequest, ShowImageMemberResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowImageMemberRequest.class, ShowImageMemberResponse.class)
+                .withName("ShowImageMember")
+                .withUri("/v1/{project_id}/cloudimages/{image_id}/members/{member_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowImageMemberRequest::getImageId, ShowImageMemberRequest::setImageId));
+        builder.<String>withRequestField("member_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowImageMemberRequest::getMemberId, ShowImageMemberRequest::setMemberId));
 
         // response
 

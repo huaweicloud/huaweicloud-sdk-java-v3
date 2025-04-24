@@ -26,6 +26,11 @@ public class BatchListResourceResponseData {
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -124,6 +129,23 @@ public class BatchListResourceResponseData {
         this.resourceId = resourceId;
     }
 
+    public BatchListResourceResponseData withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    /**
+     * 租户ID
+     * @return domainId
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
     public BatchListResourceResponseData withName(String name) {
         this.name = name;
         return this;
@@ -181,7 +203,7 @@ public class BatchListResourceResponseData {
     }
 
     /**
-     * Openstack中的项目I
+     * Openstack中的项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -403,11 +425,12 @@ public class BatchListResourceResponseData {
         }
         BatchListResourceResponseData that = (BatchListResourceResponseData) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.resourceId, that.resourceId)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.provider, that.provider)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.projectId, that.projectId)
-            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.epId, that.epId)
-            && Objects.equals(this.tags, that.tags) && Objects.equals(this.agentId, that.agentId)
-            && Objects.equals(this.agentState, that.agentState) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.epId, that.epId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.agentState, that.agentState)
+            && Objects.equals(this.properties, that.properties)
             && Objects.equals(this.ingestProperties, that.ingestProperties)
             && Objects.equals(this.isDelegated, that.isDelegated) && Objects.equals(this.operable, that.operable);
     }
@@ -416,6 +439,7 @@ public class BatchListResourceResponseData {
     public int hashCode() {
         return Objects.hash(id,
             resourceId,
+            domainId,
             name,
             provider,
             type,
@@ -437,6 +461,7 @@ public class BatchListResourceResponseData {
         sb.append("class BatchListResourceResponseData {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    resourceId: ").append(toIndentedString(resourceId)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

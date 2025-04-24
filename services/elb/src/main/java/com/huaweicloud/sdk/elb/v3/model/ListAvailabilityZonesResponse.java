@@ -24,11 +24,6 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
 
     private List<List<AvailabilityZone>> availabilityZones = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "spec_code")
-
-    private String specCode;
-
     public ListAvailabilityZonesResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -80,23 +75,6 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
         this.availabilityZones = availabilityZones;
     }
 
-    public ListAvailabilityZonesResponse withSpecCode(String specCode) {
-        this.specCode = specCode;
-        return this;
-    }
-
-    /**
-     * 参数解释：可用区的产品编码，仅边缘场景有效。
-     * @return specCode
-     */
-    public String getSpecCode() {
-        return specCode;
-    }
-
-    public void setSpecCode(String specCode) {
-        this.specCode = specCode;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -107,13 +85,12 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
         }
         ListAvailabilityZonesResponse that = (ListAvailabilityZonesResponse) obj;
         return Objects.equals(this.requestId, that.requestId)
-            && Objects.equals(this.availabilityZones, that.availabilityZones)
-            && Objects.equals(this.specCode, that.specCode);
+            && Objects.equals(this.availabilityZones, that.availabilityZones);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, availabilityZones, specCode);
+        return Objects.hash(requestId, availabilityZones);
     }
 
     @Override
@@ -122,7 +99,6 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
         sb.append("class ListAvailabilityZonesResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("    availabilityZones: ").append(toIndentedString(availabilityZones)).append("\n");
-        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

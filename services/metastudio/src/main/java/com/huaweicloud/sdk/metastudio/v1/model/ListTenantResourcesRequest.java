@@ -338,6 +338,8 @@ public class ListTenantResourcesRequest {
 
     /**
      * 资源状态。
+     * minimum: 0
+     * maximum: 10
      * @return status
      */
     public Integer getStatus() {

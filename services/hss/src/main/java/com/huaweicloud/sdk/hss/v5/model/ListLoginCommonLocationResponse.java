@@ -64,7 +64,7 @@ public class ListLoginCommonLocationResponse extends SdkResponse {
     }
 
     /**
-     * 返回常用登陆地信息列表
+     * 返回常用登录地信息列表
      * @return dataList
      */
     public List<LoginCommonLocationResponseInfo> getDataList() {

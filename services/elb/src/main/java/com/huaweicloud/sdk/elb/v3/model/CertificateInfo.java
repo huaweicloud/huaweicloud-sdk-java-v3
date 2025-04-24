@@ -347,7 +347,7 @@ public class CertificateInfo {
     }
 
     /**
-     * SCM证书ID
+     * SCM证书ID。
      * @return scmCertificateId
      */
     public String getScmCertificateId() {

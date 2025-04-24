@@ -45,6 +45,8 @@ import com.huaweicloud.sdk.eg.v1.model.DeleteSubscriptionTargetRequest;
 import com.huaweicloud.sdk.eg.v1.model.DeleteSubscriptionTargetResponse;
 import com.huaweicloud.sdk.eg.v1.model.DiscoverEventSchemaFromDataRequest;
 import com.huaweicloud.sdk.eg.v1.model.DiscoverEventSchemaFromDataResponse;
+import com.huaweicloud.sdk.eg.v1.model.ExecuteSubscriptionOperationRequest;
+import com.huaweicloud.sdk.eg.v1.model.ExecuteSubscriptionOperationResponse;
 import com.huaweicloud.sdk.eg.v1.model.ListAgenciesRequest;
 import com.huaweicloud.sdk.eg.v1.model.ListAgenciesResponse;
 import com.huaweicloud.sdk.eg.v1.model.ListApiVersionsRequest;
@@ -81,8 +83,6 @@ import com.huaweicloud.sdk.eg.v1.model.ListTriggersRequest;
 import com.huaweicloud.sdk.eg.v1.model.ListTriggersResponse;
 import com.huaweicloud.sdk.eg.v1.model.ListWorkflowTriggersRequest;
 import com.huaweicloud.sdk.eg.v1.model.ListWorkflowTriggersResponse;
-import com.huaweicloud.sdk.eg.v1.model.OperateSubscriptionRequest;
-import com.huaweicloud.sdk.eg.v1.model.OperateSubscriptionResponse;
 import com.huaweicloud.sdk.eg.v1.model.PutEventsRequest;
 import com.huaweicloud.sdk.eg.v1.model.PutEventsResponse;
 import com.huaweicloud.sdk.eg.v1.model.PutOfficialEventsRequest;
@@ -762,6 +762,36 @@ public class EgAsyncClient {
     }
 
     /**
+     * 操作事件订阅
+     *
+     * 操作事件订阅，支持启用、禁用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteSubscriptionOperationRequest 请求对象
+     * @return CompletableFuture<ExecuteSubscriptionOperationResponse>
+     */
+    public CompletableFuture<ExecuteSubscriptionOperationResponse> executeSubscriptionOperationAsync(
+        ExecuteSubscriptionOperationRequest request) {
+        return hcClient.asyncInvokeHttp(request, EgMeta.executeSubscriptionOperation);
+    }
+
+    /**
+     * 操作事件订阅
+     *
+     * 操作事件订阅，支持启用、禁用。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteSubscriptionOperationRequest 请求对象
+     * @return AsyncInvoker<ExecuteSubscriptionOperationRequest, ExecuteSubscriptionOperationResponse>
+     */
+    public AsyncInvoker<ExecuteSubscriptionOperationRequest, ExecuteSubscriptionOperationResponse> executeSubscriptionOperationAsyncInvoker(
+        ExecuteSubscriptionOperationRequest request) {
+        return new AsyncInvoker<>(request, EgMeta.executeSubscriptionOperation, hcClient);
+    }
+
+    /**
      * 查询服务委托
      *
      * 查询服务委托。
@@ -1224,35 +1254,6 @@ public class EgAsyncClient {
     public AsyncInvoker<ListWorkflowTriggersRequest, ListWorkflowTriggersResponse> listWorkflowTriggersAsyncInvoker(
         ListWorkflowTriggersRequest request) {
         return new AsyncInvoker<>(request, EgMeta.listWorkflowTriggers, hcClient);
-    }
-
-    /**
-     * 操作事件订阅
-     *
-     * 操作事件订阅，支持启用、禁用。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request OperateSubscriptionRequest 请求对象
-     * @return CompletableFuture<OperateSubscriptionResponse>
-     */
-    public CompletableFuture<OperateSubscriptionResponse> operateSubscriptionAsync(OperateSubscriptionRequest request) {
-        return hcClient.asyncInvokeHttp(request, EgMeta.operateSubscription);
-    }
-
-    /**
-     * 操作事件订阅
-     *
-     * 操作事件订阅，支持启用、禁用。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request OperateSubscriptionRequest 请求对象
-     * @return AsyncInvoker<OperateSubscriptionRequest, OperateSubscriptionResponse>
-     */
-    public AsyncInvoker<OperateSubscriptionRequest, OperateSubscriptionResponse> operateSubscriptionAsyncInvoker(
-        OperateSubscriptionRequest request) {
-        return new AsyncInvoker<>(request, EgMeta.operateSubscription, hcClient);
     }
 
     /**

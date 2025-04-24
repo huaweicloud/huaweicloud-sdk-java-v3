@@ -20,6 +20,11 @@ public class ListJobsResponse extends SdkResponse {
     private List<MainJob> jobs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "request_id")
 
     private String requestId;
@@ -57,6 +62,32 @@ public class ListJobsResponse extends SdkResponse {
         this.jobs = jobs;
     }
 
+    public ListJobsResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListJobsResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     public ListJobsResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
@@ -83,12 +114,13 @@ public class ListJobsResponse extends SdkResponse {
             return false;
         }
         ListJobsResponse that = (ListJobsResponse) obj;
-        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.requestId, that.requestId);
+        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobs, requestId);
+        return Objects.hash(jobs, pageInfo, requestId);
     }
 
     @Override
@@ -96,6 +128,7 @@ public class ListJobsResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListJobsResponse {\n");
         sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
         sb.append("}");
         return sb.toString();

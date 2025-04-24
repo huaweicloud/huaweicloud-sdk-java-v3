@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -16,6 +18,16 @@ public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
     @JsonProperty(value = "https")
 
     private UpdateDomainMultiCertificatesResponseBodyContent https;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "status")
+
+    private String status;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "result")
+
+    private List<UpdateDomainMultiCertificatesResponseBodyResult> result = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "X-Request-Id")
@@ -49,6 +61,59 @@ public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
         this.https = https;
     }
 
+    public UpdateDomainMultiCertificatesResponse withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * 执行结果，success，fail
+     * @return status
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public UpdateDomainMultiCertificatesResponse withResult(
+        List<UpdateDomainMultiCertificatesResponseBodyResult> result) {
+        this.result = result;
+        return this;
+    }
+
+    public UpdateDomainMultiCertificatesResponse addResultItem(
+        UpdateDomainMultiCertificatesResponseBodyResult resultItem) {
+        if (this.result == null) {
+            this.result = new ArrayList<>();
+        }
+        this.result.add(resultItem);
+        return this;
+    }
+
+    public UpdateDomainMultiCertificatesResponse withResult(
+        Consumer<List<UpdateDomainMultiCertificatesResponseBodyResult>> resultSetter) {
+        if (this.result == null) {
+            this.result = new ArrayList<>();
+        }
+        resultSetter.accept(this.result);
+        return this;
+    }
+
+    /**
+     * 详情
+     * @return result
+     */
+    public List<UpdateDomainMultiCertificatesResponseBodyResult> getResult() {
+        return result;
+    }
+
+    public void setResult(List<UpdateDomainMultiCertificatesResponseBodyResult> result) {
+        this.result = result;
+    }
+
     public UpdateDomainMultiCertificatesResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
@@ -77,12 +142,13 @@ public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
             return false;
         }
         UpdateDomainMultiCertificatesResponse that = (UpdateDomainMultiCertificatesResponse) obj;
-        return Objects.equals(this.https, that.https) && Objects.equals(this.xRequestId, that.xRequestId);
+        return Objects.equals(this.https, that.https) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.result, that.result) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(https, xRequestId);
+        return Objects.hash(https, status, result, xRequestId);
     }
 
     @Override
@@ -90,6 +156,8 @@ public class UpdateDomainMultiCertificatesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateDomainMultiCertificatesResponse {\n");
         sb.append("    https: ").append(toIndentedString(https)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");
         sb.append("}");
         return sb.toString();

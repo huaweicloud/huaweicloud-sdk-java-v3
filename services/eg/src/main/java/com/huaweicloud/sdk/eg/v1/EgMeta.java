@@ -63,6 +63,8 @@ import com.huaweicloud.sdk.eg.v1.model.EndpointUpdateReq;
 import com.huaweicloud.sdk.eg.v1.model.EventStreamingCreateReq;
 import com.huaweicloud.sdk.eg.v1.model.EventStreamingOperateReq;
 import com.huaweicloud.sdk.eg.v1.model.EventStreamingUpdateReq;
+import com.huaweicloud.sdk.eg.v1.model.ExecuteSubscriptionOperationRequest;
+import com.huaweicloud.sdk.eg.v1.model.ExecuteSubscriptionOperationResponse;
 import com.huaweicloud.sdk.eg.v1.model.ListAgenciesRequest;
 import com.huaweicloud.sdk.eg.v1.model.ListAgenciesResponse;
 import com.huaweicloud.sdk.eg.v1.model.ListApiVersionsRequest;
@@ -99,8 +101,6 @@ import com.huaweicloud.sdk.eg.v1.model.ListTriggersRequest;
 import com.huaweicloud.sdk.eg.v1.model.ListTriggersResponse;
 import com.huaweicloud.sdk.eg.v1.model.ListWorkflowTriggersRequest;
 import com.huaweicloud.sdk.eg.v1.model.ListWorkflowTriggersResponse;
-import com.huaweicloud.sdk.eg.v1.model.OperateSubscriptionRequest;
-import com.huaweicloud.sdk.eg.v1.model.OperateSubscriptionResponse;
 import com.huaweicloud.sdk.eg.v1.model.PutEventsReq;
 import com.huaweicloud.sdk.eg.v1.model.PutEventsRequest;
 import com.huaweicloud.sdk.eg.v1.model.PutEventsResponse;
@@ -569,6 +569,11 @@ public class EgMeta {
             f -> f.withMarshaller(DeleteEndpointRequest::getEndpointId, DeleteEndpointRequest::setEndpointId));
 
         // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(DeleteEndpointResponse::getBody, DeleteEndpointResponse::setBody));
 
         return builder.build();
     }
@@ -672,6 +677,11 @@ public class EgMeta {
                 DeleteEventStreamingRequest::setEventstreamingId));
 
         // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(DeleteEventStreamingResponse::getBody, DeleteEventStreamingResponse::setBody));
 
         return builder.build();
     }
@@ -769,6 +779,45 @@ public class EgMeta {
 
         // response
 
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteSubscriptionOperationRequest, ExecuteSubscriptionOperationResponse> executeSubscriptionOperation =
+        genForExecuteSubscriptionOperation();
+
+    private static HttpRequestDef<ExecuteSubscriptionOperationRequest, ExecuteSubscriptionOperationResponse> genForExecuteSubscriptionOperation() {
+        // basic
+        HttpRequestDef.Builder<ExecuteSubscriptionOperationRequest, ExecuteSubscriptionOperationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    ExecuteSubscriptionOperationRequest.class,
+                    ExecuteSubscriptionOperationResponse.class)
+                .withName("ExecuteSubscriptionOperation")
+                .withUri("/v1/{project_id}/subscriptions/operation")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteSubscriptionOperationRequest::getEnterpriseProjectId,
+                ExecuteSubscriptionOperationRequest::setEnterpriseProjectId));
+        builder.<SubscriptionOperateReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SubscriptionOperateReq.class),
+            f -> f.withMarshaller(ExecuteSubscriptionOperationRequest::getBody,
+                ExecuteSubscriptionOperationRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExecuteSubscriptionOperationResponse::getXRequestId,
+                ExecuteSubscriptionOperationResponse::setXRequestId));
         return builder.build();
     }
 
@@ -1517,41 +1566,6 @@ public class EgMeta {
 
         // response
 
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<OperateSubscriptionRequest, OperateSubscriptionResponse> operateSubscription =
-        genForOperateSubscription();
-
-    private static HttpRequestDef<OperateSubscriptionRequest, OperateSubscriptionResponse> genForOperateSubscription() {
-        // basic
-        HttpRequestDef.Builder<OperateSubscriptionRequest, OperateSubscriptionResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, OperateSubscriptionRequest.class, OperateSubscriptionResponse.class)
-                .withName("OperateSubscription")
-                .withUri("/v1/{project_id}/subscriptions/operation")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(OperateSubscriptionRequest::getEnterpriseProjectId,
-                OperateSubscriptionRequest::setEnterpriseProjectId));
-        builder.<SubscriptionOperateReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(SubscriptionOperateReq.class),
-            f -> f.withMarshaller(OperateSubscriptionRequest::getBody, OperateSubscriptionRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(OperateSubscriptionResponse::getXRequestId,
-                OperateSubscriptionResponse::setXRequestId));
         return builder.build();
     }
 

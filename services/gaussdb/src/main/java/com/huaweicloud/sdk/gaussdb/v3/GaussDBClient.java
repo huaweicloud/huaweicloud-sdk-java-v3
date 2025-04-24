@@ -107,6 +107,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarrocksInstanceRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteStarrocksInstanceResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaskRecordResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaurusDbNodeProcessesRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.DeleteTaurusDbNodeProcessesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.DescribeBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.DownloadSlowLogFileRequest;
@@ -195,6 +197,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDbParametersRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarRocksDbParametersResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarrocksInstanceInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarrocksInstanceInfoResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListTaurusDbNodeProcessesRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ListTaurusDbNodeProcessesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyDataSyncRequest;
@@ -1307,6 +1311,35 @@ public class GaussDBClient {
     }
 
     /**
+     * 删除SQL限流规则
+     *
+     * 删除SQL限流规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSqlFilterRuleRequest 请求对象
+     * @return DeleteSqlFilterRuleResponse
+     */
+    public DeleteSqlFilterRuleResponse deleteSqlFilterRule(DeleteSqlFilterRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteSqlFilterRule);
+    }
+
+    /**
+     * 删除SQL限流规则
+     *
+     * 删除SQL限流规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteSqlFilterRuleRequest 请求对象
+     * @return SyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse>
+     */
+    public SyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> deleteSqlFilterRuleInvoker(
+        DeleteSqlFilterRuleRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.deleteSqlFilterRule, hcClient);
+    }
+
+    /**
      * 删除指定任务记录
      *
      * 删除指定任务记录。
@@ -1333,6 +1366,35 @@ public class GaussDBClient {
     public SyncInvoker<DeleteTaskRecordRequest, DeleteTaskRecordResponse> deleteTaskRecordInvoker(
         DeleteTaskRecordRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.deleteTaskRecord, hcClient);
+    }
+
+    /**
+     * 终止节点用户会话线程
+     *
+     * 终止TaurusDB节点中指定的用户会话线程，执行时将排除传入的内部会话线程。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTaurusDbNodeProcessesRequest 请求对象
+     * @return DeleteTaurusDbNodeProcessesResponse
+     */
+    public DeleteTaurusDbNodeProcessesResponse deleteTaurusDbNodeProcesses(DeleteTaurusDbNodeProcessesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteTaurusDbNodeProcesses);
+    }
+
+    /**
+     * 终止节点用户会话线程
+     *
+     * 终止TaurusDB节点中指定的用户会话线程，执行时将排除传入的内部会话线程。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteTaurusDbNodeProcessesRequest 请求对象
+     * @return SyncInvoker<DeleteTaurusDbNodeProcessesRequest, DeleteTaurusDbNodeProcessesResponse>
+     */
+    public SyncInvoker<DeleteTaurusDbNodeProcessesRequest, DeleteTaurusDbNodeProcessesResponse> deleteTaurusDbNodeProcessesInvoker(
+        DeleteTaurusDbNodeProcessesRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.deleteTaurusDbNodeProcesses, hcClient);
     }
 
     /**
@@ -2160,6 +2222,35 @@ public class GaussDBClient {
     }
 
     /**
+     * 查询节点用户会话线程
+     *
+     * 分页查询TaurusDB节点中的用户会话线程，对应于show processlist命令，返回结果不含内部会话线程。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTaurusDbNodeProcessesRequest 请求对象
+     * @return ListTaurusDbNodeProcessesResponse
+     */
+    public ListTaurusDbNodeProcessesResponse listTaurusDbNodeProcesses(ListTaurusDbNodeProcessesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.listTaurusDbNodeProcesses);
+    }
+
+    /**
+     * 查询节点用户会话线程
+     *
+     * 分页查询TaurusDB节点中的用户会话线程，对应于show processlist命令，返回结果不含内部会话线程。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTaurusDbNodeProcessesRequest 请求对象
+     * @return SyncInvoker<ListTaurusDbNodeProcessesRequest, ListTaurusDbNodeProcessesResponse>
+     */
+    public SyncInvoker<ListTaurusDbNodeProcessesRequest, ListTaurusDbNodeProcessesResponse> listTaurusDbNodeProcessesInvoker(
+        ListTaurusDbNodeProcessesRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.listTaurusDbNodeProcesses, hcClient);
+    }
+
+    /**
      * 打开或关闭备份加密
      *
      * 打开或关闭备份加密。
@@ -2565,6 +2656,35 @@ public class GaussDBClient {
     public SyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicyInvoker(
         SetRecyclePolicyRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.setRecyclePolicy, hcClient);
+    }
+
+    /**
+     * 设置SQL限流规则
+     *
+     * 设置SQL限流规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetSqlFilterRuleRequest 请求对象
+     * @return SetSqlFilterRuleResponse
+     */
+    public SetSqlFilterRuleResponse setSqlFilterRule(SetSqlFilterRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.setSqlFilterRule);
+    }
+
+    /**
+     * 设置SQL限流规则
+     *
+     * 设置SQL限流规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetSqlFilterRuleRequest 请求对象
+     * @return SyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse>
+     */
+    public SyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> setSqlFilterRuleInvoker(
+        SetSqlFilterRuleRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.setSqlFilterRule, hcClient);
     }
 
     /**
@@ -3499,6 +3619,64 @@ public class GaussDBClient {
     }
 
     /**
+     * 查询SQL限流开关状态
+     *
+     * 查询SQL限流开关状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlFilterControlRequest 请求对象
+     * @return ShowSqlFilterControlResponse
+     */
+    public ShowSqlFilterControlResponse showSqlFilterControl(ShowSqlFilterControlRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showSqlFilterControl);
+    }
+
+    /**
+     * 查询SQL限流开关状态
+     *
+     * 查询SQL限流开关状态。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlFilterControlRequest 请求对象
+     * @return SyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse>
+     */
+    public SyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> showSqlFilterControlInvoker(
+        ShowSqlFilterControlRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showSqlFilterControl, hcClient);
+    }
+
+    /**
+     * 查询SQL限流规则
+     *
+     * 查询SQL限流规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlFilterRuleRequest 请求对象
+     * @return ShowSqlFilterRuleResponse
+     */
+    public ShowSqlFilterRuleResponse showSqlFilterRule(ShowSqlFilterRuleRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showSqlFilterRule);
+    }
+
+    /**
+     * 查询SQL限流规则
+     *
+     * 查询SQL限流规则。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSqlFilterRuleRequest 请求对象
+     * @return SyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse>
+     */
+    public SyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> showSqlFilterRuleInvoker(
+        ShowSqlFilterRuleRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showSqlFilterRule, hcClient);
+    }
+
+    /**
      * 减少数据库代理节点的数量
      *
      * 缩容数据库代理节点的数量。
@@ -4413,6 +4591,35 @@ public class GaussDBClient {
     public SyncInvoker<UpdateSlowlogSensitiveSwitchRequest, UpdateSlowlogSensitiveSwitchResponse> updateSlowlogSensitiveSwitchInvoker(
         UpdateSlowlogSensitiveSwitchRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.updateSlowlogSensitiveSwitch, hcClient);
+    }
+
+    /**
+     * 开启或者关闭SQL限流
+     *
+     * 开启或者关闭SQL限流。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSqlFilterControlRequest 请求对象
+     * @return UpdateSqlFilterControlResponse
+     */
+    public UpdateSqlFilterControlResponse updateSqlFilterControl(UpdateSqlFilterControlRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateSqlFilterControl);
+    }
+
+    /**
+     * 开启或者关闭SQL限流
+     *
+     * 开启或者关闭SQL限流。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSqlFilterControlRequest 请求对象
+     * @return SyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse>
+     */
+    public SyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> updateSqlFilterControlInvoker(
+        UpdateSqlFilterControlRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.updateSqlFilterControl, hcClient);
     }
 
     /**
@@ -6323,151 +6530,6 @@ public class GaussDBClient {
     public SyncInvoker<UpgradeSrKernelVersionRequest, UpgradeSrKernelVersionResponse> upgradeSrKernelVersionInvoker(
         UpgradeSrKernelVersionRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.upgradeSrKernelVersion, hcClient);
-    }
-
-    /**
-     * 删除SQL限流规则
-     *
-     * 删除SQL限流规则。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteSqlFilterRuleRequest 请求对象
-     * @return DeleteSqlFilterRuleResponse
-     */
-    public DeleteSqlFilterRuleResponse deleteSqlFilterRule(DeleteSqlFilterRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteSqlFilterRule);
-    }
-
-    /**
-     * 删除SQL限流规则
-     *
-     * 删除SQL限流规则。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteSqlFilterRuleRequest 请求对象
-     * @return SyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse>
-     */
-    public SyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> deleteSqlFilterRuleInvoker(
-        DeleteSqlFilterRuleRequest request) {
-        return new SyncInvoker<>(request, GaussDBMeta.deleteSqlFilterRule, hcClient);
-    }
-
-    /**
-     * 设置SQL限流规则
-     *
-     * 设置SQL限流规则。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetSqlFilterRuleRequest 请求对象
-     * @return SetSqlFilterRuleResponse
-     */
-    public SetSqlFilterRuleResponse setSqlFilterRule(SetSqlFilterRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.setSqlFilterRule);
-    }
-
-    /**
-     * 设置SQL限流规则
-     *
-     * 设置SQL限流规则。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request SetSqlFilterRuleRequest 请求对象
-     * @return SyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse>
-     */
-    public SyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> setSqlFilterRuleInvoker(
-        SetSqlFilterRuleRequest request) {
-        return new SyncInvoker<>(request, GaussDBMeta.setSqlFilterRule, hcClient);
-    }
-
-    /**
-     * 查询SQL限流开关状态
-     *
-     * 查询SQL限流开关状态。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowSqlFilterControlRequest 请求对象
-     * @return ShowSqlFilterControlResponse
-     */
-    public ShowSqlFilterControlResponse showSqlFilterControl(ShowSqlFilterControlRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showSqlFilterControl);
-    }
-
-    /**
-     * 查询SQL限流开关状态
-     *
-     * 查询SQL限流开关状态。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowSqlFilterControlRequest 请求对象
-     * @return SyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse>
-     */
-    public SyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> showSqlFilterControlInvoker(
-        ShowSqlFilterControlRequest request) {
-        return new SyncInvoker<>(request, GaussDBMeta.showSqlFilterControl, hcClient);
-    }
-
-    /**
-     * 查询SQL限流规则
-     *
-     * 查询SQL限流规则。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowSqlFilterRuleRequest 请求对象
-     * @return ShowSqlFilterRuleResponse
-     */
-    public ShowSqlFilterRuleResponse showSqlFilterRule(ShowSqlFilterRuleRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.showSqlFilterRule);
-    }
-
-    /**
-     * 查询SQL限流规则
-     *
-     * 查询SQL限流规则。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ShowSqlFilterRuleRequest 请求对象
-     * @return SyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse>
-     */
-    public SyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> showSqlFilterRuleInvoker(
-        ShowSqlFilterRuleRequest request) {
-        return new SyncInvoker<>(request, GaussDBMeta.showSqlFilterRule, hcClient);
-    }
-
-    /**
-     * 开启或者关闭SQL限流
-     *
-     * 开启或者关闭SQL限流。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateSqlFilterControlRequest 请求对象
-     * @return UpdateSqlFilterControlResponse
-     */
-    public UpdateSqlFilterControlResponse updateSqlFilterControl(UpdateSqlFilterControlRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBMeta.updateSqlFilterControl);
-    }
-
-    /**
-     * 开启或者关闭SQL限流
-     *
-     * 开启或者关闭SQL限流。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateSqlFilterControlRequest 请求对象
-     * @return SyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse>
-     */
-    public SyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> updateSqlFilterControlInvoker(
-        UpdateSqlFilterControlRequest request) {
-        return new SyncInvoker<>(request, GaussDBMeta.updateSqlFilterControl, hcClient);
     }
 
 }

@@ -27,6 +27,11 @@ public class CreateExchangeResponse extends SdkResponse {
     private Boolean internal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "arguments")
+
+    private Object arguments;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -95,6 +100,23 @@ public class CreateExchangeResponse extends SdkResponse {
 
     public void setInternal(Boolean internal) {
         this.internal = internal;
+    }
+
+    public CreateExchangeResponse withArguments(Object arguments) {
+        this.arguments = arguments;
+        return this;
+    }
+
+    /**
+     * 参数列表
+     * @return arguments
+     */
+    public Object getArguments() {
+        return arguments;
+    }
+
+    public void setArguments(Object arguments) {
+        this.arguments = arguments;
     }
 
     public CreateExchangeResponse withName(String name) {
@@ -175,14 +197,14 @@ public class CreateExchangeResponse extends SdkResponse {
         }
         CreateExchangeResponse that = (CreateExchangeResponse) obj;
         return Objects.equals(this.durable, that.durable) && Objects.equals(this._default, that._default)
-            && Objects.equals(this.internal, that.internal) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.autoDelete, that.autoDelete) && Objects.equals(this.type, that.type)
-            && Objects.equals(this.vhost, that.vhost);
+            && Objects.equals(this.internal, that.internal) && Objects.equals(this.arguments, that.arguments)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.autoDelete, that.autoDelete)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.vhost, that.vhost);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(durable, _default, internal, name, autoDelete, type, vhost);
+        return Objects.hash(durable, _default, internal, arguments, name, autoDelete, type, vhost);
     }
 
     @Override
@@ -192,6 +214,7 @@ public class CreateExchangeResponse extends SdkResponse {
         sb.append("    durable: ").append(toIndentedString(durable)).append("\n");
         sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
         sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
+        sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    autoDelete: ").append(toIndentedString(autoDelete)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");

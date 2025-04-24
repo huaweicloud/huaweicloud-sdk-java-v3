@@ -40,7 +40,7 @@ public class ListQuotaDetailsRequest {
     }
 
     /**
-     * 资源类型。  取值： loadbalancer、listener、ipgroup、pool、member、healthmonitor、l7policy、certificate、security_policy、listeners_per_loadbalancer、listeners_per_pool、members_per_pool、condition_per_policy、ipgroup_bindings、ipgroup_max_length、ipgroups_per_listener、pools_per_l7policy、l7policies_per_listener。  支持多值查询，查询条件格式：quota_key=xxx&quota_key=xxx。
+     * 资源类型。  取值： loadbalancer、listener、ipgroup、pool、member、healthmonitor、l7policy、certificate、security_policy、listeners_per_loadbalancer、listeners_per_pool、members_per_pool、condition_per_policy、ipgroup_bindings、ipgroup_max_length、ipgroups_per_listener、pools_per_l7policy、l7policies_per_listener、free_instance_members_per_pool、free_instance_listeners_per_loadbalancer。  支持多值查询，查询条件格式：quota_key=xxx&quota_key=xxx。
      * @return quotaKey
      */
     public List<String> getQuotaKey() {

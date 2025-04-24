@@ -24,7 +24,7 @@ public class ShowInstanceResp {
     private String accessUser;
 
     /**
-     * 代理个数。
+     * **参数解释**： 代理个数。 **取值范围**： - 1 - 3 - 5 - 7
      */
     public static final class BrokerNumEnum {
 
@@ -291,7 +291,7 @@ public class ShowInstanceResp {
     private Integer extendTimes;
 
     /**
-     * 实例类型：集群，cluster。
+     * **参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。
      */
     public static final class TypeEnum {
 
@@ -431,7 +431,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 认证用户名，只能由英文字母、数字、中划线组成，长度为4~64的字符。
+     * **参数解释**： 认证用户名。 **取值范围**： 不涉及。
      * @return accessUser
      */
     public String getAccessUser() {
@@ -448,7 +448,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 代理个数。
+     * **参数解释**： 代理个数。 **取值范围**： - 1 - 3 - 5 - 7
      * @return brokerNum
      */
     public BrokerNumEnum getBrokerNum() {
@@ -465,7 +465,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例名称。
+     * **参数解释**： 实例名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -482,7 +482,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 消息引擎。
+     * **参数解释**： 消息引擎。 **取值范围**： 不涉及。
      * @return engine
      */
     public String getEngine() {
@@ -499,7 +499,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 消息引擎版本。
+     * **参数解释**： 消息引擎版本。 **取值范围**： 不涉及。
      * @return engineVersion
      */
     public String getEngineVersion() {
@@ -516,7 +516,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例规格。   - RabbitMQ实例单机返回vm规格。   - RabbitMQ实例集群返回vm规格和节点数。
+     * **参数解释**： 实例规格。 **取值范围**： - 单机实例：返回vm规格。 - 集群实例：返回vm规格和节点数。
      * @return specification
      */
     public String getSpecification() {
@@ -533,7 +533,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 消息存储空间，单位：GB。
+     * **参数解释**： 消息存储空间，单位：GB。 **取值范围**： 不涉及。
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -550,7 +550,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 已使用的消息存储空间，单位：GB。
+     * **参数解释**： 已使用的消息存储空间，单位：GB。 **取值范围**： 不涉及。
      * @return usedStorageSpace
      */
     public Integer getUsedStorageSpace() {
@@ -567,7 +567,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例是否开启域名访问功能。 - true：开启 - false：未开启
+     * **参数解释**： 实例是否开启域名访问功能。 **取值范围**： - true：开启 - false：未开启
      * @return dnsEnable
      */
     public Boolean getDnsEnable() {
@@ -584,7 +584,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例内网连接IP地址。
+     * **参数解释**： 实例内网连接IP地址。 **取值范围**： 不涉及。
      * @return connectAddress
      */
     public String getConnectAddress() {
@@ -601,7 +601,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例内网连接域名。
+     * **参数解释**： 实例内网连接域名。 **取值范围**： 不涉及。
      * @return connectDomainName
      */
     public String getConnectDomainName() {
@@ -618,7 +618,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例公网连接IP地址。
+     * **参数解释**： 实例公网连接IP地址。 **取值范围**： 不涉及。
      * @return publicConnectAddress
      */
     public String getPublicConnectAddress() {
@@ -635,7 +635,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例公网连接域名。
+     * **参数解释**： 实例公网连接域名。 **取值范围**： 不涉及。
      * @return publicConnectDomainName
      */
     public String getPublicConnectDomainName() {
@@ -652,7 +652,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例连接端口。
+     * **参数解释**： 实例连接端口。 **取值范围**： 不涉及。
      * @return port
      */
     public Integer getPort() {
@@ -669,7 +669,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例的状态。
+     * **参数解释**： 实例状态。 **取值范围**： [详细状态说明请参考[实例状态说明](rabbitmq-api-180514012.xml)](tag:hws,hws_eu,hws_hk,cmcc,ctc,sbc,hk_sbc,g42,hk_g42,tm,hk_tm)[详细状态说明请参考[实例状态说明](kafka-api-180514012.xml)](tag:hcs)。
      * @return status
      */
     public String getStatus() {
@@ -686,7 +686,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例描述。
+     * **参数解释**： 实例描述。 **取值范围**： 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -703,7 +703,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。 **取值范围**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -720,7 +720,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 资源规格标识。   [- dms.instance.rabbitmq.single.c3.2u4g：RabbitMQ单机，vm规格2u4g   - dms.instance.rabbitmq.single.c3.4u8g：RabbitMQ单机，vm规格4u8g   - dms.instance.rabbitmq.single.c3.8u16g：RabbitMQ单机，vm规格8u16g   - dms.instance.rabbitmq.single.c3.16u32g：RabbitMQ单机，vm规格16u32g   - dms.instance.rabbitmq.cluster.c3.4u8g.3：RabbitMQ集群，vm规格4u8g，3个节点   - dms.instance.rabbitmq.cluster.c3.4u8g.5：RabbitMQ集群，vm规格4u8g，5个节点   - dms.instance.rabbitmq.cluster.c3.4u8g.7：RabbitMQ集群，vm规格4u8g，7个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.3：RabbitMQ集群，vm规格8u16g，3个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.5：RabbitMQ集群，vm规格8u16g，5个节点   - dms.instance.rabbitmq.cluster.c3.8u16g.7：RabbitMQ集群，vm规格8u16g，7个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.3：RabbitMQ集群，vm规格16u32g，3个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.5：RabbitMQ集群，vm规格16u32g，5个节点   - dms.instance.rabbitmq.cluster.c3.16u32g.7：RabbitMQ集群，vm规格16u32g，7个节点](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,sbc)
+     * **参数解释**： 资源规格标识。 **取值范围**： [- dms.instance.rabbitmq.single.c3.2u4g：RabbitMQ单机，vm规格2u4g - dms.instance.rabbitmq.single.c3.4u8g：RabbitMQ单机，vm规格4u8g - dms.instance.rabbitmq.single.c3.8u16g：RabbitMQ单机，vm规格8u16g - dms.instance.rabbitmq.single.c3.16u32g：RabbitMQ单机，vm规格16u32g - dms.instance.rabbitmq.cluster.c3.4u8g.3：RabbitMQ集群，vm规格4u8g，3个节点 - dms.instance.rabbitmq.cluster.c3.4u8g.5：RabbitMQ集群，vm规格4u8g，5个节点 - dms.instance.rabbitmq.cluster.c3.4u8g.7：RabbitMQ集群，vm规格4u8g，7个节点 - dms.instance.rabbitmq.cluster.c3.8u16g.3：RabbitMQ集群，vm规格8u16g，3个节点 - dms.instance.rabbitmq.cluster.c3.8u16g.5：RabbitMQ集群，vm规格8u16g，5个节点 - dms.instance.rabbitmq.cluster.c3.8u16g.7：RabbitMQ集群，vm规格8u16g，7个节点 - dms.instance.rabbitmq.cluster.c3.16u32g.3：RabbitMQ集群，vm规格16u32g，3个节点 - dms.instance.rabbitmq.cluster.c3.16u32g.5：RabbitMQ集群，vm规格16u32g，5个节点 - dms.instance.rabbitmq.cluster.c3.16u32g.7：RabbitMQ集群，vm规格16u32g，7个节点](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,sbc)
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -737,7 +737,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 付费模式，1表示按需计费，0表示包年/包月计费。
+     * **参数解释**： 付费模式。 **取值范围**： - 1：按需计费。 - 0：包年/包月计费。
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -754,7 +754,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * VPC ID。
+     * **参数解释**： VPC ID。 **取值范围**： 不涉及。
      * @return vpcId
      */
     public String getVpcId() {
@@ -771,7 +771,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * VPC的名称。
+     * **参数解释**： VPC的名称。 **取值范围**： 不涉及。
      * @return vpcName
      */
     public String getVpcName() {
@@ -788,7 +788,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 完成创建时间。格式为时间戳，指从格林威治时间 1970年01月01日00时00分00秒起至指定时间的偏差总毫秒数。
+     * **参数解释**： 完成创建时间。格式为时间戳，指从格林威治时间 1970年01月01日00时00分00秒起至指定时间的偏差总毫秒数。 **取值范围**： 不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -805,7 +805,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 用户ID。
+     * **参数解释**： 用户ID。 **取值范围**： 不涉及。
      * @return userId
      */
     public String getUserId() {
@@ -822,7 +822,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 用户名。
+     * **参数解释**： 用户名。 **取值范围**： 不涉及。
      * @return userName
      */
     public String getUserName() {
@@ -839,7 +839,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 订单ID，只有在包周期计费时才会有order_id值，其他计费方式order_id值为空。
+     * **参数解释**： 订单ID，只有在包周期计费时才会有order_id值，其他计费方式order_id值为空。 **取值范围**： 不涉及。
      * @return orderId
      */
     public String getOrderId() {
@@ -856,7 +856,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 维护时间窗开始时间，格式为HH:mm:ss。
+     * **参数解释**： 维护时间窗开始时间，格式为HH:mm:ss。 **取值范围**： 不涉及。
      * @return maintainBegin
      */
     public String getMaintainBegin() {
@@ -873,7 +873,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 维护时间窗结束时间，格式为HH:mm:ss。
+     * **参数解释**： 维护时间窗结束时间，格式为HH:mm:ss。 **取值范围**： 不涉及。
      * @return maintainEnd
      */
     public String getMaintainEnd() {
@@ -890,7 +890,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * RabbitMQ实例是否开启公网访问功能。   - true：开启   - false：未开启
+     * **参数解释**： RabbitMQ实例是否开启公网访问功能。 **取值范围**： - true：开启 - false：未开启
      * @return enablePublicip
      */
     public Boolean getEnablePublicip() {
@@ -907,7 +907,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * RabbitMQ实例绑定的弹性IP地址。  如果未开启公网访问功能，该字段值为null。
+     * **参数解释**： RabbitMQ实例绑定的弹性IP地址。  如果未开启公网访问功能，该字段值为null。 **取值范围**： - true：开启 - false：未开启
      * @return publicipAddress
      */
     public String getPublicipAddress() {
@@ -924,7 +924,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * RabbitMQ实例绑定的弹性IP地址的ID。  如果未开启公网访问功能，该字段值为null。
+     * **参数解释**： RabbitMQ实例绑定的弹性IP地址的ID。  如果未开启公网访问功能，该字段值为null。 **取值范围**： 不涉及。
      * @return publicipId
      */
     public String getPublicipId() {
@@ -941,7 +941,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * RabbitMQ实例的管理地址。
+     * **参数解释**： RabbitMQ实例的管理地址。 **取值范围**： 不涉及。
      * @return managementConnectAddress
      */
     public String getManagementConnectAddress() {
@@ -958,7 +958,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * RabbitMQ实例的管理域名。
+     * **参数解释**： RabbitMQ实例的管理域名。 **取值范围**： 不涉及。
      * @return managementConnectDomainName
      */
     public String getManagementConnectDomainName() {
@@ -975,7 +975,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * RabbitMQ实例的公网管理地址。
+     * **参数解释**： RabbitMQ实例的公网管理地址。 **取值范围**： 不涉及。
      * @return publicManagementConnectAddress
      */
     public String getPublicManagementConnectAddress() {
@@ -992,7 +992,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * RabbitMQ实例的公网管理域名。
+     * **参数解释**： RabbitMQ实例的公网管理域名。 **取值范围**： 不涉及。
      * @return publicManagementConnectDomainName
      */
     public String getPublicManagementConnectDomainName() {
@@ -1009,7 +1009,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 是否开启安全认证。   - true：开启   - false：未开启
+     * **参数解释**： 是否开启安全认证。 **取值范围**： - true：开启 - false：未开启
      * @return sslEnable
      */
     public Boolean getSslEnable() {
@@ -1026,7 +1026,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 企业项目ID。
+     * **参数解释**： 企业项目ID。 **取值范围**： 不涉及。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -1043,7 +1043,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例扩容时用于区分老实例与新实例。 - true：新创建的实例，允许磁盘动态扩容不需要重启。 - false：老实例
+     * **参数解释**： 实例扩容时用于区分老实例与新实例。 **取值范围**： - true：新创建的实例，允许磁盘动态扩容不需要重启。 - false：特别老的实例不支持磁盘扩容。
      * @return isLogicalVolume
      */
     public Boolean getIsLogicalVolume() {
@@ -1060,7 +1060,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例扩容磁盘次数，如果超过20次则无法扩容磁盘。
+     * **参数解释**： 实例扩容磁盘次数，如果超过20次则无法扩容磁盘。 **取值范围**： 不涉及。
      * @return extendTimes
      */
     public Integer getExtendTimes() {
@@ -1077,7 +1077,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例类型：集群，cluster。
+     * **参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。
      * @return type
      */
     public TypeEnum getType() {
@@ -1094,7 +1094,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 产品标识。
+     * **参数解释**： 产品标识。 **取值范围**： 不涉及。
      * @return productId
      */
     public String getProductId() {
@@ -1111,7 +1111,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 安全组ID。
+     * **参数解释**： 安全组ID。 **取值范围**： 不涉及。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -1128,7 +1128,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 租户安全组名称。
+     * **参数解释**： 租户安全组名称。 **取值范围**： 不涉及。
      * @return securityGroupName
      */
     public String getSecurityGroupName() {
@@ -1145,7 +1145,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 子网ID。
+     * **参数解释**： 子网ID。 **取值范围**： 不涉及。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -1178,7 +1178,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例节点所在的可用区，返回“可用区ID”。
+     * **参数解释**： 实例节点所在的可用区ID。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -1211,7 +1211,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 实例节点所在的可用区，返回“可用区名称”。
+     * **参数解释**： 实例节点所在的可用区名称。
      * @return availableZoneNames
      */
     public List<String> getAvailableZoneNames() {
@@ -1228,7 +1228,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 总共消息存储空间，单位：GB。
+     * **参数解释**： 总共消息存储空间，单位：GB。 **取值范围**： 不涉及。
      * @return totalStorageSpace
      */
     public Integer getTotalStorageSpace() {
@@ -1245,7 +1245,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 存储资源ID。
+     * **参数解释**： 存储资源ID。 **取值范围**： 不涉及。
      * @return storageResourceId
      */
     public String getStorageResourceId() {
@@ -1262,7 +1262,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * IO规格。
+     * **参数解释**： IO规格。 **取值范围**： 不涉及。
      * @return storageSpecCode
      */
     public String getStorageSpecCode() {
@@ -1279,7 +1279,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 是否开启ipv6。
+     * **参数解释**： 是否开启IPv6。 **取值范围**： - true：开启。 - false：不开启。
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {
@@ -1312,7 +1312,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * IPv6的连接地址。
+     * **参数解释**： IPv6的连接地址。
      * @return ipv6ConnectAddresses
      */
     public List<String> getIpv6ConnectAddresses() {
@@ -1345,7 +1345,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 标签列表。
+     * **参数解释**： 标签列表。
      * @return tags
      */
     public List<TagEntity> getTags() {

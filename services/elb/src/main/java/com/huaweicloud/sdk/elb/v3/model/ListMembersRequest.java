@@ -185,7 +185,7 @@ public class ListMembersRequest {
     }
 
     /**
-     * 后端服务器名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
+     * 后端服务器名称。注意：该名称并非ECS名称。  支持多值查询，查询条件格式：*name=xxx&name=xxx*。
      * @return name
      */
     public List<String> getName() {

@@ -735,7 +735,7 @@ public class ElbClient {
     /**
      * 创建云日志
      *
-     * 创建云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 创建云日志。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -749,7 +749,7 @@ public class ElbClient {
     /**
      * 创建云日志
      *
-     * 创建云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 创建云日志。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1147,7 +1147,7 @@ public class ElbClient {
     /**
      * 删除云日志
      *
-     * 删除云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 删除云日志。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1161,7 +1161,7 @@ public class ElbClient {
     /**
      * 删除云日志
      *
-     * 删除云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 删除云日志。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1682,7 +1682,7 @@ public class ElbClient {
     /**
      * 查询云日志列表
      *
-     * 查询云日志列表。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 查询云日志列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1696,7 +1696,7 @@ public class ElbClient {
     /**
      * 查询云日志列表
      *
-     * 查询云日志列表。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 查询云日志列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2178,7 +2178,7 @@ public class ElbClient {
     /**
      * 查询云日志详情
      *
-     * 云日志详情。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 云日志详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2192,7 +2192,7 @@ public class ElbClient {
     /**
      * 查询云日志详情
      *
-     * 云日志详情。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 云日志详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2521,7 +2521,7 @@ public class ElbClient {
     /**
      * 更新云日志
      *
-     * 更新云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 更新云日志。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2535,7 +2535,7 @@ public class ElbClient {
     /**
      * 更新云日志
      *
-     * 更新云日志。[荷兰region不支持云日志功能，请勿使用。](tag:dt)
+     * 更新云日志。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

@@ -308,7 +308,7 @@ public class ExportAntiVirusResultRequest {
     /**
      * 导出条数
      * minimum: 1
-     * maximum: 30
+     * maximum: 500000
      * @return exportSize
      */
     public Integer getExportSize() {

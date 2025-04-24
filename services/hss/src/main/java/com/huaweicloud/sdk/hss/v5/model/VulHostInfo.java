@@ -126,7 +126,7 @@ public class VulHostInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "disabled_operate_types")
 
-    private List<VulHostInfoDisabledOperateTypes> disabledOperateTypes = null;
+    private List<HostVulInfoDisabledOperateTypes> disabledOperateTypes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "repair_priority")
@@ -529,12 +529,12 @@ public class VulHostInfo {
         this.supportRestore = supportRestore;
     }
 
-    public VulHostInfo withDisabledOperateTypes(List<VulHostInfoDisabledOperateTypes> disabledOperateTypes) {
+    public VulHostInfo withDisabledOperateTypes(List<HostVulInfoDisabledOperateTypes> disabledOperateTypes) {
         this.disabledOperateTypes = disabledOperateTypes;
         return this;
     }
 
-    public VulHostInfo addDisabledOperateTypesItem(VulHostInfoDisabledOperateTypes disabledOperateTypesItem) {
+    public VulHostInfo addDisabledOperateTypesItem(HostVulInfoDisabledOperateTypes disabledOperateTypesItem) {
         if (this.disabledOperateTypes == null) {
             this.disabledOperateTypes = new ArrayList<>();
         }
@@ -543,7 +543,7 @@ public class VulHostInfo {
     }
 
     public VulHostInfo withDisabledOperateTypes(
-        Consumer<List<VulHostInfoDisabledOperateTypes>> disabledOperateTypesSetter) {
+        Consumer<List<HostVulInfoDisabledOperateTypes>> disabledOperateTypesSetter) {
         if (this.disabledOperateTypes == null) {
             this.disabledOperateTypes = new ArrayList<>();
         }
@@ -555,11 +555,11 @@ public class VulHostInfo {
      * 漏洞在当前主机上不可进行的操作类型列表
      * @return disabledOperateTypes
      */
-    public List<VulHostInfoDisabledOperateTypes> getDisabledOperateTypes() {
+    public List<HostVulInfoDisabledOperateTypes> getDisabledOperateTypes() {
         return disabledOperateTypes;
     }
 
-    public void setDisabledOperateTypes(List<VulHostInfoDisabledOperateTypes> disabledOperateTypes) {
+    public void setDisabledOperateTypes(List<HostVulInfoDisabledOperateTypes> disabledOperateTypes) {
         this.disabledOperateTypes = disabledOperateTypes;
     }
 

@@ -1,11 +1,17 @@
 package com.huaweicloud.sdk.cloudtest.v1;
 
+import com.huaweicloud.sdk.cloudtest.v1.model.AddCaseResultFourRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddCaseResultFourResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddFeatureResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddRelationsInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddResourceInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseCommentResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseResultInfo;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseResultLogInfo;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseResultLogRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.AddTestCaseResultLogResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.AddTestItemInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.AlarmStatisticsQuery;
 import com.huaweicloud.sdk.cloudtest.v1.model.AlertStatisticsDto;
@@ -400,6 +406,44 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class CloudtestMeta {
 
+    public static final HttpRequestDef<AddCaseResultFourRequest, AddCaseResultFourResponse> addCaseResultFour =
+        genForAddCaseResultFour();
+
+    private static HttpRequestDef<AddCaseResultFourRequest, AddCaseResultFourResponse> genForAddCaseResultFour() {
+        // basic
+        HttpRequestDef.Builder<AddCaseResultFourRequest, AddCaseResultFourResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddCaseResultFourRequest.class, AddCaseResultFourResponse.class)
+                .withName("AddCaseResultFour")
+                .withUri("/v4/{project_id}/versions/{version_uri}/testcases/{case_uri}/results")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddCaseResultFourRequest::getProjectId, AddCaseResultFourRequest::setProjectId));
+        builder.<String>withRequestField("version_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddCaseResultFourRequest::getVersionUri, AddCaseResultFourRequest::setVersionUri));
+        builder.<String>withRequestField("case_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddCaseResultFourRequest::getCaseUri, AddCaseResultFourRequest::setCaseUri));
+        builder.<AddTestCaseResultInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AddTestCaseResultInfo.class),
+            f -> f.withMarshaller(AddCaseResultFourRequest::getBody, AddCaseResultFourRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<AddTestCaseCommentRequest, AddTestCaseCommentResponse> addTestCaseComment =
         genForAddTestCaseComment();
 
@@ -427,6 +471,46 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TestCaseCommentInfo.class),
             f -> f.withMarshaller(AddTestCaseCommentRequest::getBody, AddTestCaseCommentRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AddTestCaseResultLogRequest, AddTestCaseResultLogResponse> addTestCaseResultLog =
+        genForAddTestCaseResultLog();
+
+    private static HttpRequestDef<AddTestCaseResultLogRequest, AddTestCaseResultLogResponse> genForAddTestCaseResultLog() {
+        // basic
+        HttpRequestDef.Builder<AddTestCaseResultLogRequest, AddTestCaseResultLogResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, AddTestCaseResultLogRequest.class, AddTestCaseResultLogResponse.class)
+            .withName("AddTestCaseResultLog")
+            .withUri("/v4/{project_id}/versions/{version_uri}/testcases/{case_uri}/results/init")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddTestCaseResultLogRequest::getProjectId,
+                AddTestCaseResultLogRequest::setProjectId));
+        builder.<String>withRequestField("version_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddTestCaseResultLogRequest::getVersionUri,
+                AddTestCaseResultLogRequest::setVersionUri));
+        builder.<String>withRequestField("case_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddTestCaseResultLogRequest::getCaseUri, AddTestCaseResultLogRequest::setCaseUri));
+        builder.<AddTestCaseResultLogInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AddTestCaseResultLogInfo.class),
+            f -> f.withMarshaller(AddTestCaseResultLogRequest::getBody, AddTestCaseResultLogRequest::setBody));
 
         // response
 

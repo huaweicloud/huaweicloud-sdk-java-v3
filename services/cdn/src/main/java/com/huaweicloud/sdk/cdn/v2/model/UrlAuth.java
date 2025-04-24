@@ -37,6 +37,11 @@ public class UrlAuth {
     private String matchType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "match_rule")
+
+    private String matchRule;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "inherit_config")
 
     private InheritConfig inheritConfig;
@@ -140,7 +145,7 @@ public class UrlAuth {
     }
 
     /**
-     * 鉴权范围，目前仅支持配置所有文件参与鉴权，all：所有文件。
+     * 鉴权范围 - all：所有文件 - include_file_extension：指定后缀文件参与鉴权 - exclude_file_extension：指定后缀文件不参与鉴权
      * @return matchType
      */
     public String getMatchType() {
@@ -149,6 +154,23 @@ public class UrlAuth {
 
     public void setMatchType(String matchType) {
         this.matchType = matchType;
+    }
+
+    public UrlAuth withMatchRule(String matchRule) {
+        this.matchRule = matchRule;
+        return this;
+    }
+
+    /**
+     * 鉴权文件匹配规则，当match_type为all时，置空。当match_type为include_file_extension或exclude_file_extension时，输入文件后缀，后缀以“.”为首字符，多个后缀以“,”分隔，如.jpg,.zip,.exe。
+     * @return matchRule
+     */
+    public String getMatchRule() {
+        return matchRule;
+    }
+
+    public void setMatchRule(String matchRule) {
+        this.matchRule = matchRule;
     }
 
     public UrlAuth withInheritConfig(InheritConfig inheritConfig) {
@@ -273,10 +295,10 @@ public class UrlAuth {
         UrlAuth that = (UrlAuth) obj;
         return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
             && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.signMethod, that.signMethod)
-            && Objects.equals(this.matchType, that.matchType) && Objects.equals(this.inheritConfig, that.inheritConfig)
-            && Objects.equals(this.key, that.key) && Objects.equals(this.backupKey, that.backupKey)
-            && Objects.equals(this.signArg, that.signArg) && Objects.equals(this.timeFormat, that.timeFormat)
-            && Objects.equals(this.timeArg, that.timeArg);
+            && Objects.equals(this.matchType, that.matchType) && Objects.equals(this.matchRule, that.matchRule)
+            && Objects.equals(this.inheritConfig, that.inheritConfig) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.backupKey, that.backupKey) && Objects.equals(this.signArg, that.signArg)
+            && Objects.equals(this.timeFormat, that.timeFormat) && Objects.equals(this.timeArg, that.timeArg);
     }
 
     @Override
@@ -286,6 +308,7 @@ public class UrlAuth {
             expireTime,
             signMethod,
             matchType,
+            matchRule,
             inheritConfig,
             key,
             backupKey,
@@ -303,6 +326,7 @@ public class UrlAuth {
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    signMethod: ").append(toIndentedString(signMethod)).append("\n");
         sb.append("    matchType: ").append(toIndentedString(matchType)).append("\n");
+        sb.append("    matchRule: ").append(toIndentedString(matchRule)).append("\n");
         sb.append("    inheritConfig: ").append(toIndentedString(inheritConfig)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    backupKey: ").append(toIndentedString(backupKey)).append("\n");

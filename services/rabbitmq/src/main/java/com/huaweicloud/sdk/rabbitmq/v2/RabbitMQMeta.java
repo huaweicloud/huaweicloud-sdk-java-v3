@@ -97,6 +97,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQueueDetailsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQueueDetailsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProductCoresRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProductCoresResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsRequest;
@@ -860,6 +862,37 @@ public class RabbitMQMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse> showRabbitMqProductCores =
+        genForShowRabbitMqProductCores();
+
+    private static HttpRequestDef<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse> genForShowRabbitMqProductCores() {
+        // basic
+        HttpRequestDef.Builder<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowRabbitMqProductCoresRequest.class, ShowRabbitMqProductCoresResponse.class)
+                .withName("ShowRabbitMqProductCores")
+                .withUri("/v2/rabbitmq/products/cores")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRabbitMqProductCoresRequest::getInstanceId,
+                ShowRabbitMqProductCoresRequest::setInstanceId));
+        builder.<String>withRequestField("product_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRabbitMqProductCoresRequest::getProductId,
+                ShowRabbitMqProductCoresRequest::setProductId));
 
         // response
 

@@ -16,6 +16,8 @@ public class ApmRegion {
 
     public static final Region CN_NORTH_4 = new Region("cn-north-4", "https://apm2.cn-north-4.myhuaweicloud.com");
 
+    public static final Region RU_MOSCOW_1 = new Region("ru-moscow-1", "https://apm2.ru-moscow-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("APM");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -23,6 +25,7 @@ public class ApmRegion {
     private static Map<String, Region> createStaticFields() {
         Map<String, Region> map = new HashMap<>();
         map.put("cn-north-4", CN_NORTH_4);
+        map.put("ru-moscow-1", RU_MOSCOW_1);
         return Collections.unmodifiableMap(map);
     }
 

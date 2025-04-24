@@ -38,6 +38,11 @@ public class AvailabilityZone {
 
     private Integer category;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "spec_code")
+
+    private String specCode;
+
     public AvailabilityZone withCode(String code) {
         this.code = code;
         return this;
@@ -139,6 +144,23 @@ public class AvailabilityZone {
         this.category = category;
     }
 
+    public AvailabilityZone withSpecCode(String specCode) {
+        this.specCode = specCode;
+        return this;
+    }
+
+    /**
+     * 参数解释：可用区的产品编码，仅边缘场景有效。  [不支持该字段，请勿使用。](tag:dt,hcso_dt)
+     * @return specCode
+     */
+    public String getSpecCode() {
+        return specCode;
+    }
+
+    public void setSpecCode(String specCode) {
+        this.specCode = specCode;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -151,12 +173,12 @@ public class AvailabilityZone {
         return Objects.equals(this.code, that.code) && Objects.equals(this.state, that.state)
             && Objects.equals(this.protocol, that.protocol)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
-            && Objects.equals(this.category, that.category);
+            && Objects.equals(this.category, that.category) && Objects.equals(this.specCode, that.specCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, state, protocol, publicBorderGroup, category);
+        return Objects.hash(code, state, protocol, publicBorderGroup, category, specCode);
     }
 
     @Override
@@ -168,6 +190,7 @@ public class AvailabilityZone {
         sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
+        sb.append("    specCode: ").append(toIndentedString(specCode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

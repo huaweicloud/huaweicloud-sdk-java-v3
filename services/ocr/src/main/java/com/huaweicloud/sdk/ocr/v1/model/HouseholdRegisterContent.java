@@ -399,7 +399,7 @@ public class HouseholdRegisterContent {
     }
 
     /**
-     * 婚姻状况。   
+     * 婚姻状况。 
      * @return maritalStatus
      */
     public String getMaritalStatus() {

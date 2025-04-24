@@ -38,6 +38,9 @@ public class DeHRegion {
     public static final Region AP_SOUTHEAST_3 =
         new Region("ap-southeast-3", "https://deh.ap-southeast-3.myhuaweicloud.com");
 
+    public static final Region MY_KUALALUMPUR_1 =
+        new Region("my-kualalumpur-1", "https://deh.my-kualalumpur-1.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("DEH");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -54,6 +57,7 @@ public class DeHRegion {
         map.put("ap-southeast-1", AP_SOUTHEAST_1);
         map.put("ap-southeast-2", AP_SOUTHEAST_2);
         map.put("ap-southeast-3", AP_SOUTHEAST_3);
+        map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
         return Collections.unmodifiableMap(map);
     }
 

@@ -45,6 +45,11 @@ public class RequestLimitRules {
 
     private Integer limitRateValue;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit_time")
+
+    private String limitTime;
+
     public RequestLimitRules withStatus(String status) {
         this.status = status;
         return this;
@@ -164,6 +169,23 @@ public class RequestLimitRules {
         this.limitRateValue = limitRateValue;
     }
 
+    public RequestLimitRules withLimitTime(String limitTime) {
+        this.limitTime = limitTime;
+        return this;
+    }
+
+    /**
+     * 指明限速的时段，按照每天24小时设置限速时段，格式为：HHMM-HHMM（HH为时，MM为分，时区为UTC+8），多个时段限速时用“,”分隔，最多可配置10个时段，例如：0100-0200,2200-2300。不传或传空时默认值为0000-2400，代表限速对所有时段生效。
+     * @return limitTime
+     */
+    public String getLimitTime() {
+        return limitTime;
+    }
+
+    public void setLimitTime(String limitTime) {
+        this.limitTime = limitTime;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +198,13 @@ public class RequestLimitRules {
         return Objects.equals(this.status, that.status) && Objects.equals(this.priority, that.priority)
             && Objects.equals(this.matchType, that.matchType) && Objects.equals(this.matchValue, that.matchValue)
             && Objects.equals(this.type, that.type) && Objects.equals(this.limitRateAfter, that.limitRateAfter)
-            && Objects.equals(this.limitRateValue, that.limitRateValue);
+            && Objects.equals(this.limitRateValue, that.limitRateValue)
+            && Objects.equals(this.limitTime, that.limitTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, priority, matchType, matchValue, type, limitRateAfter, limitRateValue);
+        return Objects.hash(status, priority, matchType, matchValue, type, limitRateAfter, limitRateValue, limitTime);
     }
 
     @Override
@@ -195,6 +218,7 @@ public class RequestLimitRules {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    limitRateAfter: ").append(toIndentedString(limitRateAfter)).append("\n");
         sb.append("    limitRateValue: ").append(toIndentedString(limitRateValue)).append("\n");
+        sb.append("    limitTime: ").append(toIndentedString(limitTime)).append("\n");
         sb.append("}");
         return sb.toString();
     }

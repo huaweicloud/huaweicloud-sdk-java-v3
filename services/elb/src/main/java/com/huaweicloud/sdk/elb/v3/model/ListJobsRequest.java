@@ -11,6 +11,21 @@ import java.util.Objects;
 public class ListJobsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_reverse")
+
+    private Boolean pageReverse;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "job_id")
 
     private String jobId;
@@ -39,6 +54,59 @@ public class ListJobsRequest {
     @JsonProperty(value = "begin_time")
 
     private String beginTime;
+
+    public ListJobsRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 参数解释：每页返回的个数。  取值范围：0-2000  默认取值：2000
+     * minimum: 0
+     * maximum: 2000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListJobsRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 上一页最后一条记录的ID。  使用说明： - 必须与limit一起使用。 - 不指定时表示查询第一页。 - 该字段不允许为空或无效的ID。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
+    public ListJobsRequest withPageReverse(Boolean pageReverse) {
+        this.pageReverse = pageReverse;
+        return this;
+    }
+
+    /**
+     * 是否反向查询。  取值： - true：查询上一页。 - false：查询下一页，默认。  使用说明： - 必须与limit一起使用。 - 当page_reverse=true时，若要查询上一页，marker取值为当前页返回值的previous_marker
+     * @return pageReverse
+     */
+    public Boolean getPageReverse() {
+        return pageReverse;
+    }
+
+    public void setPageReverse(Boolean pageReverse) {
+        this.pageReverse = pageReverse;
+    }
 
     public ListJobsRequest withJobId(String jobId) {
         this.jobId = jobId;
@@ -151,20 +219,25 @@ public class ListJobsRequest {
             return false;
         }
         ListJobsRequest that = (ListJobsRequest) obj;
-        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobType, that.jobType)
-            && Objects.equals(this.status, that.status) && Objects.equals(this.errorCode, that.errorCode)
-            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.beginTime, that.beginTime);
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.beginTime, that.beginTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, jobType, status, errorCode, resourceId, beginTime);
+        return Objects.hash(limit, marker, pageReverse, jobId, jobType, status, errorCode, resourceId, beginTime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListJobsRequest {\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
+        sb.append("    pageReverse: ").append(toIndentedString(pageReverse)).append("\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");

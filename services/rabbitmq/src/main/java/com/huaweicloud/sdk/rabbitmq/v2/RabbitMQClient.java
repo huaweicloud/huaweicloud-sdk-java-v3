@@ -83,6 +83,8 @@ import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQueueDetailsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQueueDetailsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQuotasRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowQuotasResponse;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProductCoresRequest;
+import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProductCoresResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsRequest;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqProjectTagsResponse;
 import com.huaweicloud.sdk.rabbitmq.v2.model.ShowRabbitMqTagsRequest;
@@ -871,6 +873,35 @@ public class RabbitMQClient {
      */
     public SyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasInvoker(ShowQuotasRequest request) {
         return new SyncInvoker<>(request, RabbitMQMeta.showQuotas, hcClient);
+    }
+
+    /**
+     * 查询RabbitMQ产品规格核数
+     *
+     * 查询RabbitMQ产品规格核数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRabbitMqProductCoresRequest 请求对象
+     * @return ShowRabbitMqProductCoresResponse
+     */
+    public ShowRabbitMqProductCoresResponse showRabbitMqProductCores(ShowRabbitMqProductCoresRequest request) {
+        return hcClient.syncInvokeHttp(request, RabbitMQMeta.showRabbitMqProductCores);
+    }
+
+    /**
+     * 查询RabbitMQ产品规格核数
+     *
+     * 查询RabbitMQ产品规格核数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRabbitMqProductCoresRequest 请求对象
+     * @return SyncInvoker<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse>
+     */
+    public SyncInvoker<ShowRabbitMqProductCoresRequest, ShowRabbitMqProductCoresResponse> showRabbitMqProductCoresInvoker(
+        ShowRabbitMqProductCoresRequest request) {
+        return new SyncInvoker<>(request, RabbitMQMeta.showRabbitMqProductCores, hcClient);
     }
 
     /**

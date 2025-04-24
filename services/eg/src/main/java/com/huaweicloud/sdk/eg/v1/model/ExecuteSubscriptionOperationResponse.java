@@ -12,7 +12,7 @@ import java.util.function.Consumer;
 /**
  * Response Object
  */
-public class OperateSubscriptionResponse extends SdkResponse {
+public class ExecuteSubscriptionOperationResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "failed_count")
@@ -29,7 +29,7 @@ public class OperateSubscriptionResponse extends SdkResponse {
 
     private String xRequestId;
 
-    public OperateSubscriptionResponse withFailedCount(Integer failedCount) {
+    public ExecuteSubscriptionOperationResponse withFailedCount(Integer failedCount) {
         this.failedCount = failedCount;
         return this;
     }
@@ -46,12 +46,12 @@ public class OperateSubscriptionResponse extends SdkResponse {
         this.failedCount = failedCount;
     }
 
-    public OperateSubscriptionResponse withEvents(List<SubscriptionOperateRespEvents> events) {
+    public ExecuteSubscriptionOperationResponse withEvents(List<SubscriptionOperateRespEvents> events) {
         this.events = events;
         return this;
     }
 
-    public OperateSubscriptionResponse addEventsItem(SubscriptionOperateRespEvents eventsItem) {
+    public ExecuteSubscriptionOperationResponse addEventsItem(SubscriptionOperateRespEvents eventsItem) {
         if (this.events == null) {
             this.events = new ArrayList<>();
         }
@@ -59,7 +59,7 @@ public class OperateSubscriptionResponse extends SdkResponse {
         return this;
     }
 
-    public OperateSubscriptionResponse withEvents(Consumer<List<SubscriptionOperateRespEvents>> eventsSetter) {
+    public ExecuteSubscriptionOperationResponse withEvents(Consumer<List<SubscriptionOperateRespEvents>> eventsSetter) {
         if (this.events == null) {
             this.events = new ArrayList<>();
         }
@@ -79,7 +79,7 @@ public class OperateSubscriptionResponse extends SdkResponse {
         this.events = events;
     }
 
-    public OperateSubscriptionResponse withXRequestId(String xRequestId) {
+    public ExecuteSubscriptionOperationResponse withXRequestId(String xRequestId) {
         this.xRequestId = xRequestId;
         return this;
     }
@@ -106,7 +106,7 @@ public class OperateSubscriptionResponse extends SdkResponse {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperateSubscriptionResponse that = (OperateSubscriptionResponse) obj;
+        ExecuteSubscriptionOperationResponse that = (ExecuteSubscriptionOperationResponse) obj;
         return Objects.equals(this.failedCount, that.failedCount) && Objects.equals(this.events, that.events)
             && Objects.equals(this.xRequestId, that.xRequestId);
     }
@@ -119,7 +119,7 @@ public class OperateSubscriptionResponse extends SdkResponse {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class OperateSubscriptionResponse {\n");
+        sb.append("class ExecuteSubscriptionOperationResponse {\n");
         sb.append("    failedCount: ").append(toIndentedString(failedCount)).append("\n");
         sb.append("    events: ").append(toIndentedString(events)).append("\n");
         sb.append("    xRequestId: ").append(toIndentedString(xRequestId)).append("\n");

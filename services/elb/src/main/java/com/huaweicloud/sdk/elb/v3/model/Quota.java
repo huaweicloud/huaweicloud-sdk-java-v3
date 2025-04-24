@@ -105,6 +105,16 @@ public class Quota {
 
     private Integer l7policiesPerListener;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "free_instance_members_per_pool")
+
+    private Integer freeInstanceMembersPerPool;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "free_instance_listeners_per_loadbalancer")
+
+    private Integer freeInstanceListenersPerLoadbalancer;
+
     public Quota withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
@@ -428,6 +438,40 @@ public class Quota {
         this.l7policiesPerListener = l7policiesPerListener;
     }
 
+    public Quota withFreeInstanceMembersPerPool(Integer freeInstanceMembersPerPool) {
+        this.freeInstanceMembersPerPool = freeInstanceMembersPerPool;
+        return this;
+    }
+
+    /**
+     * 单个pool实例下的免费member配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return freeInstanceMembersPerPool
+     */
+    public Integer getFreeInstanceMembersPerPool() {
+        return freeInstanceMembersPerPool;
+    }
+
+    public void setFreeInstanceMembersPerPool(Integer freeInstanceMembersPerPool) {
+        this.freeInstanceMembersPerPool = freeInstanceMembersPerPool;
+    }
+
+    public Quota withFreeInstanceListenersPerLoadbalancer(Integer freeInstanceListenersPerLoadbalancer) {
+        this.freeInstanceListenersPerLoadbalancer = freeInstanceListenersPerLoadbalancer;
+        return this;
+    }
+
+    /**
+     * 单个LB实例下的免费监听器配额。 取值： - 大于等于0：表示当前配额数量。 - -1：表示无配额限制。
+     * @return freeInstanceListenersPerLoadbalancer
+     */
+    public Integer getFreeInstanceListenersPerLoadbalancer() {
+        return freeInstanceListenersPerLoadbalancer;
+    }
+
+    public void setFreeInstanceListenersPerLoadbalancer(Integer freeInstanceListenersPerLoadbalancer) {
+        this.freeInstanceListenersPerLoadbalancer = freeInstanceListenersPerLoadbalancer;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -450,7 +494,9 @@ public class Quota {
             && Objects.equals(this.listenersPerLoadbalancer, that.listenersPerLoadbalancer)
             && Objects.equals(this.ipgroupsPerListener, that.ipgroupsPerListener)
             && Objects.equals(this.poolsPerL7policy, that.poolsPerL7policy)
-            && Objects.equals(this.l7policiesPerListener, that.l7policiesPerListener);
+            && Objects.equals(this.l7policiesPerListener, that.l7policiesPerListener)
+            && Objects.equals(this.freeInstanceMembersPerPool, that.freeInstanceMembersPerPool)
+            && Objects.equals(this.freeInstanceListenersPerLoadbalancer, that.freeInstanceListenersPerLoadbalancer);
     }
 
     @Override
@@ -473,7 +519,9 @@ public class Quota {
             listenersPerLoadbalancer,
             ipgroupsPerListener,
             poolsPerL7policy,
-            l7policiesPerListener);
+            l7policiesPerListener,
+            freeInstanceMembersPerPool,
+            freeInstanceListenersPerLoadbalancer);
     }
 
     @Override
@@ -499,6 +547,10 @@ public class Quota {
         sb.append("    ipgroupsPerListener: ").append(toIndentedString(ipgroupsPerListener)).append("\n");
         sb.append("    poolsPerL7policy: ").append(toIndentedString(poolsPerL7policy)).append("\n");
         sb.append("    l7policiesPerListener: ").append(toIndentedString(l7policiesPerListener)).append("\n");
+        sb.append("    freeInstanceMembersPerPool: ").append(toIndentedString(freeInstanceMembersPerPool)).append("\n");
+        sb.append("    freeInstanceListenersPerLoadbalancer: ")
+            .append(toIndentedString(freeInstanceListenersPerLoadbalancer))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }
