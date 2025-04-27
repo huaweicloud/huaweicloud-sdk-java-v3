@@ -39,7 +39,7 @@ public class CreateRSetBatchLinesReq {
     }
 
     /**
-     * 后缀需以Zone Name结束且为FQDN（即以“.”号结束的完整主机名）。
+     * 域名，后缀需以zone name结束且为FQDN（即以“.”号结束的完整主机名）。
      * @return name
      */
     public String getName() {
@@ -73,7 +73,7 @@ public class CreateRSetBatchLinesReq {
     }
 
     /**
-     * Record Set的类型。 取值范围：A,AAAA,MX,CNAME,TXT,NS,SRV,CAA。
+     * 记录集的类型。 取值范围：A,AAAA,MX,CNAME,TXT,NS,SRV,CAA。
      * @return type
      */
     public String getType() {

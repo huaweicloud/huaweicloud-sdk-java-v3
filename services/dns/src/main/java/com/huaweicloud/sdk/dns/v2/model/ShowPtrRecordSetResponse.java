@@ -63,7 +63,7 @@ public class ShowPtrRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * PTR记录的ID，格式形如{region}:{floatingip_id}。
+     * 反向解析记录的ID，格式形如{region}:{floatingip_id}。
      * @return id
      */
     public String getId() {
@@ -80,7 +80,7 @@ public class ShowPtrRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * PTR记录对应的域名。
+     * 反向解析记录对应的域名。
      * @return ptrdname
      */
     public String getPtrdname() {
@@ -97,7 +97,7 @@ public class ShowPtrRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * 对PTR记录的描述。
+     * 对反向解析记录的描述。
      * @return description
      */
     public String getDescription() {
@@ -114,7 +114,7 @@ public class ShowPtrRecordSetResponse extends SdkResponse {
     }
 
     /**
-     * PTR记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
+     * 反向解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
      * @return ttl
      */
     public Integer getTtl() {

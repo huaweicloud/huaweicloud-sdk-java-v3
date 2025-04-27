@@ -77,7 +77,7 @@ public class BatchSetZonesStatusResponse extends SdkResponse {
     }
 
     /**
-     * 设置zone的列表响应。
+     * 设置域名的列表响应。
      * @return zones
      */
     public List<ZoneData> getZones() {

@@ -48,7 +48,7 @@ public class UpdatePrivateZoneInfoReq {
     }
 
     /**
-     * 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
+     * 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
      * @return email
      */
     public String getEmail() {

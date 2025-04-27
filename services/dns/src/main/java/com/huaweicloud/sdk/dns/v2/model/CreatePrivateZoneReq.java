@@ -115,7 +115,7 @@ public class CreatePrivateZoneReq {
     }
 
     /**
-     * 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
+     * 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
      * @return email
      */
     public String getEmail() {
@@ -175,7 +175,7 @@ public class CreatePrivateZoneReq {
     }
 
     /**
-     * 内网Zone的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前Zone未开启递归解析代理 RECURSIVE：当前Zone已开启递归解析代理
+     * 内网域名的子域名递归解析代理模式。  取值范围：  AUTHORITY：当前域名未开启递归解析代理 RECURSIVE：当前域名已开启递归解析代理
      * @return proxyPattern
      */
     public String getProxyPattern() {
@@ -225,7 +225,7 @@ public class CreatePrivateZoneReq {
     }
 
     /**
-     * 域名关联的企业项目ID，长度不超过36个字符。  默认值为0。
+     * 域名关联的企业项目ID，长度不超过36个字符。默认值为0。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

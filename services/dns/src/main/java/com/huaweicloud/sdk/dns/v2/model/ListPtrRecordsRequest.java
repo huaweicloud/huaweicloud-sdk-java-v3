@@ -114,7 +114,7 @@ public class ListPtrRecordsRequest {
     }
 
     /**
-     * 资源标签。  取值格式：key1,value1|key2,value2  多个标签之间用\"|\"分开，每个标签的键值用英文逗号\",\"相隔。
+     * 资源标签。  取值格式：key1,value1|key2,value2  多个标签之间用“|”分开，每个标签的键值用英文逗号“,”相隔。
      * @return tags
      */
     public String getTags() {

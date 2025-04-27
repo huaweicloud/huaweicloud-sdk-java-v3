@@ -94,7 +94,7 @@ public class ListRecordSetsWithTags {
     }
 
     /**
-     * Record Set的ID。
+     * 记录集的ID。
      * @return id
      */
     public String getId() {
@@ -111,7 +111,7 @@ public class ListRecordSetsWithTags {
     }
 
     /**
-     * Record Set的名称。
+     * 记录集的名称。
      * @return name
      */
     public String getName() {
@@ -128,7 +128,7 @@ public class ListRecordSetsWithTags {
     }
 
     /**
-     * Record Set的描述信息。
+     * 记录集的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -145,7 +145,7 @@ public class ListRecordSetsWithTags {
     }
 
     /**
-     * 托管该记录的zone_id。
+     * 托管该记录的域名ID。
      * @return zoneId
      */
     public String getZoneId() {
@@ -162,7 +162,7 @@ public class ListRecordSetsWithTags {
     }
 
     /**
-     * 托管该记录的zone_name。
+     * 托管该记录的域名。
      * @return zoneName
      */
     public String getZoneName() {
@@ -246,7 +246,7 @@ public class ListRecordSetsWithTags {
     }
 
     /**
-     * 创建时间。
+     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return createAt
      */
     public String getCreateAt() {
@@ -263,7 +263,7 @@ public class ListRecordSetsWithTags {
     }
 
     /**
-     * 更新时间。
+     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return updateAt
      */
     public String getUpdateAt() {
@@ -297,7 +297,7 @@ public class ListRecordSetsWithTags {
     }
 
     /**
-     * 标识是否由系统默认生成，系统默认生成的Record Set不能删除。
+     * 标识是否由系统默认生成，系统默认生成的记录集不能删除。
      * @return _default
      */
     public Boolean getDefault() {
@@ -314,7 +314,7 @@ public class ListRecordSetsWithTags {
     }
 
     /**
-     * 该Record Set所属的项目ID。
+     * 该记录集所属的项目ID。
      * @return projectId
      */
     public String getProjectId() {

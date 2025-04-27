@@ -27,7 +27,7 @@ public class UpdatePublicZoneRequest {
     }
 
     /**
-     * 待修改zone的ID
+     * 域名ID。
      * @return zoneId
      */
     public String getZoneId() {

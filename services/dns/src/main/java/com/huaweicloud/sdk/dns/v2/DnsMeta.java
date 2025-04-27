@@ -5,11 +5,19 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.dns.v2.model.AssociateEndpointIpaddressRequest;
+import com.huaweicloud.sdk.dns.v2.model.AssociateEndpointIpaddressResponse;
+import com.huaweicloud.sdk.dns.v2.model.AssociateOrDisassociateRouterWithRuleRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.AssociateResolverRuleRouterRequest;
+import com.huaweicloud.sdk.dns.v2.model.AssociateResolverRuleRouterResponse;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterRequest;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.AssociateRouterResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchCreateTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchCreateTagResponse;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeletePtrRecordsRequest;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeletePtrRecordsRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.BatchDeletePtrRecordsResponse;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.BatchDeleteRecordSetWithLineResponse;
@@ -34,6 +42,9 @@ import com.huaweicloud.sdk.dns.v2.model.CreateCustomLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.CreateCustomLineResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateEipRecordSetRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateEipRecordSetResponse;
+import com.huaweicloud.sdk.dns.v2.model.CreateEndpointRequest;
+import com.huaweicloud.sdk.dns.v2.model.CreateEndpointRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.CreateEndpointResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateLineGroupRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateLineGroupResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateLineGroupsReq;
@@ -41,6 +52,9 @@ import com.huaweicloud.sdk.dns.v2.model.CreatePrivateZoneReq;
 import com.huaweicloud.sdk.dns.v2.model.CreatePrivateZoneRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreatePrivateZoneResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreatePtrReq;
+import com.huaweicloud.sdk.dns.v2.model.CreatePtrRequest;
+import com.huaweicloud.sdk.dns.v2.model.CreatePtrRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.CreatePtrResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreatePublicZoneReq;
 import com.huaweicloud.sdk.dns.v2.model.CreatePublicZoneRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreatePublicZoneResponse;
@@ -53,30 +67,54 @@ import com.huaweicloud.sdk.dns.v2.model.CreateRecordSetWithBatchLinesResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateRecordSetWithLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.CreateRecordSetWithLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.CreateResolverRuleRequest;
+import com.huaweicloud.sdk.dns.v2.model.CreateResolverRuleRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.CreateResolverRuleResponse;
 import com.huaweicloud.sdk.dns.v2.model.CreateTagReq;
 import com.huaweicloud.sdk.dns.v2.model.CreateTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.CreateTagResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteCustomLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteCustomLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.DeleteEndpointRequest;
+import com.huaweicloud.sdk.dns.v2.model.DeleteEndpointResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteLineGroupRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteLineGroupResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeletePrivateZoneRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeletePrivateZoneResponse;
+import com.huaweicloud.sdk.dns.v2.model.DeletePtrRequest;
+import com.huaweicloud.sdk.dns.v2.model.DeletePtrResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeletePublicZoneRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeletePublicZoneResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetsRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteRecordSetsResponse;
+import com.huaweicloud.sdk.dns.v2.model.DeleteResolverRuleRequest;
+import com.huaweicloud.sdk.dns.v2.model.DeleteResolverRuleResponse;
 import com.huaweicloud.sdk.dns.v2.model.DeleteTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.DeleteTagResponse;
+import com.huaweicloud.sdk.dns.v2.model.DisableDnssecConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.DisableDnssecConfigResponse;
+import com.huaweicloud.sdk.dns.v2.model.DisassociateEndpointIpaddressRequest;
+import com.huaweicloud.sdk.dns.v2.model.DisassociateEndpointIpaddressResponse;
+import com.huaweicloud.sdk.dns.v2.model.DisassociateResolverRuleRouterRequest;
+import com.huaweicloud.sdk.dns.v2.model.DisassociateResolverRuleRouterResponse;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateRouterRequest;
 import com.huaweicloud.sdk.dns.v2.model.DisassociateRouterResponse;
 import com.huaweicloud.sdk.dns.v2.model.DisassociaterouterRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.EnableDnssecConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.EnableDnssecConfigResponse;
+import com.huaweicloud.sdk.dns.v2.model.Ipaddresses;
 import com.huaweicloud.sdk.dns.v2.model.ListApiVersionsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListApiVersionsResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListCustomLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListCustomLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListEndpointIpaddressesRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListEndpointIpaddressesResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListEndpointVpcsRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListEndpointVpcsResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListEndpointsRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListEndpointsResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListLineGroupsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListLineGroupsResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListNameServersRequest;
@@ -85,6 +123,10 @@ import com.huaweicloud.sdk.dns.v2.model.ListPrivateZonesRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListPrivateZonesResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListPtrRecordsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListPtrRecordsResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListPtrsRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListPtrsResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListPublicZoneLinesRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListPublicZoneLinesResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListPublicZonesRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListPublicZonesResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsByZoneRequest;
@@ -93,6 +135,8 @@ import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListRecordSetsWithLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.ListResolverRulesRequest;
+import com.huaweicloud.sdk.dns.v2.model.ListResolverRulesResponse;
 import com.huaweicloud.sdk.dns.v2.model.ListTagReq;
 import com.huaweicloud.sdk.dns.v2.model.ListTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.ListTagResponse;
@@ -101,13 +145,20 @@ import com.huaweicloud.sdk.dns.v2.model.ListTagsResponse;
 import com.huaweicloud.sdk.dns.v2.model.RestorePtrRecordRequest;
 import com.huaweicloud.sdk.dns.v2.model.RestorePtrRecordResponse;
 import com.huaweicloud.sdk.dns.v2.model.RestorePtrReq;
+import com.huaweicloud.sdk.dns.v2.model.SetPrivateZoneProxyPatternRequest;
+import com.huaweicloud.sdk.dns.v2.model.SetPrivateZoneProxyPatternRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.SetPrivateZoneProxyPatternResponse;
 import com.huaweicloud.sdk.dns.v2.model.SetRecordSetsStatusRequest;
 import com.huaweicloud.sdk.dns.v2.model.SetRecordSetsStatusRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.SetRecordSetsStatusResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowApiInfoRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowApiInfoResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowDnssecConfigRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowDnssecConfigResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowDomainQuotaRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowDomainQuotaResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowEndpointRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowEndpointResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowLineGroupRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowLineGroupResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowPrivateZoneNameServerRequest;
@@ -116,6 +167,8 @@ import com.huaweicloud.sdk.dns.v2.model.ShowPrivateZoneRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowPrivateZoneResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowPtrRecordSetRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowPtrRecordSetResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowPtrRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowPtrResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowPublicZoneNameServerRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowPublicZoneNameServerResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowPublicZoneRequest;
@@ -126,25 +179,34 @@ import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetWithLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowRecordSetWithLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.ShowResolverRuleRequest;
+import com.huaweicloud.sdk.dns.v2.model.ShowResolverRuleResponse;
 import com.huaweicloud.sdk.dns.v2.model.ShowResourceTagRequest;
 import com.huaweicloud.sdk.dns.v2.model.ShowResourceTagResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdateCustomLineRequest;
 import com.huaweicloud.sdk.dns.v2.model.UpdateCustomLineRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.UpdateCustomLineResponse;
+import com.huaweicloud.sdk.dns.v2.model.UpdateEndpointRequest;
+import com.huaweicloud.sdk.dns.v2.model.UpdateEndpointRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.UpdateEndpointResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdateLineGroupsRequest;
 import com.huaweicloud.sdk.dns.v2.model.UpdateLineGroupsRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.UpdateLineGroupsResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePrivateZoneInfoReq;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePrivateZoneRequest;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePrivateZoneResponse;
+import com.huaweicloud.sdk.dns.v2.model.UpdatePrivateZoneStatusRequest;
+import com.huaweicloud.sdk.dns.v2.model.UpdatePrivateZoneStatusResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePtrRecordRequest;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePtrRecordResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePtrReq;
+import com.huaweicloud.sdk.dns.v2.model.UpdatePtrRequest;
+import com.huaweicloud.sdk.dns.v2.model.UpdatePtrRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.UpdatePtrResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePublicZoneInfo;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePublicZoneRequest;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePublicZoneResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePublicZoneStatusRequest;
-import com.huaweicloud.sdk.dns.v2.model.UpdatePublicZoneStatusRequestBody;
 import com.huaweicloud.sdk.dns.v2.model.UpdatePublicZoneStatusResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdateRecordSetReq;
 import com.huaweicloud.sdk.dns.v2.model.UpdateRecordSetRequest;
@@ -152,9 +214,196 @@ import com.huaweicloud.sdk.dns.v2.model.UpdateRecordSetResponse;
 import com.huaweicloud.sdk.dns.v2.model.UpdateRecordSetsReq;
 import com.huaweicloud.sdk.dns.v2.model.UpdateRecordSetsRequest;
 import com.huaweicloud.sdk.dns.v2.model.UpdateRecordSetsResponse;
+import com.huaweicloud.sdk.dns.v2.model.UpdateResolverRuleRequest;
+import com.huaweicloud.sdk.dns.v2.model.UpdateResolverRuleRequestBody;
+import com.huaweicloud.sdk.dns.v2.model.UpdateResolverRuleResponse;
+import com.huaweicloud.sdk.dns.v2.model.UpdateZoneStatusRequestBody;
 
 @SuppressWarnings("unchecked")
 public class DnsMeta {
+
+    public static final HttpRequestDef<AssociateEndpointIpaddressRequest, AssociateEndpointIpaddressResponse> associateEndpointIpaddress =
+        genForAssociateEndpointIpaddress();
+
+    private static HttpRequestDef<AssociateEndpointIpaddressRequest, AssociateEndpointIpaddressResponse> genForAssociateEndpointIpaddress() {
+        // basic
+        HttpRequestDef.Builder<AssociateEndpointIpaddressRequest, AssociateEndpointIpaddressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssociateEndpointIpaddressRequest.class,
+                    AssociateEndpointIpaddressResponse.class)
+                .withName("AssociateEndpointIpaddress")
+                .withUri("/v2.1/endpoints/{endpoint_id}/ipaddresses")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateEndpointIpaddressRequest::getEndpointId,
+                AssociateEndpointIpaddressRequest::setEndpointId));
+        builder.<Ipaddresses>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Ipaddresses.class),
+            f -> f.withMarshaller(AssociateEndpointIpaddressRequest::getBody,
+                AssociateEndpointIpaddressRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociateResolverRuleRouterRequest, AssociateResolverRuleRouterResponse> associateResolverRuleRouter =
+        genForAssociateResolverRuleRouter();
+
+    private static HttpRequestDef<AssociateResolverRuleRouterRequest, AssociateResolverRuleRouterResponse> genForAssociateResolverRuleRouter() {
+        // basic
+        HttpRequestDef.Builder<AssociateResolverRuleRouterRequest, AssociateResolverRuleRouterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    AssociateResolverRuleRouterRequest.class,
+                    AssociateResolverRuleRouterResponse.class)
+                .withName("AssociateResolverRuleRouter")
+                .withUri("/v2.1/resolverrules/{resolverrule_id}/associaterouter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resolverrule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateResolverRuleRouterRequest::getResolverruleId,
+                AssociateResolverRuleRouterRequest::setResolverruleId));
+        builder.<AssociateOrDisassociateRouterWithRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateOrDisassociateRouterWithRuleRequestBody.class),
+            f -> f.withMarshaller(AssociateResolverRuleRouterRequest::getBody,
+                AssociateResolverRuleRouterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociateRouterRequest, AssociateRouterResponse> associateRouter =
+        genForAssociateRouter();
+
+    private static HttpRequestDef<AssociateRouterRequest, AssociateRouterResponse> genForAssociateRouter() {
+        // basic
+        HttpRequestDef.Builder<AssociateRouterRequest, AssociateRouterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AssociateRouterRequest.class, AssociateRouterResponse.class)
+                .withName("AssociateRouter")
+                .withUri("/v2/zones/{zone_id}/associaterouter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateRouterRequest::getZoneId, AssociateRouterRequest::setZoneId));
+        builder.<AssociateRouterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateRouterRequestBody.class),
+            f -> f.withMarshaller(AssociateRouterRequest::getBody, AssociateRouterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateTagRequest, BatchCreateTagResponse> batchCreateTag =
+        genForBatchCreateTag();
+
+    private static HttpRequestDef<BatchCreateTagRequest, BatchCreateTagResponse> genForBatchCreateTag() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateTagRequest, BatchCreateTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchCreateTagRequest.class, BatchCreateTagResponse.class)
+                .withName("BatchCreateTag")
+                .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateTagRequest::getResourceType, BatchCreateTagRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateTagRequest::getResourceId, BatchCreateTagRequest::setResourceId));
+        builder.<BatchHandTags>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(BatchHandTags.class),
+            f -> f.withMarshaller(BatchCreateTagRequest::getBody, BatchCreateTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeletePtrRecordsRequest, BatchDeletePtrRecordsResponse> batchDeletePtrRecords =
+        genForBatchDeletePtrRecords();
+
+    private static HttpRequestDef<BatchDeletePtrRecordsRequest, BatchDeletePtrRecordsResponse> genForBatchDeletePtrRecords() {
+        // basic
+        HttpRequestDef.Builder<BatchDeletePtrRecordsRequest, BatchDeletePtrRecordsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, BatchDeletePtrRecordsRequest.class, BatchDeletePtrRecordsResponse.class)
+            .withName("BatchDeletePtrRecords")
+            .withUri("/v2.1/reverse/floatingips")
+            .withContentType("application/json");
+
+        // requests
+        builder.<BatchDeletePtrRecordsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeletePtrRecordsRequestBody.class),
+            f -> f.withMarshaller(BatchDeletePtrRecordsRequest::getBody, BatchDeletePtrRecordsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> batchDeleteRecordSetWithLine =
+        genForBatchDeleteRecordSetWithLine();
+
+    private static HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> genForBatchDeleteRecordSetWithLine() {
+        // basic
+        HttpRequestDef.Builder<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    BatchDeleteRecordSetWithLineRequest.class,
+                    BatchDeleteRecordSetWithLineResponse.class)
+                .withName("BatchDeleteRecordSetWithLine")
+                .withUri("/v2.1/zones/{zone_id}/recordsets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getZoneId,
+                BatchDeleteRecordSetWithLineRequest::setZoneId));
+        builder.<BatchDeleteRecordSetWithLineRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchDeleteRecordSetWithLineRequestBody.class),
+            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getBody,
+                BatchDeleteRecordSetWithLineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<BatchDeleteRecordSetsRequest, BatchDeleteRecordSetsResponse> batchDeleteRecordSets =
         genForBatchDeleteRecordSets();
@@ -249,6 +498,39 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> batchUpdateRecordSetWithLine =
+        genForBatchUpdateRecordSetWithLine();
+
+    private static HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> genForBatchUpdateRecordSetWithLine() {
+        // basic
+        HttpRequestDef.Builder<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    BatchUpdateRecordSetWithLineRequest.class,
+                    BatchUpdateRecordSetWithLineResponse.class)
+                .withName("BatchUpdateRecordSetWithLine")
+                .withUri("/v2.1/zones/{zone_id}/recordsets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getZoneId,
+                BatchUpdateRecordSetWithLineRequest::setZoneId));
+        builder.<BatchUpdateRecordSetWithLineRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchUpdateRecordSetWithLineRequestBody.class),
+            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getBody,
+                BatchUpdateRecordSetWithLineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateCustomLineRequest, CreateCustomLineResponse> createCustomLine =
         genForCreateCustomLine();
 
@@ -266,336 +548,6 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateCustomLineRequestBody.class),
             f -> f.withMarshaller(CreateCustomLineRequest::getBody, CreateCustomLineRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateLineGroupRequest, CreateLineGroupResponse> createLineGroup =
-        genForCreateLineGroup();
-
-    private static HttpRequestDef<CreateLineGroupRequest, CreateLineGroupResponse> genForCreateLineGroup() {
-        // basic
-        HttpRequestDef.Builder<CreateLineGroupRequest, CreateLineGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateLineGroupRequest.class, CreateLineGroupResponse.class)
-                .withName("CreateLineGroup")
-                .withUri("/v2.1/linegroups")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreateLineGroupsReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreateLineGroupsReq.class),
-            f -> f.withMarshaller(CreateLineGroupRequest::getBody, CreateLineGroupRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteCustomLineRequest, DeleteCustomLineResponse> deleteCustomLine =
-        genForDeleteCustomLine();
-
-    private static HttpRequestDef<DeleteCustomLineRequest, DeleteCustomLineResponse> genForDeleteCustomLine() {
-        // basic
-        HttpRequestDef.Builder<DeleteCustomLineRequest, DeleteCustomLineResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCustomLineRequest.class, DeleteCustomLineResponse.class)
-                .withName("DeleteCustomLine")
-                .withUri("/v2.1/customlines/{line_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("line_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteCustomLineRequest::getLineId, DeleteCustomLineRequest::setLineId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteLineGroupRequest, DeleteLineGroupResponse> deleteLineGroup =
-        genForDeleteLineGroup();
-
-    private static HttpRequestDef<DeleteLineGroupRequest, DeleteLineGroupResponse> genForDeleteLineGroup() {
-        // basic
-        HttpRequestDef.Builder<DeleteLineGroupRequest, DeleteLineGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteLineGroupRequest.class, DeleteLineGroupResponse.class)
-                .withName("DeleteLineGroup")
-                .withUri("/v2.1/linegroups/{linegroup_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("linegroup_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteLineGroupRequest::getLinegroupId, DeleteLineGroupRequest::setLinegroupId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
-        genForListApiVersions();
-
-    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForListApiVersions() {
-        // basic
-        HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
-                .withName("ListApiVersions")
-                .withUri("/")
-                .withContentType("application/json");
-
-        // requests
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListCustomLineRequest, ListCustomLineResponse> listCustomLine =
-        genForListCustomLine();
-
-    private static HttpRequestDef<ListCustomLineRequest, ListCustomLineResponse> genForListCustomLine() {
-        // basic
-        HttpRequestDef.Builder<ListCustomLineRequest, ListCustomLineResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListCustomLineRequest.class, ListCustomLineResponse.class)
-                .withName("ListCustomLine")
-                .withUri("/v2.1/customlines")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("line_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomLineRequest::getLineId, ListCustomLineRequest::setLineId));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomLineRequest::getName, ListCustomLineRequest::setName));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomLineRequest::getLimit, ListCustomLineRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCustomLineRequest::getOffset, ListCustomLineRequest::setOffset));
-        builder.<Boolean>withRequestField("show_detail",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListCustomLineRequest::getShowDetail, ListCustomLineRequest::setShowDetail));
-        builder.<String>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomLineRequest::getStatus, ListCustomLineRequest::setStatus));
-        builder.<String>withRequestField("ip",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListCustomLineRequest::getIp, ListCustomLineRequest::setIp));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListLineGroupsRequest, ListLineGroupsResponse> listLineGroups =
-        genForListLineGroups();
-
-    private static HttpRequestDef<ListLineGroupsRequest, ListLineGroupsResponse> genForListLineGroups() {
-        // basic
-        HttpRequestDef.Builder<ListLineGroupsRequest, ListLineGroupsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListLineGroupsRequest.class, ListLineGroupsResponse.class)
-                .withName("ListLineGroups")
-                .withUri("/v2.1/linegroups")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("line_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLineGroupsRequest::getLineId, ListLineGroupsRequest::setLineId));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListLineGroupsRequest::getName, ListLineGroupsRequest::setName));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLineGroupsRequest::getLimit, ListLineGroupsRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListLineGroupsRequest::getOffset, ListLineGroupsRequest::setOffset));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListNameServersRequest, ListNameServersResponse> listNameServers =
-        genForListNameServers();
-
-    private static HttpRequestDef<ListNameServersRequest, ListNameServersResponse> genForListNameServers() {
-        // basic
-        HttpRequestDef.Builder<ListNameServersRequest, ListNameServersResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListNameServersRequest.class, ListNameServersResponse.class)
-                .withName("ListNameServers")
-                .withUri("/v2/nameservers")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNameServersRequest::getType, ListNameServersRequest::setType));
-        builder.<String>withRequestField("region",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListNameServersRequest::getRegion, ListNameServersRequest::setRegion));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowApiInfoRequest, ShowApiInfoResponse> showApiInfo = genForShowApiInfo();
-
-    private static HttpRequestDef<ShowApiInfoRequest, ShowApiInfoResponse> genForShowApiInfo() {
-        // basic
-        HttpRequestDef.Builder<ShowApiInfoRequest, ShowApiInfoResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowApiInfoRequest.class, ShowApiInfoResponse.class)
-                .withName("ShowApiInfo")
-                .withUri("/{version}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("version",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowApiInfoRequest::getVersion, ShowApiInfoRequest::setVersion));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> showDomainQuota =
-        genForShowDomainQuota();
-
-    private static HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> genForShowDomainQuota() {
-        // basic
-        HttpRequestDef.Builder<ShowDomainQuotaRequest, ShowDomainQuotaResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowDomainQuotaRequest.class, ShowDomainQuotaResponse.class)
-                .withName("ShowDomainQuota")
-                .withUri("/v2/quotamg/dns/quotas")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("domain_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowDomainQuotaRequest::getDomainId, ShowDomainQuotaRequest::setDomainId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowLineGroupRequest, ShowLineGroupResponse> showLineGroup =
-        genForShowLineGroup();
-
-    private static HttpRequestDef<ShowLineGroupRequest, ShowLineGroupResponse> genForShowLineGroup() {
-        // basic
-        HttpRequestDef.Builder<ShowLineGroupRequest, ShowLineGroupResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowLineGroupRequest.class, ShowLineGroupResponse.class)
-                .withName("ShowLineGroup")
-                .withUri("/v2.1/linegroups/{linegroup_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("linegroup_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowLineGroupRequest::getLinegroupId, ShowLineGroupRequest::setLinegroupId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateCustomLineRequest, UpdateCustomLineResponse> updateCustomLine =
-        genForUpdateCustomLine();
-
-    private static HttpRequestDef<UpdateCustomLineRequest, UpdateCustomLineResponse> genForUpdateCustomLine() {
-        // basic
-        HttpRequestDef.Builder<UpdateCustomLineRequest, UpdateCustomLineResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateCustomLineRequest.class, UpdateCustomLineResponse.class)
-                .withName("UpdateCustomLine")
-                .withUri("/v2.1/customlines/{line_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("line_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateCustomLineRequest::getLineId, UpdateCustomLineRequest::setLineId));
-        builder.<UpdateCustomLineRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateCustomLineRequestBody.class),
-            f -> f.withMarshaller(UpdateCustomLineRequest::getBody, UpdateCustomLineRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateLineGroupsRequest, UpdateLineGroupsResponse> updateLineGroups =
-        genForUpdateLineGroups();
-
-    private static HttpRequestDef<UpdateLineGroupsRequest, UpdateLineGroupsResponse> genForUpdateLineGroups() {
-        // basic
-        HttpRequestDef.Builder<UpdateLineGroupsRequest, UpdateLineGroupsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, UpdateLineGroupsRequest.class, UpdateLineGroupsResponse.class)
-                .withName("UpdateLineGroups")
-                .withUri("/v2.1/linegroups/{linegroup_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("linegroup_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateLineGroupsRequest::getLinegroupId, UpdateLineGroupsRequest::setLinegroupId));
-        builder.<UpdateLineGroupsRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdateLineGroupsRequestBody.class),
-            f -> f.withMarshaller(UpdateLineGroupsRequest::getBody, UpdateLineGroupsRequest::setBody));
 
         // response
 
@@ -636,209 +588,114 @@ public class DnsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListPtrRecordsRequest, ListPtrRecordsResponse> listPtrRecords =
-        genForListPtrRecords();
+    public static final HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> createEndpoint =
+        genForCreateEndpoint();
 
-    private static HttpRequestDef<ListPtrRecordsRequest, ListPtrRecordsResponse> genForListPtrRecords() {
+    private static HttpRequestDef<CreateEndpointRequest, CreateEndpointResponse> genForCreateEndpoint() {
         // basic
-        HttpRequestDef.Builder<ListPtrRecordsRequest, ListPtrRecordsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListPtrRecordsRequest.class, ListPtrRecordsResponse.class)
-                .withName("ListPtrRecords")
-                .withUri("/v2/reverse/floatingips")
+        HttpRequestDef.Builder<CreateEndpointRequest, CreateEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEndpointRequest.class, CreateEndpointResponse.class)
+                .withName("CreateEndpoint")
+                .withUri("/v2.1/endpoints")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPtrRecordsRequest::getMarker, ListPtrRecordsRequest::setMarker));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPtrRecordsRequest::getLimit, ListPtrRecordsRequest::setLimit));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPtrRecordsRequest::getOffset, ListPtrRecordsRequest::setOffset));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPtrRecordsRequest::getEnterpriseProjectId,
-                ListPtrRecordsRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPtrRecordsRequest::getTags, ListPtrRecordsRequest::setTags));
-        builder.<String>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPtrRecordsRequest::getStatus, ListPtrRecordsRequest::setStatus));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<RestorePtrRecordRequest, RestorePtrRecordResponse> restorePtrRecord =
-        genForRestorePtrRecord();
-
-    private static HttpRequestDef<RestorePtrRecordRequest, RestorePtrRecordResponse> genForRestorePtrRecord() {
-        // basic
-        HttpRequestDef.Builder<RestorePtrRecordRequest, RestorePtrRecordResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PATCH, RestorePtrRecordRequest.class, RestorePtrRecordResponse.class)
-                .withName("RestorePtrRecord")
-                .withUri("/v2/reverse/floatingips/{region}:{floatingip_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("region",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestorePtrRecordRequest::getRegion, RestorePtrRecordRequest::setRegion));
-        builder.<String>withRequestField("floatingip_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RestorePtrRecordRequest::getFloatingipId, RestorePtrRecordRequest::setFloatingipId));
-        builder.<RestorePtrReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(RestorePtrReq.class),
-            f -> f.withMarshaller(RestorePtrRecordRequest::getBody, RestorePtrRecordRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> showPtrRecordSet =
-        genForShowPtrRecordSet();
-
-    private static HttpRequestDef<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> genForShowPtrRecordSet() {
-        // basic
-        HttpRequestDef.Builder<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPtrRecordSetRequest.class, ShowPtrRecordSetResponse.class)
-                .withName("ShowPtrRecordSet")
-                .withUri("/v2/reverse/floatingips/{region}:{floatingip_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("region",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPtrRecordSetRequest::getRegion, ShowPtrRecordSetRequest::setRegion));
-        builder.<String>withRequestField("floatingip_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPtrRecordSetRequest::getFloatingipId, ShowPtrRecordSetRequest::setFloatingipId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdatePtrRecordRequest, UpdatePtrRecordResponse> updatePtrRecord =
-        genForUpdatePtrRecord();
-
-    private static HttpRequestDef<UpdatePtrRecordRequest, UpdatePtrRecordResponse> genForUpdatePtrRecord() {
-        // basic
-        HttpRequestDef.Builder<UpdatePtrRecordRequest, UpdatePtrRecordResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PATCH, UpdatePtrRecordRequest.class, UpdatePtrRecordResponse.class)
-                .withName("UpdatePtrRecord")
-                .withUri("/v2/reverse/floatingips/{region}:{floatingip_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("region",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePtrRecordRequest::getRegion, UpdatePtrRecordRequest::setRegion));
-        builder.<String>withRequestField("floatingip_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePtrRecordRequest::getFloatingipId, UpdatePtrRecordRequest::setFloatingipId));
-        builder.<UpdatePtrReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(UpdatePtrReq.class),
-            f -> f.withMarshaller(UpdatePtrRecordRequest::getBody, UpdatePtrRecordRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> batchDeleteRecordSetWithLine =
-        genForBatchDeleteRecordSetWithLine();
-
-    private static HttpRequestDef<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> genForBatchDeleteRecordSetWithLine() {
-        // basic
-        HttpRequestDef.Builder<BatchDeleteRecordSetWithLineRequest, BatchDeleteRecordSetWithLineResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.DELETE,
-                    BatchDeleteRecordSetWithLineRequest.class,
-                    BatchDeleteRecordSetWithLineResponse.class)
-                .withName("BatchDeleteRecordSetWithLine")
-                .withUri("/v2.1/zones/{zone_id}/recordsets")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getZoneId,
-                BatchDeleteRecordSetWithLineRequest::setZoneId));
-        builder.<BatchDeleteRecordSetWithLineRequestBody>withRequestField("body",
+        builder.<CreateEndpointRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchDeleteRecordSetWithLineRequestBody.class),
-            f -> f.withMarshaller(BatchDeleteRecordSetWithLineRequest::getBody,
-                BatchDeleteRecordSetWithLineRequest::setBody));
+            TypeCasts.uncheckedConversion(CreateEndpointRequestBody.class),
+            f -> f.withMarshaller(CreateEndpointRequest::getBody, CreateEndpointRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> batchUpdateRecordSetWithLine =
-        genForBatchUpdateRecordSetWithLine();
+    public static final HttpRequestDef<CreateLineGroupRequest, CreateLineGroupResponse> createLineGroup =
+        genForCreateLineGroup();
 
-    private static HttpRequestDef<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> genForBatchUpdateRecordSetWithLine() {
+    private static HttpRequestDef<CreateLineGroupRequest, CreateLineGroupResponse> genForCreateLineGroup() {
         // basic
-        HttpRequestDef.Builder<BatchUpdateRecordSetWithLineRequest, BatchUpdateRecordSetWithLineResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    BatchUpdateRecordSetWithLineRequest.class,
-                    BatchUpdateRecordSetWithLineResponse.class)
-                .withName("BatchUpdateRecordSetWithLine")
-                .withUri("/v2.1/zones/{zone_id}/recordsets")
+        HttpRequestDef.Builder<CreateLineGroupRequest, CreateLineGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateLineGroupRequest.class, CreateLineGroupResponse.class)
+                .withName("CreateLineGroup")
+                .withUri("/v2.1/linegroups")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getZoneId,
-                BatchUpdateRecordSetWithLineRequest::setZoneId));
-        builder.<BatchUpdateRecordSetWithLineRequestBody>withRequestField("body",
+        builder.<CreateLineGroupsReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(BatchUpdateRecordSetWithLineRequestBody.class),
-            f -> f.withMarshaller(BatchUpdateRecordSetWithLineRequest::getBody,
-                BatchUpdateRecordSetWithLineRequest::setBody));
+            TypeCasts.uncheckedConversion(CreateLineGroupsReq.class),
+            f -> f.withMarshaller(CreateLineGroupRequest::getBody, CreateLineGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePrivateZoneRequest, CreatePrivateZoneResponse> createPrivateZone =
+        genForCreatePrivateZone();
+
+    private static HttpRequestDef<CreatePrivateZoneRequest, CreatePrivateZoneResponse> genForCreatePrivateZone() {
+        // basic
+        HttpRequestDef.Builder<CreatePrivateZoneRequest, CreatePrivateZoneResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePrivateZoneRequest.class, CreatePrivateZoneResponse.class)
+                .withName("CreatePrivateZone")
+                .withUri("/v2/zones")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreatePrivateZoneReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreatePrivateZoneReq.class),
+            f -> f.withMarshaller(CreatePrivateZoneRequest::getBody, CreatePrivateZoneRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePtrRequest, CreatePtrResponse> createPtr = genForCreatePtr();
+
+    private static HttpRequestDef<CreatePtrRequest, CreatePtrResponse> genForCreatePtr() {
+        // basic
+        HttpRequestDef.Builder<CreatePtrRequest, CreatePtrResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePtrRequest.class, CreatePtrResponse.class)
+                .withName("CreatePtr")
+                .withUri("/v2.1/ptrs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreatePtrRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePtrRequestBody.class),
+            f -> f.withMarshaller(CreatePtrRequest::getBody, CreatePtrRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreatePublicZoneRequest, CreatePublicZoneResponse> createPublicZone =
+        genForCreatePublicZone();
+
+    private static HttpRequestDef<CreatePublicZoneRequest, CreatePublicZoneResponse> genForCreatePublicZone() {
+        // basic
+        HttpRequestDef.Builder<CreatePublicZoneRequest, CreatePublicZoneResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreatePublicZoneRequest.class, CreatePublicZoneResponse.class)
+                .withName("CreatePublicZone")
+                .withUri("/v2/zones")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreatePublicZoneReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreatePublicZoneReq.class),
+            f -> f.withMarshaller(CreatePublicZoneRequest::getBody, CreatePublicZoneRequest::setBody));
 
         // response
 
@@ -935,6 +792,198 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateResolverRuleRequest, CreateResolverRuleResponse> createResolverRule =
+        genForCreateResolverRule();
+
+    private static HttpRequestDef<CreateResolverRuleRequest, CreateResolverRuleResponse> genForCreateResolverRule() {
+        // basic
+        HttpRequestDef.Builder<CreateResolverRuleRequest, CreateResolverRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateResolverRuleRequest.class, CreateResolverRuleResponse.class)
+                .withName("CreateResolverRule")
+                .withUri("/v2.1/resolverrules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateResolverRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateResolverRuleRequestBody.class),
+            f -> f.withMarshaller(CreateResolverRuleRequest::getBody, CreateResolverRuleRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForCreateTag();
+
+    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForCreateTag() {
+        // basic
+        HttpRequestDef.Builder<CreateTagRequest, CreateTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateTagRequest.class, CreateTagResponse.class)
+                .withName("CreateTag")
+                .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTagRequest::getResourceType, CreateTagRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTagRequest::getResourceId, CreateTagRequest::setResourceId));
+        builder.<CreateTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateTagReq.class),
+            f -> f.withMarshaller(CreateTagRequest::getBody, CreateTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteCustomLineRequest, DeleteCustomLineResponse> deleteCustomLine =
+        genForDeleteCustomLine();
+
+    private static HttpRequestDef<DeleteCustomLineRequest, DeleteCustomLineResponse> genForDeleteCustomLine() {
+        // basic
+        HttpRequestDef.Builder<DeleteCustomLineRequest, DeleteCustomLineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteCustomLineRequest.class, DeleteCustomLineResponse.class)
+                .withName("DeleteCustomLine")
+                .withUri("/v2.1/customlines/{line_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("line_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteCustomLineRequest::getLineId, DeleteCustomLineRequest::setLineId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> deleteEndpoint =
+        genForDeleteEndpoint();
+
+    private static HttpRequestDef<DeleteEndpointRequest, DeleteEndpointResponse> genForDeleteEndpoint() {
+        // basic
+        HttpRequestDef.Builder<DeleteEndpointRequest, DeleteEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEndpointRequest.class, DeleteEndpointResponse.class)
+                .withName("DeleteEndpoint")
+                .withUri("/v2.1/endpoints/{endpoint_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEndpointRequest::getEndpointId, DeleteEndpointRequest::setEndpointId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteLineGroupRequest, DeleteLineGroupResponse> deleteLineGroup =
+        genForDeleteLineGroup();
+
+    private static HttpRequestDef<DeleteLineGroupRequest, DeleteLineGroupResponse> genForDeleteLineGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteLineGroupRequest, DeleteLineGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteLineGroupRequest.class, DeleteLineGroupResponse.class)
+                .withName("DeleteLineGroup")
+                .withUri("/v2.1/linegroups/{linegroup_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("linegroup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLineGroupRequest::getLinegroupId, DeleteLineGroupRequest::setLinegroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePrivateZoneRequest, DeletePrivateZoneResponse> deletePrivateZone =
+        genForDeletePrivateZone();
+
+    private static HttpRequestDef<DeletePrivateZoneRequest, DeletePrivateZoneResponse> genForDeletePrivateZone() {
+        // basic
+        HttpRequestDef.Builder<DeletePrivateZoneRequest, DeletePrivateZoneResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePrivateZoneRequest.class, DeletePrivateZoneResponse.class)
+                .withName("DeletePrivateZone")
+                .withUri("/v2/zones/{zone_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePrivateZoneRequest::getZoneId, DeletePrivateZoneRequest::setZoneId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePtrRequest, DeletePtrResponse> deletePtr = genForDeletePtr();
+
+    private static HttpRequestDef<DeletePtrRequest, DeletePtrResponse> genForDeletePtr() {
+        // basic
+        HttpRequestDef.Builder<DeletePtrRequest, DeletePtrResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePtrRequest.class, DeletePtrResponse.class)
+                .withName("DeletePtr")
+                .withUri("/v2.1/ptrs/{ptr_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ptr_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePtrRequest::getPtrId, DeletePtrRequest::setPtrId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeletePublicZoneRequest, DeletePublicZoneResponse> deletePublicZone =
+        genForDeletePublicZone();
+
+    private static HttpRequestDef<DeletePublicZoneRequest, DeletePublicZoneResponse> genForDeletePublicZone() {
+        // basic
+        HttpRequestDef.Builder<DeletePublicZoneRequest, DeletePublicZoneResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeletePublicZoneRequest.class, DeletePublicZoneResponse.class)
+                .withName("DeletePublicZone")
+                .withUri("/v2/zones/{zone_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeletePublicZoneRequest::getZoneId, DeletePublicZoneRequest::setZoneId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteRecordSetRequest, DeleteRecordSetResponse> deleteRecordSet =
         genForDeleteRecordSet();
 
@@ -985,6 +1034,690 @@ public class DnsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteRecordSetsRequest::getRecordsetId, DeleteRecordSetsRequest::setRecordsetId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteResolverRuleRequest, DeleteResolverRuleResponse> deleteResolverRule =
+        genForDeleteResolverRule();
+
+    private static HttpRequestDef<DeleteResolverRuleRequest, DeleteResolverRuleResponse> genForDeleteResolverRule() {
+        // basic
+        HttpRequestDef.Builder<DeleteResolverRuleRequest, DeleteResolverRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteResolverRuleRequest.class, DeleteResolverRuleResponse.class)
+                .withName("DeleteResolverRule")
+                .withUri("/v2.1/resolverrules/{resolverrule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resolverrule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteResolverRuleRequest::getResolverruleId,
+                DeleteResolverRuleRequest::setResolverruleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genForDeleteTag();
+
+    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genForDeleteTag() {
+        // basic
+        HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
+                .withName("DeleteTag")
+                .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags/{key}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTagRequest::getResourceType, DeleteTagRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTagRequest::getResourceId, DeleteTagRequest::setResourceId));
+        builder.<String>withRequestField("key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteTagRequest::getKey, DeleteTagRequest::setKey));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateEndpointIpaddressRequest, DisassociateEndpointIpaddressResponse> disassociateEndpointIpaddress =
+        genForDisassociateEndpointIpaddress();
+
+    private static HttpRequestDef<DisassociateEndpointIpaddressRequest, DisassociateEndpointIpaddressResponse> genForDisassociateEndpointIpaddress() {
+        // basic
+        HttpRequestDef.Builder<DisassociateEndpointIpaddressRequest, DisassociateEndpointIpaddressResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DisassociateEndpointIpaddressRequest.class,
+                    DisassociateEndpointIpaddressResponse.class)
+                .withName("DisassociateEndpointIpaddress")
+                .withUri("/v2.1/endpoints/{endpoint_id}/ipaddresses/{ipaddress_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateEndpointIpaddressRequest::getEndpointId,
+                DisassociateEndpointIpaddressRequest::setEndpointId));
+        builder.<String>withRequestField("ipaddress_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateEndpointIpaddressRequest::getIpaddressId,
+                DisassociateEndpointIpaddressRequest::setIpaddressId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateResolverRuleRouterRequest, DisassociateResolverRuleRouterResponse> disassociateResolverRuleRouter =
+        genForDisassociateResolverRuleRouter();
+
+    private static HttpRequestDef<DisassociateResolverRuleRouterRequest, DisassociateResolverRuleRouterResponse> genForDisassociateResolverRuleRouter() {
+        // basic
+        HttpRequestDef.Builder<DisassociateResolverRuleRouterRequest, DisassociateResolverRuleRouterResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DisassociateResolverRuleRouterRequest.class,
+                    DisassociateResolverRuleRouterResponse.class)
+                .withName("DisassociateResolverRuleRouter")
+                .withUri("/v2.1/resolverrules/{resolverrule_id}/disassociaterouter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resolverrule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateResolverRuleRouterRequest::getResolverruleId,
+                DisassociateResolverRuleRouterRequest::setResolverruleId));
+        builder.<AssociateOrDisassociateRouterWithRuleRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateOrDisassociateRouterWithRuleRequestBody.class),
+            f -> f.withMarshaller(DisassociateResolverRuleRouterRequest::getBody,
+                DisassociateResolverRuleRouterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateRouterRequest, DisassociateRouterResponse> disassociateRouter =
+        genForDisassociateRouter();
+
+    private static HttpRequestDef<DisassociateRouterRequest, DisassociateRouterResponse> genForDisassociateRouter() {
+        // basic
+        HttpRequestDef.Builder<DisassociateRouterRequest, DisassociateRouterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DisassociateRouterRequest.class, DisassociateRouterResponse.class)
+                .withName("DisassociateRouter")
+                .withUri("/v2/zones/{zone_id}/disassociaterouter")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateRouterRequest::getZoneId, DisassociateRouterRequest::setZoneId));
+        builder.<DisassociaterouterRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisassociaterouterRequestBody.class),
+            f -> f.withMarshaller(DisassociateRouterRequest::getBody, DisassociateRouterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> listApiVersions =
+        genForListApiVersions();
+
+    private static HttpRequestDef<ListApiVersionsRequest, ListApiVersionsResponse> genForListApiVersions() {
+        // basic
+        HttpRequestDef.Builder<ListApiVersionsRequest, ListApiVersionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListApiVersionsRequest.class, ListApiVersionsResponse.class)
+                .withName("ListApiVersions")
+                .withUri("/")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCustomLineRequest, ListCustomLineResponse> listCustomLine =
+        genForListCustomLine();
+
+    private static HttpRequestDef<ListCustomLineRequest, ListCustomLineResponse> genForListCustomLine() {
+        // basic
+        HttpRequestDef.Builder<ListCustomLineRequest, ListCustomLineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCustomLineRequest.class, ListCustomLineResponse.class)
+                .withName("ListCustomLine")
+                .withUri("/v2.1/customlines")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("line_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomLineRequest::getLineId, ListCustomLineRequest::setLineId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomLineRequest::getName, ListCustomLineRequest::setName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomLineRequest::getLimit, ListCustomLineRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCustomLineRequest::getOffset, ListCustomLineRequest::setOffset));
+        builder.<Boolean>withRequestField("show_detail",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListCustomLineRequest::getShowDetail, ListCustomLineRequest::setShowDetail));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomLineRequest::getStatus, ListCustomLineRequest::setStatus));
+        builder.<String>withRequestField("ip",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCustomLineRequest::getIp, ListCustomLineRequest::setIp));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEndpointIpaddressesRequest, ListEndpointIpaddressesResponse> listEndpointIpaddresses =
+        genForListEndpointIpaddresses();
+
+    private static HttpRequestDef<ListEndpointIpaddressesRequest, ListEndpointIpaddressesResponse> genForListEndpointIpaddresses() {
+        // basic
+        HttpRequestDef.Builder<ListEndpointIpaddressesRequest, ListEndpointIpaddressesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListEndpointIpaddressesRequest.class, ListEndpointIpaddressesResponse.class)
+            .withName("ListEndpointIpaddresses")
+            .withUri("/v2.1/endpoints/{endpoint_id}/ipaddresses")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointIpaddressesRequest::getEndpointId,
+                ListEndpointIpaddressesRequest::setEndpointId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEndpointVpcsRequest, ListEndpointVpcsResponse> listEndpointVpcs =
+        genForListEndpointVpcs();
+
+    private static HttpRequestDef<ListEndpointVpcsRequest, ListEndpointVpcsResponse> genForListEndpointVpcs() {
+        // basic
+        HttpRequestDef.Builder<ListEndpointVpcsRequest, ListEndpointVpcsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEndpointVpcsRequest.class, ListEndpointVpcsResponse.class)
+                .withName("ListEndpointVpcs")
+                .withUri("/v2.1/vpcs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointVpcsRequest::getLimit, ListEndpointVpcsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointVpcsRequest::getOffset, ListEndpointVpcsRequest::setOffset));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointVpcsRequest::getVpcId, ListEndpointVpcsRequest::setVpcId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> listEndpoints =
+        genForListEndpoints();
+
+    private static HttpRequestDef<ListEndpointsRequest, ListEndpointsResponse> genForListEndpoints() {
+        // basic
+        HttpRequestDef.Builder<ListEndpointsRequest, ListEndpointsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListEndpointsRequest.class, ListEndpointsResponse.class)
+                .withName("ListEndpoints")
+                .withUri("/v2.1/endpoints")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("direction",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getDirection, ListEndpointsRequest::setDirection));
+        builder.<String>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getVpcId, ListEndpointsRequest::setVpcId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getName, ListEndpointsRequest::setName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getLimit, ListEndpointsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListEndpointsRequest::getOffset, ListEndpointsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLineGroupsRequest, ListLineGroupsResponse> listLineGroups =
+        genForListLineGroups();
+
+    private static HttpRequestDef<ListLineGroupsRequest, ListLineGroupsResponse> genForListLineGroups() {
+        // basic
+        HttpRequestDef.Builder<ListLineGroupsRequest, ListLineGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLineGroupsRequest.class, ListLineGroupsResponse.class)
+                .withName("ListLineGroups")
+                .withUri("/v2.1/linegroups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("line_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLineGroupsRequest::getLineId, ListLineGroupsRequest::setLineId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLineGroupsRequest::getName, ListLineGroupsRequest::setName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLineGroupsRequest::getLimit, ListLineGroupsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListLineGroupsRequest::getOffset, ListLineGroupsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListNameServersRequest, ListNameServersResponse> listNameServers =
+        genForListNameServers();
+
+    private static HttpRequestDef<ListNameServersRequest, ListNameServersResponse> genForListNameServers() {
+        // basic
+        HttpRequestDef.Builder<ListNameServersRequest, ListNameServersResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListNameServersRequest.class, ListNameServersResponse.class)
+                .withName("ListNameServers")
+                .withUri("/v2/nameservers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNameServersRequest::getType, ListNameServersRequest::setType));
+        builder.<String>withRequestField("region",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListNameServersRequest::getRegion, ListNameServersRequest::setRegion));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPrivateZonesRequest, ListPrivateZonesResponse> listPrivateZones =
+        genForListPrivateZones();
+
+    private static HttpRequestDef<ListPrivateZonesRequest, ListPrivateZonesResponse> genForListPrivateZones() {
+        // basic
+        HttpRequestDef.Builder<ListPrivateZonesRequest, ListPrivateZonesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPrivateZonesRequest.class, ListPrivateZonesResponse.class)
+                .withName("ListPrivateZones")
+                .withUri("/v2/zones")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getType, ListPrivateZonesRequest::setType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getLimit, ListPrivateZonesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getMarker, ListPrivateZonesRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getOffset, ListPrivateZonesRequest::setOffset));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getTags, ListPrivateZonesRequest::setTags));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getName, ListPrivateZonesRequest::setName));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getId, ListPrivateZonesRequest::setId));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getStatus, ListPrivateZonesRequest::setStatus));
+        builder.<String>withRequestField("search_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getSearchMode, ListPrivateZonesRequest::setSearchMode));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getSortKey, ListPrivateZonesRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getSortDir, ListPrivateZonesRequest::setSortDir));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getEnterpriseProjectId,
+                ListPrivateZonesRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("router_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPrivateZonesRequest::getRouterId, ListPrivateZonesRequest::setRouterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPtrRecordsRequest, ListPtrRecordsResponse> listPtrRecords =
+        genForListPtrRecords();
+
+    private static HttpRequestDef<ListPtrRecordsRequest, ListPtrRecordsResponse> genForListPtrRecords() {
+        // basic
+        HttpRequestDef.Builder<ListPtrRecordsRequest, ListPtrRecordsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPtrRecordsRequest.class, ListPtrRecordsResponse.class)
+                .withName("ListPtrRecords")
+                .withUri("/v2/reverse/floatingips")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPtrRecordsRequest::getMarker, ListPtrRecordsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPtrRecordsRequest::getLimit, ListPtrRecordsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPtrRecordsRequest::getOffset, ListPtrRecordsRequest::setOffset));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPtrRecordsRequest::getEnterpriseProjectId,
+                ListPtrRecordsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPtrRecordsRequest::getTags, ListPtrRecordsRequest::setTags));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPtrRecordsRequest::getStatus, ListPtrRecordsRequest::setStatus));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPtrsRequest, ListPtrsResponse> listPtrs = genForListPtrs();
+
+    private static HttpRequestDef<ListPtrsRequest, ListPtrsResponse> genForListPtrs() {
+        // basic
+        HttpRequestDef.Builder<ListPtrsRequest, ListPtrsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPtrsRequest.class, ListPtrsResponse.class)
+                .withName("ListPtrs")
+                .withUri("/v2.1/ptrs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPtrsRequest::getMarker, ListPtrsRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPtrsRequest::getLimit, ListPtrsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPtrsRequest::getOffset, ListPtrsRequest::setOffset));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPtrsRequest::getEnterpriseProjectId, ListPtrsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPtrsRequest::getTags, ListPtrsRequest::setTags));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPtrsRequest::getStatus, ListPtrsRequest::setStatus));
+        builder.<String>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPtrsRequest::getResourceType, ListPtrsRequest::setResourceType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPublicZoneLinesRequest, ListPublicZoneLinesResponse> listPublicZoneLines =
+        genForListPublicZoneLines();
+
+    private static HttpRequestDef<ListPublicZoneLinesRequest, ListPublicZoneLinesResponse> genForListPublicZoneLines() {
+        // basic
+        HttpRequestDef.Builder<ListPublicZoneLinesRequest, ListPublicZoneLinesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPublicZoneLinesRequest.class, ListPublicZoneLinesResponse.class)
+                .withName("ListPublicZoneLines")
+                .withUri("/v2.1/zones/{zone_id}/lines")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZoneLinesRequest::getZoneId, ListPublicZoneLinesRequest::setZoneId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPublicZoneLinesRequest::getLimit, ListPublicZoneLinesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPublicZoneLinesRequest::getOffset, ListPublicZoneLinesRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListPublicZonesRequest, ListPublicZonesResponse> listPublicZones =
+        genForListPublicZones();
+
+    private static HttpRequestDef<ListPublicZonesRequest, ListPublicZonesResponse> genForListPublicZones() {
+        // basic
+        HttpRequestDef.Builder<ListPublicZonesRequest, ListPublicZonesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListPublicZonesRequest.class, ListPublicZonesResponse.class)
+                .withName("ListPublicZones")
+                .withUri("/v2/zones")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getType, ListPublicZonesRequest::setType));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getLimit, ListPublicZonesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getMarker, ListPublicZonesRequest::setMarker));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getOffset, ListPublicZonesRequest::setOffset));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getTags, ListPublicZonesRequest::setTags));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getName, ListPublicZonesRequest::setName));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getId, ListPublicZonesRequest::setId));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getStatus, ListPublicZonesRequest::setStatus));
+        builder.<String>withRequestField("search_mode",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getSearchMode, ListPublicZonesRequest::setSearchMode));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getSortKey, ListPublicZonesRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getSortDir, ListPublicZonesRequest::setSortDir));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListPublicZonesRequest::getEnterpriseProjectId,
+                ListPublicZonesRequest::setEnterpriseProjectId));
 
         // response
 
@@ -1257,6 +1990,174 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListResolverRulesRequest, ListResolverRulesResponse> listResolverRules =
+        genForListResolverRules();
+
+    private static HttpRequestDef<ListResolverRulesRequest, ListResolverRulesResponse> genForListResolverRules() {
+        // basic
+        HttpRequestDef.Builder<ListResolverRulesRequest, ListResolverRulesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListResolverRulesRequest.class, ListResolverRulesResponse.class)
+                .withName("ListResolverRules")
+                .withUri("/v2.1/resolverrules")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResolverRulesRequest::getDomainName, ListResolverRulesRequest::setDomainName));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResolverRulesRequest::getName, ListResolverRulesRequest::setName));
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResolverRulesRequest::getEndpointId, ListResolverRulesRequest::setEndpointId));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResolverRulesRequest::getId, ListResolverRulesRequest::setId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResolverRulesRequest::getLimit, ListResolverRulesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListResolverRulesRequest::getOffset, ListResolverRulesRequest::setOffset));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListResolverRulesRequest::getMarker, ListResolverRulesRequest::setMarker));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagRequest, ListTagResponse> listTag = genForListTag();
+
+    private static HttpRequestDef<ListTagRequest, ListTagResponse> genForListTag() {
+        // basic
+        HttpRequestDef.Builder<ListTagRequest, ListTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListTagRequest.class, ListTagResponse.class)
+                .withName("ListTag")
+                .withUri("/v2/{project_id}/{resource_type}/resource_instances/action")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagRequest::getResourceType, ListTagRequest::setResourceType));
+        builder.<ListTagReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListTagReq.class),
+            f -> f.withMarshaller(ListTagRequest::getBody, ListTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
+
+    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
+        // basic
+        HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
+                .withName("ListTags")
+                .withUri("/v2/{project_id}/{resource_type}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagsRequest::getResourceType, ListTagsRequest::setResourceType));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestorePtrRecordRequest, RestorePtrRecordResponse> restorePtrRecord =
+        genForRestorePtrRecord();
+
+    private static HttpRequestDef<RestorePtrRecordRequest, RestorePtrRecordResponse> genForRestorePtrRecord() {
+        // basic
+        HttpRequestDef.Builder<RestorePtrRecordRequest, RestorePtrRecordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, RestorePtrRecordRequest.class, RestorePtrRecordResponse.class)
+                .withName("RestorePtrRecord")
+                .withUri("/v2/reverse/floatingips/{region}:{floatingip_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestorePtrRecordRequest::getRegion, RestorePtrRecordRequest::setRegion));
+        builder.<String>withRequestField("floatingip_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestorePtrRecordRequest::getFloatingipId, RestorePtrRecordRequest::setFloatingipId));
+        builder.<RestorePtrReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(RestorePtrReq.class),
+            f -> f.withMarshaller(RestorePtrRecordRequest::getBody, RestorePtrRecordRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetPrivateZoneProxyPatternRequest, SetPrivateZoneProxyPatternResponse> setPrivateZoneProxyPattern =
+        genForSetPrivateZoneProxyPattern();
+
+    private static HttpRequestDef<SetPrivateZoneProxyPatternRequest, SetPrivateZoneProxyPatternResponse> genForSetPrivateZoneProxyPattern() {
+        // basic
+        HttpRequestDef.Builder<SetPrivateZoneProxyPatternRequest, SetPrivateZoneProxyPatternResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    SetPrivateZoneProxyPatternRequest.class,
+                    SetPrivateZoneProxyPatternResponse.class)
+                .withName("SetPrivateZoneProxyPattern")
+                .withUri("/v2/zones/{zone_id}/actions/set-proxy-pattern")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SetPrivateZoneProxyPatternRequest::getZoneId,
+                SetPrivateZoneProxyPatternRequest::setZoneId));
+        builder.<SetPrivateZoneProxyPatternRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SetPrivateZoneProxyPatternRequestBody.class),
+            f -> f.withMarshaller(SetPrivateZoneProxyPatternRequest::getBody,
+                SetPrivateZoneProxyPatternRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<SetRecordSetsStatusRequest, SetRecordSetsStatusResponse> setRecordSetsStatus =
         genForSetRecordSetsStatus();
 
@@ -1280,6 +2181,244 @@ public class DnsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(SetRecordSetsStatusRequestBody.class),
             f -> f.withMarshaller(SetRecordSetsStatusRequest::getBody, SetRecordSetsStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowApiInfoRequest, ShowApiInfoResponse> showApiInfo = genForShowApiInfo();
+
+    private static HttpRequestDef<ShowApiInfoRequest, ShowApiInfoResponse> genForShowApiInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowApiInfoRequest, ShowApiInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowApiInfoRequest.class, ShowApiInfoResponse.class)
+                .withName("ShowApiInfo")
+                .withUri("/{version}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("version",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowApiInfoRequest::getVersion, ShowApiInfoRequest::setVersion));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> showDomainQuota =
+        genForShowDomainQuota();
+
+    private static HttpRequestDef<ShowDomainQuotaRequest, ShowDomainQuotaResponse> genForShowDomainQuota() {
+        // basic
+        HttpRequestDef.Builder<ShowDomainQuotaRequest, ShowDomainQuotaResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDomainQuotaRequest.class, ShowDomainQuotaResponse.class)
+                .withName("ShowDomainQuota")
+                .withUri("/v2/quotamg/dns/quotas")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDomainQuotaRequest::getDomainId, ShowDomainQuotaRequest::setDomainId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowEndpointRequest, ShowEndpointResponse> showEndpoint = genForShowEndpoint();
+
+    private static HttpRequestDef<ShowEndpointRequest, ShowEndpointResponse> genForShowEndpoint() {
+        // basic
+        HttpRequestDef.Builder<ShowEndpointRequest, ShowEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowEndpointRequest.class, ShowEndpointResponse.class)
+                .withName("ShowEndpoint")
+                .withUri("/v2.1/endpoints/{endpoint_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowEndpointRequest::getEndpointId, ShowEndpointRequest::setEndpointId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowLineGroupRequest, ShowLineGroupResponse> showLineGroup =
+        genForShowLineGroup();
+
+    private static HttpRequestDef<ShowLineGroupRequest, ShowLineGroupResponse> genForShowLineGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowLineGroupRequest, ShowLineGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowLineGroupRequest.class, ShowLineGroupResponse.class)
+                .withName("ShowLineGroup")
+                .withUri("/v2.1/linegroups/{linegroup_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("linegroup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowLineGroupRequest::getLinegroupId, ShowLineGroupRequest::setLinegroupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPrivateZoneRequest, ShowPrivateZoneResponse> showPrivateZone =
+        genForShowPrivateZone();
+
+    private static HttpRequestDef<ShowPrivateZoneRequest, ShowPrivateZoneResponse> genForShowPrivateZone() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivateZoneRequest, ShowPrivateZoneResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPrivateZoneRequest.class, ShowPrivateZoneResponse.class)
+                .withName("ShowPrivateZone")
+                .withUri("/v2/zones/{zone_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateZoneRequest::getZoneId, ShowPrivateZoneRequest::setZoneId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> showPrivateZoneNameServer =
+        genForShowPrivateZoneNameServer();
+
+    private static HttpRequestDef<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> genForShowPrivateZoneNameServer() {
+        // basic
+        HttpRequestDef.Builder<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowPrivateZoneNameServerRequest.class,
+                    ShowPrivateZoneNameServerResponse.class)
+                .withName("ShowPrivateZoneNameServer")
+                .withUri("/v2/zones/{zone_id}/nameservers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPrivateZoneNameServerRequest::getZoneId,
+                ShowPrivateZoneNameServerRequest::setZoneId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPtrRequest, ShowPtrResponse> showPtr = genForShowPtr();
+
+    private static HttpRequestDef<ShowPtrRequest, ShowPtrResponse> genForShowPtr() {
+        // basic
+        HttpRequestDef.Builder<ShowPtrRequest, ShowPtrResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPtrRequest.class, ShowPtrResponse.class)
+                .withName("ShowPtr")
+                .withUri("/v2.1/ptrs/{ptr_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ptr_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPtrRequest::getPtrId, ShowPtrRequest::setPtrId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> showPtrRecordSet =
+        genForShowPtrRecordSet();
+
+    private static HttpRequestDef<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> genForShowPtrRecordSet() {
+        // basic
+        HttpRequestDef.Builder<ShowPtrRecordSetRequest, ShowPtrRecordSetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPtrRecordSetRequest.class, ShowPtrRecordSetResponse.class)
+                .withName("ShowPtrRecordSet")
+                .withUri("/v2/reverse/floatingips/{region}:{floatingip_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPtrRecordSetRequest::getRegion, ShowPtrRecordSetRequest::setRegion));
+        builder.<String>withRequestField("floatingip_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPtrRecordSetRequest::getFloatingipId, ShowPtrRecordSetRequest::setFloatingipId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPublicZoneRequest, ShowPublicZoneResponse> showPublicZone =
+        genForShowPublicZone();
+
+    private static HttpRequestDef<ShowPublicZoneRequest, ShowPublicZoneResponse> genForShowPublicZone() {
+        // basic
+        HttpRequestDef.Builder<ShowPublicZoneRequest, ShowPublicZoneResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowPublicZoneRequest.class, ShowPublicZoneResponse.class)
+                .withName("ShowPublicZone")
+                .withUri("/v2/zones/{zone_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicZoneRequest::getZoneId, ShowPublicZoneRequest::setZoneId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse> showPublicZoneNameServer =
+        genForShowPublicZoneNameServer();
+
+    private static HttpRequestDef<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse> genForShowPublicZoneNameServer() {
+        // basic
+        HttpRequestDef.Builder<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowPublicZoneNameServerRequest.class, ShowPublicZoneNameServerResponse.class)
+                .withName("ShowPublicZoneNameServer")
+                .withUri("/v2/zones/{zone_id}/nameservers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowPublicZoneNameServerRequest::getZoneId,
+                ShowPublicZoneNameServerRequest::setZoneId));
 
         // response
 
@@ -1427,6 +2566,315 @@ public class DnsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowResolverRuleRequest, ShowResolverRuleResponse> showResolverRule =
+        genForShowResolverRule();
+
+    private static HttpRequestDef<ShowResolverRuleRequest, ShowResolverRuleResponse> genForShowResolverRule() {
+        // basic
+        HttpRequestDef.Builder<ShowResolverRuleRequest, ShowResolverRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResolverRuleRequest.class, ShowResolverRuleResponse.class)
+                .withName("ShowResolverRule")
+                .withUri("/v2.1/resolverrules/{resolverrule_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resolverrule_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResolverRuleRequest::getResolverruleId,
+                ShowResolverRuleRequest::setResolverruleId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTag =
+        genForShowResourceTag();
+
+    private static HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> genForShowResourceTag() {
+        // basic
+        HttpRequestDef.Builder<ShowResourceTagRequest, ShowResourceTagResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagRequest.class, ShowResourceTagResponse.class)
+                .withName("ShowResourceTag")
+                .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceTagRequest::getResourceType, ShowResourceTagRequest::setResourceType));
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowResourceTagRequest::getResourceId, ShowResourceTagRequest::setResourceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateCustomLineRequest, UpdateCustomLineResponse> updateCustomLine =
+        genForUpdateCustomLine();
+
+    private static HttpRequestDef<UpdateCustomLineRequest, UpdateCustomLineResponse> genForUpdateCustomLine() {
+        // basic
+        HttpRequestDef.Builder<UpdateCustomLineRequest, UpdateCustomLineResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateCustomLineRequest.class, UpdateCustomLineResponse.class)
+                .withName("UpdateCustomLine")
+                .withUri("/v2.1/customlines/{line_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("line_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateCustomLineRequest::getLineId, UpdateCustomLineRequest::setLineId));
+        builder.<UpdateCustomLineRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateCustomLineRequestBody.class),
+            f -> f.withMarshaller(UpdateCustomLineRequest::getBody, UpdateCustomLineRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateEndpointRequest, UpdateEndpointResponse> updateEndpoint =
+        genForUpdateEndpoint();
+
+    private static HttpRequestDef<UpdateEndpointRequest, UpdateEndpointResponse> genForUpdateEndpoint() {
+        // basic
+        HttpRequestDef.Builder<UpdateEndpointRequest, UpdateEndpointResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateEndpointRequest.class, UpdateEndpointResponse.class)
+                .withName("UpdateEndpoint")
+                .withUri("/v2.1/endpoints/{endpoint_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("endpoint_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateEndpointRequest::getEndpointId, UpdateEndpointRequest::setEndpointId));
+        builder.<UpdateEndpointRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateEndpointRequestBody.class),
+            f -> f.withMarshaller(UpdateEndpointRequest::getBody, UpdateEndpointRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLineGroupsRequest, UpdateLineGroupsResponse> updateLineGroups =
+        genForUpdateLineGroups();
+
+    private static HttpRequestDef<UpdateLineGroupsRequest, UpdateLineGroupsResponse> genForUpdateLineGroups() {
+        // basic
+        HttpRequestDef.Builder<UpdateLineGroupsRequest, UpdateLineGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateLineGroupsRequest.class, UpdateLineGroupsResponse.class)
+                .withName("UpdateLineGroups")
+                .withUri("/v2.1/linegroups/{linegroup_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("linegroup_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLineGroupsRequest::getLinegroupId, UpdateLineGroupsRequest::setLinegroupId));
+        builder.<UpdateLineGroupsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLineGroupsRequestBody.class),
+            f -> f.withMarshaller(UpdateLineGroupsRequest::getBody, UpdateLineGroupsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse> updatePrivateZone =
+        genForUpdatePrivateZone();
+
+    private static HttpRequestDef<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse> genForUpdatePrivateZone() {
+        // basic
+        HttpRequestDef.Builder<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, UpdatePrivateZoneRequest.class, UpdatePrivateZoneResponse.class)
+                .withName("UpdatePrivateZone")
+                .withUri("/v2/zones/{zone_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrivateZoneRequest::getZoneId, UpdatePrivateZoneRequest::setZoneId));
+        builder.<UpdatePrivateZoneInfoReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePrivateZoneInfoReq.class),
+            f -> f.withMarshaller(UpdatePrivateZoneRequest::getBody, UpdatePrivateZoneRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePrivateZoneStatusRequest, UpdatePrivateZoneStatusResponse> updatePrivateZoneStatus =
+        genForUpdatePrivateZoneStatus();
+
+    private static HttpRequestDef<UpdatePrivateZoneStatusRequest, UpdatePrivateZoneStatusResponse> genForUpdatePrivateZoneStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdatePrivateZoneStatusRequest, UpdatePrivateZoneStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdatePrivateZoneStatusRequest.class, UpdatePrivateZoneStatusResponse.class)
+            .withName("UpdatePrivateZoneStatus")
+            .withUri("/v2/zones/{zone_id}/statuses")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePrivateZoneStatusRequest::getZoneId,
+                UpdatePrivateZoneStatusRequest::setZoneId));
+        builder.<UpdateZoneStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateZoneStatusRequestBody.class),
+            f -> f.withMarshaller(UpdatePrivateZoneStatusRequest::getBody, UpdatePrivateZoneStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePtrRequest, UpdatePtrResponse> updatePtr = genForUpdatePtr();
+
+    private static HttpRequestDef<UpdatePtrRequest, UpdatePtrResponse> genForUpdatePtr() {
+        // basic
+        HttpRequestDef.Builder<UpdatePtrRequest, UpdatePtrResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdatePtrRequest.class, UpdatePtrResponse.class)
+                .withName("UpdatePtr")
+                .withUri("/v2.1/ptrs/{ptr_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ptr_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePtrRequest::getPtrId, UpdatePtrRequest::setPtrId));
+        builder.<UpdatePtrRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdatePtrRequestBody.class),
+            f -> f.withMarshaller(UpdatePtrRequest::getBody, UpdatePtrRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePtrRecordRequest, UpdatePtrRecordResponse> updatePtrRecord =
+        genForUpdatePtrRecord();
+
+    private static HttpRequestDef<UpdatePtrRecordRequest, UpdatePtrRecordResponse> genForUpdatePtrRecord() {
+        // basic
+        HttpRequestDef.Builder<UpdatePtrRecordRequest, UpdatePtrRecordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, UpdatePtrRecordRequest.class, UpdatePtrRecordResponse.class)
+                .withName("UpdatePtrRecord")
+                .withUri("/v2/reverse/floatingips/{region}:{floatingip_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("region",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePtrRecordRequest::getRegion, UpdatePtrRecordRequest::setRegion));
+        builder.<String>withRequestField("floatingip_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePtrRecordRequest::getFloatingipId, UpdatePtrRecordRequest::setFloatingipId));
+        builder.<UpdatePtrReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdatePtrReq.class),
+            f -> f.withMarshaller(UpdatePtrRecordRequest::getBody, UpdatePtrRecordRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePublicZoneRequest, UpdatePublicZoneResponse> updatePublicZone =
+        genForUpdatePublicZone();
+
+    private static HttpRequestDef<UpdatePublicZoneRequest, UpdatePublicZoneResponse> genForUpdatePublicZone() {
+        // basic
+        HttpRequestDef.Builder<UpdatePublicZoneRequest, UpdatePublicZoneResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PATCH, UpdatePublicZoneRequest.class, UpdatePublicZoneResponse.class)
+                .withName("UpdatePublicZone")
+                .withUri("/v2/zones/{zone_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePublicZoneRequest::getZoneId, UpdatePublicZoneRequest::setZoneId));
+        builder.<UpdatePublicZoneInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdatePublicZoneInfo.class),
+            f -> f.withMarshaller(UpdatePublicZoneRequest::getBody, UpdatePublicZoneRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse> updatePublicZoneStatus =
+        genForUpdatePublicZoneStatus();
+
+    private static HttpRequestDef<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse> genForUpdatePublicZoneStatus() {
+        // basic
+        HttpRequestDef.Builder<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdatePublicZoneStatusRequest.class, UpdatePublicZoneStatusResponse.class)
+            .withName("UpdatePublicZoneStatus")
+            .withUri("/v2/zones/{zone_id}/statuses")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("zone_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdatePublicZoneStatusRequest::getZoneId, UpdatePublicZoneStatusRequest::setZoneId));
+        builder.<UpdateZoneStatusRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateZoneStatusRequestBody.class),
+            f -> f.withMarshaller(UpdatePublicZoneStatusRequest::getBody, UpdatePublicZoneStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateRecordSetRequest, UpdateRecordSetResponse> updateRecordSet =
         genForUpdateRecordSet();
 
@@ -1493,263 +2941,44 @@ public class DnsMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<BatchCreateTagRequest, BatchCreateTagResponse> batchCreateTag =
-        genForBatchCreateTag();
+    public static final HttpRequestDef<UpdateResolverRuleRequest, UpdateResolverRuleResponse> updateResolverRule =
+        genForUpdateResolverRule();
 
-    private static HttpRequestDef<BatchCreateTagRequest, BatchCreateTagResponse> genForBatchCreateTag() {
+    private static HttpRequestDef<UpdateResolverRuleRequest, UpdateResolverRuleResponse> genForUpdateResolverRule() {
         // basic
-        HttpRequestDef.Builder<BatchCreateTagRequest, BatchCreateTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, BatchCreateTagRequest.class, BatchCreateTagResponse.class)
-                .withName("BatchCreateTag")
-                .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags/action")
+        HttpRequestDef.Builder<UpdateResolverRuleRequest, UpdateResolverRuleResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateResolverRuleRequest.class, UpdateResolverRuleResponse.class)
+                .withName("UpdateResolverRule")
+                .withUri("/v2.1/resolverrules/{resolverrule_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("resource_type",
+        builder.<String>withRequestField("resolverrule_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateTagRequest::getResourceType, BatchCreateTagRequest::setResourceType));
-        builder.<String>withRequestField("resource_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(BatchCreateTagRequest::getResourceId, BatchCreateTagRequest::setResourceId));
-        builder.<BatchHandTags>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(BatchHandTags.class),
-            f -> f.withMarshaller(BatchCreateTagRequest::getBody, BatchCreateTagRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateTagRequest, CreateTagResponse> createTag = genForCreateTag();
-
-    private static HttpRequestDef<CreateTagRequest, CreateTagResponse> genForCreateTag() {
-        // basic
-        HttpRequestDef.Builder<CreateTagRequest, CreateTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateTagRequest.class, CreateTagResponse.class)
-                .withName("CreateTag")
-                .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagRequest::getResourceType, CreateTagRequest::setResourceType));
-        builder.<String>withRequestField("resource_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateTagRequest::getResourceId, CreateTagRequest::setResourceId));
-        builder.<CreateTagReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreateTagReq.class),
-            f -> f.withMarshaller(CreateTagRequest::getBody, CreateTagRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteTagRequest, DeleteTagResponse> deleteTag = genForDeleteTag();
-
-    private static HttpRequestDef<DeleteTagRequest, DeleteTagResponse> genForDeleteTag() {
-        // basic
-        HttpRequestDef.Builder<DeleteTagRequest, DeleteTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteTagRequest.class, DeleteTagResponse.class)
-                .withName("DeleteTag")
-                .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags/{key}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getResourceType, DeleteTagRequest::setResourceType));
-        builder.<String>withRequestField("resource_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getResourceId, DeleteTagRequest::setResourceId));
-        builder.<String>withRequestField("key",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteTagRequest::getKey, DeleteTagRequest::setKey));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListTagRequest, ListTagResponse> listTag = genForListTag();
-
-    private static HttpRequestDef<ListTagRequest, ListTagResponse> genForListTag() {
-        // basic
-        HttpRequestDef.Builder<ListTagRequest, ListTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListTagRequest.class, ListTagResponse.class)
-                .withName("ListTag")
-                .withUri("/v2/{project_id}/{resource_type}/resource_instances/action")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagRequest::getResourceType, ListTagRequest::setResourceType));
-        builder.<ListTagReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListTagReq.class),
-            f -> f.withMarshaller(ListTagRequest::getBody, ListTagRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListTagsRequest, ListTagsResponse> listTags = genForListTags();
-
-    private static HttpRequestDef<ListTagsRequest, ListTagsResponse> genForListTags() {
-        // basic
-        HttpRequestDef.Builder<ListTagsRequest, ListTagsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListTagsRequest.class, ListTagsResponse.class)
-                .withName("ListTags")
-                .withUri("/v2/{project_id}/{resource_type}/tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTagsRequest::getResourceType, ListTagsRequest::setResourceType));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> showResourceTag =
-        genForShowResourceTag();
-
-    private static HttpRequestDef<ShowResourceTagRequest, ShowResourceTagResponse> genForShowResourceTag() {
-        // basic
-        HttpRequestDef.Builder<ShowResourceTagRequest, ShowResourceTagResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowResourceTagRequest.class, ShowResourceTagResponse.class)
-                .withName("ShowResourceTag")
-                .withUri("/v2/{project_id}/{resource_type}/{resource_id}/tags")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("resource_type",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagRequest::getResourceType, ShowResourceTagRequest::setResourceType));
-        builder.<String>withRequestField("resource_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowResourceTagRequest::getResourceId, ShowResourceTagRequest::setResourceId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<AssociateRouterRequest, AssociateRouterResponse> associateRouter =
-        genForAssociateRouter();
-
-    private static HttpRequestDef<AssociateRouterRequest, AssociateRouterResponse> genForAssociateRouter() {
-        // basic
-        HttpRequestDef.Builder<AssociateRouterRequest, AssociateRouterResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, AssociateRouterRequest.class, AssociateRouterResponse.class)
-                .withName("AssociateRouter")
-                .withUri("/v2/zones/{zone_id}/associaterouter")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(AssociateRouterRequest::getZoneId, AssociateRouterRequest::setZoneId));
-        builder.<AssociateRouterRequestBody>withRequestField("body",
+            f -> f.withMarshaller(UpdateResolverRuleRequest::getResolverruleId,
+                UpdateResolverRuleRequest::setResolverruleId));
+        builder.<UpdateResolverRuleRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AssociateRouterRequestBody.class),
-            f -> f.withMarshaller(AssociateRouterRequest::getBody, AssociateRouterRequest::setBody));
+            TypeCasts.uncheckedConversion(UpdateResolverRuleRequestBody.class),
+            f -> f.withMarshaller(UpdateResolverRuleRequest::getBody, UpdateResolverRuleRequest::setBody));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreatePrivateZoneRequest, CreatePrivateZoneResponse> createPrivateZone =
-        genForCreatePrivateZone();
+    public static final HttpRequestDef<DisableDnssecConfigRequest, DisableDnssecConfigResponse> disableDnssecConfig =
+        genForDisableDnssecConfig();
 
-    private static HttpRequestDef<CreatePrivateZoneRequest, CreatePrivateZoneResponse> genForCreatePrivateZone() {
+    private static HttpRequestDef<DisableDnssecConfigRequest, DisableDnssecConfigResponse> genForDisableDnssecConfig() {
         // basic
-        HttpRequestDef.Builder<CreatePrivateZoneRequest, CreatePrivateZoneResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePrivateZoneRequest.class, CreatePrivateZoneResponse.class)
-                .withName("CreatePrivateZone")
-                .withUri("/v2/zones")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreatePrivateZoneReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(CreatePrivateZoneReq.class),
-            f -> f.withMarshaller(CreatePrivateZoneRequest::getBody, CreatePrivateZoneRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreatePublicZoneRequest, CreatePublicZoneResponse> createPublicZone =
-        genForCreatePublicZone();
-
-    private static HttpRequestDef<CreatePublicZoneRequest, CreatePublicZoneResponse> genForCreatePublicZone() {
-        // basic
-        HttpRequestDef.Builder<CreatePublicZoneRequest, CreatePublicZoneResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreatePublicZoneRequest.class, CreatePublicZoneResponse.class)
-                .withName("CreatePublicZone")
-                .withUri("/v2/zones")
-                .withContentType("application/json");
-
-        // requests
-        builder.<CreatePublicZoneReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(CreatePublicZoneReq.class),
-            f -> f.withMarshaller(CreatePublicZoneRequest::getBody, CreatePublicZoneRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeletePrivateZoneRequest, DeletePrivateZoneResponse> deletePrivateZone =
-        genForDeletePrivateZone();
-
-    private static HttpRequestDef<DeletePrivateZoneRequest, DeletePrivateZoneResponse> genForDeletePrivateZone() {
-        // basic
-        HttpRequestDef.Builder<DeletePrivateZoneRequest, DeletePrivateZoneResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeletePrivateZoneRequest.class, DeletePrivateZoneResponse.class)
-                .withName("DeletePrivateZone")
-                .withUri("/v2/zones/{zone_id}")
+        HttpRequestDef.Builder<DisableDnssecConfigRequest, DisableDnssecConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DisableDnssecConfigRequest.class, DisableDnssecConfigResponse.class)
+                .withName("DisableDnssecConfig")
+                .withUri("/v2/zones/{zone_id}/disable-dnssec")
                 .withContentType("application/json");
 
         // requests
@@ -1757,22 +2986,22 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePrivateZoneRequest::getZoneId, DeletePrivateZoneRequest::setZoneId));
+            f -> f.withMarshaller(DisableDnssecConfigRequest::getZoneId, DisableDnssecConfigRequest::setZoneId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeletePublicZoneRequest, DeletePublicZoneResponse> deletePublicZone =
-        genForDeletePublicZone();
+    public static final HttpRequestDef<EnableDnssecConfigRequest, EnableDnssecConfigResponse> enableDnssecConfig =
+        genForEnableDnssecConfig();
 
-    private static HttpRequestDef<DeletePublicZoneRequest, DeletePublicZoneResponse> genForDeletePublicZone() {
+    private static HttpRequestDef<EnableDnssecConfigRequest, EnableDnssecConfigResponse> genForEnableDnssecConfig() {
         // basic
-        HttpRequestDef.Builder<DeletePublicZoneRequest, DeletePublicZoneResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeletePublicZoneRequest.class, DeletePublicZoneResponse.class)
-                .withName("DeletePublicZone")
-                .withUri("/v2/zones/{zone_id}")
+        HttpRequestDef.Builder<EnableDnssecConfigRequest, EnableDnssecConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, EnableDnssecConfigRequest.class, EnableDnssecConfigResponse.class)
+                .withName("EnableDnssecConfig")
+                .withUri("/v2/zones/{zone_id}/enable-dnssec")
                 .withContentType("application/json");
 
         // requests
@@ -1780,22 +3009,22 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeletePublicZoneRequest::getZoneId, DeletePublicZoneRequest::setZoneId));
+            f -> f.withMarshaller(EnableDnssecConfigRequest::getZoneId, EnableDnssecConfigRequest::setZoneId));
 
         // response
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DisassociateRouterRequest, DisassociateRouterResponse> disassociateRouter =
-        genForDisassociateRouter();
+    public static final HttpRequestDef<ShowDnssecConfigRequest, ShowDnssecConfigResponse> showDnssecConfig =
+        genForShowDnssecConfig();
 
-    private static HttpRequestDef<DisassociateRouterRequest, DisassociateRouterResponse> genForDisassociateRouter() {
+    private static HttpRequestDef<ShowDnssecConfigRequest, ShowDnssecConfigResponse> genForShowDnssecConfig() {
         // basic
-        HttpRequestDef.Builder<DisassociateRouterRequest, DisassociateRouterResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, DisassociateRouterRequest.class, DisassociateRouterResponse.class)
-                .withName("DisassociateRouter")
-                .withUri("/v2/zones/{zone_id}/disassociaterouter")
+        HttpRequestDef.Builder<ShowDnssecConfigRequest, ShowDnssecConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowDnssecConfigRequest.class, ShowDnssecConfigResponse.class)
+                .withName("ShowDnssecConfig")
+                .withUri("/v2/zones/{zone_id}/dnssec")
                 .withContentType("application/json");
 
         // requests
@@ -1803,357 +3032,7 @@ public class DnsMeta {
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DisassociateRouterRequest::getZoneId, DisassociateRouterRequest::setZoneId));
-        builder.<DisassociaterouterRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(DisassociaterouterRequestBody.class),
-            f -> f.withMarshaller(DisassociateRouterRequest::getBody, DisassociateRouterRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPrivateZonesRequest, ListPrivateZonesResponse> listPrivateZones =
-        genForListPrivateZones();
-
-    private static HttpRequestDef<ListPrivateZonesRequest, ListPrivateZonesResponse> genForListPrivateZones() {
-        // basic
-        HttpRequestDef.Builder<ListPrivateZonesRequest, ListPrivateZonesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListPrivateZonesRequest.class, ListPrivateZonesResponse.class)
-                .withName("ListPrivateZones")
-                .withUri("/v2/zones")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("type",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getType, ListPrivateZonesRequest::setType));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getLimit, ListPrivateZonesRequest::setLimit));
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getMarker, ListPrivateZonesRequest::setMarker));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getOffset, ListPrivateZonesRequest::setOffset));
-        builder.<String>withRequestField("tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getTags, ListPrivateZonesRequest::setTags));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getName, ListPrivateZonesRequest::setName));
-        builder.<String>withRequestField("id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getId, ListPrivateZonesRequest::setId));
-        builder.<String>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getStatus, ListPrivateZonesRequest::setStatus));
-        builder.<String>withRequestField("search_mode",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getSearchMode, ListPrivateZonesRequest::setSearchMode));
-        builder.<String>withRequestField("sort_key",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getSortKey, ListPrivateZonesRequest::setSortKey));
-        builder.<String>withRequestField("sort_dir",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getSortDir, ListPrivateZonesRequest::setSortDir));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getEnterpriseProjectId,
-                ListPrivateZonesRequest::setEnterpriseProjectId));
-        builder.<String>withRequestField("router_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPrivateZonesRequest::getRouterId, ListPrivateZonesRequest::setRouterId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPublicZonesRequest, ListPublicZonesResponse> listPublicZones =
-        genForListPublicZones();
-
-    private static HttpRequestDef<ListPublicZonesRequest, ListPublicZonesResponse> genForListPublicZones() {
-        // basic
-        HttpRequestDef.Builder<ListPublicZonesRequest, ListPublicZonesResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListPublicZonesRequest.class, ListPublicZonesResponse.class)
-                .withName("ListPublicZones")
-                .withUri("/v2/zones")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("type",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getType, ListPublicZonesRequest::setType));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getLimit, ListPublicZonesRequest::setLimit));
-        builder.<String>withRequestField("marker",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getMarker, ListPublicZonesRequest::setMarker));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getOffset, ListPublicZonesRequest::setOffset));
-        builder.<String>withRequestField("tags",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getTags, ListPublicZonesRequest::setTags));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getName, ListPublicZonesRequest::setName));
-        builder.<String>withRequestField("id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getId, ListPublicZonesRequest::setId));
-        builder.<String>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getStatus, ListPublicZonesRequest::setStatus));
-        builder.<String>withRequestField("search_mode",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getSearchMode, ListPublicZonesRequest::setSearchMode));
-        builder.<String>withRequestField("sort_key",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getSortKey, ListPublicZonesRequest::setSortKey));
-        builder.<String>withRequestField("sort_dir",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getSortDir, ListPublicZonesRequest::setSortDir));
-        builder.<String>withRequestField("enterprise_project_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPublicZonesRequest::getEnterpriseProjectId,
-                ListPublicZonesRequest::setEnterpriseProjectId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPrivateZoneRequest, ShowPrivateZoneResponse> showPrivateZone =
-        genForShowPrivateZone();
-
-    private static HttpRequestDef<ShowPrivateZoneRequest, ShowPrivateZoneResponse> genForShowPrivateZone() {
-        // basic
-        HttpRequestDef.Builder<ShowPrivateZoneRequest, ShowPrivateZoneResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPrivateZoneRequest.class, ShowPrivateZoneResponse.class)
-                .withName("ShowPrivateZone")
-                .withUri("/v2/zones/{zone_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPrivateZoneRequest::getZoneId, ShowPrivateZoneRequest::setZoneId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> showPrivateZoneNameServer =
-        genForShowPrivateZoneNameServer();
-
-    private static HttpRequestDef<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> genForShowPrivateZoneNameServer() {
-        // basic
-        HttpRequestDef.Builder<ShowPrivateZoneNameServerRequest, ShowPrivateZoneNameServerResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowPrivateZoneNameServerRequest.class,
-                    ShowPrivateZoneNameServerResponse.class)
-                .withName("ShowPrivateZoneNameServer")
-                .withUri("/v2/zones/{zone_id}/nameservers")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPrivateZoneNameServerRequest::getZoneId,
-                ShowPrivateZoneNameServerRequest::setZoneId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPublicZoneRequest, ShowPublicZoneResponse> showPublicZone =
-        genForShowPublicZone();
-
-    private static HttpRequestDef<ShowPublicZoneRequest, ShowPublicZoneResponse> genForShowPublicZone() {
-        // basic
-        HttpRequestDef.Builder<ShowPublicZoneRequest, ShowPublicZoneResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPublicZoneRequest.class, ShowPublicZoneResponse.class)
-                .withName("ShowPublicZone")
-                .withUri("/v2/zones/{zone_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicZoneRequest::getZoneId, ShowPublicZoneRequest::setZoneId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse> showPublicZoneNameServer =
-        genForShowPublicZoneNameServer();
-
-    private static HttpRequestDef<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse> genForShowPublicZoneNameServer() {
-        // basic
-        HttpRequestDef.Builder<ShowPublicZoneNameServerRequest, ShowPublicZoneNameServerResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET, ShowPublicZoneNameServerRequest.class, ShowPublicZoneNameServerResponse.class)
-                .withName("ShowPublicZoneNameServer")
-                .withUri("/v2/zones/{zone_id}/nameservers")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPublicZoneNameServerRequest::getZoneId,
-                ShowPublicZoneNameServerRequest::setZoneId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse> updatePrivateZone =
-        genForUpdatePrivateZone();
-
-    private static HttpRequestDef<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse> genForUpdatePrivateZone() {
-        // basic
-        HttpRequestDef.Builder<UpdatePrivateZoneRequest, UpdatePrivateZoneResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PATCH, UpdatePrivateZoneRequest.class, UpdatePrivateZoneResponse.class)
-                .withName("UpdatePrivateZone")
-                .withUri("/v2/zones/{zone_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePrivateZoneRequest::getZoneId, UpdatePrivateZoneRequest::setZoneId));
-        builder.<UpdatePrivateZoneInfoReq>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdatePrivateZoneInfoReq.class),
-            f -> f.withMarshaller(UpdatePrivateZoneRequest::getBody, UpdatePrivateZoneRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdatePublicZoneRequest, UpdatePublicZoneResponse> updatePublicZone =
-        genForUpdatePublicZone();
-
-    private static HttpRequestDef<UpdatePublicZoneRequest, UpdatePublicZoneResponse> genForUpdatePublicZone() {
-        // basic
-        HttpRequestDef.Builder<UpdatePublicZoneRequest, UpdatePublicZoneResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PATCH, UpdatePublicZoneRequest.class, UpdatePublicZoneResponse.class)
-                .withName("UpdatePublicZone")
-                .withUri("/v2/zones/{zone_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePublicZoneRequest::getZoneId, UpdatePublicZoneRequest::setZoneId));
-        builder.<UpdatePublicZoneInfo>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdatePublicZoneInfo.class),
-            f -> f.withMarshaller(UpdatePublicZoneRequest::getBody, UpdatePublicZoneRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse> updatePublicZoneStatus =
-        genForUpdatePublicZoneStatus();
-
-    private static HttpRequestDef<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse> genForUpdatePublicZoneStatus() {
-        // basic
-        HttpRequestDef.Builder<UpdatePublicZoneStatusRequest, UpdatePublicZoneStatusResponse> builder = HttpRequestDef
-            .builder(HttpMethod.PUT, UpdatePublicZoneStatusRequest.class, UpdatePublicZoneStatusResponse.class)
-            .withName("UpdatePublicZoneStatus")
-            .withUri("/v2/zones/{zone_id}/statuses")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("zone_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdatePublicZoneStatusRequest::getZoneId, UpdatePublicZoneStatusRequest::setZoneId));
-        builder.<UpdatePublicZoneStatusRequestBody>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(UpdatePublicZoneStatusRequestBody.class),
-            f -> f.withMarshaller(UpdatePublicZoneStatusRequest::getBody, UpdatePublicZoneStatusRequest::setBody));
+            f -> f.withMarshaller(ShowDnssecConfigRequest::getZoneId, ShowDnssecConfigRequest::setZoneId));
 
         // response
 

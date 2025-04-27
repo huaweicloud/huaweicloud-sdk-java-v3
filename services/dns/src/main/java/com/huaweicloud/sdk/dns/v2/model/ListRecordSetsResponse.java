@@ -77,7 +77,7 @@ public class ListRecordSetsResponse extends SdkResponse {
     }
 
     /**
-     * recordset列表对象。
+     * 记录集列表对象。
      * @return recordsets
      */
     public List<ListRecordSetsWithTags> getRecordsets() {

@@ -122,7 +122,7 @@ public class CreateCustomLineResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间。
+     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -139,7 +139,7 @@ public class CreateCustomLineResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间。
+     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return updatedAt
      */
     public String getUpdatedAt() {

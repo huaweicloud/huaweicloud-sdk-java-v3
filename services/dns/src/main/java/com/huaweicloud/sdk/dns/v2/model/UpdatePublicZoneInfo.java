@@ -48,7 +48,7 @@ public class UpdatePublicZoneInfo {
     }
 
     /**
-     * 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。  如果为空，表示维持原值。  默认值为空。
+     * 管理该域名的管理员邮箱，用于生成该域名的SOA记录。  如果为空，表示维持原值。  默认值为空。
      * @return email
      */
     public String getEmail() {

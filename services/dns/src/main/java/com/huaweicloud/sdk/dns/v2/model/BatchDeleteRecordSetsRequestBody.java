@@ -29,7 +29,7 @@ public class BatchDeleteRecordSetsRequestBody {
     }
 
     /**
-     * Zone的类型，取值为public或private。
+     * 域名的类型，取值为public或private。
      * @return zoneType
      */
     public String getZoneType() {
@@ -62,7 +62,7 @@ public class BatchDeleteRecordSetsRequestBody {
     }
 
     /**
-     * 待删除的Record Set ID列表。 最多支持100个。
+     * 待删除的记录集ID列表。 最多支持100个。
      * @return recordsetIds
      */
     public List<String> getRecordsetIds() {

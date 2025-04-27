@@ -103,7 +103,7 @@ public class ListPtrRecordsResponse extends SdkResponse {
     }
 
     /**
-     * 弹性公网IP的PTR记录ID列表信息。
+     * 弹性公网IP的反向解析记录ID列表信息。
      * @return floatingips
      */
     public List<ListPtrRecordsFloatingResp> getFloatingips() {

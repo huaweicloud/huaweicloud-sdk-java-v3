@@ -139,7 +139,7 @@ public class ShowLineGroupResponse extends SdkResponse {
     }
 
     /**
-     * 线路分组的id。
+     * 线路分组的ID。
      * @return lineId
      */
     public String getLineId() {

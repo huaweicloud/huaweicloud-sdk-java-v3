@@ -94,6 +94,11 @@ public class QueryRecordSetWithLineAndTagsResp {
     private String line;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "line_name")
+
+    private String lineName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "weight")
 
     private Integer weight;
@@ -114,7 +119,7 @@ public class QueryRecordSetWithLineAndTagsResp {
     }
 
     /**
-     * Record Set的ID。
+     * 记录集的ID。
      * @return id
      */
     public String getId() {
@@ -131,7 +136,7 @@ public class QueryRecordSetWithLineAndTagsResp {
     }
 
     /**
-     * Record Set的名称。
+     * 记录集的名称。
      * @return name
      */
     public String getName() {
@@ -148,7 +153,7 @@ public class QueryRecordSetWithLineAndTagsResp {
     }
 
     /**
-     * Record Set的描述信息。
+     * 记录集的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -165,7 +170,7 @@ public class QueryRecordSetWithLineAndTagsResp {
     }
 
     /**
-     * 托管该记录的zone_id。
+     * 托管该记录的域名ID。
      * @return zoneId
      */
     public String getZoneId() {
@@ -182,7 +187,7 @@ public class QueryRecordSetWithLineAndTagsResp {
     }
 
     /**
-     * 托管该记录的zone_name。
+     * 托管该记录的域名。
      * @return zoneName
      */
     public String getZoneName() {
@@ -266,7 +271,7 @@ public class QueryRecordSetWithLineAndTagsResp {
     }
 
     /**
-     * 创建时间。
+     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -283,7 +288,7 @@ public class QueryRecordSetWithLineAndTagsResp {
     }
 
     /**
-     * 更新时间。
+     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -317,7 +322,7 @@ public class QueryRecordSetWithLineAndTagsResp {
     }
 
     /**
-     * 标识是否由系统默认生成，系统默认生成的Record Set不能删除。
+     * 标识是否由系统默认生成，系统默认生成的记录集不能删除。
      * @return _default
      */
     public Boolean getDefault() {
@@ -334,7 +339,7 @@ public class QueryRecordSetWithLineAndTagsResp {
     }
 
     /**
-     * 该Record Set所属的项目ID。
+     * 该记录集所属的项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -421,6 +426,23 @@ public class QueryRecordSetWithLineAndTagsResp {
         this.line = line;
     }
 
+    public QueryRecordSetWithLineAndTagsResp withLineName(String lineName) {
+        this.lineName = lineName;
+        return this;
+    }
+
+    /**
+     * 解析线路名称。
+     * @return lineName
+     */
+    public String getLineName() {
+        return lineName;
+    }
+
+    public void setLineName(String lineName) {
+        this.lineName = lineName;
+    }
+
     public QueryRecordSetWithLineAndTagsResp withWeight(Integer weight) {
         this.weight = weight;
         return this;
@@ -498,7 +520,8 @@ public class QueryRecordSetWithLineAndTagsResp {
             && Objects.equals(this.status, that.status) && Objects.equals(this._default, that._default)
             && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.links, that.links)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.line, that.line)
-            && Objects.equals(this.weight, that.weight) && Objects.equals(this.healthCheckId, that.healthCheckId)
+            && Objects.equals(this.lineName, that.lineName) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.healthCheckId, that.healthCheckId)
             && Objects.equals(this.aliasTarget, that.aliasTarget);
     }
 
@@ -520,6 +543,7 @@ public class QueryRecordSetWithLineAndTagsResp {
             links,
             tags,
             line,
+            lineName,
             weight,
             healthCheckId,
             aliasTarget);
@@ -545,6 +569,7 @@ public class QueryRecordSetWithLineAndTagsResp {
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    line: ").append(toIndentedString(line)).append("\n");
+        sb.append("    lineName: ").append(toIndentedString(lineName)).append("\n");
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
         sb.append("    healthCheckId: ").append(toIndentedString(healthCheckId)).append("\n");
         sb.append("    aliasTarget: ").append(toIndentedString(aliasTarget)).append("\n");

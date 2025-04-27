@@ -100,7 +100,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * zone的ID，uuid形式的一个资源标识。
+     * 域名的ID，UUID形式的一个资源标识。
      * @return id
      */
     public String getId() {
@@ -117,7 +117,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * zone名称。
+     * 域名。
      * @return name
      */
     public String getName() {
@@ -134,7 +134,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 对zone的描述信息。
+     * 对域名的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -151,7 +151,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
+     * 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
      * @return email
      */
     public String getEmail() {
@@ -168,7 +168,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * zone类型，内网（private）。
+     * 域名类型，内网（private）。
      * @return zoneType
      */
     public String getZoneType() {
@@ -185,7 +185,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 该zone下SOA记录中的ttl值。
+     * 该域名下SOA记录中的ttl值。
      * @return ttl
      */
     public Integer getTtl() {
@@ -202,7 +202,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 该zone下SOA记录中用于标识zone文件变更的序列值，用于主从节点同步。
+     * 该域名下SOA记录中用于标识域名文件变更的序列值，用于主从节点同步。
      * @return serial
      */
     public Integer getSerial() {
@@ -219,7 +219,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 资源状态
+     * 资源状态。
      * @return status
      */
     public String getStatus() {
@@ -236,7 +236,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 该zone下的recordset个数。
+     * 该域名下的记录集个数。
      * @return recordNum
      */
     public Integer getRecordNum() {
@@ -253,7 +253,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 托管该zone的pool，由系统分配。
+     * 托管该域名的pool，由系统分配。
      * @return poolId
      */
     public String getPoolId() {
@@ -270,7 +270,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * zone所属的项目ID。
+     * 域名所属的项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -287,7 +287,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间。
+     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -304,7 +304,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间。
+     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -396,7 +396,7 @@ public class DeletePrivateZoneResponse extends SdkResponse {
     }
 
     /**
-     * 与该zone关联的Router(VPC)列表。
+     * 与该域名关联的Router(VPC)列表。
      * @return routers
      */
     public List<RouterWithStatus> getRouters() {

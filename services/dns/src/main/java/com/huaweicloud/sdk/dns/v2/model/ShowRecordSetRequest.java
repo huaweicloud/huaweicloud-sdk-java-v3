@@ -26,7 +26,7 @@ public class ShowRecordSetRequest {
     }
 
     /**
-     * 所属zone的ID。
+     * 域名ID。
      * @return zoneId
      */
     public String getZoneId() {
@@ -43,7 +43,7 @@ public class ShowRecordSetRequest {
     }
 
     /**
-     * 待查询recordset的ID信息。
+     * 记录集ID。
      * @return recordsetId
      */
     public String getRecordsetId() {

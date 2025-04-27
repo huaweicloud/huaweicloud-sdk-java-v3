@@ -43,7 +43,7 @@ public class ShowResourceTagRequest {
     }
 
     /**
-     * 资源id。
+     * 资源ID。
      * @return resourceId
      */
     public String getResourceId() {

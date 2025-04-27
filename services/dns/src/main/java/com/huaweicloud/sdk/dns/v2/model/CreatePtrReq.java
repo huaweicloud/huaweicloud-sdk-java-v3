@@ -44,7 +44,7 @@ public class CreatePtrReq {
     }
 
     /**
-     * PTR记录对应的域名。
+     * 反向解析记录对应的域名。
      * @return ptrdname
      */
     public String getPtrdname() {
@@ -61,7 +61,7 @@ public class CreatePtrReq {
     }
 
     /**
-     * 对PTR记录的描述。
+     * 对反向解析记录的描述。
      * @return description
      */
     public String getDescription() {
@@ -78,7 +78,7 @@ public class CreatePtrReq {
     }
 
     /**
-     * PTR记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。取值范围：1～2147483647
+     * 反向解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。取值范围：1～2147483647
      * @return ttl
      */
     public Integer getTtl() {
@@ -95,7 +95,7 @@ public class CreatePtrReq {
     }
 
     /**
-     * 反向解析关联的企业项目ID，长度不超过36个字符。
+     * 反向解析关联的企业项目ID，长度不超过36个字符。默认值为0。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

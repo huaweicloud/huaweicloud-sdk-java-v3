@@ -27,7 +27,7 @@ public class BatchDeleteRecordSetWithLineRequest {
     }
 
     /**
-     * 所属zone的ID。
+     * 域名ID。
      * @return zoneId
      */
     public String getZoneId() {

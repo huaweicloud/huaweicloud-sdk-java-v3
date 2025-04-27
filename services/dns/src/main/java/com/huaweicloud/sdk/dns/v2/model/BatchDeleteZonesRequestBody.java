@@ -29,7 +29,7 @@ public class BatchDeleteZonesRequestBody {
     }
 
     /**
-     * 待删除zone类型，当前仅支持 public 或 private。
+     * 待删除域名类型，支持public或private。
      * @return zoneType
      */
     public String getZoneType() {
@@ -62,7 +62,7 @@ public class BatchDeleteZonesRequestBody {
     }
 
     /**
-     * 待删除Zone ID列表。 最多支持50个。
+     * 待删除域名ID列表。 最多支持50个。
      * @return zoneIds
      */
     public List<String> getZoneIds() {

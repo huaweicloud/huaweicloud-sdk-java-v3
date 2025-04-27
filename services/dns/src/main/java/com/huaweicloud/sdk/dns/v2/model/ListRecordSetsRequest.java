@@ -81,7 +81,7 @@ public class ListRecordSetsRequest {
     }
 
     /**
-     * 待查询的Record Set的域名类型。  取值范围：public、private  如果为空，表示查询公网类型的Record Set。 如果为public，表示查询公网类型的Record Set。 如果为private，表示查询内网类型的Record Set。 搜索模式默认为模糊搜索。  默认值为public。
+     * 待查询的记录集的域名类型。  取值范围：public、private  如果为空，表示查询公网类型的记录集。 如果为public，表示查询公网类型的记录集。 如果为private，表示查询内网类型的记录集。 搜索模式默认为模糊搜索。  默认值为public。
      * @return zoneType
      */
     public String getZoneType() {
@@ -166,7 +166,7 @@ public class ListRecordSetsRequest {
     }
 
     /**
-     * 资源标签。  取值格式：key1,value1|key2,value2  多个标签之间用\"|\"分开，每个标签的键值用英文逗号\",\"相隔。
+     * 资源标签。  取值格式：key1,value1|key2,value2  多个标签之间用“|”分开，每个标签的键值用英文逗号“,”相隔。
      * @return tags
      */
     public String getTags() {
@@ -183,7 +183,7 @@ public class ListRecordSetsRequest {
     }
 
     /**
-     * 待查询的Record Set的状态。  取值范围：ACTIVE、ERROR、DISABLE、FREEZE、PENDING_CREATE、PENDING_UPDATE、PENDING_DELETE
+     * 待查询的记录集的状态。  取值范围：ACTIVE、ERROR、DISABLE、FREEZE、PENDING_CREATE、PENDING_UPDATE、PENDING_DELETE
      * @return status
      */
     public String getStatus() {
@@ -200,7 +200,7 @@ public class ListRecordSetsRequest {
     }
 
     /**
-     * 待查询的Record Set的记录集类型。 公网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。 内网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、SRV。
+     * 待查询的记录集的类型。 公网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。 内网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、SRV。
      * @return type
      */
     public String getType() {
@@ -217,7 +217,7 @@ public class ListRecordSetsRequest {
     }
 
     /**
-     * 待查询的Record Set的域名中包含此name。  搜索模式默认为模糊搜索。  默认值为空。
+     * 待查询的记录集的域名中包含此name。  搜索模式默认为模糊搜索。  默认值为空。
      * @return name
      */
     public String getName() {
@@ -234,7 +234,7 @@ public class ListRecordSetsRequest {
     }
 
     /**
-     * 待查询的Record Set的id包含此id。
+     * 待查询的记录集ID。
      * @return id
      */
     public String getId() {
@@ -251,7 +251,7 @@ public class ListRecordSetsRequest {
     }
 
     /**
-     * 待查询的Record Set的值中包含此records。  搜索模式默认为模糊搜索。  默认值为空。
+     * 待查询的记录集的值中包含此records。  搜索模式默认为模糊搜索。  默认值为空。
      * @return records
      */
     public String getRecords() {
@@ -268,7 +268,7 @@ public class ListRecordSetsRequest {
     }
 
     /**
-     * 查询结果中Record Set列表的排序字段。  取值范围：  name：记录集名称 type：记录集类型 默认值为空，表示不排序。
+     * 查询结果中记录集列表的排序字段。  取值范围：  name：记录集名称 type：记录集类型 默认值为空，表示不排序。
      * @return sortKey
      */
     public String getSortKey() {
@@ -285,7 +285,7 @@ public class ListRecordSetsRequest {
     }
 
     /**
-     * 查询结果中Record Set列表的排序方式。  取值范围：  desc：降序排序 asc：升序排序 默认值为空，表示不排序。
+     * 查询结果中记录集列表的排序方式。  取值范围：  desc：降序排序 asc：升序排序 默认值为空，表示不排序。
      * @return sortDir
      */
     public String getSortDir() {

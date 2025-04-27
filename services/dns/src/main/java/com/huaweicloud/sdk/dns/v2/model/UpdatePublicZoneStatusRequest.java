@@ -19,7 +19,7 @@ public class UpdatePublicZoneStatusRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private UpdatePublicZoneStatusRequestBody body;
+    private UpdateZoneStatusRequestBody body;
 
     public UpdatePublicZoneStatusRequest withZoneId(String zoneId) {
         this.zoneId = zoneId;
@@ -27,7 +27,7 @@ public class UpdatePublicZoneStatusRequest {
     }
 
     /**
-     * 待设置状态Zone的ID
+     * 域名ID。
      * @return zoneId
      */
     public String getZoneId() {
@@ -38,14 +38,14 @@ public class UpdatePublicZoneStatusRequest {
         this.zoneId = zoneId;
     }
 
-    public UpdatePublicZoneStatusRequest withBody(UpdatePublicZoneStatusRequestBody body) {
+    public UpdatePublicZoneStatusRequest withBody(UpdateZoneStatusRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdatePublicZoneStatusRequest withBody(Consumer<UpdatePublicZoneStatusRequestBody> bodySetter) {
+    public UpdatePublicZoneStatusRequest withBody(Consumer<UpdateZoneStatusRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new UpdatePublicZoneStatusRequestBody();
+            this.body = new UpdateZoneStatusRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class UpdatePublicZoneStatusRequest {
      * Get body
      * @return body
      */
-    public UpdatePublicZoneStatusRequestBody getBody() {
+    public UpdateZoneStatusRequestBody getBody() {
         return body;
     }
 
-    public void setBody(UpdatePublicZoneStatusRequestBody body) {
+    public void setBody(UpdateZoneStatusRequestBody body) {
         this.body = body;
     }
 

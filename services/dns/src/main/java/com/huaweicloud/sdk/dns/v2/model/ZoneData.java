@@ -3,6 +3,8 @@ package com.huaweicloud.sdk.dns.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -34,17 +36,17 @@ public class ZoneData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ttl")
 
-    private String ttl;
+    private Integer ttl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serial")
 
-    private String serial;
+    private Integer serial;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "masters")
 
-    private String masters;
+    private List<String> masters = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
@@ -79,7 +81,7 @@ public class ZoneData {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "record_num")
 
-    private String recordNum;
+    private Integer recordNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "links")
@@ -92,7 +94,7 @@ public class ZoneData {
     }
 
     /**
-     * zone的ID，uuid形式的一个资源标识。
+     * 域名的ID，UUID形式的一个资源标识。
      * @return id
      */
     public String getId() {
@@ -109,7 +111,7 @@ public class ZoneData {
     }
 
     /**
-     * zone名称。
+     * 域名。
      * @return name
      */
     public String getName() {
@@ -126,7 +128,7 @@ public class ZoneData {
     }
 
     /**
-     * 对zone的描述信息。
+     * 对域名的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -143,7 +145,7 @@ public class ZoneData {
     }
 
     /**
-     * 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
+     * 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
      * @return email
      */
     public String getEmail() {
@@ -154,42 +156,58 @@ public class ZoneData {
         this.email = email;
     }
 
-    public ZoneData withTtl(String ttl) {
+    public ZoneData withTtl(Integer ttl) {
         this.ttl = ttl;
         return this;
     }
 
     /**
-     * 该zone下SOA记录中的ttl值。
+     * 该域名下SOA记录中的ttl值。
      * @return ttl
      */
-    public String getTtl() {
+    public Integer getTtl() {
         return ttl;
     }
 
-    public void setTtl(String ttl) {
+    public void setTtl(Integer ttl) {
         this.ttl = ttl;
     }
 
-    public ZoneData withSerial(String serial) {
+    public ZoneData withSerial(Integer serial) {
         this.serial = serial;
         return this;
     }
 
     /**
-     * 该zone下SOA记录中用于标识zone文件变更的序列值，用于主从节点同步。
+     * 该域名下SOA记录中用于标识域名文件变更的序列值，用于主从节点同步。
      * @return serial
      */
-    public String getSerial() {
+    public Integer getSerial() {
         return serial;
     }
 
-    public void setSerial(String serial) {
+    public void setSerial(Integer serial) {
         this.serial = serial;
     }
 
-    public ZoneData withMasters(String masters) {
+    public ZoneData withMasters(List<String> masters) {
         this.masters = masters;
+        return this;
+    }
+
+    public ZoneData addMastersItem(String mastersItem) {
+        if (this.masters == null) {
+            this.masters = new ArrayList<>();
+        }
+        this.masters.add(mastersItem);
+        return this;
+    }
+
+    public ZoneData withMasters(Consumer<List<String>> mastersSetter) {
+        if (this.masters == null) {
+            this.masters = new ArrayList<>();
+        }
+        mastersSetter.accept(this.masters);
         return this;
     }
 
@@ -197,11 +215,11 @@ public class ZoneData {
      * 主从模式中，从DNS服务器获取DNS信息。
      * @return masters
      */
-    public String getMasters() {
+    public List<String> getMasters() {
         return masters;
     }
 
-    public void setMasters(String masters) {
+    public void setMasters(List<String> masters) {
         this.masters = masters;
     }
 
@@ -228,7 +246,7 @@ public class ZoneData {
     }
 
     /**
-     * 托管该zone的pool，由系统分配。
+     * 托管该域名的pool，由系统分配。
      * @return poolId
      */
     public String getPoolId() {
@@ -245,7 +263,7 @@ public class ZoneData {
     }
 
     /**
-     * zone所属的项目ID。
+     * 域名所属的项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -262,7 +280,7 @@ public class ZoneData {
     }
 
     /**
-     * zone类型，取值 public 或 private。
+     * 域名类型，取值public或private。
      * @return zoneType
      */
     public String getZoneType() {
@@ -279,7 +297,7 @@ public class ZoneData {
     }
 
     /**
-     * 创建时间。  采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ。
+     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -296,7 +314,7 @@ public class ZoneData {
     }
 
     /**
-     * 更新时间。  采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ。
+     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return updatedAt
      */
     public String getUpdatedAt() {
@@ -307,20 +325,20 @@ public class ZoneData {
         this.updatedAt = updatedAt;
     }
 
-    public ZoneData withRecordNum(String recordNum) {
+    public ZoneData withRecordNum(Integer recordNum) {
         this.recordNum = recordNum;
         return this;
     }
 
     /**
-     * 该zone下的recordset个数。
+     * 该域名下的记录集个数。
      * @return recordNum
      */
-    public String getRecordNum() {
+    public Integer getRecordNum() {
         return recordNum;
     }
 
-    public void setRecordNum(String recordNum) {
+    public void setRecordNum(Integer recordNum) {
         this.recordNum = recordNum;
     }
 

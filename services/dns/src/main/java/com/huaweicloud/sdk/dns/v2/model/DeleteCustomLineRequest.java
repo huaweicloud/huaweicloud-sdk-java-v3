@@ -21,7 +21,7 @@ public class DeleteCustomLineRequest {
     }
 
     /**
-     * 自定义线路id
+     * 自定义线路ID。
      * @return lineId
      */
     public String getLineId() {

@@ -46,7 +46,7 @@ public class BatchDeleteZonesResponse extends SdkResponse {
     }
 
     /**
-     * 删除zone的列表响应。
+     * 删除域名的列表响应。
      * @return zones
      */
     public List<ZoneData> getZones() {

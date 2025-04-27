@@ -104,7 +104,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * zone的ID，uuid形式的一个资源标识。
+     * 域名的ID，UUID形式的一个资源标识。
      * @return id
      */
     public String getId() {
@@ -121,7 +121,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * zone名称。
+     * 域名。
      * @return name
      */
     public String getName() {
@@ -138,7 +138,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * 对zone的描述信息。
+     * 对域名的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -155,7 +155,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
+     * 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
      * @return email
      */
     public String getEmail() {
@@ -172,7 +172,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * zone类型，公网（public）。
+     * 域名类型。  取值范围： public：公网域名。
      * @return zoneType
      */
     public String getZoneType() {
@@ -189,7 +189,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * 该zone下SOA记录中的ttl值。
+     * 该域名下SOA记录中的ttl值。
      * @return ttl
      */
     public Integer getTtl() {
@@ -206,7 +206,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * 该zone下SOA记录中用于标识zone文件变更的序列值，用于主从节点同步。
+     * 该域名下SOA记录中用于标识域名文件变更的序列值，用于主从节点同步。
      * @return serial
      */
     public Integer getSerial() {
@@ -223,7 +223,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * 资源状态。
+     * 资源状态。  取值范围： ACTIVE：正常 PENDING_CREATE：创建中 PENDING_DELETE：删除中 PENDING_UPDATE：更新中 FREEZE：冻结 PENDING_DISABLE：暂停中 DISABLE：暂停 ERROR：失败
      * @return status
      */
     public String getStatus() {
@@ -240,7 +240,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * 该zone下的recordset个数。
+     * 该域名下的记录集个数。
      * @return recordNum
      */
     public Integer getRecordNum() {
@@ -257,7 +257,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * 托管该zone的pool，由系统分配。
+     * 托管该域名的pool，由系统分配。
      * @return poolId
      */
     public String getPoolId() {
@@ -274,7 +274,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * zone所属的项目ID。
+     * 域名所属的项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -291,7 +291,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * 创建时间。
+     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -308,7 +308,7 @@ public class PublicZoneResp {
     }
 
     /**
-     * 更新时间。
+     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return updatedAt
      */
     public String getUpdatedAt() {

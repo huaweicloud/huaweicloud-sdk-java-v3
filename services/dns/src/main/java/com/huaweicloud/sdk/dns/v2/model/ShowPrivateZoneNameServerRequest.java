@@ -21,7 +21,7 @@ public class ShowPrivateZoneNameServerRequest {
     }
 
     /**
-     * 待查询内网zone的ID。
+     * 域名ID。
      * @return zoneId
      */
     public String getZoneId() {

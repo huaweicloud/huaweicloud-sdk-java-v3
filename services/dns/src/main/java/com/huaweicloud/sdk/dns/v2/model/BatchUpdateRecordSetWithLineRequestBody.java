@@ -41,7 +41,7 @@ public class BatchUpdateRecordSetWithLineRequestBody {
     }
 
     /**
-     * RecordSet 列表。
+     * 记录集列表。
      * @return recordsets
      */
     public List<BatchUpdateRecordSet> getRecordsets() {

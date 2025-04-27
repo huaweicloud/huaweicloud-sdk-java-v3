@@ -27,7 +27,7 @@ public class AssociateRouterRequest {
     }
 
     /**
-     * 关联VPC的Zone ID。
+     * 域名ID。
      * @return zoneId
      */
     public String getZoneId() {

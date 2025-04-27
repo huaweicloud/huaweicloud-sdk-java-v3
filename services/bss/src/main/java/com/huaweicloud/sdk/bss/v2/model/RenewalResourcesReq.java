@@ -29,11 +29,6 @@ public class RenewalResourcesReq {
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "expire_policy")
-
-    private Integer expirePolicy;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_auto_pay")
 
     private Integer isAutoPay;
@@ -109,25 +104,6 @@ public class RenewalResourcesReq {
         this.periodNum = periodNum;
     }
 
-    public RenewalResourcesReq withExpirePolicy(Integer expirePolicy) {
-        this.expirePolicy = expirePolicy;
-        return this;
-    }
-
-    /**
-     * 到期策略（字段已废弃，请勿使用该字段。此字段必填，需携带，但携带的枚举实际并不生效）： 0：进入宽限期/保留期1：转按需2：自动退订3：自动续订
-     * minimum: 0
-     * maximum: 3
-     * @return expirePolicy
-     */
-    public Integer getExpirePolicy() {
-        return expirePolicy;
-    }
-
-    public void setExpirePolicy(Integer expirePolicy) {
-        this.expirePolicy = expirePolicy;
-    }
-
     public RenewalResourcesReq withIsAutoPay(Integer isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
@@ -157,13 +133,12 @@ public class RenewalResourcesReq {
         }
         RenewalResourcesReq that = (RenewalResourcesReq) obj;
         return Objects.equals(this.resourceIds, that.resourceIds) && Objects.equals(this.periodType, that.periodType)
-            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.expirePolicy, that.expirePolicy)
-            && Objects.equals(this.isAutoPay, that.isAutoPay);
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(resourceIds, periodType, periodNum, expirePolicy, isAutoPay);
+        return Objects.hash(resourceIds, periodType, periodNum, isAutoPay);
     }
 
     @Override
@@ -173,7 +148,6 @@ public class RenewalResourcesReq {
         sb.append("    resourceIds: ").append(toIndentedString(resourceIds)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
-        sb.append("    expirePolicy: ").append(toIndentedString(expirePolicy)).append("\n");
         sb.append("    isAutoPay: ").append(toIndentedString(isAutoPay)).append("\n");
         sb.append("}");
         return sb.toString();

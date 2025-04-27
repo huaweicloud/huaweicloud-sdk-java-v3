@@ -81,7 +81,7 @@ public class ListPrivateZonesRequest {
     }
 
     /**
-     * 待查询的zone的类型。  取值范围：private。
+     * 待查询的域名的类型。  取值范围：private。
      * @return type
      */
     public String getType() {
@@ -166,7 +166,7 @@ public class ListPrivateZonesRequest {
     }
 
     /**
-     * Zone名称。  搜索模式默认为模糊搜索。
+     * 域名。  搜索模式默认为模糊搜索。
      * @return name
      */
     public String getName() {
@@ -183,7 +183,7 @@ public class ListPrivateZonesRequest {
     }
 
     /**
-     * Zone ID。
+     * 域名ID。
      * @return id
      */
     public String getId() {
@@ -234,7 +234,7 @@ public class ListPrivateZonesRequest {
     }
 
     /**
-     * 查询结果中zone列表的排序字段。  取值范围为：  name：域名 created_at：创建时间 updated_at：更新时间 默认值为空，表示不排序。
+     * 查询结果中域名列表的排序字段。  取值范围为：  name：域名 created_at：创建时间 updated_at：更新时间 默认值为空，表示不排序。
      * @return sortKey
      */
     public String getSortKey() {
@@ -251,7 +251,7 @@ public class ListPrivateZonesRequest {
     }
 
     /**
-     * 查询结果中zone列表的排序方式。  取值范围：  desc：降序排序 asc：升序排序 默认值为空，表示不排序。
+     * 查询结果中域名列表的排序方式。  取值范围：  desc：降序排序 asc：升序排序 默认值为空，表示不排序。
      * @return sortDir
      */
     public String getSortDir() {

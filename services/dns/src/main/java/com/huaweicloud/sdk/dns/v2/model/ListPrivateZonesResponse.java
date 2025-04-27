@@ -103,7 +103,7 @@ public class ListPrivateZonesResponse extends SdkResponse {
     }
 
     /**
-     * zone列表信息。
+     * 域名列表信息。
      * @return zones
      */
     public List<PrivateZoneResp> getZones() {

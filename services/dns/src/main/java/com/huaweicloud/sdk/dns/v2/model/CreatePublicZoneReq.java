@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建公网zone请求
+ * 创建公网域名请求。
  */
 public class CreatePublicZoneReq {
 
@@ -54,7 +54,7 @@ public class CreatePublicZoneReq {
     }
 
     /**
-     * Zone名称
+     * 域名。
      * @return name
      */
     public String getName() {
@@ -71,7 +71,7 @@ public class CreatePublicZoneReq {
     }
 
     /**
-     * 描述
+     * 描述。
      * @return description
      */
     public String getDescription() {
@@ -105,7 +105,7 @@ public class CreatePublicZoneReq {
     }
 
     /**
-     * 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
+     * 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
      * @return email
      */
     public String getEmail() {
@@ -122,7 +122,7 @@ public class CreatePublicZoneReq {
     }
 
     /**
-     * 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位.
+     * 用于填写默认生成的SOA记录中有效缓存时间，以秒为单位。
      * @return ttl
      */
     public Integer getTtl() {
@@ -139,7 +139,7 @@ public class CreatePublicZoneReq {
     }
 
     /**
-     * 域名关联的企业项目ID，长度不超过36个字符.
+     * 域名关联的企业项目ID，长度不超过36个字符。默认值为0。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

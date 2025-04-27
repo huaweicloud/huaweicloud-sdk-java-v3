@@ -78,7 +78,7 @@ public class ListRecordSetsWithLineResponse extends SdkResponse {
     }
 
     /**
-     * recordset列表信息。
+     * 记录集列表信息。
      * @return recordsets
      */
     public List<QueryRecordSetWithLineAndTagsResp> getRecordsets() {

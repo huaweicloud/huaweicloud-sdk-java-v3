@@ -1,35 +1,36 @@
-package com.huaweicloud.sdk.dns.v2.model;
+package com.huaweicloud.sdk.gaussdb.v3.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Objects;
 
 /**
- * UpdatePublicZoneStatusRequestBody
+ * Response Object
  */
-public class UpdatePublicZoneStatusRequestBody {
+public class ModifyAutoExpandPolicyResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "status")
+    @JsonProperty(value = "result")
 
-    private String status;
+    private String result;
 
-    public UpdatePublicZoneStatusRequestBody withStatus(String status) {
-        this.status = status;
+    public ModifyAutoExpandPolicyResponse withResult(String result) {
+        this.result = result;
         return this;
     }
 
     /**
-     * Zone状态。  取值范围：  ENABLE：启用解析 DISABLE：暂停解析
-     * @return status
+     * 修改结果。
+     * @return result
      */
-    public String getStatus() {
-        return status;
+    public String getResult() {
+        return result;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setResult(String result) {
+        this.result = result;
     }
 
     @Override
@@ -40,20 +41,20 @@ public class UpdatePublicZoneStatusRequestBody {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePublicZoneStatusRequestBody that = (UpdatePublicZoneStatusRequestBody) obj;
-        return Objects.equals(this.status, that.status);
+        ModifyAutoExpandPolicyResponse that = (ModifyAutoExpandPolicyResponse) obj;
+        return Objects.equals(this.result, that.result);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status);
+        return Objects.hash(result);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdatePublicZoneStatusRequestBody {\n");
-        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("class ModifyAutoExpandPolicyResponse {\n");
+        sb.append("    result: ").append(toIndentedString(result)).append("\n");
         sb.append("}");
         return sb.toString();
     }

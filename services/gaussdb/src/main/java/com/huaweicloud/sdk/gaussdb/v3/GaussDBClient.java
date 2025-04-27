@@ -199,6 +199,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListStarrocksInstanceInfoRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListStarrocksInstanceInfoResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListTaurusDbNodeProcessesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ListTaurusDbNodeProcessesResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAutoExpandPolicyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAutoExpandPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyDataSyncRequest;
@@ -249,6 +251,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.SetSqlFilterRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetSqlFilterRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAuditLogRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAuditLogResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoExpandPolicyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoExpandPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingHistoryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingHistoryResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingPolicyRequest;
@@ -313,6 +317,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyVersionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRecyclePolicyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreAvailableTablesRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreAvailableTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsRequest;
@@ -2251,6 +2257,35 @@ public class GaussDBClient {
     }
 
     /**
+     * 修改存储空间自动扩容策略。
+     *
+     * 修改存储空间自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyAutoExpandPolicyRequest 请求对象
+     * @return ModifyAutoExpandPolicyResponse
+     */
+    public ModifyAutoExpandPolicyResponse modifyAutoExpandPolicy(ModifyAutoExpandPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.modifyAutoExpandPolicy);
+    }
+
+    /**
+     * 修改存储空间自动扩容策略。
+     *
+     * 修改存储空间自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyAutoExpandPolicyRequest 请求对象
+     * @return SyncInvoker<ModifyAutoExpandPolicyRequest, ModifyAutoExpandPolicyResponse>
+     */
+    public SyncInvoker<ModifyAutoExpandPolicyRequest, ModifyAutoExpandPolicyResponse> modifyAutoExpandPolicyInvoker(
+        ModifyAutoExpandPolicyRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.modifyAutoExpandPolicy, hcClient);
+    }
+
+    /**
      * 打开或关闭备份加密
      *
      * 打开或关闭备份加密。
@@ -2713,6 +2748,35 @@ public class GaussDBClient {
      */
     public SyncInvoker<ShowAuditLogRequest, ShowAuditLogResponse> showAuditLogInvoker(ShowAuditLogRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.showAuditLog, hcClient);
+    }
+
+    /**
+     * 查询存储空间自动扩容策略。
+     *
+     * 查询存储空间自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoExpandPolicyRequest 请求对象
+     * @return ShowAutoExpandPolicyResponse
+     */
+    public ShowAutoExpandPolicyResponse showAutoExpandPolicy(ShowAutoExpandPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showAutoExpandPolicy);
+    }
+
+    /**
+     * 查询存储空间自动扩容策略。
+     *
+     * 查询存储空间自动扩容策略。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAutoExpandPolicyRequest 请求对象
+     * @return SyncInvoker<ShowAutoExpandPolicyRequest, ShowAutoExpandPolicyResponse>
+     */
+    public SyncInvoker<ShowAutoExpandPolicyRequest, ShowAutoExpandPolicyResponse> showAutoExpandPolicyInvoker(
+        ShowAutoExpandPolicyRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showAutoExpandPolicy, hcClient);
     }
 
     /**
@@ -3529,6 +3593,35 @@ public class GaussDBClient {
     public SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicyInvoker(
         ShowRecyclePolicyRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.showRecyclePolicy, hcClient);
+    }
+
+    /**
+     * 查询表级时间点恢复可选表
+     *
+     * 查询表级时间点恢复可选表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRestoreAvailableTablesRequest 请求对象
+     * @return ShowRestoreAvailableTablesResponse
+     */
+    public ShowRestoreAvailableTablesResponse showRestoreAvailableTables(ShowRestoreAvailableTablesRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.showRestoreAvailableTables);
+    }
+
+    /**
+     * 查询表级时间点恢复可选表
+     *
+     * 查询表级时间点恢复可选表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRestoreAvailableTablesRequest 请求对象
+     * @return SyncInvoker<ShowRestoreAvailableTablesRequest, ShowRestoreAvailableTablesResponse>
+     */
+    public SyncInvoker<ShowRestoreAvailableTablesRequest, ShowRestoreAvailableTablesResponse> showRestoreAvailableTablesInvoker(
+        ShowRestoreAvailableTablesRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.showRestoreAvailableTables, hcClient);
     }
 
     /**

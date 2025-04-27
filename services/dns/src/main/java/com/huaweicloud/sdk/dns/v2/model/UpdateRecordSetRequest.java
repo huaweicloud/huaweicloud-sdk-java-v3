@@ -32,7 +32,7 @@ public class UpdateRecordSetRequest {
     }
 
     /**
-     * 所属zone的ID。
+     * 域名ID。
      * @return zoneId
      */
     public String getZoneId() {
@@ -49,7 +49,7 @@ public class UpdateRecordSetRequest {
     }
 
     /**
-     * 待修改的recordset的ID信息。
+     * 记录集ID。
      * @return recordsetId
      */
     public String getRecordsetId() {

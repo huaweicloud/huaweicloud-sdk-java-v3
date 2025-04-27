@@ -43,7 +43,7 @@ public class Match {
     }
 
     /**
-     * 值。每个值最大长度255个unicode字符。不能包含“_”,“%”特殊字符。
+     * 值。每个值最大长度43个unicode字符。
      * @return value
      */
     public String getValue() {

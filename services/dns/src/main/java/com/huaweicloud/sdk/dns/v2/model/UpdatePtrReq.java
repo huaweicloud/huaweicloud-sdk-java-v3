@@ -39,7 +39,7 @@ public class UpdatePtrReq {
     }
 
     /**
-     * PTR记录对应的域名。
+     * 反向解析记录对应的域名。
      * @return ptrdname
      */
     public String getPtrdname() {
@@ -56,7 +56,7 @@ public class UpdatePtrReq {
     }
 
     /**
-     * 对PTR记录的描述。
+     * 对反向解析记录的描述。
      * @return description
      */
     public String getDescription() {
@@ -73,7 +73,7 @@ public class UpdatePtrReq {
     }
 
     /**
-     * PTR记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
+     * 反向解析记录在本地DNS服务器的缓存时间，缓存时间越长更新生效越慢，以秒为单位。
      * @return ttl
      */
     public Integer getTtl() {

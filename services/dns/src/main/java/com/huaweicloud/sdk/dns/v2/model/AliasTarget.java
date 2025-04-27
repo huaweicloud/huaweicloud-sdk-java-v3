@@ -26,7 +26,7 @@ public class AliasTarget {
     }
 
     /**
-     * 资源服务类型，支持别名记录的服务。取值：  cloudsite：云速建站 waf：Web应用防火墙
+     * 资源服务类型，支持别名记录的服务。  取值范围： cloudsite：企业门户 waf：Web应用防火墙
      * @return resourceType
      */
     public String getResourceType() {

@@ -78,7 +78,7 @@ public class BatchUpdateRecordSetWithLineResponse extends SdkResponse {
     }
 
     /**
-     * recordset的列表信息。
+     * 记录集的列表信息。
      * @return recordsets
      */
     public List<QueryRecordSetWithLineResp> getRecordsets() {

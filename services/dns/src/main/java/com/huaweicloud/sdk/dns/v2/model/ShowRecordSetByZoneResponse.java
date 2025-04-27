@@ -77,7 +77,7 @@ public class ShowRecordSetByZoneResponse extends SdkResponse {
     }
 
     /**
-     * recordset列表。
+     * 记录集列表。
      * @return recordsets
      */
     public List<ShowRecordSetByZoneResp> getRecordsets() {

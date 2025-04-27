@@ -27,7 +27,7 @@ public class DisassociateRouterRequest {
     }
 
     /**
-     * 待解关联zone的ID。
+     * 域名ID。
      * @return zoneId
      */
     public String getZoneId() {

@@ -44,7 +44,7 @@ public class BatchUpdateRecordSet {
     }
 
     /**
-     * RecordSet资源ID。
+     * 记录集资源ID。
      * @return id
      */
     public String getId() {
@@ -61,7 +61,7 @@ public class BatchUpdateRecordSet {
     }
 
     /**
-     * RecordSet资源描述。
+     * 记录集资源描述。
      * @return description
      */
     public String getDescription() {
@@ -78,7 +78,7 @@ public class BatchUpdateRecordSet {
     }
 
     /**
-     * Record Set的有效缓存时间，以秒为单位。 取值范围：300-2147483647。 默认值为300s。
+     * 记录集的有效缓存时间，以秒为单位。 取值范围：300-2147483647。 默认值为300s。
      * @return ttl
      */
     public Integer getTtl() {

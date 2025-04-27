@@ -95,7 +95,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * zone的ID，uuid形式的一个资源标识。
+     * 域名的ID，UUID形式的一个资源标识。
      * @return id
      */
     public String getId() {
@@ -112,7 +112,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * zone名称。
+     * 域名。
      * @return name
      */
     public String getName() {
@@ -129,7 +129,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * 对zone的描述信息。
+     * 对域名的描述信息。
      * @return description
      */
     public String getDescription() {
@@ -146,7 +146,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * 管理该zone的管理员邮箱，用于生成该Zone的SOA记录。
+     * 管理该域名的管理员邮箱，用于生成该域名的SOA记录。
      * @return email
      */
     public String getEmail() {
@@ -163,7 +163,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * zone类型，公网（public）。
+     * 域名类型，公网（public）。
      * @return zoneType
      */
     public String getZoneType() {
@@ -180,7 +180,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * 该zone下SOA记录中的ttl值。
+     * 该域名下SOA记录中的ttl值。
      * @return ttl
      */
     public Integer getTtl() {
@@ -197,7 +197,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * 该zone下SOA记录中用于标识zone文件变更的序列值，用于主从节点同步。  该参数暂未使用。
+     * 该域名下SOA记录中用于标识域名文件变更的序列值，用于主从节点同步。  该参数暂未使用。
      * @return serial
      */
     public Integer getSerial() {
@@ -231,7 +231,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * 该zone下的recordset个数。
+     * 该域名下的记录集个数。
      * @return recordNum
      */
     public Integer getRecordNum() {
@@ -248,7 +248,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * 托管该zone的pool，由系统分配。
+     * 托管该域名的pool，由系统分配。
      * @return poolId
      */
     public String getPoolId() {
@@ -265,7 +265,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * zone所属的项目ID。
+     * 域名所属的项目ID。
      * @return projectId
      */
     public String getProjectId() {
@@ -282,7 +282,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * 创建时间。  采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
+     * 创建时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -299,7 +299,7 @@ public class UpdatePublicZoneResponse extends SdkResponse {
     }
 
     /**
-     * 更新时间。  采用UTC时间格式，格式为：YYYY-MM-DDTHH:MM:SSZ
+     * 更新时间。 格式：yyyy-MM-dd'T'HH:mm:ss.SSS。
      * @return updatedAt
      */
     public String getUpdatedAt() {

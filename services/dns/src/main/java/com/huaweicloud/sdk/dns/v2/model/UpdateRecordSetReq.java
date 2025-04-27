@@ -78,7 +78,7 @@ public class UpdateRecordSetReq {
     }
 
     /**
-     * Record Set的类型。
+     * 记录集的类型。
      * @return type
      */
     public String getType() {

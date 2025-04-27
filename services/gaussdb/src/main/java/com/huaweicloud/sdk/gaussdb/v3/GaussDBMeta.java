@@ -246,6 +246,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ListTaurusDbNodeProcessesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.LtsLogErrorQueryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.LtsLogSlowQueryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAliasRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAutoExpandPolicyReq;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAutoExpandPolicyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAutoExpandPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBackupEncryptStatusResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ModifyBindEipRequest;
@@ -333,6 +336,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.SetSqlFilterRuleRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SetSqlFilterRuleResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAuditLogRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAuditLogResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoExpandPolicyRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoExpandPolicyResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingHistoryRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingHistoryResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowAutoScalingPolicyRequest;
@@ -397,6 +402,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyVersionRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowProxyVersionResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRecyclePolicyRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRecyclePolicyResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreAvailableTablesRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreAvailableTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowRestoreTablesResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.ShowSlowLogStatisticsRequest;
@@ -2973,6 +2980,41 @@ public class GaussDBMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ModifyAutoExpandPolicyRequest, ModifyAutoExpandPolicyResponse> modifyAutoExpandPolicy =
+        genForModifyAutoExpandPolicy();
+
+    private static HttpRequestDef<ModifyAutoExpandPolicyRequest, ModifyAutoExpandPolicyResponse> genForModifyAutoExpandPolicy() {
+        // basic
+        HttpRequestDef.Builder<ModifyAutoExpandPolicyRequest, ModifyAutoExpandPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, ModifyAutoExpandPolicyRequest.class, ModifyAutoExpandPolicyResponse.class)
+            .withName("ModifyAutoExpandPolicy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/storage/auto-expand-policy")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyAutoExpandPolicyRequest::getInstanceId,
+                ModifyAutoExpandPolicyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyAutoExpandPolicyRequest::getXLanguage,
+                ModifyAutoExpandPolicyRequest::setXLanguage));
+        builder.<ModifyAutoExpandPolicyReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyAutoExpandPolicyReq.class),
+            f -> f.withMarshaller(ModifyAutoExpandPolicyRequest::getBody, ModifyAutoExpandPolicyRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ModifyBackupEncryptStatusRequest, ModifyBackupEncryptStatusResponse> modifyBackupEncryptStatus =
         genForModifyBackupEncryptStatus();
 
@@ -3530,6 +3572,36 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAuditLogRequest::getXLanguage, ShowAuditLogRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAutoExpandPolicyRequest, ShowAutoExpandPolicyResponse> showAutoExpandPolicy =
+        genForShowAutoExpandPolicy();
+
+    private static HttpRequestDef<ShowAutoExpandPolicyRequest, ShowAutoExpandPolicyResponse> genForShowAutoExpandPolicy() {
+        // basic
+        HttpRequestDef.Builder<ShowAutoExpandPolicyRequest, ShowAutoExpandPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowAutoExpandPolicyRequest.class, ShowAutoExpandPolicyResponse.class)
+            .withName("ShowAutoExpandPolicy")
+            .withUri("/v3/{project_id}/instances/{instance_id}/storage/auto-expand-policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoExpandPolicyRequest::getInstanceId,
+                ShowAutoExpandPolicyRequest::setInstanceId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAutoExpandPolicyRequest::getXLanguage,
+                ShowAutoExpandPolicyRequest::setXLanguage));
 
         // response
 
@@ -4581,6 +4653,63 @@ public class GaussDBMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowRecyclePolicyRequest::getXLanguage, ShowRecyclePolicyRequest::setXLanguage));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRestoreAvailableTablesRequest, ShowRestoreAvailableTablesResponse> showRestoreAvailableTables =
+        genForShowRestoreAvailableTables();
+
+    private static HttpRequestDef<ShowRestoreAvailableTablesRequest, ShowRestoreAvailableTablesResponse> genForShowRestoreAvailableTables() {
+        // basic
+        HttpRequestDef.Builder<ShowRestoreAvailableTablesRequest, ShowRestoreAvailableTablesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowRestoreAvailableTablesRequest.class,
+                    ShowRestoreAvailableTablesResponse.class)
+                .withName("ShowRestoreAvailableTables")
+                .withUri("/v3.1/{project_id}/instances/{instance_id}/backups/restore/tables")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreAvailableTablesRequest::getInstanceId,
+                ShowRestoreAvailableTablesRequest::setInstanceId));
+        builder.<String>withRequestField("restore_time",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreAvailableTablesRequest::getRestoreTime,
+                ShowRestoreAvailableTablesRequest::setRestoreTime));
+        builder.<String>withRequestField("last_table_info",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreAvailableTablesRequest::getLastTableInfo,
+                ShowRestoreAvailableTablesRequest::setLastTableInfo));
+        builder.<String>withRequestField("database_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreAvailableTablesRequest::getDatabaseName,
+                ShowRestoreAvailableTablesRequest::setDatabaseName));
+        builder.<String>withRequestField("table_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreAvailableTablesRequest::getTableName,
+                ShowRestoreAvailableTablesRequest::setTableName));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowRestoreAvailableTablesRequest::getXLanguage,
+                ShowRestoreAvailableTablesRequest::setXLanguage));
 
         // response
 

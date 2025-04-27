@@ -77,7 +77,7 @@ public class BatchSetRecordSetsStatusResponse extends SdkResponse {
     }
 
     /**
-     * 设置record set的列表响应。
+     * 设置记录集的列表响应。
      * @return recordsets
      */
     public List<RecordsetData> getRecordsets() {

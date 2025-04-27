@@ -103,7 +103,7 @@ public class CreateRecordSetWithLineRequestBody {
     }
 
     /**
-     * Record Set的类型。
+     * 记录集的类型。
      * @return type
      */
     public String getType() {
@@ -120,7 +120,7 @@ public class CreateRecordSetWithLineRequestBody {
     }
 
     /**
-     * 解析记录的状态。 取值范围： ENABLE：启用 DISABLE：暂停 默认值为ENABLE。
+     * 解析记录的状态。  取值范围： ENABLE：启用 DISABLE：暂停  默认值为ENABLE。
      * @return status
      */
     public String getStatus() {
@@ -187,7 +187,7 @@ public class CreateRecordSetWithLineRequestBody {
     }
 
     /**
-     * 解析线路ID
+     * 解析线路ID。
      * @return line
      */
     public String getLine() {
@@ -220,7 +220,7 @@ public class CreateRecordSetWithLineRequestBody {
     }
 
     /**
-     *  资源标签
+     * 资源标签。
      * @return tags
      */
     public List<Tag> getTags() {

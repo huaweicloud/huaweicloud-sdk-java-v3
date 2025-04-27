@@ -9,6 +9,10 @@ import com.huaweicloud.sdk.deh.v1.model.BatchCreateDedicatedHostTagsRequest;
 import com.huaweicloud.sdk.deh.v1.model.BatchCreateDedicatedHostTagsResponse;
 import com.huaweicloud.sdk.deh.v1.model.BatchDeleteDedicatedHostTagsRequest;
 import com.huaweicloud.sdk.deh.v1.model.BatchDeleteDedicatedHostTagsResponse;
+import com.huaweicloud.sdk.deh.v1.model.CreateDedicatedHostRequest;
+import com.huaweicloud.sdk.deh.v1.model.CreateDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTagsRequest;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTagsResponse;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTypesRequest;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTypesResponse;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostsByTagsRequest;
@@ -17,6 +21,7 @@ import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostsRequest;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostsResponse;
 import com.huaweicloud.sdk.deh.v1.model.ListServersDedicatedHostRequest;
 import com.huaweicloud.sdk.deh.v1.model.ListServersDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.ReqAllocateDeh;
 import com.huaweicloud.sdk.deh.v1.model.ReqListDehByTags;
 import com.huaweicloud.sdk.deh.v1.model.ReqSetOrDeleteTags;
 import com.huaweicloud.sdk.deh.v1.model.ReqUpdateDeh;
@@ -92,6 +97,47 @@ public class DeHMeta {
             TypeCasts.uncheckedConversion(ReqSetOrDeleteTags.class),
             f -> f.withMarshaller(BatchDeleteDedicatedHostTagsRequest::getBody,
                 BatchDeleteDedicatedHostTagsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDedicatedHostRequest, CreateDedicatedHostResponse> createDedicatedHost =
+        genForCreateDedicatedHost();
+
+    private static HttpRequestDef<CreateDedicatedHostRequest, CreateDedicatedHostResponse> genForCreateDedicatedHost() {
+        // basic
+        HttpRequestDef.Builder<CreateDedicatedHostRequest, CreateDedicatedHostResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDedicatedHostRequest.class, CreateDedicatedHostResponse.class)
+                .withName("CreateDedicatedHost")
+                .withUri("/v1.0/{project_id}/dedicated-hosts")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<ReqAllocateDeh>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ReqAllocateDeh.class),
+            f -> f.withMarshaller(CreateDedicatedHostRequest::getBody, CreateDedicatedHostRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDedicatedHostTagsRequest, ListDedicatedHostTagsResponse> listDedicatedHostTags =
+        genForListDedicatedHostTags();
+
+    private static HttpRequestDef<ListDedicatedHostTagsRequest, ListDedicatedHostTagsResponse> genForListDedicatedHostTags() {
+        // basic
+        HttpRequestDef.Builder<ListDedicatedHostTagsRequest, ListDedicatedHostTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListDedicatedHostTagsRequest.class, ListDedicatedHostTagsResponse.class)
+            .withName("ListDedicatedHostTags")
+            .withUri("/v1.0/{project_id}/dedicated-host-tags/tags")
+            .withContentType("application/json");
+
+        // requests
 
         // response
 

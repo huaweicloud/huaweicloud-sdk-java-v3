@@ -7,6 +7,10 @@ import com.huaweicloud.sdk.deh.v1.model.BatchCreateDedicatedHostTagsRequest;
 import com.huaweicloud.sdk.deh.v1.model.BatchCreateDedicatedHostTagsResponse;
 import com.huaweicloud.sdk.deh.v1.model.BatchDeleteDedicatedHostTagsRequest;
 import com.huaweicloud.sdk.deh.v1.model.BatchDeleteDedicatedHostTagsResponse;
+import com.huaweicloud.sdk.deh.v1.model.CreateDedicatedHostRequest;
+import com.huaweicloud.sdk.deh.v1.model.CreateDedicatedHostResponse;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTagsRequest;
+import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTagsResponse;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTypesRequest;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostTypesResponse;
 import com.huaweicloud.sdk.deh.v1.model.ListDedicatedHostsByTagsRequest;
@@ -105,6 +109,69 @@ public class DeHAsyncClient {
     public AsyncInvoker<BatchDeleteDedicatedHostTagsRequest, BatchDeleteDedicatedHostTagsResponse> batchDeleteDedicatedHostTagsAsyncInvoker(
         BatchDeleteDedicatedHostTagsRequest request) {
         return new AsyncInvoker<>(request, DeHMeta.batchDeleteDedicatedHostTags, hcClient);
+    }
+
+    /**
+     * 分配专属主机
+     *
+     * 分配一台或多台专属主机，需要设置实例规格、所属AZ、数量等参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDedicatedHostRequest 请求对象
+     * @return CompletableFuture<CreateDedicatedHostResponse>
+     */
+    public CompletableFuture<CreateDedicatedHostResponse> createDedicatedHostAsync(CreateDedicatedHostRequest request) {
+        return hcClient.asyncInvokeHttp(request, DeHMeta.createDedicatedHost);
+    }
+
+    /**
+     * 分配专属主机
+     *
+     * 分配一台或多台专属主机，需要设置实例规格、所属AZ、数量等参数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDedicatedHostRequest 请求对象
+     * @return AsyncInvoker<CreateDedicatedHostRequest, CreateDedicatedHostResponse>
+     */
+    public AsyncInvoker<CreateDedicatedHostRequest, CreateDedicatedHostResponse> createDedicatedHostAsyncInvoker(
+        CreateDedicatedHostRequest request) {
+        return new AsyncInvoker<>(request, DeHMeta.createDedicatedHost, hcClient);
+    }
+
+    /**
+     * 查询所有专属主机标签
+     *
+     * 查询所有专属主机的标签信息。
+     * 
+     * 标签管理服务（TMS）使用该接口查询所有专属主机的标签数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDedicatedHostTagsRequest 请求对象
+     * @return CompletableFuture<ListDedicatedHostTagsResponse>
+     */
+    public CompletableFuture<ListDedicatedHostTagsResponse> listDedicatedHostTagsAsync(
+        ListDedicatedHostTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DeHMeta.listDedicatedHostTags);
+    }
+
+    /**
+     * 查询所有专属主机标签
+     *
+     * 查询所有专属主机的标签信息。
+     * 
+     * 标签管理服务（TMS）使用该接口查询所有专属主机的标签数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDedicatedHostTagsRequest 请求对象
+     * @return AsyncInvoker<ListDedicatedHostTagsRequest, ListDedicatedHostTagsResponse>
+     */
+    public AsyncInvoker<ListDedicatedHostTagsRequest, ListDedicatedHostTagsResponse> listDedicatedHostTagsAsyncInvoker(
+        ListDedicatedHostTagsRequest request) {
+        return new AsyncInvoker<>(request, DeHMeta.listDedicatedHostTags, hcClient);
     }
 
     /**

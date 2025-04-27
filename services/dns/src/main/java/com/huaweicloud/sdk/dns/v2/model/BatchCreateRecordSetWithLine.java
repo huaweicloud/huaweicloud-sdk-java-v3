@@ -56,7 +56,7 @@ public class BatchCreateRecordSetWithLine {
     }
 
     /**
-     * Record Set的有效缓存时间，以秒为单位。 取值范围：300-2147483647。 默认值为300s。
+     * 记录集的有效缓存时间，以秒为单位。 取值范围：300-2147483647。 默认值为300s。
      * @return ttl
      */
     public Integer getTtl() {

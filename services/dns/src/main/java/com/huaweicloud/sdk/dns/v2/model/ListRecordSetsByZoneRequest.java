@@ -76,7 +76,7 @@ public class ListRecordSetsByZoneRequest {
     }
 
     /**
-     * 所属zone id。
+     * 域名ID。
      * @return zoneId
      */
     public String getZoneId() {
@@ -161,7 +161,7 @@ public class ListRecordSetsByZoneRequest {
     }
 
     /**
-     * 资源标签。  取值格式：key1,value1|key2,value2  多个标签之间用\"|\"分开，每个标签的键值用英文逗号\",\"相隔。
+     * 资源标签。  取值格式：key1,value1|key2,value2  多个标签之间用“|”分开，每个标签的键值用英文逗号“,”相隔。
      * @return tags
      */
     public String getTags() {
@@ -178,7 +178,7 @@ public class ListRecordSetsByZoneRequest {
     }
 
     /**
-     * 待查询的Record Set的状态。 取值范围：ACTIVE、ERROR、DISABLE、FREEZE、PENDING_CREATE、PENDING_UPDATE、PENDING_DELETE
+     * 待查询的记录集的状态。 取值范围：ACTIVE、ERROR、DISABLE、FREEZE、PENDING_CREATE、PENDING_UPDATE、PENDING_DELETE
      * @return status
      */
     public String getStatus() {
@@ -195,7 +195,7 @@ public class ListRecordSetsByZoneRequest {
     }
 
     /**
-     * 待查询的Record Set的记录集类型。 公网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。 内网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、SRV。
+     * 待查询的记录集的类型。 公网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。 内网域名场景的记录类型: A、AAAA、MX、CNAME、TXT、SRV。
      * @return type
      */
     public String getType() {
@@ -212,7 +212,7 @@ public class ListRecordSetsByZoneRequest {
     }
 
     /**
-     * 待查询的Record Set的域名中包含此name。  搜索模式默认为模糊搜索。  默认值为空。
+     * 待查询的记录集的域名中包含此name。  搜索模式默认为模糊搜索。  默认值为空。
      * @return name
      */
     public String getName() {
@@ -229,7 +229,7 @@ public class ListRecordSetsByZoneRequest {
     }
 
     /**
-     * 待查询的Record Set的id包含此id。
+     * 待查询的记录集ID。
      * @return id
      */
     public String getId() {
@@ -246,7 +246,7 @@ public class ListRecordSetsByZoneRequest {
     }
 
     /**
-     * 查询结果中Record Set列表的排序字段。  取值范围为：  name：记录集名称 type：记录集类型 默认值为空，表示不排序。
+     * 查询结果中记录集列表的排序字段。  取值范围为：  name：记录集名称 type：记录集类型 默认值为空，表示不排序。
      * @return sortKey
      */
     public String getSortKey() {
@@ -263,7 +263,7 @@ public class ListRecordSetsByZoneRequest {
     }
 
     /**
-     * 查询结果中Record Set列表的排序方式。  取值范围：  desc：降序排序 asc：升序排序 默认值为空，表示不排序。
+     * 查询结果中记录集列表的排序方式。  取值范围：  desc：降序排序 asc：升序排序 默认值为空，表示不排序。
      * @return sortDir
      */
     public String getSortDir() {

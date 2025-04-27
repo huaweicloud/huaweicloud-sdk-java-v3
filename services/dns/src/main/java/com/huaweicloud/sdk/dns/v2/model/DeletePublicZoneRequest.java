@@ -21,7 +21,7 @@ public class DeletePublicZoneRequest {
     }
 
     /**
-     * 待删除zone的ID
+     * 域名ID。
      * @return zoneId
      */
     public String getZoneId() {

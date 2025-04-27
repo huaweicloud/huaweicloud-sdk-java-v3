@@ -83,7 +83,7 @@ public class UpdateRecordSetsReq {
     }
 
     /**
-     * Record Set的类型。  取值范围：A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。
+     * 记录集的类型。  取值范围：A、AAAA、MX、CNAME、TXT、NS、SRV、CAA。
      * @return type
      */
     public String getType() {
