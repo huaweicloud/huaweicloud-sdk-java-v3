@@ -54,7 +54,7 @@ public class ShowInstanceTopicDetailRespPartitions {
     }
 
     /**
-     * 分区ID。
+     * **参数解释**： 分区ID。 **取值范围**： 不涉及
      * @return partition
      */
     public Integer getPartition() {
@@ -71,7 +71,7 @@ public class ShowInstanceTopicDetailRespPartitions {
     }
 
     /**
-     * leader副本所在节点的id。
+     * **参数解释**： leader副本所在节点的id。 **取值范围**： 不涉及
      * @return leader
      */
     public Integer getLeader() {
@@ -88,7 +88,7 @@ public class ShowInstanceTopicDetailRespPartitions {
     }
 
     /**
-     * 分区leader副本的LEO（Log End Offset）。
+     * **参数解释**： 分区leader副本的LEO（Log End Offset）。 **取值范围**： 不涉及
      * @return leo
      */
     public Integer getLeo() {
@@ -105,7 +105,7 @@ public class ShowInstanceTopicDetailRespPartitions {
     }
 
     /**
-     * 分区高水位（HW，High Watermark）。
+     * **参数解释**： 分区高水位（HW，High Watermark）。 **取值范围**： 不涉及
      * @return hw
      */
     public Integer getHw() {
@@ -122,7 +122,7 @@ public class ShowInstanceTopicDetailRespPartitions {
     }
 
     /**
-     * 分区leader副本的LSO（Log Start Offset）。
+     * **参数解释**： 分区leader副本的LSO（Log Start Offset）。 **取值范围**： 不涉及
      * @return lso
      */
     public Integer getLso() {
@@ -139,7 +139,7 @@ public class ShowInstanceTopicDetailRespPartitions {
     }
 
     /**
-     * 分区上次写入消息的时间。  格式为Unix时间戳。  单位：毫秒。
+     * **参数解释**： 分区上次写入消息的时间。  格式为Unix时间戳。  单位：毫秒。 **取值范围**： 不涉及
      * @return lastUpdateTimestamp
      */
     public Long getLastUpdateTimestamp() {
@@ -173,7 +173,7 @@ public class ShowInstanceTopicDetailRespPartitions {
     }
 
     /**
-     * 副本列表。
+     * **参数解释**： 副本列表。
      * @return replicas
      */
     public List<ShowInstanceTopicDetailRespReplicas> getReplicas() {

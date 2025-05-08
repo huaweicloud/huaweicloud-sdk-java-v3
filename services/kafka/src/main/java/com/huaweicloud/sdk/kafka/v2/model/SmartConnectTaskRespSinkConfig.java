@@ -11,26 +11,6 @@ import java.util.Objects;
 public class SmartConnectTaskRespSinkConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "redis_address")
-
-    private String redisAddress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "redis_type")
-
-    private String redisType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dcs_instance_id")
-
-    private String dcsInstanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "target_db")
-
-    private Integer targetDb;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consumer_strategy")
 
     private String consumerStrategy;
@@ -109,74 +89,6 @@ public class SmartConnectTaskRespSinkConfig {
     @JsonProperty(value = "kv_delimiter")
 
     private String kvDelimiter;
-
-    public SmartConnectTaskRespSinkConfig withRedisAddress(String redisAddress) {
-        this.redisAddress = redisAddress;
-        return this;
-    }
-
-    /**
-     * Redis实例地址。（仅目标端类型为Redis时会显示）
-     * @return redisAddress
-     */
-    public String getRedisAddress() {
-        return redisAddress;
-    }
-
-    public void setRedisAddress(String redisAddress) {
-        this.redisAddress = redisAddress;
-    }
-
-    public SmartConnectTaskRespSinkConfig withRedisType(String redisType) {
-        this.redisType = redisType;
-        return this;
-    }
-
-    /**
-     * Redis实例类型。（仅目标端类型为Redis时会显示）
-     * @return redisType
-     */
-    public String getRedisType() {
-        return redisType;
-    }
-
-    public void setRedisType(String redisType) {
-        this.redisType = redisType;
-    }
-
-    public SmartConnectTaskRespSinkConfig withDcsInstanceId(String dcsInstanceId) {
-        this.dcsInstanceId = dcsInstanceId;
-        return this;
-    }
-
-    /**
-     * DCS实例ID。（仅目标端类型为Redis时会显示）
-     * @return dcsInstanceId
-     */
-    public String getDcsInstanceId() {
-        return dcsInstanceId;
-    }
-
-    public void setDcsInstanceId(String dcsInstanceId) {
-        this.dcsInstanceId = dcsInstanceId;
-    }
-
-    public SmartConnectTaskRespSinkConfig withTargetDb(Integer targetDb) {
-        this.targetDb = targetDb;
-        return this;
-    }
-
-    /**
-     * 目标数据库，默认为-1。（仅目标端类型为Redis时会显示）
-     * @return targetDb
-     */
-    public Integer getTargetDb() {
-        return targetDb;
-    }
-
-    public void setTargetDb(Integer targetDb) {
-        this.targetDb = targetDb;
-    }
 
     public SmartConnectTaskRespSinkConfig withConsumerStrategy(String consumerStrategy) {
         this.consumerStrategy = consumerStrategy;
@@ -459,9 +371,7 @@ public class SmartConnectTaskRespSinkConfig {
             return false;
         }
         SmartConnectTaskRespSinkConfig that = (SmartConnectTaskRespSinkConfig) obj;
-        return Objects.equals(this.redisAddress, that.redisAddress) && Objects.equals(this.redisType, that.redisType)
-            && Objects.equals(this.dcsInstanceId, that.dcsInstanceId) && Objects.equals(this.targetDb, that.targetDb)
-            && Objects.equals(this.consumerStrategy, that.consumerStrategy)
+        return Objects.equals(this.consumerStrategy, that.consumerStrategy)
             && Objects.equals(this.destinationFileType, that.destinationFileType)
             && Objects.equals(this.deliverTimeInterval, that.deliverTimeInterval)
             && Objects.equals(this.obsBucketName, that.obsBucketName) && Objects.equals(this.obsPath, that.obsPath)
@@ -478,11 +388,7 @@ public class SmartConnectTaskRespSinkConfig {
 
     @Override
     public int hashCode() {
-        return Objects.hash(redisAddress,
-            redisType,
-            dcsInstanceId,
-            targetDb,
-            consumerStrategy,
+        return Objects.hash(consumerStrategy,
             destinationFileType,
             deliverTimeInterval,
             obsBucketName,
@@ -504,10 +410,6 @@ public class SmartConnectTaskRespSinkConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SmartConnectTaskRespSinkConfig {\n");
-        sb.append("    redisAddress: ").append(toIndentedString(redisAddress)).append("\n");
-        sb.append("    redisType: ").append(toIndentedString(redisType)).append("\n");
-        sb.append("    dcsInstanceId: ").append(toIndentedString(dcsInstanceId)).append("\n");
-        sb.append("    targetDb: ").append(toIndentedString(targetDb)).append("\n");
         sb.append("    consumerStrategy: ").append(toIndentedString(consumerStrategy)).append("\n");
         sb.append("    destinationFileType: ").append(toIndentedString(destinationFileType)).append("\n");
         sb.append("    deliverTimeInterval: ").append(toIndentedString(deliverTimeInterval)).append("\n");

@@ -46,7 +46,7 @@ public class TopicEntityTopicOtherConfigs {
     }
 
     /**
-     * 配置名称
+     * **参数解释**： 配置名称。 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {
@@ -63,7 +63,7 @@ public class TopicEntityTopicOtherConfigs {
     }
 
     /**
-     * 配置有效值
+     * **参数解释**： 配置有效值。 **取值范围**： 不涉及
      * @return validValues
      */
     public String getValidValues() {
@@ -80,7 +80,7 @@ public class TopicEntityTopicOtherConfigs {
     }
 
     /**
-     * 配置默认值
+     * **参数解释**： 配置默认值。 **取值范围**： 不涉及
      * @return defaultValue
      */
     public String getDefaultValue() {
@@ -97,7 +97,7 @@ public class TopicEntityTopicOtherConfigs {
     }
 
     /**
-     * 配置类型：dynamic/static
+     * **参数解释**： 配置类型。 **取值范围**： - dynamic：动态。 - static：静态。
      * @return configType
      */
     public String getConfigType() {
@@ -114,7 +114,7 @@ public class TopicEntityTopicOtherConfigs {
     }
 
     /**
-     * 配置值
+     * **参数解释**： 配置值。 **取值范围**： 不涉及
      * @return value
      */
     public String getValue() {
@@ -131,7 +131,7 @@ public class TopicEntityTopicOtherConfigs {
     }
 
     /**
-     * 配置值类型
+     * **参数解释**： 配置值类型。 **取值范围**： 不涉及
      * @return valueType
      */
     public String getValueType() {

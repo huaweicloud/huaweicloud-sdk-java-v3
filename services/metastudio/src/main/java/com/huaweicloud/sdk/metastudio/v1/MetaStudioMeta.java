@@ -9739,10 +9739,22 @@ public class MetaStudioMeta {
         // requests
         builder.<String>withRequestField("type",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getType,
                 ListTtscVocabularyConfigsRequest::setType));
+        builder.<String>withRequestField("tts_service_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getTtsServiceName,
+                ListTtscVocabularyConfigsRequest::setTtsServiceName));
+        builder.<String>withRequestField("is_vocabulary_config_enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTtscVocabularyConfigsRequest::getIsVocabularyConfigEnable,
+                ListTtscVocabularyConfigsRequest::setIsVocabularyConfigEnable));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

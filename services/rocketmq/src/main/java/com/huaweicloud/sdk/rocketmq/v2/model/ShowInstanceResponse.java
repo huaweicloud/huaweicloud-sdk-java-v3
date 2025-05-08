@@ -40,7 +40,7 @@ public class ShowInstanceResponse extends SdkResponse {
     private String description;
 
     /**
-     * 实例类型：集群，cluster。
+     * **参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。
      */
     public static final class TypeEnum {
 
@@ -315,9 +315,19 @@ public class ShowInstanceResponse extends SdkResponse {
     private Integer brokerNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dns_enable")
+
+    private Boolean dnsEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "namesrv_address")
 
     private String namesrvAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "namesrv_domain_name")
+
+    private String namesrvDomainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "broker_address")
@@ -330,6 +340,11 @@ public class ShowInstanceResponse extends SdkResponse {
     private String publicNamesrvAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_namesrv_domain_name")
+
+    private String publicNamesrvDomainName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_broker_address")
 
     private String publicBrokerAddress;
@@ -340,9 +355,19 @@ public class ShowInstanceResponse extends SdkResponse {
     private String grpcAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "grpc_domain_name")
+
+    private String grpcDomainName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "public_grpc_address")
 
     private String publicGrpcAddress;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_grpc_domain_name")
+
+    private String publicGrpcDomainName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enterprise_project_id")
@@ -364,13 +389,38 @@ public class ShowInstanceResponse extends SdkResponse {
 
     private String resourceSpecCode;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "produce_portion")
+
+    private Integer producePortion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "consume_portion")
+
+    private Integer consumePortion;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dr_enable")
+
+    private Boolean drEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "config_ssl_need_restart_process")
+
+    private Boolean configSslNeedRestartProcess;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tls_mode")
+
+    private String tlsMode;
+
     public ShowInstanceResponse withName(String name) {
         this.name = name;
         return this;
     }
 
     /**
-     * 实例名称。
+     * **参数解释**： 实例名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -387,7 +437,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 引擎。
+     * **参数解释**： 消息引擎。 **取值范围**： 不涉及。
      * @return engine
      */
     public String getEngine() {
@@ -404,7 +454,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 状态。
+     * **参数解释**： 状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -421,7 +471,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 消息描述。
+     * **参数解释**： 消息描述。 **取值范围**： 不涉及。
      * @return description
      */
     public String getDescription() {
@@ -438,7 +488,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例类型：集群，cluster。
+     * **参数解释**： 实例类型。 **取值范围**： - single：单机。 - cluster：集群。
      * @return type
      */
     public TypeEnum getType() {
@@ -455,7 +505,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例规格。
+     * **参数解释**： 实例规格。 **取值范围**： 不涉及。
      * @return specification
      */
     public String getSpecification() {
@@ -472,7 +522,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 版本。
+     * **参数解释**： 实例版本。 **取值范围**： 不涉及。
      * @return engineVersion
      */
     public String getEngineVersion() {
@@ -489,7 +539,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。 **取值范围**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -506,7 +556,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * [付费模式，1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[付费模式，1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb,hcs,fcs)
+     * **参数解释**： 付费模式。 **取值范围**： [1表示按需计费。](tag:hws_eu,g42,hk_g42,tm,sbc,hk_sbc,hk_tm)[1表示按需计费，0表示包年/包月计费。](tag:hws,hws_eu,hws_hk,ctc) [计费模式，参数暂未使用。](tag:ocb,hws_ocb,hcs,fcs)
      * @return chargingMode
      */
     public Integer getChargingMode() {
@@ -523,7 +573,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 私有云ID。
+     * **参数解释**： 私有云ID。 **取值范围**： 不涉及。
      * @return vpcId
      */
     public String getVpcId() {
@@ -540,7 +590,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 私有云名称。
+     * **参数解释**： 私有云名称。 **取值范围**： 不涉及。
      * @return vpcName
      */
     public String getVpcName() {
@@ -557,7 +607,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 完成创建时间。  格式为时间戳，指从格林威治时间1970年01月01日00时00分00秒起至指定时间的偏差总毫秒数。
+     * **参数解释**： 完成创建时间。  格式为时间戳，指从格林威治时间1970年01月01日00时00分00秒起至指定时间的偏差总毫秒数。 **取值范围**： 不涉及。
      * @return createdAt
      */
     public String getCreatedAt() {
@@ -574,7 +624,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 产品标识。
+     * **参数解释**： 产品标识。 **取值范围**： 不涉及。
      * @return productId
      */
     public String getProductId() {
@@ -591,7 +641,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 安全组ID。
+     * **参数解释**： 安全组ID。 **取值范围**： 不涉及。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -608,7 +658,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 租户安全组名称。
+     * **参数解释**： 安全组名称。 **取值范围**： 不涉及。
      * @return securityGroupName
      */
     public String getSecurityGroupName() {
@@ -625,7 +675,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 子网ID。
+     * **参数解释**： 子网ID。 **取值范围**： 不涉及。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -642,7 +692,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 子网名称。
+     * **参数解释**： 子网名称。 **取值范围**： 不涉及。
      * @return subnetName
      */
     public String getSubnetName() {
@@ -659,7 +709,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 子网路由（仅RocketMQ 5.x版本会显示此字段）。
+     * **参数解释**： 子网路由（仅RocketMQ 5.x版本会显示此字段）。 **取值范围**： 不涉及。
      * @return subnetCidr
      */
     public String getSubnetCidr() {
@@ -692,7 +742,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 可用区ID列表。
+     * **参数解释**： 可用区ID列表。 **取值范围**： 不涉及。
      * @return availableZones
      */
     public List<String> getAvailableZones() {
@@ -725,7 +775,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 可用区名称列表。
+     * **参数解释**： 可用区名称列表。
      * @return availableZoneNames
      */
     public List<String> getAvailableZoneNames() {
@@ -742,7 +792,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 用户ID。
+     * **参数解释**： 用户ID。 **取值范围**： 不涉及。
      * @return userId
      */
     public String getUserId() {
@@ -759,7 +809,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 用户名。
+     * **参数解释**： 用户名。 **取值范围**： 不涉及。
      * @return userName
      */
     public String getUserName() {
@@ -776,7 +826,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 维护时间窗开始时间，格式为HH:mm:ss。
+     * **参数解释**： 维护时间窗开始时间，格式为HH:mm:ss。 **取值范围**： 不涉及。
      * @return maintainBegin
      */
     public String getMaintainBegin() {
@@ -793,7 +843,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 维护时间窗结束时间，格式为HH:mm:ss。
+     * **参数解释**： 维护时间窗结束时间，格式为HH:mm:ss。 **取值范围**： 不涉及。
      * @return maintainEnd
      */
     public String getMaintainEnd() {
@@ -810,7 +860,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启消息收集功能。
+     * **参数解释**： 是否开启消息收集功能。 **取值范围**： - true：开启。 - false：不开启。
      * @return enableLogCollection
      */
     public Boolean getEnableLogCollection() {
@@ -827,7 +877,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 存储空间，单位：GB。
+     * **参数解释**： 存储空间，单位：GB。 **取值范围**： 不涉及。
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -844,7 +894,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 已用消息存储空间，单位：GB。
+     * **参数解释**： 已用消息存储空间，单位：GB。 **取值范围**： 不涉及。
      * @return usedStorageSpace
      */
     public Integer getUsedStorageSpace() {
@@ -861,7 +911,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启公网。
+     * **参数解释**： 是否开启公网。 **取值范围**： - true：开启。 - false：不开启。
      * @return enablePublicip
      */
     public Boolean getEnablePublicip() {
@@ -878,7 +928,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例绑定的弹性IP地址的ID。 以英文逗号隔开多个弹性IP地址的ID。 如果开启了公网访问功能（即enable_publicip为true），该字段为必选。
+     * **参数解释**： 实例绑定的弹性IP地址的ID。  以英文逗号隔开多个弹性IP地址的ID。  如果开启了公网访问功能（即enable_publicip为true），该字段为必选。 **取值范围**： 不涉及。
      * @return publicipId
      */
     public String getPublicipId() {
@@ -895,7 +945,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 公网IP地址。
+     * **参数解释**： 公网IP地址。 **取值范围**： 不涉及。
      * @return publicipAddress
      */
     public String getPublicipAddress() {
@@ -912,7 +962,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启SSL。
+     * **参数解释**： 是否开启SSL。 **取值范围**： - true：开启。 - false：未开启。
      * @return sslEnable
      */
     public Boolean getSslEnable() {
@@ -929,7 +979,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 跨VPC访问信息。
+     * **参数解释**： 跨VPC访问信息。 **取值范围**： 不涉及。
      * @return crossVpcInfo
      */
     public String getCrossVpcInfo() {
@@ -946,7 +996,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 存储资源ID。
+     * **参数解释**： 存储资源ID。 **取值范围**： 不涉及。
      * @return storageResourceId
      */
     public String getStorageResourceId() {
@@ -963,7 +1013,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 存储规格代码。
+     * **参数解释**： 存储规格代码。 **取值范围**： 不涉及。
      * @return storageSpecCode
      */
     public String getStorageSpecCode() {
@@ -980,7 +1030,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 服务类型。
+     * **参数解释**： 服务类型。 **取值范围**： 不涉及。
      * @return serviceType
      */
     public String getServiceType() {
@@ -997,7 +1047,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 存储类型。
+     * **参数解释**： 存储类型。 **取值范围**： 不涉及。
      * @return storageType
      */
     public String getStorageType() {
@@ -1014,7 +1064,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 扩展时间。
+     * **参数解释**： 扩展时间。 **取值范围**： 不涉及。
      * @return extendTimes
      */
     public Long getExtendTimes() {
@@ -1031,7 +1081,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启IPv6。
+     * **参数解释**： 是否开启IPv6。 **取值范围**： - true：开启。 - false：未开启。
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {
@@ -1048,7 +1098,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 实例支持的特性功能。
+     * **参数解释**： 实例支持的特性功能。 **取值范围**： 不涉及。
      * @return supportFeatures
      */
     public String getSupportFeatures() {
@@ -1065,7 +1115,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启磁盘加密。
+     * **参数解释**： 是否开启磁盘加密。 **取值范围**： - true：开启。 - false：不开启。
      * @return diskEncrypted
      */
     public Boolean getDiskEncrypted() {
@@ -1082,7 +1132,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 云监控版本。
+     * **参数解释**： 云监控版本。 **取值范围**： 不涉及。
      * @return cesVersion
      */
     public String getCesVersion() {
@@ -1099,7 +1149,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 节点数。
+     * **参数解释**： 节点数。 **取值范围**： 不涉及。
      * @return nodeNum
      */
     public Integer getNodeNum() {
@@ -1116,7 +1166,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否启用新规格计费。
+     * **参数解释**： 是否启用新规格计费。 **取值范围**： - true：开启。 - false：未开启。
      * @return newSpecBillingEnable
      */
     public Boolean getNewSpecBillingEnable() {
@@ -1133,7 +1183,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 是否开启访问控制列表。
+     * **参数解释**： 是否开启访问控制列表。 **取值范围**： - true：开启。 - false：未开启。
      * @return enableAcl
      */
     public Boolean getEnableAcl() {
@@ -1150,7 +1200,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 节点数（仅RocketMQ 4.8.0版本会显示此字段）。
+     * **参数解释**： Broker节点数（仅RocketMQ 4.8.0版本会显示此字段）。 **取值范围**： 不涉及。
      * @return brokerNum
      */
     public Integer getBrokerNum() {
@@ -1161,13 +1211,30 @@ public class ShowInstanceResponse extends SdkResponse {
         this.brokerNum = brokerNum;
     }
 
+    public ShowInstanceResponse withDnsEnable(Boolean dnsEnable) {
+        this.dnsEnable = dnsEnable;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实例是否开启域名访问功能。 **取值范围**： - true：开启。 - false：未开启。
+     * @return dnsEnable
+     */
+    public Boolean getDnsEnable() {
+        return dnsEnable;
+    }
+
+    public void setDnsEnable(Boolean dnsEnable) {
+        this.dnsEnable = dnsEnable;
+    }
+
     public ShowInstanceResponse withNamesrvAddress(String namesrvAddress) {
         this.namesrvAddress = namesrvAddress;
         return this;
     }
 
     /**
-     * 元数据地址。
+     * **参数解释**： 元数据地址。 **取值范围**： 不涉及。
      * @return namesrvAddress
      */
     public String getNamesrvAddress() {
@@ -1178,13 +1245,30 @@ public class ShowInstanceResponse extends SdkResponse {
         this.namesrvAddress = namesrvAddress;
     }
 
+    public ShowInstanceResponse withNamesrvDomainName(String namesrvDomainName) {
+        this.namesrvDomainName = namesrvDomainName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 元数据域名。 **取值范围**： 不涉及。
+     * @return namesrvDomainName
+     */
+    public String getNamesrvDomainName() {
+        return namesrvDomainName;
+    }
+
+    public void setNamesrvDomainName(String namesrvDomainName) {
+        this.namesrvDomainName = namesrvDomainName;
+    }
+
     public ShowInstanceResponse withBrokerAddress(String brokerAddress) {
         this.brokerAddress = brokerAddress;
         return this;
     }
 
     /**
-     * 业务数据地址。
+     * **参数解释**： 业务数据地址。 **取值范围**： 不涉及。
      * @return brokerAddress
      */
     public String getBrokerAddress() {
@@ -1201,7 +1285,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 公网元数据地址。
+     * **参数解释**： 公网元数据地址。 **取值范围**： 不涉及。
      * @return publicNamesrvAddress
      */
     public String getPublicNamesrvAddress() {
@@ -1212,13 +1296,30 @@ public class ShowInstanceResponse extends SdkResponse {
         this.publicNamesrvAddress = publicNamesrvAddress;
     }
 
+    public ShowInstanceResponse withPublicNamesrvDomainName(String publicNamesrvDomainName) {
+        this.publicNamesrvDomainName = publicNamesrvDomainName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 公网元数据域名。 **取值范围**： 不涉及。
+     * @return publicNamesrvDomainName
+     */
+    public String getPublicNamesrvDomainName() {
+        return publicNamesrvDomainName;
+    }
+
+    public void setPublicNamesrvDomainName(String publicNamesrvDomainName) {
+        this.publicNamesrvDomainName = publicNamesrvDomainName;
+    }
+
     public ShowInstanceResponse withPublicBrokerAddress(String publicBrokerAddress) {
         this.publicBrokerAddress = publicBrokerAddress;
         return this;
     }
 
     /**
-     * 公网业务数据地址。
+     * **参数解释**： 公网业务数据地址。 **取值范围**： 不涉及。
      * @return publicBrokerAddress
      */
     public String getPublicBrokerAddress() {
@@ -1235,7 +1336,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * grpc连接地址（仅RocketMQ 5.x版本会显示此字段）。
+     * **参数解释**： grpc连接地址（仅RocketMQ 5.x版本会显示此字段）。 **取值范围**： 不涉及。
      * @return grpcAddress
      */
     public String getGrpcAddress() {
@@ -1246,13 +1347,30 @@ public class ShowInstanceResponse extends SdkResponse {
         this.grpcAddress = grpcAddress;
     }
 
+    public ShowInstanceResponse withGrpcDomainName(String grpcDomainName) {
+        this.grpcDomainName = grpcDomainName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： grpc连接域名（仅RocketMQ 5.x版本会显示此字段）。 **取值范围**： 不涉及。
+     * @return grpcDomainName
+     */
+    public String getGrpcDomainName() {
+        return grpcDomainName;
+    }
+
+    public void setGrpcDomainName(String grpcDomainName) {
+        this.grpcDomainName = grpcDomainName;
+    }
+
     public ShowInstanceResponse withPublicGrpcAddress(String publicGrpcAddress) {
         this.publicGrpcAddress = publicGrpcAddress;
         return this;
     }
 
     /**
-     * 公网grpc连接地址（仅RocketMQ 5.x版本会显示此字段）。
+     * **参数解释**： 公网grpc连接地址（仅RocketMQ 5.x版本会显示此字段）。 **取值范围**： 不涉及。
      * @return publicGrpcAddress
      */
     public String getPublicGrpcAddress() {
@@ -1263,13 +1381,30 @@ public class ShowInstanceResponse extends SdkResponse {
         this.publicGrpcAddress = publicGrpcAddress;
     }
 
+    public ShowInstanceResponse withPublicGrpcDomainName(String publicGrpcDomainName) {
+        this.publicGrpcDomainName = publicGrpcDomainName;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 公网grpc连接域名（仅RocketMQ 5.x版本会显示此字段）。 **取值范围**： 不涉及。
+     * @return publicGrpcDomainName
+     */
+    public String getPublicGrpcDomainName() {
+        return publicGrpcDomainName;
+    }
+
+    public void setPublicGrpcDomainName(String publicGrpcDomainName) {
+        this.publicGrpcDomainName = publicGrpcDomainName;
+    }
+
     public ShowInstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
 
     /**
-     * 企业项目ID。
+     * **参数解释**： 企业项目ID。 **取值范围**： 不涉及。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -1302,7 +1437,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 标签列表。
+     * **参数解释**： 标签列表。 **取值范围**： 不涉及。
      * @return tags
      */
     public List<TagEntity> getTags() {
@@ -1319,7 +1454,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 总存储空间。
+     * **参数解释**： 总存储空间。 **取值范围**： 不涉及。
      * @return totalStorageSpace
      */
     public Integer getTotalStorageSpace() {
@@ -1336,7 +1471,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 资源规格。
+     * **参数解释**： 资源规格。 **取值范围**： 不涉及。
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {
@@ -1345,6 +1480,91 @@ public class ShowInstanceResponse extends SdkResponse {
 
     public void setResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
+    }
+
+    public ShowInstanceResponse withProducePortion(Integer producePortion) {
+        this.producePortion = producePortion;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 生产TPS占比。 **取值范围**： 不涉及。
+     * @return producePortion
+     */
+    public Integer getProducePortion() {
+        return producePortion;
+    }
+
+    public void setProducePortion(Integer producePortion) {
+        this.producePortion = producePortion;
+    }
+
+    public ShowInstanceResponse withConsumePortion(Integer consumePortion) {
+        this.consumePortion = consumePortion;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 消费TPS占比。 **取值范围**： 不涉及。
+     * @return consumePortion
+     */
+    public Integer getConsumePortion() {
+        return consumePortion;
+    }
+
+    public void setConsumePortion(Integer consumePortion) {
+        this.consumePortion = consumePortion;
+    }
+
+    public ShowInstanceResponse withDrEnable(Boolean drEnable) {
+        this.drEnable = drEnable;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否为容灾实例。 **取值范围**： 不涉及。
+     * @return drEnable
+     */
+    public Boolean getDrEnable() {
+        return drEnable;
+    }
+
+    public void setDrEnable(Boolean drEnable) {
+        this.drEnable = drEnable;
+    }
+
+    public ShowInstanceResponse withConfigSslNeedRestartProcess(Boolean configSslNeedRestartProcess) {
+        this.configSslNeedRestartProcess = configSslNeedRestartProcess;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 配置ssl是否需要重启。 **取值范围**： 不涉及。
+     * @return configSslNeedRestartProcess
+     */
+    public Boolean getConfigSslNeedRestartProcess() {
+        return configSslNeedRestartProcess;
+    }
+
+    public void setConfigSslNeedRestartProcess(Boolean configSslNeedRestartProcess) {
+        this.configSslNeedRestartProcess = configSslNeedRestartProcess;
+    }
+
+    public ShowInstanceResponse withTlsMode(String tlsMode) {
+        this.tlsMode = tlsMode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实例使用的安全协议。 **取值范围**： 不涉及。
+     * @return tlsMode
+     */
+    public String getTlsMode() {
+        return tlsMode;
+    }
+
+    public void setTlsMode(String tlsMode) {
+        this.tlsMode = tlsMode;
     }
 
     @Override
@@ -1388,15 +1608,24 @@ public class ShowInstanceResponse extends SdkResponse {
             && Objects.equals(this.cesVersion, that.cesVersion) && Objects.equals(this.nodeNum, that.nodeNum)
             && Objects.equals(this.newSpecBillingEnable, that.newSpecBillingEnable)
             && Objects.equals(this.enableAcl, that.enableAcl) && Objects.equals(this.brokerNum, that.brokerNum)
+            && Objects.equals(this.dnsEnable, that.dnsEnable)
             && Objects.equals(this.namesrvAddress, that.namesrvAddress)
+            && Objects.equals(this.namesrvDomainName, that.namesrvDomainName)
             && Objects.equals(this.brokerAddress, that.brokerAddress)
             && Objects.equals(this.publicNamesrvAddress, that.publicNamesrvAddress)
+            && Objects.equals(this.publicNamesrvDomainName, that.publicNamesrvDomainName)
             && Objects.equals(this.publicBrokerAddress, that.publicBrokerAddress)
             && Objects.equals(this.grpcAddress, that.grpcAddress)
+            && Objects.equals(this.grpcDomainName, that.grpcDomainName)
             && Objects.equals(this.publicGrpcAddress, that.publicGrpcAddress)
+            && Objects.equals(this.publicGrpcDomainName, that.publicGrpcDomainName)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.tags, that.tags) && Objects.equals(this.totalStorageSpace, that.totalStorageSpace)
-            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.producePortion, that.producePortion)
+            && Objects.equals(this.consumePortion, that.consumePortion) && Objects.equals(this.drEnable, that.drEnable)
+            && Objects.equals(this.configSslNeedRestartProcess, that.configSslNeedRestartProcess)
+            && Objects.equals(this.tlsMode, that.tlsMode);
     }
 
     @Override
@@ -1446,16 +1675,26 @@ public class ShowInstanceResponse extends SdkResponse {
             newSpecBillingEnable,
             enableAcl,
             brokerNum,
+            dnsEnable,
             namesrvAddress,
+            namesrvDomainName,
             brokerAddress,
             publicNamesrvAddress,
+            publicNamesrvDomainName,
             publicBrokerAddress,
             grpcAddress,
+            grpcDomainName,
             publicGrpcAddress,
+            publicGrpcDomainName,
             enterpriseProjectId,
             tags,
             totalStorageSpace,
-            resourceSpecCode);
+            resourceSpecCode,
+            producePortion,
+            consumePortion,
+            drEnable,
+            configSslNeedRestartProcess,
+            tlsMode);
     }
 
     @Override
@@ -1507,16 +1746,28 @@ public class ShowInstanceResponse extends SdkResponse {
         sb.append("    newSpecBillingEnable: ").append(toIndentedString(newSpecBillingEnable)).append("\n");
         sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("    brokerNum: ").append(toIndentedString(brokerNum)).append("\n");
+        sb.append("    dnsEnable: ").append(toIndentedString(dnsEnable)).append("\n");
         sb.append("    namesrvAddress: ").append(toIndentedString(namesrvAddress)).append("\n");
+        sb.append("    namesrvDomainName: ").append(toIndentedString(namesrvDomainName)).append("\n");
         sb.append("    brokerAddress: ").append(toIndentedString(brokerAddress)).append("\n");
         sb.append("    publicNamesrvAddress: ").append(toIndentedString(publicNamesrvAddress)).append("\n");
+        sb.append("    publicNamesrvDomainName: ").append(toIndentedString(publicNamesrvDomainName)).append("\n");
         sb.append("    publicBrokerAddress: ").append(toIndentedString(publicBrokerAddress)).append("\n");
         sb.append("    grpcAddress: ").append(toIndentedString(grpcAddress)).append("\n");
+        sb.append("    grpcDomainName: ").append(toIndentedString(grpcDomainName)).append("\n");
         sb.append("    publicGrpcAddress: ").append(toIndentedString(publicGrpcAddress)).append("\n");
+        sb.append("    publicGrpcDomainName: ").append(toIndentedString(publicGrpcDomainName)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    totalStorageSpace: ").append(toIndentedString(totalStorageSpace)).append("\n");
         sb.append("    resourceSpecCode: ").append(toIndentedString(resourceSpecCode)).append("\n");
+        sb.append("    producePortion: ").append(toIndentedString(producePortion)).append("\n");
+        sb.append("    consumePortion: ").append(toIndentedString(consumePortion)).append("\n");
+        sb.append("    drEnable: ").append(toIndentedString(drEnable)).append("\n");
+        sb.append("    configSslNeedRestartProcess: ")
+            .append(toIndentedString(configSslNeedRestartProcess))
+            .append("\n");
+        sb.append("    tlsMode: ").append(toIndentedString(tlsMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

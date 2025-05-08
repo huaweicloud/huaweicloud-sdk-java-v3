@@ -25,7 +25,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     private String jobId;
 
     /**
-     * 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * CANCELED: 取消 * HEARTBEAT: 心跳
+     * 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * CANCELED: 取消 * HEARTBEAT: 心跳 * IDLE: 空闲 * DELETING: 删除中
      */
     public static final class StateEnum {
 
@@ -59,6 +59,16 @@ public class ShowSmartChatJobResponse extends SdkResponse {
          */
         public static final StateEnum HEARTBEAT = new StateEnum("HEARTBEAT");
 
+        /**
+         * Enum IDLE for value: "IDLE"
+         */
+        public static final StateEnum IDLE = new StateEnum("IDLE");
+
+        /**
+         * Enum DELETING for value: "DELETING"
+         */
+        public static final StateEnum DELETING = new StateEnum("DELETING");
+
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, StateEnum> createStaticFields() {
@@ -69,6 +79,8 @@ public class ShowSmartChatJobResponse extends SdkResponse {
             map.put("FAILED", FAILED);
             map.put("CANCELED", CANCELED);
             map.put("HEARTBEAT", HEARTBEAT);
+            map.put("IDLE", IDLE);
+            map.put("DELETING", DELETING);
             return Collections.unmodifiableMap(map);
         }
 
@@ -411,7 +423,7 @@ public class ShowSmartChatJobResponse extends SdkResponse {
     }
 
     /**
-     * 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * CANCELED: 取消 * HEARTBEAT: 心跳
+     * 数字人智能交互对话任务的状态。 * WAITING: 等待 * PROCESSING: 处理中 * SUCCEED: 成功 * FAILED: 失败 * CANCELED: 取消 * HEARTBEAT: 心跳 * IDLE: 空闲 * DELETING: 删除中
      * @return state
      */
     public StateEnum getState() {

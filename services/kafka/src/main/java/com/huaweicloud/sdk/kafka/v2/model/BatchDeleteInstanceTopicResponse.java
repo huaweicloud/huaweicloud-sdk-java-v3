@@ -42,7 +42,7 @@ public class BatchDeleteInstanceTopicResponse extends SdkResponse {
     }
 
     /**
-     * Topic列表。
+     * **参数解释**： Topic列表。
      * @return topics
      */
     public List<BatchDeleteInstanceTopicRespTopics> getTopics() {

@@ -11,46 +11,6 @@ import java.util.Objects;
 public class SmartConnectTaskReqSourceConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "redis_address")
-
-    private String redisAddress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "redis_type")
-
-    private String redisType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dcs_instance_id")
-
-    private String dcsInstanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "redis_password")
-
-    private String redisPassword;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "sync_mode")
-
-    private String syncMode;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "full_sync_wait_ms")
-
-    private Integer fullSyncWaitMs;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "full_sync_max_retry")
-
-    private Integer fullSyncMaxRetry;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "ratelimit")
-
-    private Integer ratelimit;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "current_cluster_name")
 
     private String currentClusterName;
@@ -134,142 +94,6 @@ public class SmartConnectTaskReqSourceConfig {
     @JsonProperty(value = "topics_mapping")
 
     private String topicsMapping;
-
-    public SmartConnectTaskReqSourceConfig withRedisAddress(String redisAddress) {
-        this.redisAddress = redisAddress;
-        return this;
-    }
-
-    /**
-     * Redis实例地址。（仅源端类型为Redis时需要填写）
-     * @return redisAddress
-     */
-    public String getRedisAddress() {
-        return redisAddress;
-    }
-
-    public void setRedisAddress(String redisAddress) {
-        this.redisAddress = redisAddress;
-    }
-
-    public SmartConnectTaskReqSourceConfig withRedisType(String redisType) {
-        this.redisType = redisType;
-        return this;
-    }
-
-    /**
-     * Redis实例类型。（仅源端类型为Redis时需要填写）
-     * @return redisType
-     */
-    public String getRedisType() {
-        return redisType;
-    }
-
-    public void setRedisType(String redisType) {
-        this.redisType = redisType;
-    }
-
-    public SmartConnectTaskReqSourceConfig withDcsInstanceId(String dcsInstanceId) {
-        this.dcsInstanceId = dcsInstanceId;
-        return this;
-    }
-
-    /**
-     * DCS实例ID。（仅源端类型为Redis时需要填写）
-     * @return dcsInstanceId
-     */
-    public String getDcsInstanceId() {
-        return dcsInstanceId;
-    }
-
-    public void setDcsInstanceId(String dcsInstanceId) {
-        this.dcsInstanceId = dcsInstanceId;
-    }
-
-    public SmartConnectTaskReqSourceConfig withRedisPassword(String redisPassword) {
-        this.redisPassword = redisPassword;
-        return this;
-    }
-
-    /**
-     * Redis密码。（仅源端类型为Redis时需要填写）
-     * @return redisPassword
-     */
-    public String getRedisPassword() {
-        return redisPassword;
-    }
-
-    public void setRedisPassword(String redisPassword) {
-        this.redisPassword = redisPassword;
-    }
-
-    public SmartConnectTaskReqSourceConfig withSyncMode(String syncMode) {
-        this.syncMode = syncMode;
-        return this;
-    }
-
-    /**
-     * 同步类型，“RDB_ONLY”为全量同步，“CUSTOM_OFFSET”为全量同步+增量同步。（仅源端类型为Redis时需要填写）
-     * @return syncMode
-     */
-    public String getSyncMode() {
-        return syncMode;
-    }
-
-    public void setSyncMode(String syncMode) {
-        this.syncMode = syncMode;
-    }
-
-    public SmartConnectTaskReqSourceConfig withFullSyncWaitMs(Integer fullSyncWaitMs) {
-        this.fullSyncWaitMs = fullSyncWaitMs;
-        return this;
-    }
-
-    /**
-     * 全量同步重试间隔时间，单位：毫秒。（仅源端类型为Redis时需要填写）
-     * @return fullSyncWaitMs
-     */
-    public Integer getFullSyncWaitMs() {
-        return fullSyncWaitMs;
-    }
-
-    public void setFullSyncWaitMs(Integer fullSyncWaitMs) {
-        this.fullSyncWaitMs = fullSyncWaitMs;
-    }
-
-    public SmartConnectTaskReqSourceConfig withFullSyncMaxRetry(Integer fullSyncMaxRetry) {
-        this.fullSyncMaxRetry = fullSyncMaxRetry;
-        return this;
-    }
-
-    /**
-     * 全量同步最大重试次数。（仅源端类型为Redis时需要填写）
-     * @return fullSyncMaxRetry
-     */
-    public Integer getFullSyncMaxRetry() {
-        return fullSyncMaxRetry;
-    }
-
-    public void setFullSyncMaxRetry(Integer fullSyncMaxRetry) {
-        this.fullSyncMaxRetry = fullSyncMaxRetry;
-    }
-
-    public SmartConnectTaskReqSourceConfig withRatelimit(Integer ratelimit) {
-        this.ratelimit = ratelimit;
-        return this;
-    }
-
-    /**
-     * 限速，单位为KB/s。-1表示不限速。（仅源端类型为Redis时需要填写）
-     * @return ratelimit
-     */
-    public Integer getRatelimit() {
-        return ratelimit;
-    }
-
-    public void setRatelimit(Integer ratelimit) {
-        this.ratelimit = ratelimit;
-    }
 
     public SmartConnectTaskReqSourceConfig withCurrentClusterName(String currentClusterName) {
         this.currentClusterName = currentClusterName;
@@ -569,13 +393,7 @@ public class SmartConnectTaskReqSourceConfig {
             return false;
         }
         SmartConnectTaskReqSourceConfig that = (SmartConnectTaskReqSourceConfig) obj;
-        return Objects.equals(this.redisAddress, that.redisAddress) && Objects.equals(this.redisType, that.redisType)
-            && Objects.equals(this.dcsInstanceId, that.dcsInstanceId)
-            && Objects.equals(this.redisPassword, that.redisPassword) && Objects.equals(this.syncMode, that.syncMode)
-            && Objects.equals(this.fullSyncWaitMs, that.fullSyncWaitMs)
-            && Objects.equals(this.fullSyncMaxRetry, that.fullSyncMaxRetry)
-            && Objects.equals(this.ratelimit, that.ratelimit)
-            && Objects.equals(this.currentClusterName, that.currentClusterName)
+        return Objects.equals(this.currentClusterName, that.currentClusterName)
             && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.userName, that.userName)
             && Objects.equals(this.password, that.password) && Objects.equals(this.saslMechanism, that.saslMechanism)
             && Objects.equals(this.instanceId, that.instanceId)
@@ -594,15 +412,7 @@ public class SmartConnectTaskReqSourceConfig {
 
     @Override
     public int hashCode() {
-        return Objects.hash(redisAddress,
-            redisType,
-            dcsInstanceId,
-            redisPassword,
-            syncMode,
-            fullSyncWaitMs,
-            fullSyncMaxRetry,
-            ratelimit,
-            currentClusterName,
+        return Objects.hash(currentClusterName,
             clusterName,
             userName,
             password,
@@ -625,14 +435,6 @@ public class SmartConnectTaskReqSourceConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SmartConnectTaskReqSourceConfig {\n");
-        sb.append("    redisAddress: ").append(toIndentedString(redisAddress)).append("\n");
-        sb.append("    redisType: ").append(toIndentedString(redisType)).append("\n");
-        sb.append("    dcsInstanceId: ").append(toIndentedString(dcsInstanceId)).append("\n");
-        sb.append("    redisPassword: ").append(toIndentedString(redisPassword)).append("\n");
-        sb.append("    syncMode: ").append(toIndentedString(syncMode)).append("\n");
-        sb.append("    fullSyncWaitMs: ").append(toIndentedString(fullSyncWaitMs)).append("\n");
-        sb.append("    fullSyncMaxRetry: ").append(toIndentedString(fullSyncMaxRetry)).append("\n");
-        sb.append("    ratelimit: ").append(toIndentedString(ratelimit)).append("\n");
         sb.append("    currentClusterName: ").append(toIndentedString(currentClusterName)).append("\n");
         sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
         sb.append("    userName: ").append(toIndentedString(userName)).append("\n");

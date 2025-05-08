@@ -29,7 +29,7 @@ public class TagMultyValueEntity {
     }
 
     /**
-     * 标签键。
+     * **参数解释**： 标签键。 **取值范围**： 不涉及。
      * @return key
      */
     public String getKey() {
@@ -62,7 +62,7 @@ public class TagMultyValueEntity {
     }
 
     /**
-     * 标签值。
+     * **参数解释**： 标签值。 **取值范围**： 不涉及。
      * @return values
      */
     public List<String> getValues() {

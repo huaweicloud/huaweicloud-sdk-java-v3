@@ -30,7 +30,7 @@ public class ListTopicProducersResponse extends SdkResponse {
     }
 
     /**
-     * 总条数
+     * **参数解释**： 总条数。 **取值范围**： 0~10000。
      * minimum: 0
      * maximum: 10000
      * @return total
@@ -66,7 +66,7 @@ public class ListTopicProducersResponse extends SdkResponse {
     }
 
     /**
-     * 生产者列表
+     * **参数解释**： 生产者列表。
      * @return producers
      */
     public List<KafkaTopicProducerResponseProducers> getProducers() {

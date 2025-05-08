@@ -21,10 +21,20 @@ import com.huaweicloud.sdk.vod.v1.model.CreateAssetProcessTaskRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetProcessTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetReviewTaskRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetReviewTaskResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateEditTaskRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateEditTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateExtractAudioTaskRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateExtractAudioTaskResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectProcessTaskRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectProcessTaskResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectReplicationRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectReplicationResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectRetrievalRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectRetrievalResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreatePreheatingAssetRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreatePreheatingAssetResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateRealTimeClipRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateRealTimeClipResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateTakeOverTaskRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateTakeOverTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateTemplateGroupCollectionRequest;
@@ -33,12 +43,16 @@ import com.huaweicloud.sdk.vod.v1.model.CreateTemplateGroupRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateTemplateGroupResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateTranscodeTemplateRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateTranscodeTemplateResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateUploadByUrlRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateUploadByUrlResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateWatermarkTemplateRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateWatermarkTemplateResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetCategoryRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetCategoryResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetsRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetsResponse;
+import com.huaweicloud.sdk.vod.v1.model.DeleteDyAssetRequest;
+import com.huaweicloud.sdk.vod.v1.model.DeleteDyAssetResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupRequest;
@@ -87,6 +101,8 @@ import com.huaweicloud.sdk.vod.v1.model.ShowAssetTempAuthorityRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowAssetTempAuthorityResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsResponse;
+import com.huaweicloud.sdk.vod.v1.model.ShowObjectMetaDataRequest;
+import com.huaweicloud.sdk.vod.v1.model.ShowObjectMetaDataResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowPreheatingAssetRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowPreheatingAssetResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowRefreshResultRequest;
@@ -97,6 +113,8 @@ import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverTaskDetailsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverTaskDetailsResponse;
+import com.huaweicloud.sdk.vod.v1.model.ShowTaskDetailRequest;
+import com.huaweicloud.sdk.vod.v1.model.ShowTaskDetailResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowVodRetrievalRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowVodRetrievalResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowVodStatisticsRequest;
@@ -411,6 +429,37 @@ public class VodClient {
     }
 
     /**
+     * 
+     *
+     * ## 典型场景 ##
+     *   剪辑任务下发。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateEditTaskRequest 请求对象
+     * @return CreateEditTaskResponse
+     */
+    public CreateEditTaskResponse createEditTask(CreateEditTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.createEditTask);
+    }
+
+    /**
+     * 
+     *
+     * ## 典型场景 ##
+     *   剪辑任务下发。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateEditTaskRequest 请求对象
+     * @return SyncInvoker<CreateEditTaskRequest, CreateEditTaskResponse>
+     */
+    public SyncInvoker<CreateEditTaskRequest, CreateEditTaskResponse> createEditTaskInvoker(
+        CreateEditTaskRequest request) {
+        return new SyncInvoker<>(request, VodMeta.createEditTask, hcClient);
+    }
+
+    /**
      * 音频提取
      *
      * 本接口为异步接口，创建音频提取任务下发成功后会返回asset_id和提取的audio_asset_id，但此时音频提取任务并没有立即完成，可通过消息订阅界面配置的音频提取完成事件来获取音频提取任务完成与否。
@@ -440,6 +489,107 @@ public class VodClient {
     }
 
     /**
+     * 创建视频处理任务
+     *
+     * ## 典型场景 ##
+     *   视频处理。
+     * 
+     * ## 接口功能 ##
+     *   工作流方式视频处理
+     * 
+     * ## 接口约束 ##
+     *   无。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateObjectProcessTaskRequest 请求对象
+     * @return CreateObjectProcessTaskResponse
+     */
+    public CreateObjectProcessTaskResponse createObjectProcessTask(CreateObjectProcessTaskRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.createObjectProcessTask);
+    }
+
+    /**
+     * 创建视频处理任务
+     *
+     * ## 典型场景 ##
+     *   视频处理。
+     * 
+     * ## 接口功能 ##
+     *   工作流方式视频处理
+     * 
+     * ## 接口约束 ##
+     *   无。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateObjectProcessTaskRequest 请求对象
+     * @return SyncInvoker<CreateObjectProcessTaskRequest, CreateObjectProcessTaskResponse>
+     */
+    public SyncInvoker<CreateObjectProcessTaskRequest, CreateObjectProcessTaskResponse> createObjectProcessTaskInvoker(
+        CreateObjectProcessTaskRequest request) {
+        return new SyncInvoker<>(request, VodMeta.createObjectProcessTask, hcClient);
+    }
+
+    /**
+     * obs桶内容复制
+     *
+     * ## 典型场景 ##
+     *   触发从用户obs桶复制内容到用户obs桶，当前仅为斗鱼提供&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateObjectReplicationRequest 请求对象
+     * @return CreateObjectReplicationResponse
+     */
+    public CreateObjectReplicationResponse createObjectReplication(CreateObjectReplicationRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.createObjectReplication);
+    }
+
+    /**
+     * obs桶内容复制
+     *
+     * ## 典型场景 ##
+     *   触发从用户obs桶复制内容到用户obs桶，当前仅为斗鱼提供&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateObjectReplicationRequest 请求对象
+     * @return SyncInvoker<CreateObjectReplicationRequest, CreateObjectReplicationResponse>
+     */
+    public SyncInvoker<CreateObjectReplicationRequest, CreateObjectReplicationResponse> createObjectReplicationInvoker(
+        CreateObjectReplicationRequest request) {
+        return new SyncInvoker<>(request, VodMeta.createObjectReplication, hcClient);
+    }
+
+    /**
+     * obs桶内容解冻
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateObjectRetrievalRequest 请求对象
+     * @return CreateObjectRetrievalResponse
+     */
+    public CreateObjectRetrievalResponse createObjectRetrieval(CreateObjectRetrievalRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.createObjectRetrieval);
+    }
+
+    /**
+     * obs桶内容解冻
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateObjectRetrievalRequest 请求对象
+     * @return SyncInvoker<CreateObjectRetrievalRequest, CreateObjectRetrievalResponse>
+     */
+    public SyncInvoker<CreateObjectRetrievalRequest, CreateObjectRetrievalResponse> createObjectRetrievalInvoker(
+        CreateObjectRetrievalRequest request) {
+        return new SyncInvoker<>(request, VodMeta.createObjectRetrieval, hcClient);
+    }
+
+    /**
      * CDN预热
      *
      * 媒资发布后，可通过指定媒资ID或URL向CDN预热。用户初次请求时，将由CDN节点提供请求媒资，加快用户下载缓存时间，提高用户体验。单租户每天最多预热1000个。
@@ -466,6 +616,37 @@ public class VodClient {
     public SyncInvoker<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> createPreheatingAssetInvoker(
         CreatePreheatingAssetRequest request) {
         return new SyncInvoker<>(request, VodMeta.createPreheatingAsset, hcClient);
+    }
+
+    /**
+     * 直播内容即时剪辑
+     *
+     * ## 典型场景 ##
+     *   触发从直播时移桶截取一段流，当前仅为斗鱼提供&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRealTimeClipRequest 请求对象
+     * @return CreateRealTimeClipResponse
+     */
+    public CreateRealTimeClipResponse createRealTimeClip(CreateRealTimeClipRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.createRealTimeClip);
+    }
+
+    /**
+     * 直播内容即时剪辑
+     *
+     * ## 典型场景 ##
+     *   触发从直播时移桶截取一段流，当前仅为斗鱼提供&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateRealTimeClipRequest 请求对象
+     * @return SyncInvoker<CreateRealTimeClipRequest, CreateRealTimeClipResponse>
+     */
+    public SyncInvoker<CreateRealTimeClipRequest, CreateRealTimeClipResponse> createRealTimeClipInvoker(
+        CreateRealTimeClipRequest request) {
+        return new SyncInvoker<>(request, VodMeta.createRealTimeClip, hcClient);
     }
 
     /**
@@ -590,6 +771,37 @@ public class VodClient {
     }
 
     /**
+     * URL拉取上传
+     *
+     * ## 典型场景 ##
+     *   UGC场景URL拉取上传，当前仅为斗鱼提供&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateUploadByUrlRequest 请求对象
+     * @return CreateUploadByUrlResponse
+     */
+    public CreateUploadByUrlResponse createUploadByUrl(CreateUploadByUrlRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.createUploadByUrl);
+    }
+
+    /**
+     * URL拉取上传
+     *
+     * ## 典型场景 ##
+     *   UGC场景URL拉取上传，当前仅为斗鱼提供&lt;br/&gt;
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateUploadByUrlRequest 请求对象
+     * @return SyncInvoker<CreateUploadByUrlRequest, CreateUploadByUrlResponse>
+     */
+    public SyncInvoker<CreateUploadByUrlRequest, CreateUploadByUrlResponse> createUploadByUrlInvoker(
+        CreateUploadByUrlRequest request) {
+        return new SyncInvoker<>(request, VodMeta.createUploadByUrl, hcClient);
+    }
+
+    /**
      * 创建水印模板
      *
      * 创建水印模板。
@@ -673,6 +885,36 @@ public class VodClient {
      */
     public SyncInvoker<DeleteAssetsRequest, DeleteAssetsResponse> deleteAssetsInvoker(DeleteAssetsRequest request) {
         return new SyncInvoker<>(request, VodMeta.deleteAssets, hcClient);
+    }
+
+    /**
+     * 删除斗鱼媒资
+     *
+     * ## 典型场景 ##
+     *   斗鱼删除桶文件及媒资表数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDyAssetRequest 请求对象
+     * @return DeleteDyAssetResponse
+     */
+    public DeleteDyAssetResponse deleteDyAsset(DeleteDyAssetRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.deleteDyAsset);
+    }
+
+    /**
+     * 删除斗鱼媒资
+     *
+     * ## 典型场景 ##
+     *   斗鱼删除桶文件及媒资表数据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDyAssetRequest 请求对象
+     * @return SyncInvoker<DeleteDyAssetRequest, DeleteDyAssetResponse>
+     */
+    public SyncInvoker<DeleteDyAssetRequest, DeleteDyAssetResponse> deleteDyAssetInvoker(DeleteDyAssetRequest request) {
+        return new SyncInvoker<>(request, VodMeta.deleteDyAsset, hcClient);
     }
 
     /**
@@ -1360,6 +1602,35 @@ public class VodClient {
     }
 
     /**
+     * 查询媒体元数据
+     *
+     * 查询媒体元数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowObjectMetaDataRequest 请求对象
+     * @return ShowObjectMetaDataResponse
+     */
+    public ShowObjectMetaDataResponse showObjectMetaData(ShowObjectMetaDataRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.showObjectMetaData);
+    }
+
+    /**
+     * 查询媒体元数据
+     *
+     * 查询媒体元数据
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowObjectMetaDataRequest 请求对象
+     * @return SyncInvoker<ShowObjectMetaDataRequest, ShowObjectMetaDataResponse>
+     */
+    public SyncInvoker<ShowObjectMetaDataRequest, ShowObjectMetaDataResponse> showObjectMetaDataInvoker(
+        ShowObjectMetaDataRequest request) {
+        return new SyncInvoker<>(request, VodMeta.showObjectMetaData, hcClient);
+    }
+
+    /**
      * 查询CDN预热
      *
      * 查询预热结果。
@@ -1444,6 +1715,37 @@ public class VodClient {
     public SyncInvoker<ShowStorageModeTypeRequest, ShowStorageModeTypeResponse> showStorageModeTypeInvoker(
         ShowStorageModeTypeRequest request) {
         return new SyncInvoker<>(request, VodMeta.showStorageModeType, hcClient);
+    }
+
+    /**
+     * 查询任务详情
+     *
+     * ## 典型场景 ##
+     *   任务详情查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskDetailRequest 请求对象
+     * @return ShowTaskDetailResponse
+     */
+    public ShowTaskDetailResponse showTaskDetail(ShowTaskDetailRequest request) {
+        return hcClient.syncInvokeHttp(request, VodMeta.showTaskDetail);
+    }
+
+    /**
+     * 查询任务详情
+     *
+     * ## 典型场景 ##
+     *   任务详情查询
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTaskDetailRequest 请求对象
+     * @return SyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse>
+     */
+    public SyncInvoker<ShowTaskDetailRequest, ShowTaskDetailResponse> showTaskDetailInvoker(
+        ShowTaskDetailRequest request) {
+        return new SyncInvoker<>(request, VodMeta.showTaskDetail, hcClient);
     }
 
     /**

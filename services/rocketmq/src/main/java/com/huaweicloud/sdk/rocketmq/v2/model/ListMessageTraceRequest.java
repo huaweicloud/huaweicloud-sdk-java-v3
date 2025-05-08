@@ -94,6 +94,16 @@ public class ListMessageTraceRequest {
 
     private String msgId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ListMessageTraceRequest withEngine(EngineEnum engine) {
         this.engine = engine;
         return this;
@@ -145,6 +155,40 @@ public class ListMessageTraceRequest {
         this.msgId = msgId;
     }
 
+    public ListMessageTraceRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 查询数量。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListMessageTraceRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0。
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -155,12 +199,13 @@ public class ListMessageTraceRequest {
         }
         ListMessageTraceRequest that = (ListMessageTraceRequest) obj;
         return Objects.equals(this.engine, that.engine) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.msgId, that.msgId);
+            && Objects.equals(this.msgId, that.msgId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engine, instanceId, msgId);
+        return Objects.hash(engine, instanceId, msgId, limit, offset);
     }
 
     @Override
@@ -170,6 +215,8 @@ public class ListMessageTraceRequest {
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    msgId: ").append(toIndentedString(msgId)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

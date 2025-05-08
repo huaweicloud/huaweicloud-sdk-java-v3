@@ -66,7 +66,7 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
     }
 
     /**
-     * Topic列表（当查询Topic消费“列表”时才显示此参数）。
+     * **参数解释**： Topic列表（当查询Topic消费“列表”时才显示此参数）。
      * @return topics
      */
     public List<String> getTopics() {
@@ -83,7 +83,7 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
     }
 
     /**
-     * Topic总数（当查询Topic消费“列表”时才显示此参数）。
+     * **参数解释**： Topic总数（当查询Topic消费“列表”时才显示此参数）。 **取值范围**： 不涉及。
      * @return total
      */
     public Integer getTotal() {
@@ -100,7 +100,7 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 消费堆积总数。
+     * **参数解释**： 消费堆积总数。 **取值范围**： 不涉及。
      * @return lag
      */
     public Long getLag() {
@@ -117,7 +117,7 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 消息总数。
+     * **参数解释**： 消息总数。 **取值范围**： 不涉及。
      * @return maxOffset
      */
     public Long getMaxOffset() {
@@ -134,7 +134,7 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
     }
 
     /**
-     * 已消费消息数。
+     * **参数解释**： 已消费消息数。 **取值范围**： 不涉及。
      * @return consumerOffset
      */
     public Long getConsumerOffset() {
@@ -167,7 +167,7 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
     }
 
     /**
-     * Topic关联代理（当查询Topic消费“详情”才显示此参数）。
+     * **参数解释**： Topic关联代理（当查询Topic消费“详情”才显示此参数）。
      * @return brokers
      */
     public List<Brokers> getBrokers() {

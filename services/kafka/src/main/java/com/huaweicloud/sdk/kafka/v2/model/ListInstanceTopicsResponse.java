@@ -50,7 +50,7 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * topic总数。
+     * **参数解释**： Topic总数。 **取值范围**： 不涉及。
      * @return total
      */
     public Integer getTotal() {
@@ -67,7 +67,7 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * 分页查询的大小。
+     * **参数解释**： 分页查询的大小。 **取值范围**： 不涉及。
      * @return size
      */
     public Integer getSize() {
@@ -84,7 +84,7 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * 剩余分区数。
+     * **参数解释**： 剩余分区数。 **取值范围**： 不涉及。
      * @return remainPartitions
      */
     public Integer getRemainPartitions() {
@@ -101,7 +101,7 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * 分区总数。
+     * **参数解释**： 分区总数。 **取值范围**： 不涉及。
      * @return maxPartitions
      */
     public Integer getMaxPartitions() {
@@ -118,7 +118,7 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * 单个topic最大占用分区数。
+     * **参数解释**： 单个Topic最大占用分区数。 **取值范围**： 不涉及。
      * @return topicMaxPartitions
      */
     public Integer getTopicMaxPartitions() {
@@ -151,7 +151,7 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * topic列表。
+     * **参数解释**： topic列表。
      * @return topics
      */
     public List<TopicEntity> getTopics() {

@@ -73,6 +73,13 @@ public class RabbitMQRegion {
     public static final Region MY_KUALALUMPUR_1 =
         new Region("my-kualalumpur-1", "https://dms.my-kualalumpur-1.myhuaweicloud.com");
 
+    public static final Region CN_EAST_4 = new Region("cn-east-4", "https://dms.cn-east-4.myhuaweicloud.com");
+
+    public static final Region AF_NORTH_1 = new Region("af-north-1", "https://dms.af-north-1.myhuaweicloud.com");
+
+    public static final Region AP_SOUTHEAST_5 =
+        new Region("ap-southeast-5", "https://dms.ap-southeast-5.myhuaweicloud.com");
+
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("RABBITMQ");
 
     private static final Map<String, Region> STATIC_FIELDS = createStaticFields();
@@ -105,6 +112,9 @@ public class RabbitMQRegion {
         map.put("me-east-1", ME_EAST_1);
         map.put("cn-east-5", CN_EAST_5);
         map.put("my-kualalumpur-1", MY_KUALALUMPUR_1);
+        map.put("cn-east-4", CN_EAST_4);
+        map.put("af-north-1", AF_NORTH_1);
+        map.put("ap-southeast-5", AP_SOUTHEAST_5);
         return Collections.unmodifiableMap(map);
     }
 

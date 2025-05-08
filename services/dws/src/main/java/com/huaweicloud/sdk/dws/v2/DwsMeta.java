@@ -71,6 +71,8 @@ import com.huaweicloud.sdk.dws.v2.model.CreateDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateDisasterRecoveryResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterResponse;
@@ -103,6 +105,8 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteDwsClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteDwsClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteQueueUserListRequest;
@@ -119,6 +123,8 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadPlanStageRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadPlanStageResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadQueueRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadQueueResponse;
+import com.huaweicloud.sdk.dws.v2.model.DisableLogicalClusterPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.DisableLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisableLtsLogsRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisableLtsLogsResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateEipRequest;
@@ -126,6 +132,8 @@ import com.huaweicloud.sdk.dws.v2.model.DisassociateEipResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbResponse;
 import com.huaweicloud.sdk.dws.v2.model.DiskResp;
+import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterResponse;
@@ -207,6 +215,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListHostOverviewRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListHostOverviewResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListJobDetailsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListJobDetailsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterPlansRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterPlansResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterRingsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterRingsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterTasksRequest;
@@ -266,6 +276,7 @@ import com.huaweicloud.sdk.dws.v2.model.ListWorkloadQueueRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListWorkloadQueueResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListWorkloadQueueUsersRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListWorkloadQueueUsersResponse;
+import com.huaweicloud.sdk.dws.v2.model.LogicalClusterPlanBo;
 import com.huaweicloud.sdk.dws.v2.model.MaintenanceWindow;
 import com.huaweicloud.sdk.dws.v2.model.ModifyClusterDns;
 import com.huaweicloud.sdk.dws.v2.model.NetResp;
@@ -369,6 +380,9 @@ import com.huaweicloud.sdk.dws.v2.model.UpdateDisasterInfoResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterPlanBo;
+import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterRequestBody;
 import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterResponse;
@@ -1112,6 +1126,36 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateLogicalClusterPlanRequest, CreateLogicalClusterPlanResponse> createLogicalClusterPlan =
+        genForCreateLogicalClusterPlan();
+
+    private static HttpRequestDef<CreateLogicalClusterPlanRequest, CreateLogicalClusterPlanResponse> genForCreateLogicalClusterPlan() {
+        // basic
+        HttpRequestDef.Builder<CreateLogicalClusterPlanRequest, CreateLogicalClusterPlanResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateLogicalClusterPlanRequest.class, CreateLogicalClusterPlanResponse.class)
+                .withName("CreateLogicalClusterPlan")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/logical-cluster-plans")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateLogicalClusterPlanRequest::getClusterId,
+                CreateLogicalClusterPlanRequest::setClusterId));
+        builder.<LogicalClusterPlanBo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LogicalClusterPlanBo.class),
+            f -> f.withMarshaller(CreateLogicalClusterPlanRequest::getBody, CreateLogicalClusterPlanRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateSnapshotRequest, CreateSnapshotResponse> createSnapshot =
         genForCreateSnapshot();
 
@@ -1450,6 +1494,39 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteLogicalClusterPlanRequest, DeleteLogicalClusterPlanResponse> deleteLogicalClusterPlan =
+        genForDeleteLogicalClusterPlan();
+
+    private static HttpRequestDef<DeleteLogicalClusterPlanRequest, DeleteLogicalClusterPlanResponse> genForDeleteLogicalClusterPlan() {
+        // basic
+        HttpRequestDef.Builder<DeleteLogicalClusterPlanRequest, DeleteLogicalClusterPlanResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteLogicalClusterPlanRequest.class,
+                    DeleteLogicalClusterPlanResponse.class)
+                .withName("DeleteLogicalClusterPlan")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/logical-cluster-plans/{plan_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLogicalClusterPlanRequest::getClusterId,
+                DeleteLogicalClusterPlanRequest::setClusterId));
+        builder.<String>withRequestField("plan_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteLogicalClusterPlanRequest::getPlanId,
+                DeleteLogicalClusterPlanRequest::setPlanId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteQueueUserListRequest, DeleteQueueUserListResponse> deleteQueueUserList =
         genForDeleteQueueUserList();
 
@@ -1661,6 +1738,39 @@ public class DwsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DisableLogicalClusterPlanRequest, DisableLogicalClusterPlanResponse> disableLogicalClusterPlan =
+        genForDisableLogicalClusterPlan();
+
+    private static HttpRequestDef<DisableLogicalClusterPlanRequest, DisableLogicalClusterPlanResponse> genForDisableLogicalClusterPlan() {
+        // basic
+        HttpRequestDef.Builder<DisableLogicalClusterPlanRequest, DisableLogicalClusterPlanResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    DisableLogicalClusterPlanRequest.class,
+                    DisableLogicalClusterPlanResponse.class)
+                .withName("DisableLogicalClusterPlan")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/logical-cluster-plans/{plan_id}/disable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableLogicalClusterPlanRequest::getClusterId,
+                DisableLogicalClusterPlanRequest::setClusterId));
+        builder.<String>withRequestField("plan_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisableLogicalClusterPlanRequest::getPlanId,
+                DisableLogicalClusterPlanRequest::setPlanId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DisableLtsLogsRequest, DisableLtsLogsResponse> disableLtsLogs =
         genForDisableLtsLogs();
 
@@ -1763,6 +1873,37 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnableLogicalClusterRequestBody.class),
             f -> f.withMarshaller(EnableLogicalClusterRequest::getBody, EnableLogicalClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<EnableLogicalClusterPlanRequest, EnableLogicalClusterPlanResponse> enableLogicalClusterPlan =
+        genForEnableLogicalClusterPlan();
+
+    private static HttpRequestDef<EnableLogicalClusterPlanRequest, EnableLogicalClusterPlanResponse> genForEnableLogicalClusterPlan() {
+        // basic
+        HttpRequestDef.Builder<EnableLogicalClusterPlanRequest, EnableLogicalClusterPlanResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, EnableLogicalClusterPlanRequest.class, EnableLogicalClusterPlanResponse.class)
+                .withName("EnableLogicalClusterPlan")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/logical-cluster-plans/{plan_id}/enable")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableLogicalClusterPlanRequest::getClusterId,
+                EnableLogicalClusterPlanRequest::setClusterId));
+        builder.<String>withRequestField("plan_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(EnableLogicalClusterPlanRequest::getPlanId,
+                EnableLogicalClusterPlanRequest::setPlanId));
 
         // response
 
@@ -2882,6 +3023,30 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListJobDetailsRequest::getJobId, ListJobDetailsRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogicalClusterPlansRequest, ListLogicalClusterPlansResponse> listLogicalClusterPlans =
+        genForListLogicalClusterPlans();
+
+    private static HttpRequestDef<ListLogicalClusterPlansRequest, ListLogicalClusterPlansResponse> genForListLogicalClusterPlans() {
+        // basic
+        HttpRequestDef.Builder<ListLogicalClusterPlansRequest, ListLogicalClusterPlansResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListLogicalClusterPlansRequest.class, ListLogicalClusterPlansResponse.class)
+            .withName("ListLogicalClusterPlans")
+            .withUri("/v1/{project_id}/clusters/{cluster_id}/logical-cluster-plans")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogicalClusterPlansRequest::getClusterId,
+                ListLogicalClusterPlansRequest::setClusterId));
 
         // response
 
@@ -5204,6 +5369,42 @@ public class DwsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateLogicalClusterRequestBody.class),
             f -> f.withMarshaller(UpdateLogicalClusterRequest::getBody, UpdateLogicalClusterRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateLogicalClusterPlanRequest, UpdateLogicalClusterPlanResponse> updateLogicalClusterPlan =
+        genForUpdateLogicalClusterPlan();
+
+    private static HttpRequestDef<UpdateLogicalClusterPlanRequest, UpdateLogicalClusterPlanResponse> genForUpdateLogicalClusterPlan() {
+        // basic
+        HttpRequestDef.Builder<UpdateLogicalClusterPlanRequest, UpdateLogicalClusterPlanResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateLogicalClusterPlanRequest.class, UpdateLogicalClusterPlanResponse.class)
+                .withName("UpdateLogicalClusterPlan")
+                .withUri("/v1/{project_id}/clusters/{cluster_id}/logical-cluster-plans/{plan_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogicalClusterPlanRequest::getClusterId,
+                UpdateLogicalClusterPlanRequest::setClusterId));
+        builder.<String>withRequestField("plan_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateLogicalClusterPlanRequest::getPlanId,
+                UpdateLogicalClusterPlanRequest::setPlanId));
+        builder.<UpdateLogicalClusterPlanBo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateLogicalClusterPlanBo.class),
+            f -> f.withMarshaller(UpdateLogicalClusterPlanRequest::getBody, UpdateLogicalClusterPlanRequest::setBody));
 
         // response
 

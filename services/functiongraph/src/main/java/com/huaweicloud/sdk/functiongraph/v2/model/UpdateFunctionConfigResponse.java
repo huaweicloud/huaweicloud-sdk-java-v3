@@ -641,6 +641,11 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
 
     private Map<String, String> ltsCustomTag = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_data_encrypt_kms_key_id")
+
+    private String userDataEncryptKmsKeyId;
+
     public UpdateFunctionConfigResponse withFuncId(String funcId) {
         this.funcId = funcId;
         return this;
@@ -1576,6 +1581,23 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         this.ltsCustomTag = ltsCustomTag;
     }
 
+    public UpdateFunctionConfigResponse withUserDataEncryptKmsKeyId(String userDataEncryptKmsKeyId) {
+        this.userDataEncryptKmsKeyId = userDataEncryptKmsKeyId;
+        return this;
+    }
+
+    /**
+     * 用于环境变量加密的kms主秘钥ID。
+     * @return userDataEncryptKmsKeyId
+     */
+    public String getUserDataEncryptKmsKeyId() {
+        return userDataEncryptKmsKeyId;
+    }
+
+    public void setUserDataEncryptKmsKeyId(String userDataEncryptKmsKeyId) {
+        this.userDataEncryptKmsKeyId = userDataEncryptKmsKeyId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1620,7 +1642,8 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.customImage, that.customImage)
             && Objects.equals(this.isReturnStream, that.isReturnStream)
             && Objects.equals(this.enableLtsLog, that.enableLtsLog)
-            && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
+            && Objects.equals(this.ltsCustomTag, that.ltsCustomTag)
+            && Objects.equals(this.userDataEncryptKmsKeyId, that.userDataEncryptKmsKeyId);
     }
 
     @Override
@@ -1675,7 +1698,8 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
             customImage,
             isReturnStream,
             enableLtsLog,
-            ltsCustomTag);
+            ltsCustomTag,
+            userDataEncryptKmsKeyId);
     }
 
     @Override
@@ -1733,6 +1757,7 @@ public class UpdateFunctionConfigResponse extends SdkResponse {
         sb.append("    isReturnStream: ").append(toIndentedString(isReturnStream)).append("\n");
         sb.append("    enableLtsLog: ").append(toIndentedString(enableLtsLog)).append("\n");
         sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
+        sb.append("    userDataEncryptKmsKeyId: ").append(toIndentedString(userDataEncryptKmsKeyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

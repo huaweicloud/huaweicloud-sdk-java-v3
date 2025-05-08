@@ -27,6 +27,12 @@ public class KvOperIds {
 
     private List<Integer> deleteKvIds = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_kv_ids")
+    @BsonProperty(value = "update_kv_ids")
+
+    private List<Integer> updateKvIds = null;
+
     public KvOperIds withPutKvIds(List<Integer> putKvIds) {
         this.putKvIds = putKvIds;
         return this;
@@ -93,6 +99,39 @@ public class KvOperIds {
         this.deleteKvIds = deleteKvIds;
     }
 
+    public KvOperIds withUpdateKvIds(List<Integer> updateKvIds) {
+        this.updateKvIds = updateKvIds;
+        return this;
+    }
+
+    public KvOperIds addUpdateKvIdsItem(Integer updateKvIdsItem) {
+        if (this.updateKvIds == null) {
+            this.updateKvIds = new ArrayList<>();
+        }
+        this.updateKvIds.add(updateKvIdsItem);
+        return this;
+    }
+
+    public KvOperIds withUpdateKvIds(Consumer<List<Integer>> updateKvIdsSetter) {
+        if (this.updateKvIds == null) {
+            this.updateKvIds = new ArrayList<>();
+        }
+        updateKvIdsSetter.accept(this.updateKvIds);
+        return this;
+    }
+
+    /**
+     * 请求内的操作编码，未成功的操作返回该标识。 - 数组元素：请求内的操作编码，未成功的操作返回该标识。
+     * @return updateKvIds
+     */
+    public List<Integer> getUpdateKvIds() {
+        return updateKvIds;
+    }
+
+    public void setUpdateKvIds(List<Integer> updateKvIds) {
+        this.updateKvIds = updateKvIds;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -102,12 +141,13 @@ public class KvOperIds {
             return false;
         }
         KvOperIds that = (KvOperIds) obj;
-        return Objects.equals(this.putKvIds, that.putKvIds) && Objects.equals(this.deleteKvIds, that.deleteKvIds);
+        return Objects.equals(this.putKvIds, that.putKvIds) && Objects.equals(this.deleteKvIds, that.deleteKvIds)
+            && Objects.equals(this.updateKvIds, that.updateKvIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(putKvIds, deleteKvIds);
+        return Objects.hash(putKvIds, deleteKvIds, updateKvIds);
     }
 
     @Override
@@ -116,6 +156,7 @@ public class KvOperIds {
         sb.append("class KvOperIds {\n");
         sb.append("    putKvIds: ").append(toIndentedString(putKvIds)).append("\n");
         sb.append("    deleteKvIds: ").append(toIndentedString(deleteKvIds)).append("\n");
+        sb.append("    updateKvIds: ").append(toIndentedString(updateKvIds)).append("\n");
         sb.append("}");
         return sb.toString();
     }

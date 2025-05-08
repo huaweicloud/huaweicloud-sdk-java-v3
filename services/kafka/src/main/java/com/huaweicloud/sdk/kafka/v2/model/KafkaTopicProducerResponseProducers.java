@@ -31,7 +31,7 @@ public class KafkaTopicProducerResponseProducers {
     }
 
     /**
-     * 生产者地址
+     * **参数解释**： 生产者地址。 **取值范围**： 不涉及
      * @return producerAddress
      */
     public String getProducerAddress() {
@@ -48,7 +48,7 @@ public class KafkaTopicProducerResponseProducers {
     }
 
     /**
-     * broker地址
+     * **参数解释**： broker地址。 **取值范围**： 不涉及
      * @return brokerAddress
      */
     public String getBrokerAddress() {
@@ -65,7 +65,7 @@ public class KafkaTopicProducerResponseProducers {
     }
 
     /**
-     * 加入时间
+     * **参数解释**： 加入时间，以Unix时间戳显示。 **取值范围**： 不涉及
      * minimum: 0
      * maximum: 9223372036854775807
      * @return joinTime

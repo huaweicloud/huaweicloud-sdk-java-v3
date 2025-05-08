@@ -391,6 +391,11 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
 
     private List<Dependency> dependencies = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code_encrypt_kms_key_id")
+
+    private String codeEncryptKmsKeyId;
+
     public UpdateFunctionCodeResponse withFuncUrn(String funcUrn) {
         this.funcUrn = funcUrn;
         return this;
@@ -712,6 +717,23 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         this.dependencies = dependencies;
     }
 
+    public UpdateFunctionCodeResponse withCodeEncryptKmsKeyId(String codeEncryptKmsKeyId) {
+        this.codeEncryptKmsKeyId = codeEncryptKmsKeyId;
+        return this;
+    }
+
+    /**
+     * 用于用户代码加密的kms主秘钥ID。
+     * @return codeEncryptKmsKeyId
+     */
+    public String getCodeEncryptKmsKeyId() {
+        return codeEncryptKmsKeyId;
+    }
+
+    public void setCodeEncryptKmsKeyId(String codeEncryptKmsKeyId) {
+        this.codeEncryptKmsKeyId = codeEncryptKmsKeyId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -729,7 +751,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
             && Objects.equals(this.funcCode, that.funcCode) && Objects.equals(this.dependList, that.dependList)
             && Objects.equals(this.dependVersionList, that.dependVersionList)
             && Objects.equals(this.strategyConfig, that.strategyConfig)
-            && Objects.equals(this.dependencies, that.dependencies);
+            && Objects.equals(this.dependencies, that.dependencies)
+            && Objects.equals(this.codeEncryptKmsKeyId, that.codeEncryptKmsKeyId);
     }
 
     @Override
@@ -748,7 +771,8 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
             dependList,
             dependVersionList,
             strategyConfig,
-            dependencies);
+            dependencies,
+            codeEncryptKmsKeyId);
     }
 
     @Override
@@ -770,6 +794,7 @@ public class UpdateFunctionCodeResponse extends SdkResponse {
         sb.append("    dependVersionList: ").append(toIndentedString(dependVersionList)).append("\n");
         sb.append("    strategyConfig: ").append(toIndentedString(strategyConfig)).append("\n");
         sb.append("    dependencies: ").append(toIndentedString(dependencies)).append("\n");
+        sb.append("    codeEncryptKmsKeyId: ").append(toIndentedString(codeEncryptKmsKeyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

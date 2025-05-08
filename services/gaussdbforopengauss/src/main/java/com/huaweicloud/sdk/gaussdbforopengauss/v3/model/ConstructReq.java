@@ -110,11 +110,6 @@ public class ConstructReq {
 
     private String drTaskName;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "lite_dr_mode")
-
-    private String liteDrMode;
-
     public ConstructReq withDisasterType(DisasterTypeEnum disasterType) {
         this.disasterType = disasterType;
         return this;
@@ -200,23 +195,6 @@ public class ConstructReq {
         this.drTaskName = drTaskName;
     }
 
-    public ConstructReq withLiteDrMode(String liteDrMode) {
-        this.liteDrMode = liteDrMode;
-        return this;
-    }
-
-    /**
-     * 灾备实例为轻量化部署.
-     * @return liteDrMode
-     */
-    public String getLiteDrMode() {
-        return liteDrMode;
-    }
-
-    public void setLiteDrMode(String liteDrMode) {
-        this.liteDrMode = liteDrMode;
-    }
-
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -229,12 +207,12 @@ public class ConstructReq {
         return Objects.equals(this.disasterType, that.disasterType) && Objects.equals(this.drIp, that.drIp)
             && Objects.equals(this.drUserName, that.drUserName)
             && Objects.equals(this.drUserPassword, that.drUserPassword)
-            && Objects.equals(this.drTaskName, that.drTaskName) && Objects.equals(this.liteDrMode, that.liteDrMode);
+            && Objects.equals(this.drTaskName, that.drTaskName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(disasterType, drIp, drUserName, drUserPassword, drTaskName, liteDrMode);
+        return Objects.hash(disasterType, drIp, drUserName, drUserPassword, drTaskName);
     }
 
     @Override
@@ -246,7 +224,6 @@ public class ConstructReq {
         sb.append("    drUserName: ").append(toIndentedString(drUserName)).append("\n");
         sb.append("    drUserPassword: ").append(toIndentedString(drUserPassword)).append("\n");
         sb.append("    drTaskName: ").append(toIndentedString(drTaskName)).append("\n");
-        sb.append("    liteDrMode: ").append(toIndentedString(liteDrMode)).append("\n");
         sb.append("}");
         return sb.toString();
     }

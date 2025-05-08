@@ -29,7 +29,7 @@ public class Brokers {
     }
 
     /**
-     * Topic关联代理名称。
+     * **参数解释**： Topic关联代理名称。 **取值范围**： 不涉及。
      * @return brokerName
      */
     public String getBrokerName() {
@@ -62,7 +62,7 @@ public class Brokers {
     }
 
     /**
-     * 关联代理的队列详情。
+     * **参数解释**： 关联代理的队列详情。
      * @return queues
      */
     public List<Queue> getQueues() {

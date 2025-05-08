@@ -1,13 +1,19 @@
 package com.huaweicloud.sdk.coc.v1;
 
+import com.huaweicloud.sdk.coc.v1.model.AcceptScriptRequest;
+import com.huaweicloud.sdk.coc.v1.model.AcceptScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewRequest;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewResponse;
+import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskRequest;
+import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateDocumentRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateDocumentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportPrometheusEventRequest;
@@ -18,6 +24,8 @@ import com.huaweicloud.sdk.coc.v1.model.CreateScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomResponse;
+import com.huaweicloud.sdk.coc.v1.model.DeleteDocumentRequest;
+import com.huaweicloud.sdk.coc.v1.model.DeleteDocumentResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptRequest;
@@ -26,10 +34,18 @@ import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.DisableScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.ExecuteDocumentRequest;
+import com.huaweicloud.sdk.coc.v1.model.ExecuteDocumentResponse;
 import com.huaweicloud.sdk.coc.v1.model.ExecutePublicScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.ExecutePublicScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.GetDocumentAtomicInfoRequest;
+import com.huaweicloud.sdk.coc.v1.model.GetDocumentAtomicInfoResponse;
+import com.huaweicloud.sdk.coc.v1.model.GetDocumentRequest;
+import com.huaweicloud.sdk.coc.v1.model.GetDocumentResponse;
+import com.huaweicloud.sdk.coc.v1.model.GetExecutionRequest;
+import com.huaweicloud.sdk.coc.v1.model.GetExecutionResponse;
 import com.huaweicloud.sdk.coc.v1.model.GetPublicScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.GetPublicScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptJobBatchRequest;
@@ -54,8 +70,20 @@ import com.huaweicloud.sdk.coc.v1.model.ListCceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCceCompliantResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListDocumentsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListDocumentsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListExecutionInstancesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListExecutionInstancesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListExecutionStepsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListExecutionStepsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListExecutionsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListExecutionsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInterruptRecordsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInterruptRecordsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesRequest;
@@ -74,10 +102,14 @@ import com.huaweicloud.sdk.coc.v1.model.ListScriptJobBatchesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptJobBatchesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptJobsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptJobsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListScriptResourceTagsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListScriptResourceTagsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsResponse;
+import com.huaweicloud.sdk.coc.v1.model.OperateExecutionRequest;
+import com.huaweicloud.sdk.coc.v1.model.OperateExecutionResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowAccountRequest;
@@ -104,6 +136,10 @@ import com.huaweicloud.sdk.coc.v1.model.SyncAddPersonnelRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncAddPersonnelResponse;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateDocumentRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateDocumentResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateResourceTagsRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateResourceTagsResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScriptRequest;
@@ -452,6 +488,238 @@ public class CocAsyncClient {
     }
 
     /**
+     * 创建自定义作业
+     *
+     * 创建自定义作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDocumentRequest 请求对象
+     * @return CompletableFuture<CreateDocumentResponse>
+     */
+    public CompletableFuture<CreateDocumentResponse> createDocumentAsync(CreateDocumentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.createDocument);
+    }
+
+    /**
+     * 创建自定义作业
+     *
+     * 创建自定义作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDocumentRequest 请求对象
+     * @return AsyncInvoker<CreateDocumentRequest, CreateDocumentResponse>
+     */
+    public AsyncInvoker<CreateDocumentRequest, CreateDocumentResponse> createDocumentAsyncInvoker(
+        CreateDocumentRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.createDocument, hcClient);
+    }
+
+    /**
+     * 删除自定义作业
+     *
+     * 删除自定义作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDocumentRequest 请求对象
+     * @return CompletableFuture<DeleteDocumentResponse>
+     */
+    public CompletableFuture<DeleteDocumentResponse> deleteDocumentAsync(DeleteDocumentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.deleteDocument);
+    }
+
+    /**
+     * 删除自定义作业
+     *
+     * 删除自定义作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDocumentRequest 请求对象
+     * @return AsyncInvoker<DeleteDocumentRequest, DeleteDocumentResponse>
+     */
+    public AsyncInvoker<DeleteDocumentRequest, DeleteDocumentResponse> deleteDocumentAsyncInvoker(
+        DeleteDocumentRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.deleteDocument, hcClient);
+    }
+
+    /**
+     * 执行自定义作业
+     *
+     * 执行自定义作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteDocumentRequest 请求对象
+     * @return CompletableFuture<ExecuteDocumentResponse>
+     */
+    public CompletableFuture<ExecuteDocumentResponse> executeDocumentAsync(ExecuteDocumentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.executeDocument);
+    }
+
+    /**
+     * 执行自定义作业
+     *
+     * 执行自定义作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ExecuteDocumentRequest 请求对象
+     * @return AsyncInvoker<ExecuteDocumentRequest, ExecuteDocumentResponse>
+     */
+    public AsyncInvoker<ExecuteDocumentRequest, ExecuteDocumentResponse> executeDocumentAsyncInvoker(
+        ExecuteDocumentRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.executeDocument, hcClient);
+    }
+
+    /**
+     * 查询自定义作业详情
+     *
+     * 查询自定义作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDocumentRequest 请求对象
+     * @return CompletableFuture<GetDocumentResponse>
+     */
+    public CompletableFuture<GetDocumentResponse> getDocumentAsync(GetDocumentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.getDocument);
+    }
+
+    /**
+     * 查询自定义作业详情
+     *
+     * 查询自定义作业详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDocumentRequest 请求对象
+     * @return AsyncInvoker<GetDocumentRequest, GetDocumentResponse>
+     */
+    public AsyncInvoker<GetDocumentRequest, GetDocumentResponse> getDocumentAsyncInvoker(GetDocumentRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.getDocument, hcClient);
+    }
+
+    /**
+     * 获取原子能力详细
+     *
+     * 获取原子能力详细
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDocumentAtomicInfoRequest 请求对象
+     * @return CompletableFuture<GetDocumentAtomicInfoResponse>
+     */
+    public CompletableFuture<GetDocumentAtomicInfoResponse> getDocumentAtomicInfoAsync(
+        GetDocumentAtomicInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.getDocumentAtomicInfo);
+    }
+
+    /**
+     * 获取原子能力详细
+     *
+     * 获取原子能力详细
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetDocumentAtomicInfoRequest 请求对象
+     * @return AsyncInvoker<GetDocumentAtomicInfoRequest, GetDocumentAtomicInfoResponse>
+     */
+    public AsyncInvoker<GetDocumentAtomicInfoRequest, GetDocumentAtomicInfoResponse> getDocumentAtomicInfoAsyncInvoker(
+        GetDocumentAtomicInfoRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.getDocumentAtomicInfo, hcClient);
+    }
+
+    /**
+     * 获取原子能力列表
+     *
+     * 获取原子能力列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDocumentAtomicsRequest 请求对象
+     * @return CompletableFuture<ListDocumentAtomicsResponse>
+     */
+    public CompletableFuture<ListDocumentAtomicsResponse> listDocumentAtomicsAsync(ListDocumentAtomicsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listDocumentAtomics);
+    }
+
+    /**
+     * 获取原子能力列表
+     *
+     * 获取原子能力列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDocumentAtomicsRequest 请求对象
+     * @return AsyncInvoker<ListDocumentAtomicsRequest, ListDocumentAtomicsResponse>
+     */
+    public AsyncInvoker<ListDocumentAtomicsRequest, ListDocumentAtomicsResponse> listDocumentAtomicsAsyncInvoker(
+        ListDocumentAtomicsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listDocumentAtomics, hcClient);
+    }
+
+    /**
+     * 查询自定义作业列表
+     *
+     * 查询自定义作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDocumentsRequest 请求对象
+     * @return CompletableFuture<ListDocumentsResponse>
+     */
+    public CompletableFuture<ListDocumentsResponse> listDocumentsAsync(ListDocumentsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listDocuments);
+    }
+
+    /**
+     * 查询自定义作业列表
+     *
+     * 查询自定义作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListDocumentsRequest 请求对象
+     * @return AsyncInvoker<ListDocumentsRequest, ListDocumentsResponse>
+     */
+    public AsyncInvoker<ListDocumentsRequest, ListDocumentsResponse> listDocumentsAsyncInvoker(
+        ListDocumentsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listDocuments, hcClient);
+    }
+
+    /**
+     * 修改自定义作业
+     *
+     * 修改自定义作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDocumentRequest 请求对象
+     * @return CompletableFuture<UpdateDocumentResponse>
+     */
+    public CompletableFuture<UpdateDocumentResponse> updateDocumentAsync(UpdateDocumentRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.updateDocument);
+    }
+
+    /**
+     * 修改自定义作业
+     *
+     * 修改自定义作业
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDocumentRequest 请求对象
+     * @return AsyncInvoker<UpdateDocumentRequest, UpdateDocumentResponse>
+     */
+    public AsyncInvoker<UpdateDocumentRequest, UpdateDocumentResponse> updateDocumentAsyncInvoker(
+        UpdateDocumentRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.updateDocument, hcClient);
+    }
+
+    /**
      * Prometheus事件接入
      *
      * Prometheus事件接入
@@ -479,6 +747,152 @@ public class CocAsyncClient {
     public AsyncInvoker<CreateReportPrometheusEventRequest, CreateReportPrometheusEventResponse> createReportPrometheusEventAsyncInvoker(
         CreateReportPrometheusEventRequest request) {
         return new AsyncInvoker<>(request, CocMeta.createReportPrometheusEvent, hcClient);
+    }
+
+    /**
+     * 查询作业工单详情
+     *
+     * 查询作业工单详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetExecutionRequest 请求对象
+     * @return CompletableFuture<GetExecutionResponse>
+     */
+    public CompletableFuture<GetExecutionResponse> getExecutionAsync(GetExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.getExecution);
+    }
+
+    /**
+     * 查询作业工单详情
+     *
+     * 查询作业工单详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request GetExecutionRequest 请求对象
+     * @return AsyncInvoker<GetExecutionRequest, GetExecutionResponse>
+     */
+    public AsyncInvoker<GetExecutionRequest, GetExecutionResponse> getExecutionAsyncInvoker(
+        GetExecutionRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.getExecution, hcClient);
+    }
+
+    /**
+     * 查询工单步骤批次实例
+     *
+     * 查询工单步骤批次实例，如脚本分批操作里的ECS实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExecutionInstancesRequest 请求对象
+     * @return CompletableFuture<ListExecutionInstancesResponse>
+     */
+    public CompletableFuture<ListExecutionInstancesResponse> listExecutionInstancesAsync(
+        ListExecutionInstancesRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listExecutionInstances);
+    }
+
+    /**
+     * 查询工单步骤批次实例
+     *
+     * 查询工单步骤批次实例，如脚本分批操作里的ECS实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExecutionInstancesRequest 请求对象
+     * @return AsyncInvoker<ListExecutionInstancesRequest, ListExecutionInstancesResponse>
+     */
+    public AsyncInvoker<ListExecutionInstancesRequest, ListExecutionInstancesResponse> listExecutionInstancesAsyncInvoker(
+        ListExecutionInstancesRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listExecutionInstances, hcClient);
+    }
+
+    /**
+     * 查询工单步骤详情
+     *
+     * 查询工单步骤详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExecutionStepsRequest 请求对象
+     * @return CompletableFuture<ListExecutionStepsResponse>
+     */
+    public CompletableFuture<ListExecutionStepsResponse> listExecutionStepsAsync(ListExecutionStepsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listExecutionSteps);
+    }
+
+    /**
+     * 查询工单步骤详情
+     *
+     * 查询工单步骤详情
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExecutionStepsRequest 请求对象
+     * @return AsyncInvoker<ListExecutionStepsRequest, ListExecutionStepsResponse>
+     */
+    public AsyncInvoker<ListExecutionStepsRequest, ListExecutionStepsResponse> listExecutionStepsAsyncInvoker(
+        ListExecutionStepsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listExecutionSteps, hcClient);
+    }
+
+    /**
+     * 查询作业工单列表
+     *
+     * 查询作业工单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExecutionsRequest 请求对象
+     * @return CompletableFuture<ListExecutionsResponse>
+     */
+    public CompletableFuture<ListExecutionsResponse> listExecutionsAsync(ListExecutionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listExecutions);
+    }
+
+    /**
+     * 查询作业工单列表
+     *
+     * 查询作业工单列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListExecutionsRequest 请求对象
+     * @return AsyncInvoker<ListExecutionsRequest, ListExecutionsResponse>
+     */
+    public AsyncInvoker<ListExecutionsRequest, ListExecutionsResponse> listExecutionsAsyncInvoker(
+        ListExecutionsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listExecutions, hcClient);
+    }
+
+    /**
+     * 操作工单
+     *
+     * 操作工单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request OperateExecutionRequest 请求对象
+     * @return CompletableFuture<OperateExecutionResponse>
+     */
+    public CompletableFuture<OperateExecutionResponse> operateExecutionAsync(OperateExecutionRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.operateExecution);
+    }
+
+    /**
+     * 操作工单
+     *
+     * 操作工单
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request OperateExecutionRequest 请求对象
+     * @return AsyncInvoker<OperateExecutionRequest, OperateExecutionResponse>
+     */
+    public AsyncInvoker<OperateExecutionRequest, OperateExecutionResponse> operateExecutionAsyncInvoker(
+        OperateExecutionRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.operateExecution, hcClient);
     }
 
     /**
@@ -860,6 +1274,65 @@ public class CocAsyncClient {
     public AsyncInvoker<SyncResourceRequest, SyncResourceResponse> syncResourceAsyncInvoker(
         SyncResourceRequest request) {
         return new AsyncInvoker<>(request, CocMeta.syncResource, hcClient);
+    }
+
+    /**
+     * 查询资源标签列表
+     *
+     * 查询资源标签列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScriptResourceTagsRequest 请求对象
+     * @return CompletableFuture<ListScriptResourceTagsResponse>
+     */
+    public CompletableFuture<ListScriptResourceTagsResponse> listScriptResourceTagsAsync(
+        ListScriptResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listScriptResourceTags);
+    }
+
+    /**
+     * 查询资源标签列表
+     *
+     * 查询资源标签列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListScriptResourceTagsRequest 请求对象
+     * @return AsyncInvoker<ListScriptResourceTagsRequest, ListScriptResourceTagsResponse>
+     */
+    public AsyncInvoker<ListScriptResourceTagsRequest, ListScriptResourceTagsResponse> listScriptResourceTagsAsyncInvoker(
+        ListScriptResourceTagsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listScriptResourceTags, hcClient);
+    }
+
+    /**
+     * 更新资源标签
+     *
+     * 更新资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateResourceTagsRequest 请求对象
+     * @return CompletableFuture<UpdateResourceTagsResponse>
+     */
+    public CompletableFuture<UpdateResourceTagsResponse> updateResourceTagsAsync(UpdateResourceTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.updateResourceTags);
+    }
+
+    /**
+     * 更新资源标签
+     *
+     * 更新资源标签
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateResourceTagsRequest 请求对象
+     * @return AsyncInvoker<UpdateResourceTagsRequest, UpdateResourceTagsResponse>
+     */
+    public AsyncInvoker<UpdateResourceTagsRequest, UpdateResourceTagsResponse> updateResourceTagsAsyncInvoker(
+        UpdateResourceTagsRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.updateResourceTags, hcClient);
     }
 
     /**
@@ -1287,6 +1760,68 @@ public class CocAsyncClient {
     }
 
     /**
+     * 审批待审批的脚本
+     *
+     * 功能：审批脚本。
+     * 约束条件：只有创建脚本填写了审批人，脚本为待审批状态才能审批。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AcceptScriptRequest 请求对象
+     * @return CompletableFuture<AcceptScriptResponse>
+     */
+    public CompletableFuture<AcceptScriptResponse> acceptScriptAsync(AcceptScriptRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.acceptScript);
+    }
+
+    /**
+     * 审批待审批的脚本
+     *
+     * 功能：审批脚本。
+     * 约束条件：只有创建脚本填写了审批人，脚本为待审批状态才能审批。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request AcceptScriptRequest 请求对象
+     * @return AsyncInvoker<AcceptScriptRequest, AcceptScriptResponse>
+     */
+    public AsyncInvoker<AcceptScriptRequest, AcceptScriptResponse> acceptScriptAsyncInvoker(
+        AcceptScriptRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.acceptScript, hcClient);
+    }
+
+    /**
+     * 评估脚本风险等级
+     *
+     * 根据作业内容，对作业评估风险，返回相关分析的结果和信息，结果仅供参考。
+     * 高危命令指影响系统或服务的正常运行，或造成系统特殊文件被恶意删除或修改命令。 高危命令检测通过校验规则正则匹配脚本内容中是否包含高危命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckScriptRiskRequest 请求对象
+     * @return CompletableFuture<CheckScriptRiskResponse>
+     */
+    public CompletableFuture<CheckScriptRiskResponse> checkScriptRiskAsync(CheckScriptRiskRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.checkScriptRisk);
+    }
+
+    /**
+     * 评估脚本风险等级
+     *
+     * 根据作业内容，对作业评估风险，返回相关分析的结果和信息，结果仅供参考。
+     * 高危命令指影响系统或服务的正常运行，或造成系统特殊文件被恶意删除或修改命令。 高危命令检测通过校验规则正则匹配脚本内容中是否包含高危命令。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckScriptRiskRequest 请求对象
+     * @return AsyncInvoker<CheckScriptRiskRequest, CheckScriptRiskResponse>
+     */
+    public AsyncInvoker<CheckScriptRiskRequest, CheckScriptRiskResponse> checkScriptRiskAsyncInvoker(
+        CheckScriptRiskRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.checkScriptRisk, hcClient);
+    }
+
+    /**
      * 创建脚本
      *
      * 创建作业脚本：自定义脚本
@@ -1439,6 +1974,53 @@ public class CocAsyncClient {
      */
     public AsyncInvoker<GetScriptRequest, GetScriptResponse> getScriptAsyncInvoker(GetScriptRequest request) {
         return new AsyncInvoker<>(request, CocMeta.getScript, hcClient);
+    }
+
+    /**
+     * 获取自动分批结果
+     *
+     * 根据分批策略获取分批结果，只支持自动分批：
+     * 规则如下：
+     * 1.单个批次的所有实例必须属于同一个区域；
+     *      * 2.单个批次的所有实例必须属于同一个可用区；
+     *      * 3.单个批次的所有实例必须属于同一个应用；
+     *      * 4.单个批次内同一分组下的实例不超过50%（除分组下仅以一个实例的情况外）；
+     *      * 5.前三批每批节点数量不超过10。
+     *      * 6.每批次实例数量不超过10。
+     * 
+     *    总机器数量为200。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesBatchRequest 请求对象
+     * @return CompletableFuture<ListInstancesBatchResponse>
+     */
+    public CompletableFuture<ListInstancesBatchResponse> listInstancesBatchAsync(ListInstancesBatchRequest request) {
+        return hcClient.asyncInvokeHttp(request, CocMeta.listInstancesBatch);
+    }
+
+    /**
+     * 获取自动分批结果
+     *
+     * 根据分批策略获取分批结果，只支持自动分批：
+     * 规则如下：
+     * 1.单个批次的所有实例必须属于同一个区域；
+     *      * 2.单个批次的所有实例必须属于同一个可用区；
+     *      * 3.单个批次的所有实例必须属于同一个应用；
+     *      * 4.单个批次内同一分组下的实例不超过50%（除分组下仅以一个实例的情况外）；
+     *      * 5.前三批每批节点数量不超过10。
+     *      * 6.每批次实例数量不超过10。
+     * 
+     *    总机器数量为200。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstancesBatchRequest 请求对象
+     * @return AsyncInvoker<ListInstancesBatchRequest, ListInstancesBatchResponse>
+     */
+    public AsyncInvoker<ListInstancesBatchRequest, ListInstancesBatchResponse> listInstancesBatchAsyncInvoker(
+        ListInstancesBatchRequest request) {
+        return new AsyncInvoker<>(request, CocMeta.listInstancesBatch, hcClient);
     }
 
     /**

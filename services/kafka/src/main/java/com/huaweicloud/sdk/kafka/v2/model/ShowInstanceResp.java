@@ -59,6 +59,11 @@ public class ShowInstanceResp {
     private Integer usedStorageSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dns_enable")
+
+    private Boolean dnsEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connect_address")
 
     private String connectAddress;
@@ -394,6 +399,11 @@ public class ShowInstanceResp {
     private String publicConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_connect_domain_name")
+
+    private String publicConnectDomainName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "storage_resource_id")
 
     private String storageResourceId;
@@ -499,16 +509,6 @@ public class ShowInstanceResp {
     private Integer publicBandwidth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kafka_manager_enable")
-
-    private Boolean kafkaManagerEnable;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kafka_manager_user")
-
-    private String kafkaManagerUser;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_log_collection")
 
     private Boolean enableLogCollection;
@@ -609,6 +609,11 @@ public class ShowInstanceResp {
     private String kafkaPrivateConnectAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kafka_private_connect_domain_name")
+
+    private String kafkaPrivateConnectDomainName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ces_version")
 
     private String cesVersion;
@@ -622,6 +627,11 @@ public class ShowInstanceResp {
     @JsonProperty(value = "node_num")
 
     private Integer nodeNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port_protocols")
+
+    private PortProtocolsEntity portProtocols;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "enable_acl")
@@ -782,6 +792,23 @@ public class ShowInstanceResp {
 
     public void setUsedStorageSpace(Integer usedStorageSpace) {
         this.usedStorageSpace = usedStorageSpace;
+    }
+
+    public ShowInstanceResp withDnsEnable(Boolean dnsEnable) {
+        this.dnsEnable = dnsEnable;
+        return this;
+    }
+
+    /**
+     * 实例是否开启域名访问功能。 - true：开启 - false：未开启
+     * @return dnsEnable
+     */
+    public Boolean getDnsEnable() {
+        return dnsEnable;
+    }
+
+    public void setDnsEnable(Boolean dnsEnable) {
+        this.dnsEnable = dnsEnable;
     }
 
     public ShowInstanceResp withConnectAddress(String connectAddress) {
@@ -1147,7 +1174,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * 开启SASL后使用的安全协议。 - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。  
+     * Kafka使用的安全协议。 若实例详情中不存在port_protocols返回参数，则kafka_security_protocol同时代表内网访问、公网访问以及跨VPC访问的安全协议。 若实例详情中存在port_protocols返回参数，则kafka_security_protocol仅代表跨VPC访问的安全协议。内网访问公网访问的安全协议请参考port_protocols参数。  - PLAINTEXT: 既未采用SSL证书进行加密传输，也不支持账号密码认证。性能更好，安全性较低，建议在生产环境下公网访问不使用此方式。 - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。
      * @return kafkaSecurityProtocol
      */
     public String getKafkaSecurityProtocol() {
@@ -1496,6 +1523,23 @@ public class ShowInstanceResp {
         this.publicConnectAddress = publicConnectAddress;
     }
 
+    public ShowInstanceResp withPublicConnectDomainName(String publicConnectDomainName) {
+        this.publicConnectDomainName = publicConnectDomainName;
+        return this;
+    }
+
+    /**
+     * 实例公网连接域名。当实例开启了公网访问，实例才包含该参数。
+     * @return publicConnectDomainName
+     */
+    public String getPublicConnectDomainName() {
+        return publicConnectDomainName;
+    }
+
+    public void setPublicConnectDomainName(String publicConnectDomainName) {
+        this.publicConnectDomainName = publicConnectDomainName;
+    }
+
     public ShowInstanceResp withStorageResourceId(String storageResourceId) {
         this.storageResourceId = storageResourceId;
         return this;
@@ -1613,40 +1657,6 @@ public class ShowInstanceResp {
 
     public void setPublicBandwidth(Integer publicBandwidth) {
         this.publicBandwidth = publicBandwidth;
-    }
-
-    public ShowInstanceResp withKafkaManagerEnable(Boolean kafkaManagerEnable) {
-        this.kafkaManagerEnable = kafkaManagerEnable;
-        return this;
-    }
-
-    /**
-     * 是否已开启kafka manager
-     * @return kafkaManagerEnable
-     */
-    public Boolean getKafkaManagerEnable() {
-        return kafkaManagerEnable;
-    }
-
-    public void setKafkaManagerEnable(Boolean kafkaManagerEnable) {
-        this.kafkaManagerEnable = kafkaManagerEnable;
-    }
-
-    public ShowInstanceResp withKafkaManagerUser(String kafkaManagerUser) {
-        this.kafkaManagerUser = kafkaManagerUser;
-        return this;
-    }
-
-    /**
-     * 登录Kafka Manager的用户名。
-     * @return kafkaManagerUser
-     */
-    public String getKafkaManagerUser() {
-        return kafkaManagerUser;
-    }
-
-    public void setKafkaManagerUser(String kafkaManagerUser) {
-        this.kafkaManagerUser = kafkaManagerUser;
     }
 
     public ShowInstanceResp withEnableLogCollection(Boolean enableLogCollection) {
@@ -1994,7 +2004,7 @@ public class ShowInstanceResp {
     }
 
     /**
-     * Kafka实例私有连接地址。
+     * Kafka实例内网连接地址。
      * @return kafkaPrivateConnectAddress
      */
     public String getKafkaPrivateConnectAddress() {
@@ -2003,6 +2013,23 @@ public class ShowInstanceResp {
 
     public void setKafkaPrivateConnectAddress(String kafkaPrivateConnectAddress) {
         this.kafkaPrivateConnectAddress = kafkaPrivateConnectAddress;
+    }
+
+    public ShowInstanceResp withKafkaPrivateConnectDomainName(String kafkaPrivateConnectDomainName) {
+        this.kafkaPrivateConnectDomainName = kafkaPrivateConnectDomainName;
+        return this;
+    }
+
+    /**
+     * Kafka实例内网连接域名。
+     * @return kafkaPrivateConnectDomainName
+     */
+    public String getKafkaPrivateConnectDomainName() {
+        return kafkaPrivateConnectDomainName;
+    }
+
+    public void setKafkaPrivateConnectDomainName(String kafkaPrivateConnectDomainName) {
+        this.kafkaPrivateConnectDomainName = kafkaPrivateConnectDomainName;
     }
 
     public ShowInstanceResp withCesVersion(String cesVersion) {
@@ -2054,6 +2081,32 @@ public class ShowInstanceResp {
 
     public void setNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
+    }
+
+    public ShowInstanceResp withPortProtocols(PortProtocolsEntity portProtocols) {
+        this.portProtocols = portProtocols;
+        return this;
+    }
+
+    public ShowInstanceResp withPortProtocols(Consumer<PortProtocolsEntity> portProtocolsSetter) {
+        if (this.portProtocols == null) {
+            this.portProtocols = new PortProtocolsEntity();
+            portProtocolsSetter.accept(this.portProtocols);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get portProtocols
+     * @return portProtocols
+     */
+    public PortProtocolsEntity getPortProtocols() {
+        return portProtocols;
+    }
+
+    public void setPortProtocols(PortProtocolsEntity portProtocols) {
+        this.portProtocols = portProtocols;
     }
 
     public ShowInstanceResp withEnableAcl(Boolean enableAcl) {
@@ -2173,6 +2226,7 @@ public class ShowInstanceResp {
             && Objects.equals(this.storageSpace, that.storageSpace)
             && Objects.equals(this.partitionNum, that.partitionNum)
             && Objects.equals(this.usedStorageSpace, that.usedStorageSpace)
+            && Objects.equals(this.dnsEnable, that.dnsEnable)
             && Objects.equals(this.connectAddress, that.connectAddress) && Objects.equals(this.port, that.port)
             && Objects.equals(this.status, that.status) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
@@ -2203,14 +2257,13 @@ public class ShowInstanceResp {
             && Objects.equals(this.availableZoneNames, that.availableZoneNames)
             && Objects.equals(this.totalStorageSpace, that.totalStorageSpace)
             && Objects.equals(this.publicConnectAddress, that.publicConnectAddress)
+            && Objects.equals(this.publicConnectDomainName, that.publicConnectDomainName)
             && Objects.equals(this.storageResourceId, that.storageResourceId)
             && Objects.equals(this.storageSpecCode, that.storageSpecCode)
             && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.storageType, that.storageType)
             && Objects.equals(this.retentionPolicy, that.retentionPolicy)
             && Objects.equals(this.kafkaPublicStatus, that.kafkaPublicStatus)
             && Objects.equals(this.publicBandwidth, that.publicBandwidth)
-            && Objects.equals(this.kafkaManagerEnable, that.kafkaManagerEnable)
-            && Objects.equals(this.kafkaManagerUser, that.kafkaManagerUser)
             && Objects.equals(this.enableLogCollection, that.enableLogCollection)
             && Objects.equals(this.newAuthCert, that.newAuthCert)
             && Objects.equals(this.crossVpcInfo, that.crossVpcInfo) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
@@ -2228,9 +2281,11 @@ public class ShowInstanceResp {
             && Objects.equals(this.diskEncrypted, that.diskEncrypted)
             && Objects.equals(this.diskEncryptedKey, that.diskEncryptedKey)
             && Objects.equals(this.kafkaPrivateConnectAddress, that.kafkaPrivateConnectAddress)
+            && Objects.equals(this.kafkaPrivateConnectDomainName, that.kafkaPrivateConnectDomainName)
             && Objects.equals(this.cesVersion, that.cesVersion)
             && Objects.equals(this.publicAccessEnabled, that.publicAccessEnabled)
-            && Objects.equals(this.nodeNum, that.nodeNum) && Objects.equals(this.enableAcl, that.enableAcl)
+            && Objects.equals(this.nodeNum, that.nodeNum) && Objects.equals(this.portProtocols, that.portProtocols)
+            && Objects.equals(this.enableAcl, that.enableAcl)
             && Objects.equals(this.newSpecBillingEnable, that.newSpecBillingEnable)
             && Objects.equals(this.brokerNum, that.brokerNum) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.drEnable, that.drEnable);
@@ -2246,6 +2301,7 @@ public class ShowInstanceResp {
             storageSpace,
             partitionNum,
             usedStorageSpace,
+            dnsEnable,
             connectAddress,
             port,
             status,
@@ -2285,6 +2341,7 @@ public class ShowInstanceResp {
             availableZoneNames,
             totalStorageSpace,
             publicConnectAddress,
+            publicConnectDomainName,
             storageResourceId,
             storageSpecCode,
             serviceType,
@@ -2292,8 +2349,6 @@ public class ShowInstanceResp {
             retentionPolicy,
             kafkaPublicStatus,
             publicBandwidth,
-            kafkaManagerEnable,
-            kafkaManagerUser,
             enableLogCollection,
             newAuthCert,
             crossVpcInfo,
@@ -2314,9 +2369,11 @@ public class ShowInstanceResp {
             diskEncrypted,
             diskEncryptedKey,
             kafkaPrivateConnectAddress,
+            kafkaPrivateConnectDomainName,
             cesVersion,
             publicAccessEnabled,
             nodeNum,
+            portProtocols,
             enableAcl,
             newSpecBillingEnable,
             brokerNum,
@@ -2336,6 +2393,7 @@ public class ShowInstanceResp {
         sb.append("    storageSpace: ").append(toIndentedString(storageSpace)).append("\n");
         sb.append("    partitionNum: ").append(toIndentedString(partitionNum)).append("\n");
         sb.append("    usedStorageSpace: ").append(toIndentedString(usedStorageSpace)).append("\n");
+        sb.append("    dnsEnable: ").append(toIndentedString(dnsEnable)).append("\n");
         sb.append("    connectAddress: ").append(toIndentedString(connectAddress)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -2377,6 +2435,7 @@ public class ShowInstanceResp {
         sb.append("    availableZoneNames: ").append(toIndentedString(availableZoneNames)).append("\n");
         sb.append("    totalStorageSpace: ").append(toIndentedString(totalStorageSpace)).append("\n");
         sb.append("    publicConnectAddress: ").append(toIndentedString(publicConnectAddress)).append("\n");
+        sb.append("    publicConnectDomainName: ").append(toIndentedString(publicConnectDomainName)).append("\n");
         sb.append("    storageResourceId: ").append(toIndentedString(storageResourceId)).append("\n");
         sb.append("    storageSpecCode: ").append(toIndentedString(storageSpecCode)).append("\n");
         sb.append("    serviceType: ").append(toIndentedString(serviceType)).append("\n");
@@ -2384,8 +2443,6 @@ public class ShowInstanceResp {
         sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
         sb.append("    kafkaPublicStatus: ").append(toIndentedString(kafkaPublicStatus)).append("\n");
         sb.append("    publicBandwidth: ").append(toIndentedString(publicBandwidth)).append("\n");
-        sb.append("    kafkaManagerEnable: ").append(toIndentedString(kafkaManagerEnable)).append("\n");
-        sb.append("    kafkaManagerUser: ").append(toIndentedString(kafkaManagerUser)).append("\n");
         sb.append("    enableLogCollection: ").append(toIndentedString(enableLogCollection)).append("\n");
         sb.append("    newAuthCert: ").append(toIndentedString(newAuthCert)).append("\n");
         sb.append("    crossVpcInfo: ").append(toIndentedString(crossVpcInfo)).append("\n");
@@ -2406,9 +2463,13 @@ public class ShowInstanceResp {
         sb.append("    diskEncrypted: ").append(toIndentedString(diskEncrypted)).append("\n");
         sb.append("    diskEncryptedKey: ").append(toIndentedString(diskEncryptedKey)).append("\n");
         sb.append("    kafkaPrivateConnectAddress: ").append(toIndentedString(kafkaPrivateConnectAddress)).append("\n");
+        sb.append("    kafkaPrivateConnectDomainName: ")
+            .append(toIndentedString(kafkaPrivateConnectDomainName))
+            .append("\n");
         sb.append("    cesVersion: ").append(toIndentedString(cesVersion)).append("\n");
         sb.append("    publicAccessEnabled: ").append(toIndentedString(publicAccessEnabled)).append("\n");
         sb.append("    nodeNum: ").append(toIndentedString(nodeNum)).append("\n");
+        sb.append("    portProtocols: ").append(toIndentedString(portProtocols)).append("\n");
         sb.append("    enableAcl: ").append(toIndentedString(enableAcl)).append("\n");
         sb.append("    newSpecBillingEnable: ").append(toIndentedString(newSpecBillingEnable)).append("\n");
         sb.append("    brokerNum: ").append(toIndentedString(brokerNum)).append("\n");

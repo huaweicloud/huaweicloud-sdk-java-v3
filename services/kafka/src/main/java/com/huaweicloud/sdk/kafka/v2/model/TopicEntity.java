@@ -79,7 +79,7 @@ public class TopicEntity {
     }
 
     /**
-     * 是否为默认策略。
+     * **参数解释**： 是否为默认策略。 **取值范围**： - true：默认策略。 - fasle：不是默认策略。
      * @return policiesOnly
      */
     public Boolean getPoliciesOnly() {
@@ -96,7 +96,7 @@ public class TopicEntity {
     }
 
     /**
-     * topic名称。
+     * **参数解释**： topic名称。 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {
@@ -113,7 +113,7 @@ public class TopicEntity {
     }
 
     /**
-     * 副本数，配置数据的可靠性。
+     * **参数解释**： 副本数，配置数据的可靠性。 **取值范围**： 不涉及
      * @return replication
      */
     public Integer getReplication() {
@@ -130,7 +130,7 @@ public class TopicEntity {
     }
 
     /**
-     * topic分区数，设置消费的并发数。
+     * **参数解释**： topic分区数，设置消费的并发数。 **取值范围**： 不涉及
      * @return partition
      */
     public Integer getPartition() {
@@ -147,7 +147,7 @@ public class TopicEntity {
     }
 
     /**
-     * 消息老化时间。
+     * **参数解释**： 消息老化时间。 **取值范围**： 0-720
      * @return retentionTime
      */
     public Integer getRetentionTime() {
@@ -164,7 +164,7 @@ public class TopicEntity {
     }
 
     /**
-     * 是否开启同步复制，开启后，客户端生产消息时相应的也要设置acks=-1，否则不生效，默认关闭。
+     * **参数解释**： 是否开启同步复制，默认关闭。 **取值范围**： - true：开启，客户端生产消息时相应的也要设置acks=-1，否则不生效。 - false：关闭。
      * @return syncReplication
      */
     public Boolean getSyncReplication() {
@@ -181,7 +181,7 @@ public class TopicEntity {
     }
 
     /**
-     * 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。
+     * **参数解释**： 是否使用同步落盘。默认值为false。同步落盘会导致性能降低。 **取值范围**： - true：同步落盘。 - false：不同步落盘。
      * @return syncMessageFlush
      */
     public Boolean getSyncMessageFlush() {
@@ -198,7 +198,7 @@ public class TopicEntity {
     }
 
     /**
-     * 扩展配置。
+     * **参数解释**： 扩展配置。
      * @return externalConfigs
      */
     public Object getExternalConfigs() {
@@ -215,7 +215,7 @@ public class TopicEntity {
     }
 
     /**
-     * topic类型(0:普通Topic 1:系统(内部)Topic)。
+     * **参数解释**： topic类型。 **取值范围**： - 0：普通Topic。 - 1：系统(内部)Topic。
      * @return topicType
      */
     public Integer getTopicType() {
@@ -248,7 +248,7 @@ public class TopicEntity {
     }
 
     /**
-     * topic其他配置
+     * **参数解释**： topic其他配置。
      * @return topicOtherConfigs
      */
     public List<TopicEntityTopicOtherConfigs> getTopicOtherConfigs() {
@@ -265,7 +265,7 @@ public class TopicEntity {
     }
 
     /**
-     * topic描述
+     * **参数解释**： topic描述。 **取值范围**： 不涉及
      * @return topicDesc
      */
     public String getTopicDesc() {
@@ -282,7 +282,7 @@ public class TopicEntity {
     }
 
     /**
-     * topic创建时间
+     * **参数解释**： topic创建时间。 **取值范围**： 不涉及
      * @return createdAt
      */
     public Long getCreatedAt() {

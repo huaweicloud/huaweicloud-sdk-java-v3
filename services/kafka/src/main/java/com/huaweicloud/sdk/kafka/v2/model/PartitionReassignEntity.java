@@ -72,7 +72,7 @@ public class PartitionReassignEntity {
     }
 
     /**
-     * 分区重平衡到的broker列表，自动生成分配方案时需指定该参数。
+     * 分区平衡到的broker列表，自动生成分配方案时需指定该参数。
      * @return brokers
      */
     public List<Integer> getBrokers() {

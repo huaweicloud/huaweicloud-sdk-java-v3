@@ -41,7 +41,7 @@ public class ShowInstanceTopicDetailRespReplicas {
     }
 
     /**
-     * 副本所在的节点ID。
+     * **参数解释**： 副本所在的节点ID。 **取值范围**： 不涉及
      * @return broker
      */
     public Integer getBroker() {
@@ -58,7 +58,7 @@ public class ShowInstanceTopicDetailRespReplicas {
     }
 
     /**
-     * 该副本是否为leader。
+     * **参数解释**： 该副本是否为leader。 **取值范围**： - true：该副本是leader。 - false：该副本不是leader。
      * @return leader
      */
     public Boolean getLeader() {
@@ -75,7 +75,7 @@ public class ShowInstanceTopicDetailRespReplicas {
     }
 
     /**
-     * 该副本是否在ISR副本中。
+     * **参数解释**： 该副本是否在ISR副本中。 **取值范围**： - true：在ISR副本中。 - false：不在ISR副本中。
      * @return inSync
      */
     public Boolean getInSync() {
@@ -92,7 +92,7 @@ public class ShowInstanceTopicDetailRespReplicas {
     }
 
     /**
-     * 该副本当前日志大小。单位：Byte。
+     * **参数解释**： 该副本当前日志大小。单位：Byte。 **取值范围**： 不涉及
      * @return size
      */
     public Integer getSize() {
@@ -109,7 +109,7 @@ public class ShowInstanceTopicDetailRespReplicas {
     }
 
     /**
-     * 该副本当前落后hw的消息数。
+     * **参数解释**： 该副本当前落后hw的消息数。 **取值范围**： 不涉及
      * @return lag
      */
     public Long getLag() {

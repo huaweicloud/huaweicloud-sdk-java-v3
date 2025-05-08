@@ -17,19 +17,19 @@ public class ListInstancesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instances")
 
-    private List<ShowInstanceResp> instances = null;
+    private List<InstanceDetail> instances = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "instance_num")
 
     private Integer instanceNum;
 
-    public ListInstancesResponse withInstances(List<ShowInstanceResp> instances) {
+    public ListInstancesResponse withInstances(List<InstanceDetail> instances) {
         this.instances = instances;
         return this;
     }
 
-    public ListInstancesResponse addInstancesItem(ShowInstanceResp instancesItem) {
+    public ListInstancesResponse addInstancesItem(InstanceDetail instancesItem) {
         if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
@@ -37,7 +37,7 @@ public class ListInstancesResponse extends SdkResponse {
         return this;
     }
 
-    public ListInstancesResponse withInstances(Consumer<List<ShowInstanceResp>> instancesSetter) {
+    public ListInstancesResponse withInstances(Consumer<List<InstanceDetail>> instancesSetter) {
         if (this.instances == null) {
             this.instances = new ArrayList<>();
         }
@@ -46,14 +46,14 @@ public class ListInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 实例列表。
+     * **参数解释**： 实例列表。 **取值范围**： 不涉及。
      * @return instances
      */
-    public List<ShowInstanceResp> getInstances() {
+    public List<InstanceDetail> getInstances() {
         return instances;
     }
 
-    public void setInstances(List<ShowInstanceResp> instances) {
+    public void setInstances(List<InstanceDetail> instances) {
         this.instances = instances;
     }
 
@@ -63,7 +63,7 @@ public class ListInstancesResponse extends SdkResponse {
     }
 
     /**
-     * 实例数量。
+     * **参数解释**： 实例数量。 **取值范围**： 不涉及。
      * @return instanceNum
      */
     public Integer getInstanceNum() {

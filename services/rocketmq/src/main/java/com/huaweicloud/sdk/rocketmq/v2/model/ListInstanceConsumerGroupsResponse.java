@@ -51,7 +51,7 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 消费组总数。
+     * **参数解释**： 消费组总数。 **取值范围**： 不涉及。
      * @return total
      */
     public BigDecimal getTotal() {
@@ -84,7 +84,7 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 消费组列表。
+     * **参数解释**： 消费组列表。
      * @return groups
      */
     public List<ConsumerGroup> getGroups() {
@@ -101,7 +101,7 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 最大可创建消费组数量。
+     * **参数解释**： 最大可创建消费组数量。 **取值范围**： 不涉及。
      * @return max
      */
     public Integer getMax() {
@@ -118,7 +118,7 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 剩余可创建消费组数量。
+     * **参数解释**： 剩余可创建消费组数量。 **取值范围**： 不涉及。
      * @return remaining
      */
     public Integer getRemaining() {
@@ -135,7 +135,7 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 下个分页的offset。
+     * **参数解释**： 下个分页的offset。 **取值范围**： 不涉及。
      * @return nextOffset
      */
     public Integer getNextOffset() {
@@ -152,7 +152,7 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
     }
 
     /**
-     * 上个分页的offset。
+     * **参数解释**： 上个分页的offset。 **取值范围**： 不涉及。
      * @return previousOffset
      */
     public Integer getPreviousOffset() {

@@ -94,6 +94,16 @@ public class ShowEngineInstanceExtendProductInfoRequest {
 
     private TypeEnum type;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "offset")
+
+    private Integer offset;
+
     public ShowEngineInstanceExtendProductInfoRequest withEngine(String engine) {
         this.engine = engine;
         return this;
@@ -145,6 +155,40 @@ public class ShowEngineInstanceExtendProductInfoRequest {
         this.type = type;
     }
 
+    public ShowEngineInstanceExtendProductInfoRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 查询数量。
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ShowEngineInstanceExtendProductInfoRequest withOffset(Integer offset) {
+        this.offset = offset;
+        return this;
+    }
+
+    /**
+     * 偏移量，表示从此偏移量开始查询，offset大于等于0。
+     * @return offset
+     */
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -155,12 +199,13 @@ public class ShowEngineInstanceExtendProductInfoRequest {
         }
         ShowEngineInstanceExtendProductInfoRequest that = (ShowEngineInstanceExtendProductInfoRequest) obj;
         return Objects.equals(this.engine, that.engine) && Objects.equals(this.instanceId, that.instanceId)
-            && Objects.equals(this.type, that.type);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engine, instanceId, type);
+        return Objects.hash(engine, instanceId, type, limit, offset);
     }
 
     @Override
@@ -170,6 +215,8 @@ public class ShowEngineInstanceExtendProductInfoRequest {
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

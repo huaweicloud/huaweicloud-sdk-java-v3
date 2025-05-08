@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.huaweicloud.sdk.core.SdkResponse;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -13,6 +14,21 @@ import java.util.function.Consumer;
  * Response Object
  */
 public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "total")
+
+    private BigDecimal total;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "next_offset")
+
+    private Integer nextOffset;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "previous_offset")
+
+    private Integer previousOffset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "engine")
@@ -28,6 +44,57 @@ public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
     @JsonProperty(value = "products")
 
     private List<RocketMQExtendProductInfoEntity> products = null;
+
+    public ShowEngineInstanceExtendProductInfoResponse withTotal(BigDecimal total) {
+        this.total = total;
+        return this;
+    }
+
+    /**
+     * 总数。
+     * @return total
+     */
+    public BigDecimal getTotal() {
+        return total;
+    }
+
+    public void setTotal(BigDecimal total) {
+        this.total = total;
+    }
+
+    public ShowEngineInstanceExtendProductInfoResponse withNextOffset(Integer nextOffset) {
+        this.nextOffset = nextOffset;
+        return this;
+    }
+
+    /**
+     * 下个分页的offset。
+     * @return nextOffset
+     */
+    public Integer getNextOffset() {
+        return nextOffset;
+    }
+
+    public void setNextOffset(Integer nextOffset) {
+        this.nextOffset = nextOffset;
+    }
+
+    public ShowEngineInstanceExtendProductInfoResponse withPreviousOffset(Integer previousOffset) {
+        this.previousOffset = previousOffset;
+        return this;
+    }
+
+    /**
+     * 上个分页的offset。
+     * @return previousOffset
+     */
+    public Integer getPreviousOffset() {
+        return previousOffset;
+    }
+
+    public void setPreviousOffset(Integer previousOffset) {
+        this.previousOffset = previousOffset;
+    }
 
     public ShowEngineInstanceExtendProductInfoResponse withEngine(String engine) {
         this.engine = engine;
@@ -122,19 +189,23 @@ public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
             return false;
         }
         ShowEngineInstanceExtendProductInfoResponse that = (ShowEngineInstanceExtendProductInfoResponse) obj;
-        return Objects.equals(this.engine, that.engine) && Objects.equals(this.versions, that.versions)
-            && Objects.equals(this.products, that.products);
+        return Objects.equals(this.total, that.total) && Objects.equals(this.nextOffset, that.nextOffset)
+            && Objects.equals(this.previousOffset, that.previousOffset) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.versions, that.versions) && Objects.equals(this.products, that.products);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engine, versions, products);
+        return Objects.hash(total, nextOffset, previousOffset, engine, versions, products);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowEngineInstanceExtendProductInfoResponse {\n");
+        sb.append("    total: ").append(toIndentedString(total)).append("\n");
+        sb.append("    nextOffset: ").append(toIndentedString(nextOffset)).append("\n");
+        sb.append("    previousOffset: ").append(toIndentedString(previousOffset)).append("\n");
         sb.append("    engine: ").append(toIndentedString(engine)).append("\n");
         sb.append("    versions: ").append(toIndentedString(versions)).append("\n");
         sb.append("    products: ").append(toIndentedString(products)).append("\n");

@@ -21,7 +21,7 @@ public class UserTopicPerms {
     private String name;
 
     /**
-     * 权限。
+     * **参数解释**： Topic权限。 **约束限制**： 不涉及。 **取值范围**： - pub：拥有发布权限。 - sub：拥有订阅权限。 - PUB|sub：拥有发布订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
      */
     public static final class PermEnum {
 
@@ -113,7 +113,7 @@ public class UserTopicPerms {
     }
 
     /**
-     * 主题名称。
+     * **参数解释**： 主题名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -130,7 +130,7 @@ public class UserTopicPerms {
     }
 
     /**
-     * 权限。
+     * **参数解释**： Topic权限。 **约束限制**： 不涉及。 **取值范围**： - pub：拥有发布权限。 - sub：拥有订阅权限。 - PUB|sub：拥有发布订阅权限。 - DENY：无权限。  **默认取值**： 不涉及。
      * @return perm
      */
     public PermEnum getPerm() {

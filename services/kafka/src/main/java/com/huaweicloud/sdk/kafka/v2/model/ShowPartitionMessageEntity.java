@@ -51,7 +51,7 @@ public class ShowPartitionMessageEntity {
     }
 
     /**
-     * 消息的key。
+     * **参数解释**： 消息的key。 **取值范围**： 不涉及
      * @return key
      */
     public String getKey() {
@@ -68,7 +68,7 @@ public class ShowPartitionMessageEntity {
     }
 
     /**
-     * 消息内容。
+     * **参数解释**： 消息内容。 **取值范围**： 不涉及
      * @return value
      */
     public String getValue() {
@@ -85,7 +85,7 @@ public class ShowPartitionMessageEntity {
     }
 
     /**
-     * Topic名称。
+     * **参数解释**： Topic名称。 **取值范围**： 不涉及
      * @return topic
      */
     public String getTopic() {
@@ -102,7 +102,7 @@ public class ShowPartitionMessageEntity {
     }
 
     /**
-     * 分区编号。
+     * **参数解释**： 分区编号。 **取值范围**： 不涉及
      * @return partition
      */
     public Integer getPartition() {
@@ -119,7 +119,7 @@ public class ShowPartitionMessageEntity {
     }
 
     /**
-     * 消息位置。
+     * **参数解释**： 消息位置。 **取值范围**： 不涉及
      * @return messageOffset
      */
     public Long getMessageOffset() {
@@ -136,7 +136,7 @@ public class ShowPartitionMessageEntity {
     }
 
     /**
-     * 消息大小，单位字节。
+     * **参数解释**： 消息大小，单位字节。 **取值范围**： 不涉及
      * @return size
      */
     public Integer getSize() {
@@ -153,7 +153,7 @@ public class ShowPartitionMessageEntity {
     }
 
     /**
-     * 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
+     * **参数解释**： 生产消息的时间。 格式为Unix时间戳。单位为毫秒。 **取值范围**： 不涉及
      * @return timestamp
      */
     public Long getTimestamp() {

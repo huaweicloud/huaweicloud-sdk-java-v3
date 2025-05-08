@@ -36,7 +36,7 @@ public class ListTopicProducersRequest {
     }
 
     /**
-     * 实例id
+     * **参数解释**： 实例ID。获取方法如下：登录Kafka控制台，在Kafka实例详情页面查找实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -53,7 +53,7 @@ public class ListTopicProducersRequest {
     }
 
     /**
-     * 主题
+     * **参数解释**： 主题。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return topic
      */
     public String getTopic() {
@@ -70,7 +70,7 @@ public class ListTopicProducersRequest {
     }
 
     /**
-     * 偏移量，表示查询该偏移量后面的记录
+     * **参数解释**： 偏移量，表示查询该偏移量后面的记录。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 不涉及。
      * minimum: 0
      * maximum: 10000
      * @return offset
@@ -89,7 +89,7 @@ public class ListTopicProducersRequest {
     }
 
     /**
-     * 查询返回记录的数量限制
+     * **参数解释**： 查询返回记录的数量限制。 **约束限制**： 不涉及。 **取值范围**： 1~50。 **默认取值**： 不涉及。
      * minimum: 1
      * maximum: 50
      * @return limit

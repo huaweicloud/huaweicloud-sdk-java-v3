@@ -148,16 +148,6 @@ public class CreateInstanceByEngineReq {
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kafka_manager_user")
-
-    private String kafkaManagerUser;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "kafka_manager_password")
-
-    private String kafkaManagerPassword;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "maintain_begin")
 
     private String maintainBegin;
@@ -171,6 +161,11 @@ public class CreateInstanceByEngineReq {
     @JsonProperty(value = "enable_publicip")
 
     private Boolean enablePublicip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tenant_ips")
+
+    private List<String> tenantIps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "publicip_id")
@@ -261,6 +256,11 @@ public class CreateInstanceByEngineReq {
     @JsonProperty(value = "sasl_enabled_mechanisms")
 
     private List<SaslEnabledMechanismsEnum> saslEnabledMechanisms = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port_protocol")
+
+    private PortProtocol portProtocol;
 
     /**
      * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
@@ -521,7 +521,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 消息引擎的版本。取值填写为：   [- 1.1.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt)   - 2.7   - 3.x
+     * 消息引擎的版本。取值填写为：   [- 1.1.0](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt,sbc)   [- 2.3.0](tag:g42,tm,hk_g42,ctc,hk_tm,dt,sbc)   - 2.7   [- 3.x](tag:hws,hws_hk,dt,sbc,hcs,fcs,ctc,tm,hk_tm,hws_eu)
      * @return engineVersion
      */
     public String getEngineVersion() {
@@ -555,7 +555,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 消息存储空间，单位GB。   [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 1500000GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 1500000GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 1500000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)      [- Kafka实例规格为kafka.4u16g.cluster时，存储空间取值范围300GB~600000GB。   - Kafka实例规格为kafka.8u32g.cluster时，存储空间取值范围300GB~1500000GB。   - Kafka实例规格为kafka.16u64g.cluster时，存储空间取值范围300GB~1500000GB。   - Kafka实例规格为kafka.32u128g.cluster时，存储空间取值范围300GB~1500000GB。](tag:hcs,fcs)
+     * 消息存储空间，单位GB。   [- Kafka实例规格为c6.2u4g.cluster时，存储空间取值范围300GB ~ 300000GB。   - Kafka实例规格为c6.4u8g.cluster时，存储空间取值范围300GB ~ 600000GB。   - Kafka实例规格为c6.8u16g.cluster时，存储空间取值范围300GB ~ 1500000GB。   - Kafka实例规格为c6.12u24g.cluster时，存储空间取值范围300GB ~ 1500000GB。   - Kafka实例规格为c6.16u32g.cluster时，存储空间取值范围300GB ~ 1500000GB。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)      [- Kafka实例规格为kafka.2u8g.cluster时，存储空间取值范围300GB~300000GB。](tag:fcs)   [- Kafka实例规格为kafka.4u16g.cluster时，存储空间取值范围300GB~600000GB。   - Kafka实例规格为kafka.8u32g.cluster时，存储空间取值范围300GB~1500000GB。   - Kafka实例规格为kafka.16u64g.cluster时，存储空间取值范围300GB~1500000GB。   - Kafka实例规格为kafka.32u128g.cluster时，存储空间取值范围300GB~1500000GB。](tag:hcs,fcs)
      * @return storageSpace
      */
     public Integer getStorageSpace() {
@@ -690,7 +690,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 产品ID。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ctc,cmcc,hws_eu,g42,hk_g42,tm,hk_tm,ocb,hws_ocb,dt) [产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:hk_sbc,sbc)
+     * 产品ID。  [产品ID可以从[查询产品规格列表](ListEngineProducts.xml)获取。](tag:hws,hws_hk,ocb,hws_ocb,dt,ctc,sbc,fcs,hcs,g42,hk_g42,tm,hk_tm,hws_eu)[产品ID可以从[查询产品规格列表](ListProducts.xml)获取。](tag:cmcc)
      * @return productId
      */
     public String getProductId() {
@@ -699,40 +699,6 @@ public class CreateInstanceByEngineReq {
 
     public void setProductId(String productId) {
         this.productId = productId;
-    }
-
-    public CreateInstanceByEngineReq withKafkaManagerUser(String kafkaManagerUser) {
-        this.kafkaManagerUser = kafkaManagerUser;
-        return this;
-    }
-
-    /**
-     * 表示登录Kafka Manager的用户名。只能由英文字母、数字、中划线、下划线组成，长度为4~64的字符。
-     * @return kafkaManagerUser
-     */
-    public String getKafkaManagerUser() {
-        return kafkaManagerUser;
-    }
-
-    public void setKafkaManagerUser(String kafkaManagerUser) {
-        this.kafkaManagerUser = kafkaManagerUser;
-    }
-
-    public CreateInstanceByEngineReq withKafkaManagerPassword(String kafkaManagerPassword) {
-        this.kafkaManagerPassword = kafkaManagerPassword;
-        return this;
-    }
-
-    /**
-     * 表示登录Kafka Manager的密码。  复杂度要求：   - 输入长度为8到32位的字符串。   - 必须包含如下四种字符中的三种组合：       - 小写字母       - 大写字母       - 数字       - 特殊字符包括（`~!@#$%^&*()-_=+\\|[{}]:'\",<.>/?）和空格，并且不能以-开头
-     * @return kafkaManagerPassword
-     */
-    public String getKafkaManagerPassword() {
-        return kafkaManagerPassword;
-    }
-
-    public void setKafkaManagerPassword(String kafkaManagerPassword) {
-        this.kafkaManagerPassword = kafkaManagerPassword;
     }
 
     public CreateInstanceByEngineReq withMaintainBegin(String maintainBegin) {
@@ -786,6 +752,39 @@ public class CreateInstanceByEngineReq {
         this.enablePublicip = enablePublicip;
     }
 
+    public CreateInstanceByEngineReq withTenantIps(List<String> tenantIps) {
+        this.tenantIps = tenantIps;
+        return this;
+    }
+
+    public CreateInstanceByEngineReq addTenantIpsItem(String tenantIpsItem) {
+        if (this.tenantIps == null) {
+            this.tenantIps = new ArrayList<>();
+        }
+        this.tenantIps.add(tenantIpsItem);
+        return this;
+    }
+
+    public CreateInstanceByEngineReq withTenantIps(Consumer<List<String>> tenantIpsSetter) {
+        if (this.tenantIps == null) {
+            this.tenantIps = new ArrayList<>();
+        }
+        tenantIpsSetter.accept(this.tenantIps);
+        return this;
+    }
+
+    /**
+     * 创建实例时可以手动指定实例节点的内网IP地址，仅支持指定IPv4地址。  指定内网IP地址数量必须小于等于创建的节点数量。  如果指定的内网IP地址数量小于创建的节点数量时，系统会自动为剩余的节点随机分配内网IP地址。
+     * @return tenantIps
+     */
+    public List<String> getTenantIps() {
+        return tenantIps;
+    }
+
+    public void setTenantIps(List<String> tenantIps) {
+        this.tenantIps = tenantIps;
+    }
+
     public CreateInstanceByEngineReq withPublicipId(String publicipId) {
         this.publicipId = publicipId;
         return this;
@@ -809,7 +808,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 是否打开SSL加密访问。  实例创建后将不支持动态开启和关闭。  - true：打开SSL加密访问。 - false：不打开SSL加密访问。
+     * 是否开启SASL加密访问。  [实例创建后将不支持动态开启和关闭。](tag:ocb,hws_ocb,hcs)  - true：开启SASL加密访问。 - false：关闭SASL加密访问。
      * @return sslEnable
      */
     public Boolean getSslEnable() {
@@ -826,7 +825,7 @@ public class CreateInstanceByEngineReq {
     }
 
     /**
-     * 开启SASL后使用的安全协议，如果开启了SASL认证功能（即ssl_enable=true），该字段为必选。  若该字段值为空，默认开启SASL_SSL认证机制。  实例创建后将不支持动态开启和关闭。  - SASL_SSL: 采用SSL证书进行加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 明文传输，支持账号密码认证，性能更好，建议使用SCRAM-SHA-512机制。  
+     * 开启SASL后使用的安全协议。 - SASL_SSL: 使用SSL证书加密传输，支持账号密码认证，安全性更高。 - SASL_PLAINTEXT: 通过明文传输，支持账号密码认证，性能更好。  若该字段值为空，默认开启SASL_SSL认证机制。实例创建后，此参数不支持动态修改。 若创建实例时，使用了port_protocol参数，则Kafka的内网访问安全协议以及公网访问安全协议会使用port_protocol中的值，则此参数无效。
      * @return kafkaSecurityProtocol
      */
     public String getKafkaSecurityProtocol() {
@@ -869,6 +868,32 @@ public class CreateInstanceByEngineReq {
 
     public void setSaslEnabledMechanisms(List<SaslEnabledMechanismsEnum> saslEnabledMechanisms) {
         this.saslEnabledMechanisms = saslEnabledMechanisms;
+    }
+
+    public CreateInstanceByEngineReq withPortProtocol(PortProtocol portProtocol) {
+        this.portProtocol = portProtocol;
+        return this;
+    }
+
+    public CreateInstanceByEngineReq withPortProtocol(Consumer<PortProtocol> portProtocolSetter) {
+        if (this.portProtocol == null) {
+            this.portProtocol = new PortProtocol();
+            portProtocolSetter.accept(this.portProtocol);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get portProtocol
+     * @return portProtocol
+     */
+    public PortProtocol getPortProtocol() {
+        return portProtocol;
+    }
+
+    public void setPortProtocol(PortProtocol portProtocol) {
+        this.portProtocol = portProtocol;
     }
 
     public CreateInstanceByEngineReq withRetentionPolicy(RetentionPolicyEnum retentionPolicy) {
@@ -1115,15 +1140,14 @@ public class CreateInstanceByEngineReq {
             && Objects.equals(this.accessUser, that.accessUser) && Objects.equals(this.password, that.password)
             && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.securityGroupId, that.securityGroupId)
             && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.availableZones, that.availableZones)
-            && Objects.equals(this.productId, that.productId)
-            && Objects.equals(this.kafkaManagerUser, that.kafkaManagerUser)
-            && Objects.equals(this.kafkaManagerPassword, that.kafkaManagerPassword)
-            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.maintainBegin, that.maintainBegin)
             && Objects.equals(this.maintainEnd, that.maintainEnd)
             && Objects.equals(this.enablePublicip, that.enablePublicip)
-            && Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.sslEnable, that.sslEnable)
+            && Objects.equals(this.tenantIps, that.tenantIps) && Objects.equals(this.publicipId, that.publicipId)
+            && Objects.equals(this.sslEnable, that.sslEnable)
             && Objects.equals(this.kafkaSecurityProtocol, that.kafkaSecurityProtocol)
             && Objects.equals(this.saslEnabledMechanisms, that.saslEnabledMechanisms)
+            && Objects.equals(this.portProtocol, that.portProtocol)
             && Objects.equals(this.retentionPolicy, that.retentionPolicy)
             && Objects.equals(this.ipv6Enable, that.ipv6Enable)
             && Objects.equals(this.diskEncryptedEnable, that.diskEncryptedEnable)
@@ -1151,15 +1175,15 @@ public class CreateInstanceByEngineReq {
             subnetId,
             availableZones,
             productId,
-            kafkaManagerUser,
-            kafkaManagerPassword,
             maintainBegin,
             maintainEnd,
             enablePublicip,
+            tenantIps,
             publicipId,
             sslEnable,
             kafkaSecurityProtocol,
             saslEnabledMechanisms,
+            portProtocol,
             retentionPolicy,
             ipv6Enable,
             diskEncryptedEnable,
@@ -1191,15 +1215,15 @@ public class CreateInstanceByEngineReq {
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    availableZones: ").append(toIndentedString(availableZones)).append("\n");
         sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-        sb.append("    kafkaManagerUser: ").append(toIndentedString(kafkaManagerUser)).append("\n");
-        sb.append("    kafkaManagerPassword: ").append(toIndentedString(kafkaManagerPassword)).append("\n");
         sb.append("    maintainBegin: ").append(toIndentedString(maintainBegin)).append("\n");
         sb.append("    maintainEnd: ").append(toIndentedString(maintainEnd)).append("\n");
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
+        sb.append("    tenantIps: ").append(toIndentedString(tenantIps)).append("\n");
         sb.append("    publicipId: ").append(toIndentedString(publicipId)).append("\n");
         sb.append("    sslEnable: ").append(toIndentedString(sslEnable)).append("\n");
         sb.append("    kafkaSecurityProtocol: ").append(toIndentedString(kafkaSecurityProtocol)).append("\n");
         sb.append("    saslEnabledMechanisms: ").append(toIndentedString(saslEnabledMechanisms)).append("\n");
+        sb.append("    portProtocol: ").append(toIndentedString(portProtocol)).append("\n");
         sb.append("    retentionPolicy: ").append(toIndentedString(retentionPolicy)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    diskEncryptedEnable: ").append(toIndentedString(diskEncryptedEnable)).append("\n");

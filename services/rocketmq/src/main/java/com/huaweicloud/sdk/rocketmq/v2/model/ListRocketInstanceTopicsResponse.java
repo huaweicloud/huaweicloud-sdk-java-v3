@@ -50,7 +50,7 @@ public class ListRocketInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * Topic总数。
+     * **参数解释**： Topic总数。 **取值范围**： 不涉及。
      * @return total
      */
     public Integer getTotal() {
@@ -67,7 +67,7 @@ public class ListRocketInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * 最大可创建Topic数量。
+     * **参数解释**： 最大可创建Topic数量。 **取值范围**： 不涉及。
      * @return max
      */
     public Integer getMax() {
@@ -84,7 +84,7 @@ public class ListRocketInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * 剩余可创建Topic数量。
+     * **参数解释**： 剩余可创建Topic数量。 **取值范围**： 不涉及。
      * @return remaining
      */
     public Integer getRemaining() {
@@ -101,7 +101,7 @@ public class ListRocketInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * 下个分页的offset。
+     * **参数解释**： 下个分页的offset。 **取值范围**： 不涉及。
      * @return nextOffset
      */
     public Integer getNextOffset() {
@@ -118,7 +118,7 @@ public class ListRocketInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * 上个分页的offset。
+     * **参数解释**： 上个分页的offset。 **取值范围**： 不涉及。
      * @return previousOffset
      */
     public Integer getPreviousOffset() {
@@ -151,7 +151,7 @@ public class ListRocketInstanceTopicsResponse extends SdkResponse {
     }
 
     /**
-     * Topic列表。
+     * **参数解释**： 剩余可创建Topic数量。
      * @return topics
      */
     public List<Topic> getTopics() {

@@ -35,7 +35,7 @@ public class Topic {
     private BigDecimal totalWriteQueueNum;
 
     /**
-     * 权限。
+     * **参数解释**： 权限。 **取值范围**： - sub：拥有订阅权限。 - pub：拥有发布权限。 - all：拥有发布、订阅权限。
      */
     public static final class PermissionEnum {
 
@@ -121,7 +121,7 @@ public class Topic {
     private List<TopicBrokers> brokers = null;
 
     /**
-     * 消息类型（RocketMQ实例5.x版本才包含此参数）。
+     * **参数解释**： 消息类型（RocketMQ实例5.x版本才包含此参数）。 **取值范围**： - NORMAL：普通消息。 - FIFO：顺序消息。 - DELAY：定时消息。 - TRANSACTION：事务消息。
      */
     public static final class MessageTypeEnum {
 
@@ -213,7 +213,7 @@ public class Topic {
     }
 
     /**
-     * Topic名称。
+     * **参数解释**： Topic名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -230,7 +230,7 @@ public class Topic {
     }
 
     /**
-     * 总读队列个数。
+     * **参数解释**： 总读队列个数。 **取值范围**： 不涉及。
      * @return totalReadQueueNum
      */
     public BigDecimal getTotalReadQueueNum() {
@@ -247,7 +247,7 @@ public class Topic {
     }
 
     /**
-     * 总写队列个数。
+     * **参数解释**： 总写队列个数。 **取值范围**： 不涉及。
      * @return totalWriteQueueNum
      */
     public BigDecimal getTotalWriteQueueNum() {
@@ -264,7 +264,7 @@ public class Topic {
     }
 
     /**
-     * 权限。
+     * **参数解释**： 权限。 **取值范围**： - sub：拥有订阅权限。 - pub：拥有发布权限。 - all：拥有发布、订阅权限。
      * @return permission
      */
     public PermissionEnum getPermission() {
@@ -314,7 +314,7 @@ public class Topic {
     }
 
     /**
-     * 消息类型（RocketMQ实例5.x版本才包含此参数）。
+     * **参数解释**： 消息类型（RocketMQ实例5.x版本才包含此参数）。 **取值范围**： - NORMAL：普通消息。 - FIFO：顺序消息。 - DELAY：定时消息。 - TRANSACTION：事务消息。
      * @return messageType
      */
     public MessageTypeEnum getMessageType() {

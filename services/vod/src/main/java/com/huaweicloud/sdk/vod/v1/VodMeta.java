@@ -29,11 +29,25 @@ import com.huaweicloud.sdk.vod.v1.model.CreateAssetProcessTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetReviewTaskRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateAssetReviewTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateCategoryReq;
+import com.huaweicloud.sdk.vod.v1.model.CreateEditTaskRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateEditTaskRequestBody;
+import com.huaweicloud.sdk.vod.v1.model.CreateEditTaskResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateExtractAudioTaskRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateExtractAudioTaskResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectProcessTaskRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectProcessTaskResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectReplicationRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectReplicationRequestBody;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectReplicationResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectRetrievalRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectRetrievalRequestBody;
+import com.huaweicloud.sdk.vod.v1.model.CreateObjectRetrievalResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreatePreheatingAssetReq;
 import com.huaweicloud.sdk.vod.v1.model.CreatePreheatingAssetRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreatePreheatingAssetResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateRealTimeClipRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateRealTimeClipRequestBody;
+import com.huaweicloud.sdk.vod.v1.model.CreateRealTimeClipResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateTakeOverTaskReq;
 import com.huaweicloud.sdk.vod.v1.model.CreateTakeOverTaskRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateTakeOverTaskResponse;
@@ -44,6 +58,8 @@ import com.huaweicloud.sdk.vod.v1.model.CreateTemplateGroupResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateTranscodeTemplate;
 import com.huaweicloud.sdk.vod.v1.model.CreateTranscodeTemplateRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateTranscodeTemplateResponse;
+import com.huaweicloud.sdk.vod.v1.model.CreateUploadByUrlRequest;
+import com.huaweicloud.sdk.vod.v1.model.CreateUploadByUrlResponse;
 import com.huaweicloud.sdk.vod.v1.model.CreateWatermarkTemplateReq;
 import com.huaweicloud.sdk.vod.v1.model.CreateWatermarkTemplateRequest;
 import com.huaweicloud.sdk.vod.v1.model.CreateWatermarkTemplateResponse;
@@ -51,6 +67,8 @@ import com.huaweicloud.sdk.vod.v1.model.DeleteAssetCategoryRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetCategoryResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetsRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteAssetsResponse;
+import com.huaweicloud.sdk.vod.v1.model.DeleteDyAssetRequest;
+import com.huaweicloud.sdk.vod.v1.model.DeleteDyAssetResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupCollectionRequest;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupCollectionResponse;
 import com.huaweicloud.sdk.vod.v1.model.DeleteTemplateGroupRequest;
@@ -88,6 +106,7 @@ import com.huaweicloud.sdk.vod.v1.model.ModifySubtitleResponse;
 import com.huaweicloud.sdk.vod.v1.model.ModifyTemplateGroupCollection;
 import com.huaweicloud.sdk.vod.v1.model.ModifyTransTemplate;
 import com.huaweicloud.sdk.vod.v1.model.ModifyTransTemplateGroup;
+import com.huaweicloud.sdk.vod.v1.model.ObjectProcessReq;
 import com.huaweicloud.sdk.vod.v1.model.PublishAssetFromObsReq;
 import com.huaweicloud.sdk.vod.v1.model.PublishAssetFromObsRequest;
 import com.huaweicloud.sdk.vod.v1.model.PublishAssetFromObsResponse;
@@ -108,6 +127,8 @@ import com.huaweicloud.sdk.vod.v1.model.ShowAssetTempAuthorityRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowAssetTempAuthorityResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowCdnStatisticsResponse;
+import com.huaweicloud.sdk.vod.v1.model.ShowObjectMetaDataRequest;
+import com.huaweicloud.sdk.vod.v1.model.ShowObjectMetaDataResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowPreheatingAssetRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowPreheatingAssetResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowRefreshResultRequest;
@@ -118,6 +139,8 @@ import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverAssetDetailsResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverTaskDetailsRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowTakeOverTaskDetailsResponse;
+import com.huaweicloud.sdk.vod.v1.model.ShowTaskDetailRequest;
+import com.huaweicloud.sdk.vod.v1.model.ShowTaskDetailResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowVodRetrievalRequest;
 import com.huaweicloud.sdk.vod.v1.model.ShowVodRetrievalResponse;
 import com.huaweicloud.sdk.vod.v1.model.ShowVodStatisticsRequest;
@@ -157,6 +180,7 @@ import com.huaweicloud.sdk.vod.v1.model.UpdateWatermarkTemplateReq;
 import com.huaweicloud.sdk.vod.v1.model.UpdateWatermarkTemplateRequest;
 import com.huaweicloud.sdk.vod.v1.model.UpdateWatermarkTemplateResponse;
 import com.huaweicloud.sdk.vod.v1.model.UploadAssetReq;
+import com.huaweicloud.sdk.vod.v1.model.UploadByUrlReq;
 import com.huaweicloud.sdk.vod.v1.model.UploadMetaDataByUrlReq;
 import com.huaweicloud.sdk.vod.v1.model.UploadMetaDataByUrlRequest;
 import com.huaweicloud.sdk.vod.v1.model.UploadMetaDataByUrlResponse;
@@ -433,6 +457,34 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateEditTaskRequest, CreateEditTaskResponse> createEditTask =
+        genForCreateEditTask();
+
+    private static HttpRequestDef<CreateEditTaskRequest, CreateEditTaskResponse> genForCreateEditTask() {
+        // basic
+        HttpRequestDef.Builder<CreateEditTaskRequest, CreateEditTaskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEditTaskRequest.class, CreateEditTaskResponse.class)
+                .withName("CreateEditTask")
+                .withUri("/v1/{project_id}/asset/customization/edit")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateEditTaskRequest::getXSdkDate, CreateEditTaskRequest::setXSdkDate));
+        builder.<CreateEditTaskRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateEditTaskRequestBody.class),
+            f -> f.withMarshaller(CreateEditTaskRequest::getBody, CreateEditTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateExtractAudioTaskRequest, CreateExtractAudioTaskResponse> createExtractAudioTask =
         genForCreateExtractAudioTask();
 
@@ -462,6 +514,93 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateObjectProcessTaskRequest, CreateObjectProcessTaskResponse> createObjectProcessTask =
+        genForCreateObjectProcessTask();
+
+    private static HttpRequestDef<CreateObjectProcessTaskRequest, CreateObjectProcessTaskResponse> genForCreateObjectProcessTask() {
+        // basic
+        HttpRequestDef.Builder<CreateObjectProcessTaskRequest, CreateObjectProcessTaskResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateObjectProcessTaskRequest.class, CreateObjectProcessTaskResponse.class)
+            .withName("CreateObjectProcessTask")
+            .withUri("/v1/{project_id}/asset/customization/process")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateObjectProcessTaskRequest::getXSdkDate,
+                CreateObjectProcessTaskRequest::setXSdkDate));
+        builder.<ObjectProcessReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ObjectProcessReq.class),
+            f -> f.withMarshaller(CreateObjectProcessTaskRequest::getBody, CreateObjectProcessTaskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateObjectReplicationRequest, CreateObjectReplicationResponse> createObjectReplication =
+        genForCreateObjectReplication();
+
+    private static HttpRequestDef<CreateObjectReplicationRequest, CreateObjectReplicationResponse> genForCreateObjectReplication() {
+        // basic
+        HttpRequestDef.Builder<CreateObjectReplicationRequest, CreateObjectReplicationResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateObjectReplicationRequest.class, CreateObjectReplicationResponse.class)
+            .withName("CreateObjectReplication")
+            .withUri("/v1/{project_id}/asset/customization/object-replication")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateObjectReplicationRequest::getXSdkDate,
+                CreateObjectReplicationRequest::setXSdkDate));
+        builder.<CreateObjectReplicationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateObjectReplicationRequestBody.class),
+            f -> f.withMarshaller(CreateObjectReplicationRequest::getBody, CreateObjectReplicationRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateObjectRetrievalRequest, CreateObjectRetrievalResponse> createObjectRetrieval =
+        genForCreateObjectRetrieval();
+
+    private static HttpRequestDef<CreateObjectRetrievalRequest, CreateObjectRetrievalResponse> genForCreateObjectRetrieval() {
+        // basic
+        HttpRequestDef.Builder<CreateObjectRetrievalRequest, CreateObjectRetrievalResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateObjectRetrievalRequest.class, CreateObjectRetrievalResponse.class)
+            .withName("CreateObjectRetrieval")
+            .withUri("/v1/{project_id}/asset/customization/object-retrieval")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateObjectRetrievalRequest::getXSdkDate,
+                CreateObjectRetrievalRequest::setXSdkDate));
+        builder.<CreateObjectRetrievalRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateObjectRetrievalRequestBody.class),
+            f -> f.withMarshaller(CreateObjectRetrievalRequest::getBody, CreateObjectRetrievalRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePreheatingAssetRequest, CreatePreheatingAssetResponse> createPreheatingAsset =
         genForCreatePreheatingAsset();
 
@@ -485,6 +624,29 @@ public class VodMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreatePreheatingAssetReq.class),
             f -> f.withMarshaller(CreatePreheatingAssetRequest::getBody, CreatePreheatingAssetRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateRealTimeClipRequest, CreateRealTimeClipResponse> createRealTimeClip =
+        genForCreateRealTimeClip();
+
+    private static HttpRequestDef<CreateRealTimeClipRequest, CreateRealTimeClipResponse> genForCreateRealTimeClip() {
+        // basic
+        HttpRequestDef.Builder<CreateRealTimeClipRequest, CreateRealTimeClipResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateRealTimeClipRequest.class, CreateRealTimeClipResponse.class)
+                .withName("CreateRealTimeClip")
+                .withUri("/v1/{project_id}/asset/customization/realtime-clip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateRealTimeClipRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateRealTimeClipRequestBody.class),
+            f -> f.withMarshaller(CreateRealTimeClipRequest::getBody, CreateRealTimeClipRequest::setBody));
 
         // response
 
@@ -609,6 +771,29 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateUploadByUrlRequest, CreateUploadByUrlResponse> createUploadByUrl =
+        genForCreateUploadByUrl();
+
+    private static HttpRequestDef<CreateUploadByUrlRequest, CreateUploadByUrlResponse> genForCreateUploadByUrl() {
+        // basic
+        HttpRequestDef.Builder<CreateUploadByUrlRequest, CreateUploadByUrlResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateUploadByUrlRequest.class, CreateUploadByUrlResponse.class)
+                .withName("CreateUploadByUrl")
+                .withUri("/v1/{project_id}/asset/customization/upload-by-url")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UploadByUrlReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UploadByUrlReq.class),
+            f -> f.withMarshaller(CreateUploadByUrlRequest::getBody, CreateUploadByUrlRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateWatermarkTemplateRequest, CreateWatermarkTemplateResponse> createWatermarkTemplate =
         genForCreateWatermarkTemplate();
 
@@ -692,6 +877,49 @@ public class VodMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAssetsRequest::getXSdkDate, DeleteAssetsRequest::setXSdkDate));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDyAssetRequest, DeleteDyAssetResponse> deleteDyAsset =
+        genForDeleteDyAsset();
+
+    private static HttpRequestDef<DeleteDyAssetRequest, DeleteDyAssetResponse> genForDeleteDyAsset() {
+        // basic
+        HttpRequestDef.Builder<DeleteDyAssetRequest, DeleteDyAssetResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDyAssetRequest.class, DeleteDyAssetResponse.class)
+                .withName("DeleteDyAsset")
+                .withUri("/v1/{project_id}/asset/customization/object")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDyAssetRequest::getBucket, DeleteDyAssetRequest::setBucket));
+        builder.<List<String>>withRequestField("object",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(DeleteDyAssetRequest::getObject, DeleteDyAssetRequest::setObject));
+        builder.<String>withRequestField("callback_url",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDyAssetRequest::getCallbackUrl, DeleteDyAssetRequest::setCallbackUrl));
+        builder.<String>withRequestField("session_context",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDyAssetRequest::getSessionContext, DeleteDyAssetRequest::setSessionContext));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDyAssetRequest::getXSdkDate, DeleteDyAssetRequest::setXSdkDate));
 
         // response
 
@@ -1625,6 +1853,49 @@ public class VodMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowObjectMetaDataRequest, ShowObjectMetaDataResponse> showObjectMetaData =
+        genForShowObjectMetaData();
+
+    private static HttpRequestDef<ShowObjectMetaDataRequest, ShowObjectMetaDataResponse> genForShowObjectMetaData() {
+        // basic
+        HttpRequestDef.Builder<ShowObjectMetaDataRequest, ShowObjectMetaDataResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowObjectMetaDataRequest.class, ShowObjectMetaDataResponse.class)
+                .withName("ShowObjectMetaData")
+                .withUri("/v1/{project_id}/asset/customization/meta-data")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bucket",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowObjectMetaDataRequest::getBucket, ShowObjectMetaDataRequest::setBucket));
+        builder.<String>withRequestField("object",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowObjectMetaDataRequest::getObject, ShowObjectMetaDataRequest::setObject));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowObjectMetaDataRequest::getMarker, ShowObjectMetaDataRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowObjectMetaDataRequest::getLimit, ShowObjectMetaDataRequest::setLimit));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowObjectMetaDataRequest::getXSdkDate, ShowObjectMetaDataRequest::setXSdkDate));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPreheatingAssetRequest, ShowPreheatingAssetResponse> showPreheatingAsset =
         genForShowPreheatingAsset();
 
@@ -1693,6 +1964,34 @@ public class VodMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTaskDetailRequest, ShowTaskDetailResponse> showTaskDetail =
+        genForShowTaskDetail();
+
+    private static HttpRequestDef<ShowTaskDetailRequest, ShowTaskDetailResponse> genForShowTaskDetail() {
+        // basic
+        HttpRequestDef.Builder<ShowTaskDetailRequest, ShowTaskDetailResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowTaskDetailRequest.class, ShowTaskDetailResponse.class)
+                .withName("ShowTaskDetail")
+                .withUri("/v1/{project_id}/asset/customization/task/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskDetailRequest::getTaskId, ShowTaskDetailRequest::setTaskId));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTaskDetailRequest::getXSdkDate, ShowTaskDetailRequest::setXSdkDate));
 
         // response
 

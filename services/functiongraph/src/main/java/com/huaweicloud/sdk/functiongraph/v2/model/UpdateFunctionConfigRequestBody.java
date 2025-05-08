@@ -404,6 +404,11 @@ public class UpdateFunctionConfigRequestBody {
 
     private Map<String, String> ltsCustomTag = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_data_encrypt_kms_key_id")
+
+    private String userDataEncryptKmsKeyId;
+
     public UpdateFunctionConfigRequestBody withFuncName(String funcName) {
         this.funcName = funcName;
         return this;
@@ -1087,6 +1092,23 @@ public class UpdateFunctionConfigRequestBody {
         this.ltsCustomTag = ltsCustomTag;
     }
 
+    public UpdateFunctionConfigRequestBody withUserDataEncryptKmsKeyId(String userDataEncryptKmsKeyId) {
+        this.userDataEncryptKmsKeyId = userDataEncryptKmsKeyId;
+        return this;
+    }
+
+    /**
+     * 用于环境变量加密的kms主秘钥ID。
+     * @return userDataEncryptKmsKeyId
+     */
+    public String getUserDataEncryptKmsKeyId() {
+        return userDataEncryptKmsKeyId;
+    }
+
+    public void setUserDataEncryptKmsKeyId(String userDataEncryptKmsKeyId) {
+        this.userDataEncryptKmsKeyId = userDataEncryptKmsKeyId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1124,7 +1146,8 @@ public class UpdateFunctionConfigRequestBody {
             && Objects.equals(this.heartbeatHandler, that.heartbeatHandler)
             && Objects.equals(this.enableClassIsolation, that.enableClassIsolation)
             && Objects.equals(this.enableLtsLog, that.enableLtsLog)
-            && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
+            && Objects.equals(this.ltsCustomTag, that.ltsCustomTag)
+            && Objects.equals(this.userDataEncryptKmsKeyId, that.userDataEncryptKmsKeyId);
     }
 
     @Override
@@ -1164,7 +1187,8 @@ public class UpdateFunctionConfigRequestBody {
             heartbeatHandler,
             enableClassIsolation,
             enableLtsLog,
-            ltsCustomTag);
+            ltsCustomTag,
+            userDataEncryptKmsKeyId);
     }
 
     @Override
@@ -1207,6 +1231,7 @@ public class UpdateFunctionConfigRequestBody {
         sb.append("    enableClassIsolation: ").append(toIndentedString(enableClassIsolation)).append("\n");
         sb.append("    enableLtsLog: ").append(toIndentedString(enableLtsLog)).append("\n");
         sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
+        sb.append("    userDataEncryptKmsKeyId: ").append(toIndentedString(userDataEncryptKmsKeyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

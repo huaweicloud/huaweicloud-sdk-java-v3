@@ -38,6 +38,8 @@ import com.huaweicloud.sdk.bms.v1.model.DetachBaremetalServerVolumeRequest;
 import com.huaweicloud.sdk.bms.v1.model.DetachBaremetalServerVolumeResponse;
 import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServerDetailsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServerDetailsResponse;
+import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersDetailRequest;
+import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersDetailResponse;
 import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersRequest;
 import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersResponse;
 import com.huaweicloud.sdk.bms.v1.model.ListBaremetalFlavorDetailExtendsRequest;
@@ -576,6 +578,63 @@ public class BmsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBareMetalServersRequest::getEnterpriseProjectId,
                 ListBareMetalServersRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListBareMetalServersDetailRequest, ListBareMetalServersDetailResponse> listBareMetalServersDetail =
+        genForListBareMetalServersDetail();
+
+    private static HttpRequestDef<ListBareMetalServersDetailRequest, ListBareMetalServersDetailResponse> genForListBareMetalServersDetail() {
+        // basic
+        HttpRequestDef.Builder<ListBareMetalServersDetailRequest, ListBareMetalServersDetailResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListBareMetalServersDetailRequest.class,
+                    ListBareMetalServersDetailResponse.class)
+                .withName("ListBareMetalServersDetail")
+                .withUri("/v1.1/{project_id}/baremetalservers/detail")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("flavor",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBareMetalServersDetailRequest::getFlavor,
+                ListBareMetalServersDetailRequest::setFlavor));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBareMetalServersDetailRequest::getName,
+                ListBareMetalServersDetailRequest::setName));
+        builder.<String>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBareMetalServersDetailRequest::getStatus,
+                ListBareMetalServersDetailRequest::setStatus));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBareMetalServersDetailRequest::getLimit,
+                ListBareMetalServersDetailRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBareMetalServersDetailRequest::getOffset,
+                ListBareMetalServersDetailRequest::setOffset));
+        builder.<String>withRequestField("detail",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBareMetalServersDetailRequest::getDetail,
+                ListBareMetalServersDetailRequest::setDetail));
 
         // response
 

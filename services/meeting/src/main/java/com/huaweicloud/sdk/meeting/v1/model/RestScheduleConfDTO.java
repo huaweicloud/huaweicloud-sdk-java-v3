@@ -118,6 +118,11 @@ public class RestScheduleConfDTO {
 
     private Boolean supportSimultaneousInterpretation;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "confResType")
+
+    private Integer confResType;
+
     public RestScheduleConfDTO withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
@@ -523,6 +528,25 @@ public class RestScheduleConfDTO {
         this.supportSimultaneousInterpretation = supportSimultaneousInterpretation;
     }
 
+    public RestScheduleConfDTO withConfResType(Integer confResType) {
+        this.confResType = confResType;
+        return this;
+    }
+
+    /**
+     * 会议资源类型：  * 0: 并发 * 1: 云会议室 * 2: 网络研讨会 * 3: 共享vmr * 4: 共享网络研讨会 
+     * minimum: 0
+     * maximum: 4
+     * @return confResType
+     */
+    public Integer getConfResType() {
+        return confResType;
+    }
+
+    public void setConfResType(Integer confResType) {
+        this.confResType = confResType;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -544,7 +568,8 @@ public class RestScheduleConfDTO {
             && Objects.equals(this.recordAuthType, that.recordAuthType) && Objects.equals(this.vmrFlag, that.vmrFlag)
             && Objects.equals(this.cycleParams, that.cycleParams) && Objects.equals(this.vmrID, that.vmrID)
             && Objects.equals(this.concurrentParticipants, that.concurrentParticipants)
-            && Objects.equals(this.supportSimultaneousInterpretation, that.supportSimultaneousInterpretation);
+            && Objects.equals(this.supportSimultaneousInterpretation, that.supportSimultaneousInterpretation)
+            && Objects.equals(this.confResType, that.confResType);
     }
 
     @Override
@@ -569,7 +594,8 @@ public class RestScheduleConfDTO {
             cycleParams,
             vmrID,
             concurrentParticipants,
-            supportSimultaneousInterpretation);
+            supportSimultaneousInterpretation,
+            confResType);
     }
 
     @Override
@@ -599,6 +625,7 @@ public class RestScheduleConfDTO {
         sb.append("    supportSimultaneousInterpretation: ")
             .append(toIndentedString(supportSimultaneousInterpretation))
             .append("\n");
+        sb.append("    confResType: ").append(toIndentedString(confResType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -31,7 +31,7 @@ public class ListInstanceTopicsRequest {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。获取方法如下：登录Kafka控制台，在Kafka实例详情页面查找实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -48,7 +48,7 @@ public class ListInstanceTopicsRequest {
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
+     * **参数解释**： 偏移量，表示从此偏移量开始查询。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 不涉及。
      * @return offset
      */
     public String getOffset() {
@@ -65,7 +65,7 @@ public class ListInstanceTopicsRequest {
     }
 
     /**
-     * 当次查询返回的最大实例个数，默认值为10，取值范围为1~50。
+     * **参数解释**： 当次查询返回的最大实例个数。 **约束限制**： 不涉及。 **取值范围**： 1~50。 **默认取值**： 10。
      * @return limit
      */
     public String getLimit() {

@@ -53,6 +53,8 @@ import com.huaweicloud.sdk.dws.v2.model.CreateDisasterRecoveryRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateDisasterRecoveryResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.CreateLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.CreateSnapshotPolicyRequest;
@@ -77,6 +79,8 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteDwsClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteDwsClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteQueueUserListRequest;
@@ -93,12 +97,16 @@ import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadPlanStageRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadPlanStageResponse;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadQueueRequest;
 import com.huaweicloud.sdk.dws.v2.model.DeleteWorkloadQueueResponse;
+import com.huaweicloud.sdk.dws.v2.model.DisableLogicalClusterPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.DisableLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisableLtsLogsRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisableLtsLogsResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateEipRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateEipResponse;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbRequest;
 import com.huaweicloud.sdk.dws.v2.model.DisassociateElbResponse;
+import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.EnableLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.EnableLtsLogsRequest;
@@ -171,6 +179,8 @@ import com.huaweicloud.sdk.dws.v2.model.ListHostOverviewRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListHostOverviewResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListJobDetailsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListJobDetailsResponse;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterPlansRequest;
+import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterPlansResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterRingsRequest;
 import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterRingsResponse;
 import com.huaweicloud.sdk.dws.v2.model.ListLogicalClusterTasksRequest;
@@ -319,6 +329,8 @@ import com.huaweicloud.sdk.dws.v2.model.UpdateDisasterInfoRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateDisasterInfoResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateEventSubRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateEventSubResponse;
+import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterPlanRequest;
+import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterPlanResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterRequest;
 import com.huaweicloud.sdk.dws.v2.model.UpdateLogicalClusterResponse;
 import com.huaweicloud.sdk.dws.v2.model.UpdateMaintenanceWindowRequest;
@@ -1135,6 +1147,36 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 添加逻辑集群定时增删计划
+     *
+     * 此接口用于添加逻辑集群定时增删计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLogicalClusterPlanRequest 请求对象
+     * @return CompletableFuture<CreateLogicalClusterPlanResponse>
+     */
+    public CompletableFuture<CreateLogicalClusterPlanResponse> createLogicalClusterPlanAsync(
+        CreateLogicalClusterPlanRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.createLogicalClusterPlan);
+    }
+
+    /**
+     * 添加逻辑集群定时增删计划
+     *
+     * 此接口用于添加逻辑集群定时增删计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateLogicalClusterPlanRequest 请求对象
+     * @return AsyncInvoker<CreateLogicalClusterPlanRequest, CreateLogicalClusterPlanResponse>
+     */
+    public AsyncInvoker<CreateLogicalClusterPlanRequest, CreateLogicalClusterPlanResponse> createLogicalClusterPlanAsyncInvoker(
+        CreateLogicalClusterPlanRequest request) {
+        return new AsyncInvoker<>(request, DwsMeta.createLogicalClusterPlan, hcClient);
+    }
+
+    /**
      * 创建快照
      *
      * 该接口用于为指定集群创建快照。
@@ -1492,6 +1534,36 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 删除逻辑集群定时增删计划
+     *
+     * 此接口用于删除逻辑集群定时增删计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLogicalClusterPlanRequest 请求对象
+     * @return CompletableFuture<DeleteLogicalClusterPlanResponse>
+     */
+    public CompletableFuture<DeleteLogicalClusterPlanResponse> deleteLogicalClusterPlanAsync(
+        DeleteLogicalClusterPlanRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.deleteLogicalClusterPlan);
+    }
+
+    /**
+     * 删除逻辑集群定时增删计划
+     *
+     * 此接口用于删除逻辑集群定时增删计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteLogicalClusterPlanRequest 请求对象
+     * @return AsyncInvoker<DeleteLogicalClusterPlanRequest, DeleteLogicalClusterPlanResponse>
+     */
+    public AsyncInvoker<DeleteLogicalClusterPlanRequest, DeleteLogicalClusterPlanResponse> deleteLogicalClusterPlanAsyncInvoker(
+        DeleteLogicalClusterPlanRequest request) {
+        return new AsyncInvoker<>(request, DwsMeta.deleteLogicalClusterPlan, hcClient);
+    }
+
+    /**
      * 删除工作负载队列的绑定用户
      *
      * 删除工作负载队列的绑定用户。
@@ -1698,6 +1770,36 @@ public class DwsAsyncClient {
     }
 
     /**
+     * 停用逻辑集群定时增删计划
+     *
+     * 停用逻辑集群定时增删计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableLogicalClusterPlanRequest 请求对象
+     * @return CompletableFuture<DisableLogicalClusterPlanResponse>
+     */
+    public CompletableFuture<DisableLogicalClusterPlanResponse> disableLogicalClusterPlanAsync(
+        DisableLogicalClusterPlanRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.disableLogicalClusterPlan);
+    }
+
+    /**
+     * 停用逻辑集群定时增删计划
+     *
+     * 停用逻辑集群定时增删计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DisableLogicalClusterPlanRequest 请求对象
+     * @return AsyncInvoker<DisableLogicalClusterPlanRequest, DisableLogicalClusterPlanResponse>
+     */
+    public AsyncInvoker<DisableLogicalClusterPlanRequest, DisableLogicalClusterPlanResponse> disableLogicalClusterPlanAsyncInvoker(
+        DisableLogicalClusterPlanRequest request) {
+        return new AsyncInvoker<>(request, DwsMeta.disableLogicalClusterPlan, hcClient);
+    }
+
+    /**
      * 关闭云服务日志
      *
      * 该接口用于关闭集群LTS云日志服务
@@ -1812,6 +1914,36 @@ public class DwsAsyncClient {
     public AsyncInvoker<EnableLogicalClusterRequest, EnableLogicalClusterResponse> enableLogicalClusterAsyncInvoker(
         EnableLogicalClusterRequest request) {
         return new AsyncInvoker<>(request, DwsMeta.enableLogicalCluster, hcClient);
+    }
+
+    /**
+     * 启用逻辑集群定时增删计划
+     *
+     * 启用逻辑集群定时增删计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableLogicalClusterPlanRequest 请求对象
+     * @return CompletableFuture<EnableLogicalClusterPlanResponse>
+     */
+    public CompletableFuture<EnableLogicalClusterPlanResponse> enableLogicalClusterPlanAsync(
+        EnableLogicalClusterPlanRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.enableLogicalClusterPlan);
+    }
+
+    /**
+     * 启用逻辑集群定时增删计划
+     *
+     * 启用逻辑集群定时增删计划
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableLogicalClusterPlanRequest 请求对象
+     * @return AsyncInvoker<EnableLogicalClusterPlanRequest, EnableLogicalClusterPlanResponse>
+     */
+    public AsyncInvoker<EnableLogicalClusterPlanRequest, EnableLogicalClusterPlanResponse> enableLogicalClusterPlanAsyncInvoker(
+        EnableLogicalClusterPlanRequest request) {
+        return new AsyncInvoker<>(request, DwsMeta.enableLogicalClusterPlan, hcClient);
     }
 
     /**
@@ -2851,6 +2983,36 @@ public class DwsAsyncClient {
     public AsyncInvoker<ListJobDetailsRequest, ListJobDetailsResponse> listJobDetailsAsyncInvoker(
         ListJobDetailsRequest request) {
         return new AsyncInvoker<>(request, DwsMeta.listJobDetails, hcClient);
+    }
+
+    /**
+     * 查询逻辑集群定时增删计划
+     *
+     * 此接口用于查询逻辑集群定时增删计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogicalClusterPlansRequest 请求对象
+     * @return CompletableFuture<ListLogicalClusterPlansResponse>
+     */
+    public CompletableFuture<ListLogicalClusterPlansResponse> listLogicalClusterPlansAsync(
+        ListLogicalClusterPlansRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.listLogicalClusterPlans);
+    }
+
+    /**
+     * 查询逻辑集群定时增删计划
+     *
+     * 此接口用于查询逻辑集群定时增删计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogicalClusterPlansRequest 请求对象
+     * @return AsyncInvoker<ListLogicalClusterPlansRequest, ListLogicalClusterPlansResponse>
+     */
+    public AsyncInvoker<ListLogicalClusterPlansRequest, ListLogicalClusterPlansResponse> listLogicalClusterPlansAsyncInvoker(
+        ListLogicalClusterPlansRequest request) {
+        return new AsyncInvoker<>(request, DwsMeta.listLogicalClusterPlans, hcClient);
     }
 
     /**
@@ -5100,6 +5262,36 @@ public class DwsAsyncClient {
     public AsyncInvoker<UpdateLogicalClusterRequest, UpdateLogicalClusterResponse> updateLogicalClusterAsyncInvoker(
         UpdateLogicalClusterRequest request) {
         return new AsyncInvoker<>(request, DwsMeta.updateLogicalCluster, hcClient);
+    }
+
+    /**
+     * 编辑逻辑集群增删计划
+     *
+     * 此接口用于编辑修改编辑逻辑集群增删计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLogicalClusterPlanRequest 请求对象
+     * @return CompletableFuture<UpdateLogicalClusterPlanResponse>
+     */
+    public CompletableFuture<UpdateLogicalClusterPlanResponse> updateLogicalClusterPlanAsync(
+        UpdateLogicalClusterPlanRequest request) {
+        return hcClient.asyncInvokeHttp(request, DwsMeta.updateLogicalClusterPlan);
+    }
+
+    /**
+     * 编辑逻辑集群增删计划
+     *
+     * 此接口用于编辑修改编辑逻辑集群增删计划。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateLogicalClusterPlanRequest 请求对象
+     * @return AsyncInvoker<UpdateLogicalClusterPlanRequest, UpdateLogicalClusterPlanResponse>
+     */
+    public AsyncInvoker<UpdateLogicalClusterPlanRequest, UpdateLogicalClusterPlanResponse> updateLogicalClusterPlanAsyncInvoker(
+        UpdateLogicalClusterPlanRequest request) {
+        return new AsyncInvoker<>(request, DwsMeta.updateLogicalClusterPlan, hcClient);
     }
 
     /**

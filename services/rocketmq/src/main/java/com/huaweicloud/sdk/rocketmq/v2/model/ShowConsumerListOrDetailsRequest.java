@@ -41,7 +41,7 @@ public class ShowConsumerListOrDetailsRequest {
     }
 
     /**
-     * 实例ID。
+     * **参数解释**： 实例ID。获取方法如下：登录RocketMQ控制台，在RocketMQ实例详情页面查找实例ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return instanceId
      */
     public String getInstanceId() {
@@ -58,7 +58,7 @@ public class ShowConsumerListOrDetailsRequest {
     }
 
     /**
-     * 消费组名称。
+     * **参数解释**： 消费组名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return group
      */
     public String getGroup() {
@@ -75,7 +75,7 @@ public class ShowConsumerListOrDetailsRequest {
     }
 
     /**
-     * 待查询的Topic，不指定时查询Topic列表，指定时查询详情。
+     * **参数解释**： 待查询的Topic，不指定时查询Topic列表，指定时查询详情。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return topic
      */
     public String getTopic() {
@@ -92,7 +92,7 @@ public class ShowConsumerListOrDetailsRequest {
     }
 
     /**
-     * 当次查询返回的最大个数，默认值为10，取值范围为1~50。
+     * **参数解释**： 当次查询返回Topic的最大个数。 **约束限制**： 不涉及。 **取值范围**： 1~50。 **默认取值**： 10。
      * minimum: 1
      * maximum: 50
      * @return limit
@@ -111,7 +111,7 @@ public class ShowConsumerListOrDetailsRequest {
     }
 
     /**
-     * 偏移量，表示从此偏移量开始查询， offset大于等于0。
+     * **参数解释**： 偏移量，表示从此偏移量开始查询。 **约束限制**： 不涉及。 **取值范围**： 大于等于0。 **默认取值**： 0。
      * minimum: 0
      * @return offset
      */

@@ -35,7 +35,7 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
     }
 
     /**
-     * topic名称。
+     * **参数解释**： topic名称。 **取值范围**： 不涉及
      * @return topic
      */
     public String getTopic() {
@@ -69,7 +69,7 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
     }
 
     /**
-     * 分区列表。
+     * **参数解释**： 分区列表。
      * @return partitions
      */
     public List<ShowInstanceTopicDetailRespPartitions> getPartitions() {
@@ -102,7 +102,7 @@ public class ShowInstanceTopicDetailResponse extends SdkResponse {
     }
 
     /**
-     * 订阅该topic的消费组名称列表。
+     * **参数解释**： 订阅该topic的消费组名称列表。
      * @return groupSubscribed
      */
     public List<String> getGroupSubscribed() {

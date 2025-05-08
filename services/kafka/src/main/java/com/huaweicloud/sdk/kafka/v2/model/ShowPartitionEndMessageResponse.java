@@ -37,7 +37,7 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
     }
 
     /**
-     * Topic名称。
+     * **参数解释**： Topic名称。 **取值范围**： 不涉及。
      * @return topic
      */
     public String getTopic() {
@@ -54,7 +54,7 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
     }
 
     /**
-     * 分区编号。
+     * **参数解释**： 分区编号。 **取值范围**： 不涉及。
      * @return partition
      */
     public Integer getPartition() {
@@ -71,7 +71,7 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
     }
 
     /**
-     * 最新消息位置。
+     * **参数解释**： 消息位置。 **取值范围**： 不涉及。
      * @return offset
      */
     public Integer getOffset() {
@@ -88,7 +88,7 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
     }
 
     /**
-     * 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
+     * **参数解释**： 生产消息的时间。 格式为Unix时间戳。单位为毫秒。 **取值范围**： 不涉及。
      * @return timestamp
      */
     public Long getTimestamp() {

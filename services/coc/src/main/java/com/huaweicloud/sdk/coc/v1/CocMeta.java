@@ -1,15 +1,23 @@
 package com.huaweicloud.sdk.coc.v1;
 
+import com.huaweicloud.sdk.coc.v1.model.AcceptScriptRequest;
+import com.huaweicloud.sdk.coc.v1.model.AcceptScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.AddScriptModel;
+import com.huaweicloud.sdk.coc.v1.model.ApprovalJobScriptModel;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewRequest;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.BatchCreateApplicationViewResponse;
+import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskRequest;
+import com.huaweicloud.sdk.coc.v1.model.CheckScriptRiskResponse;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CountMultiResourcesResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateCocIssuesResponse;
+import com.huaweicloud.sdk.coc.v1.model.CreateDocumentRequest;
+import com.huaweicloud.sdk.coc.v1.model.CreateDocumentRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.CreateDocumentResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateExternalIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateExternalIssuesRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateReportCustomEventRequest;
@@ -23,6 +31,8 @@ import com.huaweicloud.sdk.coc.v1.model.CreateScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomRequest;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.CreateWarRoomResponse;
+import com.huaweicloud.sdk.coc.v1.model.DeleteDocumentRequest;
+import com.huaweicloud.sdk.coc.v1.model.DeleteDocumentResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.DeleteScriptRequest;
@@ -33,10 +43,19 @@ import com.huaweicloud.sdk.coc.v1.model.EditScriptModel;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.EnableScheduledTaskResponse;
+import com.huaweicloud.sdk.coc.v1.model.ExecuteDocumentRequest;
+import com.huaweicloud.sdk.coc.v1.model.ExecuteDocumentRequsetBody;
+import com.huaweicloud.sdk.coc.v1.model.ExecuteDocumentResponse;
 import com.huaweicloud.sdk.coc.v1.model.ExecutePublicScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.ExecutePublicScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.ExecuteScriptResponse;
+import com.huaweicloud.sdk.coc.v1.model.GetDocumentAtomicInfoRequest;
+import com.huaweicloud.sdk.coc.v1.model.GetDocumentAtomicInfoResponse;
+import com.huaweicloud.sdk.coc.v1.model.GetDocumentRequest;
+import com.huaweicloud.sdk.coc.v1.model.GetDocumentResponse;
+import com.huaweicloud.sdk.coc.v1.model.GetExecutionRequest;
+import com.huaweicloud.sdk.coc.v1.model.GetExecutionResponse;
 import com.huaweicloud.sdk.coc.v1.model.GetPublicScriptRequest;
 import com.huaweicloud.sdk.coc.v1.model.GetPublicScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.GetScriptJobBatchRequest;
@@ -50,6 +69,8 @@ import com.huaweicloud.sdk.coc.v1.model.GetScriptResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.HandleCocIncidentResponse;
 import com.huaweicloud.sdk.coc.v1.model.HandleExternalIncidentRequest;
+import com.huaweicloud.sdk.coc.v1.model.InstancesBatchesMode;
+import com.huaweicloud.sdk.coc.v1.model.JobScriptAnalyzeRequest;
 import com.huaweicloud.sdk.coc.v1.model.JobScriptOrderOperationBody;
 import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesResponse;
@@ -64,8 +85,20 @@ import com.huaweicloud.sdk.coc.v1.model.ListCceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCceCompliantResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListDocumentsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListDocumentsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListExecutionInstancesRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListExecutionInstancesResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListExecutionStepsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListExecutionStepsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListExecutionsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListExecutionsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInterruptRecordsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInterruptRecordsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesRequest;
@@ -84,12 +117,17 @@ import com.huaweicloud.sdk.coc.v1.model.ListScriptJobBatchesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptJobBatchesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptJobsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptJobsResponse;
+import com.huaweicloud.sdk.coc.v1.model.ListScriptResourceTagsRequest;
+import com.huaweicloud.sdk.coc.v1.model.ListScriptResourceTagsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListScriptsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListTenantWarRoomRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.ListTicketParams;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListWarRoomsResponse;
+import com.huaweicloud.sdk.coc.v1.model.OperateExecutionRequest;
+import com.huaweicloud.sdk.coc.v1.model.OperateExecutionRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.OperateExecutionResponse;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobRequest;
 import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobResponse;
 import com.huaweicloud.sdk.coc.v1.model.ReportCustomEventRequestBody;
@@ -120,6 +158,12 @@ import com.huaweicloud.sdk.coc.v1.model.SyncAddPersonnelResponse;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceReq;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateDocumentRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateDocumentResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateResourceTagsRequest;
+import com.huaweicloud.sdk.coc.v1.model.UpdateResourceTagsRequestBody;
+import com.huaweicloud.sdk.coc.v1.model.UpdateResourceTagsResponse;
+import com.huaweicloud.sdk.coc.v1.model.UpdateRunbookRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScheduledTaskResponse;
 import com.huaweicloud.sdk.coc.v1.model.UpdateScriptRequest;
@@ -616,6 +660,291 @@ public class CocMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateDocumentRequest, CreateDocumentResponse> createDocument =
+        genForCreateDocument();
+
+    private static HttpRequestDef<CreateDocumentRequest, CreateDocumentResponse> genForCreateDocument() {
+        // basic
+        HttpRequestDef.Builder<CreateDocumentRequest, CreateDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateDocumentRequest.class, CreateDocumentResponse.class)
+                .withName("CreateDocument")
+                .withUri("/v1/documents")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateDocumentRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDocumentRequestBody.class),
+            f -> f.withMarshaller(CreateDocumentRequest::getBody, CreateDocumentRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateDocumentResponse::getBody, CreateDocumentResponse::setBody));
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateDocumentResponse::getXRequestId, CreateDocumentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDocumentRequest, DeleteDocumentResponse> deleteDocument =
+        genForDeleteDocument();
+
+    private static HttpRequestDef<DeleteDocumentRequest, DeleteDocumentResponse> genForDeleteDocument() {
+        // basic
+        HttpRequestDef.Builder<DeleteDocumentRequest, DeleteDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteDocumentRequest.class, DeleteDocumentResponse.class)
+                .withName("DeleteDocument")
+                .withUri("/v1/documents/{document_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("document_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDocumentRequest::getDocumentId, DeleteDocumentRequest::setDocumentId));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDocumentResponse::getBody, DeleteDocumentResponse::setBody));
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDocumentResponse::getXRequestId, DeleteDocumentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ExecuteDocumentRequest, ExecuteDocumentResponse> executeDocument =
+        genForExecuteDocument();
+
+    private static HttpRequestDef<ExecuteDocumentRequest, ExecuteDocumentResponse> genForExecuteDocument() {
+        // basic
+        HttpRequestDef.Builder<ExecuteDocumentRequest, ExecuteDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ExecuteDocumentRequest.class, ExecuteDocumentResponse.class)
+                .withName("ExecuteDocument")
+                .withUri("/v1/documents/{document_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("document_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteDocumentRequest::getDocumentId, ExecuteDocumentRequest::setDocumentId));
+        builder.<ExecuteDocumentRequsetBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ExecuteDocumentRequsetBody.class),
+            f -> f.withMarshaller(ExecuteDocumentRequest::getBody, ExecuteDocumentRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExecuteDocumentResponse::getBody, ExecuteDocumentResponse::setBody));
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ExecuteDocumentResponse::getXRequestId, ExecuteDocumentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetDocumentRequest, GetDocumentResponse> getDocument = genForGetDocument();
+
+    private static HttpRequestDef<GetDocumentRequest, GetDocumentResponse> genForGetDocument() {
+        // basic
+        HttpRequestDef.Builder<GetDocumentRequest, GetDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetDocumentRequest.class, GetDocumentResponse.class)
+                .withName("GetDocument")
+                .withUri("/v1/documents/{document_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("document_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDocumentRequest::getDocumentId, GetDocumentRequest::setDocumentId));
+        builder.<String>withRequestField("version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDocumentRequest::getVersion, GetDocumentRequest::setVersion));
+        builder.<String>withRequestField("document_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDocumentRequest::getDocumentType, GetDocumentRequest::setDocumentType));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetDocumentResponse::getXRequestId, GetDocumentResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetDocumentAtomicInfoRequest, GetDocumentAtomicInfoResponse> getDocumentAtomicInfo =
+        genForGetDocumentAtomicInfo();
+
+    private static HttpRequestDef<GetDocumentAtomicInfoRequest, GetDocumentAtomicInfoResponse> genForGetDocumentAtomicInfo() {
+        // basic
+        HttpRequestDef.Builder<GetDocumentAtomicInfoRequest, GetDocumentAtomicInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, GetDocumentAtomicInfoRequest.class, GetDocumentAtomicInfoResponse.class)
+            .withName("GetDocumentAtomicInfo")
+            .withUri("/v1/atomics/{atomic_unique_key}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("atomic_unique_key",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetDocumentAtomicInfoRequest::getAtomicUniqueKey,
+                GetDocumentAtomicInfoRequest::setAtomicUniqueKey));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDocumentAtomicsRequest, ListDocumentAtomicsResponse> listDocumentAtomics =
+        genForListDocumentAtomics();
+
+    private static HttpRequestDef<ListDocumentAtomicsRequest, ListDocumentAtomicsResponse> genForListDocumentAtomics() {
+        // basic
+        HttpRequestDef.Builder<ListDocumentAtomicsRequest, ListDocumentAtomicsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDocumentAtomicsRequest.class, ListDocumentAtomicsResponse.class)
+                .withName("ListDocumentAtomics")
+                .withUri("/v1/atomics")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentAtomicsRequest::getLimit, ListDocumentAtomicsRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentAtomicsRequest::getOffset, ListDocumentAtomicsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListDocumentsRequest, ListDocumentsResponse> listDocuments =
+        genForListDocuments();
+
+    private static HttpRequestDef<ListDocumentsRequest, ListDocumentsResponse> genForListDocuments() {
+        // basic
+        HttpRequestDef.Builder<ListDocumentsRequest, ListDocumentsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListDocumentsRequest.class, ListDocumentsResponse.class)
+                .withName("ListDocuments")
+                .withUri("/v1/documents")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListDocumentsRequest::getLimit, ListDocumentsRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentsRequest::getOffset, ListDocumentsRequest::setOffset));
+        builder.<String>withRequestField("name_like",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentsRequest::getNameLike, ListDocumentsRequest::setNameLike));
+        builder.<String>withRequestField("creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentsRequest::getCreator, ListDocumentsRequest::setCreator));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentsRequest::getEnterpriseProjectId,
+                ListDocumentsRequest::setEnterpriseProjectId));
+        builder.<String>withRequestField("document_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListDocumentsRequest::getDocumentType, ListDocumentsRequest::setDocumentType));
+
+        // response
+        builder.<Object>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            Object.class,
+            f -> f.withMarshaller(ListDocumentsResponse::getBody, ListDocumentsResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDocumentRequest, UpdateDocumentResponse> updateDocument =
+        genForUpdateDocument();
+
+    private static HttpRequestDef<UpdateDocumentRequest, UpdateDocumentResponse> genForUpdateDocument() {
+        // basic
+        HttpRequestDef.Builder<UpdateDocumentRequest, UpdateDocumentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateDocumentRequest.class, UpdateDocumentResponse.class)
+                .withName("UpdateDocument")
+                .withUri("/v1/documents/{document_id}")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("document_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDocumentRequest::getDocumentId, UpdateDocumentRequest::setDocumentId));
+        builder.<UpdateRunbookRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRunbookRequestBody.class),
+            f -> f.withMarshaller(UpdateDocumentRequest::getBody, UpdateDocumentRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDocumentResponse::getBody, UpdateDocumentResponse::setBody));
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDocumentResponse::getXRequestId, UpdateDocumentResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateReportPrometheusEventRequest, CreateReportPrometheusEventResponse> createReportPrometheusEvent =
         genForCreateReportPrometheusEvent();
 
@@ -645,6 +974,206 @@ public class CocMeta {
                 .withMarshaller(CreateReportPrometheusEventRequest::getBody,
                     CreateReportPrometheusEventRequest::setBody)
                 .withInnerContainerType(Object.class));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<GetExecutionRequest, GetExecutionResponse> getExecution = genForGetExecution();
+
+    private static HttpRequestDef<GetExecutionRequest, GetExecutionResponse> genForGetExecution() {
+        // basic
+        HttpRequestDef.Builder<GetExecutionRequest, GetExecutionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, GetExecutionRequest.class, GetExecutionResponse.class)
+                .withName("GetExecution")
+                .withUri("/v1/executions/{execution_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(GetExecutionRequest::getExecutionId, GetExecutionRequest::setExecutionId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(GetExecutionResponse::getXRequestId, GetExecutionResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListExecutionInstancesRequest, ListExecutionInstancesResponse> listExecutionInstances =
+        genForListExecutionInstances();
+
+    private static HttpRequestDef<ListExecutionInstancesRequest, ListExecutionInstancesResponse> genForListExecutionInstances() {
+        // basic
+        HttpRequestDef.Builder<ListExecutionInstancesRequest, ListExecutionInstancesResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListExecutionInstancesRequest.class, ListExecutionInstancesResponse.class)
+            .withName("ListExecutionInstances")
+            .withUri("/v1/executions/instances")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListExecutionInstancesRequest::getLimit, ListExecutionInstancesRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListExecutionInstancesRequest::getOffset, ListExecutionInstancesRequest::setOffset));
+        builder.<String>withRequestField("execution_step_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExecutionInstancesRequest::getExecutionStepId,
+                ListExecutionInstancesRequest::setExecutionStepId));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListExecutionInstancesResponse::getXRequestId,
+                ListExecutionInstancesResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListExecutionStepsRequest, ListExecutionStepsResponse> listExecutionSteps =
+        genForListExecutionSteps();
+
+    private static HttpRequestDef<ListExecutionStepsRequest, ListExecutionStepsResponse> genForListExecutionSteps() {
+        // basic
+        HttpRequestDef.Builder<ListExecutionStepsRequest, ListExecutionStepsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListExecutionStepsRequest.class, ListExecutionStepsResponse.class)
+                .withName("ListExecutionSteps")
+                .withUri("/v1/executions/{execution_id}/steps")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("execution_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExecutionStepsRequest::getExecutionId,
+                ListExecutionStepsRequest::setExecutionId));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListExecutionStepsRequest::getLimit, ListExecutionStepsRequest::setLimit));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListExecutionStepsRequest::getOffset, ListExecutionStepsRequest::setOffset));
+        builder.<List<String>>withRequestField("execution_step_id_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListExecutionStepsRequest::getExecutionStepIdList,
+                ListExecutionStepsRequest::setExecutionStepIdList));
+
+        // response
+
+        builder.<String>withResponseField("X-request-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListExecutionStepsResponse::getXRequestId,
+                ListExecutionStepsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListExecutionsRequest, ListExecutionsResponse> listExecutions =
+        genForListExecutions();
+
+    private static HttpRequestDef<ListExecutionsRequest, ListExecutionsResponse> genForListExecutions() {
+        // basic
+        HttpRequestDef.Builder<ListExecutionsRequest, ListExecutionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListExecutionsRequest.class, ListExecutionsResponse.class)
+                .withName("ListExecutions")
+                .withUri("/v1/executions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListExecutionsRequest::getLimit, ListExecutionsRequest::setLimit));
+        builder.<Long>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListExecutionsRequest::getOffset, ListExecutionsRequest::setOffset));
+        builder.<String>withRequestField("creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExecutionsRequest::getCreator, ListExecutionsRequest::setCreator));
+        builder.<Long>withRequestField("start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListExecutionsRequest::getStartTime, ListExecutionsRequest::setStartTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListExecutionsRequest::getEndTime, ListExecutionsRequest::setEndTime));
+        builder.<String>withRequestField("document_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExecutionsRequest::getDocumentName, ListExecutionsRequest::setDocumentName));
+        builder.<String>withRequestField("document_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExecutionsRequest::getDocumentId, ListExecutionsRequest::setDocumentId));
+        builder.<String>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListExecutionsRequest::getTags, ListExecutionsRequest::setTags));
+        builder.<Boolean>withRequestField("exclude_child_executions",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListExecutionsRequest::getExcludeChildExecutions,
+                ListExecutionsRequest::setExcludeChildExecutions));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<OperateExecutionRequest, OperateExecutionResponse> operateExecution =
+        genForOperateExecution();
+
+    private static HttpRequestDef<OperateExecutionRequest, OperateExecutionResponse> genForOperateExecution() {
+        // basic
+        HttpRequestDef.Builder<OperateExecutionRequest, OperateExecutionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, OperateExecutionRequest.class, OperateExecutionResponse.class)
+                .withName("OperateExecution")
+                .withUri("/v1/executions")
+                .withContentType("application/json");
+
+        // requests
+        builder.<OperateExecutionRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(OperateExecutionRequestBody.class),
+            f -> f.withMarshaller(OperateExecutionRequest::getBody, OperateExecutionRequest::setBody));
 
         // response
 
@@ -1144,6 +1673,79 @@ public class CocMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListScriptResourceTagsRequest, ListScriptResourceTagsResponse> listScriptResourceTags =
+        genForListScriptResourceTags();
+
+    private static HttpRequestDef<ListScriptResourceTagsRequest, ListScriptResourceTagsResponse> genForListScriptResourceTags() {
+        // basic
+        HttpRequestDef.Builder<ListScriptResourceTagsRequest, ListScriptResourceTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListScriptResourceTagsRequest.class, ListScriptResourceTagsResponse.class)
+            .withName("ListScriptResourceTags")
+            .withUri("/v1/script/{resource_type}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ListScriptResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListScriptResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(ListScriptResourceTagsRequest::getResourceType,
+                ListScriptResourceTagsRequest::setResourceType));
+        builder.<String>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScriptResourceTagsRequest::getLimit, ListScriptResourceTagsRequest::setLimit));
+        builder.<String>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListScriptResourceTagsRequest::getOffset, ListScriptResourceTagsRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateResourceTagsRequest, UpdateResourceTagsResponse> updateResourceTags =
+        genForUpdateResourceTags();
+
+    private static HttpRequestDef<UpdateResourceTagsRequest, UpdateResourceTagsResponse> genForUpdateResourceTags() {
+        // basic
+        HttpRequestDef.Builder<UpdateResourceTagsRequest, UpdateResourceTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateResourceTagsRequest.class, UpdateResourceTagsResponse.class)
+                .withName("UpdateResourceTags")
+                .withUri("/v1/script/{resource_type}/{resource_id}/tags/update")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateResourceTagsRequest::getResourceId, UpdateResourceTagsRequest::setResourceId));
+        builder.<UpdateResourceTagsRequest.ResourceTypeEnum>withRequestField("resource_type",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateResourceTagsRequest.ResourceTypeEnum.class),
+            f -> f.withMarshaller(UpdateResourceTagsRequest::getResourceType,
+                UpdateResourceTagsRequest::setResourceType));
+        builder.<UpdateResourceTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(UpdateResourceTagsRequestBody.class),
+            f -> f.withMarshaller(UpdateResourceTagsRequest::getBody, UpdateResourceTagsRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateResourceTagsResponse::getBody, UpdateResourceTagsResponse::setBody));
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateScheduledTaskRequest, CreateScheduledTaskResponse> createScheduledTask =
         genForCreateScheduledTask();
 
@@ -1543,7 +2145,7 @@ public class CocMeta {
             f -> f.withMarshaller(GetScriptJobBatchRequest::getLimit, GetScriptJobBatchRequest::setLimit));
         builder.<Long>withRequestField("marker",
             LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Long.class),
             f -> f.withMarshaller(GetScriptJobBatchRequest::getMarker, GetScriptJobBatchRequest::setMarker));
         builder.<String>withRequestField("X-Language",
@@ -1796,6 +2398,86 @@ public class CocMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AcceptScriptRequest, AcceptScriptResponse> acceptScript = genForAcceptScript();
+
+    private static HttpRequestDef<AcceptScriptRequest, AcceptScriptResponse> genForAcceptScript() {
+        // basic
+        HttpRequestDef.Builder<AcceptScriptRequest, AcceptScriptResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AcceptScriptRequest.class, AcceptScriptResponse.class)
+                .withName("AcceptScript")
+                .withUri("/v1/job/scripts/{script_uuid}/action")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("script_uuid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptScriptRequest::getScriptUuid, AcceptScriptRequest::setScriptUuid));
+        builder.<String>withRequestField("x-project-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptScriptRequest::getXProjectId, AcceptScriptRequest::setXProjectId));
+        builder.<String>withRequestField("x-user-profile",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptScriptRequest::getXUserProfile, AcceptScriptRequest::setXUserProfile));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AcceptScriptRequest::getXLanguage, AcceptScriptRequest::setXLanguage));
+        builder.<ApprovalJobScriptModel>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ApprovalJobScriptModel.class),
+            f -> f.withMarshaller(AcceptScriptRequest::getBody, AcceptScriptRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckScriptRiskRequest, CheckScriptRiskResponse> checkScriptRisk =
+        genForCheckScriptRisk();
+
+    private static HttpRequestDef<CheckScriptRiskRequest, CheckScriptRiskResponse> genForCheckScriptRisk() {
+        // basic
+        HttpRequestDef.Builder<CheckScriptRiskRequest, CheckScriptRiskResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckScriptRiskRequest.class, CheckScriptRiskResponse.class)
+                .withName("CheckScriptRisk")
+                .withUri("/v1/job/analyze-job")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckScriptRiskRequest::getXLanguage, CheckScriptRiskRequest::setXLanguage));
+        builder.<String>withRequestField("x-project-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckScriptRiskRequest::getXProjectId, CheckScriptRiskRequest::setXProjectId));
+        builder.<String>withRequestField("x-user-profile",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckScriptRiskRequest::getXUserProfile, CheckScriptRiskRequest::setXUserProfile));
+        builder.<JobScriptAnalyzeRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(JobScriptAnalyzeRequest.class),
+            f -> f.withMarshaller(CheckScriptRiskRequest::getBody, CheckScriptRiskRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateScriptRequest, CreateScriptResponse> createScript = genForCreateScript();
 
     private static HttpRequestDef<CreateScriptRequest, CreateScriptResponse> genForCreateScript() {
@@ -1944,6 +2626,45 @@ public class CocMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(GetScriptRequest::getXUserProfile, GetScriptRequest::setXUserProfile));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInstancesBatchRequest, ListInstancesBatchResponse> listInstancesBatch =
+        genForListInstancesBatch();
+
+    private static HttpRequestDef<ListInstancesBatchRequest, ListInstancesBatchResponse> genForListInstancesBatch() {
+        // basic
+        HttpRequestDef.Builder<ListInstancesBatchRequest, ListInstancesBatchResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListInstancesBatchRequest.class, ListInstancesBatchResponse.class)
+                .withName("ListInstancesBatch")
+                .withUri("/v1/instances/batches")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesBatchRequest::getXLanguage, ListInstancesBatchRequest::setXLanguage));
+        builder.<String>withRequestField("x-project-id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesBatchRequest::getXProjectId, ListInstancesBatchRequest::setXProjectId));
+        builder.<String>withRequestField("x-user-profile",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInstancesBatchRequest::getXUserProfile,
+                ListInstancesBatchRequest::setXUserProfile));
+        builder.<InstancesBatchesMode>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InstancesBatchesMode.class),
+            f -> f.withMarshaller(ListInstancesBatchRequest::getBody, ListInstancesBatchRequest::setBody));
 
         // response
 

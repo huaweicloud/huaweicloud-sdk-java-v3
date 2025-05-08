@@ -64,7 +64,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * 是否可以消费。
+     * **参数解释**： 是否可以消费。 **取值范围**： - true：可以消费。 - false：不可以消费。
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -81,7 +81,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * 是否广播。
+     * **参数解释**： 是否广播。 **取值范围**： - true：可以广播。 - false：不可以广播。
      * @return broadcast
      */
     public Boolean getBroadcast() {
@@ -114,7 +114,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * 关联的代理列表。
+     * **参数解释**： 关联的代理列表。
      * @return brokers
      */
     public List<String> getBrokers() {
@@ -131,7 +131,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * 消费组名称，只能由英文字母、数字、百分号、竖线、中划线、下划线组成，长度3~64个字符。
+     * **参数解释**： 消费组名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -148,7 +148,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * 消费组描述，长度0~200个字符。
+     * **参数解释**： 消费组描述。 **取值范围**： 不涉及。
      * @return groupDesc
      */
     public String getGroupDesc() {
@@ -165,7 +165,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * 最大重试次数，取值范围为1~16。
+     * **参数解释**： 最大重试次数。 **取值范围**： 1~16。
      * @return retryMaxTime
      */
     public Integer getRetryMaxTime() {
@@ -182,7 +182,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * 创建时间戳。
+     * **参数解释**： 创建时间戳。 **取值范围**： 不涉及。
      * @return createdAt
      */
     public Long getCreatedAt() {
@@ -215,7 +215,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * 权限集。
+     * **参数解释**： 权限集。
      * @return permissions
      */
     public List<String> getPermissions() {
@@ -232,7 +232,7 @@ public class ConsumerGroup {
     }
 
     /**
-     * 是否按顺序消费。
+     * **参数解释**： 是否按顺序消费。 **取值范围**： - true：按顺序消费。 - false：不按顺序消费。
      * @return consumeOrderly
      */
     public Boolean getConsumeOrderly() {

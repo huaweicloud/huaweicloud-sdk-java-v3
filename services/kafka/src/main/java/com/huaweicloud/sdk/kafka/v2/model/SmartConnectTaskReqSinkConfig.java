@@ -11,26 +11,6 @@ import java.util.Objects;
 public class SmartConnectTaskReqSinkConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "redis_address")
-
-    private String redisAddress;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "redis_type")
-
-    private String redisType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dcs_instance_id")
-
-    private String dcsInstanceId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "redis_password")
-
-    private String redisPassword;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "consumer_strategy")
 
     private String consumerStrategy;
@@ -79,74 +59,6 @@ public class SmartConnectTaskReqSinkConfig {
     @JsonProperty(value = "store_keys")
 
     private Boolean storeKeys;
-
-    public SmartConnectTaskReqSinkConfig withRedisAddress(String redisAddress) {
-        this.redisAddress = redisAddress;
-        return this;
-    }
-
-    /**
-     * Redis实例地址。（仅目标端类型为Redis时需要填写）
-     * @return redisAddress
-     */
-    public String getRedisAddress() {
-        return redisAddress;
-    }
-
-    public void setRedisAddress(String redisAddress) {
-        this.redisAddress = redisAddress;
-    }
-
-    public SmartConnectTaskReqSinkConfig withRedisType(String redisType) {
-        this.redisType = redisType;
-        return this;
-    }
-
-    /**
-     * Redis实例类型。（仅目标端类型为Redis时需要填写）
-     * @return redisType
-     */
-    public String getRedisType() {
-        return redisType;
-    }
-
-    public void setRedisType(String redisType) {
-        this.redisType = redisType;
-    }
-
-    public SmartConnectTaskReqSinkConfig withDcsInstanceId(String dcsInstanceId) {
-        this.dcsInstanceId = dcsInstanceId;
-        return this;
-    }
-
-    /**
-     * DCS实例ID。（仅目标端类型为Redis时需要填写）
-     * @return dcsInstanceId
-     */
-    public String getDcsInstanceId() {
-        return dcsInstanceId;
-    }
-
-    public void setDcsInstanceId(String dcsInstanceId) {
-        this.dcsInstanceId = dcsInstanceId;
-    }
-
-    public SmartConnectTaskReqSinkConfig withRedisPassword(String redisPassword) {
-        this.redisPassword = redisPassword;
-        return this;
-    }
-
-    /**
-     * Redis密码。（仅目标端类型为Redis时需要填写）
-     * @return redisPassword
-     */
-    public String getRedisPassword() {
-        return redisPassword;
-    }
-
-    public void setRedisPassword(String redisPassword) {
-        this.redisPassword = redisPassword;
-    }
 
     public SmartConnectTaskReqSinkConfig withConsumerStrategy(String consumerStrategy) {
         this.consumerStrategy = consumerStrategy;
@@ -327,10 +239,7 @@ public class SmartConnectTaskReqSinkConfig {
             return false;
         }
         SmartConnectTaskReqSinkConfig that = (SmartConnectTaskReqSinkConfig) obj;
-        return Objects.equals(this.redisAddress, that.redisAddress) && Objects.equals(this.redisType, that.redisType)
-            && Objects.equals(this.dcsInstanceId, that.dcsInstanceId)
-            && Objects.equals(this.redisPassword, that.redisPassword)
-            && Objects.equals(this.consumerStrategy, that.consumerStrategy)
+        return Objects.equals(this.consumerStrategy, that.consumerStrategy)
             && Objects.equals(this.destinationFileType, that.destinationFileType)
             && Objects.equals(this.deliverTimeInterval, that.deliverTimeInterval)
             && Objects.equals(this.accessKey, that.accessKey) && Objects.equals(this.secretKey, that.secretKey)
@@ -342,11 +251,7 @@ public class SmartConnectTaskReqSinkConfig {
 
     @Override
     public int hashCode() {
-        return Objects.hash(redisAddress,
-            redisType,
-            dcsInstanceId,
-            redisPassword,
-            consumerStrategy,
+        return Objects.hash(consumerStrategy,
             destinationFileType,
             deliverTimeInterval,
             accessKey,
@@ -362,10 +267,6 @@ public class SmartConnectTaskReqSinkConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class SmartConnectTaskReqSinkConfig {\n");
-        sb.append("    redisAddress: ").append(toIndentedString(redisAddress)).append("\n");
-        sb.append("    redisType: ").append(toIndentedString(redisType)).append("\n");
-        sb.append("    dcsInstanceId: ").append(toIndentedString(dcsInstanceId)).append("\n");
-        sb.append("    redisPassword: ").append(toIndentedString(redisPassword)).append("\n");
         sb.append("    consumerStrategy: ").append(toIndentedString(consumerStrategy)).append("\n");
         sb.append("    destinationFileType: ").append(toIndentedString(destinationFileType)).append("\n");
         sb.append("    deliverTimeInterval: ").append(toIndentedString(deliverTimeInterval)).append("\n");

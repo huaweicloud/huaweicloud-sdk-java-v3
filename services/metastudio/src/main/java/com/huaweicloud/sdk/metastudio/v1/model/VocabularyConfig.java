@@ -26,6 +26,11 @@ public class VocabularyConfig {
     private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "create_time")
 
     private String createTime;
@@ -86,6 +91,23 @@ public class VocabularyConfig {
         this.value = value;
     }
 
+    public VocabularyConfig withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * TTSS支持配置的词表类型 * CHINESE_G2P:拼音 * PHONETIC_SYMBOL:音标 * CONTINUUM:连读 * ALIAS:别名 * SAY_AS:数字英文读法
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public VocabularyConfig withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
@@ -130,13 +152,13 @@ public class VocabularyConfig {
         }
         VocabularyConfig that = (VocabularyConfig) obj;
         return Objects.equals(this.id, that.id) && Objects.equals(this.key, that.key)
-            && Objects.equals(this.value, that.value) && Objects.equals(this.createTime, that.createTime)
-            && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.value, that.value) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, key, value, createTime, updateTime);
+        return Objects.hash(id, key, value, type, createTime, updateTime);
     }
 
     @Override
@@ -146,6 +168,7 @@ public class VocabularyConfig {
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    key: ").append(toIndentedString(key)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("}");

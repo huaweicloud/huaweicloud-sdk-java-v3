@@ -61,7 +61,7 @@ public class AvailableZonesResp {
     }
 
     /**
-     * 是否售罄。
+     * **参数解释**： 是否售罄。 **取值范围**： - true：售罄 - false：没有售罄
      * @return soldOut
      */
     public Boolean getSoldOut() {
@@ -78,7 +78,7 @@ public class AvailableZonesResp {
     }
 
     /**
-     * 可用区ID。
+     * **参数解释**： 可用区ID。 **取值范围**： 不涉及
      * @return id
      */
     public String getId() {
@@ -95,7 +95,7 @@ public class AvailableZonesResp {
     }
 
     /**
-     * 可用区编码。
+     * **参数解释**： 可用区编码。 **取值范围**： 不涉及
      * @return code
      */
     public String getCode() {
@@ -112,7 +112,7 @@ public class AvailableZonesResp {
     }
 
     /**
-     * 可用区名称。
+     * **参数解释**： 可用区名称。 **取值范围**： 不涉及
      * @return name
      */
     public String getName() {
@@ -129,7 +129,7 @@ public class AvailableZonesResp {
     }
 
     /**
-     * 可用区端口号。
+     * **参数解释**： 可用区端口号。 **取值范围**： 不涉及
      * @return port
      */
     public String getPort() {
@@ -146,7 +146,7 @@ public class AvailableZonesResp {
     }
 
     /**
-     * 可用区上是否还有可用资源。
+     * **参数解释**： 可用区上是否还有可用资源。 **取值范围**： - true：有可用资源 - false：无可用资源
      * @return resourceAvailability
      */
     public String getResourceAvailability() {
@@ -163,7 +163,7 @@ public class AvailableZonesResp {
     }
 
     /**
-     * 是否为默认可用区。
+     * **参数解释**： 是否为默认可用区。 **取值范围**： - true：默认可用区 - false：不是默认可用区
      * @return defaultAz
      */
     public Boolean getDefaultAz() {
@@ -180,7 +180,7 @@ public class AvailableZonesResp {
     }
 
     /**
-     * 剩余时间。
+     * **参数解释**： 剩余时间，以Unix时间戳显示。 **取值范围**： 不涉及
      * @return remainTime
      */
     public Long getRemainTime() {
@@ -197,7 +197,7 @@ public class AvailableZonesResp {
     }
 
     /**
-     * 是否支持IPv6。
+     * **参数解释**： 是否支持IPv6。 **取值范围**： - true：支持 - false：不支持
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {

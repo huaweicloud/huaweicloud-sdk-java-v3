@@ -60,7 +60,7 @@ public class PartitionReassignRequest {
     }
 
     /**
-     * 重平衡分配方案。
+     * 分区平衡分配方案。
      * @return reassignments
      */
     public List<PartitionReassignEntity> getReassignments() {
@@ -77,7 +77,7 @@ public class PartitionReassignRequest {
     }
 
     /**
-     * 重平衡门限值。
+     * 分区平衡门限值。
      * @return throttle
      */
     public Integer getThrottle() {
@@ -94,7 +94,7 @@ public class PartitionReassignRequest {
     }
 
     /**
-     * 是否作为定时任务执行。若非定时执行，则is_schedule 和execute_at字段可为空；若为定时执行，is_schedule为true，execute_at字段非空。
+     * 是否作为定时任务执行。若非定时执行，is_schedule和execute_at字段可为空。若为定时执行，is_schedule为true，execute_at字段非空。
      * @return isSchedule
      */
     public Boolean getIsSchedule() {
@@ -128,7 +128,7 @@ public class PartitionReassignRequest {
     }
 
     /**
-     * 设为true表示执行时间预估任务，false为执行重平衡任务。
+     * 设为true表示执行时间预估任务，false为执行分区平衡任务。
      * @return timeEstimate
      */
     public Boolean getTimeEstimate() {

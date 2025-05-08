@@ -27,7 +27,7 @@ public class CreateReassignmentTaskResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID（当执行重平衡任务时仅返回job_id）。
+     * 任务ID（当执行分区平衡任务时仅返回job_id）。
      * @return jobId
      */
     public String getJobId() {

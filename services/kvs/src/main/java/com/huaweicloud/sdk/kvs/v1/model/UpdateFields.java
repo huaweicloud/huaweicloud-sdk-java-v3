@@ -46,6 +46,18 @@ public class UpdateFields {
 
     private Document insert;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "delete")
+    @BsonProperty(value = "delete")
+
+    private Document delete;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_blob")
+    @BsonProperty(value = "update_blob")
+
+    private UpdateBlob updateBlob;
+
     public UpdateFields withUpsert(Document upsert) {
         this.upsert = upsert;
         return this;
@@ -147,6 +159,49 @@ public class UpdateFields {
         this.insert = insert;
     }
 
+    public UpdateFields withDelete(Document delete) {
+        this.delete = delete;
+        return this;
+    }
+
+    /**
+     * 从数组中删除某个元素 > 非数组返回失败。
+     * @return delete
+     */
+    public Document getDelete() {
+        return delete;
+    }
+
+    public void setDelete(Document delete) {
+        this.delete = delete;
+    }
+
+    public UpdateFields withUpdateBlob(UpdateBlob updateBlob) {
+        this.updateBlob = updateBlob;
+        return this;
+    }
+
+    public UpdateFields withUpdateBlob(Consumer<UpdateBlob> updateBlobSetter) {
+        if (this.updateBlob == null) {
+            this.updateBlob = new UpdateBlob();
+            updateBlobSetter.accept(this.updateBlob);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get updateBlob
+     * @return updateBlob
+     */
+    public UpdateBlob getUpdateBlob() {
+        return updateBlob;
+    }
+
+    public void setUpdateBlob(UpdateBlob updateBlob) {
+        this.updateBlob = updateBlob;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -158,12 +213,13 @@ public class UpdateFields {
         UpdateFields that = (UpdateFields) obj;
         return Objects.equals(this.upsert, that.upsert) && Objects.equals(this.set, that.set)
             && Objects.equals(this.add, that.add) && Objects.equals(this.rmv, that.rmv)
-            && Objects.equals(this.insert, that.insert);
+            && Objects.equals(this.insert, that.insert) && Objects.equals(this.delete, that.delete)
+            && Objects.equals(this.updateBlob, that.updateBlob);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(upsert, set, add, rmv, insert);
+        return Objects.hash(upsert, set, add, rmv, insert, delete, updateBlob);
     }
 
     @Override
@@ -175,6 +231,8 @@ public class UpdateFields {
         sb.append("    add: ").append(toIndentedString(add)).append("\n");
         sb.append("    rmv: ").append(toIndentedString(rmv)).append("\n");
         sb.append("    insert: ").append(toIndentedString(insert)).append("\n");
+        sb.append("    delete: ").append(toIndentedString(delete)).append("\n");
+        sb.append("    updateBlob: ").append(toIndentedString(updateBlob)).append("\n");
         sb.append("}");
         return sb.toString();
     }

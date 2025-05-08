@@ -41,6 +41,16 @@ public class ListTtscVocabularyConfigsRequest {
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tts_service_name")
+
+    private String ttsServiceName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_vocabulary_config_enable")
+
+    private String isVocabularyConfigEnable;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -175,6 +185,40 @@ public class ListTtscVocabularyConfigsRequest {
         this.type = type;
     }
 
+    public ListTtscVocabularyConfigsRequest withTtsServiceName(String ttsServiceName) {
+        this.ttsServiceName = ttsServiceName;
+        return this;
+    }
+
+    /**
+     * 声音模型名称
+     * @return ttsServiceName
+     */
+    public String getTtsServiceName() {
+        return ttsServiceName;
+    }
+
+    public void setTtsServiceName(String ttsServiceName) {
+        this.ttsServiceName = ttsServiceName;
+    }
+
+    public ListTtscVocabularyConfigsRequest withIsVocabularyConfigEnable(String isVocabularyConfigEnable) {
+        this.isVocabularyConfigEnable = isVocabularyConfigEnable;
+        return this;
+    }
+
+    /**
+     * 是否应用词表配置，从周边服务传递
+     * @return isVocabularyConfigEnable
+     */
+    public String getIsVocabularyConfigEnable() {
+        return isVocabularyConfigEnable;
+    }
+
+    public void setIsVocabularyConfigEnable(String isVocabularyConfigEnable) {
+        this.isVocabularyConfigEnable = isVocabularyConfigEnable;
+    }
+
     public ListTtscVocabularyConfigsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -276,9 +320,11 @@ public class ListTtscVocabularyConfigsRequest {
         return Objects.equals(this.xRequestId, that.xRequestId)
             && Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
-            && Objects.equals(this.type, that.type) && Objects.equals(this.limit, that.limit)
-            && Objects.equals(this.offset, that.offset) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.searchKey, that.searchKey);
+            && Objects.equals(this.type, that.type) && Objects.equals(this.ttsServiceName, that.ttsServiceName)
+            && Objects.equals(this.isVocabularyConfigEnable, that.isVocabularyConfigEnable)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.searchKey, that.searchKey);
     }
 
     @Override
@@ -289,6 +335,8 @@ public class ListTtscVocabularyConfigsRequest {
             xProjectId,
             xAppUserId,
             type,
+            ttsServiceName,
+            isVocabularyConfigEnable,
             limit,
             offset,
             startTime,
@@ -306,6 +354,8 @@ public class ListTtscVocabularyConfigsRequest {
         sb.append("    xProjectId: ").append(toIndentedString(xProjectId)).append("\n");
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    ttsServiceName: ").append(toIndentedString(ttsServiceName)).append("\n");
+        sb.append("    isVocabularyConfigEnable: ").append(toIndentedString(isVocabularyConfigEnable)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");

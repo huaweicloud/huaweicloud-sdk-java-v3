@@ -186,6 +186,11 @@ public class CreateAsyncTtsJobRequestBody {
 
     private Boolean isVocabularyConfigEnable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_concurrent_resource")
+
+    private Boolean isConcurrentResource;
+
     public CreateAsyncTtsJobRequestBody withText(String text) {
         this.text = text;
         return this;
@@ -549,6 +554,23 @@ public class CreateAsyncTtsJobRequestBody {
         this.isVocabularyConfigEnable = isVocabularyConfigEnable;
     }
 
+    public CreateAsyncTtsJobRequestBody withIsConcurrentResource(Boolean isConcurrentResource) {
+        this.isConcurrentResource = isConcurrentResource;
+        return this;
+    }
+
+    /**
+     * 是否使用包周期路数资源进行计费
+     * @return isConcurrentResource
+     */
+    public Boolean getIsConcurrentResource() {
+        return isConcurrentResource;
+    }
+
+    public void setIsConcurrentResource(Boolean isConcurrentResource) {
+        this.isConcurrentResource = isConcurrentResource;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -571,7 +593,8 @@ public class CreateAsyncTtsJobRequestBody {
             && Objects.equals(this.outputExternalUrl, that.outputExternalUrl)
             && Objects.equals(this.srtOutputExternalUrl, that.srtOutputExternalUrl)
             && Objects.equals(this.actionOutputExternalUrl, that.actionOutputExternalUrl)
-            && Objects.equals(this.isVocabularyConfigEnable, that.isVocabularyConfigEnable);
+            && Objects.equals(this.isVocabularyConfigEnable, that.isVocabularyConfigEnable)
+            && Objects.equals(this.isConcurrentResource, that.isConcurrentResource);
     }
 
     @Override
@@ -595,7 +618,8 @@ public class CreateAsyncTtsJobRequestBody {
             outputExternalUrl,
             srtOutputExternalUrl,
             actionOutputExternalUrl,
-            isVocabularyConfigEnable);
+            isVocabularyConfigEnable,
+            isConcurrentResource);
     }
 
     @Override
@@ -622,6 +646,7 @@ public class CreateAsyncTtsJobRequestBody {
         sb.append("    srtOutputExternalUrl: ").append(toIndentedString(srtOutputExternalUrl)).append("\n");
         sb.append("    actionOutputExternalUrl: ").append(toIndentedString(actionOutputExternalUrl)).append("\n");
         sb.append("    isVocabularyConfigEnable: ").append(toIndentedString(isVocabularyConfigEnable)).append("\n");
+        sb.append("    isConcurrentResource: ").append(toIndentedString(isConcurrentResource)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -30,6 +30,8 @@ import com.huaweicloud.sdk.bms.v1.model.DetachBaremetalServerVolumeRequest;
 import com.huaweicloud.sdk.bms.v1.model.DetachBaremetalServerVolumeResponse;
 import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServerDetailsRequest;
 import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServerDetailsResponse;
+import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersDetailRequest;
+import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersDetailResponse;
 import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersRequest;
 import com.huaweicloud.sdk.bms.v1.model.ListBareMetalServersResponse;
 import com.huaweicloud.sdk.bms.v1.model.ListBaremetalFlavorDetailExtendsRequest;
@@ -551,6 +553,36 @@ public class BmsAsyncClient {
     public AsyncInvoker<ListBareMetalServersRequest, ListBareMetalServersResponse> listBareMetalServersAsyncInvoker(
         ListBareMetalServersRequest request) {
         return new AsyncInvoker<>(request, BmsMeta.listBareMetalServers, hcClient);
+    }
+
+    /**
+     * 查询裸金属服务器列表
+     *
+     * 用户根据设置的请求条件筛选裸金属服务器，并获取裸金属服务器的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBareMetalServersDetailRequest 请求对象
+     * @return CompletableFuture<ListBareMetalServersDetailResponse>
+     */
+    public CompletableFuture<ListBareMetalServersDetailResponse> listBareMetalServersDetailAsync(
+        ListBareMetalServersDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, BmsMeta.listBareMetalServersDetail);
+    }
+
+    /**
+     * 查询裸金属服务器列表
+     *
+     * 用户根据设置的请求条件筛选裸金属服务器，并获取裸金属服务器的详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListBareMetalServersDetailRequest 请求对象
+     * @return AsyncInvoker<ListBareMetalServersDetailRequest, ListBareMetalServersDetailResponse>
+     */
+    public AsyncInvoker<ListBareMetalServersDetailRequest, ListBareMetalServersDetailResponse> listBareMetalServersDetailAsyncInvoker(
+        ListBareMetalServersDetailRequest request) {
+        return new AsyncInvoker<>(request, BmsMeta.listBareMetalServersDetail, hcClient);
     }
 
     /**

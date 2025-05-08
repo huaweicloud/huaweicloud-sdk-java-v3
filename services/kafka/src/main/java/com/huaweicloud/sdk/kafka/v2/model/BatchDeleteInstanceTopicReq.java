@@ -40,7 +40,7 @@ public class BatchDeleteInstanceTopicReq {
     }
 
     /**
-     * 待删除的topic列表。  批量删除实例topic时，为必选参数。
+     * **参数解释**： 待删除的Topic列表。 **约束限制**： 不涉及。
      * @return topics
      */
     public List<String> getTopics() {

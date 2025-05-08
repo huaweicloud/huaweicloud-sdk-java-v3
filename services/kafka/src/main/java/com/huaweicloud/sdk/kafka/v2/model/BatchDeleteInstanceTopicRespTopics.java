@@ -26,7 +26,7 @@ public class BatchDeleteInstanceTopicRespTopics {
     }
 
     /**
-     * Topic名称。
+     * **参数解释**： Topic名称。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -43,7 +43,7 @@ public class BatchDeleteInstanceTopicRespTopics {
     }
 
     /**
-     * 是否删除成功。
+     * **参数解释**： 是否删除成功。 **取值范围**： - true：删除成功。 - false：删除失败。
      * @return success
      */
     public Boolean getSuccess() {

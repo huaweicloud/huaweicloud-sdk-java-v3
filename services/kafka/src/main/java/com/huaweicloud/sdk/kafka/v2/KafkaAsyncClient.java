@@ -29,12 +29,20 @@ import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceUserRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateInstanceUserResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaConsumerGroupRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaConsumerGroupResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaReassignmentTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaReassignmentTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaRebalanceLogTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaRebalanceLogTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaTopicQuotaRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaTopicQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateKafkaUserClientQuotaTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateMessageDiagnosisTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateMessageDiagnosisTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidKafkaInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.CreatePostPaidKafkaInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.CreateReassignmentTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteBackgroundTaskRequest;
@@ -43,10 +51,18 @@ import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteConnectorTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteConsumerGroupOffsetsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteConsumerGroupOffsetsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaMessageRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaMessageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaTopicQuotaRequest;
+import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaTopicQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.DeleteKafkaUserClientQuotaTaskResponse;
+import com.huaweicloud.sdk.kafka.v2.model.EnableDnsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.EnableDnsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListAvailableZonesResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListBackgroundTasksRequest;
@@ -55,6 +71,14 @@ import com.huaweicloud.sdk.kafka.v2.model.ListConnectorTasksRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListConnectorTasksResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListEngineProductsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListEngineProductsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupMembersRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupMembersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupMessageOffsetRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupMessageOffsetResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupTopicsRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupTopicsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListInstanceConsumerGroupsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ListInstanceTopicsRequest;
@@ -71,6 +95,8 @@ import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ListTopicProducersResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ModifyInstanceConfigsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyKafkaTopicQuotaRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ModifyKafkaTopicQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.PauseConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.PauseConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResetManagerPasswordRequest;
@@ -87,10 +113,14 @@ import com.huaweicloud.sdk.kafka.v2.model.ResizeEngineInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeEngineInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResizeInstanceResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ResizeKafkaInstanceRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ResizeKafkaInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.RestartConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.RestartConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.RestartManagerRequest;
 import com.huaweicloud.sdk.kafka.v2.model.RestartManagerResponse;
+import com.huaweicloud.sdk.kafka.v2.model.RestartSmartConnectorTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.RestartSmartConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ResumeConnectorTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ResumeConnectorTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.SendKafkaMessageRequest;
@@ -123,12 +153,18 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceTopicDetailRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceTopicDetailResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceUsersRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowInstanceUsersResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaInstanceExtendProductInfoRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaInstanceExtendProductInfoResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProjectTagsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaProjectTagsResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaRebalanceLogRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaRebalanceLogResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTagsResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicPartitionDiskusageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicQuotaRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaTopicQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaUserClientQuotaRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowKafkaUserClientQuotaResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowMaintainWindowsRequest;
@@ -143,20 +179,28 @@ import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionEndMessageResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowPartitionMessageResponse;
+import com.huaweicloud.sdk.kafka.v2.model.ShowQuotasRequest;
+import com.huaweicloud.sdk.kafka.v2.model.ShowQuotasResponse;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyRequest;
 import com.huaweicloud.sdk.kafka.v2.model.ShowTopicAccessPolicyResponse;
+import com.huaweicloud.sdk.kafka.v2.model.StopKafkaRebalanceLogTaskRequest;
+import com.huaweicloud.sdk.kafka.v2.model.StopKafkaRebalanceLogTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceAutoCreateTopicResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceConsumerGroupRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceConsumerGroupResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceCrossVpcIpRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceCrossVpcIpResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceGroupRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceGroupResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceTopicResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateInstanceUserResponse;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaPortProtocolRequest;
+import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaPortProtocolResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskRequest;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateKafkaUserClientQuotaTaskResponse;
 import com.huaweicloud.sdk.kafka.v2.model.UpdateTopicAccessPolicyRequest;
@@ -400,7 +444,7 @@ public class KafkaAsyncClient {
      *
      * 创建实例。
      * 
-     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)
+     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -417,7 +461,7 @@ public class KafkaAsyncClient {
      *
      * 创建实例。
      * 
-     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ocb,hws_ocb,ctc,g42,hk_g42,tm,hk_tm,dt)
+     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -518,6 +562,96 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * Kafka实例开始分区平衡任务
+     *
+     * 该接口用于向Kafka实例提交分区平衡任务，若成功则返回分区平衡任务的job id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKafkaReassignmentTaskRequest 请求对象
+     * @return CompletableFuture<CreateKafkaReassignmentTaskResponse>
+     */
+    public CompletableFuture<CreateKafkaReassignmentTaskResponse> createKafkaReassignmentTaskAsync(
+        CreateKafkaReassignmentTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.createKafkaReassignmentTask);
+    }
+
+    /**
+     * Kafka实例开始分区平衡任务
+     *
+     * 该接口用于向Kafka实例提交分区平衡任务，若成功则返回分区平衡任务的job id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKafkaReassignmentTaskRequest 请求对象
+     * @return AsyncInvoker<CreateKafkaReassignmentTaskRequest, CreateKafkaReassignmentTaskResponse>
+     */
+    public AsyncInvoker<CreateKafkaReassignmentTaskRequest, CreateKafkaReassignmentTaskResponse> createKafkaReassignmentTaskAsyncInvoker(
+        CreateKafkaReassignmentTaskRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.createKafkaReassignmentTask, hcClient);
+    }
+
+    /**
+     * 开启Kafka实例重平衡日志功能
+     *
+     * 开启Kafka实例重平衡日志功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKafkaRebalanceLogTaskRequest 请求对象
+     * @return CompletableFuture<CreateKafkaRebalanceLogTaskResponse>
+     */
+    public CompletableFuture<CreateKafkaRebalanceLogTaskResponse> createKafkaRebalanceLogTaskAsync(
+        CreateKafkaRebalanceLogTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.createKafkaRebalanceLogTask);
+    }
+
+    /**
+     * 开启Kafka实例重平衡日志功能
+     *
+     * 开启Kafka实例重平衡日志功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKafkaRebalanceLogTaskRequest 请求对象
+     * @return AsyncInvoker<CreateKafkaRebalanceLogTaskRequest, CreateKafkaRebalanceLogTaskResponse>
+     */
+    public AsyncInvoker<CreateKafkaRebalanceLogTaskRequest, CreateKafkaRebalanceLogTaskResponse> createKafkaRebalanceLogTaskAsyncInvoker(
+        CreateKafkaRebalanceLogTaskRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.createKafkaRebalanceLogTask, hcClient);
+    }
+
+    /**
+     * 创建topic流控配置
+     *
+     * 该接口用于向Kafka实例提交创建topic级别的流控任务，若成功则返回流控任务的job_id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKafkaTopicQuotaRequest 请求对象
+     * @return CompletableFuture<CreateKafkaTopicQuotaResponse>
+     */
+    public CompletableFuture<CreateKafkaTopicQuotaResponse> createKafkaTopicQuotaAsync(
+        CreateKafkaTopicQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.createKafkaTopicQuota);
+    }
+
+    /**
+     * 创建topic流控配置
+     *
+     * 该接口用于向Kafka实例提交创建topic级别的流控任务，若成功则返回流控任务的job_id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateKafkaTopicQuotaRequest 请求对象
+     * @return AsyncInvoker<CreateKafkaTopicQuotaRequest, CreateKafkaTopicQuotaResponse>
+     */
+    public AsyncInvoker<CreateKafkaTopicQuotaRequest, CreateKafkaTopicQuotaResponse> createKafkaTopicQuotaAsyncInvoker(
+        CreateKafkaTopicQuotaRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.createKafkaTopicQuota, hcClient);
+    }
+
+    /**
      * 创建用户/客户端流控配置
      *
      * 该接口用于向Kafka实例提交创建用户、客户端级别的流控任务，若成功则返回流控任务的job_id。
@@ -608,9 +742,43 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * Kafka实例开始分区重平衡任务
+     * 创建Kafka实例
      *
-     * 该接口用于向Kafka实例提交分区重平衡任务或计算重平衡预估时间。
+     * 创建实例。
+     * 
+     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePostPaidKafkaInstanceRequest 请求对象
+     * @return CompletableFuture<CreatePostPaidKafkaInstanceResponse>
+     */
+    public CompletableFuture<CreatePostPaidKafkaInstanceResponse> createPostPaidKafkaInstanceAsync(
+        CreatePostPaidKafkaInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.createPostPaidKafkaInstance);
+    }
+
+    /**
+     * 创建Kafka实例
+     *
+     * 创建实例。
+     * 
+     * [该接口支持创建按需和包周期两种计费方式的实例。](tag:hws,hws_eu,hws_hk,ctc)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreatePostPaidKafkaInstanceRequest 请求对象
+     * @return AsyncInvoker<CreatePostPaidKafkaInstanceRequest, CreatePostPaidKafkaInstanceResponse>
+     */
+    public AsyncInvoker<CreatePostPaidKafkaInstanceRequest, CreatePostPaidKafkaInstanceResponse> createPostPaidKafkaInstanceAsyncInvoker(
+        CreatePostPaidKafkaInstanceRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.createPostPaidKafkaInstance, hcClient);
+    }
+
+    /**
+     * Kafka实例开始分区平衡任务
+     *
+     * 该接口用于向Kafka实例提交分区平衡任务或计算分区平衡预估时间。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -623,9 +791,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * Kafka实例开始分区重平衡任务
+     * Kafka实例开始分区平衡任务
      *
-     * 该接口用于向Kafka实例提交分区重平衡任务或计算重平衡预估时间。
+     * 该接口用于向Kafka实例提交分区平衡任务或计算分区平衡预估时间。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -668,6 +836,36 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 删除消费组在指定Topic的消费位点
+     *
+     * 删除消费组在指定Topic的消费位点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConsumerGroupOffsetsRequest 请求对象
+     * @return CompletableFuture<DeleteConsumerGroupOffsetsResponse>
+     */
+    public CompletableFuture<DeleteConsumerGroupOffsetsResponse> deleteConsumerGroupOffsetsAsync(
+        DeleteConsumerGroupOffsetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.deleteConsumerGroupOffsets);
+    }
+
+    /**
+     * 删除消费组在指定Topic的消费位点
+     *
+     * 删除消费组在指定Topic的消费位点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteConsumerGroupOffsetsRequest 请求对象
+     * @return AsyncInvoker<DeleteConsumerGroupOffsetsRequest, DeleteConsumerGroupOffsetsResponse>
+     */
+    public AsyncInvoker<DeleteConsumerGroupOffsetsRequest, DeleteConsumerGroupOffsetsResponse> deleteConsumerGroupOffsetsAsyncInvoker(
+        DeleteConsumerGroupOffsetsRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.deleteConsumerGroupOffsets, hcClient);
+    }
+
+    /**
      * 删除指定的实例
      *
      * 删除指定的实例，释放该实例的所有资源。
@@ -694,6 +892,65 @@ public class KafkaAsyncClient {
     public AsyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceAsyncInvoker(
         DeleteInstanceRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.deleteInstance, hcClient);
+    }
+
+    /**
+     * Kafka删除消息
+     *
+     * Kafka删除消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKafkaMessageRequest 请求对象
+     * @return CompletableFuture<DeleteKafkaMessageResponse>
+     */
+    public CompletableFuture<DeleteKafkaMessageResponse> deleteKafkaMessageAsync(DeleteKafkaMessageRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.deleteKafkaMessage);
+    }
+
+    /**
+     * Kafka删除消息
+     *
+     * Kafka删除消息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKafkaMessageRequest 请求对象
+     * @return AsyncInvoker<DeleteKafkaMessageRequest, DeleteKafkaMessageResponse>
+     */
+    public AsyncInvoker<DeleteKafkaMessageRequest, DeleteKafkaMessageResponse> deleteKafkaMessageAsyncInvoker(
+        DeleteKafkaMessageRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.deleteKafkaMessage, hcClient);
+    }
+
+    /**
+     * 删除topic流控配置
+     *
+     * 该接口用于向Kafka实例提交删除topic级别的流控任务，若成功则返回流控任务的job_id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKafkaTopicQuotaRequest 请求对象
+     * @return CompletableFuture<DeleteKafkaTopicQuotaResponse>
+     */
+    public CompletableFuture<DeleteKafkaTopicQuotaResponse> deleteKafkaTopicQuotaAsync(
+        DeleteKafkaTopicQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.deleteKafkaTopicQuota);
+    }
+
+    /**
+     * 删除topic流控配置
+     *
+     * 该接口用于向Kafka实例提交删除topic级别的流控任务，若成功则返回流控任务的job_id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteKafkaTopicQuotaRequest 请求对象
+     * @return AsyncInvoker<DeleteKafkaTopicQuotaRequest, DeleteKafkaTopicQuotaResponse>
+     */
+    public AsyncInvoker<DeleteKafkaTopicQuotaRequest, DeleteKafkaTopicQuotaResponse> deleteKafkaTopicQuotaAsyncInvoker(
+        DeleteKafkaTopicQuotaRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.deleteKafkaTopicQuota, hcClient);
     }
 
     /**
@@ -724,6 +981,34 @@ public class KafkaAsyncClient {
     public AsyncInvoker<DeleteKafkaUserClientQuotaTaskRequest, DeleteKafkaUserClientQuotaTaskResponse> deleteKafkaUserClientQuotaTaskAsyncInvoker(
         DeleteKafkaUserClientQuotaTaskRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.deleteKafkaUserClientQuotaTask, hcClient);
+    }
+
+    /**
+     * 开启Kafka实例域名访问能力
+     *
+     * 开启Kafka实例域名访问后，客户端可以通过域名连接Kafka实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDnsRequest 请求对象
+     * @return CompletableFuture<EnableDnsResponse>
+     */
+    public CompletableFuture<EnableDnsResponse> enableDnsAsync(EnableDnsRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.enableDns);
+    }
+
+    /**
+     * 开启Kafka实例域名访问能力
+     *
+     * 开启Kafka实例域名访问后，客户端可以通过域名连接Kafka实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request EnableDnsRequest 请求对象
+     * @return AsyncInvoker<EnableDnsRequest, EnableDnsResponse>
+     */
+    public AsyncInvoker<EnableDnsRequest, EnableDnsResponse> enableDnsAsyncInvoker(EnableDnsRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.enableDns, hcClient);
     }
 
     /**
@@ -811,6 +1096,126 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ListEngineProductsRequest, ListEngineProductsResponse> listEngineProductsAsyncInvoker(
         ListEngineProductsRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.listEngineProducts, hcClient);
+    }
+
+    /**
+     * 查询指定消费组
+     *
+     * 查询指定消费组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceConsumerGroupRequest 请求对象
+     * @return CompletableFuture<ListInstanceConsumerGroupResponse>
+     */
+    public CompletableFuture<ListInstanceConsumerGroupResponse> listInstanceConsumerGroupAsync(
+        ListInstanceConsumerGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.listInstanceConsumerGroup);
+    }
+
+    /**
+     * 查询指定消费组
+     *
+     * 查询指定消费组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceConsumerGroupRequest 请求对象
+     * @return AsyncInvoker<ListInstanceConsumerGroupRequest, ListInstanceConsumerGroupResponse>
+     */
+    public AsyncInvoker<ListInstanceConsumerGroupRequest, ListInstanceConsumerGroupResponse> listInstanceConsumerGroupAsyncInvoker(
+        ListInstanceConsumerGroupRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.listInstanceConsumerGroup, hcClient);
+    }
+
+    /**
+     * 查询指定消费组的消费成员
+     *
+     * 查询指定消费组的消费成员。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceConsumerGroupMembersRequest 请求对象
+     * @return CompletableFuture<ListInstanceConsumerGroupMembersResponse>
+     */
+    public CompletableFuture<ListInstanceConsumerGroupMembersResponse> listInstanceConsumerGroupMembersAsync(
+        ListInstanceConsumerGroupMembersRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.listInstanceConsumerGroupMembers);
+    }
+
+    /**
+     * 查询指定消费组的消费成员
+     *
+     * 查询指定消费组的消费成员。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceConsumerGroupMembersRequest 请求对象
+     * @return AsyncInvoker<ListInstanceConsumerGroupMembersRequest, ListInstanceConsumerGroupMembersResponse>
+     */
+    public AsyncInvoker<ListInstanceConsumerGroupMembersRequest, ListInstanceConsumerGroupMembersResponse> listInstanceConsumerGroupMembersAsyncInvoker(
+        ListInstanceConsumerGroupMembersRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.listInstanceConsumerGroupMembers, hcClient);
+    }
+
+    /**
+     * 查询消费组消息位点
+     *
+     * 查询消费组消息位点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceConsumerGroupMessageOffsetRequest 请求对象
+     * @return CompletableFuture<ListInstanceConsumerGroupMessageOffsetResponse>
+     */
+    public CompletableFuture<ListInstanceConsumerGroupMessageOffsetResponse> listInstanceConsumerGroupMessageOffsetAsync(
+        ListInstanceConsumerGroupMessageOffsetRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.listInstanceConsumerGroupMessageOffset);
+    }
+
+    /**
+     * 查询消费组消息位点
+     *
+     * 查询消费组消息位点。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceConsumerGroupMessageOffsetRequest 请求对象
+     * @return AsyncInvoker<ListInstanceConsumerGroupMessageOffsetRequest, ListInstanceConsumerGroupMessageOffsetResponse>
+     */
+    public AsyncInvoker<ListInstanceConsumerGroupMessageOffsetRequest, ListInstanceConsumerGroupMessageOffsetResponse> listInstanceConsumerGroupMessageOffsetAsyncInvoker(
+        ListInstanceConsumerGroupMessageOffsetRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.listInstanceConsumerGroupMessageOffset, hcClient);
+    }
+
+    /**
+     * 查询指定消费组的Topic
+     *
+     * 查询指定消费组的Topic。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceConsumerGroupTopicsRequest 请求对象
+     * @return CompletableFuture<ListInstanceConsumerGroupTopicsResponse>
+     */
+    public CompletableFuture<ListInstanceConsumerGroupTopicsResponse> listInstanceConsumerGroupTopicsAsync(
+        ListInstanceConsumerGroupTopicsRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.listInstanceConsumerGroupTopics);
+    }
+
+    /**
+     * 查询指定消费组的Topic
+     *
+     * 查询指定消费组的Topic。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInstanceConsumerGroupTopicsRequest 请求对象
+     * @return AsyncInvoker<ListInstanceConsumerGroupTopicsRequest, ListInstanceConsumerGroupTopicsResponse>
+     */
+    public AsyncInvoker<ListInstanceConsumerGroupTopicsRequest, ListInstanceConsumerGroupTopicsResponse> listInstanceConsumerGroupTopicsAsyncInvoker(
+        ListInstanceConsumerGroupTopicsRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.listInstanceConsumerGroupTopics, hcClient);
     }
 
     /**
@@ -1004,7 +1409,7 @@ public class KafkaAsyncClient {
     /**
      * 查询Topic的当前生产者列表
      *
-     * 查询Topic的当前生产者列表
+     * 查询Topic的当前生产者列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1018,7 +1423,7 @@ public class KafkaAsyncClient {
     /**
      * 查询Topic的当前生产者列表
      *
-     * 查询Topic的当前生产者列表
+     * 查询Topic的当前生产者列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1058,6 +1463,36 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ModifyInstanceConfigsRequest, ModifyInstanceConfigsResponse> modifyInstanceConfigsAsyncInvoker(
         ModifyInstanceConfigsRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.modifyInstanceConfigs, hcClient);
+    }
+
+    /**
+     * 修改topic流控配置
+     *
+     * 该接口用于向Kafka实例提交修改topic级别的流控任务，若成功则返回流控任务的job_id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyKafkaTopicQuotaRequest 请求对象
+     * @return CompletableFuture<ModifyKafkaTopicQuotaResponse>
+     */
+    public CompletableFuture<ModifyKafkaTopicQuotaResponse> modifyKafkaTopicQuotaAsync(
+        ModifyKafkaTopicQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.modifyKafkaTopicQuota);
+    }
+
+    /**
+     * 修改topic流控配置
+     *
+     * 该接口用于向Kafka实例提交修改topic级别的流控任务，若成功则返回流控任务的job_id。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyKafkaTopicQuotaRequest 请求对象
+     * @return AsyncInvoker<ModifyKafkaTopicQuotaRequest, ModifyKafkaTopicQuotaResponse>
+     */
+    public AsyncInvoker<ModifyKafkaTopicQuotaRequest, ModifyKafkaTopicQuotaResponse> modifyKafkaTopicQuotaAsyncInvoker(
+        ModifyKafkaTopicQuotaRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.modifyKafkaTopicQuota, hcClient);
     }
 
     /**
@@ -1272,6 +1707,35 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ResizeInstanceRequest, ResizeInstanceResponse> resizeInstanceAsyncInvoker(
         ResizeInstanceRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.resizeInstance, hcClient);
+    }
+
+    /**
+     * 实例扩容
+     *
+     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResizeKafkaInstanceRequest 请求对象
+     * @return CompletableFuture<ResizeKafkaInstanceResponse>
+     */
+    public CompletableFuture<ResizeKafkaInstanceResponse> resizeKafkaInstanceAsync(ResizeKafkaInstanceRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.resizeKafkaInstance);
+    }
+
+    /**
+     * 实例扩容
+     *
+     * 实例规格变更。[当前通过调用API，只支持按需实例进行实例扩容。](tag:hws,hws_hk,ctc,cmcc,hws_eu)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResizeKafkaInstanceRequest 请求对象
+     * @return AsyncInvoker<ResizeKafkaInstanceRequest, ResizeKafkaInstanceResponse>
+     */
+    public AsyncInvoker<ResizeKafkaInstanceRequest, ResizeKafkaInstanceResponse> resizeKafkaInstanceAsyncInvoker(
+        ResizeKafkaInstanceRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.resizeKafkaInstance, hcClient);
     }
 
     /**
@@ -1719,6 +2183,36 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 查询实例的扩容规格列表
+     *
+     * 查询实例的扩容规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaInstanceExtendProductInfoRequest 请求对象
+     * @return CompletableFuture<ShowKafkaInstanceExtendProductInfoResponse>
+     */
+    public CompletableFuture<ShowKafkaInstanceExtendProductInfoResponse> showKafkaInstanceExtendProductInfoAsync(
+        ShowKafkaInstanceExtendProductInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showKafkaInstanceExtendProductInfo);
+    }
+
+    /**
+     * 查询实例的扩容规格列表
+     *
+     * 查询实例的扩容规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaInstanceExtendProductInfoRequest 请求对象
+     * @return AsyncInvoker<ShowKafkaInstanceExtendProductInfoRequest, ShowKafkaInstanceExtendProductInfoResponse>
+     */
+    public AsyncInvoker<ShowKafkaInstanceExtendProductInfoRequest, ShowKafkaInstanceExtendProductInfoResponse> showKafkaInstanceExtendProductInfoAsyncInvoker(
+        ShowKafkaInstanceExtendProductInfoRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showKafkaInstanceExtendProductInfo, hcClient);
+    }
+
+    /**
      * 查询项目标签
      *
      * 查询项目标签。
@@ -1746,6 +2240,36 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ShowKafkaProjectTagsRequest, ShowKafkaProjectTagsResponse> showKafkaProjectTagsAsyncInvoker(
         ShowKafkaProjectTagsRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.showKafkaProjectTags, hcClient);
+    }
+
+    /**
+     * 查询Kafka实例重平衡日志详情
+     *
+     * 查询Kafka实例重平衡日志详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaRebalanceLogRequest 请求对象
+     * @return CompletableFuture<ShowKafkaRebalanceLogResponse>
+     */
+    public CompletableFuture<ShowKafkaRebalanceLogResponse> showKafkaRebalanceLogAsync(
+        ShowKafkaRebalanceLogRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showKafkaRebalanceLog);
+    }
+
+    /**
+     * 查询Kafka实例重平衡日志详情
+     *
+     * 查询Kafka实例重平衡日志详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaRebalanceLogRequest 请求对象
+     * @return AsyncInvoker<ShowKafkaRebalanceLogRequest, ShowKafkaRebalanceLogResponse>
+     */
+    public AsyncInvoker<ShowKafkaRebalanceLogRequest, ShowKafkaRebalanceLogResponse> showKafkaRebalanceLogAsyncInvoker(
+        ShowKafkaRebalanceLogRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showKafkaRebalanceLog, hcClient);
     }
 
     /**
@@ -1805,6 +2329,35 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ShowKafkaTopicPartitionDiskusageRequest, ShowKafkaTopicPartitionDiskusageResponse> showKafkaTopicPartitionDiskusageAsyncInvoker(
         ShowKafkaTopicPartitionDiskusageRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.showKafkaTopicPartitionDiskusage, hcClient);
+    }
+
+    /**
+     * 查询topic流控配置
+     *
+     * 该接口用于查询topic级别的流控任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaTopicQuotaRequest 请求对象
+     * @return CompletableFuture<ShowKafkaTopicQuotaResponse>
+     */
+    public CompletableFuture<ShowKafkaTopicQuotaResponse> showKafkaTopicQuotaAsync(ShowKafkaTopicQuotaRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showKafkaTopicQuota);
+    }
+
+    /**
+     * 查询topic流控配置
+     *
+     * 该接口用于查询topic级别的流控任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowKafkaTopicQuotaRequest 请求对象
+     * @return AsyncInvoker<ShowKafkaTopicQuotaRequest, ShowKafkaTopicQuotaResponse>
+     */
+    public AsyncInvoker<ShowKafkaTopicQuotaRequest, ShowKafkaTopicQuotaResponse> showKafkaTopicQuotaAsyncInvoker(
+        ShowKafkaTopicQuotaRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showKafkaTopicQuota, hcClient);
     }
 
     /**
@@ -2016,6 +2569,34 @@ public class KafkaAsyncClient {
     }
 
     /**
+     * 查看租户配额
+     *
+     * 查询租户最大可以创建的实例个数和已创建的实例个数，以及每个实例最大可以创建标签的个数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowQuotasRequest 请求对象
+     * @return CompletableFuture<ShowQuotasResponse>
+     */
+    public CompletableFuture<ShowQuotasResponse> showQuotasAsync(ShowQuotasRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.showQuotas);
+    }
+
+    /**
+     * 查看租户配额
+     *
+     * 查询租户最大可以创建的实例个数和已创建的实例个数，以及每个实例最大可以创建标签的个数。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowQuotasRequest 请求对象
+     * @return AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse>
+     */
+    public AsyncInvoker<ShowQuotasRequest, ShowQuotasResponse> showQuotasAsyncInvoker(ShowQuotasRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.showQuotas, hcClient);
+    }
+
+    /**
      * 查询用户权限
      *
      * 查询用户权限。
@@ -2047,6 +2628,36 @@ public class KafkaAsyncClient {
     public AsyncInvoker<ShowTopicAccessPolicyRequest, ShowTopicAccessPolicyResponse> showTopicAccessPolicyAsyncInvoker(
         ShowTopicAccessPolicyRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.showTopicAccessPolicy, hcClient);
+    }
+
+    /**
+     * 关闭Kafka实例重平衡日志功能
+     *
+     * 关闭Kafka实例重平衡日志功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopKafkaRebalanceLogTaskRequest 请求对象
+     * @return CompletableFuture<StopKafkaRebalanceLogTaskResponse>
+     */
+    public CompletableFuture<StopKafkaRebalanceLogTaskResponse> stopKafkaRebalanceLogTaskAsync(
+        StopKafkaRebalanceLogTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.stopKafkaRebalanceLogTask);
+    }
+
+    /**
+     * 关闭Kafka实例重平衡日志功能
+     *
+     * 关闭Kafka实例重平衡日志功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request StopKafkaRebalanceLogTaskRequest 请求对象
+     * @return AsyncInvoker<StopKafkaRebalanceLogTaskRequest, StopKafkaRebalanceLogTaskResponse>
+     */
+    public AsyncInvoker<StopKafkaRebalanceLogTaskRequest, StopKafkaRebalanceLogTaskResponse> stopKafkaRebalanceLogTaskAsyncInvoker(
+        StopKafkaRebalanceLogTaskRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.stopKafkaRebalanceLogTask, hcClient);
     }
 
     /**
@@ -2109,9 +2720,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 编辑消费组
+     * 修改指定消费组
      *
-     * 编辑消费组
+     * 修改指定消费组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2124,9 +2735,9 @@ public class KafkaAsyncClient {
     }
 
     /**
-     * 编辑消费组
+     * 修改指定消费组
      *
-     * 编辑消费组
+     * 修改指定消费组。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2166,6 +2777,35 @@ public class KafkaAsyncClient {
     public AsyncInvoker<UpdateInstanceCrossVpcIpRequest, UpdateInstanceCrossVpcIpResponse> updateInstanceCrossVpcIpAsyncInvoker(
         UpdateInstanceCrossVpcIpRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.updateInstanceCrossVpcIp, hcClient);
+    }
+
+    /**
+     * 修改所有消费组
+     *
+     * 修改所有消费组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceGroupRequest 请求对象
+     * @return CompletableFuture<UpdateInstanceGroupResponse>
+     */
+    public CompletableFuture<UpdateInstanceGroupResponse> updateInstanceGroupAsync(UpdateInstanceGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.updateInstanceGroup);
+    }
+
+    /**
+     * 修改所有消费组
+     *
+     * 修改所有消费组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInstanceGroupRequest 请求对象
+     * @return AsyncInvoker<UpdateInstanceGroupRequest, UpdateInstanceGroupResponse>
+     */
+    public AsyncInvoker<UpdateInstanceGroupRequest, UpdateInstanceGroupResponse> updateInstanceGroupAsyncInvoker(
+        UpdateInstanceGroupRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.updateInstanceGroup, hcClient);
     }
 
     /**
@@ -2224,6 +2864,36 @@ public class KafkaAsyncClient {
     public AsyncInvoker<UpdateInstanceUserRequest, UpdateInstanceUserResponse> updateInstanceUserAsyncInvoker(
         UpdateInstanceUserRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.updateInstanceUser, hcClient);
+    }
+
+    /**
+     * 修改Kafka的接入方式
+     *
+     * 修改Kafka的内网或者公网接入方式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKafkaPortProtocolRequest 请求对象
+     * @return CompletableFuture<UpdateKafkaPortProtocolResponse>
+     */
+    public CompletableFuture<UpdateKafkaPortProtocolResponse> updateKafkaPortProtocolAsync(
+        UpdateKafkaPortProtocolRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.updateKafkaPortProtocol);
+    }
+
+    /**
+     * 修改Kafka的接入方式
+     *
+     * 修改Kafka的内网或者公网接入方式。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateKafkaPortProtocolRequest 请求对象
+     * @return AsyncInvoker<UpdateKafkaPortProtocolRequest, UpdateKafkaPortProtocolResponse>
+     */
+    public AsyncInvoker<UpdateKafkaPortProtocolRequest, UpdateKafkaPortProtocolResponse> updateKafkaPortProtocolAsyncInvoker(
+        UpdateKafkaPortProtocolRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.updateKafkaPortProtocol, hcClient);
     }
 
     /**
@@ -2324,7 +2994,7 @@ public class KafkaAsyncClient {
      *
      * 开启Smart Connect，提交创建Smart Connect节点任务。
      * 
-     * **当前通过调用API，只支持按需实例创建Smart Connect节点。**
+     * [**当前通过调用API，只支持按需实例创建Smart Connect节点。**](tag:hws,hws_hk,g42,hk_g42,ctc)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2340,7 +3010,7 @@ public class KafkaAsyncClient {
      *
      * 开启Smart Connect，提交创建Smart Connect节点任务。
      * 
-     * **当前通过调用API，只支持按需实例创建Smart Connect节点。**
+     * [**当前通过调用API，只支持按需实例创建Smart Connect节点。**](tag:hws,hws_hk,g42,hk_g42,ctc)
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2525,6 +3195,36 @@ public class KafkaAsyncClient {
     public AsyncInvoker<RestartConnectorTaskRequest, RestartConnectorTaskResponse> restartConnectorTaskAsyncInvoker(
         RestartConnectorTaskRequest request) {
         return new AsyncInvoker<>(request, KafkaMeta.restartConnectorTask, hcClient);
+    }
+
+    /**
+     * 启动未启动的Smart Connect任务/重启Smart Connect任务
+     *
+     * 启动未启动的Smart Connect任务/重启Smart Connect任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartSmartConnectorTaskRequest 请求对象
+     * @return CompletableFuture<RestartSmartConnectorTaskResponse>
+     */
+    public CompletableFuture<RestartSmartConnectorTaskResponse> restartSmartConnectorTaskAsync(
+        RestartSmartConnectorTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, KafkaMeta.restartSmartConnectorTask);
+    }
+
+    /**
+     * 启动未启动的Smart Connect任务/重启Smart Connect任务
+     *
+     * 启动未启动的Smart Connect任务/重启Smart Connect任务。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestartSmartConnectorTaskRequest 请求对象
+     * @return AsyncInvoker<RestartSmartConnectorTaskRequest, RestartSmartConnectorTaskResponse>
+     */
+    public AsyncInvoker<RestartSmartConnectorTaskRequest, RestartSmartConnectorTaskResponse> restartSmartConnectorTaskAsyncInvoker(
+        RestartSmartConnectorTaskRequest request) {
+        return new AsyncInvoker<>(request, KafkaMeta.restartSmartConnectorTask, hcClient);
     }
 
     /**

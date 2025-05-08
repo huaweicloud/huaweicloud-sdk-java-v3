@@ -42,11 +42,6 @@ public class CreateSmartConnectTaskReq {
     public static final class SourceTypeEnum {
 
         /**
-         * Enum REDIS_REPLICATOR_SOURCE for value: "REDIS_REPLICATOR_SOURCE"
-         */
-        public static final SourceTypeEnum REDIS_REPLICATOR_SOURCE = new SourceTypeEnum("REDIS_REPLICATOR_SOURCE");
-
-        /**
          * Enum KAFKA_REPLICATOR_SOURCE for value: "KAFKA_REPLICATOR_SOURCE"
          */
         public static final SourceTypeEnum KAFKA_REPLICATOR_SOURCE = new SourceTypeEnum("KAFKA_REPLICATOR_SOURCE");
@@ -60,7 +55,6 @@ public class CreateSmartConnectTaskReq {
 
         private static Map<String, SourceTypeEnum> createStaticFields() {
             Map<String, SourceTypeEnum> map = new HashMap<>();
-            map.put("REDIS_REPLICATOR_SOURCE", REDIS_REPLICATOR_SOURCE);
             map.put("KAFKA_REPLICATOR_SOURCE", KAFKA_REPLICATOR_SOURCE);
             map.put("NONE", NONE);
             return Collections.unmodifiableMap(map);
@@ -128,11 +122,6 @@ public class CreateSmartConnectTaskReq {
     public static final class SinkTypeEnum {
 
         /**
-         * Enum REDIS_REPLICATOR_SINK for value: "REDIS_REPLICATOR_SINK"
-         */
-        public static final SinkTypeEnum REDIS_REPLICATOR_SINK = new SinkTypeEnum("REDIS_REPLICATOR_SINK");
-
-        /**
          * Enum OBS_SINK for value: "OBS_SINK"
          */
         public static final SinkTypeEnum OBS_SINK = new SinkTypeEnum("OBS_SINK");
@@ -146,7 +135,6 @@ public class CreateSmartConnectTaskReq {
 
         private static Map<String, SinkTypeEnum> createStaticFields() {
             Map<String, SinkTypeEnum> map = new HashMap<>();
-            map.put("REDIS_REPLICATOR_SINK", REDIS_REPLICATOR_SINK);
             map.put("OBS_SINK", OBS_SINK);
             map.put("NONE", NONE);
             return Collections.unmodifiableMap(map);

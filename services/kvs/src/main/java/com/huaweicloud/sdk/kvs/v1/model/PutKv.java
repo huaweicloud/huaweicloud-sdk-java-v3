@@ -7,6 +7,7 @@ import org.bson.Document;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * PutKv
@@ -24,6 +25,18 @@ public class PutKv {
     @BsonProperty(value = "kv_doc")
 
     private Document kvDoc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "kv_blob")
+    @BsonProperty(value = "kv_blob")
+
+    private KvBlob kvBlob;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "condition_expression")
+    @BsonProperty(value = "condition_expression")
+
+    private ConditionExpression conditionExpression;
 
     public PutKv withOperId(Integer operId) {
         this.operId = operId;
@@ -59,6 +72,58 @@ public class PutKv {
         this.kvDoc = kvDoc;
     }
 
+    public PutKv withKvBlob(KvBlob kvBlob) {
+        this.kvBlob = kvBlob;
+        return this;
+    }
+
+    public PutKv withKvBlob(Consumer<KvBlob> kvBlobSetter) {
+        if (this.kvBlob == null) {
+            this.kvBlob = new KvBlob();
+            kvBlobSetter.accept(this.kvBlob);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get kvBlob
+     * @return kvBlob
+     */
+    public KvBlob getKvBlob() {
+        return kvBlob;
+    }
+
+    public void setKvBlob(KvBlob kvBlob) {
+        this.kvBlob = kvBlob;
+    }
+
+    public PutKv withConditionExpression(ConditionExpression conditionExpression) {
+        this.conditionExpression = conditionExpression;
+        return this;
+    }
+
+    public PutKv withConditionExpression(Consumer<ConditionExpression> conditionExpressionSetter) {
+        if (this.conditionExpression == null) {
+            this.conditionExpression = new ConditionExpression();
+            conditionExpressionSetter.accept(this.conditionExpression);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get conditionExpression
+     * @return conditionExpression
+     */
+    public ConditionExpression getConditionExpression() {
+        return conditionExpression;
+    }
+
+    public void setConditionExpression(ConditionExpression conditionExpression) {
+        this.conditionExpression = conditionExpression;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -68,12 +133,14 @@ public class PutKv {
             return false;
         }
         PutKv that = (PutKv) obj;
-        return Objects.equals(this.operId, that.operId) && Objects.equals(this.kvDoc, that.kvDoc);
+        return Objects.equals(this.operId, that.operId) && Objects.equals(this.kvDoc, that.kvDoc)
+            && Objects.equals(this.kvBlob, that.kvBlob)
+            && Objects.equals(this.conditionExpression, that.conditionExpression);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operId, kvDoc);
+        return Objects.hash(operId, kvDoc, kvBlob, conditionExpression);
     }
 
     @Override
@@ -82,6 +149,8 @@ public class PutKv {
         sb.append("class PutKv {\n");
         sb.append("    operId: ").append(toIndentedString(operId)).append("\n");
         sb.append("    kvDoc: ").append(toIndentedString(kvDoc)).append("\n");
+        sb.append("    kvBlob: ").append(toIndentedString(kvBlob)).append("\n");
+        sb.append("    conditionExpression: ").append(toIndentedString(conditionExpression)).append("\n");
         sb.append("}");
         return sb.toString();
     }

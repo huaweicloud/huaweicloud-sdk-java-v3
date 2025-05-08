@@ -41,7 +41,7 @@ public class ShowMessagesRespMessages {
     }
 
     /**
-     * topic名称。
+     * **参数解释**： topic名称。 **取值范围**： 不涉及。
      * @return topic
      */
     public String getTopic() {
@@ -58,7 +58,7 @@ public class ShowMessagesRespMessages {
     }
 
     /**
-     * 分区编号。
+     * **参数解释**： 分区编号。 **取值范围**： 不涉及。
      * @return partition
      */
     public Integer getPartition() {
@@ -75,7 +75,7 @@ public class ShowMessagesRespMessages {
     }
 
     /**
-     * 消息编号。
+     * **参数解释**： 消息编号。 **取值范围**： 不涉及。
      * @return messageOffset
      */
     public Long getMessageOffset() {
@@ -92,7 +92,7 @@ public class ShowMessagesRespMessages {
     }
 
     /**
-     * 消息大小，单位字节。
+     * **参数解释**： 消息大小，单位字节。 **取值范围**： 不涉及。
      * @return size
      */
     public Integer getSize() {
@@ -109,7 +109,7 @@ public class ShowMessagesRespMessages {
     }
 
     /**
-     * 生产消息的时间。 格式为Unix时间戳。单位为毫秒。
+     * **参数解释**： 生产消息的时间。 格式为Unix时间戳。单位为毫秒。 **取值范围**： 不涉及。
      * @return timestamp
      */
     public Long getTimestamp() {

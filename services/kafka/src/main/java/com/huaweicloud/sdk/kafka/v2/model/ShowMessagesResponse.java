@@ -56,7 +56,7 @@ public class ShowMessagesResponse extends SdkResponse {
     }
 
     /**
-     * 消息列表。
+     * **参数解释**： 消息列表。
      * @return messages
      */
     public List<ShowMessagesRespMessages> getMessages() {
@@ -73,7 +73,7 @@ public class ShowMessagesResponse extends SdkResponse {
     }
 
     /**
-     * 消息总数。
+     * **参数解释**： 消息总数。 **取值范围**： 不涉及。
      * @return messagesCount
      */
     public Integer getMessagesCount() {
@@ -90,7 +90,7 @@ public class ShowMessagesResponse extends SdkResponse {
     }
 
     /**
-     * 总页数。
+     * **参数解释**： 总页数。 **取值范围**： 不涉及。
      * @return offsetsCount
      */
     public Integer getOffsetsCount() {
@@ -107,7 +107,7 @@ public class ShowMessagesResponse extends SdkResponse {
     }
 
     /**
-     * 当前页数。
+     * **参数解释**： 当前页数。 **取值范围**： 不涉及。
      * @return offset
      */
     public Integer getOffset() {

@@ -131,6 +131,11 @@ public class UpdateFunctionCodeRequestBody {
 
     private List<String> dependVersionList = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code_encrypt_kms_key_id")
+
+    private String codeEncryptKmsKeyId;
+
     public UpdateFunctionCodeRequestBody withCodeType(CodeTypeEnum codeType) {
         this.codeType = codeType;
         return this;
@@ -241,6 +246,23 @@ public class UpdateFunctionCodeRequestBody {
         this.dependVersionList = dependVersionList;
     }
 
+    public UpdateFunctionCodeRequestBody withCodeEncryptKmsKeyId(String codeEncryptKmsKeyId) {
+        this.codeEncryptKmsKeyId = codeEncryptKmsKeyId;
+        return this;
+    }
+
+    /**
+     * 用于用户代码加密的kms主秘钥ID。
+     * @return codeEncryptKmsKeyId
+     */
+    public String getCodeEncryptKmsKeyId() {
+        return codeEncryptKmsKeyId;
+    }
+
+    public void setCodeEncryptKmsKeyId(String codeEncryptKmsKeyId) {
+        this.codeEncryptKmsKeyId = codeEncryptKmsKeyId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -252,12 +274,13 @@ public class UpdateFunctionCodeRequestBody {
         UpdateFunctionCodeRequestBody that = (UpdateFunctionCodeRequestBody) obj;
         return Objects.equals(this.codeType, that.codeType) && Objects.equals(this.codeUrl, that.codeUrl)
             && Objects.equals(this.codeFilename, that.codeFilename) && Objects.equals(this.funcCode, that.funcCode)
-            && Objects.equals(this.dependVersionList, that.dependVersionList);
+            && Objects.equals(this.dependVersionList, that.dependVersionList)
+            && Objects.equals(this.codeEncryptKmsKeyId, that.codeEncryptKmsKeyId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codeType, codeUrl, codeFilename, funcCode, dependVersionList);
+        return Objects.hash(codeType, codeUrl, codeFilename, funcCode, dependVersionList, codeEncryptKmsKeyId);
     }
 
     @Override
@@ -269,6 +292,7 @@ public class UpdateFunctionCodeRequestBody {
         sb.append("    codeFilename: ").append(toIndentedString(codeFilename)).append("\n");
         sb.append("    funcCode: ").append(toIndentedString(funcCode)).append("\n");
         sb.append("    dependVersionList: ").append(toIndentedString(dependVersionList)).append("\n");
+        sb.append("    codeEncryptKmsKeyId: ").append(toIndentedString(codeEncryptKmsKeyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

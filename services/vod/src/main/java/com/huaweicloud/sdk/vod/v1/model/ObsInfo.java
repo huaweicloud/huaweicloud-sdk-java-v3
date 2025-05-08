@@ -20,6 +20,11 @@ public class ObsInfo {
 
     private String _object;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region")
+
+    private String region;
+
     public ObsInfo withBucket(String bucket) {
         this.bucket = bucket;
         return this;
@@ -54,6 +59,23 @@ public class ObsInfo {
         this._object = _object;
     }
 
+    public ObsInfo withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+
+    /**
+     * 桶所在区域
+     * @return region
+     */
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class ObsInfo {
             return false;
         }
         ObsInfo that = (ObsInfo) obj;
-        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this._object, that._object);
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this._object, that._object)
+            && Objects.equals(this.region, that.region);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bucket, _object);
+        return Objects.hash(bucket, _object, region);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class ObsInfo {
         sb.append("class ObsInfo {\n");
         sb.append("    bucket: ").append(toIndentedString(bucket)).append("\n");
         sb.append("    _object: ").append(toIndentedString(_object)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("}");
         return sb.toString();
     }

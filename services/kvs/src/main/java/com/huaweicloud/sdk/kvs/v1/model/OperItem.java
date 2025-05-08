@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * put_kv或delete_kv或get_kv操作。
+ * put_kv或delete_kv或update_kv操作。
  */
 public class OperItem {
 
@@ -24,6 +24,12 @@ public class OperItem {
     @BsonProperty(value = "delete_kv")
 
     private DeleteKv deleteKv;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_kv")
+    @BsonProperty(value = "update_kv")
+
+    private UpdateKv updateKv;
 
     public OperItem withPutKv(PutKv putKv) {
         this.putKv = putKv;
@@ -77,6 +83,32 @@ public class OperItem {
         this.deleteKv = deleteKv;
     }
 
+    public OperItem withUpdateKv(UpdateKv updateKv) {
+        this.updateKv = updateKv;
+        return this;
+    }
+
+    public OperItem withUpdateKv(Consumer<UpdateKv> updateKvSetter) {
+        if (this.updateKv == null) {
+            this.updateKv = new UpdateKv();
+            updateKvSetter.accept(this.updateKv);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get updateKv
+     * @return updateKv
+     */
+    public UpdateKv getUpdateKv() {
+        return updateKv;
+    }
+
+    public void setUpdateKv(UpdateKv updateKv) {
+        this.updateKv = updateKv;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +118,13 @@ public class OperItem {
             return false;
         }
         OperItem that = (OperItem) obj;
-        return Objects.equals(this.putKv, that.putKv) && Objects.equals(this.deleteKv, that.deleteKv);
+        return Objects.equals(this.putKv, that.putKv) && Objects.equals(this.deleteKv, that.deleteKv)
+            && Objects.equals(this.updateKv, that.updateKv);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(putKv, deleteKv);
+        return Objects.hash(putKv, deleteKv, updateKv);
     }
 
     @Override
@@ -100,6 +133,7 @@ public class OperItem {
         sb.append("class OperItem {\n");
         sb.append("    putKv: ").append(toIndentedString(putKv)).append("\n");
         sb.append("    deleteKv: ").append(toIndentedString(deleteKv)).append("\n");
+        sb.append("    updateKv: ").append(toIndentedString(updateKv)).append("\n");
         sb.append("}");
         return sb.toString();
     }

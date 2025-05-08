@@ -45,6 +45,11 @@ public class CustomImage {
 
     private String gid;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_public")
+
+    private Boolean isPublic;
+
     public CustomImage withEnabled(Boolean enabled) {
         this.enabled = enabled;
         return this;
@@ -164,6 +169,23 @@ public class CustomImage {
         this.gid = gid;
     }
 
+    public CustomImage withIsPublic(Boolean isPublic) {
+        this.isPublic = isPublic;
+        return this;
+    }
+
+    /**
+     * 是否是公共镜像
+     * @return isPublic
+     */
+    public Boolean getIsPublic() {
+        return isPublic;
+    }
+
+    public void setIsPublic(Boolean isPublic) {
+        this.isPublic = isPublic;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -176,12 +198,12 @@ public class CustomImage {
         return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.image, that.image)
             && Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args)
             && Objects.equals(this.workingDir, that.workingDir) && Objects.equals(this.uid, that.uid)
-            && Objects.equals(this.gid, that.gid);
+            && Objects.equals(this.gid, that.gid) && Objects.equals(this.isPublic, that.isPublic);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enabled, image, command, args, workingDir, uid, gid);
+        return Objects.hash(enabled, image, command, args, workingDir, uid, gid, isPublic);
     }
 
     @Override
@@ -195,6 +217,7 @@ public class CustomImage {
         sb.append("    workingDir: ").append(toIndentedString(workingDir)).append("\n");
         sb.append("    uid: ").append(toIndentedString(uid)).append("\n");
         sb.append("    gid: ").append(toIndentedString(gid)).append("\n");
+        sb.append("    isPublic: ").append(toIndentedString(isPublic)).append("\n");
         sb.append("}");
         return sb.toString();
     }

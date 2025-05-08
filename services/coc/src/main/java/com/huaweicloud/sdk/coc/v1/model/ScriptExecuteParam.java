@@ -44,7 +44,7 @@ public class ScriptExecuteParam {
     }
 
     /**
-     * 是否资源受限，true表示不受限，false表示受限
+     * 该参数已废弃，传入该参数不会生效。
      * @return resourceful
      */
     public Boolean getResourceful() {

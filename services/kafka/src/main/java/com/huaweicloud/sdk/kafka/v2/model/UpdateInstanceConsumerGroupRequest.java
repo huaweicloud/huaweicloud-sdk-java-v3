@@ -29,7 +29,7 @@ public class UpdateInstanceConsumerGroupRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateGroupReq body;
+    private GroupCreateReq body;
 
     public UpdateInstanceConsumerGroupRequest withEngine(String engine) {
         this.engine = engine;
@@ -37,7 +37,7 @@ public class UpdateInstanceConsumerGroupRequest {
     }
 
     /**
-     * 消息引擎的类型。
+     * 引擎。
      * @return engine
      */
     public String getEngine() {
@@ -71,7 +71,7 @@ public class UpdateInstanceConsumerGroupRequest {
     }
 
     /**
-     * 消费者组。
+     * 消费组ID。
      * @return group
      */
     public String getGroup() {
@@ -82,14 +82,14 @@ public class UpdateInstanceConsumerGroupRequest {
         this.group = group;
     }
 
-    public UpdateInstanceConsumerGroupRequest withBody(CreateGroupReq body) {
+    public UpdateInstanceConsumerGroupRequest withBody(GroupCreateReq body) {
         this.body = body;
         return this;
     }
 
-    public UpdateInstanceConsumerGroupRequest withBody(Consumer<CreateGroupReq> bodySetter) {
+    public UpdateInstanceConsumerGroupRequest withBody(Consumer<GroupCreateReq> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateGroupReq();
+            this.body = new GroupCreateReq();
             bodySetter.accept(this.body);
         }
 
@@ -100,11 +100,11 @@ public class UpdateInstanceConsumerGroupRequest {
      * Get body
      * @return body
      */
-    public CreateGroupReq getBody() {
+    public GroupCreateReq getBody() {
         return body;
     }
 
-    public void setBody(CreateGroupReq body) {
+    public void setBody(GroupCreateReq body) {
         this.body = body;
     }
 

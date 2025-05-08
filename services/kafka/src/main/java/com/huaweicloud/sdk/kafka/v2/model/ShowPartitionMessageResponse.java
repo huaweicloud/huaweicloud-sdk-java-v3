@@ -41,7 +41,7 @@ public class ShowPartitionMessageResponse extends SdkResponse {
     }
 
     /**
-     * 消息列表。
+     * **参数解释**： 消息列表。
      * @return message
      */
     public List<ShowPartitionMessageEntity> getMessage() {

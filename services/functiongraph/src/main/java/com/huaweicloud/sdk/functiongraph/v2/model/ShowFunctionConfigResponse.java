@@ -686,6 +686,16 @@ public class ShowFunctionConfigResponse extends SdkResponse {
 
     private Map<String, String> ltsCustomTag = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user_data_encrypt_kms_key_id")
+
+    private String userDataEncryptKmsKeyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "code_encrypt_kms_key_id")
+
+    private String codeEncryptKmsKeyId;
+
     public ShowFunctionConfigResponse withFuncId(String funcId) {
         this.funcId = funcId;
         return this;
@@ -1815,6 +1825,40 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         this.ltsCustomTag = ltsCustomTag;
     }
 
+    public ShowFunctionConfigResponse withUserDataEncryptKmsKeyId(String userDataEncryptKmsKeyId) {
+        this.userDataEncryptKmsKeyId = userDataEncryptKmsKeyId;
+        return this;
+    }
+
+    /**
+     * 用于环境变量加密的kms主秘钥ID。
+     * @return userDataEncryptKmsKeyId
+     */
+    public String getUserDataEncryptKmsKeyId() {
+        return userDataEncryptKmsKeyId;
+    }
+
+    public void setUserDataEncryptKmsKeyId(String userDataEncryptKmsKeyId) {
+        this.userDataEncryptKmsKeyId = userDataEncryptKmsKeyId;
+    }
+
+    public ShowFunctionConfigResponse withCodeEncryptKmsKeyId(String codeEncryptKmsKeyId) {
+        this.codeEncryptKmsKeyId = codeEncryptKmsKeyId;
+        return this;
+    }
+
+    /**
+     * 用于用户代码加密的kms主秘钥ID。
+     * @return codeEncryptKmsKeyId
+     */
+    public String getCodeEncryptKmsKeyId() {
+        return codeEncryptKmsKeyId;
+    }
+
+    public void setCodeEncryptKmsKeyId(String codeEncryptKmsKeyId) {
+        this.codeEncryptKmsKeyId = codeEncryptKmsKeyId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -1866,7 +1910,9 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             && Objects.equals(this.networkController, that.networkController)
             && Objects.equals(this.isReturnStream, that.isReturnStream)
             && Objects.equals(this.enableLtsLog, that.enableLtsLog)
-            && Objects.equals(this.ltsCustomTag, that.ltsCustomTag);
+            && Objects.equals(this.ltsCustomTag, that.ltsCustomTag)
+            && Objects.equals(this.userDataEncryptKmsKeyId, that.userDataEncryptKmsKeyId)
+            && Objects.equals(this.codeEncryptKmsKeyId, that.codeEncryptKmsKeyId);
     }
 
     @Override
@@ -1930,7 +1976,9 @@ public class ShowFunctionConfigResponse extends SdkResponse {
             networkController,
             isReturnStream,
             enableLtsLog,
-            ltsCustomTag);
+            ltsCustomTag,
+            userDataEncryptKmsKeyId,
+            codeEncryptKmsKeyId);
     }
 
     @Override
@@ -1997,6 +2045,8 @@ public class ShowFunctionConfigResponse extends SdkResponse {
         sb.append("    isReturnStream: ").append(toIndentedString(isReturnStream)).append("\n");
         sb.append("    enableLtsLog: ").append(toIndentedString(enableLtsLog)).append("\n");
         sb.append("    ltsCustomTag: ").append(toIndentedString(ltsCustomTag)).append("\n");
+        sb.append("    userDataEncryptKmsKeyId: ").append(toIndentedString(userDataEncryptKmsKeyId)).append("\n");
+        sb.append("    codeEncryptKmsKeyId: ").append(toIndentedString(codeEncryptKmsKeyId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
