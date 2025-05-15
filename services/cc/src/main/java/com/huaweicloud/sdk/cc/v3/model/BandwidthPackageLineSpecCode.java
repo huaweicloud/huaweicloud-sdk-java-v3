@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 带宽包线路产品
+ * 带宽包线路产品。
  */
 public class BandwidthPackageLineSpecCode {
 
@@ -54,7 +54,7 @@ public class BandwidthPackageLineSpecCode {
     }
 
     /**
-     * 带宽包等级
+     * 带宽包等级。
      * @return level
      */
     public String getLevel() {
@@ -71,7 +71,7 @@ public class BandwidthPackageLineSpecCode {
     }
 
     /**
-     * 实例名字。
+     * 实例名称。
      * @return nameCn
      */
     public String getNameCn() {
@@ -88,7 +88,7 @@ public class BandwidthPackageLineSpecCode {
     }
 
     /**
-     * 实例名字。
+     * 实例名称。
      * @return nameEn
      */
     public String getNameEn() {

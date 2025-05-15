@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoIdDocClassificationRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoIdDocClassificationResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankReceiptRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankReceiptResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankcardRequest;
@@ -183,6 +185,36 @@ public class OcrAsyncClient {
     public AsyncInvoker<RecognizeAutoClassificationRequest, RecognizeAutoClassificationResponse> recognizeAutoClassificationAsyncInvoker(
         RecognizeAutoClassificationRequest request) {
         return new AsyncInvoker<>(request, OcrMeta.recognizeAutoClassification, hcClient);
+    }
+
+    /**
+     * 智能证件分类
+     *
+     * 支持9类证件的分类和告警检测，以JSON格式返回结果。支持的证件类型有秘鲁身份证、柬文身份证、香港身份证、澳门身份证、缅文身份证、缅文驾驶证、泰文身份证、护照和中华人民共和国居民身份证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecognizeAutoIdDocClassificationRequest 请求对象
+     * @return CompletableFuture<RecognizeAutoIdDocClassificationResponse>
+     */
+    public CompletableFuture<RecognizeAutoIdDocClassificationResponse> recognizeAutoIdDocClassificationAsync(
+        RecognizeAutoIdDocClassificationRequest request) {
+        return hcClient.asyncInvokeHttp(request, OcrMeta.recognizeAutoIdDocClassification);
+    }
+
+    /**
+     * 智能证件分类
+     *
+     * 支持9类证件的分类和告警检测，以JSON格式返回结果。支持的证件类型有秘鲁身份证、柬文身份证、香港身份证、澳门身份证、缅文身份证、缅文驾驶证、泰文身份证、护照和中华人民共和国居民身份证。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RecognizeAutoIdDocClassificationRequest 请求对象
+     * @return AsyncInvoker<RecognizeAutoIdDocClassificationRequest, RecognizeAutoIdDocClassificationResponse>
+     */
+    public AsyncInvoker<RecognizeAutoIdDocClassificationRequest, RecognizeAutoIdDocClassificationResponse> recognizeAutoIdDocClassificationAsyncInvoker(
+        RecognizeAutoIdDocClassificationRequest request) {
+        return new AsyncInvoker<>(request, OcrMeta.recognizeAutoIdDocClassification, hcClient);
     }
 
     /**

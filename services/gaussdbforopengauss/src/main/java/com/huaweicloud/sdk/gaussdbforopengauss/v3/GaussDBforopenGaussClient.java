@@ -185,8 +185,6 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPlugins
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTasksRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTasksResponse;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopIoTrafficsRequest;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopIoTrafficsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ResetConfigurationRequest;
@@ -2829,35 +2827,6 @@ public class GaussDBforopenGaussClient {
      */
     public SyncInvoker<ListTasksRequest, ListTasksResponse> listTasksInvoker(ListTasksRequest request) {
         return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listTasks, hcClient);
-    }
-
-    /**
-     * 查询Top IO列表
-     *
-     * 查询实例数据库进程下的Top IO流量数据，返回与会话信息相关联后的结果
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListTopIoTrafficsRequest 请求对象
-     * @return ListTopIoTrafficsResponse
-     */
-    public ListTopIoTrafficsResponse listTopIoTraffics(ListTopIoTrafficsRequest request) {
-        return hcClient.syncInvokeHttp(request, GaussDBforopenGaussMeta.listTopIoTraffics);
-    }
-
-    /**
-     * 查询Top IO列表
-     *
-     * 查询实例数据库进程下的Top IO流量数据，返回与会话信息相关联后的结果
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListTopIoTrafficsRequest 请求对象
-     * @return SyncInvoker<ListTopIoTrafficsRequest, ListTopIoTrafficsResponse>
-     */
-    public SyncInvoker<ListTopIoTrafficsRequest, ListTopIoTrafficsResponse> listTopIoTrafficsInvoker(
-        ListTopIoTrafficsRequest request) {
-        return new SyncInvoker<>(request, GaussDBforopenGaussMeta.listTopIoTraffics, hcClient);
     }
 
     /**

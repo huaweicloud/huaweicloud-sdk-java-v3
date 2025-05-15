@@ -212,8 +212,6 @@ import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPlugins
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListSupportKernelPluginsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTasksRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTasksResponse;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopIoTrafficsRequest;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListTopIoTrafficsResponse;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaRequest;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaRequestBody;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ModifyEpsQuotaResponse;
@@ -3689,55 +3687,6 @@ public class GaussDBforopenGaussMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListTasksRequest::getXLanguage, ListTasksRequest::setXLanguage));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListTopIoTrafficsRequest, ListTopIoTrafficsResponse> listTopIoTraffics =
-        genForListTopIoTraffics();
-
-    private static HttpRequestDef<ListTopIoTrafficsRequest, ListTopIoTrafficsResponse> genForListTopIoTraffics() {
-        // basic
-        HttpRequestDef.Builder<ListTopIoTrafficsRequest, ListTopIoTrafficsResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListTopIoTrafficsRequest.class, ListTopIoTrafficsResponse.class)
-                .withName("ListTopIoTraffics")
-                .withUri("/v3/{project_id}/instances/{instance_id}/top-io-traffics")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("instance_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopIoTrafficsRequest::getInstanceId, ListTopIoTrafficsRequest::setInstanceId));
-        builder.<String>withRequestField("node_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopIoTrafficsRequest::getNodeId, ListTopIoTrafficsRequest::setNodeId));
-        builder.<String>withRequestField("component_id",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopIoTrafficsRequest::getComponentId, ListTopIoTrafficsRequest::setComponentId));
-        builder.<Integer>withRequestField("top_io_num",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListTopIoTrafficsRequest::getTopIoNum, ListTopIoTrafficsRequest::setTopIoNum));
-        builder.<ListTopIoTrafficsRequest.SortConditionEnum>withRequestField("sort_condition",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ListTopIoTrafficsRequest.SortConditionEnum.class),
-            f -> f.withMarshaller(ListTopIoTrafficsRequest::getSortCondition,
-                ListTopIoTrafficsRequest::setSortCondition));
-        builder.<String>withRequestField("X-Language",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListTopIoTrafficsRequest::getXLanguage, ListTopIoTrafficsRequest::setXLanguage));
 
         // response
 

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 跨地域类型。 - intra-region (域内) - inter-region (跨域)
+ * 跨地域类型。 - intra-region （同地域） - inter-region （跨地域）
  */
 public class CrossRegionTypeEnum {
 

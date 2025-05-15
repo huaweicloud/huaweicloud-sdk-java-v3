@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 是否冻结
+ * 是否冻结。
  */
 public class IsFrozen {
 
@@ -21,7 +21,7 @@ public class IsFrozen {
     }
 
     /**
-     * 是否冻结
+     * 是否冻结。
      * @return isFrozen
      */
     public Boolean getIsFrozen() {

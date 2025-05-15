@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 冻结效果。 - RELEASABLE(冻结可释放) - UNRELEASABLE(冻结不可释放)
+ * 冻结效果。 - RELEASABLE（冻结可释放） - UNRELEASABLE（冻结不可释放）
  */
 public class FrozenEffectEnum {
 

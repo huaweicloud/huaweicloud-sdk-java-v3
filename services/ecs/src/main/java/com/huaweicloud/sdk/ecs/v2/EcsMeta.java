@@ -1214,6 +1214,11 @@ public class EcsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFlavorsRequest::getAvailabilityZone, ListFlavorsRequest::setAvailabilityZone));
+        builder.<String>withRequestField("flavor_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFlavorsRequest::getFlavorId, ListFlavorsRequest::setFlavorId));
 
         // response
 

@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.cc.v3.model;
 import java.util.Objects;
 
 /**
- * 站点编码定义
+ * 站点编码。
  */
 public class SiteCodeDef {
 

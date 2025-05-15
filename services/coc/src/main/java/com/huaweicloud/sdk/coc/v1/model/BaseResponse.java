@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * BaseResponse
+ * --
  */
 public class BaseResponse {
 
@@ -24,6 +24,11 @@ public class BaseResponse {
     @JsonProperty(value = "error_msg")
 
     private String errorMsg;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data")
+
+    private Object data;
 
     public BaseResponse withProviderCode(String providerCode) {
         this.providerCode = providerCode;
@@ -76,6 +81,23 @@ public class BaseResponse {
         this.errorMsg = errorMsg;
     }
 
+    public BaseResponse withData(Object data) {
+        this.data = data;
+        return this;
+    }
+
+    /**
+     * 响应数据
+     * @return data
+     */
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -86,12 +108,12 @@ public class BaseResponse {
         }
         BaseResponse that = (BaseResponse) obj;
         return Objects.equals(this.providerCode, that.providerCode) && Objects.equals(this.errorCode, that.errorCode)
-            && Objects.equals(this.errorMsg, that.errorMsg);
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.data, that.data);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(providerCode, errorCode, errorMsg);
+        return Objects.hash(providerCode, errorCode, errorMsg, data);
     }
 
     @Override
@@ -101,6 +123,7 @@ public class BaseResponse {
         sb.append("    providerCode: ").append(toIndentedString(providerCode)).append("\n");
         sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
         sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
+        sb.append("    data: ").append(toIndentedString(data)).append("\n");
         sb.append("}");
         return sb.toString();
     }

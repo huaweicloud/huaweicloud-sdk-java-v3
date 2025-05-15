@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 网关的类型。 - GDGW
+ * 网关的类型。GDGW：全球接入网关。
  */
 public class GatewayTypeEnum {
 

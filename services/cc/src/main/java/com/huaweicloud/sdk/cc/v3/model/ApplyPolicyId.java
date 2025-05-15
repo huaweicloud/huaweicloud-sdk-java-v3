@@ -21,7 +21,7 @@ public class ApplyPolicyId {
     }
 
     /**
-     * 实例ID。
+     * 应用策略ID。
      * @return applyPolicyId
      */
     public String getApplyPolicyId() {

@@ -40,7 +40,7 @@ public class DirectedEdgePair {
     }
 
     /**
-     * 分支网络连接的两个端点定义，可能为两个点，也可能为两个单向边，长度固定为2的数组。
+     * 分支网络连接的两个端点定义，长度固定为2的数组。
      * @return edgePair
      */
     public List<DirectedEdge> getEdgePair() {

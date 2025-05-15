@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * UpdateSiteConnectionBandwidthSizeRequestBody
+ * 更改分支连接带宽大小的请求体。
  */
 public class UpdateSiteConnectionBandwidthSizeRequestBody {
 

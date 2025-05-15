@@ -7,6 +7,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.ocr.v1.model.AcceptanceBillRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.AutoClassificationRequestBody;
+import com.huaweicloud.sdk.ocr.v1.model.AutoIdDocClassificationRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.BankReceiptRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.BankcardRequestBody;
 import com.huaweicloud.sdk.ocr.v1.model.BusinessCardRequestBody;
@@ -45,6 +46,8 @@ import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAcceptanceBillResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoClassificationResponse;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoIdDocClassificationRequest;
+import com.huaweicloud.sdk.ocr.v1.model.RecognizeAutoIdDocClassificationResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankReceiptRequest;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankReceiptResponse;
 import com.huaweicloud.sdk.ocr.v1.model.RecognizeBankcardRequest;
@@ -233,6 +236,45 @@ public class OcrMeta {
             String.class,
             f -> f.withMarshaller(RecognizeAutoClassificationResponse::getXRequestId,
                 RecognizeAutoClassificationResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RecognizeAutoIdDocClassificationRequest, RecognizeAutoIdDocClassificationResponse> recognizeAutoIdDocClassification =
+        genForRecognizeAutoIdDocClassification();
+
+    private static HttpRequestDef<RecognizeAutoIdDocClassificationRequest, RecognizeAutoIdDocClassificationResponse> genForRecognizeAutoIdDocClassification() {
+        // basic
+        HttpRequestDef.Builder<RecognizeAutoIdDocClassificationRequest, RecognizeAutoIdDocClassificationResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RecognizeAutoIdDocClassificationRequest.class,
+                    RecognizeAutoIdDocClassificationResponse.class)
+                .withName("RecognizeAutoIdDocClassification")
+                .withUri("/v2/{project_id}/ocr/auto-id-doc-classification")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("Enterprise-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RecognizeAutoIdDocClassificationRequest::getEnterpriseProjectId,
+                RecognizeAutoIdDocClassificationRequest::setEnterpriseProjectId));
+        builder.<AutoIdDocClassificationRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AutoIdDocClassificationRequestBody.class),
+            f -> f.withMarshaller(RecognizeAutoIdDocClassificationRequest::getBody,
+                RecognizeAutoIdDocClassificationRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(RecognizeAutoIdDocClassificationResponse::getXRequestId,
+                RecognizeAutoIdDocClassificationResponse::setXRequestId));
         return builder.build();
     }
 

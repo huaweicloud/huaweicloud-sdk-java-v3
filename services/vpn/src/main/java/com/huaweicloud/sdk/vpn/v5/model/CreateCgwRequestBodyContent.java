@@ -175,7 +175,7 @@ public class CreateCgwRequestBodyContent {
     }
 
     /**
-     * 网关的bgp asn号，默认值为65000
+     * 网关的bgp asn号
      * minimum: 1
      * maximum: 4294967295
      * @return bgpAsn

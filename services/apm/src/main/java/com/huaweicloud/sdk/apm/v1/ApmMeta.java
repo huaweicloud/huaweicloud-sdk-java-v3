@@ -688,6 +688,11 @@ public class ApmMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Long>withRequestField("x-business-id",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFlameLineTreeRequest::getXBusinessId, ShowFlameLineTreeRequest::setXBusinessId));
         builder.<FlameLineTreeInfo>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,

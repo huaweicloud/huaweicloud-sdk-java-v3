@@ -16,7 +16,7 @@ public class QueryMetricDataParam {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metrics")
 
-    private List<MetricQueryMeritcParam> metrics = null;
+    private List<MetricQueryMetricParam> metrics = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
@@ -33,12 +33,12 @@ public class QueryMetricDataParam {
 
     private String timerange;
 
-    public QueryMetricDataParam withMetrics(List<MetricQueryMeritcParam> metrics) {
+    public QueryMetricDataParam withMetrics(List<MetricQueryMetricParam> metrics) {
         this.metrics = metrics;
         return this;
     }
 
-    public QueryMetricDataParam addMetricsItem(MetricQueryMeritcParam metricsItem) {
+    public QueryMetricDataParam addMetricsItem(MetricQueryMetricParam metricsItem) {
         if (this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
@@ -46,7 +46,7 @@ public class QueryMetricDataParam {
         return this;
     }
 
-    public QueryMetricDataParam withMetrics(Consumer<List<MetricQueryMeritcParam>> metricsSetter) {
+    public QueryMetricDataParam withMetrics(Consumer<List<MetricQueryMetricParam>> metricsSetter) {
         if (this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
@@ -58,11 +58,11 @@ public class QueryMetricDataParam {
      * 指标对象列表。 取值范围 JSON数组大小不超过20
      * @return metrics
      */
-    public List<MetricQueryMeritcParam> getMetrics() {
+    public List<MetricQueryMetricParam> getMetrics() {
         return metrics;
     }
 
-    public void setMetrics(List<MetricQueryMeritcParam> metrics) {
+    public void setMetrics(List<MetricQueryMetricParam> metrics) {
         this.metrics = metrics;
     }
 

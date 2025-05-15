@@ -104,7 +104,7 @@ public class Authorisation {
     }
 
     /**
-     * 实例名字。
+     * 实例名称。
      * @return name
      */
     public String getName() {

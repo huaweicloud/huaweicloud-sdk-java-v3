@@ -40,7 +40,7 @@ public class CreateSiteInformationPair {
     }
 
     /**
-     * 端到端(P2P)类型分支网络连接的两个端点定义，长度固定为2的数组。
+     * 端到端（P2P）类型分支网络连接的两个端点定义，长度固定为2的数组。
      * @return sites
      */
     public List<CreateSiteInformation> getSites() {

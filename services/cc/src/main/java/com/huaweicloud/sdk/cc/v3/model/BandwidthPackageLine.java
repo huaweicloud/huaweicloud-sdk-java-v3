@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 带宽包线路
+ * 带宽包线路。
  */
 public class BandwidthPackageLine {
 
@@ -83,7 +83,7 @@ public class BandwidthPackageLine {
     }
 
     /**
-     * 站点编码
+     * 站点编码。
      * @return localSiteCode
      */
     public String getLocalSiteCode() {
@@ -100,7 +100,7 @@ public class BandwidthPackageLine {
     }
 
     /**
-     * 站点编码
+     * 站点编码。
      * @return remoteSiteCode
      */
     public String getRemoteSiteCode() {
@@ -133,7 +133,7 @@ public class BandwidthPackageLine {
     }
 
     /**
-     * 支持的等级列表
+     * 支持的等级列表。
      * @return supportLevels
      */
     public List<String> getSupportLevels() {
@@ -166,7 +166,7 @@ public class BandwidthPackageLine {
     }
 
     /**
-     * 产品编码列表
+     * 产品编码列表。
      * @return specCodes
      */
     public List<BandwidthPackageLineSpecCode> getSpecCodes() {

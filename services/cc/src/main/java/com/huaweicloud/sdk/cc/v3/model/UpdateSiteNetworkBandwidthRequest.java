@@ -24,7 +24,7 @@ public class UpdateSiteNetworkBandwidthRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private AssociateSiteConnectionBandwidthRequestBody body;
+    private UpdateSiteConnectionBandwidthRequestBody body;
 
     public UpdateSiteNetworkBandwidthRequest withSiteNetworkId(String siteNetworkId) {
         this.siteNetworkId = siteNetworkId;
@@ -60,15 +60,14 @@ public class UpdateSiteNetworkBandwidthRequest {
         this.siteConnectionId = siteConnectionId;
     }
 
-    public UpdateSiteNetworkBandwidthRequest withBody(AssociateSiteConnectionBandwidthRequestBody body) {
+    public UpdateSiteNetworkBandwidthRequest withBody(UpdateSiteConnectionBandwidthRequestBody body) {
         this.body = body;
         return this;
     }
 
-    public UpdateSiteNetworkBandwidthRequest withBody(
-        Consumer<AssociateSiteConnectionBandwidthRequestBody> bodySetter) {
+    public UpdateSiteNetworkBandwidthRequest withBody(Consumer<UpdateSiteConnectionBandwidthRequestBody> bodySetter) {
         if (this.body == null) {
-            this.body = new AssociateSiteConnectionBandwidthRequestBody();
+            this.body = new UpdateSiteConnectionBandwidthRequestBody();
             bodySetter.accept(this.body);
         }
 
@@ -79,11 +78,11 @@ public class UpdateSiteNetworkBandwidthRequest {
      * Get body
      * @return body
      */
-    public AssociateSiteConnectionBandwidthRequestBody getBody() {
+    public UpdateSiteConnectionBandwidthRequestBody getBody() {
         return body;
     }
 
-    public void setBody(AssociateSiteConnectionBandwidthRequestBody body) {
+    public void setBody(UpdateSiteConnectionBandwidthRequestBody body) {
         this.body = body;
     }
 

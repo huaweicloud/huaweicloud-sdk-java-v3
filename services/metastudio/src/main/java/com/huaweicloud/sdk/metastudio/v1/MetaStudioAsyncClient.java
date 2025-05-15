@@ -313,6 +313,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsPhoneticSymbolRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsPhoneticSymbolResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
@@ -5492,6 +5494,36 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> showTtsAuditionFileAsyncInvoker(
         ShowTtsAuditionFileRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.showTtsAuditionFile, hcClient);
+    }
+
+    /**
+     * 获取英文单词音标
+     *
+     * 根据英文单词返回对应音标列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTtsPhoneticSymbolRequest 请求对象
+     * @return CompletableFuture<ShowTtsPhoneticSymbolResponse>
+     */
+    public CompletableFuture<ShowTtsPhoneticSymbolResponse> showTtsPhoneticSymbolAsync(
+        ShowTtsPhoneticSymbolRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showTtsPhoneticSymbol);
+    }
+
+    /**
+     * 获取英文单词音标
+     *
+     * 根据英文单词返回对应音标列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTtsPhoneticSymbolRequest 请求对象
+     * @return AsyncInvoker<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse>
+     */
+    public AsyncInvoker<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse> showTtsPhoneticSymbolAsyncInvoker(
+        ShowTtsPhoneticSymbolRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showTtsPhoneticSymbol, hcClient);
     }
 
     /**

@@ -160,7 +160,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 实例名字。
+     * 实例名称。
      * @return name
      */
     public String getName() {
@@ -349,7 +349,7 @@ public class CentralNetworkAttachment {
     }
 
     /**
-     * 是否冻结
+     * 是否冻结。
      * @return isFrozen
      */
     public Boolean getIsFrozen() {

@@ -102,7 +102,7 @@ public class ConnectionPoint {
     }
 
     /**
-     * 站点编码定义
+     * 站点编码。
      * @return siteCode
      */
     public String getSiteCode() {

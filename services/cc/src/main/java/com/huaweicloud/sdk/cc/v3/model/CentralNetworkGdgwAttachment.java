@@ -149,7 +149,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 实例名字。
+     * 实例名称。
      * @return name
      */
     public String getName() {
@@ -338,7 +338,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 是否冻结
+     * 是否冻结。
      * @return isFrozen
      */
     public Boolean getIsFrozen() {
@@ -508,7 +508,7 @@ public class CentralNetworkGdgwAttachment {
     }
 
     /**
-     * 站点编码定义
+     * 站点编码。
      * @return globalDcGatewaySiteCode
      */
     public String getGlobalDcGatewaySiteCode() {

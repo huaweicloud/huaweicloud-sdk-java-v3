@@ -12,9 +12,33 @@ import java.util.function.Consumer;
 public class ShowFlameLineTreeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-business-id")
+
+    private Long xBusinessId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
     private FlameLineTreeInfo body;
+
+    public ShowFlameLineTreeRequest withXBusinessId(Long xBusinessId) {
+        this.xBusinessId = xBusinessId;
+        return this;
+    }
+
+    /**
+     * 应用id。
+     * @return xBusinessId
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-business-id")
+    public Long getXBusinessId() {
+        return xBusinessId;
+    }
+
+    public void setXBusinessId(Long xBusinessId) {
+        this.xBusinessId = xBusinessId;
+    }
 
     public ShowFlameLineTreeRequest withBody(FlameLineTreeInfo body) {
         this.body = body;
@@ -51,18 +75,19 @@ public class ShowFlameLineTreeRequest {
             return false;
         }
         ShowFlameLineTreeRequest that = (ShowFlameLineTreeRequest) obj;
-        return Objects.equals(this.body, that.body);
+        return Objects.equals(this.xBusinessId, that.xBusinessId) && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(body);
+        return Objects.hash(xBusinessId, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowFlameLineTreeRequest {\n");
+        sb.append("    xBusinessId: ").append(toIndentedString(xBusinessId)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();

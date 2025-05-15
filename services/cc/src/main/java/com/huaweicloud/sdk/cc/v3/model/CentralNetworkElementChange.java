@@ -16,7 +16,7 @@ import java.util.Objects;
 public class CentralNetworkElementChange {
 
     /**
-     * 实例状态。 - CreateCentralNetworkPlane: 新增中心网络平面 - DeleteCentralNetworkPlane: 移除中心网络平面 - UpdateCentralNetworkPlane: 更新中心网络平面 - CreateCentralNetworkErInstance: 新增中心网络ER实例 - DeleteCentralNetworkErInstance: 移除中心网络ER实例 - CreateCentralNetworkErConnection: 新增中心网络ER连接 - DeleteCentralNetworkErConnection: 移除中心网络ER连接 - CreateCentralNetworkErTable: 新增中心网络ER路由表 - DeleteCentralNetworkErTable: 移除中心网络ER路由表
+     * 实例状态。 - CreateCentralNetworkPlane: 新增中心网络平面 - DeleteCentralNetworkPlane: 移除中心网络平面 - UpdateCentralNetworkPlane: 更新中心网络平面 - CreateCentralNetworkErInstance: 新增中心网络ER实例 - DeleteCentralNetworkErInstance: 移除中心网络ER实例 - CreateCentralNetworkErConnection: 新增中心网络ER连接 - DeleteCentralNetworkErConnection: 移除中心网络ER连接 - CreateCentralNetworkErTable: 新增中心网络ER路由表 - DeleteCentralNetworkErTable: 移除中心网络ER路由表 - SwitchCentralNetworkErTable: 切换中心网络ER路由表
      */
     public static final class OperationIdEnum {
 
@@ -74,6 +74,12 @@ public class CentralNetworkElementChange {
         public static final OperationIdEnum DELETECENTRALNETWORKERTABLE =
             new OperationIdEnum("DeleteCentralNetworkErTable");
 
+        /**
+         * Enum SWITCHCENTRALNETWORKERTABLE for value: "SwitchCentralNetworkErTable"
+         */
+        public static final OperationIdEnum SWITCHCENTRALNETWORKERTABLE =
+            new OperationIdEnum("SwitchCentralNetworkErTable");
+
         private static final Map<String, OperationIdEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, OperationIdEnum> createStaticFields() {
@@ -87,6 +93,7 @@ public class CentralNetworkElementChange {
             map.put("DeleteCentralNetworkErConnection", DELETECENTRALNETWORKERCONNECTION);
             map.put("CreateCentralNetworkErTable", CREATECENTRALNETWORKERTABLE);
             map.put("DeleteCentralNetworkErTable", DELETECENTRALNETWORKERTABLE);
+            map.put("SwitchCentralNetworkErTable", SWITCHCENTRALNETWORKERTABLE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -147,7 +154,7 @@ public class CentralNetworkElementChange {
     }
 
     /**
-     * 实例状态。 - CreateCentralNetworkPlane: 新增中心网络平面 - DeleteCentralNetworkPlane: 移除中心网络平面 - UpdateCentralNetworkPlane: 更新中心网络平面 - CreateCentralNetworkErInstance: 新增中心网络ER实例 - DeleteCentralNetworkErInstance: 移除中心网络ER实例 - CreateCentralNetworkErConnection: 新增中心网络ER连接 - DeleteCentralNetworkErConnection: 移除中心网络ER连接 - CreateCentralNetworkErTable: 新增中心网络ER路由表 - DeleteCentralNetworkErTable: 移除中心网络ER路由表
+     * 实例状态。 - CreateCentralNetworkPlane: 新增中心网络平面 - DeleteCentralNetworkPlane: 移除中心网络平面 - UpdateCentralNetworkPlane: 更新中心网络平面 - CreateCentralNetworkErInstance: 新增中心网络ER实例 - DeleteCentralNetworkErInstance: 移除中心网络ER实例 - CreateCentralNetworkErConnection: 新增中心网络ER连接 - DeleteCentralNetworkErConnection: 移除中心网络ER连接 - CreateCentralNetworkErTable: 新增中心网络ER路由表 - DeleteCentralNetworkErTable: 移除中心网络ER路由表 - SwitchCentralNetworkErTable: 切换中心网络ER路由表
      * @return operationId
      */
     public OperationIdEnum getOperationId() {

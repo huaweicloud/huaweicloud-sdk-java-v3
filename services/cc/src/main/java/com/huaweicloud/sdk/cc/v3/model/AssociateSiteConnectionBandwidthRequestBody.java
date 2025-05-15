@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * AssociateSiteConnectionBandwidthRequestBody
+ * 关联分支连接带宽的请求体。
  */
 public class AssociateSiteConnectionBandwidthRequestBody {
 

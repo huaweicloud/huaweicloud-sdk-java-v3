@@ -97,7 +97,7 @@ public class SiteConnection {
     }
 
     /**
-     * 实例ID。
+     * 分支网络ID。
      * @return siteNetworkId
      */
     public String getSiteNetworkId() {
@@ -181,7 +181,7 @@ public class SiteConnection {
     }
 
     /**
-     * 分支网络连接的两个端点定义，可能为两个点，也可能为两个单向边，长度固定为2的数组。
+     * 分支网络连接的两个端点定义，长度固定为2的数组。
      * @return edgePair
      */
     public List<DirectedEdge> getEdgePair() {
@@ -251,7 +251,7 @@ public class SiteConnection {
     }
 
     /**
-     * 是否冻结
+     * 是否冻结。
      * @return isFrozen
      */
     public Boolean getIsFrozen() {

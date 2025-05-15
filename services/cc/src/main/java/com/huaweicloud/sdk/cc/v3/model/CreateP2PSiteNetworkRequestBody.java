@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateP2PSiteNetworkRequestBody
+ * 创建P2P类型的分支网络的请求体。
  */
 public class CreateP2PSiteNetworkRequestBody {
 

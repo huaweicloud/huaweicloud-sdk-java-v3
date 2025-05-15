@@ -366,6 +366,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsPhoneticSymbolRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsPhoneticSymbolResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
@@ -9973,6 +9975,69 @@ public class MetaStudioMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowTtsAuditionFileRequest::getXAppUserId,
                 ShowTtsAuditionFileRequest::setXAppUserId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse> showTtsPhoneticSymbol =
+        genForShowTtsPhoneticSymbol();
+
+    private static HttpRequestDef<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse> genForShowTtsPhoneticSymbol() {
+        // basic
+        HttpRequestDef.Builder<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowTtsPhoneticSymbolRequest.class, ShowTtsPhoneticSymbolResponse.class)
+            .withName("ShowTtsPhoneticSymbol")
+            .withUri("/v1/{project_id}/ttsc/phonetic-symbol")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getOffset, ShowTtsPhoneticSymbolRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getLimit, ShowTtsPhoneticSymbolRequest::setLimit));
+        builder.<String>withRequestField("word",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getWord, ShowTtsPhoneticSymbolRequest::setWord));
+        builder.<String>withRequestField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXRequestId,
+                ShowTtsPhoneticSymbolRequest::setXRequestId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getAuthorization,
+                ShowTtsPhoneticSymbolRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXSdkDate,
+                ShowTtsPhoneticSymbolRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXProjectId,
+                ShowTtsPhoneticSymbolRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowTtsPhoneticSymbolRequest::getXAppUserId,
+                ShowTtsPhoneticSymbolRequest::setXAppUserId));
 
         // response
 

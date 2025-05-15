@@ -17,14 +17,14 @@ public class ListOpenRegionResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_list")
 
-    private List<Region> regionList = null;
+    private List<RegionParam> regionList = null;
 
-    public ListOpenRegionResponse withRegionList(List<Region> regionList) {
+    public ListOpenRegionResponse withRegionList(List<RegionParam> regionList) {
         this.regionList = regionList;
         return this;
     }
 
-    public ListOpenRegionResponse addRegionListItem(Region regionListItem) {
+    public ListOpenRegionResponse addRegionListItem(RegionParam regionListItem) {
         if (this.regionList == null) {
             this.regionList = new ArrayList<>();
         }
@@ -32,7 +32,7 @@ public class ListOpenRegionResponse extends SdkResponse {
         return this;
     }
 
-    public ListOpenRegionResponse withRegionList(Consumer<List<Region>> regionListSetter) {
+    public ListOpenRegionResponse withRegionList(Consumer<List<RegionParam>> regionListSetter) {
         if (this.regionList == null) {
             this.regionList = new ArrayList<>();
         }
@@ -44,11 +44,11 @@ public class ListOpenRegionResponse extends SdkResponse {
      * region列表。
      * @return regionList
      */
-    public List<Region> getRegionList() {
+    public List<RegionParam> getRegionList() {
         return regionList;
     }
 
-    public void setRegionList(List<Region> regionList) {
+    public void setRegionList(List<RegionParam> regionList) {
         this.regionList = regionList;
     }
 

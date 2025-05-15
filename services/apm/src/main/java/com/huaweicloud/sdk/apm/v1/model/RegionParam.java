@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * region信息。
  */
-public class Region {
+public class RegionParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "region_id")
@@ -35,7 +35,7 @@ public class Region {
 
     private String status;
 
-    public Region withRegionId(String regionId) {
+    public RegionParam withRegionId(String regionId) {
         this.regionId = regionId;
         return this;
     }
@@ -52,7 +52,7 @@ public class Region {
         this.regionId = regionId;
     }
 
-    public Region withRegionName(String regionName) {
+    public RegionParam withRegionName(String regionName) {
         this.regionName = regionName;
         return this;
     }
@@ -69,7 +69,7 @@ public class Region {
         this.regionName = regionName;
     }
 
-    public Region withRegion(String region) {
+    public RegionParam withRegion(String region) {
         this.region = region;
         return this;
     }
@@ -86,7 +86,7 @@ public class Region {
         this.region = region;
     }
 
-    public Region withProjectId(String projectId) {
+    public RegionParam withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
@@ -103,7 +103,7 @@ public class Region {
         this.projectId = projectId;
     }
 
-    public Region withStatus(String status) {
+    public RegionParam withStatus(String status) {
         this.status = status;
         return this;
     }
@@ -128,7 +128,7 @@ public class Region {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Region that = (Region) obj;
+        RegionParam that = (RegionParam) obj;
         return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.regionName, that.regionName)
             && Objects.equals(this.region, that.region) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.status, that.status);
@@ -142,7 +142,7 @@ public class Region {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Region {\n");
+        sb.append("class RegionParam {\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    regionName: ").append(toIndentedString(regionName)).append("\n");
         sb.append("    region: ").append(toIndentedString(region)).append("\n");

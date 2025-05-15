@@ -15,6 +15,11 @@ public class ListFlavorsRequest {
 
     private String availabilityZone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor_id")
+
+    private String flavorId;
+
     public ListFlavorsRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
@@ -32,6 +37,23 @@ public class ListFlavorsRequest {
         this.availabilityZone = availabilityZone;
     }
 
+    public ListFlavorsRequest withFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+        return this;
+    }
+
+    /**
+     * 规格id
+     * @return flavorId
+     */
+    public String getFlavorId() {
+        return flavorId;
+    }
+
+    public void setFlavorId(String flavorId) {
+        this.flavorId = flavorId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -41,12 +63,13 @@ public class ListFlavorsRequest {
             return false;
         }
         ListFlavorsRequest that = (ListFlavorsRequest) obj;
-        return Objects.equals(this.availabilityZone, that.availabilityZone);
+        return Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.flavorId, that.flavorId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(availabilityZone);
+        return Objects.hash(availabilityZone, flavorId);
     }
 
     @Override
@@ -54,6 +77,7 @@ public class ListFlavorsRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListFlavorsRequest {\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    flavorId: ").append(toIndentedString(flavorId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

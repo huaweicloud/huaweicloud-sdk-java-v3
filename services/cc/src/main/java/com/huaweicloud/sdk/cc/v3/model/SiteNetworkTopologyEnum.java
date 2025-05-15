@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 拓扑结构。 - p2p(点对点拓扑) - mesh (网状拓扑) - star (星形拓扑) - hybrid (混合拓扑)
+ * 拓扑结构。 - p2p（点对点拓扑） - mesh （网状拓扑） - star （星形拓扑） - hybrid （混合拓扑）
  */
 public class SiteNetworkTopologyEnum {
 

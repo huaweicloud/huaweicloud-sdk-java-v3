@@ -11,6 +11,16 @@ import java.util.Objects;
 public class ListBandwidthPackageSitesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "limit")
+
+    private Integer limit;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "marker")
+
+    private String marker;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "site_code")
 
     private String siteCode;
@@ -25,13 +35,49 @@ public class ListBandwidthPackageSitesRequest {
 
     private String name;
 
+    public ListBandwidthPackageSitesRequest withLimit(Integer limit) {
+        this.limit = limit;
+        return this;
+    }
+
+    /**
+     * 每页返回的个数。 取值范围：1~1000。
+     * minimum: 1
+     * maximum: 1000
+     * @return limit
+     */
+    public Integer getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Integer limit) {
+        this.limit = limit;
+    }
+
+    public ListBandwidthPackageSitesRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+
+    /**
+     * 翻页信息，从上次API调用返回的翻页数据中获取，可填写前一页marker或者后一页marker，填入前一页previous_marker就向前翻页，后一页next_marker就向后翻页。 翻页过程中，查询条件不能修改，包括过滤条件、排序条件、limit。
+     * @return marker
+     */
+    public String getMarker() {
+        return marker;
+    }
+
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+
     public ListBandwidthPackageSitesRequest withSiteCode(String siteCode) {
         this.siteCode = siteCode;
         return this;
     }
 
     /**
-     * 根据站点编码进行查询
+     * 根据站点编码进行查询。
      * @return siteCode
      */
     public String getSiteCode() {
@@ -48,7 +94,7 @@ public class ListBandwidthPackageSitesRequest {
     }
 
     /**
-     * 根据区域ID进行查询
+     * 根据区域ID进行查询。
      * @return regionId
      */
     public String getRegionId() {
@@ -65,7 +111,7 @@ public class ListBandwidthPackageSitesRequest {
     }
 
     /**
-     * 根据名称模糊查询
+     * 根据名称模糊查询。
      * @return name
      */
     public String getName() {
@@ -85,19 +131,22 @@ public class ListBandwidthPackageSitesRequest {
             return false;
         }
         ListBandwidthPackageSitesRequest that = (ListBandwidthPackageSitesRequest) obj;
-        return Objects.equals(this.siteCode, that.siteCode) && Objects.equals(this.regionId, that.regionId)
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.siteCode, that.siteCode) && Objects.equals(this.regionId, that.regionId)
             && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(siteCode, regionId, name);
+        return Objects.hash(limit, marker, siteCode, regionId, name);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListBandwidthPackageSitesRequest {\n");
+        sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    marker: ").append(toIndentedString(marker)).append("\n");
         sb.append("    siteCode: ").append(toIndentedString(siteCode)).append("\n");
         sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

@@ -20,6 +20,11 @@ public class ListCentralNetworkCapabilitiesResponse extends SdkResponse {
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "capabilities")
 
     private List<CentralNetworkCapability> capabilities = null;
@@ -39,6 +44,32 @@ public class ListCentralNetworkCapabilitiesResponse extends SdkResponse {
 
     public void setRequestId(String requestId) {
         this.requestId = requestId;
+    }
+
+    public ListCentralNetworkCapabilitiesResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListCentralNetworkCapabilitiesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
     }
 
     public ListCentralNetworkCapabilitiesResponse withCapabilities(List<CentralNetworkCapability> capabilities) {
@@ -84,12 +115,13 @@ public class ListCentralNetworkCapabilitiesResponse extends SdkResponse {
             return false;
         }
         ListCentralNetworkCapabilitiesResponse that = (ListCentralNetworkCapabilitiesResponse) obj;
-        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.capabilities, that.capabilities);
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.capabilities, that.capabilities);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(requestId, capabilities);
+        return Objects.hash(requestId, pageInfo, capabilities);
     }
 
     @Override
@@ -97,6 +129,7 @@ public class ListCentralNetworkCapabilitiesResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListCentralNetworkCapabilitiesResponse {\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("    capabilities: ").append(toIndentedString(capabilities)).append("\n");
         sb.append("}");
         return sb.toString();

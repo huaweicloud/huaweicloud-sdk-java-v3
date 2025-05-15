@@ -66,6 +66,10 @@ import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInst
 import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInstanceResponse;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateSiteNetworkBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateSiteNetworkBandwidthResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListAreaBandwidthPackageSpecificationsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListAreaBandwidthPackageSpecificationsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListAreasRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListAreasResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageLevelsRequest;
@@ -102,6 +106,8 @@ import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksByTagsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksByTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionCapabilitiesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionCapabilitiesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionQuotasRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionQuotasResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionRoutesRequest;
@@ -134,6 +140,10 @@ import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListRegionBandwidthPackageSpecificationsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListRegionBandwidthPackageSpecificationsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListRegionsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListRegionsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkCapabilitiesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkCapabilitiesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkQuotasRequest;
@@ -1788,6 +1798,36 @@ public class CcClient {
     }
 
     /**
+     * 查询云连接的能力列表
+     *
+     * 查询云连接的能力列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudConnectionCapabilitiesRequest 请求对象
+     * @return ListCloudConnectionCapabilitiesResponse
+     */
+    public ListCloudConnectionCapabilitiesResponse listCloudConnectionCapabilities(
+        ListCloudConnectionCapabilitiesRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.listCloudConnectionCapabilities);
+    }
+
+    /**
+     * 查询云连接的能力列表
+     *
+     * 查询云连接的能力列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCloudConnectionCapabilitiesRequest 请求对象
+     * @return SyncInvoker<ListCloudConnectionCapabilitiesRequest, ListCloudConnectionCapabilitiesResponse>
+     */
+    public SyncInvoker<ListCloudConnectionCapabilitiesRequest, ListCloudConnectionCapabilitiesResponse> listCloudConnectionCapabilitiesInvoker(
+        ListCloudConnectionCapabilitiesRequest request) {
+        return new SyncInvoker<>(request, CcMeta.listCloudConnectionCapabilities, hcClient);
+    }
+
+    /**
      * 查询云连接配额
      *
      * 查询云连接配额。
@@ -2688,7 +2728,7 @@ public class CcClient {
     /**
      * 查询网络实例列表
      *
-     * 查询云连接列表。
+     * 查询网络实例列表。
      * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -2703,7 +2743,7 @@ public class CcClient {
     /**
      * 查询网络实例列表
      *
-     * 查询云连接列表。
+     * 查询网络实例列表。
      * 分页查询使用的参数为marker、limit。marker和limit一起使用时才会生效，单独使用无效。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -3099,9 +3139,67 @@ public class CcClient {
     }
 
     /**
+     * 查询大区互通类型的带宽包资源规格列表
+     *
+     * 查询大区互通类型的带宽包资源规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAreaBandwidthPackageSpecificationsRequest 请求对象
+     * @return ListAreaBandwidthPackageSpecificationsResponse
+     */
+    public ListAreaBandwidthPackageSpecificationsResponse listAreaBandwidthPackageSpecifications(
+        ListAreaBandwidthPackageSpecificationsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.listAreaBandwidthPackageSpecifications);
+    }
+
+    /**
+     * 查询大区互通类型的带宽包资源规格列表
+     *
+     * 查询大区互通类型的带宽包资源规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAreaBandwidthPackageSpecificationsRequest 请求对象
+     * @return SyncInvoker<ListAreaBandwidthPackageSpecificationsRequest, ListAreaBandwidthPackageSpecificationsResponse>
+     */
+    public SyncInvoker<ListAreaBandwidthPackageSpecificationsRequest, ListAreaBandwidthPackageSpecificationsResponse> listAreaBandwidthPackageSpecificationsInvoker(
+        ListAreaBandwidthPackageSpecificationsRequest request) {
+        return new SyncInvoker<>(request, CcMeta.listAreaBandwidthPackageSpecifications, hcClient);
+    }
+
+    /**
+     * 查询当前支持的Area列表
+     *
+     * 查询当前支持的大区列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAreasRequest 请求对象
+     * @return ListAreasResponse
+     */
+    public ListAreasResponse listAreas(ListAreasRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.listAreas);
+    }
+
+    /**
+     * 查询当前支持的Area列表
+     *
+     * 查询当前支持的大区列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAreasRequest 请求对象
+     * @return SyncInvoker<ListAreasRequest, ListAreasResponse>
+     */
+    public SyncInvoker<ListAreasRequest, ListAreasResponse> listAreasInvoker(ListAreasRequest request) {
+        return new SyncInvoker<>(request, CcMeta.listAreas, hcClient);
+    }
+
+    /**
      * 查询带宽包等级列表
      *
-     * 查询带宽包等级列表
+     * 查询带宽包等级列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3115,7 +3213,7 @@ public class CcClient {
     /**
      * 查询带宽包等级列表
      *
-     * 查询带宽包等级列表
+     * 查询带宽包等级列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3130,7 +3228,7 @@ public class CcClient {
     /**
      * 查询带宽包线路列表
      *
-     * 查询带宽包线路列表
+     * 查询带宽包线路列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3144,7 +3242,7 @@ public class CcClient {
     /**
      * 查询带宽包线路列表
      *
-     * 查询带宽包线路列表
+     * 查询带宽包线路列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3159,7 +3257,7 @@ public class CcClient {
     /**
      * 查询带宽包站点列表
      *
-     * 查询带宽包站点列表
+     * 查询带宽包站点列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3173,7 +3271,7 @@ public class CcClient {
     /**
      * 查询带宽包站点列表
      *
-     * 查询带宽包站点列表
+     * 查询带宽包站点列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -3183,6 +3281,64 @@ public class CcClient {
     public SyncInvoker<ListBandwidthPackageSitesRequest, ListBandwidthPackageSitesResponse> listBandwidthPackageSitesInvoker(
         ListBandwidthPackageSitesRequest request) {
         return new SyncInvoker<>(request, CcMeta.listBandwidthPackageSites, hcClient);
+    }
+
+    /**
+     * 查询区域互通类型的带宽包规格列表
+     *
+     * 查询区域互通类型的带宽包规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRegionBandwidthPackageSpecificationsRequest 请求对象
+     * @return ListRegionBandwidthPackageSpecificationsResponse
+     */
+    public ListRegionBandwidthPackageSpecificationsResponse listRegionBandwidthPackageSpecifications(
+        ListRegionBandwidthPackageSpecificationsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.listRegionBandwidthPackageSpecifications);
+    }
+
+    /**
+     * 查询区域互通类型的带宽包规格列表
+     *
+     * 查询区域互通类型的带宽包规格列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRegionBandwidthPackageSpecificationsRequest 请求对象
+     * @return SyncInvoker<ListRegionBandwidthPackageSpecificationsRequest, ListRegionBandwidthPackageSpecificationsResponse>
+     */
+    public SyncInvoker<ListRegionBandwidthPackageSpecificationsRequest, ListRegionBandwidthPackageSpecificationsResponse> listRegionBandwidthPackageSpecificationsInvoker(
+        ListRegionBandwidthPackageSpecificationsRequest request) {
+        return new SyncInvoker<>(request, CcMeta.listRegionBandwidthPackageSpecifications, hcClient);
+    }
+
+    /**
+     * 查询当前支持的Region列表
+     *
+     * 查询当前支持的Region列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRegionsRequest 请求对象
+     * @return ListRegionsResponse
+     */
+    public ListRegionsResponse listRegions(ListRegionsRequest request) {
+        return hcClient.syncInvokeHttp(request, CcMeta.listRegions);
+    }
+
+    /**
+     * 查询当前支持的Region列表
+     *
+     * 查询当前支持的Region列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRegionsRequest 请求对象
+     * @return SyncInvoker<ListRegionsRequest, ListRegionsResponse>
+     */
+    public SyncInvoker<ListRegionsRequest, ListRegionsResponse> listRegionsInvoker(ListRegionsRequest request) {
+        return new SyncInvoker<>(request, CcMeta.listRegions, hcClient);
     }
 
 }

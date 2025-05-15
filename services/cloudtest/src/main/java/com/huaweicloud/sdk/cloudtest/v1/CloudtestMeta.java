@@ -435,7 +435,7 @@ public class CloudtestMeta {
             f -> f.withMarshaller(AddCaseResultFourRequest::getCaseUri, AddCaseResultFourRequest::setCaseUri));
         builder.<AddTestCaseResultInfo>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddTestCaseResultInfo.class),
             f -> f.withMarshaller(AddCaseResultFourRequest::getBody, AddCaseResultFourRequest::setBody));
 
@@ -508,7 +508,7 @@ public class CloudtestMeta {
             f -> f.withMarshaller(AddTestCaseResultLogRequest::getCaseUri, AddTestCaseResultLogRequest::setCaseUri));
         builder.<AddTestCaseResultLogInfo>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AddTestCaseResultLogInfo.class),
             f -> f.withMarshaller(AddTestCaseResultLogRequest::getBody, AddTestCaseResultLogRequest::setBody));
 
@@ -2996,7 +2996,7 @@ public class CloudtestMeta {
             f -> f.withMarshaller(ShowCaseResultRequest::getCaseUri, ShowCaseResultRequest::setCaseUri));
         builder.<QueryCaseResultInfo>withRequestField("body",
             LocationType.Body,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryCaseResultInfo.class),
             f -> f.withMarshaller(ShowCaseResultRequest::getBody, ShowCaseResultRequest::setBody));
 

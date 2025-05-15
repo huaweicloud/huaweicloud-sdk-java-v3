@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CreateP2PSiteNetwork
+ * 创建P2P类型的分支网络的请求体。
  */
 public class CreateP2PSiteNetwork {
 
@@ -44,7 +44,7 @@ public class CreateP2PSiteNetwork {
     }
 
     /**
-     * 实例名字。
+     * 实例名称。
      * @return name
      */
     public String getName() {
@@ -144,7 +144,7 @@ public class CreateP2PSiteNetwork {
     }
 
     /**
-     * 端到端(P2P)类型分支网络连接的两个端点定义，长度固定为2的数组。
+     * 端到端（P2P）类型分支网络连接的两个端点定义，长度固定为2的数组。
      * @return sites
      */
     public List<CreateSiteInformation> getSites() {

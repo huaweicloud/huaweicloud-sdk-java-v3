@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * FrozenEffect
+ * 冻结效果。
  */
 public class FrozenEffect {
 

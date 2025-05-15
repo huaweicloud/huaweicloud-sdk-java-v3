@@ -87,7 +87,7 @@ public class CreateSiteInformation {
     }
 
     /**
-     * 实例ID。
+     * 网关的ID。
      * @return gatewayId
      */
     public String getGatewayId() {

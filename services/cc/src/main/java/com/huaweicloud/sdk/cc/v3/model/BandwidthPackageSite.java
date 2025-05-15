@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 带宽包站点
+ * 带宽包站点。
  */
 public class BandwidthPackageSite {
 
@@ -79,7 +79,7 @@ public class BandwidthPackageSite {
     }
 
     /**
-     * 站点编码
+     * 站点编码。
      * @return siteCode
      */
     public String getSiteCode() {
@@ -113,7 +113,7 @@ public class BandwidthPackageSite {
     }
 
     /**
-     * 站点类型。默认Region级别
+     * 站点类型。默认Region级别。
      * @return siteType
      */
     public String getSiteType() {
@@ -130,7 +130,7 @@ public class BandwidthPackageSite {
     }
 
     /**
-     * 实例名字。
+     * 实例名称。
      * @return nameCn
      */
     public String getNameCn() {
@@ -147,7 +147,7 @@ public class BandwidthPackageSite {
     }
 
     /**
-     * 实例名字。
+     * 实例名称。
      * @return nameEn
      */
     public String getNameEn() {

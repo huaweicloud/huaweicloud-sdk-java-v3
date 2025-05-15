@@ -24,6 +24,11 @@ public class ListBandwidthPackageLinesResponse extends SdkResponse {
 
     private String requestId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "page_info")
+
+    private PageInfo pageInfo;
+
     public ListBandwidthPackageLinesResponse withBandwidthPackageLines(
         List<BandwidthPackageLine> bandwidthPackageLines) {
         this.bandwidthPackageLines = bandwidthPackageLines;
@@ -77,6 +82,32 @@ public class ListBandwidthPackageLinesResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
+    public ListBandwidthPackageLinesResponse withPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+        return this;
+    }
+
+    public ListBandwidthPackageLinesResponse withPageInfo(Consumer<PageInfo> pageInfoSetter) {
+        if (this.pageInfo == null) {
+            this.pageInfo = new PageInfo();
+            pageInfoSetter.accept(this.pageInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get pageInfo
+     * @return pageInfo
+     */
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        this.pageInfo = pageInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -87,12 +118,12 @@ public class ListBandwidthPackageLinesResponse extends SdkResponse {
         }
         ListBandwidthPackageLinesResponse that = (ListBandwidthPackageLinesResponse) obj;
         return Objects.equals(this.bandwidthPackageLines, that.bandwidthPackageLines)
-            && Objects.equals(this.requestId, that.requestId);
+            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bandwidthPackageLines, requestId);
+        return Objects.hash(bandwidthPackageLines, requestId, pageInfo);
     }
 
     @Override
@@ -101,6 +132,7 @@ public class ListBandwidthPackageLinesResponse extends SdkResponse {
         sb.append("class ListBandwidthPackageLinesResponse {\n");
         sb.append("    bandwidthPackageLines: ").append(toIndentedString(bandwidthPackageLines)).append("\n");
         sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    pageInfo: ").append(toIndentedString(pageInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.cc.v3.model;
 import java.util.Objects;
 
 /**
- * 实例名字。
+ * 实例名称。
  */
 public class NameDef {
 

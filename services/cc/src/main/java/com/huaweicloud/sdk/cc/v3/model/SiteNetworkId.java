@@ -21,7 +21,7 @@ public class SiteNetworkId {
     }
 
     /**
-     * 实例ID。
+     * 分支网络ID。
      * @return siteNetworkId
      */
     public String getSiteNetworkId() {

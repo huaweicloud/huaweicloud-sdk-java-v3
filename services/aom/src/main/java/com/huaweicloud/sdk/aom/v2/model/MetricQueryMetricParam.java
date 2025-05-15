@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 /**
  * 查询参数集
  */
-public class MetricQueryMeritcParam {
+public class MetricQueryMetricParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "dimensions")
@@ -28,12 +28,12 @@ public class MetricQueryMeritcParam {
 
     private String namespace;
 
-    public MetricQueryMeritcParam withDimensions(List<Dimension> dimensions) {
+    public MetricQueryMetricParam withDimensions(List<Dimension> dimensions) {
         this.dimensions = dimensions;
         return this;
     }
 
-    public MetricQueryMeritcParam addDimensionsItem(Dimension dimensionsItem) {
+    public MetricQueryMetricParam addDimensionsItem(Dimension dimensionsItem) {
         if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -41,7 +41,7 @@ public class MetricQueryMeritcParam {
         return this;
     }
 
-    public MetricQueryMeritcParam withDimensions(Consumer<List<Dimension>> dimensionsSetter) {
+    public MetricQueryMetricParam withDimensions(Consumer<List<Dimension>> dimensionsSetter) {
         if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
@@ -61,7 +61,7 @@ public class MetricQueryMeritcParam {
         this.dimensions = dimensions;
     }
 
-    public MetricQueryMeritcParam withMetricName(String metricName) {
+    public MetricQueryMetricParam withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
     }
@@ -78,7 +78,7 @@ public class MetricQueryMeritcParam {
         this.metricName = metricName;
     }
 
-    public MetricQueryMeritcParam withNamespace(String namespace) {
+    public MetricQueryMetricParam withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
@@ -103,7 +103,7 @@ public class MetricQueryMeritcParam {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricQueryMeritcParam that = (MetricQueryMeritcParam) obj;
+        MetricQueryMetricParam that = (MetricQueryMetricParam) obj;
         return Objects.equals(this.dimensions, that.dimensions) && Objects.equals(this.metricName, that.metricName)
             && Objects.equals(this.namespace, that.namespace);
     }
@@ -116,7 +116,7 @@ public class MetricQueryMeritcParam {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class MetricQueryMeritcParam {\n");
+        sb.append("class MetricQueryMetricParam {\n");
         sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
         sb.append("    metricName: ").append(toIndentedString(metricName)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");

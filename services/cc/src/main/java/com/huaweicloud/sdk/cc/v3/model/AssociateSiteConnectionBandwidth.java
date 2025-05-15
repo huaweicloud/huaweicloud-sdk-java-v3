@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * AssociateSiteConnectionBandwidth
+ * 关联分支连接带宽的请求体。
  */
 public class AssociateSiteConnectionBandwidth {
 

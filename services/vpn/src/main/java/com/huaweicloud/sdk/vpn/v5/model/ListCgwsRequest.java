@@ -66,7 +66,7 @@ public class ListCgwsRequest {
     }
 
     /**
-     * 上一页最后一条记录的id，为空时为查询第一页。使用说明：必须与limit一起使用。
+     * 上一页最后一条资源记录的创建时间，为空时为查询第一页。使用说明：必须与limit一起使用。
      * @return marker
      */
     public String getMarker() {

@@ -313,6 +313,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTrainingSegmentInfoResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsAuditionFileResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsPhoneticSymbolRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowTtsPhoneticSymbolResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoMotionCaptureJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowVideoScriptRequest;
@@ -5412,6 +5414,35 @@ public class MetaStudioClient {
     public SyncInvoker<ShowTtsAuditionFileRequest, ShowTtsAuditionFileResponse> showTtsAuditionFileInvoker(
         ShowTtsAuditionFileRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.showTtsAuditionFile, hcClient);
+    }
+
+    /**
+     * 获取英文单词音标
+     *
+     * 根据英文单词返回对应音标列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTtsPhoneticSymbolRequest 请求对象
+     * @return ShowTtsPhoneticSymbolResponse
+     */
+    public ShowTtsPhoneticSymbolResponse showTtsPhoneticSymbol(ShowTtsPhoneticSymbolRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.showTtsPhoneticSymbol);
+    }
+
+    /**
+     * 获取英文单词音标
+     *
+     * 根据英文单词返回对应音标列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowTtsPhoneticSymbolRequest 请求对象
+     * @return SyncInvoker<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse>
+     */
+    public SyncInvoker<ShowTtsPhoneticSymbolRequest, ShowTtsPhoneticSymbolResponse> showTtsPhoneticSymbolInvoker(
+        ShowTtsPhoneticSymbolRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.showTtsPhoneticSymbol, hcClient);
     }
 
     /**

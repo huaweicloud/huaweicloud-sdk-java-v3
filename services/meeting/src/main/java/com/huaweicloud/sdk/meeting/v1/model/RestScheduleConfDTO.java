@@ -534,7 +534,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 会议资源类型：  * 0: 并发 * 1: 云会议室 * 2: 网络研讨会 * 3: 共享vmr * 4: 共享网络研讨会 
+     * 会议资源类型：  * 0: 并发 * 1: 云会议室 * 2: 网络研讨会 * 3: 预留模式，暂未开放 
      * minimum: 0
      * maximum: 4
      * @return confResType

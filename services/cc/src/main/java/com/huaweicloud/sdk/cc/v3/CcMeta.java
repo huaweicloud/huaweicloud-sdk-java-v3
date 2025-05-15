@@ -92,6 +92,10 @@ import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInst
 import com.huaweicloud.sdk.cc.v3.model.DisassociateGlobalConnectionBandwidthInstanceResponse;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateSiteNetworkBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.DisassociateSiteNetworkBandwidthResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListAreaBandwidthPackageSpecificationsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListAreaBandwidthPackageSpecificationsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListAreasRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListAreasResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListAuthorisationsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListBandwidthPackageLevelsRequest;
@@ -130,6 +134,8 @@ import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksByTagsRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksByTagsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCentralNetworksResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionCapabilitiesRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionCapabilitiesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionQuotasRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionQuotasResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListCloudConnectionRoutesRequest;
@@ -163,6 +169,10 @@ import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListNetworkInstancesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListPermissionsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListRegionBandwidthPackageSpecificationsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListRegionBandwidthPackageSpecificationsResponse;
+import com.huaweicloud.sdk.cc.v3.model.ListRegionsRequest;
+import com.huaweicloud.sdk.cc.v3.model.ListRegionsResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkCapabilitiesRequest;
 import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkCapabilitiesResponse;
 import com.huaweicloud.sdk.cc.v3.model.ListSiteNetworkQuotasRequest;
@@ -244,6 +254,7 @@ import com.huaweicloud.sdk.cc.v3.model.UpdateInterRegionBandwidthResponse;
 import com.huaweicloud.sdk.cc.v3.model.UpdateNetworkInstanceRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateNetworkInstanceRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.UpdateNetworkInstanceResponse;
+import com.huaweicloud.sdk.cc.v3.model.UpdateSiteConnectionBandwidthRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.UpdateSiteConnectionBandwidthSizeRequestBody;
 import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkBandwidthRequest;
 import com.huaweicloud.sdk.cc.v3.model.UpdateSiteNetworkBandwidthResponse;
@@ -1810,6 +1821,18 @@ public class CcMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCentralNetworkCapabilitiesRequest::getCapability,
                 ListCentralNetworkCapabilitiesRequest::setCapability));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListCentralNetworkCapabilitiesRequest::getLimit,
+                ListCentralNetworkCapabilitiesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCentralNetworkCapabilitiesRequest::getMarker,
+                ListCentralNetworkCapabilitiesRequest::setMarker));
 
         // response
 
@@ -2255,6 +2278,33 @@ public class CcMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateCloudConnectionRequestBody.class),
             f -> f.withMarshaller(UpdateCloudConnectionRequest::getBody, UpdateCloudConnectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListCloudConnectionCapabilitiesRequest, ListCloudConnectionCapabilitiesResponse> listCloudConnectionCapabilities =
+        genForListCloudConnectionCapabilities();
+
+    private static HttpRequestDef<ListCloudConnectionCapabilitiesRequest, ListCloudConnectionCapabilitiesResponse> genForListCloudConnectionCapabilities() {
+        // basic
+        HttpRequestDef.Builder<ListCloudConnectionCapabilitiesRequest, ListCloudConnectionCapabilitiesResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListCloudConnectionCapabilitiesRequest.class,
+                    ListCloudConnectionCapabilitiesResponse.class)
+                .withName("ListCloudConnectionCapabilities")
+                .withUri("/v3/{domain_id}/ccaas/capabilities")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCloudConnectionCapabilitiesRequest::getResourceType,
+                ListCloudConnectionCapabilitiesRequest::setResourceType));
 
         // response
 
@@ -3573,10 +3623,10 @@ public class CcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateSiteNetworkBandwidthRequest::getSiteConnectionId,
                 UpdateSiteNetworkBandwidthRequest::setSiteConnectionId));
-        builder.<AssociateSiteConnectionBandwidthRequestBody>withRequestField("body",
+        builder.<UpdateSiteConnectionBandwidthRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(AssociateSiteConnectionBandwidthRequestBody.class),
+            TypeCasts.uncheckedConversion(UpdateSiteConnectionBandwidthRequestBody.class),
             f -> f.withMarshaller(UpdateSiteNetworkBandwidthRequest::getBody,
                 UpdateSiteNetworkBandwidthRequest::setBody));
 
@@ -3821,6 +3871,18 @@ public class CcMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListSiteNetworkCapabilitiesRequest::getSpecification,
                 ListSiteNetworkCapabilitiesRequest::setSpecification));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSiteNetworkCapabilitiesRequest::getLimit,
+                ListSiteNetworkCapabilitiesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSiteNetworkCapabilitiesRequest::getMarker,
+                ListSiteNetworkCapabilitiesRequest::setMarker));
 
         // response
 
@@ -3861,6 +3923,56 @@ public class CcMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAreaBandwidthPackageSpecificationsRequest, ListAreaBandwidthPackageSpecificationsResponse> listAreaBandwidthPackageSpecifications =
+        genForListAreaBandwidthPackageSpecifications();
+
+    private static HttpRequestDef<ListAreaBandwidthPackageSpecificationsRequest, ListAreaBandwidthPackageSpecificationsResponse> genForListAreaBandwidthPackageSpecifications() {
+        // basic
+        HttpRequestDef.Builder<ListAreaBandwidthPackageSpecificationsRequest, ListAreaBandwidthPackageSpecificationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListAreaBandwidthPackageSpecificationsRequest.class,
+                    ListAreaBandwidthPackageSpecificationsResponse.class)
+                .withName("ListAreaBandwidthPackageSpecifications")
+                .withUri("/v3/{domain_id}/ccaas/bandwidth-packages/area-specifications")
+                .withContentType("application/json");
+
+        // requests
+        builder.<List<String>>withRequestField("local_area_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAreaBandwidthPackageSpecificationsRequest::getLocalAreaId,
+                ListAreaBandwidthPackageSpecificationsRequest::setLocalAreaId));
+        builder.<List<String>>withRequestField("remote_area_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListAreaBandwidthPackageSpecificationsRequest::getRemoteAreaId,
+                ListAreaBandwidthPackageSpecificationsRequest::setRemoteAreaId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListAreasRequest, ListAreasResponse> listAreas = genForListAreas();
+
+    private static HttpRequestDef<ListAreasRequest, ListAreasResponse> genForListAreas() {
+        // basic
+        HttpRequestDef.Builder<ListAreasRequest, ListAreasResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAreasRequest.class, ListAreasResponse.class)
+                .withName("ListAreas")
+                .withUri("/v3/{domain_id}/ccaas/areas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListBandwidthPackageLevelsRequest, ListBandwidthPackageLevelsResponse> listBandwidthPackageLevels =
         genForListBandwidthPackageLevels();
 
@@ -3876,6 +3988,18 @@ public class CcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBandwidthPackageLevelsRequest::getLimit,
+                ListBandwidthPackageLevelsRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthPackageLevelsRequest::getMarker,
+                ListBandwidthPackageLevelsRequest::setMarker));
         builder.<String>withRequestField("level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3909,6 +4033,18 @@ public class CcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBandwidthPackageLinesRequest::getLimit,
+                ListBandwidthPackageLinesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthPackageLinesRequest::getMarker,
+                ListBandwidthPackageLinesRequest::setMarker));
         builder.<String>withRequestField("level",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3942,6 +4078,18 @@ public class CcMeta {
                 .withContentType("application/json");
 
         // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListBandwidthPackageSitesRequest::getLimit,
+                ListBandwidthPackageSitesRequest::setLimit));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListBandwidthPackageSitesRequest::getMarker,
+                ListBandwidthPackageSitesRequest::setMarker));
         builder.<String>withRequestField("site_code",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -3960,6 +4108,56 @@ public class CcMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBandwidthPackageSitesRequest::getName,
                 ListBandwidthPackageSitesRequest::setName));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRegionBandwidthPackageSpecificationsRequest, ListRegionBandwidthPackageSpecificationsResponse> listRegionBandwidthPackageSpecifications =
+        genForListRegionBandwidthPackageSpecifications();
+
+    private static HttpRequestDef<ListRegionBandwidthPackageSpecificationsRequest, ListRegionBandwidthPackageSpecificationsResponse> genForListRegionBandwidthPackageSpecifications() {
+        // basic
+        HttpRequestDef.Builder<ListRegionBandwidthPackageSpecificationsRequest, ListRegionBandwidthPackageSpecificationsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListRegionBandwidthPackageSpecificationsRequest.class,
+                    ListRegionBandwidthPackageSpecificationsResponse.class)
+                .withName("ListRegionBandwidthPackageSpecifications")
+                .withUri("/v3/{domain_id}/ccaas/bandwidth-packages/region-specifications")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("local_region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegionBandwidthPackageSpecificationsRequest::getLocalRegionId,
+                ListRegionBandwidthPackageSpecificationsRequest::setLocalRegionId));
+        builder.<String>withRequestField("remote_region_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRegionBandwidthPackageSpecificationsRequest::getRemoteRegionId,
+                ListRegionBandwidthPackageSpecificationsRequest::setRemoteRegionId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRegionsRequest, ListRegionsResponse> listRegions = genForListRegions();
+
+    private static HttpRequestDef<ListRegionsRequest, ListRegionsResponse> genForListRegions() {
+        // basic
+        HttpRequestDef.Builder<ListRegionsRequest, ListRegionsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRegionsRequest.class, ListRegionsResponse.class)
+                .withName("ListRegions")
+                .withUri("/v3/{domain_id}/ccaas/regions")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

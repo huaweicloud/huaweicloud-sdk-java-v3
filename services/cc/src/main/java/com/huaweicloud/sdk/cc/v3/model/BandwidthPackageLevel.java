@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.util.Objects;
 
 /**
- * 带宽包等级
+ * 带宽包等级。
  */
 public class BandwidthPackageLevel {
 
@@ -74,7 +74,7 @@ public class BandwidthPackageLevel {
     }
 
     /**
-     * 带宽包等级
+     * 带宽包等级。
      * @return level
      */
     public String getLevel() {
@@ -91,7 +91,7 @@ public class BandwidthPackageLevel {
     }
 
     /**
-     * 实例名字。
+     * 实例名称。
      * @return nameCn
      */
     public String getNameCn() {
@@ -108,7 +108,7 @@ public class BandwidthPackageLevel {
     }
 
     /**
-     * 实例名字。
+     * 实例名称。
      * @return nameEn
      */
     public String getNameEn() {
@@ -125,7 +125,7 @@ public class BandwidthPackageLevel {
     }
 
     /**
-     * 展示优先级，数值越低，优先级越高。 铂金系列优先级范围：1-50 金牌系列优先级范围：51-100 银牌系列优先级范围：101-150 其他：大于151
+     * 展示优先级，数值越低，优先级越高。 铂金系列优先级范围：1-50。 金牌系列优先级范围：51-100。 银牌系列优先级范围：101-150。 其他：大于151。
      * minimum: 1
      * maximum: 10000
      * @return displayPriority

@@ -97,7 +97,7 @@ public class SiteInformation {
     }
 
     /**
-     * 实例ID。
+     * 网关的ID。
      * @return gatewayId
      */
     public String getGatewayId() {
@@ -114,7 +114,7 @@ public class SiteInformation {
     }
 
     /**
-     * 站点编码定义
+     * 站点编码。
      * @return siteCode
      */
     public String getSiteCode() {

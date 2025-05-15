@@ -112,7 +112,7 @@ public class SiteNetworkEntry {
     }
 
     /**
-     * 实例名字。
+     * 实例名称。
      * @return name
      */
     public String getName() {
@@ -231,7 +231,7 @@ public class SiteNetworkEntry {
     }
 
     /**
-     * 实例ID。
+     * 应用策略ID。
      * @return applyPolicyId
      */
     public String getApplyPolicyId() {
@@ -347,7 +347,7 @@ public class SiteNetworkEntry {
     }
 
     /**
-     * p2p拓扑或者网状(mesh)拓扑中的节点。
+     * 点对点拓扑或者网状拓扑中的节点。
      * @return sites
      */
     public List<SiteInformation> getSites() {

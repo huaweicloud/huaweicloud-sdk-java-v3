@@ -25,6 +25,11 @@ public class BackupPolicyItem {
 
     private String period;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "enable_incremental_backup")
+
+    private Boolean enableIncrementalBackup;
+
     public BackupPolicyItem withKeepDays(Integer keepDays) {
         this.keepDays = keepDays;
         return this;
@@ -78,6 +83,23 @@ public class BackupPolicyItem {
         this.period = period;
     }
 
+    public BackupPolicyItem withEnableIncrementalBackup(Boolean enableIncrementalBackup) {
+        this.enableIncrementalBackup = enableIncrementalBackup;
+        return this;
+    }
+
+    /**
+     * 是否开启增量备份。true：表示增量备份策略为开启状态；false：表示增量备份策略为关闭状态。
+     * @return enableIncrementalBackup
+     */
+    public Boolean getEnableIncrementalBackup() {
+        return enableIncrementalBackup;
+    }
+
+    public void setEnableIncrementalBackup(Boolean enableIncrementalBackup) {
+        this.enableIncrementalBackup = enableIncrementalBackup;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -88,12 +110,13 @@ public class BackupPolicyItem {
         }
         BackupPolicyItem that = (BackupPolicyItem) obj;
         return Objects.equals(this.keepDays, that.keepDays) && Objects.equals(this.startTime, that.startTime)
-            && Objects.equals(this.period, that.period);
+            && Objects.equals(this.period, that.period)
+            && Objects.equals(this.enableIncrementalBackup, that.enableIncrementalBackup);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keepDays, startTime, period);
+        return Objects.hash(keepDays, startTime, period, enableIncrementalBackup);
     }
 
     @Override
@@ -103,6 +126,7 @@ public class BackupPolicyItem {
         sb.append("    keepDays: ").append(toIndentedString(keepDays)).append("\n");
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    period: ").append(toIndentedString(period)).append("\n");
+        sb.append("    enableIncrementalBackup: ").append(toIndentedString(enableIncrementalBackup)).append("\n");
         sb.append("}");
         return sb.toString();
     }

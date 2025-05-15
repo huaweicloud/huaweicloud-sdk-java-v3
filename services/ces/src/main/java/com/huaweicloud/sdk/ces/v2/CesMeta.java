@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v2;
 
 import com.huaweicloud.sdk.ces.v2.model.AddAlarmRuleResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.AddAlarmRuleResourcesResponse;
+import com.huaweicloud.sdk.ces.v2.model.AsyncAssociateRGAndTemplatesReq;
 import com.huaweicloud.sdk.ces.v2.model.BaseWidgetInfo;
 import com.huaweicloud.sdk.ces.v2.model.BatchCreateResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.BatchCreateResourcesResponse;
@@ -122,6 +123,8 @@ import com.huaweicloud.sdk.ces.v2.model.UpdateNotificationMasksRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.UpdateOneClickAlarmNotificationsResponse;
+import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupAssociationAlarmTemplateRequest;
+import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupAssociationAlarmTemplateResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.UpdateResourceGroupResponse;
 import com.huaweicloud.sdk.ces.v2.model.UpdateWidgetInfo;
@@ -1747,6 +1750,39 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PutResourceGroupReq.class),
             f -> f.withMarshaller(UpdateResourceGroupRequest::getBody, UpdateResourceGroupRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateResourceGroupAssociationAlarmTemplateRequest, UpdateResourceGroupAssociationAlarmTemplateResponse> updateResourceGroupAssociationAlarmTemplate =
+        genForUpdateResourceGroupAssociationAlarmTemplate();
+
+    private static HttpRequestDef<UpdateResourceGroupAssociationAlarmTemplateRequest, UpdateResourceGroupAssociationAlarmTemplateResponse> genForUpdateResourceGroupAssociationAlarmTemplate() {
+        // basic
+        HttpRequestDef.Builder<UpdateResourceGroupAssociationAlarmTemplateRequest, UpdateResourceGroupAssociationAlarmTemplateResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateResourceGroupAssociationAlarmTemplateRequest.class,
+                    UpdateResourceGroupAssociationAlarmTemplateResponse.class)
+                .withName("UpdateResourceGroupAssociationAlarmTemplate")
+                .withUri("/v2/{project_id}/resource-groups/{group_id}/alarm-templates/async-association")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateResourceGroupAssociationAlarmTemplateRequest::getGroupId,
+                UpdateResourceGroupAssociationAlarmTemplateRequest::setGroupId));
+        builder.<AsyncAssociateRGAndTemplatesReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AsyncAssociateRGAndTemplatesReq.class),
+            f -> f.withMarshaller(UpdateResourceGroupAssociationAlarmTemplateRequest::getBody,
+                UpdateResourceGroupAssociationAlarmTemplateRequest::setBody));
 
         // response
 

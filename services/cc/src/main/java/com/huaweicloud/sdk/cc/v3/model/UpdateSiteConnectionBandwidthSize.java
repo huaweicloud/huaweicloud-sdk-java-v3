@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * UpdateSiteConnectionBandwidthSize
+ * 更改分支连接带宽大小的请求体。
  */
 public class UpdateSiteConnectionBandwidthSize {
 

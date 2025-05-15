@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 站点编码
+ * 站点编码。
  */
 public class SiteCode {
 
@@ -21,7 +21,7 @@ public class SiteCode {
     }
 
     /**
-     * 站点编码定义
+     * 站点编码。
      * @return siteCode
      */
     public String getSiteCode() {

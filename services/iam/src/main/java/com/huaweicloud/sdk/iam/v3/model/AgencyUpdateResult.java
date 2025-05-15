@@ -26,6 +26,11 @@ public class AgencyUpdateResult {
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "duration")
+
+    private String duration;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "expire_time")
 
     private String expireTime;
@@ -94,6 +99,23 @@ public class AgencyUpdateResult {
 
     public void setDomainId(String domainId) {
         this.domainId = domainId;
+    }
+
+    public AgencyUpdateResult withDuration(String duration) {
+        this.duration = duration;
+        return this;
+    }
+
+    /**
+     * 委托的期限。取值为\"FOREVER\"或“null”表示委托的期限为永久，取值为24表示委托的期限为一天，或为24小时。
+     * @return duration
+     */
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 
     public AgencyUpdateResult withExpireTime(String expireTime) {
@@ -174,14 +196,14 @@ public class AgencyUpdateResult {
         }
         AgencyUpdateResult that = (AgencyUpdateResult) obj;
         return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.expireTime, that.expireTime)
-            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.trustDomainId, that.trustDomainId);
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.trustDomainId, that.trustDomainId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(createTime, description, domainId, expireTime, id, name, trustDomainId);
+        return Objects.hash(createTime, description, domainId, duration, expireTime, id, name, trustDomainId);
     }
 
     @Override
@@ -191,6 +213,7 @@ public class AgencyUpdateResult {
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");

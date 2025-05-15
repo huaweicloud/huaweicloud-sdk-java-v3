@@ -21,7 +21,7 @@ public class MetricDataValue {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "metric")
 
-    private MetricQueryMeritcParam metric;
+    private MetricQueryMetricParam metric;
 
     public MetricDataValue withDataPoints(List<MetricDataPoints> dataPoints) {
         this.dataPoints = dataPoints;
@@ -56,14 +56,14 @@ public class MetricDataValue {
         this.dataPoints = dataPoints;
     }
 
-    public MetricDataValue withMetric(MetricQueryMeritcParam metric) {
+    public MetricDataValue withMetric(MetricQueryMetricParam metric) {
         this.metric = metric;
         return this;
     }
 
-    public MetricDataValue withMetric(Consumer<MetricQueryMeritcParam> metricSetter) {
+    public MetricDataValue withMetric(Consumer<MetricQueryMetricParam> metricSetter) {
         if (this.metric == null) {
-            this.metric = new MetricQueryMeritcParam();
+            this.metric = new MetricQueryMetricParam();
             metricSetter.accept(this.metric);
         }
 
@@ -74,11 +74,11 @@ public class MetricDataValue {
      * Get metric
      * @return metric
      */
-    public MetricQueryMeritcParam getMetric() {
+    public MetricQueryMetricParam getMetric() {
         return metric;
     }
 
-    public void setMetric(MetricQueryMeritcParam metric) {
+    public void setMetric(MetricQueryMetricParam metric) {
         this.metric = metric;
     }
 

@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 能力类型定义： - central-network.is-support: 支持中心网络 - central-network.is-support-enterprise-project: 支持中心网络的企业项目 - central-network.is-support-tag: 支持中心网络的标签能力 - central-network.is-support-custom-er-table: 支持中心网络的自定义路由表能力 - connection-bandwidth.size-range: 跨地域连接带宽大小的范围 - connection-bandwidth.charge-mode: 跨地域连接带宽计费类型 - connection-bandwidth.free-line: 跨地域连接免费线路 - er-instance.support-regions: 支持ER实例的Region列表 - er-instance.support-ipv6-regions: 支持IPV6的ER实例Region列表 - er-instance.support-dscp-regions:支持带宽包线路等级配置的region列表 - er-instance.support-sts5-regions:支持sts5调用ER服务的region列表 - er-instance.support-sites: 支持ER实例的站点列表 - gdgw-instance.support-dscp-regions:支持GDGW全域互联带宽线路等级配置的region列表 - gdgw-instance.support-freeze-regions:支持GDGW全域互联带宽冻结的region列表 - gdgw-attachment.is-support: 支持GDGW附件 - gdgw-attachment.support-regions: 支持GDGW附件的Region列表 - gdgw-attachment.support-sites: 支持GDGW附件的站点列表 - er-route-table-attachment.is-support: 支持路由表附件 - er-route-table-attachment.support-regions: 支持路由表附件的Region列表 - er-route-table-attachment.support-sites: 支持路由表附件的站点列表 - cloud-alliance.support-regions: 支持云联盟场景的Region列表
+ * 能力类型定义： - central-network.is-support: 支持中心网络 - central-network.is-support-enterprise-project: 支持中心网络的企业项目 - central-network.is-support-tag: 支持中心网络的标签能力 - central-network.is-support-custom-er-table: 支持中心网络的自定义路由表能力 - connection-bandwidth.size-range: 跨地域连接带宽大小的范围 - connection-bandwidth.charge-mode: 跨地域连接带宽计费类型 - connection-bandwidth.free-line: 跨地域连接免费线路 - er-instance.support-regions: 支持ER实例的Region列表 - er-instance.support-ipv6-regions: 支持IPV6的ER实例Region列表 - er-instance.support-dscp-regions:支持带宽包线路等级配置的region列表 - er-instance.support-sts5-regions:支持sts5调用ER服务的region列表 - er-instance.support-sites: 支持ER实例的站点列表 - custom-connections.is-support: 是否支持自定义连接 - custom-connections.support-regions: 支持创建自定义连接的region - gdgw-instance.support-dscp-regions:支持GDGW全域互联带宽线路等级配置的region列表 - gdgw-instance.support-freeze-regions:支持GDGW全域互联带宽冻结的region列表 - gdgw-attachment.is-support: 支持GDGW附件 - gdgw-attachment.support-regions: 支持GDGW附件的Region列表 - gdgw-attachment.support-sites: 支持GDGW附件的站点列表 - er-route-table-attachment.is-support: 支持路由表附件 - er-route-table-attachment.support-regions: 支持路由表附件的Region列表 - er-route-table-attachment.support-sites: 支持路由表附件的站点列表 - cloud-alliance.support-regions: 支持云联盟场景的Region列表
  */
 public class CentralNetworkCapabilityEnum {
 
@@ -85,6 +85,18 @@ public class CentralNetworkCapabilityEnum {
         new CentralNetworkCapabilityEnum("er-instance.support-sites");
 
     /**
+     * Enum CUSTOM_CONNECTIONS_IS_SUPPORT for value: "custom-connections.is-support"
+     */
+    public static final CentralNetworkCapabilityEnum CUSTOM_CONNECTIONS_IS_SUPPORT =
+        new CentralNetworkCapabilityEnum("custom-connections.is-support");
+
+    /**
+     * Enum CUSTOM_CONNECTIONS_SUPPORT_REGIONS for value: "custom-connections.support-regions"
+     */
+    public static final CentralNetworkCapabilityEnum CUSTOM_CONNECTIONS_SUPPORT_REGIONS =
+        new CentralNetworkCapabilityEnum("custom-connections.support-regions");
+
+    /**
      * Enum GDGW_INSTANCE_SUPPORT_DSCP_REGIONS for value: "gdgw-instance.support-dscp-regions"
      */
     public static final CentralNetworkCapabilityEnum GDGW_INSTANCE_SUPPORT_DSCP_REGIONS =
@@ -154,6 +166,8 @@ public class CentralNetworkCapabilityEnum {
         map.put("er-instance.support-dscp-regions", ER_INSTANCE_SUPPORT_DSCP_REGIONS);
         map.put("er-instance.support-sts5-regions", ER_INSTANCE_SUPPORT_STS5_REGIONS);
         map.put("er-instance.support-sites", ER_INSTANCE_SUPPORT_SITES);
+        map.put("custom-connections.is-support", CUSTOM_CONNECTIONS_IS_SUPPORT);
+        map.put("custom-connections.support-regions", CUSTOM_CONNECTIONS_SUPPORT_REGIONS);
         map.put("gdgw-instance.support-dscp-regions", GDGW_INSTANCE_SUPPORT_DSCP_REGIONS);
         map.put("gdgw-instance.support-freeze-regions", GDGW_INSTANCE_SUPPORT_FREEZE_REGIONS);
         map.put("gdgw-attachment.is-support", GDGW_ATTACHMENT_IS_SUPPORT);
