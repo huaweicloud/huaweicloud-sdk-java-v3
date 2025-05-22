@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CompatibleDataStoreResp
+ * **参数解释**： 版本信息。 **取值范围**： 不涉及。
  */
 public class CompatibleDataStoreResp {
 
@@ -26,7 +26,7 @@ public class CompatibleDataStoreResp {
     }
 
     /**
-     * 类型
+     * **参数解释**： 数据库类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -43,7 +43,7 @@ public class CompatibleDataStoreResp {
     }
 
     /**
-     * 版本
+     * **参数解释**： 版本。 **取值范围**： 不涉及。
      * @return version
      */
     public String getVersion() {

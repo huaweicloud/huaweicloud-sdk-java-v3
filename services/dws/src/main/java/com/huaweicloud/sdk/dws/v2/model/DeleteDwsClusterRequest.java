@@ -31,7 +31,7 @@ public class DeleteDwsClusterRequest {
     }
 
     /**
-     * 集群ID
+     * **参数解释**： 集群ID。获取方式方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {
@@ -48,7 +48,7 @@ public class DeleteDwsClusterRequest {
     }
 
     /**
-     * 集群需要保留的快照数
+     * **参数解释**： 集群需要保留的快照数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
      * @return keepLastManualBackup
      */
     public String getKeepLastManualBackup() {
@@ -65,7 +65,7 @@ public class DeleteDwsClusterRequest {
     }
 
     /**
-     * 集群是否释放弹性公网IP，默认是NO_RELEASE不释放绑定的弹性公网IP，RELEASE_BINDING释放绑定的弹性公网IP
+     * **参数解释**： 集群是否释放弹性公网IP，默认是NO_RELEASE，不释放绑定的弹性公网IP。 **约束限制**： 不涉及。 **取值范围**： NO_RELEASE：不释放绑定的弹性公网IP； RELEASE_BINDING：释放绑定的弹性公网IP； **默认取值**： NO_RELEASE
      * @return releaseEipType
      */
     public String getReleaseEipType() {

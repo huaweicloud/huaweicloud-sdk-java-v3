@@ -22,7 +22,7 @@ public class BatchCreateClusterCnResponse extends SdkResponse {
     }
 
     /**
-     * 批量增加CN节点任务ID
+     * **参数解释**： 批量增加CN节点任务ID信息。 **取值范围**： 不涉及。
      * @return jobId
      */
     public String getJobId() {

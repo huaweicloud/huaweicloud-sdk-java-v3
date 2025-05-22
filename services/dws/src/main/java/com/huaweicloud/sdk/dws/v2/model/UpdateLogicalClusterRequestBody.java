@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 编辑逻辑集群请求体
+ * **参数解释**： 编辑逻辑集群请求体。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class UpdateLogicalClusterRequestBody {
 
@@ -50,7 +50,7 @@ public class UpdateLogicalClusterRequestBody {
     }
 
     /**
-     * 逻辑集群编辑环列表信息
+     * **参数解释**： 逻辑集群编辑环列表信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return clusterRings
      */
     public List<ClusterRing> getClusterRings() {
@@ -67,7 +67,7 @@ public class UpdateLogicalClusterRequestBody {
     }
 
     /**
-     * 模式
+     * **参数解释**： 重分布模式。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return mode
      */
     public String getMode() {
@@ -84,7 +84,7 @@ public class UpdateLogicalClusterRequestBody {
     }
 
     /**
-     * 是否等待销毁
+     * **参数解释**： 查杀作业等待时间。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return waitingForKilling
      */
     public Integer getWaitingForKilling() {

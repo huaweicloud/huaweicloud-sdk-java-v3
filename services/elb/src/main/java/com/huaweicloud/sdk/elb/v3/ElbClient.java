@@ -45,6 +45,8 @@ import com.huaweicloud.sdk.elb.v3.model.CreateLogtankRequest;
 import com.huaweicloud.sdk.elb.v3.model.CreateLogtankResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreateMasterSlavePoolRequest;
 import com.huaweicloud.sdk.elb.v3.model.CreateMasterSlavePoolResponse;
+import com.huaweicloud.sdk.elb.v3.model.CreateMemberHealthCheckJobRequest;
+import com.huaweicloud.sdk.elb.v3.model.CreateMemberHealthCheckJobResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreateMemberRequest;
 import com.huaweicloud.sdk.elb.v3.model.CreateMemberResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreatePoolRequest;
@@ -81,6 +83,8 @@ import com.huaweicloud.sdk.elb.v3.model.DeletePoolCascadeRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeletePoolCascadeResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeletePoolRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeletePoolResponse;
+import com.huaweicloud.sdk.elb.v3.model.DeleteRecycleLoadBalancerRequest;
+import com.huaweicloud.sdk.elb.v3.model.DeleteRecycleLoadBalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeleteSecurityPolicyRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteSecurityPolicyResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListAllMembersRequest;
@@ -121,10 +125,14 @@ import com.huaweicloud.sdk.elb.v3.model.ListPoolsRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListPoolsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListQuotaDetailsRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListQuotaDetailsResponse;
+import com.huaweicloud.sdk.elb.v3.model.ListRecycleBinLoadBalancersRequest;
+import com.huaweicloud.sdk.elb.v3.model.ListRecycleBinLoadBalancersResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListSecurityPoliciesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListSecurityPoliciesResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListSystemSecurityPoliciesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListSystemSecurityPoliciesResponse;
+import com.huaweicloud.sdk.elb.v3.model.RestoreLoadbalancerRequest;
+import com.huaweicloud.sdk.elb.v3.model.RestoreLoadbalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowCertificatePrivateKeyEchoRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowCertificatePrivateKeyEchoResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowCertificateRequest;
@@ -153,12 +161,16 @@ import com.huaweicloud.sdk.elb.v3.model.ShowLogtankRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowLogtankResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowMasterSlavePoolRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowMasterSlavePoolResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowMemberHealthCheckJobRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowMemberHealthCheckJobResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowMemberRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowMemberResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowPoolRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowPoolResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowQuotaRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowQuotaResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowRecycleBinRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowRecycleBinResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowSecurityPolicyRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowSecurityPolicyResponse;
 import com.huaweicloud.sdk.elb.v3.model.UpdateCertificateRequest;
@@ -183,6 +195,10 @@ import com.huaweicloud.sdk.elb.v3.model.UpdateMemberRequest;
 import com.huaweicloud.sdk.elb.v3.model.UpdateMemberResponse;
 import com.huaweicloud.sdk.elb.v3.model.UpdatePoolRequest;
 import com.huaweicloud.sdk.elb.v3.model.UpdatePoolResponse;
+import com.huaweicloud.sdk.elb.v3.model.UpdateRecycleBinEnableRequest;
+import com.huaweicloud.sdk.elb.v3.model.UpdateRecycleBinEnableResponse;
+import com.huaweicloud.sdk.elb.v3.model.UpdateRecycleBinPolicyRequest;
+import com.huaweicloud.sdk.elb.v3.model.UpdateRecycleBinPolicyResponse;
 import com.huaweicloud.sdk.elb.v3.model.UpdateSecurityPolicyRequest;
 import com.huaweicloud.sdk.elb.v3.model.UpdateSecurityPolicyResponse;
 import com.huaweicloud.sdk.elb.v3.model.UpgradeLoadbalancerRequest;
@@ -818,6 +834,35 @@ public class ElbClient {
     }
 
     /**
+     * 创建后端服务器检测任务
+     *
+     * 创建后端服务器检测任务。包括后端服务器的配置、ACL规则和安全组规则检查。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateMemberHealthCheckJobRequest 请求对象
+     * @return CreateMemberHealthCheckJobResponse
+     */
+    public CreateMemberHealthCheckJobResponse createMemberHealthCheckJob(CreateMemberHealthCheckJobRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.createMemberHealthCheckJob);
+    }
+
+    /**
+     * 创建后端服务器检测任务
+     *
+     * 创建后端服务器检测任务。包括后端服务器的配置、ACL规则和安全组规则检查。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateMemberHealthCheckJobRequest 请求对象
+     * @return SyncInvoker<CreateMemberHealthCheckJobRequest, CreateMemberHealthCheckJobResponse>
+     */
+    public SyncInvoker<CreateMemberHealthCheckJobRequest, CreateMemberHealthCheckJobResponse> createMemberHealthCheckJobInvoker(
+        CreateMemberHealthCheckJobRequest request) {
+        return new SyncInvoker<>(request, ElbMeta.createMemberHealthCheckJob, hcClient);
+    }
+
+    /**
      * 创建后端服务器组
      *
      * 创建后端服务器组。
@@ -1284,6 +1329,35 @@ public class ElbClient {
     public SyncInvoker<DeletePoolCascadeRequest, DeletePoolCascadeResponse> deletePoolCascadeInvoker(
         DeletePoolCascadeRequest request) {
         return new SyncInvoker<>(request, ElbMeta.deletePoolCascade, hcClient);
+    }
+
+    /**
+     * 销毁回收站负载均衡器
+     *
+     * 销毁回收站负载均衡器。销毁后无法再还原。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRecycleLoadBalancerRequest 请求对象
+     * @return DeleteRecycleLoadBalancerResponse
+     */
+    public DeleteRecycleLoadBalancerResponse deleteRecycleLoadBalancer(DeleteRecycleLoadBalancerRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.deleteRecycleLoadBalancer);
+    }
+
+    /**
+     * 销毁回收站负载均衡器
+     *
+     * 销毁回收站负载均衡器。销毁后无法再还原。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteRecycleLoadBalancerRequest 请求对象
+     * @return SyncInvoker<DeleteRecycleLoadBalancerRequest, DeleteRecycleLoadBalancerResponse>
+     */
+    public SyncInvoker<DeleteRecycleLoadBalancerRequest, DeleteRecycleLoadBalancerResponse> deleteRecycleLoadBalancerInvoker(
+        DeleteRecycleLoadBalancerRequest request) {
+        return new SyncInvoker<>(request, ElbMeta.deleteRecycleLoadBalancer, hcClient);
     }
 
     /**
@@ -1822,6 +1896,35 @@ public class ElbClient {
     }
 
     /**
+     * 查询回收站负载均衡器列表
+     *
+     * 查询回收站负载均衡器列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRecycleBinLoadBalancersRequest 请求对象
+     * @return ListRecycleBinLoadBalancersResponse
+     */
+    public ListRecycleBinLoadBalancersResponse listRecycleBinLoadBalancers(ListRecycleBinLoadBalancersRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.listRecycleBinLoadBalancers);
+    }
+
+    /**
+     * 查询回收站负载均衡器列表
+     *
+     * 查询回收站负载均衡器列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListRecycleBinLoadBalancersRequest 请求对象
+     * @return SyncInvoker<ListRecycleBinLoadBalancersRequest, ListRecycleBinLoadBalancersResponse>
+     */
+    public SyncInvoker<ListRecycleBinLoadBalancersRequest, ListRecycleBinLoadBalancersResponse> listRecycleBinLoadBalancersInvoker(
+        ListRecycleBinLoadBalancersRequest request) {
+        return new SyncInvoker<>(request, ElbMeta.listRecycleBinLoadBalancers, hcClient);
+    }
+
+    /**
      * 查询自定义安全策略列表
      *
      * 查询自定义安全策略列表。[荷兰region不支持自定义安全策略功能，请勿使用。](tag:dt)
@@ -1881,6 +1984,35 @@ public class ElbClient {
     public SyncInvoker<ListSystemSecurityPoliciesRequest, ListSystemSecurityPoliciesResponse> listSystemSecurityPoliciesInvoker(
         ListSystemSecurityPoliciesRequest request) {
         return new SyncInvoker<>(request, ElbMeta.listSystemSecurityPolicies, hcClient);
+    }
+
+    /**
+     * 还原负载均衡器
+     *
+     * 从回收站中还原负载均衡器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreLoadbalancerRequest 请求对象
+     * @return RestoreLoadbalancerResponse
+     */
+    public RestoreLoadbalancerResponse restoreLoadbalancer(RestoreLoadbalancerRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.restoreLoadbalancer);
+    }
+
+    /**
+     * 还原负载均衡器
+     *
+     * 从回收站中还原负载均衡器
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RestoreLoadbalancerRequest 请求对象
+     * @return SyncInvoker<RestoreLoadbalancerRequest, RestoreLoadbalancerResponse>
+     */
+    public SyncInvoker<RestoreLoadbalancerRequest, RestoreLoadbalancerResponse> restoreLoadbalancerInvoker(
+        RestoreLoadbalancerRequest request) {
+        return new SyncInvoker<>(request, ElbMeta.restoreLoadbalancer, hcClient);
     }
 
     /**
@@ -2261,6 +2393,35 @@ public class ElbClient {
     }
 
     /**
+     * 查询后端服务器检测任务的结果
+     *
+     * 查询后端服务器检测任务的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMemberHealthCheckJobRequest 请求对象
+     * @return ShowMemberHealthCheckJobResponse
+     */
+    public ShowMemberHealthCheckJobResponse showMemberHealthCheckJob(ShowMemberHealthCheckJobRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.showMemberHealthCheckJob);
+    }
+
+    /**
+     * 查询后端服务器检测任务的结果
+     *
+     * 查询后端服务器检测任务的结果。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowMemberHealthCheckJobRequest 请求对象
+     * @return SyncInvoker<ShowMemberHealthCheckJobRequest, ShowMemberHealthCheckJobResponse>
+     */
+    public SyncInvoker<ShowMemberHealthCheckJobRequest, ShowMemberHealthCheckJobResponse> showMemberHealthCheckJobInvoker(
+        ShowMemberHealthCheckJobRequest request) {
+        return new SyncInvoker<>(request, ElbMeta.showMemberHealthCheckJob, hcClient);
+    }
+
+    /**
      * 查询后端服务器组详情
      *
      * 后端服务器组详情。
@@ -2314,6 +2475,35 @@ public class ElbClient {
      */
     public SyncInvoker<ShowQuotaRequest, ShowQuotaResponse> showQuotaInvoker(ShowQuotaRequest request) {
         return new SyncInvoker<>(request, ElbMeta.showQuota, hcClient);
+    }
+
+    /**
+     * 查询回收站的配置
+     *
+     * 查询回收站的配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecycleBinRequest 请求对象
+     * @return ShowRecycleBinResponse
+     */
+    public ShowRecycleBinResponse showRecycleBin(ShowRecycleBinRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.showRecycleBin);
+    }
+
+    /**
+     * 查询回收站的配置
+     *
+     * 查询回收站的配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowRecycleBinRequest 请求对象
+     * @return SyncInvoker<ShowRecycleBinRequest, ShowRecycleBinResponse>
+     */
+    public SyncInvoker<ShowRecycleBinRequest, ShowRecycleBinResponse> showRecycleBinInvoker(
+        ShowRecycleBinRequest request) {
+        return new SyncInvoker<>(request, ElbMeta.showRecycleBin, hcClient);
     }
 
     /**
@@ -2600,6 +2790,64 @@ public class ElbClient {
      */
     public SyncInvoker<UpdatePoolRequest, UpdatePoolResponse> updatePoolInvoker(UpdatePoolRequest request) {
         return new SyncInvoker<>(request, ElbMeta.updatePool, hcClient);
+    }
+
+    /**
+     * 开关回收站
+     *
+     * 开启或关闭回收站功能。开启后删除的LB可以进入回收站，否则将不进入回收站而是直接被删除无法恢复。关闭回收站前需要先将回收站中的实例还原或销毁。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecycleBinEnableRequest 请求对象
+     * @return UpdateRecycleBinEnableResponse
+     */
+    public UpdateRecycleBinEnableResponse updateRecycleBinEnable(UpdateRecycleBinEnableRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.updateRecycleBinEnable);
+    }
+
+    /**
+     * 开关回收站
+     *
+     * 开启或关闭回收站功能。开启后删除的LB可以进入回收站，否则将不进入回收站而是直接被删除无法恢复。关闭回收站前需要先将回收站中的实例还原或销毁。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecycleBinEnableRequest 请求对象
+     * @return SyncInvoker<UpdateRecycleBinEnableRequest, UpdateRecycleBinEnableResponse>
+     */
+    public SyncInvoker<UpdateRecycleBinEnableRequest, UpdateRecycleBinEnableResponse> updateRecycleBinEnableInvoker(
+        UpdateRecycleBinEnableRequest request) {
+        return new SyncInvoker<>(request, ElbMeta.updateRecycleBinEnable, hcClient);
+    }
+
+    /**
+     * 更新回收站的配置
+     *
+     * 更新回收站的配置。若回收站未开启，则更新会报错。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecycleBinPolicyRequest 请求对象
+     * @return UpdateRecycleBinPolicyResponse
+     */
+    public UpdateRecycleBinPolicyResponse updateRecycleBinPolicy(UpdateRecycleBinPolicyRequest request) {
+        return hcClient.syncInvokeHttp(request, ElbMeta.updateRecycleBinPolicy);
+    }
+
+    /**
+     * 更新回收站的配置
+     *
+     * 更新回收站的配置。若回收站未开启，则更新会报错。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateRecycleBinPolicyRequest 请求对象
+     * @return SyncInvoker<UpdateRecycleBinPolicyRequest, UpdateRecycleBinPolicyResponse>
+     */
+    public SyncInvoker<UpdateRecycleBinPolicyRequest, UpdateRecycleBinPolicyResponse> updateRecycleBinPolicyInvoker(
+        UpdateRecycleBinPolicyRequest request) {
+        return new SyncInvoker<>(request, ElbMeta.updateRecycleBinPolicy, hcClient);
     }
 
     /**

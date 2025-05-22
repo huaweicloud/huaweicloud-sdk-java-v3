@@ -159,9 +159,9 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
     public HttpRequest syncProcessAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
         HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
 
-        if (needUpdateAuthToken()) {
-            updateAuthTokenByIdToken(httpClient);
-        } else if (needUpdateSecurityToken()) {
+        if (needUpdateFederalAuthToken()) {
+            updateFederalAuthTokenByIdToken(httpClient);
+        } else if (needUpdateSecurityTokenFromMetadata()) {
             updateSecurityTokenFromMetadata();
         }
 
@@ -208,7 +208,7 @@ public class BasicCredentials extends AbstractCredentials<BasicCredentials> {
     }
 
     @Override
-    protected void updateAuthTokenByIdToken(HttpClient httpClient) {
+    protected void updateFederalAuthTokenByIdToken(HttpClient httpClient) {
         HttpRequest httpRequest = Iam.getProjectTokenWithIdTokenRequest(
                 getUsedIamEndpoint(), getIdpId(), getIdToken(), projectId);
         CreateTokenWithIdTokenResponse response = Iam.createTokenWithIdToken(httpClient, httpRequest);

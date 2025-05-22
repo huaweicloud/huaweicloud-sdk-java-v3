@@ -39,6 +39,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbUserRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbUserResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDisasterRecoveryRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDisasterRecoveryResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateGeminiDbDualActiveRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateGeminiDbDualActiveResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteBackupRequest;
@@ -55,6 +57,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDisasterRecoveryReques
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDisasterRecoveryResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteGeminiDbDualActiveRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteGeminiDbDualActiveResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstancesSessionRequest;
@@ -829,6 +833,35 @@ public class GaussDBforNoSQLClient {
     }
 
     /**
+     * 搭建双活
+     *
+     * 为了实现跨区域实例数据同步，GeminiDB提供了异地双活功能，即创建异地双活实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGeminiDbDualActiveRequest 请求对象
+     * @return CreateGeminiDbDualActiveResponse
+     */
+    public CreateGeminiDbDualActiveResponse createGeminiDbDualActive(CreateGeminiDbDualActiveRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.createGeminiDbDualActive);
+    }
+
+    /**
+     * 搭建双活
+     *
+     * 为了实现跨区域实例数据同步，GeminiDB提供了异地双活功能，即创建异地双活实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGeminiDbDualActiveRequest 请求对象
+     * @return SyncInvoker<CreateGeminiDbDualActiveRequest, CreateGeminiDbDualActiveResponse>
+     */
+    public SyncInvoker<CreateGeminiDbDualActiveRequest, CreateGeminiDbDualActiveResponse> createGeminiDbDualActiveInvoker(
+        CreateGeminiDbDualActiveRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.createGeminiDbDualActive, hcClient);
+    }
+
+    /**
      * 创建实例
      *
      * 创建数据库实例。
@@ -1056,6 +1089,35 @@ public class GaussDBforNoSQLClient {
     public SyncInvoker<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse> deleteEnlargeFailNodeInvoker(
         DeleteEnlargeFailNodeRequest request) {
         return new SyncInvoker<>(request, GaussDBforNoSQLMeta.deleteEnlargeFailNode, hcClient);
+    }
+
+    /**
+     * 解除双活
+     *
+     * 解除跨区域双活。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGeminiDbDualActiveRequest 请求对象
+     * @return DeleteGeminiDbDualActiveResponse
+     */
+    public DeleteGeminiDbDualActiveResponse deleteGeminiDbDualActive(DeleteGeminiDbDualActiveRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBforNoSQLMeta.deleteGeminiDbDualActive);
+    }
+
+    /**
+     * 解除双活
+     *
+     * 解除跨区域双活。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGeminiDbDualActiveRequest 请求对象
+     * @return SyncInvoker<DeleteGeminiDbDualActiveRequest, DeleteGeminiDbDualActiveResponse>
+     */
+    public SyncInvoker<DeleteGeminiDbDualActiveRequest, DeleteGeminiDbDualActiveResponse> deleteGeminiDbDualActiveInvoker(
+        DeleteGeminiDbDualActiveRequest request) {
+        return new SyncInvoker<>(request, GaussDBforNoSQLMeta.deleteGeminiDbDualActive, hcClient);
     }
 
     /**

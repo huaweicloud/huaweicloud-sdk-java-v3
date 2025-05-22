@@ -1,12 +1,9 @@
 package com.huaweicloud.sdk.cce.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +16,41 @@ import java.util.function.Consumer;
 public class NodeSpecUpdate {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavor")
+
+    private String flavor;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "os")
+
+    private String os;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "login")
+
+    private Login login;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "rootVolumeUpdate")
+
+    private Volume rootVolumeUpdate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dataVolumesUpdate")
+
+    private List<Volume> dataVolumesUpdate = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "storage")
+
+    private Storage storage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "runtime")
+
+    private Runtime runtime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "taints")
 
     private List<Taint> taints = null;
@@ -29,19 +61,24 @@ public class NodeSpecUpdate {
     private Map<String, String> k8sTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ecsGroupId")
+
+    private String ecsGroupId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "userTags")
 
     private List<UserTag> userTags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nodeNameTemplate")
+
+    private NodeSpecUpdateNodeNameTemplate nodeNameTemplate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "initializedConditions")
 
     private List<String> initializedConditions = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "login")
-
-    private Login login;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "serverEnterpriseProjectID")
@@ -53,82 +90,181 @@ public class NodeSpecUpdate {
 
     private NodeSpecUpdateNodeNicSpecUpdate nodeNicSpecUpdate;
 
-    /**
-     * **参数解释**： 指定节点安全加固类型，当前仅支持HCE2.0镜像等保2.0三级安全加固。 等保加固会对身份鉴别、访问控制、安全审计、入侵防范、恶意代码防范进行检查并加固。详情请参见[Huawei Cloud EulerOS 2.0等保2.0三级版镜像概述](https://support.huaweicloud.com/productdesc-hce/hce_sec_0001.html)。 若未指定此参数，则尝试用原有的值补全。如：原先HCE2.0镜像已配置安全加固，更新节点池时未指定此参数，则仍旧保持安全加固配置，若要取消，需显式指定参数值为\"null\"。 **约束限制**： 不涉及 **取值范围**： 取值范围：['null', cybersecurity]; **默认取值**： 不涉及
-     */
-    public static final class SecurityReinforcementTypeEnum {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "extendParam")
 
-        /**
-         * Enum NULL for value: "null"
-         */
-        public static final SecurityReinforcementTypeEnum NULL = new SecurityReinforcementTypeEnum("null");
+    private NodePoolUpdateExtendParam extendParam;
 
-        /**
-         * Enum CYBERSECURITY for value: "cybersecurity"
-         */
-        public static final SecurityReinforcementTypeEnum CYBERSECURITY =
-            new SecurityReinforcementTypeEnum("cybersecurity");
-
-        private static final Map<String, SecurityReinforcementTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, SecurityReinforcementTypeEnum> createStaticFields() {
-            Map<String, SecurityReinforcementTypeEnum> map = new HashMap<>();
-            map.put("null", NULL);
-            map.put("cybersecurity", CYBERSECURITY);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        SecurityReinforcementTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static SecurityReinforcementTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElse(new SecurityReinforcementTypeEnum(value));
-        }
-
-        public static SecurityReinforcementTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
-                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof SecurityReinforcementTypeEnum) {
-                return this.value.equals(((SecurityReinforcementTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
+    public NodeSpecUpdate withFlavor(String flavor) {
+        this.flavor = flavor;
+        return this;
     }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "securityReinforcementType")
+    /**
+     * **参数解释：** 节点的规格。  **约束限制**： 不涉及 **取值范围：** CCE支持的节点规格请参考[节点规格说明](cce_02_0368.xml)获取。 **默认取值：** 不涉及
+     * @return flavor
+     */
+    public String getFlavor() {
+        return flavor;
+    }
 
-    private SecurityReinforcementTypeEnum securityReinforcementType;
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
+    }
+
+    public NodeSpecUpdate withOs(String os) {
+        this.os = os;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点的操作系统类型。具体支持的操作系统请参见[节点操作系统说明](node-os.xml)。 **约束限制**： - 若当前集群版本不支持该OS类型，则会自动替换为当前集群版本支持的同系列OS类型。 - 若在创建节点时指定了extendParam中的alpha.cce/NodeImageID参数，可以不填写此参数。 - 该参数缺省时，CCE会根据集群版本自动选择支持的OS版本。 - 创建节点池时，该参数为必选。 - 若创建节点时使用共享磁盘空间，即磁盘初始化配置管理参数使用storage，且StorageGroups中virtualSpaces的name字段指定为share，该参数为必选。  **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return os
+     */
+    public String getOs() {
+        return os;
+    }
+
+    public void setOs(String os) {
+        this.os = os;
+    }
+
+    public NodeSpecUpdate withLogin(Login login) {
+        this.login = login;
+        return this;
+    }
+
+    public NodeSpecUpdate withLogin(Consumer<Login> loginSetter) {
+        if (this.login == null) {
+            this.login = new Login();
+            loginSetter.accept(this.login);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get login
+     * @return login
+     */
+    public Login getLogin() {
+        return login;
+    }
+
+    public void setLogin(Login login) {
+        this.login = login;
+    }
+
+    public NodeSpecUpdate withRootVolumeUpdate(Volume rootVolumeUpdate) {
+        this.rootVolumeUpdate = rootVolumeUpdate;
+        return this;
+    }
+
+    public NodeSpecUpdate withRootVolumeUpdate(Consumer<Volume> rootVolumeUpdateSetter) {
+        if (this.rootVolumeUpdate == null) {
+            this.rootVolumeUpdate = new Volume();
+            rootVolumeUpdateSetter.accept(this.rootVolumeUpdate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get rootVolumeUpdate
+     * @return rootVolumeUpdate
+     */
+    public Volume getRootVolumeUpdate() {
+        return rootVolumeUpdate;
+    }
+
+    public void setRootVolumeUpdate(Volume rootVolumeUpdate) {
+        this.rootVolumeUpdate = rootVolumeUpdate;
+    }
+
+    public NodeSpecUpdate withDataVolumesUpdate(List<Volume> dataVolumesUpdate) {
+        this.dataVolumesUpdate = dataVolumesUpdate;
+        return this;
+    }
+
+    public NodeSpecUpdate addDataVolumesUpdateItem(Volume dataVolumesUpdateItem) {
+        if (this.dataVolumesUpdate == null) {
+            this.dataVolumesUpdate = new ArrayList<>();
+        }
+        this.dataVolumesUpdate.add(dataVolumesUpdateItem);
+        return this;
+    }
+
+    public NodeSpecUpdate withDataVolumesUpdate(Consumer<List<Volume>> dataVolumesUpdateSetter) {
+        if (this.dataVolumesUpdate == null) {
+            this.dataVolumesUpdate = new ArrayList<>();
+        }
+        dataVolumesUpdateSetter.accept(this.dataVolumesUpdate);
+        return this;
+    }
+
+    /**
+     * **参数解释**： 节点的数据盘参数。针对专属云节点，参数解释与rootVolume一致。 **约束限制**： 磁盘挂载上限为虚拟机不超过16块，裸金属不超过10块。在此基础上还受限于虚拟机/裸金属规格可挂载磁盘数上限。（目前支持通过控制台和API为CCE节点添加多块数据盘）。 如果数据盘正供容器运行时和Kubelet组件使用，则不可被卸载，否则将导致节点不可用。
+     * @return dataVolumesUpdate
+     */
+    public List<Volume> getDataVolumesUpdate() {
+        return dataVolumesUpdate;
+    }
+
+    public void setDataVolumesUpdate(List<Volume> dataVolumesUpdate) {
+        this.dataVolumesUpdate = dataVolumesUpdate;
+    }
+
+    public NodeSpecUpdate withStorage(Storage storage) {
+        this.storage = storage;
+        return this;
+    }
+
+    public NodeSpecUpdate withStorage(Consumer<Storage> storageSetter) {
+        if (this.storage == null) {
+            this.storage = new Storage();
+            storageSetter.accept(this.storage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get storage
+     * @return storage
+     */
+    public Storage getStorage() {
+        return storage;
+    }
+
+    public void setStorage(Storage storage) {
+        this.storage = storage;
+    }
+
+    public NodeSpecUpdate withRuntime(Runtime runtime) {
+        this.runtime = runtime;
+        return this;
+    }
+
+    public NodeSpecUpdate withRuntime(Consumer<Runtime> runtimeSetter) {
+        if (this.runtime == null) {
+            this.runtime = new Runtime();
+            runtimeSetter.accept(this.runtime);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get runtime
+     * @return runtime
+     */
+    public Runtime getRuntime() {
+        return runtime;
+    }
+
+    public void setRuntime(Runtime runtime) {
+        this.runtime = runtime;
+    }
 
     public NodeSpecUpdate withTaints(List<Taint> taints) {
         this.taints = taints;
@@ -152,7 +288,7 @@ public class NodeSpecUpdate {
     }
 
     /**
-     * 支持给创建出来的节点加Taints来设置反亲和性，taints配置不超过20条。默认值为空。每条Taints包含以下3个参数：  - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。 - Value：必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。 - Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。  示例：  ``` \"taints\": [{   \"key\": \"status\",   \"value\": \"unavailable\",   \"effect\": \"NoSchedule\" }, {   \"key\": \"looks\",   \"value\": \"bad\",   \"effect\": \"NoSchedule\" }] ``` > 参数未指定或者为空数组时将删除节点池的自定义Taints 
+     * **参数解释**： 支持给创建出来的节点加Taints来设置反亲和性。每条Taints包含以下3个参数：  - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。 - Value：必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 - Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。  示例：  ``` \"taints\": [{   \"key\": \"status\",   \"value\": \"unavailable\",   \"effect\": \"NoSchedule\" }, {   \"key\": \"looks\",   \"value\": \"bad\",   \"effect\": \"NoSchedule\" }] ```  **约束限制**： - taints配置不超过20条。 - 参数未指定或者为空数组时将删除节点池的自定义Taints。 - 更新节点池时，此字段为非必填字段。
      * @return taints
      */
     public List<Taint> getTaints() {
@@ -185,7 +321,7 @@ public class NodeSpecUpdate {
     }
 
     /**
-     * 格式为key/value键值对。键值对个数不超过20条。默认值为空。 - Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。  示例： ``` \"k8sTags\": {   \"key\": \"value\" } ``` > 参数未指定或者为空对象时将删除节点池的自定义K8s标签 
+     * **参数解释**： 格式为key/value键值对。 - Key：必须以字母或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key，DNS子域最长253个字符。 - Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头和结尾，可以包含字母、数字、连字符、下划线和点，最长63个字符。 字段使用场景：在节点创建场景下，支持指定初始值，查询时不返回该字段；在节点池场景下，其中节点模板中支持指定初始值，查询时支持返回该字段；在其余场景下，查询时都不会返回该字段。   示例： ``` \"k8sTags\": {   \"key\": \"value\" } ```  **约束限制**： - 键值对个数不超过20条。 - 参数未指定或者为空对象时将删除节点池的自定义K8s标签。 - 更新节点池时，此字段为非必填字段。
      * @return k8sTags
      */
     public Map<String, String> getK8sTags() {
@@ -194,6 +330,23 @@ public class NodeSpecUpdate {
 
     public void setK8sTags(Map<String, String> k8sTags) {
         this.k8sTags = k8sTags;
+    }
+
+    public NodeSpecUpdate withEcsGroupId(String ecsGroupId) {
+        this.ecsGroupId = ecsGroupId;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 云服务器组ID，若指定，将节点创建在该云服务器组下。 **约束限制**： 创建节点池时该配置不会生效，若要保持节点池中的节点都在同一个云服务器组内，请在节点池 nodeManagement 字段中配置。 **取值范围**： 不涉及 **默认取值**： 不涉及
+     * @return ecsGroupId
+     */
+    public String getEcsGroupId() {
+        return ecsGroupId;
+    }
+
+    public void setEcsGroupId(String ecsGroupId) {
+        this.ecsGroupId = ecsGroupId;
     }
 
     public NodeSpecUpdate withUserTags(List<UserTag> userTags) {
@@ -218,7 +371,7 @@ public class NodeSpecUpdate {
     }
 
     /**
-     * 云服务器标签，键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。默认值为空。 > 参数未指定或者为空数组时将删除节点池的自定义云服务器标签 
+     * **参数解释**： 云服务器标签（资源标签）。 **约束限制**： - 键必须唯一，CCE支持的最大用户自定义标签数量依region而定，自定义标签数上限为8个。 - 参数未指定或者为空数组时将删除节点池的自定义云服务器标签。 - 更新节点池时，此字段为非必填字段。  **取值范围**： 不涉及 **默认取值**： 不涉及
      * @return userTags
      */
     public List<UserTag> getUserTags() {
@@ -227,6 +380,32 @@ public class NodeSpecUpdate {
 
     public void setUserTags(List<UserTag> userTags) {
         this.userTags = userTags;
+    }
+
+    public NodeSpecUpdate withNodeNameTemplate(NodeSpecUpdateNodeNameTemplate nodeNameTemplate) {
+        this.nodeNameTemplate = nodeNameTemplate;
+        return this;
+    }
+
+    public NodeSpecUpdate withNodeNameTemplate(Consumer<NodeSpecUpdateNodeNameTemplate> nodeNameTemplateSetter) {
+        if (this.nodeNameTemplate == null) {
+            this.nodeNameTemplate = new NodeSpecUpdateNodeNameTemplate();
+            nodeNameTemplateSetter.accept(this.nodeNameTemplate);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get nodeNameTemplate
+     * @return nodeNameTemplate
+     */
+    public NodeSpecUpdateNodeNameTemplate getNodeNameTemplate() {
+        return nodeNameTemplate;
+    }
+
+    public void setNodeNameTemplate(NodeSpecUpdateNodeNameTemplate nodeNameTemplate) {
+        this.nodeNameTemplate = nodeNameTemplate;
     }
 
     public NodeSpecUpdate withInitializedConditions(List<String> initializedConditions) {
@@ -251,7 +430,7 @@ public class NodeSpecUpdate {
     }
 
     /**
-     * 自定义初始化标记。  CCE节点在初始化完成之前，会打上初始化未完成污点（node.cloudprovider.kubernetes.io/uninitialized）防止pod调度到节点上。  cce支持自定义初始化标记，在接收到initializedConditions参数后，会将参数值转换成节点标签，随节点下发，例如：cloudprovider.openvessel.io/inject-initialized-conditions=CCEInitial_CustomedInitial。  当节点上设置了此标签，会轮询节点的status.Conditions，查看conditions的type是否存在标记名，如CCEInitial、CustomedInitial标记，如果存在所有传入的标记，且状态为True，认为节点初始化完成，则移除初始化污点。  默认值为空。  - 必须以字母、数字组成，长度范围1-20位。 - 标记数量不超过2个 
+     * **参数解释**： 自定义初始化标记，默认值为空。  CCE节点在初始化完成之前，会打上初始化未完成污点（node.cloudprovider.kubernetes.io/uninitialized）防止pod调度到节点上。用户在创建节点时，可以通过设置initializedConditions参数，控制污点的移除时间（默认不设置超时时间）。  使用示例如下： 1. 创建节点，传入参数 \"initializedConditions\": [\"CCEInitial\", \"CustomedInitial\"]； 2. 更新节点，传入参数 \"initializedConditions\": [\"NodeInitial\"]，节点池新建的节点注册到集群时默认会被设置为不可调度； 3. 用户在执行完自定义初始化操作后，调用k8s接口（例如PATCH /v1/nodes/{node_ip}/status）更新节点的conditions，插入type为CCEInitial、CustomedInitial的两个标记，状态为True，如下所示：   ```   status:     conditions:     - type: CCEInitial       status: 'True'     - type: CustomedInitial       status: 'True'   ``` 4. CCE组件轮询节点的status.Conditions，查看是否存在type为CCEInitial、CustomedInitial的condition，若存在且status字段值为True，认为节点初始化完成，则移除初始化污点； 5. initializedConditions支持设置超时时间，用户可以在创节点时传入，如：\"initializedConditions\": [\"CCEInitial:15m\", \"CustomedInitial:15m\"]，表示超时时间为15分钟，达到超时时间后，当CCE组件轮询到节点时会自动忽略初始化condition，移除初始化污点。  **约束限制**： - initializedConditions中超时时间取值范围为[1-99]秒 - 必须以字母、数字组成，长度范围1-20位。 - 标记数量不超过2个。 - 超时时间仅支持分钟(m)单位。
      * @return initializedConditions
      */
     public List<String> getInitializedConditions() {
@@ -262,39 +441,13 @@ public class NodeSpecUpdate {
         this.initializedConditions = initializedConditions;
     }
 
-    public NodeSpecUpdate withLogin(Login login) {
-        this.login = login;
-        return this;
-    }
-
-    public NodeSpecUpdate withLogin(Consumer<Login> loginSetter) {
-        if (this.login == null) {
-            this.login = new Login();
-            loginSetter.accept(this.login);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get login
-     * @return login
-     */
-    public Login getLogin() {
-        return login;
-    }
-
-    public void setLogin(Login login) {
-        this.login = login;
-    }
-
     public NodeSpecUpdate withServerEnterpriseProjectID(String serverEnterpriseProjectID) {
         this.serverEnterpriseProjectID = serverEnterpriseProjectID;
         return this;
     }
 
     /**
-     * 服务器企业项目ID。CCE服务不实现EPS相关特性，该字段仅用于同步服务器企业项目ID。 创建节点/节点池场景：可指定已存在企业项目，当取值为空时，该字段继承集群企业项目属性。 更新节点池场景：配置修改后仅会对新增节点的服务器生效，存量节点需前往EPS界面迁移。 如果更新时不指定值，不会更新该字段。 当该字段为空时，返回集群企业项目。
+     * **参数解释**： 服务器企业项目ID。CCE服务不实现EPS相关特性，该字段仅用于同步服务器企业项目ID。 **约束限制**： 创建节点/节点池场景：可指定已存在企业项目，当取值为空时，该字段继承集群企业项目属性。 更新节点池场景：配置修改后仅会对新增节点的服务器生效，存量节点需前往EPS界面迁移。 **取值范围**： 不涉及 **默认取值**： 如果更新时不指定值，不会更新该字段。 当该字段为空时，返回集群企业项目。
      * @return serverEnterpriseProjectID
      */
     public String getServerEnterpriseProjectID() {
@@ -331,21 +484,30 @@ public class NodeSpecUpdate {
         this.nodeNicSpecUpdate = nodeNicSpecUpdate;
     }
 
-    public NodeSpecUpdate withSecurityReinforcementType(SecurityReinforcementTypeEnum securityReinforcementType) {
-        this.securityReinforcementType = securityReinforcementType;
+    public NodeSpecUpdate withExtendParam(NodePoolUpdateExtendParam extendParam) {
+        this.extendParam = extendParam;
+        return this;
+    }
+
+    public NodeSpecUpdate withExtendParam(Consumer<NodePoolUpdateExtendParam> extendParamSetter) {
+        if (this.extendParam == null) {
+            this.extendParam = new NodePoolUpdateExtendParam();
+            extendParamSetter.accept(this.extendParam);
+        }
+
         return this;
     }
 
     /**
-     * **参数解释**： 指定节点安全加固类型，当前仅支持HCE2.0镜像等保2.0三级安全加固。 等保加固会对身份鉴别、访问控制、安全审计、入侵防范、恶意代码防范进行检查并加固。详情请参见[Huawei Cloud EulerOS 2.0等保2.0三级版镜像概述](https://support.huaweicloud.com/productdesc-hce/hce_sec_0001.html)。 若未指定此参数，则尝试用原有的值补全。如：原先HCE2.0镜像已配置安全加固，更新节点池时未指定此参数，则仍旧保持安全加固配置，若要取消，需显式指定参数值为\"null\"。 **约束限制**： 不涉及 **取值范围**： 取值范围：['null', cybersecurity]; **默认取值**： 不涉及
-     * @return securityReinforcementType
+     * Get extendParam
+     * @return extendParam
      */
-    public SecurityReinforcementTypeEnum getSecurityReinforcementType() {
-        return securityReinforcementType;
+    public NodePoolUpdateExtendParam getExtendParam() {
+        return extendParam;
     }
 
-    public void setSecurityReinforcementType(SecurityReinforcementTypeEnum securityReinforcementType) {
-        this.securityReinforcementType = securityReinforcementType;
+    public void setExtendParam(NodePoolUpdateExtendParam extendParam) {
+        this.extendParam = extendParam;
     }
 
     @Override
@@ -357,39 +519,59 @@ public class NodeSpecUpdate {
             return false;
         }
         NodeSpecUpdate that = (NodeSpecUpdate) obj;
-        return Objects.equals(this.taints, that.taints) && Objects.equals(this.k8sTags, that.k8sTags)
-            && Objects.equals(this.userTags, that.userTags)
+        return Objects.equals(this.flavor, that.flavor) && Objects.equals(this.os, that.os)
+            && Objects.equals(this.login, that.login) && Objects.equals(this.rootVolumeUpdate, that.rootVolumeUpdate)
+            && Objects.equals(this.dataVolumesUpdate, that.dataVolumesUpdate)
+            && Objects.equals(this.storage, that.storage) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.taints, that.taints) && Objects.equals(this.k8sTags, that.k8sTags)
+            && Objects.equals(this.ecsGroupId, that.ecsGroupId) && Objects.equals(this.userTags, that.userTags)
+            && Objects.equals(this.nodeNameTemplate, that.nodeNameTemplate)
             && Objects.equals(this.initializedConditions, that.initializedConditions)
-            && Objects.equals(this.login, that.login)
             && Objects.equals(this.serverEnterpriseProjectID, that.serverEnterpriseProjectID)
             && Objects.equals(this.nodeNicSpecUpdate, that.nodeNicSpecUpdate)
-            && Objects.equals(this.securityReinforcementType, that.securityReinforcementType);
+            && Objects.equals(this.extendParam, that.extendParam);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(taints,
-            k8sTags,
-            userTags,
-            initializedConditions,
+        return Objects.hash(flavor,
+            os,
             login,
+            rootVolumeUpdate,
+            dataVolumesUpdate,
+            storage,
+            runtime,
+            taints,
+            k8sTags,
+            ecsGroupId,
+            userTags,
+            nodeNameTemplate,
+            initializedConditions,
             serverEnterpriseProjectID,
             nodeNicSpecUpdate,
-            securityReinforcementType);
+            extendParam);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class NodeSpecUpdate {\n");
+        sb.append("    flavor: ").append(toIndentedString(flavor)).append("\n");
+        sb.append("    os: ").append(toIndentedString(os)).append("\n");
+        sb.append("    login: ").append(toIndentedString(login)).append("\n");
+        sb.append("    rootVolumeUpdate: ").append(toIndentedString(rootVolumeUpdate)).append("\n");
+        sb.append("    dataVolumesUpdate: ").append(toIndentedString(dataVolumesUpdate)).append("\n");
+        sb.append("    storage: ").append(toIndentedString(storage)).append("\n");
+        sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
         sb.append("    taints: ").append(toIndentedString(taints)).append("\n");
         sb.append("    k8sTags: ").append(toIndentedString(k8sTags)).append("\n");
+        sb.append("    ecsGroupId: ").append(toIndentedString(ecsGroupId)).append("\n");
         sb.append("    userTags: ").append(toIndentedString(userTags)).append("\n");
+        sb.append("    nodeNameTemplate: ").append(toIndentedString(nodeNameTemplate)).append("\n");
         sb.append("    initializedConditions: ").append(toIndentedString(initializedConditions)).append("\n");
-        sb.append("    login: ").append(toIndentedString(login)).append("\n");
         sb.append("    serverEnterpriseProjectID: ").append(toIndentedString(serverEnterpriseProjectID)).append("\n");
         sb.append("    nodeNicSpecUpdate: ").append(toIndentedString(nodeNicSpecUpdate)).append("\n");
-        sb.append("    securityReinforcementType: ").append(toIndentedString(securityReinforcementType)).append("\n");
+        sb.append("    extendParam: ").append(toIndentedString(extendParam)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -18,7 +18,7 @@ public class QuotasResource {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "used")
 
-    private String used;
+    private Integer used;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "quota")
@@ -28,7 +28,7 @@ public class QuotasResource {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
 
-    private Integer unit;
+    private String unit;
 
     public QuotasResource withType(String type) {
         this.type = type;
@@ -47,7 +47,7 @@ public class QuotasResource {
         this.type = type;
     }
 
-    public QuotasResource withUsed(String used) {
+    public QuotasResource withUsed(Integer used) {
         this.used = used;
         return this;
     }
@@ -56,11 +56,11 @@ public class QuotasResource {
      * 已使用的资源数量。
      * @return used
      */
-    public String getUsed() {
+    public Integer getUsed() {
         return used;
     }
 
-    public void setUsed(String used) {
+    public void setUsed(Integer used) {
         this.used = used;
     }
 
@@ -81,7 +81,7 @@ public class QuotasResource {
         this.quota = quota;
     }
 
-    public QuotasResource withUnit(Integer unit) {
+    public QuotasResource withUnit(String unit) {
         this.unit = unit;
         return this;
     }
@@ -90,11 +90,11 @@ public class QuotasResource {
      * 资源计量单位。
      * @return unit
      */
-    public Integer getUnit() {
+    public String getUnit() {
         return unit;
     }
 
-    public void setUnit(Integer unit) {
+    public void setUnit(String unit) {
         this.unit = unit;
     }
 

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 重分布表信息
+ * **参数解释**： 重分布表信息。 **取值范围**： 不涉及。
  */
 public class RedisTable {
 
@@ -46,7 +46,7 @@ public class RedisTable {
     }
 
     /**
-     * 表名
+     * **参数解释**： 表名。 **取值范围**： 不涉及。
      * @return tableName
      */
     public String getTableName() {
@@ -63,7 +63,7 @@ public class RedisTable {
     }
 
     /**
-     * 表唯一id
+     * **参数解释**： 表唯一id。 **取值范围**： 不涉及。
      * @return id
      */
     public Integer getId() {
@@ -80,7 +80,7 @@ public class RedisTable {
     }
 
     /**
-     * schema名
+     * **参数解释**： schema名。 **取值范围**： 不涉及。
      * @return schemaName
      */
     public String getSchemaName() {
@@ -97,7 +97,7 @@ public class RedisTable {
     }
 
     /**
-     * 逻辑集群名
+     * **参数解释**： 逻辑集群名。 **取值范围**： 不涉及。
      * @return logicalClusterName
      */
     public String getLogicalClusterName() {
@@ -114,7 +114,7 @@ public class RedisTable {
     }
 
     /**
-     * 表大小
+     * **参数解释**： 表大小。 **取值范围**： 不涉及。
      * @return size
      */
     public Long getSize() {
@@ -131,7 +131,7 @@ public class RedisTable {
     }
 
     /**
-     * 重分布类型 i：重分布中； y：重分布完成； n：未开始
+     * **参数解释**： 重分布类型。 **取值范围**： i：重分布中； y：重分布完成； n：未开始。
      * @return status
      */
     public String getStatus() {

@@ -51,7 +51,7 @@ public class ListClusterNodesResponse extends SdkResponse {
     }
 
     /**
-     * 逻辑集群节点列表
+     * **参数解释**： 集群节点列表。 **取值范围**： 不涉及。
      * @return nodeList
      */
     public List<ClusterNodeInfo> getNodeList() {
@@ -68,7 +68,7 @@ public class ListClusterNodesResponse extends SdkResponse {
     }
 
     /**
-     * 逻辑集群节点总数
+     * **参数解释**： 集群节点总数。 **取值范围**： 大于0的整数。
      * @return count
      */
     public Integer getCount() {
@@ -85,7 +85,7 @@ public class ListClusterNodesResponse extends SdkResponse {
     }
 
     /**
-     * 逻辑集群节点失败总数
+     * **参数解释**： 逻辑集群节点失败总数。一般为0。 **取值范围**： 大于等于0的整数。
      * @return failedCount
      */
     public Integer getFailedCount() {

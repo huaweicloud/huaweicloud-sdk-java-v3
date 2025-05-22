@@ -161,6 +161,11 @@ public class UpdatePoolOption {
 
     private QuicCidHashStrategy quicCidHashStrategy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "az_affinity")
+
+    private UpdateAzAffinity azAffinity;
+
     public UpdatePoolOption withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
         return this;
@@ -462,6 +467,32 @@ public class UpdatePoolOption {
         this.quicCidHashStrategy = quicCidHashStrategy;
     }
 
+    public UpdatePoolOption withAzAffinity(UpdateAzAffinity azAffinity) {
+        this.azAffinity = azAffinity;
+        return this;
+    }
+
+    public UpdatePoolOption withAzAffinity(Consumer<UpdateAzAffinity> azAffinitySetter) {
+        if (this.azAffinity == null) {
+            this.azAffinity = new UpdateAzAffinity();
+            azAffinitySetter.accept(this.azAffinity);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get azAffinity
+     * @return azAffinity
+     */
+    public UpdateAzAffinity getAzAffinity() {
+        return azAffinity;
+    }
+
+    public void setAzAffinity(UpdateAzAffinity azAffinity) {
+        this.azAffinity = azAffinity;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -482,7 +513,8 @@ public class UpdatePoolOption {
             && Objects.equals(this.anyPortEnable, that.anyPortEnable)
             && Objects.equals(this.connectionDrain, that.connectionDrain)
             && Objects.equals(this.poolHealth, that.poolHealth)
-            && Objects.equals(this.quicCidHashStrategy, that.quicCidHashStrategy);
+            && Objects.equals(this.quicCidHashStrategy, that.quicCidHashStrategy)
+            && Objects.equals(this.azAffinity, that.azAffinity);
     }
 
     @Override
@@ -501,7 +533,8 @@ public class UpdatePoolOption {
             anyPortEnable,
             connectionDrain,
             poolHealth,
-            quicCidHashStrategy);
+            quicCidHashStrategy,
+            azAffinity);
     }
 
     @Override
@@ -525,6 +558,7 @@ public class UpdatePoolOption {
         sb.append("    connectionDrain: ").append(toIndentedString(connectionDrain)).append("\n");
         sb.append("    poolHealth: ").append(toIndentedString(poolHealth)).append("\n");
         sb.append("    quicCidHashStrategy: ").append(toIndentedString(quicCidHashStrategy)).append("\n");
+        sb.append("    azAffinity: ").append(toIndentedString(azAffinity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

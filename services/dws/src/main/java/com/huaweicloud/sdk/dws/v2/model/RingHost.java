@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群主机信息
+ * **参数解释**： 集群主机信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class RingHost {
 
@@ -41,7 +41,7 @@ public class RingHost {
     }
 
     /**
-     * 主机名称
+     * **参数解释**： 主机名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return hostName
      */
     public String getHostName() {
@@ -58,7 +58,7 @@ public class RingHost {
     }
 
     /**
-     * 后端IP地址
+     * **参数解释**： 后端IP地址。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return backIp
      */
     public String getBackIp() {
@@ -75,7 +75,7 @@ public class RingHost {
     }
 
     /**
-     * 主机CPU核数
+     * **参数解释**： 主机CPU核数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return cpuCores
      */
     public Integer getCpuCores() {
@@ -92,7 +92,7 @@ public class RingHost {
     }
 
     /**
-     * 主机内存
+     * **参数解释**： 主机内存。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return memory
      */
     public Double getMemory() {
@@ -109,7 +109,7 @@ public class RingHost {
     }
 
     /**
-     * 主机磁盘大小
+     * **参数解释**： 主机磁盘大小。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return diskSize
      */
     public Double getDiskSize() {

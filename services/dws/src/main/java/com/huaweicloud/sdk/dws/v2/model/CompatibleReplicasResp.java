@@ -34,7 +34,7 @@ public class CompatibleReplicasResp {
     }
 
     /**
-     * ID
+     * **参数解释**： ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -51,7 +51,7 @@ public class CompatibleReplicasResp {
     }
 
     /**
-     * 名称
+     * **参数解释**： 名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -84,7 +84,7 @@ public class CompatibleReplicasResp {
     }
 
     /**
-     * 连接
+     * **参数解释**： 链接。 **取值范围**： 不涉及。
      * @return links
      */
     public List<LinkResp> getLinks() {

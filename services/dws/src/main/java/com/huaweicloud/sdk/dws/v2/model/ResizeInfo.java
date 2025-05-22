@@ -36,7 +36,7 @@ public class ResizeInfo {
     }
 
     /**
-     * 扩容后的节点数量
+     * **参数解释**： 扩容后的节点数量。 **取值范围**： 不涉及。
      * @return targetNodeNum
      */
     public Integer getTargetNodeNum() {
@@ -53,7 +53,7 @@ public class ResizeInfo {
     }
 
     /**
-     * 扩容前的节点数量
+     * **参数解释**： 扩容前的节点数量。 **取值范围**： 不涉及。
      * @return originNodeNum
      */
     public Integer getOriginNodeNum() {
@@ -70,7 +70,7 @@ public class ResizeInfo {
     }
 
     /**
-     * 扩容状态，取值如下：  - GROWING：扩容中 - RESIZE_FAILURE：扩容失败
+     * **参数解释**： 扩容状态。 **取值范围**： - GROWING：扩容中 - RESIZE_FAILURE：扩容失败。
      * @return resizeStatus
      */
     public String getResizeStatus() {
@@ -87,7 +87,7 @@ public class ResizeInfo {
     }
 
     /**
-     * 扩容开始时间，格式为ISO8601：YYYY-MM-DDThh:mm:ss
+     * **参数解释**： 扩容开始时间，格式为ISO8601：YYYY-MM-DDThh:mm:ss **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {

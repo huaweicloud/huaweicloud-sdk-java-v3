@@ -59,7 +59,7 @@ public class CreateSmartChatRoomReq {
     private Integer concurrency;
 
     /**
-     * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
      */
     public static final class DefaultLanguageEnum {
 
@@ -73,12 +73,36 @@ public class CreateSmartChatRoomReq {
          */
         public static final DefaultLanguageEnum EN = new DefaultLanguageEnum("EN");
 
+        /**
+         * Enum ESP for value: "ESP"
+         */
+        public static final DefaultLanguageEnum ESP = new DefaultLanguageEnum("ESP");
+
+        /**
+         * Enum POR for value: "por"
+         */
+        public static final DefaultLanguageEnum POR = new DefaultLanguageEnum("por");
+
+        /**
+         * Enum ARABIC for value: "Arabic"
+         */
+        public static final DefaultLanguageEnum ARABIC = new DefaultLanguageEnum("Arabic");
+
+        /**
+         * Enum THAI for value: "Thai"
+         */
+        public static final DefaultLanguageEnum THAI = new DefaultLanguageEnum("Thai");
+
         private static final Map<String, DefaultLanguageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DefaultLanguageEnum> createStaticFields() {
             Map<String, DefaultLanguageEnum> map = new HashMap<>();
             map.put("CN", CN);
             map.put("EN", EN);
+            map.put("ESP", ESP);
+            map.put("por", POR);
+            map.put("Arabic", ARABIC);
+            map.put("Thai", THAI);
             return Collections.unmodifiableMap(map);
         }
 
@@ -233,6 +257,16 @@ public class CreateSmartChatRoomReq {
     @JsonProperty(value = "chat_video_type")
 
     private ChatVideoTypeEnum chatVideoType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "exit_mute_threshold")
+
+    private Integer exitMuteThreshold;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "chat_resource_config")
+
+    private List<ChatResourceConfig> chatResourceConfig = null;
 
     public CreateSmartChatRoomReq withRoomName(String roomName) {
         this.roomName = roomName;
@@ -412,7 +446,7 @@ public class CreateSmartChatRoomReq {
     }
 
     /**
-     * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
      * @return defaultLanguage
      */
     public DefaultLanguageEnum getDefaultLanguage() {
@@ -551,6 +585,58 @@ public class CreateSmartChatRoomReq {
         this.chatVideoType = chatVideoType;
     }
 
+    public CreateSmartChatRoomReq withExitMuteThreshold(Integer exitMuteThreshold) {
+        this.exitMuteThreshold = exitMuteThreshold;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 静默退出时长。
+     * minimum: 0
+     * maximum: 1440
+     * @return exitMuteThreshold
+     */
+    public Integer getExitMuteThreshold() {
+        return exitMuteThreshold;
+    }
+
+    public void setExitMuteThreshold(Integer exitMuteThreshold) {
+        this.exitMuteThreshold = exitMuteThreshold;
+    }
+
+    public CreateSmartChatRoomReq withChatResourceConfig(List<ChatResourceConfig> chatResourceConfig) {
+        this.chatResourceConfig = chatResourceConfig;
+        return this;
+    }
+
+    public CreateSmartChatRoomReq addChatResourceConfigItem(ChatResourceConfig chatResourceConfigItem) {
+        if (this.chatResourceConfig == null) {
+            this.chatResourceConfig = new ArrayList<>();
+        }
+        this.chatResourceConfig.add(chatResourceConfigItem);
+        return this;
+    }
+
+    public CreateSmartChatRoomReq withChatResourceConfig(Consumer<List<ChatResourceConfig>> chatResourceConfigSetter) {
+        if (this.chatResourceConfig == null) {
+            this.chatResourceConfig = new ArrayList<>();
+        }
+        chatResourceConfigSetter.accept(this.chatResourceConfig);
+        return this;
+    }
+
+    /**
+     * 资源配置。
+     * @return chatResourceConfig
+     */
+    public List<ChatResourceConfig> getChatResourceConfig() {
+        return chatResourceConfig;
+    }
+
+    public void setChatResourceConfig(List<ChatResourceConfig> chatResourceConfig) {
+        this.chatResourceConfig = chatResourceConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -572,7 +658,9 @@ public class CreateSmartChatRoomReq {
             && Objects.equals(this.layerConfig, that.layerConfig)
             && Objects.equals(this.reviewConfig, that.reviewConfig)
             && Objects.equals(this.chatSubtitleConfig, that.chatSubtitleConfig)
-            && Objects.equals(this.chatVideoType, that.chatVideoType);
+            && Objects.equals(this.chatVideoType, that.chatVideoType)
+            && Objects.equals(this.exitMuteThreshold, that.exitMuteThreshold)
+            && Objects.equals(this.chatResourceConfig, that.chatResourceConfig);
     }
 
     @Override
@@ -590,7 +678,9 @@ public class CreateSmartChatRoomReq {
             layerConfig,
             reviewConfig,
             chatSubtitleConfig,
-            chatVideoType);
+            chatVideoType,
+            exitMuteThreshold,
+            chatResourceConfig);
     }
 
     @Override
@@ -611,6 +701,8 @@ public class CreateSmartChatRoomReq {
         sb.append("    reviewConfig: ").append(toIndentedString(reviewConfig)).append("\n");
         sb.append("    chatSubtitleConfig: ").append(toIndentedString(chatSubtitleConfig)).append("\n");
         sb.append("    chatVideoType: ").append(toIndentedString(chatVideoType)).append("\n");
+        sb.append("    exitMuteThreshold: ").append(toIndentedString(exitMuteThreshold)).append("\n");
+        sb.append("    chatResourceConfig: ").append(toIndentedString(chatResourceConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

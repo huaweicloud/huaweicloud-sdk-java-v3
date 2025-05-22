@@ -35,6 +35,26 @@ public class RenameCommandResp {
 
     private String keys;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hscan")
+
+    private String hscan;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scan")
+
+    private String scan;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sscan")
+
+    private String sscan;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "zscan")
+
+    private String zscan;
+
     public RenameCommandResp withCommand(String command) {
         this.command = command;
         return this;
@@ -120,6 +140,74 @@ public class RenameCommandResp {
         this.keys = keys;
     }
 
+    public RenameCommandResp withHscan(String hscan) {
+        this.hscan = hscan;
+        return this;
+    }
+
+    /**
+     * 命令hscan
+     * @return hscan
+     */
+    public String getHscan() {
+        return hscan;
+    }
+
+    public void setHscan(String hscan) {
+        this.hscan = hscan;
+    }
+
+    public RenameCommandResp withScan(String scan) {
+        this.scan = scan;
+        return this;
+    }
+
+    /**
+     * 命令scan
+     * @return scan
+     */
+    public String getScan() {
+        return scan;
+    }
+
+    public void setScan(String scan) {
+        this.scan = scan;
+    }
+
+    public RenameCommandResp withSscan(String sscan) {
+        this.sscan = sscan;
+        return this;
+    }
+
+    /**
+     * 命令sscan
+     * @return sscan
+     */
+    public String getSscan() {
+        return sscan;
+    }
+
+    public void setSscan(String sscan) {
+        this.sscan = sscan;
+    }
+
+    public RenameCommandResp withZscan(String zscan) {
+        this.zscan = zscan;
+        return this;
+    }
+
+    /**
+     * 命令zscan
+     * @return zscan
+     */
+    public String getZscan() {
+        return zscan;
+    }
+
+    public void setZscan(String zscan) {
+        this.zscan = zscan;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -131,12 +219,14 @@ public class RenameCommandResp {
         RenameCommandResp that = (RenameCommandResp) obj;
         return Objects.equals(this.command, that.command) && Objects.equals(this.flushall, that.flushall)
             && Objects.equals(this.flushdb, that.flushdb) && Objects.equals(this.hgetall, that.hgetall)
-            && Objects.equals(this.keys, that.keys);
+            && Objects.equals(this.keys, that.keys) && Objects.equals(this.hscan, that.hscan)
+            && Objects.equals(this.scan, that.scan) && Objects.equals(this.sscan, that.sscan)
+            && Objects.equals(this.zscan, that.zscan);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(command, flushall, flushdb, hgetall, keys);
+        return Objects.hash(command, flushall, flushdb, hgetall, keys, hscan, scan, sscan, zscan);
     }
 
     @Override
@@ -148,6 +238,10 @@ public class RenameCommandResp {
         sb.append("    flushdb: ").append(toIndentedString(flushdb)).append("\n");
         sb.append("    hgetall: ").append(toIndentedString(hgetall)).append("\n");
         sb.append("    keys: ").append(toIndentedString(keys)).append("\n");
+        sb.append("    hscan: ").append(toIndentedString(hscan)).append("\n");
+        sb.append("    scan: ").append(toIndentedString(scan)).append("\n");
+        sb.append("    sscan: ").append(toIndentedString(sscan)).append("\n");
+        sb.append("    zscan: ").append(toIndentedString(zscan)).append("\n");
         sb.append("}");
         return sb.toString();
     }

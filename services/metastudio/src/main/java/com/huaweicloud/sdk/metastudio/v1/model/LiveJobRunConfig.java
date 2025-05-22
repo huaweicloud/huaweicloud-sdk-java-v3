@@ -16,7 +16,7 @@ import java.util.Objects;
 public class LiveJobRunConfig {
 
     /**
-     * 允许使用资源类型。 * PERIOD：使用包周期资源 * ONDEMAND：使用按需资源 * UNLIMITED：不限制资源类型
+     * 允许使用资源类型。 * PERIOD：使用包周期资源 * ONDEMAND：使用按需资源 * UNLIMITED：不限制资源类型 * ONE_TIME：一次性资源
      */
     public static final class AllowResourceTypeEnum {
 
@@ -35,6 +35,11 @@ public class LiveJobRunConfig {
          */
         public static final AllowResourceTypeEnum UNLIMITED = new AllowResourceTypeEnum("UNLIMITED");
 
+        /**
+         * Enum ONE_TIME for value: "ONE_TIME"
+         */
+        public static final AllowResourceTypeEnum ONE_TIME = new AllowResourceTypeEnum("ONE_TIME");
+
         private static final Map<String, AllowResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, AllowResourceTypeEnum> createStaticFields() {
@@ -42,6 +47,7 @@ public class LiveJobRunConfig {
             map.put("PERIOD", PERIOD);
             map.put("ONDEMAND", ONDEMAND);
             map.put("UNLIMITED", UNLIMITED);
+            map.put("ONE_TIME", ONE_TIME);
             return Collections.unmodifiableMap(map);
         }
 
@@ -107,7 +113,7 @@ public class LiveJobRunConfig {
     }
 
     /**
-     * 允许使用资源类型。 * PERIOD：使用包周期资源 * ONDEMAND：使用按需资源 * UNLIMITED：不限制资源类型
+     * 允许使用资源类型。 * PERIOD：使用包周期资源 * ONDEMAND：使用按需资源 * UNLIMITED：不限制资源类型 * ONE_TIME：一次性资源
      * @return allowResourceType
      */
     public AllowResourceTypeEnum getAllowResourceType() {

@@ -22,7 +22,7 @@ public class ShrinkClusterResponse extends SdkResponse {
     }
 
     /**
-     * 缩容job_id。
+     * **参数解释**： 缩容的任务ID信息。 **取值范围**： 不涉及。
      * @return jobId
      */
     public String getJobId() {

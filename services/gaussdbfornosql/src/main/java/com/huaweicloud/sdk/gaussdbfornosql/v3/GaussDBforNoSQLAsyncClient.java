@@ -39,6 +39,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbUserRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbUserResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDisasterRecoveryRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDisasterRecoveryResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateGeminiDbDualActiveRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateGeminiDbDualActiveResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteBackupRequest;
@@ -55,6 +57,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDisasterRecoveryReques
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDisasterRecoveryResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteGeminiDbDualActiveRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteGeminiDbDualActiveResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstancesSessionRequest;
@@ -838,6 +842,36 @@ public class GaussDBforNoSQLAsyncClient {
     }
 
     /**
+     * 搭建双活
+     *
+     * 为了实现跨区域实例数据同步，GeminiDB提供了异地双活功能，即创建异地双活实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGeminiDbDualActiveRequest 请求对象
+     * @return CompletableFuture<CreateGeminiDbDualActiveResponse>
+     */
+    public CompletableFuture<CreateGeminiDbDualActiveResponse> createGeminiDbDualActiveAsync(
+        CreateGeminiDbDualActiveRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.createGeminiDbDualActive);
+    }
+
+    /**
+     * 搭建双活
+     *
+     * 为了实现跨区域实例数据同步，GeminiDB提供了异地双活功能，即创建异地双活实例。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateGeminiDbDualActiveRequest 请求对象
+     * @return AsyncInvoker<CreateGeminiDbDualActiveRequest, CreateGeminiDbDualActiveResponse>
+     */
+    public AsyncInvoker<CreateGeminiDbDualActiveRequest, CreateGeminiDbDualActiveResponse> createGeminiDbDualActiveAsyncInvoker(
+        CreateGeminiDbDualActiveRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.createGeminiDbDualActive, hcClient);
+    }
+
+    /**
      * 创建实例
      *
      * 创建数据库实例。
@@ -1070,6 +1104,36 @@ public class GaussDBforNoSQLAsyncClient {
     public AsyncInvoker<DeleteEnlargeFailNodeRequest, DeleteEnlargeFailNodeResponse> deleteEnlargeFailNodeAsyncInvoker(
         DeleteEnlargeFailNodeRequest request) {
         return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteEnlargeFailNode, hcClient);
+    }
+
+    /**
+     * 解除双活
+     *
+     * 解除跨区域双活。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGeminiDbDualActiveRequest 请求对象
+     * @return CompletableFuture<DeleteGeminiDbDualActiveResponse>
+     */
+    public CompletableFuture<DeleteGeminiDbDualActiveResponse> deleteGeminiDbDualActiveAsync(
+        DeleteGeminiDbDualActiveRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaussDBforNoSQLMeta.deleteGeminiDbDualActive);
+    }
+
+    /**
+     * 解除双活
+     *
+     * 解除跨区域双活。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteGeminiDbDualActiveRequest 请求对象
+     * @return AsyncInvoker<DeleteGeminiDbDualActiveRequest, DeleteGeminiDbDualActiveResponse>
+     */
+    public AsyncInvoker<DeleteGeminiDbDualActiveRequest, DeleteGeminiDbDualActiveResponse> deleteGeminiDbDualActiveAsyncInvoker(
+        DeleteGeminiDbDualActiveRequest request) {
+        return new AsyncInvoker<>(request, GaussDBforNoSQLMeta.deleteGeminiDbDualActive, hcClient);
     }
 
     /**

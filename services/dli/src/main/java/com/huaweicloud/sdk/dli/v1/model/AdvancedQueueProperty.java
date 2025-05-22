@@ -26,9 +26,19 @@ public class AdvancedQueueProperty {
     private Integer computeEngineMaxPrefetchInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "computeEngine.spark.nativeEnabled")
+
+    private String computeEngineSparkNativeEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network.cidrInVpc")
 
     private String networkCidrInVpc;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job.saveJobResultToJobBucket")
+
+    private String jobSaveJobResultToJobBucket;
 
     public AdvancedQueueProperty withComputeEngineMaxInstance(Integer computeEngineMaxInstance) {
         this.computeEngineMaxInstance = computeEngineMaxInstance;
@@ -83,6 +93,23 @@ public class AdvancedQueueProperty {
         this.computeEngineMaxPrefetchInstance = computeEngineMaxPrefetchInstance;
     }
 
+    public AdvancedQueueProperty withComputeEngineSparkNativeEnabled(String computeEngineSparkNativeEnabled) {
+        this.computeEngineSparkNativeEnabled = computeEngineSparkNativeEnabled;
+        return this;
+    }
+
+    /**
+     * 是否使用DLI Native。当前只涉及开启两种算子：Scan 和 Filter。修改现有队列的本属性，需要重启队列才会生效。
+     * @return computeEngineSparkNativeEnabled
+     */
+    public String getComputeEngineSparkNativeEnabled() {
+        return computeEngineSparkNativeEnabled;
+    }
+
+    public void setComputeEngineSparkNativeEnabled(String computeEngineSparkNativeEnabled) {
+        this.computeEngineSparkNativeEnabled = computeEngineSparkNativeEnabled;
+    }
+
     public AdvancedQueueProperty withNetworkCidrInVpc(String networkCidrInVpc) {
         this.networkCidrInVpc = networkCidrInVpc;
         return this;
@@ -100,6 +127,23 @@ public class AdvancedQueueProperty {
         this.networkCidrInVpc = networkCidrInVpc;
     }
 
+    public AdvancedQueueProperty withJobSaveJobResultToJobBucket(String jobSaveJobResultToJobBucket) {
+        this.jobSaveJobResultToJobBucket = jobSaveJobResultToJobBucket;
+        return this;
+    }
+
+    /**
+     * 是否使用作业桶保存SQL查询结果
+     * @return jobSaveJobResultToJobBucket
+     */
+    public String getJobSaveJobResultToJobBucket() {
+        return jobSaveJobResultToJobBucket;
+    }
+
+    public void setJobSaveJobResultToJobBucket(String jobSaveJobResultToJobBucket) {
+        this.jobSaveJobResultToJobBucket = jobSaveJobResultToJobBucket;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -112,13 +156,19 @@ public class AdvancedQueueProperty {
         return Objects.equals(this.computeEngineMaxInstance, that.computeEngineMaxInstance)
             && Objects.equals(this.jobMaxConcurrent, that.jobMaxConcurrent)
             && Objects.equals(this.computeEngineMaxPrefetchInstance, that.computeEngineMaxPrefetchInstance)
-            && Objects.equals(this.networkCidrInVpc, that.networkCidrInVpc);
+            && Objects.equals(this.computeEngineSparkNativeEnabled, that.computeEngineSparkNativeEnabled)
+            && Objects.equals(this.networkCidrInVpc, that.networkCidrInVpc)
+            && Objects.equals(this.jobSaveJobResultToJobBucket, that.jobSaveJobResultToJobBucket);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(computeEngineMaxInstance, jobMaxConcurrent, computeEngineMaxPrefetchInstance, networkCidrInVpc);
+        return Objects.hash(computeEngineMaxInstance,
+            jobMaxConcurrent,
+            computeEngineMaxPrefetchInstance,
+            computeEngineSparkNativeEnabled,
+            networkCidrInVpc,
+            jobSaveJobResultToJobBucket);
     }
 
     @Override
@@ -130,7 +180,13 @@ public class AdvancedQueueProperty {
         sb.append("    computeEngineMaxPrefetchInstance: ")
             .append(toIndentedString(computeEngineMaxPrefetchInstance))
             .append("\n");
+        sb.append("    computeEngineSparkNativeEnabled: ")
+            .append(toIndentedString(computeEngineSparkNativeEnabled))
+            .append("\n");
         sb.append("    networkCidrInVpc: ").append(toIndentedString(networkCidrInVpc)).append("\n");
+        sb.append("    jobSaveJobResultToJobBucket: ")
+            .append(toIndentedString(jobSaveJobResultToJobBucket))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

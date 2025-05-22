@@ -101,7 +101,7 @@ public class UpdateInteractionRuleGroupResponse extends SdkResponse {
     }
 
     /**
-     * 互动规则列表
+     * 互动规则列表。 > 查询互动规则库列表接口不再返回该内容。请使用查询互动规则库详情接口查具体某个库的规则列表。
      * @return interactionRules
      */
     public List<InteractionRuleDetailInfo> getInteractionRules() {

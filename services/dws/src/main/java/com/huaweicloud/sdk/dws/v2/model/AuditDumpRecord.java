@@ -16,9 +16,9 @@ public class AuditDumpRecord {
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "exector_time")
+    @JsonProperty(value = "executor_time")
 
-    private String exectorTime;
+    private String executorTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "begin_time")
@@ -56,7 +56,7 @@ public class AuditDumpRecord {
     }
 
     /**
-     * 集群id。
+     * **参数解释**： 集群ID。 **取值范围**： 36位UUID。
      * @return clusterId
      */
     public String getClusterId() {
@@ -67,21 +67,21 @@ public class AuditDumpRecord {
         this.clusterId = clusterId;
     }
 
-    public AuditDumpRecord withExectorTime(String exectorTime) {
-        this.exectorTime = exectorTime;
+    public AuditDumpRecord withExecutorTime(String executorTime) {
+        this.executorTime = executorTime;
         return this;
     }
 
     /**
      * 执行时间。
-     * @return exectorTime
+     * @return executorTime
      */
-    public String getExectorTime() {
-        return exectorTime;
+    public String getExecutorTime() {
+        return executorTime;
     }
 
-    public void setExectorTime(String exectorTime) {
-        this.exectorTime = exectorTime;
+    public void setExecutorTime(String executorTime) {
+        this.executorTime = executorTime;
     }
 
     public AuditDumpRecord withBeginTime(String beginTime) {
@@ -195,7 +195,7 @@ public class AuditDumpRecord {
             return false;
         }
         AuditDumpRecord that = (AuditDumpRecord) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.exectorTime, that.exectorTime)
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.executorTime, that.executorTime)
             && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
             && Objects.equals(this.bucketName, that.bucketName)
             && Objects.equals(this.locationPrefix, that.locationPrefix) && Objects.equals(this.result, that.result)
@@ -205,7 +205,7 @@ public class AuditDumpRecord {
     @Override
     public int hashCode() {
         return Objects
-            .hash(clusterId, exectorTime, beginTime, endTime, bucketName, locationPrefix, result, failedReason);
+            .hash(clusterId, executorTime, beginTime, endTime, bucketName, locationPrefix, result, failedReason);
     }
 
     @Override
@@ -213,7 +213,7 @@ public class AuditDumpRecord {
         StringBuilder sb = new StringBuilder();
         sb.append("class AuditDumpRecord {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    exectorTime: ").append(toIndentedString(exectorTime)).append("\n");
+        sb.append("    executorTime: ").append(toIndentedString(executorTime)).append("\n");
         sb.append("    beginTime: ").append(toIndentedString(beginTime)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
         sb.append("    bucketName: ").append(toIndentedString(bucketName)).append("\n");

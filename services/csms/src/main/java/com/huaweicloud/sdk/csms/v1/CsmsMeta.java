@@ -11,6 +11,9 @@ import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
 import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsResponse;
 import com.huaweicloud.sdk.csms.v1.model.ChangeUsersPassword;
+import com.huaweicloud.sdk.csms.v1.model.CheckSecretsRequest;
+import com.huaweicloud.sdk.csms.v1.model.CheckSecretsRequestBody;
+import com.huaweicloud.sdk.csms.v1.model.CheckSecretsResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyResponse;
@@ -85,6 +88,8 @@ import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretsConfigRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretsConfigResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowUserDetailRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowUserDetailResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateGrantRequest;
@@ -98,6 +103,9 @@ import com.huaweicloud.sdk.csms.v1.model.UpdateSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageRequestBody;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageResponse;
+import com.huaweicloud.sdk.csms.v1.model.UpdateSecretsConfigRequest;
+import com.huaweicloud.sdk.csms.v1.model.UpdateSecretsConfigRequestBody;
+import com.huaweicloud.sdk.csms.v1.model.UpdateSecretsConfigResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateUserPasswordRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateUserPasswordResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateVersionRequest;
@@ -156,6 +164,28 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ImportSecretsRequest.class),
             f -> f.withMarshaller(BatchImportSecretsRequest::getBody, BatchImportSecretsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CheckSecretsRequest, CheckSecretsResponse> checkSecrets = genForCheckSecrets();
+
+    private static HttpRequestDef<CheckSecretsRequest, CheckSecretsResponse> genForCheckSecrets() {
+        // basic
+        HttpRequestDef.Builder<CheckSecretsRequest, CheckSecretsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CheckSecretsRequest.class, CheckSecretsResponse.class)
+                .withName("CheckSecrets")
+                .withUri("/v1/{project_id}/secrets/checker/check")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CheckSecretsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CheckSecretsRequestBody.class),
+            f -> f.withMarshaller(CheckSecretsRequest::getBody, CheckSecretsRequest::setBody));
 
         // response
 
@@ -1001,6 +1031,24 @@ public class CsmsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowSecretsConfigRequest, ShowSecretsConfigResponse> showSecretsConfig =
+        genForShowSecretsConfig();
+
+    private static HttpRequestDef<ShowSecretsConfigRequest, ShowSecretsConfigResponse> genForShowSecretsConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowSecretsConfigRequest, ShowSecretsConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowSecretsConfigRequest.class, ShowSecretsConfigResponse.class)
+                .withName("ShowSecretsConfig")
+                .withUri("/v1/{project_id}/secrets/checker/config")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowUserDetailRequest, ShowUserDetailResponse> showUserDetail =
         genForShowUserDetail();
 
@@ -1133,6 +1181,29 @@ public class CsmsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateSecretStageRequestBody.class),
             f -> f.withMarshaller(UpdateSecretStageRequest::getBody, UpdateSecretStageRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateSecretsConfigRequest, UpdateSecretsConfigResponse> updateSecretsConfig =
+        genForUpdateSecretsConfig();
+
+    private static HttpRequestDef<UpdateSecretsConfigRequest, UpdateSecretsConfigResponse> genForUpdateSecretsConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateSecretsConfigRequest, UpdateSecretsConfigResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, UpdateSecretsConfigRequest.class, UpdateSecretsConfigResponse.class)
+                .withName("UpdateSecretsConfig")
+                .withUri("/v1/{project_id}/secrets/checker/config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<UpdateSecretsConfigRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateSecretsConfigRequestBody.class),
+            f -> f.withMarshaller(UpdateSecretsConfigRequest::getBody, UpdateSecretsConfigRequest::setBody));
 
         // response
 

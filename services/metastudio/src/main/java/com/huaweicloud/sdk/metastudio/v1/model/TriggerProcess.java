@@ -24,7 +24,7 @@ public class TriggerProcess {
     private Integer timeWindow;
 
     /**
-     * **参数解释**： 回复类型。 **约束限制**： 不涉及 **取值范围**： * SYSTEM_REPLY：系统自动回复预先设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SHOW_LAYER：仅显示叠加图层，不影响话术。 * INTELLIGENT_REPLY：使用配置的大模型生成回复话术。  **默认取值**： 不涉及
+     * **参数解释**： 回复类型。 **约束限制**： 不涉及 **取值范围**： * SYSTEM_REPLY：系统自动回复预先设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SYSTEM_REPLY_AND_CALLBACK：系统自动回复预先设置的话术，同时回调给用户,携带设置的话术。 * SHOW_LAYER：仅显示叠加图层，不影响话术。 * INTELLIGENT_REPLY：使用配置的大模型生成回复话术。  **默认取值**： 不涉及
      */
     public static final class ReplyModeEnum {
 
@@ -37,6 +37,11 @@ public class TriggerProcess {
          * Enum CALLBACK for value: "CALLBACK"
          */
         public static final ReplyModeEnum CALLBACK = new ReplyModeEnum("CALLBACK");
+
+        /**
+         * Enum SYSTEM_REPLY_AND_CALLBACK for value: "SYSTEM_REPLY_AND_CALLBACK"
+         */
+        public static final ReplyModeEnum SYSTEM_REPLY_AND_CALLBACK = new ReplyModeEnum("SYSTEM_REPLY_AND_CALLBACK");
 
         /**
          * Enum SHOW_LAYER for value: "SHOW_LAYER"
@@ -54,6 +59,7 @@ public class TriggerProcess {
             Map<String, ReplyModeEnum> map = new HashMap<>();
             map.put("SYSTEM_REPLY", SYSTEM_REPLY);
             map.put("CALLBACK", CALLBACK);
+            map.put("SYSTEM_REPLY_AND_CALLBACK", SYSTEM_REPLY_AND_CALLBACK);
             map.put("SHOW_LAYER", SHOW_LAYER);
             map.put("INTELLIGENT_REPLY", INTELLIGENT_REPLY);
             return Collections.unmodifiableMap(map);
@@ -391,7 +397,7 @@ public class TriggerProcess {
     }
 
     /**
-     * **参数解释**： 回复类型。 **约束限制**： 不涉及 **取值范围**： * SYSTEM_REPLY：系统自动回复预先设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SHOW_LAYER：仅显示叠加图层，不影响话术。 * INTELLIGENT_REPLY：使用配置的大模型生成回复话术。  **默认取值**： 不涉及
+     * **参数解释**： 回复类型。 **约束限制**： 不涉及 **取值范围**： * SYSTEM_REPLY：系统自动回复预先设置的话术。 * CALLBACK：回调给其他服务，携带设置的话术。 * SYSTEM_REPLY_AND_CALLBACK：系统自动回复预先设置的话术，同时回调给用户,携带设置的话术。 * SHOW_LAYER：仅显示叠加图层，不影响话术。 * INTELLIGENT_REPLY：使用配置的大模型生成回复话术。  **默认取值**： 不涉及
      * @return replyMode
      */
     public ReplyModeEnum getReplyMode() {

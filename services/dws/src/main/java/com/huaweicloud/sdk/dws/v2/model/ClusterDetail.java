@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 集群详情对象
+ * **参数解释**： 集群详情对象。 **取值范围**： 非null
  */
 public class ClusterDetail {
 
@@ -91,11 +91,6 @@ public class ClusterDetail {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "node_type")
-
-    private String nodeType;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vpc_id")
 
     private String vpcId;
@@ -134,6 +129,11 @@ public class ClusterDetail {
     @JsonProperty(value = "parameter_group")
 
     private ParameterGroup parameterGroup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "node_type")
+
+    private String nodeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_type_id")
@@ -181,7 +181,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 集群ID
+     * **参数解释**： 集群ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -198,7 +198,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 集群名称
+     * **参数解释**： 集群名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -215,7 +215,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 集群状态，有效值包括： - CREATING：创建中 - ACTIVE：可用 - FAILED：不可用 - CREATE_FAILED：创建失败 - DELETING：删除中 - DELETE_FAILED：删除失败 - DELETED：已删除 - FROZEN：普通冻结 - POLICE_FROZEN：公安冻结
+     * **参数解释**： 集群状态。 **取值范围**： - CREATING：创建中 - ACTIVE：可用 - FAILED：不可用 - CREATE_FAILED：创建失败 - DELETING：删除中 - DELETE_FAILED：删除失败 - DELETED：已删除 - FROZEN：普通冻结 - POLICE_FROZEN：公安冻结
      * @return status
      */
     public String getStatus() {
@@ -232,7 +232,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 数据仓库版本
+     * **参数解释**： 数据仓库版本。 **取值范围**： 不涉及。
      * @return version
      */
     public String getVersion() {
@@ -249,7 +249,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 集群上次修改时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ
+     * **参数解释**： 集群上次修改时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ **取值范围**： 不涉及。
      * @return updated
      */
     public String getUpdated() {
@@ -266,7 +266,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 集群创建时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ
+     * **参数解释**： 集群创建时间，格式为ISO8601：YYYY-MM-DDThh:mm:ssZ **取值范围**： 不涉及。
      * @return created
      */
     public String getCreated() {
@@ -283,7 +283,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 集群服务端口。
+     * **参数解释**： 集群服务端口。 **取值范围**： 8000~30000
      * @return port
      */
     public Integer getPort() {
@@ -316,7 +316,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 集群的内网连接信息。
+     * **参数解释**： 集群的内网连接信息。 **取值范围**： 非空对象数组。
      * @return endpoints
      */
     public List<Endpoints> getEndpoints() {
@@ -349,7 +349,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 集群实例
+     * **参数解释**： 集群实例。 **取值范围**： 非空对象数组。
      * @return nodes
      */
     public List<Nodes> getNodes() {
@@ -382,7 +382,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 集群标签
+     * **参数解释**： 集群标签。 **取值范围**： 不涉及。
      * @return tags
      */
     public List<Tags> getTags() {
@@ -399,7 +399,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 管理员用户名
+     * **参数解释**： 管理员用户名。 **取值范围**： 不涉及。
      * @return userName
      */
     public String getUserName() {
@@ -416,7 +416,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 节点数量
+     * **参数解释**： 节点数量。 **取值范围**： 不涉及。
      * @return numberOfNode
      */
     public Integer getNumberOfNode() {
@@ -433,7 +433,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 事件数
+     * **参数解释**： 事件数。 **取值范围**： 不涉及。
      * @return recentEvent
      */
     public Integer getRecentEvent() {
@@ -450,7 +450,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 可用区
+     * **参数解释**： 可用区。 **取值范围**： 不涉及。
      * @return availabilityZone
      */
     public String getAvailabilityZone() {
@@ -467,7 +467,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 企业项目ID。值为0表示默认企业项目“default”。
+     * **参数解释**： 企业项目ID，对集群指定企业项目。如果未指定，则使用默认企业项目“default”的ID，即0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -478,30 +478,13 @@ public class ClusterDetail {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    public ClusterDetail withNodeType(String nodeType) {
-        this.nodeType = nodeType;
-        return this;
-    }
-
-    /**
-     * 节点类型
-     * @return nodeType
-     */
-    public String getNodeType() {
-        return nodeType;
-    }
-
-    public void setNodeType(String nodeType) {
-        this.nodeType = nodeType;
-    }
-
     public ClusterDetail withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
 
     /**
-     * 虚拟私有云ID
+     * **参数解释**： 虚拟私有云ID。 **取值范围**： 不涉及。
      * @return vpcId
      */
     public String getVpcId() {
@@ -518,7 +501,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 子网ID
+     * **参数解释**： 子网ID。 **取值范围**： 不涉及。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -577,7 +560,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 集群的公网连接信息，如果未指定，则默认不使用公网连接信息。
+     * **参数解释**： 公网IP地址，如果未指定，则默认不使用公网连接。 **取值范围**： 不涉及。
      * @return publicEndpoints
      */
     public List<PublicEndpoints> getPublicEndpoints() {
@@ -610,7 +593,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 任务信息，由key、value组成。key值为正在进行的任务，value值为正在进行任务的进度。key值的有效值包括： - CREATING：创建中 - RESTORING：恢复中 - SNAPSHOTTING：快照中 - GROWING：扩容中 - REBOOTING：重启中 - SETTING_CONFIGURATION：安全设置配置中 - CONFIGURING_EXT_DATASOURCE：MRS连接配置中 - ADD_CN_ING：增加CN中 - DEL_CN_ING：删除CN中 - REDISTRIBUTING：重分布中 - ELB_BINDING：弹性负载均衡绑定中 - ELB_UNBINDING：弹性负载均衡解绑中 - ELB_SWITCHING：弹性负载均衡切换中 - NETWORK_CONFIGURING：网络配置中 - DISK_EXPANDING：磁盘扩容中 - ACTIVE_STANDY_SWITCHOVER：主备恢复中 - CLUSTER_SHRINKING：缩容中 - SHRINK_CHECKING：缩容检测中 - FLAVOR_RESIZING：规格变更中 - MANAGE_IP_BINDING：登录开通中 - FINE_GRAINED_RESTORING：细粒度恢复中 - DR_RECOVERING：容灾恢复中 - REPAIRING：修复中
+     * **参数解释**： 任务信息，由key、value组成。key值为正在进行的任务，value值为正在进行任务的进度。 **取值范围**： key值的有效值包括但不限于以下： - CREATING：创建中 - RESTORING：恢复中 - SNAPSHOTTING：快照中 - GROWING：扩容中 - REBOOTING：重启中 - SETTING_CONFIGURATION：安全设置配置中 - CONFIGURING_EXT_DATASOURCE：MRS连接配置中 - ADD_CN_ING：增加CN中 - DEL_CN_ING：删除CN中 - REDISTRIBUTING：重分布中 - ELB_BINDING：弹性负载均衡绑定中 - ELB_UNBINDING：弹性负载均衡解绑中 - ELB_SWITCHING：弹性负载均衡切换中 - NETWORK_CONFIGURING：网络配置中 - DISK_EXPANDING：磁盘扩容中 - ACTIVE_STANDY_SWITCHOVER：主备恢复中 - CLUSTER_SHRINKING：缩容中 - SHRINK_CHECKING：缩容检测中 - FLAVOR_RESIZING：规格变更中 - MANAGE_IP_BINDING：登录开通中 - FINE_GRAINED_RESTORING：细粒度恢复中 - DR_RECOVERING：容灾恢复中 - REPAIRING：修复中
      * @return actionProgress
      */
     public Map<String, String> getActionProgress() {
@@ -627,7 +610,7 @@ public class ClusterDetail {
     }
 
     /**
-     * “可用”集群状态的子状态，有效值包括：  - NORMAL：正常 - READONLY：只读 - REDISTRIBUTING：重分布中 - REDISTRIBUTION-FAILURE：重分布失败 - UNBALANCED：非均衡 - UNBALANCED | READONLY：非均衡，只读 - DEGRADED：节点故障 - DEGRADED | READONLY：节点故障，只读 - DEGRADED | UNBALANCED：节点故障，非均衡 - UNBALANCED | REDISTRIBUTING：非均衡，重分布中 - UNBALANCED | REDISTRIBUTION-FAILURE：非均衡，重分布失败 - READONLY | REDISTRIBUTION-FAILURE：只读，重分布失败 - UNBALANCED | READONLY | REDISTRIBUTION-FAILURE：非均衡，只读，重分布失败 - DEGRADED | REDISTRIBUTION-FAILURE：节点故障，重分布失败 - DEGRADED | UNBALANCED | REDISTRIBUTION-FAILURE：节点故障，非均衡，只读，重分布失败 - DEGRADED | UNBALANCED | READONLY | REDISTRIBUTION-FAILURE：节点故障，非均衡，只读，重分布失败 - DEGRADED | UNBALANCED | READONLY：节点故障，非均衡，只读
+     * **参数解释**： “可用”集群状态的子状态。 **取值范围**： 有效值包括： - NORMAL：正常 - READONLY：只读 - REDISTRIBUTING：重分布中 - REDISTRIBUTION-FAILURE：重分布失败 - UNBALANCED：非均衡 - UNBALANCED | READONLY：非均衡，只读 - DEGRADED：节点故障 - DEGRADED | READONLY：节点故障，只读 - DEGRADED | UNBALANCED：节点故障，非均衡 - UNBALANCED | REDISTRIBUTING：非均衡，重分布中 - UNBALANCED | REDISTRIBUTION-FAILURE：非均衡，重分布失败 - READONLY | REDISTRIBUTION-FAILURE：只读，重分布失败 - UNBALANCED | READONLY | REDISTRIBUTION-FAILURE：非均衡，只读，重分布失败 - DEGRADED | REDISTRIBUTION-FAILURE：节点故障，重分布失败 - DEGRADED | UNBALANCED | REDISTRIBUTION-FAILURE：节点故障，非均衡，只读，重分布失败 - DEGRADED | UNBALANCED | READONLY | REDISTRIBUTION-FAILURE：节点故障，非均衡，只读，重分布失败 - DEGRADED | UNBALANCED | READONLY：节点故障，非均衡，只读
      * @return subStatus
      */
     public String getSubStatus() {
@@ -644,7 +627,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 集群管理任务，有效值包括： - UNFREEZING：解冻中 - FREEZING：冻结中 - RESTORING：恢复中 - SNAPSHOTTING：快照中 - GROWING：扩容中 - REBOOTING：重启中 - SETTING_CONFIGURATION：安全设置配置中 - CONFIGURING_EXT_DATASOURCE：MRS连接配置中 - DELETING_EXT_DATASOURCE：删除MRS连接 - REBOOT_FAILURE：重启失败 - RESIZE_FAILURE：扩容失败 - ADD_CN_ING：增加CN中 - DEL_CN_ING：删除CN中 - CREATING_NODE：添加节点 - CREATE_NODE_FAILED：添加节点失败 - DELETING_NODE：删除节点 - DELETE_NODE_FAILED：删除节点失败 - REDISTRIBUTING：重分布中 - REDISTRIBUTE_FAILURE：重分布失败 - WAITING_REDISTRIBUTION：待重分布 - REDISTRIBUTION_PAUSED：重分布暂停 - ELB_BINDING：弹性负载均衡绑定中 - ELB_BIND_FAILED：弹性负载均衡绑定失败 - ELB_UNBINDING：弹性负载均衡解绑中 - ELB_UNBIND_FAILED：弹性负载均衡解绑失败 - ELB_SWITCHING：弹性负载均衡切换中 - ELB_SWITCHING_FAILED：弹性负载均衡切换失败 - NETWORK_CONFIGURING：网络配置中 - NETWORK_CONFIG_FAILED：网络配置失败 - DISK_EXPAND_FAILED：磁盘扩容失败 - DISK_EXPANDING：磁盘扩容中 - ACTIVE_STANDY_SWITCHOVER：主备恢复中 - ACTIVE_STANDY_SWITCHOVER_FAILURE：主备恢复失败 - CLUSTER_SHRINK_FAILED：缩容失败 - CLUSTER_SHRINKING：缩容中 - SHRINK_CHECK_FAILED：缩容检测失败 - SHRINK_CHECKING：缩容检测中 - FLAVOR_RESIZING_FAILED：规格变更失败 - FLAVOR_RESIZING：规格变更中 - MANAGE_IP_BIND_FAILED：登录开通失败 - MANAGE_IP_BINDING：登录开通中 - ORDER_PENDING：订单待支付 - FINE_GRAINED_RESTORING：细粒度恢复中 - DR_RECOVERING：容灾恢复中
+     * **参数解释**： 集群管理任务。 **取值范围**： 有效值包括但不限于以下： - UNFREEZING：解冻中 - FREEZING：冻结中 - RESTORING：恢复中 - SNAPSHOTTING：快照中 - GROWING：扩容中 - REBOOTING：重启中 - SETTING_CONFIGURATION：安全设置配置中 - CONFIGURING_EXT_DATASOURCE：MRS连接配置中 - DELETING_EXT_DATASOURCE：删除MRS连接 - REBOOT_FAILURE：重启失败 - RESIZE_FAILURE：扩容失败 - ADD_CN_ING：增加CN中 - DEL_CN_ING：删除CN中 - CREATING_NODE：添加节点 - CREATE_NODE_FAILED：添加节点失败 - DELETING_NODE：删除节点 - DELETE_NODE_FAILED：删除节点失败 - REDISTRIBUTING：重分布中 - REDISTRIBUTE_FAILURE：重分布失败 - WAITING_REDISTRIBUTION：待重分布 - REDISTRIBUTION_PAUSED：重分布暂停 - ELB_BINDING：弹性负载均衡绑定中 - ELB_BIND_FAILED：弹性负载均衡绑定失败 - ELB_UNBINDING：弹性负载均衡解绑中 - ELB_UNBIND_FAILED：弹性负载均衡解绑失败 - ELB_SWITCHING：弹性负载均衡切换中 - ELB_SWITCHING_FAILED：弹性负载均衡切换失败 - NETWORK_CONFIGURING：网络配置中 - NETWORK_CONFIG_FAILED：网络配置失败 - DISK_EXPAND_FAILED：磁盘扩容失败 - DISK_EXPANDING：磁盘扩容中 - ACTIVE_STANDY_SWITCHOVER：主备恢复中 - ACTIVE_STANDY_SWITCHOVER_FAILURE：主备恢复失败 - CLUSTER_SHRINK_FAILED：缩容失败 - CLUSTER_SHRINKING：缩容中 - SHRINK_CHECK_FAILED：缩容检测失败 - SHRINK_CHECKING：缩容检测中 - FLAVOR_RESIZING_FAILED：规格变更失败 - FLAVOR_RESIZING：规格变更中 - MANAGE_IP_BIND_FAILED：登录开通失败 - MANAGE_IP_BINDING：登录开通中 - ORDER_PENDING：订单待支付 - FINE_GRAINED_RESTORING：细粒度恢复中 - DR_RECOVERING：容灾恢复中
      * @return taskStatus
      */
     public String getTaskStatus() {
@@ -681,13 +664,30 @@ public class ClusterDetail {
         this.parameterGroup = parameterGroup;
     }
 
+    public ClusterDetail withNodeType(String nodeType) {
+        this.nodeType = nodeType;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 集群规格。 **取值范围**： 不涉及。
+     * @return nodeType
+     */
+    public String getNodeType() {
+        return nodeType;
+    }
+
+    public void setNodeType(String nodeType) {
+        this.nodeType = nodeType;
+    }
+
     public ClusterDetail withNodeTypeId(String nodeTypeId) {
         this.nodeTypeId = nodeTypeId;
         return this;
     }
 
     /**
-     * 节点类型ID
+     * **参数解释**： 集群规格ID。 **取值范围**： 不涉及。
      * @return nodeTypeId
      */
     public String getNodeTypeId() {
@@ -704,7 +704,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 安全组ID
+     * **参数解释**： 安全组ID。 **取值范围**： 不涉及。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -721,7 +721,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 订单ID，仅包周期场景返回。
+     * **参数解释**： 订单ID，仅包周期场景返回。非空时可用于区分当前是包周期集群。 **取值范围**： 不涉及。
      * @return orderId
      */
     public String getOrderId() {
@@ -754,7 +754,7 @@ public class ClusterDetail {
     }
 
     /**
-     * 内网IP地址列表
+     * **参数解释**： 内网IP地址列表。 **取值范围**： 不涉及。
      * @return privateIp
      */
     public List<String> getPrivateIp() {
@@ -887,12 +887,12 @@ public class ClusterDetail {
             && Objects.equals(this.recentEvent, that.recentEvent)
             && Objects.equals(this.availabilityZone, that.availabilityZone)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
-            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.vpcId, that.vpcId)
-            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.publicIp, that.publicIp)
             && Objects.equals(this.publicEndpoints, that.publicEndpoints)
             && Objects.equals(this.actionProgress, that.actionProgress)
             && Objects.equals(this.subStatus, that.subStatus) && Objects.equals(this.taskStatus, that.taskStatus)
-            && Objects.equals(this.parameterGroup, that.parameterGroup)
+            && Objects.equals(this.parameterGroup, that.parameterGroup) && Objects.equals(this.nodeType, that.nodeType)
             && Objects.equals(this.nodeTypeId, that.nodeTypeId)
             && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.orderId, that.orderId)
             && Objects.equals(this.privateIp, that.privateIp)
@@ -918,7 +918,6 @@ public class ClusterDetail {
             recentEvent,
             availabilityZone,
             enterpriseProjectId,
-            nodeType,
             vpcId,
             subnetId,
             publicIp,
@@ -927,6 +926,7 @@ public class ClusterDetail {
             subStatus,
             taskStatus,
             parameterGroup,
+            nodeType,
             nodeTypeId,
             securityGroupId,
             orderId,
@@ -956,7 +956,6 @@ public class ClusterDetail {
         sb.append("    recentEvent: ").append(toIndentedString(recentEvent)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
-        sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
         sb.append("    vpcId: ").append(toIndentedString(vpcId)).append("\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
         sb.append("    publicIp: ").append(toIndentedString(publicIp)).append("\n");
@@ -965,6 +964,7 @@ public class ClusterDetail {
         sb.append("    subStatus: ").append(toIndentedString(subStatus)).append("\n");
         sb.append("    taskStatus: ").append(toIndentedString(taskStatus)).append("\n");
         sb.append("    parameterGroup: ").append(toIndentedString(parameterGroup)).append("\n");
+        sb.append("    nodeType: ").append(toIndentedString(nodeType)).append("\n");
         sb.append("    nodeTypeId: ").append(toIndentedString(nodeTypeId)).append("\n");
         sb.append("    securityGroupId: ").append(toIndentedString(securityGroupId)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");

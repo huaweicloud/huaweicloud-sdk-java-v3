@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群实例对象
+ * **参数解释**： 集群实例对象。 **取值范围**： 非空对象列表。
  */
 public class Nodes {
 
@@ -20,13 +20,18 @@ public class Nodes {
 
     private String status;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "name")
+
+    private String name;
+
     public Nodes withId(String id) {
         this.id = id;
         return this;
     }
 
     /**
-     * 集群实例ID
+     * **参数解释**： 集群实例ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -43,7 +48,7 @@ public class Nodes {
     }
 
     /**
-     * 集群实例状态 - 100：创建中 - 199：空闲 - 200：可用 - 300：不可用 - 303：创建失败 - 304：删除中 - 305：删除失败 - 400：已删除
+     * **参数解释**： 集群实例状态。 **取值范围**： 100：创建中 199：空闲 200：可用 300：不可用 303：创建失败 304：删除中 305：删除失败 400：已删除
      * @return status
      */
     public String getStatus() {
@@ -52,6 +57,23 @@ public class Nodes {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Nodes withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 实例名称。 **取值范围**： 不涉及。
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -63,12 +85,13 @@ public class Nodes {
             return false;
         }
         Nodes that = (Nodes) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, status);
+        return Objects.hash(id, status, name);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class Nodes {
         sb.append("class Nodes {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }

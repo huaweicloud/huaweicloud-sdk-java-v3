@@ -31,7 +31,7 @@ public class WafProductInfo {
     }
 
     /**
-     * waf规格   -  professional：标准   - enterprise：专业   - ultimate：铂金版
+     * waf规格   -  professional：标准   - enterprise：专业   - ultimate：企业版
      * @return resourceSpecCode
      */
     public String getResourceSpecCode() {

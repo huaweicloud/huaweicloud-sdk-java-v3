@@ -160,6 +160,9 @@ import com.huaweicloud.sdk.cce.v3.model.ListUpgradeClusterTasksRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListUpgradeClusterTasksResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListUpgradeWorkFlowsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListUpgradeWorkFlowsResponse;
+import com.huaweicloud.sdk.cce.v3.model.LockNodeScaledownRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.LockNodepoolNodeScaleDownRequest;
+import com.huaweicloud.sdk.cce.v3.model.LockNodepoolNodeScaleDownResponse;
 import com.huaweicloud.sdk.cce.v3.model.MaintenanceWindow;
 import com.huaweicloud.sdk.cce.v3.model.MasterEIPRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeRequest;
@@ -276,6 +279,9 @@ import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionResponse;
 import com.huaweicloud.sdk.cce.v3.model.SyncNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.SyncNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.UnlockNodeScaledownRequestBody;
+import com.huaweicloud.sdk.cce.v3.model.UnlockNodepoolNodeScaleDownRequest;
+import com.huaweicloud.sdk.cce.v3.model.UnlockNodepoolNodeScaleDownResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotAddonInstanceRequest;
@@ -1584,6 +1590,39 @@ public class CceMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<LockNodepoolNodeScaleDownRequest, LockNodepoolNodeScaleDownResponse> lockNodepoolNodeScaleDown =
+        genForLockNodepoolNodeScaleDown();
+
+    private static HttpRequestDef<LockNodepoolNodeScaleDownRequest, LockNodepoolNodeScaleDownResponse> genForLockNodepoolNodeScaleDown() {
+        // basic
+        HttpRequestDef.Builder<LockNodepoolNodeScaleDownRequest, LockNodepoolNodeScaleDownResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    LockNodepoolNodeScaleDownRequest.class,
+                    LockNodepoolNodeScaleDownResponse.class)
+                .withName("LockNodepoolNodeScaleDown")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/locknodescaledown")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(LockNodepoolNodeScaleDownRequest::getClusterId,
+                LockNodepoolNodeScaleDownRequest::setClusterId));
+        builder.<LockNodeScaledownRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(LockNodeScaledownRequestBody.class),
+            f -> f.withMarshaller(LockNodepoolNodeScaleDownRequest::getBody,
+                LockNodepoolNodeScaleDownRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<MigrateNodeRequest, MigrateNodeResponse> migrateNode = genForMigrateNode();
 
     private static HttpRequestDef<MigrateNodeRequest, MigrateNodeResponse> genForMigrateNode() {
@@ -2504,6 +2543,39 @@ public class CceMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(SyncNodeResponse::getBody, SyncNodeResponse::setBody));
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UnlockNodepoolNodeScaleDownRequest, UnlockNodepoolNodeScaleDownResponse> unlockNodepoolNodeScaleDown =
+        genForUnlockNodepoolNodeScaleDown();
+
+    private static HttpRequestDef<UnlockNodepoolNodeScaleDownRequest, UnlockNodepoolNodeScaleDownResponse> genForUnlockNodepoolNodeScaleDown() {
+        // basic
+        HttpRequestDef.Builder<UnlockNodepoolNodeScaleDownRequest, UnlockNodepoolNodeScaleDownResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    UnlockNodepoolNodeScaleDownRequest.class,
+                    UnlockNodepoolNodeScaleDownResponse.class)
+                .withName("UnlockNodepoolNodeScaleDown")
+                .withUri("/api/v3/projects/{project_id}/clusters/{cluster_id}/nodes/unlocknodescaledown")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UnlockNodepoolNodeScaleDownRequest::getClusterId,
+                UnlockNodepoolNodeScaleDownRequest::setClusterId));
+        builder.<UnlockNodeScaledownRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UnlockNodeScaledownRequestBody.class),
+            f -> f.withMarshaller(UnlockNodepoolNodeScaleDownRequest::getBody,
+                UnlockNodepoolNodeScaleDownRequest::setBody));
+
+        // response
 
         return builder.build();
     }

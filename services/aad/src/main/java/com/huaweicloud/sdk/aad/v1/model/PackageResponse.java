@@ -36,7 +36,7 @@ public class PackageResponse {
     private Integer protectionType;
 
     /**
-     * 防护包类型。cnad_pro：专业版；cnad_ip：标准版；cnad_ep：铂金版；cnad_full_high：全力防高级版；cnad_vic：按需版；cnad_intl_ep：国际站铂金版
+     * 实例类型。cnad_pro：专业版；cnad_ip：标准版；cnad_ep：铂金版；cnad_full_high：全力防高级版；cnad_vic：按需版；cnad_intl_ep：国际站铂金版
      */
     public static final class InstanceTypeEnum {
 
@@ -230,7 +230,7 @@ public class PackageResponse {
     }
 
     /**
-     * 防护包id
+     * 实例id
      * @return packageId
      */
     public String getPackageId() {
@@ -247,7 +247,7 @@ public class PackageResponse {
     }
 
     /**
-     * 防护包名
+     * 实例名
      * @return packageName
      */
     public String getPackageName() {
@@ -300,7 +300,7 @@ public class PackageResponse {
     }
 
     /**
-     * 防护包类型。cnad_pro：专业版；cnad_ip：标准版；cnad_ep：铂金版；cnad_full_high：全力防高级版；cnad_vic：按需版；cnad_intl_ep：国际站铂金版
+     * 实例类型。cnad_pro：专业版；cnad_ip：标准版；cnad_ep：铂金版；cnad_full_high：全力防高级版；cnad_vic：按需版；cnad_intl_ep：国际站铂金版
      * @return instanceType
      */
     public InstanceTypeEnum getInstanceType() {
@@ -590,7 +590,7 @@ public class PackageResponse {
     }
 
     /**
-     * 是否旧防护包（旧防护包不支持升级规格）,默认不传为否
+     * 是否旧实例（旧实例不支持升级规格）,默认不传为否
      * @return isOld
      */
     public Boolean getIsOld() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CompatibleInstanceVolumeResp
+ * **参数解释**： 容量相关信息。 **取值范围**： 不涉及。
  */
 public class CompatibleInstanceVolumeResp {
 
@@ -31,7 +31,7 @@ public class CompatibleInstanceVolumeResp {
     }
 
     /**
-     * 类型
+     * **参数解释**： 类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -48,7 +48,7 @@ public class CompatibleInstanceVolumeResp {
     }
 
     /**
-     * 连接
+     * **参数解释**： 已使用空间。 **取值范围**： 不涉及。
      * @return used
      */
     public Float getUsed() {
@@ -65,7 +65,7 @@ public class CompatibleInstanceVolumeResp {
     }
 
     /**
-     * 大小
+     * **参数解释**： 总大小。 **取值范围**： 不涉及。
      * @return size
      */
     public Integer getSize() {

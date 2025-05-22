@@ -26,7 +26,7 @@ public class ListSnapshotCrossRegionRequest {
     }
 
     /**
-     * 分页偏移，默认0
+     * **参数解释**： 分页查询，偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
      * @return offset
      */
     public Integer getOffset() {
@@ -43,7 +43,7 @@ public class ListSnapshotCrossRegionRequest {
     }
 
     /**
-     * 分页大小，默认10
+     * **参数解释**： 分页单页大小。 **约束限制**： 不涉及。 **取值范围**： 大于0。 **默认取值**： 10
      * @return limit
      */
     public Integer getLimit() {

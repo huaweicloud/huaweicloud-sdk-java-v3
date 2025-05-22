@@ -51,7 +51,7 @@ public class ListLogicalClustersResponse extends SdkResponse {
     }
 
     /**
-     * 逻辑集群列表信息
+     * **参数解释**： 逻辑集群列表信息。 **取值范围**： 不涉及。
      * @return logicalClusters
      */
     public List<LogicalClusterInfo> getLogicalClusters() {
@@ -68,7 +68,7 @@ public class ListLogicalClustersResponse extends SdkResponse {
     }
 
     /**
-     * 逻辑集群总数量
+     * **参数解释**： 逻辑集群总数量。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {
@@ -85,7 +85,7 @@ public class ListLogicalClustersResponse extends SdkResponse {
     }
 
     /**
-     * 作为互斥结果，如果集群内有其他运维操作，该值为false，此时不能添加逻辑集群
+     * **参数解释**： 作为互斥结果，如果集群内有其他运维操作，该值为false，此时不能添加逻辑集群。 **取值范围**： 不涉及。
      * @return addEnable
      */
     public Boolean getAddEnable() {

@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 集群拓扑实例环信息
+ * **参数解释**： 集群拓扑实例环信息。 **取值范围**： 不涉及。
  */
 public class TopoRingInfo {
 
@@ -40,7 +40,7 @@ public class TopoRingInfo {
     }
 
     /**
-     * 集群实例列表信息
+     * **参数解释**： 集群实例列表信息。 **取值范围**： 不涉及。
      * @return instanceInfoLists
      */
     public List<TopoInstanceInfo> getInstanceInfoLists() {

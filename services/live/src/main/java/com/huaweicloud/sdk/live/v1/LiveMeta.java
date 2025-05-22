@@ -137,6 +137,9 @@ import com.huaweicloud.sdk.live.v1.model.ScheduleRecordTasksReq;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainInfo;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainRequest;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowChannelStatisticReq;
+import com.huaweicloud.sdk.live.v1.model.ShowChannelStatisticRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowChannelStatisticResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainHttpsCertRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainHttpsCertResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainRequest;
@@ -2569,6 +2572,51 @@ public class LiveMeta {
             TypeCasts.uncheckedConversion(ModifyOttChannelState.class),
             f -> f.withMarshaller(ModifyOttChannelInfoStatsRequest::getBody,
                 ModifyOttChannelInfoStatsRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowChannelStatisticRequest, ShowChannelStatisticResponse> showChannelStatistic =
+        genForShowChannelStatistic();
+
+    private static HttpRequestDef<ShowChannelStatisticRequest, ShowChannelStatisticResponse> genForShowChannelStatistic() {
+        // basic
+        HttpRequestDef.Builder<ShowChannelStatisticRequest, ShowChannelStatisticResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ShowChannelStatisticRequest.class, ShowChannelStatisticResponse.class)
+            .withName("ShowChannelStatistic")
+            .withUri("/v1/{project_id}/ott/channels/statistic")
+            .withContentType("application/json; charset=UTF-8");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowChannelStatisticRequest::getLimit, ShowChannelStatisticRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowChannelStatisticRequest::getOffset, ShowChannelStatisticRequest::setOffset));
+        builder.<String>withRequestField("Access-Control-Allow-Internal",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowChannelStatisticRequest::getAccessControlAllowInternal,
+                ShowChannelStatisticRequest::setAccessControlAllowInternal));
+        builder.<String>withRequestField("Access-Control-Allow-External",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowChannelStatisticRequest::getAccessControlAllowExternal,
+                ShowChannelStatisticRequest::setAccessControlAllowExternal));
+        builder.<ShowChannelStatisticReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ShowChannelStatisticReq.class),
+            f -> f.withMarshaller(ShowChannelStatisticRequest::getBody, ShowChannelStatisticRequest::setBody));
 
         // response
 

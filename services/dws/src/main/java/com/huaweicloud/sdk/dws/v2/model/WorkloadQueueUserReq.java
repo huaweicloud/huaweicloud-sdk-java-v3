@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 资源队列用户。
+ * **参数解释**： 工作负载队列用户信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class WorkloadQueueUserReq {
 
@@ -29,7 +29,7 @@ public class WorkloadQueueUserReq {
     }
 
     /**
-     * 工作队列名称。
+     * **参数解释**： 工作负载队列名称。。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return queueName
      */
     public String getQueueName() {
@@ -62,7 +62,7 @@ public class WorkloadQueueUserReq {
     }
 
     /**
-     * 资源队列用户列表
+     * **参数解释**： 工作负载队列用户列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return userList
      */
     public List<WorkloadQueueUserReqUserList> getUserList() {

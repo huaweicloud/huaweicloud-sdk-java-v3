@@ -142,6 +142,8 @@ import com.huaweicloud.sdk.cce.v3.model.ListUpgradeClusterTasksRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListUpgradeClusterTasksResponse;
 import com.huaweicloud.sdk.cce.v3.model.ListUpgradeWorkFlowsRequest;
 import com.huaweicloud.sdk.cce.v3.model.ListUpgradeWorkFlowsResponse;
+import com.huaweicloud.sdk.cce.v3.model.LockNodepoolNodeScaleDownRequest;
+import com.huaweicloud.sdk.cce.v3.model.LockNodepoolNodeScaleDownResponse;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.MigrateNodeResponse;
 import com.huaweicloud.sdk.cce.v3.model.PauseUpgradeClusterTaskRequest;
@@ -242,6 +244,8 @@ import com.huaweicloud.sdk.cce.v3.model.ShowVersionRequest;
 import com.huaweicloud.sdk.cce.v3.model.ShowVersionResponse;
 import com.huaweicloud.sdk.cce.v3.model.SyncNodeRequest;
 import com.huaweicloud.sdk.cce.v3.model.SyncNodeResponse;
+import com.huaweicloud.sdk.cce.v3.model.UnlockNodepoolNodeScaleDownRequest;
+import com.huaweicloud.sdk.cce.v3.model.UnlockNodepoolNodeScaleDownResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceRequest;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAddonInstanceResponse;
 import com.huaweicloud.sdk.cce.v3.model.UpdateAutopilotAddonInstanceRequest;
@@ -1605,6 +1609,36 @@ public class CceAsyncClient {
     }
 
     /**
+     * 节点开启缩容保护。
+     *
+     * 该API用于节点开启缩容保护，开启缩容保护的节点无法通过修改节点池个数的方式被缩容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request LockNodepoolNodeScaleDownRequest 请求对象
+     * @return CompletableFuture<LockNodepoolNodeScaleDownResponse>
+     */
+    public CompletableFuture<LockNodepoolNodeScaleDownResponse> lockNodepoolNodeScaleDownAsync(
+        LockNodepoolNodeScaleDownRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.lockNodepoolNodeScaleDown);
+    }
+
+    /**
+     * 节点开启缩容保护。
+     *
+     * 该API用于节点开启缩容保护，开启缩容保护的节点无法通过修改节点池个数的方式被缩容。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request LockNodepoolNodeScaleDownRequest 请求对象
+     * @return AsyncInvoker<LockNodepoolNodeScaleDownRequest, LockNodepoolNodeScaleDownResponse>
+     */
+    public AsyncInvoker<LockNodepoolNodeScaleDownRequest, LockNodepoolNodeScaleDownResponse> lockNodepoolNodeScaleDownAsyncInvoker(
+        LockNodepoolNodeScaleDownRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.lockNodepoolNodeScaleDown, hcClient);
+    }
+
+    /**
      * 节点迁移
      *
      * 该API用于在指定集群下迁移节点到另一集群。
@@ -2582,6 +2616,36 @@ public class CceAsyncClient {
      */
     public AsyncInvoker<SyncNodeRequest, SyncNodeResponse> syncNodeAsyncInvoker(SyncNodeRequest request) {
         return new AsyncInvoker<>(request, CceMeta.syncNode, hcClient);
+    }
+
+    /**
+     * 节点关闭缩容保护。
+     *
+     * 该API用于节点关闭缩容保护，关闭缩容保护的节点可以通过修改节点池个数的方式被缩容，只允许按需节点关闭缩容保护。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnlockNodepoolNodeScaleDownRequest 请求对象
+     * @return CompletableFuture<UnlockNodepoolNodeScaleDownResponse>
+     */
+    public CompletableFuture<UnlockNodepoolNodeScaleDownResponse> unlockNodepoolNodeScaleDownAsync(
+        UnlockNodepoolNodeScaleDownRequest request) {
+        return hcClient.asyncInvokeHttp(request, CceMeta.unlockNodepoolNodeScaleDown);
+    }
+
+    /**
+     * 节点关闭缩容保护。
+     *
+     * 该API用于节点关闭缩容保护，关闭缩容保护的节点可以通过修改节点池个数的方式被缩容，只允许按需节点关闭缩容保护。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UnlockNodepoolNodeScaleDownRequest 请求对象
+     * @return AsyncInvoker<UnlockNodepoolNodeScaleDownRequest, UnlockNodepoolNodeScaleDownResponse>
+     */
+    public AsyncInvoker<UnlockNodepoolNodeScaleDownRequest, UnlockNodepoolNodeScaleDownResponse> unlockNodepoolNodeScaleDownAsyncInvoker(
+        UnlockNodepoolNodeScaleDownRequest request) {
+        return new AsyncInvoker<>(request, CceMeta.unlockNodepoolNodeScaleDown, hcClient);
     }
 
     /**

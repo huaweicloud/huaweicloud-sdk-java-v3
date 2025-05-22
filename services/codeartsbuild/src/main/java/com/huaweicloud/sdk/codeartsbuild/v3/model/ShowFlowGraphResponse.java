@@ -30,7 +30,7 @@ public class ShowFlowGraphResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "result")
 
-    private FlowGraphResult result;
+    private FlowGraph2Result result;
 
     public ShowFlowGraphResponse withSuccess(Boolean success) {
         this.success = success;
@@ -83,14 +83,14 @@ public class ShowFlowGraphResponse extends SdkResponse {
         this.errCode = errCode;
     }
 
-    public ShowFlowGraphResponse withResult(FlowGraphResult result) {
+    public ShowFlowGraphResponse withResult(FlowGraph2Result result) {
         this.result = result;
         return this;
     }
 
-    public ShowFlowGraphResponse withResult(Consumer<FlowGraphResult> resultSetter) {
+    public ShowFlowGraphResponse withResult(Consumer<FlowGraph2Result> resultSetter) {
         if (this.result == null) {
-            this.result = new FlowGraphResult();
+            this.result = new FlowGraph2Result();
             resultSetter.accept(this.result);
         }
 
@@ -101,11 +101,11 @@ public class ShowFlowGraphResponse extends SdkResponse {
      * Get result
      * @return result
      */
-    public FlowGraphResult getResult() {
+    public FlowGraph2Result getResult() {
         return result;
     }
 
-    public void setResult(FlowGraphResult result) {
+    public void setResult(FlowGraph2Result result) {
         this.result = result;
     }
 

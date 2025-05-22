@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 逻辑集群节点信息
+ * 集群节点信息
  */
 public class ClusterNodeInfo {
 
@@ -56,7 +56,7 @@ public class ClusterNodeInfo {
     }
 
     /**
-     * 节点ID
+     * **参数解释**： 节点ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -73,7 +73,7 @@ public class ClusterNodeInfo {
     }
 
     /**
-     * 节点名称
+     * **参数解释**： 节点名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -90,7 +90,7 @@ public class ClusterNodeInfo {
     }
 
     /**
-     * 节点状态
+     * **参数解释**： 节点状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -107,7 +107,7 @@ public class ClusterNodeInfo {
     }
 
     /**
-     * 节点子状态
+     * **参数解释**： 节点子状态。 **取值范围**： 不涉及。
      * @return subStatus
      */
     public String getSubStatus() {
@@ -124,7 +124,7 @@ public class ClusterNodeInfo {
     }
 
     /**
-     * 节点规格
+     * **参数解释**： 节点规格。 **取值范围**： 不涉及。
      * @return spec
      */
     public String getSpec() {
@@ -141,7 +141,7 @@ public class ClusterNodeInfo {
     }
 
     /**
-     * 实例创建类型
+     * **参数解释**： 实例创建类型。 **取值范围**： - INST：已使用 - NODE：空闲节点
      * @return instCreateType
      */
     public String getInstCreateType() {
@@ -158,7 +158,7 @@ public class ClusterNodeInfo {
     }
 
     /**
-     * 节点别名
+     * **参数解释**： 节点别名。 **取值范围**： 不涉及。
      * @return aliasName
      */
     public String getAliasName() {
@@ -175,7 +175,7 @@ public class ClusterNodeInfo {
     }
 
     /**
-     * 可用区编码
+     * **参数解释**： 可用区编码。 **取值范围**： 不涉及。
      * @return azCode
      */
     public String getAzCode() {

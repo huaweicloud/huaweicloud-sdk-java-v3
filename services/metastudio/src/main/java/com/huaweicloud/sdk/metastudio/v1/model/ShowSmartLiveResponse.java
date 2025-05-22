@@ -206,7 +206,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
     private PlatformLiveDetailInfo relationLivePlatformInfo;
 
     /**
-     * 使用的资源类型。 * PERIOD：包周期资源 * ONDEMAND：按需资源 * UNKNOW：未知资源类型。
+     * 使用的资源类型。 * PERIOD：包周期资源 * ONDEMAND：按需资源 * ONE_TIME：一次性资源 * UNKNOW：未知资源类型。
      */
     public static final class UsedResourceTypeEnum {
 
@@ -221,6 +221,11 @@ public class ShowSmartLiveResponse extends SdkResponse {
         public static final UsedResourceTypeEnum ONDEMAND = new UsedResourceTypeEnum("ONDEMAND");
 
         /**
+         * Enum ONE_TIME for value: "ONE_TIME"
+         */
+        public static final UsedResourceTypeEnum ONE_TIME = new UsedResourceTypeEnum("ONE_TIME");
+
+        /**
          * Enum UNKNOW for value: "UNKNOW"
          */
         public static final UsedResourceTypeEnum UNKNOW = new UsedResourceTypeEnum("UNKNOW");
@@ -231,6 +236,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
             Map<String, UsedResourceTypeEnum> map = new HashMap<>();
             map.put("PERIOD", PERIOD);
             map.put("ONDEMAND", ONDEMAND);
+            map.put("ONE_TIME", ONE_TIME);
             map.put("UNKNOW", UNKNOW);
             return Collections.unmodifiableMap(map);
         }
@@ -706,7 +712,7 @@ public class ShowSmartLiveResponse extends SdkResponse {
     }
 
     /**
-     * 使用的资源类型。 * PERIOD：包周期资源 * ONDEMAND：按需资源 * UNKNOW：未知资源类型。
+     * 使用的资源类型。 * PERIOD：包周期资源 * ONDEMAND：按需资源 * ONE_TIME：一次性资源 * UNKNOW：未知资源类型。
      * @return usedResourceType
      */
     public UsedResourceTypeEnum getUsedResourceType() {

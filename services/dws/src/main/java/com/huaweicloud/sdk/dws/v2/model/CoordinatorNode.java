@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CN节点详情。
+ * **参数解释**： CN节点详情。 **取值范围**： 不涉及。
  */
 public class CoordinatorNode {
 
@@ -31,7 +31,7 @@ public class CoordinatorNode {
     }
 
     /**
-     * 节点ID。
+     * **参数解释**： 节点ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -48,7 +48,7 @@ public class CoordinatorNode {
     }
 
     /**
-     * 节点名称。
+     * **参数解释**： 节点名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -65,7 +65,7 @@ public class CoordinatorNode {
     }
 
     /**
-     * 内网IP。
+     * **参数解释**： 内网IP。 **取值范围**： 不涉及。
      * @return privateIp
      */
     public String getPrivateIp() {

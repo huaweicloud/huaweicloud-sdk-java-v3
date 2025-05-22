@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchCreateOrDeleteTagsResponse;
 import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsRequest;
 import com.huaweicloud.sdk.csms.v1.model.BatchImportSecretsResponse;
+import com.huaweicloud.sdk.csms.v1.model.CheckSecretsRequest;
+import com.huaweicloud.sdk.csms.v1.model.CheckSecretsResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyRequest;
 import com.huaweicloud.sdk.csms.v1.model.CreateAgencyResponse;
 import com.huaweicloud.sdk.csms.v1.model.CreateGrantsRequest;
@@ -71,6 +73,8 @@ import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretStageResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowSecretVersionResponse;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretsConfigRequest;
+import com.huaweicloud.sdk.csms.v1.model.ShowSecretsConfigResponse;
 import com.huaweicloud.sdk.csms.v1.model.ShowUserDetailRequest;
 import com.huaweicloud.sdk.csms.v1.model.ShowUserDetailResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateGrantRequest;
@@ -81,6 +85,8 @@ import com.huaweicloud.sdk.csms.v1.model.UpdateSecretRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateSecretStageResponse;
+import com.huaweicloud.sdk.csms.v1.model.UpdateSecretsConfigRequest;
+import com.huaweicloud.sdk.csms.v1.model.UpdateSecretsConfigResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateUserPasswordRequest;
 import com.huaweicloud.sdk.csms.v1.model.UpdateUserPasswordResponse;
 import com.huaweicloud.sdk.csms.v1.model.UpdateVersionRequest;
@@ -160,6 +166,35 @@ public class CsmsAsyncClient {
     public AsyncInvoker<BatchImportSecretsRequest, BatchImportSecretsResponse> batchImportSecretsAsyncInvoker(
         BatchImportSecretsRequest request) {
         return new AsyncInvoker<>(request, CsmsMeta.batchImportSecrets, hcClient);
+    }
+
+    /**
+     * 检测传入凭据的凭据强度
+     *
+     * 检测传入的凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckSecretsRequest 请求对象
+     * @return CompletableFuture<CheckSecretsResponse>
+     */
+    public CompletableFuture<CheckSecretsResponse> checkSecretsAsync(CheckSecretsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.checkSecrets);
+    }
+
+    /**
+     * 检测传入凭据的凭据强度
+     *
+     * 检测传入的凭据。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CheckSecretsRequest 请求对象
+     * @return AsyncInvoker<CheckSecretsRequest, CheckSecretsResponse>
+     */
+    public AsyncInvoker<CheckSecretsRequest, CheckSecretsResponse> checkSecretsAsyncInvoker(
+        CheckSecretsRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.checkSecrets, hcClient);
     }
 
     /**
@@ -1101,6 +1136,35 @@ public class CsmsAsyncClient {
     }
 
     /**
+     * 获取租户的凭据检测配置
+     *
+     * 获取租户的凭据检测配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecretsConfigRequest 请求对象
+     * @return CompletableFuture<ShowSecretsConfigResponse>
+     */
+    public CompletableFuture<ShowSecretsConfigResponse> showSecretsConfigAsync(ShowSecretsConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.showSecretsConfig);
+    }
+
+    /**
+     * 获取租户的凭据检测配置
+     *
+     * 获取租户的凭据检测配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowSecretsConfigRequest 请求对象
+     * @return AsyncInvoker<ShowSecretsConfigRequest, ShowSecretsConfigResponse>
+     */
+    public AsyncInvoker<ShowSecretsConfigRequest, ShowSecretsConfigResponse> showSecretsConfigAsyncInvoker(
+        ShowSecretsConfigRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.showSecretsConfig, hcClient);
+    }
+
+    /**
      * 获取用户详情
      *
      * 根据用户id查询用户详情。
@@ -1242,6 +1306,35 @@ public class CsmsAsyncClient {
     public AsyncInvoker<UpdateSecretStageRequest, UpdateSecretStageResponse> updateSecretStageAsyncInvoker(
         UpdateSecretStageRequest request) {
         return new AsyncInvoker<>(request, CsmsMeta.updateSecretStage, hcClient);
+    }
+
+    /**
+     * 更改获取租户的凭据检测配置
+     *
+     * 更改获取租户的凭据检测配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecretsConfigRequest 请求对象
+     * @return CompletableFuture<UpdateSecretsConfigResponse>
+     */
+    public CompletableFuture<UpdateSecretsConfigResponse> updateSecretsConfigAsync(UpdateSecretsConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, CsmsMeta.updateSecretsConfig);
+    }
+
+    /**
+     * 更改获取租户的凭据检测配置
+     *
+     * 更改获取租户的凭据检测配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateSecretsConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateSecretsConfigRequest, UpdateSecretsConfigResponse>
+     */
+    public AsyncInvoker<UpdateSecretsConfigRequest, UpdateSecretsConfigResponse> updateSecretsConfigAsyncInvoker(
+        UpdateSecretsConfigRequest request) {
+        return new AsyncInvoker<>(request, CsmsMeta.updateSecretsConfig, hcClient);
     }
 
     /**

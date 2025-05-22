@@ -46,7 +46,7 @@ public class ElbResp {
     }
 
     /**
-     * 公网ip
+     * **参数解释**： 公网ip。 **取值范围**： 有效的公网ipv4地址。
      * @return publicIp
      */
     public String getPublicIp() {
@@ -63,7 +63,7 @@ public class ElbResp {
     }
 
     /**
-     * 内网ip
+     * **参数解释**： 内网ip。 **取值范围**： 有效的内网ipv4地址。
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -80,7 +80,7 @@ public class ElbResp {
     }
 
     /**
-     * Elb终端地址
+     * **参数解释**： Elb终端地址。 **取值范围**： 不涉及。
      * @return privateEndpoint
      */
     public String getPrivateEndpoint() {
@@ -97,7 +97,7 @@ public class ElbResp {
     }
 
     /**
-     * Elb名称
+     * **参数解释**： Elb名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -114,7 +114,7 @@ public class ElbResp {
     }
 
     /**
-     * Elb的ID
+     * **参数解释**： Elb的ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -131,7 +131,7 @@ public class ElbResp {
     }
 
     /**
-     * Elb所属VPC的ID
+     * **参数解释**： Elb所属VPC的ID。 **取值范围**： 不涉及。
      * @return vpcId
      */
     public String getVpcId() {

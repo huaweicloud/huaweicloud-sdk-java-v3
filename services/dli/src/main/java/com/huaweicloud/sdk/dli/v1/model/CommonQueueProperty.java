@@ -25,6 +25,11 @@ public class CommonQueueProperty {
 
     private Integer computeEngineMaxPrefetchInstance;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "computeEngine.spark.nativeEnabled")
+
+    private String computeEngineSparkNativeEnabled;
+
     public CommonQueueProperty withComputeEngineMaxInstance(Integer computeEngineMaxInstance) {
         this.computeEngineMaxInstance = computeEngineMaxInstance;
         return this;
@@ -78,6 +83,23 @@ public class CommonQueueProperty {
         this.computeEngineMaxPrefetchInstance = computeEngineMaxPrefetchInstance;
     }
 
+    public CommonQueueProperty withComputeEngineSparkNativeEnabled(String computeEngineSparkNativeEnabled) {
+        this.computeEngineSparkNativeEnabled = computeEngineSparkNativeEnabled;
+        return this;
+    }
+
+    /**
+     * 是否使用DLI Native。当前只涉及开启两种算子：Scan 和 Filter。修改现有队列的本属性，需要重启队列才会生效。
+     * @return computeEngineSparkNativeEnabled
+     */
+    public String getComputeEngineSparkNativeEnabled() {
+        return computeEngineSparkNativeEnabled;
+    }
+
+    public void setComputeEngineSparkNativeEnabled(String computeEngineSparkNativeEnabled) {
+        this.computeEngineSparkNativeEnabled = computeEngineSparkNativeEnabled;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -89,12 +111,16 @@ public class CommonQueueProperty {
         CommonQueueProperty that = (CommonQueueProperty) obj;
         return Objects.equals(this.computeEngineMaxInstance, that.computeEngineMaxInstance)
             && Objects.equals(this.jobMaxConcurrent, that.jobMaxConcurrent)
-            && Objects.equals(this.computeEngineMaxPrefetchInstance, that.computeEngineMaxPrefetchInstance);
+            && Objects.equals(this.computeEngineMaxPrefetchInstance, that.computeEngineMaxPrefetchInstance)
+            && Objects.equals(this.computeEngineSparkNativeEnabled, that.computeEngineSparkNativeEnabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(computeEngineMaxInstance, jobMaxConcurrent, computeEngineMaxPrefetchInstance);
+        return Objects.hash(computeEngineMaxInstance,
+            jobMaxConcurrent,
+            computeEngineMaxPrefetchInstance,
+            computeEngineSparkNativeEnabled);
     }
 
     @Override
@@ -105,6 +131,9 @@ public class CommonQueueProperty {
         sb.append("    jobMaxConcurrent: ").append(toIndentedString(jobMaxConcurrent)).append("\n");
         sb.append("    computeEngineMaxPrefetchInstance: ")
             .append(toIndentedString(computeEngineMaxPrefetchInstance))
+            .append("\n");
+        sb.append("    computeEngineSparkNativeEnabled: ")
+            .append(toIndentedString(computeEngineSparkNativeEnabled))
             .append("\n");
         sb.append("}");
         return sb.toString();

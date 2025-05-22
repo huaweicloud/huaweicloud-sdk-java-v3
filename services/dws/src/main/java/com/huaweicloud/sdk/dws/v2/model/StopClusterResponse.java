@@ -22,7 +22,7 @@ public class StopClusterResponse extends SdkResponse {
     }
 
     /**
-     * 停止集群jobId
+     * **参数解释**： 停止集群任务ID。 **取值范围**： 不涉及。
      * @return jobId
      */
     public String getJobId() {

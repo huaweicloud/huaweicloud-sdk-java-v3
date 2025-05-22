@@ -22,7 +22,7 @@ public class UpdateSchemasResponse extends SdkResponse {
     }
 
     /**
-     * 响应编码。
+     * **参数解释**： 响应编码。 **取值范围**： 不涉及。
      * @return retCode
      */
     public Integer getRetCode() {

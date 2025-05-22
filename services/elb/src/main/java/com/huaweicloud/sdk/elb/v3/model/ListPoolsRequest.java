@@ -148,6 +148,11 @@ public class ListPoolsRequest {
 
     private Integer quicCidOffset;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "az_affinity")
+
+    private List<String> azAffinity = null;
+
     public ListPoolsRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -865,6 +870,39 @@ public class ListPoolsRequest {
         this.quicCidOffset = quicCidOffset;
     }
 
+    public ListPoolsRequest withAzAffinity(List<String> azAffinity) {
+        this.azAffinity = azAffinity;
+        return this;
+    }
+
+    public ListPoolsRequest addAzAffinityItem(String azAffinityItem) {
+        if (this.azAffinity == null) {
+            this.azAffinity = new ArrayList<>();
+        }
+        this.azAffinity.add(azAffinityItem);
+        return this;
+    }
+
+    public ListPoolsRequest withAzAffinity(Consumer<List<String>> azAffinitySetter) {
+        if (this.azAffinity == null) {
+            this.azAffinity = new ArrayList<>();
+        }
+        azAffinitySetter.accept(this.azAffinity);
+        return this;
+    }
+
+    /**
+     * 查询后端服务器组可用区亲和性策略是否开启。示例如下： \"az_affinity\": {             \"enable\": \"true\"         }  支持多值查询，查询条件格式：  *az_affinity=enable=true&az_affinity=enable=false*。
+     * @return azAffinity
+     */
+    public List<String> getAzAffinity() {
+        return azAffinity;
+    }
+
+    public void setAzAffinity(List<String> azAffinity) {
+        this.azAffinity = azAffinity;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -892,7 +930,8 @@ public class ListPoolsRequest {
             && Objects.equals(this.anyPortEnable, that.anyPortEnable)
             && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
             && Objects.equals(this.quicCidLen, that.quicCidLen)
-            && Objects.equals(this.quicCidOffset, that.quicCidOffset);
+            && Objects.equals(this.quicCidOffset, that.quicCidOffset)
+            && Objects.equals(this.azAffinity, that.azAffinity);
     }
 
     @Override
@@ -923,7 +962,8 @@ public class ListPoolsRequest {
             anyPortEnable,
             publicBorderGroup,
             quicCidLen,
-            quicCidOffset);
+            quicCidOffset,
+            azAffinity);
     }
 
     @Override
@@ -959,6 +999,7 @@ public class ListPoolsRequest {
         sb.append("    publicBorderGroup: ").append(toIndentedString(publicBorderGroup)).append("\n");
         sb.append("    quicCidLen: ").append(toIndentedString(quicCidLen)).append("\n");
         sb.append("    quicCidOffset: ").append(toIndentedString(quicCidOffset)).append("\n");
+        sb.append("    azAffinity: ").append(toIndentedString(azAffinity)).append("\n");
         sb.append("}");
         return sb.toString();
     }

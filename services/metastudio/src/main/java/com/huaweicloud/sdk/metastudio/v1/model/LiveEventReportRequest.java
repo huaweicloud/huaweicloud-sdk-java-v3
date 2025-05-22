@@ -52,6 +52,16 @@ public class LiveEventReportRequest {
     private Long expiresTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-mss-auth-key")
+
+    private String xMssAuthKey;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-mss-expires-time")
+
+    private Long xMssExpiresTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refresh_url")
 
     private Boolean refreshUrl;
@@ -192,7 +202,7 @@ public class LiveEventReportRequest {
     }
 
     /**
-     * **参数解释**： 鉴权key过期时间。从1970年1月1日（UTC/GMT的午夜）开始所经过的毫秒数。
+     * 鉴权key过期时间。从1970年1月1日（UTC/GMT的午夜）开始所经过的豪秒数。
      * minimum: 0
      * maximum: 4102415999000
      * @return expiresTime
@@ -203,6 +213,46 @@ public class LiveEventReportRequest {
 
     public void setExpiresTime(Long expiresTime) {
         this.expiresTime = expiresTime;
+    }
+
+    public LiveEventReportRequest withXMssAuthKey(String xMssAuthKey) {
+        this.xMssAuthKey = xMssAuthKey;
+        return this;
+    }
+
+    /**
+     * 鉴权Key。通过HmacSHA256生成的鉴权key
+     * @return xMssAuthKey
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-mss-auth-key")
+    public String getXMssAuthKey() {
+        return xMssAuthKey;
+    }
+
+    public void setXMssAuthKey(String xMssAuthKey) {
+        this.xMssAuthKey = xMssAuthKey;
+    }
+
+    public LiveEventReportRequest withXMssExpiresTime(Long xMssExpiresTime) {
+        this.xMssExpiresTime = xMssExpiresTime;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 鉴权key过期时间。从1970年1月1日（UTC/GMT的午夜）开始所经过的毫秒数。
+     * minimum: 0
+     * maximum: 4102415999000
+     * @return xMssExpiresTime
+     */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "x-mss-expires-time")
+    public Long getXMssExpiresTime() {
+        return xMssExpiresTime;
+    }
+
+    public void setXMssExpiresTime(Long xMssExpiresTime) {
+        this.xMssExpiresTime = xMssExpiresTime;
     }
 
     public LiveEventReportRequest withRefreshUrl(Boolean refreshUrl) {
@@ -261,6 +311,8 @@ public class LiveEventReportRequest {
             && Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
             && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
             && Objects.equals(this.authKey, that.authKey) && Objects.equals(this.expiresTime, that.expiresTime)
+            && Objects.equals(this.xMssAuthKey, that.xMssAuthKey)
+            && Objects.equals(this.xMssExpiresTime, that.xMssExpiresTime)
             && Objects.equals(this.refreshUrl, that.refreshUrl) && Objects.equals(this.body, that.body);
     }
 
@@ -274,6 +326,8 @@ public class LiveEventReportRequest {
             xAppUserId,
             authKey,
             expiresTime,
+            xMssAuthKey,
+            xMssExpiresTime,
             refreshUrl,
             body);
     }
@@ -290,6 +344,8 @@ public class LiveEventReportRequest {
         sb.append("    xAppUserId: ").append(toIndentedString(xAppUserId)).append("\n");
         sb.append("    authKey: ").append(toIndentedString(authKey)).append("\n");
         sb.append("    expiresTime: ").append(toIndentedString(expiresTime)).append("\n");
+        sb.append("    xMssAuthKey: ").append(toIndentedString(xMssAuthKey)).append("\n");
+        sb.append("    xMssExpiresTime: ").append(toIndentedString(xMssExpiresTime)).append("\n");
         sb.append("    refreshUrl: ").append(toIndentedString(refreshUrl)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");

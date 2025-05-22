@@ -45,6 +45,11 @@ public class CreateMemberOption {
 
     private Integer weight;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
     public CreateMemberOption withAddress(String address) {
         this.address = address;
         return this;
@@ -166,6 +171,23 @@ public class CreateMemberOption {
         this.weight = weight;
     }
 
+    public CreateMemberOption withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 参数解释：后端服务器的可用区。 约束限制： - 仅支持iptarget类型的后端服务器设置该字段。且后端服务器组开启可用区亲和时，iptarget类型的后端服务器必须配置该字段为有效非空值。  取值范围：本region中ECS可选择的可用区。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -178,12 +200,14 @@ public class CreateMemberOption {
         return Objects.equals(this.address, that.address) && Objects.equals(this.adminStateUp, that.adminStateUp)
             && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
             && Objects.equals(this.protocolPort, that.protocolPort)
-            && Objects.equals(this.subnetCidrId, that.subnetCidrId) && Objects.equals(this.weight, that.weight);
+            && Objects.equals(this.subnetCidrId, that.subnetCidrId) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(address, adminStateUp, name, projectId, protocolPort, subnetCidrId, weight);
+        return Objects
+            .hash(address, adminStateUp, name, projectId, protocolPort, subnetCidrId, weight, availabilityZone);
     }
 
     @Override
@@ -197,6 +221,7 @@ public class CreateMemberOption {
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
         sb.append("    subnetCidrId: ").append(toIndentedString(subnetCidrId)).append("\n");
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

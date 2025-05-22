@@ -170,7 +170,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 配置状态
+     * **参数解释**： 配置状态。 **取值范围**： 不涉及。
      * @return configurationStatus
      */
     public String getConfigurationStatus() {
@@ -187,7 +187,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 参数组ID
+     * **参数解释**： 参数组ID。 **取值范围**： 不涉及。
      * @return paramsGroupId
      */
     public String getParamsGroupId() {
@@ -204,7 +204,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 类型
+     * **参数解释**： 类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -221,7 +221,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 子网ID
+     * **参数解释**： 子网ID。 **取值范围**： 不涉及。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -238,7 +238,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 角色
+     * **参数解释**： 角色。 **取值范围**： 不涉及。
      * @return role
      */
     public String getRole() {
@@ -255,7 +255,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 内部子网ID
+     * **参数解释**： 内部子网ID。 **取值范围**： 不涉及。
      * @return internalSubnetId
      */
     public String getInternalSubnetId() {
@@ -272,7 +272,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 组
+     * **参数解释**： 分组信息。 **取值范围**： 不涉及。
      * @return group
      */
     public String getGroup() {
@@ -289,7 +289,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 安全组
+     * **参数解释**： 安全组。 **取值范围**： 不涉及。
      * @return secureGroup
      */
     public String getSecureGroup() {
@@ -306,7 +306,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * VPC
+     * **参数解释**： VPC ID。 **取值范围**： 不涉及。
      * @return vpc
      */
     public String getVpc() {
@@ -323,7 +323,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 编码
+     * **参数解释**： 可用区编码。 **取值范围**： 不涉及。
      * @return azcode
      */
     public String getAzcode() {
@@ -340,7 +340,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 区域
+     * **参数解释**： 局点编码。 **取值范围**： 不涉及。
      * @return region
      */
     public String getRegion() {
@@ -357,7 +357,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 集群ID
+     * **参数解释**： 集群ID。 **取值范围**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {
@@ -374,7 +374,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 被创建的
+     * **参数解释**： 创建时间。 **取值范围**： 不涉及。
      * @return created
      */
     public String getCreated() {
@@ -391,7 +391,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 被更新的
+     * **参数解释**： 更新时间。 **取值范围**： 不涉及。
      * @return updated
      */
     public String getUpdated() {
@@ -408,7 +408,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 状态
+     * **参数解释**： 状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -425,7 +425,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 名称
+     * **参数解释**： 节点名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -458,7 +458,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 连接
+     * **参数解释**： 链接信息。 **取值范围**： 不涉及。
      * @return links
      */
     public List<LinkResp> getLinks() {
@@ -475,7 +475,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * ID
+     * **参数解释**： 节点ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -622,7 +622,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 地点
+     * **参数解释**： 废弃字段，无实际含义。 **取值范围**： 不涉及。
      * @return locality
      */
     public String getLocality() {
@@ -655,7 +655,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 备份
+     * **参数解释**： 废弃字段，无实际含义。 **取值范围**： 不涉及。
      * @return replicas
      */
     public List<CompatibleReplicasResp> getReplicas() {
@@ -672,7 +672,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 数据库用户
+     * **参数解释**： 数据库用户。 **取值范围**： 不涉及。
      * @return dbUser
      */
     public String getDbUser() {
@@ -689,7 +689,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 存储引擎
+     * **参数解释**： 存储引擎。 **取值范围**： 不涉及。
      * @return storageEngine
      */
     public String getStorageEngine() {
@@ -706,7 +706,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 付款方式
+     * **参数解释**： 付款方式。 **取值范围**： 不涉及。
      * @return payModel
      */
     public Integer getPayModel() {
@@ -723,7 +723,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 公网IP
+     * **参数解释**： 公网IP。 **取值范围**： 不涉及。
      * @return publicIp
      */
     public String getPublicIp() {
@@ -740,7 +740,7 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     /**
-     * 流量IP
+     * **参数解释**： 流量IP。 **取值范围**： 不涉及。
      * @return trafficIp
      */
     public String getTrafficIp() {

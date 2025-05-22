@@ -54,6 +54,9 @@ import com.huaweicloud.sdk.dcs.v2.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateMigrationTaskBody;
 import com.huaweicloud.sdk.dcs.v2.model.CreateMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateMigrationTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.CreateOfflineKeyAnalysisRequest;
+import com.huaweicloud.sdk.dcs.v2.model.CreateOfflineKeyAnalysisRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.CreateOfflineKeyAnalysisResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateOnlineMigrationTaskBody;
 import com.huaweicloud.sdk.dcs.v2.model.CreateOnlineMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateOnlineMigrationTaskResponse;
@@ -90,11 +93,15 @@ import com.huaweicloud.sdk.dcs.v2.model.DeleteIpFromDomainNameResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrateTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrationTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteOfflineKeyAnalysisTaskRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteOfflineKeyAnalysisTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeletePublicIpRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeletePublicIpResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DownloadBackupFilesReq;
+import com.huaweicloud.sdk.dcs.v2.model.DownloadHotKeyRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DownloadHotKeyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DownloadSslCertRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DownloadSslCertResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ExchangeInstanceIpRequest;
@@ -163,6 +170,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ListMonitoredObjectsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListMonitoredObjectsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListNumberOfInstancesInDifferentStatusRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListNumberOfInstancesInDifferentStatusResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ListOfflineKeyAnalysisTaskRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ListOfflineKeyAnalysisTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListRedislogRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListRedislogResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListRestoreRecordsRequest;
@@ -179,6 +188,9 @@ import com.huaweicloud.sdk.dcs.v2.model.LoginWebCliResponse;
 import com.huaweicloud.sdk.dcs.v2.model.LogoffWebCliRequest;
 import com.huaweicloud.sdk.dcs.v2.model.LogoffWebCliResponse;
 import com.huaweicloud.sdk.dcs.v2.model.LogoutWebCliBody;
+import com.huaweicloud.sdk.dcs.v2.model.MigrateAZRequestBody;
+import com.huaweicloud.sdk.dcs.v2.model.MigrateAzRequest;
+import com.huaweicloud.sdk.dcs.v2.model.MigrateAzResponse;
 import com.huaweicloud.sdk.dcs.v2.model.MigrationUpdateRequestEntity;
 import com.huaweicloud.sdk.dcs.v2.model.ModifyInstanceBody;
 import com.huaweicloud.sdk.dcs.v2.model.ModifyInstancePasswordBody;
@@ -198,6 +210,8 @@ import com.huaweicloud.sdk.dcs.v2.model.RestartOrFlushInstancesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.RestoreInstanceBody;
 import com.huaweicloud.sdk.dcs.v2.model.RestoreInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.RestoreInstanceResponse;
+import com.huaweicloud.sdk.dcs.v2.model.RollbackExchangeInstanceIpRequest;
+import com.huaweicloud.sdk.dcs.v2.model.RollbackExchangeInstanceIpResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ScanClientsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ScanClientsRequestBody;
 import com.huaweicloud.sdk.dcs.v2.model.ScanClientsResponse;
@@ -234,6 +248,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceSslDetailRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceSslDetailResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceTopologyRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceTopologyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceVersionRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceVersionResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowIpWhitelistRequest;
@@ -246,6 +262,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowOfflineKeyAnalysisTaskRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowOfflineKeyAnalysisTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowReplicationStatesRequest;
@@ -293,6 +311,8 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateIpWhitelistAsyncRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateIpWhitelistAsyncResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateIpWhitelistRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateIpWhitelistResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateMigrationTaskRequest;
@@ -1255,6 +1275,34 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteSingleInstanceRequest::getInstanceId,
                 DeleteSingleInstanceRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadHotKeyRequest, DownloadHotKeyResponse> downloadHotKey =
+        genForDownloadHotKey();
+
+    private static HttpRequestDef<DownloadHotKeyRequest, DownloadHotKeyResponse> genForDownloadHotKey() {
+        // basic
+        HttpRequestDef.Builder<DownloadHotKeyRequest, DownloadHotKeyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, DownloadHotKeyRequest.class, DownloadHotKeyResponse.class)
+                .withName("DownloadHotKey")
+                .withUri("/v2/{project_id}/instances/{instance_id}/hotkey/{task_id}/export")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadHotKeyRequest::getInstanceId, DownloadHotKeyRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadHotKeyRequest::getTaskId, DownloadHotKeyRequest::setTaskId));
 
         // response
 
@@ -2559,6 +2607,33 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<MigrateAzRequest, MigrateAzResponse> migrateAz = genForMigrateAz();
+
+    private static HttpRequestDef<MigrateAzRequest, MigrateAzResponse> genForMigrateAz() {
+        // basic
+        HttpRequestDef.Builder<MigrateAzRequest, MigrateAzResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, MigrateAzRequest.class, MigrateAzResponse.class)
+                .withName("MigrateAz")
+                .withUri("/v2/{project_id}/instances/{instance_id}/available-zones")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(MigrateAzRequest::getInstanceId, MigrateAzRequest::setInstanceId));
+        builder.<MigrateAZRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(MigrateAZRequestBody.class),
+            f -> f.withMarshaller(MigrateAzRequest::getBody, MigrateAzRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ResetAclAccountPassWordRequest, ResetAclAccountPassWordResponse> resetAclAccountPassWord =
         genForResetAclAccountPassWord();
 
@@ -2695,6 +2770,33 @@ public class DcsMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(RestoreInstanceBody.class),
             f -> f.withMarshaller(RestoreInstanceRequest::getBody, RestoreInstanceRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RollbackExchangeInstanceIpRequest, RollbackExchangeInstanceIpResponse> rollbackExchangeInstanceIp =
+        genForRollbackExchangeInstanceIp();
+
+    private static HttpRequestDef<RollbackExchangeInstanceIpRequest, RollbackExchangeInstanceIpResponse> genForRollbackExchangeInstanceIp() {
+        // basic
+        HttpRequestDef.Builder<RollbackExchangeInstanceIpRequest, RollbackExchangeInstanceIpResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    RollbackExchangeInstanceIpRequest.class,
+                    RollbackExchangeInstanceIpResponse.class)
+                .withName("RollbackExchangeInstanceIp")
+                .withUri("/v2/{project_id}/migration-task/{task_id}/rollback-ip")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RollbackExchangeInstanceIpRequest::getTaskId,
+                RollbackExchangeInstanceIpRequest::setTaskId));
 
         // response
 
@@ -3172,6 +3274,30 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceSslDetailRequest::getInstanceId,
                 ShowInstanceSslDetailRequest::setInstanceId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowInstanceTopologyRequest, ShowInstanceTopologyResponse> showInstanceTopology =
+        genForShowInstanceTopology();
+
+    private static HttpRequestDef<ShowInstanceTopologyRequest, ShowInstanceTopologyResponse> genForShowInstanceTopology() {
+        // basic
+        HttpRequestDef.Builder<ShowInstanceTopologyRequest, ShowInstanceTopologyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowInstanceTopologyRequest.class, ShowInstanceTopologyResponse.class)
+            .withName("ShowInstanceTopology")
+            .withUri("/v2/{project_id}/instances/{instance_id}/nodes")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowInstanceTopologyRequest::getInstanceId,
+                ShowInstanceTopologyRequest::setInstanceId));
 
         // response
 
@@ -3889,6 +4015,35 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateIpWhitelistAsyncRequest, UpdateIpWhitelistAsyncResponse> updateIpWhitelistAsync =
+        genForUpdateIpWhitelistAsync();
+
+    private static HttpRequestDef<UpdateIpWhitelistAsyncRequest, UpdateIpWhitelistAsyncResponse> genForUpdateIpWhitelistAsync() {
+        // basic
+        HttpRequestDef.Builder<UpdateIpWhitelistAsyncRequest, UpdateIpWhitelistAsyncResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateIpWhitelistAsyncRequest.class, UpdateIpWhitelistAsyncResponse.class)
+            .withName("UpdateIpWhitelistAsync")
+            .withUri("/v2/{project_id}/instance/{instance_id}/whitelist-async")
+            .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIpWhitelistAsyncRequest::getInstanceId,
+                UpdateIpWhitelistAsyncRequest::setInstanceId));
+        builder.<ModifyIpWhitelistBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ModifyIpWhitelistBody.class),
+            f -> f.withMarshaller(UpdateIpWhitelistAsyncRequest::getBody, UpdateIpWhitelistAsyncRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateMigrationTaskRequest, UpdateMigrationTaskResponse> updateMigrationTask =
         genForUpdateMigrationTask();
 
@@ -4149,6 +4304,147 @@ public class DcsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ModifyIpWhitelistBody.class),
             f -> f.withMarshaller(UpdateIpWhitelistRequest::getBody, UpdateIpWhitelistRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateOfflineKeyAnalysisRequest, CreateOfflineKeyAnalysisResponse> createOfflineKeyAnalysis =
+        genForCreateOfflineKeyAnalysis();
+
+    private static HttpRequestDef<CreateOfflineKeyAnalysisRequest, CreateOfflineKeyAnalysisResponse> genForCreateOfflineKeyAnalysis() {
+        // basic
+        HttpRequestDef.Builder<CreateOfflineKeyAnalysisRequest, CreateOfflineKeyAnalysisResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateOfflineKeyAnalysisRequest.class, CreateOfflineKeyAnalysisResponse.class)
+                .withName("CreateOfflineKeyAnalysis")
+                .withUri("/v2/{project_id}/instances/{instance_id}/offline/key-analysis")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateOfflineKeyAnalysisRequest::getInstanceId,
+                CreateOfflineKeyAnalysisRequest::setInstanceId));
+        builder.<CreateOfflineKeyAnalysisRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateOfflineKeyAnalysisRequestBody.class),
+            f -> f.withMarshaller(CreateOfflineKeyAnalysisRequest::getBody, CreateOfflineKeyAnalysisRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteOfflineKeyAnalysisTaskRequest, DeleteOfflineKeyAnalysisTaskResponse> deleteOfflineKeyAnalysisTask =
+        genForDeleteOfflineKeyAnalysisTask();
+
+    private static HttpRequestDef<DeleteOfflineKeyAnalysisTaskRequest, DeleteOfflineKeyAnalysisTaskResponse> genForDeleteOfflineKeyAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<DeleteOfflineKeyAnalysisTaskRequest, DeleteOfflineKeyAnalysisTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteOfflineKeyAnalysisTaskRequest.class,
+                    DeleteOfflineKeyAnalysisTaskResponse.class)
+                .withName("DeleteOfflineKeyAnalysisTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/offline/key-analysis/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOfflineKeyAnalysisTaskRequest::getInstanceId,
+                DeleteOfflineKeyAnalysisTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteOfflineKeyAnalysisTaskRequest::getTaskId,
+                DeleteOfflineKeyAnalysisTaskRequest::setTaskId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListOfflineKeyAnalysisTaskRequest, ListOfflineKeyAnalysisTaskResponse> listOfflineKeyAnalysisTask =
+        genForListOfflineKeyAnalysisTask();
+
+    private static HttpRequestDef<ListOfflineKeyAnalysisTaskRequest, ListOfflineKeyAnalysisTaskResponse> genForListOfflineKeyAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<ListOfflineKeyAnalysisTaskRequest, ListOfflineKeyAnalysisTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListOfflineKeyAnalysisTaskRequest.class,
+                    ListOfflineKeyAnalysisTaskResponse.class)
+                .withName("ListOfflineKeyAnalysisTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/offline/key-analysis")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListOfflineKeyAnalysisTaskRequest::getInstanceId,
+                ListOfflineKeyAnalysisTaskRequest::setInstanceId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOfflineKeyAnalysisTaskRequest::getOffset,
+                ListOfflineKeyAnalysisTaskRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListOfflineKeyAnalysisTaskRequest::getLimit,
+                ListOfflineKeyAnalysisTaskRequest::setLimit));
+        builder.<ListOfflineKeyAnalysisTaskRequest.StatusEnum>withRequestField("status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ListOfflineKeyAnalysisTaskRequest.StatusEnum.class),
+            f -> f.withMarshaller(ListOfflineKeyAnalysisTaskRequest::getStatus,
+                ListOfflineKeyAnalysisTaskRequest::setStatus));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowOfflineKeyAnalysisTaskRequest, ShowOfflineKeyAnalysisTaskResponse> showOfflineKeyAnalysisTask =
+        genForShowOfflineKeyAnalysisTask();
+
+    private static HttpRequestDef<ShowOfflineKeyAnalysisTaskRequest, ShowOfflineKeyAnalysisTaskResponse> genForShowOfflineKeyAnalysisTask() {
+        // basic
+        HttpRequestDef.Builder<ShowOfflineKeyAnalysisTaskRequest, ShowOfflineKeyAnalysisTaskResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowOfflineKeyAnalysisTaskRequest.class,
+                    ShowOfflineKeyAnalysisTaskResponse.class)
+                .withName("ShowOfflineKeyAnalysisTask")
+                .withUri("/v2/{project_id}/instances/{instance_id}/offline/key-analysis/{task_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOfflineKeyAnalysisTaskRequest::getInstanceId,
+                ShowOfflineKeyAnalysisTaskRequest::setInstanceId));
+        builder.<String>withRequestField("task_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowOfflineKeyAnalysisTaskRequest::getTaskId,
+                ShowOfflineKeyAnalysisTaskRequest::setTaskId));
 
         // response
 

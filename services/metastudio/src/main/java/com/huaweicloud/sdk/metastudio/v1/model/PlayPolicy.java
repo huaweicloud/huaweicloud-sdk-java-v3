@@ -204,6 +204,11 @@ public class PlayPolicy {
 
     private LiveExitConfig liveExitConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_rewrite_delay")
+
+    private Boolean isRewriteDelay;
+
     public PlayPolicy withRepeatCount(Integer repeatCount) {
         this.repeatCount = repeatCount;
         return this;
@@ -280,7 +285,7 @@ public class PlayPolicy {
     }
 
     /**
-     * **参数解释**： 是否需要独立采集端。用于客户端播放与命令分离场景。 **约束限制**： 不涉及。 **取值范围**： * true：分配CAPTURE、PLAYER两个RTC用户。 * fasle：仅分配PLAYER一个RTC用户。
+     * **参数解释**： 是否需要独立采集端。用于客户端播放与命令分离场景。 **约束限制**： 不涉及。 **取值范围**： * true：分配CAPTURE、PLAYER两个RTC用户。 * false：仅分配PLAYER一个RTC用户。
      * @return needIndependentCaptureClient
      */
     public Boolean getNeedIndependentCaptureClient() {
@@ -317,6 +322,23 @@ public class PlayPolicy {
         this.liveExitConfig = liveExitConfig;
     }
 
+    public PlayPolicy withIsRewriteDelay(Boolean isRewriteDelay) {
+        this.isRewriteDelay = isRewriteDelay;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 动态编辑未播放剧本是否需要下一轮生效。 **约束限制**： 不涉及。 **取值范围**： * true：马上生效。 * fasle：下一轮生效。 **默认取值**： false
+     * @return isRewriteDelay
+     */
+    public Boolean getIsRewriteDelay() {
+        return isRewriteDelay;
+    }
+
+    public void setIsRewriteDelay(Boolean isRewriteDelay) {
+        this.isRewriteDelay = isRewriteDelay;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -330,13 +352,19 @@ public class PlayPolicy {
             && Objects.equals(this.autoPlayScript, that.autoPlayScript) && Objects.equals(this.playMode, that.playMode)
             && Objects.equals(this.randomPlayMode, that.randomPlayMode)
             && Objects.equals(this.needIndependentCaptureClient, that.needIndependentCaptureClient)
-            && Objects.equals(this.liveExitConfig, that.liveExitConfig);
+            && Objects.equals(this.liveExitConfig, that.liveExitConfig)
+            && Objects.equals(this.isRewriteDelay, that.isRewriteDelay);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(repeatCount, autoPlayScript, playMode, randomPlayMode, needIndependentCaptureClient, liveExitConfig);
+        return Objects.hash(repeatCount,
+            autoPlayScript,
+            playMode,
+            randomPlayMode,
+            needIndependentCaptureClient,
+            liveExitConfig,
+            isRewriteDelay);
     }
 
     @Override
@@ -351,6 +379,7 @@ public class PlayPolicy {
             .append(toIndentedString(needIndependentCaptureClient))
             .append("\n");
         sb.append("    liveExitConfig: ").append(toIndentedString(liveExitConfig)).append("\n");
+        sb.append("    isRewriteDelay: ").append(toIndentedString(isRewriteDelay)).append("\n");
         sb.append("}");
         return sb.toString();
     }

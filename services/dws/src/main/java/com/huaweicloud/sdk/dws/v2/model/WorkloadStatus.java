@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 资源管理信息
+ * **参数解释**： 资源管理状态请求。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class WorkloadStatus {
 
@@ -26,7 +26,7 @@ public class WorkloadStatus {
     }
 
     /**
-     * 开关。
+     * **参数解释**： 开关。 **约束限制**： 不涉及。 **取值范围**： on：开启 off：关闭 **默认取值**： 不涉及。
      * @return workloadSwitch
      */
     public String getWorkloadSwitch() {
@@ -43,7 +43,7 @@ public class WorkloadStatus {
     }
 
     /**
-     * 最大并发数。
+     * **参数解释**： 最大并发数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return maxConcurrencyNum
      */
     public String getMaxConcurrencyNum() {

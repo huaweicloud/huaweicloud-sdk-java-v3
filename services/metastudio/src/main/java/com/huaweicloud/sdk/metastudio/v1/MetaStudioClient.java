@@ -1944,6 +1944,122 @@ public class MetaStudioClient {
     }
 
     /**
+     * 创建智能直播间互动规则库
+     *
+     * 该接口用于创建智能直播间互动规则库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInteractionRuleGroupRequest 请求对象
+     * @return CreateInteractionRuleGroupResponse
+     */
+    public CreateInteractionRuleGroupResponse createInteractionRuleGroup(CreateInteractionRuleGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createInteractionRuleGroup);
+    }
+
+    /**
+     * 创建智能直播间互动规则库
+     *
+     * 该接口用于创建智能直播间互动规则库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateInteractionRuleGroupRequest 请求对象
+     * @return SyncInvoker<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse>
+     */
+    public SyncInvoker<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> createInteractionRuleGroupInvoker(
+        CreateInteractionRuleGroupRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.createInteractionRuleGroup, hcClient);
+    }
+
+    /**
+     * 删除智能直播间互动规则库
+     *
+     * 该接口用于删除智能直播间互动规则库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInteractionRuleGroupRequest 请求对象
+     * @return DeleteInteractionRuleGroupResponse
+     */
+    public DeleteInteractionRuleGroupResponse deleteInteractionRuleGroup(DeleteInteractionRuleGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteInteractionRuleGroup);
+    }
+
+    /**
+     * 删除智能直播间互动规则库
+     *
+     * 该接口用于删除智能直播间互动规则库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteInteractionRuleGroupRequest 请求对象
+     * @return SyncInvoker<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse>
+     */
+    public SyncInvoker<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> deleteInteractionRuleGroupInvoker(
+        DeleteInteractionRuleGroupRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.deleteInteractionRuleGroup, hcClient);
+    }
+
+    /**
+     * 查询智能直播间互动规则库列表
+     *
+     * 该接口用于智能直播间互动规则库列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInteractionRuleGroupsRequest 请求对象
+     * @return ListInteractionRuleGroupsResponse
+     */
+    public ListInteractionRuleGroupsResponse listInteractionRuleGroups(ListInteractionRuleGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listInteractionRuleGroups);
+    }
+
+    /**
+     * 查询智能直播间互动规则库列表
+     *
+     * 该接口用于智能直播间互动规则库列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListInteractionRuleGroupsRequest 请求对象
+     * @return SyncInvoker<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse>
+     */
+    public SyncInvoker<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> listInteractionRuleGroupsInvoker(
+        ListInteractionRuleGroupsRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.listInteractionRuleGroups, hcClient);
+    }
+
+    /**
+     * 更新智能直播间互动规则库
+     *
+     * 该接口用于更新智能直播间互动规则库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInteractionRuleGroupRequest 请求对象
+     * @return UpdateInteractionRuleGroupResponse
+     */
+    public UpdateInteractionRuleGroupResponse updateInteractionRuleGroup(UpdateInteractionRuleGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateInteractionRuleGroup);
+    }
+
+    /**
+     * 更新智能直播间互动规则库
+     *
+     * 该接口用于更新智能直播间互动规则库。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateInteractionRuleGroupRequest 请求对象
+     * @return SyncInvoker<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse>
+     */
+    public SyncInvoker<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> updateInteractionRuleGroupInvoker(
+        UpdateInteractionRuleGroupRequest request) {
+        return new SyncInvoker<>(request, MetaStudioMeta.updateInteractionRuleGroup, hcClient);
+    }
+
+    /**
      * 创建知识库意图和问法
      *
      * 该接口用于创建知识库意图和问法。一个意图包含一个主题，一个答案，若干个问法等。接口使用限制详见[API使用限制](metastudio_02_0000.xml)。
@@ -3966,35 +4082,6 @@ public class MetaStudioClient {
     }
 
     /**
-     * 创建智能直播间互动规则库
-     *
-     * 该接口用于创建智能直播间互动规则库。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateInteractionRuleGroupRequest 请求对象
-     * @return CreateInteractionRuleGroupResponse
-     */
-    public CreateInteractionRuleGroupResponse createInteractionRuleGroup(CreateInteractionRuleGroupRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.createInteractionRuleGroup);
-    }
-
-    /**
-     * 创建智能直播间互动规则库
-     *
-     * 该接口用于创建智能直播间互动规则库。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request CreateInteractionRuleGroupRequest 请求对象
-     * @return SyncInvoker<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse>
-     */
-    public SyncInvoker<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> createInteractionRuleGroupInvoker(
-        CreateInteractionRuleGroupRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.createInteractionRuleGroup, hcClient);
-    }
-
-    /**
      * 创建智能直播间
      *
      * 该接口用于创建智能直播间。
@@ -4021,35 +4108,6 @@ public class MetaStudioClient {
     public SyncInvoker<CreateSmartLiveRoomRequest, CreateSmartLiveRoomResponse> createSmartLiveRoomInvoker(
         CreateSmartLiveRoomRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.createSmartLiveRoom, hcClient);
-    }
-
-    /**
-     * 删除智能直播间互动规则库
-     *
-     * 该接口用于删除智能直播间互动规则库。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteInteractionRuleGroupRequest 请求对象
-     * @return DeleteInteractionRuleGroupResponse
-     */
-    public DeleteInteractionRuleGroupResponse deleteInteractionRuleGroup(DeleteInteractionRuleGroupRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.deleteInteractionRuleGroup);
-    }
-
-    /**
-     * 删除智能直播间互动规则库
-     *
-     * 该接口用于删除智能直播间互动规则库。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request DeleteInteractionRuleGroupRequest 请求对象
-     * @return SyncInvoker<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse>
-     */
-    public SyncInvoker<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> deleteInteractionRuleGroupInvoker(
-        DeleteInteractionRuleGroupRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.deleteInteractionRuleGroup, hcClient);
     }
 
     /**
@@ -4082,35 +4140,6 @@ public class MetaStudioClient {
     }
 
     /**
-     * 查询智能直播间互动规则库列表
-     *
-     * 该接口用于智能直播间互动规则库列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListInteractionRuleGroupsRequest 请求对象
-     * @return ListInteractionRuleGroupsResponse
-     */
-    public ListInteractionRuleGroupsResponse listInteractionRuleGroups(ListInteractionRuleGroupsRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.listInteractionRuleGroups);
-    }
-
-    /**
-     * 查询智能直播间互动规则库列表
-     *
-     * 该接口用于智能直播间互动规则库列表。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request ListInteractionRuleGroupsRequest 请求对象
-     * @return SyncInvoker<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse>
-     */
-    public SyncInvoker<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> listInteractionRuleGroupsInvoker(
-        ListInteractionRuleGroupsRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.listInteractionRuleGroups, hcClient);
-    }
-
-    /**
      * 查询智能直播间列表
      *
      * 该接口用于智能直播间列表。
@@ -4140,9 +4169,9 @@ public class MetaStudioClient {
     }
 
     /**
-     * 查询智能直播剧本详情
+     * 查询智能直播间剧本详情
      *
-     * 该接口用于查询智能直播剧本详情。
+     * 该接口用于查询智能直播间剧本详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4154,9 +4183,9 @@ public class MetaStudioClient {
     }
 
     /**
-     * 查询智能直播剧本详情
+     * 查询智能直播间剧本详情
      *
-     * 该接口用于查询智能直播剧本详情。
+     * 该接口用于查询智能直播间剧本详情。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -4166,35 +4195,6 @@ public class MetaStudioClient {
     public SyncInvoker<ShowSmartLiveRoomRequest, ShowSmartLiveRoomResponse> showSmartLiveRoomInvoker(
         ShowSmartLiveRoomRequest request) {
         return new SyncInvoker<>(request, MetaStudioMeta.showSmartLiveRoom, hcClient);
-    }
-
-    /**
-     * 更新智能直播间互动规则库
-     *
-     * 该接口用于更新智能直播间互动规则库。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateInteractionRuleGroupRequest 请求对象
-     * @return UpdateInteractionRuleGroupResponse
-     */
-    public UpdateInteractionRuleGroupResponse updateInteractionRuleGroup(UpdateInteractionRuleGroupRequest request) {
-        return hcClient.syncInvokeHttp(request, MetaStudioMeta.updateInteractionRuleGroup);
-    }
-
-    /**
-     * 更新智能直播间互动规则库
-     *
-     * 该接口用于更新智能直播间互动规则库。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param request UpdateInteractionRuleGroupRequest 请求对象
-     * @return SyncInvoker<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse>
-     */
-    public SyncInvoker<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> updateInteractionRuleGroupInvoker(
-        UpdateInteractionRuleGroupRequest request) {
-        return new SyncInvoker<>(request, MetaStudioMeta.updateInteractionRuleGroup, hcClient);
     }
 
     /**
@@ -5171,7 +5171,7 @@ public class MetaStudioClient {
     /**
      * 创建TTS异步任务
      *
-     * 该接口用于对外生成音频文件
+     * 该接口用于对外生成音频文件。每个预制音色的计费标准详见[预置音色计费标准](metastudio_02_0060.xml)。
      * 
      * &gt; 使用本接口前，需要在MetaStudio控制台服务概览页面，开通“声音合成”的按需计费。
      * &gt; 详细操作为：单击“声音合成”卡片中的“去开通”，在弹出的“开通按需计费服务提示”对话框中，勾选同意协议。单击“确定”，开通按需计费。
@@ -5189,7 +5189,7 @@ public class MetaStudioClient {
     /**
      * 创建TTS异步任务
      *
-     * 该接口用于对外生成音频文件
+     * 该接口用于对外生成音频文件。每个预制音色的计费标准详见[预置音色计费标准](metastudio_02_0060.xml)。
      * 
      * &gt; 使用本接口前，需要在MetaStudio控制台服务概览页面，开通“声音合成”的按需计费。
      * &gt; 详细操作为：单击“声音合成”卡片中的“去开通”，在弹出的“开通按需计费服务提示”对话框中，勾选同意协议。单击“确定”，开通按需计费。

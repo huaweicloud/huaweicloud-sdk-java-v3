@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Cluster
+ * **参数解释**： 集群对象信息。 **取值范围**： 不涉及。
  */
 public class Cluster {
 
@@ -21,7 +21,7 @@ public class Cluster {
     }
 
     /**
-     * 集群ID
+     * **参数解释**： 集群ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {

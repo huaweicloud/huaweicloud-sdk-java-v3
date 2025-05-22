@@ -30,17 +30,26 @@ import java.util.Locale;
 public class MetadataCredentialProvider implements ICredentialProvider {
 
     private final String credentialType;
+    private Long expirationThresholdSeconds;
 
     public MetadataCredentialProvider(String credentialType) {
         this.credentialType = credentialType.toLowerCase(Locale.US);
     }
 
-    public static MetadataCredentialProvider getBasicCredentialMetadataProvider() {
-        return new MetadataCredentialProvider(Constants.Credentials.BASIC);
+    public static MetadataBasicCredentialProvider getBasicCredentialMetadataProvider() {
+        return new MetadataBasicCredentialProvider();
     }
 
-    public static MetadataCredentialProvider getGlobalCredentialMetadataProvider() {
-        return new MetadataCredentialProvider(Constants.Credentials.GLOBAL);
+    public static MetadataGlobalCredentialProvider getGlobalCredentialMetadataProvider() {
+        return new MetadataGlobalCredentialProvider();
+    }
+
+    public Long getExpirationThresholdSeconds() {
+        return expirationThresholdSeconds;
+    }
+
+    public void setExpirationThresholdSeconds(Long expirationThresholdSeconds) {
+        this.expirationThresholdSeconds = expirationThresholdSeconds;
     }
 
     @Override
@@ -49,16 +58,26 @@ public class MetadataCredentialProvider implements ICredentialProvider {
             throw new SdkException("credential type is empty");
         }
 
+        ICredential credential = null;
         if (credentialType.startsWith(Constants.Credentials.BASIC)) {
-            BasicCredentials credentials = new BasicCredentials();
-            credentials.updateSecurityTokenFromMetadata();
-            return credentials;
+            credential = getBasicCredentialMetadataProvider().getCredentials();
         } else if (credentialType.startsWith(Constants.Credentials.GLOBAL)) {
-            GlobalCredentials credentials = new GlobalCredentials();
-            credentials.updateSecurityTokenFromMetadata();
-            return credentials;
+            credential = getGlobalCredentialMetadataProvider().getCredentials();
         }
 
-        throw new SdkException("unsupported credential type: " + credentialType);
+        if (credential == null) {
+            throw new SdkException("unsupported credential type: " + credentialType);
+        }
+
+        return credential instanceof AbstractCredentials ? process((AbstractCredentials<?>) credential) : credential;
+    }
+
+    protected ICredential process(AbstractCredentials<?> credentials) {
+        credentials.metadataAccessor = new MetadataAccessor();
+        if (getExpirationThresholdSeconds() != null) {
+            credentials.setExpirationThresholdSeconds(getExpirationThresholdSeconds());
+        }
+        credentials.updateSecurityTokenFromMetadata();
+        return credentials;
     }
 }

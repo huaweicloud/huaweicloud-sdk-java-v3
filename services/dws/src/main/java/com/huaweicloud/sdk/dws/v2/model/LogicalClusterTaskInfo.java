@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 逻辑集群任务信息
+ * **参数解释**： 逻辑集群任务信息。 **取值范围**： 不涉及。
  */
 public class LogicalClusterTaskInfo {
 
@@ -46,7 +46,7 @@ public class LogicalClusterTaskInfo {
     }
 
     /**
-     * 任务类型
+     * **参数解释**： 任务类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -63,7 +63,7 @@ public class LogicalClusterTaskInfo {
     }
 
     /**
-     * 逻辑集群名称
+     * **参数解释**： 逻辑集群名称。 **取值范围**： 不涉及。
      * @return logicalClusterName
      */
     public String getLogicalClusterName() {
@@ -80,7 +80,7 @@ public class LogicalClusterTaskInfo {
     }
 
     /**
-     * 任务开始时间
+     * **参数解释**： 任务开始时间。 **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -97,7 +97,7 @@ public class LogicalClusterTaskInfo {
     }
 
     /**
-     * 任务结束时间
+     * **参数解释**： 任务结束时间。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -114,7 +114,7 @@ public class LogicalClusterTaskInfo {
     }
 
     /**
-     * 任务执行结果
+     * **参数解释**： 任务执行结果。 **取值范围**： 不涉及。
      * @return result
      */
     public String getResult() {
@@ -131,7 +131,7 @@ public class LogicalClusterTaskInfo {
     }
 
     /**
-     * 任务执行日志
+     * **参数解释**： 任务执行日志。 **取值范围**： 不涉及。
      * @return log
      */
     public String getLog() {

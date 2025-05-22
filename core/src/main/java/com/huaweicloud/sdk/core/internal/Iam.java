@@ -98,6 +98,12 @@ public class Iam {
         return Constants.DEFAULT_IAM_ENDPOINT;
     }
 
+    /**
+     * getCredentialFromMetadata
+     *
+     * @deprecated this method will be removed in the future version
+     */
+    @Deprecated
     public static Credential getCredentialFromMetadata() {
         OkHttpClient client = new OkHttpClient.Builder().connectTimeout(3, TimeUnit.SECONDS).build();
         Request request = new Request.Builder().url(SECURITY_KEY_URL).get().build();

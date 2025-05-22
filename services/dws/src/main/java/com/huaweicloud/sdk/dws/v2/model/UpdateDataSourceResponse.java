@@ -16,6 +16,11 @@ public class UpdateDataSourceResponse extends SdkResponse {
 
     private String jobId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "data_source_id")
+
+    private String dataSourceId;
+
     public UpdateDataSourceResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
@@ -33,6 +38,23 @@ public class UpdateDataSourceResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
+    public UpdateDataSourceResponse withDataSourceId(String dataSourceId) {
+        this.dataSourceId = dataSourceId;
+        return this;
+    }
+
+    /**
+     * 数据源id。
+     * @return dataSourceId
+     */
+    public String getDataSourceId() {
+        return dataSourceId;
+    }
+
+    public void setDataSourceId(String dataSourceId) {
+        this.dataSourceId = dataSourceId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -42,12 +64,12 @@ public class UpdateDataSourceResponse extends SdkResponse {
             return false;
         }
         UpdateDataSourceResponse that = (UpdateDataSourceResponse) obj;
-        return Objects.equals(this.jobId, that.jobId);
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.dataSourceId, that.dataSourceId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobId);
+        return Objects.hash(jobId, dataSourceId);
     }
 
     @Override
@@ -55,6 +77,7 @@ public class UpdateDataSourceResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateDataSourceResponse {\n");
         sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
+        sb.append("    dataSourceId: ").append(toIndentedString(dataSourceId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

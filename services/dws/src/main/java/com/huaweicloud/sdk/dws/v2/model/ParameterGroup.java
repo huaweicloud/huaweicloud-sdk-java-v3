@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群所关联的参数组信息
+ * **参数解释**： 集群所关联的参数组信息。 **取值范围**： 不涉及。
  */
 public class ParameterGroup {
 
@@ -31,7 +31,7 @@ public class ParameterGroup {
     }
 
     /**
-     * 参数组ID
+     * **参数解释**： 参数组ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -48,7 +48,7 @@ public class ParameterGroup {
     }
 
     /**
-     * 参数组名称
+     * **参数解释**： 参数组名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -65,7 +65,7 @@ public class ParameterGroup {
     }
 
     /**
-     * 集群参数状态，有效值包括：  - In-Sync：已同步 - Applying：应用中 - Pending-Reboot：需重启生效 - Sync-Failure：应用失败
+     * **参数解释**： 集群参数状态。 **取值范围**： - In-Sync：已同步 - Applying：应用中 - Pending-Reboot：需重启生效 - Sync-Failure：应用失败
      * @return status
      */
     public String getStatus() {

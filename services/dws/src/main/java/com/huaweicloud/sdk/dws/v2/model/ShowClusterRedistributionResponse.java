@@ -79,7 +79,7 @@ public class ShowClusterRedistributionResponse extends SdkResponse {
     }
 
     /**
-     * 调度模式
+     * **参数解释**： 调度模式。 **取值范围**： false：非调度模式；true：调度模式。
      * @return scheduleMode
      */
     public Boolean getScheduleMode() {
@@ -96,7 +96,7 @@ public class ShowClusterRedistributionResponse extends SdkResponse {
     }
 
     /**
-     * 是否允许暂停
+     * **参数解释**： 是否允许暂停。 **取值范围**： false：不允许暂停；true：允许暂停。
      * @return pauseEnable
      */
     public Boolean getPauseEnable() {
@@ -113,7 +113,7 @@ public class ShowClusterRedistributionResponse extends SdkResponse {
     }
 
     /**
-     * 是否允许恢复
+     * **参数解释**： 是否允许恢复。 **取值范围**： false：不允许恢复；true：允许恢复。
      * @return recoverEnable
      */
     public Boolean getRecoverEnable() {
@@ -130,7 +130,7 @@ public class ShowClusterRedistributionResponse extends SdkResponse {
     }
 
     /**
-     * 是否允许重试
+     * **参数解释**： 是否允许重试。 **取值范围**： false：不允许重试；true：允许重试。
      * @return retryEnable
      */
     public Boolean getRetryEnable() {
@@ -147,7 +147,7 @@ public class ShowClusterRedistributionResponse extends SdkResponse {
     }
 
     /**
-     * 是否允许更新
+     * **参数解释**： 是否允许更新。 **取值范围**： false：不允许更新；true：允许更新，该参数仅仅适用于调度模式。
      * @return updateEnable
      */
     public Boolean getUpdateEnable() {
@@ -164,7 +164,7 @@ public class ShowClusterRedistributionResponse extends SdkResponse {
     }
 
     /**
-     * 是否允许控制
+     * **参数解释**： 是否允许控制。 **取值范围**： false：不允许控制；true：允许控制，该参数仅仅适用于调度模式。
      * @return controlEnable
      */
     public Boolean getControlEnable() {

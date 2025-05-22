@@ -76,7 +76,7 @@ public class CreatePolicyResponse extends SdkResponse {
     }
 
     /**
-     * 防护包id
+     * 实例id
      * @return packageId
      */
     public String getPackageId() {

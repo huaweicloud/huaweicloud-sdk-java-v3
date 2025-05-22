@@ -16,7 +16,7 @@ import java.util.Objects;
 public class QueueProperty {
 
     /**
-     * 返回属性值对应的key值 computeEngine.maxInstances, 队列能启动的最大spark driver数量 computeEngine.maxPrefetchInstance, 队列预先启动的最大spark driver数量 job.maxConcurrent,单个spark driver能同时运行的最大任务数量 multipleSc.support,是否支持设置多个spark driver
+     * 返回属性值对应的key值: computeEngine.maxInstances, 队列能启动的最大spark driver数量; computeEngine.maxPrefetchInstance, 队列预先启动的最大spark driver数量; job.maxConcurrent,单个spark driver能同时运行的最大任务数量; multipleSc.support,是否支持设置多个spark driver; job.saveJobResultToJobBucket, 是否使用作业桶保存SQL查询结果，true代表开启; computeEngine.spark.nativeEnabled, 是否使用DLI Native;
      */
     public static final class KeyEnum {
 
@@ -41,6 +41,17 @@ public class QueueProperty {
          */
         public static final KeyEnum MULTIPLESC_SUPPORT = new KeyEnum("multipleSc.support");
 
+        /**
+         * Enum JOB_SAVEJOBRESULTTOJOBBUCKET for value: "job.saveJobResultToJobBucket"
+         */
+        public static final KeyEnum JOB_SAVEJOBRESULTTOJOBBUCKET = new KeyEnum("job.saveJobResultToJobBucket");
+
+        /**
+         * Enum COMPUTEENGINE_SPARK_NATIVEENABLED for value: "computeEngine.spark.nativeEnabled"
+         */
+        public static final KeyEnum COMPUTEENGINE_SPARK_NATIVEENABLED =
+            new KeyEnum("computeEngine.spark.nativeEnabled");
+
         private static final Map<String, KeyEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, KeyEnum> createStaticFields() {
@@ -49,6 +60,8 @@ public class QueueProperty {
             map.put("computeEngine.maxPrefetchInstance", COMPUTEENGINE_MAXPREFETCHINSTANCE);
             map.put("job.maxConcurrent", JOB_MAXCONCURRENT);
             map.put("multipleSc.support", MULTIPLESC_SUPPORT);
+            map.put("job.saveJobResultToJobBucket", JOB_SAVEJOBRESULTTOJOBBUCKET);
+            map.put("computeEngine.spark.nativeEnabled", COMPUTEENGINE_SPARK_NATIVEENABLED);
             return Collections.unmodifiableMap(map);
         }
 
@@ -114,7 +127,7 @@ public class QueueProperty {
     }
 
     /**
-     * 返回属性值对应的key值 computeEngine.maxInstances, 队列能启动的最大spark driver数量 computeEngine.maxPrefetchInstance, 队列预先启动的最大spark driver数量 job.maxConcurrent,单个spark driver能同时运行的最大任务数量 multipleSc.support,是否支持设置多个spark driver
+     * 返回属性值对应的key值: computeEngine.maxInstances, 队列能启动的最大spark driver数量; computeEngine.maxPrefetchInstance, 队列预先启动的最大spark driver数量; job.maxConcurrent,单个spark driver能同时运行的最大任务数量; multipleSc.support,是否支持设置多个spark driver; job.saveJobResultToJobBucket, 是否使用作业桶保存SQL查询结果，true代表开启; computeEngine.spark.nativeEnabled, 是否使用DLI Native;
      * @return key
      */
     public KeyEnum getKey() {

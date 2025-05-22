@@ -26,7 +26,7 @@ public class ScaleOut {
     }
 
     /**
-     * 扩容节点数。
+     * **参数解释**： 扩容节点数。 **取值范围**： 大于等于3。
      * @return count
      */
     public Integer getCount() {
@@ -43,7 +43,7 @@ public class ScaleOut {
     }
 
     /**
-     * 指定子网ID。
+     * **参数解释**： 子网ID。 **取值范围**： 同VPC下有效的子网ID。
      * @return subnetId
      */
     public String getSubnetId() {

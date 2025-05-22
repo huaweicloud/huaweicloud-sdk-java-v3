@@ -27,7 +27,7 @@ public class AddWorkloadPlanStageResponse extends SdkResponse {
     }
 
     /**
-     * 响应编码。
+     * **参数解释**： 响应编码。 **取值范围**： 不涉及。
      * @return workloadResCode
      */
     public Integer getWorkloadResCode() {
@@ -44,7 +44,7 @@ public class AddWorkloadPlanStageResponse extends SdkResponse {
     }
 
     /**
-     * 响应信息。
+     * **参数解释**： 响应信息。 **取值范围**： 不涉及。
      * @return workloadResStr
      */
     public String getWorkloadResStr() {

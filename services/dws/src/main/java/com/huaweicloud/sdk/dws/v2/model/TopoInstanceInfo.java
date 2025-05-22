@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群实例信息
+ * **参数解释**： 集群实例信息。 **取值范围**： 不涉及。
  */
 public class TopoInstanceInfo {
 
@@ -66,7 +66,7 @@ public class TopoInstanceInfo {
     }
 
     /**
-     * 实例ID
+     * **参数解释**： 实例ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -83,7 +83,7 @@ public class TopoInstanceInfo {
     }
 
     /**
-     * 实例名称
+     * **参数解释**： 实例名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -100,7 +100,7 @@ public class TopoInstanceInfo {
     }
 
     /**
-     * 实例管理IP
+     * **参数解释**： 实例管理IP。 **取值范围**： 不涉及。
      * @return manageIp
      */
     public String getManageIp() {
@@ -117,7 +117,7 @@ public class TopoInstanceInfo {
     }
 
     /**
-     * 业务IP
+     * **参数解释**： 业务IP。 **取值范围**： 不涉及。
      * @return trafficIp
      */
     public String getTrafficIp() {
@@ -134,7 +134,7 @@ public class TopoInstanceInfo {
     }
 
     /**
-     * 内部通信IP
+     * **参数解释**： 内部通信IP。 **取值范围**： 不涉及。
      * @return internalIp
      */
     public String getInternalIp() {
@@ -151,7 +151,7 @@ public class TopoInstanceInfo {
     }
 
     /**
-     * 内部管理IP
+     * **参数解释**： 内部管理IP。 **取值范围**： 不涉及。
      * @return internalMgntIp
      */
     public String getInternalMgntIp() {
@@ -168,7 +168,7 @@ public class TopoInstanceInfo {
     }
 
     /**
-     * EIP
+     * **参数解释**： 公网IP信息。 **取值范围**： 不涉及。
      * @return eip
      */
     public String getEip() {
@@ -185,7 +185,7 @@ public class TopoInstanceInfo {
     }
 
     /**
-     * elb地址
+     * **参数解释**： elb地址。 **取值范围**： 不涉及。
      * @return elb
      */
     public String getElb() {
@@ -202,7 +202,7 @@ public class TopoInstanceInfo {
     }
 
     /**
-     * 实例状态
+     * **参数解释**： 实例状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -219,7 +219,7 @@ public class TopoInstanceInfo {
     }
 
     /**
-     * 可用区编码
+     * **参数解释**： 可用区编码。 **取值范围**： 不涉及。
      * @return azCode
      */
     public String getAzCode() {

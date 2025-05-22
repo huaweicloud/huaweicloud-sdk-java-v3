@@ -172,6 +172,9 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryPendingItemsPackageBody;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryPendingItemsPackageRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryPendingItemsPackageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceResponse;
@@ -452,6 +455,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByName
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryPendingItemsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryPendingItemsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryScriptsRequest;
@@ -2782,6 +2787,45 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(JobInfoRequest.class),
             f -> f.withMarshaller(CreateFactoryJobRequest::getBody, CreateFactoryJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateFactoryPendingItemsPackageRequest, CreateFactoryPendingItemsPackageResponse> createFactoryPendingItemsPackage =
+        genForCreateFactoryPendingItemsPackage();
+
+    private static HttpRequestDef<CreateFactoryPendingItemsPackageRequest, CreateFactoryPendingItemsPackageResponse> genForCreateFactoryPendingItemsPackage() {
+        // basic
+        HttpRequestDef.Builder<CreateFactoryPendingItemsPackageRequest, CreateFactoryPendingItemsPackageResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateFactoryPendingItemsPackageRequest.class,
+                    CreateFactoryPendingItemsPackageResponse.class)
+                .withName("CreateFactoryPendingItemsPackage")
+                .withUri("/v2/{project_id}/factory/pending-items/package")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFactoryPendingItemsPackageRequest::getWorkspace,
+                CreateFactoryPendingItemsPackageRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateFactoryPendingItemsPackageRequest::getXProjectId,
+                CreateFactoryPendingItemsPackageRequest::setXProjectId));
+        builder.<CreateFactoryPendingItemsPackageBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateFactoryPendingItemsPackageBody.class),
+            f -> f.withMarshaller(CreateFactoryPendingItemsPackageRequest::getBody,
+                CreateFactoryPendingItemsPackageRequest::setBody));
 
         // response
 
@@ -7655,6 +7699,59 @@ public class DataArtsStudioMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListFactoryJobsRequest::getWorkspace, ListFactoryJobsRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListFactoryPendingItemsRequest, ListFactoryPendingItemsResponse> listFactoryPendingItems =
+        genForListFactoryPendingItems();
+
+    private static HttpRequestDef<ListFactoryPendingItemsRequest, ListFactoryPendingItemsResponse> genForListFactoryPendingItems() {
+        // basic
+        HttpRequestDef.Builder<ListFactoryPendingItemsRequest, ListFactoryPendingItemsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListFactoryPendingItemsRequest.class, ListFactoryPendingItemsResponse.class)
+            .withName("ListFactoryPendingItems")
+            .withUri("/v2/{project_id}/factory/pending-items")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("submit_user_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryPendingItemsRequest::getSubmitUserName,
+                ListFactoryPendingItemsRequest::setSubmitUserName));
+        builder.<String>withRequestField("item_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryPendingItemsRequest::getItemName,
+                ListFactoryPendingItemsRequest::setItemName));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryPendingItemsRequest::getLimit, ListFactoryPendingItemsRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListFactoryPendingItemsRequest::getOffset,
+                ListFactoryPendingItemsRequest::setOffset));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryPendingItemsRequest::getWorkspace,
+                ListFactoryPendingItemsRequest::setWorkspace));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListFactoryPendingItemsRequest::getXProjectId,
+                ListFactoryPendingItemsRequest::setXProjectId));
 
         // response
 

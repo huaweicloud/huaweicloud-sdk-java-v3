@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * CompatibleConfigurationResp
+ * **参数解释**： 参数组信息。 **取值范围**： 不涉及。
  */
 public class CompatibleConfigurationResp {
 
@@ -34,7 +34,7 @@ public class CompatibleConfigurationResp {
     }
 
     /**
-     * ID
+     * **参数解释**： 参数组ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -51,7 +51,7 @@ public class CompatibleConfigurationResp {
     }
 
     /**
-     * 名称
+     * **参数解释**： 参数组名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -84,7 +84,7 @@ public class CompatibleConfigurationResp {
     }
 
     /**
-     * 连接
+     * **参数解释**： 连接信息。 **取值范围**： 不涉及。
      * @return links
      */
     public List<LinkResp> getLinks() {

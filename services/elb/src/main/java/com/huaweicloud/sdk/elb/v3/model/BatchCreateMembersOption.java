@@ -16,6 +16,11 @@ public class BatchCreateMembersOption {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "address")
 
     private String address;
@@ -50,6 +55,23 @@ public class BatchCreateMembersOption {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public BatchCreateMembersOption withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 参数解释：后端服务器的可用区。 约束限制：  仅支持iptarget类型的后端服务器设置该字段。且后端服务器组开启可用区亲和时，iptarget类型的后端服务器必须配置该字段为有效非空值。 取值范围：本region中ECS可选择的可用区。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
     }
 
     public BatchCreateMembersOption withAddress(String address) {
@@ -133,14 +155,14 @@ public class BatchCreateMembersOption {
             return false;
         }
         BatchCreateMembersOption that = (BatchCreateMembersOption) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.address, that.address)
-            && Objects.equals(this.protocolPort, that.protocolPort)
+        return Objects.equals(this.name, that.name) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.protocolPort, that.protocolPort)
             && Objects.equals(this.subnetCidrId, that.subnetCidrId) && Objects.equals(this.weight, that.weight);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, address, protocolPort, subnetCidrId, weight);
+        return Objects.hash(name, availabilityZone, address, protocolPort, subnetCidrId, weight);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class BatchCreateMembersOption {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchCreateMembersOption {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");
         sb.append("    subnetCidrId: ").append(toIndentedString(subnetCidrId)).append("\n");

@@ -17,7 +17,7 @@ public class ListSnapshotPolicyResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "keep_day")
 
-    private String keepDay;
+    private Integer keepDay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "backup_strategies")
@@ -44,20 +44,35 @@ public class ListSnapshotPolicyResponse extends SdkResponse {
 
     private String backupParam;
 
-    public ListSnapshotPolicyResponse withKeepDay(String keepDay) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "auto_backup")
+
+    private Boolean autoBackup;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_strategy_cluster_type_limit_num")
+
+    private Integer backupStrategyClusterTypeLimitNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "backup_strategy_schema_type_limit_num")
+
+    private Integer backupStrategySchemaTypeLimitNum;
+
+    public ListSnapshotPolicyResponse withKeepDay(Integer keepDay) {
         this.keepDay = keepDay;
         return this;
     }
 
     /**
-     * 保留天数。
+     * **参数解释**： 保留天数。 **取值范围**： 大于等于0。
      * @return keepDay
      */
-    public String getKeepDay() {
+    public Integer getKeepDay() {
         return keepDay;
     }
 
-    public void setKeepDay(String keepDay) {
+    public void setKeepDay(Integer keepDay) {
         this.keepDay = keepDay;
     }
 
@@ -84,7 +99,7 @@ public class ListSnapshotPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 备份策略。
+     * **参数解释**： 备份策略列表。 **取值范围**： 不涉及。
      * @return backupStrategies
      */
     public List<BackupStrategyDetail> getBackupStrategies() {
@@ -101,7 +116,7 @@ public class ListSnapshotPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 备份设备。
+     * **参数解释**： 备份设备，一般为OBS。 **取值范围**： 不涉及。
      * @return deviceName
      */
     public String getDeviceName() {
@@ -134,7 +149,7 @@ public class ListSnapshotPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 服务IP。
+     * **参数解释**： 服务IP。 **取值范围**： 不涉及。
      * @return serverIps
      */
     public List<String> getServerIps() {
@@ -151,7 +166,7 @@ public class ListSnapshotPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 服务端口。
+     * **参数解释**： 服务端口。 **取值范围**： 不涉及。
      * @return serverPort
      */
     public String getServerPort() {
@@ -168,7 +183,7 @@ public class ListSnapshotPolicyResponse extends SdkResponse {
     }
 
     /**
-     * 参数。
+     * **参数解释**： 备份参数。 **取值范围**： 不涉及。
      * @return backupParam
      */
     public String getBackupParam() {
@@ -177,6 +192,57 @@ public class ListSnapshotPolicyResponse extends SdkResponse {
 
     public void setBackupParam(String backupParam) {
         this.backupParam = backupParam;
+    }
+
+    public ListSnapshotPolicyResponse withAutoBackup(Boolean autoBackup) {
+        this.autoBackup = autoBackup;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 自动备份开关状态。 **取值范围**： true：已开启自动备份选项； false：已关闭自动备份选项；
+     * @return autoBackup
+     */
+    public Boolean getAutoBackup() {
+        return autoBackup;
+    }
+
+    public void setAutoBackup(Boolean autoBackup) {
+        this.autoBackup = autoBackup;
+    }
+
+    public ListSnapshotPolicyResponse withBackupStrategyClusterTypeLimitNum(Integer backupStrategyClusterTypeLimitNum) {
+        this.backupStrategyClusterTypeLimitNum = backupStrategyClusterTypeLimitNum;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 此策略下集群级快照最大数量。 **取值范围**： 大于等于0。
+     * @return backupStrategyClusterTypeLimitNum
+     */
+    public Integer getBackupStrategyClusterTypeLimitNum() {
+        return backupStrategyClusterTypeLimitNum;
+    }
+
+    public void setBackupStrategyClusterTypeLimitNum(Integer backupStrategyClusterTypeLimitNum) {
+        this.backupStrategyClusterTypeLimitNum = backupStrategyClusterTypeLimitNum;
+    }
+
+    public ListSnapshotPolicyResponse withBackupStrategySchemaTypeLimitNum(Integer backupStrategySchemaTypeLimitNum) {
+        this.backupStrategySchemaTypeLimitNum = backupStrategySchemaTypeLimitNum;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 此策略下schema级快照最大数量。 **取值范围**： 大于等于0。
+     * @return backupStrategySchemaTypeLimitNum
+     */
+    public Integer getBackupStrategySchemaTypeLimitNum() {
+        return backupStrategySchemaTypeLimitNum;
+    }
+
+    public void setBackupStrategySchemaTypeLimitNum(Integer backupStrategySchemaTypeLimitNum) {
+        this.backupStrategySchemaTypeLimitNum = backupStrategySchemaTypeLimitNum;
     }
 
     @Override
@@ -191,12 +257,23 @@ public class ListSnapshotPolicyResponse extends SdkResponse {
         return Objects.equals(this.keepDay, that.keepDay)
             && Objects.equals(this.backupStrategies, that.backupStrategies)
             && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.serverIps, that.serverIps)
-            && Objects.equals(this.serverPort, that.serverPort) && Objects.equals(this.backupParam, that.backupParam);
+            && Objects.equals(this.serverPort, that.serverPort) && Objects.equals(this.backupParam, that.backupParam)
+            && Objects.equals(this.autoBackup, that.autoBackup)
+            && Objects.equals(this.backupStrategyClusterTypeLimitNum, that.backupStrategyClusterTypeLimitNum)
+            && Objects.equals(this.backupStrategySchemaTypeLimitNum, that.backupStrategySchemaTypeLimitNum);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(keepDay, backupStrategies, deviceName, serverIps, serverPort, backupParam);
+        return Objects.hash(keepDay,
+            backupStrategies,
+            deviceName,
+            serverIps,
+            serverPort,
+            backupParam,
+            autoBackup,
+            backupStrategyClusterTypeLimitNum,
+            backupStrategySchemaTypeLimitNum);
     }
 
     @Override
@@ -209,6 +286,13 @@ public class ListSnapshotPolicyResponse extends SdkResponse {
         sb.append("    serverIps: ").append(toIndentedString(serverIps)).append("\n");
         sb.append("    serverPort: ").append(toIndentedString(serverPort)).append("\n");
         sb.append("    backupParam: ").append(toIndentedString(backupParam)).append("\n");
+        sb.append("    autoBackup: ").append(toIndentedString(autoBackup)).append("\n");
+        sb.append("    backupStrategyClusterTypeLimitNum: ")
+            .append(toIndentedString(backupStrategyClusterTypeLimitNum))
+            .append("\n");
+        sb.append("    backupStrategySchemaTypeLimitNum: ")
+            .append(toIndentedString(backupStrategySchemaTypeLimitNum))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }

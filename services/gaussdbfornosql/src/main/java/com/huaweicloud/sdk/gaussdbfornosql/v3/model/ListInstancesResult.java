@@ -143,6 +143,11 @@ public class ListInstancesResult {
 
     private String availabilityZone;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dual_active_info")
+
+    private DualActiveInfo dualActiveInfo;
+
     public ListInstancesResult withId(String id) {
         this.id = id;
         return this;
@@ -635,6 +640,32 @@ public class ListInstancesResult {
         this.availabilityZone = availabilityZone;
     }
 
+    public ListInstancesResult withDualActiveInfo(DualActiveInfo dualActiveInfo) {
+        this.dualActiveInfo = dualActiveInfo;
+        return this;
+    }
+
+    public ListInstancesResult withDualActiveInfo(Consumer<DualActiveInfo> dualActiveInfoSetter) {
+        if (this.dualActiveInfo == null) {
+            this.dualActiveInfo = new DualActiveInfo();
+            dualActiveInfoSetter.accept(this.dualActiveInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get dualActiveInfo
+     * @return dualActiveInfo
+     */
+    public DualActiveInfo getDualActiveInfo() {
+        return dualActiveInfo;
+    }
+
+    public void setDualActiveInfo(DualActiveInfo dualActiveInfo) {
+        this.dualActiveInfo = dualActiveInfo;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -659,7 +690,8 @@ public class ListInstancesResult {
             && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
             && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.actions, that.actions)
             && Objects.equals(this.lbIpAddress, that.lbIpAddress) && Objects.equals(this.lbPort, that.lbPort)
-            && Objects.equals(this.availabilityZone, that.availabilityZone);
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.dualActiveInfo, that.dualActiveInfo);
     }
 
     @Override
@@ -689,7 +721,8 @@ public class ListInstancesResult {
             actions,
             lbIpAddress,
             lbPort,
-            availabilityZone);
+            availabilityZone,
+            dualActiveInfo);
     }
 
     @Override
@@ -722,6 +755,7 @@ public class ListInstancesResult {
         sb.append("    lbIpAddress: ").append(toIndentedString(lbIpAddress)).append("\n");
         sb.append("    lbPort: ").append(toIndentedString(lbPort)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
+        sb.append("    dualActiveInfo: ").append(toIndentedString(dualActiveInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

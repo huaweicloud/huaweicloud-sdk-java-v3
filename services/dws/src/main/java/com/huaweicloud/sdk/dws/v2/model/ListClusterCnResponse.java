@@ -35,7 +35,7 @@ public class ListClusterCnResponse extends SdkResponse {
     }
 
     /**
-     * 集群支持的最小CN节点数量。
+     * **参数解释**： 集群支持的最小CN节点数量。 **取值范围**： 不涉及。
      * @return minNum
      */
     public Integer getMinNum() {
@@ -52,7 +52,7 @@ public class ListClusterCnResponse extends SdkResponse {
     }
 
     /**
-     * 集群支持的最大CN节点数量。
+     * **参数解释**： 集群支持的最大CN节点数量。 **取值范围**： 不涉及。
      * @return maxNum
      */
     public Integer getMaxNum() {
@@ -85,7 +85,7 @@ public class ListClusterCnResponse extends SdkResponse {
     }
 
     /**
-     * CN节点详情列表。
+     * **参数解释**： CN节点详情列表。 **取值范围**： 不涉及。
      * @return instances
      */
     public List<CoordinatorNode> getInstances() {

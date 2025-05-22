@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * CompatibleFaultResp
+ * **参数解释**： 信息。 **取值范围**： 不涉及。
  */
 public class CompatibleFaultResp {
 
@@ -31,7 +31,7 @@ public class CompatibleFaultResp {
     }
 
     /**
-     * 信息
+     * **参数解释**： 信息。 **取值范围**： 不涉及。
      * @return message
      */
     public String getMessage() {
@@ -48,7 +48,7 @@ public class CompatibleFaultResp {
     }
 
     /**
-     * 创建者
+     * **参数解释**： 创建者。 **取值范围**： 不涉及。
      * @return created
      */
     public String getCreated() {
@@ -65,7 +65,7 @@ public class CompatibleFaultResp {
     }
 
     /**
-     * 详细
+     * **参数解释**： 详细内容。 **取值范围**： 不涉及。
      * @return details
      */
     public String getDetails() {

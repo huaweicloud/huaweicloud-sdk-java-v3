@@ -293,7 +293,7 @@ public class SnapshotDetail {
     }
 
     /**
-     * 快照对应的集群ID
+     * 快照对应的集群ID。
      * @return clusterId
      */
     public String getClusterId() {

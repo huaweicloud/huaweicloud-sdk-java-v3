@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 集群实例环信息
+ * **参数解释**： 集群实例环信息。 **取值范围**： 不涉及。
  */
 public class LogicalClusterRingInfo {
 
@@ -40,7 +40,7 @@ public class LogicalClusterRingInfo {
     }
 
     /**
-     * 集群主机环信息
+     * **参数解释**： 集群实例环信息。 **取值范围**： 不涉及。
      * @return ringHosts
      */
     public List<RingHost> getRingHosts() {

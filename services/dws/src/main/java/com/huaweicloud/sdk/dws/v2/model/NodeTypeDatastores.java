@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 内核版本信息。
+ * **参数解释**： 内核版本信息。 **取值范围**： 数字、小数点，格式一般如 9.1.0、9.1.1.100。
  */
 public class NodeTypeDatastores {
 
@@ -21,13 +21,18 @@ public class NodeTypeDatastores {
 
     private NodeTypeDatastoresAttachments attachments;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "role")
+
+    private String role;
+
     public NodeTypeDatastores withVersion(String version) {
         this.version = version;
         return this;
     }
 
     /**
-     * 内核版本号。
+     * **参数解释**： 内核版本号。 **取值范围**： 数字、小数点，格式一般如 9.1.0、9.1.1.100。
      * @return version
      */
     public String getVersion() {
@@ -64,6 +69,23 @@ public class NodeTypeDatastores {
         this.attachments = attachments;
     }
 
+    public NodeTypeDatastores withRole(String role) {
+        this.role = role;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 版本类型。 **取值范围**： - STABLE：稳定版 - PREVIEW：预览版
+     * @return role
+     */
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -73,12 +95,13 @@ public class NodeTypeDatastores {
             return false;
         }
         NodeTypeDatastores that = (NodeTypeDatastores) obj;
-        return Objects.equals(this.version, that.version) && Objects.equals(this.attachments, that.attachments);
+        return Objects.equals(this.version, that.version) && Objects.equals(this.attachments, that.attachments)
+            && Objects.equals(this.role, that.role);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(version, attachments);
+        return Objects.hash(version, attachments, role);
     }
 
     @Override
@@ -87,6 +110,7 @@ public class NodeTypeDatastores {
         sb.append("class NodeTypeDatastores {\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
+        sb.append("    role: ").append(toIndentedString(role)).append("\n");
         sb.append("}");
         return sb.toString();
     }

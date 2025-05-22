@@ -51,6 +51,6 @@ public class ObsCredentials extends AbstractCredentials<ObsCredentials> {
     }
 
     @Override
-    protected void updateAuthTokenByIdToken(HttpClient httpClient) {
+    protected void updateFederalAuthTokenByIdToken(HttpClient httpClient) {
     }
 }

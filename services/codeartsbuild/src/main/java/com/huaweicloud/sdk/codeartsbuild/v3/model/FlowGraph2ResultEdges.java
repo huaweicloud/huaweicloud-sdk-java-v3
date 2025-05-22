@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * FlowGraphResultEdges
+ * FlowGraph2ResultEdges
  */
-public class FlowGraphResultEdges {
+public class FlowGraph2ResultEdges {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "from")
@@ -20,7 +20,7 @@ public class FlowGraphResultEdges {
 
     private String to;
 
-    public FlowGraphResultEdges withFrom(String from) {
+    public FlowGraph2ResultEdges withFrom(String from) {
         this.from = from;
         return this;
     }
@@ -37,7 +37,7 @@ public class FlowGraphResultEdges {
         this.from = from;
     }
 
-    public FlowGraphResultEdges withTo(String to) {
+    public FlowGraph2ResultEdges withTo(String to) {
         this.to = to;
         return this;
     }
@@ -62,7 +62,7 @@ public class FlowGraphResultEdges {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlowGraphResultEdges that = (FlowGraphResultEdges) obj;
+        FlowGraph2ResultEdges that = (FlowGraph2ResultEdges) obj;
         return Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to);
     }
 
@@ -74,7 +74,7 @@ public class FlowGraphResultEdges {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class FlowGraphResultEdges {\n");
+        sb.append("class FlowGraph2ResultEdges {\n");
         sb.append("    from: ").append(toIndentedString(from)).append("\n");
         sb.append("    to: ").append(toIndentedString(to)).append("\n");
         sb.append("}");

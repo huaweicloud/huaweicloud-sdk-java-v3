@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 逻辑集群操作信息
+ * **参数解释**： 逻辑集群操作信息。 **取值范围**： 不涉及。
  */
 public class ActionInfo {
 
@@ -51,7 +51,7 @@ public class ActionInfo {
     }
 
     /**
-     * 操作名称。当前只允许Create,Expand,Restart,Delete,Shrink
+     * **参数解释**： 操作名称。 **取值范围**： Create：创建逻辑集群 Expand：扩容逻辑集群 Restart：重启逻辑集群 Delete：删除逻辑集群 Shrink：缩容逻辑集群
      * @return actionName
      */
     public String getActionName() {
@@ -68,7 +68,7 @@ public class ActionInfo {
     }
 
     /**
-     * 操作进度，默认10
+     * **参数解释**： 操作进度，默认10。 **取值范围**： 0~100
      * @return progress
      */
     public Integer getProgress() {
@@ -85,7 +85,7 @@ public class ActionInfo {
     }
 
     /**
-     * 是否完成操作
+     * **参数解释**： 操作是否完成。 **取值范围**： 不涉及。
      * @return completed
      */
     public Boolean getCompleted() {
@@ -102,7 +102,7 @@ public class ActionInfo {
     }
 
     /**
-     * 操作开始时间
+     * **参数解释**： 操作开始时间。 **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -119,7 +119,7 @@ public class ActionInfo {
     }
 
     /**
-     * 操作结束时间
+     * **参数解释**： 操作结束时间。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {
@@ -136,7 +136,7 @@ public class ActionInfo {
     }
 
     /**
-     * 操作结果。success或者failed，默认空字符串
+     * **参数解释**： 操作结果。。 **取值范围**： success：成功 failed：失败 默认空字符串。
      * @return result
      */
     public String getResult() {
@@ -153,7 +153,7 @@ public class ActionInfo {
     }
 
     /**
-     * 操作日志
+     * **参数解释**： 操作日志信息。 **取值范围**： 不涉及。
      * @return logs
      */
     public String getLogs() {

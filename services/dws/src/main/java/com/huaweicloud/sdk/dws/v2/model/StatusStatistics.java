@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 资源统计信息
+ * **参数解释**： 资源统计信息。 **取值范围**： 不涉及。
  */
 public class StatusStatistics {
 
@@ -26,7 +26,7 @@ public class StatusStatistics {
     }
 
     /**
-     * 活跃资源
+     * **参数解释**： 活跃资源。 **取值范围**： 不涉及。
      * @return active
      */
     public Long getActive() {
@@ -43,7 +43,7 @@ public class StatusStatistics {
     }
 
     /**
-     * 总资源
+     * **参数解释**： 总资源。 **取值范围**： 不涉及。
      * @return total
      */
     public Long getTotal() {

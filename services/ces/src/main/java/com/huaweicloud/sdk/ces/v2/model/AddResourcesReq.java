@@ -9,9 +9,9 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * ResourcesReq
+ * AddResourcesReq
  */
-public class ResourcesReq {
+public class AddResourcesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "resources")
@@ -23,12 +23,12 @@ public class ResourcesReq {
 
     private List<ProductResource> productResources = null;
 
-    public ResourcesReq withResources(List<Resource> resources) {
+    public AddResourcesReq withResources(List<Resource> resources) {
         this.resources = resources;
         return this;
     }
 
-    public ResourcesReq addResourcesItem(Resource resourcesItem) {
+    public AddResourcesReq addResourcesItem(Resource resourcesItem) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class ResourcesReq {
         return this;
     }
 
-    public ResourcesReq withResources(Consumer<List<Resource>> resourcesSetter) {
+    public AddResourcesReq withResources(Consumer<List<Resource>> resourcesSetter) {
         if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
@@ -45,7 +45,7 @@ public class ResourcesReq {
     }
 
     /**
-     * 资源信息
+     * 手动创建，选择资源层级为子维度时的资源信息。每次修改资源时只需要传递新增的资源
      * @return resources
      */
     public List<Resource> getResources() {
@@ -56,12 +56,12 @@ public class ResourcesReq {
         this.resources = resources;
     }
 
-    public ResourcesReq withProductResources(List<ProductResource> productResources) {
+    public AddResourcesReq withProductResources(List<ProductResource> productResources) {
         this.productResources = productResources;
         return this;
     }
 
-    public ResourcesReq addProductResourcesItem(ProductResource productResourcesItem) {
+    public AddResourcesReq addProductResourcesItem(ProductResource productResourcesItem) {
         if (this.productResources == null) {
             this.productResources = new ArrayList<>();
         }
@@ -69,7 +69,7 @@ public class ResourcesReq {
         return this;
     }
 
-    public ResourcesReq withProductResources(Consumer<List<ProductResource>> productResourcesSetter) {
+    public AddResourcesReq withProductResources(Consumer<List<ProductResource>> productResourcesSetter) {
         if (this.productResources == null) {
             this.productResources = new ArrayList<>();
         }
@@ -78,7 +78,7 @@ public class ResourcesReq {
     }
 
     /**
-     * 手动创建，选择资源层级为云产品时的资源详情
+     * 手动创建，选择资源层级为云产品时的资源详情。每次修改资源时需要将已有资源和新增的资源一起传递
      * @return productResources
      */
     public List<ProductResource> getProductResources() {
@@ -97,7 +97,7 @@ public class ResourcesReq {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourcesReq that = (ResourcesReq) obj;
+        AddResourcesReq that = (AddResourcesReq) obj;
         return Objects.equals(this.resources, that.resources)
             && Objects.equals(this.productResources, that.productResources);
     }
@@ -110,7 +110,7 @@ public class ResourcesReq {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class ResourcesReq {\n");
+        sb.append("class AddResourcesReq {\n");
         sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
         sb.append("    productResources: ").append(toIndentedString(productResources)).append("\n");
         sb.append("}");

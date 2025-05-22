@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * ClusterFlavorResp
+ * **参数解释**： 规格信息。 **取值范围**： 不涉及。
  */
 public class ClusterFlavorResp {
 
@@ -29,7 +29,7 @@ public class ClusterFlavorResp {
     }
 
     /**
-     * ID
+     * **参数解释**： 规格ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -62,7 +62,7 @@ public class ClusterFlavorResp {
     }
 
     /**
-     * 连接
+     * **参数解释**： 链接信息。 **取值范围**： 不涉及。
      * @return links
      */
     public List<LinkResp> getLinks() {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 逻辑集群磁盘信息
+ * **参数解释**： 逻辑集群磁盘信息。 **取值范围**： 不涉及。
  */
 public class LogicalClusterVolume {
 
@@ -36,7 +36,7 @@ public class LogicalClusterVolume {
     }
 
     /**
-     * 逻辑集群名称
+     * **参数解释**： 逻辑集群名称。 **取值范围**： 不涉及。
      * @return logicalClusterName
      */
     public String getLogicalClusterName() {
@@ -53,7 +53,7 @@ public class LogicalClusterVolume {
     }
 
     /**
-     * 磁盘使用量
+     * **参数解释**： 磁盘使用量。 **取值范围**： 不涉及。
      * @return usage
      */
     public String getUsage() {
@@ -70,7 +70,7 @@ public class LogicalClusterVolume {
     }
 
     /**
-     * 磁盘总量
+     * **参数解释**： 磁盘总量。 **取值范围**： 不涉及。
      * @return total
      */
     public String getTotal() {
@@ -87,7 +87,7 @@ public class LogicalClusterVolume {
     }
 
     /**
-     * 磁盘使用比例
+     * **参数解释**： 磁盘使用比例。 **取值范围**： 不涉及。
      * @return percent
      */
     public String getPercent() {

@@ -16,6 +16,11 @@ public class UpdateMemberOption {
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -45,6 +50,23 @@ public class UpdateMemberOption {
 
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
+    }
+
+    public UpdateMemberOption withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 参数解释：后端服务器的可用区。  约束限制： 仅支持iptarget类型的后端服务器更新该字段。且后端服务器组开启可用区亲和时，iptarget类型的后端服务器必须配置该字段，且无法更新为\"\"。 取值范围：本region中ECS可选择的可用区。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
     }
 
     public UpdateMemberOption withName(String name) {
@@ -111,13 +133,14 @@ public class UpdateMemberOption {
             return false;
         }
         UpdateMemberOption that = (UpdateMemberOption) obj;
-        return Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.name, that.name)
+        return Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.name, that.name)
             && Objects.equals(this.weight, that.weight) && Objects.equals(this.protocolPort, that.protocolPort);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(adminStateUp, name, weight, protocolPort);
+        return Objects.hash(adminStateUp, availabilityZone, name, weight, protocolPort);
     }
 
     @Override
@@ -125,6 +148,7 @@ public class UpdateMemberOption {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateMemberOption {\n");
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");

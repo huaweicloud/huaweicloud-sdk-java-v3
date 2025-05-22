@@ -314,7 +314,7 @@ public class BatchCreateLoadBalancerOption {
     private String protectionReason;
 
     /**
-     * '创建实例采用的计费模式。flavor: 按实例规格收费，默认值。lcu: 按使用量收费。' 批量创建共享型实例时，该字段不允许指定。
+     * 创建实例采用的计费模式。flavor: 按实例规格收费，默认值。lcu: 按使用量收费。 批量创建共享型实例时，该字段不允许指定。
      */
     public static final class ChargeModeEnum {
 
@@ -1054,7 +1054,7 @@ public class BatchCreateLoadBalancerOption {
     }
 
     /**
-     * '创建实例采用的计费模式。flavor: 按实例规格收费，默认值。lcu: 按使用量收费。' 批量创建共享型实例时，该字段不允许指定。
+     * 创建实例采用的计费模式。flavor: 按实例规格收费，默认值。lcu: 按使用量收费。 批量创建共享型实例时，该字段不允许指定。
      * @return chargeMode
      */
     public ChargeModeEnum getChargeMode() {

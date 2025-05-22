@@ -46,7 +46,7 @@ public class ShowClusterRedistributionRequest {
     }
 
     /**
-     * 集群ID
+     * **参数解释**： 集群ID。获取方式方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {
@@ -63,7 +63,7 @@ public class ShowClusterRedistributionRequest {
     }
 
     /**
-     * 分页查询，每页大小
+     * **参数解释**： 分页查询，每页大小。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 10
      * @return limit
      */
     public Integer getLimit() {
@@ -80,7 +80,7 @@ public class ShowClusterRedistributionRequest {
     }
 
     /**
-     * 分页查询，偏移
+     * **参数解释**： 分页偏移量，从0开始，页数减1。 **约束限制**： 不涉及。 **取值范围**： 大于等于0 **默认取值**： 0
      * @return offset
      */
     public Integer getOffset() {
@@ -97,7 +97,7 @@ public class ShowClusterRedistributionRequest {
     }
 
     /**
-     * 数据库名称
+     * **参数解释**： 数据库名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： null
      * @return dbName
      */
     public String getDbName() {
@@ -114,7 +114,7 @@ public class ShowClusterRedistributionRequest {
     }
 
     /**
-     * 表名称
+     * **参数解释**： 表名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： null
      * @return tableName
      */
     public String getTableName() {
@@ -131,7 +131,7 @@ public class ShowClusterRedistributionRequest {
     }
 
     /**
-     * 类型
+     * **参数解释**： 类型，取值来自public.pgxc_redistb表的redistributed字段。多个可用逗号分割。 **约束限制**： 不涉及。 **取值范围**： i：重分布中； y：已完成； n：未开始； **默认取值**： null，即不过滤。
      * @return type
      */
     public String getType() {

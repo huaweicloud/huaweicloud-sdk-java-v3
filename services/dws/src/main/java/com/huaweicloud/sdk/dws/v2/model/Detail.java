@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 节点类型详细
+ * 规格详细信息。
  */
 public class Detail {
 
@@ -31,7 +31,7 @@ public class Detail {
     }
 
     /**
-     * 属性类型。
+     * **参数解释**： 属性类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -48,7 +48,7 @@ public class Detail {
     }
 
     /**
-     * 属性值。
+     * **参数解释**： 属性值。 **取值范围**： 不涉及。
      * @return value
      */
     public String getValue() {
@@ -65,7 +65,7 @@ public class Detail {
     }
 
     /**
-     * 属性单位。
+     * **参数解释**： 属性单位。 **取值范围**： 不涉及。
      * @return unit
      */
     public String getUnit() {

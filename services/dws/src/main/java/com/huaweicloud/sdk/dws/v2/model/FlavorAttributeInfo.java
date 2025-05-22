@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * FlavorAttributeInfo
+ * **参数解释**： 扩展信息。 **取值范围**： 不涉及。
  */
 public class FlavorAttributeInfo {
 
@@ -26,7 +26,7 @@ public class FlavorAttributeInfo {
     }
 
     /**
-     * 属性编码
+     * **参数解释**： 属性编码。 **取值范围**： 不涉及。
      * @return code
      */
     public String getCode() {
@@ -43,7 +43,7 @@ public class FlavorAttributeInfo {
     }
 
     /**
-     * 属性值
+     * **参数解释**： 属性值。 **取值范围**： 不涉及。
      * @return value
      */
     public String getValue() {

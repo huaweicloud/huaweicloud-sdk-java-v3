@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 重分布表详情
+ * **参数解释**： 重分布表详情。 **取值范围**： 不涉及。
  */
 public class RedisTableDetail {
 
@@ -45,7 +45,7 @@ public class RedisTableDetail {
     }
 
     /**
-     * 具体数据
+     * **参数解释**： 重分布具体数据。 **取值范围**： 不涉及。
      * @return data
      */
     public List<RedisTable> getData() {
@@ -62,7 +62,7 @@ public class RedisTableDetail {
     }
 
     /**
-     * 总条数
+     * **参数解释**： 重分布表张数。 **取值范围**： 不涉及。
      * @return total
      */
     public Integer getTotal() {

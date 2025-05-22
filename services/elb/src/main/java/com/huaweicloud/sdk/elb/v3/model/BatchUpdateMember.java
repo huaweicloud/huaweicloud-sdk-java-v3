@@ -93,6 +93,11 @@ public class BatchUpdateMember {
 
     private String updatedAt;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
     public BatchUpdateMember withId(String id) {
         this.id = id;
         return this;
@@ -394,6 +399,23 @@ public class BatchUpdateMember {
         this.updatedAt = updatedAt;
     }
 
+    public BatchUpdateMember withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 后端服务器所在的可用区。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -411,7 +433,8 @@ public class BatchUpdateMember {
             && Objects.equals(this.reason, that.reason) && Objects.equals(this.status, that.status)
             && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.instanceId, that.instanceId)
             && Objects.equals(this.portId, that.portId) && Objects.equals(this.createdAt, that.createdAt)
-            && Objects.equals(this.updatedAt, that.updatedAt);
+            && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override
@@ -431,7 +454,8 @@ public class BatchUpdateMember {
             instanceId,
             portId,
             createdAt,
-            updatedAt);
+            updatedAt,
+            availabilityZone);
     }
 
     @Override
@@ -454,6 +478,7 @@ public class BatchUpdateMember {
         sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

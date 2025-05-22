@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * ClusterFlavorDetailInfo
+ * **参数解释**： 集群规格详情。 **取值范围**： 不涉及。
  */
 public class ClusterFlavorDetailInfo {
 
@@ -64,7 +64,7 @@ public class ClusterFlavorDetailInfo {
     }
 
     /**
-     * 规格ID
+     * **参数解释**： 规格ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -81,7 +81,7 @@ public class ClusterFlavorDetailInfo {
     }
 
     /**
-     * 规格编码
+     * **参数解释**： 规格编码。 **取值范围**： 不涉及。
      * @return specName
      */
     public String getSpecName() {
@@ -98,7 +98,7 @@ public class ClusterFlavorDetailInfo {
     }
 
     /**
-     * 当前节点数量
+     * **参数解释**： 当前节点数量。 **取值范围**： 不涉及。
      * @return currentNode
      */
     public Integer getCurrentNode() {
@@ -115,7 +115,7 @@ public class ClusterFlavorDetailInfo {
     }
 
     /**
-     * 最小节点阈值
+     * **参数解释**： 最小节点阈值。 **取值范围**： 不涉及。
      * @return minNode
      */
     public Integer getMinNode() {
@@ -132,7 +132,7 @@ public class ClusterFlavorDetailInfo {
     }
 
     /**
-     * 最大节点阈值
+     * **参数解释**： 最大节点阈值。 **取值范围**： 不涉及。
      * @return maxNode
      */
     public Integer getMaxNode() {
@@ -149,7 +149,7 @@ public class ClusterFlavorDetailInfo {
     }
 
     /**
-     * 规格类型
+     * **参数解释**： 规格类型。 **取值范围**： 不涉及。
      * @return classify
      */
     public String getClassify() {
@@ -166,7 +166,7 @@ public class ClusterFlavorDetailInfo {
     }
 
     /**
-     * 数据仓库版本
+     * **参数解释**： 数据仓库版本。 **取值范围**： 不涉及。
      * @return datastoreVersion
      */
     public String getDatastoreVersion() {
@@ -199,7 +199,7 @@ public class ClusterFlavorDetailInfo {
     }
 
     /**
-     * 扩展信息
+     * **参数解释**： 扩展信息。 **取值范围**： 不涉及。
      * @return attribute
      */
     public List<FlavorAttributeInfo> getAttribute() {

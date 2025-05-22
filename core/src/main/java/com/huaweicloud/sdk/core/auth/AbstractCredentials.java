@@ -66,7 +66,13 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
 
     protected String derivedAuthServiceName;
 
+    protected MetadataAccessor metadataAccessor;
+
     private Function<HttpRequest, Boolean> derivedPredicate;
+
+    private static final long DEFAULT_EXPIRATION_THRESHOLD_SECONDS = 2 * 60 * 60; // 2h
+
+    private long expirationThresholdSeconds = DEFAULT_EXPIRATION_THRESHOLD_SECONDS;
 
     public static final Function<HttpRequest, Boolean> DEFAULT_DERIVED_PREDICATE = httpRequest ->
             !httpRequest.getEndpoint().replace(Constants.HTTPS_SCHEME + "://", "")
@@ -201,6 +207,17 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         return toDerivedT();
     }
 
+    public long getExpirationThresholdSeconds() {
+        return expirationThresholdSeconds;
+    }
+
+    public void setExpirationThresholdSeconds(long expirationThresholdSeconds) {
+        if (expirationThresholdSeconds < 60 || expirationThresholdSeconds > 7200) {
+            throw new IllegalArgumentException("expirationThresholdSeconds must be between 60 and 7200.");
+        }
+        this.expirationThresholdSeconds = expirationThresholdSeconds;
+    }
+
     protected String getUsedIamEndpoint() {
         if (!StringUtils.isEmpty(iamEndpoint)) {
             return iamEndpoint;
@@ -240,7 +257,7 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         return idToken;
     }
 
-    protected boolean needUpdateSecurityToken() {
+    protected boolean needUpdateSecurityTokenFromMetadata() {
         if (Objects.nonNull(authToken)) {
             return false;
         }
@@ -250,11 +267,14 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         if (Objects.isNull(expiredAt) || Objects.isNull(securityToken)) {
             return false;
         }
-        return expiredAt - TimeUtils.getTimeInMillis() < 60000;
+        return expiredAt - TimeUtils.getTimeInMillis() < expirationThresholdSeconds;
     }
 
     protected void updateSecurityTokenFromMetadata() {
-        Credential credential = Iam.getCredentialFromMetadata();
+        if (metadataAccessor == null) {
+            metadataAccessor = new MetadataAccessor();
+        }
+        Credential credential = metadataAccessor.getCredentials();
         ak = credential.getAccess();
         sk = credential.getSecret();
         securityToken = credential.getSecurityToken();
@@ -266,14 +286,14 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         }
     }
 
-    protected boolean needUpdateAuthToken() {
+    protected boolean needUpdateFederalAuthToken() {
         if (Objects.isNull(idpId) || Objects.isNull(idTokenFile)) {
             return false;
         }
         if (Objects.isNull(authToken) || Objects.isNull(expiredAt)) {
             return true;
         }
-        return expiredAt - TimeUtils.getTimeInMillis() < 60000;
+        return expiredAt - TimeUtils.getTimeInMillis() < expirationThresholdSeconds;
     }
 
     @SuppressWarnings("unchecked")
@@ -281,5 +301,5 @@ public abstract class AbstractCredentials<T extends AbstractCredentials<T>> impl
         return (T) this;
     }
 
-    protected abstract void updateAuthTokenByIdToken(HttpClient httpClient);
+    protected abstract void updateFederalAuthTokenByIdToken(HttpClient httpClient);
 }

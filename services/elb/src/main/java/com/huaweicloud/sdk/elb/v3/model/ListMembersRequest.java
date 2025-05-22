@@ -93,6 +93,11 @@ public class ListMembersRequest {
 
     private List<String> instanceId = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private List<String> availabilityZone = null;
+
     public ListMembersRequest withPoolId(String poolId) {
         this.poolId = poolId;
         return this;
@@ -543,6 +548,39 @@ public class ListMembersRequest {
         this.instanceId = instanceId;
     }
 
+    public ListMembersRequest withAvailabilityZone(List<String> availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    public ListMembersRequest addAvailabilityZoneItem(String availabilityZoneItem) {
+        if (this.availabilityZone == null) {
+            this.availabilityZone = new ArrayList<>();
+        }
+        this.availabilityZone.add(availabilityZoneItem);
+        return this;
+    }
+
+    public ListMembersRequest withAvailabilityZone(Consumer<List<String>> availabilityZoneSetter) {
+        if (this.availabilityZone == null) {
+            this.availabilityZone = new ArrayList<>();
+        }
+        availabilityZoneSetter.accept(this.availabilityZone);
+        return this;
+    }
+
+    /**
+     * 后端服务器的可用区。  支持多值查询，查询条件格式：*availability_zone=xxx&availability_zone=xxx*。
+     * @return availabilityZone
+     */
+    public List<String> getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(List<String> availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -561,7 +599,8 @@ public class ListMembersRequest {
             && Objects.equals(this.operatingStatus, that.operatingStatus)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.memberType, that.memberType)
-            && Objects.equals(this.instanceId, that.instanceId);
+            && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override
@@ -581,7 +620,8 @@ public class ListMembersRequest {
             enterpriseProjectId,
             ipVersion,
             memberType,
-            instanceId);
+            instanceId,
+            availabilityZone);
     }
 
     @Override
@@ -604,6 +644,7 @@ public class ListMembersRequest {
         sb.append("    ipVersion: ").append(toIndentedString(ipVersion)).append("\n");
         sb.append("    memberType: ").append(toIndentedString(memberType)).append("\n");
         sb.append("    instanceId: ").append(toIndentedString(instanceId)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -86,7 +86,7 @@ public class RedisProgress {
     }
 
     /**
-     * 已完成字节数
+     * **参数解释**： 已完成字节数。 **取值范围**： 不涉及。
      * @return bytesDone
      */
     public Long getBytesDone() {
@@ -103,7 +103,7 @@ public class RedisProgress {
     }
 
     /**
-     * 剩余字节数
+     * **参数解释**： 剩余字节数。 **取值范围**： 不涉及。
      * @return byteLeft
      */
     public Long getByteLeft() {
@@ -120,7 +120,7 @@ public class RedisProgress {
     }
 
     /**
-     * 完成表数量
+     * **参数解释**： 完成表数量。 **取值范围**： 不涉及。
      * @return tablesDone
      */
     public Integer getTablesDone() {
@@ -137,7 +137,7 @@ public class RedisProgress {
     }
 
     /**
-     * 剩余表数量
+     * **参数解释**： 剩余表数量。 **取值范围**： 不涉及。
      * @return tablesLeft
      */
     public Integer getTablesLeft() {
@@ -154,7 +154,7 @@ public class RedisProgress {
     }
 
     /**
-     * 表重分布进度
+     * **参数解释**： 表重分布进度。 **取值范围**： 1~100。
      * @return tableProgress
      */
     public Integer getTableProgress() {
@@ -171,7 +171,7 @@ public class RedisProgress {
     }
 
     /**
-     * 总进度
+     * **参数解释**： 总进度。 **取值范围**： 1~100。
      * @return totalProgress
      */
     public Integer getTotalProgress() {
@@ -188,7 +188,7 @@ public class RedisProgress {
     }
 
     /**
-     * 重分布比例
+     * **参数解释**： 重分布速度。 **取值范围**： 不涉及。
      * @return redisRate
      */
     public String getRedisRate() {
@@ -205,7 +205,7 @@ public class RedisProgress {
     }
 
     /**
-     * 预计时间
+     * **参数解释**： 预估时间。 **取值范围**： 不涉及。
      * @return estimatedTime
      */
     public String getEstimatedTime() {
@@ -222,7 +222,7 @@ public class RedisProgress {
     }
 
     /**
-     * 是否已完成
+     * **参数解释**： 是否已完成。 **取值范围**： 不涉及。
      * @return completed
      */
     public Boolean getCompleted() {
@@ -239,7 +239,7 @@ public class RedisProgress {
     }
 
     /**
-     * 是否完成初始化
+     * **参数解释**： 是否完成初始化。 **取值范围**： 不涉及。
      * @return initialed
      */
     public Boolean getInitialed() {
@@ -256,7 +256,7 @@ public class RedisProgress {
     }
 
     /**
-     * 失败总数
+     * **参数解释**： 失败次数。 **取值范围**： 不涉及。
      * @return failCount
      */
     public Integer getFailCount() {
@@ -273,7 +273,7 @@ public class RedisProgress {
     }
 
     /**
-     * cm_ctl 结果
+     * **参数解释**： cm_ctl查询的重分布结果。 **取值范围**： 不涉及。
      * @return redistributing
      */
     public Boolean getRedistributing() {
@@ -290,7 +290,7 @@ public class RedisProgress {
     }
 
     /**
-     * 状态
+     * **参数解释**： 状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -307,7 +307,7 @@ public class RedisProgress {
     }
 
     /**
-     * 是否用户暂停
+     * **参数解释**： 是否用户暂停。 **取值范围**： 不涉及。
      * @return pauseByUser
      */
     public Boolean getPauseByUser() {

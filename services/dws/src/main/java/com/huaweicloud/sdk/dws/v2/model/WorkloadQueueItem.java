@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 工作负载资源池
+ * **参数解释**： 工作负载资源池。 **取值范围**： 不涉及。
  */
 public class WorkloadQueueItem {
 
@@ -44,7 +44,7 @@ public class WorkloadQueueItem {
     }
 
     /**
-     * 资源池名称。
+     * **参数解释**： 资源池名称。 **取值范围**： 不涉及。
      * @return queueName
      */
     public String getQueueName() {
@@ -61,7 +61,7 @@ public class WorkloadQueueItem {
     }
 
     /**
-     * 逻辑集群名称。
+     * **参数解释**： 逻辑集群名称。 **取值范围**： 不涉及。
      * @return logicalClusterName
      */
     public String getLogicalClusterName() {
@@ -78,7 +78,7 @@ public class WorkloadQueueItem {
     }
 
     /**
-     * 工作负载队列短查询加速开关。
+     * **参数解释**： 工作负载队列短查询加速开关。 **取值范围**： 不涉及。
      * @return shortQueryOptimize
      */
     public String getShortQueryOptimize() {
@@ -95,7 +95,7 @@ public class WorkloadQueueItem {
     }
 
     /**
-     * 工作负载队列短查询并发数。
+     * **参数解释**： 工作负载队列短查询并发数。 **取值范围**： 不涉及。
      * @return shortQueryConcurrencyNum
      */
     public Integer getShortQueryConcurrencyNum() {
@@ -128,7 +128,7 @@ public class WorkloadQueueItem {
     }
 
     /**
-     * 资源配置队列。
+     * **参数解释**： 资源配置队列。 **取值范围**： 不涉及。
      * @return resourceItemList
      */
     public List<WorkloadResourceItem> getResourceItemList() {

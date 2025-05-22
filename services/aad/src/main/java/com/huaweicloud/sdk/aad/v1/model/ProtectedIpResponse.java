@@ -445,7 +445,7 @@ public class ProtectedIpResponse {
     }
 
     /**
-     * 防护包id
+     * 实例id
      * @return packageId
      */
     public String getPackageId() {
@@ -462,7 +462,7 @@ public class ProtectedIpResponse {
     }
 
     /**
-     * 防护包名
+     * 实例名
      * @return packageName
      */
     public String getPackageName() {

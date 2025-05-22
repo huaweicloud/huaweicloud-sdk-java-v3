@@ -32,7 +32,7 @@ public class SaveClusterDescriptionInfoRequest {
     }
 
     /**
-     * 集群ID
+     * **参数解释**： 集群ID。获取方式方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {
@@ -49,7 +49,7 @@ public class SaveClusterDescriptionInfoRequest {
     }
 
     /**
-     * 命名空间
+     * **参数解释**： 命名空间。 **约束限制**： 固定值DWS，不填也是DWS。 **取值范围**： DWS **默认取值**： DWS
      * @return namespace
      */
     public String getNamespace() {

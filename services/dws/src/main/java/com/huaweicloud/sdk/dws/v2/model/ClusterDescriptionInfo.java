@@ -21,7 +21,7 @@ public class ClusterDescriptionInfo {
     }
 
     /**
-     * 集群描述信息
+     * **参数解释**: 集群描述信息。 **取值范围**: 不涉及。
      * @return descriptionInfo
      */
     public String getDescriptionInfo() {

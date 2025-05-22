@@ -37,6 +37,8 @@ import com.huaweicloud.sdk.dcs.v2.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateMigrationTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.CreateOfflineKeyAnalysisRequest;
+import com.huaweicloud.sdk.dcs.v2.model.CreateOfflineKeyAnalysisResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateOnlineMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.CreateOnlineMigrationTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.CreateRedislogDownloadLinkRequest;
@@ -67,10 +69,14 @@ import com.huaweicloud.sdk.dcs.v2.model.DeleteIpFromDomainNameRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteIpFromDomainNameResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrationTaskRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteMigrationTaskResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteOfflineKeyAnalysisTaskRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DeleteOfflineKeyAnalysisTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeletePublicIpRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeletePublicIpResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DeleteSingleInstanceResponse;
+import com.huaweicloud.sdk.dcs.v2.model.DownloadHotKeyRequest;
+import com.huaweicloud.sdk.dcs.v2.model.DownloadHotKeyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.DownloadSslCertRequest;
 import com.huaweicloud.sdk.dcs.v2.model.DownloadSslCertResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ExchangeInstanceIpRequest;
@@ -133,6 +139,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ListMonitoredObjectsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListMonitoredObjectsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListNumberOfInstancesInDifferentStatusRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListNumberOfInstancesInDifferentStatusResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ListOfflineKeyAnalysisTaskRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ListOfflineKeyAnalysisTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListRedislogRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ListRedislogResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ListRestoreRecordsRequest;
@@ -147,6 +155,8 @@ import com.huaweicloud.sdk.dcs.v2.model.LoginWebCliRequest;
 import com.huaweicloud.sdk.dcs.v2.model.LoginWebCliResponse;
 import com.huaweicloud.sdk.dcs.v2.model.LogoffWebCliRequest;
 import com.huaweicloud.sdk.dcs.v2.model.LogoffWebCliResponse;
+import com.huaweicloud.sdk.dcs.v2.model.MigrateAzRequest;
+import com.huaweicloud.sdk.dcs.v2.model.MigrateAzResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ResetAclAccountPassWordRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ResetAclAccountPassWordResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ResetPasswordRequest;
@@ -157,6 +167,8 @@ import com.huaweicloud.sdk.dcs.v2.model.RestartOrFlushInstancesRequest;
 import com.huaweicloud.sdk.dcs.v2.model.RestartOrFlushInstancesResponse;
 import com.huaweicloud.sdk.dcs.v2.model.RestoreInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.RestoreInstanceResponse;
+import com.huaweicloud.sdk.dcs.v2.model.RollbackExchangeInstanceIpRequest;
+import com.huaweicloud.sdk.dcs.v2.model.RollbackExchangeInstanceIpResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ScanClientsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ScanClientsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ScanExpireKeyRequest;
@@ -191,6 +203,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceSslDetailRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceSslDetailResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceTopologyRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceTopologyResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceVersionRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowInstanceVersionResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowIpWhitelistRequest;
@@ -203,6 +217,8 @@ import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowMigrationTaskStatsResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowNodesInformationResponse;
+import com.huaweicloud.sdk.dcs.v2.model.ShowOfflineKeyAnalysisTaskRequest;
+import com.huaweicloud.sdk.dcs.v2.model.ShowOfflineKeyAnalysisTaskResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantRequest;
 import com.huaweicloud.sdk.dcs.v2.model.ShowQuotaOfTenantResponse;
 import com.huaweicloud.sdk.dcs.v2.model.ShowReplicationStatesRequest;
@@ -243,6 +259,8 @@ import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceConfigRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceConfigResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateInstanceResponse;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateIpWhitelistAsyncRequest;
+import com.huaweicloud.sdk.dcs.v2.model.UpdateIpWhitelistAsyncResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateIpWhitelistRequest;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateIpWhitelistResponse;
 import com.huaweicloud.sdk.dcs.v2.model.UpdateMigrationTaskRequest;
@@ -1301,6 +1319,35 @@ public class DcsAsyncClient {
     public AsyncInvoker<DeleteSingleInstanceRequest, DeleteSingleInstanceResponse> deleteSingleInstanceAsyncInvoker(
         DeleteSingleInstanceRequest request) {
         return new AsyncInvoker<>(request, DcsMeta.deleteSingleInstance, hcClient);
+    }
+
+    /**
+     * 下载热key
+     *
+     * 下载热key。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadHotKeyRequest 请求对象
+     * @return CompletableFuture<DownloadHotKeyResponse>
+     */
+    public CompletableFuture<DownloadHotKeyResponse> downloadHotKeyAsync(DownloadHotKeyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.downloadHotKey);
+    }
+
+    /**
+     * 下载热key
+     *
+     * 下载热key。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DownloadHotKeyRequest 请求对象
+     * @return AsyncInvoker<DownloadHotKeyRequest, DownloadHotKeyResponse>
+     */
+    public AsyncInvoker<DownloadHotKeyRequest, DownloadHotKeyResponse> downloadHotKeyAsyncInvoker(
+        DownloadHotKeyRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.downloadHotKey, hcClient);
     }
 
     /**
@@ -2417,6 +2464,34 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 变更可用区
+     *
+     * 迁移缓存实例可用区，完成单可用区实例跨可用区改造。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request MigrateAzRequest 请求对象
+     * @return CompletableFuture<MigrateAzResponse>
+     */
+    public CompletableFuture<MigrateAzResponse> migrateAzAsync(MigrateAzRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.migrateAz);
+    }
+
+    /**
+     * 变更可用区
+     *
+     * 迁移缓存实例可用区，完成单可用区实例跨可用区改造。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request MigrateAzRequest 请求对象
+     * @return AsyncInvoker<MigrateAzRequest, MigrateAzResponse>
+     */
+    public AsyncInvoker<MigrateAzRequest, MigrateAzResponse> migrateAzAsyncInvoker(MigrateAzRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.migrateAz, hcClient);
+    }
+
+    /**
      * 重置ACL账号密码
      *
      * 重置ACL账号密码。
@@ -2567,6 +2642,36 @@ public class DcsAsyncClient {
     public AsyncInvoker<RestoreInstanceRequest, RestoreInstanceResponse> restoreInstanceAsyncInvoker(
         RestoreInstanceRequest request) {
         return new AsyncInvoker<>(request, DcsMeta.restoreInstance, hcClient);
+    }
+
+    /**
+     * IP交换回滚
+     *
+     * IP交换回滚。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RollbackExchangeInstanceIpRequest 请求对象
+     * @return CompletableFuture<RollbackExchangeInstanceIpResponse>
+     */
+    public CompletableFuture<RollbackExchangeInstanceIpResponse> rollbackExchangeInstanceIpAsync(
+        RollbackExchangeInstanceIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.rollbackExchangeInstanceIp);
+    }
+
+    /**
+     * IP交换回滚
+     *
+     * IP交换回滚。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request RollbackExchangeInstanceIpRequest 请求对象
+     * @return AsyncInvoker<RollbackExchangeInstanceIpRequest, RollbackExchangeInstanceIpResponse>
+     */
+    public AsyncInvoker<RollbackExchangeInstanceIpRequest, RollbackExchangeInstanceIpResponse> rollbackExchangeInstanceIpAsyncInvoker(
+        RollbackExchangeInstanceIpRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.rollbackExchangeInstanceIp, hcClient);
     }
 
     /**
@@ -3071,6 +3176,36 @@ public class DcsAsyncClient {
     public AsyncInvoker<ShowInstanceSslDetailRequest, ShowInstanceSslDetailResponse> showInstanceSslDetailAsyncInvoker(
         ShowInstanceSslDetailRequest request) {
         return new AsyncInvoker<>(request, DcsMeta.showInstanceSslDetail, hcClient);
+    }
+
+    /**
+     * 查询集群实例拓扑关系图
+     *
+     * 查询集群实例拓扑关系图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceTopologyRequest 请求对象
+     * @return CompletableFuture<ShowInstanceTopologyResponse>
+     */
+    public CompletableFuture<ShowInstanceTopologyResponse> showInstanceTopologyAsync(
+        ShowInstanceTopologyRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.showInstanceTopology);
+    }
+
+    /**
+     * 查询集群实例拓扑关系图
+     *
+     * 查询集群实例拓扑关系图。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowInstanceTopologyRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceTopologyRequest, ShowInstanceTopologyResponse>
+     */
+    public AsyncInvoker<ShowInstanceTopologyRequest, ShowInstanceTopologyResponse> showInstanceTopologyAsyncInvoker(
+        ShowInstanceTopologyRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.showInstanceTopology, hcClient);
     }
 
     /**
@@ -3817,6 +3952,38 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 设置IP白名单分组异步接口
+     *
+     * 为指定实例设置IP白名单分组，包含创建、停用、编辑、删除白名单四个功能。返回异步任务jobId，设置白名单分组信息会覆盖掉已有的白名单信息，因此在新增IP白名单分组时，需保留已有的白名单信息后再编辑新的白名单分组信息。
+     * [仅Redis 4.0及以上版本的实例支持设置IP白名单分组，Redis 3.0实例不支持该功能。](tag:dt)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIpWhitelistAsyncRequest 请求对象
+     * @return CompletableFuture<UpdateIpWhitelistAsyncResponse>
+     */
+    public CompletableFuture<UpdateIpWhitelistAsyncResponse> updateIpWhitelistAsyncAsync(
+        UpdateIpWhitelistAsyncRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.updateIpWhitelistAsync);
+    }
+
+    /**
+     * 设置IP白名单分组异步接口
+     *
+     * 为指定实例设置IP白名单分组，包含创建、停用、编辑、删除白名单四个功能。返回异步任务jobId，设置白名单分组信息会覆盖掉已有的白名单信息，因此在新增IP白名单分组时，需保留已有的白名单信息后再编辑新的白名单分组信息。
+     * [仅Redis 4.0及以上版本的实例支持设置IP白名单分组，Redis 3.0实例不支持该功能。](tag:dt)
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateIpWhitelistAsyncRequest 请求对象
+     * @return AsyncInvoker<UpdateIpWhitelistAsyncRequest, UpdateIpWhitelistAsyncResponse>
+     */
+    public AsyncInvoker<UpdateIpWhitelistAsyncRequest, UpdateIpWhitelistAsyncResponse> updateIpWhitelistAsyncAsyncInvoker(
+        UpdateIpWhitelistAsyncRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.updateIpWhitelistAsync, hcClient);
+    }
+
+    /**
      * 设置迁移任务自动重连
      *
      * 设置迁移任务自动重连
@@ -4077,6 +4244,126 @@ public class DcsAsyncClient {
     public AsyncInvoker<UpdateIpWhitelistRequest, UpdateIpWhitelistResponse> updateIpWhitelistAsyncInvoker(
         UpdateIpWhitelistRequest request) {
         return new AsyncInvoker<>(request, DcsMeta.updateIpWhitelist, hcClient);
+    }
+
+    /**
+     * 创建离线全量key分析任务
+     *
+     * 创建离线全量key分析任务。离线全量key分析用于分析实例指定节点备份文件中的TOP100大key，每种数据类型前缀数量TOP50的key和每种数据类型key的内存占用和数量的分布情况。仅Redis 4.0、5.0、6.0版本及Redis企业版实例支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOfflineKeyAnalysisRequest 请求对象
+     * @return CompletableFuture<CreateOfflineKeyAnalysisResponse>
+     */
+    public CompletableFuture<CreateOfflineKeyAnalysisResponse> createOfflineKeyAnalysisAsync(
+        CreateOfflineKeyAnalysisRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.createOfflineKeyAnalysis);
+    }
+
+    /**
+     * 创建离线全量key分析任务
+     *
+     * 创建离线全量key分析任务。离线全量key分析用于分析实例指定节点备份文件中的TOP100大key，每种数据类型前缀数量TOP50的key和每种数据类型key的内存占用和数量的分布情况。仅Redis 4.0、5.0、6.0版本及Redis企业版实例支持。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateOfflineKeyAnalysisRequest 请求对象
+     * @return AsyncInvoker<CreateOfflineKeyAnalysisRequest, CreateOfflineKeyAnalysisResponse>
+     */
+    public AsyncInvoker<CreateOfflineKeyAnalysisRequest, CreateOfflineKeyAnalysisResponse> createOfflineKeyAnalysisAsyncInvoker(
+        CreateOfflineKeyAnalysisRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.createOfflineKeyAnalysis, hcClient);
+    }
+
+    /**
+     * 删除离线全量key分析记录
+     *
+     * 删除离线全量key分析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOfflineKeyAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<DeleteOfflineKeyAnalysisTaskResponse>
+     */
+    public CompletableFuture<DeleteOfflineKeyAnalysisTaskResponse> deleteOfflineKeyAnalysisTaskAsync(
+        DeleteOfflineKeyAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.deleteOfflineKeyAnalysisTask);
+    }
+
+    /**
+     * 删除离线全量key分析记录
+     *
+     * 删除离线全量key分析记录。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteOfflineKeyAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<DeleteOfflineKeyAnalysisTaskRequest, DeleteOfflineKeyAnalysisTaskResponse>
+     */
+    public AsyncInvoker<DeleteOfflineKeyAnalysisTaskRequest, DeleteOfflineKeyAnalysisTaskResponse> deleteOfflineKeyAnalysisTaskAsyncInvoker(
+        DeleteOfflineKeyAnalysisTaskRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.deleteOfflineKeyAnalysisTask, hcClient);
+    }
+
+    /**
+     * 查询离线全量key分析任务列表
+     *
+     * 查询离线全量key分析任务列表，支持Redis4.0、5.0、6.0版本及Redis企业版。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOfflineKeyAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<ListOfflineKeyAnalysisTaskResponse>
+     */
+    public CompletableFuture<ListOfflineKeyAnalysisTaskResponse> listOfflineKeyAnalysisTaskAsync(
+        ListOfflineKeyAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.listOfflineKeyAnalysisTask);
+    }
+
+    /**
+     * 查询离线全量key分析任务列表
+     *
+     * 查询离线全量key分析任务列表，支持Redis4.0、5.0、6.0版本及Redis企业版。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListOfflineKeyAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<ListOfflineKeyAnalysisTaskRequest, ListOfflineKeyAnalysisTaskResponse>
+     */
+    public AsyncInvoker<ListOfflineKeyAnalysisTaskRequest, ListOfflineKeyAnalysisTaskResponse> listOfflineKeyAnalysisTaskAsyncInvoker(
+        ListOfflineKeyAnalysisTaskRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.listOfflineKeyAnalysisTask, hcClient);
+    }
+
+    /**
+     * 查询离线全量key分析详情
+     *
+     * 查询离线全量key分析详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOfflineKeyAnalysisTaskRequest 请求对象
+     * @return CompletableFuture<ShowOfflineKeyAnalysisTaskResponse>
+     */
+    public CompletableFuture<ShowOfflineKeyAnalysisTaskResponse> showOfflineKeyAnalysisTaskAsync(
+        ShowOfflineKeyAnalysisTaskRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.showOfflineKeyAnalysisTask);
+    }
+
+    /**
+     * 查询离线全量key分析详情
+     *
+     * 查询离线全量key分析详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowOfflineKeyAnalysisTaskRequest 请求对象
+     * @return AsyncInvoker<ShowOfflineKeyAnalysisTaskRequest, ShowOfflineKeyAnalysisTaskResponse>
+     */
+    public AsyncInvoker<ShowOfflineKeyAnalysisTaskRequest, ShowOfflineKeyAnalysisTaskResponse> showOfflineKeyAnalysisTaskAsyncInvoker(
+        ShowOfflineKeyAnalysisTaskRequest request) {
+        return new AsyncInvoker<>(request, DcsMeta.showOfflineKeyAnalysisTask, hcClient);
     }
 
 }

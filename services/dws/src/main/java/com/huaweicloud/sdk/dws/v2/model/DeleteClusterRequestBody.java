@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * This is a auto create Body Object
+ * **参数解释**： 删除集群请求信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class DeleteClusterRequestBody {
 
@@ -21,7 +21,7 @@ public class DeleteClusterRequestBody {
     }
 
     /**
-     * 集群需要保留的快照数
+     * **参数解释**： 集群需要保留的快照数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return keepLastManualSnapshot
      */
     public Integer getKeepLastManualSnapshot() {

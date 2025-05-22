@@ -1954,6 +1954,11 @@ public class WafMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListEventRequest::getHosts, ListEventRequest::setHosts));
+        builder.<List<String>>withRequestField("sips",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEventRequest::getSips, ListEventRequest::setSips));
         builder.<Integer>withRequestField("page",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

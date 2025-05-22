@@ -3405,6 +3405,264 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> createInteractionRuleGroup =
+        genForCreateInteractionRuleGroup();
+
+    private static HttpRequestDef<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> genForCreateInteractionRuleGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateInteractionRuleGroupRequest.class,
+                    CreateInteractionRuleGroupResponse.class)
+                .withName("CreateInteractionRuleGroup")
+                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getAuthorization,
+                CreateInteractionRuleGroupRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getXSdkDate,
+                CreateInteractionRuleGroupRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getXProjectId,
+                CreateInteractionRuleGroupRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getXAppUserId,
+                CreateInteractionRuleGroupRequest::setXAppUserId));
+        builder.<InteractionRuleGroup>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InteractionRuleGroup.class),
+            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getBody,
+                CreateInteractionRuleGroupRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateInteractionRuleGroupResponse::getXRequestId,
+                CreateInteractionRuleGroupResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> deleteInteractionRuleGroup =
+        genForDeleteInteractionRuleGroup();
+
+    private static HttpRequestDef<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> genForDeleteInteractionRuleGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteInteractionRuleGroupRequest.class,
+                    DeleteInteractionRuleGroupResponse.class)
+                .withName("DeleteInteractionRuleGroup")
+                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getGroupId,
+                DeleteInteractionRuleGroupRequest::setGroupId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getAuthorization,
+                DeleteInteractionRuleGroupRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getXSdkDate,
+                DeleteInteractionRuleGroupRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getXProjectId,
+                DeleteInteractionRuleGroupRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getXAppUserId,
+                DeleteInteractionRuleGroupRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteInteractionRuleGroupResponse::getXRequestId,
+                DeleteInteractionRuleGroupResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> listInteractionRuleGroups =
+        genForListInteractionRuleGroups();
+
+    private static HttpRequestDef<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> genForListInteractionRuleGroups() {
+        // basic
+        HttpRequestDef.Builder<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListInteractionRuleGroupsRequest.class,
+                    ListInteractionRuleGroupsResponse.class)
+                .withName("ListInteractionRuleGroups")
+                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getOffset,
+                ListInteractionRuleGroupsRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getLimit,
+                ListInteractionRuleGroupsRequest::setLimit));
+        builder.<String>withRequestField("create_since",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getCreateSince,
+                ListInteractionRuleGroupsRequest::setCreateSince));
+        builder.<String>withRequestField("create_until",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getCreateUntil,
+                ListInteractionRuleGroupsRequest::setCreateUntil));
+        builder.<String>withRequestField("group_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getGroupName,
+                ListInteractionRuleGroupsRequest::setGroupName));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getAuthorization,
+                ListInteractionRuleGroupsRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getXSdkDate,
+                ListInteractionRuleGroupsRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getXProjectId,
+                ListInteractionRuleGroupsRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getXAppUserId,
+                ListInteractionRuleGroupsRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ListInteractionRuleGroupsResponse::getXRequestId,
+                ListInteractionRuleGroupsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> updateInteractionRuleGroup =
+        genForUpdateInteractionRuleGroup();
+
+    private static HttpRequestDef<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> genForUpdateInteractionRuleGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    UpdateInteractionRuleGroupRequest.class,
+                    UpdateInteractionRuleGroupResponse.class)
+                .withName("UpdateInteractionRuleGroup")
+                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getGroupId,
+                UpdateInteractionRuleGroupRequest::setGroupId));
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getAuthorization,
+                UpdateInteractionRuleGroupRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getXSdkDate,
+                UpdateInteractionRuleGroupRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getXProjectId,
+                UpdateInteractionRuleGroupRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getXAppUserId,
+                UpdateInteractionRuleGroupRequest::setXAppUserId));
+        builder.<InteractionRuleGroup>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InteractionRuleGroup.class),
+            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getBody,
+                UpdateInteractionRuleGroupRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateInteractionRuleGroupResponse::getXRequestId,
+                UpdateInteractionRuleGroupResponse::setXRequestId));
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateIntentAndQuestionRequest, CreateIntentAndQuestionResponse> createIntentAndQuestion =
         genForCreateIntentAndQuestion();
 
@@ -7160,6 +7418,17 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(LiveEventReportRequest::getXAppUserId, LiveEventReportRequest::setXAppUserId));
+        builder.<String>withRequestField("x-mss-auth-key",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(LiveEventReportRequest::getXMssAuthKey, LiveEventReportRequest::setXMssAuthKey));
+        builder.<Long>withRequestField("x-mss-expires-time",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(LiveEventReportRequest::getXMssExpiresTime,
+                LiveEventReportRequest::setXMssExpiresTime));
         builder.<ReportLiveEventReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
@@ -7392,63 +7661,6 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> createInteractionRuleGroup =
-        genForCreateInteractionRuleGroup();
-
-    private static HttpRequestDef<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> genForCreateInteractionRuleGroup() {
-        // basic
-        HttpRequestDef.Builder<CreateInteractionRuleGroupRequest, CreateInteractionRuleGroupResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    CreateInteractionRuleGroupRequest.class,
-                    CreateInteractionRuleGroupResponse.class)
-                .withName("CreateInteractionRuleGroup")
-                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getAuthorization,
-                CreateInteractionRuleGroupRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getXSdkDate,
-                CreateInteractionRuleGroupRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getXProjectId,
-                CreateInteractionRuleGroupRequest::setXProjectId));
-        builder.<String>withRequestField("X-App-UserId",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getXAppUserId,
-                CreateInteractionRuleGroupRequest::setXAppUserId));
-        builder.<InteractionRuleGroup>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(InteractionRuleGroup.class),
-            f -> f.withMarshaller(CreateInteractionRuleGroupRequest::getBody,
-                CreateInteractionRuleGroupRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(CreateInteractionRuleGroupResponse::getXRequestId,
-                CreateInteractionRuleGroupResponse::setXRequestId));
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateSmartLiveRoomRequest, CreateSmartLiveRoomResponse> createSmartLiveRoom =
         genForCreateSmartLiveRoom();
 
@@ -7501,63 +7713,6 @@ public class MetaStudioMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> deleteInteractionRuleGroup =
-        genForDeleteInteractionRuleGroup();
-
-    private static HttpRequestDef<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> genForDeleteInteractionRuleGroup() {
-        // basic
-        HttpRequestDef.Builder<DeleteInteractionRuleGroupRequest, DeleteInteractionRuleGroupResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.DELETE,
-                    DeleteInteractionRuleGroupRequest.class,
-                    DeleteInteractionRuleGroupResponse.class)
-                .withName("DeleteInteractionRuleGroup")
-                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("group_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getGroupId,
-                DeleteInteractionRuleGroupRequest::setGroupId));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getAuthorization,
-                DeleteInteractionRuleGroupRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getXSdkDate,
-                DeleteInteractionRuleGroupRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getXProjectId,
-                DeleteInteractionRuleGroupRequest::setXProjectId));
-        builder.<String>withRequestField("X-App-UserId",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteInteractionRuleGroupRequest::getXAppUserId,
-                DeleteInteractionRuleGroupRequest::setXAppUserId));
-
-        // response
-
-        builder.<String>withResponseField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(DeleteInteractionRuleGroupResponse::getXRequestId,
-                DeleteInteractionRuleGroupResponse::setXRequestId));
-        return builder.build();
-    }
-
     public static final HttpRequestDef<DeleteSmartLiveRoomRequest, DeleteSmartLiveRoomResponse> deleteSmartLiveRoom =
         genForDeleteSmartLiveRoom();
 
@@ -7607,87 +7762,6 @@ public class MetaStudioMeta {
             String.class,
             f -> f.withMarshaller(DeleteSmartLiveRoomResponse::getXRequestId,
                 DeleteSmartLiveRoomResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> listInteractionRuleGroups =
-        genForListInteractionRuleGroups();
-
-    private static HttpRequestDef<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> genForListInteractionRuleGroups() {
-        // basic
-        HttpRequestDef.Builder<ListInteractionRuleGroupsRequest, ListInteractionRuleGroupsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ListInteractionRuleGroupsRequest.class,
-                    ListInteractionRuleGroupsResponse.class)
-                .withName("ListInteractionRuleGroups")
-                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getOffset,
-                ListInteractionRuleGroupsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getLimit,
-                ListInteractionRuleGroupsRequest::setLimit));
-        builder.<String>withRequestField("create_since",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getCreateSince,
-                ListInteractionRuleGroupsRequest::setCreateSince));
-        builder.<String>withRequestField("create_until",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getCreateUntil,
-                ListInteractionRuleGroupsRequest::setCreateUntil));
-        builder.<String>withRequestField("group_name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getGroupName,
-                ListInteractionRuleGroupsRequest::setGroupName));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getAuthorization,
-                ListInteractionRuleGroupsRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getXSdkDate,
-                ListInteractionRuleGroupsRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getXProjectId,
-                ListInteractionRuleGroupsRequest::setXProjectId));
-        builder.<String>withRequestField("X-App-UserId",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInteractionRuleGroupsRequest::getXAppUserId,
-                ListInteractionRuleGroupsRequest::setXAppUserId));
-
-        // response
-
-        builder.<String>withResponseField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(ListInteractionRuleGroupsResponse::getXRequestId,
-                ListInteractionRuleGroupsResponse::setXRequestId));
         return builder.build();
     }
 
@@ -7839,69 +7913,6 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ShowSmartLiveRoomResponse::getXRequestId, ShowSmartLiveRoomResponse::setXRequestId));
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> updateInteractionRuleGroup =
-        genForUpdateInteractionRuleGroup();
-
-    private static HttpRequestDef<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> genForUpdateInteractionRuleGroup() {
-        // basic
-        HttpRequestDef.Builder<UpdateInteractionRuleGroupRequest, UpdateInteractionRuleGroupResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    UpdateInteractionRuleGroupRequest.class,
-                    UpdateInteractionRuleGroupResponse.class)
-                .withName("UpdateInteractionRuleGroup")
-                .withUri("/v1/{project_id}/smart-live-interaction-rule-groups/{group_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("group_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getGroupId,
-                UpdateInteractionRuleGroupRequest::setGroupId));
-        builder.<String>withRequestField("Authorization",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getAuthorization,
-                UpdateInteractionRuleGroupRequest::setAuthorization));
-        builder.<String>withRequestField("X-Sdk-Date",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getXSdkDate,
-                UpdateInteractionRuleGroupRequest::setXSdkDate));
-        builder.<String>withRequestField("X-Project-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getXProjectId,
-                UpdateInteractionRuleGroupRequest::setXProjectId));
-        builder.<String>withRequestField("X-App-UserId",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getXAppUserId,
-                UpdateInteractionRuleGroupRequest::setXAppUserId));
-        builder.<InteractionRuleGroup>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(InteractionRuleGroup.class),
-            f -> f.withMarshaller(UpdateInteractionRuleGroupRequest::getBody,
-                UpdateInteractionRuleGroupRequest::setBody));
-
-        // response
-
-        builder.<String>withResponseField("X-Request-Id",
-            LocationType.Header,
-            FieldExistence.NULL_IGNORE,
-            String.class,
-            f -> f.withMarshaller(UpdateInteractionRuleGroupResponse::getXRequestId,
-                UpdateInteractionRuleGroupResponse::setXRequestId));
         return builder.build();
     }
 

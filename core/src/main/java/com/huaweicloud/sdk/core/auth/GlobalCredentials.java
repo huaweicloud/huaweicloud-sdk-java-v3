@@ -139,9 +139,9 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
     public HttpRequest syncProcessAuthRequest(HttpRequest httpRequest, HttpClient httpClient) {
         HttpRequest.HttpRequestBuilder builder = httpRequest.builder().addAutoFilledPathParam(getPathParams());
 
-        if (needUpdateAuthToken()) {
-            updateAuthTokenByIdToken(httpClient);
-        } else if (needUpdateSecurityToken()) {
+        if (needUpdateFederalAuthToken()) {
+            updateFederalAuthTokenByIdToken(httpClient);
+        } else if (needUpdateSecurityTokenFromMetadata()) {
             updateSecurityTokenFromMetadata();
         }
 
@@ -176,7 +176,7 @@ public class GlobalCredentials extends AbstractCredentials<GlobalCredentials> {
     }
 
     @Override
-    protected void updateAuthTokenByIdToken(HttpClient httpClient) {
+    protected void updateFederalAuthTokenByIdToken(HttpClient httpClient) {
         HttpRequest httpRequest = Iam.getDomainTokenWithIdTokenRequest(
                 getUsedIamEndpoint(), getIdpId(), getIdToken(), domainId);
         CreateTokenWithIdTokenResponse response = Iam.createTokenWithIdToken(httpClient, httpRequest);

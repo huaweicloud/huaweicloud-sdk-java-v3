@@ -33,7 +33,7 @@ public class ShowWorkloadPlanStageResponse extends SdkResponse {
     }
 
     /**
-     * 结果状态码。
+     * **参数解释**： 结果状态码。 **取值范围**： 不涉及。
      * @return workloadResCode
      */
     public Integer getWorkloadResCode() {
@@ -50,7 +50,7 @@ public class ShowWorkloadPlanStageResponse extends SdkResponse {
     }
 
     /**
-     * 结果描述。
+     * **参数解释**： 结果描述。 **取值范围**： 不涉及。
      * @return workloadResStr
      */
     public String getWorkloadResStr() {

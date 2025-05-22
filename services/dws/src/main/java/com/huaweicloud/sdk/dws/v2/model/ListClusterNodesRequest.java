@@ -19,11 +19,6 @@ public class ListClusterNodesRequest {
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "deleted")
-
-    private String deleted;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_ids")
 
     private List<String> nodeIds = null;
@@ -58,13 +53,18 @@ public class ListClusterNodesRequest {
 
     private String order;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deleted")
+
+    private String deleted;
+
     public ListClusterNodesRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
 
     /**
-     * 集群ID
+     * **参数解释**： 集群ID。获取方式方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {
@@ -73,23 +73,6 @@ public class ListClusterNodesRequest {
 
     public void setClusterId(String clusterId) {
         this.clusterId = clusterId;
-    }
-
-    public ListClusterNodesRequest withDeleted(String deleted) {
-        this.deleted = deleted;
-        return this;
-    }
-
-    /**
-     * 是否被删除，true/false
-     * @return deleted
-     */
-    public String getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(String deleted) {
-        this.deleted = deleted;
     }
 
     public ListClusterNodesRequest withNodeIds(List<String> nodeIds) {
@@ -114,7 +97,7 @@ public class ListClusterNodesRequest {
     }
 
     /**
-     * 节点ID列表
+     * **参数解释**： 节点ID列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： null
      * @return nodeIds
      */
     public List<String> getNodeIds() {
@@ -131,7 +114,7 @@ public class ListClusterNodesRequest {
     }
 
     /**
-     * 分页查询，偏移
+     * **参数解释**： 分页查询，偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
      * @return offset
      */
     public Integer getOffset() {
@@ -148,7 +131,7 @@ public class ListClusterNodesRequest {
     }
 
     /**
-     * 分页查询，每页显示的条目数量
+     * **参数解释**： 分页查询，每页显示的条目数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 100
      * @return limit
      */
     public Integer getLimit() {
@@ -165,7 +148,7 @@ public class ListClusterNodesRequest {
     }
 
     /**
-     * 过滤字段
+     * **参数解释**： 过滤字段。 **约束限制**： 不涉及。 **取值范围**： instCreateType：根据资源状态过滤 status：根据节点状态过滤 **默认取值**： null
      * @return filterBy
      */
     public String getFilterBy() {
@@ -182,7 +165,7 @@ public class ListClusterNodesRequest {
     }
 
     /**
-     * 过滤字段内容
+     * **参数解释**： 过滤字段内容。 **约束限制**： 不涉及。 **取值范围**： 当根据资源状态过滤时，可选如下值： - ALL：全部 - INST：已使用 - NODE：空虚 当根据节点状态过滤时，可选如下值： - ALL：全部 - CREATING：创建中 - FREE：空闲 - ACTIVE：可用 - FAILED：不可用 - UNKNOWN：未知 - CREATE_FAILED：创建失败 - DELETING：删除中 - DELETE_FAILED：删除失败 **默认取值**： null
      * @return filter
      */
     public String getFilter() {
@@ -199,7 +182,7 @@ public class ListClusterNodesRequest {
     }
 
     /**
-     * 排序字段
+     * **参数解释**： 排序字段。默认无序返回。 **约束限制**： 不涉及。 **取值范围**： name：根据名称过滤 **默认取值**： null
      * @return orderBy
      */
     public String getOrderBy() {
@@ -216,7 +199,7 @@ public class ListClusterNodesRequest {
     }
 
     /**
-     * 排序：升序/降序
+     * **参数解释**： 排序：升序/降序。 **约束限制**： 不涉及。 **取值范围**： asc：升序 desc：降序 **默认取值**： null
      * @return order
      */
     public String getOrder() {
@@ -225,6 +208,23 @@ public class ListClusterNodesRequest {
 
     public void setOrder(String order) {
         this.order = order;
+    }
+
+    public ListClusterNodesRequest withDeleted(String deleted) {
+        this.deleted = deleted;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 是否被删除，字段已废弃。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： null
+     * @return deleted
+     */
+    public String getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(String deleted) {
+        this.deleted = deleted;
     }
 
     @Override
@@ -236,16 +236,16 @@ public class ListClusterNodesRequest {
             return false;
         }
         ListClusterNodesRequest that = (ListClusterNodesRequest) obj;
-        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.deleted, that.deleted)
-            && Objects.equals(this.nodeIds, that.nodeIds) && Objects.equals(this.offset, that.offset)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.filterBy, that.filterBy)
-            && Objects.equals(this.filter, that.filter) && Objects.equals(this.orderBy, that.orderBy)
-            && Objects.equals(this.order, that.order);
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.nodeIds, that.nodeIds)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.filterBy, that.filterBy) && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.orderBy, that.orderBy) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.deleted, that.deleted);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, deleted, nodeIds, offset, limit, filterBy, filter, orderBy, order);
+        return Objects.hash(clusterId, nodeIds, offset, limit, filterBy, filter, orderBy, order, deleted);
     }
 
     @Override
@@ -253,7 +253,6 @@ public class ListClusterNodesRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("class ListClusterNodesRequest {\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-        sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
         sb.append("    nodeIds: ").append(toIndentedString(nodeIds)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
@@ -261,6 +260,7 @@ public class ListClusterNodesRequest {
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
         sb.append("    order: ").append(toIndentedString(order)).append("\n");
+        sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
         sb.append("}");
         return sb.toString();
     }

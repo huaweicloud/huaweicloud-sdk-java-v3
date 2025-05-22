@@ -6,51 +6,51 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 内核版本附加信息。
+ * **参数解释**： 内核版本附加信息。 **取值范围**： 不涉及。
  */
 public class NodeTypeDatastoresAttachments {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_cn")
 
-    private String minCn;
+    private Integer minCn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "max_cn")
 
-    private String maxCn;
+    private Integer maxCn;
 
-    public NodeTypeDatastoresAttachments withMinCn(String minCn) {
+    public NodeTypeDatastoresAttachments withMinCn(Integer minCn) {
         this.minCn = minCn;
         return this;
     }
 
     /**
-     * 内核版本支持的最小CN。
+     * **参数解释**： 内核版本支持的最小CN。 **取值范围**： 大于0的正整数。
      * @return minCn
      */
-    public String getMinCn() {
+    public Integer getMinCn() {
         return minCn;
     }
 
-    public void setMinCn(String minCn) {
+    public void setMinCn(Integer minCn) {
         this.minCn = minCn;
     }
 
-    public NodeTypeDatastoresAttachments withMaxCn(String maxCn) {
+    public NodeTypeDatastoresAttachments withMaxCn(Integer maxCn) {
         this.maxCn = maxCn;
         return this;
     }
 
     /**
-     * 内核版本支持的最大CN。
+     * **参数解释**： 内核版本支持的最大CN。 **取值范围**： 大于0的正整数。
      * @return maxCn
      */
-    public String getMaxCn() {
+    public Integer getMaxCn() {
         return maxCn;
     }
 
-    public void setMaxCn(String maxCn) {
+    public void setMaxCn(Integer maxCn) {
         this.maxCn = maxCn;
     }
 

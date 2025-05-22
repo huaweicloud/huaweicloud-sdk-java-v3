@@ -49,6 +49,11 @@ public class ListLoadBalancersRequest {
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "include_recycle_bin")
+
+    private Boolean includeRecycleBin;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "provisioning_status")
 
     private List<String> provisioningStatus = null;
@@ -360,6 +365,23 @@ public class ListLoadBalancersRequest {
 
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
+    }
+
+    public ListLoadBalancersRequest withIncludeRecycleBin(Boolean includeRecycleBin) {
+        this.includeRecycleBin = includeRecycleBin;
+        return this;
+    }
+
+    /**
+     * 参数解释：查询结果是否包含回收站负载均衡器  取值范围： - true ：包含回收站elb。 - false：不包含回收站elb。
+     * @return includeRecycleBin
+     */
+    public Boolean getIncludeRecycleBin() {
+        return includeRecycleBin;
+    }
+
+    public void setIncludeRecycleBin(Boolean includeRecycleBin) {
+        this.includeRecycleBin = includeRecycleBin;
     }
 
     public ListLoadBalancersRequest withProvisioningStatus(List<String> provisioningStatus) {
@@ -1268,6 +1290,7 @@ public class ListLoadBalancersRequest {
             && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.includeRecycleBin, that.includeRecycleBin)
             && Objects.equals(this.provisioningStatus, that.provisioningStatus)
             && Objects.equals(this.operatingStatus, that.operatingStatus)
             && Objects.equals(this.guaranteed, that.guaranteed) && Objects.equals(this.vpcId, that.vpcId)
@@ -1304,6 +1327,7 @@ public class ListLoadBalancersRequest {
             name,
             description,
             adminStateUp,
+            includeRecycleBin,
             provisioningStatus,
             operatingStatus,
             guaranteed,
@@ -1346,6 +1370,7 @@ public class ListLoadBalancersRequest {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
+        sb.append("    includeRecycleBin: ").append(toIndentedString(includeRecycleBin)).append("\n");
         sb.append("    provisioningStatus: ").append(toIndentedString(provisioningStatus)).append("\n");
         sb.append("    operatingStatus: ").append(toIndentedString(operatingStatus)).append("\n");
         sb.append("    guaranteed: ").append(toIndentedString(guaranteed)).append("\n");

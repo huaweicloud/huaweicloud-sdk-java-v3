@@ -46,7 +46,7 @@ public class ListTopoRingsResponse extends SdkResponse {
     }
 
     /**
-     * 集群拓扑环列表信息
+     * **参数解释**： 集群拓扑环列表信息。 **取值范围**： 不涉及。
      * @return clusterRings
      */
     public List<TopoRingInfo> getClusterRings() {
@@ -63,7 +63,7 @@ public class ListTopoRingsResponse extends SdkResponse {
     }
 
     /**
-     * 集群环数量
+     * **参数解释**： 集群环数量。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

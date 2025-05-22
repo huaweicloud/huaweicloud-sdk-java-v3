@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 逻辑集群节点操作请求
+ * **参数解释**： 节点操作请求。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class DeleteClusterNodesRequestBody {
 
@@ -45,7 +45,7 @@ public class DeleteClusterNodesRequestBody {
     }
 
     /**
-     * 逻辑集群节点ID列表
+     * **参数解释**： 空闲节点ID列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return nodeList
      */
     public List<String> getNodeList() {
@@ -62,7 +62,7 @@ public class DeleteClusterNodesRequestBody {
     }
 
     /**
-     * 操作类型，clear|delete
+     * **参数解释**： 操作类型，一般传delete即可。 **约束限制**： 不涉及。 **取值范围**： clear：清理创建失败的空闲节点 delete：删除空闲节点 **默认取值**： 不涉及。
      * @return operateType
      */
     public String getOperateType() {

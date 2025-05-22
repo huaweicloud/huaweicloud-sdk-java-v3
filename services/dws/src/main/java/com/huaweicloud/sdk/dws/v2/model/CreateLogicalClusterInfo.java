@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 创建逻辑集群请求信息
+ * **参数解释**： 创建逻辑集群信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class CreateLogicalClusterInfo {
 
@@ -29,7 +29,7 @@ public class CreateLogicalClusterInfo {
     }
 
     /**
-     * 逻辑集群名称
+     * **参数解释**： 逻辑集群名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return logicalClusterName
      */
     public String getLogicalClusterName() {
@@ -62,7 +62,7 @@ public class CreateLogicalClusterInfo {
     }
 
     /**
-     * 逻辑集群环信息
+     * **参数解释**： 逻辑集群环信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return clusterRings
      */
     public List<ClusterRing> getClusterRings() {

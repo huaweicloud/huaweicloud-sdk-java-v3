@@ -15,7 +15,7 @@ public class ShowDatabaseOmUserStatusResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_code")
 
-    private String errorCode;
+    private Integer errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "error_msg")
@@ -27,20 +27,20 @@ public class ShowDatabaseOmUserStatusResponse extends SdkResponse {
 
     private DatabaseOmUserInfo omUserInfo;
 
-    public ShowDatabaseOmUserStatusResponse withErrorCode(String errorCode) {
+    public ShowDatabaseOmUserStatusResponse withErrorCode(Integer errorCode) {
         this.errorCode = errorCode;
         return this;
     }
 
     /**
-     * 错误码
+     * **参数解释**： 错误码。非0皆为异常场景。 **取值范围**： 不涉及。
      * @return errorCode
      */
-    public String getErrorCode() {
+    public Integer getErrorCode() {
         return errorCode;
     }
 
-    public void setErrorCode(String errorCode) {
+    public void setErrorCode(Integer errorCode) {
         this.errorCode = errorCode;
     }
 
@@ -50,7 +50,7 @@ public class ShowDatabaseOmUserStatusResponse extends SdkResponse {
     }
 
     /**
-     * 错误信息
+     * **参数解释**： 错误信息。 **取值范围**： 不涉及。
      * @return errorMsg
      */
     public String getErrorMsg() {

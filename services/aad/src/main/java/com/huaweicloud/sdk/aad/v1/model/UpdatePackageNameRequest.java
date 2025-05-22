@@ -27,7 +27,7 @@ public class UpdatePackageNameRequest {
     }
 
     /**
-     * 防护包id
+     * 实例id
      * @return packageId
      */
     public String getPackageId() {

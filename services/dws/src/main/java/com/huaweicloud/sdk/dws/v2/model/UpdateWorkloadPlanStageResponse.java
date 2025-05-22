@@ -1,0 +1,131 @@
+package com.huaweicloud.sdk.dws.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.huaweicloud.sdk.core.SdkResponse;
+
+import java.util.Objects;
+import java.util.function.Consumer;
+
+/**
+ * Response Object
+ */
+public class UpdateWorkloadPlanStageResponse extends SdkResponse {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workload_res_code")
+
+    private Integer workloadResCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workload_res_str")
+
+    private String workloadResStr;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "workload_plan_stage")
+
+    private PlanStage workloadPlanStage;
+
+    public UpdateWorkloadPlanStageResponse withWorkloadResCode(Integer workloadResCode) {
+        this.workloadResCode = workloadResCode;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 结果状态码。 **取值范围**： 不涉及。
+     * @return workloadResCode
+     */
+    public Integer getWorkloadResCode() {
+        return workloadResCode;
+    }
+
+    public void setWorkloadResCode(Integer workloadResCode) {
+        this.workloadResCode = workloadResCode;
+    }
+
+    public UpdateWorkloadPlanStageResponse withWorkloadResStr(String workloadResStr) {
+        this.workloadResStr = workloadResStr;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 结果描述。 **取值范围**： 不涉及。
+     * @return workloadResStr
+     */
+    public String getWorkloadResStr() {
+        return workloadResStr;
+    }
+
+    public void setWorkloadResStr(String workloadResStr) {
+        this.workloadResStr = workloadResStr;
+    }
+
+    public UpdateWorkloadPlanStageResponse withWorkloadPlanStage(PlanStage workloadPlanStage) {
+        this.workloadPlanStage = workloadPlanStage;
+        return this;
+    }
+
+    public UpdateWorkloadPlanStageResponse withWorkloadPlanStage(Consumer<PlanStage> workloadPlanStageSetter) {
+        if (this.workloadPlanStage == null) {
+            this.workloadPlanStage = new PlanStage();
+            workloadPlanStageSetter.accept(this.workloadPlanStage);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get workloadPlanStage
+     * @return workloadPlanStage
+     */
+    public PlanStage getWorkloadPlanStage() {
+        return workloadPlanStage;
+    }
+
+    public void setWorkloadPlanStage(PlanStage workloadPlanStage) {
+        this.workloadPlanStage = workloadPlanStage;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        UpdateWorkloadPlanStageResponse that = (UpdateWorkloadPlanStageResponse) obj;
+        return Objects.equals(this.workloadResCode, that.workloadResCode)
+            && Objects.equals(this.workloadResStr, that.workloadResStr)
+            && Objects.equals(this.workloadPlanStage, that.workloadPlanStage);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(workloadResCode, workloadResStr, workloadPlanStage);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class UpdateWorkloadPlanStageResponse {\n");
+        sb.append("    workloadResCode: ").append(toIndentedString(workloadResCode)).append("\n");
+        sb.append("    workloadResStr: ").append(toIndentedString(workloadResStr)).append("\n");
+        sb.append("    workloadPlanStage: ").append(toIndentedString(workloadPlanStage)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}

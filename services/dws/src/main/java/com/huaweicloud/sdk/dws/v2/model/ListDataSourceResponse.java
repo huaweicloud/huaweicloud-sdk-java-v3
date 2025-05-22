@@ -78,7 +78,7 @@ public class ListDataSourceResponse extends SdkResponse {
     }
 
     /**
-     * 项目ID。
+     * **参数解释**： 项目ID。获取方式方法请参见[获取项目ID](dws_02_0011.xml)。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return projectId
      */
     public String getProjectId() {
@@ -95,7 +95,7 @@ public class ListDataSourceResponse extends SdkResponse {
     }
 
     /**
-     * 集群ID。
+     * **参数解释**： 集群ID。 **取值范围**： 36位UUID。
      * @return clusterId
      */
     public String getClusterId() {

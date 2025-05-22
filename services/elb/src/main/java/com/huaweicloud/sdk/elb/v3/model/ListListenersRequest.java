@@ -59,6 +59,11 @@ public class ListListenersRequest {
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "include_recycle_bin")
+
+    private Boolean includeRecycleBin;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "connection_limit")
 
     private List<Integer> connectionLimit = null;
@@ -396,6 +401,23 @@ public class ListListenersRequest {
 
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
+    }
+
+    public ListListenersRequest withIncludeRecycleBin(Boolean includeRecycleBin) {
+        this.includeRecycleBin = includeRecycleBin;
+        return this;
+    }
+
+    /**
+     * 参数解释：查询结果是否包含回收站负载均衡器的监听器  取值范围： - true ：包含回收站elb的监听器。 - false：不包含回收站elb的监听器。
+     * @return includeRecycleBin
+     */
+    public Boolean getIncludeRecycleBin() {
+        return includeRecycleBin;
+    }
+
+    public void setIncludeRecycleBin(Boolean includeRecycleBin) {
+        this.includeRecycleBin = includeRecycleBin;
     }
 
     public ListListenersRequest withConnectionLimit(List<Integer> connectionLimit) {
@@ -995,6 +1017,7 @@ public class ListListenersRequest {
             && Objects.equals(this.defaultTlsContainerRef, that.defaultTlsContainerRef)
             && Objects.equals(this.clientCaTlsContainerRef, that.clientCaTlsContainerRef)
             && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.includeRecycleBin, that.includeRecycleBin)
             && Objects.equals(this.connectionLimit, that.connectionLimit)
             && Objects.equals(this.defaultPoolId, that.defaultPoolId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.name, that.name) && Objects.equals(this.http2Enable, that.http2Enable)
@@ -1027,6 +1050,7 @@ public class ListListenersRequest {
             defaultTlsContainerRef,
             clientCaTlsContainerRef,
             adminStateUp,
+            includeRecycleBin,
             connectionLimit,
             defaultPoolId,
             id,
@@ -1063,6 +1087,7 @@ public class ListListenersRequest {
         sb.append("    defaultTlsContainerRef: ").append(toIndentedString(defaultTlsContainerRef)).append("\n");
         sb.append("    clientCaTlsContainerRef: ").append(toIndentedString(clientCaTlsContainerRef)).append("\n");
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
+        sb.append("    includeRecycleBin: ").append(toIndentedString(includeRecycleBin)).append("\n");
         sb.append("    connectionLimit: ").append(toIndentedString(connectionLimit)).append("\n");
         sb.append("    defaultPoolId: ").append(toIndentedString(defaultPoolId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");

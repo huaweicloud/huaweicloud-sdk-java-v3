@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 模式空间信息
+ * **参数解释**： 模式空间信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class WorkloadSchemaReq {
 
@@ -26,7 +26,7 @@ public class WorkloadSchemaReq {
     }
 
     /**
-     * 模式空间名称
+     * **参数解释**： 模式空间名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return schemaName
      */
     public String getSchemaName() {
@@ -43,7 +43,7 @@ public class WorkloadSchemaReq {
     }
 
     /**
-     * Schema空间阈值
+     * **参数解释**： 模式空间阈值。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return permSpace
      */
     public String getPermSpace() {

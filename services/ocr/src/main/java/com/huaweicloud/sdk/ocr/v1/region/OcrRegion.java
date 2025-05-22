@@ -44,8 +44,7 @@ public class OcrRegion {
     public static final Region AF_SOUTH_1 =
         new Region("af-south-1", "https://ocr.af-south-1.myhuaweicloud.com", "https://ocr.af-south-1.myhuaweicloud.cn");
 
-    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://ocr.la-north-2.myhuaweicloud.com",
-        "https://ocr.la-north-2.myhuaweicloud.lat");
+    public static final Region LA_NORTH_2 = new Region("la-north-2", "https://ocr.la-north-2.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("OCR");
 

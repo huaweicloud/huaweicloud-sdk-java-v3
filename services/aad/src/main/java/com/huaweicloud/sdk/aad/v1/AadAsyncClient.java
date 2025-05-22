@@ -334,9 +334,9 @@ public class AadAsyncClient {
     }
 
     /**
-     * 策略和防护包绑定防护对象
+     * 策略和实例绑定防护对象
      *
-     * 策略和防护包绑定防护对象
+     * 策略和实例绑定防护对象
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -349,9 +349,9 @@ public class AadAsyncClient {
     }
 
     /**
-     * 策略和防护包绑定防护对象
+     * 策略和实例绑定防护对象
      *
-     * 策略和防护包绑定防护对象
+     * 策略和实例绑定防护对象
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -630,9 +630,9 @@ public class AadAsyncClient {
     }
 
     /**
-     * 策略和防护包解绑防护对象
+     * 策略和实例解绑防护对象
      *
-     * 策略和防护包解绑防护对象
+     * 策略和实例解绑防护对象
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -645,9 +645,9 @@ public class AadAsyncClient {
     }
 
     /**
-     * 策略和防护包解绑防护对象
+     * 策略和实例解绑防护对象
      *
-     * 策略和防护包解绑防护对象
+     * 策略和实例解绑防护对象
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -775,9 +775,9 @@ public class AadAsyncClient {
     }
 
     /**
-     * 查询防护包列表
+     * 查询实例列表
      *
-     * 查询防护包列表
+     * 查询实例列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -789,9 +789,9 @@ public class AadAsyncClient {
     }
 
     /**
-     * 查询防护包列表
+     * 查询实例列表
      *
-     * 查询防护包列表
+     * 查询实例列表
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1151,9 +1151,9 @@ public class AadAsyncClient {
     }
 
     /**
-     * 更新防护包绑定的全量防护对象
+     * 更新实例绑定的全量防护对象
      *
-     * 更新防护包绑定的全量防护对象
+     * 更新实例绑定的全量防护对象
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1165,9 +1165,9 @@ public class AadAsyncClient {
     }
 
     /**
-     * 更新防护包绑定的全量防护对象
+     * 更新实例绑定的全量防护对象
      *
-     * 更新防护包绑定的全量防护对象
+     * 更新实例绑定的全量防护对象
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1180,9 +1180,9 @@ public class AadAsyncClient {
     }
 
     /**
-     * 更新防护包名字
+     * 更新实例名字
      *
-     * 更新防护包名字
+     * 更新实例名字
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1194,9 +1194,9 @@ public class AadAsyncClient {
     }
 
     /**
-     * 更新防护包名字
+     * 更新实例名字
      *
-     * 更新防护包名字
+     * 更新实例名字
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

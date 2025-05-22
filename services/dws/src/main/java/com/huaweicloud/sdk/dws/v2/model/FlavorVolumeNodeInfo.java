@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * FlavorVolumeNodeInfo
+ * **参数解释**： 规格磁盘信息。 **取值范围**： 不涉及。
  */
 public class FlavorVolumeNodeInfo {
 
@@ -36,7 +36,7 @@ public class FlavorVolumeNodeInfo {
     }
 
     /**
-     * 节点使用存储类型
+     * **参数解释**： 节点使用存储类型。 **取值范围**： 不涉及。
      * @return volumeType
      */
     public String getVolumeType() {
@@ -53,7 +53,7 @@ public class FlavorVolumeNodeInfo {
     }
 
     /**
-     * 节点使用的磁盘数量
+     * **参数解释**： 节点使用的磁盘数量。 **取值范围**： 不涉及。
      * @return volumeNum
      */
     public Integer getVolumeNum() {
@@ -70,7 +70,7 @@ public class FlavorVolumeNodeInfo {
     }
 
     /**
-     * 节点去除副本后的有效容量
+     * **参数解释**： 节点去除副本后的有效容量。 **取值范围**： 不涉及。
      * @return capacity
      */
     public Integer getCapacity() {
@@ -87,7 +87,7 @@ public class FlavorVolumeNodeInfo {
     }
 
     /**
-     * 节点存的单盘容量
+     * **参数解释**： 节点存的单盘容量。 **取值范围**： 不涉及。
      * @return volumeSize
      */
     public Integer getVolumeSize() {

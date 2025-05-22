@@ -11,24 +11,24 @@ import java.util.function.Consumer;
 /**
  * 结果
  */
-public class FlowGraphResult {
+public class FlowGraph2Result {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "edges")
 
-    private List<FlowGraphResultEdges> edges = null;
+    private List<FlowGraph2ResultEdges> edges = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "vertices")
 
     private List<Vertices> vertices = null;
 
-    public FlowGraphResult withEdges(List<FlowGraphResultEdges> edges) {
+    public FlowGraph2Result withEdges(List<FlowGraph2ResultEdges> edges) {
         this.edges = edges;
         return this;
     }
 
-    public FlowGraphResult addEdgesItem(FlowGraphResultEdges edgesItem) {
+    public FlowGraph2Result addEdgesItem(FlowGraph2ResultEdges edgesItem) {
         if (this.edges == null) {
             this.edges = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class FlowGraphResult {
         return this;
     }
 
-    public FlowGraphResult withEdges(Consumer<List<FlowGraphResultEdges>> edgesSetter) {
+    public FlowGraph2Result withEdges(Consumer<List<FlowGraph2ResultEdges>> edgesSetter) {
         if (this.edges == null) {
             this.edges = new ArrayList<>();
         }
@@ -48,20 +48,20 @@ public class FlowGraphResult {
      * edges
      * @return edges
      */
-    public List<FlowGraphResultEdges> getEdges() {
+    public List<FlowGraph2ResultEdges> getEdges() {
         return edges;
     }
 
-    public void setEdges(List<FlowGraphResultEdges> edges) {
+    public void setEdges(List<FlowGraph2ResultEdges> edges) {
         this.edges = edges;
     }
 
-    public FlowGraphResult withVertices(List<Vertices> vertices) {
+    public FlowGraph2Result withVertices(List<Vertices> vertices) {
         this.vertices = vertices;
         return this;
     }
 
-    public FlowGraphResult addVerticesItem(Vertices verticesItem) {
+    public FlowGraph2Result addVerticesItem(Vertices verticesItem) {
         if (this.vertices == null) {
             this.vertices = new ArrayList<>();
         }
@@ -69,7 +69,7 @@ public class FlowGraphResult {
         return this;
     }
 
-    public FlowGraphResult withVertices(Consumer<List<Vertices>> verticesSetter) {
+    public FlowGraph2Result withVertices(Consumer<List<Vertices>> verticesSetter) {
         if (this.vertices == null) {
             this.vertices = new ArrayList<>();
         }
@@ -97,7 +97,7 @@ public class FlowGraphResult {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlowGraphResult that = (FlowGraphResult) obj;
+        FlowGraph2Result that = (FlowGraph2Result) obj;
         return Objects.equals(this.edges, that.edges) && Objects.equals(this.vertices, that.vertices);
     }
 
@@ -109,7 +109,7 @@ public class FlowGraphResult {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class FlowGraphResult {\n");
+        sb.append("class FlowGraph2Result {\n");
         sb.append("    edges: ").append(toIndentedString(edges)).append("\n");
         sb.append("    vertices: ").append(toIndentedString(vertices)).append("\n");
         sb.append("}");

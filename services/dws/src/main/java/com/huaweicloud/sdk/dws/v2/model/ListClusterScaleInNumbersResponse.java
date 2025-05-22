@@ -41,7 +41,7 @@ public class ListClusterScaleInNumbersResponse extends SdkResponse {
     }
 
     /**
-     * 合适的缩容数
+     * 参数解释: 合适的缩容数。 取值范围: 不涉及。
      * @return shrinkSequence
      */
     public List<String> getShrinkSequence() {

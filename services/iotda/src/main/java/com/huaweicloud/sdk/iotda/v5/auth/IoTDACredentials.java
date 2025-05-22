@@ -243,7 +243,7 @@ public class IoTDACredentials extends AbstractCredentials<IoTDACredentials> {
     }
 
     @Override
-    protected void updateAuthTokenByIdToken(HttpClient httpClient) {
+    protected void updateFederalAuthTokenByIdToken(HttpClient httpClient) {
 
     }
 }

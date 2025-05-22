@@ -46,7 +46,7 @@ public class ListConfigurationsAuditRecordsRequest {
     }
 
     /**
-     * 集群ID
+     * **参数解释**： 集群ID。获取方式方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {
@@ -114,7 +114,7 @@ public class ListConfigurationsAuditRecordsRequest {
     }
 
     /**
-     * 查询条数
+     * **参数解释**： 分页单页大小。 **约束限制**： 不涉及。 **取值范围**： 大于0。 **默认取值**： 10
      * @return limit
      */
     public Integer getLimit() {
@@ -131,7 +131,7 @@ public class ListConfigurationsAuditRecordsRequest {
     }
 
     /**
-     * 偏移量
+     * **参数解释**： 分页查询，偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
      * @return offset
      */
     public Integer getOffset() {

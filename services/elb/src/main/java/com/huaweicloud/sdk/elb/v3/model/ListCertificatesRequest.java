@@ -73,6 +73,21 @@ public class ListCertificatesRequest {
 
     private List<String> fingerprint = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source")
+
+    private List<String> source = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_status")
+
+    private List<String> protectionStatus = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_reason")
+
+    private List<String> protectionReason = null;
+
     public ListCertificatesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
@@ -407,6 +422,105 @@ public class ListCertificatesRequest {
         this.fingerprint = fingerprint;
     }
 
+    public ListCertificatesRequest withSource(List<String> source) {
+        this.source = source;
+        return this;
+    }
+
+    public ListCertificatesRequest addSourceItem(String sourceItem) {
+        if (this.source == null) {
+            this.source = new ArrayList<>();
+        }
+        this.source.add(sourceItem);
+        return this;
+    }
+
+    public ListCertificatesRequest withSource(Consumer<List<String>> sourceSetter) {
+        if (this.source == null) {
+            this.source = new ArrayList<>();
+        }
+        sourceSetter.accept(this.source);
+        return this;
+    }
+
+    /**
+     * 证书来源。  支持多值查询，查询条件格式：source=xxx&source=xxx。
+     * @return source
+     */
+    public List<String> getSource() {
+        return source;
+    }
+
+    public void setSource(List<String> source) {
+        this.source = source;
+    }
+
+    public ListCertificatesRequest withProtectionStatus(List<String> protectionStatus) {
+        this.protectionStatus = protectionStatus;
+        return this;
+    }
+
+    public ListCertificatesRequest addProtectionStatusItem(String protectionStatusItem) {
+        if (this.protectionStatus == null) {
+            this.protectionStatus = new ArrayList<>();
+        }
+        this.protectionStatus.add(protectionStatusItem);
+        return this;
+    }
+
+    public ListCertificatesRequest withProtectionStatus(Consumer<List<String>> protectionStatusSetter) {
+        if (this.protectionStatus == null) {
+            this.protectionStatus = new ArrayList<>();
+        }
+        protectionStatusSetter.accept(this.protectionStatus);
+        return this;
+    }
+
+    /**
+     * 修改保护状态。  支持多值查询，查询条件格式：protection_status=xxx&protection_status=xxx。
+     * @return protectionStatus
+     */
+    public List<String> getProtectionStatus() {
+        return protectionStatus;
+    }
+
+    public void setProtectionStatus(List<String> protectionStatus) {
+        this.protectionStatus = protectionStatus;
+    }
+
+    public ListCertificatesRequest withProtectionReason(List<String> protectionReason) {
+        this.protectionReason = protectionReason;
+        return this;
+    }
+
+    public ListCertificatesRequest addProtectionReasonItem(String protectionReasonItem) {
+        if (this.protectionReason == null) {
+            this.protectionReason = new ArrayList<>();
+        }
+        this.protectionReason.add(protectionReasonItem);
+        return this;
+    }
+
+    public ListCertificatesRequest withProtectionReason(Consumer<List<String>> protectionReasonSetter) {
+        if (this.protectionReason == null) {
+            this.protectionReason = new ArrayList<>();
+        }
+        protectionReasonSetter.accept(this.protectionReason);
+        return this;
+    }
+
+    /**
+     * 设置修改保护的原因。  支持多值查询，查询条件格式：protection_reason=xxx&protection_reason=xxx。
+     * @return protectionReason
+     */
+    public List<String> getProtectionReason() {
+        return protectionReason;
+    }
+
+    public void setProtectionReason(List<String> protectionReason) {
+        this.protectionReason = protectionReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -421,7 +535,9 @@ public class ListCertificatesRequest {
             && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
             && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.domain, that.domain)
             && Objects.equals(this.type, that.type) && Objects.equals(this.scmCertificateId, that.scmCertificateId)
-            && Objects.equals(this.commonName, that.commonName) && Objects.equals(this.fingerprint, that.fingerprint);
+            && Objects.equals(this.commonName, that.commonName) && Objects.equals(this.fingerprint, that.fingerprint)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.protectionStatus, that.protectionStatus)
+            && Objects.equals(this.protectionReason, that.protectionReason);
     }
 
     @Override
@@ -437,7 +553,10 @@ public class ListCertificatesRequest {
             type,
             scmCertificateId,
             commonName,
-            fingerprint);
+            fingerprint,
+            source,
+            protectionStatus,
+            protectionReason);
     }
 
     @Override
@@ -456,6 +575,9 @@ public class ListCertificatesRequest {
         sb.append("    scmCertificateId: ").append(toIndentedString(scmCertificateId)).append("\n");
         sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
         sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
+        sb.append("    source: ").append(toIndentedString(source)).append("\n");
+        sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
+        sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

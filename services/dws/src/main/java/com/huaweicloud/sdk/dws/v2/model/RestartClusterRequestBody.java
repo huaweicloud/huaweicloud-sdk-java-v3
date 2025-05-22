@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * This is a auto create Body Object
+ * **参数解释**： 重启集群的请求体。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class RestartClusterRequestBody {
 
@@ -21,7 +21,7 @@ public class RestartClusterRequestBody {
     }
 
     /**
-     * 重启标识
+     * **参数解释**： 重启标识。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return restart
      */
     public Object getRestart() {

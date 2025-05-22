@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 如果规格为固定存储容量规格，则该属性为规格典配的存储容量信息，如果为弹性存储规格，则该属性为null。
+ * **参数解释**： 如果规格为固定存储容量规格，则该属性为规格典配的存储容量信息，如果为弹性存储规格，则该属性为null。 **取值范围**： 不涉及。
  */
 public class VolumeResp {
 
@@ -26,7 +26,7 @@ public class VolumeResp {
     }
 
     /**
-     * 磁盘类型，仅支持SSD。
+     * **参数解释**： 磁盘类型，仅支持SSD。 **取值范围**： 仅支持SSD。
      * @return type
      */
     public String getType() {
@@ -43,7 +43,7 @@ public class VolumeResp {
     }
 
     /**
-     * 磁盘可用容量。
+     * **参数解释**： 磁盘可用容量。 **取值范围**： 仅支持SSD。
      * @return size
      */
     public Integer getSize() {

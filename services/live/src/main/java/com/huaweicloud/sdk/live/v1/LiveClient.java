@@ -105,6 +105,8 @@ import com.huaweicloud.sdk.live.v1.model.RunRecordRequest;
 import com.huaweicloud.sdk.live.v1.model.RunRecordResponse;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainRequest;
 import com.huaweicloud.sdk.live.v1.model.SetRefererChainResponse;
+import com.huaweicloud.sdk.live.v1.model.ShowChannelStatisticRequest;
+import com.huaweicloud.sdk.live.v1.model.ShowChannelStatisticResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainHttpsCertRequest;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainHttpsCertResponse;
 import com.huaweicloud.sdk.live.v1.model.ShowDomainKeyChainRequest;
@@ -2381,6 +2383,35 @@ public class LiveClient {
     public SyncInvoker<ModifyOttChannelInfoStatsRequest, ModifyOttChannelInfoStatsResponse> modifyOttChannelInfoStatsInvoker(
         ModifyOttChannelInfoStatsRequest request) {
         return new SyncInvoker<>(request, LiveMeta.modifyOttChannelInfoStats, hcClient);
+    }
+
+    /**
+     * 查询频道统计信息
+     *
+     * 查询频道的统计信息（入流scte35信号）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowChannelStatisticRequest 请求对象
+     * @return ShowChannelStatisticResponse
+     */
+    public ShowChannelStatisticResponse showChannelStatistic(ShowChannelStatisticRequest request) {
+        return hcClient.syncInvokeHttp(request, LiveMeta.showChannelStatistic);
+    }
+
+    /**
+     * 查询频道统计信息
+     *
+     * 查询频道的统计信息（入流scte35信号）
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowChannelStatisticRequest 请求对象
+     * @return SyncInvoker<ShowChannelStatisticRequest, ShowChannelStatisticResponse>
+     */
+    public SyncInvoker<ShowChannelStatisticRequest, ShowChannelStatisticResponse> showChannelStatisticInvoker(
+        ShowChannelStatisticRequest request) {
+        return new SyncInvoker<>(request, LiveMeta.showChannelStatistic, hcClient);
     }
 
 }

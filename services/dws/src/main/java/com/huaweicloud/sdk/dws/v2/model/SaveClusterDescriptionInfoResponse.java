@@ -27,7 +27,7 @@ public class SaveClusterDescriptionInfoResponse extends SdkResponse {
     }
 
     /**
-     * 错误码
+     * **参数解释**： 错误码。 **取值范围**： 不涉及。
      * @return errorCode
      */
     public String getErrorCode() {
@@ -44,7 +44,7 @@ public class SaveClusterDescriptionInfoResponse extends SdkResponse {
     }
 
     /**
-     * 错误信息
+     * **参数解释**： 错误信息。 **取值范围**： 不涉及。
      * @return errorMsg
      */
     public String getErrorMsg() {

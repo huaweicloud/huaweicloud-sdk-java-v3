@@ -1,10 +1,15 @@
 package com.huaweicloud.sdk.elb.v3.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -102,6 +107,91 @@ public class CertificateInfo {
     @JsonProperty(value = "subject_alternative_names")
 
     private List<String> subjectAlternativeNames = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "source")
+
+    private String source;
+
+    /**
+     * 参数解释：修改保护状态  约束限制：无  取值范围：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护  默认取值：nonProtection
+     */
+    public static final class ProtectionStatusEnum {
+
+        /**
+         * Enum NONPROTECTION for value: "nonProtection"
+         */
+        public static final ProtectionStatusEnum NONPROTECTION = new ProtectionStatusEnum("nonProtection");
+
+        /**
+         * Enum CONSOLEPROTECTION for value: "consoleProtection"
+         */
+        public static final ProtectionStatusEnum CONSOLEPROTECTION = new ProtectionStatusEnum("consoleProtection");
+
+        private static final Map<String, ProtectionStatusEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, ProtectionStatusEnum> createStaticFields() {
+            Map<String, ProtectionStatusEnum> map = new HashMap<>();
+            map.put("nonProtection", NONPROTECTION);
+            map.put("consoleProtection", CONSOLEPROTECTION);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        ProtectionStatusEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static ProtectionStatusEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectionStatusEnum(value));
+        }
+
+        public static ProtectionStatusEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof ProtectionStatusEnum) {
+                return this.value.equals(((ProtectionStatusEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_status")
+
+    private ProtectionStatusEnum protectionStatus;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "protection_reason")
+
+    private String protectionReason;
 
     public CertificateInfo withAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
@@ -425,6 +515,57 @@ public class CertificateInfo {
         this.subjectAlternativeNames = subjectAlternativeNames;
     }
 
+    public CertificateInfo withSource(String source) {
+        this.source = source;
+        return this;
+    }
+
+    /**
+     * 参数解释：证书来源 取值范围：无  默认取值：当scm_certificate_id不为空，且未传入source时，默认取值为“scm”； 其他情况下默认为空。
+     * @return source
+     */
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public CertificateInfo withProtectionStatus(ProtectionStatusEnum protectionStatus) {
+        this.protectionStatus = protectionStatus;
+        return this;
+    }
+
+    /**
+     * 参数解释：修改保护状态  约束限制：无  取值范围：  - nonProtection: 不保护  - consoleProtection: 控制台修改保护  默认取值：nonProtection
+     * @return protectionStatus
+     */
+    public ProtectionStatusEnum getProtectionStatus() {
+        return protectionStatus;
+    }
+
+    public void setProtectionStatus(ProtectionStatusEnum protectionStatus) {
+        this.protectionStatus = protectionStatus;
+    }
+
+    public CertificateInfo withProtectionReason(String protectionReason) {
+        this.protectionReason = protectionReason;
+        return this;
+    }
+
+    /**
+     * 参数解释：设置修改保护的原因  约束限制：仅当protection_status为consoleProtection时有效  取值范围：无  默认取值：空
+     * @return protectionReason
+     */
+    public String getProtectionReason() {
+        return protectionReason;
+    }
+
+    public void setProtectionReason(String protectionReason) {
+        this.protectionReason = protectionReason;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -445,7 +586,9 @@ public class CertificateInfo {
             && Objects.equals(this.encPrivateKey, that.encPrivateKey)
             && Objects.equals(this.scmCertificateId, that.scmCertificateId)
             && Objects.equals(this.commonName, that.commonName) && Objects.equals(this.fingerprint, that.fingerprint)
-            && Objects.equals(this.subjectAlternativeNames, that.subjectAlternativeNames);
+            && Objects.equals(this.subjectAlternativeNames, that.subjectAlternativeNames)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.protectionStatus, that.protectionStatus)
+            && Objects.equals(this.protectionReason, that.protectionReason);
     }
 
     @Override
@@ -467,7 +610,10 @@ public class CertificateInfo {
             scmCertificateId,
             commonName,
             fingerprint,
-            subjectAlternativeNames);
+            subjectAlternativeNames,
+            source,
+            protectionStatus,
+            protectionReason);
     }
 
     @Override
@@ -492,6 +638,9 @@ public class CertificateInfo {
         sb.append("    commonName: ").append(toIndentedString(commonName)).append("\n");
         sb.append("    fingerprint: ").append(toIndentedString(fingerprint)).append("\n");
         sb.append("    subjectAlternativeNames: ").append(toIndentedString(subjectAlternativeNames)).append("\n");
+        sb.append("    source: ").append(toIndentedString(source)).append("\n");
+        sb.append("    protectionStatus: ").append(toIndentedString(protectionStatus)).append("\n");
+        sb.append("    protectionReason: ").append(toIndentedString(protectionReason)).append("\n");
         sb.append("}");
         return sb.toString();
     }

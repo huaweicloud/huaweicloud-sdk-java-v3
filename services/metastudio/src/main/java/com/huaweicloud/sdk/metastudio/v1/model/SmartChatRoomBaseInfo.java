@@ -64,7 +64,7 @@ public class SmartChatRoomBaseInfo {
     private List<VoiceConfigRsp> voiceConfigList = null;
 
     /**
-     * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
      */
     public static final class DefaultLanguageEnum {
 
@@ -78,12 +78,36 @@ public class SmartChatRoomBaseInfo {
          */
         public static final DefaultLanguageEnum EN = new DefaultLanguageEnum("EN");
 
+        /**
+         * Enum ESP for value: "ESP"
+         */
+        public static final DefaultLanguageEnum ESP = new DefaultLanguageEnum("ESP");
+
+        /**
+         * Enum POR for value: "por"
+         */
+        public static final DefaultLanguageEnum POR = new DefaultLanguageEnum("por");
+
+        /**
+         * Enum ARABIC for value: "Arabic"
+         */
+        public static final DefaultLanguageEnum ARABIC = new DefaultLanguageEnum("Arabic");
+
+        /**
+         * Enum THAI for value: "Thai"
+         */
+        public static final DefaultLanguageEnum THAI = new DefaultLanguageEnum("Thai");
+
         private static final Map<String, DefaultLanguageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, DefaultLanguageEnum> createStaticFields() {
             Map<String, DefaultLanguageEnum> map = new HashMap<>();
             map.put("CN", CN);
             map.put("EN", EN);
+            map.put("ESP", ESP);
+            map.put("por", POR);
+            map.put("Arabic", ARABIC);
+            map.put("Thai", THAI);
             return Collections.unmodifiableMap(map);
         }
 
@@ -147,6 +171,11 @@ public class SmartChatRoomBaseInfo {
     @JsonProperty(value = "update_time")
 
     private String updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "exit_mute_threshold")
+
+    private Integer exitMuteThreshold;
 
     public SmartChatRoomBaseInfo withRoomId(String roomId) {
         this.roomId = roomId;
@@ -343,7 +372,7 @@ public class SmartChatRoomBaseInfo {
     }
 
     /**
-     * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。
+     * 默认语言，智能交互接口使用。默认值CN。 * CN：简体中文。 * EN：英语。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
      * @return defaultLanguage
      */
     public DefaultLanguageEnum getDefaultLanguage() {
@@ -388,6 +417,25 @@ public class SmartChatRoomBaseInfo {
         this.updateTime = updateTime;
     }
 
+    public SmartChatRoomBaseInfo withExitMuteThreshold(Integer exitMuteThreshold) {
+        this.exitMuteThreshold = exitMuteThreshold;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 静默退出时长。
+     * minimum: 0
+     * maximum: 1440
+     * @return exitMuteThreshold
+     */
+    public Integer getExitMuteThreshold() {
+        return exitMuteThreshold;
+    }
+
+    public void setExitMuteThreshold(Integer exitMuteThreshold) {
+        this.exitMuteThreshold = exitMuteThreshold;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -403,7 +451,8 @@ public class SmartChatRoomBaseInfo {
             && Objects.equals(this.voiceConfig, that.voiceConfig) && Objects.equals(this.concurrency, that.concurrency)
             && Objects.equals(this.voiceConfigList, that.voiceConfigList)
             && Objects.equals(this.defaultLanguage, that.defaultLanguage)
-            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.exitMuteThreshold, that.exitMuteThreshold);
     }
 
     @Override
@@ -419,7 +468,8 @@ public class SmartChatRoomBaseInfo {
             voiceConfigList,
             defaultLanguage,
             createTime,
-            updateTime);
+            updateTime,
+            exitMuteThreshold);
     }
 
     @Override
@@ -438,6 +488,7 @@ public class SmartChatRoomBaseInfo {
         sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");
         sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    exitMuteThreshold: ").append(toIndentedString(exitMuteThreshold)).append("\n");
         sb.append("}");
         return sb.toString();
     }

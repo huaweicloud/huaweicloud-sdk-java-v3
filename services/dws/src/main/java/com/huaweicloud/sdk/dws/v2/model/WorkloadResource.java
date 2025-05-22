@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 工作负载队列资源项
+ * **参数解释**： 工作负载队列资源项。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class WorkloadResource {
 
@@ -26,7 +26,7 @@ public class WorkloadResource {
     }
 
     /**
-     * 资源名称。
+     * **参数解释**： 资源名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return resourceName
      */
     public String getResourceName() {
@@ -43,7 +43,7 @@ public class WorkloadResource {
     }
 
     /**
-     * 资源属性值。
+     * **参数解释**： 资源属性值。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return resourceValue
      */
     public Integer getResourceValue() {

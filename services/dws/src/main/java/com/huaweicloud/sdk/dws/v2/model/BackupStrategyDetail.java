@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 备份策略
+ * **参数解释**： 备份策略详细信息。 **取值范围**： 不涉及。
  */
 public class BackupStrategyDetail {
 
@@ -45,13 +45,18 @@ public class BackupStrategyDetail {
 
     private String updateTime;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "time_zone_offset")
+
+    private Integer timeZoneOffset;
+
     public BackupStrategyDetail withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
     }
 
     /**
-     * 策略ID。
+     * **参数解释**： 策略ID。 **取值范围**： 不涉及。
      * @return policyId
      */
     public String getPolicyId() {
@@ -68,7 +73,7 @@ public class BackupStrategyDetail {
     }
 
     /**
-     * 策略名称。
+     * **参数解释**： 策略名称。 **取值范围**： 不涉及。
      * @return policyName
      */
     public String getPolicyName() {
@@ -85,7 +90,7 @@ public class BackupStrategyDetail {
     }
 
     /**
-     * 执行策略。
+     * **参数解释**： 执行策略，一般为crontab表达式。 **取值范围**： 不涉及。
      * @return backupStrategy
      */
     public String getBackupStrategy() {
@@ -102,7 +107,7 @@ public class BackupStrategyDetail {
     }
 
     /**
-     * 备份类型。
+     * **参数解释**： 备份类型。 **取值范围**： 不涉及。
      * @return backupType
      */
     public String getBackupType() {
@@ -119,7 +124,7 @@ public class BackupStrategyDetail {
     }
 
     /**
-     * 备份级别。
+     * **参数解释**： 备份级别。 **取值范围**： 不涉及。
      * @return backupLevel
      */
     public String getBackupLevel() {
@@ -136,7 +141,7 @@ public class BackupStrategyDetail {
     }
 
     /**
-     * 下次触发时间。
+     * **参数解释**： 下次触发时间（预估，与其它任务冲突时不执行）。 **取值范围**： 不涉及。
      * @return nextFireTime
      */
     public String getNextFireTime() {
@@ -153,7 +158,7 @@ public class BackupStrategyDetail {
     }
 
     /**
-     * 更新时间。
+     * **参数解释**： 更新时间。 **取值范围**： 不涉及。
      * @return updateTime
      */
     public String getUpdateTime() {
@@ -162,6 +167,23 @@ public class BackupStrategyDetail {
 
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public BackupStrategyDetail withTimeZoneOffset(Integer timeZoneOffset) {
+        this.timeZoneOffset = timeZoneOffset;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 时区偏移量（相比UTC时间）。 **取值范围**： 0~23
+     * @return timeZoneOffset
+     */
+    public Integer getTimeZoneOffset() {
+        return timeZoneOffset;
+    }
+
+    public void setTimeZoneOffset(Integer timeZoneOffset) {
+        this.timeZoneOffset = timeZoneOffset;
     }
 
     @Override
@@ -176,12 +198,20 @@ public class BackupStrategyDetail {
         return Objects.equals(this.policyId, that.policyId) && Objects.equals(this.policyName, that.policyName)
             && Objects.equals(this.backupStrategy, that.backupStrategy)
             && Objects.equals(this.backupType, that.backupType) && Objects.equals(this.backupLevel, that.backupLevel)
-            && Objects.equals(this.nextFireTime, that.nextFireTime) && Objects.equals(this.updateTime, that.updateTime);
+            && Objects.equals(this.nextFireTime, that.nextFireTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.timeZoneOffset, that.timeZoneOffset);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyId, policyName, backupStrategy, backupType, backupLevel, nextFireTime, updateTime);
+        return Objects.hash(policyId,
+            policyName,
+            backupStrategy,
+            backupType,
+            backupLevel,
+            nextFireTime,
+            updateTime,
+            timeZoneOffset);
     }
 
     @Override
@@ -195,6 +225,7 @@ public class BackupStrategyDetail {
         sb.append("    backupLevel: ").append(toIndentedString(backupLevel)).append("\n");
         sb.append("    nextFireTime: ").append(toIndentedString(nextFireTime)).append("\n");
         sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
+        sb.append("    timeZoneOffset: ").append(toIndentedString(timeZoneOffset)).append("\n");
         sb.append("}");
         return sb.toString();
     }

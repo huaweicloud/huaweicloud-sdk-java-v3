@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * ClusterCheckBody
+ * **参数解释**： 集群校验对象。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class ClusterCheckBody {
 
@@ -119,7 +119,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 企业项目ID
+     * **参数解释**： 企业项目ID，对集群指定企业项目。如果未指定，则使用默认企业项目“default”的ID，即0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -136,7 +136,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 集群规格名称
+     * **参数解释**： 集群规格名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return flavor
      */
     public String getFlavor() {
@@ -169,7 +169,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 可用区列表
+     * **参数解释**： 可用区列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return availabilityZones
      */
     public List<String> getAvailabilityZones() {
@@ -186,7 +186,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 实例节点个数
+     * **参数解释**： 实例节点个数。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return numNode
      */
     public Integer getNumNode() {
@@ -203,7 +203,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 集群安全组ID
+     * **参数解释**： 安全组ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -220,7 +220,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 集群版本
+     * **参数解释**： 集群版本。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return datastoreVersion
      */
     public String getDatastoreVersion() {
@@ -237,7 +237,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 集群虚拟私有云ID
+     * **参数解释**： 集群虚拟私有云ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return vpcId
      */
     public String getVpcId() {
@@ -254,7 +254,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 集群子网ID
+     * **参数解释**： 集群子网ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -297,7 +297,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 跨规格恢复
+     * **参数解释**： 跨规格恢复信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： null
      * @return crossSpecRestore
      */
     public String getCrossSpecRestore() {
@@ -340,7 +340,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 旧主机名
+     * **参数解释**： 旧主机名。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： null
      * @return oldClusterHostname
      */
     public String getOldClusterHostname() {
@@ -399,7 +399,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 标签列表
+     * **参数解释**： 标签列表。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： null
      * @return tagList
      */
     public List<Tag> getTagList() {
@@ -416,7 +416,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 存储池ID
+     * **参数解释**： 存储池ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： null
      * @return dssPoolId
      */
     public String getDssPoolId() {
@@ -433,7 +433,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 数据库端口
+     * **参数解释**： 数据库端口。 **约束限制**： 不涉及。 **取值范围**： 8000~30000 **默认取值**： 8000
      * @return dbPort
      */
     public String getDbPort() {
@@ -450,7 +450,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 管理员密码
+     * **参数解释**： 管理员密码。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return dbPassword
      */
     public String getDbPassword() {
@@ -467,7 +467,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 管理员用户
+     * **参数解释**： 管理员用户。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： dbadmin
      * @return dbName
      */
     public String getDbName() {
@@ -484,7 +484,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * cn节点数量
+     * **参数解释**： cn节点数量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return numCn
      */
     public Integer getNumCn() {
@@ -501,7 +501,7 @@ public class ClusterCheckBody {
     }
 
     /**
-     * 集群名称
+     * **参数解释**： 集群名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {

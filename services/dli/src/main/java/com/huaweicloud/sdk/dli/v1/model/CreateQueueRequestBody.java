@@ -73,6 +73,11 @@ public class CreateQueueRequestBody {
 
     private String elasticResourcePoolName;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "properties")
+
+    private CommonQueueProperty properties;
+
     public CreateQueueRequestBody withQueueName(String queueName) {
         this.queueName = queueName;
         return this;
@@ -309,6 +314,32 @@ public class CreateQueueRequestBody {
         this.elasticResourcePoolName = elasticResourcePoolName;
     }
 
+    public CreateQueueRequestBody withProperties(CommonQueueProperty properties) {
+        this.properties = properties;
+        return this;
+    }
+
+    public CreateQueueRequestBody withProperties(Consumer<CommonQueueProperty> propertiesSetter) {
+        if (this.properties == null) {
+            this.properties = new CommonQueueProperty();
+            propertiesSetter.accept(this.properties);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get properties
+     * @return properties
+     */
+    public CommonQueueProperty getProperties() {
+        return properties;
+    }
+
+    public void setProperties(CommonQueueProperty properties) {
+        this.properties = properties;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -325,7 +356,8 @@ public class CreateQueueRequestBody {
             && Objects.equals(this.platform, that.platform) && Objects.equals(this.resourceMode, that.resourceMode)
             && Objects.equals(this.labels, that.labels) && Objects.equals(this.feature, that.feature)
             && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName);
+            && Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName)
+            && Objects.equals(this.properties, that.properties);
     }
 
     @Override
@@ -341,7 +373,8 @@ public class CreateQueueRequestBody {
             labels,
             feature,
             tags,
-            elasticResourcePoolName);
+            elasticResourcePoolName,
+            properties);
     }
 
     @Override
@@ -360,6 +393,7 @@ public class CreateQueueRequestBody {
         sb.append("    feature: ").append(toIndentedString(feature)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    elasticResourcePoolName: ").append(toIndentedString(elasticResourcePoolName)).append("\n");
+        sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -31,7 +31,7 @@ public class MaintainWindow {
     }
 
     /**
-     * 每周的维护时间，以天为粒度，取值如下：  - Mon：星期一 - Tue：星期二 - Wed：星期三 - Thu：星期四 - Fri：星期五 - Sat：星期六 - Sun：星期日
+     * **参数解释**： 每周的维护时间，以天为粒度。 **取值范围**： - Mon：星期一 - Tue：星期二 - Wed：星期三 - Thu：星期四 - Fri：星期五 - Sat：星期六 - Sun：星期日
      * @return day
      */
     public String getDay() {
@@ -48,7 +48,7 @@ public class MaintainWindow {
     }
 
     /**
-     * 维护开始时间，显示格式为 HH：mm，时区为GMT+0。
+     * **参数解释**： 维护开始时间，显示格式为 HH：mm，时区为GMT+0。 **取值范围**： 不涉及。
      * @return startTime
      */
     public String getStartTime() {
@@ -65,7 +65,7 @@ public class MaintainWindow {
     }
 
     /**
-     * 维护结束时间，显示格式为 HH：mm, 时区为GMT+0。
+     * **参数解释**： 维护结束时间，显示格式为 HH：mm, 时区为GMT+0。 **取值范围**： 不涉及。
      * @return endTime
      */
     public String getEndTime() {

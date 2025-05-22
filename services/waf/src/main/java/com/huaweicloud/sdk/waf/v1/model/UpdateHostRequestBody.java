@@ -425,7 +425,7 @@ public class UpdateHostRequestBody {
     }
 
     /**
-     * 是否开启IPv6防护，仅专业版（原企业版）和铂金版（原旗舰版）支持IPv6防护。   - true：开启IPv6防护   - false：关闭IPV6防护
+     * 是否开启IPv6防护，仅专业版和企业版支持IPv6防护。   - true：开启IPv6防护   - false：关闭IPV6防护
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {

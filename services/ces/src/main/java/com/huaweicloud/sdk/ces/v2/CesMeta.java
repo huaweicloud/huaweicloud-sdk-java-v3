@@ -2,6 +2,7 @@ package com.huaweicloud.sdk.ces.v2;
 
 import com.huaweicloud.sdk.ces.v2.model.AddAlarmRuleResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.AddAlarmRuleResourcesResponse;
+import com.huaweicloud.sdk.ces.v2.model.AddResourcesReq;
 import com.huaweicloud.sdk.ces.v2.model.AsyncAssociateRGAndTemplatesReq;
 import com.huaweicloud.sdk.ces.v2.model.BaseWidgetInfo;
 import com.huaweicloud.sdk.ces.v2.model.BatchCreateResourcesRequest;
@@ -55,6 +56,7 @@ import com.huaweicloud.sdk.ces.v2.model.CreateOneDashboardResponse;
 import com.huaweicloud.sdk.ces.v2.model.CreateResourceGroupRequest;
 import com.huaweicloud.sdk.ces.v2.model.CreateResourceGroupRequestBody;
 import com.huaweicloud.sdk.ces.v2.model.CreateResourceGroupResponse;
+import com.huaweicloud.sdk.ces.v2.model.DelResourcesReq;
 import com.huaweicloud.sdk.ces.v2.model.DeleteAlarmRuleResourcesRequest;
 import com.huaweicloud.sdk.ces.v2.model.DeleteAlarmRuleResourcesResponse;
 import com.huaweicloud.sdk.ces.v2.model.DeleteDashboardsRequest;
@@ -99,7 +101,6 @@ import com.huaweicloud.sdk.ces.v2.model.PoliciesReqV2;
 import com.huaweicloud.sdk.ces.v2.model.PostAlarmsReqV2;
 import com.huaweicloud.sdk.ces.v2.model.PutAlarmNotificationReq;
 import com.huaweicloud.sdk.ces.v2.model.PutResourceGroupReq;
-import com.huaweicloud.sdk.ces.v2.model.ResourcesReq;
 import com.huaweicloud.sdk.ces.v2.model.ResourcesReqV2;
 import com.huaweicloud.sdk.ces.v2.model.ShowAlarmTemplateRequest;
 import com.huaweicloud.sdk.ces.v2.model.ShowAlarmTemplateResponse;
@@ -184,10 +185,10 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchCreateResourcesRequest::getGroupId, BatchCreateResourcesRequest::setGroupId));
-        builder.<ResourcesReq>withRequestField("body",
+        builder.<AddResourcesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ResourcesReq.class),
+            TypeCasts.uncheckedConversion(AddResourcesReq.class),
             f -> f.withMarshaller(BatchCreateResourcesRequest::getBody, BatchCreateResourcesRequest::setBody));
 
         // response
@@ -343,10 +344,10 @@ public class CesMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchDeleteResourcesRequest::getGroupId, BatchDeleteResourcesRequest::setGroupId));
-        builder.<ResourcesReq>withRequestField("body",
+        builder.<DelResourcesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(ResourcesReq.class),
+            TypeCasts.uncheckedConversion(DelResourcesReq.class),
             f -> f.withMarshaller(BatchDeleteResourcesRequest::getBody, BatchDeleteResourcesRequest::setBody));
 
         // response

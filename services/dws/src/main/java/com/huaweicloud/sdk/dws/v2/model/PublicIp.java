@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * PublicIp
+ * **参数解释**： 弹性公网IP信息对象。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： null
  */
 public class PublicIp {
 
@@ -26,7 +26,7 @@ public class PublicIp {
     }
 
     /**
-     * 弹性IP绑定类型，取值如下：  - auto_assign：自动绑定 - not_use：暂未使用 - bind_existing ：使用已有
+     * **参数解释**： 弹性IP绑定类型。 **约束限制**： 不涉及。 **取值范围**： - auto_assign：自动绑定 - not_use：暂未使用 - bind_existing ：使用已有  **默认取值**： null
      * @return publicBindType
      */
     public String getPublicBindType() {
@@ -43,7 +43,7 @@ public class PublicIp {
     }
 
     /**
-     * 弹性IP的id
+     * **参数解释**： 弹性公网IP的id。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： null
      * @return eipId
      */
     public String getEipId() {

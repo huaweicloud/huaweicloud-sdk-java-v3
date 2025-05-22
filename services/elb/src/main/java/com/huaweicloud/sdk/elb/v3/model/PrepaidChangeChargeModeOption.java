@@ -5,10 +5,13 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 包周期选项，pay_type&#x3D;prepaid或charge_mode为prepaid时填写。
@@ -19,6 +22,11 @@ public class PrepaidChangeChargeModeOption {
     @JsonProperty(value = "include_publicip")
 
     private Boolean includePublicip;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "publicip_ids")
+
+    private List<String> publicipIds = null;
 
     /**
      * 订购周期类型，当前支持包月和包年： month：月（默认）； year：年；
@@ -127,6 +135,39 @@ public class PrepaidChangeChargeModeOption {
         this.includePublicip = includePublicip;
     }
 
+    public PrepaidChangeChargeModeOption withPublicipIds(List<String> publicipIds) {
+        this.publicipIds = publicipIds;
+        return this;
+    }
+
+    public PrepaidChangeChargeModeOption addPublicipIdsItem(String publicipIdsItem) {
+        if (this.publicipIds == null) {
+            this.publicipIds = new ArrayList<>();
+        }
+        this.publicipIds.add(publicipIdsItem);
+        return this;
+    }
+
+    public PrepaidChangeChargeModeOption withPublicipIds(Consumer<List<String>> publicipIdsSetter) {
+        if (this.publicipIds == null) {
+            this.publicipIds = new ArrayList<>();
+        }
+        publicipIdsSetter.accept(this.publicipIds);
+        return this;
+    }
+
+    /**
+     * 需要一起按需转包的弹性公网IP的ID。 若include_publicip为false，不能指定该字段。 若include_publicip为true，该字段为未指定时，表示所有绑定的v4 eip都需要一起转包周期。 若include_publicip为true，该字段列表非空，表示只将指定的v4 eip转包。 若include_publicip为true，该字段列表为空，表示不指定任一eip转包，与include_publicip为false等效。
+     * @return publicipIds
+     */
+    public List<String> getPublicipIds() {
+        return publicipIds;
+    }
+
+    public void setPublicipIds(List<String> publicipIds) {
+        this.publicipIds = publicipIds;
+    }
+
     public PrepaidChangeChargeModeOption withPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
         return this;
@@ -207,13 +248,14 @@ public class PrepaidChangeChargeModeOption {
         }
         PrepaidChangeChargeModeOption that = (PrepaidChangeChargeModeOption) obj;
         return Objects.equals(this.includePublicip, that.includePublicip)
-            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
-            && Objects.equals(this.autoRenew, that.autoRenew) && Objects.equals(this.autoPay, that.autoPay);
+            && Objects.equals(this.publicipIds, that.publicipIds) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.autoRenew, that.autoRenew)
+            && Objects.equals(this.autoPay, that.autoPay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(includePublicip, periodType, periodNum, autoRenew, autoPay);
+        return Objects.hash(includePublicip, publicipIds, periodType, periodNum, autoRenew, autoPay);
     }
 
     @Override
@@ -221,6 +263,7 @@ public class PrepaidChangeChargeModeOption {
         StringBuilder sb = new StringBuilder();
         sb.append("class PrepaidChangeChargeModeOption {\n");
         sb.append("    includePublicip: ").append(toIndentedString(includePublicip)).append("\n");
+        sb.append("    publicipIds: ").append(toIndentedString(publicipIds)).append("\n");
         sb.append("    periodType: ").append(toIndentedString(periodType)).append("\n");
         sb.append("    periodNum: ").append(toIndentedString(periodNum)).append("\n");
         sb.append("    autoRenew: ").append(toIndentedString(autoRenew)).append("\n");

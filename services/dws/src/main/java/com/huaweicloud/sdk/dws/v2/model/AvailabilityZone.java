@@ -36,7 +36,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * 可用区唯一编码。
+     * **参数解释**： 可用区唯一编码。 **取值范围**： 不涉及。
      * @return code
      */
     public String getCode() {
@@ -53,7 +53,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * 可用区名称。
+     * **参数解释**： 可用区名称。 **取值范围**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -70,7 +70,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * 可用区状态。 - available：可用。 - unavailable：不可用。
+     * **参数解释**： 可用区状态。 **取值范围**： available：可用。 unavailable：不可用。
      * @return status
      */
     public String getStatus() {
@@ -87,7 +87,7 @@ public class AvailabilityZone {
     }
 
     /**
-     * 可用区组，如：center。
+     * **参数解释**： 可用区组，如：center。 **取值范围**： 不涉及。
      * @return publicBorderGroup
      */
     public String getPublicBorderGroup() {

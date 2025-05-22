@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 节点类型支持的可用区及状态信息。
+ * 规格支持的可用区及状态信息。
  */
 public class NodeTypeAvailableZones {
 
@@ -26,7 +26,7 @@ public class NodeTypeAvailableZones {
     }
 
     /**
-     * 可用区ID。
+     * **参数解释**： 可用区ID。 **取值范围**： 不涉及。
      * @return code
      */
     public String getCode() {
@@ -43,7 +43,7 @@ public class NodeTypeAvailableZones {
     }
 
     /**
-     * 节点类型可用状态。 - normal：可用 - sellout：售罄 - abandon：不可用
+     * **参数解释**： 规格可用状态。 **取值范围**： - normal：可用 - sellout：售罄 - abandon：不可用
      * @return status
      */
     public String getStatus() {

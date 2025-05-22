@@ -40,7 +40,7 @@ public class ListPlanExecLogsResponse extends SdkResponse {
     }
 
     /**
-     * 结果状态码。
+     * **参数解释**： 结果状态码。 **取值范围**： 不涉及。
      * @return workloadResCode
      */
     public Integer getWorkloadResCode() {
@@ -57,7 +57,7 @@ public class ListPlanExecLogsResponse extends SdkResponse {
     }
 
     /**
-     * 结果描述。
+     * **参数解释**： 结果描述。 **取值范围**： 不涉及。
      * @return workloadResStr
      */
     public String getWorkloadResStr() {
@@ -90,7 +90,7 @@ public class ListPlanExecLogsResponse extends SdkResponse {
     }
 
     /**
-     * 资源池名称。
+     * **参数解释**： 资源池名称。 **取值范围**： 不涉及。
      * @return planLogs
      */
     public List<PlanLog> getPlanLogs() {
@@ -107,7 +107,7 @@ public class ListPlanExecLogsResponse extends SdkResponse {
     }
 
     /**
-     * 总数量
+     * **参数解释**： 总数量。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

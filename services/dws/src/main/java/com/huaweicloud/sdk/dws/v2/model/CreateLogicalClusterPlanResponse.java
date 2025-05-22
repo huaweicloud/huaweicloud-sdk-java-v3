@@ -22,7 +22,7 @@ public class CreateLogicalClusterPlanResponse extends SdkResponse {
     }
 
     /**
-     * 逻辑集群增删计划id
+     * **参数解释**： 逻辑集群增删计划ID。 **取值范围**： 不涉及。
      * @return planId
      */
     public String getPlanId() {

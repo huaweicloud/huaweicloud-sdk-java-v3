@@ -19,7 +19,7 @@ public class BatchCreateResourcesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ResourcesReq body;
+    private AddResourcesReq body;
 
     public BatchCreateResourcesRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -38,14 +38,14 @@ public class BatchCreateResourcesRequest {
         this.groupId = groupId;
     }
 
-    public BatchCreateResourcesRequest withBody(ResourcesReq body) {
+    public BatchCreateResourcesRequest withBody(AddResourcesReq body) {
         this.body = body;
         return this;
     }
 
-    public BatchCreateResourcesRequest withBody(Consumer<ResourcesReq> bodySetter) {
+    public BatchCreateResourcesRequest withBody(Consumer<AddResourcesReq> bodySetter) {
         if (this.body == null) {
-            this.body = new ResourcesReq();
+            this.body = new AddResourcesReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class BatchCreateResourcesRequest {
      * Get body
      * @return body
      */
-    public ResourcesReq getBody() {
+    public AddResourcesReq getBody() {
         return body;
     }
 
-    public void setBody(ResourcesReq body) {
+    public void setBody(AddResourcesReq body) {
         this.body = body;
     }
 

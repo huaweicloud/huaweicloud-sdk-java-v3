@@ -31,13 +31,23 @@ public class RedisConf {
 
     private Integer parallelJob;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "priority_policy")
+
+    private String priorityPolicy;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "bucket_split_info")
+
+    private BucketSplitInfo bucketSplitInfo;
+
     public RedisConf withRedisMode(String redisMode) {
         this.redisMode = redisMode;
         return this;
     }
 
     /**
-     * 重分布模式
+     * **参数解释**： 重分布模式。 **取值范围**： online|offline。
      * @return redisMode
      */
     public String getRedisMode() {
@@ -80,7 +90,7 @@ public class RedisConf {
     }
 
     /**
-     * 并行作业数量
+     * **参数解释**： 重分布并发数。 **取值范围**： 1~200。
      * @return parallelJobs
      */
     public Integer getParallelJobs() {
@@ -97,7 +107,7 @@ public class RedisConf {
     }
 
     /**
-     * 并行作业数量
+     * **参数解释**： 重分布并发数，已经废弃。 **取值范围**： 1~200。
      * @return parallelJob
      */
     public Integer getParallelJob() {
@@ -106,6 +116,49 @@ public class RedisConf {
 
     public void setParallelJob(Integer parallelJob) {
         this.parallelJob = parallelJob;
+    }
+
+    public RedisConf withPriorityPolicy(String priorityPolicy) {
+        this.priorityPolicy = priorityPolicy;
+        return this;
+    }
+
+    /**
+     * **参数解释**： 优先级策略,支持large优先对大表进行重分布，small优先对小表进行重分布，default默认顺序进行重分布。 **取值范围**： large|small|default。
+     * @return priorityPolicy
+     */
+    public String getPriorityPolicy() {
+        return priorityPolicy;
+    }
+
+    public void setPriorityPolicy(String priorityPolicy) {
+        this.priorityPolicy = priorityPolicy;
+    }
+
+    public RedisConf withBucketSplitInfo(BucketSplitInfo bucketSplitInfo) {
+        this.bucketSplitInfo = bucketSplitInfo;
+        return this;
+    }
+
+    public RedisConf withBucketSplitInfo(Consumer<BucketSplitInfo> bucketSplitInfoSetter) {
+        if (this.bucketSplitInfo == null) {
+            this.bucketSplitInfo = new BucketSplitInfo();
+            bucketSplitInfoSetter.accept(this.bucketSplitInfo);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get bucketSplitInfo
+     * @return bucketSplitInfo
+     */
+    public BucketSplitInfo getBucketSplitInfo() {
+        return bucketSplitInfo;
+    }
+
+    public void setBucketSplitInfo(BucketSplitInfo bucketSplitInfo) {
+        this.bucketSplitInfo = bucketSplitInfo;
     }
 
     @Override
@@ -119,12 +172,14 @@ public class RedisConf {
         RedisConf that = (RedisConf) obj;
         return Objects.equals(this.redisMode, that.redisMode) && Objects.equals(this.scheduleConf, that.scheduleConf)
             && Objects.equals(this.parallelJobs, that.parallelJobs)
-            && Objects.equals(this.parallelJob, that.parallelJob);
+            && Objects.equals(this.parallelJob, that.parallelJob)
+            && Objects.equals(this.priorityPolicy, that.priorityPolicy)
+            && Objects.equals(this.bucketSplitInfo, that.bucketSplitInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(redisMode, scheduleConf, parallelJobs, parallelJob);
+        return Objects.hash(redisMode, scheduleConf, parallelJobs, parallelJob, priorityPolicy, bucketSplitInfo);
     }
 
     @Override
@@ -135,6 +190,8 @@ public class RedisConf {
         sb.append("    scheduleConf: ").append(toIndentedString(scheduleConf)).append("\n");
         sb.append("    parallelJobs: ").append(toIndentedString(parallelJobs)).append("\n");
         sb.append("    parallelJob: ").append(toIndentedString(parallelJob)).append("\n");
+        sb.append("    priorityPolicy: ").append(toIndentedString(priorityPolicy)).append("\n");
+        sb.append("    bucketSplitInfo: ").append(toIndentedString(bucketSplitInfo)).append("\n");
         sb.append("}");
         return sb.toString();
     }

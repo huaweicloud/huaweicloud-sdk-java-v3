@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 切换逻辑集群开关请求
+ * **参数解释**： 切换逻辑集群开关请求。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class EnableLogicalClusterRequestBody {
 
@@ -21,7 +21,7 @@ public class EnableLogicalClusterRequestBody {
     }
 
     /**
-     * true-切换开关
+     * **参数解释**： 切换逻辑集群开关请求。 **约束限制**： 不涉及。 **取值范围**： true：打开开关 false：关闭开关 **默认取值**： 不涉及。
      * @return enable
      */
     public Boolean getEnable() {

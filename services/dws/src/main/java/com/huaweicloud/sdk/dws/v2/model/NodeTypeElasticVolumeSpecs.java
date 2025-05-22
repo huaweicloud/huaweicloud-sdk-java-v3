@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 如果规格为弹性容量规格，则该属性为规格典配的弹性容量信息，包括存储类型、最小容量、最大容量以及步长信息，如果为固定存储规格，则该属性为null。
+ * **参数解释**： 如果规格为弹性容量规格，则该属性为规格典配的弹性容量信息，包括存储类型、最小容量、最大容量以及步长信息，如果为固定存储规格，则该属性为null。 **取值范围**： 不涉及。
  */
 public class NodeTypeElasticVolumeSpecs {
 
@@ -18,7 +18,7 @@ public class NodeTypeElasticVolumeSpecs {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "step")
 
-    private String step;
+    private Integer step;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "min_size")
@@ -36,7 +36,7 @@ public class NodeTypeElasticVolumeSpecs {
     }
 
     /**
-     * 云盘存储类型。
+     * **参数解释**： 云盘存储类型。 **取值范围**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -47,20 +47,20 @@ public class NodeTypeElasticVolumeSpecs {
         this.type = type;
     }
 
-    public NodeTypeElasticVolumeSpecs withStep(String step) {
+    public NodeTypeElasticVolumeSpecs withStep(Integer step) {
         this.step = step;
         return this;
     }
 
     /**
-     * 云盘容量调整步长。
+     * **参数解释**： 云盘容量调整步长。 **取值范围**： 不涉及。
      * @return step
      */
-    public String getStep() {
+    public Integer getStep() {
         return step;
     }
 
-    public void setStep(String step) {
+    public void setStep(Integer step) {
         this.step = step;
     }
 
@@ -70,7 +70,7 @@ public class NodeTypeElasticVolumeSpecs {
     }
 
     /**
-     * 云盘支持的最小容量。
+     * **参数解释**： 云盘支持的最小容量。 **取值范围**： 不涉及。
      * @return minSize
      */
     public Integer getMinSize() {
@@ -87,7 +87,7 @@ public class NodeTypeElasticVolumeSpecs {
     }
 
     /**
-     * 云盘支持的最大容量。
+     * **参数解释**： 云盘支持的最大容量。 **取值范围**： 不涉及。
      * @return maxSize
      */
     public Integer getMaxSize() {

@@ -46,7 +46,7 @@ public class ListNodeTypesResponse extends SdkResponse {
     }
 
     /**
-     * 节点类型对象列表。
+     * **参数解释**： 可用的规格列表。 **取值范围**： 非空对象列表。
      * @return nodeTypes
      */
     public List<NodeTypes> getNodeTypes() {
@@ -63,7 +63,7 @@ public class ListNodeTypesResponse extends SdkResponse {
     }
 
     /**
-     * 节点类型总数
+     * **参数解释**： 规格总数 **取值范围**： 大于等于0的正整数。
      * @return count
      */
     public Integer getCount() {

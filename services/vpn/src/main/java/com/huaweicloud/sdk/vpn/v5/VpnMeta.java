@@ -115,6 +115,8 @@ import com.huaweicloud.sdk.vpn.v5.model.QueryResourcesRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.RemoveVpnUserFromGroupRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.RemoveVpnUsersFromGroupRequest;
 import com.huaweicloud.sdk.vpn.v5.model.RemoveVpnUsersFromGroupResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ResetVpnConnectionRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ResetVpnConnectionResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ResetVpnUserPasswordRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ResetVpnUserPasswordRequestBody;
 import com.huaweicloud.sdk.vpn.v5.model.ResetVpnUserPasswordResponse;
@@ -1259,6 +1261,36 @@ public class VpnMeta {
             String.class,
             f -> f.withMarshaller(ListVpnConnectionsResponse::getHeaderResponseToken,
                 ListVpnConnectionsResponse::setHeaderResponseToken));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ResetVpnConnectionRequest, ResetVpnConnectionResponse> resetVpnConnection =
+        genForResetVpnConnection();
+
+    private static HttpRequestDef<ResetVpnConnectionRequest, ResetVpnConnectionResponse> genForResetVpnConnection() {
+        // basic
+        HttpRequestDef.Builder<ResetVpnConnectionRequest, ResetVpnConnectionResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ResetVpnConnectionRequest.class, ResetVpnConnectionResponse.class)
+                .withName("ResetVpnConnection")
+                .withUri("/v5/{project_id}/vpn-connection/{vpn_connection_id}/reset")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("vpn_connection_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ResetVpnConnectionRequest::getVpnConnectionId,
+                ResetVpnConnectionRequest::setVpnConnectionId));
+
+        // response
+
+        builder.<String>withResponseField("header-response-token",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ResetVpnConnectionResponse::getHeaderResponseToken,
+                ResetVpnConnectionResponse::setHeaderResponseToken));
         return builder.build();
     }
 

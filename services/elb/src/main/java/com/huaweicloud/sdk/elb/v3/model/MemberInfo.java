@@ -19,6 +19,11 @@ public class MemberInfo {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -133,6 +138,23 @@ public class MemberInfo {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public MemberInfo withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 后端服务器所在的可用区。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
     }
 
     public MemberInfo withName(String name) {
@@ -529,9 +551,9 @@ public class MemberInfo {
             return false;
         }
         MemberInfo that = (MemberInfo) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.poolId, that.poolId)
-            && Objects.equals(this.adminStateUp, that.adminStateUp)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.adminStateUp, that.adminStateUp)
             && Objects.equals(this.subnetCidrId, that.subnetCidrId)
             && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.weight, that.weight)
             && Objects.equals(this.address, that.address) && Objects.equals(this.ipVersion, that.ipVersion)
@@ -546,6 +568,7 @@ public class MemberInfo {
     @Override
     public int hashCode() {
         return Objects.hash(id,
+            availabilityZone,
             name,
             projectId,
             poolId,
@@ -573,6 +596,7 @@ public class MemberInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class MemberInfo {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");

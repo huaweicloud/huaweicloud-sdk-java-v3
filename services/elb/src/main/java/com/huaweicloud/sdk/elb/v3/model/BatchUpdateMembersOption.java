@@ -16,6 +16,11 @@ public class BatchUpdateMembersOption {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "admin_state_up")
 
     private Boolean adminStateUp;
@@ -50,6 +55,23 @@ public class BatchUpdateMembersOption {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public BatchUpdateMembersOption withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 参数解释：后端服务器的可用区。 约束限制：  仅支持iptarget类型的后端服务器设置该字段。且后端服务器组开启可用区亲和时，iptarget类型的后端服务器必须配置该字段为有效非空值。 取值范围：本region中ECS可选择的可用区。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
     }
 
     public BatchUpdateMembersOption withAdminStateUp(Boolean adminStateUp) {
@@ -133,14 +155,14 @@ public class BatchUpdateMembersOption {
             return false;
         }
         BatchUpdateMembersOption that = (BatchUpdateMembersOption) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.adminStateUp, that.adminStateUp)
-            && Objects.equals(this.name, that.name) && Objects.equals(this.protocolPort, that.protocolPort)
-            && Objects.equals(this.weight, that.weight);
+        return Objects.equals(this.id, that.id) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.weight, that.weight);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, adminStateUp, name, protocolPort, weight);
+        return Objects.hash(id, availabilityZone, adminStateUp, name, protocolPort, weight);
     }
 
     @Override
@@ -148,6 +170,7 @@ public class BatchUpdateMembersOption {
         StringBuilder sb = new StringBuilder();
         sb.append("class BatchUpdateMembersOption {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    protocolPort: ").append(toIndentedString(protocolPort)).append("\n");

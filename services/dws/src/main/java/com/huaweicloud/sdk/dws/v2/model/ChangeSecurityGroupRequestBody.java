@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 修改集群安全组请求参数
+ * **参数解释**： 安全组请求体。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class ChangeSecurityGroupRequestBody {
 
@@ -40,7 +40,7 @@ public class ChangeSecurityGroupRequestBody {
     }
 
     /**
-     * 安全组ID数组
+     * **参数解释**： 安全组ID数组。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return securityGroups
      */
     public List<String> getSecurityGroups() {

@@ -19,6 +19,11 @@ public class Member {
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "availability_zone")
+
+    private String availabilityZone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "name")
 
     private String name;
@@ -108,6 +113,23 @@ public class Member {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public Member withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+
+    /**
+     * 参数解释：后端服务器所在的可用区。
+     * @return availabilityZone
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
     }
 
     public Member withName(String name) {
@@ -403,8 +425,9 @@ public class Member {
             return false;
         }
         Member that = (Member) obj;
-        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
-            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.adminStateUp, that.adminStateUp)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
             && Objects.equals(this.subnetCidrId, that.subnetCidrId)
             && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.weight, that.weight)
             && Objects.equals(this.address, that.address) && Objects.equals(this.ipVersion, that.ipVersion)
@@ -417,6 +440,7 @@ public class Member {
     @Override
     public int hashCode() {
         return Objects.hash(id,
+            availabilityZone,
             name,
             projectId,
             adminStateUp,
@@ -439,6 +463,7 @@ public class Member {
         StringBuilder sb = new StringBuilder();
         sb.append("class Member {\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");

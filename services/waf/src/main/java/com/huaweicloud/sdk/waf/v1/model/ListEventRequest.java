@@ -142,6 +142,11 @@ public class ListEventRequest {
     private List<String> hosts = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sips")
+
+    private List<String> sips = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "page")
 
     private Integer page;
@@ -304,6 +309,39 @@ public class ListEventRequest {
         this.hosts = hosts;
     }
 
+    public ListEventRequest withSips(List<String> sips) {
+        this.sips = sips;
+        return this;
+    }
+
+    public ListEventRequest addSipsItem(String sipsItem) {
+        if (this.sips == null) {
+            this.sips = new ArrayList<>();
+        }
+        this.sips.add(sipsItem);
+        return this;
+    }
+
+    public ListEventRequest withSips(Consumer<List<String>> sipsSetter) {
+        if (this.sips == null) {
+            this.sips = new ArrayList<>();
+        }
+        sipsSetter.accept(this.sips);
+        return this;
+    }
+
+    /**
+     * 源ip，Web访问者的IP地址（攻击者IP地址）
+     * @return sips
+     */
+    public List<String> getSips() {
+        return sips;
+    }
+
+    public void setSips(List<String> sips) {
+        this.sips = sips;
+    }
+
     public ListEventRequest withPage(Integer page) {
         this.page = page;
         return this;
@@ -351,13 +389,13 @@ public class ListEventRequest {
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.recent, that.recent) && Objects.equals(this.from, that.from)
             && Objects.equals(this.to, that.to) && Objects.equals(this.attacks, that.attacks)
-            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.page, that.page)
-            && Objects.equals(this.pagesize, that.pagesize);
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.sips, that.sips)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.pagesize, that.pagesize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, enterpriseProjectId, recent, from, to, attacks, hosts, page, pagesize);
+        return Objects.hash(xLanguage, enterpriseProjectId, recent, from, to, attacks, hosts, sips, page, pagesize);
     }
 
     @Override
@@ -371,6 +409,7 @@ public class ListEventRequest {
         sb.append("    to: ").append(toIndentedString(to)).append("\n");
         sb.append("    attacks: ").append(toIndentedString(attacks)).append("\n");
         sb.append("    hosts: ").append(toIndentedString(hosts)).append("\n");
+        sb.append("    sips: ").append(toIndentedString(sips)).append("\n");
         sb.append("    page: ").append(toIndentedString(page)).append("\n");
         sb.append("    pagesize: ").append(toIndentedString(pagesize)).append("\n");
         sb.append("}");

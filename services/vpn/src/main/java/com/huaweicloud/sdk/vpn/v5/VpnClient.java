@@ -95,6 +95,8 @@ import com.huaweicloud.sdk.vpn.v5.model.ListVpnUsersRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ListVpnUsersResponse;
 import com.huaweicloud.sdk.vpn.v5.model.RemoveVpnUsersFromGroupRequest;
 import com.huaweicloud.sdk.vpn.v5.model.RemoveVpnUsersFromGroupResponse;
+import com.huaweicloud.sdk.vpn.v5.model.ResetVpnConnectionRequest;
+import com.huaweicloud.sdk.vpn.v5.model.ResetVpnConnectionResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ResetVpnUserPasswordRequest;
 import com.huaweicloud.sdk.vpn.v5.model.ResetVpnUserPasswordResponse;
 import com.huaweicloud.sdk.vpn.v5.model.ShowCgwRequest;
@@ -1142,6 +1144,35 @@ public class VpnClient {
     public SyncInvoker<ListVpnConnectionsRequest, ListVpnConnectionsResponse> listVpnConnectionsInvoker(
         ListVpnConnectionsRequest request) {
         return new SyncInvoker<>(request, VpnMeta.listVpnConnections, hcClient);
+    }
+
+    /**
+     * 重置VPN连接
+     *
+     * 根据连接ID，重置指定VPN连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetVpnConnectionRequest 请求对象
+     * @return ResetVpnConnectionResponse
+     */
+    public ResetVpnConnectionResponse resetVpnConnection(ResetVpnConnectionRequest request) {
+        return hcClient.syncInvokeHttp(request, VpnMeta.resetVpnConnection);
+    }
+
+    /**
+     * 重置VPN连接
+     *
+     * 根据连接ID，重置指定VPN连接
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ResetVpnConnectionRequest 请求对象
+     * @return SyncInvoker<ResetVpnConnectionRequest, ResetVpnConnectionResponse>
+     */
+    public SyncInvoker<ResetVpnConnectionRequest, ResetVpnConnectionResponse> resetVpnConnectionInvoker(
+        ResetVpnConnectionRequest request) {
+        return new SyncInvoker<>(request, VpnMeta.resetVpnConnection, hcClient);
     }
 
     /**

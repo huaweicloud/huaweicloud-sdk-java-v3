@@ -21,7 +21,7 @@ public class ListClustersRequest {
     }
 
     /**
-     * 企业项目ID，查询所有绑定eps集群，值为all_granted_eps
+     * **参数解释**： 企业项目ID。查询所有绑定eps集群，则值为all_granted_eps。 **约束限制**： 不涉及。 **取值范围**： all_granted_eps、0等，0表示默认默认企业项目“default”的ID。 **默认取值**： 不涉及。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {

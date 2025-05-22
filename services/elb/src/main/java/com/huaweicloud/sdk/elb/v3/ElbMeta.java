@@ -67,6 +67,9 @@ import com.huaweicloud.sdk.elb.v3.model.CreateLogtankResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreateMasterSlavePoolRequest;
 import com.huaweicloud.sdk.elb.v3.model.CreateMasterSlavePoolRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.CreateMasterSlavePoolResponse;
+import com.huaweicloud.sdk.elb.v3.model.CreateMemberHealthCheckJobRequest;
+import com.huaweicloud.sdk.elb.v3.model.CreateMemberHealthCheckJobRequestBody;
+import com.huaweicloud.sdk.elb.v3.model.CreateMemberHealthCheckJobResponse;
 import com.huaweicloud.sdk.elb.v3.model.CreateMemberRequest;
 import com.huaweicloud.sdk.elb.v3.model.CreateMemberRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.CreateMemberResponse;
@@ -107,6 +110,8 @@ import com.huaweicloud.sdk.elb.v3.model.DeletePoolCascadeRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeletePoolCascadeResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeletePoolRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeletePoolResponse;
+import com.huaweicloud.sdk.elb.v3.model.DeleteRecycleLoadBalancerRequest;
+import com.huaweicloud.sdk.elb.v3.model.DeleteRecycleLoadBalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.DeleteSecurityPolicyRequest;
 import com.huaweicloud.sdk.elb.v3.model.DeleteSecurityPolicyResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListAllMembersRequest;
@@ -147,10 +152,14 @@ import com.huaweicloud.sdk.elb.v3.model.ListPoolsRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListPoolsResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListQuotaDetailsRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListQuotaDetailsResponse;
+import com.huaweicloud.sdk.elb.v3.model.ListRecycleBinLoadBalancersRequest;
+import com.huaweicloud.sdk.elb.v3.model.ListRecycleBinLoadBalancersResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListSecurityPoliciesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListSecurityPoliciesResponse;
 import com.huaweicloud.sdk.elb.v3.model.ListSystemSecurityPoliciesRequest;
 import com.huaweicloud.sdk.elb.v3.model.ListSystemSecurityPoliciesResponse;
+import com.huaweicloud.sdk.elb.v3.model.RestoreLoadbalancerRequest;
+import com.huaweicloud.sdk.elb.v3.model.RestoreLoadbalancerResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowCertificatePrivateKeyEchoRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowCertificatePrivateKeyEchoResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowCertificateRequest;
@@ -179,12 +188,16 @@ import com.huaweicloud.sdk.elb.v3.model.ShowLogtankRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowLogtankResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowMasterSlavePoolRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowMasterSlavePoolResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowMemberHealthCheckJobRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowMemberHealthCheckJobResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowMemberRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowMemberResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowPoolRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowPoolResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowQuotaRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowQuotaResponse;
+import com.huaweicloud.sdk.elb.v3.model.ShowRecycleBinRequest;
+import com.huaweicloud.sdk.elb.v3.model.ShowRecycleBinResponse;
 import com.huaweicloud.sdk.elb.v3.model.ShowSecurityPolicyRequest;
 import com.huaweicloud.sdk.elb.v3.model.ShowSecurityPolicyResponse;
 import com.huaweicloud.sdk.elb.v3.model.UpdateCertificateRequest;
@@ -220,6 +233,12 @@ import com.huaweicloud.sdk.elb.v3.model.UpdateMemberResponse;
 import com.huaweicloud.sdk.elb.v3.model.UpdatePoolRequest;
 import com.huaweicloud.sdk.elb.v3.model.UpdatePoolRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.UpdatePoolResponse;
+import com.huaweicloud.sdk.elb.v3.model.UpdateRecycleBinEnableRequest;
+import com.huaweicloud.sdk.elb.v3.model.UpdateRecycleBinEnableRequestBody;
+import com.huaweicloud.sdk.elb.v3.model.UpdateRecycleBinEnableResponse;
+import com.huaweicloud.sdk.elb.v3.model.UpdateRecycleBinPolicyRequest;
+import com.huaweicloud.sdk.elb.v3.model.UpdateRecycleBinPolicyRequestBody;
+import com.huaweicloud.sdk.elb.v3.model.UpdateRecycleBinPolicyResponse;
 import com.huaweicloud.sdk.elb.v3.model.UpdateSecurityPolicyRequest;
 import com.huaweicloud.sdk.elb.v3.model.UpdateSecurityPolicyRequestBody;
 import com.huaweicloud.sdk.elb.v3.model.UpdateSecurityPolicyResponse;
@@ -727,6 +746,39 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateMemberHealthCheckJobRequest, CreateMemberHealthCheckJobResponse> createMemberHealthCheckJob =
+        genForCreateMemberHealthCheckJob();
+
+    private static HttpRequestDef<CreateMemberHealthCheckJobRequest, CreateMemberHealthCheckJobResponse> genForCreateMemberHealthCheckJob() {
+        // basic
+        HttpRequestDef.Builder<CreateMemberHealthCheckJobRequest, CreateMemberHealthCheckJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST,
+                    CreateMemberHealthCheckJobRequest.class,
+                    CreateMemberHealthCheckJobResponse.class)
+                .withName("CreateMemberHealthCheckJob")
+                .withUri("/v3/{project_id}/elb/members/{member_id}/health-check")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("member_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateMemberHealthCheckJobRequest::getMemberId,
+                CreateMemberHealthCheckJobRequest::setMemberId));
+        builder.<CreateMemberHealthCheckJobRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateMemberHealthCheckJobRequestBody.class),
+            f -> f.withMarshaller(CreateMemberHealthCheckJobRequest::getBody,
+                CreateMemberHealthCheckJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreatePoolRequest, CreatePoolResponse> createPool = genForCreatePool();
 
     private static HttpRequestDef<CreatePoolRequest, CreatePoolResponse> genForCreatePool() {
@@ -1116,6 +1168,33 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<DeleteRecycleLoadBalancerRequest, DeleteRecycleLoadBalancerResponse> deleteRecycleLoadBalancer =
+        genForDeleteRecycleLoadBalancer();
+
+    private static HttpRequestDef<DeleteRecycleLoadBalancerRequest, DeleteRecycleLoadBalancerResponse> genForDeleteRecycleLoadBalancer() {
+        // basic
+        HttpRequestDef.Builder<DeleteRecycleLoadBalancerRequest, DeleteRecycleLoadBalancerResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteRecycleLoadBalancerRequest.class,
+                    DeleteRecycleLoadBalancerResponse.class)
+                .withName("DeleteRecycleLoadBalancer")
+                .withUri("/v3/{project_id}/elb/recycle-bin/loadbalancers/{loadbalancer_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteRecycleLoadBalancerRequest::getLoadbalancerId,
+                DeleteRecycleLoadBalancerRequest::setLoadbalancerId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<DeleteSecurityPolicyRequest, DeleteSecurityPolicyResponse> deleteSecurityPolicy =
         genForDeleteSecurityPolicy();
 
@@ -1338,6 +1417,23 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListCertificatesRequest::getFingerprint, ListCertificatesRequest::setFingerprint));
+        builder.<List<String>>withRequestField("source",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getSource, ListCertificatesRequest::setSource));
+        builder.<List<String>>withRequestField("protection_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getProtectionStatus,
+                ListCertificatesRequest::setProtectionStatus));
+        builder.<List<String>>withRequestField("protection_reason",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListCertificatesRequest::getProtectionReason,
+                ListCertificatesRequest::setProtectionReason));
 
         // response
 
@@ -1860,6 +1956,12 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListListenersRequest::getAdminStateUp, ListListenersRequest::setAdminStateUp));
+        builder.<Boolean>withRequestField("include_recycle_bin",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListListenersRequest::getIncludeRecycleBin,
+                ListListenersRequest::setIncludeRecycleBin));
         builder.<List<Integer>>withRequestField("connection_limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2029,6 +2131,12 @@ public class ElbMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListLoadBalancersRequest::getAdminStateUp,
                 ListLoadBalancersRequest::setAdminStateUp));
+        builder.<Boolean>withRequestField("include_recycle_bin",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListLoadBalancersRequest::getIncludeRecycleBin,
+                ListLoadBalancersRequest::setIncludeRecycleBin));
         builder.<List<String>>withRequestField("provisioning_status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -2494,6 +2602,11 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListMembersRequest::getInstanceId, ListMembersRequest::setInstanceId));
+        builder.<List<String>>withRequestField("availability_zone",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListMembersRequest::getAvailabilityZone, ListMembersRequest::setAvailabilityZone));
 
         // response
 
@@ -2647,6 +2760,11 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListPoolsRequest::getQuicCidOffset, ListPoolsRequest::setQuicCidOffset));
+        builder.<List<String>>withRequestField("az_affinity",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListPoolsRequest::getAzAffinity, ListPoolsRequest::setAzAffinity));
 
         // response
 
@@ -2670,6 +2788,225 @@ public class ElbMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListQuotaDetailsRequest::getQuotaKey, ListQuotaDetailsRequest::setQuotaKey));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRecycleBinLoadBalancersRequest, ListRecycleBinLoadBalancersResponse> listRecycleBinLoadBalancers =
+        genForListRecycleBinLoadBalancers();
+
+    private static HttpRequestDef<ListRecycleBinLoadBalancersRequest, ListRecycleBinLoadBalancersResponse> genForListRecycleBinLoadBalancers() {
+        // basic
+        HttpRequestDef.Builder<ListRecycleBinLoadBalancersRequest, ListRecycleBinLoadBalancersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ListRecycleBinLoadBalancersRequest.class,
+                    ListRecycleBinLoadBalancersResponse.class)
+                .withName("ListRecycleBinLoadBalancers")
+                .withUri("/v3/{project_id}/elb/recycle-bin/loadbalancers")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getMarker,
+                ListRecycleBinLoadBalancersRequest::setMarker));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getLimit,
+                ListRecycleBinLoadBalancersRequest::setLimit));
+        builder.<Boolean>withRequestField("page_reverse",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getPageReverse,
+                ListRecycleBinLoadBalancersRequest::setPageReverse));
+        builder.<List<String>>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getId,
+                ListRecycleBinLoadBalancersRequest::setId));
+        builder.<List<String>>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getName,
+                ListRecycleBinLoadBalancersRequest::setName));
+        builder.<List<String>>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getDescription,
+                ListRecycleBinLoadBalancersRequest::setDescription));
+        builder.<Boolean>withRequestField("admin_state_up",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getAdminStateUp,
+                ListRecycleBinLoadBalancersRequest::setAdminStateUp));
+        builder.<List<String>>withRequestField("operating_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getOperatingStatus,
+                ListRecycleBinLoadBalancersRequest::setOperatingStatus));
+        builder.<Boolean>withRequestField("guaranteed",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getGuaranteed,
+                ListRecycleBinLoadBalancersRequest::setGuaranteed));
+        builder.<List<String>>withRequestField("vpc_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getVpcId,
+                ListRecycleBinLoadBalancersRequest::setVpcId));
+        builder.<List<String>>withRequestField("vip_port_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getVipPortId,
+                ListRecycleBinLoadBalancersRequest::setVipPortId));
+        builder.<List<String>>withRequestField("vip_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getVipAddress,
+                ListRecycleBinLoadBalancersRequest::setVipAddress));
+        builder.<List<String>>withRequestField("vip_subnet_cidr_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getVipSubnetCidrId,
+                ListRecycleBinLoadBalancersRequest::setVipSubnetCidrId));
+        builder.<List<String>>withRequestField("ipv6_vip_port_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getIpv6VipPortId,
+                ListRecycleBinLoadBalancersRequest::setIpv6VipPortId));
+        builder.<List<String>>withRequestField("ipv6_vip_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getIpv6VipAddress,
+                ListRecycleBinLoadBalancersRequest::setIpv6VipAddress));
+        builder.<List<String>>withRequestField("ipv6_vip_virsubnet_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getIpv6VipVirsubnetId,
+                ListRecycleBinLoadBalancersRequest::setIpv6VipVirsubnetId));
+        builder.<List<String>>withRequestField("eips",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getEips,
+                ListRecycleBinLoadBalancersRequest::setEips));
+        builder.<List<String>>withRequestField("publicips",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getPublicips,
+                ListRecycleBinLoadBalancersRequest::setPublicips));
+        builder.<List<String>>withRequestField("availability_zone_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getAvailabilityZoneList,
+                ListRecycleBinLoadBalancersRequest::setAvailabilityZoneList));
+        builder.<List<String>>withRequestField("l4_flavor_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getL4FlavorId,
+                ListRecycleBinLoadBalancersRequest::setL4FlavorId));
+        builder.<List<String>>withRequestField("l7_flavor_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getL7FlavorId,
+                ListRecycleBinLoadBalancersRequest::setL7FlavorId));
+        builder.<List<String>>withRequestField("billing_info",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getBillingInfo,
+                ListRecycleBinLoadBalancersRequest::setBillingInfo));
+        builder.<List<String>>withRequestField("member_device_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getMemberDeviceId,
+                ListRecycleBinLoadBalancersRequest::setMemberDeviceId));
+        builder.<List<String>>withRequestField("member_address",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getMemberAddress,
+                ListRecycleBinLoadBalancersRequest::setMemberAddress));
+        builder.<List<String>>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getEnterpriseProjectId,
+                ListRecycleBinLoadBalancersRequest::setEnterpriseProjectId));
+        builder.<List<Integer>>withRequestField("ip_version",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getIpVersion,
+                ListRecycleBinLoadBalancersRequest::setIpVersion));
+        builder.<Boolean>withRequestField("deletion_protection_enable",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getDeletionProtectionEnable,
+                ListRecycleBinLoadBalancersRequest::setDeletionProtectionEnable));
+        builder.<List<String>>withRequestField("elb_virsubnet_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getElbVirsubnetType,
+                ListRecycleBinLoadBalancersRequest::setElbVirsubnetType));
+        builder.<List<String>>withRequestField("autoscaling",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getAutoscaling,
+                ListRecycleBinLoadBalancersRequest::setAutoscaling));
+        builder.<List<String>>withRequestField("protection_status",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getProtectionStatus,
+                ListRecycleBinLoadBalancersRequest::setProtectionStatus));
+        builder.<List<String>>withRequestField("global_eips",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getGlobalEips,
+                ListRecycleBinLoadBalancersRequest::setGlobalEips));
+        builder.<String>withRequestField("log_topic_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getLogTopicId,
+                ListRecycleBinLoadBalancersRequest::setLogTopicId));
+        builder.<String>withRequestField("log_group_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecycleBinLoadBalancersRequest::getLogGroupId,
+                ListRecycleBinLoadBalancersRequest::setLogGroupId));
 
         // response
 
@@ -2752,6 +3089,30 @@ public class ElbMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RestoreLoadbalancerRequest, RestoreLoadbalancerResponse> restoreLoadbalancer =
+        genForRestoreLoadbalancer();
+
+    private static HttpRequestDef<RestoreLoadbalancerRequest, RestoreLoadbalancerResponse> genForRestoreLoadbalancer() {
+        // basic
+        HttpRequestDef.Builder<RestoreLoadbalancerRequest, RestoreLoadbalancerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, RestoreLoadbalancerRequest.class, RestoreLoadbalancerResponse.class)
+                .withName("RestoreLoadbalancer")
+                .withUri("/v3/{project_id}/elb/recycle-bin/loadbalancers/{loadbalancer_id}/recover")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("loadbalancer_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RestoreLoadbalancerRequest::getLoadbalancerId,
+                RestoreLoadbalancerRequest::setLoadbalancerId));
 
         // response
 
@@ -3061,6 +3422,31 @@ public class ElbMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowMemberHealthCheckJobRequest, ShowMemberHealthCheckJobResponse> showMemberHealthCheckJob =
+        genForShowMemberHealthCheckJob();
+
+    private static HttpRequestDef<ShowMemberHealthCheckJobRequest, ShowMemberHealthCheckJobResponse> genForShowMemberHealthCheckJob() {
+        // basic
+        HttpRequestDef.Builder<ShowMemberHealthCheckJobRequest, ShowMemberHealthCheckJobResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET, ShowMemberHealthCheckJobRequest.class, ShowMemberHealthCheckJobResponse.class)
+                .withName("ShowMemberHealthCheckJob")
+                .withUri("/v3/{project_id}/elb/members/check/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowMemberHealthCheckJobRequest::getJobId,
+                ShowMemberHealthCheckJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowPoolRequest, ShowPoolResponse> showPool = genForShowPool();
 
     private static HttpRequestDef<ShowPoolRequest, ShowPoolResponse> genForShowPool() {
@@ -3091,6 +3477,24 @@ public class ElbMeta {
             HttpRequestDef.builder(HttpMethod.GET, ShowQuotaRequest.class, ShowQuotaResponse.class)
                 .withName("ShowQuota")
                 .withUri("/v3/{project_id}/elb/quotas")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRecycleBinRequest, ShowRecycleBinResponse> showRecycleBin =
+        genForShowRecycleBin();
+
+    private static HttpRequestDef<ShowRecycleBinRequest, ShowRecycleBinResponse> genForShowRecycleBin() {
+        // basic
+        HttpRequestDef.Builder<ShowRecycleBinRequest, ShowRecycleBinResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRecycleBinRequest.class, ShowRecycleBinResponse.class)
+                .withName("ShowRecycleBin")
+                .withUri("/v3/{project_id}/elb/recycle-bin")
                 .withContentType("application/json");
 
         // requests
@@ -3380,6 +3784,52 @@ public class ElbMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdatePoolRequestBody.class),
             f -> f.withMarshaller(UpdatePoolRequest::getBody, UpdatePoolRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRecycleBinEnableRequest, UpdateRecycleBinEnableResponse> updateRecycleBinEnable =
+        genForUpdateRecycleBinEnable();
+
+    private static HttpRequestDef<UpdateRecycleBinEnableRequest, UpdateRecycleBinEnableResponse> genForUpdateRecycleBinEnable() {
+        // basic
+        HttpRequestDef.Builder<UpdateRecycleBinEnableRequest, UpdateRecycleBinEnableResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateRecycleBinEnableRequest.class, UpdateRecycleBinEnableResponse.class)
+            .withName("UpdateRecycleBinEnable")
+            .withUri("/v3/{project_id}/elb/recycle-bin")
+            .withContentType("application/json");
+
+        // requests
+        builder.<UpdateRecycleBinEnableRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRecycleBinEnableRequestBody.class),
+            f -> f.withMarshaller(UpdateRecycleBinEnableRequest::getBody, UpdateRecycleBinEnableRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateRecycleBinPolicyRequest, UpdateRecycleBinPolicyResponse> updateRecycleBinPolicy =
+        genForUpdateRecycleBinPolicy();
+
+    private static HttpRequestDef<UpdateRecycleBinPolicyRequest, UpdateRecycleBinPolicyResponse> genForUpdateRecycleBinPolicy() {
+        // basic
+        HttpRequestDef.Builder<UpdateRecycleBinPolicyRequest, UpdateRecycleBinPolicyResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateRecycleBinPolicyRequest.class, UpdateRecycleBinPolicyResponse.class)
+            .withName("UpdateRecycleBinPolicy")
+            .withUri("/v3/{project_id}/elb/recycle-bin/policy")
+            .withContentType("application/json");
+
+        // requests
+        builder.<UpdateRecycleBinPolicyRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateRecycleBinPolicyRequestBody.class),
+            f -> f.withMarshaller(UpdateRecycleBinPolicyRequest::getBody, UpdateRecycleBinPolicyRequest::setBody));
 
         // response
 

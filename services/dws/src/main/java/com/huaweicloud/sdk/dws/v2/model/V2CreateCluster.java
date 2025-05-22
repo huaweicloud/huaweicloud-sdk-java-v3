@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * v2创建集群请求
+ * **参数解释**： v2创建集群请求。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class V2CreateCluster {
 
@@ -124,7 +124,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 集群名称，要求唯一性，必须以字母开头并只包含字母、数字、中划线或下划线，长度为4~64个字符。
+     * **参数解释**： 集群名称，要求唯一性。 **约束限制**： 不涉及。 **取值范围**： 要求唯一性，必须以字母开头并只包含字母、数字、中划线或下划线，长度为4~64个字符。 **默认取值**： 不涉及。
      * @return name
      */
     public String getName() {
@@ -141,7 +141,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 集群规格名称。节点类型详情请参见数据仓库类型数据仓库类型。
+     * **参数解释**： 集群规格编码。 **约束限制**： 不涉及。 **取值范围**： 请参见集群规格接口返回的规格编码。 **默认取值**： 不涉及。
      * @return flavor
      */
     public String getFlavor() {
@@ -158,7 +158,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 集群CN数量，取值范围为2~集群节点数，最大值为20，默认值为3。
+     * **参数解释**： 集群CN数量。 **约束限制**： 不涉及。 **取值范围**： 取值范围为2~集群节点数，最大值为20，默认值为3。 **默认取值**： 不涉及。
      * @return numCn
      */
     public Integer getNumCn() {
@@ -175,7 +175,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 集群节点数量，集群模式取值范围为3~256，实时数仓（单机模式）取值为1。
+     * **参数解释**： 集群节点数量。 **约束限制**： 不涉及。 **取值范围**： 集群模式取值范围为3~256，实时数仓（单机模式）取值为1。 **默认取值**： 不涉及。
      * @return numNode
      */
     public Integer getNumNode() {
@@ -192,7 +192,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 管理员用户名称。用户命名要求如下： 只能由小写字母、数字或下划线组成。 必须由小写字母或下划线开头。 长度为1~63个字符。用户名不能为DWS数据库的关键字。
+     * **参数解释**： 管理员用户名称。 **约束限制**： 不涉及。 **取值范围**： 只能由小写字母、数字或下划线组成。 必须由小写字母或下划线开头。 长度为1~63个字符。 用户名不能为DWS数据库的关键字。 **默认取值**： 不涉及。
      * @return dbName
      */
     public String getDbName() {
@@ -209,7 +209,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 管理员用户密码。 12~32个字符 至少包含以下字符中的3种：大写字母、小写字母、数字和特殊字符（~!?,.:;-_(){}[]/<>@#%^&*+|\\=）。不能与用户名或倒序的用户名相同。
+     * **参数解释**： 管理员用户密码。 **约束限制**： 不涉及。 **取值范围**： 12~32个字符； 至少包含以下字符中的3种：大写字母、小写字母、数字和特殊字符（~!?,.:;-_(){}[]/<>@#%^&*+|\\=）。 不能与用户名或倒序的用户名相同。 **默认取值**： 不涉及。
      * @return dbPassword
      */
     public String getDbPassword() {
@@ -226,7 +226,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 集群数据库端口，取值范围为8000~30000，默认值：8000。
+     * **参数解释**： 集群数据库端口。 **约束限制**： 不涉及。 **取值范围**： 8000~30000 **默认取值**： 8000
      * @return dbPort
      */
     public Integer getDbPort() {
@@ -243,7 +243,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 专属存储池ID
+     * **参数解释**： 专属存储池ID，一般不需要填写。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： null
      * @return dssPoolId
      */
     public String getDssPoolId() {
@@ -276,7 +276,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 可用区列表。集群可用区选择详情请参见地区和终端节点地区和终端节点。
+     * **参数解释**： 可用区列表。 **约束限制**： 不涉及。 **取值范围**： 集群可用区选择详情请参见地区和终端节点地区和终端节点。 **默认取值**： 不涉及。
      * @return availabilityZones
      */
     public List<String> getAvailabilityZones() {
@@ -309,7 +309,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 标签列表
+     * **参数解释**： 标签信息。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return tags
      */
     public List<Tags> getTags() {
@@ -326,7 +326,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 指定虚拟私有云ID，用于集群网络配置。
+     * **参数解释**： 指定虚拟私有云ID，用于集群网络配置。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return vpcId
      */
     public String getVpcId() {
@@ -343,7 +343,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 指定子网ID，用于集群网络配置。
+     * **参数解释**： 指定子网ID，用于集群网络配置。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return subnetId
      */
     public String getSubnetId() {
@@ -360,7 +360,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 指定安全组ID，用于集群网络配置。
+     * **参数解释**： 指定安全组ID，用于集群网络配置。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return securityGroupId
      */
     public String getSecurityGroupId() {
@@ -403,7 +403,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 集群版本
+     * **参数解释**： 集群版本。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return datastoreVersion
      */
     public String getDatastoreVersion() {
@@ -420,7 +420,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 密钥ID
+     * **参数解释**： KMS密钥ID。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return masterKeyId
      */
     public String getMasterKeyId() {
@@ -437,7 +437,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 密钥名称
+     * **参数解释**： KMS密钥名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return masterKeyName
      */
     public String getMasterKeyName() {
@@ -454,7 +454,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 加密算法
+     * **参数解释**： KMS加密算法。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return cryptAlgorithm
      */
     public String getCryptAlgorithm() {
@@ -497,7 +497,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 企业项目ID，对集群指定企业项目，如果未指定，则使用默认企业项目“default”的ID，即0。
+     * **参数解释**： 企业项目ID，对集群指定企业项目。如果未指定，则使用默认企业项目“default”的ID，即0。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -514,7 +514,7 @@ public class V2CreateCluster {
     }
 
     /**
-     * 指定网络协议类型，表明是否支持IPv6,默认不使用IPv6。
+     * **参数解释**： 指定网络协议类型，表明是否支持IPv6，默认不使用IPv6。使用ipv6时必须所选择的子网也支持ipv6。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return ipv6Enable
      */
     public Boolean getIpv6Enable() {

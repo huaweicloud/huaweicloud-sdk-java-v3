@@ -121,6 +121,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryEnvResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryJobResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryPendingItemsPackageRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactoryPendingItemsPackageResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateFactorySupplementDataInstanceResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.CreateLineageInfoRequest;
@@ -365,6 +367,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByName
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobInstancesByNameResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryJobsResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryPendingItemsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryPendingItemsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryReleasePackagesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryScriptsRequest;
@@ -2410,6 +2414,36 @@ public class DataArtsStudioClient {
     public SyncInvoker<CreateFactoryJobRequest, CreateFactoryJobResponse> createFactoryJobInvoker(
         CreateFactoryJobRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.createFactoryJob, hcClient);
+    }
+
+    /**
+     * 待发布包发布
+     *
+     * 待发布包发布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateFactoryPendingItemsPackageRequest 请求对象
+     * @return CreateFactoryPendingItemsPackageResponse
+     */
+    public CreateFactoryPendingItemsPackageResponse createFactoryPendingItemsPackage(
+        CreateFactoryPendingItemsPackageRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.createFactoryPendingItemsPackage);
+    }
+
+    /**
+     * 待发布包发布
+     *
+     * 待发布包发布
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateFactoryPendingItemsPackageRequest 请求对象
+     * @return SyncInvoker<CreateFactoryPendingItemsPackageRequest, CreateFactoryPendingItemsPackageResponse>
+     */
+    public SyncInvoker<CreateFactoryPendingItemsPackageRequest, CreateFactoryPendingItemsPackageResponse> createFactoryPendingItemsPackageInvoker(
+        CreateFactoryPendingItemsPackageRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.createFactoryPendingItemsPackage, hcClient);
     }
 
     /**
@@ -5716,6 +5750,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<ListFactoryJobsRequest, ListFactoryJobsResponse> listFactoryJobsInvoker(
         ListFactoryJobsRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.listFactoryJobs, hcClient);
+    }
+
+    /**
+     * 查询待发布包列表
+     *
+     * 查询待发布包列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryPendingItemsRequest 请求对象
+     * @return ListFactoryPendingItemsResponse
+     */
+    public ListFactoryPendingItemsResponse listFactoryPendingItems(ListFactoryPendingItemsRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.listFactoryPendingItems);
+    }
+
+    /**
+     * 查询待发布包列表
+     *
+     * 查询待发布包列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListFactoryPendingItemsRequest 请求对象
+     * @return SyncInvoker<ListFactoryPendingItemsRequest, ListFactoryPendingItemsResponse>
+     */
+    public SyncInvoker<ListFactoryPendingItemsRequest, ListFactoryPendingItemsResponse> listFactoryPendingItemsInvoker(
+        ListFactoryPendingItemsRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.listFactoryPendingItems, hcClient);
     }
 
     /**

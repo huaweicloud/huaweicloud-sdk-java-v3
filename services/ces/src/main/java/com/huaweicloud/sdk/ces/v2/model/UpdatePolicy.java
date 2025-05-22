@@ -71,6 +71,16 @@ public class UpdatePolicy {
 
     private Integer level;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "namespace")
+
+    private String namespace;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "dimension_name")
+
+    private String dimensionName;
+
     public UpdatePolicy withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
@@ -303,6 +313,40 @@ public class UpdatePolicy {
         this.level = level;
     }
 
+    public UpdatePolicy withNamespace(String namespace) {
+        this.namespace = namespace;
+        return this;
+    }
+
+    /**
+     * 产品层级规则增加namespace（服务命名空间）和dimension_name（服务维度名称）指明生效策略归属。各服务命名空间请参考“[服务命名空间](ces_03_0059.xml)”
+     * @return namespace
+     */
+    public String getNamespace() {
+        return namespace;
+    }
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    public UpdatePolicy withDimensionName(String dimensionName) {
+        this.dimensionName = dimensionName;
+        return this;
+    }
+
+    /**
+     * 产品层级规则增加namespace（服务命名空间）和dimension_name（服务维度名称）指明生效策略归属，目前最大支持4个维度，各服务资源的指标维度名称可查看：“[服务维度名称](ces_03_0059.xml)”
+     * @return dimensionName
+     */
+    public String getDimensionName() {
+        return dimensionName;
+    }
+
+    public void setDimensionName(String dimensionName) {
+        this.dimensionName = dimensionName;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -318,7 +362,8 @@ public class UpdatePolicy {
             && Objects.equals(this.value, that.value) && Objects.equals(this.hierarchicalValue, that.hierarchicalValue)
             && Objects.equals(this.unit, that.unit) && Objects.equals(this.type, that.type)
             && Objects.equals(this.count, that.count) && Objects.equals(this.suppressDuration, that.suppressDuration)
-            && Objects.equals(this.level, that.level);
+            && Objects.equals(this.level, that.level) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.dimensionName, that.dimensionName);
     }
 
     @Override
@@ -334,7 +379,9 @@ public class UpdatePolicy {
             type,
             count,
             suppressDuration,
-            level);
+            level,
+            namespace,
+            dimensionName);
     }
 
     @Override
@@ -353,6 +400,8 @@ public class UpdatePolicy {
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    suppressDuration: ").append(toIndentedString(suppressDuration)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");
+        sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    dimensionName: ").append(toIndentedString(dimensionName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -68,7 +68,7 @@ public class ListAuditLogResponse extends SdkResponse {
     }
 
     /**
-     * 集群ID。
+     * **参数解释**： 集群ID。 **取值范围**： 36位UUID。
      * @return clusterId
      */
     public String getClusterId() {

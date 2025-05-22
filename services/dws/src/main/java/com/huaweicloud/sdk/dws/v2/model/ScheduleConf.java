@@ -44,7 +44,7 @@ public class ScheduleConf {
     }
 
     /**
-     * 调度开始时间
+     * **参数解释**： 调度开始时间。 **取值范围**： 不涉及。
      * @return scheduleStart
      */
     public String getScheduleStart() {
@@ -61,7 +61,7 @@ public class ScheduleConf {
     }
 
     /**
-     * 调度结束时间
+     * **参数解释**： 调度结束时间。 **取值范围**： 不涉及。
      * @return scheduleEnd
      */
     public String getScheduleEnd() {
@@ -78,7 +78,7 @@ public class ScheduleConf {
     }
 
     /**
-     * 调度类型
+     * **参数解释**： 调度类型。 **取值范围**： 不涉及。
      * @return scheduleType
      */
     public String getScheduleType() {
@@ -111,7 +111,7 @@ public class ScheduleConf {
     }
 
     /**
-     * 调度日期
+     * **参数解释**： 调度日期。 **取值范围**： 不涉及。
      * @return scheduleDate
      */
     public List<Integer> getScheduleDate() {
@@ -144,7 +144,7 @@ public class ScheduleConf {
     }
 
     /**
-     * 调度时间列表
+     * **参数解释**： 调度时间列表。 **取值范围**： 不涉及。
      * @return scheduleTime
      */
     public List<String> getScheduleTime() {

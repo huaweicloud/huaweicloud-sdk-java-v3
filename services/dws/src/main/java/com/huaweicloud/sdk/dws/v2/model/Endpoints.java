@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 集群的内网连接信息。
+ * **参数解释**： 集群的内网连接信息。 **取值范围**： 不涉及。
  */
 public class Endpoints {
 
@@ -26,7 +26,7 @@ public class Endpoints {
     }
 
     /**
-     * 内网连接信息。
+     * **参数解释**： 内网连接信息。 **取值范围**： 不涉及。
      * @return connectInfo
      */
     public String getConnectInfo() {
@@ -43,7 +43,7 @@ public class Endpoints {
     }
 
     /**
-     * 内网JDBC URL，默认格式如下： jdbc:postgresql://<connect_info>/<YOUR_DATABASE_NAME>
+     * **参数解释**： 内网JDBC URL。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： jdbc:postgresql://<connect_info>/<YOUR_DATABASE_NAME>
      * @return jdbcUrl
      */
     public String getJdbcUrl() {

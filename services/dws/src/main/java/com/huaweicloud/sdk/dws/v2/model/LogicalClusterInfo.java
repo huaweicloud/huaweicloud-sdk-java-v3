@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * This is a auto create Body Object
+ * **参数解释**： 逻辑集群对象。 **取值范围**： 不涉及。
  */
 public class LogicalClusterInfo {
 
@@ -84,7 +84,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * 逻辑集群ID
+     * **参数解释**： 逻辑集群ID。 **取值范围**： 不涉及。
      * @return logicalClusterId
      */
     public String getLogicalClusterId() {
@@ -101,7 +101,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * 逻辑集群名称
+     * **参数解释**： 逻辑集群名称。 **取值范围**： 不涉及。
      * @return logicalClusterName
      */
     public String getLogicalClusterName() {
@@ -134,7 +134,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * 逻辑集群主机信息
+     * **参数解释**： 逻辑集群主机信息。 **取值范围**： 不涉及。
      * @return clusterRings
      */
     public List<ClusterRing> getClusterRings() {
@@ -151,7 +151,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * 逻辑集群状态
+     * **参数解释**： 逻辑集群状态。 **取值范围**： 不涉及。
      * @return status
      */
     public String getStatus() {
@@ -168,7 +168,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * 是否为第一个逻辑集群。第1个创建或者转换的逻辑集群不能删除，因为其中包含了一些系统视图
+     * **参数解释**： 是否为第一个逻辑集群。历史版本中第1个创建或者转换的逻辑集群不能删除，因为其中包含了一些系统视图。 **取值范围**： 不涉及。
      * @return firstLogicalCluster
      */
     public Boolean getFirstLogicalCluster() {
@@ -211,7 +211,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * 是否允许编辑
+     * **参数解释**： 是否允许编辑。 **取值范围**： 不涉及。
      * @return editEnable
      */
     public Boolean getEditEnable() {
@@ -228,7 +228,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * 是否允许重启
+     * **参数解释**： 是否允许重启。 **取值范围**： 不涉及。
      * @return restartEnable
      */
     public Boolean getRestartEnable() {
@@ -245,7 +245,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * 是否允许删除
+     * **参数解释**： 是否允许删除。 **取值范围**： 不涉及。
      * @return deleteEnable
      */
     public Boolean getDeleteEnable() {
@@ -262,7 +262,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * 是否允许弹性伸缩
+     * **参数解释**： 是否允许弹性伸缩。 **取值范围**： 不涉及。
      * @return addToElastic
      */
     public Boolean getAddToElastic() {
@@ -279,7 +279,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * 逻辑集群模式
+     * **参数解释**： 逻辑集群模式。 **取值范围**： 不涉及。
      * @return mode
      */
     public String getMode() {
@@ -296,7 +296,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * 等待被销毁
+     * **参数解释**： 作业等待时间。 **取值范围**： 不涉及。
      * @return waitingForKilling
      */
     public Integer getWaitingForKilling() {
@@ -313,7 +313,7 @@ public class LogicalClusterInfo {
     }
 
     /**
-     * 集群类型
+     * **参数解释**： 集群类型。 **取值范围**： 不涉及。
      * @return clusterType
      */
     public String getClusterType() {

@@ -45,7 +45,7 @@ public class ListWorkloadQueueUsersResponse extends SdkResponse {
     }
 
     /**
-     * 结果状态码。
+     * **参数解释**： 结果状态码。 **取值范围**： 不涉及。
      * @return workloadResCode
      */
     public Integer getWorkloadResCode() {
@@ -62,7 +62,7 @@ public class ListWorkloadQueueUsersResponse extends SdkResponse {
     }
 
     /**
-     * 结果描述。
+     * **参数解释**： 结果描述。 **取值范围**： 不涉及。
      * @return workloadResStr
      */
     public String getWorkloadResStr() {
@@ -79,7 +79,7 @@ public class ListWorkloadQueueUsersResponse extends SdkResponse {
     }
 
     /**
-     * 队列名称。
+     * **参数解释**： 队列名称。 **取值范围**： 不涉及。
      * @return queueName
      */
     public String getQueueName() {
@@ -112,7 +112,7 @@ public class ListWorkloadQueueUsersResponse extends SdkResponse {
     }
 
     /**
-     * 队列用户列表。
+     * **参数解释**： 队列用户列表。 **取值范围**： 不涉及。
      * @return userList
      */
     public List<WorkloadQueueUser> getUserList() {
@@ -129,7 +129,7 @@ public class ListWorkloadQueueUsersResponse extends SdkResponse {
     }
 
     /**
-     * 总数量
+     * **参数解释**： 总数量。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

@@ -41,6 +41,11 @@ public class CreateRedirectPoolsExtendConfig {
 
     private CreateCorsConfig corsConfig;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "traffic_mirror_config")
+
+    private CreateTrafficMirrorConfig trafficMirrorConfig;
+
     public CreateRedirectPoolsExtendConfig withRewriteUrlEnable(Boolean rewriteUrlEnable) {
         this.rewriteUrlEnable = rewriteUrlEnable;
         return this;
@@ -192,6 +197,33 @@ public class CreateRedirectPoolsExtendConfig {
         this.corsConfig = corsConfig;
     }
 
+    public CreateRedirectPoolsExtendConfig withTrafficMirrorConfig(CreateTrafficMirrorConfig trafficMirrorConfig) {
+        this.trafficMirrorConfig = trafficMirrorConfig;
+        return this;
+    }
+
+    public CreateRedirectPoolsExtendConfig withTrafficMirrorConfig(
+        Consumer<CreateTrafficMirrorConfig> trafficMirrorConfigSetter) {
+        if (this.trafficMirrorConfig == null) {
+            this.trafficMirrorConfig = new CreateTrafficMirrorConfig();
+            trafficMirrorConfigSetter.accept(this.trafficMirrorConfig);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get trafficMirrorConfig
+     * @return trafficMirrorConfig
+     */
+    public CreateTrafficMirrorConfig getTrafficMirrorConfig() {
+        return trafficMirrorConfig;
+    }
+
+    public void setTrafficMirrorConfig(CreateTrafficMirrorConfig trafficMirrorConfig) {
+        this.trafficMirrorConfig = trafficMirrorConfig;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -206,7 +238,8 @@ public class CreateRedirectPoolsExtendConfig {
             && Objects.equals(this.insertHeadersConfig, that.insertHeadersConfig)
             && Objects.equals(this.removeHeadersConfig, that.removeHeadersConfig)
             && Objects.equals(this.trafficLimitConfig, that.trafficLimitConfig)
-            && Objects.equals(this.corsConfig, that.corsConfig);
+            && Objects.equals(this.corsConfig, that.corsConfig)
+            && Objects.equals(this.trafficMirrorConfig, that.trafficMirrorConfig);
     }
 
     @Override
@@ -216,7 +249,8 @@ public class CreateRedirectPoolsExtendConfig {
             insertHeadersConfig,
             removeHeadersConfig,
             trafficLimitConfig,
-            corsConfig);
+            corsConfig,
+            trafficMirrorConfig);
     }
 
     @Override
@@ -229,6 +263,7 @@ public class CreateRedirectPoolsExtendConfig {
         sb.append("    removeHeadersConfig: ").append(toIndentedString(removeHeadersConfig)).append("\n");
         sb.append("    trafficLimitConfig: ").append(toIndentedString(trafficLimitConfig)).append("\n");
         sb.append("    corsConfig: ").append(toIndentedString(corsConfig)).append("\n");
+        sb.append("    trafficMirrorConfig: ").append(toIndentedString(trafficMirrorConfig)).append("\n");
         sb.append("}");
         return sb.toString();
     }

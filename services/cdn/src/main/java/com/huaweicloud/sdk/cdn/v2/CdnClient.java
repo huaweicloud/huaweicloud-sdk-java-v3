@@ -26,6 +26,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesRequest;
 import com.huaweicloud.sdk.cdn.v2.model.SetChargeModesResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ShowBandwidthCalcRequest;
@@ -514,6 +516,35 @@ public class CdnClient {
      */
     public SyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsInvoker(ListDomainsRequest request) {
         return new SyncInvoker<>(request, CdnMeta.listDomains, hcClient);
+    }
+
+    /**
+     * 修改租户配置
+     *
+     * 修改租户配置，当前仅支持开启OBS和SCM委托授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyAccountInfoRequest 请求对象
+     * @return ModifyAccountInfoResponse
+     */
+    public ModifyAccountInfoResponse modifyAccountInfo(ModifyAccountInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, CdnMeta.modifyAccountInfo);
+    }
+
+    /**
+     * 修改租户配置
+     *
+     * 修改租户配置，当前仅支持开启OBS和SCM委托授权。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ModifyAccountInfoRequest 请求对象
+     * @return SyncInvoker<ModifyAccountInfoRequest, ModifyAccountInfoResponse>
+     */
+    public SyncInvoker<ModifyAccountInfoRequest, ModifyAccountInfoResponse> modifyAccountInfoInvoker(
+        ModifyAccountInfoRequest request) {
+        return new SyncInvoker<>(request, CdnMeta.modifyAccountInfo, hcClient);
     }
 
     /**

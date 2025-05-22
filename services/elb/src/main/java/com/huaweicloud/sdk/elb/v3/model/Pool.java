@@ -24,6 +24,11 @@ public class Pool {
     private Boolean adminStateUp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "az_affinity")
+
+    private AzAffinity azAffinity;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -238,6 +243,32 @@ public class Pool {
 
     public void setAdminStateUp(Boolean adminStateUp) {
         this.adminStateUp = adminStateUp;
+    }
+
+    public Pool withAzAffinity(AzAffinity azAffinity) {
+        this.azAffinity = azAffinity;
+        return this;
+    }
+
+    public Pool withAzAffinity(Consumer<AzAffinity> azAffinitySetter) {
+        if (this.azAffinity == null) {
+            this.azAffinity = new AzAffinity();
+            azAffinitySetter.accept(this.azAffinity);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get azAffinity
+     * @return azAffinity
+     */
+    public AzAffinity getAzAffinity() {
+        return azAffinity;
+    }
+
+    public void setAzAffinity(AzAffinity azAffinity) {
+        this.azAffinity = azAffinity;
     }
 
     public Pool withDescription(String description) {
@@ -695,7 +726,7 @@ public class Pool {
     }
 
     /**
-     * 参数解释：后端服务器组所在的企业项目ID。
+     * 参数解释：IP地址组所在的企业项目ID。
      * @return enterpriseProjectId
      */
     public String getEnterpriseProjectId() {
@@ -784,7 +815,7 @@ public class Pool {
             return false;
         }
         Pool that = (Pool) obj;
-        return Objects.equals(this.adminStateUp, that.adminStateUp)
+        return Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.azAffinity, that.azAffinity)
             && Objects.equals(this.description, that.description)
             && Objects.equals(this.healthmonitorId, that.healthmonitorId) && Objects.equals(this.id, that.id)
             && Objects.equals(this.lbAlgorithm, that.lbAlgorithm) && Objects.equals(this.listeners, that.listeners)
@@ -809,6 +840,7 @@ public class Pool {
     @Override
     public int hashCode() {
         return Objects.hash(adminStateUp,
+            azAffinity,
             description,
             healthmonitorId,
             id,
@@ -842,6 +874,7 @@ public class Pool {
         StringBuilder sb = new StringBuilder();
         sb.append("class Pool {\n");
         sb.append("    adminStateUp: ").append(toIndentedString(adminStateUp)).append("\n");
+        sb.append("    azAffinity: ").append(toIndentedString(azAffinity)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    healthmonitorId: ").append(toIndentedString(healthmonitorId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");

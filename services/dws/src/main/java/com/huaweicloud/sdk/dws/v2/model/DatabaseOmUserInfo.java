@@ -3,11 +3,10 @@ package com.huaweicloud.sdk.dws.v2.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 /**
- * 数据库运维账户信息 包含账户状态  账户过期时间（时间戳）
+ * 数据库运维账户信息 包含账户状态  账户过期时间（时间戳） **参数解释**： 数据库运维账户信息。包含账户状态  账户过期时间（时间戳）。 **取值范围**： 不涉及。
  */
 public class DatabaseOmUserInfo {
 
@@ -19,7 +18,7 @@ public class DatabaseOmUserInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "om_user_expires_time")
 
-    private LocalDate omUserExpiresTime;
+    private Long omUserExpiresTime;
 
     public DatabaseOmUserInfo withOmUserStatus(String omUserStatus) {
         this.omUserStatus = omUserStatus;
@@ -27,7 +26,7 @@ public class DatabaseOmUserInfo {
     }
 
     /**
-     * 运维账户状态
+     * **参数解释**： 运维账户状态。 **取值范围**： on、off
      * @return omUserStatus
      */
     public String getOmUserStatus() {
@@ -38,20 +37,20 @@ public class DatabaseOmUserInfo {
         this.omUserStatus = omUserStatus;
     }
 
-    public DatabaseOmUserInfo withOmUserExpiresTime(LocalDate omUserExpiresTime) {
+    public DatabaseOmUserInfo withOmUserExpiresTime(Long omUserExpiresTime) {
         this.omUserExpiresTime = omUserExpiresTime;
         return this;
     }
 
     /**
-     * 运维账户过期状态
+     * **参数解释**： 运维账户过期状态。格式是有效的时间戳。 **取值范围**： 不涉及。
      * @return omUserExpiresTime
      */
-    public LocalDate getOmUserExpiresTime() {
+    public Long getOmUserExpiresTime() {
         return omUserExpiresTime;
     }
 
-    public void setOmUserExpiresTime(LocalDate omUserExpiresTime) {
+    public void setOmUserExpiresTime(Long omUserExpiresTime) {
         this.omUserExpiresTime = omUserExpiresTime;
     }
 

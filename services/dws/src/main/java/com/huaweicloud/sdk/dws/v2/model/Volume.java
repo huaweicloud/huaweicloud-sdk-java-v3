@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 磁盘
+ * **参数解释**： 磁盘信息对象。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
  */
 public class Volume {
 
@@ -26,7 +26,7 @@ public class Volume {
     }
 
     /**
-     * 磁盘名称，取值范围为 SSD（超高IO）,高IO（SAS），普通IO（SATA）
+     * **参数解释**： 磁盘名称。 **约束限制**： 不涉及。 **取值范围**： - SSD：超高IO - SAS：高IO - SATA：普通IO  **默认取值**： 不涉及。
      * @return volume
      */
     public String getVolume() {
@@ -43,7 +43,7 @@ public class Volume {
     }
 
     /**
-     * 磁盘容量,单位：GB
+     * **参数解释**： 磁盘容量，单位：GB。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return capacity
      */
     public Integer getCapacity() {

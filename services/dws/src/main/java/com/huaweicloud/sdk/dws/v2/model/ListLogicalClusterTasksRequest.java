@@ -51,7 +51,7 @@ public class ListLogicalClusterTasksRequest {
     }
 
     /**
-     * 集群ID
+     * **参数解释**： 集群ID。获取方式方法请参见[获取集群ID](dws_02_00068.xml)。 **约束限制**： 必须是有效的dws集群ID。 **取值范围**： 36位UUID。 **默认取值**： 不涉及。
      * @return clusterId
      */
     public String getClusterId() {
@@ -68,7 +68,7 @@ public class ListLogicalClusterTasksRequest {
     }
 
     /**
-     * 分页查询，偏移
+     * **参数解释**： 分页查询，偏移量。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 0
      * @return offset
      */
     public Integer getOffset() {
@@ -85,7 +85,7 @@ public class ListLogicalClusterTasksRequest {
     }
 
     /**
-     * 分页查询，每页显示的条目数量
+     * **参数解释**： 分页单页大小。 **约束限制**： 不涉及。 **取值范围**： 大于0。 **默认取值**： 10
      * @return limit
      */
     public Integer getLimit() {
@@ -102,7 +102,7 @@ public class ListLogicalClusterTasksRequest {
     }
 
     /**
-     * 集群名称
+     * **参数解释**： 集群名称。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return logicalClusterName
      */
     public String getLogicalClusterName() {
@@ -119,7 +119,7 @@ public class ListLogicalClusterTasksRequest {
     }
 
     /**
-     * 类型
+     * **参数解释**： 类型。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return type
      */
     public String getType() {
@@ -136,7 +136,7 @@ public class ListLogicalClusterTasksRequest {
     }
 
     /**
-     * 排序字段
+     * **参数解释**： 排序字段。 **约束限制**： 不涉及。 **取值范围**： 不涉及。 **默认取值**： 不涉及。
      * @return orderBy
      */
     public String getOrderBy() {
@@ -153,7 +153,7 @@ public class ListLogicalClusterTasksRequest {
     }
 
     /**
-     * 排序：升序/降序
+     * **参数解释**： 排序：升序/降序。 **约束限制**： 不涉及。 **取值范围**： ASC：表示按升序排序。 DESC：表示按降序排序。 **默认取值**： 不涉及。
      * @return order
      */
     public String getOrder() {

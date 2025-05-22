@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 /**
- * 逻辑集群增删计划行动
+ * **参数解释**： 逻辑集群增删计划任务信息。 **取值范围**： 不涉及。
  */
 public class LogicalClusterPlanActions {
 
@@ -52,7 +52,7 @@ public class LogicalClusterPlanActions {
     }
 
     /**
-     * 行动下一次触发时间
+     * **参数解释**： 下一次触发时间。 **取值范围**： 不涉及。
      * @return nextFireTime
      */
     public String getNextFireTime() {
@@ -69,7 +69,7 @@ public class LogicalClusterPlanActions {
     }
 
     /**
-     * 行动失败原因
+     * **参数解释**： 失败原因。 **取值范围**： 不涉及。
      * @return failedReason
      */
     public String getFailedReason() {
@@ -86,7 +86,7 @@ public class LogicalClusterPlanActions {
     }
 
     /**
-     * 行动ID
+     * **参数解释**： 任务ID。 **取值范围**： 不涉及。
      * @return id
      */
     public String getId() {
@@ -103,7 +103,7 @@ public class LogicalClusterPlanActions {
     }
 
     /**
-     * 行动类型，取值范围为(create|delete)
+     * **参数解释**： 类型。 **取值范围**： create：创建 delete：删除
      * @return type
      */
     public String getType() {
@@ -120,7 +120,7 @@ public class LogicalClusterPlanActions {
     }
 
     /**
-     * 行动周期性Cron表达式：如\"0 0 0 ? * 3\"
+     * **参数解释**： 周期信息。Cron表达式：如\"0 0 0 ? * 3\"。 **取值范围**： 不涉及。
      * @return strategy
      */
     public String getStrategy() {
@@ -154,7 +154,7 @@ public class LogicalClusterPlanActions {
     }
 
     /**
-     * 计划上一次触发时间
+     * **参数解释**： 上一次触发时间。 **取值范围**： 不涉及。
      * @return preFireTime
      */
     public LocalDate getPreFireTime() {

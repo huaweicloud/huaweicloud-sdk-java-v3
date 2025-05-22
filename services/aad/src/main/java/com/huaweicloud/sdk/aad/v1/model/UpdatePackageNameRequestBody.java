@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 更新防护包名的请求体
+ * 更新实例名的请求体
  */
 public class UpdatePackageNameRequestBody {
 

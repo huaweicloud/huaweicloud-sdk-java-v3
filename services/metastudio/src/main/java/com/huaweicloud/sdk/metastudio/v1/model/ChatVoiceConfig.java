@@ -41,7 +41,7 @@ public class ChatVoiceConfig {
     private String provider;
 
     /**
-     * 语言类型。默认值CN。 * CN：简体中文。 * EN：英语。
+     * 语言类型。默认值CN。 * CN：简体中文。 * EN：英语。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
      */
     public static final class LanguageEnum {
 
@@ -55,12 +55,36 @@ public class ChatVoiceConfig {
          */
         public static final LanguageEnum EN = new LanguageEnum("EN");
 
+        /**
+         * Enum ESP for value: "ESP"
+         */
+        public static final LanguageEnum ESP = new LanguageEnum("ESP");
+
+        /**
+         * Enum POR for value: "por"
+         */
+        public static final LanguageEnum POR = new LanguageEnum("por");
+
+        /**
+         * Enum ARABIC for value: "Arabic"
+         */
+        public static final LanguageEnum ARABIC = new LanguageEnum("Arabic");
+
+        /**
+         * Enum THAI for value: "Thai"
+         */
+        public static final LanguageEnum THAI = new LanguageEnum("Thai");
+
         private static final Map<String, LanguageEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, LanguageEnum> createStaticFields() {
             Map<String, LanguageEnum> map = new HashMap<>();
             map.put("CN", CN);
             map.put("EN", EN);
+            map.put("ESP", ESP);
+            map.put("por", POR);
+            map.put("Arabic", ARABIC);
+            map.put("Thai", THAI);
             return Collections.unmodifiableMap(map);
         }
 
@@ -212,7 +236,7 @@ public class ChatVoiceConfig {
     }
 
     /**
-     * 语言类型。默认值CN。 * CN：简体中文。 * EN：英语。
+     * 语言类型。默认值CN。 * CN：简体中文。 * EN：英语。 * ESP：西班牙语（仅海外站点支持） * por：葡萄牙语（仅海外站点支持） * Arabic：阿拉伯语（仅海外站点支持） * Thai：泰语（仅海外站点支持）
      * @return language
      */
     public LanguageEnum getLanguage() {

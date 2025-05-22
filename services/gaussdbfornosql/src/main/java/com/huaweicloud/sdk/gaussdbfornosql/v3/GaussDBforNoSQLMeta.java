@@ -55,6 +55,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbUserRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDbUserResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDisasterRecoveryRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateDisasterRecoveryResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateGeminiDbDualActiveRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateGeminiDbDualActiveResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateInstanceRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.CreateInstanceResponse;
@@ -75,6 +77,8 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteDisasterRecoveryRespon
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteEnlargeFailNodeResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteGeminiDbDualActiveRequest;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteGeminiDbDualActiveResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstanceRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstanceResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteInstancesSessionRequest;
@@ -86,6 +90,7 @@ import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteLtsConfigsResponse;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteRedisDisabledCommandsRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteRedisDisabledCommandsRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DeleteRedisDisabledCommandsResponse;
+import com.huaweicloud.sdk.gaussdbfornosql.v3.model.DualActiveRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ExpandInstanceNodeRequest;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ExpandInstanceNodeRequestBody;
 import com.huaweicloud.sdk.gaussdbfornosql.v3.model.ExpandInstanceNodeResponse;
@@ -856,6 +861,36 @@ public class GaussDBforNoSQLMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<CreateGeminiDbDualActiveRequest, CreateGeminiDbDualActiveResponse> createGeminiDbDualActive =
+        genForCreateGeminiDbDualActive();
+
+    private static HttpRequestDef<CreateGeminiDbDualActiveRequest, CreateGeminiDbDualActiveResponse> genForCreateGeminiDbDualActive() {
+        // basic
+        HttpRequestDef.Builder<CreateGeminiDbDualActiveRequest, CreateGeminiDbDualActiveResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateGeminiDbDualActiveRequest.class, CreateGeminiDbDualActiveResponse.class)
+                .withName("CreateGeminiDbDualActive")
+                .withUri("/v3/{project_id}/instances/{instance_id}/dual-active-relationship")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateGeminiDbDualActiveRequest::getInstanceId,
+                CreateGeminiDbDualActiveRequest::setInstanceId));
+        builder.<DualActiveRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DualActiveRequestBody.class),
+            f -> f.withMarshaller(CreateGeminiDbDualActiveRequest::getBody, CreateGeminiDbDualActiveRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateInstanceRequest, CreateInstanceResponse> createInstance =
         genForCreateInstance();
 
@@ -1044,6 +1079,33 @@ public class GaussDBforNoSQLMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(DeleteEnlargeFailNodeRequestBody.class),
             f -> f.withMarshaller(DeleteEnlargeFailNodeRequest::getBody, DeleteEnlargeFailNodeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteGeminiDbDualActiveRequest, DeleteGeminiDbDualActiveResponse> deleteGeminiDbDualActive =
+        genForDeleteGeminiDbDualActive();
+
+    private static HttpRequestDef<DeleteGeminiDbDualActiveRequest, DeleteGeminiDbDualActiveResponse> genForDeleteGeminiDbDualActive() {
+        // basic
+        HttpRequestDef.Builder<DeleteGeminiDbDualActiveRequest, DeleteGeminiDbDualActiveResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteGeminiDbDualActiveRequest.class,
+                    DeleteGeminiDbDualActiveResponse.class)
+                .withName("DeleteGeminiDbDualActive")
+                .withUri("/v3/{project_id}/instances/{instance_id}/dual-active-relationship")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteGeminiDbDualActiveRequest::getInstanceId,
+                DeleteGeminiDbDualActiveRequest::setInstanceId));
 
         // response
 

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * LinkResp
+ * **参数解释**： 链接信息。 **取值范围**： 不涉及。
  */
 public class LinkResp {
 
@@ -26,7 +26,7 @@ public class LinkResp {
     }
 
     /**
-     * 关联
+     * **参数解释**： 关联信息。 **取值范围**： 不涉及。
      * @return rel
      */
     public String getRel() {
@@ -43,7 +43,7 @@ public class LinkResp {
     }
 
     /**
-     * 连接
+     * **参数解释**： 链接信息。 **取值范围**： 不涉及。
      * @return href
      */
     public String getHref() {

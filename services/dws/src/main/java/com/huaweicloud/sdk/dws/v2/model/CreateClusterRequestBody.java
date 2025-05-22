@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * This is a auto create Body Object
+ * **参数解释**： 创建集群的请求体。 **取值范围**： 非空对象。
  */
 public class CreateClusterRequestBody {
 

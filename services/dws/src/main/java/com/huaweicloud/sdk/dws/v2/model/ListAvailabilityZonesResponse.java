@@ -47,7 +47,7 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     }
 
     /**
-     * 可用区列表对象。
+     * **参数解释**： 可用区列表。 **取值范围**： 非空对象列表。
      * @return availabilityZones
      */
     public List<AvailabilityZone> getAvailabilityZones() {
@@ -64,7 +64,7 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     }
 
     /**
-     * 可用区数量。
+     * **参数解释**： 可用区数量。 **取值范围**： 不涉及。
      * @return count
      */
     public Integer getCount() {

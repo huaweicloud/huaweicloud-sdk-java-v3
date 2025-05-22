@@ -1,5 +1,6 @@
 package com.huaweicloud.sdk.cdn.v2;
 
+import com.huaweicloud.sdk.cdn.v2.model.AccountConfigModifyRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainRequest;
 import com.huaweicloud.sdk.cdn.v2.model.BatchCopyDomainResponse;
@@ -30,6 +31,8 @@ import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListCdnDomainTopRefersResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsRequest;
 import com.huaweicloud.sdk.cdn.v2.model.ListDomainsResponse;
+import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoRequest;
+import com.huaweicloud.sdk.cdn.v2.model.ModifyAccountInfoResponse;
 import com.huaweicloud.sdk.cdn.v2.model.ModifyDomainConfigRequestBody;
 import com.huaweicloud.sdk.cdn.v2.model.PreheatingTaskRequest;
 import com.huaweicloud.sdk.cdn.v2.model.RefreshTaskRequest;
@@ -642,6 +645,34 @@ public class CdnMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(ListDomainsResponse::getXRequestId, ListDomainsResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyAccountInfoRequest, ModifyAccountInfoResponse> modifyAccountInfo =
+        genForModifyAccountInfo();
+
+    private static HttpRequestDef<ModifyAccountInfoRequest, ModifyAccountInfoResponse> genForModifyAccountInfo() {
+        // basic
+        HttpRequestDef.Builder<ModifyAccountInfoRequest, ModifyAccountInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyAccountInfoRequest.class, ModifyAccountInfoResponse.class)
+                .withName("ModifyAccountInfo")
+                .withUri("/v1.0/cdn/configuration/account-configs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<AccountConfigModifyRequest>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(AccountConfigModifyRequest.class),
+            f -> f.withMarshaller(ModifyAccountInfoRequest::getBody, ModifyAccountInfoRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ModifyAccountInfoResponse::getXRequestId, ModifyAccountInfoResponse::setXRequestId));
         return builder.build();
     }
 

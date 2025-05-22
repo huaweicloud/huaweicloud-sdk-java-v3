@@ -239,6 +239,11 @@ public class TaskInfo {
     private Integer releaseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "app_id")
+
+    private String appId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_disable")
 
     private Boolean isDisable;
@@ -794,6 +799,23 @@ public class TaskInfo {
         this.releaseId = releaseId;
     }
 
+    public TaskInfo withAppId(String appId) {
+        this.appId = appId;
+        return this;
+    }
+
+    /**
+     * 部署应用id
+     * @return appId
+     */
+    public String getAppId() {
+        return appId;
+    }
+
+    public void setAppId(String appId) {
+        this.appId = appId;
+    }
+
     public TaskInfo withIsDisable(Boolean isDisable) {
         this.isDisable = isDisable;
         return this;
@@ -938,8 +960,8 @@ public class TaskInfo {
             && Objects.equals(this.canDisable, that.canDisable)
             && Objects.equals(this.appComponentList, that.appComponentList) && Objects.equals(this.roleId, that.roleId)
             && Objects.equals(this.id, that.id) && Objects.equals(this.releaseId, that.releaseId)
-            && Objects.equals(this.isDisable, that.isDisable) && Objects.equals(this.duration, that.duration)
-            && Objects.equals(this.executionState, that.executionState)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.isDisable, that.isDisable)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.executionState, that.executionState)
             && Objects.equals(this.executorId, that.executorId)
             && Objects.equals(this.executorNickName, that.executorNickName) && Objects.equals(this.steps, that.steps);
     }
@@ -976,6 +998,7 @@ public class TaskInfo {
             roleId,
             id,
             releaseId,
+            appId,
             isDisable,
             duration,
             executionState,
@@ -1018,6 +1041,7 @@ public class TaskInfo {
         sb.append("    roleId: ").append(toIndentedString(roleId)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    releaseId: ").append(toIndentedString(releaseId)).append("\n");
+        sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
         sb.append("    isDisable: ").append(toIndentedString(isDisable)).append("\n");
         sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
         sb.append("    executionState: ").append(toIndentedString(executionState)).append("\n");

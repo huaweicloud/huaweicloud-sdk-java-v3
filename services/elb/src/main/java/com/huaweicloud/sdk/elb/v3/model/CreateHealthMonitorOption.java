@@ -137,7 +137,7 @@ public class CreateHealthMonitorOption {
     }
 
     /**
-     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：若健康检查type为GRPC，则默认值为0,；其他为200。  仅支持HTTP/HTTPS/GRPC设置该字段，其他协议设置不会生效。
+     * 期望响应状态码。  取值： - 单值：单个返回码，例如200。 - 列表：多个特定返回码，例如200，202。 - 区间：一个返回码区间，例如200-204。   默认值：若健康检查type为GRPC，则默认值为0,；其他为200。  该字段仅在HTTP/HTTPS/GRPC协议下有效，其他协议可以设置但不会生效。
      * @return expectedCodes
      */
     public String getExpectedCodes() {

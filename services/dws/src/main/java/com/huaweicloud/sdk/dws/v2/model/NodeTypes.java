@@ -74,7 +74,7 @@ public class NodeTypes {
     }
 
     /**
-     * 节点类型名称。
+     * **参数解释**： 规格名称。 **取值范围**： 字母、数字、小数点、下划线、短横线。
      * @return specName
      */
     public String getSpecName() {
@@ -107,7 +107,7 @@ public class NodeTypes {
     }
 
     /**
-     * 节点类型详细。
+     * **参数解释**： 规格详细信息。 **取值范围**： 不涉及。
      * @return detail
      */
     public List<Detail> getDetail() {
@@ -124,7 +124,7 @@ public class NodeTypes {
     }
 
     /**
-     * 节点类型ID。
+     * **参数解释**： 规格ID。 **取值范围**： 一般为UUID。
      * @return id
      */
     public String getId() {
@@ -141,7 +141,7 @@ public class NodeTypes {
     }
 
     /**
-     * 产品类型 - dws：云数仓。 - hybrid：实时数仓。 - stream：IoT数仓。
+     * **参数解释**： 产品类型。 **取值范围**： - dws：云数仓。 - hybrid：实时数仓。 - stream：IoT数仓。
      * @return datastoreType
      */
     public String getDatastoreType() {
@@ -158,7 +158,7 @@ public class NodeTypes {
     }
 
     /**
-     * 架构类型 - x86。 - arm。
+     * **参数解释**： 架构类型。 **取值范围**： - x86； - arm；
      * @return architecture
      */
     public String getArchitecture() {
@@ -191,7 +191,7 @@ public class NodeTypes {
     }
 
     /**
-     * 支持的可用区及状态信息。
+     * **参数解释**： 支持的可用区及状态信息。 **取值范围**： 不涉及。
      * @return availableZones
      */
     public List<NodeTypeAvailableZones> getAvailableZones() {
@@ -208,7 +208,7 @@ public class NodeTypes {
     }
 
     /**
-     * 内存大小。
+     * **参数解释**： 内存大小。单位：GB。 **取值范围**： 大于0的正整数。
      * @return ram
      */
     public Integer getRam() {
@@ -225,7 +225,7 @@ public class NodeTypes {
     }
 
     /**
-     * CPU数量。
+     * **参数解释**： CPU数量。 **取值范围**： 大于0的正整数。
      * @return vcpus
      */
     public Integer getVcpus() {
@@ -258,7 +258,7 @@ public class NodeTypes {
     }
 
     /**
-     * 内核版本信息。
+     * **参数解释**： 内核版本信息。 **取值范围**： 不涉及。
      * @return datastores
      */
     public List<NodeTypeDatastores> getDatastores() {
@@ -317,7 +317,7 @@ public class NodeTypes {
     }
 
     /**
-     * 如果规格为弹性容量规格，则该属性为规格典配的弹性容量信息，包括存储类型、最小容量、最大容量以及步长信息，如果为固定存储规格，则该属性为null。
+     * **参数解释**： 弹性弹性容量规格的规格容量信息 **取值范围**： 如果规格为弹性容量规格，则该属性为规格典配的弹性容量信息，包括存储类型、最小容量、最大容量以及步长信息，如果为固定存储规格，则该属性为null。
      * @return elasticVolumeSpecs
      */
     public List<NodeTypeElasticVolumeSpecs> getElasticVolumeSpecs() {

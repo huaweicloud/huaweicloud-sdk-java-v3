@@ -19,7 +19,7 @@ public class BatchDeleteResourcesRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private ResourcesReq body;
+    private DelResourcesReq body;
 
     public BatchDeleteResourcesRequest withGroupId(String groupId) {
         this.groupId = groupId;
@@ -38,14 +38,14 @@ public class BatchDeleteResourcesRequest {
         this.groupId = groupId;
     }
 
-    public BatchDeleteResourcesRequest withBody(ResourcesReq body) {
+    public BatchDeleteResourcesRequest withBody(DelResourcesReq body) {
         this.body = body;
         return this;
     }
 
-    public BatchDeleteResourcesRequest withBody(Consumer<ResourcesReq> bodySetter) {
+    public BatchDeleteResourcesRequest withBody(Consumer<DelResourcesReq> bodySetter) {
         if (this.body == null) {
-            this.body = new ResourcesReq();
+            this.body = new DelResourcesReq();
             bodySetter.accept(this.body);
         }
 
@@ -56,11 +56,11 @@ public class BatchDeleteResourcesRequest {
      * Get body
      * @return body
      */
-    public ResourcesReq getBody() {
+    public DelResourcesReq getBody() {
         return body;
     }
 
-    public void setBody(ResourcesReq body) {
+    public void setBody(DelResourcesReq body) {
         this.body = body;
     }
 
