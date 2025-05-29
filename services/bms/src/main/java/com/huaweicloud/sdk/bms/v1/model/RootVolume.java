@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.function.Consumer;
 
 /**
  * root_volume字段数据结构说明
@@ -182,6 +183,11 @@ public class RootVolume {
 
     private ClusterTypeEnum clusterType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private RootVolumeMetadata metadata;
+
     public RootVolume withVolumetype(VolumetypeEnum volumetype) {
         this.volumetype = volumetype;
         return this;
@@ -250,6 +256,32 @@ public class RootVolume {
         this.clusterType = clusterType;
     }
 
+    public RootVolume withMetadata(RootVolumeMetadata metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public RootVolume withMetadata(Consumer<RootVolumeMetadata> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new RootVolumeMetadata();
+            metadataSetter.accept(this.metadata);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metadata
+     * @return metadata
+     */
+    public RootVolumeMetadata getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(RootVolumeMetadata metadata) {
+        this.metadata = metadata;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -260,12 +292,13 @@ public class RootVolume {
         }
         RootVolume that = (RootVolume) obj;
         return Objects.equals(this.volumetype, that.volumetype) && Objects.equals(this.size, that.size)
-            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterType, that.clusterType);
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterType, that.clusterType)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(volumetype, size, clusterId, clusterType);
+        return Objects.hash(volumetype, size, clusterId, clusterType, metadata);
     }
 
     @Override
@@ -276,6 +309,7 @@ public class RootVolume {
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

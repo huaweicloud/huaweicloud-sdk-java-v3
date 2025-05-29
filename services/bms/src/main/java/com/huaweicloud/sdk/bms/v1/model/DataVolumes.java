@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
+import java.util.function.Consumer;
 
 /**
  * data_volumes字段数据结构说明
@@ -187,6 +188,11 @@ public class DataVolumes {
 
     private ClusterTypeEnum clusterType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "metadata")
+
+    private DataVolumesMetadata metadata;
+
     public DataVolumes withVolumetype(VolumetypeEnum volumetype) {
         this.volumetype = volumetype;
         return this;
@@ -272,6 +278,32 @@ public class DataVolumes {
         this.clusterType = clusterType;
     }
 
+    public DataVolumes withMetadata(DataVolumesMetadata metadata) {
+        this.metadata = metadata;
+        return this;
+    }
+
+    public DataVolumes withMetadata(Consumer<DataVolumesMetadata> metadataSetter) {
+        if (this.metadata == null) {
+            this.metadata = new DataVolumesMetadata();
+            metadataSetter.accept(this.metadata);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get metadata
+     * @return metadata
+     */
+    public DataVolumesMetadata getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(DataVolumesMetadata metadata) {
+        this.metadata = metadata;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -283,12 +315,12 @@ public class DataVolumes {
         DataVolumes that = (DataVolumes) obj;
         return Objects.equals(this.volumetype, that.volumetype) && Objects.equals(this.size, that.size)
             && Objects.equals(this.shareable, that.shareable) && Objects.equals(this.clusterId, that.clusterId)
-            && Objects.equals(this.clusterType, that.clusterType);
+            && Objects.equals(this.clusterType, that.clusterType) && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(volumetype, size, shareable, clusterId, clusterType);
+        return Objects.hash(volumetype, size, shareable, clusterId, clusterType, metadata);
     }
 
     @Override
@@ -300,6 +332,7 @@ public class DataVolumes {
         sb.append("    shareable: ").append(toIndentedString(shareable)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    clusterType: ").append(toIndentedString(clusterType)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
         sb.append("}");
         return sb.toString();
     }

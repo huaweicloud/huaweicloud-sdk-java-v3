@@ -40,6 +40,11 @@ public class ListSqlJobsRequest {
 
     private String jobStatus;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job-id")
+
+    private String jobId;
+
     /**
      * 指定查询的作业类型，包含DDL、DCL、IMPORT、EXPORT、QUERY、INSERT，若要查询所有类型的作业，则传入ALL。
      */
@@ -352,6 +357,23 @@ public class ListSqlJobsRequest {
         this.jobStatus = jobStatus;
     }
 
+    public ListSqlJobsRequest withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * Get jobId
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
     public ListSqlJobsRequest withJobType(JobTypeEnum jobType) {
         this.jobType = jobType;
         return this;
@@ -518,11 +540,12 @@ public class ListSqlJobsRequest {
         ListSqlJobsRequest that = (ListSqlJobsRequest) obj;
         return Objects.equals(this.currentPage, that.currentPage) && Objects.equals(this.dbName, that.dbName)
             && Objects.equals(this.end, that.end) && Objects.equals(this.engineType, that.engineType)
-            && Objects.equals(this.jobStatus, that.jobStatus) && Objects.equals(this.jobType, that.jobType)
-            && Objects.equals(this.order, that.order) && Objects.equals(this.owner, that.owner)
-            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.queueName, that.queueName)
-            && Objects.equals(this.sqlPattern, that.sqlPattern) && Objects.equals(this.start, that.start)
-            && Objects.equals(this.tableName, that.tableName) && Objects.equals(this.tags, that.tags);
+            && Objects.equals(this.jobStatus, that.jobStatus) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.queueName, that.queueName) && Objects.equals(this.sqlPattern, that.sqlPattern)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override
@@ -532,6 +555,7 @@ public class ListSqlJobsRequest {
             end,
             engineType,
             jobStatus,
+            jobId,
             jobType,
             order,
             owner,
@@ -552,6 +576,7 @@ public class ListSqlJobsRequest {
         sb.append("    end: ").append(toIndentedString(end)).append("\n");
         sb.append("    engineType: ").append(toIndentedString(engineType)).append("\n");
         sb.append("    jobStatus: ").append(toIndentedString(jobStatus)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("    jobType: ").append(toIndentedString(jobType)).append("\n");
         sb.append("    order: ").append(toIndentedString(order)).append("\n");
         sb.append("    owner: ").append(toIndentedString(owner)).append("\n");

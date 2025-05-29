@@ -595,6 +595,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryFullTextRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryFullTextResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataRequest;
@@ -9026,6 +9028,35 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ShowFactoryEnvRequest, ShowFactoryEnvResponse> showFactoryEnvAsyncInvoker(
         ShowFactoryEnvRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.showFactoryEnv, hcClient);
+    }
+
+    /**
+     * 全局搜索
+     *
+     * 全局搜索
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryFullTextRequest 请求对象
+     * @return CompletableFuture<ShowFactoryFullTextResponse>
+     */
+    public CompletableFuture<ShowFactoryFullTextResponse> showFactoryFullTextAsync(ShowFactoryFullTextRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.showFactoryFullText);
+    }
+
+    /**
+     * 全局搜索
+     *
+     * 全局搜索
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryFullTextRequest 请求对象
+     * @return AsyncInvoker<ShowFactoryFullTextRequest, ShowFactoryFullTextResponse>
+     */
+    public AsyncInvoker<ShowFactoryFullTextRequest, ShowFactoryFullTextResponse> showFactoryFullTextAsyncInvoker(
+        ShowFactoryFullTextRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.showFactoryFullText, hcClient);
     }
 
     /**

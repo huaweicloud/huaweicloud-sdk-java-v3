@@ -7,6 +7,8 @@ import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.kvs.v1.config.KvsSdkConfig;
 import com.huaweicloud.sdk.kvs.v1.config.KvsSdkConfigManager;
+import com.huaweicloud.sdk.kvs.v1.model.BatchGetKvRequest;
+import com.huaweicloud.sdk.kvs.v1.model.BatchGetKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.CheckHealthRequest;
@@ -352,6 +354,48 @@ public class MultiChannelKvsAsyncClient extends AbstractMultiChannelKvsClient im
     */
     public AsyncInvoker<CheckHealthRequest, CheckHealthResponse> checkHealthAsyncInvoker(CheckHealthRequest request) {
         return getKvsClientByPolling().getKvsAsyncClient().checkHealthAsyncInvoker(request);
+    }
+
+    /**
+    * 批量读请求
+    *
+        * 批量读请求，其中可以携带一或多个表的不同kv的查询操作。
+        * 
+        * Please refer to HUAWEI cloud API Explorer for details.
+    *
+    * @param request BatchGetKvRequest 请求对象
+    * @return BatchGetKvResponse
+    */
+    public CompletableFuture<BatchGetKvResponse> batchGetKvAsync(BatchGetKvRequest request) {
+        int retryCount = 0;
+        while (retryCount < getConfig().getApiRetryCount()) {
+            ManagedKvsClient client = getKvsClientByPolling(retryCount);
+            try {
+                return client.getKvsAsyncClient().batchGetKvAsync(request);
+            } catch (RequestTimeoutException | ConnectionException e) {
+                client.setIsUsable(false);
+                retryCount++;
+                LOG.warn(
+                    "this is client " + client.getEndpointName() + " batchGetKv throwing Exception " + retryCount
+                        + " time. errorInfo: " + e,
+                    e);
+            }
+        }
+        throw new SdkException("retry batchGetKv " + retryCount + " times, and failed!");
+    }
+
+    /**
+    * 批量读请求
+    *
+        * 批量读请求，其中可以携带一或多个表的不同kv的查询操作。
+        * 
+        * Please refer to HUAWEI cloud API Explorer for details.
+    *
+    * @param request BatchGetKvRequest 请求对象
+    * @return SyncInvoker<BatchGetKvRequest, BatchGetKvResponse>
+    */
+    public AsyncInvoker<BatchGetKvRequest, BatchGetKvResponse> batchGetKvAsyncInvoker(BatchGetKvRequest request) {
+        return getKvsClientByPolling().getKvsAsyncClient().batchGetKvAsyncInvoker(request);
     }
 
     /**

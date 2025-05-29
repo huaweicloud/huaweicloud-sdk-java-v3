@@ -100,14 +100,19 @@ import com.huaweicloud.sdk.bssintl.v2.model.QueryResourcesReq;
 import com.huaweicloud.sdk.bssintl.v2.model.QuerySubCustomerListReq;
 import com.huaweicloud.sdk.bssintl.v2.model.RateOnDemandReq;
 import com.huaweicloud.sdk.bssintl.v2.model.RateOnPeriodReq;
+import com.huaweicloud.sdk.bssintl.v2.model.RenewResourceConfigReq;
 import com.huaweicloud.sdk.bssintl.v2.model.RenewalResourcesReq;
 import com.huaweicloud.sdk.bssintl.v2.model.RenewalResourcesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.RenewalResourcesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.SendVerificationCodeV2Req;
 import com.huaweicloud.sdk.bssintl.v2.model.SendVerificationMessageCodeRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.SendVerificationMessageCodeResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.SetResourcesRenewConfigRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.SetResourcesRenewConfigResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerMonthlySumRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerMonthlySumResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerOrderDetailsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerOrderDetailsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowPartnerConsumptionQuotaRequest;
@@ -1530,6 +1535,29 @@ public class BssintlMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<SetResourcesRenewConfigRequest, SetResourcesRenewConfigResponse> setResourcesRenewConfig =
+        genForSetResourcesRenewConfig();
+
+    private static HttpRequestDef<SetResourcesRenewConfigRequest, SetResourcesRenewConfigResponse> genForSetResourcesRenewConfig() {
+        // basic
+        HttpRequestDef.Builder<SetResourcesRenewConfigRequest, SetResourcesRenewConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SetResourcesRenewConfigRequest.class, SetResourcesRenewConfigResponse.class)
+            .withName("SetResourcesRenewConfig")
+            .withUri("/v2/orders/subscriptions/resources/renew/config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<RenewResourceConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RenewResourceConfigReq.class),
+            f -> f.withMarshaller(SetResourcesRenewConfigRequest::getBody, SetResourcesRenewConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> showCustomerAccountBalances =
         genForShowCustomerAccountBalances();
 
@@ -1545,6 +1573,63 @@ public class BssintlMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> showCustomerMonthlySum =
+        genForShowCustomerMonthlySum();
+
+    private static HttpRequestDef<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> genForShowCustomerMonthlySum() {
+        // basic
+        HttpRequestDef.Builder<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowCustomerMonthlySumRequest.class, ShowCustomerMonthlySumResponse.class)
+            .withName("ShowCustomerMonthlySum")
+            .withUri("/v2/bills/customer-bills/monthly-sum")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("bill_cycle",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getBillCycle,
+                ShowCustomerMonthlySumRequest::setBillCycle));
+        builder.<String>withRequestField("service_type_code",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getServiceTypeCode,
+                ShowCustomerMonthlySumRequest::setServiceTypeCode));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getEnterpriseProjectId,
+                ShowCustomerMonthlySumRequest::setEnterpriseProjectId));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getOffset, ShowCustomerMonthlySumRequest::setOffset));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getLimit, ShowCustomerMonthlySumRequest::setLimit));
+        builder.<String>withRequestField("method",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getMethod, ShowCustomerMonthlySumRequest::setMethod));
+        builder.<String>withRequestField("sub_customer_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowCustomerMonthlySumRequest::getSubCustomerId,
+                ShowCustomerMonthlySumRequest::setSubCustomerId));
 
         // response
 

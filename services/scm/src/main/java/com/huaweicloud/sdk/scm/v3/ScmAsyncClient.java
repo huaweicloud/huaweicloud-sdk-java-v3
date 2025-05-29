@@ -5,10 +5,14 @@ import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.scm.v3.model.ApplyCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ApplyCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.BatchCreateOrDeleteTagsRequest;
+import com.huaweicloud.sdk.scm.v3.model.BatchCreateOrDeleteTagsResponse;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.CancelCertificateRequestRequest;
 import com.huaweicloud.sdk.scm.v3.model.CancelCertificateRequestResponse;
+import com.huaweicloud.sdk.scm.v3.model.CreateCertificateTagRequest;
+import com.huaweicloud.sdk.scm.v3.model.CreateCertificateTagResponse;
 import com.huaweicloud.sdk.scm.v3.model.CreateCsrRequest;
 import com.huaweicloud.sdk.scm.v3.model.CreateCsrResponse;
 import com.huaweicloud.sdk.scm.v3.model.DeleteCertificateRequest;
@@ -21,12 +25,18 @@ import com.huaweicloud.sdk.scm.v3.model.ExportCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ExportCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ImportCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ImportCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.ListAllTagsRequest;
+import com.huaweicloud.sdk.scm.v3.model.ListAllTagsResponse;
+import com.huaweicloud.sdk.scm.v3.model.ListCertificatesByTagRequest;
+import com.huaweicloud.sdk.scm.v3.model.ListCertificatesByTagResponse;
 import com.huaweicloud.sdk.scm.v3.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.scm.v3.model.ListCertificatesResponse;
 import com.huaweicloud.sdk.scm.v3.model.ListCsrRequest;
 import com.huaweicloud.sdk.scm.v3.model.ListCsrResponse;
 import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesRequest;
 import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesResponse;
+import com.huaweicloud.sdk.scm.v3.model.ListTagsByCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.ListTagsByCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ShowCertificateRequest;
@@ -90,6 +100,36 @@ public class ScmAsyncClient {
     }
 
     /**
+     * 批量创建或删除标签
+     *
+     * 批量创建或删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateOrDeleteTagsRequest 请求对象
+     * @return CompletableFuture<BatchCreateOrDeleteTagsResponse>
+     */
+    public CompletableFuture<BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTagsAsync(
+        BatchCreateOrDeleteTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ScmMeta.batchCreateOrDeleteTags);
+    }
+
+    /**
+     * 批量创建或删除标签
+     *
+     * 批量创建或删除标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchCreateOrDeleteTagsRequest 请求对象
+     * @return AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse>
+     */
+    public AsyncInvoker<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTagsAsyncInvoker(
+        BatchCreateOrDeleteTagsRequest request) {
+        return new AsyncInvoker<>(request, ScmMeta.batchCreateOrDeleteTags, hcClient);
+    }
+
+    /**
      * 批量推送证书
      *
      * 批量推送SSL证书到弹性负载均衡（Elastic Load Balance，简称ELB）、Web应用防火墙（Web Application Firewall，WAF）、CDN（Content Delivery Network，内容分发网络）等其它华为云产品中。
@@ -147,6 +187,36 @@ public class ScmAsyncClient {
     public AsyncInvoker<CancelCertificateRequestRequest, CancelCertificateRequestResponse> cancelCertificateRequestAsyncInvoker(
         CancelCertificateRequestRequest request) {
         return new AsyncInvoker<>(request, ScmMeta.cancelCertificateRequest, hcClient);
+    }
+
+    /**
+     * 创建标签
+     *
+     * 创建标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCertificateTagRequest 请求对象
+     * @return CompletableFuture<CreateCertificateTagResponse>
+     */
+    public CompletableFuture<CreateCertificateTagResponse> createCertificateTagAsync(
+        CreateCertificateTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, ScmMeta.createCertificateTag);
+    }
+
+    /**
+     * 创建标签
+     *
+     * 创建标签。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateCertificateTagRequest 请求对象
+     * @return AsyncInvoker<CreateCertificateTagRequest, CreateCertificateTagResponse>
+     */
+    public AsyncInvoker<CreateCertificateTagRequest, CreateCertificateTagResponse> createCertificateTagAsyncInvoker(
+        CreateCertificateTagRequest request) {
+        return new AsyncInvoker<>(request, ScmMeta.createCertificateTag, hcClient);
     }
 
     /**
@@ -266,6 +336,34 @@ public class ScmAsyncClient {
     }
 
     /**
+     * 查询所有标签列表
+     *
+     * 查询所有标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllTagsRequest 请求对象
+     * @return CompletableFuture<ListAllTagsResponse>
+     */
+    public CompletableFuture<ListAllTagsResponse> listAllTagsAsync(ListAllTagsRequest request) {
+        return hcClient.asyncInvokeHttp(request, ScmMeta.listAllTags);
+    }
+
+    /**
+     * 查询所有标签列表
+     *
+     * 查询所有标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListAllTagsRequest 请求对象
+     * @return AsyncInvoker<ListAllTagsRequest, ListAllTagsResponse>
+     */
+    public AsyncInvoker<ListAllTagsRequest, ListAllTagsResponse> listAllTagsAsyncInvoker(ListAllTagsRequest request) {
+        return new AsyncInvoker<>(request, ScmMeta.listAllTags, hcClient);
+    }
+
+    /**
      * 查询证书列表
      *
      * 根据证书名称或绑定域名查询证书列表。
@@ -292,6 +390,36 @@ public class ScmAsyncClient {
     public AsyncInvoker<ListCertificatesRequest, ListCertificatesResponse> listCertificatesAsyncInvoker(
         ListCertificatesRequest request) {
         return new AsyncInvoker<>(request, ScmMeta.listCertificates, hcClient);
+    }
+
+    /**
+     * 根据标签查询证书列表
+     *
+     * 根据标签查询证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCertificatesByTagRequest 请求对象
+     * @return CompletableFuture<ListCertificatesByTagResponse>
+     */
+    public CompletableFuture<ListCertificatesByTagResponse> listCertificatesByTagAsync(
+        ListCertificatesByTagRequest request) {
+        return hcClient.asyncInvokeHttp(request, ScmMeta.listCertificatesByTag);
+    }
+
+    /**
+     * 根据标签查询证书列表
+     *
+     * 根据标签查询证书列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCertificatesByTagRequest 请求对象
+     * @return AsyncInvoker<ListCertificatesByTagRequest, ListCertificatesByTagResponse>
+     */
+    public AsyncInvoker<ListCertificatesByTagRequest, ListCertificatesByTagResponse> listCertificatesByTagAsyncInvoker(
+        ListCertificatesByTagRequest request) {
+        return new AsyncInvoker<>(request, ScmMeta.listCertificatesByTag, hcClient);
     }
 
     /**
@@ -322,6 +450,36 @@ public class ScmAsyncClient {
     public AsyncInvoker<ListDeployedResourcesRequest, ListDeployedResourcesResponse> listDeployedResourcesAsyncInvoker(
         ListDeployedResourcesRequest request) {
         return new AsyncInvoker<>(request, ScmMeta.listDeployedResources, hcClient);
+    }
+
+    /**
+     * 根据证书ID查询标签列表
+     *
+     * 根据证书ID查询标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTagsByCertificateRequest 请求对象
+     * @return CompletableFuture<ListTagsByCertificateResponse>
+     */
+    public CompletableFuture<ListTagsByCertificateResponse> listTagsByCertificateAsync(
+        ListTagsByCertificateRequest request) {
+        return hcClient.asyncInvokeHttp(request, ScmMeta.listTagsByCertificate);
+    }
+
+    /**
+     * 根据证书ID查询标签列表
+     *
+     * 根据证书ID查询标签列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTagsByCertificateRequest 请求对象
+     * @return AsyncInvoker<ListTagsByCertificateRequest, ListTagsByCertificateResponse>
+     */
+    public AsyncInvoker<ListTagsByCertificateRequest, ListTagsByCertificateResponse> listTagsByCertificateAsyncInvoker(
+        ListTagsByCertificateRequest request) {
+        return new AsyncInvoker<>(request, ScmMeta.listTagsByCertificate, hcClient);
     }
 
     /**

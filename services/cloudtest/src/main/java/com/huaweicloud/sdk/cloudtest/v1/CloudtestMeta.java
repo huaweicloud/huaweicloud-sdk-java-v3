@@ -188,6 +188,10 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTaskCaseOverstockUsingReque
 import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTaskCaseOverstockUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskAssignCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskAssignCasesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskResultsDetailRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskResultsDetailResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskResultsRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskResultsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskTestCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTasksRequest;
@@ -2130,6 +2134,57 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(QueryTaskAssignCasesInfo.class),
             f -> f.withMarshaller(ListTaskAssignCasesRequest::getBody, ListTaskAssignCasesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTaskResultsDetailRequest, ListTaskResultsDetailResponse> listTaskResultsDetail =
+        genForListTaskResultsDetail();
+
+    private static HttpRequestDef<ListTaskResultsDetailRequest, ListTaskResultsDetailResponse> genForListTaskResultsDetail() {
+        // basic
+        HttpRequestDef.Builder<ListTaskResultsDetailRequest, ListTaskResultsDetailResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTaskResultsDetailRequest.class, ListTaskResultsDetailResponse.class)
+            .withName("ListTaskResultsDetail")
+            .withUri("/v4/{project_uuid}/tasks/{task_uri}/results/{result_uri}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_uuid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskResultsDetailRequest::getProjectUuid,
+                ListTaskResultsDetailRequest::setProjectUuid));
+        builder.<String>withRequestField("task_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskResultsDetailRequest::getTaskUri, ListTaskResultsDetailRequest::setTaskUri));
+        builder.<String>withRequestField("result_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskResultsDetailRequest::getResultUri,
+                ListTaskResultsDetailRequest::setResultUri));
+        builder.<String>withRequestField("page_no",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskResultsDetailRequest::getPageNo, ListTaskResultsDetailRequest::setPageNo));
+        builder.<String>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskResultsDetailRequest::getPageSize,
+                ListTaskResultsDetailRequest::setPageSize));
+        builder.<String>withRequestField("result",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskResultsDetailRequest::getResult, ListTaskResultsDetailRequest::setResult));
 
         // response
 
@@ -5393,6 +5448,54 @@ public class CloudtestMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(TestcasePlanQueryParam.class),
             f -> f.withMarshaller(ListTestcasePlansRequest::getBody, ListTestcasePlansRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTaskResultsRequest, ListTaskResultsResponse> listTaskResults =
+        genForListTaskResults();
+
+    private static HttpRequestDef<ListTaskResultsRequest, ListTaskResultsResponse> genForListTaskResults() {
+        // basic
+        HttpRequestDef.Builder<ListTaskResultsRequest, ListTaskResultsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListTaskResultsRequest.class, ListTaskResultsResponse.class)
+                .withName("ListTaskResults")
+                .withUri("/v4/{project_uuid}/tasks/{task_uri}/results")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_uuid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskResultsRequest::getProjectUuid, ListTaskResultsRequest::setProjectUuid));
+        builder.<String>withRequestField("task_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskResultsRequest::getTaskUri, ListTaskResultsRequest::setTaskUri));
+        builder.<String>withRequestField("iterator_uri",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskResultsRequest::getIteratorUri, ListTaskResultsRequest::setIteratorUri));
+        builder.<String>withRequestField("page_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskResultsRequest::getPageNo, ListTaskResultsRequest::setPageNo));
+        builder.<String>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskResultsRequest::getPageSize, ListTaskResultsRequest::setPageSize));
+        builder.<String>withRequestField("release_dev",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTaskResultsRequest::getReleaseDev, ListTaskResultsRequest::setReleaseDev));
 
         // response
 

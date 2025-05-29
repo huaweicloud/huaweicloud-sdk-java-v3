@@ -148,6 +148,8 @@ import com.huaweicloud.sdk.bss.v2.model.SendSmsVerificationCodeRequest;
 import com.huaweicloud.sdk.bss.v2.model.SendSmsVerificationCodeResponse;
 import com.huaweicloud.sdk.bss.v2.model.SendVerificationMessageCodeRequest;
 import com.huaweicloud.sdk.bss.v2.model.SendVerificationMessageCodeResponse;
+import com.huaweicloud.sdk.bss.v2.model.SetResourcesRenewConfigRequest;
+import com.huaweicloud.sdk.bss.v2.model.SetResourcesRenewConfigResponse;
 import com.huaweicloud.sdk.bss.v2.model.ShowCustomerAccountBalancesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ShowCustomerAccountBalancesResponse;
 import com.huaweicloud.sdk.bss.v2.model.ShowCustomerMonthlySumRequest;
@@ -2780,6 +2782,36 @@ public class BssAsyncClient {
     }
 
     /**
+     * 设置包年/包月资源自动续费扣款日和续费后资源统一到期日
+     *
+     * 功能描述：客户的包年/包月资源可进行设置自动续费扣款日和续费后统一到期日
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetResourcesRenewConfigRequest 请求对象
+     * @return CompletableFuture<SetResourcesRenewConfigResponse>
+     */
+    public CompletableFuture<SetResourcesRenewConfigResponse> setResourcesRenewConfigAsync(
+        SetResourcesRenewConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, BssMeta.setResourcesRenewConfig);
+    }
+
+    /**
+     * 设置包年/包月资源自动续费扣款日和续费后资源统一到期日
+     *
+     * 功能描述：客户的包年/包月资源可进行设置自动续费扣款日和续费后统一到期日
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetResourcesRenewConfigRequest 请求对象
+     * @return AsyncInvoker<SetResourcesRenewConfigRequest, SetResourcesRenewConfigResponse>
+     */
+    public AsyncInvoker<SetResourcesRenewConfigRequest, SetResourcesRenewConfigResponse> setResourcesRenewConfigAsyncInvoker(
+        SetResourcesRenewConfigRequest request) {
+        return new AsyncInvoker<>(request, BssMeta.setResourcesRenewConfig, hcClient);
+    }
+
+    /**
      * 查询账户余额
      *
      * 客户可以查询自身的账户余额。
@@ -2818,10 +2850,7 @@ public class BssAsyncClient {
      *
      * 客户在自建平台查询自身的消费汇总账单，此账单按月汇总消费数据。
      * 
-     * 客户登录费用中心查询自身的消费汇总账单请参见[这里](https://support.huaweicloud.com/usermanual-billing/bills-topic_80000001.html#bills-topic_80000001__zh-cn_topic_0000001162496407_s620ce713baf04899a416d781d1817931)的“**查看汇总**”。
-     * 
-     * &gt;![](public_sys-resources/icon-note.gif) **说明：** 
-     * &gt;当前支持查看2019/01月份至今的费用账单。企业主账号展示的费用账单，包含关联的统一还款企业子账号的消费数据。
+     * 客户登录费用中心查询自身的消费汇总账单请参见[这里](https://support.huaweicloud.com/usermanual-billing/bills-topic_80000101.html)的“查看汇总”。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -2838,10 +2867,7 @@ public class BssAsyncClient {
      *
      * 客户在自建平台查询自身的消费汇总账单，此账单按月汇总消费数据。
      * 
-     * 客户登录费用中心查询自身的消费汇总账单请参见[这里](https://support.huaweicloud.com/usermanual-billing/bills-topic_80000001.html#bills-topic_80000001__zh-cn_topic_0000001162496407_s620ce713baf04899a416d781d1817931)的“**查看汇总**”。
-     * 
-     * &gt;![](public_sys-resources/icon-note.gif) **说明：** 
-     * &gt;当前支持查看2019/01月份至今的费用账单。企业主账号展示的费用账单，包含关联的统一还款企业子账号的消费数据。
+     * 客户登录费用中心查询自身的消费汇总账单请参见[这里](https://support.huaweicloud.com/usermanual-billing/bills-topic_80000101.html)的“查看汇总”。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *

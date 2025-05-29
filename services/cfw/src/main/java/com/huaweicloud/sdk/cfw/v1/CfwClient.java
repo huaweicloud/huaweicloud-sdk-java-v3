@@ -186,6 +186,8 @@ import com.huaweicloud.sdk.cfw.v1.model.UpdateDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateDomainSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateObjectConfigDescRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateObjectConfigDescResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateServiceSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateServiceSetResponse;
 import com.huaweicloud.sdk.core.ClientBuilder;
@@ -2076,6 +2078,35 @@ public class CfwClient {
     public SyncInvoker<UpdateLogConfigRequest, UpdateLogConfigResponse> updateLogConfigInvoker(
         UpdateLogConfigRequest request) {
         return new SyncInvoker<>(request, CfwMeta.updateLogConfig, hcClient);
+    }
+
+    /**
+     * 编辑对象组内成员的描述信息
+     *
+     * 编辑对象组内成员的描述信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateObjectConfigDescRequest 请求对象
+     * @return UpdateObjectConfigDescResponse
+     */
+    public UpdateObjectConfigDescResponse updateObjectConfigDesc(UpdateObjectConfigDescRequest request) {
+        return hcClient.syncInvokeHttp(request, CfwMeta.updateObjectConfigDesc);
+    }
+
+    /**
+     * 编辑对象组内成员的描述信息
+     *
+     * 编辑对象组内成员的描述信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateObjectConfigDescRequest 请求对象
+     * @return SyncInvoker<UpdateObjectConfigDescRequest, UpdateObjectConfigDescResponse>
+     */
+    public SyncInvoker<UpdateObjectConfigDescRequest, UpdateObjectConfigDescResponse> updateObjectConfigDescInvoker(
+        UpdateObjectConfigDescRequest request) {
+        return new SyncInvoker<>(request, CfwMeta.updateObjectConfigDesc, hcClient);
     }
 
     /**

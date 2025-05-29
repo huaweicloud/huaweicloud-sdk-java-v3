@@ -1,6 +1,8 @@
 package com.huaweicloud.sdk.kvs.v1;
 
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
+import com.huaweicloud.sdk.kvs.v1.model.BatchGetKvRequest;
+import com.huaweicloud.sdk.kvs.v1.model.BatchGetKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.CheckHealthRequest;
@@ -173,6 +175,30 @@ public interface IKvsClient {
     * @return SyncInvoker<CheckHealthRequest, CheckHealthResponse>
     */
     public SyncInvoker<CheckHealthRequest, CheckHealthResponse> checkHealthInvoker(CheckHealthRequest request);
+
+    /**
+    * 批量读请求
+    *
+        * 批量读请求，其中可以携带一或多个表的不同kv的查询操作。
+        * 
+        * Please refer to HUAWEI cloud API Explorer for details.
+    *
+    * @param request BatchGetKvRequest 请求对象
+    * @return BatchGetKvResponse
+    */
+    public BatchGetKvResponse batchGetKv(BatchGetKvRequest request);
+
+    /**
+    * 批量读请求
+    *
+        * 批量读请求，其中可以携带一或多个表的不同kv的查询操作。
+        * 
+        * Please refer to HUAWEI cloud API Explorer for details.
+    *
+    * @param request BatchGetKvRequest 请求对象
+    * @return SyncInvoker<BatchGetKvRequest, BatchGetKvResponse>
+    */
+    public SyncInvoker<BatchGetKvRequest, BatchGetKvResponse> batchGetKvInvoker(BatchGetKvRequest request);
 
     /**
     * 批量写请求

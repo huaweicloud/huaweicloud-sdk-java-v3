@@ -174,6 +174,7 @@ import com.huaweicloud.sdk.bss.v2.model.ReclaimSubEnterpriseAmountResponse;
 import com.huaweicloud.sdk.bss.v2.model.ReclaimToPartnerAccountBalancesReq;
 import com.huaweicloud.sdk.bss.v2.model.ReclaimToPartnerAccountRequest;
 import com.huaweicloud.sdk.bss.v2.model.ReclaimToPartnerAccountResponse;
+import com.huaweicloud.sdk.bss.v2.model.RenewResourceConfigReq;
 import com.huaweicloud.sdk.bss.v2.model.RenewalResourcesReq;
 import com.huaweicloud.sdk.bss.v2.model.RenewalResourcesRequest;
 import com.huaweicloud.sdk.bss.v2.model.RenewalResourcesResponse;
@@ -185,6 +186,8 @@ import com.huaweicloud.sdk.bss.v2.model.SendSmsVerificationCodeResponse;
 import com.huaweicloud.sdk.bss.v2.model.SendVerificationCodeV2Req;
 import com.huaweicloud.sdk.bss.v2.model.SendVerificationMessageCodeRequest;
 import com.huaweicloud.sdk.bss.v2.model.SendVerificationMessageCodeResponse;
+import com.huaweicloud.sdk.bss.v2.model.SetResourcesRenewConfigRequest;
+import com.huaweicloud.sdk.bss.v2.model.SetResourcesRenewConfigResponse;
 import com.huaweicloud.sdk.bss.v2.model.ShowCustomerAccountBalancesRequest;
 import com.huaweicloud.sdk.bss.v2.model.ShowCustomerAccountBalancesResponse;
 import com.huaweicloud.sdk.bss.v2.model.ShowCustomerMonthlySumRequest;
@@ -3270,6 +3273,29 @@ public class BssMeta {
             TypeCasts.uncheckedConversion(SendVerificationCodeV2Req.class),
             f -> f.withMarshaller(SendVerificationMessageCodeRequest::getBody,
                 SendVerificationMessageCodeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SetResourcesRenewConfigRequest, SetResourcesRenewConfigResponse> setResourcesRenewConfig =
+        genForSetResourcesRenewConfig();
+
+    private static HttpRequestDef<SetResourcesRenewConfigRequest, SetResourcesRenewConfigResponse> genForSetResourcesRenewConfig() {
+        // basic
+        HttpRequestDef.Builder<SetResourcesRenewConfigRequest, SetResourcesRenewConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, SetResourcesRenewConfigRequest.class, SetResourcesRenewConfigResponse.class)
+            .withName("SetResourcesRenewConfig")
+            .withUri("/v2/orders/subscriptions/resources/renew/config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<RenewResourceConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RenewResourceConfigReq.class),
+            f -> f.withMarshaller(SetResourcesRenewConfigRequest::getBody, SetResourcesRenewConfigRequest::setBody));
 
         // response
 

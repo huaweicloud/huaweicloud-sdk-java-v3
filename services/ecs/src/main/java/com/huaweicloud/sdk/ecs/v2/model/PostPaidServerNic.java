@@ -19,6 +19,11 @@ public class PostPaidServerNic {
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "port_id")
+
+    private String portId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ip_address")
 
     private String ipAddress;
@@ -53,6 +58,23 @@ public class PostPaidServerNic {
 
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
+    }
+
+    public PostPaidServerNic withPortId(String portId) {
+        this.portId = portId;
+        return this;
+    }
+
+    /**
+     * 网卡ID，UUID格式。 当该字段不为空时，表示挂载指定的网卡。port_id和subnet_id不能同时为空。 网卡ID可以从虚拟私有云的“查询端口列表”章节查询到。 约束： 网卡状态必须为DOWN。 网卡的vpcid必须和传入的vpcid一致。 当port_id和subnet_id同时存在的时候，优先使用port_id。当选择port_id不为空时，代表此时使用的是弹性网卡，此时security_groups和ip_address等参数不生效。
+     * @return portId
+     */
+    public String getPortId() {
+        return portId;
+    }
+
+    public void setPortId(String portId) {
+        this.portId = portId;
     }
 
     public PostPaidServerNic withIpAddress(String ipAddress) {
@@ -158,15 +180,15 @@ public class PostPaidServerNic {
             return false;
         }
         PostPaidServerNic that = (PostPaidServerNic) obj;
-        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.ipAddress, that.ipAddress)
-            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.portId, that.portId)
+            && Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
             && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth)
             && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(subnetId, ipAddress, ipv6Enable, ipv6Bandwidth, allowedAddressPairs);
+        return Objects.hash(subnetId, portId, ipAddress, ipv6Enable, ipv6Bandwidth, allowedAddressPairs);
     }
 
     @Override
@@ -174,6 +196,7 @@ public class PostPaidServerNic {
         StringBuilder sb = new StringBuilder();
         sb.append("class PostPaidServerNic {\n");
         sb.append("    subnetId: ").append(toIndentedString(subnetId)).append("\n");
+        sb.append("    portId: ").append(toIndentedString(portId)).append("\n");
         sb.append("    ipAddress: ").append(toIndentedString(ipAddress)).append("\n");
         sb.append("    ipv6Enable: ").append(toIndentedString(ipv6Enable)).append("\n");
         sb.append("    ipv6Bandwidth: ").append(toIndentedString(ipv6Bandwidth)).append("\n");

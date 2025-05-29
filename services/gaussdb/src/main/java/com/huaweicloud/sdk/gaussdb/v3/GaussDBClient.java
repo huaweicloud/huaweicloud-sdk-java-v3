@@ -341,6 +341,8 @@ import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlConfigurationRequest
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlConfigurationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlInstanceSslRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlInstanceSslResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxyEipRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxyEipResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxySslRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxySslResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SyncStarRocksUsersRequest;
@@ -3886,6 +3888,35 @@ public class GaussDBClient {
     public SyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse> switchGaussMySqlInstanceSslInvoker(
         SwitchGaussMySqlInstanceSslRequest request) {
         return new SyncInvoker<>(request, GaussDBMeta.switchGaussMySqlInstanceSsl, hcClient);
+    }
+
+    /**
+     * Proxy绑定解绑弹性公网IP
+     *
+     * Proxy绑定解绑弹性公网IP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchGaussMySqlProxyEipRequest 请求对象
+     * @return SwitchGaussMySqlProxyEipResponse
+     */
+    public SwitchGaussMySqlProxyEipResponse switchGaussMySqlProxyEip(SwitchGaussMySqlProxyEipRequest request) {
+        return hcClient.syncInvokeHttp(request, GaussDBMeta.switchGaussMySqlProxyEip);
+    }
+
+    /**
+     * Proxy绑定解绑弹性公网IP
+     *
+     * Proxy绑定解绑弹性公网IP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SwitchGaussMySqlProxyEipRequest 请求对象
+     * @return SyncInvoker<SwitchGaussMySqlProxyEipRequest, SwitchGaussMySqlProxyEipResponse>
+     */
+    public SyncInvoker<SwitchGaussMySqlProxyEipRequest, SwitchGaussMySqlProxyEipResponse> switchGaussMySqlProxyEipInvoker(
+        SwitchGaussMySqlProxyEipRequest request) {
+        return new SyncInvoker<>(request, GaussDBMeta.switchGaussMySqlProxyEip, hcClient);
     }
 
     /**

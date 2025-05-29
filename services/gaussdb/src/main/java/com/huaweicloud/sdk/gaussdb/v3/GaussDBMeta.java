@@ -434,6 +434,9 @@ import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlConfigurationRequest
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlConfigurationResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlInstanceSslRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlInstanceSslResponse;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxyEipRequest;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxyEipRequestBody;
+import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxyEipResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxySslRequest;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchGaussMySqlProxySslResponse;
 import com.huaweicloud.sdk.gaussdb.v3.model.SwitchProxySSLRequest;
@@ -5053,6 +5056,48 @@ public class GaussDBMeta {
             TypeCasts.uncheckedConversion(SwitchSSLRequest.class),
             f -> f.withMarshaller(SwitchGaussMySqlInstanceSslRequest::getBody,
                 SwitchGaussMySqlInstanceSslRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<SwitchGaussMySqlProxyEipRequest, SwitchGaussMySqlProxyEipResponse> switchGaussMySqlProxyEip =
+        genForSwitchGaussMySqlProxyEip();
+
+    private static HttpRequestDef<SwitchGaussMySqlProxyEipRequest, SwitchGaussMySqlProxyEipResponse> genForSwitchGaussMySqlProxyEip() {
+        // basic
+        HttpRequestDef.Builder<SwitchGaussMySqlProxyEipRequest, SwitchGaussMySqlProxyEipResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, SwitchGaussMySqlProxyEipRequest.class, SwitchGaussMySqlProxyEipResponse.class)
+                .withName("SwitchGaussMySqlProxyEip")
+                .withUri("/v3/{project_id}/instances/{instance_id}/proxy/{proxy_id}/bind")
+                .withContentType("application/json;charset=UTF-8");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchGaussMySqlProxyEipRequest::getInstanceId,
+                SwitchGaussMySqlProxyEipRequest::setInstanceId));
+        builder.<String>withRequestField("proxy_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchGaussMySqlProxyEipRequest::getProxyId,
+                SwitchGaussMySqlProxyEipRequest::setProxyId));
+        builder.<String>withRequestField("X-Language",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(SwitchGaussMySqlProxyEipRequest::getXLanguage,
+                SwitchGaussMySqlProxyEipRequest::setXLanguage));
+        builder.<SwitchGaussMySqlProxyEipRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(SwitchGaussMySqlProxyEipRequestBody.class),
+            f -> f.withMarshaller(SwitchGaussMySqlProxyEipRequest::getBody, SwitchGaussMySqlProxyEipRequest::setBody));
 
         // response
 

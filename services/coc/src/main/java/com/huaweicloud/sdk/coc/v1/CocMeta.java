@@ -72,8 +72,6 @@ import com.huaweicloud.sdk.coc.v1.model.HandleExternalIncidentRequest;
 import com.huaweicloud.sdk.coc.v1.model.InstancesBatchesMode;
 import com.huaweicloud.sdk.coc.v1.model.JobScriptAnalyzeRequest;
 import com.huaweicloud.sdk.coc.v1.model.JobScriptOrderOperationBody;
-import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesRequest;
-import com.huaweicloud.sdk.coc.v1.model.ListAlarmHandleHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationModelRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationModelResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListApplicationsRequest;
@@ -81,8 +79,6 @@ import com.huaweicloud.sdk.coc.v1.model.ListApplicationsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsExternalResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListAuthorizableTicketsReq;
-import com.huaweicloud.sdk.coc.v1.model.ListCceCompliantRequest;
-import com.huaweicloud.sdk.coc.v1.model.ListCceCompliantResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListCocTicketOperationHistoriesResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListDocumentAtomicsRequest;
@@ -99,12 +95,8 @@ import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstanceCompliantResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListInstancesBatchResponse;
-import com.huaweicloud.sdk.coc.v1.model.ListInterruptRecordsRequest;
-import com.huaweicloud.sdk.coc.v1.model.ListInterruptRecordsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListMultiCloudResourcesResponse;
-import com.huaweicloud.sdk.coc.v1.model.ListPersonnelRequest;
-import com.huaweicloud.sdk.coc.v1.model.ListPersonnelResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ListPublicScriptsResponse;
 import com.huaweicloud.sdk.coc.v1.model.ListResourceRequest;
@@ -133,28 +125,14 @@ import com.huaweicloud.sdk.coc.v1.model.OperateScriptJobResponse;
 import com.huaweicloud.sdk.coc.v1.model.ReportCustomEventRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.ScheduledTaskRequestBody;
 import com.huaweicloud.sdk.coc.v1.model.ScriptExecuteModel;
-import com.huaweicloud.sdk.coc.v1.model.ShowAccountRequest;
-import com.huaweicloud.sdk.coc.v1.model.ShowAccountResponse;
-import com.huaweicloud.sdk.coc.v1.model.ShowAlarmRequest;
-import com.huaweicloud.sdk.coc.v1.model.ShowAlarmResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIncidentDetailResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowCocIssuesDetailResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowInstancePatchItemsResponse;
-import com.huaweicloud.sdk.coc.v1.model.ShowPatchBaselineRequest;
-import com.huaweicloud.sdk.coc.v1.model.ShowPatchBaselineResponse;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskRequest;
 import com.huaweicloud.sdk.coc.v1.model.ShowScheduledTaskResponse;
-import com.huaweicloud.sdk.coc.v1.model.ShowSlaCustomizedTemplateRequest;
-import com.huaweicloud.sdk.coc.v1.model.ShowSlaCustomizedTemplateResponse;
-import com.huaweicloud.sdk.coc.v1.model.ShowSlaOrderRequest;
-import com.huaweicloud.sdk.coc.v1.model.ShowSlaOrderResponse;
-import com.huaweicloud.sdk.coc.v1.model.ShowSloDetailRequest;
-import com.huaweicloud.sdk.coc.v1.model.ShowSloDetailResponse;
-import com.huaweicloud.sdk.coc.v1.model.SyncAddPersonnelRequest;
-import com.huaweicloud.sdk.coc.v1.model.SyncAddPersonnelResponse;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceReq;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceRequest;
 import com.huaweicloud.sdk.coc.v1.model.SyncResourceResponse;
@@ -179,107 +157,6 @@ import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class CocMeta {
-
-    public static final HttpRequestDef<ShowAccountRequest, ShowAccountResponse> showAccount = genForShowAccount();
-
-    private static HttpRequestDef<ShowAccountRequest, ShowAccountResponse> genForShowAccount() {
-        // basic
-        HttpRequestDef.Builder<ShowAccountRequest, ShowAccountResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAccountRequest.class, ShowAccountResponse.class)
-                .withName("ShowAccount")
-                .withUri("/v1/host/accounts")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAccountRequest::getName, ShowAccountRequest::setName));
-        builder.<String>withRequestField("delegator",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAccountRequest::getDelegator, ShowAccountRequest::setDelegator));
-        builder.<String>withRequestField("status",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAccountRequest::getStatus, ShowAccountRequest::setStatus));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAccountRequest::getOffset, ShowAccountRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowAccountRequest::getLimit, ShowAccountRequest::setLimit));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse> listAlarmHandleHistories =
-        genForListAlarmHandleHistories();
-
-    private static HttpRequestDef<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse> genForListAlarmHandleHistories() {
-        // basic
-        HttpRequestDef.Builder<ListAlarmHandleHistoriesRequest, ListAlarmHandleHistoriesResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET, ListAlarmHandleHistoriesRequest.class, ListAlarmHandleHistoriesResponse.class)
-                .withName("ListAlarmHandleHistories")
-                .withUri("/v1/alarm-mgmt/alarm/{alarm_id}/handle-histories")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("alarm_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListAlarmHandleHistoriesRequest::getAlarmId,
-                ListAlarmHandleHistoriesRequest::setAlarmId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAlarmHandleHistoriesRequest::getOffset,
-                ListAlarmHandleHistoriesRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListAlarmHandleHistoriesRequest::getLimit,
-                ListAlarmHandleHistoriesRequest::setLimit));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowAlarmRequest, ShowAlarmResponse> showAlarm = genForShowAlarm();
-
-    private static HttpRequestDef<ShowAlarmRequest, ShowAlarmResponse> genForShowAlarm() {
-        // basic
-        HttpRequestDef.Builder<ShowAlarmRequest, ShowAlarmResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowAlarmRequest.class, ShowAlarmResponse.class)
-                .withName("ShowAlarm")
-                .withUri("/v1/alarm-mgmt/alarm/{alarm_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("alarm_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowAlarmRequest::getAlarmId, ShowAlarmRequest::setAlarmId));
-
-        // response
-
-        return builder.build();
-    }
 
     public static final HttpRequestDef<ListApplicationsRequest, ListApplicationsResponse> listApplications =
         genForListApplications();
@@ -395,57 +272,6 @@ public class CocMeta {
             TypeCasts.uncheckedConversion(BatchCreateApplicationViewRequestBody.class),
             f -> f.withMarshaller(BatchCreateApplicationViewRequest::getBody,
                 BatchCreateApplicationViewRequest::setBody));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowPatchBaselineRequest, ShowPatchBaselineResponse> showPatchBaseline =
-        genForShowPatchBaseline();
-
-    private static HttpRequestDef<ShowPatchBaselineRequest, ShowPatchBaselineResponse> genForShowPatchBaseline() {
-        // basic
-        HttpRequestDef.Builder<ShowPatchBaselineRequest, ShowPatchBaselineResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowPatchBaselineRequest.class, ShowPatchBaselineResponse.class)
-                .withName("ShowPatchBaseline")
-                .withUri("/v1/patch/baseline/{baseline_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("baseline_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowPatchBaselineRequest::getBaselineId, ShowPatchBaselineRequest::setBaselineId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListCceCompliantRequest, ListCceCompliantResponse> listCceCompliant =
-        genForListCceCompliant();
-
-    private static HttpRequestDef<ListCceCompliantRequest, ListCceCompliantResponse> genForListCceCompliant() {
-        // basic
-        HttpRequestDef.Builder<ListCceCompliantRequest, ListCceCompliantResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListCceCompliantRequest.class, ListCceCompliantResponse.class)
-                .withName("ListCceCompliant")
-                .withUri("/v1/patch/cce/compliant")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCceCompliantRequest::getOffset, ListCceCompliantRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListCceCompliantRequest::getLimit, ListCceCompliantRequest::setLimit));
 
         // response
 
@@ -1408,62 +1234,6 @@ public class CocMeta {
             TypeCasts.uncheckedConversion(List.class),
             f -> f.withMarshaller(ListMultiCloudResourcesRequest::getRegionIdList,
                 ListMultiCloudResourcesRequest::setRegionIdList));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListPersonnelRequest, ListPersonnelResponse> listPersonnel =
-        genForListPersonnel();
-
-    private static HttpRequestDef<ListPersonnelRequest, ListPersonnelResponse> genForListPersonnel() {
-        // basic
-        HttpRequestDef.Builder<ListPersonnelRequest, ListPersonnelResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListPersonnelRequest.class, ListPersonnelResponse.class)
-                .withName("ListPersonnel")
-                .withUri("/v1/personnel")
-                .withContentType("application/json");
-
-        // requests
-        builder.<Boolean>withRequestField("has_mobile",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Boolean.class),
-            f -> f.withMarshaller(ListPersonnelRequest::getHasMobile, ListPersonnelRequest::setHasMobile));
-        builder.<String>withRequestField("name",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListPersonnelRequest::getName, ListPersonnelRequest::setName));
-        builder.<Long>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListPersonnelRequest::getOffset, ListPersonnelRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListPersonnelRequest::getLimit, ListPersonnelRequest::setLimit));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<SyncAddPersonnelRequest, SyncAddPersonnelResponse> syncAddPersonnel =
-        genForSyncAddPersonnel();
-
-    private static HttpRequestDef<SyncAddPersonnelRequest, SyncAddPersonnelResponse> genForSyncAddPersonnel() {
-        // basic
-        HttpRequestDef.Builder<SyncAddPersonnelRequest, SyncAddPersonnelResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, SyncAddPersonnelRequest.class, SyncAddPersonnelResponse.class)
-                .withName("SyncAddPersonnel")
-                .withUri("/v1/sync/{domain_id}/personnels")
-                .withContentType("application/json");
-
-        // requests
 
         // response
 
@@ -2923,132 +2693,6 @@ public class CocMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPublicScriptsRequest::getXUserProfile,
                 ListPublicScriptsRequest::setXUserProfile));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowSlaCustomizedTemplateRequest, ShowSlaCustomizedTemplateResponse> showSlaCustomizedTemplate =
-        genForShowSlaCustomizedTemplate();
-
-    private static HttpRequestDef<ShowSlaCustomizedTemplateRequest, ShowSlaCustomizedTemplateResponse> genForShowSlaCustomizedTemplate() {
-        // basic
-        HttpRequestDef.Builder<ShowSlaCustomizedTemplateRequest, ShowSlaCustomizedTemplateResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowSlaCustomizedTemplateRequest.class,
-                    ShowSlaCustomizedTemplateResponse.class)
-                .withName("ShowSlaCustomizedTemplate")
-                .withUri("/v1/sla-mgmt/customized-template/{template_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("template_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSlaCustomizedTemplateRequest::getTemplateId,
-                ShowSlaCustomizedTemplateRequest::setTemplateId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowSlaOrderRequest, ShowSlaOrderResponse> showSlaOrder = genForShowSlaOrder();
-
-    private static HttpRequestDef<ShowSlaOrderRequest, ShowSlaOrderResponse> genForShowSlaOrder() {
-        // basic
-        HttpRequestDef.Builder<ShowSlaOrderRequest, ShowSlaOrderResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowSlaOrderRequest.class, ShowSlaOrderResponse.class)
-                .withName("ShowSlaOrder")
-                .withUri("/v1/sla-mgmt/orders/{order_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("order_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSlaOrderRequest::getOrderId, ShowSlaOrderRequest::setOrderId));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ListInterruptRecordsRequest, ListInterruptRecordsResponse> listInterruptRecords =
-        genForListInterruptRecords();
-
-    private static HttpRequestDef<ListInterruptRecordsRequest, ListInterruptRecordsResponse> genForListInterruptRecords() {
-        // basic
-        HttpRequestDef.Builder<ListInterruptRecordsRequest, ListInterruptRecordsResponse> builder = HttpRequestDef
-            .builder(HttpMethod.GET, ListInterruptRecordsRequest.class, ListInterruptRecordsResponse.class)
-            .withName("ListInterruptRecords")
-            .withUri("/v1/slo-mgmt/slos/{slo_id}/interrupt-records")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("slo_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInterruptRecordsRequest::getSloId, ListInterruptRecordsRequest::setSloId));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInterruptRecordsRequest::getOffset, ListInterruptRecordsRequest::setOffset));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ListInterruptRecordsRequest::getLimit, ListInterruptRecordsRequest::setLimit));
-        builder.<String>withRequestField("source_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInterruptRecordsRequest::getSourceId, ListInterruptRecordsRequest::setSourceId));
-        builder.<String>withRequestField("region_id",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ListInterruptRecordsRequest::getRegionId, ListInterruptRecordsRequest::setRegionId));
-        builder.<Long>withRequestField("start_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListInterruptRecordsRequest::getStartTime,
-                ListInterruptRecordsRequest::setStartTime));
-        builder.<Long>withRequestField("end_time",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Long.class),
-            f -> f.withMarshaller(ListInterruptRecordsRequest::getEndTime, ListInterruptRecordsRequest::setEndTime));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ShowSloDetailRequest, ShowSloDetailResponse> showSloDetail =
-        genForShowSloDetail();
-
-    private static HttpRequestDef<ShowSloDetailRequest, ShowSloDetailResponse> genForShowSloDetail() {
-        // basic
-        HttpRequestDef.Builder<ShowSloDetailRequest, ShowSloDetailResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowSloDetailRequest.class, ShowSloDetailResponse.class)
-                .withName("ShowSloDetail")
-                .withUri("/v1/slo-mgmt/slos/{slo_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("slo_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowSloDetailRequest::getSloId, ShowSloDetailRequest::setSloId));
 
         // response
 

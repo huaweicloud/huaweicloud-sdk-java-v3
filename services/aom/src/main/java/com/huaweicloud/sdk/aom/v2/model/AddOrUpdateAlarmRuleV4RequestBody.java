@@ -126,6 +126,11 @@ public class AddOrUpdateAlarmRuleV4RequestBody {
 
     private String promInstanceId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "alias")
+
+    private String alias;
+
     public AddOrUpdateAlarmRuleV4RequestBody withAlarmNotifications(AlarmNotification alarmNotifications) {
         this.alarmNotifications = alarmNotifications;
         return this;
@@ -290,6 +295,23 @@ public class AddOrUpdateAlarmRuleV4RequestBody {
         this.promInstanceId = promInstanceId;
     }
 
+    public AddOrUpdateAlarmRuleV4RequestBody withAlias(String alias) {
+        this.alias = alias;
+        return this;
+    }
+
+    /**
+     * 告警规则别名。最多可输入256个字符，只能包含中文、字母、数字、特殊字符（_-【】），开头、结尾不允许输入中划线、下划线。
+     * @return alias
+     */
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -306,7 +328,7 @@ public class AddOrUpdateAlarmRuleV4RequestBody {
             && Objects.equals(this.alarmRuleType, that.alarmRuleType)
             && Objects.equals(this.eventAlarmSpec, that.eventAlarmSpec)
             && Objects.equals(this.metricAlarmSpec, that.metricAlarmSpec)
-            && Objects.equals(this.promInstanceId, that.promInstanceId);
+            && Objects.equals(this.promInstanceId, that.promInstanceId) && Objects.equals(this.alias, that.alias);
     }
 
     @Override
@@ -318,7 +340,8 @@ public class AddOrUpdateAlarmRuleV4RequestBody {
             alarmRuleType,
             eventAlarmSpec,
             metricAlarmSpec,
-            promInstanceId);
+            promInstanceId,
+            alias);
     }
 
     @Override
@@ -333,6 +356,7 @@ public class AddOrUpdateAlarmRuleV4RequestBody {
         sb.append("    eventAlarmSpec: ").append(toIndentedString(eventAlarmSpec)).append("\n");
         sb.append("    metricAlarmSpec: ").append(toIndentedString(metricAlarmSpec)).append("\n");
         sb.append("    promInstanceId: ").append(toIndentedString(promInstanceId)).append("\n");
+        sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

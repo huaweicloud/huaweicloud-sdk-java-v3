@@ -82,8 +82,12 @@ import com.huaweicloud.sdk.bssintl.v2.model.RenewalResourcesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.RenewalResourcesResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.SendVerificationMessageCodeRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.SendVerificationMessageCodeResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.SetResourcesRenewConfigRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.SetResourcesRenewConfigResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerAccountBalancesResponse;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerMonthlySumRequest;
+import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerMonthlySumResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerOrderDetailsRequest;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowCustomerOrderDetailsResponse;
 import com.huaweicloud.sdk.bssintl.v2.model.ShowPartnerConsumptionQuotaRequest;
@@ -439,7 +443,7 @@ public class BssintlClient {
     }
 
     /**
-     * 查询使用量单位进制
+     * 查询度量单位进制
      *
      * 功能描述：伙伴在伙伴销售平台上查询使用量单位的进制转换信息，用于不同度量单位之间的转换。
      * 
@@ -453,7 +457,7 @@ public class BssintlClient {
     }
 
     /**
-     * 查询使用量单位进制
+     * 查询度量单位进制
      *
      * 功能描述：伙伴在伙伴销售平台上查询使用量单位的进制转换信息，用于不同度量单位之间的转换。
      * 
@@ -831,6 +835,7 @@ public class BssintlClient {
      * @param request ListMonthlyExpendituresRequest 请求对象
      * @return ListMonthlyExpendituresResponse
      */
+    @Deprecated
     public ListMonthlyExpendituresResponse listMonthlyExpenditures(ListMonthlyExpendituresRequest request) {
         return hcClient.syncInvokeHttp(request, BssintlMeta.listMonthlyExpenditures);
     }
@@ -845,6 +850,7 @@ public class BssintlClient {
      * @param request ListMonthlyExpendituresRequest 请求对象
      * @return SyncInvoker<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse>
      */
+    @Deprecated
     public SyncInvoker<ListMonthlyExpendituresRequest, ListMonthlyExpendituresResponse> listMonthlyExpendituresInvoker(
         ListMonthlyExpendituresRequest request) {
         return new SyncInvoker<>(request, BssintlMeta.listMonthlyExpenditures, hcClient);
@@ -1315,6 +1321,35 @@ public class BssintlClient {
     }
 
     /**
+     * 设置包年/包月资源自动续费扣款日和续费后资源统一到期日
+     *
+     * 功能描述：客户的包年/包月资源可进行设置自动续费扣款日和续费后统一到期日
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetResourcesRenewConfigRequest 请求对象
+     * @return SetResourcesRenewConfigResponse
+     */
+    public SetResourcesRenewConfigResponse setResourcesRenewConfig(SetResourcesRenewConfigRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.setResourcesRenewConfig);
+    }
+
+    /**
+     * 设置包年/包月资源自动续费扣款日和续费后资源统一到期日
+     *
+     * 功能描述：客户的包年/包月资源可进行设置自动续费扣款日和续费后统一到期日
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request SetResourcesRenewConfigRequest 请求对象
+     * @return SyncInvoker<SetResourcesRenewConfigRequest, SetResourcesRenewConfigResponse>
+     */
+    public SyncInvoker<SetResourcesRenewConfigRequest, SetResourcesRenewConfigResponse> setResourcesRenewConfigInvoker(
+        SetResourcesRenewConfigRequest request) {
+        return new SyncInvoker<>(request, BssintlMeta.setResourcesRenewConfig, hcClient);
+    }
+
+    /**
      * 查询账户余额
      *
      * 功能描述：客户可以查询自身的账户余额。
@@ -1341,6 +1376,39 @@ public class BssintlClient {
     public SyncInvoker<ShowCustomerAccountBalancesRequest, ShowCustomerAccountBalancesResponse> showCustomerAccountBalancesInvoker(
         ShowCustomerAccountBalancesRequest request) {
         return new SyncInvoker<>(request, BssintlMeta.showCustomerAccountBalances, hcClient);
+    }
+
+    /**
+     * 查询汇总账单
+     *
+     * 客户在自建平台查询自身的消费汇总账单，此账单按月汇总消费数据。
+     * 
+     * 客户登录费用中心查询自身的消费汇总账单请参见[这里](https://support.huaweicloud.com/intl/zh-cn/usermanual-billing/bills-topic_0000108.html)的“查看汇总”。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomerMonthlySumRequest 请求对象
+     * @return ShowCustomerMonthlySumResponse
+     */
+    public ShowCustomerMonthlySumResponse showCustomerMonthlySum(ShowCustomerMonthlySumRequest request) {
+        return hcClient.syncInvokeHttp(request, BssintlMeta.showCustomerMonthlySum);
+    }
+
+    /**
+     * 查询汇总账单
+     *
+     * 客户在自建平台查询自身的消费汇总账单，此账单按月汇总消费数据。
+     * 
+     * 客户登录费用中心查询自身的消费汇总账单请参见[这里](https://support.huaweicloud.com/intl/zh-cn/usermanual-billing/bills-topic_0000108.html)的“查看汇总”。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowCustomerMonthlySumRequest 请求对象
+     * @return SyncInvoker<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse>
+     */
+    public SyncInvoker<ShowCustomerMonthlySumRequest, ShowCustomerMonthlySumResponse> showCustomerMonthlySumInvoker(
+        ShowCustomerMonthlySumRequest request) {
+        return new SyncInvoker<>(request, BssintlMeta.showCustomerMonthlySum, hcClient);
     }
 
     /**

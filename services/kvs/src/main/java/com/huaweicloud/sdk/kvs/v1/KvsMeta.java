@@ -5,6 +5,8 @@ import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
+import com.huaweicloud.sdk.kvs.v1.model.BatchGetKvRequest;
+import com.huaweicloud.sdk.kvs.v1.model.BatchGetKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvRequest;
 import com.huaweicloud.sdk.kvs.v1.model.BatchWriteKvResponse;
 import com.huaweicloud.sdk.kvs.v1.model.CheckHealthRequest;
@@ -152,6 +154,28 @@ public class KvsMeta {
                 .withContentType("application/bson");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchGetKvRequest, BatchGetKvResponse> batchGetKv = genForBatchGetKv();
+
+    private static HttpRequestDef<BatchGetKvRequest, BatchGetKvResponse> genForBatchGetKv() {
+        // basic
+        HttpRequestDef.Builder<BatchGetKvRequest, BatchGetKvResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, BatchGetKvRequest.class, BatchGetKvResponse.class)
+                .withName("BatchGetKv")
+                .withUri("/v1/batch-get-kv")
+                .withContentType("application/bson");
+
+        // requests
+        builder.<String>withRequestField("store_name",
+            LocationType.Cname,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchGetKvRequest::getStoreName, BatchGetKvRequest::setStoreName));
 
         // response
 

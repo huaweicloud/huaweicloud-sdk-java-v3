@@ -61,6 +61,8 @@ import com.huaweicloud.sdk.dds.v3.model.DeleteLtsConfigRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteLtsConfigResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.dds.v3.model.DeleteMongosNodeRequest;
+import com.huaweicloud.sdk.dds.v3.model.DeleteMongosNodeResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteReadonlyNodeRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteReadonlyNodeResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteSessionRequest;
@@ -1096,6 +1098,35 @@ public class DdsClient {
     public SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackupInvoker(
         DeleteManualBackupRequest request) {
         return new SyncInvoker<>(request, DdsMeta.deleteManualBackup, hcClient);
+    }
+
+    /**
+     * 删除mongos节点
+     *
+     * 当集群实例需要缩减mongos节点时，需要调用此API。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMongosNodeRequest 请求对象
+     * @return DeleteMongosNodeResponse
+     */
+    public DeleteMongosNodeResponse deleteMongosNode(DeleteMongosNodeRequest request) {
+        return hcClient.syncInvokeHttp(request, DdsMeta.deleteMongosNode);
+    }
+
+    /**
+     * 删除mongos节点
+     *
+     * 当集群实例需要缩减mongos节点时，需要调用此API。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteMongosNodeRequest 请求对象
+     * @return SyncInvoker<DeleteMongosNodeRequest, DeleteMongosNodeResponse>
+     */
+    public SyncInvoker<DeleteMongosNodeRequest, DeleteMongosNodeResponse> deleteMongosNodeInvoker(
+        DeleteMongosNodeRequest request) {
+        return new SyncInvoker<>(request, DdsMeta.deleteMongosNode, hcClient);
     }
 
     /**

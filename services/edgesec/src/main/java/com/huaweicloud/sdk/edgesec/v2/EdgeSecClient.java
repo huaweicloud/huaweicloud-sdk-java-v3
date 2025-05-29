@@ -133,7 +133,8 @@ public class EdgeSecClient {
     }
 
     public static ClientBuilder<EdgeSecClient> newBuilder() {
-        ClientBuilder<EdgeSecClient> clientBuilder = new ClientBuilder<>(EdgeSecClient::new);
+        ClientBuilder<EdgeSecClient> clientBuilder =
+            new ClientBuilder<>(EdgeSecClient::new, "GlobalCredentials,BasicCredentials");
         return clientBuilder;
     }
 

@@ -177,6 +177,7 @@ import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetDetailResponse;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetsRequest;
 import com.huaweicloud.sdk.cfw.v1.model.ListServiceSetsResponse;
 import com.huaweicloud.sdk.cfw.v1.model.LogConfigDto;
+import com.huaweicloud.sdk.cfw.v1.model.ObjectInfoDto;
 import com.huaweicloud.sdk.cfw.v1.model.OrderRuleAclDto;
 import com.huaweicloud.sdk.cfw.v1.model.QueryFireWallInstanceDto;
 import com.huaweicloud.sdk.cfw.v1.model.SaveTagsRequest;
@@ -225,6 +226,8 @@ import com.huaweicloud.sdk.cfw.v1.model.UpdateDomainSetRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateDomainSetResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigRequest;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateLogConfigResponse;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateObjectConfigDescRequest;
+import com.huaweicloud.sdk.cfw.v1.model.UpdateObjectConfigDescResponse;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateRuleAclDto;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateSecurityPolciesActionDto;
 import com.huaweicloud.sdk.cfw.v1.model.UpdateServiceSetRequest;
@@ -3034,6 +3037,29 @@ public class CfwMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(LogConfigDto.class),
             f -> f.withMarshaller(UpdateLogConfigRequest::getBody, UpdateLogConfigRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateObjectConfigDescRequest, UpdateObjectConfigDescResponse> updateObjectConfigDesc =
+        genForUpdateObjectConfigDesc();
+
+    private static HttpRequestDef<UpdateObjectConfigDescRequest, UpdateObjectConfigDescResponse> genForUpdateObjectConfigDesc() {
+        // basic
+        HttpRequestDef.Builder<UpdateObjectConfigDescRequest, UpdateObjectConfigDescResponse> builder = HttpRequestDef
+            .builder(HttpMethod.PUT, UpdateObjectConfigDescRequest.class, UpdateObjectConfigDescResponse.class)
+            .withName("UpdateObjectConfigDesc")
+            .withUri("/v1/{project_id}/config/object/description")
+            .withContentType("application/json");
+
+        // requests
+        builder.<ObjectInfoDto>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ObjectInfoDto.class),
+            f -> f.withMarshaller(UpdateObjectConfigDescRequest::getBody, UpdateObjectConfigDescRequest::setBody));
 
         // response
 

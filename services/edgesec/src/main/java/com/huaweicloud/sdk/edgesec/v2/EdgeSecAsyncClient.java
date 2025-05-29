@@ -135,7 +135,8 @@ public class EdgeSecAsyncClient {
     }
 
     public static ClientBuilder<EdgeSecAsyncClient> newBuilder() {
-        ClientBuilder<EdgeSecAsyncClient> clientBuilder = new ClientBuilder<>(EdgeSecAsyncClient::new);
+        ClientBuilder<EdgeSecAsyncClient> clientBuilder =
+            new ClientBuilder<>(EdgeSecAsyncClient::new, "GlobalCredentials,BasicCredentials");
         return clientBuilder;
     }
 

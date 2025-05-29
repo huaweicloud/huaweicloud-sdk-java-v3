@@ -360,9 +360,9 @@ public class ServerListDetails {
     private Fault fault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "in_recycle_in")
+    @JsonProperty(value = "in_recycle_bin")
 
-    private Boolean inRecycleIn;
+    private Boolean inRecycleBin;
 
     public ServerListDetails withId(UUID id) {
         this.id = id;
@@ -586,21 +586,21 @@ public class ServerListDetails {
         this.fault = fault;
     }
 
-    public ServerListDetails withInRecycleIn(Boolean inRecycleIn) {
-        this.inRecycleIn = inRecycleIn;
+    public ServerListDetails withInRecycleBin(Boolean inRecycleBin) {
+        this.inRecycleBin = inRecycleBin;
         return this;
     }
 
     /**
      * 裸机是否在回收站中
-     * @return inRecycleIn
+     * @return inRecycleBin
      */
-    public Boolean getInRecycleIn() {
-        return inRecycleIn;
+    public Boolean getInRecycleBin() {
+        return inRecycleBin;
     }
 
-    public void setInRecycleIn(Boolean inRecycleIn) {
-        this.inRecycleIn = inRecycleIn;
+    public void setInRecycleBin(Boolean inRecycleBin) {
+        this.inRecycleBin = inRecycleBin;
     }
 
     @Override
@@ -618,7 +618,7 @@ public class ServerListDetails {
             && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.status, that.status)
             && Objects.equals(this.taskState, that.taskState) && Objects.equals(this.vmState, that.vmState)
             && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.fault, that.fault)
-            && Objects.equals(this.inRecycleIn, that.inRecycleIn);
+            && Objects.equals(this.inRecycleBin, that.inRecycleBin);
     }
 
     @Override
@@ -635,7 +635,7 @@ public class ServerListDetails {
             vmState,
             availabilityZone,
             fault,
-            inRecycleIn);
+            inRecycleBin);
     }
 
     @Override
@@ -654,7 +654,7 @@ public class ServerListDetails {
         sb.append("    vmState: ").append(toIndentedString(vmState)).append("\n");
         sb.append("    availabilityZone: ").append(toIndentedString(availabilityZone)).append("\n");
         sb.append("    fault: ").append(toIndentedString(fault)).append("\n");
-        sb.append("    inRecycleIn: ").append(toIndentedString(inRecycleIn)).append("\n");
+        sb.append("    inRecycleBin: ").append(toIndentedString(inRecycleBin)).append("\n");
         sb.append("}");
         return sb.toString();
     }

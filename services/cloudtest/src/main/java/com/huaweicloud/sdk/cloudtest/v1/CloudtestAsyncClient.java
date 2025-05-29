@@ -144,6 +144,10 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTaskCaseOverstockUsingReque
 import com.huaweicloud.sdk.cloudtest.v1.model.ListSubTaskCaseOverstockUsingResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskAssignCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskAssignCasesResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskResultsDetailRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskResultsDetailResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskResultsRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskResultsResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskTestCasesRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTaskTestCasesResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ListTasksRequest;
@@ -1949,6 +1953,36 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ListTaskAssignCasesRequest, ListTaskAssignCasesResponse> listTaskAssignCasesAsyncInvoker(
         ListTaskAssignCasesRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.listTaskAssignCases, hcClient);
+    }
+
+    /**
+     * 查询单次测试套执行的详细结果
+     *
+     * 查询单次测试套执行的详细结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTaskResultsDetailRequest 请求对象
+     * @return CompletableFuture<ListTaskResultsDetailResponse>
+     */
+    public CompletableFuture<ListTaskResultsDetailResponse> listTaskResultsDetailAsync(
+        ListTaskResultsDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listTaskResultsDetail);
+    }
+
+    /**
+     * 查询单次测试套执行的详细结果
+     *
+     * 查询单次测试套执行的详细结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTaskResultsDetailRequest 请求对象
+     * @return AsyncInvoker<ListTaskResultsDetailRequest, ListTaskResultsDetailResponse>
+     */
+    public AsyncInvoker<ListTaskResultsDetailRequest, ListTaskResultsDetailResponse> listTaskResultsDetailAsyncInvoker(
+        ListTaskResultsDetailRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listTaskResultsDetail, hcClient);
     }
 
     /**
@@ -4992,6 +5026,35 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<ListTestcasePlansRequest, ListTestcasePlansResponse> listTestcasePlansAsyncInvoker(
         ListTestcasePlansRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.listTestcasePlans, hcClient);
+    }
+
+    /**
+     * 根据任务uri查询测试任务执行历史
+     *
+     * 根据任务uri查询测试任务执行历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTaskResultsRequest 请求对象
+     * @return CompletableFuture<ListTaskResultsResponse>
+     */
+    public CompletableFuture<ListTaskResultsResponse> listTaskResultsAsync(ListTaskResultsRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.listTaskResults);
+    }
+
+    /**
+     * 根据任务uri查询测试任务执行历史
+     *
+     * 根据任务uri查询测试任务执行历史
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListTaskResultsRequest 请求对象
+     * @return AsyncInvoker<ListTaskResultsRequest, ListTaskResultsResponse>
+     */
+    public AsyncInvoker<ListTaskResultsRequest, ListTaskResultsResponse> listTaskResultsAsyncInvoker(
+        ListTaskResultsRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.listTaskResults, hcClient);
     }
 
 }

@@ -20,6 +20,11 @@ public class ClusterLogConfigLogConfigs {
 
     private Boolean enable;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "type")
+
+    private String type;
+
     public ClusterLogConfigLogConfigs withName(String name) {
         this.name = name;
         return this;
@@ -54,6 +59,23 @@ public class ClusterLogConfigLogConfigs {
         this.enable = enable;
     }
 
+    public ClusterLogConfigLogConfigs withType(String type) {
+        this.type = type;
+        return this;
+    }
+
+    /**
+     * 组件类型
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -63,12 +85,13 @@ public class ClusterLogConfigLogConfigs {
             return false;
         }
         ClusterLogConfigLogConfigs that = (ClusterLogConfigLogConfigs) obj;
-        return Objects.equals(this.name, that.name) && Objects.equals(this.enable, that.enable);
+        return Objects.equals(this.name, that.name) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, enable);
+        return Objects.hash(name, enable, type);
     }
 
     @Override
@@ -77,6 +100,7 @@ public class ClusterLogConfigLogConfigs {
         sb.append("class ClusterLogConfigLogConfigs {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();
     }

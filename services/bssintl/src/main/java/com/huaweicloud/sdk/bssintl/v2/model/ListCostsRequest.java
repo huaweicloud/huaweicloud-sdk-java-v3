@@ -27,7 +27,7 @@ public class ListCostsRequest {
     }
 
     /**
-     * 语言。中文：zh_CN英文：en_US。缺省为zh_CN。
+     * 语言，字段预留。默认zh_cn，枚举：zh_cn：中文 en_us：英文
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

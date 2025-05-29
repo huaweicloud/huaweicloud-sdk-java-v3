@@ -86,6 +86,9 @@ import com.huaweicloud.sdk.dds.v3.model.DeleteLtsConfigRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.DeleteLtsConfigResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteManualBackupRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteManualBackupResponse;
+import com.huaweicloud.sdk.dds.v3.model.DeleteMongosNodeRequest;
+import com.huaweicloud.sdk.dds.v3.model.DeleteMongosNodeRequestBody;
+import com.huaweicloud.sdk.dds.v3.model.DeleteMongosNodeResponse;
 import com.huaweicloud.sdk.dds.v3.model.DeleteReadonlyNodeRequest;
 import com.huaweicloud.sdk.dds.v3.model.DeleteReadonlyNodeRequestBody;
 import com.huaweicloud.sdk.dds.v3.model.DeleteReadonlyNodeResponse;
@@ -1078,6 +1081,34 @@ public class DdsMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteManualBackupRequest::getBackupId, DeleteManualBackupRequest::setBackupId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteMongosNodeRequest, DeleteMongosNodeResponse> deleteMongosNode =
+        genForDeleteMongosNode();
+
+    private static HttpRequestDef<DeleteMongosNodeRequest, DeleteMongosNodeResponse> genForDeleteMongosNode() {
+        // basic
+        HttpRequestDef.Builder<DeleteMongosNodeRequest, DeleteMongosNodeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteMongosNodeRequest.class, DeleteMongosNodeResponse.class)
+                .withName("DeleteMongosNode")
+                .withUri("/v3/{project_id}/instances/{instance_id}/mongos-node")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteMongosNodeRequest::getInstanceId, DeleteMongosNodeRequest::setInstanceId));
+        builder.<DeleteMongosNodeRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(DeleteMongosNodeRequestBody.class),
+            f -> f.withMarshaller(DeleteMongosNodeRequest::getBody, DeleteMongosNodeRequest::setBody));
 
         // response
 

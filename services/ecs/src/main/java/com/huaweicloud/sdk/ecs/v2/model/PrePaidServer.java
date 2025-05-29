@@ -135,6 +135,11 @@ public class PrePaidServer {
 
     private CpuOptions cpuOptions;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "serial_console_options")
+
+    private SerialConsoleOptions serialConsoleOptions;
+
     public PrePaidServer withAutoTerminateTime(String autoTerminateTime) {
         this.autoTerminateTime = autoTerminateTime;
         return this;
@@ -686,6 +691,32 @@ public class PrePaidServer {
         this.cpuOptions = cpuOptions;
     }
 
+    public PrePaidServer withSerialConsoleOptions(SerialConsoleOptions serialConsoleOptions) {
+        this.serialConsoleOptions = serialConsoleOptions;
+        return this;
+    }
+
+    public PrePaidServer withSerialConsoleOptions(Consumer<SerialConsoleOptions> serialConsoleOptionsSetter) {
+        if (this.serialConsoleOptions == null) {
+            this.serialConsoleOptions = new SerialConsoleOptions();
+            serialConsoleOptionsSetter.accept(this.serialConsoleOptions);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get serialConsoleOptions
+     * @return serialConsoleOptions
+     */
+    public SerialConsoleOptions getSerialConsoleOptions() {
+        return serialConsoleOptions;
+    }
+
+    public void setSerialConsoleOptions(SerialConsoleOptions serialConsoleOptions) {
+        this.serialConsoleOptions = serialConsoleOptions;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -709,7 +740,8 @@ public class PrePaidServer {
             && Objects.equals(this.extendparam, that.extendparam) && Objects.equals(this.metadata, that.metadata)
             && Objects.equals(this.osSchedulerHints, that.osSchedulerHints) && Objects.equals(this.tags, that.tags)
             && Objects.equals(this.serverTags, that.serverTags) && Objects.equals(this.description, that.description)
-            && Objects.equals(this.cpuOptions, that.cpuOptions);
+            && Objects.equals(this.cpuOptions, that.cpuOptions)
+            && Objects.equals(this.serialConsoleOptions, that.serialConsoleOptions);
     }
 
     @Override
@@ -737,7 +769,8 @@ public class PrePaidServer {
             tags,
             serverTags,
             description,
-            cpuOptions);
+            cpuOptions,
+            serialConsoleOptions);
     }
 
     @Override
@@ -768,6 +801,7 @@ public class PrePaidServer {
         sb.append("    serverTags: ").append(toIndentedString(serverTags)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    cpuOptions: ").append(toIndentedString(cpuOptions)).append("\n");
+        sb.append("    serialConsoleOptions: ").append(toIndentedString(serialConsoleOptions)).append("\n");
         sb.append("}");
         return sb.toString();
     }

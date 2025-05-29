@@ -23,6 +23,11 @@ public class UpdateLogStreamParams {
 
     private List<TagsBody> tags = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "whether_log_storage")
+
+    private Boolean whetherLogStorage;
+
     public UpdateLogStreamParams withTtlInDays(Integer ttlInDays) {
         this.ttlInDays = ttlInDays;
         return this;
@@ -75,6 +80,23 @@ public class UpdateLogStreamParams {
         this.tags = tags;
     }
 
+    public UpdateLogStreamParams withWhetherLogStorage(Boolean whetherLogStorage) {
+        this.whetherLogStorage = whetherLogStorage;
+        return this;
+    }
+
+    /**
+     * 日志是否存储
+     * @return whetherLogStorage
+     */
+    public Boolean getWhetherLogStorage() {
+        return whetherLogStorage;
+    }
+
+    public void setWhetherLogStorage(Boolean whetherLogStorage) {
+        this.whetherLogStorage = whetherLogStorage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -84,12 +106,13 @@ public class UpdateLogStreamParams {
             return false;
         }
         UpdateLogStreamParams that = (UpdateLogStreamParams) obj;
-        return Objects.equals(this.ttlInDays, that.ttlInDays) && Objects.equals(this.tags, that.tags);
+        return Objects.equals(this.ttlInDays, that.ttlInDays) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.whetherLogStorage, that.whetherLogStorage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ttlInDays, tags);
+        return Objects.hash(ttlInDays, tags, whetherLogStorage);
     }
 
     @Override
@@ -98,6 +121,7 @@ public class UpdateLogStreamParams {
         sb.append("class UpdateLogStreamParams {\n");
         sb.append("    ttlInDays: ").append(toIndentedString(ttlInDays)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    whetherLogStorage: ").append(toIndentedString(whetherLogStorage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

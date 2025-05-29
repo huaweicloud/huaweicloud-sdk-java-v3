@@ -3775,6 +3775,11 @@ public class DliMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSqlJobsRequest::getJobStatus, ListSqlJobsRequest::setJobStatus));
+        builder.<String>withRequestField("job-id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListSqlJobsRequest::getJobId, ListSqlJobsRequest::setJobId));
         builder.<ListSqlJobsRequest.JobTypeEnum>withRequestField("job-type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,

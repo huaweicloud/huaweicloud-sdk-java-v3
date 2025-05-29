@@ -38,6 +38,11 @@ public class LogGroup {
 
     private Map<String, String> tag = null;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_name_alias")
+
+    private String logGroupNameAlias;
+
     public LogGroup withCreationTime(Long creationTime) {
         this.creationTime = creationTime;
         return this;
@@ -143,6 +148,23 @@ public class LogGroup {
         this.tag = tag;
     }
 
+    public LogGroup withLogGroupNameAlias(String logGroupNameAlias) {
+        this.logGroupNameAlias = logGroupNameAlias;
+        return this;
+    }
+
+    /**
+     * 日志组别名
+     * @return logGroupNameAlias
+     */
+    public String getLogGroupNameAlias() {
+        return logGroupNameAlias;
+    }
+
+    public void setLogGroupNameAlias(String logGroupNameAlias) {
+        this.logGroupNameAlias = logGroupNameAlias;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -154,12 +176,13 @@ public class LogGroup {
         LogGroup that = (LogGroup) obj;
         return Objects.equals(this.creationTime, that.creationTime)
             && Objects.equals(this.logGroupName, that.logGroupName) && Objects.equals(this.logGroupId, that.logGroupId)
-            && Objects.equals(this.ttlInDays, that.ttlInDays) && Objects.equals(this.tag, that.tag);
+            && Objects.equals(this.ttlInDays, that.ttlInDays) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.logGroupNameAlias, that.logGroupNameAlias);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(creationTime, logGroupName, logGroupId, ttlInDays, tag);
+        return Objects.hash(creationTime, logGroupName, logGroupId, ttlInDays, tag, logGroupNameAlias);
     }
 
     @Override
@@ -171,6 +194,7 @@ public class LogGroup {
         sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("    ttlInDays: ").append(toIndentedString(ttlInDays)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    logGroupNameAlias: ").append(toIndentedString(logGroupNameAlias)).append("\n");
         sb.append("}");
         return sb.toString();
     }

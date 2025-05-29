@@ -595,6 +595,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryFullTextRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryFullTextResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataRequest;
@@ -8918,6 +8920,35 @@ public class DataArtsStudioClient {
     public SyncInvoker<ShowFactoryEnvRequest, ShowFactoryEnvResponse> showFactoryEnvInvoker(
         ShowFactoryEnvRequest request) {
         return new SyncInvoker<>(request, DataArtsStudioMeta.showFactoryEnv, hcClient);
+    }
+
+    /**
+     * 全局搜索
+     *
+     * 全局搜索
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryFullTextRequest 请求对象
+     * @return ShowFactoryFullTextResponse
+     */
+    public ShowFactoryFullTextResponse showFactoryFullText(ShowFactoryFullTextRequest request) {
+        return hcClient.syncInvokeHttp(request, DataArtsStudioMeta.showFactoryFullText);
+    }
+
+    /**
+     * 全局搜索
+     *
+     * 全局搜索
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowFactoryFullTextRequest 请求对象
+     * @return SyncInvoker<ShowFactoryFullTextRequest, ShowFactoryFullTextResponse>
+     */
+    public SyncInvoker<ShowFactoryFullTextRequest, ShowFactoryFullTextResponse> showFactoryFullTextInvoker(
+        ShowFactoryFullTextRequest request) {
+        return new SyncInvoker<>(request, DataArtsStudioMeta.showFactoryFullText, hcClient);
     }
 
     /**

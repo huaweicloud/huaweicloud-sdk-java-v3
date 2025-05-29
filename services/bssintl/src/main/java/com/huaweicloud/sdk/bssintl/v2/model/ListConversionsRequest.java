@@ -26,7 +26,7 @@ public class ListConversionsRequest {
     }
 
     /**
-     * 语言。zh_CN：中文en_US：英文缺省为zh_CN。
+     * 语言，字段预留。默认zh_CN，枚举：zh_CN：中文 en_US：英文
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)

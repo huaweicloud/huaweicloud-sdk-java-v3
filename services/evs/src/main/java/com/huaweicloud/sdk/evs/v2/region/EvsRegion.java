@@ -84,7 +84,7 @@ public class EvsRegion {
     public static final Region AF_NORTH_1 = new Region("af-north-1", "https://evs.af-north-1.myhuaweicloud.com");
 
     public static final Region AP_SOUTHEAST_5 =
-        new Region("ap-southeast-5", "https://evs.ap-southeast-5.myhuaweicloud.asia");
+        new Region("ap-southeast-5", "https://evs.ap-southeast-5.myhuaweicloud.com");
 
     private static final IRegionProvider PROVIDER = RegionProviderChain.getDefaultRegionProviderChain("EVS");
 

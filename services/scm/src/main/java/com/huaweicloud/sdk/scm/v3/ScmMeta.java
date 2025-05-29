@@ -8,11 +8,17 @@ import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.scm.v3.model.ApplyCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ApplyCertificateRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.ApplyCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.BatchCreateOrDeleteTagsRequest;
+import com.huaweicloud.sdk.scm.v3.model.BatchCreateOrDeleteTagsRequestBody;
+import com.huaweicloud.sdk.scm.v3.model.BatchCreateOrDeleteTagsResponse;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.BatchPushCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.CancelCertificateRequestRequest;
 import com.huaweicloud.sdk.scm.v3.model.CancelCertificateRequestResponse;
+import com.huaweicloud.sdk.scm.v3.model.CreateCertificateTagRequest;
+import com.huaweicloud.sdk.scm.v3.model.CreateCertificateTagRequestBody;
+import com.huaweicloud.sdk.scm.v3.model.CreateCertificateTagResponse;
 import com.huaweicloud.sdk.scm.v3.model.CreateCsrRequest;
 import com.huaweicloud.sdk.scm.v3.model.CreateCsrRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.CreateCsrResponse;
@@ -28,6 +34,11 @@ import com.huaweicloud.sdk.scm.v3.model.ExportCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.ImportCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.ImportCertificateRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.ImportCertificateResponse;
+import com.huaweicloud.sdk.scm.v3.model.ListAllTagsRequest;
+import com.huaweicloud.sdk.scm.v3.model.ListAllTagsResponse;
+import com.huaweicloud.sdk.scm.v3.model.ListCertificatesByTagRequest;
+import com.huaweicloud.sdk.scm.v3.model.ListCertificatesByTagRequestBody;
+import com.huaweicloud.sdk.scm.v3.model.ListCertificatesByTagResponse;
 import com.huaweicloud.sdk.scm.v3.model.ListCertificatesRequest;
 import com.huaweicloud.sdk.scm.v3.model.ListCertificatesResponse;
 import com.huaweicloud.sdk.scm.v3.model.ListCsrRequest;
@@ -35,6 +46,8 @@ import com.huaweicloud.sdk.scm.v3.model.ListCsrResponse;
 import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesRequest;
 import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.ListDeployedResourcesResponse;
+import com.huaweicloud.sdk.scm.v3.model.ListTagsByCertificateRequest;
+import com.huaweicloud.sdk.scm.v3.model.ListTagsByCertificateResponse;
 import com.huaweicloud.sdk.scm.v3.model.PurchaseCertificateRequestBody;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateRequest;
 import com.huaweicloud.sdk.scm.v3.model.PushCertificateRequestBody;
@@ -82,6 +95,35 @@ public class ScmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ApplyCertificateRequestBody.class),
             f -> f.withMarshaller(ApplyCertificateRequest::getBody, ApplyCertificateRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> batchCreateOrDeleteTags =
+        genForBatchCreateOrDeleteTags();
+
+    private static HttpRequestDef<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> genForBatchCreateOrDeleteTags() {
+        // basic
+        HttpRequestDef.Builder<BatchCreateOrDeleteTagsRequest, BatchCreateOrDeleteTagsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchCreateOrDeleteTagsRequest.class, BatchCreateOrDeleteTagsResponse.class)
+            .withName("BatchCreateOrDeleteTags")
+            .withUri("/v3/scm/{resource_id}/tags/action")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getResourceId,
+                BatchCreateOrDeleteTagsRequest::setResourceId));
+        builder.<BatchCreateOrDeleteTagsRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchCreateOrDeleteTagsRequestBody.class),
+            f -> f.withMarshaller(BatchCreateOrDeleteTagsRequest::getBody, BatchCreateOrDeleteTagsRequest::setBody));
 
         // response
 
@@ -136,6 +178,35 @@ public class ScmMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CancelCertificateRequestRequest::getCertificateId,
                 CancelCertificateRequestRequest::setCertificateId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateCertificateTagRequest, CreateCertificateTagResponse> createCertificateTag =
+        genForCreateCertificateTag();
+
+    private static HttpRequestDef<CreateCertificateTagRequest, CreateCertificateTagResponse> genForCreateCertificateTag() {
+        // basic
+        HttpRequestDef.Builder<CreateCertificateTagRequest, CreateCertificateTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateCertificateTagRequest.class, CreateCertificateTagResponse.class)
+            .withName("CreateCertificateTag")
+            .withUri("/v3/scm/{resource_id}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateCertificateTagRequest::getResourceId,
+                CreateCertificateTagRequest::setResourceId));
+        builder.<CreateCertificateTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateCertificateTagRequestBody.class),
+            f -> f.withMarshaller(CreateCertificateTagRequest::getBody, CreateCertificateTagRequest::setBody));
 
         // response
 
@@ -242,6 +313,23 @@ public class ScmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListAllTagsRequest, ListAllTagsResponse> listAllTags = genForListAllTags();
+
+    private static HttpRequestDef<ListAllTagsRequest, ListAllTagsResponse> genForListAllTags() {
+        // basic
+        HttpRequestDef.Builder<ListAllTagsRequest, ListAllTagsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListAllTagsRequest.class, ListAllTagsResponse.class)
+                .withName("ListAllTags")
+                .withUri("/v3/scm/tags")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCertificatesRequest, ListCertificatesResponse> listCertificates =
         genForListCertificates();
 
@@ -308,6 +396,35 @@ public class ScmMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCertificatesByTagRequest, ListCertificatesByTagResponse> listCertificatesByTag =
+        genForListCertificatesByTag();
+
+    private static HttpRequestDef<ListCertificatesByTagRequest, ListCertificatesByTagResponse> genForListCertificatesByTag() {
+        // basic
+        HttpRequestDef.Builder<ListCertificatesByTagRequest, ListCertificatesByTagResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListCertificatesByTagRequest.class, ListCertificatesByTagResponse.class)
+            .withName("ListCertificatesByTag")
+            .withUri("/v3/scm/{resource_instances}/action")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_instances",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCertificatesByTagRequest::getResourceInstances,
+                ListCertificatesByTagRequest::setResourceInstances));
+        builder.<ListCertificatesByTagRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(ListCertificatesByTagRequestBody.class),
+            f -> f.withMarshaller(ListCertificatesByTagRequest::getBody, ListCertificatesByTagRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListDeployedResourcesRequest, ListDeployedResourcesResponse> listDeployedResources =
         genForListDeployedResources();
 
@@ -325,6 +442,30 @@ public class ScmMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ListDeployedResourcesRequestBody.class),
             f -> f.withMarshaller(ListDeployedResourcesRequest::getBody, ListDeployedResourcesRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListTagsByCertificateRequest, ListTagsByCertificateResponse> listTagsByCertificate =
+        genForListTagsByCertificate();
+
+    private static HttpRequestDef<ListTagsByCertificateRequest, ListTagsByCertificateResponse> genForListTagsByCertificate() {
+        // basic
+        HttpRequestDef.Builder<ListTagsByCertificateRequest, ListTagsByCertificateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListTagsByCertificateRequest.class, ListTagsByCertificateResponse.class)
+            .withName("ListTagsByCertificate")
+            .withUri("/v3/scm/{resource_id}/tags")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("resource_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListTagsByCertificateRequest::getResourceId,
+                ListTagsByCertificateRequest::setResourceId));
 
         // response
 

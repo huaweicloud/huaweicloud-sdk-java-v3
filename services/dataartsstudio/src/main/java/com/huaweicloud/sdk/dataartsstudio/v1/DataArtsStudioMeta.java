@@ -714,6 +714,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdRequest
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactLogicTableByIdResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryEnvResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryFullTextRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryFullTextResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactoryPackageDetailResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ShowFactorySupplementDataRequest;
@@ -13019,6 +13021,121 @@ public class DataArtsStudioMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFactoryEnvRequest::getWorkspace, ShowFactoryEnvRequest::setWorkspace));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowFactoryFullTextRequest, ShowFactoryFullTextResponse> showFactoryFullText =
+        genForShowFactoryFullText();
+
+    private static HttpRequestDef<ShowFactoryFullTextRequest, ShowFactoryFullTextResponse> genForShowFactoryFullText() {
+        // basic
+        HttpRequestDef.Builder<ShowFactoryFullTextRequest, ShowFactoryFullTextResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowFactoryFullTextRequest.class, ShowFactoryFullTextResponse.class)
+                .withName("ShowFactoryFullText")
+                .withUri("/v2/{project_id}/factory/search")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getWorkspaceId,
+                ShowFactoryFullTextRequest::setWorkspaceId));
+        builder.<String>withRequestField("search_text",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getSearchText,
+                ShowFactoryFullTextRequest::setSearchText));
+        builder.<String>withRequestField("job_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getJobType, ShowFactoryFullTextRequest::setJobType));
+        builder.<String>withRequestField("script_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getScriptType,
+                ShowFactoryFullTextRequest::setScriptType));
+        builder.<String>withRequestField("node_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getNodeType, ShowFactoryFullTextRequest::setNodeType));
+        builder.<String>withRequestField("new_save_or_commit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getNewSaveOrCommit,
+                ShowFactoryFullTextRequest::setNewSaveOrCommit));
+        builder.<String>withRequestField("owners",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getOwners, ShowFactoryFullTextRequest::setOwners));
+        builder.<String>withRequestField("doc_types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getDocTypes, ShowFactoryFullTextRequest::setDocTypes));
+        builder.<Long>withRequestField("begin_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getBeginTime, ShowFactoryFullTextRequest::setBeginTime));
+        builder.<Long>withRequestField("end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getEndTime, ShowFactoryFullTextRequest::setEndTime));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getLimit, ShowFactoryFullTextRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getOffset, ShowFactoryFullTextRequest::setOffset));
+        builder.<String>withRequestField("if_query_parameters",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getIfQueryParameters,
+                ShowFactoryFullTextRequest::setIfQueryParameters));
+        builder.<Integer>withRequestField("match_type",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getMatchType, ShowFactoryFullTextRequest::setMatchType));
+        builder.<String>withRequestField("schedule_state",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getScheduleState,
+                ShowFactoryFullTextRequest::setScheduleState));
+        builder.<String>withRequestField("is_exact",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getIsExact, ShowFactoryFullTextRequest::setIsExact));
+        builder.<String>withRequestField("exact_field",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getExactField,
+                ShowFactoryFullTextRequest::setExactField));
+        builder.<String>withRequestField("workspace",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowFactoryFullTextRequest::getWorkspace, ShowFactoryFullTextRequest::setWorkspace));
 
         // response
 
