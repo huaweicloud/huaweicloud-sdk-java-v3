@@ -59,6 +59,11 @@ public class QuotaResourcesResponseInfo {
     private Long expireTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private Long createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "shared_quota")
 
     private String sharedQuota;
@@ -233,7 +238,7 @@ public class QuotaResourcesResponseInfo {
     /**
      * 过期时间，-1表示没有到期时间
      * minimum: 0
-     * maximum: 2147483647
+     * maximum: 9223372036854775807
      * @return expireTime
      */
     public Long getExpireTime() {
@@ -242,6 +247,25 @@ public class QuotaResourcesResponseInfo {
 
     public void setExpireTime(Long expireTime) {
         this.expireTime = expireTime;
+    }
+
+    public QuotaResourcesResponseInfo withCreateTime(Long createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * 创建时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return createTime
+     */
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
     }
 
     public QuotaResourcesResponseInfo withSharedQuota(String sharedQuota) {
@@ -308,7 +332,8 @@ public class QuotaResourcesResponseInfo {
             && Objects.equals(this.quotaStatus, that.quotaStatus) && Objects.equals(this.usedStatus, that.usedStatus)
             && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
             && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.tags, that.tags)
-            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.sharedQuota, that.sharedQuota)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.sharedQuota, that.sharedQuota)
             && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
             && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName);
     }
@@ -324,6 +349,7 @@ public class QuotaResourcesResponseInfo {
             chargingMode,
             tags,
             expireTime,
+            createTime,
             sharedQuota,
             enterpriseProjectId,
             enterpriseProjectName);
@@ -342,6 +368,7 @@ public class QuotaResourcesResponseInfo {
         sb.append("    chargingMode: ").append(toIndentedString(chargingMode)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    expireTime: ").append(toIndentedString(expireTime)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    sharedQuota: ").append(toIndentedString(sharedQuota)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    enterpriseProjectName: ").append(toIndentedString(enterpriseProjectName)).append("\n");

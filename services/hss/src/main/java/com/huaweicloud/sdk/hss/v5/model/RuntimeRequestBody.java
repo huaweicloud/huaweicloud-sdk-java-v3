@@ -16,7 +16,7 @@ import java.util.Objects;
 public class RuntimeRequestBody {
 
     /**
-     * 运行时名称：   - crio_endpoint：CRIO   - containerd_endpoint：Containerd   - docker_endpoint：Docker   - isulad_endpoint：Isulad   - podman_endpoint：Podman
+     * 运行时名称：   - crio_endpoint：CRIO   - containerd_endpoint：Containerd   - docker_endpoint：Docker   - isulad_endpoint：Isulad   - podman_endpoint：Podman 
      */
     public static final class RuntimeNameEnum {
 
@@ -119,7 +119,7 @@ public class RuntimeRequestBody {
     }
 
     /**
-     * 运行时名称：   - crio_endpoint：CRIO   - containerd_endpoint：Containerd   - docker_endpoint：Docker   - isulad_endpoint：Isulad   - podman_endpoint：Podman
+     * 运行时名称：   - crio_endpoint：CRIO   - containerd_endpoint：Containerd   - docker_endpoint：Docker   - isulad_endpoint：Isulad   - podman_endpoint：Podman 
      * @return runtimeName
      */
     public RuntimeNameEnum getRuntimeName() {

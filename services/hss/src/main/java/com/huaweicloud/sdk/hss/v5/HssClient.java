@@ -21,6 +21,8 @@ import com.huaweicloud.sdk.hss.v5.model.BatchCreateTagsRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchCreateTagsResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchScanSwrImageRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchScanSwrImageResponse;
+import com.huaweicloud.sdk.hss.v5.model.BatchStartProtectionRequest;
+import com.huaweicloud.sdk.hss.v5.model.BatchStartProtectionResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeAntivirusPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeAntivirusPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeBlockedIpRequest;
@@ -37,6 +39,8 @@ import com.huaweicloud.sdk.hss.v5.model.ChangeVulScanPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulScanPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulStatusRequest;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulStatusResponse;
+import com.huaweicloud.sdk.hss.v5.model.CreateAgentDaemonsetRequest;
+import com.huaweicloud.sdk.hss.v5.model.CreateAgentDaemonsetResponse;
 import com.huaweicloud.sdk.hss.v5.model.CreateAntiVirusPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.CreateAntiVirusPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.CreateAntiVirusTaskRequest;
@@ -237,6 +241,10 @@ import com.huaweicloud.sdk.hss.v5.model.SetTwoFactorLoginConfigRequest;
 import com.huaweicloud.sdk.hss.v5.model.SetTwoFactorLoginConfigResponse;
 import com.huaweicloud.sdk.hss.v5.model.SetWtpProtectionStatusInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.SetWtpProtectionStatusInfoResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowAgentDaemonsetDetailInfoRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowAgentDaemonsetDetailInfoResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowAntivirusPayPerScanStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowAntivirusPayPerScanStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowAntivirusStatisticRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowAntivirusStatisticResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowAppRaspSwitchStatusRequest;
@@ -560,6 +568,35 @@ public class HssClient {
     }
 
     /**
+     * 批量开启勒索病毒防护2.0
+     *
+     * 批量开启勒索病毒防护,若开启备份防护，请保证该region有cbr云备份服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchStartProtectionRequest 请求对象
+     * @return BatchStartProtectionResponse
+     */
+    public BatchStartProtectionResponse batchStartProtection(BatchStartProtectionRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.batchStartProtection);
+    }
+
+    /**
+     * 批量开启勒索病毒防护2.0
+     *
+     * 批量开启勒索病毒防护,若开启备份防护，请保证该region有cbr云备份服务
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request BatchStartProtectionRequest 请求对象
+     * @return SyncInvoker<BatchStartProtectionRequest, BatchStartProtectionResponse>
+     */
+    public SyncInvoker<BatchStartProtectionRequest, BatchStartProtectionResponse> batchStartProtectionInvoker(
+        BatchStartProtectionRequest request) {
+        return new SyncInvoker<>(request, HssMeta.batchStartProtection, hcClient);
+    }
+
+    /**
      * 编辑自定义查杀策略
      *
      * 编辑自定义查杀策略
@@ -788,6 +825,35 @@ public class HssClient {
     public SyncInvoker<ChangeVulStatusRequest, ChangeVulStatusResponse> changeVulStatusInvoker(
         ChangeVulStatusRequest request) {
         return new SyncInvoker<>(request, HssMeta.changeVulStatus, hcClient);
+    }
+
+    /**
+     * 创建集群daemonset
+     *
+     * 创建集群daemonset
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgentDaemonsetRequest 请求对象
+     * @return CreateAgentDaemonsetResponse
+     */
+    public CreateAgentDaemonsetResponse createAgentDaemonset(CreateAgentDaemonsetRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.createAgentDaemonset);
+    }
+
+    /**
+     * 创建集群daemonset
+     *
+     * 创建集群daemonset
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateAgentDaemonsetRequest 请求对象
+     * @return SyncInvoker<CreateAgentDaemonsetRequest, CreateAgentDaemonsetResponse>
+     */
+    public SyncInvoker<CreateAgentDaemonsetRequest, CreateAgentDaemonsetResponse> createAgentDaemonsetInvoker(
+        CreateAgentDaemonsetRequest request) {
+        return new SyncInvoker<>(request, HssMeta.createAgentDaemonset, hcClient);
     }
 
     /**
@@ -3680,6 +3746,66 @@ public class HssClient {
     public SyncInvoker<SetWtpProtectionStatusInfoRequest, SetWtpProtectionStatusInfoResponse> setWtpProtectionStatusInfoInvoker(
         SetWtpProtectionStatusInfoRequest request) {
         return new SyncInvoker<>(request, HssMeta.setWtpProtectionStatusInfo, hcClient);
+    }
+
+    /**
+     * 获取集群daemonset信息
+     *
+     * 获取集群daemonset信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgentDaemonsetDetailInfoRequest 请求对象
+     * @return ShowAgentDaemonsetDetailInfoResponse
+     */
+    public ShowAgentDaemonsetDetailInfoResponse showAgentDaemonsetDetailInfo(
+        ShowAgentDaemonsetDetailInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showAgentDaemonsetDetailInfo);
+    }
+
+    /**
+     * 获取集群daemonset信息
+     *
+     * 获取集群daemonset信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgentDaemonsetDetailInfoRequest 请求对象
+     * @return SyncInvoker<ShowAgentDaemonsetDetailInfoRequest, ShowAgentDaemonsetDetailInfoResponse>
+     */
+    public SyncInvoker<ShowAgentDaemonsetDetailInfoRequest, ShowAgentDaemonsetDetailInfoResponse> showAgentDaemonsetDetailInfoInvoker(
+        ShowAgentDaemonsetDetailInfoRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showAgentDaemonsetDetailInfo, hcClient);
+    }
+
+    /**
+     * 查询“病毒查杀按次计费”开关状态
+     *
+     * 查询“病毒查杀按次计费”开关状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAntivirusPayPerScanStatusRequest 请求对象
+     * @return ShowAntivirusPayPerScanStatusResponse
+     */
+    public ShowAntivirusPayPerScanStatusResponse showAntivirusPayPerScanStatus(
+        ShowAntivirusPayPerScanStatusRequest request) {
+        return hcClient.syncInvokeHttp(request, HssMeta.showAntivirusPayPerScanStatus);
+    }
+
+    /**
+     * 查询“病毒查杀按次计费”开关状态
+     *
+     * 查询“病毒查杀按次计费”开关状态
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAntivirusPayPerScanStatusRequest 请求对象
+     * @return SyncInvoker<ShowAntivirusPayPerScanStatusRequest, ShowAntivirusPayPerScanStatusResponse>
+     */
+    public SyncInvoker<ShowAntivirusPayPerScanStatusRequest, ShowAntivirusPayPerScanStatusResponse> showAntivirusPayPerScanStatusInvoker(
+        ShowAntivirusPayPerScanStatusRequest request) {
+        return new SyncInvoker<>(request, HssMeta.showAntivirusPayPerScanStatus, hcClient);
     }
 
     /**

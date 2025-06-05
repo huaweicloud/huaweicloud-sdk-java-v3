@@ -299,7 +299,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 威胁等级，包含如下:   - Security : 安全   - Low : 低危   - Medium : 中危   - High : 高危   - Critical : 危急
+     * 威胁等级，包含如下:   - Security：安全   - Low: 低危   - Medium: 中危   - High: 高危   - Critical: 危急
      * @return severity
      */
     public String getSeverity() {
@@ -316,7 +316,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 容器实例名称，只有容器类型的告警有
+     * 容器实例名称
      * @return containerName
      */
     public String getContainerName() {
@@ -367,7 +367,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 主机ID
+     * 服务器ID
      * @return hostId
      */
     public String getHostId() {
@@ -575,7 +575,7 @@ public class EventManagementResponseInfo {
     }
 
     /**
-     * 处理状态，包含如下:   - unhandled ：未处理   - handled : 已处理
+     * 处置状态，包含如下:   - unhandled：未处理   - handled: 已处理
      * @return handleStatus
      */
     public String getHandleStatus() {

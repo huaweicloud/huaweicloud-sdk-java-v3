@@ -114,7 +114,7 @@ public class IsolatedFileResponseInfo {
     }
 
     /**
-     * 主机ID
+     * 服务器ID
      * @return hostId
      */
     public String getHostId() {

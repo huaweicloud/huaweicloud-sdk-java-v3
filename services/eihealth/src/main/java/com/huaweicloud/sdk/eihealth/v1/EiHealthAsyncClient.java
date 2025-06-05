@@ -61,6 +61,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateClusteringJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateClusteringJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingClusterRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingClusterResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingResourceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCpiJobRequest;
@@ -161,6 +163,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.DeleteAutoJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteAutoJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteBackupRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteBackupResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteComputingClusterRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteComputingClusterResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteComputingResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteComputingResourceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteCssClusterRequest;
@@ -251,6 +255,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ImportUserRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportUserResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportWorkflowRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportWorkflowResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.InitializePlatformRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.InitializePlatformResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.InstallNextflowRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.InstallNextflowResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListAppRequest;
@@ -267,10 +273,16 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListBaseModelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBaseModelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBucketRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBucketResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListCceClusterRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListCceClusterResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListCheckpointRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListCheckpointResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListClusterAllNodeLabelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListClusterAllNodeLabelResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListClusterInstallStepRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListClusterInstallStepResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListComputingClusterRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListComputingClusterResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListComputingResourceFlavorsRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListComputingResourceFlavorsResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListComputingResourcesRequest;
@@ -353,6 +365,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListPresetLabelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListPresetLabelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListProjectRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListProjectResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListProjectStatisticsRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListProjectStatisticsResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListPropertyRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListPropertyResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListQuotaRequest;
@@ -361,6 +375,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListScaleOutPolicyRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListScaleOutPolicyResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListScalingHistoryRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListScalingHistoryResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListSfsTurbosRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListSfsTurbosResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListStarRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListStarResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListStorageResourcesRequest;
@@ -373,8 +389,20 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListTemplateRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListTemplateResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListTermTenantCssClusterRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListTermTenantCssClusterResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserAppRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserAppResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserDrugJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserDrugJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserImageRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserImageResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserNotebookRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserNotebookResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListUserRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListUserResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserWorkflowRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserWorkflowResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListVendorRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListVendorResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListWorkflowRequest;
@@ -421,6 +449,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowAdmetJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAdmetJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAdmetPropertiesRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAdmetPropertiesResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowAgencyRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowAgencyResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAppRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAppResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAssetRequest;
@@ -591,6 +621,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.TransferProjectRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.TransferProjectResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UninstallNextflowRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UninstallNextflowResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateAgencyRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateAgencyResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateAppRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateAppResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateArchiveConfigRequest;
@@ -645,6 +677,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.UpdateScheduleRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateScheduleResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateStarRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateStarResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateTopProjectRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateTopProjectResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateUserByDomainRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateUserByDomainResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateUserRequest;
@@ -1462,6 +1496,36 @@ public class EiHealthAsyncClient {
      */
     public AsyncInvoker<CreateCodeRequest, CreateCodeResponse> createCodeAsyncInvoker(CreateCodeRequest request) {
         return new AsyncInvoker<>(request, EiHealthMeta.createCode, hcClient);
+    }
+
+    /**
+     * 绑定计算集群
+     *
+     * 绑定计算集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateComputingClusterRequest 请求对象
+     * @return CompletableFuture<CreateComputingClusterResponse>
+     */
+    public CompletableFuture<CreateComputingClusterResponse> createComputingClusterAsync(
+        CreateComputingClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.createComputingCluster);
+    }
+
+    /**
+     * 绑定计算集群
+     *
+     * 绑定计算集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateComputingClusterRequest 请求对象
+     * @return AsyncInvoker<CreateComputingClusterRequest, CreateComputingClusterResponse>
+     */
+    public AsyncInvoker<CreateComputingClusterRequest, CreateComputingClusterResponse> createComputingClusterAsyncInvoker(
+        CreateComputingClusterRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.createComputingCluster, hcClient);
     }
 
     /**
@@ -2449,6 +2513,36 @@ public class EiHealthAsyncClient {
     public AsyncInvoker<DeleteBackupRequest, DeleteBackupResponse> deleteBackupAsyncInvoker(
         DeleteBackupRequest request) {
         return new AsyncInvoker<>(request, EiHealthMeta.deleteBackup, hcClient);
+    }
+
+    /**
+     * 解绑计算集群
+     *
+     * 解绑计算集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteComputingClusterRequest 请求对象
+     * @return CompletableFuture<DeleteComputingClusterResponse>
+     */
+    public CompletableFuture<DeleteComputingClusterResponse> deleteComputingClusterAsync(
+        DeleteComputingClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.deleteComputingCluster);
+    }
+
+    /**
+     * 解绑计算集群
+     *
+     * 解绑计算集群。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteComputingClusterRequest 请求对象
+     * @return AsyncInvoker<DeleteComputingClusterRequest, DeleteComputingClusterResponse>
+     */
+    public AsyncInvoker<DeleteComputingClusterRequest, DeleteComputingClusterResponse> deleteComputingClusterAsyncInvoker(
+        DeleteComputingClusterRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.deleteComputingCluster, hcClient);
     }
 
     /**
@@ -3550,6 +3644,35 @@ public class EiHealthAsyncClient {
     }
 
     /**
+     * 初始化平台
+     *
+     * 初始化平台。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InitializePlatformRequest 请求对象
+     * @return CompletableFuture<InitializePlatformResponse>
+     */
+    public CompletableFuture<InitializePlatformResponse> initializePlatformAsync(InitializePlatformRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.initializePlatform);
+    }
+
+    /**
+     * 初始化平台
+     *
+     * 初始化平台。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request InitializePlatformRequest 请求对象
+     * @return AsyncInvoker<InitializePlatformRequest, InitializePlatformResponse>
+     */
+    public AsyncInvoker<InitializePlatformRequest, InitializePlatformResponse> initializePlatformAsyncInvoker(
+        InitializePlatformRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.initializePlatform, hcClient);
+    }
+
+    /**
      * 获取应用列表
      *
      * 获取应用列表
@@ -3748,6 +3871,35 @@ public class EiHealthAsyncClient {
     }
 
     /**
+     * 获取CCE集群列表
+     *
+     * 获取CCE集群列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCceClusterRequest 请求对象
+     * @return CompletableFuture<ListCceClusterResponse>
+     */
+    public CompletableFuture<ListCceClusterResponse> listCceClusterAsync(ListCceClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.listCceCluster);
+    }
+
+    /**
+     * 获取CCE集群列表
+     *
+     * 获取CCE集群列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCceClusterRequest 请求对象
+     * @return AsyncInvoker<ListCceClusterRequest, ListCceClusterResponse>
+     */
+    public AsyncInvoker<ListCceClusterRequest, ListCceClusterResponse> listCceClusterAsyncInvoker(
+        ListCceClusterRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.listCceCluster, hcClient);
+    }
+
+    /**
      * 获取数据作业执行日志
      *
      * 获取数据作业执行日志
@@ -3804,6 +3956,66 @@ public class EiHealthAsyncClient {
     public AsyncInvoker<ListClusterAllNodeLabelRequest, ListClusterAllNodeLabelResponse> listClusterAllNodeLabelAsyncInvoker(
         ListClusterAllNodeLabelRequest request) {
         return new AsyncInvoker<>(request, EiHealthMeta.listClusterAllNodeLabel, hcClient);
+    }
+
+    /**
+     * 查询指定集群安装步骤列表
+     *
+     * 查询指定集群安装步骤列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClusterInstallStepRequest 请求对象
+     * @return CompletableFuture<ListClusterInstallStepResponse>
+     */
+    public CompletableFuture<ListClusterInstallStepResponse> listClusterInstallStepAsync(
+        ListClusterInstallStepRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.listClusterInstallStep);
+    }
+
+    /**
+     * 查询指定集群安装步骤列表
+     *
+     * 查询指定集群安装步骤列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListClusterInstallStepRequest 请求对象
+     * @return AsyncInvoker<ListClusterInstallStepRequest, ListClusterInstallStepResponse>
+     */
+    public AsyncInvoker<ListClusterInstallStepRequest, ListClusterInstallStepResponse> listClusterInstallStepAsyncInvoker(
+        ListClusterInstallStepRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.listClusterInstallStep, hcClient);
+    }
+
+    /**
+     * 获取计算集群列表
+     *
+     * 获取计算集群列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListComputingClusterRequest 请求对象
+     * @return CompletableFuture<ListComputingClusterResponse>
+     */
+    public CompletableFuture<ListComputingClusterResponse> listComputingClusterAsync(
+        ListComputingClusterRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.listComputingCluster);
+    }
+
+    /**
+     * 获取计算集群列表
+     *
+     * 获取计算集群列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListComputingClusterRequest 请求对象
+     * @return AsyncInvoker<ListComputingClusterRequest, ListComputingClusterResponse>
+     */
+    public AsyncInvoker<ListComputingClusterRequest, ListComputingClusterResponse> listComputingClusterAsyncInvoker(
+        ListComputingClusterRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.listComputingCluster, hcClient);
     }
 
     /**
@@ -4732,6 +4944,36 @@ public class EiHealthAsyncClient {
     }
 
     /**
+     * 获取当前用户所属空间资源统计信息
+     *
+     * 获取当前用户所属空间资源统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectStatisticsRequest 请求对象
+     * @return CompletableFuture<ListProjectStatisticsResponse>
+     */
+    public CompletableFuture<ListProjectStatisticsResponse> listProjectStatisticsAsync(
+        ListProjectStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.listProjectStatistics);
+    }
+
+    /**
+     * 获取当前用户所属空间资源统计信息
+     *
+     * 获取当前用户所属空间资源统计信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListProjectStatisticsRequest 请求对象
+     * @return AsyncInvoker<ListProjectStatisticsRequest, ListProjectStatisticsResponse>
+     */
+    public AsyncInvoker<ListProjectStatisticsRequest, ListProjectStatisticsResponse> listProjectStatisticsAsyncInvoker(
+        ListProjectStatisticsRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.listProjectStatistics, hcClient);
+    }
+
+    /**
      * 获取属性值列表
      *
      * 获取属性值列表
@@ -4844,6 +5086,35 @@ public class EiHealthAsyncClient {
     public AsyncInvoker<ListScalingHistoryRequest, ListScalingHistoryResponse> listScalingHistoryAsyncInvoker(
         ListScalingHistoryRequest request) {
         return new AsyncInvoker<>(request, EiHealthMeta.listScalingHistory, hcClient);
+    }
+
+    /**
+     * 获取sfs-turbo资源列表
+     *
+     * 获取sfs-turbo资源列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSfsTurbosRequest 请求对象
+     * @return CompletableFuture<ListSfsTurbosResponse>
+     */
+    public CompletableFuture<ListSfsTurbosResponse> listSfsTurbosAsync(ListSfsTurbosRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.listSfsTurbos);
+    }
+
+    /**
+     * 获取sfs-turbo资源列表
+     *
+     * 获取sfs-turbo资源列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListSfsTurbosRequest 请求对象
+     * @return AsyncInvoker<ListSfsTurbosRequest, ListSfsTurbosResponse>
+     */
+    public AsyncInvoker<ListSfsTurbosRequest, ListSfsTurbosResponse> listSfsTurbosAsyncInvoker(
+        ListSfsTurbosRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.listSfsTurbos, hcClient);
     }
 
     /**
@@ -5016,6 +5287,149 @@ public class EiHealthAsyncClient {
      */
     public AsyncInvoker<ListUserRequest, ListUserResponse> listUserAsyncInvoker(ListUserRequest request) {
         return new AsyncInvoker<>(request, EiHealthMeta.listUser, hcClient);
+    }
+
+    /**
+     * 获取用户所属空间的应用列表
+     *
+     * 获取用户所属空间的应用列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserAppRequest 请求对象
+     * @return CompletableFuture<ListUserAppResponse>
+     */
+    public CompletableFuture<ListUserAppResponse> listUserAppAsync(ListUserAppRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.listUserApp);
+    }
+
+    /**
+     * 获取用户所属空间的应用列表
+     *
+     * 获取用户所属空间的应用列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserAppRequest 请求对象
+     * @return AsyncInvoker<ListUserAppRequest, ListUserAppResponse>
+     */
+    public AsyncInvoker<ListUserAppRequest, ListUserAppResponse> listUserAppAsyncInvoker(ListUserAppRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.listUserApp, hcClient);
+    }
+
+    /**
+     * 获取用户所属空间的药物作业列表
+     *
+     * 获取用户所属空间的药物作业列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserDrugJobRequest 请求对象
+     * @return CompletableFuture<ListUserDrugJobResponse>
+     */
+    public CompletableFuture<ListUserDrugJobResponse> listUserDrugJobAsync(ListUserDrugJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.listUserDrugJob);
+    }
+
+    /**
+     * 获取用户所属空间的药物作业列表
+     *
+     * 获取用户所属空间的药物作业列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserDrugJobRequest 请求对象
+     * @return AsyncInvoker<ListUserDrugJobRequest, ListUserDrugJobResponse>
+     */
+    public AsyncInvoker<ListUserDrugJobRequest, ListUserDrugJobResponse> listUserDrugJobAsyncInvoker(
+        ListUserDrugJobRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.listUserDrugJob, hcClient);
+    }
+
+    /**
+     * 获取用户所属空间的镜像列表
+     *
+     * 获取用户所属空间的镜像列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserImageRequest 请求对象
+     * @return CompletableFuture<ListUserImageResponse>
+     */
+    public CompletableFuture<ListUserImageResponse> listUserImageAsync(ListUserImageRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.listUserImage);
+    }
+
+    /**
+     * 获取用户所属空间的镜像列表
+     *
+     * 获取用户所属空间的镜像列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserImageRequest 请求对象
+     * @return AsyncInvoker<ListUserImageRequest, ListUserImageResponse>
+     */
+    public AsyncInvoker<ListUserImageRequest, ListUserImageResponse> listUserImageAsyncInvoker(
+        ListUserImageRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.listUserImage, hcClient);
+    }
+
+    /**
+     * 获取用户所属空间的作业列表
+     *
+     * 获取用户所属空间的作业列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserJobRequest 请求对象
+     * @return CompletableFuture<ListUserJobResponse>
+     */
+    public CompletableFuture<ListUserJobResponse> listUserJobAsync(ListUserJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.listUserJob);
+    }
+
+    /**
+     * 获取用户所属空间的作业列表
+     *
+     * 获取用户所属空间的作业列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserJobRequest 请求对象
+     * @return AsyncInvoker<ListUserJobRequest, ListUserJobResponse>
+     */
+    public AsyncInvoker<ListUserJobRequest, ListUserJobResponse> listUserJobAsyncInvoker(ListUserJobRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.listUserJob, hcClient);
+    }
+
+    /**
+     * 获取用户所属空间的流程列表
+     *
+     * 获取用户所属空间的流程列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserWorkflowRequest 请求对象
+     * @return CompletableFuture<ListUserWorkflowResponse>
+     */
+    public CompletableFuture<ListUserWorkflowResponse> listUserWorkflowAsync(ListUserWorkflowRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.listUserWorkflow);
+    }
+
+    /**
+     * 获取用户所属空间的流程列表
+     *
+     * 获取用户所属空间的流程列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserWorkflowRequest 请求对象
+     * @return AsyncInvoker<ListUserWorkflowRequest, ListUserWorkflowResponse>
+     */
+    public AsyncInvoker<ListUserWorkflowRequest, ListUserWorkflowResponse> listUserWorkflowAsyncInvoker(
+        ListUserWorkflowRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.listUserWorkflow, hcClient);
     }
 
     /**
@@ -5505,6 +5919,34 @@ public class EiHealthAsyncClient {
     public AsyncInvoker<ShowAdmetJobRequest, ShowAdmetJobResponse> showAdmetJobAsyncInvoker(
         ShowAdmetJobRequest request) {
         return new AsyncInvoker<>(request, EiHealthMeta.showAdmetJob, hcClient);
+    }
+
+    /**
+     * 获取业务委托
+     *
+     * 获取业务委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyRequest 请求对象
+     * @return CompletableFuture<ShowAgencyResponse>
+     */
+    public CompletableFuture<ShowAgencyResponse> showAgencyAsync(ShowAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.showAgency);
+    }
+
+    /**
+     * 获取业务委托
+     *
+     * 获取业务委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowAgencyRequest 请求对象
+     * @return AsyncInvoker<ShowAgencyRequest, ShowAgencyResponse>
+     */
+    public AsyncInvoker<ShowAgencyRequest, ShowAgencyResponse> showAgencyAsyncInvoker(ShowAgencyRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.showAgency, hcClient);
     }
 
     /**
@@ -7328,6 +7770,35 @@ public class EiHealthAsyncClient {
     }
 
     /**
+     * 更新业务委托
+     *
+     * 更新业务委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAgencyRequest 请求对象
+     * @return CompletableFuture<UpdateAgencyResponse>
+     */
+    public CompletableFuture<UpdateAgencyResponse> updateAgencyAsync(UpdateAgencyRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.updateAgency);
+    }
+
+    /**
+     * 更新业务委托
+     *
+     * 更新业务委托。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateAgencyRequest 请求对象
+     * @return AsyncInvoker<UpdateAgencyRequest, UpdateAgencyResponse>
+     */
+    public AsyncInvoker<UpdateAgencyRequest, UpdateAgencyResponse> updateAgencyAsyncInvoker(
+        UpdateAgencyRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.updateAgency, hcClient);
+    }
+
+    /**
      * 更新应用
      *
      * 更新应用
@@ -8053,6 +8524,35 @@ public class EiHealthAsyncClient {
      */
     public AsyncInvoker<UpdateStarRequest, UpdateStarResponse> updateStarAsyncInvoker(UpdateStarRequest request) {
         return new AsyncInvoker<>(request, EiHealthMeta.updateStar, hcClient);
+    }
+
+    /**
+     * 置顶空间
+     *
+     * 置顶空间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTopProjectRequest 请求对象
+     * @return CompletableFuture<UpdateTopProjectResponse>
+     */
+    public CompletableFuture<UpdateTopProjectResponse> updateTopProjectAsync(UpdateTopProjectRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.updateTopProject);
+    }
+
+    /**
+     * 置顶空间
+     *
+     * 置顶空间。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateTopProjectRequest 请求对象
+     * @return AsyncInvoker<UpdateTopProjectRequest, UpdateTopProjectResponse>
+     */
+    public AsyncInvoker<UpdateTopProjectRequest, UpdateTopProjectResponse> updateTopProjectAsyncInvoker(
+        UpdateTopProjectRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.updateTopProject, hcClient);
     }
 
     /**
@@ -9931,6 +10431,35 @@ public class EiHealthAsyncClient {
     public AsyncInvoker<ListNotebookToolRequest, ListNotebookToolResponse> listNotebookToolAsyncInvoker(
         ListNotebookToolRequest request) {
         return new AsyncInvoker<>(request, EiHealthMeta.listNotebookTool, hcClient);
+    }
+
+    /**
+     * 获取用户所属空间的notebook列表
+     *
+     * 获取用户所属空间的notebook列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserNotebookRequest 请求对象
+     * @return CompletableFuture<ListUserNotebookResponse>
+     */
+    public CompletableFuture<ListUserNotebookResponse> listUserNotebookAsync(ListUserNotebookRequest request) {
+        return hcClient.asyncInvokeHttp(request, EiHealthMeta.listUserNotebook);
+    }
+
+    /**
+     * 获取用户所属空间的notebook列表
+     *
+     * 获取用户所属空间的notebook列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListUserNotebookRequest 请求对象
+     * @return AsyncInvoker<ListUserNotebookRequest, ListUserNotebookResponse>
+     */
+    public AsyncInvoker<ListUserNotebookRequest, ListUserNotebookResponse> listUserNotebookAsyncInvoker(
+        ListUserNotebookRequest request) {
+        return new AsyncInvoker<>(request, EiHealthMeta.listUserNotebook, hcClient);
     }
 
     /**

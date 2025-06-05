@@ -234,7 +234,7 @@ public class EventHandleHistory {
     }
 
     /**
-     * 处理状态，包含如下:   - unhandled ：未处理   - handled : 已处理
+     * 处置状态，包含如下:   - unhandled：未处理   - handled: 已处理
      * @return handleStatus
      */
     public String getHandleStatus() {
@@ -338,7 +338,7 @@ public class EventHandleHistory {
     }
 
     /**
-     * 威胁等级，包含如下:   - Security : 安全   - Low : 低危   - Medium : 中危   - High : 高危   - Critical : 危急
+     * 威胁等级，包含如下:   - Security：安全   - Low: 低危   - Medium: 中危   - High: 高危   - Critical: 危急
      * @return severity
      */
     public String getSeverity() {

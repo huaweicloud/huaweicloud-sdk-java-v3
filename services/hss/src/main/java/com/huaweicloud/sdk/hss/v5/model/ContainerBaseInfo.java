@@ -11,6 +11,16 @@ import java.util.Objects;
 public class ContainerBaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "id")
+
+    private String id;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "region_id")
+
+    private String regionId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_id")
 
     private String containerId;
@@ -95,6 +105,40 @@ public class ContainerBaseInfo {
 
     private Integer fatalRisk;
 
+    public ContainerBaseInfo withId(String id) {
+        this.id = id;
+        return this;
+    }
+
+    /**
+     * ID
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ContainerBaseInfo withRegionId(String regionId) {
+        this.regionId = regionId;
+        return this;
+    }
+
+    /**
+     * 区域
+     * @return regionId
+     */
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
     public ContainerBaseInfo withContainerId(String containerId) {
         this.containerId = containerId;
         return this;
@@ -171,7 +215,7 @@ public class ContainerBaseInfo {
     /**
      * 创建时间
      * minimum: 0
-     * maximum: 4071095999000
+     * maximum: 9223372036854775807
      * @return createTime
      */
     public Long getCreateTime() {
@@ -405,7 +449,8 @@ public class ContainerBaseInfo {
             return false;
         }
         ContainerBaseInfo that = (ContainerBaseInfo) obj;
-        return Objects.equals(this.containerId, that.containerId)
+        return Objects.equals(this.id, that.id) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.containerId, that.containerId)
             && Objects.equals(this.containerName, that.containerName) && Objects.equals(this.imageName, that.imageName)
             && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
             && Objects.equals(this.cpuLimit, that.cpuLimit) && Objects.equals(this.memoryLimit, that.memoryLimit)
@@ -418,7 +463,9 @@ public class ContainerBaseInfo {
 
     @Override
     public int hashCode() {
-        return Objects.hash(containerId,
+        return Objects.hash(id,
+            regionId,
+            containerId,
             containerName,
             imageName,
             status,
@@ -441,6 +488,8 @@ public class ContainerBaseInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ContainerBaseInfo {\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    regionId: ").append(toIndentedString(regionId)).append("\n");
         sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
         sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
         sb.append("    imageName: ").append(toIndentedString(imageName)).append("\n");

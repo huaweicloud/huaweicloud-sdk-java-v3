@@ -25,6 +25,7 @@ import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import com.github.tomakehurst.wiremock.stubbing.Scenario;
 import com.huaweicloud.sdk.core.auth.BasicCredentials;
+import com.huaweicloud.sdk.core.exception.ClientRequestException;
 import com.huaweicloud.sdk.core.exception.ServerResponseException;
 import com.huaweicloud.sdk.core.http.HttpConfig;
 import com.huaweicloud.sdk.core.http.HttpMethod;
@@ -345,6 +346,28 @@ public class TestRetry {
         HcClient hcClient = mockClient(wireMockRule.httpsPort());
         AsyncInvoker<Object, SdkResponse> asyncInvoker = new AsyncInvoker<>(new Object(), requestDef, hcClient)
                 .withRetry(10, (sdkResponse, e) -> false);
+        try {
+            asyncInvoker.invoke().get();
+        } catch (ExecutionException e) {
+            throw e.getCause();
+        } finally {
+            WireMock.verify(1, WireMock.getRequestedFor(WireMock.urlEqualTo(PATH)));
+        }
+    }
+
+    // 429重试
+    @Test(expected = ClientRequestException.class)
+    public void testAsyncRetry6() throws Throwable {
+        wireMockRule.stubFor(WireMock.get(PATH).willReturn(
+                        WireMock.aResponse()
+                                .withStatus(429)
+                                .withHeader("Content-Type", "application/json")
+                )
+        );
+
+        HcClient hcClient = mockClient(wireMockRule.httpsPort());
+        AsyncInvoker<Object, SdkResponse> asyncInvoker = new AsyncInvoker<>(new Object(), requestDef, hcClient)
+                .withRetry(3, (sdkResponse, e) -> false);
         try {
             asyncInvoker.invoke().get();
         } catch (ExecutionException e) {

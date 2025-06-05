@@ -124,7 +124,7 @@ public class PolicyGroupResponseInfo {
     }
 
     /**
-     * 关联服务器数
+     * 影响主机数量
      * minimum: 0
      * maximum: 2147483647
      * @return hostNum

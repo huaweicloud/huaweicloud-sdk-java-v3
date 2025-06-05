@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 /**
- * 删除登录白名单列表,data_list为空时，删除所有；data_list不为空时，请填充里面所有属性
+ * 删除登录白名单列表
  */
 public class RemoveLoginWhiteListRequestInfo {
 

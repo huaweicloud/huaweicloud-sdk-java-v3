@@ -48,7 +48,7 @@ public class ListQueryExportTaskRequest {
     }
 
     /**
-     * Region Id
+     * Region ID
      * @return region
      */
     public String getRegion() {

@@ -45,6 +45,11 @@ public class ListQuotasDetailResponse extends SdkResponse {
     private Integer expiredNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "create_time")
+
+    private Long createTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "freeze_num")
 
     private Integer freezeNum;
@@ -178,6 +183,25 @@ public class ListQuotasDetailResponse extends SdkResponse {
         this.expiredNum = expiredNum;
     }
 
+    public ListQuotasDetailResponse withCreateTime(Long createTime) {
+        this.createTime = createTime;
+        return this;
+    }
+
+    /**
+     * 创建时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return createTime
+     */
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
     public ListQuotasDetailResponse withFreezeNum(Integer freezeNum) {
         this.freezeNum = freezeNum;
         return this;
@@ -295,7 +319,8 @@ public class ListQuotasDetailResponse extends SdkResponse {
         return Objects.equals(this.packetCycleNum, that.packetCycleNum)
             && Objects.equals(this.onDemandNum, that.onDemandNum) && Objects.equals(this.usedNum, that.usedNum)
             && Objects.equals(this.idleNum, that.idleNum) && Objects.equals(this.normalNum, that.normalNum)
-            && Objects.equals(this.expiredNum, that.expiredNum) && Objects.equals(this.freezeNum, that.freezeNum)
+            && Objects.equals(this.expiredNum, that.expiredNum) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.freezeNum, that.freezeNum)
             && Objects.equals(this.quotaStatisticsList, that.quotaStatisticsList)
             && Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.dataList, that.dataList);
     }
@@ -308,6 +333,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
             idleNum,
             normalNum,
             expiredNum,
+            createTime,
             freezeNum,
             quotaStatisticsList,
             totalNum,
@@ -324,6 +350,7 @@ public class ListQuotasDetailResponse extends SdkResponse {
         sb.append("    idleNum: ").append(toIndentedString(idleNum)).append("\n");
         sb.append("    normalNum: ").append(toIndentedString(normalNum)).append("\n");
         sb.append("    expiredNum: ").append(toIndentedString(expiredNum)).append("\n");
+        sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
         sb.append("    freezeNum: ").append(toIndentedString(freezeNum)).append("\n");
         sb.append("    quotaStatisticsList: ").append(toIndentedString(quotaStatisticsList)).append("\n");
         sb.append("    totalNum: ").append(toIndentedString(totalNum)).append("\n");

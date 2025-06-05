@@ -21,7 +21,7 @@ public class SmartChatJobsReq {
     }
 
     /**
-     * 扩展参数，按照Json格式携带 * city:所在城市
+     * 扩展参数，按照Json格式携带。 * city：所在城市 * client_id：客户端ID
      * @return extendParam
      */
     public String getExtendParam() {

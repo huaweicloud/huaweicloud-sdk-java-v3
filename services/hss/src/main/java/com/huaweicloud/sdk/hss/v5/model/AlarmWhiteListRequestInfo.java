@@ -199,7 +199,7 @@ public class AlarmWhiteListRequestInfo {
     }
 
     /**
-     * 文件路径,需要对特殊字符进行转义，包含/等
+     * 文件路径
      * @return filePath
      */
     public String getFilePath() {

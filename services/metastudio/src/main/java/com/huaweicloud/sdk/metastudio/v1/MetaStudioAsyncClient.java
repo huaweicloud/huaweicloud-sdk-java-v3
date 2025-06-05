@@ -39,6 +39,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogReportConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDigitalAssetRequest;
@@ -117,6 +119,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteDialogReportConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileRequest;
@@ -257,6 +261,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAsyncTtsJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAsyncTtsJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowDialogReportConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionRequest;
@@ -341,6 +347,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDialogReportConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalHumanBusinessCardRequest;
@@ -775,6 +783,126 @@ public class MetaStudioAsyncClient {
     public AsyncInvoker<StopSmartChatJobRequest, StopSmartChatJobResponse> stopSmartChatJobAsyncInvoker(
         StopSmartChatJobRequest request) {
         return new AsyncInvoker<>(request, MetaStudioMeta.stopSmartChatJob, hcClient);
+    }
+
+    /**
+     * 创建对话结果上报配置
+     *
+     * 该接口用于创建对话结果上报配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDialogReportConfigRequest 请求对象
+     * @return CompletableFuture<CreateDialogReportConfigResponse>
+     */
+    public CompletableFuture<CreateDialogReportConfigResponse> createDialogReportConfigAsync(
+        CreateDialogReportConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.createDialogReportConfig);
+    }
+
+    /**
+     * 创建对话结果上报配置
+     *
+     * 该接口用于创建对话结果上报配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateDialogReportConfigRequest 请求对象
+     * @return AsyncInvoker<CreateDialogReportConfigRequest, CreateDialogReportConfigResponse>
+     */
+    public AsyncInvoker<CreateDialogReportConfigRequest, CreateDialogReportConfigResponse> createDialogReportConfigAsyncInvoker(
+        CreateDialogReportConfigRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.createDialogReportConfig, hcClient);
+    }
+
+    /**
+     * 删除对话结果上报配置
+     *
+     * 该接口用于删除对话结果上报配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDialogReportConfigRequest 请求对象
+     * @return CompletableFuture<DeleteDialogReportConfigResponse>
+     */
+    public CompletableFuture<DeleteDialogReportConfigResponse> deleteDialogReportConfigAsync(
+        DeleteDialogReportConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.deleteDialogReportConfig);
+    }
+
+    /**
+     * 删除对话结果上报配置
+     *
+     * 该接口用于删除对话结果上报配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request DeleteDialogReportConfigRequest 请求对象
+     * @return AsyncInvoker<DeleteDialogReportConfigRequest, DeleteDialogReportConfigResponse>
+     */
+    public AsyncInvoker<DeleteDialogReportConfigRequest, DeleteDialogReportConfigResponse> deleteDialogReportConfigAsyncInvoker(
+        DeleteDialogReportConfigRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.deleteDialogReportConfig, hcClient);
+    }
+
+    /**
+     * 查询对话结果上报配置
+     *
+     * 该接口用于查询对话结果上报配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDialogReportConfigRequest 请求对象
+     * @return CompletableFuture<ShowDialogReportConfigResponse>
+     */
+    public CompletableFuture<ShowDialogReportConfigResponse> showDialogReportConfigAsync(
+        ShowDialogReportConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.showDialogReportConfig);
+    }
+
+    /**
+     * 查询对话结果上报配置
+     *
+     * 该接口用于查询对话结果上报配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ShowDialogReportConfigRequest 请求对象
+     * @return AsyncInvoker<ShowDialogReportConfigRequest, ShowDialogReportConfigResponse>
+     */
+    public AsyncInvoker<ShowDialogReportConfigRequest, ShowDialogReportConfigResponse> showDialogReportConfigAsyncInvoker(
+        ShowDialogReportConfigRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.showDialogReportConfig, hcClient);
+    }
+
+    /**
+     * 修改对话结果上报配置
+     *
+     * 该接口用于修改对话结果上报配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDialogReportConfigRequest 请求对象
+     * @return CompletableFuture<UpdateDialogReportConfigResponse>
+     */
+    public CompletableFuture<UpdateDialogReportConfigResponse> updateDialogReportConfigAsync(
+        UpdateDialogReportConfigRequest request) {
+        return hcClient.asyncInvokeHttp(request, MetaStudioMeta.updateDialogReportConfig);
+    }
+
+    /**
+     * 修改对话结果上报配置
+     *
+     * 该接口用于修改对话结果上报配置。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request UpdateDialogReportConfigRequest 请求对象
+     * @return AsyncInvoker<UpdateDialogReportConfigRequest, UpdateDialogReportConfigResponse>
+     */
+    public AsyncInvoker<UpdateDialogReportConfigRequest, UpdateDialogReportConfigResponse> updateDialogReportConfigAsyncInvoker(
+        UpdateDialogReportConfigRequest request) {
+        return new AsyncInvoker<>(request, MetaStudioMeta.updateDialogReportConfig, hcClient);
     }
 
     /**

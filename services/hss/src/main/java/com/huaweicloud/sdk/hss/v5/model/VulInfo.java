@@ -81,7 +81,7 @@ public class VulInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cve_list")
 
-    private List<VulInfoCveList> cveList = null;
+    private List<ShowVulReportDataResponseInfoCveList> cveList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "patch_url")
@@ -382,12 +382,12 @@ public class VulInfo {
         this.hostIdList = hostIdList;
     }
 
-    public VulInfo withCveList(List<VulInfoCveList> cveList) {
+    public VulInfo withCveList(List<ShowVulReportDataResponseInfoCveList> cveList) {
         this.cveList = cveList;
         return this;
     }
 
-    public VulInfo addCveListItem(VulInfoCveList cveListItem) {
+    public VulInfo addCveListItem(ShowVulReportDataResponseInfoCveList cveListItem) {
         if (this.cveList == null) {
             this.cveList = new ArrayList<>();
         }
@@ -395,7 +395,7 @@ public class VulInfo {
         return this;
     }
 
-    public VulInfo withCveList(Consumer<List<VulInfoCveList>> cveListSetter) {
+    public VulInfo withCveList(Consumer<List<ShowVulReportDataResponseInfoCveList>> cveListSetter) {
         if (this.cveList == null) {
             this.cveList = new ArrayList<>();
         }
@@ -407,11 +407,11 @@ public class VulInfo {
      * CVE列表
      * @return cveList
      */
-    public List<VulInfoCveList> getCveList() {
+    public List<ShowVulReportDataResponseInfoCveList> getCveList() {
         return cveList;
     }
 
-    public void setCveList(List<VulInfoCveList> cveList) {
+    public void setCveList(List<ShowVulReportDataResponseInfoCveList> cveList) {
         this.cveList = cveList;
     }
 

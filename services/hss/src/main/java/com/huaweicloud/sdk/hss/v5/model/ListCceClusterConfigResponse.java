@@ -65,7 +65,7 @@ public class ListCceClusterConfigResponse extends SdkResponse {
     }
 
     /**
-     * data list
+     * 配置信息列表
      * @return dataList
      */
     public List<ClusterConfigResponseInfo> getDataList() {

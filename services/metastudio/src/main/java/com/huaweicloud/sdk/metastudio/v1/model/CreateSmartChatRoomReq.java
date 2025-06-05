@@ -427,7 +427,7 @@ public class CreateSmartChatRoomReq {
     }
 
     /**
-     * **参数解释**： 并发路数。
+     * **参数解释**： 并发路数。 **约束限制**： 默认没有并发路数，如果不配置并发数量，则无法启动智能交互对话任务。
      * minimum: 0
      * maximum: 1024
      * @return concurrency

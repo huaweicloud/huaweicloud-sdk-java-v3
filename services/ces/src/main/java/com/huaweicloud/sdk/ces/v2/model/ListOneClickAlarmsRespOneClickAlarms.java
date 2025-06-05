@@ -87,7 +87,7 @@ public class ListOneClickAlarmsRespOneClickAlarms {
     }
 
     /**
-     * 开关
+     * 是否启用一键告警。true:开启，false：关闭。
      * @return enabled
      */
     public Boolean getEnabled() {

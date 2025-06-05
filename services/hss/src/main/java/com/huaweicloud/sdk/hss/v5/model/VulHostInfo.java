@@ -207,7 +207,7 @@ public class VulHostInfo {
     }
 
     /**
-     * Agent ID
+     * 主机对应的agent id
      * @return agentId
      */
     public String getAgentId() {

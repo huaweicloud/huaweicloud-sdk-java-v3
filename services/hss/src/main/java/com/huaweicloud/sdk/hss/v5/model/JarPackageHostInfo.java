@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * 服务器列表
+ * **参数解释** 服务器列表
  */
 public class JarPackageHostInfo {
 
@@ -126,7 +126,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * Agent ID
+     * **参数解释** agent_id **取值范围**: 字符长度1-64位
      * @return agentId
      */
     public String getAgentId() {
@@ -143,7 +143,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * 主机id
+     * **参数解释** 主机id **取值范围**: 字符长度0-128位
      * @return hostId
      */
     public String getHostId() {
@@ -160,7 +160,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * 服务器名称
+     * **参数解释** 服务器名称 **取值范围**: 字符长度0-256位
      * @return hostName
      */
     public String getHostName() {
@@ -177,7 +177,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * 服务器ip
+     * **参数解释** 服务器ip **取值范围**: 字符长度0-128位
      * @return hostIp
      */
     public String getHostIp() {
@@ -194,7 +194,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * Jar包名称
+     * **参数解释** 中间件包名称 **取值范围**: 字符长度0-256位
      * @return fileName
      */
     public String getFileName() {
@@ -211,7 +211,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * Jar包名称(不带后缀)
+     * **参数解释** 中间件包名称(不带后缀) **取值范围**: 字符长度0-256位\"
      * @return name
      */
     public String getName() {
@@ -228,7 +228,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * Jar包类型
+     * **参数解释** 中间件包类型 **取值范围**: 字符长度0-32位
      * @return catalogue
      */
     public String getCatalogue() {
@@ -245,7 +245,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * Jar包后缀
+     * **参数解释** 中间件包后缀 **取值范围**: 字符长度0-32位
      * @return fileType
      */
     public String getFileType() {
@@ -262,7 +262,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * Jar包版本
+     * **参数解释** 中间件包版本 **取值范围**: 字符长度0-64位
      * @return version
      */
     public String getVersion() {
@@ -279,7 +279,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * Jar包路径
+     * **参数解释** 中间件包路径 **取值范围**: 字符长度0-512位
      * @return path
      */
     public String getPath() {
@@ -296,7 +296,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * Jar包hash
+     * **参数解释** 中间件包hash **取值范围**: 字符长度0-512位
      * @return hash
      */
     public String getHash() {
@@ -313,7 +313,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * Jar包大小
+     * **参数解释** 中间件包大小 **取值范围**: 取值0-2147483647
      * minimum: 0
      * maximum: 2147483647
      * @return size
@@ -332,7 +332,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * uid
+     * **参数解释** uid **取值范围**: 取值0-2147483647
      * minimum: 0
      * maximum: 2147483647
      * @return uid
@@ -351,7 +351,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * gid
+     * **参数解释** gid **取值范围**: 取值0-2147483647
      * minimum: 0
      * maximum: 2147483647
      * @return gid
@@ -370,7 +370,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * 文件权限
+     * **参数解释** 文件权限 **取值范围**: 字符长度0-32位
      * @return mode
      */
     public String getMode() {
@@ -387,7 +387,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * 进程id
+     * **参数解释** 进程id **取值范围**: 取值0-2147483647
      * minimum: 0
      * maximum: 2147483647
      * @return pid
@@ -406,7 +406,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * 进程可执行文件路径
+     * **参数解释** 进程可执行文件路径 **取值范围**: 字符长度0-1024位
      * @return procPath
      */
     public String getProcPath() {
@@ -423,7 +423,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * 容器实例id
+     * **参数解释** 容器实例id **取值范围**: 字符长度0-128位
      * @return containerId
      */
     public String getContainerId() {
@@ -440,7 +440,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * 容器名称
+     * **参数解释** 容器名称 **取值范围**: 字符长度0-256位
      * @return containerName
      */
     public String getContainerName() {
@@ -457,7 +457,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * 包路径
+     * **参数解释** 包路径 **取值范围**: 字符长度0-1024位
      * @return packagePath
      */
     public String getPackagePath() {
@@ -474,7 +474,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * 显示的是否是嵌套包
+     * **参数解释** 是否是嵌套包 **取值范围**: - 0: 不是嵌套包 - 1: 是嵌套包
      * minimum: 0
      * maximum: 2147483647
      * @return isEmbedded
@@ -493,7 +493,7 @@ public class JarPackageHostInfo {
     }
 
     /**
-     * 扫描时间
+     * **参数解释** 扫描时间 **取值范围**: 取值0-4070880000000
      * minimum: 0
      * maximum: 4070880000000
      * @return recordTime

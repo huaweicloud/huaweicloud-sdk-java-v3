@@ -19,7 +19,7 @@ public class UpdatePolicy {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "extra_info")
 
-    private MetricExtraInfo extraInfo;
+    private ExtraInfo extraInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "period")
@@ -98,14 +98,14 @@ public class UpdatePolicy {
         this.metricName = metricName;
     }
 
-    public UpdatePolicy withExtraInfo(MetricExtraInfo extraInfo) {
+    public UpdatePolicy withExtraInfo(ExtraInfo extraInfo) {
         this.extraInfo = extraInfo;
         return this;
     }
 
-    public UpdatePolicy withExtraInfo(Consumer<MetricExtraInfo> extraInfoSetter) {
+    public UpdatePolicy withExtraInfo(Consumer<ExtraInfo> extraInfoSetter) {
         if (this.extraInfo == null) {
-            this.extraInfo = new MetricExtraInfo();
+            this.extraInfo = new ExtraInfo();
             extraInfoSetter.accept(this.extraInfo);
         }
 
@@ -116,11 +116,11 @@ public class UpdatePolicy {
      * Get extraInfo
      * @return extraInfo
      */
-    public MetricExtraInfo getExtraInfo() {
+    public ExtraInfo getExtraInfo() {
         return extraInfo;
     }
 
-    public void setExtraInfo(MetricExtraInfo extraInfo) {
+    public void setExtraInfo(ExtraInfo extraInfo) {
         this.extraInfo = extraInfo;
     }
 

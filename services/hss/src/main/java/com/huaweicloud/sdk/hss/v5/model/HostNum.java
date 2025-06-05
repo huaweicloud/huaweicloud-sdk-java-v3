@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 关联服务器数
+ * 影响主机数量
  */
 public class HostNum {
 

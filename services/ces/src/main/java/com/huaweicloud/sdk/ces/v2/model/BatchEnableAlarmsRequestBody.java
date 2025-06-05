@@ -62,7 +62,7 @@ public class BatchEnableAlarmsRequestBody {
     }
 
     /**
-     * 告警开关
+     * 是否开启告警规则。true:开启，false:关闭。
      * @return alarmEnabled
      */
     public Boolean getAlarmEnabled() {

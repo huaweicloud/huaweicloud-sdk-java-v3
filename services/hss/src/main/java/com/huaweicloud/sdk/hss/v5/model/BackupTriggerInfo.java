@@ -37,7 +37,7 @@ public class BackupTriggerInfo {
     }
 
     /**
-     * 调度器id
+     * **参数解释**: 调度器id **取值范围**: 字符长度0-256 
      * @return id
      */
     public String getId() {
@@ -54,7 +54,7 @@ public class BackupTriggerInfo {
     }
 
     /**
-     * 调度器名称
+     * **参数解释**: 调度器名称 **取值范围**: 字符长度0-256 
      * @return name
      */
     public String getName() {
@@ -71,7 +71,7 @@ public class BackupTriggerInfo {
     }
 
     /**
-     * 调度器类型,目前只支持 time,定时调度。
+     * **参数解释**: 调度器类型,目前只支持 time,定时调度。 **取值范围**: 字符长度0-256 
      * @return type
      */
     public String getType() {

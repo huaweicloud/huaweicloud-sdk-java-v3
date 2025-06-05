@@ -316,7 +316,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 告警开关
+     * 是否开启告警规则。true:开启，false:关闭。
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -333,7 +333,7 @@ public class EnableOneClickAlarmRequestBodyOneClickUpdateAlarms {
     }
 
     /**
-     * 是否开启告警通知
+     * 是否开启告警通知。true:开启，false:关闭。
      * @return notificationEnabled
      */
     public Boolean getNotificationEnabled() {

@@ -24,6 +24,11 @@ public class AssociatePolicyGroupRequestInfo {
     private Boolean operateAll;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deploy_type")
+
+    private String deployType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host_id_list")
 
     private List<String> hostIdList = null;
@@ -51,7 +56,7 @@ public class AssociatePolicyGroupRequestInfo {
     }
 
     /**
-     * 是否要对全量主机部署策略，如果为true的话，不需填写host_id_list，如果为false的话，需要填写host_id_list
+     * 是否要对全量主机/pod实例/工作负载/集群部署策略，如果为true的话，不需填写host_id_list，如果为false的话，需要填写host_id_list
      * @return operateAll
      */
     public Boolean getOperateAll() {
@@ -60,6 +65,23 @@ public class AssociatePolicyGroupRequestInfo {
 
     public void setOperateAll(Boolean operateAll) {
         this.operateAll = operateAll;
+    }
+
+    public AssociatePolicyGroupRequestInfo withDeployType(String deployType) {
+        this.deployType = deployType;
+        return this;
+    }
+
+    /**
+     * 策略部署类型: - host: 主机 - pod: pod实例 - workload: 工作负载 - cluster: 集群
+     * @return deployType
+     */
+    public String getDeployType() {
+        return deployType;
+    }
+
+    public void setDeployType(String deployType) {
+        this.deployType = deployType;
     }
 
     public AssociatePolicyGroupRequestInfo withHostIdList(List<String> hostIdList) {
@@ -84,7 +106,7 @@ public class AssociatePolicyGroupRequestInfo {
     }
 
     /**
-     * 需要部署策略组的主机ID列表
+     * 需要部署策略组的主机/pod实例/负载/集群ID列表
      * @return hostIdList
      */
     public List<String> getHostIdList() {
@@ -105,12 +127,13 @@ public class AssociatePolicyGroupRequestInfo {
         }
         AssociatePolicyGroupRequestInfo that = (AssociatePolicyGroupRequestInfo) obj;
         return Objects.equals(this.targetPolicyGroupId, that.targetPolicyGroupId)
-            && Objects.equals(this.operateAll, that.operateAll) && Objects.equals(this.hostIdList, that.hostIdList);
+            && Objects.equals(this.operateAll, that.operateAll) && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.hostIdList, that.hostIdList);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(targetPolicyGroupId, operateAll, hostIdList);
+        return Objects.hash(targetPolicyGroupId, operateAll, deployType, hostIdList);
     }
 
     @Override
@@ -119,6 +142,7 @@ public class AssociatePolicyGroupRequestInfo {
         sb.append("class AssociatePolicyGroupRequestInfo {\n");
         sb.append("    targetPolicyGroupId: ").append(toIndentedString(targetPolicyGroupId)).append("\n");
         sb.append("    operateAll: ").append(toIndentedString(operateAll)).append("\n");
+        sb.append("    deployType: ").append(toIndentedString(deployType)).append("\n");
         sb.append("    hostIdList: ").append(toIndentedString(hostIdList)).append("\n");
         sb.append("}");
         return sb.toString();

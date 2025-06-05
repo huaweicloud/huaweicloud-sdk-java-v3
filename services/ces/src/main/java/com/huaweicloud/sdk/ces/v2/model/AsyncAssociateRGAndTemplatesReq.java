@@ -181,7 +181,7 @@ public class AsyncAssociateRGAndTemplatesReq {
     }
 
     /**
-     * 是否开启告警通知
+     * 是否开启告警通知。true:开启，false:关闭。
      * @return notificationEnabled
      */
     public Boolean getNotificationEnabled() {

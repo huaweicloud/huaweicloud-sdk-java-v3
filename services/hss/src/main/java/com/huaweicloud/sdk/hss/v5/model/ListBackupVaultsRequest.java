@@ -38,7 +38,7 @@ public class ListBackupVaultsRequest {
     /**
      * 偏移量：指定返回记录的开始位置
      * minimum: 0
-     * maximum: 100000
+     * maximum: 2000000
      * @return offset
      */
     public Integer getOffset() {

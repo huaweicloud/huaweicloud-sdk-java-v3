@@ -6,9 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * VulInfoCveList
+ * ShowVulReportDataResponseInfoCveList
  */
-public class VulInfoCveList {
+public class ShowVulReportDataResponseInfoCveList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cve_id")
@@ -20,7 +20,7 @@ public class VulInfoCveList {
 
     private Float cvss;
 
-    public VulInfoCveList withCveId(String cveId) {
+    public ShowVulReportDataResponseInfoCveList withCveId(String cveId) {
         this.cveId = cveId;
         return this;
     }
@@ -37,7 +37,7 @@ public class VulInfoCveList {
         this.cveId = cveId;
     }
 
-    public VulInfoCveList withCvss(Float cvss) {
+    public ShowVulReportDataResponseInfoCveList withCvss(Float cvss) {
         this.cvss = cvss;
         return this;
     }
@@ -64,7 +64,7 @@ public class VulInfoCveList {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VulInfoCveList that = (VulInfoCveList) obj;
+        ShowVulReportDataResponseInfoCveList that = (ShowVulReportDataResponseInfoCveList) obj;
         return Objects.equals(this.cveId, that.cveId) && Objects.equals(this.cvss, that.cvss);
     }
 
@@ -76,7 +76,7 @@ public class VulInfoCveList {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class VulInfoCveList {\n");
+        sb.append("class ShowVulReportDataResponseInfoCveList {\n");
         sb.append("    cveId: ").append(toIndentedString(cveId)).append("\n");
         sb.append("    cvss: ").append(toIndentedString(cvss)).append("\n");
         sb.append("}");

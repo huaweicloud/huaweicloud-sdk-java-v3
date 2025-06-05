@@ -34,6 +34,11 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     private String baitProtectionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "deploy_mode")
+
+    private String deployMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "protection_directory")
 
     private String protectionDirectory;
@@ -79,7 +84,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 策略ID
+     * **参数解释**: 策略ID **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return policyId
      */
     public String getPolicyId() {
@@ -96,7 +101,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 策略名称
+     * **参数解释**: 策略名称 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return policyName
      */
     public String getPolicyName() {
@@ -113,7 +118,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 防护动作，包含如下2种。   - alarm_and_isolation ：告警并自动隔离。   - alarm_only ：仅告警。
+     * **参数解释**: 防护动作 **约束限制**: 不涉及 **取值范围**: 包含两种：   - alarm_and_isolation ：告警并自动隔离。   - alarm_only ：仅告警。 **默认取值**: 不涉及 
      * @return protectionMode
      */
     public String getProtectionMode() {
@@ -130,7 +135,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 是否开启诱饵防护，包含如下1种, 默认为开启防护诱饵防护。   - opened ：开启。   - closed ：关闭。
+     * **参数解释**: 是否开启诱饵防护 **约束限制**: 不涉及 **取值范围**:   - opened ：开启。 **默认取值**: 不涉及 
      * @return baitProtectionStatus
      */
     public String getBaitProtectionStatus() {
@@ -141,13 +146,30 @@ public class UpdateProtectionPolicyInfoRequestInfo {
         this.baitProtectionStatus = baitProtectionStatus;
     }
 
+    public UpdateProtectionPolicyInfoRequestInfo withDeployMode(String deployMode) {
+        this.deployMode = deployMode;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 是否开启动态诱饵，包含如下2种, 默认为关闭防护动态诱饵防护。 **约束限制**: 不涉及 **取值范围**: 包含两种：   - opened ：开启。   - closed ：关闭。   **默认取值**: closed 
+     * @return deployMode
+     */
+    public String getDeployMode() {
+        return deployMode;
+    }
+
+    public void setDeployMode(String deployMode) {
+        this.deployMode = deployMode;
+    }
+
     public UpdateProtectionPolicyInfoRequestInfo withProtectionDirectory(String protectionDirectory) {
         this.protectionDirectory = protectionDirectory;
         return this;
     }
 
     /**
-     * 防护目录,多个目录请用英文分号隔开，最多支持填写20个防护目录
+     * **参数解释**: 防护目录,多个目录请用英文分号隔开，最多支持填写20个防护目录 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及 
      * @return protectionDirectory
      */
     public String getProtectionDirectory() {
@@ -164,7 +186,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 防护文件类型，例如：docx，txt，avi
+     * **参数解释**: 防护文件类型，例如：docx，txt，avi **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及         
      * @return protectionType
      */
     public String getProtectionType() {
@@ -181,7 +203,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 排除目录(选填)，多个目录请用英文分号隔开，最多支持填写20个排除目录
+     * **参数解释**: 排除目录(选填)，多个目录请用英文分号隔开，最多支持填写20个排除目录 **约束限制**: 不涉及 **取值范围**: 字符长度0-128位 **默认取值**: 不涉及    
      * @return excludeDirectory
      */
     public String getExcludeDirectory() {
@@ -214,7 +236,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 开启了此勒索防护策略的agent的id列表
+     * **参数解释**: 开启了此勒索防护策略的agent的id列表 **约束限制**: 不涉及 **取值范围**: 列表最大1000条，字符长度0-128位 **默认取值**: 不涉及  
      * @return agentIdList
      */
     public List<String> getAgentIdList() {
@@ -231,7 +253,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 支持该策略的操作系统，包含如下：   - Windows : Windows系统   - Linux : Linux系统
+     * **参数解释**: 支持该策略的操作系统 **约束限制**: 不涉及 **取值范围**: 包含两种：   - Windows : Windows系统   - Linux : Linux系统 **默认取值**: 不涉及
      * @return operatingSystem
      */
     public String getOperatingSystem() {
@@ -248,7 +270,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 是否运行时检测，包含如下2种，暂时只有关闭一种状态，为保留字段。   - opened ：开启。   - closed ：关闭。
+     * **参数解释**: 是否运行时检测，包含如下2种，暂时只有关闭一种状态，为保留字段。   - opened ：开启。   - closed ：关闭。 **约束限制**: 不涉及 **取值范围**: 包含两种： 不涉及 **默认取值**: 不涉及
      * @return runtimeDetectionStatus
      */
     public String getRuntimeDetectionStatus() {
@@ -299,7 +321,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     /**
-     * 是否开启AI勒索防护，包含如下1种, 默认为开启AI勒索防护。   - opened ：开启。   - closed ：关闭。            
+     * **参数解释**: 是否开启AI勒索防护，包含如下2种, 默认为关闭AI勒索防护。当前只有Windows系统涉及 **约束限制**: 不涉及 **取值范围**: 包含两种：   - opened ：开启。   - closed ：关闭。 **默认取值**: closed
      * @return aiProtectionStatus
      */
     public String getAiProtectionStatus() {
@@ -322,6 +344,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
         return Objects.equals(this.policyId, that.policyId) && Objects.equals(this.policyName, that.policyName)
             && Objects.equals(this.protectionMode, that.protectionMode)
             && Objects.equals(this.baitProtectionStatus, that.baitProtectionStatus)
+            && Objects.equals(this.deployMode, that.deployMode)
             && Objects.equals(this.protectionDirectory, that.protectionDirectory)
             && Objects.equals(this.protectionType, that.protectionType)
             && Objects.equals(this.excludeDirectory, that.excludeDirectory)
@@ -338,6 +361,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
             policyName,
             protectionMode,
             baitProtectionStatus,
+            deployMode,
             protectionDirectory,
             protectionType,
             excludeDirectory,
@@ -356,6 +380,7 @@ public class UpdateProtectionPolicyInfoRequestInfo {
         sb.append("    policyName: ").append(toIndentedString(policyName)).append("\n");
         sb.append("    protectionMode: ").append(toIndentedString(protectionMode)).append("\n");
         sb.append("    baitProtectionStatus: ").append(toIndentedString(baitProtectionStatus)).append("\n");
+        sb.append("    deployMode: ").append(toIndentedString(deployMode)).append("\n");
         sb.append("    protectionDirectory: ").append(toIndentedString(protectionDirectory)).append("\n");
         sb.append("    protectionType: ").append(toIndentedString(protectionType)).append("\n");
         sb.append("    excludeDirectory: ").append(toIndentedString(excludeDirectory)).append("\n");

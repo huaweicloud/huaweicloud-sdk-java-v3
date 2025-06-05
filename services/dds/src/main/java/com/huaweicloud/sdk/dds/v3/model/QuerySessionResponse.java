@@ -60,6 +60,16 @@ public class QuerySessionResponse {
 
     private String namespace;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "db")
+
+    private String db;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "user")
+
+    private String user;
+
     public QuerySessionResponse withId(String id) {
         this.id = id;
         return this;
@@ -230,6 +240,40 @@ public class QuerySessionResponse {
         this.namespace = namespace;
     }
 
+    public QuerySessionResponse withDb(String db) {
+        this.db = db;
+        return this;
+    }
+
+    /**
+     * 正在操作的数据库名称。
+     * @return db
+     */
+    public String getDb() {
+        return db;
+    }
+
+    public void setDb(String db) {
+        this.db = db;
+    }
+
+    public QuerySessionResponse withUser(String user) {
+        this.user = user;
+        return this;
+    }
+
+    /**
+     * 用户名称。仅支持4.2及以上版本,如果无法显示该字段，请升级内核版本。
+     * @return user
+     */
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -243,12 +287,14 @@ public class QuerySessionResponse {
             && Objects.equals(this.operation, that.operation) && Objects.equals(this.type, that.type)
             && Objects.equals(this.costTime, that.costTime) && Objects.equals(this.planSummary, that.planSummary)
             && Objects.equals(this.host, that.host) && Objects.equals(this.client, that.client)
-            && Objects.equals(this.description, that.description) && Objects.equals(this.namespace, that.namespace);
+            && Objects.equals(this.description, that.description) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.db, that.db) && Objects.equals(this.user, that.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, active, operation, type, costTime, planSummary, host, client, description, namespace);
+        return Objects
+            .hash(id, active, operation, type, costTime, planSummary, host, client, description, namespace, db, user);
     }
 
     @Override
@@ -265,6 +311,8 @@ public class QuerySessionResponse {
         sb.append("    client: ").append(toIndentedString(client)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+        sb.append("    db: ").append(toIndentedString(db)).append("\n");
+        sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("}");
         return sb.toString();
     }

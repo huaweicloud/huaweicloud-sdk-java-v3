@@ -32,7 +32,7 @@ public class ListContainerNodesResponse extends SdkResponse {
     /**
      * 容器节点总数
      * minimum: 0
-     * maximum: 65535
+     * maximum: 2147483647
      * @return totalNum
      */
     public Integer getTotalNum() {

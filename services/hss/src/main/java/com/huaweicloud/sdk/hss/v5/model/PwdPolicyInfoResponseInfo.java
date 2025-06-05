@@ -61,6 +61,36 @@ public class PwdPolicyInfoResponseInfo {
     private Boolean specialCharacter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_length_num")
+
+    private Integer minLengthNum;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_uppercase_letter")
+
+    private Integer minUppercaseLetter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_lowercase_letter")
+
+    private Integer minLowercaseLetter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_number")
+
+    private Integer minNumber;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "min_special_character")
+
+    private Integer minSpecialCharacter;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "update_time")
+
+    private Long updateTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "suggestion")
 
     private String suggestion;
@@ -235,6 +265,110 @@ public class PwdPolicyInfoResponseInfo {
         this.specialCharacter = specialCharacter;
     }
 
+    public PwdPolicyInfoResponseInfo withMinLengthNum(Integer minLengthNum) {
+        this.minLengthNum = minLengthNum;
+        return this;
+    }
+
+    /**
+     * 复杂口令策略中定义的口令最小长度
+     * @return minLengthNum
+     */
+    public Integer getMinLengthNum() {
+        return minLengthNum;
+    }
+
+    public void setMinLengthNum(Integer minLengthNum) {
+        this.minLengthNum = minLengthNum;
+    }
+
+    public PwdPolicyInfoResponseInfo withMinUppercaseLetter(Integer minUppercaseLetter) {
+        this.minUppercaseLetter = minUppercaseLetter;
+        return this;
+    }
+
+    /**
+     * 复杂口令策略中定义的最少包含的大写字母数
+     * @return minUppercaseLetter
+     */
+    public Integer getMinUppercaseLetter() {
+        return minUppercaseLetter;
+    }
+
+    public void setMinUppercaseLetter(Integer minUppercaseLetter) {
+        this.minUppercaseLetter = minUppercaseLetter;
+    }
+
+    public PwdPolicyInfoResponseInfo withMinLowercaseLetter(Integer minLowercaseLetter) {
+        this.minLowercaseLetter = minLowercaseLetter;
+        return this;
+    }
+
+    /**
+     * 复杂口令策略中定义的最少包含的小写字母数
+     * @return minLowercaseLetter
+     */
+    public Integer getMinLowercaseLetter() {
+        return minLowercaseLetter;
+    }
+
+    public void setMinLowercaseLetter(Integer minLowercaseLetter) {
+        this.minLowercaseLetter = minLowercaseLetter;
+    }
+
+    public PwdPolicyInfoResponseInfo withMinNumber(Integer minNumber) {
+        this.minNumber = minNumber;
+        return this;
+    }
+
+    /**
+     * 复杂口令策略中定义的最少包含的数字数
+     * @return minNumber
+     */
+    public Integer getMinNumber() {
+        return minNumber;
+    }
+
+    public void setMinNumber(Integer minNumber) {
+        this.minNumber = minNumber;
+    }
+
+    public PwdPolicyInfoResponseInfo withMinSpecialCharacter(Integer minSpecialCharacter) {
+        this.minSpecialCharacter = minSpecialCharacter;
+        return this;
+    }
+
+    /**
+     * 复杂口令策略中定义的最少包含的特殊字母数
+     * @return minSpecialCharacter
+     */
+    public Integer getMinSpecialCharacter() {
+        return minSpecialCharacter;
+    }
+
+    public void setMinSpecialCharacter(Integer minSpecialCharacter) {
+        this.minSpecialCharacter = minSpecialCharacter;
+    }
+
+    public PwdPolicyInfoResponseInfo withUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    /**
+     * 最近扫描时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return updateTime
+     */
+    public Long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+    }
+
     public PwdPolicyInfoResponseInfo withSuggestion(String suggestion) {
         this.suggestion = suggestion;
         return this;
@@ -267,7 +401,12 @@ public class PwdPolicyInfoResponseInfo {
             && Objects.equals(this.uppercaseLetter, that.uppercaseLetter)
             && Objects.equals(this.lowercaseLetter, that.lowercaseLetter) && Objects.equals(this.number, that.number)
             && Objects.equals(this.specialCharacter, that.specialCharacter)
-            && Objects.equals(this.suggestion, that.suggestion);
+            && Objects.equals(this.minLengthNum, that.minLengthNum)
+            && Objects.equals(this.minUppercaseLetter, that.minUppercaseLetter)
+            && Objects.equals(this.minLowercaseLetter, that.minLowercaseLetter)
+            && Objects.equals(this.minNumber, that.minNumber)
+            && Objects.equals(this.minSpecialCharacter, that.minSpecialCharacter)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.suggestion, that.suggestion);
     }
 
     @Override
@@ -282,6 +421,12 @@ public class PwdPolicyInfoResponseInfo {
             lowercaseLetter,
             number,
             specialCharacter,
+            minLengthNum,
+            minUppercaseLetter,
+            minLowercaseLetter,
+            minNumber,
+            minSpecialCharacter,
+            updateTime,
             suggestion);
     }
 
@@ -299,6 +444,12 @@ public class PwdPolicyInfoResponseInfo {
         sb.append("    lowercaseLetter: ").append(toIndentedString(lowercaseLetter)).append("\n");
         sb.append("    number: ").append(toIndentedString(number)).append("\n");
         sb.append("    specialCharacter: ").append(toIndentedString(specialCharacter)).append("\n");
+        sb.append("    minLengthNum: ").append(toIndentedString(minLengthNum)).append("\n");
+        sb.append("    minUppercaseLetter: ").append(toIndentedString(minUppercaseLetter)).append("\n");
+        sb.append("    minLowercaseLetter: ").append(toIndentedString(minLowercaseLetter)).append("\n");
+        sb.append("    minNumber: ").append(toIndentedString(minNumber)).append("\n");
+        sb.append("    minSpecialCharacter: ").append(toIndentedString(minSpecialCharacter)).append("\n");
+        sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
         sb.append("    suggestion: ").append(toIndentedString(suggestion)).append("\n");
         sb.append("}");
         return sb.toString();

@@ -113,6 +113,16 @@ public class VulhandleHistoryResponseInfoDataList {
 
     private String clusterId;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_name")
+
+    private String containerName;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "container_id")
+
+    private String containerId;
+
     public VulhandleHistoryResponseInfoDataList withId(String id) {
         this.id = id;
         return this;
@@ -204,7 +214,7 @@ public class VulhandleHistoryResponseInfoDataList {
     }
 
     /**
-     * 服务器公网ip
+     * 服务器公网IP
      * @return publicIp
      */
     public String getPublicIp() {
@@ -221,7 +231,7 @@ public class VulhandleHistoryResponseInfoDataList {
     }
 
     /**
-     * 服务器私网ip
+     * 服务器私网IP
      * @return privateIp
      */
     public String getPrivateIp() {
@@ -469,6 +479,40 @@ public class VulhandleHistoryResponseInfoDataList {
         this.clusterId = clusterId;
     }
 
+    public VulhandleHistoryResponseInfoDataList withContainerName(String containerName) {
+        this.containerName = containerName;
+        return this;
+    }
+
+    /**
+     * 容器名称
+     * @return containerName
+     */
+    public String getContainerName() {
+        return containerName;
+    }
+
+    public void setContainerName(String containerName) {
+        this.containerName = containerName;
+    }
+
+    public VulhandleHistoryResponseInfoDataList withContainerId(String containerId) {
+        this.containerId = containerId;
+        return this;
+    }
+
+    /**
+     * 容器ID
+     * @return containerId
+     */
+    public String getContainerId() {
+        return containerId;
+    }
+
+    public void setContainerId(String containerId) {
+        this.containerId = containerId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -487,7 +531,9 @@ public class VulhandleHistoryResponseInfoDataList {
             && Objects.equals(this.vulName, that.vulName) && Objects.equals(this.assetValue, that.assetValue)
             && Objects.equals(this.cveList, that.cveList) && Objects.equals(this.appName, that.appName)
             && Objects.equals(this.appPath, that.appPath) && Objects.equals(this.appVersion, that.appVersion)
-            && Objects.equals(this.handleType, that.handleType) && Objects.equals(this.clusterId, that.clusterId);
+            && Objects.equals(this.handleType, that.handleType) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.containerName, that.containerName)
+            && Objects.equals(this.containerId, that.containerId);
     }
 
     @Override
@@ -511,7 +557,9 @@ public class VulhandleHistoryResponseInfoDataList {
             appPath,
             appVersion,
             handleType,
-            clusterId);
+            clusterId,
+            containerName,
+            containerId);
     }
 
     @Override
@@ -538,6 +586,8 @@ public class VulhandleHistoryResponseInfoDataList {
         sb.append("    appVersion: ").append(toIndentedString(appVersion)).append("\n");
         sb.append("    handleType: ").append(toIndentedString(handleType)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
+        sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
+        sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

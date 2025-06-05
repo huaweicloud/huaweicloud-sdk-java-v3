@@ -68,6 +68,11 @@ public class ListLogStreamsResponseBody1LogStreams {
 
     private Integer hotStorageDays;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_group_id")
+
+    private String logGroupId;
+
     public ListLogStreamsResponseBody1LogStreams withCreationTime(Long creationTime) {
         this.creationTime = creationTime;
         return this;
@@ -275,6 +280,23 @@ public class ListLogStreamsResponseBody1LogStreams {
         this.hotStorageDays = hotStorageDays;
     }
 
+    public ListLogStreamsResponseBody1LogStreams withLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+        return this;
+    }
+
+    /**
+     * 日志组ID
+     * @return logGroupId
+     */
+    public String getLogGroupId() {
+        return logGroupId;
+    }
+
+    public void setLogGroupId(String logGroupId) {
+        this.logGroupId = logGroupId;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -293,7 +315,8 @@ public class ListLogStreamsResponseBody1LogStreams {
             && Objects.equals(this.hotColdSeparation, that.hotColdSeparation)
             && Objects.equals(this.authWebTracking, that.authWebTracking)
             && Objects.equals(this.ttlInDays, that.ttlInDays)
-            && Objects.equals(this.hotStorageDays, that.hotStorageDays);
+            && Objects.equals(this.hotStorageDays, that.hotStorageDays)
+            && Objects.equals(this.logGroupId, that.logGroupId);
     }
 
     @Override
@@ -308,7 +331,8 @@ public class ListLogStreamsResponseBody1LogStreams {
             hotColdSeparation,
             authWebTracking,
             ttlInDays,
-            hotStorageDays);
+            hotStorageDays,
+            logGroupId);
     }
 
     @Override
@@ -326,6 +350,7 @@ public class ListLogStreamsResponseBody1LogStreams {
         sb.append("    authWebTracking: ").append(toIndentedString(authWebTracking)).append("\n");
         sb.append("    ttlInDays: ").append(toIndentedString(ttlInDays)).append("\n");
         sb.append("    hotStorageDays: ").append(toIndentedString(hotStorageDays)).append("\n");
+        sb.append("    logGroupId: ").append(toIndentedString(logGroupId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

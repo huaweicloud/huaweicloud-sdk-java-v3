@@ -83,13 +83,18 @@ public class ProtectionPolicyInfo {
 
     private Integer defaultPolicy;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "ai_protection_status")
+
+    private String aiProtectionStatus;
+
     public ProtectionPolicyInfo withPolicyId(String policyId) {
         this.policyId = policyId;
         return this;
     }
 
     /**
-     * 策略ID
+     * **参数解释**: 策略ID **取值范围**: 字符长度0-128 
      * @return policyId
      */
     public String getPolicyId() {
@@ -106,7 +111,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 策略名称
+     * **参数解释**: 防护策略名称 **取值范围**: 字符长度1-128 
      * @return policyName
      */
     public String getPolicyName() {
@@ -123,7 +128,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 防护动作，包含如下2种。   - alarm_and_isolation ：告警并自动隔离。   - alarm_only ：仅告警。
+     * **参数解释**: 防护动作，包含如下2种。   - alarm_and_isolation ：告警并自动隔离。   - alarm_only ：仅告警。 **取值范围**: 字符长度0-128
      * @return protectionMode
      */
     public String getProtectionMode() {
@@ -140,7 +145,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 是否开启诱饵防护，包含如下1种, 默认为开启防护诱饵防护。   - opened ：开启。   - closed ：关闭。
+     * **参数解释**: 是否开启诱饵防护，包含如下1种, 默认为开启防护诱饵防护。   - opened ：开启。   - closed ：关闭。  **取值范围**: 字符长度0-128
      * @return baitProtectionStatus
      */
     public String getBaitProtectionStatus() {
@@ -157,7 +162,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 是否开启动态诱饵防护，包含如下2种, 默认为关闭动态诱饵防护。   - opened ：开启。   - closed ：关闭。
+     * **参数解释**: 是否开启动态诱饵防护，包含如下2种, 默认为关闭动态诱饵防护。   - opened ：开启。   - closed ：关闭。   **取值范围**: 字符长度0-128
      * @return deployMode
      */
     public String getDeployMode() {
@@ -174,7 +179,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 防护目录
+     * **参数解释**: 防护目录 **取值范围**: 字符长度1-128 
      * @return protectionDirectory
      */
     public String getProtectionDirectory() {
@@ -191,7 +196,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 防护文件类型，例如：docx，txt，avi
+     * **参数解释**: 防护文件类型，例如：docx，txt，avi **取值范围**: 字符长度1-128 
      * @return protectionType
      */
     public String getProtectionType() {
@@ -208,7 +213,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 排除目录，选填
+     * **参数解释**: 排除目录，选填 **取值范围**: 字符长度1-128 
      * @return excludeDirectory
      */
     public String getExcludeDirectory() {
@@ -225,7 +230,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 是否运行时检测，包含如下2种，暂时只有关闭一种状态，为保留字段。   - opened ：开启。   - closed ：关闭。
+     * **参数解释**: 是否运行时检测，包含如下2种，暂时只有关闭一种状态，为保留字段。   - opened ：开启。   - closed ：关闭。 **取值范围**: 字符长度0-128
      * @return runtimeDetectionStatus
      */
     public String getRuntimeDetectionStatus() {
@@ -242,7 +247,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 运行时检测目录，现在为保留字段
+     * **参数解释**: 运行时检测目录，现在为保留字段 **取值范围**: 字符长度1-128
      * @return runtimeDetectionDirectory
      */
     public String getRuntimeDetectionDirectory() {
@@ -259,7 +264,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 关联server个数
+     * **参数解释**: 关联server个数 **取值范围**: 取值范围0-2097152
      * minimum: 0
      * maximum: 2097152
      * @return countAssociatedServer
@@ -278,7 +283,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 操作系统类型。 - Linux - Windows
+     * **参数解释**: 操作系统类型。 - Linux - Windows **取值范围**: 字符长度1-128
      * @return operatingSystem
      */
     public String getOperatingSystem() {
@@ -328,7 +333,7 @@ public class ProtectionPolicyInfo {
     }
 
     /**
-     * 是否为默认策略，包含如下2种。   - 0 ：非默认策略。   - 1 ：默认策略
+     * **参数解释**: 是否为默认策略，包含如下2种。   - 0 ：非默认策略。   - 1 ：默认策略 **取值范围**: 取值大小0-10
      * minimum: 0
      * maximum: 10
      * @return defaultPolicy
@@ -339,6 +344,23 @@ public class ProtectionPolicyInfo {
 
     public void setDefaultPolicy(Integer defaultPolicy) {
         this.defaultPolicy = defaultPolicy;
+    }
+
+    public ProtectionPolicyInfo withAiProtectionStatus(String aiProtectionStatus) {
+        this.aiProtectionStatus = aiProtectionStatus;
+        return this;
+    }
+
+    /**
+     * **参数解释**: 是否开启AI勒索防护，包含如下1种, 默认为开启AI勒索防护。   - opened ：开启。   - closed ：关闭。  **取值范围**: 字符长度1-128
+     * @return aiProtectionStatus
+     */
+    public String getAiProtectionStatus() {
+        return aiProtectionStatus;
+    }
+
+    public void setAiProtectionStatus(String aiProtectionStatus) {
+        this.aiProtectionStatus = aiProtectionStatus;
     }
 
     @Override
@@ -362,7 +384,8 @@ public class ProtectionPolicyInfo {
             && Objects.equals(this.countAssociatedServer, that.countAssociatedServer)
             && Objects.equals(this.operatingSystem, that.operatingSystem)
             && Objects.equals(this.processWhitelist, that.processWhitelist)
-            && Objects.equals(this.defaultPolicy, that.defaultPolicy);
+            && Objects.equals(this.defaultPolicy, that.defaultPolicy)
+            && Objects.equals(this.aiProtectionStatus, that.aiProtectionStatus);
     }
 
     @Override
@@ -380,7 +403,8 @@ public class ProtectionPolicyInfo {
             countAssociatedServer,
             operatingSystem,
             processWhitelist,
-            defaultPolicy);
+            defaultPolicy,
+            aiProtectionStatus);
     }
 
     @Override
@@ -401,6 +425,7 @@ public class ProtectionPolicyInfo {
         sb.append("    operatingSystem: ").append(toIndentedString(operatingSystem)).append("\n");
         sb.append("    processWhitelist: ").append(toIndentedString(processWhitelist)).append("\n");
         sb.append("    defaultPolicy: ").append(toIndentedString(defaultPolicy)).append("\n");
+        sb.append("    aiProtectionStatus: ").append(toIndentedString(aiProtectionStatus)).append("\n");
         sb.append("}");
         return sb.toString();
     }

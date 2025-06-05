@@ -77,6 +77,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.CreateResourceUriRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateResourceUriResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTaskDefaultResultRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTaskDefaultResultResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTemplateRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTemplateResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseInPlanRequest;
@@ -125,6 +127,7 @@ import com.huaweicloud.sdk.cloudtest.v1.model.ImportAssetResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.ImportFactorRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.ImportFactorRequestBody;
 import com.huaweicloud.sdk.cloudtest.v1.model.ImportFactorResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.InitExecuteTaskInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.IssueTreeInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.IteratorVersionInfo;
 import com.huaweicloud.sdk.cloudtest.v1.model.IteratorVersionsQueryInfo;
@@ -949,6 +952,46 @@ public class CloudtestMeta {
             f -> f.withMarshaller(CreateServiceRequest::getBody, CreateServiceRequest::setBody));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateTaskDefaultResultRequest, CreateTaskDefaultResultResponse> createTaskDefaultResult =
+        genForCreateTaskDefaultResult();
+
+    private static HttpRequestDef<CreateTaskDefaultResultRequest, CreateTaskDefaultResultResponse> genForCreateTaskDefaultResult() {
+        // basic
+        HttpRequestDef.Builder<CreateTaskDefaultResultRequest, CreateTaskDefaultResultResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateTaskDefaultResultRequest.class, CreateTaskDefaultResultResponse.class)
+            .withName("CreateTaskDefaultResult")
+            .withUri("/v4/{project_id}/tasks/{task_uri}/results/init")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTaskDefaultResultRequest::getProjectId,
+                CreateTaskDefaultResultRequest::setProjectId));
+        builder.<String>withRequestField("task_uri",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateTaskDefaultResultRequest::getTaskUri,
+                CreateTaskDefaultResultRequest::setTaskUri));
+        builder.<InitExecuteTaskInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(InitExecuteTaskInfo.class),
+            f -> f.withMarshaller(CreateTaskDefaultResultRequest::getBody, CreateTaskDefaultResultRequest::setBody));
+
+        // response
+        builder.<String>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateTaskDefaultResultResponse::getBody, CreateTaskDefaultResultResponse::setBody));
 
         return builder.build();
     }

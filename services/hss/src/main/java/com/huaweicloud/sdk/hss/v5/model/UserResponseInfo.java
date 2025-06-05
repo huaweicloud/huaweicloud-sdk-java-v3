@@ -66,6 +66,11 @@ public class UserResponseInfo {
     private Long recentScanTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "first_scan_time")
+
+    private Long firstScanTime;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "container_id")
 
     private String containerId;
@@ -253,7 +258,7 @@ public class UserResponseInfo {
     /**
      * 最近扫描时间
      * minimum: 0
-     * maximum: 4070880000000
+     * maximum: 9223372036854775807
      * @return recentScanTime
      */
     public Long getRecentScanTime() {
@@ -262,6 +267,25 @@ public class UserResponseInfo {
 
     public void setRecentScanTime(Long recentScanTime) {
         this.recentScanTime = recentScanTime;
+    }
+
+    public UserResponseInfo withFirstScanTime(Long firstScanTime) {
+        this.firstScanTime = firstScanTime;
+        return this;
+    }
+
+    /**
+     * 首次扫描时间
+     * minimum: 0
+     * maximum: 9223372036854775807
+     * @return firstScanTime
+     */
+    public Long getFirstScanTime() {
+        return firstScanTime;
+    }
+
+    public void setFirstScanTime(Long firstScanTime) {
+        this.firstScanTime = firstScanTime;
     }
 
     public UserResponseInfo withContainerId(String containerId) {
@@ -315,6 +339,7 @@ public class UserResponseInfo {
             && Objects.equals(this.userGroupName, that.userGroupName)
             && Objects.equals(this.userHomeDir, that.userHomeDir) && Objects.equals(this.shell, that.shell)
             && Objects.equals(this.recentScanTime, that.recentScanTime)
+            && Objects.equals(this.firstScanTime, that.firstScanTime)
             && Objects.equals(this.containerId, that.containerId)
             && Objects.equals(this.containerName, that.containerName);
     }
@@ -332,6 +357,7 @@ public class UserResponseInfo {
             userHomeDir,
             shell,
             recentScanTime,
+            firstScanTime,
             containerId,
             containerName);
     }
@@ -351,6 +377,7 @@ public class UserResponseInfo {
         sb.append("    userHomeDir: ").append(toIndentedString(userHomeDir)).append("\n");
         sb.append("    shell: ").append(toIndentedString(shell)).append("\n");
         sb.append("    recentScanTime: ").append(toIndentedString(recentScanTime)).append("\n");
+        sb.append("    firstScanTime: ").append(toIndentedString(firstScanTime)).append("\n");
         sb.append("    containerId: ").append(toIndentedString(containerId)).append("\n");
         sb.append("    containerName: ").append(toIndentedString(containerName)).append("\n");
         sb.append("}");

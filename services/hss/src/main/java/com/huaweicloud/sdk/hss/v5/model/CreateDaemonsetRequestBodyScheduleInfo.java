@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 /**
  * 节点调度信息
  */
-public class UpdateDaemonsetRequestBodyScheduleInfo {
+public class CreateDaemonsetRequestBodyScheduleInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "node_selector")
@@ -23,12 +23,12 @@ public class UpdateDaemonsetRequestBodyScheduleInfo {
 
     private List<String> podTolerances = null;
 
-    public UpdateDaemonsetRequestBodyScheduleInfo withNodeSelector(List<String> nodeSelector) {
+    public CreateDaemonsetRequestBodyScheduleInfo withNodeSelector(List<String> nodeSelector) {
         this.nodeSelector = nodeSelector;
         return this;
     }
 
-    public UpdateDaemonsetRequestBodyScheduleInfo addNodeSelectorItem(String nodeSelectorItem) {
+    public CreateDaemonsetRequestBodyScheduleInfo addNodeSelectorItem(String nodeSelectorItem) {
         if (this.nodeSelector == null) {
             this.nodeSelector = new ArrayList<>();
         }
@@ -36,7 +36,7 @@ public class UpdateDaemonsetRequestBodyScheduleInfo {
         return this;
     }
 
-    public UpdateDaemonsetRequestBodyScheduleInfo withNodeSelector(Consumer<List<String>> nodeSelectorSetter) {
+    public CreateDaemonsetRequestBodyScheduleInfo withNodeSelector(Consumer<List<String>> nodeSelectorSetter) {
         if (this.nodeSelector == null) {
             this.nodeSelector = new ArrayList<>();
         }
@@ -56,12 +56,12 @@ public class UpdateDaemonsetRequestBodyScheduleInfo {
         this.nodeSelector = nodeSelector;
     }
 
-    public UpdateDaemonsetRequestBodyScheduleInfo withPodTolerances(List<String> podTolerances) {
+    public CreateDaemonsetRequestBodyScheduleInfo withPodTolerances(List<String> podTolerances) {
         this.podTolerances = podTolerances;
         return this;
     }
 
-    public UpdateDaemonsetRequestBodyScheduleInfo addPodTolerancesItem(String podTolerancesItem) {
+    public CreateDaemonsetRequestBodyScheduleInfo addPodTolerancesItem(String podTolerancesItem) {
         if (this.podTolerances == null) {
             this.podTolerances = new ArrayList<>();
         }
@@ -69,7 +69,7 @@ public class UpdateDaemonsetRequestBodyScheduleInfo {
         return this;
     }
 
-    public UpdateDaemonsetRequestBodyScheduleInfo withPodTolerances(Consumer<List<String>> podTolerancesSetter) {
+    public CreateDaemonsetRequestBodyScheduleInfo withPodTolerances(Consumer<List<String>> podTolerancesSetter) {
         if (this.podTolerances == null) {
             this.podTolerances = new ArrayList<>();
         }
@@ -97,7 +97,7 @@ public class UpdateDaemonsetRequestBodyScheduleInfo {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDaemonsetRequestBodyScheduleInfo that = (UpdateDaemonsetRequestBodyScheduleInfo) obj;
+        CreateDaemonsetRequestBodyScheduleInfo that = (CreateDaemonsetRequestBodyScheduleInfo) obj;
         return Objects.equals(this.nodeSelector, that.nodeSelector)
             && Objects.equals(this.podTolerances, that.podTolerances);
     }
@@ -110,7 +110,7 @@ public class UpdateDaemonsetRequestBodyScheduleInfo {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class UpdateDaemonsetRequestBodyScheduleInfo {\n");
+        sb.append("class CreateDaemonsetRequestBodyScheduleInfo {\n");
         sb.append("    nodeSelector: ").append(toIndentedString(nodeSelector)).append("\n");
         sb.append("    podTolerances: ").append(toIndentedString(podTolerances)).append("\n");
         sb.append("}");

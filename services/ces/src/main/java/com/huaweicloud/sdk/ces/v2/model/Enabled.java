@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 import java.util.Objects;
 
 /**
- * 开关
+ * 是否启用一键告警。true:开启，false：关闭。
  */
 public class Enabled {
 

@@ -184,7 +184,7 @@ public class PortResponseInfo {
     }
 
     /**
-     * Agent ID
+     * agent id
      * @return agentId
      */
     public String getAgentId() {

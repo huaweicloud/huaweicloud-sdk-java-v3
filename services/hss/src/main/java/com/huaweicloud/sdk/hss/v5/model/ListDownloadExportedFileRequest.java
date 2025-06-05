@@ -74,7 +74,7 @@ public class ListDownloadExportedFileRequest implements ProgressRequest {
     }
 
     /**
-     * Region Id
+     * Region ID
      * @return region
      */
     public String getRegion() {

@@ -32,7 +32,7 @@ public class SetRaspSwitchRequest {
     }
 
     /**
-     * Region Id
+     * Region ID
      * @return region
      */
     public String getRegion() {

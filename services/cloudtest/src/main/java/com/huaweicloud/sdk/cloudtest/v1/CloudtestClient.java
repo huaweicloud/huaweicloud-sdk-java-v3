@@ -48,6 +48,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.CreateResourceUriRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateResourceUriResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTaskDefaultResultRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTaskDefaultResultResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTemplateRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTemplateResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseInPlanRequest;
@@ -858,6 +860,35 @@ public class CloudtestClient {
      */
     public SyncInvoker<CreateServiceRequest, CreateServiceResponse> createServiceInvoker(CreateServiceRequest request) {
         return new SyncInvoker<>(request, CloudtestMeta.createService, hcClient);
+    }
+
+    /**
+     * 初始化测试任务执行记录
+     *
+     * 初始化测试任务执行记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTaskDefaultResultRequest 请求对象
+     * @return CreateTaskDefaultResultResponse
+     */
+    public CreateTaskDefaultResultResponse createTaskDefaultResult(CreateTaskDefaultResultRequest request) {
+        return hcClient.syncInvokeHttp(request, CloudtestMeta.createTaskDefaultResult);
+    }
+
+    /**
+     * 初始化测试任务执行记录
+     *
+     * 初始化测试任务执行记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTaskDefaultResultRequest 请求对象
+     * @return SyncInvoker<CreateTaskDefaultResultRequest, CreateTaskDefaultResultResponse>
+     */
+    public SyncInvoker<CreateTaskDefaultResultRequest, CreateTaskDefaultResultResponse> createTaskDefaultResultInvoker(
+        CreateTaskDefaultResultRequest request) {
+        return new SyncInvoker<>(request, CloudtestMeta.createTaskDefaultResult, hcClient);
     }
 
     /**

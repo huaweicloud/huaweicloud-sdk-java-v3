@@ -88,6 +88,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.CreateClusteringJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateClusteringJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateCodeResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingClusterReq;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingClusterRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingClusterResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingResourceReq;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.CreateComputingResourceResponse;
@@ -228,6 +231,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.DeleteAutoJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteAutoJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteBackupRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteBackupResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteComputingClusterRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.DeleteComputingClusterResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteComputingResourceRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteComputingResourceResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.DeleteCssClusterRequest;
@@ -332,6 +337,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ImportUserResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportWorkflowReq;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportWorkflowRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ImportWorkflowResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.InitializePlatformRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.InitializePlatformResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.InstallNextflowRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.InstallNextflowRequestBody;
 import com.huaweicloud.sdk.eihealth.v1.model.InstallNextflowResponse;
@@ -350,10 +357,16 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListBaseModelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBaseModelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBucketRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListBucketResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListCceClusterRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListCceClusterResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListCheckpointRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListCheckpointResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListClusterAllNodeLabelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListClusterAllNodeLabelResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListClusterInstallStepRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListClusterInstallStepResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListComputingClusterRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListComputingClusterResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListComputingResourceFlavorsRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListComputingResourceFlavorsResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListComputingResourcesRequest;
@@ -436,6 +449,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListPresetLabelRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListPresetLabelResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListProjectRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListProjectResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListProjectStatisticsRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListProjectStatisticsResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListPropertyRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListPropertyResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListQuotaRequest;
@@ -444,6 +459,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListScaleOutPolicyRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListScaleOutPolicyResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListScalingHistoryRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListScalingHistoryResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListSfsTurbosRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListSfsTurbosResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListStarRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListStarResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListStorageResourcesRequest;
@@ -456,8 +473,20 @@ import com.huaweicloud.sdk.eihealth.v1.model.ListTemplateRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListTemplateResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListTermTenantCssClusterRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListTermTenantCssClusterResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserAppRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserAppResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserDrugJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserDrugJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserImageRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserImageResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserJobRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserJobResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserNotebookRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserNotebookResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListUserRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListUserResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserWorkflowRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ListUserWorkflowResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListVendorRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ListVendorResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ListWorkflowRequest;
@@ -530,6 +559,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.ShowAdmetJobRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAdmetJobResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAdmetPropertiesRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAdmetPropertiesResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowAgencyRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.ShowAgencyResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAppRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAppResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.ShowAssetRequest;
@@ -708,6 +739,8 @@ import com.huaweicloud.sdk.eihealth.v1.model.TransferProjectResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.TryEmailConnectionReq;
 import com.huaweicloud.sdk.eihealth.v1.model.UninstallNextflowRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UninstallNextflowResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateAgencyRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateAgencyResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateAppRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateAppResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateArchiveConfigRequest;
@@ -778,6 +811,9 @@ import com.huaweicloud.sdk.eihealth.v1.model.UpdateScheduleRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateScheduleResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateStarRequest;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateStarResponse;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateTopProjectReq;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateTopProjectRequest;
+import com.huaweicloud.sdk.eihealth.v1.model.UpdateTopProjectResponse;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateTrackerReq;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateUserByDomainReq;
 import com.huaweicloud.sdk.eihealth.v1.model.UpdateUserByDomainRequest;
@@ -1600,6 +1636,29 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(SendCodeReq.class),
             f -> f.withMarshaller(CreateCodeRequest::getBody, CreateCodeRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateComputingClusterRequest, CreateComputingClusterResponse> createComputingCluster =
+        genForCreateComputingCluster();
+
+    private static HttpRequestDef<CreateComputingClusterRequest, CreateComputingClusterResponse> genForCreateComputingCluster() {
+        // basic
+        HttpRequestDef.Builder<CreateComputingClusterRequest, CreateComputingClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateComputingClusterRequest.class, CreateComputingClusterResponse.class)
+            .withName("CreateComputingCluster")
+            .withUri("/v1/{project_id}/system/computing-clusters")
+            .withContentType("application/json");
+
+        // requests
+        builder.<CreateComputingClusterReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateComputingClusterReq.class),
+            f -> f.withMarshaller(CreateComputingClusterRequest::getBody, CreateComputingClusterRequest::setBody));
 
         // response
 
@@ -2538,6 +2597,30 @@ public class EiHealthMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBackupRequest::getEihealthProjectId,
                 DeleteBackupRequest::setEihealthProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteComputingClusterRequest, DeleteComputingClusterResponse> deleteComputingCluster =
+        genForDeleteComputingCluster();
+
+    private static HttpRequestDef<DeleteComputingClusterRequest, DeleteComputingClusterResponse> genForDeleteComputingCluster() {
+        // basic
+        HttpRequestDef.Builder<DeleteComputingClusterRequest, DeleteComputingClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.DELETE, DeleteComputingClusterRequest.class, DeleteComputingClusterResponse.class)
+            .withName("DeleteComputingCluster")
+            .withUri("/v1/{project_id}/system/computing-clusters/{cluster_id}")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteComputingClusterRequest::getClusterId,
+                DeleteComputingClusterRequest::setClusterId));
 
         // response
 
@@ -3609,6 +3692,24 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<InitializePlatformRequest, InitializePlatformResponse> initializePlatform =
+        genForInitializePlatform();
+
+    private static HttpRequestDef<InitializePlatformRequest, InitializePlatformResponse> genForInitializePlatform() {
+        // basic
+        HttpRequestDef.Builder<InitializePlatformRequest, InitializePlatformResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, InitializePlatformRequest.class, InitializePlatformResponse.class)
+                .withName("InitializePlatform")
+                .withUri("/v1/{project_id}/system/init")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAppRequest, ListAppResponse> listApp = genForListApp();
 
     private static HttpRequestDef<ListAppRequest, ListAppResponse> genForListApp() {
@@ -3865,6 +3966,24 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCceClusterRequest, ListCceClusterResponse> listCceCluster =
+        genForListCceCluster();
+
+    private static HttpRequestDef<ListCceClusterRequest, ListCceClusterResponse> genForListCceCluster() {
+        // basic
+        HttpRequestDef.Builder<ListCceClusterRequest, ListCceClusterResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCceClusterRequest.class, ListCceClusterResponse.class)
+                .withName("ListCceCluster")
+                .withUri("/v1/{project_id}/system/cce-clusters")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCheckpointRequest, ListCheckpointResponse> listCheckpoint =
         genForListCheckpoint();
 
@@ -3906,6 +4025,58 @@ public class EiHealthMeta {
             .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListClusterInstallStepRequest, ListClusterInstallStepResponse> listClusterInstallStep =
+        genForListClusterInstallStep();
+
+    private static HttpRequestDef<ListClusterInstallStepRequest, ListClusterInstallStepResponse> genForListClusterInstallStep() {
+        // basic
+        HttpRequestDef.Builder<ListClusterInstallStepRequest, ListClusterInstallStepResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListClusterInstallStepRequest.class, ListClusterInstallStepResponse.class)
+            .withName("ListClusterInstallStep")
+            .withUri("/v1/{project_id}/system/computing-clusters/{cluster_id}/steps")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListClusterInstallStepRequest::getClusterId,
+                ListClusterInstallStepRequest::setClusterId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListComputingClusterRequest, ListComputingClusterResponse> listComputingCluster =
+        genForListComputingCluster();
+
+    private static HttpRequestDef<ListComputingClusterRequest, ListComputingClusterResponse> genForListComputingCluster() {
+        // basic
+        HttpRequestDef.Builder<ListComputingClusterRequest, ListComputingClusterResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListComputingClusterRequest.class, ListComputingClusterResponse.class)
+            .withName("ListComputingCluster")
+            .withUri("/v1/{project_id}/system/computing-clusters")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListComputingClusterRequest::getLimit, ListComputingClusterRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListComputingClusterRequest::getOffset, ListComputingClusterRequest::setOffset));
 
         // response
 
@@ -5066,6 +5237,24 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListProjectStatisticsRequest, ListProjectStatisticsResponse> listProjectStatistics =
+        genForListProjectStatistics();
+
+    private static HttpRequestDef<ListProjectStatisticsRequest, ListProjectStatisticsResponse> genForListProjectStatistics() {
+        // basic
+        HttpRequestDef.Builder<ListProjectStatisticsRequest, ListProjectStatisticsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListProjectStatisticsRequest.class, ListProjectStatisticsResponse.class)
+            .withName("ListProjectStatistics")
+            .withUri("/v1/{project_id}/eihealth-projects/statistics")
+            .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListPropertyRequest, ListPropertyResponse> listProperty = genForListProperty();
 
     private static HttpRequestDef<ListPropertyRequest, ListPropertyResponse> genForListProperty() {
@@ -5146,6 +5335,34 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListScalingHistoryRequest::getId, ListScalingHistoryRequest::setId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListSfsTurbosRequest, ListSfsTurbosResponse> listSfsTurbos =
+        genForListSfsTurbos();
+
+    private static HttpRequestDef<ListSfsTurbosRequest, ListSfsTurbosResponse> genForListSfsTurbos() {
+        // basic
+        HttpRequestDef.Builder<ListSfsTurbosRequest, ListSfsTurbosResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListSfsTurbosRequest.class, ListSfsTurbosResponse.class)
+                .withName("ListSfsTurbos")
+                .withUri("/v1/{project_id}/system/sfs-turbos")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSfsTurbosRequest::getLimit, ListSfsTurbosRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListSfsTurbosRequest::getOffset, ListSfsTurbosRequest::setOffset));
 
         // response
 
@@ -5266,6 +5483,461 @@ public class EiHealthMeta {
                 .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUserAppRequest, ListUserAppResponse> listUserApp = genForListUserApp();
+
+    private static HttpRequestDef<ListUserAppRequest, ListUserAppResponse> genForListUserApp() {
+        // basic
+        HttpRequestDef.Builder<ListUserAppRequest, ListUserAppResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserAppRequest.class, ListUserAppResponse.class)
+                .withName("ListUserApp")
+                .withUri("/v1/{project_id}/eihealth-projects/apps")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Boolean>withRequestField("is_creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListUserAppRequest::getIsCreator, ListUserAppRequest::setIsCreator));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserAppRequest::getId, ListUserAppRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserAppRequest::getName, ListUserAppRequest::setName));
+        builder.<String>withRequestField("summary",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserAppRequest::getSummary, ListUserAppRequest::setSummary));
+        builder.<List<String>>withRequestField("eihealth_project_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserAppRequest::getEihealthProjectNames,
+                ListUserAppRequest::setEihealthProjectNames));
+        builder.<List<String>>withRequestField("labels",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserAppRequest::getLabels, ListUserAppRequest::setLabels));
+        builder.<Long>withRequestField("start_create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserAppRequest::getStartCreateTime, ListUserAppRequest::setStartCreateTime));
+        builder.<Long>withRequestField("end_create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserAppRequest::getEndCreateTime, ListUserAppRequest::setEndCreateTime));
+        builder.<Long>withRequestField("start_update_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserAppRequest::getStartUpdateTime, ListUserAppRequest::setStartUpdateTime));
+        builder.<Long>withRequestField("end_update_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserAppRequest::getEndUpdateTime, ListUserAppRequest::setEndUpdateTime));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserAppRequest::getSortBy, ListUserAppRequest::setSortBy));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserAppRequest::getSortDir, ListUserAppRequest::setSortDir));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserAppRequest::getLimit, ListUserAppRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserAppRequest::getOffset, ListUserAppRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUserDrugJobRequest, ListUserDrugJobResponse> listUserDrugJob =
+        genForListUserDrugJob();
+
+    private static HttpRequestDef<ListUserDrugJobRequest, ListUserDrugJobResponse> genForListUserDrugJob() {
+        // basic
+        HttpRequestDef.Builder<ListUserDrugJobRequest, ListUserDrugJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserDrugJobRequest.class, ListUserDrugJobResponse.class)
+                .withName("ListUserDrugJob")
+                .withUri("/v1/{project_id}/eihealth-projects/drug-jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Boolean>withRequestField("is_creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getIsCreator, ListUserDrugJobRequest::setIsCreator));
+        builder.<String>withRequestField("job_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getJobName, ListUserDrugJobRequest::setJobName));
+        builder.<List<String>>withRequestField("eihealth_project_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getEihealthProjectNames,
+                ListUserDrugJobRequest::setEihealthProjectNames));
+        builder.<List<String>>withRequestField("labels",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getLabels, ListUserDrugJobRequest::setLabels));
+        builder.<List<String>>withRequestField("status_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getStatusList, ListUserDrugJobRequest::setStatusList));
+        builder.<List<String>>withRequestField("types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getTypes, ListUserDrugJobRequest::setTypes));
+        builder.<Long>withRequestField("create_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getCreateStartTime,
+                ListUserDrugJobRequest::setCreateStartTime));
+        builder.<Long>withRequestField("create_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getCreateEndTime, ListUserDrugJobRequest::setCreateEndTime));
+        builder.<Long>withRequestField("finish_start_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getFinishStartTime,
+                ListUserDrugJobRequest::setFinishStartTime));
+        builder.<Long>withRequestField("finish_end_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getFinishEndTime, ListUserDrugJobRequest::setFinishEndTime));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getSortDir, ListUserDrugJobRequest::setSortDir));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getSortKey, ListUserDrugJobRequest::setSortKey));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getLimit, ListUserDrugJobRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserDrugJobRequest::getOffset, ListUserDrugJobRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUserImageRequest, ListUserImageResponse> listUserImage =
+        genForListUserImage();
+
+    private static HttpRequestDef<ListUserImageRequest, ListUserImageResponse> genForListUserImage() {
+        // basic
+        HttpRequestDef.Builder<ListUserImageRequest, ListUserImageResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserImageRequest.class, ListUserImageResponse.class)
+                .withName("ListUserImage")
+                .withUri("/v1/{project_id}/eihealth-projects/images")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Boolean>withRequestField("is_creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListUserImageRequest::getIsCreator, ListUserImageRequest::setIsCreator));
+        builder.<String>withRequestField("image_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserImageRequest::getImageId, ListUserImageRequest::setImageId));
+        builder.<String>withRequestField("image_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserImageRequest::getImageName, ListUserImageRequest::setImageName));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserImageRequest::getDescription, ListUserImageRequest::setDescription));
+        builder.<List<String>>withRequestField("eihealth_project_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserImageRequest::getEihealthProjectNames,
+                ListUserImageRequest::setEihealthProjectNames));
+        builder.<String>withRequestField("source_project_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserImageRequest::getSourceProjectName,
+                ListUserImageRequest::setSourceProjectName));
+        builder.<List<String>>withRequestField("types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserImageRequest::getTypes, ListUserImageRequest::setTypes));
+        builder.<Long>withRequestField("start_create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserImageRequest::getStartCreateTime, ListUserImageRequest::setStartCreateTime));
+        builder.<Long>withRequestField("end_create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserImageRequest::getEndCreateTime, ListUserImageRequest::setEndCreateTime));
+        builder.<Long>withRequestField("start_update_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserImageRequest::getStartUpdateTime, ListUserImageRequest::setStartUpdateTime));
+        builder.<Long>withRequestField("end_update_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserImageRequest::getEndUpdateTime, ListUserImageRequest::setEndUpdateTime));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserImageRequest::getSortBy, ListUserImageRequest::setSortBy));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserImageRequest::getSortDir, ListUserImageRequest::setSortDir));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserImageRequest::getLimit, ListUserImageRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserImageRequest::getOffset, ListUserImageRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUserJobRequest, ListUserJobResponse> listUserJob = genForListUserJob();
+
+    private static HttpRequestDef<ListUserJobRequest, ListUserJobResponse> genForListUserJob() {
+        // basic
+        HttpRequestDef.Builder<ListUserJobRequest, ListUserJobResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserJobRequest.class, ListUserJobResponse.class)
+                .withName("ListUserJob")
+                .withUri("/v1/{project_id}/eihealth-projects/jobs")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Boolean>withRequestField("is_creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListUserJobRequest::getIsCreator, ListUserJobRequest::setIsCreator));
+        builder.<String>withRequestField("job_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserJobRequest::getJobName, ListUserJobRequest::setJobName));
+        builder.<List<String>>withRequestField("eihealth_project_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserJobRequest::getEihealthProjectNames,
+                ListUserJobRequest::setEihealthProjectNames));
+        builder.<List<String>>withRequestField("types",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserJobRequest::getTypes, ListUserJobRequest::setTypes));
+        builder.<List<String>>withRequestField("status_list",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserJobRequest::getStatusList, ListUserJobRequest::setStatusList));
+        builder.<List<String>>withRequestField("labels",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserJobRequest::getLabels, ListUserJobRequest::setLabels));
+        builder.<Long>withRequestField("start_create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserJobRequest::getStartCreateTime, ListUserJobRequest::setStartCreateTime));
+        builder.<Long>withRequestField("end_create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserJobRequest::getEndCreateTime, ListUserJobRequest::setEndCreateTime));
+        builder.<Long>withRequestField("start_finish_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserJobRequest::getStartFinishTime, ListUserJobRequest::setStartFinishTime));
+        builder.<Long>withRequestField("end_finish_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserJobRequest::getEndFinishTime, ListUserJobRequest::setEndFinishTime));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserJobRequest::getSortKey, ListUserJobRequest::setSortKey));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserJobRequest::getSortDir, ListUserJobRequest::setSortDir));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserJobRequest::getLimit, ListUserJobRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserJobRequest::getOffset, ListUserJobRequest::setOffset));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUserWorkflowRequest, ListUserWorkflowResponse> listUserWorkflow =
+        genForListUserWorkflow();
+
+    private static HttpRequestDef<ListUserWorkflowRequest, ListUserWorkflowResponse> genForListUserWorkflow() {
+        // basic
+        HttpRequestDef.Builder<ListUserWorkflowRequest, ListUserWorkflowResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserWorkflowRequest.class, ListUserWorkflowResponse.class)
+                .withName("ListUserWorkflow")
+                .withUri("/v1/{project_id}/eihealth-projects/workflows")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Boolean>withRequestField("is_creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getIsCreator, ListUserWorkflowRequest::setIsCreator));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getId, ListUserWorkflowRequest::setId));
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getName, ListUserWorkflowRequest::setName));
+        builder.<String>withRequestField("summary",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getSummary, ListUserWorkflowRequest::setSummary));
+        builder.<List<String>>withRequestField("eihealth_project_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getEihealthProjectNames,
+                ListUserWorkflowRequest::setEihealthProjectNames));
+        builder.<List<String>>withRequestField("labels",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getLabels, ListUserWorkflowRequest::setLabels));
+        builder.<Long>withRequestField("start_create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getStartCreateTime,
+                ListUserWorkflowRequest::setStartCreateTime));
+        builder.<Long>withRequestField("end_create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getEndCreateTime,
+                ListUserWorkflowRequest::setEndCreateTime));
+        builder.<Long>withRequestField("start_update_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getStartUpdateTime,
+                ListUserWorkflowRequest::setStartUpdateTime));
+        builder.<Long>withRequestField("end_update_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getEndUpdateTime,
+                ListUserWorkflowRequest::setEndUpdateTime));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getSortDir, ListUserWorkflowRequest::setSortDir));
+        builder.<String>withRequestField("sort_key",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getSortKey, ListUserWorkflowRequest::setSortKey));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getLimit, ListUserWorkflowRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserWorkflowRequest::getOffset, ListUserWorkflowRequest::setOffset));
 
         // response
 
@@ -5779,6 +6451,23 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAdmetJobRequest::getJobId, ShowAdmetJobRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> showAgency = genForShowAgency();
+
+    private static HttpRequestDef<ShowAgencyRequest, ShowAgencyResponse> genForShowAgency() {
+        // basic
+        HttpRequestDef.Builder<ShowAgencyRequest, ShowAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowAgencyRequest.class, ShowAgencyResponse.class)
+                .withName("ShowAgency")
+                .withUri("/v1/{project_id}/system/agencies")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 
@@ -7590,6 +8279,23 @@ public class EiHealthMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateAgencyRequest, UpdateAgencyResponse> updateAgency = genForUpdateAgency();
+
+    private static HttpRequestDef<UpdateAgencyRequest, UpdateAgencyResponse> genForUpdateAgency() {
+        // basic
+        HttpRequestDef.Builder<UpdateAgencyRequest, UpdateAgencyResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateAgencyRequest.class, UpdateAgencyResponse.class)
+                .withName("UpdateAgency")
+                .withUri("/v1/{project_id}/system/agencies")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<UpdateAppRequest, UpdateAppResponse> updateApp = genForUpdateApp();
 
     private static HttpRequestDef<UpdateAppRequest, UpdateAppResponse> genForUpdateApp() {
@@ -8316,6 +9022,35 @@ public class EiHealthMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateStarRequest::getAssetId, UpdateStarRequest::setAssetId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateTopProjectRequest, UpdateTopProjectResponse> updateTopProject =
+        genForUpdateTopProject();
+
+    private static HttpRequestDef<UpdateTopProjectRequest, UpdateTopProjectResponse> genForUpdateTopProject() {
+        // basic
+        HttpRequestDef.Builder<UpdateTopProjectRequest, UpdateTopProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateTopProjectRequest.class, UpdateTopProjectResponse.class)
+                .withName("UpdateTopProject")
+                .withUri("/v1/{project_id}/eihealth-projects/{eihealth_project_id}/top")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("eihealth_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateTopProjectRequest::getEihealthProjectId,
+                UpdateTopProjectRequest::setEihealthProjectId));
+        builder.<UpdateTopProjectReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateTopProjectReq.class),
+            f -> f.withMarshaller(UpdateTopProjectRequest::getBody, UpdateTopProjectRequest::setBody));
 
         // response
 
@@ -10236,6 +10971,99 @@ public class EiHealthMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListNotebookToolRequest::getEihealthProjectId,
                 ListNotebookToolRequest::setEihealthProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListUserNotebookRequest, ListUserNotebookResponse> listUserNotebook =
+        genForListUserNotebook();
+
+    private static HttpRequestDef<ListUserNotebookRequest, ListUserNotebookResponse> genForListUserNotebook() {
+        // basic
+        HttpRequestDef.Builder<ListUserNotebookRequest, ListUserNotebookResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListUserNotebookRequest.class, ListUserNotebookResponse.class)
+                .withName("ListUserNotebook")
+                .withUri("/v1/{project_id}/eihealth-projects/notebooks")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("notebook_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getNotebookName, ListUserNotebookRequest::setNotebookName));
+        builder.<String>withRequestField("description",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getDescription, ListUserNotebookRequest::setDescription));
+        builder.<String>withRequestField("image_name",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getImageName, ListUserNotebookRequest::setImageName));
+        builder.<Boolean>withRequestField("is_creator",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Boolean.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getIsCreator, ListUserNotebookRequest::setIsCreator));
+        builder.<List<String>>withRequestField("eihealth_project_names",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getEihealthProjectNames,
+                ListUserNotebookRequest::setEihealthProjectNames));
+        builder.<List<String>>withRequestField("statuses",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getStatuses, ListUserNotebookRequest::setStatuses));
+        builder.<Long>withRequestField("start_create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getStartCreateTime,
+                ListUserNotebookRequest::setStartCreateTime));
+        builder.<Long>withRequestField("end_create_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getEndCreateTime,
+                ListUserNotebookRequest::setEndCreateTime));
+        builder.<Long>withRequestField("start_update_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getStartUpdateTime,
+                ListUserNotebookRequest::setStartUpdateTime));
+        builder.<Long>withRequestField("end_update_time",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Long.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getEndUpdateTime,
+                ListUserNotebookRequest::setEndUpdateTime));
+        builder.<String>withRequestField("sort_dir",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getSortDir, ListUserNotebookRequest::setSortDir));
+        builder.<String>withRequestField("sort_by",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getSortBy, ListUserNotebookRequest::setSortBy));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getLimit, ListUserNotebookRequest::setLimit));
+        builder.<Integer>withRequestField("offset",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListUserNotebookRequest::getOffset, ListUserNotebookRequest::setOffset));
 
         // response
 

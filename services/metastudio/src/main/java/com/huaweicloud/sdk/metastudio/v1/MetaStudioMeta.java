@@ -53,6 +53,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.CreateAsyncTtsJobResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateBatchKnowledgeQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogReportConfigReq;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogReportConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlReq;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.CreateDialogUrlResponse;
@@ -157,6 +160,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAgencyWithRoleTypeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteAssetResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteDialogReportConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.DeleteDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.DeleteFileRequest;
@@ -310,6 +315,8 @@ import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAssetResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAsyncTtsJobRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowAsyncTtsJobResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowDialogReportConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.ShowDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowDigitalHumanBusinessCardResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.ShowHotQuestionRequest;
@@ -399,6 +406,9 @@ import com.huaweicloud.sdk.metastudio.v1.model.UpdateActiveCodeResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionReq;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateBatchKnowledgeQuestionResponse;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDialogReportConfigReq;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDialogReportConfigRequest;
+import com.huaweicloud.sdk.metastudio.v1.model.UpdateDialogReportConfigResponse;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequest;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetRequestBody;
 import com.huaweicloud.sdk.metastudio.v1.model.UpdateDigitalAssetResponse;
@@ -1081,6 +1091,213 @@ public class MetaStudioMeta {
             FieldExistence.NULL_IGNORE,
             String.class,
             f -> f.withMarshaller(StopSmartChatJobResponse::getXRequestId, StopSmartChatJobResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateDialogReportConfigRequest, CreateDialogReportConfigResponse> createDialogReportConfig =
+        genForCreateDialogReportConfig();
+
+    private static HttpRequestDef<CreateDialogReportConfigRequest, CreateDialogReportConfigResponse> genForCreateDialogReportConfig() {
+        // basic
+        HttpRequestDef.Builder<CreateDialogReportConfigRequest, CreateDialogReportConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, CreateDialogReportConfigRequest.class, CreateDialogReportConfigResponse.class)
+                .withName("CreateDialogReportConfig")
+                .withUri("/v1/{project_id}/digital-human-chat/dialog-report-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDialogReportConfigRequest::getAuthorization,
+                CreateDialogReportConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDialogReportConfigRequest::getXSdkDate,
+                CreateDialogReportConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDialogReportConfigRequest::getXProjectId,
+                CreateDialogReportConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateDialogReportConfigRequest::getXAppUserId,
+                CreateDialogReportConfigRequest::setXAppUserId));
+        builder.<CreateDialogReportConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateDialogReportConfigReq.class),
+            f -> f.withMarshaller(CreateDialogReportConfigRequest::getBody, CreateDialogReportConfigRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(CreateDialogReportConfigResponse::getXRequestId,
+                CreateDialogReportConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteDialogReportConfigRequest, DeleteDialogReportConfigResponse> deleteDialogReportConfig =
+        genForDeleteDialogReportConfig();
+
+    private static HttpRequestDef<DeleteDialogReportConfigRequest, DeleteDialogReportConfigResponse> genForDeleteDialogReportConfig() {
+        // basic
+        HttpRequestDef.Builder<DeleteDialogReportConfigRequest, DeleteDialogReportConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.DELETE,
+                    DeleteDialogReportConfigRequest.class,
+                    DeleteDialogReportConfigResponse.class)
+                .withName("DeleteDialogReportConfig")
+                .withUri("/v1/{project_id}/digital-human-chat/dialog-report-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDialogReportConfigRequest::getAuthorization,
+                DeleteDialogReportConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDialogReportConfigRequest::getXSdkDate,
+                DeleteDialogReportConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDialogReportConfigRequest::getXProjectId,
+                DeleteDialogReportConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteDialogReportConfigRequest::getXAppUserId,
+                DeleteDialogReportConfigRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(DeleteDialogReportConfigResponse::getXRequestId,
+                DeleteDialogReportConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDialogReportConfigRequest, ShowDialogReportConfigResponse> showDialogReportConfig =
+        genForShowDialogReportConfig();
+
+    private static HttpRequestDef<ShowDialogReportConfigRequest, ShowDialogReportConfigResponse> genForShowDialogReportConfig() {
+        // basic
+        HttpRequestDef.Builder<ShowDialogReportConfigRequest, ShowDialogReportConfigResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDialogReportConfigRequest.class, ShowDialogReportConfigResponse.class)
+            .withName("ShowDialogReportConfig")
+            .withUri("/v1/{project_id}/digital-human-chat/dialog-report-config")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDialogReportConfigRequest::getAuthorization,
+                ShowDialogReportConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDialogReportConfigRequest::getXSdkDate,
+                ShowDialogReportConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDialogReportConfigRequest::getXProjectId,
+                ShowDialogReportConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDialogReportConfigRequest::getXAppUserId,
+                ShowDialogReportConfigRequest::setXAppUserId));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(ShowDialogReportConfigResponse::getXRequestId,
+                ShowDialogReportConfigResponse::setXRequestId));
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateDialogReportConfigRequest, UpdateDialogReportConfigResponse> updateDialogReportConfig =
+        genForUpdateDialogReportConfig();
+
+    private static HttpRequestDef<UpdateDialogReportConfigRequest, UpdateDialogReportConfigResponse> genForUpdateDialogReportConfig() {
+        // basic
+        HttpRequestDef.Builder<UpdateDialogReportConfigRequest, UpdateDialogReportConfigResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT, UpdateDialogReportConfigRequest.class, UpdateDialogReportConfigResponse.class)
+                .withName("UpdateDialogReportConfig")
+                .withUri("/v1/{project_id}/digital-human-chat/dialog-report-config")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("Authorization",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDialogReportConfigRequest::getAuthorization,
+                UpdateDialogReportConfigRequest::setAuthorization));
+        builder.<String>withRequestField("X-Sdk-Date",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDialogReportConfigRequest::getXSdkDate,
+                UpdateDialogReportConfigRequest::setXSdkDate));
+        builder.<String>withRequestField("X-Project-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDialogReportConfigRequest::getXProjectId,
+                UpdateDialogReportConfigRequest::setXProjectId));
+        builder.<String>withRequestField("X-App-UserId",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateDialogReportConfigRequest::getXAppUserId,
+                UpdateDialogReportConfigRequest::setXAppUserId));
+        builder.<UpdateDialogReportConfigReq>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateDialogReportConfigReq.class),
+            f -> f.withMarshaller(UpdateDialogReportConfigRequest::getBody, UpdateDialogReportConfigRequest::setBody));
+
+        // response
+
+        builder.<String>withResponseField("X-Request-Id",
+            LocationType.Header,
+            FieldExistence.NULL_IGNORE,
+            String.class,
+            f -> f.withMarshaller(UpdateDialogReportConfigResponse::getXRequestId,
+                UpdateDialogReportConfigResponse::setXRequestId));
         return builder.build();
     }
 

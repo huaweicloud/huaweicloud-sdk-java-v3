@@ -48,6 +48,8 @@ import com.huaweicloud.sdk.cloudtest.v1.model.CreateResourceUriRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateResourceUriResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateServiceResponse;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTaskDefaultResultRequest;
+import com.huaweicloud.sdk.cloudtest.v1.model.CreateTaskDefaultResultResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTemplateRequest;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTemplateResponse;
 import com.huaweicloud.sdk.cloudtest.v1.model.CreateTestCaseInPlanRequest;
@@ -868,6 +870,36 @@ public class CloudtestAsyncClient {
     public AsyncInvoker<CreateServiceRequest, CreateServiceResponse> createServiceAsyncInvoker(
         CreateServiceRequest request) {
         return new AsyncInvoker<>(request, CloudtestMeta.createService, hcClient);
+    }
+
+    /**
+     * 初始化测试任务执行记录
+     *
+     * 初始化测试任务执行记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTaskDefaultResultRequest 请求对象
+     * @return CompletableFuture<CreateTaskDefaultResultResponse>
+     */
+    public CompletableFuture<CreateTaskDefaultResultResponse> createTaskDefaultResultAsync(
+        CreateTaskDefaultResultRequest request) {
+        return hcClient.asyncInvokeHttp(request, CloudtestMeta.createTaskDefaultResult);
+    }
+
+    /**
+     * 初始化测试任务执行记录
+     *
+     * 初始化测试任务执行记录
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request CreateTaskDefaultResultRequest 请求对象
+     * @return AsyncInvoker<CreateTaskDefaultResultRequest, CreateTaskDefaultResultResponse>
+     */
+    public AsyncInvoker<CreateTaskDefaultResultRequest, CreateTaskDefaultResultResponse> createTaskDefaultResultAsyncInvoker(
+        CreateTaskDefaultResultRequest request) {
+        return new AsyncInvoker<>(request, CloudtestMeta.createTaskDefaultResult, hcClient);
     }
 
     /**

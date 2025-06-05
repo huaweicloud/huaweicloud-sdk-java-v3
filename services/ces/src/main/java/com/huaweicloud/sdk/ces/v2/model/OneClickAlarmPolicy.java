@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * OneClickAlarmPolicy
@@ -41,6 +42,11 @@ public class OneClickAlarmPolicy {
     private Double value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "hierarchical_value")
+
+    private HierarchicalValue hierarchicalValue;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "unit")
 
     private String unit;
@@ -64,6 +70,11 @@ public class OneClickAlarmPolicy {
     @JsonProperty(value = "enabled")
 
     private Boolean enabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "selected_unit")
+
+    private String selectedUnit;
 
     public OneClickAlarmPolicy withAlarmPolicyId(String alarmPolicyId) {
         this.alarmPolicyId = alarmPolicyId;
@@ -169,6 +180,32 @@ public class OneClickAlarmPolicy {
         this.value = value;
     }
 
+    public OneClickAlarmPolicy withHierarchicalValue(HierarchicalValue hierarchicalValue) {
+        this.hierarchicalValue = hierarchicalValue;
+        return this;
+    }
+
+    public OneClickAlarmPolicy withHierarchicalValue(Consumer<HierarchicalValue> hierarchicalValueSetter) {
+        if (this.hierarchicalValue == null) {
+            this.hierarchicalValue = new HierarchicalValue();
+            hierarchicalValueSetter.accept(this.hierarchicalValue);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get hierarchicalValue
+     * @return hierarchicalValue
+     */
+    public HierarchicalValue getHierarchicalValue() {
+        return hierarchicalValue;
+    }
+
+    public void setHierarchicalValue(HierarchicalValue hierarchicalValue) {
+        this.hierarchicalValue = hierarchicalValue;
+    }
+
     public OneClickAlarmPolicy withUnit(String unit) {
         this.unit = unit;
         return this;
@@ -247,7 +284,7 @@ public class OneClickAlarmPolicy {
     }
 
     /**
-     * 开关
+     * 是否启用告警策略。true:开启，false:关闭。
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -256,6 +293,23 @@ public class OneClickAlarmPolicy {
 
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public OneClickAlarmPolicy withSelectedUnit(String selectedUnit) {
+        this.selectedUnit = selectedUnit;
+        return this;
+    }
+
+    /**
+     * 用户在页面中选择的指标单位， 用于后续指标数据回显和计算
+     * @return selectedUnit
+     */
+    public String getSelectedUnit() {
+        return selectedUnit;
+    }
+
+    public void setSelectedUnit(String selectedUnit) {
+        this.selectedUnit = selectedUnit;
     }
 
     @Override
@@ -271,9 +325,10 @@ public class OneClickAlarmPolicy {
             && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.period, that.period)
             && Objects.equals(this.filter, that.filter)
             && Objects.equals(this.comparisonOperator, that.comparisonOperator)
-            && Objects.equals(this.value, that.value) && Objects.equals(this.unit, that.unit)
-            && Objects.equals(this.count, that.count) && Objects.equals(this.suppressDuration, that.suppressDuration)
-            && Objects.equals(this.level, that.level) && Objects.equals(this.enabled, that.enabled);
+            && Objects.equals(this.value, that.value) && Objects.equals(this.hierarchicalValue, that.hierarchicalValue)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.suppressDuration, that.suppressDuration) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.selectedUnit, that.selectedUnit);
     }
 
     @Override
@@ -284,11 +339,13 @@ public class OneClickAlarmPolicy {
             filter,
             comparisonOperator,
             value,
+            hierarchicalValue,
             unit,
             count,
             suppressDuration,
             level,
-            enabled);
+            enabled,
+            selectedUnit);
     }
 
     @Override
@@ -301,11 +358,13 @@ public class OneClickAlarmPolicy {
         sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
         sb.append("    comparisonOperator: ").append(toIndentedString(comparisonOperator)).append("\n");
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("    hierarchicalValue: ").append(toIndentedString(hierarchicalValue)).append("\n");
         sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
         sb.append("    count: ").append(toIndentedString(count)).append("\n");
         sb.append("    suppressDuration: ").append(toIndentedString(suppressDuration)).append("\n");
         sb.append("    level: ").append(toIndentedString(level)).append("\n");
         sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
+        sb.append("    selectedUnit: ").append(toIndentedString(selectedUnit)).append("\n");
         sb.append("}");
         return sb.toString();
     }

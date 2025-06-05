@@ -31,6 +31,9 @@ import com.huaweicloud.sdk.hss.v5.model.BatchCreateTagsResponse;
 import com.huaweicloud.sdk.hss.v5.model.BatchScanPrivateImageRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.BatchScanSwrImageRequest;
 import com.huaweicloud.sdk.hss.v5.model.BatchScanSwrImageResponse;
+import com.huaweicloud.sdk.hss.v5.model.BatchStartProtectionRequest;
+import com.huaweicloud.sdk.hss.v5.model.BatchStartProtectionRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.BatchStartProtectionResponse;
 import com.huaweicloud.sdk.hss.v5.model.CCEClusterInfoListRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.CceIntegrationProtectionRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.ChangeAntivirusPolicyRequest;
@@ -58,12 +61,15 @@ import com.huaweicloud.sdk.hss.v5.model.ChangeVulStatusRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.ChangeVulStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.CheckRuleIdListRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.CloseProtectionInfoRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.CreateAgentDaemonsetRequest;
+import com.huaweicloud.sdk.hss.v5.model.CreateAgentDaemonsetResponse;
 import com.huaweicloud.sdk.hss.v5.model.CreateAntiVirusPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.CreateAntiVirusPolicyRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.CreateAntiVirusPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.CreateAntiVirusTaskRequest;
 import com.huaweicloud.sdk.hss.v5.model.CreateAntiVirusTaskRequestInfo;
 import com.huaweicloud.sdk.hss.v5.model.CreateAntiVirusTaskResponse;
+import com.huaweicloud.sdk.hss.v5.model.CreateDaemonsetRequestBody;
 import com.huaweicloud.sdk.hss.v5.model.CreateDecoyPortPolicyRequest;
 import com.huaweicloud.sdk.hss.v5.model.CreateDecoyPortPolicyResponse;
 import com.huaweicloud.sdk.hss.v5.model.CreateQuotasOrderRequest;
@@ -278,6 +284,10 @@ import com.huaweicloud.sdk.hss.v5.model.SetTwoFactorLoginConfigResponse;
 import com.huaweicloud.sdk.hss.v5.model.SetWtpProtectionStatusInfoRequest;
 import com.huaweicloud.sdk.hss.v5.model.SetWtpProtectionStatusInfoResponse;
 import com.huaweicloud.sdk.hss.v5.model.SetWtpProtectionStatusRequestInfo;
+import com.huaweicloud.sdk.hss.v5.model.ShowAgentDaemonsetDetailInfoRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowAgentDaemonsetDetailInfoResponse;
+import com.huaweicloud.sdk.hss.v5.model.ShowAntivirusPayPerScanStatusRequest;
+import com.huaweicloud.sdk.hss.v5.model.ShowAntivirusPayPerScanStatusResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowAntivirusStatisticRequest;
 import com.huaweicloud.sdk.hss.v5.model.ShowAntivirusStatisticResponse;
 import com.huaweicloud.sdk.hss.v5.model.ShowAppRaspSwitchStatusRequest;
@@ -396,7 +406,7 @@ public class HssMeta {
                 AddHostsGroupRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AddHostsGroupRequest::getRegion, AddHostsGroupRequest::setRegion));
         builder.<AddHostsGroupRequestInfo>withRequestField("body",
@@ -522,7 +532,7 @@ public class HssMeta {
                 AssociatePolicyGroupRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AssociatePolicyGroupRequest::getRegion, AssociatePolicyGroupRequest::setRegion));
         builder.<AssociatePolicyGroupRequestInfo>withRequestField("body",
@@ -562,7 +572,7 @@ public class HssMeta {
                 BatchAddAccountsRequest::setXSecurityToken));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(BatchAddAccountsRequest::getRegion, BatchAddAccountsRequest::setRegion));
         builder.<BatchAddAccountsRequestInfo>withRequestField("body",
@@ -648,6 +658,35 @@ public class HssMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<BatchStartProtectionRequest, BatchStartProtectionResponse> batchStartProtection =
+        genForBatchStartProtection();
+
+    private static HttpRequestDef<BatchStartProtectionRequest, BatchStartProtectionResponse> genForBatchStartProtection() {
+        // basic
+        HttpRequestDef.Builder<BatchStartProtectionRequest, BatchStartProtectionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, BatchStartProtectionRequest.class, BatchStartProtectionResponse.class)
+            .withName("BatchStartProtection")
+            .withUri("/v5/{project_id}/ransomware/protection/batch-open")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(BatchStartProtectionRequest::getEnterpriseProjectId,
+                BatchStartProtectionRequest::setEnterpriseProjectId));
+        builder.<BatchStartProtectionRequestInfo>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(BatchStartProtectionRequestInfo.class),
+            f -> f.withMarshaller(BatchStartProtectionRequest::getBody, BatchStartProtectionRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ChangeAntivirusPolicyRequest, ChangeAntivirusPolicyResponse> changeAntivirusPolicy =
         genForChangeAntivirusPolicy();
 
@@ -697,7 +736,7 @@ public class HssMeta {
                 ChangeBlockedIpRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeBlockedIpRequest::getRegion, ChangeBlockedIpRequest::setRegion));
         builder.<ChangeBlockedIpRequestInfo>withRequestField("body",
@@ -785,7 +824,7 @@ public class HssMeta {
             f -> f.withMarshaller(ChangeEventRequest::getContainerId, ChangeEventRequest::setContainerId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeEventRequest::getRegion, ChangeEventRequest::setRegion));
         builder.<ChangeEventRequestInfo>withRequestField("body",
@@ -819,7 +858,7 @@ public class HssMeta {
                 ChangeHostsGroupRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeHostsGroupRequest::getRegion, ChangeHostsGroupRequest::setRegion));
         builder.<ChangeHostsGroupRequestInfo>withRequestField("body",
@@ -853,7 +892,7 @@ public class HssMeta {
                 ChangeIsolatedFileRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ChangeIsolatedFileRequest::getRegion, ChangeIsolatedFileRequest::setRegion));
         builder.<ChangeIsolatedFileRequestInfo>withRequestField("body",
@@ -919,6 +958,41 @@ public class HssMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ChangeVulStatusRequestInfo.class),
             f -> f.withMarshaller(ChangeVulStatusRequest::getBody, ChangeVulStatusRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateAgentDaemonsetRequest, CreateAgentDaemonsetResponse> createAgentDaemonset =
+        genForCreateAgentDaemonset();
+
+    private static HttpRequestDef<CreateAgentDaemonsetRequest, CreateAgentDaemonsetResponse> genForCreateAgentDaemonset() {
+        // basic
+        HttpRequestDef.Builder<CreateAgentDaemonsetRequest, CreateAgentDaemonsetResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateAgentDaemonsetRequest.class, CreateAgentDaemonsetResponse.class)
+            .withName("CreateAgentDaemonset")
+            .withUri("/v5/{project_id}/container/kubernetes/clusters/{cluster_id}/daemonsets")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAgentDaemonsetRequest::getClusterId,
+                CreateAgentDaemonsetRequest::setClusterId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CreateAgentDaemonsetRequest::getEnterpriseProjectId,
+                CreateAgentDaemonsetRequest::setEnterpriseProjectId));
+        builder.<CreateDaemonsetRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(CreateDaemonsetRequestBody.class),
+            f -> f.withMarshaller(CreateAgentDaemonsetRequest::getBody, CreateAgentDaemonsetRequest::setBody));
 
         // response
 
@@ -1032,7 +1106,7 @@ public class HssMeta {
                 CreateQuotasOrderRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateQuotasOrderRequest::getRegion, CreateQuotasOrderRequest::setRegion));
         builder.<CreateQuotasOrderRequestInfo>withRequestField("body",
@@ -1104,7 +1178,7 @@ public class HssMeta {
             f -> f.withMarshaller(DeleteAccountRequest::getXSecurityToken, DeleteAccountRequest::setXSecurityToken));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAccountRequest::getRegion, DeleteAccountRequest::setRegion));
         builder.<DeleteAccountRequestInfo>withRequestField("body",
@@ -1282,7 +1356,7 @@ public class HssMeta {
             f -> f.withMarshaller(DeleteHostsGroupRequest::getGroupId, DeleteHostsGroupRequest::setGroupId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteHostsGroupRequest::getRegion, DeleteHostsGroupRequest::setRegion));
 
@@ -1665,7 +1739,7 @@ public class HssMeta {
             f -> f.withMarshaller(ListAccountsRequest::getXSecurityToken, ListAccountsRequest::setXSecurityToken));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAccountsRequest::getRegion, ListAccountsRequest::setRegion));
 
@@ -1781,7 +1855,7 @@ public class HssMeta {
             f -> f.withMarshaller(ListAlarmWhiteListRequest::getLimit, ListAlarmWhiteListRequest::setLimit));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAlarmWhiteListRequest::getRegion, ListAlarmWhiteListRequest::setRegion));
 
@@ -2701,7 +2775,7 @@ public class HssMeta {
             f -> f.withMarshaller(ListBlockedIpRequest::getLimit, ListBlockedIpRequest::setLimit));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListBlockedIpRequest::getRegion, ListBlockedIpRequest::setRegion));
 
@@ -2826,7 +2900,7 @@ public class HssMeta {
                 ListContainerNodesRequest::setContainerTags));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListContainerNodesRequest::getRegion, ListContainerNodesRequest::setRegion));
 
@@ -2951,7 +3025,7 @@ public class HssMeta {
                 ListDownloadExportedFileRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListDownloadExportedFileRequest::getRegion,
                 ListDownloadExportedFileRequest::setRegion));
@@ -3107,7 +3181,7 @@ public class HssMeta {
             f -> f.withMarshaller(ListHostGroupsRequest::getGroupName, ListHostGroupsRequest::setGroupName));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHostGroupsRequest::getRegion, ListHostGroupsRequest::setRegion));
 
@@ -3193,7 +3267,7 @@ public class HssMeta {
                 ListHostProtectHistoryInfoRequest::setFileOperation));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHostProtectHistoryInfoRequest::getRegion,
                 ListHostProtectHistoryInfoRequest::setRegion));
@@ -3274,7 +3348,7 @@ public class HssMeta {
                 ListHostRaspProtectHistoryInfoRequest::setProtectStatus));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListHostRaspProtectHistoryInfoRequest::getRegion,
                 ListHostRaspProtectHistoryInfoRequest::setRegion));
@@ -3482,6 +3556,11 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ListHostStatusRequest::getProtectDegradation,
                 ListHostStatusRequest::setProtectDegradation));
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListHostStatusRequest::getClusterId, ListHostStatusRequest::setClusterId));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
@@ -4076,7 +4155,7 @@ public class HssMeta {
             f -> f.withMarshaller(ListIsolatedFileRequest::getEndTime, ListIsolatedFileRequest::setEndTime));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListIsolatedFileRequest::getRegion, ListIsolatedFileRequest::setRegion));
 
@@ -4424,7 +4503,7 @@ public class HssMeta {
                 ListOrganizationTreeRequest::setXSecurityToken));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListOrganizationTreeRequest::getRegion, ListOrganizationTreeRequest::setRegion));
 
@@ -4578,7 +4657,7 @@ public class HssMeta {
             f -> f.withMarshaller(ListPolicyGroupRequest::getGroupId, ListPolicyGroupRequest::setGroupId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListPolicyGroupRequest::getRegion, ListPolicyGroupRequest::setRegion));
 
@@ -4928,7 +5007,7 @@ public class HssMeta {
                 ListProtectionPolicyRequest::setOperatingSystem));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProtectionPolicyRequest::getRegion, ListProtectionPolicyRequest::setRegion));
 
@@ -4993,7 +5072,7 @@ public class HssMeta {
             f -> f.withMarshaller(ListProtectionServerRequest::getLastDays, ListProtectionServerRequest::setLastDays));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListProtectionServerRequest::getRegion, ListProtectionServerRequest::setRegion));
 
@@ -5088,7 +5167,7 @@ public class HssMeta {
                 ListQueryExportTaskRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListQueryExportTaskRequest::getRegion, ListQueryExportTaskRequest::setRegion));
 
@@ -5732,7 +5811,7 @@ public class HssMeta {
             f -> f.withMarshaller(ListSecurityEventsRequest::getAutoBlock, ListSecurityEventsRequest::setAutoBlock));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSecurityEventsRequest::getRegion, ListSecurityEventsRequest::setRegion));
 
@@ -5866,7 +5945,7 @@ public class HssMeta {
                 ListSwrImageRepositoryRequest::setInstanceId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListSwrImageRepositoryRequest::getRegion, ListSwrImageRepositoryRequest::setRegion));
 
@@ -6739,7 +6818,7 @@ public class HssMeta {
             f -> f.withMarshaller(ListWtpProtectHostRequest::getOffset, ListWtpProtectHostRequest::setOffset));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListWtpProtectHostRequest::getRegion, ListWtpProtectHostRequest::setRegion));
 
@@ -6928,7 +7007,7 @@ public class HssMeta {
                 SetRaspSwitchRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SetRaspSwitchRequest::getRegion, SetRaspSwitchRequest::setRegion));
         builder.<SetRaspSwitchRequestInfo>withRequestField("body",
@@ -6994,7 +7073,7 @@ public class HssMeta {
                 SetWtpProtectionStatusInfoRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SetWtpProtectionStatusInfoRequest::getRegion,
                 SetWtpProtectionStatusInfoRequest::setRegion));
@@ -7004,6 +7083,66 @@ public class HssMeta {
             TypeCasts.uncheckedConversion(SetWtpProtectionStatusRequestInfo.class),
             f -> f.withMarshaller(SetWtpProtectionStatusInfoRequest::getBody,
                 SetWtpProtectionStatusInfoRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAgentDaemonsetDetailInfoRequest, ShowAgentDaemonsetDetailInfoResponse> showAgentDaemonsetDetailInfo =
+        genForShowAgentDaemonsetDetailInfo();
+
+    private static HttpRequestDef<ShowAgentDaemonsetDetailInfoRequest, ShowAgentDaemonsetDetailInfoResponse> genForShowAgentDaemonsetDetailInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowAgentDaemonsetDetailInfoRequest, ShowAgentDaemonsetDetailInfoResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAgentDaemonsetDetailInfoRequest.class,
+                    ShowAgentDaemonsetDetailInfoResponse.class)
+                .withName("ShowAgentDaemonsetDetailInfo")
+                .withUri("/v5/{project_id}/container/kubernetes/clusters/{cluster_id}/daemonsets")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("cluster_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAgentDaemonsetDetailInfoRequest::getClusterId,
+                ShowAgentDaemonsetDetailInfoRequest::setClusterId));
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAgentDaemonsetDetailInfoRequest::getEnterpriseProjectId,
+                ShowAgentDaemonsetDetailInfoRequest::setEnterpriseProjectId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowAntivirusPayPerScanStatusRequest, ShowAntivirusPayPerScanStatusResponse> showAntivirusPayPerScanStatus =
+        genForShowAntivirusPayPerScanStatus();
+
+    private static HttpRequestDef<ShowAntivirusPayPerScanStatusRequest, ShowAntivirusPayPerScanStatusResponse> genForShowAntivirusPayPerScanStatus() {
+        // basic
+        HttpRequestDef.Builder<ShowAntivirusPayPerScanStatusRequest, ShowAntivirusPayPerScanStatusResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowAntivirusPayPerScanStatusRequest.class,
+                    ShowAntivirusPayPerScanStatusResponse.class)
+                .withName("ShowAntivirusPayPerScanStatus")
+                .withUri("/v5/{project_id}/antivirus/pay-per-scan")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("enterprise_project_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowAntivirusPayPerScanStatusRequest::getEnterpriseProjectId,
+                ShowAntivirusPayPerScanStatusRequest::setEnterpriseProjectId));
 
         // response
 
@@ -7124,7 +7263,7 @@ public class HssMeta {
                 ShowBackupPolicyInfoRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowBackupPolicyInfoRequest::getRegion, ShowBackupPolicyInfoRequest::setRegion));
 
@@ -7348,7 +7487,7 @@ public class HssMeta {
                 ShowProductdataOfferingInfosRequest::setSiteCode));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowProductdataOfferingInfosRequest::getRegion,
                 ShowProductdataOfferingInfosRequest::setRegion));
@@ -7663,7 +7802,7 @@ public class HssMeta {
                 StartProtectionRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartProtectionRequest::getRegion, StartProtectionRequest::setRegion));
         builder.<ProtectionInfoRequestInfo>withRequestField("body",
@@ -7697,7 +7836,7 @@ public class HssMeta {
                 StopProtectionRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopProtectionRequest::getRegion, StopProtectionRequest::setRegion));
         builder.<CloseProtectionInfoRequestInfo>withRequestField("body",
@@ -7771,7 +7910,7 @@ public class HssMeta {
                 SwitchHostsProtectStatusRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(SwitchHostsProtectStatusRequest::getRegion,
                 SwitchHostsProtectStatusRequest::setRegion));
@@ -7846,7 +7985,7 @@ public class HssMeta {
                 UpdateBackupPolicyInfoRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateBackupPolicyInfoRequest::getRegion, UpdateBackupPolicyInfoRequest::setRegion));
         builder.<UpdateBackupPolicyRequestInfo>withRequestField("body",
@@ -7880,7 +8019,7 @@ public class HssMeta {
                 UpdateProtectionPolicyRequest::setEnterpriseProjectId));
         builder.<String>withRequestField("region",
             LocationType.Header,
-            FieldExistence.NON_NULL_NON_EMPTY,
+            FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateProtectionPolicyRequest::getRegion, UpdateProtectionPolicyRequest::setRegion));
         builder.<UpdateProtectionPolicyInfoRequestInfo>withRequestField("body",

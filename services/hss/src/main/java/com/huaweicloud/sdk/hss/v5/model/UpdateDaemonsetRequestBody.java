@@ -41,7 +41,7 @@ public class UpdateDaemonsetRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "schedule_info")
 
-    private UpdateDaemonsetRequestBodyScheduleInfo scheduleInfo;
+    private CreateDaemonsetRequestBodyScheduleInfo scheduleInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "invoked_service")
@@ -287,15 +287,15 @@ public class UpdateDaemonsetRequestBody {
         this.runtimeInfo = runtimeInfo;
     }
 
-    public UpdateDaemonsetRequestBody withScheduleInfo(UpdateDaemonsetRequestBodyScheduleInfo scheduleInfo) {
+    public UpdateDaemonsetRequestBody withScheduleInfo(CreateDaemonsetRequestBodyScheduleInfo scheduleInfo) {
         this.scheduleInfo = scheduleInfo;
         return this;
     }
 
     public UpdateDaemonsetRequestBody withScheduleInfo(
-        Consumer<UpdateDaemonsetRequestBodyScheduleInfo> scheduleInfoSetter) {
+        Consumer<CreateDaemonsetRequestBodyScheduleInfo> scheduleInfoSetter) {
         if (this.scheduleInfo == null) {
-            this.scheduleInfo = new UpdateDaemonsetRequestBodyScheduleInfo();
+            this.scheduleInfo = new CreateDaemonsetRequestBodyScheduleInfo();
             scheduleInfoSetter.accept(this.scheduleInfo);
         }
 
@@ -306,11 +306,11 @@ public class UpdateDaemonsetRequestBody {
      * Get scheduleInfo
      * @return scheduleInfo
      */
-    public UpdateDaemonsetRequestBodyScheduleInfo getScheduleInfo() {
+    public CreateDaemonsetRequestBodyScheduleInfo getScheduleInfo() {
         return scheduleInfo;
     }
 
-    public void setScheduleInfo(UpdateDaemonsetRequestBodyScheduleInfo scheduleInfo) {
+    public void setScheduleInfo(CreateDaemonsetRequestBodyScheduleInfo scheduleInfo) {
         this.scheduleInfo = scheduleInfo;
     }
 

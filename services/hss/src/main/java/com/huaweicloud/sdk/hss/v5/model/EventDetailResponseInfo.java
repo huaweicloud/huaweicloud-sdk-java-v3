@@ -88,7 +88,7 @@ public class EventDetailResponseInfo {
     }
 
     /**
-     * 进程id
+     * 进程ID
      * minimum: 0
      * maximum: 2147483647
      * @return processPid

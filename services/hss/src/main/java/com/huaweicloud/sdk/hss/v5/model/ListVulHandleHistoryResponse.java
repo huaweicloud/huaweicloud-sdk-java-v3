@@ -47,7 +47,7 @@ public class ListVulHandleHistoryResponse extends SdkResponse {
     }
 
     /**
-     * 列表
+     * 详情
      * @return dataList
      */
     public List<VulhandleHistoryResponseInfoDataList> getDataList() {

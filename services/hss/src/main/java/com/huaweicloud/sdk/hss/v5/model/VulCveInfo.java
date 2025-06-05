@@ -31,7 +31,7 @@ public class VulCveInfo {
     }
 
     /**
-     * cve id
+     * cve ID
      * @return cveId
      */
     public String getCveId() {

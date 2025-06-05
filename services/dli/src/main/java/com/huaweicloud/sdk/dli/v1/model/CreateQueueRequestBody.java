@@ -76,7 +76,7 @@ public class CreateQueueRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "properties")
 
-    private CommonQueueProperty properties;
+    private CreateQueueRequestBodyProperties properties;
 
     public CreateQueueRequestBody withQueueName(String queueName) {
         this.queueName = queueName;
@@ -314,14 +314,14 @@ public class CreateQueueRequestBody {
         this.elasticResourcePoolName = elasticResourcePoolName;
     }
 
-    public CreateQueueRequestBody withProperties(CommonQueueProperty properties) {
+    public CreateQueueRequestBody withProperties(CreateQueueRequestBodyProperties properties) {
         this.properties = properties;
         return this;
     }
 
-    public CreateQueueRequestBody withProperties(Consumer<CommonQueueProperty> propertiesSetter) {
+    public CreateQueueRequestBody withProperties(Consumer<CreateQueueRequestBodyProperties> propertiesSetter) {
         if (this.properties == null) {
-            this.properties = new CommonQueueProperty();
+            this.properties = new CreateQueueRequestBodyProperties();
             propertiesSetter.accept(this.properties);
         }
 
@@ -332,11 +332,11 @@ public class CreateQueueRequestBody {
      * Get properties
      * @return properties
      */
-    public CommonQueueProperty getProperties() {
+    public CreateQueueRequestBodyProperties getProperties() {
         return properties;
     }
 
-    public void setProperties(CommonQueueProperty properties) {
+    public void setProperties(CreateQueueRequestBodyProperties properties) {
         this.properties = properties;
     }
 

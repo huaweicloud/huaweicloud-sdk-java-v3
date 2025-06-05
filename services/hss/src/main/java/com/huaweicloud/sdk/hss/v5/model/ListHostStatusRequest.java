@@ -196,6 +196,11 @@ public class ListHostStatusRequest {
     private Boolean protectDegradation;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "cluster_id")
+
+    private String clusterId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "limit")
 
     private Integer limit;
@@ -834,6 +839,23 @@ public class ListHostStatusRequest {
         this.protectDegradation = protectDegradation;
     }
 
+    public ListHostStatusRequest withClusterId(String clusterId) {
+        this.clusterId = clusterId;
+        return this;
+    }
+
+    /**
+     * 集群ID
+     * @return clusterId
+     */
+    public String getClusterId() {
+        return clusterId;
+    }
+
+    public void setClusterId(String clusterId) {
+        this.clusterId = clusterId;
+    }
+
     public ListHostStatusRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
@@ -904,7 +926,8 @@ public class ListHostStatusRequest {
             && Objects.equals(this.protectInterrupt, that.protectInterrupt)
             && Objects.equals(this.incluster, that.incluster)
             && Objects.equals(this.protectDegradation, that.protectDegradation)
-            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override
@@ -946,6 +969,7 @@ public class ListHostStatusRequest {
             protectInterrupt,
             incluster,
             protectDegradation,
+            clusterId,
             limit,
             offset);
     }
@@ -991,6 +1015,7 @@ public class ListHostStatusRequest {
         sb.append("    protectInterrupt: ").append(toIndentedString(protectInterrupt)).append("\n");
         sb.append("    incluster: ").append(toIndentedString(incluster)).append("\n");
         sb.append("    protectDegradation: ").append(toIndentedString(protectDegradation)).append("\n");
+        sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("}");

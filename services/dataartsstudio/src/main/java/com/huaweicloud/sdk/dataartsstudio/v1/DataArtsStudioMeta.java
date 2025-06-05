@@ -322,6 +322,7 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.DirectoryVO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DlsAdmin;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DynamicMaskingPolicyCreateDTO;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.DynamicMaskingPolicyUpdateDTO;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.Entity;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.EntityWithExtInfo;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.EnvRequestBody;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ExecuteApiToInstanceRequest;
@@ -409,6 +410,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCatalogListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCatalogListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCatalogTreeRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCatalogTreeResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCategoriesTreeRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCategoriesTreeResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCategoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCategoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListColumnsRequest;
@@ -447,6 +450,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDimensionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDimensionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDirectoriesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDirectoriesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListEntityDetailsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListEntityDetailsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoRequest;
@@ -469,6 +474,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstancesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListLogicEntitiesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListLogicEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListManagerWorkSpacesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListManagerWorkSpacesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListMessageRequest;
@@ -6328,6 +6335,35 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListCategoriesTreeRequest, ListCategoriesTreeResponse> listCategoriesTree =
+        genForListCategoriesTree();
+
+    private static HttpRequestDef<ListCategoriesTreeRequest, ListCategoriesTreeResponse> genForListCategoriesTree() {
+        // basic
+        HttpRequestDef.Builder<ListCategoriesTreeRequest, ListCategoriesTreeResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListCategoriesTreeRequest.class, ListCategoriesTreeResponse.class)
+                .withName("ListCategoriesTree")
+                .withUri("/v2/{project_id}/datamap/categories/workspace/{workspace_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("workspace_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCategoriesTreeRequest::getWorkspaceId,
+                ListCategoriesTreeRequest::setWorkspaceId));
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListCategoriesTreeRequest::getInstance, ListCategoriesTreeRequest::setInstance));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListCategoryRequest, ListCategoryResponse> listCategory = genForListCategory();
 
     private static HttpRequestDef<ListCategoryRequest, ListCategoryResponse> genForListCategory() {
@@ -7437,6 +7473,35 @@ public class DataArtsStudioMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListEntityDetailsRequest, ListEntityDetailsResponse> listEntityDetails =
+        genForListEntityDetails();
+
+    private static HttpRequestDef<ListEntityDetailsRequest, ListEntityDetailsResponse> genForListEntityDetails() {
+        // basic
+        HttpRequestDef.Builder<ListEntityDetailsRequest, ListEntityDetailsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, ListEntityDetailsRequest.class, ListEntityDetailsResponse.class)
+                .withName("ListEntityDetails")
+                .withUri("/v1/{project_id}/datamap/entities/guids")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListEntityDetailsRequest::getInstance, ListEntityDetailsRequest::setInstance));
+        builder.<List<String>>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListEntityDetailsRequest::getBody, ListEntityDetailsRequest::setBody)
+                .withInnerContainerType(String.class));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListFactLogicTablesRequest, ListFactLogicTablesResponse> listFactLogicTables =
         genForListFactLogicTables();
 
@@ -7969,6 +8034,40 @@ public class DataArtsStudioMeta {
             f -> f.withMarshaller(ListInstancesRequest::getWorkspace, ListInstancesRequest::setWorkspace));
 
         // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListLogicEntitiesRequest, ListLogicEntitiesResponse> listLogicEntities =
+        genForListLogicEntities();
+
+    private static HttpRequestDef<ListLogicEntitiesRequest, ListLogicEntitiesResponse> genForListLogicEntities() {
+        // basic
+        HttpRequestDef.Builder<ListLogicEntitiesRequest, ListLogicEntitiesResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListLogicEntitiesRequest.class, ListLogicEntitiesResponse.class)
+                .withName("ListLogicEntities")
+                .withUri("/v2/{project_id}/datamap/logicentitys/guid/{guid}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("guid",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogicEntitiesRequest::getGuid, ListLogicEntitiesRequest::setGuid));
+        builder.<String>withRequestField("instance",
+            LocationType.Header,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListLogicEntitiesRequest::getInstance, ListLogicEntitiesRequest::setInstance));
+
+        // response
+        builder.<List<Entity>>withResponseField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListLogicEntitiesResponse::getBody, ListLogicEntitiesResponse::setBody)
+                .withInnerContainerType(Entity.class));
 
         return builder.build();
     }
@@ -13047,7 +13146,7 @@ public class DataArtsStudioMeta {
                 ShowFactoryFullTextRequest::setWorkspaceId));
         builder.<String>withRequestField("search_text",
             LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowFactoryFullTextRequest::getSearchText,
                 ShowFactoryFullTextRequest::setSearchText));

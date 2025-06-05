@@ -44,7 +44,7 @@ public class ListAgentInstallScriptResponse extends SdkResponse {
     }
 
     /**
-     * agent安装脚本
+     * 安装脚本列表
      * @return installScriptList
      */
     public List<AgentInstallScriptResponseInfo> getInstallScriptList() {

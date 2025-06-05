@@ -59,7 +59,7 @@ public class ListQueryExportTaskResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID
+     * 任务名称
      * @return taskName
      */
     public String getTaskName() {

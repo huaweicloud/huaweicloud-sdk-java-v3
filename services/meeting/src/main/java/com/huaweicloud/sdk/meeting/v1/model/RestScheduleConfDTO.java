@@ -534,7 +534,7 @@ public class RestScheduleConfDTO {
     }
 
     /**
-     * 会议资源类型：  * 0: 并发 * 1: 云会议室 * 2: 网络研讨会 * 3: 预留模式，暂未开放 
+     * 会议资源类型，此参数创建后不支持修改：  * 0: 并发 * 1: 云会议室 * 2: 网络研讨会 * 3: 预留模式，暂未开放 
      * minimum: 0
      * maximum: 4
      * @return confResType

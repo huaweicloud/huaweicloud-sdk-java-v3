@@ -32,7 +32,7 @@ public class ShowFactoryFullTextResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_hits")
 
-    private Integer totalHits;
+    private Long totalHits;
 
     public ShowFactoryFullTextResponse withLimit(Integer limit) {
         this.limit = limit;
@@ -101,7 +101,7 @@ public class ShowFactoryFullTextResponse extends SdkResponse {
         this.searchDetails = searchDetails;
     }
 
-    public ShowFactoryFullTextResponse withTotalHits(Integer totalHits) {
+    public ShowFactoryFullTextResponse withTotalHits(Long totalHits) {
         this.totalHits = totalHits;
         return this;
     }
@@ -110,11 +110,11 @@ public class ShowFactoryFullTextResponse extends SdkResponse {
      * 成功命中数量。
      * @return totalHits
      */
-    public Integer getTotalHits() {
+    public Long getTotalHits() {
         return totalHits;
     }
 
-    public void setTotalHits(Integer totalHits) {
+    public void setTotalHits(Long totalHits) {
         this.totalHits = totalHits;
     }
 

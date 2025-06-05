@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.hss.v5.model;
 import java.util.Objects;
 
 /**
- * 进程id
+ * 进程ID
  */
 public class ProcessPid {
 

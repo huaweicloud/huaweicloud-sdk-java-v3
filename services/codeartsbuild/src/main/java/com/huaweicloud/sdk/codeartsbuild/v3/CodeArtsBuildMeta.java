@@ -1,5 +1,7 @@
 package com.huaweicloud.sdk.codeartsbuild.v3;
 
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CheckJobNameIsExistsRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.CheckJobNameIsExistsResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateBuildJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateBuildJobRequestBody;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.CreateBuildJobResponse;
@@ -16,6 +18,8 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.DisableNoticeRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DisableNoticeResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadBuildLogRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadBuildLogResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadKeystoreByNameRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadKeystoreByNameResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadKeystoreRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadKeystoreResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.DownloadLogByRecordIdRequest;
@@ -32,19 +36,27 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.ListBuildInfoRecordRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListBuildInfoRecordResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListJobConfigRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListJobConfigResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ListKeystoreRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ListKeystoreResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListNoticeRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListNoticeResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListOfficialTemplateRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListOfficialTemplateResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListProjectJobsRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListProjectJobsResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ListRecordsRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ListRecordsResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListRecyclingJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListRecyclingJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ListRelatedProjectInfoRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ListRelatedProjectInfoResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListTemplatesRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ListTemplatesResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobRequestBody;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.RunJobResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowBuildInfoRecordRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowBuildInfoRecordResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowBuildParamsListRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowBuildParamsListResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowBuildRecordBuildScriptRequest;
@@ -53,6 +65,10 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowBuildRecordFullStagesReque
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowBuildRecordFullStagesResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowBuildRecordRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowBuildRecordResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowDefaultBuildParametersRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowDefaultBuildParametersResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowDockerfileTemplateRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowDockerfileTemplateResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowFlowGraphRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowFlowGraphResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowHistoryDetailsRequest;
@@ -71,6 +87,8 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobInfoRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobInfoResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobListByProjectIdRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobListByProjectIdResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobNoticeConfigInfoRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobNoticeConfigInfoResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobRolePermissionRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobRolePermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobStatusRequest;
@@ -79,6 +97,8 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobSuccessRatioRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobSuccessRatioResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobSystemParametersRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowJobSystemParametersResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowKeystorePermissionRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowKeystorePermissionResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowLastHistoryRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowLastHistoryResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowListHistoryRequest;
@@ -93,6 +113,8 @@ import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRecordDetailRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRecordDetailResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRecordInfoRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRecordInfoResponse;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRelatedProjectRequest;
+import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRelatedProjectResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowReportSummaryRequest;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowReportSummaryResponse;
 import com.huaweicloud.sdk.codeartsbuild.v3.model.ShowRunningStatusRequest;
@@ -116,8 +138,39 @@ import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 
+import java.util.List;
+
 @SuppressWarnings("unchecked")
 public class CodeArtsBuildMeta {
+
+    public static final HttpRequestDef<CheckJobNameIsExistsRequest, CheckJobNameIsExistsResponse> checkJobNameIsExists =
+        genForCheckJobNameIsExists();
+
+    private static HttpRequestDef<CheckJobNameIsExistsRequest, CheckJobNameIsExistsResponse> genForCheckJobNameIsExists() {
+        // basic
+        HttpRequestDef.Builder<CheckJobNameIsExistsRequest, CheckJobNameIsExistsResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, CheckJobNameIsExistsRequest.class, CheckJobNameIsExistsResponse.class)
+            .withName("CheckJobNameIsExists")
+            .withUri("/v1/job/check/exist")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("project_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckJobNameIsExistsRequest::getProjectId,
+                CheckJobNameIsExistsRequest::setProjectId));
+        builder.<String>withRequestField("job_name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(CheckJobNameIsExistsRequest::getJobName, CheckJobNameIsExistsRequest::setJobName));
+
+        // response
+
+        return builder.build();
+    }
 
     public static final HttpRequestDef<CreateBuildJobRequest, CreateBuildJobResponse> createBuildJob =
         genForCreateBuildJob();
@@ -312,6 +365,40 @@ public class CodeArtsBuildMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadKeystoreRequest::getDomainId, DownloadKeystoreRequest::setDomainId));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DownloadKeystoreByNameRequest, DownloadKeystoreByNameResponse> downloadKeystoreByName =
+        genForDownloadKeystoreByName();
+
+    private static HttpRequestDef<DownloadKeystoreByNameRequest, DownloadKeystoreByNameResponse> genForDownloadKeystoreByName() {
+        // basic
+        HttpRequestDef.Builder<DownloadKeystoreByNameRequest, DownloadKeystoreByNameResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, DownloadKeystoreByNameRequest.class, DownloadKeystoreByNameResponse.class)
+            .withName("DownloadKeystoreByName")
+            .withUri("/v2/keystore/download")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("name",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadKeystoreByNameRequest::getName, DownloadKeystoreByNameRequest::setName));
+        builder.<String>withRequestField("domain_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadKeystoreByNameRequest::getDomainId,
+                DownloadKeystoreByNameRequest::setDomainId));
+        builder.<String>withRequestField("id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DownloadKeystoreByNameRequest::getId, DownloadKeystoreByNameRequest::setId));
 
         // response
 
@@ -534,6 +621,23 @@ public class CodeArtsBuildMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListKeystoreRequest, ListKeystoreResponse> listKeystore = genForListKeystore();
+
+    private static HttpRequestDef<ListKeystoreRequest, ListKeystoreResponse> genForListKeystore() {
+        // basic
+        HttpRequestDef.Builder<ListKeystoreRequest, ListKeystoreResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListKeystoreRequest.class, ListKeystoreResponse.class)
+                .withName("ListKeystore")
+                .withUri("/v2/keystore/name")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListNoticeRequest, ListNoticeResponse> listNotice = genForListNotice();
 
     private static HttpRequestDef<ListNoticeRequest, ListNoticeResponse> genForListNotice() {
@@ -657,6 +761,63 @@ public class CodeArtsBuildMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ListRecordsRequest, ListRecordsResponse> listRecords = genForListRecords();
+
+    private static HttpRequestDef<ListRecordsRequest, ListRecordsResponse> genForListRecords() {
+        // basic
+        HttpRequestDef.Builder<ListRecordsRequest, ListRecordsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListRecordsRequest.class, ListRecordsResponse.class)
+                .withName("ListRecords")
+                .withUri("/v1/record/{build_project_id}/records")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("build_project_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecordsRequest::getBuildProjectId, ListRecordsRequest::setBuildProjectId));
+        builder.<Integer>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRecordsRequest::getPage, ListRecordsRequest::setPage));
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRecordsRequest::getLimit, ListRecordsRequest::setLimit));
+        builder.<List<String>>withRequestField("triggers",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecordsRequest::getTriggers, ListRecordsRequest::setTriggers));
+        builder.<List<String>>withRequestField("branches",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecordsRequest::getBranches, ListRecordsRequest::setBranches));
+        builder.<List<String>>withRequestField("tags",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(List.class),
+            f -> f.withMarshaller(ListRecordsRequest::getTags, ListRecordsRequest::setTags));
+        builder.<String>withRequestField("from_date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecordsRequest::getFromDate, ListRecordsRequest::setFromDate));
+        builder.<String>withRequestField("to_date",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRecordsRequest::getToDate, ListRecordsRequest::setToDate));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListRecyclingJobRequest, ListRecyclingJobResponse> listRecyclingJob =
         genForListRecyclingJob();
 
@@ -684,6 +845,40 @@ public class CodeArtsBuildMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListRecyclingJobRequest::getSearch, ListRecyclingJobRequest::setSearch));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListRelatedProjectInfoRequest, ListRelatedProjectInfoResponse> listRelatedProjectInfo =
+        genForListRelatedProjectInfo();
+
+    private static HttpRequestDef<ListRelatedProjectInfoRequest, ListRelatedProjectInfoResponse> genForListRelatedProjectInfo() {
+        // basic
+        HttpRequestDef.Builder<ListRelatedProjectInfoRequest, ListRelatedProjectInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListRelatedProjectInfoRequest.class, ListRelatedProjectInfoResponse.class)
+            .withName("ListRelatedProjectInfo")
+            .withUri("/v1/domain/project/related-page")
+            .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRelatedProjectInfoRequest::getPageSize,
+                ListRelatedProjectInfoRequest::setPageSize));
+        builder.<Integer>withRequestField("page_no",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListRelatedProjectInfoRequest::getPageNo, ListRelatedProjectInfoRequest::setPageNo));
+        builder.<String>withRequestField("search",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListRelatedProjectInfoRequest::getSearch, ListRelatedProjectInfoRequest::setSearch));
 
         // response
 
@@ -739,6 +934,34 @@ public class CodeArtsBuildMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RunJobRequestBody.class),
             f -> f.withMarshaller(RunJobRequest::getBody, RunJobRequest::setBody));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowBuildInfoRecordRequest, ShowBuildInfoRecordResponse> showBuildInfoRecord =
+        genForShowBuildInfoRecord();
+
+    private static HttpRequestDef<ShowBuildInfoRecordRequest, ShowBuildInfoRecordResponse> genForShowBuildInfoRecord() {
+        // basic
+        HttpRequestDef.Builder<ShowBuildInfoRecordRequest, ShowBuildInfoRecordResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowBuildInfoRecordRequest.class, ShowBuildInfoRecordResponse.class)
+                .withName("ShowBuildInfoRecord")
+                .withUri("/v1/record/{job_id}/{build_no}/build-info-record")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowBuildInfoRecordRequest::getJobId, ShowBuildInfoRecordRequest::setJobId));
+        builder.<Integer>withRequestField("build_no",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowBuildInfoRecordRequest::getBuildNo, ShowBuildInfoRecordRequest::setBuildNo));
 
         // response
 
@@ -840,6 +1063,51 @@ public class CodeArtsBuildMeta {
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ShowBuildRecordFullStagesRequest::getCascade,
                 ShowBuildRecordFullStagesRequest::setCascade));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDefaultBuildParametersRequest, ShowDefaultBuildParametersResponse> showDefaultBuildParameters =
+        genForShowDefaultBuildParameters();
+
+    private static HttpRequestDef<ShowDefaultBuildParametersRequest, ShowDefaultBuildParametersResponse> genForShowDefaultBuildParameters() {
+        // basic
+        HttpRequestDef.Builder<ShowDefaultBuildParametersRequest, ShowDefaultBuildParametersResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.GET,
+                    ShowDefaultBuildParametersRequest.class,
+                    ShowDefaultBuildParametersResponse.class)
+                .withName("ShowDefaultBuildParameters")
+                .withUri("/v1/job/default-parameters")
+                .withContentType("application/json");
+
+        // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowDockerfileTemplateRequest, ShowDockerfileTemplateResponse> showDockerfileTemplate =
+        genForShowDockerfileTemplate();
+
+    private static HttpRequestDef<ShowDockerfileTemplateRequest, ShowDockerfileTemplateResponse> genForShowDockerfileTemplate() {
+        // basic
+        HttpRequestDef.Builder<ShowDockerfileTemplateRequest, ShowDockerfileTemplateResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowDockerfileTemplateRequest.class, ShowDockerfileTemplateResponse.class)
+            .withName("ShowDockerfileTemplate")
+            .withUri("/v1/image/dockerfile-template")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("image_id",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowDockerfileTemplateRequest::getImageId,
+                ShowDockerfileTemplateRequest::setImageId));
 
         // response
 
@@ -1094,6 +1362,29 @@ public class CodeArtsBuildMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ShowJobNoticeConfigInfoRequest, ShowJobNoticeConfigInfoResponse> showJobNoticeConfigInfo =
+        genForShowJobNoticeConfigInfo();
+
+    private static HttpRequestDef<ShowJobNoticeConfigInfoRequest, ShowJobNoticeConfigInfoResponse> genForShowJobNoticeConfigInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowJobNoticeConfigInfoRequest, ShowJobNoticeConfigInfoResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowJobNoticeConfigInfoRequest.class, ShowJobNoticeConfigInfoResponse.class)
+            .withName("ShowJobNoticeConfigInfo")
+            .withUri("/v1/job/{job_id}/notice")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobNoticeConfigInfoRequest::getJobId, ShowJobNoticeConfigInfoRequest::setJobId));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowJobRolePermissionRequest, ShowJobRolePermissionResponse> showJobRolePermission =
         genForShowJobRolePermission();
 
@@ -1185,6 +1476,41 @@ public class CodeArtsBuildMeta {
             .withContentType("application/json");
 
         // requests
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowKeystorePermissionRequest, ShowKeystorePermissionResponse> showKeystorePermission =
+        genForShowKeystorePermission();
+
+    private static HttpRequestDef<ShowKeystorePermissionRequest, ShowKeystorePermissionResponse> genForShowKeystorePermission() {
+        // basic
+        HttpRequestDef.Builder<ShowKeystorePermissionRequest, ShowKeystorePermissionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ShowKeystorePermissionRequest.class, ShowKeystorePermissionResponse.class)
+            .withName("ShowKeystorePermission")
+            .withUri("/v2/keystore/permission/{keystore_id}/query")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("keystore_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKeystorePermissionRequest::getKeystoreId,
+                ShowKeystorePermissionRequest::setKeystoreId));
+        builder.<Integer>withRequestField("page_size",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ShowKeystorePermissionRequest::getPageSize,
+                ShowKeystorePermissionRequest::setPageSize));
+        builder.<String>withRequestField("page",
+            LocationType.Query,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowKeystorePermissionRequest::getPage, ShowKeystorePermissionRequest::setPage));
 
         // response
 
@@ -1376,6 +1702,24 @@ public class CodeArtsBuildMeta {
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ShowRecordDetailRequest::getBuildNo, ShowRecordDetailRequest::setBuildNo));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRelatedProjectRequest, ShowRelatedProjectResponse> showRelatedProject =
+        genForShowRelatedProject();
+
+    private static HttpRequestDef<ShowRelatedProjectRequest, ShowRelatedProjectResponse> genForShowRelatedProject() {
+        // basic
+        HttpRequestDef.Builder<ShowRelatedProjectRequest, ShowRelatedProjectResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRelatedProjectRequest.class, ShowRelatedProjectResponse.class)
+                .withName("ShowRelatedProject")
+                .withUri("/v1/domain/project/related")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

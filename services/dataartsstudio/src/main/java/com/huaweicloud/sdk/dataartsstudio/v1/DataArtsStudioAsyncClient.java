@@ -321,6 +321,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCatalogListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCatalogListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCatalogTreeRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCatalogTreeResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCategoriesTreeRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCategoriesTreeResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCategoryRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListCategoryResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListColumnsRequest;
@@ -359,6 +361,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDimensionsRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDimensionsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDirectoriesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListDirectoriesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListEntityDetailsRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListEntityDetailsResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactLogicTablesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListFactoryAlarmInfoRequest;
@@ -381,6 +385,8 @@ import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstanceListResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstancesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListInstancesResponse;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListLogicEntitiesRequest;
+import com.huaweicloud.sdk.dataartsstudio.v1.model.ListLogicEntitiesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListManagerWorkSpacesRequest;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListManagerWorkSpacesResponse;
 import com.huaweicloud.sdk.dataartsstudio.v1.model.ListMessageRequest;
@@ -5144,6 +5150,35 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 空间资产目录树(邀测)
+     *
+     * 获取某空间下资产目录树。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCategoriesTreeRequest 请求对象
+     * @return CompletableFuture<ListCategoriesTreeResponse>
+     */
+    public CompletableFuture<ListCategoriesTreeResponse> listCategoriesTreeAsync(ListCategoriesTreeRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listCategoriesTree);
+    }
+
+    /**
+     * 空间资产目录树(邀测)
+     *
+     * 获取某空间下资产目录树。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListCategoriesTreeRequest 请求对象
+     * @return AsyncInvoker<ListCategoriesTreeRequest, ListCategoriesTreeResponse>
+     */
+    public AsyncInvoker<ListCategoriesTreeRequest, ListCategoriesTreeResponse> listCategoriesTreeAsyncInvoker(
+        ListCategoriesTreeRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listCategoriesTree, hcClient);
+    }
+
+    /**
      * 获取作业目录
      *
      * 获取作业目录
@@ -5702,6 +5737,35 @@ public class DataArtsStudioAsyncClient {
     }
 
     /**
+     * 批量获取资产信息(邀测)
+     *
+     * 批量获取资产信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEntityDetailsRequest 请求对象
+     * @return CompletableFuture<ListEntityDetailsResponse>
+     */
+    public CompletableFuture<ListEntityDetailsResponse> listEntityDetailsAsync(ListEntityDetailsRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listEntityDetails);
+    }
+
+    /**
+     * 批量获取资产信息(邀测)
+     *
+     * 批量获取资产信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListEntityDetailsRequest 请求对象
+     * @return AsyncInvoker<ListEntityDetailsRequest, ListEntityDetailsResponse>
+     */
+    public AsyncInvoker<ListEntityDetailsRequest, ListEntityDetailsResponse> listEntityDetailsAsyncInvoker(
+        ListEntityDetailsRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listEntityDetails, hcClient);
+    }
+
+    /**
      * 查找事实表
      *
      * 通过中英文名称、创建者、审核人、状态、修改时间分页查找事实表信息。
@@ -5995,6 +6059,35 @@ public class DataArtsStudioAsyncClient {
     public AsyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesAsyncInvoker(
         ListInstancesRequest request) {
         return new AsyncInvoker<>(request, DataArtsStudioMeta.listInstances, hcClient);
+    }
+
+    /**
+     * 获取目录下逻辑实体(邀测)
+     *
+     * 获取主题目录下逻辑实体。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogicEntitiesRequest 请求对象
+     * @return CompletableFuture<ListLogicEntitiesResponse>
+     */
+    public CompletableFuture<ListLogicEntitiesResponse> listLogicEntitiesAsync(ListLogicEntitiesRequest request) {
+        return hcClient.asyncInvokeHttp(request, DataArtsStudioMeta.listLogicEntities);
+    }
+
+    /**
+     * 获取目录下逻辑实体(邀测)
+     *
+     * 获取主题目录下逻辑实体。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param request ListLogicEntitiesRequest 请求对象
+     * @return AsyncInvoker<ListLogicEntitiesRequest, ListLogicEntitiesResponse>
+     */
+    public AsyncInvoker<ListLogicEntitiesRequest, ListLogicEntitiesResponse> listLogicEntitiesAsyncInvoker(
+        ListLogicEntitiesRequest request) {
+        return new AsyncInvoker<>(request, DataArtsStudioMeta.listLogicEntities, hcClient);
     }
 
     /**

@@ -185,6 +185,11 @@ public class JobInstance {
 
     private Boolean forceSuccess;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "errorMessage")
+
+    private String errorMessage;
+
     public JobInstance withJobName(String jobName) {
         this.jobName = jobName;
         return this;
@@ -423,6 +428,23 @@ public class JobInstance {
         this.forceSuccess = forceSuccess;
     }
 
+    public JobInstance withErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+        return this;
+    }
+
+    /**
+     * 作业实例失败的错误信息。
+     * @return errorMessage
+     */
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
     @Override
     public boolean equals(java.lang.Object obj) {
         if (this == obj) {
@@ -439,7 +461,8 @@ public class JobInstance {
             && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobInstanceName, that.jobInstanceName)
             && Objects.equals(this.instanceType, that.instanceType) && Objects.equals(this.version, that.version)
             && Objects.equals(this.ignoreSuccess, that.ignoreSuccess)
-            && Objects.equals(this.forceSuccess, that.forceSuccess);
+            && Objects.equals(this.forceSuccess, that.forceSuccess)
+            && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override
@@ -457,7 +480,8 @@ public class JobInstance {
             instanceType,
             version,
             ignoreSuccess,
-            forceSuccess);
+            forceSuccess,
+            errorMessage);
     }
 
     @Override
@@ -478,6 +502,7 @@ public class JobInstance {
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    ignoreSuccess: ").append(toIndentedString(ignoreSuccess)).append("\n");
         sb.append("    forceSuccess: ").append(toIndentedString(forceSuccess)).append("\n");
+        sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
         sb.append("}");
         return sb.toString();
     }

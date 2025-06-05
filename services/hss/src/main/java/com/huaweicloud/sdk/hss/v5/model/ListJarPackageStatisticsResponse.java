@@ -30,7 +30,7 @@ public class ListJarPackageStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * Jar包统计信息总数
+     * **参数解释**: 中间件包的统计信息总数 **取值范围**: 取值0-10000
      * minimum: 0
      * maximum: 10000
      * @return totalNum
@@ -66,7 +66,7 @@ public class ListJarPackageStatisticsResponse extends SdkResponse {
     }
 
     /**
-     * Jar包统计信息列表
+     * **参数解释**: 中间件包统计信息列表
      * @return dataList
      */
     public List<JarPackageStatisticsResponseInfo> getDataList() {

@@ -395,7 +395,7 @@ public class ContainerNodeInfo {
     /**
      * 资产风险
      * minimum: 0
-     * maximum: 2097152
+     * maximum: 2147483647
      * @return asset
      */
     public Integer getAsset() {
@@ -414,7 +414,7 @@ public class ContainerNodeInfo {
     /**
      * 漏洞风险
      * minimum: 0
-     * maximum: 2097152
+     * maximum: 2147483647
      * @return vulnerability
      */
     public Integer getVulnerability() {
@@ -433,7 +433,7 @@ public class ContainerNodeInfo {
     /**
      * 入侵风险
      * minimum: 0
-     * maximum: 2097152
+     * maximum: 2147483647
      * @return intrusion
      */
     public Integer getIntrusion() {

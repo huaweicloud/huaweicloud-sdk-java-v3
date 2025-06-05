@@ -86,7 +86,7 @@ public class HostVulInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "cve_list")
 
-    private List<HostVulInfoCveList> cveList = null;
+    private List<GeneralImageVulsResponseInfoCveList> cveList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "is_affect_business")
@@ -407,12 +407,12 @@ public class HostVulInfo {
         this.repairSuccessNum = repairSuccessNum;
     }
 
-    public HostVulInfo withCveList(List<HostVulInfoCveList> cveList) {
+    public HostVulInfo withCveList(List<GeneralImageVulsResponseInfoCveList> cveList) {
         this.cveList = cveList;
         return this;
     }
 
-    public HostVulInfo addCveListItem(HostVulInfoCveList cveListItem) {
+    public HostVulInfo addCveListItem(GeneralImageVulsResponseInfoCveList cveListItem) {
         if (this.cveList == null) {
             this.cveList = new ArrayList<>();
         }
@@ -420,7 +420,7 @@ public class HostVulInfo {
         return this;
     }
 
-    public HostVulInfo withCveList(Consumer<List<HostVulInfoCveList>> cveListSetter) {
+    public HostVulInfo withCveList(Consumer<List<GeneralImageVulsResponseInfoCveList>> cveListSetter) {
         if (this.cveList == null) {
             this.cveList = new ArrayList<>();
         }
@@ -432,11 +432,11 @@ public class HostVulInfo {
      * CVE列表
      * @return cveList
      */
-    public List<HostVulInfoCveList> getCveList() {
+    public List<GeneralImageVulsResponseInfoCveList> getCveList() {
         return cveList;
     }
 
-    public void setCveList(List<HostVulInfoCveList> cveList) {
+    public void setCveList(List<GeneralImageVulsResponseInfoCveList> cveList) {
         this.cveList = cveList;
     }
 

@@ -63,7 +63,7 @@ public class OrganizationNodeResponseInfo {
     }
 
     /**
-     * 节点account_id
+     * 节点Id
      * @return id
      */
     public String getId() {

@@ -3,7 +3,7 @@ package com.huaweicloud.sdk.ces.v2.model;
 import java.util.Objects;
 
 /**
- * 告警开关
+ * 是否开启告警规则。true:开启，false:关闭。
  */
 public class AlarmEnabled {
 

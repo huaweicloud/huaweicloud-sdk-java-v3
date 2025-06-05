@@ -37,7 +37,7 @@ public class UpdateBackupPolicyRequestInfo {
     }
 
     /**
-     * 策略是否启用，缺省值：true
+     * **参数解释**: 策略是否启用，缺省值：true **约束限制**: 不涉及 **取值范围**: true或者false **默认取值**: true 
      * @return enabled
      */
     public Boolean getEnabled() {
@@ -54,7 +54,7 @@ public class UpdateBackupPolicyRequestInfo {
     }
 
     /**
-     * 备份策略ID
+     * **参数解释**: 策略ID,若开启防护时开启备份防护，该字段必选 **约束限制**: 不涉及 **取值范围**: 字符长度1-256 **默认取值**: 不涉及 
      * @return policyId
      */
     public String getPolicyId() {

@@ -88,7 +88,7 @@ public class HostGroupItem {
     }
 
     /**
-     * 关联服务器数
+     * 影响主机数量
      * minimum: 0
      * maximum: 2147483647
      * @return hostNum
@@ -161,7 +161,7 @@ public class HostGroupItem {
     }
 
     /**
-     * 服务器ID列表
+     * 主机id列表
      * @return hostIdList
      */
     public List<String> getHostIdList() {

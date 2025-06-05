@@ -31,6 +31,11 @@ public class SecurityCheckInfoResponseInfo {
     private String standard;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "executable_file_path")
+
+    private String executableFilePath;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "check_rule_num")
 
     private Integer checkRuleNum;
@@ -121,6 +126,23 @@ public class SecurityCheckInfoResponseInfo {
 
     public void setStandard(String standard) {
         this.standard = standard;
+    }
+
+    public SecurityCheckInfoResponseInfo withExecutableFilePath(String executableFilePath) {
+        this.executableFilePath = executableFilePath;
+        return this;
+    }
+
+    /**
+     * 配置检查（基线）的路径信息
+     * @return executableFilePath
+     */
+    public String getExecutableFilePath() {
+        return executableFilePath;
+    }
+
+    public void setExecutableFilePath(String executableFilePath) {
+        this.executableFilePath = executableFilePath;
     }
 
     public SecurityCheckInfoResponseInfo withCheckRuleNum(Integer checkRuleNum) {
@@ -227,6 +249,7 @@ public class SecurityCheckInfoResponseInfo {
         SecurityCheckInfoResponseInfo that = (SecurityCheckInfoResponseInfo) obj;
         return Objects.equals(this.severity, that.severity) && Objects.equals(this.checkName, that.checkName)
             && Objects.equals(this.checkType, that.checkType) && Objects.equals(this.standard, that.standard)
+            && Objects.equals(this.executableFilePath, that.executableFilePath)
             && Objects.equals(this.checkRuleNum, that.checkRuleNum)
             && Objects.equals(this.failedRuleNum, that.failedRuleNum) && Objects.equals(this.hostNum, that.hostNum)
             && Objects.equals(this.scanTime, that.scanTime) && Objects.equals(this.checkTypeDesc, that.checkTypeDesc);
@@ -238,6 +261,7 @@ public class SecurityCheckInfoResponseInfo {
             checkName,
             checkType,
             standard,
+            executableFilePath,
             checkRuleNum,
             failedRuleNum,
             hostNum,
@@ -253,6 +277,7 @@ public class SecurityCheckInfoResponseInfo {
         sb.append("    checkName: ").append(toIndentedString(checkName)).append("\n");
         sb.append("    checkType: ").append(toIndentedString(checkType)).append("\n");
         sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
+        sb.append("    executableFilePath: ").append(toIndentedString(executableFilePath)).append("\n");
         sb.append("    checkRuleNum: ").append(toIndentedString(checkRuleNum)).append("\n");
         sb.append("    failedRuleNum: ").append(toIndentedString(failedRuleNum)).append("\n");
         sb.append("    hostNum: ").append(toIndentedString(hostNum)).append("\n");

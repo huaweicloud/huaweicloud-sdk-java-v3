@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Objects;
 
 /**
- * Jar包统计信息列表
+ * **参数解释**: 中间件包统计信息列表
  */
 public class JarPackageStatisticsResponseInfo {
 
@@ -26,7 +26,7 @@ public class JarPackageStatisticsResponseInfo {
     }
 
     /**
-     * Jar包名称
+     * **参数解释**: 中间件包名称 **取值范围**: 字符长度0-256
      * @return fileName
      */
     public String getFileName() {
@@ -43,7 +43,7 @@ public class JarPackageStatisticsResponseInfo {
     }
 
     /**
-     * Jar包统计信息总数
+     * **参数解释**: 中间件包统计信息总数 **取值范围**: 取值0-300000
      * minimum: 0
      * maximum: 300000
      * @return num

@@ -81,7 +81,7 @@ public class ListWtpProtectHostRequest {
     }
 
     /**
-     * Region Id
+     * Region ID
      * @return region
      */
     public String getRegion() {

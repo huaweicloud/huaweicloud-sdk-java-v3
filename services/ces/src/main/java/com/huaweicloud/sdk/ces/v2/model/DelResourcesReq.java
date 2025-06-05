@@ -45,7 +45,7 @@ public class DelResourcesReq {
     }
 
     /**
-     * 手动创建，选择资源层级为子维度时的资源信息。只需要传递删除的资源
+     * 当资源添加方式为手动创建、资源层级为子维度时，删除资源分组中的资源只需传递删除的资源信息
      * @return resources
      */
     public List<Resource> getResources() {
@@ -78,7 +78,7 @@ public class DelResourcesReq {
     }
 
     /**
-     * 手动创建，选择资源层级为云产品时的资源详情。只需要传递删除的资源
+     * 当资源添加方式为手动创建、资源层级为云产品时，删除资源分组中的资源只需传递删除的资源信息
      * @return productResources
      */
     public List<ProductResource> getProductResources() {

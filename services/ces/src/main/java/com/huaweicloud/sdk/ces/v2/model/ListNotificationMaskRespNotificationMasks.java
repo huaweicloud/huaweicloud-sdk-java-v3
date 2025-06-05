@@ -180,6 +180,11 @@ public class ListNotificationMaskRespNotificationMasks {
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "effective_timezone")
+
+    private String effectiveTimezone;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policies")
 
     private List<PoliciesInListResp> policies = null;
@@ -539,6 +544,23 @@ public class ListNotificationMaskRespNotificationMasks {
         this.endTime = endTime;
     }
 
+    public ListNotificationMaskRespNotificationMasks withEffectiveTimezone(String effectiveTimezone) {
+        this.effectiveTimezone = effectiveTimezone;
+        return this;
+    }
+
+    /**
+     * 时区，形如：\"GMT-08:00\"、\"GMT+08:00\"、\"GMT+0:00\"
+     * @return effectiveTimezone
+     */
+    public String getEffectiveTimezone() {
+        return effectiveTimezone;
+    }
+
+    public void setEffectiveTimezone(String effectiveTimezone) {
+        this.effectiveTimezone = effectiveTimezone;
+    }
+
     public ListNotificationMaskRespNotificationMasks withPolicies(List<PoliciesInListResp> policies) {
         this.policies = policies;
         return this;
@@ -592,6 +614,7 @@ public class ListNotificationMaskRespNotificationMasks {
             && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
             && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.startTime, that.startTime)
             && Objects.equals(this.endDate, that.endDate) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.effectiveTimezone, that.effectiveTimezone)
             && Objects.equals(this.policies, that.policies);
     }
 
@@ -615,6 +638,7 @@ public class ListNotificationMaskRespNotificationMasks {
             startTime,
             endDate,
             endTime,
+            effectiveTimezone,
             policies);
     }
 
@@ -640,6 +664,7 @@ public class ListNotificationMaskRespNotificationMasks {
         sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
         sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
         sb.append("    endTime: ").append(toIndentedString(endTime)).append("\n");
+        sb.append("    effectiveTimezone: ").append(toIndentedString(effectiveTimezone)).append("\n");
         sb.append("    policies: ").append(toIndentedString(policies)).append("\n");
         sb.append("}");
         return sb.toString();

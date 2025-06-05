@@ -267,7 +267,7 @@ public class PortHostResponseInfo {
     }
 
     /**
-     * Agent ID
+     * agent id
      * @return agentId
      */
     public String getAgentId() {

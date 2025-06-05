@@ -30,7 +30,7 @@ public class ListJarPackageHostInfoResponse extends SdkResponse {
     }
 
     /**
-     * 总数
+     * **参数解释** 包含该中间件的服务器总数 **取值范围**: 字符长度0-10000位
      * minimum: 0
      * maximum: 10000
      * @return totalNum
@@ -65,7 +65,7 @@ public class ListJarPackageHostInfoResponse extends SdkResponse {
     }
 
     /**
-     * 服务器列表
+     * **参数解释** 服务器列表
      * @return dataList
      */
     public List<JarPackageHostInfo> getDataList() {

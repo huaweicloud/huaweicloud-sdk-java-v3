@@ -17,7 +17,7 @@ public class TmsRegion {
     public static final Region CN_NORTH_4 =
         new Region("cn-north-4", "https://tms.myhuaweicloud.com", "https://tms.myhuaweicloud.cn");
 
-    public static final Region AP_SOUTHEAST_1 = new Region("ap-southeast-1",
+    public static final Region AP_SOUTHEAST_1 = new Region("ap-southeast-1", "https://tms-intl.myhuaweicloud.com",
         "https://tms.ap-southeast-1.myhuaweicloud.com", "https://tms.ap-southeast-1.myhuaweicloud.cn");
 
     public static final Region EU_WEST_101 = new Region("eu-west-101", "https://tms.eu-west-101.myhuaweicloud.eu");
